@@ -5,6 +5,10 @@ docs_dir: docs
 pages:
 - ['index.md','Introduction to the mbed handbook']
 - ['Build_Tools/Intro.md', 'Build Tools' ,'Introduction to the build tools']
+- ['Build_Tools/mbed_IDE/mbed_IDE.md', 'Build Tools' ,'mbed IDE']
+- ['Build_Tools/mbed_CLI/mbed_CLI.md', 'Build Tools' ,'mbed CLI']
+- ['Build_Tools/C9/C9.md', 'Build Tools' ,'Cloud9 IDE']
+- ['Build_Tools/Keil/Keil.md', 'Build Tools' ,'Keil uVision IDE']
 
 
 
