@@ -4,6 +4,7 @@ docs_dir: docs
 
 pages:
 - ['index.md','Introduction to the mbed handbook']
+- ['Targets/Intro.md', 'Build Targets' ,'Working with targets']
 - ['Build_Tools/Intro.md', 'Build Tools' ,'Introduction to the build tools']
 - ['Build_Tools/mbed_IDE/mbed_IDE.md', 'Build Tools' ,'mbed IDE']
 - ['Build_Tools/mbed_CLI/mbed_CLI.md', 'Build Tools' ,'mbed CLI']
