@@ -1,0 +1,10 @@
+site_name: mbed Handbook
+
+docs_dir: docs
+
+pages:
+- ['index.md','Introduction to the mbed handbook']
+- ['Build_Tools/Intro.md', 'Build Tools' ,'Introduction to the build tools']
+
+
+
