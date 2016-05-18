@@ -10,6 +10,7 @@ pages:
 - ['Build_Tools/mbed_IDE/mbed_IDE.md', 'Build Tools' ,'mbed Classic IDE']
 - ['Build_Tools/C9/C9.md', 'Build Tools' ,'Cloud9 IDE']
 - ['Build_Tools/Keil/Keil.md', 'Build Tools' ,'Keil uVision IDE']
-
+- ['coding/Contributing.md', 'Contributing to mbed OS' ,'Contribution guide']
+- ['coding/code_style.md', 'Contributing to mbed OS' ,'Code style guide']
 
 
