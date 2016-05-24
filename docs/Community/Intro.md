@@ -6,6 +6,6 @@ But where it really gets interesting is with code. Our developers are sharing th
 
 We've also made contributing back is easy; you can publish a library to mbed.org with a few clicks in the IDE, and let others build on your hard work. In fact, this is how some of our users end up collaborating on hard problems, and even getting contract work.
 
-You can join the [discussions on the forum](http://developer.mbed.org/forum/) or ask [questions](http://developer.mbed.org/questions/). And don't forget to [read the blog](http://developer.mbed.org/blog/).
+You can join the [discussions on the forum](http://forums.mbed.com/) or ask [questions](https://www.mbed.com/en/development/community-help/stack-overflow/). And don't forget to [read the blog](http://blog.mbed.com/).
 
-For information about asking questions and dealing with problems, see [the Getting Help section](/Getting_Started/Questions/).
+For information about asking questions and dealing with problems, see [the Getting Help section](../Getting_Started/Questions.md).
