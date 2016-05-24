@@ -45,7 +45,6 @@ pages:
 - ['CMSIS/CMSIS-DAP-MDK.md','CMSIS','The CMSIS-DAP MDK']
 - ['CMSIS/Interface_Firmware.md','CMSIS','CMSIS-DAP Interface Firmware']
 - ['Community/Intro.md','The mbed Community','The mbed Community']
-- ['Community/Cont_SDK_HDK.md','The mbed Community','Contributing']
 - ['Community/Collab.md','The mbed Community','Collaboration']
 - ['Community/Edu.md','The mbed Community','Education']
 - ['Build_Tools/Keil/Keil.md', 'Build Tools' ,'Keil uVision IDE']
