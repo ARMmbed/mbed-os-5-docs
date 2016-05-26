@@ -11,7 +11,7 @@ The mbed CLI is designed so that you can easily work on code in your desktop. It
 Make sure you’ve installed the following software:
 
 * Python (tested with [2.7](https://www.python.org/download/releases/2.7/) and [3.5](https://www.python.org/downloads/release/python-350/)).
-* [Git](https://git-scm.com/), and optionally [Mercurial](https://www.mercurial-scm.org/).</br>Tip: remember that the directories containing the executables of ``hg`` and ``git` need to be in your system's PATH.
+* [Git](https://git-scm.com/), and optionally [Mercurial](https://www.mercurial-scm.org/).</br>Tip: remember that the directories containing the executables of ``hg`` and ``git`` need to be in your system's PATH.
 * [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded).
 
 You also need to install two Python packages:
@@ -38,7 +38,7 @@ To install mbed CLI:
 
     ``$ python setup.py install`` 
 
-<span class="tips">**Tip:** (on Linux/Mac, you may need to run this command with ``sudo``)</span>
+<span class="tips">**Tip:** on Linux/Mac, you may need to run this command with ``sudo``.</span>
 
 ## Importing Blinky
 
