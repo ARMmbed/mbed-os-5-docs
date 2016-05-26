@@ -16,7 +16,7 @@ You also need to install two Python packages:
 
 ```
 $  pip install colorama
-$  pip install jinja2`
+$  pip install jinja2
 ```
 
 ### Installing
