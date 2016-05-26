@@ -2,8 +2,6 @@
 
 To get started with mbed OS using our command line interface (mbed CLI), we're going to build a program called Blinky to blink an LED on your board.
 
-The mbed CLI is designed so that you can easily work on code in your desktop. It lets you clone code, compile it, pull and push it, as well as carry out other operations.
-
 ## Installing mbed CLI
 
 ### Requirements 
@@ -15,7 +13,6 @@ Make sure you’ve installed the following software:
 * [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded).
 
 You also need to install two Python packages:
-
 
 ```
 $  pip install colorama
