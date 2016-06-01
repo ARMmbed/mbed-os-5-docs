@@ -4,6 +4,7 @@ docs_dir: docs
 
 pages:
 - ['index.md','Introduction to the mbed handbook']
+- ['Introduction/Code_Base.md','Introduction','mbed OS code base']
 - ['Introduction/Plat_Comp_Intro.md','Introduction','Platforms and Components']
 - ['Introduction/Rapid_Prototyping.md','Introduction','Rapid Prototyping']
 - ['Introduction/IDE_API.md','Introduction','The IDE and API']
