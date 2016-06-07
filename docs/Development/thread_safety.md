@@ -54,13 +54,13 @@ No synchronization provided. A caller must protect invocation of this API by a c
 
 RTOS C++ API provides the Mutex class which is used to make drivers **Thread Safe**.
 
-For more information see ``(rtos/rtos/Mutex.h)[https://github.com/mbedmicro/mbed/blob/master/rtos/rtos/Mutex.h]``.
+For more information see [rtos/rtos/Mutex.h](https://github.com/mbedmicro/mbed/blob/master/rtos/rtos/Mutex.h).
 
 ### Atomics
 
 Atomic operations are provided by mbed which can be used to make code **Interrupt Safe**.  This is the preferred method of synchronization if code needs to be used both from threads and interrupts, since there is very low overhead and no latency decrease.
 
-For more information see ``(hal/api/critical.h)[https://github.com/mbedmicro/mbed/blob/master/hal/api/critical.h]``.
+For more information see [hal/api/critical.h](https://github.com/mbedmicro/mbed/blob/master/hal/api/critical.h).
 
 ### Critical section
 
@@ -70,4 +70,4 @@ Warning: Do not perform time consuming operations inside critical sections.  Thi
 
 Warning: Do not invoke any standard lib or RTOS functions within a critical section, it could result in a hard fault. Due to SVC calls that RTOS does. A critical section requires a code to be running in the privileged mode.
 
-For more information see ``(hal/api/critical.h)[https://github.com/mbedmicro/mbed/blob/master/hal/api/critical.h]``.
+For more information see [hal/api/critical.h](https://github.com/mbedmicro/mbed/blob/master/hal/api/critical.h).
