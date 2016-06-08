@@ -24,9 +24,6 @@ If there is no binary on the mbed disk, the target microcontroller will simply b
 
 The mbed Interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and connects to UART0 of the interface. So if you send characters out of UART0 of the target microcontroller, they will be read by the mbed interface and transfered over the USB link. When you printf(), it is just sendin characters to UART0. This means if you make your own PCB, these characters will still appear on UART0. 
 
-##How the LocalFileSystem works
-
-Because we have a USB disk, we also thought it'd be really useful to let you read and write files to it from the target microcontroller. To do this, the mbed Interface acts like a host debugger and listens out for filesystem "semihosting" requests via JTAG. 
 
 ##Notes
 
