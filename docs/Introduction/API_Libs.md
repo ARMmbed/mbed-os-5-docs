@@ -12,6 +12,8 @@ If needed, you can bypass the APIs and talk directly to the microcontroller hard
 
 <span style="background-color:lightgray; color:purple; display:block; height:100%;padding:10px;">
 For all the mbed C/C++ SDK APIs, see the [API breakdown](/Development/API_Libs_Breakdown/)<br />
-To read more about mbed SDK coding style, see the [mbed SDK coding style guide](/Going_Further/Coding_Style/)
+
+[link to how to write a library or to API_Documentation (which is a mpage I'm not sure we have)]
+
 </span>
 
