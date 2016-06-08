@@ -12,7 +12,7 @@ The ``Thread`` class allows defining, creating, and controlling thread functions
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/tip/classrtos_1_1Thread.html) 
 
-<span class="images">![](../Images/thread_priority.png)</span>
+<span class="images">![](../Images/Thread/thread_priority.png)</span>
 
 
 A ``Thread`` can be in the following states:
@@ -22,7 +22,7 @@ A ``Thread`` can be in the following states:
 * **WAITING**: Threads that are waiting for an event to occur are in the WAITING state.
 * **INACTIVE**: Threads that are not created or terminated are in the INACTIVE state. These threads typically consume no system resources.
 
-<span class="images">![](../Images/thread_status.png)</span>
+<span class="images">![](../Images/Thread/thread_status.png)</span>
 
 ## Mutex
 
@@ -31,7 +31,7 @@ A ``Mutex`` is used to synchronize the execution of threads, for example to prot
 <span class="warnings"> **Warning:** ISR
 </br>The ``Mutex`` methods cannot be called from interrupt service routines (ISR). </span>
 
-<span class="images">![](../Images/Mutex.png)</span>
+<span class="images">![](../Images/Thread/Mutex.png)</span>
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/rtos_mutex/)](https://developer.mbed.org/users/mbed_official/code/rtos_mutex/file/tip/main.cpp) 
 
@@ -46,7 +46,7 @@ A ``Mutex`` is used to synchronize the execution of threads, for example to prot
 
 A ``Semaphore`` is particularly useful to manage thread access to a pool of shared resources of a certain type.
 
-<span class="images">![](../Images/Semaphore.png)</span>
+<span class="images">![](../Images/Thread/Semaphore.png)</span>
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/rtos_semaphore/)](https://developer.mbed.org/users/mbed_official/code/rtos_semaphore/file/tip/main.cpp) 
 
@@ -62,7 +62,7 @@ Each ``Thread`` can be notified and wait for signals:
 
 A ``Queue`` allows you to queue pointers to data from producers threads to consumers threads:
 
-<span class="images">![](../Images/queue.png)</span>
+<span class="images">![](../Images/Thread/queue.png)</span>
 
 ```
 Queue queue;
@@ -100,7 +100,7 @@ mpool.free(message);
 
 A ``Mail`` works like a queue with the added benefit of providing a memory pool for allocating messages (not only pointers).
 
-<span class="images">![](../Images/mail_queue.png)</span>
+<span class="images">![](../Images/Thread/mail_queue.png)</span>
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/rtos_mail/)](https://developer.mbed.org/users/mbed_official/code/rtos_mail/file/tip/main.cpp) 
 
@@ -110,7 +110,7 @@ A ``Mail`` works like a queue with the added benefit of providing a memory pool 
 
 The ``RtosTimer`` class allows creating and and controlling of timer functions in the system. A timer function is called when a time period expires whereby both one-shot and periodic timers are possible. A timer can be started, restarted, or stopped. Timers are handled in the thread ``osTimerThread``. Callback functions run under control of this thread and may use CMSIS-RTOS API calls.
 
-<span class="images">![](../Images/rtos_timer.png)</span>
+<span class="images">![](../Images/Thread/rtos_timer.png)</span>
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/rtos_timer/)](https://developer.mbed.org/users/mbed_official/code/rtos_timer/file/tip/main.cpp) 
 
