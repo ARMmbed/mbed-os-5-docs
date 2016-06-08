@@ -1,6 +1,8 @@
 # mbed-rtos
 
-** MISSING LINK **
+*** Not sure which link should go here... this one doesn't seem right ***
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/rtos_8h_source.html) 
 
 ## Thread
 
