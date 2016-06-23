@@ -1,9 +1,9 @@
-site_name: mbed OS 16.07
+site_name: mbed OS 5.0
 
 docs_dir: docs
 
 pages:
-- ['index.md','Introduction to mbed OS 16.07']
+- ['index.md','Introduction to mbed OS 5.0']
 - ['getting_started/what_need.md', 'Getting started', 'What you need']
 - ['getting_started/first_program.md', 'Getting started', 'First program']
 - ['APIs/intro.md', 'Getting started', 'Writing applications with the mbed OS APIs']
@@ -68,6 +68,6 @@ pages:
 - ['advanced/targets.md', 'Advanced tutorials', 'Targets']
 - ['advanced/config_system.md', 'Advanced tutorials', 'Configuration system']
 - ['advanced/writing_libs.md', 'Advanced tutorials', 'Writing libraries']
-- ['porting/background.md', 'Porting to mbed OS 16.07', 'Porting overview']
-- ['porting/porting_process.md', 'Porting to mbed OS 16.07', 'Porting process']
-- ['porting/other_ports.md', 'Porting to mbed OS 16.07', 'Porting to other components']
+- ['porting/background.md', 'Porting to mbed OS 5.0', 'Porting overview']
+- ['porting/porting_process.md', 'Porting to mbed OS 5.0', 'Porting process']
+- ['porting/other_ports.md', 'Porting to mbed OS 5.0', 'Porting to other components']
