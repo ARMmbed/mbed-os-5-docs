@@ -8,7 +8,7 @@ Your application code - written in C++ - uses the *application programing interf
 
 The easiest way to work with mbed OS is using one of our tools. We've set up an example that you can try with each tool.
 
-Our online IDEs let you write and build applications for multiple devices. You can choose between our in-house [mbed IDE]() and [mbed Studio](), which is based on the Cloud9 IDE.
+Our online IDEs let you write and build applications for multiple devices. You can choose between our in-house [mbed Online Compiler]() and [mbed Studio](), which is based on the Cloud9 IDE.
 
 You can also use [mbed CLI](), our command line tool. This requires having a toolchain installed on your machine. 
 
