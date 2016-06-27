@@ -5,7 +5,7 @@ We have an example application called [Blinky](https://github.com/ARMmbed/mbed-b
 You can try any of these tools:
 
 * [mbed Studio](#blinky-on-mbed-studio)
-* [mbed IDE](#blinky-on-mbed-online-compiler)
+* [mbed Online Compiler](#blinky-on-mbed-online-compiler)
 * [mbed CLI](#blinky-on-mbed-cli)
 * [Third party integration](#blinky-on-third-party-tools)
 
