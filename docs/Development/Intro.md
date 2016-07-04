@@ -1,4 +1,0 @@
-#Intro
-
-This section covers:
-
