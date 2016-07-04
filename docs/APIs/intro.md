@@ -4,7 +4,7 @@ You can think of mbed OS as a collection of application programming interfaces (
 
 ## Hardware agnosticism
 
-mbed OS exposes the same APIs to you, irrespective of the hardware on which you're working. The job of making the standard APIs work with different hardware is conducted behind the scenes; this means that your application code can run on any hardware without any deliberate changes on your part.
+mbed OS always exposes the same APIs, irrespective of the hardware on which you're working. The job of making these APIs work with different hardware is left to mbed OS itself, meaning you don't have to change your application code to have it run on any compatible hardware.
 
 ## APIs by feature
 

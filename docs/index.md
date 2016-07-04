@@ -20,4 +20,4 @@ When you've tried our example and picked your work environment, it's time to lea
 
 * Learn more about the [build tools mbed OS uses](build_tools/options.md).
 
-* Try one of the [advanced tutorials](advanced/intro.md), which over concepts like debugging and version control.
+* Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and version control.
