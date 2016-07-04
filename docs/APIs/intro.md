@@ -6,3 +6,6 @@ You can think of mbed OS as a collection of application programming interfaces (
 
 mbed OS exposes the same APIs to you, irrespective of the hardware on which you're working. The job of making the standard APIs work with different hardware is conducted behind the scenes; this means that your application code can run on any hardware without any deliberate changes on your part.
 
+## APIs by feature
+
+The APIs in this document are organized by the feature, or group of features, they enable.
