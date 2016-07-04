@@ -61,6 +61,7 @@ pages:
 - ['build_tools/ide.md', 'Build tools', 'mbed IDE']
 - ['build_tools/cli.md', 'Build tools', 'mbed CLI']
 - ['build_tools/offline.md', 'Build tools', 'Offline build tools']
+- ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/writing_apps.md', 'Advanced tutorials', 'Writing applications']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
