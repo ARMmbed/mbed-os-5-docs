@@ -14,13 +14,10 @@ You can also use [mbed CLI](), our command line tool. This requires having a too
 
 ## How to continue
 
-When you've tried our example and picked your work environment, it's time to learn how mbed OS enables the features your application needs.
+When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
 
-We've organized our APIs by feature, and have an introduction, a "hello world" sample and an API reference for each:
+* You can read [the general introduction to the APIs](APIs/intro.md), or jump straight into one of the APIs.
 
-* [Hardware inputs and outputs]():
-* [Digital interfaces and USB]():
-* [Networking and communication]():
-* [Device and networking security]():
-* [Task management]():
-* [Memory and file system](): 
+* Learn more about the [build tools mbed OS uses](build_tools/options.md).
+
+* Try one of the [advanced tutorials](advanced/intro.md), which over concepts like debugging and version control.
