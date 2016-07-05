@@ -30,6 +30,6 @@ When you've tried our example and picked your work environment, it's time to lea
 
 ## What we assume you know
 
-We assume you're familiar with C++ and with APIs.
+We assume you're familiar with C++ and with using APIs.
 
 We have a [glossary of mbed-related terms](getting_started/glossary.md) that you might want to review.

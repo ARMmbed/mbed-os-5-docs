@@ -7,7 +7,6 @@ You can try any of these tools:
 * [mbed Studio](#blinky-on-mbed-studio)
 * [mbed Online Compiler](#blinky-on-mbed-online-compiler)
 * [mbed CLI](#blinky-on-mbed-cli)
-* [Third party integration](#blinky-on-third-party-tools)
 
 ## What the tools do
 
@@ -38,4 +37,3 @@ mbed Studio does all the complicated work for you - it fetches Blinky along with
 ## Blinky on mbed CLI
 
 
-## Blinky on third party tools
