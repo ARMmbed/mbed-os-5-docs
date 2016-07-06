@@ -170,3 +170,56 @@ After building the project, the binary file ``.bin``, ready to be flashed on the
 <span style="text-align:center; display:block;">
 ![](/Going_Further/Images/Exporting/IAR2.png)
 </span>
+
+# From the second page - must edit
+
+Congratulations! You are one of the elite few who have chosen the path of ultimate power! You have chosen to take your code to an offline toolchain. This means you will acquire the power of traditional debug including, single step, break points, and oh so much more. But be careful, with great power comes greater responsibility.
+
+You are leaving the online tools and their enhanced ease of use. With this step into the void you are now taking your destiny into your own hands. We have done our best to make the offline tools experience seamless and easy, unfortunately this is not always the case. Some toolchains and some boards will have issues. This page is our attempt at documenting those extra configuration options and providing the necessary details.
+
+Now, go forth, be productive, and use the force, we believe in you!
+
+-The mbed team.
+
+## Keil uVision
+The exporters are currently configured to use Keil MDK v4. MCUs released after Dec 2014 may not have device svd and flash programing algorithms provided with the installation. You will need to obtain these and install in the proper directory and then select in the project file.
+
+* Nordic Platforms using SoftDevices
+	* Download [[ http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi | nordic nrf51_SDK.]]
+	* Install the nrf51_sdk and integrate with uVision when prompted
+	* Right click on the project -> Options for Target... -> Utilities tab -> Configure Flash Menu Command Settings button -> Add button -> select nrf51xxx -> click Add -> Click OK -> click OK. Now you should be able to flash to the nrf51822 target.
+* Maxim Platforms
+	* Download the [[ /media/uploads/sam_grove/max32600.flm |MAX32600 Flash Algorithm.]]
+	* Copy the file to directory: C:\Keil\ARM\Flash assuming the default install path was chosen.
+* LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms
+	* Download the [[/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm.]]
+	* Copy the file to directory: C:\Keil\ARM\Flash assuming the default install path was chosen.
+
+## GCC
+
+Makefiles are created and to build you will need make installed and part of your path. Also you will need an arm-gcc compiler and linker.
+
+* Nordic Platforms using SoftDevices##
+	* Windows
+		*GCC exports targeting the NRF51822 also require some programs from the [[http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi | Nordic nrf51_SDK.]] Please download and install it from the nordic website to enable offline compiles with make on windows.
+	*Linux
+		* Need to install xxxx
+
+## Kinetis Design Studio (KDS)
+
+Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to update a linker flag depending on the version of tools installed. Make the change in : [[/media/uploads/sam_grove/kds3_linkerflags.png | ##C++ Build -> Settings -> Tool Settings##]]
+
+
+Open this dialog using ``[Alt] + Enter or [Option] + Enter``
+
+Any file extension that is ``.s`` needs to be changed to ``.S`` (lowercase to uppercase)
+
+KDS >= 3.0
+``-specs=nosys.specs``
+
+KDS < 3.0
+``-nanolibc``
+
+## atmelstudio
+
+The mbed libraries contain CMSIS startup files. When importing the generated project file **it is required to un-check 'migrate to current infrastructure' box.**
