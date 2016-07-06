@@ -199,7 +199,7 @@ The exporters are currently configured to use Keil MDK v4. MCUs released after D
 
 Makefiles are created and to build you will need make installed and part of your path. Also you will need an arm-gcc compiler and linker.
 
-* Nordic Platforms using SoftDevices##
+* Nordic Platforms using SoftDevices
 	* Windows
 		*GCC exports targeting the NRF51822 also require some programs from the [[http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi | Nordic nrf51_SDK.]] Please download and install it from the nordic website to enable offline compiles with make on windows.
 	*Linux
@@ -223,3 +223,32 @@ KDS < 3.0
 ## atmelstudio
 
 The mbed libraries contain CMSIS startup files. When importing the generated project file **it is required to un-check 'migrate to current infrastructure' box.**
+
+## GCC ARM Embedded
+
+Please note, changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options. It also makes it a lot harder to share code and questions with other developers, as the context needs to be shared too!
+
+Whilst we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases, combinations or provide support for use of these alternate tools themselves! 
+
+[[https://launchpad.net/gcc-arm-embedded/|GNU Tools for ARM Embedded Processors]]  is one of the external offline toolchains supported by the mbed platform.
+
+For a complete overview of the "export" feature, please refer to our general: [[Exporting to offline toolchains]].
+
+To export your mbed program for use with the GNU Tools for ARM Embedded Processors, right-click the program in your program workspace. From the dialog, you can select the "Export To" as "GCC (ARM Embedded)", and the target microcontroller you wish to export for. 
+
+{{/media/uploads/emilmont/gcc_arm.png}} 
+
+When you choose export, a zip file containing all the files you need for the GNU Tools for ARM Embedded Processors will be generated. Unzip it and you are ready to launch make:
+```
+my_program$ ls
+main.cpp  Makefile  mbed  mbed.lib
+
+my_program$ make
+arm-none-eabi-g++ -c -Os -fno-common -fmessage-length=0 -Wall -fno-exceptions -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections  -DTARGET_LPC1768 -DTOOLCHAIN_GCC_ARM -DNDEBUG -std=gnu++98 -I./mbed -I./mbed/LPC1768 -I./mbed/LPC1768/GCC_ARM  -o main.o main.cpp
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -Tmbed/LPC1768/GCC_ARM/LPC1768.ld -L./mbed -L./mbed/LPC1768 -L./mbed/LPC1768/GCC_ARM  -o my_program.elf main.o mbed/LPC1768/GCC_ARM/startup_LPC17xx.o mbed/LPC1768/GCC_ARM/core_cm3.o mbed/LPC1768/GCC_ARM/system_LPC17xx.o mbed/LPC1768/GCC_ARM/cmsis_nvic.o -lmbed -lcapi -lstdc++ -lsupc++ -lm -lc -lgcc
+arm-none-eabi-objcopy -O binary my_program.elf my_program.bin
+
+my_program$ ls
+main.cpp  main.o  Makefile  mbed  mbed.lib  my_program.bin  my_program.elf
+```
+The binary file (".bin") is ready to be flashed on the mbed.
