@@ -4,11 +4,15 @@ mbed OS lets you write applications that run on embedded devices.
 
 Your application code - written in C++ - uses the *application programing interfaces* (APIs) presented by mbed OS to receive information from the hardware and send instructions to it. This means you don't need to understand how the hardware works to be able to control it.
 
-## What our documentation covers
+## If you're a software engineer
 
+Then most of this guide is for you. You'll want to avoid the Hardware Development Kit and porting guide sections. 
 
+The guide covers:
 
-## Where to start
+* etc
+
+#### Where to start
 
 The easiest way to work with mbed OS is using one of our tools. We've set up an example that you can try with each tool.
 
@@ -18,7 +22,7 @@ You can also use [mbed CLI](), our command line tool. This requires having a too
 
 You might want to review our [glossary](getting_started/glossary.md).
 
-## How to continue
+#### How to continue
 
 When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
 
@@ -28,8 +32,13 @@ When you've tried our example and picked your work environment, it's time to lea
 
 * Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and version control.
 
-## What we assume you know
+#### What we assume you know
 
 We assume you're familiar with C++ and with using APIs.
 
 We have a [glossary of mbed-related terms](getting_started/glossary.md) that you might want to review.
+
+## If you're a hardware engineer
+
+Then you probably want to see the Hardware Development Kit section, or the mbed OS porting guide (which also covers other components).
+
