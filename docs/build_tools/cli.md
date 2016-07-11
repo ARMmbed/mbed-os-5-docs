@@ -1,3 +1,3 @@
 # mbed CLI
 
-!{https://raw.githubusercontent.com/ARMmbed/mbed-cli/master/README.md?token=AKWAjX9OJRJU64Z8ObrqUXN1tpqgyMp0ks5Xg738wA%3D%3D}
+!{https://raw.githubusercontent.com/ARMmbed/mbed-cli/master/README.md?token=AKWAjaS2h-Ujod3p9S18LipxeRuJco-mks5XjPs_wA%3D%3D}
