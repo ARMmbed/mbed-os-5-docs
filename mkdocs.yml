@@ -10,7 +10,7 @@ pages:
 - ['getting_started/glossary.md', 'Getting started', 'Glossary']
 - ['build_tools/options.md', 'Build tools', 'Build tool options']
 - ['build_tools/studio.md', 'Build tools', 'mbed Studio']
-- ['build_tools/ide.md', 'Build tools', 'mbed IDE']
+- ['build_tools/online_comp.md', 'Build tools', 'mbed Online Compiler']
 - ['build_tools/cli.md', 'Build tools', 'mbed CLI']
 - ['build_tools/offline.md', 'Build tools', 'Offline build tools']
 - ['build_tools/collab_versions.md', 'Build tools', 'Collaboration and version control']
