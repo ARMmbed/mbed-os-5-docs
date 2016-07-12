@@ -14,7 +14,7 @@ pages:
 - ['build_tools/cli.md', 'Build tools', 'mbed CLI']
 - ['build_tools/offline.md', 'Build tools', 'Offline build tools']
 - ['build_tools/collab_versions.md', 'Build tools', 'Collaboration and version control']
-- ['APIs/intro.md', 'Getting started', 'Writing applications with the mbed OS APIs']
+- ['APIs/intro.md', 'API overview', 'Writing applications with the mbed OS APIs']
 - ['APIs/io/inputs_outputs.md', 'Input and output APIs', 'Handling inputs and outputs']
 - ['APIs/io/AnalogIn.md', 'Input and output APIs', 'AnalogIn']
 - ['APIs/io/AnalogOut.md', 'Input and output APIs', 'AnalogOut']
