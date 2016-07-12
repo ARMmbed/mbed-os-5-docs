@@ -32,7 +32,7 @@ The easiest way to work with mbed OS is using one of our build tools. We've set 
 
 You might want to review our [glossary](getting_started/glossary.md).
 
-#### How to continue
+### How to continue
 
 When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
 
@@ -40,5 +40,4 @@ When you've tried our example and picked your work environment, it's time to lea
 
 * Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and version control.
 
-
-
+* We have a [forum](https://forums.mbed.com/) for questions and advice.
