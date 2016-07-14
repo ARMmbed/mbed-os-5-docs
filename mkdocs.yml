@@ -86,4 +86,5 @@ pages:
 - ['porting/background.md', 'Adding hardware', 'Creating hardware and porting to mbed OS']
 - ['porting/mbed_HDK.md', 'Adding hardware', 'The hardware development kit']
 - ['porting/porting_process.md', 'Adding hardware', 'Porting process']
+- ['porting/porting_setup.md', 'Adding hardware', 'Setting up for porting']
 - ['porting/other_ports.md', 'Adding hardware', 'Porting to other components']
