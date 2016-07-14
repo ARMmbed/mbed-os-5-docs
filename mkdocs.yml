@@ -20,7 +20,7 @@ pages:
 - ['concepts/rtos.md', 'OS concepts', 'RTOS']
 - ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
 - ['concepts/memory.md', 'OS concepts', 'Memory models']
-- ['concepts/bootstrap.md', 'OS concepts', 'Bootstrap']
+- ['concepts/bootstrap.md', 'OS concepts', 'Bootstrap sequence']
 - ['APIs/intro.md', 'API overview', 'Writing applications with the mbed OS APIs']
 - ['APIs/io/inputs_outputs.md', 'Input and output APIs', 'Handling inputs and outputs']
 - ['APIs/io/AnalogIn.md', 'Input and output APIs', 'AnalogIn']
