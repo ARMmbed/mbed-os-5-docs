@@ -23,13 +23,12 @@ For development you will need:
   - [Mac OS X and Windows Installer](https://launchpad.net/gcc-arm-embedded/4.9).
   - Ubuntu Linux 14.04:
 
-        ```
         sudo apt-get remove binutils-arm-none-eabi gcc-arm-none-eabi
         sudo apt-get autoremove
         sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
         sudo apt-get update
         sudo apt-get install gcc-arm-none-eabi=4.9.3.2015q3-1trusty1
-        ```
+
 - [Keil MDK-ARM](http://www.keil.com/download/product/) - optional.
 - [IAR for ARM](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM) - optional.
 - [Git](https://git-scm.com/downloads). After installing Git, you should configure it to use the credential store as explained [here](https://help.github.com/articles/caching-your-github-password-in-git/). This will give you easy access to our private repos.
@@ -38,7 +37,7 @@ For development you will need:
 
 	You can install it using the following command:
 
-        ```sudo pip install mbed-cli```
+        sudo pip install mbed-cli
 
 	Once installed, it can be invoked using the commands `mbed` or `mbed-cli`.
 
@@ -101,16 +100,12 @@ Because `core` is a dependency of `mbed-os` (via the `core.lib` link inside mbed
 
 1. Remove the existing dependency on the `core` repository:
 
-    ``` bash
-    mbed remove core
-    ```
+        mbed remove core
 
 1. Add a dependency on your fork of the mbed repository:
 
-    ``` bash
-    mbed add https://github.com/<developername>/mbed core
-    ```
-
+        mbed add https://github.com/<developername>/mbed core
+    
 Now your local copy of `mbed-os` is pointing to your clone of the `core` repository and you are ready to start porting.
 
 You will need to contact your ARM mbed partner lead to get a branch created in mbed-os against which you can make these pull requests. This will enable system-wide CI and testing.
