@@ -30,15 +30,15 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 
 1. Click **Export Program.** The **Export Program** window opens.
 
-<span class="images">![](Images/export_menu.png)</span>
+	<span class="images">![](Images/export_menu.png)</span>
 
 1. From the **Export Target** drop down list, select your board.
 
-<span class="images">![](Images/select_target.png)</span>
+	<span class="images">![](Images/select_target.png)</span>
 
 1. From the **Export Toolchain** drop down list, select your toolchain.
 
-<span class="images">![](Images/select_toolchain.png)</span>
+	<span class="images">![](Images/select_toolchain.png)</span>
 
 
 ## uVision
