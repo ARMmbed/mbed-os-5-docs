@@ -1,11 +1,6 @@
-#Exporting to Offline Toolchains
+# Exporting to Offline Toolchains
 
-
-Our goal with mbed is to enable a consistent and stable fully integrated development platform that just works. This helps provide a consistent context for development, code sharing, and questions and answers with other developers that helps you be more productive, especially when prototyping.
-
-However, the mbed C/C++ SDK used with the mbed Online Compiler is also compatible with a number of other popular ARM microcontroller toolchains! 
-
-If you'd like to use the mbed C/C++ SDK with an alternate tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project for the toolchain of your choice:
+If you'd like to develop on mbed OS with an offline tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the toolchain of your choice:
 
 * [Exporting to uVision](#uVision).
 
@@ -15,26 +10,38 @@ If you'd like to use the mbed C/C++ SDK with an alternate tool, or migrate to on
 
 * [Exporting to IAR Embedded Workbench](#IAR).
 
-This helps give you the flexibility to use the mbed libraries and resources with other toolchains, and also can help as you move your prototype in to production.
+* [Keil uVision](#keil-uvision).
 
-<span style="background-color:lightyellow; color:black; display:block; height:100%; padding:10px">
-**Warning:** Changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options. It also makes it a lot harder to share code and questions with other developers, as the context needs to be shared too!
-<br /><br />
-Whilst we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases, combinations or provide support for use of these alternate tools themselves! 
-</span>
+* [GCC](#gcc).
 
-<span style="text-align:center; display:block;">
-![](/Going_Further/Images/Exporting/Export1.png)
-</span>
-<span style="text-align:center; display:block; padding:20px;">
-![](/Going_Further/Images/Exporting/Export2.png)
-</span>
+* [Kinetis Design Studio](#kinetis-design-studio).
 
-_______
+* [GCC ARM Embedded](#gcc-arm-embedded).
 
-<a name="uVision">
-##uVision
-</a>
+Please note, changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options. It also makes it a lot harder to share code and questions with other developers, as the context needs to be shared too!
+
+While we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases and combinations, or provide support for use of these alternate tools themselves.
+
+## The mbed Online Compiler export mechanism
+
+The mbed Online Compiler has a built-in export mechanism that supports multiple toolchains:
+
+1. Right-click on a project you want to export.
+
+1. Click **Export Program.** The **Export Program** window opens.
+
+<span class="images">![](Images/export_menu.png)</span>
+
+1. From the **Export Target** drop down list, select your board.
+
+<span class="images">![](Images/select_target.png)</span>
+
+1. From the **Export Toolchain** drop down list, select your toolchain.
+
+<span class="images">![](Images/select_toolchain.png)</span>
+
+
+## uVision
 
 
 [uVision](http://www.keil.com/uvision|) is one of the external offline toolchains supported by the mbed platform.
@@ -205,7 +212,7 @@ Makefiles are created and to build you will need make installed and part of your
 	*Linux
 		* Need to install xxxx
 
-## Kinetis Design Studio (KDS)
+## Kinetis Design Studio
 
 Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to update a linker flag depending on the version of tools installed. Make the change in : [[/media/uploads/sam_grove/kds3_linkerflags.png | ##C++ Build -> Settings -> Tool Settings##]]
 
@@ -226,9 +233,7 @@ The mbed libraries contain CMSIS startup files. When importing the generated pro
 
 ## GCC ARM Embedded
 
-Please note, changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options. It also makes it a lot harder to share code and questions with other developers, as the context needs to be shared too!
 
-Whilst we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases, combinations or provide support for use of these alternate tools themselves! 
 
 [[https://launchpad.net/gcc-arm-embedded/|GNU Tools for ARM Embedded Processors]]  is one of the external offline toolchains supported by the mbed platform.
 
