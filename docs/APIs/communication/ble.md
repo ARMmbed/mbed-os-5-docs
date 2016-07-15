@@ -1,1 +1,1 @@
-# Communication options
+# Bluetooth Low Energy (BLE)

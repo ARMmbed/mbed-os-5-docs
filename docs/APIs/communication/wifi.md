@@ -1,1 +1,1 @@
-# Communication options
+# WiFi

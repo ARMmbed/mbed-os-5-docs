@@ -1,1 +1,1 @@
-# Communication options
+# Network stack

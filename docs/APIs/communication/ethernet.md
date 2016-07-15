@@ -1,1 +1,1 @@
-# Communication options
+# Ethernet
