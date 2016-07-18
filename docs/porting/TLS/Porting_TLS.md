@@ -1,24 +1,18 @@
 # mbed TLS Porting Guide
 
-This document explains how to use hardware entropy sources with [mbed TLS](https://github.com/ARMmbed/mbedtls) running on an embedded device. It includes an [example implementation](https://github.com/ARMmbed/mbed-tls-lib) for K64F boards.
+This document explains how to port [mbed TLS](https://github.com/ARMmbed/mbedtls) to a new mbed target board. It includes an [example implementation](https://github.com/ARMmbed/mbed-tls-lib) for K64F boards.
 
 <span class="notes">**Note:** This part is critical for the security of your product and you should consult a cryptography expert while considering the choices and implementing them.</span>
 
-## 1. Why mbed TLS needs entropy
+## 1. Which entropy source to choose
 
-Almost every cryptographic protocol requires random values that no one should be able to predict. A striking example is their use as session keys: it is easy to see that if an adversary can predict the session key, then he can decrypt the whole session. Even if the adversary can't predict it exactly, just with a relatively high probability, he can still recover the contents of the session. For example, if the adversary has a 0.00001% chance of predicting the 256 bit AES session key, then he can break it as easily as if we had used a 23 bit key (that is - very easily).
-
-Creating session keys is only one use for random values; they have far more complicated applications. And although in these more complex use cases the connection between the predictability of the values and the security of the protocol is not so obvious, it is no less crucial.
-
-## 2. Which entropy source to choose
-
-- If you have a target with a True Random Number Generator, then follow Section 3 to allow mbed TLS to use it.
+- If you have a target with a True Random Number Generator (TRNG), then follow Section 3 to allow mbed TLS to use it.
 
 - If you have a target without a TRNG, but with a non-volatile storage, then read Section 4 for instructions on making mbed TLS use a random seed as entropy. This seed should be separately initialized with a true random number for each device.
 
 - If you just want to test mbed TLS on your target without implementing either of the above, and having no security at all is acceptable, then go to Section 5.
 
-## 3. How to provide mbed TLS entropy from a hardware entropy source
+## 2. How to provide mbed TLS entropy from a hardware entropy source
 
 mbed TLS distinguishes between strong and weak entropy sources. Of the sources registered by default, two are strong: /dev/urandom and Windows CryptoAPI. However, these resources are not available on many embedded platforms, and the default behavior of mbed TLS is to refuse to work if there are no strong sources present. To get around this, mbed TLS assumes that any hardware entropy source you register (as explained in this guide) is strong. It is very important that you add a strong source if you add a hardware entropy source yourself. For example, an integrated circuit extracting statistically random data from two oscillators of unknown frequencies and independent phases is strong, while anything derived from a real time clock is weak.
 
@@ -29,7 +23,7 @@ The preferred way to provide a custom entropy source:
 
 The next two sections explain how to do this.
 
-## How to implement the hardware poll
+## 3. How to implement the hardware poll
 
 The `mbedtls_hardware_poll` function is declared in `entropy_poll.h`:
 
@@ -54,13 +48,13 @@ The implementation of this function needs to be in the HAL.
 
 ### Setting the macros
 
-To register your `mbedtls_hardware_poll` function with the mbed TLS entropy framework, you have to add `MBEDTLS_ENTROPY_HARDWARE_ALT` to your macros in `target.json`:
+To register your `mbedtls_hardware_poll` function with the mbed TLS entropy framework, you have to add `MBEDTLS_ENTROPY_HARDWARE_ALT` to your macros in `targets.json`:
 
 ```
 "macros": ["MBEDTLS_ENTROPY_HARDWARE_ALT", etc.]
 ```
 
-You can read more about how to add a macro for your target [here](../mbed_OS/Targets.md).
+You can read more about how to add a macro for your target [here](../../advanced/targets.md).
 
 <span class="notes">**Note:** You should define the `MBEDTLS_NO_PLATFORM_ENTROPY` macro on any platform that does not support standards like /dev/urandom or Windows CryptoAPI.</span>
 
@@ -72,7 +66,7 @@ This makes mbed TLS use a fixed amount of entropy as a seed and update this seed
 
 ### Enabling NV seed entropy source support
 
-To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` to your macros in `target.json`:
+To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` to your macros in `targets.json`:
 
 ```
 "macros": ["MBEDTLS_ENTROPY_NV_SEED", etc.],
@@ -80,11 +74,11 @@ To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` 
 
 This makes sure the entropy pool knows it can use the NV seed entropy source. 
 
-You can read more about how to add a macro for your target [here](../mbed_OS/Targets.md).
+You can read more about how to add a macro for your target [here](../../advanced/targets.md).
 
-By default the platform adaptation functions write/read a seed file called *seedfile*. If you have a system that does not support regular POSIX file operations, the default platform-adaptation functions will not be useful to you and you will need to provide platform-adaptation functions (see next section).
+By default the platform adaptation functions write/read a seed file called *seedfile*. If you have a system that does not support regular POSIX file operations (mbed OS does not support them by default), the default platform-adaptation functions will not be useful to you and you will need to provide platform-adaptation functions (see next section).
 
-### 5. Providing platform-adaption functions
+### Providing platform-adaptation functions
 
 The NV seed entropy source needs to know how to retrieve and store the seed in non-volatile memory. So in order to make the NV seed entropy source work, two platform-layer functions need to be provided.
 
@@ -103,15 +97,15 @@ There are three methods for setting those functions pointers (similar to all pla
 * `MBEDTLS_PLATFORM_STD_NV_SEED_READ` and `MBEDTLS_PLATFORM_STD_NV_SEED_WRITE` (requires `MBEDTLS_PLATFORM_NV_SEED_ALT`). By setting these two macros to the relevant function names, the default read/write functions are replaced at compile-time and you still have the option to replace them at run-time as well.
 * `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` and `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO`. By setting these two macros to the relevant functions names, the read/write functions are replaced at compile-time.
 
-## How to test without entropy sources
+## 5. How to test without entropy sources
 
-Both of the above options are secure if done properly, and depending on the platform may need more or less development work. In some cases it may be necessary to test mbed TLS on platforms where the above described platform adaptation work is not yet done. For these kind of scenarios mbed TLS provides a compile time switch to enable testing without entropy sources.
+Both of the above options are secure if done properly, and depending on the platform may need more or less development work. In some cases it may be necessary to test mbed TLS on boards without entropy. For these kind of scenarios mbed TLS provides a compile time switch to enable testing without entropy sources.
 
 ### Setting the macros
 
 This option is very dangerous, because compiling with it results in a build that is not secure! You have to let mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 
-Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific config file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](../mbed_OS/Config_sys.md).
+Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific config file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](../../advanced/writing_apps.md).
 
 To turn the unsafe testing mode on:
 
