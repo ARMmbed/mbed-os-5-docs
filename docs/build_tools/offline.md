@@ -40,10 +40,6 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 
 1. The export process generates a ZIP file with a project file matching your selected toolchain. Follow your toolchain's import or project creation process to begin working there.
 
-
-
-
-
 ## Make (GCC ARM Embedded or Sourcery CodeBench)
 
 > "[GNU Make](http://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
@@ -53,30 +49,7 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 Make itself does not compile source code. It relies on a compiler like:
 
 * [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that your compiler is added to your PATH variable. This contradicts the instruction given on the installation website because those instructions are intended for Eclipse, not Make.
-* [Sourcery CodeBench](http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/overview/) - a paid tool and can be purchased on the [Mentor](http://www.mentor.com/) website. 
-
-<span style="text-align:center; display:block;">
-![](/Going_Further/Images/Exporting/Make1.png)
-</span>
-
-When you choose export, a zip file containing all the files you need for Make will be generated. Unzip it and you are ready to launch make:
-
-```c
-
-	$ cd /my/program/directory/
-	$ ls
-	main.cpp  Makefile  mbed  mbed.lib
-
-	$ make
-	arm-none-eabi-g++ -c -Os -fno-common -fmessage-length=0 -Wall -fno-exceptions -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections  -DTARGET_LPC1768 -	DTOOLCHAIN_GCC_CS -DNDEBUG -std=gnu++98 -I./mbed -I./mbed/LPC1768 -I./mbed/LPC1768/GCC_CS  -o main.o main.cpp
-	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -Tmbed/LPC1768/GCC_CS/LPC1768.ld -L./mbed -L./mbed/LPC1768 -L./mbed/LPC1768/GCC_CS  -o 	my_program.elf main.o mbed/LPC1768/GCC_CS/startup_LPC17xx.o mbed/LPC1768/GCC_CS/sys.o mbed/LPC1768/GCC_CS/cmsis_nvic.o mbed/LPC1768/GCC_CS/c	ore_cm3.o mbed/LPC1768/GCC_CS/system_LPC17xx.o -lmbed -lcapi -lstdc++ -lsupc++ -lm -lc -lgcc -lmbed -lcapi -lstdc++ -lsupc++ -lm -lc -lgcc
-	arm-none-eabi-objcopy -O binary my_program.elf my_program.bin
-
-	$ ls
-	main.cpp  main.o  Makefile  mbed  mbed.lib  my_program.bin  my_program.elf
-```
-
-The binary file ``.bin`` is ready to be flashed on the mbed.
+* [Sourcery CodeBench](http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/overview/) - a paid tool and can be purchased on the [Mentor](http://www.mentor.com/) website.
 
 ### GCC and Make on Windows: Nordic Platforms using SoftDevices
 	
