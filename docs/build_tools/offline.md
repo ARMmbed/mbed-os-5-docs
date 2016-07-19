@@ -21,7 +21,7 @@ If you'd like to develop on mbed OS with an offline tool, or migrate to one as y
 * ZIP Archive (with repositories)
 
 
-## The mbed Online Compiler export mechanism
+## Exporting from the mbed Online Compiler
 
 The mbed Online Compiler has a built-in export mechanism that supports multiple toolchains:
 
