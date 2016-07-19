@@ -18,10 +18,7 @@ All of the build tools perform the same process:
 
 ## Before you begin
 
-There are two things you need to be able to use our sample application (and mbed OS in general):
-
-1. A [developer account on mbed](https://developer.mbed.org/account/signup/).
-2. An understanding of what we mean when we say "build target". A build target is a combination of your board - for example an [FRDM-K64F or a Nucleo-F401RE](https://www.mbed.com/en/development/hardware/boards/) and a toolchain. Selecting a target is how you tell the build tools exactly how to compile your code; different boards and toolchains have different compilation requirements. If you're working with the *mbed Online Compiler* or *mbed Studio*, the toolchain is the IDE itself, so you only need to select the right hardware. If you're working with *mbed CLI*, you also need to select a toolchain. Exact instructions are provided in the following sections.
+Please get a [developer account on mbed](https://developer.mbed.org/account/signup/).
 
 ## Blinky on mbed Studio
 
