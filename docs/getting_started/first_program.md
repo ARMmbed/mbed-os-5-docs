@@ -13,10 +13,8 @@ You can try any of these tools:
 All of the build tools perform the same process:
 
 * Bring the mbed OS source code from GitHub, along with all dependencies.
-* Allow you to set a build target, so that the compiled code matches your hardware and build toolchain.
 * Compile your code with the mbed OS code so that you have a single file to flash to your board.
-* 
-
+* Allow you to set a build target, so that the compiled code matches your hardware (and build toolchain, if you're using mbed CLI).
 
 ## Before you begin
 
