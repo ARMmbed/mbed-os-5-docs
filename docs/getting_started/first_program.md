@@ -20,6 +20,8 @@ All of the build tools perform the same process:
 
 Please get a [developer account on mbed](https://developer.mbed.org/account/signup/).
 
+You might want to read the page [explaning how to connect your board to your computer](serial_communication.md) - especial if your'e working on Windows.
+
 ## Blinky on mbed Studio
 
 Working with mbed Studio requires a Cloud9 account on top of your mbed developer account. You can use an existing Cloud9 account or create a new one; either way, you'll have to follow the instructions on mbed Studio to link the Cloud9a and mbed developer accounts. 
@@ -80,3 +82,17 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 1. Press the reset button to start the program.
 
 You should see the LED of your platform turning on and off.
+
+## Where next
+
+We have a few more examples you might enjoy:
+
+- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-blinky)
+
+- [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-client)
+
+- [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal)
+
+- [mbed-os-example-uvisor](https://github.com/ARMmbed/mbed-os-example-uvisor)
+
+Or you can dive into the [build tools](../build_tools/options.md) or [API](../APIs/intro.md) docs.
