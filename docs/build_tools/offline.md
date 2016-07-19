@@ -1,5 +1,7 @@
 # Exporting to Offline Toolchains
 
+[TODO: exporting from mbed Studio]
+
 If you'd like to develop on mbed OS with an offline tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
 
 * Keil uVision4
@@ -18,7 +20,6 @@ If you'd like to develop on mbed OS with an offline tool, or migrate to one as y
 * Emblocks
 * ZIP Archive (with repositories)
 
-This page reviews the mbed Online Compiler export process, and then offers solutions to common issues with some of the tools. It does not provide details instructions for working with any of the tools.
 
 ## The mbed Online Compiler export mechanism
 
@@ -113,6 +114,16 @@ __LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
 
 1. Download the [/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm](/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm).
 1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
+
+## Exporting from mbed CLI
+
+mbed CLI currently supports exporting to Keil uVision, DS-5, IAR Workbench, Simplicity Studio and other IDEs.
+
+For example, to export to uVision run:
+
+	$ mbed export -i uvision -m K64F
+
+A .uvproj file is created in the ``projectfiles/uvision`` folder. You can open this project file with uVision.
 
 ## Before you export
 
