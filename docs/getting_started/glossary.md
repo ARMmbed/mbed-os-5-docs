@@ -2,17 +2,36 @@
 
 [TODO: This will need a massive edit, and additional info]
 
+## Bootstrap Process
+
+From a reset state the following hooks and conditions are expected.
+
+* `ResetHandler` - vector table entry at start of Flash [main stack pointer].
+* `SystemInit` - imported from CMSIS-CORE [main stack pointer].
+* RW / ZI initialization [main stack pointer].
+* `mbed_sdk_init` - used for HAL initialization [main stack pointer].
+* `osKernelInitialize` - starts kernel and scheduler [main stack pointer].
+* `pre_main` - C++ static initializers [process stack pointer].
+* `mbed_main` - application hook before main [process stack pointer].
+* `main` - application entry point [process stack pointer].
+
+## Configuration system
+
+The mbed configuration system customizes the compile time configuration of mbed components: targets, libraries and applications.
+
+For more information, see the [Configuration System page](Config_sys.md).
+
+## Memory model
+
+This is a basic overview of the memory model.
+
 ## Targets
 
 A target is mbed OS's abstraction for different hardware. When you build mbed OS you always build it for a specific target, using the target's defined toolchain and macros. You use the mbed Configuration System (below) to create a target.
 
 For more information, see the [Targets page](Targets.md).
 
-## Memory model
-
-This is a basic overview of the memory model.
-
-### Threads
+## Threads
 
 Each thread of execution in the RTOS has a separate stack. When you use the RTOS, before explicitly initializing any additional thread, you will have four separate stacks:
 
@@ -64,21 +83,4 @@ Collisions between the main thread stack and heap can occur. Stack checking is t
 
 ```
 
-## Bootstrap Process
 
-From a reset state the following hooks and conditions are expected.
-
-* `ResetHandler` - vector table entry at start of Flash [main stack pointer].
-* `SystemInit` - imported from CMSIS-CORE [main stack pointer].
-* RW / ZI initialization [main stack pointer].
-* `mbed_sdk_init` - used for HAL initialization [main stack pointer].
-* `osKernelInitialize` - starts kernel and scheduler [main stack pointer].
-* `pre_main` - C++ static initializers [process stack pointer].
-* `mbed_main` - application hook before main [process stack pointer].
-* `main` - application entry point [process stack pointer].
-
-## Configuration system
-
-The mbed configuration system customizes the compile time configuration of mbed components: targets, libraries and applications.
-
-For more information, see the [Configuration System page](Config_sys.md).
