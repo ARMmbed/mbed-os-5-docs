@@ -41,7 +41,7 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 
 1. The export process generates a ZIP file with a project file matching your selected toolchain. Follow your toolchain's import or project creation process to begin working there.
 
-## Make (GCC ARM Embedded or Sourcery CodeBench)
+### Make (GCC ARM Embedded or Sourcery CodeBench)
 
 > "[GNU Make](http://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
 > 
@@ -52,11 +52,11 @@ Make itself does not compile source code. It relies on a compiler like:
 * [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that your compiler is added to your PATH variable. This contradicts the instruction given on the installation website because those instructions are intended for Eclipse, not Make.
 * [Sourcery CodeBench](http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/overview/) - a paid tool and can be purchased on the [Mentor](http://www.mentor.com/) website.
 
-### GCC and Make on Windows: Nordic Platforms using SoftDevices
+#### GCC and Make on Windows: Nordic Platforms using SoftDevices
 	
 GCC exports targeting the NRF51822 require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi). Please download and install it.
 
-## Kinetis Design Studio (Freescale KDS) with GCC ARM Embedded
+### Kinetis Design Studio (Freescale KDS) with GCC ARM Embedded
 
 Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to update a linker flag depending on the version of tools installed. 
 
@@ -72,21 +72,17 @@ Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to upd
 
 	``-nanolibc``
 
-
-
-## Atmel Studio
+### Atmel Studio
 
 The mbed libraries contain CMSIS startup files. When importing an mbed Online Compiler file to [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the 'migrate to current infrastructure' box.
 
-
-## Keil uVision4
-
+### Keil uVision4
 
 [uVision](http://www.keil.com/uvision|) is one of the external offline toolchains supported by the mbed platform. Exporting to it creates a ZIP file with a uVision project file ``project.uvproj``.
 
 <span class="images">![](Images/uVision.png)</span>
 
-### Installing missing algorithms
+#### Installing missing algorithms
 
 The exporters are currently configured to use Keil MDK v4. MCUs released after December 2014 may not have device svd and flash programing algorithms provided with the installation. You will need to obtain these and install in the proper directory, then select that directory in the project file.
 
