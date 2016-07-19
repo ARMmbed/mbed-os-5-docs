@@ -92,12 +92,12 @@ You should see the LED of your platform turning on and off.
 
 We have a few more examples you might enjoy:
 
-- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-blinky)
+- [A set of BLE examples](https://github.com/ARMmbed/mbed-os-example-ble).
 
-- [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-client)
+- [mbed Client on mbed OS](https://github.com/ARMmbed/mbed-os-example-client).
 
-- [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal)
+- [A mesh application for mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
-- [mbed-os-example-uvisor](https://github.com/ARMmbed/mbed-os-example-uvisor)
+- [A threaded version of Blinky to show uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor).
 
 Or you can dive into the [build tools](../build_tools/options.md) or [API](../APIs/intro.md) docs.
