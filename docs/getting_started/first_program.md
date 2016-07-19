@@ -33,7 +33,7 @@ mbed Studio does all the complicated work for you - it fetches Blinky along with
 
 ## Blinky on mbed CLI
 
-mbed CLI is an offline tool, meaning you'll have to install it before you can work. Please follow the installation instructions on the [mbed CLI page](../build_tools/cli.md), and come back here when you're done.
+mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../build_tools/cli.md), and come back here when you're done.
 
 ### Get Blinky
 
@@ -46,7 +46,12 @@ cd mbed-os-example-blinky
 
 ### Compile
 
-Invoke `mbed compile`, specifying the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM` or `IAR`). For example, for the ARM Compiler 5:
+Invoke `mbed compile`, specifying:
+
+* Your board: ``-m <board_name>``
+* Your  toolchain ``-t <GCC_ARM`, `ARM` or `IAR`>``.
+
+For example, for the board K64F and the ARM Compiler 5:
 
 ```
 mbed compile -m K64F -t ARM
