@@ -1,1 +1,0 @@
-# Securing devices and connections

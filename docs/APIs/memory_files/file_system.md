@@ -1,1 +1,0 @@
-# Managing the memory and file system
