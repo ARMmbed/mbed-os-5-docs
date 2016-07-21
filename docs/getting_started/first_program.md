@@ -4,9 +4,9 @@ We have an example application called [Blinky](https://github.com/ARMmbed/mbed-b
 
 You can try any of these tools:
 
-* [mbed Studio](#blinky-on-mbed-studio)
-* [mbed Online Compiler](#blinky-on-mbed-online-compiler)
 * [mbed CLI](#blinky-on-mbed-cli)
+* [mbed Online Compiler](#blinky-on-mbed-online-compiler)
+* [mbed Studio](#blinky-on-mbed-studio)
 
 ## What the tools do
 
@@ -21,14 +21,6 @@ All of the build tools perform the same process:
 Please get a [developer account on mbed](https://developer.mbed.org/account/signup/).
 
 You might want to read the page [explaning how to connect your board to your computer](serial_communication.md) - especial if your'e working on Windows.
-
-## Blinky on mbed Studio
-
-Working with mbed Studio requires a Cloud9 account on top of your mbed developer account. You can use an existing Cloud9 account or create a new one; either way, you'll have to follow the instructions on mbed Studio to link the Cloud9a and mbed developer accounts. 
-
-mbed Studio does all the complicated work for you - it fetches Blinky along with the mbed OS code base it requires, and builds to whichever [target you]() need.
-
-## Blinky on mbed Online Compiler
 
 
 ## Blinky on mbed CLI
@@ -87,6 +79,18 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 1. Press the reset button to start the program.
 
 You should see the LED of your platform turning on and off.
+
+## Blinky on mbed Online Compiler
+
+
+
+## Blinky on mbed Studio
+
+Working with mbed Studio requires a Cloud9 account on top of your mbed developer account. You can use an existing Cloud9 account or create a new one; either way, you'll have to follow the instructions on mbed Studio to link the Cloud9a and mbed developer accounts. 
+
+mbed Studio does all the complicated work for you - it fetches Blinky along with the mbed OS code base it requires, and builds to whichever [target you]() need.
+
+
 
 ## Where next
 
