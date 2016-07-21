@@ -6,13 +6,13 @@ If you're an experienced mbed applications developer, you might want to dive str
 
 If you're new to all this, continue reading.
 
-## What do you do with mbed OS?
+# What do you do with mbed OS?
 
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
 Your application code - written in C++ - uses the *application programing interfaces* (APIs) presented by mbed OS to receive information from the hardware and send instructions to it. This means you don't need to understand how the hardware works to be able to control it. It also means that you can run your code on different hardware without having to make any adjustments - mbed OS does the adjustments for you.
 
-### Two types of developer
+## Two types of developer
 
 You may be interested in mbed OS if you're:
 
@@ -22,7 +22,7 @@ You may be interested in mbed OS if you're:
 
 In both cases, we make some assumptions: you are familiar with C++ and with using APIs. You have a basic understanding of embedded devices or the Internet of Things, and you're here to learn how to create features you've already designed, not how to design them.
 
-### Where to start
+## Where to start
 
 The easiest way to work with mbed OS is using one of our build tools. We've set up an example that you can try with each tool:
 
@@ -32,7 +32,7 @@ The easiest way to work with mbed OS is using one of our build tools. We've set 
 
 You might want to review our [glossary](getting_started/glossary.md).
 
-### How to continue
+## How to continue
 
 When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
 
