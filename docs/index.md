@@ -6,7 +6,7 @@ If you're an experienced mbed applications developer, you might want to dive str
 
 If you're new to all this, continue reading.
 
-# What do you do with mbed OS?
+## What do you do with mbed OS?
 
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
