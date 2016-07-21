@@ -2,7 +2,7 @@
 
 Welcome to the mbed OS 5.0 User Guide. 
 
-If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][TODO: add link] to see what's changed, or take a look at our new [build tools](build_tools/options.md). If you're building your own hardware, check out the [mbed OS Porting Guide][TODO: add link].
+If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][TODO: add link] to see what's changed, or take a look at our new [development tools](dev_tools/options.md). If you're building your own hardware, check out the [mbed OS Porting Guide][TODO: add link].
 
 If you're new to all this, continue reading.
 
@@ -24,7 +24,7 @@ In both cases, we make some assumptions: you are familiar with C++ and with usin
 
 ## Where to start
 
-The easiest way to work with mbed OS is using one of our build tools. We've set up an example that you can try with each tool:
+The easiest way to work with mbed OS is using one of our development tools. We've set up an example that you can try with each tool:
 
 * Our main development tool is the [mbed CLI](dev_tools/cli.md), a command line tool. This requires having a toolchain installed on your machine. 
 * Our online IDEs let you write and build applications for multiple devices. You can choose between our in-house [mbed Online Compiler](dev_tools/online_comp.md) and [mbed Studio](dev_tools/studio.md), which is based on the Cloud9 IDE.

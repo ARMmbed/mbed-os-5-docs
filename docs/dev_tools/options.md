@@ -5,7 +5,7 @@ mbed offers three development tools, as well as support for exporting to your th
 
 ## mbed CLI
 
-the mbed command line tool (mbed CLI) was created specifically for mbed OS 5.0 and is an offline Python-based tool. For more information, see the [mbed CLI page](cli.md).
+the mbed command line tool (mbed CLI) was created specifically for mbed OS 5.0 and is a Python-based tool. For more information, see the [mbed CLI page](cli.md).
 
 ## mbed Online Compiler
 
@@ -17,4 +17,4 @@ The mbed Studio is based on the Cloud9 IDE and offers a rich development environ
 
 ## Third party development tools
 
-You can export your project from any of our tools to offline tools. For instructions, as well as tool-specific information, see [the Exporting to Offline Toolchains page](offline.md).
+You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to Third Party Toolchains page](third_party.md).

@@ -1,8 +1,8 @@
-# Exporting to Offline Toolchains
+# Exporting to Third Party Toolchains
 
 [TODO: exporting from mbed Studio]
 
-If you'd like to develop on mbed OS with an offline tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
+If you'd like to develop on mbed OS with a third party tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
 
 * Keil uVision4
 * DS-5
@@ -78,7 +78,7 @@ The mbed libraries contain CMSIS startup files. When importing an mbed Online Co
 
 ### Keil uVision4
 
-[uVision](http://www.keil.com/uvision|) is one of the external offline toolchains supported by the mbed platform. Exporting to it creates a ZIP file with a uVision project file ``project.uvproj``.
+[uVision](http://www.keil.com/uvision|) is one of the third party toolchains supported by the mbed platform. Exporting to it creates a ZIP file with a uVision project file ``project.uvproj``.
 
 <span class="images">![](Images/uVision.png)</span>
 

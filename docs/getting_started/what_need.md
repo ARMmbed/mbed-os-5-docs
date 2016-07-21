@@ -10,7 +10,7 @@ You'll need an [mbed developer account](https://developer.mbed.org/account/signu
 
 Some optional accounts are:
 
-* If you want to work with [mbed Studio](../build_tools/studio.md), you'll also need a Cloud9 account. You can register the first time you use mbed Studio; we will then link your mbed and Cloud9 accounts. 
+* If you want to work with [mbed Studio](../dev_tools/studio.md), you'll also need a Cloud9 account. You can register the first time you use mbed Studio; we will then link your mbed and Cloud9 accounts. 
 * You might want a [GitHub](https://github.com/join) account, especially if you're interested in suggesting improvements and additions to mbed OS itself.
 
 ## Hardware
