@@ -3,7 +3,7 @@ site_name: mbed OS Handbook
 docs_dir: docs
 
 pages:
-- ['index.md','Introduction to mbed OS 5.0']
+- ['index.md','Introduction to mbed OS 5.0 and the handbook']
 - ['getting_started/what_need.md', 'Getting started', 'What you need']
 - ['getting_started/first_program.md', 'Getting started', 'First application']
 - ['getting_started/serial_communication.md', 'Getting started', 'Connecting your device to a PC']
