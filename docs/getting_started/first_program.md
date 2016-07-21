@@ -1,6 +1,6 @@
 # Your first application
 
-We have an example application called [Blinky](https://github.com/ARMmbed/mbed-blinky-morpheus) that you can use to get to know mbed OS and the build tools.
+We have an example application called [Blinky](https://github.com/ARMmbed/mbed-blinky-morpheus) that you can use to get to know mbed OS and the development tools.
 
 You can try any of these tools:
 
@@ -10,11 +10,11 @@ You can try any of these tools:
 
 ## What the tools do
 
-All of the build tools perform the same process:
+All of the development tools perform the same process:
 
 * Bring the mbed OS source code from GitHub, along with all dependencies.
 * Compile your code with the mbed OS code so that you have a single file to flash to your board.
-* Allow you to set a build target, so that the compiled code matches your hardware (and build toolchain, if you're using mbed CLI).
+* Allow you to set a build target, so that the compiled code matches your hardware (and development toolchain, if you're using mbed CLI).
 
 ## Before you begin
 
@@ -25,7 +25,7 @@ You might want to read the page [explaining how to connect your board to your co
 
 ## Blinky on mbed CLI
 
-mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../build_tools/cli.md), and come back here when you're done.
+mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
 
 ### Get Blinky
 
