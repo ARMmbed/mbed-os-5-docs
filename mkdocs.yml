@@ -28,4 +28,3 @@ pages:
 - ['advanced/writing_libs.md', 'Advanced tutorials', 'Writing libraries']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
-- ['porting/background.md', 'Adding hardware', 'Creating hardware and porting to mbed OS']
