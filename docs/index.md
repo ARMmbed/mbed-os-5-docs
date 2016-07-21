@@ -1,4 +1,4 @@
-# Introduction to mbed OS 5.0
+# Introduction to the mbed OS 5.0 Handbook
 
 Welcome to the mbed OS 5.0 User Guide. 
 
