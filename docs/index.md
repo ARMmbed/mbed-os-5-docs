@@ -26,9 +26,9 @@ In both cases, we make some assumptions: you are familiar with C++ and with usin
 
 The easiest way to work with mbed OS is using one of our build tools. We've set up an example that you can try with each tool:
 
-* Our online IDEs let you write and build applications for multiple devices. You can choose between our in-house [mbed Online Compiler](build_tools/online_comp.md) and [mbed Studio](build_tools/studio.md), which is based on the Cloud9 IDE.
-* You can also use [mbed CLI](build_tools/cli.md), our command line tool. This requires having a toolchain installed on your machine. 
-* If you're working with offline tools, we have [exporting instructions for the most popular ones](build_tools/offline.md).
+* Our main development tool is the [mbed CLI](dev_tools/cli.md), a command line tool. This requires having a toolchain installed on your machine. 
+* Our online IDEs let you write and build applications for multiple devices. You can choose between our in-house [mbed Online Compiler](dev_tools/online_comp.md) and [mbed Studio](dev_tools/studio.md), which is based on the Cloud9 IDE.
+* If you're working with third party tools, we have [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
 You might want to review our [glossary](getting_started/glossary.md).
 
