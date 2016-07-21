@@ -20,7 +20,7 @@ All of the build tools perform the same process:
 
 Please get a [developer account on mbed](https://developer.mbed.org/account/signup/).
 
-You might want to read the page [explaning how to connect your board to your computer](serial_communication.md) - especial if your'e working on Windows.
+You might want to read the page [explaining how to connect your board to your computer](serial_communication.md) - especial if your'e using Windows.
 
 
 ## Blinky on mbed CLI
@@ -91,7 +91,6 @@ Working with mbed Studio requires a Cloud9 account on top of your mbed developer
 mbed Studio does all the complicated work for you - it fetches Blinky along with the mbed OS code base it requires, and builds to whichever [target you]() need.
 
 
-
 ## Where next
 
 We have a few more examples you might enjoy:
@@ -104,4 +103,3 @@ We have a few more examples you might enjoy:
 
 - [A threaded version of Blinky to show uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor).
 
-Or you can dive into the [build tools](../build_tools/options.md) or [API](../APIs/intro.md) docs.
