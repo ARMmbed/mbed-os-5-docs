@@ -2,7 +2,7 @@
 
 Welcome to the mbed OS 5.0 User Guide. 
 
-If you're an experienced mbed applications developer, you might want to dive straight into the [API pages](APIs/intro.md) to see what's changed, or take a look at our new [build tools](build_tools/options.md). If you're building your own hardware, check out the [hardware and porting section of this guide](porting/background.md).
+If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][TODO: add link] to see what's changed, or take a look at our new [build tools](build_tools/options.md). If you're building your own hardware, check out the [mbed OS Porting Guide][TODO: add link].
 
 If you're new to all this, continue reading.
 
@@ -36,7 +36,7 @@ You might want to review our [glossary](getting_started/glossary.md).
 
 When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
 
-* You can read [the general introduction to the APIs](APIs/intro.md), or jump straight into one of the APIs from the left-hand navigation.
+* You can read [the general introduction to the APIs](APIs/intro.md), or jump straight to the API References [TODO: add link].
 
 * Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and version control.
 
