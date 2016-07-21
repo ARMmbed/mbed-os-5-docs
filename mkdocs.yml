@@ -16,7 +16,7 @@ pages:
 - ['advanced/targets.md', 'OS concepts', 'Targets']
 - ['advanced/config_system.md', 'OS concepts', 'Configuration system']
 - ['advanced/debugging.md', 'OS concepts', 'Debugging']
-- ['build_tools/collab_versions.md', 'OS concepts', 'Collaboration and version control']
+- ['advanced/collab_versions.md', 'OS concepts', 'Collaboration and version control']
 - ['concepts/rtos.md', 'OS concepts', 'RTOS']
 - ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
 - ['concepts/memory.md', 'OS concepts', 'Memory models']
