@@ -1,6 +1,6 @@
 # What you need
 
-The short answer? An [mbed developer account](https://developer.mbed.org/account/signup/?next=%2F) and a [development board](https://www.mbed.com/en/development/hardware/boards/). 
+The short answer? An [mbed developer account](https://developer.mbed.org/account/signup/?next=%2F) and a [development board](https://developer.mbed.org/platforms/). 
 
 For the long answer, see below.
 
@@ -15,7 +15,7 @@ Some optional accounts are:
 
 ## Hardware
 
-mbed OS runs on [multiple boards and components](https://www.mbed.com/en/development/hardware/). You'll need just [one board](https://www.mbed.com/en/development/hardware/boards/) to get started; you can later build your code to run on any additional board without having to rewrite it.
+mbed OS runs on [multiple boards and components](https://www.mbed.com/en/development/hardware/). You'll need just [one board](https://developer.mbed.org/platforms/) to get started.
 
 ## Windows serial driver
 
