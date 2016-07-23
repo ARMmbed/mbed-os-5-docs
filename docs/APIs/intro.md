@@ -1,7 +1,7 @@
 # Writing applications with the mbed OS APIs
 
-You can think of mbed OS as a collection of application programming interfaces (APIs). You use these APIs to control mbed OS, and mbed OS in turn controls the hardware.
+mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
-mbed OS always exposes the same APIs, irrespective of the hardware on which you're working. The job of making these APIs work with different hardware is left to mbed OS itself, meaning you don't have to change your application code to have it run on any compatible hardware (this is known as "hardware agnosticism").
+Your application code - written in C++ - uses the application programing interfaces (APIs) presented by mbed OS to receive information from the hardware and send instructions to it. This means that a lot of the challenges in getting started with microcontrollers or integrating large amounts of software is already taken care of.
 
 The full API references are here [TODO: add link]
