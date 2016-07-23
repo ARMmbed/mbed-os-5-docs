@@ -2,6 +2,8 @@
 
 [TODO: This will need a massive edit, and additional info]
 
+
+[TODO]: All below is not getting started. Maybe for porting but not handbook
 ## Bootstrap Process
 
 From a reset state the following hooks and conditions are expected.
