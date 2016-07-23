@@ -40,14 +40,14 @@ Terminal applications run on your host PC, and provide a window for your mbed bo
 #### Installing an application
 
 There are many terminal applications for Windows, including:
-
+[TODO]: Link to Coolterm for win/mac/??linux??
 * [Tera Term](http://sourceforge.jp/projects/ttssh2/files) - this is the application we use in this example.
 * [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
 * [Terminal by Bray](http://sites.google.com/site/braypp/terminal)
 * Some Windows PCs come with **Hyperterminal** installed.
 
 #### Configuring the Connection
-
+[TODO]: Coolterm, not teraterm instructions
 1. Open Tera Term.
 1. Select **File > New Connection**.
 1. Select the **Serial** radio button.
@@ -67,7 +67,7 @@ Check your connection parameters:
 Your terminal program is now configured and connected. 
 
 ### Using terminal applications on Mac OS X or Linux
-
+[TODO]: Coolterm for sure!
 #### Installing an application
 
 If you do not already have it, install [GNU Screen](http://en.wikipedia.org/wiki/GNU_Screen).
@@ -87,6 +87,7 @@ If you do not already have it, install [GNU Screen](http://en.wikipedia.org/wiki
 Use your terminal application to interact with the following examples.
 
 If you're not sure how to build these examples and run them on your board, please see out [build tools section](../build_tools/options.md).
+[TODO]: all these examples should be import links, not hard coded
 
 ### Echo back characters you type
 
