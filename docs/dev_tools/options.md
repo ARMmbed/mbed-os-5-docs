@@ -1,7 +1,10 @@
 # Development tool options
 
-mbed offers three development tools, as well as support for exporting to your third party tools.
+mbed OS has been developed using the mbed CLI tool, which is a Python program that co-ordinates builds and fetches all the dependencies of an mbed OS programme. As this runs on your local development machine, you also need compilers and other build tools installed.
 
+As mbed OS 5.0 is compatible with the tools, libraries and programs that have been deployed on the developer.mbed.org site since mbed's origins, you can also use the mbed Online Compiler for building mbed OS 5.0 examples and programs. Furthermore, the exporters to third party development tools that were part of the mbed OS 2.0 ecosystem can also be used.
+
+Finally, we are experimenting with a Cloud9-based mbed Enabled IDE, which is currently in an alpha state and can be tested using the instructions below.
 
 ## mbed CLI
 
@@ -9,11 +12,13 @@ the mbed command line tool (mbed CLI) was created specifically for mbed OS 5.0 a
 
 ## mbed Online Compiler
 
-The mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with mbed OS for a while. For more information, see the [Online Compiler page](online_comp.md).
+The mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with mbed for a while. For more information, see the [Online Compiler page](online_comp.md).
 
 ## mbed Studio
 
-The mbed Studio is based on the Cloud9 IDE and offers a rich development environment. For more information, see the [mbed Studio page](studio.md).
+mbed Studio is an mbed Enabled IDE based on Cloud9 and offers a rich development environment. It is currently in Alpha and should be considered experimental. It can be tried by selecting 'mbed Studio' on the 'Import Program' dropdown.
+
+For more information, see the [mbed Studio page](studio.md).
 
 ## Third party development tools
 
