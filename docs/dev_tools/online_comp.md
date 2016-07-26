@@ -1,6 +1,6 @@
 # mbed Online Compiler
 
-The mbed Online Compiler has been our quick-start IDE for a few years now. We've updated it to match mbed OS 5.0; if you've used it with mbed OS 2.0, you shouldn't feel any difference. 
+The [mbed Online Compiler](https://developer.mbed.org/compiler/) has been our quick-start IDE for a few years now. We've updated it to match mbed OS 5.0; if you've used it with mbed OS 2.0, you shouldn't feel any difference. 
 
 If you've never used the compiler before, this is a quick guide to its interface. 
 
@@ -8,7 +8,44 @@ If you've never used the compiler before, this is a quick guide to its interface
 
 The only thing you need is [an mbed developer account](https://developer.mbed.org/account/signup/).
 
+## The quick start video
 
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
+
+## The quick start text
+
+The online compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The compiler allows for customization of platform target, drivers, multiple projects and more. 
+
+The compiler is always available on [https://developer.mbed.org/compiler/](https://developer.mbed.org/compiler/).
+
+### Importing code to the compiler
+
+There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
+
+1. Directly from the site: wherever you see a program on the site, you should see an Import button:
+	
+	<span class="images">![](Images/import_button_site.png)</span>
+
+	Clicking that button will take you to the compiler; you can then give the program a new name and import it to your workspace:
+
+	<span class="images">![](Images/import_popup.png)</span>
+
+
+1. The compiler's Import button: click the **Import** button in the compiler to trigger a search for applications:
+
+	<span class="images">![](Images/import_button_comp.png)</span>
+
+	You can search for a program by name, or perform an empty search to show all available programs:
+
+	<span class="images">![](Images/all_programs.png)</span>
+
+	Double click a program to import it.
+
+### Starting a new program or library
+
+You can start a new program or library through the **New** menu:
+
+<span class="images">![](Images/new.png)</span>
 
 
 ## Keyboard shortcuts
