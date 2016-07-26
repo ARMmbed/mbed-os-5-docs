@@ -30,8 +30,6 @@ The easiest way to work with mbed OS is using one of our development tools. We'v
 * Our online IDEs let you write and build applications using just a web browser and USB connection. You can choose between our in-house [mbed Online Compiler](dev_tools/online_comp.md) and [mbed Studio](dev_tools/studio.md), which is based on the Cloud9 IDE.
 * If you're working with third party tools, we have [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
-You might want to review our [glossary](getting_started/glossary.md).
-
 ## How to continue
 
 When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
