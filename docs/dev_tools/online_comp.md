@@ -93,7 +93,7 @@ The compiler shows the current build board's name on the upper right corner:
 
 Click the name to change your board as needed:
 
-<span class="images">![](Images/selectboard_board.png)</span>
+<span class="images">![](Images/select_board.png)</span>
 
 
 ## Video summary
