@@ -1,24 +1,10 @@
 # mbed Online Compiler
 
-The [mbed Online Compiler](https://developer.mbed.org/compiler/) has been our quick-start IDE for a few years now. We've updated it to match mbed OS 5.0; if you've used it with mbed OS 2.0, you shouldn't feel any difference. 
-
-If you've never used the compiler before, this is a quick guide to its interface. 
-
-## Prerequisites
-
-The only thing you need is [an mbed developer account](https://developer.mbed.org/account/signup/).
-
-## The quick start video
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
-
-## The quick start text
-
-The online compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The compiler allows for customization of platform target, drivers, multiple projects and more. 
+The online compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is [an mbed developer account](https://developer.mbed.org/account/signup/).
 
 The compiler is always available on [https://developer.mbed.org/compiler/](https://developer.mbed.org/compiler/).
 
-### Importing code to the compiler
+## Importing code to the compiler
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
 
@@ -41,7 +27,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 	Double click a program to import it.
 
-### Starting a new program 
+## Creating a new program 
 
 1. From the **New** menu, select **Program**:
 
@@ -73,7 +59,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 	<span class="images">![](Images/with_mbed.png)</span>
 
-### Starting a new library
+## Creating a new library
 
 
 1. From the **New** menu, select **Library**:
@@ -88,6 +74,31 @@ There are two methods of importing the code into the online compiler: directly f
 ## Compiling and downloading
 
 
+### Selecting your board
+
+mbed programs can be built to run on multiple boards. The hard work is done behind the scenes, by mbed OS itself. All you need to do is tell the mbed Online Compiler which board you're building for.
+
+#### Adding a board to your list
+
+To add a board to your list, go to the board's page on mbed.com and click the **Add to your mbed Compiler** button:
+
+<span class="images">![](Images/add_board.png)</span>
+
+#### Selecting a board
+
+The compiler shows the current build board's name on the upper right corner:
+
+<span class="images">![](Images/show_board.png)</span>
+
+
+Click the name to change your board as needed:
+
+<span class="images">![](Images/selectboard_board.png)</span>
+
+
+## Video summary
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
 
 ## Keyboard shortcuts
 
