@@ -21,7 +21,7 @@ All of the development tools perform the same process:
 
 Please get a [developer account on mbed](https://developer.mbed.org/account/signup/).
 
-You might want to read the page [explaining how to connect your board to your computer](serial_communication.md) - especial if your'e using Windows.
+You might want to read the page [explaining how to connect your board to your computer](serial_communication.md) - especial if you're using Windows.
 
 ## Blinky on mbed CLI
 
