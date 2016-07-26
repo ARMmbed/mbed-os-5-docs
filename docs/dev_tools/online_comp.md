@@ -41,12 +41,30 @@ There are two methods of importing the code into the online compiler: directly f
 
 	Double click a program to import it.
 
-### Starting a new program or library
+### Starting a new program 
 
-You can start a new program or library through the **New** menu:
+1. From the **New** menu, select **Program**:
 
-<span class="images">![](Images/new.png)</span>
+	<span class="images">![](Images/new.png)</span>
 
+1. The **Create new program** pop-up opens.
+	1. Select your platform (board). 
+	1. You can create from an existing template, or from an empty program.
+	1. Enter a unique name.
+
+	<span class="images">![](Images/new_program.png)</span>
+
+
+### Starting a new library
+
+
+1. From the **New** menu, select **Library**:
+
+	<span class="images">![](Images/new.png)</span>
+
+1. The **Create new library** pop-up opens. Enter a unique library name.
+
+	<span class="images">![](Images/new_library.png)</span>
 
 ## Keyboard shortcuts
 
