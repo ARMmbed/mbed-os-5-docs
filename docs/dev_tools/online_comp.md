@@ -31,7 +31,7 @@ There are two methods of importing the code into the online compiler: directly f
 	<span class="images">![](Images/import_popup.png)</span>
 
 
-1. The compiler's Import button: click the **Import** button in the compiler to trigger a search for applications:
+1. The compiler's Import button: click the **Import** button in the compiler to open the Import Wizard:
 
 	<span class="images">![](Images/import_button_comp.png)</span>
 
@@ -54,6 +54,24 @@ There are two methods of importing the code into the online compiler: directly f
 
 	<span class="images">![](Images/new_program.png)</span>
 
+1. Create a ``main.cpp`` file in your program:
+	1. Right click on the program and select **New File...**. The **Create new file** popup opens.
+
+		<span class="images">![](Images/new_file.png)</span>
+
+	1. Enter ``main.cpp`` as the file name.
+
+		<span class="images">![](Images/main_cpp.png)</span>
+
+1. Import the mbed OS library so you can build your program with the mbed OS code base:
+	1. Click **Import**. The Import Wizard opens.
+	1. Go to the Libraries tab and search for "mbed", or perform an empty search to show all libraries:
+
+	<span class="images">![](Images/import_mbed.png)</span>
+
+	1. Double click on "mbed" to import it. The library is added to your program.
+
+	<span class="images">![](Images/with_mbed.png)</span>
 
 ### Starting a new library
 
@@ -65,6 +83,11 @@ There are two methods of importing the code into the online compiler: directly f
 1. The **Create new library** pop-up opens. Enter a unique library name.
 
 	<span class="images">![](Images/new_library.png)</span>
+
+
+## Compiling and downloading
+
+
 
 ## Keyboard shortcuts
 
