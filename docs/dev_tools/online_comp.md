@@ -65,6 +65,38 @@ The only thing you need is [an mbed developer account](https://developer.mbed.or
 | Ctrl + / | Toggle line comment (using slashes) |
 | Ctrl + Shift + / | Toggle block comment (using /* ... */)| 
 
+### Misc
 
+| Shortcut   | Description                                       |
+|------------|---------------------------------------------------|
+| Tab  | Increase text indent                                  |
+| Shift + Tab | Decrease text indent |
+| Esc | Close find or toggle editor area full screen |
+| Ins | Toggle insert mode |
+| Ctrl + Ins | Copy selected text |
+| Shift + Ins | Paste text from clipboard |
+| Shift + Del | Cut selected text |
+| F8| Compile only (no download prompt |
+| F9 | Compile and download |
+| F10 | Compile all and download |
 
- 
+### Touch device shortcuts
+
+#### Editor
+
+| Shortcut   | Description                                       |
+|------------|---------------------------------------------------|
+| Single tap  | Move the cursor                                |
+| Double tap | Text selection on the tapped word (opens context menu) |
+| Triple tap | Text selection on the tapped row (opens context menu) |
+| Hold | Context menu |
+| Touch + drag | Text selection until the touch is released (opens context menu) |
+
+#### Compiler IDE
+
+| Shortcut   | Description                                       |
+|------------|---------------------------------------------------|
+| Single tap  | Equivalent to single mouse click  |
+| Double tap |  Equivalent to double mouse click  |
+| Hold |  Equivalent to right click (opens context menu) |
+| Touch + drag | Equivalent to mouse dragging |
