@@ -1,14 +1,14 @@
 # Development tool options
 
-mbed OS has been developed using the mbed CLI tool, which is a Python program that co-ordinates builds and fetches all the dependencies of an mbed OS programme. As this runs on your local development machine, you also need compilers and other build tools installed.
+We developed mbed OS 5.0 using the mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an mbed OS programme. As this runs on your local development machine, you also need compilers and other build tools installed.
 
-As mbed OS 5.0 is compatible with the tools, libraries and programs that have been deployed on the developer.mbed.org site since mbed's origins, you can also use the mbed Online Compiler for building mbed OS 5.0 examples and programs. Furthermore, the exporters to third party development tools that were part of the mbed OS 2.0 ecosystem can also be used.
+mbed OS 5.0 is compatible with the tools, libraries and programs that have been deployed on the developer.mbed.org site since mbed's origins, so you can also use the mbed Online Compiler for building mbed OS 5.0 examples and programs. Furthermore, the exporters to third party development tools that were part of the mbed OS 2.0 ecosystem can also be used.
 
 Finally, we are experimenting with a Cloud9-based mbed Enabled IDE, which is currently in an alpha state and can be tested using the instructions below.
 
 ## mbed CLI
 
-the mbed command line tool (mbed CLI) was created specifically for mbed OS 5.0 and is a Python-based tool. For more information, see the [mbed CLI page](cli.md).
+The mbed command line tool (mbed CLI) was created specifically for mbed OS 5.0 and is a Python-based tool. For more information, see the [mbed CLI page](cli.md).
 
 ## mbed Online Compiler
 
@@ -16,7 +16,7 @@ The mbed Online Compiler is our in-house IDE, and should be familiar to anyone w
 
 ## mbed Studio
 
-mbed Studio is an mbed Enabled IDE based on Cloud9 and offers a rich development environment. It is currently in Alpha and should be considered experimental. It can be tried by selecting 'mbed Studio' on the 'Import Program' dropdown.
+mbed Studio is an mbed Enabled IDE based on Cloud9 and offers a rich development environment. It is currently in alpha and should be considered experimental. It can be tried by selecting 'mbed Studio' from the 'Import Program' dropdown on our code samples.
 
 For more information, see the [mbed Studio page](studio.md).
 
