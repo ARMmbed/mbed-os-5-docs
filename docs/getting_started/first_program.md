@@ -5,8 +5,8 @@ We have an example application called [Blinky](https://github.com/ARMmbed/mbed-b
 
 You can try any of these tools:
 
-* [mbed Online Compiler](#blinky-on-mbed-online-compiler)
 * [mbed CLI](#blinky-on-mbed-cli)
+* [mbed Online Compiler](#blinky-on-mbed-online-compiler)
 * [mbed Studio](#blinky-on-mbed-studio)
 
 ## What the tools do
@@ -22,10 +22,6 @@ All of the development tools perform the same process:
 Please get a [developer account on mbed](https://developer.mbed.org/account/signup/).
 
 You might want to read the page [explaining how to connect your board to your computer](serial_communication.md) - especial if your'e using Windows.
-
-## Blinky on mbed Online Compiler
-TODO:
-import link to program
 
 ## Blinky on mbed CLI
 
@@ -83,6 +79,10 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 1. Press the reset button to start the program.
 
 You should see the LED of your platform turning on and off.
+
+## Blinky on mbed Online Compiler
+TODO:
+import link to program
 
 ## Blinky on mbed Studio
 
