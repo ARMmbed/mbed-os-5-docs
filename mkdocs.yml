@@ -17,7 +17,6 @@ pages:
 - ['advanced/config_system.md', 'OS concepts', 'Configuration system']
 - ['advanced/debugging.md', 'OS concepts', 'Debugging']
 - ['advanced/collab_versions.md', 'OS concepts', 'Collaboration and version control']
-- ['concepts/rtos.md', 'OS concepts', 'RTOS']
 - ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
 - ['concepts/memory.md', 'OS concepts', 'Memory models']
 - ['concepts/bootstrap.md', 'OS concepts', 'Bootstrap sequence']
