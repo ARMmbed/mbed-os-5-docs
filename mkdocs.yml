@@ -8,7 +8,6 @@ pages:
 - ['getting_started/first_program.md', 'Getting started', 'First application']
 - ['getting_started/serial_communication.md', 'Getting started', 'Connecting your device to a PC']
 - ['APIs/intro.md', 'Getting started', 'Writing applications with the mbed OS APIs']
-- ['getting_started/glossary.md', 'Getting started', 'Glossary']
 - ['dev_tools/options.md', 'Development tools', 'Development tool options']
 - ['dev_tools/cli.md', 'Development tools', 'mbed CLI']
 - ['dev_tools/online_comp.md', 'Development tools', 'mbed Online Compiler']
