@@ -31,3 +31,40 @@ The only thing you need is [an mbed developer account](https://developer.mbed.or
 | Ctrl + right arrow   | Go to beginning of the next word |
 | Ctrl + up arrow | Scroll up one row |
 | Ctrl + down arrow | Scroll down one row |                            
+
+
+### Ctrl key sequences
+
+| Shortcut   | Description                                       |
+|------------|---------------------------------------------------|
+| Ctrl + A  | Select all                                  |
+| Ctrl + B | Compile only (no download prompt) |
+| Ctrl + Shift + B | Compile all and download |
+| Ctrl + C | Copy (only selected text) |
+| Ctrl + Shift + C | Commit |
+| Ctrl + D | Compile and download |
+| Ctrl + Shift + D | Duplicate line |
+| Ctrl + E | Erase current line |
+| Ctrl + F | Find and replace |
+| Ctrl + Alt + F | Find in files |
+| Ctrl + Shift + F | Format code (selected text or current file) | 
+| Ctrl + H | Find and replace |
+| Ctrl + K | Find and replace | 
+| Ctrl + L | Change selected text to lower case |
+| Ctrl + R | Current file's revision history (must be in single file mode) |
+| Ctrl + S | Save current file |
+| Ctrl + Alt + S | Save as |
+| Ctrl + Shift + S | Save all |
+| Ctrl + U| Change select text to upper case |
+| Ctrl + V | Paste text from clipboard |
+| Ctrl + W | Close current file (doesn't work on Chrome |
+| Ctrl + Shift + W | Close all (doesn't work on Chrome |
+| Ctrl + X | Cut selected text |
+| Ctrl + Y | Redo |
+| Ctrl + Z | Undo |
+| Ctrl + / | Toggle line comment (using slashes) |
+| Ctrl + Shift + / | Toggle block comment (using /* ... */)| 
+
+
+
+ 
