@@ -27,10 +27,6 @@ PwmOut to pin p20. Because PwmOut is not available on pin p20, a run time error 
 **Siren Lights:** When a run time error is encountered, the board will flash its LEDs in a distinctive pattern to let you know that an error has occurred and that the program has stopped running.
 </span>
 
-<span style="text-align:center; display:block;">
-![Warning lights](/Going_Further/Images/Debug/FRDM_KL25Z.gif)![](/Adv_Dev/Images/Debug/LPC11U24.gif)![](/Going_Further/Images/Debug/LPC1768.gif)
-</span>
-
 When the program below starts a run time error is caused, leading to the siren lights. 
 
 ``Example of a run time error``
@@ -67,7 +63,6 @@ The mbed libraries contain some features for reporting runtime errors.
 The main things to use are:
 
 * ``printf()`` - Print a formatted message to the USB Serial Port (stdout default)
-
 * ``error()`` - Print a formatted message to the USB Serial Port, then die with "Siren Lights"
 
 <span style="background-color:lightgray; color:purple; display:block; height:100%; padding:10px">
@@ -159,7 +154,8 @@ All the different techniques mentioned previously are sometimes inefficient and 
 
 * It is very **ad hoc**. Code is temporarily added, to be removed as soon as the bug is solved. For the next bug, similar code is added...
 
-Try out the [mbed CMSIS-DAP interface with Keil MDK](http://mbed.org/handbook/CMSIS-DAP-MDK), if you need full debug capabilities:
+[TODO] Replace with top level debugging or export page
+Try out the [CMSIS-DAP interface with Keil MDK](http://mbed.org/handbook/CMSIS-DAP-MDK), if you need full debug capabilities:
 
 * set **breakpoints** to stop the program at some event or at a specified instruction to examine the current state.
 
