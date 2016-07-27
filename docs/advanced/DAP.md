@@ -36,7 +36,7 @@ For more information on configuring your host computer to use this feature, plea
 
 ### Git Hub repository for DAPLink
 
-TODO https://github.com/mbedmicro/DAPLink/blob/master/README.md|DAPLink Git repository
+TODO https://github.com/ARMmbed/DAPLink/blob/master/README.md|DAPLink Git repository
 
 
 
