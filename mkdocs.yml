@@ -13,7 +13,6 @@ pages:
 - ['dev_tools/online_comp.md', 'Development tools', 'mbed Online Compiler']
 - ['dev_tools/studio.md', 'Development tools', 'mbed Studio']
 - ['dev_tools/third_party.md', 'Development tools', 'Third party development tools']
-- ['advanced/targets.md', 'OS concepts', 'Targets']
 - ['advanced/config_system.md', 'OS concepts', 'Configuration system']
 - ['advanced/debugging.md', 'OS concepts', 'Debugging']
 - ['advanced/collab_versions.md', 'OS concepts', 'Collaboration and version control']
