@@ -4,7 +4,6 @@ docs_dir: docs
 
 pages:
 - ['index.md','Introduction to mbed OS 5.0 and the handbook']
-- ['getting_started/mbed_interface.md', 'Getting starts', 'How mbed works']
 - ['getting_started/what_need.md', 'Getting started', 'What you need']
 - ['getting_started/first_program.md', 'Getting started', 'First application']
 - ['getting_started/serial_communication.md', 'Getting started', 'Connecting your device to a PC']
@@ -14,6 +13,7 @@ pages:
 - ['dev_tools/online_comp.md', 'Development tools', 'mbed Online Compiler']
 - ['dev_tools/studio.md', 'Development tools', 'mbed Studio']
 - ['dev_tools/third_party.md', 'Development tools', 'Third party development tools']
+- ['getting_started/mbed_interface.md', 'Development tools', 'How mbed works']
 - ['advanced/config_system.md', 'OS concepts', 'Configuration system']
 - ['advanced/debugging.md', 'OS concepts', 'Debugging']
 - ['advanced/collab_versions.md', 'OS concepts', 'Collaboration and version control']
