@@ -1,1 +1,0 @@
-# Writing libraries for mbed OS
