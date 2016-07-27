@@ -23,3 +23,5 @@ pages:
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
+
+copyright: © ARM Ltd. Copyright 2016 – ARM mbed IoT Device Platform
