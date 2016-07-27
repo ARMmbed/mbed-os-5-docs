@@ -4,6 +4,7 @@ docs_dir: docs
 
 pages:
 - ['index.md','Introduction to mbed OS 5.0 and the handbook']
+- ['getting_started/mbed_interface.md', 'Getting starts', 'How mbed works']
 - ['getting_started/what_need.md', 'Getting started', 'What you need']
 - ['getting_started/first_program.md', 'Getting started', 'First application']
 - ['getting_started/serial_communication.md', 'Getting started', 'Connecting your device to a PC']
@@ -20,6 +21,5 @@ pages:
 - ['concepts/memory.md', 'OS concepts', 'Memory models']
 - ['concepts/bootstrap.md', 'OS concepts', 'Bootstrap sequence']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
-- ['advanced/mbed_interface.md', 'Advanced tutorials', 'The mbed interface']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
