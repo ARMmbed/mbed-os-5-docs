@@ -26,7 +26,7 @@ The ``.bin`` files the mbed microcontroller accepts are standard raw ARM binarie
 
 # The mbed Interface
 
-More information about the mbed Interface and the circuits on which it runs can be found in the HDK reference manual or on the DAPLink GitHub page. The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
+More information about the mbed Interface and the circuits on which it runs can be found in the HDK reference manual or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
 ## Connectivity
 
