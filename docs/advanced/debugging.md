@@ -1,8 +1,8 @@
-#Debugging
+# Debugging
 
-This guide examines some techniques for generating debug information to help find and fix problems with your code, and how to deal with problems that are being reported.
+This guide examines some techniques for generating debug information to help find and fix problems with your code, and how to deal with problems you see.
 
-##Compile time errors
+## Compile time errors
 
 Compile time errors and warnings are caused by incorrect syntax, or misuse of variables or functions. An error will prevent the compile process from completing (and therefore no binary file will be created). A warning will not prevent the binary from being created, but you should still review the warning as it may mean that your code is not going to do what you had intended.
 
@@ -14,24 +14,22 @@ Common errors are:
 
 Always tackle the very first error that is reported, as later errors might be as a result of the first one, and will disappear when the first one is corrected.
 
-If you are seeing a compile time error or warning that you do not understand, [Google](http://www.google.co.uk) will usually find explanations of the error message, or post to the mbed [Forum](http://developer.mbed.org/forum/).
+If you are seeing a compile time error or warning that you do not understand, Google will usually find explanations of the error message; you can also post a question to the mbed [forum](https://forums.mbed.com/).
 
-##Runtime errors
+## Run time errors
 
-Runtime errors are caused either by code that is correct but tries to do something that is invalid, or when malfunctioning hardware cannot be accessed.
+Run time errors are caused either by code that is correct but tries to do something that is invalid, or when malfunctioning hardware cannot be accessed.
 
-The example below shows a PwmOut interface being configured on pin p20. The PwmOut interface is being correctly used, and so the code compiles without warning or error. When the code runs, it tries to create a 
-PwmOut to pin p20. Because PwmOut is not available on pin p20, a run time error is triggered.
+The example below shows a PwmOut interface being configured on pin p20. The PwmOut interface is correctly used, and so the code compiles without warning or error. But when the code runs, it tries to create a PwmOut to pin p20. Because PwmOut is not available on pin p20, a run time error is triggered.
 
-<span style="background-color:lightgray; color:purple; display:block; height:100%; padding:10px">
-**Siren Lights:** When a run time error is encountered, the board will flash its LEDs in a distinctive pattern to let you know that an error has occurred and that the program has stopped running.
+<span class="tips">**Tip: Siren Lights:** When a run time error is encountered, the board flashs its LEDs in a distinctive pattern to let you know that an error has occurred and that the program has stopped running.
 </span>
 
-When the program below starts a run time error is caused, leading to the siren lights. 
+### Example: run time error
 
-``Example of a run time error``
+When the program below starts running on the board it causes a run time error, leading to the siren lights:
 
-```c
+```c++
 
 	#include "mbed.h"
 
@@ -46,31 +44,27 @@ When the program below starts a run time error is caused, leading to the siren l
 	}
 ```
 
-##Runtime bugs
+## Run time bugs
 
 When your code compiles and runs without error and warning, it still may not behave as you'd expect or hope. This is usually because the code you have written is correct, but not what you had intended. This is usually caused by the program flowing in a way you'd not intended because of a logical mistake or values being computed incorrectly due to an incorrect expression.
 
 Fortunately there are some useful techniques that you can apply to help find and correct these bugs:
 
-* Flash LEDs - Turn LEDs on and off, also to indicate where the program is.
+* Debug messages: print messages and variable values over the serial port, as [explained below](#debug-messaging).
+* Flash LEDs: turn LEDs on and off in response to state changes, and to indicate where the program is, as [explained below](#debugging-program-flow-control-with-leds). More information is available [in our Bluetooth Low Energy documents](https://docs.mbed.com/docs/ble-intros/en/latest/Introduction/Debugging/#the-quick-method-leds).
 
-* Debug messages - Print messages and variable values over the serial port.
+### Debug messaging
 
-##Debug messaging
-
-The mbed libraries contain some features for reporting runtime errors.
+The mbed libraries contain some features for reporting run time errors. You can print debug information over the USB serial port; this is generally the way to debug running applications on your board.
 
 The main things to use are:
 
-* ``printf()`` - Print a formatted message to the USB Serial Port (stdout default)
-* ``error()`` - Print a formatted message to the USB Serial Port, then die with "Siren Lights"
+* ``printf()``: print a formatted message to the USB Serial Port (stdout default).
+* ``error()``: print a formatted message to the USB Serial Port, then die with "Siren Lights".
 
-<span style="background-color:lightgray; color:purple; display:block; height:100%; padding:10px">
-**Debug to a serial console:** The debug functions mentioned above all cause debug information to be printed over the USB serial port. *This is generally the way to debug running programs on your mbed microcontroller.*
+For more information on using the USB Serial port, see the [Board to PC communication over USB](../getting_started/serial_communication.md) page.
 
-For more information on using the USB Serial port, see the [SerialPC](/Development/PC_Com/) page.
-
-``Example showing serial terminal debug messages``
+### Example: serial terminal debug messages
 
 ```c
 
@@ -88,11 +82,13 @@ For more information on using the USB Serial port, see the [SerialPC](/Developme
 	}
 ```
 
-##Debugging program flow control
+## Debugging program flow control with LEDs and printf()
 
 Most programs of a even a low level of sophistication will have loops, if-else and case statements, all of which make a decision based on some logic or arithmetic. If your program is not flowing as expected, you can used LEDs and print data values to determine why.
 
-Below is an example of how you might use LEDs to determine the flow of your program. In this example, the status of the button is being echoed to LED2, so it is clear to see if the program sees the button as being pressed. LED3 is set by the if-else statement, so it is clear how the program control flow is operating.
+### Using the LEDs
+
+Here's an example using LEDs to determine the flow of a program: the status of the button is echoed to LED2, so you can easily tell whether the program sees the button as pressed. LED3 is set by the if-else statement, so it is clear how the program control flow is operating:
 
 ```c
 
@@ -118,9 +114,7 @@ Below is an example of how you might use LEDs to determine the flow of your prog
 
 ##Debugging incorrect data values
 
-It is often useful to find out the values of variables in your program at a given time. The example is the same as the one above, except that we are are now using the serial port to print out the value of the AnalogIn. You might need to use this method if you are using a data value to determine the program flow.
-
-``Example showing variable value debugging``
+It is often useful to see the values of variables in your program at a given time. This example is the same as the one above, except that we are are now using the serial port to print out the value of the AnalogIn. You might need to use this method if you are using a data value to determine the program flow.
 
 ```c
 
@@ -144,25 +138,24 @@ It is often useful to find out the values of variables in your program at a give
 	}
 ```
 
-##What's next
+## What's next
 
 All the different techniques mentioned previously are sometimes inefficient and have strong disadvantages:
 
-* **Delays are introduced** in the code. So if a piece of code is time dependent, it can change the original behaviour of a program.
+* It considerably slows down the execution and introduces delays, so if a piece of code is time dependent, it can change the original behavior of a program.
 
-* It **slows down** considerably the execution.
+* It is very ad hoc. Code is temporarily added, to be removed as soon as the bug is solved. For the next bug, similar code is added again, then again, then again...
 
-* It is very **ad hoc**. Code is temporarily added, to be removed as soon as the bug is solved. For the next bug, similar code is added...
+A better solution might be using the [CMSIS-DAP interface with Keil MDK](http://mbed.org/handbook/CMSIS-DAP-MDK), if you need full debug capabilities:
 
-[TODO] Replace with top level debugging or export page
-Try out the [CMSIS-DAP interface with Keil MDK](http://mbed.org/handbook/CMSIS-DAP-MDK), if you need full debug capabilities:
+* Set breakpoints to stop the program at some event or at a specified instruction to examine the current state.
 
-* set **breakpoints** to stop the program at some event or at a specified instruction to examine the current state.
+* Step by step program execution to track the control flow.
 
-* **step by step** execute a program to track the control flow.
+* Check variables values.
 
-* **check variables values**.
+* Inspect and modify memory contents.
 
-* **inspect and modify memory** contents.
+## Further reading
 
-[TODO: link to debugging project?]
+You can find out more in our [debugging documentation](https://docs.mbed.com/docs/debugging-on-mbed/en/latest/).
