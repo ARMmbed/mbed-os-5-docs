@@ -21,6 +21,5 @@ pages:
 - ['concepts/bootstrap.md', 'OS concepts', 'Bootstrap sequence']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/mbed_interface.md', 'Advanced tutorials', 'The mbed interface']
-- ['advanced/writing_apps.md', 'Advanced tutorials', 'Writing applications']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
