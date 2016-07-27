@@ -23,6 +23,5 @@ pages:
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/mbed_interface.md', 'Advanced tutorials', 'The mbed interface']
 - ['advanced/writing_apps.md', 'Advanced tutorials', 'Writing applications']
-- ['advanced/writing_libs.md', 'Advanced tutorials', 'Writing libraries']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
