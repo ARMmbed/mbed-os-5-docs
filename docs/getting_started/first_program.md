@@ -1,7 +1,8 @@
 # Your first application
 
-TODO: LINK
-We have an example application called [Blinky](https://github.com/ARMmbed/mbed-blinky-morpheus) that you can use to get to know mbed OS and the development tools.
+We have an example application called Blinky that you can use to get to know mbed OS and the development tools. It's one of the simplest examples of mbed OS. It shows the use of a DigitalOut object to represent an LED and the non-blocking ``Thread::wait()`` call. This is good practice as if there were other threads, they could be scheduled and run while the first thread is waiting.
+
+
 
 You can try any of these tools:
 
@@ -28,6 +29,8 @@ You might want to read the page [explaining how to connect your board to your co
 mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
 
 ### Get Blinky
+
+[Blinky is on GitHub](https://github.com/ARMmbed/mbed-os-example-blinky), but you don't need to go through GitHub to get it into mbed CLI - mbed CLI can do that for you.
 
 From the command line, import the example:
 
@@ -81,8 +84,11 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 You should see the LED of your platform turning on and off.
 
 ## Blinky on mbed Online Compiler
-TODO:
-import link to program
+
+To get Blinky into the mbed Online Compiler, click the **Import to IDE** button below:
+
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/file/2757d7abb7d9/main.cpp) 
+
 
 ## Blinky on mbed Studio
 
