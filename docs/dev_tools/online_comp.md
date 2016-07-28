@@ -98,7 +98,7 @@ Click the name to change your board as needed:
 
 ## Video summary
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/L5TcmFFD0iw/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
 
 ## Keyboard shortcuts
 
