@@ -1,82 +1,86 @@
 # Collaboration and version control with the mbed Online Compiler
 
-## Collaboration
+The mbed Online Compiler offers collaboration and version control functions to help the community benefit from and improve individual work.
 
-### Terminology
+## Terminology
 
 Remote repository
-:	A library or program which is published on mbed.org.
+:	A library or program published on mbed.org.
 
 Local repository
-:	A library or program which is in your private workspace. 
+:	A library or program in your private workspace. 
 
 Commit
-:	Create a checkpoint within your program's local repository. This does not publish or make public your program
+:	Create a checkpoint within your program's local repository. This does not publish or make it public.
 
 Pull
-:	Copy changes from Remote repository to a Local repository in your workspace.
+:	Copy changes from a remote repository to a local repository in your workspace.
 
 Push
-:	Copy changes from Local repository to a Remote one.
+:	Copy changes from a local repository to a remote one.
 
 Fork
-:	Create Remote repository on mbed.org from imported Local repository (that may also contain local changes/modifications) under your profile.
+:	Create a remote repository on mbed.org from an imported local repository (that may also contain local changes and modifications). The fork is created under your profile.
 
 Publish
-:	This copies changes from a local repository to an existing remote one (push) or creates a new one (fork)
+:	Copy changes from a local repository to an existing remote one (push) or create a new one (fork).
 
 Update
-:	Pull from a Remote repository and [[/handbook/Compiler-Version-Control|switch]] your Local repository to the latest revision.
+:	Pull from a remote repository and switch your Local repository to the latest revision.
 
-### Basic collaboration
+## Basic collaboration
 
-The most basic (and the most popular) usage of the collaboration system is the traditional workflow where one author develops a project, multiple users import and use it.
+The most basic (and the most popular) usage of the collaboration system is the traditional workflow where one author develops a project, then multiple users import and use it.
 
-{{http://mbed.org/media/uploads/dan/author.png}}
+<span class="images">![](images/basic_collab.png)</span>
 
-When you import a repository, you are making a clone of a public repository in your private workspace. An imported repository can either be a whole program or a library for a program and can contain dependencies to other repositories. For example, a library may need another library in order to work. All dependencies will be imported for you automatically when you import a repository.
+When you import a repository, you are making a clone of a public repository in your private workspace. An imported repository can either be a whole program or a library for a program, and can contain dependencies to other repositories. For example, a library may need another library in order to work. All dependencies will be imported for you automatically when you import a repository.
 
-Once imported the Local repository in your workspace will be 'linked' to the Remote repository by URL to let you check it's status, receive new changes and even contribute code to it.
+Once imported, the local repository in your workspace will be 'linked' to the remote repository by URL to let you check its status, receive new changes and even contribute code to it.
 
-To import a repository, simply click the Import link on the repository on the mbed website, or use the Import button within the mbed Compiler. You can read more about importing on the [[/handbook/Importing-code|Importing code]] wiki page.
+To import a repository, simply click the Import link on the repository's page on the mbed website, or use the Import button within the mbed Compiler. You can read more about importing on the [mbed Online Compiler page](../dev_tools/online_comp.md).
 
-== Getting updates ==
-While browsing a program or a library, you will receive notification for new versions in the [[/handbook/mbed-Compiler-Getting-Started#browser-panel|Browser panel]] under the Summary tab:
+## Getting updates
 
-[[/media/uploads/screamer/browser-panel-updates.png|{{/media/uploads/screamer/browser-panel-updates.png?v=3|Click to enlarge|600}}]]
+While browsing a program or a library, you will receive notifications of new versions in the Browser panel under the Summary tab:
 
-It is also possible to view detailed information about the new changes in the [[/handbook/Compiler-Version-Control|Revisions panel]]. The top list represents the Local repository revisions, where revision numbers marked in green are outgoing revisions, currently not present in the Remote repository (see this [[/media/uploads/screamer/publish-menu-fork.png?v=3|image]]). The bottom list represents the Remote repository revisions currently not present in your Local repository. Just like with local revisions, you can click on revisions in the remote list to see changesets and individual changes per file.
+<span class="images">![](images/updates.png)</span>
 
-{{/media/uploads/screamer/revision-history-update.png?v=4}} 
+It is also possible to view detailed information about the new changes in the Revisions panel. The top list represents the local repository revisions, where revision numbers marked in green are outgoing revisions, currently not present in the remote repository:
 
-To get the latest version of the code, simply click the 'Update' button.
+<span class="images">![](images/green_revisions.png)</span>
 
-== Forking a repository ==
+The bottom list represents the remote repository revisions currently not present in your local repository. Just like with local revisions, you can click on revisions in the remote list to see change sets and individual changes per file.
 
-When you add changes to an imported repository in your private workspace, you might want to publish them for others to use.\\
-Unless you are the author of the imported repository or have developer access (see [[/handbook/Collaboration/Multiple-authors|working with multiple authors]]), you would be forced to fork (or re-publish).
+<span class="images">![](images/incoming_revisions.png)</span>
 
-Open the context menu of the imported program or library and click the 'Publish' as shown below:
+To get the latest version of the code, simply click the **Update** button.
 
-{{/media/uploads/screamer/publish-menu-fork.png?v=3}}
+## Forking a repository
 
-You will be prompted to publish to the linked Remote repository:
+When you add changes to an imported repository in your private workspace, you might want to publish them for others to use.
 
-{{/media/uploads/screamer/publish-dialog.png?v=2}} 
+Unless you are the author of the imported repository or have developer access (see [Multiple Authors](mult_auth.md)), you will be forced to fork (or re-publish).
 
-As you do not have permission to publish to the repository, click the "Fork..." button.
+1. Open the context menu of the imported program or library and click **Publish**:
 
-{{/media/uploads/screamer/publish-fork.png?v=2}} 
+	<span class="images">![](images/publish.png)</span>
 
-This will publish the repository in your profile on the mbed.org website, along with your changes.
+1. You are prompted to publish to the linked remote repository:
 
-The forking process is identical to the [[/handbook/Publishing-code|code publishing]] workflow/interface with the exception that the forked repository will be recognized as a fork of the original/imported one:
+	<span class="images">![](images/publish_prompt.png)</span>
 
-[[/media/uploads/screamer/fork-published.png|{{/media/uploads/screamer/fork-published.png?v=4|Click to enlarge|600}}]]
+1. As you do not have permission to publish to the repository, click the **Fork...** button:
 
-<<warning title="Notice">>
-When you fork a repository, the Local repository in your workspace will be linked to the forked Remote repository - the URL changes to the forked repository URL. You can change the URL by clicking the pencil icon next to the URL in the [[/handbook/Compiler-Version-Control|Revisions panel]].
-<</warning>>
+	<span class="images">![](images/fork.png)</span>
+
+1. Your repository, with all its changes, is published to your profile on the mbed.org website.
+
+The forking process is identical to the [code publishing](publishing_code.md) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
+
+<span class="images">![](images/fork_indication.png)</span>
+
+<span class="notes">**Note:** When you fork a repository, the Local repository in your workspace will be linked to the forked Remote repository - the URL changes to the forked repository URL. You can change the URL by clicking the pencil icon next to the URL in the [[/handbook/Compiler-Version-Control|Revisions panel]].</span>
 
 **Once the fork is complete you can send a Pull Request to the ancestor (imported) repository to pull from your fork. This is covered in the [[/handbook/Collaboration/Pull-requests|Pull Requests]] wiki page.**
 
