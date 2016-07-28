@@ -18,6 +18,7 @@ pages:
 - ['advanced/debugging.md', 'OS concepts', 'Debugging']
 - ['advanced/collab_versions.md', 'OS concepts', 'Collaboration and version control']
 - ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
+- ['concepts/memory_model.md', 'OS concepts', 'Memory model']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/versions.md', 'Advanced tutorials', 'Version control']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
