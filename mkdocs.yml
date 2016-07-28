@@ -15,7 +15,7 @@ pages:
 - ['dev_tools/third_party.md', 'Development tools', 'Third party development tools']
 - ['getting_started/mbed_interface.md', 'Development tools', 'How mbed works']
 - ['collab/collab_intro.md', 'Collaboration and version control', 'Introduction']
-- ['collab/versions.md', 'Collaboration', 'Version control']
+- ['collab/versions.md', 'Collaboration and version control', 'Version control']
 - ['advanced/config_system.md', 'OS concepts', 'Configuration system']
 - ['advanced/debugging.md', 'OS concepts', 'Debugging']
 - ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
