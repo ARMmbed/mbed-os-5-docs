@@ -244,6 +244,28 @@ Other than this, `target_overrides` works exactly like it does for libraries. Ke
 
 It is an error for the application configuration to override configuration parameters that were not defined.
 
+### Overriding cumulative target attributes
+
+Target configurations contain a set of cumulative attributes that can be manipulated in the application configuration. These attributes can be overriden as a normal configuration parameter, or manipulated with the special `attribute_add` and `attribute_remove` meta-attributes.
+
+Cumulative attributes:
+- features: List of features which will be compiled into the resulting binary and available at runtime. Determines the FEATURE directories included during compilation. These are also emitted as FEATURE macros.
+- device_has: List of hardware components available on the target. These are emitted as DEVICE_HAS macros.
+- extra_labels: List of target labels which determine the TARGET directories included during compilation. These are also emitted as TARGET macros.
+- macros: List of target-specific macros that are defined during compilation.
+
+For example, an application may want to remove features with extra space or runtime cost. This `mbed_app.json` will disable the IPV4 network stack. Attempting to use this network stack will result in a compilation error:
+
+```
+{
+    "target_overrides": {
+        "K64F": {
+            "target.features_remove": ["IPV4"]
+        }
+    }
+}
+```
+
 ### Custom targets
 
 Application configuration can optionally define application-specific targets. These are mbed targets that are needed just to compile this specific application, so it doesn't make sense to add them to the list of official mbed targets; on the contrary, since they're part of `mbed_app.json`, they're versioned together with the application and are only known by the application. 
@@ -281,35 +303,58 @@ For `myapp` above:
 
 ## Using configuration data in the code
 
-When compiling, the configuration system automatically generates macro definitions for the configuration parameters and all the macros defined in libraries and the application in their `macros` keys. These definitions are appended to the compiler's command line.
-
-The names of the macros for the configuration parameter (unless explicitly specified by `macro_name`) are prefixed by **MBED_CONF_**, followed by the full (prefixed) name of the parameter, capitalized and converted to a valid C macro name (if needed).
-
-When compiling `myapp` for target `Base`, the following extra macros are generated (not necessarily in this order):
+When compiling, the configuration system will automatically generate macro definitions for the configuration parameters and all the macros defined in libraries and the application in their `macros` keys. These definitions will be written in a file named `mbed_config.h` located in the build directory. When compiling `myapp` for target `Base`, the `mbed_config.h` file will look like this (note that the order of the definitions might be different):
 
 ```
--DMBED_CONF_MYAPP_WELCOME_STRING="Hello!"
--DMBED_SERIAL_UART_SPEED=9600
--DMBED_CONF_TARGET_STACK_SIZE=128
--DINTERNAL_GPTMR_PERIOD=100
--DMBED_CONF_MYLIB_BUFFER_SIZE=1024
--DMBED_CONF_MYLIB_QUEUE_SIZE=10
--DMYMOD_MACRO1
--DMYMOD_MACRO2="TEST"
+// Automatically generated configuration file.
+// DO NOT EDIT, content will be overwritten.
+
+#ifndef __MBED_CONFIG_DATA__
+#define __MBED_CONFIG_DATA__
+
+// Configuration parameters
+#define MBED_CONF_MYAPP_WELCOME_STRING "Hello!" // set by application
+#define MBED_SERIAL_UART_SPEED         9600     // set by application[Base]
+#define MBED_CONF_TARGET_STACK_SIZE    128      // set by target
+#define INTERNAL_GPTMR_PERIOD          100      // set by application[*]
+#define MBED_CONF_MYLIB_BUFFER_SIZE    1024     // set by library:mylib
+#define MBED_CONF_MYLIB_QUEUE_SIZE     10       // set by library:mylib
+// Macros
+#define MYMOD_MACRO1                            // defined by library:mylib
+#define MYMOD_MACRO2                   "TEST"   // defined by library:mylib
+
+#endif
 ```
 
-When compiling for `Derived`, the following extra macros are generated:
+When compiling for `Derived`, `mbed_config.h` will look like this:
+
 
 ```
--DMBED_CONF_MYAPP_WELCOME_STRING="Hello!"
--DMBED_SERIAL_UART_SPEED=2400
--DMBED_CONF_TARGET_STACK_SIZE=256
--DMBED_CONF_TARGET_MY_OWN_CONFIG=0
--DINTERNAL_GPTMR_PERIOD=100
--DMBED_CONF_MYLIB_BUFFER_SIZE=128
--DMBED_CONF_MYLIB_QUEUE_SIZE=20
--DMYMOD_MACRO1
--DMYMOD_MACRO2="TEST"
+// Automatically generated configuration file.
+// DO NOT EDIT, content will be overwritten.
+
+#ifndef __MBED_CONFIG_DATA__
+#define __MBED_CONFIG_DATA__
+
+// Configuration parameters
+#define MBED_CONF_MYAPP_WELCOME_STRING "Hello!" // set by application
+#define MBED_SERIAL_UART_SPEED         2400     // set by application[*]
+#define MBED_CONF_TARGET_STACK_SIZE    256      // set by target
+#define MBED_CONF_TARGET_MY_OWN_CONFIG 0        // set by target
+#define INTERNAL_GPTMR_PERIOD          100      // set by application[*]
+#define MBED_CONF_MYLIB_BUFFER_SIZE    128      // set by library:mylib[NXP]
+#define MBED_CONF_MYLIB_QUEUE_SIZE     20       // set by library:mylib[NXP]
+// Macros
+#define MYMOD_MACRO1                            // defined by library:mylib
+#define MYMOD_MACRO2                   "TEST"   // defined by library:mylib
+
+#endif
 ```
 
 <span class="notes">**Note**: The system does not generate a macro definition for a parameter that doesn't have a value.</span>
+
+The names of the macros for the configuration parameter (unless explicitly specified by `macro_name`) are prefixed by **MBED_CONF_**, followed by the full (prefixed) name of the parameter, capitalized and converted to a valid C macro name (if needed).
+
+`mbed_config.h` will be included automatically by the toolchain in all compiled sources, so you'll have access to the configuration data without having to include `mbed_config.h` in your source files.
+
+*Do not edit mbed_config.h manually*. It will be overwritten the next time you compile or export your project and all your changes will be lost.
