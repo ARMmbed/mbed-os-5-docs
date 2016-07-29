@@ -1,28 +1,32 @@
 # Publishing code
 
-If you want to share your work, you can click Publish from the right-click menu on your workspace program. This **copies** your program or library from your **private** workspace to your **public** mbed website profile.
+Publishing copies your program or library from your **private** workspace to your **public** mbed website profile.
 
-{{/media/uploads/screamer/publish-menu.png}} 
+If you want to share your work:
 
-You will be prompted to commit your work if you have uncommitted changes. 
+1. Click **Publish** from the right-click context menu in the mbed Online Compiler:
 
-Then, if this is the first time you have published this program or library, you will see a dialog like this one:
+	<span class="images">![](images/publish.png)</span>
 
-{{/media/uploads/sam_grove/ide_publish2.jpg}} 
+1. If you have uncommitted changes, you will be prompted to commit your work. 
 
-Complete a description of what you are publishing.
+1. If this is the first time you have published this program or library, you will see a dialog like this one:
 
-=== Where to Publish ===
-You have the choice to publish your repository to your user account or to a team that you are a member of. When publishing to a team, all members of that team will be able to collaborate on your work with the permissions managed by the team as well as the repository. This choice is presented in the IDE and labeled as **"Publish In"**. You should be a member of a team before trying to publish to it. **Send Join Request** on the teams homepage if they have public enrollment enabled.
+	<span class="images">![](images/publish_details.png)</span>
 
-=== Repository Visibility ===
-There are currently three options for choosing who can see your repositories.
+1. Enter a description of what you are publishing.
 
- * **Public** -This is a normal repository, which is seen in the listings of code on the site 'Code' and in your personal profile. It's readable by everyone, but only writable by you (or people you add).
+1. Select a **Publish in** option. You have the choice to publish your repository to your user account or to a team that you are a member of. When publishing to a team, all members of that team will be able to collaborate on your work with the permissions managed by the team as well as the repository. 
 
- * **Public (unlisted)** - This is another type of public repository - the repository is public and anyone can view it, but it's not advertised in any listings. Users will need to know the URL of the repository first. 
+	Note: You must be a member of a team before trying to publish to it. You can **Send a Join Request** on the team's homepage if it has public enrollment enabled.
 
-* **Private** - This only allows the owner and any member added on the repository admin settings "Developers" to see and access the repository. Anyone else gets a page error message when trying to access, even if they have the URL
+1. Select **Visibility**: This controls who can see your repository. There are three options:
+
+	 * **Public** -This is a normal repository, which is seen in the listings of code on the site 'Code' and in your personal profile. It's readable by everyone, but only writable by you (or people you add).
+
+	 * **Public (unlisted)** - This is another type of public repository - the repository is public and anyone can view it, but it's not advertised in any listings. Users will need to know the URL of the repository first. 
+
+	* **Private** - This only allows the owner and any member added on the repository admin settings "Developers" to see and access the repository. Anyone else gets a page error message when trying to access, even if they have the URL
 
 
 Once the form is complete, hit "OK".
