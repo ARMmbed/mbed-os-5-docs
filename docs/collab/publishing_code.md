@@ -2,6 +2,12 @@
 
 Publishing copies your program or library from your **private** workspace to your **public** mbed website profile.
 
+The public copy of your repository is the home of your project on mbed. This is the place for:
+
+* Documentation about your project.
+* Guides on how to use it.
+* Discussion by users of your project.
+
 If you want to share your work:
 
 1. Click **Publish** from the right-click context menu in the mbed Online Compiler:
@@ -22,25 +28,16 @@ If you want to share your work:
 
 1. Select **Visibility**: This controls who can see your repository. There are three options:
 
-	 * **Public** -This is a normal repository, which is seen in the listings of code on the site 'Code' and in your personal profile. It's readable by everyone, but only writable by you (or people you add).
+	 * **Public**: For a normal repository. It will be visible in the site code listings and in your personal profile. It's readable by everyone, but only writable by you (or people you add).
 
-	 * **Public (unlisted)** - This is another type of public repository - the repository is public and anyone can view it, but it's not advertised in any listings. Users will need to know the URL of the repository first. 
+	 * **Public (unlisted)**: A sub-type of public; the repository is public and anyone can view it, but it's not advertised in any listings. Users will need to know the URL of the repository to be able to reach it. 
 
-	* **Private** - This only allows the owner and any member added on the repository admin settings "Developers" to see and access the repository. Anyone else gets a page error message when trying to access, even if they have the URL
+	* **Private**: Only you (the owner), or users you add, can see and access the repository. To allow users to see it, use the repository's Admin settings. Users you *don't* add will not be able to see the repository, even if they have the URL. 
 
+1. Click OK. 
 
-Once the form is complete, hit "OK".
+That copies your private repository to the mbed public website, where other users can import it. It also copies a reference to any libraries you used in your code; if those libraries are not published, you will be prompted to publish them. 
 
-That will copy your private repository to the mbed public website, where other users can import it. It also copies a reference to any libraries you may have used in your code, so if those libraries are not published it will also prompt you to publish those libraries. The end result is that a published repository is an //exact copy// of your program in your workspace. This is important to ensure that the code works as expected when another user imports your code.
+The end result is that a published repository is an **exact copy** of your program or library as it exists in your workspace. This ensures that the code works as expected when another user imports your code.
 
-{{/media/uploads/screamer/website-import1-sized.png?v=3}} 
-
-The public copy of your repository is the home of your project on mbed. This is the place for:
-
-* Documentation about your project (see [[API Documentation]])
-* Guides on how to use it
-* Discussion by users of your project
-
-== Read more ==
-
-[[Collaboration|Full code publishing documentation ]]
+<span class="images">![](images/published_repo.png)</span>
