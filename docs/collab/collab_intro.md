@@ -44,7 +44,7 @@ To import a repository, simply click the Import link on the repository's page on
 
 While browsing a program or a library, you will receive notifications of new versions in the Browser panel under the Summary tab:
 
-<span class="images">![](images/updates.png)</span>
+<span class="images">![](images/udpates.png)</span>
 
 It is also possible to view detailed information about the new changes in the Revisions panel. The top list represents the local repository revisions, where revision numbers marked in green are outgoing revisions, currently not present in the remote repository:
 
@@ -80,44 +80,48 @@ The forking process is identical to the [code publishing](publishing_code.md) wo
 
 <span class="images">![](images/fork_indication.png)</span>
 
-<span class="notes">**Note:** When you fork a repository, the Local repository in your workspace will be linked to the forked Remote repository - the URL changes to the forked repository URL. You can change the URL by clicking the pencil icon next to the URL in the [[/handbook/Compiler-Version-Control|Revisions panel]].</span>
+<span class="notes">**Note:** When you fork a repository, the local repository in your workspace is linked to the forked remote repository - the URL changes to the forked repository's URL. You can change the URL by clicking the pencil icon next to the URL in the Revisions panel.</span>
 
-**Once the fork is complete you can send a Pull Request to the ancestor (imported) repository to pull from your fork. This is covered in the [[/handbook/Collaboration/Pull-requests|Pull Requests]] wiki page.**
+**Once the fork is complete you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](pull_requests.md) page.**
 
-== Updating from a fork ==
+## Updating from a fork
 
-If someone forks one of your repositories and modifies it, you can easily pull in any changes they have made into your own workspace. First click the 'Update From ...' button as shown below:
+If someone forks one of your repositories and modifies it, you can easily pull in any changes they have made into your own workspace. 
 
-{{/media/uploads/screamer/revision-history-update-from.png?v=2}} 
+1. Click the 'Update From ...' button:
 
-Then, enter the URL of their published repository you want to pull changes from.
+	<span class="images">![](images/update_from.png)</span>
 
-{{/media/uploads/screamer/update-from-dialog.png?v=4}}  
+1. Enter the URL of the published repository you want to pull changes from:
 
-Once you click OK, all their changes will pulled into your Local repository.
+	<span class="images">![](images/repo_url.png)</span>
 
-<<warning title="Notice">>
-This won't change the URL of your Local repository.
-<</warning>>
+1. Click OK. The changes are pulled into your local repository.
 
-== Comparing with a fork ==
+<span class="notes">**Note:** This won't change the URL of your local repository.</span>
 
-The [[/handbook/Compiler-Version-Control|Revisions panel]] lets you compare Local repository with Remote one if they are 'related'. The term 'related repositories' means that either repository is ancestor to the other through direct or indirect relationship (e.g. fork of the fork of the fork).
+## Comparing with a fork
 
-To compare Local repository with Remote one, open the [[/handbook/Compiler-Version-Control|Revisions panel]] and click "Compare WIth ..." button located on the bottom panel like shown here:
+The Revisions panel lets you compare a local repository with a remote one, if they are 'related'. The term 'related repositories' means that one repository is the ancestor of the other, through direct or indirect relationship (for example, a fork of the fork of the fork).
 
- {{/media/uploads/screamer/revision-history-compare.png}}
+Comparing repositories doesn't apply any actions or changes to your local repository, so you can safely review the remote revisions without affecting your local work.
 
-Then, enter the URL of the Remote repository you want to compare with.
+To compare the local repository with the remote one:
 
-{{/media/uploads/screamer/compare-with-dialog.png?v=3}}
+1. Open the Revisions panel and click the "Compare WIth ..." button on the bottom panel:
 
-Comparing repositories doesn't apply any actions or changes to your Local repository, so you can safely review the remote revisions without affecting your local work.
+	<span class="images">![](images/compare_repo.png)</span>
 
-Once you click OK in the dialog, both repositories relativity will be validated and if successful some UI elements in the Revisions panel will be changed to reflect the comparison mode:
+1. Enter the URL of the Remote repository you want to compare with.
 
-{{/media/uploads/screamer/revision-history-comparing.png}}
+	<span class="images">![](images/repo_url_compare.png)</span>
 
-You can view remote changes by clicking on revisions in the bottom (remote) panel and once happy with them you can pull individual revision through 'Pull this revision' context menu item or by simply dragging and dropping them in the upper (local) panel.
+1. Click OK. The repositories are compared, and the Revisions panel reflects the comparison mode:
 
-Alternatively you can pull all changes via the 'Pull All' button or pull and switch to the latest revision via the 'Update' button as you would normally do in non-comparison mode (see [[/handbook/Collaboration/Getting-started#getting-updates|Getting updates]]).
+	<span class="images">![](images/comparing_repos.png)</span>
+
+You can view the remote changes by clicking on revisions in the bottom (remote) panel. You can then
+
+* Pull individual revision through the **Pull this revision** context menu item, or by dragging and dropping them to the upper (local) panel.
+* Pull all changes using the **Pull All** button.
+* Pull and switch to the latest revision using the **Update** button as you would normally do in non-comparison mode.
