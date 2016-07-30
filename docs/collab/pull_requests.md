@@ -32,7 +32,7 @@ To create a pull request:
 
 The pull request is added to the **Pull Requests** page of the repository, and an e-mail is sent to the repository owners with the title and description you specified.
 
-	<span class="images">![](images/pull_request_created.png)</span>
+<span class="images">![](images/pull_request_created.png)</span>
 
 ### Editing an existing pull request
 
