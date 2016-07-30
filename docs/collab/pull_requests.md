@@ -1,99 +1,123 @@
 # Pull requests
 
-<<warning title="Notice">>
-This article covers features that are currently available on beta mode of the mbed Online Tools. If you are interested in beta testing, open [[http://mbed.org/betamode/]] and activate it.
-<</warning>>
+A pull request lets you tell others about changes you've added to a fork of their (or ancestor) repository, effectively granting them permission to include and use your code in their code base. Once the pull request is created, the other party can review, accept or reject the set of changes, discuss further modifications and even add follow-up changes or merges.
 
-A pull request lets you tell others about changes you've added to [[/handbook/Collaboration/Getting-started#forking-a-repository|a fork]] of their (or ancestor) repository, effectively granting them permission to include and use your code in their code base. Once the pull request is created, the other party can review, accept or reject the set of changes, discuss further modifications and even add follow-up changes or merges.
+Think of pull requests as a simplified [fork and update](collab_intro.md) workflow, where the changes contributed by non-repository developers are being moderated by the repository author(s).
 
-Think of pull requests as for simplified [[/handbook/Collaboration/Getting-started#forking-a-repository|fork and update]] workflow, where the changes contributed by non-repository developers are being moderated by the repository author(s).
+## Day to day usage
 
-== Day to day usage ==
+An important thing to know about pull requests is that they can only exist between related repositories. The term 'related repositories' means that either repository is ancestor or sibling to the other through direct or indirect relationship (like a fork of the fork of the fork). Pull requests usually originate from a forked repository to ancestor repository, though the functionality is flexible and allows pull requests from ancestor repository to a forked repository (for cases where the original author wants to contribute later added code to a fork).
 
-An important thing to know about pull requests is that they can only exist between related repositories. The term 'related repositories' means that either repository is ancestor or sibling to the other through direct or indirect relationship (e.g. fork of the fork of the fork). Pull requests usually originate from a forked repository to ancestor repository, though the functionality is flexible and allows pull requests from ancestor repository to a forked repository for cases where the original author wants to contribute later added code to a fork.
-
-=== Creating a pull request ===
-
-When you publish a fork of another repository, the mbed Developer Site will display the ancestor repository under repository details:
-
-[[/media/uploads/screamer/fork-published.png|{{/media/uploads/screamer/fork-published.png?v=6|Click to enlarge|600}}]]
-
-An additional "Create Pull Request" button will be displayed on top that is only visible to you and other repository authors (if any).
-
-Click it and you'll be taken to the "Create Pull Request" page, where the URLs of the forked and the ancestor repository will be prefilled like shown below:
-
-[[/media/uploads/screamer/pull-request-create.png|{{/media/uploads/screamer/pull-request-create.png?v=2|Click to enlarge|600}}]]
-
-You can change the remote repository URL if you want to send a pull request to another related repository. The form will validate the repository URL addresses as you type or paste, and it will warn if either of them is wrong, missing or unrelated. It will also check whether the forked repository (on left) has changes that aren't present in the remote repository (on right).
-
-Add a suitable title and description that summarize the set of changes they should expect and specify any additional information they might find useful. It is also a good place to describe any licensing matter. As always, being polite goes a long way and they might even add you as author to their repository!
-
-Click the "Send Pull Request" button when ready and the pull request will be added to the "Pull Requests" page of their repository, which will also send them an email notification with the title and description you specified.
-
-[[/media/uploads/screamer/pull-request-created.png|{{/media/uploads/screamer/pull-request-created.png?v=1|Click to enlarge|600}}]]
+## Creating a pull request
 
 All pull requests are created and recorded against the remote repository, the one receiving the modifications if the pull request is accepted.
 
-<<warning title="Notice">>
-Pull requests are 'limited' to the latest revision at the moment of sending. This means that you can publish more changes to your repository and the other party will only see the changes that were available when the pull request was created. To update your pull request to the latest revision, click the "Edit" button on the pull request page and check "Update request to latest revision(s)?" checkbox before you finish editing it. The other party will be notified that you edited the pull request. 
-<</warning>>
+### Creating a new request
 
-=== Managing a pull request ===
+To create a pull request:
 
-When a pull request is sent to a repository to which you're author or co-author, you would receive an email notification with the pull request details and an http link to the pull request page. Alternatively, you can visit the repository page and click on the "Pull Requests" tab:
+1. When you publish a fork of another repository, the mbed Developer Site displays the ancestor repository under **Repository details**. If you are the repository owner, an additional **Create Pull Request** button will be displayed on top.
 
-[[/media/uploads/screamer/pull-request-list.png|{{/media/uploads/screamer/pull-request-list.png?v=3|Click to enlarge|600}}]]
+	<span class="images">![](images/repo_details.png)</span>
 
-This will only list the open pull requests. To view all pull requests, including the closed ones (accepted or rejected) click the "Show all pull requests" button.
+1. Click the **Create Pull Request** button. The **Create Pull Request** page opens, showing the URLs of the forked and the ancestor repositories:
 
-On each pull request page you can discuss changes, coding standards etc before accepting or rejecting it, but once closed you won't be able to add more comments.
+	<span class="images">![](images/create_pull_request.png)</span>
 
-[[/media/uploads/screamer/pull-request-review.png|{{/media/uploads/screamer/pull-request-review.png?v=4|Click to enlarge|600}}]]
+1. You can change the remote repository URL if you want to send a pull request to another related repository. The form will validate the repository URL addresses as you type or paste, and will warn if either of them is wrong, missing or unrelated. It will also check whether the forked repository (on the left) has changes that aren't present in the remote repository (on the right).
 
-To quickly close a pull request without reviewing it, click the "Close" button.
+1. Add a suitable title and description that summarize the set of changes in the pull request, and specify any additional information the repository owners might find useful. It is also a good place to describe any licensing matters. As always, being polite goes a long way and they might even add you as author to their repository!
 
-=== Reviewing a pull request ===
+1. Click the **Send Pull Request** button.
 
-Most online services that offer source code and version control hosting let you review and merge pull requests.\\
-We made a step further by letting you review, compile, test and add more changes if necessary before accepting a pull request by harnessing the power of the mbed Online Compiler.
+The pull request is added to the **Pull Requests** page of the repository, and an e-mail is sent to the repository owners with the title and description you specified.
 
-To review a pull request click the "Review" button on the pull request page (like shown above) and the mbed Online Compiler will open in a new browser tab. If you already have the mbed Compiler open, then switch to that tab.
+	<span class="images">![](images/pull_request_created.png)</span>
 
- {{/media/uploads/screamer/pull-request-import.png}}
+### Editing an existing pull request
 
-To review a pull request you need to import it in your workspace as a separate program or a library, so it won't interfere with the codebase of your original program, letting you to freely and safely experiment with the changes. The mbed Compiler will suggest an import name based on your repository name and a '_pullrequest' suffix to remind you that this was imported as part of a pull request.
+Pull requests are 'limited' to the latest revision at the moment of sending. This means that you can publish more changes to your repository and the other party will only see the changes that were available when the pull request was created. 
 
-Once you click "Import" the pull request will be imported in your workspace and the Revisions panel will open:
+To update your pull request to the latest revision:
 
-{{/media/uploads/screamer/revision-history-pullrequest.png}} 
+1. Click the **Edit** button on the pull request page.
+1. Check the **Update request to latest revision(s)?** checkbox.
+1. Submit the edit. The other party is notified that you edited the pull request. 
 
-Newly introduced revisions will be marked in green (like shown above). These are the proposed changes, the ones you are requested to pull. To review individual changes click on the files list on right. 
+## Managing a pull request you receive 
 
-The mbed Compiler will remember the pull request status of an imported program or library across sessions, so you can always close the Revision History panel and continue the review later on. For example you can open one of the changed files in the Editor, click "Compile" to check whether their code compiles successfully and if it does, you can download and test it on your mbed-enabled device.
+### Viewing pull requests 
 
-==== Accepting a pull request ====
+When a pull request is sent to a repository to which you're author or co-author, you receive an email notification with the pull request details and a link to the pull request page. 
 
-Click the "Accept" button in the bottom panel and an accept confirmation dialog will appear:
+You can also see all existing pull requests by visiting the repository page and clicking on the **Pull Requests** tab:
 
-{{/media/uploads/screamer/pull-request-accept.png}} 
+<span class="images">![](images/open_pull_requests.png)</span>
 
-This will publish their changes and your later added changes (if any) altogether in your repository and mark the pull request as accepted. 
+<span class="tips">**Tip:** This will only list the open pull requests. To view all pull requests, including the closed ones (accepted or rejected) click the **Show all pull requests** button.</span>
 
-{{/media/uploads/screamer/pull-request-accepted.png}} 
+On each pull request page you can discuss changes, coding standards and so on before accepting or rejecting the request, but once closed you won't be able to add more comments.
 
-[[/media/uploads/screamer/pull-request-closed.png|{{/media/uploads/screamer/pull-request-closed.png?v=1|Click to enlarge|600}}]]
+<span class="images">![](images/review_pull_request.png)</span>
+
+To quickly close a pull request without reviewing it, click the **Close** button.
+
+### Reviewing a pull request
+
+Most online services that offer source code and version control hosting let you review and merge pull requests.
+We went a step further by letting you review, compile, test and add more changes before accepting a pull request, by harnessing the power of the mbed Online Compiler.
+
+You'll need to import a pull request to your mbed Online Compiler workspace as a separate program or library, so it won't interfere with the codebase of your original program. You can then freely and safely experiment with the changes.
+
+To review a pull request:
+
+1. Click the **Review** button on the pull request page (as shown above). The mbed Online Compiler opens in a new browser tab; if you already have the mbed Compiler open, switch to that tab.
+
+1.  The mbed Compiler suggests an import name based on your repository name and a '_pullrequest' suffix, to remind you that this was imported as part of a pull request. You're free to change the name:
+
+	<span class="images">![](images/import_pull_request.png)</span>
+
+1. Click "Import".
+
+1. The pull request is imported to your workspace and the Revisions panel opens:
+	
+	<span class="images">![](images/revision_history_pull_request.png)</span>
+
+Newly introduced revisions are marked in green. These are the proposed changes - the ones you are being asked to pull. To review individual changes, click on the files list on the right. 
+
+The mbed Online Compiler remembers the pull request status of an imported program or library across sessions, so you can always close the Revision History panel and continue the review later on. For example, you can open one of the changed files in the Editor, click **Compile** to check whether their code compiles successfully and if it does, you can download and test it on your mbed-enabled device.
+
+### Accepting a pull request
+
+Click the **Accept** button in the bottom panel and an accept confirmation dialog opens:
+
+<span class="images">![](images/accept_pull_request.png)</span>
+
+You can clean up the imported program by checking the **Delete this program when complete (cleanup)** button.
+
+Accepting a pull request publishes to your repository both the contents of that pull request, and any changes you made to the pull request. It also marks the pull request as accepted:
+
+<span class="images">![](images/pull_request_accepted.png)</span>
+
+<span class="images">![](images/pull_request_closed.png)</span>
 
 
-==== Rejecting a pull request ====
+### Rejecting a pull request
 
-If you choose to reject the pull request, click the "Reject" button in the bottom panel and a reject confirmation dialog will appear:
+If you choose to reject the pull request:
 
-{{/media/uploads/screamer/pull-request-reject.png?v=3}}
+1. Click the **Reject** button in the bottom panel. A confirmation dialog opens:
 
-This requires you to enter a comment and once you click "Reject", the comment will be posted on the pull request page on your behalf and the pull request will be marked as rejected.
+	<span class="images">![](images/reject_pull_request.png)</span>
 
-<<warning title="Notice">>
-If you're not satisfied with their code you can always attempt to enhance it by introducing your own changes on top of theirs. Once happy with the result you can accept the pull request, which will publish all changes, including yours.
-<</warning>>
+1. Enter a comment explaining the rejection. 
 
-Whether you choose to accept or reject the pull request, you can cleanup the imported program or library by using the checkbox in the bottom.
+1. You can clean up the imported program by checking the **Delete this program when complete (cleanup)** button.
+
+1. Click **Reject**.
+
+1. The comment is posted on the pull request page on your behalf, and the pull request is marked as rejected.
+
+<span class="notes">**Note:** If you're not satisfied with the code, you can always attempt to enhance it by introducing your own changes on top of the pull request. You can then accept the pull request; the published pull request will include the changes you have made to the original content.
+</span>
+
