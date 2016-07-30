@@ -18,7 +18,7 @@ If you want to share your work:
 
 1. If this is the first time you have published this program or library, you will see a dialog like this one:
 
-	<span class="images">![](images/publish_details.png)</span>
+	<span class="images">![](images/publish_deatils.png)</span>
 
 1. Enter a description of what you are publishing.
 
