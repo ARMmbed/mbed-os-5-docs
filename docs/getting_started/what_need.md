@@ -1,23 +1,4 @@
-# What you need
-
-The short answer? An [mbed developer account](https://developer.mbed.org/account/signup/?next=%2F) and a [development board](https://developer.mbed.org/platforms/). 
-
-For the long answer, see below.
-
-## User account
-
-You'll need an [mbed developer account](https://developer.mbed.org/account/signup/?next=%2F). These are free, and give you access to our online tools, code hosting and the forum.
-
-Some optional accounts are:
-
-* If you want to work with [mbed Studio](../dev_tools/studio.md), you'll also need a Cloud9 account. You can register the first time you use mbed Studio; we will then link your mbed and Cloud9 accounts. 
-* You might want a [GitHub](https://github.com/join) account, especially if you're interested in suggesting improvements and additions to mbed OS itself.
-
-## Hardware
-
-mbed OS runs on [multiple boards and components](https://www.mbed.com/en/development/hardware/). You'll need just [one board](https://developer.mbed.org/platforms/) to get started.
-
-## Windows serial driver
+# Windows serial driver
 
 You can connect your board to your computer over USB. This should work out of the box on Linux and Mac OS X, but for Windows you will probably need to install a serial port driver:
 
