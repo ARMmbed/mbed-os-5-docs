@@ -100,13 +100,5 @@ mbed Studio does all the complicated work for you - it fetches Blinky along with
 ## Where next
 
 We have a few more examples you might enjoy:
-TODO: links
 
-- [A set of BLE examples](https://github.com/ARMmbed/mbed-os-example-ble).
-
-- [mbed Client on mbed OS](https://github.com/ARMmbed/mbed-os-example-client).
-
-- [A mesh application for mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
-
-- [A threaded version of Blinky to show uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor).
-
+!{https://raw.githubusercontent.com/ARMmbed/Handbook/master/docs/getting_started/examples.md?token=AKWAjchqxTiW4Wz6mk9VTmb9YWNE0gMoks5Xpz8lwA%3D%3D}
