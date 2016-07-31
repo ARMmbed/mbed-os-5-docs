@@ -37,16 +37,13 @@ The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GC
 
 * [Thermometer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer/): send thermometer information using the Health Thermometer Profile.
 
-* [Simple LED control](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/): using a read/write characteristic to control an LED.
-
-* [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/): using the GATT client API to control BLE client devices.
+* [Simple LED control](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/): a client using a read/write characteristic to control an LED. This example goes with the [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/), a server that uses the GATT client API to control the BLE client device.
 
 * Beacons send a small amount of information to a nearby device. Try:
 
 	* [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/): 
 
-	* [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/
-): transmit a small amount of information to a nearby device.
+	* [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/): transmit a small amount of information to a nearby device.
 
 	* [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/): transmit a small amount of information to a nearby device.
 
