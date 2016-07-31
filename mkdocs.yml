@@ -4,10 +4,10 @@ docs_dir: docs
 
 pages:
 - ['index.md','Introduction to mbed OS 5.0 and the handbook']
-- ['getting_started/what_need.md', 'Getting started', 'What you need']
 - ['getting_started/first_program.md', 'Getting started', 'First application']
-- ['getting_started/serial_communication.md', 'Getting started', 'Connecting your device to a PC']
-- ['APIs/intro.md', 'Getting started', 'Writing applications with the mbed OS APIs']
+- ['APIs/intro.md', 'Getting started', 'Writing your own applications']
+- ['getting_started/what_need.md', 'Getting started', 'The Windows serial driver']
+- ['getting_started/serial_communication.md', 'Getting started', 'Getting the most out of the USB connection']
 - ['dev_tools/options.md', 'Development tools', 'Development tool options']
 - ['dev_tools/cli.md', 'Development tools', 'mbed CLI']
 - ['dev_tools/online_comp.md', 'Development tools', 'mbed Online Compiler']
