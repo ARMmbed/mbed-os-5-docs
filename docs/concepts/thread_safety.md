@@ -1,4 +1,4 @@
-# Thread Safety in mbed OS 5.0
+# Thread Safety in mbed OS 5
 
 ## About this document
 
@@ -6,17 +6,17 @@ This document introduces the [mbed OS RTOS](#rtos) and [thread safety mechanisms
 
 ## RTOS
 
-One of the major improvements introduced in mbed OS 5.0 is a new programming model based on a real time operating system (RTOS). Some earlier versions of mbed have had optional support for an RTOS, but with version 5.0 we are making this a standard feature of the platform, so that developers can take advantage of a more flexible programming model based on multiple threads.
+One of the major improvements introduced in mbed OS 5 is a new programming model based on a real time operating system (RTOS). Some earlier versions of mbed have had optional support for an RTOS, but with version 5 we are making this a standard feature of the platform, so that developers can take advantage of a more flexible programming model based on multiple threads.
 
-As with any multi-threaded environment, mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees are provided by the mbed OS 5.0 APIs when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
+As with any multi-threaded environment, mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees are provided by the mbed OS 5 APIs when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
 
-The mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms provided by mbed OS 5.0 to build thread safe applications.  
+The mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms provided by mbed OS 5 to build thread safe applications.  
 
 ## Thread safety
 
 ### Synchronization levels
 
-Different components within mbed OS 5.0 provide different levels of synchronization:
+Different components within mbed OS 5 provide different levels of synchronization:
 
 1. **Interrupt safe** - safe for use from multiple threads and interrupts; operation is done atomically or in a critical section. The behavior is well defined when used from both interrupts and threads.
 2. **Thread safe** - safe for use from multiple threads; operation is protected by an RTOS primitive and can be used from multiple threads, but will cause problems if used from an interrupt service routine.
@@ -58,7 +58,7 @@ Drivers that are **not protected**:
 
 ### HAL C API
 
-The HAL C API is the porting layer of mbed OS 5.0 and is not thread safe. Developers should not typically use this API directly, instead using the higher-level drivers and libraries. If you program directly to the HAL C API it is your responsibility to synchronize operations with an appropriate mechanism, such as a mutex.
+The HAL C API is the porting layer of mbed OS 5 and is not thread safe. Developers should not typically use this API directly, instead using the higher-level drivers and libraries. If you program directly to the HAL C API it is your responsibility to synchronize operations with an appropriate mechanism, such as a mutex.
 
 ### Synchronization mechanisms
 
@@ -74,7 +74,7 @@ The RTOS provides several mechanisms to move interrupt processing onto a thread.
  * [Queue](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Queue.html)
  * [Mail](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Mail.html)
 
-**Warning:** In mbed OS 5.0, if you attempt to use a mutex from within an interrupt nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race-conditions into an otherwise safe piece of code. Future versions of mbed OS will provide warnings and ultimately prevent this from happening.
+**Warning:** In mbed OS 5, if you attempt to use a mutex from within an interrupt nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race-conditions into an otherwise safe piece of code. Future versions of mbed OS will provide warnings and ultimately prevent this from happening.
 
 For more information see [rtos/rtos/Mutex.h](https://github.com/mbedmicro/mbed/blob/master/rtos/rtos/Mutex.h).
 
@@ -110,7 +110,7 @@ You need to synchronize access to hardware from two objects using the same pins.
 
 ## Considerations when porting
 
-Porting new platforms to mbed OS 5.0 is nearly the same as it is in mbed 2. In general, no synchronization mechanisms are needed in drivers that operate below the C HAL layer, since this is already provided at a higher level. The only exceptions to this are the functions ``port_read``, ``port_write``, ``gpio_read`` and ``gpio_write``, which are expected to use processor-specific ``set`` and ``clear`` registers rather than performing a read-modify-write sequence. An example of this can be found [here](https://github.com/mbedmicro/mbed/blob/52e93aebd083b679a8fe7b0e47039f138fa8c224/hal/targets/hal/TARGET_Freescale/TARGET_KSDK2_MCUS/TARGET_K64F/drivers/fsl_gpio.h#L135).
+Porting new platforms to mbed OS 5 is nearly the same as it is in mbed 2. In general, no synchronization mechanisms are needed in drivers that operate below the C HAL layer, since this is already provided at a higher level. The only exceptions to this are the functions ``port_read``, ``port_write``, ``gpio_read`` and ``gpio_write``, which are expected to use processor-specific ``set`` and ``clear`` registers rather than performing a read-modify-write sequence. An example of this can be found [here](https://github.com/mbedmicro/mbed/blob/52e93aebd083b679a8fe7b0e47039f138fa8c224/hal/targets/hal/TARGET_Freescale/TARGET_KSDK2_MCUS/TARGET_K64F/drivers/fsl_gpio.h#L135).
 
 ## Further reading
 
