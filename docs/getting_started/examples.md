@@ -40,9 +40,6 @@ The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GC
 * [Simple LED control](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/): a client using a read/write characteristic to control an LED. This example goes with the [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/), a server that uses the GATT client API to control the BLE client device.
 
 * Beacons send a small amount of information to a nearby device. Try:
-
-	* [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
-
-	* [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/).
-
-	* [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
+    * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
+    * [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/).
+    * [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
