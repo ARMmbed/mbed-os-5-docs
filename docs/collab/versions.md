@@ -15,6 +15,12 @@ The main things you can do with a local repository are:
 
 <span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](collab_versions.md)</span>
 
+## Video tutorial 
+
+Here is the video that shows how you get started:
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/BWM21JzSDSs/0.jpg)](http://www.youtube.com/watch?v=BWM21JzSDSs)</span>
+
 ## Working with version control
 
 Your program is the *working copy*. You can *commit* changes to its local repository to create new *revisions*.
@@ -40,9 +46,4 @@ To ensure that a repository can be imported successfully, you must:
  * Publish all sub-repositories (even sub-sub-repositories) on the [developer.mbed.org](developer.mbed.org).
  * Leave no uncommitted or unpublished changes in any sub-repository.
 
-## Video tutorial 
-
-Here is the video that shows how you get started:
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/BWM21JzSDSs/0.jpg)](http://www.youtube.com/watch?v=BWM21JzSDSs)</span>
 
