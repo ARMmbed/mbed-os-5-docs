@@ -3,7 +3,7 @@ site_name: mbed OS 5 Handbook
 docs_dir: docs
 
 pages:
-- ['index.md','Introduction to mbed OS 5.0 and the handbook']
+- ['index.md','Introduction to mbed OS 5.1 and the handbook']
 - ['getting_started/first_program.md', 'Getting started', 'First application']
 - ['APIs/intro.md', 'Getting started', 'Writing your own applications']
 - ['getting_started/what_need.md', 'Getting started', 'The Windows serial driver']
