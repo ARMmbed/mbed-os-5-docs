@@ -97,8 +97,14 @@ Working with mbed Studio requires a Cloud9 account on top of your mbed developer
 mbed Studio does all the complicated work for you - it fetches Blinky along with the mbed OS code base it requires, and builds to whichever [target you]() need.
 
 
-## Where next
+## Other examples
 
-We have a few more examples you might enjoy:
+We have a few more examples you might enjoy.
 
 !{https://raw.githubusercontent.com/ARMmbed/Handbook/master/docs/getting_started/examples.md?token=AKWAjchqxTiW4Wz6mk9VTmb9YWNE0gMoks5Xpz8lwA%3D%3D}
+
+## Further reading
+
+We have more details about [each of the development tools](../dev_tools/options.md). The other parts of the handbook cover collaborative work and mbed OS concepts.
+
+Once you're done browsing the handbook, you might want to look at the [API References]()[TODO: link], where you'll find explanations and examples for using the APIs.
