@@ -2,7 +2,7 @@
 
 Welcome to the mbed OS 5 User Guide. 
 
-If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][TODO: add link] to see what's changed, or take a look at our new [development tools](dev_tools/options.md). If you're building your own hardware, check out the [mbed OS Porting Guide][TODO: add link].
+If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][TODO: add link] to see what's changed, or take a look at our new [development tools](dev_tools/options.md). 
 
 If you're new to all this, continue reading.
 
@@ -11,16 +11,6 @@ If you're new to all this, continue reading.
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
 Your application code - written in C++ - uses the *application programing interfaces* (APIs) presented by mbed OS to receive information from the hardware and send instructions to it. This means that a lot of the challenges in getting started with microcontrollers or integrating large amounts of software is already taken care of. 
-
-## Two types of developer
-
-You may be interested in mbed OS if you're:
-
-* Developing applications for embedded devices. Most of this guide is for you, because it focuses on how you use the mbed OS APIs to create the features your application needs.
-
-* Developing hardware for embedded devices, or trying to add mbed OS support for your existing hardware.
-
-In both cases, we make some assumptions: you are familiar with C and C++ programming and with using APIs. You have a basic understanding of embedded systems or just want to learn.
 
 ## Where to start
 
