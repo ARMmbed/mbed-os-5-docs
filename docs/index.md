@@ -1,8 +1,8 @@
 # Introduction to the mbed OS 5 Handbook
 
-Welcome to the mbed OS 5 User Guide. 
+Welcome to the mbed OS 5 handbook. 
 
-If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][TODO: add link] to see what's changed, or take a look at our new [development tools](dev_tools/options.md). 
+If you're an experienced mbed applications developer, you might want to dive straight into the [API Refrences][https://docs.mbed.com/docs/mbed-os-api-reference/en/] to see what's changed, or take a look at our new [development tools](dev_tools/options.md). 
 
 If you're new to all this, continue reading.
 
@@ -26,7 +26,7 @@ The easiest way to work with mbed OS is using one of our development tools. We'v
 
 When you've tried our example and picked your work environment, it's time to learn how mbed OS and its tools enable the features your application needs:
 
-* You can read [the general introduction to the APIs](APIs/intro.md), or jump straight to the API References [TODO: add link].
+* You can read [the general introduction to the APIs](APIs/intro.md), or jump straight to the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/en/).
 
 * Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and version control.
 
