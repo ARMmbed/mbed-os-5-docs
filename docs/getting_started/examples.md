@@ -1,9 +1,9 @@
   
-## Blinky
+### Blinky
 
 * [Blinky](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/): our basic application, showing how to use the APIs to control the LED on the board.
 
-## mbed TLS
+### mbed TLS
 
 * [Cryptographic benchmark](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/): benchmarks the various cryptographic primitives offered by mbed TLS.
 
@@ -13,19 +13,19 @@
 
 * [TLS client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client/):  downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
 
-## mbed uVisor
+### mbed uVisor
 
 The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GCC only, so cannot be used in the mbed Online Compiler. 
 
-## mbed Client
+### mbed Client
 
 [Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for mbed OS. It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister.
 
-## mesh 
+### mesh 
 
 [Join a device to an insecure 6LoWPAN-ND network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). This is the simples use of the mesh networking sack.
 
-## Bluetooth Low Energy (BLE)
+### Bluetooth Low Energy (BLE)
 
 * [Battery level](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/): use the Battery Level service to transmit a device's battery level.
 
@@ -41,10 +41,8 @@ The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GC
 
 * Beacons send a small amount of information to a nearby device. Try:
 
-	* [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/): 
+	* [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
 
-	* [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/): transmit a small amount of information to a nearby device.
+	* [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/).
 
-	* [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/): transmit a small amount of information to a nearby device.
-
-* [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/): scan for Eddystone beacons.
+	* [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
