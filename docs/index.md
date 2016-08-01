@@ -24,7 +24,9 @@ In both cases, we make some assumptions: you are familiar with C and C++ program
 
 ## Where to start
 
-The easiest way to work with mbed OS is using one of our development tools. We've set up an example that you can try with each tool:
+The easiest way to work with mbed OS is using one of our development tools. We've set up an example, [Blinky](getting_started/first_program.md), that you can try on each of the tools.
+
+## Development tools
 
 * Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command line tool. This requires having a toolchain installed on your computer. 
 * Our online IDEs let you write and build applications using just a web browser and USB connection. You can choose between our in-house [mbed Online Compiler](dev_tools/online_comp.md) and [mbed Studio](dev_tools/studio.md), which is based on the Cloud9 IDE.
