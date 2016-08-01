@@ -44,7 +44,7 @@ To import a repository, simply click the Import link on the repository's page on
 
 While browsing a program or a library, you will receive notifications of new versions in the Browser panel under the Summary tab:
 
-<span class="images">![](images/udpates.png)</span>
+<span class="images">![](images/updates.png)</span>
 
 It is also possible to view detailed information about the new changes in the Revisions panel. The top list represents the local repository revisions, where revision numbers marked in green are outgoing revisions, currently not present in the remote repository:
 
