@@ -2,8 +2,6 @@
 
 We have an example application called Blinky that you can use to get to know mbed OS and the development tools. It's one of the simplest examples of mbed OS. It shows the use of a DigitalOut object to represent an LED and the non-blocking ``Thread::wait()`` call. This is good practice as if there were other threads, they could be scheduled and run while the first thread is waiting.
 
-
-
 You can try any of these tools:
 
 * [mbed CLI](#blinky-on-mbed-cli)
@@ -101,10 +99,10 @@ mbed Studio does all the complicated work for you - it fetches Blinky along with
 
 We have a few more examples you might enjoy.
 
-!{https://raw.githubusercontent.com/ARMmbed/Handbook/master/docs/getting_started/examples.md?token=AKWAjchqxTiW4Wz6mk9VTmb9YWNE0gMoks5Xpz8lwA%3D%3D}
+!{https://raw.githubusercontent.com/ARMmbed/Handbook/master/docs/getting_started/examples.md}
 
 ## Further reading
 
 We have more details about [each of the development tools](../dev_tools/options.md). The other parts of the handbook cover collaborative work and mbed OS concepts.
 
-Once you're done browsing the handbook, you might want to look at the [API References]()[TODO: link], where you'll find explanations and examples for using the APIs.
+Once you're done browsing the handbook, you might want to look at the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/), where you'll find explanations and examples for using the APIs.
