@@ -176,6 +176,7 @@ For example, for a target called `Derived`, which is the child of the parent tar
 ```
 
 `Derived` above does three things:
+
 - Defines its own configuration parameter (called `my_own_config`).
 - Inherits the configuration parameters from `Base` (so its configuration parameters are `serial_console_speed`, `stack_size` and `my_own_config`). 
 - Overrides the value of the `stack_size` parameter defined in `Base`. 
@@ -249,6 +250,7 @@ It is an error for the application configuration to override configuration param
 Target configurations contain a set of cumulative attributes that can be manipulated in the application configuration. These attributes can be overriden as a normal configuration parameter, or manipulated with the special `attribute_add` and `attribute_remove` meta-attributes.
 
 Cumulative attributes:
+
 - features: List of features that will be compiled into the resulting binary and available at runtime. Determines the FEATURE directories included during compilation. These are also emitted as FEATURE macros.
 - device_has: List of hardware components available on the target. These are emitted as DEVICE_HAS macros.
 - extra_labels: List of target labels that determine the TARGET directories included during compilation. These are also emitted as TARGET macros.
