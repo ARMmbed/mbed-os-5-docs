@@ -42,3 +42,26 @@ The compiler shows the current build board's name on the upper right corner:
 Click the name to change your board as needed:
 
 <span class="images">![](../dev_tools/Images/select_board.png)</span>
+
+## Compile and install
+
+The mbed Online Compiler builds a ``.bin`` file that you can install on your board.
+
+1. Click **Compile**.
+
+	<span class="images">![](images/compile.png)</span>
+
+1. The program compiles:
+
+	<span class="images">![](images/compiling.png)</span>
+
+1. When the compiled file is ready, it's downloaded to your default download location (or opens a Download dialog box). The file format is ``.bin`` and the file  name is the same as your program name.
+
+1. Connect your board to your computer over USB. mbed boards are shown as "removable storage".
+
+	<span class="images">![](images/DeviceOnMac.png)</span>
+
+1. Drag and drop your program to the board. 
+
+1. The board installs the program, then runs it. You should see the LED blink.
+
