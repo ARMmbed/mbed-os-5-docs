@@ -4,6 +4,10 @@ The online compiler enables you to either write your code from scratch or import
 
 The compiler is always available on [https://developer.mbed.org/compiler/](https://developer.mbed.org/compiler/).
 
+## Video summary
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/L5TcmFFD0iw/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
+
 ## Importing code to the compiler
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
@@ -96,10 +100,6 @@ Click the name to change your board as needed:
 <span class="images">![](Images/select_board.png)</span>
 
 ## Compiling
-
-## Video summary
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/L5TcmFFD0iw/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
 
 ## Keyboard shortcuts
 
