@@ -8,6 +8,5 @@ mbed Studio does all the complicated work for you - it fetches Blinky along with
 
 Click the button below to import Blinky to mbed Studio:
 
-[![View code](https://github.com/ARMmbed/mbed-os-example-blinky)](https://github.com/ARMmbed/mbed-os-example-blinky/blob/master/main.cpp) 
-
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky)](https://github.com/ARMmbed/mbed-os-example-blinky/blob/master/main.cpp)
 
