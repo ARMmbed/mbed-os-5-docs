@@ -21,14 +21,14 @@ To import Blinky, from the command line:
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
 
-  ``cd dev_directory``
+    ``cd dev_directory``
 
 1. Import the example:
 
-  ```
-  mbed import mbed-os-example-blinky
-  cd mbed-os-example-blinky
-  ```
+    ```
+    mbed import mbed-os-example-blinky
+    cd mbed-os-example-blinky
+    ```
 
 Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can look at ``main.cpp`` to familiarize yourself with the code.
 
