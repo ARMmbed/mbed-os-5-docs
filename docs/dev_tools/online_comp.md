@@ -95,6 +95,7 @@ Click the name to change your board as needed:
 
 <span class="images">![](Images/select_board.png)</span>
 
+## Compiling
 
 ## Video summary
 
