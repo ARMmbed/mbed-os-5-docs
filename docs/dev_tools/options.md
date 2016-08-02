@@ -1,6 +1,6 @@
 # Development tool options
 
-We developed mbed OS 5 using the mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an mbed OS programme. As this runs on your local development machine, you also need compilers and other build tools installed.
+We developed mbed OS 5 using the mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
 
 mbed OS 5 is compatible with the tools, libraries and programs that have been deployed on the developer.mbed.org site since mbed's origins, so you can also use the mbed Online Compiler for building mbed OS 5 examples and programs. Furthermore, the exporters to third party development tools that were part of the mbed OS 2 ecosystem can also be used.
 
