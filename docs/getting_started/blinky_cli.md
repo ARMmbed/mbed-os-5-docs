@@ -1,24 +1,43 @@
 # Blinky on mbed CLI
 
+## Installing mbed CLI and a toolchain
+
 mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
+
+## Setting context
+
+Whenever you work with mbed CLI, you need to navigate your command-line terminal to the directory it which you want to work. For example, if your program is in a folder called ``my_program``:
+
+```
+cd my_program
+mbed <commands>
+```
 
 ## Get Blinky
 
-[Blinky is on GitHub](https://github.com/ARMmbed/mbed-os-example-blinky), but you don't need to go through GitHub to get it into mbed CLI - mbed CLI can do that for you.
+mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of you current context (as explained above). 
 
-From the command line, import the example:
+To import Blinky, from the command line:
 
-```
-mbed import mbed-os-example-blinky
-cd mbed-os-example-blinky
-```
+1. Navigate to a directory of your choice. We're navigating to our development directory:
+
+  ``cd dev_directory``
+
+1. Import the example:
+
+  ```
+  mbed import mbed-os-example-blinky
+  cd mbed-os-example-blinky
+  ```
+
+Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can look at ``main.cpp`` to familiarize yourself with the code.
 
 ## Compile
 
 Invoke `mbed compile`, specifying:
 
 * Your board: ``-m <board_name>``
-* Your  toolchain ``-t <GCC_ARM`, `ARM` or `IAR`>``.
+* Your toolchain ``-t <GCC_ARM`, `ARM` or `IAR`>``.
 
 For example, for the board K64F and the ARM Compiler 5:
 
@@ -49,10 +68,14 @@ Total Flash memory (text + data + misc): 43402 bytes
 Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin             
 ```
 
+The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM\`` folder.
+
 ## Program your board
 
-1. Connect your mbed device to the computer over USB.
-1. Copy the binary file to the mbed device.
+mbed enabled boards are programable by drag and drop over a USB connection.
+
+1. Connect your mbed board to the computer over USB.
+1. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``build\K64F\ARM\`` folder.
 1. Press the reset button to start the program.
 
-You should see the LED of your platform turning on and off.
+You should see the LED of your board turning on and off.
