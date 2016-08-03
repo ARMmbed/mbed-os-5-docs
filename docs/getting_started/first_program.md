@@ -107,4 +107,4 @@ We have a few more examples you might enjoy.
 
 We have more details about [each of the development tools](../dev_tools/options.md). The other parts of the handbook cover collaborative work and mbed OS concepts.
 
-Once you're done browsing the handbook, you might want to look at the [API References]()[TODO: link], where you'll find explanations and examples for using the APIs.
+Once you're done browsing the handbook, you might want to look at the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/), where you'll find explanations and examples for using the APIs.
