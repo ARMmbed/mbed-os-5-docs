@@ -1,6 +1,5 @@
 # Exporting to Third Party Toolchains
 
-[TODO: exporting from mbed Studio]
 
 If you'd like to develop on mbed OS with a third party tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
 
