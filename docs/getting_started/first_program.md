@@ -6,7 +6,6 @@ You can try any of these tools:
 
 * [mbed CLI](blinky_cli.md)
 * [mbed Online Compiler](blinky_compiler.md)
-* [mbed Studio](blinky_studio.md)
 
 ## What the tools do
 
