@@ -1,5 +1,9 @@
 # Blinky on mbed CLI
 
+## Quick start video
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/EAZGws9xUSI/0.jpg)](http://www.youtube.com/watch?v=EAZGws9xUSI)</span>
+
 ## Installing mbed CLI and a toolchain
 
 mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
