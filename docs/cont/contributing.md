@@ -114,7 +114,7 @@ All the source code and binary blobs that end up in mbed OS are maintained in pu
 
 ### Contributions
 
-All code changes and additions to mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](Code_Style.md).
+All code changes and additions to mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](code_style.md).
 
 ### Licensing
 
@@ -148,7 +148,7 @@ All mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.
 
 #### Bug fixes
 
-Please refer to the [code contributions chapter](Code_Style.md). 
+Please refer to the [code contributions chapter](code_style.md). 
 
 Bug fixes must be verified by a member of the mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the repo, then submit a pull request with your changes. 
 
@@ -156,4 +156,4 @@ The last line in your commit message description should say â€œFixes #deadbeefâ€
 
 ## Further reading
 
-Please see the [code contributions chapter](Code_Style.md) for the guidelines to GitHub pull requests and the coding style guide.
+Please see the [code contributions chapter](code_style.md) for the guidelines to GitHub pull requests and the coding style guide.
