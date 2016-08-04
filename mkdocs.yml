@@ -24,12 +24,11 @@ pages:
 - ['collab/mult_auth.md', 'Collaboration and version control', 'Multiple authors']
 - ['cont/contributing.md', 'Publishing libraries and contributing to mbed OS', 'Contribution and publishing guide']
 - ['cont/code_style.md', 'Publishing libraries and contributing to mbed OS', 'Code style guide']
-- ['advanced/config_system.md', 'OS concepts', 'Configuration system']
-- ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
-- ['concepts/memory_model.md', 'OS concepts', 'Memory model']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
 - ['advanced/config_system.md', 'Advanced tutorials', 'Compile time configuration']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
+- ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
+- ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 
 copyright: © ARM Ltd. Copyright 2016 – ARM mbed IoT Device Platform
