@@ -6,7 +6,7 @@ The compiler is always available on [https://developer.mbed.org/compiler/](https
 
 ## Video summary
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/L5TcmFFD0iw/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
 
 ## Importing code to the compiler
 
@@ -57,49 +57,57 @@ There are two methods of importing the code into the online compiler: directly f
 	1. Click **Import**. The Import Wizard opens.
 	1. Go to the Libraries tab and search for "mbed", or perform an empty search to show all libraries:
 
-	<span class="images">![](Images/import_mbed.png)</span>
+		<span class="images">![](Images/import_mbed.png)</span>
 
 	1. Double click on "mbed" to import it. The library is added to your program.
 
-	<span class="images">![](Images/with_mbed.png)</span>
+		<span class="images">![](Images/with_mbed.png)</span>
 
-## Creating a new library
+## Getting your program on your board
 
+The mbed Online Compiler builds a file that can run on your board. All you need to do is:
 
-1. From the **New** menu, select **Library**:
-
-	<span class="images">![](Images/new.png)</span>
-
-1. The **Create new library** pop-up opens. Enter a unique library name.
-
-	<span class="images">![](Images/new_library.png)</span>
-
-
-## Compiling and downloading
-
+1. Select the correct board.
+1. Compile the code and download the compiled file.
+1. Copy the file to your board.
 
 ### Selecting your board
 
 mbed programs can be built to run on multiple boards. The hard work is done behind the scenes, by mbed OS itself. All you need to do is tell the mbed Online Compiler which board you're building for.
 
-#### Adding a board to your list
+To select a board as the build target:
 
-To add a board to your list, go to the board's page on mbed.com and click the **Add to your mbed Compiler** button:
+1. The compiler shows the current build board's name on the upper right corner:
 
-<span class="images">![](Images/add_board.png)</span>
+	<span class="images">![](Images/show_board.png)</span>
 
-#### Selecting a board
+1. Click the name of the board you need:
 
-The compiler shows the current build board's name on the upper right corner:
+	<span class="images">![](Images/select_board.png)</span>
 
-<span class="images">![](Images/show_board.png)</span>
+	If the board isn't already on your list, go to the board's page on mbed.com and click the **Add to your mbed Compiler** button:
+
+	<span class="images">![](Images/add_board.png)</span>
+
+###  Compile and download
+
+The **Compile** menu offers five options:
+
+1. **Compile:** builds your code and downloads a binary file. Current program only.
+1. **Compile All:** same as *compile*, but for all programs.
+1. **Build Only:** compiles your code but doesn't download the result.
+1. **Compile Macros:** defines additional macros at compile time.
+1. **Update Docs**: see the [guide for documenting APIs](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.1/APIs/API_Documentation/).
+
+### Copying the file to the board
+
+<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../getting_started/what_need.md#windows-serial-driver).</span>
+
+Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section. 
+
+<span class="images">![](Images/device_on_mac.png)</span>
 
 
-Click the name to change your board as needed:
-
-<span class="images">![](Images/select_board.png)</span>
-
-## Compiling
 
 ## Keyboard shortcuts
 
