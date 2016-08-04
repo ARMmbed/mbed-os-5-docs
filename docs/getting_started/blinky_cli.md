@@ -4,6 +4,25 @@
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)</span>
 
+## Blinky's code
+
+```c++
+#include "mbed.h"
+#include "rtos.h"
+
+DigitalOut led1(LED1);
+
+// main() runs in its own thread in the OS
+// (note the calls to Thread::wait below for delays)
+int main() {
+    while (true) {
+        led1 = !led1;
+        Thread::wait(500);
+    }
+}
+
+```
+
 ## Installing mbed CLI and a toolchain
 
 mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
@@ -17,7 +36,7 @@ cd my_program
 mbed <commands>
 ```
 
-## Get Blinky
+## Getting Blinky
 
 mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of you current context (as explained above). 
 
@@ -33,10 +52,11 @@ To import Blinky, from the command line:
     mbed import mbed-os-example-blinky
     cd mbed-os-example-blinky
     ```
+    **Tip:** ``import`` requires a full URL to Mercurial or GitHub. If you don't enter a full URL, mbed CLI prefixes your snippet with ``https://github.com/ARMmbed/``. We took advantage of this feature in our example; ``import mbed-os-example-blinky`` is interpreted as ``https://github.com/ARMmbed/mbed-os-example-blinky``.
 
 Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can look at ``main.cpp`` to familiarize yourself with the code.
 
-## Compile
+## Compiling
 
 Invoke `mbed compile`, specifying:
 
@@ -74,7 +94,7 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 
 The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM\`` folder.
 
-## Program your board
+## Programming your board
 
 mbed enabled boards are programable by drag and drop over a USB connection.
 
