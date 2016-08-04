@@ -28,15 +28,15 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 
 1. Click **Export Program.** The **Export Program** window opens.
 
-	<span class="images">![](Images/export_menu.png)</span>
+	<span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
 
 1. From the **Export Target** drop down list, select your board.
 
-	<span class="images">![](Images/select_target.png)</span>
+	<span class="images">![](Images/select_target.png)<span>Selecting a target board</span></span>
 
 1. From the **Export Toolchain** drop down list, select your toolchain.
 
-	<span class="images">![](Images/select_toolchain.png)</span>
+	<span class="images">![](Images/select_toolchain.png)<span>Selecting a toolchain</span></span>
 
 1. The export process generates a ZIP file with a project file matching your selected toolchain. Follow your toolchain's import or project creation process to begin working there.
 
@@ -79,7 +79,7 @@ The mbed libraries contain CMSIS startup files. When importing an mbed Online Co
 
 [uVision](http://www.keil.com/uvision|) is one of the third party toolchains supported by the mbed platform. Exporting to it creates a ZIP file with a uVision project file ``project.uvproj``.
 
-<span class="images">![](Images/uVision.png)</span>
+<span class="images">![](Images/uVision.png)<span>Seeing our application in Keil uVision4</span></span>
 
 #### Installing missing algorithms
 
