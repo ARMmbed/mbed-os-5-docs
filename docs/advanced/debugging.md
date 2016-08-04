@@ -2,18 +2,6 @@
 
 This guide examines some techniques for generating debug information to help find and fix problems with your code, and how to deal with problems you see.
 
-## Video tutorials 
-
-For Windows:
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/jAMTXK9HjfU/0.jpg)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)</span>
-
-
-For Mac:
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/IR8Di53AGSk/0.jpg)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)</span>
-
-
 ## Compile time errors
 
 Compile time errors and warnings are caused by incorrect syntax, or misuse of variables or functions. An error will prevent the compile process from completing (and therefore no binary file will be created). A warning will not prevent the binary from being created, but you should still review the warning as it may mean that your code is not going to do what you had intended.
@@ -149,6 +137,17 @@ It is often useful to see the values of variables in your program at a given tim
 		}
 	}
 ```
+
+## Video tutorials 
+
+For Windows:
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/jAMTXK9HjfU/0.jpg)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)</span>
+
+
+For Mac:
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/IR8Di53AGSk/0.jpg)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)</span>
 
 ## What's next
 
