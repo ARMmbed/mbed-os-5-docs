@@ -6,6 +6,8 @@
 * [Debug applications](debugging.md)
 * Use the [compile time configuration system](config_system.md)
 * Work with [CMSIS-DAP and DAPLink](DAP.md)
+* [Thread safety](../concepts/thread_safety.md)
+* [Memory model](../concepts/memory_model.md)
 
 ## Example applications
 
