@@ -23,6 +23,8 @@ pages:
 - ['collab/pull_requests.md', 'Collaboration and version control', 'Pull requests']
 - ['collab/publishing_code.md', 'Collaboration and version control', 'Publishing code']
 - ['collab/mult_auth.md', 'Collaboration and version control', 'Multiple authors']
+- ['cont/contributing.md', 'Publishing libraries and contributing to mbed OS', 'Contribution and publishing guide']
+- ['cont/code_style.md', 'Publishing libraries and contributing to mbed OS', 'Code style guide']
 - ['advanced/config_system.md', 'OS concepts', 'Configuration system']
 - ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
 - ['concepts/memory_model.md', 'OS concepts', 'Memory model']
