@@ -6,7 +6,7 @@ pages:
 - ['index.md','Introduction to the mbed OS handbook']
 - ['getting_started/first_program.md', 'First application', 'Introduction']
 - ['getting_started/blinky_cli.md', 'First application', 'Blinky on mbed CLI']
-- ['getting_started/blinky_compiler.md', 'First application', 'Blinky on mbed Online Compiler']
+- ['getting_started/blinky_compiler.md', 'First application', 'Blinky on the mbed Online Compiler']
 - ['APIs/intro.md', 'Getting started', 'Writing your own applications']
 - ['getting_started/what_need.md', 'Getting started', 'The Windows serial driver']
 - ['getting_started/serial_communication.md', 'Getting started', 'Getting the most out of the USB connection']
@@ -29,6 +29,7 @@ pages:
 - ['concepts/memory_model.md', 'OS concepts', 'Memory model']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
+- ['advanced/config_system.md', 'Advanced tutorials', 'Compile time configuration']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
 
 copyright: © ARM Ltd. Copyright 2016 – ARM mbed IoT Device Platform
