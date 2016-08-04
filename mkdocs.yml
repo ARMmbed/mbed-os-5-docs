@@ -14,7 +14,6 @@ pages:
 - ['dev_tools/options.md', 'Development tools', 'Development tool options']
 - ['dev_tools/cli.md', 'Development tools', 'mbed CLI']
 - ['dev_tools/online_comp.md', 'Development tools', 'mbed Online Compiler']
-- ['dev_tools/studio.md', 'Development tools', 'mbed Studio']
 - ['dev_tools/third_party.md', 'Development tools', 'Third party development tools']
 - ['getting_started/mbed_interface.md', 'Development tools', 'How mbed works']
 - ['collab/collab_intro.md', 'Collaboration and version control', 'Introduction']
