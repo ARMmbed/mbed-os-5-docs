@@ -2,7 +2,7 @@
 
 ## Quick start video
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/EAZGws9xUSI/0.jpg)](http://www.youtube.com/watch?v=EAZGws9xUSI)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)</span>
 
 ## Installing mbed CLI and a toolchain
 
