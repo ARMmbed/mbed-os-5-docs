@@ -129,3 +129,17 @@ __LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
 1. Download the [/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm](/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm).
 1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
 
+###IAR Embedded Workbench
+
+__Floating Point Platforms__
+
+Many MCUs contain a Floating Point Unit (FPU). IAR requires editing your project settings to utilize FPU instructions. 
+
+To enable the use of floating point instructions:
+
+1. Right click on the project > **Options...**
+2. In the **Target** tab, under **Floating point settings**, click the **FPU** drop down menu.
+3. Select the corresponding FPU instruction set.
+4. Click **OK**.
+
+<span class="images">![](Images/fpu_iar.png)</span>
