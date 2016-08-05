@@ -13,7 +13,7 @@ The main things you can do with a local repository are:
  * **Switch** and **revert** to a different version.
  * **Branch** and **merge** versions.
 
-<span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](collab_versions.md)</span>
+<span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](collab_intro.md)</span>
 
 ## Video tutorial 
 
@@ -43,7 +43,7 @@ This synchronization mechanism ensures that the imported repository and all its 
 
 To ensure that a repository can be imported successfully, you must:
 
- * Publish all sub-repositories (even sub-sub-repositories) on the [developer.mbed.org](developer.mbed.org).
+ * Publish all sub-repositories (even sub-sub-repositories) on the [developer.mbed.org](https://developer.mbed.org).
  * Leave no uncommitted or unpublished changes in any sub-repository.
 
 
