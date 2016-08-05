@@ -102,12 +102,12 @@ Now you should be able to flash to the nrf51822 target.
 
 __Maxim Platforms__
 
-1. Download [/media/uploads/sam_grove/max32600.flm |MAX32600 Flash Algorithm](/media/uploads/sam_grove/max32600.flm |MAX32600 Flash Algorithm).
+1. Download [developer.mbed.org/media/uploads/sam_grove/max32600.flm](https://developer.mbed.org/media/uploads/sam_grove/max32600.flm).
 1. Copy the file to directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
 
 __LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
 
-1. Download the [/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm](/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm).
+1. Download the [developer.mbed.org/media/uploads/sam_grove/max32600.flm](https://developer.mbed.org/media/uploads/MACRUM/lpc8xx_32.flm).
 1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
 
 ## Exporting from mbed CLI
