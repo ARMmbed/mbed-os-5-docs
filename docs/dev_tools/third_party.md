@@ -129,13 +129,3 @@ __LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
 
 1. Download the [algorithm](https://developer.mbed.org/media/uploads/MACRUM/lpc8xx_32.flm).
 1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
-
-## Exporting from mbed CLI
-
-mbed CLI currently supports exporting to Keil uVision, DS-5, IAR Workbench, Simplicity Studio and other IDEs.
-
-For example, to export to uVision run:
-
-	$ mbed export -i uvision -m K64F
-
-A .uvproj file is created in the ``projectfiles/uvision`` folder. You can open this project file with uVision.
