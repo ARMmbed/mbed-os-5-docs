@@ -1,6 +1,5 @@
 # Exporting to Third Party Toolchains
 
-[TODO: exporting from mbed Studio]
 
 If you'd like to develop on mbed OS with a third party tool, you can choose to export an mbed project to the following toolchains:
 
@@ -20,7 +19,7 @@ If you'd like to develop on mbed OS with a third party tool, you can choose to e
 * Emblocks
 * ZIP Archive (with repositories)
 
-This may be useful simply to lanuch a debug session with your favourite tool whilst using mbed CLI fro development, or create starting examples or projects you work on within your tool of choice. 
+This may be useful to lanuch a debug session with your favourite tool while using mbed CLI for development, or create starting examples or projects you work on within your tool of choice. 
 
 ## Exporting from mbed CLI
 
