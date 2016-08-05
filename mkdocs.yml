@@ -27,6 +27,7 @@ pages:
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
 - ['advanced/config_system.md', 'Advanced tutorials', 'Compile time configuration']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
+- ['advanced/testing.md', 'Advanced tutorials', 'Testing']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 
