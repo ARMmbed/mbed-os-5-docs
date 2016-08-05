@@ -40,7 +40,7 @@ Terminal applications run on your host PC, and provide a window for your mbed bo
 #### Installing an application
 
 There are many terminal applications for Windows, including:
-[TODO]: Link to Coolterm for win/mac/??linux??
+
 * [CoolTerm](http://freeware.the-meiers.org/) - this is the application we use in this example. We use it very often, becuase it usually "just works".
 * [Tera Term](http://sourceforge.jp/projects/ttssh2/files).
 * [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
@@ -72,8 +72,8 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try usi
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see out [build tools section](../build_tools/options.md).
-[TODO]: all these examples should be import links, not hard coded
+If you're not sure how to build these examples and run them on your board, please see out [build tools section](../dev_tools/options.md).
+
 
 ### Echo back characters you type
 
