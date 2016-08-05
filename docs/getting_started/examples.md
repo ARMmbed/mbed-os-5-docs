@@ -47,4 +47,4 @@ The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GC
 ## End to end projects
 
 * [LoRa on mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
-* [Internet connected lighting system](https://docs.mbed.com/projects/building-an-internet-connected-lighting-system/)
+* [Internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
