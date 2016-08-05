@@ -2,7 +2,7 @@
 
 [TODO: exporting from mbed Studio]
 
-If you'd like to develop on mbed OS with a third party tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
+If you'd like to develop on mbed OS with a third party tool, you can choose to export an mbed project to the following toolchains:
 
 * Keil uVision4
 * DS-5
@@ -20,6 +20,17 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one a
 * Emblocks
 * ZIP Archive (with repositories)
 
+This may be useful simply to lanuch a debug session with your favourite tool whilst using mbed CLI fro development, or create starting examples or projects you work on within your tool of choice. 
+
+## Exporting from mbed CLI
+
+mbed CLI currently supports exporting to Keil uVision, DS-5, IAR Workbench, Simplicity Studio and other IDEs.
+
+For example, to export to uVision run:
+
+	$ mbed export -i uvision -m K64F
+
+A .uvproj file is created in the ``projectfiles/uvision`` folder. You can open this project file with uVision.
 
 ## Exporting from the mbed Online Compiler
 
@@ -40,6 +51,14 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 	<span class="images">![](Images/select_toolchain.png)</span>
 
 1. The export process generates a ZIP file with a project file matching your selected toolchain. Follow your toolchain's import or project creation process to begin working there.
+
+## Before you export
+
+Changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options.
+
+While we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases and combinations, or provide support for use of these alternate tools themselves.
+
+## Third Party Tool Specifics
 
 ### Make (GCC ARM Embedded or Sourcery CodeBench)
 
@@ -111,18 +130,3 @@ __LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
 1. Download the [/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm](/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm).
 1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
 
-## Exporting from mbed CLI
-
-mbed CLI currently supports exporting to Keil uVision, DS-5, IAR Workbench, Simplicity Studio and other IDEs.
-
-For example, to export to uVision run:
-
-	$ mbed export -i uvision -m K64F
-
-A .uvproj file is created in the ``projectfiles/uvision`` folder. You can open this project file with uVision.
-
-## Before you export
-
-Changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options.
-
-While we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases and combinations, or provide support for use of these alternate tools themselves.
