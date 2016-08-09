@@ -1,7 +1,7 @@
 # Exporting to Third Party Toolchains
 
 
-If you'd like to develop on mbed OS with a third party tool, you can choose to export an mbed project to the following toolchains:
+If you'd like to develop on mbed OS with a third party tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
 
 * Keil uVision4
 * DS-5
@@ -31,6 +31,7 @@ For example, to export to uVision run:
 
 A .uvproj file is created in the ``projectfiles/uvision`` folder. You can open this project file with uVision.
 
+
 ## Exporting from the mbed Online Compiler
 
 The mbed Online Compiler has a built-in export mechanism that supports multiple toolchains:
@@ -39,15 +40,15 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 
 1. Click **Export Program.** The **Export Program** window opens.
 
-	<span class="images">![](Images/export_menu.png)</span>
+	<span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
 
 1. From the **Export Target** drop down list, select your board.
 
-	<span class="images">![](Images/select_target.png)</span>
+	<span class="images">![](Images/select_target.png)<span>Selecting a target board</span></span>
 
 1. From the **Export Toolchain** drop down list, select your toolchain.
 
-	<span class="images">![](Images/select_toolchain.png)</span>
+	<span class="images">![](Images/select_toolchain.png)<span>Selecting a toolchain</span></span>
 
 1. The export process generates a ZIP file with a project file matching your selected toolchain. Follow your toolchain's import or project creation process to begin working there.
 
@@ -57,7 +58,7 @@ Changing the compiler toolchain introduces many degrees of freedom in the system
 
 While we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases and combinations, or provide support for use of these alternate tools themselves.
 
-## Third Party Tool Specifics
+## Third party tool specifics
 
 ### Make (GCC ARM Embedded or Sourcery CodeBench)
 
@@ -98,7 +99,7 @@ The mbed libraries contain CMSIS startup files. When importing an mbed Online Co
 
 [uVision](http://www.keil.com/uvision|) is one of the third party toolchains supported by the mbed platform. Exporting to it creates a ZIP file with a uVision project file ``project.uvproj``.
 
-<span class="images">![](Images/uVision.png)</span>
+<span class="images">![](Images/uVision.png)<span>Seeing our application in Keil uVision4</span></span>
 
 #### Installing missing algorithms
 
@@ -121,11 +122,25 @@ Now you should be able to flash to the nrf51822 target.
 
 __Maxim Platforms__
 
-1. Download [/media/uploads/sam_grove/max32600.flm |MAX32600 Flash Algorithm](/media/uploads/sam_grove/max32600.flm |MAX32600 Flash Algorithm).
+1. Download [the algorithm](https://developer.mbed.org/media/uploads/sam_grove/max32600.flm).
 1. Copy the file to directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
 
 __LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
 
-1. Download the [/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm](/media/uploads/MACRUM/lpc8xx_32.flm|LPC8xx_32k Flash Algorithm).
+1. Download the [algorithm](https://developer.mbed.org/media/uploads/MACRUM/lpc8xx_32.flm).
 1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
 
+###IAR Embedded Workbench
+
+__Floating Point Platforms__
+
+Many MCUs contain a Floating Point Unit (FPU). IAR requires editing your project settings to utilize FPU instructions. 
+
+To enable the use of floating point instructions:
+
+1. Right click on the project and select **Options...**.
+1. In the **Target** tab, under **Floating point settings**, click the **FPU** drop down menu.
+1. Select the corresponding FPU instruction set.
+1. Click **OK**.
+
+<span class="images">![](Images/fpu_iar.png)</span>

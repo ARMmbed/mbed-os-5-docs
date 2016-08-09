@@ -1,17 +1,19 @@
-site_name: mbed OS 5 Handbook
+site_name: mbed OS Handbook
 
 docs_dir: docs
 
 pages:
-- ['index.md','Introduction to mbed OS 5.1 and the handbook']
-- ['getting_started/first_program.md', 'Getting started', 'First application']
+- ['index.md','Introduction to the mbed OS handbook']
+- ['getting_started/first_program.md', 'First application', 'Introduction']
+- ['getting_started/blinky_cli.md', 'First application', 'Blinky on mbed CLI']
+- ['getting_started/blinky_compiler.md', 'First application', 'Blinky on the mbed Online Compiler']
 - ['APIs/intro.md', 'Getting started', 'Writing your own applications']
 - ['getting_started/what_need.md', 'Getting started', 'The Windows serial driver']
 - ['getting_started/serial_communication.md', 'Getting started', 'Getting the most out of the USB connection']
+- ['getting_started/where_next.md', 'Getting started', 'Where next']
 - ['dev_tools/options.md', 'Development tools', 'Development tool options']
 - ['dev_tools/cli.md', 'Development tools', 'mbed CLI']
 - ['dev_tools/online_comp.md', 'Development tools', 'mbed Online Compiler']
-- ['dev_tools/studio.md', 'Development tools', 'mbed Studio']
 - ['dev_tools/third_party.md', 'Development tools', 'Third party development tools']
 - ['getting_started/mbed_interface.md', 'Development tools', 'How mbed works']
 - ['collab/collab_intro.md', 'Collaboration and version control', 'Introduction']
@@ -19,11 +21,14 @@ pages:
 - ['collab/pull_requests.md', 'Collaboration and version control', 'Pull requests']
 - ['collab/publishing_code.md', 'Collaboration and version control', 'Publishing code']
 - ['collab/mult_auth.md', 'Collaboration and version control', 'Multiple authors']
-- ['advanced/config_system.md', 'OS concepts', 'Configuration system']
-- ['concepts/thread_safety.md', 'OS concepts', 'Thread safety']
-- ['concepts/memory_model.md', 'OS concepts', 'Memory model']
+- ['cont/contributing.md', 'Publishing libraries and contributing to mbed OS', 'Contribution and publishing guide']
+- ['cont/code_style.md', 'Publishing libraries and contributing to mbed OS', 'Code style guide']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
+- ['advanced/config_system.md', 'Advanced tutorials', 'Compile time configuration']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
+- ['advanced/testing.md', 'Advanced tutorials', 'Testing']
+- ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
+- ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 
 copyright: © ARM Ltd. Copyright 2016 – ARM mbed IoT Device Platform

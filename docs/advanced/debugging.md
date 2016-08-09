@@ -138,6 +138,17 @@ It is often useful to see the values of variables in your program at a given tim
 	}
 ```
 
+## Video tutorials 
+
+For Windows:
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/jAMTXK9HjfU/0.jpg)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)</span>
+
+
+For Mac:
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/IR8Di53AGSk/0.jpg)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)</span>
+
 ## What's next
 
 All the different techniques mentioned previously are sometimes inefficient and have strong disadvantages:

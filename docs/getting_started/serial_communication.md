@@ -35,59 +35,45 @@ Terminal applications run on your host PC, and provide a window for your mbed bo
 
 <span class="tips">**Serial configuration:** The standard setup for the USB Serial Port is 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1)</span>
 
-### Using terminal applications on Windows
+### Using terminal applications on Windows and OS X
 
 #### Installing an application
 
 There are many terminal applications for Windows, including:
-[TODO]: Link to Coolterm for win/mac/??linux??
-* [Tera Term](http://sourceforge.jp/projects/ttssh2/files) - this is the application we use in this example.
-* [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
-* [Terminal by Bray](http://sites.google.com/site/braypp/terminal)
+
+* [CoolTerm](http://freeware.the-meiers.org/) - this is the application we use in this example. We use it very often, becuase it usually "just works".
+* [Tera Term](http://sourceforge.jp/projects/ttssh2/files).
+* [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
 * Some Windows PCs come with **Hyperterminal** installed.
 
 #### Configuring the Connection
-[TODO]: Coolterm, not teraterm instructions
-1. Open Tera Term.
-1. Select **File > New Connection**.
-1. Select the **Serial** radio button.
-1. select **mbed Serial Port** from the drop down menu.
-1. Click **OK**.
 
-Set up new-line format (to print out new line characters correctly):
- 
-1. Select **Setup > Terminal**.
-1. Under **New-line**, set **Receive** to **LF**.
+1. Plug in your mbed board.
+1. Open CoolTerm.
+1. Click **Connect**. This opens up an 8-n-1 9600baud connection to the first available serial port. If you have more than one board plugged in, you may need to change the port under **Options > Serial Port > Port** .
+
 
 Check your connection parameters:
 
 1. Select **Setup > Serial Port**.
 1. You should see 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1).
+1. If you do not see your board, click **Re-Scan Peripherals**,
 
 Your terminal program is now configured and connected. 
 
-### Using terminal applications on Mac OS X or Linux
-[TODO]: Coolterm for sure!
-#### Installing an application
+### Using terminal applications on Linux
 
-If you do not already have it, install [GNU Screen](http://en.wikipedia.org/wiki/GNU_Screen).
+CoolTerm should work under Linux. If for some reason it doesn't, you can try using any of the following:
 
-#### Configuring the Connection
-  
-1. Open a terminal or console window.
-1. Use the command ``screen /dev/<devicename>`` to connect to your device. If you're not sure how to find your device's name:
-	* *Windows*: look under the **Ports** section in **Device Manager** ('**Start > Control Panel > System > Hardware > Device Manager**'). The name will be ''mbed Serial Port (COMx)'', where ''x'' is the number of the COM port allocated.
-	* *Mac OS X*: use the command ``ls /dev/tty.usbmodem*``
-	* *Linux*: use the command ``ls /dev/ttyACM*``
-1. Check that your connection is working by typing in the terminal application; the status light on the mbed board should flicker as each character is received. 
-
+* [Minicom](https://help.ubuntu.com/community/Minicom).
+* [GNU Screen](https://www.gnu.org/software/screen/manual/screen.html).
 
 ## Additional examples
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see out [build tools section](../build_tools/options.md).
-[TODO]: all these examples should be import links, not hard coded
+If you're not sure how to build these examples and run them on your board, please see out [build tools section](../dev_tools/options.md).
+
 
 ### Echo back characters you type
 

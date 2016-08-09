@@ -109,7 +109,7 @@ In this JSON file:
 - `config` defines the configuration parameters of the library, as explained [here](#defining-configuration-parameters). - `config` is always processed first, independent of the target.
 - `macros` is a list of extra macros that will be defined when compiling a project that includes this library. A macro can be defined without a value (like `MYMOD_MACRO1` above) or with a value (like `MYMOD_MACRO2` above).
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters. It is used to override the default values of these parameters so that they match the current compilation target. 
-    - The keys in `target_overrides` are matched against toolchain *labels* ([for more information see "mbed Targets"](Targets.md)). If a key inside `target_overrides` matches one of the target labels, the parameter values receive the key values. 
+    - The keys in `target_overrides` are matched against toolchain *labels* ([for more information see "mbed Targets"](https://github.com/ARMmbed/Porting_Guide/blob/master/docs/porting/Targets.md)). If a key inside `target_overrides` matches one of the target labels, the parameter values receive the key values. 
     - The keys in `target_overrides` are processed in order: if a hypothetical target defines both `K64F` and `NXP` as labels, `timer_period` will be set to 100, `queue_size` will be set to 20 and `buffer_size` will be set to 128.
     - If the library is compiled for a target that doesn't have `K64F` or `NXP` as labels, the values of the parameters will be the ones set in `config`.
 
@@ -125,7 +125,7 @@ As explained [earlier](#defining-configuration-parameters), the parameters have 
 
 ## Configuration data in targets
 
-Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how to define a target and target inheritance, [see here](Targets.md)). 
+Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how to define a target and target inheritance, [see here](https://github.com/ARMmbed/Porting_Guide/blob/master/docs/porting/Targets.md)). 
 
 Target configuration data is defined in `targets.json` using `config`, as described [above](#defining-configuration-parameters). 
 
