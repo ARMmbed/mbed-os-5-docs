@@ -58,7 +58,7 @@ Changing the compiler toolchain introduces many degrees of freedom in the system
 
 While we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases and combinations, or provide support for use of these alternate tools themselves.
 
-## Third party tool specifics
+## Third party tool notes
 
 ### Make (GCC ARM Embedded or Sourcery CodeBench)
 
@@ -144,3 +144,7 @@ To enable the use of floating point instructions:
 1. Click **OK**.
 
 <span class="images">![](Images/fpu_iar.png)</span>
+
+### Simplicity Studio
+
+[We have more information about Simplicity Studio in a stand-alone guide](https://docs.mbed.com/docs/third-party-integrations/en/latest/Simp_Stu/simp_stu/).
