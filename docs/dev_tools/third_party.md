@@ -147,4 +147,4 @@ To enable the use of floating point instructions:
 
 ### Simplicity Studio
 
-[We have more information about Simplicity Studio in a stand-alone guide](https://docs.mbed.com/docs/third-party-integrations/en/latest/Simp_Stu/simp_stu/).
+We have more information about Simplicity Studio [in a stand-alone guide](https://docs.mbed.com/docs/third-party-integrations/en/latest/Simp_Stu/simp_stu/).
