@@ -1,6 +1,6 @@
-# Introduction to the mbed OS Handbook
+# Introduction to the mbed OS 5 Handbook
 
-Welcome to the mbed OS handbook. 
+Welcome to the mbed OS 5 handbook. 
 
 If you’re an experienced mbed applications developer, you might want to dive straight into the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/en/), or take a look at our [development tools documentation](dev_tools/options.md).
 
