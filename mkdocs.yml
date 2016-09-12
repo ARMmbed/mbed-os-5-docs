@@ -1,9 +1,9 @@
-site_name: mbed OS Handbook
+site_name: mbed OS 5 Handbook
 
 docs_dir: docs
 
 pages:
-- ['index.md','Introduction to the mbed OS handbook']
+- ['index.md','Introduction to the mbed OS 5 handbook']
 - ['getting_started/first_program.md', 'First application', 'Introduction']
 - ['getting_started/blinky_cli.md', 'First application', 'Blinky on mbed CLI']
 - ['getting_started/blinky_compiler.md', 'First application', 'Blinky on the mbed Online Compiler']
