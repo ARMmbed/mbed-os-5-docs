@@ -48,3 +48,15 @@ The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GC
 
 * [LoRa on mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
 * [Internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
+
+## JavaScript on mbed OS 5
+
+* [Bringing JavaScript to mbed OS](https://developer.mbed.org/blog/entry/Bringing-JavaScript-to-mbed-OS/)
+
+## BBC micro:bit
+
+A few micro:bit How To videos:
+
+* [Hello world](https://www.youtube.com/watch?v=Jctpi6aqrHQ)
+* [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
+* [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
