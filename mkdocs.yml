@@ -29,6 +29,7 @@ pages:
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
 - ['advanced/testing.md', 'Advanced tutorials', 'Testing']
 - ['advanced/tls_porting.md', 'Advanced tutorials', 'mbed TLS on mbed OS']
+- ['concepts/events.md', 'Advanced tutorials', 'Event loop']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 
