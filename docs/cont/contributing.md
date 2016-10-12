@@ -42,7 +42,7 @@ as can be found in: LICENSE-apache-2.0.txt</pre>
 Each source header should *start with* your copyright line, the SPDX identifier and the Apache 2.0 header as shown here:
 
 ```
-Copyright (c) [First year]-[Last year], **Your Name or Company Here**, All Rights Reserved
+Copyright (c) [First year]-[Last year], **Your Name or Company Here**
 SPDX-License-Identifier: Apache-2.0
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
