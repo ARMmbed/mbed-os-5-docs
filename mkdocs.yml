@@ -32,6 +32,6 @@ pages:
 - ['concepts/events.md', 'Advanced tutorials', 'Event loop']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
-- ['concepts/MINAR_migration.md', 'Advanced tutorials', 'Migrating from mbed OS 3 - MINAR']
+- ['advanced/MINAR_migration.md', 'Advanced tutorials', 'Migrating from mbed OS 3 - MINAR']
 
 copyright: © ARM Ltd. Copyright 2016 – ARM mbed IoT Device Platform
