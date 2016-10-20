@@ -9,16 +9,12 @@ Each thread of execution in the RTOS has a separate stack. When you use the RTOS
 * The Timer Thread that executes all the time-scheduled tasks (periodic and non-periodic).
 * The stack of OS Scheduler itself (also used by the ISRs).
 
-Collisions between the main thread stack and heap can occur. Stack checking is turned on for application-defined threads and the kernel will error if an overflow condition is detected.
+Stack checking is turned on for all threads and the kernel will error if an overflow condition is detected.
 
 ```
 +-------------------+   Last Address of RAM
 | Scheduler Stack   |
 +-------------------+
-| Main Thread Stack |
-|         |         |
-|         v         |
-+---- GUARD WORD ---+
 |                   |   RAM
 |                   |
 |         ^         |
@@ -44,6 +40,8 @@ Collisions between the main thread stack and heap can occur. Stack checking is t
 | ZI: Idle Stack    |
 +-------------------+
 | ZI: Timer Stack   |
++-------------------+
+| ZI: Main Stack    |
 +-------------------+
 | RW                |  
 +===================+   First Address of RAM
