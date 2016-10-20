@@ -1,40 +1,45 @@
 # Exporting to Third Party Toolchains
 
 
-If you'd like to develop on mbed OS with a third party tool, or migrate to one as your project develops past prototype, you can choose to export an mbed project to the following toolchains:
+If you'd like to develop on mbed OS with a third party tool, or migrate to one, you can choose to export an mbed project to the following development environments:
 
-* Keil uVision4
+* Keil uVision5
+* IAR Systems
+* Make using:
+  * GCC (ARM Embedded)
+  * ARM Compiler 5
+  * IAR ARM Compiler
+* Eclipse CDT using:
+  * GCC (ARM Embedded)
+  * ARM Compiler 5
+  * IAR ARM Compiler
 * DS-5
 * LPCXpresso
-* GCC (Sourcery CodeBench)
-* GCC (ARM Embedded)
-* IAR Systems
-* CooCox CoIDE
 * Kinetis Design Studio
 * Simplicity Studio
 * Atmel Studio
 * SW4STM32 System Workbench for STM32
+* CooCox CoIDE
 * e2studio
-* Uvision4 and Uvision5
 * Emblocks
-* ZIP Archive (with repositories)
 
-This may be useful to launch a debug session with your favourite tool while using mbed CLI for development, or create starting examples or projects you work on within your tool of choice. 
+This may be useful to launch a debug session with your favorite tool while using mbed CLI for development, or creating examples or projects you work on within your tool of choice. 
 
 ## Exporting from mbed CLI
 
-mbed CLI currently supports exporting to Keil uVision, DS-5, IAR Workbench, Simplicity Studio and other IDEs.
+mbed CLI currently supports exporting to all of the development environments mentioned above by using the ``export`` command.
 
-For example, to export to uVision run:
+For example, to export to uVision5 with the K64F target run:
 
-	$ mbed export -i uvision -m K64F
+	$ mbed export -i uvision5 -m K64F
 
-A .uvproj file is created in the ``projectfiles/uvision`` folder. You can open this project file with uVision.
+A `*.uvproj` file is created in the root folder of the project. 
+You can open this project file with uVision5.
 
 
 ## Exporting from the mbed Online Compiler
 
-The mbed Online Compiler has a built-in export mechanism that supports multiple toolchains:
+The mbed Online Compiler has a built-in export mechanism that supports the same development environments as mbed CLI:
 
 1. Right-click on a project you want to export.
 
@@ -46,21 +51,27 @@ The mbed Online Compiler has a built-in export mechanism that supports multiple 
 
 	<span class="images">![](Images/select_target.png)<span>Selecting a target board</span></span>
 
-1. From the **Export Toolchain** drop down list, select your toolchain.
+1. From the **Export Toolchain** drop down list, select your development environment.
 
 	<span class="images">![](Images/select_toolchain.png)<span>Selecting a toolchain</span></span>
 
-1. The export process generates a ZIP file with a project file matching your selected toolchain. Follow your toolchain's import or project creation process to begin working there.
+1. The export process generates a ZIP archive with a project file matching your selected development environment. 
+
+Follow your toolchain's import or project creation process to begin working there.
 
 ## Before you export
 
-Changing the compiler toolchain introduces many degrees of freedom in the system; these differences include the translation of C/C++ code to assembly code, the link time optimizations, differences because of the implementations of the C standard libraries, and differences based on compile and link options.
+Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries, and differences caused by changing compile and link options.
 
-While we support exporting your project and the libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler. We will do our best to maintain the exported libraries, project file and makefiles, but please understand we can not cover all cases and combinations, or provide support for use of these alternate tools themselves.
+While we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler.
+
+We will do our best to maintain the exported libraries and project files, but please understand we can not cover all cases and combinations, or provide support for use of these alternative tools themselves.
 
 ## Third party tool notes
 
-### Make (GCC ARM Embedded or Sourcery CodeBench)
+### Make and Eclipse (GCC ARM Embedded, IAR Compiler, ARM Compiler 5)
+
+**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.
 
 > "[GNU Make](http://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
 > 
@@ -68,12 +79,19 @@ While we support exporting your project and the libraries to an alternate toolch
 
 Make itself does not compile source code. It relies on a compiler like:
 
-* [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that your compiler is added to your PATH variable. This contradicts the instruction given on the installation website because those instructions are intended for Eclipse, not Make.
-* [Sourcery CodeBench](http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/overview/) - a paid tool and can be purchased on the [Mentor](http://www.mentor.com/) website.
+* [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+* The IAR ARM compiler bundled with the IAR Embedded Workbench.
+* ARM Compiler 5.
 
-#### GCC and Make on Windows: Nordic Platforms using SoftDevices
+
+#### Make and Eclipse on Windows: Nordic Platforms using SoftDevices
 	
-GCC exports targeting the NRF51822 require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi). Please download and install it.
+Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. 
+Please download and install it.
+
+#### Make and Eclipse on Linux and Mac OSX: Nordic Platforms using SoftDevices
+	
+Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sercord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
 
 ### Kinetis Design Studio (Freescale KDS) with GCC ARM Embedded
 
@@ -93,57 +111,9 @@ Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to upd
 
 ### Atmel Studio
 
-The mbed libraries contain CMSIS startup files. When importing an mbed Online Compiler file to [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the 'migrate to current infrastructure' box.
+The mbed libraries contain CMSIS startup files. 
 
-### Keil uVision4
-
-[uVision](http://www.keil.com/uvision|) is one of the third party toolchains supported by the mbed platform. Exporting to it creates a ZIP file with a uVision project file ``project.uvproj``.
-
-<span class="images">![](Images/uVision.png)<span>Seeing our application in Keil uVision4</span></span>
-
-#### Installing missing algorithms
-
-The exporters are currently configured to use Keil MDK v4. MCUs released after December 2014 may not have device svd and flash programing algorithms provided with the installation. You will need to obtain these and install in the proper directory, then select that directory in the project file.
-
-__Nordic Platforms using SoftDevices:__
-
-1. Download [http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi | nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi | nordic nrf51_SDK).
-1. Install the nrf51_sdk and integrate with uVision when prompted.
-
-To add the algorithm to your project file:
-	
-1. Right click on the project > **Options for Target...**
-1. In the **Utilities** tab, click the **Configure Flash Menu Command Settings** button.
-1. Click the **Add** button.
-1. Select ``nrf51xxx``.
-1. Click **Add** > Click **OK** > click **OK**. 
-
-Now you should be able to flash to the nrf51822 target.
-
-__Maxim Platforms__
-
-1. Download [the algorithm](https://developer.mbed.org/media/uploads/sam_grove/max32600.flm).
-1. Copy the file to directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
-
-__LPCXpresso824-MAX and Switch Science mbed LPC824 Platforms__
-
-1. Download the [algorithm](https://developer.mbed.org/media/uploads/MACRUM/lpc8xx_32.flm).
-1. Copy the file to the directory ``C:\Keil\ARM\Flash`` (assuming the default install path was chosen).
-
-###IAR Embedded Workbench
-
-__Floating Point Platforms__
-
-Many MCUs contain a Floating Point Unit (FPU). IAR requires editing your project settings to utilize FPU instructions. 
-
-To enable the use of floating point instructions:
-
-1. Right click on the project and select **Options...**.
-1. In the **Target** tab, under **Floating point settings**, click the **FPU** drop down menu.
-1. Select the corresponding FPU instruction set.
-1. Click **OK**.
-
-<span class="images">![](Images/fpu_iar.png)</span>
+When importing an mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the 'migrate to current infrastructure' box.
 
 ### Simplicity Studio
 
