@@ -8,11 +8,11 @@ These flags are stored in a JSON file that may be merged with other JSON files o
 
 ## JSON toolchain profile format
 
-The JSON object that represents a toolchain profile is a dict mapping from toolchains, like `GCC_ARM`, to their flags, like `-O3`.
+The JSON object that represents a toolchain profile is a dictionary mapping from toolchains, like `GCC_ARM`, to their flags, like `-O3`.
 
-The structure is as follows: each toolchain supported by a toolchain profile has a dict in the root dict. 
+The structure is as follows: each toolchain supported by a toolchain profile has a dictionary in the root dictionary. 
 
-This dict contains a mapping from a flag type to a list of flags that should be passed the corresponding part of the compiler suite.
+This dictionary contains a mapping from a flag type to a list of flags that should be passed the corresponding part of the compiler suite.
 
 The required flag types are:
 
@@ -80,6 +80,6 @@ This looks exactly the same in Python as it does in the JSON format above.
 
 The meaning of the flags, and which ones are required, is the same as the user perspective.
 
-A developer using the API must parse the user-provided files themselves and extract the appropriate sub-dict from the file afterwards.
+A developer using the API must parse the user-provided files themselves and extract the appropriate sub-dictionary from the file afterwards.
 
-A convenience function that does this for a developer is `tools.options.extract_profile`; it class ``args_error`` when a toolchain profile JSON file does not provide flags for the selected toolchain.
+A convenience function that does this for a developer is `tools.options.extract_profile`; it calls ``args_error`` when a toolchain profile JSON file does not provide flags for the selected toolchain.
