@@ -31,7 +31,6 @@ pages:
 - ['advanced/mbed_targets.md', 'Advanced tutorials', 'Adding and configuring targets']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
 - ['advanced/testing.md', 'Advanced tutorials', 'Testing']
-- ['concepts/events.md', 'Advanced tutorials', 'Event loop']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 - ['concepts/memap.md', 'Advanced tutorials', 'memap - static memory map analysis']
