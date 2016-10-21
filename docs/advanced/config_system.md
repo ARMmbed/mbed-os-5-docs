@@ -239,12 +239,12 @@ For `myapp` above:
 	- 9600 when compiling for `Base`, because of the `Base` override in myapp's `target_overrides`.
 	- 2400 when compiling for any other target because of the `*` override in myapp's `target_overrides`.
 - The value of `target.stack_size` is:
- - 	256 when compiling for `Derived`.
+ - 256 when compiling for `Derived`.
  - 128 when compiling for `Base` - or any other target that derives from `Base` (assuming that `Derived` is the only target that redefines `stack_size`).
 - The value of `mylib.timer_period` is 100, since that's overridden by the application and thus takes precedence over the values defined in `mylib`.
 - The values of `mylib.buffer_size` and `mylib.queue_size` are:
-- 1024 and 10 respectively when compiling for `Base`, as defined in the `config` section of `mylib`.
-- 128 and 20 respectively, since `Derived` defines the `NXP` label and `mylib` defines a specific configuration for this label. 
+ - 1024 and 10 respectively when compiling for `Base`, as defined in the `config` section of `mylib`.
+ - 128 and 20 respectively, since `Derived` defines the `NXP` label and `mylib` defines a specific configuration for this label. 
 - Because `Derived` has its own `my_own_config` configuration parameter, `target.my_own_config` will also be defined in this case.
 
 # Using configuration data in the code
