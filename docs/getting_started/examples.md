@@ -60,3 +60,7 @@ A few micro:bit How To videos:
 * [Hello world](https://www.youtube.com/watch?v=Jctpi6aqrHQ)
 * [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
 * [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
+
+## Our YouTube channel
+
+[https://www.youtube.com/armmbed/](https://www.youtube.com/armmbed/)
