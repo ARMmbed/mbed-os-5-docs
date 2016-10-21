@@ -1,13 +1,19 @@
-# Toolchain Profiles - User Perspective
+# Toolchain profiles
 
-A Toolchain or build system Profile is a set of flags that is garenteed to be passed to the underlieing compiler suite.
+## User perspective
+
+A toolchain or build system profile is a set of flags that is guaranteed to be passed to the underyling compiler suite.
+
 These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
 
-## JSON Toolchain Profile Format
+## JSON toolchain profile format
 
-The JSON object that represents a Toolchain Profile is a dict mapping from Toolchains, like `GCC_ARM`, to their flags, like `-O3`.
-The structure is as follows: Each toolchain supported by a Toolchain Profile has an dict in the root dict. 
+The JSON object that represents a toolchain profile is a dict mapping from toolchains, like `GCC_ARM`, to their flags, like `-O3`.
+
+The structure is as follows: each toolchain supported by a toolchain profile has a dict in the root dict. 
+
 This dict contains a mapping from a flag type to a list of flags that should be passed the corresponding part of the compiler suite.
+
 The required flag types are:
 
 | Key      | Description                           |
@@ -19,7 +25,8 @@ The required flag types are:
 
 ## Example
 
-An example of a Toolchain Profile is given below:
+An example of a toolchain profile:
+
 ```json
 {
     "GCC_ARM": {
@@ -58,15 +65,21 @@ An example of a Toolchain Profile is given below:
 ```
 
 From this Toolchain profile, we can tell that:
- - `GCC_ARM`, `ARM`, and `IAR` compiler suites are supported.
- - The `ARM` C and C++ Compilers will be using optimization level `-O3`
- - The `IAR` linker will skip dynamic initialization
- - etc.
 
-# Toolchain Profile API Perspective
+- `GCC_ARM`, `ARM`, and `IAR` compiler suites are supported.
+- The `ARM` C and C++ compilers will be using optimization level `-O3`.
+- The `IAR` linker will skip dynamic initialization.
 
-The Toolchains no longer take in an optional argument, `build_profile`, that will contain a map from flag types to lists of flags.
-This looks exactly the same in python as it does in the JSON format above.
-The meaning of the flags, and which ones are required is the same as the User Perspective
-A developer using the API must parse the User provided files themselves and extract the appropriate sub-dict from the file afterwards.
-A convienence function that does this for a developer is `tools.options.extract_profile` and will call args_error when a Toolchain Profile JSON file does not provide flags for the selected Toolchain.
+And so on.
+
+## API perspective
+
+The toolchains no longer take in an optional argument, `build_profile`, that will contain a map from flag types to lists of flags. 
+
+This looks exactly the same in Python as it does in the JSON format above.
+
+The meaning of the flags, and which ones are required, is the same as the user perspective.
+
+A developer using the API must parse the user-provided files themselves and extract the appropriate sub-dict from the file afterwards.
+
+A convenience function that does this for a developer is `tools.options.extract_profile`; it class ``args_error`` when a toolchain profile JSON file does not provide flags for the selected toolchain.
