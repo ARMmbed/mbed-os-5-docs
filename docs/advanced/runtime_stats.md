@@ -1,19 +1,26 @@
-# Runtime Statistics
+# Runtime statistics
 
-Mbed 5.0 provides various runtime statistics to help characterize resource usage. This allows potential problems, such as a stack close to overflowing, to be easily identified. The metrics currently supported are available for the heap and the stack.
+mbed OS 5 provides various runtime statistics to help characterize resource usage. This allows easy identification of potential problems, such as a stack close to overflowing. The metrics currently supported are available for the [heap](#heap_stats) and the [stack](#stack_stats).
 
 ## Heap stats
 
-Heap statistics provide exact information about the number of bytes dynamically allocated by a program. It does not take into account heap fragmentation or allocation overhead. This allows allocation size reported to remain consistent regardless of order of allocation (fragmentation) or allocation algorithm used (overhead).
+Heap statistics provide exact information about the number of bytes dynamically allocated by a program. It does not take into account heap fragmentation or allocation overhead. This allows allocation size reports to remain consistent, regardless of order of allocation (fragmentation) or allocation algorithm (overhead).
 
-To enable heap stats add the command line flag ```-DMBED_HEAP_STATS_ENABLED=1``` . A snapshot of heap stats can then be taken with the function **mbed_stats_heap_get()**. Note - this function is available even when the heap stats are not enabled, but always returns zero for all fields.
+To enable heap stats:
+
+1. Add the command line flag ```-DMBED_HEAP_STATS_ENABLED=1```. 
+2. Use the function ``mbed_stats_heap_get()`` to take a snapshot of heap stats. 
+
+<span class="notes">**Note**: This function is available even when the heap stats are not enabled, but always returns zero for all fields.</span>
 
 ### Example use cases
-* Getting worst case memory usage, ```max_size```, so MCU ram can be properly sized 
-* Detecting program memory leaks by the current size allocated ```current_size``` and or number of allocations in use ```alloc_cnt```.
-* Check if allocations have been failing and if so how many with ```alloc_fail_cnt```.
+
+* Getting worst case memory usage, ```max_size```, to properly size MCU RAM. 
+* Detecting program memory leaks by the current size allocated (```current_size```) or number of allocations in use (```alloc_cnt```).
+* Use ``alloc_fail_cnt `` to check if allocations have been failing, and if so - how many.
 
 ### Example program using heap statistics
+
 ```
 #include "mbed.h"
 #include "mbed_stats.h"
@@ -40,14 +47,16 @@ int main(void)
 ```
 
 ### Side effects of enabling heap stats
-* An additional 8 bytes of overhead for each memory allocation
-* The function ```realloc``` will always never reuse the buffer it is resizing
-* Memory allocation is slightly slower due to the added book keeping
 
+* An additional 8 bytes of overhead for each memory allocation.
+* The function ```realloc``` will never reuse the buffer it is resizing.
+* Memory allocation is slightly slower due to the added book keeping.
 
 ## Stack stats
 
-Stack stats provide information on the allocated stack size of a thread and the wost case stack usage. Any thread on the system can be queried for stack information. To enable heap stats add the command line flag ```-DMBED_STACK_STATS_ENABLED=1```.
+Stack stats provide information on the allocated stack size of a thread and the worst case stack usage. Any thread on the system can be queried for stack information. 
+
+To enable heap stats, add the command line flag ```-DMBED_STACK_STATS_ENABLED=1```.
 
 ### Example program using stack statistics
 
@@ -76,5 +85,5 @@ int main(void)
     printf("Stack used %li of %li bytes\r\n", max_stack, stack_size);
 }
 ```
-*The stack statistics API is experimental and will change in the future
+<span class="notes">**Note:** The stack statistics API is experimental and will change.</span>
 
