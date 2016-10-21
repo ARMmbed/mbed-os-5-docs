@@ -1,4 +1,4 @@
-# Porting guide: adding target support to mbed OS
+# Porting guide: adding target support to mbed OS 5
 
 There are two typical ways to add target support to mbed OS: Either you'll be adding a [completely new microcontroller](#adding-a-new-microcontroller) and board, or you'll be adding a new board that contains an [already-supported microcontroller](#adding-a-new-board-or-module). 
 
