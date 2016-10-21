@@ -12,7 +12,6 @@
 
 ## Concept reviews
 
-* Review of the [event loop](events.md).
 * Review of [thread safety](../concepts/thread_safety.md)
 * Review of the mbed [memory model](../concepts/memory_model.md) and [memap - static memory map analysis](../concepts/memap.md).
 
