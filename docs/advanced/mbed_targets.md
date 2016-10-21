@@ -26,7 +26,7 @@ This section lists all the properties that are known to the mbed build system. U
 
 ## inherits
 
-The description of a mbed target can "inherit" from one of more descriptions of other targets. When a target **A** inherits from another target **B** (**A** is the _child_ of **B** and **B** is the _parent_ of **A**), it automatically "borrows" all the definitions of properties from **B** and can modify them as needed (if you're familiar with Python, this is very similar with how class inheritance works in Python). In our example above, `TEENSY3_1` inherits from `Target` (most mbed targets inherit from `Target`). This is how `Target` is defined:
+The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target **A** inherits from another target **B** (**A** is the _child_ of **B** and **B** is the _parent_ of **A**), it automatically "borrows" all the definitions of properties from **B** and can modify them as needed (if you're familiar with Python, this is very similar to class inheritance). In our example above, `TEENSY3_1` inherits from `Target` (most mbed targets inherit from `Target`). This is how `Target` is defined:
 
 ```
 "Target": {
@@ -43,8 +43,8 @@ The description of a mbed target can "inherit" from one of more descriptions of 
 
 Since `TEENSY3_1` inherits from `Target`:
 
-- `core` is a property defined both in `TEENSY3_1` and `Target`. Since `TEENSY3_1` redefines it, the value of `core` for `TEENSY3_1` will be `Cortex-M4`.
-- `default_toolchain` is not defined in `TEENSY3_1`, but since it is defined in `Target`, `TEENSY3_1` borrows it, so the value of `default_toolchain` for `TEENSY3_1` will be `ARM`.
+- `core` is a property defined both in `TEENSY3_1` and `Target`. Since `TEENSY3_1` redefines it, the value of `core` for `TEENSY3_1` is `Cortex-M4`.
+- `default_toolchain` is not defined in `TEENSY3_1`, but since it is defined in `Target`, `TEENSY3_1` borrows it, so the value of `default_toolchain` for `TEENSY3_1` is `ARM`.
 
 A target can add properties that don't exist in its parent(s). For example, `OUTPUT_EXT` is defined in `TEENSY3_1`, but doesn't exist in `Target`.
 
@@ -58,31 +58,31 @@ It's possible to inherit from more than one target. For example:
 
 In this case, `ImaginaryTarget` inherits the properties of both `Target` and `TEENSY3_1`, so:
 
-- the value of `ImaginaryTarget.default_toolchain` will be `ARM` (from `Target`)
-- the value of `ImaginaryTarget.OUTPUT_EXT` will be `hex` (from `TEENSY3_1`).
-- the value of `ImaginaryTarget.core` will be `null` (from `Target`, since that's the first parent of `ImaginaryTarget` that defines `core`).
+- The value of `ImaginaryTarget.default_toolchain` is `ARM` (from `Target`).
+- The value of `ImaginaryTarget.OUTPUT_EXT` is `hex` (from `TEENSY3_1`).
+- The value of `ImaginaryTarget.core` is `null` (from `Target`, since that's the first parent of `ImaginaryTarget` that defines `core`).
 
-Avoid using multiple inheritance for your targets if possible, since it can get pretty tricky to figure out how a property is inherited if multiple inheritance is used. If you have to use multiple inheritance, keep in mind that the mbed target description mechanism uses the old (pre 2.3) Python mechanism for finding the method resolution order:
+Avoid using multiple inheritance for your targets if possible, since it can get pretty tricky to figure out how a property is inherited. If you have to use multiple inheritance, keep in mind that the mbed target description mechanism uses the old (pre 2.3) Python mechanism for finding the method resolution order:
 
-- look for the property in the current target.
-- if not found, look for the property in the first target's parent, then in the parent of the parent and so on.
-- if not found, look for the property in the rest of the target's parents, relative to the current inheritance level.
+- Look for the property in the current target.
+- If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
+- If not found, look for the property in the rest of the target's parents, relative to the current inheritance level.
 
-For more details about the Python method resolution order, check for example [this link](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
+For more details about the Python method resolution order, check [this link](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
 
 ## core
 
-The name of the ARM core used by the target.
+The name of the target's ARM core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`
 
 ## public
 
-Some mbed targets might be defined solely for the purpose of serving as an inheritance base for other targets (as opposed to being used to build mbed code). When such a target is defined, its description must have the `public` property set to `false` to prevent the mbed build system from considering it as a build target. An example is the `Target` target shown in a previous paragraph.
+Some mbed targets may be defined solely for the purpose of serving as an inheritance base for other targets (as opposed to being used to build mbed code). When such a target is defined, its description must have the `public` property set to `false`, to prevent the mbed build system from considering it as a build target. An example is the `Target` target shown above.
 
 If `public` is not defined for a target, it defaults to `true`.
 
-Note that unlike other target properties, **the value of `public` is not inherited from a parent to its children**.
+<span class="notes">**Note:** unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
 
 ## macros, macros_add, macros_remove
 
@@ -90,10 +90,10 @@ The macros in this list will be defined when compiling mbed code. The macros can
 
 When target inheritance is used, it's possible to alter the values of `macros` in inherited targets without re-defining `macros` completely:
 
-- an inherited target can use `macros_add` to add its own macros.
-- an inherited target can use `macros_remove` to remove macros defined by its parents.
+- An inherited target can use `macros_add` to add its own macros.
+- An inherited target can use `macros_remove` to remove macros defined by its parents.
 
-For example, in this configuration:
+For example:
 
 ```
     "TargetA": {
@@ -106,18 +106,19 @@ For example, in this configuration:
     }
 ```
 
-the value of `TargetB.macros` will be `["PARENT_MACRO1", "CHILD_MACRO1"]`.
+In this configuration, the value of `TargetB.macros` is `["PARENT_MACRO1", "CHILD_MACRO1"]`.
 
 ## extra_labels, extra_labels_add, extra_labels_remove
 
-The list of **labels** defines how the build system looks for sources, libraries, include directories and any other additional files that are needed at compile time. `extra_labels` can be used to make the build system aware of additional directories that must be scanned for such files.
+The list of **labels** defines how the build system looks for sources, libraries, include directories and any other files that are needed at compile time. `extra_labels` makes the build system aware of additional directories that must be scanned for such files.
 
 If target inheritance is used, it's possible to alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous paragraph.
 
 ## features, features_add, features_remove
 
 The list of **features** defines what hardware a device has.
-This allows allowing mbed, libraries, or application source code to select between different implementations of drivers based on hardware availability, to selectively compile drivers for only the hardware that exists, or to test only the tests that apply to a particular platform.
+
+mbed, libraries, or application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform.
 
 If target inheritance is used, it's possible to alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous two paragraphs.
 
@@ -131,7 +132,7 @@ The name of the toolchain that will be used by default to compile this target (i
 
 ## post_binary_hook
 
-Some mbed targets require specific actions for generating a binary image that can be flashed to the target. If that's the case, these specific actions can be specified using the `post_binary_hook` property and custom Python code. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
+Some mbed targets require specific actions for generating a binary image that can be flashed to the target. If that's the case, these actions can be specified using the `post_binary_hook` property and custom Python code. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
 ```
 "post_binary_hook": {
@@ -140,7 +141,11 @@ Some mbed targets require specific actions for generating a binary image that ca
 }
 ```
 
-Following this definition, the build system will call the function `binary_hook` in the `TEENSY3_1Code` class after the initial binary image for the target is generated. The definition of the `TEENSY3_1Code` class **must** exist in the *targets.py* file. Since `toolchains` is also specified, `binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`. Note that specifying `toolchains` is optional: if it's not specified, the hook will be called no matter what toolchain is used.
+In this example, after the initial binary image for the target is generated, the build system will call the function `binary_hook` in the `TEENSY3_1Code` class. 
+
+<span class="notes">**Note:** The definition of the `TEENSY3_1Code` class **must** exist in the *targets.py* file. </span>
+
+Since `toolchains` is also specified, `binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`. Note that specifying `toolchains` is optional: if it's not specified, the hook will be called no matter what toolchain is used.
 
 As for the `binary_hook` code, this is how it looks in *targets.py*:
 
@@ -158,12 +163,13 @@ class TEENSY3_1Code:
 
 In this case, it converts the output file (`binf`) from binary format to Intel HEX format.
 
-The hook code can look quite different between different targets. Take a look at the other classes in *targets.py* for more examples of hook code.
+The hook code can look quite different for different targets. Take a look at the other classes in *targets.py* for more examples of hook code.
 
 ## device_name
 
-This property is used to pass necessary data for exporting the mbed code to various 3rd party tools and IDEs.
+Passes necessary data for exporting the mbed code to various third party tools and IDEs.
 
-This is possible because the device name corresponds to a field in publicly hosted CMSIS packs. These packs hold target properties. [This](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the pdsc that contains TEENSY_31 device (MK20DX256xxx7). The device information begins on line 156. The dname (device name) field on line 156 directly corresponds to that in the Uvision5 IDE target selection window. Beginning on line 15 of `tools/export/uvision/uvision.tmpl`, target information from these packs is used to generate valid Uvision5 projects. If the device name is not found, we use a generic ARM CPU target in Uvision5.
-`tools/export/iar/iar_definitions.json` utilizes this device name to store information necessary to set the target in an IAR project.
+This is possible because the device name corresponds to a field in publicly hosted CMSIS packs. These packs hold target properties. [This](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains the TEENSY_31 device (MK20DX256xxx7). The device information begins on line 156. The dname (device name) field on line 156 directly corresponds to that in the Uvision5 IDE target selection window. Beginning on line 15 of `tools/export/uvision/uvision.tmpl`, target information from these packs is used to generate valid Uvision5 projects. If the device name is not found, we use a generic ARM CPU target in Uvision5.
+
+`tools/export/iar/iar_definitions.json` uses this device name to store information necessary to set the target in an IAR project.
 
