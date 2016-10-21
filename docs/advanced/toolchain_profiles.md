@@ -74,9 +74,7 @@ And so on.
 
 ## API perspective
 
-The toolchains no longer take in an optional argument, `build_profile`, that will contain a map from flag types to lists of flags. 
-
-This looks exactly the same in Python as it does in the JSON format above.
+The toolchains take in an optional argument, ``build_profile``, that will contain a map from flag types to lists of flags. This looks exactly the same in Python as it does in the JSON format above.
 
 The meaning of the flags, and which ones are required, is the same as the user perspective.
 
