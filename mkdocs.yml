@@ -35,6 +35,7 @@ pages:
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 - ['concepts/memap.md', 'Advanced tutorials', 'memap - static memory map analysis']
+- ['advanced/runtime_stats.md', 'Advanced tutorials', 'Runtime statistics']
 - ['advanced/tls_porting.md', 'Porting', 'mbed TLS on mbed OS']
 - ['advanced/MINAR_migration.md', 'Porting', 'Migrating from mbed OS 3 - MINAR']
 
