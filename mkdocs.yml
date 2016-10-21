@@ -35,7 +35,8 @@ pages:
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 - ['concepts/memap.md', 'Advanced tutorials', 'memap - static memory map analysis']
 - ['advanced/runtime_stats.md', 'Advanced tutorials', 'Runtime statistics']
-- ['advanced/tls_porting.md', 'Porting', 'mbed TLS on mbed OS']
+- ['advanced/porting_guide.md', 'Porting', 'Adding target support to mbed OS 5']
 - ['advanced/MINAR_migration.md', 'Porting', 'Migrating from mbed OS 3 - MINAR']
+- ['advanced/tls_porting.md', 'Porting', 'mbed TLS on mbed OS']
 
 copyright: © ARM Ltd. Copyright 2016 – ARM mbed IoT Device Platform
