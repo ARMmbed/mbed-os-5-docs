@@ -15,7 +15,11 @@
 
 ### mbed uVisor
 
-The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GCC only, so cannot be used in the mbed Online Compiler. 
+* [Threaded Blinky with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-thread): an example threaded application with uVisor security.
+* [IRQ Blinky uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor): an example threaded application with uVisor security and IRQ support.
+* [Threaded REPC with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-number-store): using uVisor APIs to build a box that stores a number.
+
+These examples work on the K64F and GCC_ARM toolchain only.
 
 ### mbed Client
 
@@ -24,6 +28,14 @@ The [uVisor sample](https://github.com/ARMmbed/mbed-os-example-uvisor) is for GC
 ### mesh 
 
 [Join a device to an insecure 6LoWPAN-ND network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). This is the simples use of the mesh networking sack.
+
+### Sockets
+
+[Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
+
+### WiFi
+
+[Perform simple HTTP operations using the WiFi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
 ### Bluetooth Low Energy (BLE)
 
