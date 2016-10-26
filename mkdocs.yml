@@ -22,6 +22,7 @@ pages:
 - ['collab/publishing_code.md', 'Collaboration and version control', 'Publishing code']
 - ['collab/mult_auth.md', 'Collaboration and version control', 'Multiple authors']
 - ['cont/contributing.md', 'Publishing libraries and contributing to mbed OS', 'Contribution and publishing guide']
+- ['cont/design_guidelines.md', 'Publishing libraries and contributing to mbed OS', 'Design guidelines']
 - ['cont/code_style.md', 'Publishing libraries and contributing to mbed OS', 'Code style guide']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
