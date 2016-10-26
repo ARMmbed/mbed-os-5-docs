@@ -10,8 +10,6 @@ The memory tracer is not enabled by default. To enable it, you need to define th
 {
     "macros": ["MBED_MEM_TRACING_ENABLED"]
 }
-
-
 ```
 
 <span class="tips">**Tip:** See the documentation of the [mbed configuration system](config_system.md) for more details about `mbed_app.json`. </span>
@@ -30,7 +28,6 @@ The rest of the output depends on the operation being traced:
 - For `free`: `0xptr`, where `ptr` (base 16) is the original argument to `free`.
 
 Examples:
-
 
 - `#m:0x20003240;0x600d-50` encodes a `malloc` that returned 0x20003240. It was called by the instruction at 0x600D with the `size` argument equal to 50.
 - `#f:0x0;0x602f-0x20003240` encodes a `free` that was called by the instruction at 0x602f with the `ptr` argument equal to 0x20003240.
@@ -68,7 +65,7 @@ It outputs the following trace:
 #f:0x0;0x183f-0x20003080
 #m:0x20003080;0x182f-50
 #f:0x0;0x183f-0x20003080
-…
+...
 ```
 
 ## Limitations
