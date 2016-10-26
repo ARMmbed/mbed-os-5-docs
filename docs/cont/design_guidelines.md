@@ -40,21 +40,16 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
 	        `- smoke - mbed OS smoke tests (blinky, etc)
 	```
 
-1. Prefix each source file with the module name followed by an underscore.
-
-	This prevents conflicts with other similarly named files in different modules such as `nanostack/thread.c` and `drivers/Thread.cpp`; not all toolchains are able to support object files with the same name.
+1. Prefix each source file with the module name followed by an underscore. This prevents conflicts with other similarly named files in different modules such as `nanostack/thread.c` and `drivers/Thread.cpp`; not all toolchains are able to support object files with the same name.
 
 	```
 	mbed-os/rtos/rtos_thread.cpp
 	mbed-os/rtos/rtos_semaphore.cpp
 	mbed-os/drivers/drivers_analog_in.cpp
 	```
-1. Always include header files using the module directory in the path.
+1. Always include header files using the module directory in the path. For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
 
-	For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
-  
-  Limit the include path to the module directory. This allows moving the module in the future.
-
+	Limit the include path to the module directory. This allows moving the module in the future.
 1. As an entry point for the module (from the user space), we suggest a single header file. For example: `mbed.h`, `rtos.h`.
 1. Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
 1. In C++ modules, the API should be contained in a namespace that matches the module’s name. For example: `mbed::Ticker`, `rtos::Thread`, `netsocket::Socket`.
@@ -149,11 +144,9 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 1. User APIs should be thread safe.
 1. If a user API is intended to be interrupt safe, this should be clearly documented.
 1. If a user API is unable to be thread safe, this should be clearly documented with warning notation. 
-	
 	Use a consistent form across all APIs: **"warning: not thread safe"**.
 1. A module’s porting layer should be designed for non-thread-safe implementations.
 1. If a callback is called in interrupt context, the API responsible should be clearly documented with a warning. 
-	
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
 
 ## Documentation
@@ -195,7 +188,6 @@ mbed OS provides a powerful configuration system for application development. Ho
 1. Each config option should contain documentation covering its purpose and impact on the system.
 1. To help port new targets, each config option should provide a reasonable default (in case the config option is not defined).
 1. Config options should not change the behavior of the API. 
-
 	Prefer multiple classes where different functionality is needed in the user API.
 1. Targets and applications should be able to override each configuration.
 1. The default choice of optimization should be size, on all platforms.
