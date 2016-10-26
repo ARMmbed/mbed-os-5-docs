@@ -20,35 +20,35 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
 1. Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
 
    ```
- - mbed-os
-    |- rtos - user API + any layer required to fit into mbed OS
-    |   |- rtx - third-party implementation
-    |   |- windows - third-party implementation
-    |   `- tests
-    |       |- unit - rtos related unit tests
-    |       `- functional - rtos related functional tests
-    |- drivers - user API on-chip hardware interfaces (Ticker, DigitalOut, etc)
-    |- util - chip-independent layer (retarget, toolchain, etc)
-    |   `- bootloader - chip-independent bootloader
-    |- net - networking API
-    |   |- stack - network implementations
-    |   |   |-lwip
-    |   |   `- nanostack
-    |   `- tests - network tests
-    `- tests
-        |- integration - mbed OS integration tests
-        `- smoke - mbed OS smoke tests (blinky, etc)
-```
+ 	- mbed-os
+  	  |- rtos - user API + any layer required to fit into mbed OS
+	    |   |- rtx - third-party implementation
+	    |   |- windows - third-party implementation
+	    |   `- tests
+	    |       |- unit - rtos related unit tests
+	    |       `- functional - rtos related functional tests
+	    |- drivers - user API on-chip hardware interfaces (Ticker, DigitalOut, etc)
+	    |- util - chip-independent layer (retarget, toolchain, etc)
+	    |   `- bootloader - chip-independent bootloader
+	    |- net - networking API
+	    |   |- stack - network implementations
+	    |   |   |-lwip
+ 	   |   |   `- nanostack
+	    |   `- tests - network tests
+	    `- tests
+	        |- integration - mbed OS integration tests
+	        `- smoke - mbed OS smoke tests (blinky, etc)
+	```
 
 1. Prefix each source file with the module name followed by an underscore.
 
 	This prevents conflicts with other similarly named files in different modules such as `nanostack/thread.c` and `drivers/Thread.cpp`; not all toolchains are able to support object files with the same name.
 
 	```
-mbed-os/rtos/rtos_thread.cpp
-mbed-os/rtos/rtos_semaphore.cpp
-mbed-os/drivers/drivers_analog_in.cpp
-```
+	mbed-os/rtos/rtos_thread.cpp
+	mbed-os/rtos/rtos_semaphore.cpp
+	mbed-os/drivers/drivers_analog_in.cpp
+	```
 1. Always include header files using the module directory in the path.
 
 	For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
@@ -69,10 +69,10 @@ mbed-os/drivers/drivers_analog_in.cpp
 1. Commit message should be prefixed with the submodule name and a colon:
 	
 	```
-lwip: Fixed buffer overrun in rx loop 
-The rx loop did not properly wait for rx semaphore to release
-causing the buffer to overrun
-```
+	lwip: Fixed buffer overrun in rx loop 
+	The rx loop did not properly wait for rx semaphore to release
+	causing the buffer to overrun
+	```
 1. Patches must land on master before being backported to one or more release branches.
 1. Feature development may happen in a separate branch, and brought to master when complete.
 1. The master branch and release branches must never be rewritten.
@@ -161,13 +161,13 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 1. Each function and class in a module should provide a Doxygen comment that documents the function and each argument and return value:
 
 	``` cpp
-/** Wait until a Mutex becomes available.
- *
- * @param   millisec  timeout value or 0 in case of no time-out. (default: osWaitForever)
- * @return  status code that indicates the execution status of the function.
- */
-osStatus lock(uint32_t millisec=osWaitForever);
-```
+	/** Wait until a Mutex becomes available.
+	 *
+	 * @param   millisec  timeout value or 0 in case of no time-out. (default: osWaitForever)
+	 * @return  status code that indicates the execution status of the function.
+	 */
+	osStatus lock(uint32_t millisec=osWaitForever);
+	```
 1. The Doxygen of each class's header file should contain a simple use example. 
 1. Each module should provide a README that documents the module:
   1. The README should start with a small paragraph describing the module to users with no prior knowledge.
