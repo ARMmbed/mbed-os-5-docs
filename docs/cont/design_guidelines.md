@@ -49,7 +49,6 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
     ```
 
 1. Always include header files using the module directory in the path. For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
-
 	Limit the include path to the module directory. This allows moving the module in the future.
 1. As an entry point for the module (from the user space), we suggest a single header file. For example: `mbed.h`, `rtos.h`.
 1. Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
