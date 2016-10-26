@@ -47,6 +47,7 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
     mbed-os/rtos/rtos_semaphore.cpp
     mbed-os/drivers/drivers_analog_in.cpp
     ```
+
 1. Always include header files using the module directory in the path. For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
 
 	Limit the include path to the module directory. This allows moving the module in the future.
