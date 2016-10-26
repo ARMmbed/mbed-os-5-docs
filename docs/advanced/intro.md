@@ -13,7 +13,8 @@
 ## Concept reviews
 
 * Review of [thread safety](../concepts/thread_safety.md)
-* Review of the mbed [memory model](../concepts/memory_model.md) and [memap - static memory map analysis](../concepts/memap.md).
+* Review of the mbed [memory model](../concepts/memory_model.md).
+* [memap - static memory map analysis](../concepts/memap.md) and [runtime memory tracing](runtime_mem_trace.md).
 
 ## Example applications
 
