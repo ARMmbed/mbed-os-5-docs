@@ -31,3 +31,5 @@ When you've tried our example and picked your work environment, it's time to lea
 * Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and version control.
 
 * We have a [forum](https://forums.mbed.com/) for questions and advice.
+
+* The current version of mbed OS 5 is 5.2.0, and is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.2.0).

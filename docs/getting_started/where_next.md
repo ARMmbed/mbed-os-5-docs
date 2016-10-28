@@ -4,7 +4,7 @@
 
 We have a few more examples you might enjoy.
 
-!{https://raw.githubusercontent.com/ARMmbed/Handbook/master/docs/getting_started/examples.md}
+!{https://raw.githubusercontent.com/ARMmbed/Handbook/5.2/docs/getting_started/examples.md}
 
 ## Further reading
 
