@@ -175,7 +175,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 [Full documentation](../advanced/testing.md).
 
-1. Each modules should contain a `tests` directory with tests that cover the module’s functionality.
+1. Each module should contain a `tests` directory with tests that cover the module’s functionality.
 1. Tests should be organized based on the class being tested; roughly one test file per class.
 1. Tests included in the codebase must be compatible with the mbed OS test framework.
 1. To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
