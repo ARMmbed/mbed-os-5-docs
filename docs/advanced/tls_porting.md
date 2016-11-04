@@ -14,32 +14,36 @@ Creating session keys is only one use for random values; they have far more comp
 
 - If you have a target with a True Random Number Generator (TRNG), then follow Section 3 to allow mbed TLS to use it.
 
-- If you have a target without a TRNG, but with a non-volatile storage, then read Section 4 for instructions on making mbed TLS use a random seed as entropy. This seed should be separately initialized with a true random number for each device.
+- If you have a target without a TRNG, but with a non-volatile storage, then read Section 4 for instructions on making mbed TLS use a random seed as entropy. This seed should be separately initialised with a true random number for each device at manufacture time.
 
 - If you just want to test mbed TLS on your target without implementing either of the above, and having no security at all is acceptable, then go to Section 5.
 
 ## 3. How to provide mbed TLS entropy from a hardware entropy source
 
-mbed TLS distinguishes between strong and weak entropy sources. Of the sources registered by default, two are strong: /dev/urandom and Windows CryptoAPI. However, these resources are not available on many embedded platforms, and the default behavior of mbed TLS is to refuse to work if there are no strong sources present. To get around this, mbed TLS assumes that any hardware entropy source you register (as explained in this guide) is strong. It is very important that you add a strong source if you add a hardware entropy source yourself. For example, an integrated circuit extracting statistically random data from two oscillators of unknown frequencies and independent phases is strong, while anything derived from a real time clock is weak.
+mbed TLS distinguishes between strong and weak entropy sources. Of the sources registered by default, two are strong: /dev/urandom and Windows CryptoAPI. However, these resources are not available on many embedded platforms, and the default behaviour of mbed TLS is to refuse to work if there are no strong sources present. To get around this, mbed TLS assumes that the hardware entropy source you register (as explained in this section) is a TRNG and thus treats it as strong.
+
+It is very important that you only add a TRNG the way described in this section. For the purposes of this document a device is considered a TRNG only if it is dedicated to generating entropy to be used in cryptographic applications, and careful consideration has been given to how much the data generated is subject to adversarial manipulation and to how much entropy it can actually provide.
+
+For example, an integrated circuit extracting statistically random data from two oscillators of unknown frequencies and independent phases is considered as a TRNG, while anything derived from a real time clock is NOT.
 
 The preferred way to provide a custom entropy source:
 
-1. Implement the `trng_api.h` to let mbed TLS access the device's entropy source.
-2. Indicate in `hal/targets.json` that your target has an entropy source.
+1. Provide an implementation of the functions defined in `trng_api.h` to let mbed TLS access the device's entropy source.
+2. Indicate that your target has an entropy source in `hal/targets.json`, by adding `TRNG` to your device's `device_has` section.
 
 The next two sections explain how to do this.
 
-## How to implement the TRNG api
+## How to implement the TRNG API
 
-The implementation of this interface needs to be in the HAL.
+The implementation of this interface goes to the mbed OS directory specific to your target. (The name of this directory is of the form `TARGET_<target name>`, for example in the case of K64F targets it is `TARGET_MCU_K64F`)
 
 ### Data structure
 
-You have to define a structure `trng_s` that holds all the information needed to operate the peripherial and describe its state.
+You have to define a structure `trng_s` that holds all the information needed to operate the peripheral and describe its state.
 
 ### Initialisation and deinitialisation
 
-Provide means for initialising and deinitialising the peripherial with the following functions:
+You need to provide means for initialising and deinitialising the peripheral with the following functions:
 
 ```C
 void trng_init(trng_t *obj);
@@ -76,9 +80,11 @@ To indicate that the target has an entropy source, you have to add `TRNG` to the
 
 ## 4. How to implement the Non-Volatile seed entropy source
 
-If a hardware platform does not have a hardware entropy source to leverage into the entropy pool, alternatives have to be considered. As said before, a strong entropy source is crucial for security of cryptographic and TLS operations. For platforms that support non-volatile memory, an option is to use the NV seed entropy source that is provided with mbed TLS.
+If a hardware platform does not have a hardware entropy source to leverage into the entropy pool, alternatives have to be considered. As stated above, a strong entropy source is crucial for security of cryptographic and TLS operations. For platforms that support non-volatile memory, an option is to use the NV seed entropy source that is provided with mbed TLS.
 
-This makes mbed TLS use a fixed amount of entropy as a seed and update this seed each time it runs. To make this option a relatively strong compromise, the seed should be initialized separately for each device with true random data.
+This makes mbed TLS use a fixed amount of entropy as a seed and update this seed each time it runs.
+
+<span class="notes">**Note:** To make this option a relatively strong compromise, the seed should be initialised separately for each device with true random data at manufacture time. It has to be true random data, something dependant on for example the serial number is NOT secure. </span>
 
 ### Enabling NV seed entropy source support
 
@@ -88,7 +94,7 @@ To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` 
 "macros": ["MBEDTLS_ENTROPY_NV_SEED", etc.],
 ```
 
-This makes sure the entropy pool knows it can use the NV seed entropy source. 
+This makes sure the entropy pool knows it can use the NV seed entropy source.
 
 You can read more about how to add a macro for your target [here](../mbed_OS/Targets.md).
 
@@ -121,7 +127,7 @@ Both of the above options are secure if done properly, and depending on the plat
 
 This option is very dangerous, because compiling with it results in a build that is not secure! You have to let mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 
-Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific config file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](../mbed_OS/Config_sys.md).
+Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](../mbed_OS/Config_sys.md).
 
 To turn the unsafe testing mode on:
 
