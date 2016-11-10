@@ -18,7 +18,7 @@ Your application code - written in C++ - uses the *application programing interf
 
 The easiest way to work with mbed OS is using one of our development tools. We've set up an example, [Blinky](getting_started/first_program.md), that you can try on each of the tools. It will teach you to build and run an application on your board.
 
-When you know how to build an existing application, it's time to learn [how to write your own applications](APIs/APIs_intro.md).
+When you know how to build an existing application, it's time to learn [how to write your own applications](APIs/intro.md).
 
 ### Development tools
 
