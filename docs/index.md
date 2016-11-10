@@ -14,11 +14,11 @@ Your application code - written in C++ - uses the *application programing interf
 
 ### Where to start
 
-<span class="tips">If you're working on Windows, you might need to [install a serial driver](what_need.md#windows-serial-driver).</span>
+<span class="tips">If you're working on Windows, you might need to [install a serial driver](getting_started/what_need.md#windows-serial-driver).</span>
 
 The easiest way to work with mbed OS is using one of our development tools. We've set up an example, [Blinky](getting_started/first_program.md), that you can try on each of the tools. It will teach you to build and run an application on your board.
 
-When you know how to build an existing application, it's time to learn [how to write your own applications](APIs_intro.md).
+When you know how to build an existing application, it's time to learn [how to write your own applications](APIs/APIs_intro.md).
 
 ### Development tools
 
@@ -44,7 +44,7 @@ When you've started writing applications using your selected development tool:
 
 ## Contributing to mbed OS
 
-If you want to contribute to the mbed OS codebase, please see [the contribution section]()
+If you want to contribute to the mbed OS codebase, please see [the contribution section](cont/contributing.md)
 
 The current version of mbed OS 5 is 5.2.0, and is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.2.0).
 
