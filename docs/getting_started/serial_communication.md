@@ -10,7 +10,7 @@ This allows you to:
 
 * Read input from the host PC keyboard.
 
-* Communicate with applications and programming languages running on the host PC that can communicate with a serial port. like Perl, Python, and Java.
+* Communicate with applications and programming languages running on the host PC that can communicate with a serial port, like Perl, Python, and Java.
 
 ## Hello World!
 
