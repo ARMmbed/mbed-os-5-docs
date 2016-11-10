@@ -54,9 +54,13 @@ The Python code for the plugin should be:
 
 ___The `generate` method___
 
-Each exporter is expected to implement one method, `generate`, which is responsible for creating all of the required project files for the IDE or toolchain that the plugin targets. The method should provide the exporter's supported targets in a `TARGETS` class variable.
+Each exporter is expected to implement one method, `generate`, which is responsible for creating all of the required project files for the IDE or toolchain that the plugin targets. 
 
 This method may use any of the attributes and APIs included by the common code.
+
+___The `TARGETS` class variable___
+Each exporter reports its specific target support through a class varibale, `TARGETS`. This class variable is simply a list of targets that requesting an export is a valid operation for.
+
 
 ___The `build` method___
 
