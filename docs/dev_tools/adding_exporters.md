@@ -62,7 +62,7 @@ ___The `build` method___
 
 A plugin that would like to be tested by CI may implement the `build` method. 
 
-This method should run after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile.
+This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile.
 
 ## Implementing an example Plugin
 
