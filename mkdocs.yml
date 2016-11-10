@@ -8,7 +8,7 @@ pages:
 - ['getting_started/blinky_cli.md', 'Creating applications on mbed OS', 'First application on mbed CLI']
 - ['getting_started/blinky_compiler.md', 'Creating applications on mbed OS', 'First application on mbed Online Compiler']
 - ['APIs/intro.md', 'Creating applications on mbed OS', 'Writing your own applications']
-- ['APIs/flow_control.md', 'Creating applications on mbed OS', 'Application flow control and task management']
+- ['getting_started/flow_control.md', 'Creating applications on mbed OS', 'Application flow control and task management']
 - ['dev_tools/options.md', 'Development tools and aids', 'Development tool options']
 - ['dev_tools/cli.md', 'Development tools and aids', 'mbed CLI']
 - ['dev_tools/online_comp.md', 'Development tools and aids', 'mbed Online Compiler']
