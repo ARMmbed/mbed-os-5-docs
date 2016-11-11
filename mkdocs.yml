@@ -24,6 +24,7 @@ pages:
 - ['cont/contributing.md', 'Publishing libraries and contributing to mbed OS', 'Contribution and publishing guide']
 - ['cont/design_guidelines.md', 'Publishing libraries and contributing to mbed OS', 'Design guidelines']
 - ['cont/code_style.md', 'Publishing libraries and contributing to mbed OS', 'Code style guide']
+- ['cont/adding_exporters.md', 'Publishing libraries and contributing to mbed OS', 'Adding exporters']
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
 - ['advanced/config_system.md', 'Advanced tutorials', 'Compile time configuration']
