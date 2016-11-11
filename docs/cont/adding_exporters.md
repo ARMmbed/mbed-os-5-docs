@@ -21,7 +21,7 @@ An **IDE or toolchain specific plugin** is a Python class that inherits from the
 
 The common code does two things: setting things up for the plugins, and providing a library of useful tools for plugins to use.
 
-___Steup___
+___Setup___
 
 The setup code scans for the resources used in the export process and collectos the configuration required to build the project at hand.
 
