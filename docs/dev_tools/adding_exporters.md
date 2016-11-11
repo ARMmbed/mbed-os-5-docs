@@ -59,7 +59,8 @@ Each exporter is expected to implement one method, `generate`, which is responsi
 This method may use any of the attributes and APIs included by the common code.
 
 ___The `TARGETS` class variable___
-Each exporter reports its specific target support through a class varibale, `TARGETS`. This class variable is simply a list of targets that a user could export. Requesting an export of a target that's not in the list will generate an error.
+
+Each exporter reports its specific target support through a class varibale, `TARGETS`. This class variable is simply a list of targets to which you can export. Requesting an export to a target that's not on the list will generate an error.
 
 
 ___The `build` method___
