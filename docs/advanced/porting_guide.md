@@ -9,7 +9,7 @@ There is a dependency on CMSIS-CORE and CMSIS-Packs, so make sure the microcontr
 Add the empty target implementation reference to the working directory using: 
 
 ```
-mbed import mbed-os-example-new-target
+mbed add mbed-os-example-new-target
 cd mbed-os-example-new-target\mbed-os
 git checkout master
 git pull
