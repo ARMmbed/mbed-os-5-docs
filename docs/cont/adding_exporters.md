@@ -23,7 +23,7 @@ The common code does two things: setting things up for the plugins, and providin
 
 ___Setup___
 
-The setup code scans for the resources used in the export process and collectos the configuration required to build the project at hand.
+The setup code scans for the resources used in the export process and collects the configuration required to build the project at hand.
 
 These steps construct an object of one of the exporter plugin classes listed in the exporter map and populate that object with useful attributes, including:
 
