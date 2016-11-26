@@ -4,8 +4,8 @@ We have an example application called Blinky that you can use to get to know mbe
 
 You can try any of these tools:
 
-* [mbed CLI](blinky_cli.md)
-* [mbed Online Compiler](blinky_compiler.md)
+* [mbed CLI](blinky_cli.md).
+* [mbed Online Compiler](blinky_compiler.md).
 
 ## What the tools do
 
