@@ -40,7 +40,7 @@ mbed <commands>
 
 ## Getting Blinky
 
-mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of you current context (as explained above). 
+mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above). 
 
 To import Blinky, from the command line:
 
