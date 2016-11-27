@@ -18,7 +18,7 @@ The easiest way to work with mbed OS is using one of our development tools. We'v
 
 ## Development tools
 
-* Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command line tool. This requires having a toolchain installed on your computer. 
+* Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer. 
 * The [mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
 * If you're working with third party tools, we have [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
