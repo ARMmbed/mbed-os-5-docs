@@ -98,7 +98,7 @@ The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM
 
 ## Programming your board
 
-mbed enabled boards are programable by drag and drop over a USB connection.
+mbed Enabled boards are programable by drag and drop over a USB connection.
 
 1. Connect your mbed board to the computer over USB.
 1. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``build\K64F\ARM\`` folder.
