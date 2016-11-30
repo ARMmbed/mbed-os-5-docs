@@ -51,7 +51,7 @@ This test case will only be discovered if the target being testing supports the 
 
 Generally, a test should not be placed under a `TARGET_` or `TOOLCHAIN_` directory, since most tests should be designed to work for all target and toolchain configurations.
 
-Tests can also be completely ignored by using the `.mbedignore` file described [here](../ignoring_files_from_build.md)
+Tests can also be completely ignored by using the `.mbedignore` file described [here](mbedignore.md)
 
 #### Test names
 
