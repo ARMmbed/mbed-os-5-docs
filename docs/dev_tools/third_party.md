@@ -83,6 +83,7 @@ Make itself does not compile source code. It relies on a compiler like:
 * The IAR ARM compiler bundled with the IAR Embedded Workbench.
 * ARM Compiler 5.
 
+You should ensure that the compiler you are exporting for is accessible using your `PATH` environment variable, as the Makefile assumes this will be true. For example, when using an exported Makefile from make_armc5, the command `armcc` should print a help message about how to use ARM Compiler 5.
 
 #### Make and Eclipse on Windows: Nordic Platforms using SoftDevices
 	
