@@ -46,7 +46,7 @@ When you've started writing applications using your selected development tool:
 
 If you want to contribute to the mbed OS codebase, please see [the contribution section](cont/contributing.md)
 
-The current version of mbed OS 5 is 5.2.0, and is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.2.0).
+The current version of mbed OS 5 is 5.3.0, and is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.3.0).
 
 ## Porting to mbed OS
 
