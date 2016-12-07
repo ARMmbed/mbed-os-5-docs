@@ -12,7 +12,7 @@ The compiler is always available on [https://developer.mbed.org/compiler/](https
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
 
-1. Directly from the site: wherever you see a program on the site, you should see an Import button:
+1. Directly from the site: wherever you see a program on the site, you should see an **Import into mbed IDE** button:
 	
 	<span class="images">![](Images/import_button_site.png)<span>Most code snippets on the site can be directly imported</span></span>
 
@@ -33,19 +33,19 @@ There are two methods of importing the code into the online compiler: directly f
 
 ## Creating a new program 
 
-1. From the **New** menu, select **Program**:
+1. From the **New** menu, select **New Program**:
 
 	<span class="images">![](Images/new.png)<span>The applications list</span>Triggering a new program</span>
 
 1. The **Create new program** pop-up opens.
 	1. Select your platform (board). 
-	1. You can create from an existing template, or from an empty program.
+	1. You can create from an existing template or from an empty program.
 	1. Enter a unique name.
 
 	<span class="images">![](Images/new_program.png)<span>Creating a new program</span></span>
 
 1. Create a ``main.cpp`` file in your program:
-	1. Right click on the program and select **New File...**. The **Create new file** popup opens.
+	1. Right click on the program and select **New File...**. The **Create new file** pop-up opens. If you created from an existing template, this file already exists.
 
 		<span class="images">![](Images/new_file.png)<span>Adding a file</span></span>
 
@@ -53,7 +53,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 		<span class="images">![](Images/main_cpp.png)<span>Naming the new file</span></span>
 
-1. Import the mbed OS library so you can build your program with the mbed OS code base:
+1. Import the mbed OS library, so you can build your program with the mbed OS codebase:
 	1. Click **Import**. The Import Wizard opens.
 	1. Go to the Libraries tab and search for "mbed", or perform an empty search to show all libraries:
 
@@ -73,7 +73,7 @@ The mbed Online Compiler builds a file that can run on your board. All you need 
 
 ### Selecting your board
 
-mbed programs can be built to run on multiple boards. The hard work is done behind the scenes, by mbed OS itself. All you need to do is tell the mbed Online Compiler which board you're building for.
+mbed programs can be built to run on multiple boards. The hard work is done behind the scenes by mbed OS itself. All you need to do is tell the mbed Online Compiler which board you're building for.
 
 To select a board as the build target:
 
@@ -123,7 +123,7 @@ Your board should appear on your computer as removable storage. To run your prog
 | Shift + Page Up  | Select from current position up one page |
 | Shift + Page Down | Select from current position down one page |
 | Shift + any arrow  | Extend or reduce text selection |
-| Ctrl + left arrow  | Go to beginning of the previous word |
+| Ctrl + left arrow  | Go to beginning of current or previous word |
 | Ctrl + right arrow   | Go to beginning of the next word |
 | Ctrl + up arrow | Scroll up one row |
 | Ctrl + down arrow | Scroll down one row |                            
@@ -153,8 +153,8 @@ Your board should appear on your computer as removable storage. To run your prog
 | Ctrl + Shift + S | Save all |
 | Ctrl + U| Change select text to upper case |
 | Ctrl + V | Paste text from clipboard |
-| Ctrl + W | Close current file (doesn't work on Chrome |
-| Ctrl + Shift + W | Close all (doesn't work on Chrome |
+| Ctrl + W | Close current file (doesn't work on Chrome) |
+| Ctrl + Shift + W | Close all (doesn't work on Chrome) |
 | Ctrl + X | Cut selected text |
 | Ctrl + Y | Redo |
 | Ctrl + Z | Undo |
@@ -171,8 +171,8 @@ Your board should appear on your computer as removable storage. To run your prog
 | Ins | Toggle insert mode |
 | Ctrl + Ins | Copy selected text |
 | Shift + Ins | Paste text from clipboard |
-| Shift + Del | Cut selected text |
-| F8| Compile only (no download prompt |
+| Shift + Del | Delete selected text |
+| F8| Compile only (no download prompt) |
 | F9 | Compile and download |
 | F10 | Compile all and download |
 
