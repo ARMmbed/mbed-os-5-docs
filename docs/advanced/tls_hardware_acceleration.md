@@ -2,6 +2,7 @@
 
 This document explains how to use hardware acceleration for various cryptographic primitives with [mbed TLS](https://github.com/ARMmbed/mbedtls) running on an embedded device.
 
+
 ## Introduction
 
 ### Why should I add hardware acceleration?
@@ -17,7 +18,7 @@ You may want to add hardware acceleration in the following cases:
 - Your processor has special instructions capable of accelerating cryptographic operations.
 
 
-- Your processor has access to a coprocessor with cryptographic acceleration capabilities.
+- Your processor has access to a co-processor with cryptographic acceleration capabilities.
 
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
@@ -26,12 +27,28 @@ The mbed TLS library was written in C and it doesn’t use any optimised assembl
 
 ### What parts can I accelerate?
 
-mbed TLS has separate modules for the different cryptographic primitives. Hardware acceleration interface is avaliable for the following modules:
+mbed TLS has separate modules for the different cryptographic primitives. Hardware acceleration interface is available for the following modules and functions:
 
+- Symmetric
+    - AES: `mbedtls_aes_setkey_enc()`, `mbedtls_aes_setkey_dec()`, `mbedtls_aes_encrypt()`, `mbedtls_aes_decrypt()`
+    - ARC4
+    - BLOWFISH
+    - CAMELLIA
+    - DES: `mbedtls_des_setkey()`, `mbedtls_des_crypt_ecb()`, `mbedtls_des3_crypt_ecb()`
+    - XTEA
+    - MD2: `mbedtls_md2_process()`
+    - MD4: `mbedtls_md4_process()`
+    - MD5: `mbedtls_md5_process()`
+    - RIPEMD160: `mbedtls_ripemd160_process()`
+    - SHA1: `mbedtls_sha1_process()`
+    - SHA256: `mbedtls_sha256_process()`
+    - SHA512: `mbedtls_sha512_process()`
 - Asymmetric:
-    - Elliptic Curve Point (module name: ECP) arithmetic.
+    - ECP: `mbedtls_internal_ecp_randomize_jac()`, `mbedtls_internal_ecp_add_mixed()`, `mbedtls_internal_ecp_double_jac()`, `mbedtls_internal_ecp_normalize_jac_many()`, `mbedtls_internal_ecp_normalize_jac()`, `mbedtls_internal_ecp_double_add_mxz()`, `mbedtls_internal_ecp_randomize_mxz()`, `mbedtls_internal_ecp_normalize_mxz()`
 
-You can extend functionality by either overriding certain functions or replacing the whole module. The easier and safer way of doing this is to override some or all of the functions in a particular module. Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to replace the whole module.
+<span class="notes">**Note:** The ECP module and function replacement is not part of mbed OS yet. It is in an Early Partner Preview stage and it is available for evaluation in a [PR on github](https://github.com/ARMmbed/mbed-os/pull/3294)</span>
+
+You can extend functionality by either overriding certain functions or replacing the whole module. The easier and safer way of doing this is to override some or all of the functions in a particular module. Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to replace the whole module. Please note that in the case of ECP functions the override is only partial, mbed TLS will fall back to the software implementation if the hardware cannot handle a particular group.
 
 ### How can I make mbed TLS use my hardware accelerator?
 
@@ -45,17 +62,17 @@ First, you should consider what kind of functionality your hardware provides. Do
 
 ### Process overview
 
-1. Identify the module and the functions you want to replace. You can find the list of the replaceable functions for the ECP module in the `ecp_internal.h` header file in the `mbed-os/features/mbedtls/inc/mbedtls` directory. For example, if you have a full cryptographic module, then you probably want to replace functions in the modules. If you only have a couple of special instructions or a coprocessor that accelerates some part of the cryptographic function, then you may want to replace only the relevant functions in the module.
+1. Identify the module or the functions you want to replace. For example, if you have a full cryptographic module, then you probably want to replace functions in the modules. If you only have a couple of special instructions or a co-processor that accelerates some part of the cryptographic function, then you may want to replace only the relevant functions in the module.
 
-1. Implement the utility functions (only if you selected the ECP module):
+1. If you want to replace functions in the ECP module, you need to implement the mandatory utility functions:
     - these are functions that do not have a counterpart in the standard mbed TLS implementation and their only purpose is to facilitate the integration of the accelerated functions.
-    - `mbedtls_internal_ecp_grp_capable`: implement it to tell mbed TLS if the cryptographic hardware can handle the group.
-    - `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` are optional. Use them to optimize if you are replacing a function in the ECP module.
+    - `mbedtls_internal_ecp_grp_capable`: implement it to tell mbed TLS if the cryptographic hardware can handle the group. If the answer is no, then mbed TLS will fall back to the software implementation to continue the operation.
+    - `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` are optional. Use them to optimise if you are replacing a function in the ECP module.
     - For more information about the utility functions read the subsection about the [ECP](#How-to-implement-ECP-module-functions) module.
 
-1. Implement the selected functions with the help of your hardware accelerator. These functions have the same name as the ones they replace, but with the `_alt` postfix. We have [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation.
+1. Implement the selected functions with the help of your hardware accelerator and copy the source code to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate. These functions have the same name as the ones they replace. We have [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation and you can find them in the `ecp_internal.h` header file.
 
-1. Since mbed TLS is a static link library you also have to somehow notify the compiler/linker that the alternative implementations are present. To do this, you have to set the macros corresponding to the selected functions. You can read more on this in the [subsection about setting macros](#How-to-set-the-macros?).
+1. Since mbed TLS is a static link library you also have to somehow notify the compiler/linker that the alternative implementations are present. To do this, you have to set the macros corresponding to the selected functions. You can read more on this in the [subsection about setting macros](#How-to-set-the-macros?) section.
 
 ### How to implement ECP module functions
 
@@ -65,23 +82,36 @@ Hardware accelerators may support different kinds of elliptic curves. You may ne
 
 To resolve this, you can move the setup of the hardware to the `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` functions and let mbed TLS call them whenever it is necessary. Please keep in mind that `mbedtls_internal_ecp_init` should return 0 upon a successful setup and `MBEDTLS_ERR_ECP_FEATURE_UNAVAILABLE` otherwise.
 
-### How to set the macros for ECP function replacement
+### How to set the macros
 
-You will have to set some macros to notify mbed TLS and the compiler/linker about the presence of your functions.
+You will have to set some macros to notify mbed TLS and the compiler/linker about the presence of your functions or module implementation. The best way to do this is, to supply a target specific mbed TLS configuration file for your target.
 
-1. You have to set a macro `MBEDTLS_ECP_INTERNAL_ALT` to turn function replacement in that module on.
-
-1. Also each replaceable function has a corresponding macro `MBEDTLS_ECP_<Function Name Allcaps>_ALT`. You need to set this, too.
-
-The best way to set these macros to add them to your target in `targets.json`.
-
-For example, if you want to replace `ecp_double_jac`, then the macros of your target will look something like this:
+First you need to notify the build system that you to have a target specific mbed TLS configuration, by adding `MBEDTLS_CONFIG_HW_SUPPORT` to your target in `targets.json` to the `macros` section:
 
 ```
-"macros": ["MBEDTLS_ECP_INTERNAL_ALT","MBEDTLS_ECP_DOUBLE_JAC_ALT", etc.]
+"macros": ["MBEDTLS_CONFIG_HW_SUPPORT", etc.]
 ```
 
-You can read more about how to add a macro for your target [here](../mbed_OS/Targets.md).
+Now you can define your crypto hardware acceleration related macros in an `mbedtls_device.h` header (this entire file will be appended to the ordinary mbed TLS configuration when compiling for your target). Place this header into the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
+
+In this header file you need to define the following macros:
+
+1. When replacing an entire module: You have to set the macro `<Module Name Allcaps>_ALT`.
+
+1. When overriding a function: You have to set the macro `<Function Name Allcaps>_ALT`.
+
+For example, if you want to replace `mbedtls_sha512_process()` and the entire BLOWFISH module, then the contents of your `mbedtls_device.h` will look something like this:
+
+```
+#define MBEDTLS_SHA512_PROCESS_ALT
+#define MBEDTLS_BLOWFISH_ALT
+```
+
+When overriding functions from the ECP module please note, that
+
+- The naming conventions for the ECP module functions are slightly different and the macro names don't contain the `_internal_` prefix. For example, to implement the `mbedtls_internal_ecp_normalize_mxz` function you need to define the `MBEDTLS_ECP_NORMALIZE_MXZ_ALT` macro.
+
+- The ECP interface requires the implementation of some utility functions, therefore you need to notify the compiler/linker about these functions by defining the `MBEDTLS_ECP_INTERNAL_ALT` macro.
 
 ## Adding acceleration by replacing modules
 
@@ -91,11 +121,11 @@ To replace a module you have to:
 
 - Implement the functionality of the whole module. Your implementation has to leave the function prototypes, and the name of any global type, variable or macro, unchanged.
 
-- Provide a header file for your implementation. The filename must be `<Module Name>_alt.h`.
+- Provide a header file for your implementation. The file name must be `<Module Name>_alt.h`.
 
-- Set the macro `MBEDTLS_<Module Name>_ALT` to notify mbed TLS and the compiler/linker about the replacement.You can read more on this in the [subsection about setting macros](#How-to-set-the-macros).
+- Set the macro `MBEDTLS_<Module Name>_ALT` to notify mbed TLS and the compiler/linker about the replacement. You can read more on this in the [subsection about setting macros](#How-to-set-the-macros).
 
 
-### Where do I find the default implementations?
+### Where to find the default implementations
 
 The default implementation of the modules are usually in the file `<Module Name>.c`. The ECP module is split to two files: `ecp.c` and `ecp_curves.c`.
