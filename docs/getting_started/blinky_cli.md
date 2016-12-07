@@ -31,7 +31,7 @@ mbed CLI is an offline tool, meaning you'll have to install it before you can wo
 
 ## Setting context
 
-Whenever you work with mbed CLI, you need to navigate your command-line terminal to the directory it which you want to work. For example, if your program is in a folder called ``my_program``:
+Whenever you work with mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called ``my_program``:
 
 ```
 cd my_program
@@ -62,8 +62,8 @@ Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can loo
 
 Invoke `mbed compile`, specifying:
 
-* Your board: ``-m <board_name>``
-* Your toolchain ``-t <GCC_ARM`, `ARM` or `IAR`>``.
+* Your board: ``-m <board_name>``.
+* Your toolchain: ``-t <GCC_ARM`, `ARM` or `IAR`>``.
 
 For example, for the board K64F and the ARM Compiler 5:
 
@@ -98,7 +98,7 @@ The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM
 
 ## Programming your board
 
-mbed Enabled boards are programable by drag and drop over a USB connection.
+mbed Enabled boards are programmable by drag and drop over a USB connection.
 
 1. Connect your mbed board to the computer over USB.
 1. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``build\K64F\ARM\`` folder.
