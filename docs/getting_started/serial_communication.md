@@ -93,6 +93,8 @@ int main() {
 
 ### Use the 'u' and 'd' keys to make LED1 brighter or dimmer
 
+<span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
+
 ```c
 #include "mbed.h"
 
