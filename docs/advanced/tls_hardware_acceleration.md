@@ -80,7 +80,9 @@ To resolve this, you can move the setup of the hardware to the `mbedtls_internal
 
 ### How to set the macros
 
-You will have to set some macros to notify mbed TLS and the compiler/linker about the presence of your functions or module implementation. The best way to do this is, to supply a target specific mbed TLS configuration file for your target.
+You will have to set some macros to notify mbed TLS and the compiler/linker about the presence of your functions or module implementation.
+
+The best way to do this is when adding hardware acceleration support, to supply a target specific configuration file for your target. This configuration file won't replace the mbed TLS configuration file, it is only an extension to it. Please note that the method described in this section is specific to hardware related macros and please don't use it for defining mbed TLS macros.
 
 First you need to notify the build system that you to have a target specific mbed TLS configuration, by adding `MBEDTLS_CONFIG_HW_SUPPORT` to your target in `targets.json` to the `macros` section:
 
