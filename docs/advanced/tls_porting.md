@@ -65,7 +65,7 @@ The function `trng_get_bytes()` serves as the primary interface to the entropy s
 int trng_get_bytes(trng_t *obj, uint8_t *output, size_t length, size_t *output_length);
 ```
 
-- ``trng_t *obj``: `trng_t` is an alias to `trng_s` and it is the callers responsibility to initialise it before passing it to this function and deinitialise it (with the help of `trng_init()` and `trng_free()` respectively) when it is not required anymore.
+- ``trng_t *obj``: `trng_t` is an alias to `trng_s` and it is the callers responsibility to initialize it before passing it to this function and release it (with the help of `trng_init()` and `trng_free()` respectively) when it is not required anymore.
 
 - ``uint8_t *output``: A pointer to the output buffer. The function should write the entropy it collected to the buffer; mbed TLS then uses this data as entropy. Please consult your board's manual and write only the strongest entropy possible in this buffer.
 
@@ -90,7 +90,7 @@ If a hardware platform does not have a hardware entropy source to leverage into 
 
 This makes mbed TLS use a fixed amount of entropy as a seed and update this seed each time entropy is gathered with an mbed TLS entropy collector for the first time. In a simple case it means that the seed is updated after reset at the start of the first TLS connection.
 
-<span class="notes">**Note:** To make this option a relatively strong compromise, the seed should be initialized separately for each device with true random data at manufacture time. It has to be true random data, something dependant on for example the serial number is NOT secure. </span>
+<span class="notes">**Note:** To make this option a relatively strong compromize, the seed should be initialized separately for each device with true random data at manufacture time. It has to be true random data, something dependant on for example the serial number is NOT secure. </span>
 
 ### Enabling NV seed entropy source support
 
@@ -102,7 +102,7 @@ To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` 
 
 This makes sure the entropy pool knows it can use the NV seed entropy source.
 
-You can read more about how to add a macro for your target [here](../mbed_OS/Targets.md).
+You can read more about how to add a macro for your target [here](mbed_targets.md).
 
 By default the platform adaptation functions write/read a seed file called *seedfile*. If you have a system that does not support regular POSIX file operations (mbed OS does not support them by default), the default platform-adaptation functions will not be useful to you and you will need to provide platform-adaptation functions (see next section).
 
@@ -133,7 +133,7 @@ Both of the above options are secure if done properly, and depending on the plat
 
 This option is very dangerous, because compiling with it results in a build that is not secure! You have to let mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 
-Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](../mbed_OS/Config_sys.md).
+Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](config_system.md).
 
 To turn the unsafe testing mode on:
 
