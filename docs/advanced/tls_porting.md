@@ -23,11 +23,11 @@ Creating session keys is only one use for random values; they have far more comp
 ### 3.1 What kind of a source can be added
 
 It is very important that you only add a TRNG as described in this section. For the purposes of this document a device is considered a TRNG only if
-    - it is dedicated to generating entropy to be used in cryptographic applications
-    - careful consideration has been given to how much the data generated is subject to adversarial manipulation
-    - a thorough engineering study has been made to determine how much entropy it can actually provide
+    - It is dedicated to generating entropy to be used in cryptographic applications.
+    - Careful consideration has been given to how much the data generated is subject to adversarial manipulation.
+    - A thorough engineering study has been made to determine how much entropy it can actually provide.
 
-For example, an integrated circuit extracting statistically random data from two oscillators of unknown frequencies and independent phases is considered as a TRNG, while anything derived from a real time clock is NOT.
+For example, an integrated circuit extracting statistically random data from two oscillators of unknown frequencies and independent phases is considered a TRNG, while anything derived from a real time clock is NOT.
 
 ### 3.2 How to add an entropy source
 
@@ -65,7 +65,7 @@ The function `trng_get_bytes()` serves as the primary interface to the entropy s
 int trng_get_bytes(trng_t *obj, uint8_t *output, size_t length, size_t *output_length);
 ```
 
-- ``trng_t *obj``: `trng_t` is an alias to `trng_s` and it is the callers responsibility to initialize it before passing it to this function and release it (with the help of `trng_init()` and `trng_free()` respectively) when it is not required anymore.
+- ``trng_t *obj``: `trng_t` is an alias to `trng_s` and it is the caller's responsibility to initialize it before passing it to this function and release it (with the help of `trng_init()` and `trng_free()` respectively) when it is not required anymore.
 
 - ``uint8_t *output``: A pointer to the output buffer. The function should write the entropy it collected to the buffer; mbed TLS then uses this data as entropy. Please consult your board's manual and write only the strongest entropy possible in this buffer.
 
@@ -90,7 +90,7 @@ If a hardware platform does not have a hardware entropy source to leverage into 
 
 This makes mbed TLS use a fixed amount of entropy as a seed and update this seed each time entropy is gathered with an mbed TLS entropy collector for the first time. In a simple case it means that the seed is updated after reset at the start of the first TLS connection.
 
-<span class="notes">**Note:** To make this option a relatively strong compromize, the seed should be initialized separately for each device with true random data at manufacture time. It has to be true random data, something dependant on for example the serial number is NOT secure. </span>
+<span class="notes">**Note:** To make this option a relatively strong compromize, the seed should be initialized separately for each device with true random data at manufacturing time. It has to be true random data, something dependant on, for example the serial number is **not** secure. </span>
 
 ### Enabling NV seed entropy source support
 
@@ -100,7 +100,7 @@ To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` 
 "macros": ["MBEDTLS_ENTROPY_NV_SEED", etc.],
 ```
 
-This makes sure the entropy pool knows it can use the NV seed entropy source.
+This ensures the entropy pool knows it can use the NV seed entropy source.
 
 You can read more about how to add a macro for your target [here](mbed_targets.md).
 
