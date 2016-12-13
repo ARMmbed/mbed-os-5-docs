@@ -24,8 +24,6 @@ The mbed TLS library was written in C and it has a small amount of hand-optimise
 
 mbed TLS has separate modules for the different cryptographic primitives. Hardware acceleration interface is available for the following modules and functions:
 
->> I would link to the API for these
-
 - Symmetric
     - [AES](https://tls.mbed.org/api/aes_8h.html): [mbedtls\_aes\_setkey\_enc()](https://tls.mbed.org/api/aes_8h.html#acec17c6592b98876106d035c372b1efa), [mbedtls\_aes\_setkey\_dec()](https://tls.mbed.org/api/aes_8h.html#a11580b789634605dd57e425eadb56617), [mbedtls\_aes\_encrypt()](https://tls.mbed.org/api/aes_8h.html#a4ddac8f03fe94629e8011c84fbf825dc), [mbedtls\_aes\_decrypt()](https://tls.mbed.org/api/aes_8h.html#ae73df41aee0be1ca64cdc171c88db2e5)
     - [ARC4](https://tls.mbed.org/api/arc4_8h.html)
