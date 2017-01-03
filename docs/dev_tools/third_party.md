@@ -1,27 +1,27 @@
-# Exporting to Third Party Toolchains
+# Exporting to third party Toolchains
 
 
 If you'd like to develop on mbed OS with a third party tool, or migrate to one, you can choose to export an mbed project to the following development environments:
 
-* Keil uVision5
-* IAR Systems
+* Keil uVision5.
+* IAR Systems.
 * Make using:
-  * GCC (ARM Embedded)
-  * ARM Compiler 5
-  * IAR ARM Compiler
+  * GCC (ARM Embedded).
+  * ARM Compiler 5.
+  * IAR ARM Compiler.
 * Eclipse CDT using:
-  * GCC (ARM Embedded)
-  * ARM Compiler 5
-  * IAR ARM Compiler
-* DS-5
-* LPCXpresso
-* Kinetis Design Studio
-* Simplicity Studio
-* Atmel Studio
-* SW4STM32 System Workbench for STM32
-* CooCox CoIDE
-* e2studio
-* Emblocks
+  * GCC (ARM Embedded).
+  * ARM Compiler 5.
+  * IAR ARM Compiler.
+* DS-5.
+* LPCXpresso.
+* Kinetis Design Studio.
+* Simplicity Studio.
+* Atmel Studio.
+* SW4STM32 System Workbench for STM32.
+* CooCox CoIDE.
+* e2studio.
+* Emblocks.
 
 This may be useful to launch a debug session with your favorite tool while using mbed CLI for development, or creating examples or projects you work on within your tool of choice. 
 
@@ -41,13 +41,13 @@ You can open this project file with uVision5.
 
 The mbed Online Compiler has a built-in export mechanism that supports the same development environments as mbed CLI:
 
-1. Right-click on a project you want to export.
+1. Right click on a project you want to export.
 
 1. Click **Export Program.** The **Export Program** window opens.
 
 	<span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
 
-1. From the **Export Target** drop down list, select your board.
+1. From the **Export Target** drop-down list, select your board.
 
 	<span class="images">![](Images/select_target.png)<span>Selecting a target board</span></span>
 
@@ -61,11 +61,11 @@ Follow your toolchain's import or project creation process to begin working ther
 
 ## Before you export
 
-Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries, and differences caused by changing compile and link options.
+Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries and differences caused by changing compile and link options.
 
-While we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler.
+Although we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler.
 
-We will do our best to maintain the exported libraries and project files, but please understand we can not cover all cases and combinations, or provide support for use of these alternative tools themselves.
+We will do our best to maintain the exported libraries and project files, but please understand we cannot cover all cases and combinations, or provide support for use of these alternative tools themselves.
 
 ## Third party tool notes
 
@@ -77,7 +77,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 > 
 >(Taken verbatim from the GNU Make website).
 
-Make itself does not compile source code. It relies on a compiler like:
+Make itself does not compile source code. It relies on a compiler such as:
 
 * [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
 * The IAR ARM compiler bundled with the IAR Embedded Workbench.
@@ -85,20 +85,20 @@ Make itself does not compile source code. It relies on a compiler like:
 
 <span class="notes">**Note:** As stated above, you should ensure that the compiler you are exporting to is accessible using your `PATH` environment variable, as Makefile requires this. For example, when using an exported Makefile from make_armc5, the command `armcc` should print a help message about how to use ARM Compiler 5.</span>
 
-#### Make and Eclipse on Windows: Nordic Platforms using SoftDevices
+#### Make and Eclipse on Windows: Nordic platforms using SoftDevices
 	
 Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. 
 Please download and install it.
 
-#### Make and Eclipse on Linux and Mac OSX: Nordic Platforms using SoftDevices
+#### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
 	
-Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sercord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
+Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
 
 ### Kinetis Design Studio (Freescale KDS) with GCC ARM Embedded
 
 Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to update a linker flag depending on the version of tools installed. 
 
-1. Press **Alt + Enter** or **Option** + **Enter**. The **C++ Build** dialog opens.
+1. Press **Alt + Enter** or **Option** + **Enter**. The **C++ Build** dialog box opens.
 1. In **Settings**, select **Tool Settings**.
 1. Any file extension that is ``.s`` needs to be changed to ``.S`` (lowercase to uppercase):
 	
@@ -114,7 +114,7 @@ Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to upd
 
 The mbed libraries contain CMSIS startup files. 
 
-When importing an mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the 'migrate to current infrastructure' box.
+When importing an mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the **migrate to current infrastructure** box.
 
 ### Simplicity Studio
 

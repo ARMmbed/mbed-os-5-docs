@@ -2,7 +2,7 @@
 
 Welcome to the mbed OS 5 handbook. 
 
-If you’re an experienced mbed applications developer, you might want to dive straight into the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/en/), or take a look at our [development tools documentation](dev_tools/options.md).
+If you’re an experienced mbed applications developer, you might want to dive straight into the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/en/) or look at our [development tools documentation](dev_tools/options.md).
 
 If you're new to all this, continue reading.
 
@@ -10,7 +10,7 @@ If you're new to all this, continue reading.
 
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
-Your application code - written in C++ - uses the *application programing interfaces* (APIs) presented by mbed OS to receive information from the hardware and send instructions to it. This means that a lot of the challenges in getting started with microcontrollers or integrating large amounts of software is already taken care of. 
+Your application code is written in C++. It uses the *application programming interfaces* (APIs) that mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers and integrating large amounts of software. 
 
 ### Where to start
 
@@ -22,9 +22,9 @@ When you know how to build an existing application, it's time to learn [how to w
 
 ### Development tools
 
-* Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command line tool. This requires having a toolchain installed on your computer. 
+* Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer. 
 * The [mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
-* If you're working with third party tools, we have [exporting instructions for the most popular ones](dev_tools/third_party.md).
+* If you're working with third party tools, look at [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
 ### Communicating with and monitoring your board
 
@@ -38,15 +38,15 @@ When you've started writing applications using your selected development tool:
 
 * Learn about [collaborative work and version control](collab/collab_intro.md).
 
-* Try one of the [advanced tutorials](advanced/intro.md), which cover concepts like debugging and memory trace.
+* Try one of the [advanced tutorials](advanced/intro.md), which cover concepts such as debugging and memory trace.
 
 * We have a [forum](https://forums.mbed.com/) for questions and advice.
 
 ## Contributing to mbed OS
 
-If you want to contribute to the mbed OS codebase, please see [the contribution section](cont/contributing.md)
+If you want to contribute to the mbed OS codebase, please see [the contribution section](cont/contributing.md).
 
-The current version of mbed OS 5 is 5.2.0, and is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.2.0).
+The current version of mbed OS 5 is 5.3.0. It is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.3.0).
 
 ## Porting to mbed OS
 
