@@ -165,7 +165,7 @@ There are similarities between configuration data in applications and libraries:
 There are also a few differences:
 
 - Applications **can't** have a `name` key in `mbed_app.json`. The prefix for the configuration parameters defined in an application is always `app.`.
-- Applications can also override library and target configurations, in addition to its own configuration, in its `target_overrides` section.
+- Applications can also override library and target configurations, in addition to their own configuration, in their `target_overrides` section.
 
 The last point above is important. The application can freely override the configuration of any of the libraries it depends on, as well as the configuration data in targets, so it has complete control over the configuration of the whole build. For an application called ``myapp`` that depends on ``mylib`` above, the configuration can look like this:
 
