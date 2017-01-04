@@ -191,7 +191,7 @@ The last point above is important. The application can freely override the confi
 
 `target_overrides` works a lot like it does in libraries, but there are a few differences:
 
-- Because the application can override any configuration parameter, it must specify configuratoin parameters using their prefix (like `mylib.timer_period`). If an overridden parameter doesn't have a prefix, it is assumed that it is one of the parameters defined by the application in its own `config` section.
+- Because the application can override any configuration parameter, it must specify configuratoin parameters using their prefix (like `mylib.timer_period`). If an overridden parameter doesn't have a prefix, the config system assumes that the overridden paramater is one of the parameters the application defines in its own `config` section.
 - The `*` key in `target_overrides` will match *any* target. It is possible to use the `*` key in a library's `target_overrides` too, but it'd make little sense to do so, since it will always override the values defined in the library's `config` section. In an application it might make sense to use the `*` key, since it can be used to override the configuration defined by the target or the dependent libraries, no matter which target is used for building.
 
 Other than this, `target_overrides` works exactly like it does for libraries. Keys in `target_overrides` are still processed in the order they are defined, so for the example above, the `*` override is always processed first (because it matches all targets) and then `Base` is only processed for the `Base` target.
