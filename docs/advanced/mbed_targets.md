@@ -24,9 +24,9 @@ The definition of the target called **TEENSY3_1** is a JSON object. The properti
 
 This section lists all the properties that are known to the mbed build system. Unless specified otherwise, all properties are optional.
 
-## inherits
+## Inherits
 
-The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target **A** inherits from another target **B** (**A** is the _child_ of **B** and **B** is the _parent_ of **A**), it automatically "borrows" all the definitions of properties from **B** and can modify them as needed (if you're familiar with Python, this is very similar to class inheritance). In our example above, `TEENSY3_1` inherits from `Target` (most mbed targets inherit from `Target`). This is how `Target` is defined:
+The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target **A** inherits from another target **B**, (**A** is the _child_ of **B** and **B** is the _parent_ of **A**), it automatically "borrows" all the definitions of properties from **B** and can modify them as needed (if you're familiar with Python, this is very similar to class inheritance). In our example above, `TEENSY3_1` inherits from `Target` (most mbed targets inherit from `Target`). This is how `Target` is defined:
 
 ```
 "Target": {
@@ -41,10 +41,10 @@ The description of an mbed target can "inherit" from one or more descriptions of
 }
 ```
 
-Since `TEENSY3_1` inherits from `Target`:
+Because `TEENSY3_1` inherits from `Target`:
 
-- `core` is a property defined both in `TEENSY3_1` and `Target`. Since `TEENSY3_1` redefines it, the value of `core` for `TEENSY3_1` is `Cortex-M4`.
-- `default_toolchain` is not defined in `TEENSY3_1`, but since it is defined in `Target`, `TEENSY3_1` borrows it, so the value of `default_toolchain` for `TEENSY3_1` is `ARM`.
+- `core` is a property defined both in `TEENSY3_1` and `Target`. Because `TEENSY3_1` redefines it, the value of `core` for `TEENSY3_1` is `Cortex-M4`.
+- `default_toolchain` is not defined in `TEENSY3_1`, but because it is defined in `Target`, `TEENSY3_1` borrows it, so the value of `default_toolchain` for `TEENSY3_1` is `ARM`.
 
 A target can add properties that don't exist in its parent(s). For example, `OUTPUT_EXT` is defined in `TEENSY3_1`, but doesn't exist in `Target`.
 
@@ -60,35 +60,35 @@ In this case, `ImaginaryTarget` inherits the properties of both `Target` and `TE
 
 - The value of `ImaginaryTarget.default_toolchain` is `ARM` (from `Target`).
 - The value of `ImaginaryTarget.OUTPUT_EXT` is `hex` (from `TEENSY3_1`).
-- The value of `ImaginaryTarget.core` is `null` (from `Target`, since that's the first parent of `ImaginaryTarget` that defines `core`).
+- The value of `ImaginaryTarget.core` is `null` (from `Target`, because that's the first parent of `ImaginaryTarget` that defines `core`).
 
-Avoid using multiple inheritance for your targets if possible, since it can get pretty tricky to figure out how a property is inherited. If you have to use multiple inheritance, keep in mind that the mbed target description mechanism uses the old (pre 2.3) Python mechanism for finding the method resolution order:
+Avoid using multiple inheritance for your targets if possible because it can get pretty tricky to figure out how a property is inherited. If you have to use multiple inheritance, keep in mind that the mbed target description mechanism uses the old (pre 2.3) Python mechanism for finding the method resolution order:
 
-- Look for the property in the current target.
-- If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
-- If not found, look for the property in the rest of the target's parents, relative to the current inheritance level.
+1. Look for the property in the current target.
+1. If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
+1. If not found, look for the property in the rest of the target's parents, relative to the current inheritance level.
 
 For more details about the Python method resolution order, check [this link](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
 
-## core
+## Core
 
 The name of the target's ARM core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`
 
-## public
+## Public
 
 Some mbed targets may be defined solely for the purpose of serving as an inheritance base for other targets (as opposed to being used to build mbed code). When such a target is defined, its description must have the `public` property set to `false`, to prevent the mbed build system from considering it as a build target. An example is the `Target` target shown above.
 
 If `public` is not defined for a target, it defaults to `true`.
 
-<span class="notes">**Note:** unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
+<span class="notes">**Note:** Unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
 
-## macros, macros_add, macros_remove
+## Macros, macros_add, macros_remove
 
-The macros in this list will be defined when compiling mbed code. The macros can be defined with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add these definitions to the compiler's command line: `-DNO_VALUE -DVALUE=10`.
+The macros in this list will be defined when compiling mbed code. The macros can be defined with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add these definitions to the compiler's command-line: `-DNO_VALUE -DVALUE=10`.
 
-When target inheritance is used, it's possible to alter the values of `macros` in inherited targets without re-defining `macros` completely:
+When target inheritance is used, it's possible to alter the values of `macros` in inherited targets without redefining `macros` completely:
 
 - An inherited target can use `macros_add` to add its own macros.
 - An inherited target can use `macros_remove` to remove macros defined by its parents.
@@ -114,7 +114,7 @@ The list of **labels** defines how the build system looks for sources, libraries
 
 If target inheritance is used, it's possible to alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous paragraph.
 
-## features, features_add, features_remove
+## Features, features_add, features_remove
 
 The list of **features** defines what hardware a device has.
 
@@ -145,7 +145,7 @@ In this example, after the initial binary image for the target is generated, the
 
 <span class="notes">**Note:** The definition of the `TEENSY3_1Code` class **must** exist in the *targets.py* file. </span>
 
-Since `toolchains` is also specified, `binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`. Note that specifying `toolchains` is optional: if it's not specified, the hook will be called no matter what toolchain is used.
+Because `toolchains` is also specified, `binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`. Note that specifying `toolchains` is optional: if it's not specified, the hook will be called no matter what toolchain is used.
 
 As for the `binary_hook` code, this is how it looks in *targets.py*:
 
