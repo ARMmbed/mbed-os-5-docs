@@ -28,8 +28,7 @@ Later we'll compile the code; this will take both of these parts and create a si
 The mbed Online Compiler can build your application to match any mbed Enabled board. However, you have to select the target before compiling.
 
 ### Adding a board to your list
-
-To add a board to your list, go to the board's page on mbed.com, and click the **Add to your mbed Compiler** button:
+To add a board to your list, go to [the board's page on mbed.com](https://developer.mbed.org/platforms/), and click the **Add to your mbed Compiler** button:
 
 <span class="images">![](../dev_tools/Images/add_board.png)<span>Adding a board to the mbed Online Compiler's board list</span></span>
 
