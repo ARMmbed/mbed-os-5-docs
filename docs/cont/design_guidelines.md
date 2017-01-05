@@ -17,7 +17,7 @@ Please refer to the [mbed style guide](code_style.md).
 
 The mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the mbed OS codebase as a single Git repo. We suggest this model for external libraries.
  
-1. Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
+- Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
 
     ```
     - mbed-os
@@ -40,7 +40,7 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
         `- smoke - mbed OS smoke tests (blinky, etc)
     ```
 
-1. Prefix each source file with the module name followed by an underscore. This prevents conflicts with other similarly named files in different modules such as `nanostack/thread.c` and `drivers/Thread.cpp`; not all toolchains are able to support object files with the same name.
+- Prefix each source file with the module name followed by an underscore. This prevents conflicts with other similarly named files in different modules such as `nanostack/thread.c` and `drivers/Thread.cpp`; not all toolchains are able to support object files with the same name.
 
     ```
     mbed-os/rtos/rtos_thread.cpp
@@ -48,14 +48,14 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
     mbed-os/drivers/drivers_analog_in.cpp
     ```
 
-1. Always include header files using the module directory in the path. For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
+- Always include header files using the module directory in the path. For example: `#include “lwip/lwip-interface.h”`, `#include “drivers/Ticker.h”`.
 	Limit the include path to the module directory. This allows moving the module in the future.
-1. As an entry point for the module (from the user space), we suggest a single header file. For example: `mbed.h`, `rtos.h`.
-1. Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
-1. In C++ modules, the API should be contained in a namespace that matches the module’s name. For example: `mbed::Ticker`, `rtos::Thread`, `netsocket::Socket`.
-1. In C modules, every nonstatic function and type should be prefixed with the module’s name followed by an underscore. For example: `mbed_critical_section_enter()`, `lwip_gethostbyname(host)`.
-1. A module contained in the mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
-1. Special directories should follow consistent naming convention.
+- As an entry point for the module (from the user space), we suggest a single header file. For example: `mbed.h`, `rtos.h`.
+- Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
+- In C++ modules, the API should be contained in a namespace that matches the module’s name. For example: `mbed::Ticker`, `rtos::Thread`, `netsocket::Socket`.
+- In C modules, every nonstatic function and type should be prefixed with the module’s name followed by an underscore. For example: `mbed_critical_section_enter()`, `lwip_gethostbyname(host)`.
+- A module contained in the mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
+- Special directories should follow consistent naming convention.
  
 ## Contribution
 1. Please refer to the [mbed contribution guide](contributing.md).
