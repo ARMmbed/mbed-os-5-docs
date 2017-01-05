@@ -118,7 +118,7 @@ If target inheritance is used, it's possible to alter the values of `extra_label
 
 The list of **features** defines what hardware a device has.
 
-mbed, libraries, or application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform.
+mbed, libraries or application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform.
 
 If target inheritance is used, it's possible to alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous two paragraphs.
 
