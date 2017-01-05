@@ -2,7 +2,7 @@
 
 ## Quick start video
 
-<span class="tips">**Tip:** the video assumes you've already [installed mbed CLI](#installing-mbed-cli-and-a-toolchain).
+<span class="tips">**Tip:** the video assumes you've already [installed mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/5.3/dev_tools/cli/#installing-mbed-cli).
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)</span>
 
@@ -15,11 +15,11 @@
 DigitalOut led1(LED1);
 
 // main() runs in its own thread in the OS
-// (note the calls to Thread::wait below for delays)
+// (note the calls to wait below for delays)
 int main() {
     while (true) {
         led1 = !led1;
-        Thread::wait(500);
+        wait(500);
     }
 }
 
