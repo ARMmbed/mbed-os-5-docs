@@ -1,5 +1,5 @@
 # Build Profiles
-mbed OS 5 supports three primary build profiles, *default*, *debug* and *small*. The Online 
+mbed OS 5 supports three primary build profiles: *default*, *debug* and *small*. The Online 
 Compiler uses the *default* profile. When building from mbed CLI,
 you can select a profile by adding the ```--profile <profile>```
 flag. You can specify custom user defined profiles by giving the path
