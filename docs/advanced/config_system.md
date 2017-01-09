@@ -209,7 +209,7 @@ Target configurations contain a set of cumulative attributes that can be manipul
 
 Cumulative attributes:
 
-- ``features``: List of features that will be compiled into the resulting binary and be available at runtime. Determines the FEATURE directories included during compilation. These are also emitted as FEATURE macros. Features may not be nested inside of other features. Features operate on a strictly add, add or remove, remove basis. If two different libraries each try to add or remove the same feature there will be a failure reported during the scan operation.
+- ``features``: List of features that will be compiled into the resulting binary and be available at runtime. Determines the FEATURE directories included during compilation. These are also emitted as FEATURE macros. Features cannot nest inside of other features. Features operate on a strictly add, add or remove, remove basis. If two different libraries each try to add or remove the same feature, the scan operation will report a failure.
 - ``device_has``: List of hardware components available on the target. These are emitted as DEVICE_HAS macros.
 - ``extra_labels``: List of target labels that determine the TARGET directories included during compilation. These are also emitted as TARGET macros.
 - ``macros``: List of target-specific macros that are defined during compilation.
