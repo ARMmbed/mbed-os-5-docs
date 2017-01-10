@@ -24,7 +24,7 @@ The definition of the target called **TEENSY3_1** is a JSON object. The properti
 
 This section lists all the properties that are known to the mbed build system. Unless specified otherwise, all properties are optional.
 
-## Inherits
+## inherits
 
 The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target **A** inherits from another target **B**, (**A** is the _child_ of **B** and **B** is the _parent_ of **A**), it automatically "borrows" all the definitions of properties from **B** and can modify them as needed (if you're familiar with Python, this is very similar to class inheritance). In our example above, `TEENSY3_1` inherits from `Target` (most mbed targets inherit from `Target`). This is how `Target` is defined:
 
@@ -70,13 +70,13 @@ Avoid using multiple inheritance for your targets if possible because it can get
 
 For more details about the Python method resolution order, check [this link](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
 
-## Core
+## core
 
 The name of the target's ARM core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`
 
-## Public
+## public
 
 Some mbed targets may be defined solely for the purpose of serving as an inheritance base for other targets (as opposed to being used to build mbed code). When such a target is defined, its description must have the `public` property set to `false`, to prevent the mbed build system from considering it as a build target. An example is the `Target` target shown above.
 
@@ -84,7 +84,7 @@ If `public` is not defined for a target, it defaults to `true`.
 
 <span class="notes">**Note:** Unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
 
-## Macros, macros_add, macros_remove
+## macros, macros_add, macros_remove
 
 The macros in this list will be defined when compiling mbed code. The macros can be defined with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add these definitions to the compiler's command-line: `-DNO_VALUE -DVALUE=10`.
 
@@ -114,7 +114,7 @@ The list of **labels** defines how the build system looks for sources, libraries
 
 If target inheritance is used, it's possible to alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous paragraph.
 
-## Features, features_add, features_remove
+## features, features_add, features_remove
 
 The list of **features** defines what hardware a device has.
 
