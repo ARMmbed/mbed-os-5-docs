@@ -3,13 +3,13 @@
 
 ## DAPLink
 
-DAPlink is an open source project that implements the embedded firmware required for a Cortex debug probe. The project is hosted on GitHub, and is published under an Apache 2.0 license, making is attractive for commercial developments.
+DAPlink is an open source project that implements the embedded firmware required for a Cortex debug probe. The project is hosted on GitHub and is published under an Apache 2.0 license, making it attractive for commercial developments.
 
-The software project is complimented by a series of reference designs for creating the DAPLink debug probe hardware, which is available [here](https://developer.mbed.org/handbook/mbed-HDK).
+The software project is complemented by a series of reference designs for creating the DAPLink debug probe hardware, which is available [here](https://developer.mbed.org/handbook/mbed-HDK).
 
 ## DAPLink features
 
-A DAPLink debug probe connects to your host computer through USB, and connects to your target system (the one to be programmed and debugged) through a standard [Cortex debug connector](http://infocenter.arm.com/help/topic/com.arm.doc.faqs/attached/13634/cortex_debug_connectors.pdf). It provides three main features - all over a single USB connection.
+A DAPLink debug probe connects to your host computer through USB and connects to your target system (the one to be programmed and debugged) through a standard [Cortex debug connector](http://infocenter.arm.com/help/topic/com.arm.doc.faqs/attached/13634/cortex_debug_connectors.pdf). It provides three main features - all over a single USB connection.
 
 ### HID interface 
 
@@ -17,9 +17,9 @@ The driver-less HID interface provides a channel over which the CMSIS-DAP debug 
 
 Supported tools include:
 
-  * Keil MDK
-  * IAR Workbench
-  * pyOCD
+  * Keil MDK.
+  * IAR Workbench.
+  * pyOCD.
 
 ### USB disk drag and drop programming 
 
