@@ -9,9 +9,9 @@
 ## Table of contents
 
 1. [Using memap](#using-memap)
-1. [Information on memory sections](#info-mem-sections)
+1. [Information on memory sections](#information-on-memory-sections)
 1. [Current support](#current-support)
-1. [Known problems](#known-problems)
+1. [Known problems](#known-issues-and-new-features)
 
 ## Using memap
 
