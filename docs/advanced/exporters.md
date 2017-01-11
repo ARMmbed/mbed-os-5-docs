@@ -4,19 +4,32 @@ Use the mbed exporters to export your code to various third party tools and IDEs
 
 ## mbed CLI command
 
-`mbed export -m [target] -i [IDE]`
+```
+usage: mbed export [-h] [-i IDE] [-m TARGET] [--source SOURCE] [-c] [-S] [-v]
+                   [-vv]
 
+Generate IDE project files for the current program.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i IDE, --ide IDE     IDE to create project files for. Example: UVISION4,
+                        UVISION5, GCC_ARM, IAR, COIDE
+  -m TARGET, --target TARGET
+                        Export for target MCU. Example: K64F, NUCLEO_F401RE,
+                        NRF51822...
+  --source SOURCE       Source directory. Default: . (current dir)
+  -c, --clean           Clean the build directory before compiling
+  -S, --supported       Shows supported matrix of targets and toolchains
+  -v, --verbose         Verbose diagnostic output
+  -vv, --very_verbose   Very verbose diagnostic output
+  ```
 # Adding export support for a target
 
 If you have added a new target to mbed OS 5, exporting will allow users to transition from mbed source code to the offline development environment of their choice. More people can use your device.
 
 ## Eclipse and Make 
 
-Eclipse project export uses a generated Makefile for building. Other than target configuration within the [config system](https://github.com/ARMmbed/mbed-os/blob/master/docs/mbed_targets.md) for mbed build system support, there is no additional work to provide Make export.
-
-### Available mbed-cli commands
-
-`mbed export -m [target] -i [make_gcc_arm, make_iar, make_armc5, eclipse_gcc_arm, eclipse_iar, eclipse_armc5]`
+Eclipse project export uses a generated Makefile for building. To provide support for Make export, you only have to provide the target configuration within the [config system](https://github.com/ARMmbed/mbed-os/blob/master/docs/mbed_targets.md).
 
 ## uVision and IAR
 
