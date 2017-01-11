@@ -48,7 +48,7 @@ http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc is the PDSC that contains TEE
 ```
 
 ##### uVision
-The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE target selection window. [`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from these packs to generate valid uVision5 projects. If the device name is not found, we use a generic ARM CPU target in uVision5.
+The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. [`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from these packs to generate valid uVision5 projects. If the device name is not found, we use a generic ARM CPU target in uVision5.
 
 ##### IAR
 [`tools/export/iar/iar_definitions.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json) uses this device name to store information necessary to set the target in an IAR project.
