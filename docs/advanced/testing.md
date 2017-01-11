@@ -61,11 +61,11 @@ A test case is named from its position in your project's file structure. For ins
 
 You can build tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://github.com/ARMmbed/mbed-cli).
 
-When tests are built for a target and a given toolchain, the available tests are first discovered, then built in series. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the documentation [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
+When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the documentation [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
 #### Building process
 
-The `test.py` script (not to be confused with `tests.py`) located under the `tools` directory handles the process for building tests. This handles the discovery and building of all test cases for a given target and toolchain.
+The `test.py` script (not to be confused with `tests.py`) located under the `tools` directory handles the process for building tests. This handles the discovery and building of all test cases for a target and toolchain.
 
 The full build process is:
 
