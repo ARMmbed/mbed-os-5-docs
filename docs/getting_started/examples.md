@@ -33,9 +33,9 @@ These examples work on the K64F and GNU ARM Embedded Toolchain only.
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
 
-### WiFi
+### Wi-Fi
 
-[Perform simple HTTP operations using the WiFi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
+[Perform HTTP operations using the Wi-Fi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
 ### Bluetooth Low Energy (BLE)
 
@@ -49,7 +49,7 @@ These examples work on the K64F and GNU ARM Embedded Toolchain only.
 
 * [Thermometer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer/): send thermometer information using the Health Thermometer Profile.
 
-* [Simple LED control](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/): a client using a read/write characteristic to control an LED. This example goes with the [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/), a server that uses the GATT client API to control the BLE client device.
+* [LED control](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/): a client using a read/write characteristic to control an LED. This example goes with the [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/), a server that uses the GATT client API to control the BLE client device.
 
 * Beacons send a small amount of information to a nearby device. Try:
     * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
