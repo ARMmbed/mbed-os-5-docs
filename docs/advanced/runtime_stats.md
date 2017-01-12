@@ -1,6 +1,6 @@
 # Runtime statistics
 
-mbed OS 5 provides various runtime statistics to help characterize resource usage. This allows easy identification of potential problems, such as a stack close to overflowing. The metrics currently supported are available for the [heap](#heap_stats) and the [stack](#stack_stats).
+mbed OS 5 provides various runtime statistics to help characterize resource usage. This allows easy identification of potential problems, such as a stack close to overflowing. The metrics currently supported are available for the [heap](#heap-stats) and the [stack](#stack-stats).
 
 ## Heap stats
 
