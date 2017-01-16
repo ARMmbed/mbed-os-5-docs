@@ -1,15 +1,15 @@
 # Code contributions: GitHub pull requests and code style guide
 
-The mbed OS code base is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
+The mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
 <span class="tips">**Tip:** Please also read the section [Creating and publishing your own libraries and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
 
 ## Guidelines for GitHub pull requests
 
-Pull requests on GitHub have to meet a number of requirements in order to keep the code and commit history clean:
+Pull requests on GitHub have to meet the following requirements in order to keep the code and commit history clean:
 
-* Commits should always contain a proper description of their content. Start with a concise and sensible one-line description, then elaborate on reasoning of the choices taken, descriptions for reviewers and other information that might otherwise  be lost.
-* Commits should always be written to allow publication, so they can never contain confidential information, reference private documents, links to intranet locations, or rude language.
+* Commits should always contain a proper description of their content. Start with a concise and sensible one-line description, then elaborate on reasoning of the choices taken, descriptions for reviewers and other information that might otherwise be lost.
+* Commits should always be written to allow publication, so they can never contain confidential information, reference private documents, links to intranet locations or rude language.
 * Each commit should be the minimum self-contained commit for a change. A commit should always result in a new state that is again in a compilable state. Large changes should (if possible) be split up into logical smaller commits that help reviewers follow the reasoning behind the full change.
 * Commits should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit#seven-rules):
 	1. Separate subject from body with a blank line.
@@ -19,7 +19,7 @@ Pull requests on GitHub have to meet a number of requirements in order to keep t
 	1. Use the imperative mood in the subject line.
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
-* Since we use GitHub and explicit CLAs, special commit tags that other projects might use, like “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
+* Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 * Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the mbed-drivers repo would not be acceptable, as it is already understood that the commit applies to "mbed-drivers". Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
 
 ## Code acceptance
@@ -79,13 +79,13 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 * Indentation - four spaces. Please do not use tabs.
 
-* Braces - K&R style
+* Braces - K&R style.
 
 * One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)). 
 
-* One line per statement
+* One line per statement.
 
-* Preprocessor macro starts at the beginning of a new line, the code inside is indented according to the code above it.
+* Preprocessor macro starts at the beginning of a new line; the code inside is indented according to the code above it.
 
 * Cases within `switch` are indented (exception from K&R).
 
@@ -95,7 +95,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 * Comments should use proper spelling and grammar.
 
-* For pointers, '*' is adjacent to a name (analogin_t *obj).
+* For pointers, `*` is adjacent to a name (analogin_t *obj).
 
 * Don't leave trailing spaces at the end of lines.
 
@@ -123,9 +123,9 @@ __Classes__
 
 __Functions__
 
-* Contain lower case letters (as methods within classes)
+* Contain lower case letters (as methods within classes).
 
-* Words separated by underscore (wait_ms, read_u16)
+* Words separated by underscore (wait_ms, read_u16).
 
 As an example:
 
@@ -170,7 +170,7 @@ typedef struct analogin_s analogin_t;
 
 #### Doxygen documentation
 
-All functions and methods should contain documentation using Doxgyen.
+All functions and methods should contain documentation using doxgyen.
 
 <span class="tips">**Tip:** You can publish your documentation on docs.mbed.com. See our [publishing guide](https://docs.mbed.com/docs/writing-and-publishing-guides/en/latest/publishing_guide/) for more details.</span>
 

@@ -10,7 +10,7 @@ The export subsystem is organized as a group of common code and a group of IDE o
 
 The **common code** is contained in four files: 
 
- * `tools/project.py` contains the command line interface and handles the differences between mbed OS 2 tests and mbed OS 5 projects.
+ * `tools/project.py` contains the command-line interface and handles the differences between mbed OS 2 tests and mbed OS 5 projects.
  * `tools/project_api.py` contains a high-level API for use by the mbed Online Compiler and mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
  * `tools/export/__init__.py` contains the mapping of exporter names to plugin classes, and handles printing of toolchain support information.
  * `tools/export/exporters.py` contains the base class for all plugins. It offers useful exporter-specific actions.
@@ -31,19 +31,19 @@ These steps construct an object of one of the exporter plugin classes listed in 
    * `toolchain.target` a `Target` object that may be use to query target configuration.
  * `project_name` the name of the project.
  * `flags` the flags that the mbedToolchain instance will use to compile the `c/cpp/asm` files if invoked.
- * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, like C and Cpp sources or header search paths.
+ * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, such as C and Cpp sources and header search paths.
 
 ___Plugin tools___
 
 The other half of the common code is a library for use by a plugin. This API includes:
 
  * `gen_file` use Jinja2 to generate a file from a template.
- * `get_source_files` get all files for assembly, C, C++, and so on as one list.
+ * `get_source_files` get all files for assembly, C, C++ and so on as one list.
  * `group_project_files` group all files passed in. The groups will be suitable for an IDE.
 
 ### Plugin code
 
-Plugin code is contained within a sub-directory of the `tools/export` directory named after the IDE or toolchain that the plugin is exporting for.
+Plugin code is contained within a subdirectory of the `tools/export` directory named after the IDE or toolchain that the plugin is exporting for.
 For example, the uVision exporter's templates and Python code is contained within the directory `tools/export/uvision` and the Makefile exporter's code and templates within `tools/export/makefile`.
 
 The Python code for the plugin should be:
@@ -69,7 +69,7 @@ A plugin that would like to be tested by CI may implement the `build` method.
 
 This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile.
 
-## Implementing an example Plugin
+## Implementing an example plugin
 
 In this section, we walk through implementing a simple exporter, `my_makefile`, which is a simplified Makefile using one template.
 
@@ -81,7 +81,7 @@ As this plugin is named `my_makefile`, all of the support code will be placed in
 
 To generate our Makefile, we need a list of object files the executable will use. We can construct the list from the sources if we replace the extensions with `.o`.
 
-To do this we use the following Python code:
+To do this, we use the following Python code:
 
 ```python
 to_be_compiled = [splitext(src)[0] + ".o" for src in
@@ -90,7 +90,7 @@ to_be_compiled = [splitext(src)[0] + ".o" for src in
                   self.resources.cpp_sources]
 ```
 
-Further, we may need to link against some libraries. We use the `-l:` gcc command line syntax to specify the libraries:
+Further, we may need to link against some libraries. We use the `-l:` gcc command-line syntax to specify the libraries:
 
 ```python
 libraries = ["-l:" + lib for lib in self.resources.libraries]
@@ -111,7 +111,7 @@ ctx = {
 }
 ```
 
-To render our template, we pass the template filename, the context, and the destination location within the exported project to the library-provided `gen_file` method:
+To render our template, we pass the template file name, the context and the destination location within the exported project to the library-provided `gen_file` method:
 
 ```python
 self.gen_file('my_makefile/Makefile.tmpl', ctx, 'Makefile')
@@ -130,7 +130,7 @@ TARGETS = [target for target, obj in TARGET_MAP.iteritems()
 
 Now that we have a context object, and we have passed off control to the Jinja2 template rendering engine, we can look at the template Makefile, `tools/export/my_makefile/Makefile.tmpl`. 
 
-Documentation on what is available within a jinja2 template is available [here](http://jinja.pocoo.org/docs/dev/templates/).
+Find documentation on what is available within a Jinja2 template [here](http://jinja.pocoo.org/docs/dev/templates/).
 
 ```make
 ###############################################################################
