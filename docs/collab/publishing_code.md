@@ -16,7 +16,7 @@ If you want to share your work:
 
 1. If you have uncommitted changes, you will be prompted to commit your work. 
 
-1. If this is the first time you have published this program or library, you will see a dialog like this one:
+1. If this is the first time you have published this program or library, you will see a dialog box like this one:
 
 	<span class="images">![](images/publish_deatils.png)</span>
 
@@ -28,9 +28,9 @@ If you want to share your work:
 
 1. Select **Visibility**: This controls who can see your repository. There are three options:
 
-	 * **Public**: For a normal repository. It will be visible in the site code listings and in your personal profile. It's readable by everyone, but only writable by you (or people you add).
+	 * **Public**: For a normal repository. It will be visible in the site code listings and in your personal profile. It's readable by everyone but only writable by you (or people you add).
 
-	 * **Public (unlisted)**: A sub-type of public; the repository is public and anyone can view it, but it's not advertised in any listings. Users will need to know the URL of the repository to be able to reach it. 
+	 * **Public (unlisted)**: A subtype of public; the repository is public and anyone can view it, but it's not advertised in any listings. Users will need to know the URL of the repository to be able to reach it. 
 
 	* **Private**: Only you (the owner), or users you add, can see and access the repository. To allow users to see it, use the repository's Admin settings. Users you *don't* add will not be able to see the repository, even if they have the URL. 
 
