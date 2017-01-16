@@ -1,22 +1,22 @@
 # Multiple authors in the mbed Online Compiler
 
-Repositories on developer.mbed.org are not limited to one author for each repository. Instead, several authors may have the right to publish to the same repository, allowing them to collaborate on a project while other users, who may be interested in using the project's code but are not concerned with the individual authors, can interact with a single repository.
+Repositories on [developer.mbed.org](developer.mbed.org) are not limited to one author for each repository. Instead, several authors may have the right to publish to the same repository, allowing them to collaborate on a project. Other users, who may be interested in using the project's code but are not concerned with the individual authors, can interact with a single repository.
 
 <span class="images">![](images/mult_authors.png)</span>
 
 ## Adding a new author to your repository
 
-Granting permission for another author to commit to your repository is easy:
+To grant permission for another author to commit to your repository:
 
 1. Go to your repository on the mbed website and click the **Repository Administration** link. 
 
-1. Start typing a username in the **Developers** box to add them to the list:
+1. Start typing a username in the **Developers** box to add the user to the list:
 
 	<span class="images">![](images/privacy_settings.png)</span>
 
 ## Day to day usage
 
-The key difference between single-author workflows and multiple-author workflows is the necessity to **merge** the changes made by one author with those made by another author, when they simultaneously commit to a single parent revision.
+The key difference between single-author and multiple-author workflows is that multiple-author workflows require that the changes from one author be **merged** with those of another author when both authors simultaneously commit to a single parent revision.
 
 The following are some common operations you will need to do day to day. You won't necessarily need to do all of them, and not necessarily in the order shown.
 
@@ -24,7 +24,7 @@ The following are some common operations you will need to do day to day. You won
 
 When there are changes that exist on the public repository but not in your workspace repository, we call them "incoming" changes. The Revisions panel tells you when and what incoming changes are available.
 
-To bring the changes into your own workspace repository, simply click the **Update** button in the Revisions panel for the relevant program or library:
+To bring the changes into your own workspace repository, click the **Update** button in the Revisions panel for the relevant program or library:
 
 <span class="images">![](images/multi_revision_history.png)</span>
 
@@ -40,7 +40,7 @@ When you pull the changes into your workspace, you will see something like this:
 
 The Revisions panel shows one person's changes diverging from another person's changes. This is called *a branch*. 
 
-To join up the two branches, click the **Merge** button. You may need to resolve conflicts, as explained below.
+To join the two branches, click the **Merge** button. You may need to resolve conflicts, as explained below.
 
 #### Resolve merge conflicts (if needed)
 
@@ -72,6 +72,6 @@ You can see the two branches coming back together at "merged revision 1 with rev
 
 ### Pushing back to the repository
 
-Once all branches and conflicts are resolved and joined back into one, you would typically re-test your program or library. When all tests pass, you can push your changes and the merged result back to the public repository.
+Once all branches and conflicts are resolved and joined back into one, you would typically retest your program or library. When all tests pass, you can push your changes and the merged result back to the public repository.
 
 To push your changes, simply click the **Publish** button.
