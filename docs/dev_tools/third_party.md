@@ -6,13 +6,13 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
 * Keil uVision5.
 * IAR Systems.
 * Make using:
-  * GNU ARM Embedded Toolchain.
-  * ARM Compiler 5.
-  * IAR ARM Compiler.
+    * GNU ARM Embedded Toolchain.
+    * ARM Compiler 5.
+    * IAR ARM Compiler.
 * Eclipse CDT using:
-  * GNU ARM Embedded Toolchain.
-  * ARM Compiler 5.
-  * IAR ARM Compiler.
+    * GNU ARM Embedded Toolchain.
+    * ARM Compiler 5.
+    * IAR ARM Compiler.
 * DS-5.
 * LPCXpresso.
 * Kinetis Design Studio.
