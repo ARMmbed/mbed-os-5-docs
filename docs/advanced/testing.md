@@ -59,7 +59,7 @@ A test case is named from its position in your project's file structure. For ins
 
 ### Building tests
 
-You can build tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://github.com/ARMmbed/mbed-cli).
+You can build tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
 When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the documentation [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
@@ -82,7 +82,7 @@ If you need to use app config, this must be set via the `--app-config` option wh
 
 ### Running tests
 
-You can run automated tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://github.com/ARMmbed/mbed-cli).
+You can run automated tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
 The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the test specification format [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
