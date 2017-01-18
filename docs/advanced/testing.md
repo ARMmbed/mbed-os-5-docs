@@ -1,6 +1,6 @@
 # Testing in mbed OS 5
 
-The way tests are run and compiled in mbed OS 5 is substantially different from previous versions of mbed. Previously, tests were located in one known location, and a python file (`tools/tests.py`) kept track of their dependencies, capabilities and configurations. mbed OS 5 has adopted a more distributed approach to testing. Test code lives alongside the application code, which is dynamically discovered by the test tools.
+The way tests are run and compiled in mbed OS 5 is substantially different from previous versions of mbed.
 
 ## Table of Contents
 
