@@ -39,10 +39,10 @@ uVision and IAR both use [CMSIS packs](http://www.keil.com/pack/doc/CMSIS/Pack/h
 
 We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to scrape [MDK5 Software Packs](https://www.keil.com/dd2/Pack/) for target information by parsing [http://www.keil.com/pack/index.idx](http://sadevicepacksprod.blob.core.windows.net/idxfile/index.idx). [index.json](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the relevant information in the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/_pack_format.html) retrieved from each URL in the index. 
 
-A `.pdsc` file typically describes a family of devices. Each device is uniquely identified by its [device name](https://github.com/ARMmbed/mbed-os/blob/master/docs/mbed_targets.md#device_name). This name makes a natural key to associate a device with its information in `index.json`. 
+A `.pdsc` file typically describes a family of devices. Each device is uniquely identified by its [device name](mbed_targets.md#device_name). This name makes a natural key to associate a device with its information in `index.json`. 
 
 #### What's in a device name?
-There is no reliable way to map an mbed alias such as [NUCLEO_F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L603) to its unique identifier, [STM32F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L615), because it is listed in a CMSIS pack (and subsequently `index.json`). So, we added a [device name](https://github.com/ARMmbed/mbed-os/blob/master/docs/mbed_targets.md#device_name) field in `targets.json`. **This field is required for IAR or uVision exporter support**.
+There is no reliable way to map an mbed alias such as [NUCLEO_F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L603) to its unique identifier, [STM32F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L615), because it is listed in a CMSIS pack (and subsequently `index.json`). So, we added a [device name](mbed_targets.md#device_name) field in `targets.json`. **This field is required for IAR or uVision exporter support**.
 
 #### Code usage
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
