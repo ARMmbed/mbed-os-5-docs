@@ -2,7 +2,7 @@
 
 ## Quick start video
 
-<span class="tips">**Tip:** the video assumes you've already [installed mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/5.3/dev_tools/cli/#installing-mbed-cli).
+<span class="tips">**Tip:** the video assumes you've already [installed mbed CLI](#installing-mbed-cli-and-a-toolchain).
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)</span>
 
