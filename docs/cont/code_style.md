@@ -95,7 +95,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 * Comments should use proper spelling and grammar.
 
-* For pointers, '*' is adjacent to a name (analogin_t *obj).
+* For pointers, `*` is adjacent to a name (analogin_t *obj).
 
 * Don't leave trailing spaces at the end of lines.
 
