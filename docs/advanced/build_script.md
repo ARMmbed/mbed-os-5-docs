@@ -1,11 +1,11 @@
-# mbed SDK build script environment
+# mbed OS build script environment
 ## Introduction
-mbed test framework allows users to test their mbed devices’ applications, build mbed SDK library, rerun tests, run mbed SDK regression, add new tests and receive all the results automatically. Everything occurs on your machine, so you have full control over compilation and the tests you run.
+mbed test framework allows users to test their mbed devices’ applications, build mbed OS library, rerun tests, run mbed OS regression, add new tests and receive all the results automatically. Everything occurs on your machine, so you have full control over compilation and the tests you run.
 
-It uses Python 2.7 programming language to drive all tests, so make sure to install Python 2.7 and include it in your system PATH. To compile mbed SDK and tests, you will need one or more supported compilers installed on your system.
+It uses Python 2.7 programming language to drive all tests, so make sure to install Python 2.7 and include it in your system PATH. To compile mbed OS and tests, you will need one or more supported compilers installed on your system.
 
 To follow this introduction, you should:
-* Know what mbed SDK is in general.
+* Know what mbed OS is in general.
 * Know how to install Python 2.7 and ARM target cross compilers.
 * Have C/C++ programming experience and be willing to learn a bit about Python. 
 
@@ -26,15 +26,15 @@ You need:
 * Installed [setuptools](https://pythonhosted.org/an_example_pypi_project/setuptools.html#installing-setuptools-and-easy-install).
 * Optionally, you can install [pip](https://pip.pypa.io/en/latest/installing.html), which is the PyPA recommended tool for installing Python packages from the command-line.
 
-mbed SDK in its repo root directory specifies `setup.py` file, which holds information about all packages that are dependencies for it. Installing all dependencies requires a few steps.
+mbed OS in its repo root directory specifies `setup.py` file, which holds information about all packages that are dependencies for it. Installing all dependencies requires a few steps.
 
-First, clone the mbed SDK repo and go to the mbed SDK repo's directory:
+First, clone the mbed OS repo and go to the mbed OS repo's directory:
 ```
 $ git clone https://github.com/mbedmicro/mbed.git
 $ cd mbed
 ```
 
-Second, invoke `setup.py`, so `setuptools` can install mbed SDK's dependencies (external Python modules required by mbed SDK):
+Second, invoke `setup.py`, so `setuptools` can install mbed OS's dependencies (external Python modules required by mbed OS):
 ```
 $ python setup.py install
 ```
@@ -50,9 +50,9 @@ In case you do not want to install the entire mbed package using `setuptools`, y
 $ pip install -r requirements.txt
 ```
 ## Prerequisites (manual Python package dependency installation)
-**Please only read this chapter if you have problems installing mbed SDK dependencies to Python packages**.
+**Please only read this chapter if you have problems installing mbed OS dependencies to Python packages**.
 
-Below, you can find the list of mbed SDK dependencies to Python modules with instructions about how to install them manually.
+Below, you can find the list of mbed OS dependencies to Python modules with instructions about how to install them manually.
 
 You can skip this part if you already installed [Python 2.7](https://www.python.org/download/releases/2.7) and [setuptools](https://pythonhosted.org/an_example_pypi_project/setuptools.html) and successfully [installed all dependencies](#prerequisites).
 
@@ -98,9 +98,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 * Installed Git open source distributed version control system.
-* Installed at least one of the supported by mbed SDK workspace tools compilers: 
+* Installed at least one of the supported by mbed OS workspace tools compilers: 
 
-Compiler               | Mbed SDK Abbreviation | Example Version
+Compiler               | mbed OS Abbreviation  | Example Version
 -----------------------|-----------------------|-----------
 Keil ARM Compiler      | ARM, uARM             | ARM C/C++ Compiler, 5.03 [Build 117]
 GCC ARM                | GCC_ARM               | gcc version 4.8.3 20131129 (release)
@@ -109,12 +109,12 @@ IAR Embedded Workbench | IAR                   | IAR ANSI C/C++ Compiler V6.70.1
 
 * mbed board. You can find a list of supported platforms [here](https://mbed.org/platforms/).
 
-### Getting mbed SDK sources with test suite
+### Getting mbed OS sources with test suite
 You have already installed Python (with required modules) and at least one supported compiler you will use with your mbed board. Great!
 
-Now you can get mbed SDK with the test suite. Clone the latest mbed SDK source code and configure the path to your compiler(s) in next few steps.
+Now you can get mbed OS with the test suite. Clone the latest mbed OS source code and configure the path to your compiler(s) in next few steps.
 
-* Open console and run command below to clone the mbed SDK repository hosted on [Github](https://github.com/mbedmicro/mbed).
+* Open console and run command below to clone the mbed OS repository hosted on [Github](https://github.com/mbedmicro/mbed).
 ```
 $ git clone https://github.com/mbedmicro/mbed.git
 Cloning into 'mbed'...
@@ -126,7 +126,7 @@ Resolving deltas: 100% (24455/24455), done.
 Checking connectivity... done.
 Checking out files: 100% (3994/3994), done.
 ```
-* Now you can go to the mbed directory you cloned, and you can see the root directory structure of the mbed SDK library sources. Type following commands:
+* Now you can go to the mbed directory you cloned, and you can see the root directory structure of the mbed OS library sources. Type following commands:
 ```
 $ cd mbed
 $ ls
@@ -135,17 +135,17 @@ LICENSE  MANIFEST.in  README.md  libraries  setup.py  travis  tools
 Directory structure we are interested in:
 ```
   mbed/tools/           - test suite scripts, build scripts etc.
-  mbed/libraries/tests/           - mbed SDK tests,
-  mbed/libraries/tests/mbed/      - tests for mbed SDK and peripherals tests,
+  mbed/libraries/tests/           - mbed OS tests,
+  mbed/libraries/tests/mbed/      - tests for mbed OS and peripherals tests,
   mbed/libraries/tests/net/echo/  - tests for Ethernet interface,
   mbed/libraries/tests/rtos/mbed/ - tests for RTOS. 
 ```
 
 ### Workspace tools
-Workspace tools are a set of Python scripts used off-line by the mbed SDK team to:
-* Compile and build mbed SDK.
-* Compile and build libraries included in the mbed SDK repo such sa ETH (Ethernet), USB, RTOS and CMSIS.
-* Compile, build and run mbed SDK tests.
+Workspace tools are a set of Python scripts used off-line by the mbed OS team to:
+* Compile and build mbed OS.
+* Compile and build libraries included in the mbed OS repo such sa ETH (Ethernet), USB, RTOS and CMSIS.
+* Compile, build and run mbed OS tests.
 * Run test regression locally and in CI server.
 * Get library, target and test configuration (paths, parameters, names etc.).
 
@@ -205,14 +205,14 @@ IAR_PATH = "C:/Work/toolchains/iar_6_5/arm"
 
 Note: Settings in `mbed_settings.py` will overwrite variables with default values in `mbed/default_settings.py` file.
 
-## Build mbed SDK library from sources
-Build mbed SDK library offline from sources using your compiler. You have already cloned mbed SDK sources; you have also installed compilers and added their paths to `mbed_settings.py`. You are now ready to use workspace tools script `build.py` to compile and build mbed SDK from sources.
+## Build mbed OS library from sources
+Build mbed OS library offline from sources using your compiler. You have already cloned mbed OS sources; you have also installed compilers and added their paths to `mbed_settings.py`. You are now ready to use workspace tools script `build.py` to compile and build mbed OS from sources.
 
 You are still using console. You should be already in `mbed/tools/` directory. If not, go to `mbed/tools/` and type this command:
 ```
 $ python build.py -m LPC1768 -t ARM
 ```
-or if you want to take advantage of multithreaded compilation, please use option `-j X` where `X` is the number of cores you want to use to compile mbed SDK. See below:
+or if you want to take advantage of multithreaded compilation, please use option `-j X` where `X` is the number of cores you want to use to compile mbed OS. See below:
 ```
 $ python build.py -m LPC1768 -t ARM -j 4
 Building library CMSIS (LPC1768, ARM)
@@ -231,10 +231,10 @@ Completed in: (42.58)s
 Build successes:
   * ARM::LPC1768
 ```
-This command will build mbed SDK for the [LPC1768](http://developer.mbed.org/platforms/mbed-LPC1768/) platform using the ARM compiler.
+This command will build mbed OS for the [LPC1768](http://developer.mbed.org/platforms/mbed-LPC1768/) platform using the ARM compiler.
 
 Look at the directory structure under `mbed/build/`. You can see for `LPC1768`, a new directory `TARGET_LPC1768` was created. This directory contains all build primitives.
-Directory `mbed/TARGET_LPC1768/TOOLCHAIN_ARM_STD/` contains the mbed SDK library `mbed.ar`. This directory structure also stores all needed headers, which you should use with `mbed.ar` when building your own software.
+Directory `mbed/TARGET_LPC1768/TOOLCHAIN_ARM_STD/` contains the mbed OS library `mbed.ar`. This directory structure also stores all needed headers, which you should use with `mbed.ar` when building your own software.
 ```
 $ tree ./mbed/build/
 Folder PATH listing
@@ -261,7 +261,7 @@ If you are not using ARM Compiler, replace `ARM` with your compiler nickname: `G
 $ python build.py -m LPC1768 -t IAR
 ```
 
-Note: Workspace tools track changes in source code. If, for example, mbed SDK or the test source code changes, `build.py` script recompiles the project with all dependencies. If there are no changes in code, consecutive mbed SDK rebuilds using build.py will not rebuild project if this is not necessary. Try to run the last command once again. You can see script `build.py` will not recompile the project. (There are no changes): 
+Note: Workspace tools track changes in source code. If, for example, mbed OS or the test source code changes, `build.py` script recompiles the project with all dependencies. If there are no changes in code, consecutive mbed OS rebuilds using build.py will not rebuild project if this is not necessary. Try to run the last command once again. You can see script `build.py` will not recompile the project. (There are no changes): 
 ```
 $ python build.py -m LPC1768 -t ARM
 Building library CMSIS (LPC1768, ARM)
@@ -277,17 +277,17 @@ Build successes:
 
 Build script located in mbed/tools/ is the core script solution to drive compilation, linking and building process for:
 
-* mbed SDK (with libs such as Ethernet, RTOS, USB and USB host).
+* mbed OS (with libs such as Ethernet, RTOS, USB and USB host).
 * Tests, which you can also link with libraries such as RTOS or Ethernet.
 
 Note: Test suite also uses the same build script, inheriting the same properties, such as auto dependency tracking and project rebuild, in case of source code changes.
 
-Build.py script is a tool to build mbed SDK for all available platforms using all supported by mbed cross-compilers. Script is using our workspace tools build API to create desired platform-compiler builds. Use script option `--h` (help) to check all script parameters.
+Build.py script is a tool to build mbed OS for all available platforms using all supported by mbed cross-compilers. Script is using our workspace tools build API to create desired platform-compiler builds. Use script option `--h` (help) to check all script parameters.
 ```
 $ python build.py --help
 ```
 
-* The command-line parameter `-m` specifies the MCUs/platforms for which you want to build the mbed SDK. More than one MCU(s)/platform(s) may be specified with this parameter using a comma as delimiter.
+* The command-line parameter `-m` specifies the MCUs/platforms for which you want to build the mbed OS. More than one MCU(s)/platform(s) may be specified with this parameter using a comma as delimiter.
 Example for one platform build:
 ```
 $ python build.py -m LPC1768 -t ARM
@@ -297,20 +297,20 @@ or for many platforms:
 $ python build.py -m LPC1768,NUCLEO_L152RE -t ARM
 ```
 
-* Parameter `-t` defines which toolchain should be used for the mbed SDK build. You can build mbed SDK for multiple toolchains using one command. 
-This example (note there is no space after each comma) compiles mbed SDK for Freescale Freedom KL25Z platform using ARM and GCC_ARM compilers:
+* Parameter `-t` defines which toolchain should be used for the mbed OS build. You can build mbed OS for multiple toolchains using one command. 
+This example (note there is no space after each comma) compiles mbed OS for Freescale Freedom KL25Z platform using ARM and GCC_ARM compilers:
 ```
 $ python build.py -m KL25Z -t ARM,GCC_ARM
 ```
 
 * You can combine this technique to compile multiple targets with multiple compilers.
-This example compiles mbed SDK for Freescale's KL25Z and KL46Z platforms using ARM and GCC_ARM compilers:
+This example compiles mbed OS for Freescale's KL25Z and KL46Z platforms using ARM and GCC_ARM compilers:
 ```
 $ python build.py -m KL25Z,KL46Z -t ARM,GCC_ARM
 ```
 
-* Building libraries included in mbed SDK's source code. Parameters `-r`, `-e`, `-u`, `-U`, `-d` and `-b` will add the `RTOS`, `Ethernet`, `USB`, `USB Host`, `DSP` and, `U-Blox` libraries respectively. 
-This example builds the mbed SDK library for NXP LPC1768 platform and the RTOS (`-r` switch) and Ethernet (`-e` switch) libraries.
+* Building libraries included in mbed OS's source code. Parameters `-r`, `-e`, `-u`, `-U`, `-d` and `-b` will add the `RTOS`, `Ethernet`, `USB`, `USB Host`, `DSP` and, `U-Blox` libraries respectively. 
+This example builds the mbed OS library for NXP LPC1768 platform and the RTOS (`-r` switch) and Ethernet (`-e` switch) libraries.
 ```
 $ python build.py -m LPC1768 -t ARM -r -e
 Building library CMSIS (LPC1768, ARM)
@@ -404,14 +404,14 @@ C:\Work\mbed\libraries\mbed\targets\cmsis\TARGET_NXP\TARGET_LPC176X\TOOLCHAIN_GC
 ...
 ```
 
-## CppCheck analysis
+## Cppcheck analysis
 [Cppcheck](http://cppcheck.sourceforge.net/) is a static analysis tool for C/C++ code. Unlike C/C++ compilers and many other analysis tools, it does not detect syntax errors in the code. Cppcheck primarily detects the types of bugs that the compilers normally do not detect. The goal is to detect only real errors in the code (in other words, have zero false positives).
 
 Prerequisites:
-* Please install `CppCheck` on your system before you use it with build scripts.
+* Please install `Cppcheck` on your system before you use it with build scripts.
 * You should also add Cppcheck to your system path.
 
-The `build.py` script supports switching between compilation, building and static code analysis testing. You can use switch `--cppcheck` to perform CppCheck static code analysis. 
+The `build.py` script supports switching between compilation, building and static code analysis testing. You can use switch `--cppcheck` to perform Cppcheck static code analysis. 
 
 * When you are using --cppcheck switch, all macros, toolchain dependencies and so on are preserved, so you are sure you are checking exactly the same code you would compile for your application.
 
@@ -425,12 +425,12 @@ $ python build.py -t uARM -m NUCLEO_F334R8 --cppcheck
 ```
 
 # make.py script
-`make.py` is an `mbed/tools/` script used to build tests (we sometimes call them'programs') one by one manually. This script allows you to flash a board, execute and test it. However, this script is deprecated and will not be described here. Instead please use the `singletest.py` file to build mbed SDK and tests and run automation for test cases included in `mbedmicro/mbed`.
-Note: The `make.py` script depends on existing mbed SDK and library sources, so you need to prebuild mbed SDK and other libraries (such as the RTOS library) to link 'program' (test) with mbed SDK and RTOS library. To prebuild mbed SDK, please use `build.py` script.
+`make.py` is an `mbed/tools/` script used to build tests (we sometimes call them'programs') one by one manually. This script allows you to flash a board, execute and test it. However, this script is deprecated and will not be described here. Instead please use the `singletest.py` file to build mbed OS and tests and run automation for test cases included in `mbedmicro/mbed`.
+Note: The `make.py` script depends on existing mbed OS and library sources, so you need to prebuild mbed OS and other libraries (such as the RTOS library) to link 'program' (test) with mbed OS and RTOS library. To prebuild mbed OS, please use `build.py` script.
 
 Please see a few ways to use `make.py` with the Freedom K64F board.
 
-* We need to build mbed SDK (in directory `mbed/build/`:
+* We need to build mbed OS (in directory `mbed/build/`:
 ```
 $ python build.py -t GCC_ARM -m K64F -j 8
 Building library CMSIS (K64F, GCC_ARM)
@@ -467,7 +467,7 @@ Link: stl
 Elf2Bin: stl
 Image: C:\Work\mbed\build\test\K64F\GCC_ARM\MBED_A3\stl.bin
 ```
-Because we previously have built mbed SDK, we are now able to drive test case compilation and linking with mbed SDK and produce `MBED_A3` test case binary in build directory:
+Because we previously have built mbed OS, we are now able to drive test case compilation and linking with mbed OS and produce `MBED_A3` test case binary in build directory:
 ```
 C:\Work\mbed\build\test\K64F\GCC_ARM\MBED_A3\stl.bin
 ```
