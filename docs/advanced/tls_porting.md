@@ -20,7 +20,7 @@ Creating session keys is only one use for random values; they have far more comp
 
 ## 3. How to provide mbed TLS entropy from a hardware entropy source
 
-### 3.1 What kind of a source can be added
+### 3.1 What kind of a source you can add
 
 It is important that you only add a TRNG as described in this section. For the purposes of this document a device is considered a TRNG only if:
 
