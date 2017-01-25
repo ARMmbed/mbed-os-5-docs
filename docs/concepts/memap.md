@@ -6,13 +6,6 @@
 
 **Note**: this tool shows static RAM usage and the total size of allocated heap and stack space defined at compile time, not the actual heap and stack usage (which may be different depending on your application).
 
-## Table of contents
-
-1. [Using memap](#using-memap)
-1. [Information on memory sections](#information-on-memory-sections)
-1. [Current support](#current-support)
-1. [Known problems](#known-issues-and-new-features)
-
 ## Using memap
 
 *memap* is automatically invoked after an mbed build finishes successfully. It's also possible to manually run the program with different command line options, for example:
