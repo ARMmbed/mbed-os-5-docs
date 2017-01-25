@@ -28,13 +28,15 @@ Different components within mbed OS 5 provide different levels of synchronizatio
 
 All supported toolchains are thread safe when using the full version of their standard library:
 
-* Multithreading support:
-    * GCC Newlib - **GCC** toolchain.
-    * IAR Standard Library - **IAR** toolchain.
-    * ARMCC Standard Library - **ARM** toolchain.
+
+* Multi-threading support:
+    * GCC Newlib - **GNU** ARM Embedded Toolchain
+    * IAR Standard Library - **IAR** toolchain
+    * ARMCC Standard Library - **ARM** toolchain
 * Single thread support only:
-    * Newlib Nano - **GCC_ARM** toolchain.
-    * Micro ARMCC - **uARM** toolchain.
+    * Newlib Nano - **GNU** ARM Embeded Toolchain
+    * Micro ARMCC - **uARM** toolchain
+
 
 <span class="notes">**Note:** GCC and ARMCC provide smaller variants of their libraries. These smaller versions are not thread safe, and projects using them should always use only one thread.</span>
 
