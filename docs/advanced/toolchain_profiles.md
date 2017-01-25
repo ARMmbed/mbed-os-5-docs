@@ -8,11 +8,11 @@ These flags are stored in a JSON file that may be merged with other JSON files o
 
 ## JSON toolchain profile format
 
-The JSON object that represents a toolchain profile is a dictionary mapping from toolchains, like `GCC_ARM`, to their flags, like `-O3`.
+The JSON object that represents a toolchain profile is a dictionary mapping from toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
 
 The structure is as follows: each toolchain supported by a toolchain profile has a dictionary in the root dictionary. 
 
-This dictionary contains a mapping from a flag type to a list of flags that should be passed the corresponding part of the compiler suite.
+This dictionary contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
 
 The required flag types are:
 
@@ -64,9 +64,9 @@ An example of a toolchain profile:
 }
 ```
 
-From this Toolchain profile, we can tell that:
+From this toolchain profile, we can tell that:
 
-- `GCC_ARM`, `ARM`, and `IAR` compiler suites are supported.
+- `GCC_ARM`, `ARM` and `IAR` compiler suites are supported.
 - The `ARM` C and C++ compilers will be using optimization level `-O3`.
 - The `IAR` linker will skip dynamic initialization.
 
@@ -78,6 +78,6 @@ The toolchains take in an optional argument, ``build_profile``, that will contai
 
 The meaning of the flags, and which ones are required, is the same as the user perspective.
 
-A developer using the API must parse the user-provided files themselves and extract the appropriate sub-dictionary from the file afterwards.
+A developer using the API must parse the user-provided files themselves and extract the appropriate subdictionary from the file afterwards.
 
 A convenience function that does this for a developer is `tools.options.extract_profile`; it calls ``args_error`` when a toolchain profile JSON file does not provide flags for the selected toolchain.

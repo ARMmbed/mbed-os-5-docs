@@ -6,11 +6,11 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
 * Keil uVision5.
 * IAR Systems.
 * Make using:
-  * GCC (ARM Embedded).
+  * GNU ARM Embedded Toolchain.
   * ARM Compiler 5.
   * IAR ARM Compiler.
 * Eclipse CDT using:
-  * GCC (ARM Embedded).
+  * GNU ARM Embedded Toolchain.
   * ARM Compiler 5.
   * IAR ARM Compiler.
 * DS-5.
@@ -69,7 +69,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 
 ## Third party tool notes
 
-### Make and Eclipse (GCC ARM Embedded, IAR Compiler, ARM Compiler 5)
+### Make and Eclipse (GNU ARM Embedded Toolchain, IAR Compiler, ARM Compiler 5)
 
 **Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.
 
@@ -79,7 +79,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 
 Make itself does not compile source code. It relies on a compiler such as:
 
-* [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+* [GNU ARM Embedded Toolchain](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
 * The IAR ARM compiler bundled with the IAR Embedded Workbench.
 * ARM Compiler 5.
 
@@ -94,9 +94,9 @@ Please download and install it.
 	
 Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
 
-### Kinetis Design Studio (Freescale KDS) with GCC ARM Embedded
+### Kinetis Design Studio (Freescale KDS) with GNU ARM Embedded Toolchain
 
-Freescale KDS now ships with the GCC ARM Embedded toolchain. You may need to update a linker flag depending on the version of tools installed. 
+Freescale KDS now ships with the GNU ARM Embedded Toolchain. You may need to update a linker flag depending on the version of tools installed. 
 
 1. Press **Alt + Enter** or **Option** + **Enter**. The **C++ Build** dialog box opens.
 1. In **Settings**, select **Tool Settings**.
