@@ -2,9 +2,7 @@
 
 This test harness allows you to execute a specified series of (asynchronous) C++ test cases with sensible default reporting and useful customization options.
 
-Please note that this is a purposefully lean test harness, only dealing with test execution and providing default reporting handlers. It specifically does not support autodiscovery of test cases and does not provide test macros or other convenience functions. Instead, you can use the macros in the [unity module](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) for this purpose. However, you are not required to use these and can use your own macros.
-
-Furthermore, test failure recovery through the use of exceptions or `longjmp` is not supported; the test will either continue and ignore failures or die by busy-waiting.
+Please note that this is a purposefully lean test harness that only deals with test execution and provides default reporting handlers. For autodiscovery of test cases, test macros and other convenience functions, you can use the macros in the [unity module](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity). However, you are not required to use these and can use your own macros.
 
 ## Theory of operation
 
@@ -23,7 +21,7 @@ The order of handler execution is:
 
 ## Example
 
-This example showcases a lot of functionality and proper integration with the [Greentea testing automation framework](https://github.com/ARMmbed/greentea), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
+This example showcases functionality and proper integration with the [Greentea testing automation framework](https://github.com/ARMmbed/greentea), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
 ```cpp
 #include "mbed-drivers/test_env.h"
@@ -162,7 +160,7 @@ There are three test case handlers:
 1. `control_t case_control_handler_t(void)`: executes (asynchronously) as many times as you specify if the case setup succeeded.
 1. `control_t case_call_count_handler_t(const size_t call_count)`: executes (asynchronously) as many times as you specify if the case setup succeeded.
 
-To specify a test case you must wrap it into a `Case` class: `Case("mandatory description", case_handler)`. You may override the setup, teardown and failure handlers in this wrapper class as well. The `Case` constructor is overloaded to allow you a comfortable declaration of all your callbacks and the order of arguments is:
+To specify a test case, wrap it into a `Case` class: `Case("mandatory description", case_handler)`. You may override the setup, teardown and failure handlers in this wrapper class as well. The `Case` constructor is overloaded to allow you a comfortable declaration of all your callbacks. The order of arguments is:
 
 1. Description (required).
 1. Setup handler (optional).
@@ -172,7 +170,7 @@ To specify a test case you must wrap it into a `Case` class: `Case("mandatory de
 
 #### Test case attributes
 
-You can modify test case behavior by returning `control_t` modifiers:
+Modify test case behavior by returning `control_t` modifiers:
 
 - `CaseNext`: never repeats and immediately moves to next test case.
 - `CaseNoRepeat`: never repeats.
@@ -190,11 +188,11 @@ For asynchronous test cases, you must return a `CaseTimeout(uint32_t ms)`. If yo
 
 To validate your callback, you must call `Harness::validate_callback()` in your asynchronous callback before the timeout fires. This will schedule the execution of the next test case.
 
-For repeating asynchronous cases, you can "add" both attributes together: `CaseTimeout(200) + CaseRepeatAll` will wait for 200 ms for the callback validation and then repeat the test case. See the section on arbitration logic for more details.
+For repeating asynchronous cases, you can "add" both attributes together: `CaseTimeout(200) + CaseRepeatAll` will wait for 200 ms for the callback validation and then repeat the test case. See the section on [arbitration logic](#test-case-arbitration) for more details.
 
-Note that you can also add attributes during callback validation, however, only repeat attributes are considered. This allows you to return `CaseTimeout(500)` to wait up to 500 ms for the callback validation and delegate the decision to repeat to the time the callback occurs: `Harness::validate_callback(CaseRepeatHandler)`.
+You can also add attributes during callback validation; however, only repeat attributes are considered. This allows you to return `CaseTimeout(500)` to wait up to 500 ms for the callback validation and delegate the decision to repeat to the time the callback occurs: `Harness::validate_callback(CaseRepeatHandler)`.
 
-You can only validate a callback once. If you need to wait for several callbacks, you need to write your own helper function that validates the expected callback only when all your custom callbacks arrive. This custom functionality is purposefully not part of this test harness; you can achieve it externally with additional code.
+You can only validate a callback once. If you need to wait for several callbacks, you need to write your own helper function that validates the expected callback only when all your custom callbacks arrive. This custom functionality is not part of this test harness; you can achieve it externally with additional code.
 
 ### Failure handlers
 
@@ -227,15 +225,15 @@ The failure locations are:
 - `LOCATION_CASE_TEARDOWN`: A failure occurred in the case teardown.
 
 If the setup or teardown handlers fail, they may return a `STATUS_ABORT` code, which will call the failure handler with the appropriate failure reason (`REASON_CASE_{SETUP|TEARDOWN}`) and failure location (`LOCATION_CASE_{SETUP|TEARDOWN}`).
-If the setup handler fails, the test case is never executed. Instead, the teardown handler is called in an attempt to salvage the situation. Please note that if a teardown handler fails, the system can be too unstable to continue testing.
+If the setup handler fails, the test case never executes. Instead, the teardown handler is called in an attempt to salvage the situation. Please note that if a teardown handler fails, the system can be too unstable to continue testing.
 
-You may also raise a failure manually by calling `Harness::raise_failure(failure_reason_t reason)`. In fact, this is how you can integrate assertion failures from custom test macros, as done with the unity macros, which raise a failure with the `REASON_ASSERTION` reason.
+You may also raise a failure manually by calling `Harness::raise_failure(failure_reason_t reason)`. In fact, this is how you can integrate assertion failures from custom test macros, as with the unity macros, which raise a failure with the `REASON_ASSERTION` reason.
 
 When waiting for an asynchronous callback, if the timeout fires, `REASON_TIMEOUT` is raised.
 
-The failure handler decides whether to continue or abort testing by returning `STATUS_CONTINUE` or `STATUS_ABORT` respectively. You can also ignore any raised failure by returning `STATUS_IGNORE`, and the harness will then not count this failure. In case of an abort, the test harness dies by busy waiting in a forever loop. This is needed because you cannot unwind the stack without exception support, and the asynchronous nature of the test harness breaks with using `longjmp`s.
+The failure handler decides whether to continue or abort testing by returning `STATUS_CONTINUE` or `STATUS_ABORT` respectively. You can also ignore any raised failure by returning `STATUS_IGNORE`, and the harness will then not count this failure. In case of an abort, the test harness dies by busy waiting in a forever loop. This is necessary because you cannot unwind the stack without exception support, and the asynchronous nature of the test harness breaks with `longjmp`s.
 
-Note that when `REASON_IGNORE` is `OR`ed into the failure reason, the failure handler returns `STATUS_IGNORE`. This is done automatically for test cases repeating after a timeout, and the default failure handlers also report this failure, but tell the harness to ignore it. Furthermore, the unity macros may decide to ignore assertion failures as well, in which case the assertion is ignored intentionally.
+When `REASON_IGNORE` is `OR`ed into the failure reason, the failure handler returns `STATUS_IGNORE`. This is automatic for test cases repeating after a timeout, and the default failure handlers also report this failure but tell the harness to ignore it. The unity macros may decide to ignore assertion failures as well, in which case the assertion is ignored intentionally.
 
 ### Default handlers
 
@@ -260,12 +258,12 @@ Specification specification(greentea_setup, cases, greentea_continue_handlers);
 
 You may override any of the default handlers with your own custom handler.
 
-To ignore a handler completely and not call a custom or default handler, you may use the `ignore_handler` hint.
+To ignore a handler completely and not call a custom or default handler, use the `ignore_handler` hint.
 To explicitly invoke the default handler, use the `default_handler` hint.
 
-To use your own custom handler, provide a function with the correct signature for the handler that you want to customize and provide it in your test case wrapper or specification wrapper. To turn a `failure_t` into a meaningful string use the `stringify(failure_t)` method.
+To use your own custom handler, provide a function with the correct signature for the handler that you want to customize, and provide it in your test case wrapper or specification wrapper. To turn a `failure_t` into a meaningful string, use the `stringify(failure_t)` method.
 
-**We strongly recommend that you call the predefined `greentea_*` handlers inside your custom callback, as they report the current condition in a properly formatted fashion.** By calling these handlers inside your custom callback your unit test does not need to be modified if the test logging needs to be changed in the future.
+**We strongly recommend that you call the predefined `greentea_*` handlers inside your custom callback, as they report the current condition in a properly formatted fashion.** By calling these handlers inside your custom callback, your unit test does not need to be modified if the test logging needs to be changed in the future.
 
 For the `Specification` class the order of arguments is:
 
@@ -277,10 +275,10 @@ For the `Specification` class the order of arguments is:
 
 ### Test case attribute arbitration
 
-When adding conflicting modifiers together
+When adding conflicting modifiers together:
 
-- the more restrictive (=shorter) timeout is chosen, but `CaseNoTimeout` always wins arbitration: `CaseNoTimeout` > `CaseTimeout(100)` > `CaseTimeout(200)` > `CaseAwait`.
-- the more invasive repeat method is chosen, but `CaseNoRepeat` always wins arbitration: `CaseNoRepeat` > `CaseRepeatAll`/`CaseRepeatAllOnTimeout(ms)` > `CaseRepeatHandler`/`CaseRepeatHandlerOnTimeout(ms)`.
+- The more restrictive (=shorter) timeout is chosen, but `CaseNoTimeout` always wins arbitration: `CaseNoTimeout` > `CaseTimeout(100)` > `CaseTimeout(200)` > `CaseAwait`.
+- The more invasive repeat method is chosen, but `CaseNoRepeat` always wins arbitration: `CaseNoRepeat` > `CaseRepeatAll`/`CaseRepeatAllOnTimeout(ms)` > `CaseRepeatHandler`/`CaseRepeatHandlerOnTimeout(ms)`.
 - `CaseNext` always wins arbitration.
 
 The following table shows this arbitration logic in detail:
@@ -299,22 +297,22 @@ The following table shows this arbitration logic in detail:
 
 ### Atomicity
 
-All handlers execute with interrupts enabled, **except the case failure handler!**. This means you can write test cases that poll for interrupts to be completed inside any handler, except the failure handler.
+All handlers execute with interrupts enabled, **except the case failure handler!**. This means you can write test cases that poll for interrupts to be completed inside any handler except the failure handler.
 
 If you set up an interrupt that validates its callback using `Harness::validate_callback()` inside a test case and it fires before the test case completed, the validation will be buffered. If the test case then returns a timeout value, but the callback is already validated, the test harness just continues normally.
 
 ### Custom scheduler
 
-By default, a Timeout object is used for scheduling the harness operations. In case this is not available you can provide your own custom scheduler implementation and make the harness use it with the `Harness::set_scheduler(your_custom_implementation)` function.
+By default, a Timeout object is used for scheduling the harness operations. If this is not available, you can provide your own custom scheduler implementation and make the harness use it with the `Harness::set_schedule (your_custom_implementation)` function.
 
-The scheduler requirements are very simple: Execute a `void(void)` function in you main loop (with a delay of *N* ms). Only one function is scheduled by the harness *at any given time*. Note that you do not need to implement the delay functionality, if your tests do not require timeouts. You will still be able to use repeating test cases, but an error is thrown if your tests attempt to use a timeout, when your underlying scheduler does not support it.
+The scheduler requirements are very simple: Execute a `void(void)` function in your main loop (with a delay of *N* ms). The harness only schedules one function *at any given time*. Note that you do not need to implement the delay functionality if your tests do not require timeouts. You will still be able to use repeating test cases, but an error will occur if your tests attempt to use a timeout when your underlying scheduler does not support it.
 
 There are two functions you need to implement:
 
 - `void* post_callback(const utest_v1_harness_callback_t callback, const uint32_t delay_ms)`: schedules a `void(void)` callback function in *N* ms.
 - `int32_t cancel_callback_t(void *handle)`: cancels an asynchronous callback.
 
-Please see [their doxygen documentation for implementation details](utest/scheduler.h).
+Please see [the doxygen documentation for implementation details](utest/scheduler.h).
 
 ### Example synchronous scheduler
 
@@ -353,7 +351,7 @@ void main() // or whatever your custom entry point is
 
 ### Example asynchronous scheduler
 
-Here is the a [complete scheduler implementation with any asynchronous support](test/minimal_scheduler_async/main.cpp). Note that this does require at least a hardware timer, in this case we have used `mbed-hal/us_ticker`. Note that you must not execute the callback in the timer interrupt context, but in the main loop context.
+Here is the [complete scheduler implementation with any asynchronous support](test/minimal_scheduler_async/main.cpp). Note that this does require at least a hardware timer. This example uses `mbed-hal/us_ticker`. Note that you must not execute the callback in the timer interrupt context, but in the main loop context.
 ```cpp
 volatile utest_v1_harness_callback_t minimal_callback;
 volatile utest_v1_harness_callback_t ticker_callback;
