@@ -2,22 +2,6 @@
 
 The way tests are run and compiled in mbed OS 5 is substantially different from previous versions of mbed.
 
-## Table of Contents
-
-- [Using tests](#using-tests).
-  - [Test code structure](#test-code-structure).
-    - [Test discovery](#test-discovery).
-    - [Test names](#test-names).
-  - [Building tests](#building-tests).
-    - [Building process](#building-process).
-    - [App config](#app-config).
-  - [Running tests](#running-tests).
-  - [Writing tests](#writing-tests).
-- [Debugging tests](#debugging-tests).
-  - [Exporting tests](#exporting-tests).
-  - [Running a test while debugging](#running-a-test-while-debugging).
-- [Known issues](#known-issues).
-
 ## Using tests
 
 ### Test code structure
