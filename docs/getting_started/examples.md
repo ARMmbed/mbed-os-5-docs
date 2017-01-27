@@ -63,7 +63,10 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 ## JavaScript on mbed OS 5
 
-* [Bringing JavaScript to mbed OS](https://developer.mbed.org/blog/entry/Bringing-JavaScript-to-mbed-OS/)
+* [Building IoT devices with JavaScript](https://developer.mbed.org/javascript-on-mbed/)
+* [Blinky in JavaScript](https://github.com/ARMmbed/mbed-js-example)
+* [Bluetooth Low Energy in JavaScript](https://github.com/ARMmbed/mbed-js-ble-example)
+* [JavaScript REPL](https://github.com/janjongboom/mbed-js-repl-example)
 
 ## BBC micro:bit
 
