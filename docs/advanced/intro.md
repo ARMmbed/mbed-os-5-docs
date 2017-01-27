@@ -18,4 +18,4 @@
 
 ## Example applications
 
-!{https://raw.githubusercontent.com/ARMmbed/Handbook/5.1/docs/getting_started/examples.md}
+!{https://raw.githubusercontent.com/ARMmbed/Handbook/latest/docs/getting_started/examples.md}
