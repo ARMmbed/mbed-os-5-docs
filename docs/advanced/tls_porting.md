@@ -89,7 +89,7 @@ To indicate that the target has an entropy source, you have to add `TRNG` to the
 
 ## 4. How to implement the non-volatile seed entropy source
 
-If a hardware platform does not have a hardware entropy source to leverage into the entropy pool, alternatives have to be considered. As stated above, a strong entropy source is crucial for security of cryptographic and TLS operations. For platforms that support non-volatile memory, an option is to use the NV seed entropy source that is provided with mbed TLS.
+If a hardware platform does not have a hardware entropy source to leverage into the entropy pool, alternatives have to be considered. As stated above, a strong entropy source is crucial for security of cryptographic and TLS operations. For platforms that support non-volatile memory, an option is to use the NV seed entropy source that mbed TLS provides.
 
 This makes mbed TLS use a fixed amount of entropy as a seed and update this seed each time entropy is gathered with an mbed TLS entropy collector for the first time. In a simple case it means that the seed is updated after reset at the start of the first TLS connection.
 
