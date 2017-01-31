@@ -13,6 +13,7 @@ pages:
 - ['dev_tools/cli.md', 'Development tools and aids', 'mbed CLI']
 - ['dev_tools/online_comp.md', 'Development tools and aids', 'mbed Online Compiler']
 - ['dev_tools/third_party.md', 'Development tools and aids', 'Third party development tools']
+- ['dev_tools/build_profiles.md', 'Development tools and aids', 'Build profiles']
 - ['getting_started/mbed_interface.md', 'Communicating with and monitoring the board', 'The mbed interface']
 - ['getting_started/what_need.md', 'Communicating with and monitoring the board', 'The Windows serial driver']
 - ['getting_started/serial_communication.md', 'Communicating with and monitoring the board', 'Getting the most out of the USB connection']
