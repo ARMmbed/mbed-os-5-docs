@@ -1,7 +1,33 @@
-  
-### Blinky
+## Our YouTube channel
+
+[https://www.youtube.com/armmbed/](https://www.youtube.com/armmbed/)
+
+## End to end projects
+
+* [LoRa on mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
+* [Internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
+
+
+## JavaScript on mbed OS 5
+
+* [Building IoT devices with JavaScript](https://developer.mbed.org/javascript-on-mbed/)
+* [Blinky in JavaScript](https://github.com/ARMmbed/mbed-js-example)
+* [Bluetooth Low Energy in JavaScript](https://github.com/ARMmbed/mbed-js-ble-example)
+* [JavaScript REPL](https://github.com/janjongboom/mbed-js-repl-example)
+
+## BBC micro:bit
+
+A few micro:bit How To videos:
+
+* [Hello world](https://www.youtube.com/watch?v=Jctpi6aqrHQ)
+* [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
+* [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
+
+## Blinky
 
 * [Blinky](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/): our basic application, showing how to use the APIs to control the LED on the board.
+
+## Component examples
 
 ### mbed TLS
 
@@ -55,27 +81,3 @@ These examples work on the K64F and GCC_ARM toolchain only.
     * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
     * [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/).
     * [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
-
-## End to end projects
-
-* [LoRa on mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
-* [Internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
-
-## JavaScript on mbed OS 5
-
-* [Building IoT devices with JavaScript](https://developer.mbed.org/javascript-on-mbed/)
-* [Blinky in JavaScript](https://github.com/ARMmbed/mbed-js-example)
-* [Bluetooth Low Energy in JavaScript](https://github.com/ARMmbed/mbed-js-ble-example)
-* [JavaScript REPL](https://github.com/janjongboom/mbed-js-repl-example)
-
-## BBC micro:bit
-
-A few micro:bit How To videos:
-
-* [Hello world](https://www.youtube.com/watch?v=Jctpi6aqrHQ)
-* [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
-* [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
-
-## Our YouTube channel
-
-[https://www.youtube.com/armmbed/](https://www.youtube.com/armmbed/)
