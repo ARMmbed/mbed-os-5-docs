@@ -95,7 +95,7 @@ int main() {
 
 <span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
-<span class="images">![](NUCLEO-F401RE.PNG)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
+<span class="images">![](images/NUCLEO-F401RE.PNG)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
 <span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
