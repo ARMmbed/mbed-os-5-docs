@@ -1,6 +1,6 @@
 # mbed TLS Porting Guide
 
-This document explains how to port [mbed TLS](https://github.com/ARMmbed/mbedtls) to a new mbed target board. It includes an [example implementation](https://github.com/ARMmbed/mbed-tls-lib) for K64F boards.
+This document explains how to port [mbed TLS](https://github.com/ARMmbed/mbedtls) to a new mbed target board.
 
 <span class="notes">**Note:** This part is critical for the security of your product and you should consult a cryptography expert while considering the choices and implementing them.</span>
 
