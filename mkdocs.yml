@@ -29,6 +29,7 @@ pages:
 - ['advanced/intro.md', 'Advanced tutorials', 'Introduction to the advanced tutorials']
 - ['advanced/DAP.md', 'Advanced tutorials', 'CMSIS-DAP and DAPLink']
 - ['advanced/config_system.md', 'Advanced tutorials', 'Compile time configuration']
+- ['advanced/exporters.md'. 'Advanced tutorials', 'Exporters']
 - ['advanced/mbed_targets.md', 'Advanced tutorials', 'Adding and configuring targets']
 - ['advanced/mbedignore.md', 'Advanced tutorials', 'Ignoring mbed build files']
 - ['advanced/toolchain_profiles.md', 'Advanced tutorials', 'Toolchain profiles']
