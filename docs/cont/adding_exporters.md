@@ -31,15 +31,15 @@ These steps construct an object of one of the exporter plugin classes listed in 
    * `toolchain.target` a `Target` object that may be use to query target configuration.
  * `project_name` the name of the project.
  * `flags` the flags that the mbedToolchain instance will use to compile the `c/cpp/asm` files if invoked.
- * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, such as C and Cpp sources and header search paths. Only the attributes of the Resources object should be used in the plugin, as the methods are only used during setup time. All available Resources class attributes can be viewed in `tools/toolchains/__init__.py`.
+ * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, such as C and Cpp sources and header search paths. The plugin should use only the attributes of the Resources object because the methods are only used during setup time. You can view all available Resources class attributes in `tools/toolchains/__init__.py`.
 
 ___Plugin tools___
 
 The other half of the common code is a library for use by a plugin. This API includes:
 
  * `gen_file` use Jinja2 to generate a file from a template.
- * `get_source_paths` returns a list of directories where assembly, C, C++ files, etc. are contained.
- * `group_project_files` group all files passed in by their containing directory. The groups will be suitable for an IDE. 
+ * `get_source_paths` returns a list of directories that contain assembly, C, C++ files and so on.
+ * `group_project_files` group all files passed in by their containing directory. The groups are suitable for an IDE. 
 
 ### Plugin code
 
@@ -68,13 +68,13 @@ Each exporter reports its specific toolchain it will use to compile the source c
 
 ___The `NAME` class variable___
 
-Each exporter reports the name of the exporter throug the class variable `NAME`. This should match the key in the `tools/export/__init__.py` exporter map.
+Each exporter reports the name of the exporter through the class variable `NAME`. This matches the key in the `tools/export/__init__.py` exporter map.
 
 ___The `build` method___
 
 A plugin that would like to be tested by CI may implement the `build` method. 
 
-This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile. It must return `0` on success, or `-1` on failure.
+This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile. It must return `0` on success or `-1` on failure.
 
 ## Implementing an example plugin
 
@@ -86,14 +86,14 @@ As this plugin is named `my_makefile`, all of the support code will be placed in
 
 ### Python code for `__init__.py`
 
-First, will make our class a subclass of Exporter:
+First, we will make our class a subclass of Exporter:
 ```python
 from tools.export.exporters import Exporter
 
 class My_Makefile(Exporter):
 ```
 
-We must define the name, toolchain, and target compatibility list. These will be contained in class-level **static** variables.
+We must define the name, toolchain and target compatibility list. Class-level **static** variables contain these.
 
 We will name our exporter `my_makefile`:
 
@@ -106,7 +106,7 @@ This exporter will compile with the `GCC_ARM` toolchain:
 TOOLCHAIN = 'GCC_ARM'
 ```
 
-All targets supported by the IDE will be a subset of those contained in `TARGET_MAP`. We will need to import this map like this:
+All targets the IDE supports are a subset of those `TARGET_MAP` contain. We need to import this map like this:
 ```python
 from tools.targets import TARGET_MAP
 ```
@@ -118,7 +118,7 @@ TARGETS = [target for target, obj in TARGET_MAP.iteritems()
            if "GCC_ARM" in obj.supported_toolchains]
 ```
 
-#### Implementing `generate` method
+#### Implementing the `generate` method
 
 To generate our Makefile, we need a list of object files the executable will use. We can construct the list from the sources if we replace the extensions with `.o`.
 
