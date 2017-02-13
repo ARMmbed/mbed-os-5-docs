@@ -111,7 +111,7 @@ Both of the above options are secure if done properly, and depending on the plat
 
 This option is very dangerous, because compiling with it results in a build that is not secure! You have to let mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 
-Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific config file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](../mbed_OS/Config_sys.md).
+Since it is a very dangerous option and no one should use it in production, we recommend to limit its scope as much as possible; you should apply these settings to the application specific config file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](config_system.md).
 
 To turn the unsafe testing mode on:
 
