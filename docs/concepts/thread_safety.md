@@ -72,19 +72,21 @@ However, there are times when a simple mutex is not an appropriate mechanism for
 
 The RTOS provides several mechanisms to move interrupt processing onto a thread. These include, but are not limited to:
 
- * [Signals](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html).
- * [Queue](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Queue.html).
- * [Mail](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Mail.html).
+
+ * [Signals](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html)
+ * [Queue](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.3/api/Queue_8h_source.html)
+ * [Mail](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.3/api/Mail_8h_source.html)
+
 
 **Warning:** In mbed OS 5, if you attempt to use a mutex from within an interrupt, nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race conditions into an otherwise safe piece of code. Future versions of mbed OS will provide warnings and ultimately prevent this from happening.
 
-For more information see [rtos/rtos/Mutex.h](https://github.com/mbedmicro/mbed/blob/master/rtos/rtos/Mutex.h).
+For more information see [rtos/Mutex.h](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.3/api/Mutex_8h_source.html).
 
 #### Atomics
 
 mbed OS provides atomic functions to make code **interrupt safe**. If you must modify an object or data structure from interrupts, you can use these atomic functions to synchronize the access.
 
-For more information see [hal/api/critical.h](https://github.com/mbedmicro/mbed/blob/master/hal/api/critical.h).
+For more information see [platform/critical.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h).
 
 #### Critical sections
 
@@ -95,7 +97,7 @@ Critical sections disable interrupts to provide uninterrupted access to a resour
 - Do not perform time consuming operations inside critical sections. This will negatively affect the timing of the entire system, because all interrupts are disabled during critical sections.
 - Do not invoke any standard lib or RTOS functions within a critical section; it could result in a hard fault because RTOS performs SVC calls.
 
-For more information see [hal/api/critical.h](https://github.com/mbedmicro/mbed/blob/master/hal/api/critical.h).
+For more information see [platform/critical.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h).
 
 ### Major mbed OS libraries
 
@@ -117,4 +119,4 @@ Porting new platforms to mbed OS 5 is nearly the same as it is in mbed 2. In gen
 
 ## Further reading
 
-For more information, see [the CMSIS-RTOS tutorial](https://www.keil.com/pack/doc/CMSIS/RTX/CMSIS_RTOS_Tutorial.pdf).
+For more information, see [the CMSIS-RTOS tutorial](http://www2.keil.com/mdk5/cmsis/rtx/).
