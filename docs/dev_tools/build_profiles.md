@@ -1,7 +1,7 @@
 # Build Profiles
-mbed OS 5 supports three primary build profiles: *default*, *debug* and *small*. The Online Compiler uses the *default* profile. When building from mbed CLI, you can select a profile by adding the ```--profile <profile>``` flag. You can specify custom user-defined profiles by giving the path to the profile.
+mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release*. The Online Compiler uses the *develop* profile. When building from mbed CLI, you can select a profile by adding the ```--profile <profile>``` flag. You can specify custom user-defined profiles by giving the path to the profile.
 
-## Default profile
+## Develop profile
 * Small and fast code.
 * Full error information. For example, asserts have file name and line number.
 * Hard to follow code flow when using a debugger.
@@ -11,7 +11,9 @@ mbed OS 5 supports three primary build profiles: *default*, *debug* and *small*.
 * Full error information. For example, asserts have file name and line number.
 * Easy to step through code with a debugger.
 
-## Small profile
+## Release profile
 * Smallest profile and still fast.
 * Minimal error information.
-* Hard to follow code flow when using a debugger.
+* Chip is put to sleep when going idle:
+  * Debugger is likely to drop connection.
+  * Breaks the local file system on the [mbed interface](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/mbed_interface/) on some boards.
