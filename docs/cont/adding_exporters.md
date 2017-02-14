@@ -31,15 +31,15 @@ These steps construct an object of one of the exporter plugin classes listed in 
    * `toolchain.target` a `Target` object that may be use to query target configuration.
  * `project_name` the name of the project.
  * `flags` the flags that the mbedToolchain instance will use to compile the `c/cpp/asm` files if invoked.
- * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, such as C and Cpp sources and header search paths.
+ * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, such as C and Cpp sources and header search paths. The plugin should use only the attributes of the Resources object because the methods are only used during setup time. You can view all available Resources class attributes in `tools/toolchains/__init__.py`.
 
 ___Plugin tools___
 
 The other half of the common code is a library for use by a plugin. This API includes:
 
  * `gen_file` use Jinja2 to generate a file from a template.
- * `get_source_files` get all files for assembly, C, C++ and so on as one list.
- * `group_project_files` group all files passed in. The groups will be suitable for an IDE.
+ * `get_source_paths` returns a list of directories that contain assembly, C, C++ files and so on.
+ * `group_project_files` group all files passed in by their containing directory. The groups are suitable for an IDE. 
 
 ### Plugin code
 
@@ -62,12 +62,19 @@ ___The `TARGETS` class variable___
 
 Each exporter reports its specific target support through a class varibale, `TARGETS`. This class variable is simply a list of targets to which you can export. Requesting an export to a target that's not on the list will generate an error.
 
+___The `TOOLCHAIN` class variable___
+
+Each exporter reports its specific toolchain it will use to compile the source code through a class variable `TOOLCHAIN`.
+
+___The `NAME` class variable___
+
+Each exporter reports the name of the exporter through the class variable `NAME`. This matches the key in the `tools/export/__init__.py` exporter map.
 
 ___The `build` method___
 
 A plugin that would like to be tested by CI may implement the `build` method. 
 
-This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile.
+This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile. It must return `0` on success or `-1` on failure.
 
 ## Implementing an example plugin
 
@@ -77,11 +84,45 @@ We will create two files and discuss their contents: `__init__.py` with the Pyth
 
 As this plugin is named `my_makefile`, all of the support code will be placed into `tools/export/my_makefile`.
 
-### Python code
+### Python code for `__init__.py`
+
+First, we will make our class a subclass of Exporter:
+```python
+from tools.export.exporters import Exporter
+
+class My_Makefile(Exporter):
+```
+
+We must define the name, toolchain and target compatibility list. Class-level **static** variables contain these.
+
+We will name our exporter `my_makefile`:
+
+```python
+NAME = 'my_makefile'
+```
+
+This exporter will compile with the `GCC_ARM` toolchain:
+```python
+TOOLCHAIN = 'GCC_ARM'
+```
+
+All targets the IDE supports are a subset of those `TARGET_MAP` contain. We need to import this map like this:
+```python
+from tools.targets import TARGET_MAP
+```
+
+We can say the targets supported will be the subset of mbed targets that support `GCC_ARM`:
+
+```python
+TARGETS = [target for target, obj in TARGET_MAP.iteritems()
+           if "GCC_ARM" in obj.supported_toolchains]
+```
+
+#### Implementing the `generate` method
 
 To generate our Makefile, we need a list of object files the executable will use. We can construct the list from the sources if we replace the extensions with `.o`.
 
-To do this, we use the following Python code:
+To do this, we use the following Python code in our required `generate` method:
 
 ```python
 to_be_compiled = [splitext(src)[0] + ".o" for src in
@@ -115,15 +156,6 @@ To render our template, we pass the template file name, the context and the dest
 
 ```python
 self.gen_file('my_makefile/Makefile.tmpl', ctx, 'Makefile')
-```
-
-All that is left is providing the target compatibility list.
-
-We can say we support all targets that, in turn, support `GCC_ARM`:
-
-```python
-TARGETS = [target for target, obj in TARGET_MAP.iteritems()
-           if "GCC_ARM" in obj.supported_toolchains]
 ```
 
 ### Template
