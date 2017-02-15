@@ -21,7 +21,7 @@ The imported Blinky has two interesting parts:
 
 Later we'll compile the code; this will take both of these parts and create a single application file from them.
 
-<span class="images">![](images/main_cpp.png)<span>Viewing the code in main.cpp</span></span>
+<span class="images">![](images/maincpp.png)<span>Viewing the code in main.cpp</span></span>
 
 ## Selecting a target board
 
@@ -48,7 +48,7 @@ The mbed Online Compiler builds a ``.bin`` file that you can install on your boa
 
 1. Click **Compile**.
 
-	<span class="images">![](images/compile.png)<span>The Compile menu; choose Compile to build and download your application</span></span>
+	<span class="images">![](images/compileandinstall.png)<span>The Compile menu; choose Compile to build and download your application</span></span>
 
 1. The program compiles:
 
