@@ -1,3 +1,0 @@
-# mbed Studio
-
-Coming soon
