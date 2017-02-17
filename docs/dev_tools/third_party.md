@@ -13,6 +13,7 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
  * GNU ARM Embedded Toolchain.
  * ARM Compiler 5.
  * IAR ARM Compiler.
+* GNU ARM Eclipse (managed CDT projects), using GNU ARM Embedded Toolchain.
 * DS-5.
 * LPCXpresso.
 * Kinetis Design Studio.
@@ -93,6 +94,23 @@ Please download and install it.
 #### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
 	
 Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
+
+### GNU ARM Eclipse (managed CDT projects) with GNU ARM Embedded Toolchain
+
+The [GNU ARM Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects, and strives to do it as accurately as possible, considering the large number of explicit configuration options GNU ARM Eclipse uses. 
+
+Managed projects are projects that do not need `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor symbols and compiler command line options.
+
+The main advantage of providing all these details to Eclipse is that it can create a very accurate internal representation of the project, in order to correctly show which parts of the code are used, and pop up tooltips with the actual definition for most variables/functions.
+
+The exporter generates multiple CDT build configurations, one for each mBed profile, and ignores the `--profile` setting when invoking the exporter.
+
+For example, to export to **GNU ARM Eclipse** with the K64F target run:
+
+	$ mbed export -i gnuarmeclipse -m K64F
+
+The `.project` and `.cproject` files are created in the root folder of the project. 
+This new project can be opened with an Eclipse which has the GNU ARM Eclipse plug-ins installed.
 
 ### Kinetis Design Studio (Freescale KDS) with GNU ARM Embedded Toolchain
 
