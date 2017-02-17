@@ -22,7 +22,7 @@ optional arguments:
   -S, --supported       Shows supported matrix of targets and toolchains
   -v, --verbose         Verbose diagnostic output
   -vv, --very_verbose   Very verbose diagnostic output
-  ```
+```
 
 # Adding export support for a target
 
