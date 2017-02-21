@@ -10,7 +10,7 @@ This chapter covers the different aspects of developing your own libraries for u
 
 When you write original code, you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others. 
 
-If you create new software, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well-known license such as one of the ones listed [on spdx.org](http://spdx.org/licenses/), preferably an [OSI-approved] (https://opensource.org/licenses/alphabetical), permissive open source software license. Specifically, we recommend the following:
+If you create new software, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well-known license such as one of the ones listed [on the SPDX License List](http://spdx.org/licenses/), preferably an [OSI-approved] (https://opensource.org/licenses/alphabetical), permissive open source software license. Specifically, we recommend the following:
 
 * For original source code, use the Apache 2.0 license.  
 
@@ -20,7 +20,7 @@ If you create new software, such as drivers, libraries and examples, you can app
 
 You must either write all the code you provide yourself, or have the necessary rights to provide code written by someone else. 
 
-In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) to make it easier for users to understand and legally review licenses.
+In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) in every source file following the recommendations [here](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
 
 #### When to use Apache 2.0
 
@@ -100,9 +100,9 @@ If you decide to use a different license for your work, follow the same pattern:
 
 * Put the full original license texts in separate documents named *LICENSE-XYZ.txt*, where XYZ is the corresponding [SPDX identifier](http://spdx.org/licenses/) for your license.
 
-* Begin each source header with your copyright line, the SPDX identifier and the standard header for the license that applies to that single file, if it has one.
+* Begin each source header with your copyright line, the SPDX identifier and the standard header for the license that applies to that single file, if it has one. (See [SPDX Specification, Appendix V](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b).)
 
-* If more than one license applies to the source file, then use an SPDX license expression (see Appendix IV in [this document](https://spdx.org/spdx_specification_2_0_html)), to reflect the presence of multiple licenses in your *LICENSE* file and in each source file.
+* If more than one license applies to the source file, then use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE* file and in each source file.
 
 ## Contributing to the mbed OS codebase
 
@@ -116,7 +116,7 @@ All the source code and binary blobs that end up in mbed OS are maintained in pu
 
 All code changes and additions to mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](code_style.md).
 
-### Licensing
+### Inbound License for Contributions
 
 If you want to contribute code to mbed OS, you must sign an mbed Contributor License Agreement (CLA). Please ask for a CLA before submitting any code (for example, while discussing the issue on GitHub), then wait for ARM to confirm acceptance of your CLA before making contributions. 
 
