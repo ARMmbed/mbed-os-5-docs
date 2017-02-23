@@ -30,7 +30,7 @@ If you have added a new target to mbed OS 5, exporting will allow users to trans
 
 ## Eclipse and Make 
 
-Eclipse project export uses a generated Makefile for building. To provide support for Make export, you only have to provide the target configuration within the [config system](https://github.com/ARMmbed/mbed-os/blob/master/docs/mbed_targets.md).
+Eclipse project export uses a generated Makefile for building. To provide support for Make export, you only have to provide the target configuration within the [config system](mbed_targets.md).
 
 ## uVision and IAR
 
