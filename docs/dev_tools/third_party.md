@@ -1,28 +1,27 @@
 # Exporting to third party Toolchains
 
-
 If you'd like to develop on mbed OS with a third party tool, or migrate to one, you can choose to export an mbed project to the following development environments:
 
-* Keil uVision5.
-* IAR Systems.
-* Make using:
- * GNU ARM Embedded Toolchain.
- * ARM Compiler 5.
- * IAR ARM Compiler.
-* Eclipse CDT using:
- * GNU ARM Embedded Toolchain.
- * ARM Compiler 5.
- * IAR ARM Compiler.
-* GNU ARM Eclipse (managed CDT projects), using GNU ARM Embedded Toolchain.
-* DS-5.
-* LPCXpresso.
-* Kinetis Design Studio.
-* Simplicity Studio.
-* Atmel Studio.
-* SW4STM32 System Workbench for STM32.
-* CooCox CoIDE.
-* e2studio.
-* Emblocks.
+- Keil uVision5.
+- IAR Systems.
+- Make using:
+    - GNU ARM Embedded Toolchain.
+    - ARM Compiler 5.
+    - IAR ARM Compiler.
+- Eclipse CDT using:
+    - GNU ARM Embedded Toolchain.
+    - ARM Compiler 5.
+    - IAR ARM Compiler.
+- GNU ARM Eclipse (managed CDT projects), using GNU ARM Embedded Toolchain.
+- DS-5.
+- LPCXpresso.
+- Kinetis Design Studio.
+- Simplicity Studio.
+- Atmel Studio.
+- SW4STM32 System Workbench for STM32.
+- CooCox CoIDE.
+- e2studio.
+- Emblocks.
 
 This may be useful to launch a debug session with your favorite tool while using mbed CLI for development, or creating examples or projects you work on within your tool of choice. 
 
