@@ -8,11 +8,11 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
     - GNU ARM Embedded Toolchain.
     - ARM Compiler 5.
     - IAR ARM Compiler.
-- Eclipse CDT using:
+- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
     - GNU ARM Embedded Toolchain.
     - ARM Compiler 5.
     - IAR ARM Compiler.
-- GNU ARM Eclipse (managed CDT projects), using GNU ARM Embedded Toolchain.
+- GNU ARM Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU ARM Embedded Toolchain.
 - DS-5.
 - LPCXpresso.
 - Kinetis Design Studio.
@@ -96,20 +96,23 @@ Make and Eclipse exports on POSIX-like operating systems targeting Nordic device
 
 ### GNU ARM Eclipse (managed CDT projects) with GNU ARM Embedded Toolchain
 
-The [GNU ARM Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects, and strives to do it as accurately as possible, considering the large number of explicit configuration options GNU ARM Eclipse uses. 
+The [GNU ARM Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects. 
 
-Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor symbols and compiler command line options.
+Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command line options.
 
-The main advantage of providing all these details to Eclipse is that it can create a very accurate internal representation of the project, in order to correctly show which parts of the code are used, and pop up tooltips with the actual definition for most variables/functions.
+The main advantage of providing all these details to Eclipse is that it can create a very accurate internal representation of the project. The purpose is to visually filter out (by using gray blocks) which parts of the code are not used, and be able to pop up tooltips with the actual definition on mouse over most variables/functions.
 
-The exporter generates multiple CDT build configurations, one for each mBed profile, and ignores the `--profile` setting when invoking the exporter.
+The exporter generates multiple CDT build configurations, one for each mbed profile, and ignores the `--profile` setting when invoking the exporter.
+
+For user convenience, the GNU ARM Eclipse plug-ins use a large number of explicit configuration options in the properties pages; the GNU ARM Eclipse exporter tries to convert as accurately as possible the mbed configurations to these graphical configuration options.
 
 For example, to export to **GNU ARM Eclipse** with the K64F target run:
 
 	$ mbed export -i gnuarmeclipse -m K64F
 
-The `.project` and `.cproject` files are created in the root folder of the project. 
-This new project can be opened with an Eclipse CDT which has the GNU ARM Eclipse plug-ins installed.
+This command creates the `.project` and `.cproject` files in the root folder of the project.
+
+You can open this new project with an Eclipse CDT which has the GNU ARM Eclipse plug-ins installed.
 
 ### Kinetis Design Studio (Freescale KDS) with GNU ARM Embedded Toolchain
 
