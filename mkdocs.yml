@@ -33,7 +33,6 @@ pages:
 - ['advanced/mbed_targets.md', 'Advanced tutorials', 'Adding and configuring targets']
 - ['advanced/mbedignore.md', 'Advanced tutorials', 'Ignoring mbed build files']
 - ['advanced/toolchain_profiles.md', 'Advanced tutorials', 'Toolchain profiles']
-- ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
 - ['advanced/testing.md', 'Advanced tutorials', 'Testing']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
