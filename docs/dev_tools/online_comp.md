@@ -6,7 +6,7 @@ The compiler is always available on [https://developer.mbed.org/compiler/](https
 
 ## Video summary
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the mbed Online Compiler</span></span>
 
 ## Importing code to the compiler
 
