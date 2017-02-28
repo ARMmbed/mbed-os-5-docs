@@ -19,7 +19,7 @@ The main things you can do with a local repository are:
 
 Here is the video that shows how you get started:
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/BWM21JzSDSs/0.jpg)](http://www.youtube.com/watch?v=BWM21JzSDSs)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/BWM21JzSDSs/0.jpg)](http://www.youtube.com/watch?v=BWM21JzSDSs)<span>Watch how to use the Online Compiler's version control features</span></span>
 
 ## Working with version control
 
