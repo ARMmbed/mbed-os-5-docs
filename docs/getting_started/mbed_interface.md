@@ -6,7 +6,7 @@ The mbed hardware architecture is designed to make sure you have all the tools a
 
 This is the basic architecture of an mbed board:
 
-<span class="images">![](images/mbed_internals.jpg)</span>
+<span class="images">![](images/mbed_internals.jpg)<span>A sketch of a typical mbed board's hardware architecture</span></span>
 
 ## How programming works
 
