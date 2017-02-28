@@ -2,7 +2,7 @@
 
 You can use the mbed Online Compiler's version control features to let you version, branch and merge code. It will show a nice representation of the state of your project history:
  
-<span class="images">![](images/revision_history_overview.png)</span>
+<span class="images">![](images/revision_history_overview.png)<span>The Online Compiler shows the current version of your project and your project's history</span></span>
 
 The approach should be familiar to those of you with experience of distributed version control models (as used by Mercurial and Git). Each program and library has its own local repository, so you can commit and perform actions on it within your own workspace (such as switching, branching and showing changes). 
 
@@ -33,7 +33,7 @@ There is also the option to *discard* your working copy, and *revert* your worki
 
 You can see the changes between your current working copy and the previous revision, and changes between revisions:
 
-<span class="images">![](images/compare_revisions.png)</span>
+<span class="images">![](images/compare_revisions.png)<span>The File changes section shows differences between this revision and the previous one</span></span>
 
 ## Subrepositories and synchronization
 
