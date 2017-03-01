@@ -1,6 +1,6 @@
 # Lights of dead
 
-![LPC1768 Lights of dead](../Debugging/Images/lights1.gif)    ![LPC11U24 Lights of dead](../Debugging/Images/lights2.gif)    ![FRMD-KL25Z Lights of dead](../Debugging/Images/lights3.gif)
+![LPC1768 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)    ![LPC11U24 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)    ![FRMD-KL25Z Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)
 
 *LPC1768, LPC11U24 and FRDM-KL25Z showing their distinctive lights of dead pattern*
 
