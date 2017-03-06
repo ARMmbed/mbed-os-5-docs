@@ -1,12 +1,10 @@
 # Bootloader
 
-This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how you can use this bootloader to perform software updates.
+This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
 ## Creating the bootloader
 
-Creating a bootloader is similar to creating a regular application. The only additional step you need is to specify the size of the bootloader in mbed_app.json.
-
-Specify the size of the bootloader as a target override in mbed_app.json in the target field "target.restrict_size":
+Creating a bootloader is similar to creating a regular application. The only additional step you need is to specify the size of the bootloader as a target override in mbed_app.json in the target field "target.restrict_size":
 
 ```
     "target_overrides": {
@@ -18,6 +16,7 @@ Specify the size of the bootloader as a target override in mbed_app.json in the 
 ```
 
 Adding this field:
+
 * Restricts the bootloader code from growing larger than this size.
 * Pads the output image to exactly the size specified.
 * Defines the symbols APPLICATION_ADDR, APPLICATION_SIZE, POST_APPLICATION_ADDR, POST_APPLICATION_SIZE.
