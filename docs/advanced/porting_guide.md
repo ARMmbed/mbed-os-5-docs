@@ -86,5 +86,6 @@ PWMOUT           |   pwmout_api.h
 RTC              |   rtc_api.h
 SLEEP            |   sleep_api.h
 SPI SPISLAVE     |   spi_api.h
-TRNG             |  trng_api.h
+TRNG             |   trng_api.h
+FLASH            |   flash_api.h
 ```
