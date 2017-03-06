@@ -8,10 +8,11 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
     - GNU ARM Embedded Toolchain.
     - ARM Compiler 5.
     - IAR ARM Compiler.
-- Eclipse CDT using:
+- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
     - GNU ARM Embedded Toolchain.
     - ARM Compiler 5.
     - IAR ARM Compiler.
+- GNU ARM Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU ARM Embedded Toolchain.
 - DS-5.
 - LPCXpresso.
 - Kinetis Design Studio.
@@ -92,6 +93,26 @@ Please download and install it.
 #### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
 	
 Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
+
+### GNU ARM Eclipse (managed CDT projects) with GNU ARM Embedded Toolchain
+
+The [GNU ARM Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects. 
+
+Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command line options.
+
+The main advantage of providing all these details to Eclipse is that it can create a very accurate internal representation of the project. The purpose is to visually filter out (by using gray blocks) which parts of the code are not used, and be able to pop up tooltips with the actual definition on mouse over most variables/functions.
+
+The exporter generates multiple CDT build configurations, one for each mbed profile, and ignores the `--profile` setting when invoking the exporter.
+
+For user convenience, the GNU ARM Eclipse plug-ins use a large number of explicit configuration options in the properties pages; the GNU ARM Eclipse exporter tries to convert as accurately as possible the mbed configurations to these graphical configuration options.
+
+For example, to export to **GNU ARM Eclipse** with the K64F target run:
+
+	$ mbed export -i gnuarmeclipse -m K64F
+
+This command creates the `.project` and `.cproject` files in the root folder of the project.
+
+You can open this new project with an Eclipse CDT which has the GNU ARM Eclipse plug-ins installed.
 
 ### Kinetis Design Studio (Freescale KDS) with GNU ARM Embedded Toolchain
 

@@ -13,7 +13,7 @@ Generate IDE project files for the current program.
 optional arguments:
   -h, --help            show this help message and exit
   -i IDE, --ide IDE     IDE to create project files for. Example: UVISION4,
-                        UVISION5, GCC_ARM, IAR, COIDE
+                        UVISION5, GCC_ARM, GNUARMECLIPSE, IAR, COIDE
   -m TARGET, --target TARGET
                         Export for target MCU. Example: K64F, NUCLEO_F401RE,
                         NRF51822...
@@ -31,6 +31,10 @@ If you have added a new target to mbed OS 5, exporting will allow users to trans
 ## Eclipse and Make 
 
 Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
+
+## GNU ARM Eclipse managed projects
+
+The GNU ARM Eclipse exporter is available for all targets that use the GCC_ARM toolchain.
 
 ## uVision and IAR
 
