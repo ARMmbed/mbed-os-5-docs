@@ -142,12 +142,12 @@ It is often useful to see the values of variables in your program at a given tim
 
 For Windows:
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/jAMTXK9HjfU/0.jpg)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/jAMTXK9HjfU/0.jpg)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)<span>Watch how to debug using printf() on Windows</span></span>
 
 
 For Mac:
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/IR8Di53AGSk/0.jpg)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)</span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/IR8Di53AGSk/0.jpg)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)<span>Watch how to debug using printf() on Mac</span></span>
 
 ## What's next
 

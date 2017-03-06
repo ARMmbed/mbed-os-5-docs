@@ -2,7 +2,7 @@
 
 Repositories on [developer.mbed.org](https://developer.mbed.org) are not limited to one author for each repository. Instead, several authors may have the right to publish to the same repository, allowing them to collaborate on a project. Other users, who may be interested in using the project's code but are not concerned with the individual authors, can interact with a single repository.
 
-<span class="images">![](images/mult_authors.png)</span>
+<span class="images">![](images/mult_authors.png)<span>Developers can use code that multiple authors created</span></span>
 
 ## Adding a new author to your repository
 
@@ -12,7 +12,7 @@ To grant permission for another author to commit to your repository:
 
 1. Start typing a username in the **Developers** box to add the user to the list:
 
-	<span class="images">![](images/privacy_settings.png)</span>
+	<span class="images">![](images/privacy_settings.png)<span>Allowing other users to add to your repository</span>
 
 ## Day to day usage
 
@@ -26,7 +26,7 @@ When there are changes that exist on the public repository but not in your works
 
 To bring the changes into your own workspace repository, click the **Update** button in the Revisions panel for the relevant program or library:
 
-<span class="images">![](images/multi_revision_history.png)</span>
+<span class="images">![](images/multi_revision_history.png)<span>Updating your private workspace with changes from the public repository</span></span>
 
 ### Merging your changes (if necessary)
 
@@ -36,7 +36,7 @@ However, if two people have worked at the same time on a program or library, it 
 
 When you pull the changes into your workspace, you will see something like this:
 
-<span class="images">![](images/changes_to_merge.png)</span>
+<span class="images">![](images/changes_to_merge.png)<span>Viewing branches with merge conflicts</span></span>
 
 The Revisions panel shows one person's changes diverging from another person's changes. This is called *a branch*. 
 
@@ -50,11 +50,11 @@ However, if two or more people have edited the same line of the same file, a mer
 
 When a merge conflict occurs, you get a warning. Also, all the files that have conflicts in them are highlighted:
 
-<span class="images">![](images/conflict_files.png)</span>
+<span class="images">![](images/conflict_files.png)<span>A highlighted file has a merge conflict</span></span>
 
 Open the file(s) in conflict and look for something like this:
 
-<span class="images">![](images/conflict_review.png)</span>
+<span class="images">![](images/conflict_review.png)<span>Identifying the lines in the source code that have conflicts</span></span>
 
 Wherever there is a conflict, Mercurial annotates the source code with markings showing your changes and other people's changes. You then have to choose one person's version, or blend the two. When you have finished, remove the ``<<<<``, ``>>>`` and ``===`` marks, and save the file. 
 
@@ -66,7 +66,7 @@ After you merge the code, you have to commit it. This makes the join between two
 
 Once you commit, your Revisions pane will look something like this:
 
-<span class="images">![](images/commit_merge.png)</span>
+<span class="images">![](images/commit_merge.png)<span>Viewing merged branches in the Revisions pane</span></span>
 
 You can see the two branches coming back together at "merged revision 1 with revision 2".
 

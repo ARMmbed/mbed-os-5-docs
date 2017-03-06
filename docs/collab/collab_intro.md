@@ -32,7 +32,7 @@ Update
 
 The most basic (and the most popular) usage of the collaboration system is the traditional workflow in which one author develops a project, then multiple users import and use it.
 
-<span class="images">![](images/basic_collab.png)</span>
+<span class="images">![](images/basic_collab.png)<span>Many developers can use code that one author wrote</span></span>
 
 When you import a repository, you are making a clone of a public repository in your private workspace. An imported repository can either be a whole program or a library for a program, and can contain dependencies to other repositories. For example, a library may need another library in order to work. All dependencies will be imported for you automatically when you import a repository.
 
@@ -44,15 +44,15 @@ To import a repository, simply click the Import link on the repository's page on
 
 While browsing a program or a library, you will receive notifications of new versions in the Browser panel under the Summary tab:
 
-<span class="images">![](images/updates.png)</span>
+<span class="images">![](images/updates.png)<span>Viewing the program description</span></span>
 
 It is also possible to view detailed information about the new changes in the Revisions panel. The top list represents the local repository revisions, where revision numbers marked in green are outgoing revisions, currently not present in the remote repository:
 
-<span class="images">![](images/green_revisions.png)</span>
+<span class="images">![](images/green_revisions.png)<span>The Revisions panel highlights local changes that are not yet in the remote repository</span></span>
 
 The bottom list represents the remote repository revisions currently not present in your local repository. Just like with local revisions, you can click on revisions in the remote list to see change sets and individual changes per file.
 
-<span class="images">![](images/incoming_revisions.png)</span>
+<span class="images">![](images/incoming_revisions.png)<span>Viewing remote revisions not yet in your local repository</span></span>
 
 To get the latest version of the code, simply click the **Update** button.
 
@@ -64,21 +64,21 @@ Unless you are the author of the imported repository or have developer access (s
 
 1. Open the context menu of the imported program or library and click **Publish**:
 
-	<span class="images">![](images/publish.png)</span>
+	<span class="images">![](images/publish.png)<span>Making changes from your private workspace public</span></span>
 
 1. You are prompted to publish to the linked remote repository:
 
-	<span class="images">![](images/publish_prompt.png)</span>
+	<span class="images">![](images/publish_prompt.png)<span>Publishing your changes to the remote repository</span></span>
 
 1. As you do not have permission to publish to the repository, click the **Fork...** button:
 
-	<span class="images">![](images/fork.png)</span>
+	<span class="images">![](images/fork.png)<span>Forking and describing your forked repository</span></span>
 
 1. Your repository, with all its changes, is published to your profile on the mbed.org website.
 
 The forking process is identical to the [code publishing](publishing_code.md) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
 
-<span class="images">![](images/fork_indication.png)</span>
+<span class="images">![](images/fork_indication.png)<span>Identifying a forked repository and its ancestor</span></span>
 
 <span class="notes">**Note:** When you fork a repository, the local repository in your workspace is linked to the forked remote repository - the URL changes to the forked repository's URL. You can change the URL by clicking the pencil icon next to the URL in the Revisions panel.</span>
 
@@ -90,11 +90,11 @@ If someone forks one of your repositories and modifies it, you can easily pull i
 
 1. Click the `Update From...` button:
 
-	<span class="images">![](images/update_from.png)</span>
+	<span class="images">![](images/update_from.png)<span>Updating your original repository from another user's remote fork</span></span>
 
 1. Enter the URL of the published repository you want to pull changes from:
 
-	<span class="images">![](images/repo_url.png)</span>
+	<span class="images">![](images/repo_url.png)<span>Choosing the repository whose changes you want to pull</span></span>
 
 1. Click OK. The changes are pulled into your local repository.
 
@@ -110,15 +110,15 @@ To compare the local repository with the remote one:
 
 1. Open the Revisions panel and click the "Compare With ..." button on the bottom panel:
 
-	<span class="images">![](images/compare_repo.png)</span>
+	<span class="images">![](images/compare_repo.png)<span>Comparing a local and a remote repository</span></span>
 
 1. Enter the URL of the remote repository you want to compare with.
 
-	<span class="images">![](images/repo_url_compare.png)</span>
+	<span class="images">![](images/repo_url_compare.png)<span>Choosing the remote repository to compare</span></span>
 
 1. Click OK. The repositories are compared, and the Revisions panel reflects the comparison mode:
 
-	<span class="images">![](images/comparing_repos.png)</span>
+	<span class="images">![](images/comparing_repos.png)<span>Viewing the comparison in the Revisions panel</span></span>
 
 You can view the remote changes by clicking on revisions in the bottom (remote) panel. You can then
 
