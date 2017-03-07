@@ -18,11 +18,11 @@ To create a pull request:
 
 1. When you publish a fork of another repository, the mbed developer site displays the ancestor repository under **Repository details**. If you are the repository owner, an additional **Create Pull Request** button will be displayed on top.
 
-	<span class="images">![](images/repo_details.png)</span>
+	<span class="images">![](images/repo_details.png)<span>A forked repository shows the details of its ancestry</span></span>
 
 1. Click the **Create Pull Request** button. The **Create Pull Request** page opens, showing the URLs of the forked and the ancestor repositories:
 
-	<span class="images">![](images/create_pull_request.png)</span>
+	<span class="images">![](images/create_pull_request.png)<span>Creating a pull request with a forked repostiory</span></span>
 
 1. You can change the remote repository URL if you want to send a pull request to another related repository. The form will validate the repository URL addresses as you type or paste, and will warn if either of them is wrong, missing or unrelated. It will also check whether the forked repository (on the left) has changes that aren't present in the remote repository (on the right).
 
@@ -32,7 +32,7 @@ To create a pull request:
 
 The pull request is added to the **Pull Requests** page of the repository, and an email is sent to the repository owners with the title and description you specified.
 
-<span class="images">![](images/pull_request_created.png)</span>
+<span class="images">![](images/pull_request_created.png)<span>Sending the pull request</span></span>
 
 ### Editing an existing pull request
 
@@ -52,13 +52,13 @@ When a pull request is sent to a repository to which you're author or co-author,
 
 You can also see all existing pull requests by visiting the repository page and clicking on the **Pull Requests** tab:
 
-<span class="images">![](images/open_pull_requests.png)</span>
+<span class="images">![](images/open_pull_requests.png)<span>Viewing all open pull requests by using the Pull Requests tab</span></span>
 
 <span class="tips">**Tip:** This will only list the open pull requests. To view all pull requests, including the closed ones (accepted or rejected) click the **Show all pull requests** button.</span>
 
 On each pull request page you can discuss changes, coding standards and so on before accepting or rejecting the request. Once closed, you won't be able to add more comments.
 
-<span class="images">![](images/review_pull_request.png)</span>
+<span class="images">![](images/review_pull_request.png)<span>Reviewing and commenting on a pull request</span></span>
 
 To quickly close a pull request without reviewing it, click the **Close** button.
 
@@ -76,13 +76,13 @@ To review a pull request:
 
 1.  The mbed Compiler suggests an import name based on your repository name and a `_pullrequest` suffix, to remind you that this was imported as part of a pull request. You're free to change the name:
 
-	<span class="images">![](images/import_pull_request.png)</span>
+	<span class="images">![](images/import_pull_request.png)<span>The Online Compiler's default import name suggestion</span></span>
 
 1. Click "Import".
 
 1. The pull request is imported to your workspace, and the Revisions panel opens:
 	
-	<span class="images">![](images/revision_history_pull_request.png)</span>
+	<span class="images">![](images/revision_history_pull_request.png)<span>Viewing the pull request in the Revisions panel</span></span>
 
 Newly introduced revisions are marked in green. These are the proposed changes - the ones you are being asked to pull. To review individual changes, click on the files list on the right. 
 
@@ -92,15 +92,15 @@ The mbed Online Compiler remembers the pull request status of an imported progra
 
 Click the **Accept** button in the bottom panel, and an accept confirmation dialog opens:
 
-<span class="images">![](images/accept_pull_request.png)</span>
+<span class="images">![](images/accept_pull_request.png)<span>Accepting a pull request makes its changes public</span></span>
 
 You can clean up the imported program by checking the **Delete this program when complete (cleanup)** button.
 
 Accepting a pull request publishes to your repository both the contents of that pull request, and any changes you made to the pull request. It also marks the pull request as accepted:
 
-<span class="images">![](images/pull_request_accepted.png)</span>
+<span class="images">![](images/pull_request_accepted.png)<span>Another dialog box appears and informs you that your acceptance of the pull request was successful</span></span>
 
-<span class="images">![](images/pull_request_closed.png)</span>
+<span class="images">![](images/pull_request_closed.png)<span>Viewing the pull request after accepting it</span></span>
 
 
 ### Rejecting a pull request
@@ -109,7 +109,7 @@ If you choose to reject the pull request:
 
 1. Click the **Reject** button in the bottom panel. A confirmation dialog opens:
 
-	<span class="images">![](images/reject_pull_request.png)</span>
+	<span class="images">![](images/reject_pull_request.png)<span>Commenting on a pull request rejection</span></span>
 
 1. Enter a comment explaining the rejection. 
 
