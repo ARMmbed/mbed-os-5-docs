@@ -39,7 +39,7 @@ It produces the following ROM layout:
 +-------------------+   APPLICATION_ADDR == Start of ROM
 ```
 
-When the bootloader finishes its work, it needs to start the main program. To do this, the bootloader must flush or power down any external components it is using, such as filesystems or socket connections. After the bootloader powers down these components, it can start the main program by making a call to the function mbed_start_application(uintptr_t address) and passing in the base address of the next image to start. For mbed-os applications, the main program starts immediately after the bootloader, so you can use the symbol POST_APPLICATION_ADDR as its starting address.
+When the bootloader finishes its work, it needs to start the main program. To do this, the bootloader must flush or power down any external components it is using, such as filesystems or socket connections. After the bootloader powers down these components, it can start the main program by making a call to the function `mbed_start_application(uintptr_t address)` and passing in the base address of the next image to start. For mbed OS applications, the main program starts immediately after the bootloader, so you can use the symbol POST_APPLICATION_ADDR as its starting address.
 
 Call the bootloader to start the main program:
 
@@ -63,9 +63,13 @@ To create an application using a bootloader, you must first have created the boo
 ```
 
 Adding this field has following effects:
-* When a build occurs, the application builds for the address immediately after the bootloader. The build system does this automatically by defining the symbols MBED_APP_START and MBED_APP_SIZE in the linker script (.sct, .ld or .icf).
-* At the end of building, the build image is automatically combined with the bootloader to create the final image. Note: When building offline, the original uncombined image is in this same directory as the final image but has the name <project-name>_application.bin.
-* It defines the symbols APPLICATION_ADDR, APPLICATION_SIZE, BOOTLOADER_ADDR, BOOTLOADER_SIZE.
+
+* When a build occurs, the application builds for the address immediately after the bootloader. The build system does this automatically by defining the symbols `MBED_APP_START` and `MBED_APP_SIZE` in the linker script (.sct, .ld or .icf).
+* At the end of building, the build image is automatically combined with the bootloader to create the final image. 
+
+Note: When building offline, the original uncombined image is in the same directory `<project-name>_application.bin`.
+
+* It defines the symbols `APPLICATION_ADDR`, `APPLICATION_SIZE`, `BOOTLOADER_ADDR` and `BOOTLOADER_SIZE`.
 
 It produces the following ROM layout:
 
@@ -83,6 +87,6 @@ It produces the following ROM layout:
 |(my_bootloader.bin)|
 |                   |
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
-```
+``` 
 
-For an example showing how to create an application that uses a bootloader, see [mbed-os-example-bootloader](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
+For an example showing how to create an application that uses a bootloader, see the [mbed OS bootloader example](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
