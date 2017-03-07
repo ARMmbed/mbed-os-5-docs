@@ -17,7 +17,7 @@ Creating a bootloader is similar to creating a regular application. The only add
 
 Adding this field:
 
-* Restricts the bootloader code from growing larger than this size.
+* Restricts the bootloader code from growing larger than the specified size.
 * Pads the output image to exactly the size specified.
 * Defines the symbols APPLICATION_ADDR, APPLICATION_SIZE, POST_APPLICATION_ADDR, POST_APPLICATION_SIZE.
 
@@ -51,7 +51,7 @@ For an example showing how to create a bootloader, see the [mbed-os-example-boot
 
 ## Creating the main program
 
-To create an application using a bootloader, you must first have created the bootloader binary and added it to the current project. You must then specify the bootloader image in mbed_app.json in the target_override section similar to this:
+To create an application using a bootloader, you must first have created the bootloader binary and added it to the current project. You must then specify the bootloader image in mbed_app.json in the target_override section:
 
 ```
     "target_overrides": {
