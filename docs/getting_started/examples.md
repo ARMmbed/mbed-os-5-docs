@@ -47,9 +47,9 @@ A few micro:bit How To videos:
 
 These examples work on the K64F and GCC_ARM toolchain only.
 
-### Filesystem
+### File system
 
-[Get the FAT filesystem working on an mbed OS platform](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
+[Get the FAT file system working on an mbed OS platform](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
 
 ### Bootloader
 
@@ -64,7 +64,7 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 [Join a device to an insecure 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/nanostack-border-router). This is the simplest use of the mesh networking stack.
 
-### Nanostack Border Router 
+### Nanostack border router 
 
 [Use the generic mbed border router and create a 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
 
@@ -72,9 +72,9 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
 
-### WiFi
+### Wi-Fi
 
-[Perform simple HTTP operations using the WiFi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
+[Perform simple HTTP operations using the Wi-Fi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
 ### Bluetooth Low Energy (BLE)
 
