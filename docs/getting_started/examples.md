@@ -47,21 +47,34 @@ A few micro:bit How To videos:
 
 These examples work on the K64F and GCC_ARM toolchain only.
 
+### File system
+
+[Get the FAT file system working on an mbed OS platform](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
+
+### Bootloader
+
+* [Create a bootloader](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-bootloader/).
+* [Use a blinky application with a prebuilt bootloader](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-bootloader-blinky/).
+
 ### mbed Client
 
 [Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for mbed OS. It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister.
 
 ### mesh 
 
-[Join a device to an insecure 6LoWPAN-ND network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). This is the simples use of the mesh networking sack.
+[Join a device to an insecure 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/nanostack-border-router). This is the simplest use of the mesh networking stack.
+
+### Nanostack border router 
+
+[Use the generic mbed border router and create a 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
 
 ### Sockets
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
 
-### WiFi
+### Wi-Fi
 
-[Perform simple HTTP operations using the WiFi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
+[Perform simple HTTP operations using the Wi-Fi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
 ### Bluetooth Low Energy (BLE)
 
@@ -79,5 +92,4 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 * Beacons send a small amount of information to a nearby device. Try:
     * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
-    * [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/).
     * [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
