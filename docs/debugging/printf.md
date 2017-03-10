@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 ## Getting started
 
-To send data over the serial connection, use the [Serial](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/interfaces/digital/Serial/) object.
+To send data over the serial connection, use the [Serial](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.3/APIs/interfaces/digital/Serial/) object.
 
 ### Example program
 
@@ -176,8 +176,8 @@ Your board crashes when you press the button because [mutexes guard](https://dev
 
 You can avoid this by:
 
-* Signaling from the ISR to the main thread using a [semaphore](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#semaphore) or [mailbox](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mail), and calling `printf` in the main thread.
-* Using an event dispatching library, such as [mbed events](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/events/).
+* Signaling from the ISR to the main thread using a [semaphore](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.3/APIs/tasks/rtos/#semaphore) or [mailbox](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.3/APIs/tasks/rtos/#mail), and calling `printf` in the main thread.
+* Using an event dispatching library, such as [mbed events](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.3/APIs/tasks/events/).
 
 You can see example code for both approaches in [this blog post](https://developer.mbed.org/blog/entry/Simplify-your-code-with-mbed-events/).
 

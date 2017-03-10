@@ -117,4 +117,4 @@ When importing an mbed project into [Atmel Studio](http://www.atmel.com/Microsit
 
 ### Simplicity Studio
 
-We have more information about Simplicity Studio [in a stand-alone guide](https://docs.mbed.com/docs/third-party-integrations/en/latest/Simp_Stu/simp_stu/).
+We have more information about Simplicity Studio [in a stand-alone guide](https://docs.mbed.com/docs/third-party-integrations/en/5.3/Simp_Stu/simp_stu/).

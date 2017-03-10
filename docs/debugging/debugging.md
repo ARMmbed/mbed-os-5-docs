@@ -1,6 +1,6 @@
 # Debugging mbed OS applications
 
-At the heart of mbed is the [Online Compiler](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/online_comp/). While that is incredibly convenient for getting a project started or while prototyping, chances are that at some point you'll miss a debugger, or you'll want to develop while not having an active internet connection. Through debugging, you can do things such as set breakpoints, set watchpoints, view registers, view disassembly, browse memory and examine the callstack. These docs will help you debug your applications.
+At the heart of mbed is the [Online Compiler](https://docs.mbed.com/docs/mbed-os-handbook/en/5.3/dev_tools/online_comp/). While that is incredibly convenient for getting a project started or while prototyping, chances are that at some point you'll miss a debugger, or you'll want to develop while not having an active internet connection. Through debugging, you can do things such as set breakpoints, set watchpoints, view registers, view disassembly, browse memory and examine the callstack. These docs will help you debug your applications.
 
 The simplest way to debug your code is to augment your code with log statements, which can be observed from your computer. To set this up, read [Debugging with printf() calls](Debugging/printf.md).
 

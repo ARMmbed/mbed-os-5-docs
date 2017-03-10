@@ -16,4 +16,4 @@ mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release
 * Minimal error information.
 * Chip is put to sleep when going idle:
   * Debugger is likely to drop connection.
-  * Breaks the local file system on the [mbed interface](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/mbed_interface/) on some boards.
+  * Breaks the local file system on the [mbed interface](https://docs.mbed.com/docs/mbed-os-handbook/en/5.3/getting_started/mbed_interface/) on some boards.
