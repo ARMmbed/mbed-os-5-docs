@@ -11,6 +11,7 @@ You need to install Visual Studio Code with the C/C++ extensions to begin.
 1. Search for the C/C++ plugin (by Microsoft) and click *Install*.
 
     ![Installing the C/C++ plugin in Visual Studio Code](Images/vscode2.png)
+
 1. When prompted, restart the IDE.
 
 ## Exporting a project
@@ -51,9 +52,9 @@ To configure the debugger for your project:
 
 <span class="notes">**Note on Windows:** Point the `-file-exec-and-symbols` configuration to the *absolute path* of your .elf file (in the BUILD directory), and escape each `\` four times:
 
-```
-C:\\\\Path\\\\to\\\\mbed-os-example-blinky\\\\BUILD\\\\mbed-os-example-blinky.elf
-```
+    ```
+    C:\\\\Path\\\\to\\\\mbed-os-example-blinky\\\\BUILD\\\\mbed-os-example-blinky.elf
+    ```
 </span>
 
 ![Configuring the debugger](Images/vscode3.png)
@@ -63,6 +64,7 @@ C:\\\\Path\\\\to\\\\mbed-os-example-blinky\\\\BUILD\\\\mbed-os-example-blinky.el
 1. On the 'Debug' tab, click the *Play* icon.
 
     ![Starting the debug session](Images/vscode4.png)
+
 1. The project builds, and debugging starts when the build succeeds.
     * To see warnings or errors, select *View > Problems*.
 1. Click on the `Debug Console` button to see the debug output. (This is not activated automatically).
