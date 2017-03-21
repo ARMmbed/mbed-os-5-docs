@@ -79,7 +79,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 
 Make itself does not compile source code. It relies on a compiler like:
 
-* [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+* [GCC ARM Embedded](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
 * The IAR ARM compiler bundled with the IAR Embedded Workbench.
 * ARM Compiler 5.
 
