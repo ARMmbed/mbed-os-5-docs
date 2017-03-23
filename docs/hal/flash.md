@@ -7,7 +7,7 @@ Update target to support bootloader.
 
 ## Linker script updates
 
-When building a bootloader application or an application that uses a bootloader, the mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at MBED_APP_START and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC_ARM (.ld), ARM (.sct) and IAR (.icf). You can find examples of this for the [k64f](https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e), [stm32f429](https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959), [odin-w2](https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070).
+When building a bootloader application or an application that uses a bootloader, the mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC_ARM (.ld), ARM (.sct) and IAR (.icf). You can find examples of this for the [k64f](https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e), [stm32f429](https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959), [odin-w2](https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070).
 
 Use these 2 defines in place of flash start and size for a target:
 * `MBED_APP_START` - defines an address where an application space starts.
@@ -27,9 +27,34 @@ An example of how a target could define `MBED_APP_START` and `MBED_APP_SIZE` in 
 #endif
 ```
 
-Be careful with these defines because they move the application flash sections. Therefore, you should move any sections within flash sectors accordingly. For instance, start the data section with `>= MBED_APP_SIZE`.
+Be careful with these defines because they move the application flash sections. Therefore, you should move any sections within flash sectors accordingly.
 
-Because of mbed application start changes, verify VTOR's address. Update the VTOR address to reflect the application padding, instead of hard-coding it to a specific address.
+Note: The VTOR must be relative to the region in which it is placed. To confirm, search for `NVIC_FLASH_VECTOR_ADDRESS` and `SCB->VTOR`, and ensure the flash address is not hardcoded.
+
+Problematic declaration of flash VTOR address:
+
+```
+#define NVIC_RAM_VECTOR_ADDRESS   (0x20000000)
+#define NVIC_FLASH_VECTOR_ADDRESS (0x00000000)
+```
+
+Bootloader-ready declaration of flash VTOR address:
+
+```
+#define NVIC_RAM_VECTOR_ADDRESS   (0x20000000)
+#if defined(__ICCARM__)
+    #pragma section=".intvec"
+    #define NVIC_FLASH_VECTOR_ADDRESS   ((uint32_t)__section_begin(".intvec"))
+#elif defined(__CC_ARM)
+    extern uint32_t Load$$LR$$LR_IROM1$$Base[];
+    #define NVIC_FLASH_VECTOR_ADDRESS   ((uint32_t)Load$$LR$$LR_IROM1$$Base)
+#elif defined(__GNUC__)
+    extern uint32_t vectors[];
+    #define NVIC_FLASH_VECTOR_ADDRESS   ((uint32_t)vectors)
+#else
+    #error "Flash vector address not set for this toolchain"
+#endif
+```
 
 ## Flash HAL
 
