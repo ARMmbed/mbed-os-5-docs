@@ -56,6 +56,10 @@ Bootloader-ready declaration of flash VTOR address:
 #endif
 ```
 
+## Start application
+
+The ``mbed_start_application`` is currently implemented only for Cortex-M3/M4/M7. The implementation is located in [the mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If your target is not supported, you must implement this function in the target HAL.
+
 ## Flash HAL
 
 For a bootloader to perform updates, you must implement the flash API. This consists of implementing the function in [flash_api.h](https://github.com/ARMmbed/mbed-os/blob/master/hal/flash_api.h) and adding the correct fields to targets.json.
