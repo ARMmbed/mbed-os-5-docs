@@ -4,7 +4,7 @@ This guide explains how to create a bootloader, how to create a main program to 
 
 ## Porting bootloader
 
-Please follow [the bootloader porting guide](#flash.md) for adding a bootloader support for your target.
+Please follow [the bootloader porting guide](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/flash/) for adding a bootloader support for your target.
 
 ## Creating the bootloader
 
