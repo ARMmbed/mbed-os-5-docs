@@ -44,6 +44,7 @@ pages:
 - ['advanced/porting_guide.md', 'Porting', 'Adding target support to mbed OS 5']
 - ['advanced/MINAR_migration.md', 'Porting', 'Migrating from mbed OS 3 - MINAR']
 - ['advanced/tls_porting.md', 'Porting', 'mbed TLS on mbed OS']
+- ['advanced/flash.md', 'Porting', 'Flash IAP']
 - ['debugging/debugging.md', 'Debugging', 'Debugging mbed OS applications']
 - ['debugging/printf.md', 'Debugging', 'Debugging with printf() calls']
 - ['debugging/compile_time.md', 'Debugging', 'Compile time errors']
