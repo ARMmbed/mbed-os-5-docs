@@ -96,17 +96,17 @@ There are two options to implement flash HAL:
 
    To enable flash HAL, define `FLASH` in targets.json file inside `device_has`:
 
-```
-"TARGET_NAME": {
-    "device_has": ["FLASH"]
-}
-```
+   ```
+   "TARGET_NAME": {
+       "device_has": ["FLASH"]
+   }
+   ```
 
    Finally, to indicate that your device fully supports bootloaders, set the field `bootloader_supported` to `true` for the target in the `targets.json` file:
 
-```
-"bootloader_supported": true
-```
+   ```
+   "bootloader_supported": true
+   ```
 
 ## Tests
 
