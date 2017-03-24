@@ -122,3 +122,13 @@ They test all flash API functionality. To run the tests, use these commands:
 
 - FlashIAP: `mbed test -m TARGET_NAME -n tests-mbed_drivers-flashiap`.
 - Flash HAL: `mbed test -m TARGET_NAME -n tests-mbed_hal-flash`.
+
+## Troubleshooting
+
+1. For targets with VTOR, a target might have VTOR address defined to a hardcoded address as mentioned in the ``Linker script updates`` section.
+
+1. Using FlashIAP might introduce latency as it might disable interrupts for longer periods of time.
+
+1. Program and erase functions operate on different blocks - erasing a block and programing a page. Use getter methods - get sector size and get page size.
+
+1. Sectors might have different sizes within a device.
