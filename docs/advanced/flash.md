@@ -58,7 +58,7 @@ Bootloader-ready declaration of flash VTOR address:
 
 ## Start application
 
-The ``mbed_start_application`` is currently implemented only for Cortex-M3/M4/M7. The implementation is located in [the mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If your target is not supported, you must implement this function in the target HAL.
+The mbed_start_application implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If mbed_start_application does not support your target, you must implement this function in the target HAL.
 
 ## Flash HAL
 
@@ -115,20 +115,20 @@ Finally, to indicate that your device fully supports bootloaders, set the field 
 
 The following tests for the `FlashIAP` class and flash HAL are located in the ``mbed-os/TESTS`` folder.
 
-- FlashIAP unit tests: `tests-mbed_drivers-flashiap`.
+- Flash IAP unit tests: `tests-mbed_drivers-flashiap`.
 - Flash HAL unit tests: `tests-mbed_hal-flash`.
 
 They test all flash API functionality. To run the tests, use these commands:
 
-- FlashIAP: `mbed test -m TARGET_NAME -n tests-mbed_drivers-flashiap`.
+- Flash IAP: `mbed test -m TARGET_NAME -n tests-mbed_drivers-flashiap`.
 - Flash HAL: `mbed test -m TARGET_NAME -n tests-mbed_hal-flash`.
 
 ## Troubleshooting
 
-1. For targets with VTOR, a target might have VTOR address defined to a hardcoded address as mentioned in the ``Linker script updates`` section.
+1. For targets with VTOR, a target might have a VTOR address defined to a hardcoded address as mentioned in the [Linker script updates](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/flash/#linker-script-updates) section.
 
-1. Using FlashIAP might introduce latency as it might disable interrupts for longer periods of time.
+1. Using Flash IAP might introduce latency as it might disable interrupts for longer periods of time.
 
-1. Program and erase functions operate on different blocks - erasing a block and programing a page. Use getter methods - get sector size and get page size.
+1. Program and erase functions might operate on different sized blocks - page size might not equal to a sector size. The function erase erases a sector, the program function programs a page. Use accessor methods to get the values for a sector or a page.
 
 1. Sectors might have different sizes within a device.
