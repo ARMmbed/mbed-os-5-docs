@@ -44,18 +44,11 @@ $ mbed export -i vscode_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.j
 To configure the debugger for your project:
 
 1. Open the folder in Visual Studio Code.
-1. Open the '.vscode/launch.json' file, and verify that `MIDebuggerPath` is set to the location of your copy of `arm-none-eabi-gdb`. (This needs to be an absolute path).
+1. Open the '.vscode/launch.json' file.
 1. If you're using pyOCD as your debug server, verify that `debugServerPath` is set to the location of `pyocd-gdbserver`.
 1. If you're using OpenOCD as your debug server:
      1. Change `debugServerPath` to point to the location of `openocd`.
      1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](toolchain.md).
-
-<span class="notes">**Note on Windows:** Point the `-file-exec-and-symbols` configuration to the *absolute path* of your .elf file (in the BUILD directory), and escape each `\` four times:
-
-    ```
-    C:\\\\Path\\\\to\\\\mbed-os-example-blinky\\\\BUILD\\\\mbed-os-example-blinky.elf
-    ```
-</span>
 
 ![Configuring the debugger](Images/vscode3.png)
 
