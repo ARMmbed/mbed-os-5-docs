@@ -2,6 +2,10 @@
 
 This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
+## Porting bootloader
+
+A target requires flash HAL functionality in order to support the bootloader. Please follow [the bootloader porting guide](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/flash/) for more details.
+
 ## Creating the bootloader
 
 Creating a bootloader is similar to creating a regular application. The only additional step you need is to specify the size of the bootloader as a target override in mbed_app.json in the target field "target.restrict_size":
@@ -9,7 +13,7 @@ Creating a bootloader is similar to creating a regular application. The only add
 ```
     "target_overrides": {
         ...
-        "NUCLEO_F429ZI": {
+        "<TARGET_NAME>": {
             "target.restrict_size": "0x20000"
         },
         ...
@@ -56,7 +60,7 @@ To create an application using a bootloader, you must first have created the boo
 ```
     "target_overrides": {
         ...
-        "NUCLEO_F429ZI": {
+        "<TARGET_NAME>": {
             "target.bootloader_img": "bootloader/my_bootloader.bin"
         },
         ...
