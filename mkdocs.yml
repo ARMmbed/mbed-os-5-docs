@@ -6,6 +6,7 @@ pages:
 - ['index.md','Introduction to the mbed OS 5 handbook']
 - ['getting_started/first_program.md', 'Creating applications on mbed OS', 'Introduction']
 - ['getting_started/blinky_cli.md', 'Creating applications on mbed OS', 'First application on mbed CLI']
+- ['getting_started/online_comp_getting_started.md', 'Creating applications on mbed OS', 'Getting Started on the Online Compiler']
 - ['getting_started/blinky_compiler.md', 'Creating applications on mbed OS', 'First application on mbed Online Compiler']
 - ['APIs/intro.md', 'Creating applications on mbed OS', 'Writing your own applications']
 - ['getting_started/flow_control.md', 'Creating applications on mbed OS', 'Application flow control and task management']
