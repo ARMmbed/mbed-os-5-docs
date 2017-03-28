@@ -12,16 +12,16 @@ The buttons on the main toolbar are accessible at all times though they may not 
 
 Most of the main toolbar buttons have a keyboard [shortcut](/online_comp.md#keyboard-shortcuts), which saves a mouse click or two. Some buttons have a dropdown menu with similar or related functions. For example, there are several ways to compile under "Compile" and different new items under "New".
 
-When you edit a file, the main toolbar looks like the image below. (Click to enlarge.)
+When you edit a file, the main toolbar looks like the image below.
 
-![](/images/main-toolbar.png)
+<span class="images">![](images/main-toolbar.png)<span>Viewing the main toolbar</span></span>
 
 On the right side of the main toolbar is the device selection dropdown, which lets you change the device you are compiling for. The mbed Online Compiler help guide is accessible through the top-right Help button or via the F1 keyboard shortcut.
 
 ### Navigation tree
 The navigation tree defines the context you are working on and lets you browse your workspace.
 
-![](/images/navigation-tree.png) 
+<span class="images">![](images/navigation-tree.png)<span>Viewing main.cpp in the navigation tree</span></span>
 
 If you have selected "My Workspace", a program, a folder or a library in the navigation tree, then browse mode is active via the browser panel, and you can maintain and control various aspects of the selected item. (See [browser panel](/handbook/mbed-Compiler-Getting-Started#browser-panel).)
 
@@ -32,7 +32,7 @@ The navigation tree allows you to invoke item-specific functions via mouse conte
 ### Browser panel
 The browser panel is active when a nonfile is selected in the navigation tree and consists of two subpanels - browse list and sidebar.
 
-![](/images/browser-panel.png)
+<span class="images">![](images/browser-panel.png)<span>Viewing the browse list and sidebar in the browser panel</span></span>
 
 The **browse list** is tightly related to the navigation tree selection as being flat, single-level, nonrecursive representation of the contents of the currently selected item (or context), showing extended information such as size, type and time since modification, similar to that of desktop operating systems. You can sort the browse list by the column headers and filter them through the Filter field at the top. 
 
@@ -45,7 +45,7 @@ The **sidebar panel** has two tabs - Summary and Build. The **Summary** tab offe
 ### Editor
 The editor is the main tool of the mbed Online Compiler. It's a fully featured, lightweight code editor that uses high standard syntax highlighting, keyboard [shortcuts](/online_comp.mds#keyboard-shortcuts) and undo and redo operations. It's also compliant with all major browsers' cut, copy and paste text operations, so you can inject and extract code between your host operating system and the mbed editor.
 
-![](/images/editor-overview.png) 
+<span class="images">![](images/editor-overview.png)<span>Viewing an overview of the editor tool in the Online Compiler</span></span>
 
 The editor features include:
  * Standard C/C++ syntax highlighting.
@@ -67,7 +67,7 @@ The output panel is under the editor (or browser panel), and its main purpose is
 
 A typical compile error looks like the image below:
 
-![](/images/compile-output.png)
+<span class="images">![](images/compile-output.png)<span>Viewing a compiler output error</span></span>
 
 If you click the number under the "Error Number" column, a wiki page opens with more information about the compile error or warning. You can also double-click the text under "Location" and open the source file at the line or column of the definition.
 
@@ -77,7 +77,7 @@ The output panel also displays results for the "Find in Folder" functionality. H
 
 From the main toolbar, click the "New" button, and complete the program name field in the dialog box like on the image below.
 
- ![](/images/create-program.png) 
+<span class="images">![](images/create-program.png)<span>Creating a new program</span></span>
 
 Once you click "OK", the program is created in your workspace, and the mbed Online Compiler automatically opens it.
 
