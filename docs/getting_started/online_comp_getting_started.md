@@ -73,7 +73,7 @@ If you click the number under the "Error Number" column, a wiki page opens with 
 
 The output panel also displays results for the "Find in Folder" functionality. Having the find result under the editor lets you quickly switch between matches in different files.
 
-##Create your first program
+## Create your first program
 
 From the main toolbar, click the "New" button, and complete the program name field in the dialog box like on the image below.
 
