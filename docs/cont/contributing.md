@@ -61,7 +61,7 @@ See the License for the specific language governing permissions and limitations 
 
 The Permissive Binary License (PBL) is a permissive license based on BSD-3-Clause and designed specifically for binary blobs. It's minimal but covers the basics, including an express patent grant.
 
-It allows you to share a binary blob and the relevant headers, and allows others to use that binary blob as part of their product - as long as they provide it with all the relevant dependencies and don't modify it or reverse engineer it.
+It allows you to share a binary blob and the relevant headers, and allows others to use that binary blob as part of their product - as long as they provide it with all the relevant dependencies and don't modify it or reverse engineer it. 
 
 The full text can be found on [mbed.com](https://www.mbed.com/licenses/PBL-1.0).
 
@@ -74,20 +74,20 @@ In order to clearly reflect the PBL license, please create three text files:
 <pre>Unless specifically indicated otherwise in a file, files are licensed under the Public Binary License, 
 as can be found in: LICENSE-permissive-binary-license-1.0.txt</pre>
 
-* The full original [Public Binary License 1.0 text](https://www.mbed.com/licenses/PBL-1.0) in *LICENSE-permissive-binary-license-1.0.txt*.
+* The full original [Permissive Binary License 1.0 text](https://www.mbed.com/licenses/PBL-1.0) in *LICENSE-permissive-binary-license-1.0.txt*.
 
 * A *DEPENDENCIES* file with the dependencies that this binary requires to work properly. This is to make sure that third parties integrating the binary in their own distribution are aware that they need to include the relevant dependencies. If your binary does not have any dependencies, the file should state so (that is, say “No dependencies”); don't omit this file.
 
-Each source header should *start with* your copyright line, the SPDX identifier and the BPL header:
+Each source header should *start with* your copyright line, the SPDX identifier and the PBL header:
 
 ```
 Copyright (c) [First year]-[Last year], **Your Name Here**, All Rights Reserved
 SPDX-License-Identifier: LicenseRef-PBL
 
-Licensed under the Permissive Binary License, Version 1.0 (the "License"); 
-you may not use this file except in compliance with the License.
+This file and the related binary are licensed under the Permissive Binary License, Version 1.0 (the "License"); you may not use these files except in compliance with the License.
 
-You may obtain a copy of the License at https://www.mbed.com/licenses/PBL-1.0
+You may obtain a copy of the License here: LICENSE-permissive-binary-license-1.0.txt and at
+https://www.mbed.com/licenses/PBL-1.0
 
 See the License for the specific language governing permissions and limitations under the License.
 ```
