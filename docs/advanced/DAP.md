@@ -1,4 +1,4 @@
-# CMSIS-DAP and DAPLink
+# DAPLink
 
 
 ## DAPLink
