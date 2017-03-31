@@ -71,7 +71,7 @@ In order to clearly reflect the PBL license, please create three text files:
 
 * A *LICENSE* file with:
 
-<pre>Unless specifically indicated otherwise in a file, files are licensed under the Public Binary License, 
+<pre>Unless specifically indicated otherwise in a file, files are licensed under the Permissive Binary License, 
 as can be found in: LICENSE-permissive-binary-license-1.0.txt</pre>
 
 * The full original [Permissive Binary License 1.0 text](https://www.mbed.com/licenses/PBL-1.0) in *LICENSE-permissive-binary-license-1.0.txt*.
