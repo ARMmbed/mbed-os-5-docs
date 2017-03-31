@@ -10,6 +10,7 @@ mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release
 * Largest and slowest profile.
 * Full error information. For example, asserts have file name and line number.
 * Easy to step through code with a debugger.
+* Disabled sleep mode.
 
 ## Release profile
 * Smallest profile and still fast.
