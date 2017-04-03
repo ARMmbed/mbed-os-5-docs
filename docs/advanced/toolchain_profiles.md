@@ -22,6 +22,7 @@ The required flag types are:
 | `cxx`    | Flags for the C++ Compiler            |
 | `common` | Flags for both the C and C++ Compilers|
 | `asm`    | Flags for the Assembler               |
+| `ld`     | Flags for the Linker                  |
 
 ## Example
 
