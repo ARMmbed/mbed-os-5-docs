@@ -18,15 +18,20 @@ mbed uses JSON as a description language for its build targets. The JSON descrip
         "detect_code": ["0230"]
 ```
 
-The definition of the target called **TEENSY3_1** is a JSON object. The properties in the object are either "standard" (understood by the mbed build system) or specific to the target.
+The style that we use for targets is:
+ - Each property is on its own line.
+ - The open brace `{` is on the same line as the target name, or the property name that is its key.
+ - The close brace `}` or close brace and comma `},` are on their own line.
+ - Lists take up at most one line.
+ - Lines are not split at any number of columns.
 
 # Standard properties
 
-This section lists all the properties that are known to the mbed build system. Unless specified otherwise, all properties are optional.
+This section lists all the properties understood by the mbed build system. Unless specified otherwise, all properties are optional.
 
-## inherits
+## `inherits`
 
-The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target **A** inherits from another target **B**, (**A** is the _child_ of **B** and **B** is the _parent_ of **A**), it automatically "borrows" all the definitions of properties from **B** and can modify them as needed (if you're familiar with Python, this is very similar to class inheritance). In our example above, `TEENSY3_1` inherits from `Target` (most mbed targets inherit from `Target`). This is how `Target` is defined:
+The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, It may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
 ```
 "Target": {
@@ -43,12 +48,12 @@ The description of an mbed target can "inherit" from one or more descriptions of
 
 Because `TEENSY3_1` inherits from `Target`:
 
-- `core` is a property defined both in `TEENSY3_1` and `Target`. Because `TEENSY3_1` redefines it, the value of `core` for `TEENSY3_1` is `Cortex-M4`.
-- `default_toolchain` is not defined in `TEENSY3_1`, but because it is defined in `Target`, `TEENSY3_1` borrows it, so the value of `default_toolchain` for `TEENSY3_1` is `ARM`.
+- `core` is a property defined both in `TEENSY3_1` and `Target`. Because `TEENSY3_1` overwrites it, the value of `core` for `TEENSY3_1` is `Cortex-M4`.
+- `default_toolchain` is not defined in `TEENSY3_1`. `TEENSY3_1` copies the definition of `default_toolchain` from `Target`, so the value of `default_toolchain` for `TEENSY3_1` is `ARM`.
 
-A target can add properties that don't exist in its parent(s). For example, `OUTPUT_EXT` is defined in `TEENSY3_1`, but doesn't exist in `Target`.
+A child target may add properties that don't exist in any of its parents. For example, `OUTPUT_EXT` is defined in `TEENSY3_1`, but is not defined in `Target`.
 
-It's possible to inherit from more than one target. For example:
+It's possible, but discouraged, to inherit from more than one target. For example:
 
 ```
 "ImaginaryTarget": {
@@ -58,11 +63,11 @@ It's possible to inherit from more than one target. For example:
 
 In this case, `ImaginaryTarget` inherits the properties of both `Target` and `TEENSY3_1`, so:
 
-- The value of `ImaginaryTarget.default_toolchain` is `ARM` (from `Target`).
-- The value of `ImaginaryTarget.OUTPUT_EXT` is `hex` (from `TEENSY3_1`).
-- The value of `ImaginaryTarget.core` is `null` (from `Target`, because that's the first parent of `ImaginaryTarget` that defines `core`).
+- The value of `ImaginaryTarget.default_toolchain` is `ARM` From `Target`.
+- The value of `ImaginaryTarget.OUTPUT_EXT` is `hex` from `TEENSY3_1`.
+- The value of `ImaginaryTarget.core` is `null` from `Target`, because that's the first parent of `ImaginaryTarget` that defines `core`.
 
-Avoid using multiple inheritance for your targets if possible because it can get pretty tricky to figure out how a property is inherited. If you have to use multiple inheritance, keep in mind that the mbed target description mechanism uses the old (pre 2.3) Python mechanism for finding the method resolution order:
+Avoid using multiple inheritance for your targets. If you use multiple inheritance, keep in mind that target descriptions is similar to the Python class inheritance mechanism prior to version 2.3. The target description inheritance checks for descriptions in this order:
 
 1. Look for the property in the current target.
 1. If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
@@ -70,28 +75,25 @@ Avoid using multiple inheritance for your targets if possible because it can get
 
 For more details about the Python method resolution order, check [this link](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
 
-## core
+## `core`
 
 The name of the target's ARM core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`
 
-## public
+## `public`
 
-Some mbed targets may be defined solely for the purpose of serving as an inheritance base for other targets (as opposed to being used to build mbed code). When such a target is defined, its description must have the `public` property set to `false`, to prevent the mbed build system from considering it as a build target. An example is the `Target` target shown above.
+The `public` property controls which targets the mbed build system allows users to build. Targets may be defined as a parent for other targets. When you define such a target, its description must set the `public` property to `false`. `Target`, shown above, sets `public` to `false` for this reason.
 
 If `public` is not defined for a target, it defaults to `true`.
 
 <span class="notes">**Note:** Unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
 
-## macros, macros_add, macros_remove
+## `macros`, `macros_add` and `macros_remove`
 
-The macros in this list will be defined when compiling mbed code. The macros can be defined with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add these definitions to the compiler's command-line: `-DNO_VALUE -DVALUE=10`.
+The `macros` property defines a list of macros that are available when compiling code. These macros may be defined with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add `-DNO_VALUE -DVALUE=10` to the compiler's command-line.
 
-When target inheritance is used, it's possible to alter the values of `macros` in inherited targets without redefining `macros` completely:
-
-- An inherited target can use `macros_add` to add its own macros.
-- An inherited target can use `macros_remove` to remove macros defined by its parents.
+When a target inherits, it's possible to alter the values of `macros` in the child targets without redefining `macros` completely using `macros_add` and `macros_remove`. A child target may use `macros_add` to add its own macros, and `macros_remove` to remove macros defined by its parents.
 
 For example:
 
@@ -108,31 +110,35 @@ For example:
 
 In this configuration, the value of `TargetB.macros` is `["PARENT_MACRO1", "CHILD_MACRO1"]`.
 
-## extra_labels, extra_labels_add, extra_labels_remove
+## `extra_labels`, `extra_labels_add` and `extra_labels_remove`
 
-The list of **labels** defines how the build system looks for sources, libraries, include directories and any other files that are needed at compile time. `extra_labels` makes the build system aware of additional directories that must be scanned for such files.
+The list of _labels_ defines how the build system looks for sources, include directories and so on. `extra_labels` makes the build system aware of additional directories that must be scanned for such files.
 
-If target inheritance is used, it's possible to alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous paragraph.
+When you use target inheritance, you may alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous section.
 
-## features, features_add, features_remove
+## `features`, `features_add` and `features_remove`
 
-The list of **features** defines what hardware a device has.
+The list of _features_ defines which software features are enabled for a platform. Like `extra_labels`, `features` makes the build system aware of additional directories that must be scanned for resources.
 
-mbed, libraries or application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform.
+When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous section.
 
-If target inheritance is used, it's possible to alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous two paragraphs.
+## `device_has`
 
-## supported_toolchains
+The list in `device_has` defines what hardware a device has.
 
-This is the list of toolchains that can be used to compile code for the target. The known toolchains are `ARM`, `uARM`, `GCC_ARM`, `GCC_CR`, `IAR`.
+mbed, libraries or application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available In C, C++ and Assembly as `DEVICE_` prefixed macros.
 
-## default_toolchain
+## `supported_toolchains`
 
-The name of the toolchain that will be used by default to compile this target (if another toolchain is not specified). Possible values are `ARM` or `uARM`.
+The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `GCC_ARM` and `IAR`.
 
-## post_binary_hook
+## `default_toolchain`
 
-Some mbed targets require specific actions for generating a binary image that can be flashed to the target. If that's the case, these actions can be specified using the `post_binary_hook` property and custom Python code. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
+The `default_toolchain` property names the toolchain that compiles code for this target in the online compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
+
+## `post_binary_hook`
+
+Some targets require specific actions to generate a programmable binary image. These actions are specified using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a python function that is accessible from from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When the `toolchains` key is not specified for a `post_binary_hook`, the `post_binary_hook` is assumed to apply to all toolcahins. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
 ```
 "post_binary_hook": {
@@ -141,13 +147,11 @@ Some mbed targets require specific actions for generating a binary image that ca
 }
 ```
 
-In this example, after the initial binary image for the target is generated, the build system will call the function `binary_hook` in the `TEENSY3_1Code` class. 
+After an initial binary image for the `TEENSY3_1` is generated, the build system will call the function `binary_hook` in the `TEENSY3_1Code` class within `tools/targets/__init__.py`. 
 
-<span class="notes">**Note:** The definition of the `TEENSY3_1Code` class **must** exist in the *targets.py* file. </span>
+The `TEENSY3_1` `post_binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`.
 
-Because `toolchains` is also specified, `binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`. Note that specifying `toolchains` is optional: if it's not specified, the hook will be called no matter what toolchain is used.
-
-As for the `binary_hook` code, this is how it looks in *targets.py*:
+As for the `TEENSY3_1` code, this is how it looks in `tools/targets/__init__.py`:
 
 ```
 class TEENSY3_1Code:
@@ -161,13 +165,30 @@ class TEENSY3_1Code:
             binh.tofile(f, format='hex')
 ```
 
-In this case, it converts the output file (`binf`) from binary format to Intel HEX format.
+The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from binary format to Intel HEX format. Take a look at the other hooks in `tools/targets/__init__.py` for more examples of hook code. 
 
-The hook code can look quite different for different targets. Take a look at the other classes in *targets.py* for more examples of hook code.
+## `device_name`
 
-## device_name
-
-This property is used to pass necessary data for exporting the mbed code to various third party tools and IDEs.
+This property is used to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
 Please see [exporters.md](exporters.md) for information about this field.
 
+## `OUTPUT_EXT`
+
+The `OUTPUT_EXT` property controls what the file type emitted for a target by the build system. `OUTPUT_EXT` may be set to `bin` for binary format, `hex` for Intel HEX format and `elf` for ELF format. The `elf` value for `OUTPUT_EXT` is discouraged because the bulid system must always emit an ELF file. 
+
+## `default_lib`
+
+The `delault_lib` property controls which library, small or standard, is linked by the `GCC_ARM` toolchain. The `default_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
+
+## `bootloader_supported`
+
+The `bootloader_supported` property controls if the bulid system will allow a bootloader or a bootloader using application to be built for a target. The default value of `bootloader_supported` is `false`.
+
+## `release_versions`
+
+The `release_versions` property is a list of major versions of mbed OS that the target supports. The list within `release_versions` may only contain `2` indicating that mbed OS 2 is supported and `5` indicating that mbed OS 5 is supported. Any target a `release_version` with a `2` in it's list will be built as a static library as part of the mbed OS 2 release process.
+
+## `supported_form_factors`
+
+The `supported_form_factors` property is an optional list of form factors supported by a development board. This property is provided to the C, C++ and Assembly by passing a macro prefixed with `TARGET_FF_` to the compiler. The accepted values for `supported_form_factors` are `ARDUINO` that indicates compatibility with Arduino headers and `MORPHO` that inicates compatibility with ST Morpho Headers.
