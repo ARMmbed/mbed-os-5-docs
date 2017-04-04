@@ -27,11 +27,11 @@ The style that we use for targets is:
 
 # Standard properties
 
-This section lists all the properties understood by the mbed build system. Unless specified otherwise, all properties are optional.
+This section lists all the properties the mbed build system understands. Unless specified otherwise, all properties are optional.
 
 ## `inherits`
 
-The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, It may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
+The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
 ```
 "Target": {
@@ -51,7 +51,7 @@ Because `TEENSY3_1` inherits from `Target`:
 - `core` is a property defined both in `TEENSY3_1` and `Target`. Because `TEENSY3_1` overwrites it, the value of `core` for `TEENSY3_1` is `Cortex-M4`.
 - `default_toolchain` is not defined in `TEENSY3_1`. `TEENSY3_1` copies the definition of `default_toolchain` from `Target`, so the value of `default_toolchain` for `TEENSY3_1` is `ARM`.
 
-A child target may add properties that don't exist in any of its parents. For example, `OUTPUT_EXT` is defined in `TEENSY3_1`, but is not defined in `Target`.
+A child target may add properties that don't exist in any of its parents. For example, `OUTPUT_EXT` is defined in `TEENSY3_1` but is not defined in `Target`.
 
 It's possible, but discouraged, to inherit from more than one target. For example:
 
@@ -63,11 +63,11 @@ It's possible, but discouraged, to inherit from more than one target. For exampl
 
 In this case, `ImaginaryTarget` inherits the properties of both `Target` and `TEENSY3_1`, so:
 
-- The value of `ImaginaryTarget.default_toolchain` is `ARM` From `Target`.
+- The value of `ImaginaryTarget.default_toolchain` is `ARM` from `Target`.
 - The value of `ImaginaryTarget.OUTPUT_EXT` is `hex` from `TEENSY3_1`.
-- The value of `ImaginaryTarget.core` is `null` from `Target`, because that's the first parent of `ImaginaryTarget` that defines `core`.
+- The value of `ImaginaryTarget.core` is `null` from `Target` because that's the first parent of `ImaginaryTarget` that defines `core`.
 
-Avoid using multiple inheritance for your targets. If you use multiple inheritance, keep in mind that target descriptions is similar to the Python class inheritance mechanism prior to version 2.3. The target description inheritance checks for descriptions in this order:
+Avoid using multiple inheritance for your targets. If you use multiple inheritance, keep in mind that target description is similar to the Python class inheritance mechanism prior to version 2.3. The target description inheritance checks for descriptions in this order:
 
 1. Look for the property in the current target.
 1. If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
@@ -83,7 +83,7 @@ Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"
 
 ## `public`
 
-The `public` property controls which targets the mbed build system allows users to build. Targets may be defined as a parent for other targets. When you define such a target, its description must set the `public` property to `false`. `Target`, shown above, sets `public` to `false` for this reason.
+The `public` property controls which targets the mbed build system allows users to build. You may define targets as parents for other targets. When you define such a target, its description must set the `public` property to `false`. `Target`, shown above, sets `public` to `false` for this reason.
 
 If `public` is not defined for a target, it defaults to `true`.
 
@@ -91,9 +91,9 @@ If `public` is not defined for a target, it defaults to `true`.
 
 ## `macros`, `macros_add` and `macros_remove`
 
-The `macros` property defines a list of macros that are available when compiling code. These macros may be defined with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add `-DNO_VALUE -DVALUE=10` to the compiler's command-line.
+The `macros` property defines a list of macros that are available when compiling code. You may define these macros with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add `-DNO_VALUE -DVALUE=10` to the compiler's command-line.
 
-When a target inherits, it's possible to alter the values of `macros` in the child targets without redefining `macros` completely using `macros_add` and `macros_remove`. A child target may use `macros_add` to add its own macros, and `macros_remove` to remove macros defined by its parents.
+When a target inherits, it's possible to alter the values of `macros` in the child targets without redefining `macros` completely using `macros_add` and `macros_remove`. A child target may use `macros_add` to add its own macros and `macros_remove` to remove macros defined by its parents.
 
 For example:
 
@@ -112,21 +112,21 @@ In this configuration, the value of `TargetB.macros` is `["PARENT_MACRO1", "CHIL
 
 ## `extra_labels`, `extra_labels_add` and `extra_labels_remove`
 
-The list of _labels_ defines how the build system looks for sources, include directories and so on. `extra_labels` makes the build system aware of additional directories that must be scanned for such files.
+The list of _labels_ defines how the build system looks for sources, include directories and so on. `extra_labels` makes the build system aware of additional directories that it must scan for such files.
 
 When you use target inheritance, you may alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous section.
 
 ## `features`, `features_add` and `features_remove`
 
-The list of _features_ defines which software features are enabled for a platform. Like `extra_labels`, `features` makes the build system aware of additional directories that must be scanned for resources.
+The list of _features_ defines which software features are enabled for a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources.
 
-When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous section.
+When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
 
 ## `device_has`
 
 The list in `device_has` defines what hardware a device has.
 
-mbed, libraries or application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available In C, C++ and Assembly as `DEVICE_` prefixed macros.
+mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
 
 ## `supported_toolchains`
 
@@ -134,11 +134,11 @@ The `supported_toolchains` property is the list of toolchains that support a tar
 
 ## `default_toolchain`
 
-The `default_toolchain` property names the toolchain that compiles code for this target in the online compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
+The `default_toolchain` property names the toolchain that compiles code for this target in the Online Compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
 
 ## `post_binary_hook`
 
-Some targets require specific actions to generate a programmable binary image. These actions are specified using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a python function that is accessible from from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When the `toolchains` key is not specified for a `post_binary_hook`, the `post_binary_hook` is assumed to apply to all toolcahins. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
+Some targets require specific actions to generate a programmable binary image. Specify these actions using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a Python function that is accessible from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When you do not specify the `toolchains` key for a `post_binary_hook`, you can assume the `post_binary_hook` applies to all toolcahins. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
 ```
 "post_binary_hook": {
@@ -147,9 +147,9 @@ Some targets require specific actions to generate a programmable binary image. T
 }
 ```
 
-After an initial binary image for the `TEENSY3_1` is generated, the build system will call the function `binary_hook` in the `TEENSY3_1Code` class within `tools/targets/__init__.py`. 
+After the generation of an initial binary image for the `TEENSY3_1`, the build system calls the function `binary_hook` in the `TEENSY3_1Code` class within `tools/targets/__init__.py`. 
 
-The `TEENSY3_1` `post_binary_hook` will only be called if the toolchain used for compiling the code is either `ARM_STD`, `ARM_MICRO` or `GCC_ARM`.
+The `TEENSY3_1` `post_binary_hook` only is called if the toolchain that compiles the code is `ARM_STD`, `ARM_MICRO` or `GCC_ARM`.
 
 As for the `TEENSY3_1` code, this is how it looks in `tools/targets/__init__.py`:
 
@@ -165,30 +165,30 @@ class TEENSY3_1Code:
             binh.tofile(f, format='hex')
 ```
 
-The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from binary format to Intel HEX format. Take a look at the other hooks in `tools/targets/__init__.py` for more examples of hook code. 
+The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from binary format to Intel HEX format. See the other hooks in `tools/targets/__init__.py` for more examples of hook code. 
 
 ## `device_name`
 
-This property is used to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
+Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
 Please see [exporters.md](exporters.md) for information about this field.
 
 ## `OUTPUT_EXT`
 
-The `OUTPUT_EXT` property controls what the file type emitted for a target by the build system. `OUTPUT_EXT` may be set to `bin` for binary format, `hex` for Intel HEX format and `elf` for ELF format. The `elf` value for `OUTPUT_EXT` is discouraged because the bulid system must always emit an ELF file. 
+The `OUTPUT_EXT` property controls the file type emitted for a target by the build system. You may set `OUTPUT_EXT` to `bin` for binary format, `hex` for Intel HEX format and `elf` for ELF format. We discourage using the `elf` value for `OUTPUT_EXT` because the build system must always emit an ELF file. 
 
 ## `default_lib`
 
-The `delault_lib` property controls which library, small or standard, is linked by the `GCC_ARM` toolchain. The `default_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
+The `delault_lib` property controls which library, small or standard, the `GCC_ARM` toolchain links. The `default_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
 
 ## `bootloader_supported`
 
-The `bootloader_supported` property controls if the bulid system will allow a bootloader or a bootloader using application to be built for a target. The default value of `bootloader_supported` is `false`.
+The `bootloader_supported` property controls whether the build system allows a bootloader or a bootloader-using application to be built for a target. The default value of `bootloader_supported` is `false`.
 
 ## `release_versions`
 
-The `release_versions` property is a list of major versions of mbed OS that the target supports. The list within `release_versions` may only contain `2` indicating that mbed OS 2 is supported and `5` indicating that mbed OS 5 is supported. Any target a `release_version` with a `2` in it's list will be built as a static library as part of the mbed OS 2 release process.
+The `release_versions` property is a list of major versions of mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of mbed OS 2, and `5`, indicating the support of mbed OS 5. Any target a `release_version` with a `2` in its list will be built as a static library as part of the mbed OS 2 release process.
 
 ## `supported_form_factors`
 
-The `supported_form_factors` property is an optional list of form factors supported by a development board. This property is provided to the C, C++ and Assembly by passing a macro prefixed with `TARGET_FF_` to the compiler. The accepted values for `supported_form_factors` are `ARDUINO` that indicates compatibility with Arduino headers and `MORPHO` that inicates compatibility with ST Morpho Headers.
+The `supported_form_factors` property is an optional list of form factors that a development board supports. You can use this property in C, C++ and assembly language by passing a macro prefixed with `TARGET_FF_` to the compiler. The accepted values for `supported_form_factors` are `ARDUINO`, which indicates compatibility with Arduino headers, and `MORPHO`, which indicates compatibility with ST Morpho headers.
