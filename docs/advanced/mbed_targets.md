@@ -31,7 +31,7 @@ This section lists all the properties the mbed build system understands. Unless 
 
 ## `inherits`
 
-The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
+The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
 ```
 "Target": {
