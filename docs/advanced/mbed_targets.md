@@ -23,7 +23,7 @@ The style that we use for targets is:
  - The open brace `{` is on the same line as the target name, or the property name that is its key.
  - The close brace `}` or close brace and comma `},` are on their own line.
  - Lists take up at most one line.
- - Lines are not split at any number of columns.
+ - Long lines are not split.
 
 # Standard properties
 
@@ -118,7 +118,7 @@ When you use target inheritance, you may alter the values of `extra_labels` usin
 
 ## `features`, `features_add` and `features_remove`
 
-The list of _features_ defines which software features are enabled for a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources.
+The list of _features_ enables software features on a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
 
@@ -149,7 +149,7 @@ Some targets require specific actions to generate a programmable binary image. S
 
 After the generation of an initial binary image for the `TEENSY3_1`, the build system calls the function `binary_hook` in the `TEENSY3_1Code` class within `tools/targets/__init__.py`. 
 
-The `TEENSY3_1` `post_binary_hook` only is called if the toolchain that compiles the code is `ARM_STD`, `ARM_MICRO` or `GCC_ARM`.
+The build tools call `TEENSY3_1` `post_binary_hook` when they build using the `ARM_STD`, `ARM_MICRO` or `GCC_ARM` toolchain.
 
 As for the `TEENSY3_1` code, this is how it looks in `tools/targets/__init__.py`:
 
@@ -187,7 +187,7 @@ The `bootloader_supported` property controls whether the build system allows a b
 
 ## `release_versions`
 
-The `release_versions` property is a list of major versions of mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of mbed OS 2, and `5`, indicating the support of mbed OS 5. Any target a `release_version` with a `2` in its list will be built as a static library as part of the mbed OS 2 release process.
+The `release_versions` property is a list of major versions of mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of mbed OS 2, and `5`, indicating the support of mbed OS 5. We build all targets that are released for mbed OS 2 as a static library. Targets are released for mbed OS 2 by putting a `2` in the `release_version` list.
 
 ## `supported_form_factors`
 
