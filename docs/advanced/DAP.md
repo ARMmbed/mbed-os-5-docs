@@ -1,8 +1,5 @@
 # DAPLink
 
-
-## DAPLink
-
 DAPlink is an open source project that implements the embedded firmware required for a Cortex debug probe. The project is hosted on GitHub and is published under an Apache 2.0 license, making it attractive for commercial developments.
 
 The software project is complemented by a series of reference designs for creating the DAPLink debug probe hardware, which is available [here](https://docs.mbed.com/docs/mbed-hardware-development-kit/en/latest/).
