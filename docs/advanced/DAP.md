@@ -1,7 +1,4 @@
-# CMSIS-DAP and DAPLink
-
-
-## DAPLink
+# DAPLink
 
 DAPlink is an open source project that implements the embedded firmware required for a Cortex debug probe. The project is hosted on GitHub and is published under an Apache 2.0 license, making it attractive for commercial developments.
 
