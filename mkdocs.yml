@@ -35,6 +35,7 @@ pages:
 - ['advanced/mbedignore.md', 'Advanced tutorials', 'Ignoring mbed build files']
 - ['advanced/toolchain_profiles.md', 'Advanced tutorials', 'Toolchain profiles']
 - ['advanced/testing.md', 'Advanced tutorials', 'Testing']
+- ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 - ['concepts/memap.md', 'Advanced tutorials', 'memap - static memory map analysis']
