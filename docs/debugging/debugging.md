@@ -14,10 +14,10 @@ If your development board blinks very fast, or shows 'siren lights', see [Lights
 
 Keil uVision natively supports debugging mbed OS applications. To set up uVision, read [Debugging with Keil uVision](Keil.md).
 
-mbed also supports debugging using any IDE that supports GDB. To set up the debugger, first read [Setting up your local debug toolchain](Debugging/toolchain.md). Then read the section for your specific IDE. The same principles apply to any unlisted IDEs that supports GDB:
+mbed also supports debugging using any IDE that supports GDB. To set up the debugger, first read [Setting up your local debug toolchain](toolchain.md). Then read the section for your specific IDE. The same principles apply to any unlisted IDEs that supports GDB:
 
 1. Producing [debug builds with mbed CLI](debug_builds.md).
-1. Debugging with [Eclipse](Debugging_Eclipse_pyOCD.md).
+1. Debugging with [Eclipse](debugging_eclipse_pyocd.md).
 1. Debugging with [Visual Studio Code](vscode.md).
 1. Debugging with [other IDEs that support GDB](other_ides.md).
 
