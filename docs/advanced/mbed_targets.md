@@ -1,6 +1,6 @@
 # Adding and configuring mbed targets
 
-mbed uses JSON as a description language for its build targets. The JSON description of mbed targets can be found in `targets/targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
+mbed uses JSON as a description language for its build targets. The JSON description of mbed targets can be found in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. Definitions of new targets in a `custom_targets.json` will be added to the list of available targets. Any re-definitions of existing targets will be merged with the original definition by replacing values found in `targets/targets.json` with values found in the same key in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
 ```
     "TEENSY3_1": {
