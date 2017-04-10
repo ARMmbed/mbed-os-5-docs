@@ -28,13 +28,19 @@ optional arguments:
 
 If you have added a new target to mbed OS 5, exporting will allow users to transition from mbed source code to the offline development environment of their choice. More people can use your device.
 
-## Eclipse and Make 
+## Eclipse and Make
 
 Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
 
 ## GNU ARM Eclipse managed projects
 
 The GNU ARM Eclipse exporter is available for all targets that use the GCC_ARM toolchain.
+
+## Qt Creator and Make
+
+The Qt Creator project export is available for the GCC_ARM toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
+
+The generated `.creator` project can be opened in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion; the Makefile can be used to actually compile the project, and should be automatically called by the IDE when the Build command is issued.
 
 ## uVision and IAR
 
