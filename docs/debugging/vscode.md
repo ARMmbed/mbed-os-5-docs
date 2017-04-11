@@ -52,6 +52,8 @@ To configure the debugger for your project:
 
 ![Configuring the debugger](Images/vscode3.png)
 
+<span class="notes">**Note:** If you installed the GNU ARM Embedded Toolchain in a non-default location (f.e. via the mbed CLI installer) you need to update the `MIDebuggerPath` to the full path of your copy of `arm-none-eabi-gdb`. To find out the new path, open a terminal and run `where arm-none-eabi-gdb` (Windows) or `which arm-none-eabi-gdb` (macOS and Linux).</span>
+
 ## Debugging your project
 
 1. On the 'Debug' tab, click the *Play* icon.
