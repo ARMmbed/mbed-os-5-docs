@@ -40,7 +40,7 @@ The GNU ARM Eclipse exporter is available for all targets that use the GCC_ARM t
 
 The Qt Creator project export is available for the GCC_ARM toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
 
-The generated `.creator` project can be opened in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion; the Makefile can be used to actually compile the project, and should be automatically called by the IDE when the Build command is issued.
+You can open the generated `.creator` project in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion. You can use the Makefile to compile the project; the IDE should automatically invoke the Makefile when you issue the Build command.
 
 ## uVision and IAR
 
