@@ -55,7 +55,6 @@ pages:
 - ['debugging/debug_builds.md', 'Debugging', 'Producing debug builds with mbed CLI']
 - ['debugging/Keil.md', 'Debugging', 'Debugging with uVision 5']
 - ['debugging/debugging_eclipse_pyocd.md', 'Debugging', 'Debugging with Eclipse']
-- ['debugging/vscode.md', 'Debugging', 'Debugging with Visual Studio Code']
 - ['debugging/other_ides.md', 'Debugging', 'Debugging with other IDEs']
 - ['debugging/debugging_microbit.md', 'Debugging', 'Debugging the BBC micro:bit']
 
