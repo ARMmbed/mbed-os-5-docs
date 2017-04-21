@@ -2,9 +2,9 @@
 
 Adding a new microcontroller to mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
-## Adding a new microcontroller and Board
+## Adding a new microcontroller and board
 
-First fork the mbed-os repository on github into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an mbed OS example and make it use your fork of mbed-os using: 
+First fork the mbed-os repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an mbed OS example, and add your fork of mbed-os using: 
 
 ```
 mbed import mbed-os-example-blinky
@@ -34,13 +34,13 @@ Add the target description to ```mbed-os\targets\targets.json```:
 }
 ```
 
-See The [mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
+See the [mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
 
 ### Bootstrap code
 
 You need a number of files to successfully compile. You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for ARM, IAR and GCC toolchains. These files are usually in the ```mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device``` directory.
 
-mbed OS requires dynamic vector relocation, which requires extensions to CMSIS-CORE. Start this process by adding a `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h` file. This header file will include the vector relocation additions and device-specific headers that include CMSIS-CORE. Next add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.c and .h`. This relocation function will change the contents of the Interrupt Vector Table at run time.
+mbed OS requires dynamic vector relocation, which requires extensions to CMSIS-CORE. Extend CMSIS-CORE by adding an `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h` file. This header file defines the vector relocation additions and device-specific headers that include CMSIS-CORE. Next add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.c and .h`. This relocation function changes the contents of the Interrupt Vector Table at run time.
 
 CMSIS-RTOS needs a few macros to initialize the SYS_TICK. These macros are usually configured in`mbed-os\targets\TARGET_VENDOR\mbed-rtx.h`. 
 
@@ -54,7 +54,7 @@ Implement the api declared in `mbed-os/hal/gpio_api.h`. You must define the stru
 
 ### Microsecond ticker
 
-The microsecond ticker is a system resource that many APIs use. It needs a one microsecond resolution and should be implemented using a free-running hardware counter or timer with match register. Implement the api declared in `mbed-os\hal\us_ticker_api.h`.
+The microsecond ticker is a system resource that many APIs use. The microsecond ticker needs a one microsecond resolution and uses a free-running hardware counter or timer with match register. Implement the api declared in `mbed-os\hal\us_ticker_api.h`.
 
 At this point, we should be able to compile a handful of tests: 
 
@@ -64,13 +64,13 @@ To execute the tests, you need to support [mbed-ls](https://github.com/armmbed/m
 
 ### Serial
 
-Implement the api declared in `mbed-os/hal/serial_api.h`. You must define the `serial_t` struct which is used for referencing memory-mapped serial registers and passing related pin and peripheral operation information data that the HAL needs. This struct is defined in `objects.h`.
+Implement the API declared in `mbed-os/hal/serial_api.h`. You must define the `serial_t` struct in `objects.h`. You may use the `serial_t` struct for referencing memory-mapped serial registers and passing related pin and peripheral operation information data that the HAL needs.
 
 ### All the others
 
-There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the api declared in the api header.
+There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the API declared in the API header.
 
-device_has       |   api header
+device_has       |   API header
 -----------------|------------------
 ANALOGIN         |   analog_in.h
 ANALOGOUT        |   analog_out.h
