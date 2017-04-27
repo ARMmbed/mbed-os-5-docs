@@ -36,6 +36,10 @@ Add the target description to ```mbed-os\targets\targets.json```:
 
 See the [mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
 
+### Coding requirements
+
+Please see the contributing guide's section on [contributing code](../cont/code_style.md) for style and ABI requirements.
+
 ### Bootstrap code
 
 You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for ARM, IAR and GCC toolchains. These files are usually in the ```mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device``` directory.
