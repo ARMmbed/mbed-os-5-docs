@@ -36,6 +36,14 @@ For example, to export to uVision5 with the K64F target run:
 A `*.uvproj` file is created in the root folder of the project. 
 You can open this project file with uVision5.
 
+When you export from mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build_profiles.md#debug-profile). For example, this means that compiling within UVision 5 after this export:
+
+    $ mbed export -i uvision5 -m K64F
+
+will have the same flags as if you had compiled with:
+
+    $ mbed compile -t arm -m K64F --profile debug
+
 
 ## Exporting from the mbed Online Compiler
 
