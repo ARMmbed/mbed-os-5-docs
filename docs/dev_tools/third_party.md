@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ## Exporting from mbed CLI
 
-mbed CLI currently supports exporting to all of the development environments mentioned above by using the ``export`` command.
+[mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/) currently supports [exporting](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/#exporting-to-desktop-ides) to all of the development environments mentioned above by using the ``export`` command.
 
 For example, to export to uVision5 with the K64F target run:
 
