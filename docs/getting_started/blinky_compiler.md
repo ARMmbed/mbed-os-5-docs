@@ -62,5 +62,4 @@ The mbed Online Compiler builds a ``.bin`` file that you can install on your boa
 
 1. Drag and drop your program to the board. 
 
-1. The board installs the program and then runs it. You should see the LED blink.
-
+1. The board installs the program. Reset the board, and see the LED blink.
