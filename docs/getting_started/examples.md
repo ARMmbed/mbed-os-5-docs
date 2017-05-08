@@ -53,7 +53,7 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 ### Connectivity
 
-* [HTTP](http://github.com/armmbed/mbed-os-example-http) and [HTTPS] (https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client/main.cpp).
+* [HTTP](http://github.com/armmbed/mbed-os-example-http) and [HTTPS](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client/main.cpp).
 * [MQTT](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/).
 * [CoAP](https://github.com/armmbed/mbed-os-example-coap).
 
