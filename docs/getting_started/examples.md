@@ -51,19 +51,25 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 [Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for mbed OS. It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister.
 
-### mesh 
+### Connectivity
+
+* [HTTP](http://github.com/armmbed/mbed-os-example-http) and [HTTPS] (https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client/main.cpp).
+* [MQTT](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/).
+* [CoAP](https://github.com/armmbed/mbed-os-example-coap).
+
+#### mesh 
 
 [Join a device to an insecure 6LoWPAN-ND network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). This is the simples use of the mesh networking sack.
 
-### Sockets
+#### Sockets
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
 
-### WiFi
+#### WiFi
 
 [Perform simple HTTP operations using the WiFi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
-### Bluetooth Low Energy (BLE)
+#### Bluetooth Low Energy (BLE)
 
 * [Battery level](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/): use the Battery Level service to transmit a device's battery level.
 
@@ -81,3 +87,7 @@ These examples work on the K64F and GCC_ARM toolchain only.
     * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
     * [URI beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-URIBeacon/).
     * [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
+
+### Peripherals
+
+[On developer.mbed.org](https://developer.mbed.org/teams/mbed_example/)
