@@ -60,23 +60,29 @@ These examples work on the K64F and GCC_ARM toolchain only.
 
 [Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for mbed OS. It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister.
 
-### mesh 
+### Connectivity
+
+* [HTTP](http://github.com/armmbed/mbed-os-example-http) and [HTTPS] (https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client/main.cpp).
+* [MQTT](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/).
+* [CoAP](https://github.com/armmbed/mbed-os-example-coap).
+
+#### mesh 
 
 [Join a device to an insecure 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/nanostack-border-router). This is the simplest use of the mesh networking stack.
 
-### Nanostack border router 
+#### Nanostack border router 
 
 [Use the generic mbed border router and create a 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
 
-### Sockets
+#### Sockets
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
 
-### Wi-Fi
+#### Wi-Fi
 
 [Perform simple HTTP operations using the Wi-Fi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
-### Bluetooth Low Energy (BLE)
+#### Bluetooth Low Energy (BLE)
 
 * [Battery level](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/): use the Battery Level service to transmit a device's battery level.
 
@@ -93,3 +99,7 @@ These examples work on the K64F and GCC_ARM toolchain only.
 * Beacons send a small amount of information to a nearby device. Try:
     * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
     * [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
+
+### Peripherals
+
+[On developer.mbed.org](https://developer.mbed.org/teams/mbed_example/)
