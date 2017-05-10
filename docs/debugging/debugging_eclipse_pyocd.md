@@ -11,7 +11,7 @@ You need to install Eclipse CDT with the GNU ARM Eclipse plugins to begin:
 1. Create a workspace directory. This will be separate from your code.
 1. Install the GNU ARM Eclipse plugin:
     1. Click the **Help** menu item and select **Install New Software**.
-    1. In the **Work with** box, paste the install address, and press Enter: `http://sourceforge.net/projects/gnuarmeclipse/files/Eclipse/updates/`.
+    1. In the **Work with** box, paste the install address, and press Enter: `http://gnuarmeclipse.sourceforge.net/updates`.
 
     	If this does not work, please see the [GNU ARM Eclipse solutions and workarounds page](http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/).
     1. The package **GNU ARM C/C++ Cross Development Tools** appears. Select it.
@@ -58,8 +58,11 @@ $ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.
 1. Dismiss the Welcome screen.
 1. Select *Project > Build Project* to build the project.
 
-<span class="notes">**Note:** If building fails with `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH):
+<span class="notes">**Note:** If build fails with error 
+1. `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH)
+1. `Program "make" not found in PATH`, install [GNU-Make utility](http://gnuwin32.sourceforge.net/packages/make.htm) and configure Eclipse's PATH
 
+Steps to update Eclipse's PATH
 1. In Eclipse, click *Project > Properties > C/C++ Build > Environment*.
 1. Click *Add*.
 1. Under *Name*, enter `PATH`.
