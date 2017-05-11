@@ -59,8 +59,8 @@ $ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.
 1. Select *Project > Build Project* to build the project.
 
 <span class="notes">**Note:** If build fails with error 
-1. `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH)
-1. `Program "make" not found in PATH`, install [GNU-Make utility](http://gnuwin32.sourceforge.net/packages/make.htm) and configure Eclipse's PATH
+1. `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH).
+1. `Program "make" not found in PATH`, install [GNU-Make utility](http://gnuwin32.sourceforge.net/packages/make.htm), and configure Eclipse's PATH.
 
 Steps to update Eclipse's PATH
 1. In Eclipse, click *Project > Properties > C/C++ Build > Environment*.
