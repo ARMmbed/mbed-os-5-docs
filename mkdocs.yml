@@ -36,6 +36,7 @@ pages:
 - ['advanced/toolchain_profiles.md', 'Advanced tutorials', 'Toolchain profiles']
 - ['advanced/testing.md', 'Advanced tutorials', 'Testing']
 - ['advanced/utest.md', 'Advanced tutorials', 'utest: Asynchronous C++ test harness']
+- ['advanced/greentea.md', 'Advanced tutorials', 'Greentea']
 - ['advanced/debugging.md', 'Advanced tutorials', 'Debugging']
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
