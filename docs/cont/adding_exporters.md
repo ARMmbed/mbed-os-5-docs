@@ -1,23 +1,22 @@
 # Adding exporters 
 
-This is a guide for adding exporters to the mbed-os tools. First, This document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
+This is a guide for adding exporters to the mbed-os tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
 <span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
 
-## What is an exporter
+## What an exporter is
 
-An exporter is a python plugin to the mbed OS tools that convert a project using mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter should:
- - Take input from the resource scan.
- - Use the flags in the build profiles.
- - Have a single template file for each file type they produce. For example, an eclipse CDT project would have one template for `.project` files and one for `.cproject` files.
- - Not call mbed CLI. It is possible to export from the website, which will not include mbed CLI in the resulting zip.
-
+An exporter is a Python plugin to the mbed OS tools that convert a project using mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter:
+ - Takes input from the resource scan.
+ - Uses the flags in the build profiles.
+ - Has a single template file for each file type they produce. For example, an eclipse CDT project would have one template for `.project` files and one for `.cproject` files.
+ - Does not call mbed CLI. It is possible to export from the website, which will not include mbed CLI in the resulting zip.
 
 ## Export subsystem structure
 
 The export subsystem is organized as a group of common code and a group of IDE or toolchain specific plugins.
 
-The **common code** is contained in four files: 
+The **common code** is contained in three files:
 
  * `tools/project.py` contains the command-line interface and handles the differences between mbed OS 2 tests and mbed OS 5 projects.
  * `tools/export/__init__.py` contains a high-level API for use by the mbed Online Compiler and mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
@@ -248,14 +247,11 @@ There are several paths forward that can lead to an easily maintained exporter:
  
 ### GNU ARM Eclipse
 
-If your IDE uses Eclipse and uses the GNU ARM Eclipse plugin, then you should 
-specialize or alias your exporter with the generic GNU ARM Eclipse.
+If your IDE uses Eclipse and uses the GNU ARM Eclipse plugin, then specialize or alias your exporter with the generic GNU ARM Eclipse.
 
 #### Alias
 
-If you do not need any specialization of the export, then replace your
-exporters class in the `EXPORT_MAP` with the `GNUARMEclipse` class. For example,
-if KDS met all of these requirements, we could:
+If you do not need any specialization of the export, then replace your exporters class in the `EXPORT_MAP` with the `GNUARMEclipse` class. For example, if KDS met all of these requirements, we could:
 
 ```diff
 EXPORTERS = {
@@ -270,9 +266,7 @@ EXPORTERS = {
 
 #### Specialization
 
-If you need more specialization and are using an Eclipse based IDE and the GNU 
-ARM Eclipse plugin, then your exporter class inherits from the `GNUARMEclipse` 
-class. For example (with KDS again):
+If you need more specialization and are using an Eclipse based IDE and the GNU ARM Eclipse plugin, then your exporter class inherits from the `GNUARMEclipse` class. For example (with KDS again):
 
 ```python
 from tools.export.exporters.gnuarmeclipse import GNUARMEcilpse
@@ -301,13 +295,9 @@ decide to alias or specialize.
 
 ### Make
 
-If your IDE is not Eclipse based but can still use a Makefile, then you can 
-specialize the Makefile exporter. Specializing the Makefile is actually how we 
-implement the Eclipse + Make exporter. 
+If your IDE is not Eclipse based but can still use a Makefile, then you can specialize the Makefile exporter. Specializing the Makefile is actually how ARM mbed implemented the Eclipse + Make exporter. 
 
-Creating an exporter based on the Makefile exporter is a two step process: 
-inherit from the appropriate Makefile class, and call its generate method.
-Taking Eclipse + Make using GCC_ARM as an example, your exporter will look like:
+Creating an exporter based on the Makefile exporter is a two step process: inherit from the appropriate Makefile class, and call its generate method. Taking Eclipse + Make using GCC_ARM as an example, your exporter will look like:
 
 ```python
 class EclipseGcc(GccArm):
@@ -315,8 +305,6 @@ class EclipseGcc(GccArm):
 ```
 
 Your generate method will look similar to:
-
-
 ```python
     def generate(self):
         """Generate Makefile, .cproject & .project Eclipse project file,
@@ -324,3 +312,4 @@ Your generate method will look similar to:
         """
         super(EclipseGcc, self).generate()
         ...
+```
