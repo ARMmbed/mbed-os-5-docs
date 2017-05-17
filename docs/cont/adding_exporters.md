@@ -1,8 +1,17 @@
 # Adding exporters 
 
-This is a guide for adding exporters to the mbed-os tools. It covers the structure of the export subsystem and the individual exporter.
+This is a guide for adding exporters to the mbed-os tools. First, This document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
 <span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
+
+## What is an exporter
+
+An exporter is a python plugin to the mbed OS tools that convert a project using mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter should:
+ - Take input from the resource scan.
+ - Use the flags in the build profiles.
+ - Have a single template file for each file type they produce. For example, an eclipse CDT project would have one template for `.project` files and one for `.cproject` files.
+ - Not call mbed CLI. It is possible to export from the website, which will not include mbed CLI in the resulting zip.
+
 
 ## Export subsystem structure
 
@@ -11,8 +20,7 @@ The export subsystem is organized as a group of common code and a group of IDE o
 The **common code** is contained in four files: 
 
  * `tools/project.py` contains the command-line interface and handles the differences between mbed OS 2 tests and mbed OS 5 projects.
- * `tools/project_api.py` contains a high-level API for use by the mbed Online Compiler and mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
- * `tools/export/__init__.py` contains the mapping of exporter names to plugin classes, and handles printing of toolchain support information.
+ * `tools/export/__init__.py` contains a high-level API for use by the mbed Online Compiler and mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
  * `tools/export/exporters.py` contains the base class for all plugins. It offers useful exporter-specific actions.
 
 An **IDE or toolchain specific plugin** is a Python class that inherits from the `Exporter` class and is listed in the `tools/export/__init__.py` exporter map.
@@ -21,7 +29,7 @@ An **IDE or toolchain specific plugin** is a Python class that inherits from the
 
 The common code does two things: setting things up for the plugins, and providing a library of useful tools for plugins to use.
 
-___Setup___
+#### Setup
 
 The setup code scans for the resources used in the export process and collects the configuration required to build the project at hand.
 
@@ -33,7 +41,7 @@ These steps construct an object of one of the exporter plugin classes listed in 
  * `flags` the flags that the mbedToolchain instance will use to compile the `c/cpp/asm` files if invoked.
  * `resources` a `Resources` object that contains many lists of files that an exporter will find useful, such as C and Cpp sources and header search paths. The plugin should use only the attributes of the Resources object because the methods are only used during setup time. You can view all available Resources class attributes in `tools/toolchains/__init__.py`.
 
-___Plugin tools___
+#### Plugin tools
 
 The other half of the common code is a library for use by a plugin. This API includes:
 
@@ -52,25 +60,25 @@ The Python code for the plugin should be:
 1. Imported into `tools/export/__init__.py`.
 1. Added to the exporter map.
 
-___The `generate` method___
+#### The `generate` method
 
 Each exporter is expected to implement one method, `generate`, which is responsible for creating all of the required project files for the IDE or toolchain that the plugin targets. 
 
 This method may use any of the attributes and APIs included by the common code.
 
-___The `TARGETS` class variable___
+#### The `TARGETS` class variable
 
 Each exporter reports its specific target support through a class varibale, `TARGETS`. This class variable is simply a list of targets to which you can export. Requesting an export to a target that's not on the list will generate an error.
 
-___The `TOOLCHAIN` class variable___
+#### The `TOOLCHAIN` class variable
 
 Each exporter reports its specific toolchain it will use to compile the source code through a class variable `TOOLCHAIN`.
 
-___The `NAME` class variable___
+#### The `NAME` class variable
 
 Each exporter reports the name of the exporter through the class variable `NAME`. This matches the key in the `tools/export/__init__.py` exporter map.
 
-___The `build` method___
+#### The `build` method
 
 A plugin that would like to be tested by CI may implement the `build` method. 
 
@@ -230,3 +238,89 @@ $(PROJECT).elf: $(OBJECTS) $(SYS_OBJECTS) $(LINKER_SCRIPT)
 	+@echo "link: $(notdir $@)"
 	@$(LD) -T $(filter %{{link_script_ext}}, $^) $(LIBRARY_PATHS) --output $@ $(filter %.o, $^) $(LIBRARIES)
 ```
+
+## Suggested implementation
+
+There are several paths forward that can lead to an easily maintained exporter:
+ - Specialize or alias the GNU ARM Eclipse exporter.
+ - Specialize or alias the Eclipse + Make exporter.
+ - Specialize the Make exporter.
+ 
+### GNU ARM Eclipse
+
+If your IDE uses Eclipse and uses the GNU ARM Eclipse plugin, then you should 
+specialize or alias your exporter with the generic GNU ARM Eclipse.
+
+#### Alias
+
+If you do not need any specialization of the export, then replace your
+exporters class in the `EXPORT_MAP` with the `GNUARMEclipse` class. For example,
+if KDS met all of these requirements, we could:
+
+```diff
+EXPORTERS = {
+     'iar': iar.IAR,
+     'embitz' : embitz.EmBitz,
+     'coide' : coide.CoIDE,
++    'kds' : gnuarmeclipse.GNUARMEclipse,
+     'simplicityv3' : simplicity.SimplicityV3,
+     'atmelstudio' : atmelstudio.AtmelStudio,
+     'sw4stm32'    : sw4stm32.Sw4STM32,
+```
+
+#### Specialization
+
+If you need more specialization and are using an Eclipse based IDE and the GNU 
+ARM Eclipse plugin, then your exporter class inherits from the `GNUARMEclipse` 
+class. For example (with KDS again):
+
+```python
+from tools.export.exporters.gnuarmeclipse import GNUARMEcilpse
+ 
+class KDS(GNUARMEcilpse):
+     NAME = 'Kinetis Design Studio'
+     TOOLCHAIN = 'GCC_ARM'
+     ...
+
+     def generate(self):
+         """Generate eclipes project files, and some KDS specific files"""
+         super(KDS, self).generate()
+         ...
+ 
+```
+
+After inheriting from the `GNUARMEclipse` class, specialize the generate method
+in any way you need.
+
+### Eclipse + Make
+
+If your IDE uses Eclipse and does not use the GNU ARM Eclipse plugin, you
+can use the "Unmanaged makefile" Eclipse exporter classes, `EclipseGcc`, 
+`EclipseArmc5` and `EclipseIar`. Much like the GNU ARM Eclipse section, you may 
+decide to alias or specialize.
+
+### Make
+
+If your IDE is not Eclipse based but can still use a Makefile, then you can 
+specialize the Makefile exporter. Specializing the Makefile is actually how we 
+implement the Eclipse + Make exporter. 
+
+Creating an exporter based on the Makefile exporter is a two step process: 
+inherit from the appropriate Makefile class, and call its generate method.
+Taking Eclipse + Make using GCC_ARM as an example, your exporter will look like:
+
+```python
+class EclipseGcc(GccArm):
+    NAME = "Eclipse-GCC-ARM"
+```
+
+Your generate method will look similar to:
+
+
+```python
+    def generate(self):
+        """Generate Makefile, .cproject & .project Eclipse project file,
+        py_ocd_settings launch file, and software link .p2f file
+        """
+        super(EclipseGcc, self).generate()
+        ...
