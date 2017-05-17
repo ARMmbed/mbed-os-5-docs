@@ -51,6 +51,7 @@ Due to different use cases between mbed OS and CMSIS, we had to make some modifi
 Filename | Description |
 ---------|-------------|
 `cmsis_compiler.h` | Added IAR missing __ALIGNED attribute for earlier (less than 7.8.4) versions |
+``cmain.S`` | custom IAR non-RTOS boot sequence for mbed |
 
 
 ### RTX
