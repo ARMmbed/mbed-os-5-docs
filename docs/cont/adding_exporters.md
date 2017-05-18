@@ -1,12 +1,13 @@
 # Adding exporters 
 
-This is a guide for adding exporters to the mbed-os tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
+This is a guide for adding exporters to the mbed OS tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
 <span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
 
 ## What an exporter is
 
-An exporter is a Python plugin to the mbed OS tools that convert a project using mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter:
+An exporter is a Python plugin to the mbed OS tools that converts a project using mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter:
+
  - Takes input from the resource scan.
  - Uses the flags in the build profiles.
  - Has a single template file for each file type they produce. For example, an eclipse CDT project would have one template for `.project` files and one for `.cproject` files.
