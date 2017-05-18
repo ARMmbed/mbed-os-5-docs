@@ -241,6 +241,7 @@ For each of these target roles, some restrictions are in place:
   - `config`
   - `forced_reset_timeout`
   - `target_overrides`
+- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `target_overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `target_overries`, on the other hand, are designed for this use case.
 - `extra_labels` may not contain any target names
 - if `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
 - MCUs, Families and SubFamilies must set `public` to `false`
