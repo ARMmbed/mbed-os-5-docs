@@ -107,7 +107,7 @@ An unmanaged bootloader build is a method for controlling the link location of a
 
 ### `target.mbed_app_start`
 
-The configuration option `target.mbed_app_start` sets the starting address of the linker script by defining the `MBED_APP_START` macro for the linker script. You may only define this configuration option within the `target_overrides` section of an mbed application configuration, and you may not define it for the meta-target `*`. When you do not define this configuration option, it defaults to the start of a target's ROM. This configuration option must be an address within ROM.
+The configuration option `target.mbed_app_start` sets the starting address of the linker script by defining the `MBED_APP_START` macro for the linker script. You may only define this configuration option within the `target_overrides` section of an mbed application configuration, and you may not define it for the metatarget `*`. When you do not define this configuration option, it defaults to the start of a target's ROM. This configuration option must be an address within ROM.
 
 ### `target.mbed_app_size`
 
