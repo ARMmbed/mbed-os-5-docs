@@ -270,7 +270,7 @@ EXPORTERS = {
 If you need more specialization and are using an Eclipse based IDE and the GNU ARM Eclipse plugin, then your exporter class inherits from the `GNUARMEclipse` class. For example (with KDS again):
 
 ```python
-from tools.export.exporters.gnuarmeclipse import GNUARMEcilpse
+from tools.export.gnuarmeclipse import GNUARMEcilpse
  
 class KDS(GNUARMEcilpse):
      NAME = 'Kinetis Design Studio'
