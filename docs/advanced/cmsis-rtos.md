@@ -4,9 +4,9 @@ CMSIS/RTX code is imported from the original CMSIS repository, which you can fin
 
 ## Memory considerations
 
-Please note that mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for generic system, such as mbed O,S because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers, carved out on compile time, limiting amount of available memory, mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
+Please note that mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for generic systems, such as mbed OS, because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers carved out at compile time, limiting the amount of available memory, mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
 
-Therefore developers need to use the mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly. (Please consult CMSIS-RTOS2 documentation for API details.) `mbed_rtos_storage.h` header provides handy wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
+Developers need to use the mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly. (Please consult CMSIS-RTOS2 documentation for API details.) `mbed_rtos_storage.h` header provides handy wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
 
 ## Configuration
 
@@ -51,7 +51,7 @@ Due to different use cases between mbed OS and CMSIS, we had to make some modifi
 Filename | Description |
 ---------|-------------|
 `cmsis_compiler.h` | Added IAR missing __ALIGNED attribute for earlier (less than 7.8.4) versions |
-``cmain.S`` | custom IAR non-RTOS boot sequence for mbed |
+`cmain.S` | custom IAR non-RTOS boot sequence for mbed |
 
 
 ### RTX
@@ -72,6 +72,6 @@ Filename | Description |
 `svc_user.c` | Removed as its template file and should not be in our code base |
 `rt_OsEventObserver.{c,h}` | Added an interface for uVisor to be notified about certain events from privileged code |
 
-#### Other
+### Other
 
 * For all toolchains, mbed OS uses `irq_cm0.s` for both M0 and M0P cores.
