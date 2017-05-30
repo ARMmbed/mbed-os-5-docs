@@ -203,9 +203,9 @@ Other than this, `target_overrides` works exactly like it does for libraries. Ke
 
 It is an error for the application configuration to override configuration parameters that were not defined.
 
-## Overriding cumulative target attributes
+## Overriding target attributes
 
-Target configurations contain a set of cumulative attributes that can be manipulated in the application configuration. These attributes can be overridden as a normal configuration parameter, or manipulated with the special `attribute_add` and `attribute_remove` meta-attributes.
+Target configurations contain a set of attributes that can be manipulated in the application configuration. You may override these attributes as a if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` meta-attributes.
 
 Cumulative attributes:
 
