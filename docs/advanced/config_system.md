@@ -205,13 +205,13 @@ It is an error for the application configuration to override configuration param
 
 ## Overriding target attributes
 
-Target configurations contain a set of attributes that you may manipulate with an application configuration. You may override these attributes as a if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` meta-attributes.
+Target configurations contain a set of attributes that you may manipulate with an application configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` meta-attributes.
 
 Cumulative attributes:
 
-- ``features``: This attribute contains a list of features that the mbed OS tools will compile into the resulting binary and are available at runtime. The mbed OS tools will include all code within a directory that's name is a entry of the `features` attribute prefixed with `FEATURE_`. Further, the mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the mbed OS tools will report an error.
-- ``device_has``: This attribute is a list of hardware components available on the target. The mbed os tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
-- ``extra_labels``: The `extra_labels` attribute is a list of labels that the mbed OS tools use to include code. The mbed OS tools will include all code within a directory that's name is a entry of the `extra_labels` attribute prefixed with `TARGET_`. The mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
+- ``features``: This attribute contains a list of features that the mbed OS tools compile into the resulting binary and are available at runtime. The mbed OS tools include all code within a directory whose name is an entry of the `features` attribute prefixed with `FEATURE_`. Further, the mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the mbed OS tools will report an error.
+- ``device_has``: This attribute is a list of hardware components available on the target. The mbed OS tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
+- ``extra_labels``: The `extra_labels` attribute is a list of labels that the mbed OS tools use to include code. The mbed OS tools include all code within a directory whose name is an entry of the `extra_labels` attribute prefixed with `TARGET_`. The mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
 - ``macros``: This attribute is a list of target-specific macros that the mbed OS tools define during compilation.
 
 For example, this `mbed_app.json` disables the IPV4 feature; using this network stack will result in a compilation error:
