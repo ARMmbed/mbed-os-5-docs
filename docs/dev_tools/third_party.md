@@ -79,7 +79,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 
 ### Makefiles and mbed OS 2 projects
 
-When you export an mbed OS 2 project with a makefile exporter or an exporter that uses a makefile, you may have to modify the flags to remove some linker flags. You may see an error, like the one below, in your compiler output.
+When you export an mbed OS 2 project with a Makefile exporter or an exporter that uses a Makefile, you may have to modify the flags to remove some linker flags. You may see an error, such as the one below, in your compiler output.
 
 ```
 link: mbed_blinky.elf
@@ -103,7 +103,7 @@ make[1]: *** [mbed_blinky.elf] Error 1
 make: *** [all] Error 2
 ```
 
-If you see an error like this, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r`, `-Wl,--wrap,_realloc_r` and `-Wl,--wrap,_calloc_r`from the `LD_FLAGS` variable in the Makefile.
+If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r`, `-Wl,--wrap,_realloc_r` and `-Wl,--wrap,_calloc_r`from the `LD_FLAGS` variable in the Makefile.
 
 ### Make and Eclipse (GNU ARM Embedded Toolchain, IAR Compiler, ARM Compiler 5)
 
