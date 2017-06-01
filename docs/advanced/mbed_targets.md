@@ -195,60 +195,60 @@ The `supported_form_factors` property is an optional list of form factors that a
 
 # Style guide
 
-A linting script for targets.json is avalible as tools/targets/lint.py in mbed OS. This script is a utility for avoiding common pit-falls of defining targets, and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
+A linting script for `targets.json` is available as `tools/targets/lint.py` in mbed OS. This script is a utility for avoiding common errors when defining targets and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
 
-## Rules Enforced
-There are two sets of rules: rules that impact how target inheritance must be structured, and rules that govern what each role within the inheritance hierarchy is allowed to do.
+## Rules enforced
+There are two sets of rules: rules that affect how you must structure target inheritance and rules that govern what each role within the inheritance hierarchy can do.
 
 ### Inheritance rules
 A target's inheritance must look like one of these:
+
 ```
 MCU -> Board
 MCU -> Module -> Board
 Family -> MCU -> Board
 Family -> MCU -> Module -> Board
-Family -> SubFamily -> MCU -> Board
-Family -> SubFamily -> MCU -> Module -> Board
+Family -> Subfamily -> MCU -> Board
+Family -> Subfamily -> MCU -> Module -> Board
 ```
-The linting script takes it's best guess at where the Boards and Modules stop and the MCUs, Families and SubFamilies begin.
-An MCU, Family or Subfamily must have at least one any Board or Module above it in any hierarchy.
+
+The linting script guesses where the Boards and Modules stop and the MCUs, Families and Subfamilies begin. An MCU, Family or Subfamily must have at least one Board or Module above it in any hierarchy.
 
 ### Role rules
 
 For each of these target roles, some restrictions are in place:
-- Families, MCUs and SubFamilies may contain the following keys:
-  - `core`
-  - `extra_labels`
-  - `features`
-  - `bootloader_supported`
-  - `device_name`
-  - `post_binary_hook`
-  - `default_tool chain`
-  - `config`
-  - `target_overrides`
-- MCUs are required to have, and Families and SubFamilies may have:
-  - `release_versions`
-  - `supported_toolchains`
-  - `default_lib`
-  - `public`
-  - `device_has`
+- Families, MCUs and Subfamilies may contain the following keys:
+  - `core`.
+  - `extra_labels`.
+  - `features`.
+  - `bootloader_supported`.
+  - `device_name`.
+  - `post_binary_hook`.
+  - `default_tool chain`.
+  - `config`.
+  - `target_overrides`.
+- MCUs are required to have, and Families and Subfamilies may have:
+  - `release_versions`.
+  - `supported_toolchains`.
+  - `default_lib`.
+  - `public`.
+  - `device_has`.
 - Modules and Boards may have the following keys:
-  - `supported_form_factors`
-  - `is_disk_virtual`
-  - `detect_code`
-  - `extra_labels`
-  - `public`
-  - `config`
-  - `forced_reset_timeout`
+  - `supported_form_factors`.
+  - `is_disk_virtual`.
+  - `detect_code`.
+  - `extra_labels`.
+  - `public`.
+  - `config`.
+  - `forced_reset_timeout`.
   - `target_overrides`
-- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `target_overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `target_overries`, on the other hand, are designed for this use case.
-- `extra_labels` may not contain any target names
-- if `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
-- MCUs, Families and SubFamilies must set `public` to `false`
-
+- `macros` are not used. That is intentional: They do not provide any benefit over `config` and `target_overrides` and can be difficult to use. In practice, it is difficult to override the value of a macro with a value. `config` and `target_overries`, however, are designed for this use case.
+- `extra_labels` may not contain any target names.
+- If `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`.
+- MCUs, Families and Subfamilies must set `public` to `false`.
 
 ## Sample output
-The linting script takes three sub-commands: `targets`, `all-targets` and `orphans`.
+The linting script takes three subcommands: `targets`, `all-targets` and `orphans`.
 
 ### `targets` and `all-targets` commands 
 
@@ -293,11 +293,11 @@ target errors:
   - public not found, and is required
 ```
 
-The `all-targets` command is very verbose, with output that matches the format above, but too long to reproduce here.
+The `all-targets` command is very verbose, with output that matches the format above but is too long to reproduce here.
 
 ### `orphans` command
 
-The `orphans` command shows all targets that are not reachable from a public target.
+The `orphans` command shows all targets that you cannot reach from a public target.
 
 `python tools/targets/lint.py orphans`
 
