@@ -25,7 +25,7 @@ The mbed TLS library was written in C and it has a small amount of hand-optimise
 mbed TLS has separate modules for the different cryptographic primitives. Hardware acceleration interface is available for the following modules and functions:
 
 - Symmetric
-    - [AES](https://tls.mbed.org/api/aes_8h.html): [mbedtls\_aes\_setkey\_enc()](https://tls.mbed.org/api/aes_8h.html#acec17c6592b98876106d035c372b1efa), [mbedtls\_aes\_setkey\_dec()](https://tls.mbed.org/api/aes_8h.html#a11580b789634605dd57e425eadb56617), [mbedtls\_aes\_encrypt()](https://tls.mbed.org/api/aes_8h.html#a4ddac8f03fe94629e8011c84fbf825dc), [mbedtls\_aes\_decrypt()](https://tls.mbed.org/api/aes_8h.html#ae73df41aee0be1ca64cdc171c88db2e5)
+    - [AES](https://tls.mbed.org/api/aes_8h.html): [mbedtls\_aes\_setkey\_enc()](https://tls.mbed.org/api/aes_8h.html#acec17c6592b98876106d035c372b1efa), [mbedtls\_aes\_setkey\_dec()](https://tls.mbed.org/api/aes_8h.html#a11580b789634605dd57e425eadb56617), `mbedtls_internal_aes_encrypt()`, `mbedtls_internal_aes_decrypt()`
     - [ARC4](https://tls.mbed.org/api/arc4_8h.html)
     - [BLOWFISH](https://tls.mbed.org/api/blowfish_8h.html)
     - [CAMELLIA](https://tls.mbed.org/api/camellia_8h.html)
@@ -40,8 +40,6 @@ mbed TLS has separate modules for the different cryptographic primitives. Hardwa
     - [SHA512](https://tls.mbed.org/api/sha512_8h.html): [mbedtls\_sha512\_process()](https://tls.mbed.org/api/sha512_8h.html#a297e591e713063151226993d52ad74a3)
 - Asymmetric:
     - ECP: `mbedtls_internal_ecp_randomize_jac()`, `mbedtls_internal_ecp_add_mixed()`, `mbedtls_internal_ecp_double_jac()`, `mbedtls_internal_ecp_normalize_jac_many()`, `mbedtls_internal_ecp_normalize_jac()`, `mbedtls_internal_ecp_double_add_mxz()`, `mbedtls_internal_ecp_randomize_mxz()`, `mbedtls_internal_ecp_normalize_mxz()`
-
-<span class="warnings">**Warning:** Hardware acceleration of asymmetric cryptographic functions in mbed OS 5.3 is for evaluation only, and is available in the feature branch [feature\_hw\_crypto](https://github.com/ARMmbed/mbed-os/tree/feature_hw_crypto).</span>
 
 ### How can I make mbed TLS use my hardware accelerator?
 
@@ -72,13 +70,13 @@ These are functions that do not have a counterpart in the standard mbed TLS impl
 
 ### How to implement the functions
 
-These functions have the same name as the ones they replace. There is a [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation and you can find them in the `ecp_internal.h` header file. The function declarations have to remain unchanged, otherwise mbed TLS can't use them.
+These functions have the same name as the ones they replace. There is a [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module and parts of the AES module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation, and you can find them in the `ecp_internal.h` and `aes.h` header files. The function declarations have to remain unchanged; otherwise, mbed TLS can't use them.
 
 Clone the [mbed OS repository](https://github.com/ARMmbed/mbed-os) and copy the source code of your function definitions to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. Create a pull request when your code is finished and production ready. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
 
 ### How to implement ECP module functions
 
-mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `ecp_add_mixed_alt` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in mbed TLS see the corresponding Knowledge Base article](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool).
+mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in mbed TLS, see the corresponding Knowledge Base article](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool).
 
 The method of accelerating the ECP module may support different kinds of elliptic curves. If that acceleration is a hardware accelerator, you may need to indicate what kind of curve operation the accelerator has to perform by setting a register or executing a special instruction. If performing this takes significant amount of time or power, then you may not want mbed TLS to do this step unnecessarily. The replaceable functions in this module are relatively low level, and therefore it may not be necessary to do this initialisation and release in each of them.
 
