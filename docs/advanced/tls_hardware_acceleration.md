@@ -49,6 +49,8 @@ mbed TLS has a variety of options to make use of your alternative implementation
 
 The easier and safer way to extend functionality is to [override some or all of the functions in a particular module](#adding-acceleration-by-replacing-functions). Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to [replace the whole module](#adding-acceleration-by-replacing-modules). Please note that in the case of ECP functions the override is only partial; mbed TLS will fall back to the software implementation if the hardware cannot handle a particular group.
 
+<span class="warnings">**Warning:** The current framework can't handle global initialization and shut down of the accelerator hardware. Although the hardware initialization can be done when initializing the corresponding mbed TLS context, shutting it down may not be possible or efficient. If this is the case, then the application developer has to take care of it at a point when mbed TLS finished running.</span>
+
 ## Adding acceleration by replacing functions
 
 ### Process overview
