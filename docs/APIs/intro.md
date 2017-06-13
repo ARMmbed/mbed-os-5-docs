@@ -12,5 +12,4 @@ Once you're familiar with the basic concepts, you can move on to more advanced e
 * [Building a LoRa network](https://docs.mbed.com/docs/lora-with-mbed/en/latest/).
 * Or any of the other examples [on our full list](https://docs.mbed.com/docs/examples-list/en/latest/).
 
-<span class="tips">The full API references are [here](https://docs.mbed.com/docs/mbed-os-api-reference/). The [doxygen is here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/index.html).</span>
-
+<span class="tips">The full API references are [here](https://docs.mbed.com/docs/mbed-os-api-reference/). The [doxygen is here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/index.html).</span>

@@ -60,7 +60,7 @@ If you don't like asynchronous programming, or if you wrote your code in asynchr
 
 ## Porting strategy 2: use the optional mbed OS 5 event loop
 
-To help ease porting MINAR applications, and to provide support for asynchronous style programming, mbed OS 5 provides an optional event loop. The main documentation for the event loop can be found [here](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.4/APIs/tasks/events/). In short, the mbed OS 5 event loop implementation consists of an [EventQueue class](https://github.com/ARMmbed/mbed-os/blob/master/events/EventQueue.h) that implements the storage for the events and has a `dispatch` function. There are differences between MINAR and `EventQueue`:
+To help ease porting MINAR applications, and to provide support for asynchronous style programming, mbed OS 5 provides an optional event loop. The main documentation for the event loop can be found [here](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.5/APIs/tasks/events/). In short, the mbed OS 5 event loop implementation consists of an [EventQueue class](https://github.com/ARMmbed/mbed-os/blob/master/events/EventQueue.h) that implements the storage for the events and has a `dispatch` function. There are differences between MINAR and `EventQueue`:
 
 - MINAR and the mbed OS 5 event loop have incompatible APIs.
 - Both MINAR and `EventQueue` work with *events* (objects that are placed in the event queue). However, the interface and implementations of events in MINAR and mbed OS 5 are different, and that's also true for the APIs that use them. Look at [the Callback class](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.3/api/group__drivers.html), [the Event class](https://github.com/ARMmbed/mbed-os/blob/master/events/Event.h) and [the EventQueue class](https://github.com/ARMmbed/mbed-os/blob/master/events/EventQueue.h) for more details about the mbed OS 5 implementation.
@@ -71,7 +71,7 @@ To help ease porting MINAR applications, and to provide support for asynchronous
 
 Even if you choose to use the mbed OS 5 event loop, the RTOS is always present, so you need to consider all the RTOS-specific issues (such as synchronization).
 
-If you want to keep the asynchronous aspect of your mbed OS 3 application, the best way to proceed is to read the [documentation of the mbed OS event loop](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.4/APIs/tasks/events/) and rewrite your application using the new APIs. Here are some rough API compatibility guides:
+If you want to keep the asynchronous aspect of your mbed OS 3 application, the best way to proceed is to read the [documentation of the mbed OS event loop](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.5/APIs/tasks/events/) and rewrite your application using the new APIs. Here are some rough API compatibility guides:
 
 - You can replace the MINAR function `postCallback` with `EventQueue::call`.
 - You can replace the MINAR function `delay` with `EventQueue::call_in`.
