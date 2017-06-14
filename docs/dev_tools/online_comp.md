@@ -97,7 +97,7 @@ The **Compile** menu offers five options:
 1. **Compile All:** same as *compile*, but rebuilds all source code, even if it hasn't changed since the last compile.
 1. **Build Only:** compiles your code but doesn't download the result.
 1. **Compile Macros:** defines additional macros at compile time.
-1. **Update Docs**: see the [guide for documenting APIs](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.1/APIs/API_Documentation/).
+1. **Update Docs**: see the [guide for documenting APIs](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.5/APIs/API_Documentation/).
 
 ### Copying the file to the board
 
