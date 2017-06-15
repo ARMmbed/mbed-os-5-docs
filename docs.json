@@ -1,0 +1,21 @@
+[ 
+    {
+        "title": "mbed OS API",
+        "description": "The API references for mbed OS",
+        "slug": "mbed-os-api",
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+	      "branch": "mbed-os-5.4",
+        "options": {
+	          "ENABLE_PREPROCESSING": "YES",
+            "MACRO_EXPANSION": "YES",
+            "EXPAND_ONLY_PREDEF": "NO",
+            "SEARCH_INCLUDES": "YES",
+            "INCLUDE_PATH": "", 
+            "INCLUDE_FILE_PATTERNS": "", 
+            "PREDEFINED": "DOXYGEN_ONLY MBED_DEPRECATED_SINCE(f, g)= MBED_ENABLE_IF_CALLBACK_COMPATIBLE(F, M)=",
+            "SKIP_FUNCTION_MACROS": "NO",
+            "EXCLUDE_PATTERNS": "*/tools/* */TESTS/* */targets/* */FEATURE_*/* */features/mbedtls/* */features/storage/* */features/unsupported/* */features/filesystem/* */BUILD/* */rtos/rtx*/* */cmsis/* */features/FEATURES_*"
+        }
+    }
+]
