@@ -6,8 +6,8 @@
       "type": "markdown",
       "example_panel": true,
       "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_Cloud_Docs/blob/R1.2.1_GA/Docs/intro/general_intro.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_Cloud_Docs/blob/R1.2.1_GA/Docs/intro/checklist.md"}
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/index.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/first_program.md"}
 
 ]
   },
