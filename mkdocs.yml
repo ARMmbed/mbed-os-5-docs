@@ -41,6 +41,7 @@ pages:
 - ['concepts/thread_safety.md', 'Advanced tutorials', 'Thread safety']
 - ['concepts/memory_model.md', 'Advanced tutorials', 'Memory model']
 - ['concepts/memap.md', 'Advanced tutorials', 'memap - static memory map analysis']
+- ['advanced/cmsis-rtos.md', 'Advanced tutorials', 'CMSIS and RTX']
 - ['advanced/runtime_stats.md', 'Advanced tutorials', 'Runtime statistics']
 - ['advanced/runtime_mem_trace.md', 'Advanced tutorials', 'Runtime memory tracing']
 - ['advanced/tls_hardware_acceleration.md', 'Advanced tutorials', 'mbed TLS Hardware acceleration']
