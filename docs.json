@@ -1,12 +1,20 @@
 [
   {
+      "title": "Introduction to mbed OS",
+      "description": "Introduction to mbed OS and the development tools",
+      "slug": "mbed-os-intro",
+      "type": "markdown",
+      "example_panel": true,
+      "sources": [
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"}
+]
+  },  {
       "title": "Developing offline with mbed CLI",
       "description": "Develop applications for mbed OS with the mbed Command Line Tool",
       "slug": "mbed-os-offline",
       "type": "markdown",
       "example_panel": true,
       "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"},
         {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
         {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
         {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/blinky_cli.md"},
