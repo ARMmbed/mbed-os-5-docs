@@ -49,6 +49,7 @@ mbed TLS has a variety of options to make use of your alternative implementation
 
 The easier and safer way to extend functionality is to [override some or all of the functions in a particular module](#adding-acceleration-by-replacing-functions). Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to [replace the whole module](#adding-acceleration-by-replacing-modules). Also, individual function replacement is only supported for function names [listed above under each module](#what-parts-can-i-accelerate); for modules listed without function names, only replacing the whole module is supported. Please note that in the case of ECP functions the override is only partial; mbed TLS will fall back to the software implementation if the hardware cannot handle a particular group.
 
+No matter which approach you choose, please take notes of the [considerations below](#considerations-on-alternative-implementations).
 
 ## Adding acceleration by replacing functions
 
@@ -133,3 +134,19 @@ To replace a module you have to:
 ### Where to find the default implementations
 
 The default implementation of the modules are usually in the file `feature/mbedtls/src/<Module Name>.c`. The ECP module is split to two files: `ecp.c` and `ecp_curves.c`.
+
+## Considerations on alternative implementations
+
+### Concurrency
+
+Note that functions in mbed TLS can be called from multiple threads and from multiple processes at the same time. As hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
+
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, take care to protect the operation with mutual exclusion primitive such as a [mutex](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mutex). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+
+### Power management
+
+The current framework does not provide an interface to initialize and shut down accelerator hardware. A simple approach is to perform any necessary hardware initialization during system startup (outside of mbed TLS), however this may not be desirable for power consumption reasons. At the other end of the spectrum, it is possible to initialize the hardware at the beginning of each function, and shut it down as soon as the results have been read. This is a viable strategy if initialization is cheap enough.
+
+More complex scenarios, where it is neither desirable to leave the hardware powered on permanently, nor to initialize it each time, need to be considered on a case-by-case basis. Note that unconditionally shutting down the hardware in `mbedtls_xxx_free` functions is usually not a particularly useful strategy, because there may be other live contexts that require the hardware. A more useful strategy is to keep a global use counter, which is incremented each time a context is allocated and decremented each time a context is freed; when the global counter drops to 0, the hardware is no longer in use.
+
+In specialized applications, it may be best to provide a custom function to switch the hardware on and off and let the application developer decide when to call it.
