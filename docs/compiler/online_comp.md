@@ -1,19 +1,19 @@
-# mbed Online Compiler
+## mbed Online Compiler
 
 The online compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is [an mbed developer account](https://developer.mbed.org/account/signup/).
 
 The compiler is always available on [https://developer.mbed.org/compiler/](https://developer.mbed.org/compiler/).
 
-## Video summary
+### Video summary
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the mbed Online Compiler</span></span>
 
-## Importing code to the compiler
+### Importing code to the compiler
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
 
 1. Directly from the site: wherever you see a program on the site, you should see an **Import into mbed IDE** button:
-	
+
 	<span class="images">![](Images/import_button_site.png)<span>Most code snippets on the site can be directly imported</span></span>
 
 	Clicking that button will take you to the compiler; you can then give the program a new name and import it to your workspace:
@@ -31,14 +31,14 @@ There are two methods of importing the code into the online compiler: directly f
 
 	Double click a program to import it.
 
-## Creating a new program 
+### Creating a new program
 
 1. From the **New** menu, select **New Program**:
 
 	<span class="images">![](Images/new.png)<span>The applications list</span>Triggering a new program</span>
 
 1. The **Create new program** pop-up opens.
-	1. Select your platform (board). 
+	1. Select your platform (board).
 	1. You can create from an existing template or from an empty program.
 	1. Enter a unique name.
 
@@ -63,7 +63,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 		<span class="images">![](Images/with_mbed.png)<span>mbed OS is now in the workspace</span></span>
 
-## Getting your program on your board
+### Getting your program on your board
 
 The mbed Online Compiler builds a file that can run on your board. All you need to do is:
 
@@ -71,7 +71,7 @@ The mbed Online Compiler builds a file that can run on your board. All you need 
 1. Compile the code and download the compiled file.
 1. Copy the file to your board.
 
-### Selecting your board
+#### Selecting your board
 
 mbed programs can be built to run on multiple boards. The hard work is done behind the scenes by mbed OS itself. All you need to do is tell the mbed Online Compiler which board you're building for.
 
@@ -89,7 +89,7 @@ To select a board as the build target:
 
 	<span class="images">![](Images/add_board.png)<span>Adding a board to the mbed Online Compiler list</span></span>
 
-###  Compile and download
+#### Compile and download
 
 The **Compile** menu offers five options:
 
@@ -99,17 +99,17 @@ The **Compile** menu offers five options:
 1. **Compile Macros:** defines additional macros at compile time.
 1. **Update Docs**: see the [guide for documenting APIs](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.5/APIs/API_Documentation/).
 
-### Copying the file to the board
+#### Copying the file to the board
 
 <span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../getting_started/what_need.md#windows-serial-driver).</span>
 
-Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section. 
+Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
 
 <span class="images">![](Images/device_on_mac.png)<span>The device appears as removable storage, under the name MBED</span></span>
 
-## Keyboard shortcuts
+### Keyboard shortcuts
 
-### Navigation
+#### Navigation
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -128,8 +128,7 @@ Your board should appear on your computer as removable storage. To run your prog
 | Ctrl + up arrow | Scroll up one row |
 | Ctrl + down arrow | Scroll down one row |                            
 
-
-### Ctrl key sequences
+#### Ctrl key sequences
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -143,9 +142,9 @@ Your board should appear on your computer as removable storage. To run your prog
 | Ctrl + E | Erase current line |
 | Ctrl + F | Find and replace |
 | Ctrl + Alt + F | Find in files |
-| Ctrl + Shift + F | Format code (selected text or current file) | 
+| Ctrl + Shift + F | Format code (selected text or current file) |
 | Ctrl + H | Find and replace |
-| Ctrl + K | Find and replace | 
+| Ctrl + K | Find and replace |
 | Ctrl + L | Change selected text to lower case |
 | Ctrl + R | Current file's revision history (must be in single file mode) |
 | Ctrl + S | Save current file |
@@ -159,9 +158,9 @@ Your board should appear on your computer as removable storage. To run your prog
 | Ctrl + Y | Redo |
 | Ctrl + Z | Undo |
 | Ctrl + / | Toggle line comment (using slashes) |
-| Ctrl + Shift + / | Toggle block comment (using /* ... */)| 
+| Ctrl + Shift + / | Toggle block comment (using /* ... */)|
 
-### Misc
+#### Misc
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -176,9 +175,9 @@ Your board should appear on your computer as removable storage. To run your prog
 | F9 | Compile and download |
 | F10 | Compile all and download |
 
-### Touch device shortcuts
+#### Touch device shortcuts
 
-#### Editor
+##### Editor
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -188,7 +187,7 @@ Your board should appear on your computer as removable storage. To run your prog
 | Hold | Context menu |
 | Touch + drag | Text selection until the touch is released (opens context menu) |
 
-#### Compiler IDE
+##### Compiler IDE
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|

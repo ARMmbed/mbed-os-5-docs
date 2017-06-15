@@ -1,4 +1,4 @@
-# Windows serial driver
+## Windows serial driver
 
 You can connect your board to your computer over USB. This should work out of the box on Linux and Mac OS X, but for Windows earlier than Windows 10, you will probably need to install a serial port driver:
 
