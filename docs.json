@@ -1,7 +1,7 @@
 [ 
     {
         "title": "mbed OS API",
-        "description": "The API references for mbed OS",
+        "description": "The full mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api",
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
