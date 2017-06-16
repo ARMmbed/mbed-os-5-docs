@@ -79,7 +79,7 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/communication/ble.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/security/security.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/security/tls.md"},
-            {"type": "markdown", "url": "https://github.com/iriark01/uvisor/blob/6b2ae6affbfb77927ebb8929f479986bf55ddbc0/docs/lib/QUICKSTART.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/security/uvisor.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/storage/storage_index.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/storage/filesystem.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/storage/block_device.md"},
