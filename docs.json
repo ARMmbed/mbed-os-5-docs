@@ -40,6 +40,7 @@
         "description": "References to the mbed OS APIs",
         "slug": "mbed-os-api-ref",
         "type": "markdown",
+        "example_panel": true,
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/intro.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/tasks/tasks.md"},
