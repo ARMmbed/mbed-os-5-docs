@@ -77,7 +77,6 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/communication/mesh.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/communication/ble.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/security/security.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/uvisor/blob/master/docs/lib/QUICKSTART.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/security/tls.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/storage/storage_index.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/storage/filesystem.md"},
