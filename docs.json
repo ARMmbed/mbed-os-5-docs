@@ -1,51 +1,49 @@
 [
-  {
-      "title": "Introduction to mbed OS",
-      "description": "Introduction to mbed OS and the development tools",
-      "slug": "mbed-os-intro",
-      "type": "markdown",
-      "example_panel": true,
-      "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"}
-]
-  },  {
-      "title": "Developing offline with mbed CLI",
-      "description": "Develop applications for mbed OS with the mbed Command Line Tool",
-      "slug": "mbed-os-offline",
-      "type": "markdown",
-      "example_panel": true,
-      "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/blinky_cli.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-cli/blob/master/README.md"}
-]
-  },
-  {
-      "title": "Developing online with the mbed Online Compiler",
-      "description": "Develop applications for mbed OS with the mbed Online Compiler",
-      "slug": "mbed-os-online",
-      "type": "markdown",
-      "example_panel": true,
-      "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/blinky_compiler.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/online_comp_getting_started.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/online_comp.md"}
+    {
+        "title": "Introduction to mbed OS",
+        "description": "Introduction to mbed OS and the development tools",
+        "slug": "mbed-os-intro",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"}
+        ]
+    },  
+    {
+        "title": "Developing offline with mbed CLI",
+        "description": "Develop applications for mbed OS with the mbed Command Line Tool",
+        "slug": "mbed-os-offline",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/blinky_cli.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-cli/blob/master/README.md"}
+        ]
+    },
+    {
+        "title": "Developing online with the mbed Online Compiler",
+        "description": "Develop applications for mbed OS with the mbed Online Compiler",
+        "slug": "mbed-os-online",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/blinky_compiler.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/online_comp_getting_started.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/online_comp.md"}
 
-]
-  },
+        ]
+    },
     {
         "title": "mbed OS API",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api",
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
-	      "branch": "mbed-os-5.4",
+        "branch": "mbed-os-5.4",
         "options": {
-	          "ENABLE_PREPROCESSING": "YES",
+            "ENABLE_PREPROCESSING": "YES",
             "MACRO_EXPANSION": "YES",
             "EXPAND_ONLY_PREDEF": "NO",
             "SEARCH_INCLUDES": "YES",
