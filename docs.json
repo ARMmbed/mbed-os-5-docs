@@ -178,6 +178,19 @@
             "PREDEFINED": "DOXYGEN_ONLY MBED_DEPRECATED_SINCE(f, g)= MBED_ENABLE_IF_CALLBACK_COMPATIBLE(F, M)=",
             "SKIP_FUNCTION_MACROS": "NO",
             "EXCLUDE_PATTERNS": "*/tools/* */TESTS/* */targets/* */FEATURE_*/* */features/mbedtls/* */features/storage/* */features/unsupported/* */features/filesystem/* */BUILD/* */rtos/rtx*/* */cmsis/* */features/FEATURES_*"
+        },
+    {
+        "title": "mbed Client API references",
+        "description": "The API references for mbed Client.",
+        "slug": "mbed-client",
+        "type": "doxygen",
+        "hidden": true,
+        "source": "https://github.com/ARMmbed/mbed-cloud-client-restricted/",
+        "tag":"RR1.2.1-EA-docs",
+        "options": {
+		"INPUT": "mbed-cloud-client-restricted/mbed-client/DOXYGEN_FRONTPAGE.md mbed-cloud-client-restricted/mbed-client/mbed-client",
+	    	"PREDEFINED": "__DOXYGEN__",
+		"USE_MDFILE_AS_MAINPAGE": "mbed-cloud-client-restricted/mbed-client/DOXYGEN_FRONTPAGE.md"
         }
     }
 ]
