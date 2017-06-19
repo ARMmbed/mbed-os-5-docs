@@ -50,7 +50,7 @@
             {"type": "markdown", "url": "https://github.com/iriark01/nsapi-porting-guide/blob/patch-1/README.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_porting.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_hardware_acceleration.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/MINAR_migration.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/MINAR_migration.md"}
         ]
     },
     {
