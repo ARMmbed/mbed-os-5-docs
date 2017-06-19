@@ -51,14 +51,10 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/timer_design.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/timing_considerations.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/interactions.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/task_manage_methods.md"}
-
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/network_stack_sleep.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/bootloader.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/debug_profile.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/release_profile.md"}
         ]
     },
     {

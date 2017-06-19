@@ -1,16 +1,16 @@
-# Bootloader
+## Bootloader
 
 This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
-## Porting bootloader
+### Porting bootloader
 
 A target requires flash HAL functionality in order to support the bootloader. Please follow [the bootloader porting guide](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/flash/) for more details.
 
-## mbed OS managed bootloader
+### mbed OS managed bootloader
 
 The tools of mbed OS know how to manage some bootloader projects. The tools can manage bootloader projects where the bootlodoader comes before the application in ROM and the application starts immediately after the bootloader. If your bootloader does not meet both of these requirements, then please read the [unmanaged bootloader section](bootloader.md#unmanaged-bootloader). A managed bootloader project automatically merges the bootloader image with the application image as part of the application image build process.
 
-### Creating the bootloader
+#### Creating the bootloader
 
 Creating a bootloader is similar to creating a regular application. The only additional step you need is to specify the size of the bootloader as a target override in mbed_app.json in the target field "target.restrict_size":
 
@@ -57,7 +57,7 @@ mbed_start_application(POST_APPLICATION_ADDR);
 
 For an example showing how to create a bootloader, see the [mbed-os-example-bootloader](https://github.com/armmbed/mbed-os-example-bootloader) repository.
 
-### Creating the main program
+#### Creating the main program
 
 To create an application using a bootloader, you must first have created the bootloader binary and added it to the current project. You must then specify the bootloader image in mbed_app.json in the target_override section:
 
@@ -73,7 +73,7 @@ To create an application using a bootloader, you must first have created the boo
 Adding this field has following effects:
 
 * When a build occurs, the application builds for the address immediately after the bootloader. The build system does this automatically by defining the symbols `MBED_APP_START` and `MBED_APP_SIZE` in the linker script (.sct, .ld or .icf).
-* At the end of building, the build image is automatically combined with the bootloader to create the final image. 
+* At the end of building, the build image is automatically combined with the bootloader to create the final image.
 
 Note: When building offline, the original uncombined image is in the same directory `<project-name>_application.bin`.
 
@@ -95,20 +95,20 @@ It produces the following ROM layout:
 |(my_bootloader.bin)|
 |                   |
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
-``` 
+```
 
 For an example showing how to create an application that uses a bootloader, see the [mbed OS bootloader example](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
 
-## Unmanaged bootloader
+### Unmanaged bootloader
 
 You want to have an unmanaged bootloader when your bootloader's requirements conflict with the requirements of the managed bootloader. You need an unmanaged bootloader when your bootloader does not come before your application in ROM or your application does not start immediately after your bootloader. Unlike a managed bootloader, an unmananged bootloader does not automatically merge the bootloader image with the application image after building the application. We expect users of an unmanaged bootloader build to construct thier own set of scripts built atop the `mbed compile` primitive to perform bootloader and application merging.
 
-An unmanaged bootloader build is a method for controlling the link location of a program within mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. 
+An unmanaged bootloader build is a method for controlling the link location of a program within mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`.
 
-### `target.mbed_app_start`
+#### `target.mbed_app_start`
 
 The configuration option `target.mbed_app_start` sets the starting address of the linker script by defining the `MBED_APP_START` macro for the linker script. You may only define this configuration option within the `target_overrides` section of an mbed application configuration, and you may not define it for the metatarget `*`. When you do not define this configuration option, it defaults to the start of a target's ROM. This configuration option must be an address within ROM.
 
-### `target.mbed_app_size`
+#### `target.mbed_app_size`
 
 The configuration option `target.mbed_app_size` defines the size of an application image in ROM by defining the `MBED_APP_SIZE` macro for the linker script. You may only define this configuration option on a per-target basis defined within the `target_overrides` section of an mbed application configuration, and you may not define it for the metatarget `*`. When you do not define this configuration option, it defaults to the remaining ROM. The mbed OS tools calculate the remaning ROM by subtracting the image's offset into ROM from the total size of ROM. Together with `target.mbed_app_start`, these configuration options define a continuous region of memory that an image may use. The tools verify that this region of memory is in ROM, but the tools do not perform any other checks for consistency or validity.
