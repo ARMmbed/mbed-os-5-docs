@@ -124,5 +124,18 @@
             "SKIP_FUNCTION_MACROS": "NO",
             "EXCLUDE_PATTERNS": "*/tools/* */TESTS/* */targets/* */FEATURE_*/* */features/mbedtls/* */features/storage/* */features/unsupported/* */features/filesystem/* */BUILD/* */rtos/rtx*/* */cmsis/* */features/FEATURES_*"
         }
+    },
+    {
+        "title": "mbed OS release notes",
+        "description": "Release notes and known issues for mbed OS 5",
+        "slug": "mbed-os-relase-notes",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/index.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_1/release.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_2/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_3/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_4/release_note.md"}
+        ]
     }
 ]
