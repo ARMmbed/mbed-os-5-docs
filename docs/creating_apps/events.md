@@ -1,4 +1,4 @@
-# About the mbed OS event loop
+## About the mbed OS event loop
 
 One of the optional mbed OS features is an event loop mechanism that can be used to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
@@ -8,7 +8,7 @@ One of the optional mbed OS features is an event loop mechanism that can be used
 
 The event loop offers a solution to these issues in the form of an API that can defer execution of code from the interrupt context to the user context. More generally, the event loop can be used anywhere in a program (not necessarily in an interrupt handler) to defer code execution to a different context.
 
-## Overview of the mbed OS event loop
+### Overview of the mbed OS event loop
 
 An event loop has two main components:
 
@@ -17,7 +17,7 @@ An event loop has two main components:
 
 The mbed OS event queue is implemented by the [mbed-events library](http://github.com/ARMmbed/mbed-os/tree/master/events). It's a good idea to go through the [README of mbed-events](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md), as it shows how to use the event queue.
 
-## Creating an event loop
+### Creating an event loop
 
 The event loop must be created and started manually. The simplest way to achieve that is to create a `Thread` and run the event queue's `dispatch` method in the thread:
 
@@ -39,7 +39,7 @@ int main () {
 
 Note that although this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer from running more than one event loop, simply by following the create/start pattern above for each of them.
 
-## Using the event loop
+### Using the event loop
 
 Once the event loop is started, it can post events. Let's consider a very simple example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, while the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
@@ -105,9 +105,9 @@ with this line:
 sw.rise(queue.event(rise_handler));
 ```
 
-The code is safe now, but we may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt. 
+The code is safe now, but we may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt.
 
-Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to the user's action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context. 
+Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to the user's action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context.
 
 The solution is to split `rise_handler` into two parts: the time critical part will run in interrupt context, while the non-critical part (displaying the message) will run in user context. This is easily doable using `queue.call`:
 
@@ -140,6 +140,6 @@ The scenario above (splitting an interrupt handler's code into time critical cod
 
 We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
-## Where to go from here
+### Where to go from here
 
 We just scratched the surface of how event queues work in mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that are not covered in this document, including calling functions with arguments, queueing functions to be called after a delay, or queueing functions to be called periodically. The [README of the mbed-events library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. For more details about how the events library is implemented, check [this file](https://github.com/ARMmbed/mbed-os/blob/master/events/equeue/README.md).

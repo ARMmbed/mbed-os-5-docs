@@ -1,10 +1,10 @@
-# Code contributions: GitHub pull requests and code style guide
+## Code contributions: GitHub pull requests and code style guide
 
 The mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
 <span class="tips">**Tip:** Please also read the section [Creating and publishing your own libraries and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
 
-## Guidelines for GitHub pull requests
+### Guidelines for GitHub pull requests
 
 Pull requests on GitHub have to meet the following requirements in order to keep the code and commit history clean:
 
@@ -22,17 +22,17 @@ Pull requests on GitHub have to meet the following requirements in order to keep
 * Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 * Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the mbed-drivers repo would not be acceptable, as it is already understood that the commit applies to "mbed-drivers". Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
 
-## Code acceptance
+### Code acceptance
 
 [After the CLA](contributing.md) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
-## Coding style
+### Coding style
 
-Whether you're writing new code or fixing bugs in existing code, please follow the mbed OS coding style. 
+Whether you're writing new code or fixing bugs in existing code, please follow the mbed OS coding style.
 
 mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
 
-### Code sample
+#### Code sample
 
 ```c
 static const PinMap PinMap_ADC[] = {
@@ -51,7 +51,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
             timeout = 10;
             break;
     }
-  
+
     while (!adc_hal_is_conversion_completed(instance, 0)) {
         if (timeout == 0) {
             break;
@@ -59,29 +59,29 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
             timeout--;
         }
     }
-  
+
     if (obj->adc == ADC_CHANNEL0) {
         adc_measure_channel(instance);
         adc_stop_channel(instance);
     } else {
         error("channel not available");
     }
-    
+
 #if DEBUG
     for (uint32_t i = 0; i < 10; i++) {
         printf("Loop : %d", i);
     }
 #endif
     return adc_hal_get_conversion_value(instance, 0);
-} 
+}
 ```
-### Rules
+#### Rules
 
 * Indentation - four spaces. Please do not use tabs.
 
 * Braces - K&R style.
 
-* One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)). 
+* One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)).
 
 * One line per statement.
 
@@ -95,7 +95,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 * Comments should use proper spelling and grammar.
 
-* For pointers, `*` is adjacent to a name (analogin_t *obj).
+* For pointers, `*` is adjacent to a name (`analogin_t *obj`).
 
 * Don't leave trailing spaces at the end of lines.
 
@@ -107,9 +107,9 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 * A file should have an empty line at the end.
 
-### Naming conventions
+#### Naming conventions
 
-#### Classes
+##### Classes
 
 * Begins with a capital letter, and each word in it also begins with a capital letter (AnalogIn, BusInOut).
 
@@ -117,11 +117,11 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 * Private members starts with an underscore: ``__User defined types (typedef)))``.
 
-* Structures - suffix _t - to denote it is a user defined type.
+* Structures - `suffix _t` - to denote it is a user defined type.
 
 * Enumeration - the type name and values name - same naming convention as classes (for example MyNewEnum).
 
-#### Functions
+##### Functions
 
 * Contain lower case letters (as methods within classes).
 
@@ -139,17 +139,17 @@ public:
      * @param pin AnalogIn pin to connect to
      * @param name (optional) A string to identify the object
      */
-    AnalogIn(PinName pin) 
+    AnalogIn(PinName pin)
     {
         analogin_init(&_adc, pin);
     }
-	
+
     /** Read the input voltage, represented as a float in the range [0.0, 1.0].
      *
      * @returns
      * 	A floating-point value representing the current input voltage, measured as a percentage
      */
-    uint32_t read() 
+    uint32_t read()
     {
         return analogin_read(&_adc, operation);
     }
@@ -168,7 +168,7 @@ struct analogin_s {
 typedef struct analogin_s analogin_t;
 ```
 
-### Doxygen documentation
+#### Doxygen documentation
 
 All functions and methods should contain documentation using doxgyen.
 
@@ -180,11 +180,11 @@ You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/fil
 astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
 ```
 
-## Compile flags and ABI requirements
+### Compile flags and ABI requirements
 
 All C and C++ code submitted to mbed OS must compile with GCC ARM Embedded, ARM Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles used by the mbed OS tools are each subsets of these flags. Each profile has one optimization setting.
 
-### GCC ARM Embedded
+#### GCC ARM Embedded
 
 Code must be compatible with the `softfp` float ABI. mbed OS uses the following flags when compiling with GCC ARM Embedded.
 
@@ -198,10 +198,10 @@ flag                        | meaning
 `-fno-rtti`                 | Disable runtime type information (C++ only)
 `-Os`                       | Optimize for size
 `-O0`                       | Do not optimize
-`-std=gnu99`                | C uses the GNU99 standard 
+`-std=gnu99`                | C uses the GNU99 standard
 `-std=gnu++98`              | C++ uses the GNU++98 standard
 
-### ARM Compiler 5
+#### ARM Compiler 5
 
 mbed OS uses the following flags when compiling with ARM Compiler 5.
 
@@ -213,7 +213,7 @@ flag       | meaning
 `-O3`      | Optimize for speed
 `-c99`     | C uses the C99 standard
 
-### IAR EWARM
+#### IAR EWARM
 
 mbed OS uses the following flags when compiling with IAR EWARM.
 

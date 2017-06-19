@@ -1,22 +1,22 @@
-# mbed OS Software Design Guide
+## mbed OS Software Design Guide
 
-<span class="tips">
+>>> C
 Principles of mbed software:
-</br>
-- Consistent </br> 
+
+- Consistent </br>
 - Intuitive </br>
 - Simple </br>
 - Reliable </br>
-</span>
+>>>
 
-## Style
+### Style
 
 Please refer to the [mbed style guide](code_style.md).
 
-## Organization
+### Organization
 
 The mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the mbed OS codebase as a single Git repo. We suggest this model for external libraries.
- 
+
 - Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
 
     ```
@@ -56,15 +56,15 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
 - In C modules, every nonstatic function and type should be prefixed with the module’s name followed by an underscore. For example: `mbed_critical_section_enter()`, `lwip_gethostbyname(host)`.
 - A module contained in the mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
 - Special directories should follow consistent naming convention.
- 
-## Contribution
+
+### Contribution
 1. Please refer to the [mbed contribution guide](contributing.md).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:
-	
+
     ```
-    lwip: Fixed buffer overrun in rx loop 
+    lwip: Fixed buffer overrun in rx loop
     The rx loop did not properly wait for rx semaphore to release
     causing the buffer to overrun
     ```
@@ -78,11 +78,11 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
     - Apache.
     - Permissive Binary License.
 
-## API design
+### API design
 
 A general module can be split into two APIs, the frontend (or user API) and the backend (or porting layer). The user API describes the programmer interface that the library implements. For mbed OS, the user-facing API should adopt a C++ class-based interface, while the porting layer should adopt a C-compatible interface.
 
-### API design - user API
+#### API design - user API
 
 - Each module should provide an object-oriented C++ user API.
 - The current standard is strictly C++03 (for portability).
@@ -129,7 +129,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 1. Nonrecoverable errors (such as OOM and mutex lock in interrupt) should not return to users.
 1. Recoverable errors (such as UDP packet loss) should be propagated to the user via error code.
 
-### API design - porting layer
+#### API design - porting layer
 
 - Each module should provide a C-compatible porting layer.
 - The current standards are strictly C99 (for portability).
@@ -138,19 +138,19 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - The porting layer should be designed to allow as much variance in the implementation as is reasonable.
 - Simplicity is beautiful.
 
-### Thread and IRQ safety
+#### Thread and IRQ safety
 
 [Full documentation](../concepts/thread_safety.md).
 
 - User APIs should be thread safe.
 - If a user API is intended to be interrupt safe, this should be clearly documented.
-- If a user API is unable to be thread safe, this should be clearly documented with warning notation. 
+- If a user API is unable to be thread safe, this should be clearly documented with warning notation.
 	Use a consistent form across all APIs: **"warning: not thread safe"**.
 - A module’s porting layer should be designed for implementations that are not thread safe.
-- If a callback is called in interrupt context, the API responsible should be clearly documented with a warning. 
+- If a callback is called in interrupt context, the API responsible should be clearly documented with a warning.
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
 
-## Documentation
+### Documentation
 
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
 
@@ -163,7 +163,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      osStatus lock(uint32_t millisec=osWaitForever);
     ```
 
-- The doxygen of each class's header file should contain a simple use example. 
+- The doxygen of each class's header file should contain a simple use example.
 - Each module should provide a README that documents the module:
 	- The README should start with a small paragraph describing the module to users with no prior knowledge.
 	- The README should contain a code example showing how to use the module.
@@ -171,7 +171,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 	- If a module contains tests, the README should provide testing instruction.
 - Extended documentation should be located in the module’s `docs` directory with appropriate links from the module’s README.
 
-## Testing
+### Testing
 
 [Full documentation](../advanced/testing.md).
 
@@ -179,17 +179,17 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Tests should be organized based on the class being tested; roughly one test file per class.
 - Tests included in the codebase must be compatible with the mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
- 
-## Configuration
+
+### Configuration
 
 mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the mbed build system. Modules should provide well-documented configuration options in a simple header file.
 
 [Full documentation](../advanced/config_system.md).
- 
+
 - Each module should provide a `module_lib.json` (or similar) with configuration options.
 - Each config option should contain documentation covering its purpose and effect on the system.
 - To help port new targets, each config option should provide a reasonable default (in case the config option is not defined).
-- Config options should not change the behavior of the API. 
+- Config options should not change the behavior of the API.
 	- Prefer multiple classes where different functionality is needed in the user API.
 - Targets and applications should be able to override each configuration.
 - The default choice of optimization should be size, on all platforms.

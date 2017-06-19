@@ -1,3 +1,3 @@
-# Blinky on mbed Studio
+## Blinky on mbed Studio
 
 Coming soon
