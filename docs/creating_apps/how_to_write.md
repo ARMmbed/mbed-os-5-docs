@@ -1,17 +1,15 @@
-## Introduction to the mbed OS API 
+## Writing applications with the mbed OS APIs
 
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
-Your application code is written in C++. It uses the application programing interfaces (APIs) that mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers and integrating large amounts of software.
+Your application code is written in C++. It uses the application programming interfaces (APIs) that mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers and integrating large amounts of software.
 
-<span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.5).</span>
+To use the APIs to write your application, start by reviewing how to use them to [control the flow of the application by managing its tasks](../getting_started/flow_control.md). We'll also introduce simple input and output controls.
 
-The APIs in this document are organized by the feature, or group of features, they enable.
+Once you're familiar with the basic concepts, you can move on to more advanced examples that will demonstrate a broader use of the APIs:
 
-* [Task management](APIs/tasks/tasks.md): handling tasks and events in mbed OS.
-* [Inputs and outputs](APIs/io/inputs_outputs.md): analog, digital, bus, port, PwmOut and interrupts.
-* [Digital interfaces](APIs/interfaces/interfaces.md): serial, SPI, I2C and CAN.
-* [Communication](APIs/communication/communication_index.md): network sockets, Ethernet, Wi-Fi, mesh networking, BLE and Cellular.
-* [Security](APIs/security/security.md): working with mbed uVisor and mbed TLS in the context of mbed OS.
+* [Building an internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/).
+* [Building a LoRa network](https://docs.mbed.com/docs/lora-with-mbed/en/latest/).
+* Or any of the other examples [on our full list](https://docs.mbed.com/docs/examples-list/en/latest/).
 
-We also provide guidelines [for using the API documentation in the mbed Online Compiler](APIs/API_Documentation.md).
+<span class="tips">The full API references are [here](https://docs.mbed.com/docs/mbed-os-api-reference/). The [doxygen is here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/index.html).</span>
