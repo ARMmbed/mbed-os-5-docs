@@ -9,22 +9,26 @@
         ]
     },
     {
-        "title": "Developing offline with mbed CLI",
-        "description": "Develop applications for mbed OS with the mbed Command Line Tool",
-        "slug": "mbed-os-offline",
+        "title": "Getting started with mbed OS",
+        "description": "Get your first mbed OS application running with one of our development tools",
+        "slug": "mbed-os-getting-started",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/blinky_cli.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/first_program.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/mbed_studio.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_studio.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/online_comp.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_compiler.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_cli.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_driver.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_communication.md"},
             {"type": "markdown", "url": "https://github.com/iriark01/mbed-cli/blob/c009f61c4d96c0b086a01e8f4be0f3ebd8cfdfa3/README.md"}
         ]
     },
     {
-        "title": "Developing online with the mbed Online Compiler",
-        "description": "Develop applications for mbed OS with the mbed Online Compiler",
-        "slug": "mbed-os-online",
+        "title": "Create applications",
+        "description": "Develop your own application for mbed OS",
+        "slug": "mbed-os-create_apps",
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/intro.md"},
