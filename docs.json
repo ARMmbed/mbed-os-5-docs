@@ -38,22 +38,6 @@
         ]
     },
     {
-        "title": "Porting mbed OS",
-        "description": "A guide to porting mbed OS to new platforms",
-        "slug": "mbed-os-porting",
-        "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/mbed_os_targets.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/flash.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Porting_Guide/blob/setting_for_new_engine/docs/porting/Connect/Network_Socket.md"},
-            {"type": "markdown", "url": "https://github.com/iriark01/nsapi-porting-guide/blob/patch-1/README.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_porting.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_hardware_acceleration.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/MINAR_migration.md"}
-        ]
-    },
-    {
         "title": "mbed OS API refrences",
         "description": "References to the mbed OS APIs",
         "slug": "mbed-os-api-ref",
@@ -107,6 +91,35 @@
         ]
     },
     {
+        "title": "Porting mbed OS",
+        "description": "A guide to porting mbed OS to new platforms",
+        "slug": "mbed-os-porting",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/mbed_os_targets.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/flash.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Porting_Guide/blob/setting_for_new_engine/docs/porting/Connect/Network_Socket.md"},
+            {"type": "markdown", "url": "https://github.com/iriark01/nsapi-porting-guide/blob/patch-1/README.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_porting.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_hardware_acceleration.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/MINAR_migration.md"}
+        ]
+    },
+    {
+        "title": "mbed OS release notes",
+        "description": "Release notes and known issues for mbed OS 5",
+        "slug": "mbed-os-relase-notes",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/index.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_1/release.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_2/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_3/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_4/release_note.md"}
+        ]
+    },
+    {
         "title": "mbed OS API doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api-doxy",
@@ -124,18 +137,5 @@
             "SKIP_FUNCTION_MACROS": "NO",
             "EXCLUDE_PATTERNS": "*/tools/* */TESTS/* */targets/* */FEATURE_*/* */features/mbedtls/* */features/storage/* */features/unsupported/* */features/filesystem/* */BUILD/* */rtos/rtx*/* */cmsis/* */features/FEATURES_*"
         }
-    },
-    {
-        "title": "mbed OS release notes",
-        "description": "Release notes and known issues for mbed OS 5",
-        "slug": "mbed-os-relase-notes",
-        "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/index.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_1/release.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_2/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_3/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/master/Docs/5_4/release_note.md"}
-        ]
     }
 ]
