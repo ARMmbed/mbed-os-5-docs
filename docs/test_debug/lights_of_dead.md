@@ -1,4 +1,4 @@
-# Lights of dead
+## Lights of the dead
 
 ![LPC1768 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)    ![LPC11U24 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)    ![FRMD-KL25Z Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)
 

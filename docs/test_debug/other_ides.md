@@ -1,12 +1,12 @@
-# Debugging mbed OS 5 applications with other IDEs
+## Debugging mbed OS 5 applications with other IDEs
 
 There are extensive instructions on debugging mbed OS 5 applications with [uVision 5](Keil.md), [Eclipse](Debugging_Eclipse_pyOCD.md) and [Visual Studio Code](vscode.md), but you can use any IDE that supports GDB to debug mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](toolchain.md).
 
-## Exporting your project
+### Exporting your project
 
 To build your project locally, you first need a Makefile, which almost any C/C++ IDE can use to build your project. To generate this Makefile, you can use either the Online Compiler or mbed CLI.
 
-### Online Compiler
+#### Online Compiler
 
 1. Right click on your project.
 1. Select *Export Program...*.
@@ -16,7 +16,7 @@ To build your project locally, you first need a Makefile, which almost any C/C++
 
 ![Exporting to Make](Images/other_ides1.png)
 
-### mbed CLI
+#### mbed CLI
 
 In your project folder, run:
 
@@ -27,7 +27,7 @@ In your project folder, run:
 $ mbed export -i make_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
 ```
 
-## Building your project
+### Building your project
 
 You can now configure your IDE to build this project by setting the build command to:
 
@@ -37,7 +37,7 @@ make -j
 
 The resulting binary will end up at `BUILD\projectname.elf`.
 
-## Debugging your project
+### Debugging your project
 
 To debug your project, you first need to start a [debug server](toolchain.md#Running-a-debug-server). This is often exposed as a setting in your IDE under 'Remote debugging' or 'Debug server'.
 
@@ -59,6 +59,6 @@ Next, you need to configure GDB.
     -target-download
     ```
 
-    Make sure to update the path on line 2 to your `.elf` file.
+   Make sure to update the path on line 2 to your `.elf` file.
 
 This starts a debug server, attaches GDB to your development board, flashes the binary using GDB and starts a debug session.

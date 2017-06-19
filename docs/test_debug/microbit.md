@@ -1,10 +1,10 @@
-# Debugging the micro:bit with pyOCD and GDB
+## Debugging the micro:bit with pyOCD and GDB
 
 This tutorial shows how to debug a program on the micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.
 
 <span class="notes">**Note:** The micro:bit's processor is based on the Nordic [nRF51][nRF51].</span>
 
-Suggested tools: 
+Suggested tools:
 
   * Linux (4.1), but pyOCD and GDB work on Windows and Mac OS.
   * pyOCD (0.4.5), which you can obtain on [GitHub](https://github.com/mbedmicro/pyOCD).
@@ -12,15 +12,15 @@ Suggested tools:
 
 This is only a suggestion. pyOCD and GDB work just as well on Mac OS and Windows.
 
-## Looking at a basic program
+### Looking at a basic program
 
 Look at hello.hex, a program printing "hello world" to the serial console. You can find the hex file at [hello.hex](https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex).
 
 <span class="notes">**Note:** Shell commands begin with "$", GDB commands with "(gdb)."</span>
 
-### Analysis
+#### Analysis
 
-Start with an image for the micro:bit. It is supposed to print something on the serial output, but nothing appears. 
+Start with an image for the micro:bit. It is supposed to print something on the serial output, but nothing appears.
 
 The following command starts pyOCD with a soothing configuration:
 
@@ -38,7 +38,7 @@ The following command starts pyOCD with a soothing configuration:
 
 <span class="tips">**Tip:** If you don't have permission to access the board on Linux, you can use [this udev rule](https://developer.mbed.org/comments/perm/9920/). The option -bh tells pyOCD to use hardware breakpoints, and -r tells it to halt the target after a reset.</span>
 
-By default, the server listens for GDB commands on port 3333. It transfers those commands by USB to the interface chip. The interface chip, a Freescale Kinetis KL26, communicates those commands to the micro:bit's processor. 
+By default, the server listens for GDB commands on port 3333. It transfers those commands by USB to the interface chip. The interface chip, a Freescale Kinetis KL26, communicates those commands to the micro:bit's processor.
 
 GDB needs to connect to pyOCD with the following command:
 
@@ -73,9 +73,9 @@ You can now start executing the image. Except for a hardfault, it should keep ro
 
     (gdb) c
     Continuing.
-    
+
     ...
-    
+
     ^C
     Program received signal SIGINT, Interrupt.
     0x0001f31e in ?? ()
@@ -160,7 +160,7 @@ A quick test confirms that the program is using baudrate 9600 instead of 115200,
 
 The next section shows how you can modify what is printed without rebuilding anything. If you feel adventurous, the following section shows one method of changing the baudrate to 115200 using only GDB.
 
-### Changing the printf string
+#### Changing the printf string
 
 You can now connect with a serial client at 9600 bauds and check that the program is printing something.
 
@@ -176,7 +176,7 @@ First, put a breakpoint just before the printf call:
     (gdb) mon reset
     (gdb) c
     Continuing.
-    
+
     Breakpoint 4, 0x0001f31a in ?? ()
     (gdb)
 
@@ -188,7 +188,7 @@ Then, change the string on the stack. Because the program ends right after this 
 
 The new string appears on your console.
 
-### Investigating the actual bug
+#### Investigating the actual bug
 
 After analyzing mbed's [serial API](https://developer.mbed.org/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling serial_instance.printf(string) is, in essence, like calling Serial::printf(serial_instance, string). You saw previously that the instance's address is r0 = 0x20002880.
 
@@ -222,12 +222,12 @@ Add a watchpoint on its memory-mapped location, and restart the application:
     (gdb) mon reset
     (gdb) c
     Continuing.
-    
+
     Program received signal SIGTRAP, Trace/breakpoint trap.
     0x0001f520 in ?? ()
     (gdb) c
     Continuing.
-    
+
     Program received signal SIGTRAP, Trace/breakpoint trap.
     0x0001f520 in ?? ()
     (gdb) print/x $lr
@@ -257,7 +257,7 @@ For the second break, LR is 0x1ebf1, which is different from the first call. Thi
     (gdb) break *0x1f51e if $lr == 0x1ebf1
     Breakpoint 2 at 0x1f51e
 
-This line tells pyOCD to set a breakpoint at address 0x1f51e and stop only when LR is 0x1ebf1, which is the last call to serial_baud. 
+This line tells pyOCD to set a breakpoint at address 0x1f51e and stop only when LR is 0x1ebf1, which is the last call to serial_baud.
 
 Then, attach a command to this breakpoint, to modify the value put into BAUDRATE:
 
@@ -278,11 +278,11 @@ Then execute your patch:
 
 You see "Hello world" written at 115200 bauds on your console.
 
-## Cheat sheet
+### Cheat sheet
 
-### Commands
+#### Commands
 
-This section describes some useful commands. 
+This section describes some useful commands.
 
     <enter> repeats the previous command
 
@@ -293,36 +293,36 @@ This section describes some useful commands.
     mon halt                    tell pyOCD to stop the target
     mon reset                   tell pyOCD to restart the target
     si, stepi                   step instruction
-    
+
     info b                      breakpoint informations
     del 2                       delete breakpoint 2
-    
+
     info reg                    show registers
-    
+
     set *0x20002560 = (char)42  change a byte of memory
     set $pc = $pc + 2           change PC
     set $pc = *0x18004          go to application entry point (with s110)
-    
+
     find 0x20000000, +0x4000, (char [14])"Hello world\r\n"
                                 Locate a 0-terminated string in RAM
     find 0x0, +0x40000, 0x2580  Locate a word in flash
-    
+
     # By default, only flash and RAM are accessible. The following allows to
     # fiddle with memory mapped IO:
     mem 0x40000000 0x40001000   add the clock memory location.
     info mem
-    
+
     # To show the value of LFCLKSRC:
     x/x 0x40000518              (0: RC clock, 1: external)
-    
+
     # To change it:
     set *0x40000518 = 0
-    
+
     In the same vein, inspect ARM system registers:
     mem 0xe000e000 0xe000f000
     x/x 0xe000ed28              show CFSR
 
-### Example: GDB init script
+#### Example: GDB init script
 
 Pure GDB scripts can be limited and cumbersome to write. If you want to automate, you can directly script pyOCD or GDB using Python.
 
@@ -330,34 +330,34 @@ To initialize GDB with the "-x" switch:
 
     set history save on
     set history size unlimited
-    
+
     target remote :3333
-    
+
     disp /i $pc
-    
+
     # ARMv7-M peripherals
     mem 0x40000000 0x5fffffff
-    
+
     # ARMv7-M system registers
     mem 0xe0000000 0xffffffff
-    
+
     define run_program
         load $arg0
         mon reset
         c
     end
-    
+
     define show_context
         # function used by pc, below
         set $before = $arg0
-    
+
         # haem... Roughly two bytes per instruction.
         if $before > (int)$pc * 2
             set $before = (int)$pc / 2
         end
         x /20i $pc - $before
     end
-    
+
     define pc
         if $argc < 1
             show_context 20
@@ -365,12 +365,12 @@ To initialize GDB with the "-x" switch:
             show_context $arg0
         end
     end
-    
+
     document run_program
         Load a program and restart the target
         Usage: run_program /path/to/image
     end
-    
+
     document pc
         Show 20 instructions surrounding the PC.
         Usage: pc [BYTES_PRECEEDING]
@@ -379,6 +379,3 @@ To initialize GDB with the "-x" switch:
 
 [nRF51]: https://www.nordicsemi.com/eng/Products/nRF51-Series-SoC "nRF51 reference manual"
 [AAPCS]: http://infocenter.arm.com/help/topic/com.arm.doc.ihi0042e/IHI0042E_aapcs.pdf "ARM architecture procedure call standard"
-
-______
-Copyright © 2015 ARM Ltd. All rights reserved.

@@ -1,17 +1,15 @@
-[![Circle CI](https://circleci.com/gh/ARMmbed/greentea.svg?style=svg)](https://circleci.com/gh/ARMmbed/greentea)
-[![Coverage Status](https://coveralls.io/repos/github/ARMmbed/greentea/badge.svg?branch=master)](https://coveralls.io/github/ARMmbed/greentea?branch=master)
-[![PyPI version](https://badge.fury.io/py/mbed-greentea.svg)](https://badge.fury.io/py/mbed-greentea)
 
-# Greentea - test automation for mbed
+## Greentea - test automation for mbed
+
 _**G**eneric **re**gression **en**vironment for **te**st **a**utomation_
 
-## Introduction
+### Introduction
 
 Greentea is the automated testing tool for mbed OS development. It automates the process of flashing mbed boards, driving the test and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
 
 This document should help you start using Greentea. Please see the [htrun documentation](https://github.com/ARMmbed/htrun), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
 
-### Prerequistes
+#### Prerequisites
 
 Greentea requires [Python version 2.7](https://www.python.org/downloads/). It supports the following OSes:
 
@@ -19,7 +17,7 @@ Greentea requires [Python version 2.7](https://www.python.org/downloads/). It su
 - Linux (Ubuntu preferred)
 - OS X (experimental)
 
-### Installing
+#### Installing
 
 Tools that depend on Greentea usually install it. Determine if Greentea is already installed by running:
 ```
@@ -33,7 +31,7 @@ You can also install it manually via pip.
 pip install mbed-greentea
 ```
 
-## Test specification JSON format
+### Test specification JSON format
 
 The Greentea test specification format decouples the tool from your build system. It provides important data, such as test names, paths to test binaries and the platform on which the binaries should run.
 
@@ -41,7 +39,7 @@ Greentea automatically looks for files called `test_spec.json` in your working d
 
 When you use the `-t` / `--target` argument with the `--test-spec` argument, you can select which "build" should be used. In the example below, you could provide the arguments `--test-spec test_spec.json -t K64F-ARM` to only run that build's tests.
 
-### Example of test specification file
+#### Example of test specification file
 
 In the below example, there are two defined builds:
 * Build `K64F-ARM` for NXP `K64F` platform compiled with `ARMCC` compiler.
@@ -96,12 +94,12 @@ In the below example, there are two defined builds:
 
 The examples below use the above test specification file.
 
-## Command-line usage
+### Command-line usage
 This section highlights a few of the capabilities of the Greentea command-line interface. For a full list of the available options, please run `mbedgt --help`.
 
 Assume for the examples below that the above `test_spec.json` file is in the current directory.
 
-### Listing all tests
+#### Listing all tests
 You can use the `-l` argument to list all available tests:
 
 ```
@@ -117,7 +115,7 @@ mbedgt: available tests for built 'K64F-ARM', location 'BUILD/tests/K64F/ARM'
         test 'tests-mbedmicro-rtos-mbed-mail'
 ```
 
-### Executing all tests
+#### Executing all tests
 The default action of Greentea is to execute all tests that were found.
 ```
 $ mbedgt
@@ -531,7 +529,7 @@ mbedgt: completed in 53.59 sec
 
 ```
 
-### Limiting tests
+#### Limiting tests
 You can select test cases by name using the `-n` argument. This command executes all tests named `tests-mbedmicro-rtos-mbed-mail` from all builds in the test specification:
 ```
 $ mbedgt -n tests-mbedmicro-rtos-mbed-mail
@@ -553,7 +551,7 @@ You can use a comma (`,`) to separate test names (argument `-n`) and build names
 $ mbedgt -n tests-mbedmicro-rtos-mbed-mail,tests-mbed_drivers-c_strings -t K64F-ARM,K64F-GCC_ARM
 ```
 
-### Selecting platforms
+#### Selecting platforms
 You can limit which boards Greentea uses for testing by using the `--use-tids` argument.
 
 ```
@@ -576,39 +574,41 @@ $ mbedls
 ```
 In this case, you won't test one target, the LPC1768.
 
-### Creating reports
+#### Creating reports
 Greentea supports a number of report formats.
 
-#### HTML
+##### HTML
 This creates an interactive HTML page with test results and logs.
 ```
 mbedgt --report-html html_report.html
 ```
 
-#### JUnit
+##### JUnit
 This creates an XML JUnit report, which you can use with popular Continuous Integration software, such as [Jenkins](https://jenkins.io/index.html).
 ```
 mbedgt --report-junit junit_report.xml
 ```
 
-#### JSON
+##### JSON
 This creates a general JSON report.
 ```
 mbedgt --report-json json_report.json
 ```
 
-#### Plain text
+##### Plain text
 This creates a human-friendly text summary of the test run.
 ```
 mbedgt --report-text text_report.text
 ```
 
-## Host test detection
+### Host test detection
 When developing with mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the mbed OS test directory structure, please see the [mbed CLI documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/#test-directory-structure).
 
-## Common issues
+### Common issues
 
-### `IOERR_SERIAL` errors
+#### `IOERR_SERIAL` errors
+
 Possible causes:
+
 - Another program is using the serial port. Be sure all terminals and other instances of Greentea are closed before trying again.
 - The mbed interface firmware is out of date. Please see the platform's page on [developer.mbed.org](https://developer.mbed.org/) for details about how to update it.

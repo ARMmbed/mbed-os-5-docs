@@ -1,8 +1,8 @@
-# Debugging mbed OS 5 applications with Eclipse
+## Debugging mbed OS 5 applications with Eclipse
 
 This document explains how to build and debug mbed OS applications using Eclipse. Before starting, please [configure your local debug toolchain](toolchain.md).
 
-## Installing Eclipse
+### Installing Eclipse
 
 You need to install Eclipse CDT with the GNU ARM Eclipse plugins to begin:
 
@@ -20,11 +20,11 @@ You need to install Eclipse CDT with the GNU ARM Eclipse plugins to begin:
     1. Click **Next** repeatedly, and accept the license agreements.
     1. Click **Finish**. If prompted to restart Eclipse, click **Yes**.
 
-## Exporting a project
+### Exporting a project
 
 To export your project to Eclipse, you can use either the mbed Online Compiler or mbed CLI.
 
-### Online compiler
+#### Online compiler
 
 1. Right click on your project.
 1. Select *Export Program...*.
@@ -35,7 +35,7 @@ To export your project to Eclipse, you can use either the mbed Online Compiler o
 
 ![Exporting to Eclipse](Images/eclipse1.png)
 
-### mbed CLI
+#### mbed CLI
 
 In your project folder, run:
 
@@ -46,7 +46,7 @@ In your project folder, run:
 $ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
 ```
 
-## Importing the project in Eclipse
+### Importing the project in Eclipse
 
 1. Open Eclipse.
 1. On the *Welcome* screen, select *Import a project with a working Makefile*.
@@ -58,7 +58,7 @@ $ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.
 1. Dismiss the Welcome screen.
 1. Select *Project > Build Project* to build the project.
 
-<span class="notes">**Note:** If build fails with error 
+<span class="notes">**Note:** If build fails with error
 1. `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH).
 1. `Program "make" not found in PATH`, install [GNU-Make utility](http://gnuwin32.sourceforge.net/packages/make.htm), and configure Eclipse's PATH.
 
@@ -75,7 +75,7 @@ Steps to update Eclipse's PATH
 
 Once the project builds, you can configure the debugger. The configuration depends on the debug server you're using: pyOCD or OpenOCD.
 
-### pyOCD
+#### pyOCD
 
 1. Select *Run > Debug Configurations...*.
 1. If no configuration exists under *GDB pyOCD Debugging*, click on *New launch configuration*.
@@ -92,7 +92,7 @@ Once the project builds, you can configure the debugger. The configuration depen
 1. Click *Apply*.
 1. Click *Debug* to start debugging.
 
-### OpenOCD
+#### OpenOCD
 
 1. Select *Run > Debug Configurations...*.
 1. If a configuration already exists under *GDB pyOCD Debugging*, please remove it.
@@ -113,7 +113,7 @@ Once the project builds, you can configure the debugger. The configuration depen
 
 ![Debugging an mbed OS 5 application in Eclipse](Images/eclipse9.png)
 
-## Building with mbed CLI
+### Building with mbed CLI
 
 We build using Make, but you can also use mbed CLI for building from Eclipse:
 
