@@ -112,7 +112,7 @@
         ]
     },
     {
-        "title": "mbed OS API refrences",
+        "title": "mbed OS API references",
         "description": "References to the mbed OS APIs",
         "slug": "mbed-os-api-ref",
         "type": "markdown",
