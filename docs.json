@@ -9,44 +9,31 @@
         ]
     },
     {
-        "title": "Getting started with mbed OS",
-        "description": "Get your first mbed OS application running with one of our development tools",
-        "slug": "mbed-os-getting-started",
+        "title": "Developing offline with mbed CLI",
+        "description": "Develop applications for mbed OS with the mbed Command Line Tool",
+        "slug": "mbed-os-offline",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/first_program.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/mbed_studio.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_studio.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/online_comp.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_compiler.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_cli.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_driver.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_communication.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/cli/blinky_cli.md"},
             {"type": "markdown", "url": "https://github.com/iriark01/mbed-cli/blob/c009f61c4d96c0b086a01e8f4be0f3ebd8cfdfa3/README.md"}
         ]
     },
     {
-        "title": "Create applications",
-        "description": "Develop your own application for mbed OS",
-        "slug": "mbed-os-create_apps",
+        "title": "Developing online with the mbed Online Compiler",
+        "description": "Develop applications for mbed OS with the mbed Online Compiler",
+        "slug": "mbed-os-online",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/mbed_interface.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/how_to_write.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/contributing.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/design_guidelines.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/code_style.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/terms.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/flow_control.md"}
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/first_program.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/all_tools/serial_driver.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/blinky_compiler.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/online_comp_getting_started.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compiler/online_comp.md"}
 
         ]
     },
@@ -118,6 +105,48 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/tls_hardware_acceleration.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/MINAR_migration.md"}
         ]
+    },
+    {
+        "title": "mbed Client guide",
+        "description": "An introduction to mbed Client",
+        "slug": "mbed-client",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/index.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Introduction.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/client_reg_dereg.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/dev_man_serv_enable.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/info_reporting.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/data_types.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Howto.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/further-reading.md"}
+         ]
+    },
+     {
+        "title": "Getting started with mbed Device Connector",
+        "description": "A quick guide to mbed Device Connector",
+        "slug": "device-connector",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/index.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Connector-intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Quick-guide.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Further-reading.md"}
+         ]
+    },
+     {
+        "title": "Web interfaces for the mbed Device Connector",
+        "description": "mbed Device Connector Web API",
+        "slug": "device-connector-api",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/index.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/api-reference.md"},
+            {"type": "markdown", "url": "https://https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/tutorials_intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_amazon.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_azure.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_watson.md"}
+         ]
     },
     {
         "title": "mbed OS release notes",
