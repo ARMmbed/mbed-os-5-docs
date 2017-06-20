@@ -8,7 +8,8 @@
 
 ### Blinky's code
 
-```c++
+>>> C++
+```
 #include "mbed.h"
 #include "rtos.h"
 
@@ -24,6 +25,7 @@ int main() {
 }
 
 ```
+>>>
 
 ### Installing mbed CLI and a toolchain
 
@@ -31,16 +33,26 @@ mbed CLI is an offline tool, meaning you'll have to install it before you can wo
 
 ### Setting context
 
+>>> C
+>>>
+
 Whenever you work with mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called ``my_program``:
 
-```bash
+>>> C++
+```
 cd my_program
 mbed <commands>
 ```
+>>
 
 ### Getting Blinky
 
+>>> C++
+>>>
+
 mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
+
+>>> C
 
 To import Blinky, from the command-line:
 
@@ -58,7 +70,12 @@ To import Blinky, from the command-line:
 
 Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can look at ``main.cpp`` to familiarize yourself with the code.
 
+>>>
+
 ### Compiling
+
+>>> C++
+>>>
 
 Invoke `mbed compile`, specifying:
 
@@ -67,11 +84,15 @@ Invoke `mbed compile`, specifying:
 
 For example, for the board K64F and the ARM Compiler 5:
 
+>>> C++
 ```
 mbed compile -m K64F -t ARM
 ```
+>>>
 
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
+
+>>> C++
 
 ```
 [snip]
@@ -93,6 +114,8 @@ Total RAM memory (data + bss + heap + stack): 7168 bytes
 Total Flash memory (text + data + misc): 43402 bytes
 Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin             
 ```
+
+>>>
 
 The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM\`` folder.
 
