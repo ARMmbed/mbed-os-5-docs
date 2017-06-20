@@ -284,7 +284,7 @@
     {
         "title": "mbed Client API doxygen",
         "description": "mbed Client API documentation in doxygen format.",
-        "slug": "mbed-client",
+        "slug": "mbed-client-doxy",
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-cloud-client-restricted/",
         "tag":"RR1.2.1-EA-docs",
