@@ -69,7 +69,7 @@ To import Blinky, from the command-line:
   ```
   >>>
 
-2. Import the example:
+2. Import the example: I can't tell if it's built
 
   >>> C
   ```
