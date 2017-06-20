@@ -279,7 +279,6 @@
         "description": "The API references for mbed Client.",
         "slug": "mbed-client",
         "type": "doxygen",
-        "hidden": true,
         "source": "https://github.com/ARMmbed/mbed-cloud-client-restricted/",
         "tag":"RR1.2.1-EA-docs",
         "options": {
