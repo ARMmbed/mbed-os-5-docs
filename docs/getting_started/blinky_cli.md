@@ -63,20 +63,20 @@ To import Blinky, from the command-line:
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
 
->>> C
-```
-cd dev_directory
-```
->>>
+  >>> C
+  ```
+  cd dev_directory
+  ```
+  >>>
 
 2. Import the example:
 
->>> C
-```
-mbed import mbed-os-example-blinky
-cd mbed-os-example-blinky
-```
->>>
+  >>> C
+  ```
+  mbed import mbed-os-example-blinky
+  cd mbed-os-example-blinky
+  ```
+  >>>
 
 <span class="tips">**Tip:** ``import`` requires a full URL to Mercurial or GitHub. If you don't enter a full URL, mbed CLI prefixes your snippet with ``https://github.com/ARMmbed/``. We took advantage of this feature in our example; ``import mbed-os-example-blinky`` is interpreted as ``https://github.com/ARMmbed/mbed-os-example-blinky``.</span>
 
