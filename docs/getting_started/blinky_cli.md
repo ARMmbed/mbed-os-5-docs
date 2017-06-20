@@ -53,7 +53,6 @@ mbed <commands>
 mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
 
 >>> C
-
 To import Blinky, from the command-line:
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
@@ -85,7 +84,7 @@ Invoke `mbed compile`, specifying:
 For example, for the board K64F and the ARM Compiler 5:
 
 >>> C
-```
+````
 mbed compile -m K64F -t ARM
 ```
 >>>
@@ -93,7 +92,6 @@ mbed compile -m K64F -t ARM
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
 
 >>> C
-
 ```
 [snip]
 +----------------------------+-------+-------+------+
@@ -114,7 +112,6 @@ Total RAM memory (data + bss + heap + stack): 7168 bytes
 Total Flash memory (text + data + misc): 43402 bytes
 Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin             
 ```
-
 >>>
 
 The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM\`` folder.
