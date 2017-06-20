@@ -2,14 +2,16 @@
 
 ### Quick start video
 
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on mbed CLI</span></span>
+
 <span class="tips">**Tip:** the video assumes you've already [installed mbed CLI](#installing-mbed-cli-and-a-toolchain).
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on mbed CLI</span></span>
+### Blinky's code
 
 >>> C
 >>>
 
-### Blinky's code
+Blinky's code is a simple `while` loop inside the 'main()' function:
 
 >>> C
 ```
@@ -49,30 +51,33 @@ mbed <commands>
 
 ### Getting Blinky
 
->>> C
->>>
-
 mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
 
->>> C
-```
 To import Blinky, from the command-line:
+
+>>> C
+>>>
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
 
-    cd dev_directory
-
-1. Import the example:
-
-    mbed import mbed-os-example-blinky
-    cd mbed-os-example-blinky
+>>> C
+```
+cd dev_directory
 ```
 >>>
 
+2. Import the example:
+
+>>> C
+```
+mbed import mbed-os-example-blinky
+cd mbed-os-example-blinky
+```
+>>>
 
 <span class="tips">**Tip:** ``import`` requires a full URL to Mercurial or GitHub. If you don't enter a full URL, mbed CLI prefixes your snippet with ``https://github.com/ARMmbed/``. We took advantage of this feature in our example; ``import mbed-os-example-blinky`` is interpreted as ``https://github.com/ARMmbed/mbed-os-example-blinky``.</span>
 
-Blinky is now under *dev_directory* > *mbed-os-example-blinky*. You can look at *main.cpp* to familiarize yourself with the code.
+Blinky is now under `dev_directory` > `mbed-os-example-blinky`. You can look at `main.cpp` to familiarize yourself with the code.
 
 ### Compiling
 
@@ -80,7 +85,6 @@ Invoke `mbed compile`, specifying:
 
 * Your board: ``-m <board_name>``.
 * Your toolchain: ``-t <GCC_ARM`, `ARM` or `IAR`>``.
-
 
 >>> C
 >>>
@@ -122,10 +126,17 @@ The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM
 
 ### Programming your board
 
+>>> C
+>>>
+
 mbed Enabled boards are programmable by drag and drop over a USB connection.
 
+>>> C
+```
 1. Connect your mbed board to the computer over USB.
-1. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``build\K64F\ARM\`` folder.
-1. Press the reset button to start the program.
+2. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``build\K64F\ARM\`` folder.
+3. Press the reset button to start the program.
+```
+>>>
 
 You should see the LED of your board turning on and off.
