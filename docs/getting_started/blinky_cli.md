@@ -8,7 +8,7 @@
 
 ### Blinky's code
 
->>> C++
+>>> C
 ```
 #include "mbed.h"
 #include "rtos.h"
@@ -38,7 +38,7 @@ mbed CLI is an offline tool, meaning you'll have to install it before you can wo
 
 Whenever you work with mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called ``my_program``:
 
->>> C++
+>>> C
 ```
 cd my_program
 mbed <commands>
@@ -47,7 +47,7 @@ mbed <commands>
 
 ### Getting Blinky
 
->>> C++
+>>> C
 >>>
 
 mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
@@ -74,7 +74,7 @@ Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can loo
 
 ### Compiling
 
->>> C++
+>>> C
 >>>
 
 Invoke `mbed compile`, specifying:
@@ -84,7 +84,7 @@ Invoke `mbed compile`, specifying:
 
 For example, for the board K64F and the ARM Compiler 5:
 
->>> C++
+>>> C
 ```
 mbed compile -m K64F -t ARM
 ```
@@ -92,7 +92,7 @@ mbed compile -m K64F -t ARM
 
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
 
->>> C++
+>>> C
 
 ```
 [snip]
