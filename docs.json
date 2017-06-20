@@ -1,19 +1,11 @@
 [
     {
-        "title": "Introduction to mbed OS",
-        "description": "Introduction to mbed OS and the development tools",
-        "slug": "mbed-os-intro",
-        "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"}
-        ]
-    },
-    {
         "title": "Getting started with mbed OS",
         "description": "Get your first mbed OS application running with one of our development tools",
         "slug": "mbed-os-getting-started",
         "type": "markdown",
         "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/first_program.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/mbed_studio.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_studio.md"},
@@ -79,7 +71,7 @@
         ]
     },
     {
-        "title": "Test and debug",
+        "title": "Test and debug applications",
         "description": "Test and debug applications using mbed OS and third party tools",
         "slug": "mbed-os-test",
         "type": "markdown",
@@ -103,7 +95,7 @@
         ]
     },
     {
-        "title": "Optimize applications on mbed OS",
+        "title": "Optimize applications",
         "description": "Optimizing memory usage and power management for mbed OS applications",
         "slug": "mbed-os-optimize",
         "type": "markdown",
