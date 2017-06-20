@@ -1,18 +1,18 @@
-# Pull requests
+## Pull requests
 
 A pull request lets you tell others about changes you've added to a fork of their (or ancestor) repository, effectively granting them permission to include and use your code in their codebase. Once the pull request is created, the other party can review, accept or reject the set of changes, discuss further modifications and even add follow-up changes or merges.
 
 Think of pull requests as a simplified [fork and update](collab_intro.md) workflow, where the repository author(s) moderate the changes nonrepository developers contribute.
 
-## Day to day usage
+### Day to day usage
 
 An important thing to know about pull requests is that they can only exist between related repositories. The term "related repositories" means that either repository is ancestor or sibling to the other through direct or indirect relationship (like a fork of the fork of the fork). Pull requests usually originate from a forked repository to ancestor repository, though the functionality is flexible and allows pull requests from ancestor repository to a forked repository (for cases where the original author wants to contribute later added code to a fork).
 
-## Creating a pull request
+### Creating a pull request
 
 All pull requests are created and recorded against the remote repository, the one receiving the modifications if the pull request is accepted.
 
-### Creating a new request
+#### Creating a new request
 
 To create a pull request:
 
@@ -34,21 +34,21 @@ The pull request is added to the **Pull Requests** page of the repository, and a
 
 <span class="images">![](images/pull_request_created.png)<span>Sending the pull request</span></span>
 
-### Editing an existing pull request
+#### Editing an existing pull request
 
-Pull requests are `limited` to the latest revision at the moment of sending. This means that you can publish more changes to your repository, and the other party will only see the changes that were available when the pull request was created. 
+Pull requests are `limited` to the latest revision at the moment of sending. This means that you can publish more changes to your repository, and the other party will only see the changes that were available when the pull request was created.
 
 To update your pull request to the latest revision:
 
 1. Click the **Edit** button on the pull request page.
 1. Check the **Update request to latest revision(s)?** checkbox.
-1. Submit the edit. The other party is notified that you edited the pull request. 
+1. Submit the edit. The other party is notified that you edited the pull request.
 
-## Managing a pull request you receive 
+### Managing a pull request you receive
 
-### Viewing pull requests 
+#### Viewing pull requests
 
-When a pull request is sent to a repository to which you're author or co-author, you receive an email notification with the pull request details and a link to the pull request page. 
+When a pull request is sent to a repository to which you're author or co-author, you receive an email notification with the pull request details and a link to the pull request page.
 
 You can also see all existing pull requests by visiting the repository page and clicking on the **Pull Requests** tab:
 
@@ -62,7 +62,7 @@ On each pull request page you can discuss changes, coding standards and so on be
 
 To quickly close a pull request without reviewing it, click the **Close** button.
 
-### Reviewing a pull request
+#### Reviewing a pull request
 
 Most online services that offer source code and version control hosting let you review and merge pull requests.
 
@@ -81,14 +81,14 @@ To review a pull request:
 1. Click "Import".
 
 1. The pull request is imported to your workspace, and the Revisions panel opens:
-	
+
 	<span class="images">![](images/revision_history_pull_request.png)<span>Viewing the pull request in the Revisions panel</span></span>
 
-Newly introduced revisions are marked in green. These are the proposed changes - the ones you are being asked to pull. To review individual changes, click on the files list on the right. 
+Newly introduced revisions are marked in green. These are the proposed changes - the ones you are being asked to pull. To review individual changes, click on the files list on the right.
 
 The mbed Online Compiler remembers the pull request status of an imported program or library across sessions, so you can always close the Revision History panel and continue the review later. For example, you can open one of the changed files in the Editor, click **Compile** to check whether their code compiles successfully. If it does, you can download and test it on your mbed Enabled device.
 
-### Accepting a pull request
+#### Accepting a pull request
 
 Click the **Accept** button in the bottom panel, and an accept confirmation dialog opens:
 
@@ -102,8 +102,7 @@ Accepting a pull request publishes to your repository both the contents of that 
 
 <span class="images">![](images/pull_request_closed.png)<span>Viewing the pull request after accepting it</span></span>
 
-
-### Rejecting a pull request
+#### Rejecting a pull request
 
 If you choose to reject the pull request:
 
@@ -111,7 +110,7 @@ If you choose to reject the pull request:
 
 	<span class="images">![](images/reject_pull_request.png)<span>Commenting on a pull request rejection</span></span>
 
-1. Enter a comment explaining the rejection. 
+1. Enter a comment explaining the rejection.
 
 1. You can clean up the imported program by checking the **Delete this program when complete (cleanup)** button.
 
@@ -121,4 +120,3 @@ If you choose to reject the pull request:
 
 <span class="notes">**Note:** If you're not satisfied with the code, you can always attempt to enhance it by introducing your own changes on top of the pull request. You can then accept the pull request; the published pull request will include the changes you have made to the original content.
 </span>
-

@@ -1,10 +1,10 @@
-# Version control
+## Version control
 
 You can use the mbed Online Compiler's version control features to let you version, branch and merge code. It will show a nice representation of the state of your project history:
- 
+
 <span class="images">![](images/revision_history_overview.png)<span>The Online Compiler shows the current version of your project and your project's history</span></span>
 
-The approach should be familiar to those of you with experience of distributed version control models (as used by Mercurial and Git). Each program and library has its own local repository, so you can commit and perform actions on it within your own workspace (such as switching, branching and showing changes). 
+The approach should be familiar to those of you with experience of distributed version control models (as used by Mercurial and Git). Each program and library has its own local repository, so you can commit and perform actions on it within your own workspace (such as switching, branching and showing changes).
 
 The main things you can do with a local repository are:
 
@@ -15,13 +15,13 @@ The main things you can do with a local repository are:
 
 <span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](collab_intro.md).</span>
 
-## Video tutorial 
+### Video tutorial
 
 Here is the video that shows how you get started:
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/BWM21JzSDSs/0.jpg)](http://www.youtube.com/watch?v=BWM21JzSDSs)<span>Watch how to use the Online Compiler's version control features</span></span>
 
-## Working with version control
+### Working with version control
 
 Your program is the *working copy*. You can *commit* changes to its local repository to create new *revisions*.
 
@@ -35,7 +35,7 @@ You can see the changes between your current working copy and the previous revis
 
 <span class="images">![](images/compare_revisions.png)<span>The File changes section shows differences between this revision and the previous one</span></span>
 
-## Subrepositories and synchronization
+### Subrepositories and synchronization
 
 Programs and libraries can depend on other published code to deliver a functionality. These dependencies are stored in reference files (such as ``name.lib``) that are present in the codebase of the repository; when you import the codebase, the mbed Online Compiler follows these references and imports other subrepositories, including referenced sub-subrepositories.
 
@@ -45,5 +45,3 @@ To ensure that a repository can be imported successfully, you must:
 
  * Publish all subrepositories (even sub-subrepositories) on [developer.mbed.org](https://developer.mbed.org).
  * Leave no uncommitted or unpublished changes in any subrepository.
-
-

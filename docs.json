@@ -123,6 +123,20 @@
         ]
     },
     {
+        "title": "Collaborate on mbed OS development",
+        "description": "Work with other developers",
+        "slug": "mbed-os-collaborate",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/introduction.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/version_control.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/publishing_code.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/pull_requests.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/multiple_authors.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/cli_collaboration.md"}
+        ]
+    },
+    {
         "title": "mbed OS API references",
         "description": "References to the mbed OS APIs",
         "slug": "mbed-os-api-ref",
