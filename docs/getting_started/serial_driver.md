@@ -9,10 +9,14 @@ You can connect your board to your computer over USB. This should work out of th
 
 ### Troubleshooting
 
-**If you have multiple mbed devices but the serial port only appears for one of them:** Make sure you run the installer for every device (plug in the device over USB and run the installer again); Windows loads the driver based on the serial number, so it needs to be run for each device individually.
+**If you have multiple mbed devices but the serial port only appears for one of them**
+: Make sure you run the installer for every device (plug in the device over USB and run the installer again); Windows loads the driver based on the serial number, so it needs to be run for each device individually.
 
-**If the installer fails because "No mbed Microcontrollers were found":** Check your device is plugged in properly over USB.
+**If the installer fails because "No mbed Microcontrollers were found"**
+: Check your device is plugged in properly over USB.
 
-**If the installer reports the message "mbedWinSerial_nnnnn.exe is not a valid Win32 application":** If you downloaded the installer using Internet Explorer, please try a different browser (Firefox, Chrome).
+**If the installer reports the message "mbedWinSerial_nnnnn.exe is not a valid Win32 application"**
+: If you downloaded the installer using Internet Explorer, please try a different browser (Firefox, Chrome).
 
-**If the installer appears to hang:** Check if Windows is displaying an "unsigned driver/permission" window; these often get hidden behind other windows with nothing to indicate so in the taskbar. The installer will continue to run as soon as you click OK.
+**If the installer appears to hang**
+: Check if Windows is displaying an "unsigned driver/permission" window; these often get hidden behind other windows with nothing to indicate so in the taskbar. The installer will continue to run as soon as you click OK.
