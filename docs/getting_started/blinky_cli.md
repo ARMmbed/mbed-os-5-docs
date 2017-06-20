@@ -45,7 +45,7 @@ Whenever you work with mbed CLI, you need to navigate your command-line terminal
 cd my_program
 mbed <commands>
 ```
->>
+>>>
 
 ### Getting Blinky
 
