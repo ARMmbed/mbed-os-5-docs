@@ -1,4 +1,48 @@
-## Publishing a local program or library with mbed CLI
+## Publishing your changes
+
+### Checking status
+
+As you develop your program, you'll edit parts of it. You can get the status of all the repositories in your program (recursively) by running `mbed status`. If a repository has uncommitted changes, this command displays these changes. 
+
+Here's an example:
+
+```
+[mbed] Status for "mbed-os-program":
+ M main.cpp
+ M mbed-os.lib
+?? gdb_log.txt
+?? test_spec.json
+
+[mbed] Status for "mbed-os":
+ M tools/toolchains/arm.py
+ M tools/toolchains/gcc.py
+
+[mbed] Status for "mbed-client-classic":
+ M source/m2mtimerpimpl.cpp
+
+[mbed] Status for "mbed-mesh-api":
+ M source/include/static_config.h
+```
+
+You can then commit or discard these changes through that repository's version control system.
+
+### Pushing upstream
+
+To push the changes in your local tree upstream, run `mbed publish`. `mbed publish` works recursively, pushing the leaf dependencies first, then updating the dependents and pushing them too. 
+
+Let's assume that the list of dependencies of your program (obtained by running `mbed ls`) looks like this:
+
+```
+my-mbed-os-example (a5ac4bf2e468)
+|- mbed-os (5fea6e69ec1a)
+`- my-libs (e39199afa2da)
+   |- my-libs/iot-client (571cfef17dd0)
+   `- my-libs/test-framework (cd18b5a50df4)
+```
+
+Let's assume that you make changes to `iot-client`. `mbed publish` detects the change on the leaf `iot-client` dependency and asks you to commit it. Then `mbed publish` detects that `my-libs` depends on `iot-client`, updates the `my-libs` dependency on `iot-client` to its latest version by updating the `iot-client.lib` file and asks you to commit it. This propagates up to `my-libs` and finally to your program, `my-mbed-os-example`.
+
+### Publishing a local program or library with mbed CLI
 
 When you create a new (local) version control managed program or library, its revision history exists only locally. The repository is not associated with the remote one. To publish the local repository, please follow these steps:
 
