@@ -195,6 +195,48 @@
         ]
     },
     {
+    "title": "mbed Client guide",
+    "description": "An introduction to mbed Client",
+    "slug": "mbed-client",
+    "type": "markdown",
+    "sources": [
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/index.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Introduction.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/client_reg_dereg.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/dev_man_serv_enable.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/info_reporting.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/data_types.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Howto.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/further-reading.md"}
+     ]
+},
+ {
+    "title": "Getting started with mbed Device Connector",
+    "description": "A quick guide to mbed Device Connector",
+    "slug": "device-connector",
+    "type": "markdown",
+    "sources": [
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/index.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Connector-intro.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Quick-guide.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Further-reading.md"}
+     ]
+},
+ {
+    "title": "Web interfaces for the mbed Device Connector",
+    "description": "mbed Device Connector Web API",
+    "slug": "device-connector-api",
+    "type": "markdown",
+    "sources": [
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/index.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/api-reference.md"},
+        {"type": "markdown", "url": "https://https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/tutorials_intro.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_amazon.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_azure.md"},
+        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_watson.md"}
+     ]
+},
+    {
         "title": "mbed OS API doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api-doxy",
