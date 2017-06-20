@@ -1,17 +1,19 @@
 ## Blinky on mbed CLI
 
+Blinky is a very simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
+
 ### Quick start video
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on mbed CLI</span></span>
 
-<span class="tips">**Tip:** the video assumes you've already [installed mbed CLI](#installing-mbed-cli-and-a-toolchain).
+<span class="notes">**Note:** the video assumes you've already [installed mbed CLI](#installing-mbed-cli-and-a-toolchain).
 
 ### Blinky's code
 
 >>> C
 >>>
 
-Blinky's code is a simple `while` loop inside the 'main()' function:
+Blinky's code is a simple `while` loop inside the `main()` function:
 
 >>> C
 ```
@@ -45,9 +47,10 @@ Whenever you work with mbed CLI, you need to navigate your command-line terminal
 >>> C
 ```
 cd my_program
-mbed <commands>
 ```
 >>>
+
+You can then start running mbed CLI commands, and they will run in the correct context.
 
 ### Getting Blinky
 
@@ -122,7 +125,7 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 ```
 >>>
 
-The program file, ``mbed-os-example-blinky.bin``, is under your ``build\K64F\ARM\`` folder.
+The program file, ``mbed-os-example-blinky.bin``, is under your ``mbed-os-example-blinky\build\K64F\ARM\`` folder.
 
 ### Programming your board
 
@@ -134,7 +137,7 @@ mbed Enabled boards are programmable by drag and drop over a USB connection.
 >>> C
 ```
 1. Connect your mbed board to the computer over USB.
-2. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``build\K64F\ARM\`` folder.
+2. Copy the binary file to the board. In the example above, the file is ``mbed-os-example-blinky.bin``, and it's under the ``mbed-os-example-blinky\build\K64F\ARM\`` folder.
 3. Press the reset button to start the program.
 ```
 >>>
