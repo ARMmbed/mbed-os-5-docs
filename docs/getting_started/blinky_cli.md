@@ -76,13 +76,14 @@ Blinky is now under *dev_directory* > *mbed-os-example-blinky*. You can look at 
 
 ### Compiling
 
->>> C
->>>
-
 Invoke `mbed compile`, specifying:
 
 * Your board: ``-m <board_name>``.
 * Your toolchain: ``-t <GCC_ARM`, `ARM` or `IAR`>``.
+
+
+>>> C
+>>>
 
 For example, for the board K64F and the ARM Compiler 5:
 
