@@ -6,6 +6,9 @@
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on mbed CLI</span></span>
 
+>>> C
+>>>
+
 ### Blinky's code
 
 >>> C
@@ -23,7 +26,6 @@ int main() {
         wait(0.5);
     }
 }
-
 ```
 >>>
 
@@ -53,6 +55,7 @@ mbed <commands>
 mbed CLI can import Blinky, along with the mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
 
 >>> C
+```
 To import Blinky, from the command-line:
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
@@ -68,7 +71,7 @@ To import Blinky, from the command-line:
     **Tip:** ``import`` requires a full URL to Mercurial or GitHub. If you don't enter a full URL, mbed CLI prefixes your snippet with ``https://github.com/ARMmbed/``. We took advantage of this feature in our example; ``import mbed-os-example-blinky`` is interpreted as ``https://github.com/ARMmbed/mbed-os-example-blinky``.
 
 Blinky is now under ``dev_directory`` > `` mbed-os-example-blinky``. You can look at ``main.cpp`` to familiarize yourself with the code.
-
+```
 >>>
 
 ### Compiling
@@ -84,7 +87,7 @@ Invoke `mbed compile`, specifying:
 For example, for the board K64F and the ARM Compiler 5:
 
 >>> C
-````
+```
 mbed compile -m K64F -t ARM
 ```
 >>>
