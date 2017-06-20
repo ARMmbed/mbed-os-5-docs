@@ -13,8 +13,7 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_compiler.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/blinky_cli.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_driver.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_communication.md"},
-            {"type": "markdown", "url": "https://github.com/iriark01/mbed-cli/blob/c009f61c4d96c0b086a01e8f4be0f3ebd8cfdfa3/README.md"}
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/serial_communication.md"}
         ]
     },
     {
@@ -58,7 +57,7 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/options.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/studio_compile.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/online_comp.md"},
-            {"type": "markdown", "url": "https://github.com/iriark01/mbed-cli/blob/master/README.md"},
+            {"type": "markdown", "url": "https://github.com/iriark01/mbed-cli/blob/c009f61c4d96c0b086a01e8f4be0f3ebd8cfdfa3/README.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/third_party.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/build_profiles.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/toolchain_profiles.md"},
@@ -232,7 +231,7 @@
         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/info_reporting.md"},
         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/data_types.md"},
         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Howto.md"},
-	{"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/porting-guide.md"},    
+	      {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/porting-guide.md"},
         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/further-reading.md"}
      ]
 },
