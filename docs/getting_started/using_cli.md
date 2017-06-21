@@ -29,7 +29,7 @@ The directories of Git and Mercurial executables (`git` and `hg`) need to be in 
     * Compilers: GCC ARM, ARM Compiler 5, IAR.
     * IDE: Keil uVision, DS-5, IAR Workbench.
 
-#### Video tutorial for manual installation 
+#### Video tutorial for manual installation
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/cM0dFoTuU14/0.jpg)](https://www.youtube.com/watch?v=cM0dFoTuU14)</span>
 
@@ -73,7 +73,7 @@ To install mbed-cli bash tab completion navigate to the `tools/bash_completion` 
 
 [Full documentation here](tools/bash_completion/install.md)
 
-## Quickstart video
+### Quickstart video
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)</span>
 
@@ -97,7 +97,7 @@ mbed CLI can create and import programs based on both mbed OS 2 and mbed OS 5.
 
 #### Creating a new program for mbed OS 5
 
-When you create a new program, mbed CLI automatically imports the latest [mbed OS release](https://github.com/ARMmbed/mbed-os/). Each release includes all the components: code, build tools and IDE exporters. 
+When you create a new program, mbed CLI automatically imports the latest [mbed OS release](https://github.com/ARMmbed/mbed-os/). Each release includes all the components: code, build tools and IDE exporters.
 
 With this in mind, let's create a new program (we'll call it `mbed-os-program`):
 
@@ -163,13 +163,13 @@ $ cd mbed-os-example-blinky
 ```
 
 You can use the "import" command without specifying a full URL; mbed CLI adds a prefix (https://github.com/ARMmbed) to the URL if one is not present. For example, this command:
- 
+
 ```
 $ mbed import mbed-os-example-blinky
 ```
 
 is equivalent to this command:
- 
+
 ```
 $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
 ```
@@ -191,7 +191,7 @@ $ mbed new .
 
 ### Adding and removing libraries
 
-While working on your code, you may need to add another library to your application or remove existing libraries. 
+While working on your code, you may need to add another library to your application or remove existing libraries.
 
 Adding a new library to your program is not the same as cloning the repository. Don't clone a library using `hg` or `git`; use `mbed add` to add the library. This ensures that all libraries and sublibraries are populated as well.
 
