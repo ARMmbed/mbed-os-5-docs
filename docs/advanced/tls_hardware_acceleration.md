@@ -10,7 +10,7 @@ Whether the application developer uses mbed TLS as a cryptographic library or as
 
 You may want to add hardware acceleration in the following cases:
 
-- Your processor has special instructions capable of accelerating cryptographic operations, and you can accelerate parts significantly with optimised assembly code.
+- Your processor has special instructions capable of accelerating cryptographic operations, and you can accelerate parts significantly with optimized assembly code.
 
 
 - Your processor has access to a co-processor with cryptographic acceleration capabilities.
@@ -18,7 +18,7 @@ You may want to add hardware acceleration in the following cases:
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
 
-The mbed TLS library was written in C and it has a small amount of hand-optimised assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [`bn_mul.h`](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
+The mbed TLS library was written in C, and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [`bn_mul.h`](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
 
 ### What parts can I accelerate?
 
@@ -47,9 +47,9 @@ You have to provide an alternative implementation for the parts of mbed TLS that
 
 mbed TLS has a variety of options to make use of your alternative implementation. These make it possible to easily replace functionality at various abstraction levels and to different extents. In other words, you can replace the least amount of code to reach the highest possible acceleration with the smallest amount of effort.
 
-The easier and safer way to extend functionality is to [override some or all of the functions in a particular module](#adding-acceleration-by-replacing-functions). Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to [replace the whole module](#adding-acceleration-by-replacing-modules). Also, individual function replacement is only supported for function names [listed above under each module](#what-parts-can-i-accelerate); for modules listed without function names, only replacing the whole module is supported. Please note that in the case of ECP functions the override is only partial; mbed TLS will fall back to the software implementation if the hardware cannot handle a particular group.
+The easier and safer way to extend functionality is to [override some or all of the functions in a particular module](#adding-acceleration-by-replacing-functions). Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to [replace the whole module](#adding-acceleration-by-replacing-modules). Also, individual function replacement is only supported for function names [listed above under each module](#what-parts-can-i-accelerate); for modules listed without function names, mbed TLS only supports replacing the whole module. Please note that in the case of ECP functions the override is only partial; mbed TLS will fall back to the software implementation if the hardware cannot handle a particular group.
 
-No matter which approach you choose, please take notes of the [considerations below](#considerations-on-alternative-implementations).
+No matter which approach you choose, please note the [considerations below](#considerations-on-alternative-implementations).
 
 ## Adding acceleration by replacing functions
 
@@ -62,13 +62,13 @@ No matter which approach you choose, please take notes of the [considerations be
 1. If you want to replace functions in the ECP module, you need to implement the mandatory utility functions:
 
     These are functions that do not have a counterpart in the standard mbed TLS implementation and their only purpose is to facilitate the integration of the accelerated functions:
-        - `mbedtls_internal_ecp_grp_capable`: implement it to tell mbed TLS if the cryptographic hardware can handle the group. If the answer is no, then mbed TLS will fall back to the software implementation to continue the operation.
-        - `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` are optional. Use them to optimise if you are replacing a function in the ECP module.
-        - For more information about the utility functions read the subsection about the [ECP](#how-to-implement-ecp-module-functions) module.
+        - `mbedtls_internal_ecp_grp_capable`: Implement it to tell mbed TLS if the cryptographic hardware can handle the group. If the answer is no, then mbed TLS will fall back to the software implementation to continue the operation.
+        - `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` are optional. Use them to optimize if you are replacing a function in the ECP module.
+        - For more information about the utility functions, read the subsection about the [ECP](#how-to-implement-ecp-module-functions) module.
 
 1. Implement the selected functions with the help of your hardware accelerator.
 
-1. Since mbed TLS is implemented as a static link library in mbed OS, you also have to notify the compiler or linker that the alternative implementations are present. To do this, you have to set the macros corresponding to the selected functions. You can read more on this in the [subsection about setting macros](#how-to-set-the-macros).
+1. Because mbed TLS is implemented as a static link library in mbed OS, you also have to notify the compiler or linker that the alternative implementations are present. To do this, you have to set the macros corresponding to the selected functions. You can read more on this in the [subsection about setting macros](#how-to-set-the-macros).
 
 ### How to implement the functions
 
@@ -80,7 +80,7 @@ Clone the [mbed OS repository](https://github.com/ARMmbed/mbed-os) and copy the 
 
 mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in mbed TLS, see the [corresponding Knowledge Base article](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool).
 
-The method of accelerating the ECP module may support different kinds of elliptic curves. If that acceleration is a hardware accelerator, you may need to indicate what kind of curve operation the accelerator has to perform by setting a register or executing a special instruction. If performing this takes significant amount of time or power, then you may not want mbed TLS to do this step unnecessarily. The replaceable functions in this module are relatively low level, and therefore it may not be necessary to do this initialisation and release in each of them.
+The method of accelerating the ECP module may support different kinds of elliptic curves. If that acceleration is a hardware accelerator, you may need to indicate what kind of curve operation the accelerator has to perform by setting a register or executing a special instruction. If performing this takes significant amount of time or power, then you may not want mbed TLS to do this step unnecessarily. The replaceable functions in this module are relatively low level, and therefore it may not be necessary to do this initialization and release in each of them.
 
 To resolve this, you can move the setup of the hardware to the `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` functions and let mbed TLS call them whenever it is necessary. Please keep in mind that `mbedtls_internal_ecp_init` should return 0 upon a successful setup and `MBEDTLS_ERR_ECP_FEATURE_UNAVAILABLE` otherwise.
 
@@ -139,14 +139,14 @@ The default implementation of the modules are usually in the file `feature/mbedt
 
 ### Concurrency
 
-Note that functions in mbed TLS can be called from multiple threads and from multiple processes at the same time. As hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
+Note that functions in mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
-For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, take care to protect the operation with mutual exclusion primitive such as a [mutex](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mutex). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mutex). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
 ### Power management
 
-The current framework does not provide an interface to initialize and shut down accelerator hardware. A simple approach is to perform any necessary hardware initialization during system startup (outside of mbed TLS), however this may not be desirable for power consumption reasons. At the other end of the spectrum, it is possible to initialize the hardware at the beginning of each function, and shut it down as soon as the results have been read. This is a viable strategy if initialization is cheap enough.
+The current framework does not provide an interface to initialize and shut down accelerator hardware. One approach is to perform any necessary hardware initialization during system startup (outside of mbed TLS); however this may not be desirable for power consumption reasons. At the other end of the spectrum, it is possible to initialize the hardware at the beginning of each function and shut it down after reading the results. This is a viable strategy if initialization is cheap enough.
 
-More complex scenarios, where it is neither desirable to leave the hardware powered on permanently, nor to initialize it each time, need to be considered on a case-by-case basis. Note that unconditionally shutting down the hardware in `mbedtls_xxx_free` functions is usually not a particularly useful strategy, because there may be other live contexts that require the hardware. A more useful strategy is to keep a global use counter, which is incremented each time a context is allocated and decremented each time a context is freed; when the global counter drops to 0, the hardware is no longer in use.
+If it is neither desirable to leave the hardware powered on permanently nor to initialize it each time, you need to determine a power management strategy according to the expected application usage. Note that unconditionally shutting down the hardware in `mbedtls_xxx_free` functions is usually not a particularly useful strategy because there may be other live contexts that require the hardware. A more useful strategy is to keep a global use counter: increment the counter as part of context allocation and decrement it as part of freeing each context. When the global counter drops to 0, the hardware is no longer in use.
 
 In specialized applications, it may be best to provide a custom function to switch the hardware on and off and let the application developer decide when to call it.
