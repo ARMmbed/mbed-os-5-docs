@@ -114,6 +114,7 @@
         "title": "Temporary dumping ground",
         "description": "This is where I put files while editing; it's to ensure that nothing is ever removed from the JSON, because we may not remember to return it",
         "slug": "mbed-os-big-bucket",
+        "hidden": true,
         "type": "markdown",
         "sources": [
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/getting_started/mbed_studio.md"},
@@ -160,6 +161,7 @@
         "title": "Compile applications",
         "description": "Targes, flags and exporters for application compilations",
         "slug": "mbed-os-compile",
+        "hidden": true,
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/options.md"},
@@ -176,6 +178,7 @@
         "title": "Test and debug applications",
         "description": "Test and debug applications using mbed OS and third party tools",
         "slug": "mbed-os-test",
+        "hidden": true,
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/DAP.md"},
@@ -188,6 +191,7 @@
         "title": "Optimize applications",
         "description": "Optimizing memory usage and power management for mbed OS applications",
         "slug": "mbed-os-optimize",
+        "hidden": true,
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/optimize/introduction.md"},
@@ -216,6 +220,7 @@
         "title": "Collaborate on mbed OS development",
         "description": "Work with other developers",
         "slug": "mbed-os-collaborate",
+        "hidden": true,
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/collaborate/introduction.md"},
