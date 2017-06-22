@@ -75,6 +75,20 @@ Although we support exporting your project and libraries to an alternate toolcha
 
 We will do our best to maintain the exported libraries and project files, but please understand we cannot cover all cases and combinations, or provide support for use of these alternative tools themselves.
 
+## Alternative Build Systems
+
+### PlatformIO
+
+[PlatformIO](http://platformio.org) is an open source ecosystem for IoT
+development with off-line build system for ARM mbed, unified debugger and unit testing engine.
+It works on the popular host OS: Windows, macOS, Linux 32/64, Linux ARMv6-8 (Raspberry Pi, BeagleBone, CubieBoard, etc.).
+
+- [What is PlatformIO?](http://docs.platformio.org/page/what-is-platformio.html)
+- [PlatformIO IDE](http://platformio.org/platformio-ide)
+- [Integration with Cloud and Standalone IDEs](http://docs.platformio.org/page/ide.html) -
+  Cloud9, Codeanywehre, Eclipse Che (Codenvy), Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, and VSCode
+- [Project Examples](https://github.com/platformio/platformio-examples/tree/develop/mbed)
+
 ## Third party tool notes
 
 ### Makefiles and mbed OS 2 projects
