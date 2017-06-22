@@ -1,4 +1,4 @@
-## Your first application
+## Your first application on the mbed tools
 
 We have an example application called Blinky that you can use to get to know mbed OS and the development tools. It's one of the simplest examples of mbed OS. It shows the use of a DigitalOut object to represent an LED and the ``wait()`` call. This is good practice because if there were other threads, they could be scheduled and run while the first thread is waiting.
 

@@ -1,10 +1,10 @@
-## utest: asynchronous C++ test harness
+### utest: asynchronous C++ test harness
 
 This test harness allows you to execute a specified series of (asynchronous) C++ test cases with sensible default reporting and useful customization options.
 
 Please note that this is a purposefully lean test harness that only deals with test execution and provides default reporting handlers. For autodiscovery of test cases, test macros and other convenience functions, you can use the macros in the [unity module](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity). However, you are not required to use these and can use your own macros.
 
-### Theory of operation
+#### Theory
 
 A test specification contains a setup handler, several test cases and a teardown handler. Each test case contains a textual description, setup, teardown and failure handler, as well as the actual test handler.
 
@@ -19,7 +19,7 @@ The order of handler execution is:
     1. Test case teardown handler.
 1. Test teardown handler.
 
-### Example
+#### Example
 
 This example showcases functionality and proper integration with the [Greentea testing automation framework](advanced/greentea.md), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
@@ -136,8 +136,6 @@ Called for the 2. time
 {{success}}
 {{end}}
 ```
-
-### Detailed description
 
 #### Handlers
 
