@@ -93,7 +93,6 @@
         "slug": "mbed-tools",
         "type": "markdown",
         "sources": [
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/section_intro.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/mbed_tools/mbed_tools_overview.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/mbed_tools/online_comp.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/mbed_tools/compiler_collab.md"},
