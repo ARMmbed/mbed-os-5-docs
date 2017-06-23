@@ -1,21 +1,22 @@
-## Our YouTube channel
+## Examples and videos
+
+### Our YouTube channel
 
 [https://www.youtube.com/armmbed/](https://www.youtube.com/armmbed/)
 
-## End to end projects
+### End to end projects
 
 * [LoRa on mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
 * [Internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
 
-
-## JavaScript on mbed OS 5
+### JavaScript on mbed OS 5
 
 * [Building IoT devices with JavaScript](https://developer.mbed.org/javascript-on-mbed/)
 * [Blinky in JavaScript](https://github.com/ARMmbed/mbed-js-example)
 * [Bluetooth Low Energy in JavaScript](https://github.com/ARMmbed/mbed-js-ble-example)
 * [JavaScript REPL](https://github.com/janjongboom/mbed-js-repl-example)
 
-## BBC micro:bit
+### BBC micro:bit
 
 A few micro:bit How To videos:
 
@@ -23,13 +24,13 @@ A few micro:bit How To videos:
 * [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
 * [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
 
-## Blinky
+### Blinky
 
 * [Blinky](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/): our basic application, showing how to use the APIs to control the LED on the board.
 
-## Component examples
+### Component examples
 
-### mbed TLS
+#### mbed TLS
 
 * [Cryptographic benchmark](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/): benchmarks the various cryptographic primitives offered by mbed TLS.
 
@@ -39,7 +40,7 @@ A few micro:bit How To videos:
 
 * [TLS client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client/):  downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
 
-### mbed uVisor
+#### mbed uVisor
 
 * [Threaded Blinky with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-thread): an example threaded application with uVisor security.
 * [IRQ Blinky uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor): an example threaded application with uVisor security and IRQ support.
@@ -47,48 +48,48 @@ A few micro:bit How To videos:
 
 These examples work on the K64F and GCC_ARM toolchain only.
 
-### File system
+#### File system
 
 [Get the FAT file system working on an mbed OS platform](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
 
-### Bootloader
+#### Bootloader
 
 * [Create a bootloader](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-bootloader/).
 * [Use a blinky application with a prebuilt bootloader](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-bootloader-blinky/).
 
-### mbed Client
+#### mbed Client
 
 [Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for mbed OS. It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister.
 
-### Connectivity
+#### Connectivity
 
 * [HTTP](http://github.com/armmbed/mbed-os-example-http) and [HTTPS](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client/main.cpp).
 * [MQTT](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/).
 * [CoAP](https://github.com/armmbed/mbed-os-example-coap).
 
-#### mesh 
+##### mesh
 
 [Join a device to an insecure 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/nanostack-border-router). This is the simplest use of the mesh networking stack.
 
-#### Nanostack border router 
+##### Nanostack border router
 
 [Use the generic mbed border router and create a 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
 
-#### Sockets
+##### Sockets
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
 
-#### Wi-Fi
+##### Wi-Fi
 
 [Perform simple HTTP operations using the Wi-Fi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
-#### Bluetooth Low Energy (BLE)
+##### Bluetooth Low Energy (BLE)
 
 * [Battery level](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/): use the Battery Level service to transmit a device's battery level.
 
-* [BLE button](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Button/): BLE service template for a read-only characteristic. 
+* [BLE button](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Button/): BLE service template for a read-only characteristic.
 
-* [GAP button](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton/): use GAP to transmit a value to a peer that's listening for advertisements. 
+* [GAP button](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton/): use GAP to transmit a value to a peer that's listening for advertisements.
 
 * [Heart rate](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/): transmit a heart rate value using the SIG Heart Rate profile.
 
@@ -97,9 +98,9 @@ These examples work on the K64F and GCC_ARM toolchain only.
 * [Simple LED control](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/): a client using a read/write characteristic to control an LED. This example goes with the [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/), a server that uses the GATT client API to control the BLE client device.
 
 * Beacons send a small amount of information to a nearby device. Try:
-    * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/). 
+    * [BLE beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/).
     * [Eddystone beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneService/). Try it with the [Eddystone observer](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-EddystoneObserver/), which scans for beacons.
 
-### Peripherals
+#### Peripherals
 
 [On developer.mbed.org](https://developer.mbed.org/teams/mbed_example/)
