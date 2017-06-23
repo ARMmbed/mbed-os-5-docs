@@ -97,16 +97,16 @@
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/memap.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/profiling.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/runtime_mem_trace.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/runtime_stats.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/dynamic_mem_analysis.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/printf.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/ndebug.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/power_manage.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/power_consum_stats.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/resetting_gpios.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/enable_disable_instrumentation.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/sleep_deep_sleep.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/network_stack_sleep.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/runtime_stats.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/printf.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/ndebug.md"}
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/power/network_stack_sleep.md"}
         ]
     },
     {
