@@ -163,8 +163,7 @@
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/third_party.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/build_profiles.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/mbedignore.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/config_system.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/optimization.md"}
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/config_system.md"}
         ]
     },
     {
