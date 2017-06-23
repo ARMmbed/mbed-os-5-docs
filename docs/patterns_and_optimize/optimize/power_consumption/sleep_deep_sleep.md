@@ -1,3 +1,3 @@
-## Sleep and deep sleep
+### Sleep and deep sleep
 
 [A document explaining sleep and deep sleep]

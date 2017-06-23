@@ -1,4 +1,4 @@
-## Memory model
+### Memory model
 
 This is a basic overview of the memory model.
 
