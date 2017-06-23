@@ -76,8 +76,8 @@
         "slug": "mbed-os-design patterns",
         "type": "markdown",
         "sources": [
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/design_guidelines.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/writing_embedded_apps.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/design_guidelines.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/task_design_patterns.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/timing_considerations.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/timer_design.md"},

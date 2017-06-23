@@ -1,4 +1,4 @@
-## mbed OS Software Design Guide
+### mbed OS Software Design Guide
 
 Principles of mbed software:
 
@@ -7,11 +7,11 @@ Principles of mbed software:
 - Simple
 - Reliable
 
-### Style
+#### Style
 
 Please refer to the [mbed style guide](code_style.md).
 
-### Organization
+#### Organization
 
 The mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the mbed OS codebase as a single Git repo. We suggest this model for external libraries.
 
@@ -55,7 +55,7 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
 - A module contained in the mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
 - Special directories should follow consistent naming convention.
 
-### Contribution
+#### Contribution
 1. Please refer to the [mbed contribution guide](contributing.md).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
@@ -76,11 +76,11 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
     - Apache.
     - Permissive Binary License.
 
-### API design
+#### API design
 
 A general module can be split into two APIs, the frontend (or user API) and the backend (or porting layer). The user API describes the programmer interface that the library implements. For mbed OS, the user-facing API should adopt a C++ class-based interface, while the porting layer should adopt a C-compatible interface.
 
-#### API design - user API
+##### API design - user API
 
 - Each module should provide an object-oriented C++ user API.
 - The current standard is strictly C++03 (for portability).
@@ -127,7 +127,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 1. Nonrecoverable errors (such as OOM and mutex lock in interrupt) should not return to users.
 1. Recoverable errors (such as UDP packet loss) should be propagated to the user via error code.
 
-#### API design - porting layer
+##### API design - porting layer
 
 - Each module should provide a C-compatible porting layer.
 - The current standards are strictly C99 (for portability).
@@ -136,7 +136,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - The porting layer should be designed to allow as much variance in the implementation as is reasonable.
 - Simplicity is beautiful.
 
-#### Thread and IRQ safety
+##### Thread and IRQ safety
 
 [Full documentation](../concepts/thread_safety.md).
 
@@ -148,7 +148,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - If a callback is called in interrupt context, the API responsible should be clearly documented with a warning.
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
 
-### Documentation
+#### Documentation
 
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
 
@@ -169,7 +169,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 	- If a module contains tests, the README should provide testing instruction.
 - Extended documentation should be located in the module’s `docs` directory with appropriate links from the module’s README.
 
-### Testing
+#### Testing
 
 [Full documentation](../advanced/testing.md).
 
@@ -178,7 +178,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Tests included in the codebase must be compatible with the mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
-### Configuration
+#### Configuration
 
 mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the mbed build system. Modules should provide well-documented configuration options in a simple header file.
 

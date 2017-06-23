@@ -1,3 +1,3 @@
-## Task management API design patterns
+### Task management API design patterns
 
 [Document(s) about the intended design patterns for given APIs.]
