@@ -86,7 +86,6 @@
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/networking_design_patterns.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/security_design_patterns.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/patterns/storage_design_patterns.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/optimization.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/memory_intro.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/memory_model.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/memory/memory_model_design.md"},
@@ -156,7 +155,16 @@
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/how_to_write.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/contributing.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/code_style.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/terms.md"}
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/creating_apps/terms.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/DAP.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/build_script.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/printf.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/options.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/third_party.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/build_profiles.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/mbedignore.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/config_system.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/patterns_and_optimize/optimize/optimization.md"}
         ]
     },
     {
@@ -179,32 +187,6 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/communicating_with_platform.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial_driver.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial_communication.md"}
-        ]
-    },
-    {
-        "title": "Compile applications",
-        "description": "Targes, flags and exporters for application compilations",
-        "slug": "mbed-os-compile",
-        "hidden": true,
-        "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/options.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/third_party.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/build_profiles.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/mbedignore.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/compile/config_system.md"}
-        ]
-    },
-    {
-        "title": "Test and debug applications",
-        "description": "Test and debug applications using mbed OS and third party tools",
-        "slug": "mbed-os-test",
-        "hidden": true,
-        "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/DAP.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/build_script.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/test_debug/printf.md"}
         ]
     },
     {
