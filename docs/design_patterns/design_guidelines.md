@@ -1,13 +1,11 @@
 ## mbed OS Software Design Guide
 
->>> C
 Principles of mbed software:
 
-- Consistent </br>
-- Intuitive </br>
-- Simple </br>
-- Reliable </br>
->>>
+- Consistent
+- Intuitive
+- Simple
+- Reliable
 
 ### Style
 
