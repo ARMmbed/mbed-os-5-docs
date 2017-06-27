@@ -1,4 +1,4 @@
-## Application flow control and task management
+## Examples of application flow control and task management
 
 We can use Blinky to explore flow control and task management in mbed OS applications. We'll look at automated actions first, then move on to handling user actions.
 

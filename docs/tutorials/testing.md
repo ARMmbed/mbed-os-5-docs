@@ -1,4 +1,4 @@
-## Testing in mbed OS 5
+## Testing applications
 
 The way tests are run and compiled in mbed OS 5 is substantially different from previous versions of mbed.
 
