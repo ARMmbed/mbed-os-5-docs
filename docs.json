@@ -116,7 +116,7 @@
     },
     {
         "title": "mbed tools and third-party tools",
-        "description": "How to use the mbed Tools mbed CLI, the online compiler and the Greentea test suite, and how to integrate with third-party tools",
+        "description": "How to use the mbed tools - mbed CLI, the online compiler and the Greentea test suite - and how to integrate with third-party tools",
         "slug": "mbed-tools",
         "type": "markdown",
         "sources": [
