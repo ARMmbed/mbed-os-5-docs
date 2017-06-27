@@ -76,8 +76,8 @@
         ]
     },
     {
-        "title": "Design patterns and optimization in mbed OS",
-        "description": "Principles of design and optimization for mbed OS applications",
+        "title": "Design patterns and optimization for mbed OS applications",
+        "description": "Principles of API design and optimization for mbed OS applications",
         "slug": "mbed-os-design-patterns",
         "type": "markdown",
         "sources": [
