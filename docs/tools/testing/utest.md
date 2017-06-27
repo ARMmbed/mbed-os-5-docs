@@ -105,34 +105,34 @@ Running this test will output the following:
 {{description;utest greentea example}}
 {{test_id;MBED_OS}}
 {{start}}
->>> Running 4 test cases...
+> Running 4 test cases...
 
->>> Running case #1: 'Simple Test'...
+> Running case #1: 'Simple Test'...
 Simple test called
->>> 'Simple Test': 1 passed, 0 failed
+> 'Simple Test': 1 passed, 0 failed
 
->>> Running case #2: 'Repeating Test'...
+> Running case #2: 'Repeating Test'...
 Setting up for 'Repeating Test'
 Called for the 1. time
->>> 'Repeating Test': 1 passed, 0 failed
+> 'Repeating Test': 1 passed, 0 failed
 
->>> Running case #2: 'Repeating Test'...
+> Running case #2: 'Repeating Test'...
 Setting up for 'Repeating Test'
 Called for the 2. time
->>> 'Repeating Test': 2 passed, 0 failed
+> 'Repeating Test': 2 passed, 0 failed
 
->>> Running case #3: 'Asynchronous Test (200ms timeout)'...
->>> 'Asynchronous Test (200ms timeout)': 1 passed, 0 failed
+> Running case #3: 'Asynchronous Test (200ms timeout)'...
+> 'Asynchronous Test (200ms timeout)': 1 passed, 0 failed
 
->>> Running case #4: 'Asynchronous Timeout Repeat'...
->>> failure with reason 'Ignored: Timed Out'
->>> failure with reason 'Ignored: Timed Out'
->>> failure with reason 'Ignored: Timed Out'
->>> failure with reason 'Ignored: Timed Out'
->>> failure with reason 'Ignored: Timed Out'
->>> 'Asynchronous Timeout Repeat': 1 passed, 0 failed
+> Running case #4: 'Asynchronous Timeout Repeat'...
+> failure with reason 'Ignored: Timed Out'
+> failure with reason 'Ignored: Timed Out'
+> failure with reason 'Ignored: Timed Out'
+> failure with reason 'Ignored: Timed Out'
+> failure with reason 'Ignored: Timed Out'
+> 'Asynchronous Timeout Repeat': 1 passed, 0 failed
 
->>> Test cases: 4 passed, 0 failed
+> Test cases: 4 passed, 0 failed
 {{success}}
 {{end}}
 ```
