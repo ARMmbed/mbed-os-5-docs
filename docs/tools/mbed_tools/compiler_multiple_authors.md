@@ -56,7 +56,7 @@ Open the file(s) in conflict and look for something like this:
 
 <span class="images">![](images/conflict_review.png)<span>Identifying the lines in the source code that have conflicts</span></span>
 
-Wherever there is a conflict, Mercurial annotates the source code with markings showing your changes and other people's changes. You then have to choose one person's version, or blend the two. When you have finished, remove the ``<<<<``, ``>>>`` and ``===`` marks, and save the file.
+Wherever there is a conflict, Mercurial annotates the source code with markings showing your changes and other people's changes. You then have to choose one person's version, or blend the two. When you have finished, remove the ``<<``, ``>>`` and ``===`` marks, and save the file.
 
 The first save of a file after being opened in a conflicted state marks it as resolved and removes the red highlight.
 
