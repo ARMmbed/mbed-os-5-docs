@@ -1,14 +1,14 @@
-## CMSIS and RTX
+### CMSIS and RTX
 
 CMSIS/RTX code is imported from the original CMSIS repository, which you can find at [https://github.com/ARM-software/CMSIS_5/](https://github.com/ARM-software/CMSIS_5/).
 
-### Memory considerations
+#### Memory considerations
 
 Please note that mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for generic systems, such as mbed OS, because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers carved out at compile time, limiting the amount of available memory, mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
 
 Developers need to use the mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly (Please consult CMSIS-RTOS2 documentation for API details). `mbed_rtos_storage.h` header provides handy wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
 
-### Configuration
+#### Configuration
 
 mbed OS changes to RTX configuration all exist in a single file: `mbed-os/rtos/rtx2/mbed_rtx_conf.h`
 
@@ -23,7 +23,7 @@ Option | Value | Description |
 `OS_STACK_WATERMARK` | 0 or 1 | Watermarking is enabled if `MBED_STACK_STATS_ENABLED` or `MBED_STACK_STATS_ENABLED` are set. |
 `OS_PRIVILEGE_MODE` | 0 or 1 | We set it for 0 if uVisor is enabled, 1 otherwise. |
 
-### Code structure
+#### Code structure
 
 Due to differences in how the mbed OS and CMSIS directory structures look, you can't import the original code directly. Some directory changes are necessary:
 
@@ -41,18 +41,18 @@ CMSIS5 | mbed OS | Explanation |
 `CMSIS_5/CMSIS/RTOS2/RTX/Source/svc_user.c` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/` | RTX SVC user table |
 `CMSIS_5/CMSIS/RTOS2/RTX/Source/{ARM,GCC,IAR}/` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/TARGET_{M0,M0P,M3,RTOS_M4_M7}/TOOLCHAIN_{ARM,GCC,IAR}` | Toolchain and core specific exception handlers |
 
-### Modification
+#### Modification
 
 Due to different use cases between mbed OS and CMSIS, we had to make some modifications to the source code. We've tried to upstream our changes to the CMSIS repository, but in cases where they aren't compatible with CMSIS requirements, we are forced to maintain a small set of changes.
 
-#### CMSIS
+##### CMSIS
 
 Filename | Description |
 ---------|-------------|
 `cmsis_compiler.h` | Added IAR missing __ALIGNED attribute for earlier (less than 7.8.4) versions |
 `cmain.S` | custom IAR non-RTOS boot sequence for mbed |
 
-#### RTX
+##### RTX
 
 Filename | Description |
 ---------|-------------|
@@ -70,6 +70,6 @@ Filename | Description |
 `svc_user.c` | Removed as its template file and should not be in our code base |
 `rt_OsEventObserver.{c,h}` | Added an interface for uVisor to be notified about certain events from privileged code |
 
-#### Notes
+##### Notes
 
 For all toolchains, mbed OS uses `irq_cm0.s` for both M0 and M0P cores.
