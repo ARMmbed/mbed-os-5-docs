@@ -1,8 +1,8 @@
-## Collaboration and version control with the mbed Online Compiler
+### Collaboration and version control with the mbed Online Compiler
 
 The mbed Online Compiler offers collaboration and version control functions to help the community benefit from and improve individual work.
 
-### Terminology
+#### Terminology
 
 Remote repository
 :	A library or program published on mbed.org.
@@ -28,7 +28,7 @@ Publish
 Update
 :	Pull from a remote repository and switch your local repository to the latest revision.
 
-### Basic collaboration
+#### Basic collaboration
 
 The most basic (and the most popular) usage of the collaboration system is the traditional workflow in which one author develops a project, then multiple users import and use it.
 
@@ -40,7 +40,7 @@ Once imported, the local repository in your workspace will be `linked` to the re
 
 To import a repository, simply click the Import link on the repository's page on the mbed website, or use the Import button within the mbed Compiler. You can read more about importing on the [mbed Online Compiler page](../dev_tools/online_comp.md).
 
-### Getting updates
+#### Getting updates
 
 While browsing a program or a library, you will receive notifications of new versions in the Browser panel under the Summary tab:
 
@@ -56,7 +56,7 @@ The bottom list represents the remote repository revisions currently not present
 
 To get the latest version of the code, simply click the **Update** button.
 
-### Forking a repository
+#### Forking a repository
 
 When you add changes to an imported repository in your private workspace, you may want to publish them for others to use.
 
@@ -84,7 +84,7 @@ The forking process is identical to the [code publishing](publishing_code.md) wo
 
 **Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](pull_requests.md) page.**
 
-### Updating from a fork
+#### Updating from a fork
 
 If someone forks one of your repositories and modifies it, you can easily pull in any changes they have made into your own workspace.
 
@@ -100,7 +100,7 @@ If someone forks one of your repositories and modifies it, you can easily pull i
 
 <span class="notes">**Note:** This won't change the URL of your local repository.</span>
 
-### Comparing with a fork
+#### Comparing with a fork
 
 The Revisions panel lets you compare a local repository with a remote one, if they are "related". The term "related repositories" means that one repository is the ancestor of the other, through direct or indirect relationship (for example, a fork of the fork of the fork).
 
