@@ -192,6 +192,15 @@
         ]
     },
     {
+        "title": "Hardware development kit",
+        "description": "An introduction to the hardware development kit (HDK)",
+        "slug": "mbed-hdk",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-HDK/blob/master/README.md"}
+        ]
+    },
+    {
         "title": "mbed OS release notes",
         "description": "Release notes and known issues for mbed OS 5",
         "slug": "mbed-os-relase-notes",
@@ -206,21 +215,21 @@
         ]
     },
     {
-    "title": "mbed Client guide",
-    "description": "An introduction to mbed Client",
-    "slug": "mbed-client",
-    "hidden": true,
-    "type": "markdown",
-    "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/index.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Introduction.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/client_reg_dereg.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/dev_man_serv_enable.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/info_reporting.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/data_types.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Howto.md"},
-	      {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/porting-guide.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/further-reading.md"}
+      "title": "mbed Client guide",
+      "description": "An introduction to mbed Client",
+      "slug": "mbed-client",
+      "hidden": true,
+      "type": "markdown",
+      "sources": [
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/index.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Introduction.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/client_reg_dereg.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/dev_man_serv_enable.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/info_reporting.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/data_types.md"},
+          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Howto.md"},
+	         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/porting-guide.md"},
+           {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/further-reading.md"}
      ]
 },
  {
