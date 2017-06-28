@@ -2,7 +2,7 @@
 
 The mbed Hardware Development Kit (mbed HDK) is a collection of hardware design resources that we have gathered to assist the development of custom hardware benefiting from the mbed ecosystem and associated technologies, like mbed OS and DAPLink. Working with development boards that are based on the mbed HDK is the most efficient way to get started with the mbed platform.
 
-The mbed HDK provides:
+### HDK content per project
 
 * Eagle schematic and board files
 * PDF schematic and board copies
@@ -10,14 +10,15 @@ The mbed HDK provides:
 * Bill of Materials (BOM)
 * An online BOM for easy purchasing (eBOM)
 
-### What's included here?
+### Repository content and projects
+
+The [mbed-hdk](https://github.com/ARMmbed/mbed-hdk) repository offers:
 
 - CAD resources in Eagle 7.3.0 format:
     - mbed HDK component library
     - Design rules
     - CAM jobs
     - User Language Program (ULP) scripts for Eagle 7.3.0
-
 - Production Design Projects:
     - mbed Application Shield
     - mbed 6LoWPAN border router HAT
