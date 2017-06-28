@@ -197,7 +197,7 @@
         "slug": "mbed-hdk",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-HDK/blob/master/README.md"}
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/hdk.md"}
         ]
     },
     {
