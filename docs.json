@@ -209,6 +209,7 @@
     "title": "mbed Client guide",
     "description": "An introduction to mbed Client",
     "slug": "mbed-client",
+    "hidden": true,
     "type": "markdown",
     "sources": [
         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/index.md"},
@@ -226,6 +227,7 @@
     "title": "Getting started with mbed Device Connector",
     "description": "A quick guide to mbed Device Connector",
     "slug": "device-connector",
+    "hidden": true,
     "type": "markdown",
     "sources": [
         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/index.md"},
@@ -238,6 +240,7 @@
     "title": "Web interfaces for the mbed Device Connector",
     "description": "mbed Device Connector Web API",
     "slug": "device-connector-api",
+    "hidden": true,
     "type": "markdown",
     "sources": [
         {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/index.md"},
