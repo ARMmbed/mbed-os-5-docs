@@ -1,4 +1,4 @@
-## Introduction to the mbed OS API
+## Introduction to the mbed OS references
 
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
