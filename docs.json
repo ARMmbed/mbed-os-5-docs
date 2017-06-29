@@ -2,7 +2,7 @@
     {
         "title": "What is mbed OS",
         "description": "Review of mbed OS architecture, codebase and associated tools",
-        "slug": "mbed-os-intro",
+        "slug": "introduction",
         "type": "markdown",
         "sources": [
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/intros/introduction.md"},
@@ -15,7 +15,7 @@
     {
         "title": "mbed OS API references",
         "description": "References to the mbed OS APIs",
-        "slug": "mbed-os-api-ref",
+        "slug": "api",
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/intro.md"},
@@ -116,7 +116,7 @@
     {
         "title": "mbed tools and third-party tools",
         "description": "How to use the mbed tools - mbed CLI, the online compiler and the Greentea test suite - and how to integrate with third-party tools",
-        "slug": "mbed-tools",
+        "slug": "tools",
         "type": "markdown",
         "sources": [
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/section_intro.md"},
@@ -149,7 +149,7 @@
     {
         "title": "Tutorials",
         "description": "Step by step guides to some common actions, including a simply application on each of the mbed tools",
-        "slug": "mbed-os-tutorials",
+        "slug": "tutorials",
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/first_app/first_program.md"},
@@ -171,9 +171,23 @@
         ]
     },
     {
+        "title": "mbed OS releases",
+        "description": "Release notes and known issues for mbed OS 5",
+        "slug": "relases",
+        "type": "markdown",
+        "sources": [
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/known_issues.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_4/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_3/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_2/release_note.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_1/release_note.md"}
+        ]
+    },
+    {
         "title": "Porting mbed OS",
         "description": "A guide to porting mbed OS to new platforms",
-        "slug": "mbed-os-porting",
+        "slug": "porting",
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/porting/intro.md"},
@@ -198,20 +212,6 @@
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/hdk.md"}
-        ]
-    },
-    {
-        "title": "mbed OS release notes",
-        "description": "Release notes and known issues for mbed OS 5",
-        "slug": "mbed-os-relase-notes",
-        "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/known_issues.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_4/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_3/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_2/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_1/release_note.md"}
         ]
     },
     {
