@@ -1,12 +1,12 @@
-### Time
+<h3 id="time">Time</h3>
 
 The C date and time functions are a group of functions in the standard library of the C programming language implementing date and time manipulation operations. They provide support for time acquisition, conversion between date formats and formatted output to strings.
 
-#### Hello world
+<h4 id="time-hello">Hello world</h4>
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/time_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/time_HelloWorld/file/8593c9813840/main.cpp)
 
-#### 2038
+<h4 id="time-2038">2038</h4>
 
 We will be preparing the mbed libraries for the year 2038 problem and hope to cause as little disruption as possible. Some more information about the year 2038 problem from [Wikipedia](https://en.wikipedia.org/wiki/Year_2038_problem):
 
