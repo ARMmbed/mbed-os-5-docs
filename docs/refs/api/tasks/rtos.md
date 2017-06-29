@@ -89,6 +89,9 @@ Each ``Thread`` can wait for signals and be notified of events:
 
 A [``Queue``](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html) allows you to queue pointers to data from producer threads to consumer threads:
 
+>>> c
+>>>
+
 <span class="images">![](Images/Thread/queue.png)</span>
 
 >>> c
@@ -110,6 +113,9 @@ if (evt.status == osEventMessage) {
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html)
 
 <h5 id="memorypool">MemoryPool</h5>
+
+>>>c
+>>>
 
 You can use the [MemoryPool](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html) class to define and manage fixed-size memory pools:
 
