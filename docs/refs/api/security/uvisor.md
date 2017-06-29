@@ -79,19 +79,15 @@ $ mbed compile -m K64F -t GCC_ARM
 ```
 >>>
 
-The resulting binary is located at:
+The resulting binary is located at ``~/code/uvisor-example/BUILD/K64F/GCC_ARM/uvisor-example.bin``.
 
->>> C
-```
-~/code/uvisor-example/BUILD/K64F/GCC_ARM/uvisor-example.bin
-```
->>>
 
 Drag and drop it onto the USB device mounted on your computer to flash the device. When the flashing process is complete, press the reset button on the device. The device's LED blinks.
 
 #### Enable uVisor
 
-
+>>> C
+>>>
 
 To enable the uVisor on the app, add these lines to the beginning of the `main.cpp` file:
 
@@ -130,6 +126,8 @@ In the code above, we specified two elements:
 1. Public box Access Control Lists (ACLs). With uVisor enabled, everything runs in unprivileged mode, so make sure the public box and peripherals the OS accesses are allowed. These peripherals are specified using a list like the one in the snippet above. This example provides the list of all the ACLs you need. For other platforms or other applications, you need to determine those ACLs following the process in [The main box ACLs](#the-main-box-acls).
 1. App-specific uVisor configurations: `UVISOR_SET_MODE_ACL`. This macro sets the uVisor mode (enabled) and associates the list of ACLs you just created with the public box.
 
+>>> C
+>>>
 
 
 Before compiling, you need to override the original `K64F` target to enable the uVisor feature. To do so, add the file `~/code/uvisor-example/mbed_app.json` with the following content:
@@ -153,10 +151,10 @@ Before compiling, you need to override the original `K64F` target to enable the 
 
 The macros `FEATURE_UVISOR` and `TARGET_UVISOR_SUPPORTED` in the configuration file above are automatically defined for C and C++ files but not for assembly files. Because the uVisor relies on those symbols in some assembly code, you need to define them manually.
 
-
 **Checkpoint**
 
-
+>>> C
+>>>
 
 Compile the application again. This time, the `K64F` target includes the new features and labels you provided in `mbed_app.json`;
 
@@ -203,6 +201,8 @@ You want the box to have exclusive access to the following resources:
 - The private dynamically allocated buffer (as specified by a dynamic memory ACL).
 - The private variables (as specified by a static memory ACL).
 
+>>> C
+>>>
 
 
 Create a new source file, `~/code/uvisor-example/source/secure_box.cpp`. You will configure the secure box inside this file. The secure box name for this example is `private_button`.
@@ -246,7 +246,8 @@ UVISOR_BOX_CONFIG(private_button,             /* Name of the secure box */
 
 In general, you can decide what to do in your box's main thread. You can run it once and then stop it or use it to configure memories or peripherals or to create other threads. In this app, the box's main thread is the only thread for the `private_button` box, and it runs throughout the program.
 
-
+>>> C
+>>>
 
 The `private_button_main_thread` function configures the push-button to trigger an interrupt when pressed, allocates the dynamic buffer to hold the thread count values and initializes its private static memory, `PrivateButtonStaticMemory`. A spinning loop updates the counter value every second.
 
@@ -351,6 +352,8 @@ You can define a public secure entry point to retrieve the index value from the 
 
 ##### Defining a secure entry point
 
+>>> C
+>>>
 
 Create a new source file, `~/code/uvisor-example/source/secure_box.h`, where you will define the functions that you can call through RPC.
 
@@ -371,7 +374,8 @@ UVISOR_EXTERN int (*secure_get_index)(void);
 
 ##### Implementing a secure entry point
 
-
+>>> C
+>>>
 
 Now that you have defined the secure entry point, you can map the entry point to a function running in the secure box. You can do this through the `UVISOR_BOX_RPC_GATEWAY_SYNC` macro. Open `~/code/uvisor-example/source/secure_box.cpp`, and replace the line with `#define PRIVATE_BUTTON_BUFFER_COUNT 8` by:
 
@@ -393,7 +397,8 @@ UVISOR_BOX_RPC_GATEWAY_SYNC (private_button, secure_get_index, get_index, int, v
 
 ##### Listening for RPC messages
 
-
+>>> C
+>>>
 
 To receive RPC messages, you need to spin up a new thread, running in the secure box context. You can do this in the main thread of the secure box. In `~/code/uvisor-example/source/secure_box.cpp`, replace the first five lines of `private_button_main_thread` with:
 
@@ -435,6 +440,9 @@ static void private_button_main_thread(const void *)
 
 ##### Calling the public secure entry point
 
+>>> C
+>>>
+
 To call the public secure entry point from any other box, you can use the `secure_get_index` function. It will automatically do an RPC call into the secure box and serialize the return value. You can try this out from the public box. In `~/code/uvisor-example/source/main.cpp`, first include the header file for the secure box:
 
 >>> C
@@ -475,7 +483,8 @@ When the uVisor is enabled, all NVIC APIs are rerouted to the corresponding uVis
 - Code in a box can only change the state of an IRQ (enable it, change its priority, etc.) if the box registered that IRQ with uVisor at runtime, using the `NVIC_SetVector` API.
 - An IRQ that belongs to a box can only be modified when that box context is active.
 
-
+>>> C
+>>>
 
 Although this behavior is different from that of the original NVIC, it is backward compatible. Legacy code (such as a device HAL) still works after uVisor is enabled. The general use case is the following:
 
@@ -501,7 +510,8 @@ NVIC_EnableIRQ(MY_IRQ);
 
 The code samples in this guide provide a list of ACLs for the public box. The list includes peripherals necessary to make the example app work, and they are specific to the NXP FRDM-K64F target.
 
-
+>>> C
+>>>
 
 To generate the ACLs list for a different target or a different app, use the code provided in the [Enable uVisor](#enable-uvisor) section, but start with an empty ACLs list:
 
@@ -514,7 +524,8 @@ static const UvisorBoxAclItem g_public_box_acls[] = {
 
 Compile your application using uVisor in debug mode. This operation requires some more advanced steps. Please read [Debugging uVisor on mbed OS](DEBUGGING.md) for the detailed instructions.
 
-
+>>> C
+>>>
 
 Once the uVisor debug messages are enabled, your application fails. The failure is due to the first missing ACL being hit by the public box code. The message will look like:
 

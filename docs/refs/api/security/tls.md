@@ -22,12 +22,12 @@ mbed TLS simplifies enabling and disabling features to meet the needs of a parti
 
 The list of compilation flags is available in the fully documented configuration file, [config.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/config.h).
 
->>> c
+>>> C
 >>>
 
 For example, in an application called `myapp`, if you want to enable the EC J-PAKE key exchange and disable the CBC cipher mode, you can create a file named  `mbedtls-config-changes.h` in the `myapp` directory containing the following lines:
 
->>> c
+>>> C
 ```
 #define MBEDTLS_ECJPAKE_C
 #define MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED
@@ -38,7 +38,7 @@ For example, in an application called `myapp`, if you want to enable the EC J-PA
 
 Then create a file named `mbed_app.json` at the root of your application with the following contents:
 
->>> c
+>>> C
 ```
 {
     "macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls-config-changes.h\""]
