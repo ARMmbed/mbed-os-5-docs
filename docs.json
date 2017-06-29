@@ -196,6 +196,7 @@
         "title": "Hardware development kit",
         "description": "An introduction to the hardware development kit (HDK)",
         "slug": "mbed-hdk",
+        "hidden": true,
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/hdk.md"}
