@@ -23,7 +23,7 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
 - e2studio.
 - Emblocks.
 
-This may be useful to launch a debug session with your favorite tool while using mbed CLI for development, or creating examples or projects you work on within your tool of choice. 
+This may be useful to launch a debug session with your favorite tool while using mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
 ## Exporting from mbed CLI
 
@@ -33,7 +33,7 @@ For example, to export to uVision5 with the K64F target run:
 
 	$ mbed export -i uvision5 -m K64F
 
-A `*.uvproj` file is created in the root folder of the project. 
+A `*.uvproj` file is created in the root folder of the project.
 You can open this project file with uVision5.
 
 When you export from mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build_profiles.md#debug-profile). For example, this means that compiling within UVision 5 after this export:
@@ -63,7 +63,7 @@ The mbed Online Compiler has a built-in export mechanism that supports the same 
 
 	<span class="images">![](Images/select_toolchain.png)<span>Selecting a toolchain</span></span>
 
-1. The export process generates a ZIP archive with a project file matching your selected development environment. 
+1. The export process generates a ZIP archive with a project file matching your selected development environment.
 
 Follow your toolchain's import or project creation process to begin working there.
 
@@ -110,7 +110,7 @@ If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r
 **Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.
 
 > "[GNU Make](http://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
-> 
+>
 >(Taken verbatim from the GNU Make website).
 
 Make itself does not compile source code. It relies on a compiler such as:
@@ -122,17 +122,17 @@ Make itself does not compile source code. It relies on a compiler such as:
 <span class="notes">**Note:** As stated above, you should ensure that the compiler you are exporting to is accessible using your `PATH` environment variable, as Makefile requires this. For example, when using an exported Makefile from make_armc5, the command `armcc` should print a help message about how to use ARM Compiler 5.</span>
 
 #### Make and Eclipse on Windows: Nordic platforms using SoftDevices
-	
-Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. 
+
+Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows.
 Please download and install it.
 
 #### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
-	
-Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew). 
+
+Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew).
 
 ### GNU ARM Eclipse (managed CDT projects) with GNU ARM Embedded Toolchain
 
-The [GNU ARM Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects. 
+The [GNU ARM Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
 
 Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command line options.
 
@@ -152,12 +152,12 @@ You can open this new project with an Eclipse CDT which has the GNU ARM Eclipse 
 
 ### Kinetis Design Studio (Freescale KDS) with GNU ARM Embedded Toolchain
 
-Freescale KDS now ships with the GNU ARM Embedded Toolchain. You may need to update a linker flag depending on the version of tools installed. 
+Freescale KDS now ships with the GNU ARM Embedded Toolchain. You may need to update a linker flag depending on the version of tools installed.
 
 1. Press **Alt + Enter** or **Option** + **Enter**. The **C++ Build** dialog box opens.
 1. In **Settings**, select **Tool Settings**.
 1. Any file extension that is ``.s`` needs to be changed to ``.S`` (lowercase to uppercase):
-	
+
 	__KDS >= 3.0__
 
 	``-specs=nosys.specs``
@@ -168,7 +168,7 @@ Freescale KDS now ships with the GNU ARM Embedded Toolchain. You may need to upd
 
 ### Atmel Studio
 
-The mbed libraries contain CMSIS startup files. 
+The mbed libraries contain CMSIS startup files.
 
 When importing an mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the **migrate to current infrastructure** box.
 
