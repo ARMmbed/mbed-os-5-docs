@@ -1,9 +1,5 @@
 <h2 id="refrences-intro">Introduction to the mbed OS references</h2>
 
->>>
-This is just so I can see it rebuilt
->>>
-
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
 Your application code is written in C++. It uses the application programing interfaces (APIs) that mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers and integrating large amounts of software.
