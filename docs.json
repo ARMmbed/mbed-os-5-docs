@@ -1,7 +1,7 @@
 [
     {
         "title": "What is mbed OS",
-        "description": "Review of mbed OS architecture, codebase and associated tools",
+        "description": "Introducing mbed OS; the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
         "sources": [
@@ -13,9 +13,9 @@
         ]
     },
     {
-        "title": "mbed OS API references",
-        "description": "References to the mbed OS APIs",
-        "slug": "api",
+        "title": "mbed OS references",
+        "description": "The reference manual for mbed OS: APIs, configuration and implementation details",
+        "slug": "reference",
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_OS_API_Docs/blob/new_engine/docs/intro.md"},
@@ -115,7 +115,7 @@
     },
     {
         "title": "mbed tools and third-party tools",
-        "description": "How to use the mbed tools - mbed CLI, the online compiler and the Greentea test suite - and how to integrate with third-party tools",
+        "description": "Details of the tools available for working with mbed OS",
         "slug": "tools",
         "type": "markdown",
         "sources": [
@@ -148,7 +148,7 @@
     },
     {
         "title": "Tutorials",
-        "description": "Step by step guides to some common actions, including a simply application on each of the mbed tools",
+        "description": "Learn about working with mbed OS: getting started, developing applications, useful design patterns, debugging and optimisation techniques",
         "slug": "tutorials",
         "type": "markdown",
         "sources": [
@@ -172,7 +172,7 @@
     },
     {
         "title": "mbed OS releases",
-        "description": "Release notes and known issues for mbed OS 5",
+        "description": "The mbed OS releases; latest and history",
         "slug": "relases",
         "type": "markdown",
         "sources": [
@@ -186,7 +186,7 @@
     },
     {
         "title": "Porting mbed OS",
-        "description": "A guide to porting mbed OS to new platforms",
+        "description": "Supporting mbed OS on new platforms",
         "slug": "porting",
         "type": "markdown",
         "sources": [
