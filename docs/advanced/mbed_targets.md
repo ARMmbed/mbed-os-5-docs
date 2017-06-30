@@ -118,7 +118,27 @@ When you use target inheritance, you may alter the values of `extra_labels` usin
 
 ### `features`, `features_add` and `features_remove`
 
-The list of _features_ enables software features on a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources.
+The list of _features_ enables software features on a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources. Unlike `extra_labels`, the build system recognizes a fixed set of values in the `features` list. The build system recognizes the following features:
+ - `UVISOR`.
+ - `BLE`.
+ - `CLIENT`.
+ - `IPV4`.
+ - `LWIP`.
+ - `COMMON_PAL`.
+ - `STORAGE`.
+ - `NANOSTACK`.
+
+The following features, also recognized by the build system, are all Nanostack configurations:
+ - `LOWPAN_BORDER_ROUTER`.
+ - `LOWPAN_HOST`.
+ - `LOWPAN_ROUTER`.
+ - `NANOSTACK_FULL`.
+ - `THREAD_BORDER_ROUTER`.
+ - `THREAD_END_DEVICE`.
+ - `THREAD_ROUTER`.
+ - `ETHERNET_HOST`.
+ 
+The build system errors when you use features outside of this list.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
 
