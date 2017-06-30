@@ -20,8 +20,8 @@ mbed CLI for Windows installs the following components:
 
 ## Installation
 
-1. Download the latest executable from [mbed-windows-installer v0.4.0](https://mbed-media.mbed.com/filer_public/27/4d/274d9cf1-ea06-4459-b4a7-90b7addd6f07/mbed_installer_v040.exe).
-2. Run mbed_installer_v040.exe.
+1. Download the latest executable from [mbed-windows-installer v0.4.1](https://mbed-media.mbed.com/filer_public/7f/46/7f46e205-52f5-48e2-be64-8f30d52f6d75/mbed_installer_v041.exe).
+2. Run mbed_installer_v041.exe.
 3. Set the installation path.
 4. Choose the installation type:
   * Default: Installs all components.
@@ -56,4 +56,4 @@ $ mbed --help
 ## Uninstallation
 
 * You can install mbed CLI for Windows either from `Programs and Features` or directly by running `mbed_uninstall.exe`, which is in the installation folder.
-* **Important** Uninstaller uninstalls only mbed CLI, GNU ARM Embedded Toolchain and the mbed Windows serial port driver. Python, Git and Mercurial have seperate uninstallers. You can uninstall them separately.
+* **Important** Uninstaller uninstalls only mbed CLI and the mbed Windows serial port driver. Python, Git, Mercurial and GNU ARM Embedded Toolchain have separate uninstallers. You can uninstall them separately.
