@@ -12,6 +12,7 @@ pages:
 - ['getting_started/flow_control.md', 'Creating applications on mbed OS', 'Application flow control and task management']
 - ['dev_tools/options.md', 'Development tools and aids', 'Development tool options']
 - ['dev_tools/cli.md', 'Development tools and aids', 'mbed CLI']
+- ['dev_tools/cli_install.md', 'Development tools and aids', 'mbed CLI for Windows installer']
 - ['dev_tools/online_comp.md', 'Development tools and aids', 'mbed Online Compiler']
 - ['dev_tools/third_party.md', 'Development tools and aids', 'Third party development tools']
 - ['dev_tools/build_profiles.md', 'Development tools and aids', 'Build profiles']
