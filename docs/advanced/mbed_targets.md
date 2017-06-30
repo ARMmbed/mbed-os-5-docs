@@ -128,7 +128,7 @@ The list of _features_ enables software features on a platform. Like `extra_labe
  - `STORAGE`.
  - `NANOSTACK`.
 
-The following features, also recognized by the build system, are all nanostack configurations:
+The following features, also recognized by the build system, are all Nanostack configurations:
  - `LOWPAN_BORDER_ROUTER`.
  - `LOWPAN_HOST`.
  - `LOWPAN_ROUTER`.
