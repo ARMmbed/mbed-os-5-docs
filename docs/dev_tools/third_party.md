@@ -150,6 +150,14 @@ This command creates the `.project` and `.cproject` files in the root folder of 
 
 You can open this new project with an Eclipse CDT which has the GNU ARM Eclipse plug-ins installed.
 
+#### GNU ARM Eclipse on Windows: 8Kb command length limitation
+
+Prior to version 2.6.1 of GNU ARM Eclipse, the build tools of the GNU ARM Eclipse plugin were using the Windows cmd.exe shell. This exposed the build system to a limitation of cmd.exe. Please upgrade you version of GNU ARM Eclipse if you encounter a problem such as:
+
+    arm-none-eabi-g++: error: ./mbed-os/features/FEATURE_LWIP/lwi-interface/lwip/src/netif/lwip_lowpan6.o: No such file or directory
+
+Note: there is a deletion of a character here. The command line should have read `./mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/lwip_lowpan6.o`.
+
 ### Kinetis Design Studio (Freescale KDS) with GNU ARM Embedded Toolchain
 
 Freescale KDS now ships with the GNU ARM Embedded Toolchain. You may need to update a linker flag depending on the version of tools installed.
