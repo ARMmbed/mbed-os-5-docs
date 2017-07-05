@@ -1,6 +1,6 @@
 [
     {
-        "title": "What is mbed OS",
+        "title": "Introduction to mbed OS",
         "description": "Introducing mbed OS; the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
