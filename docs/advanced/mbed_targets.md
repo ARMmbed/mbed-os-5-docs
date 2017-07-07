@@ -193,14 +193,14 @@ The `release_versions` property is a list of major versions of mbed OS that the 
 
 The `supported_form_factors` property is an optional list of form factors that a development board supports. You can use this property in C, C++ and assembly language by passing a macro prefixed with `TARGET_FF_` to the compiler. The accepted values for `supported_form_factors` are `ARDUINO`, which indicates compatibility with Arduino headers, and `MORPHO`, which indicates compatibility with ST Morpho headers.
 
-# Style guide
+## Style guide
 
 A linting script for `targets.json` is available as `tools/targets/lint.py` in mbed OS. This script is a utility for avoiding common errors when defining targets and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
 
-## Rules enforced
+### Rules enforced
 There are two sets of rules: rules that affect how you must structure target inheritance and rules that govern what each role within the inheritance hierarchy can do.
 
-### Inheritance rules
+#### Inheritance rules
 A target's inheritance must look like one of these:
 
 ```
@@ -214,7 +214,7 @@ Family -> Subfamily -> MCU -> Module -> Board
 
 The linting script guesses where the Boards and Modules stop and the MCUs, Families and Subfamilies begin. An MCU, Family or Subfamily must have at least one Board or Module above it in any hierarchy.
 
-### Role rules
+#### Role rules
 
 For each of these target roles, some restrictions are in place:
 - Families, MCUs and Subfamilies may contain the following keys:
@@ -272,10 +272,10 @@ For each of these target roles, some restrictions are in place:
 - if `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
 - MCUs, Families and SubFamilies must set `public` to `false`
 
-## Sample output
+### Sample output
 The linting script takes three subcommands: `targets`, `all-targets` and `orphans`.
 
-### `targets` and `all-targets` commands 
+#### `targets` and `all-targets` commands 
 
 The `targets` and `all-targets` commands both show errors within public inheritance hierarchies. For example:
 
@@ -320,7 +320,7 @@ target errors:
 
 The `all-targets` command is very verbose, with output that matches the format above but is too long to reproduce here.
 
-### `orphans` command
+#### `orphans` command
 
 The `orphans` command shows all targets that you cannot reach from a public target.
 
