@@ -24,8 +24,8 @@ mbed CLI for Windows installs the following components:
 2. Run mbed_installer_v041.exe.
 3. Set the installation path.
 4. Choose the installation type:
-  * Default: Installs all components.
-  * Advanced: Allows you to select components.
+    * Default: Installs all components.
+    * Advanced: Allows you to select components.
 5. Installer installs all selected components. Close it after it finishes.
 
 ### Silent install
