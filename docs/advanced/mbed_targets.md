@@ -212,3 +212,146 @@ The `release_versions` property is a list of major versions of mbed OS that the 
 ### `supported_form_factors`
 
 The `supported_form_factors` property is an optional list of form factors that a development board supports. You can use this property in C, C++ and assembly language by passing a macro prefixed with `TARGET_FF_` to the compiler. The accepted values for `supported_form_factors` are `ARDUINO`, which indicates compatibility with Arduino headers, and `MORPHO`, which indicates compatibility with ST Morpho headers.
+
+## Style guide
+
+A linting script for `targets.json` is available as `tools/targets/lint.py` in mbed OS. This script is a utility for avoiding common errors when defining targets and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
+
+### Rules enforced
+There are two sets of rules: rules that affect how you must structure target inheritance and rules that govern what each role within the inheritance hierarchy can do.
+
+#### Inheritance rules
+A target's inheritance must look like one of these:
+
+```
+MCU -> Board
+MCU -> Module -> Board
+Family -> MCU -> Board
+Family -> MCU -> Module -> Board
+Family -> Subfamily -> MCU -> Board
+Family -> Subfamily -> MCU -> Module -> Board
+```
+
+The linting script guesses where the Boards and Modules stop and the MCUs, Families and Subfamilies begin. An MCU, Family or Subfamily must have at least one Board or Module above it in any hierarchy.
+
+#### Role rules
+
+For each of these target roles, some restrictions are in place:
+- Families, MCUs and Subfamilies may contain the following keys:
+  - `core`.
+  - `extra_labels`.
+  - `features`.
+  - `bootloader_supported`.
+  - `device_name`.
+  - `post_binary_hook`.
+  - `default_tool chain`.
+  - `config`.
+  - `target_overrides`.
+- MCUs are required to have, and Families and Subfamilies may have:
+  - `release_versions`.
+  - `supported_toolchains`.
+  - `default_lib`.
+  - `public`.
+  - `device_has`.
+- Modules and Boards may have the following keys:
+  - `supported_form_factors`.
+  - `is_disk_virtual`.
+  - `detect_code`.
+  - `extra_labels`.
+  - `public`.
+  - `config`.
+  - `forced_reset_timeout`.
+  - `target_overrides`
+- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `target_overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `target_overries`, on the other hand, are designed for this use case.
+- `extra_labels` may not contain any target names
+- `device_has` may only contain values from the following list:
+  - `ANALOGIN`.
+  - `ANALOGOUT`.
+  - `CAN`.
+  - `ETHERNET`.
+  - `EMAC`.
+  - `FLASH`.
+  - `I2C`.
+  - `I2CSLAVE`.
+  - `I2C_ASYNCH`.
+  - `INTERRUPTIN`.
+  - `LOWPOWERTIMER`.
+  - `PORTIN`.
+  - `PORTINOUT`.
+  - `PORTOUT`.
+  - `PWMOUT`.
+  - `RTC`.
+  - `TRNG`.
+  - `SERIAL`.
+  - `SERIAL_ASYNCH`.
+  - `SERIAL_FC`.
+  - `SLEEP`.
+  - `SPI`.
+  - `SPI_ASYNCH`.
+  - `SPISLAVE`.
+- if `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
+- MCUs, Families and SubFamilies must set `public` to `false`
+
+### Sample output
+The linting script takes three subcommands: `targets`, `all-targets` and `orphans`.
+
+#### `targets` and `all-targets` commands 
+
+The `targets` and `all-targets` commands both show errors within public inheritance hierarchies. For example:
+
+`python tools/targets/lint.py targets EFM32GG_STK3700 EFM32WG_STK3800 LPC11U24_301`
+
+Could produce this output
+
+```yaml
+hierarchy: Family (EFM32) -> MCU (EFM32GG990F1024) -> Board (EFM32GG_STK3700)
+target errors:
+  EFM32:
+  - EFM32 is not allowed in extra_labels
+  EFM32GG990F1024:
+  - macros found, and is not allowed
+  - default_lib not found, and is required
+  - device_has not found, and is required
+  EFM32GG_STK3700:
+  - progen found, and is not allowed
+  - device_has found, and is not allowed
+---
+hierarchy: Family (EFM32) -> MCU (EFM32WG990F256) -> Board (EFM32WG_STK3800)
+target errors:
+  EFM32:
+  - EFM32 is not allowed in extra_labels
+  EFM32WG990F256:
+  - macros found, and is not allowed
+  - default_lib not found, and is required
+  - device_has not found, and is required
+  EFM32WG_STK3800:
+  - progen found, and is not allowed
+  - device_has found, and is not allowed
+---
+hierarchy: Family (LPCTarget) -> MCU (LPC11U24_301) -> ???
+hierarchy errors:
+- no boards found in heirarchy
+target errors:
+  LPC11U24_301:
+  - release_versions not found, and is required
+  - default_lib not found, and is required
+  - public not found, and is required
+```
+
+The `all-targets` command is very verbose, with output that matches the format above but is too long to reproduce here.
+
+#### `orphans` command
+
+The `orphans` command shows all targets that you cannot reach from a public target.
+
+`python tools/targets/lint.py orphans`
+
+```yaml
+- CM4_UARM
+- CM4_ARM
+- CM4F_UARM
+- CM4F_ARM
+- LPC1800
+- EFR32MG1P132F256GM48
+- EFR32MG1_BRD4150
+```
