@@ -9,6 +9,8 @@ The mbed configuration system customizes the compile time configuration of vario
 
 The configuration system gathers and interprets all the configurations defined in the source tree. The output of the configuration system is a list of macros that are automatically defined when compiling the code.
 
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [mbed targets](mbed_targets.md).</span>
+
 ## Defining configuration parameters
 
 The configuration system understands configuration data defined in targets, libraries and applications. Although there are some slight differences in the way the configuration system works in these cases, the configuration parameters are always defined in a JSON object called "config".
