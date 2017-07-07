@@ -6,8 +6,8 @@ mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release
 * Full error information. For example, asserts have file name and line number.
 * Hard to follow code flow when using a debugger.
 * Chip goes to sleep when idle:
-  * Debugger is likely to drop connection.
-  * Breaks the local file system on the [mbed interface](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/mbed_interface/) on some boards.
+   * Debugger is likely to drop connection.
+   * Breaks the local file system on the [mbed interface](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/mbed_interface/) on some boards.
 
 ## Debug profile
 * Largest and slowest profile.
