@@ -1,4 +1,4 @@
-# Thread Safety in mbed OS 5
+# Thread and Interrupt Safety in mbed OS 5
 
 ## About this document
 
@@ -12,17 +12,19 @@ As with any multithreaded environment, mbed developers need to use various synch
 
 The mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms mbed OS 5 provides to build thread safe applications.  
 
-## Thread safety
+## Thread and interrupt safety
 
 ### Synchronization levels
 
 Different components within mbed OS 5 provide different levels of synchronization:
 
-1. **Interrupt safe** - safe for use from multiple threads and interrupts; operation is done atomically or in a critical section. The behavior is well defined when used from both interrupts and threads.
+1. **Interrupt safe** - safe for use from multiple threads and interrupts; operation is done atomically or in a [critical section](#critical-sections). The behavior is well defined when used from both interrupts and threads.
 2. **Thread safe** - safe for use from multiple threads; operation is protected by an RTOS primitive and can be used from multiple threads, but will cause problems if used from an interrupt service routine.
 3. **Not protected** - operation does not protect against concurrent access and needs to be synchronized externally. If you call from multiple threads without some other form of synchronization, data can become corrupted and behavior is undefined.
 
 <span class="tips">**Tip:** The API reference indicates the level of synchronization of each function.</span>
+
+![](images/mbed-OS-5-protection.png "Showing the relationship between interrupt-safe, thread-safe and not-protected")
 
 ### Standard libraries
 
@@ -42,7 +44,10 @@ All supported toolchains are thread safe when using the full version of their st
 
 ### Drivers
 
-Most drivers are **thread safe**.  Some notable exceptions are listed below; check the relevant handbook page or doxygen for more specific details on the driver being used.
+Most drivers are **thread safe** but may not be **interrupt safe**. Always check the relevant handbook page or doxygen for more specific details on the driver being used.
+
+<span class="tips">**Note:** It is important that you first read the [section on synchronization levels](#synchronization-levels) above.</span>
+
 
 Drivers that are **interrupt safe**:
 
