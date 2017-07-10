@@ -1,6 +1,6 @@
 [
     {
-        "title": "Introduction to mbed OS",
+        "title": "Introduction",
         "description": "Introducing mbed OS; the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "title": "mbed OS references",
+        "title": "References",
         "description": "The reference manual for mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
         "type": "markdown",
@@ -76,7 +76,7 @@
         ]
     },
     {
-        "title": "mbed tools and third-party tools",
+        "title": "Tools",
         "description": "Details of the tools available for working with mbed OS",
         "slug": "tools",
         "type": "markdown",
@@ -98,7 +98,7 @@
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/toolchains/toolchain_profiles.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debug_other_ides.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/debug/debugging_mbed_os_apps.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/debug/debug_builds_cli.md"},		
+          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/debug/debug_builds_cli.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/local_debugging_toolchain.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/keil_uvision.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/eclipse_pyocd.md"},
@@ -158,7 +158,7 @@
         ]
     },
     {
-        "title": "mbed OS releases",
+        "title": "Releases",
         "description": "The mbed OS releases; latest and history",
         "slug": "releases",
         "type": "markdown",
@@ -173,7 +173,7 @@
         ]
     },
     {
-        "title": "Porting mbed OS",
+        "title": "Porting",
         "description": "Supporting mbed OS on new platforms",
         "slug": "porting",
         "type": "markdown",
@@ -205,52 +205,6 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/hdk.md"}
         ]
     },
-    {
-      "title": "mbed Client guide",
-      "description": "An introduction to mbed Client",
-      "slug": "mbed-client",
-      "hidden": true,
-      "type": "markdown",
-      "sources": [
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/index.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Introduction.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/client_reg_dereg.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/dev_man_serv_enable.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/info_reporting.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/data_types.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/Howto.md"},
-	         {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/porting-guide.md"},
-           {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-client/blob/new-engine/docs/further-reading.md"}
-     ]
-},
- {
-    "title": "Getting started with mbed Device Connector",
-    "description": "A quick guide to mbed Device Connector",
-    "slug": "device-connector",
-    "hidden": true,
-    "type": "markdown",
-    "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/index.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Connector-intro.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Quick-guide.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-device-connector-documentation/blob/new-engine/docs/Further-reading.md"}
-     ]
-},
- {
-    "title": "Web interfaces for the mbed Device Connector",
-    "description": "mbed Device Connector Web API",
-    "slug": "device-connector-api",
-    "hidden": true,
-    "type": "markdown",
-    "sources": [
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/index.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/api-reference.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/tutorials_intro.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_amazon.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_azure.md"},
-        {"type": "markdown", "url": "https://github.com/ARMmbed/Connector-mDS-REST-API/blob/new-engine/docs/cloud_watson.md"}
-     ]
-},
     {
         "title": "mbed OS API doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
