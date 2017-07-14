@@ -6,7 +6,6 @@
         "type": "markdown",
         "sources": [
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/intros/introduction.md"},
-          {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/intros/contributing.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/intros/code_style.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/intros/terms.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/intros/examples.md"}
@@ -163,7 +162,8 @@
         "slug": "porting",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/porting_intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/contributing.md"},
+	    {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/porting_intro.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/mbed_os_targets.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/mbed_targets.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/flash.md"},
