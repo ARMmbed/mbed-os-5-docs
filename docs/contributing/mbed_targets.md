@@ -89,7 +89,7 @@ If `public` is not defined for a target, it defaults to `true`.
 
 <span class="notes">**Note:** Unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
 
-## `macros`, `macros_add` and `macros_remove`
+### `macros`, `macros_add` and `macros_remove`
 
 The `macros` property defines a list of macros that are available when compiling code. You may define these macros with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add `-DNO_VALUE -DVALUE=10` to the compiler's command-line.
 
