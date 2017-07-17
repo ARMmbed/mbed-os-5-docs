@@ -1,3 +1,3 @@
 ### Release profile
 
-[A document about different approaches and considerations when writing code for the release profile (production).]
+[A document about use cases and best practices when applying the release profile (production).]
