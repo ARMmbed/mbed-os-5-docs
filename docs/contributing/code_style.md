@@ -201,7 +201,7 @@ flag                        | meaning
 `-std=gnu99`                | C uses the GNU99 standard
 `-std=gnu++98`              | C++ uses the GNU++98 standard
 
-#### ARM Compiler 5
+##### ARM Compiler 5
 
 mbed OS uses the following flags when compiling with ARM Compiler 5.
 
