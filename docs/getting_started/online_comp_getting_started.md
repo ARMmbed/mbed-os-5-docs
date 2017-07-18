@@ -75,10 +75,14 @@ The output panel also displays results for the "Find in Folder" functionality. H
 
 ## Create your first program
 
-From the main toolbar, click the "New" button, and complete the program name field in the dialog box like on the image below.
+From the main toolbar, click the "New" button, select your target platform and choose a starter template from the drop-down list or select "Empty Program" to create a blank project. Complete the "Program Name" field like in the image below.
 
 <span class="images">![](images/create-program.png)<span>Creating a new program</span></span>
 
 Once you click "OK", the program is created in your workspace, and the mbed Online Compiler automatically opens it.
 
-The program is not empty. It contains two items - a main.cpp file and the mbed OS library. This is because the mbed OS library is applicable for every project based on an mbed hardware board. Additionally, the main.cpp file is the main file for every program. Thus, we decided to make the default new program template a small LED test that compiles quickly.
+If you chose to create your new program using a starter template, the program is not empty. It contains two items - a main.cpp file and the mbed OS library. This is because the mbed OS library is applicable for every project based on an mbed hardware board. Additionally, the main.cpp file is the main file for every program. 
+
+If you chose to create your new program with the "Empty Program" template, the program is empty. You will need to create a main.cpp file and import the latest version of mbed OS to initialize your project. To import mbed OS into your project, right-click on your program's name and hover over "Import Library...", then select "From URL ...". Copy and paste the link to the mbed-os GitHub repository (https://github.com/ARMmbed/mbed-os/) into the "Source URL" field like in the image below, then click "Import."
+
+<span class="images">![](images/import-mbed-os.png)<span>Importing the latest version of mbed OS</span></span>
