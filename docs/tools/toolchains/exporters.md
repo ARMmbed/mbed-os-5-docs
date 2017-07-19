@@ -1,8 +1,8 @@
-## About the exporters
+### About the exporters
 
 Use the mbed exporters to export your code to various third party tools and IDEs. Each exporter implements a `generate` function that produces an IDE specific project file. Exporters benefit from mbed build tools. However, instead of using your source and [config data](config_system.md) to create an executable, we use that information to populate an IDE project file that will be configured to build, flash and debug your code. You can find exporter implementations [here](https://github.com/ARMmbed/mbed-os/tree/master/tools/export).
 
-### mbed CLI command
+#### mbed CLI command
 
 ```
 usage: mbed export [-h] [-i IDE] [-m TARGET] [--source SOURCE] [-c] [-S] [-v]
@@ -24,27 +24,27 @@ optional arguments:
   -vv, --very_verbose   Very verbose diagnostic output
 ```
 
-### Adding export support for a target
+#### Adding export support for a target
 
 If you have added a new target to mbed OS 5, exporting will allow users to transition from mbed source code to the offline development environment of their choice. More people can use your device.
 
-#### Eclipse and Make
+##### Eclipse and Make
 
 Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
 
-#### GNU ARM Eclipse managed projects
+##### GNU ARM Eclipse managed projects
 
 The GNU ARM Eclipse exporter is available for all targets that use the GCC_ARM toolchain.
 
-#### Qt Creator and Make
+##### Qt Creator and Make
 
 The Qt Creator project export is available for the GCC_ARM toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
 
 You can open the generated `.creator` project in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion. You can use the Makefile to compile the project; the IDE should automatically invoke the Makefile when you issue the Build command.
 
-#### uVision and IAR
+##### uVision and IAR
 
-##### CMSIS Packs
+###### CMSIS Packs
 
 uVision and IAR both use [CMSIS packs](http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html) to find target information necessary to create a valid project file. 
 
