@@ -58,7 +58,7 @@ The mbed Online Compiler builds a ``.bin`` file that you can install on your boa
 
 1. Connect your board to your computer over USB. mbed boards are shown as "removable storage".
 
-	<span class="images">![](images/DeviceOnMac.png)<span>The device is listed as "MBED", and its type is removable storage</span></span>
+	<span class="images">![](images/DeviceOnWindows.png)<span>The device is listed as "MBED" or "DAPLINK", and its type is removable storage</span></span>
 
 1. Drag and drop your program to the board.
 
