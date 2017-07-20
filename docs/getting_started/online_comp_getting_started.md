@@ -75,7 +75,7 @@ The output panel also displays results for the "Find in Folder" functionality. H
 
 ## Create your first program
 
-From the main toolbar, click the "New" button, select your target platform and choose a starter template from the drop-down list or select "Empty Program" to create a blank project. Complete the "Program Name" field like in the image below.
+From the main toolbar, click the `New` button, and select your target platform. Choose a starter template from the drop-down list, or select `Empty Program` to create a blank project. Complete the `Program Name` field like in the image below.
 
 <span class="images">![](images/create-program.png)<span>Creating a new program</span></span>
 
