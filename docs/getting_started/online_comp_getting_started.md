@@ -81,8 +81,8 @@ From the main toolbar, click the "New" button, select your target platform and c
 
 Once you click "OK", the program is created in your workspace, and the mbed Online Compiler automatically opens it.
 
-If you chose to create your new program using a starter template, the program is not empty. It contains two items - a main.cpp file and the mbed OS library. This is because the mbed OS library is applicable for every project based on an mbed hardware board. Additionally, the main.cpp file is the main file for every program. 
+If you chose to create your new program using a starter template, the program is not empty. It contains two items - a `main.cpp` file and the mbed OS library. This is because the mbed OS library is applicable for every project based on an mbed hardware board. Additionally, the `main.cpp` file is the main file for every program. 
 
-If you chose to create your new program with the "Empty Program" template, the program is empty. You will need to create a main.cpp file and import the latest version of mbed OS to initialize your project. To import mbed OS into your project, right-click on your program's name and hover over "Import Library...", then select "From URL ...". Copy and paste the link to the mbed-os GitHub repository (https://github.com/ARMmbed/mbed-os/) into the "Source URL" field like in the image below, then click "Import."
+If you chose to create your new program with the `Empty Program` template, the program is empty. You need to create a `main.cpp` file and import the latest version of mbed OS to initialize your project. To import mbed OS into your project, right-click on your program's name, and hover over `Import Library...`. Then select `From URL ...`. Copy and paste the link to the mbed OS GitHub repository [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/) into the "Source URL" field like in the image below. Then click `Import`.
 
 <span class="images">![](images/import-mbed-os.png)<span>Importing the latest version of mbed OS</span></span>
