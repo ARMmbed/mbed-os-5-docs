@@ -17,9 +17,6 @@
         "type": "markdown",
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/refs_intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/arch/map.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/arch/memory_model.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/configuring_mbed_os.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/tasks/tasks_intro.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/tasks/rtos.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/tasks/events.md"},
@@ -71,6 +68,9 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/storage/block_device.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/storage/flashiap.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/writing_embedded_apps.md"}
+	    {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/arch/map.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/arch/memory_model.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/configuring_mbed_os.md"},
         ]
     },
     {
