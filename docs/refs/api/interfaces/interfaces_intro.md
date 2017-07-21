@@ -1,4 +1,4 @@
-## Digital interfaces APIs
+### Digital interfaces APIs
 
 These APIs allow your board to interface with a computer or external devices.
 
