@@ -1,4 +1,4 @@
-## Security APIs
+### Security APIs
 
 Security on mbed OS is divided into two parts:
 
