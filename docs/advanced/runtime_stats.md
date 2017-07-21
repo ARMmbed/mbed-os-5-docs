@@ -59,10 +59,11 @@ Stack stats provide information on the allocated stack size of a thread and the 
 To enable heap stats, add the command-line flag `-DMBED_STACK_STATS_ENABLED=1`.
 
 There are two functions you can use to access the stack stats:
+
 * `mbed_stats_stack_get` calculates combined stack informations for all threads.
 * `mbed_stats_stack_get_each` provides stack informations for each thread separately.
 
-<span class="notes">**Note**: These functions are available even when the stack stats are not enabled, but always returns zero for all fields.</span>
+<span class="notes">**Note**: These functions are available even when the stack stats are not enabled but always return zero for all fields.</span>
 
 ### Example use cases
 
