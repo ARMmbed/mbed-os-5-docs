@@ -1,14 +1,14 @@
-### Network Sockets
+#### Network Sockets
 
 The network-socket API provides a common interface for using [sockets](https://en.wikipedia.org/wiki/Network_socket) on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
 
-#### Example
+##### Example
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/TCPSocket_Example/)](https://developer.mbed.org/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-#### The Socket classes
+##### The Socket classes
 
 You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classSocket.html) classes are used for managing network sockets. Once opened, a socket provides a pipe through which data can be sent and received to a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use:
 
@@ -18,7 +18,7 @@ You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/a
 
 - The [TCPServer](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classTCPServer.html) class provides the ability to accept incoming TCP connections. The `listen` member function sets up the server to listen for incoming connections, and the `accept` member function sets up a stateful TCPSocket instance on an incoming connection.
 
-#### The NetworkInterface classes
+##### The NetworkInterface classes
 
 A socket requires a NetworkInterface instance when opened to indicate which NetworkInterface the socket should be created on. The NetworkInterface provides a network stack that implements the underlying socket operations.
 
@@ -27,11 +27,11 @@ Existing network interfaces:
 - [EthernetInterface](ethernet.md).
 - [WiFiInterface](wifi.md).
 
-#### The SocketAddress class
+##### The SocketAddress class
 
 Use the [SocketAddress](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classSocketAddress.html) class to represent the IP address and port pair of a unique network endpoint. Most network functions are also overloaded to accept string representations of IP addresses, but SocketAddress can be used to avoid the overhead of parsing IP addresses during repeated network transactions, and can be passed around as a first class object.
 
-#### Network errors
+##### Network errors
 
 The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
 
@@ -58,7 +58,7 @@ typedef enum nsapi_error {
 } nsapi_error_t;
 ```
 
-#### Nonblocking operation
+##### Nonblocking operation
 
 The network-socket API also supports nonblocking operations. The ``set_blocking`` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return ``NSAPI_ERROR_WOULD_BLOCK`` when a transaction cannot be immediately completed.
 
@@ -66,7 +66,7 @@ To allow efficient use of nonblocking operations, the socket classes provide an 
 
 The callback may be called in interrupt context and should not perform operations such as receiving and sending calls. Do not make any read or write calls until it is on a thread.
 
-#### Example applications
+##### Example applications
 
 Here are example applications that are built on top of the network-socket API:
 
