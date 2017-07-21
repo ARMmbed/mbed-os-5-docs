@@ -1,10 +1,10 @@
-### Using uVisor on mbed OS
+#### Using uVisor on mbed OS
 
 This guide will help you start uVisor on mbed OS by showing you how to create a sample application for the NXP FRDM-K64F board.
 
 The uVisor provides sandboxed environments and resources protection for applications built for ARM Cortex-M3 and Cortex-M4 devices. This guide will show you how to enable the uVisor and configure a secure box to access some exclusive resources (memory, peripherals, interrupts). For more information about the uVisor design philosophy, please see the uVisor [introductory document](../../README.md).
 
-#### Requirements
+##### Requirements
 
 To run the `blinky` application on mbed OS with uVisor enabled, you need:
 
@@ -19,7 +19,7 @@ The remainder of this guide assumes:
 
 You can use these instructions as guidelines in the case of other targets on other host OSs.
 
-#### Start with the `blinky` app
+##### Start with the `blinky` app
 
 
 
@@ -84,7 +84,7 @@ The resulting binary is located at ``~/code/uvisor-example/BUILD/K64F/GCC_ARM/uv
 
 Drag and drop it onto the USB device mounted on your computer to flash the device. When the flashing process is complete, press the reset button on the device. The device's LED blinks.
 
-#### Enable uVisor
+##### Enable uVisor
 
 >>> C
 >>>
@@ -178,7 +178,7 @@ If you enable uVisor in the `blinky` app as it was written above, you do not get
 
 A lot happens unseen, though. All the user code now runs in unprivileged mode, and the systems services, such as the `NVIC` APIs and the OS SVCalls, are routed through the uVisor.
 
-#### Add a secure box
+##### Add a secure box
 
 Now that uVisor is enabled, you can finally add a *secure box*.
 
@@ -188,7 +188,7 @@ uVisor does not obfuscate code that belongs to a box, so it is still readable an
 
 Instead, we provide specific APIs to instruct the uVisor to protect a private resource. The `uvisor-example` app will show how to use these APIs.
 
-##### Configure the secure box
+###### Configure the secure box
 
 For this example, we want to create a secure box called `private_button`. The `private_button` box has exclusive access to the push-button on the NXP FRDM-K64F board, which means that other boxes cannot access its corresponding peripheral.
 
@@ -242,7 +242,7 @@ UVISOR_BOX_CONFIG(private_button,             /* Name of the secure box */
 ```
 >>>
 
-##### Create the secure box's main thread function
+###### Create the secure box's main thread function
 
 In general, you can decide what to do in your box's main thread. You can run it once and then stop it or use it to configure memories or peripherals or to create other threads. In this app, the box's main thread is the only thread for the `private_button` box, and it runs throughout the program.
 
@@ -344,13 +344,13 @@ If the LED doens't blink, it means the application halted somewhere, probably be
 
 If the LED is blinking, the app is running correctly. If you press the `SW2` button on the NXP FRDM-K64F board, the `private_button_on_press` function executes, printing the values in the timer buffer after `PRIVATE_BUTTON_BUFFER_COUNT` presses. You can observe these values by opening a serial port connection to the device, with a baud rate of 9600.
 
-#### Expose public secure entry points to the secure box
+##### Expose public secure entry points to the secure box
 
 So far, the code in the secure box cannot communicate to other boxes. To let other boxes call functions in our secure box, you can define public secure entry points. These entry points can map to private functions within the context of a secure box, and an RPC protocol automatically serializes the arguments and return values to ensure no private memory can leak to external boxes.
 
 You can define a public secure entry point to retrieve the index value from the secure box. This index value increases every time you press the `SW2` button.
 
-##### Defining a secure entry point
+###### Defining a secure entry point
 
 >>> C
 >>>
@@ -372,7 +372,7 @@ UVISOR_EXTERN int (*secure_get_index)(void);
 ```
 >>>
 
-##### Implementing a secure entry point
+###### Implementing a secure entry point
 
 >>> C
 >>>
@@ -395,7 +395,7 @@ UVISOR_BOX_RPC_GATEWAY_SYNC (private_button, secure_get_index, get_index, int, v
 ```
 >>>
 
-##### Listening for RPC messages
+###### Listening for RPC messages
 
 >>> C
 >>>
@@ -438,7 +438,7 @@ static void private_button_main_thread(const void *)
 ```
 >>>
 
-##### Calling the public secure entry point
+###### Calling the public secure entry point
 
 >>> C
 >>>
@@ -472,7 +472,7 @@ int main(void)
 
 You can observe the secure index by opening a serial port connection to the device with a baud rate of 9600. When you press the `SW2` button, the index will increase.
 
-#### The NVIC APIs
+##### The NVIC APIs
 
 The ARM CMSIS header files provide APIs to configure, enable and disable IRQs in the NVIC module. These APIs all begin with `NVIC_`, and you can find them in the `core_cm*.h` files in your CMSIS module. The CMSIS header files also provide APIs to set and get an interrupt vector at runtime. This requires the relocation of the interrupt vector table, which is usually located in flash, to SRAM.
 
@@ -506,7 +506,7 @@ NVIC_EnableIRQ(MY_IRQ);
 
 <span class="notes">**Note**: In this model, a call to `NVIC_SetVector` must happen before an IRQ state changes. In platforms that don't relocate the interrupt vector table, such a call might be absent and must be added to work with uVisor.</span>
 
-#### The *public box* ACLs
+##### The *public box* ACLs
 
 The code samples in this guide provide a list of ACLs for the public box. The list includes peripherals necessary to make the example app work, and they are specific to the NXP FRDM-K64F target.
 
@@ -563,7 +563,7 @@ For readability, do not use the hard-coded addresses of your peripherals. Instea
 
 Repeat the process multiple times until all ACLs have been added to the list. When no other ACL is needed, the system runs without hitting a uVisor fault.
 
-#### Additional resources
+##### Additional resources
 
 - [uVisor API documentation](API.md).
 - [Debugging uVisor on mbed OS](DEBUGGING.md).
