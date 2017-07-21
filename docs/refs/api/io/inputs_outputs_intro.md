@@ -1,25 +1,25 @@
-## Input and output APIs
+### Input and output APIs
 
 Inputs and outputs on development boards are either analog or digital.
 
-### Analog I/O
+#### Analog I/O
 
 These APIs read or set the voltage of analog pins:
 
 * [AnalogIn](AnalogIn.md): read the voltage of an analog input pin.
 * [AnalogOut](AnalogOut.md): set the voltage of an analog output pin.
 
-### Digital I/O
+#### Digital I/O
 
 You can control the digital pins individually or as a grouped value.
 
-#### Individual control
+##### Individual control
 
 * [DigitalIn](DigitalIn.md): read a single digital input pin.
 * [DigitalOut](DigitalOut.md): write to a single digital output pin.
 * [DigitalInOut](DigitalInOut.md): read and write to a single bidirectional digital pin.
 
-#### Grouped control
+##### Grouped control
 
 * Bus: flexible control of multiple pins:
 	* [BusIn](BusIn.md): read multiple pins as a single value.
@@ -30,10 +30,10 @@ You can control the digital pins individually or as a grouped value.
 	* [PortOut](PortOut.md): write a single value to multiple pins.
 	* [PortInOut](PortInOut.md): read and write to multiple bidirectional pins.
 
-#### InterruptIn
+##### InterruptIn
 
 [InterruptIn](InterruptIn.md) triggers an event when a digital input pin changes value.
 
-#### PwmOut
+##### PwmOut
 
 [PwmOut](PwmOut.md) controls the frequency and mark to space ratio of a digital pulse wave (or train).
