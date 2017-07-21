@@ -1,10 +1,10 @@
-### Cellular
+#### Cellular
 
 The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
 
 ARM mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
-#### Getting started
+##### Getting started
 
 1. Choose an [mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
 
@@ -29,7 +29,7 @@ Success. Exiting
 
 ```
 
-#### Basic working principles
+##### Basic working principles
 
 You can use and extend a cellular interface and extended in various different ways. For example,
 
@@ -47,11 +47,11 @@ You can use and extend a cellular interface and extended in various different wa
 * The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
 * After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet.
 
-#### CellularBase API
+##### CellularBase API
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classCellularBase.html)
 
-#### Usage summary
+##### Usage summary
 
 To bring up the network interface:
 
@@ -59,9 +59,9 @@ To bring up the network interface:
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
 1. Once connected, you can use mbed OS [network sockets](network_sockets.md) as usual.
 
-#### Examples
+##### Examples
 
-##### Connection establishment
+###### Connection establishment
 
 This example establishes connection with the cellular network using mbed OS CellularInterface.
 
@@ -131,7 +131,7 @@ int main()
 }
 ```
 
-##### TCP socket example
+###### TCP socket example
 
 This example opens a TCP socket with an echo server and undergoes a TCP transaction. Connection logic is the same as in the previous example.
 
@@ -276,11 +276,11 @@ int main()
 // EOF
 ```
 
-#### Porting guide
+##### Porting guide
 
 This section provides guidelines and details for porting a cellular device driver to mbed OS. It first provides view of the pieces that compose your new cellular interface and then gives step-by-step instructions on how to port.
 
-##### Quick peek
+###### Quick peek
 
 You can implement a cellular network interface in different ways based on your requirements and physical setup. For example:
 
@@ -387,8 +387,8 @@ nsapi_error_t nsapi_ppp_connect(FileHandle *stream, Callback<void(nsapi_error_t)
 
 The application activating the appropriate network stack feature, and ensuring it has PPP enabled via JSON config, determines which network stack is used for PPP modems. As of mbed OS 5.5, LWIP provides IPv4 over PPP, but not IPv6. Nanostack does not provide PPP.
 
-### Step-by-step porting process
-#### Providing onboard modem API
+#### Step-by-step porting process
+##### Providing onboard modem API
 
 Only valid when **Case 3** is applicable.
 
