@@ -1,4 +1,4 @@
-### The event loop
+#### The event loop
 
 One of the optional mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
@@ -14,7 +14,7 @@ In mbed OS, events are pointers to functions (and optionally function arguments)
 
 The [mbed-events library](http://github.com/ARMmbed/mbed-os/tree/master/events) implements the mbed OS events queue. The [README of mbed-events](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows how to use the event queue.
 
-#### Creating an event loop
+##### Creating an event loop
 
 You must create and start the event loop manually. The simplest way to achieve that is to create a `Thread` and run the event queue's `dispatch` method in the thread:
 
@@ -33,11 +33,10 @@ int main () {
     ...
 }
 ```
->>>
 
 Note that though this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer from running more than one event loop, simply by following the create/start pattern above for each of them.
 
-#### Using the event loop
+##### Using the event loop
 
 Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
@@ -106,6 +105,6 @@ The scenario above (splitting an interrupt handler's code into time critical cod
 
 We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
-#### Where to go from here
+##### Where to go from here
 
 We have discussed only a small part of how event queues work in mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the mbed-events library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/equeue_8h_source.html).
