@@ -1,14 +1,14 @@
-### File system
+#### File system
 
 The file system API provides a common interface for implementing a [file system](https://en.wikipedia.org/wiki/File_system) on a [block-based storage device](block_device.md). The file system API is a class-based interface, but implementing the file system API provides the standard POSIX file API familiar to C users.
 
-#### Example
+##### Example
 
 Here is what it looks like to use the file system in mbed OS:
 
 [FAT file system example](https://github.com/armmbed/mbed-os-example-fat-filesystem)
 
-#### Declaring a file system
+##### Declaring a file system
 
 The [FileSystem](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see [open](http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html) or [fopen](http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html).
 
@@ -29,7 +29,7 @@ Additionally, two utility block devices give you better control over how storage
 
 Note: Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.
 
-#### C++ classes
+##### C++ classes
 
 The [FileSystem](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h) class provides the core user interface with general functions that map directly to their global POSIX counterparts. mbed OS provides [File](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h) and [Dir](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h) classes that represent files and directories in a C++ API that uses object-oriented features in C++.
 
