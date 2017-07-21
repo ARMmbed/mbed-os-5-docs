@@ -1,3 +1,3 @@
-<h3 id="task-callbacks">Callbacks</h3>
+### Callbacks
 
 [Document about callbacks and how to use them.]
