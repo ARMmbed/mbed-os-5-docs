@@ -1,10 +1,10 @@
-### Bluetooth Low Energy (BLE)
+#### Bluetooth Low Energy (BLE)
 
 Bluetooth low energy (BLE) is a very low power wireless technology standard for personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
 mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for mbed. Many targets support mbed BLE. Developers can use it to create new BLE applications.
 
-#### Getting started
+##### Getting started
 
 1. Choose an [mbed board that supports BLE](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=3), such as the [NRF51-DK](https://developer.mbed.org/platforms/Nordic-nRF51-DK/).
 
@@ -25,7 +25,7 @@ mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution f
 
     <span>**Tip:** Despite the differences between the different mbed OS versions, there is only **one** version of mbed BLE, and it is easy to move code from one version of the OS to another. Choose the sample you use according to the version of mbed OS supported by your development board.</span>
 
-#### Going further
+##### Going further
 
 * [Introduction to mbed BLE](https://docs.mbed.com/docs/ble-intros/en/latest/) is a resource for developers new to BLE and mbed BLE. It covers how to build BLE embedded applications with mbed.
 
@@ -35,6 +35,6 @@ mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution f
 
 * The mbed BLE [online community](https://developer.mbed.org/teams/Bluetooth-Low-Energy/community/) is also a great place to ask questions and share your knowledge.
 
-#### API reference
+##### API reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classBLE.html)
