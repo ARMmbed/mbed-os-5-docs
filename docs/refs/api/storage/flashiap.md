@@ -1,4 +1,4 @@
-### Flash IAP
+#### Flash IAP
 
 The flash in application programming provides an interface for access to MCU internal flash memory.
 
@@ -18,12 +18,12 @@ Be aware that Flash IAP might disable interrupts for a long time. This can affec
 
 This class is thread-safe.
 
-#### API
+##### API
 
 View the full C++ API:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/FlashIAP_8h_source.html)
 
-#### Example
+##### Example
 
 For an example that uses the `FlashIAP` driver, please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader).
