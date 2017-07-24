@@ -49,3 +49,9 @@ Stack checking is turned on for all threads, and the kernel will error if an ove
 |                   |   Flash
 
 ```
+
+#### Configuration system
+
+The mbed configuration system customizes the compile time configuration of mbed components: targets, libraries and applications.
+
+For more information, see the [Configuration System page](../advanced/config_system.md).
