@@ -47,25 +47,11 @@ will have the same flags as if you had compiled with:
 
 ### Exporting from the mbed Online Compiler
 
-The mbed Online Compiler has a built-in export mechanism that supports the same development environments as mbed CLI:
-
-1. Right click on a project you want to export.
-
-1. Click **Export Program.** The **Export Program** window opens.
+The mbed Online Compiler has a built-in export mechanism that supports the same development environments as mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
 
 	<span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
 
-1. From the **Export Target** drop-down list, select your board.
-
-	<span class="images">![](Images/select_target.png)<span>Selecting a target board</span></span>
-
-1. From the **Export Toolchain** drop down list, select your development environment.
-
-	<span class="images">![](Images/select_toolchain.png)<span>Selecting a toolchain</span></span>
-
-1. The export process generates a ZIP archive with a project file matching your selected development environment.
-
-Follow your toolchain's import or project creation process to begin working there.
+The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
 
 ### Before you export
 
