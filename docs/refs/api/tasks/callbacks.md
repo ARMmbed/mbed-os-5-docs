@@ -1,3 +1,3 @@
 #### Callbacks
 
-[Document about callbacks and how to use them.]
+[Document about callbacks, their best practices and dos and don'ts..]
