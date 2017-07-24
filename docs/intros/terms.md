@@ -21,8 +21,3 @@ From a reset state the following hooks and conditions are expected.
 * `mbed_main` - application hook before main (process stack pointer).
 * `main` - application entry point (process stack pointer).
 
-### Configuration system
-
-The mbed configuration system customizes the compile time configuration of mbed components: targets, libraries and applications.
-
-For more information, see the [Configuration System page](../advanced/config_system.md).
