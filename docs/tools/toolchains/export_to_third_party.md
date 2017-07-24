@@ -49,7 +49,7 @@ will have the same flags as if you had compiled with:
 
 The mbed Online Compiler has a built-in export mechanism that supports the same development environments as mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
 
-	<span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
+<span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
 
 The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
 
