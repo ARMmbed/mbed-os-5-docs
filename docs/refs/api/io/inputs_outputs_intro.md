@@ -1,4 +1,4 @@
-### Input and output APIs
+### Input and output
 
 Inputs and outputs on development boards are either analog or digital.
 
