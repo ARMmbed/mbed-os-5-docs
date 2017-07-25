@@ -1,8 +1,6 @@
 ## mbed tools and third-party tools
 
-[brief intro to what this section covers]
-
-[compilers, test tools etc]
+[A brief intro to what this section covers: compilers, test tools and so on. We should probably mention that the Online Compiler is best for beginning developers.]
 
 ### Development tool options
 
