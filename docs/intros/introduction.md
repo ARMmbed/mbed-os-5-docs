@@ -1,8 +1,5 @@
 ## Introduction to mbed OS 5
 
-
-
-
 ### Developing applications on top of mbed OS
 
 mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
@@ -19,9 +16,9 @@ When you know how to build an existing application, it's time to learn [how to w
 
 #### Development tools
 
-* Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer.
-* The [mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
-* If you're working with third party tools, look at [exporting instructions for the most popular ones](dev_tools/third_party.md).
+- Our offline development tool is the [mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer.
+- The [mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
+- If you're working with third party tools, look at [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
 #### Communicating with and monitoring your board
 
@@ -33,11 +30,9 @@ You can monitor and control an mbed board [to help you debug and test your appli
 
 When you've started writing applications using your selected development tool:
 
-* Learn about [collaborative work and version control](collab/collab_intro.md).
-
-* Try one of the [advanced tutorials](advanced/intro.md), which cover concepts such as debugging and memory trace.
-
-* We have a [forum](https://forums.mbed.com/) for questions and advice.
+- Learn about [collaborative work and version control](collab/collab_intro.md).
+- Try one of the [advanced tutorials](advanced/intro.md), which cover concepts such as debugging and memory trace.
+- We have a [forum](https://forums.mbed.com/) for questions and advice.
 
 ### Contributing to mbed OS
 
@@ -49,10 +44,9 @@ The current version of mbed OS 5 is 5.5.0. It is available on [GitHub](https://g
 
 Our full porting guide is still being written. For now, we have:
 
-* A high-level [porting guide](advanced/porting_guide.md).
-* Porting [from mbed OS 3 to mbed OS 5](advanced/MINAR_migration.md) (focusing on MINAR).
-* Porting [mbed TLS](advanced/tls_porting.md).
-
+- A high-level [porting guide](advanced/porting_guide.md).
+- Porting [from mbed OS 3 to mbed OS 5](advanced/MINAR_migration.md) (focusing on MINAR).
+- Porting [mbed TLS](advanced/tls_porting.md).
 
 ## How mbed works
 
@@ -73,11 +67,11 @@ There are two options:
 
 ### How USB serial works
 
-The mbed Interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the mbed Interface will read them and transfer them over the USB link. When you ``printf()``, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
+The mbed Interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the mbed Interface will read them and transfer them over the USB link. When you `printf()`, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
 
 ### Notes
 
-The ``.bin`` files the mbed microcontroller accepts are standard raw ARM binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
+The `.bin` files the mbed microcontroller accepts are standard raw binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
 
 ### The mbed Interface
 
@@ -90,7 +84,5 @@ The best representation of the connectivity of the mbed Interface is the same di
 The mbed Interface:
 
 - Provides a USB connection to the host computer, which exposes a Mass Storage (flash disk) and a USB serial port.
-
 - Has an SWD or JTAG connection to the target, so it can program the target flash. You can also use this for debugging.
-
 - A physical UART connection exists between the target and the interface, which is relayed over the interface's USB serial port.
