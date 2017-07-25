@@ -6,11 +6,7 @@ Repositories on [developer.mbed.org](https://developer.mbed.org) are not limited
 
 #### Adding a new author to your repository
 
-To grant permission for another author to commit to your repository:
-
-1. Go to your repository on the mbed website and click the **Repository Administration** link.
-
-1. Start typing a username in the **Developers** box to add the user to the list:
+To grant permission for another author to commit to your repository, use the **Repository Administration** link in your repository on the mbed website.
 
 	<span class="images">![](images/privacy_settings.png)<span>Allowing other users to add to your repository</span></span>
 
@@ -44,7 +40,7 @@ To join the two branches, click the **Merge** button. You may need to resolve co
 
 ###### Resolve merge conflicts (if needed)
 
-The merge function attempts to combine the changes from one or more branches into a single branch. Often, this will complete without issue.
+The merge function combines the changes from one or more branches into a single branch.
 
 However, if two or more people have edited the same line of the same file, a merge conflict occurs. That means Mercurial does not know whose changes to keep. It's up to you to decide how the file should really look. This is called *resolving conflicts*.
 
@@ -62,9 +58,7 @@ The first save of a file after being opened in a conflicted state marks it as re
 
 ###### Commit the merge
 
-After you merge the code, you have to commit it. This makes the join between two branches permanent.
-
-Once you commit, your Revisions pane will look something like this:
+After you merge the code, you have to commit it. This makes the joining of the two branches permanent. Once you commit, your Revisions pane looks something like this:
 
 <span class="images">![](images/commit_merge.png)<span>Viewing merged branches in the Revisions pane</span></span>
 
@@ -74,4 +68,4 @@ You can see the two branches coming back together at "merged revision 1 with rev
 
 Once all branches and conflicts are resolved and joined back into one, you would typically retest your program or library. When all tests pass, you can push your changes and the merged result back to the public repository.
 
-To push your changes, simply click the **Publish** button.
+To push your changes, click the **Publish** button.
