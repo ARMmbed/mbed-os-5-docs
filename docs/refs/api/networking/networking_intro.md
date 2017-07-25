@@ -1,4 +1,4 @@
-### Communication APIs
+### Communication
 
 The main communication APIs in mbed OS are:
 
