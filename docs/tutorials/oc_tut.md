@@ -101,7 +101,7 @@ Your board should appear on your computer as removable storage. To run your prog
 
 <span class="images">![](Images/device_on_mac.png)<span>The device appears as removable storage, under the name MBED</span></span>
 
-#### Forking a repository
+### Forking a repository
 
 When you add changes to an imported repository in your private workspace, you may want to publish them for others to use.
 
