@@ -1,12 +1,17 @@
-## mbed tools and third-party tools
+## mbed Tools and Third-party Tools
 
-[A brief intro to what this section covers: compilers, test tools and so on. We should probably mention that the Online Compiler is best for beginning developers.]
+The mbed OS ecosystem includes many tools designed to work with mbed OS and projects that use mbed OS throughout the development process. With our development tools, mbed CLI and the mbed Online Compiler, you can create, import and build projects. You can compile with any of our supported toolchains and debug with the many IDEs we support. DAPLink and pyOCD let you program and debug your many devices. For validation of your project, you can test your code with Greentea, `htrun` and utest. This section covers all of these tools related to mbed OS.
 
 ### Development tool options
 
+The two mbed OS development tools are mbed CLI and the mbed Online Compiler. Both of the development tools perform the same process:
+
+- Bring the mbed OS source code from GitHub or mbed.org, along with all dependencies.
+- Compile your code with mbed OS for a target, so you have a single file to flash to your board.
+
 We developed mbed OS 5 using the mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
 
-mbed OS 5 is compatible with the tools, libraries and programs that have been deployed on the developer.mbed.org site since mbed's origin, so you can also use the mbed Online Compiler for building mbed OS 5 examples and programs. Furthermore, you can use the exporters to third party development tools that were part of the mbed OS 2 ecosystem.
+`developer.mbed.org` provides the tools, libraries and programs that work with mbed OS 5, so you can also use the mbed Online Compiler for building mbed OS 5 examples and programs. Beginning developers or those who are not comfortable with the command-line may prefer the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the mbed OS 2 ecosystem.
 
 Use the instructions below to test our Cloud9-based mbed Enabled IDE, which is currently in an alpha state.
 
