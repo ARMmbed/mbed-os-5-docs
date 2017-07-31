@@ -160,7 +160,6 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/power/enable_disable_instrumentation.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/power/network_stack_sleep.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/patterns/design_guidelines.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/patterns/task_design_patterns.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/patterns/timing_considerations.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/patterns/timer_design.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/patterns/interactions.md"},
