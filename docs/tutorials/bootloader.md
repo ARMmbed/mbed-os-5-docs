@@ -2,10 +2,6 @@
 
 This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
-### Porting bootloader
-
-A target requires flash HAL functionality in order to support the bootloader. Please follow [the bootloader porting guide](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/flash/) for more details.
-
 ### mbed OS managed bootloader
 
 The tools of mbed OS know how to manage some bootloader projects. The tools can manage bootloader projects where the bootlodoader comes before the application in ROM and the application starts immediately after the bootloader. If your bootloader does not meet both of these requirements, then please read the [unmanaged bootloader section](bootloader.md#unmanaged-bootloader). A managed bootloader project automatically merges the bootloader image with the application image as part of the application image build process.
