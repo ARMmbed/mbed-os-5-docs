@@ -1,12 +1,12 @@
 ## Testing applications
 
-The way tests are run and compiled in mbed OS 5 is substantially different from previous versions of mbed.
+The way tests are run and compiled in Arm Mbed OS 5 is substantially different from previous versions of Mbed.
 
 ### Using tests
 
 #### Test code structure
 
-Tests can exist throughout mbed OS and your project's code. They are located under a special directory called `TESTS` (case is important!).
+Tests can exist throughout Mbed OS and your project's code. They are located under a special directory called `TESTS` (case is important!).
 
 Placing code under this directory means it will be ignored when building applications and libraries. This code is only ever used when building tests. This is important because all tests require a `main()` function, and building it with your application would cause multiple `main()` functions to be defined.
 
@@ -43,7 +43,7 @@ A test case is named from its position in your project's file structure. For ins
 
 #### Building tests
 
-You can build tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
+You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
 When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the documentation [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
@@ -56,11 +56,11 @@ The full build process is:
 1. Build the nontest code (all code not under a `TESTS` folder), but do not link it. The resulting object files are placed in the build directory.
 1. Find all tests that match the given target and toolchain.
 1. For each discovered test, build all of its source files and link it with the nontest code that was built in step 1.
-1. If specified, create a test specification file and place it in the given directory for use by testing tools. This is placed in the build directory by default when using mbed CLI.
+1. If specified, create a test specification file and place it in the given directory for use by testing tools. This is placed in the build directory by default when using Mbed CLI.
 
 ##### App config
 
-When building an mbed application, the presence of an `mbed_app.json` file allows you to set or override different config settings from libraries and targets. However, because the tests share a common build, this can cause issues when tests have different configurations that affect the OS.
+When building an Mbed application, the presence of an `mbed_app.json` file allows you to set or override different config settings from libraries and targets. However, because the tests share a common build, this can cause issues when tests have different configurations that affect the OS.
 
 The build system will look for an `mbed_app.json` file in your shared project files (any directory not inside of a `TESTS` folder). If the system finds it, this configuration file will be used for both the nontest code as well as each test case inside your project's source tree. If there is more than one `mbed_app.json` file in the source tree, the config system will error.
 
@@ -68,7 +68,7 @@ If you need to test with multiple configurations, you can use the `--app-config`
 
 #### Running tests
 
-You can run automated tests through mbed CLI. For information on using mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
+You can run automated tests through Mbed CLI. For information on using Mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
 The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the test specification format [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
@@ -76,7 +76,7 @@ The Greentea tool handles the actual testing process. To read more about this to
 
 #### Writing tests
 
-You can write tests for your own project, or add more tests to mbed OS. You can write tests using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client), [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
+You can write tests for your own project, or add more tests to Mbed OS. You can write tests using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client), [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
 
 ```c++
 #include "mbed.h"
@@ -147,7 +147,7 @@ Assuming your test was exported correctly to your IDE, build the project and loa
 
 Bring the target out of reset and run the program. Your target will now be waiting for a synchronizing character string to be sent from the test tools over the serial port. Do not run the `mbed test` commands because that will attempt to flash the device, which you've already done with your IDE.
 
-Instead, the underlying test tools can be used to drive the test. [htrun](https://github.com/ARMmbed/htrun) is the tool that needs to be used in this case. This is installed when you install the requirements for mbed OS. However, if you do not have it installed you can do this by running `pip install mbed-host-tests`.
+Instead, the underlying test tools can be used to drive the test. [htrun](https://github.com/ARMmbed/htrun) is the tool that needs to be used in this case. This is installed when you install the requirements for Mbed OS. However, if you do not have it installed you can do this by running `pip install mbed-host-tests`.
 
 First, find your target's serial port by running the following command:
 
