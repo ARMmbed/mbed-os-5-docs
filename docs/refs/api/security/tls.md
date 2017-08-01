@@ -84,7 +84,7 @@ To be able to accept contributions of code, we require the author of the work or
 
 The easiest way to do this is to create an mbed account and [approve the agreement here with a click through](https://developer.mbed.org/contributor_agreement/) if this is a personal contribution.
 
-If this is a contribution from a company, or if you do not want to create a mbed account, you can [find an alternative agreement here](https://www.mbed.com/en/about-mbed/contributor-license-agreements/), which you can sign and return to ARM.
+If this is a contribution from a company, or if you do not want to create a mbed account, you can [find an alternative agreement here](https://www.mbed.com/en/about-mbed/contributor-license-agreements/), which you can sign and return to Arm.
 
 We require a CLA for all contributions, whether large or small.
 
