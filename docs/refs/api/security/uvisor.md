@@ -1,27 +1,27 @@
-#### Using uVisor on mbed OS
+#### Using uVisor on Arm Mbed OS
 
-This guide will help you start uVisor on mbed OS by showing you how to create a sample application for the NXP FRDM-K64F board.
+This guide will help you start uVisor on Mbed OS by showing you how to create a sample application for the NXP FRDM-K64F board.
 
 The uVisor provides sandboxed environments and resources protection for applications built for Arm Cortex-M3 and Cortex-M4 devices. This guide will show you how to enable the uVisor and configure a secure box to access some exclusive resources (memory, peripherals, interrupts). For more information about the uVisor design philosophy, please see the uVisor [introductory document](../../README.md).
 
 ##### Requirements
 
-To run the `blinky` application on mbed OS with uVisor enabled, you need:
+To run the `blinky` application on Arm Mbed OS with uVisor enabled, you need:
 
-- A platform and a toolchain that uVisor on mbed OS supports. You can verify this on [the official list](../README.md#supported-platforms). If uVisor supports your platform internally but not on mbed OS, the porting process is incomplete. To port your platform to uVisor and enable it on mbed OS, please follow the [uVisor porting guide for mbed OS](../core/PORTING.md).
+- A platform and a toolchain that uVisor on Mbed OS supports. You can verify this on [the official list](../README.md#supported-platforms). If uVisor supports your platform internally but not on Mbed OS, the porting process is incomplete. To port your platform to uVisor and enable it on Mbed OS, please follow the [uVisor porting guide for Mbed OS](../core/PORTING.md).
 - Git.
-- mbed CLI. Run `pip install mbed-cli` to install it.
+- Arm Mbed CLI. Run `pip install mbed-cli` to install it.
 
 The remainder of this guide assumes:
 
 - You are developing on a \*nix machine in the `~/code` folder.
 - You are building the app for the [NXP FRDM-K64F](http://developer.mbed.org/platforms/FRDM-K64F/) target with the [GNU Arm Embedded Toolchain](https://launchpad.net/gcc-arm-embedded).
 
-You can use these instructions as guidelines in the case of other targets on other host OSs.
+You can use these instructions as guidelines in the case of other targets on other host operating systems.
 
 ##### Start with the `blinky` app
 
-Create a new mbed application called `uvisor-example` by running the following commands:
+Create a new Arm Mbed application called `uvisor-example` by running the following commands:
 
 >>> C
 ```
@@ -31,7 +31,7 @@ $ cd uvisor-example
 ```
 >>>
 
-The mbed CLI tools automatically fetch the mbed codebase. By default, Git tracks your code changes, so you can push your application to a Git server if you want to.
+The Mbed CLI tools automatically fetch the Mbed codebase. By default, Git tracks your code changes, so you can push your application to a Git server if you want to.
 
 
 
@@ -338,7 +338,7 @@ $ mbed compile -m K64F -t GCC_ARM
 
 Reflash the device, and press the reset button. The device LED blinks.
 
-If the LED doens't blink, it means the application halted somewhere, probably because uVisor captured a fault. You can set up the uVisor debug messages to see if there is a problem. See [Debugging uVisor on mbed OS](DEBUGGING.md) for a step-by-step guide.
+If the LED doens't blink, it means the application halted somewhere, probably because uVisor captured a fault. You can set up the uVisor debug messages to see if there is a problem. See [Debugging uVisor on Mbed OS](DEBUGGING.md) for a step-by-step guide.
 
 If the LED is blinking, the app is running correctly. If you press the `SW2` button on the NXP FRDM-K64F board, the `private_button_on_press` function executes, printing the values in the timer buffer after `PRIVATE_BUTTON_BUFFER_COUNT` presses. You can observe these values by opening a serial port connection to the device, with a baud rate of 9600.
 
@@ -520,7 +520,7 @@ static const UvisorBoxAclItem g_public_box_acls[] = {
 ```
 >>>
 
-Compile your application using uVisor in debug mode. This operation requires some more advanced steps. Please read [Debugging uVisor on mbed OS](DEBUGGING.md) for the detailed instructions.
+Compile your application using uVisor in debug mode. This operation requires some more advanced steps. Please read [Debugging uVisor on Mbed OS](DEBUGGING.md) for the detailed instructions.
 
 >>> C
 >>>
@@ -564,6 +564,6 @@ Repeat the process multiple times until all ACLs have been added to the list. Wh
 ##### Additional resources
 
 - [uVisor API documentation](API.md).
-- [Debugging uVisor on mbed OS](DEBUGGING.md).
+- [Debugging uVisor on Mbed OS](DEBUGGING.md).
 
 If you found any bug or inconsistency in this guide, please [raise an issue](https://github.com/ARMmbed/uvisor/issues/new).
