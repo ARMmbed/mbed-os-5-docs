@@ -22,7 +22,7 @@ Try this program to set up a Ticker to repeatedly invert an LED:
 
 * No printf, malloc or new in ISR: avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
 
-* RTOS Timer: Consider using the [mbed RTOS Timer](Timer.md) instead of a Ticker. In this way your periodic function will not be executed in an ISR, giving you more freedom and safety in your code. </span>
+* RTOS Timer: Consider using the [Arm Mbed RTOS Timer](Timer.md) instead of a Ticker. In this way your periodic function will not be executed in an ISR, giving you more freedom and safety in your code. </span>
 
 ##### Examples
 
