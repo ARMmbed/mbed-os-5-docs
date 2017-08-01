@@ -1,6 +1,6 @@
 ## Exporting to third party Toolchains
 
-If you'd like to develop on mbed OS with a third party tool, or migrate to one, you can choose to export an mbed project to the following development environments:
+If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
 - Keil uVision5.
 - IAR Systems.
@@ -23,20 +23,20 @@ If you'd like to develop on mbed OS with a third party tool, or migrate to one, 
 - e2studio.
 - Emblocks.
 
-This may be useful to launch a debug session with your favorite tool while using mbed CLI for development, or creating examples or projects you work on within your tool of choice.
+This may be useful to launch a debug session with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
-### Exporting from mbed CLI
+### Exporting from Arm Mbed CLI
 
-[mbed CLI](cli.md) currently supports [exporting](cli.md#exporting-to-desktop-ides) to all of the development environments mentioned above by using the ``export`` command.
+[Mbed CLI](cli.md) currently supports [exporting](cli.md#exporting-to-desktop-ides) to all of the development environments mentioned above by using the `export` command.
 
-For example, to export to uVision5 with the K64F target run:
+For example, to export to uVision5 with the K64F target, run:
 
 	$ mbed export -i uvision5 -m K64F
 
 A `*.uvproj` file is created in the root folder of the project.
 You can open this project file with uVision5.
 
-When you export from mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build_profiles.md#debug-profile). For example, this means that compiling within UVision 5 after this export:
+When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build_profiles.md#debug-profile). For example, this means that compiling within UVision 5 after this export:
 
     $ mbed export -i uvision5 -m K64F
 
@@ -45,9 +45,9 @@ will have the same flags as if you had compiled with:
     $ mbed compile -t arm -m K64F --profile debug
 
 
-### Exporting from the mbed Online Compiler
+### Exporting from the Arm Mbed Online Compiler
 
-The mbed Online Compiler has a built-in export mechanism that supports the same development environments as mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
+The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
 
 <span class="images">![](Images/export_menu.png)<span>Triggering an export</span></span>
 
@@ -57,15 +57,15 @@ The export process generates a ZIP archive with a project file matching your sel
 
 Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries and differences caused by changing compile and link options.
 
-Although we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as using the mbed Online Compiler.
+Although we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as using the Mbed Online Compiler.
 
 We will do our best to maintain the exported libraries and project files, but please understand we cannot cover all cases and combinations, or provide support for use of these alternative tools themselves.
 
 ### Third party tool notes
 
-#### Makefiles and mbed OS 2 projects
+#### Makefiles and Arm Mbed OS 2 projects
 
-When you export an mbed OS 2 project with a Makefile exporter or an exporter that uses a Makefile, you may have to modify the flags to remove some linker flags. You may see an error, such as the one below, in your compiler output.
+When you export an Arm Mbed OS 2 project with a Makefile exporter or an exporter that uses a Makefile, you may have to modify the flags to remove some linker flags. You may see an error, such as the one below, in your compiler output.
 
 ```
 link: mbed_blinky.elf
@@ -109,8 +109,7 @@ Make itself does not compile source code. It relies on a compiler such as:
 
 ##### Make and Eclipse on Windows: Nordic platforms using SoftDevices
 
-Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows.
-Please download and install it.
+Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. Please download and install it.
 
 ##### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
 
@@ -120,13 +119,13 @@ Make and Eclipse exports on POSIX-like operating systems targeting Nordic device
 
 The [GNU Arm Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
 
-Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command line options.
+Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command-line options.
 
-The main advantage of providing all these details to Eclipse is that it can create a very accurate internal representation of the project. The purpose is to visually filter out (by using gray blocks) which parts of the code are not used, and be able to pop up tooltips with the actual definition on mouse over most variables/functions.
+The main advantage of providing all these details to Eclipse is that it can create a very accurate internal representation of the project. The purpose is to visually filter out (by using gray blocks) which parts of the code are not used and be able to pop up tooltips with the actual definition on mouse over most variables/functions.
 
-The exporter generates multiple CDT build configurations, one for each mbed profile, and ignores the `--profile` setting when invoking the exporter.
+The exporter generates multiple CDT build configurations, one for each Mbed profile, and ignores the `--profile` setting when invoking the exporter.
 
-For user convenience, the GNU Arm Eclipse plug-ins use a large number of explicit configuration options in the properties pages; the GNU Arm Eclipse exporter tries to convert as accurately as possible the mbed configurations to these graphical configuration options.
+For user convenience, the GNU Arm Eclipse plug-ins use a large number of explicit configuration options in the properties pages; the GNU Arm Eclipse exporter tries to convert as accurately as possible the Mbed configurations to these graphical configuration options.
 
 For example, to export to **GNU Arm Eclipse** with the K64F target run:
 
@@ -134,7 +133,7 @@ For example, to export to **GNU Arm Eclipse** with the K64F target run:
 
 This command creates the `.project` and `.cproject` files in the root folder of the project.
 
-You can open this new project with an Eclipse CDT which has the GNU Arm Eclipse plug-ins installed.
+You can open this new project with an Eclipse CDT, which has the GNU Arm Eclipse plug-ins installed.
 
 #### GNU Arm Eclipse on Windows: 8Kb command length limitation
 
@@ -150,7 +149,7 @@ Freescale KDS now ships with the GNU Arm Embedded Toolchain. You may need to upd
 
 1. Press **Alt + Enter** or **Option** + **Enter**. The **C++ Build** dialog box opens.
 1. In **Settings**, select **Tool Settings**.
-1. Any file extension that is ``.s`` needs to be changed to ``.S`` (lowercase to uppercase):
+1. Any file extension that is `.s` needs to be changed to `.S` (lowercase to uppercase):
 
 	__KDS >= 3.0__
 
@@ -162,9 +161,9 @@ Freescale KDS now ships with the GNU Arm Embedded Toolchain. You may need to upd
 
 #### Atmel Studio
 
-The mbed libraries contain CMSIS startup files.
+The Mbed libraries contain CMSIS startup files.
 
-When importing an mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the **migrate to current infrastructure** box.
+When importing an Mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the **migrate to current infrastructure** box.
 
 #### Simplicity Studio
 
