@@ -1,12 +1,12 @@
-### Greentea - test automation for mbed
+### Greentea - test automation for Arm Mbed
 
 _**G**eneric **re**gression **en**vironment for **te**st **a**utomation_
 
 #### Introduction
 
-Greentea is the automated testing tool for mbed OS development. It automates the process of flashing mbed boards, driving the test and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
+Greentea is the automated testing tool for Arm Mbed OS development. It automates the process of flashing Mbed boards, driving the test and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
 
-This document should help you start using Greentea. Please see the [htrun documentation](https://github.com/ARMmbed/htrun), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
+This document should help you start using Greentea. Please see the [`htrun` documentation](https://github.com/ARMmbed/htrun), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
 
 #### Prerequisites
 
@@ -558,9 +558,9 @@ You can limit which boards Greentea uses for testing by using the `--use-tids` a
 $ mbedgt --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2
 ```
 
-Where ```02400203C3423E603EBEC3D8``` and ```024002031E031E6AE3FFE3D2``` are the target IDs of platforms attached to your system.
+Where `02400203C3423E603EBEC3D8` and `024002031E031E6AE3FFE3D`` are the target IDs of platforms attached to your system.
 
-You can view target IDs using the [mbed-ls](https://github.com/ARMmbed/mbed-ls) tool (installed with Greentea).
+You can view target IDs using the [`mbed-ls`](https://github.com/ARMmbed/mbed-ls) tool (installed with Greentea).
 
 ```
 $ mbedls
@@ -602,7 +602,7 @@ mbedgt --report-text text_report.text
 ```
 
 #### Host test detection
-When developing with mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the mbed OS test directory structure, please see the [mbed CLI documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/#test-directory-structure).
+When developing with Mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in Mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the Mbed OS test directory structure, please see the [Arm Mbed CLI documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/#test-directory-structure).
 
 #### Common issues
 
@@ -611,4 +611,4 @@ When developing with mbed OS, Greentea detects host tests automatically if you p
 Possible causes:
 
 - Another program is using the serial port. Be sure all terminals and other instances of Greentea are closed before trying again.
-- The mbed interface firmware is out of date. Please see the platform's page on [developer.mbed.org](https://developer.mbed.org/) for details about how to update it.
+- The Mbed interface firmware is out of date. Please see the platform's page on [`developer.mbed.org`](https://developer.mbed.org/) for details about how to update it.
