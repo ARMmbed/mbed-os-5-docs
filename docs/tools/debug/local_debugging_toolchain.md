@@ -10,7 +10,7 @@ This offers debugging capabilities for stack trace analysis, register dumps and 
 
 To connect to the debug interface, [pyOCD](https://github.com/mbedmicro/pyOCD) and [OpenOCD](http://openocd.org) support most boards. If the debug interface on your board is classified as 'CMSIS-DAP' or 'DAPLink' (most boards), you can use pyOCD. If not, use OpenOCD.
 
-First, make sure you have installed the [GNU ARM Embedded Toolchain](https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update) and added it to your PATH. To verify that you have the correct version installed, open a terminal and run:
+First, make sure you have installed the [GNU Arm Embedded Toolchain](https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update) and added it to your PATH. To verify that you have the correct version installed, open a terminal and run:
 
 ```
 $ arm-none-eabi-gdb --version
