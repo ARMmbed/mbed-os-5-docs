@@ -4,17 +4,17 @@ This document explains how to build and debug mbed OS applications using Eclipse
 
 #### Installing Eclipse
 
-You need to install Eclipse CDT with the GNU ARM Eclipse plugins to begin:
+You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
 
 1. Install [Eclipse IDE for C/C++ Developers](http://www.eclipse.org/downloads/eclipse-packages/).
 1. Open Eclipse.
 1. Create a workspace directory. This will be separate from your code.
-1. Install the GNU ARM Eclipse plugin:
+1. Install the GNU Arm Eclipse plugin:
     1. Click the **Help** menu item and select **Install New Software**.
     1. In the **Work with** box, paste the install address, and press Enter: `http://gnuarmeclipse.sourceforge.net/updates`.
 
     	If this does not work, please see the [GNU ARM Eclipse solutions and workarounds page](http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/).
-    1. The package **GNU ARM C/C++ Cross Development Tools** appears. Select it.
+    1. The package **GNU Arm C/C++ Cross Development Tools** appears. Select it.
 
         ![Selecting the cross development tools](Images/eclipse2.png)
     1. Click **Next** repeatedly, and accept the license agreements.
