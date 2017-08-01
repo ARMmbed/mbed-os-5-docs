@@ -1,4 +1,4 @@
-## Using the Online Compiler
+## Using the Arm Mbed Online Compiler
 
 With these step-by-step instructions, you can learn how to use the Online Compiler. These instructions cover importing and creating programs, compiling and downloading and forking. They also go over publishing and working with other developers.
 
@@ -6,18 +6,18 @@ With these step-by-step instructions, you can learn how to use the Online Compil
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
 
-1. Directly from the site: wherever you see a program on the site, you should see an **Import into mbed IDE** button:
+1. Directly from the site: wherever you see a program on the site, you should see an **`Import into mbed IDE`** button:
 
 	<span class="images">![](Images/import_button_site.png)<span>Most code snippets on the site can be directly imported</span></span>
 
 	Clicking that button will take you to the compiler; you can then give the program a new name and import it to your workspace:
 
-	<span class="images">![](Images/import_popup.png)<span>Importing to the mbed Online Compiler</span></span>
+	<span class="images">![](Images/import_popup.png)<span>Importing to the Mbed Online Compiler</span></span>
 
 
 1. The compiler's Import button: click the **Import** button in the compiler to open the Import Wizard:
 
-	<span class="images">![](Images/import_button_comp.png)<span>Triggering the Import Wizard from within the mbed Online Compiler</span></span>
+	<span class="images">![](Images/import_button_comp.png)<span>Triggering the Import Wizard from within the Mbed Online Compiler</span></span>
 
 	You can search for a program by name, or perform an empty search to show all available programs:
 
@@ -38,28 +38,28 @@ There are two methods of importing the code into the online compiler: directly f
 
 	<span class="images">![](Images/new_program.png)<span>Creating a new program</span></span>
 
-1. Create a ``main.cpp`` file in your program:
+1. Create a `main.cpp` file in your program:
 	1. Right click on the program and select **New File...**. The **Create new file** pop-up opens. If you created from an existing template, this file already exists.
 
 		<span class="images">![](Images/new_file.png)<span>Adding a file</span></span>
 
-	1. Enter ``main.cpp`` as the file name.
+	1. Enter `main.cpp` as the file name.
 
 		<span class="images">![](Images/main_cpp.png)<span>Naming the new file</span></span>
 
-1. Import the mbed OS library, so you can build your program with the mbed OS codebase:
+1. Import the Arm Mbed OS library, so you can build your program with the Mbed OS codebase:
 	1. Click **Import**. The Import Wizard opens.
 	1. Go to the Libraries tab and search for "mbed", or perform an empty search to show all libraries:
 
-		<span class="images">![](Images/import_mbed.png)<span>Searching for mbed OS</span></span>
+		<span class="images">![](Images/import_mbed.png)<span>Searching for Mbed OS</span></span>
 
-	1. Double click on "mbed" to import it. The library is added to your program.
+	1. Double click on `mbed` to import it. The library is added to your program.
 
-		<span class="images">![](Images/with_mbed.png)<span>mbed OS is now in the workspace</span></span>
+		<span class="images">![](Images/with_mbed.png)<span>Mbed OS is now in the workspace</span></span>
 
 ### Getting your program on your board
 
-The mbed Online Compiler builds a file that can run on your board. All you need to do is:
+The Arm Mbed Online Compiler builds a file that can run on your board. All you need to do is:
 
 1. Select the correct board.
 1. Compile the code and download the compiled file.
@@ -67,7 +67,7 @@ The mbed Online Compiler builds a file that can run on your board. All you need 
 
 #### Selecting your board
 
-mbed programs can be built to run on multiple boards. The hard work is done behind the scenes by mbed OS itself. All you need to do is tell the mbed Online Compiler which board you're building for.
+Mbed programs can be built to run on multiple boards. The hard work is done behind the scenes by Arm Mbed OS itself. All you need to do is tell the Mbed Online Compiler which board you're building for.
 
 To select a board as the build target:
 
@@ -79,9 +79,9 @@ To select a board as the build target:
 
 	<span class="images">![](Images/select_board.png)<span>Click a board to set it as the compilation board</span></span>
 
-	If the board isn't already on your list, go to the board's page on mbed.com and click the **Add to your mbed Compiler** button:
+	If the board isn't already on your list, go to the board's page on `mbed.com` and click the **`Add to your mbed Compiler`** button:
 
-	<span class="images">![](Images/add_board.png)<span>Adding a board to the mbed Online Compiler list</span></span>
+	<span class="images">![](Images/add_board.png)<span>Adding a board to the Mbed Online Compiler list</span></span>
 
 #### Compile and download
 
@@ -99,7 +99,7 @@ The **Compile** menu offers five options:
 
 Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
 
-<span class="images">![](Images/device_on_mac.png)<span>The device appears as removable storage, under the name MBED</span></span>
+<span class="images">![](Images/device_on_mac.png)<span>The device appears as removable storage, under the name `MBED`</span></span>
 
 ### Forking a repository
 
@@ -119,7 +119,7 @@ Unless you are the author of the imported repository or have developer access (s
 
 	<span class="images">![](images/fork.png)<span>Forking and describing your forked repository</span></span>
 
-1. Your repository, with all its changes, is published to your profile on the mbed.org website.
+1. Your repository, with all its changes, is published to your profile on the `mbed.org` website.
 
 The forking process is identical to the [code publishing](publishing_code.md) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
 
