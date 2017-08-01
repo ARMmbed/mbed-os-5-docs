@@ -92,7 +92,7 @@ Invoke `mbed compile`, specifying:
 >>> C
 >>>
 
-For example, for the board K64F and the ARM Compiler 5:
+For example, for the board K64F and the Arm Compiler 5:
 
 >>> C
 ```
