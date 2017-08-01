@@ -1,6 +1,6 @@
 ## Examples of application flow control and task management
 
-We can use Blinky to explore flow control and task management in mbed OS applications. We'll look at automated actions first, then move on to handling user actions.
+We can use Blinky to explore flow control and task management in Arm Mbed OS applications. We'll look at automated actions first, then move on to handling user actions.
 
 ### Flow control for automated actions
 
@@ -28,7 +28,7 @@ Here is an example that doesn't include sleeping:
 
 #### Thread
 
-Threads are the most efficient way to blink an LED. During the waiting period, it is possible to take advantage of mbed OS optimizations to automatically conserve power and deal with other tasks. While this is not the most visually appealing method, nor the simplest, it is the preferred way for large scale deployments:
+Threads are the most efficient way to blink an LED. During the waiting period, it is possible to take advantage of Mbed OS optimizations to automatically conserve power and deal with other tasks. While this is not the most visually appealing method, nor the simplest, it is the preferred way for large scale deployments:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed-Workshops/code/Workshop-1-Example-3/)](https://developer.mbed.org/teams/mbed-Workshops/code/Workshop-1-Example-3/file/tip/main.cpp)
 
