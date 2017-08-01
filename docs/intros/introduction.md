@@ -62,7 +62,7 @@ This is the basic architecture of an mbed board:
 
 There are two options:
 
-1. When you plug an mbed Enabled board to your PC using USB, it appears as a USB flash disk. The mbed Interface presents this small disk. It allows you to save ARM microcontroller binaries you want to run directly on to the board, without drivers.
+1. When you plug an mbed Enabled board to your PC using USB, it appears as a USB flash disk. The mbed Interface presents this small disk. It allows you to save Arm microcontroller binaries you want to run directly on to the board, without drivers.
 2. The same USB connection exposes a debug protocol such as CMSIS-DAP. This enables lots of IDEs to program and debug the device.
 
 ### How USB serial works
