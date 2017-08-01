@@ -1,17 +1,17 @@
 #### Mesh networking
 
-mbed OS provides two types of IPv6 based mesh networks:
+Arm Mbed OS provides two types of IPv6 based mesh networks:
 
 * 6LoWPAN_ND, loosely following Zigbee-IP specification.
 * Thread, following specification from [Thread Group](http://threadgroup.org/).
 
-One stack, called `Nanostack`, provides both protocols. For more information about stack internals, refer to [Nanostack's documentation](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/). Application developers use Nanostack through *mbed Mesh API*.
+One stack, called `Nanostack`, provides both protocols. For more information about stack internals, refer to [Nanostack's documentation](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/). Application developers use Nanostack through *the Arm Mbed Mesh API*.
 
-##### mbed Mesh API
+##### Arm Mbed Mesh API
 
-Arm mbed mesh API allows the client to use the IPv6 mesh network.
+Arm Mbed mesh API allows the client to use the IPv6 mesh network.
 
-The client can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the client can create a socket by using the [mbed socket API](network_sockets.md) to start communication with a remote peer.
+The client can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the client can create a socket by using the [Arm Mbed socket API](network_sockets.md) to start communication with a remote peer.
 
 ##### Supported mesh networking modes
 
@@ -19,7 +19,7 @@ Currently, supported mesh networking modes include 6LoWPAN-ND (neighbor discover
 
 ##### Module Configuration
 
-This module supports static configuration via **mbed configuration system** by using the `mbed_app.json` file. The application needs to create the configuration file if you want to use settings other than the default settings.
+This module supports static configuration via **the Mbed configuration system** by using the `mbed_app.json` file. The application needs to create the configuration file if you want to use settings other than the default settings.
 
 An example of the configuration file:
 
@@ -36,7 +36,7 @@ An example of the configuration file:
 }
 ```
 
-###### Configurable parameters in section mbed-mesh-api
+###### Configurable parameters in section `mbed-mesh-api`
 
 | Parameter name  | Value         | Description |
 | --------------- | ------------- | ----------- |
@@ -72,7 +72,7 @@ An example of the configuration file:
 
 ##### Getting started
 
-See the example application [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
+See the example application [`mbed-os-example-mesh-minimal`](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
 
 ##### Usage example for 6LoWPAN ND mode
 
