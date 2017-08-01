@@ -8,7 +8,7 @@ All pull requests are created and recorded against the remote repository, the on
 
 To create a pull request:
 
-1. When you publish a fork of another repository, the mbed developer site displays the ancestor repository under **Repository details**. If you are the repository owner, an additional **Create Pull Request** button is displayed on top.
+1. When you publish a fork of another repository, the Arm Mbed developer site displays the ancestor repository under **Repository details**. If you are the repository owner, an additional **Create Pull Request** button is displayed on top.
 
 	<span class="images">![](images/repo_details.png)<span>A forked repository shows the details of its ancestry</span></span>
 
@@ -58,15 +58,15 @@ To quickly close a pull request without reviewing it, click the **Close** button
 
 Most online services that offer source code and version control hosting let you review and merge pull requests.
 
-We went a step further by letting you review, compile, test and add more changes before accepting a pull request, by harnessing the power of the mbed Online Compiler.
+We went a step further by letting you review, compile, test and add more changes before accepting a pull request, by harnessing the power of the Arm Mbed Online Compiler.
 
-You need to import a pull request to your mbed Online Compiler workspace as a separate program or library, so it won't interfere with the codebase of your original program. You can then freely and safely experiment with the changes.
+You need to import a pull request to your Mbed Online Compiler workspace as a separate program or library, so it won't interfere with the codebase of your original program. You can then freely and safely experiment with the changes.
 
 To review a pull request:
 
-1. Click the **Review** button on the pull request page (as shown above). The mbed Online Compiler opens in a new browser tab; if you already have the mbed Compiler open, switch to that tab.
+1. Click the **Review** button on the pull request page (as shown above). The Mbed Online Compiler opens in a new browser tab; if you already have the Mbed Compiler open, switch to that tab.
 
-1.  The mbed Online Compiler suggests an import name based on your repository name and a `_pullrequest` suffix, to remind you that this was imported as part of a pull request. You're free to change the name:
+1.  The Mbed Online Compiler suggests an import name based on your repository name and a `_pullrequest` suffix, to remind you that this was imported as part of a pull request. You're free to change the name:
 
 	<span class="images">![](images/import_pull_request.png)<span>The Online Compiler's default import name suggestion</span></span>
 
@@ -78,7 +78,7 @@ To review a pull request:
 
 Newly introduced revisions are marked in green. These are the proposed changes - the ones you are being asked to pull. To review individual changes, click on the files list on the right.
 
-The mbed Online Compiler remembers the pull request status of an imported program or library across sessions, so you can always close the Revision History panel and continue the review later. For example, you can open one of the changed files in the Editor and click **Compile** to check whether the code compiles successfully. If it does, you can download and test it on your mbed Enabled device.
+The Mbed Online Compiler remembers the pull request status of an imported program or library across sessions, so you can always close the Revision History panel and continue the review later. For example, you can open one of the changed files in the Editor and click **Compile** to check whether the code compiles successfully. If it does, you can download and test it on your Mbed Enabled device.
 
 ##### Accepting a pull request
 
