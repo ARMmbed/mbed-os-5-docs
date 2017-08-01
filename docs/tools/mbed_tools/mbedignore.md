@@ -1,4 +1,4 @@
-### Ignoring files from mbed build
+### Ignoring files from `mbed build`
 
 The `.mbedignore` file tells the `mbed build` command which files and directories to ignore (not process).
 
