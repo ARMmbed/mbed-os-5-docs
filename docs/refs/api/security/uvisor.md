@@ -2,7 +2,7 @@
 
 This guide will help you start uVisor on mbed OS by showing you how to create a sample application for the NXP FRDM-K64F board.
 
-The uVisor provides sandboxed environments and resources protection for applications built for ARM Cortex-M3 and Cortex-M4 devices. This guide will show you how to enable the uVisor and configure a secure box to access some exclusive resources (memory, peripherals, interrupts). For more information about the uVisor design philosophy, please see the uVisor [introductory document](../../README.md).
+The uVisor provides sandboxed environments and resources protection for applications built for Arm Cortex-M3 and Cortex-M4 devices. This guide will show you how to enable the uVisor and configure a secure box to access some exclusive resources (memory, peripherals, interrupts). For more information about the uVisor design philosophy, please see the uVisor [introductory document](../../README.md).
 
 ##### Requirements
 
@@ -15,13 +15,11 @@ To run the `blinky` application on mbed OS with uVisor enabled, you need:
 The remainder of this guide assumes:
 
 - You are developing on a \*nix machine in the `~/code` folder.
-- You are building the app for the [NXP FRDM-K64F](http://developer.mbed.org/platforms/FRDM-K64F/) target with the [GNU ARM Embedded Toolchain](https://launchpad.net/gcc-arm-embedded).
+- You are building the app for the [NXP FRDM-K64F](http://developer.mbed.org/platforms/FRDM-K64F/) target with the [GNU Arm Embedded Toolchain](https://launchpad.net/gcc-arm-embedded).
 
 You can use these instructions as guidelines in the case of other targets on other host OSs.
 
 ##### Start with the `blinky` app
-
-
 
 Create a new mbed application called `uvisor-example` by running the following commands:
 
@@ -474,7 +472,7 @@ You can observe the secure index by opening a serial port connection to the devi
 
 ##### The NVIC APIs
 
-The ARM CMSIS header files provide APIs to configure, enable and disable IRQs in the NVIC module. These APIs all begin with `NVIC_`, and you can find them in the `core_cm*.h` files in your CMSIS module. The CMSIS header files also provide APIs to set and get an interrupt vector at runtime. This requires the relocation of the interrupt vector table, which is usually located in flash, to SRAM.
+The Arm CMSIS header files provide APIs to configure, enable and disable IRQs in the NVIC module. These APIs all begin with `NVIC_`, and you can find them in the `core_cm*.h` files in your CMSIS module. The CMSIS header files also provide APIs to set and get an interrupt vector at runtime. This requires the relocation of the interrupt vector table, which is usually located in flash, to SRAM.
 
 When the uVisor is enabled, all NVIC APIs are rerouted to the corresponding uVisor vIRQ APIs, which virtualize the interrupt module. The uVisor interrupt model has the following features:
 
