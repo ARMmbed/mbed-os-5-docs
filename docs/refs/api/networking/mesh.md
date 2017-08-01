@@ -9,7 +9,7 @@ One stack, called `Nanostack`, provides both protocols. For more information abo
 
 ##### mbed Mesh API
 
-ARM mbed mesh API allows the client to use the IPv6 mesh network.
+Arm mbed mesh API allows the client to use the IPv6 mesh network.
 
 The client can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the client can create a socket by using the [mbed socket API](network_sockets.md) to start communication with a remote peer.
 
