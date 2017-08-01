@@ -1,10 +1,10 @@
-## Debugging mbed OS 5 applications with other IDEs
+## Debugging Arm Mbed OS 5 applications with other IDEs
 
-There are extensive instructions on debugging mbed OS 5 applications with [uVision 5](Keil.md), [Eclipse](Debugging_Eclipse_pyOCD.md) and [Visual Studio Code](vscode.md), but you can use any IDE that supports GDB to debug mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](toolchain.md).
+There are extensive instructions on debugging Arm Mbed OS 5 applications with [uVision 5](Keil.md), [Eclipse](Debugging_Eclipse_pyOCD.md) and [Visual Studio Code](vscode.md), but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](toolchain.md).
 
 ### Exporting your project
 
-To build your project locally, you first need a Makefile, which almost any C/C++ IDE can use to build your project. To generate this Makefile, you can use either the Online Compiler or mbed CLI.
+To build your project locally, you first need a Makefile, which almost any C/C++ IDE can use to build your project. To generate this Makefile, you can use either the Online Compiler or Mbed CLI.
 
 #### Online Compiler
 
@@ -16,7 +16,7 @@ To build your project locally, you first need a Makefile, which almost any C/C++
 
 ![Exporting to Make](Images/other_ides1.png)
 
-#### mbed CLI
+#### Mbed CLI
 
 In your project folder, run:
 
