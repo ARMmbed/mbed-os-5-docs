@@ -1,6 +1,6 @@
-### mbed OS Software Design Guide
+### Arm Mbed OS Software Design Guide
 
-Principles of mbed software:
+Principles of Arm Mbed software:
 
 - Consistent
 - Intuitive
@@ -9,11 +9,11 @@ Principles of mbed software:
 
 #### Style
 
-Please refer to the [mbed style guide](code_style.md).
+Please refer to the [Mbed style guide](code_style.md).
 
 #### Organization
 
-The mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the mbed OS codebase as a single Git repo. We suggest this model for external libraries.
+The Mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the Mbed OS codebase as a single Git repo. We suggest this model for external libraries.
 
 - Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
 
@@ -52,11 +52,11 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
 - Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
 - In C++ modules, the API should be contained in a namespace that matches the module’s name. For example: `mbed::Ticker`, `rtos::Thread`, `netsocket::Socket`.
 - In C modules, every nonstatic function and type should be prefixed with the module’s name followed by an underscore. For example: `mbed_critical_section_enter()`, `lwip_gethostbyname(host)`.
-- A module contained in the mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
+- A module contained in the Mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
 - Special directories should follow consistent naming convention.
 
 #### Contribution
-1. Please refer to the [mbed contribution guide](contributing.md).
+1. Please refer to the [Mbed contribution guide](contributing.md).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:
@@ -78,7 +78,7 @@ The mbed OS codebase is organized into conceptual submodules to limit the scope 
 
 #### API design
 
-A general module can be split into two APIs, the frontend (or user API) and the backend (or porting layer). The user API describes the programmer interface that the library implements. For mbed OS, the user-facing API should adopt a C++ class-based interface, while the porting layer should adopt a C-compatible interface.
+A general module can be split into two APIs, the frontend (or user API) and the backend (or porting layer). The user API describes the programmer interface that the library implements. For Mbed OS, the user-facing API should adopt a C++ class-based interface, while the porting layer should adopt a C-compatible interface.
 
 ##### API design - user API
 
@@ -175,12 +175,12 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 - Each module should contain a `tests` directory with tests that cover the module’s functionality.
 - Tests should be organized based on the class being tested; roughly one test file per class.
-- Tests included in the codebase must be compatible with the mbed OS test framework.
+- Tests included in the codebase must be compatible with the Mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
 #### Configuration
 
-mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the mbed build system. Modules should provide well-documented configuration options in a simple header file.
+Mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the Mbed build system. Modules should provide well-documented configuration options in a simple header file.
 
 [Full documentation](../advanced/config_system.md).
 
