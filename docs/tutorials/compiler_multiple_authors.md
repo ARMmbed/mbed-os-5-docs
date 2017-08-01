@@ -1,12 +1,12 @@
-### Multiple authors in the mbed Online Compiler
+### Multiple authors in the Arm Mbed Online Compiler
 
-Repositories on [developer.mbed.org](https://developer.mbed.org) are not limited to one author for each repository. Instead, several authors may have the right to publish to the same repository, allowing them to collaborate on a project. Other users, who may be interested in using the project's code but are not concerned with the individual authors, can interact with a single repository.
+Repositories on [`developer.mbed.org`](https://developer.mbed.org) are not limited to one author for each repository. Instead, several authors may have the right to publish to the same repository, allowing them to collaborate on a project. Other users, who may be interested in using the project's code but are not concerned with the individual authors, can interact with a single repository.
 
 <span class="images">![](images/mult_authors.png)<span>Developers can use code that multiple authors created</span></span>
 
 #### Adding a new author to your repository
 
-To grant permission for another author to commit to your repository, use the **Repository Administration** link in your repository on the mbed website.
+To grant permission for another author to commit to your repository, use the **Repository Administration** link in your repository on the Arm Mbed website.
 
 	<span class="images">![](images/privacy_settings.png)<span>Allowing other users to add to your repository</span></span>
 
