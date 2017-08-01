@@ -1,6 +1,6 @@
 #### The event loop
 
-One of the optional mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
+One of the optional Arm Mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
 - The execution of certain functions (notably some functions in the C library) is not safe.
 - You cannot use various RTOS objects and functions from an interrupt context.
@@ -8,11 +8,11 @@ One of the optional mbed OS features is an event loop mechanism that you can use
 
 The event loop offers a solution to these issues in the form of an API that can defer execution of code from the interrupt context to the user context. More generally, the event loop can be used anywhere in a program (not necessarily in an interrupt handler) to defer code execution to a different context.
 
-<span class="tips">The full doxygen for events on mbed is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__events.html). The doxygen for ``Event.h`` is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/Event_8h_source.html).</span>
+<span class="tips">The full doxygen for events on Arm Mbed is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__events.html). The doxygen for `Event.h` is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/Event_8h_source.html).</span>
 
-In mbed OS, events are pointers to functions (and optionally function arguments). An event loop extracts events from a queue and executes them.
+In Mbed OS, events are pointers to functions (and optionally function arguments). An event loop extracts events from a queue and executes them.
 
-The [mbed-events library](http://github.com/ARMmbed/mbed-os/tree/master/events) implements the mbed OS events queue. The [README of mbed-events](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows how to use the event queue.
+The [`mbed-events` library](http://github.com/ARMmbed/mbed-os/tree/master/events) implements the Mbed OS events queue. The [README of `mbed-events`](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows how to use the event queue.
 
 ##### Creating an event loop
 
@@ -107,4 +107,4 @@ We used `InterruptIn` for the example above, but the same kind of code can be us
 
 ##### Where to go from here
 
-We have discussed only a small part of how event queues work in mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the mbed-events library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/equeue_8h_source.html).
+We have discussed only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/equeue_8h_source.html).
