@@ -77,7 +77,7 @@ For more details about the Python method resolution order, check [this link](htt
 
 #### `core`
 
-The name of the target's ARM core.
+The name of the target's Arm core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`
 
