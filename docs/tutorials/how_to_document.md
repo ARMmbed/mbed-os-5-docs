@@ -2,9 +2,9 @@
 
 API documentation tells you what you need to know to use a library or work with a program. It details functions, classes, return types and more.
 
-In mbed, API documentation for programs and libraries is fully supported both within the mbed Online Compiler and in the code listings on the public site.
+In Arm Mbed, API documentation for programs and libraries is fully supported both within the Arm Mbed Online Compiler and in the code listings on the public site.
 
-### Browsing API documentation from within the mbed Compiler
+### Browsing API documentation from within the Arm Mbed Online Compiler
 
 <span class="images">![](images/docs_in_library_1.png)![](images/docs_in_library_2.png)</span>
 
@@ -22,7 +22,7 @@ Each documentation group contains only the documented definitions for that group
 
 ### Viewing documentation
 
-The documentation preview contains references presented as standard links that point to subsections of the document or to other documents. They open inside the mbed Compiler when clicked:
+The documentation preview contains references presented as standard links that point to subsections of the document or to other documents. They open inside the Mbed Online Compiler when clicked:
 
 <span class="images">![](images/docs_preview1.png)</span>
 
@@ -36,7 +36,7 @@ Clicking one of the "Definition at line X of file source.c" links would open the
 
 ### New file from documentation example
 
-Another notable feature of the API documentation in the mbed Online Compiler is the ability to create new files from documentation examples, making it easier to try them. The mbed Compiler prompts for file name and may suggest ``main.cpp`` if that file doesn't already exist in the program root:
+Another notable feature of the API documentation in the Mbed Online Compiler is the ability to create new files from documentation examples, making it easier to try them. The Mbed Compiler prompts for file name and may suggest ``main.cpp`` if that file doesn't already exist in the program root:
 
 ### How to add documentation to your own programs and libraries
 
@@ -151,7 +151,7 @@ Once the docs are generated, the navigation tree is refreshed, and you can see t
 
 ### Additional notes
 
-Doxygen is the core of the documentation generation in the mbed ecosystem:
+Doxygen is the core of the documentation generation in the Arm Mbed ecosystem:
 
 * Doxygen is compatible with Javadoc and other documentation styles. Refer to the [Doxygen manual](http://www.stack.nl/~dimitri/doxygen/manual.html) for more information.
 
