@@ -2,7 +2,7 @@
 
 Use the BusIn interface to create a number of DigitalIn pins that can be read as one value.
 
-You can use any of the numbered mbed pins as a DigitalIn in the BusIn.
+You can use any of the numbered Arm Mbed pins as a DigitalIn in the BusIn.
 
 ##### API
 
