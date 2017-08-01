@@ -1,3 +1,3 @@
-## mbed tutorials
+## Arm Mbed Tutorials
 
 [short intro to the section]
