@@ -1,12 +1,12 @@
-## mbed Online Compiler
+## Arm Mbed Online Compiler
 
-The online compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is [an mbed developer account](https://developer.mbed.org/account/signup/).
+The Arm Mbed Online Compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is [an Arm Mbed developer account](https://developer.mbed.org/account/signup/).
 
-The compiler is always available on [https://developer.mbed.org/compiler/](https://developer.mbed.org/compiler/).
+The compiler is always available on [`https://developer.mbed.org/compiler/`](https://developer.mbed.org/compiler/).
 
 ### Video summary
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the mbed Online Compiler</span></span>
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the Mbed Online Compiler</span></span>
 
 
 ### Keyboard shortcuts
