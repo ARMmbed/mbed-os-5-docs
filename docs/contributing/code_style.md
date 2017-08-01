@@ -182,11 +182,11 @@ astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
 
 #### Compile flags and ABI requirements
 
-All C and C++ code submitted to mbed OS must compile with GCC ARM Embedded, ARM Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles used by the mbed OS tools are each subsets of these flags. Each profile has one optimization setting.
+All C and C++ code submitted to mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles used by the mbed OS tools are each subsets of these flags. Each profile has one optimization setting.
 
-##### GCC ARM Embedded
+##### GCC Arm Embedded
 
-Code must be compatible with the `softfp` float ABI. mbed OS uses the following flags when compiling with GCC ARM Embedded.
+Code must be compatible with the `softfp` float ABI. mbed OS uses the following flags when compiling with GCC Arm Embedded.
 
 flag                        | meaning
 ----------------------------|---------------------------------------
@@ -201,9 +201,9 @@ flag                        | meaning
 `-std=gnu99`                | C uses the GNU99 standard
 `-std=gnu++98`              | C++ uses the GNU++98 standard
 
-##### ARM Compiler 5
+##### Arm Compiler 5
 
-mbed OS uses the following flags when compiling with ARM Compiler 5.
+mbed OS uses the following flags when compiling with Arm Compiler 5.
 
 flag       | meaning
 -----------|---------------------------------------
