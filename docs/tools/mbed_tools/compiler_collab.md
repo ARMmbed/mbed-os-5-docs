@@ -1,10 +1,10 @@
-### Collaboration and version control with the mbed Online Compiler
+### Collaboration and version control with the Arm Mbed Online Compiler
 
-The mbed Online Compiler offers collaboration and version control functions to help the community benefit from and improve individual work.
+The Arm Mbed Online Compiler offers collaboration and version control functions to help the community benefit from and improve individual work.
 
 #### Terminology
 
-Remote repository:	A library or program published on mbed.org.
+Remote repository:	A library or program published on `mbed.org`.
 
 Local repository:	A library or program in your private workspace.
 
@@ -14,7 +14,7 @@ Pull:	Copy changes from a remote repository to a local repository in your worksp
 
 Push:	Copy changes from a local repository to a remote one.
 
-Fork:	Create a remote repository on mbed.org from an imported local repository (that may also contain local changes and modifications). The fork is created under your profile.
+Fork:	Create a remote repository on `mbed.org` from an imported local repository (that may also contain local changes and modifications). The fork is created under your profile.
 
 Publish:	Copy changes from a local repository to an existing remote one (push) or create a new one (fork).
 
@@ -30,7 +30,7 @@ When you import a repository, you are making a clone of a public repository in y
 
 Once imported, the local repository in your workspace will be `linked` to the remote repository by URL to let you check its status, receive new changes and even contribute code to it.
 
-To import a repository, simply click the Import link on the repository's page on the mbed website, or use the Import button within the mbed Compiler. You can read more about importing on the [mbed Online Compiler page](../dev_tools/online_comp.md).
+To import a repository, simply click the Import link on the repository's page on the Arm Mbed website, or use the Import button within the Mbed Online Compiler. You can read more about importing on the [Mbed Online Compiler page](../dev_tools/online_comp.md).
 
 #### Getting updates
 
