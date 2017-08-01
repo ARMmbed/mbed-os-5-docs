@@ -6,7 +6,7 @@ The I2C protocol supports up to 127 devices per bus, and its default clock frequ
 
 ##### API
 
-<span class="notes">**Note:** The mbed API uses 8 bit addresses, so make sure to left-shift 7 bit addresses by 1 bit before passing them. </span>
+<span class="notes">**Note:** The Arm Mbed API uses 8 bit addresses, so make sure to left-shift 7 bit addresses by 1 bit before passing them. </span>
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/I2C_8h_source.html)
 
