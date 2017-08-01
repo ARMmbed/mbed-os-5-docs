@@ -1,6 +1,6 @@
 ### Setting up a local debug toolchain
 
-Most mbed Enabled development boards contain two chips: the target microcontroller and a CMSIS-DAP interface chip. The most common use case of the interface chip is mounting the development board as a USB mass-storage device, making it easy to flash new firmware. However, you can also use this interface chip to debug the target microcontroller without an external debugger, such as a JTAG.
+Most Arm Mbed Enabled development boards contain two chips: the target microcontroller and a CMSIS-DAP interface chip. The most common use case of the interface chip is mounting the development board as a USB mass-storage device, making it easy to flash new firmware. However, you can also use this interface chip to debug the target microcontroller without an external debugger, such as a JTAG.
 
 This offers debugging capabilities for stack trace analysis, register dumps and inspection of program execution (breakpoints, watchpoints and so on). When combined with a source-level debugger on the development host, such as the GNU Project Debugger (GDB), SWD offers a rich debugging experience - much more powerful than `printf()`.
 
@@ -100,16 +100,16 @@ Remote debugging using localhost:3333
 0x0001602a in ?? ()
 ```
 
-You now have set up a debug connection. From here, you can flash debug builds, step through code and use any IDE that supports GDB to debug mbed OS applications. For instructions, see:
+You now have set up a debug connection. From here, you can flash debug builds, step through code and use any IDE that supports GDB to debug Arm Mbed OS applications. For instructions, see:
 
-1. Producing [debug builds with mbed CLI](debug_builds.md).
+1. Producing [debug builds with Arm Mbed CLI](debug_builds.md).
 1. Debugging with [Eclipse](Debugging_Eclipse_pyOCD.md).
 1. Debugging with [Keil uVision](Keil.md).
 1. Debugging with [Visual Studio Code](vscode.md).
 
 ### Semihosting messages
 
-It's possible to send messages from the development board to your computer over the debug port using [semihosting](http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm). Some parts of mbed OS 5 also use this, such as uVisor. To see semihosting messages:
+It's possible to send messages from the development board to your computer over the debug port using [semihosting](http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm). Some parts of Mbed OS 5 also use this, such as uVisor. To see semihosting messages:
 
 1. Install [Netcat](https://en.wikipedia.org/wiki/Netcat).
 2. Connect pyOCD or OpenOCD to your board.
