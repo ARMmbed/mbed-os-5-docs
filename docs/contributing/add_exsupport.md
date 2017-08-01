@@ -7,13 +7,13 @@ If you have added a new target to mbed OS 5, exporting will allow users to trans
 
 Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
 
-### GNU ARM Eclipse managed projects
+### GNU Arm Eclipse managed projects
 
-The GNU ARM Eclipse exporter is available for all targets that use the GCC_ARM toolchain.
+The GNU Arm Eclipse exporter is available for all targets that use the GCC Arm toolchain.
 
 ### Qt Creator and Make
 
-The Qt Creator project export is available for the GCC_ARM toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
+The Qt Creator project export is available for the GCC Arm toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
 
 You can open the generated `.creator` project in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion. You can use the Makefile to compile the project; the IDE should automatically invoke the Makefile when you issue the Build command.
 
@@ -49,7 +49,7 @@ There is no reliable way to map an mbed alias such as [NUCLEO_F030R8](https://gi
 ```
 
 #### uVision
-The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. [`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from these packs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic ARM CPU target in uVision5.
+The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. [`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from these packs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic Arm CPU target in uVision5.
 
 #### IAR
 [`tools/export/iar/iar_definitions.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json) uses this device name to store information necessary to set the target in an IAR project.
