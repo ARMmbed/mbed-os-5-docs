@@ -42,7 +42,7 @@ Please see the contributing guide's section on [contributing code](../cont/code_
 
 #### Bootstrap code
 
-You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for ARM, IAR and GCC toolchains. These files are usually in the ```mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device``` directory.
+You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for Arm, IAR and GCC toolchains. These files are usually in the ```mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device``` directory.
 
 mbed OS requires dynamic vector relocation, which requires extensions to CMSIS-CORE. Extend CMSIS-CORE by adding an `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h` file. This header file defines the vector relocation additions and device-specific headers that include CMSIS-CORE. Next add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.c and .h`. This relocation function changes the contents of the Interrupt Vector Table at run time.
 
