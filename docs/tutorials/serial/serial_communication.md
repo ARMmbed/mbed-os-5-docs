@@ -1,6 +1,6 @@
 ### Board to PC communication over USB
 
-The mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
+The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
 <span class="tips">If you're working on Windows ealier than Windows 10, you might need to [install a serial driver](what_need.md#windows-serial-driver).</span>
 
@@ -31,7 +31,7 @@ int main() {
 #### Terminal applications
 
 
-Terminal applications run on your host PC. They provide a window where your mbed board can print and where you can type characters back to your board.
+Terminal applications run on your host PC. They provide a window where your Mbed board can print and where you can type characters back to your board.
 
 <span class="tips">**Serial configuration:** The standard setup for the USB serial port is 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1)</span>
 
@@ -48,7 +48,7 @@ There are many terminal applications for Windows, including:
 
 ###### Configuring the connection
 
-1. Plug in your mbed board.
+1. Plug in your Mbed board.
 1. Open CoolTerm.
 1. Click **Connect**. This opens up an 8-n-1 9600 baud connection to the first available serial port. If you have more than one board plugged in, you may need to change the port under **Options > Serial Port > Port**.
 
