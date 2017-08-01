@@ -2,7 +2,7 @@
 
 Use the DigitalIn interface to read the value of a digital input pin.
 
-You can use any of the numbered mbed pins can be used as a DigitalIn.
+You can use any of the numbered Arm Mbed pins can be used as a DigitalIn.
 
 ##### API
 
