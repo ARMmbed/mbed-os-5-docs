@@ -1,8 +1,8 @@
 #### RTOS
 
-The mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check [the Keil CMSIS-RTOS tutorial](https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf) and [the element14 introduction to Keil RTX](https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview). You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
+The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check [the Keil CMSIS-RTOS tutorial](https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf) and [the element14 introduction to Keil RTX](https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview). You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
 
-The code of the mbed RTOS can be found in the [mbed-os](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__rtos.html).
+The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__rtos.html).
 
 ##### Thread
 
@@ -43,7 +43,7 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 A [`Mutex`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mutex.html) is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
-<span class="warnings"> **Warning - ISR:** The ``Mutex`` methods cannot be called from interrupt service routines (ISR). In the current version of mbed OS, if you attempt to use a mutex from within an ISR, nothing happens; attempts to lock a mutex succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an ISR, you can break the thread safety mechanisms and introduce race-conditions into an otherwise safe piece of code. Future versions of mbed OS will provide warnings and ultimately prevent this from happening. </span>
+<span class="warnings"> **Warning - ISR:** The `Mutex` methods cannot be called from interrupt service routines (ISR). In the current version of Mbed OS, if you attempt to use a mutex from within an ISR, nothing happens; attempts to lock a mutex succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an ISR, you can break the thread safety mechanisms and introduce race-conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening. </span>
 
 <span class="images">![](Images/Thread/Mutex.png)</span>
 
@@ -53,7 +53,7 @@ Use Mutex to protect printf().
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_mutex/)](https://developer.mbed.org/teams/mbed_example/code/rtos_mutex/file/1ae0d86d2020/main.cpp)
 
-<span class="notes">**Note:** C standard library Mutexes</br>The Arm C standard library already has Mutexes in place to protect the access to ``stdio``, so on the LPC1768 the above example is not necessary. On the other hand, the LPC11U24 does not provide default `stdio` Mutexes, making the above example a necessity. </span>
+<span class="notes">**Note:** C standard library Mutexes</br>The Arm C standard library already has Mutexes in place to protect the access to `stdio`, so on the LPC1768 the above example is not necessary. On the other hand, the LPC11U24 does not provide default `stdio` Mutexes, making the above example a necessity. </span>
 
 <span class="warnings">**Warning:** `stdio`, `malloc` and `new` in ISR</br>Because of the mutexes in the Arm C standard library, you cannot use `stdio` (`printf`, `putc`, `getc` and so on), `malloc` and `new` in ISR. </span>
 
@@ -190,7 +190,7 @@ This example uses a message from the queue to trigger an interrupt.
 
 ##### Default Timeouts
 
-The mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
+The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
 
 A typical scenario for a producer could be a peripheral triggering an interrupt to notify an event; in the corresponding interrupt service routine you cannot wait (this would deadlock the entire system). On the other side, the consumer could be a background thread waiting for events; in this case the desired default behaviour is not using CPU cycles until this event is produced, hence the `osWaitForever`.
 
