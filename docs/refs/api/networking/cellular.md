@@ -2,7 +2,7 @@
 
 The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-ARM mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
+Arm mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
 ##### Getting started
 
@@ -43,7 +43,7 @@ You can use and extend a cellular interface and extended in various different wa
 
 [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). Figure 2 above shows the basic design that the driver is based on. In other words, CellularInterface uses PPP. We can summarize this particular basic design as follows:
 
-* It uses An external IP stack (for example, LWIP) instead of on-chip network stacks.
+* It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
 * The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
 * After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet.
 
@@ -312,7 +312,7 @@ You can implement a cellular network interface in different ways based on your r
 **Case 4: Modem attached as a daughter board (Arduino shield)**
    * This refers to the case when the cellular modem comes as a plug-in module or an external shield (for example, with an Arduino form factor).
    * Following mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the mbed OS tree.
-   * If the port inherits from the generic modem driver that ARM mbed OS, the structure might look like this:
+   * If the port inherits from the generic modem driver that Arm mbed OS, the structure might look like this:
 
    <span class="images">![](Images/Cellular/inherit_from_generic_modem.png)</span>
 
