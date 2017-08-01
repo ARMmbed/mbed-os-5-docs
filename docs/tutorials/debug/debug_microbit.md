@@ -126,7 +126,7 @@ Look at the instruction stream leading to this loop. Most instructions are encod
     => 0x1f31e:	b.n	0x1f31e                     ; Branch to self
 
 
-Understanding this requires a bit of knowledge about ARM assembly and calling conventions. A compiler that follows the [ARM assembly procedure call standard][AAPCS] generated this code in C. In this document, Table 2 in section 5.1.1 defines how the compiler should use available registers when calling a function.
+Understanding this requires a bit of knowledge about Arm assembly and calling conventions. A compiler that follows the [Arm assembly procedure call standard][AAPCS] generated this code in C. In this document, Table 2 in section 5.1.1 defines how the compiler should use available registers when calling a function.
 
 Registers r0 to r3 pass arguments to a function, which may return something into r0. Using x, you can inspect the content of those arguments:
 
