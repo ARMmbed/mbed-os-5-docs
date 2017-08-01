@@ -2,11 +2,11 @@
 
 The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
+Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
 ##### Getting started
 
-1. Choose an [mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
+1. Choose an [Mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
 
 1. Clone [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular). Follow the instructions in the repository.
 
@@ -37,11 +37,11 @@ You can use and extend a cellular interface and extended in various different wa
 
 <span class="images">![](Images/Cellular/Cell_AT.png)</span>
 
-- Using a PPP pipe to pass IP packets between an mbed OS supported IP stack and cellular modem device.
+- Using a PPP pipe to pass IP packets between an Mbed OS supported IP stack and cellular modem device.
 
 <span class="images">![](Images/Cellular/Cell_PPP.png)</span>
 
-[mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). Figure 2 above shows the basic design that the driver is based on. In other words, CellularInterface uses PPP. We can summarize this particular basic design as follows:
+[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). Figure 2 above shows the basic design that the driver is based on. In other words, CellularInterface uses PPP. We can summarize this particular basic design as follows:
 
 * It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
 * The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
@@ -57,13 +57,13 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the CellularBase class (for example, the [generic modem driver](https://github.com/hasnainvirk/mbed-os/blob/cellular_feature_br/features/cellular/TARGET_GENERIC_MODEM/generic_modem_driver/)).
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
-1. Once connected, you can use mbed OS [network sockets](network_sockets.md) as usual.
+1. Once connected, you can use Mbed OS [network sockets](network_sockets.md) as usual.
 
 ##### Examples
 
 ###### Connection establishment
 
-This example establishes connection with the cellular network using mbed OS CellularInterface.
+This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
 ```cpp
 #include "mbed.h"
@@ -278,15 +278,15 @@ int main()
 
 ##### Porting guide
 
-This section provides guidelines and details for porting a cellular device driver to mbed OS. It first provides view of the pieces that compose your new cellular interface and then gives step-by-step instructions on how to port.
+This section provides guidelines and details for porting a cellular device driver to Mbed OS. It first provides a view of the pieces that compose your new cellular interface and then gives step-by-step instructions on how to port.
 
 ###### Quick peek
 
 You can implement a cellular network interface in different ways based on your requirements and physical setup. For example:
 
-**Case 1: An implementation using mbed OS provided network stacks (PPP mode)**
+**Case 1: An implementation using Mbed OS provided network stacks (PPP mode)**
    * Pros
-		* A well-established network stack with full mbed OS support.
+		* A well-established network stack with full Mbed OS support.
 		* Simple operation and implementation because the inherent network stack provides all socket APIs.
 		* Needs less maintenance because the IP stack handles the bulk of the work in data mode. Command mode is turned off as soon as the device enters data mode.
    * Cons
@@ -299,28 +299,28 @@ You can implement a cellular network interface in different ways based on your r
 		* Lighter memory footprint.
 		* Lighter flash footprint.
    * Cons
-		* Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard mbed OS NSAPI sockets.
+		* Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard Mbed OS NSAPI sockets.
 		* Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
 		* Limited capabilities in some instances.
 
 **Case 3: Modem present on target board**
    * This refers to the case when the cellular modem is bundled with the target board.
-   * Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 mbed Enabled IoT starter kit provides an implementation of `onboard_modem_api` [here](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
-   * Following mbed OS conventions, drivers for on-board modules may become part of the mbed OS tree.
+   * Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an implementation of `onboard_modem_api` [here](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
+   * Following Mbed OS conventions, drivers for on-board modules may become part of the Mbed OS tree.
    * `OnboardCellularInterface` ties together `onboard_modem_api.h` with the generic `PPPCellularInterface` to provide a complete driver. At present, only UART connection type is handled.
 
 **Case 4: Modem attached as a daughter board (Arduino shield)**
    * This refers to the case when the cellular modem comes as a plug-in module or an external shield (for example, with an Arduino form factor).
-   * Following mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the mbed OS tree.
-   * If the port inherits from the generic modem driver that Arm mbed OS, the structure might look like this:
+   * Following Mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the Mbed OS tree.
+   * If the port inherits from the generic modem driver that Arm Mbed OS, the structure might look like this:
 
    <span class="images">![](Images/Cellular/inherit_from_generic_modem.png)</span>
 
-No matter your setup, mbed OS provides ample framework. You can list common infrastructure shared between above-mentioned cases as:
+No matter your setup, Mbed OS provides ample framework. You can list common infrastructure shared between above-mentioned cases as:
 
 **a) Onboard modem API**
 
-> Only valid for onboard modem types. In other words, **Case 3** is applicable. A hardware abstraction layer is between a cellular modem and an mbed OS cellular driver. This API provides basic framework for initializing and uninitializing hardware, as well as turning the modem on or off. For example:
+> Only valid for onboard modem types. In other words, **Case 3** is applicable. A hardware abstraction layer is between a cellular modem and an Mbed OS cellular driver. This API provides basic framework for initializing and uninitializing hardware, as well as turning the modem on or off. For example:
 
 ```C
 /** Sets the modem up for powering on
@@ -339,7 +339,7 @@ void modem_init(modem_t *obj);
 FileHandle _fh;
 ```
 
-> In case of a UART type of device, mbed OS provides an implementation of serial device type `FileHandle` with software buffering.
+> In case of a UART type of device, Mbed OS provides an implementation of serial device type `FileHandle` with software buffering.
 
 ```CPP
 FileHandle * _fh = new UARTSerial(TX_PIN, RX_PIN, BAUDRATE);
@@ -385,14 +385,14 @@ int poll(pollfh fhs[], unsigned nfhs, int timeout);
 nsapi_error_t nsapi_ppp_connect(FileHandle *stream, Callback<void(nsapi_error_t)> status_cb=0, const char *uname=0, const char *pwd=0);
 ```   
 
-The application activating the appropriate network stack feature, and ensuring it has PPP enabled via JSON config, determines which network stack is used for PPP modems. As of mbed OS 5.5, LWIP provides IPv4 over PPP, but not IPv6. Nanostack does not provide PPP.
+The application activating the appropriate network stack feature, and ensuring it has PPP enabled via JSON config, determines which network stack is used for PPP modems. As of Mbed OS 5.5, LWIP provides IPv4 over PPP, but not IPv6. Nanostack does not provide PPP.
 
 #### Step-by-step porting process
 ##### Providing onboard modem API
 
 Only valid when **Case 3** is applicable.
 
-1. **Update _mbed-os/targets/targets.json_** This file defines all the target platforms that mbed OS supports. If mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem and the data connection type is attached with MCU.
+1. **Update `mbed-os/targets/targets.json`** This file defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem and the data connection type is attached with MCU.
 
 For example,
 
