@@ -1,6 +1,6 @@
-### Debugging mbed OS applications
+### Debugging Arm Mbed OS applications
 
-At the heart of mbed is the [Online Compiler](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/online_comp/). While that is incredibly convenient for getting a project started or while prototyping, chances are that at some point you'll miss a debugger, or you'll want to develop while not having an active internet connection. Through debugging, you can do things such as set breakpoints, set watchpoints, view registers, view disassembly, browse memory and examine the callstack. These docs will help you debug your applications.
+At the heart of Arm Mbed is the [Online Compiler](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/online_comp/). While that is incredibly convenient for getting a project started or while prototyping, chances are that at some point you'll miss a debugger, or you'll want to develop while not having an active internet connection. Through debugging, you can do things such as set breakpoints, set watchpoints, view registers, view disassembly, browse memory and examine the callstack. These docs will help you debug your applications.
 
 The simplest way to debug your code is to augment your code with log statements, which can be observed from your computer. To set this up, read [Debugging with printf() calls](printf.md).
 
@@ -12,11 +12,11 @@ If your development board blinks very fast, or shows 'siren lights', see [Lights
 
 #### Debugging from an IDE
 
-Keil uVision natively supports debugging mbed OS applications. To set up uVision, read [Debugging with Keil uVision](Keil.md).
+Keil uVision natively supports debugging Mbed OS applications. To set up uVision, read [Debugging with Keil uVision](Keil.md).
 
-mbed also supports debugging using any IDE that supports GDB. To set up the debugger, first read [Setting up your local debug toolchain](toolchain.md). Then read the section for your specific IDE. The same principles apply to any unlisted IDEs that supports GDB:
+Mbed also supports debugging using any IDE that supports GDB. To set up the debugger, first read [Setting up your local debug toolchain](toolchain.md). Then read the section for your specific IDE. The same principles apply to any unlisted IDEs that supports GDB:
 
-1. Producing [debug builds with mbed CLI](debug_builds.md).
+1. Producing [debug builds with Arm Mbed CLI](debug_builds.md).
 1. Debugging with [Eclipse](debugging_eclipse_pyocd.md).
 1. Debugging with [Visual Studio Code](vscode.md).
 1. Debugging with [other IDEs that support GDB](other_ides.md).
