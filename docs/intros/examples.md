@@ -45,7 +45,7 @@ A few micro:bit How To videos:
 - [IRQ Blinky uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor): an example threaded application with uVisor security and IRQ support.
 - [Threaded REPC with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-number-store): using uVisor APIs to build a box that stores a number.
 
-These examples work on the K64F and GCC_ARM toolchain only.
+These examples work on the K64F and the GNU Arm Embedded toolchain only.
 
 #### Core features
 
