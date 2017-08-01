@@ -6,7 +6,7 @@
 
 ### End to end projects
 
-- [LoRa on mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
+- [LoRa on Arm Mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/)
 - [Internet connected lighting system](https://docs.mbed.com/docs/building-an-internet-connected-lighting-system/en/latest/)
 
 ### Our YouTube channel
@@ -21,7 +21,7 @@ A few micro:bit How To videos:
 - [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
 - [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
 
-### JavaScript on mbed OS 5
+### JavaScript on Arm Mbed OS 5
 
 - [Building IoT devices with JavaScript](https://developer.mbed.org/javascript-on-mbed/)
 - [Blinky in JavaScript](https://github.com/ARMmbed/mbed-js-example)
@@ -32,14 +32,14 @@ A few micro:bit How To videos:
 
 #### Security
 
-##### mbed TLS
+##### Arm Mbed TLS
 
-- [Cryptographic benchmark](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/): benchmarks the various cryptographic primitives offered by mbed TLS.
-- [Authenticated encryption and decryption](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt/): performs authenticated encryption and authenticated decryption of a buffer. It serves as a tutorial for the basic authenticated encryption functions of mbed TLS.
-- [Hashing](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-hashing/):  performs hashing of a buffer with SHA-256 using various APIs. It serves as a tutorial for the basic hashing APIs of mbed TLS.
-- [TLS client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client/):  downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
+- [Cryptographic benchmark](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/): benchmarks the various cryptographic primitives offered by Arm Mbed TLS.
+- [Authenticated encryption and decryption](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt/): performs authenticated encryption and authenticated decryption of a buffer. It serves as a tutorial for the basic authenticated encryption functions of Mbed TLS.
+- [Hashing](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-hashing/): performs hashing of a buffer with SHA-256 using various APIs. It serves as a tutorial for the basic hashing APIs of Mbed TLS.
+- [TLS client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client/): downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
 
-##### mbed uVisor
+##### Arm Mbed uVisor
 
 - [Threaded Blinky with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-thread): an example threaded application with uVisor security.
 - [IRQ Blinky uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor): an example threaded application with uVisor security and IRQ support.
@@ -51,7 +51,7 @@ These examples work on the K64F and the GNU Arm Embedded toolchain only.
 
 ##### File system
 
-[Get the FAT file system working on an mbed OS platform](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
+[Get the FAT file system working on an Mbed OS platform](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
 
 ##### Bootloader
 
@@ -60,7 +60,7 @@ These examples work on the K64F and the GNU Arm Embedded toolchain only.
 
 #### mbed Client
 
-[Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for mbed OS. It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister.
+[Getting started](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for Mbed OS. It demonstrates how to register a device with Mbed Device Connector, how to read and write values and how to deregister.
 
 ### Connectivity
 
@@ -74,7 +74,7 @@ These examples work on the K64F and the GNU Arm Embedded toolchain only.
 
 #### Nanostack border router
 
-[Use the generic mbed border router and create a 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
+[Use the generic Mbed border router and create a 6LoWPAN-ND or Thread network](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
 
 #### Sockets
 
