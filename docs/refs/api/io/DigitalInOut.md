@@ -5,7 +5,7 @@ Use the DigitalInOut interface as a bidirectional digital pin:
 * Read the value of a digital pin when set as an input.
 * Write the value when set as an output.
 
-You can use any of the numbered mbed pins as a DigitalInOut.
+You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 ##### API
 
