@@ -1,8 +1,8 @@
 ### Publishing code
 
-Publishing copies your program or library from your **private** workspace to your **public** mbed website profile.
+Publishing copies your program or library from your **private** workspace to your **public** Arm Mbed website profile.
 
-The public copy of your repository is the home of your project on mbed. This is the place for:
+The public copy of your repository is the home of your project on Mbed. This is the place for:
 
 * Documentation about your project.
 * Guides on how to use it.
@@ -10,7 +10,7 @@ The public copy of your repository is the home of your project on mbed. This is 
 
 If you want to share your work:
 
-1. Click **Publish** from the right-click context menu in the mbed Online Compiler:
+1. Click **Publish** from the right-click context menu in the Arm Mbed Online Compiler:
 
 	<span class="images">![](images/publish.png)<span>Using the Online Compiler to publish a program</span></span>
 
@@ -36,8 +36,8 @@ If you want to share your work:
 
 1. Click OK.
 
-That copies your private repository to the mbed public website, where other users can import it. It also copies a reference to any libraries you used in your code; if those libraries are not published, you will be prompted to publish them.
+That copies your private repository to the Mbed public website, where other users can import it. It also copies a reference to any libraries you used in your code; if those libraries are not published, you will be prompted to publish them.
 
 The end result is that a published repository is an **exact copy** of your program or library as it exists in your workspace. This ensures that the code works as expected when another user imports your code.
 
-<span class="images">![](images/published_repo.png)<span>The public copy of the program on your mbed website profile is identical to the one from your private workspace</span></span>
+<span class="images">![](images/published_repo.png)<span>The public copy of the program on your Mbed website profile is identical to the one from your private workspace</span></span>
