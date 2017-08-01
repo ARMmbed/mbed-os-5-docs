@@ -1,28 +1,28 @@
-## Introduction to mbed OS 5
+## Introduction to Arm Mbed OS 5
 
-### Developing applications on top of mbed OS
+### Developing applications on top of Arm Mbed OS
 
-mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
+Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
-Your application code is written in C and C++. It uses the *application programming interfaces* (APIs) that mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces the challenges of getting started with Arm-based microcontrollers and integrating large software projects.
+Your application code is written in C and C++. It uses the *application programming interfaces* (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces the challenges of getting started with Arm-based microcontrollers and integrating large software projects.
 
 #### Where to start
 
 <span class="tips">If you're working on Windows, you might need to [install a serial driver](getting_started/what_need.md#windows-serial-driver).</span>
 
-The easiest way to work with mbed OS is using one of our development tools. We've set up an example, [Blinky](getting_started/first_program.md), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](getting_started/first_program.md), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
 Once you know how to build an existing application, it's time to learn [how to write your own applications](APIs/intro.md).
 
 #### Development tools
 
-- Our offline development tool is [mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer.
-- The [mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
+- Our offline development tool is [Arm Mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer.
+- The [Arm Mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
 - If you're working with third party tools, look at [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
 #### Communicating with and monitoring your board
 
-You can monitor and control an mbed board [to help you debug and test your applications](getting_started/mbed_interface.md).
+You can monitor and control an Mbed board [to help you debug and test your applications](getting_started/mbed_interface.md).
 
 <span class="tips">**Tip:** You can learn more about debugging [here](advanced/debugging.md).</span>
 
@@ -34,54 +34,54 @@ When you've started writing applications using your selected development tool:
 - Try one of the [advanced tutorials](advanced/intro.md), which cover concepts such as debugging and memory tracing.
 - Ask questions and give advice on the [forum](https://forums.mbed.com/).
 
-### Contributing to mbed OS
+### Contributing to Mbed OS
 
 If you want to contribute to the `mbed-os` codebase, please see [the contribution section](cont/contributing.md).
 
-The current version of mbed OS 5 is 5.5.0. It is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.5.0).
+The current version of Mbed OS 5 is 5.5.0. It is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.5.0).
 
-### Porting to mbed OS
+### Porting to Mbed OS
 
 Our full porting guide is still being written. For now, we have:
 
 - A high-level [porting guide](advanced/porting_guide.md).
-- Porting [from mbed OS 3 to mbed OS 5](advanced/MINAR_migration.md) (focusing on MINAR).
-- Porting [mbed TLS](advanced/tls_porting.md).
+- Porting [from Mbed OS 3 to Mbed OS 5](advanced/MINAR_migration.md) (focusing on MINAR).
+- Porting [Arm Mbed TLS](advanced/tls_porting.md).
 
-## How mbed works
+## How Mbed works
 
-The mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit that assists development by programming the device, logging program execution and giving access to the debug access port. Here is how it works.
+The Arm Mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit that assists development by programming the device, logging program execution and giving access to the debug access port. Here is how it works.
 
 ### Architecture diagram
 
-This is the basic architecture of an mbed board:
+This is the basic architecture of an Mbed board:
 
-<span class="images">![](images/mbed_internals.jpg)<span>A sketch of a typical mbed board's hardware architecture</span></span>
+<span class="images">![](images/mbed_internals.jpg)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
 ### How programming works
 
 There are two options:
 
-1. When you plug an mbed Enabled board to your PC using USB, it appears as a USB flash disk. The mbed Interface presents this small disk. It allows you to save Arm microcontroller binaries you want to run directly on to the board, without drivers.
+1. When you plug an Mbed Enabled board to your PC using USB, it appears as a USB flash disk. The Mbed interface presents this small disk. It allows you to save Arm microcontroller binaries you want to run directly on to the board, without drivers.
 2. The same USB connection exposes a debug protocol such as CMSIS-DAP. This enables lots of IDEs to program and debug the device.
 
 ### How USB serial works
 
-The mbed Interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the mbed Interface will read them and transfer them over the USB link. When you `printf()`, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
+The Arm Mbed interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the Arm Mbed interface will read them and transfer them over the USB link. When you `printf()`, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
 
 ### Notes
 
-The `.bin` files the mbed microcontroller accepts are standard raw binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
+The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
 
-### The mbed Interface
+### The Arm Mbed interface
 
-You can find more information about the mbed Interface and the circuits on which it runs in the [HDK reference manual](https://docs.mbed.com/docs/mbed-hardware-development-kit/en/latest/) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
+You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](https://docs.mbed.com/docs/mbed-hardware-development-kit/en/latest/) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
 ### Connectivity
 
-The best representation of the connectivity of the mbed Interface is the same diagram we showed above.
+The best representation of the connectivity of the Mbed interface is the same diagram we showed above.
 
-The mbed Interface:
+The Mbed interface:
 
 - Provides a USB connection to the host computer, which exposes a Mass Storage (flash disk) and a USB serial port.
 - Has an SWD or JTAG connection to the target, so it can program the target flash. You can also use this for debugging.
