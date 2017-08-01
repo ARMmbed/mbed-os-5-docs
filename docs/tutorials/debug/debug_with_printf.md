@@ -172,7 +172,7 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](https://developer.mbed.org/handbook/CMSIS-RTOS) calls to stdio functions, such as printf, in the ARM C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](https://developer.mbed.org/handbook/CMSIS-RTOS) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
