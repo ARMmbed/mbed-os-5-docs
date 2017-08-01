@@ -20,9 +20,9 @@ Set up a Timeout to invert an LED after a given timeout:
 
 * No blocking code in ISR: avoid any call to wait, infinite while loop or blocking calls in general.
 
-* No printf, malloc or new in ISR: avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
+* No printf, malloc or new in ISR: Avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
 
-* RTOS Timer: consider using the [mbed RTOS Timer](https://developer.mbed.org/handbook/RTOS) instead of a Timeout. Your callback function will not be executed in an ISR, giving you more freedom and safety in your code.
+* RTOS Timer: Consider using the [Arm Mbed RTOS Timer](https://developer.mbed.org/handbook/RTOS) instead of a Timeout. Your callback function will not be executed in an ISR, giving you more freedom and safety in your code.
 
 ##### Example
 
