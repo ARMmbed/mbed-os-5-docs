@@ -1,3 +1,3 @@
-## Debugging applications
+## Debugging Aapplications
 
 [an intro to the topic]
