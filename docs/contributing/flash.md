@@ -8,7 +8,7 @@ Update target to support bootloader.
 
 ### Linker script updates
 
-When building a bootloader application or an application that uses a bootloader, the mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC Arm (.ld), Arm (.sct) and IAR (.icf). You can find examples of this for the [k64f](https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e), [stm32f429](https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959), [odin-w2](https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070).
+When building a bootloader application or an application that uses a bootloader, the Arm Mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC Arm (.ld), Arm (.sct) and IAR (.icf). You can find examples of this for the [k64f](https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e), [stm32f429](https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959), [odin-w2](https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070).
 
 Use these 2 defines in place of flash start and size for a target:
 * `MBED_APP_START` - defines an address where an application space starts.
@@ -59,7 +59,7 @@ Bootloader-ready declaration of flash VTOR address:
 
 ### Start application
 
-The mbed_start_application implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If mbed_start_application does not support your target, you must implement this function in the target HAL.
+The `mbed_start_application` implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the Arm Mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If `mbed_start_application` does not support your target, you must implement this function in the target HAL.
 
 ### Flash HAL
 
@@ -69,7 +69,7 @@ There are two options to implement flash HAL:
 
 #### Option 1: CMSIS flash algorithm routines
 
-These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in mbed-os to generate flash blobs. Check the flash blobs into the target's HAL. See an example of how to do this [here](https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae).
+These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in `mbed-os` to generate flash blobs. Check the flash blobs into the target's HAL. See an example of how to do this [here](https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae).
 
 To enable a CMSIS flash algorithm common layer, a target should define ``FLASH_CMSIS_ALGO``. This macro enables the wrapper between CMSIS flash algorithm functions from the flash blobs and flash HAL.
 
@@ -114,7 +114,7 @@ Finally, to indicate that your device fully supports bootloaders, set the field 
 
 ### Tests
 
-The following tests for the `FlashIAP` class and flash HAL are located in the ``mbed-os/TESTS`` folder.
+The following tests for the `FlashIAP` class and flash HAL are located in the `mbed-os/TESTS` folder.
 
 - Flash IAP unit tests: `tests-mbed_drivers-flashiap`.
 - Flash HAL unit tests: `tests-mbed_hal-flash`.
