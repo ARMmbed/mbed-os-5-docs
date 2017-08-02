@@ -1,8 +1,8 @@
-## Creating and publishing your own libraries and contributing to mbed OS
+## Creating and publishing your own libraries and contributing to Arm Mbed OS
 
-This chapter covers the different aspects of developing your own libraries for use in mbed devices, as well as items to keep in mind during development, such as licensing. It covers:
+This chapter covers the different aspects of developing your own libraries for use in Arm Mbed devices, as well as items to keep in mind during development, such as licensing. It covers:
 
-[The mbed OS codebase](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to mbed OS itself.
+[The Arm Mbed OS codebase](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
 
 [//]: # (TODO add section about the index service when available)
 
@@ -14,7 +14,7 @@ If you create new software, such as drivers, libraries and examples, you can app
 
 * For original source code, use the Apache 2.0 license.  
 
-* For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License](https://www.mbed.com/licenses/PBL-1.0). This is designed to be compatible with Apache 2.0 and the mbed OS codebase.
+* For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License](https://www.mbed.com/licenses/PBL-1.0). This is designed to be compatible with Apache 2.0 and the Mbed OS codebase.
 
 * If your software incorporates or is derived from other third party open source code, please be sure to retain all notices and identify the license for the third party licensed code in the same manner as described below. Remember, you cannot change the license on someone else’s code, because you are not the copyright holder! Instead, choose a license that is compatible with the license used by the third party open source code, or use the same license as that code. For example, if your software is derived from GPL source code, GPL requires you to license the rest of your code in that software under the GPL too. Note that many commercial users won’t be able to use GPL source code in their products, so we don't recommend this license if you're not obligated to use it.
 
@@ -104,21 +104,21 @@ If you decide to use a different license for your work, follow the same pattern:
 
 * If more than one license applies to the source file, then use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE* file and in each source file.
 
-### Contributing to the mbed OS codebase
+### Contributing to the Mbed OS codebase
 
-#### mbed OS principles
+#### Mbed OS principles
 
-mbed OS uses these same basic principles for its source code and library distributions. So source code we own is distributed under the Apache 2.0 license, and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
+Mbed OS uses these same basic principles for its source code and library distributions. So source code we own is distributed under the Apache 2.0 license, and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
 
-All the source code and binary blobs that end up in mbed OS are maintained in public GitHub repositories.
+All the source code and binary blobs that end up in Mbed OS are maintained in public GitHub repositories.
 
 #### Contributions
 
-All code changes and additions to mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](code_style.md).
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](code_style.md).
 
 #### Inbound License for Contributions
 
-If you want to contribute code to mbed OS, you must sign an mbed Contributor License Agreement (CLA). Please ask for a CLA before submitting any code (for example, while discussing the issue on GitHub), then wait for Arm to confirm acceptance of your CLA before making contributions.
+If you want to contribute code to Mbed OS, you must sign an Mbed Contributor License Agreement (CLA). Please ask for a CLA before submitting any code (for example, while discussing the issue on GitHub), then wait for Arm to confirm acceptance of your CLA before making contributions.
 
 <span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Note:** If you publish a feature or a solution to a problem before signing the CLA, then find out that you are not able or allowed to sign the CLA, we will not be able to use your solution anymore. That may prevent us from solving the problem for you.</span>
 
@@ -130,7 +130,7 @@ When you ask for the CLA, we'll send you the agreement and ask you to sign it *b
 
 The same agreement is then valid for all future pull requests from that GitHub username.  
 
-#### Contributing new features to mbed OS
+#### Contributing new features to Mbed OS
 
 Before contributing an enhancement (new feature, new port and so on) please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on a related feature.
 
@@ -144,13 +144,13 @@ Before submitting a bug report or a bug fix, please [discuss it on the forums](h
 
 ##### Bug reports (issues) on GitHub
 
-All mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.github.com/features/issues/) to open a bug report directly against the relevant GitHub repository.
+All Mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.github.com/features/issues/) to open a bug report directly against the relevant GitHub repository.
 
 ##### Bug fixes
 
 Please refer to the [code contributions chapter](code_style.md).
 
-Bug fixes must be verified by a member of the mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the repo, then submit a pull request with your changes.
+Bug fixes must be verified by a member of the Mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the repo, then submit a pull request with your changes.
 
 The last line in your commit message description should say “Fixes #deadbeef”, where “deadbeef” is the issue number in GitHub. This allows GitHub to automatically close the issue when the commit is merged into the default branch.
 
