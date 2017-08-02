@@ -1,6 +1,6 @@
 ## Debugging using printf() statements
 
-An easy way to inspect what your application is doing is to augment your application with log statements. In mbed, you can use a serial connection to send feedback from your development board back to your computer. This uses the same USB cable that you use to program your device.
+An easy way to inspect what your application is doing is to augment your application with log statements. In Arm Mbed, you can use a serial connection to send feedback from your development board back to your computer. This uses the same USB cable that you use to program your device.
 
 ### Prerequisites
 
@@ -9,7 +9,7 @@ An easy way to inspect what your application is doing is to augment your applica
 Install the serial port driver for your development board:
 
 * For ST boards: [ST Link Driver](https://developer.mbed.org/teams/ST/wiki/ST-Link-Driver).
-* For all other boards: [mbed Windows serial port driver](https://developer.mbed.org/handbook/Windows-serial-configuration) - not required for Windows 10.
+* For all other boards: [Arm Mbed Windows serial port driver](https://developer.mbed.org/handbook/Windows-serial-configuration) - not required for Windows 10.
 
 You also need a serial monitor:
 
@@ -60,7 +60,7 @@ Compile this program, and flash it on your development board. You now can inspec
 1. Open TeraTerm.
 1. Click *File > New Connection*.
 1. Select the *Serial* radio button.
-1. Choose your development board from the drop-down menu (often called 'mbed Serial Port' or 'STLink Virtual Port').
+1. Choose your development board from the drop-down menu (often called `mbed Serial Port` or `STLink Virtual Port`).
 1. Click *OK*.
 1. Log messages appear in the main window.
 
@@ -177,7 +177,7 @@ Your board crashes when you press the button because [mutexes guard](https://dev
 You can avoid this by:
 
 * Signaling from the ISR to the main thread using a [semaphore](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#semaphore) or [mailbox](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mail), and calling `printf` in the main thread.
-* Using an event dispatching library, such as [mbed events](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/events/).
+* Using an event dispatching library, such as [Mbed events](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/events/).
 
 You can see example code for both approaches in [this blog post](https://developer.mbed.org/blog/entry/Simplify-your-code-with-mbed-events/).
 
@@ -249,7 +249,7 @@ This is another example of macro-replacement that allows a formatted `printf()`.
 	MODULE_NAME, ##__VA_ARGS__); fflush(stdout); }
 ```
 
-You can use `ASSERT()` to improve error reporting. It uses `error()` (a part of the mbed OS). `error()` flashes LEDs and puts the program into an infinite loop, preventing further operations. This happens if the `ASSERT()` condition is evaluated as FALSE:
+You can use `ASSERT()` to improve error reporting. It uses `error()` (a part of Arm Mbed OS). `error()` flashes LEDs and puts the program into an infinite loop, preventing further operations. This happens if the `ASSERT()` condition is evaluated as FALSE:
 
 ```c
 #define ASSERT(condition, ...)	{ \
