@@ -1,4 +1,4 @@
-## Examples and videos
+## Examples and Videos
 
 ### Blinky
 
