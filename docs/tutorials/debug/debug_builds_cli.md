@@ -1,26 +1,26 @@
-### Producing debug builds with mbed CLI
+### Producing debug builds with Arm Mbed CLI
 
-After you've set up your [local debug toolchain](toolchain.md), you'll need firmware that includes program symbols (an `.elf` file). Because the Online Compiler only produces binaries that omit the program symbols, you need to compile locally using [mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
+After you've set up your [local debug toolchain](toolchain.md), you'll need firmware that includes program symbols (an `.elf` file). Because the Arm Mbed Online Compiler only produces binaries that omit the program symbols, you need to compile locally using [Arm Mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
-[we have a page in the tools section about different profiles - is that related? ] [This is also mentioned in the mbed CLI mega-page]]
+[we have a page in the tools section about different profiles - is that related? ] [This is also mentioned in the Mbed CLI mega-page]]
 
 <span class="notes">**Note:** Make sure to do a clean build when switching to and from debug and release by removing the `BUILD` folder.</span>
 
 #### Compile commands
 
-**mbed OS 5.2 and later**
+**Arm Mbed OS 5.2 and later**
 
 ```
 $ mbed compile --profile mbed-os/tools/profiles/debug.json
 ```
 
-**mbed OS 5.0 and 5.1**
+**Arm Mbed OS 5.0 and 5.1**
 
 ```
 $ mbed compile -o debug-info
 ```
 
-**mbed 2.0**
+**Arm Mbed 2.0**
 
 ```
 $ mbed compile --profile .temp/tools/profiles/debug.json
