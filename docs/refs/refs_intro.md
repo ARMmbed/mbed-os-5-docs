@@ -1,4 +1,4 @@
-## Overview of the Arm Mbed OS references
+## Overview of the Arm Mbed OS References
 
 Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
 
@@ -6,7 +6,7 @@ Your application code is written in C++. It uses the application programing inte
 
 <span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.5).</span>
 
-## APIs references
+## APIs References
 
 The APIs in this document are organized by the feature, or group of features, they enable.
 
