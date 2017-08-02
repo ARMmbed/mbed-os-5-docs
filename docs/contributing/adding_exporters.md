@@ -1,17 +1,17 @@
 ## Adding exporters
 
-This is a guide for adding exporters to the mbed OS tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
+This is a guide for adding exporters to the Arm Mbed OS tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
 <span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
 
 ### What an exporter is
 
-An exporter is a Python plugin to the mbed OS tools that converts a project using mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter:
+An exporter is a Python plugin to the Mbed OS tools that converts a project using Arm Mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter:
 
  - Takes input from the resource scan.
  - Uses the flags in the build profiles.
  - Has a single template file for each file type they produce. For example, an eclipse CDT project would have one template for `.project` files and one for `.cproject` files.
- - Does not call mbed CLI. It is possible to export from the website, which will not include mbed CLI in the resulting zip.
+ - Does not call Mbed CLI. It is possible to export from the website, which will not include Mbed CLI in the resulting zip.
 
 ### Export subsystem structure
 
@@ -19,8 +19,8 @@ The export subsystem is organized as a group of common code and a group of IDE o
 
 The **common code** is contained in three files:
 
- * `tools/project.py` contains the command-line interface and handles the differences between mbed OS 2 tests and mbed OS 5 projects.
- * `tools/export/__init__.py` contains a high-level API for use by the mbed Online Compiler and mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
+ * `tools/project.py` contains the command-line interface and handles the differences between Mbed OS 2 tests and Mbed OS 5 projects.
+ * `tools/export/__init__.py` contains a high-level API for use by the Arm Mbed Online Compiler and Mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
  * `tools/export/exporters.py` contains the base class for all plugins. It offers useful exporter-specific actions.
 
 An **IDE or toolchain specific plugin** is a Python class that inherits from the `Exporter` class and is listed in the `tools/export/__init__.py` exporter map.
@@ -52,6 +52,7 @@ The other half of the common code is a library for use by a plugin. This API inc
 #### Plugin code
 
 Plugin code is contained within a subdirectory of the `tools/export` directory named after the IDE or toolchain that the plugin is exporting for.
+
 For example, the uVision exporter's templates and Python code is contained within the directory `tools/export/uvision` and the Makefile exporter's code and templates within `tools/export/makefile`.
 
 The Python code for the plugin should be:
@@ -119,7 +120,7 @@ All targets the IDE supports are a subset of those `TARGET_MAP` contain. We need
 from tools.targets import TARGET_MAP
 ```
 
-We can say the targets supported will be the subset of mbed targets that support `GCC_ARM`:
+We can say the targets supported will be the subset of Mbed targets that support `GCC_ARM`:
 
 ```python
 TARGETS = [target for target, obj in TARGET_MAP.iteritems()
@@ -293,7 +294,7 @@ If your IDE uses Eclipse and does not use the GNU Arm Eclipse plugin, you can us
 
 #### Make
 
-If your IDE is not Eclipse based but can still use a Makefile, then you can specialize the Makefile exporter. Specializing the Makefile is actually how Arm mbed implemented the Eclipse + Make exporter.
+If your IDE is not Eclipse based but can still use a Makefile, then you can specialize the Makefile exporter. Specializing the Makefile is actually how Arm Mbed implemented the Eclipse + Make exporter.
 
 Creating an exporter based on the Makefile exporter is a two step process: inherit from the appropriate Makefile class, and call its generate method. Taking Eclipse + Make using GCC Arm as an example, your exporter will look like:
 
@@ -314,9 +315,9 @@ Your generate method will look similar to:
 
 ### About the exporters
 
-Use the mbed exporters to export your code to various third party tools and IDEs. Each exporter implements a `generate` function that produces an IDE specific project file. Exporters benefit from mbed build tools. However, instead of using your source and [config data](config_system.md) to create an executable, we use that information to populate an IDE project file that will be configured to build, flash and debug your code. You can find exporter implementations [here](https://github.com/ARMmbed/mbed-os/tree/master/tools/export).
+Use the Mbed exporters to export your code to various third party tools and IDEs. Each exporter implements a `generate` function that produces an IDE specific project file. Exporters benefit from Mbed build tools. However, instead of using your source and [config data](config_system.md) to create an executable, we use that information to populate an IDE project file that will be configured to build, flash and debug your code. You can find exporter implementations [here](https://github.com/ARMmbed/mbed-os/tree/master/tools/export).
 
-#### mbed CLI command
+#### Mbed CLI command
 
 ```
 usage: mbed export [-h] [-i IDE] [-m TARGET] [--source SOURCE] [-c] [-S] [-v]
@@ -340,11 +341,11 @@ optional arguments:
 
 #### Adding export support for a target
 
-If you have added a new target to mbed OS 5, exporting will allow users to transition from mbed source code to the offline development environment of their choice. More people can use your device.
+If you have added a new target to Mbed OS 5, exporting will allow users to transition from Mbed source code to the offline development environment of their choice. More people can use your device.
 
 ##### Eclipse and Make
 
-Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
+Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then Mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
 
 ##### GNU Arm Eclipse managed projects
 
@@ -366,10 +367,10 @@ We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/
 
 A `.pdsc` file typically describes a family of devices. Each device is uniquely identified by its [device name](mbed_targets.md#device_name). This name makes a natural key to associate a device with its information in `index.json`.
 
-####### What's in a device name?
-There is no reliable way to map an mbed alias such as [NUCLEO_F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L603) to its unique identifier, [STM32F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L615), because it is listed in a CMSIS pack (and subsequently `index.json`). So, we added a [device name](mbed_targets.md#device_name) field in `targets.json`. **This field is required for IAR or uVision exporter support**.
+###### What's in a device name?
+There is no reliable way to map an Mbed alias such as [NUCLEO_F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L603) to its unique identifier, [STM32F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L615), because it is listed in a CMSIS pack (and subsequently `index.json`). So, we added a [device name](mbed_targets.md#device_name) field in `targets.json`. **This field is required for IAR or uVision exporter support**.
 
-####### Code usage
+###### Code usage
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
 ```xml
       <device Dname="MK20DX256xxx7">
@@ -387,13 +388,13 @@ There is no reliable way to map an mbed alias such as [NUCLEO_F030R8](https://gi
       </device>
 ```
 
-######## uVision
+###### uVision
 The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. [`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from these packs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic Arm CPU target in uVision5.
 
-######## IAR
+###### IAR
 [`tools/export/iar/iar_definitions.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json) uses this device name to store information necessary to set the target in an IAR project.
 
-######## Updating index.json
+###### Updating index.json
 You can regenerate `index.json` to contain a newly made CMSIS pack with the following command:
 
 `mbed export -i [IDE] --update-packs`
