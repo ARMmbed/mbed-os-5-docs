@@ -1,10 +1,10 @@
-### Blinky on the mbed Online Compiler
+### Blinky on the Arm Mbed Online Compiler
 
 <span class="tips">Please create a [developer account](https://developer.mbed.org/account/signup/). It's free, and we don't spam.</span>
 
 #### Importing Blinky
 
-To get Blinky into the mbed Online Compiler, click the **Import into mbed IDE** button below:
+To get Blinky into the Mbed Online Compiler, click the **`Import into mbed IDE`** button below:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/file/tip/main.cpp)
 
@@ -17,7 +17,7 @@ The import mechanism offers a default name, but you're free to change it. When y
 The imported Blinky has two interesting parts:
 
 * ``main.cpp``, where the Blinky-specific code is. You can double-click the file in the navigation pane on the left to view the code.
-* ``mbed-os``, where the mbed OS codebase is.
+* ``mbed-os``, where the Arm Mbed OS codebase is.
 
 Later we'll compile the code; this will take both of these parts and create a single application file from them.
 
@@ -25,12 +25,12 @@ Later we'll compile the code; this will take both of these parts and create a si
 
 #### Selecting a target board
 
-The mbed Online Compiler can build your application to match any mbed Enabled board. However, you have to select the target before compiling.
+The Mbed Online Compiler can build your application to match any Arm Mbed Enabled board. However, you have to select the target before compiling.
 
 ##### Adding a board to your list
-To add a board to your list, go to [the board's page on mbed.com](https://developer.mbed.org/platforms/), and click the **Add to your mbed Compiler** button:
+To add a board to your list, go to [the board's page on `mbed.com`](https://developer.mbed.org/platforms/), and click the **`Add to your mbed Compiler`** button:
 
-<span class="images">![](../dev_tools/Images/add_board.png)<span>Adding a board to the mbed Online Compiler's board list</span></span>
+<span class="images">![](../dev_tools/Images/add_board.png)<span>Adding a board to the Mbed Online Compiler's board list</span></span>
 
 ##### Selecting a board
 
@@ -44,7 +44,7 @@ Click the name to change your board as needed:
 
 #### Compile and install
 
-The mbed Online Compiler builds a ``.bin`` file that you can install on your board.
+The Mbed Online Compiler builds a ``.bin`` file that you can install on your board.
 
 1. Click **Compile**.
 
@@ -54,11 +54,11 @@ The mbed Online Compiler builds a ``.bin`` file that you can install on your boa
 
 	<span class="images">![](images/compiling.png)<span><span>Compilation progress</span></span></span>
 
-1. When the compiled file is ready, it's downloaded to your default download location (or opens a Download dialog box). The file format is ``.bin``, and the file  name is the same as your program name.
+1. When the compiled file is ready, it's downloaded to your default download location (or opens a Download dialog box). The file format is `.bin`, and the file  name is the same as your program name.
 
-1. Connect your board to your computer over USB. mbed boards are shown as "removable storage".
+1. Connect your board to your computer over USB. Mbed boards are shown as "removable storage".
 
-	<span class="images">![](images/DeviceOnWindows.png)<span>The device is listed as "MBED" or "DAPLINK", and its type is removable storage</span></span>
+	<span class="images">![](images/DeviceOnWindows.png)<span>The device is listed as `MBED` or `DAPLINK`, and its type is removable storage</span></span>
 
 1. Drag and drop your program to the board.
 
