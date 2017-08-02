@@ -1,3 +1,3 @@
-## Power optimization
+## Power Optimization
 
 [A document about power management]
