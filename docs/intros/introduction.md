@@ -17,7 +17,7 @@ Once you know how to build an existing application, it's time to learn [how to w
 #### Development tools
 
 - Our offline development tool is [Arm Mbed CLI](dev_tools/cli.md), a command-line tool. This requires having a toolchain installed on your computer.
-- The [Arm Mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using just a web browser and USB connection.
+- The [Arm Mbed Online Compiler](dev_tools/online_comp.md) lets you write and build applications using a web browser.
 - If you're working with third party tools, look at [exporting instructions for the most popular ones](dev_tools/third_party.md).
 
 #### Communicating with and monitoring your board
@@ -38,7 +38,7 @@ When you've started writing applications using your selected development tool:
 
 If you want to contribute to the `mbed-os` codebase, please see [the contribution section](cont/contributing.md).
 
-The current version of Mbed OS 5 is 5.5.0. It is available on [GitHub](https://github.com/ARMmbed/mbed-os/releases/tag/mbed-os-5.5.0).
+You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
 
 ### Porting to Mbed OS
 
