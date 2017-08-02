@@ -1,6 +1,6 @@
 ### Eclipse
 
-This document explains how to build and debug mbed OS applications using Eclipse. Before starting, please [configure your local debug toolchain](toolchain.md).
+This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [configure your local debug toolchain](toolchain.md).
 
 #### Installing Eclipse
 
@@ -22,7 +22,7 @@ You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
 
 ##### Exporting a project
 
-To export your project to Eclipse, you can use either the mbed Online Compiler or mbed CLI.
+To export your project to Eclipse, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
 
 ###### Online compiler
 
@@ -35,7 +35,7 @@ To export your project to Eclipse, you can use either the mbed Online Compiler o
 
 ![Exporting to Eclipse](Images/eclipse1.png)
 
-###### mbed CLI
+###### Arm Mbed CLI
 
 In your project folder, run:
 
@@ -50,7 +50,7 @@ $ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.
 
 1. Open Eclipse.
 1. On the *Welcome* screen, select *Import a project with a working Makefile*.
-1. Select the folder to which you extracted your mbed OS project.
+1. Select the folder to which you extracted your Mbed OS project.
 1. Under *Toolchain for Indexer Settings*, select `<none>`.
 
     ![Import project](Images/eclipse3.png)
@@ -113,12 +113,12 @@ Once the project builds, you can configure the debugger. The configuration depen
 
 ![Debugging an mbed OS 5 application in Eclipse](Images/eclipse9.png)
 
-##### Building with mbed CLI
+##### Building with Mbed CLI
 
-We build using Make, but you can also use mbed CLI for building from Eclipse:
+We build using Make, but you can also use Mbed CLI for building from Eclipse:
 
 1. Go to *Project > Properties > C/C++ Build*.
 1. Remove the check *Use default build command*.
 1. Set *Build command* to `mbed`.
-1. Under *Behavior* > *Build (Incremental build)*, select your mbed CLI build options. For example: `compile -m K64F -t GCC_ARM --profile ${CWD}mbed-os/tools/profiles/debug.json`.
+1. Under *Behavior* > *Build (Incremental build)*, select your Mbed CLI build options. For example: `compile -m K64F -t GCC_ARM --profile ${CWD}mbed-os/tools/profiles/debug.json`.
 1. Make sure to update the paths to the `.elf` file in your debug configuration.
