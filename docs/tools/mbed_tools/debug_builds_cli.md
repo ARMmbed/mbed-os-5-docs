@@ -2,7 +2,7 @@
 
 After you've set up your [local debug toolchain](toolchain.md), you'll need firmware that includes program symbols (an `.elf` file). Because the Arm Mbed Online Compiler only produces binaries that omit the program symbols, you need to compile locally using [Arm Mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
-[we have a page in the tools section about different profiles - is that related? ] [This is also mentioned in the Mbed CLI mega-page]]
+[This is also mentioned in the Mbed CLI mega-page]]
 
 <span class="notes">**Note:** Make sure to do a clean build when switching to and from debug and release by removing the `BUILD` folder.</span>
 
