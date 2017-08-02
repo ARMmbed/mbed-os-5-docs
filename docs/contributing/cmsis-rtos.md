@@ -4,19 +4,19 @@ CMSIS/RTX code is imported from the original CMSIS repository, which you can fin
 
 #### Memory considerations
 
-Please note that mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for generic systems, such as mbed OS, because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers carved out at compile time, limiting the amount of available memory, mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
+Please note that Arm Mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for generic systems, such as Mbed OS, because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers carved out at compile time, limiting the amount of available memory, Mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
 
-Developers need to use the mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly (Please consult CMSIS-RTOS2 documentation for API details). `mbed_rtos_storage.h` header provides handy wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
+Developers need to use the Mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly. (Please consult CMSIS-RTOS2 documentation for API details.) `mbed_rtos_storage.h` header provides handy wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
 
 #### Configuration
 
-mbed OS changes to RTX configuration all exist in a single file: `mbed-os/rtos/rtx2/mbed_rtx_conf.h`
+Mbed OS changes to RTX configuration all exist in a single file: `mbed-os/rtos/rtx2/mbed_rtx_conf.h`
 
 Option | Value | Description |
 -------|-------|-------------|
 `OS_STACK_SIZE` | 4K or 2K | For a normal target, the thread stack size is set to 4K; for constrained targets, it's 2K. |
 `OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack set to 768B that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
-`OS_IDLE_THREAD_STACK_SIZE` | 256B | Required to handle mbed OS wrappers |
+`OS_IDLE_THREAD_STACK_SIZE` | 256B | Required to handle Mbed OS wrappers |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
 `OS_MUTEX_OBJ_MEM` | 1 or 0 | For ARMC, use 1; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
 `OS_MUTEX_NUM` | 6 or 0 | For ARMC, use 6; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
@@ -25,9 +25,9 @@ Option | Value | Description |
 
 #### Code structure
 
-Due to differences in how the mbed OS and CMSIS directory structures look, you can't import the original code directly. Some directory changes are necessary:
+Due to differences in how the Mbed OS and CMSIS directory structures look, you can't import the original code directly. Some directory changes are necessary:
 
-CMSIS5 | mbed OS | Explanation |
+CMSIS5 | Mbed OS | Explanation |
 -------|---------|-------------|
 `CMSIS_5/CMSIS/Core/Include/core_*.h` | `mbed-os/cmsis/` | Core specific code |
 `CMSIS_5/CMSIS/Core/Include/tz_context.h` | `mbed-os/cmsis/` | TrustZone code |
@@ -43,23 +43,23 @@ CMSIS5 | mbed OS | Explanation |
 
 #### Modification
 
-Due to different use cases between mbed OS and CMSIS, we had to make some modifications to the source code. We've tried to upstream our changes to the CMSIS repository, but in cases where they aren't compatible with CMSIS requirements, we are forced to maintain a small set of changes.
+Due to different use cases between Mbed OS and CMSIS, we had to make some modifications to the source code. We've tried to upstream our changes to the CMSIS repository, but in cases where they aren't compatible with CMSIS requirements, we are forced to maintain a small set of changes.
 
 ##### CMSIS
 
 Filename | Description |
 ---------|-------------|
 `cmsis_compiler.h` | Added IAR missing __ALIGNED attribute for earlier (less than 7.8.4) versions |
-`cmain.S` | custom IAR non-RTOS boot sequence for mbed |
+`cmain.S` | custom IAR non-RTOS boot sequence for Mbed |
 
 ##### RTX
 
 Filename | Description |
 ---------|-------------|
 `cmsis_os2.h` | Doxygen added; added per-thread uVisor context |
-`cmsis_os1.h` | Change `osThreadDef` to accept 3 parameters rather than 4 and be not static as expected by mbed OS |
-`core_cm.h` | Doxygen added; included headers changed to match mbed OS core selection; deferred priority setting of SVCall to uVisor when uVisor is enabled |
-`RTX_Config.h` | Doxygen added; mbed OS RTX config included |
+`cmsis_os1.h` | Change `osThreadDef` to accept 3 parameters rather than 4 and be not static as expected by Mbed OS |
+`core_cm.h` | Doxygen added; included headers changed to match Mbed OS core selection; deferred priority setting of SVCall to uVisor when uVisor is enabled |
+`RTX_Config.h` | Doxygen added; Mbed OS RTX config included |
 `rtx_evr.c` | CMSIS component definition include removed |
 `rtx_evr.h` | Doxygen added |
 `rtx_thread.c` | Added per-thread uVisor context; notify uVisor of OS events  |
@@ -72,4 +72,4 @@ Filename | Description |
 
 ##### Notes
 
-For all toolchains, mbed OS uses `irq_cm0.s` for both M0 and M0P cores.
+For all toolchains, Mbed OS uses `irq_cm0.s` for both M0 and M0P cores.
