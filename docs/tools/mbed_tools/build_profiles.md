@@ -1,4 +1,4 @@
-## Build profiles on Arm Mbed CLI and the online compiler
+## Build Profiles on Arm Mbed Tools
 
 Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release*. The Online Compiler uses the *develop* profile. When building from Arm Mbed CLI, you can select a profile by adding the `--profile <profile>` flag. You can specify custom user-defined profiles by giving the path to the profile.
 
