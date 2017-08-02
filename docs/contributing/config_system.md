@@ -1,15 +1,15 @@
-## The mbed configuration system
+## The Arm Mbed Configuration system
 
-The mbed configuration system customizes the compile time configuration of various mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
+The Arm Mbed configuration system customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
 
 - The sampling period for a data acquisition application.
 - The default stack size for a newly created OS thread.
 - The receive buffer size of a serial communication library.
-- The flash and RAM memory size of an mbed target.
+- The flash and RAM memory size of an Mbed target.
 
 The configuration system gathers and interprets all the configurations defined in the source tree. The output of the configuration system is a list of macros that are automatically defined when compiling the code.
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [mbed targets](mbed_targets.md).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [Mbed targets](mbed_targets.md).</span>
 
 ### Defining configuration parameters
 
@@ -53,7 +53,7 @@ The configuration system automatically appends an *implicit prefix* to the name 
 
 ### Configuration data in libraries
 
-Each mbed library can have an optional `mbed_lib.json` file located in the root folder of the library that defines its configuration. For a library called `mylib`, the configuration file can look like this:
+Each Mbed library can have an optional `mbed_lib.json` file located in the root folder of the library that defines its configuration. For a library called `mylib`, the configuration file can look like this:
 
 ```
 {
@@ -91,7 +91,7 @@ In this JSON file:
 - `macros` is a list of extra macros that will be defined when compiling a project that includes this library. A macro can be defined without a value (such as `MYMOD_MACRO1` above) or with a value (such as `MYMOD_MACRO2` above).
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters.
 
-`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels* (a description of mbed targets can be found [here](mbed_targets.md)). If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
+`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels* (a description of Mbed targets can be found [here](mbed_targets.md)). If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
 
 - `config` is always processed first, independent of the target. `config` might define values for some of the parameters. In this case, `buffer_size` will be set to 1024, `queue_size` will be set to 10 and `timer_period` will not have a value.
 - If the library is compiled for the `K64F` target, `timer_period` will be set to 100, and `queue_size` will be set to 40 because they are overridden by the `K64F` key in `target_overrides`. `buffer_size` will be set to 1024, as defined in `config`.
@@ -211,10 +211,10 @@ Target configurations contain a set of attributes that you may manipulate with a
 
 Cumulative attributes:
 
-- ``features``: This attribute contains a list of features that the mbed OS tools compile into the resulting binary and are available at runtime. The mbed OS tools include all code within a directory whose name is an entry of the `features` attribute prefixed with `FEATURE_`. Further, the mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the mbed OS tools will report an error.
-- ``device_has``: This attribute is a list of hardware components available on the target. The mbed OS tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
-- ``extra_labels``: The `extra_labels` attribute is a list of labels that the mbed OS tools use to include code. The mbed OS tools include all code within a directory whose name is an entry of the `extra_labels` attribute prefixed with `TARGET_`. The mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
-- ``macros``: This attribute is a list of target-specific macros that the mbed OS tools define during compilation.
+- ``features``: This attribute contains a list of features that the Mbed OS tools compile into the resulting binary and are available at runtime. The Mbed OS tools include all code within a directory whose name is an entry of the `features` attribute prefixed with `FEATURE_`. Further, the Mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the Mbed OS tools will report an error.
+- ``device_has``: This attribute is a list of hardware components available on the target. The Mbed OS tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
+- ``extra_labels``: The `extra_labels` attribute is a list of labels that the Mbed OS tools use to include code. The Mbed OS tools include all code within a directory whose name is an entry of the `extra_labels` attribute prefixed with `TARGET_`. The Mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
+- ``macros``: This attribute is a list of target-specific macros that the Mbed OS tools define during compilation.
 
 For example, this `mbed_app.json` disables the IPV4 feature; using this network stack will result in a compilation error:
 
@@ -305,4 +305,4 @@ The names of the macros for the configuration parameter (unless explicitly speci
 
 `mbed_config.h` will be included automatically by the toolchain in all compiled sources, so you'll have access to the configuration data without having to include `mbed_config.h` manually.
 
-*Do not edit mbed_config.h manually*. It will be overwritten the next time you compile or export your project, and all your changes will be lost.
+*Do not `edit mbed_config.h manually`*. It will be overwritten the next time you compile or export your project, and all your changes will be lost.
