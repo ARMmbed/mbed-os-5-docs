@@ -1,10 +1,10 @@
 ### Runtime memory tracing
 
-Running out of memory is a common problem with resource constrained systems such as the MCUs on which mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in mbed OS 5 is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
+Running out of memory is a common problem with resource constrained systems such as the MCUs on which Arm Mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in Mbed OS 5 is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
 
 #### Using the memory tracer
 
-The memory tracer is not enabled by default. To enable it, you need to define the **MBED_MEM_TRACING_ENABLED** macro. The recommended way to define this macro is to add it to the list of macros defined in your `mbed_app.json`:
+The memory tracer is not enabled by default. To enable it, you need to define the **`MBED_MEM_TRACING_ENABLED`** macro. The recommended way to define this macro is to add it to the list of macros defined in your `mbed_app.json`:
 
 ```
 {
@@ -12,9 +12,9 @@ The memory tracer is not enabled by default. To enable it, you need to define th
 }
 ```
 
-<span class="tips">**Tip:** See the documentation of the [mbed configuration system](config_system.md) for more details about `mbed_app.json`. </span>
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](config_system.md) for more details about `mbed_app.json`. </span>
 
-After it is enabled, the memory tracer intercepts the calls to the standard allocation functions (`malloc`, `realloc`, `calloc` and `free`). It invokes a user supplied callback each time one of these functions is called. To let the tracer know which callback it needs to invoke, call `mbed_mem_trace_set_callback(callback_function_name)` as early as possible (preferably at the beginning of your `main` function). The full documentation of the callback function can be found in the [memory tracer header file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.h#L42). The tracer supplies a default callback function (`mbed_mem_trace_default_callback`) that outputs trace data on the mbed console (using `printf`). For each memory operation, the callback outputs a line that begins with `#<op>:<0xresult>;<0xcaller>-`:
+After it is enabled, the memory tracer intercepts the calls to the standard allocation functions (`malloc`, `realloc`, `calloc` and `free`). It invokes a user supplied callback each time one of these functions is called. To let the tracer know which callback it needs to invoke, call `mbed_mem_trace_set_callback(callback_function_name)` as early as possible (preferably at the beginning of your `main` function). You can find the full documentation of the callback function in the [memory tracer header file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.h#L42). The tracer supplies a default callback function (`mbed_mem_trace_default_callback`) that outputs trace data on the Mbed console (using `printf`). For each memory operation, the callback outputs a line that begins with `#<op>:<0xresult>;<0xcaller>-`:
 
 - **op** identifies the memory operation (`m` for `malloc`, `r` for `realloc`, `c` for `calloc` and `f` for `free`).
 - **result** (base 16) is the result returned by the memory operation. This is always 0 for `free` because `free` doesn't return anything.
