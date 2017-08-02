@@ -1,4 +1,4 @@
-## Generating API documentation
+## Generating API Documentation
 
 API documentation tells you what you need to know to use a library or work with a program. It details functions, classes, return types and more.
 
