@@ -1,11 +1,11 @@
 
 ## Adding export support for a target
 
-If you have added a new target to mbed OS 5, exporting will allow users to transition from mbed source code to the offline development environment of their choice. More people can use your device.
+If you have added a new target to Arm Mbed OS 5, exporting will allow users to transition from Mbed source code to the offline development environment of their choice. More people can use your device.
 
 ### Eclipse and Make
 
-Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
+Eclipse project export uses a generated Makefile for building. If `mbed compile -t <toolchain> -m <target>` works, then Mbed `export -i make_<toolchain> -m <target>` will also work. You can find more information about adding and configuring targets [here](mbed_targets.md).
 
 ### GNU Arm Eclipse managed projects
 
@@ -28,7 +28,7 @@ We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/
 A `.pdsc` file typically describes a family of devices. Each device is uniquely identified by its [device name](mbed_targets.md#device_name). This name makes a natural key to associate a device with its information in `index.json`. 
 
 #### What's in a device name?
-There is no reliable way to map an mbed alias such as [NUCLEO_F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L603) to its unique identifier, [STM32F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L615), because it is listed in a CMSIS pack (and subsequently `index.json`). So, we added a [device name](mbed_targets.md#device_name) field in `targets.json`. **This field is required for IAR or uVision exporter support**.
+There is no reliable way to map an Mbed alias such as [NUCLEO_F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L603) to its unique identifier, [STM32F030R8](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L615), because it is listed in a CMSIS pack (and subsequently `index.json`). So, we added a [device name](mbed_targets.md#device_name) field in `targets.json`. **This field is required for IAR or uVision exporter support**.
 
 #### Code usage
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
