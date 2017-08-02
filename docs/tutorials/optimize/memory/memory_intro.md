@@ -1,4 +1,4 @@
-## Memory optimization
+## Memory Optimization
 
 [intro to the pages below]
 
