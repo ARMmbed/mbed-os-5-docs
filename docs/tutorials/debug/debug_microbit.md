@@ -190,7 +190,7 @@ The new string appears on your console.
 
 ##### Investigating the actual bug
 
-After analyzing mbed's [serial API](https://developer.mbed.org/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling serial_instance.printf(string) is, in essence, like calling Serial::printf(serial_instance, string). You saw previously that the instance's address is r0 = 0x20002880.
+After analyzing Arm Mbed's [serial API](https://developer.mbed.org/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling serial_instance.printf(string) is, in essence, like calling Serial::printf(serial_instance, string). You saw previously that the instance's address is r0 = 0x20002880.
 
 Because of the way the C++ compiler handles inheritance, the Serial class data looks like this in the memory:
 
