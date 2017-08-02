@@ -1,4 +1,4 @@
-## Creating and using a bootloader
+## Creating and Using a Bootloader
 
 This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
