@@ -48,7 +48,7 @@ Our full porting guide is still being written. For now, we have:
 - Porting [from Mbed OS 3 to Mbed OS 5](advanced/MINAR_migration.md) (focusing on MINAR).
 - Porting [Arm Mbed TLS](advanced/tls_porting.md).
 
-## How Mbed works
+## How Mbed Wworks
 
 The Arm Mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit that assists development by programming the device, logging program execution and giving access to the debug access port. Here is how it works.
 
