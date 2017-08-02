@@ -1,4 +1,4 @@
-## Testing applications
+## Testing Applications
 
 The way tests are run and compiled in Arm Mbed OS 5 is substantially different from previous versions of Mbed.
 
