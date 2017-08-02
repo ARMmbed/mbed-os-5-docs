@@ -1,10 +1,10 @@
-## Adding target support to mbed OS 5
+## Adding target support to Arm Mbed OS 5
 
-Adding a new microcontroller to mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
+Adding a new microcontroller to Arm Mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
 ### Adding a new microcontroller and board
 
-First fork the mbed-os repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an mbed OS example, and add your fork of mbed-os using:
+First fork the `mbed-os` repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an Mbed OS example, and add your fork of `mbed-os` using:
 
 ```
 mbed import mbed-os-example-blinky
@@ -19,7 +19,7 @@ cd ..
 
 #### Target description
 
-Add the target description to ```mbed-os\targets\targets.json```:
+Add the target description to `mbed-os\targets\targets.json`:
 
 ``` json
 "MCU_NAME": {
@@ -34,7 +34,7 @@ Add the target description to ```mbed-os\targets\targets.json```:
 }
 ```
 
-See the [mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
+See the [Mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
 
 #### Coding requirements
 
@@ -42,9 +42,9 @@ Please see the contributing guide's section on [contributing code](../cont/code_
 
 #### Bootstrap code
 
-You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for Arm, IAR and GCC toolchains. These files are usually in the ```mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device``` directory.
+You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for Arm, IAR and GCC toolchains. These files are usually in the `mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device` directory.
 
-mbed OS requires dynamic vector relocation, which requires extensions to CMSIS-CORE. Extend CMSIS-CORE by adding an `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h` file. This header file defines the vector relocation additions and device-specific headers that include CMSIS-CORE. Next add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.c and .h`. This relocation function changes the contents of the Interrupt Vector Table at run time.
+Mbed OS requires dynamic vector relocation, which requires extensions to CMSIS-CORE. Extend CMSIS-CORE by adding an `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h` file. This header file defines the vector relocation additions and device-specific headers that include CMSIS-CORE. Next add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.c and .h`. This relocation function changes the contents of the Interrupt Vector Table at run time.
 
 CMSIS-RTOS needs a few macros to initialize the SYS_TICK. These macros are usually configured in`mbed-os\targets\TARGET_VENDOR\mbed-rtx.h`.
 
@@ -58,13 +58,13 @@ Implement the api declared in `mbed-os/hal/gpio_api.h`. You must define the stru
 
 #### Microsecond ticker
 
-The microsecond ticker is a system resource that many APIs use. The microsecond ticker needs a one microsecond resolution and uses a free-running hardware counter or timer with match register. Implement the api declared in `mbed-os\hal\us_ticker_api.h`.
+The microsecond ticker is a system resource that many APIs use. The microsecond ticker needs a one microsecond resolution and uses a free-running hardware counter or timer with match register. Implement the API declared in `mbed-os\hal\us_ticker_api.h`.
 
 At this point, we should be able to compile a handful of tests:
 
 ``mbed test -m BOARD_NAME --compile -t <toolchain>``
 
-To execute the tests, you need to support [mbed-ls](https://github.com/armmbed/mbed-ls).
+To execute the tests, you need to support [`mbed-ls`](https://github.com/armmbed/mbed-ls).
 
 #### Serial
 
