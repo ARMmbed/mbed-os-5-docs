@@ -1,6 +1,6 @@
-## Adding and configuring mbed targets
+## Adding and Configuring Arm Mbed Targets
 
-mbed uses JSON as a description language for its build targets. You can find the JSON description of mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
+Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
 ```
     "TEENSY3_1": {
@@ -27,11 +27,11 @@ The style that we use for targets is:
 
 ### Standard properties
 
-This section lists all the properties the mbed build system understands. Unless specified otherwise, all properties are optional.
+This section lists all the properties the Mbed build system understands. Unless specified otherwise, all properties are optional.
 
 #### `inherits`
 
-The description of an mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
+The description of an Mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
 ```
 "Target": {
@@ -83,7 +83,7 @@ Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"
 
 #### `public`
 
-The `public` property controls which targets the mbed build system allows users to build. You may define targets as parents for other targets. When you define such a target, its description must set the `public` property to `false`. `Target`, shown above, sets `public` to `false` for this reason.
+The `public` property controls which targets the Mbed build system allows users to build. You may define targets as parents for other targets. When you define such a target, its description must set the `public` property to `false`. `Target`, shown above, sets `public` to `false` for this reason.
 
 If `public` is not defined for a target, it defaults to `true`.
 
@@ -146,7 +146,7 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 The list in `device_has` defines what hardware a device has.
 
-mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
+Mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
 
 #### `supported_toolchains`
 
@@ -207,7 +207,7 @@ The `bootloader_supported` property controls whether the build system allows a b
 
 #### `release_versions`
 
-The `release_versions` property is a list of major versions of mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of mbed OS 2, and `5`, indicating the support of mbed OS 5. We build all targets that are released for mbed OS 2 as a static library. Targets are released for mbed OS 2 by putting a `2` in the `release_version` list.
+The `release_versions` property is a list of major versions of Mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of Mbed OS 2, and `5`, indicating the support of Mbed OS 5. We build all targets that are released for Mbed OS 2 as a static library. Targets are released for Mbed OS 2 by putting a `2` in the `release_version` list.
 
 #### `supported_form_factors`
 
@@ -215,7 +215,7 @@ The `supported_form_factors` property is an optional list of form factors that a
 
 ### Style guide
 
-A linting script for `targets.json` is available as `tools/targets/lint.py` in mbed OS. This script is a utility for avoiding common errors when defining targets and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
+A linting script for `targets.json` is available as `tools/targets/lint.py` in Mbed OS. This script is a utility for avoiding common errors when defining targets and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
 
 #### Rules enforced
 
