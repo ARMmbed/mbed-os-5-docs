@@ -1,8 +1,8 @@
 ### Code contributions: GitHub pull requests and code style guide
 
-The mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
+The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
-<span class="tips">**Tip:** Please also read the section [Creating and publishing your own libraries and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
+<span class="tips">**Tip:** Please also read the section [Creating and publishing your own libraries and contributing to Arm Mbed OS](contributing.md) for a review of the process and legal requirements.</span>
 
 #### Guidelines for GitHub pull requests
 
@@ -20,7 +20,7 @@ Pull requests on GitHub have to meet the following requirements in order to keep
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
 * Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
-* Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the mbed-drivers repo would not be acceptable, as it is already understood that the commit applies to "mbed-drivers". Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
+* Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo would not be acceptable, as it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
 
 #### Code acceptance
 
@@ -28,9 +28,9 @@ Pull requests on GitHub have to meet the following requirements in order to keep
 
 #### Coding style
 
-Whether you're writing new code or fixing bugs in existing code, please follow the mbed OS coding style.
+Whether you're writing new code or fixing bugs in existing code, please follow the Mbed OS coding style.
 
-mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
+Mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
 
 ##### Code sample
 
@@ -182,11 +182,11 @@ astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
 
 #### Compile flags and ABI requirements
 
-All C and C++ code submitted to mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles used by the mbed OS tools are each subsets of these flags. Each profile has one optimization setting.
+All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles used by the Mbed OS tools are each subsets of these flags. Each profile has one optimization setting.
 
 ##### GCC Arm Embedded
 
-Code must be compatible with the `softfp` float ABI. mbed OS uses the following flags when compiling with GCC Arm Embedded.
+Code must be compatible with the `softfp` float ABI. Mbed OS uses the following flags when compiling with GCC Arm Embedded.
 
 flag                        | meaning
 ----------------------------|---------------------------------------
@@ -203,7 +203,7 @@ flag                        | meaning
 
 ##### Arm Compiler 5
 
-mbed OS uses the following flags when compiling with Arm Compiler 5.
+Mbed OS uses the following flags when compiling with Arm Compiler 5.
 
 flag       | meaning
 -----------|---------------------------------------
@@ -215,7 +215,7 @@ flag       | meaning
 
 ##### IAR EWARM
 
-mbed OS uses the following flags when compiling with IAR EWARM.
+Mbed OS uses the following flags when compiling with IAR EWARM.
 
 flag             | meaning
 -----------------|---------------------------------------
