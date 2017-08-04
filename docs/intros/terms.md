@@ -4,7 +4,7 @@
 
 Suggested ideas:
 
-API
+API - Application programming interface
 
 Arm Mbed CLI
 
@@ -18,7 +18,7 @@ Arm Mbed TLS
 
 Arm Mbed uVisor
 
-BLE
+BLE - Bluetooth low energy.
 
 Blinky
 
@@ -34,6 +34,12 @@ build script
 
 callback
 
+CAN - Controller-area network.
+
+CI - Continuous integration.
+
+CLI - Command-line interface.
+
 CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
 command-line
@@ -46,10 +52,6 @@ dynamic memory
 
 exporter
 
-CI?
-
-CMSIS
-
 Git
 
 GitHub
@@ -60,7 +62,11 @@ Greentea
 
 `htrun`
 
-IDE
+I2C - Interintegrated circuit (short-distance, intraboard communication).
+
+IDE - Integrated development environment
+
+LoRA - Long range (low power wireless platform)
 
 mesh
 
@@ -70,17 +76,27 @@ porting
 
 pull request
 
+REST - Representational State Transfer (API)
+
+RTOS - Real time operating system
+
 RTX
 
 serial
 
+SPI - Serial peripheral interface
+
 static memory
+
+SSL - Secure sockets layer.
 
 STLink - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
 target - See `baord`.
 
 terminal application
+
+TLS - Transport layer security.
 
 toolchain
 
