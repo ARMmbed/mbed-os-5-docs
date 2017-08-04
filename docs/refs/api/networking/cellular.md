@@ -299,7 +299,7 @@ You can implement a cellular network interface in different ways based on your r
 		* Lighter memory footprint.
 		* Lighter flash footprint.
    * Cons
-		* Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard Mbed OS NSAPI sockets.
+		* Needs to provide a chip-specific interface between AT-sockets and Mbed OS NSAPI sockets.
 		* Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
 		* Limited capabilities in some instances.
 
@@ -368,9 +368,9 @@ ATCmdParser *_at = new ATCmdParser(_fh);
 int poll(pollfh fhs[], unsigned nfhs, int timeout);
 ```
 
-**e) PPP abstraction layer for network stacks**
+**e) PPP interface for network stacks**
 
-> Only valid when **Case 1** is applicable. This abstraction layer provides an entry point for cellular drivers to underlying PPP framework provided by the network stack. This in effect means that the driver itself does not depend on a certain network stack. In other words, it talks to any network stack providing this standard PPP interface. For example:
+> Only valid when **Case 1** is applicable. This provides an interface for cellular drivers to underlying framework provided by the network stack. This in effect means that the driver itself does not depend on a certain network stack. In other words, it talks to any network stack providing this standard PPP interface. For example:
 
 ```CPP
 /** Connect to a PPP pipe
