@@ -1,16 +1,14 @@
 ## Terms
 
-[A document that briefly explains the differences between `mbed`, `mbed-rtos`, `mbed-dev`, `mbed-src` and `mbed-rpc`.]
-
 [TODO: This will need a massive edit, and additional info]
-
-[NOTE: The terms above may only apply to mbed 2, in which case they should not be in this documentation.]
 
 Suggested ideas:
 
 API
 
 Arm Mbed CLI
+
+Arm Mbed interface - The extra chip that sits on all Mbed Enabled development boards. It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
 Arm Mbed Online Compiler
 
@@ -26,6 +24,8 @@ Blinky
 
 block device
 
+board - An Mbed Enabled development board. You can see a complete list of these [here](https://developer.mbed.org/platforms/).
+
 bootloader
 
 build profile
@@ -34,7 +34,11 @@ build script
 
 callback
 
+CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
+
 command-line
+
+DAPLink - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
 debugging
 
@@ -60,7 +64,7 @@ IDE
 
 mesh
 
-serial
+platform - See `board`.
 
 porting
 
@@ -68,7 +72,13 @@ pull request
 
 RTX
 
+serial
+
 static memory
+
+STLink - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
+
+target - See `baord`.
 
 terminal application
 
