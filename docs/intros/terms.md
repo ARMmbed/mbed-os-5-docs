@@ -4,6 +4,8 @@
 
 Suggested ideas:
 
+Abstraction layer
+
 API - Application programming interface
 
 Arm Mbed CLI
@@ -67,6 +69,8 @@ I2C - Interintegrated circuit (short-distance, intraboard communication).
 IDE - Integrated development environment
 
 LoRA - Long range (low power wireless platform)
+
+Makefile
 
 mesh
 
