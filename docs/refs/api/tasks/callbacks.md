@@ -1,6 +1,6 @@
 #### Callbacks
 
-[Document about callbacks, their best practices and dos and don'ts..]
+[Document about callbacks, their best practices and dos and don'ts.]
 
 ###### Thread example with callbacks
 
