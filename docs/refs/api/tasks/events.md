@@ -59,7 +59,7 @@ rise_handler in context 0x0
 
 The program starts in the context of the thread that runs the `main` function (`0x29992c5`). When the user presses SW2, `fall_handler` is automatically queued in the event queue, and  it runs later in the context of thread `t` (`0x20002c90`). When the user releases the button, `rise_handler` is executed immediately, and it displays `0x0`, indicating that the code ran in interrupt context.
 
-The code for `rise_handler` is problematic, since it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. We can make the code safe by running `rise_handler` in user context (like we already do with `fall_handler`) by replacing this line:
+The code for `rise_handler` is problematic because it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. We can make the code safe by running `rise_handler` in user context (like we already do with `fall_handler`) by replacing this line:
 
 ```
 sw.rise(rise_handler);
@@ -71,7 +71,7 @@ with this line:
 sw.rise(queue.event(rise_handler));
 ```
 
-The code is safe now, but we may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt.
+The code is safe now, but we may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code, this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt.
 
 Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to the user's action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context.
 
@@ -101,7 +101,7 @@ fall_handler in context 0x20002c90
 rise_handler_user_context in context 0x20002c90
 ```
 
-The scenario above (splitting an interrupt handler's code into time critical code and non-time critical code) is another common pattern that's easily implemented with event queues; queuing code that's not interrupt safe is not the only thing that event queues can be used for. Any kind of code can be queued and deferred for later execution.
+The scenario above (splitting an interrupt handler's code into time critical code and non-time critical code) is another common pattern that you can easily implement with event queues; queuing code that's not interrupt safe is not the only thing you can use event queues for. Any kind of code can be queued and deferred for later execution.
 
 We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
