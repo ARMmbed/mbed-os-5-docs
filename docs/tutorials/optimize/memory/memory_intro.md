@@ -4,9 +4,9 @@ Beginning with Mbed OS 5, new features such as RTOS created an increase in flash
 
 **Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available [here](https://developer.mbed.org/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/).
 
-### Removing Unused Modules
+### Removing unused modules
 
-For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), a program that flashes an LED, typical memory usage is split between the following modules: 
+For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), a program that flashes an LED, typical memory usage is split among the following modules: 
 
 ```
 +---------------------+-------+-------+-------+
@@ -23,13 +23,13 @@ For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-bl
 +---------------------+-------+-------+-------+
 ```
 
-Even though we are creating a release build, the `features/frameworks` module includes the Mbed OS test tools. Because of this, we are building one of our test harnesses into every binary. Since we do not need a testing framework for a release build, [removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) will save a significant amount of RAM and flash memory.
+Even if you are no longer testing your program, the `features/frameworks` module includes the Mbed OS test tools. Because of this, you are building one of our test harnesses into every binary. [Removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) saves a significant amount of RAM and flash memory.
 
-#### Printf and UART
+#### `Printf` and UART
 
-Other modules that are not used in your program can also be removed by the linker. For example, in [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky) neither `printf` or UART drivers are used within its `main` program. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output - forcing the `printf` and UART drivers to be compiled in, requiring a large amount of flash memory.
+The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output - forcing the `printf` and UART drivers to be compiled in and requiring a large amount of flash memory.
 
-To disable error logging to serial output, set the `NDEBUG` macro and the following configuration parameter in your program's mbed_app.json file:
+To disable error logging to serial output, set the `NDEBUG` macro and the following configuration parameter in your program's `mbed_app.json` file:
 
 ```
 {
@@ -44,13 +44,13 @@ To disable error logging to serial output, set the `NDEBUG` macro and the follow
 }
 ```
 
-**Note:** Different compilers, different results; compiling with one compiler with yield different memory usage savings than when compiling with another.
+**Note:** Different compilers, different results; compiling with one compiler yields different memory usage savings than compiling with another.
 
-#### Embedded Targets
+#### Embedded targets
 
-We can also take advantage of the fact that we run our programs only on embedded targets. When you run a C++ application on a desktop computer, the runtime constructs every global C++ object before `main` is called. It also registers a handle to destroy these objects when the program ends. The compiler injects this and has some implications for the application:
+You can also take advantage of the fact that these programs only run on embedded targets. When you run a C++ application on a desktop computer, the operating system constructs every global C++ object before calling `main`. It also registers a handle to destroy these objects when the program ends. The code the compiler injects has some implications for the application:
 
 * The code injected by the compiler consumes memory.
-* It implies dynamic memory allocation, and thus requires `malloc` to be included in the binary, even when not used by the application.
+* It implies dynamic memory allocation and thus requires the binary to include `malloc`, even when the application does not use it.
 
-When we run an application on an embedded device we don't need handlers to destroy objects when the program exits, because the application will never end. By [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup, and by eliminating the code to destruct objects when `exit()` is called, saving even more RAM and flash memory usage.
+When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime.
