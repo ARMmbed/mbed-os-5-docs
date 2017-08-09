@@ -1,4 +1,4 @@
-#### The event loop
+#### The EventQueue API
 
 One of the optional Arm Mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
@@ -20,17 +20,15 @@ You must create and start the event loop manually. The simplest way to achieve t
 
 ```
 #include "mbed.h"
-#include "mbed_events.h"
 
 // Create a queue that can hold a maximum of 32 events
-Queue queue(32 * EVENTS_EVENT_SIZE);
+EventQueue queue(32 * EVENTS_EVENT_SIZE);
 // Create a thread that'll run the event queue's dispatch function
 Thread t;
 
 int main () {
     // Start the event queue's dispatch thread
     t.start(callback(&queue, &EventQueue::dispatch_forever));
-    ...
 }
 ```
 
@@ -104,6 +102,10 @@ rise_handler_user_context in context 0x20002c90
 The scenario above (splitting an interrupt handler's code into time critical code and non-time critical code) is another common pattern that you can easily implement with event queues; queuing code that's not interrupt safe is not the only thing you can use event queues for. Any kind of code can be queued and deferred for later execution.
 
 We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
+
+##### Prioritization
+
+The EventQueue has no concept of event priority. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. The EventQueue only schedules events based on time. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must appropriately set the priority of the thread dispatching each EventQueue instance.
 
 ##### Where to go from here
 
