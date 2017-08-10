@@ -12,17 +12,26 @@ Adding this sort of statistics is a good idea, though we don't have any hooks in
 
 Q: I am then wondering about the effect of this
 
+```
 // Creates an event queue enough buffer space for 32 Callbacks. This
 // is the default if no argument was provided. Alternatively the size
 // can just be specified in bytes.
 EventQueue queue(32*EVENTS_EVENT_SIZE);
+```
+
 if you say that the allocation is dynamic, what is that for (by the way, on our codebase the allocation of such an EventQueue with 32 (that is the default) seems to use 2.3KByte of RAM. Is that right?
 
-A: if you say that the allocation is dynamic
+A: 
+
+```
+if you say that the allocation is dynamic
+```
+
 Ah sorry, I should clarify. The events are variable size, but the memory the event queue operates out of is not. This is required to allocate events in interrupt context safely (allocations from the general purpose heap is not irq safe).
 
 Variable sized events introduce fragmentation in this memory region, which makes it difficult to know exactly how many more events can be allocated.
 
+```
 EventQueue queue(8*sizeof(int)); // 8 words of storage
 queue.call(func, 1);       // requires 2 words of storage
 queue.call(func, 1, 2, 3); // requires 4 words of storage
@@ -35,10 +44,13 @@ queue.call(func, 1, 2, 3); // fails
 // remaining storage has been fragmented into 2 events with 2 words 
 // of storage, no space is left for a 4 word event even though 4 bytes
 // exist in the memory region
+```
+
 The event queue does have some strong garuntees on fragmentation. Once an allocation has been successful, that unit of memory will never be fragmented further (this is important for periodic systems). You could calculate how many events are available for a specific size of event, but this is also complicated by untouched space, which can service any event that fits.
 
 Q: So in the following case:
 
+```
 EventQueue queue(8*sizeof(int)); // 8 words of storage
 queue.call(func, 1);       // requires 2 words of storage
 queue.call(func, 1);       // requires 2 words of storage
@@ -50,10 +62,15 @@ queue.dispatch();  // free all pending events
 // now all memory should be free again (8 words)?
 
 queue.call(func, 1, 2, 3); // requires 4 words of storage --> Would this fail now?
+```
+
 would that actually fail because of fragmentation?
 and are at the end still 4 words free?
 
-A: would that actually fail because of fragmentation?
+A: 
+```
+would that actually fail because of fragmentation?
+```
 Yes. It's an unfortunate side effect of how the allocator works. 4 words of storage are free, but only for allocations <2 words.
 
 The event queue has two separate allocators. One is a simple slab of memory that feeds a set of fixed size allocators. The slab is maintained by a single pointer into the buffer that indicates how much unallocated space is left. In theory, the slab could support deallocation, but only from the front.
