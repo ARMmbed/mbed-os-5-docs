@@ -47,10 +47,4 @@ queue.call(func, 1, 2, 3); // requires 4 words of storage --> Would this fail no
 
 Four words of storage are free but only for allocations fewer than than two words.
 
-The EventQueue has two allocators. One is a simple slab of memory that feeds a set of fixed size allocators. The slab is maintained by a single pointer into the buffer that indicates how much unallocated space is left. In theory, the slab could support deallocation but only from the front.
-
-It's possible to coalesce with two extra words in each chunk, but these could only be returned to the slab if they border it. As soon as you allocate a chunk near the end of the buffer, the free chunks in front could never be returned. A more sophisticated allocator that could recover chunks for the slab may have to traverse the entire buffer, which would be too costly for interrupt contexts.
-
-Because recovering chunks isn't reliable and coalescing requires two additional words, coalescing was dropped.
-
-This isn't that bad of a thing. Coalescing is less important for event queues than general-purpose memory allocators. Event queues don't change "modes" often, so previously allocated chunks are likely to be reused. The bigger risk in event queues is when multiple aperiodic events end up occuring at the same time. Coalescing chunks could end up hiding a problem that doesn't show itself until later in the life of the application.
+Multiple aperiodic events that occur at the same time pose a risk to event queues. To prevent a problem like this that doesn't show itself until later in the application's cycle, the EventQueue design uses a slab of memory that could support deallocation from the front instead of using coalescing chunks. A pointer into the buffer that indicates the amount of unallocated space maintains the slab of memory.
