@@ -2,7 +2,7 @@
 
 [TO-DO: A document about the fragmentation of the memory pool of the EventQueue. This documentation should include how it works, use cases and behaviors. Start by rewriting the information from https://github.com/ARMmbed/mbed-os/issues/3873.]
 
-The [EventQueue API](events.md) memory is a fixed size. This fixed size is what makes the EventQueue's allocation of events interrupt safe. Allocating from the general purpose heap is not IRQ safe. Although the EventQueue memory sized is fixed, the Eventqueue supports events of are variable size. 
+When you create an instance of the [EventQueue](events.md), you specify a fixed size for its memory. This fixed size is what makes the EventQueue's allocation of events interrupt safe. Allocating from the general purpose heap is not IRQ safe. Although the EventQueue memory sized is fixed, the Eventqueue supports events of are variable size. 
 
 Variable-sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event. 
 
