@@ -2,9 +2,9 @@
 
 [TO-DO: A document about the fragmentation of the memory pool of the EventQueue. This documentation should include how it works, use cases and behaviors. Start by rewriting the information from https://github.com/ARMmbed/mbed-os/issues/3873.]
 
-When you create an instance of the [EventQueue](events.md), you specify a fixed size for its memory. This fixed size is what makes the EventQueue's allocation of events interrupt safe. Allocating from the general purpose heap is not IRQ safe. Although the EventQueue memory sized is fixed, the Eventqueue supports events of are variable size. 
+When you create an instance of the [EventQueue](events.md), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
 
-Variable-sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event. 
+Various sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event.
 
 ##### Calculating the number of events
 
@@ -29,22 +29,20 @@ queue.call(func, 1, 2, 3); // fails
 
 ##### Failure due to fragmentation
 
-The following example would fail because of fragmentation: [NOTE: EXAMPLE GIVEN BY OTHERS. REPLACE.]
+The following example would fail because of fragmentation:
 
 ```
-EventQueue queue(8*sizeof(int)); // 8 words of storage
-queue.call(func, 1);       // requires 2 words of storage
-queue.call(func, 1);       // requires 2 words of storage
-queue.call(func, 1);       // requires 2 words of storage
-queue.call(func, 1);       // requires 2 words of storage
-// after this we have 0 words of storage left
+EventQueue queue(4*sizeof(int)); // 4 words of storage
+queue.call(func);       // requires 1 word of storage
+queue.call(func);       // requires 1 word of storage
+queue.call(func);       // requires 1 word of storage
+queue.call(func);       // requires 1 word of storage
+// 0 words of storage remain
 
 queue.dispatch();  // free all pending events
-// now all memory should be free again (8 words)?
+// all memory is free again (4 words) and in one-word chunks
 
-queue.call(func, 1, 2, 3); // requires 4 words of storage --> Would this fail now?
+queue.call(func, 1, 2, 3); // requires 4 words of storage, so allocation fails
 ```
 
-Four words of storage are free but only for allocations fewer than than two words.
-
-Multiple aperiodic events that occur at the same time pose a risk to event queues. To prevent a problem like this that doesn't show itself until later in the application's cycle, the EventQueue design uses a slab of memory that could support deallocation from the front instead of using coalescing chunks. A pointer into the buffer that indicates the amount of unallocated space maintains the slab of memory.
+Four words of storage are free but only for allocations of one word or less. The solution to this failure is to increase the size of your EventQueue. Having the proper sized EventQueue prevents you from running out of space for events in the future.
