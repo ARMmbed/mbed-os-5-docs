@@ -1,4 +1,4 @@
-# mbed mesh API
+## mbed mesh API
 
 ARM mbed mesh API allows the client to use the IPv6 mesh network.
 
@@ -6,11 +6,11 @@ The client can use the `LoWPANNDInterface` or `ThreadInterface` object for conne
 
 For ethernet `NanostackEthernetInterface` is provided.
 
-## Supported mesh networking modes
+### Supported mesh networking modes
 
 Currently, 6LoWPAN-ND (neighbour discovery) and Thread bootstrap modes are supported.
 
-## Module Configuration
+### Module Configuration
 
 This module supports static configuration via **mbed configuration system** by using the `mbed_app.json` file. The application needs to create the configuration file if it wants to use other than default settings.
 
@@ -29,13 +29,13 @@ An example of the configuration file:
 }
 ```
 
-### Configurable parameters in section mbed-mesh-api
+#### Configurable parameters in section mbed-mesh-api
 
 | Parameter name  | Value         | Description |
 | --------------- | ------------- | ----------- |
 | heap-size       | number [0-0xfffe] | Nanostack's internal heap size |
 
-### Thread related configuration parameters
+#### Thread related configuration parameters
 
 | Parameter name  | Value         | Description |
 | --------------- | ------------- | ----------- |
@@ -54,7 +54,7 @@ An example of the configuration file:
 | thread-config-pskc      | byte array [16] | Pre-Shared Key for the Commissioner. |
 | thread-security-policy | number [0-0xFF] | Commissioning security policy bits |
 
-### 6LoWPAN related configuration parameters
+#### 6LoWPAN related configuration parameters
 
 | Parameter name  | Type     | Description |
 | --------------- | ---------| ----------- |
@@ -68,23 +68,23 @@ An example of the configuration file:
 | 6lowpan-nd-sec-level | number [1-7] | Network security level. Use default `5` |
 | 6lowpan-nd-device-type | "NET_6LOWPAN_ROUTER" or "NET_6LOWPAN_HOST" | Device mode. Router is routing packets from other device, creating a mesh network. |
 
-## Usage notes
+### Usage notes
 
 This module should not be used directly by the applications. The applications should use the `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
 
 When using Ethernet interface, there is no configuration options available. It is using dynamic mode to learn the IPv6 prefix from the network. No static configuration is supported.
 
-### Network connection states
+#### Network connection states
 
 After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
 
 In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the client is allowed to attempt connecting again.
 
-## Getting started
+### Getting started
 
 See the example application [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
 
-## Usage example for 6LoWPAN ND mode
+### Usage example for 6LoWPAN ND mode
 
 Create a network interface and driver objects.
 
@@ -110,7 +110,7 @@ Then connect to network:
     printf("connected. IP = %s\r\n", mesh.get_ip_address());
 ```
 
-## Usage example for 6LoWPAN Thread mode
+### Usage example for 6LoWPAN Thread mode
 
 Basically the same as for ND, but the network interface uses different class:
 
@@ -119,7 +119,7 @@ ThreadInterface mesh;
 mesh.connect();
 ```
 
-## Usage example with Ethernet
+### Usage example with Ethernet
 
 API is still the same, you just need to provide a driver that implements `NanostackEthernetPhy` API.
 
