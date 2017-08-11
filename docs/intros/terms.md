@@ -8,7 +8,7 @@ Abstraction layer
 
 API - Application programming interface
 
-Arm Mbed CLI
+Arm Mbed CLI - The name of the Arm Mbed [command-line tool](cli.md), packaged as `mbed-cli`.
 
 Arm Mbed interface - The extra chip that sits on all Mbed Enabled development boards. It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
@@ -16,13 +16,13 @@ Arm Mbed Online Compiler
 
 Arm Mbed OS
 
-Arm Mbed TLS
+Arm Mbed TLS - A [comprehensive SSL/TLS solution](TLS.md) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
 Arm Mbed uVisor
 
 BLE - Bluetooth low energy.
 
-Blinky
+Blinky - An [example application](first_application.md) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
 block device
 
@@ -40,7 +40,7 @@ CAN - Controller-area network.
 
 CI - Continuous integration.
 
-CLI - Command-line interface.
+CLI - Command-line interface. 
 
 CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
@@ -60,7 +60,7 @@ GitHub
 
 GPIO
 
-Greentea
+Greentea - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](greentea.md) is the automated testing tool for Arm Mbed OS development.
 
 `htrun`
 
