@@ -182,7 +182,7 @@ astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
 
 #### Compile flags and ABI requirements
 
-All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles used by the Mbed OS tools are each subsets of these flags. Each profile has one optimization setting.
+All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles that the Mbed OS tools use are each subsets of these flags. Each profile has one optimization setting.
 
 ##### GCC Arm Embedded
 
