@@ -19,11 +19,41 @@ retransmisson of the packet.
 
 <span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Rule of thumb:** The bandwidth per node is divided by the number of nodes in the network and the number of hops.</span>
 
-### FHSS
+## Notes on different hardware
 
-Frequency Hopping Spread Spectrum (FHSS) is a method of transmitting radio signals by rapidly switching the carrier among many frequency channels, using a pseudorandom sequence known to both the transmitter and receiver. It makes the network more tolerant for narrow band interference and is sometimes required by the FCC rules.
+As the stack runs on multiple different mbed OS development boards there might be combinations of board and RF shields that may, or may not, work together due to pin collision or other reasons.
 
-In Nanostack, the FHSS implementation utilizes the standard 802.15.4 radios and switches RX/TX channels in a calculated sequence.
-It does not modify the 802.15.4 radio frames in any way, and thus, does not require any special support from the RF chip.
+This page aims to collect information regarding different hardware combinations.
 
+Please see [Notes on different hardware](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/Hardware.md) on Mesh example application for up to date copy of this list.
+
+## RF shields
+
+Following RF shield have been used with mbed OS mesh examples.
+
+* [FIREFLY 6LOWPAN ARDUINO SHIELD](https://firefly-iot.com/product/firefly-arduino-shield-2-4ghz/)
+* [Freedom Development Board for MCR20A](http://www.nxp.com/products/software-and-tools/hardware-development-tools/freedom-development-boards/freedom-development-board-for-mcr20a-wireless-transceiver:FRDM-CR20A)
+* [X-NUCLEO-IDS01A4](http://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html)
+* [DVK-NCS36510-MBED-GEVB](https://developer.mbed.org/platforms/NCS36510/) Development board, contains internal RF chip.
+
+## Tested development boards
+
+Following table shows which development boards have been tested. It does not present our current testing infrastructure, so we cannot guarantee all combinations but we do our best to ensure it is up to date.
+
+| board / RF shield | Atmel | MCR20A | X-NUCLEO-IDS01A4 |
+|-------------------|-------|-----|------------------|
+| K64F | <span style='background-color: #5f5;'>Yes</span> | <span style='background-color: #5f5;'>Yes</span> | |
+| <span style='background-color: #ff5;'>NUCLEO_F429ZI **(1)**</span> | <span style='background-color: #5f5;'>Yes</span> | <span style='background-color: #5f5;'>Yes</span> | <span style='background-color: #ff5;'>Modified, **(3)**</span> |
+| NUCLEO_F401RE | <span style='background-color: #5f5;'>Yes</span> | | |
+| UBLOX_EVK_ODIN_W2 | <span style='background-color: #5f5;'>Yes</span> | <span style='background-color: #f00;'>No. **(2)**</span> | |
+| Onsemi NCS36510 <span style='background-color: #5f5;'>(internal RF)</span> | | | |
+| NXP KW24D <span style='background-color: #5f5;'>(internal RF)</span> | | <span style='background-color: #f00;'>Yes **(4)**</span> | |
+
+
+**Notes:**
+
+1. If ethernet driver is enabled, requires HW modifications if RF shield uses SPI1. See [Driver notes](https://github.com/ARMmbed/sal-nanostack-driver-stm32-eth) and [nanostack-borderrouter-private Issue #17](https://github.com/ARMmbed/nanostack-border-router-private/issues/17)
+2. Pin collision, see [mesh-minimal Issue 55](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/issues/55)
+3. X-NUCLEO-IDS01A4 expansion board required modifications to be used in mbed OS. See [Driver readme](https://github.com/ARMmbed/stm-spirit1-rf-driver)
+4. KW24D have MCR20A chip integrated. Use same driver.
 

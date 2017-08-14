@@ -1,20 +1,13 @@
-Introduction
-================================
-The Quick Start Guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
+6LoWPAN based mesh networking in mbed OS
+========================================
 
-When you need more detailed information, read the following:
-
-* [ARM mbed 6LoWPAN Stack Overview](01_overview.md)
-* [API Reference Manual](05_reference.md)
-* Doxygen generated [API reference](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/index.html)
+This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
 
 ## Overview of the 6LoWPAN network
+
 ![Node connected to server](img/node_to_server.png)
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
-
-On the ARM 6LoWPAN network solution, the cloud endpoint is [mbed Device Server](https://www.mbed.com/en/development/cloud/mbed-device-server/)
-and users interface with it through [mbed Device Connector](https://www.mbed.com/en/development/cloud/mbed-device-connector-service/).
 
 ## Different device types in a 6LoWPAN network
 

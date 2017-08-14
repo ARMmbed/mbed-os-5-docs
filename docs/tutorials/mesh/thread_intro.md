@@ -1,4 +1,4 @@
-# Introduction to mbed OS Thread
+# Introduction to Thread networking stack
 
 ## Why to use Thread
 
@@ -16,7 +16,7 @@ Thread was designed with one goal in mind; to create the best way to connect and
 The Thread stack is built on IPv6 over Low power Wireless Personal Area Networks (6LoWPAN), which itself builds on IEEE 802.15.4 to offer IP-based networking. Internet Protocol (IP) provides the core mechanism for relaying datagrams across IP networks, and its routing capabilities enable internetworking.
 
 ![Thread_image](img/thread_arch.png)
- 
+
 Read more at the [Thread Group site](http://www.threadgroup.org/).
 
 ## Why mbed OS with Thread stack
@@ -45,7 +45,7 @@ Nanostack provides a set of C API headers with more functionalities. The followi
 - `thread_border_router_api.h` for implementing a Thread border router.
 - `thread_diagcop_lib.h` for building and parsing the Thread diagnostics protocol TLV messages.
 - `thread_meshcop_lib.h` for building and parsing the Thread mesh commissioning protocol TLV messages.
-- `thread_net_config_api.h` for making neighbour discovery (ND) data requests. 
+- `thread_net_config_api.h` for making neighbour discovery (ND) data requests.
 
 ### Thread devices you can build on mbed OS
 
@@ -65,7 +65,7 @@ For an end device or a router example, see [mesh minimal example](https://github
 
 mbed OS offers separate configurations for different Thread end device types. Usually, the end devices are the most constrained devices in the Thread network. They serve as last hop in the mesh topology. Devices such as plain sensors, controls and switches can be implemented as end devices only. For the most constrained hardware, the minimal end device (MED) or the sleepy end device (SED) is an optimal selection as the implementation requires the smallest amount of flash and RAM memory due to the limited functionality. Note that a sleepy end device also requires more resources on the parent device. End devices communicate through a parent and can switch to another parent if the current connection is broken.
 
-A Thread network does not work with end devices only. There must be router devices, that can route the traffic between nodes and to 
+A Thread network does not work with end devices only. There must be router devices, that can route the traffic between nodes and to
 the back-end network through the border router.
 
 Minimal end device (MED):
@@ -95,8 +95,8 @@ In Thread networks, devices operate in several specific roles separated by the s
 
 - Router ID assignment.
 - Thread network data registration.
-- Network data distribution. 
-- Commissioner petition. 
+- Network data distribution.
+- Commissioner petition.
 
 Additionally, a router can act as a border router (must be configured in build time), that provides services for devices within the Thread mesh network and the backbone network.
 
@@ -126,12 +126,12 @@ The Thread network name and the extended PAN ID are received in the scanning pha
 
 After the authentication phase, the commissioner requests the Thread network leader to petition the commissioner to become an authorized commissioner. Here, the border router works as an arbitrator in the middle.
 
-Now, the Thread network is ready to accept new joiner devices. 
+Now, the Thread network is ready to accept new joiner devices.
 
-1. The commissioner application scans the QR code, which is PSKd (Pre-Shared Key for device) + EUI64, from the device's label and informs the Thread network that this device is accepted to the network. 
+1. The commissioner application scans the QR code, which is PSKd (Pre-Shared Key for device) + EUI64, from the device's label and informs the Thread network that this device is accepted to the network.
 2. The joiner device detects in the scanning response that it can now join the network and starts a DTLS session using PSKd.
-3. The session is created through the Thread network (via the joiner router and the border router) to the commissioner application. 
-4. The commissioner authenticates the device and accepts it to the network. 
+3. The session is created through the Thread network (via the joiner router and the border router) to the commissioner application.
+4. The commissioner authenticates the device and accepts it to the network.
 5. The device receives the Thread configuration, which allows it to join.
 
 <span class="notes">**Note:** Thread uses hashing and elliptic curve algorithms for the secure communication. PSKd(s) and EUI64(s) are never transmitted in plain text over the peer to peer connection.</span>
