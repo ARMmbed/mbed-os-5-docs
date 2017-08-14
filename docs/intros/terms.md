@@ -1,4 +1,4 @@
-## Terms
+## Glossary
 
 [TODO: This will need a massive edit, and additional info]
 
