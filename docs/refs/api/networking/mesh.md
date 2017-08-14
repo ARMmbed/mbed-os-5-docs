@@ -2,7 +2,14 @@
 
 ARM mbed mesh API allows the client to use the IPv6 mesh network.
 
-The client can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the client can create a socket by using the [mbed C++ socket API](https://developer.mbed.org/teams/NetworkSocketAPI/code/NetworkSocketAPI/docs/tip/) to start communication with a remote peer.
+mbed OS provides two types of IPv6 based mesh networks:
+
+* 6LoWPAN_ND, loosely following Zigbee-IP specification.
+* Thread, following specification from Thread Group.
+
+One stack, called Nanostack, provides both protocols. For more information about stack internals, refer to Nanostack’s documentation. Application developers use Nanostack through this mbed Mesh API.
+
+The client can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the client can create a socket by using the [mbed C++ socket API](network_sockets.md) to start communication with a remote peer.
 
 For ethernet `NanostackEthernetInterface` is provided.
 
@@ -46,7 +53,7 @@ An example of the configuration file:
 | thread-config-channel-page | number [0, 2]| Channel page, 0 for 2,4 GHz and 2 for sub-GHz radios. |
 | thread-config-channel      | number [0-27] | RF channel to use. |
 | thread-config-panid        | number [0-0xFFFF] | Network identifier. |
-| thread-config-network-name | string [1-16] | 
+| thread-config-network-name | string [1-16] |
 | thread-config-commissioning-dataset-timestamp | [0-0xFFFFFFFFFFFFFFFF] | [48 bit timestamp seconds]-[15 bit timestamp ticks]-[U bit] |
 |thread-config-extended-panid | byte array [8] | Extended PAN ID |
 | thread-master-key      | byte array [16]| Network master key. |
