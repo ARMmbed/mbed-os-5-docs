@@ -21,7 +21,7 @@ Read more at the [Thread Group site](http://www.threadgroup.org/).
 
 ### Why Mbed OS with Thread stack
 
-ARM mbed OS is an open source embedded operating system designed specifically to facilitate the creation and deployment of commercial, standards-based IoT solutions at scale. mbed OS features full support for Thread to simplify development of secure IoT applications in home and to ease the Thread product certification. The mbed OS Thread stack is a Thread Group certified component.
+Mbed OS is an open source embedded operating system designed specifically to facilitate the creation and deployment of commercial, standards-based IoT solutions at scale. Mbed OS features full support for Thread to simplify development of secure IoT applications in home and to ease the Thread product certification. The Mbed OS Thread stack is a Thread Group certified component.
 
 #### Mbed Thread is based on the Mbed OS key elements
 
@@ -47,7 +47,7 @@ Nanostack provides a set of C API headers with more functionalities. The followi
 - `thread_meshcop_lib.h` for building and parsing the Thread mesh commissioning protocol TLV messages.
 - `thread_net_config_api.h` for making neighbour discovery (ND) data requests.
 
-#### Thread devices you can build on mbed OS
+#### Thread devices you can build on Mbed OS
 
 The Mbed OS Mesh API allows you to define 3 types of devices:
 
