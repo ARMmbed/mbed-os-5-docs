@@ -17,10 +17,10 @@ Option Name | Features supported | Current binary size in Mbed OS 5.5
 `FEATURE_THREAD_END_DEVICE` | Thread host without routing capability | 165.548 kB
 `FEATURE_THREAD_ROUTER` | Thread host with routing capability | 198.618 kB
 
-<span class="notes">**Note:** The binary sizes have been estimated using GNU ARM Embedded Toolchain version 4.9.
+<span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9.
 They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
-### Using configuration option on mbed OS
+### Using configuration option on Mbed OS
 
 If you want to optimize the flash usage, you need to select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
 
@@ -36,7 +36,7 @@ Select the device role:
 - Mesh network. A router. (default)
 - Star network. A non-routing device. Also known as a host, or sleepy host.
 
-Modify your `mbed_app.json` file to tell which Nanostack build to choose and which configrations to use on [mbed Mesh API](refs/api/networking/mesh.md.md).
+Modify your `mbed_app.json` file to tell which Nanostack build to choose and which configrations to use on [Mbed Mesh API](refs/api/networking/mesh.md.md).
 
 An example of the `mbed_app.json` file:
 
