@@ -8,16 +8,16 @@ The suitable build option depends on whether you are building it for Mbed OS or 
 
 Option Name | Features supported | Current binary size in Mbed OS 5.5
 ------------| -------------------|------------------------------------
-`FEATURE_ETHERNET_HOST` | Just Ethernet host support, no mesh networking. | 108 kB
+`FEATURE_ETHERNET_HOST` | Only Ethernet host support, no mesh networking. | 108 kB
 `FEATURE_LOWPAN_BORDER_ROUTER` | 6LoWPAN-ND border router support. | 219 kB
 `FEATURE_LOWPAN_HOST` | 6LoWPAN-ND non routing host mode. | 122 kB
 `FEATURE_LOWPAN_ROUTER` | 6LoWPAN-ND routing host mode. | 169 kB
 `FEATURE_NANOSTACK_FULL` | Everything. This is only for testing purposes. | 355 kB
 `FEATURE_THREAD_BORDER_ROUTER` | Thread router device with border router capability. | 211.927 kB
-`FEATURE_THREAD_END_DEVICE` | TBD: missing | 165.548 kB
+`FEATURE_THREAD_END_DEVICE` | Thread host without routing capability | 165.548 kB
 `FEATURE_THREAD_ROUTER` | Thread host with routing capability | 198.618 kB
 
-<span class="notes">**Note:** The binary sizes have been estimated using GCC toolchains on Linux by the time of writing this document.
+<span class="notes">**Note:** The binary sizes have been estimated using GNU ARM Embedded Toolchain version 4.9.
 They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
 ### Using configuration option on mbed OS

@@ -1,15 +1,15 @@
 #### Arm Mbed Mesh
 
-Mbed Mesh API allows the client to use the IPv6 mesh network.
+Mbed Mesh API allows the application to use the IPv6 mesh network.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
 * 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 * Thread, following the specification from Thread Group.
 
-Nanostack provides both protocols (TBD: both 6LoWPAN and Thread?). For more information on the stack internals, refer to [Nanostack documentation](add link). Application developers use Nanostack through Mbed Mesh API.
+Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](docs/tutorials/mesh/02_N_arch.md). Application developers use Nanostack through Mbed Mesh API.
 
-The client can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the client can use the [Mbed C++ socket API](network_sockets.md) to create a socket to start communication with a remote peer.
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the [Mbed C++ socket API](network_sockets.md) to create a socket to start communication with a remote peer.
 
 The `NanostackEthernetInterface` is provided for Ethernet.
 
@@ -85,7 +85,7 @@ When using an Ethernet interface, there are no configuration options available. 
 
 After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
 
-In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the client is allowed to attempt connecting again.
+In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the application is allowed to attempt connecting again.
 
 ##### Getting started
 
