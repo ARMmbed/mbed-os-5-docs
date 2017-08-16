@@ -180,48 +180,13 @@ You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/fil
 astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
 ```
 
-#### Compile flags and ABI requirements
+#### Compiler settings
 
-All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Code must compile with specific flags for each compiler. See the list of these flags below. The profiles that the Mbed OS tools use are each subsets of these flags. Each profile has one optimization setting.
+All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Mbed OS:
 
-##### GCC Arm Embedded
-
-Code must be compatible with the `softfp` float ABI. Mbed OS uses the following flags when compiling with GCC Arm Embedded.
-
-flag                        | meaning
-----------------------------|---------------------------------------
-`-Wall`                     | Enable most warnings
-`-Wextra`                   | Enable extra warnings
-`-fno-exceptions`           | Disable exceptions
-`-funsigned-char`           | The `char` type is unsigned by default
-`-fomit-frame-pointer`      | Do not keep a frame pointer
-`-fno-rtti`                 | Disable runtime type information (C++ only)
-`-Os`                       | Optimize for size
-`-O0`                       | Do not optimize
-`-std=gnu99`                | C uses the GNU99 standard
-`-std=gnu++98`              | C++ uses the GNU++98 standard
-
-##### Arm Compiler 5
-
-Mbed OS uses the following flags when compiling with Arm Compiler 5.
-
-flag       | meaning
------------|---------------------------------------
-`-no_rtti` | Disable runtime type information (C++ only)
-`-no_vla`  | Disable variable length arrays (C++ only)
-`-O0`      | Do not optimize
-`-O3`      | Optimize for speed
-`-c99`     | C uses the C99 standard
-
-##### IAR EWARM
-
-Mbed OS uses the following flags when compiling with IAR EWARM.
-
-flag             | meaning
------------------|---------------------------------------
-`-no_rtti`       | Disable runtime type information (C++ only)
-`-no_exceptions` | Disable exceptions (C++ only)
-`--vla`          | Enable variable length arrays (C only)
-`-Oh`            | Optimize for speed
-`-Ohz            | Optimize for space
-`-On`            | Disable optimizations
+- Uses the GNU99 standard for C.
+- Uses the GNU++98 standard for C++.
+- Sets the `char` type to unsigned.
+- Disables C++ exceptions.
+- Disables C++ runtime type information.
+- Disables variable length arrays (C++ only).
