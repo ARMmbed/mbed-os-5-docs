@@ -8,11 +8,11 @@ This guide provides design guidelines for developing an application on top of th
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
 
-### Different device types in a 6LoWPAN network
+#### Different device types in a 6LoWPAN network
 
 In a 6LoWPAN network, devices can have different roles. The colours in the illustrations represent different device types and are used in the examples throughout the Quick Start Guide.
 
-#### Border router (6LBR)
+##### Border router (6LBR)
 
 ![Border router](img/br.png)
 
@@ -22,29 +22,29 @@ IPv4 network when operating in such environment.
 
 The border router also authenticates the nodes joining the network and keeps track of the routing topology.
 
-#### 6LoWPAN router (6LR)
+##### 6LoWPAN router (6LR)
 
 ![6LoWPAN router](img/6lr.png)
 
 A 6LoWPAN router is a node that can route packets. This role is required to form a topological or mesh network.
 This configuration does not allow nodes to sleep because they route packets to their siblings.
 
-#### 6LoWPAN host (6LH)
+##### 6LoWPAN host (6LH)
 
 ![6LoWPAN Host](img/6lh.png)
 
 A 6LoWPAN host is a type of node that does not route any packets. It has only one parent routing the packets.
 
-#### 6LoWPAN sleepy host
+##### 6LoWPAN sleepy host
 
 A 6LoWPAN sleepy host is a 6LoWPAN host that is periodically allowed to sleep and turn off its radio.
 
-### Different types of 6LoWPAN mesh networks
+#### Different types of 6LoWPAN mesh networks
 
 6LoWPAN-based mesh networks cannot be described as a uniform standardized network type, such as WiFi. Depending on the
 business requirements and use cases the network may have different setups and requirements.
 
-#### Star network
+##### Star network
 
 ![Start topology](img/star_topology.png)
 
@@ -52,7 +52,7 @@ Star topology is the simplest form of a mesh network. Actually, it is not mesh a
 
 In a star network, nodes can be very low-power devices with least amount of RAM because they have no routing responsibilities. It also allows sleeping nodes.
 
-#### Mesh/tree network
+##### Mesh/tree network
 
 ![Tree type mesh](img/mesh.png)
 
@@ -62,7 +62,7 @@ In a 6LoWPAN network, RPL protocol is used for forming the routing topology. Eve
 
 This network type allows to cover large areas because each node extends the range of the network. However, the packet is retransmitted on every hop, which means that the transfer capacity of the network decreases as the size of the network increases.
 
-#### Example networks
+##### Example networks
 
 ![Example networks](img/examples.png)
 
