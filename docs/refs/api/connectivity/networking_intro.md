@@ -1,6 +1,6 @@
-### Communication
+### Connectivity
 
-The main communication APIs in Arm Mbed OS are:
+The main connectivity APIs in Arm Mbed OS are:
 
 * [Network sockets](network_sockets.md): provide a common interface for using sockets on network devices.
 * [Ethernet](ethernet.md): API for connecting to the internet over an Ethernet connection.
