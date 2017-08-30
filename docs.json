@@ -53,7 +53,7 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/interfaces/I2C.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/interfaces/I2CSlave.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/interfaces/CAN.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/contributing/networking_intro.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/conn_intro.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/network_design.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/network_sockets.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/ethernet.md"},
