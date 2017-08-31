@@ -9,7 +9,7 @@ A `Thread` can be in the following states:
 * `Waiting`: Threads that are waiting for an event to occur.
 * `Inactive`: Threads that are not created or terminated. These threads typically consume no system resources.
 
-<span class="images">![](Images/Thread/thread_status.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_status.png)</span>
 
 ##### The main() function
 
@@ -31,4 +31,4 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html)
 
-<span class="images">![](Images/Thread/thread_priority.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_priority.png)</span>
