@@ -35,11 +35,11 @@ You can use and extend a cellular interface and extended in various different wa
 
 - Using AT commands to control sockets in an IP stack built into the cellular modem.
 
-<span class="images">![](Images/Cellular/Cell_AT.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
 
 - Using a PPP pipe to pass IP packets between an Mbed OS supported IP stack and cellular modem device.
 
-<span class="images">![](Images/Cellular/Cell_PPP.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
 [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). Figure 2 above shows the basic design that the driver is based on. In other words, CellularInterface uses PPP. We can summarize this particular basic design as follows:
 
@@ -314,7 +314,7 @@ You can implement a cellular network interface in different ways based on your r
    * Following Mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the Mbed OS tree.
    * If the port inherits from the generic modem driver that Arm Mbed OS, the structure might look like this:
 
-   <span class="images">![](Images/Cellular/inherit_from_generic_modem.png)</span>
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/inherit_from_generic_modem.png)</span>
 
 No matter your setup, Mbed OS provides ample framework. You can list common infrastructure shared between above-mentioned cases as:
 
