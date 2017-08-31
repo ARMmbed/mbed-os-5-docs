@@ -14,7 +14,7 @@ Although you can use our tools to generate project files specific to many IDEs, 
     * For most targets you can also export to IAR or ARMCC.
 1. Click *Export*, and unpack at a convenient location.
 
-![Exporting to Make](Images/other_ides1.png)
+![Exporting to Make](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/other_ides1.png)
 
 #### Mbed CLI
 
