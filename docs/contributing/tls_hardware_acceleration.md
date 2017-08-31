@@ -12,9 +12,7 @@ You may want to add hardware acceleration in the following cases:
 
 - Your processor has special instructions capable of accelerating cryptographic operations, and you can accelerate parts significantly with optimized assembly code.
 
-
 - Your processor has access to a co-processor with cryptographic acceleration capabilities.
-
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
 
