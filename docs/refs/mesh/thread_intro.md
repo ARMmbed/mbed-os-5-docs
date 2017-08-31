@@ -15,7 +15,7 @@ Thread was designed with one goal in mind; to create the best way to connect and
 
 The Thread stack is built on IPv6 over Low power Wireless Personal Area Networks (6LoWPAN), which itself builds on IEEE 802.15.4 to offer IP-based networking. Internet Protocol (IP) provides the core mechanism for relaying datagrams across IP networks, and its routing capabilities enable internetworking.
 
-![Thread_image](img/thread_arch.png)
+![Thread_image](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_arch.png)
 
 Read more at the [Thread Group site](http://www.threadgroup.org/).
 
