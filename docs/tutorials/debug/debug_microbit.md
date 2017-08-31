@@ -164,10 +164,6 @@ The next section shows how you can modify what is printed without rebuilding any
 
 You can now connect with a serial client at 9600 bauds and check that the program is printing something.
 
-Before calling printf, the stack looks like this:
-
-<span class="images">![Representation of the stack](../Debugging/Images/stack.png)</span>
-
 The main function passes address 0x20003fe8 to printf in R1, which reads it and sends each character to the serial port until it reaches a \0. Knowing that, you can modify the printed string.
 
 First, put a breakpoint just before the printf call:
