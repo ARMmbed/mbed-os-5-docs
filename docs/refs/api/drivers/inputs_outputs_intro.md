@@ -1,10 +1,8 @@
 ### Drivers
 
-Inputs and outputs on development boards are either analog or digital.
+Driver APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices. With these drivers, you can read or set the voltage of analog pins, control digital pins individually or as a grouped value and trigger an event when a digital input pin changes value. You can also control the frequency and mark to space ratio of a digital pulse wave (or train).
 
 #### Analog I/O
-
-These APIs read or set the voltage of analog pins:
 
 * [AnalogIn](AnalogIn.md): read the voltage of an analog input pin.
 * [AnalogOut](AnalogOut.md): set the voltage of an analog output pin.
@@ -37,3 +35,14 @@ You can control the digital pins individually or as a grouped value.
 ##### PwmOut
 
 [PwmOut](PwmOut.md) controls the frequency and mark to space ratio of a digital pulse wave (or train).
+
+#### Digital interfaces
+
+* [Serial](digital/Serial.md): generic asynchronous protocol.
+* SPI: serial peripheral interface:
+	* [SPI](digital/SPI.md): master.
+	* [SPISlave](digital/SPISlave.md): slave.
+* I2C: inter-integrated circuit:
+	* [I2C](digital/I2C.md): master.
+	* [I2CSlave](digital/I2CSlave.md): slave.
+* [CAN](digital/CAN.md): connect two devices without using a computer.
