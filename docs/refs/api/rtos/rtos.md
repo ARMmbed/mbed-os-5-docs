@@ -4,7 +4,7 @@ The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information 
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__rtos.html).
 
-##### Thread
+#### Thread
 
 The [`Thread`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html) class allows defining, creating and controlling thread functions in the system.
 
@@ -17,29 +17,29 @@ A `Thread` can be in the following states:
 
 <span class="images">![](Images/Thread/thread_status.png)</span>
 
-###### The main() function
+##### The main() function
 
 The function `main` is a special thread function that is started at system initialization and has the initial priority `osPriorityNormal`; it is the first thread the RTOS schedules.
 
-###### Thread example
+##### Thread example
 
 The code below uses two separate threads to blink two LEDs. The first thread is automatically created and executes the `main` function; the second thread is created explicitly inside `main`.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_basic/)](https://developer.mbed.org/teams/mbed_example/code/rtos_basic/file/dc33cd3f4eb9/main.cpp)
 
-###### Thread example with callbacks
+##### Thread example with callbacks
 
 The Callback API provides a convenient way to pass arguments to spawned threads.  
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/)](https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/file/d4b2a035ffe3/main.cpp)
 
-###### Thread class reference
+##### Thread class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html)
 
 <span class="images">![](Images/Thread/thread_priority.png)</span>
 
-##### Mutex
+#### Mutex
 
 A [`Mutex`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mutex.html) is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
@@ -47,7 +47,7 @@ A [`Mutex`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_
 
 <span class="images">![](Images/Thread/Mutex.png)</span>
 
-###### Mutex example
+##### Mutex example
 
 Use Mutex to protect printf().
 
@@ -57,35 +57,35 @@ Use Mutex to protect printf().
 
 <span class="warnings">**Warning:** `stdio`, `malloc` and `new` in ISR</br>Because of the mutexes in the Arm C standard library, you cannot use `stdio` (`printf`, `putc`, `getc` and so on), `malloc` and `new` in ISR. </span>
 
-###### Mutex class reference
+##### Mutex class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mutex.html)
 
-##### Semaphore
+#### Semaphore
 
 A [`Semaphore`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Semaphore.html) manages thread access to a pool of shared resources of a certain type.
 
 <span class="images">![](Images/Thread/Semaphore.png)</span>
 
-###### Semaphore example
+##### Semaphore example
 
 Use Semaphore to protect printf().
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_semaphore/)](https://developer.mbed.org/teams/mbed_example/code/rtos_semaphore/file/574f47121e8e/main.cpp)
 
-###### Semaphore class reference
+##### Semaphore class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Semaphore.html)
 
-##### Signals
+#### Signals
 
 Each `Thread` can wait for signals and be notified of events:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_signals/)](https://developer.mbed.org/teams/mbed_example/code/rtos_signals/file/476186ff82cf/main.cpp)
 
-##### Queue and MemoryPool
+#### Queue and MemoryPool
 
-###### Queue
+##### Queue
 
 A [`Queue`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html) allows you to queue pointers to data from producer threads to consumer threads:
 
@@ -108,11 +108,11 @@ if (evt.status == osEventMessage) {
 ```
 >>>
 
-###### Queue class reference
+##### Queue class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html)
 
-###### MemoryPool
+##### MemoryPool
 
 >>>c
 >>>
@@ -129,33 +129,33 @@ mpool.free(message);
 ```
 >>>
 
-###### MemoryPool class reference
+##### MemoryPool class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html)
 
-###### Queue and MemoryPool example
+##### Queue and MemoryPool example
 
 This example shows `Queue` and `MemoryPool` (see below) managing measurements.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_queue/)](https://developer.mbed.org/teams/mbed_example/code/rtos_queue/file/0cb43a362538/main.cpp)
 
-##### Mail
+#### Mail
 
 [`Mail`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mail.html) works like a queue, with the added benefit of providing a memory pool for allocating messages (not only pointers).
 
 <span class="images">![](Images/Thread/mail_queue.png)</span>
 
-###### Mail class reference
+##### Mail class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mail.html)
 
-###### Mail example
+##### Mail example
 
 This code uses `mail` to manage measurement.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_mail/)](https://developer.mbed.org/teams/mbed_example/code/rtos_mail/file/6602f2907ac5/main.cpp)
 
-##### RtosTimer
+#### RtosTimer
 
 <span class="warnings">**Deprecated**: The RtosTimer has been superseded by the EventQueue. The RtosTimer and EventQueue duplicate the functionality of timing events outside of interrupt context, however the EventQueue has additional features to handle deferring other events to multiple contexts.</span>
 
@@ -165,30 +165,30 @@ Timers are handled in the thread `osTimerThread`. Callback functions run under t
 
 <span class="images">![](Images/Thread/rtos_timer.png)</span>
 
-###### RtosTimer example
+##### RtosTimer example
 
 Control the timing of four LEDs.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed/code/rtos_timer/)](https://developer.mbed.org/teams/mbed/code/rtos_timer/file/tip/main.cpp)
 
-###### RtosTimer class reference
+##### RtosTimer class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1RtosTimer.html)
 
-##### Interrupt Service Routines (ISR)
+#### Interrupt Service Routines (ISR)
 
 You can use the same RTOS API in ISR. The only two warnings are:
 
 * You cannot use `Mutex`.
 * Wait in ISR is not allowed; all the timeouts in method parameters have to be set to 0.
 
-###### ISR example
+##### ISR example
 
 This example uses a message from the queue to trigger an interrupt.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_isr/)](https://developer.mbed.org/teams/mbed_example/code/rtos_isr/file/40078e697304/main.cpp)
 
-##### Default Timeouts
+#### Default Timeouts
 
 The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
 
@@ -196,7 +196,7 @@ A typical scenario for a producer could be a peripheral triggering an interrupt 
 
 <span class="warnings">**Warning**: No wait in ISR </br>When calling an RTOS object method in an ISR all the timeout parameters have to be set to 0 (no wait); waiting in ISR is not allowed. </span>
 
-##### Status and error codes
+#### Status and error codes
 
 The CMSIS-RTOS functions will return the following statuses:
 
