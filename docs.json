@@ -30,7 +30,6 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/rtos/wait.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/rtos/callbacks.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/drivers/inputs_outputs_intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/drivers/interfaces_intro.md"},
 	    {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/drivers/io_design.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/drivers/AnalogIn.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/drivers/AnalogOut.md"},
