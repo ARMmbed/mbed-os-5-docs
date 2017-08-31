@@ -12,13 +12,13 @@ If you want to share your work:
 
 1. Click **Publish** from the right-click context menu in the Arm Mbed Online Compiler:
 
-	<span class="images">![](images/publish.png)<span>Using the Online Compiler to publish a program</span></span>
+	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/publish.png)<span>Using the Online Compiler to publish a program</span></span>
 
 1. If you have uncommitted changes, you will be prompted to commit your work.
 
 1. If this is the first time you have published this program or library, you will see a dialog box like this one:
 
-	<span class="images">![](images/publish_deatils.png)<span>Completing the dialog box with a description of the program</span></span>
+	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/publish_deatils.png)<span>Completing the dialog box with a description of the program</span></span>
 
 1. Enter a description of what you are publishing.
 
@@ -40,4 +40,4 @@ That copies your private repository to the Mbed public website, where other user
 
 The end result is that a published repository is an **exact copy** of your program or library as it exists in your workspace. This ensures that the code works as expected when another user imports your code.
 
-<span class="images">![](images/published_repo.png)<span>The public copy of the program on your Mbed website profile is identical to the one from your private workspace</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/published_repo.png)<span>The public copy of the program on your Mbed website profile is identical to the one from your private workspace</span></span>
