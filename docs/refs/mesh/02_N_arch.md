@@ -15,7 +15,7 @@ The combination of 6LoWPAN stack and 6LoWPAN border router _Access Point_ (AP) s
 
 **Figure 1-1 6LoWPAN network architecture**
 
-![nw-arc](img/6lowpan_network_architecture.png)
+![nw-arc](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_network_architecture.png)
 
 #### 6LoWPAN stack
 
@@ -32,7 +32,7 @@ These components are illustrated in _Figure 1-2_.
 
 **Figure 1-2 The components that comprise the 6LoWPAN stack architecture**
 
-![stack-arc](img/6lowpan_stack_architecture.png)
+![stack-arc](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_stack_architecture.png)
 
 <span class="notes">**Note**: For simplicity, the event core is shown to be part of the same component, alongside  the protocol modules.</span>
 
@@ -81,7 +81,7 @@ _Figure 1-3_ shows the various protocol modules that make up the 6LoWPAN stack, 
 
 **Figure 1-3 The 6LoWPAN stack placed alongside the OSI model**
 
-![osi](img/6lowpan_stack_osi_model.png)
+![osi](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_stack_osi_model.png)
 
 ##### Protocol layers and related standards
 
