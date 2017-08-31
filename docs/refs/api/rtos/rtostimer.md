@@ -6,7 +6,7 @@ Use the [`RtosTimer`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/
 
 Timers are handled in the thread `osTimerThread`. Callback functions run under the control of this thread and may use CMSIS-RTOS API calls.
 
-<span class="images">![](Images/Thread/rtos_timer.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rtos_timer.png)</span>
 
 ##### RtosTimer example
 
