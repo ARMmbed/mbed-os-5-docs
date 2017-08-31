@@ -10,9 +10,6 @@ Blinky is a very simple program that blinks the LED on your board every half sec
 
 #### Blinky's code
 
->>> C
->>>
-
 Blinky's code is a simple `while` loop inside the `main()` function:
 
 >>> C
@@ -39,10 +36,7 @@ Mbed CLI is an offline tool, meaning you'll have to install it before you can wo
 
 #### Setting context
 
->>> C
->>>
-
-Whenever you work with Mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called ``my_program``:
+Whenever you work with Mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called `my_program`:
 
 >>> C
 ```
@@ -57,9 +51,6 @@ You can then start running Mbed CLI commands, and they will run in the correct c
 Mbed CLI can import Blinky, along with the Arm Mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
 
 To import Blinky, from the command-line:
-
->>> C
->>>
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
 
@@ -88,9 +79,6 @@ Invoke `mbed compile`, specifying:
 
 * Your board: `-m <board_name>`.
 * Your toolchain: `-t <GCC_ARM`, `ARM` or `IAR`>`.
-
->>> C
->>>
 
 For example, for the board K64F and the Arm Compiler 5:
 
@@ -128,9 +116,6 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 The program file, `mbed-os-example-blinky.bin`, is under your `mbed-os-example-blinky\build\K64F\ARM\` folder.
 
 #### Programming your board
-
->>> C
->>>
 
 Arm Mbed Enabled boards are programmable by drag and drop over a USB connection.
 
