@@ -2,7 +2,7 @@
 
 [`Mail`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mail.html) works like a queue, with the added benefit of providing a memory pool for allocating messages (not only pointers).
 
-<span class="images">![](Images/Thread/mail_queue.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mail_queue.png)</span>
 
 ##### Mail class reference
 
