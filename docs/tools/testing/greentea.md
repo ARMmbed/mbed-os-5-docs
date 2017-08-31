@@ -603,12 +603,3 @@ mbedgt --report-text text_report.text
 
 #### Host test detection
 When developing with Mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in Mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the Mbed OS test directory structure, please see the [Arm Mbed CLI documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/#test-directory-structure).
-
-#### Common issues
-
-##### `IOERR_SERIAL` errors
-
-Possible causes:
-
-- Another program is using the serial port. Be sure all terminals and other instances of Greentea are closed before trying again.
-- The Mbed interface firmware is out of date. Please see the platform's page on [`developer.mbed.org`](https://developer.mbed.org/) for details about how to update it.
