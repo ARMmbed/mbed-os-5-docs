@@ -4,7 +4,7 @@ A [`Mutex`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_
 
 <span class="warnings"> **Warning - ISR:** The `Mutex` methods cannot be called from interrupt service routines (ISR). In the current version of Mbed OS, if you attempt to use a mutex from within an ISR, nothing happens; attempts to lock a mutex succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an ISR, you can break the thread safety mechanisms and introduce race-conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening. </span>
 
-<span class="images">![](Images/Thread/Mutex.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
 
 ##### Mutex example
 
