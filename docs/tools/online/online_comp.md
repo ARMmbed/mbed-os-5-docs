@@ -1,17 +1,17 @@
-## Arm Mbed Online Compiler
+### Arm Mbed Online Compiler
 
 The Arm Mbed Online Compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is [an Arm Mbed developer account](https://developer.mbed.org/account/signup/).
 
 The compiler is always available on [`https://developer.mbed.org/compiler/`](https://developer.mbed.org/compiler/).
 
-### Video summary
+#### Video summary
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the Mbed Online Compiler</span></span>
 
 
-### Keyboard shortcuts
+#### Keyboard shortcuts
 
-#### Navigation
+##### Navigation
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -30,7 +30,7 @@ The compiler is always available on [`https://developer.mbed.org/compiler/`](htt
 | Ctrl + up arrow | Scroll up one row |
 | Ctrl + down arrow | Scroll down one row |                            
 
-#### Ctrl key sequences
+##### Ctrl key sequences
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -62,7 +62,7 @@ The compiler is always available on [`https://developer.mbed.org/compiler/`](htt
 | Ctrl + / | Toggle line comment (using slashes) |
 | Ctrl + Shift + / | Toggle block comment (using /* ... */)|
 
-#### Misc
+##### Misc
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -77,9 +77,9 @@ The compiler is always available on [`https://developer.mbed.org/compiler/`](htt
 | F9 | Compile and download |
 | F10 | Compile all and download |
 
-#### Touch device shortcuts
+##### Touch device shortcuts
 
-##### Editor
+###### Editor
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -89,7 +89,7 @@ The compiler is always available on [`https://developer.mbed.org/compiler/`](htt
 | Hold | Context menu |
 | Touch + drag | Text selection until the touch is released (opens context menu) |
 
-##### Compiler IDE
+###### Compiler IDE
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
