@@ -1,4 +1,4 @@
-## Debugging Applications with Other IDEs
+## Debugging
 
 There are extensive instructions on debugging Arm Mbed OS 5 applications with [uVision 5](Keil.md), [Eclipse](Debugging_Eclipse_pyOCD.md) and [Visual Studio Code](vscode.md), but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](toolchain.md).
 
