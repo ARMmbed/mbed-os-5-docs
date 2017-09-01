@@ -1,4 +1,4 @@
-## 6LoWPAN based mesh networking in Mbed OS
+## Mesh
 
 This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
 
