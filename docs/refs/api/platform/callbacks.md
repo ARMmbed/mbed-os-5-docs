@@ -1,6 +1,6 @@
 ### Callbacks
 
-A callback is a user provided piece of code that is passed to another function. The callback allows an API to execute the user’s code in its own context.
+A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
 ```c++
 // Create a serial object
@@ -19,12 +19,11 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read
-the [Importance of State](callbacks_the_importance_of_state.md) documentation.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](callbacks_the_importance_of_state.md) documentation.
 
 ### How to create callbacks
 
-First we need to understand the syntax of the Callback type. The Callback type is a templated type parameterized by a C++ function declaration:
+First, you need to understand the syntax of the Callback type. The Callback type is a templated type parameterized by a C++ function declaration:
 
 ``` c++
 // Callback</*return type*/(/*parameters*/)> cb;
@@ -44,7 +43,7 @@ void dosomething(int) {
 Callback<void(int)> cb(dosomething);
 ```
 
-If an API provides a function that takes in a callback, we can just pass in a C function or function pointer with the same type:
+If an API provides a function that takes in a callback, you can pass in a C function or function pointer with the same type:
 
 ``` c++
 class ADC {
@@ -59,11 +58,11 @@ ADC adc;
 adc.attach(dosomething);
 ```
 
-But what about state? The Callback type also supports passing a state pointer for a function. This state can be either a pointer to an object that is passed to a member function, or it can be a pointer passed to a C-style function.
+But what about state? The Callback type also supports passing a state pointer for a function. This state can be either a pointer to an object that is passed to a member function, or a pointer passed to a C-style function.
 
-Since this form of creating Callbacks requires two arguments, the Callback will need to be created explicitly using the Callback constructor. The Callback also comes with the lowercase callback function, which creates callbacks based on the arguments type, and avoids the need to repeat the template type.
+Because this form of creating Callbacks requires two arguments, you need to create the Callback explicitly using the Callback constructor. The Callback also comes with the lowercase callback function, which creates callbacks based on the arguments type and avoids the need to repeat the template type.
 
-We can create a callback with a member function
+YOu can create a callback with a member function.
 
 ``` c++
 class Thing {
@@ -82,7 +81,7 @@ Thing thing2;
 adc.attach(callback(&thing2, &Thing::catinthehat));
 ```
 
-Or we can just pass the state to a C-style function
+Or you can pass the state to a C-style function.
 
 ``` c++
 struct thing_t {
@@ -102,13 +101,14 @@ thing_t thing2;
 adc.attach(callback(catinthehat, &thing2));
 ```
 
-An important thing to note, is that this state is restricted to a single pointer. This means you can’t bind both an object and argument to a callback.
+<span class="notes">**Note:** This state is restricted to a single pointer. This means you can’t bind both an object and argument to a callback.</span>
 
 ``` c++
  // Does not work
 adc.attach(callback(&thing, &Thing::dosomething, &arg));
 ```
-If you need to pass multiple arguments to a callback, and you can’t store the arguments in the class, you can create a struct that contains all of the arguments and pass a pointer to that. However, you will need to handle the memory allocation yourself.
+
+If you need to pass multiple arguments to a callback and you can’t store the arguments in the class, you can create a struct that contains all of the arguments and pass a pointer to that. However, you need to handle the memory allocation yourself.
 
 ``` c++
 // Create a struct that contains all of the state needed for “dosomething”
@@ -131,7 +131,7 @@ adc.attach(callback(dosomething_with_arguments, &args)); // yes
 
 ### How to call callbacks
 
-Callbacks overload the function call operator, so you can just call a Callback like you would a normal function:
+Callbacks overload the function call operator, so you can call a Callback like you would a normal function:
 
 ```c++
 void callme(Callback<void(float)> cb) {
@@ -139,7 +139,7 @@ void callme(Callback<void(float)> cb) {
 }
 ```
 
-The only thing to really watch out for is that the Callback type has a null Callback, just like a null function pointer. Uninitialized callbacks are considered null and will assert if called. If you want a call to always succeed you will need to check if it is null first.
+The only thing to watch out for is that the Callback type has a null Callback, just like a null function pointer. Uninitialized callbacks are null and assert if you call them. If you want a call to always succeed, you need to check if it is null first.
 
 ``` c++
 void callmemaybe(Callback<void(float)> cb) {
@@ -149,7 +149,7 @@ void callmemaybe(Callback<void(float)> cb) {
 }
 ```
 
-The Callback class is what’s known in C++ as a “Concrete Type”, that is, the Callback class is lightweight enough to be passed around like an int, pointer, or other primitive type.
+The Callback class is what’s known in C++ as a “Concrete Type”. That is, the Callback class is lightweight enough to be passed around like an int, pointer or other primitive type.
 
 ```c++
 class Thing {
