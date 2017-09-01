@@ -1,4 +1,4 @@
-## Exporting to Third Party Toolchains
+## Exporting
 
 If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
