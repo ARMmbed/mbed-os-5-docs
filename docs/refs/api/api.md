@@ -1,4 +1,4 @@
-## APIs References
+## API References
 
 The APIs in this document are organized by the feature, or group of features, they enable.
 
