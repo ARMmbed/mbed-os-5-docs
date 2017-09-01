@@ -1,6 +1,6 @@
 ### Sonar Example
 
-Here is an example that utilizes everything discussed in the form of a minimal Sonar class.
+Here is an example that uses everything discussed in the form of a minimal Sonar class.
 
 ```c++
 #include <mbed.h>
