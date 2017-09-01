@@ -1,4 +1,4 @@
-## Arm Mbed Tools and Third-party Tools
+## Arm Mbed Tools
 
 The Arm Mbed OS ecosystem includes many tools designed to work with Mbed OS and projects that use Mbed OS throughout the development process. With our development tools, Arm Mbed CLI and the Arm Mbed Online Compiler, you can create, import and build projects. You can compile with any of our supported toolchains and debug with the many IDEs we support. DAPLink and pyOCD let you program and debug your many devices. For validation of your project, you can test your code with Greentea, `htrun` and utest. This section covers all of these tools related to Mbed OS.
 
