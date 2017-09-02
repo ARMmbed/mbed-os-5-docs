@@ -8,7 +8,7 @@ Your application code is written in C and C++. It uses the *application programm
 
 #### Where to start
 
-<span class="tips">If you're working on Windows, you might need to [install a serial driver](getting_started/what_need.md#windows-serial-driver).</span>
+<span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver).</span>
 
 The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](getting_started/first_program.md), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
