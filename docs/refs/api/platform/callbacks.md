@@ -62,7 +62,7 @@ But what about state? The Callback type also supports passing a state pointer fo
 
 Because this form of creating Callbacks requires two arguments, you need to create the Callback explicitly using the Callback constructor. The Callback also comes with the lowercase callback function, which creates callbacks based on the arguments type and avoids the need to repeat the template type.
 
-YOu can create a callback with a member function.
+You can create a callback with a member function.
 
 ``` c++
 class Thing {
