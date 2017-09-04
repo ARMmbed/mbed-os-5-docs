@@ -16,13 +16,13 @@ Arm Mbed Online Compiler
 
 Arm Mbed OS
 
-Arm Mbed TLS - A [comprehensive SSL/TLS solution](TLS.md) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
+Arm Mbed TLS - A [comprehensive SSL/TLS solution](/docs/v5.4/reference/api-references.html#arm-mbed-tls) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
 Arm Mbed uVisor
 
 BLE - Bluetooth low energy.
 
-Blinky - An [example application](first_application.md) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
+Blinky - An [example application](/docs/v5.4/tutorials/your-first-arm-mbed-application.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
 block device
 
@@ -60,7 +60,7 @@ GitHub
 
 GPIO
 
-Greentea - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](greentea.md) is the automated testing tool for Arm Mbed OS development.
+Greentea - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.4/tools/testing-1.html#greentea---test-automation-for-arm-mbed) is the automated testing tool for Arm Mbed OS development.
 
 `htrun`
 
