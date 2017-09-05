@@ -54,6 +54,8 @@ DAPLink - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that
 
 debugging
 
+deprecation - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
+
 dynamic memory
 
 exporter
