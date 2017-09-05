@@ -8,6 +8,8 @@ Abstraction layer
 
 API - Application programming interface
 
+application - An executable module built out of libraries that acts as a final product.
+
 Arm Mbed CLI - The name of the Arm Mbed [command-line tool](cli.md), packaged as `mbed-cli`.
 
 Arm Mbed interface - The extra chip that sits on all Mbed Enabled development boards. It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
@@ -38,6 +40,8 @@ callback
 
 CAN - Controller-area network.
 
+class - 
+
 CI - Continuous integration.
 
 CLI - Command-line interface. 
@@ -54,6 +58,8 @@ dynamic memory
 
 exporter
 
+function - 
+
 Git
 
 GitHub
@@ -68,15 +74,21 @@ I2C - Interintegrated circuit (short-distance, intraboard communication).
 
 IDE - Integrated development environment
 
+library - A module that you can use to build applications.
+
 LoRA - Long range (low power wireless platform)
 
 Makefile
 
 mesh
 
+module - A self-contained unit of code containing classes and functions.
+
 platform - See `board`.
 
 porting
+
+program - See `application`.
 
 pull request
 
