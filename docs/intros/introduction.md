@@ -24,7 +24,7 @@ Once you know how to build an existing application, it's time to learn [how to w
 
 You can monitor and control an Mbed board [to help you debug and test your applications](/docs/v5.4/reference/low-level-details.html).
 
-<span class="tips">**Tip:** You can learn more about debugging [here](docs/v5.4/tutorials/debugging-applications.html).</span>
+<span class="tips">**Tip:** You can learn more about debugging [here](/docs/v5.4/tutorials/debugging-applications.html).</span>
 
 #### How to continue
 
