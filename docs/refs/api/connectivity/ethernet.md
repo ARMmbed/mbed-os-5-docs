@@ -1,6 +1,6 @@
 #### Ethernet
 
-The [EthernetInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classEthernetInterface.html) provides a C++ API for connecting to the internet over an Ethernet connection.
+The [EthernetInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classEthernetInterface.html) provides a C++ API for connecting to the internet over Ethernet.
 
 ##### API
 
