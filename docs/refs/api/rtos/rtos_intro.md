@@ -31,6 +31,19 @@ The CMSIS-RTOS functions will return the following statuses:
 * `osErrorValue`: value of a parameter is out of range.
 * `osErrorOS`: unspecified RTOS error - runtime error but no other error message fits.
 
+##### The main() function
+
+The function `main` is a special thread function that is started at system initialization and has the initial priority `osPriorityNormal`; it is the first thread the RTOS schedules.
+
+A `Thread` can be in the following states:
+
+* `Running`: The currently running thread. Only one thread at a time can be in this state.
+* `Ready`: Threads that are ready to run. Once the ``running`` thread has terminated or is `waiting`, the `ready` thread with the highest priority becomes the `running` thread.
+* `Waiting`: Threads that are waiting for an event to occur.
+* `Inactive`: Threads that are not created or terminated. These threads typically consume no system resources.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_status.png)</span>
+
 ##### RTOS APIs
 
 The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5. Pay particular attention to the [interrupt service routines](rtos.md#interrupt-service-routines) section, which contains important information about how the task management APIs can be used from an interrupt handler.
