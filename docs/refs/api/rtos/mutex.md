@@ -6,6 +6,10 @@ A [`Mutex`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
 
+##### Mutex class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mutex.html)
+
 ##### Mutex example
 
 Use Mutex to protect printf().
@@ -15,7 +19,3 @@ Use Mutex to protect printf().
 <span class="notes">**Note:** C standard library Mutexes</br>The Arm C standard library already has Mutexes in place to protect the access to `stdio`, so on the LPC1768 the above example is not necessary. On the other hand, the LPC11U24 does not provide default `stdio` Mutexes, making the above example a necessity. </span>
 
 <span class="warnings">**Warning:** `stdio`, `malloc` and `new` in ISR</br>Because of the mutexes in the Arm C standard library, you cannot use `stdio` (`printf`, `putc`, `getc` and so on), `malloc` and `new` in ISR. </span>
-
-##### Mutex class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mutex.html)
