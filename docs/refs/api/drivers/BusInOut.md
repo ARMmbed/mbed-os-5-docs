@@ -1,8 +1,12 @@
 #### BusInOut
 
-Use the BusInOut interface as a bidirectional bus that collects a number of [DigitalInOut](DigitalInOut.md) pins that can be read and written as one value.
+BusInOut is an abstraction that takes up to 16 [DigitalInOut](DigitalInOut.md) pins and makes them appear as though they are linearly memory mapped for ease of use. This abstraction is useful for reading or writing multiple pins at the same time. In general this abstraction can be used to make code less cluttered, clearer, and take less time to write. 
 
 You can use any of the numbered Arm Mbed pins as a [DigitalInOut](DigitalInOut.md).
+
+**Tips:**
+* You can have up to 16 pins in a Bus. 
+* The order of pins in the constructor is the reverse order of the pins in the byte order. So if you have BusInOut(a,b,c,d) then the order of bits in the nibble would be `dcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.
 
 ##### API
 
