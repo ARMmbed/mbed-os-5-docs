@@ -1,6 +1,6 @@
 ### Configuring Arm Mbed OS
 
-mbed OS provides some default memory configurations for thread memory allocation. You may want to modify these configurations to better suit your project. Below, I will outline the default configurations and how you can modify them. 
+Mbed OS provides some default memory configurations for thread memory allocation. You may want to modify these configurations to better suit your project. The default configurations and how you can modify them are outlined below. 
 
 #### Thread memory model
 
