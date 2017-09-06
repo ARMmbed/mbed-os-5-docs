@@ -1,6 +1,6 @@
 #### AnalogIn
 
-Use the AnalogIn API to read an external voltage applied to an analog input pin. The voltage is read as a fraction of the system voltage as a floating point value from `0.0` to `1.0` . So if you have a 3.3V system and the voltage applied is 1.65V then the value read by `AnalogIn()` would be `0.5`. 
+Use the AnalogIn API to read an external voltage applied to an analog input pin. The voltage is read as a fraction of the system voltage as a floating point value from `0.0`(VSS) to `1.0`(VCC) . So if you have a 3.3V system and the voltage applied is 1.65V then the value read by `AnalogIn()` would be `0.5`. 
 
 **Tips:**
 
