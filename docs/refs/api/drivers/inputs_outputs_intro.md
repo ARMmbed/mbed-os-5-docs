@@ -1,3 +1,3 @@
-### Drivers
+### Peripherals
 
-Driver APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices. With these drivers, you can read or set the voltage of analog pins, control digital pins individually or as a grouped value and trigger an event when a digital input pin changes value. You can also control the frequency and mark to space ratio of a digital pulse wave (or train).
+Peripheral APIs are the traditional API's used in microcontroller development (GPIO, PWM, I2C, SPI, UART ... etc). The Peripheral API's enable you to interract with and control the physical world. These API's form the basis for the majority of drivers like the Servo Driver, the LCD Drivers, and many more. 
