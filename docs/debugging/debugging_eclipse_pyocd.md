@@ -13,7 +13,7 @@ You need to install Eclipse CDT with the GNU ARM Eclipse plugins to begin:
     1. Click the **Help** menu item and select **Install New Software**.
     1. In the **Work with** box, paste the install address, and press Enter: `http://gnuarmeclipse.sourceforge.net/updates`.
 
-    	If this does not work, please see the [GNU ARM Eclipse solutions and workarounds page](http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/).
+    	If this does not work, please find the [files here](https://dl.bintray.com/gnu-mcu-eclipse/updates/).
     1. The package **GNU ARM C/C++ Cross Development Tools** appears. Select it.
 
         ![Selecting the cross development tools](Images/eclipse2.png)
