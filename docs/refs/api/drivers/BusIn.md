@@ -1,8 +1,12 @@
 #### BusIn
 
-Use the BusIn interface to create a number of DigitalIn pins that can be read as one value.
+BusIn is an abstraction that takes any pins and makes them appear as though they are linearly memory mapped for ease of use. This abstraction is useful for checking multiple inputs in a single pass. In general this abstraction can be used to make code less cluttered, clearer, and take less time to write. 
 
 You can use any of the numbered Arm Mbed pins as a DigitalIn in the BusIn.
+
+**Tips:**
+* You can have up to 16 pins in a Bus. 
+* The order of pins in the constructor is the reverse order of the pins in the byte order. So if you have BusIn(a,b,c,d) then the order of bits in the nibble would be `dcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.
 
 ##### API
 
