@@ -12,14 +12,20 @@ If you want to use Mbed TLS from the GitHub repository, and potentially to edit 
 
 1. Fork the [Mbed OS](https://github.com/ARMmbed/mbed-os) repository.
 
-2. Edit or set the value of `MBED_TLS_RELEASE` to the desired tag branch or revision in the [Makefile](https://github.com/ARMmbed/mbed-os/blob/master/features/mbedtls/importer/Makefile) used for importing Mbed TLS.
+2. Clone the forked repository to your local machine.
 
-3. Open a shell, go to the Mbed TLS importer [directory](https://github.com/ARMmbed/mbed-os/tree/master/features/mbedtls/importer) and run the command:
+3. Open the importer Makefile,`mbed-os/features/mbedtls/importer/Makefile`
+
+4. Edit or set the value of `MBED_TLS_RELEASE` to the desired tag branch or revision used for importing Mbed TLS.
+
+5. Open a shell, and navigate to `mbed-os/features/mbedtls/importer` and run the command:
     ``
     make update && make
     ``
 
-4. Commit, and push the changes before you add your fork with `mbed add` to your project.
+6. Commit, and push the changes to your fork of mbed OS
+
+7. Use `mbed add [your Mbed OS fork URL]` to add your fork to any projects
 
 ##### Configuring Mbed TLS features
 
