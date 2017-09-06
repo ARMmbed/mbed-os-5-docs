@@ -44,7 +44,7 @@ A `Thread` can be in the following states:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_status.png)</span>
 
-#### Signals
+##### Signals
 
 Each `Thread` can wait for signals and be notified of events:
 
