@@ -14,7 +14,7 @@ If you want to use Mbed TLS from the GitHub repository, and potentially to edit 
 
 2. Clone the forked repository to your local machine.
 
-3. Open the importer Makefile,`mbed-os/features/mbedtls/importer/Makefile`
+3. Open the importer Makefile,`mbed-os/features/mbedtls/importer/Makefile`.
 
 4. Edit or set the value of `MBED_TLS_RELEASE` to the desired tag branch or revision used for importing Mbed TLS.
 
@@ -23,9 +23,34 @@ If you want to use Mbed TLS from the GitHub repository, and potentially to edit 
     make update && make
     ``
 
-6. Commit, and push the changes to your fork of mbed OS
+6. Commit, and push the changes to your fork of mbed OS.
 
-7. Use `mbed add [your Mbed OS fork URL]` to add your fork to any projects
+7. Use `mbed add [your Mbed OS fork URL]` to add your fork to any projects.
+
+<span class="notes">_**Note:** You need to provide the exact name that you use in the `#include` directive, including the `<>` or quotes around the name_.
+
+##### Mbed TLS examples
+
+This release includes the following examples:
+
+1. [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/tls-client): Downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
+
+1. [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
+
+1. [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
+
+1. [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
+
+Each of them comes with complete usage instructions as a readme file in the repository.
+
+##### Differences between the standalone and Arm Mbed OS editions
+
+Mbed TLS has a standalone edition (available from the [Mbed TLS website](https://tls.mbed.org/download)) for devices that are not running Mbed OS. However, this guide focuses on the integration of Mbed TLS into Mbed OS. Although the two editions share a codebase, there are a number of differences, mainly in configuration and the platform integration. You should keep those differences in mind when reading articles in our [knowledge base](https://tls.mbed.org/kb), as currently all articles reference the standalone edition.
+
+The key differences are:
+
+- To reduce its footprint, the Mbed OS edition enables a smaller set of features by default in the build configuration file `config.h`. Although the default configuration of the standalone edition puts more emphasis on maintaining interoperability with a wide variety of platforms, the Mbed OS edition only enables the most modern ciphers and most recent version of TLS and DTLS.
+- The following components of Mbed TLS are disabled in the Mbed OS edition: `net.c` and `timing.c`. This is because equivalent platform code is available in Mbed OS.
 
 ##### Configuring Mbed TLS features
 
@@ -52,32 +77,6 @@ Then create a file named `mbed_app.json` at the root of your application with th
     "macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls-config-changes.h\""]
 }
 ```
-
-<span class="notes">_**Note:** You need to provide the exact name that you use in the `#include` directive, including the `<>` or quotes around the name_.
-
-##### Sample programs
-
-This release includes the following examples:
-
-1. [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/tls-client): Downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
-
-1. [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
-
-1. [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
-
-1. [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
-
-Each of them comes with complete usage instructions as a readme file in the repository.
-
-
-##### Differences between the standalone and Arm Mbed OS editions
-
-Mbed TLS has a standalone edition (available from the [Mbed TLS website](https://tls.mbed.org/download)) for devices that are not running Mbed OS. However, this guide focuses on the integration of Mbed TLS into Mbed OS. Although the two editions share a codebase, there are a number of differences, mainly in configuration and the platform integration. You should keep those differences in mind when reading articles in our [knowledge base](https://tls.mbed.org/kb), as currently all articles reference the standalone edition.
-
-The key differences are:
-
-- To reduce its footprint, the Mbed OS edition enables a smaller set of features by default in the build configuration file `config.h`. Although the default configuration of the standalone edition puts more emphasis on maintaining interoperability with a wide variety of platforms, the Mbed OS edition only enables the most modern ciphers and most recent version of TLS and DTLS.
-- The following components of Mbed TLS are disabled in the Mbed OS edition: `net.c` and `timing.c`. This is because equivalent platform code is available in Mbed OS.
 
 ##### Other resources
 
