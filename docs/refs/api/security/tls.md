@@ -4,14 +4,22 @@ Arm Mbed TLS provides a comprehensive SSL/TLS solution and makes it easy for dev
 
 <span class="notes">_**Note:** Mbed TLS needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our [porting guide](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/porting_guide/)._</span>
 
-##### Differences between the standalone and Arm Mbed OS editions
+##### Getting Mbed TLS from GitHub
 
-Mbed TLS has a standalone edition (available from the [Mbed TLS website](https://tls.mbed.org/download)) for devices that are not running Mbed OS. However, this guide focuses on the integration of Mbed TLS into Mbed OS. Although the two editions share a codebase, there are a number of differences, mainly in configuration and the platform integration. You should keep those differences in mind when reading articles in our [knowledge base](https://tls.mbed.org/kb), as currently all articles reference the standalone edition.
+Like most components of Mbed OS, Mbed TLS is an open source project, and its source can be found on GitHub: [ARMmbed/mbedtls](https://github.com/ARMmbed/mbedtls). Unlike most other Mbed OS components, however, you cannot just add the repository with `mbed add`. This is because Mbed TLS also exists as an independent software library for other platforms, so its repository includes files that are not relevant for Mbed OS.
 
-The key differences are:
+If you want to use Mbed TLS from the GitHub repository, and potentially to edit it:
 
-- To reduce its footprint, the Mbed OS edition enables a smaller set of features by default in the build configuration file `config.h`. Although the default configuration of the standalone edition puts more emphasis on maintaining interoperability with a wide variety of platforms, the Mbed OS edition only enables the most modern ciphers and most recent version of TLS and DTLS.
-- The following components of Mbed TLS are disabled in the Mbed OS edition: `net.c` and `timing.c`. This is because equivalent platform code is available in Mbed OS.
+1. Fork the [Mbed OS](https://github.com/ARMmbed/mbed-os) repository.
+
+2. Edit or set the value of `MBED_TLS_RELEASE` to the desired tag branch or revision in the [Makefile](https://github.com/ARMmbed/mbed-os/blob/master/features/mbedtls/importer/Makefile) used for importing Mbed TLS.
+
+3. Open a shell, go to the Mbed TLS importer [directory](https://github.com/ARMmbed/mbed-os/tree/master/features/mbedtls/importer) and run the command:
+    ``
+    make update && make
+    ``
+
+4. Commit, and push the changes before you add your fork with `mbed add` to your project.
 
 ##### Configuring Mbed TLS features
 
@@ -41,23 +49,6 @@ Then create a file named `mbed_app.json` at the root of your application with th
 
 <span class="notes">_**Note:** You need to provide the exact name that you use in the `#include` directive, including the `<>` or quotes around the name_.
 
-##### Getting Mbed TLS from GitHub
-
-Like most components of Mbed OS, Mbed TLS is an open source project, and its source can be found on GitHub: [ARMmbed/mbedtls](https://github.com/ARMmbed/mbedtls). Unlike most other Mbed OS components, however, you cannot just add the repository with `mbed add`. This is because Mbed TLS also exists as an independent software library for other platforms, so its repository includes files that are not relevant for Mbed OS.
-
-If you want to use Mbed TLS from the GitHub repository, and potentially to edit it:
-
-1. Fork the [Mbed OS](https://github.com/ARMmbed/mbed-os) repository.
-
-2. Edit or set the value of `MBED_TLS_RELEASE` to the desired tag branch or revision in the [Makefile](https://github.com/ARMmbed/mbed-os/blob/master/features/mbedtls/importer/Makefile) used for importing Mbed TLS.
-
-3. Open a shell, go to the Mbed TLS importer [directory](https://github.com/ARMmbed/mbed-os/tree/master/features/mbedtls/importer) and run the command:
-    ``
-    make update && make
-    ``
-
-4. Commit, and push the changes before you add your fork with `mbed add` to your project.
-
 ##### Sample programs
 
 This release includes the following examples:
@@ -71,6 +62,16 @@ This release includes the following examples:
 1. [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
 
 Each of them comes with complete usage instructions as a readme file in the repository.
+
+
+##### Differences between the standalone and Arm Mbed OS editions
+
+Mbed TLS has a standalone edition (available from the [Mbed TLS website](https://tls.mbed.org/download)) for devices that are not running Mbed OS. However, this guide focuses on the integration of Mbed TLS into Mbed OS. Although the two editions share a codebase, there are a number of differences, mainly in configuration and the platform integration. You should keep those differences in mind when reading articles in our [knowledge base](https://tls.mbed.org/kb), as currently all articles reference the standalone edition.
+
+The key differences are:
+
+- To reduce its footprint, the Mbed OS edition enables a smaller set of features by default in the build configuration file `config.h`. Although the default configuration of the standalone edition puts more emphasis on maintaining interoperability with a wide variety of platforms, the Mbed OS edition only enables the most modern ciphers and most recent version of TLS and DTLS.
+- The following components of Mbed TLS are disabled in the Mbed OS edition: `net.c` and `timing.c`. This is because equivalent platform code is available in Mbed OS.
 
 ##### Other resources
 
