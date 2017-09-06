@@ -43,9 +43,9 @@ Success. Exiting
 
 ##### Basic working principles
 
-You can use and extend a cellular interface and extended in various different ways. For example,
+You can use and extend a cellular interface in various different ways. For example,
 
-- Using AT commands to control sockets in an IP stack built into the cellular modem.
+- Using AT commands to control sockets in an existing IP stack built into the cellular modem.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
 
@@ -53,7 +53,7 @@ You can use and extend a cellular interface and extended in various different wa
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). Figure 2 above shows the basic design that the driver is based on. In other words, CellularInterface uses PPP. We can summarize this particular basic design as follows:
+[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). In other words, CellularInterface uses PPP. We can summarize this particular design as follows:
 
 * It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
 * The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
@@ -61,11 +61,11 @@ You can use and extend a cellular interface and extended in various different wa
 
 ##### Cellular device porting guide
 
-This section provides guidelines and details for porting a cellular device driver to Mbed OS. It first provides a view of the pieces that compose your new cellular interface and then gives step-by-step instructions on how to port.
+This section guidelines and details porting a cellular device driver to Mbed OS. It first describes the building blocks of your new cellular interface and then gives step-by-step instructions on how to port.
 
 ###### Quick peek
 
-You can implement a cellular network interface in different ways based on your requirements and physical setup. For example:
+You can implement a cellular network interface in different ways depending on your requirements and physical setup. For example:
 
 **Case 1: An implementation using Mbed OS provided network stacks (PPP mode)**
    * Pros
