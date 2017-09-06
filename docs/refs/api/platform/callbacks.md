@@ -47,10 +47,11 @@ If an API provides a function that takes in a callback, you can pass in a C func
 
 ``` c++
 class ADC {
+    // ADC can pass an analog value to the callback
     void attach(Callback<void(float)> cb);
 };
 
-void dosomething(float) {
+void dosomething(float f) {
     // do something
 }
 
@@ -67,7 +68,7 @@ You can create a callback with a member function.
 ``` c++
 class Thing {
     int state;
-    void catinthehat(float f) {
+    void catinthehat(int i) {
         state = // do something
     }
 }
@@ -143,7 +144,7 @@ The only thing to watch out for is that the Callback type has a null Callback, j
 
 ``` c++
 void callmemaybe(Callback<void(float)> cb) {
-    If (cb) {
+    if (cb) {
         cb(1.0f);
     }
 }
