@@ -1,6 +1,6 @@
 #### DigitalIn
 
-Use the DigitalIn interface to read the value of a digital input pin.
+Use the DigitalIn interface to read the value of a digital input pin. The value read will be either 1 or 0.
 
 You can use any of the numbered Arm Mbed pins can be used as a DigitalIn.
 
