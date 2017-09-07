@@ -21,10 +21,9 @@ Note: Some file systems may provide a format function for cleanly initializing a
 
 ##### Partitioning
 
-[Draft]
-- Partitioning allows you to spilt a block device between multiple storage users such that the split is portable across multiple systems. 
-- Partitioning allows you to have mutliple file systems on one disk that is mountable from both Mbed devices and host computers.
-- The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
+Partitioning allows you to spilt a block device between multiple storage users such that the split is portable across multiple systems. Partitioning also allows you to have mutliple file systems on one disk that is mountable from both Mbed OS devices and host computers. The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
+
+Note: File system partitioning is not required if there is only one file system present.
 
 ##### C++ classes
 
