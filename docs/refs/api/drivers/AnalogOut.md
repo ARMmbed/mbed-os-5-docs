@@ -1,10 +1,10 @@
 #### AnalogOut
 
-Use the AnalogOut interface to set the voltage of an analog output pin in the range of VSS to VCC.
+Use the AnalogOut interface to set the voltage of an analog output pin as a floating point number from 0.0 (VSS) to 1.0 (VCC). 
 
 **Tips:**
 
-* Not all pins are capable of being AnalogOut, so check the documentation.
+* Not all pins are capable of being AnalogOut, so check the pinmap for your board.
 * For more information about converting a digital value to its analog representation, see [http://en.wikipedia.org/wiki/Digital-to-analog_converter](http://en.wikipedia.org/wiki/Digital-to-analog_converter).   
 
 ##### API
