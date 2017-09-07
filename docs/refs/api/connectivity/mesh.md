@@ -1,11 +1,11 @@
 #### Arm Mbed Mesh
 
-Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](docs/tutorials/mesh/02_N_arch.md) netoworking stack.
+Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](docs/tutorials/mesh/02_N_arch.md) networking stack.
 
 **Tips:**
-* Currently, 6LoWPAN-ND (neighbour discovery) and Thread bootstrap modes are supported.
-* This module should not be used directly by the applications. The applications should use the `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
-* When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network. No static configuration is supported.
+* The mesh API supports 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes.
+* The applications do not use this module directly. The applications use `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
+* When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network. Mesh does not support static configuration.
 
 ##### API
 
@@ -29,6 +29,6 @@ Mbed Mesh API allows the application to use the IPv6 mesh network topologies thr
 
 ##### Example
 
-The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. The application can be built for the unsecure 6LoWPAN-ND or Thread network.
+The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/main.cpp)
