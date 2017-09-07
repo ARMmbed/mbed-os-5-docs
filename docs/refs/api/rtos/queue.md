@@ -2,12 +2,15 @@
 
 ##### Queue
 
-A [`Queue`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html) allows you to queue pointers to data from producer threads to consumer threads:
-
->>> c
->>>
+A [`Queue`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html) allows you to queue pointers to data from producer threads to consumer threads.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/queue.png)</span>
+
+##### Queue class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html)
+
+##### Queue class example
 
 >>> c
 ```
@@ -23,16 +26,15 @@ if (evt.status == osEventMessage) {
 ```
 >>>
 
-##### Queue class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html)
-
 ##### MemoryPool
 
->>>c
->>>
+You can use the [MemoryPool](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html) class to define and manage fixed-size memory pools.
 
-You can use the [MemoryPool](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html) class to define and manage fixed-size memory pools:
+##### MemoryPool class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html)
+
+##### MemoryPool class example
 
 >>> c
 ```
@@ -43,10 +45,6 @@ message_t *message = mpool.alloc();
 mpool.free(message);
 ```
 >>>
-
-##### MemoryPool class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html)
 
 ##### Queue and MemoryPool example
 
