@@ -2,6 +2,8 @@
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
+For example, the following code allows a user to provide a customized response whenever the serial line receives data:
+
 ```c++
 // Create a serial object
 Serial serial(USBTX, USBRX);
