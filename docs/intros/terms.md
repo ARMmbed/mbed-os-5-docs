@@ -8,7 +8,7 @@ Abstraction layer
 
 API - Application programming interface
 
-application - An executable module built out of libraries that acts as a final product.
+Application - An executable module built out of libraries that acts as a final product.
 
 Arm Mbed CLI - The name of the Arm Mbed [command-line tool](cli.md), packaged as `mbed-cli`.
 
@@ -22,25 +22,31 @@ Arm Mbed TLS - A [comprehensive SSL/TLS solution](/docs/v5.4/reference/api-refer
 
 Arm Mbed uVisor
 
+Bit - 
+
 BLE - Bluetooth low energy.
 
 Blinky - An [example application](/docs/v5.4/tutorials/your-first-arm-mbed-application.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
-block device
+Block Device - A file that represents a device, with data that can be read or written to it in blocks.
 
-board - An Mbed Enabled development board. You can see a complete list of these [here](https://developer.mbed.org/platforms/).
+Board - An Mbed Enabled development board. You can see a complete list of these [here](https://developer.mbed.org/platforms/).
 
-bootloader
+Boolean -
 
-build profile
+Bootloader - The program that loads Mbed OS when a board is turned on.
+
+Build Profile
 
 build script
 
-callback
+Byte - 
+
+Callback
 
 CAN - Controller-area network.
 
-class - 
+Class - 
 
 CI - Continuous integration.
 
@@ -48,19 +54,19 @@ CLI - Command-line interface.
 
 CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
-command-line
+Command-line
 
 DAPLink - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
-debugging
+Debugging - 
 
-deprecation - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
+Deprecation - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
 
-dynamic memory
+Dynamic Memory - 
 
-exporter
+Exporter -
 
-function - 
+Function - 
 
 Git
 
@@ -76,23 +82,27 @@ I2C - Interintegrated circuit (short-distance, intraboard communication).
 
 IDE - Integrated development environment
 
-library - A module that you can use to build applications.
+int - 
+
+Library - A module that you can use to build applications.
 
 LoRA - Long range (low power wireless platform)
 
 Makefile
 
-mesh
+Mesh
 
-module - A self-contained unit of code containing classes and functions.
+Module - A self-contained unit of code containing classes and functions.
 
-platform - See `board`.
+Nibble -
 
-porting
+Platform - See `board`.
 
-program - See `application`.
+Porting
 
-pull request
+Program - See `application`.
+
+Pull Request
 
 REST - Representational State Transfer (API)
 
@@ -100,24 +110,24 @@ RTOS - Real time operating system
 
 RTX
 
-serial
+Serial
 
 SPI - Serial peripheral interface
 
-static memory
+Static Memory
 
 SSL - Secure sockets layer.
 
 STLink - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
-target - See `baord`.
+Target - See `board`.
 
-terminal application
+Terminal Application
 
 TLS - Transport layer security.
 
-toolchain
+Toolchain
 
-Travis?
+Travis -
 
-utest?
+utest -
