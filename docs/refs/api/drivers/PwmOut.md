@@ -6,7 +6,6 @@ Use the PwmOut interface to control the frequency and duty cycle of a PWM signal
 
 * Set the cycle time first, and then set the duty cycle using either a relative time period via the write() function or an absolute time period using the pulsewidth() function. 
 * The default period is 0.020s, and the default pulse width is 0.
-* The PwmOut interface can express the pulse train in many ways to fit different use cases. You can express the period and pulse width directly in units of seconds, milliseconds or microseconds. You can also express the pulse width as a percentage of the period.
 
 ##### API
 
