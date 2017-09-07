@@ -4,7 +4,7 @@ Use the AnalogOut interface to set the voltage of an analog output pin as a floa
 
 **Tips:**
 
-* Not all pins are capable of being AnalogOut, so check the pinmap for your platform.
+* Not all pins are capable of being AnalogOut, so check the pinmap for your board.
 * For more information about converting a digital value to its analog representation, see [http://en.wikipedia.org/wiki/Digital-to-analog_converter](http://en.wikipedia.org/wiki/Digital-to-analog_converter).   
 
 ##### API
