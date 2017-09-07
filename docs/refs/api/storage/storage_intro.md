@@ -27,25 +27,25 @@ To implement a new file system in Mbed OS, an implementor just needs to provide 
 
 Minimal file system operations required:
 
-- rename - [POSIX](http://pubs.opengroup.org/onlinepubs/009695399/functions/rename.html), [user/implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L75).
-- remove - [POSIX](http://pubs.opengroup.org/onlinepubs/009695399/functions/remove.html), [user/implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L67).
-- stat - [POSIX](http://pubs.opengroup.org/onlinepubs/009695399/functions/stat.html), [user/implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L83).
-- mkdir - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/mkdir.html), [user/implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L91).
+- remove: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L86)
+- rename: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L94)
+- stat: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L102)
+- mkdir: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L110)
 
 Minimal file operations required:
 
-- file open - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/open.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h#L63), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L105).
-- file close - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/close.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h#L69), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L112).
-- file read - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/read.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h#L78), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L121).
-- file write - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/write.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h#L86), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L130).
-- file seek - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/lseek.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h#L109), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L157).
+- file open: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L124)
+- file close: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L131)
+- file read: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L140)
+- file write: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L149)
+- file seek: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L176)
 
 Minimal directory operations required:
 
-- dir open - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/opendir.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h#L56), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L186).
-- dir close - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/closedir.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h#L62), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L193).
-- dir read - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/readdir.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h#L70), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L201).
-- dir seek - [POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/functions/seekdir.html), [user API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h#L77), [implementation API](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L209).
+- dir open: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L205)
+- dir close: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L212)
+- dir read: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L220)
+- dir seek: [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L228)
 
 ##### Block device operations
 
