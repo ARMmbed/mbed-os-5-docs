@@ -19,6 +19,10 @@ Additionally, two utility block devices give you better control over how storage
 
 Note: Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.
 
+##### Partitioning
+
+[Add information about filesystem partitioning]
+
 ##### C++ classes
 
 The [FileSystem](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h) class provides the core user interface with general functions that map directly to their global POSIX counterparts. Mbed OS provides [File](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h) and [Dir](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h) classes that represent files and directories in a C++ API that uses object-oriented features in C++.
