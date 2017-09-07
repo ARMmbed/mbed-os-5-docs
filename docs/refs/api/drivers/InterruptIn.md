@@ -14,6 +14,12 @@ Use the InterruptIn interface to trigger an event when a [digital input pin](Dig
 
 * For `printfs` from interrupt context, use [Events](../rtos/events.md) instead.
 
+##### Related
+
+To read an input, see [DigitalIn](DigitalIn.md).
+
+For timer-based interrupts, see [Ticker](../tasks/Ticker.md) (repeating interrupt) and [Timeout](../tasks/TimeOut.md) (one-time interrupt).
+
 ##### Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/InterruptIn_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/InterruptIn_HelloWorld/file/f729f0421740/main.cpp)
@@ -23,9 +29,3 @@ Use the InterruptIn interface to trigger an event when a [digital input pin](Dig
 Try the following example to count rising edges on a pin.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/InterruptIn_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/InterruptIn_ex_1/file/8c7b073576c5/main.cpp)
-
-##### Related
-
-To read an input, see [DigitalIn](DigitalIn.md).
-
-For timer-based interrupts, see [Ticker](../tasks/Ticker.md) (repeating interrupt) and [Timeout](../tasks/TimeOut.md) (one-time interrupt).

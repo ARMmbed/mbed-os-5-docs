@@ -2,10 +2,7 @@
 
 Use the AnalogIn API to read an external voltage applied to an analog input pin. `AnalogIn()` reads the voltage as a fraction of the system voltage. The value is a floating point from `0.0`(VSS) to `1.0`(VCC). For example, if you have a 3.3V system and the applied voltage is 1.65V, then `AnalogIn()` reads `0.5` as the value. 
 
-**Tips:**
-
-* Only certain pins are capable of making these measurements, so check the pinmap of your board for compatible pins.
-* For more information on what it takes to convert an analog signal to its digital representation, see [http://en.wikipedia.org/wiki/Analog-to-digital_converter](http://en.wikipedia.org/wiki/Analog-to-digital_converter).   
+Note: Only certain pins are capable of making these measurements, so check the pinmap of your board for compatible pins. 
 
 ##### API
 
