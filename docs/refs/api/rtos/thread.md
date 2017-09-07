@@ -1,0 +1,23 @@
+#### Thread
+
+The [`Thread`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html) class allows defining, creating and controlling parallel tasks.
+
+Note: The function `main` is a special thread function that is started at system initialization.
+
+##### Thread class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html)
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_priority.png)</span>
+
+##### Thread example
+
+The code below uses two separate threads to blink two LEDs. The first thread is automatically created and executes the `main` function; the second thread is created explicitly inside `main`.
+
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_basic/)](https://developer.mbed.org/teams/mbed_example/code/rtos_basic/file/dc33cd3f4eb9/main.cpp)
+
+##### Thread example with callbacks
+
+The Callback API provides a convenient way to pass arguments to spawned threads.  
+
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/)](https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/file/d4b2a035ffe3/main.cpp)
