@@ -1,15 +1,14 @@
 #### Sleep
 
-There is only one sleep function in the Mbed OS 5.6
+There is only one sleep function in Mbed OS 5.6
 
 ```c++
 void sleep();
 ```
 
-This function invokes Sleep manager that is introduced below.
+This function invokes sleep manager, which we introduce below.
 
-It is invoked in the idle loop by default. This default behaviour can be overwritten by attaching a different the idle hook function pointer.
-
+The idle loop invokes sleep manager by default. You can overwrite this default behaviour by attaching a different idle hook function pointer.
 
 ```c++
 void new_idle_loop()
@@ -29,34 +28,32 @@ There are two available sleep modes:
 
 1. Sleep mode
 
-    The system clock to the core is stopped until a reset or an interrupt occurs. This eliminates dynamic power used by the processor, memory systems and buses. The processor, peripheral and memory state are maintained, and the peripherals continue to work and can generate interrupts.
+    The system clock to the core stops until a reset or an interrupt occurs. This eliminates dynamic power that the processor, memory systems and buses use. This mode maintains the processor, peripheral and memory state, and the peripherals continue to work and can generate interrupts.
 
-    The processor can be woken up by any internal peripheral interrupt or external pin interrupt.
+    You can wake up the processor by any internal peripheral interrupt or external pin interrupt.
 
     The wake-up time should be less than 10 us.
 
 2. Deep sleep mode 
 
-    This processor is setup ready for deep sleep, and sent to sleep. This mode
-    has the same sleep features as sleep plus it powers down peripherals and high speed clocks. All state is still maintained. 
-    The processor can only be woken up by lp ticker, RTC, an external interrupt on a pin or a watchdog timer.
+    This processor is set up ready for deep sleep, and sent to sleep. This mode has the same sleep features as sleep, and it also powers down peripherals and high speed clocks. This mode maintains all state. You can only wake up the processor by lp ticker, RTC, an external interrupt on a pin or a watchdog timer.
 
     The wake-up time should be less than 10 ms.
 
 ##### Latency
 
-The sleep modes introduce some interrupt + wake-up latencies that might affect the application. The times are as follows:
+The sleep modes introduce some interrupt and wake-up latencies that might affect the application. The times are:
 
-Sleep latency - up to 10 microseconds
-Deep sleep latency - up to 10 milliseconds
+- Sleep latency - up to 10 microseconds.
+- Deep sleep latency - up to 10 milliseconds.
 
 ##### Sleep manager
 
 The sleep manager provides API to control sleep modes. Deep sleep might introduce some power savings that can affect an application, for instance high speed clock dependent drivers.
 
-`DeepSleepLock` class provides RAII object for disabling sleep, or explicit lock/unlock methods. To not let an application to enter deep sleep, invoke `DeepSleepLock()::lock()` method. As soon as an application is ready for the deep sleep, allow it by invoking `DeepSleepLock::unlock()` method.
+The `DeepSleepLock` class provides RAII object for disabling sleep, or explicit lock/unlock methods. To prevent an application from entering deep sleep, invoke `DeepSleepLock()::lock()` method. As soon as an application is ready for the deep sleep, allow it by invoking the `DeepSleepLock::unlock()` method.
 
-These mbed OS drivers contain locking deep sleep:
+These Mbed OS drivers contain locking deep sleep:
 
 - `Ticker`
 - `Timeout`
@@ -68,7 +65,7 @@ These mbed OS drivers contain locking deep sleep:
 
 ### Example
 
-SPI asynchronous transfer with deep sleep locking
+This example shows SPI asynchronous transfer with deep sleep locking.
 
 ```c++
 
