@@ -1,82 +1,34 @@
 #### Arm Mbed Mesh
 
-Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](docs/tutorials/mesh/02_N_arch.md) netowrking stack.
+Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](docs/tutorials/mesh/02_N_arch.md) networking stack.
 
-Note: Currently, 6LoWPAN-ND (neighbour discovery) and Thread bootstrap modes are supported.
+**Tips:**
+* The mesh API supports 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes.
+* The applications do not use this module directly. The applications use `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
+* When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network. Mesh does not support static configuration.
+
+##### API
+
+**LoWPANNDInterface**
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/LoWPANNDInterface.h)
+
+**ThreadInterface**
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h)
+
+**NanostackEthernetInterface**
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/NanostackEthernetInterface.h)
 
 ##### Usage
 
-1. Create a network interface and driver objects:
+1. Create a network interface and driver objects.
 1. Initialize the interface with given PHY driver.
-1. Connect to network:
+1. Connect to network.
 
-Note: This module should not be used directly by the applications. The applications should use the `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
+##### Example
 
-Note: When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network. No static configuration is supported.
+The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
-##### Example: 6LoWPAN ND mode
-
-```
-// Create a network interface and driver objects:
-LoWPANNDInterface mesh;
-NanostackRfPhyNcs36510 rf_phy;
-
-int main() {
-    // Initialize the interface with given PHY driver.
-    mesh.initialize(&rf_phy);
-    
-    // Connect to network:
-    if (mesh.connect()) {
-        printf("Connection failed!\r\n");
-        return -1;
-    }
-    
-    printf("connected. IP = %s\r\n", mesh.get_ip_address());
-}
-```
-
-##### Usage example for 6LoWPAN Thread mode
-
-Basically, the same as for ND, but the network interface uses a different class:
-
-```
-// Create a network interface and driver objects:
-ThreadInterface mesh;
-NanostackRfPhyNcs36510 rf_phy;
-
-int main() {
-    // Initialize the interface with given PHY driver.
-    mesh.initialize(&rf_phy);
-    
-    // Connect to network:
-    if (mesh.connect()) {
-        printf("Connection failed!\r\n");
-        return -1;
-    }
-    
-    printf("connected. IP = %s\r\n", mesh.get_ip_address());
-}
-```
-
-##### Usage example with Ethernet
-
-The API is still the same, you just need to provide a driver that implements the `NanostackEthernetPhy` API:
-
-```
-// Create a network interface and driver objects:
-NanostackEthernetInterface eth;
-NanostackEthernetPhyK64F phy;
-
-int main() {
-    // Initialize the interface with given PHY driver.
-    eth.initialize(&phy);
-
-    // Connect to network:
-    if (eth.connect()) {
-        printf("Connection failed!\r\n");
-        return -1;
-    }
-
-    printf("connected. IP = %s\r\n", eth.get_ip_address());
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/main.cpp)
