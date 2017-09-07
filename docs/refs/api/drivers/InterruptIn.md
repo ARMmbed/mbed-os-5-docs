@@ -12,7 +12,7 @@ Use the InterruptIn interface to trigger an event when a [digital input pin](Dig
 
 * No printf, malloc or new in ISR: avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are non re-entrant, and their behavior could be corrupted when called from an ISR.
 
-* For printf's from interrupt context use [Events](../rtos/events.md) instead. 
+* For `printfs` from interrupt context, use [Events](../rtos/events.md) instead.
 
 ##### Hello World!
 
