@@ -4,7 +4,7 @@
 
 Suggested ideas:
 
-Abstraction layer
+Abstraction Layer - 
 
 API - Application programming interface
 
@@ -22,7 +22,7 @@ Arm Mbed TLS - A [comprehensive SSL/TLS solution](/docs/v5.4/reference/api-refer
 
 Arm Mbed uVisor -
 
-Bit - a basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
+Bit - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
 
 BLE - Bluetooth Low Energy.
 
@@ -54,7 +54,7 @@ CLI - Command-line interface.
 
 CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
-Command-line
+Command-line - 
 
 DAPLink - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
@@ -110,11 +110,11 @@ RTOS - Real-Time Operating System.
 
 RTX - 
 
-Serial - 
+Serial - Used in data transmission for the transfer of individual bits of information.
 
 SPI - Serial Peripheral Interface.
 
-Static Memory
+Static Memory - The allocation of memory at compile time, before the program is executed.
 
 SSL - Secure sockets layer.
 
@@ -128,6 +128,6 @@ TLS - Transport Layer Security.
 
 Toolchain - 
 
-Travis -
+Travis CI - a continuous integration service used to build and test software projects hosted at GitHub (see `GitHub`).
 
 utest -
