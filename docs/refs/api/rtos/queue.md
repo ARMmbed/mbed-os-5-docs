@@ -12,7 +12,6 @@ A [`Queue`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_
 
 ##### Queue class example
 
->>> c
 ```
 Queue<message_t, 32> queue;
 
@@ -24,7 +23,6 @@ osEvent evt = queue.get();
 if (evt.status == osEventMessage) {
     message_t *message = (message_t*)evt.value.p;
 ```
->>>
 
 ##### MemoryPool
 
