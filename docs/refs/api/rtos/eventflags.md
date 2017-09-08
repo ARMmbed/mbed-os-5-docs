@@ -1,12 +1,12 @@
 #### EventFlags
 
-The EventFlags class is a C++ wrapper over the Keil RTX EventFlags functionality. For more information and implementation details, see [the Keil CMSIS-RTOS documentation](http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html).
+The EventFlags class is a C++ wrapper over the Keil RTX EventFlags functionality. The EventFlags class provides a mechanism for setting and waiting for flags. It provides a generic way of notifying other threads about conditions or events. You can think of each instance of the EventFlags class as an event channel. There are 31 different flags available for each event. For more information and implementation details, see [the Keil CMSIS-RTOS documentation](http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html).
 
-You can find the Arm Mbed OS EventFlags wrapper source code in the [Mbed OS repository](https://github.com/ARMmbed/mbed-os/blob/master/rtos/EventFlags.h). You can find the Doxygen [here](https://docs.mbed.com/docs/mbed-os-api/en/latest/api/group_rtos.html).
+You can find the Arm Mbed OS EventFlags wrapper source code in the [Mbed OS repository](https://github.com/ARMmbed/mbed-os/blob/master/rtos/EventFlags.h).
 
-##### Overview
+##### API
 
-The EventFlags class provides a mechanism for setting and waiting for flags. It provides a generic way of notifying other threads about conditions or events. Each instance of the EventFlags class can be thought of as an event channel. There are 31 different flags available for each event.
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classrtos_1_1EventFlags.html)
 
 #### Example
 
