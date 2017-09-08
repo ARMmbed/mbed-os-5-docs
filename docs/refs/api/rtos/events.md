@@ -4,7 +4,7 @@ The event loop is a mechanism that you can use to defer the execution of code to
 
 ##### Events Class Reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/Event_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classevents_1_1EventQueue.html)
 
 ##### Events example: deferring from interrupt context
 
