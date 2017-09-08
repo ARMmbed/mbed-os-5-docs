@@ -1,32 +1,6 @@
 script:
-    - |
-      set -eu
-
-      function compile {
-          PYTHONPATH=mbed-os python mbed-os/tools/make.py -t GCC_ARM -m K64F \
-              --source=. --build=BUILD/K64F/GCC_ARM
-      }
-
-      for f in $(find -name '*.md')
-      do
-          # find all c++ snippets and compile
-          for l in $(sed -n '/``` *\(cpp\|c++\)\>/=' $f)
-          do
-              sed -n $l',/```/{/```/d;p}' $f > main.cpp
-              compile
-              rm main.cpp
-          done
-
-          # find all c snippets and compile
-          for l in $(sed -n '/``` *c\>/=' $f)
-          do
-              sed -n $l',/```/{/```/d;p}' $f > main.c
-              compile
-              rm main.c
-          done
-      done
-    set -eu
-    set -o pipefail
+  - |
+    set -eo pipefail
 
     mkdir -p BUILD
     echo '*' > BUILD/.mbedignore
@@ -38,19 +12,16 @@ script:
     function compile {
         if [ "$1" != "NO" ]
         then
-            PYTHONPATH=mbed-os python mbed-os/tools/make.py -t GCC_ARM \
-                -m ${1:-ARCH_PRO} --source=. \
-                --build=BUILD/${1:-ARCH_PRO}/GCC_ARM \
-                | sed '/\(error\|warning\)/I!d'
+            PYTHONPATH=mbed-os python mbed-os/tools/make.py -t GCC_ARM -m ${1:-ARCH_PRO} --source=. --build=BUILD/${1:-ARCH_PRO}/GCC_ARM | sed '/\(error\|warning\)/I!d'
         fi
     }
      
-    for f in $(find -name '*.md')
+    for f in $(find -name mbed-os -prune -o -name '*.md' -print)
     do
         # compile c++ snippets
         for l in $(sed -n '/``` *\(cpp\|c++\)\($\| \+\)/I=' $f)
         do
-            echo "Building $f:$l ..."
+            echo "Validating cpp $f:$l ..."
             sed -n $l',/```/{/```/d;p}' $f > main.cpp
             compile "$(sed -n $l's/ *``` *\(cpp\|c++\)\($\| \+\)//Ip' $f)"
             rm main.cpp
@@ -59,10 +30,27 @@ script:
         # compile c snippets
         for l in $(sed -n '/``` *c\($\| \+\)/I=' $f)
         do
-            echo "Building $f:$l ..."
+            echo "Validating c $f:$l ..."
             sed -n $l',/```/{/```/d;p}' $f > main.c
             compile "$(sed -n $l's/ *``` *c\($\| \+\)//Ip' $f)"
             rm main.c
+        done
+
+        # validate json snippets
+        for l in $(sed -n '/``` *json\($\| \+\)/I=' $f)
+        do
+            echo "Validating json $f:$l ..."
+            sed -n $l',/```/{/```/d;p}' $f > main.json
+            if [ "$(sed -n $l's/ *``` *json\($\| \+\)//Ip' $f)" != "NO" ]
+            then
+                if sed -n '/ *"/q0;/ *[^ ]/q1' main.json
+                then
+                    (echo "{" ; cat main.json ; echo "}") | python -m json.tool > /dev/null
+                else
+                    cat main.json | python -m json.tool > /dev/null
+                fi
+            fi
+            rm main.json
         done
     done
 
@@ -74,4 +62,4 @@ install:
       # Get dependencies
     - git clone https://github.com/armmbed/mbed-os.git
       # Install python dependencies
-    - pip install -r mbed-os/requirements.txt
+    - pip install --user -r mbed-os/requirements.txt

@@ -140,7 +140,7 @@ For example,
         "inherits": ["TargetBond"],
         "device_has": ["ETHERNET", "SPI"],
         "device_name": "JamesBond"
-    },
+    }
 ```
 2. **Use standard pin names**. A standard naming conventions for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. An example is shown below for full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
 
