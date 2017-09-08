@@ -32,20 +32,9 @@ There are two available sleep modes:
 
     You can wake up the processor by any internal peripheral interrupt or external pin interrupt.
 
-    The wake-up time should be less than 10 us.
-
 2. Deep sleep mode 
 
     This processor is set up ready for deep sleep, and sent to sleep. This mode has the same sleep features as sleep, and it also powers down peripherals and high speed clocks. This mode maintains all state. You can only wake up the processor by lp ticker, RTC, an external interrupt on a pin or a watchdog timer.
-
-    The wake-up time should be less than 10 ms.
-
-##### Latency
-
-The sleep modes introduce some interrupt and wake-up latencies that might affect the application. The times are:
-
-- Sleep latency - up to 10 microseconds.
-- Deep sleep latency - up to 10 milliseconds.
 
 ##### Sleep manager
 
