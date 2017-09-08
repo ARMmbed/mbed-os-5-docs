@@ -15,7 +15,7 @@ Reply to a SPI master as slave:
 ```c++
 #include "mbed.h"
 
-SPISlave device(p5, p6, p7, p8); // mosi, miso, sclk, ssel
+SPISlave device(D9, D11, D12, D13); // mosi, miso, sclk, ssel
 
 int main() {
    device.reply(0x00);              // Prime SPI with first reply

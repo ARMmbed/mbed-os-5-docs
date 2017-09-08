@@ -43,10 +43,12 @@ Another notable feature of the API documentation in the Mbed Online Compiler is 
 The documentation is created out of comment blocks in your code, usually located above declarations and definitions. Let's take the following example:
 
 ```c++
+#include <stdint.h>
+
 class HelloWorld {
 	public:
 		HelloWorld();
-		printIt(uint32_t delay = 0);
+		int printIt(uint32_t delay = 0);
 };
 ```
 
@@ -59,6 +61,8 @@ The most important thing about code documentation is explicitly telling the syst
 
 
 ```c++
+#include <stdint.h>
+
 /** My HelloWorld class.
 *  Used for printing "Hello World" on USB serial.
 */
@@ -68,13 +72,15 @@ class HelloWorld {
 		HelloWorld();
 
 		/** Print the text */
-		printIt(uint32_t delay = 0);
+		int printIt(uint32_t delay = 0);
 };
 ```
 
 You can also document single line comments, by starting them with ``///`` or ``//!``:
 
 ```c++
+#include <stdint.h>
+
 //! My HelloWorld class. Used for printing "Hello World" on USB serial.
 class HelloWorld {
 	public:
@@ -82,7 +88,7 @@ class HelloWorld {
 	HelloWorld();
 
 	/// Print the text
-	printIt(uint32_t delay = 0);
+	int printIt(uint32_t delay = 0);
 };
 ```
 
@@ -109,6 +115,8 @@ Doxygen accepts reserved words prefixed with ``\`` or ``@``. Some of the commonl
 Here is an example of advanced documentation:
 
 ```c++
+#include <stdint.h>
+
 /** My HelloWorld class.
 *  Used for printing "Hello World" on USB serial.
 *
@@ -137,7 +145,7 @@ class HelloWorld {
 		*   1 on success,
 		*   0 on serial error
 		*/
-		printIt(uint32_t delay = 0);
+		int printIt(uint32_t delay = 0);
 };
 ```
 

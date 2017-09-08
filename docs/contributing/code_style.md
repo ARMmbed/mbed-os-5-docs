@@ -34,7 +34,7 @@ Mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R
 
 ##### Code sample
 
-```c
+```c NO
 static const PinMap PinMap_ADC[] = {
     {PTC2, ADC0_SE4b, 0},
     {NC , NC , 0}
@@ -43,6 +43,7 @@ static const PinMap PinMap_ADC[] = {
 uint32_t adc_function(analogin_t *obj, uint32_t options)
 {
     uint32_t instance = obj->adc >> ADC_INSTANCE_SHIFT;
+
     switch (options) {
         case 1:
             timeout = 6;
@@ -129,7 +130,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 As an example:
 
-```c
+```cpp NO
 #define ADC_INSTANCE_SHIFT 8 
 
 class AnalogIn {

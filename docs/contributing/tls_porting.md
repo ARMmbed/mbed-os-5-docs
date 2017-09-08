@@ -55,7 +55,7 @@ You have to define a structure `trng_s` that holds all the information needed to
 
 To enable initializing and releasing the peripheral, you must implement the following functions:
 
-```C
+```c NO
 void trng_init(trng_t *obj);
 void trng_free(trng_t *obj);
 ```
@@ -64,7 +64,7 @@ void trng_free(trng_t *obj);
 
 The function `trng_get_bytes()` serves as the primary interface to the entropy source. It is expected to load the collected entropy to the buffer and is declared as follows:
 
-```C
+```c NO
 int trng_get_bytes(trng_t *obj, uint8_t *output, size_t length, size_t *output_length);
 ```
 
@@ -115,7 +115,7 @@ The NV seed entropy source needs to know how to retrieve and store the seed in n
 
 The relevant read/write functions have the following prototypes:
 
-``` C
+``` c NO
 int (*mbedtls_nv_seed_read)( unsigned char *buf, size_t buf_len );
 int (*mbedtls_nv_seed_write)( unsigned char *buf, size_t buf_len );
 ```

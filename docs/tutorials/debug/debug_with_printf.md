@@ -154,7 +154,7 @@ You can learn more on [Wikipedia](http://en.wikipedia.org/wiki/Printf_format_str
 
 If you run this code, you may receive an unpleasant surprise:
 
-```cpp
+```cpp K64F
 #include "mbed.h"
 
 DigitalOut led(LED1);
@@ -221,7 +221,7 @@ enum {
 
 extern unsigned traceLevel;
 
-...
+// ...
 
 // Our first macro prints if the trace level we selected
 // is TRACE_LEVEL_DEBUG or above.
@@ -269,13 +269,17 @@ To avoid pushing during the operation’s run, use `sprintf()` to write the log 
 This is an example implementation of a ring buffer, which wraps `printf()` using a macro called `xprintf()`. Debug messages accumulated using `xprintf()` can be read circularly starting from `ringBufferTail` and wrapping around (`ringBufferTail` + `HALF_BUFFER_SIZE`). An overwrite by the most recently appended message may garble the first message:
 
 ```c
+#include <stdarg.h>
+#include <stdio.h>
+#include <string.h>
+
 #define BUFFER_SIZE 512 /* You need to choose a suitable value here. */
 #define HALF_BUFFER_SIZE (BUFFER_SIZE >> 1)
 
 /* Here's one way of allocating the ring buffer. */
 char ringBuffer[BUFFER_SIZE];
 char *ringBufferStart = ringBuffer;
-char *ringBufferTail  = ringBuffer;
+char *ringBufferTail  = ringBuffer;
 
 void xprintf(const char *format, ...)
 {

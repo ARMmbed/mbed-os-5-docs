@@ -44,7 +44,7 @@ No matter your setup, Mbed OS provides ample framework. You can list common infr
 
 > Only valid for onboard modem types. In other words, **Case 3** is applicable. A hardware abstraction layer is between a cellular modem and an Mbed OS cellular driver. This API provides basic framework for initializing and uninitializing hardware, as well as turning the modem on or off. For example:
 
-```C
+```C NO
 /** Sets the modem up for powering on
  *  modem_init() will be equivalent to plugging in the device, i.e.,
  *  attaching power or serial port.
@@ -57,13 +57,13 @@ void modem_init(modem_t *obj);
 
 > We have enhanced the existing `FileHandle` API to make it more usable for devices - it now supports nonblocking operation, SIGIO-style event notification and polling (see below). This makes a cellular interface implementation independent of underlying physical interface between the cellular modem and MCU, for example Serial UART, USB and so on.
 
-``` CPP
+``` CPP NO
 FileHandle _fh;
 ```
 
 > In case of a UART type of device, Mbed OS provides an implementation of serial device type `FileHandle` with software buffering.
 
-```CPP
+```CPP NO
 FileHandle * _fh = new UARTSerial(TX_PIN, RX_PIN, BAUDRATE);
 ```
 
@@ -73,7 +73,7 @@ FileHandle * _fh = new UARTSerial(TX_PIN, RX_PIN, BAUDRATE);
 
 > An AT command parser that takes in a file handle and subsequently reads and writes to the user provided file handle.
 
-```CPP
+```CPP NO
 ATCmdParser *_at = new ATCmdParser(_fh);
 ```
 
@@ -81,7 +81,7 @@ ATCmdParser *_at = new ATCmdParser(_fh);
 
 > A mechanism to multiplex input and output over a set of file handles (file descriptors). `poll()` examines every file handle provided for any events registered for that particular file handle.
 
-```CPP
+```CPP NO
 /**
 * Where fhs is an array of pollfh structs carrying FileHandle(s) and bit mask of events.
 * nhfs is the number of file handles.
@@ -94,7 +94,7 @@ int poll(pollfh fhs[], unsigned nfhs, int timeout);
 
 > Only valid when **Case 1** is applicable. This provides an interface for cellular drivers to underlying framework provided by the network stack. This in effect means that the driver itself does not depend on a certain network stack. In other words, it talks to any network stack providing this standard PPP interface. For example:
 
-```CPP
+```CPP NO
 /** Connect to a PPP pipe
  *
  *  @param stream       Pointer to a device type file handle (descriptor)
@@ -144,7 +144,7 @@ For example,
 ```
 2. **Use standard pin names**. A standard naming conventions for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. An example is shown below for full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
 
-```C
+```C NO
 typedef enum {
 
 	MDMTXD = P0_15, // Transmit Data

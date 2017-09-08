@@ -24,7 +24,7 @@ The order of handler execution is:
 This example showcases functionality and proper integration with the [Greentea testing automation framework](advanced/greentea.md), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
 ```cpp
-#include "mbed-drivers/test_env.h"
+#include "greentea-client/test_env.h"
 #include "utest/utest.h"
 #include "unity/unity.h"
 
@@ -48,6 +48,7 @@ control_t test_repeats(const size_t call_count) {
     return (call_count < 2) ? CaseRepeatAll : CaseNext;
 }
 
+Timeout timeout;
 void test_callback_validate() {
     // You may also use assertions here
     TEST_ASSERT_EQUAL_PTR(0, 0);
@@ -57,7 +58,7 @@ void test_callback_validate() {
 control_t test_asynchronous() {
     TEST_ASSERT_TRUE_MESSAGE(true, "(true == false) o_O");
     // Set up a callback in the future. This may also be an interrupt
-    minar::Scheduler::postCallback(test_callback_validate).delay(minar::milliseconds(100));
+    timeout.attach_us(test_callback_validate, 100000);
     // Set a 200 ms timeout starting from now
     return CaseTimeout(200);
 }
@@ -68,7 +69,7 @@ control_t test_asynchronous_timeout(const size_t call_count) {
     // but automatically repeat only this handler on timeout
     if (call_count >= 5) {
         // but after the 5th call, the callback finally gets validated
-        minar::Scheduler::postCallback(test_callback_validate).delay(minar::milliseconds(100));
+        timeout.attach_us(test_callback_validate, 100000);
     }
     return CaseRepeatHandlerOnTimeout(200);
 }
@@ -246,7 +247,7 @@ These default handlers are called when you have not overridden a custom handler,
 
 You can specify which default handlers you want to use when wrapping your test cases in the `Specification` class:
 
-```cpp
+```cpp NO
 // Declare your test specification with a custom setup handler
 // and set the default handlers to the predefined “greentea continue” behavior
 Specification specification(greentea_setup, cases, greentea_continue_handlers);
@@ -316,7 +317,7 @@ Please see [the doxygen documentation for implementation details](utest/schedule
 
 Here is the most [basic scheduler implementation without any asynchronous support](test/minimal_scheduler/main.cpp). Note that this does not require any hardware support at all, but you cannot use timeouts in your test cases.
 
-```cpp
+```cpp NO
 volatile utest_v1_harness_callback_t minimal_callback;
 
 static void* utest_minimal_post(const utest_v1_harness_callback_t callback, const uint32_t delay_ms) {
@@ -352,7 +353,7 @@ void main() // or whatever your custom entry point is
 
 Here is the [complete scheduler implementation with any asynchronous support](test/minimal_scheduler_async/main.cpp). Note that this does require at least a hardware timer. This example uses `mbed-hal/us_ticker`. Note that you must not execute the callback in the timer interrupt context, but in the main loop context.
 
-```cpp
+```cpp NO
 volatile utest_v1_harness_callback_t minimal_callback;
 volatile utest_v1_harness_callback_t ticker_callback;
 const ticker_data_t *ticker_data;

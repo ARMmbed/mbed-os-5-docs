@@ -152,7 +152,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
 
-    ``` cpp
+    ``` cpp NO
     /** Wait until a Mutex becomes available.
      *
      * @param   millisec  timeout value or 0 in case of no time-out. (default: osWaitForever)

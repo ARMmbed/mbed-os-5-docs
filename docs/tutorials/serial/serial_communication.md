@@ -17,7 +17,7 @@ This allows you to:
 This program prints a "Hello World" message that you can view on a [terminal application](#terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
 
-```c
+```cpp
 #include "mbed.h"
 
 Serial pc(USBTX, USBRX); // tx, rx
@@ -75,7 +75,7 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 ##### Echo back characters you type
 
-```c
+```cpp
 #include "mbed.h"
 
 Serial pc(USBTX, USBRX);
@@ -94,7 +94,7 @@ int main() {
 
 <span class="images">![](images/NUCLEOF401RE.png)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
-```c
+```cpp
 #include "mbed.h"
 
 Serial pc(USBTX, USBRX); // tx, rx
@@ -121,7 +121,7 @@ int main() {
 
 ##### Pass characters in both directions
 
-```c
+```cpp
 #include "mbed.h"
 
 Serial pc(USBTX, USBRX);
@@ -149,7 +149,7 @@ Tie pins together to see characters echoed back.
 
 By default, the C ``stdin``, ``stdout`` and ``stderr file`` handles map to the PC serial connection:
 
-```c
+```cpp
 #include "mbed.h"
 
 int main() {
@@ -160,7 +160,7 @@ int main() {
 
 ##### Read to a buffer
 
-```c
+```cpp
 #include "mbed.h"
 
 DigitalOut myled(LED1);
