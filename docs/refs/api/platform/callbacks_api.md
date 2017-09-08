@@ -1,10 +1,10 @@
-### Callbacks
+#### Callbacks
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
 This is the technical reference for callbacks. You should read the [introduction to callbacks](callbacks.md) first to understand how to use them.
 
-### API
+##### API
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1Callback_3_01R_07A0_08_4.html)
 
