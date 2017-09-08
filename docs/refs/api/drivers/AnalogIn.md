@@ -6,7 +6,7 @@ Note: Only certain pins are capable of making these measurements, so check the p
 
 ##### API
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/AnalogIn_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1AnalogIn.html)
 
 ##### Hello World!
 

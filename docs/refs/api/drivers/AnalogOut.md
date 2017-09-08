@@ -6,7 +6,7 @@ Note: Not all pins are capable of being AnalogOut, so check the pinmap for your 
 
 ##### API
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/AnalogOut_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1AnalogOut.html)
 
 ##### Hello World!
 

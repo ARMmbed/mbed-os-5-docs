@@ -8,7 +8,7 @@ Note: You can use the CAN interface to write data words out of a CAN port. It wi
 
 API summary
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/CAN_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1CANMessage.html)
 
 ##### Hello World!
 
