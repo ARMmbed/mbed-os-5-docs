@@ -9,7 +9,7 @@ Use the PwmOut interface to control the frequency and duty cycle of a PWM signal
 
 ##### API
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/PwmOut_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1PwmOut.html)
 
 
 ##### Hello World!

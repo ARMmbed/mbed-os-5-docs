@@ -4,14 +4,6 @@ The SPI Interface provides a Serial Peripheral Interface Master.
 
 You can use this interface for communication with SPI slave devices, such as FLASH memory, LCD screens and other modules or integrated circuits.
 
-##### API
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/SPI_8h_source.html)
-
-##### Hello World!
-
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/file/dd9e7d208cbd/main.cpp)
-
 ##### Interface
 
 <span class="images">![](../../images/pin_out.png)</span>
@@ -28,3 +20,11 @@ Mode |  Polarity |  Phase
 3 | 1 | 1  
 
 The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock.
+
+##### API
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1SPI.html)
+
+##### Hello World!
+
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/file/dd9e7d208cbd/main.cpp)
