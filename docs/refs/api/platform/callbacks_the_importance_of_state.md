@@ -1,9 +1,9 @@
 
-### The importance of state
+#### The importance of state
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](callbacks.md).
 
-#### Why not function pointers?
+##### Why not function pointers?
 
 Callbacks have two important pieces of information, the code to execute and the state associated with the callback.
 
@@ -134,7 +134,7 @@ int main() {
 }
 ```
 
-#### Why should you use Callbacks?
+##### Why should you use Callbacks?
 
 Unfortunately, supporting all of the standard C++ function types is difficult.
 
