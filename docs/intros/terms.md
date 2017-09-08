@@ -4,43 +4,49 @@
 
 Suggested ideas:
 
-Abstraction layer
+Abstraction Layer - 
 
 API - Application programming interface
 
-application - An executable module built out of libraries that acts as a final product.
+Application - An executable module built out of libraries that acts as a final product.
 
 Arm Mbed CLI - The name of the Arm Mbed [command-line tool](cli.md), packaged as `mbed-cli`.
 
 Arm Mbed interface - The extra chip that sits on all Mbed Enabled development boards. It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-Arm Mbed Online Compiler
+Arm Mbed Online Compiler -
 
-Arm Mbed OS
+Arm Mbed OS -
 
 Arm Mbed TLS - A [comprehensive SSL/TLS solution](/docs/v5.4/reference/api-references.html#arm-mbed-tls) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
-Arm Mbed uVisor
+Arm Mbed uVisor -
 
-BLE - Bluetooth low energy.
+Bit - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
+
+BLE - Bluetooth Low Energy.
 
 Blinky - An [example application](/docs/v5.4/tutorials/your-first-arm-mbed-application.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
-block device
+Block Device - A file that represents a device, with data that can be read or written to it in blocks.
 
-board - An Mbed Enabled development board. You can see a complete list of these [here](https://developer.mbed.org/platforms/).
+Board - An Mbed Enabled development board. You can see a complete list of these [here](https://developer.mbed.org/platforms/).
 
-bootloader
+Boolean - A binary variable, having two possible values called `true` and `false`.
 
-build profile
+Bootloader - The program that loads Mbed OS when a board is turned on.
 
-build script
+Build Profile - Mbed OS 5 supports three primary build profiles: develop, debug and release.
 
-callback
+Build Script - A build automation and generation utility.
+
+Byte - A unit of digital information that consists of 8 bits (see `Bit`).
+
+Callback - Any executable code that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
 CAN - Controller-area network.
 
-class - 
+Class - An extensible program-code-template for creating objects, providing initial values for state and implementations of behavior.
 
 CI - Continuous integration.
 
@@ -48,76 +54,80 @@ CLI - Command-line interface.
 
 CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
-command-line
+Command-line - 
 
 DAPLink - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
-debugging
+Debugging - 
 
-deprecation - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
+Deprecation - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
 
-dynamic memory
+Dynamic Memory - 
 
-exporter
+Exporter -
 
-function - 
+Function - 
 
-Git
+Git - 
 
-GitHub
+GitHub - A web-based Git development platform for version-controlled repositories.
 
-GPIO
+GPIO - General-purpose input/output, a generic pin that is controllable by the user at run-time.
 
 Greentea - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.4/tools/testing-1.html#greentea---test-automation-for-arm-mbed) is the automated testing tool for Arm Mbed OS development.
 
-`htrun`
+`htrun` - An Mbed OS command used to drive test binary flashing, device reset and test execution.
 
-I2C - Interintegrated circuit (short-distance, intraboard communication).
+I2C - Interintegrated Circuit (short-distance, intraboard communication).
 
-IDE - Integrated development environment
+IDE - Integrated Development Environment.
 
-library - A module that you can use to build applications.
+int - Short for "integer", it is a variable type that can be used to define numeric variables holding whole numbers.
 
-LoRA - Long range (low power wireless platform)
+Library - A module that you can use to build applications.
 
-Makefile
+LoRA - Long range (low power wireless platform).
 
-mesh
+Makefile - A file containing a set of directives used with the make build automation tool. 
 
-module - A self-contained unit of code containing classes and functions.
+Mesh - A network topology in which each node relays data for the network.
 
-platform - See `board`.
+Module - A self-contained unit of code containing classes and functions.
 
-porting
+Nibble - A unit of digital information that consists of 4 bits (see `Bit`).
 
-program - See `application`.
+Platform - See `board`.
 
-pull request
+Porting - A process to add target support to Mbed OS.
+
+Program - See `application`.
+
+Pull Request - Used by version-controlled repositories to propose and collaborate on changes.
 
 REST - Representational State Transfer (API)
 
-RTOS - Real time operating system
+RTOS - Real-Time Operating System.
 
-RTX
+RTX - 
 
-serial
+Serial - Used in data transmission for the transfer of individual bits of information.
 
-SPI - Serial peripheral interface
+SPI - Serial Peripheral Interface.
 
-static memory
+Static Memory - The allocation of memory at compile time, before the program is executed.
 
 SSL - Secure sockets layer.
 
 STLink - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
-target - See `baord`.
+Target - See `board`.
 
-terminal application
+Terminal Application - 
 
-TLS - Transport layer security.
+TLS - Transport Layer Security.
 
-toolchain
+Toolchain - 
 
-Travis?
+Travis CI - a continuous integration service used to build and test software projects hosted at GitHub (see `GitHub`).
 
-utest?
+utest -
