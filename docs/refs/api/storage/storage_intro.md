@@ -33,11 +33,11 @@ To implement a new file system in Mbed OS, an implementor just needs to provide 
 
 A minimal file system needs to provide the following functions:
 
-- file open
-- file close
-- file read
-- file write
-- file seek
+- File open.
+- File close.
+- File read.
+- File write.
+- File seek.
 
 Here is the full API that a filesystem may implement:
 
