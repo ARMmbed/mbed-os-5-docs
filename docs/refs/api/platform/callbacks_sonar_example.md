@@ -1,4 +1,4 @@
-##### Sonar Example
+###### Sonar Example
 
 Here is an example that uses everything discussed in the form of a minimal Sonar class.
 
