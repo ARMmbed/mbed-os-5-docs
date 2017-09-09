@@ -111,7 +111,7 @@
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_version_control.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_pull_requests.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/offline.md"},
-	  {"type": "markdown", "url": "https://github.com/iriark01/mbed-cli/blob/master/README.md"},
+	  {"type": "markdown", "url": "https://github.com/ARMmbed/mbed-cli/blob/master/README.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli_collaboration.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mult_comp.md"},
           {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mbedignore.md"},
