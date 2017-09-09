@@ -11,10 +11,10 @@
 *memap* is automatically invoked after an mbed build finishes successfully. It's also possible to manually run the program with different command-line options, for example:
 
 ```
-$> python memap.py
-usage: memap.py [-h] -t TOOLCHAIN [-o OUTPUT] [-e EXPORT] [-v] file
+$ python memap.py
+usage: memap.py [-h] -t TOOLCHAIN [-d DEPTH] [-o OUTPUT] [-e EXPORT] [-v] file
 
-Memory Map File Analyser for ARM mbed version 0.3.11
+Memory Map File Analyser for ARM mbed version 0.4.0
 
 positional arguments:
   file                  memory map file
@@ -23,38 +23,40 @@ optional arguments:
   -h, --help            show this help message and exit
   -t TOOLCHAIN, --toolchain TOOLCHAIN
                         select a toolchain used to build the memory map file
-                        (ARM, GCC_ARM, IAR)
+                        (ARM, ARM_STD, ARM_MICRO, GCC_ARM, GCC_CR, IAR)
+  -d DEPTH, --depth DEPTH
+                        specify directory depth level to display report
   -o OUTPUT, --output OUTPUT
                         output file name
   -e EXPORT, --export EXPORT
-                        export format (examples: 'json', 'csv-ci', 'table':
-                        default)
+                        export format (examples: json, csv-ci, table: default)
   -v, --version         show program's version number and exit
+
 ```
 
 Result example:
 
 ```
-$> python memap.py GCC_ARM\myprog3.map -t GCC_ARM
-
-+----------------------------+-------+-------+------+
-| Module                     | .text | .data | .bss |
-+----------------------------+-------+-------+------+
-| Fill                       |   170 |     0 | 2294 |
-| Misc                       | 36282 |  2220 | 2152 |
-| core/hal                   | 15396 |    16 |  568 |
-| core/rtos                  |  6751 |    24 | 2662 |
-| features/FEATURE_IPV4      |    96 |     0 |   48 |
-| frameworks/greentea-client |   912 |    28 |   44 |
-| frameworks/utest           |  3079 |     0 |  732 |
-| Subtotals                  | 62686 |  2288 | 8500 |
-+----------------------------+-------+-------+------+
-Allocated Heap: 65540 bytes
-Allocated Stack: 32768 bytes
-Total Static RAM memory (data + bss): 10788 bytes
-Total RAM memory (data + bss + heap + stack): 109096 bytes
-Total Flash memory (text + data + misc): 66014 bytes
-
+$ python mbed-os/tools/memap.py BUILD/K64F/GCC_ARM/example.map -t GCC_ARM
++------------------+-------+-------+-------+
+| Module           | .text | .data |  .bss |
++------------------+-------+-------+-------+
+| [fill]           |    62 |     4 |  2513 |
+| [lib]/libc.a     | 22434 |  2204 |    56 |
+| [lib]/libgcc.a   |  3728 |     0 |     0 |
+| [lib]/libm.a     |    88 |     0 |     0 |
+| [lib]/libnosys.a |    32 |     0 |     0 |
+| [lib]/misc       |   232 |     8 |    28 |
+| main.o           |    56 |     0 |     4 |
+| mbed-os/features |    42 |     0 |   184 |
+| mbed-os/hal      |   450 |     0 |     8 |
+| mbed-os/platform |  1252 |     4 |   269 |
+| mbed-os/rtos     |  5955 |    24 |  6874 |
+| mbed-os/targets  |  9788 |    12 |   384 |
+| Subtotals        | 44119 |  2256 | 10320 |
++------------------+-------+-------+-------+
+Total Static RAM memory (data + bss): 12576 bytes
+Total Flash memory (text + data): 46375 bytes
 ```
 
 ## Information on memory sections
@@ -64,20 +66,34 @@ The table above showed multiple memory sections.
 - ``.text``: is where the code application and constants are located in Flash.
 - ``.data``: nonzero initialized variables; allocated in both RAM and Flash memory (variables are copied from Flash to RAM at runtime).
 - ``.bss``: uninitialized data allocated in RAM, or variables initialized to zero.
-- ``Heap``: dynamic allocations in the Heap area in RAM (for example, used by ``malloc``). The maximum size value may be defined at build time.
-- ``Stack``: dynamic allocations in the Stack area in RAM (for example, used to store local data, temporary data when branching to a subroutine or context switch information). The maximum size value may be defined at build time.
+
+**Note**: This tool displays static RAM and Flash usage. The report does not include heap and stack space because they are usually configured at runtime and are likely to change from one application to another.
 
 There are other entries that require a bit of clarification:
 
 - Fill: represents the bytes in multiple sections (RAM and Flash) that the toolchain has filled with zeros because it requires subsequent data or code to be aligned appropriately in memory.
-- Misc: usually represents helper libraries introduced by the toolchain (like ``libc``), but can also represent modules that are not part of mbed.
+- Misc: usually represents helper libraries introduced by the toolchain but can also represent modules that are not part of mbed.
+
+## Other useful information
+
+It's possible to specify the depth value of the directory level when generating a report. By default, *memap* is configured as `--depth=2`, but note that specifying `--depth=0` displays a full report. For example:
+
+```
+$ python mbed-os/tools/memap.py BUILD/K64F/GCC_ARM/example.map -t GCC_ARM --depth 0
+```
+
+As *memap* is automatically invoked when compiling an application with mbed CLI, it's also possible to specify the depth level with `--stats-depth`. For example:
+
+```
+mbed compile -t GCC_ARM -m K64F --stats-depth 3
+```
 
 ## Current support
 
-We have tested *memap* on Windows 7, Linux and Mac OS X. The GCC_ARM (GNU ARM Embedded Toolchain), ARM (ARM Compiler 5) and IAR toolchains generate memory map files.
+We have tested *memap* on Windows 7, Windows 10, Linux and Mac OS X. The GCC_ARM (GNU ARM Embedded Toolchain), ARM (ARM Compiler 5) and IAR toolchains generate memory map files.
 
 ## Known issues and new features
 
-This utility is considered "alpha" quality at the moment. The information generated by this utility may not be fully accurate and may vary from one toolchain to another.
+The information this utility generates may not be fully accurate and may vary from one toolchain to another. Custom definitions of the linker script files or usage of nonstandard memory sections may cause this variation.
 
 If you are experiencing problems, or would like additional features, please raise a ticket on [GitHub](https://github.com/mbedmicro/mbed/issues) and use ```[memap] ``` in the title.
