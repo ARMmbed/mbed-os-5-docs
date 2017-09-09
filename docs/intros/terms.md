@@ -1,9 +1,5 @@
 ## Glossary
 
-[TODO: This will need a massive edit, and additional info]
-
-Suggested ideas:
-
 Abstraction Layer - 
 
 API - [Application programming interface](/docs/v5.4/reference/api-references.html).
