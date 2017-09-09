@@ -1,4 +1,4 @@
-#### Callback
+#### Callbacks
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
