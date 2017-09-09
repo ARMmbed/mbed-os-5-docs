@@ -23,10 +23,10 @@ void wait_ms(int ms);
 void wait_us(int us);
 ```
 
-##### Example
-
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/wait_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/wait_ex_1/file/7d249aa3d880/main.cpp)
-
 ##### Avoiding OS delay
 
 When you call `wait`, your board's CPU is in a loop waiting for the required time to pass. Using the [Arm Mbed RTOS](rtos.md), you can make a call to `Thread::wait` instead.
+
+##### Example
+
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/wait_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/wait_ex_1/file/7d249aa3d880/main.cpp)
