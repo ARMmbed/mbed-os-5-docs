@@ -11,7 +11,7 @@ This is the technical reference for callbacks. You should read the [introduction
 ###### Serial passthrough example with callbacks
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/)](https://developer.mbed.org/users/mbedAustin/code/SerialPassthrough/file/96cb82af9996/main.cpp)
 
- ###### Thread example with callbacks
+###### Thread example with callbacks
 
 The Callback API provides a convenient way to pass arguments to spawned threads.
 
