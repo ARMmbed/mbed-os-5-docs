@@ -12,8 +12,6 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 * No printf, malloc or new in ISR: Avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
 
-* RTOS Timer: Consider using the [Arm Mbed RTOS Timer](https://developer.mbed.org/handbook/RTOS) instead of a Timeout. Your callback function will not be executed in an ISR, giving you more freedom and safety in your code.
-
 ##### API
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1Timeout.html)
