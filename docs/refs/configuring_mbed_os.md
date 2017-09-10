@@ -26,7 +26,7 @@ The default stack size of the main application thread is 4 kilobytes. This memor
 
 #### Configuring user spawned thread stacks
 
-The default stack size of a user spawned thread is 4 kilobytes. You can configure the stack size of user spawned threads by using the [Mbed config system](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/config_system/) or passing in the [Thread constructor](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__rtos.html#gab9f45e13f619a725b87c1e43c14cf158). You can reduce the default stack size for user spawned threads from 4K to 2K in the following two ways:
+The default stack size of a user spawned thread is 4 kilobytes. You can configure the stack size of user spawned threads by using the [Mbed config system](/docs/v5.4/porting/the-arm-mbed-configuration-system.html) or passing in the [Thread constructor](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__rtos.html#gab9f45e13f619a725b87c1e43c14cf158). You can reduce the default stack size for user spawned threads from 4K to 2K in the following two ways:
 
 1. Create an `mbed_app.json` file for your project with the following content:
 
