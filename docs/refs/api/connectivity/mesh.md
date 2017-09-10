@@ -1,6 +1,6 @@
 #### Mesh
 
-The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](docs/tutorials/mesh/02_N_arch.md) networking stack.
+The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](https://os.mbed.com/docs/v5.4/reference/mesh-1.html) networking stack.
 
 **Tips:**
 * The mesh API supports 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes.
