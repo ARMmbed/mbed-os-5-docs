@@ -4,5 +4,5 @@ Arm Mbed OS lets you write applications that run on embedded devices, by providi
 
 Your application code is written in C++. Your code uses the application programming interfaces (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers.
 
-<span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.5).</span>
+<span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.6).</span>
 
