@@ -2,16 +2,16 @@
 
 The main connectivity APIs in Arm Mbed OS are:
 
-* [Network sockets](network_sockets.md): provide a common interface for using sockets on network devices.
-* [Ethernet](ethernet.md): API for connecting to the internet over an Ethernet connection.
-* [Wi-Fi](wifi.md): API for connecting to the internet with a Wi-Fi device.
-* [Mesh networking](mesh.md): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
-* [Bluetooth Low Energy (BLE)](ble.md): designed for small, energy-efficient BLE applications.
-* [Cellular](cellular.md): API for connecting to the internet using a cellular device.
+* [Network sockets](/docs/v5.4/reference/api-references.html#network-sockets): provide a common interface for using sockets on network devices.
+* [Ethernet](/docs/v5.4/reference/api-references.html#ethernet): API for connecting to the internet over an Ethernet connection.
+* [Wi-Fi](/docs/v5.4/reference/api-references.html#wi-fi): API for connecting to the internet with a Wi-Fi device.
+* [Mesh networking](/docs/v5.4/reference/api-references.html#mesh): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
+* [Bluetooth Low Energy (BLE)](/docs/v5.4/reference/api-references.html#bluetooth-low-energy-ble-1): designed for small, energy-efficient BLE applications.
+* [Cellular](/docs/v5.4/reference/api-references.html#cellular-1): API for connecting to the internet using a cellular device.
 
 ##### Cellular
 
-The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
 
 Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
@@ -97,16 +97,16 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 ##### Arm Mbed Mesh
 
-Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](docs/tutorials/mesh/02_N_arch.md) networking stack.
+Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/reference/mesh-1.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
 * 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 * Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](docs/tutorials/mesh/02_N_arch.md). Application developers use Nanostack through Mbed Mesh API.
+Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.4/reference/mesh-1.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
 
-The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the [Mbed C++ socket API](network_sockets.md) to create a socket to start communication with a remote peer.
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the [Mbed C++ socket API](/docs/v5.4/reference/api-references.html#network-sockets) to create a socket to start communication with a remote peer.
 
 The `NanostackEthernetInterface` is provided for Ethernet.
 
