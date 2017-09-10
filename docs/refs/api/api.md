@@ -9,4 +9,4 @@ The APIs in this document are organized by the feature, or group of features, th
 * [Security](/docs/v5.4/reference/api-references.html#security): working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
 * [Storage](/docs/v5.4/reference/api-references.html#storage): working with the file system.
 
-We also provide guidelines [for using the API documentation in the Arm Mbed Online Compiler](APIs/API_Documentation.md).
+We also provide guidelines [for using the API documentation in the Arm Mbed Online Compiler](/docs/v5.4/reference/generating-api-documentation.html).
