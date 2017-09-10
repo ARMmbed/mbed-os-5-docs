@@ -1,4 +1,4 @@
-### Greentea - test automation for Arm Mbed
+<h3 id="greentea">Greentea</h3>
 
 _**G**eneric **re**gression **en**vironment for **te**st **a**utomation_
 
