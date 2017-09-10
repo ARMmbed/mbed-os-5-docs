@@ -12,8 +12,6 @@ You can create any number of Ticker objects, allowing multiple outstanding inter
 
 * No printf, malloc or new in ISR: avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
 
-* RTOS Timer: Consider using the [Arm Mbed RTOS Timer](Timer.md) instead of a Ticker. In this way your periodic function will not be executed in an ISR, giving you more freedom and safety in your code. </span>
-
 ##### API
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1Ticker.html)
