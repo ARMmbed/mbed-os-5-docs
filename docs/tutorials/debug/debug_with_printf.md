@@ -68,7 +68,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 ![Seeing the output over the serial port](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)
 
-<class span="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
+<class span="notes"> **Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
 ###### Mac OS X
 
