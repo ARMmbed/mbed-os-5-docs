@@ -1,6 +1,6 @@
 #### Wi-Fi
 
-The [WifiInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classWiFiInterface.html) provides a simple C++ API for connecting to the internet over a Wi-Fi device.
+The [WifiInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classWiFiInterface.html) provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
 There are multiple [Wi-Fi components](https://developer.mbed.org/components/cat/wifi/) that implement the WiFiInterface class. For the example below,
 the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) is used.
@@ -15,7 +15,7 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the WiFiInterface class (for example the [ESP8266Interface](https://github.com/armmbed/esp8266-driver)).
 1. Call the ``connect`` function with an SSID and password for the Wi-Fi network.
-1. Once connected, the WiFiInterface can be used as a target for opening [network sockets](network_sockets.md).
+1. Once connected, the WiFiInterface can be used as a target for opening [network sockets](/docs/v5.4/reference/api-references.html#network-sockets).
 
 ##### Example
 
