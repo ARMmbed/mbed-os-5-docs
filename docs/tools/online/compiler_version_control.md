@@ -13,7 +13,7 @@ The main things you can do with a local repository are:
  * **Switch** and **revert** to a different version.
  * **Branch** and **merge** versions.
 
-<span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](collab_intro.md).</span>
+<span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](/docs/v5.4/tools/online.html#collab-online-comp).</span>
 
 #### Video tutorial
 
