@@ -1,6 +1,6 @@
 ### Blinky on Arm Mbed CLI
 
-Blinky is a very simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
+Blinky is a simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
 
 #### Quick start video
 
@@ -32,13 +32,13 @@ int main() {
 
 #### Installing Mbed CLI and a toolchain
 
-Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
+Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI page](https://os.mbed.com/docs/v5.4/tools/offline.html#mbed-cli), and come back here when you're done.
 
 #### Setting context
 
 Whenever you work with Mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called `my_program`:
 
->>> C
+>>> c
 ```
 cd my_program
 ```
@@ -54,7 +54,7 @@ To import Blinky, from the command-line:
 
 1. Navigate to a directory of your choice. We're navigating to our development directory:
 
-  >>> C
+  >>> c
   ```
   cd dev_directory
   ```
@@ -62,7 +62,7 @@ To import Blinky, from the command-line:
 
 2. Import the example:
 
-  >>> C
+  >>> c
   ```
   mbed import mbed-os-example-blinky
   cd mbed-os-example-blinky
