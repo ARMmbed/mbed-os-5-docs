@@ -25,7 +25,7 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](callbacks_the_importance_of_state.md) documentation.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.4/reference/api-references.html#the-importance-of-state) section.
 
 ##### How to create callbacks
 
@@ -175,7 +175,6 @@ public:
     }
 }
 ```
-
 
 ##### The importance of state
 
