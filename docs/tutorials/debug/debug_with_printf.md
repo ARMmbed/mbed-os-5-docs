@@ -55,7 +55,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 ##### Seeing the log messages
 
-###### Windows
+##### Windows
 
 1. Open TeraTerm.
 1. Click *File > New Connection*.
@@ -70,7 +70,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <class span="notes"> **Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
-###### Mac OS X
+##### Mac OS X
 
 1. Open a terminal window.
 1. Enter `screen /dev/tty.usbm`, and press `Tab` to autocomplete.
@@ -81,7 +81,7 @@ Compile this program, and flash it on your development board. You now can inspec
 	* `Ctrl+\`
 	* `y`
 
-###### Linux
+##### Linux
 
 1. Open a terminal window.
 1. Find the handler for your device:
@@ -98,7 +98,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="notes">**Note:** To avoid using `sudo`, set up a udev rule.</span>
 
-###### Setting the baud rate
+##### Setting the baud rate
 
 By default, the speed at which the microcontroller and your computer communicate (the baud rate) is set to 9600 baud. This setting fits most use cases, but you can change it by calling the `baud` function on the serial object:
 
