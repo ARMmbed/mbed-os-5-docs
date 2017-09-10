@@ -1,8 +1,8 @@
 #### BusInOut
 
-Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](DigitalInOut.md) pins that you can read and write as one value.
+Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](/docs/v5.4/reference/api-references.html#digitalinout) pins that you can read and write as one value.
 
-You can use any of the numbered Arm Mbed pins as a [DigitalInOut](DigitalInOut.md).
+You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 Note: The order of pins in the constructor is the reverse order of the pins in the byte order. If you have `BusOut(a,b,c,d,e,f,g,h)`, then the order of bits in the byte is `hgfedcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.
 
