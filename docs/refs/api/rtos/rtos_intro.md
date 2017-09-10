@@ -13,9 +13,8 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 * [Semaphore](/docs/v5.4/reference/api-references.html#semaphore): The class that manages thread access to a pool of shared resources of a certain type.
 * [Queue and Memory Pool](/docs/v5.4/reference/api-references.html#queue-and-memorypool): Classes used to queue pointers and to define and manage fixed-size memory pools.
 * [RtosTimer](/docs/v5.4/reference/api-references.html#rtostimer): A deprecated class used to control timer functions in the system.
-* [Interrupt Service Routine]():
-* [Event](): The queue to store events, extract them and excute them later.
-* [EventFlag](): 
+* [Event](/docs/v5.4/reference/api-references.html#events): The queue to store events, extract them and excute them later.
+* [EventFlag](https://os-doc-builder.test.mbed.com/docs/v5.4/reference/api-references.html#eventflags): 
 
 ##### Default Timeouts
 
@@ -23,7 +22,7 @@ The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for
 
 A typical scenario for a producer could be a peripheral triggering an interrupt to notify an event; in the corresponding interrupt service routine you cannot wait (this would deadlock the entire system). On the other side, the consumer could be a background thread waiting for events; in this case the desired default behaviour is not using CPU cycles until this event is produced, hence the `osWaitForever`.
 
-<span class="warnings">**Warning**: No wait in ISR </br>When calling an RTOS object method in an ISR all the timeout parameters have to be set to 0 (no wait); waiting in ISR is not allowed. </span>
+<span class="warnings">**Warning**: No wait in ISR </br> When calling an RTOS object method in an ISR, all the timeout parameters must be set to 0 (no wait); waiting in ISR is not allowed. </span>
 
 ##### The main() function
 
