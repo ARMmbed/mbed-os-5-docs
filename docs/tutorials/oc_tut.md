@@ -91,11 +91,11 @@ The **Compile** menu offers five options:
 1. **Compile All:** same as *compile*, but rebuilds all source code, even if it hasn't changed since the last compile.
 1. **Build Only:** compiles your code but doesn't download the result.
 1. **Compile Macros:** defines additional macros at compile time.
-1. **Update Docs**: see the [guide for documenting APIs](https://docs.mbed.com/docs/mbed-os-api-reference/en/5.5/APIs/API_Documentation/).
+1. **Update Docs**: see the [guide for documenting APIs](https://os.mbed.com/docs/v5.4/reference/generating-api-documentation.html).
 
 #### Copying the file to the board
 
-<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../getting_started/what_need.md#windows-serial-driver).</span>
+<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](/docs/v5.4/tutorials/serial-communication.html).</span>
 
 Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
 
@@ -105,7 +105,7 @@ Your board should appear on your computer as removable storage. To run your prog
 
 When you add changes to an imported repository in your private workspace, you may want to publish them for others to use.
 
-Unless you are the author of the imported repository or have developer access (see [Multiple Authors](mult_auth.md)), you will be forced to fork (or republish).
+Unless you are the author of the imported repository or have developer access, you will be forced to fork (or republish).
 
 1. Open the context menu of the imported program or library and click **Publish**:
 
@@ -121,13 +121,13 @@ Unless you are the author of the imported repository or have developer access (s
 
 1. Your repository, with all its changes, is published to your profile on the `mbed.org` website.
 
-The forking process is identical to the [code publishing](publishing_code.md) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
+The forking process is identical to the [code publishing](/docs/v5.4/tutorials/using-the-arm-mbed-online-compiler.html#publishing-code) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fork_indication.png)<span>Identifying a forked repository and its ancestor</span></span>
 
 <span class="notes">**Note:** When you fork a repository, the local repository in your workspace is linked to the forked remote repository - the URL changes to the forked repository's URL. You can change the URL by clicking the pencil icon next to the URL in the Revisions panel.</span>
 
-**Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](pull_requests.md) page.**
+**Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](/docs/v5.4/tutorials/using-the-arm-mbed-online-compiler.html#pr-tutorial) page.**
 
 #### Updating from a fork
 
