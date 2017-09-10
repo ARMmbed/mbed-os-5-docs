@@ -70,7 +70,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <class span="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
-###### mac OS X
+###### Mac OS X
 
 1. Open a terminal window.
 1. Enter `screen /dev/tty.usbm`, and press `Tab` to autocomplete.
