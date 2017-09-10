@@ -12,7 +12,7 @@ By default, there are four threads running after boot: the ISR/scheduler thread,
 
 #### Configuring the main thread stack
 
-The default stack size of the main application thread is 4 kilobytes. This memory is dynamically allocated from the global heap. You can configure the stack size of the main thread by using the [Mbed config system](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/config_system/). To reduce the stack size from 4K to 2K, create an `mbed_app.json` file for your project with the following content:
+The default stack size of the main application thread is 4 kilobytes. This memory is dynamically allocated from the global heap. You can configure the stack size of the main thread by using the [Mbed config system](/docs/v5.4/porting/the-arm-mbed-configuration-system.html). To reduce the stack size from 4K to 2K, create an `mbed_app.json` file for your project with the following content:
 
 ```JSON
 {
