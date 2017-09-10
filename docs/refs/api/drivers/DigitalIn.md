@@ -16,7 +16,7 @@ API summary
 
 ##### Related API
 
-To handle an interrupt, see [InterruptIn](InterruptIn.md).
+To handle an interrupt, see [InterruptIn](/docs/v5.4/reference/api-references.html#interruptin).
 
 Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
