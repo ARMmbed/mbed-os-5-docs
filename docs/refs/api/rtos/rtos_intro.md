@@ -2,19 +2,20 @@
 
 The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check [the Keil CMSIS-RTOS tutorial](https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf) and [the element14 introduction to Keil RTX](https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview). You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
 
-The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__rtos.html).
+The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__rtos.html).
 
 ##### RTOS APIs
 
-The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5. Pay particular attention to the [interrupt service routines](rtos.md#interrupt-service-routines) section, which contains important information about how the task management APIs can be used from an interrupt handler.
+The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5. Pay particular attention to the [interrupt service routines](/docs/v5.4/reference/api-references.html#interrupt-service-routines-isr) section, which contains important information about how you can use the RTOS APIs from an interrupt handler.
 
-* [RTOS](#rtos-overview): The CMSIS-RTOS core.
-* [Event Loop](#the-event-loop): The queue to store events, extract them and excute them later.
-* [Ticker](Ticker.md): Set up a recurring interrupt.
-* [Time](Time.md): The C date and time functions.
-* [Timeout](TimeOut.md): Raise interrupt after certain time.
-* [Timer](Timer.md): Measuring small times.
-* [Wait](wait.md): NOP-type wait capabilities.
+* [Thread](/docs/v5.4/reference/api-references.html#thread): The class that allows defining, creating and controlling parallel tasks.
+* [Mutex](/docs/v5.4/reference/api-references.html#mutex): The class used to synchronize the execution of threads.
+* [Semaphore](/docs/v5.4/reference/api-references.html#semaphore): The class that manages thread access to a pool of shared resources of a certain type.
+* [Queue and Memory Pool](/docs/v5.4/reference/api-references.html#queue-and-memorypool): Classes used to queue pointers and to define and manage fixed-size memory pools.
+* [RtosTimer](/docs/v5.4/reference/api-references.html#rtostimer): A deprecated class used to control timer functions in the system.
+* [Interrupt Service Routine]():
+* [Event](): The queue to store events, extract them and excute them later.
+* [EventFlag](): 
 
 ##### Default Timeouts
 
