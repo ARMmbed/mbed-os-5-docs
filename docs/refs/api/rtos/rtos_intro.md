@@ -6,7 +6,7 @@ The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARM
 
 ##### RTOS APIs
 
-The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5. Pay particular attention to the [interrupt service routines](/docs/v5.4/reference/api-references.html#interrupt-service-routines-isr) section, which contains important information about how you can use the RTOS APIs from an interrupt handler.
+The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5.
 
 * [Thread](/docs/v5.4/reference/api-references.html#thread): The class that allows defining, creating and controlling parallel tasks.
 * [Mutex](/docs/v5.4/reference/api-references.html#mutex): The class used to synchronize the execution of threads.
