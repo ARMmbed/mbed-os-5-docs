@@ -44,7 +44,7 @@ The default stack size of a user spawned thread is 4 kilobytes. You can configur
 
     `Thread thread(osPriorityNormal, 2000);`
 
-By default, mbed OS dynamically allocates the memory for the thread's stack from the global heap, though you can change it in the [Thread constructor](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__rtos.html#gab9f45e13f619a725b87c1e43c14cf158). Here is an example application that uses memory allocated from the main thread's stack for the newly spawned thread stack:
+By default, mbed OS dynamically allocates the memory for the thread's stack from the global heap, though you can change it in the [Thread constructor](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__rtos.html#gab9f45e13f619a725b87c1e43c14cf158). Here is an example application that uses memory allocated from the main thread's stack for the newly spawned thread stack:
 
 ```
 int main() {
