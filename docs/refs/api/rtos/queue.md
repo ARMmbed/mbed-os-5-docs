@@ -26,7 +26,7 @@ if (evt.status == osEventMessage) {
 
 ##### MemoryPool
 
-You can use the [MemoryPool](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html) class to define and manage fixed-size memory pools.
+You can use the MemoryPool class to define and manage fixed-size memory pools.
 
 ##### MemoryPool class reference
 
