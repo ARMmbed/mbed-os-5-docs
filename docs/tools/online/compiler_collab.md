@@ -30,7 +30,7 @@ When you import a repository, you are making a clone of a public repository in y
 
 Once imported, the local repository in your workspace will be `linked` to the remote repository by URL to let you check its status, receive new changes and even contribute code to it.
 
-To import a repository, simply click the Import link on the repository's page on the Arm Mbed website, or use the Import button within the Mbed Online Compiler. You can read more about importing on the [Mbed Online Compiler page](../dev_tools/online_comp.md).
+To import a repository, simply click the Import link on the repository's page on the Arm Mbed website, or use the Import button within the Mbed Online Compiler. You can read more about importing on the [Mbed Online Compiler page](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1).
 
 #### Getting updates
 
