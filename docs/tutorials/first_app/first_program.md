@@ -4,11 +4,11 @@ We have an example application called Blinky that you can use to get to know Arm
 
 You can use either of these tools:
 
-* [Arm Mbed CLI](blinky_cli.md).
-* [Arm Mbed Online Compiler](blinky_compiler.md).
+* [Arm Mbed CLI](https://os.mbed.com/docs/v5.4/tools/offline.html#mbed-cli).
+* [Arm Mbed Online Compiler](https://os.mbed.com/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1).
 
 ### Before you begin
 
 Please create a [developer account on Mbed](https://developer.mbed.org/account/signup/).
 
-You might want to read the page [explaining how to connect your board to your computer](serial_communication.md) - especially if you're using Windows.
+You might want to read the page [explaining how to connect your board to your computer](/docs/v5.4/tutorials/serial-communication.html) - especially if you're using Windows.
