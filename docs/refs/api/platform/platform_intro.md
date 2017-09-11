@@ -1,6 +1,10 @@
 ### Platform
 
-The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This sections consists of the `Callback`, `Wait` and `Time` APIs.
+The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This sections consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs: 
+
+- [`Callback`](/docs/v5.4/reference/api-references.html#callback): An API that executes the user’s code in its own context.
+- [`Wait`](/docs/v5.4/reference/api-references.html#wait): An API that provides simple wait capabilities.
+- [`Time`](/docs/v5.4/reference/api-references.html#time): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
 
 ##### Callbacks
 
