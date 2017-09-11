@@ -34,11 +34,11 @@ Add the target description to `mbed-os\targets\targets.json`:
 }
 ```
 
-See the [Mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
+See the [Mbed Target Documentation](/docs/v5.4/reference/arm-mbed-os-porting-guide.html#adding-and-configuring-targets) for more details on what this definition means.
 
 ##### Coding requirements
 
-Please see the contributing guide's section on [contributing code](../cont/code_style.md) for style and ABI requirements.
+Please see the contributing guide's section on [contributing code](/docs/v5.4/reference/publishing-and-contributing.html#code-style-guide) for style and ABI requirements.
 
 ##### Bootstrap code
 
