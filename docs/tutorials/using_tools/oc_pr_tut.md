@@ -1,4 +1,4 @@
-<h4 id="pr-tutorial">Creating and reviewing pull requests using the Online Compiler</h4>
+<h4 id="pr-tutorial">Creating and reviewing pull requests</h4>
 
 ##### Creating a pull request
 
