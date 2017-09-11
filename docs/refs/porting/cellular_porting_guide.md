@@ -184,7 +184,7 @@ Only valid when **Case 4** is applicable.
 
 Only valid when **Case 1** is applicable.
 
-* This is the most complex case - the bulk of the work is implementing the [NSAPI socket and network interfaces](network_sockets.md). The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
+* This is the most complex case - the bulk of the work is implementing the [NSAPI socket and network interfaces](/docs/v5.4/reference/api-references.html#network-sockets). The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
 
 * Use a file handle, such as `UARTSerial`, to provide the raw data connection; then you can use `ATCmdParser` to handle connection logic and the data flow of the socket API, assuming that you use AT commands to control the sockets.
 
@@ -195,7 +195,7 @@ Only valid when **Case 1** is applicable.
 Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
 
 *	For onboard modem types:
-	1. Copy contents of this [folder](mbed-os/features/netsocket/cellular/generic_modem_driver/TESTS/unit_tests/default/gmd_ut_config_header.h) in your implementation directory. For example, netsocket/cellular/YOUR_IMPLEMENTATION/TESTS/unit_tests/default/
+	1. Copy contents of this [folder](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/generic_modem_driver/TESTS/unit_tests/default/gmd_ut_config_header.h) in your implementation directory. For example, `netsocket/cellular/YOUR_IMPLEMENTATION/TESTS/unit_tests/default/`.
  	1.  Rename `OnboardCellularInterface` everywhere in the `main.cpp` with your Class. (This could be a derived class from already provided APIs, as this [subsection](#providing-module-modem-api) mentions.)
  	1.  Make an empty test application with the fork of `mbed-os` where your implementation resides.
  	1.  Create a `.json` file in the root directory of your application, and copy the contents of `template_mbed_app.txt` into it.
@@ -212,4 +212,4 @@ Once you have your target and driver port ready, you can verify your implementat
  	mbed test -n YOUR_TEST_SUITE_NAME
  	```
 
-For more information onthe  `mbed-greentea` testing suite, please visit: https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/greentea/
+For more information on the  `mbed-greentea` testing suite, please visit [its documentation](/docs/v5.4/tools/testing-1.html#greentea).
