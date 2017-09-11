@@ -1,8 +1,8 @@
-## Adding target support to Arm Mbed OS 5
+### Adding target support to Arm Mbed OS 5
 
 Adding a new microcontroller to Arm Mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
-### Adding a new microcontroller and board
+#### Adding a new microcontroller and board
 
 First fork the `mbed-os` repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an Mbed OS example, and add your fork of `mbed-os` using:
 
@@ -17,7 +17,7 @@ git branch my-new-target -u USERNAME
 cd ..
 ```
 
-#### Target description
+##### Target description
 
 Add the target description to `mbed-os\targets\targets.json`:
 
@@ -36,11 +36,11 @@ Add the target description to `mbed-os\targets\targets.json`:
 
 See the [Mbed Target Documentation](mbed_targets.md) for more details on what this definition means.
 
-#### Coding requirements
+##### Coding requirements
 
 Please see the contributing guide's section on [contributing code](../cont/code_style.md) for style and ABI requirements.
 
-#### Bootstrap code
+##### Bootstrap code
 
 You need CMSIS-CORE files for startup and peripheral memory addresses, and you need linker scripts for Arm, IAR and GCC toolchains. These files are usually in the `mbed-os\targets\TARGET_VENDOR\TARGET_MCU_FAMILY\TARGET_MCUNAME\device` directory.
 
@@ -52,11 +52,11 @@ Now verify that your target compiles by using `mbed compile -m MCU_NAME -t <tool
 
 The next step to port a target is to enable the test harness dependencies. To run the test suite, your target must support GPIO, microsecond ticker and serial.
 
-#### GPIO
+##### GPIO
 
 Implement the api declared in `mbed-os/hal/gpio_api.h`. You must define the struct `gpio_t`. This struct is commonly defined in an `objects.h` file within the `mbed-os/targets/TARGET_VENDOR/`, `mbed-os/targets/TARGET_VENDOR/TARGET_MCU_FAMILY` or `mbed-os/targets/TARGET_VENDOR/TARGET_MCU_FAMILY/TARGET_MCUNAME` directories.
 
-#### Microsecond ticker
+##### Microsecond ticker
 
 The microsecond ticker is a system resource that many APIs use. The microsecond ticker needs a one microsecond resolution and uses a free-running hardware counter or timer with match register. Implement the API declared in `mbed-os\hal\us_ticker_api.h`.
 
@@ -66,11 +66,11 @@ At this point, we should be able to compile a handful of tests:
 
 To execute the tests, you need to support [`mbed-ls`](https://github.com/armmbed/mbed-ls).
 
-#### Serial
+##### Serial
 
 Implement the API declared in `mbed-os/hal/serial_api.h`. You must define the `serial_t` struct in `objects.h`. You may use the `serial_t` struct for referencing memory-mapped serial registers and passing related pin and peripheral operation information data that the HAL needs.
 
-#### All the others
+##### All the others
 
 There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the API declared in the API header.
 
