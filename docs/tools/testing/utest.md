@@ -21,7 +21,7 @@ The order of handler execution is:
 
 #### Example
 
-This example showcases functionality and proper integration with the [Greentea testing automation framework](advanced/greentea.md), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
+This example showcases functionality and proper integration with the [Greentea testing automation framework](/docs/v5.4/tools/testing-1.html#greentea), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
 ```cpp
 #include "mbed-drivers/test_env.h"
@@ -310,11 +310,9 @@ There are two functions you need to implement:
 - `void* post_callback(const utest_v1_harness_callback_t callback, const uint32_t delay_ms)`: schedules a `void(void)` callback function in *N* ms.
 - `int32_t cancel_callback_t(void *handle)`: cancels an asynchronous callback.
 
-Please see [the doxygen documentation for implementation details](utest/scheduler.h).
-
 #### Example synchronous scheduler
 
-Here is the most [basic scheduler implementation without any asynchronous support](test/minimal_scheduler/main.cpp). Note that this does not require any hardware support at all, but you cannot use timeouts in your test cases.
+Here is the most basic scheduler implementation without any asynchronous support. Note that this does not require any hardware support at all, but you cannot use timeouts in your test cases.
 
 ```cpp
 volatile utest_v1_harness_callback_t minimal_callback;
@@ -350,7 +348,7 @@ void main() // or whatever your custom entry point is
 
 #### Example asynchronous scheduler
 
-Here is the [complete scheduler implementation with any asynchronous support](test/minimal_scheduler_async/main.cpp). Note that this does require at least a hardware timer. This example uses `mbed-hal/us_ticker`. Note that you must not execute the callback in the timer interrupt context, but in the main loop context.
+Here is the complete scheduler implementation with any asynchronous support. Note that this does require at least a hardware timer. This example uses `mbed-hal/us_ticker`. Note that you must not execute the callback in the timer interrupt context, but in the main loop context.
 
 ```cpp
 volatile utest_v1_harness_callback_t minimal_callback;

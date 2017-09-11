@@ -1,4 +1,4 @@
-## Arm Mbed Tools and Third-party Tools
+## Arm Mbed Tools
 
 The Arm Mbed OS ecosystem includes many tools designed to work with Mbed OS and projects that use Mbed OS throughout the development process. With our development tools, Arm Mbed CLI and the Arm Mbed Online Compiler, you can create, import and build projects. You can compile with any of our supported toolchains and debug with the many IDEs we support. DAPLink and pyOCD let you program and debug your many devices. For validation of your project, you can test your code with Greentea, `htrun` and utest. This section covers all of these tools related to Mbed OS.
 
@@ -17,7 +17,7 @@ Use the instructions below to test our Cloud9-based Arm Mbed Enabled IDE, which 
 
 #### Arm Mbed CLI
 
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](cli.md).
+We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](/docs/v5.4/tools/offline.html#mbed-cli).
 
 #### Compiler versions
 
@@ -29,8 +29,8 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
 
 #### Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the [Online Compiler page](online_comp.md).
+The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the [Online Compiler page](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1).
 
 #### Third party development tools
 
-You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](third_party.md).
+You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](/docs/v5.4/tools/exporting.html).

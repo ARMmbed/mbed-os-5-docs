@@ -18,7 +18,7 @@ The 6LoWPAN stack uses two types of networking topology, namely the star and tre
 
 **Figure 1-5 Networking topologies supported by the 6LoWPAN stack ecosystem**
 
-![nw-topologies](img/6lowpan_stack_networking_topologies.png)
+![nw-topologies](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_stack_networking_topologies.png)
 
 #### MAC
 
@@ -47,7 +47,7 @@ The developer has full control as to when the 6LoWPAN stack attempts to join a n
 
 **Figure 1-6 High level view of the network bootstrap process when using network authentication**
 
-![high-level](img/network_bootstrap_high_level_view.png)
+![high-level](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/network_bootstrap_high_level_view.png)
 
 ##### Join a 6LoWPAN network
 
@@ -62,11 +62,11 @@ _Router Advertisement_ (RA) messages.
 
 **Figure 1-7 The join process for a mesh topology**
 
-![join-mesh](img/join_process_to_router_mesh_6lowpan.png)
+![join-mesh](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/join_process_to_router_mesh_6lowpan.png)
 
 **Figure 1-8 High level state machine description for network bootstrap**
 
-![state-machine](img/state_machine_6lowpan.png)
+![state-machine](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/state_machine_6lowpan.png)
 
 _Figure 1-9_ shows the RPL layer registration and topology formation process message flow for a scenario where the joining node may use multiple hops from the 6LBR.
 
@@ -74,11 +74,11 @@ _Figure 1-9_ shows the RPL layer registration and topology formation process mes
 
 **Figure 1-9 RPL routing layer message flow for multiple hops**
 
-![rpl-multiple](img/rpl_layer_reg_multiple_hops.png)
+![rpl-multiple](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rpl_layer_reg_multiple_hops.png)
 
 **Figure 1-10 High level view of a mesh topology**
 
-![rpl-high-level](img/rpl_mesh_high_level_view.png)
+![rpl-high-level](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rpl_mesh_high_level_view.png)
 
 ##### Join a star network
 
@@ -90,7 +90,7 @@ _Figure 1-11_ shows the _Wireless Personal Area Network_ (WPAN) node (6LN) join 
 
 **Figure 1-11 6LoWPAN join process to a border router**
 
-![join-star](img/join_process_star_6lowpan_router.png)
+![join-star](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/join_process_star_6lowpan_router.png)
 
 Figure 1-12_ shows the RPL layer registration and topology formation process message sequence for a scenario where the joining node is a single hop from the 6LBR.
 
@@ -98,7 +98,7 @@ Figure 1-12_ shows the RPL layer registration and topology formation process mes
 
 **Figure 1-12 The RPL layer registration formation process**
 
-![rpl-single](img/rpl_layer_reg_single_hop.png)
+![rpl-single](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rpl_layer_reg_single_hop.png)
 
 #### Network rejoin process
 

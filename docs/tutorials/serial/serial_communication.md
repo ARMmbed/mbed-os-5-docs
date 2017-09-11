@@ -1,8 +1,8 @@
-### Board to PC communication over USB
+<h3 id="serial-comm">Board to PC communication over USB</h3>
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
-<span class="tips">If you're working on Windows ealier than Windows 10, you might need to [install a serial driver](what_need.md#windows-serial-driver).</span>
+<span class="tips">If you're working on Windows ealier than Windows 10, you might need to [install a serial driver](/docs/v5.4/tutorials/serial-communication.html).</span>
 
 This allows you to:
 
@@ -71,7 +71,7 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try one
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see our [build tools section](../dev_tools/options.md).
+If you're not sure how to build these examples and run them on your board, please see our [build tools section](https://os.mbed.com/docs/v5.4/tools/index.html).
 
 ##### Echo back characters you type
 

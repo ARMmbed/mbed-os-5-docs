@@ -1,33 +1,33 @@
-## Debugging using printf() statements
+### Debugging using printf() statements
 
 An easy way to inspect what your application is doing is to augment your application with log statements. In Arm Mbed, you can use a serial connection to send feedback from your development board back to your computer. This uses the same USB cable that you use to program your device.
 
-### Prerequisites
+#### Prerequisites
 
-#### Windows
+##### Windows
 
 Install the serial port driver for your development board:
 
 * For ST boards: [ST Link Driver](https://developer.mbed.org/teams/ST/wiki/ST-Link-Driver).
-* For all other boards: [Arm Mbed Windows serial port driver](https://developer.mbed.org/handbook/Windows-serial-configuration) - not required for Windows 10.
+* For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver) - not required for Windows 10.
 
 You also need a serial monitor:
 
 * [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
 
-#### mac OS
+##### mac OS
 
 On mac OS, all software comes installed by default.
 
-#### Linux
+##### Linux
 
 If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/).
 
-### Getting started
+#### Getting started
 
-To send data over the serial connection, use the [Serial](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/interfaces/digital/Serial/) object.
+To send data over the serial connection, use the [Serial](https://os.mbed.com/docs/v5.4/reference/api-references.html#serial) object.
 
-#### Example program
+##### Example program
 
 This program blinks the LED on your development board and prints a message every time the LED changes state:
 
@@ -53,7 +53,7 @@ int main() {
 
 Compile this program, and flash it on your development board. You now can inspect these messages using a serial monitor.
 
-#### Seeing the log messages
+##### Seeing the log messages
 
 ##### Windows
 
@@ -64,13 +64,13 @@ Compile this program, and flash it on your development board. You now can inspec
 1. Click *OK*.
 1. Log messages appear in the main window.
 
-![Selecting the COM port](Images/printf1.png)
+![Selecting the COM port](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf1.png)
 
-![Seeing the output over the serial port](Images/printf2.png)
+![Seeing the output over the serial port](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)
 
-<class span="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
+**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.
 
-##### mac OS X
+##### Mac OS X
 
 1. Open a terminal window.
 1. Enter `screen /dev/tty.usbm`, and press `Tab` to autocomplete.
@@ -124,9 +124,9 @@ If you change the baud rate on the device, you also need to change it on your se
     $ screen /dev/ttyACM0 115200
     ```
 
-![Changing the baud rate](Images/printf3.png)
+![Changing the baud rate](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf3.png)
 
-### Printf()
+#### Printf()
 
 As seen above, you use the `printf()` function to communicate back to the user:
 
@@ -142,15 +142,13 @@ As seen above, you use the `printf()` function to communicate back to the user:
 
 The limited code-space on the microcontroller's internal flash and the delay of the program require you to use `printf()` judiciously. Be careful about using it in an event handler, which we expect to terminate within a few microseconds.
 
-#### Parameters
+##### Parameters
 
 `printf()` can receive any number of parameters without knowing how many to expect.
 
 You need to provide a format string with format specifiers, followed by a matching number of arguments. For example, `printf(“temp too high %d”, temp)`: the format string is `temp too high %d`, and the format specifier is `%d`. The last part is the argument: `temp`. It matches the format specifier `%d`, which specifies an integer.
 
-You can learn more on [Wikipedia](http://en.wikipedia.org/wiki/Printf_format_string).
-
-### Printf() from an interrupt context
+#### Printf() from an interrupt context
 
 If you run this code, you may receive an unpleasant surprise:
 
@@ -172,16 +170,16 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](https://developer.mbed.org/handbook/CMSIS-RTOS) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.4/reference/api-references.html#mutex) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-* Signaling from the ISR to the main thread using a [semaphore](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#semaphore) or [mailbox](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mail), and calling `printf` in the main thread.
-* Using an event dispatching library, such as [Mbed events](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/events/).
+* Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.4/reference/api-references.html#semaphore) or [mailbox](https://ost.mbed.com/docs/v5.4/reference/api-references.html#mail), and calling `printf` in the main thread.
+* Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.4/reference/api-references.html#events).
 
 You can see example code for both approaches in [this blog post](https://developer.mbed.org/blog/entry/Simplify-your-code-with-mbed-events/).
 
-### Printf() macros
+#### Printf() macros
 
 You can use macro-replacement, which the preprocessor performs, to do some nifty tricks with `printf()`.
 
@@ -204,7 +202,7 @@ The general form for defining a parameterized macro is:
 
 For example, you can categorize `printf()` statements by severity levels, such as `DEBUG`, `WARNING` and `ERROR`. To do so, define levels of severity. Then, each time you compile or run the program, specify which level you want to use. The macros use the level you specified in an `if` condition. That condition can control the format of the information the macro prints, or whether it prints anything at all. This gives you full control of the debug information presented every run.
 
-Remember that `printf()` can take as many parameters as you give it. Macros support this functionality: you can define them with `...` to mimic printf()’s behavior. To learn more about using `...` in your code, read about [variadic macros on Wikipedia](http://en.wikipedia.org/wiki/Variadic_macro).
+Remember that `printf()` can take as many parameters as you give it. Macros support this functionality: you can define them with `...` to mimic printf()’s behavior.
 
 This is an example:
 
@@ -258,7 +256,7 @@ You can use `ASSERT()` to improve error reporting. It uses `error()` (a part of 
 	} }
 ```
 
-### Fast circular log buffers based on printf()
+#### Fast circular log buffers based on printf()
 
 When capturing logs from events that occur in rapid succession, using `printf()` may introduce unacceptable runtime latencies, which might alter the system's behavior or destabilize it. But delays in `printf()` aren’t because of the cost of generating the messages. The biggest cause of delay with `printf()` is actually pushing the logs to the UART. The solution is not to avoid `printf()` but to avoid pushing the logs to the UART while the operation you're debugging is running.
 
@@ -321,12 +319,12 @@ void xprintf(const char *format, ...)
 }
 ```
 
-### Video tutorials
+#### Video tutorials
 
 Windows:
 
-[![Debugging using printf() calls on Windows](Images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)
+[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)
 
 mac OS X:
 
-[![Debugging using printf() calls on macOS](Images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)
+[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)

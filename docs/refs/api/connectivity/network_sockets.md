@@ -1,6 +1,6 @@
 #### Network Sockets
 
-The network-socket API provides a common interface for using [sockets](https://en.wikipedia.org/wiki/Network_socket) on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
+The network-socket API provides a common interface for using sockets on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
 
 ##### Example
 
@@ -10,13 +10,13 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 ##### The Socket classes
 
-You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classSocket.html) classes are used for managing network sockets. Once opened, a socket provides a pipe through which data can be sent and received to a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use:
+You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classSocket.html) classes are used for managing network sockets. Once opened, a socket provides a pipe through which data can be sent and received to a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use:
 
-- The [UDPSocket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classUDPSocket.html) class provides the ability to send packets of data over [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol), using the ``sendto`` and ``recvfrom`` member functions. Packets can be lost or arrive out of order, so we suggest using a TCPSocket (described below) when guaranteed delivery is required.
+- The [UDPSocket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classUDPSocket.html) class provides the ability to send packets of data over UDP, using the ``sendto`` and ``recvfrom`` member functions. Packets can be lost or arrive out of order, so we suggest using a TCPSocket (described below) when guaranteed delivery is required.
 
-- The [TCPSocket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classTCPSocket.html) class provides the ability to send a stream of data over [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). TCPSockets maintain a stateful connection that starts with the ``connect`` member function. After successfully connecting to a server, you can use the ``send`` and ``recv`` member functions to send and receive data (similar to writing or reading from a file).
+- The [TCPSocket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classTCPSocket.html) class provides the ability to send a stream of data over TCP. TCPSockets maintain a stateful connection that starts with the ``connect`` member function. After successfully connecting to a server, you can use the ``send`` and ``recv`` member functions to send and receive data (similar to writing or reading from a file).
 
-- The [TCPServer](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classTCPServer.html) class provides the ability to accept incoming TCP connections. The `listen` member function sets up the server to listen for incoming connections, and the `accept` member function sets up a stateful TCPSocket instance on an incoming connection.
+- The [TCPServer](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classTCPServer.html) class provides the ability to accept incoming TCP connections. The `listen` member function sets up the server to listen for incoming connections, and the `accept` member function sets up a stateful TCPSocket instance on an incoming connection.
 
 ##### The NetworkInterface classes
 
@@ -24,16 +24,16 @@ A socket requires a NetworkInterface instance when opened to indicate which Netw
 
 Existing network interfaces:
 
-- [EthernetInterface](ethernet.md).
-- [WiFiInterface](wifi.md).
+- [EthernetInterface](/docs/v5.4/reference/api-references.html#ethernet).
+- [WiFiInterface](/docs/v5.4/reference/api-references.html#wi-fi).
 
 ##### The SocketAddress class
 
-Use the [SocketAddress](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classSocketAddress.html) class to represent the IP address and port pair of a unique network endpoint. Most network functions are also overloaded to accept string representations of IP addresses, but SocketAddress can be used to avoid the overhead of parsing IP addresses during repeated network transactions, and can be passed around as a first class object.
+Use the [SocketAddress](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classSocketAddress.html) class to represent the IP address and port pair of a unique network endpoint. Most network functions are also overloaded to accept string representations of IP addresses, but SocketAddress can be used to avoid the overhead of parsing IP addresses during repeated network transactions, and can be passed around as a first class object.
 
 ##### Network errors
 
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
+The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
 
 ``` cpp
 /** Enum of standardized error codes

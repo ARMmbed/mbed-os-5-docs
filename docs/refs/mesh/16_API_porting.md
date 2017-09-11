@@ -11,7 +11,7 @@ Device drivers are a set of functions for providing PHY layer devices for the 6L
 
 The mbed OS port of Nanostack consist of a few helper modules that provide easier API for users and Platform API for working inside the operating system.
 
-![Nanostack inside mbed OS](img/nanostack_in_mbed_OS.png)
+![Nanostack inside mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
 
 * [mbed Mesh API](refs/api/networking/mesh.md) controls and initializes Nanostack on mbed OS.
     * Security settings.
@@ -29,7 +29,7 @@ In mbed OS, Socket API hides the differences between the networking stacks. User
 * TCPSocket
 * TCPServer
 
-![Sockets in mbed OS](img/mbedOS_sockets.png)
+![Sockets in mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbedOS_sockets.png)
 
 For an example of a simple application using Nanostack, see [Example mesh application for mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
@@ -44,7 +44,7 @@ For mbed OS 5, the RF driver implements the `NanostackRfPhy` API.
 `MeshInterfaceNanostack` requires the driver object to be provided when
 initializing.
 
-![NanostackRfPhy](img/NanostackRfPhy.png)
+![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
 
 Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface`
 directly to set up the network and provide a driver. Rest of the classes provide an abstration
@@ -81,7 +81,7 @@ The following steps describe how you can create a new RF driver:
 Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
 from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement their own worker thread to handle the interrupt requests.
 
-![Worker Thread](img/worker_thread.png)
+![Worker Thread](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/worker_thread.png)
 
 Example: Use worked thread and signals from an interrupt
 
@@ -150,7 +150,7 @@ For more details on the TX process, see _Figure 4-1_.
 
 **Figure 4-1 RF driver states**
 
-![scan](img/ed_scan_process.png)
+![scan](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ed_scan_process.png)
 
 In sniffer mode, the device only receives packets, never ACKs or sends them.
 
@@ -178,7 +178,7 @@ State|Description
 
 **Figure 4-2 TX process**
 
-![tx](img/tx_process.png)
+![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
 
 #### PHY device driver register
 

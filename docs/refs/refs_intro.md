@@ -1,20 +1,8 @@
 ## Overview of the Arm Mbed OS References
 
-Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
+Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand. This section covers technical API details. To get started on Mbed OS, see our [getting started guide](/docs/v5.4/tutorials/your-first-arm-mbed-application.html).
 
-Your application code is written in C++. It uses the application programing interfaces (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers and integrating large amounts of software.
+Your application code is written in C++. Your code uses the application programming interfaces (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers.
 
-<span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.5).</span>
+<span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.6).</span>
 
-## APIs References
-
-The APIs in this document are organized by the feature, or group of features, they enable.
-
-* [Task management](APIs/tasks/tasks.md): handling tasks and events in Mbed OS.
-* [Inputs and outputs](APIs/io/inputs_outputs.md): analog, digital, bus, port, PwmOut and interrupts.
-* [Digital interfaces](APIs/interfaces/interfaces.md): serial, SPI, I2C and CAN.
-* [Communication](APIs/communication/communication_index.md): network sockets, Ethernet, Wi-Fi, mesh networking, BLE and Cellular.
-* [Security](APIs/security/security.md): working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
-* [Storage](): working with the file system, block-based storage devices and the MCU's internal Flash memory (through Flash IAP).
-
-We also provide guidelines [for using the API documentation in the Arm Mbed Online Compiler](APIs/API_Documentation.md).

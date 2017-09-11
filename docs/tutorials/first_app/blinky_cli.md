@@ -1,6 +1,6 @@
 ### Blinky on Arm Mbed CLI
 
-Blinky is a very simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
+Blinky is a simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
 
 #### Quick start video
 
@@ -9,9 +9,6 @@ Blinky is a very simple program that blinks the LED on your board every half sec
 <span class="notes">**Note:** the video assumes you've already [installed Mbed CLI](#installing-mbed-cli-and-a-toolchain).
 
 #### Blinky's code
-
->>> C
->>>
 
 Blinky's code is a simple `while` loop inside the `main()` function:
 
@@ -35,16 +32,13 @@ int main() {
 
 #### Installing Mbed CLI and a toolchain
 
-Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI page](../dev_tools/cli.md), and come back here when you're done.
+Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI page](https://os.mbed.com/docs/v5.4/tools/offline.html#mbed-cli), and come back here when you're done.
 
 #### Setting context
 
->>> C
->>>
+Whenever you work with Mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called `my_program`:
 
-Whenever you work with Mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called ``my_program``:
-
->>> C
+>>> c
 ```
 cd my_program
 ```
@@ -58,12 +52,9 @@ Mbed CLI can import Blinky, along with the Arm Mbed OS codebase. The import proc
 
 To import Blinky, from the command-line:
 
->>> C
->>>
-
 1. Navigate to a directory of your choice. We're navigating to our development directory:
 
-  >>> C
+  >>> c
   ```
   cd dev_directory
   ```
@@ -71,7 +62,7 @@ To import Blinky, from the command-line:
 
 2. Import the example:
 
-  >>> C
+  >>> c
   ```
   mbed import mbed-os-example-blinky
   cd mbed-os-example-blinky
@@ -88,9 +79,6 @@ Invoke `mbed compile`, specifying:
 
 * Your board: `-m <board_name>`.
 * Your toolchain: `-t <GCC_ARM`, `ARM` or `IAR`>`.
-
->>> C
->>>
 
 For example, for the board K64F and the Arm Compiler 5:
 
@@ -128,9 +116,6 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 The program file, `mbed-os-example-blinky.bin`, is under your `mbed-os-example-blinky\build\K64F\ARM\` folder.
 
 #### Programming your board
-
->>> C
->>>
 
 Arm Mbed Enabled boards are programmable by drag and drop over a USB connection.
 

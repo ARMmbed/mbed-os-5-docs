@@ -1,10 +1,10 @@
-## 6LoWPAN based mesh networking in Mbed OS
+## Mesh
 
 This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
 
 ### Overview of the 6LoWPAN network
 
-![Node connected to server](img/node_to_server.png)
+![Node connected to server](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/node_to_server.png)
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
 
@@ -14,7 +14,7 @@ In a 6LoWPAN network, devices can have different roles. The colours in the illus
 
 ##### Border router (6LBR)
 
-![Border router](img/br.png)
+![Border router](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/br.png)
 
 A border router is the coordinator of the 6LoWPAN network. It handles the translations between the 6LoWPAN and IPv6 networks.
 ARM does not provide translation to IPv4 network due the limited address space. We recommend using IPv6 tunnels over
@@ -24,14 +24,14 @@ The border router also authenticates the nodes joining the network and keeps tra
 
 ##### 6LoWPAN router (6LR)
 
-![6LoWPAN router](img/6lr.png)
+![6LoWPAN router](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lr.png)
 
 A 6LoWPAN router is a node that can route packets. This role is required to form a topological or mesh network.
 This configuration does not allow nodes to sleep because they route packets to their siblings.
 
 ##### 6LoWPAN host (6LH)
 
-![6LoWPAN Host](img/6lh.png)
+![6LoWPAN Host](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lh.png)
 
 A 6LoWPAN host is a type of node that does not route any packets. It has only one parent routing the packets.
 
@@ -46,7 +46,7 @@ business requirements and use cases the network may have different setups and re
 
 ##### Star network
 
-![Start topology](img/star_topology.png)
+![Start topology](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/star_topology.png)
 
 Star topology is the simplest form of a mesh network. Actually, it is not mesh at all. Every node connects directly to the border router.
 
@@ -54,7 +54,7 @@ In a star network, nodes can be very low-power devices with least amount of RAM 
 
 ##### Mesh/tree network
 
-![Tree type mesh](img/mesh.png)
+![Tree type mesh](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mesh.png)
 
 In a mesh/tree network, all nodes are configured as 6LoWPAN routers.
 
@@ -64,7 +64,7 @@ This network type allows to cover large areas because each node extends the rang
 
 ##### Example networks
 
-![Example networks](img/examples.png)
+![Example networks](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/examples.png)
 
 In the further chapters, we provide recommendations for three different network sizes:
 

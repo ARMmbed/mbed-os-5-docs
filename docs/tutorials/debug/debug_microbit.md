@@ -1,4 +1,4 @@
-### Debugging the micro:bit with pyOCD and GDB
+<h3 id="debug-microbit">Debugging the micro:bit with pyOCD and GDB</h3>
 
 This tutorial shows how to debug a program on the micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.
 
@@ -163,10 +163,6 @@ The next section shows how you can modify what is printed without rebuilding any
 ##### Changing the printf string
 
 You can now connect with a serial client at 9600 bauds and check that the program is printing something.
-
-Before calling printf, the stack looks like this:
-
-<span class="images">![Representation of the stack](../Debugging/Images/stack.png)</span>
 
 The main function passes address 0x20003fe8 to printf in R1, which reads it and sends each character to the serial port until it reaches a \0. Knowing that, you can modify the printed string.
 

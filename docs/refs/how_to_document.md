@@ -6,7 +6,7 @@ In Arm Mbed, API documentation for programs and libraries is fully supported bot
 
 ### Browsing API documentation from within the Arm Mbed Online Compiler
 
-<span class="images">![](images/docs_in_library_1.png)![](images/docs_in_library_2.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/docs_in_library_1.png)![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/docs_in_library_2.png)</span>
 
 Each documentation group contains only the documented definitions for that group:
 
@@ -24,11 +24,11 @@ Each documentation group contains only the documented definitions for that group
 
 The documentation preview contains references presented as standard links that point to subsections of the document or to other documents. They open inside the Mbed Online Compiler when clicked:
 
-<span class="images">![](images/docs_preview1.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/docs_preview1.png)</span>
 
 Clicking one of the "Definition at line X of file source.c" links would open the definition source file in the Editor (see below). You can also open the definition source file with the "Go to definition" option in the context menu from the navigation tree:
 
-<span class="images">![](images/docs_preview2.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/docs_preview2.png)</span>
 
 <span class="notes">
 **Note:** The documentation groups and individual documents **do not exist in your workspace**. They are meta navigation items that reflect the API documentation as present in the library's home page, so they cannot be moved, deleted, renamed and so on.
@@ -143,7 +143,7 @@ class HelloWorld {
 
 To generate documentation for the example above, you have to click **Compile** > **Update Docs**:
 
-<span class="images">![](images/docs_update.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/docs_update.png)</span>
 
 Once the docs are generated, the navigation tree is refreshed, and you can see the formatted documentation:
 

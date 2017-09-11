@@ -11,7 +11,7 @@ frequency bands:
 
 The data rate varies from 20 kbit/s to 250 kbit/s. The data rate available per node should be considered when designing the application. Basically, the data rate is divided between all nodes in the network. Roughly half of the channel capacity should be allocated for signalling purposes, and each hop requires retransmisson of the packet.
 
-![Datarate](img/bw.png)
+![Datarate](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/bw.png)
 
 <span class="tips">**Rule of thumb:** The bandwidth per node is divided by the number of nodes in the network and the number of hops.</span>
 

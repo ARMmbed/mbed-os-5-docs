@@ -4,7 +4,7 @@ This guide explains how to create a bootloader, how to create a main program to 
 
 ### Arm Mbed OS managed bootloader
 
-The tools of Arm Mbed OS know how to manage some bootloader projects. The tools can manage bootloader projects where the bootlodoader comes before the application in ROM and the application starts immediately after the bootloader. If your bootloader does not meet both of these requirements, then please read the [unmanaged bootloader section](bootloader.md#unmanaged-bootloader). A managed bootloader project automatically merges the bootloader image with the application image as part of the application image build process.
+The tools of Arm Mbed OS know how to manage some bootloader projects. The tools can manage bootloader projects where the bootlodoader comes before the application in ROM and the application starts immediately after the bootloader. If your bootloader does not meet both of these requirements, then please read the [unmanaged bootloader section](#unmanaged-bootloader). A managed bootloader project automatically merges the bootloader image with the application image as part of the application image build process.
 
 #### Creating the bootloader
 

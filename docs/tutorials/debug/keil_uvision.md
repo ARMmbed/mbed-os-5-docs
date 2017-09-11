@@ -1,6 +1,6 @@
 ### Keil uVision
 
-This document explains how to build and debug Arm Mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use [Eclipse](Debugging_Eclipse_pyOCD.md), [Visual Studio Code](vscode.md) or any other IDE that supports debugging through GDB. For more info, please see [Setting up a local debug toolchain](toolchain.md).
+This document explains how to build and debug Arm Mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use [Eclipse](/docs/v5.4/tutorials/debugging-applications.html#eclipse), [Visual Studio Code](/docs/v5.4/tutorials/debugging-applications.html#visual-studio-code) or any other IDE that supports debugging through GDB. For more info, please see [Setting up a local debug toolchain](https://os.mbed.com/docs/v5.4/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
 #### Exporting a project
 
@@ -15,7 +15,7 @@ To export your project to uVision, you can use either the Online Compiler or Mbe
 1. Under 'Export toolchain', select *Keil uVision 5*.
 1. Click *Export*, and unpack at a convenient location.
 
-![Exporting using the online compiler](Images/uvision1.png)
+![Exporting using the Arm Mbed Online Compiler](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/uvision1.png)
 
 ##### Arm Mbed CLI
 
@@ -30,7 +30,7 @@ To export your project to uVision, you can use either the Online Compiler or Mbe
 
 The exported project contains a `.uvprojx` file. Double click on this file to open the project in uVision. uVision 5 does not support nested folders in the tree, so find your application source code by looking for a folder with the same name as your project.
 
-![Debugging an mbed OS 5 program in uVision 5](Images/uvision2.png)
+![Debugging an Mbed OS 5 program in uVision 5](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/uvision2.png)
 
 To build your project and start a debug session:
 
@@ -38,6 +38,6 @@ To build your project and start a debug session:
 1. When building succeeds, click *Debug > Start/Stop Debug Session*.
 1. If uVision does not connect to your development board, go to *Project > Options for Target > Debug*, and make sure 'CMSIS-DAP Debugger' is selected.
 
-![CMSIS-DAP Debugger options](Images/uvision3.png)
+![CMSIS-DAP Debugger options](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/uvision3.png)
 
 For more information on the CMSIS-DAP Debugger driver in uVision, see the [uVision documentation](http://www.keil.com/support/man/docs/dapdebug/dapdebug_drv_cfg.htm).
