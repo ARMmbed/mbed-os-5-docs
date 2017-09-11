@@ -1,52 +1,52 @@
-# Sleep HAL API
+## Sleep HAL API
 
-mbed OS defines two sleep modes for HAL:
+Mbed OS defines two sleep modes for HAL:
 
-- Sleep
-- Deep sleep
+- Sleep.
+- Deep sleep.
 
 Each target should document in their implementation:
 
-- The target's mode description for each mode (how target's mode map to mbed OS sleep modes)
-- Wake-up latency for each mode
-- Wake-up sources for each mode
+- The target's mode description for each mode (how the target's mode maps to the Mbed OS sleep modes).
+- Wake-up latency for each mode.
+- Wake-up sources for each mode.
 
-## Sleep
+### Sleep
 
-The core system clock is disabled, both the low and high precision clocks are enabled, RAM is retained.
+The core system clock is disabled, both the low and high precision clocks are enabled and RAM is retained.
 
-1. Wake-up sources - any interrupt source should be able to wake-up the MCU
-1. Latency - should wake-up within 10 us
+1. Wake-up sources - any interrupt source can wake up the MCU.
+1. Latency - can wake up within 10 us.
 
-## Deep sleep
+### Deep sleep
 
-The core system clock is disabled. The low precision clocks are enabled, RAM is retained.
+The core system clock is disabled. The low precision clocks are enabled, and RAM is retained.
 
-1. Wake-up sources - RTC, low power ticker or GPIO should be able to wake-up the MCU
-1. Latency - should wake-up within 10 ms
+1. Wake-up sources - RTC, low power ticker and GPIO can wake up the MCU.
+1. Latency - can wake up within 10 ms.
 
-The deep sleep latency (10 ms) was chosen as the higher limit of the boards we support. Most of targets have wake-up latency for deep sleep within few microseconds, but often additional time is needed for reinitializing clocks or other configuration necessary to restore previous state.
+The deep sleep latency (10 ms) is the higher limit of the boards we support. Most of targets have wake-up latency for deep sleep within a few microseconds, but often, reinitializing clocks and other configurations require additional time to restore previous state.
 
-## Implementing the Sleep API
+### Implementing the Sleep API
 
-There are two functions that target needs to implement to support sleep, their prototypes are located in [hal/sleep_api.h]():
+There are two functions that the target needs to implement to support sleep, Their prototypes are in [hal/sleep_api.h]():
 
-- Sleep
+- Sleep.
 
 ```c++
 void hal_sleep(void);
 ```
 
-- Deep sleep
+- Deep sleep.
 
 ```c++
 void hal_deepsleep(void);
 ```
 
-To enable sleep support in mbed OS `SLEEP` label needs to be added in `device_has` option of target's section in `targets.json` file.
+To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
 
-## Testing
+### Testing
 
 The [sleep HAL API test suite]() validates:
-- Sleep wake-up sources
-- Sleep wake-up latency
+- Sleep wake-up sources.
+- Sleep wake-up latency.
