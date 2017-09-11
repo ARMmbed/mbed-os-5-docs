@@ -1,4 +1,4 @@
-##### Example: TCP sockets
+#### Example: TCP sockets
 
 This example opens a TCP socket with an echo server and undergoes a TCP transaction. Connection logic is the same as in the previous example.
 
