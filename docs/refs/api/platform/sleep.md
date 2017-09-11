@@ -52,6 +52,10 @@ These Mbed OS drivers contain locking deep sleep:
 - `CAN`
 - `SerialBase`
 
+### API
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/DeepSleepLock_8h_source.html)
+
 ### Example
 
 This example shows SPI asynchronous transfer with deep sleep locking.
