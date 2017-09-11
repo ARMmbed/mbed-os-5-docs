@@ -1,8 +1,8 @@
-#### Cellular device porting guide
+### Cellular device porting guide
 
 This section guidelines and details porting a cellular device driver to Mbed OS. It first describes the building blocks of your new cellular interface and then gives step-by-step instructions on how to port.
 
-##### Quick peek
+#### Quick peek
 
 You can implement a cellular network interface in different ways depending on your requirements and physical setup. For example:
 
