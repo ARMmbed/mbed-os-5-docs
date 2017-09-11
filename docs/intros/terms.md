@@ -1,7 +1,5 @@
 ## Glossary
 
-Abstraction Layer - 
-
 API - [Application programming interface](/docs/v5.4/reference/api-references.html).
 
 Application - An executable module built out of libraries that acts as a final product.
@@ -50,8 +48,6 @@ CLI - Command-line interface.
 
 CMSIS-DAP - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
-Command-line - 
-
 DAPLink - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
 Debugging - The [process](/docs/v5.4/tools/debugging.html) of finding and solving problems in code.
@@ -61,10 +57,6 @@ Deprecation - Marking a piece of code as out of date. You should not write new c
 Dynamic Memory - 
 
 Exporter - Use the Arm Mbed [exporters](/docs/v5.4/tools/exporting.html#about-the-exporters) to export your code to various third party tools and IDEs.
-
-Function - 
-
-Git - 
 
 GitHub - A web-based [Git development platform](https://github.com/armmbed/mbed-os) for version-controlled repositories.
 
@@ -100,11 +92,9 @@ Program - See `application`.
 
 Pull Request - Used by version-controlled repositories to propose and collaborate on changes.
 
-REST - Representational State Transfer (API)
+REST - Representational State Transfer (API).
 
 RTOS - [Real-Time Operating System](/docs/v5.4/reference/api-references.html#rtos).
-
-RTX - 
 
 Serial - A [protocol](/docs/v5.4/reference/api-references.html#serial) used in data transmission for the transfer of individual bits of information.
 
@@ -116,14 +106,14 @@ SSL - Secure sockets layer.
 
 STLink - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
-Target - See `board`.
+Target - See [`board`](/docs/v5.4/introduction/glossary.html#board).
 
-Terminal Application - 
+Terminal Application - [Applications](/docs/v5.4/tutorials/serial-communication.html#terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 
 TLS - Transport Layer Security.
 
-Toolchain - 
+Toolchain - A [group of programming tools](/docs/v5.4/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
 Travis CI - a continuous integration service used to build and test software projects hosted at GitHub (see `GitHub`).
 
-utest -
+utest - A [test harness](/docs/v5.4/tools/testing-1.html#utest-asynchronous-c-test-harness) you can use to execute a specified series of (asynchronous) C++ test cases.
