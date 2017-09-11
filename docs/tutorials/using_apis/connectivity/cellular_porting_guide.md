@@ -1,8 +1,8 @@
-##### Cellular device porting guide
+#### Cellular device porting guide
 
 This section guidelines and details porting a cellular device driver to Mbed OS. It first describes the building blocks of your new cellular interface and then gives step-by-step instructions on how to port.
 
-###### Quick peek
+##### Quick peek
 
 You can implement a cellular network interface in different ways depending on your requirements and physical setup. For example:
 
@@ -170,7 +170,7 @@ The current implementation does not use all pins, but you must define all of the
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/onboard_modem_api.html)
 
-###### Providing module modem API
+##### Providing module modem API
 
 Only valid when **Case 4** is applicable.
 
@@ -180,7 +180,7 @@ Only valid when **Case 4** is applicable.
 
 * If using a different connection type, you must provide access to the connection by implementing the `FileHandle` API, and then you can pass your file handle for that connection to `PPPCellularInterface`. Either use it directly, or derive from it, and pass a file handle to its constructor in the same manner as `UARTCellularInterface`.
 
-###### Providing an implementation using on-chip network stacks (AT only mode)
+##### Providing an implementation using on-chip network stacks (AT only mode)
 
 Only valid when **Case 1** is applicable.
 
