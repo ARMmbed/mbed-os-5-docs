@@ -47,7 +47,7 @@ Mbed TLS has a variety of options to make use of your alternative implementation
 
 The easier and safer way to extend functionality is to [override some or all of the functions in a particular module](#adding-acceleration-by-replacing-functions). Sometimes this won't be enough, usually because of a need to change the data structures or the higher level algorithms. If this is the case, you'll need to [replace the whole module](#adding-acceleration-by-replacing-modules). Also, individual function replacement is only supported for function names [listed above under each module](#what-parts-can-i-accelerate); for modules listed without function names, Mbed TLS only supports replacing the whole module. Please note that in the case of ECP functions the override is only partial; Mbed TLS will fall back to the software implementation if the hardware cannot handle a particular group.
 
-No matter which approach you choose, please note the [considerations below](#considerations-on-alternative-implementations).
+No matter which approach you choose, please note the [considerations below](#considerations-for-alternative-implementations).
 
 #### Adding acceleration by replacing functions
 
@@ -139,7 +139,7 @@ The default implementation of the modules are usually in the file `feature/mbedt
 
 Note that functions in Mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
-For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mutex). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](/docs/v5.4/reference/api-references.html#mutex). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
 ##### Power management
 
