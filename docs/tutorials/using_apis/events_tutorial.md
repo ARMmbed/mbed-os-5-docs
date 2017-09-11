@@ -1,4 +1,4 @@
-#### The EventQueue API
+### The EventQueue API
 
 One of the optional Arm Mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
