@@ -1,10 +1,8 @@
-## Creating and publishing your own libraries and contributing to Arm Mbed OS
+## Publishing and Contributing
 
 This chapter covers the different aspects of developing your own libraries for use in Arm Mbed devices, as well as items to keep in mind during development, such as licensing. It covers:
-
-[The Arm Mbed OS codebase](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
-
-[//]: # (TODO add section about the index service when available)
+- [Creating and licensing](#licensing-binaries-and-libraries): Create and license your own binaries and libraries.
+- [The Arm Mbed OS codebase](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
 
 ### Licensing binaries and libraries
 
