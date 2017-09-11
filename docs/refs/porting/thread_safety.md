@@ -2,7 +2,7 @@
 
 #### About this document
 
-This document introduces the [Arm Mbed OS RTOS](#rtos) and [thread safety mechanisms](#thread-safety), then discusses [porting them](#considerations-when-porting) to a new target.
+This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#thread-safety), then discusses [porting them](#considerations-when-porting) to a new target.
 
 #### RTOS
 
@@ -71,12 +71,12 @@ However, there are times when a simple mutex is not an appropriate mechanism for
 The RTOS provides several mechanisms to move interrupt processing onto a thread. These include, but are not limited to:
 
  * [Signals](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html)
- * [Queue](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/Queue_8h_source.html)
- * [Mail](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/Mail_8h_source.html)
+ * [Queue](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/Queue_8h_source.html)
+ * [Mail](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/Mail_8h_source.html)
 
 <span class="warnings">**Warning:** In Mbed OS 5, if you attempt to use a mutex from within an interrupt, nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening.</span>
 
-For more information see [rtos/Mutex.h](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/Mutex_8h_source.html).
+For more information see [rtos/Mutex.h](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/Mutex_8h_source.html).
 
 ###### Atomics
 
