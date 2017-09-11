@@ -1,6 +1,6 @@
 ### Visual Studio Code
 
-This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](toolchain.md).
+This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](https://os.mbed.com/docs/v5.4/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
 #### Installing Visual Studio Code
 
@@ -48,7 +48,7 @@ To configure the debugger for your project:
 1. If you're using pyOCD as your debug server, verify that `debugServerPath` is set to the location of `pyocd-gdbserver`.
 1. If you're using OpenOCD as your debug server:
      1. Change `debugServerPath` to point to the location of `openocd`.
-     1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](toolchain.md).
+     1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](https://os.mbed.com/docs/v5.4/tools/exporting.html).
 
 ![Configuring the debugger](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode3.png)
 
