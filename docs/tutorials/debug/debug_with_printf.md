@@ -9,7 +9,7 @@ An easy way to inspect what your application is doing is to augment your applica
 Install the serial port driver for your development board:
 
 * For ST boards: [ST Link Driver](https://developer.mbed.org/teams/ST/wiki/ST-Link-Driver).
-* For all other boards: [Arm Mbed Windows serial port driver](https://developer.mbed.org/handbook/Windows-serial-configuration) - not required for Windows 10.
+* For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver) - not required for Windows 10.
 
 You also need a serial monitor:
 
@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 #### Getting started
 
-To send data over the serial connection, use the [Serial](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/interfaces/digital/Serial/) object.
+To send data over the serial connection, use the [Serial](https://os.mbed.com/docs/v5.4/reference/api-references.html#serial) object.
 
 ##### Example program
 
@@ -148,8 +148,6 @@ The limited code-space on the microcontroller's internal flash and the delay of 
 
 You need to provide a format string with format specifiers, followed by a matching number of arguments. For example, `printf(“temp too high %d”, temp)`: the format string is `temp too high %d`, and the format specifier is `%d`. The last part is the argument: `temp`. It matches the format specifier `%d`, which specifies an integer.
 
-You can learn more on [Wikipedia](http://en.wikipedia.org/wiki/Printf_format_string).
-
 #### Printf() from an interrupt context
 
 If you run this code, you may receive an unpleasant surprise:
@@ -172,12 +170,12 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](https://developer.mbed.org/handbook/CMSIS-RTOS) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.4/reference/api-references.html#mutex) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-* Signaling from the ISR to the main thread using a [semaphore](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#semaphore) or [mailbox](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/rtos/#mail), and calling `printf` in the main thread.
-* Using an event dispatching library, such as [Mbed events](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/tasks/events/).
+* Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.4/reference/api-references.html#semaphore) or [mailbox](https://ost.mbed.com/docs/v5.4/reference/api-references.html#mail), and calling `printf` in the main thread.
+* Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.4/reference/api-references.html#events).
 
 You can see example code for both approaches in [this blog post](https://developer.mbed.org/blog/entry/Simplify-your-code-with-mbed-events/).
 
@@ -204,7 +202,7 @@ The general form for defining a parameterized macro is:
 
 For example, you can categorize `printf()` statements by severity levels, such as `DEBUG`, `WARNING` and `ERROR`. To do so, define levels of severity. Then, each time you compile or run the program, specify which level you want to use. The macros use the level you specified in an `if` condition. That condition can control the format of the information the macro prints, or whether it prints anything at all. This gives you full control of the debug information presented every run.
 
-Remember that `printf()` can take as many parameters as you give it. Macros support this functionality: you can define them with `...` to mimic printf()’s behavior. To learn more about using `...` in your code, read about [variadic macros on Wikipedia](http://en.wikipedia.org/wiki/Variadic_macro).
+Remember that `printf()` can take as many parameters as you give it. Macros support this functionality: you can define them with `...` to mimic printf()’s behavior.
 
 This is an example:
 
