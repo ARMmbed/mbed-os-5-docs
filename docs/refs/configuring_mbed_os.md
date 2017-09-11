@@ -1,8 +1,8 @@
 ## Configuring Arm Mbed OS
 
-Mbed OS provides some default memory configurations for thread memory allocation. You may want to modify these configurations to better suit your project. The default configurations and how you can modify them are outlined below. 
+Mbed OS provides some default memory configurations for thread memory allocation. You may want to modify these configurations to better suit your project. You can read about the default configurations and how you can modify them below. 
 
-#### Thread memory model
+### Thread memory model
 
 All threads in Mbed OS share a global heap. By default, mbed OS dynamically allocates memory for thread stacks from the global heap. User spawned thread stacks can be allocated from other memory areas. The size of the global heap depends on the compiler. The heap size is static when compiling with IAR, and it is different for each target in Mbed OS. You can find it in the IAR linker configuration files nested inside target directories. For example, you can find the linker configuration file for a K66F [here](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_Freescale/TARGET_MCUXpresso_MCUS/TARGET_K66F/device/TOOLCHAIN_IAR/MK66FN2M0xxx18.icf#L49-L51). For the GCC and ARM compilers, the heap size is dynamic based on RAM usage.
 
