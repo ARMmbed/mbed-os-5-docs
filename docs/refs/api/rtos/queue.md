@@ -34,7 +34,6 @@ You can use the MemoryPool class to define and manage fixed-size memory pools.
 
 ##### MemoryPool class example
 
->>> c
 ```
 MemoryPool<message_t, 16> mpool;
 
@@ -42,7 +41,6 @@ message_t *message = mpool.alloc();
 
 mpool.free(message);
 ```
->>>
 
 ##### Queue and MemoryPool example
 
