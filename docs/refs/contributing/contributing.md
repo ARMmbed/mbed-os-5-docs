@@ -90,7 +90,7 @@ https://www.mbed.com/licenses/PBL-1.0
 See the License for the specific language governing permissions and limitations under the License.
 ```
 
-### Using a different license
+#### Using a different license
 
 If you decide to use a different license for your work, follow the same pattern:
 
@@ -152,6 +152,6 @@ Bug fixes must be verified by a member of the Mbed team before they're pulled in
 
 The last line in your commit message description should say “Fixes #deadbeef”, where “deadbeef” is the issue number in GitHub. This allows GitHub to automatically close the issue when the commit is merged into the default branch.
 
-### Further reading
+#### Further reading
 
 Please see the [code contributions chapter](code_style.md) for the guidelines to GitHub pull requests and the coding style guide.
