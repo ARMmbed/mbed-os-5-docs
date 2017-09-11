@@ -1,6 +1,6 @@
 ### Connectivity
 
-The main connectivity APIs in Arm Mbed OS are:
+This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
 * [Network sockets](/docs/v5.4/reference/api-references.html#network-sockets): provide a common interface for using sockets on network devices.
 * [Ethernet](/docs/v5.4/reference/api-references.html#ethernet): API for connecting to the internet over an Ethernet connection.
@@ -9,95 +9,11 @@ The main connectivity APIs in Arm Mbed OS are:
 * [Bluetooth Low Energy (BLE)](/docs/v5.4/reference/api-references.html#bluetooth-low-energy-ble-1): designed for small, energy-efficient BLE applications.
 * [Cellular](/docs/v5.4/reference/api-references.html#cellular-1): API for connecting to the internet using a cellular device.
 
-##### Cellular
-
-The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
-
-Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
-
-###### Getting started
-
-1. Choose an [Mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
-
-1. Clone [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular). Follow the instructions in the repository.
-
-    1. Compile the code.
-    1. Flash the board.
-
-   You see output similar to the excerpt below:
-
-```
-
-mbed-os-example-cellular, Connecting...
-
-
-Connection Established.
-UDP: Sent 4 Bytes to echo.u-blox.com
-Received from echo server 4 Bytes
-
-
-Success. Exiting
-
-```
-
-###### Basic working principles
-
-You can use and extend a cellular interface in various different ways. For example,
-
-- Using AT commands to control sockets in an existing IP stack built into the cellular modem.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
-
-- Using a PPP (Point-to-Point Protocol) pipe to pass IP packets between an Mbed OS supported IP stack and cellular modem device.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
-
-[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). In other words, CellularInterface uses PPP. We can summarize this particular design as follows:
-
-* It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
-* The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
-* After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet.
-
-##### Bluetooth Low Energy (BLE)
-
-Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
-
-Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many targets support Mbed BLE. Developers can use it to create new BLE applications.
-
-###### Getting started
-
-1. Choose an [Arm Mbed board that supports BLE](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=3), such as the [NRF51-DK](https://developer.mbed.org/platforms/Nordic-nRF51-DK/).
-
-	If your platform doesn't support BLE but is compatible with the Arduino UNO R3 connector, you can use an extension board such as the [X-NUCLEO-IDB05A1](https://developer.mbed.org/components/X-NUCLEO-IDB05A1-Bluetooth-Low-Energy/) to add BLE capabilities to your development board.
-
-1. Install a BLE scanner on your phone. It allows you to track all BLE activities from your embedded application. This is a mandatory tool for BLE software development:
-
-    * [nRF Master Control Panel](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp) for Android.
-
-    * [LightBlue](https://itunes.apple.com/gb/app/lightblue-bluetooth-low-energy/id557428110?mt=8) for iPhone.
-
-1. Compile and run our BLE samples:
-
-    * **Arm Mbed OS 5 samples** are available on [developer.mbed.org](https://developer.mbed.org/teams/mbed-os-examples/) and [Github](https://github.com/ARMmbed/mbed-os-example-ble):
-        * The [beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/) example is a good starting point; it demonstrates how you can create a BLE beacon with just a few lines of code.  
-        * The [heart rate monitor](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/) example demonstrates how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
-        * The [LED](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/) are a single example, which demonstrates how a client (LED) and a server (LED blinker) work together over BLE.
-
-    <span>**Tip:** Despite the differences between the different Mbed OS versions, there is only **one** version of Mbed BLE, and it is easy to move code from one version of the OS to another. Choose the sample you use according to the version of Mbed OS supported by your development board.</span>
-
-###### Going further
-
-* [Introduction to Mbed BLE](https://docs.mbed.com/docs/ble-intros/en/latest/) is a resource for developers new to BLE and Mbed BLE. It covers how to build BLE embedded applications with Mbed.
-
-* The Bluetooth Low Energy main [page](https://developer.mbed.org/teams/Bluetooth-Low-Energy/) on developer.mbed.org also provide samples and resources around BLE.
-
-* The Mbed BLE [API reference](https://docs.mbed.com/docs/ble-api/en/master/api/index.html) offer the full details of the API.
-
-* The Mbed BLE [online community](https://developer.mbed.org/teams/Bluetooth-Low-Energy/community/) is also a great place to ask questions and share your knowledge.
+Continue reading for detailed reference material about some of these APIs.
 
 ##### Arm Mbed Mesh
 
-Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/reference/mesh-1.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/reference/mesh-1.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
@@ -181,3 +97,90 @@ In case of connection errors, the state is changed to some of the connection err
 ###### Getting started
 
 See the example application [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
+
+##### Bluetooth Low Energy (BLE)
+
+Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
+
+Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many targets support Mbed BLE. Developers can use it to create new BLE applications.
+
+###### Getting started
+
+1. Choose an [Arm Mbed board that supports BLE](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=3), such as the [NRF51-DK](https://developer.mbed.org/platforms/Nordic-nRF51-DK/).
+
+	If your platform doesn't support BLE but is compatible with the Arduino UNO R3 connector, you can use an extension board such as the [X-NUCLEO-IDB05A1](https://developer.mbed.org/components/X-NUCLEO-IDB05A1-Bluetooth-Low-Energy/) to add BLE capabilities to your development board.
+
+1. Install a BLE scanner on your phone. It allows you to track all BLE activities from your embedded application. This is a mandatory tool for BLE software development:
+
+    * [nRF Master Control Panel](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp) for Android.
+
+    * [LightBlue](https://itunes.apple.com/gb/app/lightblue-bluetooth-low-energy/id557428110?mt=8) for iPhone.
+
+1. Compile and run our BLE samples:
+
+    * **Arm Mbed OS 5 samples** are available on [developer.mbed.org](https://developer.mbed.org/teams/mbed-os-examples/) and [Github](https://github.com/ARMmbed/mbed-os-example-ble):
+        * The [beacon](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/) example is a good starting point; it demonstrates how you can create a BLE beacon with just a few lines of code.  
+        * The [heart rate monitor](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/) example demonstrates how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
+        * The [LED](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/) are a single example, which demonstrates how a client (LED) and a server (LED blinker) work together over BLE.
+
+    <span>**Tip:** Despite the differences between the different Mbed OS versions, there is only **one** version of Mbed BLE, and it is easy to move code from one version of the OS to another. Choose the sample you use according to the version of Mbed OS supported by your development board.</span>
+
+###### Going further
+
+* [Introduction to Mbed BLE](https://docs.mbed.com/docs/ble-intros/en/latest/) is a resource for developers new to BLE and Mbed BLE. It covers how to build BLE embedded applications with Mbed.
+
+* The Bluetooth Low Energy main [page](https://developer.mbed.org/teams/Bluetooth-Low-Energy/) on developer.mbed.org also provide samples and resources around BLE.
+
+* The Mbed BLE [API reference](https://docs.mbed.com/docs/ble-api/en/master/api/index.html) offer the full details of the API.
+
+* The Mbed BLE [online community](https://developer.mbed.org/teams/Bluetooth-Low-Energy/community/) is also a great place to ask questions and share your knowledge.
+
+##### Cellular
+
+The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
+
+Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
+
+###### Getting started
+
+1. Choose an [Mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
+
+1. Clone [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular). Follow the instructions in the repository.
+
+    1. Compile the code.
+    1. Flash the board.
+
+   You see output similar to the excerpt below:
+
+```
+
+mbed-os-example-cellular, Connecting...
+
+
+Connection Established.
+UDP: Sent 4 Bytes to echo.u-blox.com
+Received from echo server 4 Bytes
+
+
+Success. Exiting
+
+```
+
+###### Basic working principles
+
+You can use and extend a cellular interface in various different ways. For example,
+
+- Using AT commands to control sockets in an existing IP stack built into the cellular modem.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
+
+- Using a PPP (Point-to-Point Protocol) pipe to pass IP packets between an Mbed OS supported IP stack and cellular modem device.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
+
+[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). In other words, CellularInterface uses PPP. We can summarize this particular design as follows:
+
+* It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
+* The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
+* After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet.
+
