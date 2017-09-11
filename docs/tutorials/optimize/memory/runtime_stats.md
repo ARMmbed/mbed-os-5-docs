@@ -65,7 +65,7 @@ There are two functions you can use to access the stack stats:
 
 <span class="notes">**Note**: These functions are available even when the stack stats are not enabled but always return zero for all fields.</span>
 
-### Example use cases
+#### Example use cases
 
 * Using `max_size` to calibrate stack sizes for each thread.
 * Detecting which stack is close to overflowing.
