@@ -1,4 +1,4 @@
-## The Arm Mbed Configuration system
+### The Arm Mbed Configuration system
 
 The Arm Mbed configuration system customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
 
@@ -11,7 +11,7 @@ The configuration system gathers and interprets all the configurations defined i
 
 <span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [Mbed targets](mbed_targets.md).</span>
 
-### Defining configuration parameters
+#### Defining configuration parameters
 
 The configuration system understands configuration data defined in targets, libraries and applications. Although there are some slight differences in the way the configuration system works in these cases, the configuration parameters are always defined in a JSON object called "config".
 
@@ -51,7 +51,7 @@ The configuration system automatically appends an *implicit prefix* to the name 
 - **app.** if the parameter is defined in the application.
 - The name of the library followed by a dot (.) if the parameter is defined in a library.
 
-### Configuration data in libraries
+#### Configuration data in libraries
 
 Each Mbed library can have an optional `mbed_lib.json` file located in the root folder of the library that defines its configuration. For a library called `mylib`, the configuration file can look like this:
 
@@ -105,7 +105,7 @@ As explained [here](#defining-configuration-parameters), the parameters have an 
 
 If the source tree has code for more than one library, each library needs its own `mbed_lib.json` file in its root folder.
 
-### Configuration data in targets
+#### Configuration data in targets
 
 Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check [this link](mbed_targets.md)). Target configuration data is defined in `targets.json` using `config`, as described [here](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
 
@@ -154,7 +154,7 @@ Targets can inherit from other targets, and their configuration data is also inh
 
 It is an error for a derived target to redefine a configuration parameter already defined by its parent(s) in its `config` section. It is also an error for a derived target to override a configuration parameter that was not defined by its parent(s) in its `overrides` section.
 
-### Configuration data in applications
+#### Configuration data in applications
 
 Like target and library configuration, application configuration is optional; if it exists, it must be defined in an `mbed_app.json` file. Unlike library configuration, there can be a single `mbed_app.json` file in the source tree.
 
@@ -205,7 +205,7 @@ Other than this, `target_overrides` works exactly like it does for libraries. Ke
 
 It is an error for the application configuration to override configuration parameters that were not defined.
 
-#### Overriding target attributes
+##### Overriding target attributes
 
 Target configurations contain a set of attributes that you may manipulate with an application configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` meta-attributes.
 
@@ -228,7 +228,7 @@ For example, this `mbed_app.json` disables the IPV4 feature; using this network 
 }
 ```
 
-### Configuration data precedence
+#### Configuration data precedence
 
 The order in which the various bits of configurations are considered is:
 
