@@ -54,4 +54,4 @@ Stack checking is turned on for all threads, and the kernel will error if an ove
 
 The Arm Mbed configuration system customizes the compile time configuration of Mbed components: targets, libraries and applications.
 
-For more information, see the [Configuration System page](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/config_system.md).
+For more information, see the [Configuration System page](/docs/v5.4/reference/configuring-arm-mbed-os.html#the-arm-mbed-configuration-system).
