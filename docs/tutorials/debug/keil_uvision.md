@@ -1,6 +1,6 @@
 ### Keil uVision
 
-This document explains how to build and debug Arm Mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use [Eclipse](Debugging_Eclipse_pyOCD.md), [Visual Studio Code](vscode.md) or any other IDE that supports debugging through GDB. For more info, please see [Setting up a local debug toolchain](toolchain.md).
+This document explains how to build and debug Arm Mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use [Eclipse](/docs/v5.4/tutorials/debugging-applications.html#eclipse), [Visual Studio Code](/docs/v5.4/tutorials/debugging-applications.html#visual-studio-code) or any other IDE that supports debugging through GDB. For more info, please see [Setting up a local debug toolchain](https://os.mbed.com/docs/v5.4/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
 #### Exporting a project
 
