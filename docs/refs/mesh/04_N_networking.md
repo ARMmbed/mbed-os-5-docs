@@ -1,8 +1,8 @@
-##### Networking
+#### Networking
 
 This chapter discusses the networking topology and the protocols used.
 
-###### Networking topology
+##### Networking topology
 
 The 6LoWPAN stack uses two types of networking topology, namely the star and tree topologies, as shown in _Figure 1-5_.
 
@@ -10,28 +10,28 @@ The 6LoWPAN stack uses two types of networking topology, namely the star and tre
 
 ![nw-topologies](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_stack_networking_topologies.png)
 
-###### MAC
+##### MAC
 
 The _Media Access Control_ (MAC) implementation is based on the IEEE802.15.4-2006 standard (see [MAC]) and is used for MAC layer communication between nodes such as beacon scans and responses, and data requests and indications. The MAC implementation has already been certified on multiple platforms.
 
 The MAC implements the non-beacon enabled modes of the standard. It does not implement _Guaranteed Time Slot_ (GTS).
 
-###### UDP
+##### UDP
 
 The 6LoWPAN stack supports the UDP transport protocol. Applications can use the Socket API to send and receive data using UDP sockets. UDP is typically used by applications to deliver short messages over IP. It is an unreliable, connectionless protocol, but can be used for broadcast and multicast messages. The advantage of UDP is that it does not require any kind of connection formation or handshake process to take place prior to communication. UDP is the classic fire-and-forget transport mechanism that combines inherent low reliability, requiring minimal overhead.
 
 A disadvantage of UDP can easily be mitigated by using a simple application layer, end-to-end acknowledgment scheme. As an efficient and scalable example of such a solution, see the _Constrained Application Protocol_
 (CoAP) _Acknowledgement_ (ACK) mechanism as defined in [CoAP](http://tools.ietf.org/html/rfc7252).
 
-###### TCP
+##### TCP
 
 The 6LoWPAN stack supports the _Transmission Control Protocol_ (TCP) and applications can use the socket interface APIs of the stack to send and receive data using TCP sockets. Applications requiring a reliable, ordered transport for a stream of bytes can typically use TCP. However, TCP is not suitable for every application because it only supports unicast communication and reacts badly to packet loss. TCP is not suitable for very short transactions because the ratio of overhead to application data typically increases fairly quickly. Additionally, the use of TCP can have very adverse effects on the power consumption of a device because of the duration of the TCP handshake process.
 
-###### RPL routing
+##### RPL routing
 
 _Routing Protocol for Low power and Lossy networks_ (RPL) is a distance vector IPv6 routing protocol defined in the _Internet Engineering Task Force_ (IETF) for low power and lossy networks that specifies how to build a _Destination Oriented Directed Acyclic Graph_ (DODAG) using an objective function and a set of metrics and constraints. RPL is optimized for a many-to-one topology. Neighbors keep route records of the edge router as a final destination. The reverse route, or source route, is kept by the edge router and is used for sending data to any node in the network it has a route for. When a node sends a packet to another node, the packet travels up to a common ancestor in the DAG, at which point it is forwarded in the down direction to the destination.
 
-###### Network join process
+##### Network join process
 
 The developer has full control as to when the 6LoWPAN stack attempts to join a network. The developer has the possibility to configure a channel, _Personal Area Network Identifier_ (PANID) and 128-bit _Network Identifier_ (NWKID) masks to filter out both unwanted channels or networks. With a few simple function calls the developer can inform the stack to initiate either a passive energy scan or a beacon scan to select channels. Network PANIDs and NWKIDs will be filtered and non-matching networks will be silently discarded. The stack will then proceed to perform the network level bootstrapping according to [6LOWPAN-ND](https://datatracker.ietf.org). When the stack joins a network or no network is found, the developer is notified using a standard system event. If the stack has not joined a network, the developer has the option to 1) select alternative parameters; 2) cease further attempts to join a network or 3) continue to retry the joining process. The stack will make no attempt to join a network when it informs the application layer of an unsuccessful attempt. However, the stack may choose to retry using the initial parameters.
 
@@ -90,17 +90,17 @@ Figure 1-12_ shows the RPL layer registration and topology formation process mes
 
 ![rpl-single](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rpl_layer_reg_single_hop.png)
 
-###### Network rejoin process
+##### Network rejoin process
 
 If a device with the 6LoWPAN stack is forced into sleep mode for an extended period of time so that its registration with the 6LBR has expired, the stack will automatically detect this and update its registration. The stack is then ready for communication without any further action from the application when the device wakes up.
 
 The exact time that it takes for the stack to refresh the registration depends on whether a full mesh network topology or a star topology is used. Additionally, in the mesh network scenario the exact location of the device (depth from the 6LBR to be specific) in the mesh has a small impact on the time when full networking capabilities are restored.
 
-###### Automatic network healing process
+##### Automatic network healing process
 
 It is fairly common for the RF channel to change even if the physical location of the actual mesh network has not. The network must then adapt to the new channel immediately and with ease.
 
-The standards that the 6LoWPAN stack uses provide feedback from multiple protocol layers, such as, the MAC, network, and routing layers. This multiple layer approach provides the stack with numerous sources of information that can be used to make automatic decisions as to when network reconfiguration can be initiated. It can also be delivered to other devices in the IP network using standard _Internet Control Message Protocol_ (ICMP)v6 messages. More specifically, these messages can either be ICMPv6 Destination Unreachable or No Route To Host types.
+The standards that the 6LoWPAN stack uses provide feedback from multiple protocol layers, such as the MAC, network and routing layers. This multiple layer approach provides the stack with numerous sources of information that can be used to make automatic decisions as to when network reconfiguration can be initiated. It can also be delivered to other devices in the IP network using standard _Internet Control Message Protocol_ (ICMP)v6 messages. More specifically, these messages can either be ICMPv6 Destination Unreachable or No Route To Host types.
 
 ###### MAC layer
 
