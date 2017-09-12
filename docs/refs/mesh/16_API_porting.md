@@ -2,9 +2,9 @@
 
 Device drivers are a set of functions for providing PHY layer devices for the 6LoWPAN stack:
 
-- registering the device
-- receiving function
-- a set of device controlling functions
+- registering the device.
+- receiving function.
+- a set of device controlling functions.
 
 ##### How Nanostack runs inside Mbed OS
 
@@ -24,9 +24,9 @@ The Mbed OS port of Nanostack consist of a few helper modules that provide easie
 
 In Mbed OS, Socket API hides the differences between the networking stacks. Users will only use one of its high level APIs:
 
-* UDPSocket
-* TCPSocket
-* TCPServer
+* UDPSocket.
+* TCPSocket.
+* TCPServer.
 
 ![Sockets in Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbedOS_sockets.png)
 
@@ -34,8 +34,8 @@ For an example of a simple application using Nanostack, see [Example mesh applic
 
 For documentation of Socket API see the following links
 
-* [Socket API: Getting started](https://developer.mbed.org/teams/NetworkSocketAPI/wiki/Getting-Started)
-* [Socket API: Doxygen](https://developer.mbed.org/teams/NetworkSocketAPI/code/NetworkSocketAPI/docs/tip/)
+* [Socket API: Getting started](https://developer.mbed.org/teams/NetworkSocketAPI/wiki/Getting-Started).
+* [Socket API: Doxygen](https://developer.mbed.org/teams/NetworkSocketAPI/code/NetworkSocketAPI/docs/tip/).
 
 ###### Providing RF driver for Mbed OS applications
 
@@ -43,9 +43,7 @@ For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterface
 
 ![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
 
-Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface`
-directly to set up the network and provide a driver. Rest of the classes provide an abstration
-between Nanostack and Socket layers of Mbed OS.
+Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly to set up the network and provide a driver. Rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
 
 See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
 
@@ -210,6 +208,7 @@ The driver calls this function when it has completed a transmit attempt:
 ```
 typedef int8_t arm_net_phy_tx_done_fn(int8_t driver_id, uint8_t tx_handle, phy_link_tx_status_e status, uint8_t cca_retry, uint8_t tx_retry);
 ```
+
 See [Doxygen: arm_net_phy_tx_done_fn](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#a045291825cbb1f29aec30891d44e8e52) for detailed description.
 
 When the PHY device handles the CSMA-CA and auto-retry, the stack needs to know the total number of CCA attempts or TX attempts made in case of error. The stack retries the CCA phase 8 times and the TX attempt 4 times. These may be handled by the hardware.
