@@ -1,6 +1,6 @@
-### How to commission a Thread device in practise
+##### How to commission a Thread device in practise
 
-#### Building the node application
+###### Building the node application
 
 By default, the mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json).
 If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
@@ -10,7 +10,7 @@ If you want to use the Thread commissioning, add the following lines to your `.j
 
 Setting `thread-use-static-link-config` to `false` prevents the usage of the predefined link configuration values and allows the device to start network scanning.
 
-#### QR code generation
+###### QR code generation
 
 You can use [a free online tool](http://www.qr-code-generator.com/) to generate a QR code.
 
@@ -29,7 +29,7 @@ There are four additional query parameters you can put into this field:
 
 To print the MAC address, you need to connect the node to the Thread network with static configuration enabled, unless you have your own configuration for the MAC address. For example, in the **mesh-minimal** application, place this `printf("MAC address = %s\n", mesh.get_mac_address());` after `printf("connected. IP = %s\n", mesh.get_ip_address());`
 
-#### Using the Thread commissioning application
+###### Using the Thread commissioning application
 
 You can use the [Thread Android application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) for commissioning:
 
