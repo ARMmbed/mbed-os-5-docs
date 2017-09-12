@@ -1,8 +1,8 @@
-##### MAC API porting
+#### MAC API porting
 
 Nanostack has a lower level API for the IEEE 802.15.4-2006 MAC standard. This enables developers to support different MACs, be it SW or HW based solution. Nanostack offers SW MAC that you can use when your board does not have 15.4 MAC available.
 
-###### SW MAC
+##### SW MAC
 
 Nanostack includes an IEEE 802.15.4 based SW MAC class. You can use SW MAC when your board does not support MAC. To use the SW MAC service you must have a working RF driver registered to Nanostack. To create SW MAC, call the following function:
 
@@ -14,7 +14,7 @@ This creates a SW MAC class and sets a callback function to be used by Nanostack
 
 <span class="notes">**Note:** You must not call `ns_sw_mac_create()` more than once!</span>
 
-###### Initializing SW MAC
+##### Initializing SW MAC
 
 Deploy SW MAC as follows:
 
@@ -25,7 +25,7 @@ Deploy SW MAC as follows:
     - the recommended value for `key_lookup_size` is 1 and for `key_usage_size` 3.
 3. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class. Nanostack will initialize SW MAC before using it.
 
-###### Example
+##### Example
 
 See a simple code snippet for creating SW MAC with 16 as neighbour table size with three key descriptions:
 
@@ -46,7 +46,7 @@ int8_t generate_6lowpan_interface(int8_t rf_phy_device_register_id)
 }
 ```
 
-###### Enabling FHSS
+##### Enabling FHSS
 
 SW MAC supports FHSS. To enable it, you need to do the following:
 
@@ -56,7 +56,7 @@ SW MAC supports FHSS. To enable it, you need to do the following:
 4. Call `ns_sw_mac_fhss_register()` to register FHSS to SW MAC.
 5. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class.
 
-###### IEEE 802.15.4 MAC sublayer APIs
+##### IEEE 802.15.4 MAC sublayer APIs
 
 The stack uses the IEEE 802.15.4 defined MAC management service entity (MLME-SAP) and MAC data service (MCPS-SAP) interfaces. MAC API follows MCPS and MLME primitives defined by the IEEE 802.15.4-2006 standard.
 
@@ -76,7 +76,7 @@ MAC API is defined in the following header files:
 - `mac_mcps.h` Definitions for MCPS-SAP primitives.
 - `mac_common_defines.h` Definitions for common MAC constants.
 
-###### MCPS-SAP interface
+##### MCPS-SAP interface
 
 MCPS-SAP defines 802.15.4 data flow API with the following primitives:
 
@@ -88,7 +88,7 @@ MCPS-SAP defines 802.15.4 data flow API with the following primitives:
 | `MCPS-PURGE-REQ` | Cancel ongoing `MCPS-DATA-REQ` from MAC. |
 | `MCPS-PURGE-CONF` | Confirmation from MAC to `MCPS-PURGE-REQ` operation. |
 
-###### MLME-SAP interface
+##### MLME-SAP interface
 
 MLME-SAP defines a set of different management primitives and this chapter introduces both supported and unsupported primitives in Nanostack.
 
@@ -111,7 +111,7 @@ MLME-SAP primitives used by Nanostack:
 | `MLME-SYNCH-LOSS-IND` | Indicate syncronization loss from wireless PAN. Only used by SW MAC when FHSS is in use! |
 | `MLME-POLL-REQ` | Request MAC to do data poll to parent. |
 
-###### Non-supported MLME APIs
+###### Unsupported MLME APIs
 
 Unsupported MLME-SAP primitives:
 
@@ -135,7 +135,7 @@ Unsupported MLME-SAP primitives:
 | `MLME-START-CONF` | Yes | Confirmation for MLME start request. |
 | `MLME-SYNCH-REQ` | Not yet | Request MAC to synchronize with coordinator. |
 
-###### MAC API class introduction
+##### MAC API class introduction
 
 This chapter introduces MAC mesh interface `mac_api_s`. It is a structure that defines the function callbacks needed by a service user.
 
@@ -183,7 +183,7 @@ Member|Description
 `parent_id` | Service user ID used to indentify the MAC service user. Optional.
 `phyMTU` | Maximum Transmission Unit (MTU) used by MAC. Standard 802.15.4 MAC must set 127.
 
-###### MAC API standard extensions
+##### MAC API standard extensions
 
 This chapter introduces MAC API standard extensions.
 
@@ -232,7 +232,7 @@ Enumeration extension for MLME communication status enumeration:
 | ---------------- | ----- | ----------- |
 | `MLME_DATA_POLL_NOTIFICATION` | `0xff` | Thread requirement for MLME-COMM-STATUS to start indicating the successful data poll events. |
 
-###### HW MAC
+##### HW MAC
 
 To use HW MAC, you need to create an adapter class that links function calls between Nanostack and HW MAC. To create the adapter class, you need to implement the functions defined in the `mac_api_s` structure. When HW MAC generates an event the adapter must handle it and do a parameter adaptation before calling the correct function from the `mac_api_s` structure. You may need the same parameter adaptation for requests from Nanostack to HW MAC.
 
