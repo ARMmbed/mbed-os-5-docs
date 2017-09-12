@@ -23,4 +23,4 @@ Targets supporting tickless mode override the default SysTick mechanism and use 
 
 ### Testing
 
-Currently there are no dedicated tests validating tickless mode. Running all Mbed OS tests suits, with particular focus on HAL sleep and HAL low power ticker tests, should provide sufficient coverage.
+There are no dedicated tests validating tickless mode. Running all Mbed OS tests suits, with particular focus on HAL sleep and HAL low power ticker tests, provides sufficient coverage.
