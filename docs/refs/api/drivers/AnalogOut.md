@@ -2,7 +2,7 @@
 
 Use the AnalogOut interface to set the voltage of an analog output pin as a floating point number from 0.0 (VSS) to 1.0 (VCC).
 
-Note: Not all pins are capable of being AnalogOut, so check the pinmap for your board.
+<span class="notes">**Note:** Not all pins are capable of being AnalogOut, so check the pinmap for your board.</span>
 
 ##### API
 
