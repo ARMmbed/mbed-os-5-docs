@@ -2,8 +2,7 @@
 
 ##### Building the node application
 
-By default, the mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json).
-If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
+By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
 
 * `"mbed-mesh-api.thread-use-static-link-config": false`
 * `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]`
@@ -14,8 +13,7 @@ Setting `thread-use-static-link-config` to `false` prevents the usage of the pre
 
 You can use [a free online tool](http://www.qr-code-generator.com/) to generate a QR code.
 
-In the tool, fill in the URL field: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`.
-These are just example values. Fill in the correct values for your device and make sure `v=1` is always there.
+In the tool, fill in the URL field: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`. These are just example values. Fill in the correct values for your device and make sure `v=1` is always there.
 
 * `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration).
 * `eui` is equal to the RF MAC address by default. 
