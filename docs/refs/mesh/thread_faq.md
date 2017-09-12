@@ -35,8 +35,8 @@ An example application is [downloadable from the Android store](https://play.goo
 ##### Are there any application examples? What are the Thread features supported/not supported by them?
 
 - Application examples supporting SED and REED types:
-  - [mbed OS Client example](https://github.com/ARMmbed/mbed-os-example-client)
-  - [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal)
+  - [Mbed OS Client example](https://github.com/ARMmbed/mbed-os-example-client)
+  - [Mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal)
 - [Thread border router](https://github.com/ARMmbed/nanostack-border-router)
 
 ##### How to debug and visualize the network?
@@ -78,7 +78,7 @@ IPv6 multicast messages are supported. link-local and realm-local (mesh-local) m
 
 ##### What are the configurable parameters in the Thread devices? What do they mean and where are they documented?
 
-- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [mbed Mesh API](refs/api/networking/mesh.md).
+- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [Mbed Mesh API](refs/api/networking/mesh.md).
 More information can be found in the Thread specification.
 - The Thread device configuration includes PSKd and EUI64 (usually the MAC address of the radio chip), that are used to commission the device.
 
