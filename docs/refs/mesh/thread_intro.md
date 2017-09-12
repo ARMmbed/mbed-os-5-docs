@@ -138,7 +138,7 @@ Now, the Thread network is ready to accept new joiner devices.
 
 The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the [Nanostack border router](https://github.com/ARMmbed/nanostack-border-router). An external Commissioning application (Android) is already available [here](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner). Also an IOS version will be available soon.
 
-See [Thread commissioning guide](thread_commissioning.md) how to commission a Thread device to the network in practise.
+See [Thread commissioning guide](/docs/v5.4/tutorials/using-the-apis.html#how-to-commission-a-thread-device-in-practise) how to commission a Thread device to the network in practise.
 
 ##### The maturity of the Mbed OS Thread implementation
 
