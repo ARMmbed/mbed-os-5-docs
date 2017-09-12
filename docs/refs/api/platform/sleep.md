@@ -1,6 +1,6 @@
 #### Sleep
 
-There is only one sleep function in Mbed OS 5.6
+There is only one sleep function in Mbed OS 5.6:
 
 ```c++
 void sleep();
@@ -8,7 +8,7 @@ void sleep();
 
 This function invokes sleep manager, which we introduce below.
 
-The idle loop invokes sleep manager by default. You can overwrite this default behaviour by attaching a different idle hook function pointer.
+The idle loop invokes sleep manager by default. You can overwrite this default behavior by attaching a different idle hook function pointer.
 
 ```c++
 void new_idle_loop()
