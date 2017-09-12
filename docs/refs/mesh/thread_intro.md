@@ -30,7 +30,7 @@ The key elements of Mbed OS are:
 - Hardware platform agnostic layer that allows easy adaptation of new hardware components.
 - Modular approach, which allows including the necessary libraries based on the application needs.
 - Multilayer build (SW/HW) in security that helps you to protect your IoT solutions.
-- Mbed RTOS (ARM CMSIS-RTOS) providing the real time software execution.
+- Mbed RTOS (Arm CMSIS-RTOS) providing the real time software execution.
 - Toolchain and IDE support.
 
 Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api) for building Thread applications.
@@ -65,8 +65,7 @@ For an end device or a router example, see [mesh minimal example](https://github
 
 Mbed OS offers separate configurations for different Thread end device types. Usually, the end devices are the most constrained devices in the Thread network. They serve as last hop in the mesh topology. Devices such as plain sensors, controls and switches can be implemented as end devices only. For the most constrained hardware, the minimal end device (MED) or the sleepy end device (SED) is an optimal selection as the implementation requires the smallest amount of flash and RAM memory due to the limited functionality. Note that a sleepy end device also requires more resources on the parent device. End devices communicate through a parent and can switch to another parent if the current connection is broken.
 
-A Thread network does not work with end devices only. There must be router devices, that can route the traffic between nodes and to
-the back-end network through the border router.
+A Thread network does not work with end devices only. There must be router devices, that can route the traffic between nodes and to the back-end network through the border router.
 
 Minimal end device (MED):
 
