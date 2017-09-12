@@ -144,7 +144,7 @@ The related standards supported by the stack are:
 
 ##### Interfaces
 
-The 6LoWPAN stack offers application developers programming interfaces for configuring the 6LoWPAN network, defining security levels and sending and receiving packets. The 6LoWPAN stack requires the developers to provide functions for platform specific tasks and network drivers for physical layer. For more information on programming interfaces, see [Mbed Mesh API](refs/api/networking/mesh.md).
+The 6LoWPAN stack offers application developers programming interfaces for configuring the 6LoWPAN network, defining security levels and sending and receiving packets. The 6LoWPAN stack requires the developers to provide functions for platform specific tasks and network drivers for physical layer. For more information on programming interfaces, see [Mbed Mesh API](/docs/v5.4/reference/api-references.html#mesh).
 
 ##### Operation modes
 
