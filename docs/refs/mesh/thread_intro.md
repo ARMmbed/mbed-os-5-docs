@@ -1,6 +1,6 @@
-### Introduction to Thread networking stack
+#### Introduction to Thread networking stack
 
-#### Why to use Thread
+##### Why to use Thread
 
 Thread was designed with one goal in mind; to create the best way to connect and control products in home. The key features of Thread are:
 
@@ -19,11 +19,11 @@ The Thread stack is built on IPv6 over Low power Wireless Personal Area Networks
 
 Read more at the [Thread Group site](http://www.threadgroup.org/).
 
-#### Why Mbed OS with Thread stack
+##### Why Mbed OS with Thread stack
 
 Mbed OS is an open source embedded operating system designed specifically to facilitate the creation and deployment of commercial, standards-based IoT solutions at scale. Mbed OS features full support for Thread to simplify development of secure IoT applications in home and to ease the Thread product certification. The Mbed OS Thread stack is a Thread Group certified component.
 
-##### Mbed Thread is based on the Mbed OS key elements
+###### Mbed Thread is based on the Mbed OS key elements
 
 The key elements of Mbed OS are:
 
@@ -47,7 +47,7 @@ Nanostack provides a set of C API headers with more functionalities. The followi
 - `thread_meshcop_lib.h` for building and parsing the Thread mesh commissioning protocol TLV messages.
 - `thread_net_config_api.h` for making neighbour discovery (ND) data requests.
 
-##### Thread devices you can build on Mbed OS
+###### Thread devices you can build on Mbed OS
 
 The Mbed OS Mesh API allows you to define 3 types of devices:
 
@@ -142,7 +142,7 @@ The Mbed OS Thread stack supports all three types of commissioners. You can crea
 
 See [Thread commissioning guide](thread_commissioning.md) how to commission a Thread device to the network in practise.
 
-#### The maturity of the Mbed OS Thread implementation
+##### The maturity of the Mbed OS Thread implementation
 
 Mbed OS provides a certified Thread 1.1 stack implementation.
 
