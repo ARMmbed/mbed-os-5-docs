@@ -2,7 +2,7 @@
 
 The [`Thread`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html) class allows defining, creating and controlling parallel tasks.
 
-Note: The function `main` is a special thread function that is started at system initialization.
+<span class="notes">**Note:** The function `main` is a special thread function that is started at system initialization.</span>
 
 ##### Thread class reference
 
