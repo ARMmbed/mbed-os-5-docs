@@ -16,9 +16,7 @@ In a 6LoWPAN network, devices can have different roles. The colours in the illus
 
 ![Border router](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/br.png)
 
-A border router is the coordinator of the 6LoWPAN network. It handles the translations between the 6LoWPAN and IPv6 networks.
-ARM does not provide translation to IPv4 network due the limited address space. We recommend using IPv6 tunnels over
-IPv4 network when operating in such environment.
+A border router is the coordinator of the 6LoWPAN network. It handles the translations between the 6LoWPAN and IPv6 networks. Arm does not provide translation to IPv4 network due the limited address space. We recommend using IPv6 tunnels over IPv4 network when operating in such environment.
 
 The border router also authenticates the nodes joining the network and keeps track of the routing topology.
 
@@ -26,8 +24,7 @@ The border router also authenticates the nodes joining the network and keeps tra
 
 ![6LoWPAN router](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lr.png)
 
-A 6LoWPAN router is a node that can route packets. This role is required to form a topological or mesh network.
-This configuration does not allow nodes to sleep because they route packets to their siblings.
+A 6LoWPAN router is a node that can route packets. This role is required to form a topological or mesh network. This configuration does not allow nodes to sleep because they route packets to their siblings.
 
 ###### 6LoWPAN host (6LH)
 
@@ -41,8 +38,7 @@ A 6LoWPAN sleepy host is a 6LoWPAN host that is periodically allowed to sleep an
 
 ##### Different types of 6LoWPAN mesh networks
 
-6LoWPAN-based mesh networks cannot be described as a uniform standardized network type, such as WiFi. Depending on the
-business requirements and use cases the network may have different setups and requirements.
+6LoWPAN-based mesh networks cannot be described as a uniform standardized network type, such as Wi-Fi. Depending on the business requirements and use cases the network may have different setups and requirements.
 
 ###### Star network
 
