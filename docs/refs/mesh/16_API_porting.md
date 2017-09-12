@@ -1,4 +1,4 @@
-##### Porting new RF driver for 6LoWPAN Stack
+#### Porting new RF driver for 6LoWPAN Stack
 
 Device drivers are a set of functions for providing PHY layer devices for the 6LoWPAN stack:
 
@@ -6,48 +6,46 @@ Device drivers are a set of functions for providing PHY layer devices for the 6L
 - receiving function
 - a set of device controlling functions
 
-###### How Nanostack runs inside mbed OS
+##### How Nanostack runs inside Mbed OS
 
-The mbed OS port of Nanostack consist of a few helper modules that provide easier API for users and Platform API for working inside the operating system.
+The Mbed OS port of Nanostack consist of a few helper modules that provide easier API for users and Platform API for working inside the operating system.
 
-![Nanostack inside mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
+![Nanostack inside Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
 
-* [mbed Mesh API](refs/api/networking/mesh.md) controls and initializes Nanostack on mbed OS.
+* [Mbed Mesh API](refs/api/networking/mesh.md) controls and initializes Nanostack on Mbed OS.
     * Security settings.
     * Channel configuration.
     * Connection and reconnection logic.
-* [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos) implements Platform API for mbed OS.
+* [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
     * An internal event handler is initialized when the stack starts.
     * The event handler is running in its own thread. Not visible for users.
 * [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface) class implements the network stack abstration for the socket layer.
     * Initializes the RF driver. See [Providing RF driver](#providing-rf-driver-for-mbed-os-applications).
 
-In mbed OS, Socket API hides the differences between the networking stacks. Users will only use one of its high level APIs:
+In Mbed OS, Socket API hides the differences between the networking stacks. Users will only use one of its high level APIs:
 
 * UDPSocket
 * TCPSocket
 * TCPServer
 
-![Sockets in mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbedOS_sockets.png)
+![Sockets in Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbedOS_sockets.png)
 
-For an example of a simple application using Nanostack, see [Example mesh application for mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+For an example of a simple application using Nanostack, see [Example mesh application for Mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
 For documentation of Socket API see the following links
 
 * [Socket API: Getting started](https://developer.mbed.org/teams/NetworkSocketAPI/wiki/Getting-Started)
 * [Socket API: Doxygen](https://developer.mbed.org/teams/NetworkSocketAPI/code/NetworkSocketAPI/docs/tip/)
 
-###### Providing RF driver for mbed OS applications
+###### Providing RF driver for Mbed OS applications
 
-For mbed OS 5, the RF driver implements the `NanostackRfPhy` API.
-`MeshInterfaceNanostack` requires the driver object to be provided when
-initializing.
+For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterfaceNanostack` requires the driver object to be provided when initializing.
 
 ![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
 
 Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface`
 directly to set up the network and provide a driver. Rest of the classes provide an abstration
-between Nanostack and Socket layers of mbed OS.
+between Nanostack and Socket layers of Mbed OS.
 
 See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
 
@@ -59,7 +57,7 @@ The driver must first be registered with the 6LoWPAN stack using the `phy_device
 
 See Doxygen documentation for the latest [Device Drive API](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html).
 
-###### How to create a new RF driver
+##### How to create a new RF driver
 
 The following steps describe how you can create a new RF driver:
 
@@ -75,7 +73,7 @@ The following steps describe how you can create a new RF driver:
 
 1. Check with a RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
-###### Worker thread for Mbed OS
+##### Worker thread for Mbed OS
 
 Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
 from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement their own worker thread to handle the interrupt requests.
@@ -128,7 +126,7 @@ irq_thread.start(rf_if_irq_task);
 
 ```
 
-###### RF driver states
+##### RF driver states
 
 _Figure 11-1_ below shows the basic states of the RF driver.
 
@@ -179,7 +177,7 @@ State|Description
 
 ![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
 
-###### PHY device driver register
+##### PHY device driver register
 
 This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces to a specific PHY driver.
 
@@ -191,7 +189,7 @@ int8_t arm_net_phy_register(phy_device_driver_s *phy_driver);
 
 See the [Doxygen](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#aff06eaa736d3784c956dc6eda9f27419) for the description.
 
-###### PHY data RX API
+##### PHY data RX API
 
 This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
 
@@ -203,7 +201,7 @@ typedef int8_t arm_net_phy_rx_fn(const uint8_t *data_ptr, uint16_t data_len, uin
 
 See [Doxygen: arm_net_phy_rx_fn](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#a962b27c1de3163a37d0e298e5107ab6f) for detailed description.
 
-###### PHY data TX done API
+##### PHY data TX done API
 
 This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
 
@@ -220,7 +218,7 @@ If the CSMA-CA is handled by the hardware, the `cca_retry` should return a value
 
 When the hardware handles the auto-retry mode, the error cases should report the number of TX attempts made in the `tx_retry` parameter. If the total number of retries is less that 4, the stack initiates a retransmission.
 
-###### PHY driver structure and enumeration definitions
+##### PHY driver structure and enumeration definitions
 
 This section introduces driver API specific structures and enumerations.
 
@@ -265,7 +263,6 @@ Parameter|Description
 `RESET`|Resets a PHY driver and sets it to idle.
 `DOWN`|Disables the PHY interface driver (RF radio disabled).
 `UP`|Enables the PHY interface driver (RF radio receiver ON).
-
 
 ###### PHY device driver
 
@@ -407,7 +404,7 @@ Parameter|Description
 `M_GFSK`|The GFSK modulation method.
 `M_UNDEFINED`|The RF modulation method undefined.
 
-###### Example RF driver
+##### Example RF driver
 
 The following code example is not a complete driver but shows you how to use the API to create a RF driver.
 
