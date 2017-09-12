@@ -1,6 +1,6 @@
-#### Introduction to Thread networking stack
+##### Introduction to Thread networking stack
 
-##### Why to use Thread
+###### Why to use Thread
 
 Thread was designed with one goal in mind; to create the best way to connect and control products in home. The key features of Thread are:
 
@@ -19,7 +19,7 @@ The Thread stack is built on IPv6 over Low power Wireless Personal Area Networks
 
 Read more at the [Thread Group site](http://www.threadgroup.org/).
 
-##### Why Mbed OS with Thread stack
+###### Why Mbed OS with Thread stack
 
 Mbed OS is an open source embedded operating system designed specifically to facilitate the creation and deployment of commercial, standards-based IoT solutions at scale. Mbed OS features full support for Thread to simplify development of secure IoT applications in home and to ease the Thread product certification. The Mbed OS Thread stack is a Thread Group certified component.
 
@@ -87,7 +87,6 @@ Full End Device (FED):
 - Makes address queries.
 - Listens to multicast messages from other devices (others than parent).
 - Reduces the parent device's load and memory requirements compared to MED and SED.
-
 
 ###### Routers
 
