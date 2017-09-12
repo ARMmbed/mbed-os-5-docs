@@ -17,8 +17,7 @@ Option Name | Features supported | Current binary size in Mbed OS 5.5
 `FEATURE_THREAD_END_DEVICE` | Thread host without routing capability | 165.548 kB
 `FEATURE_THREAD_ROUTER` | Thread host with routing capability | 198.618 kB
 
-<span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9.
-They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
+<span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9. They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
 ##### Using configuration option on Mbed OS
 
@@ -28,8 +27,8 @@ See [6LoWPAN overview](quick_start_intro.md) for the definition of star and mesh
 
 Select the protocol the network is based on:
 
-- 6LoWPAN-ND
-- Thread
+- 6LoWPAN-ND.
+- Thread.
 
 Select the device role:
 
@@ -53,8 +52,8 @@ An example of the `mbed_app.json` file:
 
 In the application, you need to choose from two supported interface classes:
 
-- For 6LoWPAN-ND based network use `LoWPANNDInterface`
-- For Thread based network use `ThreadInterface`
+- For 6LoWPAN-ND based network, use `LoWPANNDInterface`.
+- For Thread based network, use `ThreadInterface`.
 
 Then you may optionally choose to select the non-routing mode for those networks. The following tables show the values you should use in the `mbed_app.json` file for your devices in different networks.
 
