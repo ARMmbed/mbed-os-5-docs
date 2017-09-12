@@ -1,11 +1,11 @@
-##### Nanostack
+#### Nanostack
 
 This chapter introduces the _6LoWPAN stack architecture_. It contains the following sections:
 
 - [_Architecture._](#architecture)
 - [_6LoWPAN stack._](#6lowpan-stack)
 
-###### Architecture
+##### Architecture
 
 _IPv6 Low power Wireless Personal Area Network_ (6LoWPAN) is an adaptation layer that enables the use of IPv6 over low power wireless and supports IPv6 and _User Datagram Protocol_ (UDP) header compression. The Internet Protocol (IP) header compression allows 6LoWPAN packets to be compact, making it robust and, ideal for low power and lossy networks. It also handles fragmentation and reassembly of packets in scenarios where payloads larger than the _Maximum Transmission Unit_ (MTU) of the supported interface are transferred (a maximum of 1280 bytes).
 
@@ -17,7 +17,7 @@ The combination of 6LoWPAN stack and 6LoWPAN border router _Access Point_ (AP) s
 
 ![nw-arc](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_network_architecture.png)
 
-###### 6LoWPAN stack
+##### 6LoWPAN stack
 
 The 6LoWPAN stack is modular in design and uses an extremely lightweight event environment that allows the developer to run the stack completely in standalone mode without a need for a third-party _Operating System_ (OS). Additional benefits of the model are lower hardware requirements in the terms of flash and RAM usage. This approach significantly reduces integration effort and, thus, reduces your time-to-market. The stack can also be used in a configuration so that the developer can run it as a task or thread, for example, within a full _Real-time Operating System_ (RTOS). However, this will inevitably increase the system resource requirement because additional resources are required by the RTOS.
 
@@ -83,7 +83,7 @@ _Figure 1-3_ shows the various protocol modules that make up the 6LoWPAN stack, 
 
 ![osi](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_stack_osi_model.png)
 
-###### Protocol layers and related standards
+##### Protocol layers and related standards
 
 The related standards supported by the stack are:
 
@@ -142,11 +142,11 @@ The related standards supported by the stack are:
 	* RFC5289
 	* IETF draft-mcgrew-tls-aes-ccm-ecc-05
 
-###### Interfaces
+##### Interfaces
 
 The 6LoWPAN stack offers application developers programming interfaces for configuring the 6LoWPAN network, defining security levels and sending and receiving packets. The 6LoWPAN stack requires the developers to provide functions for platform specific tasks and network drivers for physical layer. For more information on programming interfaces, see [Mbed Mesh API](refs/api/networking/mesh.md).
 
-###### Operation modes
+##### Operation modes
 
 In 6LoWPAN network, the following roles are described in RFCs:
 <dl>
