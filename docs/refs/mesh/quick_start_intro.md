@@ -1,14 +1,14 @@
-### Mesh
+#### Mesh
 
 This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
 
-#### Overview of the 6LoWPAN network
+##### Overview of the 6LoWPAN network
 
 ![Node connected to server](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/node_to_server.png)
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
 
-##### Different device types in a 6LoWPAN network
+###### Different device types in a 6LoWPAN network
 
 In a 6LoWPAN network, devices can have different roles. The colours in the illustrations represent different device types and are used in the examples throughout the Quick Start Guide.
 
