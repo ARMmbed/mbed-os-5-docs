@@ -10,4 +10,4 @@ A mask can be supplied so only certain bits of a port are used, allowing other b
 
 ##### Hello World!
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/PwmOut_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/PwmOut_HelloWorld/file/3a1c5ee2fdb6/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/PortOut_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/PortOut_HelloWorld/file/e4e6fab14d21/main.cpp)
