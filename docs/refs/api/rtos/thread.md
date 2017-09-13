@@ -6,7 +6,7 @@ The [`Thread`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrt
 
 ##### Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_priority.png)</span>
 
