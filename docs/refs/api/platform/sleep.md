@@ -38,19 +38,19 @@ There are two available sleep modes:
 
 ##### Sleep manager
 
-The sleep manager provides API to control sleep modes. Deep sleep might introduce some power savings that can affect an application, for instance high speed clock dependent drivers.
+The sleep manager provides an API to control sleep modes. Deep sleep might introduce some power savings that can affect an application, for instance high speed clock dependent drivers.
 
-The `DeepSleepLock` class provides RAII object for disabling sleep, or explicit lock/unlock methods. To prevent an application from entering deep sleep, invoke `DeepSleepLock()::lock()` method. As soon as an application is ready for the deep sleep, allow it by invoking the `DeepSleepLock::unlock()` method.
+The `DeepSleepLock` class provides an RAII object for disabling sleep, or explicit lock/unlock methods. To prevent an application from entering deep sleep, invoke the `DeepSleepLock()::lock()` method. As soon as an application is ready for the deep sleep, allow it by invoking the `DeepSleepLock::unlock()` method.
 
 These Mbed OS drivers contain locking deep sleep:
 
-- `Ticker`
-- `Timeout`
-- `Timer`
-- `SPI`
-- `I2C`
-- `CAN`
-- `SerialBase`
+- `Ticker`.
+- `Timeout`.
+- `Timer`.
+- `SPI`.
+- `I2C`.
+- `CAN`.
+- `SerialBase`.
 
 ##### `Sleep Manager` API
 
@@ -71,7 +71,7 @@ SPI::transfer(const Type *tx_buffer, int tx_length, Type *rx_buffer, int rx_leng
     if (spi_active(&_spi)) {
         return queue_transfer(tx_buffer, tx_length, rx_buffer, rx_length, sizeof(Type)*8, callback, event);
     }
-    // This driver requires high speed clock, needs to waits for complete flag set via a callback to unblock the deep sleep
+    // This driver requires high speed clock, needs to wait for complete flag set via a callback to unblock the deep sleep
     sleep_manager_lock_deep_sleep();
     start_transfer(tx_buffer, tx_length, rx_buffer, rx_length, sizeof(Type)*8, callback, event);
     return 0;
