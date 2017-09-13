@@ -2,7 +2,10 @@
 
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
-* [Network sockets](/docs/v5.4/reference/api-references.html#network-sockets): provide a common interface for using sockets on network devices.
+* [UDPSocket](/docs/v5.4/reference/api-references.html#udpsocket): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
+* [TCPSocket](/docs/v5.4/reference/api-references.html#tcpsocket): This class provides the ability to send a stream of data over TCP.
+* [TCPServer](/docs/v5.4/reference/api-references.html#tcpsocket): This class provides the ability to accept incoming TCP connections.
+* [SocketAddress](/docs/v5.4/reference/api-references.html#socketaddress): You can use this class to represent the IP address and port pair of a unique network endpoint.
 * [Ethernet](/docs/v5.4/reference/api-references.html#ethernet): API for connecting to the internet over an Ethernet connection.
 * [Wi-Fi](/docs/v5.4/reference/api-references.html#wi-fi): API for connecting to the internet with a Wi-Fi device.
 * [Mesh networking](/docs/v5.4/reference/api-references.html#mesh): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
@@ -59,7 +62,7 @@ The callback may be called in interrupt context and should not perform operation
 
 ###### Socket
 
-You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classSocket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use:
+You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classSocket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
 
 ###### NetworkInterface
 
