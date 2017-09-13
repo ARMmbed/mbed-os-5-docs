@@ -63,8 +63,8 @@ An example of the configuration file:
 | `thread-use-static-link-config` | boolean | True: Use the below link config, False: Use commissioning, ignore the below link config. |
 | `thread-device-type` | enum from `mesh_device_type_t` | Supported device operating modes:<br> `MESH_DEVICE_TYPE_THREAD_ROUTER`<br> `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE`<br> `MESH_DEVICE_TYPE_THREAD_MINIMAL_END_DEVICE` |
 | `thread-config-channel-mask` | number [0-0x07fff800] | Channel mask, 0x07fff800 scans all channels. |
-| `thread-config-channel-page` | number [0, 2]| Channel page, 0 for 2,4 GHz and 2 for sub-GHz radios. |
-| `thread-config-channel`      | number [0-27] | RF channel to use. |
+| `thread-config-channel-page` | number [0]| Channel page, 0 for 2,4 GHz radio. |
+| `thread-config-channel`      | number [11-26] | RF channel to use. |
 | `thread-config-panid`        | number [0-0xFFFF] | Network identifier. |
 | `thread-config-network-name` | string [1-16] |
 | `thread-config-commissioning-dataset-timestamp` | [0-0xFFFFFFFFFFFFFFFF] | [48 bit timestamp seconds]-[15 bit timestamp ticks]-[U bit] |
@@ -80,7 +80,7 @@ An example of the configuration file:
 | --------------- | ---------| ----------- |
 | `6lowpan-nd-channel-mask`    | number [0-0x07fff800] | Channel mask, bit-mask of channels to use. |
 | `6lowpan-nd-channel-page`   | number [0, 2] | 0 for 2,4 GHz and 2 for sub-GHz radios. |
-| `6lowpan-nd-channel`        | number [0-27] | RF channel to use when `channel_mask` is not defined. |
+| `6lowpan-nd-channel`        | number [0-26] | RF channel to use when `channel_mask` is not defined. |
 | `6lowpan-nd-panid-filter` | number [0-0xffff] | Beacon PAN ID filter, 0xffff means no filtering. |
 | `6lowpan-nd-security-mode` | "NONE" or "PSK" | To use either no security, or Pre shared network key. |
 | `6lowpan-nd-psk-key-id` | number | PSK key ID when PSK is enabled. |

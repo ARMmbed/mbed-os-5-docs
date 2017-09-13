@@ -5,7 +5,7 @@ The Arm Mbed mesh API allows the application to use the IPv6 mesh network topolo
 **Tips:**
 * The mesh API supports 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes.
 * The applications do not use this module directly. The applications use `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
-* When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network. Mesh does not support static configuration.
+* When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network.
 
 ##### API
 
