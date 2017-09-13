@@ -203,7 +203,7 @@ public:
 
 ##### The importance of state
 
-A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](callbacks.md).
+A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/v5.4/reference/api-references.html#callback).
 
 ###### Why not function pointers?
 
