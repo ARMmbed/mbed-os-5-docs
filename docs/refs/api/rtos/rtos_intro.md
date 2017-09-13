@@ -12,6 +12,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 * [Mutex](/docs/v5.4/reference/api-references.html#mutex): The class used to synchronize the execution of threads.
 * [Semaphore](/docs/v5.4/reference/api-references.html#semaphore): The class that manages thread access to a pool of shared resources of a certain type.
 * [Queue and Memory Pool](/docs/v5.4/reference/api-references.html#queue-and-memorypool): Classes used to queue pointers and to define and manage fixed-size memory pools.
+* [Mail](/docs/v5.4/reference/api-references.html#mail): The API that provides a queue combined with a memory pool for allocating messages.
 * [RtosTimer](/docs/v5.4/reference/api-references.html#rtostimer): A deprecated class used to control timer functions in the system.
 * [Event](/docs/v5.4/reference/api-references.html#events): The queue to store events, extract them and excute them later.
 * [EventFlag](https://os-doc-builder.test.mbed.com/docs/v5.4/reference/api-references.html#eventflags): An event channel that provides a generic way of notifying other threads about conditions or events.
