@@ -7,7 +7,7 @@ the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) is used.
 
 ##### API
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classWiFiInterface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ##### Usage
 
