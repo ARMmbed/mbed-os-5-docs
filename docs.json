@@ -64,6 +64,8 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/network_sockets.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/udpsocket.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/tcpsocket.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/tcpserver.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/socketaddress.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/ethernet.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/wifi.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/refs/api/connectivity/ble.md"},
