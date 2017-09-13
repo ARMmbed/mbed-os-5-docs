@@ -32,7 +32,7 @@ Serial serial(USBTX, USBRX);
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.4/reference/api-references.html#the-importance-of-state) section.
 
-##### How to create callbacks
+##### Create callbacks
 
 First, you need to understand the syntax of the Callback type. The Callback type is a templated type parameterized by a C++ function declaration:
 
@@ -141,7 +141,7 @@ struct dosomething_arguments args = { &thing, arg1, arg2 };
 adc.attach(callback(dosomething_with_arguments, &args)); // yes
 ```
 
-##### How to call callbacks
+##### Call callbacks
 
 Callbacks overload the function call operator, so you can call a Callback like you would a normal function:
 
