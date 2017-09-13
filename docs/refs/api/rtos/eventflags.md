@@ -8,7 +8,7 @@ You can find the Arm Mbed OS EventFlags wrapper source code in the [Mbed OS repo
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classrtos_1_1EventFlags.html)
 
-#### Example
+##### EventFlags Example
 
 Below is an example of EventFlags usage, where one thread is generating events every 1s, and the second thread is waiting for the events and executing some action.
 
