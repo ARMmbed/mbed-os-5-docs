@@ -8,7 +8,7 @@ A [`Queue`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_
 
 ##### Queue class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Queue.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_queue.html)
 
 ##### Queue class example
 
@@ -30,7 +30,7 @@ You can use the MemoryPool class to define and manage fixed-size memory pools.
 
 ##### MemoryPool class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1MemoryPool.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_memory_pool.html)
 
 ##### MemoryPool class example
 
