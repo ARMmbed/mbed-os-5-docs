@@ -213,7 +213,7 @@
         "hidden": true,
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "master",
+        "branch": "mbed-os-5.6",
         "options": {
             "ENABLE_PREPROCESSING": "YES",
             "MACRO_EXPANSION": "YES",
