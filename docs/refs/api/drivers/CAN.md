@@ -4,13 +4,13 @@ Controller-Area Network (CAN) is a bus standard that allows microcontrollers and
 
 <span class="notes">**Note:** You can use the CAN interface to write data words out of a CAN port. It will return the data received from another CAN device. You can configure the CAN clock frequency.</span>
 
-##### API
+##### CAN class reference
 
 API summary
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1CANMessage.html)
 
-##### Hello World!
+##### CAN Hello World!
 
 This example sends a counter from one CAN bus (can1) and listens for a packet on the other CAN bus (can2). Each bus controller should be connected to a CAN bus transceiver. These should be connected together at a CAN bus.
 
