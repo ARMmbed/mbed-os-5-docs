@@ -21,10 +21,10 @@ Mode |  Polarity |  Phase
 
 The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock.
 
-##### API
+##### SPI class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1SPI.html)
 
-##### Hello World!
+##### SPI Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/file/dd9e7d208cbd/main.cpp)
