@@ -2,7 +2,7 @@
 
 The event loop is a mechanism that you can use to defer the execution of code to a different context. A common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context.
 
-##### Events Class Reference
+##### Events class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classevents_1_1_event_queue.html)
 
