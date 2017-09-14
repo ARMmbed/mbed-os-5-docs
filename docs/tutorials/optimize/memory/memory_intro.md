@@ -44,7 +44,7 @@ To disable error logging to serial output, set the `NDEBUG` macro and the follow
 }
 ```
 
-**Note:** Different compilers, different results; compiling with one compiler yields different memory usage savings than compiling with another.
+<span class="notes">**Note:** Different compilers, different results; compiling with one compiler yields different memory usage savings than compiling with another.</span>
 
 #### Embedded targets
 
