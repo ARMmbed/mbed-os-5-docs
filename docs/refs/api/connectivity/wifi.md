@@ -5,7 +5,7 @@ The [WifiInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/cl
 There are multiple [Wi-Fi components](https://developer.mbed.org/components/cat/wifi/) that implement the WiFiInterface class. For the example below,
 the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) is used.
 
-##### API
+##### Wi-Fi class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_wi_fi_interface.html)
 
@@ -17,7 +17,7 @@ To bring up the network interface:
 1. Call the ``connect`` function with an SSID and password for the Wi-Fi network.
 1. Once connected, the WiFiInterface can be used as a target for opening [network sockets](/docs/v5.4/reference/api-references.html#network-sockets).
 
-##### Example
+##### Wi-Fi Example
 
 Here is an example of an HTTP client program. The program brings up an ESP8266 as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket:
 
