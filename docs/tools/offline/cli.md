@@ -22,7 +22,7 @@ The directories of Git and Mercurial executables (`git` and `hg`) need to be in 
     * Compilers: GCC ARM, Arm Compiler 5, IAR.
     * IDE: Keil uVision, DS-5, IAR Workbench.
 
-<span class="tips">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may need to also install the i386 architecture package:</span>
+<span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may need to also install the i386 architecture package:</span>
 
 ```
 $ sudo dpkg --add-architecture i386
@@ -58,7 +58,7 @@ $ python setup.py install
 
 On Linux or Mac, you may need to run with `sudo`.
 
-<span class="tips">**Note:** Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv). You can read more about isolated Python virtual environments [here](http://docs.python-guide.org/en/latest/).</span>
+<span class="notes">**Note:** Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv). You can read more about isolated Python virtual environments [here](http://docs.python-guide.org/en/latest/).</span>
 
 ###### Add Bash tab completion
 
@@ -736,7 +736,7 @@ You can use the wildcard character `*` to run a group of tests that share a comm
 $ mbed test -m NUCLEO_F429ZI -t GCC_ARM -n TESTS-functional*
 ```
 
-**Note:** Some shells expand the wildcard character `*` into file names that exist in your working directory. To prevent this behavior, please see your shell's documentation.
+<span class="notes">**Note:** Some shells expand the wildcard character `*` into file names that exist in your working directory. To prevent this behavior, please see your shell's documentation.</span>
 
 ##### Test directory structure
 
