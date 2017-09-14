@@ -4,9 +4,7 @@ Serial is a generic protocol that computers and electronic modules use to send a
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
 
-##### API
-
-API summary
+##### Serial class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1Serial.html)
 
@@ -21,11 +19,11 @@ Serial channels have a number of configurable parameters:
 
 The default settings for the Mbed microcontroller are described as _9600-8-N-1_, a  common notation for serial port settings.
 
-##### Hello World!
+##### Serial Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/Serial_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/Serial_HelloWorld/file/e540d7769e69/main.cpp)
 
-##### Examples
+##### Serial examples
 
 ###### Example one
 
