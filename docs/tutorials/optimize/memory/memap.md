@@ -21,7 +21,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -t TOOLCHAIN, --toolchain TOOLCHAIN
                         select a toolchain used to build the memory map file
-                        (ARM, GCC_ARM, IAR)
+                        (ARM, ARMC6, GCC_ARM, IAR)
   -o OUTPUT, --output OUTPUT
                         output file name
   -e EXPORT, --export EXPORT
@@ -72,7 +72,7 @@ There are other entries that require a bit of clarification:
 
 #### Current support
 
-We have tested *memap* on Windows 7, Linux and Mac OS X. The `GCC_ARM` (GNU Arm Embedded Toolchain), Arm (Arm Compiler 5) and IAR toolchains generate memory map files.
+We have tested *memap* on Windows 7, Linux and Mac OS X. The `GCC_ARM` (GNU Arm Embedded Toolchain), Arm Compiler 5, Arm Compiler 6 and IAR toolchains generate memory map files.
 
 #### Known issues and new features
 
