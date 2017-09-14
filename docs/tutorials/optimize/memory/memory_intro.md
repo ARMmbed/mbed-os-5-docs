@@ -2,7 +2,7 @@
 
 Beginning with Mbed OS 5, new features such as RTOS created an increase in flash and RAM usage. This guide explains how to optimize program memory usage for release builds using Mbed OS 5.
 
-**Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available [here](https://developer.mbed.org/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/).
+<span class="notes">**Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available [here](https://developer.mbed.org/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/).</span>
 
 ### Removing unused modules
 
