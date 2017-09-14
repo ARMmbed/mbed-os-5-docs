@@ -4,7 +4,7 @@ Use the AnalogIn API to read an external voltage applied to an analog input pin.
 
 <span class="notes">**Note:**  Only certain pins are capable of making these measurements, so check the pinmap of your board for compatible pins.</span>
 
-##### API
+##### AnalogIn class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1AnalogIn.html)
 
