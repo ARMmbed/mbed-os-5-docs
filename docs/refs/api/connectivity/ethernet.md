@@ -2,7 +2,7 @@
 
 The [EthernetInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classEthernetInterface.html) provides a C++ API for connecting to the internet over Ethernet.
 
-##### API
+##### EthernetInterface class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classEthernetInterface.html)
 
@@ -15,7 +15,7 @@ To bring up the network interface:
 1. Once you connect the EthernetInterface, you can use it as a
 target for opening [network sockets](/docs/v5.4/reference/api-references.html#network-sockets).
 
-##### Example
+##### EthernetInterface example
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface and uses it to perform an HTTP transaction over a TCPSocket:
 
