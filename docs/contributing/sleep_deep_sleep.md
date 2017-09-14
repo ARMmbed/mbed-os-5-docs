@@ -29,7 +29,7 @@ The deep sleep latency (10 ms) is the higher limit of the boards we support. Mos
 
 ### Implementing the Sleep API
 
-There are two functions that the target needs to implement to support sleep, Their prototypes are in [hal/sleep_api.h]():
+There are two functions that the target needs to implement to support sleep, Their prototypes are in [hal/sleep_api.h](/docs/v5.4/mbed-os-api-doxy/sleep__api_8h_source.html):
 
 - Sleep.
 
