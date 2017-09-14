@@ -4,7 +4,7 @@ The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/cla
 
 Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
-##### API
+##### Cellular class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classCellularBase.html)
 
@@ -16,7 +16,7 @@ To bring up the network interface:
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
 1. Once connected, you can use Mbed OS [network sockets](/docs/v5.4/reference/api-references.html#network-sockets) as usual.
 
-##### Example: Connection establishment
+##### Cellular example: Connection establishment
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
