@@ -8,7 +8,7 @@ Use the instructions below to test our Cloud9-based mbed Enabled IDE, which is c
 
 ## mbed CLI
 
-We created the mbed command-line tool (mbed CLI), a Python-based tool, specifically for mbed OS 5. For more information, see the [mbed CLI page](cli.md).
+We created the mbed command-line tool (mbed CLI), a Python-based tool, specifically for mbed OS 5. For more information, see the [mbed CLI page](https://docs.mbed.com/docs/mbed-os-handbook/en/5.5/dev_tools/cli/).
 
 ## Compiler versions
 
