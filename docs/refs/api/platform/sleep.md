@@ -34,7 +34,7 @@ There are two available sleep modes:
 
 2. Deep sleep mode 
 
-    This processor is set up ready for deep sleep, and sent to sleep. This mode has the same sleep features as sleep, and it also powers down peripherals and high speed clocks. This mode maintains all state. You can only wake up the processor by lp ticker, RTC, an external interrupt on a pin or a watchdog timer.
+    This mode is similar to sleep but saves more power and has a longer wakeup time. It saves power by turning off the high-speed clocks. Because of this, you can only enter this mode when peripherals relying on high-speed clocks are not in use. Peripherals that do not rely on high-speed clocks include the lp ticker, RTC and external interrupt on a pin. This mode maintains all state.
 
 ##### Sleep manager
 
