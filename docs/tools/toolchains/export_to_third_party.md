@@ -93,11 +93,7 @@ If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r
 
 #### Make and Eclipse (GNU Arm Embedded Toolchain, IAR Compiler, Arm Compiler 5)
 
-**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.
-
-> "[GNU Make](http://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
->
->(Taken verbatim from the GNU Make website).
+<span class="notes">**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.</span>
 
 Make itself does not compile source code. It relies on a compiler such as:
 
@@ -141,7 +137,7 @@ Prior to version 2.6.1 of GNU Arm Eclipse, the build tools of the GNU Arm Eclips
 
     arm-none-eabi-g++: error: ./mbed-os/features/FEATURE_LWIP/lwi-interface/lwip/src/netif/lwip_lowpan6.o: No such file or directory
 
-Note: There is a deletion of a character here. The command-line should read `./mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/lwip_lowpan6.o`.
+<span class="notes">**Note:** There is a deletion of a character here. The command-line should read `./mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/lwip_lowpan6.o`.</span>
 
 ##### Kinetis Design Studio (Freescale KDS) with GNU Arm Embedded Toolchain
 
