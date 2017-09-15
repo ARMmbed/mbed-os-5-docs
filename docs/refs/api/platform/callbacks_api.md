@@ -6,7 +6,7 @@ This is the technical reference for callbacks. You should read the [introduction
 
 ##### Callback class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1Callback_3_01R_07A0_08_4.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_callback.html)
 
 ###### Serial passthrough example with callbacks
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/)](https://developer.mbed.org/users/mbedAustin/code/SerialPassthrough/file/96cb82af9996/main.cpp)
