@@ -6,7 +6,7 @@ The default format is set to 8 bits, mode 0 and a clock frequency of 1MHz. Synch
 
 ##### SPISlave class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1SPISlave.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_s_p_i_slave.html)
 
 ##### SPISlave example
 
