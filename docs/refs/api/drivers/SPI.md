@@ -6,7 +6,7 @@ You can use this interface for communication with SPI slave devices, such as FLA
 
 ##### Interface
 
-<span class="images">![](../../images/pin_out.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/pin_out.png)<span>A pinout map.</span></span>
 
 The default settings of the SPI interface are 1MHz, 8-bit, Mode 0.
 
@@ -21,10 +21,10 @@ Mode |  Polarity |  Phase
 
 The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock.
 
-##### API
+##### SPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1SPI.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
 
-##### Hello World!
+##### SPI Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/SPI_HelloWorld/file/dd9e7d208cbd/main.cpp)

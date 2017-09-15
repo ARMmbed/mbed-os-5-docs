@@ -70,6 +70,4 @@ Filename | Description |
 `svc_user.c` | Removed as its template file and should not be in our code base |
 `rt_OsEventObserver.{c,h}` | Added an interface for uVisor to be notified about certain events from privileged code |
 
-##### Notes
-
-For all toolchains, Mbed OS uses `irq_cm0.s` for both M0 and M0P cores.
+<span class="notes">**Note:** For all toolchains, Mbed OS uses `irq_cm0.s` for both M0 and M0P cores.</span>

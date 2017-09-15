@@ -150,7 +150,7 @@ Mbed, libraries and application source code can then select different implementa
 
 ##### `supported_toolchains`
 
-The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `GCC_ARM` and `IAR`.
+The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC6`, `GCC_ARM` and `IAR`.
 
 ##### `default_toolchain`
 

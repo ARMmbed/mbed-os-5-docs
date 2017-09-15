@@ -18,12 +18,12 @@ Be aware that Flash IAP might disable interrupts for a long time. This can affec
 
 This class is thread-safe.
 
-##### API
+##### Flash IAP class reference
 
 View the full C++ API:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1FlashIAP.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.html)
 
-##### Example
+##### Flash IAP example
 
 For an example that uses the `FlashIAP` driver, please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader).

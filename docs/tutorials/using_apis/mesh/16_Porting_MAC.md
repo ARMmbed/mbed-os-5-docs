@@ -1,8 +1,8 @@
-### MAC API porting
+#### MAC API porting
 
 Nanostack has a lower level API for the IEEE 802.15.4-2006 MAC standard. This enables developers to support different MACs, be it SW or HW based solution. Nanostack offers SW MAC that you can use when your board does not have 15.4 MAC available.
 
-#### SW MAC
+##### SW MAC
 
 Nanostack includes an IEEE 802.15.4 based SW MAC class. You can use SW MAC when your board does not support MAC. To use the SW MAC service you must have a working RF driver registered to Nanostack. To create SW MAC, call the following function:
 
@@ -56,7 +56,7 @@ SW MAC supports FHSS. To enable it, you need to do the following:
 4. Call `ns_sw_mac_fhss_register()` to register FHSS to SW MAC.
 5. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class.
 
-#### IEEE 802.15.4 MAC sublayer APIs
+##### IEEE 802.15.4 MAC sublayer APIs
 
 The stack uses the IEEE 802.15.4 defined MAC management service entity (MLME-SAP) and MAC data service (MCPS-SAP) interfaces. MAC API follows MCPS and MLME primitives defined by the IEEE 802.15.4-2006 standard.
 
@@ -111,7 +111,7 @@ MLME-SAP primitives used by Nanostack:
 | `MLME-SYNCH-LOSS-IND` | Indicate syncronization loss from wireless PAN. Only used by SW MAC when FHSS is in use! |
 | `MLME-POLL-REQ` | Request MAC to do data poll to parent. |
 
-###### Non-supported MLME APIs
+###### Unsupported MLME APIs
 
 Unsupported MLME-SAP primitives:
 
@@ -232,7 +232,7 @@ Enumeration extension for MLME communication status enumeration:
 | ---------------- | ----- | ----------- |
 | `MLME_DATA_POLL_NOTIFICATION` | `0xff` | Thread requirement for MLME-COMM-STATUS to start indicating the successful data poll events. |
 
-#### HW MAC
+##### HW MAC
 
 To use HW MAC, you need to create an adapter class that links function calls between Nanostack and HW MAC. To create the adapter class, you need to implement the functions defined in the `mac_api_s` structure. When HW MAC generates an event the adapter must handle it and do a parameter adaptation before calling the correct function from the `mac_api_s` structure. You may need the same parameter adaptation for requests from Nanostack to HW MAC.
 

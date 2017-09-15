@@ -4,10 +4,10 @@ Use the PortOut interface to write to an underlying GPIO port as one value. This
 
 A mask can be supplied so only certain bits of a port are used, allowing other bits to be used for other interfaces.
 
-##### API
+##### PortOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1PortOut.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_port_out.html)
 
-##### Hello World!
+##### PortOut Hello World!
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/PwmOut_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/PwmOut_HelloWorld/file/3a1c5ee2fdb6/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/PortOut_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/PortOut_HelloWorld/file/e4e6fab14d21/main.cpp)

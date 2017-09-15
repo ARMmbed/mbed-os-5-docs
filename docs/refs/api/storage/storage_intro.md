@@ -17,13 +17,13 @@ The [BlockDevice](https://github.com/ARMmbed/mbed-os/blob/master/features/filesy
 
 Additionally, two utility block devices give you better control over how storage is allocated. The [slicing block device](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/SlicingBlockDevice.h) allows you to partition storage into smaller block devices that you can use independently, and the [chaining block device](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/ChainingBlockDevice.h) allows you to chain multiple block devices together and extend the usable amount of storage.
 
-Note: Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.
+<span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
 ##### Partitioning
 
 Partitioning allows you to split a block device among multiple storage users such that the split is portable across multiple systems. Partitioning also allows you to have multiple file systems that you can mount on one disk from both Mbed OS devices and host computers. The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
 
-Note: File system partitioning is not required if there is only one file system present.
+<span class="notes">**Note:** File system partitioning is not required if only one file system is present.</span>
 
 ##### C++ classes
 

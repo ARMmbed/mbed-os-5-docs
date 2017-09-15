@@ -4,10 +4,10 @@ Use the PortInOut interface to read and write an underlying GPIO port as one val
 
 A mask can be supplied so you only use certain parts of a port, allowing other bits to be used for other interfaces.
 
-##### API
+##### PortInOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1PortInOut.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_port_in_out.html)
 
-##### Hello World!
+##### PortInOut Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/PortInOut_HelloWorld/)](https://developer.mbed.org/users/mbed_official/code/PortInOut_HelloWorld/file/018ca8a43b33/main.cpp)

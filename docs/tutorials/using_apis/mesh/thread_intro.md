@@ -1,6 +1,6 @@
-### Introduction to Thread networking stack
+#### Introduction to Thread networking stack
 
-#### Why to use Thread
+##### Why to use Thread
 
 Thread was designed with one goal in mind; to create the best way to connect and control products in home. The key features of Thread are:
 
@@ -19,7 +19,7 @@ The Thread stack is built on IPv6 over Low power Wireless Personal Area Networks
 
 Read more at the [Thread Group site](http://www.threadgroup.org/).
 
-#### Why Mbed OS with Thread stack
+##### Why Mbed OS with Thread stack
 
 Mbed OS is an open source embedded operating system designed specifically to facilitate the creation and deployment of commercial, standards-based IoT solutions at scale. Mbed OS features full support for Thread to simplify development of secure IoT applications in home and to ease the Thread product certification. The Mbed OS Thread stack is a Thread Group certified component.
 
@@ -30,13 +30,13 @@ The key elements of Mbed OS are:
 - Hardware platform agnostic layer that allows easy adaptation of new hardware components.
 - Modular approach, which allows including the necessary libraries based on the application needs.
 - Multilayer build (SW/HW) in security that helps you to protect your IoT solutions.
-- Mbed RTOS (ARM CMSIS-RTOS) providing the real time software execution.
+- Mbed RTOS (Arm CMSIS-RTOS) providing the real time software execution.
 - Toolchain and IDE support.
 
-Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api) for building Thread applications.
+Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](/docs/v5.4/reference/api-references.html#mesh) for building Thread applications.
 
 - To connect to the Thread network, use the [Thread interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h).
-- For the socket communication over the Thread network, use the [Mbed sockets API](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket).
+- For the socket communication over the Thread network, use the [Mbed sockets API](/docs/v5.4/reference/api-references.html#network-sockets).
 
 Nanostack provides a set of C API headers with more functionalities. The following header files are located [here](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack):
 
@@ -61,12 +61,11 @@ In most cases, the REED, MED and SED configurations are enough to build a networ
 
 For an end device or a router example, see [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
-###### End devices
+##### End devices
 
 Mbed OS offers separate configurations for different Thread end device types. Usually, the end devices are the most constrained devices in the Thread network. They serve as last hop in the mesh topology. Devices such as plain sensors, controls and switches can be implemented as end devices only. For the most constrained hardware, the minimal end device (MED) or the sleepy end device (SED) is an optimal selection as the implementation requires the smallest amount of flash and RAM memory due to the limited functionality. Note that a sleepy end device also requires more resources on the parent device. End devices communicate through a parent and can switch to another parent if the current connection is broken.
 
-A Thread network does not work with end devices only. There must be router devices, that can route the traffic between nodes and to
-the back-end network through the border router.
+A Thread network does not work with end devices only. There must be router devices, that can route the traffic between nodes and to the back-end network through the border router.
 
 Minimal end device (MED):
 
@@ -88,8 +87,7 @@ Full End Device (FED):
 - Listens to multicast messages from other devices (others than parent).
 - Reduces the parent device's load and memory requirements compared to MED and SED.
 
-
-###### Routers
+##### Routers
 
 In Thread networks, devices operate in several specific roles separated by the services they provide. All router devices provide mesh routing and they can switch the state between an active router and a REED device without any user interaction. The first router on a network becomes a leader, that manages:
 
@@ -104,7 +102,7 @@ Mbed OS offers a separate build for a Thread border router. The border router ro
 
 See an example of a Thread border router [here](https://github.com/ARMmbed/nanostack-border-router).
 
-###### Commissioning
+##### Commissioning
 
 Commissioning takes place when new devices need to be added to the Thread network. All Mbed OS Thread devices (end nodes and routers) can join to any certified Thread network. In Thread, there can be one commissioner, that allows new devices to join the network. There are three types of commissioners:
 
@@ -136,13 +134,13 @@ Now, the Thread network is ready to accept new joiner devices.
 
 <span class="notes">**Note:** Thread uses hashing and elliptic curve algorithms for the secure communication. PSKd(s) and EUI64(s) are never transmitted in plain text over the peer to peer connection.</span>
 
-###### How to start on Mbed OS
+##### How to start on Mbed OS
 
 The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the [Nanostack border router](https://github.com/ARMmbed/nanostack-border-router). An external Commissioning application (Android) is already available [here](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner). Also an IOS version will be available soon.
 
-See [Thread commissioning guide](thread_commissioning.md) how to commission a Thread device to the network in practise.
+See [Thread commissioning guide](/docs/v5.4/tutorials/using-the-apis.html#how-to-commission-a-thread-device-in-practise) how to commission a Thread device to the network in practise.
 
-#### The maturity of the Mbed OS Thread implementation
+##### The maturity of the Mbed OS Thread implementation
 
 Mbed OS provides a certified Thread 1.1 stack implementation.
 

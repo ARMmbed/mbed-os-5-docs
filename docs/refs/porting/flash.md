@@ -14,7 +14,7 @@ Use these 2 defines in place of flash start and size for a target:
 * `MBED_APP_START` - defines an address where an application space starts.
 * `MBED_APP_SIZE` - the size of the application.
 
-Note: When an application does not use any of the bootloader functionality, then `MBED_APP_START` and `MBED_APP_SIZE` are not defined. For this reason, the linker script must define default values that match flash start and flash size.
+<span class="notes">**Note:** When an application does not use any of the bootloader functionality, then `MBED_APP_START` and `MBED_APP_SIZE` are not defined. For this reason, the linker script must define default values that match flash start and flash size..</span>
 
 An example of how a target could define `MBED_APP_START` and `MBED_APP_SIZE` in the linker script file:
 
@@ -30,7 +30,7 @@ An example of how a target could define `MBED_APP_START` and `MBED_APP_SIZE` in 
 
 Be careful with these defines because they move the application flash sections. Therefore, you should move any sections within flash sectors accordingly.
 
-Note: The VTOR must be relative to the region in which it is placed. To confirm, search for `NVIC_FLASH_VECTOR_ADDRESS` and `SCB->VTOR`, and ensure the flash address is not hardcoded.
+<span class="notes">**Note:** The VTOR must be relative to the region in which it is placed. To confirm, search for `NVIC_FLASH_VECTOR_ADDRESS` and `SCB->VTOR`, and ensure the flash address is not hardcoded.</span>
 
 Problematic declaration of flash VTOR address:
 

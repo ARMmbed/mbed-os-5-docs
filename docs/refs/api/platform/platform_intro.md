@@ -1,6 +1,6 @@
 ### Platform
 
-The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This sections consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs: 
+The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This section consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs: 
 
 - [`Callback`](/docs/v5.4/reference/api-references.html#callback): An API that executes the user’s code in its own context.
 - [`Sleep`](/docs/v5.4/reference/api-references.html#sleep): The sleep function and sleep manager for Mbed OS.
@@ -32,7 +32,27 @@ Serial serial(USBTX, USBRX);
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.4/reference/api-references.html#the-importance-of-state) section.
 
-##### How to create callbacks
+##### Why should you use Callbacks?
+
+Unfortunately, supporting all of the standard C++ function types is difficult.
+
+- State is important, so need to support either C-style function pointers with state, or C++ member function pointers.
+
+- Stateless callbacks are just as common, but passing a stateless callback as a member function function requires writing a lot of boilerplate code and instantiating an empty class. So we need to also support a standard function pointer.
+
+- Another design pattern you may see is the function object, a class that overrides the function call operator. We can expect the user to pass function objects as C++ member function pointers if needed.
+
+- A useful C++ feature is the enforcement of const-correctness, but this becomes unfortunately complicated with the state associated with callbacks. A C++ API needs to support both the const and non-const versions of member function pointers.
+
+- Another C++ feature is volatile-correctness in case the underlying state must be volatile, but if necessary we can probably expect the user to hide volatile members inside of a non-volatile class.
+
+C++ requires a large set of overloads to support all of the standard function types. It is unreasonable to expect a new library author to add all of these overloads to every function that could take in a callback.
+
+C++ provides the tools to delegate this problem to a single class. This class is the Callback class. The Callback class should be familiar to users of the std::function class that C++11 introduced but is available for older versions of C++.
+
+**An overly-simplified description of the Callback class is that is contains all of this madness so you don’t have to.**
+
+##### Create callbacks
 
 First, you need to understand the syntax of the Callback type. The Callback type is a templated type parameterized by a C++ function declaration:
 
@@ -141,7 +161,7 @@ struct dosomething_arguments args = { &thing, arg1, arg2 };
 adc.attach(callback(dosomething_with_arguments, &args)); // yes
 ```
 
-##### How to call callbacks
+##### Call callbacks
 
 Callbacks overload the function call operator, so you can call a Callback like you would a normal function:
 
@@ -183,7 +203,7 @@ public:
 
 ##### The importance of state
 
-A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](callbacks.md).
+A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/v5.4/reference/api-references.html#callback).
 
 ###### Why not function pointers?
 
@@ -315,26 +335,6 @@ int main() {
     adc2.attach(&low_pass2, &LowPass::step);
 }
 ```
-
-###### Why should you use Callbacks?
-
-Unfortunately, supporting all of the standard C++ function types is difficult.
-
-- State is important, so need to support either C-style function pointers with state, or C++ member function pointers.
-
-- Stateless callbacks are just as common, but passing a stateless callback as a member function function requires writing a lot of boilerplate code and instantiating an empty class. So we need to also support a standard function pointer.
-
-- Another design pattern you may see is the function object, a class that overrides the function call operator. We can expect the user to pass function objects as C++ member function pointers if needed.
-
-- A useful C++ feature is the enforcement of const-correctness, but this becomes unfortunately complicated with the state associated with callbacks. A C++ API needs to support both the const and non-const versions of member function pointers.
-
-- Another C++ feature is volatile-correctness in case the underlying state must be volatile, but if necessary we can probably expect the user to hide volatile members inside of a non-volatile class.
-
-C++ requires a large set of overloads to support all of the standard function types. It is unreasonable to expect a new library author to add all of these overloads to every function that could take in a callback.
-
-C++ provides the tools to delegate this problem to a single class. This class is the Callback class. The Callback class should be familiar to users of the std::function class that C++11 introduced but is available for older versions of C++.
-
-**An overly-simplified description of the Callback class is that is contains all of this madness so you don’t have to.**
 
 Here’s the low-pass filter example rewritten to use the callback class:
 

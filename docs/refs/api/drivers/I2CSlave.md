@@ -4,11 +4,11 @@ Use I2C Slave to communicate with I2C Master.
 
 Synchronization level: not protected.
 
-##### API
+##### I2CSlave class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1I2CSlave.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_i2_c_slave.html)
 
-##### Example
+##### I2CSlave example
 
 Try this example to see how an I2C responder works.
 

@@ -4,10 +4,10 @@ Use the PortIn interface to read an underlying GPIO port as one value. This is m
 
 A mask can be supplied so only certain bits of a port are used, allowing other bits to be used for other interfaces.
 
-##### API
+##### PortIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1PortIn.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_port_in.html)
 
-##### Hello World!
+##### PortIn Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/PortIn_HelloWorld/)](https://developer.mbed.org/users/mbed_official/code/PortIn_HelloWorld/file/92064442fd12/main.cpp)

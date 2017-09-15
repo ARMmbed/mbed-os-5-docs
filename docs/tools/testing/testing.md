@@ -18,7 +18,7 @@ myproject/TESTS/test_group/test_case_1
 
 In this example, `myproject` is the project root, and all the source files under the `test_case_1` directory are included in the test. The test build also includes any other source files from the OS, libraries and project that apply to the target's configuration.
 
-**Note:** You can name both the test group and test case directory anything you like. However, you **must** name the `TESTS` directory `TESTS` for the tools to detect the test cases correctly.
+<span class="notes">**Note:** You can name both the test group and test case directory anything you like. However, you **must** name the `TESTS` directory `TESTS` for the tools to detect the test cases correctly.</span>
 
 ###### Test discovery
 
