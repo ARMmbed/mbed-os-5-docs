@@ -6,7 +6,7 @@ One of the serial connections uses the Arm Mbed USB port, allowing you to easily
 
 ##### Serial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1Serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver).</span>
 
