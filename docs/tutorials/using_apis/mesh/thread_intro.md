@@ -36,7 +36,7 @@ The key elements of Mbed OS are:
 Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](/docs/v5.4/reference/api-references.html#mesh) for building Thread applications.
 
 - To connect to the Thread network, use the [Thread interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h).
-- For the socket communication over the Thread network, use the [Mbed sockets API](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket).
+- For the socket communication over the Thread network, use the [Mbed sockets API](/docs/v5.4/reference/api-references.html#network-sockets).
 
 Nanostack provides a set of C API headers with more functionalities. The following header files are located [here](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack):
 
