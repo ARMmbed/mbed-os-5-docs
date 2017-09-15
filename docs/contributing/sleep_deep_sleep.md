@@ -44,9 +44,3 @@ void hal_deepsleep(void);
 ```
 
 To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
-
-### Testing
-
-The [sleep HAL API test suite]() validates:
-- Sleep wake-up sources.
-- Sleep wake-up latency.
