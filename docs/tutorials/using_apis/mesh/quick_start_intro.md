@@ -10,7 +10,7 @@ Typically, the 6LoWPAN network consists of one border router on multiple low-pow
 
 ##### Different device types in a 6LoWPAN network
 
-In a 6LoWPAN network, devices can have different roles. The colours in the illustrations represent different device types and are used in the examples throughout the Quick Start Guide.
+In a 6LoWPAN network, devices can have different roles. The colours in the illustrations represent different device types and are used in the examples throughout this tutorial.
 
 ###### Border router (6LBR)
 
