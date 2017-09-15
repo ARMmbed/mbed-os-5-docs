@@ -181,7 +181,6 @@
         "slug": "porting",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/contributing/sleep_deep_sleep.md"}
         ]
     },
     {
