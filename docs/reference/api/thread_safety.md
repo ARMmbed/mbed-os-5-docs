@@ -1,5 +1,9 @@
 ### Thread Safety and Porting
 
+TODO: break apart thread safety
+- part go into api.md (levels of safety)
+- parts go into runtime.md (library stuff)
+
 #### About this document
 
 This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#thread-safety), then discusses [porting them](#considerations-when-porting) to a new target.
