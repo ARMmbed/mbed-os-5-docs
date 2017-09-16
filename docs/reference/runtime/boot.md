@@ -1,5 +1,9 @@
 ### Boot process
 
+TODO: Add information about retargeting the C standard library
+TODO: Move mbed_boot process below is for porting guide.
+TODO: Add developer hooks and documentation in place
+
 From a reset state, you can expect the following hooks and conditions. You can find more information in [`mbed_boot.c`](https://github.com/ARMmbed/mbed-os/blob/master/rtos/mbed_boot.c).
 
 - `ResetHandler` - vector table entry at start of Flash (main stack pointer).
