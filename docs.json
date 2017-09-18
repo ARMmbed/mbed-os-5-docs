@@ -16,9 +16,9 @@
         "type": "markdown",
         "sources": [
 	        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/references_intro.md"},
-	        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/arch/map.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/arch/memory_model.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/arch/boot.md"},
+	        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/runtime/map.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/runtime/memory_model.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/runtime/boot.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/configuring_mbed_os.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/config_system.md"},
 	        {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/references/api/api.md"},
