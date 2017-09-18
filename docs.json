@@ -177,8 +177,8 @@
     },
     {
         "title": "Contributing",
-        "description": "Supporting mbed OS on new platforms",
-        "slug": "porting",
+        "description": "Contributing mbed OS on new platforms",
+        "slug": "contributing",
         "type": "markdown",
         "sources": [
         ]
