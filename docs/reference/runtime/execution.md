@@ -1,4 +1,4 @@
-### Modes
+### Execution
 
 TODO: rewrite based on Arm v6m and v7m modes and how Mbed OS uses these http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0473j/dom1359731127340.html 
 
