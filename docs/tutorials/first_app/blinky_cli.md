@@ -12,7 +12,7 @@ Blinky is a simple program that blinks the LED on your board every half second. 
 
 Blinky's code is a simple `while` loop inside the `main()` function:
 
->>> C
+>>> c
 ```
 #include "mbed.h"
 #include "rtos.h"
@@ -82,7 +82,7 @@ Invoke `mbed compile`, specifying:
 
 For example, for the board K64F and the Arm Compiler 5:
 
->>> C
+>>> c
 ```
 mbed compile -m K64F -t ARM
 ```
@@ -90,7 +90,7 @@ mbed compile -m K64F -t ARM
 
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
 
->>> C
+>>> c
 ```
 [snip]
 +----------------------------+-------+-------+------+
@@ -119,7 +119,7 @@ The program file, `mbed-os-example-blinky.bin`, is under your `mbed-os-example-b
 
 Arm Mbed Enabled boards are programmable by drag and drop over a USB connection.
 
->>> C
+>>> c
 ```
 1. Connect your mbed board to the computer over USB.
 2. Copy the binary file to the board. In the example above, the file is `mbed-os-example-blinky.bin`, and it's under the `mbed-os-example-blinky\build\K64F\ARM\` folder.
