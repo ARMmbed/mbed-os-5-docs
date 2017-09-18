@@ -1,4 +1,4 @@
-### Boot process
+### Bootstrap
 
 TODO: Add information about retargeting the C standard library
 TODO: Move mbed_boot process below is for porting guide.
