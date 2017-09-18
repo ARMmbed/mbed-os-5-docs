@@ -1,5 +1,9 @@
 #### Wait
 
+TODO: smart wait exists but is not documented
+TODO: avoid OS delays is not factual
+TODO: use doxygen insert for API
+
 Wait functions provide simple wait capabilities. The OS scheduler puts the current thread in `waiting state`, allowing another thread to execute. Even better: If there are no other threads in `ready state`, it can put the whole microcontroller to `sleep`, saving energy.
 
 ```

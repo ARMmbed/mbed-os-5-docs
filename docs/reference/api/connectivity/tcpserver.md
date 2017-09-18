@@ -1,5 +1,8 @@
 #### TCPServer
 
+TODO: add more information about UDP
+TODO: add an example of use
+
 The TCPServer class provides the ability to accept incoming TCP connections. The `listen` member function sets up the server to listen for incoming connections, and the `accept` member function sets up a stateful TCPSocket instance on an incoming connection.
 
 ##### TCPServer class reference

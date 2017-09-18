@@ -1,5 +1,9 @@
 #### Time
 
+TODO: RTC API??
+TODO: if standard library is used, explain that and need to document the API supported
+TODO: what functions of each toolchain library are supported?
+
 The C date and time functions are a group of functions in the standard library of the C programming language implementing date and time manipulation operations. They provide support for time acquisition, conversion between date formats and formatted output to strings.
 
 ##### Time Hello world

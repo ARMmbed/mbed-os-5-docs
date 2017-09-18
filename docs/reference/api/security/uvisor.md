@@ -1,5 +1,10 @@
 #### uVisor
 
+TODO: remove board specifics
+TODO: refactor from tutorial flow to API and usage
+TODO: porting information needs to be moved out of this area
+TODO: notes about compatibility, debug, exporting etc...
+
 The uVisor provides sandboxed environments and resources protection for applications built for Arm Cortex-M3 and Cortex-M4 devices. This guide will show you how to enable the uVisor and configure a secure box to access some exclusive resources (memory, peripherals, interrupts). For more information about the uVisor design philosophy, please see the uVisor [introductory document](../../README.md).
 
 ##### uVisor example application
