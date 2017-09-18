@@ -1,4 +1,4 @@
-## Configuring Arm Mbed OS
+## Configuration
 
 TODO: intro how config is used and how to identify it (rules of use)
 TODO: content below is partially runtime, partially rtos

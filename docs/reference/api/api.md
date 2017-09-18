@@ -1,4 +1,4 @@
-## API References
+## API
 
 TODO: break apart thread safety
 - part go into api.md (levels of safety)
