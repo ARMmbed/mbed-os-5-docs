@@ -20,7 +20,7 @@
             
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/runtime.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/boot.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/memory_model.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/memory-model.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/modes.md"},
             
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/configuration.md"},
