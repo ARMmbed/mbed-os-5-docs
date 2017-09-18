@@ -1,4 +1,4 @@
-## Introduction to Arm Mbed OS 5
+## Mbed OS 5
 
 ### Developing applications on top of Arm Mbed OS
 

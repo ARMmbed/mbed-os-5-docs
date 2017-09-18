@@ -53,9 +53,3 @@ Stack checking is turned on for all threads, and the kernel will error if an ove
 |                   |   Flash
 
 ```
-
-#### Configuration system
-
-The Arm Mbed configuration system customizes the compile time configuration of Mbed components: targets, libraries and applications.
-
-For more information, see the [Configuration System page](/docs/v5.4/reference/configuring-arm-mbed-os.html#the-arm-mbed-configuration-system).

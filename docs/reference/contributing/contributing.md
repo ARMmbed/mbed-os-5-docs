@@ -1,4 +1,4 @@
-## Arm Mbed OS Porting Guide
+## Contributing
 
 TODO: this would be a good place for contributing information
 TODO: about release process and time lines
