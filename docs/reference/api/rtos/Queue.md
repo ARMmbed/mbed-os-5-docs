@@ -1,4 +1,4 @@
-#### Queue and MemoryPool
+#### Queue
 
 ##### Queue
 
@@ -22,24 +22,6 @@ queue.put(message);
 osEvent evt = queue.get();
 if (evt.status == osEventMessage) {
     message_t *message = (message_t*)evt.value.p;
-```
-
-##### MemoryPool
-
-You can use the MemoryPool class to define and manage fixed-size memory pools.
-
-##### MemoryPool class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_memory_pool.html)
-
-##### MemoryPool example
-
-```
-MemoryPool<message_t, 16> mpool;
-
-message_t *message = mpool.alloc();
-
-mpool.free(message);
 ```
 
 ##### Queue and MemoryPool example

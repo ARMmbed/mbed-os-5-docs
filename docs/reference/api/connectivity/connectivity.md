@@ -7,8 +7,6 @@ TODO: remove all board references here
 TODO: introduce connectivity
 TODO: connectivity design patters (deleted conn_design)
 
-TODO: BLE classes (GATT, GAP, etc... profiles and services)
-
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
 * [UDPSocket](/docs/v5.4/reference/api-references.html#udpsocket): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.

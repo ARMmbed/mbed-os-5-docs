@@ -4,7 +4,7 @@ The EventFlags class is a C++ wrapper over the Keil RTX EventFlags functionality
 
 You can find the Arm Mbed OS EventFlags wrapper source code in the [Mbed OS repository](https://github.com/ARMmbed/mbed-os/blob/master/rtos/EventFlags.h).
 
-##### EventFlags class reference
+##### EventFlag class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_event_flags.html)
 

@@ -1,4 +1,4 @@
-#### Sleep
+#### DeepSleepLock
 
 TODO: examples to use 
 TODO: remove reference to versions

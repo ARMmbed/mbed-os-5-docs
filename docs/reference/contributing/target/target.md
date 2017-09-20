@@ -1,11 +1,11 @@
-### Adding target support
+### Targets
 
 TODO: porting context for targets
 TODO: remove tuturial feel
 
 Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
-#### Adding a new microcontroller and board
+##### Adding a new microcontroller and board
 
 First fork the `mbed-os` repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an Mbed OS example, and add your fork of `mbed-os` using:
 
