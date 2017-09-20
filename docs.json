@@ -111,7 +111,7 @@
             
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/security.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/TLS.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/uVisor.md"},
+            {"type": "markdown", "url": "https://github.com/ARMmbed/uvisor/blob/master/docs/lib/INTRO.md"},
             
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/storage.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/FATFileSystem.md"},
