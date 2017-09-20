@@ -1,4 +1,4 @@
-#### CellularInterface
+#### Cellular
 
 The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
 
