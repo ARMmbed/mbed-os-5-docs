@@ -2,11 +2,11 @@
 
 TODO: porting context for connectivity
 
-### The network socket API
+##### The network socket API
 
 TODO: merge with connectivity and NetworkStack. duplicate content
 
-#### New device
+###### New device
 
 The NetworkSocketAPI is designed to make porting new devices as easy as possible and only requires a handful of methods for a minimal implementation.
 

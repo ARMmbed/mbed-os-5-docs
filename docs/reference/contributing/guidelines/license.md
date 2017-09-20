@@ -6,7 +6,7 @@ This chapter covers the different aspects of developing your own libraries for u
 - [Creating and licensing](#licensing-binaries-and-libraries): Create and license your own binaries and libraries.
 - [The Arm Mbed OS codebase](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
 
-### Licensing binaries and libraries
+##### Licensing binaries and libraries
 
 When you write original code, you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others.
 
@@ -22,13 +22,13 @@ You must either write all the code you provide yourself, or have the necessary r
 
 In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) in every source file following the recommendations [here](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
 
-#### When to use Apache 2.0
+##### When to use Apache 2.0
 
 Apache 2.0 is a permissive, free and open source software license that allows other parties to use, modify and redistribute the code in source and binary form. Compared to the often used BSD license, Apache 2.0 provides an express patent grant from contributors to users.
 
 The full text of the license can be found on the [Apache website](http://www.apache.org/licenses/LICENSE-2.0). For more information about Apache 2.0, see [the FAQ](http://www.apache.org/foundation/license-faq.html).
 
-#### How to apply Apache 2.0 correctly
+##### How to apply Apache 2.0 correctly
 
 In order to clearly reflect the Apache 2.0 license, please create two text files:
 
@@ -57,7 +57,7 @@ either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
 ```
 
-#### When to use the Permissive Binary License
+##### When to use the Permissive Binary License
 
 The Permissive Binary License (PBL) is a permissive license based on BSD-3-Clause and designed specifically for binary blobs. It's minimal but covers the basics, including an express patent grant.
 
@@ -65,7 +65,7 @@ It allows you to share a binary blob and the relevant headers, and allows others
 
 The full text can be found on [mbed.com](https://www.mbed.com/licenses/PBL-1.0).
 
-#### How to apply PBL correctly
+##### How to apply PBL correctly
 
 In order to clearly reflect the PBL license, please create three text files:
 
@@ -92,7 +92,7 @@ https://www.mbed.com/licenses/PBL-1.0
 See the License for the specific language governing permissions and limitations under the License.
 ```
 
-#### Using a different license
+##### Using a different license
 
 If you decide to use a different license for your work, follow the same pattern:
 
@@ -104,19 +104,19 @@ If you decide to use a different license for your work, follow the same pattern:
 
 * If more than one license applies to the source file, then use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE* file and in each source file.
 
-### Contributing to the Mbed OS codebase
+##### Contributing to the Mbed OS codebase
 
-#### Mbed OS principles
+###### Mbed OS principles
 
 Mbed OS uses these same basic principles for its source code and library distributions. So source code we own is distributed under the Apache 2.0 license, and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
 
 All the source code and binary blobs that end up in Mbed OS are maintained in public GitHub repositories.
 
-#### Contributions
+##### Contributions
 
 All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](code_style.md).
 
-#### Inbound License for Contributions
+##### Inbound License for Contributions
 
 If you want to contribute code to Mbed OS, you must sign an Mbed Contributor License Agreement (CLA). Please ask for a CLA before submitting any code (for example, while discussing the issue on GitHub), then wait for Arm to confirm acceptance of your CLA before making contributions.
 
@@ -130,7 +130,7 @@ When you ask for the CLA, we'll send you the agreement and ask you to sign it *b
 
 The same agreement is then valid for all future pull requests from that GitHub username.  
 
-#### Contributing new features to Mbed OS
+##### Contributing new features to Mbed OS
 
 Before contributing an enhancement (new feature, new port and so on) please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on a related feature.
 
@@ -138,15 +138,15 @@ Patch contributions can only be accepted through GitHub by creating a pull reque
 
 Please create separate patches for each concern; each patch should have a clear unity of purpose. In particular, separate code formatting and style changes from functional changes. This makes each patch’s true contribution clearer and therefore quicker and easier to review.
 
-#### Reporting and fixing bugs
+##### Reporting and fixing bugs
 
 Before submitting a bug report or a bug fix, please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on it already.
 
-##### Bug reports (issues) on GitHub
+###### Bug reports (issues) on GitHub
 
 All Mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.github.com/features/issues/) to open a bug report directly against the relevant GitHub repository.
 
-##### Bug fixes
+###### Bug fixes
 
 Please refer to the [code contributions chapter](code_style.md).
 
@@ -154,6 +154,6 @@ Bug fixes must be verified by a member of the Mbed team before they're pulled in
 
 The last line in your commit message description should say “Fixes #deadbeef”, where “deadbeef” is the issue number in GitHub. This allows GitHub to automatically close the issue when the commit is merged into the default branch.
 
-#### Further reading
+##### Further reading
 
 Please see the [code contributions chapter](code_style.md) for the guidelines to GitHub pull requests and the coding style guide.
