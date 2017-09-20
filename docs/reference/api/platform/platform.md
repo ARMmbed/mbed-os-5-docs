@@ -1,22 +1,13 @@
 ### Platform
 
-TODO: retargets standard c library
 TODO: callback intro slimmed down and rest moved into callback API
-TODO: debug and error
-TODO: at cmd parser
 TODO: cthunk, callchain, who uses these and can they be deprecated??
 TODO: function pointer, who uses these and can they be deprecated??
-TODO: RTC
-TODO: poll
-TODO: critical section
-TODO: deep sleep lock
-TODO: circular buffer
-TODO: non copyable
-TODO: PLATFORM MUTEX - reference to rtos/MUTEX
-TODO: stream
+TODO: at cmd parser
+TODO: poll??
+TODO: circular buffer??
 TODO: transaction??
-TODO: memory stats
-TODO: memory trace
+TODO: memory trace??
 
 
 The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This section consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs: 

@@ -1,12 +1,12 @@
-### Creating a compatible communication API
+#### NetworkStack
 
 The Network-Socket-API (NSAPI) provides a TCP/UDP API on top of any IP based network interface. The NSAPI makes it easy to write applications and libraries that use TCP/UDP Sockets without regard to the type of IP connectivity. In addition to providing the TCP/UDP API, the NSAPI includes virtual base classes for the different IP interface types.
 
-#### Class hierarchy 
+##### Class hierarchy 
 
 All network-socket API implementations inherit from two classes: a [NetworkStack](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.2/api/classNetworkStack.html) and a communication specific subclass of [NetworkInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classNetworkInterface.html). 
 
-##### NetworkInterface Class
+###### NetworkInterface Class
 
 The current NetworkInterface subclasses are [CellularInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classCellularInterface.html), [EthernetInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classEthernetInterface.html), [MeshInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classMeshInterface.html), and [WiFiInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classWiFiInterface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this: 
 
@@ -19,7 +19,7 @@ There are three [pure virtual methods](https://en.wikipedia.org/wiki/Virtual_fun
 
 Each subclass has distinct pure virtual methods. Visit their class references (linked above) to determine those that must be implemented.
 
-##### NetworkStack class
+###### NetworkStack class
 
 `NetworkStack` provides a common interface that is shared between hardware that can connect to a network over IP. By implementing the NetworkStack, you can use a class as a target for instantiating network sockets.
 
@@ -35,7 +35,7 @@ NetworkStack requires that you implement the following functionalities:
 * [Receving data on a socket](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/NetworkStack.h#L218).
 * [Sending data on a socket](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/NetworkStack.h#L201).
 
-##### The `connect()` method
+###### The `connect()` method
 
 High level API calls to an implementation of a network-socket API are intended to be the **identical** across networking protocols. The only intended difference is the method used to connect to the network. For example, a Wi-Fi connection requires an SSID and password, a cellular connection requires an APN and Ethernet doesn't require any credentials. These differences are reflected only in the `connect` method syntax of the derived classes. The intended design allows the user to change out the connectivity of the app by adding a new library and changing the API call for connecting to the network. 
 
@@ -80,11 +80,11 @@ To:
     net.connect("my_ssid", "my_password");
 ```
 
-#### Case Study: ESP8266 Wi-Fi component
+##### Case Study: ESP8266 Wi-Fi component
 
 This example ports a driver for the ESP8266 Wi-Fi module to the NSAPI.
 
-##### Required methods
+###### Required methods
 
 Because ESP8266 is a Wi-Fi component, [`WiFiInterface`](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/WiFiInterface.h) is the `NetworkworkInterface` parent class.
 
@@ -101,7 +101,7 @@ Additionally, `WiFiInterface` parent class `NetworkInterface` introduces `Networ
 
 You must also use [`NetworkStack`](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/NetworkStack.h) as a parent class of the interface. You've already explored the pure virtual methods [here](#NetworkStack-class).
 
-##### Implementing `connect()`
+###### Implementing `connect()`
 
 Because a Wi-Fi connection requires an SSID and password, you need to implement a connect function that doesn't have these as a parameter.
 
@@ -117,7 +117,7 @@ The AT commands you want to send are:
 4. `AT+CWJAP=[ssid,password]` - To connect to the network.
 5. `AT+CIFSR` - To query your IP address and ensure that the network assigned you one through DHCP.
 
-###### Sending AT Commands 
+####### Sending AT Commands 
 
 You can use the [AT command parser](https://github.com/ARMmbed/ATParser) to send AT commands and parse their responses. The AT command parser operates with a `BufferedSerial` object that provides software buffers and interrupt driven TX and RX for Serial.
 
@@ -145,7 +145,7 @@ bool ESP8266::startup(int mode)
 
 The parser's `send` function returns true if the command succesully sent to the Wi-Fi chip. The `recv` function returns true if you receive the specified text. In the code example above, sending two commands and receiving the expected `OK` responses determines success. 
 
-###### Return values
+####### Return values
 
 So far, our connect method looks something like:
 
@@ -163,11 +163,11 @@ The NSAPI provides a set of error code return values for network operations. The
 
 Looking through them, the most appropriate seems to be ` NSAPI_ERROR_DEVICE_ERROR  = -3012,     /*!< failure interfacing with the network processor */`. So replace `X` in the `return` statement with `NSAPI_ERROR_DEVICE_ERROR`.
 
-###### Finishing 
+####### Finishing 
 
 You implemented similar methods to `startup` in ESP8266 to send AT commands 3-5. Then, you used them to determine the success of the `connect()` method. You can find the completed implementation [here](https://github.com/ARMmbed/esp8266-driver/blob/master/ESP8266Interface.cpp#L47-L68).  
 
-##### Implementing `socket_open`
+###### Implementing `socket_open`
 
 The `NetworkStack` parent class dictates that you implement the functionality of opening a socket. This is the method signature in the interface:
 
@@ -234,7 +234,7 @@ int ESP8266Interface::socket_open(void **handle, nsapi_protocol_t proto)
 
 See the full implementation [here](https://github.com/ARMmbed/esp8266-driver/blob/master/ESP8266Interface.cpp#L137-L164).
 
-##### Implementing `socket_connect`
+###### Implementing `socket_connect`
 
 The `NetworkStack` parent class dictates that you implement the functionality of connecting a socket to a remote server. This is the method signature in the interface:
 
@@ -284,7 +284,7 @@ bool ESP8266::open(const char *type, int id, const char* addr, int port)
 
 In this instance, you use the AT command parser to send `AT+CIPSTART=[id],[TCP or UDP], [address]` to the module. Expect to receive a response of `OK`. Only return true if you succesfully send the command AND receive an `OK` response. 
 
-##### Implementing `socket_attach`
+###### Implementing `socket_attach`
 
 The `NetworkStack` parent class dictates that you implement the functionality of registering a callback on state change of the socket. This is the method signature in the interface:
 
@@ -574,11 +574,11 @@ virtual int setsockopt(void *handle, int level, int optname, const void *optval,
 virtual int getsockopt(void *handle, int level, int optname, void *optval, unsigned *optlen);
 ```
 
-#### Sockets
+##### Sockets
 
 As a part of implementing the NetworkStack interface, a new device must implement a series of **socket_** functions. A `void *` is provided to pass socket-specific context between these functions. The socket functions are managed by the [Socket](https://github.com/ARMmbed/mbed-os/blob/master/features/NetworkSocketAPI/Socket.cpp) classes and implementation functions are hidden from the user.
 
-#### Errors
+##### Errors
 
 The convention for the NetworkSocketAPI is to have functions that may fail and return a signed integer. To indicate success, the function should return a **non-negative integer**, which may also contain the size of a transaction. To indicate failure the function should return a negative integer, which should be one of the following error codes from the **nsapi_error_t** enum:
 
@@ -605,7 +605,7 @@ enum nsapi_error_t {
 };
 ```
 
-#### Testing
+##### Testing
 
 When adding new device support, you can use a test harness to verify implementations. The test program is very simple, since it only needs to instantiate the new network interface; all further operations are performed against the managed classes.
 
@@ -620,7 +620,7 @@ The test harness library is **NSAPITests.** It relies on a Python echo server, w
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/iriark01/test_docs)](https://developer.mbed.org/teams/components/code/ESP8266InterfaceTests/)
 
-#### References
+##### References
 
 - The [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) class and header.
 - The [EthernetInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/FEATURE_IPV4/LWIPInterface) class and header.

@@ -1,13 +1,13 @@
-### RTC HAL API
+#### RTC
 
 TODO: embed API
 TODO: how to test
 
 The RTC HAL API provides a low-level interface to the Real Time Counter (RTC) of a target.
 
-#### Assumptions
+##### Assumptions
 
-##### Defined behavior
+###### Defined behavior
 
 - The function `rtc_init` is safe to call repeatedly.
 - RTC accuracy is at least 10%.
@@ -16,16 +16,16 @@ The RTC HAL API provides a low-level interface to the Real Time Counter (RTC) of
 - Sleep modes don't stop RTC from counting.
 - Shutdown mode doesn't stop RTC from counting.
 
-##### Undefined behavior
+###### Undefined behavior
 
 - Calling any function other than `rtc_init` before the initialization of the RTC.
 
-##### Potential bugs
+###### Potential bugs
 
 - Incorrect overflow handling.
 - Glitches due to ripple counter.
 
-#### Implementing the RTC API
+##### Implementing the RTC API
 
 RTC HAL API is in [hal/rtc_api.h](/docs/v5.4/mbed-os-api-doxy/rtc__api_8h_source.html). You need to implement the following functions to support RTC:
 

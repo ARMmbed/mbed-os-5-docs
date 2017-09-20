@@ -1,4 +1,4 @@
-## Publishing and Contributing
+#### License
 
 TODO: break apart CLA and workflow
 
