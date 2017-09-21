@@ -1,4 +1,4 @@
-### Drivers
+## Drivers
 
 TODO: drivers provide access to general purpose microcontroller hardware
 TODO: drivers typically dont require software stacks but can be the signaling foundation of protocol stacks and networking stacks
