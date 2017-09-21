@@ -1,4 +1,4 @@
-## Connectivity
+<h2 id="configuration-connectivity">Connectivity</h2>
 
 ```
 Configuration parameters
