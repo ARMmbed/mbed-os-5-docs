@@ -7,7 +7,7 @@ The role of the platform modules is to provide a consistent user experience on t
 - [`Wait`](/docs/v5.4/reference/api-references.html#wait): An API that provides simple wait capabilities.
 - [`Time`](/docs/v5.4/reference/api-references.html#time): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
 
-### Callbacks
+#### Callbacks
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
@@ -32,7 +32,7 @@ Serial serial(USBTX, USBRX);
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.4/reference/api-references.html#the-importance-of-state) section.
 
-### Why should you use Callbacks?
+#### Why should you use Callbacks?
 
 Unfortunately, supporting all of the standard C++ function types is difficult.
 
@@ -52,7 +52,7 @@ C++ provides the tools to delegate this problem to a single class. This class is
 
 **An overly-simplified description of the Callback class is that is contains all of this madness so you don’t have to.**
 
-### Create callbacks
+#### Create callbacks
 
 First, you need to understand the syntax of the Callback type. The Callback type is a templated type parameterized by a C++ function declaration:
 
@@ -161,7 +161,7 @@ struct dosomething_arguments args = { &thing, arg1, arg2 };
 adc.attach(callback(dosomething_with_arguments, &args)); // yes
 ```
 
-### Call callbacks
+#### Call callbacks
 
 Callbacks overload the function call operator, so you can call a Callback like you would a normal function:
 
@@ -201,11 +201,11 @@ public:
 }
 ```
 
-### The importance of state
+#### The importance of state
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/v5.4/reference/api-references.html#callback).
 
-#### Why not function pointers?
+##### Why not function pointers?
 
 Callbacks have two important pieces of information, the code to execute and the state associated with the callback.
 
