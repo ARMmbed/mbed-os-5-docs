@@ -213,14 +213,6 @@
         ]
     },
     {
-        "title": "Contributing",
-        "description": "Contributing mbed OS on new platforms",
-        "slug": "contributing",
-        "type": "markdown",
-        "sources": [
-        ]
-    },
-    {
         "title": "Releases",
         "description": "The mbed OS releases; latest and history",
         "slug": "releases",
