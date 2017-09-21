@@ -1,4 +1,4 @@
-### Storage
+## Storage
 
 ```
 Configuration parameters

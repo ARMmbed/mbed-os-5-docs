@@ -1,6 +1,6 @@
-### Execution
+## Execution
 
-TODO: rewrite based on Arm v6m and v7m modes and how Mbed OS uses these http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0473j/dom1359731127340.html 
+TODO: rewrite based on Arm v6m and v7m modes and how Mbed OS uses these http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0473j/dom1359731127340.html
 
 You can use the same RTOS API in ISR. The only two warnings are:
 

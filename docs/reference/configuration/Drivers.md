@@ -1,4 +1,4 @@
-### Drivers
+## Drivers
 
 TODO: page for drivers config options
 

@@ -1,4 +1,4 @@
-### Connectivity
+## Connectivity
 
 TODO: page for netsocket config options
 TODO: page for lwip config options

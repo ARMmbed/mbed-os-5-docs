@@ -1,4 +1,4 @@
-### Platform
+## Platform
 
 TODO: page for platform config options
 

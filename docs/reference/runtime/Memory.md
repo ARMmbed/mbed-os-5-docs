@@ -1,4 +1,4 @@
-### Memory
+## Memory
 
 TODO: Insert FLASH details in memory map
 TODO: Mention of bootloadable systems

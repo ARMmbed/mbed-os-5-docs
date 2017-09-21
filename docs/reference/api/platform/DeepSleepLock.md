@@ -1,6 +1,6 @@
-#### DeepSleepLock
+### DeepSleepLock
 
-TODO: examples to use 
+TODO: examples to use
 TODO: remove reference to versions
 TODO: class reference to use class name semantics Deep Sleep Lock to be DeepSleepLock
 TODO: remove async example (we dont have any async APIs documented)
@@ -27,7 +27,7 @@ void main()
 }
 ```
 
-##### Sleep modes
+#### Sleep modes
 
 There are two available sleep modes:
 
@@ -37,11 +37,11 @@ There are two available sleep modes:
 
     You can wake up the processor by any internal peripheral interrupt or external pin interrupt.
 
-2. Deep sleep mode 
+2. Deep sleep mode
 
     This processor is set up ready for deep sleep, and sent to sleep. This mode has the same sleep features as sleep, and it also powers down peripherals and high speed clocks. This mode maintains all state. You can only wake up the processor by lp ticker, RTC, an external interrupt on a pin or a watchdog timer.
 
-##### Sleep manager
+#### Sleep manager
 
 The sleep manager provides an API to control sleep modes. Deep sleep might introduce some power savings that can affect an application, for instance high speed clock dependent drivers.
 
@@ -57,15 +57,15 @@ These Mbed OS drivers contain locking deep sleep:
 - `CAN`.
 - `SerialBase`.
 
-##### `Sleep Manager` class reference
+#### `Sleep Manager` class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/mbed__sleep_8h_source.html)
 
-##### `Deep Sleep Lock` class reference
+#### `Deep Sleep Lock` class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
 
-##### Example
+#### Example
 
 This example shows SPI asynchronous transfer with deep sleep locking.
 
