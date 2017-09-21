@@ -1,4 +1,4 @@
-#### RtosTimer
+### RtosTimer
 
 <span class="warnings">**Deprecated**: The EventQueue has superseded the RtosTimer. The RtosTimer and EventQueue duplicate the functionality of timing events outside of interrupt context; however, the EventQueue has additional features to handle deferring other events to multiple contexts.</span>
 
@@ -8,11 +8,11 @@ The thread `osTimerThread` handles timers. Callback functions run under the cont
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rtos_timer.png)</span>
 
-##### RtosTimer class reference
+#### RtosTimer class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_rtos_timer.html)
 
-##### RtosTimer example
+#### RtosTimer example
 
 Control the timing of four LEDs.
 

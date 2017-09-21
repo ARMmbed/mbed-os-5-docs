@@ -1,4 +1,4 @@
-### RTOS
+## RTOS
 
 TODO: remote reference to CMSIS-RTOS
 TODO: remove reference to RTX
@@ -11,13 +11,13 @@ The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information 
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__rtos.html).
 
-##### SysTick
+### SysTick
 
 System tick timer (SysTick) is a standard timer available on most Cortex-M cores. Its main purpose is to rise an interrupt with set frequency (usually 1ms). You can use it to perform any task in the system, but for platforms using RTOS, including Mbed OS, it provides an interval for the OS for counting the time and scheduling tasks.
 
 Mbed OS uses default SysTick source for most targets, but you can override that using the [Tick API](http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__TickAPI.html) that CMSIS-RTOS2 provides. In which case you'll need to provide your own source of the interrupts.
 
-###### RTOS APIs
+#### RTOS APIs
 
 The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5.
 
@@ -30,7 +30,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 * [Event](/docs/v5.4/reference/api-references.html#events): The queue to store events, extract them and excute them later.
 * [EventFlag](https://os-doc-builder.test.mbed.com/docs/v5.4/reference/api-references.html#eventflags): An event channel that provides a generic way of notifying other threads about conditions or events.
 
-###### Default Timeouts
+#### Default Timeouts
 
 The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
 
@@ -38,7 +38,7 @@ A typical scenario for a producer could be a peripheral triggering an interrupt 
 
 <span class="warnings">**Warning**: No wait in ISR </br> When calling an RTOS object method in an ISR, all the timeout parameters must be set to 0 (no wait); waiting in ISR is not allowed. </span>
 
-###### The main() function
+#### The main() function
 
 The function `main` is a special thread function that is started at system initialization and has the initial priority `osPriorityNormal`; it is the first thread the RTOS schedules.
 
@@ -51,14 +51,14 @@ A `Thread` can be in the following states:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_status.png)</span>
 
-###### Signals
+#### Signals
 
 Each `Thread` can wait for signals and be notified of events:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_signals/)](https://developer.mbed.org/teams/mbed_example/code/rtos_signals/file/476186ff82cf/main.cpp)
 
 
-###### Status and error codes
+#### Status and error codes
 
 The CMSIS-RTOS functions will return the following statuses:
 
@@ -76,4 +76,3 @@ The CMSIS-RTOS functions will return the following statuses:
 * `osErrorNoMemory`: system is out of memory; it was impossible to allocate or reserve memory for the operation.
 * `osErrorValue`: value of a parameter is out of range.
 * `osErrorOS`: unspecified RTOS error - runtime error but no other error message fits.
-
