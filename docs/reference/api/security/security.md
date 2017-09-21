@@ -1,4 +1,4 @@
-### Security
+## Security
 
 TODO: security design patterns
 TODO: difference in device security, communication channel security, intro to threat models

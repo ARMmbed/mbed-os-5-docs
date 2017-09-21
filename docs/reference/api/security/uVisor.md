@@ -1,4 +1,4 @@
-#### uVisor
+## uVisor
 
 TODO: remove board specifics
 TODO: refactor from tutorial flow to API and usage
@@ -7,11 +7,11 @@ TODO: notes about compatibility, debug, exporting etc...
 
 The uVisor provides sandboxed environments and resources protection for applications built for Arm Cortex-M3 and Cortex-M4 devices. This guide will show you how to enable the uVisor and configure a secure box to access some exclusive resources (memory, peripherals, interrupts). For more information about the uVisor design philosophy, please see the uVisor [introductory document](../../README.md).
 
-##### uVisor example application
+### uVisor example application
 
 This guide will help you start uVisor on Mbed OS by showing you how to create a sample application for the NXP FRDM-K64F board.
 
-###### Requirements
+#### Requirements
 
 To run the `blinky` application on Arm Mbed OS with uVisor enabled, you need:
 
@@ -26,7 +26,7 @@ The remainder of this guide assumes:
 
 You can use these instructions as guidelines in the case of other targets on other host operating systems.
 
-###### Developing the application
+#### Developing the application
 
 1. Start with the `blinky` app
 
@@ -415,7 +415,7 @@ You can use these instructions as guidelines in the case of other targets on oth
 
     You can observe the secure index by opening a serial port connection to the device with a baud rate of 9600. When you press the `SW2` button, the index will increase.
 
-##### The NVIC APIs
+### The NVIC APIs
 
 The Arm CMSIS header files provide APIs to configure, enable and disable IRQs in the NVIC module. These APIs all begin with `NVIC_`, and you can find them in the `core_cm*.h` files in your CMSIS module. The CMSIS header files also provide APIs to set and get an interrupt vector at runtime. This requires the relocation of the interrupt vector table, which is usually located in flash, to SRAM.
 
@@ -444,7 +444,7 @@ NVIC_EnableIRQ(MY_IRQ);
 
 <span class="notes">**Note**: In this model, a call to `NVIC_SetVector` must happen before an IRQ state changes. In platforms that don't relocate the interrupt vector table, such a call might be absent and must be added to work with uVisor.</span>
 
-##### The *public box* ACLs
+### The *public box* ACLs
 
 The code samples in this guide provide a list of ACLs for the public box. The list includes peripherals necessary to make the example app work, and they are specific to the NXP FRDM-K64F target.
 
@@ -489,7 +489,7 @@ For readability, do not use the hard-coded addresses of your peripherals. Instea
 
 Repeat the process multiple times until all ACLs have been added to the list. When no other ACL is needed, the system runs without hitting a uVisor fault.
 
-##### Additional resources
+### Additional resources
 
 - [uVisor API documentation](API.md).
 - [Debugging uVisor on Mbed OS](DEBUGGING.md).
