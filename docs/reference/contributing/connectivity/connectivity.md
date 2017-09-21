@@ -1,4 +1,4 @@
-## Connectivity
+<h2 id="contributing-connectivity">Connectivity</h2>
 
 #### The network socket API
 
