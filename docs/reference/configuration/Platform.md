@@ -1,4 +1,4 @@
-<h2 id="config-platform">Platform</h2>
+<h2 id="configuration-platform">Platform</h2>
 
 ```
 Configuration parameters
