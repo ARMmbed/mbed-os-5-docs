@@ -24,7 +24,6 @@
           {
             "title": "Runtime",
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/runtime.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Bootstrap.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Memory.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Execution.md"}
