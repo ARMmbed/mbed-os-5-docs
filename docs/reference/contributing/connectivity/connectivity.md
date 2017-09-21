@@ -1,10 +1,6 @@
 ## Connectivity
 
-TODO: porting context for connectivity
-
 #### The network socket API
-
-TODO: merge with connectivity and NetworkStack. duplicate content
 
 ##### New device
 

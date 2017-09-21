@@ -1,10 +1,5 @@
 ## DeepSleepLock
 
-TODO: examples to use
-TODO: remove reference to versions
-TODO: class reference to use class name semantics Deep Sleep Lock to be DeepSleepLock
-TODO: remove async example (we dont have any async APIs documented)
-
 There is only one sleep function in Mbed OS 5.6:
 
 ```c++

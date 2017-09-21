@@ -1,10 +1,5 @@
 ## Storage
 
-TODO: remove porting concepts from this guide
-TODO: update storage design patters (deleted storage_design)
-
-
-
 The storage APIs present in Arm Mbed OS are:
 
 * [File system](/docs/v5.4/reference/api-references.html#file-system): a common interface for using file systems on block devices.

@@ -1,7 +1,5 @@
 ## Platform
 
-TODO: page for platform config options
-
 ```
 Configuration parameters
 ------------------------

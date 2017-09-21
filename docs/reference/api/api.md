@@ -1,9 +1,5 @@
 ## API
 
-TODO: break apart thread safety
-- part go into api.md (levels of safety)
-- parts go into runtime.md (library stuff)
-
 The APIs in this document are organized by the feature, or group of features, they enable.
 
 * [Platform](/docs/v5.4/reference/api-references.html#platform): platform modules that provide consistent user experience.

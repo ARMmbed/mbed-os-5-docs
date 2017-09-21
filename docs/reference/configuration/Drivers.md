@@ -1,7 +1,5 @@
 ## Drivers
 
-TODO: page for drivers config options
-
 ```
 Configuration parameters
 ------------------------

@@ -1,8 +1,5 @@
 ### Sleep and deep sleep
 
-TODO: tests integration
-TODO: embed api
-
 Mbed OS defines two sleep modes for HAL:
 
 - Sleep.
