@@ -1,10 +1,10 @@
-## TLS
+### TLS
 
 Arm Mbed TLS provides a comprehensive SSL/TLS solution and makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
 <span class="notes">_**Note:** Mbed TLS needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our [porting guide](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/porting_guide/)._</span>
 
-### Mbed TLS examples
+#### Mbed TLS examples
 
 You can try the following examples:
 
@@ -18,7 +18,7 @@ You can try the following examples:
 
 Each of them comes with complete usage instructions as a readme file in the repository.
 
-### Configuring Mbed TLS features
+#### Configuring Mbed TLS features
 
 Mbed TLS simplifies enabling and disabling features to meet the needs of a particular project, through compilation options. The list of compilation flags is available in the fully documented configuration file, [config.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/config.h).
 
@@ -39,6 +39,6 @@ Then create a file named `mbed_app.json` at the root of your application with th
 }
 ```
 
-### Other resources
+#### Other resources
 
 The [Mbed TLS website](https://tls.mbed.org) contains many other useful resources for developers, such as [developer documentation](https://tls.mbed.org/dev-corner), [knowledge base articles](https://tls.mbed.org/kb) and a [support forum](https://tls.mbed.org/discussions).
