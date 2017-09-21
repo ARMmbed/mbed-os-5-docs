@@ -161,12 +161,6 @@
             ]
           },
           {
-            "title": "Technology",
-            "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/technology.md"}
-            ]
-          },
-          {
             "title": "Contributing",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/contributing.md"},
