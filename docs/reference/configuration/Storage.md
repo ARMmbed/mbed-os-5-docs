@@ -1,4 +1,4 @@
-## Storage
+<h2 id="configuration-storage">Storage</h2>
 
 ```
 Configuration parameters
