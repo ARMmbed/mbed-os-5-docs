@@ -1,14 +1,14 @@
-## Mail
+### Mail
 
 [`Mail`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_1_1Mail.html) works like a queue, with the added benefit of providing a memory pool for allocating messages (not only pointers).
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mail_queue.png)</span>
 
-### Mail class reference
+#### Mail class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_mail.html)
 
-### Mail example
+#### Mail example
 
 This code uses `mail` to manage measurement.
 
