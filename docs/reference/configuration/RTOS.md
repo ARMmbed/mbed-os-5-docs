@@ -1,4 +1,4 @@
-## RTOS
+<h2 id="configuration-rtos">RTOS</h2>
 
 **Thread memory model**
 
