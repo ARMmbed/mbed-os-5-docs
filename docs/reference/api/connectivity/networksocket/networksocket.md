@@ -1,4 +1,4 @@
-### Network Socket
+## Network Socket
 
 TODO: This page should be about the connectivity design patterns before introducing APIs
 TODO: remove mesh config and move into config section
@@ -21,11 +21,11 @@ This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
 Continue reading for detailed reference material about some of these APIs.
 
-##### Network Sockets
+### Network Sockets
 
 The network-socket API provides a common interface for using sockets on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
 
-###### Network errors
+#### Network errors
 
 The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
 
@@ -59,7 +59,7 @@ enum nsapi_error {
 };
 ```
 
-###### Nonblocking operation
+#### Nonblocking operation
 
 The network-socket API also supports nonblocking operations. The ``set_blocking`` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return ``NSAPI_ERROR_WOULD_BLOCK`` when a transaction cannot be immediately completed.
 
@@ -67,11 +67,11 @@ To allow efficient use of nonblocking operations, the socket classes provide an 
 
 The callback may be called in interrupt context and should not perform operations such as receiving and sending calls. Do not make any read or write calls until it is on a thread.
 
-###### Socket
+#### Socket
 
 You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classSocket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
 
-###### NetworkInterface
+#### NetworkInterface
 
 A socket requires a NetworkInterface instance when opened to indicate which NetworkInterface the socket should be created on. The NetworkInterface provides a network stack that implements the underlying socket operations.
 
@@ -80,7 +80,7 @@ Existing network interfaces:
 - [EthernetInterface](/docs/v5.4/reference/api-references.html#ethernet).
 - [WiFiInterface](/docs/v5.4/reference/api-references.html#wi-fi).
 
-###### Example applications
+#### Example applications
 
 Here are example applications that are built on top of the network-socket API:
 
@@ -89,13 +89,13 @@ Here are example applications that are built on top of the network-socket API:
 * [CoAP](https://developer.mbed.org/teams/sandbox/code/coap-example/).
 * [Websockets](https://developer.mbed.org/cookbook/Websockets-Server).
 
-###### Example
+#### Example
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/TCPSocket_Example/)](https://developer.mbed.org/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-##### Arm Mbed Mesh
+### Arm Mbed Mesh
 
 The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/reference/mesh-1.html#nanostack) networking stack.
 
@@ -110,17 +110,17 @@ The application can use the `LoWPANNDInterface` or `ThreadInterface` object for 
 
 The `NanostackEthernetInterface` is provided for Ethernet.
 
-###### Supported mesh networking modes
+#### Supported mesh networking modes
 
 Currently, 6LoWPAN-ND (neighbour discovery) and Thread bootstrap modes are supported.
 
-##### Cellular
+### Cellular
 
 The [CellularBase](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classCellularBase.html) provides a C++ API for connecting to the internet over a Cellular device.
 
 Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
-###### Getting started
+#### Getting started
 
 1. Choose an [Mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
 
@@ -145,7 +145,7 @@ Success. Exiting
 
 ```
 
-###### Basic working principles
+#### Basic working principles
 
 You can use and extend a cellular interface in various different ways. For example,
 
@@ -165,7 +165,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 
 
-###### Module configuration
+#### Module configuration
 
 This module supports static configuration via the **Mbed configuration system**. The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings.
 
@@ -229,6 +229,6 @@ After the initialization, the network state is `MESH_DISCONNECTED`. After a succ
 
 In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the application is allowed to attempt connecting again.
 
-###### Getting started
+#### Getting started
 
 See the example application [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
