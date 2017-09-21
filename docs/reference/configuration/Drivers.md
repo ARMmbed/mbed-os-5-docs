@@ -1,4 +1,4 @@
-<h2 id="config-drivers">Drivers</h2>
+<h2 id="configuration-drivers">Drivers</h2>
 
 ```
 Configuration parameters
