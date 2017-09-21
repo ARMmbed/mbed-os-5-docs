@@ -1,4 +1,4 @@
-### FileSystem
+<h3 id="contributing-filesystem">FileSystem</h3>
 
 The file system API provides a common interface for implementing a [file system](https://en.wikipedia.org/wiki/File_system) on a [block-based storage device](block_device.md). The file system API is a class-based interface, but implementing the file system API provides the standard POSIX file API familiar to C users.
 
