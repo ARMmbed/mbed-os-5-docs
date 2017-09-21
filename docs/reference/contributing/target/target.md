@@ -1,11 +1,11 @@
-### Targets
+## Targets
 
 TODO: porting context for targets
 TODO: remove tuturial feel
 
 Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
-##### Adding a new microcontroller and board
+#### Adding a new microcontroller and board
 
 First fork the `mbed-os` repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an Mbed OS example, and add your fork of `mbed-os` using:
 
@@ -20,7 +20,7 @@ git branch my-new-target -u USERNAME
 cd ..
 ```
 
-##### Target description
+#### Target description
 
 Add the target description to `mbed-os\targets\targets.json`:
 
@@ -39,7 +39,7 @@ Add the target description to `mbed-os\targets\targets.json`:
 
 See the [Mbed Target Documentation](/docs/v5.4/reference/arm-mbed-os-porting-guide.html#adding-and-configuring-targets) for more details on what this definition means.
 
-##### HAL porting
+#### HAL porting
 
 There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the API declared in the API header.
 

@@ -1,4 +1,4 @@
-#### Bootstrap
+### Bootstrap
 
 TODO: directory structure
 TODO: mbed boot process explaination and hooks

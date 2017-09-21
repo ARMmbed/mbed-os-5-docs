@@ -1,4 +1,4 @@
-#### Microsecond ticker
+### Microsecond ticker
 
 The microsecond ticker is a system resource that many APIs use. The microsecond ticker needs a one microsecond resolution and uses a free-running hardware counter or timer with match register. Implement the API declared in `mbed-os\hal\us_ticker_api.h`.
 

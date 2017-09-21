@@ -1,4 +1,4 @@
-#### CellularInterface
+### CellularInterface
 
 This section guidelines and details porting a cellular device driver to Mbed OS. It first describes the building blocks of your new cellular interface and then gives step-by-step instructions on how to port.
 

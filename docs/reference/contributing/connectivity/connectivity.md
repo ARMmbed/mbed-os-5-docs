@@ -1,16 +1,16 @@
-### Connectivity
+## Connectivity
 
 TODO: porting context for connectivity
 
-##### The network socket API
+#### The network socket API
 
 TODO: merge with connectivity and NetworkStack. duplicate content
 
-###### New device
+##### New device
 
 The NetworkSocketAPI is designed to make porting new devices as easy as possible and only requires a handful of methods for a minimal implementation.
 
-A new device must implement a [NetworkInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/NetworkSocketAPI/NetworkInterface.h), with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor. 
+A new device must implement a [NetworkInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/NetworkSocketAPI/NetworkInterface.h), with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
 
 The **DeviceInterface** should also inherit one of the following (unless it is an abstract device):
 
@@ -31,7 +31,7 @@ The **NetworkInterface** implementation provides the following methods:
     /return     The stack this interface is bound to or null if not yet connected
      */
     virtual NetworkStack * get_stack(void) = 0;
-    
+
     /** Free NetworkInterface resources
      */
     virtual ~NetworkInterface() {};

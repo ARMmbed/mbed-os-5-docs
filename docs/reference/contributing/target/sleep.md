@@ -1,4 +1,4 @@
-#### Sleep
+### Sleep and deep sleep
 
 TODO: tests integration
 TODO: embed api
@@ -14,14 +14,14 @@ Each target should document in their implementation:
 - Wake-up latency for each mode.
 - Wake-up sources for each mode.
 
-##### Sleep
+#### Sleep
 
 The core system clock is disabled, both the low and high precision clocks are enabled and RAM is retained.
 
 1. Wake-up sources - any interrupt source can wake up the MCU.
 1. Latency - can wake up within 10 us.
 
-##### Deep sleep
+#### Deep sleep
 
 The core system clock is disabled. The low precision clocks are enabled, and RAM is retained.
 
@@ -30,7 +30,7 @@ The core system clock is disabled. The low precision clocks are enabled, and RAM
 
 The deep sleep latency (10 ms) is the higher limit of the boards we support. Most of targets have wake-up latency for deep sleep within a few microseconds, but often, reinitializing clocks and other configurations require additional time to restore previous state.
 
-##### Implementing the Sleep API
+#### Implementing the Sleep API
 
 There are two functions that the target needs to implement to support sleep, Their prototypes are in [hal/sleep_api.h](/docs/v5.4/mbed-os-api-doxy/sleep__api_8h_source.html):
 
