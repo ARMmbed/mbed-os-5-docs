@@ -1,4 +1,4 @@
-### AnalogIn
+## AnalogIn
 
 TODO: talk about ADC types and resolution
 
@@ -6,23 +6,23 @@ Use the AnalogIn API to read an external voltage applied to an analog input pin.
 
 <span class="notes">**Note:**  Only certain pins are capable of making these measurements, so check the pinmap of your board for compatible pins.</span>
 
-#### AnalogIn class reference
+### AnalogIn class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_analog_in.html)
 
-#### AnalogIn Hello World!
+### AnalogIn Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/AnalogIn_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/AnalogIn_HelloWorld/file/77750f8cba47/main.cpp)
 
-#### AnalogIn examples
+### AnalogIn examples
 
-##### Example one
+#### Example one
 
 Control an R/C servo with analog input.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/AnalogIn_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/AnalogIn_ex_1/file/490818b6238b/main.cpp)
 
-##### Example two
+#### Example two
 
 This example shows AnalogIn reading 16-bit normalized samples.
 

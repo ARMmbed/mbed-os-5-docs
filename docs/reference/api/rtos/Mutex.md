@@ -1,4 +1,4 @@
-### Mutex
+## Mutex
 
 TODO: link to platform mutex
 
@@ -8,11 +8,11 @@ A [`Mutex`](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classrtos_
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
 
-#### Mutex class reference
+### Mutex class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 
-#### Mutex example
+### Mutex example
 
 Use Mutex to protect printf().
 
