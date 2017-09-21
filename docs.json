@@ -36,9 +36,7 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Platform.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Drivers.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/RTOS.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Connectivity.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/TLS.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/uVisor.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Connectivity.md"}
             ]
           },
           {
