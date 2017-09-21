@@ -1,12 +1,5 @@
 ## Network Socket
 
-TODO: This page should be about the connectivity design patterns before introducing APIs
-TODO: remove mesh config and move into config section
-TODO: remove all example code references here
-TODO: remove all board references here
-TODO: introduce connectivity
-TODO: connectivity design patters (deleted conn_design)
-
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
 * [UDPSocket](/docs/v5.4/reference/api-references.html#udpsocket): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.

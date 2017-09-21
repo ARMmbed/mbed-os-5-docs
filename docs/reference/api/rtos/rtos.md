@@ -1,12 +1,5 @@
 ## RTOS
 
-TODO: remote reference to CMSIS-RTOS
-TODO: remove reference to RTX
-TODO: error codes are part of the API?? should at least be included by doxygen, not duplicated here
-TODO: EventQueue
-TODO: Mbed OS shared queues
-TODO: task design patterns covered in this section
-
 The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check [the Keil CMSIS-RTOS tutorial](https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf) and [the element14 introduction to Keil RTX](https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview). You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__rtos.html).

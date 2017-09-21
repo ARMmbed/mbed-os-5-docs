@@ -17,6 +17,4 @@ Targets supporting tickless mode override the default SysTick mechanism and use 
 
 ##### Testing
 
-TODO: how to run sleep and low power ticker test?
-
 There are no dedicated tests validating tickless mode. Running all Mbed OS tests suits, with particular focus on HAL sleep and HAL low power ticker tests, provides sufficient coverage.

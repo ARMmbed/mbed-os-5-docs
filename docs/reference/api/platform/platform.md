@@ -1,15 +1,5 @@
 ## Platform
 
-TODO: callback intro slimmed down and rest moved into callback API
-TODO: cthunk, callchain, who uses these and can they be deprecated??
-TODO: function pointer, who uses these and can they be deprecated??
-TODO: at cmd parser
-TODO: poll??
-TODO: circular buffer??
-TODO: transaction??
-TODO: memory trace??
-
-
 The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This section consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs:
 
 - [`Callback`](/docs/v5.4/reference/api-references.html#callback): An API that executes the user’s code in its own context.

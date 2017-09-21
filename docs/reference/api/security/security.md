@@ -1,9 +1,5 @@
 ## Security
 
-TODO: security design patterns
-TODO: difference in device security, communication channel security, intro to threat models
-TODO: crypto and public / private or symmetrical / asymmetrical
-
 Security on Arm Mbed OS is divided into two parts:
 
 * [Connection security through Arm Mbed TLS](/docs/v5.4/reference/api-references.html#tls).

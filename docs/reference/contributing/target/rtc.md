@@ -1,8 +1,5 @@
 ### RTC
 
-TODO: embed API
-TODO: how to test
-
 The RTC HAL API provides a low-level interface to the Real Time Counter (RTC) of a target.
 
 #### Assumptions

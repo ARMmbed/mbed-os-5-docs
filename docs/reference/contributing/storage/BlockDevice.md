@@ -1,8 +1,5 @@
 ### Block Devices
 
-TODO: section on testing
-TODO: api embed, not header files
-
 The block device API provides an interface for access to block-based storage. You can use a block device to back a full [file system](filesystem.md) or write to it directly.
 
 #### Block Device class reference

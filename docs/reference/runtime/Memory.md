@@ -1,9 +1,5 @@
 ## Memory
 
-TODO: Insert FLASH details in memory map
-TODO: Mention of bootloadable systems
-TODO: Remove mention of configuration
-
 This is a basic overview of the memory model.
 
 Each thread of execution in the RTOS has a separate stack. When you use the RTOS, before explicitly initializing any additional thread, you will have four separate stacks:

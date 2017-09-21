@@ -1,11 +1,5 @@
 ### RTOS
 
-TODO: removal of RTX mentions
-TODO: cmsis importing script rather than documentation (see uvisor and tls)
-TODO: lots of good content for api/rtos/rtos (not relecant to porting)
-TODO: lots of good content for configuration/rtos.md
-
-
 CMSIS/RTX code is imported from the original CMSIS repository, which you can find at [https://github.com/ARM-software/CMSIS_5/](https://github.com/ARM-software/CMSIS_5/).
 
 #### Memory considerations

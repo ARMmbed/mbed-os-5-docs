@@ -1,8 +1,5 @@
 ### Flash
 
-TODO: bootloader and linker script modification to bootstrap.md
-TODO: FlashIAP mentions to api/drivers/FlashIAP
-
 Update target to support bootloader.
 
 1. Update linker script.

@@ -1,8 +1,5 @@
 ## Targets
 
-TODO: porting context for targets
-TODO: remove tuturial feel
-
 Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
 #### Adding a new microcontroller and board

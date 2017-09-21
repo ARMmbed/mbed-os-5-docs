@@ -1,7 +1,5 @@
 ### Adding exporters
 
-TODO: this seems half tools user guide and half porting guide. refactor
-
 This is a guide for adding exporters to the Arm Mbed OS tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
 <span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
