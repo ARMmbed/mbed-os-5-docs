@@ -1,4 +1,4 @@
-### Storage
+## Storage
 
 TODO: remove porting concepts from this guide
 TODO: update storage design patters (deleted storage_design)
@@ -10,7 +10,7 @@ The storage APIs present in Arm Mbed OS are:
 * [File system](/docs/v5.4/reference/api-references.html#file-system): a common interface for using file systems on block devices.
 * [Block device](/docs/v5.4/reference/api-references.html#block-devices): a common interface for block-based storage devices.
 
-##### Declaring a file system
+### Declaring a file system
 
 The [FileSystem](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see [open](http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html) or [fopen](http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html).
 
@@ -24,13 +24,13 @@ Additionally, two utility block devices give you better control over how storage
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
-##### Partitioning
+### Partitioning
 
 Partitioning allows you to split a block device among multiple storage users such that the split is portable across multiple systems. Partitioning also allows you to have multiple file systems that you can mount on one disk from both Mbed OS devices and host computers. The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
 
 <span class="notes">**Note:** File system partitioning is not required if only one file system is present.</span>
 
-##### C++ classes
+### C++ classes
 
 The [FileSystem](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h) class provides the core user interface with general functions that map to their global POSIX counterparts. Mbed OS provides [File](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h) and [Dir](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h) classes that represent files and directories in a C++ API that uses object-oriented features in C++.
 
@@ -48,7 +48,7 @@ Here is the full API that a filesystem may implement:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L205)
 
-##### Block device operations
+### Block device operations
 
 A block device can perform three operations on a block in a device:
 
@@ -58,7 +58,7 @@ A block device can perform three operations on a block in a device:
 
 <span class="notes">**Note:** The state of an erased block is undefined. NOR flash devices typically set an erased block to all 0xff, but for some block devices such as the SD card, erase is a NOOP. If a deterministic value is required after an erase, the consumer of the block device must verify this.</span>
 
-##### Block sizes
+### Block sizes
 
 Some storage technologies have different sized blocks for different operations. For example, NAND flash can be read and programmed in 256-byte pages, but must be erased in 4-kilobyte sectors.
 
@@ -66,7 +66,7 @@ Block devices indicate their block sizes through the `get_read_size`, `get_progr
 
 As a rule of thumb, you can use the erase size for applications that use a single block size (for example, the FAT file system).
 
-##### Utility block devices
+### Utility block devices
 
 Arm Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
