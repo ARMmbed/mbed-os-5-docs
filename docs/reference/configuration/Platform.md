@@ -1,3 +1,5 @@
+CONTENT
+
 <h2 id="configuration-platform">Platform</h2>
 
 ```
