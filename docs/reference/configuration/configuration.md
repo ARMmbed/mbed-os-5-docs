@@ -1,4 +1,4 @@
-### Configuration overview
+## Configuration overview
 
 The Arm Mbed configuration system customizes the compile time configuration of Mbed components: targets, libraries and applications.
 
