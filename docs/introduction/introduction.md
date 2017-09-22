@@ -42,11 +42,11 @@ You can find past releases and the current release on [GitHub](https://github.co
 
 ### Porting to Mbed OS
 
-Our full porting guide is still being written. For now, we have:
+Our full contributing guide is still being written. For now, we have:
 
-- A high-level [porting guide](/docs/v5.4/reference/arm-mbed-os-porting-guide.html).
-- Porting [from Mbed OS 3 to Mbed OS 5](/docs/v5.4/reference/arm-mbed-os-porting-guide.html#minar-migration) (focusing on MINAR).
-- Porting [Arm Mbed TLS](/docs/v5.4/reference/arm-mbed-os-porting-guide.html#arm-mbed-tls-porting-guide).
+- A guide to [contributing targets](/docs/v5.4/reference/contributing-target.html).
+- Information about the [tools you need to contribute targets](/docs/v5.4/reference/contributing-tools.html).
+- APIs about [storage](/docs/v5.4/reference/contributing-storage.html) and [connectivity](/docs/v5.4/reference/contributing-connectivity.html) in relation to porting.
 
 ## How Mbed Works
 
