@@ -1,4 +1,4 @@
-### DeepSleepLock
+## DeepSleepLock
 
 There is only one sleep function in Mbed OS 5.6:
 
@@ -22,7 +22,7 @@ void main()
 }
 ```
 
-#### Sleep modes
+### Sleep modes
 
 There are two available sleep modes:
 
@@ -36,7 +36,7 @@ There are two available sleep modes:
 
     This mode is similar to sleep but saves more power and has a longer wakeup time. It saves power by turning off the high-speed clocks. Because of this, you can only enter this mode when peripherals relying on high-speed clocks are not in use. Peripherals that do not rely on high-speed clocks include the lp ticker, RTC and external interrupt on a pin. This mode maintains all state.
 
-#### Sleep manager
+### Sleep manager
 
 The sleep manager provides an API to control sleep modes. Deep sleep might introduce some power savings that can affect an application, for instance high speed clock dependent drivers.
 
@@ -52,15 +52,15 @@ These Mbed OS drivers contain locking deep sleep:
 - `CAN`.
 - `SerialBase`.
 
-#### `Sleep Manager` class reference
+### `Sleep Manager` class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/mbed__sleep_8h_source.html)
 
-#### `Deep Sleep Lock` class reference
+### `Deep Sleep Lock` class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
 
-#### Example
+### Example
 
 This example shows SPI asynchronous transfer with deep sleep locking.
 
