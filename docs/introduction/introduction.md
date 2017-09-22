@@ -54,7 +54,7 @@ The Arm Mbed hardware architecture is designed to make sure you have all the too
 
 ### Architecture diagram
 
-This is the basic architecture of an Mbed board:
+This is the basic architecture of an [Mbed board](/docs/v5.6/introduction/glossary.html):
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_internals.PNG)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
