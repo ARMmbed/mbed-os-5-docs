@@ -1,4 +1,4 @@
-## Testing
+<h2 id="tools-testing">Testing</h2>
 
 Testing is a critical step in the development process. The Arm Mbed ecosystem offers several tools to help you test your code. 
 
