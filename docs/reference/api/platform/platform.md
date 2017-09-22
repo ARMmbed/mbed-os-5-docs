@@ -4,10 +4,10 @@ The role of the platform modules is to provide a consistent user experience on t
 
 - [Wait](/docs/v5.4/reference/api-references.html#wait): An API that provides simple wait capabilities.
 - [Callback](/docs/v5.4/reference/api-references.html#callback): An API that executes the user’s code in its own context.
-- [DeepSleepLock]():The sleep function and sleep manager for Mbed OS.
-- [CriticalSectionLock]():
+- [DeepSleepLock](/docs/v5.4/reference/deepsleeplock.html):The sleep function and sleep manager for Mbed OS.
+- [CriticalSectionLock](/docs/v5.4/reference/critical-section-lock.html): RAII object for disabling and then restoring interrupt state.
 - [Time](/docs/v5.4/reference/api-references.html#time): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- [NonCopyable](): 
+- [NonCopyable](/docs/v5.4/reference/noncopyable.html): 
 
 #### Callbacks
 
