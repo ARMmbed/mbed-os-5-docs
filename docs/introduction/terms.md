@@ -94,7 +94,7 @@ Pull Request - Used by version-controlled repositories to propose and collaborat
 
 REST - Representational State Transfer (API).
 
-RTOS - [Real-Time Operating System](/docs/v5.4/reference/rtos.html).
+RTOS - [Real-Time Operating System](/docs/v5.4/reference/rtos-api.html).
 
 Serial - A [protocol](/docs/v5.4/reference/api-references.html#serial) used in data transmission for the transfer of individual bits of information.
 
