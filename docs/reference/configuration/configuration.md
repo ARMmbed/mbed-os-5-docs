@@ -1,3 +1,5 @@
+### Configuration overview
+
 The Arm Mbed configuration system customizes the compile time configuration of Mbed components: targets, libraries and applications.
 
 Mbed OS provides some default memory configurations for thread memory allocation. You may want to modify these configurations to better suit your project. You can read about the default configurations and how you can modify them below. 
