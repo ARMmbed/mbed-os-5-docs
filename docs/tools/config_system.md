@@ -1,4 +1,4 @@
-### The Arm Mbed Configuration system
+### The configuration system
 
 The Arm Mbed configuration system customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
 
@@ -249,7 +249,7 @@ For `myapp` above:
  	- 128 and 20, respectively, because `Derived` defines the `NXP` label and `mylib` defines a specific configuration for this label.
 - Because `Derived` has its own `my_own_config` configuration parameter, `target.my_own_config` will also be defined in this case.
 
-### Using configuration data in the code
+#### Using configuration data in the code
 
 When compiling, the configuration system will automatically generate macro definitions for the configuration parameters and all the macros defined in libraries and the application in their `macros` keys. These definitions will be written in a file named `mbed_config.h`, located in the build directory. When compiling `myapp` for target `Base`, the `mbed_config.h` file will look like this (note that the order of the definitions may be different):
 
