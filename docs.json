@@ -7,6 +7,9 @@
         "sources": [
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/introduction.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/terms.md"}
+        ],
+        "tags": [
+            "introduction"
         ]
     },
     {
@@ -132,6 +135,9 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/CellularInterface.md"}
             ]
           }
+        ],
+        "tags": [
+            "references"
         ]
     },
     {
@@ -164,6 +170,9 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/testing.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/greentea.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/utest.md"}
+        ],
+        "tags": [
+            "tools"
         ]
     },
     {
@@ -210,6 +219,9 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/memory/runtime_mem_trace.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/memory/runtime_stats.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/patterns/design_guidelines.md"}
+        ],
+        "tags": [
+            "tutorials"
         ]
     },
     {
@@ -225,6 +237,9 @@
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_3/release_note.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_2/release_note.md"},
             {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_1/release_note.md"}
+        ],
+        "tags": [
+            "releases"
         ]
     },
     {
