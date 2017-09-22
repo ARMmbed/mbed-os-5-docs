@@ -1,4 +1,4 @@
-## Storage
+## Storage overview
 
 The storage APIs present in Arm Mbed OS are:
 
