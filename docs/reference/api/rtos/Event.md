@@ -1,12 +1,12 @@
-### Event
+## Event
 
 The event loop is a mechanism that you can use to defer the execution of code to a different context. A common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context.
 
-#### Event class reference
+### Event class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classevents_1_1_event_queue.html)
 
-#### Event example: deferring from interrupt context
+### Event example: deferring from interrupt context
 
 The code executes two handler functions (`rise_handler` and `fall_handler`) in two different contexts:
 
@@ -15,13 +15,13 @@ The code executes two handler functions (`rise_handler` and `fall_handler`) in t
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/events_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/events_ex_1/file/6ae734681f16/main.cpp)
 
-#### Event example: posting events to the queue
+### Event example: posting events to the queue
 
 The code below demonstrates queueing functions to be called after a delay and queueing functions to be called periodically.
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/events_ex_2/)](https://developer.mbed.org/teams/mbed_example/code/events_ex_2/file/488fe91e2e80/main.cpp)
 
-#### Event example: chaining events from more than one queue
+### Event example: chaining events from more than one queue
 
 Event queues easily align with module boundaries, where internal state can be
 implicitly synchronized through event dispatch. Multiple modules can use
