@@ -1,40 +1,42 @@
-### Mbed CLI
+## Mbed CLI
 
-Arm Mbed CLI is the name of the Arm Mbed command-line tool, packaged as `mbed-cli`. Mbed CLI enables Git- and Mercurial-based version control, dependencies management, code publishing, support for remotely hosted repositories (GitHub, GitLab and mbed.org), use of the Arm Mbed OS build system and export functions and other operations.
+Arm Mbed CLI is the name of the Arm Mbed command-line tool, packaged as `mbed-cli`. Mbed CLI enables Git- and Mercurial-based version control, dependencies management, code publishing, support for remotely hosted repositories (GitHub, GitLab and mbed.org), use of the Arm Mbed OS build system, export functions and other operations.
 
 This document covers the installation and usage of Mbed CLI. You can find our legacy CLI documentation [here](https://github.com/ARMmbed/mbed-cli/blob/master/README.md).
 
-#### Setup
+## Installing and configuring
 
-Windows, Linux and Mac OS X support Mbed CLI. We're keen to learn about your experience with Mbed CLI on other operating systems at the [Mbed CLI development page](https://github.com/ARMmbed/mbed-cli).
+You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-###### Requirements
+### Requirements
 
-* **Python** - Mbed CLI is a Python script, so you'll need Python to use it. We test Mbed CLI with [version 2.7.11 of Python](https://www.python.org/downloads/release/python-2711/). It is not compatible with Python 3.
+* **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
+    * We test Mbed CLI with [version 2.7.11 of Python](https://www.python.org/downloads/release/python-2711/). It is not compatible with Python 3.
+    * pip.
 
-* **Git and Mercurial** - Mbed CLI supports both Git and Mercurial repositories, so you need to install both:
+* **Git and Mercurial:** Mbed CLI supports both Git and Mercurial repositories, and you may need libraries from both sources as you work, so please to install both:
     * [Git](https://git-scm.com/) - version 1.9.5 or later.
     * [Mercurial](https://www.mercurial-scm.org/) - version 2.2.2 or later.
 
-The directories of Git and Mercurial executables (`git` and `hg`) need to be in your system's PATH.
-
-* **Command-line compiler or IDE toolchain** - Mbed CLI invokes the [Mbed OS 5](https://github.com/ARMmbed/mbed-os) tools for various features, such as compiling, testing and exporting to industry standard toolchains. To compile your code, you need either a compiler or an IDE:
-    * Compilers: GCC ARM, Arm Compiler 5, IAR.
+* **Command-line compiler or IDE toolchain:** Mbed CLI invokes the [Mbed OS 5](https://github.com/ARMmbed/mbed-os) tools for various features, such as compiling, testing and exporting to industry standard toolchains. To compile your code, you need either a compiler or an IDE:
+    * Compilers: Arm GCC, Arm Compiler 5, IAR.
     * IDE: Keil uVision, DS-5, IAR Workbench.
 
-<span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may need to also install the i386 architecture package:</span>
+    <span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may need to also install the i386 architecture package:</span>
 
-```
-$ sudo dpkg --add-architecture i386
-$ sudo apt-get update
-$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
-```
+    ```
+    $ sudo dpkg --add-architecture i386
+    $ sudo apt-get update
+    $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+    ```
 
-###### Video tutorial for manual installation
+### Choosing your environment
 
-<span class="images">[![Video tutorial](https://img.youtube.com/vi/cM0dFoTuU14/0.jpg)](https://www.youtube.com/watch?v=cM0dFoTuU14)</span>
+Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv).
 
-##### Install
+You may want to install Mbed CLI on a virtual environment if your main envrionment has an unsupported Python version.
+
+### Installing the stable version
 
 You can get the latest stable version of Mbed CLI through pip by running:
 
@@ -44,7 +46,9 @@ $ pip install mbed-cli
 
 On Linux or Mac, you may need to run with `sudo`.
 
-Alternatively, you can get the development version of Mbed CLI by cloning the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
+### Optional: installing the development version
+
+If you are interested in working with the development version (and perhaps contributing to Mbed CLI), clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
 
 ```
 $ git clone https://github.com/ARMmbed/mbed-cli
@@ -58,19 +62,125 @@ $ python setup.py install
 
 On Linux or Mac, you may need to run with `sudo`.
 
-<span class="notes">**Note:** Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv). You can read more about isolated Python virtual environments [here](http://docs.python-guide.org/en/latest/).</span>
+### Configuring Mbed CLI
 
-###### Add Bash tab completion
+There are some configuration that you must set before you can work with Mbed CLI.
 
-To install `mbed-cli` bash tab completion navigate to the `tools/bash_completion` directory. Then, copy the `mbed` script into your `/etc/bash_completion.d/` or `/usr/local/etc/bash_completion.d` directory and reload your terminal.  
+#### Mandatory: Setting PATH variables
+
+Mbed CLI requires adding the following to the system `PATH`:
+
+* The paths for the Git and Mercurial executables (`git` and `hg`).
+
+#### Mandatory: Toolchain selection
+
+You need to tell Mbed CLI where to find the toolchains that you want to use for compiling your source tree.
+
+There are multiple ways to configure toolchain locations:
+
+* The `mbed_settings.py` file in the root of your program. The tools will automatically create this file if it doesn't already exist.
+* The Mbed CLI configuration command.
+* Setting an environment variable.
+* Adding the compiler's directory to your PATH.
+
+Methods for configuring toolchains that appear earlier in the above list override methods that appear later.
+
+##### Through `mbed_settings.py`
+
+Edit `mbed_settings.py` to set your toolchain:
+
+* To use the [Arm Compiler toolchain](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads), set `ARM_PATH` to the *base* directory of your Arm Compiler installation (example: C:\Program Files\ARM\armcc5.06). The recommended version of the Arm Compiler toolchain is 5.06.
+* To use the [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads), set `GCC_ARM_PATH` to the *binary* directory of your GCC Arm installation (example: C:\Program Files\GNU Tools ARM Embedded\6 2017q2\bin). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
+* To use the [IAR EWARM toolchain](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM), set `IAR_PATH` to the *base* directory of your IAR installation (example: C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm). Use versions 7.70 to 7.80.x of the IAR EWARM; newer (or older) versions might be incompatible with the tools.
+
+<span class="notes">**Note:** Because `mbed_settings.py` contains local settings (possibly relevant only to a single OS on a single machine), you should not check it into version control.</span>
+
+##### Through Mbed CLI configuration
+
+You can set the Arm Compiler 5 location via the command:
+
+```
+$ mbed config -G ARM_PATH "C:\Program Files\ARM"
+[mbed] C:\Program Files\ARM now set as global ARM_PATH
+```
+
+The `-G` switch tells Mbed CLI to set this as a global setting, rather than local for the current program.
+
+Supported settings for toolchain paths are `ARM_PATH`, `GCC_ARM_PATH` and `IAR_PATH`.
+
+##### Set environment variable
+
+The environment variables are:
+
+* `MBED_ARM_PATH`: The path to the *base* directory of your Arm Compiler installation. This should be the directory containing the directory containing the binaries for `armcc` and friends.
+* `MBED_IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends.
+* `MBED_GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends.
+
+##### Compiler detection through the `PATH`
+
+If none of the above are configured, the `mbed compile` command will fall back to checking your `PATH` for an executable that is part of the compiler suite in question. This check is the same as a shell would perform to find the executable on the command-line. When `mbed compile` finds the executable it is looking for, it uses the location of that executable as the appropriate path except in the case of GCC, which will not use a path.
+
+#### Optional: add Bash tab completion
+
+To install `mbed-cli` bash tab completion:
+
+1. Navigate to the `tools/bash_completion` directory.
+1. Copy the `mbed` script into your `/etc/bash_completion.d/` or `/usr/local/etc/bash_completion.d` directory.
+1. Reload your terminal.
 
 [Full documentation here](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md)
 
-##### Quickstart video
+#### Working with `mbed config`
+
+The Mbed CLI configuration syntax is:
+
+```
+mbed config [--global] <var> [value] [--unset]
+```
+
+You can see the active Mbed CLI configuration via:
+
+```
+$ mbed config --list
+[mbed] Global config:
+ARM_PATH=C:\Program Files\ARM\armcc5.06
+IAR_PATH=C:\Program Files\IAR Workbench 7.0\arm
+
+[mbed] Local config (D:\temp\mbed-os-program):
+No local configuration is set
+```
+
+Command options:
+
+| Key | Name | Meaning |
+| --- | --- | --- |
+| `--global` | Global | Defines the default behavior of Mbed CLI across programs unless overridden by *local* settings. |
+| None | Local | Any configuration done without `--global` is specific to the Mbed program. It overrides global or default Mbed CLI settings. If you do not specify a value, then Mbed CLI prints the value for this setting in the current working context. |
+| `--unset` | Unset  | Remove a setting. |
+| `--list` | List | List global and local configuration. |
+
+Available configurations:
+
+| Key | Explanation | Default value |
+| --- | --- | --- |
+| `target` | The default target for `compile`, `test` and `export`; an alias of `mbed target`. | No default. |
+| `toolchain` | The default toolchain for `compile` and `test`; can be set through `mbed toolchain`. | No default. |
+| `ARM_PATH`, `GCC_ARM_PATH`, `IAR_PATH` | Define the paths to Arm Compiler, GCC Arm and IAR Workbench toolchains. | No default. |
+| `protocol` | The default protocol used for importing or cloning of programs and libraries. The possible values are `https`, `http` and `ssh`. Use `ssh` if you have generated and registered SSH keys (Public Key Authentication) with a service such as GitHub, GitLab, Bitbucket and so on. Read more about SSH keys [here](https://help.github.com/articles/generating-an-ssh-key/). | Default: `https`. |
+| `depth` | The *clone* depth for importing or cloning and applies only to *Git* repositories. Note that though this option may improve cloning speed, it may also prevent you from correctly checking out a dependency tree when the reference revision hash is older than the clone depth. Read more about shallow clones [here](https://git-scm.com/docs/git-clone). | No default. |
+| `cache` | The local path that stores small copies of the imported or cloned repositories. Mbed CLI uses it to minimize traffic and speed up future imports of the same repositories. Use `on` or `enabled` to turn on caching in the system temp path. Use `none` to turn caching off. | Default: none (disabled). |
+
+### Video tutorial for manual installation
+
+<span class="images">[![Video tutorial](https://img.youtube.com/vi/cM0dFoTuU14/0.jpg)](https://www.youtube.com/watch?v=cM0dFoTuU14)</span>
+
+## Workgin with Mbed CLI
+
+### Quickstart video
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)</span>
 
-##### Understand the working context and program root
+### Understand the working context and program root
 
 Mbed CLI uses the current directory as a working context, in a similar way to Git, Mercurial and many other command-line tools. This means that before calling any Mbed CLI command, you must first change to the directory containing the code you want to act on. For example, if you want to update the Mbed OS sources in your `mbed-example-program` directory:
 
@@ -84,11 +194,11 @@ Various Mbed CLI features require a program root, which should be under version 
 
 <span class="warnings">**Warning**: Mbed CLI stores information about libraries and dependencies in reference files that use the `.lib` extension (such as `lib_name.lib`). Although these files are human-readable, we *strongly* advise that you don't edit these manually - let Mbed CLI manage them instead.</span>
 
-#### Create
+### Create
 
 Mbed CLI can create and import programs based on both Mbed OS 2 and Mbed OS 5.
 
-##### Use Mbed CLI
+#### Use Mbed CLI
 
 The basic workflow for Mbed CLI is to:
 
@@ -148,66 +258,6 @@ $ mbed new mbed-classic-program --mbedlib
 You can create plain (empty) programs, without either Mbed OS 5 or Mbed OS 2, by using the `--create-only` option.
 
 ##### Compile code
-
-###### Toolchain selection
-
-After importing a program or creating a new one, you need to tell Mbed CLI where to find the toolchains that you want to use for compiling your source tree.
-
-There are multiple ways to configure toolchain locations:
-* `mbed_settings.py` file in the root of your program. The tools will automatically create this file if it doesn't already exist.
-* The Mbed CLI configuration.
-* Setting an environment variable.
-* Adding directory of the compiler binary to your PATH.
-
-Methods for configuring toolchains that appear earlier in the above list override methods that appear later.
-
-###### Through `mbed_settings.py`
-
-Edit `mbed_settings.py` to set your toolchain:
-
-* To use the [Arm Compiler toolchain](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads), set `ARM_PATH` to the *base* directory of your Arm Compiler installation (example: C:\Program Files\ARM\armcc5.06). The recommended version of the Arm Compiler toolchain is 5.06.
-* To use the [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads), set `GCC_ARM_PATH` to the *binary* directory of your GCC Arm installation (example: C:\Program Files\GNU Tools ARM Embedded\6 2017q2\bin). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
-* To use the [IAR EWARM toolchain](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM), set `IAR_PATH` to the *base* directory of your IAR installation (example: C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm). Use versions 7.70 to 7.80.x of the IAR EWARM; newer (or older) versions might be incompatible with the tools.
-
-Because `mbed_settings.py` contains local settings (possibly relevant only to a single OS on a single machine), you should not check it into version control.
-
-###### Through Mbed CLI configuration
-
-You can set the Arm Compiler 5 location via the command:
-
-```
-$ mbed config -G ARM_PATH "C:\Program Files\ARM"
-[mbed] C:\Program Files\ARM now set as global ARM_PATH
-```
-
-The `-G` switch tells Mbed CLI to set this as a global setting, rather than local for the current program.
-
-Supported settings for toolchain paths are `ARM_PATH`, `GCC_ARM_PATH` and `IAR_PATH`.
-
-You can see the active Mbed CLI configuration via:
-
-```
-$ mbed config --list
-[mbed] Global config:
-ARM_PATH=C:\Program Files\ARM\armcc5.06
-IAR_PATH=C:\Program Files\IAR Workbench 7.0\arm
-
-[mbed] Local config (D:\temp\mbed-os-program):
-No local configuration is set
-```
-
-More information about Mbed CLI configuration is available in the [configuration section](#mbed-cli-configuration) of this document.
-
-###### Set environment variable
-
-For each of the compilers, `mbed compile` checks a corresponding environment variable for the compiler's location. The environment variables are as follows:
-* `MBED_ARM_PATH`: The path to the *base* directory of your Arm Compiler installation. This should be the directory containing the directory containing the binaries for `armcc` and friends.
-* `MBED_IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be one directory containing the directory containing the binaries for `iccarm` and friends.
-* `MBED_GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends.
-
-###### Compiler detection through the `PATH`
-
-If none of the above are configured, the `mbed compile` command will fall back to checking your `PATH` for an executable that is part of the compiler suite in question. This check is the same as a shell would perform to find the executable on the command-line. When `mbed compile` finds the executable it is looking for, it uses the location of that executable as the appropriate path except in the case of GCC, which will not use a path.
 
 ###### Compile your program
 
@@ -409,31 +459,6 @@ You can combine the options of the Mbed update command for the following scenari
 * `mbed update --clean --ignore` - Update the current program or library and its dependencies, but ignore any local repositories. Mbed CLI updates whatever it can from the public repositories.
 
 Use these with caution because your uncommitted changes and unpublished libraries cannot be restored.
-
-##### Mbed CLI configuration
-
-You can streamline many options in Mbed CLI with global and local configuration.
-
-The Mbed CLI configuration syntax is:
-
-```
-mbed config [--global] <var> [value] [--unset]
-```
-
-* The **global** configuration (via `--global` option) defines the default behavior of Mbed CLI across programs unless overridden by *local* settings.
-* The **local** configuration (without `--global`) is specific to the Mbed program and allows overriding of global or default Mbed CLI settings.
-* If you do not specify a value, then Mbed CLI prints the value for this setting in this context.
-* The `--unset` option allows you to remove a setting.
-* The `--list` option allows you to list global and local configuration.
-
-Here is a list of configuration settings and their defaults:
-
- * `target` - defines the default target for `compile`, `test` and `export`; an alias of `mbed target`. Default: none.
- * `toolchain` - defines the default toolchain for `compile` and `test`; can be set through `mbed toolchain`. Default: none.
- * `ARM_PATH`, `GCC_ARM_PATH`, `IAR_PATH` - defines the path to Arm Compiler, GCC Arm and IAR Workbench toolchains. Default: none.
- * `protocol` - defines the default protocol used for importing or cloning of programs and libraries. The possible values are `https`, `http` and `ssh`. Use `ssh` if you have generated and registered SSH keys (Public Key Authentication) with a service such as GitHub, GitLab, Bitbucket and so on. Read more about SSH keys [here](https://help.github.com/articles/generating-an-ssh-key/). Default: `https`.
- * `depth` - defines the *clone* depth for importing or cloning and applies only to *Git* repositories. Note that though this option may improve cloning speed, it may also prevent you from correctly checking out a dependency tree when the reference revision hash is older than the clone depth. Read more about shallow clones [here](https://git-scm.com/docs/git-clone). Default: none.
- * `cache` - defines the local path that stores small copies of the imported or cloned repositories, and Mbed CLI uses it to minimize traffic and speed up future imports of the same repositories. Use `on` or `enabled` to turn on caching in the system temp path. Use `none` to turn caching off. Default: none (disabled).
 
 #### Collaborate
 
@@ -782,3 +807,7 @@ As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Plea
 
 ###### Various issues when running Mbed CLI in Cygwin environment
 Currently Mbed CLI is not compatible with Cygwin environment and cannot be executed inside it (https://github.com/ARMmbed/mbed-cli/issues/299).
+
+#### Feedback
+
+We're keen to learn about your experience with Mbed CLI on other operating systems at the [Mbed CLI development page](https://github.com/ARMmbed/mbed-cli).
