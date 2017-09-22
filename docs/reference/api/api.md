@@ -1,5 +1,3 @@
-## API
-
 The [APIs](/docs/v5.6/introduction/glossary.html) in this document are organized by the feature, or group of features, they enable.
 
 - [Platform](/docs/v5.6/reference/platform.html): platform modules that provide consistent user experience.
