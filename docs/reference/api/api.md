@@ -1,6 +1,6 @@
 ## API
 
-The APIs in this document are organized by the feature, or group of features, they enable.
+The [APIs](https://os-doc-builder.test.mbed.com/docs/v5.4/introduction/glossary.html) in this document are organized by the feature, or group of features, they enable.
 
 * [Platform](/docs/v5.4/reference/api-references.html#platform): platform modules that provide consistent user experience.
 * [Drivers](/docs/v5.4/reference/api-references.html#drivers): analog and digital input and outputs and digital interfaces.
