@@ -75,7 +75,7 @@ The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use
 
 ### The Arm Mbed interface
 
-You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](https://docs.mbed.com/docs/mbed-hardware-development-kit/en/latest/) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
+You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.4/reference/arm-mbed-hdk.html) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
 ### Connectivity
 
