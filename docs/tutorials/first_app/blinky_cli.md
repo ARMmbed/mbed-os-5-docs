@@ -1,14 +1,14 @@
-### Blinky on Arm Mbed CLI
+## Blinky on Arm Mbed CLI
 
 Blinky is a simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
 
-#### Quick start video
+### Quick start video
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on Arm Mbed CLI</span></span>
 
 <span class="notes">**Note:** the video assumes you've already [installed Mbed CLI](#installing-mbed-cli-and-a-toolchain).
 
-#### Blinky's code
+### Blinky's code
 
 Blinky's code is a simple `while` loop inside the `main()` function:
 
@@ -28,11 +28,11 @@ int main() {
 }
 ```
 
-#### Installing Mbed CLI and a toolchain
+### Installing Mbed CLI and a toolchain
 
 Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI page](https://os.mbed.com/docs/v5.4/tools/offline.html#mbed-cli), and come back here when you're done.
 
-#### Setting context
+### Setting context
 
 Whenever you work with Mbed CLI, you need to navigate your command-line terminal to the directory in which you want to work. For example, if your program is in a folder called `my_program`:
 
@@ -42,7 +42,7 @@ cd my_program
 
 You can then start running Mbed CLI commands, and they will run in the correct context.
 
-#### Getting Blinky
+### Getting Blinky
 
 Mbed CLI can import Blinky, along with the Arm Mbed OS codebase. The import process creates a new directory as a subdirectory of your current context (as explained above).
 
@@ -65,7 +65,7 @@ To import Blinky, from the command-line:
 
 Blinky is now under `dev_directory` > `mbed-os-example-blinky`. You can look at `main.cpp` to familiarize yourself with the code.
 
-#### Compiling
+### Compiling
 
 Invoke `mbed compile`, specifying:
 
@@ -103,7 +103,7 @@ Image: .\.build\K64F\ARM\mbed-os-example-blinky.bin
 
 The program file, `mbed-os-example-blinky.bin`, is under your `mbed-os-example-blinky\build\K64F\ARM\` folder.
 
-#### Programming your board
+### Programming your board
 
 Arm Mbed Enabled boards are programmable by drag and drop over a USB connection.
 
