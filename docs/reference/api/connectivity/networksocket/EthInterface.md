@@ -13,7 +13,7 @@ To bring up the network interface:
 1. Instantiate the `EthtInterface` class.
 1. Call the `connect` function.
 1. Once you connect the EthInterface, you can use it as a
-target for opening [network sockets](/docs/v5.4/reference/network-socket.html).
+target for opening [network sockets](/docs/v5.4/reference/network-socket-overview.html).
 
 ### EthInterface example
 
