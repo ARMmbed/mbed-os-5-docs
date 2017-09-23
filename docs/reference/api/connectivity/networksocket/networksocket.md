@@ -1,4 +1,4 @@
-## Network Socket
+## Network Socket overview
 
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
