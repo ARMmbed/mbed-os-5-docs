@@ -1,8 +1,8 @@
-### Blinky on the Arm Mbed Online Compiler
+## Blinky on the Arm Mbed Online Compiler
 
 <span class="tips">Please create a [developer account](https://developer.mbed.org/account/signup/). It's free, and we don't spam.</span>
 
-#### Importing Blinky
+### Importing Blinky
 
 To get Blinky into the Mbed Online Compiler, click the **`Import into mbed IDE`** button below:
 
@@ -12,7 +12,7 @@ To get Blinky into the Mbed Online Compiler, click the **`Import into mbed IDE`*
 
 The import mechanism offers a default name, but you're free to change it. When you're done, click **Import**.
 
-#### Viewing Blinky
+### Viewing Blinky
 
 The imported Blinky has two interesting parts:
 
@@ -23,16 +23,16 @@ Later we'll compile the code; this will take both of these parts and create a si
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/maincpp.png)<span>Viewing the code in main.cpp</span></span>
 
-#### Selecting a target board
+### Selecting a target board
 
 The Mbed Online Compiler can build your application to match any Arm Mbed Enabled board. However, you have to select the target before compiling.
 
-##### Adding a board to your list
+#### Adding a board to your list
 To add a board to your list, go to [the board's page on `mbed.com`](https://developer.mbed.org/platforms/), and click the **`Add to your mbed Compiler`** button:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_board.png)<span>Adding a board to the Mbed Online Compiler's board list</span></span>
 
-##### Selecting a board
+#### Selecting a board
 
 The compiler shows the current build board's name on the upper right corner:
 
@@ -42,7 +42,7 @@ Click the name to change your board as needed:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/select_board.png)<span>Selecting a board</span></span>
 
-#### Compile and install
+### Compile and install
 
 The Mbed Online Compiler builds a `.bin` file that you can install on your board.
 
