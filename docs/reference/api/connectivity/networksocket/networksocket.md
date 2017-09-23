@@ -2,14 +2,14 @@
 
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
-- [Ethernet](/docs/v5.4/reference/network-socket.html#ethernet): API for connecting to the internet over an Ethernet connection.
-- [Wi-Fi](/docs/v5.4/reference/network-socket.html#wi-fi): API for connecting to the internet with a Wi-Fi device.
-- [Cellular](/docs/v5.4/reference/network-socket.html#cellular-api): API for connecting to the internet using a cellular device.
-- [Mesh networking](/docs/v5.4/reference/network-socket.html#mesh): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
-- [UDPSocket](/docs/v5.4/reference/network-socket.html#udpsockett): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
-- [TCPSocket](/docs/v5.4/reference/network-socket.html#tcpsocket): This class provides the ability to send a stream of data over TCP.
-- [TCPServer](/docs/v5.4/reference/network-socket.html#tcpserver): This class provides the ability to accept incoming TCP connections.
-- [SocketAddress](/docs/v5.4/reference/network-socket.html#socketaddress): You can use this class to represent the IP address and port pair of a unique network endpoint.
+- [Ethernet](/docs/v5.4/reference/ethernet.html): API for connecting to the internet over an Ethernet connection.
+- [Wi-Fi](/docs/v5.4/reference/wi-fi.html): API for connecting to the internet with a Wi-Fi device.
+- [Cellular](/docs/v5.4/reference/cellular-api.html): API for connecting to the internet using a cellular device.
+- [Mesh networking](/docs/v5.4/reference/mesh.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
+- [UDPSocket](/docs/v5.4/reference/udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
+- [TCPSocket](/docs/v5.4/reference/tcpsocket.html): This class provides the ability to send a stream of data over TCP.
+- [TCPServer](/docs/v5.4/reference/tcpserver.html): This class provides the ability to accept incoming TCP connections.
+- [SocketAddress](/docs/v5.4/reference/socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 
 Continue reading for detailed reference material about some of these APIs.
 
@@ -61,7 +61,7 @@ The callback may be called in interrupt context and should not perform operation
 
 ##### Socket
 
-You can use the [Socket](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/classSocket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
+You can use the [Socket](/docs/v5.4/mbed-os-api-doxy/class_socket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
 
 ##### NetworkInterface
 
@@ -69,8 +69,8 @@ A socket requires a NetworkInterface instance when opened to indicate which Netw
 
 Existing network interfaces:
 
-- [EthernetInterface](/docs/v5.4/reference/network-socket.html#ethernet).
-- [WiFiInterface](/docs/v5.4/reference/network-socket.html#wi-fi).
+- [EthInterface](/docs/v5.4/reference/ethernet.html).
+- [WiFiInterface](/docs/v5.4/reference/wi-fi.html).
 
 ##### Example applications
 
@@ -89,7 +89,7 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 #### Arm Mbed Mesh
 
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/reference/mesh-1.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/tutorials/using-the-apis.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
