@@ -1,8 +1,8 @@
-### Eclipse
+## Eclipse
 
 This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [configure your local debug toolchain](https://os.mbed.com/docs/v5.4/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
-#### Installing Eclipse
+### Installing Eclipse
 
 You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
 
@@ -20,11 +20,11 @@ You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
     1. Click **Next** repeatedly, and accept the license agreements.
     1. Click **Finish**. If prompted to restart Eclipse, click **Yes**.
 
-##### Exporting a project
+#### Exporting a project
 
 To export your project to Eclipse, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
 
-###### Online compiler
+##### Online compiler
 
 1. Right click on your project.
 1. Select *Export Program...*.
@@ -35,7 +35,7 @@ To export your project to Eclipse, you can use either the Arm Mbed Online Compil
 
 ![Exporting to Eclipse](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse1.png)
 
-###### Arm Mbed CLI
+##### Arm Mbed CLI
 
 In your project folder, run:
 
@@ -46,7 +46,7 @@ In your project folder, run:
 $ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
 ```
 
-##### Importing the project in Eclipse
+#### Importing the project in Eclipse
 
 1. Open Eclipse.
 1. On the *Welcome* screen, select *Import a project with a working Makefile*.
@@ -75,7 +75,7 @@ Steps to update Eclipse's PATH
 
 Once the project builds, you can configure the debugger. The configuration depends on the debug server you're using: pyOCD or OpenOCD.
 
-###### pyOCD
+##### pyOCD
 
 1. Select *Run > Debug Configurations...*.
 1. If no configuration exists under *GDB pyOCD Debugging*, click on *New launch configuration*.
@@ -92,7 +92,7 @@ Once the project builds, you can configure the debugger. The configuration depen
 1. Click *Apply*.
 1. Click *Debug* to start debugging.
 
-###### OpenOCD
+##### OpenOCD
 
 1. Select *Run > Debug Configurations...*.
 1. If a configuration already exists under *GDB pyOCD Debugging*, please remove it.
@@ -113,7 +113,7 @@ Once the project builds, you can configure the debugger. The configuration depen
 
 ![Debugging an Mbed OS 5 application in Eclipse](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse9.png)
 
-##### Building with Mbed CLI
+#### Building with Mbed CLI
 
 We build using Make, but you can also use Mbed CLI for building from Eclipse:
 
