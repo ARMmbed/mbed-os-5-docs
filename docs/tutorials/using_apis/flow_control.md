@@ -1,8 +1,8 @@
-### Examples of Application Flow Control
+## Examples of Application Flow Control
 
 We can use Blinky to explore flow control and task management in Arm Mbed OS applications. We'll look at automated actions first, then move on to handling user actions.
 
-#### Flow control for automated actions
+### Flow control for automated actions
 
 If we want to automatically blink an LED, we have three main techniques:
 
@@ -10,7 +10,7 @@ If we want to automatically blink an LED, we have three main techniques:
 1. [Ticker](#ticker)
 1. [Thread](#thread)
 
-##### Busy wait
+#### Busy wait
 
 Busy wait is a method that blocks the processor for a period of time. This is an effective way to create time delays, but it’s inefficient because it wastes processor time and keeps the processor running at full power for the duration of the wait:
 
@@ -18,7 +18,7 @@ Busy wait is a method that blocks the processor for a period of time. This is an
 
 Notice `printf()`; you can enable this by uncommenting the line (remove the `//`). `printf()` prints to the terminal, so you can use it to get debug information. We recommend using [CoolTerm](http://freeware.the-meiers.org/), as it works the same on Windows, Linux and OS X. [Here is a handy video on how to use CoolTerm](https://www.youtube.com/watch?v=jAMTXK9HjfU) to connect to your board and view the `printf()` statements.
 
-##### Ticker
+#### Ticker
 
 Tickers and timers are another way of creating a time interval. These methods are somewhat better than busy wait because they allow other code to run while you are waiting. It is even possible, though non-trivial, to sleep during the wait period.
 
@@ -26,17 +26,17 @@ Here is an example that doesn't include sleeping:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed-Workshops/code/Workshop-1-Example-2/)](https://developer.mbed.org/teams/mbed-Workshops/code/Workshop-1-Example-2/file/tip/main.cpp)
 
-##### Thread
+#### Thread
 
 Threads are the most efficient way to blink an LED. During the waiting period, it is possible to take advantage of Mbed OS optimizations to automatically conserve power and deal with other tasks. While this is not the most visually appealing method, nor the simplest, it is the preferred way for large scale deployments:
 
 [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed-Workshops/code/Workshop-1-Example-3/)](https://developer.mbed.org/teams/mbed-Workshops/code/Workshop-1-Example-3/file/tip/main.cpp)
 
-#### Flow control for manual actions
+### Flow control for manual actions
 
 Let’s try using a DigitalIn pin from the button to control the application. There are two ways to read input data: we can either constantly poll the button in a busy wait, or set an interrupt to trigger when pressed. We’ll explore these methods below.
 
-##### Busy wait button
+#### Busy wait button
 
 We can wait for digital input the same way we waited for time to pass - using a `while()` loop. In the example below the digital input is a button press, which causes the application to flash the LED and then wait for 1 second.
 
@@ -48,7 +48,7 @@ We constantly poll the button to see whether it has a value that matches `button
 
 `button_press` is used to denote what value the switch uses to represent the state *pushed*. Most switches are by default open (unpressed), so they will read as 0 while pressed. If you see your LED blinking without the button being pressed - try changing `button_press` to `1`.
 
-##### Interrupt button
+#### Interrupt button
 
 An alternative way to poll the button is to use an interrupt. Interrupts let you say `when that pin changes value, call this function`. In other words, we can tell the MCU to call a function when the button is pressed. In our case, that function toggles the LED:
 
