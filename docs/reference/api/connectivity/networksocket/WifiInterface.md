@@ -14,8 +14,8 @@ the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) is used.
 To bring up the network interface:
 
 1. Instantiate an implementation of the WiFiInterface class (for example the [ESP8266Interface](https://github.com/armmbed/esp8266-driver)).
-1. Call the ``connect`` function with an SSID and password for the Wi-Fi network.
-1. Once connected, the WiFiInterface can be used as a target for opening [network sockets](/docs/v5.4/reference/network-socket.html).
+1. Call the `connect` function with an SSID and password for the Wi-Fi network.
+1. Once connected, the WiFiInterface can be used as a target for opening [network sockets](/docs/v5.4/reference/network-socket-overview.html).
 
 ### Wi-Fi Example
 
