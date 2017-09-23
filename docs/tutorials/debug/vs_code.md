@@ -1,8 +1,8 @@
-### Visual Studio Code
+## Visual Studio Code
 
 This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](https://os.mbed.com/docs/v5.4/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
-#### Installing Visual Studio Code
+### Installing Visual Studio Code
 
 You need to install Visual Studio Code with the C/C++ extensions to begin.
 
@@ -14,11 +14,11 @@ You need to install Visual Studio Code with the C/C++ extensions to begin.
 
 1. When prompted, restart the IDE.
 
-#### Exporting a project
+### Exporting a project
 
 To export your project to Visual Studio Code, you can use either the Online Compiler or Arm Mbed CLI.
 
-##### Online Compiler
+#### Online Compiler
 
 1. Right click on your project.
 1. Select *Export Program...*.
@@ -28,7 +28,7 @@ To export your project to Visual Studio Code, you can use either the Online Comp
 
 ![Exporting to Visual Studio Code](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode1.png)
 
-##### Arm Mbed CLI
+#### Arm Mbed CLI
 
 In your project folder, run:
 
@@ -39,7 +39,7 @@ In your project folder, run:
 $ mbed export -i vscode_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
 ```
 
-#### Configuring the debugger
+### Configuring the debugger
 
 To configure the debugger for your project:
 
@@ -54,7 +54,7 @@ To configure the debugger for your project:
 
 <span class="notes">**Note:** If you installed the GNU Arm Embedded Toolchain in a nondefault location (for example, through the Arm Mbed CLI installer), you need to update the `MIDebuggerPath` to the full path of your copy of `arm-none-eabi-gdb`. To find the new path, open a terminal, and run `where arm-none-eabi-gdb` (Windows) or `which arm-none-eabi-gdb` (macOS and Linux).</span>
 
-#### Debugging your project
+### Debugging your project
 
 1. On the 'Debug' tab, click the *Play* icon.
 
