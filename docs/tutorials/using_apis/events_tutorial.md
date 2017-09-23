@@ -1,4 +1,4 @@
-### The EventQueue API
+## The EventQueue API
 
 One of the optional Arm Mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
@@ -10,7 +10,7 @@ The event loop offers a solution to these issues in the form of an API that can 
 
 In Mbed OS, events are pointers to functions (and optionally function arguments). An event loop extracts events from a queue and executes them.
 
-#### Creating an event loop
+### Creating an event loop
 
 You must create and start the event loop manually. The simplest way to achieve that is to create a `Thread` and run the event queue's `dispatch` method in the thread:
 
@@ -30,7 +30,7 @@ int main () {
 
 Note that though this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer from running more than one event loop, simply by following the create/start pattern above for each of them.
 
-#### Using the event loop
+### Using the event loop
 
 Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
@@ -99,7 +99,7 @@ The scenario above (splitting an interrupt handler's code into time critical cod
 
 We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
-#### Prioritization
+### Prioritization
 
 The EventQueue has no concept of event priority. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. The EventQueue only schedules events based on time. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must appropriately set the priority of the thread dispatching each EventQueue instance.
 
