@@ -243,7 +243,7 @@
           {
             "title": "Serial Communication",
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/communicating_with_platform.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial-overview.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial_driver.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial_communication.md"}
             ]
