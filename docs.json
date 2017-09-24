@@ -181,31 +181,71 @@
         "description": "Details of the tools available for working with mbed OS",
         "slug": "tools",
         "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/tools_intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/config_system.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online_comp.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_collab.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_version_control.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_pull_requests.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/offline.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mbedignore.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/build_profiles.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/debug_builds_cli.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/toolchain_profiles.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/toolchains/export_to_third_party.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/toolchains/exporters.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debug_intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debug_other_ides.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debugging_mbed_os_apps.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/local_debugging_toolchain.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/DAP.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/testing_intro.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/testing.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/greentea.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/utest.md"}
+        "chapters": [
+          {
+            "title": "Introduction",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/tools_intro.md"}
+            ]
+          },
+          {
+            "title": "Configuring Tools",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/config_system.md"}
+            ]
+          },
+          {
+            "title": "Online",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online_comp.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_collab.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_version_control.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_pull_requests.md"}
+            ]
+          },
+          {
+            "title": "Offline",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/offline.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mbedignore.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/build_profiles.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/debug_builds_cli.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/toolchain_profiles.md"}
+            ]
+          },
+          {
+            "title": "Exporting",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/toolchains/export_to_third_party.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/toolchains/exporters.md"}
+            ]
+          },
+          {
+            "title": "Debugging",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debug_intro.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debug_other_ides.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/debugging_mbed_os_apps.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/local_debugging_toolchain.md"}
+            ]
+          },
+          {
+            "title": "DAPLink",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/DAP.md"}
+            ]
+          },
+          {
+            "title": "Testing",
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/testing_intro.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/testing.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/greentea.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/testing/utest.md"}
+            ]
+          }
         ],
         "tags": [
             "tools"
