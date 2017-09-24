@@ -4,7 +4,7 @@ The CellularBase provides a C++ API for connecting to the internet over a Cellul
 
 Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
-### Cellular class reference
+### CellularBase class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_cellular_base.html)
 
