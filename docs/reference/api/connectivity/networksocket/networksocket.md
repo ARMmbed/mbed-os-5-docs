@@ -89,14 +89,14 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 #### Arm Mbed Mesh
 
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/tutorials/using-the-apis.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.4/tutorials/mesh.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
 * 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 * Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.4/tutorials/using-the-apis.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
+Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.4/tutorials/mesh.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the [Mbed C++ socket APIs](/docs/v5.4/reference/network-socket.html) to create a socket to start communication with a remote peer.
 
