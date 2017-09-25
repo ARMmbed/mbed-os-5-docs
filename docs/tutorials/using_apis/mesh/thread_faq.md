@@ -1,4 +1,4 @@
-#### Thread mesh questions and answers
+### Thread mesh questions and answers
 
 ##### How are devices joined to the networks and what are the options for commissioning modes?
 
