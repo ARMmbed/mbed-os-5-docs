@@ -1,4 +1,4 @@
-#### Nanostack
+### Nanostack
 
 This chapter introduces the _6LoWPAN stack architecture_. It contains the following sections:
 
