@@ -1,4 +1,4 @@
-#### Configuring the hardware
+### Configuring the hardware
 
 ##### Selecting your radio
 
