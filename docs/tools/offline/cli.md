@@ -130,7 +130,7 @@ Mbed CLI has a few rules that allow you to seamlessly switch between different v
  
 When resolving which setting is used for an individual `mbed compile` or `mbed test` invocation, Mbed CLI picks the lowest numbered present setting.
 
-To use a standard toolchain for general purpose development, you may use any method 3 through 5. For overriding a toolchain version for a specific project, you may use methods 1 and 2. All of these methods for configuring a toolchains may coexist.
+To use a standard toolchain for general purpose development, you may use any method 3 through 5. For overriding a toolchain version for a specific project, you may use methods 1 and 2. All of these methods for configuring a toolchain may coexist.
 
 #### Optional: add Bash tab completion
 
