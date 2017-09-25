@@ -1,4 +1,4 @@
-<h2 id="collab-online-comp">Collaboration and version control</h2>
+<h2 id="collab-online-comp">Collaborate</h2>
 
 The Arm Mbed Online Compiler offers collaboration and version control functions to help the community benefit from and improve individual work.
 
