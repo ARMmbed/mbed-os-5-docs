@@ -14,7 +14,7 @@ Once you know how to build an existing application, it's time to learn [how to w
 
 ### Development tools
 
-- Our offline development tool is [Arm Mbed CLI](/docs/v5.4/tools/mbed-cli.html), a command-line tool. This requires having a toolchain installed on your computer.
+- Our offline development tool is [Arm Mbed CLI](/docs/v5.4/tools/offline.html#mbed-cli), a command-line tool. This requires having a toolchain installed on your computer.
 - The [Arm Mbed Online Compiler](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1) lets you write and build applications using a web browser.
 - If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.4/tools/exporting.html).
 
