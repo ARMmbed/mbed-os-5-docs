@@ -1,4 +1,4 @@
-#### Porting new RF driver for 6LoWPAN Stack
+### Porting new RF driver for 6LoWPAN Stack
 
 Device drivers are a set of functions for providing PHY layer devices for the 6LoWPAN stack:
 
