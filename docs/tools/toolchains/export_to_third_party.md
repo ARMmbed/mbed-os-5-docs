@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ### Exporting from Arm Mbed CLI
 
-[Mbed CLI](/docs/v5.4/tools/offline.html#mbed-cli) currently supports [exporting](/docs/v5.4/tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](/docs/v5.4/tools/mbed-cli.html) currently supports [exporting](/docs/v5.4/tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -36,7 +36,7 @@ For example, to export to uVision5 with the K64F target, run:
 A `*.uvproj` file is created in the root folder of the project.
 You can open this project file with uVision5.
 
-When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](/docs/v5.4/tools/offline.html#build-profiles). For example, this means that compiling within UVision 5 after this export:
+When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](/docs/v5.4/tools/build-profiles.html). For example, this means that compiling within UVision 5 after this export:
 
     $ mbed export -i uvision5 -m K64F
 
@@ -160,7 +160,3 @@ Freescale KDS now ships with the GNU Arm Embedded Toolchain. You may need to upd
 The Mbed libraries contain CMSIS startup files.
 
 When importing an Mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must un-check the **migrate to current infrastructure** box.
-
-#### Simplicity Studio
-
-We have more information about Simplicity Studio [in a stand-alone guide](https://docs.mbed.com/docs/third-party-integrations/en/latest/Simp_Stu/simp_stu/).
