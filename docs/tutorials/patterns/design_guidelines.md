@@ -70,7 +70,7 @@ The Mbed OS codebase is organized into conceptual submodules to limit the scope 
 1. Patches must land on master before being backported to one or more release branches.
 1. Feature development may happen in a separate branch, and brought to master when complete.
 1. The master branch and release branches must never be rewritten.
-1. All contributors must sign the CLA: [https://developer.mbed.org/contributor_agreement](https://developer.mbed.org/contributor_agreement).
+1. All contributors must sign the CLA: [https://os.mbed.com/contributor_agreement](https://os.mbed.com/contributor_agreement).
 1. For incoming sources, the only acceptable licenses are:
     - MIT.
     - Apache.

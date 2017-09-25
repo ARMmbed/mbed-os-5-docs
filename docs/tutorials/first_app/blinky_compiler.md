@@ -1,12 +1,12 @@
 ## Blinky on the Arm Mbed Online Compiler
 
-<span class="tips">Please create a [developer account](https://developer.mbed.org/account/signup/). It's free, and we don't spam.</span>
+<span class="tips">Please create a [developer account](https://os.mbed.com/account/signup/). It's free, and we don't spam.</span>
 
 ### Importing Blinky
 
 To get Blinky into the Mbed Online Compiler, click the **`Import into mbed IDE`** button below:
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/file/tip/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/file/tip/main.cpp)
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_dialog.png)<span>Importing Blinky</span></span>
 
@@ -28,7 +28,7 @@ Later we'll compile the code; this will take both of these parts and create a si
 The Mbed Online Compiler can build your application to match any Arm Mbed Enabled board. However, you have to select the target before compiling.
 
 #### Adding a board to your list
-To add a board to your list, go to [the board's page on `mbed.com`](https://developer.mbed.org/platforms/), and click the **`Add to your mbed Compiler`** button:
+To add a board to your list, go to [the board's page on `mbed.com`](https://os.mbed.com/platforms/), and click the **`Add to your mbed Compiler`** button:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_board.png)<span>Adding a board to the Mbed Online Compiler's board list</span></span>
 

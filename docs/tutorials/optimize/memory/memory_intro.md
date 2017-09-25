@@ -2,11 +2,11 @@
 
 Beginning with Mbed OS 5, new features such as RTOS created an increase in flash and RAM usage. This guide explains how to optimize program memory usage for release builds using Mbed OS 5.
 
-<span class="notes">**Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available [here](https://developer.mbed.org/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/).</span>
+<span class="notes">**Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available [here](https://os.mbed.com/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/).</span>
 
 ### Removing unused modules
 
-For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), a program that flashes an LED, typical memory usage is split among the following modules: 
+For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), a program that flashes an LED, typical memory usage is split among the following modules:
 
 ```
 +---------------------+-------+-------+-------+
@@ -33,7 +33,7 @@ To disable error logging to serial output, set the `NDEBUG` macro and the follow
 
 ```
 {
-    "macros": [ 
+    "macros": [
         "NDEBUG=1"
     ],
     "target_overrides": {

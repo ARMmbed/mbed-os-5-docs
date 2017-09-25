@@ -609,7 +609,7 @@ enum nsapi_error_t {
 
 When adding new device support, you can use a test harness to verify implementations. The test program is very simple, since it only needs to instantiate the new network interface; all further operations are performed against the managed classes.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/iriark01/test_docs)](https://developer.mbed.org/teams/NetworkSocketAPI/code/ESP8266InterfaceTests/file/tip/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/iriark01/test_docs)](https://os.mbed.com/teams/NetworkSocketAPI/code/ESP8266InterfaceTests/file/tip/main.cpp)
 
 ```cpp
 // replace 0.0.0.0 with the ip address of the host pc running the echo_server.py script
@@ -618,7 +618,7 @@ nsapi_tests("ESP8266Interface Tests", &iface, "0.0.0.0", 4000);
 
 The test harness library is **NSAPITests.** It relies on a Python echo server, which is also part of that repo. Make sure to change the IP address in the interface test program to point at the computer that is running the script.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/iriark01/test_docs)](https://developer.mbed.org/teams/components/code/ESP8266InterfaceTests/)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/iriark01/test_docs)](https://os.mbed.com/teams/components/code/ESP8266InterfaceTests/)
 
 #### References
 

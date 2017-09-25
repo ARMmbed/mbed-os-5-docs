@@ -34,4 +34,4 @@ For more information on configuring your host computer to use this feature, plea
 ### Further reading
 
 - [The DAPLink GitHub repo](https://github.com/ARMmbed/DAPLink/blob/master/README.md).
-- [Debug probes built with DAPLink](https://developer.mbed.org/platforms/SWDAP-LPC11U35).
+- [Debug probes built with DAPLink](https://os.mbed.com/platforms/SWDAP-LPC11U35).

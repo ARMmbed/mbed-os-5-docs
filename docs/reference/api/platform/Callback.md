@@ -9,16 +9,16 @@ This is the technical reference for callbacks. You should read the [introduction
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_callback.html)
 
 ### Serial passthrough example with callbacks
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/)](https://developer.mbed.org/users/mbedAustin/code/SerialPassthrough/file/96cb82af9996/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/users/mbedAustin/code/SerialPassthrough/file/96cb82af9996/main.cpp)
 
 ### Thread example with callbacks
 
 The Callback API provides a convenient way to pass arguments to spawned threads.
 
- [![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/)](https://developer.mbed.org/teams/mbed_example/code/rtos_threading_with_callback/file/d4b2a035ffe3/main.cpp)
+ [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/d4b2a035ffe3/main.cpp)
 
 ### Sonar example
 
 Here is an example that uses everything discussed in the form of a minimal Sonar class.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/callback-sonar-example/)](https://developer.mbed.org/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/)](https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)

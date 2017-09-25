@@ -14,4 +14,4 @@ API summary
 
 This example sends a counter from one CAN bus (can1) and listens for a packet on the other CAN bus (can2). Each bus controller should be connected to a CAN bus transceiver. These should be connected together at a CAN bus.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/CAN_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/CAN_ex_1/file/5791101761f9/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CAN_ex_1/)](https://os.mbed.com/teams/mbed_example/code/CAN_ex_1/file/5791101761f9/main.cpp)

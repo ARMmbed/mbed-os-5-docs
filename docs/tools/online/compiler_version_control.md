@@ -43,5 +43,5 @@ This synchronization mechanism ensures that the imported repository and all its 
 
 To ensure that a repository can be imported successfully, you must:
 
- * Publish all subrepositories (even sub-subrepositories) on [`developer.mbed.org`](https://developer.mbed.org).
+ * Publish all subrepositories (even sub-subrepositories) on [`os.mbed.com`](https://os.mbed.com).
  * Leave no uncommitted or unpublished changes in any subrepository.

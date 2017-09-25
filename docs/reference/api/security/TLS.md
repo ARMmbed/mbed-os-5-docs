@@ -8,7 +8,7 @@ Arm Mbed TLS provides a comprehensive SSL/TLS solution and makes it easy for dev
 
 You can try the following examples:
 
-1. [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/tls-client): Downloads a file from an HTTPS server (developer.mbed.org) and looks for a specific string in that file.
+1. [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/tls-client): Downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
 
 1. [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
 

@@ -70,7 +70,7 @@ However, there are times when a simple mutex is not an appropriate mechanism for
 
 The RTOS provides several mechanisms to move interrupt processing onto a thread. These include, but are not limited to:
 
- * [Signals](https://developer.mbed.org/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html)
+ * [Signals](https://os.mbed.com/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html)
  * [Queue](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/Queue_8h_source.html)
  * [Mail](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/Mail_8h_source.html)
 

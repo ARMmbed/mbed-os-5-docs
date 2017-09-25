@@ -20,4 +20,4 @@ To bring up the network interface:
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/cellular-example/)](https://developer.mbed.org/teams/mbed_example/code/cellular-example/file/fb873be06e31/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/cellular-example/)](https://os.mbed.com/teams/mbed_example/code/cellular-example/file/fb873be06e31/main.cpp)

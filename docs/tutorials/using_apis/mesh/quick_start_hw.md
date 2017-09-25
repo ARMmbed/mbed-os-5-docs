@@ -30,7 +30,7 @@ Following RF shield have been used with Mbed OS mesh examples.
 * [FIREFLY 6LOWPAN ARDUINO SHIELD](https://firefly-iot.com/product/firefly-arduino-shield-2-4ghz/)
 * [Freedom Development Board for MCR20A](http://www.nxp.com/products/software-and-tools/hardware-development-tools/freedom-development-boards/freedom-development-board-for-mcr20a-wireless-transceiver:FRDM-CR20A)
 * [X-NUCLEO-IDS01A4](http://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html)
-* [DVK-NCS36510-MBED-GEVB](https://developer.mbed.org/platforms/NCS36510/) Development board, contains internal RF chip.
+* [DVK-NCS36510-MBED-GEVB](https://os.mbed.com/platforms/NCS36510/) Development board, contains internal RF chip.
 
 ##### Tested development boards
 
@@ -52,4 +52,3 @@ The following table shows which development boards have been tested. It does not
 2. Pin collision, see [mesh-minimal Issue 55](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/issues/55)
 3. X-NUCLEO-IDS01A4 expansion board required modifications to be used in Mbed OS. See [Driver readme](https://github.com/ARMmbed/stm-spirit1-rf-driver)
 4. KW24D has MCR20A chip integrated. Use the same driver.
-

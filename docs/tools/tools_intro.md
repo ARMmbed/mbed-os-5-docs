@@ -11,7 +11,7 @@ The two Mbed OS development tools are Mbed CLI and the Mbed Online Compiler. Bot
 
 We developed Mbed OS 5 using the Mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an Mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
 
-`developer.mbed.org` provides the tools, libraries and programs that work with Mbed OS 5, so you can also use the Mbed Online Compiler for building Mbed OS 5 examples and programs. Beginning developers or those who are not comfortable with the command-line may prefer the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the Arm Mbed OS 2 ecosystem.
+`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS 5, so you can also use the Mbed Online Compiler for building Mbed OS 5 examples and programs. Beginning developers or those who are not comfortable with the command-line may prefer the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the Arm Mbed OS 2 ecosystem.
 
 Use the instructions below to test our Cloud9-based Arm Mbed Enabled IDE, which is currently in an alpha state.
 

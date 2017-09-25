@@ -10,7 +10,7 @@ Use the AnalogIn API to read an external voltage applied to an analog input pin.
 
 ### AnalogIn Hello World!
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/AnalogIn_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/AnalogIn_HelloWorld/file/77750f8cba47/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/file/77750f8cba47/main.cpp)
 
 ### AnalogIn examples
 
@@ -18,10 +18,10 @@ Use the AnalogIn API to read an external voltage applied to an analog input pin.
 
 Control an R/C servo with analog input.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/AnalogIn_ex_1/)](https://developer.mbed.org/teams/mbed_example/code/AnalogIn_ex_1/file/490818b6238b/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_1/file/490818b6238b/main.cpp)
 
 #### Example two
 
 This example shows AnalogIn reading 16-bit normalized samples.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/AnalogIn_ex_2/)](https://developer.mbed.org/teams/mbed_example/code/AnalogIn_ex_2/file/cb98929b3895/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_2/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_2/file/cb98929b3895/main.cpp)

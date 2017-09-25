@@ -216,13 +216,13 @@ Removing a library from your program is not the same as deleting the library dir
 Use `mbed add` to add the latest revision of a library:
 
 ```
-$ mbed add https://developer.mbed.org/users/wim/code/TextLCD/
+$ mbed add https://os.mbed.com/users/wim/code/TextLCD/
 ```
 
 Use the `URL#hash` format to add a library from a URL at a specific revision hash:
 
 ```
-$ mbed add https://developer.mbed.org/users/wim/code/TextLCD/#e5a0dcb43ecc
+$ mbed add https://os.mbed.com/users/wim/code/TextLCD/#e5a0dcb43ecc
 ```
 
 ###### Specifying a destination directory
@@ -230,7 +230,7 @@ $ mbed add https://developer.mbed.org/users/wim/code/TextLCD/#e5a0dcb43ecc
 If you want to specify a directory to which to add your library, you can give an additional argument to ``add``, which names that directory. For example, If you'd rather add the previous library in a directory called "text-lcd" (instead of TextLCD):
 
 ```
-$ mbed add https://developer.mbed.org/users/wim/code/TextLCD/ text-lcd
+$ mbed add https://os.mbed.com/users/wim/code/TextLCD/ text-lcd
 ```
 
 Although Mbed CLI supports this functionality, we don't encourage it. Adding a library with a name that differs from its source repository can lead to confusion.
@@ -784,7 +784,7 @@ Here is a list of configuration settings and their defaults:
 ##### Unable to import Mercurial (mbed.org) programs or libraries.
 1. Check whether you have Mercurial installed in your system path by  running `hg` in command prompt. If you're receiving "command not found" or a similar message, then you need to install Mercurial, and add it to your system path.
 
-2. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. Read more about Mercurial's certificate management [here](https://www.mercurial-scm.org/wiki/CACertificates).
+2. Try to clone a Mercurial repository directly. For example, `hg clone https://os.mbed.com/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. Read more about Mercurial's certificate management [here](https://www.mercurial-scm.org/wiki/CACertificates).
 
 ##### Various issues when running Mbed CLI in Cygwin environment
 Currently Mbed CLI is not compatible with Cygwin environment and cannot be executed inside it (https://github.com/ARMmbed/mbed-cli/issues/299).

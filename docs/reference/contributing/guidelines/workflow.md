@@ -6,7 +6,7 @@ All code changes and additions to Mbed OS are handled through GitHub. If you wan
 
 #### Contributing new features to Mbed OS
 
-Before contributing an enhancement (new feature, new port and so on) please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on a related feature.
+Before contributing an enhancement (new feature, new port and so on) please [discuss it on the forums](https://os.mbed.com/forum/) to avoid duplication of work, as we or others might be working on a related feature.
 
 Patch contributions can only be accepted through GitHub by creating a pull request from forked versions of our repositories. This allows us to review the contributions in a user friendly and reliable way, under public scrutiny.
 
@@ -14,7 +14,7 @@ Please create separate patches for each concern; each patch should have a clear 
 
 #### Reporting and fixing bugs
 
-Before submitting a bug report or a bug fix, please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on it already.
+Before submitting a bug report or a bug fix, please [discuss it on the forums](https://os.mbed.com/forum/) to avoid duplication of work, as we or others might be working on it already.
 
 ##### Bug reports (issues) on GitHub
 
@@ -49,4 +49,3 @@ Pull requests on GitHub have to meet the following requirements in order to keep
 	1. Use the body to explain _what_ and _why_ vs _how_.
 * Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 * Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo would not be acceptable, as it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
-

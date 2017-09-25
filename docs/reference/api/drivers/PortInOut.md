@@ -10,4 +10,4 @@ A mask can be supplied so you only use certain parts of a port, allowing other b
 
 ### PortInOut Hello World!
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/users/mbed_official/code/PortInOut_HelloWorld/)](https://developer.mbed.org/users/mbed_official/code/PortInOut_HelloWorld/file/018ca8a43b33/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/mbed_official/code/PortInOut_HelloWorld/)](https://os.mbed.com/users/mbed_official/code/PortInOut_HelloWorld/file/018ca8a43b33/main.cpp)

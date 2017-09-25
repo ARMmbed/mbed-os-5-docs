@@ -4,7 +4,7 @@ The C date and time functions are a group of functions in the standard library o
 
 ### Time Hello world
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/time_HelloWorld/)](https://developer.mbed.org/teams/mbed_example/code/time_HelloWorld/file/8593c9813840/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/file/8593c9813840/main.cpp)
 
 ### 2038
 

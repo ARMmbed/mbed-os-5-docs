@@ -8,7 +8,7 @@ An easy way to inspect what your application is doing is to augment your applica
 
 Install the serial port driver for your development board:
 
-* For ST boards: [ST Link Driver](https://developer.mbed.org/teams/ST/wiki/ST-Link-Driver).
+* For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
 * For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver) - not required for Windows 10.
 
 You also need a serial monitor:
@@ -177,7 +177,7 @@ You can avoid this by:
 * Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.4/reference/api-references.html#semaphore) or [mailbox](https://ost.mbed.com/docs/v5.4/reference/api-references.html#mail), and calling `printf` in the main thread.
 * Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.4/reference/api-references.html#events).
 
-You can see example code for both approaches in [this blog post](https://developer.mbed.org/blog/entry/Simplify-your-code-with-mbed-events/).
+You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 
 ### Printf() macros
 

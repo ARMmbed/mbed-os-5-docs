@@ -36,7 +36,7 @@ The following command starts pyOCD with a soothing configuration:
     INFO:root:GDB server started at port:3333
 
 
-<span class="tips">**Tip:** If you don't have permission to access the board on Linux, you can use [this udev rule](https://developer.mbed.org/comments/perm/9920/). The option -bh tells pyOCD to use hardware breakpoints, and -r tells it to halt the target after a reset.</span>
+<span class="tips">**Tip:** If you don't have permission to access the board on Linux, you can use [this udev rule](https://os.mbed.com/comments/perm/9920/). The option -bh tells pyOCD to use hardware breakpoints, and -r tells it to halt the target after a reset.</span>
 
 By default, the server listens for GDB commands on port 3333. It transfers those commands by USB to the interface chip. The interface chip, a Freescale Kinetis KL26, communicates those commands to the micro:bit's processor.
 
@@ -186,7 +186,7 @@ The new string appears on your console.
 
 #### Investigating the actual bug
 
-After analyzing Arm Mbed's [serial API](https://developer.mbed.org/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling serial_instance.printf(string) is, in essence, like calling Serial::printf(serial_instance, string). You saw previously that the instance's address is r0 = 0x20002880.
+After analyzing Arm Mbed's [serial API](https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling serial_instance.printf(string) is, in essence, like calling Serial::printf(serial_instance, string). You saw previously that the instance's address is r0 = 0x20002880.
 
 Because of the way the C++ compiler handles inheritance, the Serial class data looks like this in the memory:
 

@@ -4,7 +4,7 @@ Most Arm Mbed Enabled development boards contain two chips: the target microcont
 
 This offers debugging capabilities for stack trace analysis, register dumps and inspection of program execution (breakpoints, watchpoints and so on). When combined with a source-level debugger on the development host, such as the GNU Project Debugger (GDB), SWD offers a rich debugging experience - much more powerful than `printf()`.
 
-<span class="tips">**Tip:** The CMSIS-DAP interface chip does not have to be on the development board. You can also use it as an off-board solution with the [SWDAP debugging probe](https://developer.mbed.org/teams/mbed/wiki/SWDAP). This is a good solution if you're making a custom board and do not want the added cost (or space required) of an extra interface chip and USB port.</span>
+<span class="tips">**Tip:** The CMSIS-DAP interface chip does not have to be on the development board. You can also use it as an off-board solution with the [SWDAP debugging probe](https://os.mbed.com/teams/mbed/wiki/SWDAP). This is a good solution if you're making a custom board and do not want the added cost (or space required) of an extra interface chip and USB port.</span>
 
 ### Running a debug server
 

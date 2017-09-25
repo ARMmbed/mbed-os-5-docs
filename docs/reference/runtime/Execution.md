@@ -9,4 +9,4 @@ You can use the same RTOS API in ISR. The only two warnings are:
 
 This example uses a message from the queue to trigger an interrupt.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/rtos_isr/)](https://developer.mbed.org/teams/mbed_example/code/rtos_isr/file/40078e697304/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_isr/)](https://os.mbed.com/teams/mbed_example/code/rtos_isr/file/40078e697304/main.cpp)

@@ -16,4 +16,4 @@ The thread `osTimerThread` handles timers. Callback functions run under the cont
 
 Control the timing of four LEDs.
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed/code/rtos_timer/)](https://developer.mbed.org/teams/mbed/code/rtos_timer/file/tip/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed/code/rtos_timer/)](https://os.mbed.com/teams/mbed/code/rtos_timer/file/tip/main.cpp)

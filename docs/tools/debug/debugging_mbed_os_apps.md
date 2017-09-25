@@ -17,5 +17,5 @@ Mbed also supports debugging using any IDE that supports GDB. To set up the debu
 
 ### Links to other sources
 
-* [Using CMSIS-DAP to debug a device after it crashes](https://developer.mbed.org/blog/entry/Post-mortem-debugging-with-ARM-mbed/).
+* [Using CMSIS-DAP to debug a device after it crashes](https://os.mbed.com/blog/entry/Post-mortem-debugging-with-ARM-mbed/).
 * [Debugging the micro:bit with pyOCD and GDB](https://os.mbed.com/docs/v5.4/tutorials/debugging-using-printf-statements.html#debug-microbit).

@@ -76,16 +76,16 @@ Existing network interfaces:
 
 Here are example applications that are built on top of the network-socket API:
 
-* [HTTP and HTTPS](https://developer.mbed.org/teams/sandbox/code/http-example/).
-* [MQTT](https://developer.mbed.org/teams/mqtt/code/HelloMQTT/).
-* [CoAP](https://developer.mbed.org/teams/sandbox/code/coap-example/).
-* [Websockets](https://developer.mbed.org/cookbook/Websockets-Server).
+* [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
+* [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
+* [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
+* [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
 
 ##### Example
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://developer.mbed.org/teams/mbed_example/code/TCPSocket_Example/)](https://developer.mbed.org/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
 #### Arm Mbed Mesh
 
@@ -114,7 +114,7 @@ Arm Mbed OS provides a reference implementation of CellularBase, which you can f
 
 ##### Getting started
 
-1. Choose an [Mbed board that supports cellular](https://developer.mbed.org/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://developer.mbed.org/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://developer.mbed.org/platforms/MTS-Dragonfly/).
+1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
 
 1. Clone [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular). Follow the instructions in the repository.
 

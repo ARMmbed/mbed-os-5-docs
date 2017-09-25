@@ -9,6 +9,6 @@ You can use either of these tools:
 
 ### Before you begin
 
-Please create a [developer account on Mbed](https://developer.mbed.org/account/signup/).
+Please create a [developer account on Mbed](https://os.mbed.com/account/signup/).
 
 You might want to read the page explaining how to [connect your board to your computer](/docs/v5.4/tutorials/serial-communication.html) - especially if you're using Windows.
