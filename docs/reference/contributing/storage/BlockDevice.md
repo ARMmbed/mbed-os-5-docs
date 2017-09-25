@@ -4,7 +4,7 @@ The block device API provides an interface for access to block-based storage. Yo
 
 #### Block Device class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/vignesh/en/latest/api/classBlockDevice.html)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_block_device.html)
 
 [C++ API Reference](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h)
 
