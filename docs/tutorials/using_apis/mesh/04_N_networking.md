@@ -1,4 +1,4 @@
-#### Networking
+### Networking
 
 This chapter discusses the networking topology and the protocols used.
 
