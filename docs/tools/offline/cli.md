@@ -74,51 +74,61 @@ Mbed CLI requires adding the following to the system `PATH`:
 
 #### Mandatory: Toolchain selection
 
-You need to tell Mbed CLI where to find the toolchains that you want to use for compiling your source tree.
+You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. The following toolchains are supported:
 
-There are multiple ways to configure toolchain locations:
+* [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
+* [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).  Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
+* [IAR EWARM 7](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM).  Use versions 7.70 to 7.80.x of the IAR EWARM; newer (or older) versions might be incompatible with the tools.
 
-* The `mbed_settings.py` file in the root of your program. The tools will automatically create this file if it doesn't already exist.
+You must inform Mbed CLI about the location of your compiler using one of the following methods. 
+
 * The Mbed CLI configuration command.
-* Setting an environment variable.
 * Adding the compiler's directory to your PATH.
-
-Methods for configuring toolchains that appear earlier in the above list override methods that appear later.
-
-##### Through `mbed_settings.py`
-
-Edit `mbed_settings.py` to set your toolchain:
-
-* To use the [Arm Compiler toolchain](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads), set `ARM_PATH` to the *base* directory of your Arm Compiler installation (example: C:\Program Files\ARM\armcc5.06). The recommended version of the Arm Compiler toolchain is 5.06.
-* To use the [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads), set `GCC_ARM_PATH` to the *binary* directory of your GCC Arm installation (example: C:\Program Files\GNU Tools ARM Embedded\6 2017q2\bin). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
-* To use the [IAR EWARM toolchain](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM), set `IAR_PATH` to the *base* directory of your IAR installation (example: C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm). Use versions 7.70 to 7.80.x of the IAR EWARM; newer (or older) versions might be incompatible with the tools.
-
-<span class="notes">**Note:** Because `mbed_settings.py` contains local settings (possibly relevant only to a single OS on a single machine), you should not check it into version control.</span>
+* Setting an environment variable.
+* The `mbed_settings.py` file in the root of your program. The tools will automatically create this file if it doesn't already exist.
 
 ##### Through Mbed CLI configuration
 
-You can set the Arm Compiler 5 location via the command:
+Mbed CLI stores it's own configuration about compiler locations both in project local settings, and user wide "global" settings. These settings may be set and viewed with the `mbed config` command. For example, you set the Arm Compiler 5 location for your user via the command:
 
 ```
 $ mbed config -G ARM_PATH "C:\Program Files\ARM"
 [mbed] C:\Program Files\ARM now set as global ARM_PATH
 ```
+The `-G` switch tells Mbed CLI to set this as a global setting, allowing all projects owned by this user to compile with Arm Compiler 5. You may instead set the `ARM_PATH` using a project local setting by omitting the `-G` command line switch.
 
-The `-G` switch tells Mbed CLI to set this as a global setting, rather than local for the current program.
+Mbed CLI supports a setting for each toolchain path. These setting are listed below, along with a description of what path is expected in each setting.
 
-Supported settings for toolchain paths are `ARM_PATH`, `GCC_ARM_PATH` and `IAR_PATH`.
-
-##### Set environment variable
-
-The environment variables are:
-
-* `MBED_ARM_PATH`: The path to the *base* directory of your Arm Compiler installation. This should be the directory containing the directory containing the binaries for `armcc` and friends.
-* `MBED_IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends.
-* `MBED_GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends.
+* `ARM_PATH`: The path to the *base* directory of your Arm Compiler installation. This should be the directory containing the directory containing the binaries for `armcc` and friends.
+* `IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends.
+* `GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends.
 
 ##### Compiler detection through the `PATH`
 
-If none of the above are configured, the `mbed compile` command will fall back to checking your `PATH` for an executable that is part of the compiler suite in question. This check is the same as a shell would perform to find the executable on the command-line. When `mbed compile` finds the executable it is looking for, it uses the location of that executable as the appropriate path except in the case of GCC, which will not use a path.
+The `mbed compile` command checks your `PATH` for an executable that is part of the compiler suite in question. This check is the same as a shell would perform to find the executable on the command-line. When `mbed compile` finds the executable it is looking for, it prefaces the executable name with the path it found. Mbed CLI does not prefix any executable found for GCC_ARM.
+
+##### Set environment variable
+
+Mbed CLI also detects compilers with specially named environment variables. These Environment variables are the same as their corresponding configuration variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.
+
+##### Through `mbed_settings.py`
+
+Mbed CLI also uses `mbed_settings.py` to configure toolchains. This file must be a python module, and uses the exact same configuration variables as the Mbed CLI configuration.
+
+<span class="notes">**Note:** Because `mbed_settings.py` contains local settings (possibly relevant only to a single OS on a single machine), you should not check it into version control.</span>
+
+##### Optional: Configuring multiple toolchains
+
+Mbed CLI has a few rules that allow you to seamlessly switch between different versions of the same toolchain when switching between different projects. The settings described in prior sections all can configure a different version of the same toolchain. When multiple settings are available for a single toolchain, Mbed CLI picks the most specific setting. The settings, from most specific to least specific are:
+ 1) `mbed_settings.py`
+ 2) Mbed CLI Local Configuration
+ 3) Mbed CLI Global Configuration
+ 4) Environment Variables
+ 5) The `PATH` Environment Variable
+ 
+When resolving which setting is used for an individual `mbed compile` or `mbed test` invocation, Mbed CLI picks the lowest numbered present setting.
+
+To use a standard toolchain for general purpose development, any method 3 through 5 may be used. For overriding a toolchain version for a specific project, methods 1 and 2 may be used. All of these methods for configuring a toolchains may coexist.
 
 #### Optional: add Bash tab completion
 
