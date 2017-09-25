@@ -186,7 +186,7 @@ Available configurations:
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/cM0dFoTuU14/0.jpg)](https://www.youtube.com/watch?v=cM0dFoTuU14)</span>
 
-## Programming with Mbed CLI
+## Create
 
 ### Quickstart video
 
@@ -474,7 +474,7 @@ You can combine the options of the Mbed update command for the following scenari
 
 Use these with caution because your uncommitted changes and unpublished libraries cannot be restored.
 
-## Collaborating
+## Collaborate
 
 ### Importing an existing program
 
@@ -652,7 +652,7 @@ Both `git commit & git push` and `mbed publish` push the new revisions to your f
 
 Through the workflow explained above, Mbed CLI maintains association to the original repository (which you may want to send a pull request to) and records references with the revision hashes that you push to your fork. Until your pull request (PR) is accepted, all recorded references are invalid. Once the PR is accepted, all revision hashes from your fork become part the original repository, making them valid.
 
-## Testing and debugging
+## Test and debug
 
 Use the `mbed test` command to compile and run tests.
 
