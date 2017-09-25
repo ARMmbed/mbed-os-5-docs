@@ -89,7 +89,7 @@ If at any point you decide that you don't need a library any more, you can use `
 $ mbed remove text-lcd
 ```
 
-### Exporting to desktop IDEs for debugging
+### Exporting to desktop IDEs
 
 If you need to debug your code, you can export your source tree to an IDE project file to use the IDE's debugging facilities. Mbed CLI supports exporting to Keil uVision, IAR Workbench, a Makefile using GCC Arm, Eclipse using GCC Arm and other IDEs.
 
@@ -101,7 +101,7 @@ $ mbed export -i uvision -m K64F
 
 Mbed CLI creates a `.uvprojx` file in the projectfiles/uvision folder. You can open the project file with uVision.
 
-### Publishing your changes
+### Publishing changes
 
 #### Checking status
 
