@@ -1,6 +1,6 @@
 ## Glossary
 
-### A
+### A
 
 **API** - [Application programming interface](/docs/v5.4/reference/api.html).
 
@@ -40,7 +40,7 @@
 
 **Byte** - A unit of digital information that consists of 8 bits (see `Bit`).
 
-### C
+### C
 
 **Callback** - Any [executable code](/docs/v5.4/reference/api-references.html#callback) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
@@ -54,7 +54,7 @@
 
 **CMSIS-DAP** - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
-### D
+### D
 
 **DAPLink** - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
@@ -74,7 +74,7 @@
 
 **Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.4/tools/tools-testing.html#greentea) is the automated testing tool for Arm Mbed OS development.
 
-### H
+### H
 
 **htrun** - An Mbed OS command used to drive test binary flashing, device reset and test execution.
 
@@ -86,7 +86,7 @@
 
 **int** - Short for "integer", it is a variable type that can be used to define numeric variables holding whole numbers.
 
-### L
+### L
 
 **Library** - A module that you can use to build applications.
 
@@ -104,7 +104,7 @@
 
 **Nibble** - A unit of digital information that consists of 4 bits (see `Bit`).
 
-### P
+### P
 
 **Platform** - See `board`.
 
