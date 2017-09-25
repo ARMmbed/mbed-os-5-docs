@@ -1,8 +1,8 @@
-<h3 id="collab-online-comp">Collaboration and version control</h3>
+<h2 id="collab-online-comp">Collaboration and version control</h2>
 
 The Arm Mbed Online Compiler offers collaboration and version control functions to help the community benefit from and improve individual work.
 
-#### Terminology
+### Terminology
 
 Remote repository:	A library or program published on `mbed.org`.
 
@@ -20,7 +20,7 @@ Publish:	Copy changes from a local repository to an existing remote one (push) o
 
 Update:	Pull from a remote repository and switch your local repository to the latest revision.
 
-#### Basic collaboration
+### Basic collaboration
 
 The most basic (and the most popular) usage of the collaboration system is the traditional workflow in which one author develops a project, then multiple users import and use it.
 
@@ -32,7 +32,7 @@ Once imported, the local repository in your workspace will be `linked` to the re
 
 To import a repository, simply click the Import link on the repository's page on the Arm Mbed website, or use the Import button within the Mbed Online Compiler. You can read more about importing on the [Mbed Online Compiler page](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1).
 
-#### Getting updates
+### Getting updates
 
 While browsing a program or a library, you will receive notifications of new versions in the Browser panel under the Summary tab:
 
@@ -47,4 +47,3 @@ The bottom list represents the remote repository revisions currently not present
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/incoming_revisions.png)<span>Viewing remote revisions not yet in your local repository</span></span>
 
 To get the latest version of the code, simply click the **Update** button.
-

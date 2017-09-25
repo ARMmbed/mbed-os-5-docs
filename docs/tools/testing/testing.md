@@ -1,10 +1,10 @@
-### Testing Applications
+## Testing Applications
 
 The way tests are run and compiled in Arm Mbed OS 5 is substantially different from previous versions of Mbed.
 
-#### Using tests
+### Using tests
 
-##### Test code structure
+#### Test code structure
 
 Tests can exist throughout Mbed OS and your project's code. They are located under a special directory called `TESTS` (case is important!).
 
@@ -20,7 +20,7 @@ In this example, `myproject` is the project root, and all the source files under
 
 <span class="notes">**Note:** You can name both the test group and test case directory anything you like. However, you **must** name the `TESTS` directory `TESTS` for the tools to detect the test cases correctly.</span>
 
-###### Test discovery
+##### Test discovery
 
 Because test cases can exist throughout a project, the tools must find them in the project's file structure before building them.
 
@@ -38,17 +38,17 @@ Generally, a test should not be placed under a `TARGET_` or `TOOLCHAIN_` directo
 
 Tests can also be completely ignored by using the `.mbedignore` file described [here](/docs/v5.4/tools/offline.html#ignoring-files-from-mbed-build).
 
-###### Test names
+##### Test names
 
 A test case is named from its position in your project's file structure. For instance, in the above example, a test case with the path `myproject/TESTS/test_group/test_case_1` would be named `tests-test_group-test_case_1`. The name is created by joining the directories that make up the path to the test case with a "dash" (`-`) character. This is a unique name to identify the test case. You will see this name throughout the build and testing process.
 
-##### Building tests
+#### Building tests
 
 You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see its [documentation](/docs/v5.4/tools/offline.html#mbed-cli).
 
 When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the documentation [here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
-###### Building process
+##### Building process
 
 The `test.py` script (not to be confused with `tests.py`) located under the `tools` directory handles the process for building tests. This handles the discovery and building of all test cases for a target and toolchain.
 
@@ -59,7 +59,7 @@ The full build process is:
 1. For each discovered test, build all of its source files and link it with the nontest code that was built in step 1.
 1. If specified, create a test specification file and place it in the given directory for use by testing tools. This is placed in the build directory by default when using Mbed CLI.
 
-###### App config
+##### App config
 
 When building an Mbed application, the presence of an `mbed_app.json` file allows you to set or override different configuration settings from libraries and targets. However, because the tests share a common build, this can cause issues when tests have different configurations that affect the OS.
 
@@ -67,7 +67,7 @@ The build system looks for an `mbed_app.json` file in your shared project files 
 
 If you need to test with multiple configurations, you can use the `--app-config` option. This overrides the search for an `mbed_app.json` file and uses the config file you specify for the build.
 
-##### Running tests
+#### Running tests
 
 You can run automated tests through Mbed CLI. For information on using Mbed CLI, please see its [documentation](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).
 
@@ -75,7 +75,7 @@ The testing process requires tests to be built and that a test specification JSO
 
 The Greentea tool handles the actual testing process. To read more about this tool, please visit its [GitHub repository](https://github.com/ARMmbed/greentea).
 
-##### Writing tests
+#### Writing tests
 
 You can write tests for your own project, or add more tests to Mbed OS. You can write tests using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client), [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
 
@@ -120,11 +120,11 @@ int main() {
 
 This test first runs a case that succeeds, then a case that fails. This is a good template to use when creating tests. For more complex testing examples, please see the documentation for [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest).
 
-#### Debugging tests
+### Debugging tests
 
 Debugging tests is a crucial part of the development and porting process. This section covers exporting the test, then driving the test with the test tools while the target is attached to a debugger.
 
-##### Exporting tests
+#### Exporting tests
 
 Currently, the easiest way to export a test is to copy the test's source code from its test directory to your project's root. This way, the tools treat it like a normal application.
 
@@ -142,7 +142,7 @@ mbed export -i <IDE name>
 
 You can find your exported project in `projectfiles/<IDE>_<target>`.
 
-##### Running a test while debugging
+#### Running a test while debugging
 
 Assuming your test was exported correctly to your IDE, build the project, and load it onto your target via your debugger.
 
@@ -178,6 +178,6 @@ This detects your attached target and drives the test. If you need to rerun the 
 
 For an explanation of the arguments used in this command, please run `mbedhtrun --help`.
 
-#### Known issues
+### Known issues
 
 There cannot be a `main()` function outside of a `TESTS` directory when building and running tests. This is because this function will be included in the nontest code build as described in the [Building process](#building-process) section. When the test code is compiled and linked with the nontest code build, a linker error will occur due to their being multiple `main()` functions defined. For this reason, please either rename your main application file if you need to build and run tests or use a different project. Note that this does not affect building projects or applications, just building and running tests.

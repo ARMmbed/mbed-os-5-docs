@@ -1,12 +1,12 @@
-#### Toolchain profiles
+## Toolchain profiles
 
-##### User perspective
+### User perspective
 
 A toolchain or build system profile is a set of flags that is guaranteed to be passed to the underyling compiler suite.
 
 These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
 
-##### JSON toolchain profile format
+### JSON toolchain profile format
 
 The JSON object that represents a toolchain profile is a dictionary mapping from toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
 
@@ -24,7 +24,7 @@ The required flag types are:
 | `asm`    | Flags for the Assembler               |
 | `ld`     | Flags for the Linker                  |
 
-##### Example
+### Example
 
 An example of a toolchain profile:
 
@@ -73,7 +73,7 @@ From this toolchain profile, we can tell that:
 
 And so on.
 
-##### API perspective
+### API perspective
 
 The toolchains take in an optional argument, ``build_profile``, that will contain a map from flag types to lists of flags. This looks exactly the same in Python as it does in the JSON format above.
 

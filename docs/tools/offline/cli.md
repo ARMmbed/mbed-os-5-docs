@@ -1,4 +1,4 @@
-### Mbed CLI
+## Mbed CLI
 
 Arm Mbed CLI is the name of the Arm Mbed command-line tool, packaged as `mbed-cli`. Mbed CLI enables Git- and Mercurial-based version control, dependencies management, code publishing, support for remotely hosted repositories (GitHub, GitLab and mbed.org), use of the Arm Mbed OS build system and export functions and other operations.
 
