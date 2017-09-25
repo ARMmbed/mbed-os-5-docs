@@ -191,7 +191,8 @@
           {
             "title": "Configuring Tools",
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/config_system.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/config_system.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/mbed_targets.md"}
             ]
           },
           {
