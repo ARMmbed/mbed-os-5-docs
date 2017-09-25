@@ -4,7 +4,7 @@ Arm Mbed CLI is the name of the Arm Mbed command-line tool, packaged as `mbed-cl
 
 This document covers the installation and usage of Mbed CLI.
 
-#### Using Mbed CLI
+### Using Mbed CLI
 
 The basic workflow for Mbed CLI is to:
 
