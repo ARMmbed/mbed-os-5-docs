@@ -67,7 +67,7 @@ There are two options:
 
 The Arm Mbed interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the Arm Mbed interface will read them and transfer them over the USB link. When you `printf()`, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
 
-### Notes
+#### Notes
 
 The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
 
