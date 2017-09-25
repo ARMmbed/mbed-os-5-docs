@@ -46,7 +46,7 @@ $ pip install mbed-cli
 
 On Linux or Mac, you may need to run with `sudo`.
 
-### Optional: installing the development version
+#### Optional: installing the development version
 
 If you are interested in working with the development version (and perhaps contributing to Mbed CLI), clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
 
