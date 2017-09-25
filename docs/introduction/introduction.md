@@ -12,13 +12,13 @@ The easiest way to work with Mbed OS is using one of our development tools. We'v
 
 Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.4/reference/index.html).
 
-### Development tools
+#### Development tools
 
 - Our offline development tool is [Arm Mbed CLI](/docs/v5.4/tools/offline.html#mbed-cli), a command-line tool. This requires having a toolchain installed on your computer.
 - The [Arm Mbed Online Compiler](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1) lets you write and build applications using a web browser.
 - If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.4/tools/exporting.html).
 
-### Communicating with and monitoring your board
+#### Communicating with and monitoring your board
 
 You can [monitor and control an Mbed board](/docs/v5.4/reference/low-level-details.html) to help you debug and test your applications.
 
