@@ -9,7 +9,7 @@ The Arm Mbed configuration system customizes the compile time configuration of v
 
 The configuration system gathers and interprets all the configurations defined in the source tree. The output of the configuration system is a list of macros that are automatically defined when compiling the code.
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [Mbed targets](mbed_targets.md).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [Mbed targets](/docs/v5.4/tools/adding-and-configuring-targets.html).</span>
 
 ### Defining configuration parameters
 
@@ -91,7 +91,7 @@ In this JSON file:
 - `macros` is a list of extra macros that will be defined when compiling a project that includes this library. A macro can be defined without a value (such as `MYMOD_MACRO1` above) or with a value (such as `MYMOD_MACRO2` above).
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters.
 
-`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels* (a description of Mbed targets can be found [here](mbed_targets.md)). If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
+`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels* (a description of Mbed targets can be found [here](/docs/v5.4/tools/adding-and-configuring-targets.html)). If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
 
 - `config` is always processed first, independent of the target. `config` might define values for some of the parameters. In this case, `buffer_size` will be set to 1024, `queue_size` will be set to 10 and `timer_period` will not have a value.
 - If the library is compiled for the `K64F` target, `timer_period` will be set to 100, and `queue_size` will be set to 40 because they are overridden by the `K64F` key in `target_overrides`. `buffer_size` will be set to 1024, as defined in `config`.
@@ -107,7 +107,7 @@ If the source tree has code for more than one library, each library needs its ow
 
 #### Configuration data in targets
 
-Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check [this link](mbed_targets.md)). Target configuration data is defined in `targets.json` using `config`, as described [here](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
+Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check [our configuring targets documentation](/docs/v5.4/tools/adding-and-configuring-targets.html)). Target configuration data is defined in `targets.json` using `config`, as described [here](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
 
 ```
 "Base": {
@@ -160,7 +160,7 @@ Like target and library configuration, application configuration is optional; if
 
 There are similarities between configuration data in applications and libraries:
 
-- Applications define their configuration parameters in the `config` section of `mbed_app.json`, as explained [here](#defining-configuration-parameters).
+- Applications define their configuration parameters in the `config` section of `mbed_app.json`, as explained [in the section](#defining-configuration-parameters) about defining parameters.
 - Applications can specify target-dependent values in their `target_overrides` section, as described in the [library configuration paragraph](#configuration-data-in-libraries) (but see below for differences).
 - Applications can define macros that will be defined at compile time by declaring them in `macros`.
 
@@ -211,10 +211,10 @@ Target configurations contain a set of attributes that you may manipulate with a
 
 Cumulative attributes:
 
-- ``features``: This attribute contains a list of features that the Mbed OS tools compile into the resulting binary and are available at runtime. The Mbed OS tools include all code within a directory whose name is an entry of the `features` attribute prefixed with `FEATURE_`. Further, the Mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the Mbed OS tools will report an error.
-- ``device_has``: This attribute is a list of hardware components available on the target. The Mbed OS tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
-- ``extra_labels``: The `extra_labels` attribute is a list of labels that the Mbed OS tools use to include code. The Mbed OS tools include all code within a directory whose name is an entry of the `extra_labels` attribute prefixed with `TARGET_`. The Mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
-- ``macros``: This attribute is a list of target-specific macros that the Mbed OS tools define during compilation.
+- `features`: This attribute contains a list of features that the Mbed OS tools compile into the resulting binary and are available at runtime. The Mbed OS tools include all code within a directory whose name is an entry of the `features` attribute prefixed with `FEATURE_`. Further, the Mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the Mbed OS tools will report an error.
+- `device_has`: This attribute is a list of hardware components available on the target. The Mbed OS tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
+- `extra_labels`: The `extra_labels` attribute is a list of labels that the Mbed OS tools use to include code. The Mbed OS tools include all code within a directory whose name is an entry of the `extra_labels` attribute prefixed with `TARGET_`. The Mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
+- `macros`: This attribute is a list of target-specific macros that the Mbed OS tools define during compilation.
 
 For example, this `mbed_app.json` disables the IPV4 feature; using this network stack will result in a compilation error:
 
