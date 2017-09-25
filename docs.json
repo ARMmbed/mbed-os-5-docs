@@ -1,7 +1,7 @@
 [
     {
         "title": "Introduction",
-        "description": "Introducing mbed OS; the overview, architecture, features and licensing",
+        "description": "Introducing Mbed OS; the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
         "sources": [
@@ -14,7 +14,7 @@
     },
     {
         "title": "Reference",
-        "description": "The reference manual for mbed OS: APIs, configuration and implementation details",
+        "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
         "type": "markdown",
         "chapters": [
@@ -178,7 +178,7 @@
     },
     {
         "title": "Tools",
-        "description": "Details of the tools available for working with mbed OS",
+        "description": "Details of the tools available for working with Mbed OS",
         "slug": "tools",
         "type": "markdown",
         "chapters": [
@@ -253,7 +253,7 @@
     },
     {
         "title": "Tutorials",
-        "description": "Learn about working with mbed OS: getting started, developing applications, useful design patterns, debugging and optimisation techniques",
+        "description": "Learn about working with Mbed OS: getting started, developing applications, useful design patterns, debugging and optimisation techniques",
         "slug": "tutorials",
         "type": "markdown",
         "chapters": [
@@ -342,7 +342,7 @@
     },
     {
         "title": "Releases",
-        "description": "The mbed OS releases; latest and history",
+        "description": "The Mbed OS releases; latest and history",
         "slug": "releases",
         "type": "markdown",
         "sources": [
