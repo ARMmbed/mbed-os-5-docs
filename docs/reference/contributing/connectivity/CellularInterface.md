@@ -2,7 +2,7 @@
 
 This section guidelines and details porting a cellular device driver to Mbed OS. It first describes the building blocks of your new cellular interface and then gives step-by-step instructions on how to port.
 
-##### Quick peek
+#### Quick peek
 
 You can implement a cellular network interface in different ways depending on your requirements and physical setup. For example:
 
@@ -109,8 +109,8 @@ nsapi_error_t nsapi_ppp_connect(FileHandle *stream, Callback<void(nsapi_error_t)
 
 The application activating the appropriate network stack feature, and ensuring it has PPP enabled via JSON config, determines which network stack is used for PPP modems. As of Mbed OS 5.5, LWIP provides IPv4 over PPP, but not IPv6. Nanostack does not provide PPP.
 
-##### Step-by-step porting process
-###### Providing onboard modem API
+#### Step-by-step porting process
+##### Providing onboard modem API
 
 Only valid when **Case 3** is applicable.
 
@@ -170,7 +170,7 @@ The current implementation does not use all pins, but you must define all of the
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/onboard_modem_api.html)
 
-####### Providing module modem API
+###### Providing module modem API
 
 Only valid when **Case 4** is applicable.
 
@@ -180,7 +180,7 @@ Only valid when **Case 4** is applicable.
 
 * If using a different connection type, you must provide access to the connection by implementing the `FileHandle` API, and then you can pass your file handle for that connection to `PPPCellularInterface`. Either use it directly, or derive from it, and pass a file handle to its constructor in the same manner as `UARTCellularInterface`.
 
-####### Providing an implementation using on-chip network stacks (AT only mode)
+###### Providing an implementation using on-chip network stacks (AT only mode)
 
 Only valid when **Case 1** is applicable.
 
@@ -190,7 +190,7 @@ Only valid when **Case 1** is applicable.
 
 * An onboard implementation can use `onboard_modem_api.h` in the same manner as a PPP driver to access power controls - this could be shared with a PPP implementation.
 
-####### Port verification testing
+###### Port verification testing
 
 Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
 
