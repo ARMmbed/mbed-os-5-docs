@@ -6,6 +6,6 @@ Your application code is written in C++. Your code uses the application programm
 
 This is the basic architecture of an Mbed board:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_internals.PNG)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_internal.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
 <span class="tips">**Tip:** You can explore the [code on GitHub](https://github.com/ARMmbed/mbed-os/tree/mbed-os-5.4).</span>
