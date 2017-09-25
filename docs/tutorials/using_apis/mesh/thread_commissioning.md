@@ -1,4 +1,4 @@
-#### How to commission a Thread device in practise
+### How to commission a Thread device in practice
 
 ##### Building the node application
 
