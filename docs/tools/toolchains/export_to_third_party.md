@@ -97,9 +97,9 @@ If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r
 
 Make itself does not compile source code. It relies on a compiler such as:
 
-* [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
-* The IAR Arm compiler bundled with the IAR Embedded Workbench.
-* Arm Compiler 5.
+- [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which can be installed for free using the instructions found [here](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+- The IAR Arm compiler bundled with the IAR Embedded Workbench.
+- Arm Compiler 5.
 
 <span class="notes">**Note:** As stated above, you should ensure that the compiler you are exporting to is accessible using your `PATH` environment variable, as Makefile requires this. For example, when using an exported Makefile from make_armc5, the command `armcc` should print a help message about how to use Arm Compiler 5.</span>
 
