@@ -11,15 +11,15 @@ The Arm Mbed mesh API allows the application to use the IPv6 mesh network topolo
 
 **LoWPANNDInterface**
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/LoWPANNDInterface.h)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_lo_w_p_a_n_n_d_interface.html)
 
 **ThreadInterface**
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_thread_interface.html)
 
 **NanostackEthernetInterface**
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/NanostackEthernetInterface.h)
+[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_nanostack_ethernet_interface.html)
 
 ### Usage
 
