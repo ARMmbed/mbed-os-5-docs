@@ -1,4 +1,4 @@
-#### Introduction to Thread networking stack
+### Introduction to Thread networking stack
 
 ##### Why to use Thread
 
