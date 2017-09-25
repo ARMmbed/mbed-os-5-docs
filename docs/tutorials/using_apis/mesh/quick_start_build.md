@@ -1,4 +1,4 @@
-#### Build time configuration of the stack
+### Build time configuration of the stack
 
 To minimize the size of the produced stack, we have defined a set of build options.
 
