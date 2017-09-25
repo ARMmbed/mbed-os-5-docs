@@ -19,7 +19,7 @@ Various Mbed CLI features require a program root, which should be under version 
 
 <span class="warnings">**Warning**: Mbed CLI stores information about libraries and dependencies in reference files that use the `.lib` extension (such as `lib_name.lib`). Although these files are human-readable, we *strongly* advise that you don't edit these manually - let Mbed CLI manage them instead.</span>
 
-### Working on applications: workflow review
+### Application workflow
 
 Mbed CLI can create and import programs based on both Mbed OS 2 and Mbed OS 5.
 
@@ -34,7 +34,7 @@ To support long-term development, Mbed CLI offers source control, including sele
 
 <span class="tips">**Tip:** To list all Mbed CLI commands, use `mbed --help`. A detailed command-specific help is available by using `mbed <command> --help`.</span>
 
-### Creating a new program
+### Creating a program
 
 You can create new applications as Mbed OS 5, Mbed OS 2 or a non-versioned (blank) projects.
 
@@ -84,7 +84,7 @@ $ mbed new mbed-classic-program --mbedlib
 
 You can create plain (empty) programs, without either Mbed OS 5 or Mbed OS 2, by using the `--create-only` option.
 
-### Compiling code - basic workflow
+### Compiling workflow
 
 #### Compiling your application
 
@@ -168,7 +168,7 @@ Elf2Bin: threaded_blinky
 Image: ../threaded_blinky-out/threaded_blinky.bin
 ```
 
-### Working with the compile configuration system
+### The compile configuration system
 
 The [compile configuration system](https://os-doc-builder.test.mbed.com/docs/v5.4/porting/the-arm-mbed-configuration-system.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
