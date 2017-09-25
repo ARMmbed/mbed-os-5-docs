@@ -2,7 +2,7 @@
 
 The block device API provides an interface for access to block-based storage. You can use a block device to back a full [file system](filesystem.md) or write to it directly.
 
-#### Block Device class reference
+#### BlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_block_device.html)
 
