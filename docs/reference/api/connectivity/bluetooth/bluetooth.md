@@ -27,10 +27,8 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 #### Going further
 
-* [Introduction to Mbed BLE](https://docs.mbed.com/docs/ble-intros/en/latest/) is a resource for developers new to BLE and Mbed BLE. It covers how to build BLE embedded applications with Mbed.
-
 * The Bluetooth Low Energy main [page](https://os.mbed.com/teams/Bluetooth-Low-Energy/) on os.mbed.com also provide samples and resources around BLE.
 
-* The Mbed BLE [API reference](https://docs.mbed.com/docs/ble-api/en/master/api/index.html) offer the full details of the API.
+* The Mbed BLE [API reference](https://os.mbed.com/docs/reference/BLE) offer the full details of the API.
 
 * The Mbed BLE [online community](https://os.mbed.com/teams/Bluetooth-Low-Energy/community/) is also a great place to ask questions and share your knowledge.
