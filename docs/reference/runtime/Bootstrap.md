@@ -1,6 +1,6 @@
 ## Bootstrap
 
-From a reset state, you can expect the following hooks and conditions. You can find more information in [`mbed_boot.c`](https://github.com/ARMmbed/mbed-os/blob/master/rtos/mbed_boot.c).
+From a reset state, you can expect the following hooks and conditions. You can find more information in [`mbed_boot.c`](https://github.com/ARMmbed/mbed-os/blob/7b428916f5b35da28a1b18e2c149c1115bb89d92/rtos/TARGET_CORTEX/mbed_boot.c).
 
 - `ResetHandler` - vector table entry at start of Flash (main stack pointer).
 - `SystemInit` - imported from CMSIS-CORE (main stack pointer).
