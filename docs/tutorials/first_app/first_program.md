@@ -7,7 +7,7 @@ You can use either of these tools:
 * [Arm Mbed CLI](/docs/v5.4/tutorials/your-first-arm-mbed-application.html#blinky-on-arm-mbed-cli).
 * [Arm Mbed Online Compiler](/docs/v5.4/tutorials/your-first-arm-mbed-application.html#blinky-on-the-arm-mbed-online-compiler).
 
-### Before you begin
+#### Before you begin
 
 Please create a [developer account on Mbed](https://os.mbed.com/account/signup/).
 
