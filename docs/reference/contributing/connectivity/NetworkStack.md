@@ -4,7 +4,7 @@ The Network-Socket-API (NSAPI) provides a TCP/UDP API on top of any IP based net
 
 #### Class hierarchy
 
-All network-socket API implementations inherit from two classes: a [NetworkStack](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.2/api/classNetworkStack.html) and a communication specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classNetworkInterface.html).
+All network-socket API implementations inherit from two classes: a [NetworkStack](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classNetworkInterface.html).
 
 ##### NetworkInterface Class
 

@@ -152,9 +152,7 @@ typedef struct analogin_s analogin_t;
 
 ##### Doxygen documentation
 
-All functions and methods should contain documentation using doxgyen.
-
-<span class="tips">**Tip:** You can publish your documentation on docs.mbed.com. See our [publishing guide](https://docs.mbed.com/docs/writing-and-publishing-guides/en/latest/publishing_guide/) for more details.</span>
+All functions and methods should contain documentation using Doxgyen.
 
 You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 

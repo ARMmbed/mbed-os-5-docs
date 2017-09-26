@@ -1,3 +1,3 @@
 ### Memory model design details
 
-[Expansion of the memory model page: [https://docs.mbed.com/docs/mbed-os-handbook/en/latest/concepts/memory_model/]()]
+[Expansion of the memory model page: [https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Memory.md](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Memory.md)]

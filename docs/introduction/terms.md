@@ -12,7 +12,7 @@
 
 **Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.6/tools/online.html), which you can use to create and compile your code.
 
-**Arm Mbed OS** - Arm's [platform operating system](https://docs.mbed.com/) for the Internet of Things.
+**Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
 **Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/v5.6/reference/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
