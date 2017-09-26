@@ -10,7 +10,7 @@ The thread `osTimerThread` handles timers. Callback functions run under the cont
 
 ### RtosTimer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_rtos_timer.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_rtos_timer.html)
 
 ### RtosTimer example
 

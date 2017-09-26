@@ -4,4 +4,4 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 
 ### UDPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/class_u_d_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/class_u_d_p_socket.html)

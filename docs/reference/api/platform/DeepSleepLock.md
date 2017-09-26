@@ -54,11 +54,11 @@ These Mbed OS drivers contain locking deep sleep:
 
 ### `Sleep Manager` class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/platform/mbed_sleep.h)
 
 ### `Deep Sleep Lock` class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
 
 ### Example
 

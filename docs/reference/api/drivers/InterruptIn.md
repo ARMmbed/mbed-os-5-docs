@@ -4,7 +4,7 @@ Use the InterruptIn interface to trigger an event when a [digital input pin](/do
 
 ### InterruptIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_interrupt_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_interrupt_in.html)
 
 **Warnings:**
 

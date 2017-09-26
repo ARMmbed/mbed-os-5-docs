@@ -10,7 +10,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalIn in the BusIn.
 
 ### BusIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_bus_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_bus_in.html)
 
 ### BusIn Hello World!
 

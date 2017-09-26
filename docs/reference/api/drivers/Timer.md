@@ -8,7 +8,7 @@ You can independently create, start and stop any number of Timer objects.
 
 ### Timer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_timer.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_timer.html)
 
 ### Timer Hello World!
 
