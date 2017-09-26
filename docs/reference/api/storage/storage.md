@@ -2,8 +2,8 @@
 
 The storage APIs present in Arm Mbed OS are:
 
-* [File system](/docs/v5.4/reference/api-references.html#file-system): a common interface for using file systems on block devices.
-* [Block device](/docs/v5.4/reference/api-references.html#block-devices): a common interface for block-based storage devices.
+* [File system](/docs/v5.6/reference/api-references.html#file-system): a common interface for using file systems on block devices.
+* [Block device](/docs/v5.6/reference/api-references.html#block-devices): a common interface for block-based storage devices.
 
 #### Declaring a file system
 

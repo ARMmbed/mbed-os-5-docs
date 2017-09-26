@@ -34,7 +34,7 @@ Add the target description to `mbed-os\targets\targets.json`:
 }
 ```
 
-See the [Mbed Target Documentation](/docs/v5.4/reference/arm-mbed-os-porting-guide.html#adding-and-configuring-targets) for more details on what this definition means.
+See the [Mbed Target Documentation](/docs/v5.6/reference/arm-mbed-os-porting-guide.html#adding-and-configuring-targets) for more details on what this definition means.
 
 #### HAL porting
 

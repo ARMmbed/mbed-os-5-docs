@@ -4,4 +4,4 @@ The TCPServer class provides the ability to accept incoming TCP connections. The
 
 ### TCPServer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/class_t_c_p_server.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_t_c_p_server.html)

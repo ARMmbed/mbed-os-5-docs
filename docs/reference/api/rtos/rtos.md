@@ -2,7 +2,7 @@
 
 The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check [the Keil CMSIS-RTOS tutorial](https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf) and [the element14 introduction to Keil RTX](https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview). You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
 
-The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/group__rtos.html).
+The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [rtos subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). The Doxygen is [available here](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__rtos.html).
 
 #### SysTick
 
@@ -14,15 +14,15 @@ Mbed OS uses default SysTick source for most targets, but you can override that 
 
 The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5.
 
-- [Thread](/docs/v5.4/reference/thread.html): The class that allows defining, creating and controlling parallel tasks.
-- [Mutex](/docs/v5.4/reference/mutex.html): The class used to synchronize the execution of threads.
-- [Semaphore](/docs/v5.4/reference/semaphore.html): The class that manages thread access to a pool of shared resources of a certain type.
-- [Queue](/docs/v5.4/reference/queue.html): The class that allows you to queue pointers to data from producer threads to consumer threads.
-- [MemoryPool](/docs/v5.4/reference/memorypool.html): This class that you can use to define and manage fixed-size memory pools
-- [Mail](/docs/v5.4/reference/mail.html): The API that provides a queue combined with a memory pool for allocating messages.
-- [RtosTimer](/docs/v5.4/reference/rtostimer.html): A deprecated class used to control timer functions in the system.
-- [EventFlags](/docs/v5.4/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events.
-- [Event](/docs/v5.4/reference/event.html): The queue to store events, extract them and excute them later.
+- [Thread](/docs/v5.6/reference/thread.html): The class that allows defining, creating and controlling parallel tasks.
+- [Mutex](/docs/v5.6/reference/mutex.html): The class used to synchronize the execution of threads.
+- [Semaphore](/docs/v5.6/reference/semaphore.html): The class that manages thread access to a pool of shared resources of a certain type.
+- [Queue](/docs/v5.6/reference/queue.html): The class that allows you to queue pointers to data from producer threads to consumer threads.
+- [MemoryPool](/docs/v5.6/reference/memorypool.html): This class that you can use to define and manage fixed-size memory pools
+- [Mail](/docs/v5.6/reference/mail.html): The API that provides a queue combined with a memory pool for allocating messages.
+- [RtosTimer](/docs/v5.6/reference/rtostimer.html): A deprecated class used to control timer functions in the system.
+- [EventFlags](/docs/v5.6/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events.
+- [Event](/docs/v5.6/reference/event.html): The queue to store events, extract them and excute them later.
 
 ##### Default Timeouts
 

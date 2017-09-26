@@ -2,12 +2,12 @@
 
 The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This section consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs:
 
-- [Wait](/docs/v5.4/reference/wait.html): An API that provides simple wait capabilities.
-- [Callback](/docs/v5.4/reference/callback.html): An API that executes the user’s code in its own context.
-- [DeepSleepLock](/docs/v5.4/reference/deepsleeplock.html):The sleep function and sleep manager for Mbed OS.
-- [CriticalSectionLock](/docs/v5.4/reference/critical-section-lock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
-- [Time](/docs/v5.4/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- [NonCopyable](/docs/v5.4/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
+- [Wait](/docs/v5.6/reference/wait.html): An API that provides simple wait capabilities.
+- [Callback](/docs/v5.6/reference/callback.html): An API that executes the user’s code in its own context.
+- [DeepSleepLock](/docs/v5.6/reference/deepsleeplock.html):The sleep function and sleep manager for Mbed OS.
+- [CriticalSectionLock](/docs/v5.6/reference/critical-section-lock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
+- [Time](/docs/v5.6/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
+- [NonCopyable](/docs/v5.6/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
 
 #### Callbacks
 
@@ -32,7 +32,7 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.4/reference/platform-overview.html#the-importance-of-state) section.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.6/reference/platform-overview.html#the-importance-of-state) section.
 
 #### Why should you use Callbacks?
 
@@ -205,7 +205,7 @@ public:
 
 #### The importance of state
 
-A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/v5.4/reference/callback.html).
+A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/v5.6/reference/callback.html).
 
 ##### Why not function pointers?
 

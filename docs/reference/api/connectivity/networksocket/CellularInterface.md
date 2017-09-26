@@ -6,7 +6,7 @@ Arm Mbed OS provides a reference implementation of CellularBase, which you can f
 
 ### CellularBase class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/class_cellular_base.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_cellular_base.html)
 
 ### Usage
 
@@ -14,7 +14,7 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the CellularBase class.
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
-1. Once connected, you can use Mbed OS [network sockets](/docs/v5.4/reference/network-socket-overview.html) as usual.
+1. Once connected, you can use Mbed OS [network sockets](/docs/v5.6/reference/network-socket-overview.html) as usual.
 
 ### Cellular example: Connection establishment
 

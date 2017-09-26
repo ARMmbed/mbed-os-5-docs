@@ -1,14 +1,14 @@
 ## Serial
 
-The [Serial](/docs/v5.4/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
+The [Serial](/docs/v5.6/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
 
 ### Serial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classmbed_1_1_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver).</span>
+<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](/docs/v5.6/tutorials/serial-communication.html#windows-serial-driver).</span>
 
 Serial channels have a number of configurable parameters:
 

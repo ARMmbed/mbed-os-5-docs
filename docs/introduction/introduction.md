@@ -6,35 +6,35 @@ Your application code is written in C and C++. It uses the *application programm
 
 #### Where to start
 
-<span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver).</span>
+<span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.6/tutorials/serial-communication.html#windows-serial-driver).</span>
 
-The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/v5.4/tutorials/your-first-arm-mbed-application.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/v5.6/tutorials/your-first-arm-mbed-application.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
-Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.4/reference/index.html).
+Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.6/reference/index.html).
 
 ##### Development tools
 
-- Our offline development tool is [Arm Mbed CLI](/docs/v5.4/tools/offline.html#mbed-cli), a command-line tool. This requires having a toolchain installed on your computer.
-- The [Arm Mbed Online Compiler](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1) lets you write and build applications using a web browser.
-- If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.4/tools/exporting.html).
+- Our offline development tool is [Arm Mbed CLI](/docs/v5.6/tools/offline.html#mbed-cli), a command-line tool. This requires having a toolchain installed on your computer.
+- The [Arm Mbed Online Compiler](/docs/v5.6/tools/online.html#arm-mbed-online-compiler-1) lets you write and build applications using a web browser.
+- If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.6/tools/exporting.html).
 
 ##### Communicating with and monitoring your board
 
-You can [monitor and control an Mbed board](/docs/v5.4/reference/low-level-details.html) to help you debug and test your applications.
+You can [monitor and control an Mbed board](/docs/v5.6/reference/low-level-details.html) to help you debug and test your applications.
 
-<span class="tips">**Tip:** You can learn more about debugging [here](/docs/v5.4/tutorials/debugging-applications.html).</span>
+<span class="tips">**Tip:** You can learn more about debugging [here](/docs/v5.6/tutorials/debugging-applications.html).</span>
 
 #### How to continue
 
 When you've started writing applications using your selected development tool:
 
-- Learn about [collaborative work and version control](/docs/v5.4/tools/online.html#collab-online-comp).
-- Try one of the [tutorials](/docs/v5.4/tutorials/index.html), which cover concepts such as debugging and memory tracing.
+- Learn about [collaborative work and version control](/docs/v5.6/tools/online.html#collab-online-comp).
+- Try one of the [tutorials](/docs/v5.6/tutorials/index.html), which cover concepts such as debugging and memory tracing.
 - Ask questions and give advice on the [forum](https://forums.mbed.com/).
 
 #### Contributing to Mbed OS
 
-If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.4/reference/contributing.html).
+If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.6/reference/contributing.html).
 
 You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
 
@@ -42,9 +42,9 @@ You can find past releases and the current release on [GitHub](https://github.co
 
 Our full contributing guide is still being written. For now, we have:
 
-- A guide to [contributing targets](/docs/v5.4/reference/contributing-target.html).
-- Information about the [tools you need to contribute targets](/docs/v5.4/reference/contributing-tools.html).
-- APIs about [storage](/docs/v5.4/reference/contributing-storage.html) and [connectivity](/docs/v5.4/reference/contributing-connectivity.html) in relation to porting.
+- A guide to [contributing targets](/docs/v5.6/reference/contributing-target.html).
+- Information about the [tools you need to contribute targets](/docs/v5.6/reference/contributing-tools.html).
+- APIs about [storage](/docs/v5.6/reference/contributing-storage.html) and [connectivity](/docs/v5.6/reference/contributing-connectivity.html) in relation to porting.
 
 ## How Mbed Works
 
@@ -52,7 +52,7 @@ The Arm Mbed hardware architecture is designed to make sure you have all the too
 
 #### Architecture diagram
 
-This is the basic architecture of an [Mbed board](/docs/v5.4/introduction/glossary.html):
+This is the basic architecture of an [Mbed board](/docs/v5.6/introduction/glossary.html):
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_internal.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
@@ -73,7 +73,7 @@ The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use
 
 #### The Arm Mbed interface
 
-You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.4/reference/arm-mbed-hdk.html) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
+You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.6/reference/arm-mbed-hdk.html) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
 #### Connectivity
 

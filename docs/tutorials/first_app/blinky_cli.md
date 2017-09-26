@@ -32,7 +32,7 @@ This video shows how to use Mbed CLI to import and build Blinky. Note that it as
 
 ### Installing Mbed CLI and a toolchain
 
-Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI setup page](/docs/v5.4/tools/setup.html), and come back here when you're done.
+Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI setup page](/docs/v5.6/tools/setup.html), and come back here when you're done.
 
 ### Setting context
 

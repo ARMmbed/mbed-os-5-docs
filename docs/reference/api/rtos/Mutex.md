@@ -1,6 +1,6 @@
 ## Mutex
 
-A [`Mutex`](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1Mutex.html) is used to synchronize the execution of threads, for example to protect the access to a shared resource.
+A [`Mutex`](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1Mutex.html) is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
 <span class="warnings"> **Warning - ISR:** The `Mutex` methods cannot be called from interrupt service routines (ISR). In the current version of Mbed OS, if you attempt to use a mutex from within an ISR, nothing happens; attempts to lock a mutex succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an ISR, you can break the thread safety mechanisms and introduce race-conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening. </span>
 
@@ -8,7 +8,7 @@ A [`Mutex`](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1Mutex.ht
 
 ### Mutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 
 ### Mutex example
 

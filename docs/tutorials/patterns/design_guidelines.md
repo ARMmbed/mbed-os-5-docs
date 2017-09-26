@@ -138,7 +138,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 ##### Thread and IRQ safety
 
-[Full documentation](https://os.mbed.com/docs/v5.4/porting/thread-safety-and-porting.html).
+[Full documentation](https://os.mbed.com/docs/v5.6/porting/thread-safety-and-porting.html).
 
 - User APIs should be thread safe.
 - If a user API is intended to be interrupt safe, this should be clearly documented.
@@ -171,7 +171,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 #### Testing
 
-[Full documentation](https://os.test.mbed.com/docs/v5.4/tools/testing-1.html).
+[Full documentation](https://os.test.mbed.com/docs/v5.6/tools/testing-1.html).
 
 - Each module should contain a `tests` directory with tests that cover the module’s functionality.
 - Tests should be organized based on the class being tested; roughly one test file per class.
@@ -182,7 +182,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 Mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the Mbed build system. Modules should provide well-documented configuration options in a simple header file.
 
-[Full documentation](https://os.mbed.com/docs/v5.4/porting/the-arm-mbed-configuration-system.html).
+[Full documentation](https://os.mbed.com/docs/v5.6/porting/the-arm-mbed-configuration-system.html).
 
 - Each module should provide a `module_lib.json` (or similar) with configuration options.
 - Each config option should contain documentation covering its purpose and effect on the system.

@@ -1,12 +1,12 @@
 ## Thread
 
-The [`Thread`](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1Thread.html) class allows defining, creating and controlling parallel tasks.
+The [`Thread`](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1Thread.html) class allows defining, creating and controlling parallel tasks.
 
 <span class="notes">**Note:** The function `main` is a special thread function that is started at system initialization.</span>
 
 ### Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_priority.png)</span>
 

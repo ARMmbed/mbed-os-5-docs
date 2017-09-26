@@ -4,4 +4,4 @@ The TCPSocket class provides the ability to send a stream of data over TCP. TCPS
 
 ### TCPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/class_t_c_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_t_c_p_socket.html)

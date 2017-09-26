@@ -191,7 +191,7 @@ The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
-Please see [our exporting page](/docs/v5.4/tools/exporting.html) for information about this field.
+Please see [our exporting page](/docs/v5.6/tools/exporting.html) for information about this field.
 
 #### `OUTPUT_EXT`
 

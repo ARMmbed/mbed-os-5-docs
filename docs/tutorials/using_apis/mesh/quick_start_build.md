@@ -23,7 +23,7 @@ Option Name | Features supported | Current binary size in Mbed OS 5.5
 
 If you want to optimize the flash usage, you need to select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
 
-See [6LoWPAN overview](/docs/v5.4/tutorials/using-the-apis.html#overview-of-the-6lowpan-network) for the definition of star and mesh networks. These same principles apply also to Thread protocol.
+See [6LoWPAN overview](/docs/v5.6/tutorials/using-the-apis.html#overview-of-the-6lowpan-network) for the definition of star and mesh networks. These same principles apply also to Thread protocol.
 
 Select the protocol the network is based on:
 
@@ -35,7 +35,7 @@ Select the device role:
 - Mesh network. A router. (default)
 - Star network. A non-routing device. Also known as a host, or sleepy host.
 
-Modify your `mbed_app.json` file to tell which Nanostack build to choose and which configrations to use on [Mbed Mesh API](/docs/v5.4/reference/api-references.html#mesh).
+Modify your `mbed_app.json` file to tell which Nanostack build to choose and which configrations to use on [Mbed Mesh API](/docs/v5.6/reference/api-references.html#mesh).
 
 An example of the `mbed_app.json` file:
 

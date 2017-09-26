@@ -4,7 +4,7 @@ You can use the MemoryPool class to define and manage fixed-size memory pools.
 
 ### MemoryPool class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classrtos_1_1_memory_pool.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_memory_pool.html)
 
 ### MemoryPool example
 

@@ -602,4 +602,4 @@ mbedgt --report-text text_report.text
 ```
 
 ### Host test detection
-When developing with Mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in Mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the Mbed OS test directory structure, please see the [Arm Mbed CLI documentation](/docs/v5.4/tools/test-and-debug.html#test-directory-structure).
+When developing with Mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in Mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the Mbed OS test directory structure, please see the [Arm Mbed CLI documentation](/docs/v5.6/tools/test-and-debug.html#test-directory-structure).
