@@ -50,8 +50,6 @@ The 6LoWPAN stack uses Device Driver API to communicate with different physical 
 
 The driver must first be registered with the 6LoWPAN stack using the `phy_device_driver_s` structure defined in section [_PHY device driver register_](#phy-device-driver-register). This structure defines all the functions that the stack uses when calling a device driver. When the device driver must call the driver API from the stack, it uses the ID number received in the registration phase to distinct between different devices. The following sections define the contents of the driver structures and API interfaces that the driver can use.
 
-See Doxygen documentation for the latest [Device Drive API](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html).
-
 #### How to create a new RF driver
 
 The following steps describe how you can create a new RF driver:
@@ -180,8 +178,6 @@ To register a PHY driver to the stack:
 int8_t arm_net_phy_register(phy_device_driver_s *phy_driver);
 ```
 
-See the [Doxygen](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#aff06eaa736d3784c956dc6eda9f27419) for the description.
-
 #### PHY data RX API
 
 This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
@@ -192,8 +188,6 @@ The driver calls this function to push the received data from a PHY to the stack
 typedef int8_t arm_net_phy_rx_fn(const uint8_t *data_ptr, uint16_t data_len, uint8_t link_quality, int8_t dbm, int8_t driver_id);
 ```
 
-See [Doxygen: arm_net_phy_rx_fn](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#a962b27c1de3163a37d0e298e5107ab6f) for detailed description.
-
 #### PHY data TX done API
 
 This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
@@ -203,8 +197,6 @@ The driver calls this function when it has completed a transmit attempt:
 ```
 typedef int8_t arm_net_phy_tx_done_fn(int8_t driver_id, uint8_t tx_handle, phy_link_tx_status_e status, uint8_t cca_retry, uint8_t tx_retry);
 ```
-
-See [Doxygen: arm_net_phy_tx_done_fn](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#a045291825cbb1f29aec30891d44e8e52) for detailed description.
 
 When the PHY device handles the CSMA-CA and auto-retry, the stack needs to know the total number of CCA attempts or TX attempts made in case of error. The stack retries the CCA phase 8 times and the TX attempt 4 times. These may be handled by the hardware.
 
@@ -309,8 +301,6 @@ Member|Description
 `arm_net_virtual_rx_cb`|A function pointer to the upper layer RX callback. Only needed by a virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver.
 `arm_net_virtual_tx_cb`|A function pointer to the upper layer tx callback. Only needed by virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver
 `tunnel_type`|TUN driver type this is only valid when link type is PHY_TUN
-
-See [Doxygen: Device Drive API](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html) for up to date descriptions.
 
 ##### PHY device channel page information
 
