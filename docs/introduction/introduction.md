@@ -50,32 +50,32 @@ Our full contributing guide is still being written. For now, we have:
 
 The Arm Mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit that assists development by programming the device, logging program execution and giving access to the debug access port. Here is how it works.
 
-### Architecture diagram
+#### Architecture diagram
 
 This is the basic architecture of an [Mbed board](/docs/v5.4/introduction/glossary.html):
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_internal.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
-### How programming works
+#### How programming works
 
 There are two options:
 
 1. When you plug an Mbed Enabled board to your PC using USB, it appears as a USB flash disk. The Mbed interface presents this small disk. It allows you to save Arm microcontroller binaries you want to run directly on to the board, without drivers.
 2. The same USB connection exposes a debug protocol such as CMSIS-DAP. This enables lots of IDEs to program and debug the device.
 
-#### How USB serial works
+##### How USB serial works
 
 The Arm Mbed interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the Arm Mbed interface will read them and transfer them over the USB link. When you `printf()`, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
 
-#### Notes
+##### Notes
 
 The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
 
-### The Arm Mbed interface
+#### The Arm Mbed interface
 
 You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.4/reference/arm-mbed-hdk.html) or on the [DAPLink GitHub page](https://github.com/ARMmbed/DAPLink/blob/master/README.md). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
-### Connectivity
+#### Connectivity
 
 The best representation of the connectivity of the Mbed interface is the same diagram we showed above.
 
