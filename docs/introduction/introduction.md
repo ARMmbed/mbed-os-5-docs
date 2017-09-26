@@ -4,7 +4,7 @@ Arm Mbed OS lets you write applications that run on embedded devices, by providi
 
 Your application code is written in C and C++. It uses the *application programming interfaces* (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces the challenges of getting started with Arm-based microcontrollers and integrating large software projects.
 
-### Where to start
+#### Where to start
 
 <span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver).</span>
 
@@ -12,19 +12,19 @@ The easiest way to work with Mbed OS is using one of our development tools. We'v
 
 Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.4/reference/index.html).
 
-#### Development tools
+##### Development tools
 
 - Our offline development tool is [Arm Mbed CLI](/docs/v5.4/tools/offline.html#mbed-cli), a command-line tool. This requires having a toolchain installed on your computer.
 - The [Arm Mbed Online Compiler](/docs/v5.4/tools/online.html#arm-mbed-online-compiler-1) lets you write and build applications using a web browser.
 - If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.4/tools/exporting.html).
 
-#### Communicating with and monitoring your board
+##### Communicating with and monitoring your board
 
 You can [monitor and control an Mbed board](/docs/v5.4/reference/low-level-details.html) to help you debug and test your applications.
 
 <span class="tips">**Tip:** You can learn more about debugging [here](/docs/v5.4/tutorials/debugging-applications.html).</span>
 
-### How to continue
+#### How to continue
 
 When you've started writing applications using your selected development tool:
 
@@ -32,13 +32,13 @@ When you've started writing applications using your selected development tool:
 - Try one of the [tutorials](/docs/v5.4/tutorials/index.html), which cover concepts such as debugging and memory tracing.
 - Ask questions and give advice on the [forum](https://forums.mbed.com/).
 
-### Contributing to Mbed OS
+#### Contributing to Mbed OS
 
 If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.4/reference/contributing.html).
 
 You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
 
-### Porting to Mbed OS
+#### Porting to Mbed OS
 
 Our full contributing guide is still being written. For now, we have:
 
