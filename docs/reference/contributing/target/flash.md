@@ -126,7 +126,7 @@ They test all flash API functionality. To run the tests, use these commands:
 
 #### Troubleshooting
 
-* For targets with VTOR, a target might have a VTOR address defined to a hardcoded address as mentioned in the [Linker script updates](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/flash/#linker-script-updates) section.
+* For targets with VTOR, a target might have a VTOR address defined to a hardcoded address as mentioned in the [Linker script updates](#linker-script-updates) section.
 
 * Using Flash IAP might introduce latency as it might disable interrupts for longer periods of time.
 
