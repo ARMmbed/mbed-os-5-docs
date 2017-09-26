@@ -198,7 +198,7 @@ Thread generates a random MAC64 after commissioning. Therefore, MAC and the RF d
 
 Address set and get support two different 64-bit addresses:
 
-| Address enumeration type | Despription |
+| Address enumeration type | Description |
 | -------------------------- | ----------- |
 | `MAC_EXTENDED_READ_ONLY` | A unique EUI64. |
 | `MAC_EXTENDED_DYNAMIC` | Dynamic 64-bit address. Same as EUI64 after boot. |
@@ -216,7 +216,7 @@ Usually, HW MAC and SW MAC have static keys and neighbour list sizes. Nanostack 
 
 Nanostack uses MLME attribute extensions which have to be ported to the HW MAC adapter. To configure the extensions, use the `MLME-SET-REQ` command.
 
-| Enumeration type | Value | Despription |
+| Enumeration type | Value | Description |
 | ---------------- | ----- | ----------- |
 | `macLoadBalancingBeaconTx` | `0xfd` | Trigger to MAC layer to send a beacon. Called by the load balancer module periodically. |
 | `macLoadBalancingAcceptAnyBeacon` | `0xfe` | Configure MAC layer to accept beacons from other networks. Enabled by load balancer, default value is `False`. Value size boolean, `true=enable`, `false=disable`. |
@@ -228,7 +228,7 @@ Thread 1.1 stack defines that sleepy end device data poll process must enable ne
 
 Enumeration extension for MLME communication status enumeration:
 
-| Enumeration type | Value | Despription |
+| Enumeration type | Value | Description |
 | ---------------- | ----- | ----------- |
 | `MLME_DATA_POLL_NOTIFICATION` | `0xff` | Thread requirement for MLME-COMM-STATUS to start indicating the successful data poll events. |
 
