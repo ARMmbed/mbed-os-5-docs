@@ -168,8 +168,6 @@ The current implementation does not use all pins, but you must define all of the
 
 3. **Implement `onboard_modem_api.h`** Provide an implementation of `onboard_modem_api.h`. You can find an example implementation [here](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/onboard_modem_api.html)
-
 ###### Providing module modem API
 
 Only valid when **Case 4** is applicable.
