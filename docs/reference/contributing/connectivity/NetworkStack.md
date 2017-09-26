@@ -4,11 +4,11 @@ The Network-Socket-API (NSAPI) provides a TCP/UDP API on top of any IP based net
 
 #### Class hierarchy
 
-All network-socket API implementations inherit from two classes: a [NetworkStack](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.2/api/classNetworkStack.html) and a communication specific subclass of [NetworkInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classNetworkInterface.html).
+All network-socket API implementations inherit from two classes: a [NetworkStack](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.2/api/classNetworkStack.html) and a communication specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classNetworkInterface.html).
 
 ##### NetworkInterface Class
 
-The current NetworkInterface subclasses are [CellularInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classCellularInterface.html), [EthernetInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classEthernetInterface.html), [MeshInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classMeshInterface.html), and [WiFiInterface](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/classWiFiInterface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
+The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classCellularInterface.html), [EthernetInterface](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classEthernetInterface.html), [MeshInterface](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classMeshInterface.html), and [WiFiInterface](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/classWiFiInterface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
 ![Class](/img/esp-class.png)
 
