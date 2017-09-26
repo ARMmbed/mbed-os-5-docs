@@ -8,4 +8,4 @@ The file system API provides a common interface for implementing a file system o
 
 ### File system example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-fat-filesystem)](https://github.com/armmbed/mbed-os-example-fat-filesystem)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-fat-filesystem)](https://github.com/ARMmbed/mbed-os-example-fat-filesystem/blob/master/main.cpp)
