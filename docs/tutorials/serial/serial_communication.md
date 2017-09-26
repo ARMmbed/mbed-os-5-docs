@@ -2,7 +2,7 @@
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
-<span class="tips">If you're working on Windows ealier than Windows 10, you might need to [install a serial driver](/docs/v5.4/tutorials/serial-communication.html).</span>
+<span class="tips">If you're working on Windows earlier than Windows 10, you might need to [install a serial driver](/docs/v5.4/tutorials/windows-serial-driver.html).</span>
 
 This allows you to:
 
@@ -28,16 +28,13 @@ int main() {
 }
 ```
 
-### Terminal applications
-
+### Using terminal applications
 
 Terminal applications run on your host PC. They provide a window where your Mbed board can print and where you can type characters back to your board.
 
 <span class="tips">**Serial configuration:** The standard setup for the USB serial port is 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1)</span>
 
-#### Using terminal applications on Windows and OS X
-
-##### Installing an application
+#### Installing an application for Windows
 
 There are many terminal applications for Windows, including:
 
@@ -46,7 +43,7 @@ There are many terminal applications for Windows, including:
 * [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
 * Some Windows PCs come with **Hyperterminal** installed.
 
-##### Configuring the connection
+#### Configuring the connection
 
 1. Plug in your Mbed board.
 1. Open CoolTerm.
@@ -60,7 +57,7 @@ Check your connection parameters:
 
 Your terminal program is now configured and connected.
 
-#### Using terminal applications on Linux
+### Using terminal applications on Linux
 
 CoolTerm should work under Linux. If for some reason it doesn't, you can try one of the following:
 
@@ -121,6 +118,8 @@ int main() {
 
 #### Pass characters in both directions
 
+Tie pins together to see characters echoed back.
+
 ```c
 #include "mbed.h"
 
@@ -143,7 +142,6 @@ int main() {
     }
 }
 ```
-Tie pins together to see characters echoed back.
 
 #### Using stdin, stdout and stderr
 
