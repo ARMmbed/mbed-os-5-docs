@@ -1,12 +1,12 @@
-## The Arm Mbed Online Compiler
+<h2 id="mbed-online-compiler">The Arm Mbed Online Compiler</h2>
 
 With these step-by-step instructions, you can learn how to use the Online Compiler. These instructions cover importing and creating programs, compiling and downloading and forking. They also go over publishing and working with other developers.
 
-### Import code
+### Importing code
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
 
-1. Directly from the site: wherever you see a program on the site, you should see an **`Import into mbed IDE`** button:
+1. Directly from the site: wherever you see a program on the site, you should see an **`Import into Mbed IDE`** button:
 
 	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_button_site.png)<span>Most code snippets on the site can be directly imported</span></span>
 
@@ -25,7 +25,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 	Double click a program to import it.
 
-### Create a new program
+### Creating a new program
 
 1. From the **New** menu, select **New Program**:
 
@@ -57,7 +57,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 		<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/with_mbed.png)<span>Mbed OS is now in the workspace</span></span>
 
-### Get your program on your board
+### Getting your program on your board
 
 The Arm Mbed Online Compiler builds a file that can run on your board. All you need to do is:
 
