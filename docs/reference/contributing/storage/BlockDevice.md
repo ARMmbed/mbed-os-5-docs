@@ -12,7 +12,7 @@ The block device API provides an interface for access to block-based storage. Yo
 
 Block device for SD cards.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/sd-driver)](https://github.com/armmbed/sd-driver)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/sd-driver)](https://github.com/ARMmbed/sd-driver/blob/master/SDBlockDevice.cpp)
 
 ### Heap block device example
 
@@ -24,10 +24,10 @@ Block device the heap backs for quick testing.
 
 Block device for NOR-based SPI flash devices.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/spiflash-driver)](https://github.com/armmbed/spiflash-driver)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/spiflash-driver)](https://github.com/ARMmbed/spif-driver/blob/master/SPIFBlockDevice.cpp)
 
 ### EEPROM-based I2C block device example
 
 Block device for EEPROM-based I2C devices.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/i2ceeprom-driver)](https://github.com/armmbed/i2ceeprom-driver)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/i2ceeprom-driver)](https://github.com/ARMmbed/i2cee-driver/blob/master/I2CEEBlockDevice.cpp)
