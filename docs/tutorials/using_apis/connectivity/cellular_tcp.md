@@ -1,6 +1,6 @@
 ## Cellular TCP sockets
 
-This example opens a TCP socket with an echo server and undergoes a TCP transaction. Connection logic is the same as in the previous example.
+This example opens a TCP socket with an echo server and performs a TCP transaction. Connection logic is the same as in the previous example.
 
 ```cpp
 #include "mbed.h"
