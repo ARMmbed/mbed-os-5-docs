@@ -13,7 +13,11 @@ If you see a compile time error or warning that you do not understand, you can u
 
 ### Runtime errors and lights of the dead
 
-![LPC1768 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)    ![LPC11U24 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)    ![FRMD-KL25Z Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)
+<span class="images">![LPC1768 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)</span>
+
+<span class="images">![LPC11U24 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)</span>
+
+<span class="images">![FRMD-KL25Z Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)</span>
 
 *LPC1768, LPC11U24 and FRDM-KL25Z showing their distinctive lights of dead pattern*
 
