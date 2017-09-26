@@ -6,7 +6,7 @@ Device drivers are a set of functions for providing PHY layer devices for the 6L
 - receiving function.
 - a set of device controlling functions.
 
-##### How Nanostack runs inside Mbed OS
+#### How Nanostack runs inside Mbed OS
 
 The Mbed OS port of Nanostack consist of a few helper modules that provide easier API for users and Platform API for working inside the operating system.
 
@@ -34,7 +34,7 @@ For an example of a simple application using Nanostack, see [Example mesh applic
 
 For more information, see the [documentation of the Socket API](/docs/v5.4/reference/api-references.html#network-sockets).
 
-###### Providing RF driver for Mbed OS applications
+##### Providing RF driver for Mbed OS applications
 
 For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterfaceNanostack` requires the driver object to be provided when initializing.
 
@@ -44,7 +44,7 @@ Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthern
 
 See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
 
-##### Device Driver API
+#### Device Driver API
 
 The 6LoWPAN stack uses Device Driver API to communicate with different physical layer drivers. The 6LoWPAN stack supports different device types for PHY layer and special cases where raw IPv6 datagrams are forwarded to a driver.
 
@@ -52,7 +52,7 @@ The driver must first be registered with the 6LoWPAN stack using the `phy_device
 
 See Doxygen documentation for the latest [Device Drive API](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html).
 
-##### How to create a new RF driver
+#### How to create a new RF driver
 
 The following steps describe how you can create a new RF driver:
 
@@ -68,7 +68,7 @@ The following steps describe how you can create a new RF driver:
 
 1. Check with a RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
-##### Worker thread for Mbed OS
+#### Worker thread for Mbed OS
 
 Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
 from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement their own worker thread to handle the interrupt requests.
@@ -121,7 +121,7 @@ irq_thread.start(rf_if_irq_task);
 
 ```
 
-##### RF driver states
+#### RF driver states
 
 _Figure 11-1_ below shows the basic states of the RF driver.
 
@@ -172,7 +172,7 @@ State|Description
 
 ![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
 
-##### PHY device driver register
+#### PHY device driver register
 
 This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces to a specific PHY driver.
 
@@ -184,7 +184,7 @@ int8_t arm_net_phy_register(phy_device_driver_s *phy_driver);
 
 See the [Doxygen](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#aff06eaa736d3784c956dc6eda9f27419) for the description.
 
-##### PHY data RX API
+#### PHY data RX API
 
 This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
 
@@ -196,7 +196,7 @@ typedef int8_t arm_net_phy_rx_fn(const uint8_t *data_ptr, uint16_t data_len, uin
 
 See [Doxygen: arm_net_phy_rx_fn](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html#a962b27c1de3163a37d0e298e5107ab6f) for detailed description.
 
-##### PHY data TX done API
+#### PHY data TX done API
 
 This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
 
@@ -214,11 +214,11 @@ If the CSMA-CA is handled by the hardware, the `cca_retry` should return a value
 
 When the hardware handles the auto-retry mode, the error cases should report the number of TX attempts made in the `tx_retry` parameter. If the total number of retries is less that 4, the stack initiates a retransmission.
 
-##### PHY driver structure and enumeration definitions
+#### PHY driver structure and enumeration definitions
 
 This section introduces driver API specific structures and enumerations.
 
-###### PHY TX process status code
+##### PHY TX process status code
 
 This enumeration defines the PHY TX process status code:
 
@@ -241,7 +241,7 @@ Parameter|Description
 `TX_FAIL`|The link TX process fails.
 `CCA_FAIL`|RF link CCA process fails.
 
-###### PHY interface control types
+##### PHY interface control types
 
 This enumeration defines the PHY interface control types:
 
@@ -260,7 +260,7 @@ Parameter|Description
 `DOWN`|Disables the PHY interface driver (RF radio disabled).
 `UP`|Enables the PHY interface driver (RF radio receiver ON).
 
-###### PHY device driver
+##### PHY device driver
 
 This PHY device driver structure comprises the following members:
 
@@ -314,7 +314,7 @@ Member|Description
 
 See [Doxygen: Device Drive API](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/api/arm__hal__phy_8h.html) for up to date descriptions.
 
-###### PHY device channel page information
+##### PHY device channel page information
 
 This structure defines the PHY device channel page information and comprises the following members:
 
@@ -331,7 +331,7 @@ Member|Description
 `channel_page`|The supported channel page(s).
 `rf_channel_configuration`|The used RF configuration for the channel page.
 
-###### PHY device link type
+##### PHY device link type
 
 This enumeration defines the PHY device link types:
 
@@ -354,7 +354,7 @@ Parameter|Description
 `TUN`|The Linux virtual TUN interface.
 `SLIP`|The SLIP interface.
 
-###### PHY device RF channel configuration
+##### PHY device RF channel configuration
 
 This structure defines the PHY device RF configuration:
 
@@ -377,7 +377,7 @@ Member|Description
 `number_of_channels`|The number of supported channels.
 `modulation`|The RF modulation method.
 
-###### PHY device RF modulation methods
+##### PHY device RF modulation methods
 
 This enumeration defines the PHY device RF modulation methods:
 
@@ -400,7 +400,7 @@ Parameter|Description
 `M_GFSK`|The GFSK modulation method.
 `M_UNDEFINED`|The RF modulation method undefined.
 
-##### Example RF driver
+#### Example RF driver
 
 The following code example is not a complete driver but shows you how to use the API to create a RF driver.
 

@@ -1,6 +1,6 @@
 ### Configuring the hardware
 
-##### Selecting your radio
+#### Selecting your radio
 
 6LoWPAN network uses IEEE 802.15.4 radios and therefore, operates on one of the following unlicensed
 frequency bands:
@@ -15,7 +15,7 @@ The data rate varies from 20 kbit/s to 250 kbit/s. The data rate available per n
 
 <span class="tips">**Rule of thumb:** The bandwidth per node is divided by the number of nodes in the network and the number of hops.</span>
 
-##### Notes on different hardware
+#### Notes on different hardware
 
 As the stack runs on multiple different Mbed OS development boards there might be combinations of board and RF shields that may, or may not, work together due to pin collision or other reasons.
 
@@ -23,7 +23,7 @@ This page aims to collect information regarding different hardware combinations.
 
 Please see [Notes on different hardware](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/Hardware.md) on Mesh example application for up to date copy of this list.
 
-##### RF shields
+#### RF shields
 
 Following RF shield have been used with Mbed OS mesh examples.
 
@@ -32,7 +32,7 @@ Following RF shield have been used with Mbed OS mesh examples.
 * [X-NUCLEO-IDS01A4](http://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html)
 * [DVK-NCS36510-MBED-GEVB](https://os.mbed.com/platforms/NCS36510/) Development board, contains internal RF chip.
 
-##### Tested development boards
+#### Tested development boards
 
 The following table shows which development boards have been tested. It does not present our current testing infrastructure, so we cannot guarantee all combinations but we do our best to ensure it is up to date.
 

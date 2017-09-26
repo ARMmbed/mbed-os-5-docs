@@ -4,7 +4,7 @@ To minimize the size of the produced stack, we have defined a set of build optio
 
 The suitable build option depends on whether you are building it for Mbed OS or for bare metal.
 
-##### Build options
+#### Build options
 
 Option Name | Features supported | Current binary size in Mbed OS 5.5
 ------------| -------------------|------------------------------------
@@ -19,7 +19,7 @@ Option Name | Features supported | Current binary size in Mbed OS 5.5
 
 <span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9. They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
-##### Using configuration option on Mbed OS
+#### Using configuration option on Mbed OS
 
 If you want to optimize the flash usage, you need to select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
 
@@ -57,7 +57,7 @@ In the application, you need to choose from two supported interface classes:
 
 Then you may optionally choose to select the non-routing mode for those networks. The following tables show the values you should use in the `mbed_app.json` file for your devices in different networks.
 
-###### 6LoWPAN-ND
+##### 6LoWPAN-ND
 
 **mesh-type: MESH_LOWPAN**
 
@@ -66,7 +66,7 @@ Then you may optionally choose to select the non-routing mode for those networks
 |Mesh router (default) | `LOWPAN_ROUTER` | `NET_6LOWPAN_ROUTER` |
 |Non-routing device | `LOWPAN_HOST` | `NET_6LOWPAN_HOST` |
 
-###### Thread
+##### Thread
 
 **mesh-type: MESH_THREAD**
 
@@ -74,4 +74,3 @@ Then you may optionally choose to select the non-routing mode for those networks
 |-----------|-------------------------|------------------------------------|
 |Mesh router (default) | `THREAD_ROUTER` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
 |Non-routing device | `THREAD_END_DEVICE` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
-
