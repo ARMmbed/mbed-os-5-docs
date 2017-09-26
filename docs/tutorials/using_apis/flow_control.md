@@ -16,7 +16,9 @@ Busy wait is a method that blocks the processor for a period of time. This is an
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-Workshops/code/Workshop-1-Example-1/)](https://os.mbed.com/teams/mbed-Workshops/code/Workshop-1-Example-1/file/tip/main.cpp)
 
-Notice `printf()`; you can enable this by uncommenting the line (remove the `//`). `printf()` prints to the terminal, so you can use it to get debug information. We recommend using [CoolTerm](http://freeware.the-meiers.org/), as it works the same on Windows, Linux and OS X. [Here is a handy video on how to use CoolTerm](https://www.youtube.com/watch?v=jAMTXK9HjfU) to connect to your board and view the `printf()` statements.
+Notice `printf()`; you can enable this by uncommenting the line (remove the `//`). `printf()` prints to the terminal, so you can use it to get debug information.
+
+<span class="tips">**Tip:** We recommend using [CoolTerm](http://freeware.the-meiers.org/), as it works the same on Windows, Linux and OS X. [Here is a handy video on how to use CoolTerm](https://www.youtube.com/watch?v=jAMTXK9HjfU) to connect to your board and view the `printf()` statements. For more information, see our [serial communication tutorials](/docs/v5.4/tutorials/serial-communication-overview.html).</span>
 
 #### Ticker
 
