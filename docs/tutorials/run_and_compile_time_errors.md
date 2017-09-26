@@ -11,7 +11,7 @@ Common errors are:
 
 If you see a compile time error or warning that you do not understand, you can usually find explanations of the error message on Google, or post to the [Arm Mbed forums](https://os.mbed.com/questions/).
 
-## Runtime errors and lights of the dead
+### Runtime errors and lights of the dead
 
 ![LPC1768 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)    ![LPC11U24 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)    ![FRMD-KL25Z Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)
 
