@@ -19,7 +19,7 @@ The network-socket API provides a common interface for using sockets on network 
 
 ##### Network errors
 
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.6/api/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
+The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://os.mbed.com/docs/v5.4/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
 
 ``` cpp
 /** Enum of standardized error codes
