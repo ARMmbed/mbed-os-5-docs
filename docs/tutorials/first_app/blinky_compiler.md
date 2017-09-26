@@ -4,15 +4,15 @@
 
 ### Importing Blinky
 
-1. To get Blinky into the Mbed Online Compiler, click the **`Import into Mbed IDE`** button below:
+To get Blinky into the Mbed Online Compiler, click the **`Import into Mbed IDE`** button below:
 
-    [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/file/tip/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/file/tip/main.cpp)
 
-1. You're taken to the online IDE, and the **Import Program** dialog box opens:
+You're taken to the online IDE, and the **Import Program** dialog box opens:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_dialog.png)<span>Importing Blinky</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_dialog.png)<span>Importing Blinky</span></span>
 
-1. The import mechanism offers a default name, but you're free to change it. When you're done, click **Import**.
+The import mechanism offers a default name, but you're free to change it. When you're done, click **Import**.
 
 ### Viewing Blinky
 
@@ -63,6 +63,6 @@ The Mbed Online Compiler builds your program as a `.bin` file that you can insta
 
 	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/DeviceOnWindows.png)<span>The device is listed as `MBED` or `DAPLINK`, and its type is removable storage</span></span>
 
-1. Drag and drop your program to the board. The board installs the program. 
+1. Drag and drop your program to the board. The board installs the program.
 
 1. Reset the board, and see the LED blink.
