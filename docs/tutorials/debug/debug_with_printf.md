@@ -9,15 +9,15 @@ An easy way to inspect what your application is doing is to augment your applica
 Install the serial port driver for your development board:
 
 * For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
-* For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.4/tutorials/serial-communication.html#windows-serial-driver) - not required for Windows 10.
+* For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.4/tutorials/windows-serial-driver.html) - not required for Windows 10.
 
 You also need a serial monitor:
 
 * [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
 
-#### mac OS
+#### Mac OS X
 
-On mac OS, all software comes installed by default.
+On Mac OS X, all software comes installed by default.
 
 #### Linux
 
@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 ### Getting started
 
-To send data over the serial connection, use the [Serial](https://os.mbed.com/docs/v5.4/reference/api-references.html#serial) object.
+To send data over the serial connection, use the [Serial](/docs/v5.4/reference/serial.html) object.
 
 #### Example program
 
@@ -64,9 +64,9 @@ Compile this program, and flash it on your development board. You now can inspec
 1. Click *OK*.
 1. Log messages appear in the main window.
 
-![Selecting the COM port](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf1.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf1.png)<span>Selecting the COM port</span></span>
 
-![Seeing the output over the serial port](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)
+<span class="images>"![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)<span>Seeing the output over the serial port</span></span>
 
 <span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
@@ -124,7 +124,7 @@ If you change the baud rate on the device, you also need to change it on your se
     $ screen /dev/ttyACM0 115200
     ```
 
-![Changing the baud rate](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf3.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf3.png)<span>Changing the baud rate</span></span>
 
 ### Printf()
 
@@ -170,12 +170,12 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.4/reference/api-references.html#mutex) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.4/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-* Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.4/reference/api-references.html#semaphore) or [mailbox](https://ost.mbed.com/docs/v5.4/reference/api-references.html#mail), and calling `printf` in the main thread.
-* Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.4/reference/api-references.html#events).
+* Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.4/reference/semaphore.html) or [mailbox](https://os.mbed.com/docs/v5.4/reference/mail.html), and calling `printf` in the main thread.
+* Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.4/reference/event.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 
@@ -323,8 +323,8 @@ void xprintf(const char *format, ...)
 
 Windows:
 
-[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)
+[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s){:target="_blank"}
 
-mac OS X:
+Mac OS X:
 
-[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)
+[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s){:target="_blank"}
