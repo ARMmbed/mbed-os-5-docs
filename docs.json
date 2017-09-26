@@ -276,7 +276,7 @@
             ]
           },
           {
-            "title": "Using Tools",
+            "title": "Using the Mbed Online Compiler",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_tools/oc_tut.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_tools/oc_pr_tut.md"},
