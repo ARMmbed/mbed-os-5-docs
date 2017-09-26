@@ -73,8 +73,6 @@ The following steps describe how you can create a new RF driver:
 Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
 from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement their own worker thread to handle the interrupt requests.
 
-![Worker Thread](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/worker_thread.png)
-
 Example: Use worked thread and signals from an interrupt
 
 ```
