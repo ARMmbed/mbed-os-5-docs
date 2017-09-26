@@ -24,7 +24,7 @@ If you want to share your work:
 
 1. Select a **Publish in** option. You have the choice to publish your repository to your user account or to a team that you are a member of. When publishing to a team, all members of that team will be able to collaborate on your work with the permissions managed by the team as well as the repository.
 
-	Note: You must be a member of a team before trying to publish to it. You can **Send a Join Request** on the team's homepage if it has public enrollment enabled.
+	<span class="notes">**Note:** You must be a member of a team before trying to publish to it. You can **Send a Join Request** on the team's homepage if it has public enrollment enabled.</span>
 
 1. Select **Visibility**: This controls who can see your repository. There are three options:
 
