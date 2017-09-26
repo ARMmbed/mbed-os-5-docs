@@ -14,9 +14,9 @@
 
 **Arm Mbed OS** - Arm's [platform operating system](https://docs.mbed.com/) for the Internet of Things.
 
-**Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/v5.4/reference/security.html#tlss) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
+**Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/v5.4/reference/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
-**Arm Mbed uVisor** - A self-contained [software hypervisor](/docs/v5.4/reference/security.html#uvisor) that creates independent secure domains on ARM Cortex-M3 and M4 micro-controllers.
+**Arm Mbed uVisor** - A self-contained [software hypervisor](/docs/v5.4/reference/tls.html#uVisor) that creates independent secure domains on ARM Cortex-M3 and M4 micro-controllers.
 
 ### B
 
