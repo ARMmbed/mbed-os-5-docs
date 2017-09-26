@@ -4,8 +4,8 @@ We have an example application called Blinky that you can use to get to know Arm
 
 You can use either of these tools:
 
-* [Arm Mbed CLI](/docs/v5.4/tutorials/your-first-arm-mbed-application.html#blinky-on-arm-mbed-cli).
-* [Arm Mbed Online Compiler](/docs/v5.4/tutorials/your-first-arm-mbed-application.html#blinky-on-the-arm-mbed-online-compiler).
+* [Arm Mbed CLI](/docs/v5.4/tutorials/blinky-on-the-arm-mbed-online-compiler.html).
+* [Arm Mbed Online Compiler](https://os.mbed.com/docs/v5.4/tutorials/blinky-on-arm-mbed-cli.html).
 
 #### Before you begin
 
