@@ -1,5 +1,7 @@
 ## Blinky on the Arm Mbed Online Compiler
 
+This tutorial builds Blinky using the Arm Mbed Online Compiler, which allows you to build Mbed OS applications without installing a toolchain on your own machine.
+
 <span class="tips">Please create a [developer account](https://os.mbed.com/account/signup/). It's free, and we don't spam.</span>
 
 ### Importing Blinky

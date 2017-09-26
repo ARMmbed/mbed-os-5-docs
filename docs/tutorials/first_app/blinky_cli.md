@@ -1,12 +1,8 @@
 ## Blinky on Arm Mbed CLI
 
-Blinky is a simple program that blinks the LED on your board every half second. We use Blinky to show you how to import, build and flash an application.
+This tutorial builds Blinky using the Arm Mbed CLI, which allows you to build Mbed OS applications on your own machine. You will need to install Mbed CLI and a toolchain before you can work with Blinky.
 
-### Quick start video
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on Arm Mbed CLI</span></span>
-
-<span class="notes">**Note:** the video assumes you've already [installed Mbed CLI](#installing-mbed-cli-and-a-toolchain).
+<span class="tips">Please create a [developer account](https://os.mbed.com/account/signup/). It's free, and we don't spam.</span>
 
 ### Blinky's code
 
@@ -28,9 +24,15 @@ int main() {
 }
 ```
 
+### Quick start video
+
+This video shows how to use Mbed CLI to import and build Blinky. Note that it assumes you have already installed Mbed CLI (see next section):
+
+<span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y){:target="_blank"}<span>Watch how to create your first application on Arm Mbed CLI</span></span>
+
 ### Installing Mbed CLI and a toolchain
 
-Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI page](https://os.mbed.com/docs/v5.4/tools/offline.html#mbed-cli), and come back here when you're done.
+Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI setup page](/docs/v5.4/tools/setup.html), and come back here when you're done.
 
 ### Setting context
 
@@ -105,12 +107,10 @@ The program file, `mbed-os-example-blinky.bin`, is under your `mbed-os-example-b
 
 ### Programming your board
 
-Arm Mbed Enabled boards are programmable by drag and drop over a USB connection.
+Arm Mbed Enabled boards are programmable by drag and drop over a USB connection:
 
-```
 1. Connect your mbed board to the computer over USB.
-2. Copy the binary file to the board. In the example above, the file is `mbed-os-example-blinky.bin`, and it's under the `mbed-os-example-blinky\build\K64F\ARM\` folder.
-3. Press the reset button to start the program.
-```
+1. Copy the binary file to the board. In the example above, the file is `mbed-os-example-blinky.bin`, and it's under the `mbed-os-example-blinky\build\K64F\ARM\` folder.
+1. Press the reset button to start the program.
 
 You should see the LED of your board turning on and off.
