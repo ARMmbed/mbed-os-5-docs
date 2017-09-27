@@ -1,4 +1,4 @@
-## Network Socket overview
+## Network socket overview
 
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
@@ -13,7 +13,7 @@ This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
 Continue reading for detailed reference material about some of these APIs.
 
-#### Network Sockets
+#### Network sockets
 
 The network-socket API provides a common interface for using sockets on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
 
