@@ -10,7 +10,7 @@ API summary
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
 
-### DigitalIn Hello World!
+### DigitalIn hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/file/954ac88dda04/main.cpp)
 
