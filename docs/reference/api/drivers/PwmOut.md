@@ -12,7 +12,7 @@ Use the PwmOut interface to control the frequency and duty cycle of a PWM signal
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_pwm_out.html)
 
 
-### PwmOut Hello World!
+### PwmOut hello, world
 
 This code example uses the default period of 0.020s and ramps the duty cycle from 0% to 100% in increments of 10%.
 
