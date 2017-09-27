@@ -46,7 +46,7 @@ Our full contributing guide is still being written. For now, we have:
 - Information about the [tools you need to contribute targets](/docs/v5.6/reference/contributing-tools.html).
 - APIs about [storage](/docs/v5.6/reference/contributing-storage.html) and [connectivity](/docs/v5.6/reference/contributing-connectivity.html) in relation to porting.
 
-## How Mbed Works
+## How Mbed works
 
 The Arm Mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit that assists development by programming the device, logging program execution and giving access to the debug access port. Here is how it works.
 
