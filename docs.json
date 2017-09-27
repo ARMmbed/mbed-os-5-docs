@@ -199,7 +199,7 @@
             ]
           },
           {
-            "title": "Online",
+            "title": "Arm Online Compiler",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online_comp.md"},
@@ -209,7 +209,7 @@
             ]
           },
           {
-            "title": "Mbed CLI",
+            "title": "Arm Mbed CLI",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli-setup.md"},
