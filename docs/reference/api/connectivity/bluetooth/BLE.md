@@ -16,7 +16,7 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 1. Construct a service class and add it to the BLE stack.
 1. Push notifications when the characteristic's value changes.
 
-### Example: BLE Beacon
+### Example: BLE beacon
 
 Here is an example demonstrating how you can create a BLE beacon.
 
