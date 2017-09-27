@@ -25,6 +25,6 @@ The SPI master generates a clock to synchronously drive a serial bit stream slav
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
 
-### SPI Hello World!
+### SPI hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SPI_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/SPI_HelloWorld/file/dd9e7d208cbd/main.cpp)
