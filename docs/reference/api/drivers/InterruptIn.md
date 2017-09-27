@@ -20,7 +20,7 @@ To read an input, see [DigitalIn](/docs/v5.6/reference/digitalin.html).
 
 For timer-based interrupts, see [Ticker](/docs/v5.6/reference/ticker.html) (repeating interrupt) and [Timeout](/docs/v5.6/reference/timeout.html) (one-time interrupt).
 
-### InterruptIn Hello World!
+### InterruptIn hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/InterruptIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/InterruptIn_HelloWorld/file/f729f0421740/main.cpp)
 
