@@ -146,8 +146,6 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - If a callback is called in interrupt context, the API responsible should be clearly documented with a warning.
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
 
-[Full documentation](https://os.mbed.com/docs/v5.6/porting/thread-safety-and-porting.html).
-
 #### Documentation
 
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
