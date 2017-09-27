@@ -52,11 +52,11 @@ These Mbed OS drivers contain locking deep sleep:
 - `CAN`.
 - `SerialBase`.
 
-### `Sleep Manager` class reference
+### SleepManager class reference
 
 [https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h)
 
-### `Deep Sleep Lock` class reference
+### DeepSleepLock class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
 
