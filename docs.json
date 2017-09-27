@@ -209,7 +209,7 @@
             ]
           },
           {
-            "title": "Offline",
+            "title": "Mbed CLI",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/offline.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli.md"},
