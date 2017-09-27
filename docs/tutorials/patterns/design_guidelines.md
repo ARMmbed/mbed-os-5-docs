@@ -9,7 +9,7 @@ Principles of Arm Mbed software:
 
 #### Style
 
-Please refer to the [Mbed style guide](code_style.md).
+Please refer to the [Mbed style guide](/docs/v5.6/reference/guidelines.html#style).
 
 #### Organization
 
@@ -56,7 +56,7 @@ The Mbed OS codebase is organized into conceptual submodules to limit the scope 
 - Special directories should follow consistent naming convention.
 
 #### Contribution
-1. Please refer to the [Mbed contribution guide](contributing.md).
+1. Please refer to the [Mbed contribution guide](/docs/v5.6/reference/contributing-overview.html).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:
@@ -138,8 +138,6 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 ##### Thread and IRQ safety
 
-[Full documentation](https://os.mbed.com/docs/v5.6/porting/thread-safety-and-porting.html).
-
 - User APIs should be thread safe.
 - If a user API is intended to be interrupt safe, this should be clearly documented.
 - If a user API is unable to be thread safe, this should be clearly documented with warning notation.
@@ -147,6 +145,8 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - A module’s porting layer should be designed for implementations that are not thread safe.
 - If a callback is called in interrupt context, the API responsible should be clearly documented with a warning.
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
+
+[Full documentation](https://os.mbed.com/docs/v5.6/porting/thread-safety-and-porting.html).
 
 #### Documentation
 
@@ -171,18 +171,16 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 #### Testing
 
-[Full documentation](https://os.test.mbed.com/docs/v5.6/tools/testing-1.html).
-
 - Each module should contain a `tests` directory with tests that cover the module’s functionality.
 - Tests should be organized based on the class being tested; roughly one test file per class.
 - Tests included in the codebase must be compatible with the Mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
+[Full documentation](/docs/v5.6/tools/test-and-debug.html).
+
 #### Configuration
 
 Mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the Mbed build system. Modules should provide well-documented configuration options in a simple header file.
-
-[Full documentation](https://os.mbed.com/docs/v5.6/porting/the-arm-mbed-configuration-system.html).
 
 - Each module should provide a `module_lib.json` (or similar) with configuration options.
 - Each config option should contain documentation covering its purpose and effect on the system.
@@ -191,3 +189,5 @@ Mbed OS provides a powerful configuration system for application development. Ho
 	- Prefer multiple classes where different functionality is needed in the user API.
 - Targets and applications should be able to override each configuration.
 - The default choice of optimization should be size, on all platforms.
+
+[Full documentation](/docs/v5.6/tools/the-configuration-system.html).
