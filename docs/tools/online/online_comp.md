@@ -1,4 +1,4 @@
-<h2 id="arm-mbed-online-compiler">Arm Mbed Online Compiler Overview</h2>
+<h2 id="arm-mbed-online-compiler">Online Compiler Overview</h2>
 
 Developers who do not have a dedicated offline setup may prefer to work online. With the Arm Mbed ecosystem, you can work online, in addition to offline. Arm's online tool is the Arm Mbed Online Compiler.
 
