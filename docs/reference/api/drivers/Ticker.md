@@ -16,7 +16,7 @@ You can create any number of Ticker objects, allowing multiple outstanding inter
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_ticker.html)
 
-### Ticker Hello World!
+### Ticker hello, world
 
 Try this program to set up a Ticker to repeatedly invert an LED:
 
