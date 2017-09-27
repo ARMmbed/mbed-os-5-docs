@@ -16,7 +16,7 @@ To bring up the network interface:
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
 1. Once connected, you can use Mbed OS [network sockets](/docs/v5.6/reference/network-socket-overview.html) as usual.
 
-### Cellular example: Connection establishment
+### Cellular example: connection establishment
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
