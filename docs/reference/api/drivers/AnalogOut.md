@@ -8,7 +8,7 @@ Use the AnalogOut interface to set the voltage of an analog output pin as a floa
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_analog_out.html)
 
-### AnalogOut Hello World!
+### AnalogOut hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/AnalogOut_HelloWorld/file/a32148e02ecf/main.cpp)
 
