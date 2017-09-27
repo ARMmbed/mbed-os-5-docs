@@ -13,6 +13,6 @@ All drivers on the I2C bus are required to be open collector, and so it is neces
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_i2_c.html)
 
-### I2C Hello World!
+### I2C hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/I2C_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/I2C_HelloWorld/file/fa13d56ff9ff/main.cpp)
