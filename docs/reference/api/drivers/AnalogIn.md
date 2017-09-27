@@ -8,7 +8,7 @@ Use the AnalogIn API to read an external voltage applied to an analog input pin.
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_analog_in.html)
 
-### AnalogIn Hello World!
+### AnalogIn hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/file/77750f8cba47/main.cpp)
 
