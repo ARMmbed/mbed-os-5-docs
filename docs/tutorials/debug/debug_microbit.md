@@ -1,22 +1,20 @@
-<h2 id="debug-microbit">Debugging the micro:bit with pyOCD and GDB</h2>
+<h2 id="debug-microbit">Debugging the BBC micro:bit with pyOCD and GDB</h2>
 
-This tutorial shows how to debug a program on the micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.
+This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.
 
 <span class="notes">**Note:** The micro:bit's processor is based on the Nordic [nRF51][nRF51].</span>
 
-Suggested tools:
+### Suggested tools
 
   * Linux (4.1), but pyOCD and GDB work on Windows and Mac OS.
   * pyOCD (0.4.5), which you can obtain on [GitHub](https://github.com/mbedmicro/pyOCD).
-  * arm-none-eabi-gdb (7.9.1) is usually present in package managers, or you can get it at [linaro](https://launchpad.net/gcc-arm-embedded).
-
-This is only a suggestion. pyOCD and GDB work just as well on Mac OS and Windows.
+  * arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at [linaro](https://launchpad.net/gcc-arm-embedded).
 
 ### Looking at a basic program
 
-Look at hello.hex, a program printing "hello world" to the serial console. You can find the hex file at [hello.hex](https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex).
+Look at `hello.hex`, a program printing "hello world" to the serial console. You can find the hex file at [hello.hex](https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex).
 
-<span class="notes">**Note:** Shell commands begin with "$", GDB commands with "(gdb)."</span>
+<span class="notes">**Note:** Shell commands begin with `$`, GDB commands with `(gdb)`.</span>
 
 #### Analysis
 
@@ -36,7 +34,7 @@ The following command starts pyOCD with a soothing configuration:
     INFO:root:GDB server started at port:3333
 
 
-<span class="tips">**Tip:** If you don't have permission to access the board on Linux, you can use [this udev rule](https://os.mbed.com/comments/perm/9920/). The option -bh tells pyOCD to use hardware breakpoints, and -r tells it to halt the target after a reset.</span>
+<span class="tips">**Tip:** If you don't have permission to access the board on Linux, you can use [this udev rule](https://os.mbed.com/comments/perm/9920/). The option `-bh` tells pyOCD to use hardware breakpoints, and `-r` tells it to halt the target after a reset.</span>
 
 By default, the server listens for GDB commands on port 3333. It transfers those commands by USB to the interface chip. The interface chip, a Freescale Kinetis KL26, communicates those commands to the micro:bit's processor.
 
@@ -53,21 +51,21 @@ Stop the processor, and load your program:
 
 This should display a progress bar in pyocd-gdbserver.
 
-<span class="tips">**Tip:** There is an example init script at the end. By adding "-x /path/to/initscript" to the GDB command, you can connect to pyOCD and load a program automatically.
+<span class="tips">**Tip:** There is an example init script at the end. By adding `-x /path/to/initscript` to the GDB command, you can connect to pyOCD and load a program automatically.</span>
 
 The following command shows the location of the program counter:
 
     (gdb) x/x $pc
     0x0:	0x000007c0
 
-"x" is the command to inspect memory, "/i" is the format and "$pc" is the address. "help x" gives you more format options.
+`x` is the command to inspect memory, `/i` is the format and `$pc` is the address. `help x` gives you more format options.
 
 By pressing Enter, you can display the four following bytes:
 
     (gdb)
     0x4:	0x000006d1
 
-This is the entry point address of the firmware. The first four bytes are its stack location. You can step instructions with ''si''.
+This is the entry point address of the firmware. The first four bytes are its stack location. You can step instructions with `si`.
 
 You can now start executing the image. Except for a hardfault, it should keep rolling until you interrupt it, with Control+C.
 
@@ -108,16 +106,16 @@ By continuing the flow and stopping it a few times, you can see how the program 
     Program received signal SIGINT, Interrupt.
     0x0001f31e in ?? ()
 
-It seems stuck at 0x1f31e. To see the instruction, use the "i" formatter:
+It seems stuck at 0x1f31e. To see the instruction, use the `i` formatter:
 
     (gdb) x /i $pc
     => 0x1f31e:	b.n	0x1f31e
 
-You've reached a branch-to-self (possibly compiled from while(1)), so it's not going any further.
+You've reached a branch-to-self (possibly compiled from `while(1)`), so it's not going any further.
 
-It's either a deliberate infinite loop or a panic. An idle loop would have a wfi or wfe instruction in it, at least.
+It's either a deliberate infinite loop or a panic. An idle loop would have a `wfi` or `wfe` instruction in it, at least.
 
-Look at the instruction stream leading to this loop. Most instructions are encoded on two bytes, but some need four. You want to see about four instructions before PC, which means the start address will be roughly $pc - 8:
+Look at the instruction stream leading to this loop. Most instructions are encoded on two bytes, but some need four. You want to see about four instructions before PC, which means the start address will be roughly `$pc - 8`:
 
     (gdb) x /4i $pc - 8
        0x1f316:	mov	r1, sp                      ; Put sp into r1
@@ -128,17 +126,17 @@ Look at the instruction stream leading to this loop. Most instructions are encod
 
 Understanding this requires a bit of knowledge about Arm assembly and calling conventions. A compiler that follows the [Arm assembly procedure call standard][AAPCS] generated this code in C. In this document, Table 2 in section 5.1.1 defines how the compiler should use available registers when calling a function.
 
-Registers r0 to r3 pass arguments to a function, which may return something into r0. Using x, you can inspect the content of those arguments:
+Registers r0 to r3 pass arguments to a function, which may return something into r0. Using `x`, you can inspect the content of those arguments:
 
     (gdb) x/xw 0x1f330
     0x1f330:	0x20002880
 
-r0 contains a pointer to address 0x20002880, which is the application RAM. This is probably a Serial object because you expect this call to be "serial.printf(string)". You'll come back to this later. For the moment, see what is put in r1 before the call. It is a pointer to the stack. The called function (callee) is not supposed to modify the stack after the address ''$sp'' that it gets at the time of the call, so ''$sp'' is the same before and after the call:
+r0 contains a pointer to address 0x20002880, which is the application RAM. This is probably a Serial object because you expect this call to be `serial.printf(string)``. You'll come back to this later. For the moment, see what is put in r1 before the call. It is a pointer to the stack. The called function (callee) is not supposed to modify the stack after the address `$sp` that it gets at the time of the call, so `$sp` is the same before and after the call:
 
     (gdb) x/4x $sp
     0x20003fe8:	0x6c6c6548	0x6f77206f	0x0d646c72	0x0000000a
 
-This looks like ascii characters. We can confirm this with the /s formatter:
+This looks like ascii characters. We can confirm this with the `/s` formatter:
 
     (gdb) x/s $sp
     0x20003fe8:	"Hello world\r\n"
@@ -164,9 +162,9 @@ The next section shows how you can modify what is printed without rebuilding any
 
 You can now connect with a serial client at 9600 bauds and check that the program is printing something.
 
-The main function passes address 0x20003fe8 to printf in R1, which reads it and sends each character to the serial port until it reaches a \0. Knowing that, you can modify the printed string.
+The main function passes address 0x20003fe8 to printf in R1, which reads it and sends each character to the serial port until it reaches a `\0`. Knowing that, you can modify the printed string.
 
-First, put a breakpoint just before the printf call:
+First, put a breakpoint just before the `printf` call:
 
     (gdb) b *0x1f31a
     (gdb) mon reset
@@ -176,7 +174,7 @@ First, put a breakpoint just before the printf call:
     Breakpoint 4, 0x0001f31a in ?? ()
     (gdb)
 
-Then, change the string on the stack. Because the program ends right after this call with an infinite loop (and there is no other thread), you don't even have to worry about the following bytes on the stack. You only need to make sure that your string ends with a zero byte, and doesn't go over 0x20003fff. This means a maximum of 23 characters (plus the final \0).
+Then, change the string on the stack. Because the program ends right after this call with an infinite loop (and there is no other thread), you don't even have to worry about the following bytes on the stack. You only need to make sure that your string ends with a zero byte, and doesn't go over 0x20003fff. This means a maximum of 23 characters (plus the final `\0`).
 
     (gdb) set (char [24])*0x20003fe8 = "Hello microbit!\r\n"
     (gdb) c
@@ -186,7 +184,7 @@ The new string appears on your console.
 
 #### Investigating the actual bug
 
-After analyzing Arm Mbed's [serial API](https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling serial_instance.printf(string) is, in essence, like calling Serial::printf(serial_instance, string). You saw previously that the instance's address is r0 = 0x20002880.
+After analyzing Arm Mbed's [serial API](https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling `serial_instance.printf(string)` is, in essence, like calling `Serial::printf(serial_instance, string)`. You saw previously that the instance's address is `r0 = 0x20002880`.
 
 Because of the way the C++ compiler handles inheritance, the Serial class data looks like this in the memory:
 
@@ -202,7 +200,7 @@ Because of the way the C++ compiler handles inheritance, the Serial class data l
     }
 
 
-Indeed, when you inspect this hypothetical _baudrate variable, it makes sense:
+Indeed, when you inspect this hypothetical `_baudrate` variable, it makes sense:
 
     (gdb) x /d 0x20002880 - 4
     0x2000287c: 9600
@@ -253,7 +251,7 @@ For the second break, LR is 0x1ebf1, which is different from the first call. Thi
     (gdb) break *0x1f51e if $lr == 0x1ebf1
     Breakpoint 2 at 0x1f51e
 
-This line tells pyOCD to set a breakpoint at address 0x1f51e and stop only when LR is 0x1ebf1, which is the last call to serial_baud.
+This line tells pyOCD to set a breakpoint at address 0x1f51e and stop only when LR is 0x1ebf1, which is the last call to `serial_baud`.
 
 Then, attach a command to this breakpoint, to modify the value put into BAUDRATE:
 
@@ -322,7 +320,7 @@ This section describes some useful commands.
 
 Pure GDB scripts can be limited and cumbersome to write. If you want to automate, you can directly script pyOCD or GDB using Python.
 
-To initialize GDB with the "-x" switch:
+To initialize GDB with the `-x` switch:
 
     set history save on
     set history size unlimited
