@@ -24,7 +24,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [EventFlags](/docs/v5.6/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events.
 - [Event](/docs/v5.6/reference/event.html): The queue to store events, extract them and excute them later.
 
-##### Default Timeouts
+##### Default timeouts
 
 The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
 
