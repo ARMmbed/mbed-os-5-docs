@@ -16,7 +16,7 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_timeout.html)
 
-### Timeout Hello World!
+### Timeout hello, world
 
 Set up a Timeout to invert an LED after a given timeout:
 
