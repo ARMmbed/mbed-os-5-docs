@@ -75,7 +75,7 @@ And so on.
 
 ### API perspective
 
-The toolchains take in an optional argument, ``build_profile``, that maps from flag types to lists of flags. When provided, this argument must contain a dict mapping from flag types to a list of flags to provide to the compiler. If this argument is not provided, a build profile is used that contains no flags in each required flag type. The required flag types are:
+The toolchains take in an optional argument, ``build_profile``, that maps from flag types to lists of flags. When provided, this argument must contain a dict mapping from flag types to a list of flags to provide to the compiler. Without this argument, the toolchain uses a build profile that contains no flags in each required flag type. The required flag types are:
 
 | Key      | Description                           |
 |:---------|:--------------------------------------|
