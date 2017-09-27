@@ -19,7 +19,7 @@ Serial channels have a number of configurable parameters:
 
 The default settings for the Mbed microcontroller are described as _9600-8-N-1_, a  common notation for serial port settings.
 
-### Serial Hello World!
+### Serial hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/file/e540d7769e69/main.cpp)
 
