@@ -6,7 +6,7 @@ The Arm Mbed Online Compiler enables you to either write your code from scratch 
 
 The compiler is always available on [`https://os.mbed.com/compiler/`](https://os.mbed.com/compiler/).
 
-### Video summary
+#### Video summary
 
 <span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the Mbed Online Compiler</span></span>
 
