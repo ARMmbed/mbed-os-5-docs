@@ -13,6 +13,6 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_digital_in_out.html)
 
-### DigitalInOut Hello World!
+### DigitalInOut hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalInOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalInOut_HelloWorld/file/185e0d3e7212/main.cpp)
