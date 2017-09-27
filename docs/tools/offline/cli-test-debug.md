@@ -1,4 +1,4 @@
-## Test and debug
+## Test and Debug
 
 Use the `mbed test` command to compile and run tests.
 
