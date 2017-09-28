@@ -75,10 +75,15 @@ And so on.
 
 ### API perspective
 
-The toolchains take in an optional argument, ``build_profile``, that will contain a map from flag types to lists of flags. This looks exactly the same in Python as it does in the JSON format above.
+The toolchains take in an optional argument, ``build_profile``, that maps from flag types to lists of flags. When provided, this argument must contain a dict mapping from flag types to a list of flags to provide to the compiler. Without this argument, the toolchain uses a build profile that contains no flags in each required flag type. The required flag types are:
 
-The meaning of the flags, and which ones are required, is the same as the user perspective.
+| Key      | Description                           |
+|:---------|:--------------------------------------|
+| `c`      | Flags for the C Compiler              |
+| `cxx`    | Flags for the C++ Compiler            |
+| `common` | Flags for both the C and C++ Compilers|
+| `asm`    | Flags for the Assembler               |
+| `ld`     | Flags for the Linker                  |
 
 A developer using the API must parse the user-provided files themselves and extract the appropriate subdictionary from the file afterwards.
-
-A convenience function that does this for a developer is `tools.options.extract_profile`; it calls ``args_error`` when a toolchain profile JSON file does not provide flags for the selected toolchain.
+The tools provide a convenience function, `tools.options.extract_profile`, that parses a build profile from a `--profile` option given on the command line. This function calls `args_error` when a toolchain profile JSON file does not provide flags for the selected toolchain.
