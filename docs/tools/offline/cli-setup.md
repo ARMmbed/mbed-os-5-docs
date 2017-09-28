@@ -61,13 +61,13 @@ On Linux or Mac, you may need to run with `sudo`.
 
 There are some configuration that you must set before you can work with Mbed CLI.
 
-#### Mandatory: Setting PATH variables
+#### Mandatory: setting PATH variables
 
 Mbed CLI requires adding the following to the system `PATH`:
 
 * The paths for the Git and Mercurial executables (`git` and `hg`).
 
-#### Mandatory: Toolchain selection
+#### Mandatory: toolchain selection
 
 You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. Mbed CLI supports the following toolchains:
 
@@ -113,7 +113,7 @@ Mbed CLI also uses `mbed_settings.py` to configure toolchains. This file must be
 
 <span class="notes">**Note:** Because `mbed_settings.py` contains local settings (possibly relevant only to a single OS on a single machine), you should not check it into version control.</span>
 
-##### Optional: Configuring multiple toolchains
+##### Optional: configuring multiple toolchains
 
 Mbed CLI has a few rules that allow you to seamlessly switch between different versions of the same toolchain when switching between different projects. The settings described in prior sections all can configure a different version of the same toolchain. When multiple settings are available for a single toolchain, Mbed CLI picks the most specific setting. The settings, from most specific to least specific are:
 
