@@ -10,4 +10,4 @@ An important thing to know about pull requests is that they can only exist betwe
 
 #### Tutorial
 
-For more information about using pull requests on the Online Compiler, please see [our tutorial](/docs/v5.6/tutorials/using-the-arm-mbed-online-compiler.html#pr-tutorial), which covers creating and editing a pull request, viewing a pull request and accepting or rejecting a pull request.
+For more information about using pull requests on the Online Compiler, please see [our tutorial](/docs/v5.6/tutorials/pr-tutorial.html), which covers creating and editing a pull request, viewing a pull request and accepting or rejecting a pull request.
