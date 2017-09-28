@@ -34,8 +34,6 @@ Add the target description to `mbed-os\targets\targets.json`:
 }
 ```
 
-See the [Mbed Target Documentation](/docs/v5.6/reference/arm-mbed-os-porting-guide.html#adding-and-configuring-targets) for more details on what this definition means.
-
 #### HAL porting
 
 There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the API declared in the API header.
