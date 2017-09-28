@@ -16,7 +16,7 @@ Option | Value | Description |
 -------|-------|-------------|
 `OS_STACK_SIZE` | 4K or 2K | For a normal target, the thread stack size is set to 4K; for constrained targets, it's 2K. |
 `OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack set to 768B that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
-`OS_IDLE_THREAD_STACK_SIZE` | 256B | Required to handle mbed OS wrappers |
+`OS_IDLE_THREAD_STACK_SIZE` | 512B | Required to handle mbed OS wrappers |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
 `OS_MUTEX_OBJ_MEM` | 1 or 0 | For ARMC, use 1; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
 `OS_MUTEX_NUM` | 6 or 0 | For ARMC, use 6; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
@@ -33,13 +33,13 @@ CMSIS5 | mbed OS | Explanation |
 `CMSIS_5/CMSIS/Core/Include/tz_context.h` | `mbed-os/cmsis/` | TrustZone code |
 `CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h` | `mbed-os/cmsis/` | Toolchain generic code |
 `CMSIS_5/CMSIS/Core/Include/cmsis_{armcc,armclang,gcc}.h` | `mbed-os/cmsis/TOOLCHAIN_{ARM,GCC}/` | Toolchain specific code |
-`CMSIS_5/CMSIS/RTOS2/Include/cmsis_os2.h` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/` | RTX main header |
-`CMSIS_5/CMSIS/RTOS2/RTX/Config/` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/` | RTX configuration files |
-`CMSIS_5/CMSIS/RTOS2/RTX/Include1/` | `mbed-os/rtos/rtx/` | RTOS1 compatibility layer |
-`CMSIS_5/CMSIS/RTOS2/RTX/Include/` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/` | RTX definitions |
-`CMSIS_5/CMSIS/RTOS2/RTX/Source/rtx_*` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/` | RTX sources |
+`CMSIS_5/CMSIS/RTOS2/Include/cmsis_os2.h` | `mbed-os/rtos/TARGET_CORTEX/rtx5/` | RTX main header |
+`CMSIS_5/CMSIS/RTOS2/RTX/Config/` | `mbed-os/rtos/TARGET_CORTEX/rtx5` | RTX configuration files |
+`CMSIS_5/CMSIS/RTOS2/RTX/Include1/` | `mbed-os/rtos/TARGET_CORTEX/rtx4` | RTOS1 compatibility layer |
+`CMSIS_5/CMSIS/RTOS2/RTX/Include/` | `mbed-os/rtos/TARGET_CORTEX/rtx5` | RTX definitions |
+`CMSIS_5/CMSIS/RTOS2/RTX/Source/rtx_*` | `mbed-os/rtos/TARGET_CORTEX/rtx5` | RTX sources |
 `CMSIS_5/CMSIS/RTOS2/RTX/Source/svc_user.c` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/` | RTX SVC user table |
-`CMSIS_5/CMSIS/RTOS2/RTX/Source/{ARM,GCC,IAR}/` | `mbed-os/rtos/rtx2/TARGET_CORTEX_M/TARGET_{M0,M0P,M3,RTOS_M4_M7}/TOOLCHAIN_{ARM,GCC,IAR}` | Toolchain and core specific exception handlers |
+`CMSIS_5/CMSIS/RTOS2/RTX/Source/{ARM,GCC,IAR}/` | `mbed-os/rtos/TARGET_CORTEX/rtx5/TARGET_{M0,M0P,M3,RTOS_M4_M7,M23,M33}/TOOLCHAIN_{ARM,GCC,IAR}` | Toolchain and core specific exception handlers |
 
 ## Modification
 
@@ -69,6 +69,8 @@ Filename | Description |
 `irq_cm4.s` | For all toolchains: added case for Cortex M4 cores without VFP |
 `svc_user.c` | Removed as its template file and should not be in our code base |
 `rt_OsEventObserver.{c,h}` | Added an interface for uVisor to be notified about certain events from privileged code |
+`irq_armv8mbl.S` | IAR toolchain: added file for Cortex M23 core |
+`irq_armv8mml.S` | IAR toolchain: added file for Cortex M33 core |
 
 ### Other
 
