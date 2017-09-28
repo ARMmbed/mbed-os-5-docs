@@ -5,7 +5,7 @@ The role of the platform modules is to provide a consistent user experience on t
 - [Wait](/docs/v5.6/reference/wait.html): An API that provides simple wait capabilities.
 - [Callback](/docs/v5.6/reference/callback.html): An API that executes the user’s code in its own context.
 - [DeepSleepLock](/docs/v5.6/reference/deepsleeplock.html):The sleep function and sleep manager for Mbed OS.
-- [CriticalSectionLock](/docs/v5.6/reference/critical-section-lock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
+- [CriticalSectionLock](/docs/v5.6/reference/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
 - [Time](/docs/v5.6/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
 - [NonCopyable](/docs/v5.6/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
 
