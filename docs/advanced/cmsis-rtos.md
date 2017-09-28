@@ -70,6 +70,7 @@ Filename | Description |
 `svc_user.c` | Removed as its template file and should not be in our code base |
 `rt_OsEventObserver.{c,h}` | Added an interface for uVisor to be notified about certain events from privileged code |
 `irq_armv8mbl.S` | IAR toolchain: added file for Cortex M23 core |
+`irq_armv8mml.S` | IAR toolchain: added file for Cortex M33 core |
 
 ### Other
 
