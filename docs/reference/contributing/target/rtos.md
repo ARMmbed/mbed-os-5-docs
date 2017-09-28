@@ -69,5 +69,6 @@ Filename | Description |
 `irq_cm4.s` | For all toolchains: added case for Cortex M4 cores without VFP |
 `svc_user.c` | Removed as its template file and should not be in our code base |
 `rt_OsEventObserver.{c,h}` | Added an interface for uVisor to be notified about certain events from privileged code |
+`irq_armv8mbl.S` | IAR toolchain: added file for Cortex M23 core |
 
 <span class="notes">**Note:** For all toolchains, Mbed OS uses `irq_cm0.s` for both M0 and M0P cores.</span>
