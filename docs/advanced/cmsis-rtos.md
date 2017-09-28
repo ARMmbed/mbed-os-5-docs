@@ -16,7 +16,7 @@ Option | Value | Description |
 -------|-------|-------------|
 `OS_STACK_SIZE` | 4K or 2K | For a normal target, the thread stack size is set to 4K; for constrained targets, it's 2K. |
 `OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack set to 768B that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
-`OS_IDLE_THREAD_STACK_SIZE` | 256B | Required to handle mbed OS wrappers |
+`OS_IDLE_THREAD_STACK_SIZE` | 512B | Required to handle mbed OS wrappers |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
 `OS_MUTEX_OBJ_MEM` | 1 or 0 | For ARMC, use 1; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
 `OS_MUTEX_NUM` | 6 or 0 | For ARMC, use 6; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
