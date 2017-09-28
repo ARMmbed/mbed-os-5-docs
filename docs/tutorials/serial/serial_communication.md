@@ -12,7 +12,7 @@ This allows you to:
 
 * Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
 
-### Hello World!
+### Hello, world
 
 This program prints a "Hello World" message that you can view on a [terminal application](#terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
