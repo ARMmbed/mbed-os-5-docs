@@ -2,7 +2,7 @@
 
 ### A
 
-**API** - [Application programming interface](/docs/v5.6/reference/api.html).
+**API** - [Application programming interface](/docs/v5.6/reference/api-overview.html).
 
 **Application** - An executable module built out of libraries that acts as a final product.
 
@@ -10,7 +10,7 @@
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](/docs/v5.6/introduction/how-mbed-works.html#architecture-diagram). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.6/tools/online.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.6/tools/arm-mbed-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
@@ -44,7 +44,7 @@
 
 **Callback** - Any [executable code](/docs/v5.6/reference/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
-**CAN** - [Controller-area network](/docs/v5.6/reference/api-references.html#can).
+**CAN** - [Controller-area network](/docs/v5.6/reference/can.html).
 
 **Class** - An extensible program-code-template for creating objects, providing initial values for state and implementations of behavior.
 
@@ -80,7 +80,7 @@
 
 ### I
 
-**I2C** - [Interintegrated Circuit](/docs/v5.6/reference/api-references.html#i2c) (short-distance, intraboard communication).
+**I2C** - [Interintegrated Circuit](/docs/v5.6/reference/i2c.html) (short-distance, intraboard communication).
 
 **IDE** - Integrated Development Environment.
 
@@ -122,9 +122,9 @@
 
 ### S
 
-**Serial** - A [protocol](/docs/v5.6/reference/api-references.html#serial) used in data transmission for the transfer of individual bits of information.
+**Serial** - A [protocol](/docs/v5.6/reference/serial.html) used in data transmission for the transfer of individual bits of information.
 
-**SPI** - [Serial Peripheral Interface](/docs/v5.6/reference/api-references.html#spi).
+**SPI** - [Serial Peripheral Interface](/docs/v5.6/reference/spi.html).
 
 **Static Memory** - The allocation of memory at compile time, before the program is executed.
 
@@ -136,7 +136,7 @@
 
 **Target** - See [`board`](/docs/v5.6/introduction/glossary.html#board).
 
-**Terminal Application** - [Applications](/docs/v5.6/tutorials/serial-communication.html#terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
+**Terminal Application** - [Applications](/docs/v5.6/tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 
 **TLS** - Transport Layer Security.
 
