@@ -42,7 +42,7 @@
 
 ### C
 
-**Callback** - Any [executable code](/docs/v5.6/reference/api-references.html#callback) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
+**Callback** - Any [executable code](/docs/v5.6/reference/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
 **CAN** - [Controller-area network](/docs/v5.6/reference/api-references.html#can).
 
