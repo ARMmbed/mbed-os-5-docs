@@ -57,6 +57,55 @@ $ python setup.py install
 
 On Linux or Mac, you may need to run with `sudo`.
 
+#### Mbed CLI for Windows installer
+
+Mbed CLI for Windows installs [Mbed CLI](https://github.com/ARMmbed/mbed-cli) with all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
+
+Mbed CLI for Windows installs the following components:
+
+* **Python** - Mbed CLI is a Python script, so you need Python to use it. Installer installs [version 2.7.13 of Python](https://www.python.org/downloads/release/python-2713/). It is not compatible with Python 3.
+* **Mbed CLI version 1.2.0** - [Mbed CLI](https://github.com/ARMmbed/mbed-cli).
+* **Git and Mercurial** - Mbed CLI supports both Git and Mercurial repositories. Both Git and Mercurial are being installed. `git` and `hg` are added to system's PATH.
+    * [Git](https://git-scm.com/) - version 2.12.2.
+    * [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
+* **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
+* **Mbed Windows serial port driver** - [serial port driver](/docs/v5.6/tutorials/windows-serial-driver.html).
+
+##### Install Mbed CLI for Windows installer
+
+1. Download the latest executable from [`mbed-windows-installer v0.42`](https://mbed-media.mbed.com/filer_public/c8/79/c8792672-7b80-4c48-ac51-d08691c1515a/mbed_installer_v042.exe).
+2. Run `mbed_installer_v042.exe`.
+3. Set the installation path.
+4. Choose the installation type:
+    * Default: Installs all components.
+    * Advanced: Allows you to select components.
+5. Installer installs all selected components. Close it after it finishes.
+
+###### Silent install
+
+You can execute installer silently without user interaction. Add `/S` flag in Windows command prompt during installation. 
+
+```
+$ mbed_installer_{version}.exe /S
+```
+
+##### Usage
+
+1. Open Windows command prompt.
+2. Run: 
+
+```
+$ mbed
+```
+
+3. To see help:
+
+```
+$ mbed --help
+```
+
+4. Check [Mbed CLI](https://github.com/ARMmbed/mbed-cli) for more examples.
+
 ### Configuring Mbed CLI
 
 There are some configuration that you must set before you can work with Mbed CLI.
