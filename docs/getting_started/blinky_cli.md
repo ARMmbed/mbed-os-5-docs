@@ -71,6 +71,18 @@ For example, for the board K64F and the ARM Compiler 5:
 mbed compile -m K64F -t ARM
 ```
 
+If you don't know the name of your target board, there are several ways to tell.
+
+* Invoke `mbed detect`, and the mbed CLI tool displays an output similar to below, where 'K64F' is the name of your target platform and COM3 is the name of the serial port that the platform connects to:
+
+```
+[mbed] Detected "K64F" connected to "D:" and using com port "COM3"
+```
+
+* Check the board information page on the list of [mbed Enabled boards](https://developer.mbed.org/platforms/). The right-hand side of each information page lists the name of the target.
+
+* If you only have one mbed Enabled board connected, mbed CLI can automatically detect the target by specifing `-m detect`.
+
 Your PC may take a few minutes to compile your code. At the end you should get the following result:
 
 ```
