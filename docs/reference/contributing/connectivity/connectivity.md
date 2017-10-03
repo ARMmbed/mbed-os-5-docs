@@ -10,10 +10,10 @@ A new device must implement a [NetworkInterface](https://github.com/ARMmbed/mbed
 
 The **DeviceInterface** should also inherit one of the following (unless it is an abstract device):
 
-* [EthInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/EthInterface.h)
-* [WiFiInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/WiFiInterface.h)
-* [CellularInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/CellularInterface.h)
-* [MeshInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/MeshInterface.h)
+* [EthInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/EthInterface.h).
+* [WiFiInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/WiFiInterface.h).
+* [CellularInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/CellularInterface.h).
+* [MeshInterface](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/MeshInterface.h).
 
 The **NetworkInterface** implementation provides the following methods:
 
