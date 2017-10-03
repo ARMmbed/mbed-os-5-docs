@@ -4,7 +4,7 @@ There are extensive instructions on debugging Arm Mbed OS 5 applications with [u
 
 ### Exporting your project
 
-Although you can use our tools to generate project files specific to many IDEs, you can also use our tools to generate Makefiles. Almost any C/C++ IDE can use Makefiles to build your project. To generate a Makefile, you can use either the Arm Mbed Online Comiler or Arm Mbed CLI.
+Although you can use our tools to generate project files specific to many IDEs, you can also use our tools to generate Makefiles. Almost any C/C++ IDE can use Makefiles to build your project. To generate a Makefile, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
 
 #### Online Compiler
 
