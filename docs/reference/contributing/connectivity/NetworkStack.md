@@ -4,11 +4,11 @@ The Network-Socket-API (NSAPI) provides a TCP/UDP API on top of any IP based net
 
 #### Class hierarchy
 
-All network-socket API implementations inherit from two classes: a [NetworkStack](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classNetworkInterface.html).
+All network-socket API implementations inherit from two classes: a [NetworkStack](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_network_interface.html).
 
 ##### NetworkInterface Class
 
-The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classCellularInterface.html), [EthernetInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classEthernetInterface.html), [MeshInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classMeshInterface.html), and [WiFiInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classWiFiInterface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
+The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_ethernet_interface.html), [MeshInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_mesh_interface.html), and [WiFiInterface](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
 ![Class](/img/esp-class.png)
 
