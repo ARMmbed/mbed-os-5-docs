@@ -210,4 +210,4 @@ Once you have your target and driver port ready, you can verify your implementat
  	mbed test -n YOUR_TEST_SUITE_NAME
  	```
 
-For more information on the  `mbed-greentea` testing suite, please visit [its documentation](/docs/v5.6/tools/testing-1.html#greentea).
+For more information on the  `mbed-greentea` testing suite, please visit [its documentation](/docs/v5.6/tools/greentea.html).
