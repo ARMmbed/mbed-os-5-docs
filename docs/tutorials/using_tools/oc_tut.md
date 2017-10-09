@@ -121,13 +121,13 @@ Unless you are the author of the imported repository or have developer access, y
 
 1. Your repository, with all its changes, is published to your profile on the `mbed.org` website.
 
-The forking process is identical to the [code publishing](/docs/v5.6/tutorials/using-the-arm-mbed-online-compiler.html#publishing-code) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
+The forking process is identical to the [code publishing](/docs/v5.6/tutorials/publishing-code.html) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fork_indication.png)<span>Identifying a forked repository and its ancestor</span></span>
 
 <span class="notes">**Note:** When you fork a repository, the local repository in your workspace is linked to the forked remote repository - the URL changes to the forked repository's URL. You can change the URL by clicking the pencil icon next to the URL in the Revisions panel.</span>
 
-**Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](/docs/v5.6/tutorials/using-the-arm-mbed-online-compiler.html#pr-tutorial) page.**
+**Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](/docs/v5.6/tutorials/pr-tutorial.html) page.**
 
 ### Updating from a fork
 
