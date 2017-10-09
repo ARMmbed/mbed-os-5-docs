@@ -78,7 +78,7 @@ IPv6 multicast messages are supported. link-local and realm-local (mesh-local) m
 
 #### What are the configurable parameters in the Thread devices? What do they mean and where are they documented?
 
-- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [Mbed Mesh API](/docs/v5.6/reference/api-references.html#mesh).
+- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [Mbed Mesh API](/docs/v5.6/reference/mesh.html).
 More information can be found in the Thread specification.
 - The Thread device configuration includes PSKd and EUI64 (usually the MAC address of the radio chip), that are used to commission the device.
 
