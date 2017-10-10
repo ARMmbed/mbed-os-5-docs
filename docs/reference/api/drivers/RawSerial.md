@@ -6,8 +6,8 @@ Serial channels have the following configurable parameters:
 
   - _Baud Rate_ - Standard baud rates range from a few hundred bits per second to megabits per second. The default setting for a serial connection on the Mbed microcontroller is 9600 baud.
   - _Data length_ - Transferred data can be either 7 or 8 bits long. The default setting for a serial connection on the Mbed microcontroller is 8 bits.
-  - _Parity_ - You can add an optional parity bit. The parity bit will be automatically set to make the number of 1s in the data either odd or even. Parity settings are *Odd*, *Even* or *None*. The default setting for a serial connection on the Arm Mbed microcontroller is None.
-  - _Stop Bits_ - After data and parity bits have been transmitted, one or two stop bits are inserted to "frame" the data. The default setting for a serial connection on the Mbed microcontroller is one stop bit.
+  - _Parity_ - You can add an optional parity bit. The object automatically sets the parity bit to make the number of 1s in the data either odd or even. Parity settings are *Odd*, *Even* or *None*. The default setting for a serial connection on the Arm Mbed microcontroller is None.
+  - _Stop Bits_ - After the transmission of data and parity bits, the RawSerial object inserts one or two stop bits to "frame" the data. The default setting for a serial connection on the Mbed microcontroller is one stop bit.
 
 _9600-8-N-1_, a  common notation for serial port settings, describes the default settings for the Mbed microcontroller.
 
