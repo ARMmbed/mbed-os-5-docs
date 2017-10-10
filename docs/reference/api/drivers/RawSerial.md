@@ -1,6 +1,6 @@
 ## RawSerial
 
-The RawSerial interface provides UART functionality without the use of streams like the Serial class. This makes it suitable for use in interrupt handlers with the RTOS.
+The RawSerial class provides UART functionality without the use of streams like the Serial class. This makes it suitable for use in interrupt handlers with the RTOS.
 
 Serial channels have the following configurable parameters:
 
