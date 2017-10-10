@@ -1,0 +1,8 @@
+script:
+# Assert that we have not added any duplicate "id"s. The bash snippet below
+# uses grep to extract any headers with id elements from the text, removing
+# everything that is not the contents of the id feild, and then sorting.
+# `uniq` then prints out all duplicated entries, tee prints them to both the
+# console and a file, and finaly we assert that the file is empty
+  - |
+    grep -r -o -h -e '<h[2-6] id="[^"]*"' | sed -e 's/<h[2-6] id="\([^"]*\)"/\1/' | sort | uniq -d | tee duplicates.txt && [ ! -s duplicates.txt ]
