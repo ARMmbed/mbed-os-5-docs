@@ -1,6 +1,6 @@
 ## RawSerial
 
-The RawSerial class provides UART functionality without the use of [Stream's](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Stream.md)  print and scan functions as in the Serial class. Instead of using the standard library print and scan functions they are re-implemented to work using each target's underlying serial communication functions. See the porting guide for [target serial support](https://os.mbed.com/docs/v5.6/reference/contributing-target.html#serial). This makes it suitable for use in interrupt handlers with the RTOS.
+The RawSerial class provides UART functionality without the use of [Stream's](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Stream.md)  print and scan functions as is done in the Serial class. RawSerial does not retarget the standard library print and scan functions, but re-implements them to work using each target's underlying serial communication functions. See the porting guide for [target serial support](https://os.mbed.com/docs/v5.6/reference/contributing-target.html#serial). This makes it suitable for use in interrupt handlers with the RTOS.
 
 Serial channels have the following configurable parameters:
 
