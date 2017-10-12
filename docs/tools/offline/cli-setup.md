@@ -3,8 +3,7 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips">If you're working on Windows, we recomment to use the [Windows installer for Mbed CLI](LINK TBC). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](LINK TBC)</span>
-
+<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](LINK TBC). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](LINK TBC)</span>
 
 ### Requirements
 
@@ -36,7 +35,7 @@ You may want to install Mbed CLI on a virtual environment if your main envrionme
 
 ### Windows installer for Mbed CLI
 
-[Mbed CLI](https://github.com/ARMmbed/mbed-cli) is also bundled with a Windows installer that includes all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
+[Mbed CLI](https://github.com/ARMmbed/mbed-cli) is also bundled with a Windows installer that includes all requirements for Windows 7 and newer (both the 32- and 64-bit versions).
 
 The Windows installer for Mbed CLI for includes the following components:
 
@@ -85,7 +84,7 @@ $ mbed --help
 
 ### Installing Mbed CLI standalone stable version
 
-You can get the latest stable version of Mbed CLI through pip by running:
+Find the latest stable version of Mbed CLI through pip by running:
 
 ```
 $ pip install mbed-cli
@@ -95,20 +94,19 @@ On Linux or Mac, you may need to run with `sudo`.
 
 #### Optional: installing the development version
 
-If you are interested in working with the development version (and perhaps contributing to Mbed CLI), clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
+To work with the development version and contribute to Mbed CLI, clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
 
 ```
 $ git clone https://github.com/ARMmbed/mbed-cli
 ```
 
-Once cloned, you can install Mbed CLI as a Python package:
+Once you have cloned the repository, you can install Mbed CLI as a Python package:
 
 ```
 $ python setup.py install
 ```
 
 On Linux or Mac, you may need to run with `sudo`.
-
 
 ### Configuring Mbed CLI
 
