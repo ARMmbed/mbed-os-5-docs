@@ -48,14 +48,15 @@ There are two methods of importing the code into the online compiler: directly f
 		<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/main_cpp.png)<span>Naming the new file</span></span>
 
 1. Import the Arm Mbed OS library, so you can build your program with the Mbed OS codebase:
-	1. Click **Import**. The Import Wizard opens.
-	1. Go to the Libraries tab and search for "mbed", or perform an empty search to show all libraries:
+	1. Right click on the program and hover over **Import Library...**. Then, click **From URL...**
 
-		<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_mbed.png)<span>Searching for Mbed OS</span></span>
+    <span class="images">![](docs/images/import_from_url.png)<span>Import from URL</span></span>
 
-	1. Double click on `mbed` to import it. The library is added to your program.
+	1. The Import Wizard opens. In the **Source URL:** field, enter : `https://github.com/armmbed/mbed-os`
 
-		<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/with_mbed.png)<span>Mbed OS is now in the workspace</span></span>
+    <span class="images">![](docs/images/import_wizard.png)<span>Import Mbed OS from GitHub</span></span>
+
+    1. Select **Import**
 
 ## Getting your program on your board
 
