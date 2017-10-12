@@ -29,7 +29,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 1. From the **New** menu, select **New Program**:
 
-	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new.png)<span>The applications list</span>Triggering a new program</span>
+	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new.png)<span>Triggering a new program</span>
 
 1. The **Create new program** pop-up opens.
 	1. Select your platform (board).
@@ -48,15 +48,15 @@ There are two methods of importing the code into the online compiler: directly f
 		<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/main_cpp.png)<span>Naming the new file</span></span>
 
 1. Import the Arm Mbed OS library, so you can build your program with the Mbed OS codebase:
-	1. Right click on the program and hover over **Import Library...**. Then, click **From URL...**
+	1. Right click on the program, and hover over **Import Library...**. Then, click **From URL...**
 
         <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_from_url.PNG)<span>Import from URL</span></span>
 
-	1. The Import Wizard opens. In the **Source URL:** field, enter : `https://github.com/armmbed/mbed-os`
+	1. The Import Wizard opens. In the **Source URL:** field, enter `https://github.com/armmbed/mbed-os`.
 
         <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_wizard.PNG)<span>Import Mbed OS from GitHub</span></span>
 
-    1. Select **Import**
+    1. Select **Import**.
 
 ## Getting your program on your board
 
