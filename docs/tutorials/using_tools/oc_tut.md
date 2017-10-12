@@ -50,11 +50,11 @@ There are two methods of importing the code into the online compiler: directly f
 1. Import the Arm Mbed OS library, so you can build your program with the Mbed OS codebase:
 	1. Right click on the program and hover over **Import Library...**. Then, click **From URL...**
 
-    <span class="images">![](docs/images/import_from_url.png)<span>Import from URL</span></span>
+        <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_from_url.PNG)<span>Import from URL</span></span>
 
 	1. The Import Wizard opens. In the **Source URL:** field, enter : `https://github.com/armmbed/mbed-os`
 
-    <span class="images">![](docs/images/import_wizard.png)<span>Import Mbed OS from GitHub</span></span>
+        <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_wizard.PNG)<span>Import Mbed OS from GitHub</span></span>
 
     1. Select **Import**
 
