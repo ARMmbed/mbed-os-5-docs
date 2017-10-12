@@ -3,6 +3,9 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
+<span class="tips">If you're working on Windows, we recomment to use the [Windows installer for Mbed CLI](LINK TBC). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](LINK TBC)</span>
+
+
 ### Requirements
 
 * **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
@@ -31,37 +34,11 @@ Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://py
 
 You may want to install Mbed CLI on a virtual environment if your main envrionment has an unsupported Python version.
 
-### Installing the stable version
+### Windows installer for Mbed CLI
 
-You can get the latest stable version of Mbed CLI through pip by running:
+[Mbed CLI](https://github.com/ARMmbed/mbed-cli) is also bundled with a Windows installer that includes all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
 
-```
-$ pip install mbed-cli
-```
-
-On Linux or Mac, you may need to run with `sudo`.
-
-#### Optional: installing the development version
-
-If you are interested in working with the development version (and perhaps contributing to Mbed CLI), clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
-
-```
-$ git clone https://github.com/ARMmbed/mbed-cli
-```
-
-Once cloned, you can install Mbed CLI as a Python package:
-
-```
-$ python setup.py install
-```
-
-On Linux or Mac, you may need to run with `sudo`.
-
-#### Mbed CLI for Windows installer
-
-Mbed CLI for Windows installs [Mbed CLI](https://github.com/ARMmbed/mbed-cli) with all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
-
-Mbed CLI for Windows installs the following components:
+The Windows installer for Mbed CLI for includes the following components:
 
 * **Python** - Mbed CLI is a Python script, so you need Python to use it. Installer installs [version 2.7.13 of Python](https://www.python.org/downloads/release/python-2713/). It is not compatible with Python 3.
 * **Mbed CLI version 1.2.0** - [Mbed CLI](https://github.com/ARMmbed/mbed-cli).
@@ -105,6 +82,33 @@ $ mbed --help
 ```
 
 4. Check [Mbed CLI](https://github.com/ARMmbed/mbed-cli) for more examples.
+
+### Installing Mbed CLI standalone stable version
+
+You can get the latest stable version of Mbed CLI through pip by running:
+
+```
+$ pip install mbed-cli
+```
+
+On Linux or Mac, you may need to run with `sudo`.
+
+#### Optional: installing the development version
+
+If you are interested in working with the development version (and perhaps contributing to Mbed CLI), clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
+
+```
+$ git clone https://github.com/ARMmbed/mbed-cli
+```
+
+Once cloned, you can install Mbed CLI as a Python package:
+
+```
+$ python setup.py install
+```
+
+On Linux or Mac, you may need to run with `sudo`.
+
 
 ### Configuring Mbed CLI
 
