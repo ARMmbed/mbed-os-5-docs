@@ -1,6 +1,6 @@
 ## MBRBlockDevice
 
-The MBRBlockDevice class provides a way to manage a Master Boot Record (MBR) on a storage device allowing for partitioning. Without the MBR a storage device can still be formatted with a filesystem, but including the MBR will allow for future partition modifications.
+The MBRBlockDevice class provides a way to manage a Master Boot Record (MBR) on a storage device, which allows you to partition the device. Without the MBR, you can still format a storage device with a file system, but including the MBR will allow for future partition modifications.
 
 ### MBRBlockDevice class reference
 
@@ -8,7 +8,7 @@ The MBRBlockDevice class provides a way to manage a Master Boot Record (MBR) on 
 
 ### MBRBlockDevice example
 
-Partition a heap backed block device into two partitions. The HeapBlockDevice used in this example can be found [here](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_heap_block_device.html).
+Partition a heap backed block device into two partitions. You can find the HeapBlockDevice used in this example [here](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_heap_block_device.html).
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/file/daa62d7aa9f9/main.cpp)
 
