@@ -4,7 +4,7 @@
 
 ### Gap class reference
 
-[Embed class reference here. Ask your editor for help.]
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_gap.html)
 
 ### Gap example
 
