@@ -18,3 +18,7 @@ HeapBlockDevices have some notable configurable parameters:
 Create a HeapBlockDevice, program it, read the block back and clean up.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/HeapBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/HeapBlockDevice_ex_1/file/5991e7053465/main.cpp)
+
+HeapBlockDevice used with MBRBlockDevice to showcase paritioning.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/file/daa62d7aa9f9/main.cpp)
