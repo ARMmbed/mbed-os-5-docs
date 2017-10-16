@@ -2,12 +2,17 @@
 
 The HeapBlockDevice class provides a way to simulate block devices for software development or testing. The created blocks are nonvolatile; they do not persist across power cycles.
 
-HeapBlockDevices have some notable configurable parameters:
-
+HeapBlockDevices have the following configurable parameters in either one of two constructors:
   - _size_ - Size of the block device in bytes.
   - _read_size_ - Minimum read size required in bytes.
   - _program_size_ - Minimum program size required in bytes.
   - _erase_size_ - Minimum erase size required in bytes.
+  
+Optionally you can create a HeapBlockDevice that will set the read, program, and erase block size to the same provided block size.
+  - _size_ - Size of the block device in bytes.
+  - _block_ - Block size in bytes. Default value is 512 bytes.
+
+You can view more information about the configurable settings and functions in the class reference.
 
 ### HeapBlockDevice class reference
 
