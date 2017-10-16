@@ -351,13 +351,6 @@
         "slug": "releases",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_6/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/known_issues.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_4/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_3/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_2/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_1/release_note.md"}
         ],
         "tags": [
             "releases"
