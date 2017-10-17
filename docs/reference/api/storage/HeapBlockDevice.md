@@ -11,7 +11,7 @@ HeapBlockDevices have the following configurable parameters in either one of two
   - _program_size_ - Minimum program size required in bytes.
   - _erase_size_ - Minimum erase size required in bytes.
   
-Optionally you can create a HeapBlockDevice that will set the read, program and erase block size to the same provided block size.
+Optionally you can create a HeapBlockDevice that will set the read, program and erase sizes to the same provided block size rather than requiring each parameter be repeated if all of the values are the same.
 
 ### Shortened constructor
 
