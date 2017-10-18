@@ -5,3 +5,9 @@ Use the SocketAddress class to represent the IP address and port pair of a uniqu
 ### SocketAddress class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_socket_address.html)
+
+### SocketAddress Example
+
+Here is an example to read current UTC time in which SocketAddress class is used to get the server ipaddress and port.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/)](https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/main.cpp)
