@@ -5,3 +5,14 @@ The TCPSocket class provides the ability to send a stream of data over TCP. TCPS
 ### TCPSocket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_t_c_p_socket.html)
+
+
+### TCPSocket Example
+
+Here is a wifi example of HTTP transaction over TCPSocket using ESP8266 module.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/file/6a4e57edc2b2/main.cpp)
+
+Here is an Ethernet example of HTTP transaction over TCPSocket.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
