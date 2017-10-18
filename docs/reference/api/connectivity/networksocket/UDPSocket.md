@@ -5,3 +5,9 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 ### UDPSocket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_u_d_p_socket.html)
+
+### UDPSocket Example
+
+Here is an UDP example to read current UTC time by sending request to NIST Internet Time Service. 
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/)](https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/main.cpp)
