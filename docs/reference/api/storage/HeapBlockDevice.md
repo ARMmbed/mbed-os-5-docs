@@ -16,7 +16,7 @@ Optionally you can create a HeapBlockDevice that will set the read, program and 
 ### Shortened constructor
 
   - _size_ - Size of the block device in bytes.
-  - _block_ - Block size in bytes. Default value is 512 bytes.
+  - _block_ - Block size in bytes. Used to configure the minimum read, program, and erase sizes to this value. Default value is 512 bytes.
 
 You can view more information about the configurable settings and functions in the class reference.
 
