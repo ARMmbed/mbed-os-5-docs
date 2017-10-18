@@ -8,6 +8,6 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 
 ### UDPSocket Example
 
-Here is an UDP example to read current UTC time by sending request to NIST Internet Time Service. 
+Here is a UDP example to read the current UTC time by sending a request to the NIST Internet Time Service. 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/)](https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/main.cpp)
