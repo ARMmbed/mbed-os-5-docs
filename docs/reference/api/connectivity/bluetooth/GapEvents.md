@@ -10,7 +10,7 @@
 
 ##### Defined behavior
 
-[Add infomration about defined behavior. A bulleted list is fine.]
+[Add information about defined behavior. A bulleted list is fine.]
 
 ##### Undefined behavior
 
