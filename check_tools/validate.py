@@ -32,7 +32,6 @@ def main():
     words_file = open(options.wordsfile)
     alllines = words_file.read()
     words = alllines[:-1].replace("\n","|")
-    print words
     
     if os.path.isfile(options.inputfile):
         validate_file(options.inputfile)
@@ -40,7 +39,9 @@ def main():
     if(os.path.isdir(options.inputfile)):
         for root, dirs, files in os.walk(options.inputfile, topdown=False):
             for name in files:
-                validate_file(os.path.join(root, name))  
+                file_to_validate=os.path.join(root, name)
+                if(file_to_validate.endswith(".md")):
+                    validate_file(os.path.join(root, name))  
             #   print(os.path.join(root, name))
             #for name in dirs:
             #   print(os.path.join(root, name)) 
