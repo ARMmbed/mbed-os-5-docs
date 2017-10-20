@@ -2,9 +2,9 @@
 
 ATCmdParser is an Mbed OS compatible AT command parser. 
 
-It sends and receives AT commands to and from a communication device implementing the [FileHandle](./FileHandle.md) interface. It also implements AT command parsing, which validates the data format and separate command and data portion of AT transactions. For example, the UARTSerial communication driver implements the FileHandle interface, and you can use it with ATCmdParser to send and receive AT commands. The actual format of AT commands used depends on the communication device used.
+It sends and receives AT commands to and from a communication device implementing the [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface. It also implements AT command parsing, which validates the data format and separate command and data portion of AT transactions. For example, the UARTSerial communication driver implements the [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface, and you can use it with ATCmdParser to send and receive AT commands. The actual format of AT commands used depends on the communication device used.
 
-To use ATCmdParser, a reference of object implementing [FileHandle](./FileHandle.md) interface is passed ATCmdParser constructor during ATCmdParser object creation. ATCmdParser also supports configuring specific output delimiter character sequence depending on the interface or device connected to the communication interface.
+To use ATCmdParser, a reference of object implementing [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface is passed as an argument to ATCmdParser constructor, by the entity creating the ATCmdParser object. ATCmdParser also supports configuring specific output delimiter character sequence depending on the interface or device connected to the communication interface.
 
 ### ATCmdParser class reference
 
