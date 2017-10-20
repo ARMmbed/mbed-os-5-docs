@@ -16,7 +16,7 @@
 
 [Add information about undefined behavior. A bulleted list is fine.]
 
-##### Potential bugs
+#### Potential bugs
 
 [Add information about potential bugs. A bulleted list is fine.]
 
