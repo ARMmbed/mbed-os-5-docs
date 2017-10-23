@@ -2,8 +2,6 @@
 
 The TCPSocket class provides the ability to send a stream of data over TCP. TCPSockets maintain a stateful connection that starts with the `connect` member function. After successfully connecting to a server, you can use the `send` and `recv` member functions to send and receive data (similar to writing or reading from a file).
 
-TCPSocket class provides `bind`, `listen` and `accept` member functions to implement TCP server functionality.
-
 ### TCPSocket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_t_c_p_socket.html)
@@ -17,7 +15,3 @@ Here is a TCP client example of HTTP transaction using the ESP8266 module.
 Here is a TCP client example of HTTP transaction over Ethernet interface.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
-
-Here is a TCP server example to send HTTP responses over Ethernet.
-
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/ST/code/mbed-os-tcp-server-example/)](https://os.mbed.com/teams/ST/code/mbed-os-tcp-server-example/file/e72bc303ea90/main.cpp)
