@@ -10,4 +10,4 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 
 Here is a UDP example to read the current UTC time by sending a request to the NIST Internet Time Service. 
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/)](https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-udp-sockets/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets/file/cf516d904427/main.cpp)
