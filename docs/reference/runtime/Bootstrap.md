@@ -1,12 +1,16 @@
 ## Bootstrap
 
-From a reset state, you can expect the following hooks and conditions. You can find more information in [`mbed_boot.c`](https://github.com/ARMmbed/mbed-os/blob/7b428916f5b35da28a1b18e2c149c1115bb89d92/rtos/TARGET_CORTEX/mbed_boot.c).
+### Entry points
 
-- `ResetHandler` - vector table entry at start of Flash (main stack pointer).
-- `SystemInit` - imported from CMSIS-CORE (main stack pointer).
-- RW/ZI initialization (main stack pointer).
-- `mbed_sdk_init` - used for HAL initialization (main stack pointer).
-- `osKernelInitialize` - starts kernel and scheduler (main stack pointer).
-- `pre_main` - C++ static initializers (process stack pointer).
-- `mbed_main` - application hook before main (process stack pointer).
-- `main` - application entry point (process stack pointer).
+Mbed OS provides two entry points for developer to hook into:
+* `main(void)` - default entry point, all the standard application code should go here.
+* `mbed_main(void)` - executed directly before `main`, can be defined by the user.
+
+### Retargeting
+
+Mbed OS redefines multiple standard C library functions, to enable them to work in predictable and familiar way on a remote embedded target device:
+* `stdin`, `stdout`, `stderr` - These file descriptor are pointing to serial interface, to enable users to use standard input/output functions, like printf or getc.
+* `fopen`, `fclose`, `fwrite`, `fread`, `fseek` and other standard file operations - enable user to work with serial interface, as well as, built in file system.
+* `opendir`, `readdir`, `closedir` and other standard directory operations - enable users to use built in file system.
+* `exit` - it causes the board to stop current execution, flush standard file handles, close semi-hosting connection and enter infinite loop. If the return code indicates an error, the board will blink error patterns on built in LED.
+* `clock` - overloaded to use platform's microsecond ticker.
