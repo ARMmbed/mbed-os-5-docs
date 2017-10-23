@@ -8,5 +8,4 @@ The CircularBuffer class provides APIs to `push` and `pop` data from a buffer. Y
 
 ### CircularBuffer example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-circular-buffer/)](https://os.mbed.com/users/deepikabhavnani/code/mbed-os-example-circular-buffer/file/6c43979d0645/main.cpp)
-
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-circular-buffer/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-circular-buffer/file/6c43979d0645/main.cpp)
