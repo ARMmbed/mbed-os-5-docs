@@ -1,6 +1,6 @@
 ## CircularBuffer
 
-CircularBuffer class provides API's to `push` and `pop` data from buffer. You should check if buffer is `full` before pushing the data, as data is overwritten if buffer is full.`empty` API is available to check contents in buffer, before performing pop operation.
+The CircularBuffer class provides APIs to `push` and `pop` data from a buffer. You should check if the buffer is `full` before pushing the data because a full buffer overwrites the data. The `empty` API is available to check contents in buffer before performing the pop operation.
 
 ### CircularBuffer class reference
 
