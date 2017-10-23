@@ -4,7 +4,7 @@
 
 Mbed OS provides two entry points for developers to hook into:
 
-- `main(void)` - Default entry point. All the standard application code should go here.
+- `main(void)` - Default entry point. All the standard application code goes here.
 - `mbed_main(void)` - Executed directly before `main`. The user can define this.
 
 ### Retargeting
