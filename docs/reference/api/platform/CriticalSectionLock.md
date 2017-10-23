@@ -10,6 +10,6 @@ CriticalSectionLock class provides a mechanism to access a resource uniterrupted
 
 ## CriticalSectionLock example
 
-Here is an example that demonstrates a race condition issue and how critical section lock helps resolves it.
+Here is an example that demonstrates a race condition issue and how CriticalSectionLock helps resolves it.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-critical-section/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-critical-section/file/a88acbffd78b/main.cpp)
