@@ -12,8 +12,7 @@ You can find the Arm Mbed OS EventFlags wrapper source code in the [Mbed OS repo
 
 Below is an example of EventFlags usage, where one thread is generating events every 1s, and the second thread is waiting for the events and executing some action.
 
-<span class="images">![](Images/eventflags_usage.png)</span>
-
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images//eventflags_usage.png)</span>
 
 ```
 #include "mbed.h"
