@@ -2,7 +2,7 @@
 
 ### Queue
 
-A [`Queue`](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1Queue.html) allows you to queue pointers to data from producer threads to consumer threads.
+A [Queue](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_queue.html) allows you to queue pointers to data from producer threads to consumer threads.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/queue.png)</span>
 
