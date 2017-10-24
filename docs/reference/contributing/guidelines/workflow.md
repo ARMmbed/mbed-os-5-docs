@@ -2,7 +2,7 @@
 
 #### Contributions
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](code_style.md).
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](/docs/v5.6/reference/guidelines.html#style).
 
 #### Contributing new features to Mbed OS
 
@@ -22,7 +22,7 @@ All Mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.
 
 ##### Bug fixes
 
-Please refer to the [code contributions chapter](code_style.md).
+Please refer to the [code contributions chapter](/docs/v5.6/reference/guidelines.html#style).
 
 Bug fixes must be verified by a member of the Mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the repo, then submit a pull request with your changes.
 
@@ -30,7 +30,7 @@ The last line in your commit message description should say â€œFixes #deadbeefâ€
 
 #### Further reading
 
-Please see the [code contributions chapter](code_style.md) for the guidelines to GitHub pull requests and the coding style guide.
+Please see the [code contributions chapter](/docs/v5.6/reference/guidelines.html#style) for the guidelines to GitHub pull requests and the coding style guide.
 
 #### Guidelines for GitHub pull requests
 
