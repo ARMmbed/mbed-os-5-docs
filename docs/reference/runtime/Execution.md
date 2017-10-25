@@ -2,14 +2,12 @@
 
 ### Threads
 
-Your application (`main` function) will start execution in the main thread, but it's not the only thread running in Mbed OS. There's a number of live system threads at any given time. They should be transparent from the user's point of view for most use cases. All threads that exist in the system by default:
-* main - default thread that executes application's `main` function.
+Your application (`main` function) will start execution in the main thread, but it's not the only thread running in Mbed OS. There's a number of threads running system services, such as:
+* main - default thread that executes application's `main` function. The main thread has 4kB of stack space by default, it can be configured by the application in mbed_app.json by defining MAIN_STACK_SIZE parameter.
 * idle - thread that's run by the scheduler when there's no other activity in the system (e.g. all other threads are waiting for some event). It's used to make sure the board is not burning empty processor cycles, but is put to sleep for as long as possible.
-* timer - thread for handling system and user timer objects.
+* timer - thread for handling system and user timer objects. *Note: User timer class RtosTimer is depracated and shouldn't be used for new designs. EventQueue should be used instead.*
 
 On top of the standard system threads, some drivers may utilize additional threads. User can create threads using [Thread class](docs/v5.6/reference/thread.html).
-
-<span class="notes">**Note:** The main thread has 4kB of stack space by default, it can be configured by the application in mbed_app.json by defining MAIN_STACK_SIZE parameter.</span>
 
 ### Modes
 
