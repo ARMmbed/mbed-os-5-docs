@@ -1,6 +1,6 @@
 ### Mbed-ls
 
-Mbed-ls is a Python module that detects and lists Mbed Enabled boards connected to a host computer.
+Mbed-ls is a Python module that detects and lists Mbed Enabled boards connected to a computer through USB.
 
 ### Defined behavior
 
@@ -16,6 +16,6 @@ Further, Mbed-ls only detects devices that meet the following criteria:
  
 ### Implementation
 
-When adding a target to Mbed-ls, you typically need to add a new definition to the platform database. You can add a new target to the platform database by adding entry mapping from your platform's four-digit hexadecimal identifier to the name of the board to the `DEFAULT_PLATFORM_DB` variable in [`mbed_lstools/platform_database.py`](https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/platform_database.py).
+When adding a board to Mbed-ls, you typically need to add a new definition to the platform database. Before you add your board to the Mbed-ls platform database, you need the Unique product code, a four-digit hexadecimal identifier, you obtained through the mbed enabled program. You can add a new board to the platform database by adding an entry mapping from your board's unique product code to the name of the board into the `DEFAULT_PLATFORM_DB` dictionary in [`mbed_lstools/platform_database.py`](https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/platform_database.py).
 
-You may also need to add a new vendor string for detection on windows. If you need to add a new vendor string, add it to the `usb_vendor_list` member of the `MbedLsToolsBase` class in [`mbed_lstools/lstools_base.py`](https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/lstools_base.py).
+If your board uses an interface firmware other than J-Link, STLink, DAPLink or OpenSDA, you need to add a new vendor string for detection on windows. If you need to add a new vendor string, add it to the `usb_vendor_list` member of the `MbedLsToolsBase` class in [`mbed_lstools/lstools_base.py`](https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/lstools_base.py).
