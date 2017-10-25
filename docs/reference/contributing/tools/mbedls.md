@@ -4,7 +4,7 @@ Mbed-ls is a Python module that detects and lists Mbed Enabled boards connected 
 
 ### Defined behavior
 
-Mbed-ls needs the following information to correctly detect an Mbed Enabled target:
+Mbed-ls needs the following information to correctly detect an Mbed Enabled board:
 
  - A four-digit hexadecimal identifier of a board class.
  - A vendor string for detection on Windows.
