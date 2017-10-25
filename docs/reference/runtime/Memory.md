@@ -55,7 +55,7 @@ There are at least two kinds of memory in the system: flash and RAM.
 
 ### RAM
 
-Inside RAM, we can distinguish two logical types: static and dynamic memory. You can use each of them in different ways:
+Inside RAM, we can distinguish two logical types: static and dynamic memory. The system uses each of them in different ways:
 * Static (zero initialized):
   * Vector table.
   * Global data.
