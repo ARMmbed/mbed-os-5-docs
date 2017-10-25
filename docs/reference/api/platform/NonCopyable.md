@@ -1,6 +1,7 @@
 ## NonCopyable
 
-The NonCopyable class prevents objects of a class from supporting copy operations. You can easily identify it from its class declaration. It creates a compile-time error if you copy the object. Inheriting from this class results in autogeneration of private copy construction and assignment operations, which are not accessible in derived classes.
+The NonCopyable class prevents objects of a class from supporting copy operations. You can easily identify it from its class declaration. It creates a compile-time error if you copy the object. Inheriting from this class results in autogeneration of private copy construction and copy assignment operations, which are not accessible in derived classes.
+Use of NonCopyable class is recommended whenever class owns a resource (lock/hardware/file) which should not be copied to another class.
 
 ### NonCopyable class reference
 
