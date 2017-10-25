@@ -1,8 +1,6 @@
 ## ATCmdParser
 
-ATCmdParser is an Mbed OS compatible AT command parser. 
-
-It sends and receives AT commands to and from a communication device implementing the [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface. It also implements AT command parsing, which validates the data format and separate command and data portion of AT transactions. For example, the UARTSerial communication driver implements the [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface, and you can use it with ATCmdParser to send and receive AT commands. The actual format of AT commands used depends on the communication device used.
+ATCmdParser is an Mbed-OS compatible AT command parser. AT commands are instructions used to communicate with a communication device like modem, phones, wifi-modules etc. Each command is a text string in ASCII format and every command starts with "AT" characters followed by a command specifying the operation to be carried out. ATCmdParser class in Mbed-OS implements functionality to send and receive AT commands to devices capable of communicating using AT commands. ATCmdParser internally uses the driver for the communication channel to talk to the device. It expects the driver to implement the [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface in order to invoke the functions on the driver. For example, the [UARTSerial](https://os.mbed.com/docs/v5.6/reference/classmbed_1_1UARTSerial.html) communication driver implements the [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface,and you can use it with ATCmdParser to send and receive AT commands to a device connected through UART. ATCmdParser also does AT command parsing, which validates the data format and separates command and data portion of AT transactions. The actual command set and the format of AT commands used depends on the communication device used and is specified by the vendor of the device you are communcating with. For example, [ESP8266](https://en.wikipedia.org/wiki/ESP8266) is Wi-Fi module from Espressif Systems capable of communicating using AT commands and the command set is specified by [Espressif AT command specification](https://www.espressif.com/sites/default/files/documentation/4a-esp8266_at_instruction_set_en.pdf).
 
 To use ATCmdParser, a reference of object implementing [FileHandle](https://os.mbed.com/docs/v5.6/reference/filehandle.html) interface is passed as an argument to ATCmdParser constructor, by the entity creating the ATCmdParser object. ATCmdParser also supports configuring specific output delimiter character sequence depending on the interface or device connected to the communication interface.
 
@@ -14,21 +12,7 @@ To use ATCmdParser, a reference of object implementing [FileHandle](https://os.m
 
 #### Example 1
 
-This shows an example of ATCmdParser usage with the UARTSerial driver.
-
-```
-UARTSerial serial = UARTSerial(D1, D0);
-ATCmdParser at = ATCmdParser(&serial, "\r\n");
-int value;
-char buffer[100];
-
-at.send("AT") && at.recv("OK");
-at.send("AT+CWMODE=%d", 3) && at.recv("OK");
-at.send("AT+CWMODE?") && at.recv("+CWMODE:%d\r\nOK", &value);
-at.recv("+IPD,%d:", &value);
-at.read(buffer, value);
-at.recv("OK");
-```
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-atcmdparser)](https://github.com/ARMmbed/mbed-os-example-atcmdparser)
 
 #### Example 2
 
