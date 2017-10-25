@@ -1,51 +1,75 @@
 ## Memory
 
-This is a basic overview of the memory model.
+This is a basic overview of the memory model in Mbed OS.
 
-Each thread of execution in the RTOS has a separate stack. When you use the RTOS, before explicitly initializing any additional thread, you will have four separate stacks:
+```
++---------------------+   Last Address of RAM
+| Scheduler/ISR Stack |
++---------------------+
+|          ^          |
+|          |          |
+|                     |
+|      Heap Cont.     |
+|---------------------|
+| User thread n stack |
+|---------------------|
+| User thread 2 stack |
+|---------------------|
+| User thread 1 stack |
+|---------------------|
+|          ^          |
+|          |          |
+|                     |
+|        Heap         |
++---------------------+
+|                     |
+| ZI: Global data     |
+|                     |
++---------------------+
+| ZI: Idle Stack      |
++---------------------+
+| ZI: Timer Stack     |
++---------------------+
+| ZI: Main Stack      |
++---------------------+
+|                     |
+| ZI: Global data     |
+|                     |
++---------------------+
+| RW: Vector Table    |
++=====================+   First Address of RAM
+|                     |   Last address of flash
+|                     |
+|     Application     |
+|                     |
+|                     |
++---------------------+
+|                     |
+| Optional bootloader |
+|                     |
++---------------------+   First address of flash
 
-* The stack of the main thread (executing the main function).
-* The idle thread executed each time all the other threads are waiting for external or scheduled events. This is particularly useful for implementing energy saving strategies (like sleep).
-* The timer thread that executes all the time-scheduled tasks (periodic and nonperiodic).
-* The stack of OS scheduler itself (also used by the ISRs).
+```
+
+There are, at least, two kinds of memory in the system: flash and RAM.
+
+### RAM
+
+Inside RAM we can distinguish two logical types: static and dynamic memory. Each of them is used in different ways:
+* Static (zero initialized)
+  * Vector table
+  * Global data
+  * Static data
+  * Stacks for default threads (main, timer, idle, scheduler/ISR)
+* Dynamic
+  * Heap (dynamic data)
+  * Stacks for user threads. Mbed OS will dynamically allocate memory on heap for user thread's stacks.
 
 Stack checking is turned on for all threads, and the kernel will error if an overflow condition is detected.
 
-```
-+-------------------+   Last Address of RAM
-| Scheduler Stack   |
-+-------------------+
-|                   |   RAM
-|                   |
-|         ^         |
-|         |         |
-|    Heap Cont..    |
-+-------------------+
-| app thread n      |
-|-------------------|
-| app thread 2      |
-|-------------------|
-| app thread 1      |
-|-------------------|
-|         ^         |
-|         |         |
-|       Heap        |
-+-------------------+
-| ZI                |
-+-------------------+
-| ZI: OS drv stack  |
-+-------------------+
-| ZI: app thread 3  |
-+-------------------+
-| ZI: Idle Stack    |
-+-------------------+
-| ZI: Timer Stack   |
-+-------------------+
-| ZI: Main Stack    |
-+-------------------+
-| RW                |  
-+===================+   First Address of RAM
-|                   |
-|                   |   Flash
+### Flash
 
-```
+Flash is a read only memory (ROM) that contains:
+* Application code
+* Application data
+* Optional bootloader
