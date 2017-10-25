@@ -4,7 +4,7 @@
 
 ### MemoryStats class reference
 
-[Add embedded class reference here. If you've never done this, please talk to your editor.]
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__stats.html)
 
 ### MemoryStats example
 
