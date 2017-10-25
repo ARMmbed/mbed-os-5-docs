@@ -3,13 +3,13 @@
 This is a basic overview of the memory model in Mbed OS.
 
 ```
-+---------------------+   Last Address of RAM
-| Scheduler/ISR Stack |
++---------------------+   Last address of RAM
+| Scheduler/ISR stack |
 +---------------------+
 |          ^          |
 |          |          |
 |                     |
-|      Heap Cont.     |
+|      Heap cont.     |
 |---------------------|
 | User thread n stack |
 |---------------------|
@@ -26,18 +26,18 @@ This is a basic overview of the memory model in Mbed OS.
 | ZI: Global data     |
 |                     |
 +---------------------+
-| ZI: Idle Stack      |
+| ZI: Idle stack      |
 +---------------------+
-| ZI: Timer Stack     |
+| ZI: Timer stack     |
 +---------------------+
-| ZI: Main Stack      |
+| ZI: Main stack      |
 +---------------------+
 |                     |
 | ZI: Global data     |
 |                     |
 +---------------------+
-| RW: Vector Table    |
-+=====================+   First Address of RAM
+| RW: Vector table    |
++=====================+   First address of RAM
 |                     |   Last address of flash
 |                     |
 |     Application     |
@@ -51,25 +51,25 @@ This is a basic overview of the memory model in Mbed OS.
 
 ```
 
-There are, at least, two kinds of memory in the system: flash and RAM.
+There are at least two kinds of memory in the system: flash and RAM.
 
 ### RAM
 
-Inside RAM we can distinguish two logical types: static and dynamic memory. Each of them is used in different ways:
-* Static (zero initialized)
-  * Vector table
-  * Global data
-  * Static data
-  * Stacks for default threads (main, timer, idle, scheduler/ISR)
-* Dynamic
-  * Heap (dynamic data)
+Inside RAM, we can distinguish two logical types: static and dynamic memory. You can use each of them in different ways:
+* Static (zero initialized):
+  * Vector table.
+  * Global data.
+  * Static data.
+  * Stacks for default threads (main, timer, idle, scheduler/ISR).
+* Dynamic:
+  * Heap (dynamic data).
   * Stacks for user threads. Mbed OS will dynamically allocate memory on heap for user thread's stacks.
 
-Stack checking is turned on for all threads, and the kernel will error if an overflow condition is detected.
+Stack checking is turned on for all threads, and the kernel errors if it detects an overflow condition.
 
 ### Flash
 
 Flash is a read only memory (ROM) that contains:
-* Application code
-* Application data
-* Optional bootloader
+* Application code.
+* Application data.
+* Optional bootloader.
