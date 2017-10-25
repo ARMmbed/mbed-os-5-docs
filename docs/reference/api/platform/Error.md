@@ -1,5 +1,21 @@
 ## Error
 
-The error function generates a fatal runtime error, which allows the user to dump a message to the serial line, halt the program and place the device in an idle mode with a blinking red LED.
+Mbed-OS provides an error function to output messages to STDIO at runtime when the system encounters a fatal error and causes the application to terminate. Its declared in mbed_error.h. Note that error function will output the error message in Debug and Develop builds only. On Release builds error function will not generate any output but the application will still be terminated.
 
-You can read more about the Error function in <a href="https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_error.h" target="_blank">its documentation</a>.
+### Error function reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__error.html)
+
+### Error usage example
+The code below uses error function to print a fatal error indicating out of memory condition.
+
+```C
+void *operator new(std::size_t count) {
+    void *buffer = malloc(count);
+    if (NULL == buffer) {
+        error("Operator new out of memory\r\n");
+    }
+    return buffer;
+}
+```
+
