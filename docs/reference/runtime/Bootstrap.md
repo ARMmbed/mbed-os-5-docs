@@ -7,12 +7,13 @@ Mbed OS provides two entry points for developers to hook into:
 - `main(void)` - Default entry point. All the standard application code goes here.
 - `mbed_main(void)` - Executed directly before `main`. The user can define this.
 
-When execution reaches the entry-points, user can expect fully initialized system, ready to execute application code. Some of the things that has happened prior to this point:
-* Low level platform initialization.
-* Stack and heap initialization.
-* Vector table copied to RAM.
-* Standard library initialized.
-* RTOS initialized and scheduler started.
+When execution reaches the entry points, a user can expect a fully initialized system that is ready to execute application code. For this to happen, the following must have occurred prior to this point:
+
+- Low-level platform initialization.
+- Stack and heap initialization.
+- Vector table copied to RAM.
+- Standard library initialized.
+- RTOS initialized and scheduler started.
 
 ### Retargeting
 
