@@ -6,7 +6,7 @@ Mbed-OS provides a set of macros which evaluates an expression and prints an err
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__Assert.html)
 
-### Assert example
+### Assert usage example
 
 MBED_ASSERT macro can be used for runtime evaluation of expressions. If the evaluation fails, an error message will be printed out to bash in the below format. Note that MBED_ASSERT macro is available in debug builds only. 
 
