@@ -47,6 +47,8 @@ This is a basic overview of the memory model in Mbed OS.
 |                     |
 | Optional bootloader |
 |                     |
++---------------------+
+| RO: Vector table    |
 +---------------------+   First address of flash
 
 ```
@@ -56,8 +58,8 @@ There are at least two kinds of memory in the system: flash and RAM.
 ### RAM
 
 Inside RAM, we can distinguish two logical types: static and dynamic memory. The system uses each of them in different ways:
-* Static (zero initialized):
-  * Vector table.
+* Static:
+  * Vector table (read/write).
   * Global data.
   * Static data.
   * Stacks for default threads (main, timer, idle, scheduler/ISR).
@@ -70,6 +72,7 @@ Stack checking is turned on for all threads, and the kernel errors if it detects
 ### Flash
 
 Flash is a read only memory (ROM) that contains:
+* Vector table (read only).
 * Application code.
 * Application data.
 * Optional bootloader.
