@@ -1,6 +1,6 @@
 ## Assert
 
-Mbed-OS provides a set of macros which evaluates an expression and prints an error message if the expression evaluates to false. There are two types of macros, one for evaluating the expression during runtime and other can be used for compile-time evaluation. These macros are defined in mbed_assert.h.
+Mbed OS provides a set of macros that evaluates an expression and prints an error message if the expression evaluates to false. There are two types of macros, one for evaluating the expression during runtime and one for compile-time evaluation. `mbed_assert.h` defines these macros.
 
 ### Assert macros reference
 
@@ -8,11 +8,11 @@ Mbed-OS provides a set of macros which evaluates an expression and prints an err
 
 ### Assert usage example
 
-MBED_ASSERT macro can be used for runtime evaluation of expressions. If the evaluation fails, an error message will be printed out to bash in the below format. Note that MBED_ASSERT macro is available in Debug and Develop build profiles but not in Release builds. 
+You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If the evaluation fails, an error message prints to bash in the below format. Note that the `MBED_ASSERT` macro is available in the debug and develop build profiles but not in the release build profile. 
 
 mbed assertation failed: <EVALUATED EXPRESSION>, file: <FILE NAME>, line <LINE NUMBER IN FILE>
 
-The below function uses MBED_ASSERT to validate pointer to serial_t object.
+The below function uses `MBED_ASSERT` to validate a pointer to `serial_t` object.
 
 ```C
 uint8_t serial_tx_active(serial_t *obj) {
@@ -21,9 +21,9 @@ uint8_t serial_tx_active(serial_t *obj) {
 }
 ```
 
-MBED_STATIC_ASSERT macro can be used for compile-time evaluation of expressions. If the evaluation fails, the passed in error message will be printed out and the compilation fails.
+You can use the `MBED_STATIC_ASSERT` macro for compile-time evaluation of expressions. If the evaluation fails, the passed in error message prints, and the compilation fails.
 
-The below function uses MBED_ASSERT_STATIC to validate the size of equeue_timer struture.
+The below function uses `MBED_ASSERT_STATIC` to validate the size of the `equeue_timer` structure.
 
 ```C
 void equeue_tick_init() {
