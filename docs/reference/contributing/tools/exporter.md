@@ -20,7 +20,7 @@ The export subsystem is organized as a group of common code and a group of IDE o
 The **common code** is contained in three files:
 
  * `tools/project.py` contains the command-line interface and handles the differences between Mbed OS 2 tests and Mbed OS 5 projects.
- * `tools/export/__init__.py` contains a high-level API for use by the Arm Mbed Online Compiler and Mbed CLI. Responsible for doing boilerplate-like things, such as scanning for resources.
+ * `tools/export/__init__.py` contains an API used by the Arm Mbed Online Compiler and `project.py`. This file is responsible for boilerplate actions that every exporter must do, such as scanning for resources or collecting toolchain flags.
  * `tools/export/exporters.py` contains the base class for all plugins. It offers useful exporter-specific actions.
 
 An **IDE or toolchain specific plugin** is a Python class that inherits from the `Exporter` class and is listed in the `tools/export/__init__.py` exporter map.
@@ -31,7 +31,7 @@ The common code does two things: setting things up for the plugins, and providin
 
 ###### Setup
 
-The setup code scans for the resources used in the export process and collects the configuration required to build the project at hand.
+The setup code scans for the resources used in the export process and collects the configuration required to build the project.
 
 These steps construct an object of one of the exporter plugin classes listed in the exporter map and populate that object with useful attributes, including:
 
@@ -55,7 +55,7 @@ Plugin code is contained within a subdirectory of the `tools/export` directory n
 
 For example, the uVision exporter's templates and Python code is contained within the directory `tools/export/uvision` and the Makefile exporter's code and templates within `tools/export/makefile`.
 
-The Python code for the plugin should be:
+The Python code for the plugin is:
 
 1. Placed into an `__init__.py` file.
 1. Imported into `tools/export/__init__.py`.
@@ -67,9 +67,9 @@ Each exporter is expected to implement one method, `generate`, which is responsi
 
 This method may use any of the attributes and APIs included by the common code.
 
-###### The `TARGETS` class variable
+###### The `is_target_supported` class method
 
-Each exporter reports its specific target support through a class varibale, `TARGETS`. This class variable is simply a list of targets to which you can export. Requesting an export to a target that's not on the list will generate an error.
+Each exporter reports its specific target support through a class method, `is_target_supported`. This class method is called with a target, and expected to return `True` when a target is supported by the exporter and `False` otherwise. Requesting an export to a target that `is_target_supported` returns `False` for is an error.
 
 ###### The `TOOLCHAIN` class variable
 
@@ -79,15 +79,15 @@ Each exporter reports its specific toolchain it will use to compile the source c
 
 Each exporter reports the name of the exporter through the class variable `NAME`. This matches the key in the `tools/export/__init__.py` exporter map.
 
-###### The `build` method
+###### The `build` static method
 
-A plugin that would like to be tested by CI may implement the `build` method.
+A plugin tested by CI must implement the `build` method.
 
-This method runs after `generate` on an object that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile. It must return `0` on success or `-1` on failure.
+This static method runs after `generate` on an class that inherits from `Exporter`. It is responsible for invoking the build tools that the IDE or toolchain needs when a user instructs it to compile. It must return `0` on success or `-1` on failure.
 
 #### Implementing an example plugin
 
-In this section, we walk through implementing a simple exporter, `my_makefile`, which is a simplified Makefile using one template.
+In this section, we walk through implementing a simple exporter, `my_makefile`, which is a Makefile using one template.
 
 We will create two files and discuss their contents: `__init__.py` with the Python plugin code, and `Makefile.tmpl` with the template.
 
@@ -97,6 +97,7 @@ As this plugin is named `my_makefile`, all of the support code will be placed in
 
 First, we will make our class a subclass of Exporter:
 ```python
+from tools.targets import TARGET_MAP
 from tools.export.exporters import Exporter
 
 class My_Makefile(Exporter):
@@ -123,8 +124,10 @@ from tools.targets import TARGET_MAP
 We can say the targets supported will be the subset of Mbed targets that support `GCC_ARM`:
 
 ```python
-TARGETS = [target for target, obj in TARGET_MAP.iteritems()
-           if "GCC_ARM" in obj.supported_toolchains]
+@classmethod
+def is_target_supported(cls, target_name):
+    target = TARGET_MAP[target_name]
+    return "GCC_ARM" in target.supported_toolchains
 ```
 
 ###### Implementing the `generate` method
@@ -311,30 +314,4 @@ Your generate method will look similar to:
         """
         super(EclipseGcc, self).generate()
         ...
-```
-
-#### About the exporters
-
-Use the Mbed exporters to export your code to various third party tools and IDEs. Each exporter implements a `generate` function that produces an IDE specific project file. Exporters benefit from Mbed build tools. However, instead of using your source and [config data](/docs/v5.6/reference/configuring-arm-mbed-os.html#the-arm-mbed-configuration-system) to create an executable, we use that information to populate an IDE project file that will be configured to build, flash and debug your code. You can find exporter implementations [here](https://github.com/ARMmbed/mbed-os/tree/master/tools/export).
-
-##### Mbed CLI command
-
-```
-usage: mbed export [-h] [-i IDE] [-m TARGET] [--source SOURCE] [-c] [-S] [-v]
-                   [-vv]
-
-Generate IDE project files for the current program.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i IDE, --ide IDE     IDE to create project files for. Example: UVISION4,
-                        UVISION5, GCC_ARM, GNUARMECLIPSE, IAR, COIDE
-  -m TARGET, --target TARGET
-                        Export for target MCU. Example: K64F, NUCLEO_F401RE,
-                        NRF51822...
-  --source SOURCE       Source directory. Default: . (current dir)
-  -c, --clean           Clean the build directory before compiling
-  -S, --supported       Shows supported matrix of targets and toolchains
-  -v, --verbose         Verbose diagnostic output
-  -vv, --very_verbose   Very verbose diagnostic output
 ```
