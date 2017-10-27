@@ -1,10 +1,10 @@
 ## MemoryStats
 
-Mbed-OS provides a set of functions which can be used to capture the memory stats at runtime. These functions are declared in mbed_stats.h. Memory stats functions can be used capture heap usage, cumulative stack usage or stack usage per thread at runtime. In order to enable memory usage monitoring Mbed-OS must be built with following macros.
+Mbed OS provides a set of functions that you can use to capture the memory statistics at runtime. `mbed_stats.h` declares these functions. You can use memory statistics functions to capture heap usage, cumulative stack usage or stack usage per thread at runtime. To enable memory usage monitoring, you must build Mbed OS with the following macros.
 
-MBED_MEM_TRACING_ENABLED
-MBED_HEAP_STATS_ENABLED
-MBED_STACK_STATS_ENABLED
+- MBED_MEM_TRACING_ENABLED
+- MBED_HEAP_STATS_ENABLED
+- MBED_STACK_STATS_ENABLED
 
 ### MemoryStats functions reference
 
