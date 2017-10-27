@@ -22,7 +22,7 @@ Once you know how to build an existing application, it's time to learn [how to w
 
 You can [monitor and control an Mbed board](/docs/v5.6/tutorials/serial-communication-overview.html) to help you debug and test your applications.
 
-<span class="tips">**Tip:** You can learn more about debugging [here](/docs/v5.6/tutorials/debugging-applications.html).</span>
+<span class="tips">**Tip:** Learn more about debugging in the [debugging applications section](/docs/v5.6/tutorials/debugging-applications.html).</span>
 
 #### How to continue
 
