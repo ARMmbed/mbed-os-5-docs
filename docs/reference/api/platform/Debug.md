@@ -1,6 +1,6 @@
 ## Debug
 
-Mbed-OS provides a set of debug functions which can be used to output debug messages to STDIO at runtime. These functions are declared in mbed_debug.h and are available only in debug builds.
+Mbed OS provides a set of debug functions that you can use to output debug messages to `STDIO` at runtime. `mbed_debug.h` declares these functions, which are available only in debug builds.
 
 ### Debug functions reference
 
@@ -8,7 +8,7 @@ Mbed-OS provides a set of debug functions which can be used to output debug mess
 
 ### Debug functions usage
 
-The debug function is a printf-style function which takes a format string followed by arguments, as the example shown below.
+The `debug` function is a printf-style function that takes a format string followed by arguments, as the example below shows.
 
 ```C
 void *operator new(std::size_t count) {
@@ -21,8 +21,8 @@ void *operator new(std::size_t count) {
     return buffer;
 }
 ```
-The debug_if function is similar to debug function except that it takes an additional argument
-as its first parameter. The message is printed out to STDIO only if the first paramater evaluates to "true".
+
+The `debug_if` function is similar to the `debug` function except that it takes an additional argument as its first parameter. The message prints to `STDIO` only if the first paramater evaluates to `true`.
 
 ```C
 void *operator new(std::size_t count) {
@@ -30,6 +30,7 @@ void *operator new(std::size_t count) {
     ...
 } 
 ```
-### Debug Example
+
+### Debug example
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-platform-utils)](https://github.com/ARMmbed/mbed-os-example-platform-utils) 
