@@ -8,9 +8,10 @@ Mbed OS provides a set of macros that evaluates an expression and prints an erro
 
 ### Assert usage example
 
-You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If the evaluation fails, an error message prints to bash in the below format. Note that the `MBED_ASSERT` macro is available in the debug and develop build profiles but not in the release build profile. 
-
+You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If the evaluation fails, an error message is printed to STDIO in the below format. 
 mbed assertation failed: <EVALUATED EXPRESSION>, file: <FILE NAME>, line <LINE NUMBER IN FILE>
+
+Note that the `MBED_ASSERT` macro is available in the debug and develop [build profiles](https://os.mbed.com/docs/v5.6/tools/build-profiles.html) but not in the release build profile. 
 
 The below function uses `MBED_ASSERT` to validate a pointer to `serial_t` object.
 
@@ -23,7 +24,7 @@ uint8_t serial_tx_active(serial_t *obj) {
 
 You can use the `MBED_STATIC_ASSERT` macro for compile-time evaluation of expressions. If the evaluation fails, the passed in error message prints, and the compilation fails.
 
-The below function uses `MBED_ASSERT_STATIC` to validate the size of the `equeue_timer` structure.
+The below function uses `MBED_STATIC_ASSERT` to validate the size of the `equeue_timer` structure.
 
 ```C
 void equeue_tick_init() {
