@@ -1,6 +1,6 @@
 ## DeepSleepLock
 
-The `DeepSleepLock` class provides an RAII object for disabling sleep. You can prevent an application from entering deep sleep by creating an instance of the `DeepSleepLock` class. While the DeepSleepLock instance exists it prevents deep sleep.
+The `DeepSleepLock` class provides an RAII object for disabling sleep. In other words, creating a DeepSleepLock object calls its constructor, which increments the deep sleep prevention lock. The DeepSleepLock object automatically releases the deep sleep prevention lock in its destructor when the object goes out of scope. Another way to look at this is when the DeepSleepLock object exists, it prevents deep sleep.
 
 <span class="notes">**Note:** Drivers that don't work in deep sleep mode automatically prevent deep sleep mode, so DeepSleepLock does not need to protect them.</span>
 
