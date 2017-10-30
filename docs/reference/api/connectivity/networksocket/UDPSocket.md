@@ -2,7 +2,7 @@
 
 The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](/docs/v5.6/reference/tcpsocket.html) when you require guaranteed delivery.
 
-The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If NetworkStack is not passed in the constructor, then you must call `open` to initialize the socket.
+The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If the NetworkStack pointer does not pass in the constructor, then you must call `open` to initialize the socket.
 
 ### UDPSocket class reference
 
