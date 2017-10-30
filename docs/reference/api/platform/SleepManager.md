@@ -56,4 +56,4 @@ These Mbed OS drivers contain locking deep sleep:
 
 ### Example
 
-[![View code](https://os.mbed.com/users/c1728p9/code/SleepManager_Example_1/)](https://os.mbed.com/users/c1728p9/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
+[![View code](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
