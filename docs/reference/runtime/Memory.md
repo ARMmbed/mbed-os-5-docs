@@ -58,21 +58,23 @@ There are at least two kinds of memory in the system: flash and RAM.
 ### RAM
 
 Inside RAM, we can distinguish two logical types: static and dynamic memory. The system uses each of them in different ways:
-* Static:
-  * Vector table (read/write).
-  * Global data.
-  * Static data.
-  * Stacks for default threads (main, timer, idle, scheduler/ISR).
-* Dynamic:
-  * Heap (dynamic data).
-  * Stacks for user threads. Mbed OS will dynamically allocate memory on heap for user thread's stacks.
+
+- Static:
+    - Vector table (read/write).
+    - Global data.
+    - Static data.
+    - Stacks for default threads (main, timer, idle, scheduler/ISR).
+- Dynamic:
+    - Heap (dynamic data).
+    - Stacks for user threads. Mbed OS will dynamically allocate memory on heap for user thread's stacks.
 
 Stack checking is turned on for all threads, and the kernel errors if it detects an overflow condition.
 
 ### Flash
 
 Flash is a read only memory (ROM) that contains:
-* Vector table (read only).
-* Application code.
-* Application data.
-* Optional bootloader.
+
+- Vector table (read only).
+- Application code.
+- Application data.
+- Optional bootloader.
