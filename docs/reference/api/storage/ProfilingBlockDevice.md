@@ -1,8 +1,8 @@
 ## ProfilingBlockDevice
 
-The ProfilingBlockDevice class provides a BlockDevice implementation to wrap around an existing block device object to log reads, writes and erases.
+The ProfilingBlockDevice class provides a BlockDevice implementation to act as an interface for an existing block device object to log reads, writes and erases.
 
-ProfilingBlockDevices take in a pointer to the block device being profiled as the only configurable parameter. All block device operations that wish to be logged need to be performed through the ProfilingBlockDevice object.
+ProfilingBlockDevices take in a pointer to the block device being profiled as the only configurable parameter. If you want to count a storage operation such as programming, reading, or writing to a block device the ProfilingBlockDevice object should be used as the interface to the storage block rather than the underlying device. The below example highlights this use case.
 
 ### ProfilingBlockDevice class reference
 
