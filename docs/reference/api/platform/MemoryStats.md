@@ -4,7 +4,6 @@ Mbed OS provides a set of functions that you can use to capture the memory stati
 
 - MBED_MEM_TRACING_ENABLED
 - MBED_HEAP_STATS_ENABLED
-- MBED_STACK_STATS_ENABLED
 
 ### MemoryStats functions reference
 
