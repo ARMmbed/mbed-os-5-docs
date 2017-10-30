@@ -8,20 +8,20 @@ You need CMSIS-CORE files for startup and peripheral memory addresses, and you n
 
 After adding the core files, the next step is to update the linker scripts for `mbed-os`. To do this, follow the steps below.
 
-* Reserve space for RAM vector table. For the example below this is:
+- Reserve space for the RAM vector table. For the example below, this is:
 
-```
-RW_IRAM1 (0x20000000 + (VECTORS*4)) (0x30000 - (VECTORS*4))  {  ; RW data
-```
+    ```
+    RW_IRAM1 (0x20000000 + (VECTORS*4)) (0x30000 - (VECTORS*4))  {  ; RW data
+    ```
 
-* Define the start of the heap:
- * ARM - The heap starts immediately after the region ```RW_IRAM1```.
- * GCC_ARM - The heap starts at the symbol ```__end__```.
- * IAR - The heap is the ```HEAP``` region.
-* Add defines for a relocatable application - ```MBED_APP_START``` and ```MBED_APP_SIZE```.
-* Add preprocessing directive ```#! armcc -E``` (ARM compiler only).
+- Define the start of the heap:
+    - Arm - The heap starts immediately after the region `RW_IRAM1`.
+    - GCC_ARM - The heap starts at the symbol `__end__`.
+    - IAR - The heap is the `HEAP` region.
+    - Add defines for a relocatable application - `MBED_APP_START` and `MBED_APP_SIZE`.
+    - Add preprocessing directive `#! armcc -E` (ARM compiler only).
 
-Example linker script for the ARM compiler:
+Example linker script for the Arm compiler:
 
 ```
 #! armcc -E
@@ -53,12 +53,12 @@ LR_IROM1 MBED_APP_START MBED_APP_SIZE  {
 
 #### Create and update files
 
-* Extend CMSIS-CORE by adding the file `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h`. This header file includes device-specific headers that include CMSIS-CORE.
-* Add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.h`. This contains the define ```NVIC_NUM_VECTORS``` which is the number of vectors the devices has and ```NVIC_RAM_VECTOR_ADDRESS``` which is the address of the RAM vector table.
-* Define the initial stack pointer, ```INITIAL_SP``` in `mbed_rtx.h`. This file is typically located in `mbed-os\targets\TARGET_VENDOR\mbed_rtx.h`.
-* Add an entry for your device in `mbed-os\targets\targets.json`
+- Extend CMSIS-CORE by adding the file `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h`. This header file includes device-specific headers that include CMSIS-CORE.
+- Add a relocation function in `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.h`. This contains the define `NVIC_NUM_VECTORS`, which is the number of vectors the devices has, and `NVIC_RAM_VECTOR_ADDRESS`, which is the address of the RAM vector table.
+- Define the initial stack pointer, `INITIAL_SP`, in `mbed_rtx.h`. This file is typically in `mbed-os\targets\TARGET_VENDOR\mbed_rtx.h`.
+- Add an entry for your device in `mbed-os\targets\targets.json`
 
-#### Finishing things off
+#### Finishing
 
 Now verify that your target compiles by using `mbed compile -m MCU_NAME -t <toolchain>`.
 
