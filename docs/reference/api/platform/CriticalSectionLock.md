@@ -1,8 +1,8 @@
 ## CriticalSectionLock
 
-The CriticalSectionLock class provides a mechanism to access a resource without interruption. With the `lock` API, you can enter critical section with interrupts disabled. The `unlock` API is the exit from critical section, and the state of interrupts is restored upon exit. Nesting of critical section is supported, and interrupts are enabled only when we exit from last nested critical section.
+The CriticalSectionLock class provides a mechanism to access a resource without interruption. With the `lock` API, you can enter critical section with interrupts disabled. The `unlock` API is the exit from critical section, and the destructor restores the state of interrupts upon exit. Nesting of critical section is supported, and the destructor enables interrupts only when you exit from the last nested critical section.
 
-CriticalSectionLock class is based on RAII approach. In other words, lock is acquired in constructor and destroyed automatically when out of scope as part of destructor. We do not recommend you use CriticalSectionLock as global or a member of a class because you will enter critical section on object creation, and all interrupts will be disabled.
+CriticalSectionLock class is based on RAII approach. In other words, the constructor acquires the lock, and the destructor destroys it automatically when it is out of scope. We do not recommend you use CriticalSectionLock as global or a member of a class because you will enter critical section on object creation, and all interrupts will be disabled.
 
 <span class="notes">**Note:** You must not use time-consuming operations, standard library and RTOS functions inside critical section.</span>
 
