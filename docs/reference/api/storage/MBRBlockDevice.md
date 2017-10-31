@@ -15,7 +15,7 @@ You can view more information about the configurable settings and functions in t
 
 ### MBRBlockDevice example
 
-Partition a heap backed block device into two partitions. You can find the HeapBlockDevice used in this example [here](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_heap_block_device.html).
+Partition a heap backed block device into two partitions. You can find the HeapBlockDevice used in this [example](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_heap_block_device.html).
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/file/daa62d7aa9f9/main.cpp)
 
