@@ -19,7 +19,7 @@ The network-socket API provides a common interface for using sockets on network 
 
 ##### Network errors
 
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` enum ([here](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
+The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba)):
 
 ``` cpp
 /** Enum of standardized error codes
@@ -110,7 +110,7 @@ Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are suppor
 
 The [CellularBase](/docs/v5.6/mbed-os-api-doxy/class_cellular_base.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a reference implementation of CellularBase, which you can find [here](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
+Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
 
 ##### Getting started
 
