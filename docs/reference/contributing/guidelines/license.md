@@ -18,7 +18,7 @@ If you create new software, such as drivers, libraries and examples, you can app
 
 You must either write all the code you provide yourself, or have the necessary rights to provide code written by someone else.
 
-In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) in every source file following the recommendations [here](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
+In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) in every source file following the [recommendations](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
 
 #### When to use Apache 2.0
 
