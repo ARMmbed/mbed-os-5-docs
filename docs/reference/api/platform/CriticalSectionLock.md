@@ -6,11 +6,11 @@ CriticalSectionLock class is based on RAII approach. In other words, the constru
 
 <span class="notes">**Note:** You must not use time-consuming operations, standard library and RTOS functions inside critical section.</span>
 
-## CriticalSectionLock class reference
+### CriticalSectionLock class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
 
-## CriticalSectionLock example
+### CriticalSectionLock example
 
 Here is an example that demonstrates a race condition issue and how CriticalSectionLock helps resolves it.
 
