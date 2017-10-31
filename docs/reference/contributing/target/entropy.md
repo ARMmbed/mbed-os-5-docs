@@ -105,8 +105,6 @@ To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` 
 
 This ensures the entropy pool knows it can use the NV seed entropy source.
 
-You can read more about how to add a macro for your target [here](mbed_targets.md).
-
 By default the platform adaptation functions write/read a seed file called *seedfile*. If you have a system that does not support regular POSIX file operations (Arm Mbed OS does not support them by default), the default platform-adaptation functions will not be useful to you, and you will need to provide platform-adaptation functions (see next section).
 
 ##### Providing platform-adaptation functions
@@ -136,7 +134,7 @@ Both of the above options are secure if done properly, and depending on the plat
 
 This option is very dangerous because compiling with it results in a build that is not secure! You have to let Mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 
-Because it is a very dangerous option and no one should use it in production, we recommend you limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about how to add a macro for your application [here](/docs/v5.6/tools/adding-and-configuring-targets.html).
+Because it is a very dangerous option and no one should use it in production, we recommend you limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about [how to add a macro for your application](/docs/v5.6/tools/adding-and-configuring-targets.html).
 
 To turn the unsafe testing mode on:
 
