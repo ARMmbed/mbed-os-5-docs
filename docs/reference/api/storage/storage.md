@@ -29,7 +29,7 @@ Partitioning allows you to split a block device among multiple storage users suc
 
 The [FileSystem](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h) class provides the core user interface with general functions that map to their global POSIX counterparts. Mbed OS provides [File](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h) and [Dir](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h) classes that represent files and directories in a C++ API that uses object-oriented features in C++.
 
-To implement a new file system in Mbed OS, an implementor just needs to provide the abstract functions in the file system interface. The [FAT file system](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/fat/FATFileSystem.cpp) provides an excellent example, you can find tests of the POSIX API [here](https://github.com/ARMmbed/sd-driver/tree/master/features/TESTS/filesystem).
+To implement a new file system in Mbed OS, an implementor just needs to provide the abstract functions in the file system interface. The [FAT file system](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/fat/FATFileSystem.cpp) provides an excellent example. You can see [tests of the POSIX API](https://github.com/ARMmbed/sd-driver/tree/master/features/TESTS/filesystem).
 
 A minimal file system needs to provide the following functions:
 
