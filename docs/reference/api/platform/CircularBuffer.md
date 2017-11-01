@@ -2,12 +2,17 @@
 
 The CircularBuffer class provides APIs to `push` and `pop` data from a buffer. You should check if the buffer is `full` before pushing the data because a full buffer overwrites the data. The `empty` API is available to check contents in buffer before performing the pop operation.
 
-CircularBuffer class is interrupt safe, all data operation are performed inside critical section.
+CircularBuffer class is interrupt safe; all data operations are performed inside the critical section.
 
-CircularBuffer is templated class supporting different datatypes. Datatype and buffer size must be specified during the declaration of CircularBuffer class.
-#### Declaration Example  ####
-This is example of BUF_SIZE long integer CircularBuffer.
+CircularBuffer is a templated class supporting different datatypes. The declaration of the CircularBuffer class must specify datatype and buffer size.
+
+#### Declaration example
+
+This is an example of `BUF_SIZE` long integer CircularBuffer:
+
+```
 CircularBuffer<int, BUF_SIZE> buf;
+```
 
 ### CircularBuffer class reference
 
