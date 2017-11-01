@@ -1,6 +1,6 @@
 ### Hardware Accelerated Crypto
 
-This document explains how to add hardware acceleration support for a development board in Arm Mbed OS and integrate it with [Arm Mbed TLS](https://github.com/ARMmbed/mbedtls).
+This document explains how to add hardware acceleration support for a development board in Arm Mbed OS and integrate it with <a href="https://github.com/ARMmbed/mbedtls" target="_blank">Arm Mbed TLS</a>.
 
 #### Introduction
 
@@ -16,7 +16,7 @@ You may want to add hardware acceleration in the following cases:
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
 
-The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
+The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in <a href="https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h" target="_blank">bn_mul.h</a>.
 
 ##### What parts can I accelerate?
 
@@ -35,9 +35,9 @@ Mbed TLS has separate modules for the different cryptographic primitives. Hardwa
     - [RIPEMD160](https://tls.mbed.org/api/ripemd160_8h.html): [`mbedtls_ripemd160_process()`](https://tls.mbed.org/api/ripemd160_8h.html#a36256369d5d29e86e65ec5c46a6383d5)
     - [SHA1](https://tls.mbed.org/api/sha1_8h.html): [`mbedtls_sha1_process()`](https://tls.mbed.org/api/sha1_8h.html#a70417cbb2e95ce553501caef9bd6e076)
     - [SHA256](https://tls.mbed.org/api/sha256_8h.html): [`mbedtls_sha256_process()`](https://tls.mbed.org/api/sha256_8h.html#a1166c1d669de6fe668623612d936f402)
-    - [SHA512](https://tls.mbed.org/api/sha512_8h.html): [`mbedtls_sha512_process()`](https://tls.mbed.org/api/sha512_8h.html#a297e591e713063151226993d52ad74a3)
+    - [SHA512](https://tls.mbed.org/api/sha512_8h.html): <a href="https://tls.mbed.org/api/sha512_8h.html#a297e591e713063151226993d52ad74a3" target="_blank">`mbedtls_sha512_process()`</a>.
 - Asymmetric:
-    - ECP: [`mbedtls_internal_ecp_randomize_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#aac10047640a6fcdd19bd1466371d896d), [`mbedtls_internal_ecp_add_mixed()`](https://tls.mbed.org/api/ecp__internal_8h.html#a3a3d7f9ac767f9007ad9c8d451394b08), [`mbedtls_internal_ecp_double_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#ae86c1581847bc201cd41b794647296ac), [`mbedtls_internal_ecp_normalize_jac_many()`](https://tls.mbed.org/api/ecp__internal_8h.html#a915f188f33640d90fa11eb13e99114d5), [`mbedtls_internal_ecp_normalize_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#a9f4a88693c277d48e2b98ce42c89965e), [`mbedtls_internal_ecp_double_add_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#ae7b63bf0cfe62021e976b166fb422b54), [`mbedtls_internal_ecp_randomize_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#a498b09b2a7c458847c9fd46b39808575), [`mbedtls_internal_ecp_normalize_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#a45992cb245da01f5802ef6e544b9bac4)
+    - ECP: <a href="https://tls.mbed.org/api/ecp__internal_8h.html#aac10047640a6fcdd19bd1466371d896d" target="_blank">`mbedtls_internal_ecp_randomize_jac()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#a3a3d7f9ac767f9007ad9c8d451394b08" target="_blank">`mbedtls_internal_ecp_add_mixed()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#ae86c1581847bc201cd41b794647296ac" target="_blank">`mbedtls_internal_ecp_double_jac()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#a915f188f33640d90fa11eb13e99114d5" target="_blank">`mbedtls_internal_ecp_normalize_jac_many()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#a9f4a88693c277d48e2b98ce42c89965e" target="_blank">`mbedtls_internal_ecp_normalize_jac()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#ae7b63bf0cfe62021e976b166fb422b54" target="_blank">`mbedtls_internal_ecp_double_add_mxz()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#a498b09b2a7c458847c9fd46b39808575" target="_blank">`mbedtls_internal_ecp_randomize_mxz()`</a>, <a href="https://tls.mbed.org/api/ecp__internal_8h.html#a45992cb245da01f5802ef6e544b9bac4" target="_blank">`mbedtls_internal_ecp_normalize_mxz()`</a>.
 
 ##### How can I make Mbed TLS use my hardware accelerator?
 
@@ -70,13 +70,13 @@ No matter which approach you choose, please note the [considerations below](#con
 
 ##### How to implement the functions
 
-These functions have the same name as the ones they replace. There is a [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module and parts of the AES module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation, and you can find them in the `ecp_internal.h` and `aes.h` header files. The function declarations have to remain unchanged; otherwise, Mbed TLS can't use them.
+These functions have the same name as the ones they replace. There is a <a href="https://tls.mbed.org/api/" target="_blank">doxygen documentation for the original functions</a>. The exception to the naming conventions is the ECP module and parts of the AES module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation, and you can find them in the `ecp_internal.h` and `aes.h` header files. The function declarations have to remain unchanged; otherwise, Mbed TLS can't use them.
 
-Clone the [Mbed OS repository](https://github.com/ARMmbed/mbed-os) and copy the source code of your function definitions to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. Create a pull request when your code is finished and production ready. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
+Clone the <a href="https://github.com/ARMmbed/mbed-os" target="_blank">Mbed OS repository</a> and copy the source code of your function definitions to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. Create a pull request when your code is finished and production ready. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
 
 ##### How to implement ECP module functions
 
-Mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in Mbed TLS, see the [corresponding Knowledge Base article](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool).
+Mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in Mbed TLS, see the <a href="https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool" target="_blank">corresponding Knowledge Base article</a>.
 
 The method of accelerating the ECP module may support different kinds of elliptic curves. If that acceleration is a hardware accelerator, you may need to indicate what kind of curve operation the accelerator has to perform by setting a register or executing a special instruction. If performing this takes significant amount of time or power, then you may not want Mbed TLS to do this step unnecessarily. The replaceable functions in this module are relatively low level, and therefore it may not be necessary to do this initialization and release in each of them.
 
@@ -139,7 +139,7 @@ The default implementation of the modules are usually in the file `feature/mbedt
 
 Note that functions in Mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
-For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](/docs/v5.6/reference/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a <a href="/docs/v5.6/reference/mutex.html" target="_blank">mutex</a>. Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
 ##### Power management
 
