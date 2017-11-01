@@ -2,8 +2,7 @@
 
 The WifiInterface provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
-There are multiple [Wi-Fi components](https://os.mbed.com/components/cat/wifi/) that implement the WiFiInterface class. For the example below,
-the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) is used.
+There are multiple <a href="https://os.mbed.com/components/cat/wifi/" target="_blank">Wi-Fi components</a> that implement the WiFiInterface class. The example below uses the <a href="https://github.com/armmbed/esp8266-driver" target="_blank">ESP8266Interface</a>.
 
 ### Wi-Fi class reference
 
@@ -13,9 +12,9 @@ the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) is used.
 
 To bring up the network interface:
 
-1. Instantiate an implementation of the WiFiInterface class (for example the [ESP8266Interface](https://github.com/armmbed/esp8266-driver)).
+1. Instantiate an implementation of the WiFiInterface class (for example, the <a href="https://github.com/armmbed/esp8266-driver" target="_blank">ESP8266Interface</a>).
 1. Call the `connect` function with an SSID and password for the Wi-Fi network.
-1. Once connected, the WiFiInterface can be used as a target for opening [network sockets](/docs/v5.6/reference/network-socket-overview.html).
+1. Once connected, the WiFiInterface can be used as a target for opening <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">network sockets</a>.
 
 ### Wi-Fi example
 
