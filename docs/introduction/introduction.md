@@ -30,7 +30,7 @@ When you've started writing applications using your selected development tool:
 
 - Learn about <a href="/docs/v5.6/tools/collab-online-comp.html" target="_blank">collaborative work and version control</a>.
 - Try one of the <a href="/docs/v5.6/tutorials/index.html" target="_blank">tutorials</a>, which cover concepts such as debugging and memory tracing.
-- Ask questions and give advice on the <a href="http://example.com" target="_blank">forum</a>.
+- Ask questions and give advice on the <a href="https://os.mbed.com/forum/" target="_blank">forum</a>.
 
 #### Contributing to Mbed OS
 
