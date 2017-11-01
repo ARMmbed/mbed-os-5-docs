@@ -52,8 +52,8 @@ These Mbed OS drivers contain locking deep sleep:
 
 ### Sleep manager function reference
 
-[https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h)
+<a href="https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h" target="_blank">https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h</a>
 
 ### Example
 
-[![View code](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
