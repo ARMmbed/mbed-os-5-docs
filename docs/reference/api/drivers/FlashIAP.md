@@ -26,4 +26,4 @@ View the full C++ API:
 
 ### Flash IAP example
 
-For an example that uses the `FlashIAP` driver, please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader).
+For an example that uses the `FlashIAP` driver, please see the <a href="https://github.com/ARMmbed/mbed-os-example-bootloader" target="_blank">bootloader example</a>.
