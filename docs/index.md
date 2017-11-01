@@ -1,5 +1,7 @@
 # Introduction to the mbed OS 5 Handbook
 
+<span class="warnings">**Warning**: This is the handbook for Mbed OS 5.5. If you’re working with Mbed OS 5.6 or later, please see the [latest documentation](https://os.mbed.com/docs/latest).</span>
+
 Welcome to the mbed OS 5 handbook.
 
 If you’re an experienced mbed applications developer, you might want to dive straight into the [API References](https://docs.mbed.com/docs/mbed-os-api-reference/en/) or look at our [development tools documentation](dev_tools/options.md).
