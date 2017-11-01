@@ -8,7 +8,7 @@ Your application code is written in C and C++. It uses the *application programm
 
 <span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.6/tutorials/windows-serial-driver.html).</span>
 
-The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/v5.6/tutorials/your-first-arm-mbed-application.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, <a href="/docs/v5.6/tutorials/your-first-arm-mbed-application.html" target="_blank">Blinky</a>, that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
 Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.6/reference/index.html).
 
