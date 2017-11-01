@@ -4,7 +4,7 @@ The TCPSocket class provides the ability to send a stream of data over TCP. TCPS
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
-Refer to [TCPServer](/docs/v5.6/reference/tcpserver.html) class for TCP server functionality.
+Refer to <a href="/docs/v5.6/reference/tcpserver.html" target="_blank">TCPServer</a> class for TCP server functionality.
 
 ### TCPSocket class reference
 
