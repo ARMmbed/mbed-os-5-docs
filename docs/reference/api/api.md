@@ -1,13 +1,13 @@
 ## API overview
 
-The [APIs](/docs/v5.6/introduction/glossary.html) in this document are organized by the feature, or group of features, they enable.
+The <a href="/docs/v5.6/introduction/glossary.html" target="_blank">APIs</a> in this document are organized by the feature, or group of features, they enable.
 
-- [Platform](/docs/v5.6/reference/platform-overview.html): platform modules that provide consistent user experience.
-- [Drivers](/docs/v5.6/reference/drivers-overview.html): analog and digital input and outputs and digital interfaces.
-- [RTOS](/docs/v5.6/reference/rtos-api.html): handling tasks and events in Mbed OS.
-- [Network Socket](/docs/v5.6/reference/network-socket-overview.html): network sockets, Ethernet, Wi-Fi, cellular and mesh networking.
-- [Bluetooth](/docs/v5.6/reference/bluetooth-overview.html): bluetooth low energy.
-- [Security](/docs/v5.6/reference/security-overview.html): working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
-- [Storage](/docs/v5.6/reference/storage-overview.html): working with the file system.
+- <a href="/docs/v5.6/reference/platform-overview.html" target="_blank">Platform</a>: platform modules that provide consistent user experience.
+- <a href="/docs/v5.6/reference/drivers-overview.html" target="_blank">Drivers</a>: analog and digital input and outputs and digital interfaces.
+- <a href="/docs/v5.6/reference/rtos-api.html" target="_blank">RTOS</a>: handling tasks and events in Mbed OS.
+- <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">Network Socket</a>: network sockets, Ethernet, Wi-Fi, cellular and mesh networking.
+- <a href="/docs/v5.6/reference/bluetooth-overview.html" target="_blank">Bluetooth</a>: bluetooth low energy.
+- <a href="/docs/v5.6/reference/security-overview.html" target="_blank">Security</a>: working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
+- <a href="/docs/v5.6/reference/storage-overview.html" target="_blank">Storage</a>: working with the file system.
 
-We also provide guidelines for [contributing to Mbed OS](/docs/v5.6/reference/contributing-overview.html).
+We also provide guidelines for <a href="/docs/v5.6/reference/contributing-overview.html" target="_blank">contributing to Mbed OS</a>.
