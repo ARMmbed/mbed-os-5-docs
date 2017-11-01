@@ -27,7 +27,7 @@ You can implement a cellular network interface in different ways depending on yo
 
 **Case 3: Modem present on target board**
    * This refers to the case when the cellular modem is bundled with the target board.
-   * Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an implementation of `onboard_modem_api` [here](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
+   * Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an [implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c) of `onboard_modem_api`.
    * Following Mbed OS conventions, drivers for on-board modules may become part of the Mbed OS tree.
    * `OnboardCellularInterface` ties together `onboard_modem_api.h` with the generic `PPPCellularInterface` to provide a complete driver. At present, only UART connection type is handled.
 
@@ -166,7 +166,7 @@ typedef enum {
 ```
 The current implementation does not use all pins, but you must define all of them.
 
-3. **Implement `onboard_modem_api.h`** Provide an implementation of `onboard_modem_api.h`. You can find an example implementation [here](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
+3. **Implement `onboard_modem_api.h`** Provide an implementation of `onboard_modem_api.h`. We provide an [example implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
 
 ###### Providing module modem API
 
