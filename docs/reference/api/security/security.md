@@ -2,10 +2,10 @@
 
 Security on Arm Mbed OS is divided into two parts:
 
-* [Connection security through Arm Mbed TLS](/docs/v5.6/reference/tls.html).
-* [Device security through Arm Mbed uVisor](/docs/v5.6/reference/uvisor.html).
+- <a href="/docs/v5.6/reference/tls.html" target="_blank">Connection security through Arm Mbed TLS</a>.
+- <a href="/docs/v5.6/reference/uvisor.html" target="_blank">Device security through Arm Mbed uVisor</a>.
 
 The sections cover working with these modules in the context of Mbed OS. For generic documentation for both modules, see:
 
-* [Mbed TLS full documentation](https://tls.mbed.org/).
-* [Mbed uVisor full documentation](https://docs.mbed.com/docs/uvisor-and-uvisor-lib-documentation/en/latest/).
+- <a href="https://tls.mbed.org/" target="_blank">Mbed TLS full documentation</a>.
+- <a href="https://docs.mbed.com/docs/uvisor-and-uvisor-lib-documentation/en/latest/" target="_blank">Mbed uVisor full documentation</a>.
