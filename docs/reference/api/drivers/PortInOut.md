@@ -1,6 +1,6 @@
 ## PortInOut
 
-Use the PortInOut interface to read and write an underlying GPIO port as one value. This is much faster than [BusInOut](/docs/v5.6/reference/businout.html) because you can write a port all at once, but it is much less flexible because you are constrained by the port and bit layout of the underlying GPIO ports.
+Use the PortInOut interface to read and write an underlying GPIO port as one value. This is much faster than <a href="/docs/v5.6/reference/businout.html" target="_blank">BusInOut</a> because you can write a port all at once, but it is much less flexible because you are constrained by the port and bit layout of the underlying GPIO ports.
 
 A mask can be supplied so you only use certain parts of a port, allowing other bits to be used for other interfaces.
 
