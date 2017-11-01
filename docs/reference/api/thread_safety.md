@@ -70,19 +70,19 @@ However, there are times when a simple mutex is not an appropriate mechanism for
 
 The RTOS provides several mechanisms to move interrupt processing onto a thread. These include, but are not limited to:
 
- * [Signals](https://os.mbed.com/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html)
- * [Queue](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/Queue_8h_source.html)
- * [Mail](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/Mail_8h_source.html)
+ - <a href="https://os.mbed.com/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html" target="_blank">Signals</a>.
+ - <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/Queue_8h_source.html" target="_blank">Queue</a>.
+ - <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/Mail_8h_source.html" target="_blank">Mail</a>.
 
 <span class="warnings">**Warning:** In Mbed OS 5, if you attempt to use a mutex from within an interrupt, nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening.</span>
 
-For more information see [rtos/Mutex.h](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/Mutex_8h_source.html).
+For more information see <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/Mutex_8h_source.html" target="_blank">rtos/Mutex.h</a>.
 
 ###### Atomics
 
 Mbed OS provides atomic functions to make code **interrupt safe**. If you must modify an object or data structure from interrupts, you can use these atomic functions to synchronize the access.
 
-For more information see [platform/critical.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h).
+For more information see<a href="https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h" target="_blank">platform/critical.h</a>.
 
 ###### Critical sections
 
@@ -93,15 +93,15 @@ Critical sections disable interrupts to provide uninterrupted access to a resour
 - Do not perform time consuming operations inside critical sections. This will negatively affect the timing of the entire system, because all interrupts are disabled during critical sections.
 - Do not invoke any standard lib or RTOS functions within a critical section; it could result in a hard fault because RTOS performs SVC calls.
 
-For more information see [platform/critical.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h).
+For more information see <a href="https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h" target="_blank">platform/critical.h</a>.
 
 ##### Major Mbed OS libraries
 
 - Network Socket API - **Thread safe**: public calls are protected by a mutex.
-- Nanostack - **Not protected**:  in general, we recommend that Mbed developers use our 6LoWPAN stack through the Network Socket API. If you wish to use Nanostack directly, you need to be aware of how it uses threads. The core of Nanostack runs on a tasklet mechanism, scheduled on a single underlying OS thread. Developers who wish to call directly to Nanostack must create their own tasklet and make Nanostack calls from there. Because there is only one OS thread servicing all tasklets, there is no need for further synchronization between tasklets. [See the 6LoWPAN documentation](/docs/v5.6/tutorials/mesh.html).
-- `mbed-tls` - **Not protected**: function calls are safe from any thread as long as the objects they operate on are properly protected - see the [documentation](https://tls.mbed.org/kb/development/thread-safety-and-multi-threading).
+- Nanostack - **Not protected**:  in general, we recommend that Mbed developers use our 6LoWPAN stack through the Network Socket API. If you wish to use Nanostack directly, you need to be aware of how it uses threads. The core of Nanostack runs on a tasklet mechanism, scheduled on a single underlying OS thread. Developers who wish to call directly to Nanostack must create their own tasklet and make Nanostack calls from there. Because there is only one OS thread servicing all tasklets, there is no need for further synchronization between tasklets. See the <a href="/docs/v5.6/tutorials/mesh.html" target="_blank">6LoWPAN documentation</a>.
+- `mbed-tls` - **Not protected**: function calls are safe from any thread as long as the objects they operate on are properly protected - see the <a href="https://tls.mbed.org/kb/development/thread-safety-and-multi-threading" target="_blank">documentation</a>.
 - Mbed client - **Thread safe**: public calls are protected by a mutex.
-- BLE - **Not protected**: the expected use case for BLE is to run on one thread and serialize all events to that thread. This is analogous to the way Nanostack uses a thread. We provide a number of examples that showcase how to use BLE in a thread-safe way, including the Eddystone Service found [here](https://github.com/ARMmbed/ble-examples-morpheus/blob/mbed_cli_update/BLE_EddystoneService/source/main.cpp).
+- BLE - **Not protected**: the expected use case for BLE is to run on one thread and serialize all events to that thread. This is analogous to the way Nanostack uses a thread. We provide a number of examples that showcase how to use BLE in a thread-safe way, including the <a href="https://github.com/ARMmbed/ble-examples-morpheus/blob/mbed_cli_update/BLE_EddystoneService/source/main.cpp" target="_blank">Eddystone Service</a>.
 
 ##### Additional considerations when writing thread-safe code
 
@@ -111,8 +111,8 @@ You need to synchronize access to hardware from two objects using the same pins.
 
 #### Considerations when porting
 
-Porting new platforms to Mbed OS 5 is nearly the same as it is in Mbed 2. In general, drivers that operate below the C HAL layer don't need synchronization mechansims because this is already provided at a higher level. The only exceptions to this are the functions `port_read`, `port_write`, `gpio_read` and `gpio_write`, which are expected to use processor-specific `set` and `clear` registers rather than performing a read-modify-write sequence. See an example of this [here](https://github.com/mbedmicro/mbed/blob/52e93aebd083b679a8fe7b0e47039f138fa8c224/hal/targets/hal/TARGET_Freescale/TARGET_KSDK2_MCUS/TARGET_K64F/drivers/fsl_gpio.h#L135).
+Porting new platforms to Mbed OS 5 is nearly the same as it is in Mbed 2. In general, drivers that operate below the C HAL layer don't need synchronization mechansims because this is already provided at a higher level. The only exceptions to this are the functions `port_read`, `port_write`, `gpio_read` and `gpio_write`, which are expected to use processor-specific `set` and `clear` registers rather than performing a read-modify-write sequence. For more information, see the <a href="https://github.com/mbedmicro/mbed/blob/52e93aebd083b679a8fe7b0e47039f138fa8c224/hal/targets/hal/TARGET_Freescale/TARGET_KSDK2_MCUS/TARGET_K64F/drivers/fsl_gpio.h#L135" target="_blank">example</a>.
 
 #### Further reading
 
-For more information, see [the CMSIS-RTOS tutorial](http://www2.keil.com/mdk5/cmsis/rtx/).
+For more information, see <a href="http://www2.keil.com/mdk5/cmsis/rtx/" target="_blank">the CMSIS-RTOS tutorial</a>.
