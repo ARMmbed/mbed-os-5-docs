@@ -1,6 +1,6 @@
 ## Semaphore
 
-A [semaphore](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_semaphore.html) manages thread access to a pool of shared resources of a certain type.
+A <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_semaphore.html" target="_blank">semaphore</a> manages thread access to a pool of shared resources of a certain type.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Semaphore.png)</span>
 
