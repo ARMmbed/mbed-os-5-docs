@@ -4,7 +4,7 @@
 
 ### FileHandle class reference
 
-[Add embedded class reference here. Ask your editor for help if you have not done this before.]
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_handle.html)
 
 ### FileHandle example
 
