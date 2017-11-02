@@ -56,6 +56,7 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Wait.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Callback.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/DeepSleepLock.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/SleepManager.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/CriticalSectionLock.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Time.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Error.md"},
