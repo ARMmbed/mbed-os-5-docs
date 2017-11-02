@@ -12,7 +12,7 @@ The GNU Arm Eclipse exporter is available for all targets that use the GCC Arm t
 
 #### Qt Creator and Make
 
-The Qt Creator project export is available for the GCC Arm toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
+The Qt Creator project export is available for the GCC Arm toolchain; it generates a <a href="http://doc.qt.io/qtcreator/creator-project-generic.html" target="_blank">Qt Creator generic project</a> and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
 
 You can open the generated `.creator` project in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion. You can use the Makefile to compile the project; the IDE automatically invokes the Makefile when you issue the build command.
 
@@ -20,13 +20,13 @@ You can open the generated `.creator` project in Qt Creator, enabling integratio
 
 ##### CMSIS Packs
 
-uVision and IAR both use [CMSIS packs](http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html) to find target information necessary to create a valid project file.
+uVision and IAR both use <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html" target="_blank">CMSIS packs</a> to find target information necessary to create a valid project file.
 
-We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to scrape [MDK5 Software Packs](https://www.keil.com/dd2/Pack/) for target information by parsing [http://www.keil.com/pack/index.idx](http://sadevicepacksprod.blob.core.windows.net/idxfile/index.idx). [index.json](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the relevant information from the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/) retrieved from each CMSIS PACK described in the index.
+We use the tool <a href="https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager" target="_blank">ArmPackManager</a> to scrape <a href="https://www.keil.com/dd2/Pack/" target="_blank">MDK5 Software Packs</a> for target information by parsing <a href="http://sadevicepacksprod.blob.core.windows.net/idxfile/index.idx" target="_blank">http://www.keil.com/pack/index.idx</a>. <a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json" target="_blank">index.json</a> stores the relevant information from the <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/" target="_blank">PDSC (Pack Description)</a> retrieved from each CMSIS PACK described in the index.
 
-A device support`.pdsc` file typically describes a family of devices. A [device name](/docs/v5.6/reference/contributing-target.html) uniquely identifies each device. This name makes a natural key to associate a device with its information in `index.json`. To support IAR and uVision exports for your target, you must add a device name field in `targets.json` containing this key.
+A device support`.pdsc` file typically describes a family of devices. A <a href="/docs/v5.6/reference/contributing-target.html" target="_blank">device name</a> uniquely identifies each device. This name makes a natural key to associate a device with its information in `index.json`. To support IAR and uVision exports for your target, you must add a device name field in `targets.json` containing this key.
 
-[http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
+<a href="http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc" target="_blank">http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc</a> is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
 
 ```xml
       <device Dname="MK20DX256xxx7">
@@ -46,11 +46,11 @@ A device support`.pdsc` file typically describes a family of devices. A [device 
 
 ##### uVision
 
-The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. [`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from these packs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic Arm CPU target in uVision5.
+The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. <a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15" target="_blank">`tools/export/uvision/uvision.tmpl`</a> uses target information from these packs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic Arm CPU target in uVision5.
 
 ##### IAR
 
-[`tools/export/iar/iar_definitions.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json) uses this device name to store information necessary to set the target in an IAR project.
+<a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json" target="_blank">`tools/export/iar/iar_definitions.json`</a> uses this device name to store information necessary to set the target in an IAR project.
 
 ##### Updating index.json
 
