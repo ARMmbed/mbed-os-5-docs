@@ -16,7 +16,7 @@ To use the ATCmdParser, the entity creating the ATCmdParser object passes a refe
 
 #### Example 1
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-atcmdparser)](https://github.com/ARMmbed/mbed-os-example-atcmdparser)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-atcmdparser)](https://github.com/ARMmbed/mbed-os-example-atcmdparser/blob/master/main.cpp)
 
 #### Example 2
 
