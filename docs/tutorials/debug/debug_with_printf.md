@@ -8,12 +8,12 @@ An easy way to inspect what your application is doing is to augment your applica
 
 Install the serial port driver for your development board:
 
-* For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
-* For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.6/tutorials/windows-serial-driver.html) - not required for Windows 10.
+- For ST boards: <a href="https://os.mbed.com/teams/ST/wiki/ST-Link-Driver" target="_blank">ST Link Driver</a>.
+- For all other boards: <a href="/docs/v5.6/tutorials/windows-serial-driver.html" target="_blank">Arm Mbed Windows serial port driver</a> - not required for Windows 10.
 
 You also need a serial monitor:
 
-* [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
+- <a href="http://sourceforge.jp/projects/ttssh2/files" target="_blank">TeraTerm</a>.
 
 #### Mac OS X
 
@@ -21,11 +21,11 @@ On Mac OS X, all software comes installed by default.
 
 #### Linux
 
-If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/).
+If you do not have it, install <a href="https://www.gnu.org/software/screen/" target="_blank">GNU Screen</a>.
 
 ### Getting started
 
-To send data over the serial connection, use the [Serial](/docs/v5.6/reference/serial.html) object.
+To send data over the serial connection, use the <a href="/docs/v5.6/reference/serial.html" target="_blank">Serial</a> object.
 
 #### Example program
 
@@ -68,7 +68,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="images>"![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)<span>Seeing the output over the serial port</span></span>
 
-<span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
+<span class="notes">**Note:** Unsure which COM port is used? In the <a href="http://www.computerhope.com/issues/ch000833.htm" target="_blank">device manager</a>, look under the *Ports* section.</span>
 
 #### Mac OS X
 
@@ -77,9 +77,9 @@ Compile this program, and flash it on your development board. You now can inspec
 1. Press `Enter`.
 1. Log messages appear.
 1. To exit, press:
-	* `Ctrl+A`
-	* `Ctrl+\`
-	* `y`
+    - `Ctrl+A`
+    - `Ctrl+\`
+    - `y`
 
 #### Linux
 
@@ -90,11 +90,12 @@ Compile this program, and flash it on your development board. You now can inspec
     $ ls /dev/ttyACM*
     /dev/ttyACM0
     ```
+    
 1. Connect to the board by entering `sudo screen /dev/ttyACM0 9600`.
 1. Log messages appear.
 1. To exit:
-	1. Press `Ctrl+A`.
-	1. Enter `quit`.
+    1. Press `Ctrl+A`.
+    1. Enter `quit`.
 
 <span class="notes">**Note:** To avoid using `sudo`, set up a udev rule.</span>
 
@@ -137,8 +138,8 @@ As seen above, you use the `printf()` function to communicate back to the user:
 
 `printf()` is not free:
 
-* It uses an additional 5-10K of flash memory. However, this is the cost of the first use of `printf()` in a program; further uses cost almost no additional memory.
-* Each call to `printf()` takes significant time to process and execute: about 100,000 instructions, or 10 milliseconds, depending on the clock speed. This is only a baseline: `printf()` with formatting will cost even more. If your clock runs slowly (as most microcontrollers' clocks do) and your computational power is therefore lower, `printf()` can cost so much that you can use it as a delay.
+- It uses an additional 5-10K of flash memory. However, this is the cost of the first use of `printf()` in a program; further uses cost almost no additional memory.
+- Each call to `printf()` takes significant time to process and execute: about 100,000 instructions, or 10 milliseconds, depending on the clock speed. This is only a baseline: `printf()` with formatting will cost even more. If your clock runs slowly (as most microcontrollers' clocks do) and your computational power is therefore lower, `printf()` can cost so much that you can use it as a delay.
 
 The limited code-space on the microcontroller's internal flash and the delay of the program require you to use `printf()` judiciously. Be careful about using it in an event handler, which we expect to terminate within a few microseconds.
 
@@ -170,14 +171,14 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.6/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because <a href="https://os.mbed.com/docs/v5.6/reference/mutex.html" target="_blank">mutexes guard</a> calls to stdio functions, such as printf, in the Arm C standard library, and mutexes <a href="https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html" target="_blank">cannot be called from an ISR</a>.
 
 You can avoid this by:
 
-* Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.6/reference/semaphore.html) or [mailbox](https://os.mbed.com/docs/v5.6/reference/mail.html), and calling `printf` in the main thread.
-* Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.6/reference/event.html).
+- Signaling from the ISR to the main thread using a <a href="https://os.mbed.com/docs/v5.6/reference/semaphore.html" target="_blank">semaphore</a> or <a href="https://os.mbed.com/docs/v5.6/reference/mail.html" target="_blank">mailbox</a>, and calling `printf` in the main thread.
+- Using an event dispatching library, such as <a href="https://os.mbed.com/docs/v5.6/reference/event.html" target="_blank">Mbed events</a>.
 
-You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
+You can see example code for both approaches in <a href="https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/" target="_blank">this blog post</a>.
 
 ### Printf() macros
 
