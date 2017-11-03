@@ -7,34 +7,34 @@ This section guidelines and details porting a cellular device driver to Mbed OS.
 You can implement a cellular network interface in different ways depending on your requirements and physical setup. For example:
 
 **Case 1: An implementation using Mbed OS provided network stacks (PPP mode)**
-   * Pros
-		* A well-established network stack with full Mbed OS support.
-		* Simple operation and implementation because the inherent network stack provides all socket APIs.
-		* Needs less maintenance because the IP stack handles the bulk of the work in data mode. Command mode is turned off as soon as the device enters data mode.
-   * Cons
-		* Heavier memory consumption.
-		* Bigger footprint on flash.
-		* Multiplexing command mode and data mode is not yet available.
+   - Pros
+		- A well-established network stack with full Mbed OS support.
+		- Simple operation and implementation because the inherent network stack provides all socket APIs.
+		- Needs less maintenance because the IP stack handles the bulk of the work in data mode. Command mode is turned off as soon as the device enters data mode.
+   - Cons
+		- Heavier memory consumption.
+		- Bigger footprint on flash.
+		- Multiplexing command mode and data mode is not yet available.
 
 **Case 2: An implementation using on-chip network stacks (AT only mode)**
-   * Pros
-		* Lighter memory footprint.
-		* Lighter flash footprint.
-   * Cons
-		* Needs to provide a chip-specific interface between AT-sockets and Mbed OS NSAPI sockets.
-		* Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
-		* Limited capabilities in some instances.
+   - Pros
+		- Lighter memory footprint.
+		- Lighter flash footprint.
+   - Cons
+		- Needs to provide a chip-specific interface between AT-sockets and Mbed OS NSAPI sockets.
+		- Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
+		- Limited capabilities in some instances.
 
 **Case 3: Modem present on target board**
-   * This refers to the case when the cellular modem is bundled with the target board.
-   * Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an [implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c) of `onboard_modem_api`.
-   * Following Mbed OS conventions, drivers for on-board modules may become part of the Mbed OS tree.
-   * `OnboardCellularInterface` ties together `onboard_modem_api.h` with the generic `PPPCellularInterface` to provide a complete driver. At present, only UART connection type is handled.
+   - This refers to the case when the cellular modem is bundled with the target board.
+   - Target board must provide an implementation of the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h" target="_blank">onboard_modem_API</a>. For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an <a href="https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c" target="_blank">implementation</a> of `onboard_modem_api`.
+   - Following Mbed OS conventions, drivers for on-board modules may become part of the Mbed OS tree.
+   - `OnboardCellularInterface` ties together `onboard_modem_api.h` with the generic `PPPCellularInterface` to provide a complete driver. At present, only UART connection type is handled.
 
 **Case 4: Modem attached as a daughter board (Arduino shield)**
-   * This refers to the case when the cellular modem comes as a plug-in module or an external shield (for example, with an Arduino form factor).
-   * Following Mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the Mbed OS tree.
-   * If the port inherits from the generic modem driver that Arm Mbed OS, the structure might look like this:
+   - This refers to the case when the cellular modem comes as a plug-in module or an external shield (for example, with an Arduino form factor).
+   - Following Mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the Mbed OS tree.
+   - If the port inherits from the generic modem driver that Arm Mbed OS, the structure might look like this:
 
    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/inherit_from_generic_modem.png)</span>
 
@@ -166,34 +166,34 @@ typedef enum {
 ```
 The current implementation does not use all pins, but you must define all of them.
 
-3. **Implement `onboard_modem_api.h`** Provide an implementation of `onboard_modem_api.h`. We provide an [example implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
+3. **Implement `onboard_modem_api.h`** Provide an implementation of `onboard_modem_api.h`. We provide an <a href="https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c" target="_blank">example implementation</a>.
 
 ###### Providing module modem API
 
 Only valid when **Case 4** is applicable.
 
-* If the modem is already ready to use via the UART, it may be possible to use `UARTCellularInterface` directly. Just pass its constructor the necessary pin information for the module connected to your board.
+- If the modem is already ready to use via the UART, it may be possible to use `UARTCellularInterface` directly. Just pass its constructor the necessary pin information for the module connected to your board.
 
-* If you require custom power and reset controls, create a custom class derived from `UARTCellularInterface`, which overrides the protected `modem_init()` methods.
+- If you require custom power and reset controls, create a custom class derived from `UARTCellularInterface`, which overrides the protected `modem_init()` methods.
 
-* If using a different connection type, you must provide access to the connection by implementing the `FileHandle` API, and then you can pass your file handle for that connection to `PPPCellularInterface`. Either use it directly, or derive from it, and pass a file handle to its constructor in the same manner as `UARTCellularInterface`.
+- If using a different connection type, you must provide access to the connection by implementing the `FileHandle` API, and then you can pass your file handle for that connection to `PPPCellularInterface`. Either use it directly, or derive from it, and pass a file handle to its constructor in the same manner as `UARTCellularInterface`.
 
 ###### Providing an implementation using on-chip network stacks (AT only mode)
 
 Only valid when **Case 1** is applicable.
 
-* This is the most complex case - the bulk of the work is implementing the [NSAPI socket and network interfaces](/docs/v5.6/reference/network-socket-overview.html). The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
+- This is the most complex case - the bulk of the work is implementing the <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">NSAPI socket and network interfaces</a>. The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
 
-* Use a file handle, such as `UARTSerial`, to provide the raw data connection; then you can use `ATCmdParser` to handle connection logic and the data flow of the socket API, assuming that you use AT commands to control the sockets.
+- Use a file handle, such as `UARTSerial`, to provide the raw data connection; then you can use `ATCmdParser` to handle connection logic and the data flow of the socket API, assuming that you use AT commands to control the sockets.
 
-* An onboard implementation can use `onboard_modem_api.h` in the same manner as a PPP driver to access power controls - this could be shared with a PPP implementation.
+- An onboard implementation can use `onboard_modem_api.h` in the same manner as a PPP driver to access power controls - this could be shared with a PPP implementation.
 
 ###### Port verification testing
 
 Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
 
-*	For onboard modem types:
-	1. Copy contents of this [folder](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/generic_modem_driver/TESTS/unit_tests/default/gmd_ut_config_header.h) in your implementation directory. For example, `netsocket/cellular/YOUR_IMPLEMENTATION/TESTS/unit_tests/default/`.
+-	For onboard modem types:
+	1. Copy contents of this <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/generic_modem_driver/TESTS/unit_tests/default/gmd_ut_config_header.h" target="_blank">folder</a> in your implementation directory. For example, `netsocket/cellular/YOUR_IMPLEMENTATION/TESTS/unit_tests/default/`.
  	1.  Rename `OnboardCellularInterface` everywhere in the `main.cpp` with your Class. (This could be a derived class from already provided APIs, as this [subsection](#providing-module-modem-api) mentions.)
  	1.  Make an empty test application with the fork of `mbed-os` where your implementation resides.
  	1.  Create a `.json` file in the root directory of your application, and copy the contents of `template_mbed_app.txt` into it.
@@ -210,4 +210,4 @@ Once you have your target and driver port ready, you can verify your implementat
  	mbed test -n YOUR_TEST_SUITE_NAME
  	```
 
-For more information on the  `mbed-greentea` testing suite, please visit [its documentation](/docs/v5.6/tools/greentea.html).
+For more information on the  `mbed-greentea` testing suite, please visit <a href="/docs/v5.6/tools/greentea.html" target="_blank">its documentation</a>.
