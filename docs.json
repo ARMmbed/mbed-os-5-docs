@@ -128,7 +128,8 @@
             "title": "Bluetooth",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/bluetooth.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/BLE.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/BLE.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/iBeacon.md"}
             ]
           },
           {
