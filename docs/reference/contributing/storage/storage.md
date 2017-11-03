@@ -24,4 +24,4 @@ Here is the full API that a filesystem may implement:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L205)
 
-Filesystems must be backed by a block device in Mbed OS. If you are using supported hardware then you can continue, otherwise view the block device porting section above.
+Filesystems must be backed by a block device in Mbed OS. If you are using supported hardware then you can use the Mbed OS block device classes, otherwise view the block device porting section earlier in this guide.
