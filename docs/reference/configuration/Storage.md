@@ -1,11 +1,12 @@
 <h2 id="configuration-storage">Storage</h2>
 
-```
-Configuration parameters
-------------------------
+The storage configuration settings can be modified in the filesystem's mbed_lib.json file located in features/filesystem.
 
-Name: filesystem.present
-    Defined by: library:filesystem
-    Macro name: MBED_CONF_FILESYSTEM_PRESENT
-    Value: 1 (set by library:filesystem)
+```json
+{
+    "name": "filesystem",
+    "config": {
+        "present": 1
+    }
+}
 ```
