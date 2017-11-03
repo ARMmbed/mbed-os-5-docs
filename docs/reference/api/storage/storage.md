@@ -7,7 +7,17 @@ The storage APIs present in Arm Mbed OS are:
 
 #### Declaring a file system
 
-The [FileSystem](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html" target="_blank">open</a> or <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html" target="_blank">fopen</a>).
+The [FileSystem](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions `open` and `fopen`.
+
+##### Open
+
+The POSIX `open` function creates a connection between a file and a file descriptor. Using a string path argument, a file can be opened with a set of option flags. The file descriptor can be used by other functions in Mbed OS to track current position in a file, read and write content, and so on.
+
+##### Fopen
+
+The POSIX `fopen` function is similar to the open function above, but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. Although it should be noted that it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
+
+The IEEE C standard specifications for both `open` and `fopen` can provide additional information.
 
 Existing file systems:
 
