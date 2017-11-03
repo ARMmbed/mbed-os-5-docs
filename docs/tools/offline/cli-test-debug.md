@@ -163,7 +163,7 @@ As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Plea
 #### Unable to import Mercurial (mbed.org) programs or libraries.
 1. Check whether you have Mercurial installed in your system path by  running `hg` in command prompt. If you're receiving "command not found" or a similar message, then you need to install Mercurial, and add it to your system path.
 
-2. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's [certificate management](https://www.mercurial-scm.org/wiki/CACertificates).
+2. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's <a href="https://www.mercurial-scm.org/wiki/CACertificates" target="_blank">certificate management</a>.
 
 #### Various issues when running Mbed CLI in Cygwin environment
-Currently Mbed CLI is not compatible with Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
+Currently Mbed CLI is not compatible with Cygwin environment and <a href="https://github.com/ARMmbed/mbed-cli/issues/299" target="_blank">cannot be executed inside it</a>.
