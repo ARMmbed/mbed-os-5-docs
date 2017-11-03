@@ -2,21 +2,19 @@
 
 #### Bring in CMSIS-Core files
 
-To work with Mbed OS you'll need to implement CMSIS-Core support for your device as described in [CMSIS-Core documentation](http://www.keil.com/pack/doc/CMSIS/Core/html/index.html). CMSIS-Core file are usually located in the `mbed-os\targets\TARGET_<VENDOR>\TARGET_MCU_<FAMILY>\TARGET_<MCUNAME>\device` directory.
-
+To work with Mbed OS, you need to implement CMSIS-Core support for your device as the <a href="http://www.keil.com/pack/doc/CMSIS/Core/html/index.html" target="_blank">CMSIS-Core documentation</a> describes. CMSIS-Core files are usually in the `mbed-os\targets\TARGET_<VENDOR>\TARGET_MCU_<FAMILY>\TARGET_<MCUNAME>\device` directory.
 
 ##### Startup files
 
-Startup file contains interrupt vectors and low level core and platform initialization routines. You'll need to provide a version of this file for each of Mbed OS supported toolchains.
+The startup file contains interrupt vectors and low-level core and platform initialization routines. You need to provide a version of this file for each Mbed OS supported toolchain.
 
-For more information about startup files please check [CMSIS documentation](http://www.keil.com/pack/doc/CMSIS/Core/html/startup_s_pg.html).
-
+For more information about startup files, please see the <a href="http://www.keil.com/pack/doc/CMSIS/Core/html/startup_s_pg.html" target="_blank">CMSIS documentation</a>.
 
 ##### Linker scripts
 
-After adding the core files, the next step is to add linker scripts for Mbed OS. To do this, you can either use the linker scripts below and change the defines for your target or you can  modify an existing linker script to be compatible with Mbed OS. You'll need to provide a version of the linker script for each of Mbed OS supported toolchains.
+After adding the core files, the next step is to add linker scripts for Mbed OS. To do this, you can either use the linker scripts below and change the defines for your target or you can  modify an existing linker script to be compatible with Mbed OS. You need to provide a version of the linker script for each Mbed OS supported toolchain.
 
-If you are updating your own linker script you must:
+If you are updating your own linker script, you must:
 
 - Reserve space for the RAM vector table.
 - Define the start of the heap:
@@ -26,10 +24,9 @@ If you are updating your own linker script you must:
     - Add defines for a relocatable application - `MBED_APP_START` and `MBED_APP_SIZE`.
     - Add preprocessing directive `#! armcc -E` (ARM compiler only).
 
-If you are using the below linker script then you need to update all the defines in the `/* Device specific values */` section for your target.
+If you are using the below linker script, then you need to update all the defines in the `/* Device specific values */` section for your target.
 
-
-ARM linker script template:
+Arm linker script template:
 
 ```
 #! armcc -E
@@ -290,17 +287,15 @@ SECTIONS
 }
 ```
 
-
 ##### Other required files
 
-- Make sure your CMSIS-Core implementation contains [`device.h` header](http://www.keil.com/pack/doc/CMSIS/Core/html/device_h_pg.html).
-- Extend CMSIS-Core by adding the file `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h`. This header file includes device-specific headers that include CMSIS-Core. It must also include `cmsic_nvic.h`, see below.
-- Add the `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.h` header file. This contains the define `NVIC_NUM_VECTORS`, which is the number of vectors the devices has, and `NVIC_RAM_VECTOR_ADDRESS`, which is the address of the RAM vector table. Mbed OS will relocate the vectors from initial location in ROM to provided address in RAM and update `VTOR` register. NOTE: For devices without `VTOR` register, you'll need to make sure the vectors are in the read-write memory before execution reaches the `main` function. In this case you may also need to provide visualization of NVIC access functions. For details please see [CMSIS NVIC documentation](https://www.keil.com/pack/doc/CMSIS/Core/html/group__NVIC__gr.html).
+- Make sure your CMSIS-Core implementation contains the <a href="http://www.keil.com/pack/doc/CMSIS/Core/html/device_h_pg.html" target="_blank">`device.h` header</a>.
+- Extend CMSIS-Core by adding the file `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h`. This header file includes device-specific headers that include CMSIS-Core. It must also include `cmsic_nvic.h`.
+- Add the `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.h` header file. This contains the define `NVIC_NUM_VECTORS`, which is the number of vectors the devices has, and `NVIC_RAM_VECTOR_ADDRESS`, which is the address of the RAM vector table. Mbed OS relocates the vectors from the initial location in ROM to the provided address in RAM and updates the `VTOR` register. NOTE: For devices without the `VTOR` register, you need to make sure the vectors are in the read-write memory before execution reaches the `main` function. In this case, you may also need to provide visualization of NVIC access functions. For details, please see the <a href="https://www.keil.com/pack/doc/CMSIS/Core/html/group__NVIC__gr.html" target="_blank">CMSIS NVIC documentation</a>.
 - Define the initial stack pointer, `INITIAL_SP`, in `mbed_rtx.h`. This file is typically in `mbed-os\targets\TARGET_VENDOR\mbed_rtx.h`.
-
 
 ### Entry points
 
-Except the reset vector, which is the standard entry point for Cortex-M cores, Mbed OS provides `mbed_sdk_init` which can be overloaded by the target to perform higher level initialization. This function will be called later in the bootstrap process, after the basic initialization is done, but before RTOS is started and before the `main` function is called.
+Except the reset vector, which is the standard entry point for Cortex-M cores, Mbed OS provides `mbed_sdk_init`, which the target can overload to perform higher level initialization. This function will be called later in the bootstrap process, after the basic initialization is done but before RTOS starts and before the `main` function is called.
 
-Mbed OS provides another entry point that will be executed before `main` called `mbed_main`, this function is reserved for application use and should not be defined by the target code.
+Mbed OS provides another entry point that will be executed before `main` called `mbed_main`. This function is reserved for application use, and the target code should not define it.
