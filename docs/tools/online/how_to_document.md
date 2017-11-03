@@ -10,13 +10,13 @@ In Arm Mbed, API documentation for programs and libraries is fully supported bot
 
 Each documentation group contains only the documented definitions for that group:
 
-* Classes: classes and methods.
+- Classes: classes and methods.
 
-* Structs: struct and union data types.
+- Structs: struct and union data types.
 
-* Files: functions, variables, enums, defines, references to struct and unions, but no namespaces and classes.
+- Files: functions, variables, enums, defines, references to struct and unions, but no namespaces and classes.
 
-* Groups: defined by the author; grouped documentation elements such as files, namespaces, classes, functions, variables, enums, typedefs, defines and others for quick reference.
+- Groups: defined by the author; grouped documentation elements such as files, namespaces, classes, functions, variables, enums, typedefs, defines and others for quick reference.
 
 <span class="notes">**Note:** Undocumented classes, methods, functions and so on that exist in the source code won't appear in the documentation.</span>
 
@@ -36,7 +36,7 @@ Clicking one of the "Definition at line X of file source.c" links would open the
 
 ### New file from documentation example
 
-Another notable feature of the API documentation in the Mbed Online Compiler is the ability to create new files from documentation examples, making it easier to try them. The Mbed Compiler prompts for file name and may suggest ``main.cpp`` if that file doesn't already exist in the program root:
+Another notable feature of the API documentation in the Mbed Online Compiler is the ability to create new files from documentation examples, making it easier to try them. The Mbed Compiler prompts for file name and may suggest `main.cpp` if that file doesn't already exist in the program root:
 
 ### How to add documentation to your own programs and libraries
 
@@ -55,7 +55,7 @@ class HelloWorld {
 The most important thing about code documentation is explicitly telling the system that a comment is intended for documenting (and isn't just an ordinary comment). To do that:
 
 1. Put the comment block just above the definition.
-1. Start the comment block with ``/**`` or ``/*!`` (as opposed to ``/*``, which is a normal comment).
+1. Start the comment block with `/**` or `/*!` (as opposed to `/*`, which is a normal comment).
 
 
 ```c++
@@ -72,7 +72,7 @@ class HelloWorld {
 };
 ```
 
-You can also document single line comments, by starting them with ``///`` or ``//!``:
+You can also document single line comments, by starting them with `///` or `//!`:
 
 ```c++
 //! My HelloWorld class. Used for printing "Hello World" on USB serial.
@@ -92,7 +92,7 @@ It requires almost no effort to translate scattered comments in code into well f
 
 Documentation has special markup to describe parameters, return values, notes, code examples and so on.
 
-Doxygen accepts reserved words prefixed with ``\`` or ``@``. Some of the commonly used ones are:
+Doxygen accepts reserved words prefixed with `\` or `@`. Some of the commonly used ones are:
 
 * `@param <name> text`
 
@@ -153,8 +153,8 @@ Once the docs are generated, the navigation tree is refreshed, and you can see t
 
 Doxygen is the core of the documentation generation in the Arm Mbed ecosystem:
 
-* Doxygen is compatible with Javadoc and other documentation styles. Refer to the [Doxygen manual](http://www.stack.nl/~dimitri/doxygen/manual.html) for more information.
+- Doxygen is compatible with Javadoc and other documentation styles. Refer to the <a href="http://www.stack.nl/~dimitri/doxygen/manual.html" target="_blank">Doxygen manual</a> for more information.
 
-* Doxygen won't process the ``main.cpp`` file unless referenced in another file using ```/** @file main.cpp */``` markup. It's generally a good idea to split definitions and defines into library (libraries) instead; do not rely on ``main.cpp`` file documentation.
+- Doxygen won't process the `main.cpp` file unless referenced in another file using `/** @file main.cpp */` markup. It's generally a good idea to split definitions and defines into library (libraries) instead; do not rely on ``main.cpp`` file documentation.
 
-* Doxygen can process comments located right next to definitions and declarations, and also at other places. Refer to [documentation at other places](http://www.stack.nl/~dimitri/doxygen/docblocks.html#structuralcommands) in the Doxygen manual.
+- Doxygen can process comments located right next to definitions and declarations, and also at other places. Refer to <a href="http://www.stack.nl/~dimitri/doxygen/docblocks.html#structuralcommands" target="_blank">documentation at other places</a> in the Doxygen manual.
