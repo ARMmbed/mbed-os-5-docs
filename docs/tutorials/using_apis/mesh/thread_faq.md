@@ -30,18 +30,18 @@ Ad-hoc networks with devices from different manufacturers can be easily created 
 
 #### How to commission with a mobile device? Is there an example app?
 
-An example application is [downloadable from the Android store](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner).
+An example application is <a href="https://play.google.com/store/apps/details?id=org.threadgroup.commissioner" target="_blank">downloadable from the Android store</a>.
 
 #### Are there any application examples? What are the Thread features supported/not supported by them?
 
 - Application examples supporting SED and REED types:
-  - [Mbed OS Client example](https://github.com/ARMmbed/mbed-os-example-client)
-  - [Mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal)
-- [Thread border router](https://github.com/ARMmbed/nanostack-border-router)
+  - <a href="https://github.com/ARMmbed/mbed-os-example-client" target="_blank">Mbed OS Client example</a>.
+  - <a href="https://github.com/ARMmbed/mbed-os-example-mesh-minimal" target="_blank">Mesh minimal example</a>.
+- <a href="https://github.com/ARMmbed/nanostack-border-router" target="_blank">Thread border router</a>.
 
 #### How to debug and visualize the network?
 
-- You can download a Wireshark version that supports the Thread protocol from the [Wireshark web page](https://www.wireshark.org/download.html)
+- You can download a Wireshark version that supports the Thread protocol from the <a href="https://www.wireshark.org/download.html" target="_blank">Wireshark web page</a>.
 - A commissioner can do network diagnostics and topology images using Thread-specific diagnostics commands. Our software supports this but there is no C/C++ API support.
 
 #### How to check for errors or check the link quality?
@@ -50,7 +50,7 @@ Link quality and errors are easiest to debug using Wireshark.
 
 #### How to send/receive with UDP and TCP sockets. How to use multicast groups?
 
-The mesh minimal uses socket communication and multicasting. See more details in the [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+The mesh minimal uses socket communication and multicasting. See more details in the <a href="https://github.com/ARMmbed/mbed-os-example-mesh-minimal" target="_blank">mesh minimal example</a>.
 
 #### What if my ISP does not provide IPv6 service? Why do I need IPv6 internet service? Can I use a tunneling service?
 
@@ -78,7 +78,7 @@ IPv6 multicast messages are supported. link-local and realm-local (mesh-local) m
 
 #### What are the configurable parameters in the Thread devices? What do they mean and where are they documented?
 
-- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [Mbed Mesh API](/docs/v5.6/reference/mesh.html).
+- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the <a href="/docs/v5.6/reference/mesh.html" target="_blank">Mbed Mesh API</a>.
 More information can be found in the Thread specification.
 - The Thread device configuration includes PSKd and EUI64 (usually the MAC address of the radio chip), that are used to commission the device.
 
