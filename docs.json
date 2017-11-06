@@ -17,6 +17,7 @@
         "title": "Reference",
         "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
+        "category": "reference",
         "type": "markdown",
         "chapters": [
           {
