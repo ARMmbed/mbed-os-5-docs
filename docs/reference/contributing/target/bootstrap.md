@@ -296,6 +296,6 @@ SECTIONS
 
 ### Entry points
 
-Except the reset vector, which is the standard entry point for Cortex-M cores, Mbed OS provides `mbed_sdk_init`, which the target can overload to perform higher level initialization. This function will be called later in the bootstrap process, after the basic initialization is done but before RTOS starts and before the `main` function is called.
+Except the reset vector, which is the standard entry point for Cortex-M cores, Mbed OS provides `mbed_sdk_init`, which the target can overload to perform higher level initialization. Mbed OS internals call this function later in the bootstrap process, after the basic initialization is done but before RTOS starts and before the `main` function is called.
 
 Mbed OS provides another entry point that will be executed before `main` called `mbed_main`. This function is reserved for application use, and the target code should not define it.
