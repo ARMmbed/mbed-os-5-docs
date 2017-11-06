@@ -144,8 +144,8 @@
           },
           {
             "title": "Storage",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/storage.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/storage.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/HeapBlockDevice.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/MBRBlockDevice.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/ChainingBlockDevice.md"},
