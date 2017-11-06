@@ -18,6 +18,7 @@
         "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
         "category": "reference",
+        "subcategory": "reference",
         "type": "markdown",
         "chapters": [
           {
@@ -49,12 +50,6 @@
             "intro": {
                 "type": "markdown",
                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/api.md"},
-            "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/api.md"}
-            ]
-          },
-          {
-            "title": "Platform",
             "sources": [
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/platform.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Wait.md"},
