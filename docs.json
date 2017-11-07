@@ -4,10 +4,15 @@
         "description": "Introducing Mbed OS; the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
-        "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/introduction.md"},
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/release_process.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/terms.md"}
+        "chapters": [
+          {
+            "title": "Overview",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/introduction.md"},
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/release_process.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/terms.md"}
+            ]
+          }
         ],
         "tags": [
             "introduction"
@@ -17,14 +22,12 @@
         "title": "Reference",
         "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
-        "category": "reference",
-        "subcategory": "reference",
         "type": "markdown",
         "chapters": [
           {
             "title": "Overview",
-            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/reference.md"},
             "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/reference.md"}
             ]
           },
           {
