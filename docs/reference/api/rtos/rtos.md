@@ -6,7 +6,7 @@ The code of the Mbed RTOS can be found in the <a href="https://github.com/ARMmbe
 
 #### SysTick
 
-System tick timer (SysTick) is a standard timer available on most Cortex-M cores. Its main purpose is to rise an interrupt with set frequency (usually 1ms). You can use it to perform any task in the system, but for platforms using RTOS, including Mbed OS, it provides an interval for the OS for counting the time and scheduling tasks.
+System tick timer (SysTick) is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). You can use it to perform any task in the system, but for platforms using RTOS, including Mbed OS, it provides an interval for the OS for counting the time and scheduling tasks.
 
 Mbed OS uses default SysTick source for most targets, but you can override that using the <a href="http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__TickAPI.html" target="_blank">Tick API</a> that CMSIS-RTOS2 provides. In which case you'll need to provide your own source of the interrupts.
 
