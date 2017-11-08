@@ -13,7 +13,7 @@ To bring up the network interface:
 1. Instantiate the `EthInterface` class.
 1. Call the `connect` function.
 1. Once you connect the EthInterface, you can use it as a
-target for opening <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">network sockets</a>.
+target for opening <a href="/docs/v5.6/reference/network-socket.html" target="_blank">network sockets</a>.
 
 ### EthInterface example
 
@@ -23,4 +23,4 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 ### Related content
 
-- <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">Network socket</a> API reference overview.
+- <a href="/docs/v5.6/reference/network-socket.html" target="_blank">Network socket</a> API reference overview.
