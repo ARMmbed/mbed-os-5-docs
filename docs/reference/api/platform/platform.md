@@ -4,10 +4,14 @@ The role of the platform modules is to provide a consistent user experience on t
 
 - <a href="/docs/v5.6/reference/wait.html" target="_blank">Wait</a>: An API that provides simple wait capabilities.
 - <a href="/docs/v5.6/reference/callback.html" target="_blank">Callback</a>: An API that executes the user’s code in its own context.
-- <a href="/docs/v5.6/reference/deepsleeplock.html" target="_blank">DeepSleepLock</a>:The sleep function and sleep manager for Mbed OS.
+- <a href="/docs/v5.6/reference/deepsleeplock.html" target="_blank">DeepSleepLock</a>: The sleep function for Mbed OS.
+- <a href="/docs/v5.6/reference/sleep-manager.html" target="_blank">SleepManager</a>: The function that provides an API to control sleep modes.
 - <a href="/docs/v5.6/reference/criticalsectionlock.html" target="_blank">CriticalSectionLock</a>: An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
 - <a href="/docs/v5.6/reference/time.html" target="_blank">Time</a>: A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
+- <a href="/docs/v5.6/reference/error.html" target="_blank">Error</a>: A functions that generates a fatal runtime error.
 - <a href="/docs/v5.6/reference/noncopyable.html" target="_blank">NonCopyable</a>: An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
+- <a href="/docs/v5.6/reference/circularbuffer.html" target="_blank">CircularBuffer</a>: The class that provides APIs to push and pop data from a buffer
+- <a href="/docs/v5.6/reference/atcmdparser.html" target="_blank">ATCmdParser</a>: An Mbed OS compatible AT command parser.
 
 #### Callbacks
 
