@@ -2,7 +2,7 @@
 
 #### Contributions
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the CLA [**Amanda add link here?**] guidelines as pull requests submitted without a CLA in place will be immediately closed.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the <a href="/docs/v5.6/reference/guidelines.html#cla" target="_blank">CLA</a> guidelines as pull requests submitted without a CLA in place will be immediately closed.
 
 #### Contributing new features to Mbed OS
 
@@ -73,7 +73,7 @@ The current maintainers are:
 
 Each pull request will go through the following workflow:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/workflow.jpg)<span>The workflow of merging a pull request</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/workflow.png)<span>The workflow of merging a pull request</span></span>
 
 ##### Pull request states
 
