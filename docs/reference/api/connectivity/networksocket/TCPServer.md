@@ -15,3 +15,7 @@ Refer to <a href="/docs/v5.6/reference/tcpsocket.html" target="_blank">TCPSocket
 Here is a TCP server example. It accepts single telnet client connection and sends buffer data.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-tcp-server/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-tcp-server/file/ddb5698aa782/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/tcpsocket.html" target="_blank">TCPSocket</a> API reference.
