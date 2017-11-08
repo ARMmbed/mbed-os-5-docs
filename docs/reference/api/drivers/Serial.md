@@ -42,3 +42,8 @@ Provide a serial pass-through between the PC and an external UART.
 Attach a function to call during the generation of serial interrupts. This function defaults to interrupt on an RX pin.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/file/3b040f367dd8/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/introduction/glossary.html" target="_blank">Serial</a> glossary entry.
+- <a href="/docs/v5.6/tutorials/windows-serial-driver.html" target="_blank">Windows serial configuration</a>.
