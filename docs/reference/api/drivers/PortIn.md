@@ -11,3 +11,7 @@ A mask can be supplied so only certain bits of a port are used, allowing other b
 ### PortIn hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/mbed_official/code/PortIn_HelloWorld/)](https://os.mbed.com/users/mbed_official/code/PortIn_HelloWorld/file/92064442fd12/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/busin.html" target="_blank">BusIn</a> API reference.
