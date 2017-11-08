@@ -1,7 +1,5 @@
 ## Queue
 
-### Queue
-
 A Queue allows you to queue pointers to data from producer threads to consumer threads.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/queue.png)</span>
@@ -26,6 +24,10 @@ if (evt.status == osEventMessage) {
 
 ### Queue and MemoryPool example
 
-This example shows `Queue` and `MemoryPool` (see below) managing measurements.
+This example shows `Queue` and <a href="/docs/v5.6/reference/memorypool.html" target="_blank">MemoryPool</a> managing measurements.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_queue/)](https://os.mbed.com/teams/mbed_example/code/rtos_queue/file/0cb43a362538/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/memorypool.html" target="_blank">MemoryPool</a> API reference.
