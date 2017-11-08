@@ -38,3 +38,7 @@ int main()
     }
 }
 ```
+
+### Related content
+
+- <a href="http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html" target="_blank">The Keil CMSIS-RTOS</a> documentation.
