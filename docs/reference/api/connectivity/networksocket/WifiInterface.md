@@ -12,7 +12,7 @@ There are multiple <a href="https://os.mbed.com/components/cat/wifi/" target="_b
 
 To bring up the network interface:
 
-1. Instantiate an implementation of the WiFiInterface class (for example, the <a href="https://github.com/armmbed/esp8266-driver" target="_blank">ESP8266Interface</a>).
+1. Instantiate an implementation of the WiFiInterface class (for example, the ESP8266Interface).
 1. Call the `connect` function with an SSID and password for the Wi-Fi network.
 1. Once connected, the WiFiInterface can be used as a target for opening <a href="/docs/v5.6/reference/network-socket.html" target="_blank">network sockets</a>.
 
