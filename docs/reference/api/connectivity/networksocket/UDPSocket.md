@@ -13,3 +13,7 @@ The constructor takes in the NetworkStack pointer to open the socket on the spec
 Here is a UDP example to read the current UTC time by sending a request to the NIST Internet Time Service. 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets/file/cf516d904427/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/tcpsocket.html" target="_blank">TCPSocket</a> API reference.
