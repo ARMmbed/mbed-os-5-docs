@@ -19,3 +19,7 @@ Here is a TCP client example of HTTP transaction using the ESP8266 module.
 Here is a TCP client example of HTTP transaction over Ethernet interface.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/tcpserver.html" target="_blank">TCPServer</a> API reference.
