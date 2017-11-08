@@ -14,10 +14,14 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the CellularBase class.
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
-1. Once connected, you can use Mbed OS <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">network sockets</a> as usual.
+1. Once connected, you can use Mbed OS <a href="/docs/v5.6/reference/network-socket.html" target="_blank">network sockets</a> as usual.
 
 ### Cellular example: connection establishment
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/cellular-example/)](https://os.mbed.com/teams/mbed_example/code/cellular-example/file/fb873be06e31/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/network-socket.html" target="_blank">Network socket</a> API reference overview.
