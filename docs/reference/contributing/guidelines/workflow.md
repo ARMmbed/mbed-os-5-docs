@@ -106,7 +106,7 @@ We use many other labels to summarize the scope and effect of the changes.
 
 The following labels summarize the scope of the pull request.
 
-- *scope: bug-fix*
-- *scope: feature*
-- *scope: new-target*
+- *scope: bug-fix*.
+- *scope: feature*.
+- *scope: new-target*.
 
