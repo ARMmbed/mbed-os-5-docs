@@ -20,7 +20,7 @@ This ChainingBlockDevice example shows how to program and read back data from a 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ChainingBlockDevice_ex_2/)](https://os.mbed.com/teams/mbed_example/code/ChainingBlockDevice_ex_2/file/70419b9d778a/main.cpp)
 
-### Related links
+### Related content
 
 - <a href="/docs/v5.6/reference/slicingblockdevice.html" target="_blank">SlicingBlockDevice</a> API reference.
 - <a href="/docs/v5.6/reference/heapblockdevice.html" target="_blank">HeapBlockDevice</a> API reference.
