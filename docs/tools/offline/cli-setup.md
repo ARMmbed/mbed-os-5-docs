@@ -3,6 +3,8 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
+<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](#windows-installer-for-mbed-cli). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](#installing-mbed-cli-standalone-stable-version)</span>
+
 ### Requirements
 
 - **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
@@ -57,11 +59,11 @@ $ python setup.py install
 
 On Linux or Mac, you may need to run with `sudo`.
 
-#### Mbed CLI for Windows installer
+#### Windows installer for Mbed CLI
 
 Mbed CLI for Windows installs <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a> with all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
 
-Mbed CLI for Windows installs the following components:
+The Windows installer for Mbed CLI for includes the following components:
 
 - **Python** - Mbed CLI is a Python script, so you need Python to use it. Installer installs <a href="https://www.python.org/downloads/release/python-2713/" target="_blank">version 2.7.13 of Python</a>. It is not compatible with Python 3.
 - **Mbed CLI version 1.2.0** - <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a>.
@@ -71,7 +73,7 @@ Mbed CLI for Windows installs the following components:
 - **GNU Arm Embedded Toolchain** - <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads" target="_blank">GNU Embedded Toolchain for Arm</a>.
 - **Mbed Windows serial port driver** - <a href="/docs/v5.6/tutorials/windows-serial-driver.html" target="_blank">serial port driver</a>.
 
-##### Install Mbed CLI for Windows installer
+##### Install Windows installer for Mbed CLI
 
 1. Download the latest executable from <a href="https://mbed-media.mbed.com/filer_public/c8/79/c8792672-7b80-4c48-ac51-d08691c1515a/mbed_installer_v042.exe" target="_blank">`mbed-windows-installer v0.42`</a>.
 2. Run `mbed_installer_v042.exe`.
@@ -105,6 +107,32 @@ $ mbed --help
 ```
 
 4. Check <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a> for more examples.
+
+### Installing Mbed CLI standalone stable version
+
+Find the latest stable version of Mbed CLI through pip by running:
+
+```
+$ pip install mbed-cli
+```
+
+On Linux or Mac, you may need to run with `sudo`.
+
+#### Optional: installing the development version
+
+To work with the development version and contribute to Mbed CLI, clone the development repository [https://github.com/ARMmbed/mbed-cli](https://github.com/ARMmbed/mbed-cli):
+
+```
+$ git clone https://github.com/ARMmbed/mbed-cli
+```
+
+Once you have cloned the repository, you can install Mbed CLI as a Python package:
+
+```
+$ python setup.py install
+```
+
+On Linux or Mac, you may need to run with `sudo`.
 
 ### Configuring Mbed CLI
 
