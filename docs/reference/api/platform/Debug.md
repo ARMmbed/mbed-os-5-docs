@@ -1,7 +1,7 @@
 ## Debug
 
 Mbed OS provides a set of debug functions that you can use to output debug messages to `STDIO` at runtime. `mbed_debug.h` declares these functions, which are available only in debug builds.
-The `debug` function is a printf-style function that takes a format string followed by arguments. The below are some sample usages.
+The `debug` function is a printf-style function that takes a format string followed by arguments. Below are some sample usages.
 
 ```C
 void *operator new(std::size_t count) {
