@@ -15,7 +15,7 @@ $ cd mbed-os
 $ mbed update master   # This will update "mbed-os", not "my-program"
 ```
 
-Various Mbed CLI features require a program root, which should be under version control - either [Git](https://git-scm.com/) or [Mercurial](https://www.mercurial-scm.org/). This makes it possible to switch between revisions of the whole program and its libraries, control the program history, synchronize the program with remote repositories, share it with others and so on. Version control is also the primary and preferred delivery mechanism for Mbed OS source code, which allows everyone to contribute to Mbed OS.
+Various Mbed CLI features require a program root, which should be under version control - either <a href="https://git-scm.com/" target="_blank">Git</a> or <a href="https://www.mercurial-scm.org/" target="_blank">Mercurial</a>. This makes it possible to switch between revisions of the whole program and its libraries, control the program history, synchronize the program with remote repositories, share it with others and so on. Version control is also the primary and preferred delivery mechanism for Mbed OS source code, which allows everyone to contribute to Mbed OS.
 
 <span class="warnings">**Warning**: Mbed CLI stores information about libraries and dependencies in reference files that use the `.lib` extension (such as `lib_name.lib`). Although these files are human-readable, we *strongly* advise that you don't edit these manually - let Mbed CLI manage them instead.</span>
 
@@ -40,7 +40,7 @@ You can create new applications as Mbed OS 5, Mbed OS 2 or a non-versioned (blan
 
 #### For Mbed OS 5
 
-When you create a new program, Mbed CLI automatically imports the latest [Mbed OS release](https://github.com/ARMmbed/mbed-os/). Each release includes all the components: code, build tools and IDE exporters.
+When you create a new program, Mbed CLI automatically imports the latest <a href="https://github.com/ARMmbed/mbed-os/" target="_blank">Mbed OS release</a>. Each release includes all the components: code, build tools and IDE exporters.
 
 With this in mind, let's create a new program (we'll call it `mbed-os-program`):
 
@@ -68,7 +68,7 @@ mbed-os-program (mbed-os-program)
 
 #### For Mbed OS 2
 
-Mbed CLI is also compatible with Mbed OS 2 programs based on the [Mbed library](https://mbed.org/users/mbed_official/code/mbed/), and it automatically imports the latest [Mbed library release](https://mbed.org/users/mbed_official/code/mbed/) if you use the `--mbedlib` option:
+Mbed CLI is also compatible with Mbed OS 2 programs based on the <a href="https://mbed.org/users/mbed_official/code/mbed/" target="_blank">Mbed library</a>, and it automatically imports the latest <a href="https://mbed.org/users/mbed_official/code/mbed/" target="_blank">Mbed library release</a> if you use the `--mbedlib` option:
 
 ```
 $ mbed new mbed-classic-program --mbedlib
@@ -122,23 +122,23 @@ Image: BUILD/K64F/GCC_ARM/mbed-os-program.bin
 
 The arguments for *compile* are:
 
-* `-m <MCU>` to select a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
-* `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above). The value can be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
-* `--source <SOURCE>` to select the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
-* `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program root.
-* `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
-* `--library` to compile the code as a [static .a/.ar library](#compiling-static-libraries).
-* `--config` to inspect the runtime compile configuration (see below).
-* `-S` or `--supported` shows a matrix of the supported targets and toolchains.
-* `-f` or `--flash` to flash/program a connected target after successful compile.
-* `-c ` to build from scratch, a clean build or rebuild.
-* `-j <jobs>` to control the compile processes on your machine. The default value is 0, which infers the number of processes from the number of cores on your machine. You can use `-j 1` to trigger a sequential compile of source code.
-* `-v` or `--verbose` for verbose diagnostic output.
-* `-vv` or `--very_verbose` for very verbose diagnostic output.
+- `-m <MCU>` to select a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
+- `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above). The value can be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
+- `--source <SOURCE>` to select the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
+- `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program root.
+- `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
+- `--library` to compile the code as a [static .a/.ar library](#compiling-static-libraries).
+- `--config` to inspect the runtime compile configuration (see below).
+- `-S` or `--supported` shows a matrix of the supported targets and toolchains.
+- `-f` or `--flash` to flash/program a connected target after successful compile.
+- `-c ` to build from scratch, a clean build or rebuild.
+- `-j <jobs>` to control the compile processes on your machine. The default value is 0, which infers the number of processes from the number of cores on your machine. You can use `-j 1` to trigger a sequential compile of source code.
+- `-v` or `--verbose` for verbose diagnostic output.
+- `-vv` or `--very_verbose` for very verbose diagnostic output.
 
 You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
 
-For more information on build profiles, see [our build profiles](/docs/v5.6/tools/build-profiles.html) and [toolchain profiles](/docs/v5.6/tools/toolchain-profiles.html) pages.
+For more information on build profiles, see <a href="/docs/v5.6/tools/build-profiles.html" target="_blank">our build profiles</a> and <a href="/docs/v5.6/tools/toolchain-profiles.html" target="_blank">toolchain profiles</a> pages.
 
 #### Compiling static libraries
 
@@ -170,7 +170,7 @@ Image: ../threaded_blinky-out/threaded_blinky.bin
 
 ### The compile configuration system
 
-The [compile configuration system](/docs/v5.6/tools/the-configuration-system.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
+The <a href="/docs/v5.6/tools/the-configuration-system.html" target="_blank">compile configuration system</a> provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
 #### Inspecting the configuration
 

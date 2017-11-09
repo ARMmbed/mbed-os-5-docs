@@ -1,6 +1,10 @@
 ## Adding and configuring targets
 
-Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets (**NOTE:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](https://os.mbed.com/docs/v5.6/tools/mbed-cli.html) to take your code offline). You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
+Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. 
+
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use <a href="https://os.mbed.com/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI</a> to take your code offline.</span>
+
+You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
 ```
     "TEENSY3_1": {
@@ -73,7 +77,7 @@ Avoid using multiple inheritance for your targets. If you use multiple inheritan
 1. If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
 1. If not found, look for the property in the rest of the target's parents, relative to the current inheritance level.
 
-For more details about the Python method resolution order, check [this link](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
+For more details about the Python method resolution order, please see <a href="http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path" target="_blank">this Python tutorial</a>.
 
 #### `core`
 
@@ -191,7 +195,7 @@ The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
-Please see [our exporting page](/docs/v5.6/tools/exporting.html) for information about this field.
+Please see <a href="/docs/v5.6/tools/exporting.html" target="_blank">our exporting page</a> for information about this field.
 
 #### `OUTPUT_EXT`
 

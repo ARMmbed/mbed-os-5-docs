@@ -23,6 +23,6 @@ The code below demonstrates queueing functions to be called after a delay and qu
 
 ### Event example: chaining events from more than one queue
 
-Event queues easily align with module boundaries, where internal state can be implicitly synchronized through event dispatch. Multiple modules can use independent event queues, but still be composed through the EventQueue::chain function.
+Event queues easily align with module boundaries, where internal state can be implicitly synchronized through event dispatch. Multiple modules can use independent event queues, but still be composed through the `EventQueue::chain` function.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_3/)](https://os.mbed.com/teams/mbed_example/code/events_ex_3/file/fca134a32b61/main.cpp)

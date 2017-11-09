@@ -1,12 +1,12 @@
 ### Block Devices
 
-The block device API provides an interface for access to block-based storage. You can use a block device to back a full [file system](https://os.mbed.com/docs/v5.6/reference/contributing-storage.html#contributing-filesystem) or write to it directly.
+The block device API provides an interface for access to block-based storage. You can use a block device to back a full <a href="https://os.mbed.com/docs/v5.6/reference/contributing-storage.html#contributing-filesystem" target="_blank">file system</a> or write to it directly.
 
 #### BlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_block_device.html)
 
-[C++ API Reference](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h)
+<a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h" target="_blank">C++ API Reference</a>
 
 #### SD card block device example
 

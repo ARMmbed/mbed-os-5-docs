@@ -2,7 +2,7 @@
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
-Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many Mbed [targets](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) and [components](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) support Mbed BLE. Developers can use it to create new BLE enabled applications.
+Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many Mbed <a href="https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3" target="_blank">targets and components</a> support Mbed BLE. Developers can use it to create new BLE enabled applications.
 
 ### BLE class reference
 
@@ -27,3 +27,7 @@ Here is an example demonstrating how you can create a BLE beacon.
 Here is an example demonstrating how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/file/b36aa157781d/source/main.cpp)
+
+### Related content
+
+- Mbed Enabled <a href="https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3" target="_blank">targets and components</a> that support BLE.

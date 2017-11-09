@@ -4,10 +4,15 @@
         "description": "Introducing Mbed OS; the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
-        "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/introduction.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/release_process.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/terms.md"}
+        "chapters": [
+          {
+            "title": "Overview",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/introduction.md"},
+            "sources": [
+              {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/release_process.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/introduction/terms.md"}
+            ]
+          }
         ],
         "tags": [
             "introduction"
@@ -35,8 +40,8 @@
           },
           {
             "title": "Configuration",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/configuration.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/configuration.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Platform.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Drivers.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/RTOS.md"},
@@ -51,21 +56,24 @@
           },
           {
             "title": "Platform",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/platform.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/platform.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Wait.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Callback.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/DeepSleepLock.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/SleepManager.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/CriticalSectionLock.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Time.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Error.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/NonCopyable.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/NonCopyable.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/CircularBuffer.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/ATCmdParser.md"}
             ]
           },
           {
             "title": "Drivers",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/drivers.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/drivers.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/AnalogIn.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/AnalogOut.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/DigitalIn.md"},
@@ -83,6 +91,7 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/TimeOut.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/Timer.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/FlashIAP.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/RawSerial.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/Serial.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/SPI.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/SPISlave.md"},
@@ -93,8 +102,8 @@
           },
           {
             "title": "RTOS",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/rtos.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/rtos.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/Thread.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/Mutex.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/Semaphore.md"},
@@ -108,8 +117,8 @@
           },
           {
             "title": "Network Socket",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/networksocket.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/networksocket.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/EthInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/WifiInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/CellularInterface.md"},
@@ -122,35 +131,41 @@
           },
           {
             "title": "Bluetooth",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/bluetooth.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/bluetooth.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/BLE.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/BLE.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/iBeacon.md"}
             ]
           },
           {
             "title": "Security",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/security.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/security.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/TLS.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/uvisor/blob/master/docs/lib/INTRO.md"}
             ]
           },
           {
             "title": "Storage",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/storage.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/storage.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/HeapBlockDevice.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/MBRBlockDevice.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/ChainingBlockDevice.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/SlicingBlockDevice.md"}
             ]
           },
           {
             "title": "Contributing",
+            "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/contributing.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/contributing.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/guidelines/guidelines.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/guidelines/license.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/guidelines/cla.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/guidelines/style.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/guidelines/workflow.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/tools/tools.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/tools/mbedls.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/tools/exporter.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/tools/hdk.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/target.md"},
@@ -170,10 +185,11 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/storage/FileSystem.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/connectivity.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/NetworkStack.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/WiFiInterface.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/WifiInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/CellularInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/MeshInterface.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/MeshMAC.md"}
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/MeshMAC.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/exporter.md"}
             ]
           }
         ],
@@ -351,13 +367,6 @@
         "slug": "releases",
         "type": "markdown",
         "sources": [
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_6/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_5/known_issues.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_4/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_3/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_2/release_note.md"},
-            {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/5_1/release_note.md"}
         ],
         "tags": [
             "releases"

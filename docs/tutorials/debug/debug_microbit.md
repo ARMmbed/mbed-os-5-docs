@@ -2,17 +2,17 @@
 
 This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.
 
-<span class="notes">**Note:** The micro:bit's processor is based on the Nordic [nRF51][nRF51].</span>
+<span class="notes">**Note:** The micro:bit's processor is based on the Nordic nRF51.</span>
 
 ### Suggested tools
 
-  * Linux (4.1), but pyOCD and GDB work on Windows and Mac OS.
-  * pyOCD (0.4.5), which you can obtain on [GitHub](https://github.com/mbedmicro/pyOCD).
-  * arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at [linaro](https://launchpad.net/gcc-arm-embedded).
+  - Linux (4.1), but pyOCD and GDB work on Windows and Mac OS.
+  - pyOCD (0.4.5), which you can obtain on <a href="https://github.com/mbedmicro/pyOCD" target="_blank">GitHub</a>.
+  - arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at <a href="https://launchpad.net/gcc-arm-embedded" target="_blank">linaro</a>.
 
 ### Looking at a basic program
 
-Look at `hello.hex`, a program printing "hello world" to the serial console. You can find the hex file at [hello.hex](https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex).
+Look at `hello.hex`, a program printing "hello world" to the serial console. You can find the hex file at <a href="https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex" target="_blank">hello.hex</a>.
 
 <span class="notes">**Note:** Shell commands begin with `$`, GDB commands with `(gdb)`.</span>
 
@@ -78,7 +78,7 @@ You can now start executing the image. Except for a hardfault, it should keep ro
     Program received signal SIGINT, Interrupt.
     0x0001f31e in ?? ()
 
-This address already gives away a precious bit of information: you reached the application code. If you're using the S110 SoftDevice, the application is located after address 0x18000. You can verify this using a tool such as [srec_info](http://srecord.sourceforge.net/):
+This address already gives away a precious bit of information: you reached the application code. If you're using the S110 SoftDevice, the application is located after address 0x18000. You can verify this using a tool such as <a href="http://srecord.sourceforge.net/" target="_blank">srec_info</a>:
 
     $ srec_info hello.hex -intel
     Format: Intel Hexadecimal (MCS-86)
@@ -124,14 +124,14 @@ Look at the instruction stream leading to this loop. Most instructions are encod
     => 0x1f31e:	b.n	0x1f31e                     ; Branch to self
 
 
-Understanding this requires a bit of knowledge about Arm assembly and calling conventions. A compiler that follows the [Arm assembly procedure call standard][AAPCS] generated this code in C. In this document, Table 2 in section 5.1.1 defines how the compiler should use available registers when calling a function.
+Understanding this requires a bit of knowledge about Arm assembly and calling conventions. A compiler that follows the Arm assembly procedure call standard (AAPCS) generated this code in C. In this document, Table 2 in section 5.1.1 defines how the compiler should use available registers when calling a function.
 
 Registers r0 to r3 pass arguments to a function, which may return something into r0. Using `x`, you can inspect the content of those arguments:
 
     (gdb) x/xw 0x1f330
     0x1f330:	0x20002880
 
-r0 contains a pointer to address 0x20002880, which is the application RAM. This is probably a Serial object because you expect this call to be `serial.printf(string)``. You'll come back to this later. For the moment, see what is put in r1 before the call. It is a pointer to the stack. The called function (callee) is not supposed to modify the stack after the address `$sp` that it gets at the time of the call, so `$sp` is the same before and after the call:
+r0 contains a pointer to address 0x20002880, which is the application RAM. This is probably a Serial object because you expect this call to be `serial.printf(string)`. You'll come back to this later. For the moment, see what is put in r1 before the call. It is a pointer to the stack. The called function (callee) is not supposed to modify the stack after the address `$sp` that it gets at the time of the call, so `$sp` is the same before and after the call:
 
     (gdb) x/4x $sp
     0x20003fe8:	0x6c6c6548	0x6f77206f	0x0d646c72	0x0000000a
@@ -184,7 +184,7 @@ The new string appears on your console.
 
 #### Investigating the actual bug
 
-After analyzing Arm Mbed's [serial API](https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling `serial_instance.printf(string)` is, in essence, like calling `Serial::printf(serial_instance, string)`. You saw previously that the instance's address is `r0 = 0x20002880`.
+After analyzing Arm Mbed's <a href="https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html" target="_blank">serial API</a>, you see that the Serial class inherits from SerialBase. From the assembly point of view, calling `serial_instance.printf(string)` is, in essence, like calling `Serial::printf(serial_instance, string)`. You saw previously that the instance's address is `r0 = 0x20002880`.
 
 Because of the way the C++ compiler handles inheritance, the Serial class data looks like this in the memory:
 
@@ -207,7 +207,7 @@ Indeed, when you inspect this hypothetical `_baudrate` variable, it makes sense:
 
 The serial port on the device is configured to run at 9600 bits per second, whereas I attempted to read it at 115200 (which is the default for the micro:bit runtime).
 
-To confirm this is the only issue, try to modify the value written to the device's BAUDRATE register. It is located at address 0x40002524, as described in section 29.10 of the [nRF51 reference][nRF51].
+To confirm this is the only issue, try to modify the value written to the device's BAUDRATE register. It is located at address 0x40002524, as described in section 29.10 of the nRF51 reference.
 
 Add a watchpoint on its memory-mapped location, and restart the application:
 
@@ -369,7 +369,3 @@ To initialize GDB with the `-x` switch:
         Show 20 instructions surrounding the PC.
         Usage: pc [BYTES_PRECEEDING]
     end
-
-
-[nRF51]: https://www.nordicsemi.com/eng/Products/nRF51-Series-SoC "nRF51 reference manual"
-[AAPCS]: http://infocenter.arm.com/help/topic/com.arm.doc.ihi0042e/IHI0042E_aapcs.pdf "ARM architecture procedure call standard"

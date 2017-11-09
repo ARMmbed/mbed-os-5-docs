@@ -1,19 +1,19 @@
 ## Eclipse
 
-This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [configure your local debug toolchain](https://os.mbed.com/docs/v5.6/tools/exporting.html#setting-up-a-local-debug-toolchain).
+This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please <a href="https://os.mbed.com/docs/v5.6/tools/exporting.html" target="_blank">configure your local debug toolchain</a>.
 
 ### Installing Eclipse
 
 You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
 
-1. Install [Eclipse IDE for C/C++ Developers](http://www.eclipse.org/downloads/eclipse-packages/).
+1. Install <a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank">Eclipse IDE for C/C++ Developers</a>.
 1. Open Eclipse.
 1. Create a workspace directory. This will be separate from your code.
 1. Install the GNU Arm Eclipse plugin:
     1. Click the **Help** menu item and select **Install New Software**.
     1. In the **Work with** box, paste the install address, and press Enter: `http://gnuarmeclipse.sourceforge.net/updates`.
 
-    	If this does not work, please see the [GNU ARM Eclipse solutions and workarounds page](http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/).
+    	If this does not work, please see the <a href="http://gnuarmeclipse.github.io/blog/2016/12/02/plugins-install-issue/" target="_blank">GNU ARM Eclipse solutions and workarounds page</a>.
     1. The package **GNU Arm C/C++ Cross Development Tools** appears. Select it.
 
         <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse2.png)<span>Selecting the cross development tools</span></span>
@@ -29,7 +29,7 @@ To export your project to Eclipse, you can use either the Arm Mbed Online Compil
 1. Right click on your project.
 1. Select *Export Program...*.
 1. Under *Export toolchain*, select *Eclipse (GCC ARM)*.
-    * For most targets you can also export to IAR or ARMCC.
+    - For most targets you can also export to IAR or ARMCC.
 1. Click *Export*.
 1. Unpack to a convenient location. Make a note of this location for the import step.
 
@@ -63,7 +63,7 @@ Once the project builds, you can configure the debugger. The configuration depen
 If the build fails with an error:
 
 1. `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH).
-1. `Program "make" not found in PATH`, install [GNU-Make utility](http://gnuwin32.sourceforge.net/packages/make.htm), and configure Eclipse's PATH.
+1. `Program "make" not found in PATH`, install <a href="http://gnuwin32.sourceforge.net/packages/make.htm" target="_blank">GNU-Make utility</a>, and configure Eclipse's PATH.
 
 Steps to update Eclipse's PATH:
 
@@ -71,8 +71,8 @@ Steps to update Eclipse's PATH:
 1. Click *Add*.
 1. Under *Name*, enter `PATH`.
 1. Under *Value*, add the location of the GNU ARM Embedded Toolchain. To find it:
-    * On Windows, from a CMD window, run `where arm-none-eabi-g++`.
-    * On Mac OS and Linux, from a Terminal, run `which arm-none-eabi-g++`.
+    - On Windows, from a CMD window, run `where arm-none-eabi-g++`.
+    - On Mac OS and Linux, from a Terminal, run `which arm-none-eabi-g++`.
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse4.png)<span>Setting up PATH</span></span>
 
@@ -81,13 +81,13 @@ Steps to update Eclipse's PATH:
 1. Select *Run > Debug Configurations...*.
 1. If no configuration exists under *GDB pyOCD Debugging*, click on *New launch configuration*.
 1. In the *Main* tab:
-    * Under *C/C++ Application*, select the `.elf` file (BUILD/projectname.elf).
+    - Under *C/C++ Application*, select the `.elf` file (BUILD/projectname.elf).
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse5.png)<span>Main tab</span></span>
 1. In the *Debugger* tab:
-    * Under *pyOCD Setup*, set the *Executable* path to your copy of `pyocd-gdbserver`.
-    * Under *GDB Server Setup*, set the *Executable* path to your copy of `arm-none-eabi-gdb`.
-    * If you cannot see the *GDB Server Setup* section, the scrollbar might be hidden; switch tabs to make the scrollbar reappear.
+    - Under *pyOCD Setup*, set the *Executable* path to your copy of `pyocd-gdbserver`.
+    - Under *GDB Server Setup*, set the *Executable* path to your copy of `arm-none-eabi-gdb`.
+    - If you cannot see the *GDB Server Setup* section, the scrollbar might be hidden; switch tabs to make the scrollbar reappear.
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse6.png)<span>Debugger tab</span></span>
 1. Click *Apply*.
@@ -99,14 +99,14 @@ Steps to update Eclipse's PATH:
 1. If a configuration already exists under *GDB pyOCD Debugging*, please remove it.
 1. If no configuration exists under *GDB OpenOCD Debugging*, click on *New launch configuration*.
 1. In the *Main* tab:
-    * Select the `.elf` file (BUILD/projectname.elf) under *C/C++ Application*.
+    - Select the `.elf` file (BUILD/projectname.elf) under *C/C++ Application*.
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse7.png)<span>Main tab</span></span>
 1. In the *Debugger* tab:
-    * Under *OpenOCD Setup*, set the *Executable* path to your copy of `openocd`.
-    * Under *OpenOCD Setup*, set the *Config options* to the setup options from the [Configure your local debug toolchain](toolchain.md) guide.
-    *  Under *GDB Client Setup*, set the *Executable* path to your copy of `arm-none-eabi-gdb`.
-    * If you cannot see the *GDB Server Setup* section, the scrollbar might be hidden; switch tabs to make the scrollbar reappear.
+    - Under *OpenOCD Setup*, set the *Executable* path to your copy of `openocd`.
+    - Under *OpenOCD Setup*, set the *Config options* to the setup options from the <a href="https://os.mbed.com/docs/v5.6/tools/exporting.html" target="_blank">Configure your local debug toolchain</a> guide.
+    -  Under *GDB Client Setup*, set the *Executable* path to your copy of `arm-none-eabi-gdb`.
+    - If you cannot see the *GDB Server Setup* section, the scrollbar might be hidden; switch tabs to make the scrollbar reappear.
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse8.png)<span>Debugger tab</span></span>
 1. Click *Apply*.

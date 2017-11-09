@@ -1,6 +1,6 @@
 ## Keil uVision
 
-This document explains how to build and debug Arm Mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use [Eclipse](/docs/v5.6/tutorials/eclipse.html), [Visual Studio Code](/docs/v5.6/tutorials/visual-studio-code.html) or any other IDE that supports debugging through GDB. For more info, please see [Setting up a local debug toolchain](https://os.mbed.com/docs/v5.6/tools/setting-up-a-local-debug-toolchain.html).
+This document explains how to build and debug Arm Mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use <a href="/docs/v5.6/tutorials/eclipse.html" target="_blank">Eclipse</a>, <a href="/docs/v5.6/tutorials/visual-studio-code.html" target="_blank">Visual Studio Code</a> or any other IDE that supports debugging through GDB. For more info, please see <a href="https://os.mbed.com/docs/v5.6/tools/setting-up-a-local-debug-toolchain.html" target="_blank">Setting up a local debug toolchain</a>.
 
 ### Exporting a project
 
@@ -40,4 +40,4 @@ To build your project and start a debug session:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/uvision3.png)<span>CMSIS-DAP Debugger options</span></span>
 
-For more information on the CMSIS-DAP Debugger driver in uVision, see the [uVision documentation](http://www.keil.com/support/man/docs/dapdebug/dapdebug_drv_cfg.htm).
+For more information on the CMSIS-DAP Debugger driver in uVision, see the <a href="http://www.keil.com/support/man/docs/dapdebug/dapdebug_drv_cfg.htm" target="_blank">uVision documentation</a>.

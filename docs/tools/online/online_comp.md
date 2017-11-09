@@ -2,14 +2,9 @@
 
 Developers who do not have a dedicated offline setup may prefer to work online. With the Arm Mbed ecosystem, you can work online, in addition to offline. Arm's online tool is the Arm Mbed Online Compiler.
 
-The Arm Mbed Online Compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is [an Arm Mbed developer account](https://os.mbed.com/account/signup/).
+The Arm Mbed Online Compiler enables you to either write your code from scratch or import an existing project and modify it to suit your needs. The only thing you need is <a href="https://os.mbed.com/account/signup/" target="_blank">an Arm Mbed developer account</a>.
 
-The compiler is always available on [`https://os.mbed.com/compiler/`](https://os.mbed.com/compiler/).
-
-#### Video summary
-
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/NKSlkUcoOjY/0.jpg)](http://www.youtube.com/watch?v=L5TcmFFD0iw)<span>Watch how to use the Mbed Online Compiler</span></span>
-
+The compiler is always available on <a href="https://os.mbed.com/compiler/" target="_blank">`https://os.mbed.com/compiler/`</a>.
 
 ## Keyboard shortcuts
 
