@@ -73,7 +73,7 @@ The current maintainers are:
 
 Each pull request goes through the following workflow:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/workflow.png)<span>The workflow of merging a pull request</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Workflow.png)<span>The workflow of merging a pull request</span></span>
 
 ##### Pull request states
 
