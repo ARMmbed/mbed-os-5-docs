@@ -1,11 +1,31 @@
 ## Debug
 
-[Add description here.]
+Mbed OS provides a set of debug functions that you can use to output debug messages to `STDIO` at runtime. `mbed_debug.h` declares these functions, which are available only in debug builds.
+The `debug` function is a printf-style function that takes a format string followed by arguments. The below are some sample usages.
 
-### Debug class reference
+```C
+void *operator new(std::size_t count) {
+    void *buffer = malloc(count);
+    if (NULL == buffer) {
+        error("Operator new out of memory\r\n");
+    } else {
+        debug("Operator new succeded");
+    }
+    return buffer;
+}
+```
+The `debug_if` function is similar to the `debug` function except that it takes an additional argument as its first parameter. The message prints to `STDIO` only if the first paramater evaluates to `true`.
 
-[Embed class reference here. If you've never done this before, please ask your editor.]
+```C
+void *operator new(std::size_t count) {
+    debug_if( count == 0, "\nnew called with 0 size");
+    ...
+} 
+```
+### Debug functions reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__debug.html)
 
 ### Debug example
 
-[Add example here.]
+[![View Example](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/) 
