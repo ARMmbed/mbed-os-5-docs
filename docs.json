@@ -381,6 +381,7 @@
         "source": "https://github.com/ARMmbed/mbed-os",
         "branch": "mbed-os-5.6",
         "options": {
+            "PROJECT_NAME": "Mbed OS Reference",
             "ENABLE_PREPROCESSING": "YES",
             "MACRO_EXPANSION": "YES",
             "EXPAND_ONLY_PREDEF": "NO",
