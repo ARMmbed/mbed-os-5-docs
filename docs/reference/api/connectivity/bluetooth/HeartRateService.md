@@ -1,6 +1,12 @@
 ## HeartRateService
 
-[Add description here.]
+Peoples practicing physical activities use heart rate monitors to track their pulse in real time and improve their physical performances.
+
+The Bluetooth Heart Rate Service defines how data from an heart rate sensor should be exposed through a BLE link. The standard nature of the service allows seamless operations between collectors - usually smartphone applications - and heart rate monitors conforming to the service.
+
+The HeartRateService class implements the Bluetooth Heart Rate service as defined by the Bluetooth body. Makers of BLE enabled fitness devices can use it to expose interoperably heart rate sensor data.
+
+<span class="note"> **Note:** The Bluetooth Heart Rate Service is part of the Bluetooth Heart Rate Profile which defines behaviors expected by a Bluetooth heart rate sensor. You must ensure that your application conforms to the heart rate profile to guarantee interoperability of your heart rate sensors. </span>
 
 ### HeartRateService class reference
 
@@ -8,4 +14,11 @@
 
 ### HeartRateService example
 
-[Add example here.]
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/file/307bde0f868f/source/main.cpp)
+
+
+### Related content
+
+- [Bluetooth Heart Rate Service](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=239866) specification.
+- [Bluetooth Heart Rate Profile](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=239865) specification.
+
