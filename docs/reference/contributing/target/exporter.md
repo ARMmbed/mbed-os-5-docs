@@ -20,33 +20,10 @@ You can open the generated `.creator` project in Qt Creator, enabling integratio
 
 ##### CMSIS Packs
 
-uVision and IAR both use <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html" target="_blank">CMSIS packs</a> to find target information necessary to create a valid project file.
-
-We use the tool <a href="https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager" target="_blank">ArmPackManager</a> to scrape <a href="https://www.keil.com/dd2/Pack/" target="_blank">MDK5 Software Packs</a> for target information by parsing <a href="http://sadevicepacksprod.blob.core.windows.net/idxfile/index.idx" target="_blank">http://www.keil.com/pack/index.idx</a>. <a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json" target="_blank">index.json</a> stores the relevant information from the <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/" target="_blank">PDSC (Pack Description)</a> retrieved from each CMSIS PACK described in the index.
-
-A device support`.pdsc` file typically describes a family of devices. A <a href="/docs/v5.6/reference/contributing-target.html" target="_blank">device name</a> uniquely identifies each device. This name makes a natural key to associate a device with its information in `index.json`. To support IAR and uVision exports for your target, you must add a device name field in `targets.json` containing this key.
-
-<a href="http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc" target="_blank">http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc</a> is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
-
-```xml
-      <device Dname="MK20DX256xxx7">
-        <processor Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="72000000"/>
-        <compile header="Device\Include\MK20D7.h"  define="MK20DX256xxx7"/>
-        <debug      svd="SVD\MK20D7.svd"/>
-        <memory     id="IROM1"                      start="0x00000000"  size="0x40000"    startup="1"   default="1"/>
-        <memory     id="IROM2"                      start="0x10000000"  size="0x8000"     startup="0"   default="0"/>
-        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
-        <memory     id="IRAM2"                      start="0x1FFF8000"  size="0x8000"     init   ="0"   default="0"/>
-        <algorithm  name="Flash\MK_P256.FLM"        start="0x00000000"  size="0x40000"                  default="1"/>
-        <algorithm  name="Flash\MK_D32_72MHZ.FLM"   start="0x10000000"  size="0x8000"                   default="1"/>
-        <book name="Documents\K20P100M72SF1RM.pdf"         title="MK20DX256xxx7 Reference Manual"/>
-        <book name="Documents\K20P100M72SF1.pdf"           title="MK20DX256xxx7 Data Sheet"/>
-      </device>
-```
+uVision and IAR both use [CMSIS packs](http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html) to find target information necessary to create a valid project file. Add a `device_name` attribute to your target as described in [Adding and Configuring Targets](https://os.mbed.com/docs/v5.6/tools/adding-and-configuring-targets.html) to support these exporters.
 
 ##### uVision
-
-The `dname` (device name) field on line 156 directly corresponds to that in the uVision5 IDE Target Selection window. <a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15" target="_blank">`tools/export/uvision/uvision.tmpl`</a> uses target information from these packs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic Arm CPU target in uVision5.
+[`tools/export/uvision/uvision.tmpl`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from CMSIS PACKs to generate valid uVision5 projects. If the program cannot find the device name, we use a generic Arm CPU target in uVision5.
 
 ##### IAR
 

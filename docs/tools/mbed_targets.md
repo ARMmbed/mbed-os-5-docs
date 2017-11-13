@@ -195,7 +195,29 @@ The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
-Please see <a href="/docs/v5.6/tools/exporting.html" target="_blank">our exporting page</a> for information about this field.
+We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to scrape [MDK5 Software Packs](https://www.keil.com/dd2/Pack/) for target information by parsing [http://www.keil.com/pack/index.idx](http://sadevicepacksprod.blob.core.windows.net/idxfile/index.idx). [index.json](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the relevant information from the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/) retrieved from each CMSIS PACK described in the index.
+
+A device support`.pdsc` file typically describes a family of devices. Each device is uniquely identified by its [device name](/docs/v5.6/reference/contributing-target.html). This name makes a natural key to associate a device with its information in `index.json`. To support IAR and uVision exports for your target, You must add a [device_name](/docs/v5.6/reference/contributing-target.html) field in `targets.json` containing this key.
+
+[http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed it, and `index.json` stores it. The device information begins on line 156:
+
+```xml
+<device Dname="MK20DX256xxx7">
+  <processor Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="72000000"/>
+  <compile header="Device\Include\MK20D7.h"  define="MK20DX256xxx7"/>
+  <debug      svd="SVD\MK20D7.svd"/>
+  <memory     id="IROM1"                      start="0x00000000"  size="0x40000"    startup="1"   default="1"/>
+  <memory     id="IROM2"                      start="0x10000000"  size="0x8000"     startup="0"   default="0"/>
+  <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+  <memory     id="IRAM2"                      start="0x1FFF8000"  size="0x8000"     init   ="0"   default="0"/>
+  <algorithm  name="Flash\MK_P256.FLM"        start="0x00000000"  size="0x40000"                  default="1"/>
+  <algorithm  name="Flash\MK_D32_72MHZ.FLM"   start="0x10000000"  size="0x8000"                   default="1"/>
+  <book name="Documents\K20P100M72SF1RM.pdf"         title="MK20DX256xxx7 Reference Manual"/>
+  <book name="Documents\K20P100M72SF1.pdf"           title="MK20DX256xxx7 Data Sheet"/>
+</device>
+```
+
+The `device_name` key in `targets.json` is `MK20DX256xxx7` for any target that uses this particular MCU.
 
 #### `OUTPUT_EXT`
 
