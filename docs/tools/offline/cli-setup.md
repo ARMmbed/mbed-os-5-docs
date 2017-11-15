@@ -66,7 +66,7 @@ Mbed CLI for Windows installs <a href="https://github.com/ARMmbed/mbed-cli" targ
 The Windows installer for Mbed CLI for includes the following components:
 
 - **Python** - Mbed CLI is a Python script, so you need Python to use it. Installer installs <a href="https://www.python.org/downloads/release/python-2713/" target="_blank">version 2.7.13 of Python</a>. It is not compatible with Python 3.
-- **Mbed CLI version 1.2.0** - <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a>.
+- **Mbed CLI version 1.2.2** - <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a>.
 - **Git and Mercurial** - Mbed CLI supports both Git and Mercurial repositories. Both Git and Mercurial are being installed. `git` and `hg` are added to system's PATH.
     - <a href="https://git-scm.com/" target="_blank">Git</a> - version 2.12.2.
     - <a href="https://www.mercurial-scm.org/" target="_blank">Mercurial</a> - version 4.1.1.
@@ -75,7 +75,7 @@ The Windows installer for Mbed CLI for includes the following components:
 
 ##### Install Windows installer for Mbed CLI
 
-1. Download the latest executable from <a href="https://mbed-media.mbed.com/filer_public/c8/79/c8792672-7b80-4c48-ac51-d08691c1515a/mbed_installer_v042.exe" target="_blank">`mbed-windows-installer v0.42`</a>.
+1. Download the latest executable from <a href="https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe" target="_blank">`mbed-windows-installer v0.4.3`</a>.
 2. Run `mbed_installer_v042.exe`.
 3. Set the installation path.
 4. Choose the installation type:
