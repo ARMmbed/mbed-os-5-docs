@@ -30,7 +30,7 @@ The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for
 
 A typical scenario for a producer could be a peripheral triggering an interrupt to notify an event; in the corresponding interrupt service routine you cannot wait (this would deadlock the entire system). On the other side, the consumer could be a background thread waiting for events; in this case the desired default behaviour is not using CPU cycles until this event is produced, hence the `osWaitForever`.
 
-<span class="warnings">**Warning**: No wait in ISR </br> When calling an RTOS object method in an ISR, all the timeout parameters must be set to 0 (no wait); waiting in ISR is not allowed. </span>
+<span class="warnings">**Warning**: No wait in ISR <br> When calling an RTOS object method in an ISR, all the timeout parameters must be set to 0 (no wait); waiting in ISR is not allowed. </span>
 
 ##### The main() function
 
