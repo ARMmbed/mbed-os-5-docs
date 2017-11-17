@@ -13,8 +13,8 @@ def format_map(black_list):
     return _map
 
 def main():
-    pr_list   = open('pr_black_list.log', 'r').read()
-    head_list = open('head_black_list.log', 'r').read()
+    pr_list   = open('check_tools/pr_black_list.log', 'r').read()
+    head_list = open('check_tools/head_black_list.log', 'r').read()
 
     pr_dict   = format_map(pr_list)
     head_dict = format_map(head_list)
