@@ -5,6 +5,11 @@ The storage APIs present in Arm Mbed OS are:
 - <a href="/docs/v5.6/reference/contributing-storage.html#contributing-filesystem" target="_blank">File system</a>: a common interface for using file systems on block devices.
 - <a href="/docs/v5.6/reference/contributing-storage.html#block-devices" target="_blank">Block device</a>: a common interface for block-based storage devices.
 
+#### File system example
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-fat-filesystem)](https://github.com/ARMmbed/mbed-os-example-fat-filesystem/blob/master/main.cpp)
+
+
 #### Declaring a file system
 
 The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html" target="_blank">open</a> or <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html" target="_blank">fopen</a>).
