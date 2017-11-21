@@ -66,6 +66,8 @@ The following steps describe how you can create a new RF driver:
 
 1. Check with a RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
+1. Verify the functionality of your implementation using the <a href="https://github.com/ARMmbed/nanostack-rf-driver-tester" target="_blank">Nanostack RF driver test application</a>. (This is currently only available to Mbed OS Partners.)
+
 #### Worker thread for Mbed OS
 
 Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
