@@ -80,6 +80,8 @@ Here are example applications that are built on top of the network-socket API:
 * [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
 * [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
 * [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
+* [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
+* [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
 
 ##### Example
 
