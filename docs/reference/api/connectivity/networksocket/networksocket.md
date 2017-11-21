@@ -76,12 +76,12 @@ Existing network interfaces:
 
 Here are example applications that are built on top of the network-socket API:
 
-* [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
-* [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
-* [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
-* [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
-* [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
-* [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
+* <a href="https://os.mbed.com/teams/sandbox/code/http-example/" target="_blank">HTTP and HTTPS</a>.
+* <a href="https://os.mbed.com/teams/mqtt/code/HelloMQTT/" target="_blank">MQTT</a>.
+* <a href="https://os.mbed.com/teams/sandbox/code/coap-example/" target="_blank">CoAP</a>.
+* <a href="https://os.mbed.com/cookbook/Websockets-Server" target="_blank">Websockets</a>.
+* <a href="https://github.com/armmbed/mbed-tcp-ping-pong" target="_blank">TCP ping-pong with a computer</a>.
+* <a href="https://github.com/armmbed/mbed-udp-ping-pong" target="_blank">UDP ping-pong with a computer</a>.
 
 ##### Example
 
