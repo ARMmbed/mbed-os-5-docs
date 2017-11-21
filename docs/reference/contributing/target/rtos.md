@@ -1,6 +1,6 @@
 ### RTOS
 
-CMSIS/RTX code is imported from <a href="https://github.com/ARM-software/CMSIS_5/" target="_blank">the original CMSIS repository</a> with the help of python script in mbed-os repository `mbed-os\tools\importer\importer.py`.
+CMSIS/RTX code is imported from <a href="https://github.com/ARM-software/CMSIS_5/" target="_blank">the original CMSIS repository</a> with the help of Python script in the `mbed-os` repository `mbed-os\tools\importer\importer.py`.
 
 #### Memory considerations
 
@@ -29,4 +29,4 @@ Due to differences in how the Mbed OS and CMSIS directory structures look, you c
 
 #### Modification
 
-Due to different use cases between Mbed OS and CMSIS, we had to make some modifications to the source code. We've tried to upstream our changes to the CMSIS repository, but in cases where they aren't compatible with CMSIS requirements, we are forced to maintain a small set of changes. Changes are maintained as separate commits in mbed-os, and SHA's are listed in `commit_sha` section of `cmsis_importer.json` file.
+Due to different use cases between Mbed OS and CMSIS, we modified the source code. We upstream our changes to the CMSIS repository, but in cases where they aren't compatible with CMSIS requirements, we maintain a small set of changes. We maintain changes as separate commits in `mbed-os`, and SHAs are in the `commit_sha` section of the `cmsis_importer.json` file.
