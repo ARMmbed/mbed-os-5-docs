@@ -2,13 +2,13 @@
 
 It is often a requirement for devices operating on battery to report the battery charge level to the user.
 
-The <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245138" target="_blank">Bluetooth Battery Service</a> defines how a battery charge level should be exposed through a BLE link. It allows clients - usually smartphone application - of a device to read the current battery charge level and follow its evolution.
+The <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245138" target="_blank">Bluetooth Battery Service</a> defines how to expose a battery charge level through a BLE link. It allows a client - usually a smartphone application - of a device to read the current battery charge level and follow its evolution.
 
-The BatteryService class implements the Bluetooth Battery Service as defined by the Bluetooth body. Makers of BLE devices operating on Battery can use it to expose interoperably the charge level of their products.
+The BatteryService class implements the Bluetooth Battery Service as defined by the Bluetooth body. Makers of BLE devices operating on battery can use the API to expose interoperably the charge level of their products.
 
 ### BatteryService class reference
 
-[![View code](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_battery_service.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_battery_service.html)
 
 ### BatteryService example
 
@@ -16,4 +16,4 @@ The BatteryService class implements the Bluetooth Battery Service as defined by 
 
 ### Related content
 
-- [Bluetooth Battery Service](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245138) specification.
+- <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245138" target="_blank">Bluetooth Battery Service</a> specification.
