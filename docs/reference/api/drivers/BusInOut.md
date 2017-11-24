@@ -1,6 +1,6 @@
 ## BusInOut
 
-Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](/docs/v5.6/reference/digitalinout.html) pins that you can read and write as one value.
+Use the BusInOut interface as a bidirectional bus that supports up to 16 <a href="/docs/v5.6/reference/digitalinout.html" target="_blank">DigitalInOut</a> pins that you can read and write as one value.
 
 You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
@@ -13,3 +13,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 ### BusInOut Hello World!
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/BusInOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/BusInOut_HelloWorld/file/68629c6c4970/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/digitalinout.html" target="_blank">DigitalInOut</a> API reference.

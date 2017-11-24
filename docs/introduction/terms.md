@@ -28,7 +28,7 @@
 
 **Block Device** - A [file](/docs/v5.6/reference/contributing-storage.html#block-devices) that represents a device, with data that can be read or written to it in blocks.
 
-**Board** - An Mbed Enabled development board. You can see a complete list of these [here](https://os.mbed.com/platforms/).
+**Board** - An Mbed Enabled development board. You can see a [complete list](https://os.mbed.com/platforms/) of Mbed Enabled boards.
 
 **Boolean** - A binary variable, having two possible values called `true` and `false`.
 

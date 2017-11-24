@@ -1,6 +1,6 @@
 ## Thread
 
-The [Thread](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_thread.html) class allows defining, creating and controlling parallel tasks.
+The Thread class allows defining, creating and controlling parallel tasks.
 
 <span class="notes">**Note:** The function `main` is a special thread function that is started at system initialization.</span>
 

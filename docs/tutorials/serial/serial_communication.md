@@ -2,15 +2,13 @@
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
-<span class="tips">If you're working on Windows earlier than Windows 10, you might need to [install a serial driver](/docs/v5.6/tutorials/windows-serial-driver.html).</span>
+<span class="tips">If you're working on Windows earlier than Windows 10, you might need to <a href="/docs/v5.6/tutorials/windows-serial-driver.html" target="_blank">install a serial driver</a>.</span>
 
 This allows you to:
 
-* Print out messages to a [host PC terminal (useful for debugging)](#terminal-applications).
-
-* Read input from the host PC keyboard.
-
-* Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
+- Print out messages to a [host PC terminal (useful for debugging)](#terminal-applications).
+- Read input from the host PC keyboard.
+- Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
 
 ### Hello, world
 
@@ -38,10 +36,10 @@ Terminal applications run on your host PC. They provide a window where your Mbed
 
 There are many terminal applications for Windows, including:
 
-* [CoolTerm](http://freeware.the-meiers.org/) - this is the application we use in this example. We use it often because it usually "just works".
-* [Tera Term](http://sourceforge.jp/projects/ttssh2/files).
-* [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
-* Some Windows PCs come with **Hyperterminal** installed.
+- <a href="http://freeware.the-meiers.org/" target="_blank">CoolTerm</a> - this is the application we use in this example. We use it often because it usually "just works".
+- <a href="http://sourceforge.jp/projects/ttssh2/files" target="_blank">Tera Term</a>.
+- <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">PuTTY</a>.
+- Some Windows PCs come with **Hyperterminal** installed.
 
 #### Configuring the connection
 
@@ -61,14 +59,14 @@ Your terminal program is now configured and connected.
 
 CoolTerm should work under Linux. If for some reason it doesn't, you can try one of the following:
 
-* [Minicom](https://help.ubuntu.com/community/Minicom).
-* [GNU Screen](https://www.gnu.org/software/screen/manual/screen.html).
+- <a href="https://help.ubuntu.com/community/Minicom" target="_blank">Minicom</a>.
+- <a href="https://www.gnu.org/software/screen/manual/screen.html" target="_blank">GNU Screen</a>.
 
 ### Additional examples
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see our [build tools section](https://os.mbed.com/docs/v5.6/tools/index.html).
+If you're not sure how to build these examples and run them on your board, please see our <a href="https://os.mbed.com/docs/v5.6/tools/index.html" target="_blank">build tools section</a>.
 
 #### Echo back characters you type
 
@@ -145,7 +143,7 @@ int main() {
 
 #### Using stdin, stdout and stderr
 
-By default, the C ``stdin``, ``stdout`` and ``stderr file`` handles map to the PC serial connection:
+By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
 
 ```c
 #include "mbed.h"

@@ -1,6 +1,6 @@
 ## The configuration system
 
-The Arm Mbed configuration system customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
+The Arm Mbed configuration system customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using <a href="http://www.json.org/" target="_blank">JSON</a>. Some examples of configuration parameters:
 
 - The sampling period for a data acquisition application.
 - The default stack size for a newly created OS thread.
@@ -9,7 +9,7 @@ The Arm Mbed configuration system customizes the compile time configuration of v
 
 The configuration system gathers and interprets all the configurations defined in the source tree. The output of the configuration system is a list of macros that are automatically defined when compiling the code.
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [Mbed targets](/docs/v5.6/tools/adding-and-configuring-targets.html).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as <a href="/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">Mbed targets</a>.</span>
 
 #### Defining configuration parameters
 
@@ -87,11 +87,11 @@ Each Mbed library can have an optional `mbed_lib.json` file located in the root 
 In this JSON file:
 
 - `name` is the name of the library. **This is a required field.**
-- `config` defines the configuration parameters of the library, as explained [here](#defining-configuration-parameters).
+- `config` defines the configuration parameters of the library, as explained in the section about [defining configuration parameters](#defining-configuration-parameters).
 - `macros` is a list of extra macros that will be defined when compiling a project that includes this library. A macro can be defined without a value (such as `MYMOD_MACRO1` above) or with a value (such as `MYMOD_MACRO2` above).
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters.
 
-`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels* (a description of Mbed targets can be found [here](/docs/v5.6/tools/adding-and-configuring-targets.html)). If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
+`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels*. (You can find a description of Mbed targets in our documentation about <a href="/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">adding and configuring targets</a>.) If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
 
 - `config` is always processed first, independent of the target. `config` might define values for some of the parameters. In this case, `buffer_size` will be set to 1024, `queue_size` will be set to 10 and `timer_period` will not have a value.
 - If the library is compiled for the `K64F` target, `timer_period` will be set to 100, and `queue_size` will be set to 40 because they are overridden by the `K64F` key in `target_overrides`. `buffer_size` will be set to 1024, as defined in `config`.
@@ -101,13 +101,13 @@ In this JSON file:
 
 Except `name`, all the above keys in the JSON file are optional. However, if `target_overrides` is defined, `config` must also be defined.
 
-As explained [here](#defining-configuration-parameters), the parameters have an implicit `mylib.` prefix. Outside `mylib`, `buffer_size` is accessible using the name `mylib.buffer_size`. An application will be able to override the value of this parameter, as described in [this section](#configuration-data-in-applications).
+As explained in the section about [defining configuration parameters](#defining-configuration-parameters), the parameters have an implicit `mylib.` prefix. Outside `mylib`, `buffer_size` is accessible using the name `mylib.buffer_size`. An application will be able to override the value of this parameter, as described in [this section](#configuration-data-in-applications).
 
 If the source tree has code for more than one library, each library needs its own `mbed_lib.json` file in its root folder.
 
 ##### Configuration data in targets
 
-Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check [our configuring targets documentation](/docs/v5.6/tools/adding-and-configuring-targets.html)). Target configuration data is defined in `targets.json` using `config`, as described [here](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
+Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check <a href="/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">our configuring targets documentation</a>). Target configuration data is defined in `targets.json` using `config`, as described in the section about [defining configuration parameters](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
 
 ```
 "Base": {

@@ -63,7 +63,7 @@ The 6LoWPAN stack can be delivered with optional security components. These comp
 - ECC (ECDSA and ECDHE) (requires X509.3)
 - X509.3 (requires ECC)
 
-The _Elliptic Curve Cryptography_ (ECC) component supports the EEC curve NIST-P256 as defined in the Smart Grid standards collection of the _National Institute of Standards and Technology_ (NIST); see [NIST](http://www.nist.gov/smartgrid/). The stack also provides full x509.3 certificate support along with certificate chaining.
+The _Elliptic Curve Cryptography_ (ECC) component supports the EEC curve NIST-P256 as defined in the Smart Grid standards collection of the _National Institute of Standards and Technology_ (NIST); see <a href="http://www.nist.gov/smartgrid/" target="_blank">NIST</a>. The stack also provides full x509.3 certificate support along with certificate chaining.
 
 The stack essentially allows the end device to be a part of a full _Public Key Infrastructure_ (PKI) security scheme.
 
@@ -88,63 +88,63 @@ _Figure 1-3_ shows the various protocol modules that make up the 6LoWPAN stack, 
 The related standards supported by the stack are:
 
 - 6LoWPAN:
-	* RFC4944
-	* RFC6282
-	* RFC6775
+	- RFC4944.
+	- RFC6282.
+	- RFC6775.
 - IPv6:
-	* RFC2460
-	* RFC2464
-	* RFC3168 (parts)
-	* RFC4291 (parts)
-	* RFC6040
-	* RFC6437
-	* RFC6946
+	- RFC2460.
+	- RFC2464.
+	- RFC3168 (parts).
+	- RFC4291 (parts).
+	- RFC6040.
+	- RFC6437.
+	- RFC6946.
 - UDP:
-	* RFC768
+	- RFC768.
 - TCP:
-	* RFC793 (parts)
+	- RFC793 (parts).
 - RPL:
-	* RFC6550
-	* RFC6552
-	* RFC6553
-	* RFC6554
-	* RFC6719
-	* RFC2473 (parts)
+	- RFC6550.
+	- RFC6552.
+	- RFC6553.
+	- RFC6554.
+	- RFC6719.
+	- RFC2473 (parts).
 - ICMPv6:
-	* RFC4443 (parts)
-	* RFC4861 (parts)
-	* RFC4862 (parts)
+	- RFC4443 (parts).
+	- RFC4861 (parts).
+	- RFC4862 (parts).
 - MLE:
-	* IETF draft-kelsey-intarea-mesh-link-establishment-06
-	* IEEE802.15.4
-	* IEEE802.15.4-2006 (certified)
-	* IEEE802.15.4g (parts)
+	- IETF draft-kelsey-intarea-mesh-link-establishment-06.
+	- IEEE802.15.4.
+	- IEEE802.15.4-2006 (certified).
+	- IEEE802.15.4g (parts).
 - MPL:
-	* IETF draft-ietf-roll-trickle-mcast-12 (parts)
+	- IETF draft-ietf-roll-trickle-mcast-12 (parts).
 - AES:
-	* FIPS 197
-	* SP 800-38C
+	- FIPS 197.
+	- SP 800-38C.
 - PANA:
-	* RFC5191
-	* RFC6345
-	* RFC6786
+	- RFC5191.
+	- RFC6345.
+	- RFC6786.
 - EAP:
-	* RFC3748
-	* RFC5216
+	- RFC3748.
+	- RFC5216.
 - TLS:
-	* RFC4279
-	* RFC5216
-	* RFC5246
-	* RFC6655
-	* IETF draft-mcgrew-tls-aes-ccm-ecc-05
+	- RFC4279.
+	- RFC5216.
+	- RFC5246.
+	- RFC6655.
+	- IETF draft-mcgrew-tls-aes-ccm-ecc-05.
 - ECC:
-	* RFC4492
-	* RFC5289
-	* IETF draft-mcgrew-tls-aes-ccm-ecc-05
+	- RFC4492.
+	- RFC5289.
+	- IETF draft-mcgrew-tls-aes-ccm-ecc-05.
 
 #### Interfaces
 
-The 6LoWPAN stack offers application developers programming interfaces for configuring the 6LoWPAN network, defining security levels and sending and receiving packets. The 6LoWPAN stack requires the developers to provide functions for platform specific tasks and network drivers for physical layer. For more information on programming interfaces, see [Mbed Mesh API](/docs/v5.6/reference/mesh.html).
+The 6LoWPAN stack offers application developers programming interfaces for configuring the 6LoWPAN network, defining security levels and sending and receiving packets. The 6LoWPAN stack requires the developers to provide functions for platform specific tasks and network drivers for physical layer. For more information on programming interfaces, see <a href="/docs/v5.6/reference/mesh.html" target="_blank">Mbed Mesh API</a>.
 
 #### Operation modes
 
@@ -164,20 +164,20 @@ In 6LoWPAN network, the following roles are described in RFCs:
 A device running a 6LoWPAN stack can be configured in runtime to be in one of the following three modes:
 
 - Router:
-	* Is effectively a 6LoWPAN Router (6LR).
-	* Routes packets to and from other devices in the network.
-	* Typically always-on, that is, radio always on.
-	* Stack automatically reduces power consumption by placing the processor into sleep when in idle, so that no packets are routed or processed.
+	- Is effectively a 6LoWPAN Router (6LR).
+	- Routes packets to and from other devices in the network.
+	- Typically always-on, that is, radio always on.
+	- Stack automatically reduces power consumption by placing the processor into sleep when in idle, so that no packets are routed or processed.
 - Host:
-	* Is a 6LoWPAN node (6LN) with no routing capability.
-	* Does not route packets to and from other devices in the network.
-	* Typically RF always on.
-	* Can sleep, but parent router does not cache packets destined to this device.
+	- Is a 6LoWPAN node (6LN) with no routing capability.
+	- Does not route packets to and from other devices in the network.
+	- Typically RF always on.
+	- Can sleep, but parent router does not cache packets destined to this device.
 - Sleepy host:
-	* Is a 6LoWPAN node (6LN) with no routing capability and utilizes prolonged sleep periods.
-	* Does not route packets to and from other devices in the network.
-	* Typically in sleep for prolonged time periods.
-	* Duty cycle often less than 1%.
-	* Wakes up due to timer trigger or external interrupt, performs some action, polls for data from parent router and goes back to sleep.
-	* An MLE protocol or alternative is required.
-	* May shut down the radio when sleeping.
+	- Is a 6LoWPAN node (6LN) with no routing capability and utilizes prolonged sleep periods.
+	- Does not route packets to and from other devices in the network.
+	- Typically in sleep for prolonged time periods.
+	- Duty cycle often less than 1%.
+	- Wakes up due to timer trigger or external interrupt, performs some action, polls for data from parent router and goes back to sleep.
+	- An MLE protocol or alternative is required.
+	- May shut down the radio when sleeping.

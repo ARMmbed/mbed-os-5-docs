@@ -17,20 +17,20 @@ Use the instructions below to test our Cloud9-based Arm Mbed Enabled IDE, which 
 
 ##### Arm Mbed CLI
 
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](/docs/v5.6/tools/mbed-cli.html).
+We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the <a href="/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI page</a>.
 
 ##### Compiler versions
 
 Mbed OS 5 can be built with various toolchains. The currently supported versions are:
 
-* [Arm compiler 5.06 update 3](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
-* [GNU Arm Embedded version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-* [IAR Embedded Workbench 7.8](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
+- <a href="https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads" target="_blank">Arm compiler 5.06 update 3</a>.
+- <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads" target="_blank">GNU Arm Embedded version 6</a>.
+- <a href="https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/" target="_blank">IAR Embedded Workbench 7.8</a>.
 
 ##### Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the [Online Compiler page](/docs/v5.6/tools/arm-mbed-online-compiler.html).
+The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the <a href="/docs/v5.6/tools/arm-mbed-online-compiler.html" target="_blank">Online Compiler page</a>.
 
 ##### Third party development tools
 
-You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](/docs/v5.6/tools/exporting.html).
+You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see <a href="/docs/v5.6/tools/exporting.html" target="_blank">the Exporting to third party toolchains page</a>.

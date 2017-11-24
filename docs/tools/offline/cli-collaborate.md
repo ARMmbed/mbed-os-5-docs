@@ -22,7 +22,7 @@ $ mbed import https://mbed.org/teams/mbed/code/mbed_blinky/
 $ cd mbed-os-example-blinky
 ```
 
-You can use the "import" command without specifying a full URL; Mbed CLI adds a prefix (https://github.com/ARMmbed) to the URL if one is not present. For example, this command:
+You can use the "import" command without specifying a full URL; Mbed CLI adds a <a href="https://github.com/ARMmbed" target="_blank">prefix</a> to the URL if one is not present. For example, this command:
 
 ```
 $ mbed import mbed-os-example-blinky

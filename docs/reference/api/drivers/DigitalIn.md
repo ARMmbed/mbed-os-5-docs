@@ -14,10 +14,14 @@ API summary
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/file/954ac88dda04/main.cpp)
 
-### Related API
+### DigitalIn example
 
-To handle an interrupt, see [InterruptIn](/docs/v5.6/reference/interruptin.html).
+To handle an interrupt, see <a href="/docs/v5.6/reference/interruptin.html" target="_blank">InterruptIn</a>.
 
 Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/file/10c4d3aa026e/main.cpp)
+
+### Related content
+
+- <a href="/docs/v5.6/reference/interruptin.html" target="_blank">InterruptIn</a> API reference.

@@ -1,6 +1,6 @@
 ## Mail
 
-[Mail](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classrtos_1_1_mail.html) works like a queue, with the added benefit of providing a memory pool for allocating messages (not only pointers).
+Mail works like a queue, with the added benefit of providing a memory pool for allocating messages (not only pointers).
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mail_queue.png)</span>
 

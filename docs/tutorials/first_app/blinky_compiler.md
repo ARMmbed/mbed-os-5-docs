@@ -2,7 +2,7 @@
 
 This tutorial builds Blinky using the Arm Mbed Online Compiler, which allows you to build Mbed OS applications without installing a toolchain on your own machine.
 
-<span class="tips">Please create a [developer account](https://os.mbed.com/account/signup/). It's free, and we don't spam.</span>
+<span class="tips">Please create a <a href="https://os.mbed.com/account/signup/" target="_blank">developer account</a>. It's free, and we don't spam.</span>
 
 ### Importing Blinky
 
@@ -20,8 +20,8 @@ The import mechanism offers a default name, but you're free to change it. When y
 
 The imported Blinky has two interesting parts:
 
-* ``main.cpp``, where the Blinky-specific code is. You can double-click the file in the navigation pane on the left to view the code.
-* ``mbed-os``, where the Arm Mbed OS codebase is.
+- `main.cpp`, where the Blinky-specific code is. You can double-click the file in the navigation pane on the left to view the code.
+- `mbed-os`, where the Arm Mbed OS codebase is.
 
 Later we'll compile the code; this will take both of these parts and create a single application file from them.
 
@@ -33,7 +33,7 @@ The Mbed Online Compiler can build your application to match any Arm Mbed Enable
 
 #### Adding a board to your list
 
-To add a board to your list, go to [the board's page on `os.mbed.com`](https://os.mbed.com/platforms/), and click the **`Add to your Mbed Compiler`** button:
+To add a board to your list, go to <a href="https://os.mbed.com/platforms/" target="_blank">the board's page on `os.mbed.com`</a>, and click the **`Add to your Mbed Compiler`** button:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_board.png)<span>Adding a board to the Mbed Online Compiler's board list</span></span>
 
