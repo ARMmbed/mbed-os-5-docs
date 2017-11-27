@@ -9,7 +9,7 @@
             "title": "Overview",
             "intro": {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/introduction/introduction.md"},
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/docs/release_process.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/mbed_os_release_notes/blob/new_engine/Docs/release_process.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/introduction/terms.md"}
             ]
           }
