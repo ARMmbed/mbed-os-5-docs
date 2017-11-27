@@ -28,7 +28,7 @@ int main() {
 
 This video shows how to use Mbed CLI to import and build Blinky. Note that it assumes you have already installed Mbed CLI (see next section):
 
-<span class="images">[![Video tutorial](http://img.youtube.com/vi/PI1Kq9RSN_Y/0.jpg)](https://www.youtube.com/watch?v=PI1Kq9RSN_Y)<span>Watch how to create your first application on Arm Mbed CLI</span></span>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/PI1Kq9RSN_Y" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 ### Installing Mbed CLI and a toolchain
 
