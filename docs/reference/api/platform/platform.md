@@ -36,7 +36,7 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the <a href="/docs/v5.6/reference/platform-overview.html#the-importance-of-state" target="_blank">Importance of State</a> section.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the <a href="/docs/v5.6/reference/platform.html#the-importance-of-state" target="_blank">Importance of State</a> section.
 
 #### Why should you use Callbacks?
 
@@ -207,7 +207,7 @@ public:
 }
 ```
 
-#### The importance of state
+<h4 id="the-importance-of-state">The importance of state</h4>
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the <a href="/docs/v5.6/reference/callback.html" target="_blank">technical callback documentation</a>.
 
