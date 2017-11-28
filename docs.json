@@ -65,6 +65,7 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/CriticalSectionLock.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Time.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Error.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Assert.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/NonCopyable.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/CircularBuffer.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/ATCmdParser.md"}
