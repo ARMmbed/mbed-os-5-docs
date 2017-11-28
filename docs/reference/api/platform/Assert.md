@@ -4,7 +4,7 @@ Mbed OS provides a set of macros that evaluates an expression and prints an erro
 
 ### Assert macros reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__Assert.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__assert_8h_source.html)
 
 ### Assert example
 
