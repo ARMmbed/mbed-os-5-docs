@@ -25,7 +25,7 @@ Each subclass has distinct pure virtual methods. Visit their class references (l
 
 `NetworkStack` provides [these functions](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
 
-### Errors
+#### Errors
 
 Many functions of `NetworkStack` and `NetworkInterface` have return types of `nsapi_error_t`, which is a type used to represent error codes. You can see a list of these return codes [here](https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.4/api/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba). You can view the integer values the error macros in [this file](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_types.h). A negative error code indicates failure, while 0 indicates success.
 
@@ -76,7 +76,7 @@ To:
     int return_code = net.connect("my_ssid", "my_password");
 ```
 
-### Testing
+#### Testing
 
 When adding a new connectivity class, you can use `mbed test` to verify your implementation.
 
@@ -379,7 +379,7 @@ Look for sockets that have callbacks. Then, call them with the specified data!
 
 Know when to trigger these events. You've used the `ESP8266` class object, `_esp`, to attach a callback on a Serial RX event like so: `_esp.attach(this, &ESP8266Interface::event)`. The `_esp` attach function creates ` _serial.attach(func)`, which attaches the function to the underlying `UARTSerial` RX event. Whenever the radio receives something, consider that a state change, and invoke any attach callbacks. A common use case is to attach `socket_recv` to a socket, so the socket can receive data asynchronously without blocking.
 
-### Testing
+#### Testing
 
 - Make a new Mbed project - `mbed new esp8266-driver-test`.
 - Move into project folder - `cd esp8266-driver-test`.
