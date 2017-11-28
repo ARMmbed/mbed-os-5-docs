@@ -4,7 +4,7 @@ Mbed OS provides an error function to output messages to `STDIO` at runtime when
 
 ### Error function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform.html#gae04dbb69042f37c4c595fc9beb4ca754)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ### Error example
 
