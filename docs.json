@@ -186,7 +186,6 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/storage/FileSystem.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/connectivity/connectivity.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/connectivity/NetworkStack.md"},
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/connectivity/WifiInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/connectivity/CellularInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/connectivity/MeshInterface.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/contributing/connectivity/MeshMAC.md"},
