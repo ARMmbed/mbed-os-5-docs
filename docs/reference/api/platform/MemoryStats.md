@@ -7,7 +7,7 @@ Mbed OS provides a set of functions that you can use to capture the memory stati
 
 ### MemoryStats functions reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__stats.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__stats_8h_source.htm)
 
 ### MemoryStats example
 
