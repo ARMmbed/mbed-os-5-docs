@@ -24,17 +24,3 @@ If you see a compile time error or warning that you do not understand, you can u
 When your development board shows the "lights of dead" it means the board ran into a runtime error. Runtime errors occur when code is correct but tries to do something that is invalid, or when malfunctioning hardware cannot be accessed.
 
 A typical example is assigning the wrong function to a pin. For example, switching the `SDA` and `SCK` pins when accessing I2C or trying to use `PwmOut` on a pin that does not support pulse-width modulation.
-
-### When using Mbed CLI
-
-If you are using an old version of Mbed CLI, you may see compile-time errors. Make sure `mbed-cli` is working correctly and its version is newer than `1.0.0`.
-
- ```
- mbed --version
- ```
-
- If not, update it:
-
- ```
- pip install mbed-cli --upgrade
- ```
