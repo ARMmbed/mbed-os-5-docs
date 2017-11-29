@@ -1,8 +1,18 @@
 ## Time
 
-The C date and time functions are a group of functions in the standard library of the C programming language implementing date and time manipulation operations. They provide support for time acquisition, conversion between date formats and formatted output to strings.
+The C `date` and `time` functions are a group of functions in the standard library of the C programming language implementing date and time manipulation operations. They provide support for time acquisition, conversion between date formats and formatted output to strings.
 
-### Time hello, world
+The C library function `time` is updated to read current RTC time if enabled, else time is set to 0 with `set_time` before reading RTC.
+
+You can covert time to human readable format using `ctime`, `localtime`, `strftime` and other C standard functions.
+
+`mktime` and `localtime` C standard library functions cannot be used in interrupt handler with GCC toolchain. Dedicated routines for `mktime` and `localtime` are added to overcome this issue, which are optimized and faster then C standard library functions.
+
+### RTC Time class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__rtc__time_8h_source.html)
+
+### Time example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/file/8593c9813840/main.cpp)
 
