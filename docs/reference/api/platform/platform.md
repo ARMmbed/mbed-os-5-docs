@@ -293,7 +293,7 @@ int main() {
     adc1.attach(low_pass_step, &low_pass_result1);
 
     // Register a second low pass filter, no more issues!
-    adc2.attach(low_pass_step, &low_pass_result1);
+    adc2.attach(low_pass_step, &low_pass_result2);
 }
 ```
 
