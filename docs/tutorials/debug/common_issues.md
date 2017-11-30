@@ -26,20 +26,16 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
 - GNU Arm Embedded version 6.
 - IAR Embedded Workbench 7.8.
 
-### Identify license issues
+### Debug device crashing
 
-[Add content about how to identify license issues here.]
+- Examine or undo any recent code change you made to see if it is the cause of the crash.
+- Build using the development or debug build profile, so any errors in your program get shown on the serial port.
+- Enable debug prints for components which have them.
 
-### Device crashing
+### Take these steps if no output is shown
 
-[Add content about how to prevent and overcome situations when a device crashes here.]
+If you see no output, this can indicate a serial port problem. Debug such a problem by completing the following steps:
 
-### No output is shown (serial port problem)
-
-[Add content about how to prevent and overcome situations]
-
-### Enable debug trace on serial port
-
-[Add content about how and when to enable debug trace on serial port.]
-
-[Add any other relevant topics.]
+1. Make sure your serial port has the same baudrate as your device.
+1. Reopen the serial port.
+1. Type into the terminal, and verify the activity light on your board blinks.
