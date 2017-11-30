@@ -1,21 +1,19 @@
 ### Build time configuration of the stack
 
-To minimize the size of the produced stack, we have defined a set of build options.
-
-The suitable build option depends on whether you are building it for Mbed OS or for bare metal.
+To minimize the size of the produced stack, Nanostack defines a set of build options.
 
 #### Build options
 
-Option Name | Features supported | Current binary size in Mbed OS 5.5
+Option Name | Features supported | Binary size in Mbed OS 5.5
 ------------| -------------------|------------------------------------
-`FEATURE_ETHERNET_HOST` | Only Ethernet host support, no mesh networking. | 108 kB
-`FEATURE_LOWPAN_BORDER_ROUTER` | 6LoWPAN-ND border router support. | 219 kB
-`FEATURE_LOWPAN_HOST` | 6LoWPAN-ND non routing host mode. | 122 kB
-`FEATURE_LOWPAN_ROUTER` | 6LoWPAN-ND routing host mode. | 169 kB
-`FEATURE_NANOSTACK_FULL` | Everything. This is only for testing purposes. | 355 kB
-`FEATURE_THREAD_BORDER_ROUTER` | Thread router device with border router capability. | 211.927 kB
-`FEATURE_THREAD_END_DEVICE` | Thread host without routing capability | 165.548 kB
-`FEATURE_THREAD_ROUTER` | Thread host with routing capability | 198.618 kB
+`ethernet_host` | Only Ethernet host support, no mesh networking. | 108 kB
+`lowpan_border_router` | 6LoWPAN-ND border router support. | 219 kB
+`lowpan_host` | 6LoWPAN-ND non routing host mode. | 122 kB
+`lowpan_router` | 6LoWPAN-ND routing host mode. | 169 kB
+`nanostack_full` | Everything. This is only for testing purposes. | 355 kB
+`thread_border_router` | Thread router device with border router capability. | 212 kB
+`thread_end_device` | Thread host without routing capability | 166 kB
+`thread_router` | Thread host with routing capability | 199 kB
 
 <span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9. They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
@@ -35,7 +33,7 @@ Select the device role:
 - Mesh network. A router. (default)
 - Star network. A non-routing device. Also known as a host, or sleepy host.
 
-Modify your `mbed_app.json` file to tell which Nanostack build to choose and which configrations to use on <a href="/docs/v5.6/reference/mesh.html" target="_blank">Mbed Mesh API</a>.
+Modify your `mbed_app.json` file to tell which Nanostack configuration to choose and which configrations to use on <a href="/docs/v5.6/reference/mesh.html" target="_blank">Mbed Mesh API</a>.
 
 An example of the `mbed_app.json` file:
 
@@ -43,7 +41,8 @@ An example of the `mbed_app.json` file:
 ...
     "target_overrides": {
         "*": {
-            "target.features_add": ["NANOSTACK", "LOWPAN_ROUTER", "COMMON_PAL"],
+            "target.features_add": ["NANOSTACK", "COMMON_PAL"],
+            "nanostack.configuration": "lowpan_router",
             "mbed-mesh-api.6lowpan-nd-device-type": "NET_6LOWPAN_ROUTER",
             "mbed-mesh-api.thread-device-type": "MESH_DEVICE_TYPE_THREAD_ROUTER",
         }
@@ -61,16 +60,17 @@ Then you may optionally choose to select the non-routing mode for those networks
 
 **mesh-type: MESH_LOWPAN**
 
-|Device role|`target.features_add` value|`mbed-mesh-api.6lowpan-nd-device-type`|
+|Device role|`nanostack.configuration` value|`mbed-mesh-api.6lowpan-nd-device-type`|
 |-----------|-------------------------|------------------------------------|
-|Mesh router (default) | `LOWPAN_ROUTER` | `NET_6LOWPAN_ROUTER` |
-|Non-routing device | `LOWPAN_HOST` | `NET_6LOWPAN_HOST` |
+|Mesh router (default) | `lowpan_router` | `NET_6LOWPAN_ROUTER` |
+|Non-routing device | `lowpan_host` | `NET_6LOWPAN_HOST` |
 
 ##### Thread
 
 **mesh-type: MESH_THREAD**
 
-|Device role|`target.features_add` value|`mbed-mesh-api.thread-device-type`|
+|Device role|`nanostack.configuration` value|`mbed-mesh-api.thread-device-type`|
 |-----------|-------------------------|------------------------------------|
-|Mesh router (default) | `THREAD_ROUTER` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
-|Non-routing device | `THREAD_END_DEVICE` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
+|Mesh router (default) | `thread_router` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
+|Non-routing device | `thread_end_device` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
+
