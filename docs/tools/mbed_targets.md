@@ -85,7 +85,7 @@ The name of the target's Arm core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`, `"Cortex-M23"`, `"Cortex-M23-NS"`, `"Cortex-M33"`, `"Cortex-M33-NS"`
 
-Note: Only the GCC toolchain officially supports v8-M architecture (Cortex-M23/33) devices.
+Note: Mbed OS supports v8-M architecture (Cortex-M23 and Cortex-M33) devices only with the GCC toolchain.
 
 #### `public`
 
