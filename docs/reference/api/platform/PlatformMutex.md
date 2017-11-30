@@ -1,8 +1,6 @@
 ## PlatformMutex
 
-PlarformMutex class provides mutex stub functions in the absence of RTOS. This class enable us to use driver/application code when the RTOS is not present. 
-
-[Add description here.]
+The PlarformMutex class provides mutex stub functions in the absence of RTOS. This class enables you to use driver/application code when the RTOS is not present. 
 
 ### PlatformMutex class reference
 
@@ -10,4 +8,4 @@ PlarformMutex class provides mutex stub functions in the absence of RTOS. This c
 
 ### PlatformMutex example
 
-Mbed OS uses PlarformMutex class instead of RTOS mutex for all drivers. References <a href="/docs/v5.6/reference/analogin.html" target="_blank">AnalogIn</a>, <a href="/docs/v5.6/reference/busout.html" target="_blank">BusOut</a>, <a href="/docs/v5.6/reference/spi.html" target="_blank">SPI</a>, <a href="/docs/v5.6/reference/serial.html" target="_blank">Serial</a> and <a href="/docs/v5.6/reference/i2c.html" target="_blank">I2C</a>.
+Mbed OS uses the PlarformMutex class instead of the RTOS mutex for all drivers. References <a href="/docs/v5.6/reference/analogin.html" target="_blank">AnalogIn</a>, <a href="/docs/v5.6/reference/busout.html" target="_blank">BusOut</a>, <a href="/docs/v5.6/reference/spi.html" target="_blank">SPI</a>, <a href="/docs/v5.6/reference/serial.html" target="_blank">Serial</a> and <a href="/docs/v5.6/reference/i2c.html" target="_blank">I2C</a>.
