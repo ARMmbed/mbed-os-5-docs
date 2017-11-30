@@ -1,4 +1,4 @@
-### Block Devices
+<h3 id="contributing-block-device">Block Devices</h3>
 
 The block device API provides an interface for access to block-based storage. You can use a block device to back a full <a href="https://os.mbed.com/docs/v5.6/reference/contributing-storage.html#contributing-filesystem" target="_blank">file system</a> or write to it directly.
 
