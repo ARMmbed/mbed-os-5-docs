@@ -1,8 +1,8 @@
 ## Event
 
-The Event class provides APIs to configure events `delay` and `period` timings. You can use `post` API to post a event to underlying EventQueue, and `cancel` to cancel most recently posted event.
+The Event class provides APIs to configure events `delay` and `period` timings. You can use `post` API to post an event to the underlying EventQueue, and you can use `cancel` to cancel the most recently posted event.
 
-The Event class is thread safe. `post` and `cancel` APIs are IRQ safe.
+The Event class is thread safe. The `post` and `cancel` APIs are IRQ safe.
 
 ### Event class reference
 
