@@ -10,7 +10,7 @@ If you want to port a new filesystem to Mbed OS on existing storage options you 
 
 #### Filesystems
 
-To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/fat/FATFileSystem.cpp) provides an excellent example, you can find tests of the POSIX API here.
+To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/fat/FATFileSystem.cpp) provides an excellent example.
 
 A minimal file system needs to provide the following functions:
 
