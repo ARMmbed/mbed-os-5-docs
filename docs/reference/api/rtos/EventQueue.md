@@ -15,7 +15,7 @@ You can use the `dispatch` and `dispatch_forever` APIs to execute pending events
 The code executes two handler functions (`rise_handler` and `fall_handler`) in two different contexts:
 
 1. In interrupt context when a rising edge is detected on `SW2` (`rise_handler`).
-2. In the context of the event loop's thread function when a falling edge is detected on `SW2` (`fall_handler`). `queue.event()` is called with `fall_handler` as an argument to specify that `fall_handler` runs in user context instead of interrupt context.
+2. In the context of the event loop's thread function when a falling edge is detected on `SW2` (`fall_handler`). You can use the `fall_handler` function as an argument to `queue.event()` to specify that `fall_handler` runs in user context instead of interrupt context.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/6ae734681f16/main.cpp)
 
@@ -27,6 +27,6 @@ The code below demonstrates queueing functions to be called after a delay and qu
 
 ### EventQueue example: chaining events from more than one queue
 
-Event queues easily align with module boundaries, where internal state can be implicitly synchronized through event dispatch. Multiple modules can use independent event queues but still be composed through the `EventQueue::chain` function.
+Event queues easily align with module boundaries, where event dispatch can implicitly synchronize internal state. Multiple modules can use independent event queues but still be composed through the `EventQueue::chain` function.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_3/)](https://os.mbed.com/teams/mbed_example/code/events_ex_3/file/fca134a32b61/main.cpp)
