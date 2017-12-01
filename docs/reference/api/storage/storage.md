@@ -7,15 +7,15 @@ The storage APIs present in Arm Mbed OS are:
 
 #### Declaring a file system
 
-The [FileSystem](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions `open` and `fopen`.
+The [FileSystem](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions.
 
 ##### Open
 
-The POSIX `open` function creates a connection between a file and a file descriptor. Using a string path argument, a file can be opened with a set of option flags. The file descriptor can be used by other functions in Mbed OS to track current position in a file, read and write content, and so on.
+The `open` function creates a connection between a file and a file descriptor. Using a string path argument, a file can be opened with a set of option flags. The file descriptor can be used by other functions in Mbed OS to track current position in a file, read and write content, and so on.
 
 ##### Fopen
 
-The POSIX `fopen` function is similar to the open function above, but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. Although it should be noted that it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
+The `fopen` function is similar to the open function above, but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. Although it should be noted that it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
 
 The IEEE C standard specifications for both `open` and `fopen` can provide additional information.
 
@@ -37,7 +37,7 @@ Partitioning allows you to split a block device among multiple storage users suc
 
 #### C++ classes
 
-The [FileSystem](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_system.html) class provides the core user interface with general functions that map to their global POSIX counterparts. Mbed OS provides [File](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file.html) and [Dir](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_dir.html) classes that represent files and directories in a C++ API that uses object-oriented features in C++.
+The [FileSystem](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file_system.html) class provides the core user C++ API. Mbed OS provides [File](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_file.html) and [Dir](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_dir.html) classes that represent files and directories in a C++ API.
 
 #### Block device operations
 
