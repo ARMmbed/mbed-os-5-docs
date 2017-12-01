@@ -1,4 +1,4 @@
-### Arm Mbed OS Software Design Guide
+### Software Design
 
 Principles of Arm Mbed software:
 
@@ -13,7 +13,7 @@ Please refer to the <a href="/docs/v5.6/reference/guidelines.html#style" target=
 
 #### Organization
 
-The Mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the Mbed OS codebase as a single Git repo. We suggest this model for external libraries.
+The Arm Mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the Mbed OS codebase as a single Git repo. We suggest this model for external libraries.
 
 - Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
 
