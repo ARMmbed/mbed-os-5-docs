@@ -1,4 +1,4 @@
-### Arm Mbed OS Software Design Guide
+### Software Design
 
 Principles of Arm Mbed software:
 
