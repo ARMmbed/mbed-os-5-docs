@@ -1,6 +1,7 @@
 ## LittleFileSystem
 
-The little filesystem is a fail-safe filesystem designed for embedded systems.
+The little filesystem (littlefs) is a little fail-safe filesystem designed
+for embedded systems, specifically microcontrollers using flash storage.
 
 ```
    | | |     .---._____
@@ -11,17 +12,104 @@ The little filesystem is a fail-safe filesystem designed for embedded systems.
    | | |
 ```
 
-**Bounded RAM/ROM** - The littlefs is designed to work with a limited amount
-of memory. Recursion is avoided, and dynamic memory is limited to configurable
-buffers that can be provided statically.
+Microcontrollers and flash storage preset three big challenges for embedded
+storage: [power-loss](#power-loss-resilient), [wear](#wear-leveling), and
+[limited RAM and ROM](#bounded-ram-and-rom). The littlefs provides a solution
+to all three of these problems.
 
-**Power-loss resilient** - The littlefs is designed for systems that may have
-random power failures. The littlefs has strong copy-on-write guarantees, and
-storage on disk is always kept in a valid state.
+### Power-loss resilient
 
-**Wear leveling** - Because the most common form of embedded storage is erodible
-flash memories, littlefs provides a form of dynamic wear leveling for systems
-that cannot fit a full flash translation layer.
+Embedded systems are usually designed without a shutdown routine and the notable
+lack of a user interface for recovery. With a filesystem that is not resilient
+to power-loss, you rely on luck to not end up with a corrupted filesystem.
+The combination of persistent storage and unpredictable power-loss creates
+difficult to notice bugs that will ruin the user-experience of unlucky users.
+
+The littlefs is built from the ground up with a power-loss resilient structure
+that uses checksums to limit the assumptions of how the physical storage reacts
+under power-loss. The littlefs provides strong copy-on-write guaruntees and
+always keeps the storage on disk in a valid state.
+
+### Wear leveling
+
+Flash storage presents its own unique challenge: Wear. Flash is a
+destructive form of storage, and continuously rewriting data to a block
+will cause that block to wear out and become unwritable. Filesystems that
+don't take wear into account can quickly burn through the blocks were
+frequently updated metadata is stored and result in the premature death
+of the system.
+
+The littlefs is built with wear in mind and the underlying structure
+of the filesystem reactively mutates as the underlying storage develops
+errors over its lifetime. This results in a form of dynamic wear-leveling
+that extends the lifetime of the physical storage proportionally to the
+size of storage. With littlefs, the lifetime of storage can always be extended
+by increasing the size of storage, which is a much cheaper than upgrading the
+erase cycles on storage.
+
+### Bounded RAM and ROM
+
+The scale of resources available to microcontrollers is foreign to the types
+of systems filesystems are normally targetting. A common trend of embedded
+Linux filesystems is RAM usage that scales linearly with the size of storage,
+which makes rationalizing RAM usage in a system difficult.
+
+The littlefs is built to work with a very limited amount of memory. Recursion
+is avoided and dynamic memory is limited to configurable buffers. At no point
+during operation does littlefs store an entire storage block in RAM. The result
+is small RAM usage that is completely independent of the geometry of the
+underlying storage.
+
+---
+
+The little in littlefs comes from the focus on both keeping resource usage
+low and keeping the scope self-contained. Aside from the three targeted issues
+above, there is a heavy restriction against bloat in this software module.
+Instead, additional features are pushed separate layers in the powerful
+[block device API](TODO LINK ME) that drives the Mbed OS storage stack.
+This gives Mbed OS a powerful tool for remaining flexible as technology
+used by IoT devices develops.
+
+### When should I use the littlefs?
+
+The littlefs is intended for microcontrollers with external flash storage.
+In this context, littlefs out-performs the other Mbed OS filesystems in
+terms of RAM, ROM, wear, and runtime.
+
+For storage on an SD card that is accessable from a PC, you would be better
+off using the [FAT filesystem](TODO LINK ME) due to its portability.
+
+For internal flash, littlefs is compatible with the
+[flash IAP driver](https://github.com/ARMmbed/flashiap-driver) and has been
+used successfully on several projects. However, in terms of size and erase
+cycles, internal flash is much more expensive than external flash, and comes
+with the cost of completely locking up the system during erase cycles. For
+these reasons internal flash is discouraged for general storage use.
+
+### How does littlefs work?
+
+For a high-level view, the features of littlefs are baked into the structure
+of the filesystem. At its core, littlefs is built around providing power-loss
+resilience and wear leveling as a side-effect of the littlefs filesystem
+structure. Because these features are baked into the structure of the
+filesystem, they come with very little resource cost.
+
+The little in littlefs comes from the focus on both keeping resource usage
+low and keeping the scope self-contained. There is no bloat in this software
+module, instead, additional features are pushed separate layers in the powerful
+[block device API](TODO LINK ME) that drives the Mbed OS storage stack.
+
+For a low-level view, the mechanics that makes littlefs tick can be found in
+the [implementation details](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/littlefs/littlefs/DESIGN.md)
+in Mbed OS.
+
+### How do we know littlefs works?
+
+Because I said so (TODO)
+
+### How do I use littlefs?
+
+Idunno (TODO)
 
 ### LittleFileSystem class reference
 
