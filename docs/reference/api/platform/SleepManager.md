@@ -22,7 +22,7 @@ void main()
 }
 ```
 
-Note: Mbed OS handles sleep for you automatically when you call any of the wait functions. You do not need to call `sleep()` directly unless you are overriding the default sleep handling of Mbed OS.
+<span class="notes">**Note:** Mbed OS handles sleep for you automatically when you call any of the wait functions. You do not need to call `sleep()` directly unless you are overriding the default sleep handling of Mbed OS.</span>
 
 ### Sleep modes
 
