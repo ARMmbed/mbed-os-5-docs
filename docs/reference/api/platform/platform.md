@@ -13,7 +13,7 @@ The role of the platform modules is to provide a consistent user experience on t
 - <a href="/docs/v5.6/reference/circularbuffer.html" target="_blank">CircularBuffer</a>: The class that provides APIs to push and pop data from a buffer
 - <a href="/docs/v5.6/reference/atcmdparser.html" target="_blank">ATCmdParser</a>: An Mbed OS compatible AT command parser.
 
-#### Callbacks
+<h4 id="callbacks">Callbacks</h4>
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
