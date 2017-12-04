@@ -6,7 +6,7 @@ You can convert time to a human-readable format using `ctime`, `localtime`, `str
 
 You cannot use `mktime` and `localtime` C standard library functions in an interrupt handler with the GCC toolchain. We have added dedicated routines `_rtc_mktime` and `_rtc_localtime`, which are optimized and faster then C standard library functions, to overcome this issue.
 
-### RTC Time class reference
+### Time class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__mktime_8h_source.html)
 
