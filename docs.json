@@ -64,6 +64,7 @@
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/SleepManager.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/CriticalSectionLock.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Time.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Rtc.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Debug.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Error.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/reference/api/platform/Assert.md"},
