@@ -336,8 +336,8 @@
           {
             "title": "Debugging",
             "sources": [
-              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/tutorials/debug/debug_tutorials.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/tutorials/debug/common_issues.md"},
+              {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/tutorials/debug/debug_tutorials.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/tutorials/run_and_compile_time_errors.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/tutorials/debug/debug_with_printf.md"},
               {"type": "markdown", "url": "https://github.com/ARMmbed/Handbook/blob/5.6/docs/tutorials/debug/eclipse_pyocd.md"},
