@@ -2,7 +2,7 @@
 
 Use the Ticker interface to set up a recurring interrupt; it calls a function repeatedly and at a specified rate.
 
-You can create any number of Ticker objects, allowing multiple outstanding interrupts at the same time. The function can be a static function, or a member function of a particular object.
+You can create any number of Ticker objects, allowing multiple outstanding interrupts at the same time. The function can be a static function, a member function of a particular object or a Callback object.
 
 ### Warnings and notes
 
