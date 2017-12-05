@@ -57,7 +57,7 @@ The Mbed Online Compiler builds your program as a `.bin` file that you can insta
 
 1. The program compiles:
 
-	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-imagese/compiling.png)<span>Compilation progress</span></span>
+	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/compiling.png)<span>Compilation progress</span></span>
 
 1. When the compiled file is ready, it's downloaded to your default download location (or opens a Download dialog box). The file format is `.bin`, and the file  name is the same as your program name.
 
