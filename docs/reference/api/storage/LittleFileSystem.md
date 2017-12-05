@@ -94,27 +94,107 @@ resilience and wear leveling as a side-effect of the littlefs filesystem
 structure. Because these features are baked into the structure of the
 filesystem, they come with very little resource cost.
 
-The little in littlefs comes from the focus on both keeping resource usage
-low and keeping the scope self-contained. There is no bloat in this software
-module, instead, additional features are pushed separate layers in the powerful
-[block device API](TODO LINK ME) that drives the Mbed OS storage stack.
-
 For a low-level view, the mechanics that makes littlefs tick can be found in
 the [implementation details](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/littlefs/littlefs/DESIGN.md)
 in Mbed OS.
 
 ### How do we know littlefs works?
 
-Because I said so (TODO)
+The gauruntees littlefs claims are bold. To back up these claims, littlefs is
+checked by a series of different testing layers:
+
+1. [Local, simulated functional tests](https://github.com/ARMmbed/mbed-os/tree/master/features/filesystem/littlefs/littlefs/tests)
+1. [On device, functional filesystem tests](https://github.com/ARMmbed/mbed-os/tree/master/features/filesystem/littlefs/TESTS/filesystem)
+1. [On device, functional retargeted filesystem tests](https://github.com/ARMmbed/mbed-os/tree/master/features/filesystem/littlefs/TESTS/filesystem_retarget)
+1. [On device, simulated atomicity tests](https://github.com/ARMmbed/mbed-os/tree/master/features/filesystem/littlefs/TESTS/filesystem_recovery/resilience)
+1. [On device, simulated wear leveling tests](https://github.com/ARMmbed/mbed-os/tree/master/features/filesystem/littlefs/TESTS/filesystem_recovery/wear_leveling)
+1. [On device, power-loss tests](https://github.com/ARMmbed/mbed-os/tree/master/features/filesystem/littlefs/TESTS/filesystem_recovery/resilience_functional)
+1. [On device, long-running SOAK tests](https://github.com/ARMmbed/mbed-littlefs-soaktest)
 
 ### How do I use littlefs?
 
-Idunno (TODO)
+If you have a project using a different Mbed OS filesystem, switching to
+littlefs is as easy as changing the class name to `LittleFileSystem`.
+
+The API presented by littlefs is the standard Mbed OS filesystem API with
+few changes. Once declared, Mbed OS provides the retargeting layer for
+the standard C library. See the [FileSystem docs](TODO LINK ME) for more
+info on the filesystem API in Mbed OS.
 
 ### LittleFileSystem class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_f_a_t_file_system.html)
 
+### LittleFileSystem config options
+
+The littlefs provides several config options that can be overridden through
+the [config system](TODO LINK ME) or the `LittleFileSystem` constructor:
+
+- `littlefs.read_size`
+
+  Minimum size of a block read. This determines the size of read buffers.
+  This may be larger than the physical read size to improve performance by
+  caching more of the block device.
+
+  By default this is set to 64 bytes, which was determined expirementally.
+  Note that littlefs will use the block device's read size if it is larger.
+
+- `littlefs.prog_size`
+
+  Minimum size of a block program. This determines the size of program buffers.
+  This may be larger than the physical program size to improve performance by
+  caching more of the block device.
+
+  By default this is set to 64 bytes, which was determined expirementally.
+  Note that littlefs will use the block device's program size if it is larger.
+
+- `littlefs.block_size`
+
+  Minimum size of an erasable block. This does not impact RAM consumption and
+  may be larger than the physical erase size. However, this should be kept
+  small as each file currently takes up an entire block.
+
+  By default this is set to 512 bytes. Note that littlefs will use the block
+  device's erase size if it is larger.
+
+- `littlefs.lookahead_size`
+
+  Number of blocks to lookahead during block allocation. A larger lookahead
+  reduces the number of passes required to allocate a block. The lookahead
+  buffer requires only 1 bit per block so it can be quite large with little
+  RAM impact. Should be a multiple of 32.
+
+  By default this is set to 512 blocks (which uses 64 bytes of RAM), which
+  was determined expirementally.
+
+- `littlefs.enable_info`
+
+  Enables info logging, true = enabled, false = disabled, null = disabled
+  only in release builds
+
+  By default, info logging is disabled.
+
+- `littlefs.enable_debug`
+
+  Enables debug logging, true = enabled, false = disabled, null = disabled
+  only in release builds
+
+  By default, debug logging is enabled unless in a release build.
+
+- `littlefs.enable_warn`
+
+  Enables warn logging, true = enabled, false = disabled, null = disabled
+  only in release builds
+
+  By default, warn logging is enabled unless in a release build.
+
+- `littlefs.enable_error`
+
+  Enables error logging, true = enabled, false = disabled, null = disabled
+  only in release builds
+
+  By default, error logging is enabled unless in a release build.
+
 ### LittleFileSystem example
 
-[Add example here.]
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-littlefs)
