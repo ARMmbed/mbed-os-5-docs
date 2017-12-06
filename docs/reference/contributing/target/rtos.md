@@ -1,12 +1,12 @@
 ### RTOS
 
-CMSIS/RTX code is imported from <a href="https://github.com/ARM-software/CMSIS_5/" target="_blank">the upstream CMSIS repository (develop branch)</a> with the help of Python script in the `mbed-os` repository `mbed-os\tools\importer\importer.py`.
+CMSIS/RTX code is imported from <a href="https://github.com/ARM-software/CMSIS_5/" target="_blank">the upstream CMSIS repository (develop branch)</a> with the help of a Python script in the `mbed-os` repository `mbed-os\tools\importer\importer.py`.
 
 #### Memory considerations
 
-Please note that Arm Mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for platform operating system, such as Mbed OS, because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers carved out at compile time, limiting the amount of available memory, Mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
+Please note that Arm Mbed OS doesn't use any of the RTX memory models, which are based on static carveouts (memory pools). This approach is not ideal for platform operating systems, such as Mbed OS, because calculating required numbers of RTOS objects is impossible. To avoid declaring arbitrary large buffers carved out at compile time, limiting the amount of available memory, Mbed OS shifts the responsibility of supplying the backing memory to CMSIS-RTOS2 users.
 
-Developers need to use the Mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly. (Please consult CMSIS-RTOS2 documentation for API details.) `mbed_rtos_storage.h` header provides handy wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
+Developers need to use the Mbed OS RTOS C++ API or supply backing memory for RTX objects to `os*New` calls when using CMSIS-RTOS2 APIs directly. (Please consult CMSIS-RTOS2 documentation for API details.) The `mbed_rtos_storage.h` header provides wrappers that you can use to secure required memory without exposing the code to RTX implementation details.
 
 #### Configuration
 
@@ -25,8 +25,8 @@ Option | Value | Description |
 
 #### Code structure
 
-Due to difference in Mbed OS and CMSIS directory structure, you can't import the original code directly. `importer.py` and configuration file `cmsis_importer.json` should be used to import upstream CMSIS code.
+Due to differences in the Mbed OS and CMSIS directory structure, you can't import the original code directly. You should use the `importer.py` and configuration file `cmsis_importer.json` to import upstream CMSIS code.
 
 #### Modification
 
-Due to different use cases between Mbed OS and CMSIS, we modified the source code. We upstream our changes to the CMSIS repository, but in cases where they aren't compatible with CMSIS requirements, we maintain a small set of changes. We maintain changes as separate commits in `mbed-os`, and SHAs are in the `commit_sha` section of the `cmsis_importer.json` file.
+Due to different use cases between Mbed OS and CMSIS, we modified the source code. We upstream our changes to the CMSIS repository, but in cases when they aren't compatible with CMSIS requirements, we maintain a small set of changes. We maintain changes as separate commits in `mbed-os`, and SHAs are in the `commit_sha` section of the `cmsis_importer.json` file.
