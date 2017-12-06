@@ -5,31 +5,19 @@ The storage APIs present in Arm Mbed OS are:
 - <a href="/docs/v5.6/reference/contributing-storage.html#contributing-filesystem" target="_blank">File system</a>: a common interface for using file systems on block devices.
 - <a href="/docs/v5.6/reference/contributing-storage.html#block-devices" target="_blank">Block device</a>: a common interface for block-based storage devices.
 
-#### Declaring a file system
+### Declaring a file system
 
 The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html" target="_blank">open</a> or <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html" target="_blank">fopen</a>).
-
-Existing file systems:
 
 - <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">LittleFileSystem</a>
 
   The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
 
-  Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). The LittleFS provides a solution to all three of these problems.
+  **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
   
-  **Power loss resilience** - Microcontroller-scale embedded systems are usually without a shutdown routine, rely on power loss to shut down and notably lack a user interface for recovery. With a file system that is not resilient to power loss, you rely on luck to not end up with a corrupted file system. The combination of persistent storage and unpredictable power loss creates bugs that are difficult to notice and ruin the experience of unlucky users.
+  **Power-loss resilient** - The LittleFS is designed for operating systems that may have random power failures. The LittleFS has strong copy-on-write guarantees and keeps storage on disk in a valid state.
   
-  We built the LittleFS with a structure that is resilient to power loss. It uses checksums to limit the assumptions of how the physical storage reacts to power loss. The LittleFS provides copy-on-write guarantees and keeps the storage on disk in a valid state.
-  
-  **Wear leveling** - Flash storage presents its own challenge: wear. Flash is a destructive form of storage, and continuously rewriting data to a block causes that block to wear out and become unwritable. File systems that don't account for wear can quickly burn through the blocks that store frequently updated metadata and result in the premature death of the system.
-  
-  We accounted for wear when we built the LittleFS, and the underlying structure of the file system reactively mutates as the underlying storage develops errors throughout its lifetime. This results in a form of dynamic wear-leveling that extends the lifetime of the physical storage proportionally to the size of storage. With the LittleFS, you can extend the lifetime of storage by increasing the size of storage, which is cheaper than upgrading the storage's erase cycles.
-  
-  **Bounded RAM and ROM** - File systems normally target operating systems where the scale of resources available is foreign to a microcontroller. A common trend of embedded Linux file systems is RAM usage that scales linearly with the size of storage, which makes rationalizing RAM usage in a system difficult.
-  
-  We optimized the LittleFS to work with a limited amount of RAM and ROM. The LittleFS avoids recursion and limits dynamic memory to configurable buffers. At no point during operation does the LittleFS store an entire storage block in RAM. The result is small RAM usage that is independent of the geometry of the underlying storage.
-  
-  The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, additional features are pushed to separate layers in the powerful BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
+  **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the LittleFS provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
 - FATFileSystem
 
@@ -43,13 +31,41 @@ Additionally, two utility block devices give you better control over how storage
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
-#### Partitioning
+### The LittleFileSystem
+
+The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
+
+Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). The LittleFS provides a solution to all three of these problems.
+
+#### Power loss resilience
+
+Microcontroller-scale embedded systems are usually without a shutdown routine, rely on power loss to shut down and notably lack a user interface for recovery. With a file system that is not resilient to power loss, you rely on luck to not end up with a corrupted file system. The combination of persistent storage and unpredictable power loss creates bugs that are difficult to notice and ruin the experience of unlucky users.
+
+We built the LittleFS with a structure that is resilient to power loss. It uses checksums to limit the assumptions of how the physical storage reacts to power loss. The LittleFS provides copy-on-write guarantees and keeps the storage on disk in a valid state.
+
+#### Wear leveling
+
+Flash storage presents its own challenge: wear. Flash is a destructive form of storage, and continuously rewriting data to a block causes that block to wear out and become unwritable. File systems that don't account for wear can quickly burn through the blocks that store frequently updated metadata and result in the premature death of the system.
+
+We accounted for wear when we built the LittleFS, and the underlying structure of the file system reactively mutates as the underlying storage develops errors throughout its lifetime. This results in a form of dynamic wear-leveling that extends the lifetime of the physical storage proportionally to the size of storage. With the LittleFS, you can extend the lifetime of storage by increasing the size of storage, which is cheaper than upgrading the storage's erase cycles.
+
+#### Bounded RAM and ROM
+
+File systems normally target operating systems where the scale of resources available is foreign to a microcontroller. A common trend of embedded Linux file systems is RAM usage that scales linearly with the size of storage, which makes rationalizing RAM usage in a system difficult.
+
+We optimized the LittleFS to work with a limited amount of RAM and ROM. The LittleFS avoids recursion and limits dynamic memory to configurable buffers. At no point during operation does the LittleFS store an entire storage block in RAM. The result is small RAM usage that is independent of the geometry of the underlying storage.
+
+#### The scope of the LittleFS
+
+The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, additional features are pushed to separate layers in the powerful BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
+
+### Partitioning
 
 Partitioning allows you to split a block device among multiple storage users such that the split is portable across multiple systems. Partitioning also allows you to have multiple file systems that you can mount on one disk from both Mbed OS devices and host computers. The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
 
 <span class="notes">**Note:** File system partitioning is not required if only one file system is present.</span>
 
-#### C++ classes
+### C++ classes
 
 The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h" target="_blank">FileSystem</a> class provides the core user interface with general functions that map to their global POSIX counterparts. Mbed OS provides <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/File.h" target="_blank">File</a> and <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/Dir.h" target="_blank">Dir</a> classes that represent files and directories in a C++ API that uses object-oriented features in C++.
 
@@ -67,7 +83,7 @@ Here is the full API that a file system may implement:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L205)
 
-#### Block device operations
+### Block device operations
 
 A block device can perform three operations on a block in a device:
 
@@ -77,7 +93,7 @@ A block device can perform three operations on a block in a device:
 
 <span class="notes">**Note:** The state of an erased block is undefined. NOR flash devices typically set an erased block to all 0xff, but for some block devices such as the SD card, erase is a NOOP. If a deterministic value is required after an erase, the consumer of the block device must verify this.</span>
 
-#### Block sizes
+### Block sizes
 
 Some storage technologies have different sized blocks for different operations. For example, you can read and program NAND flash in 256-byte pages, but you must erase it in 4-kilobyte sectors.
 
@@ -85,7 +101,7 @@ Block devices indicate their block sizes through the `get_read_size`, `get_progr
 
 As a rule of thumb, you can use the erase size for applications that use a single block size (for example, the FAT file system).
 
-#### Block devices
+### Block devices
 
 Mbed OS has several options for the block device:
 
@@ -115,7 +131,7 @@ Mbed OS has several options for the block device:
 
   Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
 
-#### Utility block devices
+### Utility block devices
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
