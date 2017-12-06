@@ -17,8 +17,6 @@ The `open` function creates a connection between a file and a file descriptor. U
 
 The `fopen` function is similar to the open function above but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. However, it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
 
-The IEEE C standard specifications for both `open` and `fopen` can provide additional information.
-
 - <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
   - **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers.
