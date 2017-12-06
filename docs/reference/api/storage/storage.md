@@ -11,35 +11,21 @@ The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/
 
 Existing file systems:
 
-1. [LittleFileSystem](TODO LINK ME, TO DOCS PAGE?)
+1. <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">LittleFileSystem</a>
 
-   The littlefs is a little fail-safe filesystem designed for embedded systems.
+   The LittleFileSystem is a fail-safe file system for embedded systems.
 
-   **Bounded RAM/ROM** - The littlefs is designed to work with a limited amount
-   of memory. Recursion is avoided, and dynamic memory is limited to configurable
-   buffers that can be provided statically.
+   **Bounded RAM/ROM** - This file system is works with a limited amount of memory. This file system avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
    
-   **Power-loss resilient** - The littlefs is designed for systems that may have
-   random power failures. The littlefs has strong copy-on-write guarantees, and
-   storage on disk is always kept in a valid state.
+   **Power-loss resilient** - This file system is designed for systems that may have random power failures. This file system has strong copy-on-write guarantees and keeps storage on disk in a valid state.
    
-   **Wear leveling** - Because the most common form of embedded storage is erodible
-   flash memories, littlefs provides a form of dynamic wear leveling for systems
-   that cannot fit a full flash translation layer.
+   **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-   You can find more info about the littlefs [here](TODO LINK ME, TO DOCS PAGE?).
+1. FATFileSystem
 
-1. [FATFileSystem](TODO LINK ME, TO DOCS PAGE?)
+   The FAT file system is a well known file system that you can find on almost every system, including PCs. Mbed OS's implementation of the FAT file system is based on ChanFS, and is optimized for small embedded systems.
 
-   The FAT filesystem is a well known filesystem that you can find on almost every
-   system, including PCs. Mbed OS's implementation of the FAT filesystem is based
-   on [ChanFS](TODO LINK ME?), and is optimized for small embedded systems.
-
-   **Portable** - The FAT filesystem is supported on almost every system, and is
-   the most common filesystem found on portable storage such as SD cards and flash
-   drives. The FAT filesystem is the easiest way to support access from a PC.
-
-   You can find more info about the FAT filesystem [here](TODO LINK ME, TO DOCS PAGE?).
+   **Portable** - The FAT file system is supported on almost every system, and is the most common file system found on portable storage such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
 The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that can be used to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
 
@@ -67,7 +53,7 @@ A minimal file system needs to provide the following functions:
 - `file_write`.
 - `file_seek`.
 
-Here is the full API that a filesystem may implement:
+Here is the full API that a file system may implement:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h#L205)
 
@@ -83,7 +69,7 @@ A block device can perform three operations on a block in a device:
 
 #### Block sizes
 
-Some storage technologies have different sized blocks for different operations. For example, NAND flash can be read and programmed in 256-byte pages, but must be erased in 4-kilobyte sectors.
+Some storage technologies have different sized blocks for different operations. For example, you can read and program NAND flash in 256-byte pages, but you must erase it in 4-kilobyte sectors.
 
 Block devices indicate their block sizes through the `get_read_size`, `get_program_size` and `get_erase_size` functions. The erase size must be a multiple of the program size, and the program size must be a multiple of the read size. Some devices may even have a read/program size of a single byte.
 
@@ -93,101 +79,60 @@ As a rule of thumb, you can use the erase size for applications that use a singl
 
 Mbed OS has four options for the block device:
 
-1. [SPIFBlockDevice](TODO LINK ME)
+1. SPIFBlockDevice
 
-   Block device driver for NOR based SPI flash devices that support SFDP.
+   Block device driver for NOR-based SPI flash devices that support SFDP.
 
-   NOR based SPI flash supports byte-sized read and writes, with an erase size
-   of around 4kbytes. An erase sets a block to all 1s, with successive writes
-   clearing set bits.
+   NOR-based SPI flash supports byte-sized read and writes, with an erase size of about 4kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
-   More info on NOR flash can be found on wikipedia:
-   https://en.wikipedia.org/wiki/Flash_memory#NOR_memories
+1. DataFlashBlockDevice
 
-   You can find more info about the SPI flash driver [here](TODO LINK ME, TO DOCS PAGE? MAYBE JUST GIT REPO).
+   Block device driver for NOR-based SPI flash devices that support the DataFlash protocol, such as the Adesto AT45DB series of devices.
 
-1. [DataFlashBlockDevice](TODO LINK ME)
+   DataFlash is a memory protocol that combines flash with SRAM buffers for a programming interface. DataFlash supports byte-sized read and writes, with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash provides erase sizes with and extra 16 bytes for error correction codes (ECC), so a flash translation layer (FTL) may still present 512 byte erase sizes.
 
-   Block device driver for NOR based SPI flash devices that support the DataFlash
-   protocol, such as the Adesto AT45DB series of devices.
-
-   DataFlash is a memory protocol that combines flash with SRAM buffers for a
-   simple programming interface. DataFlash supports byte-sized read and writes,
-   with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash
-   provides erase sizes with and extra 16 bytes for error correction codes (ECC)
-   so that a flash translation layer (FTL) may still present 512 byte erase sizes.
-
-   More info on DataFlash can be found on wikipedia:
-   https://en.wikipedia.org/wiki/DataFlash
-
-   You can find more info about the DataFlash driver [here](TODO LINK ME, TO DOCS PAGE? MAYBE JUST GIT REPO).
-
-1. [SDBlockDevice](TODO LINK ME)
+1. SDBlockDevice
 
    Block device driver for SD cards and eMMC memory chips.
 
-   SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This
-   makes the storage well suited for systems that require a very large amount of
-   memory (>1GB).
+   SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This makes the storage well-suited for systems that require a about 1GB of memory.
 
-   Additionally, SD cards are a popular form of portable storage, and useful
-   if you want to store data that can be accessed from a PC.
+   Additionally, SD cards are a popular form of portable storage. They are useful if you want to store data that you can be access from a PC.
 
-   More info on SD cards can be found on wikipedia:
-   https://en.wikipedia.org/wiki/Secure_Digital
-
-   You can find more info about the SD driver [here](TODO LINK ME, TO DOCS PAGE? MAYBE JUST GIT REPO).
-
-1. [HeapBlockDevice](TODO LINK ME)
+1. <a href="https://os.mbed.com/docs/v5.6/reference/heapblockdevice.html" target="_blank">HeapBlockDevice</a>
 
    Block device that simulates storage in RAM using the heap.
 
-   The heap block device is useless for storing data persistently, given that a
-   power loss will cause complete loss of data. However, it is useful for testing
-   applications when a storage device is not available.
-
-   You can find more info about the heap block device [here](TODO LINK ME, TO DOCS PAGE?).
+   Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
 
 #### Utility block devices
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
-- [SlicingBlockDevice](TODO LINK ME)
+- <a href="https://os.mbed.com/docs/v5.6/reference/slicingblockdevice.html" target="_blank">SlicingBlockDevice</a>
 
-  With the slicing block device, you can partition storage into smaller
-  block devices that you can use independently.
+  With the slicing block device, you can partition storage into smaller block devices that you can use independently.
 
-- [ChainingBlockDevice](TODO LINK ME)
+- <a href="https://os.mbed.com/docs/v5.6/reference/chainingblockdevice.html" target="_blank">ChainingBlockDevice</a>
 
-  With the chaining block device, you can chain multiple block devices
-  together and extend the usable amount of storage.
+  With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
 
-- [MBRBlockDevice](TODO LINK ME)
+- <a href="https://os.mbed.com/docs/v5.6/reference/mbrblockdevice.html" target="_blank">MBRBlockDevice</a>
 
-  Mbed OS comes with support for storing partitions on disk with a Master Boot
-  Record (MBR). The MBRBlockDevice provides this functionality and supports
-  creating partitions at runtime or using pre-formatted partitions configured
-  separately from outside the application.
+  Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
 
-- [ReadOnlyBlockDevice](TODO LINK ME)
+- ReadOnlyBlockDevice
 
-  With the read-only block device, you can wrap a block device in a read-only
-  layer. Insuring that the storage is not modified by the user of the block device.
+  With the read-only block device, you can wrap a block device in a read-only layer, ensuring that user of the block device does not modify the storage.
 
-- [ProfilingBlockDevice](TODO LINK ME)
+- ProfilingBlockDevice
 
-  With the profiling block device, you can profile the quantity of erase, program,
-  and read operations that are incured on a block device.
+  With the profiling block device, you can profile the quantity of erase, program and read operations that are incurred on a block device.
 
-- [ObservingBlockDevice](TODO LINK ME)
+- ObservingBlockDevice
 
-  The observing block device grants the user the ability to register a callback
-  on block device operations. This can be used to inspect the state of the block
-  device, log different metrics, or perform some other operation.
+  The observing block device grants the user the ability to register a callback on block device operations. You can use this to inspect the state of the block device, log different metrics or perform some other operation.
 
-- [ExhaustibleBlockDevice](TODO LINK ME)
+- ExhaustibleBlockDevice
 
-  Useful for evaluating how filesystems respond to wear, the exhaustible block
-  device simulates wear on another form of storage, and can be configured to
-  expire blocks as necessary.
-
+  Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
