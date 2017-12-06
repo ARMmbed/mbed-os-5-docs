@@ -2,34 +2,32 @@
 
 The storage APIs present in Arm Mbed OS are:
 
-- <a href="/docs/v5.6/reference/contributing-storage.html#contributing-filesystem" target="_blank">File system</a>: a common interface for using file systems on block devices.
-- <a href="/docs/v5.6/reference/contributing-storage.html#block-devices" target="_blank">Block device</a>: a common interface for block-based storage devices.
+- File system: a common interface for using file systems on block devices.
+- Block device: a common interface for block-based storage devices.
 
 ### Declaring a file system
 
-The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html" target="_blank">open</a> or <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html" target="_blank">fopen</a>).
+The <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_file_system.html" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard C functions.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
+- <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
-  - **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
+  - **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers.
   
-  - **Power-loss resilient** - The LittleFS is designed for operating systems that may have random power failures. The LittleFS has strong copy-on-write guarantees and keeps storage on disk in a valid state.
+  - **Power-loss resilient** - We designed the LittleFS for operating systems that may have random power failures. The LittleFS has strong copy-on-write guarantees and keeps storage on disk in a valid state.
   
   - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the LittleFS provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-- **FATFileSystem** - The FAT file system is a well known file system that you can find on almost every system, including PCs. Mbed OS's implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
+- **FATFileSystem** - The FAT file system is a well-known file system that you can find on almost every system, including PCs. The Mbed OS implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
 
   - **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
-The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that can be used to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
+The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
 
-Additionally, two utility block devices give you better control over how storage is allocated. The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/SlicingBlockDevice.h" target="_blank">slicing block device</a> allows you to partition storage into smaller block devices that you can use independently, and the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/ChainingBlockDevice.h" target="_blank">chaining block device</a> allows you to chain multiple block devices together and extend the usable amount of storage.
+Additionally, two utility block devices give you better control over storage allocation. The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/SlicingBlockDevice.h" target="_blank">slicing block device</a> allows you to partition storage into smaller block devices that you can use independently, and the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/ChainingBlockDevice.h" target="_blank">chaining block device</a> allows you to chain multiple block devices together and extend the usable amount of storage.
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
 #### The LittleFileSystem
-
-The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
 
 Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). The LittleFS provides a solution to all three of these problems.
 
@@ -53,7 +51,7 @@ We optimized the LittleFS to work with a limited amount of RAM and ROM. The Litt
 
 ##### The scope of the LittleFS
 
-The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, additional features are pushed to separate layers in the powerful BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
+The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, we push additional features to separate layers in the BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
 
 ### Partitioning
 
@@ -87,7 +85,7 @@ A block device can perform three operations on a block in a device:
 - Erase a block in storage.
 - Program a block that has previously been erased.
 
-<span class="notes">**Note:** The state of an erased block is undefined. NOR flash devices typically set an erased block to all 0xff, but for some block devices such as the SD card, erase is a NOOP. If a deterministic value is required after an erase, the consumer of the block device must verify this.</span>
+<span class="notes">**Note:** The state of an erased block is undefined. NOR flash devices typically set an erased block to all 0xff, but for some block devices, such as the SD card, erase is a NOOP. If a deterministic value is required after an erase, the consumer of the block device must verify this.</span>
 
 ### Block sizes
 
