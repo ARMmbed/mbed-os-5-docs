@@ -31,15 +31,15 @@ File systems normally target operating systems where the scale of resources avai
 
 We optimized LittleFS to work with a limited amount of RAM and ROM. LittleFS avoids recursion and limits dynamic memory to configurable buffers. At no point during operation does LittleFS store an entire storage block in RAM. The result is small RAM usage that is independent of the geometry of the underlying storage.
 
----
+#### The scope of the LittleFS
 
-The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, additional features are pushed separate layers in the powerful [BlockDevice API](TODO LINK ME) that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
+The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, additional features are pushed to separate layers in the powerful BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
 
 ### When to use LittleFS
 
 LittleFS is intended for microcontrollers with external flash storage. In this context, LittleFS outperforms the other Mbed OS file systems in terms of RAM, ROM, wear and runtime.
 
-For storage on an SD card that is accessable from a PC, use the [FATFileSystem](TODO LINK ME) due to its portability.
+For storage on an SD card that is accessible from a PC, use the FATFileSystem due to its portability.
 
 For internal flash, LittleFS is compatible with the [flash IAP driver](https://github.com/ARMmbed/flashiap-driver), and developers have used it successfully in several projects. However, in size and erase cycles, internal flash is more expensive than external flash, and internal flash comes with the cost of locking up the system during erase cycles. For these reasons, we discourage internal flash for general storage use.
 
@@ -73,7 +73,7 @@ The API that LittleFS presents is the standard Mbed OS file system API with few 
 
 ### LittleFileSystem configuration options
 
-LittleFS provides several configuration options that the configuration system or the `LittleFileSystem` constructor can override:
+The LittleFS provides several configuration options that the configuration system or the `LittleFileSystem` constructor can override:
 
 - `littlefs.read_size`
 
