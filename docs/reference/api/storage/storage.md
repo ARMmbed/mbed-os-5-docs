@@ -13,19 +13,19 @@ Existing file systems:
 
 1. <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">LittleFileSystem</a>
 
-   The LittleFileSystem is a fail-safe file system for embedded systems.
+   The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
 
-   **Bounded RAM/ROM** - This file system is works with a limited amount of memory. This file system avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
+   **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
    
-   **Power-loss resilient** - This file system is designed for systems that may have random power failures. This file system has strong copy-on-write guarantees and keeps storage on disk in a valid state.
+   **Power-loss resilient** - The LittleFS is designed for operating systems that may have random power failures. The LittleFS has strong copy-on-write guarantees and keeps storage on disk in a valid state.
    
-   **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
+   **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the LittleFS provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
 1. FATFileSystem
 
-   The FAT file system is a well known file system that you can find on almost every system, including PCs. Mbed OS's implementation of the FAT file system is based on ChanFS, and is optimized for small embedded systems.
+   The FAT file system is a well known file system that you can find on almost every system, including PCs. Mbed OS's implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
 
-   **Portable** - The FAT file system is supported on almost every system, and is the most common file system found on portable storage such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
+   **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
 The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that can be used to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
 
