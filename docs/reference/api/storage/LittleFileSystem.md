@@ -15,7 +15,7 @@ Microcontrollers and flash storage present three challenges for embedded storage
 
 #### Power loss resilience
 
-Microcontroller-scale embedded systems are usually without a shutdown routine and notably lack a user interface for recovery. With a file system that is not resilient to power loss, you rely on luck to not end up with a corrupted file system. The combination of persistent storage and unpredictable power loss creates bugs that are difficult to notice and ruin the experience of unlucky users.
+Microcontroller-scale embedded systems are usually without a shutdown routine, rely on power loss to shut down and notably lack a user interface for recovery. With a file system that is not resilient to power loss, you rely on luck to not end up with a corrupted file system. The combination of persistent storage and unpredictable power loss creates bugs that are difficult to notice and ruin the experience of unlucky users.
 
 We built the LittleFS with a structure that is resilient to power loss. It uses checksums to limit the assumptions of how the physical storage reacts to power loss. The LittleFS provides copy-on-write guarantees and keeps the storage on disk in a valid state.
 
