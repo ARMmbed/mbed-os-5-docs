@@ -18,4 +18,4 @@ You can create any number of LowPowerTicker objects, allowing multiple outstandi
 
 Try this program to set up a LowPowerTicker to repeatedly invert an LED:
 
-[![View code](https://os.mbed.com/teams/mbed_example/code/LowPowerTicker_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/LowPowerTicker_HelloWorld/file/3ef1e3fe0d3b/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/LowPowerTicker_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/LowPowerTicker_HelloWorld/file/3ef1e3fe0d3b/main.cpp/)
