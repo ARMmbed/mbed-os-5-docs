@@ -71,59 +71,6 @@ The API that the LittleFS presents is the standard Mbed OS file system API with 
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_f_a_t_file_system.html)
 
-### LittleFileSystem configuration options
-
-The LittleFS provides several configuration options that the configuration system or the `LittleFileSystem` constructor can override:
-
-- `littlefs.read_size`
-
-  Minimum size of a block read. This determines the size of read buffers. This may be larger than the physical read size to improve performance by caching more of the block device.
-
-  By default, this is set to 64 bytes, which we determined experimentally. Note that the LittleFS uses the block device's read size if it is larger.
-
-- `littlefs.prog_size`
-
-  Minimum size of a block program. This determines the size of the program buffers. This may be larger than the physical program size to improve performance by caching more of the block device.
-
-  By default, this is set to 64 bytes, which we determined experimentally. Note that the LittleFS uses the block device's program size if it is larger.
-
-- `littlefs.block_size`
-
-  Minimum size of an erasable block. This does not affect RAM consumption and may be larger than the physical erase size. However, this needs to be small because each file takes up an entire block.
-
-  By default, this is set to 512 bytes. Note that the LittleFS uses the block device's erase size if it is larger.
-
-- `littlefs.lookahead_size`
-
-  Number of blocks to lookahead during block allocation. A larger lookahead reduces the number of passes required to allocate a block. The lookahead buffer requires only 1 bit per block, so it can be large with little effect on RAM. This is a multiple of 32.
-
-  By default, this is set to 512 blocks (which use 64 bytes of RAM), which we determined experimentally.
-
-- `littlefs.enable_info`
-
-  Enables information logging (true = enabled, false = disabled, null = disabled) in release builds.
-
-  By default, information logging is disabled.
-
-- `littlefs.enable_debug`
-
-  Enables debug logging (true = enabled, false = disabled, null = disabled) in release builds.
-
-  By default, debug logging is enabled unless you are using a release build.
-
-- `littlefs.enable_warn`
-
-  Enables warn logging (true = enabled, false = disabled, null = disabled) in release builds.
-
-  By default, warn logging is enabled unless you are using a release build.
-
-- `littlefs.enable_error`
-
-  Enables error logging, true = enabled, false = disabled, null = disabled
-  only in release builds
-
-  By default, error logging is enabled unless in a release build.
-
 ### LittleFileSystem example
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-littlefs)
