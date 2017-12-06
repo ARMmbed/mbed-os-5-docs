@@ -9,9 +9,7 @@ The storage APIs present in Arm Mbed OS are:
 
 The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/FileSystem.h" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through standard POSIX functions (see <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html" target="_blank">open</a> or <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html" target="_blank">fopen</a>).
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">LittleFileSystem</a>
-
-  The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
+- <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded systems, specifically for microcontrollers that use flash storage.
 
   **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
   
@@ -19,9 +17,7 @@ The <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/
   
   **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the LittleFS provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-- FATFileSystem
-
-  The FAT file system is a well known file system that you can find on almost every system, including PCs. Mbed OS's implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
+- **FATFileSystem** - The FAT file system is a well known file system that you can find on almost every system, including PCs. Mbed OS's implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
 
   **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
@@ -105,29 +101,21 @@ As a rule of thumb, you can use the erase size for applications that use a singl
 
 Mbed OS has several options for the block device:
 
-- SPIFBlockDevice
-
-  Block device driver for NOR-based SPI flash devices that support SFDP.
+- **SPIFBlockDevice** - Block device driver for NOR-based SPI flash devices that support SFDP.
 
   NOR-based SPI flash supports byte-sized read and writes, with an erase size of about 4kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
-- DataFlashBlockDevice
-
-  Block device driver for NOR-based SPI flash devices that support the DataFlash protocol, such as the Adesto AT45DB series of devices.
+- **DataFlashBlockDevice** - Block device driver for NOR-based SPI flash devices that support the DataFlash protocol, such as the Adesto AT45DB series of devices.
 
   DataFlash is a memory protocol that combines flash with SRAM buffers for a programming interface. DataFlash supports byte-sized read and writes, with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash provides erase sizes with and extra 16 bytes for error correction codes (ECC), so a flash translation layer (FTL) may still present 512 byte erase sizes.
 
-- SDBlockDevice
-
-  Block device driver for SD cards and eMMC memory chips.
+- **SDBlockDevice** - Block device driver for SD cards and eMMC memory chips.
 
   SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This makes the storage well-suited for systems that require a about 1GB of memory.
 
   Additionally, SD cards are a popular form of portable storage. They are useful if you want to store data that you can be access from a PC.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/heapblockdevice.html" target="_blank">HeapBlockDevice</a>
-
-  Block device that simulates storage in RAM using the heap.
+- <a href="https://os.mbed.com/docs/v5.6/reference/heapblockdevice.html" target="_blank">**HeapBlockDevice**</a> - Block device that simulates storage in RAM using the heap.
 
   Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
 
@@ -135,30 +123,16 @@ Mbed OS has several options for the block device:
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/slicingblockdevice.html" target="_blank">SlicingBlockDevice</a>
+- <a href="https://os.mbed.com/docs/v5.6/reference/slicingblockdevice.html" target="_blank">**SlicingBlockDevice**</a> - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
 
-  With the slicing block device, you can partition storage into smaller block devices that you can use independently.
+- <a href="https://os.mbed.com/docs/v5.6/reference/chainingblockdevice.html" target="_blank">**ChainingBlockDevice**</a> - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/chainingblockdevice.html" target="_blank">ChainingBlockDevice</a>
+- <a href="https://os.mbed.com/docs/v5.6/reference/mbrblockdevice.html" target="_blank">**MBRBlockDevice**</a> - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
 
-  With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
+- **ReadOnlyBlockDevice** - With the read-only block device, you can wrap a block device in a read-only layer, ensuring that user of the block device does not modify the storage.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/mbrblockdevice.html" target="_blank">MBRBlockDevice</a>
+- **ProfilingBlockDevice** - With the profiling block device, you can profile the quantity of erase, program and read operations that are incurred on a block device.
 
-  Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
+- **ObservingBlockDevice** - The observing block device grants the user the ability to register a callback on block device operations. You can use this to inspect the state of the block device, log different metrics or perform some other operation.
 
-- ReadOnlyBlockDevice
-
-  With the read-only block device, you can wrap a block device in a read-only layer, ensuring that user of the block device does not modify the storage.
-
-- ProfilingBlockDevice
-
-  With the profiling block device, you can profile the quantity of erase, program and read operations that are incurred on a block device.
-
-- ObservingBlockDevice
-
-  The observing block device grants the user the ability to register a callback on block device operations. You can use this to inspect the state of the block device, log different metrics or perform some other operation.
-
-- ExhaustibleBlockDevice
-
-  Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
+- **ExhaustibleBlockDevice** - Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
