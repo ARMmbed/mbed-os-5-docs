@@ -1,4 +1,4 @@
-### Flash
+### Flash and bootloader
 
 Update target to support bootloader.
 
