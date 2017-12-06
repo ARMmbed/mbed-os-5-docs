@@ -13,27 +13,11 @@ The little filesystem (LittleFS) is a fail-safe filesystem designed for embedded
 
 Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). The LittleFS provides a solution to all three of these problems.
 
-#### Power loss resilience
+- **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
 
-Microcontroller-scale embedded systems are usually without a shutdown routine, rely on power loss to shut down and notably lack a user interface for recovery. With a file system that is not resilient to power loss, you rely on luck to not end up with a corrupted file system. The combination of persistent storage and unpredictable power loss creates bugs that are difficult to notice and ruin the experience of unlucky users.
+- **Power-loss resilient** - The LittleFS is designed for operating systems that may have random power failures. The LittleFS has strong copy-on-write guarantees and keeps storage on disk in a valid state.
 
-We built the LittleFS with a structure that is resilient to power loss. It uses checksums to limit the assumptions of how the physical storage reacts to power loss. The LittleFS provides copy-on-write guarantees and keeps the storage on disk in a valid state.
-
-#### Wear leveling
-
-Flash storage presents its own challenge: wear. Flash is a destructive form of storage, and continuously rewriting data to a block causes that block to wear out and become unwritable. File systems that don't account for wear can quickly burn through the blocks that store frequently updated metadata and result in the premature death of the system.
-
-We accounted for wear when we built the LittleFS, and the underlying structure of the file system reactively mutates as the underlying storage develops errors throughout its lifetime. This results in a form of dynamic wear-leveling that extends the lifetime of the physical storage proportionally to the size of storage. With the LittleFS, you can extend the lifetime of storage by increasing the size of storage, which is cheaper than upgrading the storage's erase cycles.
-
-#### Bounded RAM and ROM
-
-File systems normally target operating systems where the scale of resources available is foreign to a microcontroller. A common trend of embedded Linux file systems is RAM usage that scales linearly with the size of storage, which makes rationalizing RAM usage in a system difficult.
-
-We optimized the LittleFS to work with a limited amount of RAM and ROM. The LittleFS avoids recursion and limits dynamic memory to configurable buffers. At no point during operation does the LittleFS store an entire storage block in RAM. The result is small RAM usage that is independent of the geometry of the underlying storage.
-
-#### The scope of the LittleFS
-
-The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, additional features are pushed to separate layers in the powerful BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
+- **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the LittleFS provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
 ### When to use the LittleFS
 
