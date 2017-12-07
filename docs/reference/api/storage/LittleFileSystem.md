@@ -25,8 +25,6 @@ We built this for microcontrollers with external flash storage. In this context,
 
 For storage on an SD card that is accessible from a PC, use the FATFileSystem due to its portability.
 
-For internal flash, this file system is compatible with the <a href="https://github.com/ARMmbed/flashiap-driver" target="_blank">flash IAP driver</a>, and developers have used it successfully in several projects. However, in size and erase cycles, internal flash is more expensive than external flash, and internal flash comes with the cost of locking up the system during erase cycles. For these reasons, we discourage internal flash for general storage use.
-
 ### Usage
 
 Instantiate the `LittleFileSystem` class with a block device and file path.
