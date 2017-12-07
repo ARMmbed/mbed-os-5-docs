@@ -17,13 +17,15 @@ The `open` function creates a connection between a file and a file descriptor. U
 
 The `fopen` function is similar to the open function above but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. However, it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
 
+#### Types of file systems
+
 - <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
-  - **Bounded RAM/ROM** - The LittleFS works with a limited amount of memory. The LittleFS avoids recursion and limits dynamic memory to configurable buffers.
+  - **Bounded RAM/ROM** - This file system works with a limited amount of memory. It avoids recursion and limits dynamic memory to configurable buffers.
   
-  - **Power-loss resilient** - We designed the LittleFS for operating systems that may have random power failures. The LittleFS has strong copy-on-write guarantees and keeps storage on disk in a valid state.
+  - **Power-loss resilient** - We designed this for operating systems that may have random power failures. It has strong copy-on-write guarantees and keeps storage on disk in a valid state.
   
-  - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the LittleFS provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
+  - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
 - **FATFileSystem** - The FAT file system is a well-known file system that you can find on almost every system, including PCs. The Mbed OS implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
 
@@ -37,27 +39,27 @@ Additionally, two utility block devices give you better control over storage all
 
 #### The LittleFileSystem
 
-Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). The LittleFS provides a solution to all three of these problems.
+Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). This file system provides a solution to all three of these problems.
 
 ##### Power loss resilience
 
 Microcontroller-scale embedded systems are usually without a shutdown routine, rely on power loss to shut down and notably lack a user interface for recovery. With a file system that is not resilient to power loss, you rely on luck to not end up with a corrupted file system. The combination of persistent storage and unpredictable power loss creates bugs that are difficult to notice and ruin the experience of unlucky users.
 
-We built the LittleFS with a structure that is resilient to power loss. It uses checksums to limit the assumptions of how the physical storage reacts to power loss. The LittleFS provides copy-on-write guarantees and keeps the storage on disk in a valid state.
+We built this file system with a structure that is resilient to power loss. It uses checksums to limit the assumptions of how the physical storage reacts to power loss. It provides copy-on-write guarantees and keeps the storage on disk in a valid state.
 
 ##### Wear leveling
 
 Flash storage presents its own challenge: wear. Flash is a destructive form of storage, and continuously rewriting data to a block causes that block to wear out and become unwritable. File systems that don't account for wear can quickly burn through the blocks that store frequently updated metadata and result in the premature death of the system.
 
-We accounted for wear when we built the LittleFS, and the underlying structure of the file system reactively mutates as the underlying storage develops errors throughout its lifetime. This results in a form of dynamic wear-leveling that extends the lifetime of the physical storage proportionally to the size of storage. With the LittleFS, you can extend the lifetime of storage by increasing the size of storage, which is cheaper than upgrading the storage's erase cycles.
+We accounted for wear when we built this file system, and the underlying structure of the file system reactively mutates as the underlying storage develops errors throughout its lifetime. This results in a form of dynamic wear-leveling that extends the lifetime of the physical storage proportionally to the size of storage. With this file system, you can extend the lifetime of storage by increasing the size of storage, which is cheaper than upgrading the storage's erase cycles.
 
 ##### Bounded RAM and ROM
 
 File systems normally target operating systems where the scale of resources available is foreign to a microcontroller. A common trend of embedded Linux file systems is RAM usage that scales linearly with the size of storage, which makes rationalizing RAM usage in a system difficult.
 
-We optimized the LittleFS to work with a limited amount of RAM and ROM. The LittleFS avoids recursion and limits dynamic memory to configurable buffers. At no point during operation does the LittleFS store an entire storage block in RAM. The result is small RAM usage that is independent of the geometry of the underlying storage.
+We optimized this file system to work with a limited amount of RAM and ROM. It avoids recursion and limits dynamic memory to configurable buffers. At no point during operation does it store an entire storage block in RAM. The result is small RAM usage that is independent of the geometry of the underlying storage.
 
-##### The scope of the LittleFS
+##### Scope
 
 The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, we push additional features to separate layers in the BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
 
