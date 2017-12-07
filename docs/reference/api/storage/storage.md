@@ -27,7 +27,7 @@ The `fopen` function is similar to the open function above but associates a stre
   
   - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-- **FATFileSystem** - The FAT file system is a well-known file system that you can find on almost every system, including PCs. The Mbed OS implementation of the FAT file system is based on <a href="http://elm-chan.org/fsw/ff/00index_e.html" target="_blank">ChanFS</a> and is optimized for small embedded systems.
+- **FATFileSystem** - The FAT file system is a well-known file system that you can find on almost every system, including PCs. The Mbed OS implementation of the FAT file system is based on ChanFS and is optimized for small embedded systems.
 
   - **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
