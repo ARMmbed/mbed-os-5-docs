@@ -11,7 +11,7 @@ The little file system (LittleFS) is a fail-safe file system designed for embedd
    | | |
 ```
 
-Microcontrollers and flash storage present three challenges for embedded storage: [power loss](#power-loss-resilience), [wear](#wear-leveling) and [limited RAM and ROM](#bounded-ram-and-rom). This file system provides a solution to all three of these problems.
+Microcontrollers and flash storage present three challenges for embedded storage: power loss, wear and limited RAM and ROM. This file system provides a solution to all three of these problems.
 
 - **Bounded RAM/ROM** - This file system works with a limited amount of memory. It avoids recursion and limits dynamic memory to configurable buffers that can be provided statically.
 
