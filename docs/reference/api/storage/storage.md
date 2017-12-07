@@ -7,7 +7,7 @@ The storage APIs present in Arm Mbed OS are:
 
 ### Declaring a file system
 
-The <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_file_system.html" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions.
+The <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_file_system.html" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions.
 
 #### Open
 
@@ -19,21 +19,21 @@ The `fopen` function is similar to the open function above but associates a stre
 
 #### Types of file systems
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
+- <a href="https://os.mbed.com/docs/v5.7/reference/littlefilesystem.html" target="_blank">**LittleFileSystem**</a> - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
   - **Bounded RAM/ROM** - This file system works with a limited amount of memory. It avoids recursion and limits dynamic memory to configurable buffers.
-  
+
   - **Power-loss resilient** - We designed this for operating systems that may have random power failures. It has strong copy-on-write guarantees and keeps storage on disk in a valid state.
-  
+
   - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
 - **FATFileSystem** - The FAT file system is a well-known file system that you can find on almost every system, including PCs. The Mbed OS implementation of the FAT file system is based on ChanFS and is optimized for small embedded systems.
 
   - **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
-The <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_block_device.html" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
+The <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
 
-Additionally, two utility block devices give you better control over storage allocation. The <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_slicing_block_device.html" target="_blank">slicing block device</a> allows you to partition storage into smaller block devices that you can use independently, and the <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_chaining_block_device.html" target="_blank">chaining block device</a> allows you to chain multiple block devices together and extend the usable amount of storage.
+Additionally, two utility block devices give you better control over storage allocation. The <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_slicing_block_device.html" target="_blank">slicing block device</a> allows you to partition storage into smaller block devices that you can use independently, and the <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_chaining_block_device.html" target="_blank">chaining block device</a> allows you to chain multiple block devices together and extend the usable amount of storage.
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
@@ -71,7 +71,7 @@ Partitioning allows you to split a block device among multiple storage users suc
 
 ### C++ classes
 
-The FileSystem class provides the core user C++ API. Mbed OS provides <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_file.html" target="_blank">File</a> and <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_dir.html" target="_blank">Dir</a> classes that represent files and directories in a C++ API.
+The FileSystem class provides the core user C++ API. Mbed OS provides <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_file.html" target="_blank">File</a> and <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_dir.html" target="_blank">Dir</a> classes that represent files and directories in a C++ API.
 
 ### Block device operations
 
@@ -101,17 +101,17 @@ Mbed OS has several options for the block device:
 
 - **SDBlockDevice** - Block device driver for SD cards and eMMC memory chips. SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This makes the storage well-suited for systems that require a about 1GB of memory. Additionally, SD cards are a popular form of portable storage. They are useful if you want to store data that you can access from a PC.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/heapblockdevice.html" target="_blank">**HeapBlockDevice**</a> - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
+- <a href="https://os.mbed.com/docs/v5.7/reference/heapblockdevice.html" target="_blank">**HeapBlockDevice**</a> - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
 
 ### Utility block devices
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/slicingblockdevice.html" target="_blank">**SlicingBlockDevice**</a> - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
+- <a href="https://os.mbed.com/docs/v5.7/reference/slicingblockdevice.html" target="_blank">**SlicingBlockDevice**</a> - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/chainingblockdevice.html" target="_blank">**ChainingBlockDevice**</a> - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
+- <a href="https://os.mbed.com/docs/v5.7/reference/chainingblockdevice.html" target="_blank">**ChainingBlockDevice**</a> - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
 
-- <a href="https://os.mbed.com/docs/v5.6/reference/mbrblockdevice.html" target="_blank">**MBRBlockDevice**</a> - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
+- <a href="https://os.mbed.com/docs/v5.7/reference/mbrblockdevice.html" target="_blank">**MBRBlockDevice**</a> - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
 
 - **ReadOnlyBlockDevice** - With the read-only block device, you can wrap a block device in a read-only layer, ensuring that user of the block device does not modify the storage.
 

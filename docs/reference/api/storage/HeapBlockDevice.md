@@ -4,13 +4,13 @@ The HeapBlockDevice class provides a way to simulate block devices for software 
 
 HeapBlockDevices have the following configurable parameters in either one of two constructors:
 
-### Verbose constructor 
+### Verbose constructor
 
   - _size_ - Size of the block device in bytes.
   - _read_size_ - Minimum read size required in bytes.
   - _program_size_ - Minimum program size required in bytes.
   - _erase_size_ - Minimum erase size required in bytes.
-  
+
 Optionally, you can create a HeapBlockDevice that will set the read, program and erase sizes to the same size rather than requiring each parameter be repeated if all of the values are constrained by a common block size.
 
 ### Shortened constructor
@@ -22,8 +22,8 @@ You can view more information about the configurable settings and functions in t
 
 ### HeapBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_heap_block_device.html)
-  
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_heap_block_device.html)
+
 ### HeapBlockDevice example
 
 Create a HeapBlockDevice, program it, read the block back and clean up.

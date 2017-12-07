@@ -1,6 +1,6 @@
 ## Mesh
 
-The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the <a href="/docs/v5.6/tutorials/mesh.html#nanostack" target="_blank">nanostack</a> networking stack.
+The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the <a href="/docs/v5.7/tutorials/mesh.html#nanostack" target="_blank">nanostack</a> networking stack.
 
 **Tips:**
 * The mesh API supports 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes.
@@ -11,15 +11,15 @@ The Arm Mbed mesh API allows the application to use the IPv6 mesh network topolo
 
 **LoWPANNDInterface**
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_lo_w_p_a_n_n_d_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_lo_w_p_a_n_n_d_interface.html)
 
 **ThreadInterface**
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_thread_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_thread_interface.html)
 
 **NanostackEthernetInterface**
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_nanostack_ethernet_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_nanostack_ethernet_interface.html)
 
 ### Usage
 
@@ -35,4 +35,4 @@ The application below demonstrates a simple light control application, where dev
 
 ### Related content
 
-- <a href="/docs/v5.6/tutorials/mesh.html#nanostack" target="_blank">Nanostack</a> tutorial.
+- <a href="/docs/v5.7/tutorials/mesh.html#nanostack" target="_blank">Nanostack</a> tutorial.

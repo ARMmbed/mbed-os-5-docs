@@ -6,7 +6,7 @@ There are multiple <a href="https://os.mbed.com/components/cat/wifi/" target="_b
 
 ### Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_wi_fi_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ### Usage
 
@@ -14,7 +14,7 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the WiFiInterface class (for example, the ESP8266Interface).
 1. Call the `connect` function with an SSID and password for the Wi-Fi network.
-1. Once connected, the WiFiInterface can be used as a target for opening <a href="/docs/v5.6/reference/network-socket.html" target="_blank">network sockets</a>.
+1. Once connected, the WiFiInterface can be used as a target for opening <a href="/docs/v5.7/reference/network-socket.html" target="_blank">network sockets</a>.
 
 ### Wi-Fi example
 
@@ -25,4 +25,4 @@ Here is an example of an HTTP client program. The program brings up an ESP8266 a
 ### Related content
 
 - <a href="https://os.mbed.com/components/cat/wifi/" target="_blank">Wi-Fi components</a>.
-- <a href="/docs/v5.6/reference/network-socket.html" target="_blank">Network socket</a> API overview.
+- <a href="/docs/v5.7/reference/network-socket.html" target="_blank">Network socket</a> API overview.

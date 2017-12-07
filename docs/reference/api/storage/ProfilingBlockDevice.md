@@ -6,8 +6,8 @@ ProfilingBlockDevices take in a pointer to the block device being profiled as th
 
 ### ProfilingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_profiling_block_device.html)
-  
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_profiling_block_device.html)
+
 ### ProfilingBlockDevice example
 
 Create a ProfilingBlockDevice, perform storage operations and report back the read, write and erase counts.

@@ -1,10 +1,10 @@
 ## Error
 
-Mbed OS provides an error function to output messages to `STDIO` at runtime when the system encounters a fatal error and the Application calling the error function will be terminated. Note that the error function outputs the error message in <a href="/docs/v5.6/tools/build-profiles.html" target="_blank">debug and develop builds</a> only. In release builds, the error function does not generate any `STDIO` output, but the application is still terminated. `mbed_error.h` declares the error function.
+Mbed OS provides an error function to output messages to `STDIO` at runtime when the system encounters a fatal error and the Application calling the error function will be terminated. Note that the error function outputs the error message in <a href="/docs/v5.7/tools/build-profiles.html" target="_blank">debug and develop builds</a> only. In release builds, the error function does not generate any `STDIO` output, but the application is still terminated. `mbed_error.h` declares the error function.
 
 ### Error function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ### Error example
 
@@ -22,4 +22,4 @@ void *operator new(std::size_t count) {
 
 ### Related content
 
-- Debug and develop <a href="/docs/v5.6/tools/build-profiles.html" target="_blank">build profiles</a>.
+- Debug and develop <a href="/docs/v5.7/tools/build-profiles.html" target="_blank">build profiles</a>.

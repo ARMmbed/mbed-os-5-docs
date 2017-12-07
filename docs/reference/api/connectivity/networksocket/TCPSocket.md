@@ -4,11 +4,11 @@ The TCPSocket class provides the ability to send a stream of data over TCP. TCPS
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
-Refer to <a href="/docs/v5.6/reference/tcpserver.html" target="_blank">TCPServer</a> class for TCP server functionality.
+Refer to <a href="/docs/v5.7/reference/tcpserver.html" target="_blank">TCPServer</a> class for TCP server functionality.
 
 ### TCPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_t_c_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_t_c_p_socket.html)
 
 ### TCPSocket Example
 
@@ -22,4 +22,4 @@ Here is a TCP client example of HTTP transaction over Ethernet interface.
 
 ### Related content
 
-- <a href="/docs/v5.6/reference/tcpserver.html" target="_blank">TCPServer</a> API reference.
+- <a href="/docs/v5.7/reference/tcpserver.html" target="_blank">TCPServer</a> API reference.
