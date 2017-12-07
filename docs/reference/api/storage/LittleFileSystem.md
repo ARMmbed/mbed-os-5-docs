@@ -37,4 +37,4 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 ### LittleFileSystem example
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-littlefs)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem)
