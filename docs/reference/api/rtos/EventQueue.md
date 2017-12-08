@@ -4,7 +4,7 @@
 
 ### EventQueue class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classevents_1_1_event_queue.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classevents_1_1_event_queue.html)
 
 ### EventQueue example
 

@@ -7,7 +7,7 @@ The storage APIs present in Arm Mbed OS are:
 
 ### Declaring a file system
 
-The <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_file_system.html" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions.
+The <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_file_system.html" target="_blank">FileSystem</a> class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions.
 
 #### Open
 
@@ -31,9 +31,9 @@ The `fopen` function is similar to the open function above but associates a stre
 
   - **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
 
-The <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
+The <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html" target="_blank">BlockDevice</a> class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
 
-Additionally, two utility block devices give you better control over storage allocation. The <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_slicing_block_device.html" target="_blank">slicing block device</a> allows you to partition storage into smaller block devices that you can use independently, and the <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_chaining_block_device.html" target="_blank">chaining block device</a> allows you to chain multiple block devices together and extend the usable amount of storage.
+Additionally, two utility block devices give you better control over storage allocation. The <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_slicing_block_device.html" target="_blank">slicing block device</a> allows you to partition storage into smaller block devices that you can use independently, and the <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_chaining_block_device.html" target="_blank">chaining block device</a> allows you to chain multiple block devices together and extend the usable amount of storage.
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
@@ -71,7 +71,7 @@ Partitioning allows you to split a block device among multiple storage users suc
 
 ### C++ classes
 
-The FileSystem class provides the core user C++ API. Mbed OS provides <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_file.html" target="_blank">File</a> and <a href="https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_dir.html" target="_blank">Dir</a> classes that represent files and directories in a C++ API.
+The FileSystem class provides the core user C++ API. Mbed OS provides <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_file.html" target="_blank">File</a> and <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_dir.html" target="_blank">Dir</a> classes that represent files and directories in a C++ API.
 
 ### Block device operations
 

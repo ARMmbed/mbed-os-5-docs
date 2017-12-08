@@ -16,7 +16,7 @@ CircularBuffer<int, BUF_SIZE> buf;
 
 ### CircularBuffer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/_circular_buffer_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/_circular_buffer_8h_source.html)
 
 ### CircularBuffer example
 
