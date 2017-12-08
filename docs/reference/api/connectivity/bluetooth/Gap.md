@@ -2,11 +2,11 @@
 
 Generic Access Profile is the layer of the stack that handles connectivity tasks. This includes link establishment and termination, advertising and scanning.
 
-Devices with data to publish can use GAP to advertise. They can either include the data in the advertisement itself, inside the scan response, or leave it to be queried by a peer device after connection has been established.
+Devices with data to publish can use GAP to advertise. They can include the data in the advertisement itself, inside the scan response, or leave it to be queried by a peer device after connection has been established.
 
-The other side of the process is the act of scanning which listens for advertisements, allows us to query the advertisers for more data via a scan request or to connect in order to query the GATT server on the peer device for the data we want.
+The other side of the process is the act of scanning which listens for advertisements, allows us to query the advertisers for more data via a scan request or to connect in order to query the peer device for the data we want.
 
-Advertising, scanning and communicating all have parameters that let the user find a compromise between desired power consumption levels and latency and efficiency of these processes. 
+Advertising, scanning and connection all have parameters that let the user find a compromise between desired power consumption levels and latency and efficiency of these processes. 
 
 ### Gap class reference
 
