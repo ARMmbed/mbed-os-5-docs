@@ -6,8 +6,6 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 ### BLE class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_b_l_e.html)
-
 ### Usage
 
 1. Set up advertising and connection modes.
