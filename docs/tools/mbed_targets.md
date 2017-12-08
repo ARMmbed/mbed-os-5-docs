@@ -2,7 +2,7 @@
 
 Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. 
 
-<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use <a href="https://os.mbed.com/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI</a> to take your code offline.</span>
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use <a href="https://os.mbed.com/docs/v5.7/tools/mbed-cli.html" target="_blank">Mbed CLI</a> to take your code offline.</span>
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
@@ -199,7 +199,7 @@ Use this property to pass necessary data for exporting to various third party to
 
 We use the tool <a href="https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager" target="_blank">ArmPackManager</a> to parse CMSIS Packs for target information. <a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json" target="_blank">`index.json`</a> stores the parsed information from the <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/" target="_blank">PDSC (Pack Description</a> retrieved from each CMSIS Pack.
 
-The <a href="/docs/v5.6/reference/contributing-target.html">`"device_name"`</a> attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+The <a href="/docs/v5.7/reference/contributing-target.html">`"device_name"`</a> attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
 <a href="http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc" target="_blank">http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc</a> is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 156 of the `.pdsc` file:
 

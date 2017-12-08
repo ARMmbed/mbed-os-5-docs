@@ -9,7 +9,7 @@ The Arm Mbed configuration system customizes the compile time configuration of v
 
 The configuration system gathers and interprets all the configurations defined in the source tree. The output of the configuration system is a list of macros that are automatically defined when compiling the code.
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as <a href="/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">Mbed targets</a>.</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as <a href="/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">Mbed targets</a>.</span>
 
 #### Defining configuration parameters
 
@@ -91,7 +91,7 @@ In this JSON file:
 - `macros` is a list of extra macros that will be defined when compiling a project that includes this library. A macro can be defined without a value (such as `MYMOD_MACRO1` above) or with a value (such as `MYMOD_MACRO2` above).
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters.
 
-`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels*. (You can find a description of Mbed targets in our documentation about <a href="/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">adding and configuring targets</a>.) If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
+`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels*. (You can find a description of Mbed targets in our documentation about <a href="/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">adding and configuring targets</a>.) If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
 
 - `config` is always processed first, independent of the target. `config` might define values for some of the parameters. In this case, `buffer_size` will be set to 1024, `queue_size` will be set to 10 and `timer_period` will not have a value.
 - If the library is compiled for the `K64F` target, `timer_period` will be set to 100, and `queue_size` will be set to 40 because they are overridden by the `K64F` key in `target_overrides`. `buffer_size` will be set to 1024, as defined in `config`.
@@ -107,7 +107,7 @@ If the source tree has code for more than one library, each library needs its ow
 
 ##### Configuration data in targets
 
-Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check <a href="/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">our configuring targets documentation</a>). Target configuration data is defined in `targets.json` using `config`, as described in the section about [defining configuration parameters](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
+Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check <a href="/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">our configuring targets documentation</a>). Target configuration data is defined in `targets.json` using `config`, as described in the section about [defining configuration parameters](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
 
 ```
 "Base": {

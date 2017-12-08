@@ -21,7 +21,7 @@ The order of handler execution is:
 
 ### Example
 
-This example showcases functionality and proper integration with the <a href="/docs/v5.6/tools/greentea.html" target="_blank">Greentea testing automation framework</a>, while making use of the <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity" target="_blank">unity test macros</a>:
+This example showcases functionality and proper integration with the <a href="/docs/v5.7/tools/greentea.html" target="_blank">Greentea testing automation framework</a>, while making use of the <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity" target="_blank">unity test macros</a>:
 
 ```cpp
 #include "mbed-drivers/test_env.h"
@@ -186,7 +186,7 @@ For asynchronous test cases, you must return a `CaseTimeout(uint32_t ms)`. If yo
 
 To validate your callback, you must call `Harness::validate_callback()` in your asynchronous callback before the timeout fires. This will schedule the execution of the next test case.
 
-For repeating asynchronous cases, you can "add" both attributes together: `CaseTimeout(200) + CaseRepeatAll` will wait for 200 ms for the callback validation and then repeat the test case. See the section on <a href="/docs/v5.6/tools/utest-asynchronous-c-test-harness.html#test-case-attribute-arbitration" target="_blank">arbitration logic</a> for more details.
+For repeating asynchronous cases, you can "add" both attributes together: `CaseTimeout(200) + CaseRepeatAll` will wait for 200 ms for the callback validation and then repeat the test case. See the section on <a href="/docs/v5.7/tools/utest-asynchronous-c-test-harness.html#test-case-attribute-arbitration" target="_blank">arbitration logic</a> for more details.
 
 You can also add attributes during callback validation; however, only repeat attributes are considered. This allows you to return `CaseTimeout(500)` to wait up to 500 ms for the callback validation and delegate the decision to repeat to the time the callback occurs: `Harness::validate_callback(CaseRepeatHandler)`.
 
