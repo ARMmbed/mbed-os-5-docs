@@ -17,7 +17,7 @@ Use the instructions below to test our Cloud9-based Arm Mbed Enabled IDE, which 
 
 ##### Arm Mbed CLI
 
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the <a href="/docs/v5.7/tools/mbed-cli.html" target="_blank">Mbed CLI page</a>.
+We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the <a href="/docs/v5.7/tools/arm-mbed-cli.html" target="_blank">Mbed CLI page</a>.
 
 ##### Compiler versions
 
@@ -29,7 +29,7 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
 
 ##### Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the <a href="/docs/v5.7/tools/arm-mbed-online-compiler.html" target="_blank">Online Compiler page</a>.
+The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the <a href="/docs/v5.7/tools/arm-online-compiler.html" target="_blank">Online Compiler page</a>.
 
 ##### Third party development tools
 
