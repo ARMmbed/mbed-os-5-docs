@@ -9,7 +9,7 @@ Principles of Arm Mbed software:
 
 #### Style
 
-Please refer to the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">Mbed style guide</a>.
+Please refer to the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">Mbed style guide</a>.
 
 #### Organization
 
@@ -56,7 +56,7 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 - Special directories should follow consistent naming convention.
 
 #### Contribution
-1. Please refer to the <a href="/docs/v5.6/reference/contributing-overview.html" target="_blank">Mbed contribution guide</a>.
+1. Please refer to the <a href="/docs/v5.7/reference/contributing-overview.html" target="_blank">Mbed contribution guide</a>.
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:
@@ -174,7 +174,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Tests included in the codebase must be compatible with the Mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
-<a href="/docs/v5.6/tools/test-and-debug.html" target="_blank">Full documentation</a>.
+<a href="/docs/v5.7/tools/test-and-debug.html" target="_blank">Full documentation</a>.
 
 #### Configuration
 
@@ -188,4 +188,4 @@ Mbed OS provides a powerful configuration system for application development. Ho
 - Targets and applications should be able to override each configuration.
 - The default choice of optimization should be size, on all platforms.
 
-<a href="/docs/v5.6/tools/the-configuration-system.html" target="_blank">Full documentation</a>.
+<a href="/docs/v5.7/tools/the-configuration-system.html" target="_blank">Full documentation</a>.

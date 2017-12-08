@@ -2,7 +2,7 @@
 
 #### Contributions
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs). In both cases, please follow the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the <a href="/docs/v5.6/reference/guidelines.html#cla" target="_blank">CLA</a> guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs). In both cases, please follow the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the <a href="/docs/v5.7/reference/guidelines.html#cla" target="_blank">CLA</a> guidelines because we will immediately close pull requests submitted without a CLA.
 
 #### Contributing new features to Mbed OS
 
@@ -22,7 +22,7 @@ All Mbed OS is on GitHub; please use GitHub's <a href="https://guides.github.com
 
 ##### Bug fixes
 
-Please refer to the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code contributions chapter</a>.
+Please refer to the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code contributions chapter</a>.
 
 A member of the Mbed team must verify bug fixes before we pull the fixes into the main branch. You must therefore use GitHub to fork the repo and then submit a pull request with your changes.
 
@@ -30,7 +30,7 @@ The last line in your commit message description should say â€œFixes #deadbeefâ€
 
 #### Further reading
 
-Please see the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code contributions chapter</a> for the guidelines to GitHub pull requests and the coding style guide.
+Please see the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code contributions chapter</a> for the guidelines to GitHub pull requests and the coding style guide.
 
 #### Guidelines for GitHub pull requests
 

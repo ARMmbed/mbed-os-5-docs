@@ -24,6 +24,6 @@ The RTC HAL API provides a low-level interface to the Real Time Counter (RTC) of
 
 #### Implementing the RTC API
 
-RTC HAL API is in <a href="/docs/v5.6/mbed-os-api-doxy/rtc__api_8h_source.html" target="_blank">hal/rtc_api.h</a>. You need to implement the following functions to support RTC:
+RTC HAL API is in <a href="/docs/v5.7/mbed-os-api-doxy/rtc__api_8h_source.html" target="_blank">hal/rtc_api.h</a>. You need to implement the following functions to support RTC:
 
 To enable sleep support in Mbed OS, you need to add the `RTC` label in the `device_has` option of the target's section in the `targets.json` file.

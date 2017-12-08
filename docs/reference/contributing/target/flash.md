@@ -61,7 +61,7 @@ Bootloader-ready declaration of flash VTOR address:
 
 #### `targets.json` metadata
 
-The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as <a href="https://os.mbed.com/docs/v5.6/tools/adding-and-configuring-targets.html" target="_blank">Adding and configuring targets</a> describes.
+The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as <a href="https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">Adding and configuring targets</a> describes.
 
 #### Start application
 
