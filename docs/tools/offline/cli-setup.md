@@ -70,6 +70,10 @@ $ mbed_installer_{version}.exe /S
 
 4. Check <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a> for more examples.
 
+### After installation
+
+Please see the [configuration section](/docs/v5.7/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+
 ## Installing manually
 
 ### Installing the stable version
@@ -101,6 +105,10 @@ On Linux or Mac, you may need to run with `sudo`.
 ### Video tutorial for manual installation
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/cM0dFoTuU14/0.jpg)](https://www.youtube.com/watch?v=cM0dFoTuU14)</span>
+
+### After installation
+
+Please see the [configuration section](/docs/v5.7/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
 ## Configuring Mbed CLI
 
