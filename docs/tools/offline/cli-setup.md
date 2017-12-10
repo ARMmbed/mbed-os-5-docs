@@ -63,9 +63,9 @@ On Linux or Mac, you may need to run with `sudo`.
 
 Mbed CLI for Windows installs <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a> with all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
 
-The Windows installer for Mbed CLI for includes the following components:
+The Windows installer for Mbed CLI includes the following components:
 
-- **Python** - Mbed CLI is a Python script, so you need Python to use it. Installer installs <a href="https://www.python.org/downloads/release/python-2713/" target="_blank">version 2.7.13 of Python</a>. It is not compatible with Python 3.
+- **Python** - Mbed CLI is a Python script, so you need Python to use it. The installer installs <a href="https://www.python.org/downloads/release/python-2713/" target="_blank">version 2.7.13 of Python</a>. It is not compatible with Python 3.
 - **Mbed CLI version 1.2.2** - <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a>.
 - **Git and Mercurial** - Mbed CLI supports both Git and Mercurial repositories. Both Git and Mercurial are being installed. `git` and `hg` are added to system's PATH.
     - <a href="https://git-scm.com/" target="_blank">Git</a> - version 2.12.2.
@@ -85,7 +85,7 @@ The Windows installer for Mbed CLI for includes the following components:
 
 ###### Silent install
 
-You can execute installer silently without user interaction. Add `/S` flag in Windows command prompt during installation. 
+You can execute installer silently without user interaction. Add `/S` flag in Windows command prompt during installation.
 
 ```
 $ mbed_installer_{version}.exe /S
@@ -94,7 +94,7 @@ $ mbed_installer_{version}.exe /S
 ##### Usage
 
 1. Open Windows command prompt.
-2. Run: 
+2. Run:
 
 ```
 $ mbed
@@ -152,7 +152,7 @@ You need to tell Mbed CLI where to find the toolchains that you want to use for 
 - <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads" target="_blank">GNU Arm Embedded toolchain (GCC) version 6</a>. Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
 - <a href="https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM" target="_blank">IAR EWARM 7</a>. Use versions 7.70 to 7.80.x of the IAR EWARM; other versions might be incompatible with the tools.
 
-You must inform Mbed CLI about the location of your compiler using one of the following methods. 
+You must inform Mbed CLI about the location of your compiler using one of the following methods.
 
 - The Mbed CLI configuration command.
 - Adding the compiler's directory to your PATH.
@@ -199,7 +199,7 @@ Mbed CLI has a few rules that allow you to seamlessly switch between different v
  3) Mbed CLI Global Configuration
  4) Environment Variables
  5) The `PATH` Environment Variable
- 
+
 When resolving which setting is used for an individual `mbed compile` or `mbed test` invocation, Mbed CLI picks the lowest numbered present setting.
 
 To use a standard toolchain for general purpose development, you may use any method 3 through 5. For overriding a toolchain version for a specific project, you may use methods 1 and 2. All of these methods for configuring a toolchain may coexist.
