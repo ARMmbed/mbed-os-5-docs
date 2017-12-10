@@ -1,4 +1,4 @@
-## Setup
+## Setup options
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
@@ -26,7 +26,7 @@ You can install Mbed CLI on Windows, Linux and Mac OS X.
     $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
     ```
 
-### Choosing your environment
+### Working with virtual environments
 
 Mbed CLI is compatible with <a href="https://pypi.python.org/pypi/virtualenv" target="_blank">Virtual Python Environment (virtualenv)</a>.
 

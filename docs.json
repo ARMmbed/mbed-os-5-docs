@@ -556,7 +556,7 @@
                     "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli.md"
                 },
                 "sub_chapters": [{
-                        "title": "Setting up Mbed CLI",
+                        "title": "Installation and setup",
                         "sources": [{
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/cli-setup.md"
