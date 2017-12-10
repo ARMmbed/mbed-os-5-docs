@@ -69,7 +69,8 @@ $ mbed_installer_{version}.exe /S
 
 
 4. Check <a href="https://github.com/ARMmbed/mbed-cli" target="_blank">Mbed CLI</a> for more examples.
-## Manual installation
+
+## Installing manually
 
 ### Installing the stable version
 
