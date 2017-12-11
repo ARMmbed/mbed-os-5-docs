@@ -16,7 +16,7 @@ Mbed OS provides two shared queues software can use. This can avoid the need to 
 
 ### Shared event queue reference
 
-https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__shared__queues_8h_source.html
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__shared__queues_8h_source.html)
 
 ### EventQueue example: deferring from interrupt context
 
