@@ -14,6 +14,6 @@ Advertising, scanning and connection all have parameters that let you find a com
 
 ### Gap example
 
-Here is an example demonstrating how to use the Gap API to advertise, scan connect and disconnect and how parameters influence efficiency of these actions.
+Here is an example demonstrating how to use the Gap API to advertise, scan, connect and disconnect and how parameters influence efficiency of these actions.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAP/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAP)
