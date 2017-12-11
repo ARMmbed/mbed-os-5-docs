@@ -1,70 +1,80 @@
-## Blinky on the Arm Mbed Online Compiler
+## Online Compiler
 
-This tutorial builds Blinky using the Arm Mbed Online Compiler, which allows you to build Mbed OS applications without installing a toolchain on your own machine.
+### Setup
 
-<span class="tips">Please create a <a href="https://os.mbed.com/account/signup/" target="_blank">developer account</a>. It's free, and we don't spam.</span>
+#### [Create an Mbed developer account](https://developer.mbed.org/account/signup/?next=%2F)
+	Go to os.mbed.com and [create an account](https://developer.mbed.org/account/signup/?next=%2F)
+#### Setup Environment
+    - Plug your mbed board into your computer and open its USB device folder
+    - Double click on the MBED.HTM file (this will add your mbed platform to the online compiler)
 
-### Importing Blinky
+If you do not have an Mbed board, go to [os.mbed.org/platforms](http://os.mbed.org/platforms), select a board and click the “Add to your mbed Compiler” button.
+<span class="images">![](https://sarahmarshy.github.io/img/add-to-compiler.png)
+</span>
 
-To get Blinky into the Mbed Online Compiler, click the **`Import into Mbed IDE`** button below:
+### Code
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/file/tip/main.cpp)
+#### Import 
+Visit the mbed-os [blinky example repository](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/) and click the "Import into Compiler" button.
+ 
+<span class="images">![](https://sarahmarshy.github.io/img/import-compiler.png)
+</span>
 
-You're taken to the online IDE, and the **Import Program** dialog box opens:
+#### Compile
+Click on the "Compile" button, your browser will then download the program as a `.bin` file.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_dialog.png)<span>Importing Blinky</span></span>
+<span class="images">![](https://sarahmarshy.github.io/img/compile.png)
+</span>
 
-The import mechanism offers a default name, but you're free to change it. When you're done, click **Import**.
+#### Program
+Open the folder where the `.bin` file was downloaded, then click and drag (or copy and paste) the file to your mbed board's USB device folder.
 
-### Viewing Blinky
+Once the file has been flashed to the board, press the board's "reset" button and you should now see the LED blinking.
 
-The imported Blinky has two interesting parts:
 
-- `main.cpp`, where the Blinky-specific code is. You can double-click the file in the navigation pane on the left to view the code.
-- `mbed-os`, where the Arm Mbed OS codebase is.
+### Debug
 
-Later we'll compile the code; this will take both of these parts and create a single application file from them.
+#### Desktop IDE
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/maincpp.png)<span>Viewing the code in main.cpp</span></span>
+To debug using a desktop IDE such as Keil uVision, IAR, or Eclipse, click the "Export" button under "Program Details", select your export platform and IDE and click "Export". Your browser will then download a zip file with the project files.
 
-### Selecting a target board
+<span class="images">![](https://sarahmarshy.github.io/img/export.png)
+</span>
 
-The Mbed Online Compiler can build your application to match any Arm Mbed Enabled board. However, you have to select the target board before compiling.
+#### Printf
 
-#### Adding a board to your list
+Another way to do basic debugging is to use the `printf` command in your code, then read the output using a serial terminal such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, then recompile the program and flash it to your device.
 
-To add a board to your list, go to <a href="https://os.mbed.com/platforms/" target="_blank">the board's page on `os.mbed.com`</a>, and click the **`Add to your Mbed Compiler`** button:
+Unless otherwise specified, `printf` defaults to a baud rate/speed of `9600` on mbed OS. To determine which communication port your board is connected to, follow the instructions for your operating system below:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_board.png)<span>Adding a board to the Mbed Online Compiler's board list</span></span>
+##### Windows
 
-#### Selecting a board
+Open the Device Manager by pressing `Windows key + R`, type `devmgmt.msc` and click "OK." Under "Ports (COM & LPT)" your mbed board will be listed as a "USB Serial Device" next to its COM port.
 
-The compiler shows the current build board's name on the upper right corner:
+##### Linux
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/show_board.png)<span>Opening the list of boards</span></span>
+Run `dmesg | grep tty` from your command line. 
 
-Click the name to change your board as needed:
+##### Mac
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/select_board.png)<span>Selecting a board</span></span>
+Run `ls /dev/tty.*` from your command line. 
 
-### Compile and install
 
-The Mbed Online Compiler builds your program as a `.bin` file that you can install on your board.
 
-1. Click **Compile**.
+### Further Reading
 
-	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/compileandinstall.png)<span>The Compile menu; choose Compile to build and download your application</span></span>
+- Documentation
+	- [Mbed OS API's](https://os.mbed.com/docs/v5.6/reference/apis.html) - List of all API's available in Mbed OS
+	- [Peripheral Drivers](https://os.mbed.com/docs/v5.6/reference/drivers.html) - Traditional Driver API's (I2C, SPI, UART, ... etc)
 
-1. The program compiles:
+- Tutorials
+	- [Advanced Debugging](https://os.mbed.com/docs/v5.6/tutorials/debugging.html)
+	- [Serial Communications](https://os.mbed.com/docs/v5.6/tutorials/serial-communication.html)
+	- [Optimizing binary size](https://os.mbed.com/docs/v5.6/tutorials/optimizing.html)
 
-	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/compiling.png)<span>Compilation progress</span></span>
+- Other Resources 
+	- [Components Database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components
+	- [Mbed OS Forum](https://os.mbed.com/forum/) - great resource full of knowledge and active user community. Ask your questions here first!
+	- [Youtube Channel](http://youtube.com/armmbed) - videos and workshop content
 
-1. When the compiled file is ready, it's downloaded to your default download location (or opens a Download dialog box). The file format is `.bin`, and the file  name is the same as your program name.
 
-1. Connect your board to your computer over USB. Mbed boards are shown as "removable storage".
-
-	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/DeviceOnWindows.png)<span>The device is listed as `MBED` or `DAPLINK`, and its type is removable storage</span></span>
-
-1. Drag and drop your program to the board. The board installs the program.
-
-1. Reset the board, and see the LED blink.
