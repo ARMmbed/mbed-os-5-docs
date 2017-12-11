@@ -6,9 +6,17 @@ The EventQueue class is thread and ISR safe.
 
 You can use the `dispatch` and `dispatch_forever` APIs to execute pending events. `break_dispatch` is to terminate the execution of events in the specified EventQueue. 
 
+### Shared event queues
+
+Mbed OS provides two shared queues software can use. This can avoid the need to create private event dispatch threads and reduce the total amount of RAM used.
+
 ### EventQueue class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classevents_1_1_event_queue.html)
+
+### Shared event queue reference
+
+https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__shared__queues_8h_source.html
 
 ### EventQueue example: deferring from interrupt context
 
@@ -30,3 +38,85 @@ The code below demonstrates queueing functions to be called after a delay and qu
 Event queues easily align with module boundaries, where event dispatch can implicitly synchronize internal state. Multiple modules can use independent event queues but still be composed through the `EventQueue::chain` function.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_3/)](https://os.mbed.com/teams/mbed_example/code/events_ex_3/file/fca134a32b61/main.cpp)
+
+### Shared event example: deferring from interrupt context
+
+Like the previous example, this defers from interrupt to an event queue thread. However, rather than creating its own thread, it uses the shared event queue – potentially sharing it with other system components and saving RAM.
+
+As the event queue is shared, you should limit the execution time of your event functions to avoid delaying other users’ events excessively.
+
+```
+#include "mbed.h"
+#include "mbed_events.h"
+ 
+DigitalOut led1(LED1);
+InterruptIn sw(SW2);
+ 
+void rise_handler(void) {
+    // Toggle LED
+    led1 = !led1;
+}
+ 
+void fall_handler(void) {
+    printf("fall_handler in context %p\r\n", Thread::gettid());
+    // Toggle LED
+    led1 = !led1;
+}
+ 
+int main() {
+    // Request the shared queue
+    EventQueue *queue = mbed_event_queue();
+    printf("Starting in context %p\r\n", Thread::gettid());
+    // The 'rise' handler will execute in IRQ context
+    sw.rise(rise_handler);
+    // The 'fall' handler will execute in the context of the shared queue thread
+    sw.fall(queue->event(fall_handler));
+}
+```
+
+### Shared event example: running the shared queue from main
+
+To further save RAM, if you have no other work to do in your main function after initialization, you can dispatch the global event queue from there, avoiding the need to create a separate dispatch thread.
+
+To do this, set the `mbed_app.json` configuration option `events.shared-dispatch-from-application` to true, and add a dispatch call to main, as in this example. (The prints now show the same context for startup and `fall_handler`).
+
+```
+#include "mbed.h"
+#include "mbed_events.h"
+ 
+DigitalOut led1(LED1);
+InterruptIn sw(SW2);
+ 
+void rise_handler(void) {
+    // Toggle LED
+    led1 = !led1;
+}
+ 
+void fall_handler(void) {
+    printf("fall_handler in context %p\r\n", Thread::gettid());
+    // Toggle LED
+    led1 = !led1;
+}
+ 
+int main() {
+    // Request the shared queue
+    EventQueue *queue = mbed_event_queue();
+    printf("Starting in context %p\r\n", Thread::gettid());
+    // The 'rise' handler will execute in IRQ context
+    sw.rise(rise_handler);
+    // The 'fall' handler will execute in the context of the shared queue (actually the main thread)
+    sw.fall(queue->event(fall_handler));
+    // Setup complete, so we now dispatch the shared queue from main
+    queue->dispatch_forever();
+}
+
+`mbed_app.json` for that:
+
+{
+    "target_overrides": {
+        "*": {
+            "events.shared-dispatch-from-application": true
+        }
+     }
+}
+```
