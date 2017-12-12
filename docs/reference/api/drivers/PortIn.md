@@ -6,7 +6,7 @@ A mask can be supplied so only certain bits of a port are used, allowing other b
 
 ### PortIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_port_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_port_in.html)
 
 ### PortIn hello, world
 

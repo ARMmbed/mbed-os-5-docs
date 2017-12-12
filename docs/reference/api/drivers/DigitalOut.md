@@ -4,7 +4,7 @@ Use the DigitalOut interface to configure and control a digital output pin by se
 
 ### DigitalOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_digital_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_digital_out.html)
 
 ### DigitalOut hello, world
 
