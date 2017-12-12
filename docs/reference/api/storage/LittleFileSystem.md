@@ -36,7 +36,3 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 ### LittleFileSystem class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_little_file_system.html)
-
-### LittleFileSystem example
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem)
