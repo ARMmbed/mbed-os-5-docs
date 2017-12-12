@@ -8,19 +8,19 @@ Your application code is written in C and C++. It uses the *application programm
 
 <span class="tips">If you're working on Windows, you might need to <a href="/docs/v5.6/tutorials/windows-serial-driver.html" target="_blank">install a serial driver</a>.</span>
 
-The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, <a href="/docs/v5.6/tutorials/your-first-arm-mbed-application.html" target="_blank">Blinky</a>, that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, <a href="/docs/v5.6/tutorials/your-first-program.html" target="_blank">Blinky</a>, that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
 Once you know how to build an existing application, it's time to learn <a href="/docs/v5.6/reference/index.html" target="_blank">how to write your own applications</a>.
 
 ##### Development tools
 
-- Our offline development tool is <a href="/docs/v5.6/tools/mbed-cli.html" target="_blank">Arm Mbed CLI</a>, a command-line tool. This requires having a toolchain installed on your computer.
-- The <a href="/docs/v5.6/tools/arm-mbed-online-compiler.html" target="_blank">Arm Mbed Online Compiler</a> lets you write and build applications using a web browser.
+- Our offline development tool is <a href="/docs/v5.6/tools/arm-mbed-cli.html" target="_blank">Arm Mbed CLI</a>, a command-line tool. This requires having a toolchain installed on your computer.
+- The <a href="/docs/v5.6/tools/arm-online-compiler.html" target="_blank">Arm Mbed Online Compiler</a> lets you write and build applications using a web browser.
 - If you're working with third party tools, look at <a href="/docs/v5.6/tools/exporting.html" target="_blank">exporting instructions for the most popular ones</a>.
 
 ##### Communicating with and monitoring your board
 
-You can <a href="/docs/v5.6/tutorials/serial-communication-overview.html" target="_blank">monitor and control an Mbed board</a> to help you debug and test your applications.
+You can <a href="/docs/v5.6/tutorials/serial-communication.html" target="_blank">monitor and control an Mbed board</a> to help you debug and test your applications.
 
 <span class="tips">**Tip:** Learn more about debugging in the <a href="/docs/v5.6/tutorials/debugging-applications.html" target="_blank">debugging applications section</a>.</span>
 
@@ -34,7 +34,7 @@ When you've started writing applications using your selected development tool:
 
 #### Contributing to Mbed OS
 
-If you want to contribute to the `mbed-os` codebase, please see <a href="/docs/v5.6/reference/contributing-overview.html" target="_blank">the contribution section</a>.
+If you want to contribute to the `mbed-os` codebase, please see <a href="/docs/v5.6/reference/contributing.html" target="_blank">the contribution section</a>.
 
 You can find past releases and the current release on <a href="https://github.com/ARMmbed/mbed-os/releases/" target="_blank">GitHub</a>.
 
@@ -52,7 +52,7 @@ The Arm Mbed hardware architecture is designed to make sure you have all the too
 
 #### Architecture diagram
 
-This is the basic architecture of an <a href="/docs/v5.6/introduction/how-mbed-works.html" target="_blank">Mbed board</a>:
+This is the basic architecture of an Mbed board:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_internal.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
