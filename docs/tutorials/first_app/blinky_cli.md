@@ -2,6 +2,7 @@
 
 ### Setup
 Please skip to the sub section for your host OS. The setup instructions will walk you through how to get mbed CLI installed locally on your system. 
+
 [**Windows**](#windows) | [**OSX**](#mac-osx) | [**Linux**](#linux)
 
 #### Windows
