@@ -2,8 +2,11 @@
 
 ### Setup
 Please skip to the sub section for your host OS. The setup instructions will walk you through how to get mbed CLI installed locally on your system. 
+- [Windows](#windows)
+- [OSX](#mac-osx)
+- [Linux](#linux)
 
-#### Windows Setup
+#### Windows
 
 ##### 1. Install mbed CLI
 
@@ -24,7 +27,7 @@ Make sure the compiler is available in your global path:
   * ARMCC:  run `armcc` with no arguments from your command line
   * IAR: run `iccarm --version` from your command line
 
-#### Mac Setup
+#### Mac OSX
 
 ##### 1. Install Python & Pip
 
@@ -54,7 +57,7 @@ Make sure the compiler is available in your global path:
   * ARMCC:  run `armcc` with no arguments from your command line
   * IAR: run `iccarm --version` from your command line
 
-#### Linux Setup
+#### Linux 
 
 ##### 1. Install Python & Pip
 
