@@ -2,7 +2,7 @@
 
 ### Setup
 
-#### [Create an Mbed developer account](https://developer.mbed.org/account/signup/?next=%2F)
+#### Create an Mbed developer account
 Go to os.mbed.com and [create an account](https://developer.mbed.org/account/signup/?next=%2F)
 
 #### Setup Environment
