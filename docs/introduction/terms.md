@@ -2,15 +2,15 @@
 
 ### A
 
-**API** - [Application programming interface](/docs/v5.6/reference/api-overview.html).
+**API** - [Application programming interface](/docs/v5.6/reference/apis.html).
 
 **Application** - An executable module built out of libraries that acts as a final product.
 
-**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/v5.6/tools/mbed-cli.html), packaged as `mbed-cli`.
+**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/v5.6/tools/arm-mbed-cli.html), packaged as `mbed-cli`.
 
-**Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](/docs/v5.6/introduction/how-mbed-works.html#architecture-diagram). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
+**Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](/docs/v5.6/introduction/index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.6/tools/arm-mbed-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.6/tools/arm-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
@@ -24,7 +24,7 @@
 
 **BLE** - [Bluetooth Low Energy](/docs/v5.6/reference/ble.html).
 
-**Blinky** - An [example application](/docs/v5.6/tutorials/your-first-arm-mbed-application.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
+**Blinky** - An [example application](/docs/v5.6/tutorials/your-first-program.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
 **Block Device** - A [file](/docs/v5.6/reference/contributing-storage.html#block-devices) that represents a device, with data that can be read or written to it in blocks.
 
@@ -32,9 +32,9 @@
 
 **Boolean** - A binary variable, having two possible values called `true` and `false`.
 
-**Bootloader** - [The program](/docs/v5.6/tutorials/creating-and-using-a-bootloader.html) that loads Mbed OS when a board is turned on.
+**Bootloader** - [The program](/docs/v5.6/tutorials/bootloader.html) that loads Mbed OS when a board is turned on.
 
-**Build Profile** - Mbed OS 5 supports three primary [build profiles](/docs/v5.6/tools/mbed-cli.html#build-profiles): develop, debug and release.
+**Build Profile** - Mbed OS 5 supports three primary [build profiles](/docs/v5.6/tools/build-profiles.html): develop, debug and release.
 
 **Build Script** - A build automation and generation utility.
 
@@ -72,7 +72,7 @@
 
 **GPIO** - General-purpose input/output, a generic pin that is controllable by the user at run-time.
 
-**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.6/tools/tools-testing.html#greentea) is the automated testing tool for Arm Mbed OS development.
+**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.6/tools/greentea.html) is the automated testing tool for Arm Mbed OS development.
 
 ### H
 
@@ -118,7 +118,7 @@
 
 **REST** - Representational State Transfer (API).
 
-**RTOS** - [Real-Time Operating System](/docs/v5.6/reference/rtos-api.html).
+**RTOS** - [Real-Time Operating System](/docs/v5.6/reference/rtos.html).
 
 ### S
 
@@ -146,4 +146,4 @@
 
 ### U
 
-**utest** - A [test harness](/docs/v5.6/tools/tools-testing.html#utest-asynchronous-c-test-harness) you can use to execute a specified series of (asynchronous) C++ test cases.
+**utest** - A [test harness](/docs/v5.6/tools/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.
