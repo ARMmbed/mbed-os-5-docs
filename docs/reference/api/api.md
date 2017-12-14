@@ -8,6 +8,6 @@ The <a href="/docs/v5.7/introduction/glossary.html" target="_blank">APIs</a> in 
 - <a href="/docs/v5.7/reference/network-socket.html" target="_blank">Network Socket</a>: network sockets, Ethernet, Wi-Fi, cellular and mesh networking.
 - <a href="/docs/v5.7/reference/bluetooth.html" target="_blank">Bluetooth</a>: bluetooth low energy.
 - <a href="/docs/v5.7/reference/security.html" target="_blank">Security</a>: working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
-- <a href="/docs/v5.7/reference/storage.htmll" target="_blank">Storage</a>: working with the file system.
+- <a href="/docs/v5.7/reference/storage.html" target="_blank">Storage</a>: working with the file system.
 
 We also provide guidelines for <a href="/docs/v5.7/reference/contributing.html" target="_blank">contributing to Mbed OS</a>.
