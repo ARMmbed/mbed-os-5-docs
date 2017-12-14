@@ -6,14 +6,14 @@
 
 The NetworkSocketAPI is designed to make porting new devices as easy as possible and only requires a handful of methods for a minimal implementation.
 
-A new device must implement a <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/NetworkInterface.h" target="_blank">NetworkInterface</a>, with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
+A new device must implement a <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_network_interface.html" target="_blank">NetworkInterface</a>, with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
 
 The **DeviceInterface** should also inherit one of the following (unless it is an abstract device):
 
-- <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/EthInterface.h" target="_blank">EthInterface</a>.
-- <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/WiFiInterface.h" target="_blank">WiFiInterface</a>.
-- <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/CellularInterface.h" target="_blank">CellularInterface</a>.
-- <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/MeshInterface.h" target="_blank">MeshInterface</a>.
+- <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_eth_interface.html" target="_blank">EthInterface</a>.
+- <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_wi_fi_interface.html" target="_blank">WiFiInterface</a>.
+- <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_cellular_interface.html" target="_blank">CellularInterface</a>.
+- <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_mesh_interface.html" target="_blank">MeshInterface</a>.
 
 The **NetworkInterface** implementation provides the following methods:
 
