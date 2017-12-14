@@ -9,7 +9,7 @@ Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *rel
 - Hard to follow code flow when using a debugger.
 - Chip goes to sleep when idle:
     * Debugger is likely to drop connection.
-    * Breaks the local file system on the <a href="/docs/v5.7/introduction/how-mbed-works.html#architecture-diagram" target="_blank">Arm Mbed interface</a> on some boards.
+    * Breaks the local file system on the <a href="/docs/v5.7/introduction/index.html" target="_blank">Arm Mbed interface</a> on some boards.
 
 ### Debug profile
 
@@ -24,4 +24,4 @@ Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *rel
 - Minimal error information.
 - Chip goes to sleep when going idle:
     - Debugger is likely to drop connection.
-    - Breaks the local file system on the <a href="/docs/v5.7/introduction/how-mbed-works.html#architecture-diagram" target="_blank">Mbed interface</a> on some boards.
+    - Breaks the local file system on the <a href="/docs/v5.7/introduction/index.html" target="_blank">Mbed interface</a> on some boards.
