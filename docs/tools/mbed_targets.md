@@ -2,7 +2,7 @@
 
 Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. 
 
-<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use <a href="https://os.mbed.com/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI</a> to take your code offline.</span>
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use <a href="/docs/v5.6/tools/arm-mbed-cli.html" target="_blank">Mbed CLI</a> to take your code offline.</span>
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
