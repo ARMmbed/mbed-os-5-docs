@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ### Exporting from Arm Mbed CLI
 
-<a href="/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI</a> currently supports <a href="/docs/v5.6/tools/exporting.html#exporting-from-arm-mbed-cli" target="_blank">exporting</a> to all of the development environments mentioned above by using the `export` command.
+<a href="/docs/v5.6/tools/arm-mbed-cli.html" target="_blank">Mbed CLI</a> currently supports <a href="/docs/v5.6/tools/exporting.html#exporting-from-arm-mbed-cli" target="_blank">exporting</a> to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
