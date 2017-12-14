@@ -1,6 +1,6 @@
 ## Mbed OS reference book
 
-Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand. This section covers technical API details. To get started on Mbed OS, see our <a href="/docs/v5.7/tutorials/your-first-arm-mbed-application.html" target="_blank">getting started guide</a>.
+Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand. This section covers technical API details. To get started on Mbed OS, see our <a href="/docs/v5.7/tutorials/your-first-program.html" target="_blank">getting started guide</a>.
 
 Your application code is written in C++. Your code uses the application programming interfaces (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces a lot of the challenges in getting started with microcontrollers.
 
