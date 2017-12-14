@@ -170,7 +170,7 @@ Image: ../threaded_blinky-out/threaded_blinky.bin
 
 ### The compile configuration system
 
-The <a href="/docs/v5.6/tools/the-configuration-system.html" target="_blank">compile configuration system</a> provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
+The <a href="/docs/v5.6/tools/configuring-tools.html" target="_blank">compile configuration system</a> provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
 #### Inspecting the configuration
 
