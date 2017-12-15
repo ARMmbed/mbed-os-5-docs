@@ -8,8 +8,6 @@ The HeartRateService class implements the Bluetooth Heart Rate service as define
 
 <span class="note"> **Note:** The Bluetooth Heart Rate Service is part of the <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=239865" target="_blank">Bluetooth Heart Rate Profile</a>, which defines behaviors that a Bluetooth heart rate sensor expects. You must ensure that your application conforms to the heart rate profile to guarantee interoperability of your heart rate sensors.</span>
 
-### HeartRateService class reference
-
 ### HeartRateService example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/file/307bde0f868f/source/main.cpp)
