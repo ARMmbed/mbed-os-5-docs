@@ -4,10 +4,6 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for build
 
 Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many Mbed <a href="https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3" target="_blank">targets and components</a> support Mbed BLE. Developers can use it to create new BLE enabled applications.
 
-### BLE class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/namespaceble.html)
-
 ### Usage
 
 1. Set up advertising and connection modes.
