@@ -6,8 +6,6 @@ The iBeacon class builds an advertising payload mimicking an iBeacon and assigns
 
 <span class="warnings"> **Warning:** If you are interested in manufacturing iBeacons, you must obtain a license from Apple. For more information, please see <a href="https://developer.apple.com/ibeacon/" target="_blank">Apple's website</a>. The licence also grants access to the iBeacon's technical specification.</span>
 
-### iBeacon class reference
-
 ### iBeacon example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/file/863f3fea9978/source/main.cpp)
