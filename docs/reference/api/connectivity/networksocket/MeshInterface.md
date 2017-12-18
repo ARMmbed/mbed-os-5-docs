@@ -7,6 +7,12 @@ The Arm Mbed mesh API allows the application to use the IPv6 mesh network topolo
 * The applications do not use this module directly. The applications use `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
 * When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network.
 
+**Network connection states**
+
+After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
+
+In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the application is allowed to attempt connecting again.
+
 ### Mesh class reference
 
 **LoWPANNDInterface**
