@@ -22,13 +22,13 @@ Visit the mbed-os [blinky example repository](https://developer.mbed.org/teams/m
 </span>
 
 #### Compile
-Click on the "Compile" button, your browser will then download the program as a `.bin` file.
+Click on the "Compile" button, your browser will then download the program as a executable file.
 
 <span class="images">![](https://sarahmarshy.github.io/img/compile.png)
 </span>
 
 #### Program
-Open the folder where the `.bin` file was downloaded, then click and drag (or copy and paste) the file to your mbed board's USB device folder.
+Open the folder where the executable file was downloaded, then click and drag (or copy and paste) the file to your mbed board's USB device folder.
 
 Once the file has been flashed to the board, press the board's "reset" button and you should now see the LED blinking.
 
@@ -66,7 +66,7 @@ Run `ls /dev/tty.*` from your command line.
 
 - Documentation
 	- [Mbed OS API's](https://os.mbed.com/docs/v5.6/reference/apis.html) - List of all API's available in Mbed OS
-	- [Peripheral Drivers](https://os.mbed.com/docs/v5.6/reference/drivers.html) - Traditional Driver API's (I2C, SPI, UART, ... etc)
+	- [Peripheral Drivers](https://os.mbed.com/docs/v5.6/reference/drivers.html) - IO Driver API's (I2C, SPI, UART, ... etc)
 
 - Tutorials
 	- [Advanced Debugging](https://os.mbed.com/docs/v5.6/tutorials/debugging.html)

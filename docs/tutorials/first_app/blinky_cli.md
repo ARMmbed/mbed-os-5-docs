@@ -13,18 +13,22 @@ Download and run the [mbed CLI Windows .exe installer](https://github.com/ARMmbe
 
 You can check to make sure the mbed CLI installed correctly by running `mbed help`.
 
-**Note:** the Windows installer only installs the ARM GCC toolchain, if you would like to compile using the ARM Compiler 5 or IAR, visit the links below:
-
-  * [ARMCC ](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5)  
-  * [IAR](https://www.iar.com/iar-embedded-workbench/tools-for-arm/)  
+**Note:** the Windows installer only installs the GNU Arm embedded toolchain, if you would like to compile using the ARM Compiler 5 or IAR visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).
 
 ##### 2. Setup Environment
 
-Make sure the compiler is available in your global path:
+For any toolchain that is installed make sure to add the Mbed CLI global config:
+```
+> mbed config -G ARM_PATH <path to ARM bin\>"
+[mbed] <path to ARM bin\> now set as global ARM_PATH
 
-  * ARM GCC: run `arm-none-eabi-gcc --version` from your command line
-  * ARMCC:  run `armcc` with no arguments from your command line
-  * IAR: run `iccarm --version` from your command line
+> mbed config --list
+[mbed] Global config:
+ARM_PATH=<path to ARM bin\>
+
+```
+
+**Note:** The same config can also be applied to IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`
 
 #### Mac OSX
 
@@ -38,9 +42,7 @@ To install Pip, run `sudo easy_install pip` from your command line.
 
 Download and install a compiler:
 
-  * [ARM GCC ](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)  
-  * [ARMCC ](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5)  
-  * [IAR](https://www.iar.com/iar-embedded-workbench/tools-for-arm/)  
+**Note:** To download the latest toolchains visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).
 
 ##### 3. Install mbed CLI
 
@@ -50,11 +52,18 @@ You can check to make sure the mbed CLI installed correctly by running `mbed hel
 
 ##### 4. Setup Environment
 
-Make sure the compiler is available in your global path:
+For any toolchain that is installed make sure to add the Mbed CLI global config:
+```
+$ mbed config -G ARM_PATH <path to ARM bin\>"
+[mbed] <path to ARM bin\> now set as global ARM_PATH
 
-  * ARM GCC: run `arm-none-eabi-gcc --version` from your command line
-  * ARMCC:  run `armcc` with no arguments from your command line
-  * IAR: run `iccarm --version` from your command line
+$ mbed config --list
+[mbed] Global config:
+ARM_PATH=<path to ARM bin\>
+
+```
+
+**Note:** The same config can also be applied to IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`
 
 #### Linux 
 
@@ -72,9 +81,7 @@ $ sudo apt-get update
 
 Download and install a compiler:
 
-  * [ARM GCC ](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)  
-  * [ARMCC ](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5)  
-  * [IAR](https://www.iar.com/iar-embedded-workbench/tools-for-arm/)  
+**Note:** To download the latest toolchains visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).
 
 ##### 3. Install mbed CLI
 
@@ -84,11 +91,18 @@ You can check to make sure the mbed CLI installed correctly by running `mbed hel
 
 ##### 4. Setup Environment
 
-Make sure the compiler is available in your global path:
+For any toolchain that is installed make sure to add the Mbed CLI global config:
+```
+$ mbed config -G ARM_PATH <path to ARM bin\>"
+[mbed] <path to ARM bin\> now set as global ARM_PATH
 
-  * ARM GCC: run `arm-none-eabi-gcc --version` from your command line
-  * ARMCC:  run `armcc` with no arguments from your command line
-  * IAR: run `iccarm --version` from your command line
+$ mbed config --list
+[mbed] Global config:
+ARM_PATH=<path to ARM bin\>
+
+```
+
+**Note:** The same config can also be applied to IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`
 
 ### Code
 
@@ -120,10 +134,10 @@ After the program has been flashed to the board, press the board's "reset" butto
 
 #### Desktop IDE
 
-To debug using a desktop IDE such as Keil uVision, IAR, or Eclipse you can use the `mbed export` command to generate project files. For example, for a K6F and Keil uVision:
+To debug using a desktop IDE such as Keil uVision, IAR, or Eclipse you can use the `mbed export` command to generate project files. For example, for a K64F and Keil uVision:
 
 ```console
-$ mbed export -i uvision -m K64F
+$ mbed export --ide uvision --target K64F
 ```  
 **NOTE** for a full list of exporters supported run the `mbed export --supported` command. 
 
@@ -138,7 +152,7 @@ Invoke `mbed detect` from your command line to determine which communication por
 
 - Documentation
   - [Mbed OS API's](https://os.mbed.com/docs/v5.6/reference/apis.html) - List of all API's available in Mbed OS
-  - [Peripheral Drivers](https://os.mbed.com/docs/v5.6/reference/drivers.html) - Traditional Driver API's (I2C, SPI, UART, ... etc)
+  - [Peripheral Drivers](https://os.mbed.com/docs/v5.6/reference/drivers.html) - IO Driver API's (I2C, SPI, UART, ... etc)
 
 - Tutorials
   - [Advanced Debugging](https://os.mbed.com/docs/v5.6/tutorials/debugging.html)
