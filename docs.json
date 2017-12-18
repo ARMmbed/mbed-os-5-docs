@@ -138,6 +138,10 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/PlatformMutex.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/CircularBuffer.md"
                             },
                             {
