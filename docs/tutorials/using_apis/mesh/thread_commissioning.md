@@ -14,7 +14,7 @@ Commissioning a Thread device requires:
 - A Thread-capable end device.
 
 A model network setup could look like this:
-<span class="images"> https://github.com/ashok-rao/Handbook/blob/new_engine/docs/images/Thread_network_setup.PNG <span> Sample network setup </span> </span>
+<span class="images"> /docs/images/Thread_network_setup.PNG <span> Sample network setup </span> </span>
 
 #### Building the end node application
 
