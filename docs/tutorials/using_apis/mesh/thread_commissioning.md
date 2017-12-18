@@ -13,6 +13,9 @@ Commissioning a Thread device requires:
   - A PC and border router with IPv6 addressess assigned to them from the Wi-Fi access point.
 - A Thread-capable end device.
 
+A model network setup could look like this:
+<span class="images"> https://github.com/ashok-rao/Handbook/blob/new_engine/docs/images/Thread_network_setup.PNG <span> Sample network setup </span> </span>
+
 #### Building the end node application
 
 By default, the Mbed Thread applications/examples use the static network link configuration defined in the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json" target="_blank">mesh-api configuration file</a>. If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the <a href="https://github.com/ARMmbed/mbed-os-example-mesh-minimal" target="_blank">mesh-minimal</a> application as an example.
