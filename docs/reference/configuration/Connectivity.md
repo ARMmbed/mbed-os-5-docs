@@ -118,4 +118,102 @@ Name: nsapi.present
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_PRESENT
     Value: 1 (set by library:nsapi)
+
+Name: mbed-mesh-api.6lowpan-nd-channel
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_CHANNEL
+    Value: 12 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-channel-mask
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_CHANNEL_MASK
+    Value: (1<<12) (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-channel-page
+    Defined by: library:mbed-mesh-api
+    No value set
+Name: mbed-mesh-api.6lowpan-nd-device-type
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_DEVICE_TYPE
+    Value: NET_6LOWPAN_ROUTER (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-panid-filter
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_PANID_FILTER
+    Value: 0xffff (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-psk-key
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_PSK_KEY
+    Value: {0xa0, 0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7, 0xa8, 0xa9, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xaf} (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-psk-key-id
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_PSK_KEY_ID
+    Value: 1 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-sec-level
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_SEC_LEVEL
+    Value: 5 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.6lowpan-nd-security-mode
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_6LOWPAN_ND_SECURITY_MODE
+    Value: NONE (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.heap-size
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_HEAP_SIZE
+    Value: 32500 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-channel
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_CHANNEL
+    Value: 22 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-channel-mask
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_CHANNEL_MASK
+    Value: 0x7fff800 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-channel-page
+    Defined by: library:mbed-mesh-api
+    No value set
+Name: mbed-mesh-api.thread-config-commissioning-dataset-timestamp
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_COMMISSIONING_DATASET_TIMESTAMP
+    Value: 0x10000 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-extended-panid
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_EXTENDED_PANID
+    Value: {0xf1, 0xb5, 0xa1, 0xb2,0xc4, 0xd5, 0xa1, 0xbd } (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-ml-prefix
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_ML_PREFIX
+    Value: {0xfd, 0x0, 0x0d, 0xb8, 0x0, 0x0, 0x0, 0x0} (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-network-name
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_NETWORK_NAME
+    Value: "Thread Network" (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-panid
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_PANID
+    Value: 0x0700 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-config-pskc
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_CONFIG_PSKC
+    Value: {0xc8, 0xa6, 0x2e, 0xae, 0xf3, 0x68, 0xf3, 0x46, 0xa9, 0x9e, 0x57, 0x85, 0x98, 0x9d, 0x1c, 0xd0} (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-device-type
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_DEVICE_TYPE
+    Value: MESH_DEVICE_TYPE_THREAD_ROUTER (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-master-key
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_MASTER_KEY
+    Value: {0x10, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff} (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-pskd
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_PSKD
+    Value: "abcdefghijklmno" (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-security-policy
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_SECURITY_POLICY
+    Value: 255 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.thread-use-static-link-config
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_THREAD_USE_STATIC_LINK_CONFIG
+    Value: 1 (set by library:mbed-mesh-api)
+Name: mbed-mesh-api.use-malloc-for-heap
+    Defined by: library:mbed-mesh-api
+    No value set
 ```
