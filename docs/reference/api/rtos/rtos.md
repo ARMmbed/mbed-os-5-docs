@@ -2,7 +2,7 @@
 
 The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check <a href="https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf" target="_blank">the Keil CMSIS-RTOS tutorial</a> and <a href="https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview" target="_blank">the element14 introduction to Keil RTX</a>. You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
 
-The code of the Mbed RTOS can be found in the <a href="https://github.com/ARMmbed/mbed-os" target="_blank">`mbed-os`</a> repository, in the <a href="https://github.com/ARMmbed/mbed-os/tree/master/rtos" target="_blank">RTOS subdirectory</a>. See <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__rtos.html" target="_blank">the Doxygen</a> for more information.
+The code of the Mbed RTOS can be found in the <a href="https://github.com/ARMmbed/mbed-os" target="_blank">`mbed-os`</a> repository, in the <a href="https://github.com/ARMmbed/mbed-os/tree/master/rtos" target="_blank">RTOS subdirectory</a>. See <a href="https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/group__rtos.html" target="_blank">the Doxygen</a> for more information.
 
 #### SysTick
 
@@ -14,21 +14,21 @@ Mbed OS uses default SysTick source for most targets, but you can override that 
 
 The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5.
 
-- <a href="/docs/v5.6/reference/thread.html" target="_blank">Thread</a>: The class that allows defining, creating and controlling parallel tasks.
-- <a href="/docs/v5.6/reference/mutex.html" target="_blank">Mutex</a>: The class used to synchronize the execution of threads.
-- <a href="/docs/v5.6/reference/semaphore.html" target="_blank">Semaphore</a>: The class that manages thread access to a pool of shared resources of a certain type.
-- <a href="/docs/v5.6/reference/queue.html" target="_blank">Queue</a>: The class that allows you to queue pointers to data from producer threads to consumer threads.
-- <a href="/docs/v5.6/reference/memorypool.html" target="_blank">MemoryPool</a>: This class that you can use to define and manage fixed-size memory pools
-- <a href="/docs/v5.6/reference/mail.html" target="_blank">Mail</a>: The API that provides a queue combined with a memory pool for allocating messages.
-- <a href="/docs/v5.6/reference/rtostimer.html" target="_blank">RtosTimer</a>: A deprecated class used to control timer functions in the system.
-- <a href="/docs/v5.6/reference/eventflags.html" target="_blank">EventFlags</a>: An event channel that provides a generic way of notifying other threads about conditions or events.
-- <a href="/docs/v5.6/reference/event.html" target="_blank">Event</a>: The queue to store events, extract them and excute them later.
+- <a href="/docs/v5.7/reference/thread.html" target="_blank">Thread</a>: The class that allows defining, creating and controlling parallel tasks.
+- <a href="/docs/v5.7/reference/mutex.html" target="_blank">Mutex</a>: The class used to synchronize the execution of threads.
+- <a href="/docs/v5.7/reference/semaphore.html" target="_blank">Semaphore</a>: The class that manages thread access to a pool of shared resources of a certain type.
+- <a href="/docs/v5.7/reference/queue.html" target="_blank">Queue</a>: The class that allows you to queue pointers to data from producer threads to consumer threads.
+- <a href="/docs/v5.7/reference/memorypool.html" target="_blank">MemoryPool</a>: This class that you can use to define and manage fixed-size memory pools
+- <a href="/docs/v5.7/reference/mail.html" target="_blank">Mail</a>: The API that provides a queue combined with a memory pool for allocating messages.
+- <a href="/docs/v5.7/reference/rtostimer.html" target="_blank">RtosTimer</a>: A deprecated class used to control timer functions in the system.
+- <a href="/docs/v5.7/reference/eventflags.html" target="_blank">EventFlags</a>: An event channel that provides a generic way of notifying other threads about conditions or events.
+- <a href="/docs/v5.7/reference/event.html" target="_blank">Event</a>: The queue to store events, extract them and excute them later.
 
 ##### Default timeouts
 
 The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
 
-A typical scenario for a producer could be a peripheral triggering an interrupt to notify an event; in the corresponding interrupt service routine you cannot wait (this would deadlock the entire system). On the other side, the consumer could be a background thread waiting for events; in this case the desired default behaviour is not using CPU cycles until this event is produced, hence the `osWaitForever`.
+A typical scenario for a producer could be a peripheral triggering an interrupt to notify an event; in the corresponding interrupt service routine you cannot wait (this would deadlock the entire system). On the other side, the consumer could be a background thread waiting for events; in this case the desired default behavior is not using CPU cycles until this event is produced, hence the `osWaitForever`.
 
 <span class="warnings">**Warning**: No wait in ISR <br> When calling an RTOS object method in an ISR, all the timeout parameters must be set to 0 (no wait); waiting in ISR is not allowed. </span>
 

@@ -2,11 +2,11 @@
 
 The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
-<span class="tips">**Tip:** Please also read the <a href="/docs/v5.6/reference/guidelines.html#cla" target="_blank">CLA</a> and <a href="/docs/v5.6/reference/guidelines.html#workflow" target="_blank">workflow</a> sections for a review of the process and legal requirements.</span>
+<span class="tips">**Tip:** Please also read the <a href="/docs/v5.7/reference/guidelines.html#cla" target="_blank">CLA</a> and <a href="/docs/v5.7/reference/guidelines.html#workflow" target="_blank">workflow</a> sections for a review of the process and legal requirements.</span>
 
 #### Code acceptance
 
-<a href="/docs/v5.6/reference/guidelines.html#cla" target="_blank">After the CLA</a> is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
+<a href="/docs/v5.7/reference/guidelines.html#cla" target="_blank">After the CLA</a> is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
 #### Coding style
 

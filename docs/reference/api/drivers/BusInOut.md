@@ -1,6 +1,6 @@
 ## BusInOut
 
-Use the BusInOut interface as a bidirectional bus that supports up to 16 <a href="/docs/v5.6/reference/digitalinout.html" target="_blank">DigitalInOut</a> pins that you can read and write as one value.
+Use the BusInOut interface as a bidirectional bus that supports up to 16 <a href="/docs/v5.7/reference/digitalinout.html" target="_blank">DigitalInOut</a> pins that you can read and write as one value.
 
 You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
@@ -8,7 +8,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 ### BusInOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
 
 ### BusInOut Hello World!
 
@@ -16,4 +16,4 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 ### Related content
 
-- <a href="/docs/v5.6/reference/digitalinout.html" target="_blank">DigitalInOut</a> API reference.
+- <a href="/docs/v5.7/reference/digitalinout.html" target="_blank">DigitalInOut</a> API reference.
