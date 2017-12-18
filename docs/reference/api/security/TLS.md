@@ -2,7 +2,7 @@
 
 Arm Mbed TLS provides a comprehensive SSL/TLS solution and makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
-<span class="notes">**Note:** Mbed TLS needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our <a href="/docs/v5.6/reference/contributing-overview.html" target="_blank">porting guide</a>.</span>
+<span class="notes">**Note:** Mbed TLS needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our <a href="/docs/v5.7/reference/contributing.html" target="_blank">porting guide</a>.</span>
 
 ### Mbed TLS examples
 

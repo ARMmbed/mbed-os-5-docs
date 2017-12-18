@@ -1,8 +1,10 @@
-### Flash
+### Flash and bootloader
 
 Update target to support bootloader.
 
 1. Update linker script.
+1. Add required metadata to `targets.json`.
+1. Implement `mbed_start_application`.
 1. Implement flash HAL API.
 1. Verify changes with tests.
 
@@ -56,6 +58,10 @@ Bootloader-ready declaration of flash VTOR address:
     #error "Flash vector address not set for this toolchain"
 #endif
 ```
+
+#### `targets.json` metadata
+
+The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as <a href="https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">Adding and configuring targets</a> describes.
 
 #### Start application
 

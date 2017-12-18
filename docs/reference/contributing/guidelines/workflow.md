@@ -2,7 +2,7 @@
 
 #### Contributions
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs). In both cases, please follow the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the <a href="/docs/v5.6/reference/guidelines.html#cla" target="_blank">CLA</a> guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs). In both cases, please follow the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the <a href="/docs/v5.7/reference/guidelines.html#cla" target="_blank">CLA</a> guidelines because we will immediately close pull requests submitted without a CLA.
 
 #### Contributing new features to Mbed OS
 
@@ -10,7 +10,7 @@ Before contributing an enhancement (new feature, new port and so on), please <a 
 
 Patch contributions can only be accepted through GitHub by creating a pull request from forked versions of our repositories. This allows us to review the contributions in a user friendly and reliable way, under public scrutiny.
 
-Please create separate patches for each concern; each patch should have a clear unity of purpose. In particular, separate code formatting and style changes from functional changes. This makes each patch’s true contribution clearer and therefore quicker and easier to review.
+Please create separate pull requests for each concern; each pull request should have a clear unity of purpose. In particular, separate code formatting and style changes from functional changes. This makes each patch’s true contribution clearer and therefore quicker and easier to review.
 
 #### Reporting and fixing bugs
 
@@ -22,7 +22,7 @@ All Mbed OS is on GitHub; please use GitHub's <a href="https://guides.github.com
 
 ##### Bug fixes
 
-Please refer to the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code contributions chapter</a>.
+Please refer to the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code contributions chapter</a>.
 
 A member of the Mbed team must verify bug fixes before we pull the fixes into the main branch. You must therefore use GitHub to fork the repo and then submit a pull request with your changes.
 
@@ -30,7 +30,7 @@ The last line in your commit message description should say “Fixes #deadbeef�
 
 #### Further reading
 
-Please see the <a href="/docs/v5.6/reference/guidelines.html#style" target="_blank">code contributions chapter</a> for the guidelines to GitHub pull requests and the coding style guide.
+Please see the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code contributions chapter</a> for the guidelines to GitHub pull requests and the coding style guide.
 
 #### Guidelines for GitHub pull requests
 
@@ -49,6 +49,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 	1. Use the body to explain _what_ and _why_ vs _how_.
 - Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 - Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
+- All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and testing pull requests.
 
 #### Mbed OS maintainers
 

@@ -20,12 +20,12 @@ The `debug_if` function is similar to the `debug` function except that it takes 
 void *operator new(std::size_t count) {
     debug_if( count == 0, "\nnew called with 0 size");
     ...
-} 
+}
 ```
 ### Debug functions reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/mbed__debug_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/mbed__debug_8h_source.html)
 
 ### Debug example
 
-[![View Example](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/) 
+[![View Example](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp/)

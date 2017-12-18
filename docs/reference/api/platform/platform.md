@@ -2,18 +2,18 @@
 
 The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This section consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs:
 
-- <a href="/docs/v5.6/reference/wait.html" target="_blank">Wait</a>: An API that provides simple wait capabilities.
-- <a href="/docs/v5.6/reference/callback.html" target="_blank">Callback</a>: An API that executes the user’s code in its own context.
-- <a href="/docs/v5.6/reference/deepsleeplock.html" target="_blank">DeepSleepLock</a>: The sleep function for Mbed OS.
-- <a href="/docs/v5.6/reference/sleep-manager.html" target="_blank">SleepManager</a>: The function that provides an API to control sleep modes.
-- <a href="/docs/v5.6/reference/criticalsectionlock.html" target="_blank">CriticalSectionLock</a>: An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
-- <a href="/docs/v5.6/reference/time.html" target="_blank">Time</a>: A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- <a href="/docs/v5.6/reference/error.html" target="_blank">Error</a>: A functions that generates a fatal runtime error.
-- <a href="/docs/v5.6/reference/noncopyable.html" target="_blank">NonCopyable</a>: An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
-- <a href="/docs/v5.6/reference/circularbuffer.html" target="_blank">CircularBuffer</a>: The class that provides APIs to push and pop data from a buffer
-- <a href="/docs/v5.6/reference/atcmdparser.html" target="_blank">ATCmdParser</a>: An Mbed OS compatible AT command parser.
+- <a href="/docs/v5.7/reference/wait.html" target="_blank">Wait</a>: An API that provides simple wait capabilities.
+- <a href="/docs/v5.7/reference/callback.html" target="_blank">Callback</a>: An API that executes the user’s code in its own context.
+- <a href="/docs/v5.7/reference/deepsleeplock.html" target="_blank">DeepSleepLock</a>: The sleep function for Mbed OS.
+- <a href="/docs/v5.7/reference/sleep-manager.html" target="_blank">SleepManager</a>: The function that provides an API to control sleep modes.
+- <a href="/docs/v5.7/reference/criticalsectionlock.html" target="_blank">CriticalSectionLock</a>: An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
+- <a href="/docs/v5.7/reference/time.html" target="_blank">Time</a>: A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
+- <a href="/docs/v5.7/reference/error.html" target="_blank">Error</a>: A functions that generates a fatal runtime error.
+- <a href="/docs/v5.7/reference/noncopyable.html" target="_blank">NonCopyable</a>: An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
+- <a href="/docs/v5.7/reference/circularbuffer.html" target="_blank">CircularBuffer</a>: The class that provides APIs to push and pop data from a buffer
+- <a href="/docs/v5.7/reference/atcmdparser.html" target="_blank">ATCmdParser</a>: An Mbed OS compatible AT command parser.
 
-#### Callbacks
+<h4 id="callbacks">Callbacks</h4>
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
@@ -36,7 +36,7 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the <a href="/docs/v5.6/reference/platform.html#the-importance-of-state" target="_blank">Importance of State</a> section.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the <a href="/docs/v5.7/reference/platform.html#the-importance-of-state" target="_blank">Importance of State</a> section.
 
 #### Why should you use Callbacks?
 
@@ -209,7 +209,7 @@ public:
 
 <h4 id="the-importance-of-state">The importance of state</h4>
 
-A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the <a href="/docs/v5.6/reference/callback.html" target="_blank">technical callback documentation</a>.
+A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the <a href="/docs/v5.7/reference/callback.html" target="_blank">technical callback documentation</a>.
 
 ##### Why not function pointers?
 
@@ -293,7 +293,7 @@ int main() {
     adc1.attach(low_pass_step, &low_pass_result1);
 
     // Register a second low pass filter, no more issues!
-    adc2.attach(low_pass_step, &low_pass_result1);
+    adc2.attach(low_pass_step, &low_pass_result2);
 }
 ```
 

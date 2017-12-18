@@ -36,7 +36,7 @@ This test case is only discovered if the target being tested supports the BLE fe
 
 Generally, a test should not be placed under a `TARGET_` or `TOOLCHAIN_` directory because most tests should work for all target and toolchain configurations.
 
-Tests can also be completely ignored by using the `.mbedignore` file described in the <a href="/docs/v5.6/tools/ignoring-files-from-mbed-build.html" target="_blank">documentation</a>.
+Tests can also be completely ignored by using the `.mbedignore` file described in the <a href="/docs/v5.7/tools/ignoring-files-from-mbed-build.html" target="_blank">documentation</a>.
 
 ##### Test names
 
@@ -44,7 +44,7 @@ A test case is named from its position in your project's file structure. For ins
 
 #### Building tests
 
-You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the <a href="/docs/v5.6/tools/mbed-cli.html" target="_blank">CLI documentation</a>.
+You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the <a href="/docs/v5.7/tools/arm-mbed-cli.html" target="_blank">CLI documentation</a>.
 
 When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the <a href="https://github.com/ARMmbed/greentea#test-specification-json-formatted-input" target="_blank">Greentea documentation here</a>.
 
