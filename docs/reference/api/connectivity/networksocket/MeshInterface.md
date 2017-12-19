@@ -9,11 +9,7 @@ The Arm Mbed mesh API allows the application to use the IPv6 mesh network topolo
 
 ### Mesh class reference
 
-**LoWPANNDInterface**
-
-**ThreadInterface**
-
-**NanostackEthernetInterface**
+The mesh API references include the LoWPANNDINterface, ThreadInterface and NanostackEthernetInterface APIs, which will be included in the next Mbed OS update.
 
 ### Usage
 
