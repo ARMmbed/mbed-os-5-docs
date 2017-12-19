@@ -2,7 +2,7 @@
 
 This is a guide for adding exporters to the Arm Mbed OS tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
-<span class="notes">**Note:** All paths are relative to <a href="https://github.com/ARMmbed/mbed-os/" target="_blank">https://github.com/ARMmbed/mbed-os/</a>.</span>
+<span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
 
 #### What an exporter is
 
@@ -177,7 +177,7 @@ self.gen_file('my_makefile/Makefile.tmpl', ctx, 'Makefile')
 
 Now that you have a context object have passed control to the Jinja2 template rendering engine, you can look at the template Makefile, `tools/export/my_makefile/Makefile.tmpl`.
 
-For more information, please see the <a href="http://jinja.pocoo.org/docs/dev/templates/" target="_blank">documentation on what is available within a Jinja2 template</a>.
+For more information, please see the [documentation on what is available within a Jinja2 template](http://jinja.pocoo.org/docs/dev/templates/).
 
 ```make
 ###############################################################################
