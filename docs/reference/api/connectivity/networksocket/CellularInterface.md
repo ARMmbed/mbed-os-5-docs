@@ -6,7 +6,7 @@ Arm Mbed OS provides a <a href="https://github.com/ARMmbed/mbed-os/tree/master/f
 
 ### CellularBase class reference
 
-[![View code](http://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_cellular_base.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_cellular_base.html)
 
 ### Usage
 
