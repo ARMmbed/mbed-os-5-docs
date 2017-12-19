@@ -6,7 +6,7 @@ There are multiple <a href="https://os.mbed.com/components/cat/wifi/" target="_b
 
 ### Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_wi_fi_interface.html)
+[![View code](http://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ### Usage
 
