@@ -34,7 +34,7 @@ When you've started writing applications using your selected development tool:
 
 #### Contributing to Mbed OS
 
-If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.7/reference/contributing-overview.html).
+If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.7/reference/contributing.html).
 
 You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
 
