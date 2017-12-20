@@ -1,6 +1,6 @@
 <h2 id="contributing-storage">Storage</h2>
 
-Storage support is split between file systems and their underlying block device support. The [storage API page](/docs/v5.6/reference/storage-overview.html) has more information on existing APIs in Mbed OS for both interfaces.
+Storage support is split between file systems and their underlying block device support. The [storage API page](/docs/v5.7/reference/storage.html) has more information on existing APIs in Mbed OS for both interfaces.
 
 #### Block Device
 
