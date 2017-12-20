@@ -1,6 +1,6 @@
 ### RTOS
 
-CMSIS/RTX code is imported from <a href="https://github.com/ARM-software/CMSIS_5/" target="_blank">the original CMSIS repository</a>.
+CMSIS/RTX code is imported from [the original CMSIS repository](https://github.com/ARM-software/CMSIS_5/).
 
 #### Memory considerations
 

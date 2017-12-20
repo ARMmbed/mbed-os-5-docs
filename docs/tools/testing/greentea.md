@@ -6,11 +6,11 @@ _**G**eneric **re**gression **en**vironment for **te**st **a**utomation_
 
 Greentea is the automated testing tool for Arm Mbed OS development. It automates the process of flashing Mbed boards, driving the test and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
 
-This document should help you start using Greentea. Please see the <a href="https://github.com/ARMmbed/htrun" target="_blank">`htrun` documentation</a>, the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
+This document should help you start using Greentea. Please see the [`htrun` documentation](https://github.com/ARMmbed/htrun), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
 
 ### Prerequisites
 
-Greentea requires <a href="https://www.python.org/downloads/" target="_blank">Python version 2.7</a>. It supports the following OSes:
+Greentea requires [Python version 2.7](https://www.python.org/downloads/). It supports the following OSes:
 
 - Windows.
 - Linux (Ubuntu preferred).
@@ -570,7 +570,7 @@ $ mbedgt --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2
 
 Where `02400203C3423E603EBEC3D8` and `024002031E031E6AE3FFE3D` are the target IDs of platforms attached to your system.
 
-You can view target IDs using the <a href="https://github.com/ARMmbed/mbed-ls" target="_blank">`mbed-ls`</a> tool (installed with Greentea).
+You can view target IDs using the [`mbed-ls`](https://github.com/ARMmbed/mbed-ls) tool (installed with Greentea).
 
 ```
 $ mbedls
@@ -598,7 +598,7 @@ mbedgt --report-html html_report.html
 
 ##### JUnit
 
-This creates an XML JUnit report, which you can use with popular Continuous Integration software, such as <a href="https://jenkins.io/index.html" target="_blank">Jenkins</a>.
+This creates an XML JUnit report, which you can use with popular Continuous Integration software, such as [Jenkins](https://jenkins.io/index.html).
 
 ```
 mbedgt --report-junit junit_report.xml
@@ -622,4 +622,4 @@ mbedgt --report-text text_report.text
 
 ### Host test detection
 
-When developing with Mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in Mbed OS are placed under a `TESTS` directory. You may place custom host test scripts in a folder named `host_tests` in this folder. For more information about the Mbed OS test directory structure, please see the <a href="/docs/v5.6/tools/test-and-debug.html#test-directory-structure" target="_blank">Arm Mbed CLI documentation</a>.
+When developing with Mbed OS, Greentea detects host tests automatically if you place them in the correct location. All tests in Mbed OS are placed under a subdirectory of a `TESTS` directory. For example, the queue case in the event suite is in the `TESTS/events/queue` directory, and a test in `TESTS/events` would not be detected. You may place custom host test scripts in a folder named `host_tests` in the `TESTS` folder. For more information about the Mbed OS test directory structure, please see the [Arm Mbed CLI documentation](/docs/v5.7/tools/test-and-debug.html#test-directory-structure).

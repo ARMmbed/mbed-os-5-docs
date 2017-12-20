@@ -19,7 +19,7 @@ cd ..
 
 #### Target description
 
-Add the target description to `mbed-os\targets\targets.json`:
+Add the target description to `mbed-os\targets\targets.json` using keys that the [Adding and configuring targets section](/docs/v5.7/tools/adding-and-configuring-targets.html) describes. We recommend that you run the [targets lint script](/docs/v5.7/tools/adding-and-configuring-targets.html#style-guide) on your target hierarchy before submitting your pull request:
 
 ``` json
 "MCU_NAME": {

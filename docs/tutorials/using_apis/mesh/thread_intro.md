@@ -15,7 +15,7 @@ The Thread stack is built on IPv6 over Low power Wireless Personal Area Networks
 
 ![Thread_image](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_arch.png)
 
-Read more at the <a href="http://www.threadgroup.org/" target="_blank">Thread Group site</a>.
+Read more at the [Thread Group site](http://www.threadgroup.org/).
 
 #### Why Mbed OS with Thread stack
 
@@ -31,12 +31,12 @@ The key elements of Mbed OS are:
 - Mbed RTOS (Arm CMSIS-RTOS) providing the real time software execution.
 - Toolchain and IDE support.
 
-Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the <a href="/docs/v5.6/reference/mesh.html" target="_blank">Mesh C++ API</a> for building Thread applications.
+Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](/docs/v5.6/reference/mesh.html) for building Thread applications.
 
-- To connect to the Thread network, use the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h" target="_blank">Thread interface API</a>.
-- For the socket communication over the Thread network, use the <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">Mbed sockets API</a>.
+- To connect to the Thread network, use the [Thread interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h).
+- For the socket communication over the Thread network, use the [Mbed sockets API](/docs/v5.7/reference/network-socket.html).
 
-Nanostack provides a set of C API headers with more functionalities. The <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack" target="_blank">nanostack repository</a> has the following header files():
+Nanostack provides a set of C API headers with more functionalities. The [nanostack repository](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack) has the following header files():
 
 - `thread_management_if.h` for initializing the stack and managing the network data.
 - `thread_commissioning_api.h` for implementing an on-mesh or a native Thread commissioner.
@@ -57,7 +57,7 @@ In addition the Nanostack API allows you to define the Full end device (FED) dev
 
 In most cases, the REED, MED and SED configurations are enough to build a network. In a SED device, the radio is switched off during the sleep times. To take the full advantage of the SED configuration, the application developer must implement the sleep procedures in the device.
 
-For an end device or a router example, see <a href="https://github.com/ARMmbed/mbed-os-example-mesh-minimal" target="_blank">mesh minimal example</a>.
+For an end device or a router example, see [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
 #### End devices
 
@@ -98,7 +98,7 @@ Additionally, a router can act as a border router (must be configured in build t
 
 Mbed OS offers a separate build for a Thread border router. The border router routes IPv6 traffic to the external IPv6 networks. Currently, our border router uses an Ethernet connection to the backbone IP network, but also other means of connectivity are available (cellular or WiFi).
 
-See an example of a <a href="https://github.com/ARMmbed/nanostack-border-router" target="_blank">Thread border router</a>.
+See an example of a [Thread border router](https://github.com/ARMmbed/nanostack-border-router).
 
 #### Commissioning
 
@@ -134,9 +134,9 @@ Now, the Thread network is ready to accept new joiner devices.
 
 #### How to start on Mbed OS
 
-The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the <a href="https://github.com/ARMmbed/nanostack-border-router" target="_blank">Nanostack border router</a>. An external <a href="https://play.google.com/store/apps/details?id=org.threadgroup.commissioner" target="_blank">Commissioning application</a> (Android) is already available. Also an IOS version will be available soon.
+The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the [Nanostack border router](https://github.com/ARMmbed/nanostack-border-router). An external [Commissioning application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) (Android) is already available. Also an IOS version will be available soon.
 
-See <a href="/docs/v5.6/tutorials/using-the-apis.html#how-to-commission-a-thread-device-in-practise" target="_blank">Thread commissioning guide</a> how to commission a Thread device to the network in practise.
+See [Thread commissioning guide](/docs/v5.6/tutorials/using-the-apis.html#how-to-commission-a-thread-device-in-practise) how to commission a Thread device to the network in practise.
 
 #### The maturity of the Mbed OS Thread implementation
 

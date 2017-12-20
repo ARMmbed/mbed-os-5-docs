@@ -6,4 +6,4 @@ At this point, we should be able to compile a handful of tests:
 
 ``mbed test -m BOARD_NAME --compile -t <toolchain>``
 
-To execute the tests, you need to support <a href="https://github.com/armmbed/mbed-ls" target="_blank">`mbed-ls`</a>.
+To execute the tests, you need to support [`mbed-ls`](https://github.com/armmbed/mbed-ls).

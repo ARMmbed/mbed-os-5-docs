@@ -153,8 +153,8 @@ Once the docs are generated, the navigation tree is refreshed, and you can see t
 
 Doxygen is the core of the documentation generation in the Arm Mbed ecosystem:
 
-- Doxygen is compatible with Javadoc and other documentation styles. Refer to the <a href="http://www.stack.nl/~dimitri/doxygen/manual.html" target="_blank">Doxygen manual</a> for more information.
+- Doxygen is compatible with Javadoc and other documentation styles. Refer to the [Doxygen manual](http://www.stack.nl/~dimitri/doxygen/manual.html) for more information.
 
 - Doxygen won't process the `main.cpp` file unless referenced in another file using `/** @file main.cpp */` markup. It's generally a good idea to split definitions and defines into library (libraries) instead; do not rely on ``main.cpp`` file documentation.
 
-- Doxygen can process comments located right next to definitions and declarations, and also at other places. Refer to <a href="http://www.stack.nl/~dimitri/doxygen/docblocks.html#structuralcommands" target="_blank">documentation at other places</a> in the Doxygen manual.
+- Doxygen can process comments located right next to definitions and declarations, and also at other places. Refer to [documentation at other places](http://www.stack.nl/~dimitri/doxygen/docblocks.html#structuralcommands) in the Doxygen manual.

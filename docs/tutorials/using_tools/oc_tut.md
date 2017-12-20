@@ -96,7 +96,7 @@ The **Compile** menu offers five options:
 
 ### Copying the file to the board
 
-<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the <a href="/docs/v5.6/tutorials/serial-communication.html" target="_blank">Windows Serial Driver section</a>.</span>
+<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](/docs/v5.6/tutorials/serial-communication.html).</span>
 
 Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
 
@@ -122,13 +122,13 @@ Unless you are the author of the imported repository or have developer access, y
 
 1. Your repository, with all its changes, is published to your profile on the `mbed.org` website.
 
-The forking process is identical to the <a href="/docs/v5.6/tutorials/publishing-code.html" target="_blank">code publishing</a> workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
+The forking process is identical to the [code publishing](/docs/v5.6/tutorials/publishing-code.html) workflow, with the exception that the forked repository will be recognized as a fork of the original or imported one:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fork_indication.png)<span>Identifying a forked repository and its ancestor</span></span>
 
 <span class="notes">**Note:** When you fork a repository, the local repository in your workspace is linked to the forked remote repository - the URL changes to the forked repository's URL. You can change the URL by clicking the pencil icon next to the URL in the Revisions panel.</span>
 
-**Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the <a href="/docs/v5.6/tutorials/pr-tutorial.html" target="_blank">Pull requests</a> page.**
+**Once the fork is complete, you can send a *pull request*, asking the ancestor (imported) repository to pull from your fork. This is covered in the [Pull requests](/docs/v5.6/tutorials/pr-tutorial.html) page.**
 
 ### Updating from a fork
 

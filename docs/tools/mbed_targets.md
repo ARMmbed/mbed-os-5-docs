@@ -1,8 +1,8 @@
 ## Adding and configuring targets
 
-Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. 
+Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets.
 
-<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use <a href="https://os.mbed.com/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI</a> to take your code offline.</span>
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) to take your code offline.</span>
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
@@ -77,13 +77,15 @@ Avoid using multiple inheritance for your targets. If you use multiple inheritan
 1. If not found, look for the property in the first target's parent, then in the parent of the parent and so on.
 1. If not found, look for the property in the rest of the target's parents, relative to the current inheritance level.
 
-For more details about the Python method resolution order, please see <a href="http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path" target="_blank">this Python tutorial</a>.
+For more details about the Python method resolution order, please see [this Python tutorial](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
 
 #### `core`
 
 The name of the target's Arm core.
 
-Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`
+Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`, `"Cortex-M23"`, `"Cortex-M23-NS"`, `"Cortex-M33"`, `"Cortex-M33-NS"`
+
+<span class="notes">**Note:** Mbed OS supports v8-M architecture (Cortex-M23 and Cortex-M33) devices only with the `GCC_ARM` toolchain.</span>
 
 #### `public`
 
@@ -141,7 +143,7 @@ The following features, also recognized by the build system, are all Nanostack c
  - `THREAD_END_DEVICE`.
  - `THREAD_ROUTER`.
  - `ETHERNET_HOST`.
- 
+
 The build system errors when you use features outside of this list.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
@@ -195,7 +197,29 @@ The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
-Please see <a href="/docs/v5.6/tools/exporting.html" target="_blank">our exporting page</a> for information about this field.
+We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description](http://www.keil.com/pack/doc/CMSIS/Pack/html/)</a> retrieved from each CMSIS Pack.
+
+The [`"device_name"`](/docs/v5.7/reference/contributing-target.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+
+[http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 156 of the `.pdsc` file:
+
+```xml
+<device Dname="MK20DX256xxx7">
+  <processor Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="72000000"/>
+  <compile header="Device\Include\MK20D7.h"  define="MK20DX256xxx7"/>
+  <debug      svd="SVD\MK20D7.svd"/>
+  <memory     id="IROM1"                      start="0x00000000"  size="0x40000"    startup="1"   default="1"/>
+  <memory     id="IROM2"                      start="0x10000000"  size="0x8000"     startup="0"   default="0"/>
+  <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+  <memory     id="IRAM2"                      start="0x1FFF8000"  size="0x8000"     init   ="0"   default="0"/>
+  <algorithm  name="Flash\MK_P256.FLM"        start="0x00000000"  size="0x40000"                  default="1"/>
+  <algorithm  name="Flash\MK_D32_72MHZ.FLM"   start="0x10000000"  size="0x8000"                   default="1"/>
+  <book name="Documents\K20P100M72SF1RM.pdf"         title="MK20DX256xxx7 Reference Manual"/>
+  <book name="Documents\K20P100M72SF1.pdf"           title="MK20DX256xxx7 Data Sheet"/>
+</device>
+```
+
+The `device_name` key in `targets.json` is `MK20DX256xxx7` for any target that uses this particular MCU.
 
 #### `OUTPUT_EXT`
 
@@ -302,7 +326,7 @@ For each of these target roles, some restrictions are in place:
 
 The linting script takes three subcommands: `targets`, `all-targets` and `orphans`.
 
-##### `targets` and `all-targets` commands 
+##### `targets` and `all-targets` commands
 
 The `targets` and `all-targets` commands both show errors within public inheritance hierarchies. For example:
 

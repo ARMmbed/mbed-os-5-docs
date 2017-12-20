@@ -7,12 +7,12 @@ This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB,
 ### Suggested tools
 
   - Linux (4.1), but pyOCD and GDB work on Windows and Mac OS.
-  - pyOCD (0.4.5), which you can obtain on <a href="https://github.com/mbedmicro/pyOCD" target="_blank">GitHub</a>.
-  - arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at <a href="https://launchpad.net/gcc-arm-embedded" target="_blank">linaro</a>.
+  - pyOCD (0.4.5), which you can obtain on [GitHub](https://github.com/mbedmicro/pyOCD).
+  - arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at [linaro](https://launchpad.net/gcc-arm-embedded).
 
 ### Looking at a basic program
 
-Look at `hello.hex`, a program printing "hello world" to the serial console. You can find the hex file at <a href="https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex" target="_blank">hello.hex</a>.
+Look at `hello.hex`, a program printing "hello world" to the serial console. You can find the hex file at [hello.hex](https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex).
 
 <span class="notes">**Note:** Shell commands begin with `$`, GDB commands with `(gdb)`.</span>
 
@@ -78,7 +78,7 @@ You can now start executing the image. Except for a hardfault, it should keep ro
     Program received signal SIGINT, Interrupt.
     0x0001f31e in ?? ()
 
-This address already gives away a precious bit of information: you reached the application code. If you're using the S110 SoftDevice, the application is located after address 0x18000. You can verify this using a tool such as <a href="http://srecord.sourceforge.net/" target="_blank">srec_info</a>:
+This address already gives away a precious bit of information: you reached the application code. If you're using the S110 SoftDevice, the application is located after address 0x18000. You can verify this using a tool such as [srec_info](http://srecord.sourceforge.net/):
 
     $ srec_info hello.hex -intel
     Format: Intel Hexadecimal (MCS-86)
@@ -184,7 +184,7 @@ The new string appears on your console.
 
 #### Investigating the actual bug
 
-After analyzing Arm Mbed's <a href="https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html" target="_blank">serial API</a>, you see that the Serial class inherits from SerialBase. From the assembly point of view, calling `serial_instance.printf(string)` is, in essence, like calling `Serial::printf(serial_instance, string)`. You saw previously that the instance's address is `r0 = 0x20002880`.
+After analyzing Arm Mbed's [serial API](https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling `serial_instance.printf(string)` is, in essence, like calling `Serial::printf(serial_instance, string)`. You saw previously that the instance's address is `r0 = 0x20002880`.
 
 Because of the way the C++ compiler handles inheritance, the Serial class data looks like this in the memory:
 

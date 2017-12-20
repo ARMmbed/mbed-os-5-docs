@@ -13,7 +13,7 @@ The main things you can do with a local repository are:
  * **Switch** and **revert** to a different version.
  * **Branch** and **merge** versions.
 
-<span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the <a href="/docs/v5.6/tools/collab-online-comp.html" target="_blank">Collaboration page</a>.</span>
+<span class="tips">**Tip:** You can also collaborate with others using version control: fork, push, pull, send pull request. These are covered in the [Collaboration page](/docs/v5.7/tools/collab-online-comp.html).</span>
 
 ### Video tutorial
 
@@ -43,5 +43,5 @@ This synchronization mechanism ensures that the imported repository and all its 
 
 To ensure that a repository can be imported successfully, you must:
 
- - Publish all subrepositories (even sub-subrepositories) on <a href="https://os.mbed.com" target="_blank">`os.mbed.com`</a>.
+ - Publish all subrepositories (even sub-subrepositories) on [`os.mbed.com`](https://os.mbed.com).
  - Leave no uncommitted or unpublished changes in any subrepository.

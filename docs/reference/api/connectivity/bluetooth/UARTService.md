@@ -4,7 +4,7 @@
 
 ### UARTService class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_u_a_r_t_service.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_u_a_r_t_service.html)
 
 ### UARTService example
 

@@ -12,7 +12,7 @@ The Arm Mbed Hardware Development Kit (Mbed HDK) is a collection of hardware des
 
 #### Repository content and projects
 
-The <a href="https://github.com/ARMmbed/mbed-hdk" target="_blank">`mbed-hdk`</a> repository offers:
+The [`mbed-hdk`](https://github.com/ARMmbed/mbed-hdk) repository offers:
 
 - CAD resources in Eagle 7.3.0 format:
     - Mbed HDK component library.

@@ -36,7 +36,7 @@ This test case is only discovered if the target being tested supports the BLE fe
 
 Generally, a test should not be placed under a `TARGET_` or `TOOLCHAIN_` directory because most tests should work for all target and toolchain configurations.
 
-Tests can also be completely ignored by using the `.mbedignore` file described in the <a href="/docs/v5.6/tools/ignoring-files-from-mbed-build.html" target="_blank">documentation</a>.
+Tests can also be completely ignored by using the `.mbedignore` file described in the [documentation](/docs/v5.7/tools/ignoring-files-from-mbed-build.html).
 
 ##### Test names
 
@@ -44,9 +44,9 @@ A test case is named from its position in your project's file structure. For ins
 
 #### Building tests
 
-You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the <a href="/docs/v5.6/tools/mbed-cli.html" target="_blank">CLI documentation</a>.
+You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the [CLI documentation](/docs/v5.7/tools/arm-mbed-cli.html).
 
-When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the <a href="https://github.com/ARMmbed/greentea#test-specification-json-formatted-input" target="_blank">Greentea documentation here</a>.
+When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the [Greentea documentation here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
 ##### Building process
 
@@ -71,13 +71,13 @@ If you need to test with multiple configurations, you can use the `--app-config`
 
 You can run automated tests through Mbed CLI.
 
-The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the <a href="https://github.com/ARMmbed/greentea#test-specification-json-formatted-input" target="_blank">test specification format</a>.
+The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
-The Greentea tool handles the actual testing process. To read more about this tool, please visit its <a href="https://github.com/ARMmbed/greentea" target="_blank">GitHub repository</a>.
+The Greentea tool handles the actual testing process. To read more about this tool, please visit its [GitHub repository](https://github.com/ARMmbed/greentea).
 
 #### Writing tests
 
-You can write tests for your own project, or add more tests to Mbed OS. You can write tests using the <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client" target="_blank">Greentea client</a>, <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity" target="_blank">UNITY</a> and <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest" target="_blank">utest</a> frameworks, located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
+You can write tests for your own project, or add more tests to Mbed OS. You can write tests using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client), [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
 
 ```c++
 #include "mbed.h"
@@ -118,7 +118,7 @@ int main() {
 }
 ```
 
-This test first runs a case that succeeds, then a case that fails. This is a good template to use when creating tests. For more complex testing examples, please see the documentation for <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest" target="_blank">utest</a>.
+This test first runs a case that succeeds, then a case that fails. This is a good template to use when creating tests. For more complex testing examples, please see the documentation for [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest).
 
 ### Debugging tests
 
@@ -148,7 +148,7 @@ Assuming your test was exported correctly to your IDE, build the project, and lo
 
 Bring the target out of reset, and run the program. Your target waits for the test tools to send a synchronizing character string over the serial port. Do not run the `mbed test` commands because that will attempt to flash the device, which you've already done with your IDE.
 
-Instead, you can use the underlying test tools to drive the test. <a href="https://github.com/ARMmbed/htrun" target="_blank">`htrun`</a> is the tool you need to use in this case. Install the requirements for Mbed OS also installs `htrun`. You can also intall `htrun` by running `pip install mbed-host-tests`.
+Instead, you can use the underlying test tools to drive the test. [`htrun`](https://github.com/ARMmbed/htrun) is the tool you need to use in this case. Install the requirements for Mbed OS also installs `htrun`. You can also intall `htrun` by running `pip install mbed-host-tests`.
 
 First, find your target's serial port by running the following command:
 
