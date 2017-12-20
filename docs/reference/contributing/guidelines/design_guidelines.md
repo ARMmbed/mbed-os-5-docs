@@ -56,7 +56,7 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 - Special directories should follow consistent naming convention.
 
 #### Contribution
-1. Please refer to the [Mbed contribution guide](/docs/v5.7/reference/contributing-overview.html).
+1. Please refer to the [Mbed contribution guide](/docs/v5.7/reference/contributing.html).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:
