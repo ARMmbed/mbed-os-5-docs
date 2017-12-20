@@ -37,7 +37,7 @@ You can use <a href="http://www.qr-code-generator.com/" target="_blank">a free o
 
 In the online tool, fill in the URL field. The following is an example: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`. Fill in the correct values for your device, and ensure `v=1` is always present. The other required parameters are:
 
-- `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration). *PSKd must be uppercase characters (0-9, A-Y excluding I,O,Q, and Z)*
+- `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration). *PSKd must be uppercase characters (0-9, A-Y excluding I,O,Q and Z)*
 - `eui` is equal to the RF MAC address by default.
 
 To get the MAC address for your end device, connect the node to the Thread network with static configuration enabled. In other words, `"mbed-mesh-api.thread-use-static-link-config": true`, unless you have your own configuration for the MAC address.
