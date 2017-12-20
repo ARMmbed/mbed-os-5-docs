@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ### Exporting from Arm Mbed CLI
 
-<a href="/docs/v5.7/tools/arm-mbed-cli.html" target="_blank">Mbed CLI</a> currently supports <a href="/docs/v5.7/tools/exporting.html#exporting-from-arm-mbed-cli" target="_blank">exporting</a> to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) currently supports [exporting](/docs/v5.7/tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -96,7 +96,7 @@ If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r
 
 Make itself does not compile source code. It relies on a compiler such as:
 
-- <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm" target="_blank">GNU Arm Embedded Toolchain</a>, which you can install for free using the <a href="http://gnuarmeclipse.livius.net/blog/toolchain-install/" target="_blank">instructions</a>. Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+- [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which you can install for free using the [instructions](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
 - The IAR Arm compiler bundled with the IAR Embedded Workbench.
 - Arm Compiler 5.
 

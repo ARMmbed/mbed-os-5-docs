@@ -1,6 +1,6 @@
 ## Debugging
 
-There are extensive instructions on debugging Arm Mbed OS 5 applications with <a href="/docs/v5.7/tutorials/keil-uvision.html" target="_blank">uVision 5</a>, <a href="/docs/v5.7/tutorials/eclipse.html" target="_blank">Eclipse</a> and <a href="/docs/v5.7/tutorials/visual-studio-code.html" target="_blank">Visual Studio Code</a>, but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first <a href="/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html" target="_blank">configure your local debug toolchain</a>.
+There are extensive instructions on debugging Arm Mbed OS 5 applications with [uVision 5](/docs/v5.7/tutorials/keil-uvision.html), [Eclipse](/docs/v5.7/tutorials/eclipse.html) and [Visual Studio Code](/docs/v5.7/tutorials/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html).
 
 ### Exporting your project
 

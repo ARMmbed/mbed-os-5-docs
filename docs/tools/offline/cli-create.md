@@ -68,7 +68,7 @@ mbed-os-program (mbed-os-program)
 
 #### For Mbed OS 2
 
-Mbed CLI is also compatible with Mbed OS 2 programs based on the <a href="https://mbed.org/users/mbed_official/code/mbed/" target="_blank">Mbed library</a>, and it automatically imports the latest <a href="https://mbed.org/users/mbed_official/code/mbed/" target="_blank">Mbed library release</a> if you use the `--mbedlib` option:
+Mbed CLI is also compatible with Mbed OS 2 programs based on the [Mbed library](https://mbed.org/users/mbed_official/code/mbed/), and it automatically imports the latest [Mbed library release](https://mbed.org/users/mbed_official/code/mbed/) if you use the `--mbedlib` option:
 
 ```
 $ mbed new mbed-classic-program --mbedlib
@@ -138,7 +138,7 @@ The arguments for *compile* are:
 
 You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
 
-For more information on build profiles, see <a href="/docs/v5.7/tools/build-profiles.html" target="_blank">our build profiles</a> and <a href="/docs/v5.7/tools/toolchain-profiles.html" target="_blank">toolchain profiles</a> pages.
+For more information on build profiles, see [our build profiles](/docs/v5.7/tools/build-profiles.html) and [toolchain profiles](/docs/v5.7/tools/toolchain-profiles.html) pages.
 
 #### Compiling static libraries
 

@@ -41,4 +41,4 @@ Then create a file named `mbed_app.json` at the root of your application with th
 
 ### Other resources
 
-The <a href="https://tls.mbed.org" target="_blank">Mbed TLS website</a> contains many other useful resources for developers, such as <a href="https://tls.mbed.org/dev-corner" target="_blank">developer documentation</a>, <a href="https://tls.mbed.org/kb" target="_blank">knowledge base articles</a> and a <a href="https://tls.mbed.org/discussions" target="_blank">support forum</a>.
+The [Mbed TLS website](https://tls.mbed.org) contains many other useful resources for developers, such as [developer documentation](https://tls.mbed.org/dev-corner), [knowledge base articles](https://tls.mbed.org/kb) and a [support forum](https://tls.mbed.org/discussions).

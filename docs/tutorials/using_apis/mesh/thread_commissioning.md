@@ -18,7 +18,7 @@ A model network setup could look like this:
 
 #### Building the end node application
 
-By default, the Mbed Thread applications/examples use the static network link configuration defined in the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json" target="_blank">mesh-api configuration file</a>. If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the <a href="https://github.com/ARMmbed/mbed-os-example-mesh-minimal" target="_blank">mesh-minimal</a> application as an example.
+By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
 
 - `"mbed-mesh-api.thread-use-static-link-config": false`
 - `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]`

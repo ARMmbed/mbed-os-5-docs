@@ -2,7 +2,7 @@
 
 #### Contributions
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs). In both cases, please follow the <a href="/docs/v5.7/reference/guidelines.html#style" target="_blank">code style guide and GitHub pull request guidelines</a>. Please also read the <a href="/docs/v5.7/reference/guidelines.html#cla" target="_blank">CLA</a> guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/v5.7/reference/guidelines.html#style)</a>. Please also read the [CLA](/docs/v5.7/reference/guidelines.html#cla) guidelines because we will immediately close pull requests submitted without a CLA.
 
 #### Contributing new features to Mbed OS
 
@@ -88,9 +88,9 @@ All pull requests must be reviewed. The Mbed OS maintainers determine the most s
 
 There are a number of CI systems available. Which CI tests we run against a particular pull request depends on the effect of that pull request to the code base. Irrespective of which CIs tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
-##### Releases 
+##### Releases
 
-Once we merge a pull request, we tag it with a release. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features only go to feature releases. 
+Once we merge a pull request, we tag it with a release. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features only go to feature releases.
 
 The release tag has the following format:
 
@@ -110,4 +110,3 @@ The following labels summarize the scope of the pull request.
 - *scope: bug-fix*.
 - *scope: feature*.
 - *scope: new-target*.
-

@@ -27,7 +27,7 @@ You can implement a cellular network interface in different ways depending on yo
 
 **Case 3: Modem present on target board**
    - This refers to the case when the cellular modem is bundled with the target board.
-   - Target board must provide an implementation of the <a href="https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h" target="_blank">onboard_modem_API</a>. For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an <a href="https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c" target="_blank">implementation</a> of `onboard_modem_api`.
+   - Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an [implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c) of `onboard_modem_api`.
    - Following Mbed OS conventions, drivers for on-board modules may become part of the Mbed OS tree.
    - `OnboardCellularInterface` ties together `onboard_modem_api.h` with the generic `PPPCellularInterface` to provide a complete driver. At present, only UART connection type is handled.
 

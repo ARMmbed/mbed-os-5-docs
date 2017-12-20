@@ -10,7 +10,7 @@ Update target to support bootloader.
 
 #### Linker script updates
 
-When building a bootloader application or an application that uses a bootloader, the Arm Mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC Arm (.ld), Arm (.sct) and IAR (.icf). You can find examples of this for the <a href="https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e" target="_blank">k64f</a>, <a href="https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959" target="_blank">stm32f429</a>, <a href="https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070" target="_blank">odin-w2</a>.
+When building a bootloader application or an application that uses a bootloader, the Arm Mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC Arm (.ld), Arm (.sct) and IAR (.icf). You can find examples of this for the [k64f](https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e), [stm32f429](https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959), [odin-w2](https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070).
 
 Use these 2 defines in place of flash start and size for a target:
 - `MBED_APP_START` - defines an address where an application space starts.
@@ -85,7 +85,7 @@ To enable a CMSIS flash algorithm common layer, a target should define `FLASH_CM
 }
 ```
 
-The CMSIS algorithm common layer provides a <a href="https://github.com/ARMmbed/mbed-os/blob/master/hal/TARGET_FLASH_CMSIS_ALGO/flash_common_algo.c" target="_blank">trampoline</a>, which uses a flash algorithm blob. It invokes CMSIS FLASH API, which the <a href="http://arm-software.github.io/CMSIS_5/Pack/html/algorithmFunc.html" target="_blank">CMSIS-Pack Algorithm Functions page</a> defines.
+The CMSIS algorithm common layer provides a [trampoline](https://github.com/ARMmbed/mbed-os/blob/master/hal/TARGET_FLASH_CMSIS_ALGO/flash_common_algo.c), which uses a flash algorithm blob. It invokes CMSIS FLASH API, which the [CMSIS-Pack Algorithm Functions page](http://arm-software.github.io/CMSIS_5/Pack/html/algorithmFunc.html) defines.
 
 ##### Option 2: Your own HAL driver
 

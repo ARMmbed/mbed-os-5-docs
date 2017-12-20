@@ -48,7 +48,7 @@ The following table shows which development boards have been tested. It does not
 
 **Notes:**
 
-1. If the Ethernet driver is enabled, requires HW modifications if RF shield uses SPI1. See <a href="https://github.com/ARMmbed/sal-nanostack-driver-stm32-eth" target="_blank">Driver notes</a> and <a href="https://github.com/ARMmbed/nanostack-border-router-private/issues/17" target="_blank">nanostack-borderrouter-private Issue #17</a>.
+1. If the Ethernet driver is enabled, requires HW modifications if RF shield uses SPI1. See [Driver notes](https://github.com/ARMmbed/sal-nanostack-driver-stm32-eth) and [nanostack-borderrouter-private Issue #17](https://github.com/ARMmbed/nanostack-border-router-private/issues/17).
 2. Pin collision, see [mesh-minimal Issue 55](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/issues/55).
 3. X-NUCLEO-IDS01A4 expansion board required modifications to be used in Mbed OS. See [Driver readme](https://github.com/ARMmbed/stm-spirit1-rf-driver).
 4. KW24D has MCR20A chip integrated. Use the same driver.

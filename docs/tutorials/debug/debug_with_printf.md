@@ -90,7 +90,7 @@ Compile this program, and flash it on your development board. You now can inspec
     $ ls /dev/ttyACM*
     /dev/ttyACM0
     ```
-    
+
 1. Connect to the board by entering `sudo screen /dev/ttyACM0 9600`.
 1. Log messages appear.
 1. To exit:
@@ -171,11 +171,11 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because <a href="https://os.mbed.com/docs/v5.6/reference/mutex.html" target="_blank">mutexes guard</a> calls to stdio functions, such as printf, in the Arm C standard library, and mutexes <a href="https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html" target="_blank">cannot be called from an ISR</a>.
+Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.6/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-- Signaling from the ISR to the main thread using a <a href="https://os.mbed.com/docs/v5.6/reference/semaphore.html" target="_blank">semaphore</a> or <a href="https://os.mbed.com/docs/v5.6/reference/mail.html" target="_blank">mailbox</a>, and calling `printf` in the main thread.
+- Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.6/reference/semaphore.html) or [mailbox](https://os.mbed.com/docs/v5.6/reference/mail.html), and calling `printf` in the main thread.
 - Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.6/reference/event.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).

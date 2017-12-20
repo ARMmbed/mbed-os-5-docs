@@ -1,6 +1,6 @@
 <h2 id="debug-builds-cli">Debug builds</h2>
 
-After you've set up your <a href="/docs/v5.7/tools/toolchain-profiles.html" target="_blank">local debug toolchain</a>, you need firmware that includes program symbols (an `.elf` file). Because the Arm Mbed Online Compiler only produces binaries that omit the program symbols, you need to compile locally using <a href="/docs/v5.7/tools/arm-mbed-cli.html" target="_blank">Arm Mbed CLI</a>.
+After you've set up your [local debug toolchain](/docs/v5.7/tools/toolchain-profiles.html), you need firmware that includes program symbols (an `.elf` file). Because the Arm Mbed Online Compiler only produces binaries that omit the program symbols, you need to compile locally using [Arm Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html).
 
 <span class="notes">**Note:** Make sure to do a clean build when switching to and from debug and release by removing the `BUILD` folder.</span>
 

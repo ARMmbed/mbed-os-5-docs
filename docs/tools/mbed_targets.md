@@ -1,6 +1,6 @@
 ## Adding and configuring targets
 
-Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets. 
+Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets.
 
 <span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) to take your code offline.</span>
 
@@ -143,7 +143,7 @@ The following features, also recognized by the build system, are all Nanostack c
  - `THREAD_END_DEVICE`.
  - `THREAD_ROUTER`.
  - `ETHERNET_HOST`.
- 
+
 The build system errors when you use features outside of this list.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
@@ -197,7 +197,7 @@ The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
-We use the tool <a href="https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager" target="_blank">ArmPackManager</a> to parse CMSIS Packs for target information. <a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json" target="_blank">`index.json`</a> stores the parsed information from the <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/" target="_blank">PDSC (Pack Description</a> retrieved from each CMSIS Pack.
+We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description](http://www.keil.com/pack/doc/CMSIS/Pack/html/)</a> retrieved from each CMSIS Pack.
 
 The [`"device_name"`](/docs/v5.7/reference/contributing-target.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
@@ -326,7 +326,7 @@ For each of these target roles, some restrictions are in place:
 
 The linting script takes three subcommands: `targets`, `all-targets` and `orphans`.
 
-##### `targets` and `all-targets` commands 
+##### `targets` and `all-targets` commands
 
 The `targets` and `all-targets` commands both show errors within public inheritance hierarchies. For example:
 
