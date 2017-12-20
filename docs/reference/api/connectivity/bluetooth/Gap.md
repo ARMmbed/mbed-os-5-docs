@@ -1,4 +1,4 @@
-## Gap
+## GAP
 
 Generic Access Profile is the layer of the stack that handles connectivity tasks. This includes link establishment and termination, advertising and scanning.
 
@@ -8,12 +8,12 @@ The other side of the process is the act of scanning which listens for advertise
 
 Advertising, scanning and connection all have parameters that let the user find a compromise between desired power consumption levels and latency and efficiency of these processes. 
 
-### Gap class reference
+### GAP class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_gap.html)
 
-### Gap example
+### GAP example
 
-Here is an example demonstrating how to use the Gap API to advertise, scan, connect and disconnect and how parameters influence efficiency of these actions.
+Here is an example demonstrating how to use the GAP API to advertise, scan, connect and disconnect and how parameters influence efficiency of these actions.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAP/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAP)
