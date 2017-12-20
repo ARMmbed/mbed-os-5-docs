@@ -18,10 +18,10 @@ mpool.free(message);
 
 ### Queue and MemoryPool example
 
-This example shows <a href="https://os.mbed.com/docs/v5.7/reference/queue.html" target="_blank">Queue</a> and MemoryPool managing measurements.
+This example shows [Queue](https://os.mbed.com/docs/v5.7/reference/queue.html) and MemoryPool managing measurements.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_queue/)](https://os.mbed.com/teams/mbed_example/code/rtos_queue/file/0cb43a362538/main.cpp)
 
 ### Related content
 
-- <a href="https://os.mbed.com/docs/v5.7/reference/queue.html" target="_blank">Queue</a> API reference.
+- [Queue](https://os.mbed.com/docs/v5.7/reference/queue.html) API reference.

@@ -20,7 +20,7 @@ The following wildcards are accepted:
 | `[seq]` | Matches any character in seq. |
 | `[!seq]` | Matches any character not in seq. |
 
-The file is parsed with Python's <a href="https://docs.python.org/2/library/fnmatch.html" target="_blank">fnmatch</a> functionality, so the syntax follows basic shell patterns with the following exceptions:
+The file is parsed with Python's [fnmatch](https://docs.python.org/2/library/fnmatch.html) functionality, so the syntax follows basic shell patterns with the following exceptions:
 
 1. Each line is internally prefixed with the path of the `.mbedignore` file.
 2. A line cannot start with `.` or `/` (because of rule 1).

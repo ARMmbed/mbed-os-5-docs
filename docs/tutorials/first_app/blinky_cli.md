@@ -2,7 +2,7 @@
 
 This tutorial builds Blinky using the Arm Mbed CLI, which allows you to build Mbed OS applications on your own machine. You will need to install Mbed CLI and a toolchain before you can work with Blinky.
 
-<span class="tips">Please create a <a href="https://os.mbed.com/account/signup/" target="_blank">developer account</a>. It's free, and we don't spam.</span>
+<span class="tips">Please create a [developer account](https://os.mbed.com/account/signup/). It's free, and we don't spam.</span>
 
 ### Blinky's code
 
@@ -32,7 +32,7 @@ This video shows how to use Mbed CLI to import and build Blinky. Note that it as
 
 ### Installing Mbed CLI and a toolchain
 
-Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the <a href="/docs/v5.6/tools/setup.html" target="_blank">Mbed CLI setup page</a>, and come back here when you're done.
+Mbed CLI is an offline tool, meaning you'll have to install it before you can work. You will also need to install a toolchain. Please follow the installation instructions on the [Mbed CLI setup page](/docs/v5.6/tools/setup.html), and come back here when you're done.
 
 ### Setting context
 
@@ -88,7 +88,7 @@ If you don't know the name of your target board, there are several ways to tell.
 [mbed] Detected "K64F" connected to "D:" and using com port "COM3"
 ```
 
-- Check the board information page on the list of <a href="https://developer.mbed.org/platforms/" target="_blank">Mbed Enabled boards</a>. The right side of each information page lists the name of the target.
+- Check the board information page on the list of [Mbed Enabled boards](https://developer.mbed.org/platforms/). The right side of each information page lists the name of the target.
 
 - If you only have one Mbed Enabled board connected, Mbed CLI can automatically detect the target by specifing `-m detect`.
 

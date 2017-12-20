@@ -1,6 +1,6 @@
 ## EventFlags
 
-The EventFlags class is a C++ wrapper over the Keil RTX EventFlags functionality. The EventFlags class provides a mechanism for setting and waiting for flags. It provides a generic way of notifying other threads about conditions or events. You can think of each instance of the EventFlags class as an event channel. There are 31 different flags available for each event. For more information and implementation details, see <a href="http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html" target="_blank">the Keil CMSIS-RTOS documentation</a>.
+The EventFlags class is a C++ wrapper over the Keil RTX EventFlags functionality. The EventFlags class provides a mechanism for setting and waiting for flags. It provides a generic way of notifying other threads about conditions or events. You can think of each instance of the EventFlags class as an event channel. There are 31 different flags available for each event. For more information and implementation details, see [the Keil CMSIS-RTOS documentation](http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html).
 
 ### EventFlag class reference
 
@@ -41,4 +41,4 @@ int main()
 
 ### Related content
 
-- <a href="http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html" target="_blank">The Keil CMSIS-RTOS</a> documentation.
+- [The Keil CMSIS-RTOS](http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__EventFlags.html) documentation.

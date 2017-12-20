@@ -2,11 +2,11 @@
 
 Beginning with Mbed OS 5, new features such as RTOS created an increase in flash and RAM usage. This guide explains how to optimize program memory usage for release builds using Mbed OS 5.
 
-<span class="notes">**Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available in <a href="https://os.mbed.com/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/" target="_blank">a blog post</a>.</span>
+<span class="notes">**Note:** More information about the memory usage differences between Mbed OS 2 and Mbed OS 5 is available in [a blog post](https://os.mbed.com/blog/entry/Optimizing-memory-usage-in-mbed-OS-52/).</span>
 
 ### Removing unused modules
 
-For a simple program like <a href="https://github.com/ARMmbed/mbed-os-example-blinky" target="_blank">Blinky</a>, a program that flashes an LED, typical memory usage is split among the following modules:
+For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), a program that flashes an LED, typical memory usage is split among the following modules:
 
 ```
 +---------------------+-------+-------+-------+
@@ -23,11 +23,11 @@ For a simple program like <a href="https://github.com/ARMmbed/mbed-os-example-bl
 +---------------------+-------+-------+-------+
 ```
 
-Even if you are no longer testing your program, the `features/frameworks` module includes the Mbed OS test tools. Because of this, you are building one of our test harnesses into every binary. <a href="https://github.com/ARMmbed/mbed-os/pull/2559" target="_blank">Removing this module</a> saves a significant amount of RAM and flash memory.
+Even if you are no longer testing your program, the `features/frameworks` module includes the Mbed OS test tools. Because of this, you are building one of our test harnesses into every binary. [Removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) saves a significant amount of RAM and flash memory.
 
 #### `Printf` and UART
 
-The linker can also remove other modules that your program does not use. For example, <a href="https://github.com/ARMmbed/mbed-os-example-blinky" target="_blank">Blinky's</a> `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output - forcing the `printf` and UART drivers to be compiled in and requiring a large amount of flash memory.
+The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output - forcing the `printf` and UART drivers to be compiled in and requiring a large amount of flash memory.
 
 To disable error logging to serial output, set the `NDEBUG` macro and the following configuration parameter in your program's `mbed_app.json` file:
 
@@ -53,4 +53,4 @@ You can also take advantage of the fact that these programs only run on embedded
 - The code that the compiler injects consumes memory.
 - It implies dynamic memory allocation and thus requires the binary to include `malloc`, even when the application does not use it.
 
-When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by <a href="https://github.com/ARMmbed/mbed-os/pull/2745" target="_blank">removing destructor registration</a> on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime.
+When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime.
