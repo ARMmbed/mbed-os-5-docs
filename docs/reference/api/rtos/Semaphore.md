@@ -6,7 +6,7 @@ A semaphore manages thread access to a pool of shared resources of a certain typ
 
 ### Semaphore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classrtos_1_1_semaphore.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classrtos_1_1_semaphore.html)
 
 ### Semaphore example
 

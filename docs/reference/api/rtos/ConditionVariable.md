@@ -4,7 +4,7 @@ The ConditionVariable class provides a mechanism to safely wait for or signal st
 
 ### ConditionVariable class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classrtos_1_1_condition_variable.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classrtos_1_1_condition_variable.html)
 
 ### ConditionVariable example
 

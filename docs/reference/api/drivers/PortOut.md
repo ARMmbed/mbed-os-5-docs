@@ -6,7 +6,7 @@ A mask can be supplied so only certain bits of a port are used, allowing other b
 
 ### PortOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_port_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_port_out.html)
 
 ### PortOut hello, world
 

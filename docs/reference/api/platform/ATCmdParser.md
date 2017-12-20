@@ -10,7 +10,7 @@ To use the ATCmdParser, the entity creating the ATCmdParser object passes a refe
 
 ### ATCmdParser class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_a_t_cmd_parser.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_a_t_cmd_parser.html)
 
 ### ATCmdParser examples
 
