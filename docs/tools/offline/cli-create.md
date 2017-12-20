@@ -15,7 +15,7 @@ $ cd mbed-os
 $ mbed update master   # This will update "mbed-os", not "my-program"
 ```
 
-Various Mbed CLI features require a program root, which should be under version control - either <a href="https://git-scm.com/" target="_blank">Git</a> or <a href="https://www.mercurial-scm.org/" target="_blank">Mercurial</a>. This makes it possible to switch between revisions of the whole program and its libraries, control the program history, synchronize the program with remote repositories, share it with others and so on. Version control is also the primary and preferred delivery mechanism for Mbed OS source code, which allows everyone to contribute to Mbed OS.
+Various Mbed CLI features require a program root, which should be under version control - either [Mercurial](https://git-scm.com/). This makes it possible to switch between revisions of the whole program and its libraries, control the program history, synchronize the program with remote repositories, share it with others and so on. Version control is also the primary and preferred delivery mechanism for Mbed OS source code, which allows everyone to contribute to Mbed OS.
 
 <span class="warnings">**Warning**: Mbed CLI stores information about libraries and dependencies in reference files that use the `.lib` extension (such as `lib_name.lib`). Although these files are human-readable, we *strongly* advise that you don't edit these manually - let Mbed CLI manage them instead.</span>
 
@@ -40,7 +40,7 @@ You can create new applications as Mbed OS 5, Mbed OS 2 or a non-versioned (blan
 
 #### For Mbed OS 5
 
-When you create a new program, Mbed CLI automatically imports the latest <a href="https://github.com/ARMmbed/mbed-os/" target="_blank">Mbed OS release</a>. Each release includes all the components: code, build tools and IDE exporters.
+When you create a new program, Mbed CLI automatically imports the latest [Mbed OS release](https://github.com/ARMmbed/mbed-os/). Each release includes all the components: code, build tools and IDE exporters.
 
 With this in mind, let's create a new program (we'll call it `mbed-os-program`):
 
@@ -170,7 +170,7 @@ Image: ../threaded_blinky-out/threaded_blinky.bin
 
 ### The compile configuration system
 
-The <a href="/docs/v5.7/tools/configuring-tools.html" target="_blank">compile configuration system</a> provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
+The [compile configuration system](/docs/v5.7/tools/configuring-tools.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
 #### Inspecting the configuration
 

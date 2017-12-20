@@ -6,13 +6,13 @@ The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or
 
 #### Code acceptance
 
-<a href="/docs/v5.7/reference/guidelines.html#cla" target="_blank">After the CLA</a> is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
+[After the CLA](/docs/v5.7/reference/guidelines.html#cla) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
 #### Coding style
 
 Whether you're writing new code or fixing bugs in existing code, please follow the Mbed OS coding style.
 
-Mbed OS follows the <a href="https://en.wikipedia.org/wiki/Indent_style#K.26R_style" target="_blank">K&R style</a>, with at least two exceptions (which can be found in the list below the code sample).
+Mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
 
 ##### Code sample
 
@@ -154,7 +154,7 @@ typedef struct analogin_s analogin_t;
 
 All functions and methods should contain documentation using Doxgyen.
 
-You can use <a href="http://sourceforge.net/projects/astyle/files/" target="_blank">Artistic Style (AStyle)</a> to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
+You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
 ```
 astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)

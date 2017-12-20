@@ -12,7 +12,7 @@ The GNU Arm Eclipse exporter is available for all targets that use the GCC Arm t
 
 ### Qt Creator and Make
 
-The Qt Creator project export is available for the GCC Arm toolchain; it generates a <a href="http://doc.qt.io/qtcreator/creator-project-generic.html" target="_blank">Qt Creator generic project</a> and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
+The Qt Creator project export is available for the GCC Arm toolchain; it generates a [Qt Creator generic project](http://doc.qt.io/qtcreator/creator-project-generic.html) and a Makefile, in a similar fashion to the *Eclipse and Make* exporter.
 
 You can open the generated `.creator` project in Qt Creator, enabling integration with the project pane, syntax highlighting and automatic code completion. You can use the Makefile to compile the project; the IDE automatically invokes the Makefile when you issue the build command.
 
@@ -23,11 +23,11 @@ You can open the generated `.creator` project in Qt Creator, enabling integratio
 uVision and IAR both use <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html" target="_blank">CMSIS packs</a> to find target information necessary to create a valid project file. Add a `"device_name"` attribute to your target as <a href="https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">Adding and configuring targets</a> describes to support these exporters.
 
 #### uVision
-<a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15" target="_blank">uVision project file template</a> uses target information from CMSIS Packs to generate valid uVision5 projects. If the uVision exporter cannot find the `"device_name"`, it substitutes a generic Arm CPU target.
+[uVision project file template](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from CMSIS Packs to generate valid uVision5 projects. If the uVision exporter cannot find the `"device_name"`, it substitutes a generic Arm CPU target.
 
 #### IAR
 
-<a href="https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json" target="_blank">`tools/export/iar/iar_definitions.json`</a> uses this device name to store information necessary to set the target in an IAR project.
+[`tools/export/iar/iar_definitions.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/iar/iar_definitions.json) uses this device name to store information necessary to set the target in an IAR project.
 
 #### Updating index.json
 

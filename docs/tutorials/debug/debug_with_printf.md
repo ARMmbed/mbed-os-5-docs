@@ -8,12 +8,12 @@ An easy way to inspect what your application is doing is to augment your applica
 
 Install the serial port driver for your development board:
 
-- For ST boards: <a href="https://os.mbed.com/teams/ST/wiki/ST-Link-Driver" target="_blank">ST Link Driver</a>.
-- For all other boards: <a href="/docs/v5.6/tutorials/windows-serial-driver.html" target="_blank">Arm Mbed Windows serial port driver</a> - not required for Windows 10.
+- For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
+- For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.6/tutorials/windows-serial-driver.html) - not required for Windows 10.
 
 You also need a serial monitor:
 
-- <a href="http://sourceforge.jp/projects/ttssh2/files" target="_blank">TeraTerm</a>.
+- [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
 
 #### Mac OS X
 
@@ -21,11 +21,11 @@ On Mac OS X, all software comes installed by default.
 
 #### Linux
 
-If you do not have it, install <a href="https://www.gnu.org/software/screen/" target="_blank">GNU Screen</a>.
+If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/).
 
 ### Getting started
 
-To send data over the serial connection, use the <a href="/docs/v5.6/reference/serial.html" target="_blank">Serial</a> object.
+To send data over the serial connection, use the [Serial](/docs/v5.6/reference/serial.html) object.
 
 #### Example program
 
@@ -68,7 +68,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="images>"![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)<span>Seeing the output over the serial port</span></span>
 
-<span class="notes">**Note:** Unsure which COM port is used? In the <a href="http://www.computerhope.com/issues/ch000833.htm" target="_blank">device manager</a>, look under the *Ports* section.</span>
+<span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
 #### Mac OS X
 
@@ -176,9 +176,9 @@ Your board crashes when you press the button because <a href="https://os.mbed.co
 You can avoid this by:
 
 - Signaling from the ISR to the main thread using a <a href="https://os.mbed.com/docs/v5.6/reference/semaphore.html" target="_blank">semaphore</a> or <a href="https://os.mbed.com/docs/v5.6/reference/mail.html" target="_blank">mailbox</a>, and calling `printf` in the main thread.
-- Using an event dispatching library, such as <a href="https://os.mbed.com/docs/v5.6/reference/event.html" target="_blank">Mbed events</a>.
+- Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.6/reference/event.html).
 
-You can see example code for both approaches in <a href="https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/" target="_blank">this blog post</a>.
+You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 
 ### Printf() macros
 

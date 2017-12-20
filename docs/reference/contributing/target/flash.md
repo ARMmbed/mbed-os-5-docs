@@ -61,21 +61,21 @@ Bootloader-ready declaration of flash VTOR address:
 
 #### `targets.json` metadata
 
-The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as <a href="https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html" target="_blank">Adding and configuring targets</a> describes.
+The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as [Adding and configuring targets](https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html) describes.
 
 #### Start application
 
-The `mbed_start_application` implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in <a href="https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c" target="_blank">the Arm Mbed_application code file</a>. If `mbed_start_application` does not support your target, you must implement this function in the target HAL.
+The `mbed_start_application` implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the Arm Mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If `mbed_start_application` does not support your target, you must implement this function in the target HAL.
 
 #### Flash HAL
 
-For a bootloader to perform updates, you must implement the flash API. This consists of implementing the function in <a href="https://github.com/ARMmbed/mbed-os/blob/master/hal/flash_api.h" target="_blank">flash_api.h</a> and adding the correct fields to targets.json.
+For a bootloader to perform updates, you must implement the flash API. This consists of implementing the function in [flash_api.h](https://github.com/ARMmbed/mbed-os/blob/master/hal/flash_api.h) and adding the correct fields to targets.json.
 
 There are two options to implement flash HAL:
 
 ##### Option 1: CMSIS flash algorithm routines
 
-These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in `mbed-os` to generate flash blobs. Check the flash blobs into the target's HAL. Arm provies an <a href="https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae" target="_blank">example</a> of how to do this.
+These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in `mbed-os` to generate flash blobs. Check the flash blobs into the target's HAL. Arm provies an [example](https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae) of how to do this.
 
 To enable a CMSIS flash algorithm common layer, a target should define `FLASH_CMSIS_ALGO`. This macro enables the wrapper between CMSIS flash algorithm functions from the flash blobs and flash HAL.
 

@@ -42,7 +42,7 @@ Let’s try using a DigitalIn pin from the button to control the application. Th
 
 We can wait for digital input the same way we waited for time to pass - using a `while()` loop. In the example below the digital input is a button press, which causes the application to flash the LED and then wait for 1 second.
 
-<span class="tips">**Tip:** You may need to change the `SW1` pin, as the button on your board may be called something else. Please refer to the pinmap on the <a href="https://os.mbed.com/platforms/" target="_blank">boards page</a>.</span>
+<span class="tips">**Tip:** You may need to change the `SW1` pin, as the button on your board may be called something else. Please refer to the pinmap on the [boards page](https://os.mbed.com/platforms/).</span>
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-Workshops/code/Workshop-1-Example-4/)](https://os.mbed.com/teams/mbed-Workshops/code/Workshop-1-Example-4/file/tip/main.cpp)
 

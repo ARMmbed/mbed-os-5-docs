@@ -1,6 +1,6 @@
 <h3 id="minar-migration">Migrating from MINAR (Arm Mbed OS 3)</h3>
 
-If you're looking to migrate your Arm Mbed application from Mbed OS 3 to Arm Mbed OS 5, one of the first things you're likely to notice is that <a href="https://github.com/ARMmbed/minar" target="_blank">MINAR</a> (the event schduler in Mbed OS 3) does not exist in Mbed OS 5. This might be inconvenient, but there are different strategies that you can apply to port your Mbed OS 3 application to Mbed OS 5. This document presents some of these strategies from the MINAR perspective.
+If you're looking to migrate your Arm Mbed application from Mbed OS 3 to Arm Mbed OS 5, one of the first things you're likely to notice is that [MINAR](https://github.com/ARMmbed/minar) (the event schduler in Mbed OS 3) does not exist in Mbed OS 5. This might be inconvenient, but there are different strategies that you can apply to port your Mbed OS 3 application to Mbed OS 5. This document presents some of these strategies from the MINAR perspective.
 
 #### Why isn't MINAR included in Mbed OS 5?
 
@@ -71,7 +71,7 @@ To help ease porting MINAR applications, and to provide support for asynchronous
 
 Even if you choose to use the Mbed OS 5 event loop, the RTOS is always present, so you need to consider all the RTOS-specific issues (such as synchronization).
 
-If you want to keep the asynchronous aspect of your Mbed OS 3 application, the best way to proceed is to read the <a href="/docs/v5.6/reference/api-references.html#events" target="_blank">documentation of the Mbed OS event loop</a> and rewrite your application using the new APIs. Here are some rough API compatibility guides:
+If you want to keep the asynchronous aspect of your Mbed OS 3 application, the best way to proceed is to read the [documentation of the Mbed OS event loop](/docs/v5.6/reference/api-references.html#events) and rewrite your application using the new APIs. Here are some rough API compatibility guides:
 
 - You can replace the MINAR function `postCallback` with `EventQueue::call`.
 - You can replace the MINAR function `delay` with `EventQueue::call_in`.
@@ -84,4 +84,4 @@ It should be clear by now that the above suggested replacements are **not** dire
 
 Although it's possible to use asynchronous (event based) programming with Mbed OS 5, you might want to take advantage of the Mbed OS 5 RTOS instead. The RTOS will automatically preempt a thread that runs a blocking operation (for example a `read` operation on a socket), so you don't need a completion callback for the operation. If you give up on callbacks, you can write code that "flows" in a traditional, linear fashion. Generally speaking, this will make the code easier to understand and maintain.
 
-If you still want or need to have event based code, take a look at <a href="https://github.com/ARMmbed/mbed-os/blob/master/events/EventQueue.h" target="_blank">the EventQueue class</a>, but keep in mind that even if you're using EventQueue, the RTOS is still there, so you'll have to think carefully about synchronizing access to your data.
+If you still want or need to have event based code, take a look at [the EventQueue class](https://github.com/ARMmbed/mbed-os/blob/master/events/EventQueue.h), but keep in mind that even if you're using EventQueue, the RTOS is still there, so you'll have to think carefully about synchronizing access to your data.

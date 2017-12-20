@@ -39,10 +39,10 @@ The resulting binary will end up at `BUILD\projectname.elf`.
 
 ### Debugging your project
 
-To debug your project, you first need to start a <a href="/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html#running-a-debug-server" target="_blank">debug server</a>. This is often exposed as a setting in your IDE under 'Remote debugging' or 'Debug server'.
+To debug your project, you first need to start a [debug server](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html#running-a-debug-server). This is often exposed as a setting in your IDE under 'Remote debugging' or 'Debug server'.
 
 - When using pyOCD, set the full path to the `pyocd-gdbserver` binary, and do not set arguments.
-- When using OpenOCD, set the full path to the `openocd` binary, and set the arguments for your development board. (See <a href="/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html#openocd" target="_blank">the instructions</a>.)
+- When using OpenOCD, set the full path to the `openocd` binary, and set the arguments for your development board. (See [the instructions](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html#openocd).)
 
 Next, you need to configure GDB.
 

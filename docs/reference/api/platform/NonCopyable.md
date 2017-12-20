@@ -14,8 +14,8 @@ Copying objects of classes used for locking, network encapsulation, hardware bus
 
 ### Related content
 
-- <a href="/docs/v5.7/reference/mutex.html" target="_blank">Mutex</a> API reference.
-- <a href="/docs/v5.7/reference/eventflags.html" target="_blank">EventFlags</a> API reference.
-- <a href="/docs/v5.7/reference/busout.html" target="_blank">BusOut</a> API reference.
-- <a href="/docs/v5.7/reference/interruptin.html" target="_blank">InterruptIn</a> API reference.
-- <a href="/docs/v5.7/reference/i2c.html" target="_blank">I2C</a> API reference.
+- [Mutex](/docs/v5.7/reference/mutex.html) API reference.
+- [EventFlags](/docs/v5.7/reference/eventflags.html) API reference.
+- [BusOut](/docs/v5.7/reference/busout.html) API reference.
+- [InterruptIn](/docs/v5.7/reference/interruptin.html) API reference.
+- [I2C](/docs/v5.7/reference/i2c.html) API reference.

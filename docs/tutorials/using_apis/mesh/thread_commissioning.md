@@ -29,11 +29,11 @@ Now build the application for your chosen target from Mbed CLI with:
 
 `mbed compile -t <toolchain> -m <target> -c`
 
-Once the binary is generated, flash the binary to the end device, and run the application. Do not power on the end device until the <a href="https://github.com/ARMmbed/nanostack-border-router">border router</a> has obtained an IPv6 address from the Wi-Fi access point.
+Once the binary is generated, flash the binary to the end device, and run the application. Do not power on the end device until the [border router](https://github.com/ARMmbed/nanostack-border-router) has obtained an IPv6 address from the Wi-Fi access point.
 
 #### QR code generation
 
-You can use <a href="http://www.qr-code-generator.com/" target="_blank">a free online tool</a> to generate a QR code.
+You can use [a free online tool](http://www.qr-code-generator.com/) to generate a QR code.
 
 In the online tool, fill in the URL field. The following is an example: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`. Fill in the correct values for your device, and ensure `v=1` is always present. The other required parameters are:
 
@@ -55,7 +55,7 @@ Once you have completed the details, proceed to generate the QR code for your en
 
 #### Using the Thread commissioning application
 
-You can use the <a href="https://play.google.com/store/apps/details?id=org.threadgroup.commissioner" target="_blank">Thread Android application</a> for commissioning. Download and install this on your Android device, turn on Wi-Fi and start the app. Then follow these steps after ensuring all the requirements listed above are satisfied:
+You can use the [Thread Android application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) for commissioning. Download and install this on your Android device, turn on Wi-Fi and start the app. Then follow these steps after ensuring all the requirements listed above are satisfied:
 
 1. Set up a connection to the Wi-Fi access point to which the Thread border router is connected. When connected, the application lists your Thread border router(s).
 2. Select a border router from the list.

@@ -40,4 +40,4 @@ To build your project and start a debug session:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/uvision3.png)<span>CMSIS-DAP Debugger options</span></span>
 
-For more information on the CMSIS-DAP Debugger driver in uVision, see the <a href="http://www.keil.com/support/man/docs/dapdebug/dapdebug_drv_cfg.htm" target="_blank">uVision documentation</a>.
+For more information on the CMSIS-DAP Debugger driver in uVision, see the [uVision documentation](http://www.keil.com/support/man/docs/dapdebug/dapdebug_drv_cfg.htm).

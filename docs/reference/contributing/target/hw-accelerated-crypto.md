@@ -1,6 +1,6 @@
 ### Hardware Accelerated Crypto
 
-This document explains how to add hardware acceleration support for a development board in Arm Mbed OS and integrate it with <a href="https://github.com/ARMmbed/mbedtls" target="_blank">Arm Mbed TLS</a>.
+This document explains how to add hardware acceleration support for a development board in Arm Mbed OS and integrate it with [Arm Mbed TLS](https://github.com/ARMmbed/mbedtls).
 
 #### Introduction
 
@@ -16,7 +16,7 @@ You may want to add hardware acceleration in the following cases:
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
 
-The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in <a href="https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h" target="_blank">bn_mul.h</a>.
+The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
 
 ##### What parts can I accelerate?
 
@@ -24,11 +24,11 @@ Mbed TLS has separate modules for the different cryptographic primitives. Hardwa
 
 - Symmetric
     - <a href="https://tls.mbed.org/api/aes_8h.html" target="_blank">AES</a>: <a href="https://tls.mbed.org/api/aes_8h.html#acec17c6592b98876106d035c372b1efa" target="_blank">`mbedtls_aes_setkey_enc()`</a>, <a href="https://tls.mbed.org/api/aes_8h.html#a11580b789634605dd57e425eadb56617" target="_blank">`mbedtls_aes_setkey_dec()`</a>, <a href="https://tls.mbed.org/api/aes_8h.html#a78da421a44bb3e01a3e2d2e98f989a28" target="_blank">`mbedtls_internal_aes_encrypt()`</a>, <a href="https://tls.mbed.org/api/aes_8h.html#ae3e7a68be582d306ab5d96fb4fc043a6" target="_blank">`mbedtls_internal_aes_decrypt()`</a>.
-    - <a href="https://tls.mbed.org/api/arc4_8h.html" target="_blank">ARC4</a>.
-    - <a href="https://tls.mbed.org/api/blowfish_8h.html" target="_blank">BLOWFISH</a>.
-    - <a href="https://tls.mbed.org/api/camellia_8h.html" target="_blank">CAMELLIA</a>.
+    - [ARC4](https://tls.mbed.org/api/arc4_8h.html).
+    - [BLOWFISH](https://tls.mbed.org/api/blowfish_8h.html).
+    - [CAMELLIA](https://tls.mbed.org/api/camellia_8h.html).
     - <a href="https://tls.mbed.org/api/des_8h.html" target="_blank">DES</a>: <a href="https://tls.mbed.org/api/des_8h.html#a9ee690737bded4f7f6e12da86110a8e5" target="_blank">`mbedtls_des_setkey()`</a>, <a href="https://tls.mbed.org/api/des_8h.html#aa713501cc3e30c39a763b4568698f5c1" target="_blank">`mbedtls_des_crypt_ecb()`</a>, <a href="https://tls.mbed.org/api/des_8h.html#a933b8f629cc201e06f5e89396d065204" target="_blank">`mbedtls_des3_crypt_ecb()`</a>.
-    - <a href="https://tls.mbed.org/api/xtea_8h.htmlm" target="_blank">XTEA</a>.
+    - [XTEA](https://tls.mbed.org/api/xtea_8h.htmlm).
     - <a href="https://tls.mbed.org/api/md2_8h.html" target="_blank">MD2</a>: <a href="https://tls.mbed.org/api/md2_8h.html#a490b39ec88fec878791c43b6460492a7" target="_blank">`mbedtls_md2_process()`</a>.
     - <a href="https://tls.mbed.org/api/md4_8h.html" target="_blank">MD4</a>: <a href="https://tls.mbed.org/api/md4_8h.html#aa199bb5f6a83d2075590c0144e3237db" target="_blank">`mbedtls_md4_process()`</a>.
     - <a href="https://tls.mbed.org/api/md5_8h.html" target="_blank">MD5</a>: <a href="https://tls.mbed.org/api/md5_8h.html#a4a896444a55569fffd338e7810a1e52b" target="_blank">`mbedtls_md5_process()`</a>.
@@ -70,13 +70,13 @@ No matter which approach you choose, please note the [considerations below](#con
 
 ##### How to implement the functions
 
-These functions have the same name as the ones they replace. There is a <a href="https://tls.mbed.org/api/" target="_blank">doxygen documentation for the original functions</a>. The exception to the naming conventions is the ECP module and parts of the AES module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation, and you can find them in the `ecp_internal.h` and `aes.h` header files. The function declarations have to remain unchanged; otherwise, Mbed TLS can't use them.
+These functions have the same name as the ones they replace. There is a [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module and parts of the AES module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation, and you can find them in the `ecp_internal.h` and `aes.h` header files. The function declarations have to remain unchanged; otherwise, Mbed TLS can't use them.
 
-Clone the <a href="https://github.com/ARMmbed/mbed-os" target="_blank">Mbed OS repository</a> and copy the source code of your function definitions to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. Create a pull request when your code is finished and production ready. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
+Clone the [Mbed OS repository](https://github.com/ARMmbed/mbed-os) and copy the source code of your function definitions to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. Create a pull request when your code is finished and production ready. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
 
 ##### How to implement ECP module functions
 
-Mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in Mbed TLS, see the <a href="https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool" target="_blank">corresponding Knowledge Base article</a>.
+Mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in Mbed TLS, see the [corresponding Knowledge Base article](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool).
 
 The method of accelerating the ECP module may support different kinds of elliptic curves. If that acceleration is a hardware accelerator, you may need to indicate what kind of curve operation the accelerator has to perform by setting a register or executing a special instruction. If performing this takes significant amount of time or power, then you may not want Mbed TLS to do this step unnecessarily. The replaceable functions in this module are relatively low level, and therefore it may not be necessary to do this initialization and release in each of them.
 
@@ -139,7 +139,7 @@ The default implementation of the modules are usually in the file `feature/mbedt
 
 Note that functions in Mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
-For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a <a href="/docs/v5.7/reference/mutex.html" target="_blank">mutex</a>. Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](/docs/v5.7/reference/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
 ##### Power management
 

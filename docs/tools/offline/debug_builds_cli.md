@@ -26,7 +26,7 @@ $ mbed compile --profile .temp/tools/profiles/debug.json
 
 ### Exporting with debug symbols
 
-You can also enable debug symbols when <a href="/docs/v5.7/tools/exporting.html" target="_blank">exporting your project</a> by using:
+You can also enable debug symbols when [exporting your project](/docs/v5.7/tools/exporting.html) by using:
 
 ```
 $ mbed export -i uvision -m K64F --profile mbed-os/tools/profiles/debug.json

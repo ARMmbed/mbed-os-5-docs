@@ -16,8 +16,8 @@ Mbed OS uses the PlarformMutex class instead of the RTOS mutex for all drivers. 
 
 ### Related content
 
-- <a href="/docs/v5.6/reference/analogin.html" target="_blank">AnalogIn</a>.
-- <a href="/docs/v5.6/reference/busout.html" target="_blank">BusOut</a>. 
-- <a href="/docs/v5.6/reference/spi.html" target="_blank">SPI</a>. 
-- <a href="/docs/v5.6/reference/serial.html" target="_blank">Serial</a>. 
-- <a href="/docs/v5.6/reference/i2c.html" target="_blank">I2C</a>.
+- [AnalogIn](/docs/v5.6/reference/analogin.html).
+- [BusOut](/docs/v5.6/reference/busout.html). 
+- [SPI](/docs/v5.6/reference/spi.html). 
+- [Serial](/docs/v5.6/reference/serial.html). 
+- [I2C](/docs/v5.6/reference/i2c.html).

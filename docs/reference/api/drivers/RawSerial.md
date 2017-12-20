@@ -20,7 +20,7 @@ _9600-8-N-1_, a  common notation for serial port settings, describes the default
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See <a href="/docs/v5.7/tutorials/serial-communication.html#windows-serial-driver" target="_blank">Windows serial configuration</a>.</span>
+<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](/docs/v5.7/tutorials/serial-communication.html#windows-serial-driver).</span>
 
 ### RawSerial hello, world
 
@@ -36,4 +36,4 @@ Write a message to a device at a baud rate of 19200.
 
 #### Mbed OS example
 
-Common use cases for RawSerial are IRQ heavy UART operations, such as the <a href="https://github.com/ARMmbed/ATParser/blob/3209400df676cbf0183a5894f648c71727602d30/BufferedSerial/BufferedSerial.cpp#L29" target="_blank">ATParser</a> in the ESP8266 driver. This driver uses UART on user supplied pins to communicate with the offchip ESP8266 module.
+Common use cases for RawSerial are IRQ heavy UART operations, such as the [ATParser](https://github.com/ARMmbed/ATParser/blob/3209400df676cbf0183a5894f648c71727602d30/BufferedSerial/BufferedSerial.cpp#L29) in the ESP8266 driver. This driver uses UART on user supplied pins to communicate with the offchip ESP8266 module.
