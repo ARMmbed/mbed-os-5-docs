@@ -1,6 +1,6 @@
 ### RTC
 
-The RTC HAL API provides a low-level interface to the Real Time Counter (RTC) of a target.
+By implementing RTC you will enable Mbed OS to keep track of current time. RTC API is not mandatory, but by implementing it you will be able to use standard library time keeping functions like `time`.
 
 #### Assumptions
 
@@ -22,8 +22,22 @@ The RTC HAL API provides a low-level interface to the Real Time Counter (RTC) of
 - Incorrect overflow handling.
 - Glitches due to ripple counter.
 
+#### Depenndencies
+
+Hardware RTC capabilities.
+
 #### Implementing the RTC API
 
-RTC HAL API is in [hal/rtc_api.h](/docs/v5.7/mbed-os-api-doxy/rtc__api_8h_source.html). You need to implement the following functions to support RTC:
+You can find the API and specification for the RTC in following header file:
 
-To enable sleep support in Mbed OS, you need to add the `RTC` label in the `device_has` option of the target's section in the `targets.json` file.
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-rtc/hal/rtc_api.h)
+
+To enable RTC support in Mbed OS, you need to add the `RTC` label in the `device_has` option of the target's section in the `targets.json` file.
+
+#### Validation
+
+Mbed OS HAL provides set of conformance tests for RTC, which you can use to validate correctness of your implementation. You can read more about the test cases here:
+
+ [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-rtc/TESTS/mbed_hal/rtc/rtc_test.h)
+
+ [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-rtc/TESTS/mbed_hal/rtc_reset/rtc_reset_test.h)
