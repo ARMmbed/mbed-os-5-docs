@@ -2,7 +2,7 @@
 
 This test harness allows you to execute a specified series of (asynchronous) C++ test cases with sensible default reporting and useful customization options.
 
-Please note that this is a purposefully lean test harness that only deals with test execution and provides default reporting handlers. For autodiscovery of test cases, test macros and other convenience functions, you can use the macros in the <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity" target="_blank">unity module</a>. However, you are not required to use these and can use your own macros.
+Please note that this is a purposefully lean test harness that only deals with test execution and provides default reporting handlers. For autodiscovery of test cases, test macros and other convenience functions, you can use the macros in the [unity module](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity). However, you are not required to use these and can use your own macros.
 
 ### Theory
 
@@ -21,7 +21,7 @@ The order of handler execution is:
 
 ### Example
 
-This example showcases functionality and proper integration with the <a href="/docs/v5.6/tools/greentea.html" target="_blank">Greentea testing automation framework</a>, while making use of the <a href="https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity" target="_blank">unity test macros</a>:
+This example showcases functionality and proper integration with the [Greentea testing automation framework](/docs/v5.7/tools/greentea.html), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
 ```cpp
 #include "mbed-drivers/test_env.h"
@@ -148,7 +148,7 @@ There are six handler types you can, but do not have to, override to customize o
 1. `status_t case_teardown_handler_t(const Case *const source, const size_t passed, const size_t failed, const failure_t reason)`: called after execution of each test case and if testing is aborted.
 1. `status_t case_failure_handler_t(const Case *const source, const failure_t reason)`: called whenever a failure occurs during the execution of a test case.
 
-All handlers are defaulted for integration with the <a href="https://github.com/ARMmbed/greentea" target="_blank">Greentea testing automation framework</a>.
+All handlers are defaulted for integration with the [Greentea testing automation framework](https://github.com/ARMmbed/greentea).
 
 ### Test case handlers
 
@@ -186,7 +186,7 @@ For asynchronous test cases, you must return a `CaseTimeout(uint32_t ms)`. If yo
 
 To validate your callback, you must call `Harness::validate_callback()` in your asynchronous callback before the timeout fires. This will schedule the execution of the next test case.
 
-For repeating asynchronous cases, you can "add" both attributes together: `CaseTimeout(200) + CaseRepeatAll` will wait for 200 ms for the callback validation and then repeat the test case. See the section on <a href="/docs/v5.6/tools/utest-asynchronous-c-test-harness.html#test-case-attribute-arbitration" target="_blank">arbitration logic</a> for more details.
+For repeating asynchronous cases, you can "add" both attributes together: `CaseTimeout(200) + CaseRepeatAll` will wait for 200 ms for the callback validation and then repeat the test case. See the section on [arbitration logic](/docs/v5.7/tools/utest-asynchronous-c-test-harness.html#test-case-attribute-arbitration) for more details.
 
 You can also add attributes during callback validation; however, only repeat attributes are considered. This allows you to return `CaseTimeout(500)` to wait up to 500 ms for the callback validation and delegate the decision to repeat to the time the callback occurs: `Harness::validate_callback(CaseRepeatHandler)`.
 

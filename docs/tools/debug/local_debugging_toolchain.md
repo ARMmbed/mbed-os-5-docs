@@ -8,9 +8,9 @@ This offers debugging capabilities for stack trace analysis, register dumps and 
 
 ### Running a debug server
 
-To connect to the debug interface, <a href="https://github.com/mbedmicro/pyOCD" target="_blank">pyOCD</a> and <a href="http://openocd.org" target="_blank">OpenOCD</a> support most boards. If the debug interface on your board is classified as 'CMSIS-DAP' or 'DAPLink' (most boards), you can use pyOCD. If not, use OpenOCD.
+To connect to the debug interface, [OpenOCD](https://github.com/mbedmicro/pyOCD) support most boards. If the debug interface on your board is classified as 'CMSIS-DAP' or 'DAPLink' (most boards), you can use pyOCD. If not, use OpenOCD.
 
-First, make sure you have installed the <a href="https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update" target="_blank">GNU Arm Embedded Toolchain</a> and added it to your PATH. To verify that you have the correct version installed, open a terminal and run:
+First, make sure you have installed the [GNU Arm Embedded Toolchain](https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update) and added it to your PATH. To verify that you have the correct version installed, open a terminal and run:
 
 ```
 $ arm-none-eabi-gdb --version
@@ -24,7 +24,7 @@ and "show warranty" for details.
 
 ### pyOCD
 
-If pyOCD supports your board, install <a href="https://www.python.org/downloads/" target="_blank">Python 2.7</a>. Then install pyOCD:
+If pyOCD supports your board, install [Python 2.7](https://www.python.org/downloads/). Then install pyOCD:
 
 ```
 $ pip install pyocd
@@ -50,7 +50,7 @@ A GDB server is now listening at localhost:3333.
 
 ### OpenOCD
 
-If OpenOCD supports your board, first install <a href="http://openocd.org" target="_blank">OpenOCD</a>. OpenOCD cannot automatically detect the connected board, so you must determine what configuration you need for your development board. In general, searching for 'chipset openOCD' yields useful results.
+If OpenOCD supports your board, first install [OpenOCD](http://openocd.org). OpenOCD cannot automatically detect the connected board, so you must determine what configuration you need for your development board. In general, searching for 'chipset openOCD' yields useful results.
 
 For example, for the STM32F4-Discovery series, you use:
 
@@ -102,16 +102,16 @@ Remote debugging using localhost:3333
 
 You now have set up a debug connection. From here, you can flash debug builds, step through code and use any IDE that supports GDB to debug Arm Mbed OS applications. For instructions, see:
 
-1. Producing <a href="/docs/v5.6/tools/debug-builds-with-arm-mbed-cli.html" target="_blank">debug builds with Arm Mbed CLI</a>.
-1. Debugging with <a href="/docs/v5.6/tutorials/eclipse.html" target="_blank">Eclipse</a>.
-1. Debugging with <a href="/docs/v5.6/tutorials/keil-uvision.html" target="_blank">Keil uVision</a>.
-1. Debugging with <a href="/docs/v5.6/tutorials/visual-studio-code.html" target="_blank">Visual Studio Code</a>.
+1. Producing [debug builds with Arm Mbed CLI](/docs/v5.7/tools/debug-builds-cli.html).
+1. Debugging with [Eclipse](/docs/v5.7/tutorials/eclipse.html).
+1. Debugging with [Keil uVision](/docs/v5.7/tutorials/keil-uvision.html).
+1. Debugging with [Visual Studio Code](/docs/v5.7/tutorials/visual-studio-code.html).
 
 ### Semihosting messages
 
-It's possible to send messages from the development board to your computer over the debug port using <a href="http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm" target="_blank">semihosting</a>. Some parts of Mbed OS 5 also use this, such as uVisor. To see semihosting messages:
+It's possible to send messages from the development board to your computer over the debug port using [semihosting](http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm). Some parts of Mbed OS 5 also use this, such as uVisor. To see semihosting messages:
 
-1. Install <a href="https://en.wikipedia.org/wiki/Netcat" target="_blank">Netcat</a>.
+1. Install [Netcat](https://en.wikipedia.org/wiki/Netcat).
 2. Connect pyOCD or OpenOCD to your board.
 3. Run `nc localhost 4444`.
 

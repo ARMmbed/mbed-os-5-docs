@@ -22,8 +22,8 @@ This class is thread-safe.
 
 View the full C++ API:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.html)
 
 ### Flash IAP example
 
-For an example that uses the `FlashIAP` driver, please see the <a href="https://github.com/ARMmbed/mbed-os-example-bootloader" target="_blank">bootloader example</a>.
+For an example that uses the `FlashIAP` driver, please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader).

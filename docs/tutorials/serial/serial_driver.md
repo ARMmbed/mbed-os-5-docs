@@ -2,7 +2,7 @@
 
 You can connect your board to your computer over USB. This should work out of the box on Linux and Mac OS X, but for Windows earlier than Windows 10, you will probably need to install a serial port driver:
 
-1. Download the <a href="http://os.mbed.com/media/downloads/drivers/mbedWinSerial_16466.exe" target="_blank">Arm Mbed Windows serial port driver</a>.
+1. Download the [Arm Mbed Windows serial port driver](http://os.mbed.com/media/downloads/drivers/mbedWinSerial_16466.exe).
 1. Plug in your Arm Mbed device over USB. It mounts as an Mbed drive.
 1. Close all Explorer windows showing the Mbed drive.
 1. Run the installer. This may take some time or display a few "unsigned driver" warnings.

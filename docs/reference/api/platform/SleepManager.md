@@ -1,6 +1,6 @@
 ## Sleep manager
 
-There is only one sleep function in Mbed OS 5.6:
+There is only one sleep function in Mbed OS 5.7:
 
 ```c++
 void sleep();
@@ -52,7 +52,7 @@ These Mbed OS drivers contain locking deep sleep:
 
 ### Sleep manager function reference
 
-<a href="https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h" target="_blank">https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_sleep.h</a>
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/mbed__sleep_8h_source.html)
 
 ### Example
 

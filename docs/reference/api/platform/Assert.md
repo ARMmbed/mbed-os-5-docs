@@ -4,17 +4,17 @@ Mbed OS provides a set of macros that evaluates an expression and prints an erro
 
 ### Assert macros reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/group__platform__Assert.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/mbed__assert_8h_source.html)
 
 ### Assert example
 
-You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If the evaluation fails, an error message is printed to STDIO in the below format. 
+You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If the evaluation fails, an error message is printed to STDIO in the below format.
 
 ```
 mbed assertation failed: <EVALUATED EXPRESSION>, file: <FILE NAME>, line <LINE NUMBER IN FILE>
 ```
 
-Note that the `MBED_ASSERT` macro is available in the debug and develop <a href="/docs/v5.6/tools/build-profiles.html" target="_blank">build profiles</a> but not in the release build profile. 
+Note that the `MBED_ASSERT` macro is available in the debug and develop [build profiles](/docs/v5.7/tools/build-profiles.html) but not in the release build profile.
 
 The below function uses `MBED_ASSERT` to validate a pointer to `serial_t` object.
 
@@ -38,4 +38,4 @@ void equeue_tick_init() {
 
 ### Related content
 
-- <a href="/docs/v5.6/tools/build-profiles.html" target="_blank">Build profile</a> documentation.
+- [Build profile](/docs/v5.7/tools/build-profiles.html) documentation.

@@ -8,11 +8,11 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
     - GNU Arm Embedded Toolchain.
     - Arm Compiler 5.
     - IAR Arm Compiler (versions 7.70 to 7.80.x).
-- Eclipse CDT (<a href="https://www.eclipse.org/cdt/" target="_blank">C/C++ Development Tooling</a>) make (unmanaged) projects using:
+- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
     - GNU Arm Embedded Toolchain.
     - Arm Compiler 5.
     - IAR Arm Compiler (versions 7.70 to 7.80.x).
-- GNU Arm Eclipse (managed <a href="https://www.eclipse.org/cdt/" target="_blank">CDT</a> projects), using GNU Arm Embedded Toolchain.
+- GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain.
 - DS-5.
 - LPCXpresso.
 - Kinetis Design Studio.
@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ### Exporting from Arm Mbed CLI
 
-<a href="/docs/v5.6/tools/mbed-cli.html" target="_blank">Mbed CLI</a> currently supports <a href="/docs/v5.6/tools/exporting.html#exporting-from-arm-mbed-cli" target="_blank">exporting</a> to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) currently supports [exporting](/docs/v5.7/tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -36,7 +36,7 @@ For example, to export to uVision5 with the K64F target, run:
 A `*.uvproj` file is created in the root folder of the project.
 You can open this project file with uVision5.
 
-When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the <a href="/docs/v5.6/tools/build-profiles.html" target="_blank">build profiles documentation</a>. For example, this means that compiling within UVision 5 after this export:
+When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](/docs/v5.7/tools/build-profiles.html). For example, this means that compiling within UVision 5 after this export:
 
     $ mbed export -i uvision5 -m K64F
 
@@ -96,7 +96,7 @@ If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r
 
 Make itself does not compile source code. It relies on a compiler such as:
 
-- <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm" target="_blank">GNU Arm Embedded Toolchain</a>, which you can install for free using the <a href="http://gnuarmeclipse.livius.net/blog/toolchain-install/" target="_blank">instructions</a>. Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+- [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which you can install for free using the [instructions](http://gnuarmeclipse.livius.net/blog/toolchain-install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
 - The IAR Arm compiler bundled with the IAR Embedded Workbench.
 - Arm Compiler 5.
 
@@ -104,15 +104,15 @@ Make itself does not compile source code. It relies on a compiler such as:
 
 ##### Make and Eclipse on Windows: Nordic platforms using SoftDevices
 
-Make and Eclipse exports targeting Nordic devices require the <a href="http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi" target="_blank">Nordic nrf51_SDK</a> on Windows. Please download and install it.
+Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. Please download and install it.
 
 ##### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
 
-Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the <a href="http://srecord.sourceforge.net" target="_blank">sRecord</a> package. It may be available from your package manager (such as apt-get or Brew).
+Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew).
 
 #### GNU Arm Eclipse (managed CDT projects) with GNU Arm Embedded Toolchain
 
-The <a href="http://gnuarmeclipse.github.io" target="_blank">GNU Arm Eclipse</a> exporter generates ready to run managed CDT projects.
+The [GNU Arm Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
 
 Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command-line options.
 
@@ -158,4 +158,4 @@ Freescale KDS now ships with the GNU Arm Embedded Toolchain. You may need to upd
 
 The Mbed libraries contain CMSIS startup files.
 
-When importing an Mbed project into <a href="http://www.atmel.com/Microsite/atmel-studio/" target="_blank">Atmel Studio</a>, you must uncheck the **migrate to current infrastructure** box.
+When importing an Mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must uncheck the **migrate to current infrastructure** box.

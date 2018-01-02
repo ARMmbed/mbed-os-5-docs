@@ -1,6 +1,6 @@
 ### RTOS
 
-CMSIS/RTX code is imported from <a href="https://github.com/ARM-software/CMSIS_5/" target="_blank">the upstream CMSIS repository (develop branch)</a> with the help of a Python script in the `mbed-os` repository `mbed-os\tools\importer\importer.py`.
+CMSIS/RTX code is imported from [the original CMSIS repository](https://github.com/ARM-software/CMSIS_5/) with the help of a Python script in the `mbed-os` repository `mbed-os\tools\importer\importer.py`.
 
 #### Memory considerations
 
