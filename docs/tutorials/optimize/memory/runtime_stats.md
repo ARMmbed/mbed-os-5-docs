@@ -27,7 +27,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 <span class="notes">**Note**: This function is available even when the heap stats are not enabled, but always returns zero for all fields.</span>
 
-#### Example use cases
+### Example heap statistics use cases
 
 * Getting worst case memory usage, `max_size`, to properly size MCU RAM.
 * Detecting program memory leaks by the current size allocated (`current_size`) or number of allocations in use (`alloc_cnt`).
@@ -60,7 +60,7 @@ int main(void)
 }
 ```
 
-##### Side effects of enabling heap statistics
+#### Side effects of enabling heap statistics
 
 * An additional 8 bytes of overhead for each memory allocation.
 * The function `realloc` will never reuse the buffer it is resizing.
@@ -89,7 +89,7 @@ There are two functions you can use to access the stack stats:
 
 <span class="notes">**Note**: These functions are available even when the stack stats are not enabled but always return zero for all fields.</span>
 
-### Example use cases
+### Example stack statistics use cases
 
 * Using `max_size` to calibrate stack sizes for each thread.
 * Detecting which stack is close to overflowing.
