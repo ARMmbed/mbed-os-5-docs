@@ -1,4 +1,4 @@
-## Static Memory Optimization
+## Static memory optimization
 
 #### Removing unused modules
 
