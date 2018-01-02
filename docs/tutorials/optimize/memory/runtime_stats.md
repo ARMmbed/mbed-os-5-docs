@@ -6,10 +6,24 @@ Arm Mbed OS 5 provides various runtime statistics to help characterize resource 
 
 Heap statistics provide exact information about the number of bytes dynamically allocated by a program. It does not take into account heap fragmentation or allocation overhead. This allows allocation size reports to remain consistent, regardless of order of allocation (fragmentation) or allocation algorithm (overhead).
 
-To enable heap stats:
+#### To enable heap stats from mbed CLI:
 
 1. Add the command-line flag `-DMBED_HEAP_STATS_ENABLED=1`.
 2. Use the function ``mbed_stats_heap_get()`` to take a snapshot of heap stats.
+
+#### To enable heap stats using `mbed_app.json`:
+
+1. Add the following to `mbed_app.json`:
+```
+{
+    "macros": [
+        "MBED_HEAP_STATS_ENABLED=1"
+    ],
+    ...
+}
+```
+2. Use the function ``mbed_stats_heap_get()`` to take a snapshot of heap stats.
+
 
 <span class="notes">**Note**: This function is available even when the heap stats are not enabled, but always returns zero for all fields.</span>
 
@@ -46,7 +60,7 @@ int main(void)
 }
 ```
 
-#####Side effects of enabling heap statistics
+##### Side effects of enabling heap statistics
 
 * An additional 8 bytes of overhead for each memory allocation.
 * The function `realloc` will never reuse the buffer it is resizing.
