@@ -19,7 +19,7 @@ For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-bl
 +---------------------+-------+-------+-------+
 ```
 
-Even if you are no longer testing your program, the `features/frameworks` module includes the Mbed OS test tools. Because of this, you are building one of our test harnesses into every binary. [Removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) saves a significant amount of RAM and flash memory.
+The `features/frameworks` module includes the Mbed OS test tools, even if you are no longer testing your program. Because of this, you are building one of our test harnesses into every binary. [Removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) saves a significant amount of RAM and flash memory.
 
 ##### `Printf` and UART
 
