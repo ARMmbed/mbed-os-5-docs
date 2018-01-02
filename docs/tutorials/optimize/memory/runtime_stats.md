@@ -70,7 +70,17 @@ int main(void)
 
 Stack stats provide information on the allocated stack size of a thread and the worst case stack usage. Any thread on the system can be queried for stack information.
 
-To enable heap stats, add the command-line flag `-DMBED_STACK_STATS_ENABLED=1`.
+To enable stack stats from command line, add the command-line flag `-DMBED_STACK_STATS_ENABLED=1`.
+
+Alternatively, to enable stack stats using `mbed_app.json`, add the following to `mbed_app.json`:
+```
+{
+    "macros": [
+        "MBED_HEAP_STATS_ENABLED=1"
+    ],
+    ...
+}
+```
 
 There are two functions you can use to access the stack stats:
 
