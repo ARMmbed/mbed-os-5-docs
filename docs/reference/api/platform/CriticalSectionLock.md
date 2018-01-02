@@ -4,7 +4,7 @@ The CriticalSectionLock class provides a mechanism to access a resource without 
 
 CriticalSectionLock class is based on RAII approach. In other words, the constructor acquires the lock, and the destructor destroys it automatically when it is out of scope. We do not recommend you use CriticalSectionLock as global or a member of a class because you will enter critical section on object creation, and all interrupts will be disabled.
 
-Nesting of critical section is supported, and the destructor enables interrupts only when you exit from the last nested critical section.
+Mbed OS supports nesting of critical section, and the destructor enables interrupts only when you exit from the last nested critical section.
 
 <span class="notes">**Note:** You must not use time-consuming operations, standard library and RTOS functions inside critical section.</span>
 
