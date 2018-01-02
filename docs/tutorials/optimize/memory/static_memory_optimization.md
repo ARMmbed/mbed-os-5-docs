@@ -49,4 +49,4 @@ You can also take advantage of the fact that these programs only run on embedded
 - The code that the compiler injects consumes memory.
 - It implies dynamic memory allocation and thus requires the binary to include `malloc`, even when the application does not use it.
 
-When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime.
+When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime. Note, this is enabled by default in mbed OS 5.2.0.
