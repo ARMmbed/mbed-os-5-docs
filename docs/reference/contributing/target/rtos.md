@@ -10,16 +10,15 @@ Developers need to use the Mbed OS RTOS C++ API or supply backing memory for RTX
 
 #### Configuration
 
-Mbed OS changes to RTX configuration all exist in a single file: `mbed-os/rtos/rtx2/mbed_rtx_conf.h`
+Mbed OS changes to RTX configuration all exist in a single file: `mbed-os/rtos/TARGET_CORTEX/mbed_rtx_conf.h`
 
 Option | Value | Description |
 -------|-------|-------------|
-`OS_STACK_SIZE` | 4K or 2K | For a normal target, the thread stack size is set to 4K; for constrained targets, it's 2K. |
+`OS_STACK_SIZE` | 4K | OS Stack size is set as `MBED_CONF_APP_THREAD_STACK_SIZE` which is 4096 as default. |
 `OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack set to 768B that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
 `OS_IDLE_THREAD_STACK_SIZE` | 512B | Required to handle Mbed OS wrappers |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
-`OS_MUTEX_OBJ_MEM` | 1 or 0 | For ARMC, use 1; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
-`OS_MUTEX_NUM` | 6 or 0 | For ARMC, use 6; for other toolchains, it's 0. ARMC uses statically allocated mutexes internally. |
+`OS_TICK_FREQ` | 1000 | OS Tickrate must be 1000 for system timing. |
 `OS_STACK_WATERMARK` | 0 or 1 | Watermarking is enabled if `MBED_STACK_STATS_ENABLED` or `MBED_STACK_STATS_ENABLED` are set. |
 `OS_PRIVILEGE_MODE` | 0 or 1 | We set it for 0 if uVisor is enabled, 1 otherwise. |
 
