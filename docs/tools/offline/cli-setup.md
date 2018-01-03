@@ -2,7 +2,7 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](#windows-installer-for-mbed-cli). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](#installing-mbed-cli-standalone-stable-version)</span>
+<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](/docs/v5.7/tools/installing-with-the-windows-installer.html). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](/docs/v5.7/tools/installing-manually.html).</span>
 
 ## Requirements
 
