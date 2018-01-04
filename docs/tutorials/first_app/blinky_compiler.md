@@ -1,8 +1,8 @@
-## Mbed Online Compiler
+## Arm Mbed Online Compiler
 
 ### Setup
 
-#### Create an Mbed developer account
+#### Create an Arm Mbed developer account
 
 Go to [os.mbed.com](os.mbed.com), and [create an account](https://os.mbed.com/account/signup/F).
 
@@ -35,7 +35,7 @@ Click on the "Compile" button. Your browser downloads the program as an executab
 
 Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
-Once you have flashed the file to the board, press the board's "reset" button. The LED blinks.
+Once you have flashed the file to the board, press the board's reset button. The LED blinks.
 
 ### Debug
 
