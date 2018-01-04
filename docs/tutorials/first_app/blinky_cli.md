@@ -162,7 +162,7 @@ Invoke `mbed detect` from your command-line to determine which communication por
   - [Serial communications](https://os.mbed.com/docs/latest/tutorials/serial-communication.html).
   - [Optimizing binary size](https://os.mbed.com/docs/latest/tutorials/optimizing.html).
 
-- Other Resources 
+- Other resources 
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
   - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
   - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
