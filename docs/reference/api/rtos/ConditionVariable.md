@@ -10,4 +10,4 @@ The ConditionVariable class provides a mechanism to safely wait for or signal st
 
 Below is an example of ConditionVariable usage, where one thread is generating events every 1s, and the second thread is waiting for the events and executing an action.
 
-[![View code](https://os.mbed.com/teams/mbed_example/code/ConditionVariable_Example_1/)](https://os.mbed.com/teams/mbed_example/code/ConditionVariable_Example_1/file/36d0e9449606/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ConditionVariable_Example_1/)](https://os.mbed.com/teams/mbed_example/code/ConditionVariable_Example_1/file/36d0e9449606/main.cpp/)
