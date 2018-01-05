@@ -881,16 +881,6 @@
         ]
     },
     {
-        "title": "Releases",
-        "description": "The Mbed OS releases; latest and history",
-        "slug": "releases",
-        "type": "markdown",
-        "sources": [],
-        "tags": [
-            "releases"
-        ]
-    },
-    {
         "title": "mbed OS API doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api-doxy",
