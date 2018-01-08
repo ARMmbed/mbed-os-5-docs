@@ -1,6 +1,6 @@
 ## Eclipse
 
-This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [configure your local debug toolchain](https://os.mbed.com/docs/v5.6/tools/exporting.html).
+This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [choose a compiler with which to build your project](/docs/v5.7/tools/index.html#compiler-versions).
 
 ### Installing Eclipse
 
