@@ -23,7 +23,7 @@ Option Name | Features supported | Current binary size in Mbed OS 5.5
 
 If you want to optimize the flash usage, you need to select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
 
-See <a href="/docs/v5.6/tutorials/using-the-apis.html#overview-of-the-6lowpan-network" target="_blank">6LoWPAN overview</a> for the definition of star and mesh networks. These same principles apply also to Thread protocol.
+See <a href="/docs/v5.6/tutorials/mesh.html" target="_blank">6LoWPAN overview</a> for the definition of star and mesh networks. These same principles apply also to Thread protocol.
 
 Select the protocol the network is based on:
 
