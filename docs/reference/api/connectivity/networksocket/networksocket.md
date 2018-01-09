@@ -5,7 +5,7 @@ This section covers the main connectivity APIs in Arm Mbed OS, which are:
 - [Ethernet](/docs/v5.7/reference/ethernet.html): API for connecting to the internet over an Ethernet connection.
 - [Wi-Fi](/docs/v5.7/reference/wi-fi.html): API for connecting to the internet with a Wi-Fi device.
 - [Cellular](/docs/v5.7/reference/cellular-api.html): API for connecting to the internet using a cellular device.
-- [Mesh networking](/docs/v5.7/reference/mesh.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
+- Mesh networking: Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
 - [UDPSocket](/docs/v5.7/reference/udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
 - [TCPSocket](/docs/v5.7/reference/tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [TCPServer](/docs/v5.7/reference/tcpserver.html): This class provides the ability to accept incoming TCP connections.
