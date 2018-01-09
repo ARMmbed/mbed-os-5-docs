@@ -22,6 +22,8 @@ void main()
 }
 ```
 
+<span class="notes">**Note:** Mbed OS handles sleep for you automatically when you call any of the wait functions. You do not need to call `sleep()` directly unless you are overriding the default sleep handling of Mbed OS.</span>
+
 ### Sleep modes
 
 There are two available sleep modes:
@@ -34,7 +36,7 @@ You can wake up the processor by any internal peripheral interrupt or external p
 
 2. Deep sleep mode
 
-This mode is similar to sleep but saves more power and has a longer wakeup time. It saves power by turning off the high-speed clocks. Because of this, you can only enter this mode when peripherals relying on high-speed clocks are not in use. Peripherals that do not rely on high-speed clocks include the lp ticker, RTC and external interrupt on a pin. This mode maintains all state.
+This mode is similar to sleep but saves more power and has a longer wakeup time. It saves power by turning off the high-speed clocks. Because of this, you can only enter this mode when peripherals relying on high-speed clocks are not in use. Peripherals that do not rely on high-speed clocks include the LowPowerTicker, RTC and InterruptIn APIs. This mode maintains all state.
 
 ### Sleep manager
 
