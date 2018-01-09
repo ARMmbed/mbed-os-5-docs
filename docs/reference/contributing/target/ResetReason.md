@@ -1,29 +1,29 @@
 ### Reset Reason
 
-The Reset Reason HAL API provides a platform independent method of checking the cause of the last system reset. Implementing the Reset Reason API is not mandatory, but by implementing it, you can check for erroneous system resets at boot time.
+The Reset Reason API provides a platform-independent method of checking the cause of the last system reset. Implementing the Reset Reason API is not mandatory, but by implementing it, you can check for erroneous system resets at boot time.
 
 #### Assumptions
 
 ##### Defined behavior
 
-* The function `hal_reset_reason_clear` will clear the reset reason registers for the next system boot.
-* The function `hal_reset_reason_get` will get the reset reason currently in the reset reason registers. This may not necessarily be the value of the reset reason registers that were set at boot time if they have been cleared since.
+- The function `hal_reset_reason_clear` clears the reset reason registers for the next system boot.
+- The function `hal_reset_reason_get` will get the reset reason currently in the reset reason registers. This may not necessarily be the value of the reset reason registers that were set at boot time if they have been cleared since.
 
 ##### Undefined behavior
 
-* The function `hal_reset_reason_get` is not guaranteed to return the same value when called repeatedly. The user should store the value for later use instead of calling the function repeatedly.
-* The function `hal_reset_reason_clear` may not clear the reset reason register in time for the next system boot.
+- The function `hal_reset_reason_get` is not guaranteed to return the same value when called repeatedly. The user should store the value for later use instead of calling the function repeatedly.
+- The function `hal_reset_reason_clear` may not clear the reset reason register in time for the next system boot.
 
 ##### Potential bugs
 
-* The contents of the targets reset reason register may be cleared by some subsystem before it first gets called, this will return an `RESET_REASON_UNKNOWN` value to the user. To avoid this, the user should call the reset reason API as early as possible at boot time.
-* If the target doesn't support clearing reset registers, `hal_reset_reason_get` will seem to erroneously return a reset reason even after clearing.
+- The contents of the targets reset reason register may be cleared by some subsystem before it first gets called. This returns a `RESET_REASON_UNKNOWN` value to the user. To avoid this, the user should call the reset reason API as early as possible at boot time.
+- If the target doesn't support clearing reset registers, `hal_reset_reason_get` seems to erroneously return a reset reason even after clearing.
 
-#### Dependencies
+#### Dependency
 
 Hardware Reset Reason registers.
 
-#### Implementing Reset Reason API
+#### Implementing Reset Reason
 
 You can find the API and specification for the Reset Reason API in the following header file:
 
