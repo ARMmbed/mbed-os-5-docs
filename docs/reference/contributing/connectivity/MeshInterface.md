@@ -12,7 +12,7 @@ The Mbed OS port of Nanostack consist of a few helper modules that provide easie
 
 ![Nanostack inside Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
 
-- [Mbed Mesh API](/docs/v5.7/reference/mesh.html) controls and initializes Nanostack on Mbed OS.
+- Mbed Mesh API controls and initializes Nanostack on Mbed OS.
     - Security settings.
     - Channel configuration.
     - Connection and reconnection logic.
