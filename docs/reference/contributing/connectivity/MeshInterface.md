@@ -32,7 +32,7 @@ In Mbed OS, Socket API hides the differences between the networking stacks. User
 
 For an example of a simple application using Nanostack, see <a href="https://github.com/ARMmbed/mbed-os-example-mesh-minimal" target="_blank">Example mesh application for Mbed OS</a>.
 
-For more information, see the <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">documentation of the Socket API</a>.
+For more information, see the <a href="/docs/v5.6/reference/network-socket.html" target="_blank">documentation of the Socket API</a>.
 
 ##### Providing RF driver for Mbed OS applications
 
