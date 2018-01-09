@@ -1,4 +1,4 @@
-### How to commission a Thread device in practice
+<h3 id="thread-commissioning">How to commission a Thread device in practice</h3>
 
 #### Building the node application
 
