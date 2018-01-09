@@ -182,7 +182,7 @@ Only valid when **Case 4** is applicable.
 
 Only valid when **Case 1** is applicable.
 
-- This is the most complex case - the bulk of the work is implementing the <a href="/docs/v5.6/reference/network-socket-overview.html" target="_blank">NSAPI socket and network interfaces</a>. The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
+- This is the most complex case - the bulk of the work is implementing the <a href="/docs/v5.6/reference/network-socket.html" target="_blank">NSAPI socket and network interfaces</a>. The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
 
 - Use a file handle, such as `UARTSerial`, to provide the raw data connection; then you can use `ATCmdParser` to handle connection logic and the data flow of the socket API, assuming that you use AT commands to control the sockets.
 
