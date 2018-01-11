@@ -130,6 +130,8 @@ This command creates the `.project` and `.cproject` files in the root folder of 
 
 You can open this new project with an Eclipse CDT, which has the GNU Arm Eclipse plug-ins installed.
 
+<span class="notes">**Note:** Using the Mbed command-line tools to build and export GNU Arm Eclipse breaks compile. Running 'mbed export -I gnuarmeclipse' touches `.mbedignore`, which includes Nanostack. Trying to run 'mbed compile' again fails because the exporter touches `.mbedignore`.</span>
+
 #### GNU Arm Eclipse on Windows: 8Kb command length limitation
 
 Prior to version 2.6.1 of GNU Arm Eclipse, the build tools of the GNU Arm Eclipse plugin used the Windows `cmd.exe` shell. This exposed the build system to a limitation of `cmd.exe`. Please upgrade your version of GNU Arm Eclipse if you encounter a problem such as:
