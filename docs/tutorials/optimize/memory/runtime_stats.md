@@ -27,6 +27,20 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 <span class="notes">**Note**: This function is available even when the heap stats are not enabled, but always returns zero for all fields.</span>
 
+
+``mbed_stats_heap_get()`` will return a struct containing the following:
+
+
+|                   |                                                   |
+| ----------------- | ------------------------------------------------- |
+| current_size      | Bytes allocated currently.                        |
+| max_size          | Max bytes allocated at a given time.              |
+| total_size        | Cumulative sum of bytes ever allocated.           |
+| reserved_size     | Current number of bytes allocated for the heap.   |
+| alloc_cnt         | Current number of allocations.                    |
+| alloc_fail_cnt    | Number of failed allocations.                     |
+
+
 ### Example heap statistics use cases
 
 * Getting worst case memory usage, `max_size`, to properly size MCU RAM.
@@ -76,7 +90,7 @@ Alternatively, to enable stack stats using `mbed_app.json`, add the following to
 ```
 {
     "macros": [
-        "MBED_HEAP_STATS_ENABLED=1"
+        "MBED_STACK_STATS_ENABLED=1"
     ],
     ...
 }
