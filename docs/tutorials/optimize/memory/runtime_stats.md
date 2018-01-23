@@ -8,7 +8,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 #### To enable heap stats from mbed CLI:
 
-1. Add the command-line flag `-DMBED_HEAP_STATS_ENABLED=1`.
+1. Add the command-line flag `-DMBED_HEAP_STATS_ENABLED=1`, for example `mbed compile -DMBED_HEAP_STATS_ENABLED=1`
 2. Use the function ``mbed_stats_heap_get()`` to take a snapshot of heap stats.
 
 #### To enable heap stats using `mbed_app.json`:
@@ -84,7 +84,7 @@ int main(void)
 
 Stack stats provide information on the allocated stack size of a thread and the worst case stack usage. Any thread on the system can be queried for stack information.
 
-To enable stack stats from command line, add the command-line flag `-DMBED_STACK_STATS_ENABLED=1`.
+To enable stack stats from command line, add the command-line flag `-DMBED_STACK_STATS_ENABLED=1`, for example `mbed compile -DMBED_HEAP_STATS_ENABLED=1`
 
 Alternatively, to enable stack stats using `mbed_app.json`, add the following to `mbed_app.json`:
 ```
@@ -102,6 +102,17 @@ There are two functions you can use to access the stack stats:
 * `mbed_stats_stack_get_each` provides stack informations for each thread separately.
 
 <span class="notes">**Note**: These functions are available even when the stack stats are not enabled but always return zero for all fields.</span>
+
+Both of these functions will return a struct containing the following:
+
+
+|                 |                                                                       |
+| --------------- | --------------------------------------------------------------------- |
+| thread_id       | Identifier for thread that owns the stack or 0 if multiple threads.   |              
+| max_size        | Maximum number of bytes used on the stack.                            |
+| reserved_size   | Current number of bytes allocated for the stack.                      |
+| stack_cnt       | Number of stacks stats accumulated in the structure.                  |
+
 
 ### Example stack statistics use cases
 
