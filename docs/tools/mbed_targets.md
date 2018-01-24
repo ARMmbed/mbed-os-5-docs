@@ -6,7 +6,7 @@ Arm Mbed uses JSON as a description language for its build targets. You can find
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
-```
+```json
     "TEENSY3_1": {
         "inherits": ["Target"],
         "core": "Cortex-M4",
@@ -20,6 +20,7 @@ You are not allowed to redefine existing targets in `custom_targets.json`. To be
         },
         "device_name": "MK20DX256xxx7",
         "detect_code": ["0230"]
+    }
 ```
 
 The style that we use for targets is:
@@ -37,7 +38,7 @@ This section lists all the properties the Mbed build system understands. Unless 
 
 The description of an Mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
-```
+```json
 "Target": {
     "core": null,
     "default_toolchain": "ARM",
@@ -59,7 +60,7 @@ A child target may add properties that don't exist in any of its parents. For ex
 
 It's possible, but discouraged, to inherit from more than one target. For example:
 
-```
+```json
 "ImaginaryTarget": {
     "inherits": ["Target", "TEENSY3_1"]
 }
@@ -103,7 +104,7 @@ When a target inherits, it's possible to alter the values of `macros` in the chi
 
 For example:
 
-```
+```json
     "TargetA": {
         "macros": ["PARENT_MACRO1", "PARENT_MACRO2"]
     },
@@ -166,7 +167,7 @@ The `default_toolchain` property names the toolchain that compiles code for this
 
 Some targets require specific actions to generate a programmable binary image. Specify these actions using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a Python function that is accessible from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When you do not specify the `toolchains` key for a `post_binary_hook`, you can assume the `post_binary_hook` applies to all toolcahins. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
-```
+```json
 "post_binary_hook": {
     "function": "TEENSY3_1Code.binary_hook",
     "toolchains": ["ARM_STD", "ARM_MICRO", "GCC_ARM"]
@@ -179,7 +180,7 @@ The build tools call `TEENSY3_1` `post_binary_hook` when they build using the `A
 
 As for the `TEENSY3_1` code, this is how it looks in `tools/targets/__init__.py`:
 
-```
+```python
 class TEENSY3_1Code:
     @staticmethod
     def binary_hook(t_self, resources, elf, binf):
