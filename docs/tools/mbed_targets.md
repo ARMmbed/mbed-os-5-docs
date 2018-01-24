@@ -362,7 +362,7 @@ target errors:
 ---
 hierarchy: Family (LPCTarget) -> MCU (LPC11U24_301) -> ???
 hierarchy errors:
-- no boards found in heirarchy
+- no boards found in hierarchy
 target errors:
   LPC11U24_301:
   - release_versions not found, and is required
