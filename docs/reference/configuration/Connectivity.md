@@ -19,7 +19,6 @@ Name: ppp-cell-iface.baud-rate
     Defined by: library:ppp-cell-iface
     Macro name: MBED_CONF_PPP_CELL_IFACE_BAUD_RATE
     Value: 115200 (set by library:ppp-cell-iface)
-
 Name: lwip.addr-timeout
     Description: On dual-stack system how long to additionally wait for other stack's address in seconds
     Defined by: library:lwip
@@ -60,6 +59,18 @@ Name: lwip.ipv4-enabled
     Value: 1 (set by library:lwip)
 Name: lwip.ipv6-enabled
     Description: Enable IPv6
+    Defined by: library:lwip
+    No value set
+Name: lwip.mem-size
+    Description: Size of heap (bytes) - used for outgoing packets, and also used by some drivers for reception. Current default (used if null here) is set to 1600 in opt.h, unless overridden by target Ethernet drivers.
+    Defined by: library:lwip
+    No value set
+Name: lwip.pbuf-pool-bufsize
+    Description: Size of pbufs in pool. If set to null, lwIP will base the size on the TCP MSS, which is 536 unless overridden by the target
+    Defined by: library:lwip
+    No value set
+Name: lwip.pbuf-pool-size
+    Description: Number of pbufs in pool - usually used for received packets, so this determines how much data can be buffered between reception and the application reading. If a driver uses PBUF_RAM for reception, less pool may be needed. Current default (used if null here) is set to 5 in lwipopts.h, unless overridden by target Ethernet drivers.
     Defined by: library:lwip
     No value set
 Name: lwip.ppp-enabled
