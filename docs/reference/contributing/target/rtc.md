@@ -4,11 +4,7 @@ Implementing RTC enables Mbed OS to keep track of current time. It is used by th
 
 #### Deprecation warning
 
-**All of the following informations are intended for the new RTC HAL API, available on a feature branch, but not yet part of the master branch. We are planning to replace the API on master in time for the Mbed OS 5.9 realease. If you intend for your port to be part of the Mbed OS before May 2019, you will need to implemnt both of the APIs. In this case you need to submit your main port as a pull request against master, implementing the old API. Additionaly you need to rise another pull request against `feature-hal-spec-rtc` branch, implementing the new API described below.**
-
-You can find the old RTC HAL API in the following header file:
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/rtc__api_8h_source.html)
+**We are changing the RTC HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the RTC API](#Implementing-the-RTC-API) section.**
 
 #### Assumptions
 
@@ -36,7 +32,11 @@ Hardware RTC capabilities.
 
 #### Implementing the RTC API
 
-You can find the API and specification for the RTC in the following header file:
+We are working on the new HAL RTC API, which will replace current version in an upcoming release of Mbed OS. You will need to implement the RTC API in both variants. Firstly you need to implement the current API, you can find it on master branch:
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/rtc__api_8h_source.html)
+
+To make sure your platform is ready for the upcoming changes, you will need to implement the future API and submit it in a separate pull request against `feature-hal-spec-rtc` branch. You can find the API and specification for the new RTC API in the following header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-rtc/hal/rtc_api.h)
 
