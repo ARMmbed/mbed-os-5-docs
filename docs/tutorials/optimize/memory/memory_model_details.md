@@ -1,7 +1,5 @@
 ## Memory model design details
 
-[Expansion of the memory model page: [https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Memory.md](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Memory.md)]
-=======
 This is a basic overview of the memory model in Mbed OS.
 
 ```
@@ -59,16 +57,16 @@ There are at least two kinds of memory in the system: flash and RAM.
 
 ### RAM
 
-Inside RAM, we can distinguish two logical types: static and dynamic memory. Static memory is allocated at compile time and, consequently, does not change size during runtime. Dynamic memory is allocated at runtime. For example, the program memory usage grows and shrinks as threads are forked and joined and as objects are constructed and destructed. The system uses each of them in different ways:
+Inside RAM, you can distinguish two logical types: static and dynamic memory. Static memory is allocated at compile time and, consequently, does not change size during runtime. Dynamic memory is allocated at runtime. For example, the program memory use grows and shrinks as you fork and join threads and construct and destruct objects. The system uses each of them in different ways:
 
 - Static:
-    - Vector table (read/write).
+    - Vector table (read and write).
     - Global data.
     - Static data.
-    - Stacks for default threads (main, timer, idle, scheduler/ISR).
+    - Stacks for default threads (main, timer, idle and scheduler/ISR).
 - Dynamic:
     - Heap (dynamic data).
-    - Stacks for user threads. Mbed OS will dynamically allocate memory on heap for user thread's stacks.
+    - Stacks for user threads. Mbed OS dynamically allocates memory on heap for user thread's stacks.
 
 Stack checking is turned on for all threads, and the kernel errors if it detects an overflow condition.
 
