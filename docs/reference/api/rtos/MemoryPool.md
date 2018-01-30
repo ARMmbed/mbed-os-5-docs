@@ -1,6 +1,6 @@
 ## MemoryPool
 
-You can use the MemoryPool class to define and manage fixed-size memory pools.
+You can use the MemoryPool class to define and manage fixed-size memory pools. You can allocate memory blocks of fixed size from the pool using the `alloc` method, which returns a pointer to the block of memory or NULL if there is no space available in the pool. The `alloc` function sets the block of memory to zeroes before returning the pointer of the block to the caller. It's the user's responsibility to initialize the objects placed in blocks.  
 
 ### MemoryPool class reference
 
