@@ -30,8 +30,8 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
    `mbed_stats_heap_get()` returns a struct containing the following:
 
-   | Function          | Description                                       |
-   | ----------------- | ------------------------------------------------- |
+   | Variable          | Description                                       |
+   | :---------------- | :------------------------------------------------ |
    | current_size      | Bytes allocated currently.                        |
    | max_size          | Max bytes allocated at a given time.              |
    | total_size        | Cumulative sum of bytes ever allocated.           |
@@ -106,8 +106,8 @@ There are two functions you can use to access the stack stats:
 Both of these functions return a struct containing the following:
 
 
-|                 |                                                                           |
-| --------------- | ------------------------------------------------------------------------- |
+| Variable        | Description                                                               |
+| :-------------- | :------------------------------------------------------------------------ |
 | thread_id       | Identifier for the thread that owns the stack or 0 if multiple threads.   |              
 | max_size        | Maximum number of bytes used on the stack.                                |
 | reserved_size   | Current number of bytes allocated for the stack.                          |
