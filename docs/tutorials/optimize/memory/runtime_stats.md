@@ -30,7 +30,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
    `mbed_stats_heap_get()` returns a struct containing the following:
 
-
+   | Function          | Description                                       |
    | ----------------- | ------------------------------------------------- |
    | current_size      | Bytes allocated currently.                        |
    | max_size          | Max bytes allocated at a given time.              |
