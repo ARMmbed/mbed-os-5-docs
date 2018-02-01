@@ -1,10 +1,10 @@
-### Mbed OS 2 to 5 Migration Guide
+### Mbed OS 2 to 5 migration guide
 
-This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library, or program from Mbed OS 2 to Mbed OS 5.
+This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5.
 
-#### Pre-requisites
+#### Prerequisite
 
-* [Mbed CLI](https://os.mbed.com/docs/v5.7/tools/arm-mbed-cli.html)
+[Mbed CLI](https://os.mbed.com/docs/v5.7/tools/arm-mbed-cli.html)
 
 ### Identifying old versions of Mbed OS
 
@@ -14,11 +14,11 @@ First, navigate to the Hello World repository for the component.
 
 <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/1-helloworld.png)</span>
 
-Next, view the files in the Hello World repository. The presence of an  `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (< 5).
+Next, view the files in the Hello World repository. The presence of an  `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
 <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/2-oldmbed.png)</span>
 
-A program that uses, and has been tested with Mbed OS 5+, will have an `mbed-os.lib` file.
+A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.lib` file.
 
 <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/3-newmbed.png)</span>
 
@@ -28,12 +28,13 @@ Some repositories may have both an `mbed.bld` file and a `mbed-rtos.lib` file pr
 
 There are two possibilities when trying to migrate a component to Mbed OS:
 
-1. Replacing the old Mbed library with Mbed OS "just works," as the APIs used in the library have seen no changes. In this instance, you're done.
-2. Replacing the old Mbed library with Mbed OS produces some compilation errors.  For one of two reasons:
-  - The API calls in the **library** are out of date, and will need to be migrated to Mbed OS API syntax
-  - The Hello World **application** uses target specific code and will need to be migrated to use code for the target we are compiling for
+1. Replacing the old Mbed library with Mbed OS "just works," as the APIs in the library have not changed. In this instance, you're finished.
+2. Replacing the old Mbed library with Mbed OS produces some compilation errors. For one of two reasons:
+  - The API calls in the **library** are out of date, and you need to migrate to Mbed OS API syntax.
+  - The Hello World **application** uses target specific code, and you need to be migrate it to use code for the target you are compiling for.
 
-The general outline for updating to Mbed OS 5 is as follows:
+The general outline for updating to Mbed OS 5 is:
+
 ```
 mbed import [URL of Hello World]
 cd [Project Name]
@@ -42,16 +43,19 @@ mbed remove mbed-rtos
 mbed add mbed-os
 ```
 
-To determine the success of migration run:
+To determine the success of migration, run:
+
 `mbed compile -m [platform] -t [toolchain]`
 
-### Example Component #1 - Migrating Just Works
-* Component: [Grove - Buzzer](https://os.mbed.com/components/Grove-Buzzer/)
-* Hello World repo: [Seeed_Grove_Buzzer](https://os.mbed.com/teams/Seeed/code/Seeed_Grove_Buzzer/)
-* Platform: [u-blox EVK-ODIN-W2](https://os.mbed.com/platforms/ublox-EVK-ODIN-W2/)
-* Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)
+### Example component #1 - migrating just works
 
-So, in our command prompt we run:
+- Component: [Grove - Buzzer](https://os.mbed.com/components/Grove-Buzzer/).
+- Hello World repo: [Seeed_Grove_Buzzer](https://os.mbed.com/teams/Seeed/code/Seeed_Grove_Buzzer/).
+- Platform: [u-blox EVK-ODIN-W2](https://os.mbed.com/platforms/ublox-EVK-ODIN-W2/).
+- Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
+
+In the command-line, run:
+
 ```
 mbed import https://os.mbed.com/teams/Seeed/code/Seeed_Grove_Buzzer/
 cd Seeed_Grove_Buzzer
@@ -61,15 +65,17 @@ mbed add mbed-os
 mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 ```
 
-We see that it successfully compiles, so there are no changes necessary to the Grove - Buzzer library or Hello World program.
+It successfully compiles, so no changes are necessary to the Grove - Buzzer library or Hello World program.
 
-### Example Component #2 - Application Fails to Compile
-* Component: [SRF08-Ultrasonic-Range-Finder](https://os.mbed.com/components/SRF08-Ultrasonic-Range-Finder/)
-* Hello World repo: [SRF08HelloWorld](https://os.mbed.com/users/melse/code/SRF08HelloWorld/)
-* Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/)
-* Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)
+### Example component #2 - application fails to compile
 
-So, in our command prompt we run:
+- Component: [SRF08-Ultrasonic-Range-Finder](https://os.mbed.com/components/SRF08-Ultrasonic-Range-Finder/).
+- Hello World repo: [SRF08HelloWorld](https://os.mbed.com/users/melse/code/SRF08HelloWorld/).
+- Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/).
+- Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
+
+In the command-line, run:
+
 ```
 mbed import https://os.mbed.com/users/melse/code/SRF08HelloWorld/
 cd SRF08HelloWorld
@@ -81,7 +87,7 @@ mbed compile -m k64f -t gcc_arm
 
 #### Compilation Errors
 
-After we have cloned the repository to our computer and deployed the latest version of Mbed OS, we need to check what compilation errors already exist.
+After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check what compilation errors already exist.
 
 Here is the output produced from `mbed compile`:
 
@@ -108,7 +114,7 @@ Compile [  0.8%]: main.cpp
 [mbed] ERROR: Command "c:\python27\python.exe -u C:\Repos\SRF08HelloWorld\mbed-os\tools\make.py -t gcc_arm -m k64f --source . --build .\BUILD\k64f\gcc_arm" in "C:\Repos\SRF08HelloWorld"
 ```
 
-So, this is a target specific error. The pins used in the Hello World application do not exist on the target we compiled for, K64F. So, let's replace the SDA/SCL pins with ones present on the K64F. We will use the [K64F platform page](https://os.mbed.com/platforms/FRDM-K64F/) to find the correct pins. Here, I see that D14/D15 will work. So, `main.cpp` now looks like this:
+This is a target-specific error. The pins used in the Hello World application do not exist on this target, K64F. To fix this, replace the SDA/SCL pins with ones present on the K64F. Use the [K64F platform page](https://os.mbed.com/platforms/FRDM-K64F/) to find the correct pins. D14/D15 will work. So, `main.cpp` now looks like this:
 
 ```
 #include "mbed.h"
@@ -128,13 +134,15 @@ int main() {
 
 Now, it successfully compiles.
 
-### Example Component #3 - Library Fails to Compile
-* Component: [CN0357 - Toxic gas measurement](https://os.mbed.com/components/CN0357-Toxic-gas-measurement/)
-* Hello World repo: [CN0357-helloworld](https://os.mbed.com/teams/AnalogDevices/code/CN0357-helloworld/)
-* Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/)
-* Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)
+### Example component #3 - library fails to compile
 
-So, in our command prompt we run:
+- Component: [CN0357 - Toxic gas measurement](https://os.mbed.com/components/CN0357-Toxic-gas-measurement/).
+- Hello World repo: [CN0357-helloworld](https://os.mbed.com/teams/AnalogDevices/code/CN0357-helloworld/).
+- Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/).
+- Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
+
+In the command-line, run:
+
 ```
 mbed import http://mbed.org/teams/AnalogDevices/code/CN0357-helloworld/
 cd CN0357-helloworld
@@ -144,9 +152,9 @@ mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```
 
-#### Compilation Errors
+#### Compilation errors
 
-After we have cloned the repository to our computer and deployed the latest version of Mbed OS, we need to check what compilation errors already exist.
+After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check what compilation errors already exist.
 
 Here is the output produced from `mbed compile`:
 
@@ -182,7 +190,7 @@ In file included from ./CN0357/AD5270/AD5270.cpp:50:0:
 ---
 ```
 
-The errors relating to "was not declared in this scope" are library specific errors. We need to go into the `./CN0357/AD5270/AD5270.h` header file and remove the constructor's default arguments. Line 91 of the AD5270.h header file should now look like this:
+The errors relating to "was not declared in this scope" are library-specific errors. To fix this, go into the `./CN0357/AD5270/AD5270.h` header file and remove the constructor's default arguments. Line 91 of the AD5270.h header file now looks like this:
 
 ```
 AD5270(PinName CS, float max_resistance, PinName MOSI, PinName MISO, PinName SCK);
@@ -244,21 +252,21 @@ In file included from ./main.cpp:48:0:
 ---
 ```
 
-Notice that the `./CN0357/AD7790/AD7790.h` and `./CN0357/CN0357.h` header files also have similar "was not declared in this scope" errors. We will need to remove the constructor's default arguments again in both files.
+Notice that the `./CN0357/AD7790/AD7790.h` and `./CN0357/CN0357.h` header files also have similar "was not declared in this scope" errors. You need to remove the constructor's default arguments again in both files.
 
-Line 114 of the AD7790.h header file should now look like this:
+Line 114 of the AD7790.h header file now looks like this:
 
 ```
 AD7790( float reference_voltage, PinName CS, PinName MOSI, PinName MISO, PinName SCK);
 ```
 
-Line 77 of the CN0357.h header file should now look like this:
+Line 77 of the CN0357.h header file now looks like this:
 
 ```
 CN0357(PinName CSAD7790, PinName CSAD5270, PinName MOSI, PinName MISO, PinName SCK);
 ```
 
-Run `mbed compile` once again and we now have the following errors:
+Run `mbed compile` once again. You now have the following errors:
 
 ```
 Building project CN0357-helloworld (K64F, GCC_ARM)
@@ -290,7 +298,7 @@ In file included from ./main.cpp:48:0:
 ---
 ```
 
-These errors are now due to the CN0357 variable in `main.cpp` no longer having sufficient arguments. Go into `main.cpp` and modify the initialization of the `CN0357 cn0357;` variable on line 111 to include the K64F's pin names. Line 111 should now look like this:
+These errors are now due to the CN0357 variable in `main.cpp` no longer having sufficient arguments. Go into `main.cpp`, and modify the initialization of the `CN0357 cn0357;` variable on line 111 to include the K64F's pin names. Line 111 now looks like this:
 
 ```
 CN0357 cn0357(D8, D6, D11, D12, D13); // CSAD7790, CSAD5270, MOSI, MISO, SCK
