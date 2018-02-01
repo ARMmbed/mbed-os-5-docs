@@ -47,6 +47,14 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/runtime/static_memory_optimization.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/runtime/memap.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/runtime/Execution.md"
                     }
                 ]
@@ -860,10 +868,6 @@
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/optimize/memory/memory_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/optimize/memory/memap.md"
                     },
                     {
                         "type": "markdown",
