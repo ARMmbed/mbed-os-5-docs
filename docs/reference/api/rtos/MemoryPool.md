@@ -1,10 +1,10 @@
 ## MemoryPool
 
-You can use the MemoryPool class to define and manage fixed-size memory pools. You can allocate memory blocks of fixed size from the pool using the `alloc` method, which returns a pointer to the block of memory or NULL if there is no space available in the pool. The `alloc` function sets the block of memory to zeroes before returning the pointer of the block to the caller. It's the user's responsibility to initialize the objects placed in blocks.  
+You can use the MemoryPool class to define and manage fixed-size memory pools. You can allocate memory blocks of fixed size from the pool using the `alloc` or `calloc` method, which returns a pointer to the block of memory or NULL if there is no space available in the pool. It's the user's responsibility to initialize the objects placed in blocks. The `calloc` function sets the block of memory to zeros before returning the pointer of the block to the caller.   
 
 ### MemoryPool class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classrtos_1_1_memory_pool.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classrtos_1_1_memory_pool.html)
 
 ### MemoryPool example
 
