@@ -62,8 +62,3 @@ Mbed OS 5 is a superset of Mbed OS 2. This essentially means that Mbed OS 5 *is*
   Here is an example of an Mbed OS 2 project as viewed on [os.mbed.com](https://os.mbed.com):
 
   <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/2-oldmbed.png)</span>
-
-
-### Notes
-
-- Cortex-A is not supported by version 5.5+ (for example, Renesas)
