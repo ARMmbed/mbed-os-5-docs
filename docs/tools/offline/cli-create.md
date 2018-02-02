@@ -125,7 +125,7 @@ The arguments for *compile* are:
 - `-m <MCU>` to select a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
 - `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above). The value can be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
 - `--source <SOURCE>` to select the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
-- `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program root.
+- `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program root. <span class="notes">**Note**: The current build directory is ignored by `mbed compile`; creating multiple build directories will lead to errors.</span>
 - `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
 - `--library` to compile the code as a [static .a/.ar library](#compiling-static-libraries).
 - `--config` to inspect the runtime compile configuration (see below).
