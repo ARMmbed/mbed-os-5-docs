@@ -2,14 +2,14 @@
 
 The Watchdog HAL API provides a low-level interface to the Independent Watchdog Timer of a target. Implementing the Watchdog API is not mandatory, but by implementing it, you can use the hardware watchdog timer to detect and recover from computer malfunctions.
 
-Implement the Reset Reason API when implementing the Watchdog API. The Reset Reason API allows you to detect at boot time whether a watchdog caused the last reset.
+Implement the ResetReason API when implementing the Watchdog API. The ResetReason API allows you to detect at boot time whether a watchdog caused the last reset.
 
 #### Assumptions
 
 ##### Defined behavior
 
-- Sleep and debug modes don't stop the watchdog from counting down.
-- The function `hal_watchdog_init` is safe to call repeatedly. It must not do anything if you have already initialized the watchdog timer.
+- Sleep and debug modes don't stop the watchdog timer from counting down.
+- The function `hal_watchdog_init` is safe to call repeatedly. The function's implementation must not do anything if `hal_watchdog_init` has already initialized the hardware watchdog timer.
 - Maximum supported timeout is `UINT32_MAX` milliseconds; minimum timeout is 1ms.
 - The timeout must be accurate to the nearest millisecond.
 
@@ -17,12 +17,12 @@ Implement the Reset Reason API when implementing the Watchdog API. The Reset Rea
 
 - Calling any function other than `hal_watchdog_init` or `hal_watchdog_get_platform_features` before you have initialized the watchdog.
 
-##### Things to look out for
+##### Notes
 
 - A software reset may not stop the watchdog timer; the behavior is platform specific.
 - Timing on most platforms is based on the timeout registers and a prescaler value. They should be accurate to the nearest millisecond but may be off my a several µs.
 
-#### Dependencies
+#### Dependency
 
 Hardware Independent Watchdog support.
 
