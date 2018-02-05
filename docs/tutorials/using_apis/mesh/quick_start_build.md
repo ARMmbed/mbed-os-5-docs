@@ -1,9 +1,6 @@
 ### Build time configuration of the Nanostack
 
-The mbed configuration system is used for the build time configuration of Nanostack. 
-The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings.
-
-Also you can minimize the size of the produced stack by using different build options.
+The build time configuration of Nanostack uses the Mbed configuration system. The application needs to create an `mbed_app.json` configuration file if you want to use settings other than default settings. You can also minimize the size of the produced stack by using different build options.
 
 #### Build options
 
@@ -36,8 +33,7 @@ Select the device role:
 - Mesh network. A router. (default)
 - Star network. A non-routing device. Also known as a host, or sleepy host.
 
-Modify your `mbed_app.json` file to tell which Nanostack configuration to choose and which configurations to use. All configurations (6LoWPAN and Thread) are listed in 
-[Mbed Mesh API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json)..
+Modify your `mbed_app.json` file to direct which Nanostack configuration to choose. The [Mbed Mesh API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json) lists all configurations (6LoWPAN and Thread).
 
 An example of the `mbed_app.json` file:
 
