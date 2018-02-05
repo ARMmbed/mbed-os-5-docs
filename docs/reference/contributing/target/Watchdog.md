@@ -17,12 +17,12 @@ Implement the Reset Reason API when implementing the Watchdog API. The Reset Rea
 
 - Calling any function other than `hal_watchdog_init` or `hal_watchdog_get_platform_features` before you have initialized the watchdog.
 
-##### Potential bugs
+##### Things to look out for
 
 - A software reset may not stop the watchdog timer; the behavior is platform specific.
 - Timing on most platforms is based on the timeout registers and a prescaler value. They should be accurate to the nearest millisecond but may be off my a several µs.
 
-#### Dependency
+#### Dependencies
 
 Hardware Independent Watchdog support.
 
@@ -36,7 +36,11 @@ To enable Watchdog support in Mbed OS, add the `WATCHDOG` label in the `device_h
 
 #### Testing
 
-The Mbed OS HAL provides a set of conformance tests for Watchdog. You can use these tests to validate the correctness of your implementation.
+The Mbed OS HAL provides a set of conformance tests for Watchdog. You can use these tests to validate the correctness of your implementation. To run the Watchdog HAL tests use the following command:
+
+```
+mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-watchdog*"
+```
 
 You can read more about the test cases here:
 
