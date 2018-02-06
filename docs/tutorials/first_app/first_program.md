@@ -1,4 +1,4 @@
-## Choose your environment
+<h2 id="quickstart">Choose your environment</h2>
 
 In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Online** and **Offline**.
 
