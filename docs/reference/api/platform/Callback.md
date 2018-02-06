@@ -2,7 +2,7 @@
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
-This is the technical reference for callbacks. You should read the <a href="/docs/v5.7/reference/platform.html#callbacks" target="_blank">Callbacks</a> section of the <a href="/docs/v5.7/reference/platform.html" target="_blank">Platform Overview</a> first for deeper insight into their use.
+This is the technical reference for callbacks. You should read the [Callbacks](/docs/v5.7/reference/platform.html#callbacks) section of the [Platform Overview](/docs/v5.7/reference/platform.html) first for deeper insight into their use.
 
 ### Callback class reference
 
@@ -19,11 +19,11 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 ### Sonar example
 
-Here is an example that uses everything discussed in the <a href="/docs/v5.7/reference/platform.html#callbacks" target="_blank">introduction to callbacks</a> document in the form of a minimal Sonar class.
+Here is an example that uses everything discussed in the [introduction to callbacks](/docs/v5.7/reference/platform.html#callbacks) document in the form of a minimal Sonar class.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/)](https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)
 
 ### Related content
 
-- <a href="/docs/v5.7/reference/platform.html" target="_blank">Platform overview</a>.
-- <a href="/docs/v5.7/reference/platform.html#callbacks" target="_blank">Introduction to callbacks</a>.
+- [Platform overview](/docs/v5.7/reference/platform.html).
+- [Introduction to callbacks](/docs/v5.7/reference/platform.html#callbacks).

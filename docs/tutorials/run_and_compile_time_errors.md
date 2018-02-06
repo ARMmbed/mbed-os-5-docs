@@ -9,7 +9,7 @@ Common errors are:
 * Missing quotes or brackets (`""`, `()`, `[]` or `{}`). These are used in pairs to contain various types of statement. The compiler reports an error if you have not used them in correct pairings.
 * Always tackle the first reported error because later errors may be as a result of the first one and will disappear you correct the first one.
 
-If you see a compile time error or warning that you do not understand, you can usually find explanations of the error message on Google, or post to the <a href="https://os.mbed.com/questions/" target="_blank">Arm Mbed forums</a>.
+If you see a compile time error or warning that you do not understand, you can usually find explanations of the error message on Google, or post to the [Arm Mbed forums](https://os.mbed.com/questions/).
 
 ### Runtime errors and lights of the dead
 

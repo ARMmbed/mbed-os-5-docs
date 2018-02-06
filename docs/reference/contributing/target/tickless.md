@@ -13,7 +13,7 @@ To support tickless mode in Mbed OS, your target needs to meet two requirements:
 
 To enable tickless mode support in Mbed OS, you need to add the `MBED_TICKLESS` macro in the `macros` option of the target's section in the `targets.json` file.
 
-Targets supporting tickless mode override the default SysTick mechanism and use <a href="https://github.com/ARMmbed/mbed-os/blob/master/rtos/TARGET_CORTEX/mbed_rtx_idle.cpp" target="_blank">RtosTimer</a> implementation based on <a href="https://github.com/ARMmbed/mbed-os/blob/master/drivers/LowPowerTicker.h" target="_blank">low power ticker</a>. This change is necessary to avoid drift connected with using two different timers to measure time. It should be mostly invisible for users, except that users must not change the low power ticker interrupt handler when tickless mode is in use.
+Targets supporting tickless mode override the default SysTick mechanism and use [RtosTimer](https://github.com/ARMmbed/mbed-os/blob/master/rtos/TARGET_CORTEX/mbed_rtx_idle.cpp) implementation based on [low power ticker](https://github.com/ARMmbed/mbed-os/blob/master/drivers/LowPowerTicker.h). This change is necessary to avoid drift connected with using two different timers to measure time. It should be mostly invisible for users, except that users must not change the low power ticker interrupt handler when tickless mode is in use.
 
 ##### Testing
 

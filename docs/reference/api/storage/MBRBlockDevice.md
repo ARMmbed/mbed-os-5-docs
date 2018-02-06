@@ -15,7 +15,7 @@ You can view more information about the configurable settings and functions in t
 
 ### MBRBlockDevice example
 
-Partition a heap backed block device into two partitions. This example also uses the <a href="/docs/v5.7/reference/heapblockdevice.html" target="_blank">HeapBlockDevice</a>.
+Partition a heap backed block device into two partitions. This example also uses the [HeapBlockDevice](/docs/v5.7/reference/heapblockdevice.html).
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/file/daa62d7aa9f9/main.cpp)
 
@@ -25,4 +25,4 @@ Partition an SD card, and format the new partition with a FAT filesystem. A PC w
 
 ### Related content
 
-- <a href="/docs/v5.7/reference/heapblockdevice.html" target="_blank">HeapBlockDevice</a> API reference.
+- [HeapBlockDevice](/docs/v5.7/reference/heapblockdevice.html) API reference.

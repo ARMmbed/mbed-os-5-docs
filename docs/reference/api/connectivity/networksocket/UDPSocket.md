@@ -1,6 +1,6 @@
 ## UDPSocket
 
-The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a <a href="/docs/v5.7/reference/tcpsocket.html" target="_blank">TCPSocket</a> when you require guaranteed delivery.
+The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](/docs/v5.7/reference/tcpsocket.html) when you require guaranteed delivery.
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
@@ -16,4 +16,4 @@ Here is a UDP example to read the current UTC time by sending a request to the N
 
 ### Related content
 
-- <a href="/docs/v5.7/reference/tcpsocket.html" target="_blank">TCPSocket</a> API reference.
+- [TCPSocket](/docs/v5.7/reference/tcpsocket.html) API reference.

@@ -1,6 +1,6 @@
 ## Serial
 
-The <a href="/docs/v5.7/introduction/glossary.html" target="_blank">Serial</a> interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
+The [Serial](/docs/v5.7/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
 
@@ -8,7 +8,7 @@ One of the serial connections uses the Arm Mbed USB port, allowing you to easily
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See <a href="/docs/v5.7/tutorials/windows-serial-driver.html" target="_blank">Windows serial configuration</a>.</span>
+<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](/docs/v5.7/tutorials/windows-serial-driver.html).</span>
 
 Serial channels have a number of configurable parameters:
 
@@ -41,9 +41,9 @@ Provide a serial pass-through between the PC and an external UART.
 
 Attach a function to call during the generation of serial interrupts. This function defaults to interrupt on an RX pin.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/file/3b040f367dd8/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/file/4ab47f33a1ae/main.cpp)
 
 ### Related content
 
-- <a href="/docs/v5.7/introduction/glossary.html" target="_blank">Serial</a> glossary entry.
-- <a href="/docs/v5.7/tutorials/windows-serial-driver.html" target="_blank">Windows serial configuration</a>.
+- [Serial](/docs/v5.7/introduction/glossary.html) glossary entry.
+- [Windows serial configuration](/docs/v5.7/tutorials/windows-serial-driver.html).

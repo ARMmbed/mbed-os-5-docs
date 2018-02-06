@@ -1,6 +1,6 @@
 ## BusOut
 
-Use the BusOut interface to create a number of <a href="/docs/v5.7/reference/digitalout.html" target="_blank">DigitalOut</a> pins that you can write as one value. This API is useful for writing multiple outputs at once. You can use this API to write clearer code faster.
+Use the BusOut interface to create a number of [DigitalOut](/docs/v5.7/reference/digitalout.html) pins that you can write as one value. This API is useful for writing multiple outputs at once. You can use this API to write clearer code faster.
 
 You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
@@ -19,4 +19,4 @@ You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
 ### Related content
 
-- <a href="/docs/v5.7/reference/digitalout.html" target="_blank">DigitalOut</a> API reference.
+- [DigitalOut](/docs/v5.7/reference/digitalout.html) API reference.

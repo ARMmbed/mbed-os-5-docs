@@ -93,7 +93,7 @@ It produces the following ROM layout:
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
 ```
 
-For an example showing how to create an application that uses a bootloader, see the <a href="https://github.com/armmbed/mbed-os-example-bootloader-blinky" target="_blank">Mbed OS bootloader example</a> repository.
+For an example showing how to create an application that uses a bootloader, see the [Mbed OS bootloader example](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
 
 ### Unmanaged bootloader
 

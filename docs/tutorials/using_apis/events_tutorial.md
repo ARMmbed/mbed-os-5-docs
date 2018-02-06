@@ -34,7 +34,7 @@ Note that though this document assumes the presence of a single event loop in th
 
 Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/aea2e03f5625/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/6ae734681f16/main.cpp)
 
 The above code executes two handler functions (`rise_handler` and `fall_handler`) in two different contexts:
 
@@ -105,7 +105,7 @@ The EventQueue has no concept of event priority. If you schedule events to run a
 
 ### EventQueue memory pool
 
-When you create an instance of the <a href="/docs/v5.6/reference/event.html" target="_blank">EventQueue</a>, you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
+When you create an instance of the [EventQueue](/docs/v5.6/reference/event.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
 
 Various sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event.
 
@@ -152,4 +152,4 @@ Four words of storage are free but only for allocations of one word or less. The
 
 #### More about events
 
-This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The <a href="https://github.com/ARMmbed/mbed-os/blob/master/events/README.md" target="_blank">README of the `mbed-events` library</a> shows more ways to use events and event queues. To see the implementation of the events library, review <a href="https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/_event_queue_8h_source.html" target="_blank">the equeue library</a>.
+This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/_event_queue_8h_source.html).

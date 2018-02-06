@@ -18,7 +18,7 @@ Busy wait is a method that blocks the processor for a period of time. This is an
 
 Notice `printf()`; you can enable this by uncommenting the line (remove the `//`). `printf()` prints to the terminal, so you can use it to get debug information.
 
-<span class="tips">**Tip:** We recommend using <a href="http://freeware.the-meiers.org/" target="_blank">CoolTerm</a>, as it works the same on Windows, Linux and OS X. <a href="https://www.youtube.com/watch?v=jAMTXK9HjfU" target="_blank">Here is a handy video on how to use CoolTerm</a> to connect to your board and view the `printf()` statements. For more information, see our <a href="/docs/v5.6/tutorials/serial-communication-overview.html" target="_blank">serial communication tutorials</a>.</span>
+<span class="tips">**Tip:** We recommend using [CoolTerm](http://freeware.the-meiers.org/), as it works the same on Windows, Linux and OS X. [Here is a handy video on how to use CoolTerm](https://www.youtube.com/watch?v=jAMTXK9HjfU) to connect to your board and view the `printf()` statements. For more information, see our [serial communication tutorials](/docs/v5.6/tutorials/serial-communication.html).</span>
 
 #### Ticker
 
@@ -42,7 +42,7 @@ Let’s try using a DigitalIn pin from the button to control the application. Th
 
 We can wait for digital input the same way we waited for time to pass - using a `while()` loop. In the example below the digital input is a button press, which causes the application to flash the LED and then wait for 1 second.
 
-<span class="tips">**Tip:** You may need to change the `SW1` pin, as the button on your board may be called something else. Please refer to the pinmap on the <a href="https://os.mbed.com/platforms/" target="_blank">boards page</a>.</span>
+<span class="tips">**Tip:** You may need to change the `SW1` pin, as the button on your board may be called something else. Please refer to the pinmap on the [boards page](https://os.mbed.com/platforms/).</span>
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-Workshops/code/Workshop-1-Example-4/)](https://os.mbed.com/teams/mbed-Workshops/code/Workshop-1-Example-4/file/tip/main.cpp)
 

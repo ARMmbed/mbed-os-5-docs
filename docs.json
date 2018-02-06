@@ -47,6 +47,14 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/static_memory_optimization.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/memap.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Execution.md"
                     }
                 ]
@@ -135,6 +143,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/NonCopyable.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/PlatformMutex.md"
                             },
                             {
                                 "type": "markdown",
@@ -278,6 +290,10 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/EventQueue.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/rtos/MemoryPool.md"
                             },
                             {
@@ -335,6 +351,30 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/SocketAddress.md"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Bluetooth",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/bluetooth.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/BLE.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/BatteryService.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/HeartRateService.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/bluetooth/iBeacon.md"
                             }
                         ]
                     },
@@ -831,10 +871,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/memory/memap.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/memory/runtime_mem_trace.md"
                     },
                     {
@@ -847,37 +883,5 @@
         "tags": [
             "tutorials"
         ]
-    },
-    {
-        "title": "Releases",
-        "description": "The Mbed OS releases; latest and history",
-        "slug": "releases",
-        "type": "markdown",
-        "sources": [],
-        "tags": [
-            "releases"
-        ]
-    },
-    {
-        "title": "mbed OS API doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "mbed-os-api-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "mbed-os-5.7",
-        "options": {
-            "PROJECT_NAME": "Mbed OS Reference",
-            "ENABLE_PREPROCESSING": "YES",
-            "MACRO_EXPANSION": "YES",
-            "EXPAND_ONLY_PREDEF": "NO",
-            "SEARCH_INCLUDES": "YES",
-            "INCLUDE_PATH": "",
-            "INCLUDE_FILE_PATTERNS": "",
-            "PREDEFINED": "DOXYGEN_ONLY DEVICE_ANALOGIN DEVICE_ANALOGOUT DEVICE_CAN DEVICE_ETHERNET DEVICE_EMAC DEVICE_FLASH  DEVICE_I2C DEVICE_I2CSLAVE DEVICE_I2C_ASYNCH DEVICE_INTERRUPTIN DEVICE_LOWPOWERTIMER DEVICE_PORTIN DEVICE_PORTINOUT DEVICE_PORTOUT DEVICE_PWMOUT DEVICE_RTC DEVICE_TRNG DEVICE_SERIAL DEVICE_SERIAL_ASYNCH DEVICE_SERIAL_FC DEVICE_SLEEP DEVICE_SPI DEVICE_SPI_ASYNCH DEVICE_SPISLAVE DEVICE_STORAGE \"MBED_DEPRECATED_SINCE(f, g)=\" \"MBED_ENABLE_IF_CALLBACK_COMPATIBLE(F, M)=\" \"MBED_DEPRECATED(s)=\"",
-            "EXPAND_AS_DEFINED": "",
-            "SKIP_FUNCTION_MACROS": "NO",
-            "EXCLUDE_PATTERNS": "*/tools/* */targets/* */features/mbedtls/* */features/storage/* */features/unsupported/* */BUILD/* */rtos/TARGET_CORTEX/rtx*/* */cmsis/* */features/FEATURE_COMMON_PAL/* */features/FEATURE_LWIP/* */features/FEATURE_UVISOR/* */features/nanostack/* */ble/generic/* */ble/pal/*"
-        }
     }
 ]

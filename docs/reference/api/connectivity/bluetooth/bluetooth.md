@@ -6,27 +6,27 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 #### Getting started
 
-1. Choose an <a href="https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3" target="_blank">Arm Mbed board that supports BLE</a>, such as the <a href="https://os.mbed.com/platforms/Nordic-nRF51-DK/" target="_blank">NRF51-DK</a>.
+1. Choose an [Arm Mbed board that supports BLE](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3), such as the [NRF51-DK](https://os.mbed.com/platforms/Nordic-nRF51-DK/).
 
-	If your platform doesn't support BLE but is compatible with the Arduino UNO R3 connector, you can use an extension board such as the <a href="https://os.mbed.com/components/X-NUCLEO-IDB05A1-Bluetooth-Low-Energy/" target="_blank">X-NUCLEO-IDB05A1</a> to add BLE capabilities to your development board.
+	If your platform doesn't support BLE but is compatible with the Arduino UNO R3 connector, you can use an extension board such as the [X-NUCLEO-IDB05A1](https://os.mbed.com/components/X-NUCLEO-IDB05A1-Bluetooth-Low-Energy/) to add BLE capabilities to your development board.
 
 1. Install a BLE scanner on your phone. It allows you to track all BLE activities from your embedded application. This is a mandatory tool for BLE software development:
 
-    - <a href="https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp" target="_blank">nRF Master Control Panel</a> for Android.
+    - [nRF Master Control Panel](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp) for Android.
 
-    - <a href="https://itunes.apple.com/gb/app/lightblue-bluetooth-low-energy/id557428110?mt=8" target="_blank">LightBlue</a> for iPhone.
+    - [LightBlue](https://itunes.apple.com/gb/app/lightblue-bluetooth-low-energy/id557428110?mt=8) for iPhone.
 
 1. Compile and run our BLE samples:
 
-    - **Arm Mbed OS 5 samples** are available on <a href="https://os.mbed.com/teams/mbed-os-examples/" target="_blank">os.mbed.com</a> and <a href="https://github.com/ARMmbed/mbed-os-example-ble" target="_blank">Github</a>:
-        - The <a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/" target="_blank">beacon</a> example is a good starting point; it demonstrates how you can create a BLE beacon with just a few lines of code.  
-        - The <a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/" target="_blank">heart rate monitor</a> example demonstrates how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
-        - The <a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/" target="_blank">LED</a> and <a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/" target="_blank">LED blinker</a> are a single example, which demonstrates how a client (LED) and a server (LED blinker) work together over BLE.
+    - **Arm Mbed OS 5 samples** are available on [os.mbed.com](https://os.mbed.com/teams/mbed-os-examples/) and [GitHub](https://github.com/ARMmbed/mbed-os-example-ble):
+        - The [beacon](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/) example is a good starting point; it demonstrates how you can create a BLE beacon with just a few lines of code.  
+        - The [heart rate monitor](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/) example demonstrates how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
+        - The [LED](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/) are a single example, which demonstrates how a client (LED) and a server (LED blinker) work together over BLE.
 
     <span>**Tip:** Despite the differences between the different Mbed OS versions, there is only **one** version of Mbed BLE, and it is easy to move code from one version of the OS to another. Choose the sample you use according to the version of Mbed OS supported by your development board.</span>
 
 #### Going further
 
-- The Mbed BLE <a href="/docs/v5.7/reference/ble.html" target="_blank">API reference</a> offers the full details of the API.
+- The Mbed BLE [API reference](/docs/v5.7/reference/ble.html) offers the full details of the API.
 
-- The Mbed BLE <a href="https://os.mbed.com/teams/Bluetooth-Low-Energy/community/" target="_blank">online community</a> is also a great place to ask questions and share your knowledge.
+- The Mbed BLE [online community](https://os.mbed.com/teams/Bluetooth-Low-Energy/community/) is also a great place to ask questions and share your knowledge.

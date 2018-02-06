@@ -12,7 +12,7 @@ The setup process for Arm Mbed CLI depends on your operating system. Please choo
 
 Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases).
 
-You can ensure Mbed CLI installed correctly by running `mbed help`.
+You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
 <span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions)</span>
 
@@ -42,7 +42,7 @@ To install Pip, run `sudo easy_install pip` from your command-line.
 
 ##### 2. Install a compiler
 
-Download and install a compiler:
+Download and install a compiler.
 
 <span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).</span>
 
