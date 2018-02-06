@@ -151,7 +151,7 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 #### `config` and `overrides`
 
-_configs_ provide a more flexible way to manage macros for a target. Each configuration has a macro name as well as a default value and an optional help value. For example, this config flag defines a configuration `lf_clock_src` that defines the source for the low frequency clock on the nRF51 target, with a default value of `NRF_LF_SRC_XTAL`. When compiled, this value will be set for the macro `MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC`:
+_configs_ provide a more flexible way to manage macros for a target. Each configuration has a macro name, as well as a default value and an optional help value. For example, this config flag defines a configuration `lf_clock_src` that defines the source for the low frequency clock on the nRF51 target, with a default value of `NRF_LF_SRC_XTAL`. Compiling sets this value for the macro `MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC`:
 
 ```json
 "config": {
@@ -162,7 +162,7 @@ _configs_ provide a more flexible way to manage macros for a target. Each config
 }
 ```
 
-_overrides_ allow a child target to change the value of a config. For example, if a child target of the nRF51 used the internal RC clock instead of the crystal, it can add an override like so:
+_overrides_ allow a child target to change the value of a config. For example, if a child target of the nRF51 uses the internal RC clock instead of the crystal, it can add an override:
 
 ```json
 "overrides": {
@@ -170,7 +170,7 @@ _overrides_ allow a child target to change the value of a config. For example, i
 }
 ```
 
-configurations can also be modified in a project in the mbed_app.json file using `target_overrides`.
+You can also modify a project's configurations in the `mbed_app.json file` by using `target_overrides`.
 
 ```json
 "target_overrides": {
@@ -181,6 +181,7 @@ configurations can also be modified in a project in the mbed_app.json file using
         "config2": "value_for_single_target"
     }
 }
+```
 
 #### `device_has`
 
