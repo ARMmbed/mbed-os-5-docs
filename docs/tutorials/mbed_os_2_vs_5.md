@@ -50,7 +50,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
    - [Mbed OS 2 Handbook](https://os.mbed.com/handbook/Homepage).
    - [Mbed OS 2 Library](https://os.mbed.com/users/mbed_official/code/mbed/).
 
-   If you come across a documentation page for Mbed OS 2, and you would like to see if there is an updated version of this page for Mbed OS 2, from the Handbook page click on the link provided in the top yellow box. For example, you can see the yellow box at the top of the [LocalFileSystem page](https://os.mbed.com/handbook/LocalFileSystem) for Mbed OS 2.
+   If you come across a documentation page for Mbed OS 2, and you would like to see if there is an updated version of this page for Mbed OS 5, from the Handbook page click on the link provided in the top yellow box. For example, you can see the yellow box at the top of the [LocalFileSystem page](https://os.mbed.com/handbook/LocalFileSystem) for Mbed OS 2.
 
    <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/mbedhandbookbox.png)</span>
 
