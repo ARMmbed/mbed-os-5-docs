@@ -1,4 +1,4 @@
-## Arm Mbed Online Compiler
+<h2 id="quickstart-online">Arm Mbed Online Compiler</h2>
 
 ### Setup
 
