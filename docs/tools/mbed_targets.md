@@ -149,6 +149,39 @@ The build system errors when you use features outside of this list.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
 
+#### `config` and `overrides`
+
+_configs_ provide a more flexible way to manage macros for a target. Each configuration has a macro name as well as a default value and an optional help value. For example, this config flag defines a configuration `lf_clock_src` that defines the source for the low frequency clock on the nRF51 target, with a default value of `NRF_LF_SRC_XTAL`. When compiled, this value will be set for the macro `MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC`:
+
+```json
+"config": {
+    "lf_clock_src": {
+        "value": "NRF_LF_SRC_XTAL",
+        "macro_name": "MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC"
+    }
+}
+```
+
+_overrides_ allow a child target to change the value of a config. For example, if a child target of the nRF51 used the internal RC clock instead of the crystal, it can add an override like so:
+
+```json
+"overrides": {
+    "lf_clock_src": "NRF_LF_SRC_RC"
+}
+```
+
+configurations can also be modified in a project in the mbed_app.json file using `target_overrides`.
+
+```json
+"target_overrides": {
+    "*": {
+        "config1": "value_for_all_targets"
+    },
+    "NRF51_DK": {
+        "config2": "value_for_single_target"
+    }
+}
+
 #### `device_has`
 
 The list in `device_has` defines what hardware a device has.
@@ -291,9 +324,9 @@ For each of these target roles, some restrictions are in place:
   - `extra_labels`.
   - `public`.
   - `config`.
+  - `override`
   - `forced_reset_timeout`.
-  - `target_overrides`
-- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `target_overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `target_overries`, on the other hand, are designed for this use case.
+- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `overrides`, on the other hand, are designed for this use case.
 - `extra_labels` may not contain any target names
 - `device_has` may only contain values from the following list:
   - `ANALOGIN`.
