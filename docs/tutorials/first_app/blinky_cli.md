@@ -14,7 +14,7 @@ Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbe
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
-<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions)</span>
+<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).</span>
 
 ##### 2. Setup environment
 
