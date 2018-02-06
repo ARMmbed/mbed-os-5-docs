@@ -30,9 +30,9 @@ Some repositories may have both an `mbed.bld` file and a `mbed-rtos.lib` file pr
 There are two possible outcomes when trying to migrate to Mbed OS 5:
 
 1. Replacing the old Mbed library with Mbed OS "just works," as the APIs in the library have not changed. In this instance, you're finished.
-2. Replacing the old Mbed library with Mbed OS produces some compilation errors. For one of two reasons:
-  - The API calls in the **library** are out of date, and you need to migrate to Mbed OS API syntax.
-  - The Hello World **application** uses target specific code, and you need to be migrate it to use code for the target you are compiling for.
+2. Replacing the old Mbed library with Mbed OS produces some compilation errors. These errors can occur in the library or application code for the following two reasons:
+  - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
+  - There is target specific code, and you need to migrate it to use code for the specific target you are compiling for.
 
 The general outline for updating to Mbed OS 5 is:
 
@@ -50,8 +50,13 @@ To determine the success of migration, run:
 
 ### Example component #1 - migrating just works
 
+Repositories used in this example:
+
 - Component: [Grove - Buzzer](https://os.mbed.com/components/Grove-Buzzer/).
 - Hello World repo: [Seeed_Grove_Buzzer](https://os.mbed.com/teams/Seeed/code/Seeed_Grove_Buzzer/).
+
+Compile configuration used in this example:
+
 - Platform: [u-blox EVK-ODIN-W2](https://os.mbed.com/platforms/ublox-EVK-ODIN-W2/).
 - Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 
@@ -70,8 +75,13 @@ It successfully compiles, so no changes are necessary to the Grove - Buzzer libr
 
 ### Example component #2 - application fails to compile
 
+Repositories used in this example:
+
 - Component: [SRF08-Ultrasonic-Range-Finder](https://os.mbed.com/components/SRF08-Ultrasonic-Range-Finder/).
 - Hello World repo: [SRF08HelloWorld](https://os.mbed.com/users/melse/code/SRF08HelloWorld/).
+
+Compile configuration used in this example:
+
 - Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/).
 - Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 
@@ -137,8 +147,13 @@ Now, the program successfully compiles.
 
 ### Example component #3 - library fails to compile
 
+Repositories used in this example:
+
 - Component: [CN0357 - Toxic gas measurement](https://os.mbed.com/components/CN0357-Toxic-gas-measurement/).
 - Hello World repo: [CN0357-helloworld](https://os.mbed.com/teams/AnalogDevices/code/CN0357-helloworld/).
+
+Compile configuration used in this example:
+
 - Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/).
 - Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 
