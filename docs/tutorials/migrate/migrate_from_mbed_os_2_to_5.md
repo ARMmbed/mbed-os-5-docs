@@ -2,9 +2,10 @@
 
 This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5.
 
-#### Prerequisite
+#### Prerequisites
 
-[Mbed CLI](https://os.mbed.com/docs/v5.7/tools/arm-mbed-cli.html)
+- [Mbed CLI](https://os.mbed.com/docs/v5.7/tools/arm-mbed-cli.html)
+- An [offline compiler](/docs/latest/tools/index.html#compiler-versions)
 
 ### Identifying old versions of Mbed OS
 
@@ -24,9 +25,9 @@ A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.
 
 Some repositories may have both an `mbed.bld` file and a `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace BOTH `mbed.bld` and `mbed-rtos.lib`.
 
-### Migrating to Mbed OS
+### Migrating to Mbed OS 5
 
-There are two possibilities when trying to migrate a component to Mbed OS:
+There are two possible outcomes when trying to migrate to Mbed OS 5:
 
 1. Replacing the old Mbed library with Mbed OS "just works," as the APIs in the library have not changed. In this instance, you're finished.
 2. Replacing the old Mbed library with Mbed OS produces some compilation errors. For one of two reasons:
@@ -132,7 +133,7 @@ int main() {
 }
 ```
 
-Now, it successfully compiles.
+Now, the program successfully compiles.
 
 ### Example component #3 - library fails to compile
 
