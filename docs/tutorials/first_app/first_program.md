@@ -1,14 +1,14 @@
-## Your first Arm Mbed application
+## Choose your environment
 
-We have an example application called Blinky that you can use to get to know Arm Mbed OS and the development tools. It's one of the simplest examples of Mbed OS. It shows the use of a DigitalOut object to represent an LED and the `wait()` call. This is good practice because if there were other threads, they could be scheduled and run while the first thread is waiting.
+In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Online** and **Offline**.
 
-You can use either of these tools:
+1) For online development, we provide the Arm Mbed Online Compiler. This choice is great if you want an environment that "just works".
 
-- [Arm Mbed Online Compiler](/docs/v5.6/tutorials/blinky-on-the-arm-mbed-online-compiler.html).
-- [Arm Mbed CLI](https://os.mbed.com/docs/v5.6/tutorials/blinky-on-arm-mbed-cli.html).
+2) For offline development, we provide Arm Mbed CLI, our tool for using Mbed CLI on the command-line. Mbed CLI is compatible with Windows, Linux and OSX. This option provides more configuration options but also requires slightly more setup.
 
-#### Before you begin
+Common to any choice is the ability to import and publish code to Git and Mercurial repositories, export your programs to third party IDEs (Keil UVision, IAR, GCC and so on) for debugging and build new projects.
 
-Please create a [developer account on Mbed](https://os.mbed.com/account/signup/).
+#### Please choose how to proceed
 
-You might want to read the page explaining how to [connect your board to your computer](/docs/v5.6/tutorials/windows-serial-driver.html) - especially if you're using Windows.
+- [Online with the Mbed Online Compiler](https://os.mbed.com/docs/latest/tutorials/blinky-on-the-arm-mbed-online-compiler.html).
+- [Offline with Mbed CLI](https://os.mbed.com/docs/latest/tutorials/blinky-on-arm-mbed-cli.html).
