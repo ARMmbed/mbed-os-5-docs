@@ -14,7 +14,7 @@ Whether you're writing new code or fixing bugs in existing code, please follow t
 
 Mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
 
-The only exception to this coding style are 3rd parties libraries. The 3rd party libraries should be added to the `.astyleignore` file located in the Mbed OS root directory.
+The only exception to this coding style are third-party code. Third-party code should be added to the `.astyleignore` file located in the Mbed OS root directory.
 
 You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
