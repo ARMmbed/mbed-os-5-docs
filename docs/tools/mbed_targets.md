@@ -151,19 +151,23 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 #### `config` and `overrides`
 
-The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a macro name, as well as a default value and an optional help value. For example:
+The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has default value, as well as an optional macro name and help text. By default, the macro name will be the name of the config. For example:
 
 ```json
 "config": {
     "clock_src": {
         "help": "Clock source to use, can be XTAL or RC",
         "value": "XTAL",
-        "macro_name": "CLOCK_SRC"
+    },
+    "clock_freq": {
+        "help": "Clock frequency in Mhz",
+        "value": "16",
+        "macro_name": "CLOCK_FREQUENCY_MHZ"
     }
 }
 ```
 
- This case defines the config `clock_src`, for the `CLOCK_SRC` macro, and has a default value of `XTAL`.
+ This case defines the config `clock_src` with the default value of `XTAL` for the macro `CLOCK_SRC`, and the config `clock_freq` with the default value of 16 for the macro `CLOCK_FREQUENCY_MHZ`.
 
 _overrides_ allow a child target to change the value of a config. For example, if a child target uses the internal RC clock instead of the crystal, it can add an override:
 
@@ -178,15 +182,15 @@ Config values can also be modified for a project using the `target_overrides` ke
 ```json
 "target_overrides": {
     "*": {
-        "config1": "value_for_all_targets"
+        "clock_src": "RC"
     },
     "NRF51_DK": {
-        "config2": "value_for_single_target"
+        "clock_freq": "16"
     }
 }
 ```
 
-This section, in an `mbed_app.json` file, will set a value for `config1` on all targets, as well as a value for `config2` only on the `NRF51_DK` target.
+This section, in an `mbed_app.json` file, will set the clock source to `RC` on all targets, as well as a clock frequency of 16Mhz on just the `NRF51_DK` target.
 
 #### `device_has`
 
