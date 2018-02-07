@@ -4,7 +4,7 @@
 
 **API** - [Application programming interface](/docs/v5.7/reference/apis.html).
 
-**Application** - An executable module built out of libraries that acts as a final product..
+**Application** - An executable module built out of libraries that acts as a final product.
 
 **Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/v5.7/tools/arm-mbed-cli.html), packaged as `mbed-cli`.
 
