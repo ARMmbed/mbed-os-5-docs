@@ -76,7 +76,8 @@ Then you may optionally choose to select the non-routing mode for those networks
 
 ##### Configuration parameters for 6LoWPAN-ND and Thread
 
-All 6LoWPAN and Thread configuration options are described below. 
+All 6LoWPAN and Thread configuration options are described below.
+Make sure that all your devices use the same network configuration (both nodes and border router)
 
 ```
 
@@ -93,7 +94,7 @@ All 6LoWPAN and Thread configuration options are described below.
 | `thread-pskd`     | string [6-255 chars] | Human-scaled commissioning credentials. |
 | `thread-use-static-link-config` | boolean | True: Use the below link config, False: Use commissioning, ignore the below link config. |
 | `thread-device-type` | enum from `mesh_device_type_t` | Supported device operating modes:<br> `MESH_DEVICE_TYPE_THREAD_ROUTER`<br> `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE`<br> `MESH_DEVICE_TYPE_THREAD_MINIMAL_END_DEVICE` |
-| `thread-config-channel-mask` | number [0-0x07fff800] | Channel mask, 0x07fff800 scans all channels. |
+| `thread-config-channel-mask` | number [0-0x07fff800] | Channel mask, 0x07fff800 is used for Thread networks (2.4GHz). |
 | `thread-config-channel-page` | number [0]| Channel page, 0 for 2,4 GHz radio. |
 | `thread-config-channel`      | number [11-26] | RF channel to use. |
 | `thread-config-panid`        | number [0-0xFFFF] | Network identifier. |
