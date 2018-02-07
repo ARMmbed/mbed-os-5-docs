@@ -159,7 +159,7 @@ All functions and methods should contain documentation using Doxgyen.
 You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
 ```
-astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
+astyle --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
 ```
 
 #### Compiler settings
