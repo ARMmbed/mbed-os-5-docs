@@ -1,8 +1,8 @@
 ### Sleep
 
-<span class="warnings">**Warning:** We are changing the Sleep HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the Sleep API](#Implementing-the-Sleep-API) section.
+<span class="warnings">**Warning:** We are changing the Sleep HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the Sleep API](#implementing-the-sleep-api) section.
 
-Implement Sleep HAL API to enable your device to go into a low power state when not being actively used.
+Implement the Sleep HAL API to enable your device to go into a low power state when you are not actively using it.
 
 #### Assumptions
 
@@ -12,7 +12,7 @@ There are two power saving modes available in Mbed OS:
 
 ###### Sleep
 
-The core system clock is disabled, both the low and high frequency clocks can be used and RAM is retained.
+The core system clock is disabled, you can use both the low and high frequency clocks and RAM is retained.
 
 1. Wake-up sources - any interrupt must wake up the MCU.
 1. Latency - MCU must wake up within 10 us.
@@ -30,11 +30,11 @@ None.
 
 #### Implementing the Sleep API
 
-We are working on the new HAL Sleep API, which will replace current version in an upcoming release of Mbed OS. You will need to implement the Sleep API in both variants. Firstly you need to implement the current API, you can find it on master branch:
+We are working on the new HAL Sleep API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the Sleep API in both variants. First, you need to implement the current API. You can find it on master branch:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/sleep__api_8h_source.html)
 
-To make sure your platform is ready for the upcoming changes, you will need to implement the future API and submit it in a separate pull request against `feature-hal-spec-sleep` branch. You can find the API and specification for the new Sleep API in the following header file:
+To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-sleep` branch. You can find the API and specification for the new Sleep API in the following header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-sleep/hal/sleep_api.h)
 
@@ -42,7 +42,8 @@ To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `de
 
 #### Testing
 
-The Mbed OS HAL provides a set of conformance tests for Sleep. You can use these tests to validate the correctness of your implementation. To run the Sleep HAL tests use the following command:
+The Mbed OS HAL provides a set of conformance tests for Sleep. You can use these tests to validate the correctness of your implementation. To run the Sleep HAL tests, use the following command:
+
 ```
 mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sleep*"
 ```
