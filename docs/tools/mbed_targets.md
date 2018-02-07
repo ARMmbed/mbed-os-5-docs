@@ -151,26 +151,29 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 #### `config` and `overrides`
 
-_configs_ provide a more flexible way to manage macros for a target. Each configuration has a macro name, as well as a default value and an optional help value. For example, this config flag defines a configuration `lf_clock_src` that defines the source for the low frequency clock on the nRF51 target, with a default value of `NRF_LF_SRC_XTAL`. Compiling sets this value for the macro `MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC`:
+The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a macro name, as well as a default value and an optional help value. For example:
 
 ```json
 "config": {
-    "lf_clock_src": {
-        "value": "NRF_LF_SRC_XTAL",
-        "macro_name": "MBED_CONF_NORDIC_NRF_LF_CLOCK_SRC"
+    "clock_src": {
+        "help": "Clock source to use, can be XTAL or RC",
+        "value": "XTAL",
+        "macro_name": "CLOCK_SRC"
     }
 }
 ```
 
-_overrides_ allow a child target to change the value of a config. For example, if a child target of the nRF51 uses the internal RC clock instead of the crystal, it can add an override:
+ This case defines the config `clock_src`, for the `CLOCK_SRC` macro, and has a default value of `XTAL`.
+
+_overrides_ allow a child target to change the value of a config. For example, if a child target uses the internal RC clock instead of the crystal, it can add an override:
 
 ```json
 "overrides": {
-    "lf_clock_src": "NRF_LF_SRC_RC"
+    "clock_src": "RC"
 }
 ```
 
-You can also modify a project's configurations in the `mbed_app.json file` by using `target_overrides`.
+Config values can also be modified for a project using the `target_overrides` key in the `mbed_app.json` file, either for specific targets or as a wildcard. For example:
 
 ```json
 "target_overrides": {
@@ -182,6 +185,8 @@ You can also modify a project's configurations in the `mbed_app.json file` by us
     }
 }
 ```
+
+This section, in an `mbed_app.json` file, will set a value for `config1` on all targets, as well as a value for `config2` only on the `NRF51_DK` target.
 
 #### `device_has`
 
