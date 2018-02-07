@@ -159,8 +159,10 @@ All functions and methods should contain documentation using Doxgyen.
 You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
 ```
-astyle --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
+astyle -n --options=.astylerc $(full_path_to_file)
 ```
+
+File `.astylerc` defines Mbed OS code style and it's located in Mbed OS root directory.
 
 #### Compiler settings
 
