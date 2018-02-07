@@ -1,15 +1,10 @@
 ## NVStore
-NVStore is a lightweight module providing the functionality of storing data by keys in the internal flash, for security purpose.
-For each item key, NVStore module provides the ability to set the item data or get it.
-Newly set values are added to the flash (as in journal), with the effect of overriding the previous value for this key.
-NVStore module ensures that existing data isn't harmed by power failures, during any operation.
+
+NVStore is a lightweight module that stores data by keys in the internal flash for security purposes. For each item key, the NVStore module provides the ability to set the item data or get it. Newly set values are added to the flash (as in journal), with the effect of overriding the previous value for this key. The NVStore module ensures that power failures don't harm existing data during any operation.
 
 ### Flash structure
-NVStore uses two Flash areas, active and non-active. Data is written to the active area, until it gets full.
-When it does, garbage collection is invoked, compacting items from the active area to the non-active one,
-and switching activity between areas.
-Each item is kept in an entry, containing header and data, where the header holds the item key, size and CRC.
-Each area must consist of one or more erasable units (sectors). 
+
+NVStore uses two Flash areas, active and nonactive. Each area must consist of at least one erasable unit (sector). Data is written to the active area until it becomes full. When it does, garbage collection is invoked. This compacts items from the active area to the nonactive one and switches activity between areas. Each item is kept in an entry containing a header and data, where the header holds the item key, size and CRC.
 
 ### NVStore class reference
 
