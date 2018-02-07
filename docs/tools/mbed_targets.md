@@ -330,7 +330,7 @@ For each of these target roles, some restrictions are in place:
   - `extra_labels`.
   - `public`.
   - `config`.
-  - `overrides`
+  - `overrides`.
   - `forced_reset_timeout`.
 - `macros` are not used. That is intentional: they do not provide any benefit over `config` and `overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `overrides`, on the other hand, are designed for this use case.
 - `extra_labels` may not contain any target names
