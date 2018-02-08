@@ -30,12 +30,11 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 
 ##### Notes
 
-Be careful when encountering the following:
+Watch out for these common pitfalls when implementing this API:
 
-- Drift due to reschedule.
-- Incorrect overflow handling of timers.
-- Interrupting at a time of 0.
-- Interrupt triggered more than once.
+- The ticker cannot drift when rescheduled repeatedly
+- The ticker keeps counting when it rolls over
+- The ticker interrupts fires when the compare value is set to 0 and and overflow occurs
 
 #### Dependencies
 
