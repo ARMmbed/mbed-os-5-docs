@@ -88,7 +88,7 @@
 
 ### L
 
-**Library** - A module that you can use to build applications.
+**Library** - A module you can use to build applications.
 
 **LoRA** - Long range (low power wireless platform).
 
