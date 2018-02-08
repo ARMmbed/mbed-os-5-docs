@@ -4,6 +4,8 @@ The build time configuration of Nanostack uses the Mbed configuration system. Th
 
 #### Build options
 
+This table demonstrate the difference in binary size between builds:
+
 Option Name | Features supported | Binary size in Mbed OS 5.5
 ------------| -------------------|------------------------------------
 `ethernet_host` | Only Ethernet host support, no mesh networking. | 108 kB
