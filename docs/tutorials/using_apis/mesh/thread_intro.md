@@ -44,6 +44,7 @@ Nanostack provides a set of C API headers with more functionalities. The [nanost
 - `thread_diagcop_lib.h` for building and parsing the Thread diagnostics protocol TLV messages.
 - `thread_meshcop_lib.h` for building and parsing the Thread mesh commissioning protocol TLV messages.
 - `thread_net_config_api.h` for making neighbour discovery (ND) data requests.
+- `net_polling_api.h` for configuring the Thread node's sleep mode and polling interval.
 
 #### Thread devices you can build on Mbed OS
 
@@ -55,7 +56,7 @@ The Mbed OS Mesh API allows you to define 3 types of devices:
 
 In addition the Nanostack API allows you to define the Full end device (FED) device type.
 
-In most cases, the REED, MED and SED configurations are enough to build a network. In a SED device, the radio is switched off during the sleep times. To take the full advantage of the SED configuration, the application developer must implement the sleep procedures in the device.
+In most cases, the REED, MED and SED configurations are enough to build a network. The SED device can be configured to use sleep mode, in which case the radio is switched off between the polling times. To take the full advantage of the SED configuration, the application developer must implement the sleep procedures in the device.
 
 For an end device or a router example, see [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
@@ -121,6 +122,8 @@ The commissioner application generates PSKc from:
 The Thread network name and the extended PAN ID are received in the scanning phase. The commissioner application can now start a DTLS session using the generated PSKc.
 
 After the authentication phase, the commissioner requests the Thread network leader to petition the commissioner to become an authorized commissioner. Here, the border router works as an arbitrator in the middle.
+
+The PSKc generation is described in the Thread specification.
 
 Now, the Thread network is ready to accept new joiner devices.
 
