@@ -151,7 +151,7 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 #### `config` and `overrides`
 
-The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has default value, as well as an optional macro name and help text. By default, the macro name will be the name of the config. For example:
+The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a default value, as well as an optional macro name and help text. By default, the macro name will be the name of the config. For example:
 
 ```json
 "config": {
@@ -190,7 +190,7 @@ Config values can also be modified for a project using the `target_overrides` ke
 }
 ```
 
-This section, in an `mbed_app.json` file, will set the clock source to `RC` on all targets, as well as a clock frequency of 16Mhz on just the `NRF51_DK` target.
+This section, in an `mbed_app.json` file, will set the clock source to `RC` on all targets, as well as the clock frequency to 16Mhz on just the `NRF51_DK` target.
 
 #### `device_has`
 
