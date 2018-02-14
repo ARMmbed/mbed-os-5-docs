@@ -12,17 +12,17 @@ There are two power saving modes available in Mbed OS:
 
 ###### Sleep
 
-The core system clock is disabled, you can use both the low and high frequency clocks and RAM is retained.
+The core system clock is disabled. You can use both the low- and high-frequency clocks and retain RAM.
 
-1. Wake-up sources - any interrupt must wake up the MCU.
-1. Latency - MCU must wake up within 10 us.
+1. Wake-up sources - Any interrupt must wake up the MCU.
+1. Latency - The MCU must wake up within 10 us.
 
 ###### Deep sleep
 
-The core system clock is disabled. Only the low frequency clocks can be enabled and RAM is retained.
+The core system clock is disabled. You can only the low-frequency clocks and retain RAM.
 
-1. Wake-up sources - either RTC, low power ticker or GPIO must wake up the MCU.
-1. Latency - MCU must wake up within 10 ms.
+1. Wake-up sources - RTC, low power ticker or GPIO must wake up the MCU.
+1. Latency - The MCU must wake up within 10 ms.
 
 #### Dependencies
 
