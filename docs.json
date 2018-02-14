@@ -937,7 +937,7 @@
         "hidden": true,
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-spec-qspi"
+        "branch": "feature-qspi"
 
     },
     {
@@ -947,7 +947,7 @@
         "hidden": true,
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-watchdog-qspi"
+        "branch": "feature-watchdog"
 
     }
 ]
