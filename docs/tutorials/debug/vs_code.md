@@ -1,8 +1,8 @@
 ## Visual Studio Code
 
-This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](/docs/v5.6/tools/setting-up-a-local-debug-toolchain.html).
+This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html).
 
-If you're using Windows, also install [GNU Make](https://www.gnu.org/software/make/).
+Also install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) to build the project.
 
 ### Installing Visual Studio Code
 
@@ -74,15 +74,15 @@ To configure the debugger for your project:
 
 ### Building with Mbed CLI
 
-Visual Studio Code uses `make` to build your application. However, you can also build with Mbed CLI. To do this:
+Visual Studio Code uses `make` to build your application by default. You can also build with Mbed CLI. To do this:
 
-* In `.vscode/tasks.json` replace every instance (4 times) of `make` with `mbed`.
-* In `.vscode/tasks.json` change `args` to:
+- In `.vscode/tasks.json`, replace every instance (4 times) of `make` with `mbed`.
+- In `.vscode/tasks.json`, change `args` to:
 
     ```
-    "args": ["compile", "--profile=debug"],
+    "args": ["compile", "--profile=debug", "-t", "GCC_ARM", "-m", "YOUR_TARGET"],
     ```
 
-* In `.vscode/launch.json` replace every instance (twice) of `make` with `mbed`.
-* In `.vscode/launch.json` change `${workspaceRoot}/BUILD/` (twice) to `${workspaceRoot}/BUILD/YOUR_TARGET/GCC_ARM/`.
-* In `.vscode/launch.json` change `${workspaceRoot}\\BUILD` to `${workspaceRoot}\\BUILD\\YOUR_TARGET\\GCC_ARM`.
+- In `.vscode/launch.json`, replace every instance (twice) of `make` with `mbed`.
+- In `.vscode/launch.json`, change `${workspaceRoot}/BUILD/` (twice) to `${workspaceRoot}/BUILD/YOUR_TARGET/GCC_ARM/`.
+- In `.vscode/launch.json`, change `${workspaceRoot}\\BUILD` to `${workspaceRoot}\\BUILD\\YOUR_TARGET\\GCC_ARM`.
