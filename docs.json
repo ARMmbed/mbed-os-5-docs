@@ -717,18 +717,18 @@
                 }]
             },
             {
-                "title": "Your First Program",
+                "title": "Arm Mbed OS Quickstart",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/first_app/first_program.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/first_app/quickstart.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/first_app/blinky_compiler.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/first_app/quickstart-compiler.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/first_app/blinky_cli.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/first_app/quickstart-cli.md"
                     }
                 ]
             },
