@@ -6,13 +6,14 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
 - Mbed OS 5 is a *superset* of Mbed OS 2.
 - Mbed OS 5 is a combination of both Mbed OS 2 and Mbed-RTOS.
-- Mbed OS 2 and Mbed OS 5 both use the same `.h` file.
+- Mbed OS 2 and Mbed OS 5 both use the same `mbed.h` file.
+- Drivers are thread-safe in Mbed OS 5, drivers are not thread-safe in Mbed OS 2.
 
 ### FAQs
 
 **Do Mbed OS 2 and Mbed OS 5 use the same header file?**
 
-   Inside the `mbed.h` file in your Mbed OS project, you can see `if` statements that look at `MBED_CONF` variables. These variables are defined in `mbed_lib.json` files located in their respective Mbed OS directory. For example, in `mbed.h` you can find the following lines:
+   Yes. Here's how: inside the `mbed.h` file in your Mbed OS project, you can see `if` statements that look at `MBED_CONF` variables. These variables are defined in `mbed_lib.json` files located in their respective Mbed OS directory. For example, in `mbed.h` you can find the following lines:
 
    ```
    #if MBED_CONF_RTOS_PRESENT
@@ -58,7 +59,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
 **How do I know if my project uses Mbed OS 2 or Mbed OS 5?**
 
-   The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that the project uses a version of Mbed OS earlier than version 5.
+   The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that the project uses a version of Mbed OS earlier than version 5. The presence of an `mbed-os.lib` file signifies that the project uses Mbed OS 5.
 
    Here is an example of an Mbed OS 2 project as viewed on [os.mbed.com](https://os.mbed.com):
 
