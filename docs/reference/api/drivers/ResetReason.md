@@ -2,11 +2,9 @@
 
 Use the ResetReason interface to access hardware reset reason registers in a portable fashion.
 
-
 ### ResetReason class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_resetreason.html)
-
 
 ### ResetReason example
 
