@@ -51,7 +51,7 @@ The Windows installer for Mbed CLI includes the following components:
 
 ### Running the installer
 
-1. Download the latest executable from [`mbed-windows-installer v0.4.3`](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
+1. Download the latest executable from [mbed-windows-installer v0.4.3](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
 2. Run `mbed_installer_v042.exe`.
 3. Set the installation path.
 4. Choose the installation type:

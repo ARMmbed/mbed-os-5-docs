@@ -122,19 +122,22 @@ Image: BUILD/K64F/GCC_ARM/mbed-os-program.bin
 
 The arguments for *compile* are:
 
-- `-m <MCU>` to select a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
-- `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above). The value can be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
-- `--source <SOURCE>` to select the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
-- `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program root.
-- `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
-- `--library` to compile the code as a [static .a/.ar library](#compiling-static-libraries).
-- `--config` to inspect the runtime compile configuration (see below).
+- `-m <MCU>` selects a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
+- `-t <TOOLCHAIN>` selects a toolchain (of those defined in `mbed_settings.py`, see above). The value can be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
+- `--source <SOURCE>` selects the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
+- `--build <BUILD>` selects the build directory. Default: `BUILD/` inside your program root.
+   <span class="notes">**Note**: `mbed compile` ignores the current build directory; creating multiple build directories leads to errors.</span>
+- `--profile <PATH_TO_BUILD_PROFILE>` selects a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
+- `--library` compiles the code as a [static `.a/.ar` library](#compiling-static-libraries).
+- `--no-archive` suppresses the creation of `.a/.ar` files created by `--library`, producing many `.o` files instead.
+   <span class="notes">**Note**: This option does nothing without `--library`.</span>
+- `--config` inspects the runtime compile configuration (see below).
 - `-S` or `--supported` shows a matrix of the supported targets and toolchains.
-- `-f` or `--flash` to flash/program a connected target after successful compile.
-- `-c ` to build from scratch, a clean build or rebuild.
-- `-j <jobs>` to control the compile processes on your machine. The default value is 0, which infers the number of processes from the number of cores on your machine. You can use `-j 1` to trigger a sequential compile of source code.
-- `-v` or `--verbose` for verbose diagnostic output.
-- `-vv` or `--very_verbose` for very verbose diagnostic output.
+- `-f` or `--flash` flashes/programs a connected target after successful compile.
+- `-c ` builds from scratch, a clean build or rebuild.
+- `-j <jobs>` controls the compile processes on your machine. The default value is 0, which infers the number of processes from the number of cores on your machine. You can use `-j 1` to trigger a sequential compile of source code.
+- `-v` or `--verbose` shows verbose diagnostic output.
+- `-vv` or `--very_verbose` shows very verbose diagnostic output.
 
 You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
 

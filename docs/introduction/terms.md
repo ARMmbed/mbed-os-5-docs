@@ -24,7 +24,7 @@
 
 **BLE** - [Bluetooth Low Energy](/docs/v5.7/reference/ble.html).
 
-**Blinky** - An [example application](/docs/v5.7/tutorials/your-first-program.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
+**Blinky** - An [example application](/docs/v5.7/tutorials/quickstart.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
 **Block Device** - A [file](/docs/v5.7/reference/contributing-storage.html#block-devices) that represents a device, with data that can be read or written to it in blocks.
 
@@ -113,6 +113,10 @@
 **Program** - See `application`.
 
 **Pull Request** - Used by version-controlled repositories to propose and collaborate on changes.
+
+### Q
+
+**Quickstart** - A getting started guide to Mbed OS.
 
 ### R
 
