@@ -321,3 +321,7 @@ CN0357 cn0357(D8, D6, D11, D12, D13); // CSAD7790, CSAD5270, MOSI, MISO, SCK
 ```
 
 Now, the program successfully compiles.
+
+### Run-time Errors
+
+Now that the program or library is compiling successfully, runtime errors can still be present. Please visit the [compile-time errors tutorial](https://os.mbed.com/docs/latest/tutorials/compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips and common errors.
