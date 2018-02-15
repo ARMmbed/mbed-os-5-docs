@@ -53,18 +53,18 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 ##### Pull request template
 
-A good example how a pull request template should look like.
+Below is a good example of a pull request:
 
 ```
 Fix deep sleep locking bug
 
 # Description
 
-Fix problems which could leave deep sleep locked unintentionally, along with adding tests to verify this behavior is fixed.
+Fix problems that could leave deep sleep locked unintentionally, along with adding tests to verify this behavior is fixed.
 
-Tested locally with two targets, all toolchains.
+Tested locally with two targets and all toolchains.
 
-Test results can be seen [here](just an example). 
+You can see test results [here](just an example). 
 
 # Pull request type
 
