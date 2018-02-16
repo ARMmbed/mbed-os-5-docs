@@ -104,7 +104,7 @@ Make sure that all your devices use the same network configuration (both nodes a
 | `thread-config-commissioning-dataset-timestamp` | [0-0xFFFFFFFFFFFFFFFF] | [48 bit timestamp seconds]-[15 bit timestamp ticks]-[U bit] |
 | `thread-config-extended-panid` | byte array [8] | Extended PAN ID. |
 | `thread-master-key`      | byte array [16]| Network master key. |
-| `thread-config-ml-prefix` | byte array [8] | Mesh local prefix. |
+| `thread-config-ml-prefix` | byte array [8] | Mesh local prefix. Should follow the FD00::/8 prefix format  |
 | `thread-config-pskc`      | byte array [16] | Pre-Shared Key for the Commissioner. |
 | `thread-security-policy` | number [0-0xFF] | Commissioning security policy bits. |
 

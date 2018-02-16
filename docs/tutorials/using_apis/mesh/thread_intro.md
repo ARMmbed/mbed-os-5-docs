@@ -45,6 +45,7 @@ Nanostack provides a set of C API headers with more functionalities. The [nanost
 - `thread_meshcop_lib.h` for building and parsing the Thread mesh commissioning protocol TLV messages.
 - `thread_net_config_api.h` for making neighbour discovery (ND) data requests.
 - `net_polling_api.h` for configuring the Thread node's sleep mode and polling interval.
+- `net_interface.h` for configuring and controlling the nanostack.
 
 #### Thread devices you can build on Mbed OS
 
@@ -56,7 +57,7 @@ The Mbed OS Mesh API allows you to define 3 types of devices:
 
 In addition the Nanostack API allows you to define the Full end device (FED) device type.
 
-In most cases, the REED, MED and SED configurations are enough to build a network. You can configure the SED device to use sleep mode, in which case the radio is switched off between the polling times. To take the full advantage of the SED configuration, the application developer must implement the sleep procedures in the device.
+In most cases, the REED, MED and SED configurations are enough to build a network.
 
 For an end device or a router example, see [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
@@ -135,11 +136,66 @@ Now, the Thread network is ready to accept new joiner devices.
 
 <span class="notes">**Note:** Thread uses hashing and elliptic curve algorithms for the secure communication. PSKd(s) and EUI64(s) are never transmitted in plain text over the peer to peer connection.</span>
 
-#### How to start on Mbed OS
+##### How to start on Mbed OS
 
 The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the [Nanostack border router](https://github.com/ARMmbed/nanostack-border-router). An external [Commissioning application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) (Android) is already available. Also an IOS version will be available soon.
 
 See [Thread commissioning guide](/docs/v5.7/tutorials/mesh.html#thread-commissioning) how to commission a Thread device to the network in practice.
+
+#### Setting up Thread network
+
+##### Initial configuration
+
+This chapter gives some tips on how to make initial configuration for the Thread network.
+The initial static configuration for the Thread device can be done in .json file. Next we go through what is actually needed for the minimum set-up.
+
+Usually the border router is the first device to power-up. 
+For the Thread border router the PSKc needs to be configured so that commissioner can connect to it and start commissioning Thread devices to the network and modify the default network settings.
+
+For example, each border router could use the following practise for the initial settings (using .json format):
+
+- `"thread-config-panid": "unique random value",`
+- `"thread-config-network-name: "Some name",`
+- `"thread-config-extended-panid": "{unique random value}",`
+- `"thread-master-key: "{unique random value}",`
+- `"thread-config-pskc": "{generated value}",`
+
+The minimal configuration for the border router is to have input values for the PSKc generation, that is network name, extended panid and PSKc and the secret password, which is not stored to the device memory.
+Note that, the only use for the extended panid is to be input for the PSKc generation in the mbed Thread stack.
+
+The panid can be used to identify each network, but the only way to ensure that each Thread network stays in its own partition is to have different master key for each network.
+
+The Thread network channel may be different for each network to avoid some unnecessary packet processing (if the networks can hear each other).
+
+- `"thread-config-channel": 22,`
+
+For the devices to be commissioned, the only thing needed is PSKd and eui64.
+Both values can be set by using ThreadInterface.h. Alternatively PSKd can be configured in .json:
+
+`"thread-pskd": "Some random value",`
+
+By default the eui64 is read from the radio driver.
+
+##### Device memory configuration
+
+Thread router devices require more RAM/ROM memory than end devices. How much RAM memory the device needs depends on the size of the network and how big and many packets need to be buffered.
+
+The recommended heap values:
+- Thread router: 32kb
+- Thread SED: 16kb
+
+Also it is possible to define the number of packets that can be buffered in the parent device. 
+If end nodes are running cloud client, that sets requirements for the parent device to buffer the messages during the handshake. By default the router device has 10 message buffer size to support the cloud client requirements.
+Note, that if many end nodes start the cloud client in the same time that may lead to the packet drops. And increasing the buffer size requires more nanostack heap (RAM).
+
+Application can use the nanostack net_interface.h API and the function `arm_nwk_sleepy_device_parent_buffer_size_set` to adjust the buffer size for the router (parent) devices.
+The API will require interface_id that can be read by using MeshInterfaceNanostack interface and the function get_interface_id(). 
+
+##### End node's power mode configuration
+
+The SED device can be configured to use different power modes. The `net_polling_api.h` API and the function `arm_nwk_host_mode_set` can be used for defining the power mode and the polling interval for the end node.
+In the polling mode (`NET_HOST_SLOW_POLL_MODE`, `NET_HOST_FAST_POLL_MODE`) the radio is switched off between the polling times.
+By default the SED device is always on (`NET_HOST_RX_ON_IDLE`) and has 300 ms polling interval.
 
 #### The maturity of the Mbed OS Thread implementation
 
