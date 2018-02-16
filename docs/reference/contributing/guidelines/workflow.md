@@ -51,6 +51,30 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
 - All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and testing pull requests.
 
+##### Pull request template
+
+Below is a good example of a pull request:
+
+```
+Fix deep sleep locking bug
+
+# Description
+
+Fix problems that could leave deep sleep locked unintentionally, along with adding tests to verify this behavior is fixed.
+
+Tested locally with two targets and all toolchains.
+
+You can see test results [here](just an example). 
+
+# Pull request type
+
+- [x] Fix
+- [ ] Refactor
+- [ ] New Target
+- [ ] Feature
+
+```
+
 #### Mbed OS maintainers
 
 The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code. They:
