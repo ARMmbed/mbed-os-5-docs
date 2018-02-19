@@ -38,7 +38,7 @@ We are working on the new HAL RTC API, which will replace current version in an 
 
 To make sure your platform is ready for the upcoming changes, you will need to implement the future API and submit it in a separate pull request against `feature-hal-spec-rtc` branch. You can find the API and specification for the new RTC API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-rtc/hal/rtc_api.h)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-rtc-doxy/group__hal__rtc.html)
 
 To enable RTC support in Mbed OS, add the `RTC` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -52,6 +52,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-rtc*"
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-rtc/TESTS/mbed_hal/rtc/rtc_test.h)
-
- [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-rtc-doxy/classrtc__reset_1_1_rtc_reset_test.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-rtc-doxy/group__hal__rtc__tests.html)
