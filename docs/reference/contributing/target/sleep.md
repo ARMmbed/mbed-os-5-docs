@@ -36,7 +36,7 @@ We are working on the new HAL Sleep API, which will replace the current version 
 
 To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-sleep` branch. You can find the API and specification for the new Sleep API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-sleep/hal/sleep_api.h)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep.html)
 
 To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -50,4 +50,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sleep*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-sleep/TESTS/mbed_hal/sleep/sleep_api_tests.h)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep__tests.html)
