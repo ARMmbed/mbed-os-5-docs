@@ -195,7 +195,7 @@ The API will require interface_id that can be read by using MeshInterfaceNanosta
 
 The SED device can be configured to use different power modes. The `net_polling_api.h` API and the function `arm_nwk_host_mode_set` can be used for defining the power mode and the polling interval for the end node.
 In the polling mode (`NET_HOST_SLOW_POLL_MODE`, `NET_HOST_FAST_POLL_MODE`) the radio is switched off between the polling times.
-By default the SED device is always on (`NET_HOST_RX_ON_IDLE`) and has 300 ms polling interval.
+By default the SED device uses fast poll pode with 300 ms polling interval.
 
 #### The maturity of the Mbed OS Thread implementation
 
