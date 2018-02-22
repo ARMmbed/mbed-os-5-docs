@@ -76,13 +76,13 @@ To configure the debugger for your project:
 
 Visual Studio Code uses `make` to build your application by default. You can also build with Mbed CLI. To do this:
 
-- In `.vscode/tasks.json`, replace every instance (4 times) of `make` with `mbed`.
-- In `.vscode/tasks.json`, change `args` to:
+1. In `.vscode/tasks.json`, replace every instance (4 times) of `make` with `mbed`.
+1. In `.vscode/tasks.json`, change `args` to:
 
     ```
     "args": ["compile", "--profile=debug", "-t", "GCC_ARM", "-m", "YOUR_TARGET"],
     ```
 
-- In `.vscode/launch.json`, replace every instance (twice) of `make` with `mbed`.
-- In `.vscode/launch.json`, change `${workspaceRoot}/BUILD/` (twice) to `${workspaceRoot}/BUILD/YOUR_TARGET/GCC_ARM/`.
-- In `.vscode/launch.json`, change `${workspaceRoot}\\BUILD` to `${workspaceRoot}\\BUILD\\YOUR_TARGET\\GCC_ARM`.
+1. In `.vscode/launch.json`, replace every instance (twice) of `make` with `mbed`.
+1. In `.vscode/launch.json`, change `${workspaceRoot}/BUILD/` (twice) to `${workspaceRoot}/BUILD/YOUR_TARGET/GCC_ARM/`.
+1. In `.vscode/launch.json`, change `${workspaceRoot}\\BUILD` to `${workspaceRoot}\\BUILD\\YOUR_TARGET\\GCC_ARM`.
