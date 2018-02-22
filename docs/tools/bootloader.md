@@ -23,7 +23,7 @@ This configuration parameter conflicts with `target.bootloader_img` and `target.
 
 ### `target.mbed_app_size`
 
-This parameter defines the size of your application. You may use `target.mbed_app_start` in conjunction with this parameter to set the start address, as well as the size. When `target.mbed_app_start` is not present, the application starts at the beginning of ROM.
+This parameter defines the size of your application. You may use `target.mbed_app_start` in conjunction with this parameter to set the start address, as well as the size. When `target.mbed_app_start` is not present, the application starts at the beginning of ROM. You are responsible for the alignment of the end address of the application with respect to the flash layout and vector table size of the MCU you are using.
 
 The value of this parameter is available to C and C++ as `APPLICATION_SIZE` and to the linker as `MBED_APP_SIZE`.
 
@@ -39,7 +39,7 @@ You may use this parameter in conjunction with `target.restrict_size`. It confli
 
 ### `target.restrict_size`
 
-This parameter restricts the size of the application to be at most the specified size. When `target.bootloader_img` is present, the start of the current application's code segment is computed as above; otherwise, the start address is the beginning of ROM. The size of the application is computed by rounding the end address down to the nearest flash erase block boundary and subtracting the start address. The postbuild merge process pads the resulting bootloader binary to its end address.
+This parameter restricts the size of the application to be at most the specified size rounded down to the nearest integer multiple of flash erase blocks. When `target.bootloader_img` is present, the start of the current application's code segment is computed as above; otherwise, the start address is the beginning of ROM. The postbuild merge process pads the resulting bootloader binary to its end address.
 
 The start address of the current application, as computed above, is available to C and C++ as `APPLICATION_ADDR` and to the linker as `MBED_APP_START`. The size of the current application is available as `APPLICATION_SIZE` and `MBED_APP_SIZE`. This parameter also defines `POST_APPLICATION_ADDR` and `POST_APPLICATION_SIZE` as the start address and size of the region after the application.
 
@@ -47,8 +47,4 @@ You may use this parameter in conjunction with `target.bootloader_img` and confl
 
 ### Exporter limitations
 
-Although the exporters can export a project using the configuration parameters above, there are some limitations. 
-
-The exporters do not interpret Mbed OS configuration, and any changes to configuration parameters, especially bootloader parameters, require you to rerun the `mbed export` command. 
-
-Further, the exporters do not implement the postbuild merge that managed bootloader builds use. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. 
+Although the exporters can export a project using the configuration parameters above, there are some limitations. The exporters do not implement the postbuild merge that managed bootloader builds use. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter.
