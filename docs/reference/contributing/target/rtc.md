@@ -36,7 +36,7 @@ We are working on the new HAL RTC API, which will replace current version in an 
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/rtc__api_8h_source.html)
 
-To make sure your platform is ready for the upcoming changes, you will need to implement the future API and submit it in a separate pull request against `feature-hal-spec-rtc` branch. You can find the API and specification for the new RTC API in the following header file:
+To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-rtc` branch. You can find the API and specification for the new RTC API in the following header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-rtc-doxy/group__hal__rtc.html)
 
