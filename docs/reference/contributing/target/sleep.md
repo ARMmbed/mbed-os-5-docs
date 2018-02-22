@@ -24,10 +24,6 @@ The core system clock is disabled. You can only the low-frequency clocks and ret
 1. Wake-up sources - RTC, low power ticker or GPIO must wake up the MCU.
 1. Latency - The MCU must wake up within 10 ms.
 
-#### Dependencies
-
-None.
-
 #### Implementing the Sleep API
 
 We are working on the new HAL Sleep API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the Sleep API in both variants. First, you need to implement the current API. You can find it on master branch:
