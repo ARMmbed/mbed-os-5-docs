@@ -15,11 +15,15 @@ To bring up the network interface:
 1. Once you connect the EthInterface, you can use it as a
 target for opening [network sockets](/docs/v5.7/reference/network-socket.html).
 
-### EthInterface example
+### EthInterface examples
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface and uses it to perform an HTTP transaction over a TCPSocket:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
+
+Here is an example how to register a status callback which gets triggered when connection state changes. This will also work with other networks interfaces if support is provided.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/file/987d54985478/main.cpp/)
 
 ### Related content
 
