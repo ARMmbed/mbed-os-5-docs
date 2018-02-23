@@ -1,10 +1,10 @@
-<h2 id="quickstart-offline">Offline - Arm Mbed CLI</h2>
+<h2 id="quick-start-offline">Offline - Arm Mbed CLI</h2>
 
 ### Setup
 
-The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally. 
+The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally.
 
-[**Windows**](#windows) | [**OSX**](#mac-osx) | [**Linux**](#linux)
+[**Windows**](#windows) | [**Mac OS X**](#mac-os-x) | [**Linux**](#linux)
 
 #### Windows
 
@@ -32,7 +32,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### Mac OSX
+#### Mac OS X
 
 ##### 1. Install Python and Pip
 
@@ -68,7 +68,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### Linux 
+#### Linux
 
 ##### 1. Install Python and Pip
 
@@ -122,7 +122,7 @@ $ cd mbed-os-example-blinky
 #### 2. Compile and program board
 
 Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler 5 toolchain:
-  
+
 ```console
 $ mbed compile --target K64F --toolchain ARM --flash
 ```  
@@ -162,7 +162,7 @@ Invoke `mbed detect` from your command-line to determine which communication por
   - [Serial communications](https://os.mbed.com/docs/latest/tutorials/serial-communication.html).
   - [Optimizing binary size](https://os.mbed.com/docs/latest/tutorials/optimizing.html).
 
-- Other resources 
+- Other resources
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
   - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
   - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.

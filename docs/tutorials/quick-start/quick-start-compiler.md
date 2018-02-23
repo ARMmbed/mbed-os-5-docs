@@ -1,4 +1,4 @@
-<h2 id="quickstart-online">Arm Mbed Online Compiler</h2>
+<h2 id="quick-start-online">Arm Mbed Online Compiler</h2>
 
 ### Setup
 
@@ -26,7 +26,7 @@ Visit the Mbed OS [blinky example repository](https://developer.mbed.org/teams/m
 
 #### Compile
 
-Click on the "Compile" button. Your browser downloads the program as an executable file.
+Click **Compile**. Your browser downloads the program as an executable file.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button.png)
 </span>
