@@ -153,6 +153,9 @@ Invoke `mbed detect` from your command-line to determine which communication por
 
 ### Further reading
 
+- More examples
+  - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
+
 - Documentation
   - [Mbed OS APIs](https://os.mbed.com/docs/latest/reference/apis.html) - list of all APIs available in Mbed OS.
   - [Peripheral drivers](https://os.mbed.com/docs/latest/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).

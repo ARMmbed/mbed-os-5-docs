@@ -19,7 +19,7 @@ If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.c
 
 #### Import
 
-Visit the Mbed OS [Blinky example repository](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click **Import into Compiler**.
+Visit the Mbed OS [Blinky example repository](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click **Import into Compiler**.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_into_compiler.png)
 </span>
@@ -65,6 +65,9 @@ Run `dmesg | grep tty` from your command-line.
 Run `ls /dev/tty.*` from your command-line.
 
 ### Further reading
+
+- More examples
+  - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
 	- [Mbed OS APIs](https://os.mbed.com/docs/latest/reference/apis.html) - list of all APIs available in Mbed OS.
