@@ -1,4 +1,4 @@
-<h2 id="quick-start-online">Arm Mbed Online Compiler</h2>
+<h2 id="quick_start_online">Arm Mbed Online Compiler</h2>
 
 ### Setup
 
