@@ -11,7 +11,7 @@ Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mb
 - Plug your Mbed board into your computer, and open its USB device folder.
 - Double click on the `MBED.HTM` file. (This adds your Mbed platform to the Online Compiler.)
 
-If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.com/platforms), select a board and click the “Add to your Mbed Compiler” button.
+If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.com/platforms), select a board and click **Add to your Mbed Compiler**.
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)
 </span>
 
@@ -19,7 +19,7 @@ If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.c
 
 #### Import
 
-Visit the Mbed OS [blinky example repository](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click the "Import into Compiler" button.
+Visit the Mbed OS [Blinky example repository](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click **Import into Compiler**.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_into_compiler.png)
 </span>
