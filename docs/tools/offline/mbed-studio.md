@@ -82,9 +82,9 @@ Now that you have learned the basics of Mbed Studio, it is time to learn how to 
 
 To begin debugging, click the bug icon, which launches the default debug configuration.
 
-Alternatively, you can create the debug launch configuration and then begin debugging. To create a debug launch configuration, right click on a project and select `Debug As... > Debug Configurations` from the context menu. (You can also use the menu bar as shown below.)
+Alternatively, you can create the debug launch configuration and then begin debugging. To create a debug launch configuration, right-click on a project and select `Debug As... > Debug Configurations` from the context menu. (You can also use the menu bar as shown below.)
 
-Once created, the configuration prepopulates all the readily inferred values. Click `Choose...` next to the project textbox, and select the project you wish to debug if it isn’t already populated. After that, connect a board, and the project is ready to debug. The Mbed Debug launch configuration prepopulates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right-hand portion of the window to start debugging.
+Once created, the configuration prepopulates all the readily inferred values. Click `Choose...` next to the project textbox, and select the project you wish to debug if it isn’t already populated. After that, connect a board, and the project is ready to debug. The Mbed Debug launch configuration prepopulates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right portion of the window to start debugging.
 
 Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also breakes on a default break point. The resulting workspace looks like the image below.
 
@@ -92,11 +92,11 @@ Mbed Studio automatically switches into the Mbed Debug perspective when debuggin
 
 If you want more control over the options regarding debugging, this section is for you. This section describes how to create a PyOCD GDB debug configuration. This configuration allows you to change more settings, such as ports and executable locations for the GDB client and server.
 
-To begin debugging, create the debug launch configuration and set some variables. (You may use your own values if you don’t want to use the default provided here.) To create a debug launch configuration, as before, right click on a project, and select `Debug As... > Debug Configurations` from the context menu.
+To begin debugging, create the debug launch configuration and set some variables. (You may use your own values if you don’t want to use the default provided here.) To create a debug launch configuration, as before, right-click on a project, and select `Debug As... > Debug Configurations` from the context menu.
 
 A window for the debug configurations appears. Select the `GDB PyOCD Debugging` category, and create a new launch configuration. 
 
-You can click the new icon (a page with a `+` in the upper right corner), or right click on the category and select `New`. See the screenshot above on the right.
+You can click the new icon (a page with a `+` in the upper right corner), or right-click on the category and select `New`. See the screenshot above on the right.
 
 Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`. (For this example, it is `BUILD/K64F/GCC_ARM`.) Currently, this is configured manually, so switching to a different target to run the same project requires you to update this field in the debug configuration. See the below left screenshot.
 
@@ -113,7 +113,7 @@ On Windows machines, the two bundled executables are located at:
 `\eclipse-ws\mbed-studio-ws\tools\python\Scripts\pyocd-gdbserver.exe`
 `\eclipse-ws\mbed-studio-ws\tools\gcc-arm\bin\gcc-arm-none-eabi-gdb.exe`
 
-If everything is configured correctly, select Apply in the lower right hand side of the panel and the click the blue Debug button just below that. Debugging should now commence.
+When you have configured everything, select `Apply` in the lower right side of the panel, and the click the blue Debug button just below that.
 
 ### Help
 
@@ -172,15 +172,17 @@ Workaround: None
 Using the product update functionality in Eclipse returns a timestamp error.
 Workaround: This error does not prevent the product from successfully updating.
 
-#### FAQ
+### FAQ
 
 This section includes common questions and answers.
 
 Q: How can I tell if I already have a working Java install?
-A: From the command-line, run: java -version. You have a working Java install if you see something similar to the following:
+A: From the command-line, run: `java -version`. You have a working Java install if you see something similar to the following:
+
 `java version "1.8.0_141"`
 `Java(TM) SE Runtime Environment (build 1.8.0_141-b15)`
 `Java HotSpot(TM) 64-Bit Server VM (build 25.141-b15, mixed mode)`
+
 If not, follow the instructions earlier in this document to install Java.
 
 Q: I have Java installed. Why won’t Mbed Studio launch?
