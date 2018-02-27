@@ -18,7 +18,7 @@ Option | Value | Description |
 `OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack set to 768B that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
 `OS_IDLE_THREAD_STACK_SIZE` | 512B | Required to handle Mbed OS wrappers |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
-`OS_TICK_FREQ` | 1000 | OS Tickrate must be 1000 for system timing. |
+`OS_TICK_FREQ` | 1000 | Mbed OS Tickrate requires 1ms system tick. |
 `OS_STACK_WATERMARK` | 0 or 1 | Watermarking is enabled if `MBED_STACK_STATS_ENABLED` or `MBED_STACK_STATS_ENABLED` are set. |
 `OS_PRIVILEGE_MODE` | 0 or 1 | We set it for 0 if uVisor is enabled, 1 otherwise. |
 
