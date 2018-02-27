@@ -8,7 +8,7 @@ Mbed Studio is currently in closed alpha. You can request access here if you're 
 
 ### Getting started
 
-This section shows the steps of creating, exploring, running and debugging an example project packaged with Mbed Studio. After reading it, you will have a better understanding of how you cna use Mbed Studio to develop for Mbed OS. Start Mbed Studio, and follow the steps below.
+This section shows the steps of creating, exploring, running and debugging an example project packaged with Mbed Studio. After reading it, you will have a better understanding of how you can use Mbed Studio to develop for Mbed OS. Start Mbed Studio, and follow the steps below.
 
 #### On startup
 
@@ -25,7 +25,9 @@ Mbed Studio now begins to create the project in the workspace and shows its prog
 #### Explore or edit the project
 
 Mbed Studio provides support for formatting, syntax highlighting, locating files, comparing files, and navigating through to lower level code, such as pin definitions for your target hardware. For a more general look at the features provided by Eclipse, consult the [Eclipse](http://help.eclipse.org/neon/index.jsp) on-line help documentation.
+
 There should now be a project located in the “C++ Projects” with the name “mbed-os-example-blinky” (or whatever project name you provided earlier). Clicking the triangle next to the project should expand its contents, revealing the project’s current files and directories.
+
 Double-click on the `main.cpp` file to open it in Mbed Studio’s editor area. This file includes the code needed to blink an LED. If you haven’t done so already, connect an Mbed Enabled board (such as the FRDM-K64F) to your machine. Mbed Studio should detect the board and prompt you with a dialog asking to switch targets. Accept this and you will be ready to run the example!
 
 #### Running the project
@@ -34,58 +36,83 @@ This section covers the necessary steps of building and running the project, so 
 
 ##### Build
 
-Before the program can be run, a binary needs to be built by Mbed Studio. There are multiple ways of starting a build, but the easiest is to click the build icon.
-Alternatively, you can right-click (Ctrl-click) on the project in the “C++ Projects” view and then select Build Project. You can also use the menu by choosing: `Project > Build Project`. Both will begin to build a binary that can be deployed.
-Alternatively, you can choose to have the project built automatically through the menu by choosing: `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever it is needed. After the build, there should be a `mbed-os-example-blinky.bin` (or `<project name>.bin`) file ready to deploy.
+Before you can run the program, Mbed Studio needs to build a binary. There are multiple ways to start a build, but the easiest is to click the build icon.
+
+Alternatively, you can right-click (Ctrl-click) on the project in the `C++ Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both begin to build a binary that you can deploy.
+
+Alternatively, you can choose to build the project automatically through the menu by choosing `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever needed. After the build, an `mbed-os-example-blinky.bin` (or `<project name>.bin`) file is ready to deploy.
 
 ##### Building within Mbed Studio
 
-Mbed Studio uses the tools built in to the Mbed OS to decide what should be built and where the output of a build should go. The build tools will build on request or (if the `Project > Build Automatically` option is checked) when a source file is changed and saved. The build operation will only build those components that have changed and will do nothing if nothing has changed. All projects in the workspace are regarded as part of the same system, so initially all projects will be built. Pressing the build button will also ensure that all workspace projects are built (if required).
-The aim is to maintain a system that is always in a built state, providing rapid error feedback to developers as changes are made.
-Under some circumstances (in particularly large projects, or where the target device is changing frequently) you may wish to turn off automatic builds and build individual projects on request. To do this, select Build from the project right-click menu.
+Mbed Studio uses the tools built into Mbed OS to dectermine what builds and where the output of a build goes. The build tools build on request or (if the `Project > Build Automatically` option is checked) when you change and save a source file. The build operation only builds components that have changed and does nothing if nothing changed. Mbed Studio regards all projects in the workspace as part of the same system, so it initially builds all projects. Pressing the build button also ensures that all workspace projects build (if required).
+
+The aim is to maintain a system that is always in a built state, providing rapid error feedback to developers as they make changes.
+
+Under some circumstances (in particularly large projects, or when the target device changes frequently), you may wish to turn off automatic builds and build individual projects on request. To do this, select Build from the project right-click menu.
 
 ##### Run
 
-Now that you have built the `mbed-os-example-blinky project`, we can run it. Running a project consists of several phases, which are abstracted if you click the green run icon.
-We will go through the run phases here, as well as, explain how to run a project from within Mbed Studio.
+Now that you have built the `mbed-os-example-blinky project`, you can run it. Running a project consists of several phases, which are abstracted if you click the green run icon.
+
 The Mbed Studio run phases are:
-- Locate/Create a suitable binary
-- Deploy the binary to the target
-- Reset target, causing the deployed program to run
-While we manually built the project in the previous section, which was meant to show how building a project can be done in Mbed Studio, it wasn’t absolutely necessary before running. That’s because Mbed Studio checks that there is a binary for the currently selected target. If there isn’t one, Mbed Studio will begin a compilation to create the binary. If there is a binary and there are no recent changes (build automatically option is on), the existing binary will be used for running the project.
-Once Mbed Studio has a binary of the Mbed OS program, it will deploy that binary to the currently selected target and reset the target so that the program will begin to run.
-Let’s make it happen. Click the green run icon to launch the default run configuration for your connected development board.
+
+- Locate or create a suitable binary.
+- Deploy the binary to the target.
+- Reset target, causing the deployed program to run.
+
+Although you manually built the project in the previous section and learned how to build a project in Mbed Studio, it wasn’t necessary before running. That’s because Mbed Studio checks that there is a binary for the currently selected target. If there isn’t one, Mbed Studio begins a compilation to create the binary. If there is a binary and there are no recent changes (build automatically option is on), Mbed Studio uses the existing binary to run the project.
+
+Once Mbed Studio has a binary of the Mbed OS program, it deploys that binary to the currently selected target and resets the target, so the program begins to run.
+
+To make it happen, click the green run icon to launch the default run configuration for your connected development board.
+
 Alternatively, open the context menu (right-click, ctrl-click) on the `mbed-os-example-blinky` project and select `Run As > Run Configurations...` from the menu. You can also use the menu by selecting `Run > Run Configurations` (both ways shown below).
-In the “Run Configurations” window, right-click on Mbed Deploy and select New to create a “Mbed Deploy” run configuration. This will create the run configuration we need to populate with details of our project and target. For project (if everything isn’t already populated), click `Choose` and select the `mbed-os-example-blinky` project. The binary built by Mbed Studio will fill in automatically. If you used a different project name, remember that the binary name will reflect that. Finally, click the Refresh button to ensure that the current target board’s ID is updated if it isn’t already.
-After everything is configured properly, click on the Apply button, and then on the Run button.
-Now the primary LED on your connected target should begin to blink!
+
+In the `Run Configurations` window, right-click on `Mbed Deploy`, and select `New` to create an `Mbed Deploy` run configuration. This creates the run configuration you need to populate with details of your project and target. For project (if everything isn’t already populated), click `Choose`, and select the `mbed-os-example-blinky` project. The binary Mbed Studio builds fills in automatically. If you used a different project name, the binary name reflects that. Finally, click the Refresh button to ensure that the current target board’s ID updates if it hasn’t already.
+
+After you have configured everything, click on the Apply button and then on the Run button.
+
+Watch the primary LED on your connected target begin to blink!
 
 #### Debugging
 
-Now that the basics of Mbed Studio have been covered, it is time to detail how to debug projects within the IDE. There is a simplified debug configuration specifically for easy debugging of Mbed OS projects. There are also additional configurations for more advanced debugging as well. This section will cover the Mbed OS Debug configuration as well as the advanced PyOCD GDB Debug configuration.
+Now that you have learned the basics of Mbed Studio, it is time to learn how to debug projects within the IDE. There is a simplified debug configuration specifically for easy debugging of Mbed OS projects. There are also additional configurations for more advanced debugging. This section covers the Mbed OS debug configuration, as well as the advanced PyOCD GDB debug configuration.
 
 ##### Simple debugging
 
-To begin debugging, click the bug icon, which will launch the default debug configuration.
-Alternatively, we can create the debug launch configuration and then begin debugging. To create a debug launch configuration right click on a project and select `Debug As... > Debug Configurations` from the context menu (you can also use the menu bar as shown below).
-Once created, the configuration will pre-populate all the values that can readily be inferred. Click Choose... next to the project textbox and select the project you wish to debug (if it isn’t already populated). After that, and when there is a board connected, the project will be ready to debug. The Mbed Debug launch configuration pre-populates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right-hand portion of the window to start the Debugging.
-Mbed Studio will automatically switch into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project will also break on a default break point, the resulting workspace should look like the image below.
+To begin debugging, click the bug icon, which launches the default debug configuration.
+
+Alternatively, you can create the debug launch configuration and then begin debugging. To create a debug launch configuration, right click on a project and select `Debug As... > Debug Configurations` from the context menu. (You can also use the menu bar as shown below.)
+
+Once created, the configuration prepopulates all the readily inferred values. Click `Choose...` next to the project textbox, and select the project you wish to debug if it isn’t already populated. After that, connect a board, and the project is ready to debug. The Mbed Debug launch configuration prepopulates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right-hand portion of the window to start debugging.
+
+Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also breakes on a default break point. The resulting workspace looks like the image below.
 
 ##### Advanced debugging
 
-If you want to have more control over the options regarding debugging, this section is for you. This section will describe how to create a PyOCD GDB debug configuration. This configuration allows you to change more settings like ports and executable locations for the GDB client and server.
-To begin debugging, we will create the debug launch configuration and set some variables (you may use your own values if you don’t want to use the default provided here). To create a debug launch configuration, as before, right click on a project and select Debug As... > Debug Configurations from the context menu.
-You should now see a window for the debug configurations. Select the GDB PyOCD Debugging category and create a new launch configuration. The new icon (a page with a + in the upper right hand corner) can be clicked, or right click on the category and select New. See the screenshot above, on the right hand side.
-Next, configure the binary to be used for debugging. This is the .elf file located within the project directory and inside `BUILD/<target>/GCC_ARM` (for this example it is BUILD/K64F/GCC_ARM). Currently this is configured manually, so switching to a different target to run the same project requires this field to be updated in the debug configuration. See the below, left screenshot.
+If you want more control over the options regarding debugging, this section is for you. This section describes how to create a PyOCD GDB debug configuration. This configuration allows you to change more settings, such as ports and executable locations for the GDB client and server.
+
+To begin debugging, create the debug launch configuration and set some variables. (You may use your own values if you don’t want to use the default provided here.) To create a debug launch configuration, as before, right click on a project, and select `Debug As... > Debug Configurations` from the context menu.
+
+A window for the debug configurations appears. Select the `GDB PyOCD Debugging` category, and create a new launch configuration. 
+
+You can click the new icon (a page with a `+` in the upper right corner), or right click on the category and select `New`. See the screenshot above on the right.
+
+Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`. (For this example, it is `BUILD/K64F/GCC_ARM`.) Currently, this is configured manually, so switching to a different target to run the same project requires you to update this field in the debug configuration. See the below left screenshot.
+
 The next step is to configure the location of the executables for the PyOCD GDB Server and the GDB Client on the Debugger tab within the debug configuration. These should be set to the executables located within Mbed Studio’s tools directory which is located at:
 `/eclipse-ws/mbed-studio-ws/tools`
+
 Alternatively, and at your own risk, you may select executables from locations elsewhere on your machine.
-On *nix machines the two bundled executables are located at:
+
+On *nix machines, the two bundled executables are located at:
 `/eclipse-ws/mbed-studio-ws/tools/python/bin/pyocd-gdbserver`
 `/eclipse-ws/mbed-studio-ws/tools/gcc-arm/bin/gcc-arm-none-eabi-gdb`
+
 On Windows machines, the two bundled executables are located at:
 `\eclipse-ws\mbed-studio-ws\tools\python\Scripts\pyocd-gdbserver.exe`
 `\eclipse-ws\mbed-studio-ws\tools\gcc-arm\bin\gcc-arm-none-eabi-gdb.exe`
+
 If everything is configured correctly, select Apply in the lower right hand side of the panel and the click the blue Debug button just below that. Debugging should now commence.
 
 ### Help
