@@ -19,7 +19,7 @@ The core system clock is disabled. You can use both the low- and high-frequency 
 
 ###### Deep sleep
 
-The core system clock is disabled. You can only the low-frequency clocks and retain RAM.
+The core system clock is disabled. You can only enable the low-frequency clocks and retain RAM.
 
 1. Wake-up sources - RTC, low power ticker or GPIO must wake up the MCU.
 1. Latency - The MCU must wake up within 10 ms.
