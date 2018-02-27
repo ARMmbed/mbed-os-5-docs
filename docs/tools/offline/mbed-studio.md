@@ -24,11 +24,11 @@ Mbed Studio now begins to create the project in the workspace and shows its prog
 
 #### Explore or edit the project
 
-Mbed Studio provides support for formatting, syntax highlighting, locating files, comparing files, and navigating through to lower level code, such as pin definitions for your target hardware. For a more general look at the features provided by Eclipse, consult the [Eclipse](http://help.eclipse.org/neon/index.jsp) on-line help documentation.
+Mbed Studio provides support for formatting, syntax highlighting, locating files, comparing files and navigating to lower level code, such as pin definitions for your target hardware. For a more general look at the features provided by Eclipse, consult the [Eclipse](http://help.eclipse.org/neon/index.jsp) online help documentation.
 
-There should now be a project located in the “C++ Projects” with the name “mbed-os-example-blinky” (or whatever project name you provided earlier). Clicking the triangle next to the project should expand its contents, revealing the project’s current files and directories.
+Now, there is a project located in the `C++ Projects` with the name `mbed-os-example-blinky` (or whatever project name you provided earlier). Clicking the triangle next to the project expands its contents and reveals the project’s current files and directories.
 
-Double-click on the `main.cpp` file to open it in Mbed Studio’s editor area. This file includes the code needed to blink an LED. If you haven’t done so already, connect an Mbed Enabled board (such as the FRDM-K64F) to your machine. Mbed Studio should detect the board and prompt you with a dialog asking to switch targets. Accept this and you will be ready to run the example!
+Double-click on the `main.cpp` file to open it in Mbed Studio’s editor area. This file includes the code needed to blink an LED. If you haven’t done so already, connect an Mbed Enabled board (such as the FRDM-K64F) to your machine. Mbed Studio detects the board and prompts you with a dialog asking to switch targets. Accept this, and you are ready to run the example.
 
 #### Running the project
 
