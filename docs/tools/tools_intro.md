@@ -13,8 +13,6 @@ We developed Mbed OS 5 using the Mbed CLI tool, which is a Python program that c
 
 `os.mbed.com` provides the tools, libraries and programs that work with Mbed OS 5, so you can also use the Mbed Online Compiler for building Mbed OS 5 examples and programs. Beginning developers or those who are not comfortable with the command-line may prefer the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the Arm Mbed OS 2 ecosystem.
 
-Use the instructions below to test our Cloud9-based Arm Mbed Enabled IDE, which is currently in an alpha state.
-
 ##### Arm Mbed CLI
 
 We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](/docs/v5.7/tools/arm-mbed-cli.html).
