@@ -1,4 +1,4 @@
-<h2 id="quick_start_offline">Offline - Arm Mbed CLI</h2>
+<h2 id="quick-start-offline">Offline - Arm Mbed CLI</h2>
 
 ### Setup
 
