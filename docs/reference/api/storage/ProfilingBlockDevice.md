@@ -12,4 +12,4 @@ ProfilingBlockDevices take in a pointer to the block device being profiled as th
 
 Create a ProfilingBlockDevice, perform storage operations and report back the read, write and erase counts.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ProfilingBlockDevice_ex_1/)](https://os.mbed.com/compiler/#nav:/ProfilingBlockDevice_ex_1/main.cpp;)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ProfilingBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/ProfilingBlockDevice_ex_1/file/20bf5212cdd6/main.cpp/)
