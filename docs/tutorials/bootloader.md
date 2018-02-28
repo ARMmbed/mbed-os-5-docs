@@ -21,9 +21,9 @@ Creating a bootloader is similar to creating a regular application. The only add
 
 Adding this field:
 
-* Restricts the bootloader code from growing larger than the specified size.
-* Pads the output image to exactly the size specified.
-* Defines the symbols `APPLICATION_ADDR`, `APPLICATION_SIZE`, `POST_APPLICATION_ADDR`, `POST_APPLICATION_SIZE`.
+- Restricts the bootloader code from growing larger than the specified size.
+- Pads the output image to exactly the size specified.
+- Defines the symbols `APPLICATION_ADDR`, `APPLICATION_SIZE`, `POST_APPLICATION_ADDR`, `POST_APPLICATION_SIZE`.
 
 It produces the following ROM layout:
 
@@ -95,25 +95,22 @@ It produces the following ROM layout:
 
 For an example showing how to create an application that uses a bootloader, see the [Mbed OS bootloader example](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
 
-#### Exporter limitations
-
-While the exporters can export a project using the configuration parameters above, there are some limitations. 
-
-The exporters do not interpret Mbed OS Configuration, and any changes to configuration parameters, especially boot loader parameter, require you to re-run the `mbed export` command. 
-
-Further, The exporters do not implement the post build merge used in managed boot loader builds. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this boot loader image, the device will not boot correctly.
-
 ### Unmanaged bootloader
 
 You want to have an unmanaged bootloader when your bootloader's requirements conflict with the requirements of the managed bootloader. You need an unmanaged bootloader when your bootloader does not come before your application in ROM or your application does not start immediately after your bootloader. Unlike a managed bootloader, an unmanaged bootloader does not automatically merge the bootloader image with the application image after building the application. We expect users of an unmanaged bootloader build to construct their own set of scripts built atop the `mbed compile` primitive to perform bootloader and application merging.
 
-An unmanaged bootloader build is a method for controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [Boot Loader Configuration](../tools/bootloader.md) for complete descriptions of these options.
+An unmanaged bootloader build is a method of controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [bootloader configuration](docs/v5.7/tools/bootloader.html) for complete descriptions of these options.
 
+### Exporter limitations
 
-#### Exporter limitations
+Although the exporters can export bootloader projects using the bootloader parameters, there are some limitations. 
 
-While the exporters can export an Unmanaged bootloader project using, there are some limitations. 
+The exporters do not interpret Mbed OS configuration, and any changes to configuration parameters, especially bootloader parameters, require you to rerun the `mbed export` command. 
 
-The exporters do not interpret Mbed OS Configuration, and any changes to configuration parameters, especially boot loader parameter, require you to re-run the `mbed export` command. 
+Further, the exporters do not implement the postbuild merge that bootloader builds use. 
 
-Further, The exporters do not implement the post build merge used in managed boot loader builds. After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.
+For a managed bootloader:
+After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.
+
+For an unmanaged bootloader: 
+After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this bootloader image, the device will not boot correctly.
