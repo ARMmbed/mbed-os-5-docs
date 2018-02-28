@@ -1,46 +1,49 @@
-### Sleep and deep sleep
+### Sleep
 
-Mbed OS defines two sleep modes for HAL:
+<span class="warnings">**Warning:** We are changing the Sleep HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the Sleep API](#implementing-the-sleep-api) section.
 
-- Sleep.
-- Deep sleep.
+Implement the Sleep HAL API to enable your device to go into a low power state when you are not actively using it.
 
-Each target should document in their implementation:
+#### Assumptions
 
-- The target's mode description for each mode (how the target's mode maps to the Mbed OS sleep modes).
-- Wake-up latency for each mode.
-- Wake-up sources for each mode.
+##### Defined behavior
 
-#### Sleep
+There are two power saving modes available in Mbed OS:
 
-The core system clock is disabled, both the low and high precision clocks are enabled and RAM is retained.
+###### Sleep
 
-1. Wake-up sources - any interrupt source can wake up the MCU.
-1. Latency - can wake up within 10 us.
+The core system clock is disabled. You can use both the low- and high-frequency clocks and retain RAM.
 
-#### Deep sleep
+1. Wake-up sources - Any interrupt must wake up the MCU.
+1. Latency - The MCU must wake up within 10 us.
 
-The core system clock is disabled. The low precision clocks are enabled, and RAM is retained.
+###### Deep sleep
 
-1. Wake-up sources - RTC, low power ticker and GPIO can wake up the MCU.
-1. Latency - can wake up within 10 ms.
+The core system clock is disabled. You can only enable the low-frequency clocks and retain RAM.
 
-The deep sleep latency (10 ms) is the higher limit of the boards we support. Most of targets have wake-up latency for deep sleep within a few microseconds, but often, reinitializing clocks and other configurations require additional time to restore previous state.
+1. Wake-up sources - RTC, low power ticker or GPIO must wake up the MCU.
+1. Latency - The MCU must wake up within 10 ms.
 
 #### Implementing the Sleep API
 
-There are two functions that the target needs to implement to support sleep, Their prototypes are in [hal/sleep_api.h](/docs/v5.7/mbed-os-api-doxy/sleep__api_8h_source.html):
+We are working on the new HAL Sleep API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the Sleep API in both variants. First, you need to implement the current API. You can find it on master branch:
 
-- Sleep.
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/sleep__api_8h_source.html)
 
-```c++
-void hal_sleep(void);
-```
+To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-sleep` branch. You can find the API and specification for the new Sleep API in the following header file:
 
-- Deep sleep.
-
-```c++
-void hal_deepsleep(void);
-```
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep.html)
 
 To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
+
+#### Testing
+
+The Mbed OS HAL provides a set of conformance tests for Sleep. You can use these tests to validate the correctness of your implementation. To run the Sleep HAL tests, use the following command:
+
+```
+mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sleep*"
+```
+
+You can read more about the test cases:
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep__tests.html)
