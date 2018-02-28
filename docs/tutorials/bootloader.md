@@ -110,7 +110,7 @@ The exporters do not interpret Mbed OS configuration, and any changes to configu
 Further, the exporters do not implement the postbuild merge that bootloader builds use. 
 
 For a managed bootloader:
-After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.
+After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this bootloader image, the device will not boot correctly.
 
 For an unmanaged bootloader: 
-After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this bootloader image, the device will not boot correctly.
+After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.
