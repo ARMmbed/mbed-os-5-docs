@@ -4,7 +4,7 @@ Arm Mbed Studio is a local development environment for Mbed OS projects. This do
 
 ### Current status and downloads
 
-Mbed Studio is currently in closed alpha. You can request access here if you're happy to provide feedback. During this phase, some features are still in progress, and there are frequent updates to the product.
+Mbed Studio is currently in closed alpha. You can [request access here](https://os.mbed.com/studio/) if you're happy to provide feedback. During this phase, some features are still in progress, and there are frequent updates to the product.
 
 ### Getting started
 
