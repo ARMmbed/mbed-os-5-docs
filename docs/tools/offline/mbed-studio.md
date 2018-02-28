@@ -36,7 +36,7 @@ This section covers the necessary steps of building and running the project, so 
 
 ##### Build
 
-Before you can run the program, Mbed Studio needs to build a binary. There are multiple ways to start a build, but the easiest is to click the build icon.
+Before you can run the program, Mbed Studio needs to build a binary using a compiler. For the alpha version of Mbed Studio this compiler is GCC. There are multiple ways to start a build, but the easiest is to click the build icon.
 
 Alternatively, you can right-click (Ctrl-click) on the project in the `C++ Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both begin to build a binary that you can deploy.
 
@@ -44,7 +44,7 @@ Alternatively, you can choose to build the project automatically through the men
 
 ##### Building within Mbed Studio
 
-Mbed Studio uses the tools built into Mbed OS to dectermine what builds and where the output of a build goes. The build tools build on request or (if the `Project > Build Automatically` option is checked) when you change and save a source file. The build operation only builds components that have changed and does nothing if nothing changed. Mbed Studio regards all projects in the workspace as part of the same system, so it initially builds all projects. Pressing the build button also ensures that all workspace projects build (if required).
+Mbed Studio uses the tools built into Mbed OS to determine what builds and where the output of a build goes. The build tools build on request or (if the `Project > Build Automatically` option is checked) when you change and save a source file. The build operation only builds components that have changed and does nothing if nothing changed. Mbed Studio regards all projects in the workspace as part of the same system, so it initially builds all projects. Pressing the build button also ensures that all workspace projects build (if required).
 
 The aim is to maintain a system that is always in a built state, providing rapid error feedback to developers as they make changes.
 
