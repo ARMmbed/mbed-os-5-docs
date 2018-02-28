@@ -4,13 +4,13 @@ Storage support is split between file systems and their underlying block device 
 
 #### Block Device
 
-Adding a block device implementation is required for backing filesystems on new hardware. You can extend the [BlockDevice](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_block_device.html) class to provide support for unsupported storage. 
+Adding a block device implementation is required for backing filesystems on new hardware. You can extend the [BlockDevice](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html) class to provide support for unsupported storage. 
 
 If you want to port a new file system to Mbed OS on existing storage options you can skip to the following section.
 
 #### File systems
 
-To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_f_a_t_file_system.html) provides an excellent example.
+To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_f_a_t_file_system.html) provides an excellent example.
 
 A minimal file system needs to provide the following functions:
 
@@ -28,5 +28,5 @@ File systems must be backed by a block device in Mbed OS. If you are using suppo
 
 #### Related content
 
-- [BlockDevice](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_block_device.html).
-- [FAT file system](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/class_f_a_t_file_system.html).
+- [BlockDevice](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html).
+- [FAT file system](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_f_a_t_file_system.html).
