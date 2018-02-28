@@ -577,6 +577,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tools/bootloader.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tools/mbed_targets.md"
                     }
                 ]
