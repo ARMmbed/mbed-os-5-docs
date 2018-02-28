@@ -1,4 +1,4 @@
-<h2 id="quick_start_online">Arm Mbed Online Compiler</h2>
+<h2 id="quick-start-online">Arm Mbed Online Compiler</h2>
 
 ### Setup
 
@@ -60,7 +60,7 @@ Open the Device Manager by pressing `Windows key + R`. Type `devmgmt.msc`, and c
 
 Run `dmesg | grep tty` from your command-line.
 
-##### Mac
+##### Mac OS X
 
 Run `ls /dev/tty.*` from your command-line.
 
