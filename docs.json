@@ -419,6 +419,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/api/storage/SlicingBlockDevice.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/api/storage/ProfilingBlockDevice.md"
                             }
                         ]
                     }
