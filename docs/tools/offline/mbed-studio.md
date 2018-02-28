@@ -18,7 +18,15 @@ When you launch Mbed Studio, you see a login screen (unless you're using an inte
 
 When you arrive in your workspace, it's empty - clean, white and lacking in programs. It's time to start populating it.
 
-The first step is to create a project based on the included `mbed-os-example-blinky` example. You can do this using the Mbed Studio menu or using the context menu in the C++ Projects view of Mbed Studio. To use the context menu, right-click (Ctrl-click) inside the Mbed Projects or C++ Projects view, and then select `New > Mbed OS Application`. To do the same through the menu, click `File > New > Mbed OS Application` to activate the New Project wizard. Now, create a new project through the activated New Project wizard. Select the `From Supplied Example` radio button, and then select the `mbed-os-example-blinky` example from the list of examples. Continue through the wizard by clicking the `Next` button. Fill in the project name (you can be creative or just use the default example name), and update the location to match (`/path/to/project_name` for example: `/eclipse-ws/mbed-os-example-blinky`). Mbed Studio uses the project name, not the location name, to name created binaries. Once these steps are complete, click the `Finish` button in the lower part of the wizard window. Additionally, you can create a blank project with the `Empty Project` radio button. As a result, you can click `Finish` without continuing, which creates a blank project.
+The first step is to create a project based on the included `mbed-os-example-blinky` example. You can do this using the Mbed Studio menu or using the context menu in the C++ Projects view of Mbed Studio.
+
+To use the context menu, right-click (Ctrl-click) inside the Mbed Projects or C++ Projects view, and then select `New > Mbed OS Application`. To do the same through the menu, click `File > New > Mbed OS Application` to activate the New Project wizard.
+
+Now, create a new project through the activated New Project wizard. Select the `From Supplied Example` radio button, and then select the `mbed-os-example-blinky` example from the list of examples. Continue through the wizard by clicking the `Next` button.
+
+Fill in the project name (you can be creative or just use the default example name), and update the location to match (`/path/to/project_name` for example: `/eclipse-ws/mbed-os-example-blinky`). Mbed Studio uses the project name, not the location name, to name created binaries. Once these steps are complete, click the `Finish` button in the lower part of the wizard window.
+
+Additionally, you can create a blank project with the `Empty Project` radio button. As a result, you can click `Finish` without continuing, which creates a blank project.
 
 Mbed Studio now begins to create the project in the workspace and shows its progress on the final screen of the wizard. Once complete, you can see the project in your workspace within the Mbed Projects view.
 
@@ -94,22 +102,23 @@ If you want more control over the options regarding debugging, this section is f
 
 To begin debugging, create the debug launch configuration and set some variables. (You may use your own values if you don’t want to use the default provided here.) To create a debug launch configuration, as before, right-click on a project, and select `Debug As... > Debug Configurations` from the context menu.
 
-A window for the debug configurations appears. Select the `GDB PyOCD Debugging` category, and create a new launch configuration. 
-
-You can click the new icon (a page with a `+` in the upper right corner), or right-click on the category and select `New`.
+A window for the debug configurations appears. Select the `GDB PyOCD Debugging` category, and create a new launch configuration. You can click the new icon (a page with a `+` in the upper right corner), or right-click on the category and select `New`.
 
 Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`. Currently, this is configured manually, so switching to a different target to run the same project requires you to update this field in the debug configuration. 
 
 The next step is to configure the location of the executables for the PyOCD GDB Server and the GDB Client on the Debugger tab within the debug configuration. These should be set to the executables located within Mbed Studio’s tools directory which is located at:
+
 `/eclipse-ws/mbed-studio-ws/tools`
 
 Alternatively, and at your own risk, you may select executables from locations elsewhere on your machine.
 
 On *nix machines, the two bundled executables are located at:
+
 `/eclipse-ws/mbed-studio-ws/tools/python/bin/pyocd-gdbserver`
 `/eclipse-ws/mbed-studio-ws/tools/gcc-arm/bin/gcc-arm-none-eabi-gdb`
 
 On Windows machines, the two bundled executables are located at:
+
 `\eclipse-ws\mbed-studio-ws\tools\python\Scripts\pyocd-gdbserver.exe`
 `\eclipse-ws\mbed-studio-ws\tools\gcc-arm\bin\gcc-arm-none-eabi-gdb.exe`
 
