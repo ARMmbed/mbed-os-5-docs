@@ -7,13 +7,13 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 - Mbed OS 5 is a *superset* of Mbed OS 2.
 - Mbed OS 5 is a combination of both Mbed OS 2 and Mbed-RTOS.
 - Mbed OS 2 and Mbed OS 5 both use the same `mbed.h` file.
-- Drivers are thread-safe in Mbed OS 5, drivers are not thread-safe in Mbed OS 2.
+- Drivers are thread-safe in Mbed OS 5. Drivers are not thread-safe in Mbed OS 2.
 
 ### FAQs
 
 **Do Mbed OS 2 and Mbed OS 5 use the same header file?**
 
-   Yes. Here's how: inside the `mbed.h` file in your Mbed OS project, you can see `if` statements that look at `MBED_CONF` variables. These variables are defined in `mbed_lib.json` files located in their respective Mbed OS directory. For example, in `mbed.h` you can find the following lines:
+   Yes. Inside the `mbed.h` file in your Mbed OS project, you can see `if` statements that look at `MBED_CONF` variables. The `mbed_lib.json` files located in their respective Mbed OS directory define these variables. For example, in `mbed.h` you can find the following lines:
 
    ```
    #if MBED_CONF_RTOS_PRESENT
@@ -21,7 +21,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
    #endif
    ```
 
-   Because RTOS is only present in Mbed OS 5, when this line is encountered by the compiler, and if you are using Mbed OS 5, it will find the following "present" value in the `/mbed-os/rtos/` directory:
+   RTOS is only present in Mbed OS 5. Therefore, if you are using Mbed OS 5, when the compiler encounters this line, it finds the following "present" value in the `/mbed-os/rtos/` directory:
 
    ```
    {
@@ -32,13 +32,13 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
    }
    ```
 
-   So, the `if` statement in the `mbed.h` file is evaluated to `True` and the RTOS header file is included (in other words, it is present). If you were running an Mbed OS 2 program, this `if` statement in `mbed.h` would evaluate to `False`, and thus the RTOS is not present in your Mbed OS 2 program.
+   So, the `if` statement in the `mbed.h` file evaluates to `True`, and the RTOS header file is included. (In other words, it is present.) If you were running an Mbed OS 2 program, this `if` statement in `mbed.h` would evaluate to `False`. Thus, the RTOS is not present in your Mbed OS 2 program.
 
-   If you want to learn more about how these configuration files work, see [our configuration documentation](https://os.mbed.com/docs/latest/tools/configuring-tools.html).
+   If you want to learn more about how these configuration files work, please see [our configuration documentation](/docs/latest/tools/configuring-tools.html).
 
-**How can I tell which platforms support Mbed OS 2 and/or Mbed OS 5?**
+**How can I tell which platforms support Mbed OS 2 or Mbed OS 5?**
 
-   Visit the platform page for the board on [os.mbed.com/platforms](https://os.mbed.com/platforms/). For example, if you would like to use the Mbed LPC1768 board for your project, visit its [platform page](https://os.mbed.com/platforms/mbed-LPC1768/). Then, scroll down the page. On the right-hand sidebar under the green "Follow" button is a list of Mbed OS versions that the board supports (signifying that the board is "Mbed Enabled"):
+   Visit the platform page for the board on [os.mbed.com/platforms](https://os.mbed.com/platforms/). For example, if you want to use the Mbed LPC1768 board for your project, visit its [platform page](https://os.mbed.com/platforms/mbed-LPC1768/). Then, scroll down the page. On the right-hand sidebar under the green "Follow" button is a list of Mbed OS versions that the board supports (signifying that the board is Mbed Enabled):
 
    <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/mbedenabled.png)</span>
 
@@ -46,16 +46,16 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
    No. Please see the corresponding documentation pages for Mbed OS 2 and Mbed OS 5:
 
-   - [Mbed OS 5 Documentation](https://os.mbed.com/docs/latest).
-   - [Mbed OS 5 GitHub Repository](https://github.com/armmbed/mbed-os).
-   - [Mbed OS 2 Handbook](https://os.mbed.com/handbook/Homepage).
-   - [Mbed OS 2 Library](https://os.mbed.com/users/mbed_official/code/mbed/).
+   - [Mbed OS 5 documentation](https://os.mbed.com/docs/latest).
+   - [Mbed OS 5 GitHub repository](https://github.com/armmbed/mbed-os).
+   - [Mbed OS 2 handbook](https://os.mbed.com/handbook/Homepage).
+   - [Mbed OS 2 library](https://os.mbed.com/users/mbed_official/code/mbed/).
 
-   If you come across a documentation page for Mbed OS 2, and you would like to see if there is an updated version of this page for Mbed OS 5, from the Handbook page click on the link provided in the top yellow box. For example, you can see the yellow box at the top of the [LocalFileSystem page](https://os.mbed.com/handbook/LocalFileSystem) for Mbed OS 2.
+   If you see documentation for Mbed OS 2 and you want to see if there is an updated version of this page for Mbed OS 5, from the Handbook page, click on the link in the top yellow box. For example, you can see the yellow box at the top of the [LocalFileSystem page](https://os.mbed.com/handbook/LocalFileSystem) for Mbed OS 2.
 
    <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/mbedhandbookbox.png)</span>
 
-   Click on "the file system API" link to navigate to the updated documentation regarding this API for Mbed OS 5.
+   Click on `the file system API` link to navigate to the updated documentation regarding this API for Mbed OS 5.
 
 **How do I know if my project uses Mbed OS 2 or Mbed OS 5?**
 
