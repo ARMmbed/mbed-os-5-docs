@@ -44,6 +44,16 @@ These Mbed OS drivers can lock the deep sleep:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
 
+### System reset
+
+Mbed OS provides a standardized call to power cycle the system:
+
+```c++
+void system_reset();
+```
+
+After the call the processor and most components will reset, but it will not affect the debug subsystem.
+
 ### Function reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
