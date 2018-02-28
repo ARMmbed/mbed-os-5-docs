@@ -8,9 +8,9 @@ There is only one sleep function in Mbed OS:
 void sleep();
 ```
 
-This function will invoke sleep manager, which will select the most appropriate sleep mode.
+This function invokes sleep manager, which selects the most appropriate sleep mode.
 
-<span class="notes">**Note:** In most cases you won't need to call `sleep()` directly. Mbed OS will enter sleep mode automatically, any time the system is idle. That is when all your threads are in a waiting state, for example: waiting for an event or a timeout.</span>
+<span class="notes">**Note:** In most cases, you don't need to call `sleep()` directly. Mbed OS enters sleep mode automatically any time the system is idle. That is when all your threads are in a waiting state, for example waiting for an event or a timeout.</span>
 
 #### Sleep modes
 
@@ -28,7 +28,7 @@ This mode is similar to sleep but saves more power and has a longer wakeup time.
 
 #### Sleep manager
 
-The sleep manager provides an API and logic to control device sleep mode selection. While standard sleep shouldn't affect application execution, deep sleep might introduce some additional power savings that can affect the application, for instance high speed clock dependent drivers. To ensure correct operation of your application, sleep manager may disable deep sleep, in which case your board will enter normal sleep instead. This mechanism is mostly invisible for the user, but you should be aware that it may affect the power consumption of your hardware.
+The sleep manager provides an API and logic to control device sleep mode selection. Although standard sleep doesn't affect application execution, deep sleep might introduce some additional power savings that can affect the application, for instance high-speed clock-dependent drivers. To ensure correct operation of your application, sleep manager may disable deep sleep, in which case your board enters normal sleep, instead. This mechanism is mostly invisible to the user, but you should be aware that it may affect the power consumption of your hardware.
 
 These Mbed OS drivers can lock the deep sleep:
 
@@ -42,7 +42,7 @@ These Mbed OS drivers can lock the deep sleep:
 
 ### Idle loop
 
-Idle loop is a background system thread, which scheduler will execute when there's no other threads ready to run. That may happen when your application is waiting for some event to happen. By default the idle loop will invoke sleep manager to enter a sleep mode. You can overwrite this behavior by providing a different handler as demonstrated below.
+Idle loop is a background system thread, which scheduler executes when no other threads are ready to run. That may happen when your application is waiting for an event to happen. By default, the idle loop invokes sleep manager to enter a sleep mode. You can overwrite this behavior by providing a different handler:
 
 ```c++
 void new_idle_loop()
