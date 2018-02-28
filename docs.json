@@ -605,7 +605,7 @@
                 "title": "Arm Mbed Studio",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mbed_studio.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mbed-studio.md"
                     }]
             },
             {
