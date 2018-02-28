@@ -21,7 +21,7 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-Here is an example how to register a status callback which gets triggered when connection state changes. This will also work with other networks interfaces if support is provided.
+Here is an example showing how to register a status callback that gets triggered when connection state changes. This also works with other network interfaces if support is provided.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/file/987d54985478/main.cpp/)
 
