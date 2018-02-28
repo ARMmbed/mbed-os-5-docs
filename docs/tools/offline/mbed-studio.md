@@ -84,9 +84,9 @@ To begin debugging, click the bug icon, which launches the default debug configu
 
 Alternatively, you can create the debug launch configuration and then begin debugging. To create a debug launch configuration, right-click on a project and select `Debug As... > Debug Configurations` from the context menu.
 
-Once created, the configuration prepopulates all the readily inferred values. Click `Choose...` next to the project textbox, and select the project you wish to debug if it isn’t already populated. After that, connect a board, and the project is ready to debug. The Mbed Debug launch configuration prepopulates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right portion of the window to start debugging.
+Click `Choose...` next to the project textbox, and select the project you wish to debug if it isn’t already populated. After that, connect a board, and the project is ready to debug. The Mbed Debug launch configuration prepopulates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right portion of the window to start debugging.
 
-Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also breakes on a default break point. The resulting workspace looks like the image below.
+Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also breakes on a default break point.
 
 ##### Advanced debugging
 
@@ -98,7 +98,7 @@ A window for the debug configurations appears. Select the `GDB PyOCD Debugging` 
 
 You can click the new icon (a page with a `+` in the upper right corner), or right-click on the category and select `New`.
 
-Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`.
+Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`. Currently, this is configured manually, so switching to a different target to run the same project requires you to update this field in the debug configuration. 
 
 The next step is to configure the location of the executables for the PyOCD GDB Server and the GDB Client on the Debugger tab within the debug configuration. These should be set to the executables located within Mbed Studio’s tools directory which is located at:
 `/eclipse-ws/mbed-studio-ws/tools`
