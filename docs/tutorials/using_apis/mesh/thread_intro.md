@@ -165,12 +165,13 @@ Note that, the only use for the extended panid is to be input for the PSKc gener
 
 The panid can be used to identify each network, but the only way to ensure that each Thread network stays in its own partition is to have different master key for each network.
 
-The Thread network channel may be different for each network to avoid some unnecessary packet processing (if the networks can hear each other).
+The Thread network channel may be different for each network to avoid unnecessary packet processing (if the networks can hear each other).
 
 - `"thread-config-channel": 22,`
 
 For the devices to be commissioned, the only thing needed is PSKd and eui64.
-Both values can be set by using ThreadInterface.h. Alternatively PSKd can be configured in .json:
+Both values can be set by using ThreadInterface.h: `device_eui64_set(const uint8_t *eui64)` and `mesh_error_t device_pskd_set(const char *pskd)`.
+Alternatively PSKd can be configured in .json:
 
 `"thread-pskd": "Some random value",`
 
@@ -180,16 +181,20 @@ By default the eui64 is read from the radio driver.
 
 Thread router devices require more RAM/ROM memory than end devices. How much RAM memory the device needs depends on the size of the network and how big and many packets need to be buffered.
 
-The recommended heap values:
-- Thread router: 32kb
-- Thread SED: 16kb
+The recommended heap values to start with:
+- Thread router: 30kb (if using Cloud client and SEDs then might need more 2-5kb)
+- Thread SED/MED: 16kb
+- Thread FED: 22kb
 
 Also it is possible to define the number of packets that can be buffered in the parent device. 
-If end nodes are running cloud client, that sets requirements for the parent device to buffer the messages during the handshake. By default the router device has 10 message buffer size to support the cloud client requirements.
-Note, that if many end nodes start the cloud client in the same time that may lead to the packet drops. And increasing the buffer size requires more nanostack heap (RAM).
+If Thread end nodes are running cloud client, that sets requirements for the parent device to buffer the messages during the handshake. By default the router device has 10 message buffer size to support the cloud client requirements.
+Note, that if many end nodes start the cloud client in the same time that may lead to the packet drops in the parent device.
 
-Application can use the nanostack net_interface.h API and the function `arm_nwk_sleepy_device_parent_buffer_size_set` to adjust the buffer size for the router (parent) devices.
-The API will require interface_id that can be read by using MeshInterfaceNanostack interface and the function get_interface_id(). 
+Application can use the nanostack `net_interface.h` API and the function `arm_nwk_sleepy_device_parent_buffer_size_set` to adjust the buffer size for the router (parent) devices.
+The API will require `interface_id` that can be read by using `MeshInterfaceNanostack` interface and the function `get_interface_id`. 
+
+The nanostack heap usage can be traced by using the ns_dyn_mem_get_mem_stat function in nsdynmemLIB.h.
+For more information, see [libservice](See https://github.com/ARMmbed/nanostack-libservice/tree/master/mbed-client-libservice).
 
 ##### End node's power mode configuration
 
