@@ -2,7 +2,7 @@
 
 ### Setup
 
-#### Create an Arm Mbed developer account
+#### Create an Arm Mbed account
 
 Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mbed.com/account/signup/).
 
