@@ -1,6 +1,6 @@
 ## Power management
 
-### Sleep manager
+### Sleep
 
 There is only one sleep function in Mbed OS:
 
@@ -39,6 +39,11 @@ These Mbed OS drivers can lock the deep sleep:
 - `I2C`.
 - `CAN`.
 - `SerialBase`.
+
+#### Example
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
+
 
 ### Idle loop
 
