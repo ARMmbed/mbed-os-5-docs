@@ -1,46 +1,54 @@
 <h2 id="lorawan-api">LoRaWAN</h2>
 
-LoRaWAN is a technology especially designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high desnity wide-area networks.
+LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high desnity wide-area networks.
 
-Arm Mbed-OS provides a native network stack for LoRaWAN which can run on any Mbed-enabled device with a LoRa radio onboard. 
+Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard. 
 
 The [LoRaWANInterface](https://github.com/ARMmbed/mbed-os/blob/feature-lorawan/features/lorawan/LoRaWANInterface.h) provides a C++ API for connecting to the internet over a LoRa network.
 
 ## LoRaWANInterface class reference
-[comment]: <> (the script creating files in mbed-os-api-doxy adds an underscore after every capital letter)
+
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_l_o_r_a_w_a_n_interfcae.html)
 
-##Usage
-To bring up Mbed LoRaWAN stack, following progression can be considered. 
+## Usage
+
+To bring up the Mbed LoRaWAN stack, consider the following progression: 
 
 1) An [EventQueue](https://os.mbed.com/docs/v5.8/reference/eventqueue.html) object. 
+
 ```cpp
 // construct an event queue 
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 2) A [LoRaRadio](https://os.mbed.com/docs/v5.8/reference/loraradio.html) object
+
 ```CPP
 // construct a LoRadio object
 SX1272_LoRaRadio radio(PIN_NAMES ... );
 ```
+
 3) Instantiate `LoRaWANInterface` and pass `LoRaRadio` object
+
 ```CPP
 LoRaWANInterface lorawan(radio) ;
 ``` 
 
 4) Initialize mac layer and pass `EventQueue` object
+
 ```CPP
 lorawan.initialize(&ev_queue);
 ```
 
-5) Setup event callback
+5) Setup the event callback.
+
 ```cpp
 lorawan_app_callbacks_t callbacks
 callbacks.events = mbed::callback(YOUR_EVENT_HANDLER);
 lorawan.add_app_callbacks(&callbacks);
 ```
 
-6) Add network credentials (security keys) and any configurations
+6) Add network credentials (security keys) and any configurations.
+
 ```CPP
 lorawan_connect_t connection;
 
@@ -55,7 +63,8 @@ lorawan.connect(connection);
 
 ### LoRaWAN example
 
-Please visit our [github example repository](https://github.com/ARMmbed/mbed-os-example-lorawan) and follow the instructions provided in the `README.md`.
+Please visit our [github example repository](https://github.com/ARMmbed/mbed-os-example-lorawan) and follow the instructions in the `README.md`.
 
 ### Related content
-For an end-to-end setup tutorial, please visit [LoRa on Arm Mbed](https://docs.mbed.com/docs/lora-with-mbed/en/latest/) page.
+
+- End-to-end [LoRa on Arm Mbed tutorial](https://docs.mbed.com/docs/lora-with-mbed/en/latest/).
