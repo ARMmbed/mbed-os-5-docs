@@ -1,10 +1,10 @@
 ## SecurityManager
 
-SecurityManager deals with authentication and encryption for the link. The process of pairing and optionally bonding provides this. Bonding is achieved by saving the pairing information to be reused on subsequent reconnections.
+SecurityManager deals with authentication and encryption for the Bluetooth Low Energy link. The process of pairing and optionally bonding provides this. Bonding is achieved by the SecurityManager saving the pairing information to be reused by it on subsequent reconnections in order to save time by not having to perform pairing again.
 
-The process of pairing may produce a set of keys to be used during current or later connections. These are handled by the Security Manager and include the Long Term Encryption Key (LTK), the Identity Resolving Key (IRK) and the Connection Signature Resolving Key (CSRK). The LTK is used to encrypt subsequent connections. IRK is used to identify peers who use random resolvable addresses. CSRK is used to sign and authenticate signed data.
+The process of pairing may produce a set of keys to be used during current or later connections. These are handled by the SecurityManager and include the Long Term Encryption Key (LTK), the Identity Resolving Key (IRK) and the Connection Signature Resolving Key (CSRK). The LTK is used by the SecurityManager to encrypt subsequent connections without having to pair again. IRK is used by the Link Controller to identify peers who use random resolvable addresses. CSRK is used by the application to sign and authenticate signed data.
 
-The pairing process may provide man-in-the-middle protection (MITM). This is achieved through various means, including out of band communication, depending on the capabilities of the local and peer device.
+The pairing process may provide man-in-the-middle protection (MITM). The SecurityManager achieves this through various means, including out of band communication, depending on the capabilities of the local and peer device.
 
 The SecurityManager stores the keys, permanently if possible, to speed security requests on subsequent connections.
 
