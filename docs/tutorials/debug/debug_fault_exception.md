@@ -14,7 +14,7 @@ Mbed-OS fault exception handler.
 4. UsageFault Exception
 
 The exceptions supported on your platform will depend on the specific Cortex-M core you have in your system. 
-For example, Cortex-M0(or any ARMv6M cores) cores will not have MemManage, BusFault, UsageFault exceptions 
+For example, Cortex-M0 (or any ARMv6M cores) cores will not have MemManage, BusFault, UsageFault exceptions 
 implemented. In those cases, all exceptions will be reported as HardFault exception. Please look into 
 **Technical Reference Manual** and **ARM Architecture Reference Manual** documents to find out more information 
 on exceptions supported for the specific core you have in your system.
@@ -70,22 +70,22 @@ State: 00000001 EntryFn: 00002715 Stack Size: 00000200 Mem: 20001118 SP: 200012D
 ```
 
 ### Analyzing crash dump
-As in the example shown above, you can see that the crash dump indicates the fault exception type(see **FaultType**), 
-the register context(see **Context**) at the time of exception and the current threads(see **Thread Info**) in the 
+As in the example shown above, you can see that the crash dump indicates the fault exception type (see **FaultType**), 
+the register context (see **Context**) at the time of exception and the current threads (see **Thread Info**) in the 
 system along with their stack information.
 
 The register context contains key information to determine the cause and location of crash. For example, you can use
 **PC** value to find the location of the crash and **LR** to find the caller of the function where the crash occurred.
 Note that the **LR** value may or may not reflect the actual caller depending on how the function is invoked. You can
 use the linker address map generated during the build to find the name of function from the **PC** value. The other 
-key information in the register context is fault status register values(**HFSR, MMFSR, UFSR, BFSR**). The values in 
+key information in the register context is fault status register values (**HFSR, MMFSR, UFSR, BFSR**). The values in 
 these registers indicate the cause of exception. Please look into **Technical Reference Manual** and 
 **ARM Architecture Reference Manual** documents to find out more information on how to interpret these registers.
 
 The thread info section is split into five sections corresponding to the state of the thread. For each thread: state 
-of the thread(**State**), entry function address(**EntryFn**), stack size(**Stack Size**), stack top(**Mem**) and 
-current stack pointer(**SP**) will be reported. You can use the linker address map to find the thread entry function 
-from the **EntryFn** value. You can also use the stack size(**Stack Size**), stack top(**Mem**) and current stack pointer(**SP**)  
+of the thread (**State**), entry function address (**EntryFn**), stack size (**Stack Size**), stack top (**Mem**) and 
+current stack pointer (**SP**) will be reported. You can use the linker address map to find the thread entry function 
+from the **EntryFn** value. You can also use the stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**)  
 value to determine if there is thread stack overflow. For example, if **SP** value is smaller than **Mem** value, it indicates
 stack overflow for that thread.
 

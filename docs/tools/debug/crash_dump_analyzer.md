@@ -7,7 +7,7 @@ When an exception happens Mbed-OS exception handler will print out the crash inf
 exception and current threads in the system. Registers captured depends on specific Cortex-M core 
 you are using. For example, if your target is using Cortex-M0, some registers like MMFSR, BFSR, UFSR 
 may not be available and will not appear in the crash log.
-The information printed out to STDOUT will be similar to below. 
+The information printed out to STDOUT will be similar to the following: 
 
 ```
 ++ MbedOS Fault Handler ++
@@ -59,6 +59,7 @@ State: 00000001 EntryFn: 00009F59 Stack Size: 00000200 Mem: 20000348 SP: 2000050
 
 To generate more information from this crash dump, copy and save this crash information to a text file and 
 run the crash_log_parser.py tool as below. 
+
 NOTE: Make sure you copy the section with text "MbedOS Fault Handler" as the tool looks for that header.
 
 ## Running the Crash Log Parser
