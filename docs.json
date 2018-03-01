@@ -419,6 +419,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/api/storage/SlicingBlockDevice.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/reference/api/storage/ProfilingBlockDevice.md"
                             }
                         ]
                     }
@@ -570,6 +574,10 @@
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tools/config_system.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tools/bootloader.md"
                     },
                     {
                         "type": "markdown",
