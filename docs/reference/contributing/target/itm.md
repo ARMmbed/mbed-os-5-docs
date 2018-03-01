@@ -6,7 +6,7 @@ For targets with Arm CoreSight (for example, Cortex-M3 and Cortex-M4), the Instr
 
 ##### Defined behavior
 
-When initialized, writing data to the ITM stimulus registers results in the data being transmitted over the SWO line.
+When the ITM has been initialized (by the SerialWireOutput class or other application), writing data to the ITM stimulus registers will result in the ITM transmitting the data over the SWO line.
 
 ##### Undefined behavior
 
@@ -25,8 +25,8 @@ Some SWO viewers do not allow an arbitrary frequency to be set. Make sure that t
 #### Implementing the ITM API
 
 - You must implement the function `itm_init`. When the function is called:
-  - The debug clock for the ITM must be initialized.
-  - The SWO pin must be configured for debug output.
+  - The function must initialize the debug clock for the ITM.
+  - The function must configure the SWO pin for debug output.
 - You must add `ITM` to the `device_has` section in `target.json`.
 
 It is not necessary to modify any of the ITM registers in `itm_init`, except for the one related to the clock prescaling, `TPI->ACPR`. The helper function `mbed_itm_init` is responsible for calling `itm_init` and initializing the generic ITM registers. `mbed_itm_init` only calls the function `itm_init` once, making it unnecessary to protect `itm_init` against multiple initializations.
