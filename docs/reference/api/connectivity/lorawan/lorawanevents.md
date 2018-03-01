@@ -1,39 +1,39 @@
-<h2 id="lorawan-events">Mbed LoRaWAN Stack events & callbacks</h2>
+<h2 id="lorawan-events">Mbed LoRaWAN Stack events and callbacks</h2>
 
-Owing to the fact that most of the LoRaWAN devices will be very simple telemetry drvices we need the stack and it's operation
-to be as simple as possible. That's why Mbed LoRaWAN stack is event driven.
+Owing to the fact that most of the LoRaWAN devices are simple telemetry drvices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
 
 ### Network events
-Here is the list of possible events that can be posted from the stack to the apllication:
+
+Here is the list of possible events that you can post from the stack to the application:
 
 | Event    | Description 
 | --------------- | ------------- | 
-| `CONNECTED`| When the connection is complete |
-| `DISCONNECTED`|When the protocol is shut down in response to disconnect() |
-|`TX_DONE` | When a packet is transmitted |
-| `TX_TIMEOUT` | When stack was unable to send packet in TX window  |
-| `TX_ERROR` | A general TX error  |
-| `TX_CRYPTO_ERROR` | f MIC fails, or any other crypto relted error  |
-| `TX_SCHEDULING_ERROR` | hen stack is unable to schedule packet  |
-| `TX_TIMEOUT` | When stack was unable to send packet in TX window  |
-|`RX_DONE` | When a packet is received |
-|`RX_ERROR` | A general RX error |
+| `CONNECTED` | When the connection is complete |
+| `DISCONNECTED` | When the protocol is shut down in response to disconnect() |
+| `TX_DONE` | When a packet is transmitted |
+| `TX_TIMEOUT` | When the stack is unable to send packet in TX window |
+| `TX_ERROR` | A general TX error |
+| `TX_CRYPTO_ERROR` | If MIC fails, or any other crypto related error |
+| `TX_SCHEDULING_ERROR` | When the stack is unable to schedule a packet |
+| `TX_TIMEOUT` | When the stack is unable to send a packet in TX window  |
+| `RX_DONE` | When a packet is received |
+| `RX_ERROR` | A general RX error |
 
-An event handler must be attached to the stack by the application. The `LoRaWANInterface` provides an API to attach various callbacks to the stacks. One of such callbacks is the event handler callback. 
+The application must attach an event handler to the stack. The `LoRaWANInterface` provides an API to attach various callbacks to the stacks. One such callback is the event handler callback. 
 
 ### Application callbacks
 
-Mbed LoRaWAN stack currently maps 3 different callbacks:
+The Mbed LoRaWAN stack currently maps 3 different callbacks:
 
-| Callback type    | Description 
+| Callback type   | Description 
 | --------------- | ------------- | 
-| `Event callback`| Mandatory, Direction: from stack to application |
-| `Link check response callback`|Optional, Direction: from stack to application|
-|`Battery level callabck` | Optional, Direction: from application to stack |
+| `Event callback` | Mandatory, Direction: from stack to application |
+| `Link check response callback` |Optional, Direction: from stack to application |
+| `Battery level callabck` | Optional, Direction: from application to stack |
 
 #### Event handler
 
-An example of attaching your event handler to the stack can be:
+An example of attaching your event handler to the stack:
 
 ```CPP
 
@@ -74,7 +74,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 #### Battery level handler
 
-Battery level callback is different from others. The direction of this callback is from application to stack, i.e., it provides information to the stack.  Application is reponsible for letting the stack know about the current battery level.
+The battery level callback is different from others. The direction of this callback is from the application to the stack. In other words, it provides information to the stack. The application is reponsible for letting the stack know about the current battery level.
 
 ```CPP
 uint8_t your_battery_level() 
