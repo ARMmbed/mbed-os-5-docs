@@ -1,12 +1,11 @@
-## Crash Log Parser Tool
-This post-processing tool can be used to parse and analyze the crash dump generated when an exception happens.
+## Crash log parser tool
 
-## Capturing crash log
-When an exception happens Mbed-OS exception handler will print out the crash information to STDOUT
-(which is usually your serial port). The crash information contains register context at the time 
-exception and current threads in the system. Registers captured depends on specific Cortex-M core 
-you are using. For example, if your target is using Cortex-M0, some registers like MMFSR, BFSR, UFSR 
-may not be available and will not appear in the crash log.
+You can use this postprocessing tool to parse and analyze the crash dump generated when an exception happens.
+
+### Capturing the crash log
+
+When an exception happens, the Mbed OS exception handler prints the crash information to STDOUT, (which is usually your serial port). The crash information contains the register context at the time of the exception and the current threads in the system. Registers captured depend on the specific Cortex-M core you are using. For example, if your target is using Cortex-M0, some registers, such as MMFSR, BFSR and UFSR may not be available and do not appear in the crash log.
+
 The information printed out to STDOUT will be similar to the following: 
 
 ```
@@ -57,19 +56,21 @@ State: 00000001 EntryFn: 00009F59 Stack Size: 00000200 Mem: 20000348 SP: 2000050
 -- MbedOS Fault Handler --
 ```
 
-To generate more information from this crash dump, copy and save this crash information to a text file and 
-run the crash_log_parser.py tool as below. 
+To generate more information from this crash dump, copy and save this crash information to a text file, and run the `crash_log_parser.py` tool as below. 
 
-NOTE: Make sure you copy the section with text "MbedOS Fault Handler" as the tool looks for that header.
+<span class="notes">**Note:** Make sure you copy the section with the text `MbedOS Fault Handler` because the tool looks for that header.</span>
 
-## Running the Crash Log Parser
+### Running the crash log parser
+
 Run the tool as below with crash data file, map file and elf file as arguments.
-**crash_log_parser.py \<Path to Crash log> \<Path to Elf or Axf file of the build> \<Path to Map file of the build>**
-For example:
-crash_log_parser.py crash.log C:\MyProject\BUILD\k64f\arm\mbed-os-hf-handler.elf C:\MyProject\BUILD\k64f\arm\mbed-os-hf-handler.map
 
-An example output from running crash_log_parser is shown below. The information includes the location of the crash(Crash location), 
-stack pointer at the time of exception, cause of exception etc.
+**crash_log_parser.py \<Path to Crash log> \<Path to Elf or Axf file of the build> \<Path to Map file of the build>**
+
+For example:
+
+`crash_log_parser.py crash.log C:\MyProject\BUILD\k64f\arm\mbed-os-hf-handler.elf C:\MyProject\BUILD\k64f\arm\mbed-os-hf-handler.map`
+
+Please see the example output from running `crash_log_parser` below. The information includes the location of the crash (crash location), stack pointer at the time of exception, cause of exception and so on.
 
 ```
 Parsed Crash Info:
