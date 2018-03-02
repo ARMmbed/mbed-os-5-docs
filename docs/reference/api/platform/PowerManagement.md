@@ -40,6 +40,39 @@ These Mbed OS drivers can lock the deep sleep:
 - `CAN`.
 - `SerialBase`.
 
+#### Sleep tracing
+
+Mbed OS can help you to understand the sleep patterns of your device, specifically who is holding a sleep locks preventing your board to enter the deep sleep. To enable the tracing, all you need to do is to define `MBED_SLEEP_TRACING_ENABLED` macro. You can do it by modifying your `mbed_app.json` config file or appending `-DMBED_SLEEP_TRACING_ENABLED` to `mbed compile` command.
+
+Mbed OS will print sleep traces on the standard output, which by default is UART. Some of the events that we track:
+
+* Locking deep sleep: `LOCK: <file name>, ln: <line in file>, lock count: <number of locks held>`
+* Unlocking deep sleep: `UNLOCK: <file name>, ln: <line in file>, lock count: <number of locks held>`
+* Entering sleep: Mbed OS will print a list of locks preventing the board from entering a deep sleep:
+
+```
+Sleep locks held:
+[id: <file name 1>, count: <number of locks>]
+[id: <file name 2>, count: <number of locks>]
+```
+
+Example trace can look like:
+
+```
+LOCK: mbed_rtx_idle.cpp, ln: 129, lock count: 2
+Sleep locks held:
+[id: mbed_wait_api_, count: 1]
+[id: mbed_rtx_idle., count: 1]
+UNLOCK: mbed_rtx_idle.cpp, ln: 131, lock count: 1
+LOCK: mbed_rtx_idle.cpp, ln: 129, lock count: 2
+Sleep locks held:
+[id: mbed_wait_api_, count: 1]
+[id: mbed_rtx_idle., count: 1]
+UNLOCK: mbed_rtx_idle.cpp, ln: 131, lock count: 1
+```
+
+<span class="notes">**Note:** Sleep tracing is a debug feature and should only be enabled during development cycle. Its heavy use of UART can affect the device performance.</span>
+
 #### Example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
