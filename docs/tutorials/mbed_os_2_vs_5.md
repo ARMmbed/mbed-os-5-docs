@@ -40,7 +40,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
    Visit the platform page for the board on [os.mbed.com/platforms](https://os.mbed.com/platforms/). For example, if you want to use the Mbed LPC1768 board for your project, visit its [platform page](https://os.mbed.com/platforms/mbed-LPC1768/). Then, scroll down the page. On the right-hand sidebar under the green "Follow" button is a list of Mbed OS versions that the board supports (signifying that the board is Mbed Enabled):
 
-   <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/mbedenabled.png)</span>
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_enabled.png)</span>
 
 **Do Mbed OS 2 and Mbed OS 5 use the same documentation?**
 
@@ -53,7 +53,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
    If you see documentation for Mbed OS 2 and you want to see if there is an updated version of this page for Mbed OS 5, from the Handbook page, click on the link in the top yellow box. For example, you can see the yellow box at the top of the [LocalFileSystem page](https://os.mbed.com/handbook/LocalFileSystem) for Mbed OS 2.
 
-   <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/mbedhandbookbox.png)</span>
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed_handbook_box.png)</span>
 
    Click on `the file system API` link to navigate to the updated documentation regarding this API for Mbed OS 5.
 
@@ -63,4 +63,4 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
    Here is an example of an Mbed OS 2 project as viewed on [os.mbed.com](https://os.mbed.com):
 
-   <span class="images">![](https://os.mbed.com/media/uploads/jplunkett/2-oldmbed.png)</span>
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed.png)</span>
