@@ -77,4 +77,4 @@ The thread information section is split into five subsections corresponding to t
 
 ### Crash dump analyzer script
 
-Mbed OS provides a convenience script, named **crash_log_parser**, to help analyze crash data. Please look at the [documentation for crash_log_parser](/docs/v5.8/tools/debug/crash_dump_analyzer.html) for more information.
+Mbed OS provides a convenience script, named **crash_log_parser**, to help analyze crash data. Please look at the [documentation for crash_log_parser](/docs/v5.8/tools/debug/crash-log-parser-tool.html) for more information.
