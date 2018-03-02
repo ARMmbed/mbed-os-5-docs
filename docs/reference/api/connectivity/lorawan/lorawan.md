@@ -8,7 +8,7 @@ The [LoRaWANInterface](https://github.com/ARMmbed/mbed-os/blob/feature-lorawan/f
 
 ## LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_l_o_r_a_w_a_n_interfcae.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_l_o_r_a_w_a_n_interface.html)
 
 ## Usage
 

@@ -58,7 +58,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 #### Link check response handler
 
-This callback is added when it is desired to send a link check request MAC command. 
+Link check request is a MAC command defined by the LoRaWAN Specification. To receive the response of this MAC command, the user should set `link_check_resp` callback.  
 
 ```CPP
 void your_link_check_response(uint8_t demod_margin, uint8_t num_gw) 
@@ -82,6 +82,6 @@ uint8_t your_battery_level()
 	return battery_level;
 }
 
-callbacks.link_check_resp = mbed::callback(your_lbattery_level);
+callbacks.battery_level = mbed::callback(your_battery_level);
 lorawan.add_app_callbacks(&callbacks);
 ``` 
