@@ -151,7 +151,9 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 #### `config` and `overrides`
 
-The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a default value, as well as an optional macro name and help text. By default, the macro name will be the name of the config. For example:
+<span class="notes">**Note:** The [Arm Mbed configuration system](https://os.mbed.com/docs/v5.7/tools/configuring-tools.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
+
+The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a default value, as well as an optional macro name and help text. By default, the macro name is the name of the config. For example:
 
 ```json
 "config": {
@@ -167,7 +169,7 @@ The list of _configs_ provide a way to modify the values of macros in child targ
 }
 ```
 
- This case defines the config `clock_src` with the default value of `XTAL` for the macro `CLOCK_SRC`, and the config `clock_freq` with the default value of 16 for the macro `CLOCK_FREQUENCY_MHZ`.
+This case defines the config `clock_src` with the default value of `XTAL` for the macro `CLOCK_SRC`, and the config `clock_freq` with the default value of 16 for the macro `CLOCK_FREQUENCY_MHZ`.
 
 _overrides_ allow a child target to change the value of a config. For example, if a child target uses the internal RC clock instead of the crystal, it can add an override:
 
@@ -177,7 +179,7 @@ _overrides_ allow a child target to change the value of a config. For example, i
 }
 ```
 
-Config values can also be modified for a project using the `target_overrides` key in the `mbed_app.json` file, either for specific targets or as a wildcard. For example:
+You can also modify config values for a project using the `target_overrides` key in the `mbed_app.json` file, either for specific targets or as a wildcard. For example:
 
 ```json
 "target_overrides": {
@@ -190,7 +192,7 @@ Config values can also be modified for a project using the `target_overrides` ke
 }
 ```
 
-This section, in an `mbed_app.json` file, will set the clock source to `RC` on all targets, as well as the clock frequency to 16Mhz on just the `NRF51_DK` target.
+This section, in an `mbed_app.json` file, sets the clock source to `RC` on all targets and the clock frequency to 16Mhz on just the `NRF51_DK` target.
 
 #### `device_has`
 
