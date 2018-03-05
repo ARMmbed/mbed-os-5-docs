@@ -2,7 +2,7 @@
 
 The CellularBase provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver), which has more information.
+Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/easy_cellular), which has more information.
 
 ### CellularBase class reference
 
@@ -14,7 +14,7 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the CellularBase class.
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
-1. Once connected, you can use Mbed OS [network sockets](/docs/v5.7/reference/network-socket.html) as usual.
+1. Once connected, you can use Mbed OS [network sockets](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/networksocket.md) as usual.
 
 ### Cellular example: connection establishment
 
@@ -24,4 +24,4 @@ This example establishes connection with the cellular network using Mbed OS Cell
 
 ### Related content
 
-- [Network socket](/docs/v5.7/reference/network-socket.html) API reference overview.
+- [Network socket](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/networksocket.md) API reference overview.
