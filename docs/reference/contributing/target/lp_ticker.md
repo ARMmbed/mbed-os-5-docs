@@ -62,8 +62,8 @@ mbed test -t <toolchain> -m <target> -n tests-mbed_hal-lp_us_ticker*,tests-mbed_
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/hal/lp_ticker_api.h)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/TESTS/mbed_hal/lp_us_tickers/ticker_api_tests.h)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-ticker-doxy/group__hal__ticker__tests.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-ticker/TESTS/mbed_hal/lp_ticker/lp_ticker_api_tests.h)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-ticker-doxy/group__hal__lp__ticker__tests.html)
