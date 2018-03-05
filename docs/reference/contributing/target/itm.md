@@ -6,11 +6,11 @@ For targets with Arm CoreSight (for example, Cortex-M3 and Cortex-M4), the Instr
 
 ##### Defined behavior
 
-When the ITM has been initialized (by the SerialWireOutput class or other application), writing data to the ITM stimulus registers will result in the ITM transmitting the data over the SWO line.
+When the ITM has been initialized (by the SerialWireOutput class or other application), writing data to the ITM stimulus registers results in the ITM transmitting the data over the SWO line.
 
 ##### Undefined behavior
 
-- The debug clock frequency is left undefined because the most optimal frequency varies from target to target. It is up to each target's owner to choose a frequency that doesn't interfere with normal operation and that the owner's preferred debug monitor supports.
+- The debug clock frequency is left undefined because the most optimal frequency varies by target. It is up to each target's owner to choose a frequency that doesn't interfere with normal operation and that the owner's preferred debug monitor supports.
 - If another peripheral tries to take control of the SWO pin, it is undefined whether that operation succeeds.
 
 ##### Note
