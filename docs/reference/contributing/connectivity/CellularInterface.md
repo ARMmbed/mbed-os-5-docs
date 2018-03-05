@@ -1,123 +1,46 @@
 ### CellularInterface
 
-This section guidelines and details porting a cellular device driver to Mbed OS. It first describes the building blocks of your new cellular interface and then gives step-by-step instructions on how to port.
+This document provides guidelines and details for setting up a cellular device driver to mbed OS. Basic working principles when working with cellular C++ API can be found from [here](
+https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/communication/cellular/).
+These instructions replace the porting guide section of the above website.
+
 
 #### Quick peek
 
 You can implement a cellular network interface in different ways depending on your requirements and physical setup. For example:
 
-**Case 1: An implementation using Mbed OS provided network stacks (PPP mode)**
-   - Pros
-		- A well-established network stack with full Mbed OS support.
-		- Simple operation and implementation because the inherent network stack provides all socket APIs.
-		- Needs less maintenance because the IP stack handles the bulk of the work in data mode. Command mode is turned off as soon as the device enters data mode.
-   - Cons
-		- Heavier memory consumption.
-		- Bigger footprint on flash.
-		- Multiplexing command mode and data mode is not yet available.
+<span class="images">![](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/communication/Images/Cellular/Cell_AT.png)</span>
 
-**Case 2: An implementation using on-chip network stacks (AT only mode)**
-   - Pros
-		- Lighter memory footprint.
-		- Lighter flash footprint.
-   - Cons
-		- Needs to provide a chip-specific interface between AT-sockets and Mbed OS NSAPI sockets.
-		- Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
-		- Limited capabilities in some instances.
+**Case 1: An implementation using on-chip network stacks (AT only mode, refer to figure 1)**
 
-**Case 3: Modem present on target board**
-   - This refers to the case when the cellular modem is bundled with the target board.
-   - Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). For example, the target port for u-blox C027 Mbed Enabled IoT starter kit provides an [implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c) of `onboard_modem_api`.
-   - Following Mbed OS conventions, drivers for on-board modules may become part of the Mbed OS tree.
-   - `OnboardCellularInterface` ties together `onboard_modem_api.h` with the generic `PPPCellularInterface` to provide a complete driver. At present, only UART connection type is handled.
+-   Pros 
+    - Lighter memory footprint.
+    - Lighter flash footprint.
 
-**Case 4: Modem attached as a daughter board (Arduino shield)**
-   - This refers to the case when the cellular modem comes as a plug-in module or an external shield (for example, with an Arduino form factor).
-   - Following Mbed OS conventions, drivers for plug-in modules come as a library with an application. For example, they are not part of the Mbed OS tree.
-   - If the port inherits from the generic modem driver that Arm Mbed OS, the structure might look like this:
+-   Cons 
+    - Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard mbed OS NSAPI sockets.
+    - Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
 
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/inherit_from_generic_modem.png)</span>
+<span class="images">![](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/APIs/communication/Images/Cellular/Cell_PPP.png)</span>
 
-No matter your setup, Mbed OS provides ample framework. You can list common infrastructure shared between above-mentioned cases as:
+**Case 2: An implementation using mbed OS provided network stacks (PPP mode, refer to figure 2)**
 
-**a) Onboard modem API**
+-   Pros 
+    - A well-established network stack with full mbed OS support.
+    - Simple operation and implementation because the inherent network stack provides all socket APIs.
 
-> Only valid for onboard modem types. In other words, **Case 3** is applicable. A hardware abstraction layer is between a cellular modem and an Mbed OS cellular driver. This API provides basic framework for initializing and uninitializing hardware, as well as turning the modem on or off. For example:
+-   Cons 
+    - Heavier memory consumption.
+    - Bigger footprint on flash.
+    - All modems do not support PPP mode making the AT only mode the only available choice
+    - Multiplexing command mode and data mode is not yet available.
 
-```C
-/** Sets the modem up for powering on
- *  modem_init() will be equivalent to plugging in the device, i.e.,
- *  attaching power or serial port.
- *  Layout of modem_t is implementation dependent
- */
-void modem_init(modem_t *obj);
-```
+#### Adding modem target support
 
-**b) A device type file handle**
-
-> We have enhanced the existing `FileHandle` API to make it more usable for devices - it now supports nonblocking operation, SIGIO-style event notification and polling (see below). This makes a cellular interface implementation independent of underlying physical interface between the cellular modem and MCU, for example Serial UART, USB and so on.
-
-``` CPP
-FileHandle _fh;
-```
-
-> In case of a UART type of device, Mbed OS provides an implementation of serial device type `FileHandle` with software buffering.
-
-```CPP
-FileHandle * _fh = new UARTSerial(TX_PIN, RX_PIN, BAUDRATE);
-```
-
-> `UARTSerial` replaces Serial (which is a file handle not suitable for background use and which doesn't provide buffering) and BufferedSerial (an external library class which does not use the `FileHandle` abstraction).
-
-**c) An AT command parser**
-
-> An AT command parser that takes in a file handle and subsequently reads and writes to the user provided file handle.
-
-```CPP
-ATCmdParser *_at = new ATCmdParser(_fh);
-```
-
-**d) Polling mechanism for file handles**
-
-> A mechanism to multiplex input and output over a set of file handles (file descriptors). `poll()` examines every file handle provided for any events registered for that particular file handle.
-
-```CPP
-/**
-* Where fhs is an array of pollfh structs carrying FileHandle(s) and bit mask of events.
-* nhfs is the number of file handles.
-* timout is the amount of time to block poll, i.e., waiting for an event
-*/
-int poll(pollfh fhs[], unsigned nfhs, int timeout);
-```
-
-**e) PPP interface for network stacks**
-
-> Only valid when **Case 1** is applicable. This provides an interface for cellular drivers to underlying framework provided by the network stack. This in effect means that the driver itself does not depend on a certain network stack. In other words, it talks to any network stack providing this standard PPP interface. For example:
-
-```CPP
-/** Connect to a PPP pipe
- *
- *  @param stream       Pointer to a device type file handle (descriptor)
- *  @param status_cb    Optional, user provided callback for connection status
- *  @param uname        Optional, username for the connection
- *  @param pwd          Optional, password for the connection
- *
- *  @return             0 on success, negative error code on failure
- */
-nsapi_error_t nsapi_ppp_connect(FileHandle *stream, Callback<void(nsapi_error_t)> status_cb=0, const char *uname=0, const char *pwd=0);
-```   
-
-The application activating the appropriate network stack feature, and ensuring it has PPP enabled via JSON config, determines which network stack is used for PPP modems. As of Mbed OS 5.5, LWIP provides IPv4 over PPP, but not IPv6. Nanostack does not provide PPP.
-
-#### Step-by-step porting process
-##### Providing onboard modem API
-
-Only valid when **Case 3** is applicable.
-
-1. **Update `mbed-os/targets/targets.json`** This file defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem and the data connection type is attached with MCU.
+For new targets [targets.json](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json) may have to be modified. Targets.json defines all the target platforms that mbed OS supports. If mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem and the data connection type is attached with MCU.
 
 For example,
-
+ 
 ```json
     "MY_TARGET_007": {
         "supported_form_factors": ["ARDUINO"],
@@ -142,7 +65,7 @@ For example,
         "device_name": "JamesBond"
     },
 ```
-2. **Use standard pin names**. A standard naming conventions for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. An example is shown below for full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
+Use standard pin names. A standard naming conventions for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. An example is shown below for full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
 
 ```C
 typedef enum {
@@ -164,50 +87,70 @@ typedef enum {
 #define MDM_PIN_POLARITY            ACTIVE_HIGH_POLARITY
 
 ```
-The current implementation does not use all pins, but you must define all of them.
+All pins must be defined. Implement onboard_modem_api.h. Target board must provide an implementation of the [onboard_modem_API](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/onboard_modem_api.h). An example implementation is available here: [example implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
 
-3. **Implement `onboard_modem_api.h`** Provide an implementation of `onboard_modem_api.h`. We provide an [example implementation](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_NXP/TARGET_LPC176X/TARGET_UBLOX_C027/onboard_modem_api.c).
+#### Modify cellular targets
 
-###### Providing module modem API
+Setup for some predefined targets is available in [CellularTargets.h](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/common/CellularTargets.h). For a new target CellularTargets.h needs to be modified. In CellularTargets.h a cellular device needs to be specified in addition to UART pins connecting mbed-os CPU to the modem. For example if K64F would be used to connect with QUECTEL BG96 following changes marked in between // !!!! in CellularTargets.h are needed:
 
-Only valid when **Case 4** is applicable.
+```C
+...
+#elif TARGET_UBLOX_C027
+#define CELLULAR_DEVICE UBLOX_C027
+// !!!!
+// cellular device to be connected with K64F is specified below:
+#elif TARGET_MCU_K64F
+#define CELLULAR_DEVICE QUECTEL_BG96
+// !!!!
+#else
+#error Cellular target not defined, see cellular/targets.h
+//#define CELLULAR_TARGET <target-modem>
+//#define MDMTXD <pin-name>
+//#define MDMRXD <pin-name>
+#endif
+#endif
+// !!!!
+// cellular target and UART pins connecting K64F with the modem are specified below:
+#define CELLULAR_TARGET TARGET_MCU_K64F
+#define MDMTXD PTC17
+#define MDMRXD PTC16
+// !!!!
+...
+```
 
-- If the modem is already ready to use via the UART, it may be possible to use `UARTCellularInterface` directly. Just pass its constructor the necessary pin information for the module connected to your board.
+If none of the existing modems is compatible with the new modem, then new modem implementation should be created under [features/cellular/framework/targets](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets). A device class inheriting [AT_CellularDevice](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/AT/AT_CellularDevice.h) is a minimum. [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h) is an example of the device class. Additional overlapping functionality can be created for everything that is available in [features/cellular/framework/targets](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets).
 
-- If you require custom power and reset controls, create a custom class derived from `UARTCellularInterface`, which overrides the protected `modem_init()` methods.
+#### Providing an implementation using on-chip network stacks (AT only mode)
 
-- If using a different connection type, you must provide access to the connection by implementing the `FileHandle` API, and then you can pass your file handle for that connection to `PPPCellularInterface`. Either use it directly, or derive from it, and pass a file handle to its constructor in the same manner as `UARTCellularInterface`.
+[QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) is an example of a modem specific AT command cellular stack implementation. For example [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/EasyCellularConnection.h), which in turn instantiates [CellularConnectionFSM class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/CellularConnectionFSM.h). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/AT) between the modem and the mbed-os CPU. Now for [QUECTEL BG96](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/QUECTEL/BG96) classes [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h), [QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h), and [QUECTEL_BG96_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularNetwork.h) have been implemented for a modem specific functionality. QUECTEL_BG96_CellularStack implements QUECTEL BG96 specific AT command stack for socket data handling.
 
-###### Providing an implementation using on-chip network stacks (AT only mode)
+#### Providing an implementation using mbed-OS provided network stacks (PPP mode)
 
-Only valid when **Case 1** is applicable.
+If the new modem supports PPP mode, then the existing mbed-os LWIP stack can be used to control the modem when connecting to a network. To take the LWIP stack into use "lwip.ppp-enabled" has to be set to be true in an application `mbed_app.json`. [UBLOX LISA](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/UBLOX/LISA_U) is an example of a modem implementation using PPP mode to connect to a network. For example [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/EasyCellularConnection.h), which in turn instantiates [CellularConnectionFSM class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/CellularConnectionFSM.h). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/AT) between the modem and the mbed-os CPU. Now for LISA classes [UBLOX_LISA_U](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U.h), [UBLOX_LISA_U_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularNetwork.h) and [UBLOX_LISA_U_CellularPower](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularPower.h) have been implemented for a modem specific functionality. In the AT command layer [AT_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/AT/AT_CellularNetwork.h) includes functionality calling [nsapi_ppp_connect()](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_ppp.h) to start the data call through the PPP pipe.
 
-- This is the most complex case - the bulk of the work is implementing the [NSAPI socket and network interfaces](/docs/v5.7/reference/network-socket.html). The driver implementation derives from `CellularBase` to provide both the `NetworkInterface API` and the standard cellular API. Further layering to abstract connection type may be appropriate, as for the PPP case.
+#### Port verification testing
 
-- Use a file handle, such as `UARTSerial`, to provide the raw data connection; then you can use `ATCmdParser` to handle connection logic and the data flow of the socket API, assuming that you use AT commands to control the sockets.
+Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this. 
 
-- An onboard implementation can use `onboard_modem_api.h` in the same manner as a PPP driver to access power controls - this could be shared with a PPP implementation.
-
-###### Port verification testing
-
-Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
-
--	For onboard modem types:
-	1. Copy contents of this [folder](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/cellular/generic_modem_driver/TESTS/unit_tests/default/gmd_ut_config_header.h) in your implementation directory. For example, `netsocket/cellular/YOUR_IMPLEMENTATION/TESTS/unit_tests/default/`.
- 	1.  Rename `OnboardCellularInterface` everywhere in the `main.cpp` with your Class. (This could be a derived class from already provided APIs, as this [subsection](#providing-module-modem-api) mentions.)
- 	1.  Make an empty test application with the fork of `mbed-os` where your implementation resides.
- 	1.  Create a `.json` file in the root directory of your application, and copy the contents of `template_mbed_app.txt` into it.
- 	1.  Now from the root of your application, enter this command:
-
- 	 ```
- 	$ mbed test --compile-list
+-   To run the tests:
+ 	1.  From the root of your application, enter this command:
  	```
-
- 	1.  Look for the name of of your test suite matching to the directory path.
+ 	mbed test --compile-list
+ 	```
+ 	1.  Look for the name of a test suite matching to mbed-os-features-cellular-tests-cellular-cellular_all
  	1.  Run tests with the command:
-
  	```
- 	mbed test -n YOUR_TEST_SUITE_NAME
+ 	mbed test -n "mbed-os-features-cellular-tests-cellular-cellular_all" -m YOURMACHINE -t YOURCOMPILER --app-config YOURCONFIG.json
  	```
 
 For more information on the  `mbed-greentea` testing suite, please visit [its documentation](/docs/v5.7/tools/greentea.html).
+
+Tests can be also run stand-alone. The [UNITTESTS folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS) contains unit tests for cellular specific classes. Unit tests are based on the stubbing method.
+
+You can run those tests locally by running ./run_tests script under the [UNITTESTS folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS).
+
+You need the following applications: cpputest, gcov and lcov (genhtml) for running the tests stand-alone.
+
+After you have run the run_tests script, you can find test results under [UNITTESTS/results folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS) and line and function coverages under the [UNITTESTS/coverages folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS) folder.
+
+
