@@ -484,7 +484,11 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/ticker.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/us_ticker.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/lp_ticker.md"
                     },
                     {
                         "type": "markdown",
