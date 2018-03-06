@@ -22,7 +22,11 @@ The first step is to create a project based on the included `mbed-os-example-bli
 
 To use the context menu, right-click (Ctrl-click) inside the Mbed Projects or C++ Projects view, and then select `New > Mbed OS Application`. To do the same through the menu, click `File > New > Mbed OS Application` to activate the New Project wizard.
 
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-New-Application.png)<span>Create a new Mbed OS application</span></span>
+
 Now, create a new project through the activated New Project wizard. Select the `From Supplied Example` radio button, and then select the `mbed-os-example-blinky` example from the list of examples. Continue through the wizard by clicking the `Next` button.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-New-Project-Wizard.png)<span>Click through the new project wizard</span></span>
 
 Fill in the project name (you can be creative or just use the default example name), and update the location to match (`/path/to/project_name` for example: `/eclipse-ws/mbed-os-example-blinky`). Mbed Studio uses the project name, not the location name, to name created binaries. Once these steps are complete, click the `Finish` button in the lower part of the wizard window.
 
@@ -34,9 +38,19 @@ Mbed Studio now begins to create the project in the workspace and shows its prog
 
 Mbed Studio provides support for formatting, syntax highlighting, locating files, comparing files and navigating to lower level code, such as pin definitions for your target hardware. For a more general look at the features provided by Eclipse, consult the [Eclipse](http://help.eclipse.org/neon/index.jsp) online help documentation.
 
-Now, there is a project located in the `C++ Projects` with the name `mbed-os-example-blinky` (or whatever project name you provided earlier). Clicking the triangle next to the project expands its contents and reveals the project’s current files and directories.
+Now, there is a project located in the `Mbed Projects` view with the name `mbed-os-example-blinky` (or whatever project name you provided earlier). Clicking the triangle next to the project expands its contents and reveals the project’s current files and directories.
 
-Double-click on the `main.cpp` file to open it in Mbed Studio’s editor area. This file includes the code needed to blink an LED. If you haven’t done so already, connect an [Mbed Enabled board](https://os.mbed.com/platforms/) to your machine. Mbed Studio detects the board and prompts you with a dialog asking to switch targets. Accept this, and you are ready to run the example.
+Double-click on the `main.cpp` file to open it in Mbed Studio’s editor area. This file includes the code needed to blink an LED. 
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Blinky-Main-CPP.png)<span>Explore your new project</span></span>
+
+##### Connecting a board
+
+If you haven’t done so already, connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to your machine, or select a target development board from the target dropdown. Mbed Studio detects the board and prompts you with a dialog asking to switch targets. Accept this, and you are ready to build and run the example.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Target-Selection.png)<span>Select a target development board</span></span>
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Target-Auto-Detection.png)<span>Mbed Studio auto-detects DAPLink-compatible boards that have been connected via USB</span></span>
 
 #### Running the project
 
@@ -46,7 +60,7 @@ This section covers the necessary steps of building and running the project, so 
 
 Before you can run the program, Mbed Studio needs to build a binary using a compiler. For the alpha version of Mbed Studio this compiler is GCC. There are multiple ways to start a build, but the easiest is to click the build icon.
 
-Alternatively, you can right-click (Ctrl-click) on the project in the `C++ Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both begin to build a binary that you can deploy.
+Alternatively, you can right-click (Ctrl-click) on the project in the `Mbed Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both begin to build a binary that you can deploy.
 
 Alternatively, you can choose to build the project automatically through the menu by choosing `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever needed. After the build, an `mbed-os-example-blinky.bin` (or `<project name>.bin`) file is ready to deploy.
 
