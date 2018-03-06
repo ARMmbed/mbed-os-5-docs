@@ -728,15 +728,15 @@
                 "title": "Arm Mbed OS Quickstart",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/quickstart/quickstart.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/quick_start/quick_start.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/quickstart/quickstart-compiler.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/quick_start/quick_start_compiler.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/quickstart/quickstart-cli.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.7/docs/tutorials/quick_start/quick_start_cli.md"
                     }
                 ]
             },
