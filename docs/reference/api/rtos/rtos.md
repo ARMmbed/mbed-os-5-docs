@@ -51,7 +51,6 @@ Each `Thread` can wait for signals and be notified of events:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_signals/)](https://os.mbed.com/teams/mbed_example/code/rtos_signals/file/476186ff82cf/main.cpp)
 
-
 ##### Status and error codes
 
 The CMSIS-RTOS functions will return the following statuses:
