@@ -76,12 +76,12 @@ Existing network interfaces:
 
 Here are example applications that are built on top of the network-socket API:
 
-* [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
-* [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
-* [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
-* [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
-* [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
-* [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
+- [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
+- [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
+- [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
+- [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
+- [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
+- [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
 
 ##### Example
 
@@ -134,10 +134,9 @@ You can use and extend a cellular interface in various different ways. For examp
 
 [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [an easy cellular connection](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/easy_cellular). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
 
-- It uses an external IP stack (for example, LWIP), or on-chip network stacks for example in case of PPP is not supported by the modem.
+- It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
-- After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet,
-or if AT only mode is in use, then modem specific AT commands are used for socket data control.
+- After registration, the driver opens a PPP pipe using LWIP with the cellular modem and connects to the internet. If AT only mode is in use, then modem-specific AT commands are used for socket data control.
 
 #### Arm Mbed Mesh
 
@@ -145,14 +144,14 @@ The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topolo
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
-* 6LoWPAN_ND, loosely following the Zigbee-IP specification.
-* Thread, following the specification from Thread Group.
+- 6LoWPAN_ND, loosely following the Zigbee-IP specification.
+- Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
+Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through the Mbed Mesh API.
 
-The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
 
-The `NanostackEthernetInterface` is provided for Ethernet.
+Mbed OS provides `NanostackEthernetInterface` for Ethernet.
 
 ##### Supported mesh networking modes
 
