@@ -4,7 +4,11 @@ Arm Mbed Studio is a local development environment for Mbed OS projects. This do
 
 ### Current status and downloads
 
-Mbed Studio is currently in closed alpha. You can [request access here](https://os.mbed.com/studio/) if you're happy to provide feedback. During this phase, some features are still in progress, and there are frequent updates to the product.
+Mbed Studio is currently in closed alpha. You can [request access here](https://os.mbed.com/studio/) if you're happy to provide feedback. During this phase, some features are still in progress, and there are frequent updates to the product. The user interface will also change during this phase, so the screenshots below will correspondingly change.
+
+### Prerequisites
+
+We currently support DAPLink devices only, and use pyOCD for debug. This means that you will need a correspondingly supported development board with updated DAPLink firmware during the alpha phase.
 
 ### Getting started
 
