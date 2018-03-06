@@ -752,6 +752,14 @@
                 ]
             },
             {
+                "title": "Major releases",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/mbed-os-2-vs-5.md"
+                    }
+                ]
+            },
+            {
                 "title": "Using the Mbed Online Compiler",
                 "sources": [{
                         "type": "markdown",
