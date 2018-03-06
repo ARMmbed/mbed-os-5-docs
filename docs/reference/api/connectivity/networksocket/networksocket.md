@@ -89,30 +89,11 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-#### Arm Mbed Mesh
-
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.7/tutorials/mesh.html#nanostack) networking stack.
-
-Mbed OS provides two types of IPv6 based mesh networks:
-
-* 6LoWPAN_ND, loosely following the Zigbee-IP specification.
-* Thread, following the specification from Thread Group.
-
-Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
-
-The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
-
-The `NanostackEthernetInterface` is provided for Ethernet.
-
-##### Supported mesh networking modes
-
-Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
-
 #### Cellular
 
 The [CellularBase](/docs/v5.7/mbed-os-api-doxy/class_cellular_base.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
+Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/easy_cellular).
 
 ##### Getting started
 
@@ -151,11 +132,31 @@ You can use and extend a cellular interface in various different ways. For examp
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). In other words, CellularInterface uses PPP. We can summarize this particular design as follows:
+[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [an easy cellular connection](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/easy_cellular). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
 
-- It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
-- The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
-- After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet.
+- It uses an external IP stack (for example, LWIP), or on-chip network stacks for example in case of PPP is not supported by the modem.
+- The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
+- After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet,
+or if AT only mode is in use, then modem specific AT commands are used for socket data control.
+
+#### Arm Mbed Mesh
+
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.7/tutorials/mesh.html#nanostack) networking stack.
+
+Mbed OS provides two types of IPv6 based mesh networks:
+
+* 6LoWPAN_ND, loosely following the Zigbee-IP specification.
+* Thread, following the specification from Thread Group.
+
+Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
+
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
+
+The `NanostackEthernetInterface` is provided for Ethernet.
+
+##### Supported mesh networking modes
+
+Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
 
 ##### Module configuration
 
