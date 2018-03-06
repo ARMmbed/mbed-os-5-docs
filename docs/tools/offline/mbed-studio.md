@@ -8,7 +8,7 @@ Mbed Studio is currently in closed alpha. You can [request access](https://os.mb
 
 ### Prerequisites
 
-We currently support DAPLink devices only, and use pyOCD for debug. This means that you will need a correspondingly supported development board with updated DAPLink firmware during the alpha phase.
+We currently support only DAPLink devices and use pyOCD for debug. This means that you need a supported development board with updated DAPLink firmware during the alpha phase.
 
 ### Getting started
 
