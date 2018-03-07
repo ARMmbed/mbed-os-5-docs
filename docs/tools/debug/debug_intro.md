@@ -1,6 +1,6 @@
 ## Debugging
 
-There are extensive instructions on debugging Arm Mbed OS 5 applications with [uVision 5](/docs/v5.7/tutorials/keil-uvision.html), [Eclipse](/docs/v5.7/tutorials/eclipse.html) and [Visual Studio Code](/docs/v5.7/tutorials/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html).
+There are extensive instructions on debugging Arm Mbed OS 5 applications with [uVision 5](/docs/development/tutorials/keil-uvision.html), [Eclipse](/docs/development/tutorials/eclipse.html) and [Visual Studio Code](/docs/development/tutorials/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](/docs/development/tools/setting-up-a-local-debug-toolchain.html).
 
 ### Exporting your project
 
@@ -39,10 +39,10 @@ The resulting binary will end up at `BUILD\projectname.elf`.
 
 ### Debugging your project
 
-To debug your project, you first need to start a [debug server](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html#running-a-debug-server). This is often exposed as a setting in your IDE under 'Remote debugging' or 'Debug server'.
+To debug your project, you first need to start a [debug server](/docs/development/tools/setting-up-a-local-debug-toolchain.html#running-a-debug-server). This is often exposed as a setting in your IDE under 'Remote debugging' or 'Debug server'.
 
 - When using pyOCD, set the full path to the `pyocd-gdbserver` binary, and do not set arguments.
-- When using OpenOCD, set the full path to the `openocd` binary, and set the arguments for your development board. (See [the instructions](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html#openocd).)
+- When using OpenOCD, set the full path to the `openocd` binary, and set the arguments for your development board. (See [the instructions](/docs/development/tools/setting-up-a-local-debug-toolchain.html#openocd).)
 
 Next, you need to configure GDB.
 
