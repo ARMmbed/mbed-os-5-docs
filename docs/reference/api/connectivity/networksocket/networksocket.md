@@ -107,17 +107,17 @@ Arm Mbed OS provides a [reference implementation of CellularBase](https://github
    You see output similar to the excerpt below:
 
 ```
-
-mbed-os-example-cellular, Connecting...
+mbed-os-example-cellular
+PIN code set
+Establishing connection
 
 
 Connection Established.
-UDP: Sent 4 Bytes to echo.u-blox.com
+UDP: Sent 4 Bytes to echo.mbedcloudtesting.com
 Received from echo server 4 Bytes
 
 
 Success. Exiting
-
 ```
 
 ##### Basic working principles
