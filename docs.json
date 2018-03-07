@@ -918,5 +918,14 @@
         "tags": [
             "tutorials"
         ]
+    },
+    {
+        "title": "Mbed OS API doxygen",
+        "description": "The full Mbed OS API documentation in doxygen format",
+        "slug": "mbed-os-api-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "mbed-os-5.8"
     }
 ]
