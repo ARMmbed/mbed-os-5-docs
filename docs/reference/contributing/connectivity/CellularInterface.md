@@ -11,26 +11,25 @@ You can implement a cellular network interface in different ways depending on yo
 **Case 1: An implementation using on-chip network stacks (AT only mode, refer to figure 1)**
 
 -   Pros 
-    - Lighter memory footprint.
-    - Lighter flash footprint.
+    - Lighter RAM memory consumption and flash footprint
+    - More autonomous modem operation
 
 -   Cons 
-    - Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard Mbed OS NSAPI sockets.
-    - Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
+    - Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard Mbed OS NSAPI sockets
+    - Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)<span>Figure 2</span></span>
 
 **Case 2: An implementation using Mbed OS provided network stacks (PPP mode, refer to figure 2)**
 
 -   Pros 
-    - A well-established network stack with full Mbed OS support.
-    - The inherent network stack provides all socket APIs.
+    - A well-established network stack with full Mbed OS support
+    - The inherent network stack provides all socket APIs
 
 -   Cons 
-    - Heavier memory consumption.
-    - Bigger footprint on flash.
-    - Not all modems support PPP mode, which makes the AT only mode the only available choice.
-    - Multiplexing command mode and data mode are not yet available.
+    - Heavier RAM memory consumption and bigger flash footprint
+    - All modems do not support PPP mode making AT only mode the only available choice
+    - Multiplexing command mode and data mode are not yet available
 
 ##### Adding modem target support
 
