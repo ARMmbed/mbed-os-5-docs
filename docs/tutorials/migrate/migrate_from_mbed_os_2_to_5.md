@@ -13,15 +13,15 @@ This guide uses the Grove temperature and humidity sensor as an example: [Grove-
 
 First, navigate to the Hello World repository for the component.
 
-<span class="images">![](https://os.mbed.com/media/uploads/jplunkett/1-helloworld.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)</span>
 
 Next, view the files in the Hello World repository. The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
-<span class="images">![](https://os.mbed.com/media/uploads/jplunkett/2-oldmbed.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)</span>
 
 A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.lib` file.
 
-<span class="images">![](https://os.mbed.com/media/uploads/jplunkett/3-newmbed.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new_mbed_file.png)</span>
 
 Some repositories may have both an `mbed.bld` file and a `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace BOTH `mbed.bld` and `mbed-rtos.lib`.
 
