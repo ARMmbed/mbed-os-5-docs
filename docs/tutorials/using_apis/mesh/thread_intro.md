@@ -36,7 +36,7 @@ Mbed Thread is implemented in the Nanostack library, which also supports the 6Lo
 - To connect to the Thread network, use the [Thread interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h).
 - For the socket communication over the Thread network, use the [Mbed sockets API](/docs/v5.7/reference/network-socket.html).
 
-Nanostack provides a set of C API headers with more functionalities. The [nanostack repository](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack) has the following header files():
+Nanostack provides a set of C API headers with more functionalities. The [Nanostack repository](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack) has the following header files():
 
 - `thread_management_if.h` for initializing the stack and managing the network data.
 - `thread_commissioning_api.h` for implementing an on-mesh or a native Thread commissioner.
@@ -59,7 +59,7 @@ In addition the Nanostack API allows you to define the Full end device (FED) dev
 
 In most cases, the REED, MED and SED configurations are enough to build a network.
 
-For an end device or a router example, see [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+For an end device or a router example, see the [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
 #### End devices
 
@@ -146,13 +146,15 @@ See [Thread commissioning guide](/docs/v5.7/tutorials/mesh.html#thread-commissio
 
 ##### Initial configuration
 
-This chapter gives some tips on how to make initial configuration for the Thread network.
-The initial static configuration for the Thread device can be done in .json file. Next we go through what is actually needed for the minimum set-up.
+This section gives some tips on how to initially configure the Thread network.
 
-Usually the border router is the first device to power-up. 
-For the Thread border router the PSKc needs to be configured so that commissioner can connect to it and start commissioning Thread devices to the network and modify the default network settings.
+You can create the initial static configuration for the Thread device can be done in the `.json` file. The following steps are what you need to do for the minimum setup.
 
-For example, each border router could use the following practise for the initial settings (using .json format):
+Usually, the border router is the first device to power up. 
+
+For the Thread border router, you need to configure the PSKc so that the commissioner can connect to it and start commissioning Thread devices to the network and modify the default network settings.
+
+For example, each border router could use the following practise for the initial settings (using `.json` format):
 
 - `"thread-config-panid": "unique random value",`
 - `"thread-config-network-name: "Some name",`
@@ -160,47 +162,45 @@ For example, each border router could use the following practise for the initial
 - `"thread-master-key: "{unique random value}",`
 - `"thread-config-pskc": "{generated value}",`
 
-The minimal configuration for the border router is to have input values for the PSKc generation, that is network name, extended panid and PSKc and the secret password, which is not stored to the device memory.
-Note that, the only use for the extended panid is to be input for the PSKc generation in the mbed Thread stack.
+The minimal configuration for the border router is to have input values for the PSKc generation, that is, the network name, extended panid and PSKc and the secret password, which is not stored to the device memory. Note that the only use for the extended panid is input for the PSKc generation in the Mbed Thread stack.
 
-The panid can be used to identify each network, but the only way to ensure that each Thread network stays in its own partition is to have different master key for each network.
+You can use the panid to identify each network, but the only way to ensure that each Thread network stays in its own partition is to have different master key for each network.
 
 The Thread network channel may be different for each network to avoid unnecessary packet processing (if the networks can hear each other).
 
 - `"thread-config-channel": 22,`
 
-For the devices to be commissioned, the only thing needed is PSKd and eui64.
-Both values can be set by using ThreadInterface.h: `device_eui64_set(const uint8_t *eui64)` and `mesh_error_t device_pskd_set(const char *pskd)`.
-Alternatively PSKd can be configured in .json:
+For the devices to be commissioned, the only thing needed is PSKd and eui64. You can set both values by using `ThreadInterface.h`: `device_eui64_set(const uint8_t *eui64)` and `mesh_error_t device_pskd_set(const char *pskd)`.
+
+Alternatively, you can configure PSKd in .json:
 
 `"thread-pskd": "Some random value",`
 
-By default the eui64 is read from the radio driver.
+By default, the radio driver reads the eui64.
 
 ##### Device memory configuration
 
-Thread router devices require more RAM/ROM memory than end devices. How much RAM memory the device needs depends on the size of the network and how big and many packets need to be buffered.
+Thread router devices require more RAM and ROM memory than end devices. How much RAM memory the device needs depends on the size of the network and how big and many packets need to be buffered.
 
 The recommended heap values to start with:
-- Thread router: 30kb (if using Cloud client and SEDs then might need more 2-5kb)
-- Thread SED/MED: 16kb
-- Thread FED: 22kb
 
-Also it is possible to define the number of packets that can be buffered in the parent device. 
-If Thread end nodes are running cloud client, that sets requirements for the parent device to buffer the messages during the handshake. By default the router device has 10 message buffer size to support the cloud client requirements.
-Note, that if many end nodes start the cloud client in the same time that may lead to the packet drops in the parent device.
+- Thread router: 30kb (if using Arm Mbed Cloud Client and SEDs, then you might need more 2-5kb).
+- Thread SED/MED: 16kb.
+- Thread FED: 22kb.
 
-Application can use the nanostack `net_interface.h` API and the function `arm_nwk_sleepy_device_parent_buffer_size_set` to adjust the buffer size for the router (parent) devices.
-The API will require `interface_id` that can be read by using `MeshInterfaceNanostack` interface and the function `get_interface_id`. 
+Also, it is possible to define the number of packets that can be buffered in the parent device. 
 
-The nanostack heap usage can be traced by using the ns_dyn_mem_get_mem_stat function in nsdynmemLIB.h.
-For more information, see [libservice](See https://github.com/ARMmbed/nanostack-libservice/tree/master/mbed-client-libservice).
+If Thread end nodes are running Mbed Cloud Client, that sets requirements for the parent device to buffer the messages during the handshake. By default, the router device has 10 message buffer size to support the Mbed Cloud Client requirements. Note that if many end nodes start the Mbed Cloud Client at the same time, it may lead to the packet drops in the parent device.
+
+Applications can use the nanostack `net_interface.h` API and the function `arm_nwk_sleepy_device_parent_buffer_size_set` to adjust the buffer size for the router (parent) devices. The API requires an `interface_id` that can be read by using `MeshInterfaceNanostack` interface and the function `get_interface_id`. 
+
+You an trace the Nanostack heap usage by using the `ns_dyn_mem_get_mem_stat` function in `nsdynmemLIB.h`. For more information, please see [libservice](See https://github.com/ARMmbed/nanostack-libservice/tree/master/mbed-client-libservice).
 
 ##### End node's power mode configuration
 
-The SED device can be configured to use different power modes. The `net_polling_api.h` API and the function `arm_nwk_host_mode_set` can be used for defining the power mode and the polling interval for the end node.
-In the polling mode (`NET_HOST_SLOW_POLL_MODE`, `NET_HOST_FAST_POLL_MODE`) the radio is switched off between the polling times.
-By default the SED device uses fast poll pode with 300 ms polling interval.
+You can configure the SED device o use different power modes. You can use the `net_polling_api.h` API and the function `arm_nwk_host_mode_set` for defining the power mode and the polling interval for the end node.
+
+In the polling mode (`NET_HOST_SLOW_POLL_MODE`, `NET_HOST_FAST_POLL_MODE`), the radio is switched off between the polling times. By default, the SED device uses fast poll pode with a 300 ms polling interval.
 
 #### The maturity of the Mbed OS Thread implementation
 
