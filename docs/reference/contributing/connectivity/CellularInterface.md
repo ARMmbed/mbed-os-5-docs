@@ -39,7 +39,7 @@ For new targets, you may need to modify [targets.json](/docs/v5.7/tools/adding-a
 For example,
  
 ```json
-    "MY_TARGET_007": {
+    "MY_NEW_TARGET": {
         "supported_form_factors": ["ARDUINO"],
         "core": "Cortex-M3",
         "supported_toolchains": ["ARM", "uARM", "GCC_ARM", "GCC_CR", "IAR"],
@@ -56,10 +56,10 @@ For example,
                 "macro_name": "MODEM_ON_BOARD_UART"
             }
         },
-        "macros": ["TARGET_007"],
-        "inherits": ["TargetBond"],
+        "macros": ["TARGET_NEW"],
+        "inherits": ["BaseTargetForAll"],
         "device_has": ["ETHERNET", "SPI"],
-        "device_name": "JamesBond"
+        "device_name": "NewDevice"
     },
 ```
 
@@ -90,15 +90,15 @@ You must define all pins. Implement `onboard_modem_api.h`. The target board must
 
 ##### Modifying cellular targets
 
-Setup for some predefined targets is available in [CellularTargets.h](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/common/CellularTargets.h). For a new target, you need to modify `CellularTargets.h`. In `CellularTargets.h`, you need to specify a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if you used a K64F to connect with the QUECTEL BG96, you need the following changes marked in between `// !!!!` in `CellularTargets.h`:
+Setup for some predefined targets is available in [CellularTargets.h](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/common/CellularTargets.h). For a new target, you need to modify `CellularTargets.h`. In `CellularTargets.h`, you need to specify a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device MY_NEW_TARGET defined above in the "Adding modem target support" chapter would be connected with QUECTEL BG96, you need the following changes marked in between `// !!!!` in `CellularTargets.h`:
 
 ```C
 ...
 #elif TARGET_UBLOX_C027
 #define CELLULAR_DEVICE UBLOX_C027
 // !!!!
-// cellular device to be connected with K64F is specified below:
-#elif TARGET_MCU_K64F
+// cellular device to be connected with MY_NEW_TARGET is specified below:
+#elif TARGET_MY_NEW_TARGET
 #define CELLULAR_DEVICE QUECTEL_BG96
 // !!!!
 #else
@@ -109,8 +109,8 @@ Setup for some predefined targets is available in [CellularTargets.h](https://gi
 #endif
 #endif
 // !!!!
-// cellular target and UART pins connecting K64F with the modem are specified below:
-#define CELLULAR_TARGET TARGET_MCU_K64F
+// cellular target and UART pins connecting MY_NEW_TARGET with the modem are specified below:
+#define CELLULAR_TARGET TARGET_MY_NEW_TARGET
 #define MDMTXD PTC17
 #define MDMRXD PTC16
 // !!!!
@@ -121,11 +121,11 @@ If none of the existing modems is compatible with the new modem, then create new
 
 ##### Providing an implementation using on-chip network stacks (AT only mode)
 
-[QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) is an example of a modem specific AT command cellular stack implementation. For example, [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular/) instantiates the [EasyCellularConnection class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/EasyCellularConnection.h), which in turn instantiates the [CellularConnectionFSM class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/CellularConnectionFSM.h). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/AT) between the modem and the Mbed OS CPU. For the [QUECTEL BG96](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/QUECTEL/BG96) classes, [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h), [QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) and [QUECTEL_BG96_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularNetwork.h) have been implemented for a modem specific functionality. QUECTEL_BG96_CellularStack implements QUECTEL BG96 specific AT command stack for socket data handling.
+[QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) is an example of a modem specific AT command cellular stack implementation. For example, [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular/) instantiates the [EasyCellularConnection class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/EasyCellularConnection.h), which in turn instantiates the [CellularConnectionFSM class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/CellularConnectionFSM.h). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/AT) between the modem and the Mbed OS CPU. For the [QUECTEL BG96](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/QUECTEL/BG96) classes [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h), [QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) and [QUECTEL_BG96_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularNetwork.h) have been implemented for a modem specific functionality. QUECTEL_BG96_CellularStack implements QUECTEL BG96 specific AT command stack for socket data handling.
 
 ##### Providing an implementation using Mbed OS provided network stacks (PPP mode)
 
-If the new modem supports PPP mode, then you can use the existing Mbed OS LWIP stack to control the modem when connecting to a network. To use the LWIP stack, set `lwip.ppp-enabled` to true in an application `mbed_app.json`. [UBLOX LISA](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/UBLOX/LISA_U) is an example of a modem implementation using PPP mode to connect to a network. For example, [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/EasyCellularConnection.h), which in turn instantiates [CellularConnectionFSM class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/CellularConnectionFSM.h). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/AT) between the modem and the Mbed OS CPU. For LISA classes, [UBLOX_LISA_U](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U.h), [UBLOX_LISA_U_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularNetwork.h) and [UBLOX_LISA_U_CellularPower](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularPower.h) have been implemented for a modem specific functionality. In the AT command layer, [AT_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/AT/AT_CellularNetwork.h) includes functionality calling [nsapi_ppp_connect()](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_ppp.h) to start the data call through the PPP pipe.
+If the new modem supports PPP mode, then you can use the existing Mbed OS LWIP stack to control the modem when connecting to a network. To use the LWIP stack, set `lwip.ppp-enabled` to true in an application `mbed_app.json`. [UBLOX LISA](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/UBLOX/LISA_U) is an example of a modem implementation using PPP mode to connect to a network. For example, [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/EasyCellularConnection.h), which in turn instantiates [CellularConnectionFSM class](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/easy_cellular/CellularConnectionFSM.h). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/AT) between the modem and the Mbed OS CPU. For LISA classes [UBLOX_LISA_U](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U.h), [UBLOX_LISA_U_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularNetwork.h) and [UBLOX_LISA_U_CellularPower](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularPower.h) have been implemented for a modem specific functionality. In the AT command layer, [AT_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/AT/AT_CellularNetwork.h) includes functionality calling [nsapi_ppp_connect()](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_ppp.h) to start the data call through the PPP pipe.
 
 #### Testing
 
