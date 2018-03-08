@@ -1,12 +1,12 @@
 ## PortOut
 
-Use the PortOut interface to write to an underlying GPIO port as one value. This is much faster than [BusOut](/docs/v5.7/reference/busout.html) because you can write a port in one go, but it is much less flexible because you are constrained by the port and bit layout of the underlying GPIO ports.
+Use the PortOut interface to write to an underlying GPIO port as one value. This is much faster than [BusOut](/docs/development/reference/busout.html) because you can write a port in one go, but it is much less flexible because you are constrained by the port and bit layout of the underlying GPIO ports.
 
 A mask can be supplied so only certain bits of a port are used, allowing other bits to be used for other interfaces.
 
 ### PortOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_port_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_port_out.html)
 
 ### PortOut hello, world
 
@@ -14,4 +14,4 @@ A mask can be supplied so only certain bits of a port are used, allowing other b
 
 ### Related content
 
-- [BusOut](/docs/v5.7/reference/busout.html) API reference.
+- [BusOut](/docs/development/reference/busout.html) API reference.
