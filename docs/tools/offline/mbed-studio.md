@@ -60,7 +60,7 @@ Connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to y
 
 #### Running the project
 
-This section covers the necessary steps of building and running the project, so the program deploys and runs a connected board. Mbed Studio must recognize the board for the instructions in the Run section to work.
+This section covers the necessary steps of building and running the project on a connected board. Mbed Studio must recognize the board for the instructions in the Run section to work.
 
 ##### Build
 
@@ -70,7 +70,7 @@ Before you can run the program, Mbed Studio needs to build a binary using a comp
 
 Alternatively, you can right-click (Ctrl-click) on the project in the `Mbed Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both build a binary that you can deploy.
 
-Alternatively, you can choose to build the project automatically through the menu by choosing `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever needed. After the build, an `mbed-os-example-blinky.bin` (or `<project name>.bin`) file is ready to deploy.
+Alternatively, you can choose to build the project automatically through the menu by choosing `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever needed. After the build, an `mbed-os-example-blinky.bin` (or `<project name>.bin`) file is ready to run.
 
 Once the build completes, the build artifacts, such as the .bin and .elf binaries, are in the `BUILD` folder under the active project. 
 
@@ -97,20 +97,14 @@ Now that you have built the `mbed-os-example-blinky project`, you can run it on 
 The Mbed Studio run phases are:
 
 - Locate or create a suitable binary.
-- Deploy the binary to the target.
-- Reset target, causing the deployed program to run.
+- Flash the binary to the target.
+- Reset target, causing the new program to run.
 
 Although you manually built the project in the previous section and learned how to build a project in Mbed Studio, it wasn’t necessary before running. That’s because Mbed Studio checks that there is a binary for the currently selected target. If there isn’t one, Mbed Studio begins a compilation to create the binary. If there is a binary and there are no recent changes (build automatically option is on), Mbed Studio uses the existing binary to run the project.
 
-Once Mbed Studio has a binary of the Mbed OS program, it deploys that binary to the currently selected target and resets the target, so the program begins to run.
+Once Mbed Studio has a binary of the Mbed OS program, it flashes that binary to the currently selected development board and resets the board, so the program begins to run.
 
 To make it happen, click the green run icon to launch the default run configuration for your connected development board.
-
-Alternatively, open the context menu (right-click, ctrl-click) on the `mbed-os-example-blinky` project and select `Run As > Run Configurations...` from the menu. You can also use the menu by selecting `Run > Run Configurations`.
-
-In the `Run Configurations` window, right-click on `Mbed Deploy`, and select `New` to create an `Mbed Deploy` run configuration. This creates the run configuration you need to populate with details of your project and target. For project (if everything isn’t already populated), click `Choose`, and select the `mbed-os-example-blinky` project. The binary Mbed Studio builds fills in automatically. If you used a different project name, the binary name reflects that. Finally, click the Refresh button to ensure that the current target board’s ID updates if it hasn’t already.
-
-After you have configured everything, click on the Apply button and then on the Run button.
 
 Watch the primary LED on your connected target begin to blink!
 
