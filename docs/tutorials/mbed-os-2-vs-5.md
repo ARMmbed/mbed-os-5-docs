@@ -63,4 +63,4 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
    Here is an example of an Mbed OS 2 project as viewed on [os.mbed.com](https://os.mbed.com):
 
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed.png)</span>
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)</span>
