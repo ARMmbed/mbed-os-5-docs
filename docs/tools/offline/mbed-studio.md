@@ -1,6 +1,6 @@
 <h2 id="mbed-studio">Arm Mbed Studio</h2>
 
-Arm Mbed Studio is a local development environment for Mbed OS projects. This document helps Mbed OS developers use Mbed Studio to code, run, debug and deploy Mbed OS programs to Mbed Enabled devices. The Mbed Studio project is based on the Eclipse framework and extends Eclipse’s IDE capability to provide a more focused experience for developing with Mbed OS. In particular, it allows users to develop and deploy code offline. It also provides access to existing online resources.
+Arm Mbed Studio is a local development environment for Mbed OS projects. This document helps Mbed OS developers use Mbed Studio to code, run, and debug Mbed OS programs to supported Mbed Enabled devices. The Mbed Studio project is based on the Eclipse framework and extends Eclipse’s IDE capability to provide a more focused experience for developing with Mbed OS. In particular, it allows users to develop and run code offline. It also provides access to existing online resources.
 
 ### Current status and downloads
 
@@ -72,7 +72,7 @@ Before you can run the program, Mbed Studio needs to build a binary using a comp
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Build-Button.png)<span>Build your project.</span></span>
 
-Alternatively, you can right-click (Ctrl-click) on the project in the `Mbed Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both build a binary that you can deploy.
+Alternatively, you can right-click (Ctrl-click) on the project in the `Mbed Projects` view and then select `Build Project`. You can also use the menu by choosing `Project > Build Project`. Both build a binary that you can run on your board.
 
 Alternatively, you can choose to build the project automatically through the menu by choosing `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever needed. After the build, an `mbed-os-example-blinky.bin` (or `<project name>.bin`) file is ready to run.
 
