@@ -1,4 +1,4 @@
-<h2 id="mbed-studio">Arm Mbed Studio</h2>
+<h2 id="mbed-studio">Arm Mbed Studio alpha</h2>
 
 Arm Mbed Studio is a local development environment for Mbed OS projects. This document helps Mbed OS developers use Mbed Studio to code, run, and debug Mbed OS programs to supported Mbed Enabled devices. The Mbed Studio project is based on the Eclipse framework and extends Eclipse’s IDE capability to provide a more focused experience for developing with Mbed OS. In particular, it allows users to develop and run code offline. It also provides access to existing online resources.
 
@@ -54,7 +54,21 @@ Double-click on the `main.cpp` file to open it in Mbed Studio’s editor. This f
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Blinky-Main-CPP.png)<span>Explore your new project.</span></span>
 
-##### Connecting a board
+#### Adding libraries to a project
+
+Mbed Studio currently supports importing libraries from GitHub. To import a library, right click on the `Mbed Projects` view and select `Import`. Now click `Mbed > Import Mbed library into existing project`. Choose the program that you want to add the library to.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Import-Library.png)<span>Import an Mbed library.</span></span>
+
+Next, choose a library and copy the URL for the GitHub repository.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-GitHub-Library-URL.png)<span>Choose a library from GitHub.</span></span>
+
+Click `Finish`, and Mbed Studio will add the library to your program of choice.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-ESP8266-Library.png)<span>The imported library in the workspace.</span></span>
+
+### Connecting a board
 
 Connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to your machine, or select a target development board from the target dropdown. Mbed Studio detects the board, and a dialog asks to switch targets. Accept this, and you are ready to build and run the example.
 
@@ -66,7 +80,7 @@ Connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to y
 
 This section covers the necessary steps of building and running the project on a connected board. Mbed Studio must recognize the board for the instructions in the Run section to work.
 
-##### Build
+### Build
 
 Before you can run the program, Mbed Studio needs to build a binary using a compiler. For the alpha version of Mbed Studio this compiler is GCC. There are multiple ways to start a build, but the easiest is to click the build icon.
 
@@ -78,13 +92,13 @@ Alternatively, you can choose to build the project automatically through the men
 
 Once the build completes, the build artifacts, such as the .bin and .elf binaries, are in the `BUILD` folder under the active project. 
 
-##### Further exploration
+#### Further exploration
 
 Once you have built a project for a given target board, Eclipse can also index the `mbed-os-example-blinky` project, which means that it creates the appropriate mappings for the selected target. You can refresh this index by right-clicking on the project and selecting `Index > Freshen all files`. After Eclipse completes the indexing process, you can use the `Open declaration` function, or `F3` as a shortcut while hovering over a pin name, such as `led1`. This allows you to look through the dependency tree of the application and explore the underlying Mbed OS library.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Pin-Mapping.gif)<span>Press F3 to open a declaration, such as an IO pin name.</span></span> 
 
-##### Building automatically
+#### Building automatically
 
 Mbed Studio uses the tools built into Mbed OS to determine what builds and where the output of a build goes. The build tools build on request or (if the `Project > Build Automatically` option is checked) when you change and save a source file. The build operation only builds components that have changed and does nothing if nothing changed. Mbed Studio regards all projects in the workspace as part of the same system, so it initially builds all projects. Pressing the build button also ensures that all workspace projects build (if required).
 
@@ -92,7 +106,7 @@ The aim is to maintain a system that is always in a built state, providing rapid
 
 Under some circumstances (in particularly large projects, or when the target device changes frequently), you may wish to turn off automatic builds and build individual projects on request. To do this, select Build from the project right-click menu.
 
-##### Run
+### Run
 
 Now that you have built the `mbed-os-example-blinky project`, you can run it on your target board. Running a project consists of several phases, which you can abstract if you click the green run icon.
 
@@ -112,13 +126,13 @@ To make it happen, click the green run icon to launch the default run configurat
 
 Watch the primary LED on your connected target begin to blink!
 
-#### Debugging
+### Debug
 
 Now that you have learned the basics of Mbed Studio, it is time to learn how to debug projects within the IDE. There is a debug configuration specifically for debugging Mbed OS projects, which generates automatically. To launch a debug session on your development board, click the debug icon.
 
 There are also additional configurations for more advanced debugging. This section covers the Mbed OS debug configuration, as well as the advanced PyOCD GDB debug configuration.
 
-##### Simple debugging
+#### Simple debugging
 
 To begin debugging, click the bug icon, which launches the default debug configuration. A prompt asks you to switch to the debug perspective. Click `Yes` to switch. The debug perspective opens additional views, including a Debugger console, Debug view (which shows active threads and where the debugger stops), Variables, Memory and your code editor, which stops on a breakpoint by default.
 
@@ -132,7 +146,7 @@ Click `Choose...` next to the project textbox, and select the project you wish t
 
 Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also breakes on a default break point.
 
-##### Advanced debugging
+#### Advanced debugging
 
 If you want more control over the options regarding debugging, this section is for you. This section describes how to create a PyOCD GDB debug configuration. This configuration allows you to change more settings, such as ports and executable locations for the GDB client and server.
 
@@ -214,8 +228,8 @@ Workaround: None
 
 #### Windows
 
-Using the product update functionality in Eclipse returns a timestamp error.
-Workaround: This error does not prevent the product from successfully updating.
+GCC builds are slower in Windows than Mac or Linux.
+Workaround: None, this is also the case when using GCC from the command line.
 
 ### FAQ
 
