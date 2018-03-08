@@ -4,18 +4,18 @@ This tutorial explains the crash dump generation in Mbed OS and how to analyze t
 
 ### Crash dump generation on fault exception
 
-When the system crashes due to fault exceptions, the Mbed OS fault exception handler is invoked and generates a crash dump containing register context and current thread information. This information prints to your serial terminal. The register context generated is the state of registers at the instance when the exception was triggered. The following Cortex-M fault exceptions trigger the Mbed OS fault exception handler. 
+When the system crashes due to fault exceptions, the Mbed OS fault exception handler is invoked and generates a crash dump containing register context and current thread information. This information prints to your serial terminal. The register context generated is the state of registers at the instance when the exception was triggered. The following Cortex-M fault exceptions trigger the Mbed OS fault exception handler.
 
 1. HardFault Exception.
 2. MemManage Exception.
 3. BusFault Exception.
 4. UsageFault Exception.
 
-The exceptions supported on your platform depend on the specific Cortex-M core you have in your system. 
+The exceptions supported on your platform depend on the specific Cortex-M core you have in your system.
 
-For example, Cortex-M0 (or any ARMv6M cores) cores do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
+For example, Cortex-M0 cores (or any ARMv6M cores) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
 
-Below is an example of the crash dump the Mbed OS fault exception handler generate. 
+Below is an example of the crash dump the Mbed OS fault exception handler generates.
 
 ```
 ++ MbedOS Fault Handler ++
@@ -62,7 +62,7 @@ Delay Threads:
 Idle Thread:
 State: 00000001 EntryFn: 00002715 Stack Size: 00000200 Mem: 20001118 SP: 200012D8
 
--- MbedOS Fault Handler -- 
+-- MbedOS Fault Handler --
 ```
 
 ### Analyzing crash dump
