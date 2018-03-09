@@ -1,4 +1,4 @@
-### How to commission a Thread device in practice
+<h3 id="thread-commissioning">How to commission a Thread device in practice</h3>
 
 #### Requirements
 
@@ -20,8 +20,8 @@ A model network setup could look like this:
 
 By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
 
-- `"mbed-mesh-api.thread-use-static-link-config": false`
-- `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]`
+- `"mbed-mesh-api.thread-use-static-link-config": false` under `"target_overrides":`
+- `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` in to the same level as `"config":` and `"target_overrides":`
 
 Setting `thread-use-static-link-config` to `false` prevents the usage of the predefined link configuration values and allows the device to start network scanning.
 
@@ -37,7 +37,7 @@ You can use [a free online tool](http://www.qr-code-generator.com/) to generate 
 
 In the online tool, fill in the URL field. The following is an example: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`. Fill in the correct values for your device, and ensure `v=1` is always present. The other required parameters are:
 
-- `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration).
+- `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration). *PSKd must be uppercase characters (0-9, A-Y excluding I,O,Q and Z)*
 - `eui` is equal to the RF MAC address by default.
 
 To get the MAC address for your end device, connect the node to the Thread network with static configuration enabled. In other words, `"mbed-mesh-api.thread-use-static-link-config": true`, unless you have your own configuration for the MAC address.

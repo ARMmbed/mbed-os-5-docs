@@ -2,11 +2,11 @@
 
 The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
-<span class="tips">**Tip:** Please also read the [CLA](/docs/v5.7/reference/guidelines.html#cla) and [workflow](/docs/v5.7/reference/guidelines.html#workflow) sections for a review of the process and legal requirements.</span>
+<span class="tips">**Tip:** Please also read the [CLA](/docs/development/reference/guidelines.html#cla) and [workflow](/docs/development/reference/guidelines.html#workflow) sections for a review of the process and legal requirements.</span>
 
 #### Code acceptance
 
-[After the CLA](/docs/v5.7/reference/guidelines.html#cla) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
+[After the CLA](/docs/development/reference/guidelines.html#cla) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
 #### Coding style
 
@@ -59,55 +59,57 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 ```
 ##### Rules
 
-* Indentation - four spaces. Please do not use tabs.
+- Indentation - four spaces. Please do not use tabs.
 
-* Braces - K&R style.
+- Braces - K&R style.
 
-* One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)).
+- One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)).
 
-* One line per statement.
+- One line per statement.
 
-* Preprocessor macro starts at the beginning of a new line; the code inside is indented according to the code above it.
+- Preprocessor macro starts at the beginning of a new line; the code inside is indented according to the code above it.
 
-* Cases within `switch` are indented (exception from K&R).
+- Cases within `switch` are indented (exception from K&R).
 
-* Space after statements of type `if`, `while`, `for`, `switch`. The same applies to binary operators (like, `+` and `*`) and the ternary operator (`?` and `:`).
+- Space after statements of type `if`, `while`, `for`, `switch`. The same applies to binary operators (like, `+` and `*`) and the ternary operator (`?` and `:`).
 
-* Each line preferably has at most 120 characters.
+- Each line preferably has at most 120 characters.
 
-* Comments should use proper spelling and grammar.
+- Comments should use proper spelling and grammar.
 
-* For pointers, `*` is adjacent to a name (`analogin_t *obj`).
+- For pointers or references, the symbols `*` or `&` are adjacent to a name (`analogin_t *obj`. `analogin_t &obj`). If you omit the name, place the space between the type and `*` (such as `int *` or `int &`).
 
-* Don't leave trailing spaces at the end of lines.
+- For function return pointers or references, the symbols `*` or `&` are adjacent to a function name (`int *func()` or `int &func()`).
 
-* Empty lines should have no trailing spaces.
+- Don't leave trailing spaces at the end of lines.
 
-* Unix line endings are default option for files.
+- Empty lines should have no trailing spaces.
 
-* Use capital letters for macros.
+- Unix line endings are default option for files.
 
-* A file should have an empty line at the end.
+- Use capital letters for macros.
+
+- A file should have an empty line at the end.
 
 ##### Naming conventions
 
 ###### Classes
 
-* Begins with a capital letter, and each word in it also begins with a capital letter (AnalogIn, BusInOut).
+- Begins with a capital letter, and each word in it also begins with a capital letter (AnalogIn, BusInOut).
 
-* Methods contain small letters, with words separated by underscore.
+- Methods contain small letters, with words separated by underscore.
 
-* Private members starts with an underscore: ``__User defined types (typedef)))``.
+- Private members starts with an underscore: ``__User defined types (typedef)))``.
 
-* Structures - `suffix _t` - to denote it is a user defined type.
+- Structures - `suffix _t` - to denote it is a user defined type.
 
-* Enumeration - the type name and values name - same naming convention as classes (for example MyNewEnum).
+- Enumeration - the type name and values name - same naming convention as classes (for example MyNewEnum).
 
 ###### Functions
 
-* Contain lower case letters (as methods within classes).
+- Contain lower case letters (as methods within classes).
 
-* Words separated by underscore (wait_ms, read_u16).
+- Words separated by underscore (wait_ms, read_u16).
 
 As an example:
 
@@ -157,7 +159,7 @@ All functions and methods should contain documentation using Doxgyen.
 You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
 ```
-astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
+astyle.exe --style=kr --indent=spaces=4 --indent-switches $(full_path_to_file)
 ```
 
 #### Compiler settings

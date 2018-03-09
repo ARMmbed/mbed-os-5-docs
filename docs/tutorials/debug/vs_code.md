@@ -1,6 +1,8 @@
 ## Visual Studio Code
 
-This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](/docs/v5.6/tools/setting-up-a-local-debug-toolchain.html).
+This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](/docs/development/tools/setting-up-a-local-debug-toolchain.html).
+
+Also install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](/docs/development/tools/arm-mbed-cli.html) to build the project.
 
 ### Installing Visual Studio Code
 
@@ -69,3 +71,18 @@ To configure the debugger for your project:
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode5.png)<span>Running the debugger</span></span>
 
 <span class="tips">**Tip:** You can use the Debug Console to interact with the device over GDB and use functionality the UI does not expose. For example, to see the registers, type `-exec info registers`. To put a watch on a memory location, type `-exec watch *0xdeadbeef`.</span>
+
+### Building with Mbed CLI
+
+Visual Studio Code uses `make` to build your application by default. You can also build with Mbed CLI. To do this:
+
+1. In `.vscode/tasks.json`, replace every instance (4 times) of `make` with `mbed`.
+1. In `.vscode/tasks.json`, change `args` to:
+
+    ```
+    "args": ["compile", "--profile=debug", "-t", "GCC_ARM", "-m", "YOUR_TARGET"],
+    ```
+
+1. In `.vscode/launch.json`, replace every instance (twice) of `make` with `mbed`.
+1. In `.vscode/launch.json`, change `${workspaceRoot}/BUILD/` (twice) to `${workspaceRoot}/BUILD/YOUR_TARGET/GCC_ARM/`.
+1. In `.vscode/launch.json`, change `${workspaceRoot}\\BUILD` to `${workspaceRoot}\\BUILD\\YOUR_TARGET\\GCC_ARM`.

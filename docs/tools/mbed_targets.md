@@ -2,7 +2,7 @@
 
 Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets.
 
-<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) to take your code offline.</span>
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](/docs/development/tools/arm-mbed-cli.html) to take your code offline.</span>
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
@@ -164,7 +164,7 @@ The `default_toolchain` property names the toolchain that compiles code for this
 
 #### `post_binary_hook`
 
-Some targets require specific actions to generate a programmable binary image. Specify these actions using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a Python function that is accessible from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When you do not specify the `toolchains` key for a `post_binary_hook`, you can assume the `post_binary_hook` applies to all toolcahins. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
+Some targets require specific actions to generate a programmable binary image. Specify these actions using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a Python function that is accessible from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When you do not specify the `toolchains` key for a `post_binary_hook`, you can assume the `post_binary_hook` applies to all toolchains. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
 ```
 "post_binary_hook": {
@@ -199,7 +199,7 @@ Use this property to pass necessary data for exporting to various third party to
 
 We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description](http://www.keil.com/pack/doc/CMSIS/Pack/html/)</a> retrieved from each CMSIS Pack.
 
-The [`"device_name"`](/docs/v5.7/reference/contributing-target.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+The [`"device_name"`](/docs/development/reference/contributing-target.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 156 of the `.pdsc` file:
 

@@ -2,7 +2,7 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](#windows-installer-for-mbed-cli). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](#installing-mbed-cli-standalone-stable-version)</span>
+<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](/docs/development/tools/installing-with-the-windows-installer.html). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](/docs/development/tools/installing-manually.html).</span>
 
 ## Requirements
 
@@ -47,11 +47,11 @@ The Windows installer for Mbed CLI includes the following components:
     - [Git](https://git-scm.com/) - version 2.12.2.
     - [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- **Mbed Windows serial port driver** - [serial port driver](/docs/v5.7/tutorials/windows-serial-driver.html).
+- **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
 
 ### Running the installer
 
-1. Download the latest executable from [`mbed-windows-installer v0.4.3`](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
+1. Download the latest executable from [mbed-windows-installer v0.4.3](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
 2. Run `mbed_installer_v042.exe`.
 3. Set the installation path.
 4. Choose the installation type:
@@ -72,7 +72,7 @@ $ mbed_installer_{version}.exe /S
 
 ### After installation
 
-Please see the [configuration section](/docs/v5.7/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
 ## Installing manually
 
@@ -108,7 +108,7 @@ On Linux or Mac, you may need to run with `sudo`.
 
 ### After installation
 
-Please see the [configuration section](/docs/v5.7/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
 ## Configuring Mbed CLI
 

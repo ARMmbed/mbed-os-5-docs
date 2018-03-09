@@ -12,7 +12,7 @@ The Mbed OS port of Nanostack consist of a few helper modules that provide easie
 
 ![Nanostack inside Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
 
-- [Mbed Mesh API](/docs/v5.7/reference/mesh.html) controls and initializes Nanostack on Mbed OS.
+- Mbed Mesh API controls and initializes Nanostack on Mbed OS.
     - Security settings.
     - Channel configuration.
     - Connection and reconnection logic.
@@ -32,7 +32,7 @@ In Mbed OS, Socket API hides the differences between the networking stacks. User
 
 For an example of a simple application using Nanostack, see [Example mesh application for Mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
-For more information, see the [documentation of the Socket API](/docs/v5.7/reference/network-socket-overview.html).
+For more information, see the [documentation of the Socket API](/docs/development/reference/network-socket.html).
 
 ##### Providing RF driver for Mbed OS applications
 

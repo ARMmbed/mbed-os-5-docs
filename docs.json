@@ -47,6 +47,14 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/static_memory_optimization.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/memap.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/runtime/Execution.md"
                     }
                 ]
@@ -411,6 +419,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/SlicingBlockDevice.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/ProfilingBlockDevice.md"
                             }
                         ]
                     }
@@ -472,7 +484,11 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/ticker.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/us_ticker.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/lp_ticker.md"
                     },
                     {
                         "type": "markdown",
@@ -563,6 +579,10 @@
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/config_system.md"
                     },
+                                                {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/bootloader.md"
+                    },
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/mbed_targets.md"
@@ -570,7 +590,7 @@
                 ]
             },
             {
-                "title": "Arm Online Compiler",
+                "title": "Arm Mbed Online Compiler",
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/online_comp.md"
@@ -588,6 +608,13 @@
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/online/compiler_version_control.md"
                     }
                 ]
+            },
+            {
+                "title": "Arm Mbed Studio",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/offline/mbed-studio.md"
+                    }]
             },
             {
                 "title": "Arm Mbed CLI",
@@ -660,6 +687,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/crash_dump_analyzer.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/local_debugging_toolchain.md"
                     }
                 ]
@@ -709,18 +740,26 @@
                 }]
             },
             {
-                "title": "Your First Program",
+                "title": "Mbed OS quick start",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/first_app/first_program.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quick-start.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/first_app/blinky_compiler.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quick-start-compiler.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/first_app/blinky_cli.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quick-start-cli.md"
+                    }
+                ]
+            },
+            {
+                "title": "Major releases",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/mbed-os-2-vs-5.md"
                     }
                 ]
             },
@@ -745,7 +784,7 @@
                 ]
             },
             {
-                "title": "Serial Communication",
+                "title": "Serial communication",
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial-overview.md"
@@ -824,6 +863,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/debug/debug_fault_exception.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/run_and_compile_time_errors.md"
                     },
                     {
@@ -863,10 +906,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/memory/memap.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/optimize/memory/runtime_mem_trace.md"
                     },
                     {
@@ -881,35 +920,69 @@
         ]
     },
     {
-        "title": "Releases",
-        "description": "The Mbed OS releases; latest and history",
-        "slug": "releases",
-        "type": "markdown",
-        "sources": [],
-        "tags": [
-            "releases"
-        ]
-    },
-    {
-        "title": "mbed OS API doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
+        "title": "Mbed OS API doxygen",
+        "description": "The full Mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api-doxy",
         "hidden": true,
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "mbed-os-5.7",
-        "options": {
-            "PROJECT_NAME": "Mbed OS Reference",
-            "ENABLE_PREPROCESSING": "YES",
-            "MACRO_EXPANSION": "YES",
-            "EXPAND_ONLY_PREDEF": "NO",
-            "SEARCH_INCLUDES": "YES",
-            "INCLUDE_PATH": "",
-            "INCLUDE_FILE_PATTERNS": "",
-            "PREDEFINED": "DOXYGEN_ONLY DEVICE_ANALOGIN DEVICE_ANALOGOUT DEVICE_CAN DEVICE_ETHERNET DEVICE_EMAC DEVICE_FLASH  DEVICE_I2C DEVICE_I2CSLAVE DEVICE_I2C_ASYNCH DEVICE_INTERRUPTIN DEVICE_LOWPOWERTIMER DEVICE_PORTIN DEVICE_PORTINOUT DEVICE_PORTOUT DEVICE_PWMOUT DEVICE_RTC DEVICE_TRNG DEVICE_SERIAL DEVICE_SERIAL_ASYNCH DEVICE_SERIAL_FC DEVICE_SLEEP DEVICE_SPI DEVICE_SPI_ASYNCH DEVICE_SPISLAVE DEVICE_STORAGE \"MBED_DEPRECATED_SINCE(f, g)=\" \"MBED_ENABLE_IF_CALLBACK_COMPATIBLE(F, M)=\" \"MBED_DEPRECATED(s)=\"",
-            "EXPAND_AS_DEFINED": "",
-            "SKIP_FUNCTION_MACROS": "NO",
-            "EXCLUDE_PATTERNS": "*/tools/* */targets/* */features/mbedtls/* */features/storage/* */features/unsupported/* */BUILD/* */rtos/TARGET_CORTEX/rtx*/* */cmsis/* */features/FEATURE_COMMON_PAL/* */features/FEATURE_LWIP/* */features/FEATURE_UVISOR/* */features/nanostack/* */ble/generic/* */ble/pal/*"
-        }
+        "branch": "mbed-os-5.8"
+    },
+    {
+        "title": "feature-hal-spec-rtc doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-rtc-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-rtc"
+    },
+    {
+        "title": "feature-hal-spec-sleep doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-sleep-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-sleep"
+    },
+    {
+        "title": "feature-hal-spec-ticker doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-ticker-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-ticker"
+    },
+    {
+        "title": "feature-hal-spec-usb-device doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-usb-device-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-usb-device"
+
+    },
+    {
+        "title": "feature-hal-spec-qspi doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-qspi-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-qspi"
+
+    },
+    {
+        "title": "feature-hal-spec-watchdog doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-watchdog-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-watchdog"
+
     }
 ]
