@@ -4,14 +4,27 @@ import os
 import sys
 import re
 import requests
+from subprocess import check_output
+from builtins import input, open
 
 PATTERN = (
     "\[!\[View code\]\(https://www\.mbed\.com/embed/\?type=library\)\]"
     "\((.*)\)"
 )
 
-def main(path):
+def main(path=None):
     bad = False
+    interactive = False
+
+    if not path:
+        interactive = True
+
+        # Go to root to make paths easier
+        root = check_output(['git', 'rev-parse', '--show-toplevel']).strip()
+        os.chdir(root)
+
+        # Ask for path in case user is unfamiliar with command line
+        path = input('What directory should I check? ')
 
     for dir, dirs, files in os.walk(path):
         for file in files:
@@ -19,7 +32,7 @@ def main(path):
                 continue
 
             path = os.path.join(dir, file)
-            with open(path) as file:
+            with open(path, encoding='utf-8') as file:
                 for i, line in enumerate(file):
                     for match in re.findall(PATTERN, line):
                         if match.startswith('https:'):
@@ -45,6 +58,9 @@ def main(path):
                 dirs.remove(dir)
 
     sys.stdout.write('\nDone!\n')
+    if interactive:
+        input('Hit any key to continue ')
+
     return 0 if not bad else 1
 
 
