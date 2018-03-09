@@ -136,7 +136,7 @@ Alternatively, you can create the debug launch configuration and then begin debu
 
 Click `Choose...` next to the project textbox, and select the project you wish to debug if it isn’t already populated. After that, connect a board. The Mbed Debug launch configuration prepopulates the PyOCD GDB server and the GDB client to locations to the internal Mbed Studio tools. Select the Debug button in the lower right portion of the window to start debugging.
 
-Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also breakes on a default break point.
+Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also brakes on a default break point.
 
 ##### Advanced debugging
 
@@ -146,7 +146,7 @@ To begin debugging, create the debug launch configuration and set some variables
 
 A window for the debug configurations appears. Select the `GDB PyOCD Debugging` category, and create a new launch configuration. You can click the new icon (a page with a `+` in the upper right corner), or right-click on the category and select `New`.
 
-Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`. Currently, this is configured manually, so switching to a different target to run the same project requires you to update this field in the debug configuration. 
+Next, configure the binary you want to use for debugging. This is the `.elf` file located within the project directory and inside `BUILD/<target>/GCC_ARM`. Currently, this is configured manually, so switching to a different target to run the same project requires you to update this field in the debug configuration.
 
 The next step is to configure the location of the executables for the PyOCD GDB Server and the GDB Client on the Debugger tab within the debug configuration. These should be set to the executables located within Mbed Studio’s tools directory which is located at:
 
@@ -186,7 +186,7 @@ In Mbed Studio, a view is a window that has a label, and sometimes options, spec
 
 ##### Perspective
 
-A perspective is a collection of views, which group functionality in Eclipse. An example of a perspective is the debug perspective.
+A perspective is a collection of views, which group functionally in Eclipse. An example of a perspective is the debug perspective.
 
 ##### Program
 
