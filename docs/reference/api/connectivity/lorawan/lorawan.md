@@ -8,38 +8,39 @@ The [LoRaWANInterface](https://github.com/ARMmbed/mbed-os/blob/feature-lorawan/f
 
 ## LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_l_o_r_a_w_a_n_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ## Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression: 
 
-1) An [EventQueue](https://os.mbed.com/docs/v5.8/reference/eventqueue.html) object. 
+1) An [EventQueue](https://os.mbed.com/docs/v5.8/reference/eventqueue.html) object: 
 
 ```cpp
 // construct an event queue 
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
-2) A [LoRaRadio](https://os.mbed.com/docs/v5.8/reference/loraradio.html) object
+
+2) A [LoRaRadio](https://os.mbed.com/docs/v5.8/reference/loraradio.html) object:
 
 ```CPP
 // construct a LoRadio object
 SX1272_LoRaRadio radio(PIN_NAMES ... );
 ```
 
-3) Instantiate `LoRaWANInterface` and pass `LoRaRadio` object
+3) Instantiate `LoRaWANInterface`, and pass `LoRaRadio` object:
 
 ```CPP
 LoRaWANInterface lorawan(radio) ;
 ``` 
 
-4) Initialize mac layer and pass `EventQueue` object
+4) Initialize mac layer and pass `EventQueue` object:
 
 ```CPP
 lorawan.initialize(&ev_queue);
 ```
 
-5) Setup the event callback.
+5) Set up the event callback:
 
 ```cpp
 lorawan_app_callbacks_t callbacks
@@ -47,7 +48,7 @@ callbacks.events = mbed::callback(YOUR_EVENT_HANDLER);
 lorawan.add_app_callbacks(&callbacks);
 ```
 
-6) Add network credentials (security keys) and any configurations.
+6) Add network credentials (security keys) and any configurations:
 
 ```CPP
 lorawan_connect_t connection;
@@ -63,7 +64,9 @@ lorawan.connect(connection);
 
 ### LoRaWAN example
 
-Please visit our [online compiler example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan) and follow the instructions in the `README.md`.
+Please visit our Arm Mbed Online Compiler example, and follow the instructions in the `README.md`.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/dc95ac6d6d4e/main.cpp/)
 
 ### Related content
 
