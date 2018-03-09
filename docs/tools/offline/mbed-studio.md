@@ -56,7 +56,7 @@ Double-click on the `main.cpp` file to open it in Mbed Studio’s editor. This f
 
 #### Adding libraries to a project
 
-Mbed Studio currently supports importing libraries from GitHub. To import a library, right click on the `Mbed Projects` view and select `Import`. Now click `Mbed > Import Mbed library into existing project`. Choose the program that you want to add the library to.
+Mbed Studio supports importing libraries from GitHub. To import a library, right-click on the `Mbed Projects` view, and select `Import`. Now click `Mbed > Import Mbed library into existing project`. Choose the program that you want to add the library to.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Import-Library.png)<span>Import an Mbed library.</span></span>
 
@@ -64,7 +64,7 @@ Next, choose a library and copy the URL for the GitHub repository.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-GitHub-Library-URL.png)<span>Choose a library from GitHub.</span></span>
 
-Click `Finish`, and Mbed Studio will add the library to your program of choice.
+Click `Finish`, and Mbed Studio adds the library to your program of choice.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-ESP8266-Library.png)<span>The imported library in the workspace.</span></span>
 
@@ -229,7 +229,7 @@ Workaround: None
 #### Windows
 
 GCC builds are slower in Windows than Mac or Linux.
-Workaround: None, this is also the case when using GCC from the command line.
+Workaround: None, this is also the case when using GCC from the command-line.
 
 ### FAQ
 
