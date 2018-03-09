@@ -15,7 +15,7 @@ The exceptions supported on your platform depend on the specific Cortex-M core y
 
 For example, Cortex-M0 cores (or any ARMv6M cores) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
 
-Below is an example of the crash dump(with description of registers) the Mbed OS fault exception handler generates.
+Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates.
 
 ```
 ++ MbedOS Fault Handler ++
