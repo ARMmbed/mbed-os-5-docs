@@ -1,6 +1,6 @@
 ## SlicingBlockDevice
 
-The SlicingBlockDevice class provides a way to break up a block device into subunits without the need to manually track offsets. The SlicingBlockDevice acts as an opposite of the [ChainingBlockDevice](/docs/v5.7/reference/chainingblockdevice.html) class.
+The SlicingBlockDevice class provides a way to break up a block device into subunits without the need to manually track offsets. The SlicingBlockDevice acts as an opposite of the [ChainingBlockDevice](/docs/development/reference/chainingblockdevice.html) class.
 
 The constructor takes in the master block device pointer and the start and end addresses of where you would like to partition the sub-block. By not specifying the end address, you create a block device that spans from the provided start address to the end of the underlying block device.
 
@@ -10,15 +10,15 @@ The constructor takes in the master block device pointer and the start and end a
 
 ### SlicingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/class_slicing_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_slicing_block_device.html)
 
 ### SlicingBlockDevice example
 
-This SlicingBlockDevice example partitions a [HeapBlockDevice](/docs/v5.7/reference/heapblockdevice.html) into three subunits and showcases programming and reading back data segments through both the underlying master block device and the sliced subunits.
+This SlicingBlockDevice example partitions a [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) into three subunits and showcases programming and reading back data segments through both the underlying master block device and the sliced subunits.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SlicingBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/SlicingBlockDevice_ex_1/file/62c01cd06ff7/main.cpp)
 
 ### Related content
 
-- [ChainingBlockDevice](/docs/v5.7/reference/chainingblockdevice.html) API reference.
-- [HeapBlockDevice](/docs/v5.7/reference/heapblockdevice.html) API reference.
+- [ChainingBlockDevice](/docs/development/reference/chainingblockdevice.html) API reference.
+- [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) API reference.

@@ -484,7 +484,11 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/ticker.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/us_ticker.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/lp_ticker.md"
                     },
                     {
                         "type": "markdown",
@@ -683,6 +687,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/crash_dump_analyzer.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/local_debugging_toolchain.md"
                     }
                 ]
@@ -732,18 +740,26 @@
                 }]
             },
             {
-                "title": "Arm Mbed OS Quickstart",
+                "title": "Mbed OS quick start",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quickstart.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quick-start.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quickstart-compiler.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quick-start-compiler.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quickstart-cli.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/quickstart/quick-start-cli.md"
+                    }
+                ]
+            },
+            {
+                "title": "Major releases",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/mbed-os-2-vs-5.md"
                     }
                 ]
             },
@@ -768,7 +784,7 @@
                 ]
             },
             {
-                "title": "Serial Communication",
+                "title": "Serial communication",
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/serial/serial-overview.md"
@@ -847,6 +863,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/debug/debug_fault_exception.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/run_and_compile_time_errors.md"
                     },
                     {
@@ -898,5 +918,71 @@
         "tags": [
             "tutorials"
         ]
+    },
+    {
+        "title": "Mbed OS API doxygen",
+        "description": "The full Mbed OS API documentation in doxygen format",
+        "slug": "mbed-os-api-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "mbed-os-5.8"
+    },
+    {
+        "title": "feature-hal-spec-rtc doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-rtc-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-rtc"
+    },
+    {
+        "title": "feature-hal-spec-sleep doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-sleep-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-sleep"
+    },
+    {
+        "title": "feature-hal-spec-ticker doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-ticker-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-ticker"
+    },
+    {
+        "title": "feature-hal-spec-usb-device doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-usb-device-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-usb-device"
+
+    },
+    {
+        "title": "feature-hal-spec-qspi doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-qspi-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-qspi"
+
+    },
+    {
+        "title": "feature-hal-spec-watchdog doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-watchdog-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-watchdog"
+
     }
 ]

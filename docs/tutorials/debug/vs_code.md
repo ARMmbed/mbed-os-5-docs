@@ -1,8 +1,8 @@
 ## Visual Studio Code
 
-This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](/docs/v5.7/tools/setting-up-a-local-debug-toolchain.html).
+This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](/docs/development/tools/setting-up-a-local-debug-toolchain.html).
 
-Also install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) to build the project.
+Also install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](/docs/development/tools/arm-mbed-cli.html) to build the project.
 
 ### Installing Visual Studio Code
 

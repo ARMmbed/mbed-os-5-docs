@@ -24,7 +24,7 @@ void *operator new(std::size_t count) {
 ```
 ### Debug functions reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/mbed__debug_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__debug_8h_source.html)
 
 ### Debug example
 

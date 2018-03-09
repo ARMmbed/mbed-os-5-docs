@@ -2,7 +2,7 @@
 
 DAPlink is an open source project that implements the embedded firmware required for a Cortex debug probe. The project is hosted on GitHub and is published under an Apache 2.0 license, making it attractive for commercial developments.
 
-The software project is complemented by a series of reference designs for creating the DAPLink debug probe hardware, which is available in the [HDK documentation](/docs/v5.7/reference/contributing-tools.html#arm-mbed-hdk).
+The software project is complemented by a series of reference designs for creating the DAPLink debug probe hardware, which is available in the [HDK documentation](/docs/development/reference/contributing-tools.html#arm-mbed-hdk).
 
 ### DAPLink features
 
@@ -29,7 +29,7 @@ DAPLink debug probes appear on the host computer as a USB disk. Program files in
 The DAPLink debug probe also provides a USB serial port, which can be bridged through to a TTL UART on the target system.
 The USB serial port will appear on a Windows machine as a COM port, or on a Linux machine as a /dev/tty interface.
 
-For more information on configuring your host computer to use this feature, please the [Windows serial driver information](/docs/v5.7/tutorials/windows-serial-driver.html).
+For more information on configuring your host computer to use this feature, please the [Windows serial driver information](/docs/development/tutorials/windows-serial-driver.html).
 
 ### Further reading
 
