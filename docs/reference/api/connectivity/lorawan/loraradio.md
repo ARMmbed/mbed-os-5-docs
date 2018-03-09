@@ -10,4 +10,4 @@ An implementation of this class is passed to the Arm Mbed LoRaWAN stack. Please 
 
 ### LoRaRadio example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/8e251d9511b8/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/dc95ac6d6d4e/main.cpp/)
