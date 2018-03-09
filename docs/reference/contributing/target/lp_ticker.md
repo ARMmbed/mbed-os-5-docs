@@ -48,7 +48,7 @@ We are working on the new HAL low power ticker API, which will replace the curre
 
 To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against the `feature-hal-spec-ticker` branch. You can find the API and specification for the new low power ticker API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
 
 To enable low power ticker support in Mbed OS, add the `LOWPOWERTIMER` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -62,8 +62,8 @@ mbed test -t <toolchain> -m <target> -n tests-mbed_hal-lp_us_ticker*,tests-mbed_
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__ticker__tests.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker__tests.html)
