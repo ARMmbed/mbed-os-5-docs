@@ -4,7 +4,7 @@ All operations on `LoRaWANInterface` return an error code `lorawan_status_t` tha
 
 Here  is the list of error codes and their description.
 
-| Error code    | Value |Description |
+| Error code    | Value | Description |
 | --------------- | ------------- | ----------|
 | `LORAWAN_STATUS_OK`| 0 | Service done successfully |
 | `LORAWAN_STATUS_BUSY`| -1000|  Stack busy |
@@ -16,9 +16,9 @@ Here  is the list of error codes and their description.
 | `LORAWAN_STATUS_FREQ_AND_DR_INVALID`| -1006| When stack was unable to send packet in TX window  |
 |`LORAWAN_STATUS_NO_NETWORK_JOINED`| -1009 | Device is not part of a network yet (Applicable only for OTAA) |
 |`LORAWAN_STATUS_LENGTH_ERROR`| -1010 | Payload lenght error |
-| `LORAWAN_STATUS_DEVICE_OFF`| -1011 | The device is off, i.e., disconnected state |
+| `LORAWAN_STATUS_DEVICE_OFF`| -1011 | The device is off, in other words, disconnected state |
 | `LORAWAN_STATUS_NOT_INITIALIZED`| -1012| Stack not initialized  |
-| `LORAWAN_STATUS_UNSUPPORTED`| -1013|Unsupported service |
+| `LORAWAN_STATUS_UNSUPPORTED`| -1013| Unsupported service |
 | `LORAWAN_STATUS_CRYPTO_FAIL`| -1014| Crypto failure  |
 |`LORAWAN_STATUS_PORT_INVALID`| -1015 | Invalid port |
 |`LORAWAN_STATUS_CONNECT_IN_PROGRESS`| -1016 | Connection in progress (application should wait for CONNECT event) |
