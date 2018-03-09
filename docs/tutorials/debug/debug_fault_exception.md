@@ -13,7 +13,7 @@ When the system crashes due to fault exceptions, the Mbed OS fault exception han
 
 The exceptions supported on your platform depend on the specific Cortex-M core you have in your system.
 
-For example, Cortex-M0 cores (or any ARMv6M cores) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
+For example, Cortex-M0/M0+ processors (or any ARMv6M processors) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. And for ARMv7M processors, MemManage/BusFault/UsageFault exceptions are triggered only if they are enabled in **SHCSR** (System Handler Control and State Register). Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
 
 Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates.
 
@@ -77,6 +77,10 @@ The register context contains key information to determine the cause and locatio
 Note that the **LR** value may not reflect the actual caller, depending on the invocation of the function. You can use the linker address map generated during the build to find the name of the function from the **PC** value. The other key information in the register context is fault status register values (**HFSR, MMFSR, UFSR and BFSR**). The values in these registers indicate the cause of the exception. Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on how to interpret these registers.
 
 The thread information section is split into five subsections corresponding to the state of the thread. For each thread: state of the thread (**State**), entry function address (**EntryFn**), stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**) are reported. You can use the linker address map to find the thread entry function from the **EntryFn** value. You can also use the stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**) value to determine if there is thread stack overflow. For example, if the **SP** value is smaller than the **Mem** value, it indicates stack overflow for that thread.
+
+### Debugging Imprecise bus faults
+
+Cortex-M3 and Cortex-M4 processors have write buffers which is a high-speed memory between the processor and main memory whose purpose is to optimize stores to main memory. This is great for performance as the processor can proceed to next instruction without having to wait for write transaction to be completed, but on the flip side, this can cause imprecise bus faults where in the processor could have executed a number of instructions including branch instructions by the time bus fault is triggered. This makes it harder to debug imprecise faults as we cannot tell which instruction caused the fault. You can verify if you are encountering an imprecise fault by looking at **BFSR.IMPRECISERR** (bit 2 of **BFSR**) status bit. To help debugging such situations, you can try disabling write buffer by setting **DISDEFWBUF** bit in **ACTLR** (Auxiliary Control Register), which makes those exceptions precise. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on fault exception types and information on these registers. Note that disabling write buffer will impact performance and so you probably don't want to do that in production code.
 
 ### Crash dump analyzer script
 
