@@ -32,11 +32,11 @@ Hardware RTC capabilities.
 
 #### Implementing the RTC API
 
-We are working on the new HAL RTC API, which will replace current version in an upcoming release of Mbed OS. You need to implement the RTC API in both variants. First, you need to implement the current API. You can find it on the master branch:
+We are working on the new HAL RTC API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the RTC API in both variants. First, you need to implement the current API. You can find it on the master branch:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/rtc__api_8h_source.html)
 
-To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-rtc` branch. You can find the API and specification for the new RTC API in the following header file:
+To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against the `feature-hal-spec-rtc` branch. You can find the API and specification for the new RTC API in the following header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-rtc-doxy/group__hal__rtc.html)
 

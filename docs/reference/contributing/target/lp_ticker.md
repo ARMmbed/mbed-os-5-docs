@@ -16,7 +16,7 @@ Implementing the low power ticker enables Mbed OS to perform power efficient tim
 - The ticker rolls over at (1 << bits) and continues counting starting from 0.
 - The ticker counts at the specified frequency plus or minus 10%.
 - The ticker increments by 1 each tick.
-- The ticker interrupt fires only when the ticker times increments to or past the value that `ticker_set_interrupt` sets.
+- The ticker interrupt fires only when the ticker time increments to or past the value that `ticker_set_interrupt` sets.
 - It is safe to call `ticker_set_interrupt` repeatedly before the handler is called.
 - The function `ticker_fire_interrupt` causes `ticker_irq_handler` to be called immediately from interrupt context.
 - The ticker operations `ticker_read`, `ticker_clear_interrupt`, `ticker_set_interrupt` and `ticker_fire_interrupt` take less than 20us to complete.
@@ -34,7 +34,7 @@ Be careful around these common trouble areas when implementing this API:
 
 - The ticker cannot drift when rescheduled repeatedly
 - The ticker keeps counting when it rolls over
-- The ticker interrupts fires when the compare value is set to 0 and and overflow occurs
+- The ticker interrupt fires when the compare value is set to 0 and and overflow occurs
 
 #### Dependencies
 
@@ -42,11 +42,11 @@ Hardware low power ticker capabilities.
 
 #### Implementing the low power ticker API
 
-We are working on the new HAL low power ticker API, which will replace current version in an upcoming release of Mbed OS. You need to implement the low power ticker API in both variants. First, you need to implement the current API. You can find it on master branch:
+We are working on the new HAL low power ticker API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the low power ticker API in both variants. First, you need to implement the current API. You can find it on master branch:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/lp__ticker__api_8h_source.html)
 
-To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-ticker` branch. You can find the API and specification for the new low power ticker API in the following header file:
+To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against the `feature-hal-spec-ticker` branch. You can find the API and specification for the new low power ticker API in the following header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
 
