@@ -13,7 +13,7 @@ When the system crashes due to fault exceptions, the Mbed OS fault exception han
 
 The exceptions supported on your platform depend on the specific Cortex-M core you have in your system.
 
-For example, Cortex-M0 cores (or any ARMv6M cores) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
+For example, Cortex-M0 cores (or any ARMv6M cores) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
 
 Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates.
 
@@ -74,7 +74,7 @@ In the example above, you can see that the crash dump indicates the fault except
 
 The register context contains key information to determine the cause and location of crash. For example, you can use **PC** value to find the location of the crash and **LR** to find the caller of the function where the crash occurred.
 
-Note that the **LR** value may not reflect the actual caller, depending on the invocation of the function. You can use the linker address map generated during the build to find the name of the function from the **PC** value. The other key information in the register context is fault status register values (**HFSR, MMFSR, UFSR and BFSR**). The values in these registers indicate the cause of the exception. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on how to interpret these registers.
+Note that the **LR** value may not reflect the actual caller, depending on the invocation of the function. You can use the linker address map generated during the build to find the name of the function from the **PC** value. The other key information in the register context is fault status register values (**HFSR, MMFSR, UFSR and BFSR**). The values in these registers indicate the cause of the exception. Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on how to interpret these registers.
 
 The thread information section is split into five subsections corresponding to the state of the thread. For each thread: state of the thread (**State**), entry function address (**EntryFn**), stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**) are reported. You can use the linker address map to find the thread entry function from the **EntryFn** value. You can also use the stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**) value to determine if there is thread stack overflow. For example, if the **SP** value is smaller than the **Mem** value, it indicates stack overflow for that thread.
 
