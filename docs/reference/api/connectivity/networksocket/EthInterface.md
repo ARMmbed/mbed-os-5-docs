@@ -10,7 +10,7 @@ The EthInterface provides a C++ API for connecting to the internet over Ethernet
 
 To bring up the network interface:
 
-1. Instantiate the `EthInterface` class.
+1. Initiate the `EthInterface` class.
 1. Call the `connect` function.
 1. Once you connect the EthInterface, you can use it as a
 target for opening [network sockets](/docs/development/reference/network-socket.html).
