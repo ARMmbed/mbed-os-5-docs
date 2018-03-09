@@ -6,7 +6,7 @@ In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Onlin
 
 2) For offline development, we provide Arm Mbed CLI, our tool for using Mbed CLI on the command-line. Mbed CLI is compatible with Windows, Linux and OSX. This option provides more configuration options but also requires slightly more setup.
 
-Common to any choice is the ability to import and publish code to Git and Mercurial repositories, export your programs to third party IDEs (Keil UVision, IAR, GCC and so on) for debugging, and build new projects.
+Common to any choice is the ability to import and publish code to Git and Mercurial repositories, export your programs to third party IDEs (Keil UVision, IAR, GCC and so on) for debugging and build new projects.
 
 #### Please choose how to proceed
 
