@@ -22,9 +22,9 @@ When you launch Mbed Studio, you see a login screen (unless you're using an inte
 
 When you arrive in your workspace, it's empty - clean, white and lacking in programs. It's time to start populating it.
 
-The first step is to create a project based on the included `mbed-os-example-blinky` example. You can do this using the Mbed Studio menu or using the context menu in the C++ Projects view of Mbed Studio.
+The first step is to create a project based on the included `mbed-os-example-blinky` example. You can do this using the Mbed Studio menu or using the context menu in the Mbed Projects view of Mbed Studio.
 
-To use the context menu, right-click (Ctrl-click) inside the Mbed Projects or C++ Projects view, and then select `New > Mbed OS Application`. To do the same through the menu, click `File > New > Mbed OS Application` to activate the New Project wizard.
+To use the context menu, right-click (Ctrl-click) inside the Mbed Projects or Mbed Projects view, and then select `New > Mbed OS Application`. To do the same through the menu, click `File > New > Mbed OS Application` to activate the New Project wizard.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-New-Application.png)<span>Create a new Mbed OS application.</span></span>
 
@@ -186,11 +186,11 @@ Mbed Studio automatically sets up the workspace. Use it to keep track of setting
 
 ##### Project
 
-A project is a group of associated files, directories and settings. The `C++ Projects` view lists these projects. In Mbed Studio, each project represents an Mbed OS program or an Mbed OS library. An Mbed Studio project can also represent a program that includes libraries, as well.
+A project is a group of associated files, directories and settings. The `Mbed Projects` view lists these projects. In Mbed Studio, each project represents an Mbed OS program or an Mbed OS library. An Mbed Studio project can also represent a program that includes libraries, as well.
 
 ##### View
 
-In Mbed Studio, a view is a window that has a label, and sometimes options, specific to that window. Examples are the editor, C++ Projects, Console and Outline.
+In Mbed Studio, a view is a window that has a label, and sometimes options, specific to that window. Examples are the editor, Mbed Projects, Console and Outline.
 
 ##### Perspective
 
