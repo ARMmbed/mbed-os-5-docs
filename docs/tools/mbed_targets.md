@@ -2,11 +2,11 @@
 
 Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. When you add new targets with `custom_targets.json`, they are added to the list of available targets.
 
-<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](/docs/development/tools/arm-mbed-cli.html) to take your code offline.</span>
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html) to take your code offline.</span>
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
-```
+```json
     "TEENSY3_1": {
         "inherits": ["Target"],
         "core": "Cortex-M4",
@@ -20,6 +20,7 @@ You are not allowed to redefine existing targets in `custom_targets.json`. To be
         },
         "device_name": "MK20DX256xxx7",
         "detect_code": ["0230"]
+    }
 ```
 
 The style that we use for targets is:
@@ -37,7 +38,7 @@ This section lists all the properties the Mbed build system understands. Unless 
 
 The description of an Mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
-```
+```json
 "Target": {
     "core": null,
     "default_toolchain": "ARM",
@@ -59,7 +60,7 @@ A child target may add properties that don't exist in any of its parents. For ex
 
 It's possible, but discouraged, to inherit from more than one target. For example:
 
-```
+```json
 "ImaginaryTarget": {
     "inherits": ["Target", "TEENSY3_1"]
 }
@@ -103,7 +104,7 @@ When a target inherits, it's possible to alter the values of `macros` in the chi
 
 For example:
 
-```
+```json
     "TargetA": {
         "macros": ["PARENT_MACRO1", "PARENT_MACRO2"]
     },
@@ -148,6 +149,51 @@ The build system errors when you use features outside of this list.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
 
+#### `config` and `overrides`
+
+<span class="notes">**Note:** The [Arm Mbed configuration system](https://os.mbed.com/docs/v5.7/tools/configuring-tools.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
+
+The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a default value, as well as an optional macro name and help text. By default, the macro name is the name of the config. For example:
+
+```json
+"config": {
+    "clock_src": {
+        "help": "Clock source to use, can be XTAL or RC",
+        "value": "XTAL",
+    },
+    "clock_freq": {
+        "help": "Clock frequency in Mhz",
+        "value": "16",
+        "macro_name": "CLOCK_FREQUENCY_MHZ"
+    }
+}
+```
+
+This case defines the config `clock_src` with the default value of `XTAL` for the macro `CLOCK_SRC`, and the config `clock_freq` with the default value of 16 for the macro `CLOCK_FREQUENCY_MHZ`.
+
+_overrides_ allow a child target to change the value of a config. For example, if a child target uses the internal RC clock instead of the crystal, it can add an override:
+
+```json
+"overrides": {
+    "clock_src": "RC"
+}
+```
+
+You can also modify config values for a project using the `target_overrides` key in the `mbed_app.json` file, either for specific targets or as a wildcard. For example:
+
+```json
+"target_overrides": {
+    "*": {
+        "clock_src": "RC"
+    },
+    "NRF51_DK": {
+        "clock_freq": "16"
+    }
+}
+```
+
+This section, in an `mbed_app.json` file, sets the clock source to `RC` on all targets and the clock frequency to 16Mhz on just the `NRF51_DK` target.
+
 #### `device_has`
 
 The list in `device_has` defines what hardware a device has.
@@ -166,7 +212,7 @@ The `default_toolchain` property names the toolchain that compiles code for this
 
 Some targets require specific actions to generate a programmable binary image. Specify these actions using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a Python function that is accessible from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When you do not specify the `toolchains` key for a `post_binary_hook`, you can assume the `post_binary_hook` applies to all toolchains. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
-```
+```json
 "post_binary_hook": {
     "function": "TEENSY3_1Code.binary_hook",
     "toolchains": ["ARM_STD", "ARM_MICRO", "GCC_ARM"]
@@ -179,7 +225,7 @@ The build tools call `TEENSY3_1` `post_binary_hook` when they build using the `A
 
 As for the `TEENSY3_1` code, this is how it looks in `tools/targets/__init__.py`:
 
-```
+```python
 class TEENSY3_1Code:
     @staticmethod
     def binary_hook(t_self, resources, elf, binf):
@@ -199,7 +245,7 @@ Use this property to pass necessary data for exporting to various third party to
 
 We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description](http://www.keil.com/pack/doc/CMSIS/Pack/html/)</a> retrieved from each CMSIS Pack.
 
-The [`"device_name"`](/docs/development/reference/contributing-target.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+The [`"device_name"`](/docs/v5.7/reference/contributing-target.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 156 of the `.pdsc` file:
 
@@ -290,9 +336,9 @@ For each of these target roles, some restrictions are in place:
   - `extra_labels`.
   - `public`.
   - `config`.
+  - `overrides`.
   - `forced_reset_timeout`.
-  - `target_overrides`
-- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `target_overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `target_overries`, on the other hand, are designed for this use case.
+- `macros` are not used. That is intentional: they do not provide any benefit over `config` and `overrides` but can be very difficult to use. In practice it is very difficult to override the value of a macro with a value. `config` and `overrides`, on the other hand, are designed for this use case.
 - `extra_labels` may not contain any target names
 - `device_has` may only contain values from the following list:
   - `ANALOGIN`.
@@ -361,7 +407,7 @@ target errors:
 ---
 hierarchy: Family (LPCTarget) -> MCU (LPC11U24_301) -> ???
 hierarchy errors:
-- no boards found in heirarchy
+- no boards found in hierarchy
 target errors:
   LPC11U24_301:
   - release_versions not found, and is required
