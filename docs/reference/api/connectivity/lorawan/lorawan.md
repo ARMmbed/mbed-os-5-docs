@@ -63,7 +63,7 @@ lorawan.connect(connection);
 
 ### LoRaWAN example
 
-Please visit our [github example repository](https://github.com/ARMmbed/mbed-os-example-lorawan) and follow the instructions in the `README.md`.
+Please visit our [online compiler example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan) and follow the instructions in the `README.md`.
 
 ### Related content
 
