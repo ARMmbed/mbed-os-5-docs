@@ -15,7 +15,7 @@ The exceptions supported on your platform depend on the specific Cortex-M core y
 
 For example, Cortex-M0 cores (or any ARMv6M cores) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. Please look at the **Technical Reference Manual** and **ARM Architecture Reference Manual** documents for more information on exceptions supported for the specific core you have in your system.
 
-Below is an example of the crash dump the Mbed OS fault exception handler generates.
+Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates.
 
 ```
 ++ MbedOS Fault Handler ++
@@ -23,33 +23,36 @@ Below is an example of the crash dump the Mbed OS fault exception handler genera
 FaultType: HardFault
 
 Context:
-R0   : 0000C158
-R1   : 00000000
-R2   : E000ED00
-R3   : 0000AAA3
-R4   : 0000C182
-R5   : 00000000
-R6   : 00000000
-R7   : 00000000
-R8   : 00000000
-R9   : 00000000
-R10  : 00000000
-R11  : 00000000
-R12  : FFFFFFFF
-SP   : 20002E98
-LR   : 00001799
-PC   : 00001774
-xPSR : 210F0000
-PSP  : 20002E30
-MSP  : 2002FFD8
-CPUID: 410FC241
-HFSR : 40000000
-MMFSR: 00000000
-BFSR : 00000000
-UFSR : 00000100
-DFSR : 00000008
-AFSR : 00000000
-SHCSR: 00000000
+R0   : 0000C158     - R0 at the time of exception
+R1   : 00000000     - R1 at the time of exception
+R2   : E000ED00     - R2 at the time of exception
+R3   : 0000AAA3     - R3 at the time of exception
+R4   : 0000C182     - R4 at the time of exception
+R5   : 00000000     - R5 at the time of exception
+R6   : 00000000     - R6 at the time of exception
+R7   : 00000000     - R7 at the time of exception
+R8   : 00000000     - R8 at the time of exception
+R9   : 00000000     - R9 at the time of exception
+R10  : 00000000     - R10 at the time of exception
+R11  : 00000000     - R11 at the time of exception
+R12  : FFFFFFFF     - R12 at the time of exception
+SP   : 20002E98     - SP/R13 at the time of exception
+LR   : 00001799     - LR/R14 at the time of exception
+PC   : 00001774     - PC at the time of exception
+xPSR : 210F0000     - xPSR at the time of exception
+PSP  : 20002E30     - PSP value after the exception happened
+MSP  : 2002FFD8     - MSP value after the exception happened
+CPUID: 410FC241     - CPUID Register Value
+HFSR : 40000000     - HFSR value after the exception happened
+MMFSR: 00000000     - MMFSR value after the exception happened
+BFSR : 00000000     - BFSR value after the exception happened
+UFSR : 00000100     - UFSR value after the exception happened
+DFSR : 00000008     - DFSR value after the exception happened
+AFSR : 00000000     - AFSR value after the exception happened
+SHCSR: 00000000     - SHCSR value after the exception happened
+Mode : Thread       - Processor mode at the time of exception
+Priv : Privileged   - Privilege level at the time of exception
+Stack: PSP          - Stack pointer in use at the time of exception
 
 Thread Info:
 Current:
