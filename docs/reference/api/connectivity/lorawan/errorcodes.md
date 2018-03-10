@@ -8,7 +8,7 @@ Here  is the list of error codes and their description.
 | --------------- | ------------- | ----------|
 | `LORAWAN_STATUS_OK`| 0 | Service done successfully |
 | `LORAWAN_STATUS_BUSY`| -1000|  Stack busy |
-|`LORAWAN_STATUS_WOULD_BLOCK`| -1001 | Stack cannot send at the moment or have nothing to read|
+|`LORAWAN_STATUS_WOULD_BLOCK`| -1001 | Stack cannot send at the moment or have nothing to read |
 | `LORAWAN_STATUS_SERVICE_UNKNOWN`| -1002 | Unknown service request |
 | `LORAWAN_STATUS_PARAMETER_INVALID`| -1003 | Invalid parameter  |
 | `LORAWAN_STATUS_FREQUENCY_INVALID`| -1004| Invalid frequency  |
@@ -23,4 +23,4 @@ Here  is the list of error codes and their description.
 |`LORAWAN_STATUS_PORT_INVALID`| -1015 | Invalid port |
 |`LORAWAN_STATUS_CONNECT_IN_PROGRESS`| -1016 | Connection in progress (application should wait for CONNECT event) |
 |`LORAWAN_STATUS_NO_ACTIVE_SESSIONS`| -1017 | No active session in progress |
-|`LORAWAN_STATUS_IDLE`| -1018 | Stack idle at the moment|
+|`LORAWAN_STATUS_IDLE`| -1018 | Stack idle at the moment |
