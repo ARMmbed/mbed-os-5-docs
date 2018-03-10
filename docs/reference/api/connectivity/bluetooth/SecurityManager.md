@@ -18,4 +18,4 @@ Security requests may come explicitly from the user application or implicitly fr
 
 The SecurityManager example demonstrates both a central and a peripheral connecting and performing basic pairing and setting up link security.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-SM/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-SM/file/fcb1e0b995a9/source/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-SM/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-SM/file/fcb1e0b995a9/source/main.cpp)
