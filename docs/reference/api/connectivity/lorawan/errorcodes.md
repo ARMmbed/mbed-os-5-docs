@@ -1,4 +1,4 @@
-<h2 id="lorawan-error-codes">Mbed LoRaWAN Stack error codes</h2>
+<h3 id="lorawan-error-codes">Mbed LoRaWAN Stack error codes</h3>
 
 All operations on `LoRaWANInterface` return an error code `lorawan_status_t` that reflects success or failure of the operation.
 
