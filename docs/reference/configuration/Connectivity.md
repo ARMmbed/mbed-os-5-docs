@@ -4,6 +4,16 @@
 Configuration parameters
 ------------------------
 
+Name: use-apn-lookup
+    Description: Use APN database lookup
+    Defined by: library:cellular
+    Macro name: MBED_CONF_CELLULAR_USE_APN_LOOKUP
+    Value: 1 (set by library:cellular)
+Name: random_max_start_delay
+    Description: Maximum random delay value used in start-up sequence in milliseconds
+    Defined by: library:cellular
+    Macro name: MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY
+    Value: 0 (set by library:cellular)
 Name: ppp-cell-iface.apn-lookup
     Defined by: library:ppp-cell-iface
     No value set

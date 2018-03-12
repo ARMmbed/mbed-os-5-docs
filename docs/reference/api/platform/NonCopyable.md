@@ -6,16 +6,16 @@ We recommend using the NonCopyable class whenever a class owns a resource (lock/
 
 ### NonCopyable class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_non_copyable.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_non_copyable.html)
 
 ### NonCopyable example
 
-Copying objects of classes used for locking, network encapsulation, hardware bus and so on should not occur. Mbed OS has noncopyable classes, such as [Mutex](/docs/v5.7/reference/mutex.html), [EventFlags](/docs/v5.7/reference/eventflags.html), [BusOut](/docs/v5.7/reference/busout.html), [InterruptIn](/docs/v5.7/reference/interruptin.html) and [I2C](/docs/v5.7/reference/i2c.html).
+Copying objects of classes used for locking, network encapsulation, hardware bus and so on should not occur. Mbed OS has noncopyable classes, such as [Mutex](/docs/development/reference/mutex.html), [EventFlags](/docs/development/reference/eventflags.html), [BusOut](/docs/development/reference/busout.html), [InterruptIn](/docs/development/reference/interruptin.html) and [I2C](/docs/development/reference/i2c.html).
 
 ### Related content
 
-- [Mutex](/docs/v5.7/reference/mutex.html) API reference.
-- [EventFlags](/docs/v5.7/reference/eventflags.html) API reference.
-- [BusOut](/docs/v5.7/reference/busout.html) API reference.
-- [InterruptIn](/docs/v5.7/reference/interruptin.html) API reference.
-- [I2C](/docs/v5.7/reference/i2c.html) API reference.
+- [Mutex](/docs/development/reference/mutex.html) API reference.
+- [EventFlags](/docs/development/reference/eventflags.html) API reference.
+- [BusOut](/docs/development/reference/busout.html) API reference.
+- [InterruptIn](/docs/development/reference/interruptin.html) API reference.
+- [I2C](/docs/development/reference/i2c.html) API reference.

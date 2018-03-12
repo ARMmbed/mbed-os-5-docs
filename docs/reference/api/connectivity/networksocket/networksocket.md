@@ -2,14 +2,14 @@
 
 This section covers the main connectivity APIs in Arm Mbed OS, which are:
 
-- [Ethernet](/docs/v5.7/reference/ethernet.html): API for connecting to the internet over an Ethernet connection.
-- [Wi-Fi](/docs/v5.7/reference/wi-fi.html): API for connecting to the internet with a Wi-Fi device.
-- [Cellular](/docs/v5.7/reference/cellular-api.html): API for connecting to the internet using a cellular device.
+- [Ethernet](/docs/development/reference/ethernet.html): API for connecting to the internet over an Ethernet connection.
+- [Wi-Fi](/docs/development/reference/wi-fi.html): API for connecting to the internet with a Wi-Fi device.
+- [Cellular](/docs/development/reference/cellular-api.html): API for connecting to the internet using a cellular device.
 - Mesh networking: Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
-- [UDPSocket](/docs/v5.7/reference/udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
-- [TCPSocket](/docs/v5.7/reference/tcpsocket.html): This class provides the ability to send a stream of data over TCP.
-- [TCPServer](/docs/v5.7/reference/tcpserver.html): This class provides the ability to accept incoming TCP connections.
-- [SocketAddress](/docs/v5.7/reference/socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
+- [UDPSocket](/docs/development/reference/udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
+- [TCPSocket](/docs/development/reference/tcpsocket.html): This class provides the ability to send a stream of data over TCP.
+- [TCPServer](/docs/development/reference/tcpserver.html): This class provides the ability to accept incoming TCP connections.
+- [SocketAddress](/docs/development/reference/socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 
 Continue reading for detailed reference material about some of these APIs.
 
@@ -19,7 +19,7 @@ The network-socket API provides a common interface for using sockets on network 
 
 ##### Network errors
 
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](https://os-doc-builder.test.mbed.com/docs/v5.7/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
+The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
 ``` cpp
 /** Enum of standardized error codes
@@ -61,7 +61,7 @@ The callback may be called in interrupt context and should not perform operation
 
 ##### Socket
 
-You can use the [Socket](/docs/v5.7/mbed-os-api-doxy/class_socket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
+You can use the [Socket](/docs/development/mbed-os-api-doxy/class_socket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
 
 ##### NetworkInterface
 
@@ -69,19 +69,19 @@ A socket requires a NetworkInterface instance when opened to indicate which Netw
 
 Existing network interfaces:
 
-- [EthInterface](/docs/v5.7/reference/ethernet.html).
-- [WiFiInterface](/docs/v5.7/reference/wi-fi.html).
+- [EthInterface](/docs/development/reference/ethernet.html).
+- [WiFiInterface](/docs/development/reference/wi-fi.html).
 
 ##### Example applications
 
 Here are example applications that are built on top of the network-socket API:
 
-* [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
-* [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
-* [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
-* [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
-* [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
-* [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
+- [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
+- [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
+- [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
+- [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
+- [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
+- [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
 
 ##### Example
 
@@ -89,36 +89,17 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-#### Arm Mbed Mesh
-
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.7/tutorials/mesh.html#nanostack) networking stack.
-
-Mbed OS provides two types of IPv6 based mesh networks:
-
-* 6LoWPAN_ND, loosely following the Zigbee-IP specification.
-* Thread, following the specification from Thread Group.
-
-Nanostack is the networking stack which provides both of these protocols. For more information on the stack internals, refer to [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through Mbed Mesh API.
-
-The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network and when successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
-
-The `NanostackEthernetInterface` is provided for Ethernet.
-
-##### Supported mesh networking modes
-
-Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
-
 #### Cellular
 
-The [CellularBase](/docs/v5.7/mbed-os-api-doxy/class_cellular_base.html) provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver).
+Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html).
 
 ##### Getting started
 
 1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
 
-1. Clone [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular). Follow the instructions in the repository.
+1. Clone [`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/). Follow the instructions in the repository.
 
     1. Compile the code.
     1. Flash the board.
@@ -126,17 +107,16 @@ Arm Mbed OS provides a [reference implementation of CellularBase](https://github
    You see output similar to the excerpt below:
 
 ```
-
-mbed-os-example-cellular, Connecting...
-
-
+mbed-os-example-cellular
+Establishing connection ...... 
+ 
 Connection Established.
-UDP: Sent 4 Bytes to echo.u-blox.com
+TCP: connected with echo.mbedcloudtesting.com server
+TCP: Sent 4 Bytes to echo.mbedcloudtesting.com
 Received from echo server 4 Bytes
-
-
+ 
+ 
 Success. Exiting
-
 ```
 
 ##### Basic working principles
@@ -151,11 +131,30 @@ You can use and extend a cellular interface in various different ways. For examp
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [a generic modem driver](https://github.com/ARMmbed/mbed-os/tree/master/features/netsocket/cellular/generic_modem_driver). In other words, CellularInterface uses PPP. We can summarize this particular design as follows:
+[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [an easy cellular connection](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
 
-- It uses an external IP stack (for example, LWIP) instead of on-chip network stacks.
-- The generic modem driver uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and registers to the network.
-- After registration, the driver opens up a PPP (Point-to-Point Protocol) pipe using LWIP with the cellular modem and connects to the internet.
+- It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
+- The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
+- After registration, the driver opens a PPP pipe using LWIP with the cellular modem and connects to the internet. If AT only mode is in use, then modem-specific AT commands are used for socket data control.
+
+#### Arm Mbed Mesh
+
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.7/tutorials/mesh.html#nanostack) networking stack.
+
+Mbed OS provides two types of IPv6 based mesh networks:
+
+- 6LoWPAN_ND, loosely following the Zigbee-IP specification.
+- Thread, following the specification from Thread Group.
+
+Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through the Mbed Mesh API.
+
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
+
+Mbed OS provides `NanostackEthernetInterface` for Ethernet.
+
+##### Supported mesh networking modes
+
+Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
 
 ##### Module configuration
 
