@@ -1,6 +1,6 @@
 ## Bootloader configuration
 
-This page describes each bootloader configuration parameter in detail. For a guide on using the managed and unmanaged bootloader modes, please see [the bootloader tutorial](/docs/v5.7/tutorials/bootloader.html).
+This page describes each bootloader configuration parameter in detail. For a guide on using the managed and unmanaged bootloader modes, please see [the bootloader tutorial](/docs/development/tutorials/bootloader.html).
 
 There are 4 configuration parameters that affect the location of an application in ROM:
 

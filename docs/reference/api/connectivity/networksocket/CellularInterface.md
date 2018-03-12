@@ -6,7 +6,7 @@ Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc
 
 ### CellularBase class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html)
 
 ### Usage
 

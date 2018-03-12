@@ -1,10 +1,10 @@
-<h2 id="quickstart-offline">Offline - Arm Mbed CLI</h2>
+<h2 id="quick-start-offline">Offline - Arm Mbed CLI</h2>
 
 ### Setup
 
 The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally. 
 
-[**Windows**](#windows) | [**OSX**](#mac-osx) | [**Linux**](#linux)
+[**Windows**](#windows) | [**Mac OS X**](#mac-os-x) | [**Linux**](#linux)
 
 #### Windows
 
@@ -32,7 +32,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### Mac OSX
+#### Mac OS X
 
 ##### 1. Install Python and Pip
 
@@ -68,7 +68,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### Linux 
+#### Linux
 
 ##### 1. Install Python and Pip
 
@@ -153,6 +153,9 @@ Invoke `mbed detect` from your command-line to determine which communication por
 
 ### Further reading
 
+More examples:
+- [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
+
 - Documentation
   - [Mbed OS APIs](https://os.mbed.com/docs/latest/reference/apis.html) - list of all APIs available in Mbed OS.
   - [Peripheral drivers](https://os.mbed.com/docs/latest/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
@@ -162,7 +165,7 @@ Invoke `mbed detect` from your command-line to determine which communication por
   - [Serial communications](https://os.mbed.com/docs/latest/tutorials/serial-communication.html).
   - [Optimizing binary size](https://os.mbed.com/docs/latest/tutorials/optimizing.html).
 
-- Other resources 
+- Other resources
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
   - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
   - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.

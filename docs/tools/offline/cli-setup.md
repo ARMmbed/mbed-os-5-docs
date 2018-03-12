@@ -2,7 +2,7 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](/docs/v5.7/tools/installing-with-the-windows-installer.html). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](/docs/v5.7/tools/installing-manually.html).</span>
+<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](/docs/development/tools/installing-with-the-windows-installer.html). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](/docs/development/tools/installing-manually.html).</span>
 
 ## Requirements
 
@@ -47,7 +47,7 @@ The Windows installer for Mbed CLI includes the following components:
     - [Git](https://git-scm.com/) - version 2.12.2.
     - [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- **Mbed Windows serial port driver** - [serial port driver](/docs/v5.7/tutorials/windows-serial-driver.html).
+- **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
 
 ### Running the installer
 
@@ -72,7 +72,7 @@ $ mbed_installer_{version}.exe /S
 
 ### After installation
 
-Please see the [configuration section](/docs/v5.7/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
 ## Installing manually
 
@@ -108,7 +108,7 @@ On Linux or Mac, you may need to run with `sudo`.
 
 ### After installation
 
-Please see the [configuration section](/docs/v5.7/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
 ## Configuring Mbed CLI
 
