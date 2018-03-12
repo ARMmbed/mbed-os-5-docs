@@ -37,6 +37,7 @@ Hardware SAI/I²S capabilities.
 #### Implementing the RTC API
 
 You can find the API and specification for the SAI API in the following header file:
+
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-sai/group__hal__sai.html)
 
 To enable SAI support in Mbed OS, add the `SAI` label in the `device_has` option of the target's section in the `targets.json` file.
