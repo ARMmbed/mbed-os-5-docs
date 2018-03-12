@@ -14,14 +14,14 @@ The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbe
 
 To bring up the Mbed LoRaWAN stack, consider the following progression: 
 
-1) An [EventQueue](https://os.mbed.com/docs/v5.8/reference/eventqueue.html) object: 
+1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/development/reference/eventqueue.html) object: 
 
 ```cpp
 // construct an event queue 
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
-2) A [LoRaRadio](https://os.mbed.com/docs/v5.8/reference/loraradio.html) object:
+2) A [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/development/reference/loraradio-api.html) object:
 
 ```CPP
 // construct a LoRadio object
