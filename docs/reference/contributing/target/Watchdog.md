@@ -46,4 +46,4 @@ You can read more about the test cases here:
 
  [![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-watchdog/TESTS/mbed_hal/watchdog/watchdog_api_tests.h)
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-watchdog/TESTS/mbed_hal/watchdog/watchdog_reset_tests.h)
+[![View code](https://www.mbed.com/embed/?type=library)](https://github.com/ARMmbed/mbed-os/blob/feature-watchdog/TESTS/mbed_hal/watchdog_reset/watchdog_reset_tests.h)
