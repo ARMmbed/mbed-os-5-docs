@@ -6,35 +6,35 @@ Your application code is written in C and C++. It uses the *application programm
 
 #### Where to start
 
-<span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.7/tutorials/windows-serial-driver.html).
+<span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/development/tutorials/windows-serial-driver.html).
 
-The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/v5.7/tutorials/your-first-program.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/development/tutorials/your-first-program.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
-Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.7/reference/index.html).
+Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/development/reference/index.html).
 
 ##### Development tools
 
-- Our offline development tool is [Arm Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html), a command-line tool. This requires having a toolchain installed on your computer.
-- The [Arm Mbed Online Compiler](/docs/v5.7/tools/arm-online-compiler.html) lets you write and build applications using a web browser.
-- If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.7/tools/exporting.html).
+- Our offline development tool is [Arm Mbed CLI](/docs/development/tools/arm-mbed-cli.html), a command-line tool. This requires having a toolchain installed on your computer.
+- The [Arm Mbed Online Compiler](/docs/development/tools/arm-online-compiler.html) lets you write and build applications using a web browser.
+- If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/development/tools/exporting.html).
 
 ##### Communicating with and monitoring your board
 
-You can [monitor and control an Mbed board](/docs/v5.7/tutorials/serial-comm.html) to help you debug and test your applications.
+You can [monitor and control an Mbed board](/docs/development/tutorials/serial-comm.html) to help you debug and test your applications.
 
-<span class="tips">**Tip:** Learn more about debugging in the [debugging applications section](/docs/v5.7/tutorials/debugging-applications.html).</span>
+<span class="tips">**Tip:** Learn more about debugging in the [debugging applications section](/docs/development/tutorials/debugging-applications.html).</span>
 
 #### How to continue
 
 When you've started writing applications using your selected development tool:
 
-- Learn about [collaborative work and version control](/docs/v5.7/tools/collab-online-comp.html).
-- Try one of the [tutorials](/docs/v5.7/tutorials/index.html), which cover concepts such as debugging and memory tracing.
+- Learn about [collaborative work and version control](/docs/development/tools/collab-online-comp.html).
+- Try one of the [tutorials](/docs/development/tutorials/index.html), which cover concepts such as debugging and memory tracing.
 - Ask questions and give advice on the [forum](https://os.mbed.com/forum/).
 
 #### Contributing to Mbed OS
 
-If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.7/reference/contributing.html).
+If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/development/reference/contributing.html).
 
 You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
 
@@ -42,9 +42,9 @@ You can find past releases and the current release on [GitHub](https://github.co
 
 Our full contributing guide is still being written. For now, we have:
 
-- A guide to [contributing targets](/docs/v5.7/reference/contributing-target.html).
-- Information about the [tools you need to contribute targets](/docs/v5.7/reference/contributing-tools.html).
-- APIs about [storage](/docs/v5.7/reference/contributing-storage.html) and [connectivity](/docs/v5.7/reference/contributing-connectivity.html) in relation to porting.
+- A guide to [contributing targets](/docs/development/reference/contributing-target.html).
+- Information about the [tools you need to contribute targets](/docs/development/reference/contributing-tools.html).
+- APIs about [storage](/docs/development/reference/contributing-storage.html) and [connectivity](/docs/development/reference/contributing-connectivity.html) in relation to porting.
 
 ## How Mbed works
 
@@ -73,7 +73,7 @@ The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use
 
 #### The Arm Mbed interface
 
-You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.7/reference/contributing-tools.html#arm-mbed-hdk) or on the [DAPLink page](/docs/v5.7/tools/daplink.html). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
+You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/development/reference/contributing-tools.html#arm-mbed-hdk) or on the [DAPLink page](/docs/development/tools/daplink.html). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
 #### Connectivity
 
