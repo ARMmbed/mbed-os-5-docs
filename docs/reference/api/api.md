@@ -6,6 +6,7 @@ The [APIs](/docs/development/introduction/glossary.html) in this document are or
 - [Drivers](/docs/development/reference/drivers.html): analog and digital input and outputs and digital interfaces.
 - [RTOS](/docs/development/reference/rtos.html): handling tasks and events in Mbed OS.
 - [Network Socket](/docs/development/reference/network-socket.html): network sockets, Ethernet, Wi-Fi, cellular and mesh networking.
+- [LoRaWAN](/docs/development/reference/lorawan.html): low power wide area network.
 - [Bluetooth](/docs/development/reference/bluetooth.html): bluetooth low energy.
 - [Security](/docs/development/reference/security.html): working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
 - [Storage](/docs/development/reference/storage.html): working with the file system.

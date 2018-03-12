@@ -387,6 +387,30 @@
                         ]
                     },
                     {
+                        "title": "LoRaWAN",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawan.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawanconfig.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawanevents.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/errorcodes.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/loraradio.md"
+                            }
+                        ]
+                    },
+                    {
                         "title": "Security",
                         "intro": {
                             "type": "markdown",
