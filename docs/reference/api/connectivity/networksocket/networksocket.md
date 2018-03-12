@@ -91,15 +91,15 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 #### Cellular
 
-The [CellularBase](/docs/v5.7/mbed-os-api-doxy/class_cellular_base.html) provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/easy_cellular).
+Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html).
 
 ##### Getting started
 
 1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
 
-1. Clone [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular). Follow the instructions in the repository.
+1. Clone [`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/). Follow the instructions in the repository.
 
     1. Compile the code.
     1. Flash the board.
@@ -108,15 +108,14 @@ Arm Mbed OS provides a [reference implementation of CellularBase](https://github
 
 ```
 mbed-os-example-cellular
-PIN code set
-Establishing connection
-
-
+Establishing connection ...... 
+ 
 Connection Established.
-UDP: Sent 4 Bytes to echo.mbedcloudtesting.com
+TCP: connected with echo.mbedcloudtesting.com server
+TCP: Sent 4 Bytes to echo.mbedcloudtesting.com
 Received from echo server 4 Bytes
-
-
+ 
+ 
 Success. Exiting
 ```
 
@@ -132,7 +131,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses [an easy cellular connection](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/easy_cellular). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
+[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [an easy cellular connection](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
 
 - It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
