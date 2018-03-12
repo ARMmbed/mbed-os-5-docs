@@ -6,7 +6,7 @@ Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc
 
 ### CellularBase class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html)
 
 ### Usage
 
@@ -20,7 +20,7 @@ To bring up the network interface:
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/file/0f644d6045cf/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/file/0f644d6045cf/main.cpp)
 
 ### Related content
 
