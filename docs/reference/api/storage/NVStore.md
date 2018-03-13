@@ -12,4 +12,4 @@ NVStore uses two Flash areas, active and nonactive. Each area must consist of at
 
 ### NVStore example
 
-[![View code](https://www.mbed.com/embed/?url=http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nvstore)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nvstore/file/0a3e19b12855/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nvstore/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nvstore/file/0a3e19b12855/main.cpp)
