@@ -95,4 +95,36 @@ Name: littlefs.enable_error
     Defined by: library:littlefs
     Macro name: MBED_LFS_ENABLE_ERROR
     Value: null (set by library:littlefs)
+
+Name: nvstore.max_keys
+    Description:
+        Maximal number of allowed NVStore keys.
+    Defined by: library:nvstore
+    Macro name: NVSTORE_MAX_KEYS
+    Value: 16 (set by library:nvstore)
+Name: nvstore.area_1_address
+    Description:
+        Address of the first NVStore area in flash.
+    Defined by: library:nvstore
+    Macro name: NVSTORE_AREA_1_ADDRESS
+    Value: null (set by library:nvstore)
+Name: nvstore.area_1_size
+    Description:
+        Size of the first NVStore area in flash.
+    Defined by: library:nvstore
+    Macro name: NVSTORE_AREA_1_SIZE
+    Value: null (set by library:nvstore)
+Name: nvstore.area_2_address
+    Description:
+        Address of the second NVStore area in flash.
+    Defined by: library:nvstore
+    Macro name: NVSTORE_AREA_2_ADDRESS
+    Value: null (set by library:nvstore)
+Name: nvstore.area_2_size
+    Description:
+        Size of the second NVStore area in flash.
+    Defined by: library:nvstore
+    Macro name: NVSTORE_AREA_2_SIZE
+    Value: null (set by library:nvstore)
+
 ```
