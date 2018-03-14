@@ -109,7 +109,7 @@ void main()
 
 #### Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/group__rtos___idle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__rtos___idle.html)
 
 ### Example
 
