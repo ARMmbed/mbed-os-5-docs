@@ -8,11 +8,11 @@ A functional Mbed OS USB device consists of three parts - an implementation of U
 - USBDevice - the core of Mbed OS's USB stack and is responsible for state management and synchronization.
 - USB component - code that inherits from USBDevice and provides the desired USB interfaces.
 
-![USB class hierarchy](usb/usb_inheritance_diagram.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_inheritance_diagram.png)</span>
 
 You can see the interaction of these three components in this diagram:
 
-![USB connection diagram](usb/usb_connection_diagram.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_connection_diagram.png)</span>
 
 #### Synchronization
 
@@ -75,7 +75,7 @@ Table of control callbacks and the required response:
 | callback_set_configuration(configuration)         | complete_set_configuration(result)       |
 | callback_set_interface(interface, alternate)      | complete_set_interface(result)           |
 
-![USB control state diagram](usb/usb_control_state_diagram_user.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_control_state_diagram_user.png)</span>
 
 The USB stack guarantees the setup packet passed to `callback_request` and `callback_request_xfer_done` remains valid and unchanged up to the point the USB component completes the request with `complete_request` and `complete_request_xfer_done`. Additionally, when the USB component calls `complete_request` with the value `Receive` or `Send`, the USB stack guarantees that `callback_request_xfer_done` is called. If the USB component calls `complete_request` with a buffer and size, that buffer must remain valid and unchanged until USBDevice calls the function `callback_request_xfer_done`.
 
@@ -87,7 +87,7 @@ When a USB component adds an endpoint, you can either write to it with `write` o
 
 Below is a diagram showing the typical state machine for read (OUT) and write (IN) transfers.
 
-![USB endpoint state diagram](usb/usb_endpoint_state_diagram_user.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_endpoint_state_diagram_user.png)</span>
 
 #### Endpoint configuration
 
