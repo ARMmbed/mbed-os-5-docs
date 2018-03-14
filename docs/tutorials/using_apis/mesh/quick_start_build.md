@@ -1,8 +1,10 @@
-### Build time configuration of the stack
+### Build time configuration of the Nanostack
 
-To minimize the size of the produced stack, Nanostack defines a set of build options.
+The build time configuration of Nanostack uses the Mbed configuration system. The application needs to create an `mbed_app.json` configuration file if you want to use settings other than default settings. You can also minimize the size of the produced stack by using different build options.
 
 #### Build options
+
+This table demonstrate the difference in binary size between builds:
 
 Option Name | Features supported | Binary size in Mbed OS 5.5
 ------------| -------------------|------------------------------------
@@ -33,7 +35,7 @@ Select the device role:
 - Mesh network. A router. (default)
 - Star network. A non-routing device. Also known as a host, or sleepy host.
 
-Modify your `mbed_app.json` file to tell which Nanostack configuration to choose and which configrations to use on [Mbed Mesh API](/docs/v5.6/reference/mesh.html).
+Modify your `mbed_app.json` file to direct which Nanostack configuration to choose. The [Mbed Mesh API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json) lists all configurations (6LoWPAN and Thread).
 
 An example of the `mbed_app.json` file:
 
@@ -74,3 +76,48 @@ Then you may optionally choose to select the non-routing mode for those networks
 |Mesh router (default) | `thread_router` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
 |Non-routing device | `thread_end_device` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
 
+##### Configuration parameters for 6LoWPAN-ND and Thread
+
+All 6LoWPAN and Thread configuration options are described below.
+Make sure that all your devices use the same network configuration (both nodes and border router)
+
+```
+
+**Configurable parameters in the `mbed-mesh-api` section**
+
+| Parameter name  | Value         | Description |
+| --------------- | ------------- | ----------- |
+| `heap-size`       | number [0-0xfffe] | Nanostack's internal heap size |
+
+**Thread related configuration parameters**
+
+| Parameter name  | Value         | Description |
+| --------------- | ------------- | ----------- |
+| `thread-pskd`     | string [6-255 chars] | Human-scaled commissioning credentials. |
+| `thread-use-static-link-config` | boolean | True: Use the below link config, False: Use commissioning, ignore the below link config. |
+| `thread-device-type` | enum from `mesh_device_type_t` | Supported device operating modes:<br> `MESH_DEVICE_TYPE_THREAD_ROUTER`<br> `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE`<br> `MESH_DEVICE_TYPE_THREAD_MINIMAL_END_DEVICE` |
+| `thread-config-channel-mask` | number [0-0x07fff800] | Channel mask, 0x07fff800 is used for Thread networks (2.4GHz). |
+| `thread-config-channel-page` | number [0]| Channel page, 0 for 2,4 GHz radio. |
+| `thread-config-channel`      | number [11-26] | RF channel to use. |
+| `thread-config-panid`        | number [0-0xFFFF] | Network identifier. |
+| `thread-config-network-name` | string [1-16] |
+| `thread-config-commissioning-dataset-timestamp` | [0-0xFFFFFFFFFFFFFFFF] | [48 bit timestamp seconds]-[15 bit timestamp ticks]-[U bit] |
+| `thread-config-extended-panid` | byte array [8] | Extended PAN ID. |
+| `thread-master-key`      | byte array [16]| Network master key. |
+| `thread-config-ml-prefix` | byte array [8] | Mesh local prefix. Should follow the FD00::/8 prefix format  |
+| `thread-config-pskc`      | byte array [16] | Pre-Shared Key for the Commissioner. |
+| `thread-security-policy` | number [0-0xFF] | Commissioning security policy bits. |
+
+**6LoWPAN related configuration parameters**
+
+| Parameter name  | Type     | Description |
+| --------------- | ---------| ----------- |
+| `6lowpan-nd-channel-mask`    | number [0-0x07fff800] | Channel mask, bit-mask of channels to use. |
+| `6lowpan-nd-channel-page`   | number [0, 2] | 0 for 2,4 GHz and 2 for sub-GHz radios. |
+| `6lowpan-nd-channel`        | number [0-26] | RF channel to use when `channel_mask` is not defined. |
+| `6lowpan-nd-panid-filter` | number [0-0xffff] | Beacon PAN ID filter, 0xffff means no filtering. |
+| `6lowpan-nd-security-mode` | "NONE" or "PSK" | To use either no security, or Pre shared network key. |
+| `6lowpan-nd-psk-key-id` | number | PSK key ID when PSK is enabled. |
+| `6lowpan-nd-psk-key` | byte array [16] | Pre-Shared network key. |
+| `6lowpan-nd-sec-level` | number [1-7] | Network security level. Use default `5`. |
+| `6lowpan-nd-device-type` | "NET_6LOWPAN_ROUTER" or "NET_6LOWPAN_HOST" | Device mode. Router is routing packets from other device, creating a mesh network. |

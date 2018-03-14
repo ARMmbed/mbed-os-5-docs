@@ -44,6 +44,8 @@ To get the MAC address for your end device, connect the node to the Thread netwo
 
 For example, in the **mesh-minimal** application, place this `printf("MAC address = %s\n", mesh.get_mac_address());` after `printf("connected. IP = %s\n", mesh.get_ip_address());`
 
+It is also possible to use the Mesh API (ThreadInterface.h) to set values for these parameters.
+
 There are four additional (optional) query parameters you can put into this field:
 
 - `vn`    Vendor name.
@@ -54,6 +56,8 @@ There are four additional (optional) query parameters you can put into this fiel
 Once you have completed the details, proceed to generate the QR code for your end device.
 
 #### Using the Thread commissioning application
+
+When building a Thread example application, do not change any of the PSKc related parameters (network name, extended PAN ID or PSKc). PSKc has been precalculated for the application. `Thread Network` is the network password that is required by the commissioning application to commission the mbed Thread examples.
 
 You can use the [Thread Android application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) for commissioning. Download and install this on your Android device, turn on Wi-Fi and start the app. Then follow these steps after ensuring all the requirements listed above are satisfied:
 
