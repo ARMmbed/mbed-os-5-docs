@@ -12,7 +12,7 @@ The BatteryService class implements the Bluetooth Battery Service as defined by 
 
 ### BatteryService example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/file/5d8484f69181/source/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/file/5d8484f69181/source/main.cpp)
 
 ### Related content
 
