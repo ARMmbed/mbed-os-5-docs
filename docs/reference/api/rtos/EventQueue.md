@@ -45,7 +45,7 @@ Like the previous example, this defers from interrupt to an event queue thread. 
 
 As the event queue is shared, you should limit the execution time of your event functions to avoid delaying other users’ events excessively.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/file/7c7d5b625e59/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/file/7c7d5b625e59/main.cpp)
 
 ### Shared event example: running the shared queue from main
 
@@ -53,4 +53,4 @@ To further save RAM, if you have no other work to do in your main function after
 
 To do this, set the `mbed_app.json` configuration option `events.shared-dispatch-from-application` to true, and add a dispatch call to main, as in this example. (The prints now show the same context for startup and `fall_handler`).
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/file/154179bdc39d/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/file/154179bdc39d/main.cpp)
