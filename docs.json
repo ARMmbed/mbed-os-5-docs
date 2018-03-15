@@ -796,6 +796,10 @@
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/mbed-os-2-vs-5.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/migrate-from-mbed-os-2-to-5.md"
                     }
                 ]
             },
