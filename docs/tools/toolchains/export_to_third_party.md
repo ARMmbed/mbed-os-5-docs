@@ -100,7 +100,18 @@ Make itself does not compile source code. It relies on a compiler such as:
 - The IAR Arm compiler bundled with the IAR Embedded Workbench.
 - Arm Compiler 5.
 
-<span class="notes">**Note:** As stated above, you should ensure that the compiler you are exporting to is accessible using your `PATH` environment variable, as Makefile requires this. For example, when using an exported Makefile from make_armc5, the command `armcc` should print a help message about how to use Arm Compiler 5.</span>
+<span class="notes">**Note:** Ensure that the compiler you are exporting to is accessible using your `PATH` environment variable because Makefile requires this. For example, when using an exported Makefile from `make_armc5`, the command `armcc` prints a help message about how to use Arm Compiler 5.</span>
+
+If you do not add your compiler to the `PATH` environment variable, running Make results in an error such as the errors below.
+
+```
+make[1]: armcc: Command not found
+```
+```
+make (e=2): The system cannot find the file specified.
+```
+
+When you encounter an error such as these, add the directory containing the compiler executable to your `PATH` environment variable. Afterward, you may need to open a new terminal or log out and log in for the changes to take effect.
 
 ##### Make and Eclipse on Windows: Nordic platforms using SoftDevices
 
