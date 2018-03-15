@@ -48,7 +48,7 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-### Example component No. 1 - successful initial migration
+#### Example component No. 1 - successful initial migration
 
 Repositories used in this example:
 
@@ -73,7 +73,7 @@ mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 
 It successfully compiles, so no changes are necessary to the `Grove - Buzzer` library or `Hello World` program.
 
-### Example component No. 2 - application fails to compile
+#### Example component No. 2 - application fails to compile
 
 Repositories used in this example:
 
@@ -96,7 +96,7 @@ mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```
 
-#### Compilation errors
+##### Compilation errors
 
 After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors already exist.
 
@@ -145,7 +145,7 @@ int main() {
 
 Now, the program successfully compiles.
 
-### Example component #3 - library fails to compile
+#### Example component No. 3 - library fails to compile
 
 Repositories used in this example:
 
@@ -168,7 +168,7 @@ mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```
 
-#### Compilation errors
+##### Compilation errors
 
 After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors already exist.
 
