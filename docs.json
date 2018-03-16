@@ -88,6 +88,14 @@
                 ]
             },
             {
+                "title": "Technology",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/USB.md"
+                    }
+                ]
+            },
+            {
                 "title": "APIs",
                 "intro": {
                     "type": "markdown",
