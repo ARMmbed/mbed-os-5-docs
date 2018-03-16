@@ -402,7 +402,7 @@
                         "title": "LoRaWAN",
                         "intro": {
                             "type": "markdown",
-                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/index.md"
+                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lora.md"
                         },
                         "sources": [{
                                 "type": "markdown",
