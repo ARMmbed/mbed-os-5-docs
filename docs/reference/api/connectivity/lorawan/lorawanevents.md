@@ -1,13 +1,13 @@
-<h2 id="lorawan-events">LoRaWAN stack events and callbacks</h2>
+<h3 id="lorawan-events">LoRaWAN stack events and callbacks</h3>
 
-Owing to the fact that most of the LoRaWAN devices are simple telemetry drvices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
+Owing to the fact that most of the LoRaWAN devices are simple telemetry devices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
 
-### Network events
+#### Network events
 
 Here is the list of possible events that you can post from the stack to the application:
 
-| Event    | Description 
-| --------------- | ------------- | 
+| Event    | Description
+| --------------- | ------------- |
 | `CONNECTED` | When the connection is complete |
 | `DISCONNECTED` | When the protocol is shut down in response to disconnect() |
 | `TX_DONE` | When a packet is transmitted |
@@ -19,25 +19,25 @@ Here is the list of possible events that you can post from the stack to the appl
 | `RX_DONE` | When a packet is received |
 | `RX_ERROR` | A general RX error |
 
-The application must attach an event handler to the stack. The `LoRaWANInterface` provides an API to attach various callbacks to the stacks. One such callback is the event handler callback. 
+The application must attach an event handler to the stack. The `LoRaWANInterface` provides an API to attach various callbacks to the stacks. One such callback is the event handler callback.
 
-### Application callbacks
+#### Application callbacks
 
 The Mbed LoRaWAN stack currently maps 3 different callbacks:
 
-| Callback type   | Description 
-| --------------- | ------------- | 
+| Callback type   | Description
+| --------------- | ------------- |
 | `Event callback` | Mandatory, Direction: from stack to application |
 | `Link check response callback` |Optional, Direction: from stack to application |
 | `Battery level callabck` | Optional, Direction: from application to stack |
 
-#### Event handler
+##### Event handler
 
 An example of attaching your event handler to the stack:
 
 ```CPP
 
-void your_event_handler(lorawan_event_t event) 
+void your_event_handler(lorawan_event_t event)
 {
     switch (event) {
         case CONNECTED:
@@ -56,14 +56,14 @@ callbacks.events = mbed::callback(your_event_handler);
 lorawan.add_app_callbacks(&callbacks);
 ```
 
-#### Link check response handler
+##### Link check response handler
 
 Link check request is a MAC command defined by the LoRaWAN Specification. To receive the response of this MAC command, the user should set `link_check_resp` callback.  
 
 ```CPP
-void your_link_check_response(uint8_t demod_margin, uint8_t num_gw) 
+void your_link_check_response(uint8_t demod_margin, uint8_t num_gw)
 {
-	//demod_margin is the demodulation margin 
+	//demod_margin is the demodulation margin
 	// num_gw represents the number of gateways involved in the path
 }
 
@@ -72,19 +72,19 @@ lorawan.add_app_callbacks(&callbacks);
 
 ```
 
-#### Battery level handler
+##### Battery level handler
 
 The battery level callback is different from others. The direction of this callback is from the application to the stack. In other words, it provides information to the stack. The application is reponsible for letting the stack know about the current battery level.
 
 ```CPP
-uint8_t your_battery_level() 
+uint8_t your_battery_level()
 {
 	return battery_level;
 }
 
 callbacks.battery_level = mbed::callback(your_battery_level);
 lorawan.add_app_callbacks(&callbacks);
-``` 
+```
 
 <h3 id="lorawan-error-codes">LoRaWAN stack error codes</h3>
 
