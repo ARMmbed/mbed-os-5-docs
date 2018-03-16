@@ -1,6 +1,6 @@
 ### Building your own private LoRa network
 
-There is a lot of buzz about [LoRa](https://www.lora-alliance.org), a wide-area network solution that promises kilometers of range with very low power consumption, a perfect fit for the Internet of Things. Telecom operators are rolling out LoRa networks, but because LoRa operates in the [open spectrum](https://en.wikipedia.org/wiki/ISM_band), you can also set up your own network. This article discusses the requirements to build a private LoRa network and how to use the network to send data from an ARM mbed end-node to the cloud.
+There is a lot of buzz about [LoRa](https://www.lora-alliance.org), a wide-area network solution that promises kilometers of range with low power consumption, a perfect fit for the Internet of Things. Telecom operators are rolling out LoRa networks, but because LoRa operates in the [open spectrum](https://en.wikipedia.org/wiki/ISM_band), you can also set up your own network. This article discusses the requirements to build a private LoRa network and how to use the network to send data from an Arm Mbed end-node to the cloud.
 
 <span class="notes">**Note on LoRa vs. LoRaWAN:** Technically, we're building a LoRaWAN network in this article. LoRa is the modulation technique used (PHY), and LoRaWAN is the network protocol on top of the physical layer (MAC).</span>
 
@@ -8,7 +8,7 @@ There is a lot of buzz about [LoRa](https://www.lora-alliance.org), a wide-area 
 
 A typical LoRa network consists of four parts: devices, gateways, a network service and an application:
 
-<span class="images">![Topology of a LoRa network](assets/lora1.png)<span>Topology of a LoRa network</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora1.png)<span>Topology of a LoRa network</span></span>
 
 For hardware, you need devices and gateways, similar to how you would set up a Wi-Fi network. Gateways are simple: they just scan the spectrum and capture LoRa packets. There is no gateway pinning here - devices are not associated with a single gateway; thus, all gateways within range of a device receive the signal. The gateways then forward their data to a network service that handles the packet.
 
@@ -16,16 +16,16 @@ The network service deduplicates packets when multiple gateways receive the same
 
 There are five requirements.
 
-We need hardware:
+You need hardware:
 
-* Gateways.
-* Devices.
+- Gateways.
+- Devices.
 
-And we need software:
+And you need software:
 
-* Device firmware.
-* A network service.
-* An app.
+- Device firmware.
+- A network service.
+- An app.
 
 This guide shows you which hardware you can buy and two online services you can use to write device firmware and handle your LoRa traffic.
 
@@ -37,23 +37,23 @@ You have [a lot of choices in the gateways](https://www.loriot.io/gateways.html)
 * [MultiTech Conduit](http://www.multitech.com/brands/multiconnect-conduit). About one-third of the price of the Kerlink (about 450 euros) and good for small setups. (Put a bigger antenna on it though.) MultiTech also has a [rugged outdoor](http://www.multitech.com/brands/multiconnect-conduit-ip67) version.
 * Building your own with a Raspberry Pi and an [IMST iC880A](http://webshop.imst.de/catalogsearch/result/?q=iC880A) concentrator. At about 230 euros, this is the most cost-efficient option.
 
-<span class="images">![Self built gateway using a Raspberry Pi and an IMST iC880A](assets/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 230 euros.</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 230 euros.</span></span>
 
 For development purposes, one gateway is enough, but in a production deployment, you need at least two because there will always be dark spots in your network.
 
 ##### Getting a device
 
-You also need to build devices. If you use ARM mbed (and you should), you can either use:
+You also need to build devices. If you use Arm Mbed (and you should), you can either use:
 
-* A development board with a LoRa transceiver:
-    * [MultiTech xDot](https://developer.mbed.org/platforms/MTS-xDot-L151CC/).
-        * The xDot is already FCC/CE certified and shielded, so it's a good choice if you want to build custom hardware.
-    * [MultiTech mDot](https://developer.mbed.org/platforms/MTS-mDot-F411/) and the [UDK2 board](http://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
-        * As an alternative, you can use the [MultiTech mDot EVB](https://developer.mbed.org/platforms/mdotevb/), which is the mDot reference design.
-        * Like the xDot, the mDot is already FCC/CE certified and shielded.
-* A microcontroller that runs mbed (in this article, we're using the [Nordic nRF51-DK](https://developer.mbed.org/platforms/Nordic-nRF51-DK/), though most microcontrollers work) with a LoRa shield:
-    * [SX1272MB2xAS](https://developer.mbed.org/components/SX1272MB2xAS/) - shield based on the SX1272 transceiver.
-    * [SX1276MB1xAS](https://developer.mbed.org/components/SX1276MB1xAS/) - shield based on the SX1276 transceiver.
+- A development board with a LoRa transceiver:
+    - [MultiTech xDot](https://developer.mbed.org/platforms/MTS-xDot-L151CC/).
+        - The xDot is already FCC/CE certified and shielded, so it's a good choice if you want to build custom hardware.
+    - [MultiTech mDot](https://developer.mbed.org/platforms/MTS-mDot-F411/) and the [UDK2 board](http://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
+        - As an alternative, you can use the [MultiTech mDot EVB](https://developer.mbed.org/platforms/mdotevb/), which is the mDot reference design.
+        - Like the xDot, the mDot is already FCC/CE certified and shielded.
+- A microcontroller that runs mbed (in this article, we're using the [Nordic nRF51-DK](https://developer.mbed.org/platforms/Nordic-nRF51-DK/), though most microcontrollers work) with a LoRa shield:
+    - [SX1272MB2xAS](https://developer.mbed.org/components/SX1272MB2xAS/) - shield based on the SX1272 transceiver.
+    - [SX1276MB1xAS](https://developer.mbed.org/components/SX1276MB1xAS/) - shield based on the SX1276 transceiver.
 
 This document contains instructions for the MultiTech mDot and the SX1276MB1xAS shield, but the same principles apply to all other combinations.
 
@@ -75,7 +75,7 @@ IoT-X is a connectivity management platform from Stream Technologies, which hand
 
 #### Setting up the gateway
 
-You now need to configure the gateway by installing software that scans the spectrum and forwards all LoRa packets to the network server. To do this, you will need to log into the gateway. Below are setup instructions for the three gateways suggested earlier.
+You now need to configure the gateway by installing software that scans the spectrum and forwards all LoRa packets to the network server. To do this, you need to log into the gateway. Below are setup instructions for the three gateways suggested earlier.
 
 <span class="notes">**Note:** This section assumes that you're familiar with SSH.</span>
 
@@ -90,7 +90,7 @@ To configure the Kerlink:
 
 ##### MultiTech Conduit
 
-The Conduit is configured with DHCP disabled, so you need to enable this first. There are two options to do this: either via Ethernet or via micro-USB.
+The Conduit is configured with DHCP disabled, so you need to enable this first. There are two options to do this: either through Ethernet or through micro-USB.
 
 __Using Ethernet__
 
@@ -98,7 +98,6 @@ __Using Ethernet__
 1. Set a static IP address of 192.168.2.2 for your computer.
 1. Set a static IP address of 192.168.2.1 as your router.
 1. Log in through SSH to 192.168.2.1 with the username `root` and password `root`.
-
 
 __Over micro-USB__
 
@@ -135,5 +134,5 @@ After following these steps:
 
 Now that you have set up the gateways and they can reach the internet, it's time to install the network service software on them, so they have a place to send the LoRa packets.
 
-* [Continue setting up your network with LORIOT](loriot.md).
-* [Continue setting up your network with IoT-X](iotx.md).
+- [Continue setting up your network with LORIOT](#setting-up-your-lora-network-on-loriot).
+- [Continue setting up your network with IoT-X](#setting-up-your-lora-network-on-iot-x).
