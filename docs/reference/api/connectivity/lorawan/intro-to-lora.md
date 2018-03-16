@@ -46,14 +46,14 @@ For development purposes, one gateway is enough, but in a production deployment,
 You also need to build devices. If you use Arm Mbed (and you should), you can either use:
 
 - A development board with a LoRa transceiver:
-    - [MultiTech xDot](https://developer.mbed.org/platforms/MTS-xDot-L151CC/).
+    - [MultiTech xDot](https://os.mbed.com/platforms/MTS-xDot-L151CC/).
         - The xDot is already FCC/CE certified and shielded, so it's a good choice if you want to build custom hardware.
-    - [MultiTech mDot](https://developer.mbed.org/platforms/MTS-mDot-F411/) and the [UDK2 board](http://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
-        - As an alternative, you can use the [MultiTech mDot EVB](https://developer.mbed.org/platforms/mdotevb/), which is the mDot reference design.
+    - [MultiTech mDot](https://os.mbed.com/platforms/MTS-mDot-F411/) and the [UDK2 board](http://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
+        - As an alternative, you can use the [MultiTech mDot EVB](https://os.mbed.com/platforms/mdotevb/), which is the mDot reference design.
         - Like the xDot, the mDot is already FCC/CE certified and shielded.
-- A microcontroller that runs mbed (in this article, we're using the [Nordic nRF51-DK](https://developer.mbed.org/platforms/Nordic-nRF51-DK/), though most microcontrollers work) with a LoRa shield:
-    - [SX1272MB2xAS](https://developer.mbed.org/components/SX1272MB2xAS/) - shield based on the SX1272 transceiver.
-    - [SX1276MB1xAS](https://developer.mbed.org/components/SX1276MB1xAS/) - shield based on the SX1276 transceiver.
+- A microcontroller that runs mbed (in this article, we're using the [Nordic nRF51-DK](https://os.mbed.com/platforms/Nordic-nRF51-DK/), though most microcontrollers work) with a LoRa shield:
+    - [SX1272MB2xAS](https://os.mbed.com/components/SX1272MB2xAS/) - shield based on the SX1272 transceiver.
+    - [SX1276MB1xAS](https://os.mbed.com/components/SX1276MB1xAS/) - shield based on the SX1276 transceiver.
 
 This document contains instructions for the MultiTech mDot and the SX1276MB1xAS shield, but the same principles apply to all other combinations.
 
