@@ -92,6 +92,38 @@
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/USB.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_intro.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_intro.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_hw.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_build.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_commissioning.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_faq.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/02_N_arch.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/04_N_networking.md"
                     }
                 ]
             },
@@ -880,38 +912,6 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/connectivity/cellular_tcp.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_hw.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_build.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_commissioning.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_faq.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/02_N_arch.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/04_N_networking.md"
                     }
                 ]
             },
