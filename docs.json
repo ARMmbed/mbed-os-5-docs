@@ -95,35 +95,35 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_intro.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_intro.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_intro.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/thread_intro.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_hw.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_hw.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/quick_start_build.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_build.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_commissioning.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/thread_commissioning.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/thread_faq.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/thread_faq.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/02_N_arch.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/02_N_arch.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/using_apis/mesh/04_N_networking.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/04_N_networking.md"
                     }
                 ]
             },
