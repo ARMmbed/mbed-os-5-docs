@@ -83,11 +83,11 @@ The USB stack guarantees the setup packet passed to `callback_request` and `call
 
 A USB component adds and removes endpoints as part of `callback_set_configuration` and `callback_set_interface` to set up the corresponding interface or configuration. Additionally, USBDevice automatically removes all added endpoints if the device leaves the Configured state.
 
-When a USB component adds an endpoint, you can either write to it with `write` or read from it by calling `read_start` and `read_finish`. These functions copy data passed to them, so a USB component can free the buffers or use them for other purposes as soon as the call completes. Note that the buffer size must not exceed the maximum packet size for the given endpoint.
+When a USB component adds an endpoint, you can either write to it with `write` or read from it by calling `read_start` and `read_finish`. The buffers passed to `write` or `read_start` must remain unchanged until the operation is complete, indicated by USBDevice calling the endpoint callback, or you abort the operation with `endpoint_abort`. Note that for `write`, the buffer size must not exceed the maximum packet size for the given endpoint. For `read_start`, the buffer must be at least the maximum packet size.
 
 Below is a diagram showing the typical state machine for read (OUT) and write (IN) transfers.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_endpoint_state_diagram_user.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_endpoint_state_diagram_user_2.png)</span>
 
 #### Endpoint configuration
 
