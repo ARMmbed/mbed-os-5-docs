@@ -1,4 +1,4 @@
-<h2 id="mesh">6LoWPAN Mesh</h2>
+<h2 id="mesh-tech">6LoWPAN Mesh</h2>
 
 This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
 
