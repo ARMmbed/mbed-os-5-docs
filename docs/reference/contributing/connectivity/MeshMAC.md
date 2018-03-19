@@ -10,7 +10,7 @@ Nanostack includes an IEEE 802.15.4 based SW MAC class. You can use SW MAC when 
 ns_sw_mac_create()
 ```
 
-This creates a SW MAC class and sets a callback function to be used by Nanostack.
+This creates an SW MAC class and sets a callback function to be used by Nanostack.
 
 <span class="notes">**Note:** You must not call `ns_sw_mac_create()` more than once!</span>
 
@@ -107,8 +107,8 @@ MLME-SAP primitives used by Nanostack:
 | `MLME-COMM-STATUS-IND` | MAC generated indication about the communications status. |
 | `MLME-SET-REQ` | Request to write data into a specified PIB attribute. |
 | `MLME-SET-CONF` | MAC generated response to `MLME-SET-REQ`. |
-| `MLME-START-REQ` | Starts or enables MAC with specified options. Nanostack uses this also for RFD device. |
-| `MLME-SYNCH-LOSS-IND` | Indicate syncronization loss from wireless PAN. Only used by SW MAC when FHSS is in use! |
+| `MLME-START-REQ` | Starts or enables MAC with specified options. Nanostack uses this also for RFD devices. |
+| `MLME-SYNCH-LOSS-IND` | Indicates synchronization loss from wireless PAN. Only used by SW MAC when FHSS is in use! |
 | `MLME-POLL-REQ` | Request MAC to do data poll to parent. |
 
 ##### Unsupported MLME APIs
@@ -139,7 +139,7 @@ Unsupported MLME-SAP primitives:
 
 This chapter introduces MAC mesh interface `mac_api_s`. It is a structure that defines the function callbacks needed by a service user.
 
-The base class defines the functions for two-way communications between an external MAC and service user. The application creates a `mac_api_s` object by calling the MAC adapter's create function. The newly created object is then passed to Nanostack which initializes its own callback functions by calling `mac_api_initialize()` function. A service user operates MAC by calling MLME or MCPS primitive functions.
+The base class defines the functions for two-way communications between an external MAC and service user. The application creates a `mac_api_s` object by calling the MAC adapter's create function. The newly created object is then passed to Nanostack which initializes its own callback functions by calling the `mac_api_initialize()` function. A service user operates MAC by calling MLME or MCPS primitive functions.
 
 The MAC API class structure `mac_api_t` is defined as below:
 
@@ -210,7 +210,7 @@ Usually, HW MAC and SW MAC have static keys and neighbour list sizes. Nanostack 
 - MAC Device description list size (must be > 1).
 - MAC Key description list size (must be > 1).
 
-<span class="notes">**Note:** The Key description list size must at least 4 if using Thread!</span>
+<span class="notes">**Note:** The Key description list size must be at least 4 if using Thread!</span>
 
 ##### MLME attribute extension
 
@@ -220,11 +220,11 @@ Nanostack uses MLME attribute extensions which have to be ported to the HW MAC a
 | ---------------- | ----- | ----------- |
 | `macLoadBalancingBeaconTx` | `0xfd` | Trigger to MAC layer to send a beacon. Called by the load balancer module periodically. |
 | `macLoadBalancingAcceptAnyBeacon` | `0xfe` | Configure MAC layer to accept beacons from other networks. Enabled by load balancer, default value is `False`. Value size boolean, `true=enable`, `false=disable`. |
-| `macThreadForceLongAddressForBeacon` | `0xff` | The Thread standard forces beacon source address to have an extended 64-bit address. |
+| `macThreadForceLongAddressForBeacon` | `0xff` | The Thread standard forces the beacon source address to have an extended 64-bit address. |
 
 ##### Thread Sleepy End Device (SED) keepalive extension
 
-Thread 1.1 stack defines that sleepy end device data poll process must enable neighbour table keepalive functionality as well. When SED finishes data polling succesfully, it updates its parents keepalive value in a neighbour table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
+Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbour table keepalive functionality as well. When SED finishes data polling succesfully, it updates its parents keepalive value in a neighbour table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
 
 Enumeration extension for MLME communication status enumeration:
 
@@ -234,6 +234,6 @@ Enumeration extension for MLME communication status enumeration:
 
 #### HW MAC
 
-To use HW MAC, you need to create an adapter class that links function calls between Nanostack and HW MAC. To create the adapter class, you need to implement the functions defined in the `mac_api_s` structure. When HW MAC generates an event the adapter must handle it and do a parameter adaptation before calling the correct function from the `mac_api_s` structure. You may need the same parameter adaptation for requests from Nanostack to HW MAC.
+To use HW MAC, you need to create an adapter class that links function calls between Nanostack and HW MAC. To create the adapter class, you need to implement the functions defined in the `mac_api_s` structure. When HW MAC generates an event, the adapter must handle it and do a parameter adaptation before calling the correct function from the `mac_api_s` structure. You may need the same parameter adaptation for requests from Nanostack to HW MAC.
 
 <span class="notes">**Note:** Function calls from Nanostack to HW MAC must be non-blocking in the adapter layer!</span>
