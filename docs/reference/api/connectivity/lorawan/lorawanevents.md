@@ -103,7 +103,7 @@ Here  is the list of error codes and their description.
 | `LORAWAN_STATUS_DATARATE_INVALID` | -1005| Invalid frequency and datarate  |
 | `LORAWAN_STATUS_FREQ_AND_DR_INVALID`| -1006| When stack was unable to send packet in TX window  |
 |`LORAWAN_STATUS_NO_NETWORK_JOINED`| -1009 | Device is not part of a network yet (Applicable only for OTAA) |
-|`LORAWAN_STATUS_LENGTH_ERROR`| -1010 | Payload lenght error |
+|`LORAWAN_STATUS_LENGTH_ERROR`| -1010 | Payload length error |
 | `LORAWAN_STATUS_DEVICE_OFF`| -1011 | The device is off, in other words, disconnected state |
 | `LORAWAN_STATUS_NOT_INITIALIZED`| -1012| Stack not initialized  |
 | `LORAWAN_STATUS_UNSUPPORTED`| -1013| Unsupported service |

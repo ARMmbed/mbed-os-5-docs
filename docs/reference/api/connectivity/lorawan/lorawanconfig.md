@@ -1,10 +1,10 @@
 <h2 id="lorawan-configuration">Configuring Mbed LoRaWAN Stack</h2>
 
-Various parameters for Mbed LoRaWAN stack can be configured via either C++ APIs or by using Mbed configuration system. 
+Various parameters for Mbed LoRaWAN stack can be configured via either C++ APIs or by using the Mbed configuration system.
 
-### Using Mbed Configuration system
+### Using the Mbed Configuration system
 
-Here are the parameters that can be configured using Mbed configuration system:
+Here are the parameters that can be configured using the Mbed configuration system:
 
 ```
 Configuration parameters

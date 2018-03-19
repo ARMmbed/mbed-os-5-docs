@@ -8,7 +8,7 @@ Device drivers are a set of functions for providing PHY layer devices for the 6L
 
 #### How Nanostack runs inside Mbed OS
 
-The Mbed OS port of Nanostack consist of a few helper modules that provide easier API for users and Platform API for working inside the operating system.
+The Mbed OS port of Nanostack consists of a few helper modules that provide an easier API for users and a Platform API for working inside the operating system.
 
 ![Nanostack inside Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
 
@@ -40,7 +40,7 @@ For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterface
 
 ![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
 
-Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly to set up the network and provide a driver. Rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
+Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
 
 See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
 
@@ -48,7 +48,7 @@ See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/n
 
 The 6LoWPAN stack uses Device Driver API to communicate with different physical layer drivers. The 6LoWPAN stack supports different device types for PHY layer and special cases where raw IPv6 datagrams are forwarded to a driver.
 
-The driver must first be registered with the 6LoWPAN stack using the `phy_device_driver_s` structure defined in section [_PHY device driver register_](#phy-device-driver-register). This structure defines all the functions that the stack uses when calling a device driver. When the device driver must call the driver API from the stack, it uses the ID number received in the registration phase to distinct between different devices. The following sections define the contents of the driver structures and API interfaces that the driver can use.
+The driver must first be registered with the 6LoWPAN stack using the `phy_device_driver_s` structure defined in the section [_PHY device driver register_](#phy-device-driver-register). This structure defines all the functions that the stack uses when calling a device driver. When the device driver must call the driver API from the stack, it uses the ID number received in the registration phase to distinguish between different devices. The following sections define the contents of the driver structures and API interfaces that the driver can use.
 
 #### How to create a new RF driver
 
@@ -64,7 +64,7 @@ The following steps describe how you can create a new RF driver:
 
 1. Implement the `NanostackRfPhy` API.
 
-1. Check with a RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
+1. Check with an RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
 1. Verify the functionality of your implementation using the [Nanostack RF driver test application](https://github.com/ARMmbed/nanostack-rf-driver-tester). (This is currently only available to Mbed OS Partners.)
 
@@ -142,7 +142,7 @@ For more details on the TX process, see _Figure 4-1_.
 
 ![scan](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ed_scan_process.png)
 
-In sniffer mode, the device only receives packets, never ACKs or sends them.
+In sniffer mode, the device only receives packets, never ACKs, and it does not send them.
 
 The following commands are received as a parameter of the function `state_control` defined in the struct of type `phy_device_driver_s`:
 
@@ -172,7 +172,7 @@ State|Description
 
 #### PHY device driver register
 
-This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces to a specific PHY driver.
+This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces for a specific PHY driver.
 
 To register a PHY driver to the stack:
 
@@ -182,7 +182,7 @@ int8_t arm_net_phy_register(phy_device_driver_s *phy_driver);
 
 #### PHY data RX API
 
-This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
+This is a callback that is part of the device driver structure and initialized by the stack when a driver is registered.
 
 The driver calls this function to push the received data from a PHY to the stack:
 
@@ -192,7 +192,7 @@ typedef int8_t arm_net_phy_rx_fn(const uint8_t *data_ptr, uint16_t data_len, uin
 
 #### PHY data TX done API
 
-This is a callback that is a part of the device driver structure and initialized by the stack when a driver is registered.
+This is a callback that is part of the device driver structure and initialized by the stack when a driver is registered.
 
 The driver calls this function when it has completed a transmit attempt:
 
@@ -302,7 +302,7 @@ Member|Description
 `phy_tx_done_cb`|A function pointer to the upper layer TX callback. Must be initialized to NULL, is set by MAC layer.
 `arm_net_virtual_rx_cb`|A function pointer to the upper layer RX callback. Only needed by a virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver.
 `arm_net_virtual_tx_cb`|A function pointer to the upper layer tx callback. Only needed by virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver
-`tunnel_type`|TUN driver type this is only valid when link type is PHY_TUN
+`tunnel_type`|TUN driver type. This is only valid when link type is PHY_TUN
 
 ##### PHY device channel page information
 
