@@ -2,8 +2,8 @@
 
 This chapter introduces the _6LoWPAN stack architecture_. It contains the following sections:
 
-- [_Architecture._](#architecture).
-- [_6LoWPAN stack._](#6lowpan-stack).
+- [_Architecture](#architecture).
+- [_6LoWPAN stack](#6lowpan-stack).
 
 #### Architecture
 
