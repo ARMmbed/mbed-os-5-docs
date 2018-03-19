@@ -1,4 +1,4 @@
-## Mesh
+<h2 id="mesh-api">Mesh</h2>
 
 The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](/docs/development/tutorials/mesh.html#nanostack) networking stack.
 
