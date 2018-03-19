@@ -25,4 +25,4 @@ The application below demonstrates a simple light control application, where dev
 
 ### Related content
 
-- [Nanostack](/docs/development/reference/technology.html#overview-of-the-6lowpan-network) technology reference material.
+- [Nanostack](/docs/development/reference/mesh-tech.html) technology reference material.
