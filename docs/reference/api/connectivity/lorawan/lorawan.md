@@ -1,8 +1,8 @@
 <h2 id="lorawan-api">LoRaWANInterface</h2>
 
-LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high desnity wide-area networks.
+LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
-Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard. 
+Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.
 
 The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
 
@@ -12,12 +12,12 @@ The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbe
 
 ### Usage
 
-To bring up the Mbed LoRaWAN stack, consider the following progression: 
+To bring up the Mbed LoRaWAN stack, consider the following progression:
 
-1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/development/reference/eventqueue.html) object: 
+1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/development/reference/eventqueue.html) object:
 
 ```cpp
-// construct an event queue 
+// construct an event queue
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
@@ -32,7 +32,7 @@ SX1272_LoRaRadio radio(PIN_NAMES ... );
 
 ```CPP
 LoRaWANInterface lorawan(radio) ;
-``` 
+```
 
 4) Initialize mac layer and pass `EventQueue` object:
 
@@ -60,7 +60,7 @@ connection.connection_u.otaa.app_key = YOUR_APP_KEY;
 connection.connection_u.otaa.nb_trials = MBED_CONF_LORA_NB_TRIALS;
 
 lorawan.connect(connection);
-``` 
+```
 
 ### LoRaWAN example
 

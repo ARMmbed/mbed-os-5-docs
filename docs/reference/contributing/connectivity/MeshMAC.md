@@ -1,6 +1,6 @@
 ### MAC API porting
 
-Nanostack has a lower level API for the IEEE 802.15.4-2006 MAC standard. This enables developers to support different MACs, be it SW or HW based solution. Nanostack offers SW MAC that you can use when your board does not have 15.4 MAC available.
+Nanostack has a lower level API for the IEEE 802.15.4-2006 MAC standard. This enables developers to support different MACs, be it SW or HW based solutions. Nanostack offers SW MAC, which you can use when your board does not have 15.4 MAC available.
 
 #### SW MAC
 

@@ -10,11 +10,11 @@ You can implement a cellular network interface in different ways depending on yo
 
 **Case 1: An implementation using on-chip network stacks (AT only mode, refer to figure 1)**
 
--   Pros 
+-   Pros
     - Lighter RAM memory consumption and flash footprint.
     - More autonomous modem operation.
 
--   Cons 
+-   Cons
     - Needs chip-specific implementation of an abstraction layer over AT-sockets to glue them together with standard Mbed OS NSAPI sockets.
     - Subtle variations in different on-chip network stacks and NSAPI implementations make maintenance difficult and require more testing.
 
@@ -22,21 +22,21 @@ You can implement a cellular network interface in different ways depending on yo
 
 **Case 2: An implementation using Mbed OS provided network stacks (PPP mode, refer to figure 2)**
 
--   Pros 
+-   Pros
     - A well-established network stack with full Mbed OS support.
     - The inherent network stack provides all socket APIs.
 
--   Cons 
+-   Cons
     - Heavier RAM memory consumption and bigger flash footprint.
     - All modems do not support PPP mode making AT only mode the only available choice.
     - Multiplexing command mode and data mode are not yet available.
 
 ##### Adding modem target support
 
-For new targets, you may need to modify [targets.json](https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html). `targets.json` defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem and the data connection type is attached with MCU.
+For new targets, you may need to modify [targets.json](https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html). `targets.json` defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem, and the data connection type is attached with MCU.
 
 For example,
- 
+
 ```json
     "MY_NEW_TARGET": {
         "supported_form_factors": ["ARDUINO"],
@@ -45,7 +45,7 @@ For example,
         "extra_labels": ["LABEL", "ANOTHER_LABEL"],
         "config": {
             "modem_is_on_board": {
-                "help": "Value: Tells the build system that the modem is on-board as oppose to a plug-in shield/module.",
+                "help": "Value: Tells the build system that the modem is on-board as opposed to a plug-in shield/module.",
                 "value": 1,
                 "macro_name": "MODEM_ON_BOARD"
             },
@@ -62,7 +62,7 @@ For example,
     },
 ```
 
-Use standard pin names. A standard naming conventions for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. The example below shows the full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
+Use standard pin names. A standard naming convention for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. The example below shows the full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
 
 ```C
 typedef enum {
@@ -89,7 +89,7 @@ You must define all pins. Implement `onboard_modem_api.h`. The target board must
 
 ##### Modifying cellular targets
 
-Setup for some predefined targets is available in [CellularTargets.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html). For a new target, you need to modify `CellularTargets.h`. In `CellularTargets.h`, you need to specify a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device MY_NEW_TARGET defined above in the "Adding modem target support" chapter would be connected with QUECTEL BG96, you need the following changes marked in between `// !!!!` in `CellularTargets.h`:
+Setup for some predefined targets is available in [CellularTargets.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html). For a new target, you need to modify `CellularTargets.h`. In `CellularTargets.h`, you need to specify a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device MY_NEW_TARGET defined above in the "Adding modem target support" chapter is connected with QUECTEL BG96, you would need the following changes marked in between `// !!!!` in `CellularTargets.h`:
 
 ```C
 ...
@@ -128,18 +128,18 @@ If the new modem supports PPP mode, then you can use the existing Mbed OS LWIP s
 
 #### Testing
 
-Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this. 
+Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
 
 -   To run the tests:
  	1.  From the root of your application, enter this command:
-	
+
  	```
  	mbed test --compile-list
  	```
-	
+
  	1.  Look for the name of a test suite matching `mbed-os-features-cellular-tests-cellular-cellular_all`.
  	1.  Run tests with the command:
-	
+
  	```
  	mbed test -n "mbed-os-features-cellular-tests-cellular-cellular_all" -m YOURMACHINE -t YOURCOMPILER --app-config YOURCONFIG.json
  	```
