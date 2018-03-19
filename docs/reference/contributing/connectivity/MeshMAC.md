@@ -27,7 +27,7 @@ Deploy SW MAC as follows:
 
 #### Example
 
-See a simple code snippet for creating SW MAC with 16 as neighbour table size with three key descriptions:
+See a simple code snippet for creating SW MAC with 16 as neighbor table size with three key descriptions:
 
 ```
 int8_t generate_6lowpan_interface(int8_t rf_phy_device_register_id)
@@ -205,7 +205,7 @@ Address set and get support two different 64-bit addresses:
 
 ##### MAC max storage information get
 
-Usually, HW MAC and SW MAC have static keys and neighbour list sizes. Nanostack always asks the max size to limit its neighbour table size. The service user must define the `mac_storage_sizes_get()` function returning the following values:
+Usually, HW MAC and SW MAC have static keys and neighbor list sizes. Nanostack always asks the max size to limit its neighbor table size. The service user must define the `mac_storage_sizes_get()` function returning the following values:
 
 - MAC Device description list size (must be > 1).
 - MAC Key description list size (must be > 1).
@@ -224,7 +224,7 @@ Nanostack uses MLME attribute extensions which have to be ported to the HW MAC a
 
 ##### Thread Sleepy End Device (SED) keepalive extension
 
-Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbour table keepalive functionality as well. When SED finishes data polling succesfully, it updates its parents keepalive value in a neighbour table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
+Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbor table keepalive functionality as well. When SED finishes data polling succesfully, it updates its parents keepalive value in a neighbor table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
 
 Enumeration extension for MLME communication status enumeration:
 
