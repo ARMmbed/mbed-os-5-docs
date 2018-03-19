@@ -1,10 +1,10 @@
 ## SecurityManager
 
-SecurityManager deals with authentication and encryption for the Bluetooth Low Energy link. The process of pairing and optionally bonding provides this. The SecurityManager achieves bonding by saving the pairing information and reusing it on subsequent reconnections in order to save time by not having to perform pairing again.
+SecurityManager deals with authentication and encryption for the Bluetooth Low Energy link. The pairing and optionally bonding processes provide this. The SecurityManager achieves bonding by saving the pairing information and reusing it on subsequent reconnections. This saves time because the pairing does not have to be performed again.
 
-The process of pairing may produce a set of keys to be used during current or later connections. The SecurityManager and include the Long Term Encryption Key (LTK), the Identity Resolving Key (IRK) and the Connection Signature Resolving Key (CSRK) handle these. The SecurityManager uses the LTK to encrypt subsequent connections without having to pair again. The Link Controller uses IRK to identify peers who use random resolvable addresses. The application uses CSRK to sign and authenticate signed data.
+The pairing process may produce a set of keys to be used during current or later connections. The SecurityManager includes the Long Term Encryption Key (LTK), the Identity Resolving Key (IRK) and the Connection Signature Resolving Key (CSRK). The SecurityManager uses the LTK to encrypt subsequent connections without having to pair again. The Link Controller uses IRK to identify peers who use random resolvable addresses. The application uses CSRK to sign and authenticate signed data.
 
-The pairing process may provide man-in-the-middle protection (MITM). The SecurityManager achieves this through various means, including out of band communication, depending on the capabilities of the local and peer device.
+The pairing process can provide man-in-the-middle protection (MITM). The SecurityManager achieves this through various means, including out of band communication, depending on the capabilities of the local and peer device.
 
 The SecurityManager stores the keys, permanently if possible, to speed security requests on subsequent connections.
 
