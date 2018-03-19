@@ -8,7 +8,7 @@ There is a lot of interest in [LoRa](https://www.lora-alliance.org), a wide-area
 
 A typical LoRa network consists of four parts: devices, gateways, a network service and an application:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora1.png)<span>Topology of a LoRa network</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora1_2.png)<span>Topology of a LoRa network</span></span>
 
 For hardware, you need devices and gateways, similar to how you would set up a Wi-Fi network. Gateways are simple: they scan the spectrum and capture LoRa packets. There is no gateway pinning here. Devices are not associated with a single gateway; thus, all gateways within range of a device receive the signal. The gateways then forward their data to a network service that handles the packet.
 
@@ -251,11 +251,11 @@ Mbed comes with the Arm Mbed Online Compiler, which you can use to build applica
 1. Click **Import this program**.
 1. You're redirected to the Online Compiler, where you can give the program a name.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora7.png)<span>Importing a program to get started</span></span>
+    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora7_2.png)<span>Importing a program to get started</span></span>
 
 <span class="notes">**Note:** Make sure you select the correct board in the top right corner of the compiler.</span>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora8.png)<span>Selecting the correct board</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora8_2.png)<span>Selecting the correct board</span></span>
 
 #### 3.4 - Setting keys
 
