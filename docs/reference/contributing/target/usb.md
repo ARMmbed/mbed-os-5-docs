@@ -8,7 +8,7 @@ The HAL USBPhy API provides physical access to the USB bus in the role of a USB 
 
 ##### Defined behavior
 
-- You can use any endpoint configurations that fits in the parameters of the table returned by `USBPhy::endpoint_table`.
+- You can use any endpoint configurations that fit in the parameters of the table returned by `USBPhy::endpoint_table`.
 - You can use all endpoints in any valid endpoint configuration concurrently.
 - The device supports use of at least one control, bulk, interrupt and isochronous in each direction at the same time - at least 8 endpoints.
 - USBPhy supports all standard endpoint sizes (wMaxPacketSize).
@@ -16,15 +16,16 @@ The HAL USBPhy API provides physical access to the USB bus in the role of a USB 
 - USBPhy only sends USBPhyEvents when it is in the initialized state.
 - When unpowered, USBPhy only sends the `USBPhyEvents::power` event.
 - On USB reset, all endpoints are removed except for endpoint 0.
-- `USBPhyEvents::out` and `USBPhyEvents::in` events only occur for endpoints that you have added.
-- A call to `USBPhy::ep0_write` results in the call of `USBPhyEvents::in` when the PC reads the data unless a power loss or reset occurs first.
-- A call to `endpoint_read` followed by `endpoint_read_result` results in the call of `USBPhyEvents::out` when the PC sends data unless a power loss or reset occurs first.
+- A call to `USBPhy::ep0_write` results in the call of `USBPhyEvents::in` when the PC reads the data unless a power loss, reset or a call to `USBPhy::disconnect` occurs first.
+- A call to `USBPhy::endpoint_write` results in the call of `USBPhyEvents::in` when the PC reads the data unless a power loss, reset or a call to `USBPhy::endpoint_abort` occurs first.
+- A call to `USBPhy::endpoint_read` results in the call of `USBPhyEvents::out` when the PC sends data unless a power loss, reset or a call to `USBPhy::endpoint_abort` occurs first.
 - Endpoint 0 naks all transactions aside from setup packets until higher-level code calls one of `USBPhy::ep0_read`, `USBPhy::ep0_write` or `USBPhy::ep0_stall`.
 - Endpoint 0 stall automatically clears on reception of a setup packet.
 
 ##### Undefined behavior
 
 - Calling `USBPhy::endpoint_add` or `USBPhy::endpoint_remove` outside of the control requests SetInterface or SetConfiguration.
+- Calling `USBPhy::endpoint_remove` on an endpoint that has an ongoing read or write operation. To avoid undefined behavior, you must abort ongoing operations with `USBPhy::endpoint_abort`.
 - Devices behavior is undefined if latency is greater than 2ms when address is being set - see USB spec 9.2.6.3.
 - Devices behavior is undefined if latency is greater than 10ms when a reset occurs - see USB spec 7.1.7.5.
 - Calling any of the USBPhy::endpoint_* functions on endpoint 0.
