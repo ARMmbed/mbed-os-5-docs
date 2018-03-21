@@ -1,23 +1,135 @@
 ## The configuration system
 
-The Arm Mbed configuration system customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of *configuration parameters*. The values of these configuration parameters can then be *overridden* in various ways. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
+The Arm Mbed OS configuration system, a part of the Arm Mbed OS Build Tools, customizes compile time configuration parameters. Each library may define a number of configuration parameters in its `mbed_lib.json`. The values of these configuration parameters may be overridden by `mbed_app.json`. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
 
 - The sampling period for a data acquisition application.
 - The default stack size for a newly created OS thread.
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The configuration system gathers and interprets all the configurations defined in the source tree. The output of the configuration system is a list of macros that are automatically defined when compiling the code.
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target, all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory and `mbed export` places it in the application root. The Arm Mbed OS configuration system is run during `mbed compile` before invoking the compiler and during `mbed export` before creating project files.
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of a project and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
+
+### Examining available configuration parameters
+
+Mbed CLI includes a command for listing and explaining the compiliation time configuration, `mbed compile --config`. This command prints a summary of configuration parameters, such as:
+```
+Configuration parameters
+------------------------
+cellular.random_max_start_delay = 0 (macro name: "MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY")
+cellular.use-apn-lookup = 1 (macro name: "MBED_CONF_CELLULAR_USE_APN_LOOKUP")
+configuration-store.storage_disable = 0 (macro name: "CFSTORE_STORAGE_DISABLE")
+drivers.uart-serial-rxbuf-size = 256 (macro name: "MBED_CONF_DRIVERS_UART_SERIAL_RXBUF_SIZE")
+drivers.uart-serial-txbuf-size = 256 (macro name: "MBED_CONF_DRIVERS_UART_SERIAL_TXBUF_SIZE")
+events.present = 1 (macro name: "MBED_CONF_EVENTS_PRESENT")
+events.shared-dispatch-from-application = 0 (macro name: "MBED_CONF_EVENTS_SHARED_DISPATCH_FROM_APPLICATION")
+events.shared-eventsize = 256 (macro name: "MBED_CONF_EVENTS_SHARED_EVENTSIZE")
+events.shared-highprio-eventsize = 256 (macro name: "MBED_CONF_EVENTS_SHARED_HIGHPRIO_EVENTSIZE")
+events.shared-highprio-stacksize = 1024 (macro name: "MBED_CONF_EVENTS_SHARED_HIGHPRIO_STACKSIZE")
+events.shared-stacksize = 1024 (macro name: "MBED_CONF_EVENTS_SHARED_STACKSIZE")
+<output truncated for brevity>
+```
+
+You may find that configuration naming does not always describe the parameter's purpose adequately. Include the `-v` switch to include the help text defined with the configuration parameter, where the value of the configuration parameter is defined, and other details. The command `mbed compile --config -v` in the same application as above prints:
+```
+Configuration parameters
+------------------------
+Name: cellular.random_max_start_delay
+    Description: Maximum random delay value used in start-up sequence in milliseconds
+    Defined by: library:cellular
+    No value set
+Name: cellular.use-apn-lookup
+    Description: Use APN database lookup
+    Defined by: library:cellular
+    Macro name: MBED_CONF_CELLULAR_USE_APN_LOOKUP
+    Value: 1 (set by library:cellular)
+Name: configuration-store.storage_disable
+    Description: Configuration parameter to disable flash storage if present. Default = 0, implying that by default flash storage is used if present.
+    Defined by: library:configuration-store
+    No value set
+<output truncated for brevity>
+```
+
+### Using configuration data in code
+
+When compiling or exporting, the configuration system generates C preprocessor macro definitions of the configuration parameters. The configuration system writes these definitions in a file named `mbed_config.h` located in the build directory. When compiling the same example as the prior section for target `K64F`, the `mbed_config.h` file includes this snippet (note that the order of the definitions may be different):
+
+```C
+// Automatically generated configuration file.
+// DO NOT EDIT, content will be overwritten.
+
+#ifndef __MBED_CONFIG_DATA__
+#define __MBED_CONFIG_DATA__
+
+// Configuration parameters
+#define MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY         0 // set by library:cellular
+#define MBED_CONF_CELLULAR_USE_APN_LOOKUP                 1 // set by library:cellular
+<file truncated for brevity>
+```
+
+<span class="notes">**Note:** A macro definition will not be generated for a parameter that doesn't have a value.</span>
+
+
+The names of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. A prefixed name is constructed from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The prefixed name is then capitalized and converted to a valid C macro name. For example, the `random_may_start_delay` configuration parameter in the library `cellular` is converted to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`.
+
+The Mbed OS build tools instruct the compiler to process the file `mbed_config.h` as if it were the first include of any C or C++ source file, so you do not have to include `mbed_config.h` manually.
+
+Do not edit `mbed_config.h` manually. It may be overwritten the next time you compile or export your application, and all your changes will be lost.
+
+### Configuration parameters in `mbed_app.json`, `mbed_lib.json`
+
+An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override library and target configuration parameters and define new configuration parameters. 
+
+#### Overriding configuration parameters
+
+The configuration system allows a user to override any defined configuration parameter with a JSON object named "target_overrides".
+
+The keys in the "target_overrides" section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. The values within the "target_overrides" section are an object mapping configuration parameters, as printed by `mbed compile --conifg`, to new values. An example "target_overrides" section is provided below.
+
+```JSON
+"target_overrides": {
+    "*": {
+        "cellular.random_max_start_delay": "100"
+    },
+    "K64F": {
+        "cellular.use-apn-lookup": false
+    }
+}
+```
+
+Examining the configuration for the target `LPC1768` with `mbed compile --config -m LPC1768` results in the following configuration:
+
+```
+Configuration parameters
+------------------------
+cellular.random_max_start_delay = 100 (macro name: "MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY")
+cellular.use-apn-lookup = 1 (macro name: "MBED_CONF_CELLULAR_USE_APN_LOOKUP")
+<output truncated for brevity>
+```
+
+Examining the configuration for the target `K64F` with `mbed compile --config -m K64F` results in the following configuration:
+
+```
+Configuration parameters
+------------------------
+cellular.random_max_start_delay = 100 (macro name: "MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY")
+cellular.use-apn-lookup = 0 (macro name: "MBED_CONF_CELLULAR_USE_APN_LOOKUP")
+<output truncated for brevity>
+```
+
+The order in which overrides are considered is:
+
+ 1. Libraries override target configuration with `mbed_lib.json`.
+ 2. The application overrides target and library configuration with `mbed_app.json`
 
 #### Defining configuration parameters
 
-The configuration system understands configuration data defined in targets, libraries and applications. Although there are some slight differences in the way the configuration system works in these cases, the configuration parameters are always defined in a JSON object called "config".
+The configuration system understands configuration parameters defined in targets, libraries and applications. The configuration parameters are always defined in a JSON object called "config".
 
 For example:
 
-```
+```JSON
 {
     "config": {
         "param1": {
@@ -34,28 +146,40 @@ For example:
 }
 ```
 
-The JSON fragment above defines three configuration parameters named `param1`, `param2` and `param3`. There are two ways to define a configuration parameter:
+You define a configuration parameter by specifying it's name as the key and specifying it's value either with a description object or by value. The JSON fragment above defines three configuration parameters named `param1`, `param2` and `param3`.
 
-- *The short way:* by name and value. `param3` above is an example of a short definition for a parameter named `param3` with value `10`.
-- *The long way:* by name and description (another JSON object), like `param1` and `param2` above. The JSON description object can have the following keys:
-    - `help`: an optional help message that describes the purpose of the parameter.
-    - `value`: an optional field that defines the value of the parameter.
-    - `required`: an optional key that specifies whether the parameter **must** be given a value before compiling the code (`false` by default). It's not possible to compile a source tree with one or more required parameters that don't have a value. Generally, it makes sense to define a required parameter only when it doesn't have a `value` key.
-    - `macro_name`: an optional name for the macro defined at compile time for this configuration parameter. The configuration system will automatically figure out the corresponding macro name for a configuration parameter, but the user can override this automatically computed name by specifying `macro_name`.
+Above, the configuration parameters `param1` and `param2` are defined using a description object. The following keys are supported on the description object:
+  - `help`: an optional help message that describes the purpose of the parameter.
+  - `value`: an optional field that defines the value of the parameter.
+  - `required`: an optional key that specifies whether the parameter must be given a value before compiling the code (`false` by default). It's not possible to compile a source tree with one or more required parameters that don't have a value. Generally, setting `required` to true is only useful when `value` is not set.
+  - `macro_name`: an optional name for the macro defined at compile time for this configuration parameter. The configuration system will automatically figure out the corresponding macro name for a configuration parameter, but the user can override this automatically computed name by specifying `macro_name`.
+
+You define a macro by value by using an integer or string instead of the deception object, such as `param3` above. Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `help` unset, the key `macro_name` unset, the key `required` set to `false`, and the key `value` set to the value in place of the description object. 
 
 <span class="notes">**Note:** the name of a parameter in `config` can't contain a dot (`.`) character.</span>
 
-The configuration system automatically appends an *implicit prefix* to the name of each parameter, so you don't have to worry about a name clash if you define a parameter with the same name in a library and a target, for example. The implicit prefix is:
+The configuration system appends a prefix to the name of each parameter, so a parameter with the same name in a library does not conflict with parameters of the same name in targets or other libraries. The prefix is:
 
-- **target.** if the parameter is defined in a target.
-- **app.** if the parameter is defined in the application.
-- The name of the library followed by a dot (.) if the parameter is defined in a library.
+| Location | Prefix |
+| -------- | ------ |
+| target | `target.` |
+| any library | The name of the library, as found in the `name` section of `mbed_lib.json`, followed by a dot (.) |
+| application | `app.` |
 
-#### Configuration data in libraries
+### `mbed_lib.json` format specification
 
-Each Mbed library can have an optional `mbed_lib.json` file located in the root folder of the library that defines its configuration. For a library called `mylib`, the configuration file can look like this:
+`mbed_lib.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are refered to as sections. The allowed sections and their meaning is listed below:
 
-```
+| Section | Required | Meaning |
+| ------- | -------- | ------- |
+| `name`  | Yes      | name of the library. Must be unique. May not be `app` or `target`.|
+| `macros` | No | List of macros to define on the command line. |
+| `config` | No | Configuration parameters defined for use in this library. |
+| `target_overrides` | No | Overrides for target configuration parameters and configuration parameters of the current library. |
+
+The following is an example library, "mylib".
+
+```JSON
 {
     "name": "mylib",
     "config": {
@@ -78,7 +202,8 @@ Each Mbed library can have an optional `mbed_lib.json` file located in the root 
         },
         "NXP": {
              "queue_size": 20,
-             "buffer_size": 128
+             "buffer_size": 128,
+             "target.features_add": ["IPV4"]
         }
     }
 }
@@ -88,90 +213,33 @@ In this JSON file:
 
 - `name` is the name of the library. **This is a required field.**
 - `config` defines the configuration parameters of the library, as explained in the section about [defining configuration parameters](#defining-configuration-parameters).
-- `macros` is a list of extra macros that will be defined when compiling a project that includes this library. A macro can be defined without a value (such as `MYMOD_MACRO1` above) or with a value (such as `MYMOD_MACRO2` above).
+- `macros` is a list of extra macros that will be defined when compiling a application that includes this library. A macro can be defined without a value (such as `MYMOD_MACRO1` above) or with a value (such as `MYMOD_MACRO2` above).
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters.
 
-`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against toolchain *labels*. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. In the example above:
+All configuration parameters defined in `mylib` have a `mylib.` prefix. In a `mbed_app.json`, `buffer_size` is accessible using the name `mylib.buffer_size`.
+`target_overrides` is used to override the values of the parameters depending on the current compilation target. The keys in `target_overrides` are matched against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values are changed according to the value of the key. 
 
-- `config` is always processed first, independent of the target. `config` might define values for some of the parameters. In this case, `buffer_size` will be set to 1024, `queue_size` will be set to 10 and `timer_period` will not have a value.
-- If the library is compiled for the `K64F` target, `timer_period` will be set to 100, and `queue_size` will be set to 40 because they are overridden by the `K64F` key in `target_overrides`. `buffer_size` will be set to 1024, as defined in `config`.
-- Assuming that `NXP` is a label defined by **all** NXP based targets, if the library is compiled for **any** `NXP` target (like `LPC1768` or `LPC11U24`), `buffer_size` will be set to 128 and `queue_size` will be set to 20, while `timer_period` will not have a value (since it doesn't get one either in `config` or in the `NXP` override).
-- The keys in `target_overrides` are processed in order: if a hypothetical target defines both `K64F` and `NXP` as labels, `timer_period` will be set to 100, `queue_size` will be set to 20 and `buffer_size` will be set to 128.
-- If the library is compiled for a target that doesn't have `K64F` or `NXP` as labels, the values of the parameters will be the ones set in `config`.
+It is an error for `mbed_lib.json` to override configuration parameters that were not defined.
 
-Except `name`, all the above keys in the JSON file are optional. However, if `target_overrides` is defined, `config` must also be defined.
+#### Overriding target attributes
 
-As explained in the section about [defining configuration parameters](#defining-configuration-parameters), the parameters have an implicit `mylib.` prefix. Outside `mylib`, `buffer_size` is accessible using the name `mylib.buffer_size`. An application will be able to override the value of this parameter, as described in [this section](#configuration-data-in-applications).
+Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` attributes. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
 
-If the source tree has code for more than one library, each library needs its own `mbed_lib.json` file in its root folder.
 
-##### Configuration data in targets
+### `mbed_app.json` Specification
 
-Like libraries, targets can define their own configuration data. Additionally, targets can override the configuration of the target(s) they inherit from (for more details about how do define a target and target inheritance, check [our configuring targets documentation](/docs/development/tools/adding-and-configuring-targets.html)). Target configuration data is defined in `targets.json` using `config`, as described in the section about [defining configuration parameters](#defining-configuration-parameters). An example for a hypothetical `Base` target is given below:
+`mbed_app.json` may be present at the root of your application or specified as the argument to the `--app-config` parameter. Unlike library configuration, only one `mbed_app.json` is interpreted during `mbed compile` or `mbed export`. like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are refered to as sections. The allowed sections and their meaning is listed below:
 
-```
-"Base": {
-    "core": "Cortex-M0",
-    "extra_labels": ["BASE_LABEL"],
-    "config": {
-        "serial_console_speed": {
-            "help": "Baud rate of the serial console",
-            "value": 115200,
-            "macro_name": "MBED_SERIAL_UART_SPEED"
-        },
-        "stack_size": {
-            "help": "Initial stack size of the application",
-            "value": 128
-        }
-    }
-}
-```
+| Section | Required | Meaning |
+| ------- | -------- | ------- |
+| `artifact_name`  | No      | The name for the executable to generate. Defaults to the name of the containing directory. |
+| `macros` | No | List of macros to define on the command line. |
+| `config` | No | Configuration parameters defined for use in this library. |
+| `target_overrides` | No | Overrides for target, library and application configuration parameters. |
 
-Like library parameters, target-defined parameters have an implicit prefix. For a target, the prefix is always called `target` (no matter what the actual target name is), so the above configuration parameters will be accessible outside the definition in `Base` (and any other target) as `target.serial_console_speed` and `target.stack_size`.
+The application can freely override the configuration of any of the libraries it depends on, as well as the configuration data in targets, so it has complete control over the configuration of the whole build. For example, an `mbed_app.json` from an application that depends on `mylib` above may look like this:
 
-Targets can inherit from other targets, and their configuration data is also inherited. A target that inherits from one or more other targets can add new parameters in its own `config` section and can also override the configuration parameters defined by its parent(s) in the `overrides` section. For example:
-
-```
-"Derived": {
-    "inherits": ["Base"],
-    "extra_labels_add": ["NXP"],
-    "config": {
-        "my_own_config": {
-            "help": "My very own configuration parameter",
-            "value": 0
-        }
-    },
-    "overrides": {
-        "stack_size": 256
-    }
-}
-```
-
-`Derived` above defines its own configuration parameter called `my_own_config` and inherits the configuration parameters from `Base`, so its configuration parameters are `serial_console_speed`, `stack_size` and `my_own_config`. It also overrides the value of the `stack_size` parameter defined in `Base`. This means that:
-
-- When compiling for `Base`, the target will define two configuration parameters: `serial_console_speed` with the value 115200 and `stack_size` with the value 128.
-- When compiling for `Derived`, the target will define three configuration parameters: `serial_console_speed` with the value 115200, `stack_size` with the value 256 and `my_own_config` with the value 0.
-
-It is an error for a derived target to redefine a configuration parameter already defined by its parent(s) in its `config` section. It is also an error for a derived target to override a configuration parameter that was not defined by its parent(s) in its `overrides` section.
-
-#### Configuration data in applications
-
-Like target and library configuration, application configuration is optional; if it exists, it must be defined in an `mbed_app.json` file. Unlike library configuration, there can be a single `mbed_app.json` file in the source tree.
-
-There are similarities between configuration data in applications and libraries:
-
-- Applications define their configuration parameters in the `config` section of `mbed_app.json`, as explained [in the section](#defining-configuration-parameters) about defining parameters.
-- Applications can specify target-dependent values in their `target_overrides` section, as described in the [library configuration paragraph](#configuration-data-in-libraries) (but see below for differences).
-- Applications can define macros that will be defined at compile time by declaring them in `macros`.
-
-There are also a few differences:
-
-- Applications **can't** have a `name` key in `mbed_app.json`. The prefix for the configuration parameters defined in an application is always `app.`.
-- Applications can also override library and target configurations, in addition to their own configuration, in their `target_overrides` section.
-
-The last point above is important. The application can freely override the configuration of any of the libraries it depends on, as well as the configuration data in targets, so it has complete control over the configuration of the whole build. For an application called ``myapp`` that depends on ``mylib`` above, the configuration can look like this:
-
-```
+```JSON
 {
     "config": {
         "welcome_string": {
@@ -181,128 +249,20 @@ The last point above is important. The application can freely override the confi
     },
     "target_overrides": {
         "*": {
-            "target.serial_console_speed": 2400,
             "mylib.timer_period": 100
         },
-        "Base": {
-            "target.serial_console_speed": 9600
+        "NCS36510": {
+            "target.mac_addr_high": "0x11223344"
         }
     }
 }
 ```
 
-`target_overrides` works a lot like it does in libraries, but there are a few differences:
+The application may override any configuration parameter by specifying the configuration parameters including their prefix (like `mylib.timer_period`). If an overridden parameter doesn't have a prefix, it overrides a parameter in its own `config` section.
 
-- Because the application can override any configuration parameter, it must specify configuratoin parameters using their prefix (like `mylib.timer_period`). If an overridden parameter doesn't have a prefix, the config system assumes that the overridden paramater is one of the parameters the application defines in its own `config` section.
-- The `*` key in `target_overrides` will match *any* target. It is possible to use the `*` key in a library's `target_overrides` too, but it'd make little sense to do so, since it will always override the values defined in the library's `config` section. In an application it might make sense to use the `*` key, since it can be used to override the configuration defined by the target or the dependent libraries, no matter which target is used for building.
+`myapp` above defines its own configuration parameter (`welcome_string`) and overrides the configuration in both the target (`target.mac_addr_high`) and its `mylib` dependency (`mylib.timer_period`):
 
-Other than this, `target_overrides` works exactly like it does for libraries. Keys in `target_overrides` are still processed in the order they are defined, so for the example above, the `*` override is always processed first (because it matches all targets) and then `Base` is only processed for the `Base` target.
-
-`myapp` above defines its own configuration parameter (`welcome_string`) and overrides the configuration in both the target (`target.serial_console_speed`) and its `mylib` dependency (`mylib.timer_period`):
-
-- When compiling for `Base`, `app.welcome_string` is `"Hello!"`, `target.serial_console_speed` is 9600 (from the `Base` override) and `mylib.timer_period` is 100 (from the `*` override).
-- When compiling for `Derived`, `app.welcome_string` is `"Hello!"`, `target.serial_console_speed` is 2400 (from the `*` override) and `mylib.timer_period` is 100 (also from the `*` override).
+- When compiling for `NCS36510`, `app.welcome_string` is `"Hello!"`, `target.mac_addr_high` is `"0x11223344"` (from the `NCS36510` override) and `mylib.timer_period` is 100 (from the `*` override).
+- When compiling for `LPC1768`, `app.welcome_string` is `"Hello!"` and `mylib.timer_period` is 100 (also from the `*` override).
 
 It is an error for the application configuration to override configuration parameters that were not defined.
-
-##### Overriding target attributes
-
-Target configurations contain a set of attributes that you may manipulate with an application configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` meta-attributes.
-
-Cumulative attributes:
-
-- `features`: This attribute contains a list of features that the Mbed OS tools compile into the resulting binary and are available at runtime. The Mbed OS tools include all code within a directory whose name is an entry of the `features` attribute prefixed with `FEATURE_`. Further, the Mbed OS tools emit all entries within this attribute as macros prefixed with `FEATURE_`. If two different libraries try to add and remove the same feature, the Mbed OS tools will report an error.
-- `device_has`: This attribute is a list of hardware components available on the target. The Mbed OS tools emit all entries within this attribute as macros prefixed with `DEVICE_`.
-- `extra_labels`: The `extra_labels` attribute is a list of labels that the Mbed OS tools use to include code. The Mbed OS tools include all code within a directory whose name is an entry of the `extra_labels` attribute prefixed with `TARGET_`. The Mbed OS tools also emit all entries in this attribute as macros prefixed with `TARGET_`.
-- `macros`: This attribute is a list of target-specific macros that the Mbed OS tools define during compilation.
-
-For example, this `mbed_app.json` disables the IPV4 feature; using this network stack will result in a compilation error:
-
-```
-{
-    "target_overrides": {
-        "K64F": {
-            "target.features_remove": ["IPV4"]
-        }
-    }
-}
-```
-
-#### Configuration data precedence
-
-The order in which the various bits of configurations are considered is:
-
-- The configuration defined by an inherited target overrides the configuration defined by its parent(s), as described [above](#configuration-data-in-targets).
-- The configuration of the top level application overrides the configuration defined by the target and any of the libraries on which it depends.
-
-For `myapp` above:
-
-- The value of `target.serial_console_speed` is:
-	- 9600 when compiling for `Base` because of the `Base` override in myapp's `target_overrides`.
-	- 2400 when compiling for any other target because of the `*` override in myapp's `target_overrides`.
-- The value of `target.stack_size` is:
- 	- 256 when compiling for `Derived`.
- 	- 128 when compiling for `Base` - or any other target that derives from `Base` (assuming that `Derived` is the only target that redefines `stack_size`).
-- The value of `mylib.timer_period` is 100 because that's overridden by the application and takes precedence over the values defined in `mylib`.
-- The values of `mylib.buffer_size` and `mylib.queue_size` are:
- 	- 1024 and 10, respectively, when compiling for `Base`, as defined in the `config` section of `mylib`.
- 	- 128 and 20, respectively, because `Derived` defines the `NXP` label and `mylib` defines a specific configuration for this label.
-- Because `Derived` has its own `my_own_config` configuration parameter, `target.my_own_config` will also be defined in this case.
-
-#### Using configuration data in the code
-
-When compiling, the configuration system will automatically generate macro definitions for the configuration parameters and all the macros defined in libraries and the application in their `macros` keys. These definitions will be written in a file named `mbed_config.h`, located in the build directory. When compiling `myapp` for target `Base`, the `mbed_config.h` file will look like this (note that the order of the definitions may be different):
-
-```
-// Automatically generated configuration file.
-// DO NOT EDIT, content will be overwritten.
-
-#ifndef __MBED_CONFIG_DATA__
-#define __MBED_CONFIG_DATA__
-
-// Configuration parameters
-#define MBED_CONF_MYAPP_WELCOME_STRING "Hello!" // set by application
-#define MBED_SERIAL_UART_SPEED         9600     // set by application[Base]
-#define MBED_CONF_TARGET_STACK_SIZE    128      // set by target
-#define INTERNAL_GPTMR_PERIOD          100      // set by application[*]
-#define MBED_CONF_MYLIB_BUFFER_SIZE    1024     // set by library:mylib
-#define MBED_CONF_MYLIB_QUEUE_SIZE     10       // set by library:mylib
-// Macros
-#define MYMOD_MACRO1                            // defined by library:mylib
-#define MYMOD_MACRO2                   "TEST"   // defined by library:mylib
-
-#endif
-```
-
-When compiling for `Derived`, `mbed_config.h` will look like this:
-
-
-```
-// Automatically generated configuration file.
-// DO NOT EDIT, content will be overwritten.
-
-#ifndef __MBED_CONFIG_DATA__
-#define __MBED_CONFIG_DATA__
-
-// Configuration parameters
-#define MBED_CONF_MYAPP_WELCOME_STRING "Hello!" // set by application
-#define MBED_SERIAL_UART_SPEED         2400     // set by application[*]
-#define MBED_CONF_TARGET_STACK_SIZE    256      // set by target
-#define MBED_CONF_TARGET_MY_OWN_CONFIG 0        // set by target
-#define INTERNAL_GPTMR_PERIOD          100      // set by application[*]
-#define MBED_CONF_MYLIB_BUFFER_SIZE    128      // set by library:mylib[NXP]
-#define MBED_CONF_MYLIB_QUEUE_SIZE     20       // set by library:mylib[NXP]
-// Macros
-#define MYMOD_MACRO1                            // defined by library:mylib
-#define MYMOD_MACRO2                   "TEST"   // defined by library:mylib
-
-#endif
-```
-
-Note that a macro definition will *not* be generated for a parameter that doesn't have a value.
-
-The names of the macros for the configuration parameter (unless explicitly specified by `macro_name`) are prefixed by **MBED_CONF_**, followed by the full (prefixed) name of the parameter, capitalized and converted to a valid C macro name (if needed).
-
-`mbed_config.h` will be included automatically by the toolchain in all compiled sources, so you'll have access to the configuration data without having to include `mbed_config.h` manually.
-
-*Do not `edit mbed_config.h manually`*. It will be overwritten the next time you compile or export your project, and all your changes will be lost.
