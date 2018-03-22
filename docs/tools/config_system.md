@@ -223,7 +223,13 @@ It is an error for `mbed_lib.json` to override configuration parameters that wer
 
 #### Overriding target attributes
 
-Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, they are a list of items that you may add to with the special attribute `attribute_add` and subtract from with `attribute_remove`. It is an error to both add and subtract the same value from a cumulative attribute. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
+Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. Attributes may be cumulative, in which case they are a list of items. You may add to a cumulative attribute by overriding a configuration parameter with the name of the cumulative attribute suffixed with `_add` and remove from a cumulative attribute with the suffix `_remove`. When overriding, adding or subtracting from a cumulative attribute, the value must be a list of items to replace the definition with, add or remove. For example, you add the value `IPV4` to a target's features list with the syntax:
+
+```JSON
+"target.features_add": ["IPV4"]
+```
+
+It is an error to both add and subtract the same value from a cumulative attribute. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
 
 
 ### `mbed_app.json` Specification
