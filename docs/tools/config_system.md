@@ -76,7 +76,7 @@ Do not edit `mbed_config.h` manually. It may be overwritten the next time you co
 
 ### Configuration parameters in `mbed_app.json`, `mbed_lib.json`
 
-An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override library and target configuration parameters and define new configuration parameters. 
+An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override configuration parameters defined in libraries and the target and define new configuration parameters. 
 
 #### Overriding configuration parameters
 
