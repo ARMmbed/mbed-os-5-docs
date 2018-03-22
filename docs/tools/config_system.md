@@ -7,6 +7,7 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS Build Tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
+
 The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](/docs/development/tools/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory and `mbed export` places it in the application root. The Arm Mbed OS configuration system is run during `mbed compile` before invoking the compiler and during `mbed export` before creating project files.
 
 <span class="notes">**Note:** Throughout this document, library mean any reusable piece of code within its own directory.</span>
@@ -15,7 +16,7 @@ The Arm Mbed OS configuration system gathers and interprets the configuration de
 
 ### Examining available configuration parameters
 
-Mbed CLI includes a command for listing and explaining the compiliation time configuration, `mbed compile --config`. This command prints a summary of configuration parameters, such as:
+Mbed CLI includes a command for listing and explaining the compile time configuration, `mbed compile --config`. This command prints a summary of configuration parameters, such as:
 ```
 Configuration parameters
 ------------------------
@@ -70,7 +71,7 @@ When compiling or exporting, the configuration system generates C preprocessor m
 <file truncated for brevity>
 ```
 
-The names of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. A prefixed name is constructed from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The prefixed name is then capitalized and converted to a valid C macro name. For example, the `random_may_start_delay` configuration parameter in the library `cellular` is converted to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`.
+The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. A prefixed name is constructed from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The prefixed name is then capitalized and converted to a valid C macro name. For example, the `random_may_start_delay` configuration parameter in the library `cellular` is converted to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`.
 
 The Mbed OS build tools instruct the compiler to process the file `mbed_config.h` as if it were the first include of any C or C++ source file, so you do not have to include `mbed_config.h` manually.
 
@@ -82,9 +83,9 @@ An application may have one `mbed_app.json` in the root of the application and m
 
 #### Overriding configuration parameters
 
-The configuration system allows a user to override any defined configuration parameter with a JSON object named "target_overrides".
+The configuration system allows a user to override any defined configuration parameter with a JSON object named `"target_overrides"`.
 
-The keys in the "target_overrides" section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. The values within the "target_overrides" section are an object mapping configuration parameters, as printed by `mbed compile --conifg`, to new values. An example "target_overrides" section is provided below.
+The keys in the `"target_overrides"` section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. The values within the `"target_overrides"` section are an object mapping configuration parameters, as printed by `mbed compile --conifg`, to new values. An example `"target_overrides"` section is provided below.
 
 ```JSON
 "target_overrides": {
@@ -145,7 +146,7 @@ For example:
 }
 ```
 
-You define a configuration parameter by specifying it's name as the key and specifying it's value either with a description object or by value. The JSON fragment above defines three configuration parameters named `param1`, `param2` and `param3`.
+You define a configuration parameter by specifying its name as the key and specifying its value either with a description object or by value. The JSON fragment above defines three configuration parameters named `param1`, `param2` and `param3`.
 
 Above, the configuration parameters `param1` and `param2` are defined using a description object. The following keys are supported on the description object:
   - `help`: an optional help message that describes the purpose of the parameter.
@@ -153,9 +154,9 @@ Above, the configuration parameters `param1` and `param2` are defined using a de
   - `required`: an optional key that specifies whether the parameter must be given a value before compiling the code (`false` by default). It's not possible to compile a source tree with one or more required parameters that don't have a value. Generally, setting `required` to true is only useful when `value` is not set.
   - `macro_name`: an optional name for the macro defined at compile time for this configuration parameter. The configuration system will automatically figure out the corresponding macro name for a configuration parameter, but the user can override this automatically computed name by specifying `macro_name`.
 
-You define a macro by value by using an integer or string instead of the deception object, such as `param3` above. Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `help` unset, the key `macro_name` unset, the key `required` set to `false`, and the key `value` set to the value in place of the description object. 
+You define a macro by value by using an integer or string instead of the description object, such as `param3` above. Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `value` set to the value in place of the description object, the key `help` unset, the key `macro_name` unset, and the key `required` set to `false`.
 
-<span class="notes">**Note:** the name of a parameter in `config` can't contain a dot (`.`) character.</span>
+<span class="notes">**Note:** The name of a parameter in `config` can't contain a dot (`.`) character.</span>
 
 The configuration system appends a prefix to the name of each parameter, so a parameter with the same name in a library does not conflict with parameters of the same name in targets or other libraries. The prefix is:
 
@@ -227,7 +228,7 @@ Target configurations contain a set of attributes that you may manipulate with c
 
 ### `mbed_app.json` Specification
 
-`mbed_app.json` may be present at the root of your application or specified as the argument to the `--app-config` parameter. Unlike library configuration, only one `mbed_app.json` is interpreted during `mbed compile` or `mbed export`. like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are refered to as sections. The allowed sections and their meaning is listed below:
+`mbed_app.json` may be present at the root of your application or specified as the argument to the `--app-config` parameter. Unlike library configuration, only one `mbed_app.json` is interpreted during `mbed compile` or `mbed export`. Like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are refered to as sections. The allowed sections and their meaning is listed below:
 
 | Section | Required | Meaning |
 | ------- | -------- | ------- |
