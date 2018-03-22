@@ -7,7 +7,10 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS Build Tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The configuration system gathers and interprets the configuration defined in the target, all `mbed_lib.json` files and the `mbed_app.json` file. It creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory; `mbed export` places it in the application root. The configuration system is run during `mbed compile` before invoking the compiler and during `mbed export`, before creating project files.
+
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](/docs/development/tools/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory and `mbed export` places it in the application root. The Arm Mbed OS configuration system is run during `mbed compile` before invoking the compiler and during `mbed export` before creating project files.
+
+<span class="notes">**Note:** Throughout this document, library mean any reusable piece of code within its own directory.</span>
 
 <span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
 
@@ -68,9 +71,6 @@ When compiling or exporting, the configuration system generates C preprocessor m
 <file truncated for brevity>
 ```
 
-<span class="notes">**Note:** A macro definition will not be generated for a parameter that doesn't have a value.</span>
-
-
 The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. A prefixed name is constructed from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The prefixed name is then capitalized and converted to a valid C macro name. For example, the `random_may_start_delay` configuration parameter in the library `cellular` is converted to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`.
 
 The Mbed OS build tools instruct the compiler to process the file `mbed_config.h` as if it were the first include of any C or C++ source file, so you do not have to include `mbed_config.h` manually.
@@ -79,7 +79,7 @@ Do not edit `mbed_config.h` manually. It may be overwritten the next time you co
 
 ### Configuration parameters in `mbed_app.json`, `mbed_lib.json`
 
-An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override library and target configuration parameters and define new configuration parameters. 
+An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override configuration parameters defined in libraries and the target and define new configuration parameters. 
 
 #### Overriding configuration parameters
 
@@ -223,7 +223,7 @@ It is an error for `mbed_lib.json` to override configuration parameters that wer
 
 #### Overriding target attributes
 
-Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` attributes. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
+Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, they are a list of items that you may add to with the special attribute `attribute_add` and subtract from with `attribute_remove`. It is an error to both add and subtract the same value from a cumulative attribute. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
 
 
 ### `mbed_app.json` Specification
@@ -260,7 +260,7 @@ The application can freely override the configuration of any of the libraries it
 
 The application may override any configuration parameter by specifying the configuration parameters including their prefix (like `mylib.timer_period`). If an overridden parameter doesn't have a prefix, it overrides a parameter in its own `config` section.
 
-`myapp` above defines its own configuration parameter (`welcome_string`) and overrides the configuration in both the target (`target.mac_addr_high`) and its `mylib` dependency (`mylib.timer_period`):
+The `mbed_app.json` above defines its own configuration parameter (`welcome_string`) and overrides the configuration in both the target (`target.mac_addr_high`) and its `mylib` dependency (`mylib.timer_period`):
 
 - When compiling for `NCS36510`, `app.welcome_string` is `"Hello!"`, `target.mac_addr_high` is `"0x11223344"` (from the `NCS36510` override) and `mylib.timer_period` is 100 (from the `*` override).
 - When compiling for `LPC1768`, `app.welcome_string` is `"Hello!"` and `mylib.timer_period` is 100 (also from the `*` override).
