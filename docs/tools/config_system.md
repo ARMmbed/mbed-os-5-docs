@@ -222,7 +222,7 @@ It is an error for `mbed_lib.json` to override configuration parameters that wer
 
 #### Overriding target attributes
 
-Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, you may also manipulate them with the special `attribute_add` and `attribute_remove` attributes. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
+Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. If these attributes are cumulative, they are a list of items that you may add to with the special attribute `attribute_add` and subtract from with `attribute_remove`. It is an error to both add and subtract the same value from a cumulative attribute. Find a list of the attributes that may be overwritten in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
 
 
 ### `mbed_app.json` Specification
