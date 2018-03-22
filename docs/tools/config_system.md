@@ -9,6 +9,8 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS Build Tools, cus
 
 The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](/docs/development/tools/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory and `mbed export` places it in the application root. The Arm Mbed OS configuration system is run during `mbed compile` before invoking the compiler and during `mbed export` before creating project files.
 
+<span class="notes">**Note:** Throughout this document, library mean any reusable piece of code within its own directory.</span>
+
 <span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
 
 ### Examining available configuration parameters
