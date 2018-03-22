@@ -259,7 +259,7 @@ The application can freely override the configuration of any of the libraries it
 
 The application may override any configuration parameter by specifying the configuration parameters including their prefix (like `mylib.timer_period`). If an overridden parameter doesn't have a prefix, it overrides a parameter in its own `config` section.
 
-`myapp` above defines its own configuration parameter (`welcome_string`) and overrides the configuration in both the target (`target.mac_addr_high`) and its `mylib` dependency (`mylib.timer_period`):
+The `mbed_app.json` above defines its own configuration parameter (`welcome_string`) and overrides the configuration in both the target (`target.mac_addr_high`) and its `mylib` dependency (`mylib.timer_period`):
 
 - When compiling for `NCS36510`, `app.welcome_string` is `"Hello!"`, `target.mac_addr_high` is `"0x11223344"` (from the `NCS36510` override) and `mylib.timer_period` is 100 (from the `*` override).
 - When compiling for `LPC1768`, `app.welcome_string` is `"Hello!"` and `mylib.timer_period` is 100 (also from the `*` override).
