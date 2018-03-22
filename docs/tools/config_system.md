@@ -71,7 +71,7 @@ When compiling or exporting, the configuration system generates C preprocessor m
 <file truncated for brevity>
 ```
 
-The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. A prefixed name is constructed from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The prefixed name is then capitalized and converted to a valid C macro name. For example, the `random_may_start_delay` configuration parameter in the library `cellular` is converted to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`.
+The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. A prefixed name is constructed from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The prefixed name is then capitalized and converted to a valid C macro name. For example, the `random_max_start_delay` configuration parameter in the library `cellular` is converted to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`.
 
 The Mbed OS build tools instruct the compiler to process the file `mbed_config.h` as if it were the first include of any C or C++ source file, so you do not have to include `mbed_config.h` manually.
 
