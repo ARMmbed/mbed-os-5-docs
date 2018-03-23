@@ -4,7 +4,7 @@
 
 ### EnvironmentalService class reference
 
-[![View code](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_environmental_service.html)
+[![View code](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_environmental_service.html)
 
 ### EnvironmentalService example
 

@@ -6,7 +6,7 @@ An implementation of this class is passed to the Arm Mbed LoRaWAN stack. Please 
 
 ### LoRaRadio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_radio.html)
 
 ### LoRaRadio example
 

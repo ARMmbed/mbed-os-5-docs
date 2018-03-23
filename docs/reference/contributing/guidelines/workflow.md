@@ -1,6 +1,6 @@
 ### Workflow
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/development/reference/guidelines.html#style). Please also read the [Contributor License Agreement (CLA)](/docs/development/reference/guidelines.html#cla) guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/v5.8/reference/guidelines.html#style). Please also read the [Contributor License Agreement (CLA)](/docs/v5.8/reference/guidelines.html#cla) guidelines because we will immediately close pull requests submitted without a CLA.
 
 #### Mbed OS maintainers
 

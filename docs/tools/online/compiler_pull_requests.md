@@ -2,7 +2,7 @@
 
 A pull request lets you tell others about changes you've added to a fork of their (or ancestor) repository, effectively granting them permission to include and use your code in their codebase. Once the pull request is created, the other party can review, accept or reject the set of changes, discuss further modifications and even add follow-up changes or merges.
 
-Think of pull requests as a simplified [fork and update](/docs/development/tools/collab-online-comp.html) workflow, where the repository author(s) moderate the changes nonrepository developers contribute.
+Think of pull requests as a simplified [fork and update](/docs/v5.8/tools/collab-online-comp.html) workflow, where the repository author(s) moderate the changes nonrepository developers contribute.
 
 #### Day to day usage
 
@@ -10,4 +10,4 @@ An important thing to know about pull requests is that they can only exist betwe
 
 #### Tutorial
 
-For more information about using pull requests on the Online Compiler, please see [our tutorial](/docs/development/tutorials/pr-tutorial.html), which covers creating and editing a pull request, viewing a pull request and accepting or rejecting a pull request.
+For more information about using pull requests on the Online Compiler, please see [our tutorial](/docs/v5.8/tutorials/pr-tutorial.html), which covers creating and editing a pull request, viewing a pull request and accepting or rejecting a pull request.

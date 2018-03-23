@@ -1,6 +1,6 @@
 ## RawSerial
 
-The RawSerial class provides UART functionality without the use of Stream's print and scan functions the way the Serial class does. RawSerial does not retarget the standard library print and scan functions. Instead, RawSerial reimplements the print and scan functions to use each target's underlying serial communication functions. See the porting guide for [target serial support](/docs/development/reference/contributing-target.html#serial). This makes RawSerial suitable for use in interrupt handlers with the RTOS.
+The RawSerial class provides UART functionality without the use of Stream's print and scan functions the way the Serial class does. RawSerial does not retarget the standard library print and scan functions. Instead, RawSerial reimplements the print and scan functions to use each target's underlying serial communication functions. See the porting guide for [target serial support](/docs/v5.8/reference/contributing-target.html#serial). This makes RawSerial suitable for use in interrupt handlers with the RTOS.
 
 Serial channels have the following configurable parameters in the constructor:
 
@@ -18,9 +18,9 @@ _9600-8-N-1_, a  common notation for serial port settings, describes the default
 
 ### RawSerial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](/docs/development/tutorials/serial-communication.html#windows-serial-driver).</span>
+<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](/docs/v5.8/tutorials/serial-communication.html#windows-serial-driver).</span>
 
 ### RawSerial hello, world
 

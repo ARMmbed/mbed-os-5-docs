@@ -10,7 +10,7 @@ Mbed OS supports nesting of critical section, and the destructor enables interru
 
 ### CriticalSectionLock class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
 
 ### CriticalSectionLock example
 

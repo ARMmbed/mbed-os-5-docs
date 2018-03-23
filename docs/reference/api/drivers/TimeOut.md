@@ -14,7 +14,7 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 ### Timeout class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_timeout.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_timeout.html)
 
 ### Timeout hello, world
 

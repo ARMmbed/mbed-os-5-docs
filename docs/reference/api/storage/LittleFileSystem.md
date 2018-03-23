@@ -19,7 +19,7 @@ Microcontrollers and flash storage present three challenges for embedded storage
 
 - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-For additional information, please see the [storage overview page](/docs/development/reference/storage.html#declaring-a-file-system).
+For additional information, please see the [storage overview page](/docs/v5.8/reference/storage.html#declaring-a-file-system).
 
 ### Use cases
 
@@ -35,7 +35,7 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 ### LittleFileSystem class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_little_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_little_file_system.html)
 
 ### LittleFileSystem example
 

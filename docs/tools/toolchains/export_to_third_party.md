@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ### Exporting from Arm Mbed CLI
 
-[Mbed CLI](/docs/development/tools/arm-mbed-cli.html) currently supports [exporting](/docs/development/tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](/docs/v5.8/tools/arm-mbed-cli.html) currently supports [exporting](/docs/v5.8/tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -36,7 +36,7 @@ For example, to export to uVision5 with the K64F target, run:
 A `*.uvproj` file is created in the root folder of the project.
 You can open this project file with uVision5.
 
-When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](/docs/development/tools/build-profiles.html). For example, this means that compiling within UVision 5 after this export:
+When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](/docs/v5.8/tools/build-profiles.html). For example, this means that compiling within UVision 5 after this export:
 
     $ mbed export -i uvision5 -m K64F
 

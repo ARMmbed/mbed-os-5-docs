@@ -10,7 +10,7 @@ The HeartRateService class implements the Bluetooth Heart Rate service as define
 
 ### HeartRateService class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_heart_rate_service.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_heart_rate_service.html)
 
 ### HeartRateService example
 

@@ -11,11 +11,11 @@ You can view more information about the configurable settings and functions in t
 
 ### MBRBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_m_b_r_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_m_b_r_block_device.html)
 
 ### MBRBlockDevice example
 
-Partition a heap backed block device into two partitions. This example also uses the [HeapBlockDevice](/docs/development/reference/heapblockdevice.html).
+Partition a heap backed block device into two partitions. This example also uses the [HeapBlockDevice](/docs/v5.8/reference/heapblockdevice.html).
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/file/daa62d7aa9f9/main.cpp)
 
@@ -25,4 +25,4 @@ Partition an SD card, and format the new partition with a FAT filesystem. A PC w
 
 ### Related content
 
-- [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) API reference.
+- [HeapBlockDevice](/docs/v5.8/reference/heapblockdevice.html) API reference.

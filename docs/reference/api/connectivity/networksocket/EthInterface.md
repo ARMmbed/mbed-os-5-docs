@@ -4,7 +4,7 @@ The EthInterface provides a C++ API for connecting to the internet over Ethernet
 
 ### EthInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_eth_interface.html)
 
 ### Usage
 
@@ -13,7 +13,7 @@ To bring up the network interface:
 1. Instantiate the `EthInterface` class.
 1. Call the `connect` function.
 1. Once you connect the EthInterface, you can use it as a
-target for opening [network sockets](/docs/development/reference/network-socket.html).
+target for opening [network sockets](/docs/v5.8/reference/network-socket.html).
 
 ### EthInterface examples
 
@@ -27,4 +27,4 @@ Here is an example showing how to register a status callback that gets triggered
 
 ### Related content
 
-- [Network socket](/docs/development/reference/network-socket.html) API reference overview.
+- [Network socket](/docs/v5.8/reference/network-socket.html) API reference overview.

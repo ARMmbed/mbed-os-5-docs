@@ -4,7 +4,7 @@ Mbed OS provides a set of macros that evaluates an expression and prints an erro
 
 ### Assert macros reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__assert_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/mbed__assert_8h_source.html)
 
 ### Assert example
 
@@ -14,7 +14,7 @@ You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If th
 mbed assertation failed: <EVALUATED EXPRESSION>, file: <FILE NAME>, line <LINE NUMBER IN FILE>
 ```
 
-Note that the `MBED_ASSERT` macro is available in the debug and develop [build profiles](/docs/development/tools/build-profiles.html) but not in the release build profile.
+Note that the `MBED_ASSERT` macro is available in the debug and develop [build profiles](/docs/v5.8/tools/build-profiles.html) but not in the release build profile.
 
 The below function uses `MBED_ASSERT` to validate a pointer to `serial_t` object.
 
@@ -38,4 +38,4 @@ void equeue_tick_init() {
 
 ### Related content
 
-- [Build profile](/docs/development/tools/build-profiles.html) documentation.
+- [Build profile](/docs/v5.8/tools/build-profiles.html) documentation.

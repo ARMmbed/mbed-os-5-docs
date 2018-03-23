@@ -8,7 +8,7 @@ You can use any of the numbered Arm Mbed pins can be used as a DigitalIn.
 
 API summary
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
 
 ### DigitalIn hello, world
 
@@ -16,7 +16,7 @@ API summary
 
 ### DigitalIn example
 
-To handle an interrupt, see [InterruptIn](/docs/development/reference/interruptin.html).
+To handle an interrupt, see [InterruptIn](/docs/v5.8/reference/interruptin.html).
 
 Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
@@ -24,4 +24,4 @@ Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
 ### Related content
 
-- [InterruptIn](/docs/development/reference/interruptin.html) API reference.
+- [InterruptIn](/docs/v5.8/reference/interruptin.html) API reference.

@@ -2,16 +2,16 @@
 
 The role of the platform modules is to provide a consistent user experience on top of different standard libraries and toolchains. This section consists of the `Callback`, `Wait` and `Time` APIs. This page contains reference material about these subjects. You can also jump straight to the APIs:
 
-- [Wait](/docs/development/reference/wait.html): An API that provides simple wait capabilities.
-- [Callback](/docs/development/reference/callback.html): An API that executes the user’s code in its own context.
-- [DeepSleepLock](/docs/development/reference/deepsleeplock.html): The sleep function for Mbed OS.
-- [SleepManager](/docs/development/reference/sleep-manager.html): The function that provides an API to control sleep modes.
-- [CriticalSectionLock](/docs/development/reference/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
-- [Time](/docs/development/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- [Error](/docs/development/reference/error.html): A functions that generates a fatal runtime error.
-- [NonCopyable](/docs/development/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
-- [CircularBuffer](/docs/development/reference/circularbuffer.html): The class that provides APIs to push and pop data from a buffer
-- [ATCmdParser](/docs/development/reference/atcmdparser.html): An Mbed OS compatible AT command parser.
+- [Wait](/docs/v5.8/reference/wait.html): An API that provides simple wait capabilities.
+- [Callback](/docs/v5.8/reference/callback.html): An API that executes the user’s code in its own context.
+- [DeepSleepLock](/docs/v5.8/reference/deepsleeplock.html): The sleep function for Mbed OS.
+- [SleepManager](/docs/v5.8/reference/sleep-manager.html): The function that provides an API to control sleep modes.
+- [CriticalSectionLock](/docs/v5.8/reference/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
+- [Time](/docs/v5.8/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
+- [Error](/docs/v5.8/reference/error.html): A functions that generates a fatal runtime error.
+- [NonCopyable](/docs/v5.8/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
+- [CircularBuffer](/docs/v5.8/reference/circularbuffer.html): The class that provides APIs to push and pop data from a buffer
+- [ATCmdParser](/docs/v5.8/reference/atcmdparser.html): An Mbed OS compatible AT command parser.
 
 <h4 id="callbacks">Callbacks</h4>
 
@@ -36,7 +36,7 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/development/reference/platform.html#the-importance-of-state) section.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.8/reference/platform.html#the-importance-of-state) section.
 
 #### Why should you use Callbacks?
 
@@ -209,7 +209,7 @@ public:
 
 <h4 id="the-importance-of-state">The importance of state</h4>
 
-A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/development/reference/callback.html).
+A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context. You can find more information on how to use callbacks in the [technical callback documentation](/docs/v5.8/reference/callback.html).
 
 ##### Why not function pointers?
 

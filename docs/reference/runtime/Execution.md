@@ -7,7 +7,7 @@ Your application (`main` function) starts execution in the main thread, but it's
 * Idle - The thread that's run by the scheduler when there's no other activity in the system (e.g. all other threads are waiting for some event). It's used to make sure the board is not burning empty processor cycles, but is put to sleep for as long as possible.
 * Timer - The thread that handles system and user timer objects. *Note: The user timer class RtosTimer is deprecated. You should not use it for new designs. Use EventQueue instead.*
 
-On top of the standard system threads, some drivers may use additional threads. Users can create threads using the [Thread class](/docs/development/reference/thread.html).
+On top of the standard system threads, some drivers may use additional threads. Users can create threads using the [Thread class](/docs/v5.8/reference/thread.html).
 
 ### Modes
 
