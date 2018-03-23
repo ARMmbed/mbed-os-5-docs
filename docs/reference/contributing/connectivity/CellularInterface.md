@@ -1,6 +1,6 @@
 ### CellularInterface
 
-This document provides guidelines and details for setting up a cellular device driver with Mbed OS. Please see the [working principles when working with a cellular C++ API](/docs/v5.8/reference/network-socket.html) for more information.
+This document provides guidelines and details for setting up a cellular device driver with Mbed OS. Please see the [working principles when working with a cellular C++ API](https://os.mbed.com/docs/v5.8/reference/network-socket.html) for more information.
 
 #### Implementing CellularInterface
 
@@ -33,7 +33,7 @@ You can implement a cellular network interface in different ways depending on yo
 
 ##### Adding modem target support
 
-For new targets, you may need to modify [targets.json](/docs/v5.8/tools/adding-and-configuring-targets.html). `targets.json` defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem, and the data connection type is attached with MCU.
+For new targets, you may need to modify [targets.json](https://os.mbed.com/docs/v5.8/tools/adding-and-configuring-targets.html). `targets.json` defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem, and the data connection type is attached with MCU.
 
 For example,
 
@@ -144,7 +144,7 @@ Once you have your target and driver port ready, you can verify your implementat
  	mbed test -n "mbed-os-features-cellular-tests-cellular-cellular_all" -m YOURMACHINE -t YOURCOMPILER --app-config YOURCONFIG.json
  	```
 
-For more information on the  `mbed-greentea` test suite, please visit [its documentation](/docs/v5.8/tools/greentea.html).
+For more information on the  `mbed-greentea` test suite, please visit [its documentation](https://os.mbed.com/docs/v5.8/tools/greentea.html).
 
 You can also run stand-alone tests. The [`UNITTESTS` folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS) contains unit tests for cellular specific classes. Unit tests are based on the stubbing method.
 

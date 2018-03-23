@@ -46,7 +46,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 
    No. Please see the corresponding documentation pages for Mbed OS 2 and Mbed OS 5:
 
-   - [Mbed OS 5 documentation](/docs/v5.8).
+   - [Mbed OS 5 documentation](https://os.mbed.com/docs/v5.8).
    - [Mbed OS 5 GitHub repository](https://github.com/armmbed/mbed-os).
    - [Mbed OS 2 handbook](https://os.mbed.com/handbook/Homepage).
    - [Mbed OS 2 library](https://os.mbed.com/users/mbed_official/code/mbed/).

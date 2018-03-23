@@ -171,12 +171,12 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](/docs/v5.8/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.8/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-- Signaling from the ISR to the main thread using a [semaphore](/docs/v5.8/reference/semaphore.html) or [mailbox](/docs/v5.8/reference/mail.html), and calling `printf` in the main thread.
-- Using an event dispatching library, such as [Mbed events](/docs/v5.8/reference/event.html).
+- Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.8/reference/semaphore.html) or [mailbox](https://os.mbed.com/docs/v5.8/reference/mail.html), and calling `printf` in the main thread.
+- Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.8/reference/event.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 

@@ -151,7 +151,7 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 #### `config` and `overrides`
 
-<span class="notes">**Note:** The [Arm Mbed configuration system](/docs/v5.8/tools/configuring-tools.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
+<span class="notes">**Note:** The [Arm Mbed configuration system](https://os.mbed.com/docs/v5.8/tools/configuring-tools.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
 
 The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a default value, as well as an optional macro name and help text. By default, the macro name is the name of the config. For example:
 

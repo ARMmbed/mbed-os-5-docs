@@ -19,7 +19,7 @@ The `fopen` function is similar to the open function above but associates a stre
 
 #### Types of file systems
 
-- [**LittleFileSystem**](/docs/v5.8/reference/littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
+- [**LittleFileSystem**](https://os.mbed.com/docs/v5.8/reference/littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
   - **Bounded RAM/ROM** - This file system works with a limited amount of memory. It avoids recursion and limits dynamic memory to configurable buffers.
 
@@ -101,17 +101,17 @@ Mbed OS has several options for the block device:
 
 - **SDBlockDevice** - Block device driver for SD cards and eMMC memory chips. SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This makes the storage well-suited for systems that require a about 1GB of memory. Additionally, SD cards are a popular form of portable storage. They are useful if you want to store data that you can access from a PC.
 
-- [**HeapBlockDevice**](/docs/v5.8/reference/heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
+- [**HeapBlockDevice**](https://os.mbed.com/docs/v5.8/reference/heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
 
 ### Utility block devices
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
-- [**SlicingBlockDevice**](/docs/v5.8/reference/slicingblockdevice.html) - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
+- [**SlicingBlockDevice**](https://os.mbed.com/docs/v5.8/reference/slicingblockdevice.html) - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
 
-- [**ChainingBlockDevice**](/docs/v5.8/reference/chainingblockdevice.html) - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
+- [**ChainingBlockDevice**](https://os.mbed.com/docs/v5.8/reference/chainingblockdevice.html) - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
 
-- [**MBRBlockDevice**](/docs/v5.8/reference/mbrblockdevice.html) - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
+- [**MBRBlockDevice**](https://os.mbed.com/docs/v5.8/reference/mbrblockdevice.html) - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
 
 - **ReadOnlyBlockDevice** - With the read-only block device, you can wrap a block device in a read-only layer, ensuring that user of the block device does not modify the storage.
 

@@ -4,11 +4,11 @@ The Network-Socket-API (NSAPI) provides a TCP/UDP API on top of any IP based net
 
 #### Class hierarchy
 
-All network-socket API implementations inherit from two classes: a [NetworkStack](/docs/v5.8/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](/docs/v5.8/mbed-os-api-doxy/class_network_interface.html).
+All network-socket API implementations inherit from two classes: a [NetworkStack](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_network_interface.html).
 
 ##### NetworkInterface Class
 
-The current NetworkInterface subclasses are [CellularInterface](/docs/v5.8/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](/docs/v5.8/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](/docs/v5.8/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
+The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/esp-class.png)<span>Class</span></span>
 
@@ -23,7 +23,7 @@ Each subclass has distinct pure virtual methods. Visit their class references (l
 
 `NetworkStack` provides a common interface that hardware shares. By implementing the NetworkStack, you can use a class as a target for instantiating network sockets.
 
-`NetworkStack` provides [these functions](/docs/v5.8/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
+`NetworkStack` provides [these functions](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
 
 #### Errors
 
