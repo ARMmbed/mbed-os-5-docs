@@ -20,7 +20,7 @@ If you are using an old version of Mbed CLI, you may see compile-time errors. Ma
 
 #### Compiler versions
 
-Mbed OS 5 can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](https://os.mbed.com/docs/v5.6/tools/index.html).
+Mbed OS 5 can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](https://os.mbed.com/docs/5.8/tools/index.html).
 
 #### Compiler licenses
 
@@ -29,7 +29,7 @@ If using Keil MDK (Arm Compiler) or IAR, make sure you have a license installed.
 ### Investigate whether the Mbed OS application is crashing
 
 - Examine or undo any recent code change you made to see if it is the cause of the crash.
-- Build using the development or [debug build profile](https://os.mbed.com/docs/v5.6/tools/build-profiles.html), so the serial port shows any errors in your program.
+- Build using the development or [debug build profile](https://os.mbed.com/docs/5.8/tools/build-profiles.html), so the serial port shows any errors in your program.
 - Enable debug prints for components that have them.
 
 ### Take these steps if no output is shown in the serial port
@@ -42,5 +42,5 @@ If you see no output, this can indicate a serial port problem. Find the reason f
 
 ### Advanced debugging your application
 
-There might be cases when finding the root cause of the problem requires more investigation and the use of addition debug tools. You can export the project to a third party IDE and use the Mbed interface port of your Mbed board to download and execute the Mbed OS application step by step. Read [our tutorial](https://os.mbed.com/docs/v5.6/tutorials/debugging.html), which guides you through this process.
+There might be cases when finding the root cause of the problem requires more investigation and the use of addition debug tools. You can export the project to a third party IDE and use the Mbed interface port of your Mbed board to download and execute the Mbed OS application step by step. Read [our tutorial](https://os.mbed.com/docs/5.8/tutorials/debugging.html), which guides you through this process.
 

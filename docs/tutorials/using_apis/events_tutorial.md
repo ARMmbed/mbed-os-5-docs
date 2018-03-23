@@ -105,7 +105,7 @@ The EventQueue has no concept of event priority. If you schedule events to run a
 
 ### EventQueue memory pool
 
-When you create an instance of the [EventQueue](/docs/v5.6/reference/event.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
+When you create an instance of the [EventQueue](/docs/5.8/reference/event.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
 
 Various sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event.
 
@@ -152,4 +152,4 @@ Four words of storage are free but only for allocations of one word or less. The
 
 #### More about events
 
-This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/_event_queue_8h_source.html).
+This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/5.8/mbed-os-api-doxy/_event_queue_8h_source.html).
