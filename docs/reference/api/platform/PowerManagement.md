@@ -40,7 +40,7 @@ These Mbed OS drivers can lock the deep sleep:
 - `CAN`.
 - `SerialBase`.
 
-#### Sleep tracing
+#### Sleep/Deep sleep profiling tool
 
 Mbed OS can help you to understand the sleep patterns of your device, specifically who is holding a sleep locks preventing your board to enter the deep sleep. To enable the tracing, all you need to do is to define `MBED_SLEEP_TRACING_ENABLED` macro. You can do it by modifying your `mbed_app.json` config file or appending `-DMBED_SLEEP_TRACING_ENABLED` to `mbed compile` command.
 
