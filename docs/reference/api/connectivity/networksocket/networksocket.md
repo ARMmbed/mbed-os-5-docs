@@ -139,14 +139,14 @@ You can use and extend a cellular interface in various different ways. For examp
 
 #### Arm Mbed Mesh
 
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.7/tutorials/mesh.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.8/tutorials/mesh.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
 - 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 - Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through the Mbed Mesh API.
+Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [Nanostack documentation](/docs/v5.8/tutorials/mesh.html#nanostack). Application developers use Nanostack through the Mbed Mesh API.
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
 

@@ -4,7 +4,7 @@ This guide is to assist you in the process of updating an existing [component](h
 
 ### Prerequisites
 
-- [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html).
+- [Mbed CLI](/docs/v5.8/tools/arm-mbed-cli.html).
 - An [offline compiler](/docs/latest/tools/index.html#compiler-versions).
 
 ### Identifying old versions of Mbed OS
