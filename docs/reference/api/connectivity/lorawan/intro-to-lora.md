@@ -242,7 +242,7 @@ Now that the device is registered in The Things Network, you can start writing c
 
 #### 3.3 - Importing the demo application
 
-Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](https://os.mbed.com/docs/v5.8/tools/index.html)).
+Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](/docs/v5.8/tools/index.html)).
 
 1. [Sign up](https://os.mbed.com/account/signup/?next=%2F) for an account on Arm Mbed, which hosts the Online Compiler.
 1. Find your development board on [the platforms page](https://os.mbed.com/platforms/).
@@ -304,12 +304,12 @@ Now you can verify whether the setup works by flashing this application to your 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora10.png)<span>Compile button</span></span>
 
 1. When compilation succeeds, the compiler sends a file to your computer.
-1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](https://os.mbed.com/docs/v5.8/tutorials/windows-serial-driver.html).
+1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](/docs/v5.8/tutorials/windows-serial-driver.html).
 1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Data** tab:
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn19.png)<span>We've got data!</span></span>
 
-<span class="notes">**Note 1:** You can hook a [serial monitor](https://os.mbed.com/docs/v5.8/tutorials/serial-comm.html) up to the development board (baud rate 115,200) to see debugging messages.</span>
+<span class="notes">**Note 1:** You can hook a [serial monitor](/docs/v5.8/tutorials/serial-comm.html) up to the development board (baud rate 115,200) to see debugging messages.</span>
 
 <span class="notes">**Note 2:** No data in the **Data** tab? Verify that the gateway can receive messages. In the TTN console, go to your gateway, and see if any data comes through under the **Traffic** tab. If you see your device there but not under the device page, the keys are probably wrong.</span>
 
@@ -413,6 +413,6 @@ LoRa/LoRaWAN is a technology with which anyone can set up a network and start bu
 #### More material
 
 - [Webinar: getting started with LoRa using Arm Mbed and The Things Network](https://pages.arm.com/2017-10-29-webinar-registration.html).
-- [Mbed OS LoRaWAN stack documentation](https://os.mbed.com/docs/v5.8/reference/lorawan.html).
+- [Mbed OS LoRaWAN stack documentation](/docs/v5.8/reference/lorawan.html).
 - [Firmware updates over LoRaWAN](https://os.mbed.com/blog/entry/firmware-updates-over-lpwan-lora/).
 - [Presentations from The Things Conference](https://www.youtube.com/playlist?list=PLM8eOeiKY7JUhIyxWWU2-qziejDbBg-pf).

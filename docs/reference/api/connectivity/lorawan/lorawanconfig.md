@@ -70,4 +70,4 @@ For changing any of these parameters, edit the `mbed_app.json` file in the root 
 
 ### Using APIs from LoRaWANInterface
 
-See API reference [here](https://os.mbed.com/docs/v5.8/reference/lorawan.html).
+See API reference [here](/docs/v5.8/reference/lorawan.html).

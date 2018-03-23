@@ -157,13 +157,13 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-  - [Mbed OS APIs](https://os.mbed.com/docs/v5.8/reference/apis.html) - list of all APIs available in Mbed OS.
-  - [Peripheral drivers](https://os.mbed.com/docs/v5.8/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+  - [Mbed OS APIs](/docs/v5.8/reference/apis.html) - list of all APIs available in Mbed OS.
+  - [Peripheral drivers](/docs/v5.8/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
-  - [Advanced debugging](https://os.mbed.com/docs/v5.8/tutorials/debugging.html).
-  - [Serial communications](https://os.mbed.com/docs/v5.8/tutorials/serial-communication.html).
-  - [Optimizing binary size](https://os.mbed.com/docs/v5.8/tutorials/optimizing.html).
+  - [Advanced debugging](/docs/v5.8/tutorials/debugging.html).
+  - [Serial communications](/docs/v5.8/tutorials/serial-communication.html).
+  - [Optimizing binary size](/docs/v5.8/tutorials/optimizing.html).
 
 - Other resources
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.

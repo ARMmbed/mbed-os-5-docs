@@ -1,6 +1,6 @@
 ## BlockDevice
 
-The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](https://os.mbed.com/docs/v5.8/reference/contributing-storage.html#contributing-filesystem) or write to it directly.
+The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](/docs/v5.8/reference/contributing-storage.html#contributing-filesystem) or write to it directly.
 
 ### BlockDevice class reference
 

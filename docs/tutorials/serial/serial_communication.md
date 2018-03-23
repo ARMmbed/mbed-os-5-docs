@@ -66,7 +66,7 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try one
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see our [build tools section](https://os.mbed.com/docs/v5.8/tools/index.html).
+If you're not sure how to build these examples and run them on your board, please see our [build tools section](/docs/v5.8/tools/index.html).
 
 #### Echo back characters you type
 
