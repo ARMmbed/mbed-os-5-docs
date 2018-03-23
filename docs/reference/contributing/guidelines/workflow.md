@@ -96,10 +96,10 @@ You can see test results [here](just an example).
 
 # Pull request type
 
-- [x] Fix
-- [ ] Refactor
-- [ ] New Target
-- [ ] Feature
+[x] Fix
+[ ] Refactor
+[ ] New Target
+[ ] Feature
 
 ```
 
