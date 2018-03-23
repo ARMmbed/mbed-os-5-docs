@@ -10,5 +10,5 @@ Common to any choice is the ability to import and publish code to Git and Mercur
 
 #### Please choose how to proceed
 
-- [Online with the Mbed Online Compiler](/docs/latest/tutorials/quick-start-online.html).
-- [Offline with Mbed CLI](/docs/latest/tutorials/quick-start-offline.html).
+- [Online with the Mbed Online Compiler](/docs/5.8/tutorials/quick-start-online.html).
+- [Offline with Mbed CLI](/docs/5.8/tutorials/quick-start-offline.html).
