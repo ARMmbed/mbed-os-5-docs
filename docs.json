@@ -303,6 +303,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/api/drivers/CAN.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/api/drivers/MbedCRC.md"
                             }
                         ]
                     },
