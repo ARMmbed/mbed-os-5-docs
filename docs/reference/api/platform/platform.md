@@ -5,7 +5,7 @@ The role of the platform modules is to provide a consistent user experience on t
 - [Wait](/docs/v5.8/reference/wait.html): An API that provides simple wait capabilities.
 - [Callback](/docs/v5.8/reference/callback.html): An API that executes the user’s code in its own context.
 - [DeepSleepLock](/docs/v5.8/reference/deepsleeplock.html): The sleep function for Mbed OS.
-- [SleepManager](/docs/v5.8/reference/sleep-manager.html): The function that provides an API to control sleep modes.
+- [Power management](/docs/v5.8/reference/power-management.html): The function that provides an API to control sleep modes.
 - [CriticalSectionLock](/docs/v5.8/reference/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
 - [Time](/docs/v5.8/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
 - [Error](/docs/v5.8/reference/error.html): A functions that generates a fatal runtime error.
