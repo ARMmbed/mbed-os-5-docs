@@ -771,10 +771,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/crash_dump_analyzer.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tools/debug/local_debugging_toolchain.md"
                     }
                 ]
