@@ -52,7 +52,7 @@ To configure the debugger for your project:
 1. If you're using pyOCD as your debug server, verify that `debugServerPath` is set to the location of `pyocd-gdbserver`.
 1. If you're using OpenOCD as your debug server:
      1. Change `debugServerPath` to point to the location of `openocd`.
-     1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](https://os.mbed.com/docs/5.8/tools/exporting.html).
+     1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](https://os.mbed.com/docs/v5.8/tools/exporting.html).
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode3.png)<span>Configuring the debugger</span></span>
 

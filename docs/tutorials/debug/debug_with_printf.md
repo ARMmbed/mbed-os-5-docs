@@ -9,7 +9,7 @@ An easy way to inspect what your application is doing is to augment your applica
 Install the serial port driver for your development board:
 
 - For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
-- For all other boards: [Arm Mbed Windows serial port driver](/docs/5.8/tutorials/windows-serial-driver.html) - not required for Windows 10.
+- For all other boards: [Arm Mbed Windows serial port driver](/docs/v5.8/tutorials/windows-serial-driver.html) - not required for Windows 10.
 
 You also need a serial monitor:
 
@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 ### Getting started
 
-To send data over the serial connection, use the [Serial](/docs/5.8/reference/serial.html) object.
+To send data over the serial connection, use the [Serial](/docs/v5.8/reference/serial.html) object.
 
 #### Example program
 
@@ -171,12 +171,12 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/5.8/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](https://os.mbed.com/docs/v5.8/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-- Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/5.8/reference/semaphore.html) or [mailbox](https://os.mbed.com/docs/5.8/reference/mail.html), and calling `printf` in the main thread.
-- Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/5.8/reference/event.html).
+- Signaling from the ISR to the main thread using a [semaphore](https://os.mbed.com/docs/v5.8/reference/semaphore.html) or [mailbox](https://os.mbed.com/docs/v5.8/reference/mail.html), and calling `printf` in the main thread.
+- Using an event dispatching library, such as [Mbed events](https://os.mbed.com/docs/v5.8/reference/event.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 

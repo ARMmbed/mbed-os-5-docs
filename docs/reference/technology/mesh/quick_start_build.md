@@ -33,7 +33,7 @@ Select the device role:
 - Mesh network. A router. (default)
 - Star network. A non-routing device. Also known as a host, or sleepy host.
 
-Modify your `mbed_app.json` file to tell which Nanostack configuration to choose and which configrations to use on [Mbed Mesh API](/docs/5.8/reference/mesh.html).
+Modify your `mbed_app.json` file to tell which Nanostack configuration to choose and which configrations to use on [Mbed Mesh API](/docs/v5.8/reference/mesh.html).
 
 An example of the `mbed_app.json` file:
 

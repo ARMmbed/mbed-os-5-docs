@@ -5,7 +5,7 @@ This guide is to assist you in the process of updating an existing [component](h
 ### Prerequisites
 
 - [Mbed CLI](/docs/v5.8/tools/arm-mbed-cli.html).
-- An [offline compiler](/docs/5.8/tools/index.html#compiler-versions).
+- An [offline compiler](/docs/v5.8/tools/index.html#compiler-versions).
 
 ### Identifying old versions of Mbed OS
 
@@ -324,4 +324,4 @@ Now, the program successfully compiles.
 
 ### Runtime errors
 
-Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](/docs/5.8/tutorials/compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
+Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](/docs/v5.8/tutorials/compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.

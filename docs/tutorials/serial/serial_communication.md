@@ -2,7 +2,7 @@
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
-<span class="tips">If you're working on Windows earlier than Windows 10, you might need to [install a serial driver](/docs/5.8/tutorials/windows-serial-driver.html).</span>
+<span class="tips">If you're working on Windows earlier than Windows 10, you might need to [install a serial driver](/docs/v5.8/tutorials/windows-serial-driver.html).</span>
 
 This allows you to:
 
@@ -66,7 +66,7 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try one
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see our [build tools section](https://os.mbed.com/docs/5.8/tools/index.html).
+If you're not sure how to build these examples and run them on your board, please see our [build tools section](https://os.mbed.com/docs/v5.8/tools/index.html).
 
 #### Echo back characters you type
 

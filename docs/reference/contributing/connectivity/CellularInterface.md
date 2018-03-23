@@ -1,6 +1,6 @@
 ### CellularInterface
 
-This document provides guidelines and details for setting up a cellular device driver with Mbed OS. Please see the [working principles when working with a cellular C++ API](https://os.mbed.com/docs/5.8/reference/network-socket.html) for more information.
+This document provides guidelines and details for setting up a cellular device driver with Mbed OS. Please see the [working principles when working with a cellular C++ API](https://os.mbed.com/docs/v5.8/reference/network-socket.html) for more information.
 
 #### Implementing CellularInterface
 

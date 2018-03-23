@@ -14,7 +14,7 @@ Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbe
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
-<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/5.8/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/v5.8/tools/index.html#compiler-versions).</span>
 
 ##### 2. Setup environment
 
@@ -44,7 +44,7 @@ To install Pip, run `sudo easy_install pip` from your command-line.
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/5.8/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/v5.8/tools/index.html#compiler-versions).</span>
 
 ##### 3. Install Mbed CLI
 
@@ -84,7 +84,7 @@ $ sudo apt-get update
 
 Download and install a compiler:
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/5.8/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/v5.8/tools/index.html#compiler-versions).</span>
 
 ##### 3. Install Mbed CLI
 
@@ -157,13 +157,13 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-  - [Mbed OS APIs](https://os.mbed.com/docs/5.8/reference/apis.html) - list of all APIs available in Mbed OS.
-  - [Peripheral drivers](https://os.mbed.com/docs/5.8/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+  - [Mbed OS APIs](https://os.mbed.com/docs/v5.8/reference/apis.html) - list of all APIs available in Mbed OS.
+  - [Peripheral drivers](https://os.mbed.com/docs/v5.8/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
-  - [Advanced debugging](https://os.mbed.com/docs/5.8/tutorials/debugging.html).
-  - [Serial communications](https://os.mbed.com/docs/5.8/tutorials/serial-communication.html).
-  - [Optimizing binary size](https://os.mbed.com/docs/5.8/tutorials/optimizing.html).
+  - [Advanced debugging](https://os.mbed.com/docs/v5.8/tutorials/debugging.html).
+  - [Serial communications](https://os.mbed.com/docs/v5.8/tutorials/serial-communication.html).
+  - [Optimizing binary size](https://os.mbed.com/docs/v5.8/tutorials/optimizing.html).
 
 - Other resources
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
