@@ -50,7 +50,7 @@ To make sure your platform is ready for the upcoming changes, you need to implem
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__lp__ticker.html)
 
-To enable low power ticker support in Mbed OS, add the `LOWPOWERTIMER` label in the `device_has` option of the target's section in the `targets.json` file.
+To enable low power ticker support in Mbed OS, add the `LPTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
 
 #### Testing
 
