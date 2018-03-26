@@ -57,7 +57,7 @@ To enable low power ticker support in Mbed OS, add the `LPTICKER` label in the `
 The Mbed OS HAL provides a set of conformance tests for the low power ticker. You can use these tests to validate the correctness of your implementation. To run the low power ticker HAL tests, use the following command:
 
 ```
-mbed test -t <toolchain> -m <target> -n tests-mbed_hal-lp_us_ticker*,tests-mbed_hal-lp_ticker*
+mbed test -t <toolchain> -m <target> -n tests-mbed_hal-common_ticker*,tests-mbed_hal-lp_ticker*
 ```
 
 You can read more about the test cases:
