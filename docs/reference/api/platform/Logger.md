@@ -58,7 +58,7 @@ Usage:
 void dev_init() {
     ...
     if (DEV_ID != id) {
-        MBED_WARN ("Driver", "Incorrect Device ID");
+        MBED_WARN ("Driver", "Incorrect Device ID: Expected %d Actual %d", DEV_ID, id);
     }
     ...
 }
