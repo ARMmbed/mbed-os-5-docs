@@ -95,7 +95,15 @@
                 },
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity.md"
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/connectivity.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/networking.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/intro-to-lora.md"
                     },
                     {
                         "type": "markdown",
@@ -448,15 +456,7 @@
                     },
                     {
                         "title": "LoRaWAN",
-                        "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lora.md"
-                        },
                         "sources": [{
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/intro-to-lora.md"
-                            },
-                            {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawanevents.md"
                             },
