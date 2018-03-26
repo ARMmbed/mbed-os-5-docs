@@ -57,7 +57,7 @@ To enable microsecond ticker support in Mbed OS, add the `USTICKER` label in the
 The Mbed OS HAL provides a set of conformance tests for the microsecond ticker. You can use these tests to validate the correctness of your implementation. To run the microsecond ticker HAL tests, use the following command:
 
 ```
-mbed test -t <toolchain> -m <target> -n tests-mbed_hal-lp_us_ticker*,tests-mbed_hal-us_ticker*
+mbed test -t <toolchain> -m <target> -n tests-mbed_hal-common_ticker*,tests-mbed_hal-us_ticker*
 ```
 
 You can read more about the test cases:
