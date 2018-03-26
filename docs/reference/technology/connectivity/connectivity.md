@@ -2,6 +2,8 @@
 
 Mbed OS support wide range of connectivity options. This section helps you to understand how to connect Mbed OS based device to outside world.
 
+![Connectivity options](connectivity.png)
+
 Following is the brief introduction of the different connectivity technologies that we support.
 
 #### Bluetooth low energy
