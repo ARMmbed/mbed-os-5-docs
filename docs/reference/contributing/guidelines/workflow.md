@@ -80,7 +80,44 @@ Each feature has a tech lead. This person is responsible for:
 - Rebasing often to track master development.
 - Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
-#### Pull request template
+##### Pull request types
+
+We consider the following pull request types.
+
+##### Fix
+
+A bug fix should be backward-compatible internal change that fixes incorrect behavior. The fix should provide a description what and how it fixes the issue. The test should be included to catch this issue in the future and confirm the correct behavior.
+
+Release: patch version
+
+##### Refactor
+
+Refactors are intended for minor versions if they are not fixing specific issue as they 
+can introduce new issues.
+
+Release: minor version
+
+##### New target
+
+Adding a new target targets the patch release as it updating targets folder implementation.
+
+Release: patch version
+
+##### Feature
+
+New features targets minor releases. It can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
+
+Adding a new functionality is considered to be a feature. It does not matter if it is C++ or C.
+
+Release: minor version
+
+##### Breaking change
+
+Any change that results in breaking user space. It should have strong justification to be considered. Often the change could be made backward compatible, for example deprecate the old functionality and introduce the new replacement.
+
+Release: minor version
+
+##### Pull request template
 
 Below is a good example of a pull request:
 
