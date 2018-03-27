@@ -6,7 +6,7 @@ Mbed OS provides some default memory configurations for thread memory allocation
 
 #### Configuring the main thread stack
 
-The default stack size of the main application thread is 4 kilobytes. This memory is dynamically allocated from the global heap. You can configure the stack size of the main thread by using the [Mbed config system](/docs/v5.8/reference/configuration.html). To reduce the stack size from 4K to 2K, create an `mbed_app.json` file for your project with the following content:
+The default stack size of the main application thread is 4 kilobytes. This memory is dynamically allocated from the global heap. You can configure the stack size of the main thread by using the [Mbed config system](/docs/v5.8/tools/configuring-tools.html). To reduce the stack size from 4K to 2K, create an `mbed_app.json` file for your project with the following content:
 
 ```JSON
 {
@@ -20,7 +20,7 @@ The default stack size of the main application thread is 4 kilobytes. This memor
 
 #### Configuring user spawned thread stacks
 
-The default stack size of a user spawned thread is 4 kilobytes. You can configure the stack size of user spawned threads by using the [Mbed config system](/docs/v5.8/tools/index.html#the-configuration-system) or passing in the [Thread constructor](/docs/v5.8/reference/thread.html). You can reduce the default stack size for user spawned threads from 4K to 2K in the following two ways:
+The default stack size of a user spawned thread is 4 kilobytes. You can configure the stack size of user spawned threads by using the [Mbed config system](/docs/v5.8/tools/configuring-tools.html) or passing in the [Thread constructor](/docs/v5.8/reference/thread.html). You can reduce the default stack size for user spawned threads from 4K to 2K in the following two ways:
 
 1. Create an `mbed_app.json` file for your project with the following content:
 
