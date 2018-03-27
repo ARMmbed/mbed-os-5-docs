@@ -10,7 +10,7 @@
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](/docs/v5.8/introduction/index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.8/tools/arm-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.8/tools/arm-mbed-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
