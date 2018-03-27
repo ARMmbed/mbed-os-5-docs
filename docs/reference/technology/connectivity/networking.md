@@ -64,4 +64,42 @@ Mbed OS implements following network interface APIs
 * 6LoWPAN-ND mesh networking
 * Thread mesh networking.
 
-Refer to [TODO: sockets/interface API reference](TODO) for usage instructions.
+Refer to [TODO: sockets/interface API reference](api/connectivity/networkinterface.md) for usage instructions.
+
+#### Network driver
+
+Network driver is a generic term to describe different APIs for connecting networking device to
+IP stack or Socket API. Each driver API has their own architecture described below.
+
+##### Ethernet driver
+
+![Emac API](emac.png)
+
+Ethernet drivers are implemented using stack independent EMAC API. As Ethernet driver requires
+no configuration, it does not implement any controlling interface for Application.
+
+##### WiFi driver
+
+![WiFi driver](wifi.png)
+
+There are two form of WiFi drivers in Mbed OS depending on which protocol layer it implements.
+WiFi drivers are either special case of Ethernet driver or they are external IP stacks. WiFi
+drivers require configuration from application, and therefore implement both, the low level EMAC API or Network stack API and high level controlling interface API called `WiFiInterface`.
+
+##### Cellular modem driver
+
+![Cellular driver](cellular.png)
+
+As with WiFi, cellular drivers have same two separate cases. If they use external IP stack,
+driver implements the Network stack API. If they use internal IP stack, LwIP, then they
+implement Serial PPP driver.
+
+##### IEEE 802.15.4 RF driver
+
+On Mesh networks, Nanostack uses IEEE 802.15.4 radios for transmitting and receiving packets.
+The RF driver implements the `NanostackRfPhy` API.
+
+This driver type has not other usecases so it is implemented in C using Nanostack specific API.
+
+See sections [Technology/6LoWPAN Mesh](quick_start_intro.md) and [Porting new RF driver for 6LoWPAN Stack](porting-new-rf-driver-for-6lowpan-stack)
+for more information.
