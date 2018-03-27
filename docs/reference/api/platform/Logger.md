@@ -5,11 +5,16 @@ API's in logging module are printf-style API's which take module name and format
 
 By default all messages till LOG_LEVEL_DEBUG are enabled. If you want to enable Trace and Info level messages, then set `MBED_CONF_MAX_LOG_LEVEL` accordingly.
 
+Log messages are buffered in circular buffer and you can configure buffer size by setting `MBED_CONF_LOG_MAX_BUFFER_SIZE` config parameter. Default is 1024 bytes.
+
+All logging API's are ISR safe.
+
 ### Debug Log Levels
 Below are various log levels supported and recommended usage.
 
 #### LOG_LEVEL_ERR_CRITICAL
-In case of critical errors when system recovery is not possible, you should use `MBED_CRIT` API. `MBED_CRIT` is equivalent to `ASSERT`, it will dump previous debug log and application will terminate. 
+In case of critical errors when system recovery is not possible, you should use `MBED_CRIT` API. `MBED_CRIT` is equivalent to `ASSERT`.
+`MBED_CRIT` will log all the previous messages captured in log buffer and then application will terminate.
 
 Usage:
 ```C
@@ -150,6 +155,9 @@ Usage:
 #define tr_warn(...)        MBED_LOG(TRACE_LEVEL_WARN, TRACE_GROUP, ##__VA_ARGS__)
 #define tr_cmdline(...)     MBED_LOG(TRACE_LEVEL_CMD, TRACE_GROUP, ##__VA_ARGS__)
 ```
+
+### Log Helper functions
+`mbed_log_ipv6` , `mbed_log_ipv6_prefix`, `mbed_log_array` are helper functions for logging special type of data. Helpers functions are not ISR friendly and should not be used in ISR context.
 
 Note: 
 1. Old Mbed OS logging APIs `mbed_trace`, `error`, `debug`, `debug_if`, are deprecated.
