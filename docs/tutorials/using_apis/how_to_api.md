@@ -4,4 +4,4 @@ This section contains step-by-step tutorials that show you how to perform specif
 
 - For RTOS: [EventQueue](/docs/v5.8/tutorials/the-eventqueue-api.html).
 - For drivers: [Ticker and Wait](/docs/v5.8/tutorials/application-flow-control.html).
-- For connectivity: [TCP sockets](/docs/v5.8/tutorials/cellular-tcp-sockets.html) and [Mesh](/docs/v5.8/tutorials/mesh.html).
+- For connectivity: [TCP sockets](/docs/v5.8/tutorials/cellular-tcp-sockets.html) and [Mesh](/docs/v5.8/reference/technology.html).
