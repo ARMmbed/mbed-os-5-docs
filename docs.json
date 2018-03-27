@@ -103,10 +103,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/intro-to-lora.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_intro.md"
                     },
                     {
@@ -136,6 +132,10 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/04_N_networking.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/intro-to-lora.md"
                     },
                     {
                         "type": "markdown",
