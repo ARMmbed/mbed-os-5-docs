@@ -6,7 +6,7 @@ We recommend using the NonCopyable class whenever a class owns a resource (lock/
 
 ### NonCopyable class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_non_copyable.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_non_copyable.html)
 
 ### NonCopyable example
 

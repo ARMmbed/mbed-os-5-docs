@@ -44,11 +44,11 @@ To implement this API, the device must have a hardware counter that has a count 
 
 We are working on the new HAL microsecond ticker API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the microsecond ticker API in both variants. First, you need to implement the current API. You can find it on the master branch:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/us__ticker__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/us__ticker__api_8h_source.html)
 
 To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against the `feature-hal-spec-ticker` branch. You can find the API and specification for the new microsecond ticker API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__us__ticker.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__us__ticker.html)
 
 To enable microsecond ticker support in Mbed OS, add the `USTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -62,8 +62,8 @@ mbed test -t <toolchain> -m <target> -n tests-mbed_hal-common_ticker*,tests-mbed
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__us__ticker.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__us__ticker.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__ticker__tests.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__us__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/feature-hal-spec-ticker-doxy/group__hal__us__ticker__tests.html)

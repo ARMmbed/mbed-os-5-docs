@@ -8,7 +8,7 @@ The [LoRaWANInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_r
 
 ### LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ### Usage
 

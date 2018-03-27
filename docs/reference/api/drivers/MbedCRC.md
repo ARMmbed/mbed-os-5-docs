@@ -8,7 +8,7 @@ ROM polynomial tables are for supported 8/16-bit CCITT, 16-bit IBM and 32-bit AN
 
 ### MbedCRC class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_mbed_c_r_c.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_mbed_c_r_c.html)
 
 ### MbedCRC examples
 

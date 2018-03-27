@@ -9,7 +9,7 @@ The Arm Mbed mesh API allows the application to use the IPv6 mesh network topolo
 
 ### Mesh class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.html)
 
 ### Usage
 
