@@ -1,11 +1,7 @@
 ## Network socket overview
 
-This section covers the main connectivity APIs in Arm Mbed OS, which are:
+This section covers the Socket APIs in Arm Mbed OS, which are:
 
-- [Ethernet](/docs/development/reference/ethernet.html): API for connecting to the internet over an Ethernet connection.
-- [Wi-Fi](/docs/development/reference/wi-fi.html): API for connecting to the internet with a Wi-Fi device.
-- [Cellular](/docs/development/reference/cellular-api.html): API for connecting to the internet using a cellular device.
-- [Mesh networking](/docs/development/reference/mesh-api.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
 - [UDPSocket](/docs/development/reference/udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
 - [TCPSocket](/docs/development/reference/tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [TCPServer](/docs/development/reference/tcpserver.html): This class provides the ability to accept incoming TCP connections.
@@ -63,15 +59,6 @@ The callback may be called in interrupt context and should not perform operation
 
 You can use the [Socket](/docs/development/mbed-os-api-doxy/class_socket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
 
-##### NetworkInterface
-
-A socket requires a NetworkInterface instance when opened to indicate which NetworkInterface the socket should be created on. The NetworkInterface provides a network stack that implements the underlying socket operations.
-
-Existing network interfaces:
-
-- [EthInterface](/docs/development/reference/ethernet.html).
-- [WiFiInterface](/docs/development/reference/wi-fi.html).
-
 ##### Example applications
 
 Here are example applications that are built on top of the network-socket API:
@@ -89,53 +76,7 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-#### Cellular
 
-The [CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
-
-Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html).
-
-##### Getting started
-
-1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
-
-1. Clone [`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/). Follow the instructions in the repository.
-
-    1. Compile the code.
-    1. Flash the board.
-
-   You see output similar to the excerpt below:
-
-```
-mbed-os-example-cellular
-Establishing connection ......
-
-Connection Established.
-TCP: connected with echo.mbedcloudtesting.com server
-TCP: Sent 4 Bytes to echo.mbedcloudtesting.com
-Received from echo server 4 Bytes
-
-
-Success. Exiting
-```
-
-##### Basic working principles
-
-You can use and extend a cellular interface in various different ways. For example,
-
-- Using AT commands to control sockets in an existing IP stack built into the cellular modem.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
-
-- Using a PPP (Point-to-Point Protocol) pipe to pass IP packets between an Mbed OS supported IP stack and cellular modem device.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
-
-[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [an easy cellular connection](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
-
-- It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
-- The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
-- After registration, the driver opens a PPP pipe using LWIP with the cellular modem and connects to the internet. If AT only mode is in use, then modem-specific AT commands are used for socket data control.
 
 #### Arm Mbed Mesh
 
