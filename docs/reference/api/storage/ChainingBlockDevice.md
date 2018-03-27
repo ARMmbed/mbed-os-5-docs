@@ -8,7 +8,7 @@ The constructor takes in an array of block device pointers and provides an objec
 
 ### ChainingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_chaining_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_chaining_block_device.html)
 
 ### ChainingBlockDevice example
 

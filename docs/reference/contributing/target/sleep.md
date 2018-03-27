@@ -28,11 +28,11 @@ The core system clock is disabled. You can only enable the low-frequency clocks 
 
 We are working on the new HAL Sleep API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the Sleep API in both variants. First, you need to implement the current API. You can find it on master branch:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/sleep__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/sleep__api_8h_source.html)
 
 To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against `feature-hal-spec-sleep` branch. You can find the API and specification for the new Sleep API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep.html)
 
 To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -46,5 +46,5 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sleep*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/feature-hal-spec-sleep-doxy/group__hal__sleep__tests.html)
 

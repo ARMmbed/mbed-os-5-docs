@@ -8,7 +8,7 @@ Refer to [TCPServer](/docs/v5.7/reference/tcpserver.html) class for TCP server f
 
 ### TCPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_t_c_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_t_c_p_socket.html)
 
 ### TCPSocket Example
 

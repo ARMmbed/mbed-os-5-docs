@@ -13,7 +13,7 @@ You can create any number of Ticker objects, allowing multiple outstanding inter
 - While an event is attached to a Ticker, deep sleep is blocked to maintain accurate timing. If you don't need microsecond precision, consider using the LowPowerTicker class instead because this does not block deep sleep mode.
 ### Ticker class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_ticker.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_ticker.html)
 
 ### Ticker hello, world
 

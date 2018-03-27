@@ -8,7 +8,7 @@ CriticalSectionLock class is based on RAII approach. In other words, the constru
 
 ### CriticalSectionLock class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
 
 ### CriticalSectionLock example
 

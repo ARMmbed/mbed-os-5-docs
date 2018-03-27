@@ -6,7 +6,7 @@ There are multiple [Wi-Fi components](https://os.mbed.com/components/cat/wifi/) 
 
 ### Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_wi_fi_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ### Usage
 

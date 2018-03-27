@@ -22,7 +22,7 @@ You can view more information about the configurable settings and functions in t
 
 ### HeapBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_heap_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_heap_block_device.html)
 
 ### HeapBlockDevice example
 
