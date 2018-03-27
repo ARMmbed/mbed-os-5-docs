@@ -43,6 +43,20 @@ Following table summarises different stacks, usecases and their limitations.
 |Nanostack|IPv6, 6LoWPAN, Thread|Mesh networking, Border Router|Only IPv6|
 |External IP module|depends on the module|(Save RAM/Flash)|Depends on the module. Usually poor match to Socket API|
 
+##### Configuring the IP stack interface
+
+Depending on the Layer 3, Network layer, protocol used, there are different ways of configuring
+the interface. It also depends on the stack used, which configurations are supported on each
+link layer.
+
+|Stack|Data link layer|Network layer|Configurations supported|
+|-----|---------------|-------------|------------------------|
+|LwIP|Ethernet, WiFi|IPv4|DHCP, static|
+|LwIP|Ethernet, WiFi|IPv6|[RFC 4862](https://tools.ietf.org/html/rfc4862) IPv6 Stateless Address Autoconfiguration. No DHCPv6 support|
+|LwIP|PPP|IPv4,IPv6|automatic|
+|Nanostack|Ethernet|IPv6|static or [RFC 4862](https://tools.ietf.org/html/rfc4862) IPv6 Stateless Address Autoconfiguration. No DHCPv6 support|
+|Nanostack|IEEE 802.15.4|6LoWPAN|Thread or 6LoWPAN-ND+RPL|
+
 
 #### Network interfaces
 
