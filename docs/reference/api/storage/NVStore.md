@@ -8,7 +8,7 @@ NVStore uses two Flash areas, active and nonactive. Each area must consist of at
 
 ### NVStore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_n_v_store.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/nvstore_8h_source.html)
 
 ### NVStore example
 
