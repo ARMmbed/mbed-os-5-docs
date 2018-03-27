@@ -42,6 +42,12 @@ For EthernetInterface, there are two possible configurations:
 
 Refer to the API below for how to set the IP addresses by calling the `set_network()` function.
 
+### Troubleshooting information
+
+Network interface `connect` failure causes:
+1. `NSAPI_ERROR_NO_CONNECTION` indicates that Ethernet link up has failed. Check that the Ethernet connection is working.
+1. `NSAPI_ERROR_DHCP_FAILURE` indicates that acquiring IP address has failed. Check that the IP address configuration service is working.
+
 ### EthInterface class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html)
