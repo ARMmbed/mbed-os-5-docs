@@ -10,7 +10,7 @@ The constructor takes in the master block device pointer and the start and end a
 
 ### SlicingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_slicing_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_slicing_block_device.html)
 
 ### SlicingBlockDevice example
 

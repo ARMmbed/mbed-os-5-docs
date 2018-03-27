@@ -89,7 +89,7 @@ After the call the processor and most components will reset, but it will not aff
 
 ### Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/group__platform__power__mgmt.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/group__platform__power__mgmt.html)
 
 ### Idle loop
 
@@ -109,7 +109,7 @@ void main()
 
 #### Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/group__rtos___idle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/group__rtos___idle.html)
 
 ### Example
 

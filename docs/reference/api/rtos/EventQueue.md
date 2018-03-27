@@ -12,11 +12,11 @@ Mbed OS provides two shared queues software can use. This can avoid the need to 
 
 ### EventQueue class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classevents_1_1_event_queue.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classevents_1_1_event_queue.html)
 
 ### Shared event queue reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/mbed__shared__queues_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/mbed__shared__queues_8h_source.html)
 
 ### EventQueue example: deferring from interrupt context
 

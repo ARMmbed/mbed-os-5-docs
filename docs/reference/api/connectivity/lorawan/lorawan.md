@@ -4,24 +4,24 @@ LoRaWAN is a technology designed for low-power battery powered devices. These de
 
 Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.
 
-The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
+The [LoRaWANInterface](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
 
 ### LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ### Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression:
 
-1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/v5.8/reference/eventqueue.html) object:
+1) An [EventQueue](https://os.mbed.com/docs/v5.8/reference/eventqueue.html) object:
 
 ```cpp
 // construct an event queue
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
-2) A [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/v5.8/reference/loraradio-api.html) object:
+2) A [LoRaRadio](https://os.mbed.com/docs/v5.8/reference/loraradio-api.html) object:
 
 ```CPP
 // construct a LoRadio object
