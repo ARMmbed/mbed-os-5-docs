@@ -10,7 +10,7 @@ The setup process for Arm Mbed CLI depends on your operating system. Please choo
 
 ##### 1. Install Mbed CLI
 
-Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases).
+Download and run the [Mbed CLI Windows .exe installer](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
