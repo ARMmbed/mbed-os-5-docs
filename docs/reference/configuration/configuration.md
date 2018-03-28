@@ -236,7 +236,7 @@ It is an error to both add and subtract the same value from a cumulative attribu
 
 ### `mbed_app.json` Specification
 
-`mbed_app.json` may be present at the root of your application or specified as the argument of the `--app-config` parameter to `mbed compile` and `mbed e}xort`. The configuration system interprets only one `mbed_app.json` during `mbed compile` or `mbed export`, unlike library configuration. Like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are sections. The allowed sections and their meanings are below:
+`mbed_app.json` may be present at the root of your application or specified as the argument of the `--app-config` parameter to `mbed compile` and `mbed export`. The configuration system interprets only one `mbed_app.json` during `mbed compile` or `mbed export`, unlike library configuration. Like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are sections. The allowed sections and their meanings are below:
 
 | Section | Required | Meaning |
 | ------- | -------- | ------- |
