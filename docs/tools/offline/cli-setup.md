@@ -135,6 +135,8 @@ You must inform Mbed CLI about the location of your compiler using one of the fo
 - Setting an environment variable.
 - The `mbed_settings.py` file in the root of your program. The tools will automatically create this file if it doesn't already exist.
 
+<span class="notes">**Note:** You may configure more than one toolchain. However, you may only use one toolchain at a time. When using C++98 and GNU C99, the only difference between the toolchains is performance.</span>
+
 #### Through Mbed CLI configuration
 
 Mbed CLI stores its own configuration about compiler locations both in project local settings, and user wide "global" settings. You may set and view these settings with the `mbed config` command. For example, you set the Arm Compiler 5 location for your user with the command:
@@ -212,16 +214,16 @@ No local configuration is set
 
 Command options:
 
-| Key | Name | Meaning |
-| --- | --- | --- |
-| `--global` | Global | Defines the default behavior of Mbed CLI across programs unless overridden by *local* settings. |
-| None | Local | Any configuration done without `--global` is specific to the Mbed program. It overrides global or default Mbed CLI settings. If you do not specify a value, then Mbed CLI prints the value for this setting in the current working context. |
-| `--unset` | Unset  | Remove a setting. |
-| `--list` | List | List global and local configuration. |
+| Option | Meaning |
+| --- | --- |
+| `--global` | Defines the default behavior of Mbed CLI across programs unless overridden by *local* settings. |
+| None | Any configuration done without `--global` is specific to the Mbed program. It overrides global or default Mbed CLI settings. If you do not specify a value, then Mbed CLI prints the value for this setting in the current working context. |
+| `--unset` | Remove a setting. |
+| `--list` | List global and local configuration. |
 
 Available configurations:
 
-| Key | Explanation | Default value |
+| Option | Explanation | Default value |
 | --- | --- | --- |
 | `target` | The default target for `compile`, `test` and `export`; an alias of `mbed target`. | No default. |
 | `toolchain` | The default toolchain for `compile` and `test`; can be set through `mbed toolchain`. | No default. |
