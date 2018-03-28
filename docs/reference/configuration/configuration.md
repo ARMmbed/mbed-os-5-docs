@@ -156,7 +156,7 @@ Above, the configuration parameters `param1` and `param2` are defined using a de
   - `required`: an optional key that specifies whether the parameter must have a value before compiling the code (`false` by default). It's not possible to compile a source tree with one or more required parameters that don't have a value. Generally, setting `required` to true is only useful when `value` is not set.
   - `macro_name`: an optional name for the macro defined at compile time for this configuration parameter. The configuration system automatically figures out the corresponding macro name for a configuration parameter, but the user can override this automatically computed name by specifying `macro_name`.
 
-You define a macro by value by using an integer or string instead of the description object, such as `param3` above. Defining a parameter by value is equivalent to defining it with a description object with the key `value` set to the value in place of the description object, the key `help` not set, the key `macro_name` not set and the key `required` set to `false`. Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `value` set to the value in place of the description object, the key `help` unset, the key `macro_name` unset, and the key `required` set to `false`.
+You define a macro by value by using an integer or string instead of the description object, such as `param3` above.  Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `value` set to the value in place of the description object, the key `help` unset, the key `macro_name` unset, and the key `required` set to `false`.
 
 <span class="notes">**Note:** The name of a parameter in `config` can't contain a dot (`.`) character.</span>
 
@@ -175,7 +175,7 @@ The configuration system appends a prefix to the name of each parameter, so a pa
 | Section | Required | Meaning |
 | ------- | -------- | ------- |
 | `name`  | Yes      | Name of the library. Must be unique. May not be `app` or `target`.|
-| `macros` | No | List of macros to define on the command-line. |
+| `macros` | No | List of macros to define in `mbed_config.h`. |
 | `config` | No | Configuration parameters defined for use in this library. |
 | `target_overrides` | No | Overrides for target configuration parameters and configuration parameters of the current library. |
 
@@ -215,14 +215,14 @@ In this JSON file:
 
 - `name` is the name of the library. **This is a required field.**
 - `config` defines the configuration parameters of the library, as the section about [defining configuration parameters](#defining-configuration-parameters) explains.
-- `macros` is a list of extra macros that are defined when compiling a application that includes this library. `macros` defines the provided list of C preprocessor macros.
+- `macros` is a list of extra C preprocessor macros that are defined when compiling an application that includes this library.
 - `target_overrides` is a dictionary with target-specific values for the configuration parameters.
 
 All configuration parameters defined in `mylib` have a `mylib.` prefix. In `mbed_app.json`, `buffer_size` is accessible using the name `mylib.buffer_size`.
 
 Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key. 
 
-It is an error for `mbed_lib.json` to override configuration parameters that were not defined.
+It is an error for `mbed_lib.json` to override an undefined configuration parameter.
 
 #### Overriding target attributes
 
@@ -232,16 +232,16 @@ Target configurations contain a set of attributes that you may manipulate with c
 "target.features_add": ["IPV4"]
 ```
 
-It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html)
+It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).
 
 ### `mbed_app.json` Specification
 
-`mbed_app.json` may be present at the root of your application or specified as the argument to the `--app-config` parameter. The configuration system interprets only one `mbed_app.json` during `mbed compile` or `mbed export`, unlike library configuration. Like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are sections. The allowed sections and their meanings are below:
+`mbed_app.json` may be present at the root of your application or specified as the argument of the `--app-config` parameter to `mbed compile` and `mbed e}xort`. The configuration system interprets only one `mbed_app.json` during `mbed compile` or `mbed export`, unlike library configuration. Like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are sections. The allowed sections and their meanings are below:
 
 | Section | Required | Meaning |
 | ------- | -------- | ------- |
 | `artifact_name`  | No      | The name for the executable to generate. Defaults to the name of the containing directory. |
-| `macros` | No | List of macros to define on the command-line. |
+| `macros` | No | List of macros to define in `mbed_config.h`. |
 | `config` | No | Configuration parameters defined for use in this library. |
 | `target_overrides` | No | Overrides for target, library and application configuration parameters. |
 
