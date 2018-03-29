@@ -34,7 +34,7 @@ events.shared-stacksize = 1024 (macro name: "MBED_CONF_EVENTS_SHARED_STACKSIZE")
 <output truncated for brevity>
 ```
 
-You may find that configuration naming does not always describe the parameter's purpose adequately. Use the `-v` switch to include the help text defined with the configuration parameter, where the value of the configuration parameter is defined, and other details. The command `mbed compile --config -v` in the same application as above prints:
+Use the `-v` switch to include the help text defined with the configuration parameter, where the value of the configuration parameter is defined, and other details. The command `mbed compile --config -v` in the same application as above prints:
 
 ```
 Configuration parameters
