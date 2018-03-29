@@ -126,10 +126,10 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Avoid operations that can fail if you can't signal an error. Class constructors should not fail.
 - Nonrecoverable errors (such as OOM and mutex lock in interrupt) should not return to users.
 - Recoverable errors (such as UDP packet loss) should be propagated to the user via error code.
-- Deprecation should be handled with care. A deprecated API will not be removed until the next major OS revision. Reasons for deprecation include:
-    - Design pattern traps that cause developers to write incorrect code
-    - Code that is functionally incorrect
-    - Code that is not safe (syncronization) or that will result in undefined behavior
+- Handle deprecation with care. We do not remove deprecated APIs until the next major OS revision. Reasons for deprecation include:
+    - Design pattern traps that cause developers to write incorrect code.
+    - Code that is functionally incorrect.
+    - Code that is not safe (syncronization) or that results in undefined behavior.
 
 ##### API design - porting layer
 
@@ -163,10 +163,10 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      osStatus lock(uint32_t millisec=osWaitForever);
     ```
 
-- The doxygen of each class's header file must contain a simple use example using @code and @endcode.
-- Each API should also provide an @code and @endcode section building upon the class header example
-- If more specific information is needed about a method, this should be accomplished using @note
-- In the case that a method is deprecated it must use the @deprecated tag along with a description of what method to replace it with.
+- The doxygen of each class's header file must contain a use example using `@code` and `@endcode`.
+- Each API should also provide an `@code` and `@endcode` section building upon the class header example.
+- If more specific information is needed about a method, this should be accomplished using `@note`.
+- If a method is deprecated, it must use the `@deprecated` tag and include a description of what method to replace it with.
 - Each module should provide a README that documents the module:
     - The README should start with a small paragraph describing the module to users with no prior knowledge.
     - The README should contain a code example showing how to use the module.
