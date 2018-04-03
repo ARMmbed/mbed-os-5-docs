@@ -1,17 +1,19 @@
 <h2 id="quadspi-port">QuadSPI</h2>
 
-QSPI HAL defines API for targets that contain QSPI capable peripheral. The QSPI interface is often used for data storage.
+The QSPI HAL defines API for targets that contain QSPI capable peripheral. Developers often use the QSPI interface for data storage.
+
+<span class="warnings">**Warning:** We are changing the QSPI HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the QSPI API](#implementing-the-qspi-api) section.
 
 ### Assumptions
 
 #### Defined behavior
 
-- a target implementaion should cover the most of QSPI frame format (some targets might not provide the flexibility for setting all frame parameters)
-- command transfer - a target might provide additional API for sending device specific commands. In case it does not, it can be implemented via read/write functions (this is target/driver dependent)
+- A target implementaion covers most of the QSPI frame format (some targets might not provide the flexibility for setting all frame parameters).
+- Command transfer - A target might provide additional API for sending device-specific commands. If it does not, you can implement it using read and write functions. (This is target or driver dependent.)
 
 #### Undefined behavior
 
-- Calling any function other than `qspi_init` before the initialization of the QSPI
+- Calling any function other than `qspi_init` before the initialization of the QSPI.
 
 #### Dependency
 
@@ -19,7 +21,7 @@ QSPI peripheral
 
 ### Implementing QuadSPI
 
-The target needs to define `qspi_s` structure - target specific QSPI object.
+The target needs to define the `qspi_s` structure - target specific QSPI object.
 
 Functions to implement:
 
@@ -33,9 +35,9 @@ qspi_status_t qspi_read(qspi_t *obj, const qspi_command_t *command, void *data, 
 
 ```
 
-`qspi_write` and `qspi_read` are used for data transfers. For communicating with a device, `qspi_command_transfer` should be used.
+Use `qspi_write` and `qspi_read` for data transfers. For communicating with a device, use `qspi_command_transfer`.
 
-To enable QSPI HAL, define `QSPI` in targets.json file inside `device_has`:
+To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_has`:
 
 ```
 "TARGET_NAME": {
