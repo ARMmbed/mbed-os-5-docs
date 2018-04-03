@@ -18,12 +18,13 @@ Responsibilities:
 
 The current maintainers are:
 
-* [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
-* [Martin Kojtal](https://os.mbed.com/users/Kojto).
-* [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
-* [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
-* [Sam Grove](https://os.mbed.com/users/sam_grove).
-* [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+- [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
+- [Martin Kojtal](https://os.mbed.com/users/Kojto).
+- [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
+- [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
+- [Sam Grove](https://os.mbed.com/users/sam_grove).
+- [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+- [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 #### Contributions
 
