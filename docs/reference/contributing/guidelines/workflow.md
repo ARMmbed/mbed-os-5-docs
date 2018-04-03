@@ -94,7 +94,7 @@ We consider the following pull request types.
 
 ##### Fix
 
-A bug fix should be backward-compatible internal change that fixes incorrect behavior. The fix should provide a description what and how it fixes the issue. The test should be included to catch this issue in the future and confirm the correct behavior.
+A bug fix is backward-compatible internal change that fixes incorrect behavior. The fix provides a description what and how it fixes the issue. Tests are included to catch the issue in the future and confirms the correct behavior.
 
 Release: patch
 
@@ -115,7 +115,7 @@ Release: patch
 
 New features targets feature releases. It can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
 
-Adding a new functionality is considered to be a feature. It does not matter if it is C++ or C.
+Adding a new functionality is considered to be a feature. It does not matter if it is C++, C or Python.
 
 Release: feature
 
