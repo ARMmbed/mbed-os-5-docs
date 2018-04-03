@@ -88,34 +88,34 @@ We consider the following pull request types.
 
 A bug fix should be backward-compatible internal change that fixes incorrect behavior. The fix should provide a description what and how it fixes the issue. The test should be included to catch this issue in the future and confirm the correct behavior.
 
-Release: patch version
+Release: patch
 
 ##### Refactor
 
-Refactors are intended for minor versions if they are not fixing specific issue as they 
+Refactors are intended for feature releases if they are not fixing specific issue as they 
 can introduce new issues.
 
-Release: minor version
+Release: feature
 
 ##### New target
 
 Adding a new target targets the patch release as it updating targets folder implementation.
 
-Release: patch version
+Release: patch
 
 ##### Feature
 
-New features targets minor releases. It can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
+New features targets feature releases. It can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
 
 Adding a new functionality is considered to be a feature. It does not matter if it is C++ or C.
 
-Release: minor version
+Release: feature
 
 ##### Breaking change
 
 Any change that results in breaking user space. It should have strong justification to be considered. Often the change could be made backward compatible, for example deprecate the old functionality and introduce the new replacement.
 
-Release: minor version
+Release: feature
 
 ##### Pull request template
 
