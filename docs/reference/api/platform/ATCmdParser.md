@@ -1,6 +1,6 @@
 ## ATCmdParser
 
-ATCmdParser is an Mbed OS compatible AT command parser. AT commands are instructions used to communicate with a communication device such as a modem, phone or Wi-Fi module. Each command is a text string in ASCII format, and every command starts with "AT" characters followed by a command specifying the operation to be carried out.
+ATCmdParser is an Mbed OS compatible AT command parser and serializer. AT commands are instructions used to communicate with a communication device such as a modem, phone or Wi-Fi module. Each command is a text string in ASCII format, and every command starts with "AT" characters followed by a command specifying the operation to be carried out.
 
 The ATCmdParser class in Mbed OS implements functionality to send and receive AT commands to devices capable of communicating using AT commands. The ATCmdParser internally uses the driver for the communication channel to talk to the device. It expects the driver to implement the FileHandle interface to invoke the functions on the driver.
 
