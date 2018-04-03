@@ -24,6 +24,7 @@ The current maintainers are:
 * [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
 * [Sam Grove](https://os.mbed.com/users/sam_grove).
 * [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+* [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 #### Contributions
 
