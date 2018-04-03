@@ -61,6 +61,14 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Avoid merging commmits. (Always rebase when possible.)
 - Pull requests should fix a bug, add a feature or refactor.
 
+#### Mbed OS release versioning
+
+Version number MAJOR.FEATURE.PATCH where:
+
+- MAJOR version for incompatible API changes
+- FEATURE version for adding functionality in backward-compatible manner
+- PATCH version for backward-compatible bug fixes
+
 ### Pull request categories
 
 #### Bug fixes
