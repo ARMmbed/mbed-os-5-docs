@@ -548,6 +548,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/build.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/mbedls.md"
                     },
                     {
