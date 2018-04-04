@@ -15,8 +15,6 @@ Nanostack is the networking stack that provides both of these protocols. For mor
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
 
-Mbed OS provides `NanostackEthernetInterface` for Ethernet.
-
 ##### Supported mesh networking modes
 
 Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.

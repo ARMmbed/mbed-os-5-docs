@@ -40,7 +40,7 @@ For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterface
 
 ![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
 
-Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
+Applications use only `LoWPANNDInterface` or `ThreadInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
 
 See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
 
