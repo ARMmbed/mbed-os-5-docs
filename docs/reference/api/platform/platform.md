@@ -71,7 +71,7 @@ C++ provides the tools to delegate this complexity to a single class. This class
 
 <h4 id="the-importance-of-state">The importance of state</h4>
 
-Callbacks have two important pieces of information, the code to execute and the state associated with the callback.
+Callbacks may have two important pieces of information, the code to execute and the state associated with the callback.
 
 A common API design mistake is to use a callback type that doesn’t allow a user to attach state to a callback. The most common example of this is a simple C function pointer:
 
@@ -88,7 +88,7 @@ public:
 };
 ```
 
-This API is sufficient for simple applications but falls apart when there are multiple ADC modules available. This problem becomes especially noticeable when a user tries to reuse the same procedure for multiple callbacks.
+This API is sufficient for simple applications, but falls apart when there are multiple ADC modules available. This problem becomes especially noticeable when a user tries to reuse the same procedure for multiple callbacks.
 
 For example, consider applying a low-pass filter to two different ADC modules
 
@@ -111,7 +111,7 @@ int main() {
 }
 ```
 
-Without state, callbacks offer very limited composability. In C, you can fix this by adding an additional “state” argument to the function pointer, which allows you to pass in the opaque “state” when you register the callback.
+Without state, callbacks compose poorly. In C, you fix this by adding a "state" argument to the function pointer, and by passing opaque "state" when you register the callback.
 
 Here’s the low-pass example using an additional argument for state.
 
@@ -150,7 +150,7 @@ int main() {
 }
 ```
 
-One of the core features of C++ is the encapsulation of this “state” in classes, with operations that modify the state being represented as member functions in the class. Unfortunately, member function pointers are not compatible with standard function pointers, but you can rewrite the low-pass example to use member function pointers, allowing you to pass in state as a C++ object. The Callback class fills this void by offering a function pointer like class that is able to use member function pointers.
+One of the core features of C++ is the encapsulation of this "state" in classes, with operations that modify the state being represented as member functions in the class. Member function pointers are not compatible with standard function pointers. The Callback class allows API authors to implement a single interface that accepts a Callback, and the user may provide a C function and state or C++ member function and object without special consideration by the API author.
 
 Here’s the low-pass filter example rewritten to use the callback class:
 
