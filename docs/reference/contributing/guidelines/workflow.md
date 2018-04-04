@@ -94,14 +94,13 @@ We consider the following pull request types.
 
 ##### Fix
 
-A bug fix is backward-compatible internal change that fixes incorrect behavior. The fix provides a description what and how it fixes the issue. Tests are included to catch the issue in the future and confirms the correct behavior.
+A bug fix is backward-compatible internal change that fixes incorrect behavior.
 
 Release: patch
 
 ##### Refactor
 
-Refactors are intended for feature releases if they are not fixing specific issue as they 
-can introduce new issues.
+Refactors are intended for feature releases if they are not fixing specific issue as they can introduce new issues.
 
 Release: feature
 
