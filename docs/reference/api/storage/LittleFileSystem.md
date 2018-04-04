@@ -1,5 +1,7 @@
 ## LittleFileSystem
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
+
 The little file system (LittleFS) is a fail-safe file system designed for embedded systems, specifically for microcontrollers that use external flash storage.
 
 ```
