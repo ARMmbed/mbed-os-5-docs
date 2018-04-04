@@ -1,16 +1,16 @@
-### Arm Mbed HDK
+## Arm Mbed HDK
 
 The Arm Mbed Hardware Development Kit (Mbed HDK) is a collection of hardware design resources that we have gathered to assist the development of custom hardware benefiting from the Arm Mbed ecosystem and associated technologies, like Arm Mbed OS and DAPLink. Working with development boards that are based on the Mbed HDK is the most efficient way to get started with the Arm Mbed platform.
 
-#### HDK content per project
+### HDK content per project
 
-* Eagle schematic and board files.
-* PDF schematic and board copies.
-* CAM Job GERBERS for manufacture (including pick/place and drill).
-* Bill of Materials (BOM).
-* An online BOM for easy purchasing (eBOM).
+- Eagle schematic and board files.
+- PDF schematic and board copies.
+- CAM Job GERBERS for manufacture (including pick/place and drill).
+- Bill of Materials (BOM).
+- An online BOM for easy purchasing (eBOM).
 
-#### Repository content and projects
+### Repository content and projects
 
 The [`mbed-hdk`](https://github.com/ARMmbed/mbed-hdk) repository offers:
 
