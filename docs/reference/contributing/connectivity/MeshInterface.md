@@ -1,4 +1,4 @@
-### Porting new RF driver for 6LoWPAN Stack
+## Porting new RF driver for 6LoWPAN Stack
 
 Device drivers are a set of functions for providing PHY layer devices for the 6LoWPAN stack:
 
@@ -6,7 +6,7 @@ Device drivers are a set of functions for providing PHY layer devices for the 6L
 - receiving function.
 - a set of device controlling functions.
 
-#### How Nanostack runs inside Mbed OS
+### How Nanostack runs inside Mbed OS
 
 The Mbed OS port of Nanostack consists of a few helper modules that provide an easier API for users and a Platform API for working inside the operating system.
 
@@ -34,7 +34,7 @@ For an example of a simple application using Nanostack, see [Example mesh applic
 
 For more information, see the [documentation of the Socket API](/docs/development/reference/network-socket.html).
 
-##### Providing RF driver for Mbed OS applications
+#### Providing RF driver for Mbed OS applications
 
 For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterfaceNanostack` requires the driver object to be provided when initializing.
 
@@ -44,13 +44,13 @@ Applications use only `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthern
 
 See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
 
-#### Device Driver API
+### Device Driver API
 
 The 6LoWPAN stack uses Device Driver API to communicate with different physical layer drivers. The 6LoWPAN stack supports different device types for PHY layer and special cases where raw IPv6 datagrams are forwarded to a driver.
 
 The driver must first be registered with the 6LoWPAN stack using the `phy_device_driver_s` structure defined in the section [_PHY device driver register_](#phy-device-driver-register). This structure defines all the functions that the stack uses when calling a device driver. When the device driver must call the driver API from the stack, it uses the ID number received in the registration phase to distinguish between different devices. The following sections define the contents of the driver structures and API interfaces that the driver can use.
 
-#### How to create a new RF driver
+### How to create a new RF driver
 
 The following steps describe how you can create a new RF driver:
 
@@ -68,7 +68,7 @@ The following steps describe how you can create a new RF driver:
 
 1. Verify the functionality of your implementation using the [Nanostack RF driver test application](https://github.com/ARMmbed/nanostack-rf-driver-tester). (This is currently only available to Mbed OS Partners.)
 
-#### Worker thread for Mbed OS
+### Worker thread for Mbed OS
 
 Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
 from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement their own worker thread to handle the interrupt requests.
@@ -119,7 +119,7 @@ irq_thread.start(rf_if_irq_task);
 
 ```
 
-#### RF driver states
+### RF driver states
 
 _Figure 11-1_ below shows the basic states of the RF driver.
 
@@ -170,7 +170,7 @@ State|Description
 
 ![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
 
-#### PHY device driver register
+### PHY device driver register
 
 This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces for a specific PHY driver.
 
@@ -180,7 +180,7 @@ To register a PHY driver to the stack:
 int8_t arm_net_phy_register(phy_device_driver_s *phy_driver);
 ```
 
-#### PHY data RX API
+### PHY data RX API
 
 This is a callback that is part of the device driver structure and initialized by the stack when a driver is registered.
 
@@ -190,7 +190,7 @@ The driver calls this function to push the received data from a PHY to the stack
 typedef int8_t arm_net_phy_rx_fn(const uint8_t *data_ptr, uint16_t data_len, uint8_t link_quality, int8_t dbm, int8_t driver_id);
 ```
 
-#### PHY data TX done API
+### PHY data TX done API
 
 This is a callback that is part of the device driver structure and initialized by the stack when a driver is registered.
 
@@ -206,11 +206,11 @@ If the CSMA-CA is handled by the hardware, the `cca_retry` should return a value
 
 When the hardware handles the auto-retry mode, the error cases should report the number of TX attempts made in the `tx_retry` parameter. If the total number of retries is less that 4, the stack initiates a retransmission.
 
-#### PHY driver structure and enumeration definitions
+### PHY driver structure and enumeration definitions
 
 This section introduces driver API specific structures and enumerations.
 
-##### PHY TX process status code
+#### PHY TX process status code
 
 This enumeration defines the PHY TX process status code:
 
@@ -233,7 +233,7 @@ Parameter|Description
 `TX_FAIL`|The link TX process fails.
 `CCA_FAIL`|RF link CCA process fails.
 
-##### PHY interface control types
+#### PHY interface control types
 
 This enumeration defines the PHY interface control types:
 
@@ -252,7 +252,7 @@ Parameter|Description
 `DOWN`|Disables the PHY interface driver (RF radio disabled).
 `UP`|Enables the PHY interface driver (RF radio receiver ON).
 
-##### PHY device driver
+#### PHY device driver
 
 This PHY device driver structure comprises the following members:
 
@@ -304,7 +304,7 @@ Member|Description
 `arm_net_virtual_tx_cb`|A function pointer to the upper layer tx callback. Only needed by virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver
 `tunnel_type`|TUN driver type. This is only valid when link type is PHY_TUN
 
-##### PHY device channel page information
+#### PHY device channel page information
 
 This structure defines the PHY device channel page information and comprises the following members:
 
@@ -321,7 +321,7 @@ Member|Description
 `channel_page`|The supported channel page(s).
 `rf_channel_configuration`|The used RF configuration for the channel page.
 
-##### PHY device link type
+#### PHY device link type
 
 This enumeration defines the PHY device link types:
 
@@ -344,7 +344,7 @@ Parameter|Description
 `TUN`|The Linux virtual TUN interface.
 `SLIP`|The SLIP interface.
 
-##### PHY device RF channel configuration
+#### PHY device RF channel configuration
 
 This structure defines the PHY device RF configuration:
 
@@ -367,7 +367,7 @@ Member|Description
 `number_of_channels`|The number of supported channels.
 `modulation`|The RF modulation method.
 
-##### PHY device RF modulation methods
+#### PHY device RF modulation methods
 
 This enumeration defines the PHY device RF modulation methods:
 
@@ -390,7 +390,7 @@ Parameter|Description
 `M_GFSK`|The GFSK modulation method.
 `M_UNDEFINED`|The RF modulation method undefined.
 
-#### Example RF driver
+### Example RF driver
 
 The following code example is not a complete driver but shows you how to use the API to create a RF driver.
 
