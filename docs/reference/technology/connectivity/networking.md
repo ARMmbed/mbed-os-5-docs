@@ -1,4 +1,4 @@
-### IP Networking: WORK-IN-PROGRESS
+### IP Networking
 
 IP Networking in Mbed OS is layered in three clearly defined API levels. In the diagram below,
 the layers are shown next to closest matching [OSI model](https://en.wikipedia.org/wiki/OSI_model) layers.
@@ -109,6 +109,8 @@ driver implements the Network stack API. If they use internal IP stack, LwIP, th
 implement Serial PPP driver.
 
 ##### IEEE 802.15.4 RF driver
+
+![RF driver](rf-driver.png)
 
 On Mesh networks, Nanostack uses IEEE 802.15.4 radios for transmitting and receiving packets.
 The RF driver implements the `NanostackRfPhy` API.
