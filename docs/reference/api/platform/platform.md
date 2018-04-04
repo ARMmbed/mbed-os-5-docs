@@ -6,7 +6,7 @@ The role of the platform modules is to provide general purpose MCU management in
 
 Mbed OS eases MCU management through the use of several scoped locks and several global APIs.
 
-The locks, `DeepSleepLock` and `CriticalSectionLock`, use RAII to create a scope within which the appropriate lock is held; These locks acquire operation is their constructor and their release operation is their destructor. The `DeepSleepLock` prevents the MCU from deep sleeping while it's held and the `CriticalSectionLock` prevents preemption while it's held.
+The locks, `DeepSleepLock` and `CriticalSectionLock`, use RAII to create a scope within which the appropriate lock is held; These locks acquire operation is their constructor and their release operation is their destructor. This uses core C++ language features, object lifetime and deconstruction on scope exit, to eliminate most resource leaks and reduce program complexity. The `DeepSleepLock` prevents the MCU from deep sleeping while it's alive and the `CriticalSectionLock` prevents preemption while it's alive. As these acquisition of a critical section or a deep sleep lock cannot fail, both of these classes do not raise exceptions.
 
 Mbed OS also provides global APIs for the sleep and preemption global resources. The `PowerManagement` module includes a function to go to sleep now and the `Wait` module include a function to preempt now.
 - [Wait](/docs/development/reference/wait.html): An API that provides simple wait capabilities. These wait capabilities are integrated with the RTOS to schedule another thread if the current thread is blocked. If all threads are blocked, the idle thread will save power by putting the MCU to sleep.
