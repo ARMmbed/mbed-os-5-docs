@@ -122,7 +122,7 @@ Release: feature
 
 Any change that results in breaking user space. It should have strong justification to be considered. Often the change could be made backward compatible, for example deprecate the old functionality and introduce the new replacement.
 
-Release: feature
+Release: major
 
 ##### Pull request template
 
