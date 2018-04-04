@@ -129,7 +129,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Handle deprecation with care. We do not remove deprecated APIs until the next major OS revision. Reasons for deprecation include:
     - Design pattern traps that cause developers to write incorrect code.
     - Code that is functionally incorrect.
-    - Code that is not safe (syncronization) or that results in undefined behavior.
+    - Code that is not safe (synchronization) or that results in undefined behavior.
 
 ##### API design - porting layer
 
