@@ -1,4 +1,4 @@
-### RTOS
+<h3 id="contributing-rtos">RTOS</h3>
 
 CMSIS/RTX code is imported from [the original CMSIS repository](https://github.com/ARM-software/CMSIS_5/) with the help of a Python script in the `mbed-os` repository `mbed-os\tools\importer\importer.py`.
 
