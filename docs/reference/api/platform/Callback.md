@@ -28,38 +28,19 @@ Here is an example that uses everything discussed in the [introduction to callba
 Callbacks overload the function call operator, so you can call a Callback like you would a normal function:
 
 ```c++
-void callme(Callback<void(float)> cb) {
-    cb(1.0f);
+void run_timer_event(Callback<void(float)> on_timer) {
+    on_timer(1.0f);
 }
 ```
 
 The only thing to watch out for is that the Callback type has a null Callback, just like a null function pointer. Uninitialized callbacks are null and assert if you call them. If you want a call to always succeed, you need to check if it is null first.
 
 ``` c++
-void callmemaybe(Callback<void(float)> cb) {
-    if (cb) {
-        cb(1.0f);
+void run_timer_event(Callback<void(float)> on_timer) {
+    if (on_timer) {
+        on_timer(1.0f);
     }
 }
 ```
 
 The Callback class is what’s known in C++ as a “Concrete Type”. That is, the Callback class is lightweight enough to be passed around like an int, pointer or other primitive type.
-
-```c++
-class Thing {
-private:
-    Callback<void(int)> _cb;
-
-public:
-    void attach(Callback<void(int)> cb) {
-         _cb = cb
-    }
-
-    void dothething(int arg) {
-        If (_cb) {
-            _cb(arg);
-        }
-    }
-}
-```
-
