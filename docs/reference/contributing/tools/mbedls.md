@@ -1,4 +1,4 @@
-### Mbed-ls
+## Mbed-ls
 
 Mbed-ls is a Python module that detects and lists Mbed Enabled boards connected to a computer through USB.
 
