@@ -2,9 +2,9 @@
 
 The MbedCRC Class provides software CRC generation algorithms. MbedCRC is a template class with polynomial value and polynomial width as arguments.
 
-You can use the `compute` API to calculate CRC for the selected polynomial. If data is available in parts, you must call the `compute_partial_start`, `compute_partial` and `compute_partial_stop` APIs in the proper order to get the correct CRC value. You can use the `get_polynomial` and `get_width` APIs to learn the current object's polynomial and width values.
+You can use the `compute` API to calculate CRC for the selected polynomial. If data is available in parts, you must call the `compute_partial_start`, `compute_partial`, and `compute_partial_stop` APIs in the proper order to get the correct CRC value. You can use the `get_polynomial` and `get_width` APIs to learn the current object's polynomial and width values.
 
-ROM polynomial tables are for supported 8/16-bit CCITT, 16-bit IBM and 32-bit ANSI polynomials. By default, ROM tables are used for CRC computation. If ROM tables are not available, then CRC is computed at runtime bit by bit for all data input.
+ROM polynomial tables are for supported 8/16-bit CCITT, 16-bit IBM, and 32-bit ANSI polynomials. By default, ROM tables are used for CRC computation. If ROM tables are not available, then CRC is computed at runtime bit by bit for all data input.
 
 ### MbedCRC class reference
 
