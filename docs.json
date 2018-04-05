@@ -518,133 +518,154 @@
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/contributing.md"
                 },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/guidelines.md"
+
+                "sub_chapters": [{
+                        "title": "Guidelines",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/guidelines.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/license.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/cla.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/style.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/design_guidelines.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/workflow.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/license.md"
+                        "title": "Tools",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/tools.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/build.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/mbedls.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/exporter.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/hdk.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/cla.md"
+                        "title": "Porting targets",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/target.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/bootstrap.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/us_ticker.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/lp_ticker.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/serial.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/rtc.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/entropy.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/gpio.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/hw-accelerated-crypto.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/rtos.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/tickless.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/sleep.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/usb.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/flash.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/style.md"
+                        "title": "Porting storage",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/storage/storage.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/design_guidelines.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/guidelines/workflow.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/tools.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/build.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/mbedls.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/exporter.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/tools/hdk.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/target.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/bootstrap.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/us_ticker.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/lp_ticker.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/serial.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/rtc.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/entropy.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/gpio.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/hw-accelerated-crypto.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/rtos.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/tickless.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/sleep.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/usb.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/flash.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/storage/storage.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/connectivity.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/NetworkStack.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/CellularInterface.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/MeshInterface.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/MeshMAC.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/exporter.md"
+                        "title": "Porting connectivity",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/connectivity.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/NetworkStack.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/CellularInterface.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/MeshInterface.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/MeshMAC.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/exporter.md"
+                            }
+                        ]
                     }
                 ]
             }
