@@ -1,29 +1,29 @@
-<h3 id="contributing-filesystem">FileSystem</h3>
+<h2 id="contributing-filesystem">FileSystem</h2>
 
 [Include a brief description here.]
 
-#### File system class reference
+### File system class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_file_system.html)
 
-#### Assumptions
+### Assumptions
 
-##### Defined behavior
+#### Defined behavior
 
 [Include any defined behavior in bullet format here.]
 
-##### Undefined behavior
+#### Undefined behavior
 
 [Include any undefined behavior in bullet format here.]
 
-##### Potential bugs
+#### Notes
 
 [Include any potential bugs in bullet format here.]
 
-#### Implementing BlockDevice
+### Implementing BlockDevice
 
 [Include implementation information here.]
 
-#### Testing
+### Testing
 
 [Include testing information here.]
