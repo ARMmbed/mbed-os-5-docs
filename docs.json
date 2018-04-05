@@ -572,7 +572,7 @@
                         ]
                     },
                     {
-                        "title": "Targets",
+                        "title": "Porting targets",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/target.md"
@@ -640,7 +640,7 @@
                         ]
                     },
                     {
-                        "title": "Connectivity",
+                        "title": "Porting connectivity",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/connectivity/connectivity.md"
