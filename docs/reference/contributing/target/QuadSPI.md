@@ -1,6 +1,6 @@
 <h2 id="quadspi-port">QuadSPI</h2>
 
-The QSPI HAL defines API for targets that contain QSPI capable peripheral. Developers often use the QSPI interface for data storage.
+Implementing QSPI enables Mbed OS to communicate with external memories much faster than via SPI.
 
 <span class="warnings">**Warning:** We are changing the QSPI HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the QSPI API](#implementing-the-qspi-api) section.
 
@@ -9,7 +9,7 @@ The QSPI HAL defines API for targets that contain QSPI capable peripheral. Devel
 #### Defined behavior
 
 - A target implementaion covers most of the QSPI frame format (some targets might not provide the flexibility for setting all frame parameters).
-- Command transfer - A target might provide additional API for sending device-specific commands. If it does not, you can implement it using read and write functions. (This is target or driver dependent.)
+- Command transfer - A target might provide additional functions for sending device-specific commands. If it does not, you can implement it using read and write functions. (This is target or driver dependent.)
 
 #### Undefined behavior
 
