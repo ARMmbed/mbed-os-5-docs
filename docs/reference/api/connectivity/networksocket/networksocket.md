@@ -108,14 +108,14 @@ Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc
 
 ```
 mbed-os-example-cellular
-Establishing connection ...... 
- 
+Establishing connection ......
+
 Connection Established.
 TCP: connected with echo.mbedcloudtesting.com server
 TCP: Sent 4 Bytes to echo.mbedcloudtesting.com
 Received from echo server 4 Bytes
- 
- 
+
+
 Success. Exiting
 ```
 

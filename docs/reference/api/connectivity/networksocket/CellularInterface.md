@@ -1,5 +1,7 @@
 <h2 id="cellular-api">Cellular</h2>
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
+
 The CellularBase provides a C++ API for connecting to the internet over a Cellular device.
 
 Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which has more information.
