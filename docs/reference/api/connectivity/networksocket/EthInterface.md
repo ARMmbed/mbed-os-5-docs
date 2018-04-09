@@ -1,6 +1,6 @@
 ## Ethernet
 
-<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_eth_interface.png)<span>Ethernet class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_eth_interface.png)<span>EthInterface class hierarchy</span></span>
 
 The EthInterface provides a C++ API for connecting to the internet over Ethernet.
 
