@@ -1,5 +1,7 @@
 ## BusInOut
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_bus_in_out.png)<span>BusInOut class hierarchy</span></span>
+
 Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](/docs/development/reference/digitalinout.html) pins that you can read and write as one value.
 
 You can use any of the numbered Arm Mbed pins as a DigitalInOut.
