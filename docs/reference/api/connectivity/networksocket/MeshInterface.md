@@ -1,5 +1,7 @@
 <h2 id="mesh-api">Mesh</h2>
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
+
 The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](/docs/v5.8/reference/technology.html#nanostack) networking stack.
 
 **Tips:**
