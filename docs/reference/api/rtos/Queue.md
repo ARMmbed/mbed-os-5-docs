@@ -1,5 +1,7 @@
 ## Queue
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_queue.png)<span>Queue class hierarchy</span></span>
+
 A Queue allows you to queue pointers to data from producer threads to consumer threads.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/queue.png)</span>

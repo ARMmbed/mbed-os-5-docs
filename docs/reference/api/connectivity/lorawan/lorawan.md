@@ -1,5 +1,7 @@
 <h2 id="lorawan-api">LoRaWANInterface</h2>
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span>LoRaWANInterface class hierarchy</span></span>
+
 LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
 Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.

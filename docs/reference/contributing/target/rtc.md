@@ -1,12 +1,12 @@
-### RTC
+<h2 id="rtc-port">RTC</h2>
 
 Implementing RTC enables Mbed OS to keep track of the current time. The standard library time keeping functions, such as `time`, use it.
 
 <span class="warnings">**Warning:** We are changing the RTC HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the RTC API](#implementing-the-rtc-api) section.
 
-#### Assumptions
+### Assumptions
 
-##### Defined behavior
+#### Defined behavior
 
 - The function `rtc_init` is safe to call repeatedly.
 - RTC accuracy is at least 10%.
@@ -15,22 +15,22 @@ Implementing RTC enables Mbed OS to keep track of the current time. The standard
 - Sleep modes don't stop RTC from counting.
 - Shutdown mode doesn't stop RTC from counting.
 
-##### Undefined behavior
+#### Undefined behavior
 
 - Calling any function other than `rtc_init` before the initialization of the RTC.
 
-##### Notes
+#### Notes
 
 Watch out for these common trouble areas when implementing this API:
 
 - Incorrect overflow handling.
 - Glitches due to ripple counter.
 
-#### Dependencies
+### Dependencies
 
 Hardware RTC capabilities.
 
-#### Implementing the RTC API
+### Implementing the RTC API
 
 We are working on the new HAL RTC API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the RTC API in both variants. First, you need to implement the current API. You can find it on the master branch:
 
@@ -42,7 +42,7 @@ To make sure your platform is ready for the upcoming changes, you need to implem
 
 To enable RTC support in Mbed OS, add the `RTC` label in the `device_has` option of the target's section in the `targets.json` file.
 
-#### Testing
+### Testing
 
 The Mbed OS HAL provides a set of conformance tests for RTC. You can use these tests to validate the correctness of your implementation. To run the RTC HAL tests, use the following command:
 

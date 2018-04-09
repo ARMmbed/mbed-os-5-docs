@@ -1,5 +1,7 @@
 ## LowPowerTicker
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_low_power_ticker.png)<span>LowPowerTicker class hierarchy</span></span>
+
 The LowPowerTicker class has the same methods as the Ticker class but operates in deep sleep mode and has less resolution. Use the LowPowerTicker interface to set up a recurring interrupt when you only need millisecond accuracy; it calls a function repeatedly and at a specified rate. Because the LowPowerTicker class can operate in deep sleep mode, it does not block deep sleep when active.
 
 You can create any number of LowPowerTicker objects, allowing multiple outstanding interrupts at the same time. The function can be a static function, a member function of a particular object or a Callback object.

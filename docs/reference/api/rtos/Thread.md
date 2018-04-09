@@ -1,5 +1,7 @@
 ## Thread
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+
 The Thread class allows defining, creating and controlling parallel tasks.
 
 <span class="notes">**Note:** The function `main` is a special thread function that is started at system initialization.</span>
