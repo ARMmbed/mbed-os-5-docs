@@ -1,5 +1,7 @@
 ## Serial
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
+
 The [Serial](/docs/development/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
