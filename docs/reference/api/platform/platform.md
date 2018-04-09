@@ -1,6 +1,6 @@
 ## Platform overview
 
-The role of the platform modules is to provide general purpose MCU management infrastructure, a few common data structures, and  a consistent user experience on top of different standard libraries and toolchains.  This page contains reference material about these subjects. 
+The role of the platform modules is to provide general purpose MCU management infrastructure, a few common data structures and  a consistent user experience on top of different standard libraries and toolchains. This page contains reference material about these subjects.
 
 ### General MCU Management Infrastructure
 
@@ -25,7 +25,7 @@ Mbed OS provides the CircularBuffer and ATCmdParser as these are commonly used u
 
 Mbed OS includes a few convenience classes that are tailored for embedded systems development. These are the `Callback`, `Error` and `NonCopyable` classes.
 
-- [Callback](/docs/development/reference/callback.html): An API that executes the user’s code in its own context. Many other Mbed OS APIs build on the Callback API by taking a callback to execute. 
+- [Callback](/docs/development/reference/callback.html): An API that executes the user’s code in its own context. Many other Mbed OS APIs build on the Callback API by taking a callback to execute.
 - [Time](/docs/development/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
 - [Error](/docs/development/reference/error.html): A functions that generates a fatal runtime error.
 - [NonCopyable](/docs/development/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
@@ -90,7 +90,7 @@ public:
 
 This API is sufficient for simple applications, but falls apart when there are multiple ADC modules available. This problem becomes especially noticeable when a user tries to reuse the same procedure for multiple callbacks.
 
-For example, consider applying a low-pass filter to two different ADC modules
+For example, consider applying a low-pass filter to two different ADC modules:
 
 ``` c++
 // Here is a small running-average low-pass filter.
