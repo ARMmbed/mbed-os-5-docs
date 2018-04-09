@@ -1,5 +1,7 @@
 ## Mail
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classrtos_1_1_mail.png)<span>Mail class hierarchy</span></span>
+
 Mail works like a queue, with the added benefit of providing a memory pool for allocating messages (not only pointers).
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mail_queue.png)</span>
