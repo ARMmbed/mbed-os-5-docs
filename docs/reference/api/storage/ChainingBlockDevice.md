@@ -1,5 +1,7 @@
 ## ChainingBlockDevice
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_chaining_block_device.png)<span>ChainingBlockDevice class hierarchy</span></span>
+
 The ChainingBlockDevice class provides a way to chain together multiple block devices. You can then interact with the chained block devices as if they were a single block device of size equal to the sum of each substorage unit. The ChainingBlockDevice acts as an opposite of the [SlicingBlockDevice](/docs/v5.8/reference/slicingblockdevice.html).
 
 Note that each block device's block size must be a multiple of the other devices' block sizes (512, 1024 and so on).
