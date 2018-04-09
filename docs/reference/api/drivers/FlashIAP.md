@@ -1,5 +1,7 @@
 ## Flash IAP
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.png)<span>FlashIAP class hierarchy</span></span>
+
 The flash in application programming provides an interface for access to MCU internal flash memory.
 
 Flash IAP devices have different sized blocks for different operations. They allow you to read and program in defined-sized pages, but you must erase them in defined-sized sectors. The sector size must be a multiple of the page size. Sector sizes can differ within a device.

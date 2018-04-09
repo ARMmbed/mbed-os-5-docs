@@ -1,5 +1,7 @@
 ## I2C
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_i2_c.png)<span>I2C class hierarchy</span></span>
+
 The I2C interface provides I2C Master functionality. I2C is a two wire serial protocol that allows an I2C Master to exchange data with an I2C Slave. You can use it to communicate with I2C devices such as serial memories, sensors and other modules or integrated circuits.
 
 The I2C protocol supports up to 127 devices per bus, and its default clock frequency is 100KHz.

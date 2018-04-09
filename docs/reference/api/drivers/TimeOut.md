@@ -1,5 +1,7 @@
 ## Timeout
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_timeout.png)<span>Timeout class hierarchy</span></span>
+
 Use the Timeout interface to set up an interrupt to call a function after a specified delay.
 
 You can create any number of Timeout objects, allowing multiple outstanding interrupts at the same time.

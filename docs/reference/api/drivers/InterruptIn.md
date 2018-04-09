@@ -1,5 +1,7 @@
 ## InterruptIn
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_interrupt_in.png)<span>InterruptIn class hierarchy</span></span>
+
 Use the InterruptIn interface to trigger an event when a digital input pin changes. You can trigger interrupts on the rising edge (change from 0 to 1) or falling edge (change from 1 to 0) of signals.
 
 ### InterruptIn class reference

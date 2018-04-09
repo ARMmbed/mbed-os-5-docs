@@ -1,5 +1,7 @@
 ## SPI
 
+<span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
+
 The SPI Interface provides a Serial Peripheral Interface Master.
 
 You can use this interface for communication with SPI slave devices, such as FLASH memory, LCD screens and other modules or integrated circuits.
