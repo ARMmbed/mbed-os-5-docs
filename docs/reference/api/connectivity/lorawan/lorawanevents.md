@@ -1,4 +1,4 @@
-<h3 id="lorawan-events">LoRaWAN stack events and callbacks</h3>
+<h2 id="lorawan-events">LoRaWAN stack events and callbacks</h2>
 
 Owing to the fact that most of the LoRaWAN devices are simple telemetry devices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
 
