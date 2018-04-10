@@ -60,7 +60,7 @@ You must define all pins. Implement `onboard_modem_api.h`. The target board must
 
 ## Modifying cellular targets
 
-Setup for some predefined targets is available in [CellularTargets.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html). For a new target, you need to modify `CellularTargets.h`. In `CellularTargets.h`, you need to specify a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device MY_NEW_TARGET defined above in the "Adding modem target support" chapter is connected with QUECTEL BG96, you would need the following changes marked in between `// !!!!` in `CellularTargets.h`:
+Setup for some predefined targets is available in [CellularTargets.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html). For a new target, you need to modify `CellularTargets.h` by specifying a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device MY_NEW_TARGET defined above in the "Adding modem target support" chapter is connected with QUECTEL BG96, you would need the following changes marked in between `// !!!!` in `CellularTargets.h`:
 
 ```C
 ...
