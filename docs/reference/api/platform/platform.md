@@ -55,7 +55,7 @@ Serial serial(USBTX, USBRX);
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/development/reference/platform.html#the-importance-of-state) section.
 
-#### Why should you use Callbacks?
+##### Why should you use Callbacks?
 
 Supporting all of the standard C++ function types is difficult for an API developer. An API developer must consider state, C++ Function objects, const correctness and volatile correctness.
 
@@ -69,7 +69,7 @@ Another useful C++ feature is volatile-correctness. When volatile-correctness is
 
 C++ provides the tools to delegate this complexity to a single class. This class is the Callback class. The Callback class should be familiar to users of the std::function class that C++11 introduced and is available for older versions of C++.
 
-<h4 id="the-importance-of-state">The importance of state</h4>
+<h5 id="the-importance-of-state">The importance of state</h5>
 
 Callbacks may have two important pieces of information, the code to execute and the state associated with the callback.
 
