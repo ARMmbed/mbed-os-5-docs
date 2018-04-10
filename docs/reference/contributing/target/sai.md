@@ -6,18 +6,38 @@ Implementing SAI enables Mbed OS to emit and/or receive an audio data stream.
 
 ##### Defined behavior
 
- - Supports a subset of the possible configuration space - verified by ::sai_
- - Reports a failure (returns false) upon any invocation to an unsupported feature/parameter - verified by ::sai_
- - Is able to indicate the currently processed word - verified by ::sai_
+- `sai_init()` returns `SAI_RESULT_INVALID_PARAM`  if at least one of the given parameters is undefined (NULL) ;
+- `sai_init()` returns `SAI_RESULT_ALREADY_INITIALIZED` if SAI is already initialized ;
+- `sai_init()` returns `SAI_RESULT_CONFIG_UNSUPPORTED` if the device can never support this configuration ;
+- `sai_init()` returns `SAI_RESULT_CONFIG_MISMATCH` if the device is not able to support this configuration at this point time because of other 'live' constraints (such as a shared format/clock configuration with a sibling) ;
+- `sai_free()` does nothing if passed a NULL pointer ;
+- `sai_free()` de-initialized & un-clock unused part of the device ;
+- a device/block can be reinitialized via `sai_init()` after being `sai_free()`d.
 
-###### (optional) Defined behavior if feature supported
- - Is able to change receiver format without interrupting transmitter format - verified by ::sai_
- - Is able to change transmitter format without interrupting receiver format - verified by ::sai_
- - Is able to change transmitter and receiver format without interrupting the current frame - verified by ::sai_
+If the device is a *receiver* :
+- `sai_xfer()` returns false if the `sai_t` object is NULL ;
+- `sai_xfer()` returns false if there's no sample in the FiFo ;
+- `sai_xfer()` if `psample` is NULL : it pops 1 sample from the FiFo and returns true ;
+- `sai_xfer()` if `psample` is not NULL : it pops 1 sample from the FiFo, stores it to the address pointed by `psample`,  and returns true.
 
-##### Undefined behavior
+If the device is a *transmitter* :
+- `sai_xfer()` returns false if the `sai_t` object is NULL ;
+- `sai_xfer()` returns false if the fifo is full and `*psample` could not be pushed ;
+- `sai_xfer()` if `psample` is NULL : it pushes one '0' sample to the FiFo and returns true ;
+- `sai_xfer()` if `psample` is not NULL : it pushes the pointed sample to the FiFo and returns true.
 
- - Calling any function other than `sai_init` before the initialization of the SAI.
+##### Undefined behaviours
+
+- Calling any function other than `sai_init()` before the initialization of the SAI ;
+- Calling any function other than `sai_init()` after calling `sai_free()`.
+
+##### other requirements
+
+A target must also define these elements to allow tests to be run.
+- `#define SAI_DEFAULT_SAMPLE_RATE (xxxxxU)` ;
+- Pins for 2 SAI/I²S interface including MCLK, BCLK, WCLK and SD named respectively
+  - SAI_A_MCLK, SAI_A_BCLK, SAI_A_WCLK and SAI_A_SD ;
+  - SAI_B_MCLK, SAI_B_BCLK, SAI_B_WCLK and SAI_B_SD.
 
 ##### Notes
 
