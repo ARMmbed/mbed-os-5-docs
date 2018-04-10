@@ -12,7 +12,7 @@ The Socket API is the common API among all IP connectivity methods. All network 
 
 In the OSI model, the Socket API relates to layer 4, the Transport layer. In Mbed OS, the Socket API supports both [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) and [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) protocols.
 
-Refer to [TODO:Socket API](networksockets.md) reference for usage instructions.
+Refer to [Socket API](network-socket.html) reference for usage instructions.
 
 #### IP stacks
 
@@ -58,7 +58,7 @@ Mbed OS implements the following network interface APIs:
 - 6LoWPAN-ND mesh networking.
 - Thread mesh networking.
 
-Refer to [TODO: sockets/interface API reference](api/connectivity/networkinterface.md) for usage instructions.
+Refer to [Network Interface](network-interfaces.html) API reference for usage instructions.
 
 #### Network driver
 
