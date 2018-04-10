@@ -660,8 +660,12 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/MeshMAC.md"
-                            },
-                            {
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Porting exporter targets",
+                        "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/target/exporter.md"
                             }
