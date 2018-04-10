@@ -89,7 +89,19 @@
             },
             {
                 "title": "Technology",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/technology.md"
+                },
                 "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/connectivity.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/networking.md"
+                    },
+                    {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_intro.md"
                     },
@@ -120,6 +132,10 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/04_N_networking.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/connectivity/intro-to-lora.md"
                     }
                 ]
             },
@@ -370,22 +386,6 @@
                         },
                         "sources": [{
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/EthInterface.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/WifiInterface.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/CellularInterface.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/MeshInterface.md"
-                            },
-                            {
-                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/UDPSocket.md"
                             },
                             {
@@ -399,6 +399,30 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/SocketAddress.md"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Network Interfaces",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/networkinterface.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/EthInterface.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/WifiInterface.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/CellularInterface.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/networksocket/MeshInterface.md"
                             }
                         ]
                     },
@@ -436,15 +460,7 @@
                     },
                     {
                         "title": "LoRaWAN",
-                        "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lora.md"
-                        },
                         "sources": [{
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/intro-to-lora.md"
-                            },
-                            {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawanevents.md"
                             },
