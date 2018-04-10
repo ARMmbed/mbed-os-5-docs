@@ -13,15 +13,37 @@ This is the technical reference for callbacks. You should read the [Callbacks](/
 
 ### Thread example with callbacks
 
-The Callback API provides a convenient way to pass arguments to spawned threads.
+The Callback API provides a convenient way to pass arguments to spawned threads. This example uses a C function pointer in the callback.
 
  [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/d4b2a035ffe3/main.cpp)
 
 ### Sonar example
 
-Here is an example that uses everything discussed in the [introduction to callbacks](/docs/v5.8/reference/platform.html#callbacks) document in the form of a minimal Sonar class.
+Here is an example that uses everything discussed in the [introduction to callbacks](/docs/development/reference/platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the callback.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/)](https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)
+
+### Calling callbacks
+
+Callbacks overload the function call operator, so you can call a Callback like you would a normal function:
+
+```c++
+void run_timer_event(Callback<void(float)> on_timer) {
+    on_timer(1.0f);
+}
+```
+
+The only thing to watch out for is that the Callback type has a null Callback, just like a null function pointer. Uninitialized callbacks are null and assert if you call them. If you want a call to always succeed, you need to check if it is null first.
+
+``` c++
+void run_timer_event(Callback<void(float)> on_timer) {
+    if (on_timer) {
+        on_timer(1.0f);
+    }
+}
+```
+
+The Callback class is what’s known in C++ as a “Concrete Type”. That is, the Callback class is lightweight enough to be passed around like an int, pointer or other primitive type.
 
 ### Related content
 
