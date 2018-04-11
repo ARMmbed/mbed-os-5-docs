@@ -36,6 +36,12 @@ Be careful around these common trouble areas when implementing this API:
 - The ticker keeps counting when it rolls over
 - The ticker interrupt fires when the compare value is set to 0 and and overflow occurs
 
+#### Handling synchronization delay
+
+Some low power tickers require multiple low power clock cycles for the compare value set by  `ticker_set_interrupt` to take effect. Further complicating this issue, a new compare value typically cannot be set until the first has taken effect. Because of this when back to back calls to `ticker_set_interrupt` are made without a delay the second call will block and violate the above requirement that `ticker_set_interrupt` completes in 20us.
+
+To meet this timing requirement targets which have this synchronization delay must define `LOWPOWERTIMER_DELAY_TICKS` to the number of low power clock cycles it takes for call to `ticker_set_interrupt` to take effect. When this value is set the timer code will prevent `lp_ticker_set_interrupt` from being called twice within that number of clock cycles. It does this by using the microsecond time to schedule the write to happen at a future date.
+
 ### Dependencies
 
 Hardware low power ticker capabilities.
