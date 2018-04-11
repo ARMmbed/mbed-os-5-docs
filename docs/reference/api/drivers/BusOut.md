@@ -9,7 +9,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 **Tips:**
 
 - You can have up to 16 pins in a Bus.
-- The order of pins in the constructor is the reverse order of the pins in the byte order. So if you have BusOut(a,b,c,d,e,f,g,h) then the order of bits in the byte would be `hgfedcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.
+- The order of pins in the constructor is the reverse order of the pins in the byte order. So if you have `BusOut(a,b,c,d,e,f,g,h)` then the order of bits in the byte would be `hgfedcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.
 
 ### BusOut class reference
 
