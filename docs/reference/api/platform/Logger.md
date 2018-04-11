@@ -5,8 +5,6 @@ API's in logging module are printf-style API's which take module name and format
 
 By default all messages till LOG_LEVEL_DEBUG are enabled. If you want to enable Trace and Info level messages, then set `MBED_CONF_MAX_LOG_LEVEL` accordingly.
 
-Log messages are buffered in circular buffer and you can configure buffer size by setting `MBED_CONF_LOG_MAX_BUFFER_SIZE` config parameter. Default is 1024 bytes.
-
 All logging API's are ISR safe.
 
 ### Debug Log Levels
@@ -14,7 +12,7 @@ Below are various log levels supported and recommended usage.
 
 #### LOG_LEVEL_ERR_CRITICAL
 In case of critical errors when system recovery is not possible, you should use `MBED_CRIT` API. `MBED_CRIT` is equivalent to `ASSERT`.
-`MBED_CRIT` will log all the previous messages captured in log buffer and then application will terminate.
+`MBED_CRIT` will log message and then application will terminate.
 
 Usage:
 ```C
