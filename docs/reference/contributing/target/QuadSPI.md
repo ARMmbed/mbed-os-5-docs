@@ -21,6 +21,10 @@ QSPI peripheral
 
 ### Implementing QuadSPI
 
+To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request. You can find the API and specification for the new QuadSPI API in the following header file:
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-qspi-doxy/classmbed_1_1_q_s_p_i.html)
+
 The target needs to define the `qspi_s` structure - target specific QSPI object.
 
 Functions to implement:
