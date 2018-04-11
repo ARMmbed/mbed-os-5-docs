@@ -154,9 +154,6 @@ Usage:
 #define tr_cmdline(...)     MBED_LOG(TRACE_LEVEL_CMD, TRACE_GROUP, ##__VA_ARGS__)
 ```
 
-### Log Helper functions
-`mbed_log_ipv6` , `mbed_log_ipv6_prefix`, `mbed_log_array` are helper functions for logging special type of data. Helpers functions are not ISR friendly and should not be used in ISR context.
-
 Note: 
 1. Old Mbed OS logging APIs `mbed_trace`, `error`, `debug`, `debug_if`, are deprecated.
 2. All API's are available in the debug and develop build profiles but not in the release build profile.
