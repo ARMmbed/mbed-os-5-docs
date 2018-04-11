@@ -1,10 +1,10 @@
-# How to port Mbed OS cellular
+## Cellular
 
-This document provides guidelines and details for setting up a cellular device driver with Mbed OS. Please see the [working principles when working with a cellular C++ API](https://os.mbed.com/docs/latest/reference/network-socket.html) for more information.
+This document provides guidelines and details for setting up a cellular device driver with Mbed OS. Please see the [working principles when working with a cellular C++ API](/docs/development/reference/network-socket.html) for more information.
 
-## Adding modem target support
+### Adding modem target support
 
-For new targets, you may need to modify [targets.json](https://os.mbed.com/docs/v5.7/tools/adding-and-configuring-targets.html). `targets.json` defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem, and the data connection type is attached with MCU.
+For new targets, you may need to modify [targets.json](/docs/development/tools/adding-and-configuring-targets.html). `targets.json` defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. Define a global macro in your target description that tells the build system that your target has a modem, and the data connection type is attached with MCU.
 
 For example,
 
@@ -33,7 +33,7 @@ For example,
     },
 ```
 
-Use standard pin names. A standard naming convention for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. The example below shows the full UART capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
+Use standard pin names. A standard naming convention for pin names is required for standard modem pins in your target's **_'targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h'_**. The example below shows the full UART-capable modem. If any of these pins is not connected physically, mark it **_'NC'_**. Also indicate pin polarity.
 
 ```C
 typedef enum {
@@ -58,9 +58,9 @@ typedef enum {
 
 You must define all pins. Implement `onboard_modem_api.h`. The target board must provide an implementation of the [onboard_modem_API](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/onboard__modem__api_8h_source.html).
 
-## Modifying cellular targets
+### Modifying cellular targets
 
-Setup for some predefined targets is available in [CellularTargets.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html). For a new target, you need to modify `CellularTargets.h` by specifying a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device MY_NEW_TARGET defined above in the "Adding modem target support" chapter is connected with QUECTEL BG96, you would need the following changes marked in between `// !!!!` in `CellularTargets.h`:
+Setup for some predefined targets is available in [CellularTargets.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html). For a new target, you need to modify `CellularTargets.h` by specifying a cellular device in addition to UART pins connecting the Mbed OS CPU to the modem. For example, if the new device `MY_NEW_TARGET` defined in the "Adding modem target support" section is connected with QUECTEL BG96, you would need the following changes marked in between `// !!!!` in `CellularTargets.h`:
 
 ```C
 ...
@@ -89,50 +89,50 @@ Setup for some predefined targets is available in [CellularTargets.h](https://os
 
 If none of the existing modems is compatible with the new modem, then create new modem implementation under [features/cellular/framework/targets](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets). A device class inheriting [AT_CellularDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) is a minimum. [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h) is an example of the device class. You can create additional overlapping functionality for everything that is available in [features/cellular/framework/targets](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets).
 
-## Modifying cellular APIs
+### Modifying cellular APIs
 
-You need to modify Cellular APIs relevant to your cellular module defined at [features/cellular/framework/API](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/API)
+You need to modify cellular APIs relevant to your cellular module defined at [features/cellular/framework/API](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/API).
 
-### Socket adaptation
+#### Socket adaptation
 
 You can implement socket API in two ways:
 
-1. Use IP stack on cellular module (AT mode)
+- Use the IP stack on the cellular module (AT mode).
+- Use the LWIP stack on Mbed OS (PPP mode).
 
-2. Use lwIP stack on Mbed OS (PPP mode)
+##### Providing an implementation using the network stack on the cellular module (AT only mode)
 
-#### Providing an implementation using network stack on cellular module (AT only mode)
+The [QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) is an example of a modem-specific AT command cellular stack implementation. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates the [EasyCellularConnection class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which in turn instantiates the [CellularConnectionFSM class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_connection_f_s_m_8h_source.html). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. For the [QUECTEL BG96](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/QUECTEL/BG96) classes, [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h), [QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) and [QUECTEL_BG96_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularNetwork.h) have been implemented for a modem specific functionality. QUECTEL_BG96_CellularStack implements a QUECTEL BG96 specific AT command stack for socket data handling.
 
-[QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) is an example of a modem specific AT command cellular stack implementation. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates the [EasyCellularConnection class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which in turn instantiates the [CellularConnectionFSM class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_connection_f_s_m_8h_source.html). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. For the [QUECTEL BG96](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/QUECTEL/BG96) classes [QUECTEL_BG96](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96.h), [QUECTEL_BG96_CellularStack](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularStack.h) and [QUECTEL_BG96_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/QUECTEL/BG96/QUECTEL_BG96_CellularNetwork.h) have been implemented for a modem specific functionality. QUECTEL_BG96_CellularStack implements QUECTEL BG96 specific AT command stack for socket data handling.
+##### Providing an implementation using the Mbed OS provided network stacks (PPP mode)
 
-#### Providing an implementation using Mbed OS provided network stacks (PPP mode)
+If the new modem supports PPP mode, then you can use the existing Mbed OS LWIP stack to control the modem when connecting to a network. To use the LWIP stack, set `lwip.ppp-enabled` to true in an application's `mbed_app.json`. [UBLOX LISA](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/UBLOX/LISA_U) is an example of a modem implementation using PPP mode to connect to a network. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which in turn instantiates [CellularConnectionFSM class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_connection_f_s_m_8h_source.html). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. For LISA classes [UBLOX_LISA_U](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U.h), [UBLOX_LISA_U_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularNetwork.h) and [UBLOX_LISA_U_CellularPower](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularPower.h) have been implemented for a modem specific functionality. In the AT command layer, [AT_CellularNetwork](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_network_8h_source.html) includes functionality calling [nsapi_ppp_connect()](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/netsocket_2nsapi__ppp_8h_source.html) to start the data call through the PPP pipe.
 
-If the new modem supports PPP mode, then you can use the existing Mbed OS LWIP stack to control the modem when connecting to a network. To use the LWIP stack, set `lwip.ppp-enabled` to true in an application `mbed_app.json`. [UBLOX LISA](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/framework/targets/UBLOX/LISA_U) is an example of a modem implementation using PPP mode to connect to a network. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which in turn instantiates [CellularConnectionFSM class](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_connection_f_s_m_8h_source.html). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. For LISA classes [UBLOX_LISA_U](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U.h), [UBLOX_LISA_U_CellularNetwork](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularNetwork.h) and [UBLOX_LISA_U_CellularPower](https://github.com/ARMmbed/mbed-os/blob/master/features/cellular/framework/targets/UBLOX/LISA_U/UBLOX_LISA_U_CellularPower.h) have been implemented for a modem specific functionality. In the AT command layer, [AT_CellularNetwork](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_network_8h_source.html) includes functionality calling [nsapi_ppp_connect()](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/netsocket_2nsapi__ppp_8h_source.html) to start the data call through the PPP pipe.
-
-## Testing
+### Testing
 
 Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
 
--   To run the tests:
- 	1.  From the root of your application, enter this command:
+To run the tests:
 
- 	```
- 	mbed test --compile-list
- 	```
+1.  From the root of your application, enter this command:
 
- 	1.  Look for the name of a test suite matching `features-cellular-tests-*`.
- 	1.  Run tests with the command:
+    ```
+    mbed test --compile-list
+    ```
 
- 	```
- 	mbed test -n "mbed-os-features-cellular-tests-*" -m YOURMACHINE -t YOURCOMPILER --app-config YOURCONFIG.json
- 	```
+1.  Look for the name of a test suite matching `features-cellular-tests-*`.
+1.  Run tests with the command:
 
-For more information on the  `mbed-greentea` test suite, please visit [its documentation](https://os.mbed.com/docs/v5.7/tools/greentea.html).
+    ```
+    mbed test -n "mbed-os-features-cellular-tests-*" -m YOURMACHINE -t YOURCOMPILER --app-config YOURCONFIG.json
+    ```
+
+For more information on the  `mbed-greentea` test suite, please visit [its documentation](/docs/development/tools/greentea.html).
 
 You can also run stand-alone tests. The [`UNITTESTS` folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS) contains unit tests for cellular specific classes. Unit tests are based on the stubbing method.
 
 You can run those tests locally by running `./run_tests` script under the [`UNITTESTS` folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS).
 
-You need the following applications: `cpputest`, `gcov` and `lcov` (`genhtml`) for running the tests by themselves.
+You need the following applications to run the tests by themselves: `cpputest`, `gcov` and `lcov` (`genhtml`).
 
 After you have run the `run_tests` script, you can find test results in the [`UNITTESTS/results` folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS) and line and function coverages in the [`UNITTESTS/coverages` folder](https://github.com/ARMmbed/mbed-os/tree/master/features/cellular/UNITTESTS).
