@@ -1,168 +1,159 @@
-# MBED OS CELLULAR
+## Cellular
 
-Mbed OS cellular provides your IoT application with an access to world-wide operator-maintained cellular networks, both IP and non-IP as illustrated in Figure 1. Mbed OS cellular implementation is based on international 3GPP and OMA standards and it has been verified to work with all cellular networks such as NB-IoT, CAT-M1, 4G LTE, 3G WCDMA and GPRS.
+Mbed OS cellular provides your IoT application with access to world-wide operator-maintained cellular networks, both IP and non-IP, as Figure 1 illustrates. Mbed OS cellular implementation is based on international 3GPP and OMA standards, and it has been verified to work with all cellular networks such as NB-IoT, CAT-M1, 4G LTE, 3G WCDMA and GPRS.
 
-![Cellular overview](/images/api-cellular-overview.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-overview.png)<span>Figure 1. Mbed OS cellular overview</span></span>
 
-Figure 1. Mbed OS cellular overview
+Please read about [Mbed OS connectivity technology](https://www.mbed.com/en/technologies/connectivity/) if you are not yet familiar with it.
 
-If you are not yet familiar with Mbed OS Connectivity Technology, you may want to read first about [Mbed OS Connectivity Technology](https://www.mbed.com/en/technologies/).
+### Key features
 
-## Key features
+Mbed OS cellular is the preferred choice of building applications for [Mbed Cloud](https://cloud.mbed.com/docs/) and cellular IoT solutions. Key features of Mbed OS cellular include:
 
-Mbed OS cellular is your preferred choice of building applications for [Mbed Cloud](https://cloud.mbed.com/docs/) and cellular IoT solutions.
+- Compatibility with 3GPP TS 27.007 and 27.005.
+- OMA Lightweight M2M Client enabler.
+- Out-of-the-box cellular modem support.
 
-- Compatible with 3GPP TS 27.007 and 27.005
-- OMA Lightweight M2M Client enabler
-- Out-of-the-box cellular modem support
+3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over an AT command interface for cellular devices, regardless of the underlying cellular network.
 
-3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over AT command interface for cellular devices regardless of underlaying cellular network.
+OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see [OMA LWM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) and [OMA LwM2M ConnMgmt](http://www.openmobilealliance.org/release/LWM2M_CONNMGMT/V1_0-20170314-A/OMA-TS-LWM2M_ConnMgmt-V1_0-20170314-A.pdf).
 
-OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. Mbed OS cellular API provides core functionality to implement LWM2M Client, see [OMA LWM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) and [OMA LwM2M ConnMgmt](http://www.openmobilealliance.org/release/LWM2M_CONNMGMT/V1_0-20170314-A/OMA-TS-LWM2M_ConnMgmt-V1_0-20170314-A.pdf).
+Mbed OS already supports several Mbed Enabled boards with on-board cellular modules out of the box. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/development/reference/contributing-connectivity.html#cellularinterface) for more information.
 
-Several Mbed OS boards with on-board cellular module are already supported out-of-the-box. Because Mbed OS is an open source platform the developers can enable support for new cellular boards with our easy to use adaptation framework, see [porting guide](https://os.mbed.com/docs/v5.8/reference/contributing-connectivity.html#cellularinterface).
+### Quick start
 
+There are two phases to Mbed OS connectivity:
 
-## Quick start
+1. Connect to a network.
+1. Open a socket to send or receive data.
 
-Mbed OS connectivity is divided to two phases:
+The easiest way to connect your application to the internet over a cellular network is to use the `CellularConnectionFSM` class. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, as Figure 2 illustrates.
 
-1. Connect to a network
-1. Open a socket to send/receive data
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-quick-start.png)<span>Figure 2. Connect to cellular network and open a socket</span></span>
 
-The easiest way for connecting your application to Internet over a cellular network is to use the ``CellularConnectionFSM`` class. It encapsulates most of the complexity to connect to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, see Figure 2.
+If you want to see code, you can go to our [cellular example](https://github.com/ARMmbed/mbed-os-example-cellular) or 
+our [advanced cellular example](https://github.com/ARMmbed/mbed-os-example-cellular-advanced).
 
-![Quick start](/images/api-cellular-quick-start.png)
+### Cellular connection management
 
-Figure 2. Connect to cellular network and open a socket
+Applications can use cellular APIs to fine-control the cellular connection. Cellular APIs are structured based on main functionalities:
 
-If you want to see code, you can go to [basic example](https://github.com/ARMmbed/mbed-os-example-cellular) or 
-[advanced example](https://github.com/ARMmbed/mbed-os-example-cellular-advanced).
+- `CellularNetwork` for cellular network features, such as preferred operator and APN.
+- `CellularPower` for cellular module power control, such as enabling power save.
+- `CellularInformation` to read the cellular module type and firmware version.
+- `CellularSIM` to enter the PIN code and other SIM management functions.
+- `CellularSMS` to read and write SMS messages.
 
-## Cellular connection management
+The CellularDevice class encloses cellular APIs. Therefore, to use any cellular API, you need to get CellularDevice first. You can then use CellularDevice to open and close cellular APIs, as Figure 3 illustrates.
 
-Application can use Cellular APIs to fine-control cellular connection. Cellular APIs are structured based on main-functionalities:
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-device.png)<span>Figure 3. Use CellularDevice to open Cellular APIs</span></span>
 
-- ``CellularNetwork`` for cellular network features, such as preferred operator, APN, …
-- ``CellularPower`` for cellular module power control, such as enabling power save
-- ``CellularInformation`` to read cellular module type, firmware version, …
-- ``CellularSIM`` to enter PIN code and other SIM management functions
-- ``CellularSMS`` to read and write SMS messages
-
-Cellular APIs are enclosed within the CellularDevice class, and thus, to use any cellular API you need to get CellularDevice first. CellularDevice can then be used to open/close Cellular APIs, as illustrated in Figure 3.
-
-![Cellular API](/images/api-cellular-device.png)
-
-Figure 3. Use CellularDevice to open Cellular APIs
-
-When application has opened a Cellular API that can be used to request API methods, for example:
+When an application has opened a cellular API, you can use it to request API methods. For example:
 
     CellularNetwork *network  = cellularDevice->get_network();
     if (network) {
         printf("Local IP address is %s", network->get_ip_address());
     }
 
-## UDP and TCP sockets
+### UDP and TCP sockets
 
-If you want to use UDP or TCP sockets you need an IP stack. Mbed OS cellular has an option to use either 1) lwIP stack which is part of Mbed OS or to use 2) IP stack on cellular module. IP stack deployment is illustrated in Figure 4.
+If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack, which is part of Mbed OS, or to use the IP stack on the cellular module. Figure 4 illustrates IP stack deployment.
 
-![IP stack](/images/api-cellular-ip-stack.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-ip-stack.png)<span>Figure 4. IP stack can be used in PPP or AT mode</span></span>
 
-Figure 4. IP stack can be used in PPP or AT mode
+#### PPP mode with the LWIP stack on Mbed OS
 
-### PPP mode with lwIP stack on Mbed OS
+In PPP mode, the LWIP stack is linked as a part of the Mbed OS application. Sockets are implemented on the LWIP stack, and the modem is used over a Point-to-Point Protocol (PPP) link as a plain data pipe.
 
-In PPP mode, lwIP stack is linked as a part of Mbed OS application. Sockets are implemented on lwIP stack and modem is used over a PPP (Point-to-Point Protocol) link as a plain data-pipe.
-
-PPP mode can be enabled in application configuration file:
+You can enable PPP mode in the application configuration file:
 
     "lwip.ppp-enabled": true
 
-### AT mode with IP stack on modem
+#### AT mode with the IP stack on the modem
 
-In AT mode, modem's internal IP stack is used over an AT link. Sockets are part of IP stack so AT commands are used to control sockets. Socket AT commands are modem specific and need to be implemented on Mbed OS side within a ``CellularStack`` class. You can browse ``CellularStack`` under cellular/targets folder to find out how AT sockets are supported on your cellular module.
+In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and you need to implement them on the Mbed OS side within a `CellularStack` class. You can browse `CellularStack` under the cellular/targets folder to learn how your cellular module supports AT sockets.
 
-AT mode is enabled when PPP mode is not enabled:
+The AT mode is enabled when the PPP mode is not enabled:
 
     "lwip.ppp-enabled": false
 
-### Should you use PPP or AT mode
+#### Should you use PPP or AT mode?
 
-Here are some points to consider when selecting PPP or AT mode:
+Consider the following points when selecting PPP or AT mode:
 
-- Your cellular module may support only AT or PPP mode
-- PPP mode supports both UDP and TCP sockets
-- PPP mode does not allow AT commands after connected to data-mode
-- PPP mode uses lwIP stack which takes memory from your Mbed OS application
-- AT mode typically supports only UDP sockets
-- AT mode is potentially better optimized for power consumption
+- Your cellular module may support only AT or PPP mode.
+- PPP mode supports both UDP and TCP sockets.
+- PPP mode does not allow AT commands after connecting to data mode.
+- PPP mode uses the LWIP stack, which uses memory from your Mbed OS application.
+- AT mode typically supports only UDP sockets.
+- AT mode is potentially better optimized for power consumption.
 
-## Non-IP optimizations
+### Non-IP optimizations
 
-Mbed OS cellular API has also been planned to **support for non-IP communication in the near future**. You need to make two changes when using non-IP in your application:
+The Mbed OS cellular API has also been planned to **support non-IP communication in the near future**. You need to make two changes when using non-IP in your application:
 
-1. Request a non-IP context from network
-1. Open a non-IP socket type
+1. Request a non-IP context from network.
+1. Open a non-IP socket type.
 
-A non-IP stack type need to be requested via CellularNetwork before issuing connect:
+You need to request a non-IP stack type using CellularNetwork before issuing connect:
 
     nsapi_error_t set_stack_type(nsapi_ip_stack_t stack_type)
 
-Non-IP communication uses DatagramSocket that is similar to UDPSocket, but without IP addressing and UDP port functionality:
+Non-IP communication uses DatagramSocket, which is similar to UDPSocket but does not have IP addressing and UDP port functionality:
 
     class DatagramSocket
 
-An application can also request for control-plane optimizations when connecting to a cellular network. The application needs to advertise it’s capability to support control-plane optimizations, and it’s preference to use it. The non-IP optimization options can be selected via CellularNetwork:
+An application can also request control-plane optimizations when connecting to a cellular network. The application needs to advertise its capability to support control-plane optimizations and its preference to use it. You can select the non-IP optimization options using CellularNetwork:
 
     set_ciot_optimization_config(Supported_UE_Opt supported_opt,
                                  Preferred_UE_Opt preferred_opt)
 
-## Optimize for power consumption
+### Optimize for power consumption
 
-The ``CellularPower`` class has methods to optimize power saving. The ``set_powerl_level()`` offers flexibility to control the reception and transmission power levels. In addition 3GPP has specified advanced power optimizations that are especially useful for celluar IoT devices: PSM (Power Save Mode) and eDRX (extended Discontinuous Reception).
+The `CellularPower` class has methods to optimize power saving. The `set_powerl_level()` offers flexibility to control the reception and transmission power levels. In addition, 3GPP has specified advanced power optimizations that are useful for celluar IoT devices: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
 
-### PSM - Power Save Mode
+#### PSM - Power Save Mode
 
     opt_power_save_mode(int periodic_time, int active_time)
 
-The new 4G modems, implementing specifications release 13 and later, includes PSM. PSM allows the application to tell the modem, and network, that it does not expect any data in given time-interval, the periodic_time. Modem and network can optimize sleep state and network resource reservations based on this information. During the PSM time, the device cannot be contacted from the network side. Application can still start sending at any time. PSM time can be hours, days and weeks even.
+The new 4G modems implementing specifications release 13 and later include PSM. PSM allows the application to tell the modem and network that it does not expect any data in a given time interval, the `periodic_time`. The modem and network can optimize the sleep state and network resource reservations based on this information. During the PSM time, nothing can contact the device from the network side. The application can still send at any time. PSM time can be hours, days or weeks.
 
-The active_time tells how many seconds the device waits to receive messages after it has sent data, or when the periodic time has lapsed. So if the device sends a report to management system, it will wait in listen state for configured amount of time. Listening keeps the radio on in the modem, so it consumes more power then idle state.
-This feature offers great power savings for periodically reporting devices. Between reports the device is in PSM state, with modem in deep sleep state. The latency of contacting the device is the PSM period.
+The `active_time` tells how many seconds the device waits to receive messages after it has sent data, or when the periodic time has lapsed. If the device sends a report to the management system, the device waits in listen state for the configured amount of time. Listening keeps the radio on in the modem, so it consumes more power than idle state.
 
-PSM configuration is negotiated with the network, and actual PSM time that network has accepted may differ from the requested.
+This feature offers great power savings for periodically reporting devices. Between reports, the device is in PSM state with the modem in the deep sleep state. The latency of contacting the device is the PSM period.
 
-### eDRX - extended Discontinuous Reception
+PSM configuration is negotiated with the network, and the actual PSM time that network has accepted may differ from that requested.
+
+#### eDRX - extended Discontinuous Reception
 
     opt_receive_period(int mode, EDRXAccessTechnology act_type, uint8_t edrx_value)
 
-eDRX tells how long the device sleeps in continuous connection. The device needs to be able to receive data, but it can tell the network that it checks for incoming messages for example only every 200 seconds. It can receive messages, but only at the given times to allow battery saving sleep periods. These time values have been greatly extended compared to normal 4G data transmission – hence the name.
+eDRX tells how long the device sleeps in continuous connection. The device needs to be able to receive data, but it can tell the network that it checks for incoming messages, for example only every 200 seconds. It can receive messages but only at the given times to allow battery saving sleep periods. These time values are greatly extended compared to normal 4G data transmission – hence the name.
 
-This feature serves devices that need smaller latencies. A connection is kept open all the time, but the modem achieves a sleep state between the reception times. The data connection, if using IPv4, may need periodic keep-alive messages to keep the network address translation mapping valid.
+This feature serves devices that need smaller latencies. A connection is kept open all the time, but the modem achieves a sleep state between the reception times. The data connection, if using IPv4, may need periodic keep alive messages to keep the network address translation mapping valid.
 
-eDRX configuration is given to the modem. It is negotiated with the network, and the time accepted by the network may differ from requested time. Availability of this optimization depends on the cellular network.
+eDRX configuration is given to the modem. It is negotiated with the network, and the time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
 
-### Sleep more, save energy
+#### Sleep more, save energy
 
-CellularConnectionFSM is made to simplify connecting to a cellular network. ``CellularConnectionFSM`` is an easy to use and reliable way to connect, but you may want to optimize it further when implementing applications for very constrained battery-operated devices. ``CellularConnectionFSM`` operation is illustrated in Figure 5 for a reference.
+CellularConnectionFSM simplifies connecting to a cellular network. `CellularConnectionFSM` is a reliable way to connect, but you may want to optimize it further when implementing applications for constrained battery-operated devices. Figure 5 illustrates the `CellularConnectionFSM` operation.
 
-![Cellular connect](/images/api-cellular-connect.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-connect.png)<span>Figure 5. Cellular connection process in general</span></span>
 
-Figure 5. Cellular connection process in general
+### Considerations for UDP, TCP and non-IP use
 
-## Considerations for UDP, TCP and non-IP use
+Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors. 
 
-Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are biggest factors. 
+TCP is a reliable transmission protocol. For long-lived sessions, periodic keep alive messaging is necessary, which places demands on the main power source. For a long-lived TCP connection, the server application can contact the device. Connections can still have long latencies because the device's use of eDRX power optimization affects when it listens for incoming packets. Mbed TLS supports TLS transport security over TCP. Operators may, however, prevent using TCP over NB-IoT due to device deployment and network planning considerations.
 
-TCP is reliable transmission protocol. For long lived sessions periodic keep alive messaging is needed, placing demands on mains power source. For a long lived TCP connection, the server application can contact the device when needed. Connections can still have long latencies as the device usage of eDRX power optimization impacts when it will listen for incoming packets. The mbedTLS supports TLS transport security over TCP. Operators may however prevent using TCP over NB-IoT due to their device deployment and network planning considerations. 
+UDP is unreliable, which places the retransmission mechanism burden on the application. UDP does not have a session; thus, the server application can contact the device only for a short while after it has received a UDP message from the device. 
 
-UDP is unreliable, placing re-transmission mechanism burden on application. UDP does not have a session, thus the server application can contact the device only for a short while after it has received a UDP message from the device. 
-The mbedTLS supports DTLS transport security over UDP. 
+Mbed TLS supports DTLS transport security over UDP.
 
-Non-IP is a new option for communication over NB-IoT. Device sends messages to a operator messaging service. Server application communicates with the messaging service using a web API. The messaging service allows device and server application to communicate regardless of each others activity windows. Security inside cellular network is provided by the cellular network security services, and from messaging centre to web application with HTTPS. Because network support for non-IP may vary, the application should depending on use case, for wider operation, support both non-IP and IP for a transition period.
+Non-IP is a new option for communication over NB-IoT. The device sends messages to an operator messaging service. The server application communicates with the messaging service using a web API. The messaging service allows the device and server application to communicate regardless of their activity windows. The cellular network security services provide security inside the cellular network, from the messaging center to the web application with HTTPS. Because network support for non-IP may vary, the application depends on use case. For wider operation, it needs to support both non-IP and IP for a transition period.
 
-For DTLS and TLS transport security even if the device maintains it’s own IP address during power save periods, the address may be changed in the network due to Network Address Translation. NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates re-negotiation of (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimise the re-negotiation. Both device and (D)TLS server must support the used mechanism.
+For DTLS and TLS transport security, even if the device maintains its own IP address during power save periods, the address may be changed in the network due to Network Address Translation (NAT). NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates renegotiation of the (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimize the renegotiation. Both device and (D)TLS server must support the used mechanism.
 
-## Browse class reference
+### Class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_cellular_device.html)
