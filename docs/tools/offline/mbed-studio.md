@@ -174,6 +174,30 @@ On Windows machines, the two bundled executables are located at:
 
 When you have configured everything, select `Apply` in the lower right side of the panel, and the click the blue Debug button just below that.
 
+### Library management
+
+Mbed Studio allows you to add libraries to your application from either GitHub or the Mbed OS developer site. Importing a program will also import the associated libraries. Management of these libraries takes place using the `Library Management` view, which appears on the right hand side of Mbed Studio.
+
+Libraries imported from GitHub can be updated to any commit ID or branch. Libraries imported from the Mbed OS developer site are imported as a "snapshot", and do not contain history.
+
+#### Adding and removing libraries
+
+You can either add a library from the Mbed OS developer site or GitHub by clicking the dropdown arrow in the `Library management` view and selecting `Add a library to the project...`. This will open a dialog which allows you to paste in a Mbed OS developer site library URL plus commit ID, or a link to a repository in GitHub.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-OS-Site-Library-Import.png)<span>Adding a library from the Mbed OS developer site</span></span>
+
+Libraries can also be removed by right-clicking on a library and selecting `Remove library from the project`.
+
+#### Viewing and updating libraries
+
+You can view the libraries present in your application in the `Library Management` view, and also as folders inside the application structure in the `Mbed Projects` view. The `Library Management` view lists each library, alongside its version indicator.
+
+To update a library, right click on the library that you want to update and select `Update to latest` or `Change to a specific commit`. Selecting `Change to a specific commit` will open a list of tags and branches. For example, in the case of Mbed OS, this would include 5.8.1.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Library-Commit-Version-Select.png)<span>Mbed Studio library management using GitHub</span></span>
+
+To update a library that has been imported from the Mbed OS developer site, delete it, and then re-import at a different commit ID.
+
 ### Help
 
 This section outlines known issues and provides answers to common questions.
