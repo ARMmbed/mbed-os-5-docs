@@ -61,13 +61,13 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Avoid merging commmits. (Always rebase when possible.)
 - Pull requests should fix a bug, add a feature or refactor.
 
-#### Mbed OS release versioning
+#### Release versioning
 
-Version number MAJOR.FEATURE.PATCH where:
+The Mbed OS version number follows the format MAJOR.FEATURE.PATCH. We use the:
 
-- MAJOR version for incompatible API changes
-- FEATURE version for adding functionality in backward-compatible manner
-- PATCH version for backward-compatible bug fixes
+- MAJOR version for incompatible API changes.
+- FEATURE version for adding functionality in backward-compatible manner.
+- PATCH version for backward-compatible bug fixes.
 
 ### Pull request categories
 
@@ -94,33 +94,33 @@ We consider the following pull request types.
 
 ##### Fix
 
-A bug fix is backward-compatible internal change that fixes incorrect behavior.
+A bug fix is a backward-compatible internal change that fixes incorrect behavior.
 
 Release: patch
 
 ##### Refactor
 
-Refactors are intended for feature releases if they are not fixing specific issue as they can introduce new issues.
+Refactors are intended for feature releases if they are not fixing specific issues because they can introduce new issues.
 
 Release: feature
 
 ##### New target
 
-Adding a new target targets the patch release as it updating targets folder implementation.
+Adding a new target is a change for a patch release because it updates the targets folder implementation.
 
 Release: patch
 
 ##### Feature
 
-New features targets feature releases. It can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
+New features target feature releases. A new feature can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
 
-Adding a new functionality is considered to be a feature. It does not matter if it is C++, C or Python.
+We consider adding a new functionality to be a feature. It does not matter if it is C++, C or Python.
 
 Release: feature
 
 ##### Breaking change
 
-Any change that results in breaking user space. It should have strong justification to be considered. Often the change could be made backward compatible, for example deprecate the old functionality and introduce the new replacement.
+A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
 
 Release: major
 
