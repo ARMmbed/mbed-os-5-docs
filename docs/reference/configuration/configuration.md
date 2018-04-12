@@ -7,7 +7,7 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](/docs/development/tools/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory, and `mbed export` places it in the application root. `mbed compile` runs the Mbed configuration system before invoking the compiler, and `mbed export` runs the configuration system before creating project files.
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](/docs/development/tools/adding-and-configuring-targets.html), all `mbed_lib.json` files, and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory, and `mbed export` places it in the application root. `mbed compile` runs the Mbed configuration system before invoking the compiler, and `mbed export` runs the configuration system before creating project files.
 
 <span class="notes">**Note:** Throughout this document, "library" means any reusable piece of code within its own directory.</span>
 
@@ -15,7 +15,7 @@ The Arm Mbed OS configuration system gathers and interprets the configuration de
 
 ### Examining available configuration parameters
 
-Mbed CLI includes a command for listing and explaining the compile time configuration, `mbed compile --config`. This command prints a summary of configuration parameters, such as:
+Mbed CLI includes a command for listing and explaining the compile time configuration `mbed compile --config`. This command prints a summary of configuration parameters, such as:
 
 ```
 Configuration parameters
@@ -80,7 +80,7 @@ Do not edit `mbed_config.h` manually. It may be overwritten the next time you co
 
 ### Configuration parameters in `mbed_app.json`, `mbed_lib.json`
 
-An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override configuration parameters defined in libraries and the target and define new configuration parameters.
+An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override configuration parameters defined in libraries and the target, and define new configuration parameters.
 
 #### Overriding configuration parameters
 
@@ -126,7 +126,7 @@ The order in which overrides are considered is:
 
 #### Defining configuration parameters
 
-The configuration system understands configuration parameters that targets, libraries and applications define using a JSON object called "config".
+The configuration system understands configuration parameters that targets, libraries, and applications define using a JSON object called "config".
 
 For example:
 
@@ -147,7 +147,7 @@ For example:
 }
 ```
 
-You define a configuration parameter by specifying its name as the key and specifying its value either with a description object or by value. The JSON fragment above defines three configuration parameters named `param1`, `param2` and `param3`.
+You define a configuration parameter by specifying its name as the key and specifying its value, either with a description object or by value. The JSON fragment above defines three configuration parameters named `param1`, `param2`, and `param3`.
 
 Above, the configuration parameters `param1` and `param2` are defined using a description object. The description object supports the following keys:
 
@@ -220,13 +220,13 @@ In this JSON file:
 
 All configuration parameters defined in `mylib` have a `mylib.` prefix. In `mbed_app.json`, `buffer_size` is accessible using the name `mylib.buffer_size`.
 
-Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key. 
+Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key.
 
 It is an error for `mbed_lib.json` to override an undefined configuration parameter.
 
 #### Overriding target attributes
 
-Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. Attributes may be cumulative, in which case they are a list of items. You may add to a cumulative attribute by overriding a configuration parameter with the name of the cumulative attribute suffixed with `_add` and remove from a cumulative attribute with the suffix `_remove`. When you override, add to or subtract from a cumulative attribute, the value must be a list of items to replace the definition with, add or remove. For example, add the value `IPV4` to a target's features list with the syntax:
+Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. Attributes may be cumulative, in which case they are a list of items. You may add to a cumulative attribute by overriding a configuration parameter with the name of the cumulative attribute suffixed with `_add`, and remove from a cumulative attribute with the suffix `_remove`. When you override, add to, or subtract from a cumulative attribute, the value must be a list of items to replace the definition with add or remove. For example, add the value `IPV4` to a target's features list with the syntax:
 
 ```JSON
 "target.features_add": ["IPV4"]
