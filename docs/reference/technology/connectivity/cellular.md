@@ -115,7 +115,7 @@ eDRX tells how long the device sleeps in continuous connection. The device needs
 
 This feature serves devices that need smaller latencies. A connection is kept open all the time, but the modem achieves a sleep state between the reception times. The data connection, if using IPv4, may need periodic keep alive messages to keep the network address translation mapping valid.
 
-eDRX configuration is given to the modem. It is negotiated with the network, and the time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
+An application gives eDRX configuration to the modem which negotiates it with the network. The time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
 
 #### Sleep more, save energy
 
