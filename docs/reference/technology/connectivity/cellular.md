@@ -91,26 +91,6 @@ Consider the following points when selecting PPP or AT mode:
 - AT mode typically supports only UDP sockets.
 - AT mode is potentially better optimized for power consumption.
 
-### Non-IP optimizations
-
-The Mbed OS cellular API has also been planned to **support non-IP communication in the near future**. You need to make two changes when using non-IP in your application:
-
-1. Request a non-IP context from network.
-1. Open a non-IP socket type.
-
-You need to request a non-IP stack type using CellularNetwork before issuing connect:
-
-    nsapi_error_t set_stack_type(nsapi_ip_stack_t stack_type)
-
-Non-IP communication uses DatagramSocket, which is similar to UDPSocket but does not have IP addressing and UDP port functionality:
-
-    class DatagramSocket
-
-An application can also request control-plane optimizations when connecting to a cellular network. The application needs to advertise its capability to support control-plane optimizations and its preference to use it. You can select the non-IP optimization options using CellularNetwork:
-
-    set_ciot_optimization_config(Supported_UE_Opt supported_opt,
-                                 Preferred_UE_Opt preferred_opt)
-
 ### Optimize for power consumption
 
 The `CellularPower` class has methods to optimize power saving. The `set_powerl_level()` offers flexibility to control the reception and transmission power levels. In addition, 3GPP has specified advanced power optimizations that are useful for celluar IoT devices: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
