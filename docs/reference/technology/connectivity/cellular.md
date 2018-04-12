@@ -16,7 +16,7 @@ Mbed OS cellular is the preferred choice of building applications for [Mbed Clou
 
 3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over an AT command interface for cellular devices, regardless of the underlying cellular network.
 
-OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see [OMA LWM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) and [OMA LwM2M ConnMgmt](http://www.openmobilealliance.org/release/LWM2M_CONNMGMT/V1_0-20170314-A/OMA-TS-LWM2M_ConnMgmt-V1_0-20170314-A.pdf).
+OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
 Mbed OS already supports several Mbed Enabled boards with on-board cellular modules out of the box. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/development/reference/contributing-connectivity.html#cellularinterface) for more information.
 
