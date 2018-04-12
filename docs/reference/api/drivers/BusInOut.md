@@ -6,7 +6,9 @@ Use the BusInOut interface as a bidirectional bus that supports up to 16 [Digita
 
 You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
-<span class="notes">**Note:** The order of pins in the constructor is the reverse order of the pins in the byte order. If you have `BusOut(a,b,c,d,e,f,g,h)`, then the order of bits in the byte is `hgfedcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.</span>
+**Tip:**
+
+The order of pins in the constructor is the reverse order of the pins in the byte order. If you have `BusInOut(a,b,c,d,e,f,g,h)`, then the order of bits in the byte is `hgfedcba` with `a` being bit 0, `b` being bit 1, `c` being bit 2 and so on.
 
 ### BusInOut class reference
 
