@@ -63,15 +63,18 @@ If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular ha
 
 #### PPP mode with the LWIP stack on Mbed OS
 
-In PPP mode, the LWIP stack is linked as a part of the Mbed OS application. Sockets are implemented on the LWIP stack, and the modem is used over a Point-to-Point Protocol (PPP) link as a plain data pipe.
+In PPP (Point-to-Point Protocol) mode, the LWIP stack is linked as a part of the Mbed OS application. Because LWIP stack implements sockets, the socket functionality is hardware-independent.
 
-You can enable PPP mode in the application configuration file:
+You can enable PPP mode and also configure LWIP features in the application configuration file:
 
     "lwip.ppp-enabled": true
+    "lwip.ipv4-enabled": true
+    "lwip.ipv6-enabled": true
+    "lwip.tcp-enabled": true
 
 #### AT mode with the IP stack on the modem
 
-In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and you need to implement them on the Mbed OS side within a `CellularStack` class. You can browse `CellularStack` under the cellular/targets folder to learn how your cellular module supports AT sockets.
+In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and need to be implemented on the Mbed OS side. You can browse ``CellularStack`` under the ``cellular/targets`` folder to find out how your hardware supports AT sockets.
 
 The AT mode is enabled when the PPP mode is not enabled:
 
