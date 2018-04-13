@@ -63,11 +63,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 #### Release versioning
 
-The Mbed OS version number follows the format MAJOR.FEATURE.PATCH. We use the:
-
-- MAJOR version for incompatible API changes.
-- FEATURE version for adding functionality in backward-compatible manner.
-- PATCH version for backward-compatible bug fixes.
+Mbed OS versioning can be found at [How We Release Arm Mbed OS](https://os-doc-builder.test.mbed.com/docs/development/introduction/how-we-release-arm-mbed-os.html).
 
 ### Pull request categories
 
