@@ -1,5 +1,7 @@
 ## Stream
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_stream.png)<span>Stream class hierarchy</span></span>
+
 [Add description here.]
 
 ### Stream class reference
