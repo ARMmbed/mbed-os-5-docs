@@ -2,7 +2,7 @@
 
 Implementing the microsecond ticker enables Mbed OS to perform operations that require precise timing. You can use this API to schedule events, record elapsed time and perform submillisecond delays.
 
-<span class="warnings">**Warning:** We are changing the microsecond ticker HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [implementing the microsecond ticker API](#implementing-the-microsecond-ticker-api) section.
+<span class="warnings">**Warning:** We are changing the microsecond ticker HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the microsecond ticker API](#implementing-the-microsecond-ticker-api) section.
 
 ### Assumptions
 
