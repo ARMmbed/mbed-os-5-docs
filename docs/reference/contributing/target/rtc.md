@@ -2,7 +2,7 @@
 
 Implementing RTC enables Mbed OS to keep track of the current time. The standard library time keeping functions, such as `time`, use it.
 
-<span class="warnings">**Warning:** We are changing the RTC HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the RTC API](#implementing-the-rtc-api) section.
+<span class="warnings">**Warning:** We are changing the RTC HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the RTC API](#implementing-the-rtc-api) section.
 
 ### Assumptions
 
