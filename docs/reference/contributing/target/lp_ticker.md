@@ -2,7 +2,7 @@
 
 Implementing the low power ticker enables Mbed OS to perform power efficient timing operations that only request millisecond accuracy. You can use this API to schedule events, record elapsed time and drive the tickless OS scheduler.
 
-<span class="warnings">**Warning:** We are changing the low power ticker HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [implementing the low power ticker API](#implementing-the-low-power-ticker-api) section.
+<span class="warnings">**Warning:** We are changing the low power ticker HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the low power ticker API](#implementing-the-low-power-ticker-api) section.
 
 ### Assumptions
 
