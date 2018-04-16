@@ -2,7 +2,7 @@
 
 The HAL USBPhy API provides physical access to the USB bus in the role of a USB device. Implementing this API enables the use of any supported class driver, such as CDC, HID and MSD.
 
-<span class="warnings">**Warning:** We are changing the USB API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the USB](#implementing-usb) section.
+<span class="warnings">**Warning:** We are changing the USB API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the USB](#implementing-usb) section.
 
 ### Assumptions
 
