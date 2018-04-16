@@ -1,14 +1,8 @@
 ## EMAC memory manager
 
-The Ethernet MAC memory manager class provides abstracted memory interface towards memory modules used in different network stacks. EMAC device driver uses the memory interface to handle memory related operations like allocation, free and data manipulation.
+The Ethernet MAC memory manager class provides abstracted memory interface toward memory modules used in different network stacks. The EMAC device driver uses the memory interface to handle memory related operations, such as allocation, free and data manipulation.
 
-The data on the memory interface is stored into memory buffer chains. The data passed in either direction may be either contiguous (a single-buffer chain) or may consist of multiple buffers. Chaining of the buffers is made using singly-linked list. 
-
-### EMAC memory manager class reference
-
-TBD:
-
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_emacmemorymanager.html)
+Memory buffer chains store the data on the memory interface. The data passed in either direction either may be contiguous (a single-buffer chain) or may consist of multiple buffers. You can chain the buffers using a singly linked list.
 
 ### Usage
 
@@ -17,6 +11,18 @@ On link output to EMAC driver, buffer chain ownership is given to the driver. Dr
 EMAC driver can allocate memory either from a memory pool or from the heap (contiguous memory). By preference, link input memory should be allocated from the pool, but if contiguous memory is required it can be allocated from the heap. 
 
 On link input to the network stack, buffer chain ownership is given to the stack. Stack frees the buffer after it no longer uses it.
+
+### EMAC memory manager class reference
+
+TBD:
+
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_emacmemorymanager.html)
+
+### EMAC memory manager example
+
+TBD:
+
+Add link to example in teams repo here.
 
 ### Related content
 
