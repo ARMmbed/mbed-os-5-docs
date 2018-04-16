@@ -1,6 +1,6 @@
 ## Sleep
 
-<span class="warnings">**Warning:** We are changing the Sleep HAL API in an upcoming release of Mbed OS. You can find details on how it may affect you in the [Implementing the Sleep API](#implementing-the-sleep-api) section.
+<span class="warnings">**Warning:** We are changing the Sleep HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the Sleep API](#implementing-the-sleep-api) section.
 
 Implement the Sleep HAL API to enable your device to go into a low power state when you are not actively using it.
 
