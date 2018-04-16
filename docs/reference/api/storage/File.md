@@ -1,5 +1,7 @@
 ## File
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
+
 [Add description here.]
 
 ### File class reference
