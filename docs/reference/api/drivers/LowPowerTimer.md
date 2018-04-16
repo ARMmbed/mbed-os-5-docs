@@ -1,5 +1,7 @@
 ## LowPowerTimer
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_low_power_timer.png)<span>LowPowerTimer class hierarchy</span></span>
+
 [Add description here.]
 
 ### LowPowerTimer class reference
