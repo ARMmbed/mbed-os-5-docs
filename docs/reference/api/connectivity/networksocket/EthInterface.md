@@ -45,8 +45,9 @@ Refer to the API below for how to set the IP addresses by calling the `set_netwo
 ### Troubleshooting information
 
 Network interface `connect` failure causes:
-1. `NSAPI_ERROR_NO_CONNECTION` indicates that Ethernet link up has failed. Check that the Ethernet connection is working.
-1. `NSAPI_ERROR_DHCP_FAILURE` indicates that acquiring IP address has failed. Check that the IP address configuration service is working.
+
+- `NSAPI_ERROR_NO_CONNECTION` indicates that the Ethernet link up has failed. Check that the Ethernet connection is working.
+- `NSAPI_ERROR_DHCP_FAILURE` indicates that acquiring the IP address has failed. Check that the IP address configuration service is working.
 
 ### EthInterface class reference
 
