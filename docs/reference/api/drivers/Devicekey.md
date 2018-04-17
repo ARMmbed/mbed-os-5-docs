@@ -6,7 +6,7 @@ We have implemented DeviceKey according to NIST SP 800-108, section "KDF in Coun
 
 ### Root of Trust
 
-The root of trust key, which DeviceKey uses to derive additional keys, will be get using the hardware random generator if it exists, or using a key injected to the device in the production process.
+The root of trust key, which DeviceKey uses to derive additional keys, is generated using the hardware random generator if it exists, or using a key injected to the device in the production process.
 
 The characteristics required by this root of trust are:
 
