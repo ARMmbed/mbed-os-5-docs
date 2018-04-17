@@ -6,7 +6,7 @@ We have implemented DeviceKey according to NIST SP 800-108, section "KDF in Coun
 
 ### Root of Trust
 
-You can generate the root of trust key, which DeviceKey uses to derive additional keys, by using the hardware random generator if it exists, or using a key injected to the device in the production process.
+The root of trust key, which DeviceKey uses to derive additional keys, will be get using the hardware random generator if it exists, or using a key injected to the device in the production process.
 
 The characteristics required by this root of trust are:
 
@@ -21,7 +21,7 @@ The root of trust is generated at the first use of Devicekey if the true random 
 
 ### Key derivation API
 
-`device_key_derived_key`: This API generates a new key based on a string (salt) the caller provides. The same key is generated for the same salt. Generated keys can be 128 or 256 bits in length.
+`generate_derived_key`: This API generates a new key based on a string (salt) the caller provides. The same key is generated for the same salt. Generated keys can be 128 or 256 bits in length.
 
 #### Root of Trust Injection API
 
