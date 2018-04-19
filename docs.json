@@ -30,10 +30,11 @@
         "type": "markdown",
         "chapters": [{
                 "title": "Overview",
-                "sources": [{
+                "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/reference.md"
-                }]
+                },
+                "sources": []
             },
             {
                 "title": "Runtime",
@@ -693,10 +694,11 @@
         "type": "markdown",
         "chapters": [{
                 "title": "Overview",
-                "sources": [{
+                "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tools/tools_intro.md"
-                }]
+                },
+                "sources": []
             },
             {
                 "title": "Configuring Tools",
@@ -851,10 +853,11 @@
         "type": "markdown",
         "chapters": [{
                 "title": "Overview",
-                "sources": [{
+                "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tutorials/tutorials_intro.md"
-                }]
+                },
+                "sources": []
             },
             {
                 "title": "Mbed OS quick start",
