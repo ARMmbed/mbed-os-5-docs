@@ -8,10 +8,6 @@ Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mb
 
 The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
 
-### LoRaWANInterface class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
-
 ### Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression:
@@ -63,6 +59,10 @@ connection.connection_u.otaa.nb_trials = MBED_CONF_LORA_NB_TRIALS;
 
 lorawan.connect(connection);
 ```
+
+### LoRaWANInterface class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ### LoRaWAN example
 
