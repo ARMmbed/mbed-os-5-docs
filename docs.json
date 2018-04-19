@@ -1030,8 +1030,8 @@
         "slug": "mbed-os-api-doxy",
         "hidden": true,
         "type": "doxygen",
-        "source": "https://github.com/SenRamakri/mbed-os",
-        "branch": "sen_DoxyStripNoCommentsFix"
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "mbed-os-5.8"
     },
     {
         "title": "feature-hal-spec-rtc doxygen",
