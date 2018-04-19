@@ -27,13 +27,14 @@
         "title": "Reference",
         "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
-        "type": "markdown",
+        "type": "markdown",      
         "chapters": [{
                 "title": "Overview",
-                "sources": [{
+                "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/reference.md"
-                }]
+                },
+                "sources": []
             },
             {
                 "title": "Runtime",
