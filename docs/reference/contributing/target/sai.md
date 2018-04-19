@@ -1,8 +1,26 @@
 <h2 id="sai-port">Serial Audio Interface (SAI)</h2>
 
-Implementing SAI enables Mbed OS to emit and receive an audio data stream.
+The **Serial Audio Interface** allows you to send or receive an audio stream over a synchronous serial interface made of 3 to 4 lines.
+- SD : Serial data
+- BCLK : Bit Clock
+- WCLK : Word Clock
+- MCLK : Main Clock (optionnal)
 
-<span class="warnings">**Warning:** We are changing the SAI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the RTC API](#implementing-the-rtc-api) section.
+This interface is typically used with Codecs and DACs/ADCs to sample, process and output an audio signal.
+
+This is an highly configurable interface where a wide range of element can be adjusted to your need :
+- word length
+- data length (inside words)
+- clocks polarity & phase
+- data alignment...
+
+Please refer to your device's reference manual for more details on its capabilities.
+
+This API provides a generic way to receive or send audio sample through this interface.
+It is composed of fairly simple transfer and free functions plus a slightly more complexe init function.
+`sai_init` is in charge of initializing this the whole interface and ensuring that the requested format is supported by the device. It also has to make sure the clocks are configured to generate the requested frequency with a reasonable error margin (depending on the master/slave tolerance).
+
+<span class="warnings">**Warning:** We are introducing the SAI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the SAI API](#implementing-the-sai-api) section.
 
 ### Assumptions
 
@@ -18,17 +36,17 @@ Implementing SAI enables Mbed OS to emit and receive an audio data stream.
 
 If the device is a *receiver*:
 
-- `sai_xfer()` returns false if the `sai_t` object is NULL.
-- `sai_xfer()` returns false if there's no sample in the FiFo.
-- `sai_xfer()` if `psample` is NULL; it pops 1 sample from the FiFo and returns true.
-- `sai_xfer()` if `psample` is not NULL; it pops 1 sample from the FiFo, stores it to the address pointed by `psample` and returns true.
+- `sai_transfer()` returns false if the `sai_t` object is NULL.
+- `sai_transfer()` returns false if there's no sample in the FiFo.
+- `sai_transfer()` if `psample` is NULL; it pops 1 sample from the FiFo and returns true.
+- `sai_transfer()` if `psample` is not NULL; it pops 1 sample from the FiFo, stores it to the address pointed by `psample` and returns true.
 
 If the device is a *transmitter*:
 
-- `sai_xfer()` returns false if the `sai_t` object is NULL.
-- `sai_xfer()` returns false if the FiFo is full and you can't push `*psample`.
-- `sai_xfer()` if `psample` is NULL; it pushes one '0' sample to the FiFo and returns true.
-- `sai_xfer()` if `psample` is not NULL; it pushes the pointed sample to the FiFo and returns true.
+- `sai_transfer()` returns false if the `sai_t` object is NULL.
+- `sai_transfer()` returns false if the FiFo is full and you can't push `*psample`.
+- `sai_transfer()` if `psample` is NULL; it pushes one '0' sample to the FiFo and returns true.
+- `sai_transfer()` if `psample` is not NULL; it pushes the pointed sample to the FiFo and returns true.
 
 #### Undefined behavior
 
@@ -40,7 +58,7 @@ If the device is a *transmitter*:
 A target must also define these elements to allow tests to be run:
 
 - `#define SAI_DEFAULT_SAMPLE_RATE (xxxxxU)`.
-- Pins for 2 SAI orI2S interfaces, including MCLK, BCLK, WCLK and SD named:
+- Pins for 2 SAI or I2S interfaces, including MCLK, BCLK, WCLK and SD named:
   - SAI_A_MCLK, SAI_A_BCLK, SAI_A_WCLK and SAI_A_SD.
   - SAI_B_MCLK, SAI_B_BCLK, SAI_B_WCLK and SAI_B_SD.
 
@@ -50,14 +68,14 @@ Watch out for this common trouble area when implementing this API. You should co
 
    - One read-only.
    - One write-only.
-   
-   The first allocated channel may or may not limit the second one's feature. For example, in a peripheral that supports asynchronous rx/tx but requires the format of both instances to be the same, the first allocated instance sets the format and ties the second one to this format.
+
+The first allocated channel may or may not limit the second one's feature. For example, in a peripheral that supports asynchronous rx/tx but requires the format of both instances to be the same, the first allocated instance sets the format and ties the second one to this format.
 
 ### Dependencies
 
 Hardware SAI/I2S capabilities.
 
-### Implementing the RTC API
+### Implementing the SAI API
 
 You can find the API and specification for the SAI API in the following header file:
 
