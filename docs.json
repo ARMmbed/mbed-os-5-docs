@@ -869,10 +869,11 @@
         "type": "markdown",
         "chapters": [{
                 "title": "Overview",
-                "sources": [{
+                "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/tutorials/tutorials_intro.md"
-                }]
+                },
+                "sources": []
             },
             {
                 "title": "Mbed OS quick start",
