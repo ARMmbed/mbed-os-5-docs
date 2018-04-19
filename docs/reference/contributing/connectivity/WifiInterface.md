@@ -1,53 +1,43 @@
-## Porting WiFi driver
+<h2 id="wifi-port">Wi-Fi</h2>
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/wifi.png)<span>Wi-Fi driver</span></span>
 
-This document describes how to port and test an IEEE 802.11 WiFi driver to
-mbed OS. There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol layer it implements. Wi-Fi drivers are either a special case of Ethernet driver or external IP stacks. Wi-Fi drivers require configuration from an application and, therefore, implement both the low level EMAC API or Network stack API and the high level controlling interface API called `WiFiInterface`.
+This document describes how to port and test an IEEE 802.11 Wi-Fi driver to Mbed OS. There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol layer it implements. Wi-Fi drivers are either a special case of Ethernet driver or external IP stacks. Wi-Fi drivers require configuration from an application and, therefore, implement both the low-level EMAC API or network stack API and the high-level controlling interface API called `WiFiInterface`.
 
 ### WifiInterface
 
-Class `WifiInterface` is the controlling API from application to driver.
-It is the API that is used for configuring security settings, network names and keys.
-The same API is also used for instantiating connection or disconnection phases from network.
+The `WifiInterface` class is the controlling API from application to driver. You can use this API for configuring security settings, network names and keys. You can also use this API for instantiating connection or disconnection phases from the network.
 
-Regradless of whether the driver is actually AT-command driven external IP stack, or actual
-Ethernet device, this API will be implemented.
+Whether the driver is an AT-command driven external IP stack or an Ethernet device, this is the API to implement.
 
-Driver should take care of network joining process and present Mbed OS only Ethernet layer
-interface, or IP stack. All security handshakes are done by the driver or the device itself.
+The driver takes care of the network joining process and presents Mbed OS only Ethernet layer interface, or IP stack. The driver and the device itself do all of the security handshakes.
 
 ### EMAC driver
 
-If the device is implementing Ethernet MAC, the driver provided EMAC interface for Mbed OS.
-In that case, refer to [Ethernet MAC (EMAC) drivers](porting-ethernet-drivers.html) porting guide
-first.
+If the device is implementing Ethernet MAC, the driver provides the EMAC interface for Mbed OS. In this case, please refer to the [Ethernet MAC (EMAC) drivers](ethernet-port.html) porting guide first.
 
 ### External IP stack
 
-If the device is actually eternal IP stack, for example AT-command driven module, it needs
-to implement full `NetworkStack` API. Refer to [NetworkStack porting guide](networkstack.html)
-for implementation details.
+If the device is an eternal IP stack, for example an AT-command driven module, it needs to implement the full `NetworkStack` API. Please refer to the [networkStack porting guide](networkstack.html) for implementation details.
 
 ### Assumptions
 
 #### Defined behavior
 
-* Driver provides either EMAC interface for network stack, or implements the full NetworkStack API.
-* All functions in Socket API are working as specified in API.
-* Device is able to pass IPv4 and IPv6 packets
-* Device is able to handle IP packets sized 1500 bytes (MTU is 1500).
+- The driver either provides the EMAC interface for the network stack, or implements the full NetworkStack API.
+- All functions in the Socket API are working as specified in API.
+- The device can pass IPv4 and IPv6 packets.
+- The device can handle IP packets sized 1500 bytes (MTU is 1500).
 
 #### Undefined behavior
 
-* IP payloads larger than 1500 bytes may be fragmented, but not guaranteed to work.
+- IP payloads larger than 1500 bytes may be fragmented but not guaranteed to work.
 
 ### Testing
 
-For testing the `WifiInterface` implementation and network joining, set of Greentea tests are
-provided in Mbed OS tree under `TESTS/network/wifi`.
+For testing the `WifiInterface` implementation and network joining, we provide a set of Greentea tests in the Mbed OS tree under `TESTS/network/wifi`.
 
-For testing the Ethernet MAC interface, refer to [Ethernet MAC (EMAC) drivers](porting-ethernet-drivers.html) porting guide. For External IP stacks these do not apply.
+For testing the Ethernet MAC interface, please refer to the [Ethernet MAC (EMAC) drivers](ethernet-port.html) porting guide. For external IP stacks, these tests do not apply.
 
-Finally testing the stability of driver, or NetworkStack implementation, set of Socket layer tests are provided in `TESTS/netsocket` tree.
+To test the stability of the driver or NetworkStack implementation, we provide a set of socket layer tests in the `TESTS/netsocket` tree.
 
