@@ -52,4 +52,5 @@ FCS
 For understanding the use of Ethernet and TCP/IP in Mbed OS, study following sections of this book
 
 * [IP networking](ip-networking.html)
+* [Ethernet API](ethernet.html)
 * [Socket API](socket-api.html)
