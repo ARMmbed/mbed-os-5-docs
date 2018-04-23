@@ -54,7 +54,7 @@ This attaches the default network stack (usually LWIP - the other alternative is
 
 ### Being the default EMAC or EthernetInterface
 
-To make your EMAC the default for applications, ddefine the static function `EMAC::get_default_instance()` to return an instance of your EMAC:
+To make your EMAC the default for applications, define the static function `EMAC::get_default_instance()` to return an instance of your EMAC:
 
 ```
     MBED_WEAK EMAC &EMAC::get_default_instance()
@@ -116,13 +116,12 @@ Depending on its use of pool and heap memory and other factors, a driver might w
 
 The Mbed OS tree contains Greentea-based tests that exercise the EMAC API directly, and more general socket tests.
 
-See here for general Greentea information: <https://github.com/ARMmbed/greentea>
+For general Greentea information see: [Tools/Testing/Greentea](docs/v5.8/tools/greentea.html) section.
 
-See here for the EMAC tests:
-<https://github.com/ARMmbed/mbed-os/tree/feature-emac/TESTS/network/emac>
+EMAC tests are in the Mbed OS tree under `TESTS/network/emac` directory.
 
-Greentea socket tests are at:
-<https://github.com/ARMmbed/mbed-os/tree/feature-emac/TESTS/netsocket>
+
+Greentea socket tests are in the Mbed OS tree under `TESTS/netsocket` directory.
 
 The driver should also be exercised with real-world examples like
 <https://github.com/ARMmbed/mbed-os-example-client>

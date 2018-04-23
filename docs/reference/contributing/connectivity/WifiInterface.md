@@ -6,7 +6,8 @@ This document describes how to port and test an IEEE 802.11 Wi-Fi driver to Mbed
 
 ### WifiInterface
 
-The `WifiInterface` class is the controlling API from application to driver. You can use this API for configuring security settings, network names and keys. You can also use this API for instantiating connection or disconnection phases from the network.
+The `WifiInterface` class is the controlling API from application to driver.
+You can use this API for configuring security settings, network names and keys and also instantiating connection or disconnection phases from the network.
 
 Whether the driver is an AT-command driven external IP stack or an Ethernet device, this is the API to implement.
 
