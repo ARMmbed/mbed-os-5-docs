@@ -1,24 +1,28 @@
 <h2 id="sai-port">Serial Audio Interface (SAI)</h2>
 
 The **Serial Audio Interface** allows you to send or receive an audio stream over a synchronous serial interface made of 3 to 4 lines.
-- SD : Serial data
-- BCLK : Bit Clock
-- WCLK : Word Clock
-- MCLK : Main Clock (optionnal)
 
-This interface is typically used with Codecs and DACs/ADCs to sample, process and output an audio signal.
+- SD: serial data.
+- BCLK: bit Clock.
+- WCLK: word Clock.
+- MCLK: main Clock (optional).
 
-This is an highly configurable interface where a wide range of element can be adjusted to your need :
-- word length
-- data length (inside words)
-- clocks polarity & phase
-- data alignment...
+A typical use case of this interface is with Codecs and DACs or ADCs to sample, process and output an audio signal.
+
+This highly configurable interface has a wide range of elements you can adjust:
+
+- Word length.
+- Data length (inside words).
+- Clocks polarity and phase.
+- Data alignment.
 
 Please refer to your device's reference manual for more details on its capabilities.
 
-This API provides a generic way to receive or send audio sample through this interface.
-It is composed of fairly simple transfer and free functions plus a slightly more complexe init function.
-`sai_init` is in charge of initializing this the whole interface and ensuring that the requested format is supported by the device. It also has to make sure the clocks are configured to generate the requested frequency with a reasonable error margin (depending on the master/slave tolerance).
+This API provides a way to receive or send audio sample through this interface.
+
+Transfer and free functions, plus an init function, comprise this API.
+
+`sai_init` is in charge of initializing this the whole interface and ensuring that the device supports the requested format. It also has to make sure the clocks are configured to generate the requested frequency with a reasonable error margin (depending on the master/slave tolerance).
 
 <span class="warnings">**Warning:** We are introducing the SAI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the SAI API](#implementing-the-sai-api) section.
 
