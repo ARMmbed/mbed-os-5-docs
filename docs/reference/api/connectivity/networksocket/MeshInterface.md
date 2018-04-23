@@ -13,7 +13,7 @@ Mbed OS provides two types of IPv6 based mesh networks:
 
 Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [Nanostack documentation](/docs/v5.7/tutorials/mesh.html#nanostack). Application developers use Nanostack through the Mbed Mesh API.
 
-The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](socket-api.html) to create a socket to start communication with a remote peer.
 
 ##### Supported mesh networking modes
 

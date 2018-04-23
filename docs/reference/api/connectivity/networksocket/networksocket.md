@@ -1,11 +1,11 @@
-## Network socket overview
+<h2 id="socket-api">Network socket overview</h2>
 
 This section covers the Socket APIs in Arm Mbed OS, which are:
 
-- [UDPSocket](/docs/development/reference/udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
-- [TCPSocket](/docs/development/reference/tcpsocket.html): This class provides the ability to send a stream of data over TCP.
-- [TCPServer](/docs/development/reference/tcpserver.html): This class provides the ability to accept incoming TCP connections.
-- [SocketAddress](/docs/development/reference/socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
+- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
+- [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
+- [TCPServer](tcpserver.html): This class provides the ability to accept incoming TCP connections.
+- [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 
 Continue reading for detailed reference material about some of these APIs.
 
@@ -15,7 +15,7 @@ The network-socket API provides a common interface for using sockets on network 
 
 ##### Network errors
 
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
+The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
 ``` cpp
 /** Enum of standardized error codes
