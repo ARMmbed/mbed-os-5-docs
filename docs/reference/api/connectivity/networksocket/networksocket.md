@@ -1,4 +1,4 @@
-<h2 id="socket-api">Network socket overview</h2>
+<h2 id="network-socket">Network socket overview</h2>
 
 This section covers the Socket APIs in Arm Mbed OS, which are:
 
