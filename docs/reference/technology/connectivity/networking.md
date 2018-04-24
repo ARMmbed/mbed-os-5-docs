@@ -62,7 +62,7 @@ Refer to [Network Interface](network-interfaces.html) API reference for usage in
 
 ### Network driver
 
-The network driver is a generic term to describe different APIs for connecting networking device to the IP stack or Socket API. Below is a description of each driver API.
+"Network driver" describes different APIs that connect a networking device to the IP stack or Socket API. Below is a description of each driver API.
 
 #### Ethernet driver
 
