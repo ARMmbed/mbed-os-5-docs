@@ -5,7 +5,7 @@ The [APIs](/docs/development/introduction/glossary.html) in this document are or
 - [Platform](/docs/development/reference/platform.html): platform modules that provide consistent user experience.
 - [Drivers](/docs/development/reference/drivers.html): analog and digital input and outputs and digital interfaces.
 - [RTOS](/docs/development/reference/rtos.html): handling tasks and events in Mbed OS.
-- [Socket API](socket-api.html): network socket API for TCP/IP.
+- [Socket API](network-socket.html): network socket API for TCP/IP.
 - [Network Interfaces](network-interfaces.html): Network interfaces, Ethernet, Wifi, Cellular & Mesh.
 - [Bluetooth](/docs/development/reference/bluetooth.html): bluetooth low energy.
 - [LoRaWAN](/docs/development/reference/lorawan.html): low power wide area network.
