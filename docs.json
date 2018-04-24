@@ -695,15 +695,7 @@
                     "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/exporter.md"
                 },
                 "sources": []
-            },
-                    {
-                        "title": "Porting exporter targets",
-                        "sources": [{
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/exporter.md"
-                            }
-                        ]
-                    }
+            }
                 ]
             }
         ],
