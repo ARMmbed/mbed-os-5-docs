@@ -16,14 +16,6 @@ This highly configurable interface has a wide range of elements you can adjust:
 - Clocks polarity and phase.
 - Data alignment.
 
-Please refer to your device's reference manual for more details on its capabilities.
-
-This API provides a way to receive or send audio sample through this interface.
-
-Transfer and free functions, plus an init function, comprise this API.
-
-`sai_init` is in charge of initializing this the whole interface and ensuring that the device supports the requested format. It also has to make sure the clocks are configured to generate the requested frequency with a reasonable error margin (depending on the master/slave tolerance).
-
 <span class="warnings">**Warning:** We are introducing the SAI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the SAI API](#implementing-the-sai-api) section.
 
 ### Assumptions
@@ -35,7 +27,7 @@ Transfer and free functions, plus an init function, comprise this API.
 - `sai_init()` returns `SAI_RESULT_CONFIG_UNSUPPORTED` if the device can never support this configuration.
 - `sai_init()` returns `SAI_RESULT_CONFIG_MISMATCH` if the device is not able to support this configuration now because of other 'live' constraints, such as a shared format or clock configuration with a sibling.
 - `sai_free()` does nothing if passed a NULL pointer.
-- `sai_free()` deinitializes and unclocks the unused part of the device.
+- `sai_free()` deinitializes and disables associated clocks if the peripheral is no longer in use.
 - You can reinitialize a device or block by using `sai_init()` after you use `sai_free()` on it.
 
 If the device is a *receiver*:
@@ -62,6 +54,7 @@ If the device is a *transmitter*:
 A target must also define these elements to allow tests to be run:
 
 - `#define SAI_DEFAULT_SAMPLE_RATE (xxxxxU)`.
+  The tests use this macro to validate that the device behaves as expected. This parameter is device dependent; you need to set it to any value that the target supports.
 - Pins for 2 SAI or I2S interfaces, including MCLK, BCLK, WCLK and SD named:
   - SAI_A_MCLK, SAI_A_BCLK, SAI_A_WCLK and SAI_A_SD.
   - SAI_B_MCLK, SAI_B_BCLK, SAI_B_WCLK and SAI_B_SD.
