@@ -22,21 +22,34 @@ Mbed OS already supports several Mbed Enabled boards with on-board cellular modu
 
 ### Quick start
 
-There are two phases to Mbed OS connectivity:
+There are two phases to Mbed OS connectivity, in general:
 
 1. Connect to a network.
 1. Open a socket to send or receive data.
 
-The easiest way to connect your application to the internet over a cellular network is to use the `CellularConnectionFSM` class. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, as Figure 2 illustrates.
+With cellular, the easiest way to connect your application to the internet over a cellular network is to use the `CellularConnectionFSM` class. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, as Figure 2 illustrates.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-quick-start.png)<span>Figure 2. Connect to cellular network and open a socket</span></span>
 
-If you want to see code, you can go to our [cellular example](https://github.com/ARMmbed/mbed-os-example-cellular) or 
-our [advanced cellular example](https://github.com/ARMmbed/mbed-os-example-cellular-advanced).
+If you want to see code, you can go to our [cellular example](https://github.com/ARMmbed/mbed-os-example-cellular).
 
-### Cellular connection management
+### Cellular Module
 
-Applications can use cellular APIs to fine-control the cellular connection. Cellular APIs are structured based on main functionalities:
+If you are using an Mbed OS target that has a supported on-board (mounted) cellular module then cellular framework decides the correct cellular module at compile-time. You can run `mbedls` to find out your current Mbed OS target and then match that to the supported targets in the `CellularTargets.h` file, where a CELLULAR_DEVICE macro is defined based on the Mbed OS target definition and can be used as a C++ class type to instantiate a driver class (inherited from `CellularDevice.h`).
+
+Some Mbed OS target boards may have several different kind of cellular modules on-board. In that case, the cellular module driver detects at runtime the actual module that is currently mounted and adapts to that specific cellular module during runtime.
+
+If you use an Mbed OS target and a separate cellular module via a serial line (UART), you need to configure in your `mbed_app.json` configuration file which cellular module to use and which UART pins are connected between the Mbed OS target board and the cellular module:
+
+    `"CELLULAR_DEVICE=<manufacturer-module>", "MDMRXD=<rx-pin-name>", "MDMTXD=<tx-pin-name>"`
+
+You can browse `CellularTargets.h` file to find out if your <manufacturer-module> is already supported, or if you can adapt some existing driver for your needs. You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART.
+    
+### Cellular APIs
+
+As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details which are expected to change frequently.
+
+Cellular APIs are structured based on main functionalities:
 
 - `CellularNetwork` for cellular network features, such as preferred operator and APN.
 - `CellularPower` for cellular module power control, such as enabling power save.
@@ -74,7 +87,7 @@ You can enable PPP mode and also configure LWIP features in the application conf
 
 #### AT mode with the IP stack on the modem
 
-In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and need to be implemented on the Mbed OS side. You can browse ``CellularStack`` under the ``cellular/targets`` folder to find out how your hardware supports AT sockets.
+In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and need to be implemented on the Mbed OS side. You can browse `CellularStack` under the `cellular/targets` folder to find out how your hardware supports AT sockets.
 
 The AT mode is enabled when the PPP mode is not enabled:
 
@@ -136,6 +149,8 @@ Mbed TLS supports DTLS transport security over UDP.
 Non-IP is a new option for communication over NB-IoT. The device sends messages to an operator messaging service. The server application communicates with the messaging service using a web API. The messaging service allows the device and server application to communicate regardless of their activity windows. The cellular network security services provide security inside the cellular network, from the messaging center to the web application with HTTPS. Because network support for non-IP may vary, the application depends on use case. For wider operation, it needs to support both non-IP and IP for a transition period.
 
 For DTLS and TLS transport security, even if the device maintains its own IP address during power save periods, the address may be changed in the network due to Network Address Translation (NAT). NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates renegotiation of the (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimize the renegotiation. Both device and (D)TLS server must support the used mechanism.
+
+To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/latest/reference/tls.html).
 
 ### Class reference
 
