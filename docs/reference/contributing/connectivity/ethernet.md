@@ -31,7 +31,7 @@ Class EMAC is entirely abstract - you need to implement about a dozen calls to a
 
 There are also callback registration functions for upcalls from the driver - the stack can register callback functions for packet reception and link status changes.
 
-#### Initialisation steps
+#### Initialization steps
 
 The EMAC driver class is instantiated during the creation of the network interface. When the network interface is brought up, the network stack powers the EMAC driver.
 
@@ -52,7 +52,6 @@ Steps that the network stack uses to power the EMAC driver:
     1. The driver can either support multicast filtering or provide all frames.
 1. The network stack might query for the memory buffer align preference from the driver.
     1. The network stack is not required to use the alignment for the memory buffers on link out.
-
 
 ### The EMAC memory manager
 
