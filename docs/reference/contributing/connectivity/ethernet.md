@@ -31,11 +31,36 @@ Class EMAC is entirely abstract - you need to implement about a dozen calls to a
 
 There are also callback registration functions for upcalls from the driver - the stack can register callback functions for packet reception and link status changes.
 
+#### Initialisation steps
+
+The EMAC driver class is instantiated during the creation of the network interface. When the network interface is brought up, the network stack powers the EMAC driver.
+
+Steps that the network stack uses to power the EMAC driver:
+
+1. The network stack configures the EMAC memory manager class reference for the driver.
+1. The network stack sets the link input and state callbacks.
+1. The network stack calls the driver's power up function.
+1. The network stack reads the MTU and hardware MAC address sizes from the driver.
+1. The network stack queries the hardware MAC address from the driver. The driver is allowed to respond a failure.
+1. The hardware MAC address is written to the driver from the network stack.
+    1. If the driver does not provide an address on the read call, the network stack chooses the address from the central system configuration and writes that to driver.
+
+**Optional steps:**
+
+1. The network stack might query the interface name from the driver.
+1. The network stack might configure multicast filtering.
+    1. The driver can either support multicast filtering or provide all frames.
+1. The network stack might query for the memory buffer align preference from the driver.
+    1. The network stack is not required to use the alignment for the memory buffers on link out.
+
+
 ### The EMAC memory manager
 
-For the send and receive paths, data is transferred in memory buffers controlled through an `EMACMemoryManager` object. The network stack using an EMAC driver provides it with a reference to the memory manager in use before powering up - this is constant as long as the EMAC is powered.
+The Ethernet MAC memory manager class provides abstracted memory interface toward memory modules used in different network stacks. For the send and receive paths, data is transferred in memory buffers controlled through an `EMACMemoryManager` object. The network stack using an EMAC driver provides it with a reference to the memory manager in use before powering up - this is constant as long as the EMAC is powered.
 
-On the output call, the EMAC driver is given ownership of a buffer chain - it must free the chain when it has finished with the data. The data may or may not be contiguous. A driver can express alignment preferences for outgoing data, but the network stack is not required to meet these prefernces, so a driver relying on alignment may need a slow path that copies data into an aligned (or contiguous) buffer.
+Memory buffer chains store the data on the memory interface. The data passed in either direction either may be contiguous (a single-buffer chain) or may consist of multiple buffers. You can chain the buffers using a singly linked list.
+
+On the output call, the EMAC driver is given ownership of a buffer chain - it must free the chain when it has finished with the data. The data may or may not be contiguous. A driver can express alignment preferences for outgoing data, but the network stack is not required to meet these preferences, so a driver relying on alignment may need a slow path that copies data into an aligned (or contiguous) buffer.
 
 For reception, the EMAC driver must allocate memory from the `EMACMemoryManager` to store the received packets - this is then passed to the link input callback, which frees it. By preference, you should allocate this memory using the pool, but if contiguous memory is necessary, you can allocate it from the heap.
 
