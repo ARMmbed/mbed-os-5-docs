@@ -3,9 +3,20 @@
 Mbed OS provides a set of API's that you can use to output different log level messages to STDIO at runtime. mbed_logger.h declares these functions, which are available only in debug builds.
 API's in logging module are printf-style API's which take module name and format string followed by arguments.
 
-By default all messages till LOG_LEVEL_DEBUG are enabled. If you want to enable Trace and Info level messages, then set `MBED_CONF_MAX_LOG_LEVEL` accordingly.
+By default all messages till LOG_LEVEL_DEBUG are enabled. If you want to enable Trace and Info level messages, then set `MBED_CONF_PLATFORM_LOG_MAX_LEVEL` in `mbed_lib.json`.
+Sample:
+```
+{
+    "name": "platform",
+    "config": {
+        "log-max-level": {
+        "help": "Option to set select maximum level of logs enabled at compile time",
+        "value": 32
+    }
+}
+```
 
-All logging API's are ISR safe.
+All logging API's are ISR safe and you can log information from ISR as well. Logging from ISR/handler mode is done with circular buffer and separate logging thread.
 
 ### Debug Log Levels
 Below are various log levels supported and recommended usage.
