@@ -34,5 +34,5 @@ For more information, please see the following sections of this book
 
 - [IP networking](ip-networking.html).
 - [Ethernet](ethernet-technology.html).
-- [Socket API](socket-api.html).
+- [Socket API](network-socket.html).
 - [WifiInterface API](wi-fi.html).

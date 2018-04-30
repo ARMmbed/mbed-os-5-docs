@@ -47,4 +47,4 @@ To understand the use of Ethernet and TCP/IP in Mbed OS, please see the followin
 
 - [IP networking](ip-networking.html).
 - [Ethernet API](ethernet.html).
-- [Socket API](socket-api.html).
+- [Socket API](network-socket.html).
