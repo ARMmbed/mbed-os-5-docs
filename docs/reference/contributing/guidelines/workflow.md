@@ -61,6 +61,10 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Avoid merging commmits. (Always rebase when possible.)
 - Pull requests should fix a bug, add a feature or refactor.
 
+#### Release versioning
+
+You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/how-we-release-arm-mbed-os.html).
+
 ### Pull request categories
 
 #### Bug fixes
@@ -80,7 +84,43 @@ Each feature has a tech lead. This person is responsible for:
 - Rebasing often to track master development.
 - Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
-#### Pull request template
+##### Pull request types
+
+We consider the following pull request types.
+
+##### Fix
+
+A bug fix is a backward-compatible internal change that fixes incorrect behavior.
+
+Release: patch
+
+##### Refactor
+
+Refactors are intended for feature releases if they are not fixing specific issues because they can introduce new issues.
+
+Release: feature
+
+##### New target
+
+Adding a new target is a change for a patch release because it updates the targets folder implementation.
+
+Release: patch
+
+##### Feature
+
+New features target feature releases. A new feature can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
+
+We consider adding a new functionality to be a feature. It does not matter if it is C++, C or Python.
+
+Release: feature
+
+##### Breaking change
+
+A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
+
+Release: major
+
+##### Pull request template
 
 Below is a good example of a pull request:
 
