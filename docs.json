@@ -648,6 +648,10 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/edit/new_engine/docs/reference/contributing/target/QuadSPI.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/usb.md"
                             },
                             {
