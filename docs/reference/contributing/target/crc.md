@@ -1,10 +1,10 @@
 ## Hardware CRC - Porting Guide
 
 The Hardware CRC HAL API provides a low-level interface to the Hardware CRC
-module of a target platform. Implementing the Hardware CRC API is not mandatory,
-but implementing it you can gain the performance benefits of using hardware
-acceleration for CRC calculations, if the API is not implemented the CRC API
-will fallback to using table and bitwise CRC implementations.
+module of a target platform. Implementing the Hardware CRC API will allow you
+to gain the performance benefits of using hardware acceleration for CRC
+calculations. For platforms without hardware CRC capabilities the API will
+fallback to using the table and bitwise CRC implementations.
 
 #### Assumptions
 
@@ -37,6 +37,10 @@ will fallback to using table and bitwise CRC implementations.
   the current platform is undefined. Polynomial support should be checked before
   this function is called.
 
+* Calling the hal_crc_get_result() function before calling
+  hal_crc_partial_start() is undefined. The module must be initialized before
+  the get result function can return meaningful values.
+
 * Calling the hal_crc_compute_partial() function before calling
   hal_crc_partial_start() is undefined. The Hardware CRC module must be
   configured correctly using the start function before writing data to it.
@@ -52,7 +56,9 @@ POLY_32BIT_ANSI `
 You can find the API and specification for the Hardware CRC API in the following
 header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-crc-doxy/classmbed_1_1_crc.html)
+```
+Fix link after code is merged.
+```
 
 To enable Hardware CRC support in Mbed OS, add the `CRC` label in the
 `device_has` option of the target's section in the `targets.json` file.
@@ -69,4 +75,6 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-crc*"
 
 You can read more about the test cases here:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-crc-doxy/classreset__reason_1_1_crc_test.html)
+```
+Fix link after code is merged.
+```
