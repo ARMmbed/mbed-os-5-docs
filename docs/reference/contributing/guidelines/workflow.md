@@ -84,29 +84,29 @@ Each feature has a tech lead. This person is responsible for:
 - Rebasing often to track master development.
 - Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
-##### Pull request types
+### Pull request types
 
 We consider the following pull request types.
 
-##### Fix
+#### Fix
 
 A bug fix is a backward-compatible internal change that fixes incorrect behavior.
 
 Release: patch
 
-##### Refactor
+#### Refactor
 
 Refactors are intended for feature releases if they are not fixing specific issues because they can introduce new issues.
 
 Release: feature
 
-##### New target
+#### New target
 
 Adding a new target is a change for a patch release because it updates the targets folder implementation.
 
 Release: patch
 
-##### Feature
+#### Feature
 
 New features target feature releases. A new feature can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
 
@@ -114,13 +114,13 @@ We consider adding a new functionality to be a feature. It does not matter if it
 
 Release: feature
 
-##### Breaking change
+#### Breaking change
 
 A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
 
 Release: major
 
-##### Pull request template
+### Pull request template
 
 Below is a good example of a pull request:
 
