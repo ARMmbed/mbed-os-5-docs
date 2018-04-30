@@ -9,11 +9,11 @@ Mbed OS provides two types of IPv6 based mesh networks:
 - 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 - Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [Technology/6LoWPAN Mesh](mesh-tech.html) section. Application developers use Nanostack through the Mbed Mesh API.
+Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [6LoWPAN mesh technology](mesh-tech.html) section. Application developers use Nanostack through the Mbed Mesh API.
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed C++ socket APIs to create a socket to start communication with a remote peer.
 
-Mesh interface is configured by providing values in `mbed_app.json`, and is documented in [Configuration/Mesh](mesh-configuration.html) section.
+You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](mesh-configuration.html) section documents.
 
 ### Usage
 
@@ -26,7 +26,7 @@ Mesh interface is configured by providing values in `mbed_app.json`, and is docu
 Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
 
 
-### Network connection states**
+### Network connection states
 
 After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
 
