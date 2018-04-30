@@ -1,22 +1,21 @@
 <h2 id="mesh-configuration">6LoWPAN and Thread Mesh configuration</h2>
 
-This page describes build-time configurable parameters for 6LoWPAN and Thread based
-mesh networks. In Mbed OS, two main mesh protocols are supported: 6LoWPAN-ND and Thread.
-Depending on the selected protocol, different set of values can be configured.
+This page describes build-time configurable parameters for 6LoWPAN- and Thread-based mesh networks. Mbed OS supports two main mesh protocols: 6LoWPAN-ND and Thread. Depending on the selected protocol, you can configure different set of values.
 
 There is one mesh-capable stack in Mbed OS called Nanostack.
-Therefore this guide is divided in sections where generic Nanostack configurations are first, followed by Thread and then 6LoWPAN-ND.
 
-For understanding the technologies and APIs please refer to following sections before this one:
+This guide is divided in sections, and generic Nanostack configurations are first, followed by those for Thread and then 6LoWPAN-ND.
 
-* [Technology/Network connectivity in Mbed OS](connectivity-tech.html)
-* [Technology/6LoWPAN Mesh](mesh-tech.html)
-* [MeshInterface API](mesh-api.html) description.
-* [Socket API](socket-api.html)
+For understanding the technologies and APIs, please refer to following sections before this one:
+
+- [Network connectivity in Mbed OS](connectivity-tech.html) technology page.
+- [6LoWPAN Mesh technology](mesh-tech.html) page.
+- [6LoWPAN Mesh class reference](mesh-api.html) user API.
+- [Socket API](socket-api.html).
 
 ### Providing the configuration
 
-The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*` or `mbed-mesh-api.*` depending on which internal module they configure.
+The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
 
 An example of the configuration file:
 
@@ -38,7 +37,7 @@ To minimize the size of the produced network stack, Nanostack defines a set of b
 
 #### Build options for different mesh types
 
-Option Name | Features supported | Estimated binary size of Nanostack
+Option name | Features supported | Estimated binary size of Nanostack
 ------------| -------------------|------------------------------------
 `ethernet_host` | Only Ethernet host support, no mesh networking. | 108 kB
 `lowpan_border_router` | 6LoWPAN-ND border router support. | 219 kB
@@ -46,14 +45,14 @@ Option Name | Features supported | Estimated binary size of Nanostack
 `lowpan_router` | 6LoWPAN-ND routing host mode. | 169 kB
 `nanostack_full` | Everything. This is only for testing purposes. | 355 kB
 `thread_border_router` | Thread router device with border router capability. | 212 kB
-`thread_end_device` | Thread host without routing capability | 166 kB
-`thread_router` | Thread host with routing capability | 199 kB
+`thread_end_device` | Thread host without routing capability. | 166 kB
+`thread_router` | Thread host with routing capability. | 199 kB
 
-<span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9. They will differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
+<span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9. They differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
-If you want to optimize the flash usage, you need to select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
+If you want to optimize the flash usage, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case.
 
-See [6LoWPAN overview](mesh-tech.html) for the definition of star and mesh networks. These same principles apply also to Thread protocol.
+See the [6LoWPAN technology overview](mesh-tech.html) for the definition of star and mesh networks. These same principles apply also to the Thread protocol.
 
 Select the protocol the network is based on:
 
@@ -63,28 +62,28 @@ Select the protocol the network is based on:
 Select the device role:
 
 - Mesh network. A router. (default)
-- Star network. A non-routing device. Also known as a host, or sleepy host.
+- Star network. A nonrouting device, also known as a host or sleepy host.
 
-In the application, you need to choose from two supported interface classes:
+In the application, choose from two supported interface classes:
 
 - For 6LoWPAN-ND based network, use `LoWPANNDInterface`.
 - For Thread based network, use `ThreadInterface`.
 
-Then you may optionally choose to select the non-routing mode for those networks. The following tables show the values you should use in the `mbed_app.json` file for your devices in different networks.
+Then you may optionally choose to select the nonrouting mode for those networks. The following tables show the values to use in the `mbed_app.json` file for your devices in different networks.
 
 **mesh-type: MESH_LOWPAN**
 
-|Device role|`nanostack.configuration` value|`mbed-mesh-api.6lowpan-nd-device-type`|
+| Device role | `nanostack.configuration` value | `mbed-mesh-api.6lowpan-nd-device-type` |
 |-----------|-------------------------|------------------------------------|
-|Mesh router (default) | `lowpan_router` | `NET_6LOWPAN_ROUTER` |
-|Non-routing device | `lowpan_host` | `NET_6LOWPAN_HOST` |
+| Mesh router (default) | `lowpan_router` | `NET_6LOWPAN_ROUTER` |
+| Nonrouting device | `lowpan_host` | `NET_6LOWPAN_HOST` |
 
 **mesh-type: MESH_THREAD**
 
-|Device role|`nanostack.configuration` value|`mbed-mesh-api.thread-device-type`|
+| Device role |`nanostack.configuration` value | `mbed-mesh-api.thread-device-type` |
 |-----------|-------------------------|------------------------------------|
-|Mesh router (default) | `thread_router` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
-|Non-routing device | `thread_end_device` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
+| Mesh router (default) | `thread_router` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
+| Nonrouting device | `thread_end_device` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
 
 ### Nanostack's configuration
 
@@ -124,8 +123,7 @@ Name: nanostack.configuration
     Value: nanostack_full (set by library:nanostack)
 ```
 
-
-### Generic mbed-mesh-api configuration values
+### Generic Mbed mesh API configuration values
 
 Generic configuration allows you to fine tune Nanostack's heap usage.
 
@@ -226,7 +224,7 @@ Name: mbed-mesh-api.thread-use-static-link-config
 
 ### 6LoWPAN related configuration parameters
 
-Following parameters are only valid for 6LoWPAN-ND mesh network. These are in use when application uses `LoWPANNDInterface` class.
+The following parameters are only valid for the 6LoWPAN-ND mesh network. These are in use when the application uses the `LoWPANNDInterface` class.
 
 ```
 Configuration parameters
