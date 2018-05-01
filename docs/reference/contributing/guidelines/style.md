@@ -14,6 +14,16 @@ Whether you're writing new code or fixing bugs in existing code, please follow t
 
 Mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
 
+The only exception to this coding style involves third-party code. Third-party code should be added to the `.astyleignore` file located in the Mbed OS root directory.
+
+You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
+
+```
+astyle -n --options=.astylerc $(full_path_to_file)
+```
+
+File `.astylerc` defines Mbed OS code style and it's located in Mbed OS root directory.
+
 ##### Code sample
 
 ```c
@@ -155,12 +165,6 @@ typedef struct analogin_s analogin_t;
 ##### Doxygen documentation
 
 All functions and methods should contain documentation using Doxgyen.
-
-You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
-
-```
-astyle.exe --style=kr --indent=spaces=4 --indents-switches $(full_path_to_file)
-```
 
 #### Compiler settings
 
