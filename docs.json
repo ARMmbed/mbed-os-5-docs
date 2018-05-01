@@ -27,7 +27,7 @@
         "title": "Reference",
         "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
         "slug": "reference",
-        "type": "markdown",      
+        "type": "markdown",
         "chapters": [{
                 "title": "Overview",
                 "intro": {
@@ -645,10 +645,6 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/Watchdog.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/target/QuadSPI.md"
                             },
                             {
                                 "type": "markdown",
