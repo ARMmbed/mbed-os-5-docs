@@ -40,7 +40,7 @@ Be careful around these common trouble areas when implementing this API:
 
 Some low power tickers require multiple low power clock cycles for the compare value that `ticker_set_interrupt` sets to take effect. Further complicating this issue, a new compare value typically cannot be set until the first has taken effect. Because of this, when you make back-to-back calls to `ticker_set_interrupt` without a delay, the second call blocks and violates the above requirement that `ticker_set_interrupt` completes in 20us.
 
-To meet this timing requirement, targets that have this synchronization delay must define `LOWPOWERTIMER_DELAY_TICKS` to the number of low power clock cycles it takes for a call to `ticker_set_interrupt` to take effect. When this value is set, the timer code prevents `lp_ticker_set_interrupt` from being called twice within that number of clock cycles. It does this by using the microsecond time to schedule the write to happen at a future date.
+To meet this timing requirement, targets that have this synchronization delay must set `LOWPOWERTIMER_DELAY_TICKS` to the number of low power clock cycles it takes for a call to `ticker_set_interrupt` to take effect. When the targets set this value, the timer code prevents `lp_ticker_set_interrupt` from being called twice within that number of clock cycles. It does this by using the microsecond time to schedule the write to happen at a future date.
 
 ### Dependencies
 
