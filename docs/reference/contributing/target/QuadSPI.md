@@ -10,7 +10,7 @@ The most common use case is an external memory to use as additional data storage
 
 #### Defined behavior
 
-- A target implementaion covers most of the QSPI frame format (some targets might not provide the flexibility for setting all frame parameters).
+- A target implementation covers most of the QSPI frame format (some targets might not provide the flexibility for setting all frame parameters).
 - Command transfer - A target might provide additional functions for sending device-specific commands. If it does not, you can implement it using read and write functions. (This is target or driver dependent.)
 
 #### Undefined behavior
@@ -36,7 +36,7 @@ qspi_status_t qspi_init(qspi_t *obj, PinName io0, PinName io1, PinName io2, PinN
 qspi_status_t qspi_free(qspi_t *obj);
 qspi_status_t qspi_frequency(qspi_t *obj, int hz);
 qspi_status_t qspi_write(qspi_t *obj, const qspi_command_t *command, const void *data, size_t *length);
-qspi_status_t qspi_command_transfer(qspi_t *obj, const qspi_command_t *command, const void *tx_data, size_t tx_size, void *rx_data, size_t rx_size); 
+qspi_status_t qspi_command_transfer(qspi_t *obj, const qspi_command_t *command, const void *tx_data, size_t tx_size, void *rx_data, size_t rx_size);
 qspi_status_t qspi_read(qspi_t *obj, const qspi_command_t *command, void *data, size_t *length);
 
 ```
