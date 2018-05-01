@@ -95,6 +95,48 @@ It produces the following ROM layout:
 
 For an example showing how to create an application that uses a bootloader, see the [Mbed OS bootloader example](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
 
+#### Adding an application header
+
+Taking this one step further, add a metadata header to the bootloader and application so that the bootloader can verify the integrity of the application. Create an `mbed_lib.json` that is shared between the bootloader and application with the following contents.
+
+```JSON
+{
+    "name": "application_header",
+    "target_overrides": {
+        "*": {
+            "target.header_format": [
+                ["magic", "const", "32be", "0x5a51b3d4"],
+                ["headerVersion", "const", "32be", "2"],
+                ["firmwareVersion", "timestamp", "64be", null],
+                ["firmwareSize", "size", "64be", ["application"]],
+                ["firmwareHash", "digest", "SHA256", "application"],
+                ["headerCRC", "digest", "CRCITT32be", "header"]
+            ]
+        }
+    }
+}
+```
+
+This configuration will add a new region, named header, after the bootloader and before the application header. The ROM of your target now looks as follows:
+
+```
+|-------------------|   APPLICATION_ADDR + APPLICATION_SIZE == End of ROM
+|                   |
+...
+|                   |
+|    Application    |
+|  (main program )  |
+|                   |
++-------------------+   APPLICATION_ADDR == HEADER_ADDR + HEADER_SIZE
+|      Header       |
++-------------------+   HEADER_ADDR == BOOTLOADER_ADDR + BOOTLOADER_SIZE
+|                   |
+|    Bootloader     |
+|(my_bootloader.bin)|
+|                   |
++-------------------+   BOOTLOADER_ADDR == Start of ROM
+```
+
 ### Unmanaged bootloader
 
 You want to have an unmanaged bootloader when your bootloader's requirements conflict with the requirements of the managed bootloader. You need an unmanaged bootloader when your bootloader does not come before your application in ROM or your application does not start immediately after your bootloader. Unlike a managed bootloader, an unmanaged bootloader does not automatically merge the bootloader image with the application image after building the application. We expect users of an unmanaged bootloader build to construct their own set of scripts built atop the `mbed compile` primitive to perform bootloader and application merging.
