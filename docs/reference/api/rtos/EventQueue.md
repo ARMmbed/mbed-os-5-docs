@@ -29,6 +29,14 @@ The code executes two handler functions (`rise_handler` and `fall_handler`) in t
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/6ae734681f16/main.cpp)
 
+### Shared event example: deferring from interrupt context
+
+Like the previous example, this defers from interrupt to an event queue thread. However, rather than creating its own thread, it uses the shared event queue – potentially sharing it with other system components and saving RAM.
+
+As the event queue is shared, you should limit the execution time of your event functions to avoid delaying other users’ events excessively.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/file/7c7d5b625e59/main.cpp)
+
 ### EventQueue example: posting events to the queue
 
 The code below demonstrates queueing functions to be called after a delay and queueing functions to be called periodically.
@@ -40,14 +48,6 @@ The code below demonstrates queueing functions to be called after a delay and qu
 Event queues easily align with module boundaries, where event dispatch can implicitly synchronize internal state. Multiple modules can use independent event queues but still be composed through the `EventQueue::chain` function.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_3/)](https://os.mbed.com/teams/mbed_example/code/events_ex_3/file/fca134a32b61/main.cpp)
-
-### Shared event example: deferring from interrupt context
-
-Like the previous example, this defers from interrupt to an event queue thread. However, rather than creating its own thread, it uses the shared event queue – potentially sharing it with other system components and saving RAM.
-
-As the event queue is shared, you should limit the execution time of your event functions to avoid delaying other users’ events excessively.
-
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/file/7c7d5b625e59/main.cpp)
 
 ### Shared event example: running the shared queue from main
 
