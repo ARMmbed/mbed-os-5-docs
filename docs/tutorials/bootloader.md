@@ -97,7 +97,7 @@ For an example showing how to create an application that uses a bootloader, see 
 
 #### Adding an application header
 
-Taking this one step further, add a metadata header to the bootloader and application so that the bootloader can verify the integrity of the application. Create an `mbed_lib.json` that is shared between the bootloader and application with the following contents.
+Take this one step further, and add a metadata header to the bootloader and application, so the bootloader can verify the integrity of the application. Create an `mbed_lib.json` that the bootloader and application share and that has the following contents.
 
 ```JSON
 {
@@ -117,7 +117,7 @@ Taking this one step further, add a metadata header to the bootloader and applic
 }
 ```
 
-This configuration will add a new region, named header, after the bootloader and before the application header. The ROM of your target now looks as follows:
+This configuration adds a new region, named header, after the bootloader and before the application header. The ROM of your target now looks as follows:
 
 ```
 |-------------------|   APPLICATION_ADDR + APPLICATION_SIZE == End of ROM
