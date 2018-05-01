@@ -8,6 +8,9 @@ There are 4 configuration parameters that affect the location of an application 
 - `target.mbed_app_size`
 - `target.bootloader_img`
 - `target.restrict_size`
+- `target.header_format`
+- `target.header_offset`
+- `target.app_offset`
  
 All of these parameters are valid in `targets.json`, `mbed_lib.json` and `mbed_app.json`. You may define them for individual targets and the wildcard target, `*`. A parameter in `mbed_lib.json` overrides a parameter in `targets.json`, and a parameter in `mbed_app.json` overrides one in `mbed_lib.json`.
 
@@ -35,7 +38,7 @@ This parameter defines the bootloader image to be used during the built-in postb
 
 The start address of the current application, as computed above, is available to C and C++ as `APPLICATION_ADDR` and to the linker as `MBED_APP_START`. The size of the current application is available as `APPLICATION_SIZE` and `MBED_APP_SIZE`. This parameter also defines `BOOTLOADER_ADDR` and `BOOTLOADER_SIZE` as the start address and size of the provided bootloader.
 
-You may use this parameter in conjunction with `target.restrict_size`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. When you use it with `target.restrict_size`, that parameter defines the size of the application. Otherwise, the size is the remainder of ROM.
+You may use this parameter in conjunction with `target.restrict_size`, `target.header_format`, `target.header_offset` and `target.app_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. When you use it with `target.restrict_size`, that parameter defines the size of the application. Otherwise, the size is the remainder of ROM.
 
 ### `target.restrict_size`
 
@@ -43,4 +46,51 @@ This parameter restricts the size of the application to be at most the specified
 
 The start address of the current application, as computed above, is available to C and C++ as `APPLICATION_ADDR` and to the linker as `MBED_APP_START`. The size of the current application is available as `APPLICATION_SIZE` and `MBED_APP_SIZE`. This parameter also defines `POST_APPLICATION_ADDR` and `POST_APPLICATION_SIZE` as the start address and size of the region after the application.
 
-You may use this parameter in conjunction with `target.bootloader_img`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. When used with `target.bootloader_img`, that parameter defines the start of the application. Otherwise, the start is the start of ROM.
+You may use this parameter in conjunction with `target.bootloader_img`, `target.header_format`, `target.header_offset` and `target.app_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. When used with `target.bootloader_img`, that parameter defines the start of the application. Otherwise, the start is the start of ROM.
+
+
+### `target.header_format`
+
+The `target.header_format` configuration key defines an application header as a list of tuples. Each tuple represents a single element of the header format as a name (a valid C identifier), a type, a subtype and finally a single argument. For example, the const type defines subtypes for common sizes of constants, including the 32be subtype that indicates the constant will be represented as 32 bits big endian. The following is a list of all types and subtypes that the Mbed OS build tools support.
+
+ * `const` A constant value.
+   * `8be` A value represented as 8 bits.
+   * `16be` A value represented as 16 bits big endian.
+   * `32be` A value represented as 32 bits big endian.
+   * `64be` A value represented as 64 bits big endian.
+   * `8le` A value represented as 8 bits.
+   * `16le` A value represented as 16 bits little endian.
+   * `32le` A value represented as 32 bits little endian.
+   * `64le` A value represented as 64 bits little endian.
+
+ * `timestamp` A time stamp value, in seconds from epoch in the timezone GMT/UTC. The argument to this type is always null.
+    * `64be` A time stamp value truncated to 64 bits big endian.
+    * `64le` A time stamp value truncated to 64 bits ilttle endian.
+
+ * `digest` A digest of an image. All digests are computed in the order they appear. A digest of the header digests the header up to its start address.
+    * `CRCITT32be` A big endian 32bit checksum of an image with an initial value of 0xffffffff, input reversed, and output reflected.
+    * `CRCITT32le` A little endian 32bit checksum of an image with an initial value of 0xffffffff, input reversed, and output reflected.
+    * `SHA256` A SHA-2 using a block-size of 256 bits.
+    * `SHA512` A SHA-2 using a block-size of 512 bits.
+
+ * `size` The size of a list of images, added together.
+    * `32be` A size represented as 32 bits big endian.
+    * `64be` A size represented as 64 bits big endain.
+    * `32le` A size represented as 32 bits little endian.
+    * `64le` A size represented as 64 bits little endain.
+
+Items in the application header are packed starting where the previous field ended; Items in the header are packed using the C "packed" struct semantics. The presence of the `target.header_format` format field defines two macros `MBED_HEADER_START`, which expands to the start address of the firmware header, and `MBED_HEADER_SIZE`, containing the size in bytes of the firmware header.The region following the application header starts at `MBED_HEADER_START + MBED_HEADER_SIZE` rounded up to a multiple of 8 bytes. 
+
+You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_offset` and `target.app_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. When used with `target.bootloader_img`, that parameter defines the start of the application. Otherwise, the start is the start of ROM.
+
+### `target.header_offset`
+
+This parameters directly assigns the offset of the beginning of the header section defined in `target.header_format`. This parameter creates space between the boot loader and application header or asserts that the boot loader is at most as big as the specified offset. 
+
+You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_format` and `target.app_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. 
+
+### `target.app_offset`
+
+This parameters directly assigns the offset of the beginning of the application section that follows the header, when defined in `target.header_format`, or the boot loader defined in `target.bootloader_img`. This parameter creates space between the application header and the application.
+
+You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_format` and `target.header_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. 
