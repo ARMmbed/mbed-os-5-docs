@@ -1,23 +1,43 @@
-<h2 id="mesh-api">Mesh</h2>
+<h2 id="mesh-api">6LoWPAN Mesh</h2>
 
 <span class="images">![](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
-The Arm Mbed mesh API allows the application to use the IPv6 mesh network topologies through the [nanostack](/docs/v5.8/reference/technology.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.8/reference/technology.html#nanostack) networking stack.
 
-**Tips:**
-- The mesh API supports 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes.
-- The applications do not use this module directly. The applications use `LoWPANNDInterface`, `ThreadInterface` or `NanostackEthernetInterface` directly.
-- When using an Ethernet interface, there are no configuration options available. It is using the dynamic mode to learn the IPv6 prefix from the network.
+Mbed OS provides two types of IPv6 based mesh networks:
 
-### Mesh class reference
+- 6LoWPAN_ND, loosely following the Zigbee-IP specification.
+- Thread, following the specification from Thread Group.
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.html)
+Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [6LoWPAN mesh technology](mesh-tech.html) section. Application developers use Nanostack through the Mbed Mesh API.
+
+The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer.
+
+You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](mesh-configuration.html) section documents.
 
 ### Usage
 
 1. Create a network interface and driver objects.
 1. Initialize the interface with given PHY driver.
 1. Connect to network.
+
+### Supported mesh networking modes
+
+Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
+
+### Network connection states
+
+After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
+
+In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the application is allowed to attempt connecting again.
+
+### Getting started
+
+See the example application [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
+
+### Mesh class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/mbed-os-api-doxy/class_mesh_interface.html)
 
 ### Mesh example
 
