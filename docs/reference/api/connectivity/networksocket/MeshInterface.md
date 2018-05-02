@@ -1,4 +1,4 @@
-<h2 id="mesh-api">6LoWPAN Mesh Interfaces</h2>
+<h2 id="mesh-api">6LoWPAN Mesh</h2>
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
