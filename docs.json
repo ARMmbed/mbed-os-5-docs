@@ -85,6 +85,10 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Storage.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/mesh.md"
                     }
                 ]
             },
@@ -113,10 +117,6 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_hw.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/technology/mesh/quick_start_build.md"
                     },
                     {
                         "type": "markdown",
