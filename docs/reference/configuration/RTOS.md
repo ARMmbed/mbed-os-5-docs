@@ -48,4 +48,8 @@ Name: events.shared-stacksize
     Defined by: library:events
     Macro name: MBED_CONF_EVENTS_SHARED_STACKSIZE
     Value: 1024 (set by library:events)
+Name: events.use-lowpower-timer-ticker
+    Description: Enable use of low power timer and ticker classes in non-RTOS builds. May reduce the accuracy of the event queue. In RTOS builds, the RTOS tick count is used, and this configuration option has no effect.
+    Defined by: library:events
+    No value set
 ```
