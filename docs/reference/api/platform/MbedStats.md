@@ -11,6 +11,9 @@ You can use memory statistics functions to capture heap usage, cumulative stack 
 ### Thread Stats
 You can use thread statistics function `mbed_stats_thread_get_each` to capture thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must build Mbed OS with `MBED_THREAD_STATS_ENABLED` macro.
 
+### System Information
+You can use `mbed_stats_sys_get` function to get CPU ID and compiler information. You must build Mbed OS with `MBED_SYS_STATS_ENABLED` macro to enable fetching of system information.
+
 ### Mbed Stats functions reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
@@ -22,3 +25,7 @@ You can use thread statistics function `mbed_stats_thread_get_each` to capture t
 ### Thread Stats example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/thread_statistics/)](https://os.mbed.com/teams/mbed_example/code/thread_statistics/file/8cfc3eff0d78/main.cpp/)
+
+### System Information example
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/system_information/)](https://os.mbed.com/teams/mbed_example/code/system_information/file/8189a62cbb4e/main.cpp/)
