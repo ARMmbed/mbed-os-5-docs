@@ -11,13 +11,29 @@ Name: platform.default-serial-baud-rate
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE
     Value: 9600 (set by library:platform)
+Name: platform.force-non-copyable-error
+    Description: Force compile time error when a NonCopyable object is copied
+    Defined by: library:platform
+    No value set
+Name: platform.poll-use-lowpower-timer
+    Description: Enable use of low power timer class for poll(). May cause missing events.
+    Defined by: library:platform
+    No value set
 Name: platform.stdio-baud-rate
     Description: Baud rate for stdio
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_STDIO_BAUD_RATE
     Value: 9600 (set by library:platform)
+Name: platform.stdio-buffered-serial
+    Description: Use UARTSerial driver to obtain buffered serial I/O on stdin/stdout/stderr. If false, unbuffered serial_getc and serial_putc are used directly.
+    Defined by: library:platform
+    No value set
 Name: platform.stdio-convert-newlines
-    Description: Enable conversion to standard newlines on stdin/stdout
+    Description: Enable conversion to standard newlines on stdin/stdout/stderr
+    Defined by: library:platform
+    No value set
+Name: platform.stdio-convert-tty-newlines
+    Description: Enable conversion to standard newlines on any tty FILE stream
     Defined by: library:platform
     No value set
 Name: platform.stdio-flush-at-exit
@@ -25,4 +41,4 @@ Name: platform.stdio-flush-at-exit
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT
     Value: 1 (set by library:platform)
-```
+    ```
