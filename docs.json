@@ -52,10 +52,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/runtime/memap.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/runtime/Execution.md"
                     }
                 ]
@@ -815,6 +811,10 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tools/debug/local_debugging_toolchain.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tools/debug/memap.md"
                     }
                 ]
             },
