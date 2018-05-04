@@ -15,8 +15,8 @@ Mbed OS changes to RTX configuration all exist in a single file: `mbed-os/rtos/T
 Option | Value | Description |
 -------|-------|-------------|
 `OS_STACK_SIZE` | 4K | OS Stack size is set as `MBED_CONF_APP_THREAD_STACK_SIZE` which is 4096 as default. |
-`OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack set to 768B that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
-`OS_IDLE_THREAD_STACK_SIZE` | 512B | Required to handle Mbed OS wrappers |
+`OS_TIMER_THREAD_STACK_SIZE` | 768B | Timer thread stack is set as `MBED_CONF_APP_TIMER_THREAD_STACK_SIZE=768B` that's necessary to support the C++ wrappers (4 instances), but it may require changing to support larger number of active timers. |
+`OS_IDLE_THREAD_STACK_SIZE` | Idle thread stack size is set as `MBED_CONF_APP_IDLE_THREAD_STACK_SIZE=512B` | Required to handle Mbed OS wrappers |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
 `OS_TICK_FREQ` | 1000 | Mbed OS Tickrate requires 1ms system tick. |
 `OS_STACK_WATERMARK` | 0 or 1 | Watermarking is enabled if `MBED_STACK_STATS_ENABLED` or `MBED_STACK_STATS_ENABLED` are set. |
