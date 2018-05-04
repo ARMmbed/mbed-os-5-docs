@@ -1,1 +1,11 @@
-Please don't work on the Master branch. Work on the branch matching the version you want to update (most likely [5.7](https://github.com/ARMmbed/Handbook/tree/5.7)).
+# Mbed OS 5 documentation
+
+This is the documentation source for Mbed OS 5.
+
+If you want to contribute, please read our [contribution guide](https://os.mbed.com/contributing/).
+
+Please open pull requests against either:
+
+* `new_engine` - this is our development branch.
+* `5.8` - this is the latest live version.
+* Older version branches probably don't require fixes; please open an issue if you think we're wrong.
