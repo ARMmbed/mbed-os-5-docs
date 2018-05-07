@@ -25,7 +25,7 @@ void wait_us(int us);
 
 ### Avoiding OS delay
 
-When you call wait, your board's CPU will sleep in the RTOS for the whole number of milliseconds and then spin to make the necessary fraction of a millisecond. However, it blocks the platform deep sleep for the entire duration.
+When you call wait, your board's CPU will sleep in the RTOS for the whole number of milliseconds and then spin as necessary to make up the remaining fraction of a millisecond. However, it blocks the platform deep sleep for the entire duration.
 
 ### Example
 
