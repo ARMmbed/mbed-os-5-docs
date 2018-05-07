@@ -9,9 +9,27 @@ This document describes how to port and test an IEEE 802.11 Wi-Fi driver to Mbed
 The `WifiInterface` class is the controlling API from application to driver.
 You can use this API for configuring security settings, network names and keys and also instantiating connection or disconnection phases from the network.
 
+```
+MyWiFiInterface wifi;
+
+nsapi_error_t error = wifi.set_credentials("ssid", "password", NSAPI_SECURITY_WPA_WPA2);
+if (error != NSAPI_ERROR_OK) {
+    // Failed to set credentials
+    ...
+}
+
+error = wifi.connect();
+if (error != NSAPI_ERROR_OK) {
+    // Failed to connect
+    ...
+}
+```
+
 Whether the driver is an AT-command driven external IP stack or an Ethernet device, this is the API to implement.
 
 The driver takes care of the network joining process and presents Mbed OS only Ethernet layer interface, or IP stack. The driver and the device itself do all of the security handshakes.
+
+For description of different driver layer, please read [Technology/IP networking](ip-networking.html) section of this book.
 
 ### EMAC driver
 
