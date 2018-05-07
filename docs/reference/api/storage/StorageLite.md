@@ -18,7 +18,7 @@ StorageLite is a light weight filesystem storage module for files in external me
 + Backup: featuring built-in backup and factory reset support.
 +	Low RAM memory footprint: 8 Bytes of RAM is used for indexing each file
 
-[DESIGN.md](storagelite/DESIGN.md) - DESIGN.md contains the detailed design description of StorageLite
+[DESIGN.md](./StorageLiteDesign.md) - DESIGN.md contains the detailed design description of StorageLite
 
 [API Prototype](storagelite/StorageLite.h) -  The full interface can be found under `StorageLite.h`.
 
