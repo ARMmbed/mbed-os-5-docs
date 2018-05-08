@@ -90,6 +90,6 @@ You may use this parameter in conjunction with `target.bootloader_img`, `target.
 
 ### `target.app_offset`
 
-This parameter directly assigns the offset of the beginning of the application section that follows the header, when defined in `target.header_format`, or the bootloader defined in `target.bootloader_img`. This parameter creates space between the application header and the application.
+This parameter assigns the offset of the beginning of the application section that follows the header. This parameter creates space between the application header and the application.
 
 You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_format` and `target.header_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`.
