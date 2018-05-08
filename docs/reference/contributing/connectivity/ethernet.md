@@ -140,16 +140,14 @@ Depending on its use of pool and heap memory and other factors, a driver might w
 
 The Mbed OS tree contains Greentea-based tests that exercise the EMAC API directly, and more general socket tests.
 
-For general Greentea information see: [Tools/Testing/Greentea](docs/v5.8/tools/greentea.html) section.
+For general Greentea information, please see the [Greentea](/docs/development/tools/greentea.html) section.
 
-EMAC tests are in the Mbed OS tree under `TESTS/network/emac` directory.
+EMAC tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
 
+Greentea socket tests are in the Mbed OS tree under the `TESTS/netsocket` directory.
 
-Greentea socket tests are in the Mbed OS tree under `TESTS/netsocket` directory.
+The driver should also be exercised with real-world examples, such as the [Arm Mbed Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-client/).
 
-The driver should also be exercised with real-world examples like
-<https://github.com/ARMmbed/mbed-os-example-client>
+The driver should also be tested with both network stacks available in Mbed OS, as they use the driver somewhat differently - try with the JSON option `nsapi.default-stack` set to each of `LWIP` and `NANOSTACK`.
 
-The driver should also be tested with both network stacks available in mbed OS, as they will use the driver somewhat differently - try with the JSON option `nsapi.default-stack` set to each of `LWIP` and `NANOSTACK`.
-
-Nanostack is IPv6 only. IPv6 operation should also be tested with lwIP, as this is likely to reveal problems with multicast filtering that may not be spotted by IPv4 or Nanostack.
+Nanostack is IPv6 only. IPv6 operation should also be tested with LWIP because this is likely to reveal problems with multicast filtering that IPv4 or Nanostack may not spot.
