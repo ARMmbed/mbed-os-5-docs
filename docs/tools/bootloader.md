@@ -78,7 +78,7 @@ The `target.header_format` configuration key defines an application header as a 
     - `32le` A size represented as 32 bits little endian.
     - `64le` A size represented as 64 bits little endain.
 
-Items in the application header are packed starting where the previous field ended; items in the header are packed using the C "packed" struct semantics. The presence of the `target.header_format` format field defines two macros `MBED_HEADER_START`, which expands to the start address of the firmware header, and `MBED_HEADER_SIZE`, containing the size in bytes of the firmware header.The region following the application header starts at `MBED_HEADER_START + MBED_HEADER_SIZE` rounded up to a multiple of 8 bytes.
+The Mbed OS tools build items in the application header starting where the previous field ended; the tools build items in the header using the C "packed" struct semantics. The presence of the `target.header_format` format field defines two macros `MBED_HEADER_START`, which expands to the start address of the firmware header, and `MBED_HEADER_SIZE`, containing the size in bytes of the firmware header. The region following the application header starts at `MBED_HEADER_START + MBED_HEADER_SIZE` rounded up to a multiple of 8 bytes.
 
 You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_offset` and `target.app_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`. When used with `target.bootloader_img`, that parameter defines the start of the application. Otherwise, the start is the start of ROM.
 
