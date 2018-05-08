@@ -18,9 +18,7 @@ StorageLite is a light weight filesystem storage module for files in external me
 + Backup: featuring built-in backup and factory reset support.
 +	Low RAM memory footprint: 8 Bytes of RAM is used for indexing each file
 
-[DESIGN.md](./StorageLiteDesign.md) - DESIGN.md contains the detailed design description of StorageLite
-
-[API Prototype](storagelite/StorageLite.h) -  The full interface can be found under `StorageLite.h`.
+[StorageLite Design](./StorageLiteDesign.md) - for detailed design description of StorageLite
 
 ## Flash Memory
 StorageLite is optimized for NOR flash memory. It is based on dividing the allocated memory storage to areas: Active and Standby. Data is written to the active area until it becomes full. When the active area becomes full, an internal garbage collection mechanism moves only the updated relevant files to the standby area, and switches between the active and standby areas. The new standby area is then erased.
@@ -51,10 +49,6 @@ StorageLite can either be used with set/get based APIs or it can be defined as S
 
 ## Usage
 
-### Setup And Configuration (TBD)
-Enabling StorageLite and configuring it for your board
-TBD (define standby/active areas addresses and size, define max num of files, etc..)
-
 ### Using StorageLite
 First define a Block Device and define the maximum number of files you want StorageLite to support. Next, create an instance of StorageLite and initialize it with the above Block device and max files setup. Then you can start saving new files and getting their data.
 ``` c++
@@ -74,6 +68,6 @@ First define the Block Device you want StorageLiteFS to use, and create an insta
     slfs.mount(&spif);
 ```
 
-### Testing StorageLite (TBD)
+### Testing StorageLite
 Run the StorageLite functionality test with the `mbed` command as following:
 ```mbed test -n features-storagelite-tests-storagelite-functionality```

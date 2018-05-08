@@ -1,4 +1,4 @@
-# StorageLite
+# StorageLite Design
 ## Overview
 
 StorageLite consists of two main design items:
