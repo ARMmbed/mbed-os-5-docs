@@ -42,7 +42,7 @@ To instantiate DeviceKey, you need to call its `get_instance` member function as
 Run the DeviceKey functionality test with the `mbed` command as following:
 
 ``` 
-    mbed test -n tests-mbed_drivers-device_key
+    mbed test -n features-device_key-tests-device_key-functionality
 ```
 
 ### DeviceKey API class reference
