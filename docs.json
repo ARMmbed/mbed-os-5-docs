@@ -815,15 +815,12 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tools/debug/memap.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tools/debug/DAP.md"
                     }
                 ]
-            },
-            {
-                "title": "DAPLink",
-                "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tools/DAP.md"
-                }]
             },
             {
                 "title": "Testing",
