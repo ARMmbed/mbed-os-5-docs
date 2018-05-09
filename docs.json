@@ -944,6 +944,10 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tutorials/using_apis/connectivity/cellular_tcp.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/tutorials/using_apis/intro-to-lora.md"
                     }
                 ]
             },
