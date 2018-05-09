@@ -25,7 +25,7 @@ void wait_us(int us);
 
 ### Avoiding OS delay
 
-When you call `wait`, your board's CPU is in a loop waiting for the required time to pass. Using the [Arm Mbed RTOS](/docs/development/reference/rtos.html), you can make a call to `Thread::wait` instead.
+When you call wait, your board's CPU will sleep in the RTOS for the whole number of milliseconds and then spin as necessary to make up the remaining fraction of a millisecond. However, it blocks the platform deep sleep for the entire duration.
 
 ### Example
 
