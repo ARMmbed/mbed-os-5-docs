@@ -664,6 +664,14 @@
                         },
                         "sources": [{
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/ethernet.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/WifiInterface.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/contributing/connectivity/NetworkStack.md"
                             },
                             {
