@@ -92,6 +92,14 @@
                 "title": "Technology",
                 "sources": [{
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/technology/connectivity/ethernet.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/technology/connectivity/wifi.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.8/docs/reference/technology/mesh/quick_start_intro.md"
                     },
                     {
