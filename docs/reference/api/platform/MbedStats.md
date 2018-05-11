@@ -19,7 +19,7 @@ You can use the `mbed_stats_sys_get` function to get the CPU ID and compiler inf
 
 ### CPU statistics
 
-You can use the `mbed_stats_cpu_get` function to get the uptime, idle time, and sleep time information. Timing information available is cumulative since the system is up and running. You must build Mbed OS with the `MBED_CPU_STATS_ENABLED` macro to enable fetching of CPU information. Please note CPU statistics are dependent on availability of low power timer in HW.
+You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and sleep time information. Timing information available is cumulative since the system is on. You must build Mbed OS with the `MBED_CPU_STATS_ENABLED` macro to enable fetching of CPU information. Please note CPU statistics depend on the availability of the low power timer in the hardware.
 
 ### Mbed statistics functions reference
 
