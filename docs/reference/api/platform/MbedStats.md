@@ -1,31 +1,34 @@
-## Mbed Stats
+## Mbed stats
 
-Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS statistics, you must build code with `MBED_ALL_STATS_ENABLED` macro.
+Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS statistics, you must build code with the `MBED_ALL_STATS_ENABLED` macro.
 
-### Memory Stats
-You can use memory statistics functions to capture heap usage, cumulative stack usage or stack usage per thread at runtime. To enable memory usage monitoring, you must build Mbed OS with the following macros.
+### Memory stats
+
+You can use memory statistics functions to capture heap usage, cumulative stack usage or stack usage per thread at runtime. To enable memory usage monitoring, you must build Mbed OS with the following macros:
 
 - `MBED_HEAP_STATS_ENABLED`.
 - `MBED_STACK_STATS_ENABLED`.
 
-### Thread Stats
-You can use thread statistics function `mbed_stats_thread_get_each` to capture thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must build Mbed OS with `MBED_THREAD_STATS_ENABLED` macro.
+### Thread stats
 
-### System Information
-You can use `mbed_stats_sys_get` function to get CPU ID and compiler information. You must build Mbed OS with `MBED_SYS_STATS_ENABLED` macro to enable fetching of system information.
+You can use the thread statistics function `mbed_stats_thread_get_each` to capture the thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must build Mbed OS with the `MBED_THREAD_STATS_ENABLED` macro.
+
+### System information
+
+You can use the `mbed_stats_sys_get` function to get the CPU ID and compiler information. You must build Mbed OS with the `MBED_SYS_STATS_ENABLED` macro to enable fetching of system information.
 
 ### Mbed Stats functions reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
 
-### Memory Stats example
+### Memory stats example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp)
 
-### Thread Stats example
+### Thread stats example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/thread_statistics/)](https://os.mbed.com/teams/mbed_example/code/thread_statistics/file/8cfc3eff0d78/main.cpp/)
 
-### System Information example
+### System information example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/system_information/)](https://os.mbed.com/teams/mbed_example/code/system_information/file/8189a62cbb4e/main.cpp/)
