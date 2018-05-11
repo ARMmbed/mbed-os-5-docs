@@ -2,7 +2,7 @@
 
 The hardware CRC HAL API provides a low-level interface to the hardware CRC module of a target platform. Implementing the hardware CRC API allows you to gain the performance benefits of using hardware acceleration for CRC calculations. For platforms without hardware CRC capabilities, the API falls back to using the table and bitwise CRC implementations.
 
-<span class="notes">**Note:** The hardware CRC API is not thread safe.</span>
+<span class="notes">**Note:** The hardware CRC APIs are not thread safe.</span>
 
 #### Assumptions
 
