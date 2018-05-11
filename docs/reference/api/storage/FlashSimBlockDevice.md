@@ -2,9 +2,10 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_slicing_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
 
-The FlashSimBlockDevice class is a block device adpator, whose purpose is to simulate the behavior of a flash component, if the underlying block device doesn't support such a behavior. This includes the following:
+The FlashSimBlockDevice class is a block device adpator, whose purpose is to simulate the behavior of a flash component if the underlying block device doesn't support such a behavior. This includes the following:
+
 - Support the `erase` API (fills the erase unit with the predefined erase value).
-- Only allow programming of erased areaa or ones whose content is the same as the one given by the user.
+- Only allow programming of erased area or ones whose content is the same as the one given by the user.
 - Support the `get\_erase\_value` API, returning the predefined erase value.       
 
 The constructor requires the following:
@@ -24,4 +25,4 @@ This FlashSimBlockDevice example takes a [HeapBlockDevice](/docs/development/ref
 
 ### Related content
 
-- [FlashSimBlockDevice](/docs/development/reference/FlashSimBlockDevice.html) API reference.
+- [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) API reference.
