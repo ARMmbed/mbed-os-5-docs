@@ -19,9 +19,29 @@ The constructor requires the following:
 
 ### FlashSimBlockDevice example
 
-This FlashSimBlockDevice example takes a [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) and turns it into a simulated flash BD, showing all basic flash operations. 
+This FlashSimBlockDevice example takes a [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) and turns it into a simulated flash BD.
+```C++
+    int erase_unit_size = 512;
+    HeapBlockDevice heap_bd(4 * erase_unit_size, 1, 4, erase_unit_size);
+    FlashSimBlockDevice flash_bd(&heap_bd, blank);
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/FlashSimBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/FlashSimBlockDevice_ex_1/file/62c01cd06ff7/main.cpp)
+    // This initializes the flash simulator block device (as well as the underlying heap block device)
+    int err = flash_bd.init();
+
+    uint8_t buf[16];
+    for (int i = 0; i < sizeof(buf); i++) {
+        buf[i] = i;
+    }
+
+    // This will fail, as erase unit in address 0 has not been erased
+    err = flash_bd.program(buf, 0, sizeof(buf));
+
+    // Erase the erase unit at address 0
+    err = flash_bd.erase(0, erase_unit_size);
+
+    // This will succeed now after erasing
+    err = flash_bd.program(buf, 0, sizeof(buf));
+```
 
 ### Related content
 
