@@ -15,8 +15,28 @@ The constructor only requires the underlying block device pointer.
 ### BufferedBlockDevice example
 
 This BufferedBlockDevice example takes a [HeapBlockDevice](/docs/development/reference/heapblockdevice.html), whose read size is 256 bytes and program size is 512 bytes, and shows how one can read or program this block device with much smaller read/program sizes, using BufferedBlockDevice.
+```C++
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/BufferedBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/BufferedBlockDevice_ex_1/file/62c01cd06ff7/main.cpp)
+    HeapBlockDevice heap_bd(1024, 256, 512, 512);
+    BufferedBlockDevice buf_bd(&heap_bd);
+
+    // This initializes the buffered block device (as well as the underlying heap block device)
+    int err = buf_bd.init();
+
+    uint8_t buf[8];
+    for (int i = 0; i < sizeof(buf); i++) {
+         buf[i] = i;
+    }
+
+    // Now we can program an 8 byte buffer (couldn't do that in underlying BD, having 512-byte program size)
+    err = buf_bd.program(buf, 0, sizeof(buf));
+
+    // Now we can also read one byte
+    err = buf_bd.read(buf, 0, 1);
+
+    // Ensure programmed data is flushed to the underlying block device
+    err = buf_bd.sync();
+```
 
 ### Related content
 
