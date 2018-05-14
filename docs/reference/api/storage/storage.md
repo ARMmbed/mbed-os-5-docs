@@ -27,9 +27,11 @@ The `fopen` function is similar to the open function above but associates a stre
 
   - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-- **FATFileSystem** - The FAT file system is a well-known file system that you can find on almost every system, including PCs. The Mbed OS implementation of the FAT file system is based on ChanFS and is optimized for small embedded systems.
+- **FATFileSystem** - The FAT file system is a well-known and established disk oriented file system that you can find on most OSs, including Windows, Linux, OSX, and Mbed OS.
 
-  - **Portable** - Almost every operating system supports the FAT file system, which is the most common file system found on portable storage, such as SD cards and flash drives. The FAT file system is the easiest way to support access from a PC.
+  - **Portable** - Due to its nearly universal support across OSs, the FAT file system provides and easy way to access storage from both the embedded system and a user's PC.
+
+  - **Embedded** - Built on the well-known ChanFS project, the FAT file system has been heavily optimized for embedded systems.
 
 The [BlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.html) class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
 
@@ -62,6 +64,18 @@ We optimized this file system to work with a limited amount of RAM and ROM. It a
 ##### Scope
 
 The "little" in the little file system comes from the focus on both keeping resource usage low and keeping the scope self-contained. Aside from the three targeted issues above, there is a heavy restriction against bloat in this software module. Instead, we push additional features to separate layers in the BlockDevice API that drives the Mbed OS storage stack. This gives Mbed OS a tool for remaining flexible as technology used by IoT devices develops.
+
+#### The FATFileSystem
+
+The FAT file system is a well-known and established disk oriented file system that you can find on Mbed OS and some lesser known operating systems such as Windows, Linux, and OSX. Due to its age and popularity, the FAT file system has become the de facto standard for forms of portable storage, such as flash drives and SD cards. Even for an embedded system, being able to interact with portable storage can be a valuable feature.
+
+##### Portable
+
+The primary feature of the FAT file system is the portability. With universal support across PC OSs, the FAT file system lets you to access storage from both the embedded system and a user's PC. This gives users an easy way to get information onto and off of the device.
+
+##### Embedded
+
+The Mbed OS FAT file system is built on the well-known ChanFS project. It has been optimized heavily for embedded systems and is one of the smallest FAT file system implementations out there.
 
 ### Partitioning
 
