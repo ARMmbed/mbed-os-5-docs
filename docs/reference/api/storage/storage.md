@@ -67,15 +67,15 @@ The "little" in the little file system comes from the focus on both keeping reso
 
 #### The FATFileSystem
 
-The FAT file system is a well-known and established disk oriented file system that you can find on Mbed OS and some lesser known operating systems such as Windows, Linux, and OSX. Due to its age and popularity, the FAT file system has become the de facto standard for forms of portable storage, such as flash drives and SD cards. Even for an embedded system, being able to interact with portable storage can be a valuable feature.
+The FAT file system is an established disk-oriented file system that you can find on Mbed OS, Windows, Linux and Mac OS X. Due to its age and popularity, the FAT file system has become the standard for portable storage, such as flash drives and SD cards.
 
 ##### Portable
 
-The primary feature of the FAT file system is the portability. With universal support across PC OSs, the FAT file system lets you to access storage from both the embedded system and a user's PC. This gives users an easy way to get information onto and off of the device.
+The primary feature of the FAT file system is its portability. With support across PC operating systems, the FAT file system lets you access storage from both the embedded system your PC. This gives users a way to get information onto and off of the device.
 
 ##### Embedded
 
-The Mbed OS FAT file system is built on the well-known ChanFS project. It has been optimized heavily for embedded systems and is one of the smallest FAT file system implementations out there.
+The Mbed OS FAT file system is built on the ChanFS project. It is optimized for embedded systems and is one of the smallest FAT file system implementations.
 
 ### Partitioning
 
