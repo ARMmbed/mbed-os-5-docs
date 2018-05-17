@@ -166,11 +166,3 @@ int main() {
     completed.wait_any(1);
 }
 ```
-
-### Example
-
-This is a quick example of a simple HTTP client program using the network-socket API that Mbed OS provides.
-
-The program brings up an underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket.
-
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/file/9f41b37edee9/main.cpp/)
