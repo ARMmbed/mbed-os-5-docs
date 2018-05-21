@@ -18,7 +18,7 @@ The first step to using the FAT file system is formatting storage with FAT. You 
 
 <span class="notes">**Note:** The FAT file system requires at minimum 256 erase blocks. You can find the number of blocks on a block device by dividing the block device's size by its erase size.</span>
 
-The FAT file system supports external flash; however, it must allocate a full erase block for internal operations, which can become large for some forms of flash. If RAM consumption becomes a problem, we suggest switching to LittleFileSsystem. The Mbed OS file system APIs make switching file systems a straightforward task. One common strategy is to use the FAT file system for debugging and switch to LittleFileSystem when the application becomes stable.
+The FAT file system supports external flash; however, it must allocate a full erase block for internal operations, which can become large for some forms of flash. If RAM consumption becomes a problem, we suggest switching to LittleFileSystem. The Mbed OS file system APIs make switching file systems a straightforward task. One common strategy is to use the FAT file system for debugging and switch to LittleFileSystem when the application becomes stable.
 
 ### Usage
 
@@ -34,11 +34,10 @@ You can swap the FAT file system in place with other Mbed OS file systems, which
 
 ### FATFileSystem example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-
-filesystem)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/
-8e251d9511b8/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/adaa6c01d727/main.cpp/)
 
 ### Related content
 
 - [Storage configuration](configuration-storage.html).
 - [LittleFileSystem](littlefilesystem.html).
+- [Storage overview](/docs/development/reference/storage.html#declaring-a-file-system).
