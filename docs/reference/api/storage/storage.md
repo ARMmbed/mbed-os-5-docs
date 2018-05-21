@@ -19,7 +19,7 @@ The `fopen` function is similar to the open function above but associates a stre
 
 #### Types of file systems
 
-- [**LittleFileSystem**](https://os.mbed.com/docs/development/reference/littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
+- [**LittleFileSystem**](littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
   - **Bounded RAM/ROM** - This file system works with a limited amount of memory. It avoids recursion and limits dynamic memory to configurable buffers.
 
@@ -27,7 +27,7 @@ The `fopen` function is similar to the open function above but associates a stre
 
   - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-- **FATFileSystem** - The FAT file system is an established disk-oriented file system that you can find on most operating systems, including Windows, Linux, Mac OS X and Mbed OS.
+- [**FATFileSystem**](fatfilesystem.html) - The FAT file system is an established disk-oriented file system that you can find on most operating systems, including Windows, Linux, Mac OS X and Mbed OS.
 
   - **Portable** - Due to its support across operating systems, the FAT file system provides access to storage from both the embedded system and your PC.
 
