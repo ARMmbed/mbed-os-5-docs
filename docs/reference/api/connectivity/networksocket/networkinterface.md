@@ -11,3 +11,8 @@ Existing network interfaces:
 - [Wi-Fi](/docs/development/reference/wi-fi.html): API for connecting to the internet with a Wi-Fi device.
 - [Cellular](/docs/development/reference/cellular-api.html): API for connecting to the internet using a cellular device.
 - [Mesh networking interface](/docs/development/reference/mesh-api.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
+
+Optional functionality
+
+
+- [Network status](network-status.html): API for registering a network status listener

@@ -51,6 +51,7 @@ The network socket API provides a common interface for using sockets on network 
 - [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [TCPServer](tcpserver.html): This class provides the ability to accept incoming TCP connections.
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
+- [NetworkStatus](network-status.html): You can use this API to get information about connection state changes
 
 ### Network errors
 
