@@ -10,8 +10,8 @@ Please read about [Mbed OS connectivity technology](https://www.mbed.com/en/tech
 
 Mbed OS cellular is the preferred choice of building applications for [Mbed Cloud](https://cloud.mbed.com/docs/) and cellular IoT solutions. Key features of Mbed OS cellular include:
 
-- Compatibility with 3GPP TS 27.007 and 27.005.
-- OMA Lightweight M2M Client enabler.
+- Compatible with 3GPP TS 27.007 and 27.005.
+- Implements core functionality for OMA Lightweight M2M Client.
 - Out-of-the-box cellular modem support.
 
 3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over an AT command interface for cellular devices, regardless of the underlying cellular network.
@@ -31,19 +31,28 @@ With cellular, the easiest way to connect your application to the internet over 
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-quick-start.png)<span>Figure 2. Connect to cellular network and open a socket</span></span>
 
-If you want to see code, you can go to our [cellular example](https://github.com/ARMmbed/mbed-os-example-cellular).
+If you want to see code, you can go to our [cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/).
 
 ### Cellular Module
 
 If you are using an Mbed OS target that has a supported on-board (mounted) cellular module then cellular framework decides the correct cellular module at compile-time. You can run `mbedls` to find out your current Mbed OS target and then match that to the supported targets in the `CellularTargets.h` file, where a CELLULAR_DEVICE macro is defined based on the Mbed OS target definition and can be used as a C++ class type to instantiate a driver class (inherited from `CellularDevice.h`).
 
+You can browse `CellularTargets.h` file to find out if the module you are using is already supported. In case the module is not yet supported, you could adapt some existing driver for your needs.
+
 Some Mbed OS target boards may have several different kind of cellular modules on-board. In that case, the cellular module driver detects at runtime the actual module that is currently mounted and adapts to that specific cellular module during runtime.
 
 If you use an Mbed OS target and a separate cellular module via a serial line (UART), you need to configure in your `mbed_app.json` configuration file which cellular module to use and which UART pins are connected between the Mbed OS target board and the cellular module:
 
-    `"CELLULAR_DEVICE=<manufacturer-module>", "MDMRXD=<rx-pin-name>", "MDMTXD=<tx-pin-name>"`
+    {
+        "macros":
+        [
+            "CELLULAR_DEVICE=<manufacturer-module>",
+            "MDMRXD=<rx-pin-name>",
+            "MDMTXD=<tx-pin-name>"
+        ]
+    }    
 
-You can browse `CellularTargets.h` file to find out if your <manufacturer-module> is already supported, or if you can adapt some existing driver for your needs. You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART.
+You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART.
     
 ### Cellular APIs
 
