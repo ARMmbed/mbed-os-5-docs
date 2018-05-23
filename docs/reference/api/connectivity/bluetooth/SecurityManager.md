@@ -16,11 +16,11 @@ There are several ways to provide different levels of security during pairing de
 
 The important settings in the `init()` function are the MITM requirement and IO capabilities. MITM protection prevents an attack where one device can impersonate another device by pairing with both devices at the same time. You can achieve this protection by sharing information between the devices through an independent channel. The IO capabilities of both devices dictate what algorithm is used. For details, see BLUETOOTH SPECIFICATION Version 5.0 | Vol 3, Part H - 2.3.5.1. You can change the IO capabilities after initialization with `setIoCapability()`. This takes effect for all subsequent pairings.
 
+Secure Connections, which relies on elliptical curve cryptography, provides the most secure pairing. Support for Secure Connections depends on both the stack and controller on both sides supporting it. If either side doesn't support it, legacy pairing is used. This is an older standard of pairing. If you require higher security, you can disable legacy pairing by calling `allowLegacyPairing(false);`.
+
 #### Out of band (OOB) data used in pairing
 
 Sharing this information through IO capabilities means user interaction, which limits the degree of protection due to the limit of the amount of data that you can expect to transfer. Another solution is using out of band (OOB) communication to transfer this data. OOB communication can send more data and make MITM attacks less likely to succeed. The application must exchange OOB data and provide it to the SecurityManager. Use `setOOBDataUsage()` to indicate you want to use it. With this same call, you can set whether the communication channel you are using to transmit the OOB data is itself secure against MITM protection - this sets the level of the link security achieved using pairing that uses this data.
-
-Secure Connections, which relies on elliptical curve cryptography, provides the most secure pairing. Support for Secure Connections depends on both the stack and controller on both sides supporting it. If either side doesn't support it, legacy pairing is used. This is an older standard of pairing. If you require higher security, you can diable legacy pairing by calling `allowLegacyPairing(false);`.
 
 #### Signing
 
