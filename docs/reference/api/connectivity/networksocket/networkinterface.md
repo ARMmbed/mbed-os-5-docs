@@ -15,4 +15,4 @@ Existing network interfaces:
 Optional functionality
 
 
-- [Network status](network-status.html): API for registering a network status listener
+- [Network status](network-status.html): API for monitoring network status changes.
