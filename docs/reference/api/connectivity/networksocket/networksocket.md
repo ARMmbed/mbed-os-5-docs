@@ -1,27 +1,27 @@
 <h2 id="network-socket">Network socket overview</h2>
 
-Application programming interface for IP networking is called Socket API. As described in [IP-networking](ip-networking.html)
-sections of this book, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
+The application programming interface for IP networking is the Socket API. As described in the [IP networking](ip-networking.html)
+section of this book, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
 
-In Mbed OS this socket API is C++ based but closely follows the functionality from POSIX standard (IEEE Std 1003.1) and relevant RFC standards. Standards divide socket into two category, datagram and stream sockets. In Mbed OS we instead use protocol names UDPSocket for datagrams and TCPSocket for streams.
+In Mbed OS, this socket API is C++ based but closely follows the functionality from POSIX standard (IEEE Std 1003.1) and relevant RFC standards. Standards divide sockets into two categories, datagram and stream sockets. Mbed OS instead uses the protocol names UDPSocket for datagrams and TCPSocket for streams.
 
 ### General usage
 
-Typical application flow can be described in following steps
+The following steps describe the typical application flow:
 
-1. Initialise network interface
-1. Create a socket
-1. Connect (does not apply for UDP)
-1. Send data
-1. Receive data
-1. Close the socket
+1. Initialize a network interface.
+1. Create a socket.
+1. Connect (does not apply for UDP).
+1. Send data.
+1. Receive data.
+1. Close the socket.
 
-Following code demonstrates those steps by sending simple HTTP query to a server:
+The following code demonstrates those steps by sending an HTTP query to a server:
 
 ```
-// Initialise network interface
+// Initialize network interface
 EthernetInterface eth;
 eth.connect();
 
@@ -45,16 +45,16 @@ sock.close();
 
 ### Network socket classes
 
-The network-socket API provides a common interface for using sockets on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
+The network socket API provides a common interface for using sockets on network devices. It's a class-based interface, which is familiar to users experienced with other socket APIs.
 
-- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
+- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions.
 - [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [TCPServer](tcpserver.html): This class provides the ability to accept incoming TCP connections.
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 
 ### Network errors
 
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
+The convention of the network socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which is one of the error codes in the `nsapi_error_t` [enum](/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
 ``` cpp
 /** Enum of standardized error codes
@@ -88,13 +88,13 @@ enum nsapi_error {
 
 ### Nonblocking operation
 
-The network-socket API also supports nonblocking operations. The `set_blocking()` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return `NSAPI_ERROR_WOULD_BLOCK` when a transaction cannot be immediately completed.
+The network socket API also supports nonblocking operations. The `set_blocking()` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return `NSAPI_ERROR_WOULD_BLOCK` when a transaction cannot immediately complete.
 
-To allow efficient use of nonblocking operations, the socket classes provide an `sigio()` member function to register a callback on socket state changes. When the socket can successfully receive, send or accept, or when an error occurs, the system triggers a callback. It may call the callback spuriously without reason.
+To allow efficient use of nonblocking operations, the socket classes provide a `sigio()` member function to register a callback on socket state changes. When the socket can successfully receive, send or accept or when an error occurs, the system triggers a callback. It may call the callback spuriously without reason.
 
-The callback may be called in interrupt context and should not perform operations such as receiving and sending calls. Do not make any read or write calls until it is on a thread.
+You may call the callback in interrupt context, but do not make any read or write calls until it is on a thread.
 
-Following example shows how to set up asynchronous handler for socket:
+The following example shows how to set up an asynchronous handler for socket:
 
 ```
 nsapi_size_or_error_t send_query(TCPSocket *socket) {
