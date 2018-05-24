@@ -175,4 +175,4 @@ When importing an Mbed project into [Atmel Studio](http://www.atmel.com/Microsit
 
 #### IAR Embedded Workbench
 
-When exporting from CLI to IAR Embedded Workbench, if you have macro definitions for assembly files in mbed_app.json or mbed_lib.json files, you need to add these definitions to the Options -> Assembler -> Preprocessor settings in IAR Embedded Workbench.
+If you have macro definitions for assembly files in `mbed_app.json` or `mbed_lib.json` files when you export from Mbed CLI to IAR Embedded Workbench, add these definitions to the Options -> Assembler -> Preprocessor settings in IAR Embedded Workbench.
