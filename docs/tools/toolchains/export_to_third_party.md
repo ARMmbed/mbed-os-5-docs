@@ -172,3 +172,7 @@ Freescale KDS now ships with the GNU Arm Embedded Toolchain. You may need to upd
 The Mbed libraries contain CMSIS startup files.
 
 When importing an Mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must uncheck the **migrate to current infrastructure** box.
+
+#### IAR Embedded Workbench
+
+When exporting from CLI to IAR Embedded Workbench, if you have macro definitions for assembly files in mbed_app.json or mbed_lib.json files, you need to add these definitions to the Options -> Assembler -> Preprocessor settings in IAR Embedded Workbench.
