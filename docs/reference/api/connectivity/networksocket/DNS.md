@@ -1,6 +1,6 @@
 ## DNS Resolver
 
-The DNS resolver provides an interface to do DNS host name resolutions.
+The DNS resolver provides an interface to do DNS host name resolutions. DNS host name resolution can be used to convert resource names to IP addresses. DNS host name resolution can be made after interface has been connected. The returned IP address can be used to make socket connection. 
 
 ### Usage
 
@@ -17,66 +17,32 @@ To make an asynchronous DNS host name resolution:
 1. Instantiate and connect network interface.
 1. Call the `gethostbyname_async()` with callback function to resolve address.
 
-The callback returns the result of the DNS operation. If `gethostbyname_async()` returns a failure, the callback is not called. If the result is a success (the IP address was found from cache), the callback is called before the `gethostbyname_async()` function returns.
-
 To cancel an asynchronous host name resolution:
 
 1. Store the unique ID that the `gethostbyname_async()` call returns.
 1. Call the `gethostbyname_async_cancel()` with a unique ID to cancel the asynchronous address resolution.
 
-When you cancel the translation, the callback is not called.
+### Asynchronous operation
 
-Asynchronous host name resolution callback restrictions:
+The DNS resolver has a cache for the host names/IP addresses. If the host name is found from the cache the `gethostbyname_async()` function returns a success right away. The callback is called before the function returns. 
+
+If address is not in the cache, `gethostbyname_async()` returns an unique ID for the operation. The callback will be called after a response arrives from DNS server on the network or a timeout occurs. The unique ID can be used to cancel the DNS host name resolution if needed.
+
+If `gethostbyname_async()` returns a failure, the callback is not called. 
+
+When designing the callback function take following considerations into account:
 
 Callback is called from thread context. If the callback takes more than 10ms to execute, it might prevent underlying thread processing. Do not make calls to network operations due to stack size limitations; the callback should not perform expensive operations, such as socket recv/send calls or blocking operations.
-
-The following code demonstrates steps to make an asynchronous DNS host name resolution:
-
-```
-#include "mbed.h"
-#include "nsapi_types.h"
-#include "EthernetInterface.h"
-#include "SocketAddress.h"
-#include "Semaphore.h"
-
-rtos::Semaphore callback_semaphore;
-SocketAddress address;
-nsapi_error_t result;
-
-// Callback for asynchronous host name resolution
-void hostbyname_callback(nsapi_error_t res, SocketAddress *addr)
-{
-    // Store result and release semaphore
-    result = res;
-    address = *addr;
-    callback_semaphore.release();
-}
-
-int main()
-{
-    // Initialise network interface
-    EthernetInterface eth;
-    eth.connect();
-
-    // Initiate asynchronous DNS host name resolution
-    eth.gethostbyname_async("www.mbed.com", hostbyname_callback);
-
-    // Wait for callback semaphore
-    callback_semaphore.wait();
-
-    // Print result
-    printf("Result %s, Address %s\r\n", result == NSAPI_ERROR_OK ? "OK" : "FAIL",
-        result == NSAPI_ERROR_OK ? address.get_ip_address() : "NONE");
-
-    // Disconnect network interface
-    eth.disconnect();
-}
-
-```
 
 ### DNS resolver class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_dns.html)
+
+### DNS resolver example
+
+Here is a DNS resolver example. Example makes asynchronous DNS host name resolution.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DNS_GetHostbyNameAsync_Example/)](https://os.mbed.com/teams/mbed_example/code/DNS_GetHostbyNameAsync_Example/file/ddb5698aa782/main.cpp)
 
 ### Troubleshooting information
 
