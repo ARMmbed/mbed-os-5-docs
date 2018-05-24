@@ -8,6 +8,24 @@ The other side of the process is the act of scanning, which listens for advertis
 
 Advertising, scanning and connection all have parameters that let you find a compromise between desired power consumption levels, latency and efficiency of these processes.
 
+#### Advertising
+
+Advertising consists of broadcasting at a regular interval a small amount of data containing valuable information about the device. Peer devices listening on BLE advertising channels may scan these packets.
+
+Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information.
+
+#### Scanning
+
+Scanning consists of listening for peer advertising packets. From a scan, a device can identify devices available in its environment.
+
+If the device scans actively, it sends scan request to scannable advertisers and collects their scan responses.
+ 
+#### Privacy
+
+Privacy is a feature that allows a device to avoid being tracked by other (untrusted) devices. The device achieves it by periodically generating a new random address. The random address may be a resolvable random address, enabling trusted devices to recognize it as belonging to the same device. These trusted devices receive an Identity Resolution Key (IRK) during pairing. The SecurityManager handles this and relies on the other device accepting and storing the IRK.
+
+You need to enable privacy by calling `enablePrivacy()` after initializing the SecurityManager because privacy requires SecurityManager to handle IRKs. Set the behavior of privacy enabled devices by using `setCentralPrivacyConfiguration()`, which specifies what the device should be with devices using random addresses, and `setPeripheralPrivacyConfiguration`. Random addresses that privacy enabled devices generate can be of two types: resolvable (by devices who have the IRK) and unresolvable. You can't use unresolvable addresses for connecting and connectable advertising; therefore, use a resolvable one for these, regardless of the privacy configuration.
+
 ### GAP class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_gap.html)
