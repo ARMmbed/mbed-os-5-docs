@@ -1,8 +1,68 @@
-<h2 id="lorawan-events">LoRaWAN stack events and callbacks</h2>
+## LoRaWAN overview
+
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span>LoRaWANInterface class hierarchy</span></span>
+
+LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
+
+Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.
+
+The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
+
+### Usage
+
+To bring up the Mbed LoRaWAN stack, consider the following progression:
+
+1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/development/reference/eventqueue.html) object:
+
+```cpp
+// construct an event queue
+EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
+```
+
+2) A [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/development/reference/loraradio-api.html) object:
+
+```CPP
+// construct a LoRadio object
+SX1272_LoRaRadio radio(PIN_NAMES ... );
+```
+
+3) Instantiate `LoRaWANInterface`, and pass `LoRaRadio` object:
+
+```CPP
+LoRaWANInterface lorawan(radio) ;
+```
+
+4) Initialize mac layer and pass `EventQueue` object:
+
+```CPP
+lorawan.initialize(&ev_queue);
+```
+
+5) Set up the event callback:
+
+```cpp
+lorawan_app_callbacks_t callbacks
+callbacks.events = mbed::callback(YOUR_EVENT_HANDLER);
+lorawan.add_app_callbacks(&callbacks);
+```
+
+6) Add network credentials (security keys) and any configurations:
+
+```CPP
+lorawan_connect_t connection;
+
+connection.connect_type = LORAWAN_CONNECTION_OTAA;
+connection.connection_u.otaa.app_eui = YOUR_APP_EUI_KEY;
+connection.connection_u.otaa.dev_eui = YOUR_DEV_EUI_KEY;
+connection.connection_u.otaa.app_key = YOUR_APP_KEY;
+connection.connection_u.otaa.nb_trials = MBED_CONF_LORA_NB_TRIALS;
+
+lorawan.connect(connection);
+```
 
 Owing to the fact that most of the LoRaWAN devices are simple telemetry devices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
 
-#### Network events
+#### Network events & callbacks
 
 Here is the list of possible events that you can post from the stack to the application:
 
@@ -85,8 +145,7 @@ uint8_t your_battery_level()
 callbacks.battery_level = mbed::callback(your_battery_level);
 lorawan.add_app_callbacks(&callbacks);
 ```
-
-<h3 id="lorawan-error-codes">LoRaWAN stack error codes</h3>
+##### Error codes
 
 All operations on `LoRaWANInterface` return an error code `lorawan_status_t` that reflects success or failure of the operation.
 
@@ -112,3 +171,12 @@ Here  is the list of error codes and their description.
 |`LORAWAN_STATUS_CONNECT_IN_PROGRESS`| -1016 | Connection in progress (application should wait for CONNECT event) |
 |`LORAWAN_STATUS_NO_ACTIVE_SESSIONS`| -1017 | No active session in progress |
 |`LORAWAN_STATUS_IDLE`| -1018 | Stack idle at the moment |
+|`LORAWAN_STATUS_DUTYCYCLE_RESTRICTED`| -1020 | Transmission will be delayed because of duty cycling |
+|`LORAWAN_STATUS_NO_CHANNEL_FOUND`| -1021 | No channel is enabled at the moment |
+|`LORAWAN_STATUS_NO_FREE_CHANNEL_FOUND`| -1022 | All channels marked used, cannot find a free channel at the moment |
+|`LORAWAN_STATUS_METADATA_NOT_AVAILABLE`| -1023 | Metadata is stale, cannot be made available as its not relevant |
+
+API documentation for 'LoRaWANInterface' and 'LoRaRadio' classes can be found here:
+
+- [LoRaWANInterface API docs](/docs/development/reference/lorawan.html): The class that provides APIs for LoRaWAN network stack.
+- [LoRaRadio API docs](/docs/development/reference/loraradio.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
