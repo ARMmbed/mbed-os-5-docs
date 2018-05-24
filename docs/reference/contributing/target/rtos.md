@@ -20,7 +20,6 @@ Option | Value | Description |
 `OS_DYNAMIC_MEM_SIZE` | 0 | RTX dynamic memory is disabled. |
 `OS_TICK_FREQ` | 1000 | Mbed OS Tickrate requires 1ms system tick. |
 `OS_STACK_WATERMARK` | 0 or 1 | Watermarking is enabled if `MBED_STACK_STATS_ENABLED` or `MBED_STACK_STATS_ENABLED` are set. |
-`OS_PRIVILEGE_MODE` | 0 or 1 | We set it for 0 if uVisor is enabled, 1 otherwise. |
 
 #### Code structure
 

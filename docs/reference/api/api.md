@@ -8,7 +8,7 @@ The [APIs](/docs/development/introduction/glossary.html) in this document are or
 - [Network Socket](/docs/development/reference/network-socket.html): network sockets, Ethernet, Wi-Fi, cellular and mesh networking.
 - [Bluetooth](/docs/development/reference/bluetooth.html): bluetooth low energy.
 - [LoRaWAN](/docs/development/reference/lorawan.html): low power wide area network.
-- [Security](/docs/development/reference/security.html): working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
+- [Security](/docs/development/reference/security.html): working with Arm Mbed TLS in the context of Mbed OS.
 - [Storage](/docs/development/reference/storage.html): working with the file system.
 
 We also provide guidelines for [contributing to Mbed OS](/docs/development/reference/contributing.html).

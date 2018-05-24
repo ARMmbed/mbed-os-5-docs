@@ -39,12 +39,6 @@ A few micro:bit How To videos:
 - [Hashing](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing/): performs hashing of a buffer with SHA-256 using various APIs. It serves as a tutorial for the basic hashing APIs of Mbed TLS.
 - [TLS client](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client/): downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
 
-##### Arm Mbed uVisor
-
-- [Threaded Blinky with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-thread): an example threaded application with uVisor security.
-- [IRQ Blinky uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor): an example threaded application with uVisor security and IRQ support.
-- [Threaded REPC with uVisor](https://github.com/ARMmbed/mbed-os-example-uvisor-number-store): using uVisor APIs to build a box that stores a number.
-
 These examples work on the K64F and the GNU Arm Embedded toolchain only.
 
 #### Core features
