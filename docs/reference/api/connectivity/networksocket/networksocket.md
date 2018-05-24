@@ -1,21 +1,60 @@
 <h2 id="network-socket">Network socket overview</h2>
 
-This section covers the Socket APIs in Arm Mbed OS, which are:
+The application programming interface for IP networking is the Socket API. As described in the [IP networking](ip-networking.html)
+section of this book, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
-- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP, using the sendto and recvfrom member functions.
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
+
+In Mbed OS, this socket API is C++ based but closely follows the functionality from POSIX standard (IEEE Std 1003.1) and relevant RFC standards. Standards divide sockets into two categories, datagram and stream sockets. Mbed OS instead uses the protocol names UDPSocket for datagrams and TCPSocket for streams.
+
+### General usage
+
+The following steps describe the typical application flow:
+
+1. Initialize a network interface.
+1. Create a socket.
+1. Connect (does not apply for UDP).
+1. Send data.
+1. Receive data.
+1. Close the socket.
+
+The following code demonstrates those steps by sending an HTTP query to a server:
+
+```
+// Initialize network interface
+EthernetInterface eth;
+eth.connect();
+
+// Create a socket
+TCPSocket sock;
+sock.open(&eth);
+
+// Connect
+sock.connect("arm.com", 80);
+
+// Send data
+sock.send("GET / HTTP/1.0\r\n\r\n", 18);
+
+// Receive data
+char buf[100];
+sock.recv(buf, 100);
+
+// Close the socket
+sock.close();
+```
+
+### Network socket classes
+
+The network socket API provides a common interface for using sockets on network devices. It's a class-based interface, which is familiar to users experienced with other socket APIs.
+
+- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions.
 - [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [TCPServer](tcpserver.html): This class provides the ability to accept incoming TCP connections.
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 
-Continue reading for detailed reference material about some of these APIs.
+### Network errors
 
-#### Network sockets
-
-The network-socket API provides a common interface for using sockets on network devices. It's a class-based interface, which should be familiar to users experienced with other socket APIs.
-
-##### Network errors
-
-The convention of the network-socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which should be one of the error codes in the `nsapi_error_t` [enum](/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
+The convention of the network socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which is one of the error codes in the `nsapi_error_t` [enum](/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
 ``` cpp
 /** Enum of standardized error codes
@@ -47,31 +86,83 @@ enum nsapi_error {
 };
 ```
 
-##### Nonblocking operation
+### Nonblocking operation
 
-The network-socket API also supports nonblocking operations. The `set_blocking` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return `NSAPI_ERROR_WOULD_BLOCK` when a transaction cannot be immediately completed.
+The network socket API also supports nonblocking operations. The `set_blocking()` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return `NSAPI_ERROR_WOULD_BLOCK` when a transaction cannot immediately complete.
 
-To allow efficient use of nonblocking operations, the socket classes provide an `attach` member function to register a callback on socket state changes. When the socket can successfully receive, send or accept, or when an error occurs, the system triggers a callback. It may call the callback spuriously without reason.
+To allow efficient use of nonblocking operations, the socket classes provide a `sigio()` member function to register a callback on socket state changes. When the socket can successfully receive, send or accept or when an error occurs, the system triggers a callback. It may call the callback spuriously without reason.
 
-The callback may be called in interrupt context and should not perform operations such as receiving and sending calls. Do not make any read or write calls until it is on a thread.
+You may call the callback in interrupt context, but do not make any read or write calls until it is on a thread.
 
-##### Socket
+The following example shows how to set up an asynchronous handler for socket:
 
-You can use the [Socket](/docs/development/mbed-os-api-doxy/class_socket.html) classes for managing network sockets. Once opened, a socket provides a pipe through which data can be sent to and received by a specific endpoint. The type of the instantiated socket indicates the underlying protocol to use. Our Socket classes include UDPSocket, TCPSocket and TCPServer.
+```
+nsapi_size_or_error_t send_query(TCPSocket *socket) {
+    return socket->send(QUERY, QUERY_LEN);
+}
 
-##### Example applications
+nsapi_size_or_error_t receive_data(TCPSocket *socket) {
+    // Simplified example, does not properly handle streaming and appending to buffer
+    return socket->recv(my_buffer, remaining_len);
+}
 
-Here are example applications that are built on top of the network-socket API:
+void handle_socket_sigio(EventFlags *evt, TCPSocket *socket)
+{
+    static enum {
+        CONNECTING,
+        SEND,
+        RECEIVE,
+        CLOSE,
+    } next_state = CONNECTING;
 
-- [HTTP and HTTPS](https://os.mbed.com/teams/sandbox/code/http-example/).
-- [MQTT](https://os.mbed.com/teams/mqtt/code/HelloMQTT/).
-- [CoAP](https://os.mbed.com/teams/sandbox/code/coap-example/).
-- [Websockets](https://os.mbed.com/cookbook/Websockets-Server).
-- [TCP ping-pong with a computer](https://github.com/armmbed/mbed-tcp-ping-pong).
-- [UDP ping-pong with a computer](https://github.com/armmbed/mbed-udp-ping-pong).
+    switch (next_state) {
+        case CONNECTING:
+            switch(socket->connect("api.ipify.org", 80)) {
+                case NSAPI_ERROR_IN_PROGRESS:
+                    // Connecting to server
+                    break;
+                case NSAPI_ERROR_ALREADY:
+                    // Now connected to server
+                    next_state = SEND;
+                    break;
+                default:
+                    // Error in connection phase
+                    next_state = CLOSE;
+            }
+        case SEND:
+            if (send_query(socket) > 0)
+                next_state = RECEIVE;
+            else
+                next_state = CLOSE; // Error
+            break;
+        case RECEIVE:
+            if (receive_data(socket) == NSAPI_ERROR_WOULD_BLOCK)
+                break;
+            next_state = CLOSE;
+            break;
+        case CLOSE:
+            socket->close();
+            evt->set(1); // Signal the main thread
+            break;
+    }
+}
 
-##### Example
+int main() {
+    EthernetInterface net;
+    net.connect();
 
-Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket:
+    TCPSocket socket;
+    socket.open(&net);
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
+    EventFlags completed;
+    EventQueue *queue = mbed_event_queue();
+
+    Event<void()> handler = queue->event(handle_socket_sigio, &completed, &socket);
+
+    socket.set_blocking(false);
+    socket.sigio(handler);
+    handler();                   // Kick the state machine to start connecting
+
+    completed.wait_any(1);
+}
+```
