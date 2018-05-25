@@ -15,7 +15,7 @@ The constructor requires the following:
 
 ### FlashSimBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_sim_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_sim_block_device.html)
 
 ### FlashSimBlockDevice example
 
