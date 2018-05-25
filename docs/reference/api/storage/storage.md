@@ -19,7 +19,7 @@ The `open` function creates a connection between a file and a file descriptor. U
 The `fopen` function is similar to the open function above but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. However, it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
 -->
 
-#### Types of file systems
+#### File systems
 
 - [**LittleFileSystem**](littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
