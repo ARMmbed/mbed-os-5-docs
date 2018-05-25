@@ -1,4 +1,4 @@
-## Mbed LoRaWAN solution
+<h2 id="lora-tech">Mbed LoRaWAN solution</h2>
 
 ### LoRaWAN network architecture
  
