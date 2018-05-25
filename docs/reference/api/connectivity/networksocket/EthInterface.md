@@ -20,7 +20,7 @@ Then, if the default configuration is enough, bring up the interface:
 nsapi_error_t status = eth.connect();
 ```
 
-Now, the interface is ready to be used for [network sockets](/docs/development/reference/network-socket.html).
+Now, the interface is ready to be used for [network sockets](/docs/v5.8/reference/network-socket.html).
 
 ```cpp
 // Open a TCP socket
