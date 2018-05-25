@@ -1,5 +1,7 @@
 ## DNS Resolver
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_d_n_s.png)<span>DNS class hierarchy</span></span>
+
 The DNS resolver provides an interface to do DNS host name resolutions. You can use DNS host name resolution to convert resource names to IP addresses. You can make DNS host name resolution after connecting the interface. You can use the returned IP address to make the socket connection. 
 
 #### Usage
