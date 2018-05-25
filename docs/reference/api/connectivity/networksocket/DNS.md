@@ -42,7 +42,7 @@ Callback is called from thread context. If the callback takes more than 10ms to 
 
 This DNS resolver example makes asynchronous DNS host name resolution.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DNS_GetHostbyNameAsync_Example/)](https://os.mbed.com/teams/mbed_example/code/DNS_GetHostbyNameAsync_Example/file/ddb5698aa782/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DNS_GetHostbyNameAsync_Example/)](https://os.mbed.com/teams/mbed_example/code/DNS_GetHostbyNameAsync_Example/file/d0f7d306a900/main.cpp)
 
 ### Troubleshooting information
 
