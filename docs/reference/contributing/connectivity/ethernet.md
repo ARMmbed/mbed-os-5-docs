@@ -2,7 +2,7 @@
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/emac.png)<span>Emac API</span></span>
 
-This document describes how to port and test an Ethernet MAC (EMAC) driver to Mbed OS. This code is currently on a feature branch.
+This document describes how to port and test an Ethernet MAC (EMAC) driver to Mbed OS.
 
 The scope of this document is limited to Ethernet (IEEE 802.3) or Ethernet-like devices, such as Wi-Fi (IEEE 802.11), where the device presents a MAC interface to send and receive frames, and one of the onboard network stacks that runs on Mbed OS on the host processor uses this.
 
@@ -144,7 +144,7 @@ For general Greentea information, please see the [Greentea](/docs/development/to
 
 EMAC tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
 
-Greentea socket tests are in the Mbed OS tree under the `TESTS/netsocket` directory.
+Greentea socket tests are in the Mbed OS tree under the `TESTS/network/emac` directory. It contains [README.md](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/network/emac/README.md) to guide setting up the test environment and running test cases.
 
 The driver should also be exercised with real-world examples, such as the [Arm Mbed Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-client/).
 
