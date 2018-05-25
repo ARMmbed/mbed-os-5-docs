@@ -4,7 +4,7 @@ Block devices are the basic building block of storage solutions in Mbed OS.
 
 ![MbedOSStorage](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/MbedOS-storage-overview.png)
   
-Filesystems are backed by blockdevice implementations. <--TODO: Link to said implementations? --> The BlockDevice API performs the low level interactions with the hardware storage. To add your own block device implementation it is recommended to inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the [class reference](#blockdevice-class-reference) and [Implementing BlockDevice](#implementing-blockdevice) sections below.
+Filesystems are backed by [blockdevice implementations](https://os.mbed.com/docs/v5.8/reference/storage.html). The BlockDevice API performs the low level interactions with the hardware storage. To add your own block device implementation it is recommended to inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the [class reference](#blockdevice-class-reference) and [Implementing BlockDevice](#implementing-blockdevice) sections below.
 
 ### BlockDevice class reference
 
@@ -47,4 +47,4 @@ You can run blockdevice tests for heap, mbr, and util block devices with the fol
 mbed test -t <toolchain> -m <target> -n features-tests-filesystem-*_block_device
 ```
 
-The simpliest way to add tests for new block devices is to copy an existing implementation such as HeapBlocKDevice <-- TODO: Linky linky? --> and changing the block device class to your own.
+The simpliest way to add tests for new block devices is to copy an existing implementation such as HeapBlocKDevice and changing the block device class to your own. Tests can be found under the top level TESTS folder in the Mbed OS repo.
