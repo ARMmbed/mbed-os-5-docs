@@ -40,21 +40,7 @@ Find the source of the default callback [here](https://github.com/ARMmbed/mbed-o
 
 A simple code example that uses the memory tracer on a K64F board:
 
-```
-#include <stdlib.h>
-#include "mbed.h"
-#include "mbed_mem_trace.h"
-
-
-int main() {
-    mbed_mem_trace_set_callback(mbed_mem_trace_default_callback);
-    while (true) {
-        void *p = malloc(50);
-        wait(0.5);
-        free(p);
-    }
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/memory_tracing_example/)](https://os.mbed.com/teams/mbed_example/code/memory_tracing_example/file/168ab14e6694/main.cpp/)
 
 It outputs the following trace:
 
