@@ -10,11 +10,12 @@ The constructor only requires the underlying block device pointer.
 
 ### BufferedBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_buffered_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_buffered_block_device.html)
 
 ### BufferedBlockDevice example
 
 This BufferedBlockDevice example takes a [HeapBlockDevice](/docs/development/reference/heapblockdevice.html), whose read size is 256 bytes and program size is 512 bytes, and shows how one can read or program this block device with much smaller read/program sizes, using BufferedBlockDevice.
+
 ```C++
 
     HeapBlockDevice heap_bd(1024, 256, 512, 512);
