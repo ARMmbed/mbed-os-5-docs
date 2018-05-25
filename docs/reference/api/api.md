@@ -1,6 +1,6 @@
 ## API overview
 
-The [APIs](glossary.html) in this document are organized by the feature, or group of features, they enable.
+The [APIs](/docs/v5.8/introduction/glossary.html) in this document are organized by the feature, or group of features, they enable.
 
 - [Platform](platform.html): platform modules that provide consistent user experience.
 - [Drivers](drivers.html): analog and digital input and outputs and digital interfaces.
