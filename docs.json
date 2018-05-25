@@ -324,6 +324,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/MbedCRC.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/Devicekey.md"
                             }
                         ]
                     },
