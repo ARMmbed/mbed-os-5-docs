@@ -144,7 +144,7 @@ For general Greentea information, please see the [Greentea](/docs/development/to
 
 EMAC tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
 
-Greentea socket tests are in the Mbed OS tree under the `TESTS/network/emac` directory. It contains [README.md](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/network/emac/README.md) to guide setting up the test environment and running test cases.
+Greentea socket tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
 
 The driver should also be exercised with real-world examples, such as the [Arm Mbed Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-client/).
 
