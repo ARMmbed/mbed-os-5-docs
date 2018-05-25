@@ -6,7 +6,7 @@ Wait functions provide simple wait capabilities. The OS scheduler puts the curre
 
 When you call wait, your board's CPU will sleep in the RTOS for the whole number of milliseconds and then spin as necessary to make up the remaining fraction of a millisecond. However, it blocks the platform deep sleep for the entire duration.
 
-### Wait functions reference
+### Wait function reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
 
