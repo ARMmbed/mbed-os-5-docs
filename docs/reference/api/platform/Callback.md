@@ -19,7 +19,7 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 ### Sonar example
 
-Here is an example that uses everything discussed in the [introduction to callbacks](/docs/development/reference/platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the callback.
+Here is an example that uses everything discussed in the [introduction to callbacks](/docs/v5.8/reference/platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the callback.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/)](https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)
 
