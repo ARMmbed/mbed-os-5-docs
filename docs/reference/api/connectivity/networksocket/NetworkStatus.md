@@ -6,21 +6,7 @@ This interface informs you about connection state changes asynchronously. Provid
 
 The callback needs to handle these possible network states:
 
-```cpp
-/** Enum of connection status types
- *
- *  Valid error codes have negative values.
- *
- *  @enum nsapi_connection_status
- */
- typedef enum nsapi_connection_status {
-    NSAPI_STATUS_LOCAL_UP,            /*!< local IP address set */
-    NSAPI_STATUS_GLOBAL_UP,           /*!< global IP address set */
-    NSAPI_STATUS_DISCONNECTED,        /*!< no connection to network */
-    NSAPI_STATUS_CONNECTING,          /*!< connecting to network */
-    NSAPI_STATUS_ERROR_UNSUPPORTED  = NSAPI_ERROR_UNSUPPORTED
-} nsapi_connection_status_t;
-```
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#ga61fab8ca5ae5d56fb51a86dcd36f56ea)
 
 This API requires an interface to be monitored. For example, Ethernet:
 
