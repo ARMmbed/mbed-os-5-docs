@@ -6,7 +6,7 @@ This interface informs you about connection state changes asynchronously. Provid
 
 The callback needs to handle these possible network states:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#ga61fab8ca5ae5d56fb51a86dcd36f56ea)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#ga61fab8ca5ae5d56fb51a86dcd36f56ea)
 
 This API requires an interface to be monitored. For example, Ethernet:
 
