@@ -31,8 +31,6 @@ The state of an erased block is **undefined**. The data is stored on the block i
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.html)
 
-[C++ API Reference](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/BlockDevice.h)
-
 ### BlockDevice example
 
 [![View example](https://www.mbed.com/embed/?type=example)](https://github.com/ARMmbed/mbed-os-example-blockdevice)
