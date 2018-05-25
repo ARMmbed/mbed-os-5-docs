@@ -47,7 +47,7 @@ Run the DeviceKey functionality test with the `mbed` command as following:
 
 ### DeviceKey API class reference
 
-TODO: Add class reference here.
+[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/nvstore_8h_source.html)
 
 ### DeviceKey example
 
