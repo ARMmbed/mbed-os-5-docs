@@ -41,4 +41,4 @@ This BufferedBlockDevice example takes a [HeapBlockDevice](/docs/development/ref
 
 ### Related content
 
-- [BufferedBlockDevice](/docs/development/reference/bufferedblockdevice.html) API reference.
+- [HeapBlockDevice](/docs/development/reference/heapblockdevice.html) API reference.
