@@ -19,13 +19,13 @@ Block devices are byte addressable, but operate in units of "blocks". There are 
 
 **Note:** For many devices, erase blocks can be very large (for example, 4 KiB for SPI flash). As a result, it is discouraged to store an entire erase block in RAM. Instead, it is suggested to first erase a block and then program in units of the program block.
 
-!!! Block block diagram (ask Kevin) !!!
+![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_block_size.png)
 
 ### What does a block look like when it is erased
 
 The state of an erased block is **undefined**. The data is stored on the block isn't decided until the block is programmed. This can be surprising, but allows the widest range of support for different types of storage.
 
-!!! Erased block diagram (ask Kevin) !!!
+![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eraseblock.png)
 
 ### BlockDevice class reference
 
