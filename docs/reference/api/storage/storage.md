@@ -125,3 +125,7 @@ Additionally, Mbed OS contains several utility block devices to give you better 
 - **ObservingBlockDevice** - The observing block device grants the user the ability to register a callback on block device operations. You can use this to inspect the state of the block device, log different metrics or perform some other operation.
 
 - **ExhaustibleBlockDevice** - Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
+
+- [**FlashSimBlockDevice**](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/FlashSimBlockDevice.md) - Simulate the behavior of a flash component if the underlying block device doesn't support such behaviour.
+
+- [**BufferedBlockDevice**](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/BufferedBlockDevice.md) - Provides a buffer for the read and program blocks on a block device which reduces the read and program sizes of the underlying block device to 1 B.
