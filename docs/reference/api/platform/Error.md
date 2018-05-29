@@ -1,75 +1,90 @@
-## Mbed OS Error Status Definitions and Error Handling
-Mbed OS provides error code and error status definitions and error handling APIs for Error construction, reporting and retrieving previously reported errors. It also provides functions and macros to generate and define new error status values, extract information from error status values and to generate fatal system errors which terminates the application. Any software layer(Applications, Drivers, HAL, Protocol stacks etc) can use these error handling APIs. The error functions also facilitates emitting an error message through STDOUT. `mbed_error.h` declares the error functions provided by Mbed OS.
+<h2 id="error-handling">Arm Mbed OS error status definitions and error handling</h2>
 
-Conceptually, Error Handling is a platform service implemented by platform layer of Mbed OS and provides the following:
-1. Provides System Defined Error Codes and Status values in `mbed_error.h`
-1. Provides APIs for Error Construction, Reporting and Error history(see below sections), callable from anywhere in the system.
+Mbed OS provides error code and error status definitions and error handling APIs for error construction, reporting and retrieving previously reported errors. Mbed OS also provides functions and macros to generate and define new error status values, extract information from error status values and to generate fatal system errors that terminate the application. Any software layer, such as applications, drivers, HAL and protocol stacks, can use these error handling APIs. The error functions also facilitate emitting an error message through STDOUT. `mbed_error.h` declares the error functions that Mbed OS provides.
+
+Conceptually, error handling is a platform service that the Mbed OS platform layer implements. Error handling provides the following:
+
+1. Provides system defined error codes and status values in `mbed_error.h`
+1. Provides APIs for error construction, reporting and error history (see below sections), callable from anywhere in the system.
 1. Provides ISR-safe and Thread-safe error handling APIs.
 1. Provides mechanisms for extending the error status definitions.
 
-### Error Status Usage
-Mbed OS pre-defines a set of system errors and **Error Status** is defined as a 32-bit Signed Integer in **NEGATIVE space**. The error status values are represented by **mbed_error_status_t** type.
+### Error status usage
 
-Error Status can be used  
-- To indicate return status from function calls
-  - Returning 0(=**MBED_SUCCESS**) or any positive number would be considered success.
-  - A predefined status code named **MBED_SUCCESS**(=0) is available to indicate success.
+Mbed OS predefines a set of system errors, and it defines **Error Status** as a 32-bit signed integer in **NEGATIVE space**. The **mbed_error_status_t** type represents the error status values.
+
+You can use error status:  
+
+- To indicate return status from function calls.
+  - Returning 0 (=**MBED_SUCCESS**) or any positive number is success.
+  - A predefined status code named **MBED_SUCCESS** (=0) is available to indicate success.
 
 - As system error codes
-  - Used to report error conditions to the OS error handling sub-system.
+  - Used to report error conditions to the OS error handling subsystem.
 
-### Error Status Types and Error Code Ranges
+### Error status types and error code ranges
+
 Mbed OS error status encoding defines three types of error status values. They are as below. Note that type of error status is encoded into the 32-bit signed integer.
-- System Errors
-- Posix Errors
-- Custom Defined Errors
 
-And for each error status type, we have defined a range of error codes which forms the least significant 16-bits of 32-bit error status values. Based on error code definitions below are the error code ranges for each error type.
-- Posix Error Codes: 1 to 255 (see **Posix Error Codes Support** section below)
-- System Error Codes: 256 to 4095
-- Custom Error Codes: 4096 to 65535 
+- System errors.
+- Posix errors.
+- Custom defined errors.
 
-Its important to understand the difference between the terminologies "**Error Code**" and "**Error Status**". "**Error Status**" is the 32-bit signed integer in **NEGATIVE space** used by applications to report the error, and "**Error Code**" is the least significant 16-bits of 32-bit Error Status values indicating the error situation(For example, Out of memory). All pre-defined error status definitions start with **MBED_ERROR_** prefix and all pre-defined error code definitions start with **MBED_ERROR_CODE_**.
-Error codes are not used by themselves, they are always encoded into error status values when reporting or representing errors in the system.
+For each error status type, we have defined a range of error codes, which forms the least significant 16-bits of 32-bit error status values. Based on error code definitions below are the error code ranges for each error type:
 
-Accordingly, the Error Status Ranges are as below for each type:
-- Posix Error Status  - 0xFFFFFFFF to 0xFFFFFF01 - This corresponds to Posix errors represented as negative.
-- System Error Status - 0x80XX0100 to 0x80XX0FFF - This corresponds to System errors range(all values are negative). Bits 23-16 will capture the module type (marked with XX)
-- Custom Error Status - 0xA0XX1000 to 0xA0XXFFFF - This corresponds to Custom errors range(all values are negative). Bits 23-16 will capture the module type (marked with XX)
+- Posix error codes: 1 to 255 (see **Posix Error Codes Support** section below).
+- System error codes: 256 to 4095.
+- Custom error codes: 4096 to 65535. 
 
-Mbed OS system error status values can also capture the module reporting the error by encoding the module identifier in the error status depending on the type of error status. The error status values/ranges are provided here for information purposes but no implementation should assume or manipulate the bit fields in the encoding directly. Implementation using Mbed OS error handling and reporting APIs should deal with error status like an opaque object and should use Mbed OS provided macros and functions to manipulate or interpret the error status values.
+It's important to understand the difference between the terminologies "**Error Code**" and "**Error Status**". "**Error Status**" is the 32-bit signed integer in **NEGATIVE space** that the applications use to report the error, and "**Error Code**" is the least significant 16-bits of 32-bit error status values indicating the error situation, for example, out of memory. All predefined error status definitions start with **MBED_ERROR_**, and all predefined error code definitions start with **MBED_ERROR_CODE_**.
 
-### Posix Error Codes Support
-Presently many modules(like filesystems) under Mbed-OS use Posix error codes. For this reason, Mbed OS error status definitions captures Posix error codes as well
-under the new error encoding scheme. Error code defintions also ensures that Posix error code values doesn’t overlap with Mbed Error code values and thus make it easier for developers to report Posix error codes into Mbed OS error handling system if required.
-To incorporate Posix error code representation into Mbed-OS, a portion of error space is allocated for Posix error codes. Since Mbed-OS error codes will always be negative, we will capture the negative of the actual Posix error code in the error code defintions. For example, the Posix error code EPERM in Mbed-OS error code space would be represented as ngeative of actual EPERM value. This aligns with Mbed-OS error encoding convention of using negative values, but the numerical(or absolute) value will be same as the Posix error code. Also note that, since Posix error codes are represented as negative of Posix error codes, they cannot capture module information as in Mbed OS system error codes.
-**Although we support Posix error codes for compatibility reasons, its highly encouraged that all future Mbed-OS focussed implementations use Mbed-OS error definitions so that errors reported works seamlessly with error reporting and handling implementation in Mbed-OS.**
+Error codes are not used by themselves; they are always encoded into error status values when reporting or representing errors in the system.
 
-### Error Context Capture
-Error handling system in Mbed OS automatically captures the thread context for each error reported into the system. The context captured includes following information:
+Accordingly, the error status ranges for each type are below:
 
-- Error Status Code – Status code
-- Error Address – Captures return address of set error calls.
-- Error Value – A context specific value set by the caller in MBED_ERROR()/MBED_WARNING() calls
-- Thread ID – ID of the current thread - This information is captured only if the system is built with RTOS support.
-- Thread Entry Address – Entry function for the current thread - This information is captured only if the system is built with RTOS support.
-- Thread Stack Size – Size of stack - This information is captured only if the system is built with RTOS support.
-- Thread Stack Mem - Top of stack - This information is captured only if the system is built with RTOS support.
-- Thread Current SP – SP value (PSP or MSP based on what’s active) - This information is captured only if the system is built with RTOS support.
-- Filename and Line number - By default capturing of filename, line number is disabled. If you need this information to be captured it needs to be enabled using **MBED_CONF_ERROR_FILENAME_CAPTURE_ENABLED** macro.
+- Posix error status  - 0xFFFFFFFF to 0xFFFFFF01 - This corresponds to Posix errors represented as negative.
+- System error status - 0x80XX0100 to 0x80XX0FFF - This corresponds to system errors range (all values are negative). Bits 23-16 capture the module type (marked with XX).
+- Custom error status - 0xA0XX1000 to 0xA0XXFFFF - This corresponds to custom errors range (all values are negative). Bits 23-16 capture the module type (marked with XX).
 
-This captured context will be emitted through STDOUT in the case of fatal errors and in the case of warnings it will be recorded by the system and can be retrieved later for system diagnostics, external reporting and for debugging purposes.
+Mbed OS system error status values can also capture the module reporting the error by encoding the module identifier in the error status, depending on the type of error status. We provide the error status values and ranges for information purposes, but no implementation should assume or manipulate the bit fields in the encoding directly. Implementation using Mbed OS error handling and reporting APIs should deal with error status, such as an opaque object, and should use Mbed OS provided macros and functions to manipulate or interpret the error status values.
 
-### Error Reporting
-Mbed OS provides mainly three ways to report an error using the error handling implementation - 
+### Posix error codes support
+
+Many modules (such as filesystems) under Mbed OS use Posix error codes. For this reason, Mbed OS error status definitions capture Posix error codes, as well, under the new error encoding scheme. Error code definitions also ensure that Posix error code values don’t overlap with Mbed error code values. This makes it easier for developers to report Posix error codes into the Mbed OS error handling system.
+
+To incorporate Posix error code representation into Mbed OS, a portion of error space is allocated for Posix error codes. Because Mbed OS error codes are always negative, we capture the negative of the actual Posix error code in the error code definitions. For example, the Posix error code `EPERM` in the Mbed OS error code space would be represented as negative of the actual `EPERM` value. This aligns with the Mbed OS error encoding convention of using negative values, but the numerical (or absolute) value is same as the Posix error code. Also note that, because Posix error codes are represented as negative of Posix error codes, they cannot capture module information as in Mbed OS system error codes.
+
+**Although we support Posix error codes for compatibility reasons, we highly encourage all future Mbed OS focused implementations to use Mbed OS error definitions, so errors reported work seamlessly with error reporting and handling implementation in Mbed OS.**
+
+### Error context capture
+
+The error handling system in Mbed OS automatically captures the thread context for each error reported into the system. The context captured includes the following information:
+
+- Error status code – Status code.
+- Error address – Captures return address of set error calls.
+- Error value – A context-specific value the caller sets in `MBED_ERROR()/MBED_WARNING()` calls.
+- Thread ID – ID of the current thread; this information is captured only if the system is built with RTOS support.
+- Thread entry address – Entry function for the current thread; this information is captured only if the system is built with RTOS support.
+- Thread stack size – Size of stack; this information is captured only if the system is built with RTOS support.
+- Thread stack mem - Top of stack; this information is captured only if the system is built with RTOS support.
+- Thread current SP – SP value (PSP or MSP based on what’s active); this information is captured only if the system is built with RTOS support.
+- File name and line number - By default, capturing of file name and line number is disabled. If you need this information to be captured, you need to enable it by using the **MBED_CONF_ERROR_FILENAME_CAPTURE_ENABLED** macro.
+
+STDOUT emits this captured context in the case of fatal errors. In the case of warnings, it is recorded by the system, and you can retrieve it later for system diagnostics, external reporting and debugging purposes.
+
+### Error reporting
+
+Mbed OS provides three ways to report an error using the error handling implementation:
+
 1. Using **error()** function to report a fatal error condition - This is the legacy function used for reporting a fatal error. It has been modified to capture the context information. But, it will not capture the address of the caller, module information and also doesn't support reporting specific error codes. Any implementation using this API to report an error will use the error status **MBED_ERROR_UNKNOWN**. Its highly encouraged that all future Mbed-OS focussed implementations use MBED_ERROR()/MBED_ERROR1() or MBED_WARNING()/MBED_WARNING() macros for reporting errors.**
 1. Using **MBED_ERROR()/MBED_ERROR()** macros to report a fatal error with enhanced capability for capturing module reporting the error.
 1. Using **MBED_WARNING()/MBED_WARNING1()** macros to report a non-fatal error with enhanced capability for capturing module reporting the error.
 
-When you report an error using MBED_ERROR()/MBED_ERROR1() macros, the error will be recorded in the error history(see **Error History** section below) with the context, the error information will be printed out to STDOUT and the application will be terminated.
-Note that the error functions outputs the error message or the filename in debug and develop builds only.
+When you report an error using `MBED_ERROR()` or `MBED_ERROR1()` macros, the error is recorded in the error history (see the **error history** section below) with the context. The error information is printed to STDOUT, and the application is terminated.
 
-Below is an example of terminal output created by MBED_ERROR1() call. Note that filename capture is disabled by default.
+Note that the error functions output the error message or the file name in debug and develop builds only.
+
+Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default.
 
 ```
 ++ MbedOS Error Info ++
@@ -82,41 +97,47 @@ Current Thread: Id: 0x200020e0 Entry: 0xcb31 StackSize: 0x1000 StackMem: 0x20001
 -- MbedOS Error Info --
 ```
 
-### Constructing Error Status values in your implementation
+### Constructing error status values in your implementation
+
 Mbed OS provides necessary functions and macros for implementations to construct error status values. There are few ways you can construct error status values. 
-If you know the module reporting the error you can use the **MBED_MAKE_ERROR()** macro to construct an error status with the module information. For example, if you want to report 
-an unsupported configuration from serial driver you may construct the error status as follows to capture the module information along with specific error code. In the below example,
-we are constructing an error status value with error code set to MBED_ERROR_CODE_CONFIG_UNSUPPORTED from serial driver indicated by module info set to MBED_MODULE_DRIVER_SERIAL.
+
+If you know the module reporting the error you can use the **MBED_MAKE_ERROR()** macro to construct an error status with the module information. For example, if you want to report  an unsupported configuration from serial driver you may construct the error status as follows to capture the module information along with specific error code. In the below example, we are constructing an error status value with error code set to MBED_ERROR_CODE_CONFIG_UNSUPPORTED from serial driver indicated by module info set to MBED_MODULE_DRIVER_SERIAL.
+
 ```mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_DRIVER_SERIAL, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)```
 
-There may be scenarios when the module might have called an API exported from other modules like protocol stacks but have received an error status in return. In those cases, it doesn't know which of the lower layers raised the
-error but we may still want to report the error without the module information. In those cases, it can use the predefined error status such as MBED_ERROR_CONFIG_UNSUPPORTED with the module value already set to MBED_MODULE_UNKNOWN.
+There may be scenarios when the module might have called an API exported from other modules like protocol stacks but have received an error status in return. In those cases, it doesn't know which of the lower layers raised the error but we may still want to report the error without the module information. In those cases, it can use the predefined error status such as MBED_ERROR_CONFIG_UNSUPPORTED with the module value already set to MBED_MODULE_UNKNOWN.
+
 This is equivalent to defining an error status with MODULE_UNKNOWN as below. Although, using predefined values like MBED_ERROR_CONFIG_UNSUPPORTED makes it more convenient and easier to read the implementation.
+
 ```mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_UNKNOWN, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)```
 
-### Error History
+### Error history
+
 Error handling implementation in Mbed OS also keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_ERROR_HIST_SIZE**.
-MBED_CONF_ERROR_HIST_SIZE configures the number of previous errors the system keeps in its error history. You can disable the history feature by setting MBED_CONF_ERROR_HIST_SIZE to 0 if required. By default, 
-it keeps track of last four errors. Irrespective of whether error history is enabled or not, the system always records the first and last error happened in the system. See
+
+MBED_CONF_ERROR_HIST_SIZE configures the number of previous errors the system keeps in its error history. You can disable the history feature by setting MBED_CONF_ERROR_HIST_SIZE to 0 if required. By default, it keeps track of last four errors. Irrespective of whether error history is enabled or not, the system always records the first and last error happened in the system. See
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html) 
 to learn more about the APIs related to error history.
 
-### Extending Error Codes
-Mbed OS application and system developers may need to define error codes specific to their the application. But they may not be applicable to the broader system to be defined as system error codes. In those cases,
-application can pre-define custom error codes using **MBED_DEFINE_CUSTOM_ERROR()** macro. This macro specifically defines error status values whole type will be of **Custom Defned Errors** as mentioned above in
-**Error Status Types** section. If you are defining custom error codes, it's advised to capture those definition in `mbed_error.h` in custom error codes section. Please review documentation at 
+### Extending error codes
+
+Mbed OS application and system developers may need to define error codes specific to their the application. But they may not be applicable to the broader system to be defined as system error codes. In those cases, application can pre-define custom error codes using **MBED_DEFINE_CUSTOM_ERROR()** macro. This macro specifically defines error status values whole type will be of **Custom Defned Errors** as mentioned above in**Error Status Types** section. If you are defining custom error codes, it's advised to capture those definition in `mbed_error.h` in custom error codes section. Please review documentation at 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
-### Error Hook for applications
-Some applications may want to do custom error handling when an error is reported using MBED_ERROR()/MBED_WARNING() APIs. Applications can accomplish this by registering an error hook function with Mbed OS
-error handling system using **mbed_set_error_hook()** API. This function will be called with error context information whenever system handles a **MBED_ERROR()/MBED_WARNING()** call. This function should be implemented for re-entrancy as multiple threads may invoke MBED_ERROR()/MBED_WARNING() which may cause error hook to be called in parallel. 
+### Error hook for applications
 
-### Error Handling functions reference
+Some applications may want to do custom error handling when an error is reported using MBED_ERROR()/MBED_WARNING() APIs. Applications can accomplish this by registering an error hook function with Mbed OS error handling system using **mbed_set_error_hook()** API. This function will be called with error context information whenever system handles a **MBED_ERROR()/MBED_WARNING()** call. This function should be implemented for re-entrancy as multiple threads may invoke MBED_ERROR()/MBED_WARNING() which may cause error hook to be called in parallel. 
+
+### Error handling functions reference
+
 Below link provides the documentation on all the APIs provided by Mbed OS for Error Definitions and Handling.
+
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
-### Error Handling API examples
-#### Using error() function
+### Error handling API examples
+
+#### Using `error()` function
+
 The code below uses error function to print a fatal error indicating an out-of-memory condition.
 
 ```C
@@ -129,8 +150,10 @@ void *operator new(std::size_t count) {
 }
 ```
 
-#### Using MBED_ERROR() function with module information
+#### Using `MBED_ERROR()` function with module information
+
 The code below uses an MBED_ERROR function to print a fatal error indicating an out-of-memory condition with module name specified as MODULE_APPLCIATION.
+
 ```C
 void receive_data(unsigned char *buffer) {
     if (NULL == buffer) {
@@ -141,8 +164,10 @@ void receive_data(unsigned char *buffer) {
 }
 ```
 
-#### Using MBED_WARNING() function with module information and return with Mbed Error status
+#### Using `MBED_WARNING()` function with module information and return with Mbed Error status
+
 The code below uses an MBED_WARNING function to report a invalid configuration attempt with module name specified as MBED_MODULE_PLATFORM.
+
 ```C
 mbed_error_status_t configure(int config_value) {
     if (config_value > 10) {
@@ -157,8 +182,10 @@ mbed_error_status_t configure(int config_value) {
 }
 ```
 
-#### Using MBED_WARNING() function without module information
+#### Using `MBED_WARNING()` function without module information
+
 The code below uses an MBED_WARNING function to report a invalid configuration attempt without module name.
+
 ```C
 mbed_error_status_t configure(int config_value) {
     if (config_value > 10) {
@@ -173,7 +200,7 @@ mbed_error_status_t configure(int config_value) {
 }
 ```
 
-### List of Mbed OS Defined Error Codes and Description
+### List of Mbed OS defined error codes and description
 
 Below are the pre-defined Mbed System error codes and their description. Also look at 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
@@ -246,9 +273,9 @@ for additional information.
     MBED_ERROR_CODE_USAGEFAULT_EXCEPTION       UsageFault exception
     
 Note that the system defined error codes can potentially expand in future as new error scenarios are identified and incorporated into Mbed OS error handling system.
-And for each of the above mentioned error codes, a corresponding system error status value with module information set to MBED_MODULE_UNKNOWN has been pre-defined 
-for convenience and implementations to report errors when the module info is unknown(For example:- from exceptions handlers where the module is unknown).
+
+And for each of the above mentioned error codes, a corresponding system error status value with module information set to MBED_MODULE_UNKNOWN has been pre-defined for convenience and implementations to report errors when the module info is unknown(For example:- from exceptions handlers where the module is unknown).
 
 ### Related content
-- Debug and develop [build profiles](/docs/development/tools/build-profiles.html).
 
+- Debug and develop [build profiles](/docs/development/tools/build-profiles.html).
