@@ -1,20 +1,18 @@
 <h2 id="configuration-connectivity">Connectivity</h2>
 
-This page describes build-time configurable parameters for connectivity in Mbed OS. There are few different categories, so this page has been structured between different connectivity methods.
+This page describes build-time configurable parameters for connectivity in Mbed OS. There are a few categories of configurable connectivity parameters, so we have structured this page between different connectivity methods:
 
-Sections within this page:
+- [LwIP configuration](#generic-lwip-configuration).
+- [LwIP memory optimization](#lwip-memory-optimization).
+- [LwIP Protocol support](#lwip-protocol-support).
+- [Cellular configuration](#cellular-configuration).
+- [Selecting the default network interface](#selecting-the-default-network-interface).
 
-* [Generic LwIP configuration](#generic-lwip-configuration)
-* [LwIP memory optimization](#lwip-memory-optimization)
-* [LwIP Protocol support](#lwip-protocol-support)
-* [Cellular configuration](#cellular-configuration)
-* [Selecting default network interface](#selecting-default-network-interface)
+<span class="notes">**Note:** You can find settings for Mesh networking under [6LoWPAN and Thread Mesh](configuration-mesh.html).</span>
 
-Note: Settings for Mesh networking is under [6LoWPAN and Thread Mesh](configuration-mesh.html)
+### LwIP configuration
 
-### Generic LwIP configuration
-
-Generic build options for LwIP:
+Build options for LwIP:
 
 ```
 Configuration parameters
@@ -42,7 +40,7 @@ Name: lwip.use-mbed-trace
 
 ### LwIP memory optimization
 
-Following parameters affect memory usage of LwIP stack:
+The following parameters affect memory usage of LwIP stack:
 
 ```
 Configuration parameters
@@ -180,11 +178,12 @@ Name: lwip.enable-ppp-trace
 
 ```
 
-### Selecting default network interface
+### Selecting the default network interface
 
-For Mbed OS 5.9, applications can use default network interface without directly specifying its type. This requires settings from `mbed_app.json` to work.
+Applications can use the default network interface without directly specifying its type. This requires settings from `mbed_app.json` to work.
 
 Example application code can be as simple as:
+
 ```
     NetworkInterface *net = NetworkInterface::get_default_instance();
     if (!net) {
@@ -193,16 +192,16 @@ Example application code can be as simple as:
     net->connet();
 ```
 
-Boards that provide only Ethernet connectivity, do not require any configuration, default is fine. For boards that provide other connectivity options, they require selecting the default interface type and provide settings for it.
+Boards that provide only Ethernet connectivity do not require any configuration. The default settings are sufficient. Boards that provide other connectivity options require selecting the default interface type and providing settings for it.
 
-Default interface type is selected by `target.network-default-interface-type` parameter which is one of following:
+Select the default interface type by using one of the following `target.network-default-interface-type` parameters:
 
-| target.network-default-interface-type | Required configuration |
-|---------------------------------------|------------------------|
-| ETHERNET | nothing |
-| WIFI     | `nsapi.default-wifi-security`, `nsapi.default-wifi-ssid` and `nsapi.default-wifi-password` |
-| CELLULAR | `nsapi.default-cellular-apn`, `nsapi.default-cellular-username` and `nsapi.default-cellular-password` |
-| MESH     | `nsapi.default-mesh-type` |
+| `target.network-default-interface-type` | Required configuration |
+|-----------------------------------------|------------------------|
+| `ETHERNET` | nothing |
+| `WIFI`     | `nsapi.default-wifi-security`, `nsapi.default-wifi-ssid` and `nsapi.default-wifi-password` |
+| `CELLULAR` | `nsapi.default-cellular-apn`, `nsapi.default-cellular-username` and `nsapi.default-cellular-password` |
+| `MESH`     | `nsapi.default-mesh-type` |
 
 ```
 Configuration parameters
