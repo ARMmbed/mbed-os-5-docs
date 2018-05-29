@@ -34,26 +34,25 @@ Network interface `connect()` and `set_credential()` might return following erro
 
 | Error code | Possible reason |
 |------------|-----------------|
-| NSAPI_ERROR_UNSUPPORTED | Security mode is unsupported. |
-| NSAPI_ERROR_PARAMETER | Wrong parameters supplied for given security mode. For example no password. |
-| NSAPI_ERROR_NO_SSID | Did not find the given WiFi network. |
-| NSAPI_ERROR_AUTH_FAILURE | Wrong password given. |
-| NSAPI_ERROR_DEVICE_ERROR | Unknown failure happened in device. Can be that device is not capable of reporting more descriptive error codes. |
-
+| `NSAPI_ERROR_UNSUPPORTED` | Security mode is unsupported. |
+| `NSAPI_ERROR_PARAMETER` | Wrong parameters supplied for the given security mode, for example, no password. |
+| `NSAPI_ERROR_NO_SSID` | The device did not find the given Wi-Fi network. |
+| `NSAPI_ERROR_AUTH_FAILURE` | Wrong password given. |
+| `NSAPI_ERROR_DEVICE_ERROR` | Unknown failure happened in the device. The device may not be capable of reporting more descriptive error codes. |
 
 ### Security
 
-For specifying security settings, both `connect()` and `set_credential()` have optional parameter `nsapi_security_t security` which defines security mode to be used. WifiInterface support following security modes:
+For specifying security settings, both `connect()` and `set_credential()` have optional parameter `nsapi_security_t security`, which defines the security mode the device uses. WifiInterface supports the following security modes:
 
-| nsapi_security_t        | Security mode |
-|-------------------------|---------------|
-| NSAPI_SECURITY_NONE     | Unsecure. Does not require any password or encryption |
-| NSAPI_SECURITY_WEP      | WEP security. Outdated. |
-| NSAPI_SECURITY_WPA      | WPA security mode. Obsoledted by WPA2, should not be used |
-| NSAPI_SECURITY_WPA2     | WPA2 security. Mostly used security mode. |
-| NSAPI_SECURITY_WPA_WPA2 | Allow either WPA or WPA2 security. |
+| `nsapi_security_t`        | Security mode |
+|---------------------------|---------------|
+| `NSAPI_SECURITY_NONE`     | Not secure. Require no password or encryption. |
+| `NSAPI_SECURITY_WEP`      | WEP security. Outdated. |
+| `NSAPI_SECURITY_WPA`      | WPA security mode. Obsolete by WPA2; do not use. |
+| `NSAPI_SECURITY_WPA2`     | WPA2 security. Mostly used security mode. |
+| `NSAPI_SECURITY_WPA_WPA2` | Allows either WPA or WPA2 security. |
 
-Please note that settings should match the security mode from access point. Also not all drivers support every mode. For most compatible settings use `NSAPI_SECURITY_WPA_WPA2` and set WiFi access point to allow only WPA2 mode.
+Please note that settings should match the security mode from the access point. Also, not all drivers support every mode. For most compatible settings, use `NSAPI_SECURITY_WPA_WPA2`, and set the Wi-Fi access point to allow only WPA2 mode.
 
 ### Wi-Fi example
 
