@@ -2,6 +2,10 @@
 
 Use the `mbed test` command to compile and run tests.
 
+There are two testing frameworks, Greentea and Icetea. Greentea offers tests designed for driver porting and target verification.
+Icetea offers and manages tests that can contain multiple devices under test (DUTs) at the same time. In example you can test a network setup with a server and multiple
+clients and control them at the same time from the test environment.
+
 The arguments to `test` are:
 * `-m <MCU>` to select a target for the compilation. If `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
 * `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above), where `toolchain` can be either `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
@@ -15,6 +19,11 @@ The arguments to `test` are:
 * `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
 * `-c or --clean` to clean the build directory before compiling.
 * `--test-spec <TEST_SPEC>` to set the path for the test spec file used when building and running tests (the default path is the build directory).
+* `--build-data <BUILD_DATA>` Dump build_data to this file
+* `--app-config <APP_CONFIG>` Path of an app configuration file (Default is to look for 'mbed_app.json')
+* `--test-config <TEST_CONFIG>` Path or mbed OS keyword of a test configuration file. Example: ethernet, odin_wifi, or path/to/config.json
+* `--greentea` Run Greentea tests (as default run only greentea tests)
+* `--icetea` Run Icetea tests. If used without --greentea flag then run only icetea tests.
 * `-v` or `--verbose` for verbose diagnostic output.
 * `-vv` or `--very_verbose` for very verbose diagnostic output.
 
@@ -79,6 +88,32 @@ Test Case:
     Path: .\TESTS\functional\test3
 ```
 
+And in case of icetea:
+```
+$ mbed test -m K64F -t GCC_ARM --icetea --compile-list
+Available icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
+Test Case:
+    Name: test_cmdline
+    Path: ./TEST_APPS/testcases/example/test_cmdline.py
+    Test applications: ./TEST_APPS/device/exampleapp
+Test Case:
+    Name: UDPSOCKET_BIND_PORT
+    Path: ./TEST_APPS/testcases/netsocket/SOCKET_BIND_PORT.py
+    Test applications: ./TEST_APPS/device/socket_app
+Test Case:
+    Name: TCPSOCKET_BIND_PORT
+    Path: ./TEST_APPS/testcases/netsocket/SOCKET_BIND_PORT.py
+    Test applications: ./TEST_APPS/device/socket_app
+Test Case:
+    Name: TCPSERVER_ACCEPT
+    Path: ./TEST_APPS/testcases/netsocket/TCPSERVER_ACCEPT.py
+    Test applications: ./TEST_APPS/device/socket_app
+Test Case:
+    Name: TCPSOCKET_ECHOTEST_BURST_SHORT
+    Path: ./TEST_APPS/testcases/netsocket/TCPSOCKET_ECHOTEST_BURST_SHORT.py
+    Test applications: ./TEST_APPS/device/socket_app
+```
+
 You can find the tests that are available for **running** by using the `--run-list` option:
 
 ```
@@ -91,12 +126,29 @@ mbedgt: available tests for built 'K64F-ARM', location '.\build\tests\K64F\ARM'
         test 'TESTS-functional-test3'
 ```
 
+In case of icetea:
+
+```
+$ mbed test -m K64F -t GCC_ARM --icetea --run-list
+Available icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
+    test 'UDPSOCKET_BIND_PORT'
+    test 'TCPSOCKET_BIND_PORT'
+    test 'TCPSERVER_ACCEPT'
+    test 'TCPSOCKET_ECHOTEST_BURST_SHORT'
+```
+
 ### Compiling and running tests
 
 You can specify to only **build** the tests by using the `--compile` option:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --compile
+```
+
+In case of icetea the tests itself is not build but the tests requiring application is build
+
+```
+$ mbed test -m K64F -t GCC_ARM --compile --icetea
 ```
 
 You can specify to only **run** the tests by using the `--run` option:
