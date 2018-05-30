@@ -1,7 +1,5 @@
 ## Sleep
 
-<span class="warnings">**Warning:** We are changing the Sleep HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the Sleep API](#implementing-the-sleep-api) section.
-
 Implement the Sleep HAL API to enable your device to go into a low power state when you are not actively using it.
 
 ### Assumptions
@@ -26,11 +24,7 @@ The core system clock is disabled. You can only enable the low-frequency clocks 
 
 ### Implementing the Sleep API
 
-We are working on the new HAL Sleep API, which will replace the current version in an upcoming release of Mbed OS. You need to implement the Sleep API in both variants. First, you need to implement the current API. You can find it on the master branch:
-
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/sleep__api_8h_source.html)
-
-To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request against the `feature-hal-spec-sleep` branch. You can find the API and specification for the new Sleep API in the following header file:
+You can find the API and specification for the sleep API in the following header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-sleep-doxy/group__hal__sleep.html)
 
