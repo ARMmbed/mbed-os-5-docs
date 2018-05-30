@@ -6,7 +6,7 @@ The I2C interface provides I2C Master functionality. I2C is a two wire serial pr
 
 The I2C protocol supports up to 127 devices per bus, and its default clock frequency is 100KHz.
 
-<span class="notes">**Note:** Remember that you need a pull-up resistor on sda and scl.</br> All drivers on the I2C bus are required to be open collector, and so it is necessary to use pull-up resistors on the two signals. A typical value for the pull-up resistors is around 2.2k ohms, connected between the pin and 3v3. </span>
+<span class="notes">**Note:** Remember that you need a pull-up resistor on sda and scl. All drivers on the I2C bus are required to be open collector, and so it is necessary to use pull-up resistors on the two signals. A typical value for the pull-up resistors is around 2.2k ohms, connected between the pin and 3v3. </span>
 
 ### I2C class reference
 
