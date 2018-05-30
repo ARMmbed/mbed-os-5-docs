@@ -73,7 +73,7 @@ STDOUT emits this captured context in the case of fatal errors. In the case of w
 
 Mbed OS provides three ways to report an error using the error handling implementation:
 
-1. Using the **error()** function to report a fatal error condition - This is the legacy function used for reporting a fatal error. It has been modified to capture the context information, but it does not capture the address of the caller or module information. It also doesn't support reporting specific error codes. Any implementation using this API to report an error uses the error status **MBED_ERROR_UNKNOWN**. We highly encourage all future Mbed OS focused implementations to use `MBED_ERROR()` or `MBED_ERROR1()` or `MBED_WARNING()` `MBED_WARNING()` macros for reporting errors.
+1. Using the **error()** function to report a fatal error condition - This is the legacy function used for reporting a fatal error. It has been modified to capture the context information, but it does not capture the address of the caller or module information. It also doesn't support reporting specific error codes. Any implementation using this API to report an error uses the error status **MBED_ERROR_UNKNOWN**. We highly encourage all future Mbed OS focused implementations to use `MBED_ERROR()`/`MBED_ERROR1()` or `MBED_WARNING()`/`MBED_WARNING1()` macros for reporting errors.
 1. Using **MBED_ERROR()/MBED_ERROR1()** macros to report a fatal error with enhanced capability for capturing the module reporting the error.
 1. Using **MBED_WARNING()/MBED_WARNING1()** macros to report a nonfatal error with enhanced capability for capturing the module reporting the error.
 
@@ -98,11 +98,11 @@ Current Thread: Id: 0x200020e0 Entry: 0xcb31 StackSize: 0x1000 StackMem: 0x20001
 
 Mbed OS provides the necessary functions and macros for implementations to construct error status values. There are a few ways you can construct error status values. 
 
-If you know the module reporting the error you can use the **MBED_MAKE_ERROR()** macro to construct an error status with the module information. For example, if you want to report  an unsupported configuration from the serial driver, you may construct the error status as follows to capture the module information along with a specific error code. The below example constructs an error status value with the error code set to `MBED_ERROR_CODE_CONFIG_UNSUPPORTED` from the serial driver, indicated by module information set to `MBED_MODULE_DRIVER_SERIAL`.
+If you know the module reporting the error you can use the **MBED_MAKE_ERROR()** macro to construct an error status with the module information. For example, if you want to report an unsupported configuration error from the serial driver, you may construct the error status as follows to capture the module information along with a specific error code. The below example constructs an error status value with the error code set to `MBED_ERROR_CODE_CONFIG_UNSUPPORTED` from the serial driver, indicated by module information set to `MBED_MODULE_DRIVER_SERIAL`.
 
 ```mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_DRIVER_SERIAL, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)```
 
-There may be scenarios in which the module might have called an API exported from other modules, such as protocol stacks, but has received an error status in return. In those cases, the module doesn't know which of the lower layers raised the error, but you may still want to report the error without the module information. In those cases, the module can use the predefined error status, such as `MBED_ERROR_CONFIG_UNSUPPORTED`, with the module value already set to `MBED_MODULE_UNKNOWN`.
+There may be scenarios in which the module might have called an API exported from other modules, such as protocol stacks, but has received an error status in return. In those cases, the calling module doesn't know which of the lower layers raised the error, but you may still want to report the error. In those cases, the module can use the predefined error status, such as `MBED_ERROR_CONFIG_UNSUPPORTED`, with the module value already set to `MBED_MODULE_UNKNOWN`.
 
 This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, using predefined values, such as `MBED_ERROR_CONFIG_UNSUPPORTED`, makes it more convenient and easier to read the implementation.
 
@@ -118,7 +118,7 @@ Error handling implementation in Mbed OS also keeps track of previous errors in 
 
 ### Extending error codes
 
-Mbed OS application and system developers may need to define error codes specific to their the applications. However, these error codes may not be applicable to the broader system to be defined as system error codes. In those cases, applications can predefine custom error codes using the **MBED_DEFINE_CUSTOM_ERROR()** macro. This macro specifically defines error status values whole type will be of **Custom Defned Errors** as mentioned above in the [error status types and error code ranges](#error-status-types-and-error-code-ranges) section. If you are defining custom error codes, we advise to capture those definitions in `mbed_error.h` under custom error codes definitions.
+Mbed OS application and system developers may need to define error codes specific to their the applications. However, these error codes may not be applicable to the broader system to be defined as system error codes. In those cases, applications can predefine custom error codes using the **MBED_DEFINE_CUSTOM_ERROR()** macro. **MBED_DEFINE_CUSTOM_ERROR()** macro specifically defines error status values whose type will be of **Custom Defined Errors** as mentioned above in the [error status types and error code ranges](#error-status-types-and-error-code-ranges) section. If you are defining custom error codes, we advise to capture those definitions in `mbed_error.h` under custom error codes definitions.
 
 ### Error hook for applications
 
