@@ -14,7 +14,7 @@ To bring up the network interface of an external Wi-Fi device (for example, the 
 
 1. Instantiate an implementation of the WiFiInterface class.
     1. Initialize the AT command parser.
-1. Call the `connect` function with an SSID and password for the Wi-Fi network.
+1. Call the `connect()` function with an SSID and password for the Wi-Fi network.
     1. Command the Wi-Fi device to connect to network.
 1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/development/reference/network-socket.html).
 
@@ -23,17 +23,36 @@ To bring up the network interface of an Ethernet-like driver (for example, the O
 1. Instantiate an implementation of the WiFiInterface class.
     1. Initialize the Wi-Fi driver for the target.
     1. Initialize network stack (LWIP).
-1. Call the `connect` function with an SSID and password for the Wi-Fi network.
+1. Call the `connect()` function with an SSID and password for the Wi-Fi network.
     1. Connect the Wi-Fi driver to the Wi-Fi network.
     2. Ensure the network stack acquires the IP address and DNS server address.
 1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/development/reference/network-socket.html).
 
 ### Troubleshooting information
 
-Network interface `connect` failure reasons:
+Network interface `connect()` and `set_credential()` might return following errors:
 
-1. Check that the SSID and password are correct.
-1. Check that the IP address configuration service is working.
+| Error code | Possible reason |
+|------------|-----------------|
+| `NSAPI_ERROR_UNSUPPORTED` | Security mode is unsupported. |
+| `NSAPI_ERROR_PARAMETER` | Wrong parameters supplied for the given security mode, for example, no password. |
+| `NSAPI_ERROR_NO_SSID` | The device did not find the given Wi-Fi network. |
+| `NSAPI_ERROR_AUTH_FAILURE` | Wrong password given. |
+| `NSAPI_ERROR_DEVICE_ERROR` | Unknown failure happened in the device. The device may not be capable of reporting more descriptive error codes. |
+
+### Security
+
+For specifying security settings, both `connect()` and `set_credential()` have optional parameter `nsapi_security_t security`, which defines the security mode the device uses. WifiInterface supports the following security modes:
+
+| `nsapi_security_t`        | Security mode |
+|---------------------------|---------------|
+| `NSAPI_SECURITY_NONE`     | Not secure. Require no password or encryption. |
+| `NSAPI_SECURITY_WEP`      | WEP security. Outdated. |
+| `NSAPI_SECURITY_WPA`      | WPA security mode. Obsolete by WPA2; do not use. |
+| `NSAPI_SECURITY_WPA2`     | WPA2 security. Mostly used security mode. |
+| `NSAPI_SECURITY_WPA_WPA2` | Allows either WPA or WPA2 security. |
+
+Please note that settings should match the security mode from the access point. Also, not all drivers support every mode. For most compatible settings, use `NSAPI_SECURITY_WPA_WPA2`, and set the Wi-Fi access point to allow only WPA2 mode.
 
 ### Wi-Fi example
 
