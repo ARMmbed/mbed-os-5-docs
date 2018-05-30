@@ -161,6 +161,8 @@ Each state is time boxed. In most cases, this is sufficient time to move to anot
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request and tags that person accordingly.
 
+Github dismissed reviewers status after any change to the pull request commit history (adding new commit, rebase). Simple changes like documentation edits or rebase on top of latest master should only require rereview by maintainers. Their approval is sufficient considering it was already approved by a team assigned as a reviewer.
+
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
 
 #### The CI (Continuous Integration) testing
