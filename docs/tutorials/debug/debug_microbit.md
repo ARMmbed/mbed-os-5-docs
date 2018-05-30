@@ -141,7 +141,7 @@ This looks like ascii characters. We can confirm this with the `/s` formatter:
     (gdb) x/s $sp
     0x20003fe8:	"Hello world\r\n"
 
-<span class="warnings">**Warning:** Representation is little-endian, which means that the word 0x6c6c6548 represents the sequence [0x48, 0x65, 0x6c, 0x6c] in the memory.</span>
+<span class="notes">**Note:** Representation is little-endian, which means the word `0x6c6c6548` represents the sequence `[0x48, 0x65, 0x6c, 0x6c]` in memory.</span>
 
 Main called printf with the right arguments. Look at the value printf returned:
 
