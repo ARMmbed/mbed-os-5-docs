@@ -143,4 +143,4 @@ To turn the unsafe testing mode on:
 "macros": ["MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES","MBEDTLS_TEST_NULL_ENTROPY", etc.]
 ```
 
-<span class="warnings">The `MBEDTLS_TEST_NULL_ENTROPY` option nullifies any security provided by Mbed TLS! It is there exclusively for testing purposes and should never be used in production. It cannot be stressed enough: a library built with this option does not provide any security whatsoever!</span>
+<span class="warnings">The `MBEDTLS_TEST_NULL_ENTROPY` option nullifies the security Mbed TLS provides. Please use it exclusively for testing purposes and not in production.</span>
