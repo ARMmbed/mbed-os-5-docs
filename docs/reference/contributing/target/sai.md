@@ -61,7 +61,7 @@ A target must also define these elements to allow tests to be run:
 
 #### Notes
 
-Watch out for this common trouble area when implementing this API. You should consider a transceiver supporting asynchronous rx/tx as 2 different peripherals:
+When implementing this API, consider a transceiver supporting asynchronous rx/tx as 2 different peripherals:
 
    - One read-only.
    - One write-only.
@@ -74,9 +74,9 @@ Hardware SAI/I2S capabilities.
 
 ### Implementing the SAI API
 
-You can find the API and specification for the SAI API in the following header file:
+You can find the API and specification for the SAI API in the following class reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-sai-doxy/classmbed_1_1_s_a_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-sai-doxy/classmbed_1_1_s_a_i.html)
 
 To enable SAI support in Mbed OS, add the `SAI` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -90,4 +90,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sai*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-sai/group__hal__sai__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-sai-doxy/group__hal__sai__tests.html)
