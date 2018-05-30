@@ -163,4 +163,4 @@ To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/latest/
 
 ### Class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_cellular_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_cellular_device.html)
