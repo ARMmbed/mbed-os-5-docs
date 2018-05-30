@@ -2,7 +2,7 @@
 
 This page describes build-time configurable parameters for connectivity in Mbed OS. There are a few categories of configurable connectivity parameters, so we have structured this page between different connectivity methods:
 
-- [LwIP configuration](#generic-lwip-configuration).
+- [LwIP configuration](#lwip-configuration).
 - [LwIP memory optimization](#lwip-memory-optimization).
 - [LwIP Protocol support](#lwip-protocol-support).
 - [Cellular configuration](#cellular-configuration).
