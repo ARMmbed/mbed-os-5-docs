@@ -16,8 +16,6 @@
 
 **Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/development/reference/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
-**Arm Mbed uVisor** - A self-contained [software hypervisor](/docs/development/reference/tls.html#uVisor) that creates independent secure domains on ARM Cortex-M3 and M4 micro-controllers.
-
 ### B
 
 **Bit** - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).

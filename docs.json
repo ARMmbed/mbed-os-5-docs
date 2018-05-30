@@ -496,12 +496,7 @@
                         "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/security/TLS.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/uvisor/blob/master/docs/lib/INTRO.md"
-                            }
-                        ]
+                            }]
                     },
                     {
                         "title": "Storage",

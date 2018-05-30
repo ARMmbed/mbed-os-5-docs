@@ -1,11 +1,11 @@
 ## Security overview
 
-Security on Arm Mbed OS is divided into two parts:
+Security on Arm Mbed OS is covered by the Mbed TLS module:
 
-- [Connection security through Arm Mbed TLS](/docs/development/reference/tls.html).
-- [Device security through Arm Mbed uVisor](/docs/development/reference/uvisor.html).
+[Connection security through Arm Mbed TLS](/docs/development/reference/tls.html).
 
-The sections cover working with these modules in the context of Mbed OS. For generic documentation for both modules, see:
+It covers working with Mbed TLS in the context of Mbed OS. 
 
-- [Mbed TLS full documentation](https://tls.mbed.org/).
-- [Mbed uVisor full documentation](https://docs.mbed.com/docs/uvisor-and-uvisor-lib-documentation/en/latest/).
+For generic documentation, see:
+[Mbed TLS full documentation](https://tls.mbed.org/).
+
