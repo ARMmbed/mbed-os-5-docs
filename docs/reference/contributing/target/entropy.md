@@ -112,7 +112,7 @@ The NV seed entropy source needs to know how to retrieve and store the seed in n
 
 The relevant read/write functions have the following prototypes:
 
-``` C
+``` 
 int (*mbedtls_nv_seed_read)( unsigned char *buf, size_t buf_len );
 int (*mbedtls_nv_seed_write)( unsigned char *buf, size_t buf_len );
 ```
@@ -139,8 +139,9 @@ To turn the unsafe testing mode on:
 
 1. Make sure that the macros `MBEDTLS_HAVEGE_C`, `MBEDTLS_ENTROPY_HARDWARE_ALT`, `MBEDTLS_ENTROPY_NV_SEED` are not defined.
 2. Add `MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES` and `MBEDTLS_TEST_NULL_ENTROPY` to the macros in your `mbed_app.json`.
+
 ```
 "macros": ["MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES","MBEDTLS_TEST_NULL_ENTROPY", etc.]
 ```
 
-<span class="warnings">The `MBEDTLS_TEST_NULL_ENTROPY` option nullifies any security provided by Mbed TLS! It is there exclusively for testing purposes and should never be used in production. It cannot be stressed enough: a library built with this option does not provide any security whatsoever!</span>
+<span class="warnings">The `MBEDTLS_TEST_NULL_ENTROPY` option nullifies the security Mbed TLS provides. Please use this exclusively for testing purposes and not in production.</span>

@@ -4,7 +4,7 @@
 
 This document describes how to port and test an Ethernet MAC (EMAC) driver to Mbed OS. This code is currently on a feature branch.
 
-<span class="warnings">**Warning:** This page documents code that exists on a feature branch of Mbed OS.
+<span class="warnings">**Warning:** This page documents code that exists on a feature branch of Mbed OS.</span>
 
 The scope of this document is limited to Ethernet (IEEE 802.3) or Ethernet-like devices, such as Wi-Fi (IEEE 802.11), where the device presents a MAC interface to send and receive frames, and one of the onboard network stacks that runs on Mbed OS on the host processor uses this.
 
