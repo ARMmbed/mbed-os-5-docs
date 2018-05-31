@@ -7,17 +7,8 @@ The storage APIs present in Arm Mbed OS are:
 
 ### Declaring a file system
 
-The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html  TODO replace with link to the FileSystem API reference) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
+The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
 
-<!-- TODO move this to retarget documentation
-#### Open
-
-The `open` function creates a connection between a file and a file descriptor. Using a string path argument, you can open a file with a set of option flags. Other functions in Mbed OS can use the file descriptor to track the current position in a file, read and write content and so on.
-
-#### Fopen
-
-The `fopen` function is similar to the open function above but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. However, it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
--->
 
 #### File systems
 
@@ -77,13 +68,6 @@ The primary feature of the FAT file system is its portability. With support acro
 
 The Mbed OS FAT file system is built on the ChanFS project. It is optimized for embedded systems and is one of the smallest FAT file system implementations.
 
-<!-- TODO move me
-#### Partitioning
-
-Partitioning allows you to split a block device among multiple storage users such that the split is portable across multiple systems. Partitioning also allows you to have multiple file systems that you can mount on one disk from both Mbed OS devices and host computers. The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
-
-<span class="notes">**Note:** File system partitioning is not required if only one file system is present.</span>
--->
 #### C++ classes
 
 The FileSystem class provides the core user C++ API. Mbed OS provides [File](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.html) and [Dir](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_dir.html) classes that represent files and directories in a C++ API.
