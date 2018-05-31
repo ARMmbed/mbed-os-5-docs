@@ -31,6 +31,8 @@ An example of the configuration file:
     }
 ```
 
+<span class="notes">**Note:** The configuration files for 6LoWPAN and Thread are provided for development or testing purposes. When setting up the production configuration, the user needs to have a good understanding of the whole system.</span>
+
 #### Build time configuration of the stack
 
 To minimize the size of the produced network stack, Nanostack defines a set of build options.
