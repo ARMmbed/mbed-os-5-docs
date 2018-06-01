@@ -1,12 +1,12 @@
 ## GattClient
 
-Define procedures required for interacting with a distant GATT server.
+GattClient defines procedures required for interacting with a remote GattServer.
 
 #### Discovery procedures
 
-A GATT server hosts a fixed set of services. These services are a logical composition of characteristics that may be discovered, read, written or also broadcast their state to a connected client. These characteristics may also contain metainformation named characteristic descriptors. A characteristic descriptor may be used to indicate the unit used for a characteristic value, describe in a textual form the characteristic purpose or allow a client to register for notification of updates of the characteristic value.
+A GattServer hosts a fixed set of services. These services are a logical composition of characteristics that may be discovered, read, written or also broadcast their state to a connected client. These characteristics may also contain metainformation named characteristic descriptors. A characteristic descriptor may be used to indicate the unit used for a characteristic value, describe in a textual form the characteristic purpose or allow a client to register for notification of updates of the characteristic value.
 
-Prior to any interaction with server characteristic, a GATT client discovers the layout of the services and characteristics present on the server.
+Prior to any interaction with server characteristic, a GattClient discovers the layout of the services and characteristics present on the server.
 
 The layout of the descriptors of a characteristic may also be issued to as an extra discovery step.
 
