@@ -18,13 +18,13 @@ Responsibilities:
 
 The current maintainers are:
 
-* [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
-* [Martin Kojtal](https://os.mbed.com/users/Kojto).
-* [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
-* [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
-* [Sam Grove](https://os.mbed.com/users/sam_grove).
-* [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
-* [Kevin Bracey](https://os.mbed.com/users/kjbracey).
+- [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
+- [Martin Kojtal](https://os.mbed.com/users/Kojto).
+- [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
+- [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
+- [Sam Grove](https://os.mbed.com/users/sam_grove).
+- [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+- [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 ### Contributions
 
@@ -161,7 +161,7 @@ Each state is time boxed. In most cases, this is sufficient time to move to anot
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request and tags that person accordingly.
 
-Github dismisses a reviewer's status after any change to the pull request commit history (adding new commit, rebase). Simple changes like documentation edits or rebase on top of latest master should only require rereview by maintainers. Their approval is sufficient, considering it was already approved by a team assigned as a reviewer.
+Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additonal review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
 
