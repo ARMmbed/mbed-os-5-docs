@@ -18,13 +18,13 @@ Responsibilities:
 
 The current maintainers are:
 
-* [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
-* [Martin Kojtal](https://os.mbed.com/users/Kojto).
-* [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
-* [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
-* [Sam Grove](https://os.mbed.com/users/sam_grove).
-* [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
-* [Kevin Bracey](https://os.mbed.com/users/kjbracey).
+- [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
+- [Martin Kojtal](https://os.mbed.com/users/Kojto).
+- [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
+- [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
+- [Sam Grove](https://os.mbed.com/users/sam_grove).
+- [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+- [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 ### Contributions
 
@@ -48,7 +48,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - You should always write commits to allow publication, so they can never contain confidential information, reference private documents, links to intranet locations or rude language.
 - Each commit should be the minimum self-contained commit for a change. A commit should always result in a new state that is again in a compilable state. You should (if possible) split large changes into logical smaller commits that help reviewers follow the reasoning behind the full change.
 - Commits and pull request titles should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit#seven-rules):
-	1. Separate subject from body with a blank line.
+	1. Separate the subject from the body with a blank line.
 	1. Limit the subject line to 72 characters (note that this is a deviation from Beam's standard).
 	1. Capitalize the subject line.
 	1. Do not end the subject line with a period.
@@ -57,8 +57,9 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 	1. Use the body to explain _what_ and _why_ vs _how_.
 - Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 - Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
-- All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and testing pull requests.
+- All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and test pull requests.
 - Avoid merging commmits. (Always rebase when possible.)
+- Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
 
 #### Release versioning
@@ -96,7 +97,7 @@ Release: patch
 
 #### Refactor
 
-Refactors are intended for feature releases if they are not fixing specific issues because they can introduce new issues.
+Refactors are intended for feature releases, if they are not fixing specific issues, because they can introduce new issues.
 
 Release: feature
 
@@ -108,7 +109,7 @@ Release: patch
 
 #### Feature
 
-New features target feature releases. A new feature can be integrated only if the feature supports most of the targets (if it requires new target HAL implementation).
+New features target feature releases. A new feature can only be integrated if the feature supports most of the targets (if it requires new target HAL implementation).
 
 We consider adding a new functionality to be a feature. It does not matter if it is C++, C or Python.
 
@@ -160,23 +161,25 @@ Each state is time boxed. In most cases, this is sufficient time to move to anot
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request and tags that person accordingly.
 
+Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additonal review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
+
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
 
 #### The CI (Continuous Integration) testing
 
-There are many CI systems available. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CIs tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
+There are many CI systems available. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
 Time: 1 day for CI to complete and report back results.
 
 #### Work needed
 
-A pull request in the work needed state requires additional work due to failed tests or rework as a result of the review. If a pull request is in this state, our maintainers request changes from the pull request author.
+A pull request in the work needed state requires additional work due to failed tests, or rework as a result of the review. If a pull request is in this state, then our maintainers request changes from the pull request author.
 
 Time: 3 days for the pull request author to action the review comments.
 
 #### Releases
 
-When we merge a pull request that we will publish in a patch release, we tag the pull request with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features only go to feature releases.
+When we merge a pull request that we will publish in a patch release, we tag the pull request with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features only go in feature releases.
 
 The release tag has the following format:
 
