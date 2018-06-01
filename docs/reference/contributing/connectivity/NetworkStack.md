@@ -130,6 +130,8 @@ When adding a new connectivity class, you can use `mbed test` to verify your imp
 
 This example ports a driver for the ESP8266 Wi-Fi module to the NSAPI.
 
+<span class="notes">**Note:** Most of the ESP8266 modules do not have all of their pins connected (flow control, reset) and can therefore be unsuitable for production use. Please see a review of the restrictions for [ESP8266-driver](https://github.com/ARMmbed/esp8266-driver#restrictions) for details. Study the WiFi options (there are WiFi drivers for multiple modules) and chooose a solution that is reliable and fully functional. The client software is network stack independent, so changing the WiFi module is easy from the software point of view.</span>
+
 #### Required methods
 
 Because ESP8266 is a Wi-Fi component, choose [`WiFiInterface`](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/WiFiInterface.h) as the `NetworkworkInterface` parent class.
