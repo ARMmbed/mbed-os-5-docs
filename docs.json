@@ -702,9 +702,13 @@
                     },
                     {
                         "title": "Porting storage",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/storage/storage.md"
+                        },
                         "sources": [{
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/storage/storage.md"
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/contributing/storage/BlockDevice.md"
                             }
                         ]
                     },
