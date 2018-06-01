@@ -28,7 +28,7 @@ Block devices are byte addressable but operate in units of "blocks". There are t
 
 The state of an erased block is **undefined**. The data stored on the block isn't decided until you program the block. This allows the widest range of support for different types of storage.
 
-![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eraseblock.png)
+![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_erase_block.png)
 
 ### BlockDevice class reference
 
