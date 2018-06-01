@@ -9,8 +9,11 @@ You can install Mbed CLI on Windows, Linux and Mac OS X.
 - **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
     - We test Mbed CLI with [Python versions 2.7.12+ and 3.6.5+](https://www.python.org/downloads/).
     - pip.
+
+    <span class="notes">**Note:** Python 3 usage is **not compatible** with Mbed OS versions older than 5.9 and Mbed CLI toolchain versions older than 1.7.2. </span>
     
     <span class="notes">**Note:** Mbed CLI toolchain versions older than 1.5.1 are **not compatible** with `pip` version 10.0 (or newer). Please use the latest Mbed CLI with newer version of `pip`.</span>
+
 
 - **Git and Mercurial:** Mbed CLI supports both Git and Mercurial repositories, and you may need libraries from both sources as you work, so please to install both:
     - [Git](https://git-scm.com/) - version 1.9.5 or later.
