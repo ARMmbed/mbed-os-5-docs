@@ -8,7 +8,11 @@ The setup process for Arm Mbed CLI depends on your operating system. Please choo
 
 #### Windows
 
-##### 1. Install Mbed CLI
+Two installation methods are available for Windows. The first is a pre-built installer that is intended to get your system up and running as fast as possible. The second installation method is more flexible, but allowed fore greater customization to better fit your system's needs.
+
+##### Method A: Prebuilt Installer
+
+###### Mbed CLI Installer
 
 Download and run the [Mbed CLI Windows .exe installer](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
 
@@ -16,9 +20,29 @@ You can ensure Mbed CLI installed correctly by running `mbed help` from your com
 
 <span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).</span>
 
+#### Method B: Manual Installation
+
+###### 1. Download and install Python and Pip
+
+Download and install [Python versions 2.7.12+ or 3.6.5+](https://www.python.org/downloads/windows/) for Windows. Both Python versions will come with their own version of pip.
+
+<span class="notes">**Note:** When the installer is launched, check the checkbox that says "Add Python X.Y to PATH", otherwise Windows will not know where to search for the Python executable.</span>
+
+###### 2. Install a compiler
+
+Download and install a compiler.
+
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).</span>
+
+###### 3. Install Mbed CLI
+
+To install Mbed CLI, run `pip install mbed-cli` from your command-line.
+
+You can ensure Mbed CLI installed correctly by running `mbed --version`.
+
 ##### 2. Setup environment
 
-For any installed toolchain, be sure to add the Mbed CLI global configuration:
+After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. An example using the ARM compiler.
 
 ```
 > mbed config -G ARM_PATH <path to ARM bin\>"
