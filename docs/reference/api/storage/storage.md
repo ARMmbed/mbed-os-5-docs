@@ -2,22 +2,15 @@
 
 The storage APIs present in Arm Mbed OS are:
 
-- File system: a common interface for using file systems on block devices.
-- Block device: a common interface for block-based storage devices.
+- [File system:](#declaring-a-file-system) a common interface for using file systems on block devices.
+- [Block device:](#declaring-a-block-device) a common interface for block-based storage devices.
 
 ### Declaring a file system
 
-The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions.
+The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
 
-#### Open
 
-The `open` function creates a connection between a file and a file descriptor. Using a string path argument, you can open a file with a set of option flags. Other functions in Mbed OS can use the file descriptor to track the current position in a file, read and write content and so on.
-
-#### Fopen
-
-The `fopen` function is similar to the open function above but associates a stream with the opened file. This can be helpful when performing mainly sequential read and write operations. However, it is important to flush and close the stream to update the file. This option is weaker when trying to seek through a file often.
-
-#### Types of file systems
+#### File systems
 
 - [**LittleFileSystem**](littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
@@ -32,10 +25,8 @@ The `fopen` function is similar to the open function above but associates a stre
   - **Portable** - Due to its support across operating systems, the FAT file system provides access to storage from both the embedded system and your PC.
 
   - **Embedded** - Built on the ChanFS project, the FAT file system is optimized for embedded systems.
-
-The [BlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.html) class provides the underlying API for representing block-based storage that you can use to back a file system. Mbed OS provides standard interfaces for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage.
-
-Additionally, two utility block devices give you better control over storage allocation. The [SlicingBlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_slicing_block_device.html) allows you to partition storage into smaller block devices that you can use independently, and the [ChainingBlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.html) allows you to chain multiple block devices together and extend the usable amount of storage.
+  
+- **LocalFileSystem** - The LocalFileSystem is a symbiotic file system that connects to the Mbed board's interface chip if the interface chip has built-in storage. The features available on the LocalFileSystem is dependent on the board's interface chip. **Note:** The LocalFileSystem is only available on the LPC1768 and LPC11U24.
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
 
@@ -77,37 +68,19 @@ The primary feature of the FAT file system is its portability. With support acro
 
 The Mbed OS FAT file system is built on the ChanFS project. It is optimized for embedded systems and is one of the smallest FAT file system implementations.
 
-### Partitioning
-
-Partitioning allows you to split a block device among multiple storage users such that the split is portable across multiple systems. Partitioning also allows you to have multiple file systems that you can mount on one disk from both Mbed OS devices and host computers. The primary partitioning scheme that Mbed OS supports is the Master Boot Record (MBR).
-
-<span class="notes">**Note:** File system partitioning is not required if only one file system is present.</span>
-
-### C++ classes
+#### C++ classes
 
 The FileSystem class provides the core user C++ API. Mbed OS provides [File](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.html) and [Dir](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_dir.html) classes that represent files and directories in a C++ API.
 
-### Block device operations
+### Declaring a block device
 
-A block device can perform three operations on a block in a device:
+The [BlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.html) class provides the underlying API for raw storage that you can use to back a file system. The BlockDevice API is a standard block-oriented interface built around three modes of operation: read, erase, and program. However, the rules behind this API is flexible enough to allow support for a large range of different storage types.
 
-- Read a block from storage.
-- Erase a block in storage.
-- Program a block that has previously been erased.
+Mbed OS provides standard implementations for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage. Additionally, Mbed OS contains a handful of utility block devices, such as the [SlicingBlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_slicing_block_device.html) and [ChainingBlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.html), to give you better control over storage allocation. These utility block devices can be stacked to provide relatively complex storage architectures through relatively simple components.
 
-<span class="notes">**Note:** The state of an erased block is undefined. NOR flash devices typically set an erased block to all 0xff, but for some block devices, such as the SD card, erase is a NOOP. If a deterministic value is required after an erase, the consumer of the block device must verify this.</span>
+#### Block devices
 
-### Block sizes
-
-Some storage technologies have different sized blocks for different operations. For example, you can read and program NAND flash in 256-byte pages, but you must erase it in 4-kilobyte sectors.
-
-Block devices indicate their block sizes through the `get_read_size`, `get_program_size` and `get_erase_size` functions. The erase size must be a multiple of the program size, and the program size must be a multiple of the read size. Some devices may even have a read/program size of a single byte.
-
-As a rule of thumb, you can use the erase size for applications that use a single block size (for example, the FAT file system).
-
-### Block devices
-
-Mbed OS has several options for the block device:
+Mbed OS has several block device implementations for common forms of storage:
 
 - **SPIFBlockDevice** - Block device driver for NOR-based SPI flash devices that support SFDP. NOR-based SPI flash supports byte-sized read and writes, with an erase size of about 4kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
@@ -115,9 +88,11 @@ Mbed OS has several options for the block device:
 
 - **SDBlockDevice** - Block device driver for SD cards and eMMC memory chips. SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This makes the storage well-suited for systems that require a about 1GB of memory. Additionally, SD cards are a popular form of portable storage. They are useful if you want to store data that you can access from a PC.
 
-- [**HeapBlockDevice**](https://os.mbed.com/docs/development/reference/heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it fortesting applications when a storage device is not available.
+- [**HeapBlockDevice**](https://os.mbed.com/docs/development/reference/heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it for testing applications when a storage device is not available.
 
-### Utility block devices
+- **FlashIAPBlockDevice** - Block device adapter for the [FlashIAP driver](https://os.mbed.com/docs/v5.8/reference/flash-iap.html), which provides an in application programming (IAP) interface for the MCU's internal flash memory.
+
+#### Utility block devices
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
@@ -134,3 +109,7 @@ Additionally, Mbed OS contains several utility block devices to give you better 
 - **ObservingBlockDevice** - The observing block device grants the user the ability to register a callback on block device operations. You can use this to inspect the state of the block device, log different metrics or perform some other operation.
 
 - **ExhaustibleBlockDevice** - Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
+
+- [**FlashSimBlockDevice**](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/FlashSimBlockDevice.md) - Simulate the behavior of a flash component if the underlying block device doesn't support such behaviour.
+
+- [**BufferedBlockDevice**](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/BufferedBlockDevice.md) - Provides a buffer for the read and program blocks on a block device which reduces the read and program sizes of the underlying block device to 1 B.
