@@ -36,7 +36,7 @@ ARM_PATH=<path to ARM bin\>
 
 ##### 1. Install Python and Pip
 
-Mac OS X 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of Mac OS X, download and install [Python 2.7.12+](https://www.python.org/downloads/mac-osx/).
+Mac OS X 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of Mac OS X, download and install [Python versions 2.7.12+ or 3.6.5+](https://www.python.org/downloads/mac-osx/).
 
 To install Pip, run `sudo easy_install pip` from your command-line.
 
@@ -50,7 +50,7 @@ Download and install a compiler.
 
 To install Mbed CLI, run `pip install mbed-cli` from your command-line.
 
-You can ensure Mbed CLI installed correctly by running `mbed help`.
+You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
 ##### 4. Setup environment
 
@@ -72,12 +72,12 @@ ARM_PATH=<path to ARM bin\>
 
 ##### 1. Install Python and Pip
 
-Download and install [Python 2.7.12+](https://www.python.org/downloads/source/) or run the following from your command-line:
+Download and install [Python versions 2.7.12+ or 3.6.5+](https://www.python.org/downloads/source/) or you can use your distrubution's package manager to instal Python and pip.
+
+As an example, the following can be used in Ubuntu:
 
 ```console
-$ sudo apt-get install python2.7
-$ sudo apt-get install python-pip
-$ sudo apt-get update
+$ sudo apt-get install python2.7 python-pip
 ```
 
 ##### 2. Install a compiler
