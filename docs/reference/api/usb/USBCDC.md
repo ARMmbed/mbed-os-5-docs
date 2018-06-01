@@ -1,9 +1,8 @@
 ## USBCDC
 
-The USBCDC class emulates a basic serial port over USB. You can use this serial port to send or receive data. If you want printf functionality see the [USBSerial](USBSerial.md) class.
+The USBCDC class emulates a basic serial port over USB. You can use this serial port to send or receive data. If you want printf functionality, please see the [USBSerial](USBSerial.html) class.
 
 ### USBCDC class reference
-
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.8/feature-hal-spec-usb-device-doxy/class_u_s_b_serial.html)
 
@@ -28,4 +27,4 @@ int main(void) {
 
 ### Related content
 
-- [USBSerial](USBSerial.md)
+- [USBSerial](USBSerial.md).
