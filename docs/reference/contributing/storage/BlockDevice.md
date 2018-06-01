@@ -1,4 +1,4 @@
-<h2 id="contributing-block-device">Block Devices</h2>
+<h2 id="blockdevice-port">Block Devices</h2>
 
 Block devices are the basic building block of storage solutions in Mbed OS. 
 
