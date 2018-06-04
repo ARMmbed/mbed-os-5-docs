@@ -18,9 +18,9 @@ Mbed BLE abstracts read and write operations to offer a single API that can be u
 
 #### Server Initiated events
 
-A characteristic can notify or indicate a property set, and a client may register to this notification or indication from the characteristic. When the server updates the characteristic value, the server can also forward the new value to the registered clients. The notification/indication mechanism prevents polling from the client, and therefore, minimizes the transactions between a client and a server.
+When a server updates a characteristic value it can forward the new value to any registered clients. Clients may register for these updates on a per characteristic basis. The updates are sent via notifications (no confirmation from client) or indications (client confirms receipt). This mechanism minimises the number of transactions between a client and a server by avoiding polling.
 
-Registration is made by writing the Client Characteristic Configuration Descriptor, which is present in the characteristic if the notify or indicate properties are set. The client discovers that descriptor if it intends to register to server initiated events.
+Clients register for these updates by setting the Client Characteristic Configuration Descriptor (CCCD) value. This is an attribute and the client needs to discover its descriptor. It is present in the characteristic if its notify or indicate properties are set. 
 
 ### GattClient class reference
 
