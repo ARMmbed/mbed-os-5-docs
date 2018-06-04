@@ -21,8 +21,9 @@ The root of trust is generated at the first use of Devicekey if the true random 
 
 ### Key derivation API
 
-`generate_derived_key`: This API generates a new key based on an array of data (salt) the caller provides. The same key is generated for the same salt. You must use a unique salt to get a unique key. The salt can be have any value.
-Generated keys can be 128 or 256 bits in length.
+`generate_derived_key`: This API generates a new key based on an array of data ([salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) the caller provides. A single salt value always generates the same key, so if you need a new key you must use a new salt value. The salt can be have any value - array, string etc. 
+
+The generated keys can be 128 or 256 bits in length.
 
 #### Root of Trust Injection API
 
