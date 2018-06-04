@@ -7,7 +7,7 @@ You can install Mbed CLI on Windows, Linux and Mac OS X.
 ## Requirements
 
 - **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
-    - We test Mbed CLI with [Python versions 2.7.12+ and 3.6.5+](https://www.python.org/downloads/).
+    - We test Mbed CLI with [Python versions 2.7.11+ and 3.6.5+](https://www.python.org/downloads/).
     - pip.
 
     <span class="notes">**Note:** Python 3 usage is **not compatible** with Mbed OS versions older than 5.9 and Mbed CLI toolchain versions older than 1.7.2. </span>
