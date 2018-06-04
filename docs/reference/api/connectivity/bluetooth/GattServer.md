@@ -1,6 +1,6 @@
 ## GattServer
 
-A GattServer is a collection of GattServices; these services contain characteristics that a peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
+A GattServer is a collection of GattServices. These services contain characteristics that a peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
 
 #### Server Layout
 
@@ -10,9 +10,9 @@ There are no defined primitives that remove a single service; however, a call to
 
 #### Characteristic and attributes access
 
-Values of the characteristic and the characteristic descriptor present in the GattServer must be accessed through the handle assigned to them when the service has been registered; the GattServer class offers several flavours of `read()` and `write()` functions that retrieve or mutate an attribute value.
+Values of the characteristic and the characteristic descriptor present in the GattServer must be accessed through the handle assigned to them when the service has been registered. The GattServer class offers several flavours of `read()` and `write()` functions that retrieve or mutate an attribute value.
 
-Application code can query if a client has subscribed to a given characteristic's value update by invoking the function `areUpdatesEnabled()`.
+If a client has subscribed to a given characteristic's value update, then the application code can query by invoking the function `areUpdatesEnabled()`.
 
 #### Events
 
@@ -20,8 +20,8 @@ The GattServer allows application code to register several event handlers that c
 - `onDataSent`: Register an event handler that is called when a characteristic value update has been sent to a client.
 - `onDataWriten`: Register an event handler that is called when a client has written an attribute of the server.
 - `onDataRead`: Register an event handler that is called when a client has read an attribute of the server.
-- `onUpdatesEnabled`: Register an event handler that is called when a client subscribes to updates of a characteristic.
-- `onUpdatesDisabled`: Register an event handler that is called when a client unsubscribes from updates of a characteristic.
+- `onUpdatesEnabled`: Register an event handler that is called when a client subscribes to updates for a characteristic.
+- `onUpdatesDisabled`: Register an event handler that is called when a client unsubscribes from updates for a characteristic.
 - `onConfimationReceived`: Register an event handler that is called when a client acknowledges a characteristic value notification.
 
 The term characteristic value update is used to represent Characteristic Value Notification and Characteristic Value Indication when the nature of the server initiated is not relevant.
