@@ -66,7 +66,7 @@ Name: littlefs.enable_warn
 
 ### NVStore configuration
 
-NVStore does not need much configuration. It relies only on the regions of internal flash specified in the `area_*_address` and `area_*_size` for the two areas. Additionally, you cna use `max_keys` to manage the amount of RAM NVStore keys needs. Note that `max_keys` defaults to the number of keys Mbed OS needs. You only need to be modify it if an application uses NVStore directly.
+NVStore does not need much configuration. It relies only on the regions of internal flash specified in the `area_*_address` and `area_*_size` for the two areas. Additionally, you can use `max_keys` to manage the amount of RAM NVStore keys needs. Note that `max_keys` defaults to the number of keys Mbed OS needs. You only need to modify it if an application uses NVStore directly.
 
 ```
 Configuration parameters
