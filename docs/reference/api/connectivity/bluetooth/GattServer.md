@@ -4,7 +4,7 @@ A GattServer is a collection of GattServices; these services contain characteris
 
 #### Server Layout
 
-Application code can add a GattService object to the server with the help of the function `addService()`. That function registers all the GattCharacteristic enclosed in the service, as well as all the characteristics descriptors (see GattAttribute) these characteristics contain. Service registration assigns a unique handle to the various attributes being part of the service; this handle should be used for subsequent read or write of these components.
+Application code can add a GattService object to the server with the help of the function `addService()`. That function registers all the GattCharacteristics enclosed in the service, as well as all the characteristic descriptors (see GattAttribute) that these characteristics contain. Service registration assigns a unique handle to the various attributes that are part of the service, and this handle should be used to subsequently read or write these components.
 
 There are no primitives defined to remove a single service; however, a call to the function `reset()` removes all services previously registered in the GattServer.
 
