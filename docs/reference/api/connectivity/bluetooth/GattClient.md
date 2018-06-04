@@ -14,7 +14,7 @@ The layout of the descriptors of a characteristic may also be issued as an extra
 
 As a result of the discovery process, the client can start interacting with the characteristic discovered. Depending on the characteristic properties (acquired during discovery), a client can read or write the value of a given characteristic.
 
-Mbed BLE abstracts most read and write operations to offer a single API that can be used to read or write characteristics values. Application code does not have to handle the fragmentation/reassembly process necessary if the attribute value to transported cannot fit in a single data packet.
+Mbed BLE abstracts read and write operations to offer a single API that can be used to read or write characteristic values. The application code does not have to handle the necessary fragmentation/reassembly process if the attribute value to be transported cannot fit in a single data packet.
 
 #### Server Initiated events
 
