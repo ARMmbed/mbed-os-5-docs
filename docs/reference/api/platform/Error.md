@@ -110,9 +110,11 @@ This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, u
 
 ### Error history
 
-Error handling implementation in Mbed OS also keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_ERROR_HIST_SIZE**.
+Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_ERROR_HIST_SIZE**.
 
-`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the history feature by setting `MBED_CONF_ERROR_HIST_SIZE` to 0. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. See the below link to learn more about the APIs related to error history:
+`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the error history feature by defining `MBED_CONF_ERROR_HIST_DISABLED`. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. APIs are provided to retrieve errors or warnings from the **Error history** and the first and last errors. Note that in most cases calling **MBED_ERROR()/MBED_ERROR1()** halts the system, and thus error history APIs retrieves the warnings, unless you are calling these APIs from the error hook(see the [error hook for applications](#error-hook-for-applications) section below) function.
+
+See the below link to learn more about the APIs related to error history:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html) 
 
@@ -193,6 +195,75 @@ mbed_error_status_t configure(int config_value) {
     //configure whatever
 
     return MBED_SUCCESS;
+}
+```
+
+#### Using `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
+
+The code below uses `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
+using `MBED_WARNING()/MBED_ERROR()` calls.
+
+```C
+void get_first_error_info() {
+    mbed_error_status_t first_error_status = mbed_get_first_error();
+    printf("\nFirst error code = %d", MBED_GET_ERROR_CODE(first_error_status))
+
+    //Now retrieve more information associated with this error
+    mbed_error_ctx first_error_ctx;
+    mbed_error_status_t first_error = mbed_get_first_error(&first_error_ctx);
+}
+```
+
+#### Using `mbed_get_last_error()` and `mbed_get_first_last_info()` functions to retrieve the last error or last warning logged in the system
+
+The functions `mbed_get_last_error()` and `mbed_get_first_last_info()` are used to retrieve the last error or last warning logged in the system
+using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are very similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls,
+except that they retrieve the last error or last warning in this case.
+
+```C
+void get_last_error_info() {
+    mbed_error_status_t last_error_status = mbed_get_last_error();
+    printf("\nLast error code = %d", MBED_GET_ERROR_CODE(last_error_status))
+
+    //Now retrieve more information associated with this error
+    mbed_error_ctx last_error_ctx;
+    mbed_error_status_t last_error = mbed_get_last_error(&last_error_ctx);
+}
+```
+
+#### Using `mbed_get_error_hist_info()` and `mbed_get_error_hist_count()` to retrieve the error or warning information from the error history
+
+The function `mbed_get_error_hist_info()` can be used to retrieve the error or warning information from the error history(see the [error history](#error-history). 
+
+```C
+void get_error_info_from_hist() {
+    //Retrieve error information from error history
+    mbed_error_ctx hist_error_ctx;
+
+    int num_entries_in_hist = mbed_get_error_hist_count();
+    for(int i=0; i<num_entries_in_hist; i++) {
+        //Reads the error context information for a specific error from error history, specified by an index(first arg to mbed_get_error_hist_info).
+        //index of the error context entry in the history to be retrieved.
+        //The number of entries in the error history is configured during build and the max index depends on max depth of error history.
+        //index = 0 points to the oldest entry in the history, and index = (max history depth - 1) points to the latest entry in the error history.
+        mbed_get_error_hist_info( i, &hist_error_ctx );
+        printf("\nError code[%d] = %d", i, MBED_GET_ERROR_CODE(last_error_status))
+    }
+}
+```
+
+#### Using `mbed_clear_all_errors()` to clear the error history
+
+You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the error history(see the [error history](#error-history)). 
+This can be used if you have already backed up all the currently logged errors(For example, to filesystem or cloud) and want to capture new errors.
+
+```C
+void save_all_errors() {
+    //Save the errors first
+    save_all_errors();
+
+    //We have sent all the current errors to Mbed Cloud. So clear the history so that you can capture next set of warnings or errors.
+    mbed_clear_all_errors();
 }
 ```
 
