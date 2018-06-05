@@ -10,6 +10,21 @@ The file system API provides a common interface for implementing a file system o
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-fat-filesystem)](https://github.com/ARMmbed/mbed-os-example-fat-filesystem/blob/master/main.cpp)
 
+### Sector requirements
+
+**LittleFS requirements:**
+
+- 4 blocks root dir
+- 2 blocks per dir
+- 1 block per file
+
+**FATFS requirements:**
+
+- Hard minimum: 256 blocks
+- 128 blocks for FAT table
+- 1 block per dir
+- 1 block per file
+
 ### Related content
 
 - [Storage configuration](configuration-storage.html).
