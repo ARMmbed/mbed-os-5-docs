@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
 
-With a file system, the File class provides access to the underlying storage in a generic manner that is abstracted by the file system from any technical limitations of the underlying storage. On the storage, each file is a blob of data referenced by a file name represented as a string. By providing a file name to the `open` function in the File class, you can access the blob of data stored on disk.
+The File class provides access to the underlying storage of a file system in a generic manner. This acts as a buffer between the file system and any technical limitations of the physical storage medium. On the storage, each file is a blob of data referenced by a file name represented as a string. By providing a file name to the `open` function in the File class, you can access the blob of data stored on disk.
 
 The File API allows operations on stored data without ever needing to buffer the data in RAM. Because flash is several orders of magnitude cheaper than RAM, this can significantly increase the amount of data a device can store without significantly increasing the device's cost.
 
