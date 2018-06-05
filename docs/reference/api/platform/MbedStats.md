@@ -31,16 +31,16 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ### Thread statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/thread_statistics/)](https://os.mbed.com/teams/mbed_example/code/thread_statistics/file/63f7f57a13d4/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-thread-statistics/)](http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-thread-statistics/file/25c062a4a1e6/main.cpp)
 
 ### System information example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/system_information/)](https://os.mbed.com/teams/mbed_example/code/system_information/file/2797249d3c9d/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sys-info/)](http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sys-info/file/db1600a88ae1/main.cpp)
 
 ### CPU statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/cpu_stats/)](https://os.mbed.com/teams/mbed_example/code/cpu_stats/file/083dc6f999a5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-stats/)](http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-stats/file/3114f82feb68/main.cpp)
 
 ### CPU usage example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/cpu_usage_calculation/)](https://os.mbed.com/teams/mbed_example/code/cpu_usage_calculation/file/7acd9af931f6/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/)](http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/file/f21ba16b103f/main.cpp)
