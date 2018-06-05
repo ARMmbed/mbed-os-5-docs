@@ -112,7 +112,7 @@ This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, u
 
 Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_ERROR_HIST_SIZE**.
 
-`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the error history feature by defining `MBED_CONF_ERROR_HIST_DISABLED`. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. APIs are provided to retrieve errors or warnings from the **Error history** and the first and last errors. Note that in most cases calling **MBED_ERROR()/MBED_ERROR1()** halts the system, and thus error history APIs retrieves the warnings, unless you are calling these APIs from the error hook(see the [error hook for applications](#error-hook-for-applications) section below) function.
+`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the error history feature by defining `MBED_CONF_ERROR_HIST_DISABLED`. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the error hook (see the [error hook for applications](#error-hook-for-applications) section below) function.
 
 See the below link to learn more about the APIs related to error history:
 
@@ -200,8 +200,7 @@ mbed_error_status_t configure(int config_value) {
 
 #### Using `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
 
-The code below uses `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
-using `MBED_WARNING()/MBED_ERROR()` calls.
+The code below uses the `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls.
 
 ```C
 void get_first_error_info() {
@@ -216,9 +215,7 @@ void get_first_error_info() {
 
 #### Using `mbed_get_last_error()` and `mbed_get_last_error_info()` functions to retrieve the last error or last warning logged in the system
 
-The functions `mbed_get_last_error()` and `mbed_get_last_error_info()` are used to retrieve the last error or last warning logged in the system
-using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are very similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls,
-except that they retrieve the last error or last warning in this case.
+Use the functions `mbed_get_last_error()` and `mbed_get_last_error_info()` to retrieve the last error or last warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are very similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls, except that they retrieve the last error or last warning in this case.
 
 ```C
 void get_last_error_info() {
@@ -233,7 +230,7 @@ void get_last_error_info() {
 
 #### Using `mbed_get_error_hist_info()` and `mbed_get_error_hist_count()` to retrieve the error or warning information from the error history
 
-The function `mbed_get_error_hist_info()` can be used to retrieve the error or warning information from the error history(see the [error history](#error-history). 
+You can use the function `mbed_get_error_hist_info()` to retrieve the error or warning information from the error history. (See the [error history](#error-history).) 
 
 ```C
 void get_error_info_from_hist() {
@@ -254,8 +251,7 @@ void get_error_info_from_hist() {
 
 #### Using `mbed_clear_all_errors()` to clear the error history
 
-You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the error history(see the [error history](#error-history)). 
-This can be used if you have already backed up all the currently logged errors(For example, to filesystem or cloud) and want to capture new errors.
+You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the error history. (See the [error history](#error-history).) You can use this if you have already backed up all the currently logged errors (for example, to a file system or cloud) and want to capture new errors.
 
 ```C
 void save_all_errors() {
