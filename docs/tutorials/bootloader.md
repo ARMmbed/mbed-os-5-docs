@@ -51,7 +51,7 @@ Call the bootloader to start the main program:
 mbed_start_application(POST_APPLICATION_ADDR);
 ```
 
-For an example showing how to create a bootloader, see the [`mbed-os-example-bootloader`](https://github.com/armmbed/mbed-os-example-bootloader) repository.
+For an example showing how to create a bootloader, see the [mbed-os-example-bootloader](https://github.com/armmbed/mbed-os-example-bootloader) repository.
 
 #### Creating the main program
 
@@ -92,8 +92,6 @@ It produces the following ROM layout:
 |                   |
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
 ```
-
-For an example showing how to create an application that uses a bootloader, see the [Mbed OS bootloader example](https://github.com/armmbed/mbed-os-example-bootloader-blinky) repository.
 
 #### Adding an application header
 
