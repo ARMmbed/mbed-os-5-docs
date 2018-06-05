@@ -2,7 +2,7 @@
 
 A GattServer is a collection of GattServices. These services contain characteristics that a peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
 
-#### Server Layout
+#### Server layout
 
 Application code can add a GattService object to the server with the help of the function `addService()`. That function registers all the GattCharacteristics enclosed in the service, as well as all the characteristic descriptors (see GattAttribute) that these characteristics contain. Service registration assigns a unique handle to the various attributes that are part of the service, and this handle should be used to subsequently read or write these components.
 
@@ -17,6 +17,7 @@ If a client has subscribed to a given characteristic's value update, then the ap
 #### Events
 
 The GattServer allows application code to register several event handlers that can be used to monitor client and server activities:
+
 - `onDataSent`: Register an event handler that is called when a characteristic value update has been sent to a client.
 - `onDataWriten`: Register an event handler that is called when a client has written an attribute of the server.
 - `onDataRead`: Register an event handler that is called when a client has read an attribute of the server.
