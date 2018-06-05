@@ -120,6 +120,8 @@
 
 ### R
 
+**RAII** - Resource Acquisition Is Initialization
+
 **REST** - Representational State Transfer (API).
 
 **RTOS** - [Real-Time Operating System](/docs/development/reference/rtos.html).
