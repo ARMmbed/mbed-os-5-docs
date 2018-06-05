@@ -8,11 +8,9 @@ The setup process for Arm Mbed CLI depends on your operating system. Please choo
 
 #### Windows
 
-Two installation methods are available for Windows. The first is a pre-built installer that is intended to get your system up and running as fast as possible. The second installation method is more flexible, but allowed fore greater customization to better fit your system's needs.
+Two installation methods are available for Windows. The first is a prebuilt installer that you can use quickly. The second installation method is more flexible and allows for greater customization to better fit your system's needs.
 
-##### Method A: Prebuilt Installer
-
-###### Mbed CLI Installer
+##### Prebuilt Mbed CLI installer
 
 Download and run the [Mbed CLI Windows .exe installer](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
 
@@ -20,19 +18,19 @@ You can ensure Mbed CLI installed correctly by running `mbed help` from your com
 
 <span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).</span>
 
-#### Method B: Manual Installation
+#### Manual installation
 
 ###### 1. Download and install Python and Pip
 
-Download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/windows/) for Windows. Both Python versions will come with their own version of pip.
+Download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/windows/) for Windows. Both Python versions come with their own version of Pip.
 
-<span class="notes">**Note:** When the installer is launched, check the checkbox that says "Add Python X.Y to PATH", otherwise Windows will not know where to search for the Python executable.</span>
+<span class="notes">**Note:** When the installer launches, check the checkbox that says **Add Python X.Y to PATH**. Otherwise, Windows does not know where to search for the Python executable.</span>
 
 ###### 2. Install a compiler
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/latest/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
 
 ###### 3. Install Mbed CLI
 
@@ -42,7 +40,7 @@ You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
 ##### 2. Setup environment
 
-After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. An example using the ARM compiler.
+After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. Below is an example using the ARM compiler:
 
 ```
 > mbed config -G ARM_PATH <path to ARM bin\>"
@@ -96,9 +94,9 @@ ARM_PATH=<path to ARM bin\>
 
 ##### 1. Install Python and Pip
 
-Download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/source/) or you can use your distrubution's package manager to instal Python and pip.
+Download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/source/), or use your distrubution's package manager to install Python and Pip.
 
-As an example, the following can be used in Ubuntu:
+As an example, you can use the following in Ubuntu:
 
 ```console
 $ sudo apt-get install python2.7 python-pip
