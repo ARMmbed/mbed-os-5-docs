@@ -120,7 +120,7 @@
 
 ### R
 
-**RAII** - Resource Acquisition Is Initialization
+**RAII** - Resource Acquisition Is Initialization.
 
 **REST** - Representational State Transfer (API).
 
