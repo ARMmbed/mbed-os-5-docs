@@ -46,7 +46,7 @@ Depending on the Layer 3, Network layer, protocol used, there are different ways
 
 ### Network interfaces
 
-Network intefaces are the application level APIs where users choose the driver, connectivity method and IP stack. Each connectivity methods requires different configuration,so these APIs are not interchangeable. The application developer must choose one. Choosing the interface also automatically pulls in the network stack as a dependency.
+Network interfaces are the application level APIs where users choose the driver, connectivity method and IP stack. Each connectivity methods requires different configuration, so these APIs are not interchangeable. The application developer must choose one. Choosing the interface also automatically pulls in the network stack as a dependency.
 
 Please note that the interface API is not the same as the network driver. The interface API is the control interface for the application. The network driver implements the controlling API only if it requires configuration from application. From the application point of view, there is no difference, but the network driver developer needs to be aware of that.
 
