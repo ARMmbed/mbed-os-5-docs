@@ -1,4 +1,4 @@
-<h2 id="error-handling">Arm Mbed OS error status definitions and error handling</h2>
+<h2 id="error-handling">Error status definitions and error handling</h2>
 
 Mbed OS provides error code and error status definitions and error handling APIs for error construction, reporting and retrieving previously reported errors. Mbed OS also provides functions and macros to generate and define new error status values, extract information from error status values and to generate fatal system errors that terminate the application. Any software layer, such as applications, drivers, HAL and protocol stacks, can use these error handling APIs. The error functions also facilitate emitting an error message through STDOUT. `mbed_error.h` declares the error functions that Mbed OS provides.
 
