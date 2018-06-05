@@ -10,7 +10,7 @@ This document should help you start using Greentea. Please see the [`htrun` docu
 
 ### Prerequisites
 
-Greentea requires [Python version 2.7](https://www.python.org/downloads/). It supports the following OSes:
+Greentea requires [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/). It supports the following OSes:
 
 - Windows.
 - Linux (Ubuntu preferred).
