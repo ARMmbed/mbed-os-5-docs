@@ -22,7 +22,7 @@ You can ensure Mbed CLI installed correctly by running `mbed help` from your com
 
 ###### 1. Download and install Python and Pip
 
-Download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/windows/) for Windows. Both Python versions come with their own version of Pip.
+Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/windows/) or later for Windows. Both Python versions come with their own version of Pip.
 
 <span class="notes">**Note:** When the installer launches, check the checkbox that says **Add Python X.Y to PATH**. Otherwise, Windows does not know where to search for the Python executable.</span>
 
@@ -58,7 +58,7 @@ ARM_PATH=<path to ARM bin\>
 
 ##### 1. Install Python and Pip
 
-Mac OS X 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of Mac OS X, download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/mac-osx/).
+Mac OS X 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of Mac OS X, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
 
 To install Pip, run `sudo easy_install pip` from your command-line.
 
@@ -94,7 +94,7 @@ ARM_PATH=<path to ARM bin\>
 
 ##### 1. Install Python and Pip
 
-Download and install [Python versions 2.7.11+ or 3.6.5+](https://www.python.org/downloads/source/), or use your distrubution's package manager to install Python and Pip.
+Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/source/) or later, or use your distrubution's package manager to install Python and Pip.
 
 As an example, you can use the following in Ubuntu:
 
