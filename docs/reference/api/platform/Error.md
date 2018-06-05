@@ -210,13 +210,13 @@ void get_first_error_info() {
 
     //Now retrieve more information associated with this error
     mbed_error_ctx first_error_ctx;
-    mbed_error_status_t first_error = mbed_get_first_error(&first_error_ctx);
+    mbed_error_status_t first_error = mbed_get_first_error_info(&first_error_ctx);
 }
 ```
 
-#### Using `mbed_get_last_error()` and `mbed_get_first_last_info()` functions to retrieve the last error or last warning logged in the system
+#### Using `mbed_get_last_error()` and `mbed_get_last_error_info()` functions to retrieve the last error or last warning logged in the system
 
-The functions `mbed_get_last_error()` and `mbed_get_first_last_info()` are used to retrieve the last error or last warning logged in the system
+The functions `mbed_get_last_error()` and `mbed_get_last_error_info()` are used to retrieve the last error or last warning logged in the system
 using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are very similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls,
 except that they retrieve the last error or last warning in this case.
 
@@ -227,7 +227,7 @@ void get_last_error_info() {
 
     //Now retrieve more information associated with this error
     mbed_error_ctx last_error_ctx;
-    mbed_error_status_t last_error = mbed_get_last_error(&last_error_ctx);
+    mbed_error_status_t last_error = mbed_get_last_error_info(&last_error_ctx);
 }
 ```
 
