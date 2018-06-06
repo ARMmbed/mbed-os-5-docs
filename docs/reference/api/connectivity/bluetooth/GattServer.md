@@ -25,7 +25,7 @@ The GattServer allows application code to register several event handlers that c
 - `onUpdatesDisabled`: Register an event handler that is called when a client unsubscribes from updates for a characteristic.
 - `onConfimationReceived`: Register an event handler that is called when a client acknowledges a characteristic value notification.
 
-The term characteristic value update is used to represent Characteristic Value Notification and Characteristic Value Indication when the nature of the server initiated is not relevant.
+The term characteristic value update represents Characteristic Value Notification and Characteristic Value Indication when the nature of the server initiated is not relevant.
 
 ### GattServer class reference
 
