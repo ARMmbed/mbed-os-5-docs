@@ -16,14 +16,14 @@ You can query the server by invoking the function `areUpdatesEnabled()` to find 
 
 #### Events
 
-You can register several event handlers with the GattServer that will be used to notify you of client (remote application connected to the server) and server activities:
+You can register several event handlers with the GattServer that it will call to notify you of client (remote application connected to the server) and server activities:
 
-- `onDataSent`: Register an event handler with the GattServer that will be called by it when it sends a characteristic value update to a client.
-- `onDataWriten`: Register an event handler with the GattServer that will be called by it when a client has written an attribute of the server.
-- `onDataRead`: Register an event handler with the GattServer that will be called by it when a client has read an attribute of the server.
-- `onUpdatesEnabled`: Register an event handler with the GattServer that will be called by it when a client subscribes to updates for a characteristic.
-- `onUpdatesDisabled`: Register an event handler with the GattServer that will be called by it when a client unsubscribes from updates for a characteristic.
-- `onConfimationReceived`: Register an event handler with the GattServer that will be called by it when a client acknowledges a characteristic value notification.
+- `onDataSent`: Register an event handler with the GattServer that it will call to notify you when it sends a characteristic value update to a client.
+- `onDataWriten`: Register an event handler with the GattServer that it will call to notify you when a client has written an attribute of the server.
+- `onDataRead`: Register an event handler with the GattServer that it will call to notify you when a client has read an attribute of the server.
+- `onUpdatesEnabled`: Register an event handler with the GattServer that it will call to notify you when a client subscribes to updates for a characteristic.
+- `onUpdatesDisabled`: Register an event handler with the GattServer that it will call to notify you when a client unsubscribes from updates for a characteristic.
+- `onConfimationReceived`: Register an event handler with the GattServer that it will call to notify you when a client acknowledges a characteristic value notification.
 
 The term characteristic value update represents Characteristic Value Notification and Characteristic Value Indication when the nature of the server initiated is not relevant.
 
