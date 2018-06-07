@@ -17,7 +17,7 @@ Use the LowPowerTimeout interface to set up an interrupt to call a function afte
 
 Set up a time out to invert an LED after a given time:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/LowPowerTimeout-example/)](https://os.mbed.com/teams/mbed_example/code/LowPowerTimeout-example/file/28699dc8770e/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/LowPowerTimeout-example/)](https://os.mbed.com/teams/mbed_example/code/LowPowerTimeout-example/file/28699dc8770e/main.cpp)
 
 ### Related content
 
