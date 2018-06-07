@@ -12,7 +12,7 @@ The master clock is used to optionally synchronize the device's IO lines. When u
 
 The bit clock fires on each bit of data transmitted across the data lines, and its frequency is determined by the sampling rate, number of bits per channel and number of channels. The sampling rate is highly device-dependent and needs to be configured for each target (typically found in the target's device.h file).
 
-The word clock runs at the frequency as the sample rate. It is used to select which active audio channel is being transmitted.
+The word clock runs at the same frequency as the sample rate. It is used to select which active audio channel is being transmitted.
 
 The SAI constructor requires the above pins as well as direction of data transfer (transmitter or receiver). Optionally the SAITransmitter and SAIReceiver classes can be used requiring only the pins.
 
