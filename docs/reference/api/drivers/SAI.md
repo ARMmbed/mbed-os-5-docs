@@ -25,12 +25,12 @@ Note that for full duplex, two objects will need to be instantiated.
 | bool      | wclk_polarity | true for Active high                                                     |
 | bool      | ws_delay      | true to toggle ws one bit earlier than the frame                         |
 | uint8_t   | ws_length     | ws assertion length from 1bclk to word length                            |
-| uint8_t   | frame_length  | Frame length in word count [1: 32]                                       |
-| uint32_t  | word_mask     | Mask on frame for used word (bitfield)                                   |
-| uint8_t   | word_length   | Word length in bits [1: 32]                                              |
-| uint8_t   | data_length   | Data length within the word. This must less than or equal to word_length |
+| uint8_t   | frame_length  | frame length in word count [1: 32]                                       |
+| uint32_t  | word_mask     | mask on frame for used word (bitfield)                                   |
+| uint8_t   | word_length   | word length in bits [1: 32]                                              |
+| uint8_t   | data_length   | data length within the word. This must be less than or equal to word_length |
 | bool      | lsb_first     | true to send LSB first                                                   |
-| bool      | aligned_left  | true to align Left                                                       |
+| bool      | aligned_left  | true to align left                                                       |
 | uint8_t   | bit_shift     | sample bit shift distance from its alignment point                       |
 
 ### Errors
