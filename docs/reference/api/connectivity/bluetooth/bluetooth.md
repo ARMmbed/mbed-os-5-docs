@@ -28,25 +28,23 @@ BLE is intended for low power, battery-operated devices, so typical applications
 
 ### Sending or storing information
 
-If you want a small and power-efficient device, you probably don't want to store too much locally. Instead, send your information to a server (or even your own computer, if it's set up correctly).
+For a small and power-efficient device, don't want to store much information locally. Instead, send it to a server.
 
-Because of restrictions on energy use in radio operation BLE is a short-range method, so you'll be able to send information over BLE only if your device and your destination are quite close. The range is a few dozen meters. If they're further away, you'll need to use Ethernet (regular cable connection), WiFi or radio.
+Because of restrictions on energy use in radio operation, BLE is a short-range method, so you can send information over BLE only if your device and your destination are a few dozen meters apart or closer. If they're farther, you need to use Ethernet, Wi-Fi or radio.
 
 ### Working with apps or websites
 
-So if you can't store or process too much information with a BLE device, what is it good for?
+Onet way to use BLE is to advertise information to any device in the area without becoming interactive. For example, you could notify every user entering your shop that you'll be open until late this evening. There is no need for any response from the users - it's similar to putting a notice on your door. Users only need a phone app to see these advertisements as notifications. What's key is that this app does not need to be specific to your project - the same notification app can work with any BLE device; there are several [generic apps](http://www.nordicsemi.com/eng/Products/nRFready-Demo-APPS) that can do this.
 
-The simplest way to use BLE is to advertise a small bit of information to any device in the area, without becoming interactive. For example, you could notify every user entering your shop that you'll be open till late this evening. There is no need for any response from the users - it's similar to putting a notice on your door. Users will only need a phone app to see these advertisements as notifications. The key thing is that this app will not need to be specific to your project - the same notification app can work with any BLE device; there are several [generic apps](http://www.nordicsemi.com/eng/Products/nRFready-Demo-APPS) that can do this.
-
-If an advertisement-only solution isn’t enough, you can have a transactional interaction (the fancy way of saying “conversation”) between a client and a device over a BLE connection. This usually requires a custom mobile or web-based app, although some generic apps may be enough to get you off the ground. In addition to handling the data, the app may provide users with an interface through which they can send commands to the BLE device. A very common example is mobile fitness apps that get your heart rate information from a BLE-based heart rate monitor. The heart rate monitor doesn't store or process information - it just gets your heart rate and sends it to the app. The app displays the heart rate and gives you some control of the BLE device.
+If an advertisement-only solution isn’t enough, you can have a transactional interaction (the fancy way of saying “conversation”) between a client and a device over a BLE connection. This usually requires a custom mobile or web-based app, though some generic apps may be enough to start. In addition to handling the data, the app may provide you with an interface through which you can send commands to the BLE device. A common example is mobile fitness apps that get your heart rate information from a BLE-based heart rate monitor. The heart rate monitor doesn't store or process information - it just gets your heart rate and sends it to the app. The app displays the heart rate and gives you some control of the BLE device.
 
 ### The physical web and beacons
 
-Physical Web brings devices to the internet via websites (rather than device-specific applications), by using BLE as a business card that includes a link to the website. Interactions with the device are then performed via the website. Using websites rather than apps means that users don't have to install a new app for every device they want to interact with; the interaction is easier and more immediate.
+Physical Web brings devices to the internet using websites (rather than device-specific applications), by using BLE as a business card that includes a link to the website. Interactions with the device are then performed via the website. Using websites rather than apps means that users don't have to install a new app for every device they want to interact with; the interaction is easier and more immediate.
 
 The method used to provide the link is called a beacon. Beacons can be attached to anything that you might want to provide information about, or that you can provide any sort of interface for.
 
-For example, the beacon can be attached to a vending machine. It will send you to a web interface that gives you control of the machine. It can let you make a large purchase (providing sodas for several people in one transaction) by letting you select several options and pay for them all at once.
+For example, the beacon can be attached to a vending machine. It sends you to a web interface that gives you control of the machine. It can let you make a large purchase (providing sodas for several people in one transaction) by letting you select several options and pay for them all at once.
 
 ### How a BLE device gets internet access
 
