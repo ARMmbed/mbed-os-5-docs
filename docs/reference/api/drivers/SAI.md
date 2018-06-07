@@ -10,7 +10,7 @@ SAI uses a four wire serial protocol consisting of:
 
 The master clock is used to optionally synchronize the device's IO lines. When using SAI to communicate in loopback or with an on-target audio codec, there may be an internally shared master clock and this pin is not required. The `mclk_source` field in the format object that may be optionally passed into the SAI constructor can be set to internal, external or sibling.
 
-The bit clock fires on each bit of data transmitted across the data lines and its frequency is determined by the sampling rate, number of bits per channel, and number of channels. The sample rate is highly device dependent and needs to be configured for each target (typically found in the target's device.h file).
+The bit clock fires on each bit of data transmitted across the data lines, and its frequency is determined by the sampling rate, number of bits per channel and number of channels. The sampling rate is highly device-dependent and needs to be configured for each target (typically found in the target's device.h file).
 
 The word clock runs at the frequency as the sample rate. It is used to select which active audio channel is being transmitted.
 
