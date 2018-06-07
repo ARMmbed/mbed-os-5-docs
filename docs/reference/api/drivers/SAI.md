@@ -21,8 +21,8 @@ Note that for full duplex, two objects will need to be instantiated.
 ### Frame Formats
 | Data Type | Field | Description |
 |-----------|-------|-------------|
-| bool      | bclk_polarity | true for Active high                                                     |
-| bool      | wclk_polarity | true for Active high                                                     |
+| bool      | bclk_polarity | true for active high                                                     |
+| bool      | wclk_polarity | true for active high                                                     |
 | bool      | ws_delay      | true to toggle ws one bit earlier than the frame                         |
 | uint8_t   | ws_length     | ws assertion length from 1bclk to word length                            |
 | uint8_t   | frame_length  | frame length in word count [1: 32]                                       |
