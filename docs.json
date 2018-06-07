@@ -299,6 +299,14 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/LowPowerTimeout.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/LowPowerTimer.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/FlashIAP.md"
                             },
                             {
