@@ -3,8 +3,8 @@
 The Serial Audio Interface (SAI) provides a class to communicate with audio devices. SAI is a broader feature that encompasses audio interfaces such as I2S.
 
 SAI uses a four wire serial protocol consisting of:
-  * Master Clock Pin  (mclk)
-  * Data Pin          (sd)
+  * Master Clock pin  (mclk)
+  * Data pin          (sd)
   * Bit Clock pin     (bclk)
   * Word Clock Pin    (wclk)
 
