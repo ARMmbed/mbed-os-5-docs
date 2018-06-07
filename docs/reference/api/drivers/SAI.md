@@ -38,7 +38,7 @@ Note that for full duplex, two objects will need to be instantiated.
  * `sai_init()` returns `SAI_RESULT_INVALID_PARAM`  if at least one of the given parameters is undefined (NULL)
  * `sai_init()` returns `SAI_RESULT_ALREADY_INITIALIZED` if SAI is already initialized
  * `sai_init()` returns `SAI_RESULT_CONFIG_UNSUPPORTED` if the device can never support this configuration
- * `sai_init()` returns `SAI_RESULT_CONFIG_MISMATCH` if the device is not able to support this configuration at this point time because of other 'live' constraints
+ * `sai_init()` returns `SAI_RESULT_CONFIG_MISMATCH` if the device is not able to support this configuration at this point in time because of other 'live' constraints
  (such as a shared format/clock configuration with a sibling)
  * `sai_free()` does nothing if passed a NULL pointer
  * `sai_free()` de-initialized & un-clock unused part of the device a device/block can be reinitialized via `sai_init()` after being `sai_free()`d.
