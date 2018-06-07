@@ -4,13 +4,13 @@ The term "Ethernet" refers to technologies first introduced in 1980 and standard
 
 Initially, the speed from the standard was 1 Mb/s but later standards increased it to first 10 Mb/s and later 100 Mb/s and 1 Gb/s. The latter two remain the most popular connection speeds today.
 
-Ethernet can use cable length for up to 100 meters. When connected to a switch, Ethernet allows the maximum segment length to span 200 meters.
+Ethernet works with cable lengths of up to 100 meters. When connected to a switch, Ethernet allows the maximum segment length to span 200 meters.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ethernet-segment.png)<span>Ethernet segment</span></span>
 
 ### Ethernet connection speeds
 
-Since introducing the initial standard, IEEE has improved the Ethernet by making it faster and cheaper and has released subsequent standards covering these improvements.
+Since introducing the initial standard, IEEE has improved Ethernet by making it faster and cheaper and has released subsequent standards covering these improvements.
 
 | Speed     | Name       | Standard     | Year | Description |
 |-----------|------------|--------------|------|-------------|
@@ -20,7 +20,7 @@ Since introducing the initial standard, IEEE has improved the Ethernet by making
 | 100 Mb/s  | 100BASE-TX | IEEE 802.3u  | 1995 | Standard called "Fast Ethernet", uses CAT-5 twisted pair cable. |
 | 1000 Mb/s | 1000BASE-T | IEEE 802.3ab | 1999 | Increased the speed to 1 Gb/s by using CAT-5e cable. Together with 100BASE-TX remain the most popular standards today. |
 
-Today, most Ethernet devices are capable of automatically negotiating connection speed 10/100/1000 with the switch they are connected. However, embedded devices rarely support 1 Gb/s connection speed.
+Today, most Ethernet devices are capable of automatically negotiating connection speeds of 10/100/1000 Mbit/s with the switch. However, embedded devices rarely support 1 Gb/s connection speed.
 
 ### Ethernet frames
 
@@ -35,7 +35,7 @@ DST: 48 bit destination MAC address
 SRC: 48 bit source MAC address
 
 Type: Originally this was length field, but later used as specifying the content type of payload. Also known as EtherType.
-    Values higher than 1536 are registered type specifiers. Most commons are 0x0800 for IPv4 and 0x86DD for IPv6.
+    Values higher than 1536 are registered type specifiers. Most common is 0x0800 for IPv4 and 0x86DD for IPv6.
 
 Q-Tag: Optional virtual lan ID.
 
