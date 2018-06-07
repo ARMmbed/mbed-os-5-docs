@@ -16,7 +16,7 @@ The word clock runs at the same frequency as the sample rate. It is used to sele
 
 The SAI constructor requires the above pins as well as direction of data transfer (transmitter or receiver). Optionally the SAITransmitter and SAIReceiver classes can be used requiring only the pins.
 
-Note for full duplex two objects will need to be instantiated.
+Note that for full duplex, two objects will need to be instantiated.
 
 ### Frame Formats
 | Data Type | Field | Description |
