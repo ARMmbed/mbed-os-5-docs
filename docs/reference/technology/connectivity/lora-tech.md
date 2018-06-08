@@ -1,4 +1,4 @@
-<h2 id="lora-tech">Mbed LoRaWAN solution</h2>
+<h2 id="lora-tech">LoRaWAN</h2>
 
 ### LoRaWAN network architecture
  
@@ -217,7 +217,7 @@ At the moment, it's not possible to change a PHY during run time. You must selec
 
 The Arm Mbed LoRaWAN stack is event driven. To reduce complexity of the overall system, it uses the EventQueue, which the application passes to the stack. Both share this event queue. This ensures that the both stack and application run in the same context. 
 
-There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](https://os-doc-builder.test.mbed.com/docs/development/reference/lorawanevents-api.html).
+There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](lorawan.html).
 
 #### Connection procedure
 
@@ -252,7 +252,7 @@ A `TX_TIMEOUT` or a `TX_FALURE` event is generated in case of error in TX data p
 
 For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs. 
 
-There are two types of `receive()` methods in the stack. One is POSIX-like, and you need to tell at what port (instead of a socket ID in Posix format) you wish to receive:
+There are two types of `receive()` methods in the stack. The first is POSIX-like, and you need to tell at what port (instead of a socket ID in Posix format) you wish to receive:
 
 ```C
 
