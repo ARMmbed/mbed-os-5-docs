@@ -94,7 +94,7 @@ ARM_PATH=<path to ARM bin\>
 
 ##### 1. Install Python and Pip
 
-Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/source/) or later, or use your distrubution's package manager to install Python and Pip.
+Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/source/) or later, or use your distribution's package manager to install Python and Pip.
 
 As an example, you can use the following in Ubuntu:
 
