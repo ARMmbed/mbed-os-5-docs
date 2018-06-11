@@ -45,6 +45,16 @@ The following table shows which development boards have been tested. It does not
 | Onsemi NCS36510 <span style='background-color: #5f5;'>(internal RF)</span> | | | |
 | NXP KW24D <span style='background-color: #5f5;'>(internal RF)</span> | | <span style='background-color: #f00;'>Yes **(4)**</span> | |
 
+#### File System
+
+Thread network stack is able to save network configurations settings to file system once:
+ * File system has been enabled as instructed in the [Mbed OS Storage Documentation](https://os.mbed.com/docs/latest/reference/storage.html).
+ * File system root-path is set to Thread network stack by calling function: `ns_file_system_set_root_path(root-path)`. File system root path should be set before starting the Thread stack in order to read possible configuration settings in the first power up.
+ 
+When the file system has been enabled the Thread stack will write network configuration settings to the file system and read them in the following start ups. Size of the Thread configuration settings is few thousand bytes.
+
+Depending of the selected file system the Application may need to format the file system before it is usable.
+
 
 **Notes:**
 
