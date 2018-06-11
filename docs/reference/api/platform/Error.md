@@ -1,6 +1,6 @@
 <h2 id="error-handling">Error status definitions and error handling</h2>
 
-Mbed OS provides error code and error status definitions and error handling APIs for error construction, reporting and retrieving previously reported errors. Mbed OS also provides functions and macros to generate and define new error status values, extract information from error status values and to generate fatal system errors that terminate the application. Any software layer, such as applications, drivers, HAL and protocol stacks, can use these error handling APIs. The error functions also facilitate emitting an error message through STDOUT. `mbed_error.h` declares the error functions that Mbed OS provides.
+Mbed OS provides error code and error status definitions and error handling APIs for error construction, reporting and retrieving previously reported errors. Mbed OS also provides functions and macros to generate and define new error status values, extract information from error status values and to report errors into the system. Any software layer, such as applications, drivers, HAL and protocol stacks, can use these error handling APIs. The error functions also facilitate emitting an error message through STDOUT. `mbed_error.h` declares the error functions that Mbed OS provides.
 
 Conceptually, error handling is a platform service that the Mbed OS platform layer implements. Error handling provides the following:
 
@@ -22,20 +22,24 @@ You can use error status:
 - As system error codes
   - Used to report error conditions to the OS error handling subsystem.
 
-### Error status types and error code ranges
+### Error status types
 
-Mbed OS error status encoding defines three types of error status values. They are as below. Note that type of error status is encoded into the 32-bit signed integer.
+Mbed OS error status encoding defines three types of error status values. Note that type of error status is encoded into the 32-bit signed integer.
 
-- System errors.
-- Posix errors.
-- Custom defined errors.
+- System errors - Mbed-OS defined error codes (see [error code and error status ranges](#error-code-and-error-status-ranges)).
+- Posix errors - See [Posix error codes support](#posix-error-codes-support).
+- Custom defined errors - See [extending error codes](#extending-error-codes).
+
+### Error code and error status ranges
 
 For each error status type, we have defined a range of error codes, which forms the least significant 16-bits of 32-bit error status values. Based on error code definitions below are the error code ranges for each error type:
-- Posix error codes: 1 to 255 (see [Posix Error Codes Support](#posix-error-codes-support) section below).
+
+- Posix error codes: 1 to 255 (Please see the [Posix error codes support](#posix-error-codes-support) section for more details).
 - System error codes: 256 to 4095.
 - Custom error codes: 4096 to 65535. 
 
-Accordingly, the error status ranges for each type are below:
+Accordingly, the error status ranges for each type are:
+
 - Posix error status  - 0xFFFFFFFF to 0xFFFFFF01 - This corresponds to Posix errors represented as negative.
 - System error status - 0x80XX0100 to 0x80XX0FFF - This corresponds to system errors range (all values are negative). Bits 23-16 capture the module type (marked with XX).
 - Custom error status - 0xA0XX1000 to 0xA0XXFFFF - This corresponds to custom errors range (all values are negative). Bits 23-16 capture the module type (marked with XX).
@@ -43,7 +47,7 @@ Accordingly, the error status ranges for each type are below:
 It's important to understand the difference between the terminologies "**Error Code**" and "**Error Status**". "**Error Status**" is the 32-bit signed integer in **NEGATIVE space** that the applications use to report the error, and "**Error Code**" is the least significant 16-bits of 32-bit error status values indicating the error situation, for example, out of memory. All predefined error status definitions start with **MBED_ERROR_**, and all predefined error code definitions start with **MBED_ERROR_CODE_**.
 Note that error codes are always encoded into error status values when reporting or representing errors in the system.
 
-Mbed OS system error status values can also capture the module reporting the error by encoding the module identifier in the error status, depending on the type of error status. We provide the error status values and ranges for information purposes, but no implementation should assume or manipulate the bit fields in the encoding directly. Implementation using Mbed OS error handling and reporting APIs should deal with error status, such as an opaque object, and should use Mbed OS provided macros and functions to manipulate or interpret the error status values.
+Mbed OS system error status values can also capture the module reporting the error by encoding the module identifier in the error status, depending on the type of error status. The module information prints to the terminal as part of the [error report](#error-reporting). We provide the error status values and ranges for information purposes, but no implementation should assume or manipulate the bit fields in the encoding directly. Implementation using Mbed OS error handling and reporting APIs should deal with error status, such as an opaque object, and should use Mbed OS provided macros and functions to manipulate or interpret the error status values.
 
 ### Posix error codes support
 
@@ -67,30 +71,30 @@ The error handling system in Mbed OS automatically captures the thread context f
 - Thread current SP – SP value (PSP or MSP based on what’s active); this information is captured only if the system is built with RTOS support.
 - File name and line number - By default, capturing of file name and line number is disabled. If you need this information to be captured, you need to enable it by using the **MBED_CONF_ERROR_FILENAME_CAPTURE_ENABLED** macro.
 
-STDOUT emits this captured context in the case of fatal errors. In the case of warnings, it is recorded by the system, and you can retrieve it later for system diagnostics, external reporting and debugging purposes.
+STDOUT emits this captured context in the case of fatal errors. In the case of warnings, it is recorded by the system, and you can retrieve it later for system diagnostics, external reporting and debugging purposes. See the [error history](#error-history) section for information on how the error history feature works in Mbed OS. The [error handling API examples](#error-handling-api-examples) also include more information on how to use error retrieval APIs.
 
 ### Error reporting
 
 Mbed OS provides three ways to report an error using the error handling implementation:
 
 1. Using the **error()** function to report a fatal error condition - This is the legacy function used for reporting a fatal error. It has been modified to capture the context information, but it does not capture the address of the caller or module information. It also doesn't support reporting specific error codes. Any implementation using this API to report an error uses the error status **MBED_ERROR_UNKNOWN**. We highly encourage all future Mbed OS focused implementations to use `MBED_ERROR()`/`MBED_ERROR1()` or `MBED_WARNING()`/`MBED_WARNING1()` macros for reporting errors.
-1. Using **MBED_ERROR()/MBED_ERROR1()** macros to report a fatal error with enhanced capability for capturing the module reporting the error.
-1. Using **MBED_WARNING()/MBED_WARNING1()** macros to report a nonfatal error with enhanced capability for capturing the module reporting the error.
+1. Using **MBED_ERROR()/MBED_ERROR1()** macros (see the [error handling API examples](#error-handling-api-examples)) to report a fatal error with enhanced capability for capturing the module reporting the error.
+1. Using **MBED_WARNING()/MBED_WARNING1()** macros (see the [Error handling API examples](#error-handling-api-examples)) to report a nonfatal error with enhanced capability for capturing the module reporting the error.
 
-When you report an error using `MBED_ERROR()` or `MBED_ERROR1()` macros, the error is recorded in the error history (see the [error history](#error-history) section below) with the context. The error information prints to STDOUT, and the application is terminated.
+When you report an error using `MBED_ERROR()` or `MBED_ERROR1()` macros, the error is recorded in the [error history](#error-history) with the context. The error information prints to STDOUT, and the application is terminated.
 
 Note that the error functions output the error message or the file name in debug and develop builds only.
 
-Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default.
+Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default, even for debug and develop builds. You can enable the filename capture by defining `MBED_CONF_ERROR_FILENAME_CAPTURE_ENABLED`.
 
 ```
 ++ MbedOS Error Info ++
-Error Status: 0x80000110 Code: 272 Entity: 0
-Error Message: System type error
-Location: 0xab59
+Error Status: 0x800b0110 Code: 272 Module: 11
+Error Message: I2C driver error
+Location: 0x8006367
 File:main.cpp+222
 Error Value: 0xdeaddead
-Current Thread: Id: 0x200020e0 Entry: 0xcb31 StackSize: 0x1000 StackMem: 0x200010e0 SP: 0x20002020
+Current Thread: Id: 0x20002080 Entry: 0x80082a1 StackSize: 0x1000 StackMem: 0x20001080 SP: 0x20001fd0
 -- MbedOS Error Info --
 ```
 
@@ -112,7 +116,7 @@ This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, u
 
 Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_ERROR_HIST_SIZE**.
 
-`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the error history feature by defining `MBED_CONF_ERROR_HIST_DISABLED`. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the error hook (see the [error hook for applications](#error-hook-for-applications) section below) function.
+`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the error history feature by defining `MBED_CONF_ERROR_HIST_DISABLED`. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. (See [error handling API examples](#error-handling-api-examples) section for API usage examples.) In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the [error hook](#error-hook-for-applications) function.
 
 See the below link to learn more about the APIs related to error history:
 
@@ -148,29 +152,29 @@ void *operator new(std::size_t count) {
 }
 ```
 
-#### Using the `MBED_ERROR()` function with module information
+#### Using the `MBED_ERROR()` macro with module information
 
-The code below uses an `MBED_ERROR` function to print a fatal error indicating an out-of-memory condition with the module name specified as `MODULE_APPLCIATION`.
+The code below uses an `MBED_ERROR` macro to print a fatal error indicating an invalid argument with the module name specified as `MODULE_APPLICATION`:
 
 ```C
 void receive_data(unsigned char *buffer) {
     if (NULL == buffer) {
-        MBED_ERROR1(MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null", 0 );
+        MBED_ERROR( MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null" );
     }
     // read the data into given buffer
     
 }
 ```
 
-#### Using the `MBED_WARNING()` function with module information and return with Mbed error status
+#### Using the `MBED_WARNING()` macro with module information and return with Mbed error status
 
-The code below uses an `MBED_WARNING` function to report a invalid configuration attempt with the module name specified as `MBED_MODULE_PLATFORM`.
+The code below uses an `MBED_WARNING` macro to report a invalid configuration attempt with the module name specified as `MBED_MODULE_PLATFORM`:
 
 ```C
 mbed_error_status_t configure(int config_value) {
     if (config_value > 10) {
         //Log the fact that a invalid configuration attempt was made and return with error code
-        MBED_WARNING1(MBED_MAKE_ERROR(MBED_MODULE_PLATFORM, MBED_ERROR_CODE_UNSUPPORTED), "Invalid config parameter", 0 );
+        MBED_WARNING( MBED_MAKE_ERROR(MBED_MODULE_PLATFORM, MBED_ERROR_CODE_UNSUPPORTED), "Invalid config parameter" );
         return MBED_ERROR_CODE_UNSUPPORTED;
     }
     
@@ -180,9 +184,41 @@ mbed_error_status_t configure(int config_value) {
 }
 ```
 
-#### Using `MBED_WARNING()` function without module information
+#### Using the `MBED_ERROR1()` macro
 
-The code below uses an `MBED_WARNING` function to report a invalid configuration attempt without module name.
+The `MBED_ERROR1` macro is similar to `MBED_ERROR` macro, but it can take an additional context-specific argument. The error handling system also records this value as part of the context capture. The code below uses the `MBED_ERROR1` macro to print a fatal error indicating an out-of-memory condition with a context specific value as the last argument to `MBED_ERROR1` macro:
+
+```C
+void receive_data(unsigned char *buffer) {
+    if (NULL == buffer) {
+        MBED_ERROR1(MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null", 1024/* Size of allocation which failed */ );
+    }
+    // read the data into given buffer
+    
+}
+```
+
+#### Using the `MBED_WARNING1()` macro
+
+The `MBED_WARNING1` macro is similar to the `MBED_WARNING` macro, but it can take an additional context-specific argument. The error handling system also records this value as part of the context capture. The code below uses the `MBED_WARNING1` macro to report a warning with a context specific value as the last argument to `MBED_WARNING1` macro:
+
+```C
+mbed_error_status_t configure(int config_value) {
+    if (config_value > 10) {
+        //Log the fact that a invalid configuration attempt was made and return with error code
+        MBED_WARNING1(MBED_MAKE_ERROR(MBED_MODULE_PLATFORM, MBED_ERROR_CODE_UNSUPPORTED), "Invalid config parameter", config_value /* Invalid config value */ );
+        return MBED_ERROR_CODE_UNSUPPORTED;
+    }
+    
+    //configure whatever
+
+    return MBED_SUCCESS;
+}
+```
+
+#### Using `MBED_WARNING()` macro without module information
+
+The code below uses an `MBED_WARNING` macro to report a invalid configuration attempt without module name:
 
 ```C
 mbed_error_status_t configure(int config_value) {
@@ -200,7 +236,7 @@ mbed_error_status_t configure(int config_value) {
 
 #### Using `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
 
-The code below uses the `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls.
+The code below uses the `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls:
 
 ```C
 void get_first_error_info() {
@@ -215,7 +251,7 @@ void get_first_error_info() {
 
 #### Using `mbed_get_last_error()` and `mbed_get_last_error_info()` functions to retrieve the last error or last warning logged in the system
 
-Use the functions `mbed_get_last_error()` and `mbed_get_last_error_info()` to retrieve the last error or last warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are very similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls, except that they retrieve the last error or last warning in this case.
+Use the functions `mbed_get_last_error()` and `mbed_get_last_error_info()` to retrieve the last error or last warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls, except that they retrieve the last error or last warning in this case:
 
 ```C
 void get_last_error_info() {
@@ -230,7 +266,7 @@ void get_last_error_info() {
 
 #### Using `mbed_get_error_hist_info()` and `mbed_get_error_hist_count()` to retrieve the error or warning information from the error history
 
-You can use the function `mbed_get_error_hist_info()` to retrieve the error or warning information from the error history. (See the [error history](#error-history).) 
+You can use the function `mbed_get_error_hist_info()` to retrieve the error or warning information from the [error history](#error-history):
 
 ```C
 void get_error_info_from_hist() {
@@ -251,7 +287,7 @@ void get_error_info_from_hist() {
 
 #### Using `mbed_clear_all_errors()` to clear the error history
 
-You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the error history. (See the [error history](#error-history).) You can use this if you have already backed up all the currently logged errors (for example, to a file system or cloud) and want to capture new errors.
+You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the [error history](#error-history). You can use this if you have already backed up all the currently logged errors (for example, to a file system or cloud) and want to capture new errors:
 
 ```C
 void save_all_errors() {
