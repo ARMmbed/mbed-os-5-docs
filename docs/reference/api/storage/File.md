@@ -22,5 +22,5 @@ Combining `read`, `write`, and `seek` on a File allows both streaming and random
 
 ### Related content
 
-- [FileSystem](FileSystem.html).
-- [Dir](Dir.html).
+- [FileSystem](filesystem.html).
+- [Dir](dir.html).
