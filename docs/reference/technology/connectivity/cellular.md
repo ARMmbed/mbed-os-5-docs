@@ -12,13 +12,13 @@ Key features of the Mbed OS cellular APIs include:
 
 - Compatible with 3GPP TS 27.007 and 27.005.
 - Implements core functionality for OMA Lightweight M2M Client.
-- Out-of-the-box cellular modem support.
+- Hosted cellular modules on Mbed Enabled boards.
 
 3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over an AT command interface for cellular devices, regardless of the underlying cellular network.
 
 OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
-Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules out of the box. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/development/reference/contributing-connectivity.html#cellularinterface) for more information.
+Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/development/reference/contributing-connectivity.html#cellularinterface) for more information.
 
 ### Quick start
 
@@ -142,12 +142,6 @@ eDRX tells how long the device sleeps in continuous connection. The device needs
 This feature serves devices that need smaller latencies. A connection is kept open all the time, but the modem achieves a sleep state between the reception times. The data connection, if using IPv4, may need periodic keep alive messages to keep the network address translation mapping valid.
 
 An application gives eDRX configuration to the modem which negotiates it with the network. The time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
-
-#### Sleep more, save energy
-
-CellularConnectionFSM simplifies connecting to a cellular network. `CellularConnectionFSM` is a reliable way to connect, but you may want to optimize it further when implementing applications for constrained battery-operated devices. Figure 5 illustrates the `CellularConnectionFSM` operation.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-connect.png)<span>Figure 5. Cellular connection process in general</span></span>
 
 ### Considerations for UDP, TCP and non-IP use
 
