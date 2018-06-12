@@ -47,14 +47,12 @@ The following table shows which development boards have been tested. It does not
 
 #### File System
 
-Thread network stack can save network configurations settings to file system once:
+Thread network stack can write network configuration settings to the file system and read them in the following startup. The size of the Thread configuration settings is few thousand bytes. Network configuration settings can be stored to the file system when:
 
-- You enable the file system as instructed in the [Mbed OS storage documentation](https://os.mbed.com/docs/latest/reference/storage.html).
-- You set the file system root path to the Thread network stack by calling the function `ns_file_system_set_root_path(root-path)`. Set the file system root path before starting the Thread stack to read possible configuration settings in the first power up.
+ 1. You enable the file system as instructed in the [Mbed OS storage documentation](https://os.mbed.com/docs/latest/reference/storage.html).
+ 1. You set the file system root path to the Thread network stack by calling the function `ns_file_system_set_root_path(root-path)`. Do this before starting the Thread stack to read possible configuration settings in the first power up.
 
-When you have enabled the file system, the Thread stack writes network configuration settings to the file system and reads them in the following startups. The size of the Thread configuration settings is a few thousand bytes.
-
-Depending of the selected file system, the application may need to format the file system before you can use it.
+Depending on the selected file system, the application may need to format the file system before you can use it.
 
 **Notes:**
 
