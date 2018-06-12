@@ -25,7 +25,7 @@ The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-a
   - **Portable** - Due to its support across operating systems, the FAT file system provides access to storage from both the embedded system and your PC.
 
   - **Embedded** - Built on the ChanFS project, the FAT file system is optimized for embedded systems.
-  
+
 - **LocalFileSystem** - The LocalFileSystem is a symbiotic file system that connects to the Mbed board's interface chip if the interface chip has built-in storage. The features available on the LocalFileSystem is dependent on the board's interface chip. **Note:** The LocalFileSystem is only available on the LPC1768 and LPC11U24.
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
@@ -110,6 +110,6 @@ Additionally, Mbed OS contains several utility block devices to give you better 
 
 - **ExhaustibleBlockDevice** - Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
 
-- [**FlashSimBlockDevice**](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/FlashSimBlockDevice.md) - Simulate the behavior of a flash component if the underlying block device doesn't support such behaviour.
+- [**FlashSimBlockDevice**](https://github.com/ARMmbed/Handbook/blob/5.9/docs/reference/api/storage/FlashSimBlockDevice.md) - Simulate the behavior of a flash component if the underlying block device doesn't support such behaviour.
 
-- [**BufferedBlockDevice**](https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/storage/BufferedBlockDevice.md) - Provides a buffer for the read and program blocks on a block device which reduces the read and program sizes of the underlying block device to 1 B.
+- [**BufferedBlockDevice**](https://github.com/ARMmbed/Handbook/blob/5.9/docs/reference/api/storage/BufferedBlockDevice.md) - Provides a buffer for the read and program blocks on a block device which reduces the read and program sizes of the underlying block device to 1 B.
