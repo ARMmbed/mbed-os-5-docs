@@ -1,25 +1,25 @@
 <h2 id="lorawan-api">LoRaWANInterface</h2>
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span>LoRaWANInterface class hierarchy</span></span>
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span>LoRaWANInterface class hierarchy</span></span>
 
 LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
 Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.
 
-The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
+The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
 
 ### Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression:
 
-1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/development/reference/eventqueue.html) object:
+1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/v5.9/reference/eventqueue.html) object:
 
 ```cpp
 // construct an event queue
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
-2) A [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/development/reference/loraradio-api.html) object:
+2) A [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/v5.9/reference/loraradio-api.html) object:
 
 ```CPP
 // construct a LoRadio object
@@ -62,7 +62,7 @@ lorawan.connect(connection);
 
 ### LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ### LoRaWAN example
 

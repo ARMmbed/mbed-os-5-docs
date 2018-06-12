@@ -9,26 +9,26 @@ Mbed OS eases MCU management through the use of several scoped locks and several
 The locks, `DeepSleepLock` and `CriticalSectionLock`, use RAII to create a scope within which the appropriate lock is held; These locks acquire operation is their constructor and their release operation is their destructor. This uses core C++ language features, object lifetime and deconstruction on scope exit, to eliminate most resource leaks and reduce program complexity. The `DeepSleepLock` prevents the MCU from deep sleeping while it's alive and the `CriticalSectionLock` prevents preemption while it's alive. As these acquisition of a critical section or a deep sleep lock cannot fail, both of these classes do not raise exceptions.
 
 Mbed OS also provides global APIs for the sleep and preemption global resources. The `PowerManagement` module includes a function to go to sleep now and the `Wait` module include a function to preempt now.
-- [Wait](/docs/development/reference/wait.html): An API that provides simple wait capabilities. These wait capabilities are integrated with the RTOS to schedule another thread if the current thread is blocked. If all threads are blocked, the idle thread will save power by putting the MCU to sleep.
-- [CriticalSectionLock](/docs/development/reference/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
-- [Power management](/docs/development/reference/power-management.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
-- [DeepSleepLock](/docs/development/reference/deepsleeplock.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
+- [Wait](/docs/v5.9/reference/wait.html): An API that provides simple wait capabilities. These wait capabilities are integrated with the RTOS to schedule another thread if the current thread is blocked. If all threads are blocked, the idle thread will save power by putting the MCU to sleep.
+- [CriticalSectionLock](/docs/v5.9/reference/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
+- [Power management](/docs/v5.9/reference/power-management.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
+- [DeepSleepLock](/docs/v5.9/reference/deepsleeplock.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
 
 ### Common data structures
 
 Mbed OS provides the CircularBuffer and ATCmdParser as these are commonly used utilities in embedded systems.
 
-- [CircularBuffer](/docs/development/reference/circularbuffer.html): The class that provides APIs to push and pop data from a buffer in an interrupt safe fashion.
-- [ATCmdParser](/docs/development/reference/atcmdparser.html): An Mbed OS compatible AT command parser and serializer.
+- [CircularBuffer](/docs/v5.9/reference/circularbuffer.html): The class that provides APIs to push and pop data from a buffer in an interrupt safe fashion.
+- [ATCmdParser](/docs/v5.9/reference/atcmdparser.html): An Mbed OS compatible AT command parser and serializer.
 
 ### C++ ergonomics extensions
 
 Mbed OS includes a few convenience classes that are tailored for embedded systems development. These are the `Callback`, `Error` and `NonCopyable` classes.
 
-- [Callback](/docs/development/reference/callback.html): An API that executes the user’s code in its own context. Many other Mbed OS APIs build on the Callback API by taking a callback to execute.
-- [Time](/docs/development/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- [Error](/docs/development/reference/error.html): A functions that generates a fatal runtime error.
-- [NonCopyable](/docs/development/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
+- [Callback](/docs/v5.9/reference/callback.html): An API that executes the user’s code in its own context. Many other Mbed OS APIs build on the Callback API by taking a callback to execute.
+- [Time](/docs/v5.9/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
+- [Error](/docs/v5.9/reference/error.html): A functions that generates a fatal runtime error.
+- [NonCopyable](/docs/v5.9/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
 
 <h4 id="callbacks">Callbacks</h4>
 
@@ -53,7 +53,7 @@ Serial serial(USBTX, USBRX);
  }
 ```
 
-The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/development/reference/platform.html#the-importance-of-state) section.
+The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](/docs/v5.9/reference/platform.html#the-importance-of-state) section.
 
 ##### Why should you use Callbacks?
 

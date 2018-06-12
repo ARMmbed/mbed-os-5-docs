@@ -1,6 +1,6 @@
 <h2 id="mesh-api">6LoWPAN Mesh</h2>
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
 The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/v5.7/tutorials/mesh.html#nanostack) networking stack.
 
@@ -39,7 +39,7 @@ See the example application [mbed-os-example-mesh-minimal](https://github.com/AR
 
 ### Mesh class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_mesh_interface.html)
 
 
 ### Mesh example
@@ -50,4 +50,4 @@ The application below demonstrates a simple light control application, where dev
 
 ### Related content
 
-- [Nanostack](/docs/development/reference/technology.html#nanostack) technology reference material.
+- [Nanostack](/docs/v5.9/reference/technology.html#nanostack) technology reference material.

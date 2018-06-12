@@ -49,7 +49,7 @@ Run the DeviceKey functionality test with the `mbed` command as following:
 
 ### DeviceKey API class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_device_key.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_device_key.html)
 
 ### DeviceKey example
 

@@ -30,7 +30,7 @@ Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/do
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/v5.9/tools/index.html#compiler-versions).</span>
 
 ###### 3. Install Mbed CLI
 

@@ -1,12 +1,12 @@
 ## Wi-Fi
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
 
 The WifiInterface provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
 ### Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ### Usage
 
@@ -16,7 +16,7 @@ To bring up the network interface of an external Wi-Fi device (for example, the 
     1. Initialize the AT command parser.
 1. Call the `connect()` function with an SSID and password for the Wi-Fi network.
     1. Command the Wi-Fi device to connect to network.
-1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/development/reference/network-socket.html).
+1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/v5.9/reference/network-socket.html).
 
 To bring up the network interface of an Ethernet-like driver (for example, the OdinWiFiInterface):
 
@@ -26,7 +26,7 @@ To bring up the network interface of an Ethernet-like driver (for example, the O
 1. Call the `connect()` function with an SSID and password for the Wi-Fi network.
     1. Connect the Wi-Fi driver to the Wi-Fi network.
     2. Ensure the network stack acquires the IP address and DNS server address.
-1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/development/reference/network-socket.html).
+1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/v5.9/reference/network-socket.html).
 
 ### Troubleshooting information
 
@@ -65,4 +65,4 @@ The ESP8266Interface uses AT commands over serial interface to connect to an ext
 ### Related content
 
 - [Wi-Fi components](https://os.mbed.com/components/cat/wifi/).
-- [Network socket](/docs/development/reference/network-socket.html) API overview.
+- [Network socket](/docs/v5.9/reference/network-socket.html) API overview.

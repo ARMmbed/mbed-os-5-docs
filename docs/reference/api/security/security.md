@@ -2,8 +2,8 @@
 
 Security on Arm Mbed OS is divided into two parts:
 
-- [Connection security through Arm Mbed TLS](/docs/development/reference/tls.html).
-- [Device security through Arm Mbed uVisor](/docs/development/reference/uvisor.html).
+- [Connection security through Arm Mbed TLS](/docs/v5.9/reference/tls.html).
+- [Device security through Arm Mbed uVisor](/docs/v5.9/reference/uvisor.html).
 
 <span class="warnings">**Warning**: uVisor is superseded by the Secure Partition Manager (SPM) defined in the ARM Platform Security Architecture (PSA). uVisor is deprecated as of Mbed OS 5.10, and being replaced by a native PSA-compliant implementation of SPM.</span>
 

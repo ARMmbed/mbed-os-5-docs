@@ -1,16 +1,16 @@
 <h2 id="cellular-api">Cellular</h2>
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
 
 The CellularBase provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which has more information.
+Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which has more information.
 
 #### Cellular
 
-The [CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularBase](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html).
+Arm Mbed OS provides a [reference implementation of CellularBase](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html).
 
 ##### Getting started
 
@@ -48,7 +48,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [an easy cellular connection](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
+[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [an easy cellular connection](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
 
 - It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
@@ -56,7 +56,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 ### CellularBase class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_cellular_base.html)
 
 ### Usage
 
@@ -64,7 +64,7 @@ To bring up the network interface:
 
 1. Instantiate an implementation of the CellularBase class.
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
-1. Once connected, you can use Mbed OS [network sockets](/docs/development/reference/network-socket.html) as usual.
+1. Once connected, you can use Mbed OS [network sockets](/docs/v5.9/reference/network-socket.html) as usual.
 
 ### Cellular example: connection establishment
 
@@ -74,4 +74,4 @@ This example establishes connection with the cellular network using Mbed OS Cell
 
 ### Related content
 
-- [Network socket](/docs/development/reference/network-socket.html) API reference overview.
+- [Network socket](/docs/v5.9/reference/network-socket.html) API reference overview.

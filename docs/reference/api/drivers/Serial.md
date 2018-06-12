@@ -1,16 +1,16 @@
 ## Serial
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
 
-The [Serial](/docs/development/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
+The [Serial](/docs/v5.9/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirection channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
 
 ### Serial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](/docs/development/tutorials/windows-serial-driver.html).</span>
+<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](/docs/v5.9/tutorials/windows-serial-driver.html).</span>
 
 Serial channels have a number of configurable parameters:
 
@@ -47,5 +47,5 @@ Attach a function to call during the generation of serial interrupts. This funct
 
 ### Related content
 
-- [Serial](/docs/development/introduction/glossary.html) glossary entry.
-- [Windows serial configuration](/docs/development/tutorials/windows-serial-driver.html).
+- [Serial](/docs/v5.9/introduction/glossary.html) glossary entry.
+- [Windows serial configuration](/docs/v5.9/tutorials/windows-serial-driver.html).
