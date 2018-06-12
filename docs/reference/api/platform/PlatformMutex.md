@@ -6,7 +6,7 @@ The PlarformMutex class provides mutex stub functions in the absence of RTOS. Th
 
 ### PlatformMutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_platform_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_platform_mutex.html)
 
 ### PlatformMutex example
 

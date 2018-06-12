@@ -120,7 +120,7 @@ Error handling implementation in Mbed OS keeps track of previous errors in the s
 
 See the below link to learn more about the APIs related to error history:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__error_8h_source.html) 
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__error_8h_source.html) 
 
 ### Extending error codes
 
@@ -134,7 +134,7 @@ Some applications may want to do custom error handling when an error is reported
 
 The below link provides the documentation for all the APIs that Mbed OS provides for error definitions and handling:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ### Error handling API examples
 
@@ -375,7 +375,7 @@ For each of the above mentioned error codes, a corresponding system error status
 
 See the below Doxygen file for additional information regarding error code definitions:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ### Related content
 

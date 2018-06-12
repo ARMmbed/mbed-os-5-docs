@@ -39,7 +39,7 @@ See the example application [mbed-os-example-mesh-minimal](https://github.com/AR
 
 ### Mesh class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_mesh_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_mesh_interface.html)
 
 
 ### Mesh example

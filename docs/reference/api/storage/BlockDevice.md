@@ -32,7 +32,7 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 
 ### BlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_block_device.html)
 
 ### BlockDevice example
 

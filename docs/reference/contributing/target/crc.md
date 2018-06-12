@@ -29,6 +29,6 @@ The hardware CRC module in the MCU that supports at least one of the following d
 
 You can find the API and specification for the hardware CRC API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/group__hal__crc.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/group__hal__crc.html)
 
 To enable hardware CRC support in Mbed OS, add the `CRC` label in the `device_has` option of the target's section in the `targets.json` file.

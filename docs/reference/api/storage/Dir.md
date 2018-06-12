@@ -10,7 +10,7 @@ The Dir class operates as an iterator or stream similarly to the File class, exc
 
 ### Dir class API
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_dir.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_dir.html)
 
 ### File system example
 

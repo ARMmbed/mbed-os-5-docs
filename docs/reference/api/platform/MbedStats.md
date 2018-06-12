@@ -23,7 +23,7 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ### Mbed statistics function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__stats_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__stats_8h_source.html)
 
 ### Memory statistics example
 
