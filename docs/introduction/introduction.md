@@ -8,14 +8,14 @@ Your application code is written in C and C++. It uses the *application programm
 
 <span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/v5.9/tutorials/windows-serial-driver.html).
 
-The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/v5.9/tutorials/your-first-program.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/v5.9/tutorials/mbed-os-quick-start.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
 
 Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/v5.9/reference/index.html).
 
 ##### Development tools
 
 - Our offline development tool is [Arm Mbed CLI](/docs/v5.9/tools/arm-mbed-cli.html), a command-line tool. This requires having a toolchain installed on your computer.
-- The [Arm Mbed Online Compiler](/docs/v5.9/tools/arm-online-compiler.html) lets you write and build applications using a web browser.
+- The [Arm Mbed Online Compiler](/docs/v5.9/tools/arm-mbed-online-compiler.html) lets you write and build applications using a web browser.
 - If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/v5.9/tools/exporting.html).
 
 ##### Communicating with and monitoring your board
@@ -28,7 +28,7 @@ You can [monitor and control an Mbed board](/docs/v5.9/tutorials/serial-comm.htm
 
 When you've started writing applications using your selected development tool:
 
-- Learn about [collaborative work and version control](/docs/v5.9/tools/collab-online-comp.html).
+- Learn about [collaborative work and version control](/docs/v5.9/tutorials/serial-communication.html).
 - Try one of the [tutorials](/docs/v5.9/tutorials/index.html), which cover concepts such as debugging and memory tracing.
 - Ask questions and give advice on the [forum](https://os.mbed.com/forum/).
 
@@ -36,15 +36,15 @@ When you've started writing applications using your selected development tool:
 
 If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/v5.9/reference/contributing.html).
 
-You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
+You can find past releases and the current release on [our release page](https://os.mbed.com/releases/).
 
 #### Porting to Mbed OS
 
 Our full contributing guide is still being written. For now, we have:
 
-- A guide to [contributing targets](/docs/v5.9/reference/contributing-target.html).
-- Information about the [tools you need to contribute targets](/docs/v5.9/reference/contributing-tools.html).
-- APIs about [storage](/docs/v5.9/reference/contributing-storage.html) and [connectivity](/docs/v5.9/reference/contributing-connectivity.html) in relation to porting.
+- A guide to [porting targets](/docs/v5.9/reference/porting-targets.html).
+- Information about the [tools you need to port targets](/docs/v5.9/reference/tools.html).
+- APIs about [storage](/docs/v5.9/reference/porting-storage.html) and [connectivity](/docs/v5.9/reference/porting-connectivity.html) in relation to porting.
 
 ## How Mbed works
 
@@ -73,7 +73,7 @@ The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use
 
 #### The Arm Mbed interface
 
-You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.9/reference/contributing-tools.html#arm-mbed-hdk) or on the [DAPLink page](/docs/v5.9/tools/daplink.html). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
+You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/v5.9/reference/arm-mbed-hdk.html) or on the [DAPLink page](/docs/v5.9/tools/daplink.html). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
 
 #### Connectivity
 
