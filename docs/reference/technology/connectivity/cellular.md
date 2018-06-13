@@ -157,4 +157,4 @@ Non-IP is a new option for communication over NB-IoT. The device sends messages 
 
 For DTLS and TLS transport security, even if the device maintains its own IP address during power save periods, the address may be changed in the network due to Network Address Translation (NAT). NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates renegotiation of the (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimize the renegotiation. Both device and (D)TLS server must support the used mechanism.
 
-To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/latest/reference/tls.html).
+To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/v5.9/reference/tls.html).

@@ -8,10 +8,10 @@ This guide is divided in sections, and generic Nanostack configurations are firs
 
 For understanding the technologies and APIs, please refer to following sections before this one:
 
-- [Network connectivity in Mbed OS](connectivity-tech.html) technology page.
-- [6LoWPAN Mesh technology](mesh-tech.html) page.
-- [6LoWPAN Mesh class reference](mesh-api.html) user API.
-- [Socket API](network-socket.html).
+- [Network connectivity in Mbed OS](/docs/v5.9/reference/connectivity-tech.html) technology page.
+- [6LoWPAN Mesh technology](/docs/v5.9/reference/mesh-tech.html) page.
+- [6LoWPAN Mesh class reference](/docs/v5.9/reference/mesh-api.html) user API.
+- [Socket API](/docs/v5.9/reference/network-socket.html).
 
 #### Providing the configuration
 
@@ -54,7 +54,7 @@ Option name | Features supported | Estimated binary size of Nanostack
 
 If you want to optimize the flash usage, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case.
 
-See the [6LoWPAN technology overview](mesh-tech.html) for the definition of star and mesh networks. These same principles apply also to the Thread protocol.
+See the [6LoWPAN technology overview](/docs/v5.9/reference/mesh-tech.html) for the definition of star and mesh networks. These same principles apply also to the Thread protocol.
 
 Select the protocol the network is based on:
 
