@@ -62,7 +62,7 @@ lorawan.connect(connection);
 
 ### LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ### LoRaWAN example
 

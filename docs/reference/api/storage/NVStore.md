@@ -12,7 +12,7 @@ Unless specifically configured by the user, NVStore selects the last two flash s
 
 ### NVStore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_n_v_store.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_n_v_store.html)
 
 ### NVStore example
 

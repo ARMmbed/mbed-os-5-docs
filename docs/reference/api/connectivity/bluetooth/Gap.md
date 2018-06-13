@@ -28,7 +28,7 @@ You need to enable privacy by calling `enablePrivacy()` after initializing the S
 
 ### GAP class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_gap.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_gap.html)
 
 ### GAP example
 

@@ -27,7 +27,7 @@ Hardware ResetReason registers.
 
 You can find the API and specification for the ResetReason API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/feature-hal-spec-watchdog-doxy/classmbed_1_1_reset_reason.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-watchdog-doxy/classmbed_1_1_reset_reason.html)
 
 To enable ResetReason support in Mbed OS, add the `RESET_REASON` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -39,4 +39,4 @@ The Mbed OS HAL provides a set of conformance tests for ResetReason. You can use
 mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-reset_reason"
 ```
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/feature-hal-spec-watchdog-doxy/classreset__reason_1_1_reset_reason_test.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-watchdog-doxy/classreset__reason_1_1_reset_reason_test.html)

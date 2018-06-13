@@ -8,7 +8,7 @@ When you call wait, your board's CPU will sleep in the RTOS for the whole number
 
 ### Wait function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
 
 ### Example
 

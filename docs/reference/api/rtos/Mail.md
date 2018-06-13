@@ -8,7 +8,7 @@ Mail works like a queue, with the added benefit of providing a memory pool for a
 
 ### Mail class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classrtos_1_1_mail.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classrtos_1_1_mail.html)
 
 ### Mail example
 

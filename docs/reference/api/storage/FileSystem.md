@@ -8,7 +8,7 @@ The FileSystem's `file` and `dir` functions are protected because you should not
 
 ### File system class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_file_system.html)
 
 ### File system example
 

@@ -12,7 +12,7 @@ The order of pins in the constructor is the reverse order of the pins in the byt
 
 ### BusInOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
 
 ### BusInOut Hello World!
 

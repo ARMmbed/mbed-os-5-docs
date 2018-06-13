@@ -30,7 +30,7 @@ You can swap the FAT file system in place with other Mbed OS file systems, which
 
 ### FATFileSystem class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_f_a_t_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_f_a_t_file_system.html)
 
 ### FATFileSystem example
 
