@@ -28,7 +28,7 @@ You can [monitor and control an Mbed board](/docs/v5.9/tutorials/serial-comm.htm
 
 When you've started writing applications using your selected development tool:
 
-- Learn about [collaborative work and version control](/docs/v5.9/tutorials/serial-communication.html).
+- Learn about [collaborative work and version control](/docs/v5.9/tools/version-control.html).
 - Try one of the [tutorials](/docs/v5.9/tutorials/index.html), which cover concepts such as debugging and memory tracing.
 - Ask questions and give advice on the [forum](https://os.mbed.com/forum/).
 
