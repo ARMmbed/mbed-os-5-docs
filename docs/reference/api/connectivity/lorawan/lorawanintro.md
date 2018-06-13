@@ -1,25 +1,23 @@
 ## LoRaWAN overview
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span>LoRaWANInterface class hierarchy</span></span>
-
 LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
 Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.
 
-The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network.
+The [LoRaWANInterface](lorawan-api.html) provides a C++ API for connecting to the internet over a LoRa network.
 
 ### Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression:
 
-1) An [EventQueue](https://os-doc-builder.test.mbed.com/docs/development/reference/eventqueue.html) object:
+1) An [EventQueue](eventqueue.html) object:
 
 ```cpp
 // construct an event queue
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
-2) A [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/development/reference/loraradio-api.html) object:
+2) A [LoRaRadio](loraradio-api.html) object:
 
 ```CPP
 // construct a LoRadio object
@@ -62,7 +60,7 @@ lorawan.connect(connection);
 
 Owing to the fact that most of the LoRaWAN devices are simple telemetry devices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
 
-#### Network events & callbacks
+#### Network events and callbacks
 
 Here is the list of possible events that you can post from the stack to the application:
 
@@ -118,7 +116,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 ##### Link check response handler
 
-Link check request is a MAC command defined by the LoRaWAN Specification. To receive the response of this MAC command, the user should set `link_check_resp` callback.  
+Link check request is a MAC command defined by the LoRaWAN specification. To receive the response of this MAC command, set the `link_check_resp` callback.
 
 ```CPP
 void your_link_check_response(uint8_t demod_margin, uint8_t num_gw)
@@ -145,11 +143,12 @@ uint8_t your_battery_level()
 callbacks.battery_level = mbed::callback(your_battery_level);
 lorawan.add_app_callbacks(&callbacks);
 ```
+
 ##### Error codes
 
 All operations on `LoRaWANInterface` return an error code `lorawan_status_t` that reflects success or failure of the operation.
 
-Here  is the list of error codes and their description.
+Below is the list of error codes and their description.
 
 | Error code    | Value | Description |
 | --------------- | ------------- | ----------|
@@ -176,7 +175,7 @@ Here  is the list of error codes and their description.
 |`LORAWAN_STATUS_NO_FREE_CHANNEL_FOUND`| -1022 | All channels marked used, cannot find a free channel at the moment |
 |`LORAWAN_STATUS_METADATA_NOT_AVAILABLE`| -1023 | Metadata is stale, cannot be made available as its not relevant |
 
-API documentation for 'LoRaWANInterface' and 'LoRaRadio' classes can be found here:
+You can find the API documentation for the 'LoRaWANInterface' and 'LoRaRadio' classes below:
 
-- [LoRaWANInterface API docs](/docs/development/reference/lorawan.html): The class that provides APIs for LoRaWAN network stack.
-- [LoRaRadio API docs](/docs/development/reference/loraradio.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
+- [LoRaWANInterface API docs](lorawan.html): The class that provides APIs for LoRaWAN network stack.
+- [LoRaRadio API docs](loraradio.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
