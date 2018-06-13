@@ -40,7 +40,7 @@ Please submit all Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-su
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports. 
 
-Issues reported on Github are internally copied to our internal tracker (`ARM Internal Ref: MBOTRIAGE-XXX` comment in the issues and label mirrored set once copied) and regularly triaged.
+We copy issues reported on GitHub to our internal tracker (`ARM Internal Ref: MBOTRIAGE-XXX` comment in the issues and label mirrored set once copied) and regularly triage them.
 
 ### Guidelines for GitHub pull requests
 
