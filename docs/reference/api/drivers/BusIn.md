@@ -1,6 +1,6 @@
 ## BusIn
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_bus_in.png)<span>BusIn class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_bus_in.png)<span>BusIn class hierarchy</span></span>
 
 With the BusIn API, you can create a number of DigitalIn pins that you can read as one value. This abstraction is useful for checking multiple inputs at once. You can use this API to write clearer code faster.
 

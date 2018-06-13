@@ -1,6 +1,6 @@
 ## BusInOut
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_bus_in_out.png)<span>BusInOut class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_bus_in_out.png)<span>BusInOut class hierarchy</span></span>
 
 Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](/docs/v5.9/reference/digitalinout.html) pins that you can read and write as one value.
 

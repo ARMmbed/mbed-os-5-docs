@@ -1,6 +1,6 @@
 ## FATFileSystem
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/class_f_a_t_file_system.png)<span>FATFileSystem class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_f_a_t_file_system.png)<span>FATFileSystem class hierarchy</span></span>
 
 The FAT file system is an established disk-oriented file system that you can find on Mbed OS, Windows, Linux and Mac OS X. Due to its age and popularity, the FAT file system has become the standard for portable storage, such as flash drivers and SD cards.
 

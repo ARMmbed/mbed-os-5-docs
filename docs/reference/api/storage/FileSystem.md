@@ -4,7 +4,7 @@ The file system API provides a common interface for implementing a file system o
 
 The main purpose of a FileSystem is to be instantiated. The FileSystem's constructor can take in a BlockDevice and mount point specified as a string, as well as other implementation-specific configuration options. The mount point can then act as the first directory in any paths in Mbed OS when used with the POSIX API. This gives you access to files inside the file system. The mount point can be `NULL` if you only need to use the FileSystem as a C++ object.
 
-The FileSystem's `file` and `dir` functions are protected because you should not use the FileSystem `file` and `dir` functions directly. They are only a convenience for implementors. Instead, the [File](file.html) and [Dir](dir.html) classes provide access to file and directory operations in a C++ class that respects [RAII](https://os-doc-builder.test.mbed.com/docs/v5.9/introduction/glossary.html#r) and other C++ conventions.
+The FileSystem's `file` and `dir` functions are protected because you should not use the FileSystem `file` and `dir` functions directly. They are only a convenience for implementors. Instead, the [File](file.html) and [Dir](dir.html) classes provide access to file and directory operations in a C++ class that respects [RAII](https://os.mbed.com/docs/v5.9/introduction/glossary.html#r) and other C++ conventions.
 
 ### File system class reference
 

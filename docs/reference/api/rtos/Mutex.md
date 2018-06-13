@@ -1,6 +1,6 @@
 ## Mutex
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
 
 A Mutex is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 

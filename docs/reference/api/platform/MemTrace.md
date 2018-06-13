@@ -10,12 +10,12 @@ For a step-by-step guide about how to use optimize memory using runtime memory t
 
 ### Memory tracing function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
 
 ### Memory tracing example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/memory_tracing_example/)](https://os.mbed.com/teams/mbed_example/code/memory_tracing_example/file/168ab14e6694/main.cpp)
 
-### Related content 
+### Related content
 
 - [Runtime memory tracing tutorial](/docs/v5.9/tutorials/optimizing.html#runtime-memory-tracing).

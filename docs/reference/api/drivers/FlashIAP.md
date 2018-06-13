@@ -1,6 +1,6 @@
 ## Flash IAP
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.png)<span>FlashIAP class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.png)<span>FlashIAP class hierarchy</span></span>
 
 The flash in application programming provides an interface for access to MCU internal flash memory.
 

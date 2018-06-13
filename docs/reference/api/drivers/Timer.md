@@ -1,6 +1,6 @@
 ## Timer
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
 
 Use the Timer interface to create, start, stop and read a timer for measuring small times (between microseconds and seconds).
 
