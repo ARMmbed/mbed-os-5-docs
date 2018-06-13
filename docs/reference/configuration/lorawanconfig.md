@@ -1,10 +1,10 @@
-<h2 id="lorawan-configuration">LoRaWAN configuration</h2>
+<h2 id="lorawan-configuration">LoRaWAN</h2>
 
 Various parameters for Mbed LoRaWAN stack can be configured via either C++ APIs or by using the Mbed configuration system.
 
 ### Using the Mbed Configuration system
 
-Here are the parameters that can be configured using the Mbed configuration system:
+Here are the parameters that you can configure using the Mbed configuration system:
 
 ```
 Configuration parameters
@@ -85,4 +85,4 @@ For changing any of these parameters, edit the `mbed_app.json` file in the root 
 
 ### Using APIs from LoRaWANInterface
 
-See API reference [here](https://os.mbed.com/docs/v5.8/reference/lorawan.html).
+See the [API reference](https://os.mbed.com/docs/development/reference/lorawan.html) for information about how to use these APIs from the LoRaWANInterface.
