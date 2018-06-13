@@ -1,5 +1,6 @@
 <h2 id="lorawan-api">LoRaWAN network interface</h2>
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span>LoRaWANInterface class hierarchy</span></span>
 
 The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) provides a C++ API for connecting to the internet over a LoRa network. In this sub-section, we first put light on the API reference for 'LoRaWAnInterface' and then we present an example which can be directly imported to Mbed online compiler.
 
