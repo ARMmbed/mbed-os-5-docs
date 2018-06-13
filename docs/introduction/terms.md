@@ -10,7 +10,7 @@
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](/docs/v5.9/introduction/index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.9/tools/arm-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.9/tools/arm-mbed-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
@@ -26,7 +26,7 @@
 
 **Blinky** - An [example application](/docs/v5.9/tutorials/mbed-os-quick-start.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
-**Block Device** - A [file](/docs/v5.9/reference/contributing-storage.html#block-devices) that represents a device, with data that can be read or written to it in blocks.
+**Block Device** - A [file](/docs/v5.9/reference/blockdevice-port.html) that represents a device, with data that can be read or written to it in blocks.
 
 **Board** - An Mbed Enabled development board. You can see a [complete list](https://os.mbed.com/platforms/) of Mbed Enabled boards.
 

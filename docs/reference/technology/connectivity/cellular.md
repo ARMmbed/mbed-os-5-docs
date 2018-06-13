@@ -18,7 +18,7 @@ Key features of the Mbed OS cellular APIs include:
 
 OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
-Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/v5.9/reference/contributing-connectivity.html#cellularinterface) for more information.
+Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/v5.9/reference/cellular-module-porting.html) for more information.
 
 ### Quick start
 
@@ -53,7 +53,7 @@ If you use an Mbed OS target and a separate cellular hosted module via a serial 
     }    
 
 You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART.
-    
+
 ### Cellular APIs
 
 As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details which are expected to change frequently.
@@ -145,11 +145,11 @@ An application gives eDRX configuration to the modem which negotiates it with th
 
 ### Considerations for UDP, TCP and non-IP use
 
-Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors. 
+Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors.
 
 TCP is a reliable transmission protocol. For long-lived sessions, periodic keep alive messaging is necessary, which places demands on the main power source. For a long-lived TCP connection, the server application can contact the device. Connections can still have long latencies because the device's use of eDRX power optimization affects when it listens for incoming packets. Mbed TLS supports TLS transport security over TCP. Operators may, however, prevent using TCP over NB-IoT due to device deployment and network planning considerations.
 
-UDP is unreliable, which places the retransmission mechanism burden on the application. UDP does not have a session; thus, the server application can contact the device only for a short while after it has received a UDP message from the device. 
+UDP is unreliable, which places the retransmission mechanism burden on the application. UDP does not have a session; thus, the server application can contact the device only for a short while after it has received a UDP message from the device.
 
 Mbed TLS supports DTLS transport security over UDP.
 
