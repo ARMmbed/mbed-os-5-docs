@@ -84,6 +84,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/5.9/docs/reference/configuration/lorawanconfig.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/5.9/docs/reference/configuration/Storage.md"
                     }
                 ]
@@ -495,7 +499,7 @@
                         "title": "LoRaWAN",
                         "intro": {
                             "type": "markdown",
-                            "url": "https://github.com/ARMmbed/Handbook/blob/5.9/docs/reference/api/connectivity/lorawan/lorawanevents.md"
+                            "url": "https://github.com/ARMmbed/Handbook/blob/5.9/docs/reference/api/connectivity/lorawan/lorawanintro.md"
                         },
                         "sources": [{
                                 "type": "markdown",
