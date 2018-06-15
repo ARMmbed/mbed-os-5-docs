@@ -4,7 +4,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for build
 
 Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many Mbed [targets and components](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) support Mbed BLE. Developers can use it to create new BLE enabled applications.
 
-Mbed’s `BLE_API` interfaces with the BLE controller on the platform. It hides the BLE stack’s complexity behind C++ abstractions and is compatible with all BLE-enabled Mbed platforms. The Mbed OS `BLE_API` automatically configuring the clocks, timers and other hardware peripherals to work at their lowest power consumption. To do this, yield to the `BLE_API` `waitForEvent()` function whenever the system needs to idle. For more information about `waitForEvent()`, please see our [event-driven programming section](/docs/development/tutorials/the-eventqueue-api.html).
+Mbed’s `BLE_API` interfaces with the BLE controller on the platform. It hides the BLE stack’s complexity behind C++ abstractions and is compatible with all BLE-enabled Mbed platforms. The Mbed OS `BLE_API` automatically configuring the clocks, timers and other hardware peripherals to work at their lowest power consumption.
 
 #### `BLE_API`, bridges and stacks
 
@@ -20,33 +20,27 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Inside_API.png)</span>
 
-`BLE_API` offers building blocks to help construct applications. These fall into three broad categories: 
+`BLE_API` offers building blocks to help construct applications. These fall into two broad categories: 
 
-1. Interfaces under **'public/'** to express BLE constructs, such as GAP, GATT, services and characteristics.
+1. Interfaces under **`ble/`** to express BLE constructs, such as GAP, GATT, services and characteristics.
 
-2. Code under **'common/'** encapsulates headers that need to be shared between the public interfaces and underlying bridge code.
-
-3. Classes under **'services/'** to offer reference implementations for many of the commonly used GATT profiles. The code under 'services/' isn't essential, but it’s a useful starting point for prototyping. We continue to implement the standard GATT profiles.
+1. Classes under `ble/services` to offer reference implementations for many of the commonly used GATT profiles. The code under 'services/' isn't essential, but it’s a useful starting point for prototyping. We continue to implement the standard GATT profiles.
 
 #### The BLEDevice class and header
 
-The heart of Mbed's `BLE_API` is the `BLEDevice` class, accessible in the IDE using the header `BLEDevice.h`. This class allows us to create a BLE object that includes the basic attributes of a spec-compatible BLE device and can work with any BLE radio:
+The entry point of Mbed's `BLE_API` is the BLE class accessible using the header `ble/BLE.h`. This class allows you to obtain a BLE object that includes the basic attributes of a spec-compatible BLE device and can work with any BLE radio:
 
 ```c
-#include "BLEDevice.h"
+#include "ble/BLE.h"
 
-BLEDevice mydevicename;
+BLE& mydevicename = BLE::Instance();
 ```
 
 The class's member functions can be divided by purpose:
 
 1. Basic BLE operations, such as initializing the controller.
 
-1. GAP related methods: radio transmission power levels, advertisements and parameters affecting connection establishment.
-
-1. GATT related methods: to set up and control the GATT database describing services together with the characteristics and attributes composing them.
-
-1. Event-driven programming controls, such as methods to set up various callbacks to invoke in response to system events. 
+1. Accessor to Bluetooth Modules that manage GAP, GATT or the security.
 
 #### Usage
 
