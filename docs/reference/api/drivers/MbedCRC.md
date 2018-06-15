@@ -1,4 +1,4 @@
-## CRC
+## MbedCRC
 
 The MbedCRC Class provides support for CRC (Cyclic Redundancy Check) algorithms. MbedCRC is a template class with polynomial value and polynomial width as arguments.
 
