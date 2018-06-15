@@ -6,6 +6,6 @@ If you want to contribute, please read our [contribution guide](https://os.mbed.
 
 Please open pull requests against either:
 
-* `new_engine` - this is our development branch.
-* `5.8` - this is the latest live version.
+* `development` - this is our development branch.
+* `5.9` - this is the latest live version.
 * Older version branches probably don't require fixes; please open an issue if you think we're wrong.
