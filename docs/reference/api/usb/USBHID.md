@@ -1,10 +1,12 @@
 ## USBHID
 
+<span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.png)<span>USBHID class hierarchy</span></span>
+
 The USBHID class can be used to send and receive messages over USB. For instance, you can define your own protocol and communicate between your computer and the Mbed with all capabilities of a USB communication. To use USBHID, you need a script running on the host side (computer). For instance on a 32 bits Windows 7 machine, you can use [pywinusb](https://github.com/rene-aguirre/pywinusb).
 
 ### USBHID class reference
 
-TODO
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.html)
 
 ### USBHID example
 

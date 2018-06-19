@@ -1,10 +1,12 @@
 ## USBKeyboard
 
+<span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_keyboard.png)<span>USBKeyboard class hierarchy</span></span>
+
 The USBKeyboard class provides the functionality of a keyboard. You can send key presses, check the status of control keys and send a key press sequences though a stream interface. If you need mouse or keyboard and mouse functionality see the classes [USBMouse](USBMouse.md) and [USBMouseKeyboard](USBMouseKeyboard.md).
 
 ### USBKeyboard class reference
 
-TODO
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_keyboard.html)
 
 ### USBKeyboard example
 
