@@ -29,4 +29,4 @@ int main(void) {
 
 ### Related content
 
-- [USBSerial](USBSerial.md).
+- [USBSerial](USBSerial.html).
