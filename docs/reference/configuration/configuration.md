@@ -249,6 +249,7 @@ The application can freely override the configuration of any of the libraries it
 
 ```JSON
 {
+    "artifact_name": "my-application",
     "config": {
         "welcome_string": {
             "help": "The string printed on the display on start-up",
@@ -272,5 +273,6 @@ The `mbed_app.json` above defines its own configuration parameter (`welcome_stri
 
 - When compiling for `NCS36510`, `app.welcome_string` is `"Hello!"`, `target.mac_addr_high` is `"0x11223344"` (from the `NCS36510` override) and `mylib.timer_period` is 100 (from the `*` override).
 - When compiling for `LPC1768`, `app.welcome_string` is `"Hello!"` and `mylib.timer_period` is 100 (also from the `*` override).
+- The final artifact (binary) will be named `my-application.bin`, as specified by the `artifact_name` section.
 
 It is an error for the application configuration to override an undefined configuration parameter.
