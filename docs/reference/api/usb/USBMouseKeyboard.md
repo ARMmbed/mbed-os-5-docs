@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse_keyboard.png)<span>USBMouseKeyboard class hierarchy</span></span>
 
-The USBMouseKeyboard interface is used to emulate a mouse and a keyboard at the same time over the USB port. Both presses and mouse movements can be sent with this class.
+You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at the same time over the USB port. You can send both presses and mouse movements with this class.
 
 ### USBMouseKeyboard class reference
 
@@ -37,5 +37,5 @@ int main(void) {
 
 ### Related content
 
-- [USBMouse](USBMouse.md)
-- [USBKeyboard](USBKeyboard.md)
+- [USBMouse](USBMouse.html).
+- [USBKeyboard](USBKeyboard.html).
