@@ -23,7 +23,7 @@ Name: rtos.present
     Value: 1 (set by library:rtos)
 ```
 
-### Event configuration parameters
+### EventQueue configuration parameters
 
 ```
 Name: events.present
