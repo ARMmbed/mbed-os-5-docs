@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse.png)<span>USBMouse class hierarchy</span></span>
 
-The USBMouse interface is used to emulate a mouse over the USB port. You can choose relative or absolute co-ordinates, and send clicks, button state and scroll wheel movements. If you need keyboard or keyboard and mouse functionality see the classes [USBKeyboard](USBKeyboard.md) and [USBMouseKeyboard](USBMouseKeyboard.md).
+You can use the USBMouse interface to emulate a mouse over the USB port. You can choose relative or absolute coordinates and send clicks, button state and scroll wheel movements. If you need keyboard or keyboard and mouse functionality, please see the [USBKeyboard](USBKeyboard.html) and [USBMouseKeyboard](USBMouseKeyboard.html) classes.
 
 ### USBMouse class reference
 
@@ -33,7 +33,7 @@ int main() {
 }
 ```
 
-You can choose either a relative mouse or an absolute mouse. By default, a USBMouse is a relative mouse. For instance, you can use an absolute mouse to draw a circle:
+You can choose either a relative mouse or an absolute mouse. By default, a USBMouse is a relative mouse. For example, you can use an absolute mouse to draw a circle:
 
 ```C++
 #include "mbed.h"
@@ -70,5 +70,5 @@ int main(void)
 
 ### Related content
 
-- [USBMouse](USBMouse.md)
-- [USBMouseKeyboard](USBMouseKeyboard.md)
+- [USBMouse](USBMouse.html).
+- [USBMouseKeyboard](USBMouseKeyboard.html).
