@@ -1,10 +1,10 @@
 <h2 id="contributing-storage">Storage</h2>
 
-Storage support is split between file systems and their underlying block device support. The [storage API page](/docs/development/reference/storage.html) has more information on existing APIs in Mbed OS for both interfaces.
+Storage support is split between file systems and their underlying block device support. The [storage API page](/docs/development/reference/storage.html) has more information on existing APIs in Mbed OS for both interface.
 
 #### Block Device
 
-Adding a block device implementation is required for backing filesystems on new hardware. You can extend the [BlockDevice](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html) class to provide support for unsupported storage. 
+Adding a block device implementation is required for backing filesystems on new hardware. You can extend the [BlockDevice](https://os.mbed.com/docs/v5.7/mbed-os-api-doxy/class_block_device.html) class to provide support for unsupported storage.
 
 If you want to port a new file system to Mbed OS on existing storage options you can skip to the following section.
 
