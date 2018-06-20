@@ -2,9 +2,9 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
 
-The USBMIDI interface can be used to send and receive MIDI messages over USB using the standard USB-MIDI protocol.
+You can use the USBMIDI interface to send and receive MIDI messages over USB using the standard USB-MIDI protocol.
 
-Using this library, you can do things like send MIDI messages to a computer (such as to record in a sequencer, or trigger a software synthesiser) and receive messages from a computer (such as actuate things based on MIDI events)
+Examples of tasks you can perform using this library include sending MIDI messages to a computer (such as to record in a sequencer, or trigger a software synthesiser) and receiving messages from a computer (such as actuating things based on MIDI events).
 
 ### USBMIDI class reference
 
