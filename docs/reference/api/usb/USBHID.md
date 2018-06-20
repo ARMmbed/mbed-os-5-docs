@@ -51,6 +51,6 @@ int main(void) {
 
 ### Related content
 
-- [USBMouse](USBMouse.md).
-- [USBKeyboard](USBKeyboard.md).
-- [USBMouseKeyboard](USBMouseKeyboard.md).
+- [USBMouse](USBMouse.html).
+- [USBKeyboard](USBKeyboard.html).
+- [USBMouseKeyboard](USBMouseKeyboard.html).
