@@ -18,8 +18,7 @@ The USBMSD interface is used to emulate a mass storage device over USB. You can 
 SDBlockDevice sd(PTE3, PTE1, PTE2, PTE4);
 USBMSD usb(&sd);
 
-int main_msd() {
-    usb.connect();
+int main() {
 
     while(true) {
         usb.process();
