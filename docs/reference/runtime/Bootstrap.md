@@ -24,3 +24,16 @@ Mbed OS redefines multiple standard C library functions to enable them to work i
 - `opendir`, `readdir`, `closedir` and other standard directory operations - Enable users to use built in file system.
 - `exit` - It causes the board to stop current execution, flush the standard file handles, close the semihosting connection and enter an infinite loop. If the return code indicates an error, the board blinks error patterns on the built-in LED.
 - `clock` - Overloaded to use platform's microsecond ticker.
+
+### Process
+
+From a reset state the following hooks and conditions are expected:
+
+- `ResetHandler` - vector table entry at start of Flash main stack pointer.
+- `SystemInit` - imported from CMSIS-CORE main stack pointer.
+- RW/ZI initialization main stack pointer.
+- `mbed_sdk_init` - used for HAL initialization main stack pointer.
+- `osKernelInitialize` - starts kernel and scheduler main stack pointer.
+- `pre_main` - C++ static initializers process stack pointer.
+- `mbed_main` - application hook before main process stack pointer.
+- `main` - application entry point process stack pointer.
