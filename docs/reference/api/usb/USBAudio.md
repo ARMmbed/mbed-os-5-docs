@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.png)<span>USBAudio class hierarchy</span></span>
 
-The USBAudio interface is used to send and receive audio across USB. By selecting a USBAudio device as your PC's speaker output you can send audio data. You can also use it as your PC's microphone and receive sound sent by USBAudio.
+You can use the USBAudio interface to send and receive audio across USB. By selecting a USBAudio device as your PC's speaker output, you can send audio data. You can also use it as your PC's microphone and receive sound sent by USBAudio.
 
 ### USBAudio class reference
 
