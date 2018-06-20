@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_m_s_d.png)<span>USBMSD class hierarchy</span></span>
 
-The USBMSD interface is used to emulate a mass storage device over USB. You can use this class to store or load data to and from a storage chip (SDcard, flash,...). This class implements the MSD protocol and takes in a [BlockDevice](../storage/BlockDevice.md) to interact with a storage chip.
+You can use the USBMSD interface to emulate a mass storage device over USB. You can use this class to store or load data to and from a storage chip, such as SDcard or Flash. This class implements the MSD protocol and takes in a [BlockDevice](blockdevice.html) to interact with a storage chip.
 
 ### USBMSD class reference
 
@@ -30,4 +30,4 @@ int main() {
 
 ### Related content
 
-- [BlockDevice](../storage/BlockDevice.md)
+- [BlockDevice](blockdevice.html).
