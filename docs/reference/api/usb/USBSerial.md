@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_serial.png)<span>USBSerial class hierarchy</span></span>
 
-The USBSerial interface is used to emulate a serial port over USB. You can use this serial port as an extra serial port or as a debug solution. It's also a great solution to easily communicate between your mbed and a computer.
+You can use the USBSerial interface to emulate a serial port over USB. You can use this serial port as an extra serial port or as a debug solution. It also communicates between Mbed and a computer.
 
 ### USBSerial class reference
 
@@ -29,4 +29,4 @@ int main(void) {
 
 ### Related content
 
-- [USBCDC](usbcdc.md)
+- [USBCDC](usbcdc.html).
