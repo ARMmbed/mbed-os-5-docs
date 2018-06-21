@@ -8,4 +8,4 @@ Use the DigitalOut interface to configure and control a digital output pin by se
 
 ### DigitalOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalOut_HelloWorld/file/78036976f155/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalOut_HelloWorld/file/928e709317d9/main.cpp)
