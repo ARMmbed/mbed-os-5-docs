@@ -1,6 +1,6 @@
 ## AnalogOut
 
-Use the AnalogOut interface to set the voltage of an analog output pin as a floating point number from 0.0 (VSS) to 1.0 (VCC).
+Use the AnalogOut interface to set the voltage of an analog output pin as a floating point number from 0.0 (VSS) to 1.0 (VCC). DAC Resolution depends on the hardware device used, the max resolution supported is VCC/65,536V.
 
 <span class="notes">**Note:** Not all pins are capable of being AnalogOut, so check the pinmap for your board.</span>
 
