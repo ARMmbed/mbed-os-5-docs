@@ -6,6 +6,10 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
+UDP is a connectionless protocol, allowing packets to be send and received to and from any remote adderesses. Therefore `Socket::listen()` and `Socket::accept()` functions are not implemented on UDPSocket.
+
+If you prefer to use `send()` and `recv()` functions and work only with one peer, UDPSocket does support `Socket::connect()` function that sets permanent peer address to the socket. Setting the peer address starts filtering also incomming packets so that they are accepted only from that specific address. Resetting the filtering and peer address is by calling `connect()` with empty `SocketAddress`.
+
 ### UDPSocket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_u_d_p_socket.html)
