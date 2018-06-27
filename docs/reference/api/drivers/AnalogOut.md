@@ -1,6 +1,6 @@
 ## AnalogOut
 
-Use the AnalogOut interface to set the voltage of an analog output pin as a floating point number from 0.0 (VSS) to 1.0 (VCC).
+Use the AnalogOut interface to set the output voltage of an analog output pin specified as a percentage or as an unsigned short. Mbed OS provides separate APIs to use percentage or range. Mbed OS supports a maximum resolution VCC/65,536 V, though the actual resolution depends on the hardware.
 
 <span class="notes">**Note:** Not all pins are capable of being AnalogOut, so check the pinmap for your board.</span>
 
