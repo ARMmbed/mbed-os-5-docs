@@ -4,7 +4,7 @@ This guide is to assist you in the process of updating an existing [component](h
 
 ### Prerequisites
 
-- [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html).
+- [Mbed CLI](/docs/latest/tools/arm-mbed-cli.html).
 - An [offline compiler](/docs/latest/tools/index.html#compiler-versions).
 
 ### Identifying old versions of Mbed OS
@@ -34,10 +34,10 @@ There are two possible outcomes when migrating to Mbed OS 5:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
   - There is target specific code, and you need to migrate it to use code for the specific target you are compiling for.
 
-The general outline for updating to Mbed OS 5 is:
+The general outline for updating to Mbed OS 5 with the [Mbed CLI](/docs/latest/tools/arm-mbed-cli.html) is:
 
 ```
-mbed import [URL of Hello World]
+mbed import [URL of Project]
 cd [Project Name]
 mbed remove mbed
 mbed remove mbed-rtos
@@ -47,6 +47,20 @@ mbed add mbed-os
 To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
+
+The general outline for updating to Mbed OS with the [Mbed Online Compiler](https://os.mbed.com/docs/latest/tools/arm-mbed-online-compiler.html) is:
+
+1. Open your project in the online compiler
+1. Right click on `mbed` and select "Delete..."
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)</span>
+1. Right click on `mbed-rtos` and select "Delete..."
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)</span>
+1. Right click on the name of your project and hover over "Import Library" then select "From URL ..."
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-import-url.png)</span>
+1. Copy and paste the URL for Mbed OS `https://github.com/armmbed/mbed-os` then click "Import"
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import-mbed-os.png)</span>
+
+To determine the success of migration, select your board in the top right corner of the Online Compiler, then click  **Compile**.
 
 #### Example component No. 1 - successful initial migration
 
