@@ -88,6 +88,7 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
     #ifndef OS_CLOCK
     #define OS_CLOCK                120000000
     #endif
+    
     ```
 
 
