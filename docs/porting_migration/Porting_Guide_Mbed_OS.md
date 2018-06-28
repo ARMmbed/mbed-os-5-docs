@@ -3,7 +3,7 @@
 This guide will walk you through the steps required to port Mbed OS onto a derivative target of any one of the Mbed OS Enabled targets. If you need to port the MCU to Mbed OS as well, along with a custom board based on the MCU, then you can follow our [more detailed porting guide](https://os.mbed.com/docs/v5.9/reference/porting-targets.html). Mbed Cloud Client provides reference example implementation for three Mbed Enabled targets, namely the FRDM-K64F, NUCLEO_F429ZI and the UBLOX_ODIN_W2_EVK. You do not need to port either Mbed OS or the Cloud Client if you are using any of these three boards.
 
 
-### Summary of steps:
+### Summary of steps
 
 1. Identify the target’s features. Identify if it derives from any existing supported target, as well as the macros and features that need to be supported at a bare minimum. You should also identify supported compilers & the Mbed OS release version.
 1. Create the directory structure.
@@ -16,7 +16,7 @@ This guide will walk you through the steps required to port Mbed OS onto a deriv
 1. Compile with CLI on a supported compiler.
 
 
-### 1. Identify features, compiler, Mbed OS version, core, CPU name and other features in `targets.json`:
+### 1. Identify features, compiler, Mbed OS version, core, CPU name and other features in `targets.json`
 
 Our sample target is identified by the following:
 
@@ -33,7 +33,7 @@ Our sample target is identified by the following:
 All of these requirements are directly mapped to relevant tags in the `targets.json` entry for our target. This is shown in step 3 below.
 
 
-### 2. Create the directory structure:
+### 2. Create the directory structure
 
 The target’s directory structure follows the following hierarchy. The manufacturer is listed at the top level, followed by the device family, followed by a specific device in the family, with the last level being the specific board that uses this specific MCU in the immediate higher level:
 ```
@@ -46,7 +46,7 @@ Our sample implementation uses:
 ```
 
 
-### 3. Add the target entry in `targets.json`:
+### 3. Add the target entry in `targets.json`
 ```
     "MyTarget123": {
                   "inherits":["Target"],
@@ -64,7 +64,7 @@ Our sample implementation uses:
 <span class="notes">**Note:** The `extra_labels` must mimic the exact directory structure used to define the new target.</span>
 
 
-### 4. Add an entry in `mbed_rtx.h`:
+### 4. Add an entry in `mbed_rtx.h`
 
 The `mbed_rtx` header file defines the core requirements for the RTOS, such as clock frequency, initial stack pointer, stack size, task counts and other macros. The sample target implemented here has the following specs:
 ```
@@ -93,7 +93,7 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
 More information on these can be found in the MCU's reference manual.
 
 
-### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs, HAL implementation and others.
+### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs, HAL implementation and others
 
   1. Adding startup code and CMSIS specific headers:
     Obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
@@ -108,12 +108,12 @@ More information on these can be found in the MCU's reference manual.
     Make sure `Objects.h` is available in the `/api` directory. You can also declare peripherals here. Finally, you must add any board specific features at the `Board` level.
 
 
-### 6. Add toolchain specific linker descriptions.
+### 6. Add toolchain specific linker descriptions
 
 All three supported toolchains (uVision, GCC and IAR) need separate linker descriptions. These are: the scatter `*.sct` files for uVision, linker description `*.ld` files for GCC and IAR Linker file `*.icf` for IAR. You need to add these files at the `Device` level under `/device`. Also, make sure the `supported_toolchains` key in `targets.json` specifies all the supported toolchains for the new target. If these are already available for the MCU that you are using from the silicon vendor, then you can skip this step. Yet, ensure that the drivers are present at the correct level in the directory structure.
 
 
-### 7. Add peripherals and pin names for the target.
+### 7. Add peripherals and pin names for the target
 
 You must add peripherals names and pin names at the `Board` level, and you must follow standard naming conventions for common peripherals, such as BUTTONs and LEDs. These are defined in the `PinNames.h` header file at the board level. Please refer to Figure 6 below for the directory structure.
 
@@ -190,7 +190,7 @@ typedef enum {
 ```
 
 
-### 8. Compile with a supported compiler:
+### 8. Compile with a supported compiler
 
 The last step is to build the new target with any supported compiler. This requires you to use an example application, such as Blinky, to compile for the new target. You must use the new Mbed OS directory with the new target added in the example application.
 
@@ -199,56 +199,56 @@ Debug any missing headers for the peripherals, and your new target is ready to b
 An introductory example of a target that supports only the SERIAL peripheral, which in turn uses the GPIO, to output debug messages by using printf statements in the `main.cpp` is included below. You can use this as a starting point and build from here.
 
 
-### **Sample implementation:**
+### **Sample implementation**
 
-**Figure 1: Target vendor level directory structure.**
+**Figure 1: Target vendor level directory structure**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture1.png)<span>Target vendor level directory structure</span></span>
 
 
 
-**Figure 2: Target MCU family level directory structure.**
+**Figure 2: Target MCU family level directory structure**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture2.png)<span>Target MCU family level directory structure</span></span>
 
 
 
-**Figure 3: Target device level.**
+**Figure 3: Target device level**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture3.png)<span>Target device level</span></span>
 
 
 
-**Figure 4: Target MCU family APIs implementation.**
+**Figure 4: Target MCU family APIs implementation**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture4.png)<span>Target MCU family APIs implementation</span></span>
 
 
 
-**Figure 5: Target device level directory structure.**
+**Figure 5: Target device level directory structure**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture5.png)<span>Target device level directory structure</span></span>
 
 
 
-**Figure 6: Target board level.**
+**Figure 6: Target board level**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture6.png)<span>Target board level</span></span>
 
 
 
-**Figure 7: Target device-specific implementation.**
+**Figure 7: Target device-specific implementation**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture7.png)<span>Target device-specific implementation</span></span>
 
 
 
-**Figure 8: Target device-specific toolchain support.**
+**Figure 8: Target device-specific toolchain support**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture8.png)<span>Target device-specific toolchain support</span></span>
 
 
 
-**Figure 9: Target device-specific driver support.**
+**Figure 9: Target device-specific driver support**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture9.png)<span>Target device-specific driver support</span></span>
