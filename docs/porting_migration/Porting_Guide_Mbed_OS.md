@@ -206,9 +206,11 @@ An introductory example of a target that supports only the SERIAL peripheral, wh
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture1.png)<span>Target vendor level directory structure</span></span>
 
 
+
 **Figure 2: Target MCU family level directory structure.**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture2.png)<span>Target MCU family level directory structure</span></span>
+
 
 
 **Figure 3: Target device level.**
@@ -216,9 +218,11 @@ An introductory example of a target that supports only the SERIAL peripheral, wh
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture3.png)<span>Target device level</span></span>
 
 
+
 **Figure 4: Target MCU family APIs implementation.**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture4.png)<span>Target MCU family APIs implementation</span></span>
+
 
 
 **Figure 5: Target device level directory structure.**
@@ -226,9 +230,11 @@ An introductory example of a target that supports only the SERIAL peripheral, wh
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture5.png)<span>Target device level directory structure</span></span>
 
 
+
 **Figure 6: Target board level.**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture6.png)<span>Target board level</span></span>
+
 
 
 **Figure 7: Target device-specific implementation.**
@@ -236,9 +242,11 @@ An introductory example of a target that supports only the SERIAL peripheral, wh
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture7.png)<span>Target device-specific implementation</span></span>
 
 
+
 **Figure 8: Target device-specific toolchain support.**
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture8.png)<span>Target device-specific toolchain support</span></span>
+
 
 
 **Figure 9: Target device-specific driver support.**
