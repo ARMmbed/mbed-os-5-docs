@@ -1,6 +1,6 @@
 ## Mbed OS porting guide
 
-This guide will help you port Mbed OS onto a custom board, or any derivatives of our standard Mbed OS enabled boards, before you begin porting Mbed Cloud Client with PAL.  However, if you are using one of our three standard Mbed OS Enabled boards, then you can skip this step and the next, and move on to [Porting the Update client](), as our standard Mbed OS Enabled boards already have both Mbed OS and Mbed Cloud Client running on them.
+This guide will walk you through the steps required to port Mbed OS onto a derivative target of any one of the Mbed OS Enabled targets. If you need to port the MCU to Mbed OS as well, along with a custom board based on the MCU, then you can follow our [more detailed porting guide](https://os.mbed.com/docs/v5.9/reference/porting-targets.html). Mbed Cloud Client provides reference example implementation for three Mbed Enabled targets, namely the FRDM-K64F, NUCLEO_F429ZI and the UBLOX_ODIN_W2_EVK. You do not need to port either Mbed OS or the Cloud Client if you are using any of these three boards.
 
 
 ### Summary of steps:
