@@ -87,9 +87,8 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
     #endif
     #ifndef OS_CLOCK
     #define OS_CLOCK                120000000
-    #endif
-    
-    ```
+    #endif   
+```
 
 
 ### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs, HAL implementation and others.
