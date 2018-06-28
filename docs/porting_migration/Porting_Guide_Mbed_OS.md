@@ -93,16 +93,16 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
 
 ### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs, HAL implementation and others.
 
-  1. Adding startup code and CMSIS specific headers:
+  a. Adding startup code and CMSIS specific headers:
     Obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
     You must add these at the `Device` level.
-  1. Adding relevant drivers:
+  a. Adding relevant drivers:
     Define drivers in the `device_has` key in `targets.json`. You must include all relevant drivers for all the peripherals defined as values for the `device_has` key in this step. You should add the drivers at the `Device` level.
-  1. Adding APIs:
+  a. Adding APIs:
     Mbed OS defines APIs for all HW peripherals, such as GPIO, SPI, RTC and so on. APIs are standard Mbed OS defined and do not need to be modified. You should add these at the `MCU family` level.
-  1. HAL implementation:
+  a. HAL implementation:
     HAL for all the peripherals is provided as standard in Mbed OS. HAL implementations are supplied as part of the features in Mbed OS.
-  1. Others:
+  a. Others:
     Make sure `Objects.h` is available in the `/api` directory. You can also declare peripherals here. Finally, you must add any board specific features at the `Board` level.
 
 
