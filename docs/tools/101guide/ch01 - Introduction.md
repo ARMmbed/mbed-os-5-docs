@@ -1,0 +1,4 @@
+## Introduction to the 101 guide
+Hi there, in this guide we will be walking through how to use the entire Arm Mbed ecosystem from device to cloud. We will begin on the device side with Mbed OS where we will start where all good embeded tutorials start, blinking an LED. In short order we will then move on to covering debugging, exporting to IDE's and then how to add secure connectivity to your applications. The next steps will then take us into the cloud using Mbed Cloud, where we will cover the core offerings that Mbed Cloud has to offer. Namely data connectivity, firmware updates, and device provisioning from factory to customer. Once we have firmly established a foot hold in the cloud we will cover persistent data storage, sending email and sms alerts, best practices for mass production and then going to scale with first hundreds and then hundreds of thousands of devices. 
+
+Lets go!
