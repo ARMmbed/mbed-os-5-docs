@@ -24,10 +24,10 @@ Our sample target is identified by the following:
 
 * The name of the target for builds is `MyTarget123`.
 * A Cortex-M4F based core.
-* Supports Mbed OS v5.xx.
+* Supports Mbed OS v5.x.
 * Has SERIAL interface as a bare minimum to print standard printf messages to the console, once built successfully.
 * Supports ARMCC and IAR compilers.
-* Inherits some features, such as the default toolchain and the virtual disk from the standard `target` defined in `targets.json`.
+* Inherits some features, such as the default toolchain and the virtual disk, from the standard `target` defined in `targets.json`.
 * Has all the drivers, APIs, HAL and so on defined in the `/mbed-os/TARGETS` directory as
 `TARGET_MY_Vendor/TARGET_VendorMCUs/TARGET_VendorDevice1/TARGET_VendorBoard_1`.
 * The public flag is set to `true` to indicate that this target is visible for compilation from the toolchains.
@@ -37,7 +37,12 @@ All of these requirements are directly mapped to relevant tags in the `targets.j
 
 ### 2. Create the directory structure
 
-The target’s directory structure follows the following hierarchy. The manufacturer is listed at the top level, followed by the device family, followed by a specific device in the family, with the last level being the specific board that uses this specific MCU in the immediate higher level:
+The target’s directory structure has the following hierarchy: 
+- The manufacturer is listed at the top level
+- The device family 
+- A specific device in the family
+- The specific board that uses the MCU in the previous level:
+
 ```
 \mbed-os\targets\TARGET_<Manf>\<Device_Family>\<specific_MCU>\<specific_board>\
 ```
