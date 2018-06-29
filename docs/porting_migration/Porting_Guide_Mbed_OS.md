@@ -1,6 +1,6 @@
 ## Mbed OS porting guide
 
-This guide will walk you through the steps required to port Mbed OS onto a derivative target of any one of the Mbed OS Enabled targets. If you need to port the MCU to Mbed OS as well, along with a custom board based on the MCU, then you can follow our [more detailed porting guide](https://os.mbed.com/docs/v5.9/reference/porting-targets.html). Mbed Cloud Client provides reference example implementation for three Mbed Enabled targets, namely the FRDM-K64F, NUCLEO_F429ZI and the UBLOX_ODIN_W2_EVK. You do not need to port either Mbed OS or the Cloud Client if you are using any of these three boards.
+This guide will walk you through the steps required to port Mbed OS onto a derivative target of any one of the Mbed OS Enabled targets. If you need to port the MCU to Mbed OS as well, along with a custom board based on the MCU, then you can follow our [more detailed porting guide](https://os.mbed.com/docs/v5.9/reference/porting-targets.html). Mbed Cloud Client provides reference example implementation for three Mbed Enabled targets, namely the FRDM-K64F, NUCLEO_F429ZI and the UBLOX_ODIN_W2_EVK. You do not need to port either Mbed OS or the Cloud Client if you are using one of these three boards.
 
 
 ### Summary of steps
