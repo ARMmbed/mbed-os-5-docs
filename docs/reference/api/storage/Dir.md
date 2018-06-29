@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_dir.png)<span>Dir class hierarchy</span></span>
 
-With a file system, the Dir class allows you to iterate over directories on the underlying storage. Directories, also called folders, are a way to group files. Each directory has a name that forms a part of the path to any files stored in that directory. Additionally, you can use `rename` operations at the file system level to change a directory's name and efficiently change the path to any files in that directory. To make a new directory, use the `mkdir` function in the [FileSystem](FileSystem.html) class.
+With a file system, the Dir class allows you to iterate over directories on the underlying storage. Directories, also called folders, are a way to group files. Each directory has a name that forms a part of the path to any files stored in that directory. Additionally, you can use `rename` operations at the file system level to change a directory's name and efficiently change the path to any files in that directory. To make a new directory, use the `mkdir` function in the [FileSystem](filesystem.html) class.
 
 The Dir class operates as an iterator or stream similarly to the File class, except operating on file names instead of bytes or other type. Each `read` call returns the next file name in the directory and increments the Dir position. Similarly to a file, you can `seek` a Dir object to a specific position; however, this is limited to a position previously returned by a call to the Dir's `tell` function.
 
@@ -18,5 +18,5 @@ The Dir class operates as an iterator or stream similarly to the File class, exc
 
 ### Related content
 
-- [FileSystem](FileSystem.html).
-- [File](File.html).
+- [FileSystem](filesystem.html).
+- [File](file.html).

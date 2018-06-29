@@ -8,17 +8,17 @@ Please read about [Mbed OS connectivity technology](https://www.mbed.com/en/tech
 
 ### Key features
 
-Mbed OS cellular is the preferred choice of building applications for [Mbed Cloud](https://cloud.mbed.com/docs/) and cellular IoT solutions. Key features of Mbed OS cellular include:
+Key features of the Mbed OS cellular APIs include:
 
 - Compatible with 3GPP TS 27.007 and 27.005.
 - Implements core functionality for OMA Lightweight M2M Client.
-- Out-of-the-box cellular modem support.
+- Hosted cellular modules on Mbed Enabled boards.
 
 3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over an AT command interface for cellular devices, regardless of the underlying cellular network.
 
 OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
-Mbed OS already supports several Mbed Enabled boards with on-board cellular modules out of the box. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/development/reference/contributing-connectivity.html#cellularinterface) for more information.
+Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/development/reference/contributing-connectivity.html#cellularinterface) for more information.
 
 ### Quick start
 
@@ -33,15 +33,15 @@ With cellular, the easiest way to connect your application to the internet over 
 
 If you want to see code, you can go to our [cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/).
 
-### Cellular Module
+### Cellular hosted module
 
-If you are using an Mbed OS target that has a supported on-board (mounted) cellular module then cellular framework decides the correct cellular module at compile-time. You can run `mbedls` to find out your current Mbed OS target and then match that to the supported targets in the `CellularTargets.h` file, where a CELLULAR_DEVICE macro is defined based on the Mbed OS target definition and can be used as a C++ class type to instantiate a driver class (inherited from `CellularDevice.h`).
+If you are using an Mbed OS target that has a supported on-board (mounted) cellular hosted module then cellular framework decides the correct cellular hosted module at compile-time. You can run `mbedls` to find out your current Mbed OS target and then match that to the supported targets in the `CellularTargets.h` file, where a CELLULAR_DEVICE macro is defined based on the Mbed OS target definition and can be used as a C++ class type to instantiate a driver class (inherited from `CellularDevice.h`).
 
-You can browse `CellularTargets.h` file to find out if the module you are using is already supported. In case the module is not yet supported, you could adapt some existing driver for your needs.
+You can browse `CellularTargets.h` file to find out if the hosted module you are using is already supported. In case the hosted module is not yet supported, you could adapt some existing driver for your needs.
 
-Some Mbed OS target boards may have several different kind of cellular modules on-board. In that case, the cellular module driver detects at runtime the actual module that is currently mounted and adapts to that specific cellular module during runtime.
+Some Mbed OS target boards may have several different kind of cellular hosted modules on-board. In that case, the cellular hosted module driver detects at runtime the actual hosted module that is currently mounted and adapts to that specific cellular hosted module during runtime.
 
-If you use an Mbed OS target and a separate cellular module via a serial line (UART), you need to configure in your `mbed_app.json` configuration file which cellular module to use and which UART pins are connected between the Mbed OS target board and the cellular module:
+If you use an Mbed OS target and a separate cellular hosted module via a serial line (UART), you need to configure in your `mbed_app.json` configuration file which cellular hosted module to use and which UART pins are connected between the Mbed OS target board and the cellular hosted module:
 
     {
         "macros":
@@ -61,8 +61,8 @@ As an application developer, you should use and refer only to classes located un
 Cellular APIs are structured based on main functionalities:
 
 - `CellularNetwork` for cellular network features, such as preferred operator and APN.
-- `CellularPower` for cellular module power control, such as enabling power save.
-- `CellularInformation` to read the cellular module type and firmware version.
+- `CellularPower` for cellular hosted module power control, such as enabling power save.
+- `CellularInformation` to read the cellular hosted module type and firmware version.
 - `CellularSIM` to enter the PIN code and other SIM management functions.
 - `CellularSMS` to read and write SMS messages.
 
@@ -79,11 +79,13 @@ When an application has opened a cellular API, you can use it to request API met
 
 ### UDP and TCP sockets
 
-If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack, which is part of Mbed OS, or to use the IP stack on the cellular module. Figure 4 illustrates IP stack deployment.
+If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack, which is part of Mbed OS, or to use the IP stack on the cellular hosted module. Figure 4 illustrates IP stack deployment.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-ip-stack.png)<span>Figure 4. IP stack can be used in PPP or AT mode</span></span>
 
 #### PPP mode with the LWIP stack on Mbed OS
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
 In PPP (Point-to-Point Protocol) mode, the LWIP stack is linked as a part of the Mbed OS application. Because LWIP stack implements sockets, the socket functionality is hardware-independent.
 
@@ -96,6 +98,8 @@ You can enable PPP mode and also configure LWIP features in the application conf
 
 #### AT mode with the IP stack on the modem
 
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
+
 In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and need to be implemented on the Mbed OS side. You can browse `CellularStack` under the `cellular/targets` folder to find out how your hardware supports AT sockets.
 
 The AT mode is enabled when the PPP mode is not enabled:
@@ -106,7 +110,7 @@ The AT mode is enabled when the PPP mode is not enabled:
 
 Consider the following points when selecting PPP or AT mode:
 
-- Your cellular module may support only AT or PPP mode.
+- Your cellular hosted module may support only AT or PPP mode.
 - PPP mode supports both UDP and TCP sockets.
 - PPP mode does not allow AT commands after connecting to data mode.
 - PPP mode uses the LWIP stack, which uses memory from your Mbed OS application.
@@ -139,12 +143,6 @@ This feature serves devices that need smaller latencies. A connection is kept op
 
 An application gives eDRX configuration to the modem which negotiates it with the network. The time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
 
-#### Sleep more, save energy
-
-CellularConnectionFSM simplifies connecting to a cellular network. `CellularConnectionFSM` is a reliable way to connect, but you may want to optimize it further when implementing applications for constrained battery-operated devices. Figure 5 illustrates the `CellularConnectionFSM` operation.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-connect.png)<span>Figure 5. Cellular connection process in general</span></span>
-
 ### Considerations for UDP, TCP and non-IP use
 
 Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors. 
@@ -160,7 +158,3 @@ Non-IP is a new option for communication over NB-IoT. The device sends messages 
 For DTLS and TLS transport security, even if the device maintains its own IP address during power save periods, the address may be changed in the network due to Network Address Translation (NAT). NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates renegotiation of the (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimize the renegotiation. Both device and (D)TLS server must support the used mechanism.
 
 To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/latest/reference/tls.html).
-
-### Class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_cellular_device.html)

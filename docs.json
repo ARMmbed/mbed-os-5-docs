@@ -84,6 +84,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/lorawanconfig.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/configuration/Storage.md"
                     }
                 ]
@@ -195,6 +199,10 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/MemTrace.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/platform/Error.md"
                             },
                             {
@@ -296,6 +304,14 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/LowPowerTicker.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/LowPowerTimeout.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/drivers/LowPowerTimer.md"
                             },
                             {
                                 "type": "markdown",
@@ -482,8 +498,8 @@
                     {
                         "title": "LoRaWAN",
                         "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawanevents.md"
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/Handbook/blob/new_engine/docs/reference/api/connectivity/lorawan/lorawanintro.md"
                         },
                         "sources": [{
                                 "type": "markdown",
