@@ -97,23 +97,28 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
     #endif   
 ```
 
-Please refer to your chosen MCU's reference manual for these values during development.
+Please refer to your chosen MCU's reference manual for these values.
 
 
-### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs, HAL implementation and others
+### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs and HAL implementation
 
-If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. Yet, ensure that the drivers are present at the correct level in the directory structure.
+If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
 
   1. Adding startup code and CMSIS specific headers:
+  
     Obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
     You must add these at the `Device` level.
   1. Adding relevant drivers:
+  
     Define drivers in the `device_has` key in `targets.json`. You must include all relevant drivers for all the peripherals defined as values for the `device_has` key in this step. You should add the drivers at the `Device` level.
   1. Adding APIs:
+  
     Mbed OS defines APIs for all HW peripherals, such as GPIO, SPI, RTC and so on. APIs are standard Mbed OS defined and do not need to be modified. You should add these at the `MCU family` level. If these are already available for the MCU that you are using from the silicon vendor, then you can skip this step. Yet, ensure that the drivers are present at the correct level in the directory structure.
   1. HAL implementation:
+  
     HAL for all the peripherals is provided as standard in Mbed OS. HAL implementations are supplied as part of the features in Mbed OS. If these are already available for the MCU that you are using from the silicon vendor, then you can skip this step. Yet, ensure that the drivers are present at the correct level in the directory structure.
   1. Others:
+  
     Make sure `Objects.h` is available in the `/api` directory. You can also declare peripherals here. Finally, you must add any board specific features at the `Board` level.
 
 
