@@ -13,7 +13,7 @@ Mbed Cloud Client provides reference implementation for three Mbed Enabled targe
 1. Add an entry for the target in `mbed_rtx.h`.
 1. Add startup code and CMSIS headers, such as device specific register definitions, NVIC headers and **all** relevant drivers from CMSIS specifications: GPIOs, peripheral names, pin maps and others. You will also want to add APIs, HAL implementation, and other required headers for the system clocks and any other additional clocks.
 <span class="tips">**Tip:** You can find screenshots for the sample implementation that show what the result should look like at the end of this section.</span>
-1. Add toolchain specific linker descriptions.
+1. Add toolchain-specific linker descriptions.
 1. Add peripherals and pin names for the target.
 1. Compile with CLI on a supported compiler.
 
