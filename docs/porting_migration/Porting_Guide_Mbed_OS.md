@@ -90,10 +90,12 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
     #endif   
 ```
 
-More information on these can be found in the MCU's reference manual.
+Please refer to your chosen MCU's reference manual for these values during development.
 
 
 ### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs, HAL implementation and others
+
+If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. Yet, ensure that the drivers are present at the correct level in the directory structure.
 
   1. Adding startup code and CMSIS specific headers:
     Obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
