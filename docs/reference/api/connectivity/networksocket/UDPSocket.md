@@ -6,9 +6,9 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
-UDP is a connectionless protocol, allowing packets to be send and received to and from any remote adderesses. Therefore `Socket::listen()` and `Socket::accept()` functions are not implemented on UDPSocket.
+UDP is a connectionless protocol. This allows you to send and receive packets to and from any remote adderesses. Therefore, `Socket::listen()` and `Socket::accept()` functions are not implemented on UDPSocket.
 
-If you prefer to use `send()` and `recv()` functions and work only with one peer, UDPSocket does support `Socket::connect()` function that sets permanent peer address to the socket. Setting the peer address starts filtering also incomming packets so that they are accepted only from that specific address. Resetting the filtering and peer address is by calling `connect()` with empty `SocketAddress`.
+If you prefer to use `send()` and `recv()` functions and work only with one peer, UDPSocket does support the `Socket::connect()` function, which sets a permanent peer address to the socket. Setting the peer address starts filtering incoming packets, so they are accepted only from that specific address. You can reset the filtering and peer address by calling `connect()` with empty `SocketAddress`.
 
 ### UDPSocket class reference
 
@@ -16,7 +16,7 @@ If you prefer to use `send()` and `recv()` functions and work only with one peer
 
 ### UDPSocket Example
 
-Here is a UDP example to read the current UTC time by sending a request to the NIST Internet Time Service.
+This UDP example reads the current UTC time by sending a request to the NIST Internet Time Service:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets/file/cf516d904427/main.cpp)
 
