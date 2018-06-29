@@ -8,15 +8,15 @@ The constructor takes in the NetworkStack pointer to open the socket on the spec
 
 ### Server socket
 
-TCP can also be used for listening incomming connections. To do this
+You can also use TCP to listen to incoming connections. To do this:
 
-1. Bind socket to specific port by calling `TCPSocket::bind()`
-1. Set socket to listening mode by calling `TCPSocket::listen()`
-1. Accept incomming connection by calling `TCPSocket::accept()`
+1. Bind socket to specific port by calling `TCPSocket::bind()`.
+1. Set socket to listening mode by calling `TCPSocket::listen()`.
+1. Accept incoming connection by calling `TCPSocket::accept()`.
 
-Accepting new connection return you a pointer to a new `Socket` object that can be used to communicate with the connected peer. When done, you should call this socket's `close()` function to shut down the connection and clean up the reserved resources.
+Accepting a new connection returns a pointer to a new `Socket` object that you can use to communicate with the connected peer. Afterward, call this socket's `close()` function to shut down the connection and clean up the reserved resources.
 
-Accepting a connection will leave the original socket to listening mode. You can continue to accept new connections until you destroy the listening socket, or call its `close()` method.
+Accepting a connection leaves the original socket in listening mode. You can continue to accept new connections until you destroy the listening socket, or call its `close()` method.
 
 ### TCPSocket class reference
 
@@ -24,9 +24,8 @@ Accepting a connection will leave the original socket to listening mode. You can
 
 ### TCPSocket Example
 
-Here is a client example of HTTP transaction over TCPSocket
+Here is a client example of HTTP transaction over TCPSocket:
 
-https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/file/e0496f3424a8/main.cpp/)
 
 ### Related content
