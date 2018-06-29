@@ -1,6 +1,6 @@
 ## Ignoring files from mbed build
 
-An `.mbedignore` file tells the `mbed compile` and `mbed export` command which files and directories to ignore (not process).
+An `.mbedignore` file tells the `mbed compile` and `mbed export` commands which files and directories to ignore (not process).
 
 ### Usage
 You can place an `.mbedignore` file in any directory searched by `mbed compile` or `mbed export`.
