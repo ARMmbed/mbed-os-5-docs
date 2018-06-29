@@ -7,7 +7,7 @@ Mbed Cloud Client provides reference implementation for three Mbed Enabled targe
 
 ### Summary of steps
 
-1. Identify the target’s features. Identify if it derives from any existing supported target, as well as the macros and features that need to be supported at a bare minimum. You should also identify supported compilers & the Mbed OS release version.
+1. Identify the target’s features. Identify whether it derives from any existing supported target, as well as the macros and features that need to be supported at a bare minimum. You should also identify supported compilers and the Mbed OS release version.
 1. Create the directory structure.
 1. Add the target entry in `targets.json`.
 1. Add an entry for the target in `mbed_rtx.h`.
