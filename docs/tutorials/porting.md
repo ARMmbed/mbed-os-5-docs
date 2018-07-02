@@ -7,18 +7,24 @@ Mbed Cloud Client provides reference implementation for three Mbed Enabled targe
 
 ### Summary of steps
 
-1. Identify the target’s features. Identify whether it derives from any existing supported target, as well as the macros and features that need to be supported at a bare minimum. You should also identify supported compilers and the Mbed OS release version.
-1. Create the directory structure.
-1. Add the target entry in `targets.json`.
-1. Add an entry for the target in `mbed_rtx.h`.
-1. Add startup code and CMSIS headers, such as device specific register definitions, NVIC headers and **all** relevant drivers from CMSIS specifications: GPIOs, peripheral names, pin maps and others. You will also want to add APIs, HAL implementation, and other required headers for the system clocks and any other additional clocks.
-<span class="tips">**Tip:** You can find screenshots for the sample implementation that show what the result should look like at the end of this section.</span>
-1. Add toolchain-specific linker descriptions.
+1. Add your target to `targets.json`
+    1. Identify the your target’s features.
+    1. Identify any existing parent targets.
+    1. Identify macros required for you target's compilation
+    1. Identify supported compilers and the Mbed OS release version.
+    1. Add the target entry in `targets.json`.
+    1. Verify that you can now pass your target to `mbed compile`.
+1. Add your target port
+    1. Create the directory structure.
+    1. Add an entry for the target in `mbed_rtx.h`.
+    1. Add startup code and CMSIS headers, NVIC headers and **all** relevant drivers from CMSIS specifications
+    1. Implement APIs, HAL, the system clock configuration and any other additional clocks.
+    1. Add toolchain-specific linker descriptions.
 1. Add peripherals and pin names for the target.
 1. Compile with CLI on a supported compiler.
 
 
-### 1. Identify features, compiler, Mbed OS version, core, CPU name and other features in `targets.json`
+### Identify Target properties
 
 Our sample target is identified by the following:
 
@@ -35,25 +41,7 @@ Our sample target is identified by the following:
 All of these requirements are directly mapped to relevant tags in the `targets.json` entry for our target. This is shown in step 3 below.
 
 
-### 2. Create the directory structure
-
-The target’s directory structure has the following hierarchy: 
-- The manufacturer is listed at the top level
-- The device family 
-- A specific device in the family
-- The specific board that uses the MCU in the previous level:
-
-```
-\mbed-os\targets\TARGET_<Manf>\<Device_Family>\<specific_MCU>\<specific_board>\
-```
-
-Our sample implementation uses:
-```
-\mbed-os\targets\TARGET_MY_Vendor\TARGET_VendorMCUs\TARGET_VendorDevice1\TARGET_VendorBoard_1\
-```
-
-
-### 3. Add the target entry in `targets.json`
+### Add the target entry in `targets.json`
 ```
     "MyTarget123": {
                   "inherits":["Target"],
@@ -71,7 +59,25 @@ Our sample implementation uses:
 <span class="notes">**Note:** The `extra_labels` must mimic the exact directory structure used to define the new target.</span>
 
 
-### 4. Add an entry in `mbed_rtx.h`
+### Create the directory structure
+
+The target’s directory structure has the following hierarchy: 
+- The manufacturer is listed at the top level
+- The device family 
+- A specific device in the family
+- The specific board that uses the MCU in the previous level:
+
+```
+\mbed-os\targets\TARGET_<Manf>\<Device_Family>\<specific_MCU>\<specific_board>\
+```
+
+Our sample implementation uses:
+```
+\mbed-os\targets\TARGET_MY_Vendor\TARGET_VendorMCUs\TARGET_VendorDevice1\TARGET_VendorBoard_1\
+```
+
+
+### Add an entry in `mbed_rtx.h`
 
 The `mbed_rtx` header file defines the core requirements for the RTOS, such as clock frequency, initial stack pointer, stack size, task counts and other macros. The sample target implemented here has the following specs:
 ```
@@ -100,7 +106,7 @@ The `mbed_rtx` header file defines the core requirements for the RTOS, such as c
 Please refer to your chosen MCU's reference manual for these values.
 
 
-### 5. Add startup code, device specific CMSIS headers, relevant drivers, APIs and HAL implementation
+### Implement startup and HAL
 
 If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
 
@@ -124,7 +130,7 @@ If the silicon vendor has already provided these for the MCU that you are using,
 - Add any board specific features at the `Board` level.
 
 
-### 6. Add toolchain specific linker descriptions
+### Add linker files
 
 All three supported toolchains (uVision, GCC and IAR) need separate linker descriptions. These are: 
 - The scatter `*.sct` files for uVision
@@ -134,7 +140,7 @@ All three supported toolchains (uVision, GCC and IAR) need separate linker descr
 You need to add these files at the `Device` level under `/device`. Also, make sure the `supported_toolchains` key in `targets.json` specifies all the supported toolchains for the new target. If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
 
 
-### 7. Add peripherals and pin names for the target
+### Add pin names
 
 You must add peripheral names and pin names at the `Board` level, and you must follow standard naming conventions for common peripherals, such as BUTTONs and LEDs. These are defined in the `PinNames.h` header file at the board level. Please refer to Figure 6 below for the directory structure.
 
@@ -211,7 +217,7 @@ typedef enum {
 ```
 
 
-### 8. Compile with a supported compiler
+### Compile with a supported compiler
 
 The last step is to verify that the new board port compiles. Use an example application, such as [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), and checkout the branch containing your port in the `mbed-os` sub-directory.
 
