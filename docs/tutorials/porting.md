@@ -189,63 +189,63 @@ typedef enum {
 
 ### Compile with a supported compiler
 
-The last step is to verify that the new board port compiles. Use an example application, such as [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), and checkout the branch containing your port in the `mbed-os` sub-directory.
-
-If any headers for the peripherals were reported as missing at compile time, then add those, and your new target is ready to be built.
-
-Below is an example of a target that supports only the SERIAL peripheral. This outputs debug messages using the printf statements in the `main.cpp`. You can use this as a starting point and build from here.
+Finally, verify that the new board port compiles. Use an example application, such as [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), and checkout the branch containing your port in the `mbed-os` sub-directory. Correct any compiler errors and then submit a pull request to [the master branch of the upstream repo](https://github.com/ARMmbed/mbed-os/pull/new/master)
 
 
-### **Sample implementation**
+### Sample implementation
 
-**Figure 1: Target vendor level directory structure**
+Below is an example of a target that supports only a single `SERIAL` peripheral connected to `stdio`. 
+
+
+
+#### Figure 1: Target vendor level directory structure
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture1.png)<span>Target vendor level directory structure</span></span>
 
 
 
-**Figure 2: Target MCU family level directory structure**
+#### Figure 2: Target MCU family level directory structure
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture2.png)<span>Target MCU family level directory structure</span></span>
 
 
 
-**Figure 3: Target device level**
+#### Figure 3: Target device level
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture3.png)<span>Target device level</span></span>
 
 
 
-**Figure 4: Target MCU family APIs implementation**
+#### Figure 4: Target MCU family APIs implementation
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture4.png)<span>Target MCU family APIs implementation</span></span>
 
 
 
-**Figure 5: Target device level directory structure**
+#### Figure 5: Target device level directory structure
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture5.png)<span>Target device level directory structure</span></span>
 
 
 
-**Figure 6: Target board level**
+#### Figure 6: Target board level
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture6.png)<span>Target board level</span></span>
 
 
 
-**Figure 7: Target device-specific implementation**
+#### Figure 7: Target device-specific implementation
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture7.png)<span>Target device-specific implementation</span></span>
 
 
 
-**Figure 8: Target device-specific toolchain support**
+#### Figure 8: Target device-specific toolchain support
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture8.png)<span>Target device-specific toolchain support</span></span>
 
 
 
-**Figure 9: Target device-specific driver support**
+#### Figure 9: Target device-specific driver support
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture9.png)<span>Target device-specific driver support</span></span>
