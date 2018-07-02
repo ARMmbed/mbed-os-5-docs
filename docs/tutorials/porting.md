@@ -122,12 +122,10 @@ Ensure that the drivers are present at the correct level in the directory struct
 
 ### Add linker files
 
-All three supported toolchains (uVision, GCC and IAR) need separate linker descriptions. These are: 
-- The scatter `*.sct` files for uVision
-- Linker description `*.ld` files for GCC
-- IAR Linker file `*.icf` for IAR. 
-
-You need to add these files at the `Device` level under `/device`. Also, make sure the `supported_toolchains` key in `targets.json` specifies all the supported toolchains for the new target. If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
+For each supported toolchain listed in your new target's `supported_toolchains` configuration, add a linker file. Each compiler supports a different style of linker files with a different extension.
+- Add a scatter file, with the extension `.sct`, for Arm Compiler 5.
+- Add a linker script, with the extension `.ld`, for GCC Arm Embedded.
+- Add an IAR Linker file, with the extension `.icf`, for IAR EWARM. 
 
 
 ### Add pin names
