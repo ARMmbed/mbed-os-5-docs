@@ -112,26 +112,12 @@ Please refer to your chosen MCU's reference manual for these values.
 
 ### Implement startup and HAL
 
-If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
+Ensure that the drivers are present at the correct level in the directory structure.
 
-1. Adding startup code and CMSIS specific headers:
-
-    Obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
-    You must add these at the `Device` level.
-1. Adding relevant drivers:
-
-    Define drivers in the `device_has` key in `targets.json`. You must include all relevant drivers for all the peripherals defined as values for the `device_has` key in this step. You should add the drivers at the `Device` level.
-1. Adding APIs:
-
-    Mbed OS defines APIs for all hardware peripherals, such as GPIO, SPI and RTC. APIs are standard Mbed OS defined and do not need to be modified. You should add these at the `MCU family` level. If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
-1. HAL implementation:
-
-    Mbed OS provides HAL implementations for all the peripherals as a standard feature of Mbed OS. If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
-1. Others:
-
-- Make sure `Objects.h` is available in the `/api` directory. 
-- You can also declare peripherals here.
-- Add any board specific features at the `Board` level.
+1. Add startup code and CMSIS specific headers. You may obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
+1. Add peripherals to the `device_has_add` key in `targets.json` and include all relevant drivers for all these peripherals.
+1. Implement Mbed OS HAL APIs for all hardware peripherals mentioned in `device_has`.
+1. Ensure that `Objects.h` declares peripherals and is available in the `/api` directory.
 
 
 ### Add linker files
