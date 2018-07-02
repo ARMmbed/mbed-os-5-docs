@@ -119,7 +119,9 @@ If the silicon vendor has already provided these for the MCU that you are using,
     Mbed OS provides HAL implementations for all the peripherals as a standard feature of Mbed OS. If the silicon vendor has already provided these for the MCU that you are using, then you can skip this step. However, you should still ensure that the drivers are present at the correct level in the directory structure.
 1. Others:
 
-    Make sure `Objects.h` is available in the `/api` directory. You can also declare peripherals here. Finally, you must add any board specific features at the `Board` level.
+- Make sure `Objects.h` is available in the `/api` directory. 
+- You can also declare peripherals here.
+- Add any board specific features at the `Board` level.
 
 
 ### 6. Add toolchain specific linker descriptions
