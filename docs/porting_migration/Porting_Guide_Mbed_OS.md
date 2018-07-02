@@ -213,7 +213,7 @@ typedef enum {
 
 ### 8. Compile with a supported compiler
 
-The last step is to build the new target with any supported compiler. This requires you to use an example application, such as Blinky, to compile for the new target. You must use the new Mbed OS directory with the new target added in the example application.
+The last step is to build the new target with any supported compiler. You need to compile for the new target by using an example application, such as [Blinky](with link to it). You should use the new Mbed OS directory with the new target that was added in the example application above.
 
 Add any missing headers reported at compile time for the peripherals, and your new target is ready to be built.
 
