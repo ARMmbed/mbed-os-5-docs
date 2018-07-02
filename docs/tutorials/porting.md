@@ -72,7 +72,7 @@ The target’s directory structure has the following hierarchy:
 - The specific board that uses the MCU in the previous level:
 
 ```
-/mbed-os/targets/TARGET_<Manf>/<Device_Family>/<specific_MCU>/<specific_board>/
+/mbed-os/targets/TARGET_<Manf>/TARGET_<Device_Family>/TARGET_<specific_MCU>/TARGET_<specific_board>/
 ```
 
 Our sample implementation uses:
