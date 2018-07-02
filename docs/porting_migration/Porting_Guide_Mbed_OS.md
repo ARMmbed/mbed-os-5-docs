@@ -213,7 +213,7 @@ typedef enum {
 
 ### 8. Compile with a supported compiler
 
-The last step is to build the new target with any supported compiler. You need to compile for the new target by using an example application, such as [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky). You should use the new Mbed OS directory with the new target that was added in the example application above.
+The last step is to verify that the new board port compiles. Use an example application, such as [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), and checkout the branch containing your port in the `mbed-os` sub-directory.
 
 If any headers for the peripherals were reported as missing at compile time, then add those, and your new target is ready to be built.
 
