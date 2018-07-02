@@ -29,32 +29,38 @@ Mbed Cloud Client provides reference implementation for three Mbed Enabled targe
 Our sample target is identified by the following:
 
 * The name of the target for builds is `MY_BOARD_1`.
+* The vendor is "MY_VENDOR", the device family is "MY_FAMILY" and the device on the board is "MY_DEVICE"
 * A Cortex-M4F based core.
-* Supports Mbed OS v5.x.
-* Has SERIAL interface as a bare minimum to print standard printf messages to the console, once built successfully.
-* Supports ARMCC and IAR compilers.
-* Inherits some features, such as the default toolchain and the virtual disk, from the standard `Target` defined in `targets.json`.
-* The public flag is set to `true` to indicate that this target is visible for compilation from the toolchains.
+* Porting for Mbed OS v5.x, which requires support for Arm Compiler 5, GCC Arm Embedded, and IAR EWARM.
+* Has a serial (UART) interface connected to the CMSIS-DAP implementation.
+* Requires the macro `CPU_DEVICE_1` to compile the vendor-provided HAL for the device mounted on the board.
+* Requires the macro `FAMILY_MY_FAMILY` to compile the vendor-provided HAL for the family of the device.
 
 All of these requirements are directly mapped to relevant tags in the `targets.json` entry for our target. This is shown in step 3 below.
 
 
 ### Add the target entry in `targets.json`
-```
-    "MY_BOARD_1": {
-                  "inherits":["Target"],
-                  "core":"Cortex-M4F",
-                  "public": true,
-                  "extra_labels": ["MY_Vendor", "VendorMCUs", "VendorDevice1",
-    "VendorBoard_1"],
-                  "macros": ["CPU_<Full_Name_of_CPU>"],
-                  "supported_toolchains": ["ARM", "IAR"],
-                  "device_has": ["SERIAL"],
-                  "release_versions": ["5"]
-            },
+```json
+"MY_FAMILY": {
+    "inherits": ["Target"],
+    "macros_add": ["FAMILY_MY_FAMILY"],
+    "extra_labels_add": ["MY_VENDOR"],
+    "public": false
+},
+"MY_DEVICE_1": {
+    "inherits": ["MY_FAMILY"],
+    "macros_add": ["CPU_DEVICE_1"],
+    "supported_toolchains": ["GCC_ARM", "ARM", "IAR"],
+    "device_has_add": ["SERIAL"],
+    "core": "Cortex-M4F",
+    "release_versions": [5]
+},
+"MY_BOARD_1": {
+    "inherits":["MY_DEVICE_1"]
+},
 ```
 
-<span class="notes">**Note:** The `extra_labels` must mimic the exact directory structure used to define the new target.</span>
+<span class="notes">**Note:** The `extra_labels_add` of `MY_VENDOR` is a stand in for the vendor, as it would not configure anything by itself.</span>
 
 
 ### Create the directory structure
