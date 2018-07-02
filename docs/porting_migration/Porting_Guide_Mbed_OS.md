@@ -217,7 +217,7 @@ The last step is to verify that the new board port compiles. Use an example appl
 
 If any headers for the peripherals were reported as missing at compile time, then add those, and your new target is ready to be built.
 
-Below is an introductory example of a target that supports only the SERIAL peripheral. This means that it uses the GPIO to output debug messages by using the printf statements in the `main.cpp`. You can use this as a starting point and build from here.
+Below is an example of a target that supports only the SERIAL peripheral. This outputs debug messages using the printf statements in the `main.cpp`. You can use this as a starting point and build from here.
 
 
 ### **Sample implementation**
