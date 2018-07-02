@@ -192,60 +192,39 @@ typedef enum {
 Finally, verify that the new board port compiles. Use an example application, such as [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), and checkout the branch containing your port in the `mbed-os` sub-directory. Correct any compiler errors and then submit a pull request to [the master branch of the upstream repo](https://github.com/ARMmbed/mbed-os/pull/new/master)
 
 
-### Sample implementation
+### Sample directory structure
 
-Below is an example of a target that supports only a single `SERIAL` peripheral connected to `stdio`. 
+Below is an example of all of the files that would be added for a target from vendor `MY_VENDOR` with an MCU, `MY_DEVICE_1` from device family `MY_FAMILY_1` mounted on the board `MY_BOARD_1` supporting the `SERIAL` device.
 
-
-
-#### Figure 1: Target vendor level directory structure
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture1.png)<span>Target vendor level directory structure</span></span>
-
-
-
-#### Figure 2: Target MCU family level directory structure
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture2.png)<span>Target MCU family level directory structure</span></span>
-
-
-
-#### Figure 3: Target device level
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture3.png)<span>Target device level</span></span>
-
-
-
-#### Figure 4: Target MCU family APIs implementation
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture4.png)<span>Target MCU family APIs implementation</span></span>
-
-
-
-#### Figure 5: Target device level directory structure
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture5.png)<span>Target device level directory structure</span></span>
-
-
-
-#### Figure 6: Target board level
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture6.png)<span>Target board level</span></span>
-
-
-
-#### Figure 7: Target device-specific implementation
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture7.png)<span>Target device-specific implementation</span></span>
-
-
-
-#### Figure 8: Target device-specific toolchain support
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture8.png)<span>Target device-specific toolchain support</span></span>
-
-
-
-#### Figure 9: Target device-specific driver support
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/cloud-docs-images/Picture9.png)<span>Target device-specific driver support</span></span>
+```
+mbed-os
+└── targets
+   └── TARGET_MY_VENDOR
+      ├── TARGET_MY_FAMILY
+      │  ├── TARGET_MY_DEVICE_1
+      │  │  ├── TARGET_MY_BOARD_1
+      │  │  │  ├── PeripheralNames.h
+      │  │  │  ├── PeripheralPins.c
+      │  │  │  ├── PeripheralPins.h
+      │  │  │  ├── clock_config.c
+      │  │  │  ├── clock_config.h
+      │  │  │  └── device.h
+      │  │  ├── TOOLCHAIN_ARM
+      │  │  │  ├── device.sct
+      │  │  │  └── startup.S
+      │  │  ├── TOOLCHAIN_GCC
+      │  │  │  ├── device.ld
+      │  │  │  └── startup.S
+      │  │  ├── TOOLCHAIN_IAR
+      │  │  │  ├── device.icf
+      │  │  │  └── startup.S
+      │  │  ├── clock.c
+      │  │  ├── clock.h
+      │  │  ├── uart.c
+      │  │  ├── uart.h
+      │  │  └── us_ticker.c
+      │  └── api
+      │     ├── Objects.h
+      │     └── PortNames.h
+      └── mbed_rtx.h
+```
