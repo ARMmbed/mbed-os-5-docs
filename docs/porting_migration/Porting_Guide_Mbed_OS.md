@@ -215,9 +215,9 @@ typedef enum {
 
 The last step is to build the new target with any supported compiler. You need to compile for the new target by using an example application, such as [Blinky](with link to it). You should use the new Mbed OS directory with the new target that was added in the example application above.
 
-Add any missing headers reported at compile time for the peripherals, and your new target is ready to be built.
+If any headers for the peripherals were reported as missing at compile time, then add those, and your new target is ready to be built.
 
-An introductory example of a target that supports only the SERIAL peripheral, which in turn uses the GPIO, to output debug messages by using printf statements in the `main.cpp` is included below. You can use this as a starting point and build from here.
+Below is an introductory example of a target that supports only the SERIAL peripheral. This means that it uses the GPIO to output debug messages by using the printf statements in the `main.cpp`. You can use this as a starting point and build from here.
 
 
 ### **Sample implementation**
