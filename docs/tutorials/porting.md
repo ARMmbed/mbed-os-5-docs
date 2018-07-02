@@ -130,16 +130,13 @@ For each supported toolchain listed in your new target's `supported_toolchains` 
 
 ### Add pin names
 
-You must add peripheral names and pin names at the `Board` level, and you must follow standard naming conventions for common peripherals, such as BUTTONs and LEDs. These are defined in the `PinNames.h` header file at the board level. Please refer to Figure 6 below for the directory structure.
+Add peripheral names and pin names, following standard naming conventions for common peripherals. Define these pins in the `PinNames.h` header file at the board level. Please refer to Figure 6 below for the directory structure.
 
-If there is more than one peripheral of the same type, then you must define a default for each peripheral. This is required for the application code to use the peripheral without having to specify the number of the peripheral brought out. It is also required to define the DAPLink pins for the new target. An example is shown below:
+Define a default for each peripheral. Define the DAPLink serial pins as `STDIO_UART_RX` and `STDIO_UART_TX`.  For example:
 
-```
+```C
 #ifndef MBED_PINNAMES_H
 #define MBED_PINNAMES_H
-
-#include "cmsis.h"
-#include "PinNamesTypes.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -148,9 +145,8 @@ extern "C" {
 typedef enum {
     PA_0  = 0x00,
     PA_1  = 0x01,
+    PA_1  = 0x01,
 <snip>
-    // ADC internal channels
-    ADC_VBAT = 0xF2,
 
     // Generic signals namings
     LED1        = PB_2,
@@ -162,39 +158,25 @@ typedef enum {
     // Standardized button names
     BUTTON1 = USER_BUTTON,
 
-    SERIAL_TX   = P_8,
-    SERIAL_RX   = P_12,
+    SERIAL_TX   = PA_8,
+    SERIAL_RX   = PA_12,
 
-    I2C_SCL     = P_17,
-    I2C_SDA     = P_18,
+    I2C_SCL     = PA_17,
+    I2C_SDA     = PA_18,
 
-    SPI_MOSI    = P_4,
-    SPI_MISO    = P_7,
-    SPI_SCK     = P_6,
-    SPI_CS      = P_16,
+    SPI_MOSI    = PA_4,
+    SPI_MISO    = PA_7,
+    SPI_SCK     = PA_6,
+    SPI_CS      = PA_16,
 
     //DAPLink
+    STDIO_UART_RX = SERIAL_RX
+    STDIO_UART_TX = SERIAL_TX
     USBRX      = STDIO_UART_RX,
     USBTX      = STDIO_UART_TX,
-    SWDIO      = P_26,
-    SWCLK      = P_25,
-    NTRST      = P_13,
-
-    //MTB Aliases
-    //Left side (top view)
-    TGT_SWDIO     = SWDIO,
-    TGT_SWCLK     = SWCLK,
-    TGT_RESET     = NTRST,
-    PC6           = SERIAL_TX,
-    PC7           = SERIAL_RX,
-    PB9           = I2C_SDA,
-    PB8           = I2C_SCL,
-
-    //Right side (top view)
-    GND           = NC,
-    PA11          = P_35,
-    PA12          = P_36,
-
+    SWDIO      = PA_26,
+    SWCLK      = PA_25,
+    NTRST      = PA_13,
 } PinName;
 
 #ifdef __cplusplus
