@@ -66,10 +66,10 @@ All of these requirements are directly mapped to relevant tags in the `targets.j
 ### Create the directory structure
 
 The target’s directory structure has the following hierarchy: 
-- The manufacturer is listed at the top level
-- The device family 
-- A specific device in the family
-- The specific board that uses the MCU in the previous level:
+- The manufacturer is listed at the top level. This is used for implantation that is general to all targets supported by a vendor.
+- The device family. This is used for implementation that is specific to a family.
+- A specific device in the family. This is used for implementation that applies to only the single device.
+- The specific board that uses the MCU in the previous level. This is used for pin maps.
 
 ```
 /mbed-os/targets/TARGET_<Manf>/TARGET_<Device_Family>/TARGET_<specific_MCU>/TARGET_<specific_board>/
