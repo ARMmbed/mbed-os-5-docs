@@ -136,7 +136,7 @@ You need to add these files at the `Device` level under `/device`. Also, make su
 
 ### 7. Add peripherals and pin names for the target
 
-You must add peripherals names and pin names at the `Board` level, and you must follow standard naming conventions for common peripherals, such as BUTTONs and LEDs. These are defined in the `PinNames.h` header file at the board level. Please refer to Figure 6 below for the directory structure.
+You must add peripheral names and pin names at the `Board` level, and you must follow standard naming conventions for common peripherals, such as BUTTONs and LEDs. These are defined in the `PinNames.h` header file at the board level. Please refer to Figure 6 below for the directory structure.
 
 If there is more than one peripheral of the same type, then you must define a default for each peripheral. This is required for the application code to use the peripheral without having to specify the number of the peripheral brought out. It is also required to define the DAPLink pins for the new target. An example is shown below:
 
