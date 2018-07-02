@@ -28,14 +28,12 @@ Mbed Cloud Client provides reference implementation for three Mbed Enabled targe
 
 Our sample target is identified by the following:
 
-* The name of the target for builds is `MyTarget123`.
+* The name of the target for builds is `MY_BOARD_1`.
 * A Cortex-M4F based core.
 * Supports Mbed OS v5.x.
 * Has SERIAL interface as a bare minimum to print standard printf messages to the console, once built successfully.
 * Supports ARMCC and IAR compilers.
-* Inherits some features, such as the default toolchain and the virtual disk, from the standard `target` defined in `targets.json`.
-* Has all the drivers, APIs, HAL and so on defined in the `/mbed-os/TARGETS` directory as
-`TARGET_MY_Vendor/TARGET_VendorMCUs/TARGET_VendorDevice1/TARGET_VendorBoard_1`.
+* Inherits some features, such as the default toolchain and the virtual disk, from the standard `Target` defined in `targets.json`.
 * The public flag is set to `true` to indicate that this target is visible for compilation from the toolchains.
 
 All of these requirements are directly mapped to relevant tags in the `targets.json` entry for our target. This is shown in step 3 below.
@@ -43,7 +41,7 @@ All of these requirements are directly mapped to relevant tags in the `targets.j
 
 ### Add the target entry in `targets.json`
 ```
-    "MyTarget123": {
+    "MY_BOARD_1": {
                   "inherits":["Target"],
                   "core":"Cortex-M4F",
                   "public": true,
@@ -68,12 +66,12 @@ The target’s directory structure has the following hierarchy:
 - The specific board that uses the MCU in the previous level:
 
 ```
-\mbed-os\targets\TARGET_<Manf>\<Device_Family>\<specific_MCU>\<specific_board>\
+/mbed-os/targets/TARGET_<Manf>/<Device_Family>/<specific_MCU>/<specific_board>/
 ```
 
 Our sample implementation uses:
 ```
-\mbed-os\targets\TARGET_MY_Vendor\TARGET_VendorMCUs\TARGET_VendorDevice1\TARGET_VendorBoard_1\
+/mbed-os/targets/TARGET_MY_VENDOR/TARGET_MY_FAMILY/TARGET_MY_DEVICE_1/TARGET_MY_BOARD_1/
 ```
 
 
