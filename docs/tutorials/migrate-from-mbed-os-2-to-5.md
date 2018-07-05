@@ -66,6 +66,7 @@ To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/
 
    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
 
+
 To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**.
 
 #### Example component No. 1 - successful initial migration
@@ -91,7 +92,7 @@ mbed add mbed-os
 mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 ```
 
-It successfully compiles, so no changes are necessary to the `Grove - Buzzer` library or `Hello World` program.
+It successfully compiles, so that no changes to the `Grove - Buzzer` library or `Hello World` program are necessary.
 
 #### Example component No. 2 - application fails to compile
 
