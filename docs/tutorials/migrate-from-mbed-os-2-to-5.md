@@ -54,7 +54,8 @@ To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/
 
 1. Open your project in the online compiler
 1. Right click on `mbed` and select "Delete..."
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)</span>
+
+   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)<span>Delete `mbed`</span></span>
    
 1. If your project includes `mbed-rtos`, then you will also need to delete this library to successfully update to Mbed OS 5. Right click on `mbed-rtos` and select "Delete..."
    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)</span>
