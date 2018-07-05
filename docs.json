@@ -1,6 +1,6 @@
 [{
         "title": "Introduction",
-        "description": "Introducing Mbed OS; the overview, architecture, features and licensing",
+        "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
         "chapters": [{
