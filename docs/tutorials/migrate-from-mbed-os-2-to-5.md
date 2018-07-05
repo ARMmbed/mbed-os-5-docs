@@ -13,7 +13,7 @@ This guide uses the Grove temperature and humidity sensor as an example: [Grove-
 
 First, navigate to the Hello World repository for the component.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)<span>Hello World repository for the component</span></span>
 
 Next, view the files in the Hello World repository. The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
