@@ -18,7 +18,7 @@ First, navigate to the Hello World repository for the component.
 
 Next, view the files in the Hello World repository. The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)<span>Older version of Mbed OS files in the Hello World repository</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)<span>Older version of Mbed OS `mbed.bld` or `mbed-rtos.lib` files in the Hello World repository</span></span>
 
 
 A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.lib` file.
