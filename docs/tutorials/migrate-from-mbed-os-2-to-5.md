@@ -69,7 +69,7 @@ To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/
 
 To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**.
 
-#### Example component No. 1 - successful initial migration
+#### Example component no. 1 - successful initial migration
 
 Repositories used in this example:
 
@@ -94,7 +94,7 @@ mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 
 It successfully compiles, so that no changes to the `Grove - Buzzer` library or `Hello World` program are necessary.
 
-#### Example component No. 2 - application fails to compile
+#### Example component no. 2 - application fails to compile
 
 Repositories used in this example:
 
@@ -119,7 +119,7 @@ mbed compile -m k64f -t gcc_arm
 
 ##### Compilation errors
 
-After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors already exist.
+After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
 
 Here is the output produced from `mbed compile`:
 
@@ -146,7 +146,7 @@ Compile [  0.8%]: main.cpp
 [mbed] ERROR: Command "c:\python27\python.exe -u C:\Repos\SRF08HelloWorld\mbed-os\tools\make.py -t gcc_arm -m k64f --source . --build .\BUILD\k64f\gcc_arm" in "C:\Repos\SRF08HelloWorld"
 ```
 
-This is a target-specific error. The pins in the `Hello World` application do not exist on this target, K64F. To fix this, replace the SDA/SCL pins with ones present on the K64F. Use the [K64F platform page](https://os.mbed.com/platforms/FRDM-K64F/) to find the correct pins. D14/D15 work. So, `main.cpp` now looks like this:
+This is a target-specific error. The pins in the `Hello World` application do not exist on this target, K64F. To fix this, replace the SDA and SCL pins with the ones present on the K64F. Use the [K64F platform page](https://os.mbed.com/platforms/FRDM-K64F/) to find the correct pins. D14 and D15 work. So, `main.cpp` now looks like this:
 
 ```
 #include "mbed.h"
@@ -166,7 +166,7 @@ int main() {
 
 Now, the program successfully compiles.
 
-#### Example component No. 3 - library fails to compile
+#### Example component no. 3 - library fails to compile
 
 Repositories used in this example:
 
@@ -191,7 +191,7 @@ mbed compile -m k64f -t gcc_arm
 
 ##### Compilation errors
 
-After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors already exist.
+After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
 
 Here is the output produced from `mbed compile`:
 
