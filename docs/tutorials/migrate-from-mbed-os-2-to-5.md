@@ -25,18 +25,18 @@ A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new_mbed_file.png)<span>Mbed OS 5 or later `mbed-os.lib` file in the Hello World respository</span></span>
 
-Some repositories may have both an `mbed.bld` file and a `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace BOTH `mbed.bld` and `mbed-rtos.lib`.
+Some repositories may have both an `mbed.bld` file and an `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace both `mbed.bld` and `mbed-rtos.lib`.
 
 ### Migrating to Mbed OS 5
 
-There are two possible outcomes when migrating to Mbed OS 5:
+Migrating to Mbed OS 5 results in two possible outcomes:
 
 1. Replacing the old Mbed library with Mbed OS is successful because the APIs in the library have not changed. In this instance, you're finished.
-2. Replacing the old Mbed library with Mbed OS produces some compilation errors. These errors can occur in the library or application code for the following two reasons:
+2. Replacing the old Mbed library with Mbed OS produces some compilation errors. These errors can occur in the library or in the application code for the following two reasons:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
-  - There is target specific code, and you need to migrate it to use code for the specific target you are compiling for.
+  - There is target specific code, and you need to migrate it to use the code for the specific target you are compiling for.
 
-The general outline for updating to Mbed OS 5 with the [Mbed CLI](/docs/latest/tools/arm-mbed-cli.html) is:
+To update to Mbed OS 5 with the [Mbed CLI](/docs/latest/tools/arm-mbed-cli.html), run:
 
 ```
 mbed import [URL of Project]
@@ -50,12 +50,12 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-The general outline for updating to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/latest/tools/arm-mbed-online-compiler.html) is:
+To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/latest/tools/arm-mbed-online-compiler.html):
 
 1. Open your project in the online compiler
 1. Right click on `mbed` and select "Delete..."
    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)</span>
-1. If your project includes `mbed-rtos`, you will also need to delete this library to successfully update to Mbed OS 5. Right click on `mbed-rtos` and select "Delete..."
+1. If your project includes `mbed-rtos`, then you will also need to delete this library to successfully update to Mbed OS 5. Right click on `mbed-rtos` and select "Delete..."
    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)</span>
 1. Right click on the name of your project and hover over "Import Library" then select "From URL ..."
    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-import-url.png)</span>
