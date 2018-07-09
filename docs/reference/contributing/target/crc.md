@@ -35,14 +35,12 @@ To enable hardware CRC support in Mbed OS, add the `CRC` label in the `device_ha
 
 #### Testing
 
-The Mbed OS HAL API provides a set of conformance tests for Hardware CRC. You can use these tests to validate the correctness of your implementation. To run the hardware CRC HAL tests, use the following command:
+The Mbed OS HAL API provides a set of conformance tests for hardware CRC. You can use these tests to validate the correctness of your implementation. To run the hardware CRC HAL tests, use the following command:
 
 ```
 mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-crc*"
 ```
 
-You can read more about the test cases here:
+You can read more about the test cases in the Doxygen:
 
-```
 [![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__crc__tests.html)
-```
