@@ -116,7 +116,7 @@ This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, u
 
 Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_PLATFORM_ERROR_HIST_ENABLED**.
 
-`MBED_CONF_PLATFORM_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can enable the error history by setting the configuration option `MBED_CONF_PLATFORM_ERROR_HIST_ENABLED` to true. By default, it keeps track of the past four errors, if enabled. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. (See [error handling API examples](#error-handling-api-examples) section for API usage examples.) In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the [error hook](#error-hook-for-applications) function.
+`MBED_CONF_PLATFORM_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can enable the error history by setting the configuration option `MBED_CONF_PLATFORM_ERROR_HIST_ENABLED` to true. By default, it keeps track of the past four errors, if enabled. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. (Please see the [error handling API examples](#error-handling-api-examples) section for API usage examples.) In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the [error hook](#error-hook-for-applications) function.
 
 See the below link to learn more about the APIs related to error history:
 
@@ -298,9 +298,9 @@ void save_all_errors() {
     mbed_clear_all_errors();
 }
 ```
-### Error Handling example
+### Error handling example
 
-The example application below demonstrates usage of error handling APIs.
+The example application below demonstrates usage of error handling APIs:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/file/34cf6e69b337/main.cpp)
 
