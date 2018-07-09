@@ -69,7 +69,7 @@ The error handling system in Mbed OS automatically captures the thread context f
 - Thread stack size – Size of stack; this information is captured only if the system is built with RTOS support.
 - Thread stack mem - Top of stack; this information is captured only if the system is built with RTOS support.
 - Thread current SP – SP value (PSP or MSP based on what’s active); this information is captured only if the system is built with RTOS support.
-- File name and line number - By default, capturing of file name and line number is disabled. If you need this information to be captured, you need to enable it by using the **MBED_CONF_ERROR_FILENAME_CAPTURE_ENABLED** macro.
+- File name and line number - By default, capturing of file name and line number is disabled. If you need this information to be captured, you need to set the configuration option **MBED_CONF_PLATFORM_ERROR_FILENAME_CAPTURE_ENABLED** to true.
 
 STDOUT emits this captured context in the case of fatal errors. In the case of warnings, it is recorded by the system, and you can retrieve it later for system diagnostics, external reporting and debugging purposes. See the [error history](#error-history) section for information on how the error history feature works in Mbed OS. The [error handling API examples](#error-handling-api-examples) also include more information on how to use error retrieval APIs.
 
@@ -85,7 +85,7 @@ When you report an error using `MBED_ERROR()` or `MBED_ERROR1()` macros, the err
 
 Note that the error functions output the error message or the file name in debug and develop builds only.
 
-Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default, even for debug and develop builds. You can enable the filename capture by defining `MBED_CONF_ERROR_FILENAME_CAPTURE_ENABLED`.
+Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default, even for debug and develop builds. You can enable the file name capture by setting the configuration option **MBED_CONF_PLATFORM_ERROR_FILENAME_CAPTURE_ENABLED** to true.
 
 ```
 ++ MbedOS Error Info ++
@@ -114,9 +114,9 @@ This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, u
 
 ### Error history
 
-Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_ERROR_HIST_SIZE**.
+Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_PLATFORM_ERROR_HIST_ENABLED**..
 
-`MBED_CONF_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can disable the error history feature by defining `MBED_CONF_ERROR_HIST_DISABLED`. By default, it keeps track of the past four errors. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. (See [error handling API examples](#error-handling-api-examples) section for API usage examples.) In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the [error hook](#error-hook-for-applications) function.
+`MBED_CONF_PLATFORM_ERROR_HIST_SIZE` configures the number of previous errors the system keeps in its error history. You can enable the error history by setting the configuration option `MBED_CONF_PLATFORM_ERROR_HIST_ENABLED` to true. By default, it keeps track of the past four errors, if enabled. Whether error history is enabled or not, the system always records the first and last errors that happened in the system. We provide APIs to retrieve errors or warnings from the **Error history** and the first and last errors. (Please see the [error handling API examples](#error-handling-api-examples) section for API usage examples.) In most cases, calling **MBED_ERROR()/MBED_ERROR1()** halts the system. Therefore, the error history APIs retrieve the warnings, unless you are calling these APIs from the [error hook](#error-hook-for-applications) function.
 
 See the below link to learn more about the APIs related to error history:
 
@@ -298,6 +298,12 @@ void save_all_errors() {
     mbed_clear_all_errors();
 }
 ```
+
+### Error handling example
+
+The example application below demonstrates usage of error handling APIs.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/file/34cf6e69b337/main.cpp)
 
 ### List of Mbed OS defined error codes and descriptions
 
