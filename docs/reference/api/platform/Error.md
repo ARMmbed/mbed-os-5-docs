@@ -85,7 +85,7 @@ When you report an error using `MBED_ERROR()` or `MBED_ERROR1()` macros, the err
 
 Note that the error functions output the error message or the file name in debug and develop builds only.
 
-Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default, even for debug and develop builds. You can enable the filename capture by setting the configuration option **MBED_CONF_PLATFORM_ERROR_FILENAME_CAPTURE_ENABLED** to true.
+Below is an example of terminal output the `MBED_ERROR1()` call created. Note that file name capture is disabled by default, even for debug and develop builds. You can enable the file name capture by setting the configuration option **MBED_CONF_PLATFORM_ERROR_FILENAME_CAPTURE_ENABLED** to true.
 
 ```
 ++ MbedOS Error Info ++
