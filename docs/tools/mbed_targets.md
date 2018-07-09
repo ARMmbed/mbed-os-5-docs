@@ -351,7 +351,7 @@ For each of these target roles, some restrictions are in place:
   - `I2CSLAVE`.
   - `I2C_ASYNCH`.
   - `INTERRUPTIN`.
-  - `LOWPOWERTIMER`.
+  - `LPTICKER`.
   - `PORTIN`.
   - `PORTINOUT`.
   - `PORTOUT`.
