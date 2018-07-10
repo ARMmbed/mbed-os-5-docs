@@ -52,12 +52,12 @@ To determine the success of migration, run:
 
 To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/latest/tools/arm-mbed-online-compiler.html):
 
-1. Open your project in the online compiler.
+1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**: 
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)<span>Delete mbed</span></span>
    
-1. If your project includes `mbed-rtos`, then you will also need to delete this library to successfully update to Mbed OS 5. Right click on **mbed-rtos** and select **Delete...**:
+1. If your project includes `mbed-rtos`, you also need to delete this library to successfully update to Mbed OS 5. Right click on **mbed-rtos**, and select **Delete...**:
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)<span>Delete mbed-rtos</span></span>
     
@@ -68,7 +68,6 @@ To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/
 1. Copy and paste the URL for Mbed OS 5 `https://github.com/armmbed/mbed-os`, and then click **Import**:
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
-
 
 To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**. 
 
