@@ -297,7 +297,7 @@ Notice that the `./CN0357/AD7790/AD7790.h` and `./CN0357/CN0357.h` header files 
 Line 114 of the `AD7790.h` header file now looks like this:
 
 ```
-AD7790( float reference_voltage, PinName CS, PinName MOSI, PinName MISO, PinName SCK);
+AD7790(float reference_voltage, PinName CS, PinName MOSI, PinName MISO, PinName SCK);
 ```
 
 Line 77 of the `CN0357.h` header file now looks like this:
