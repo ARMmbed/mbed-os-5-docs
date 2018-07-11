@@ -199,7 +199,7 @@ You can verify that the new board port compiles by using an [example application
 
 ### Sample directory structure
 
-Below is an example of all of the files that you would add for a target from vendor `MY_VENDOR` with an MCU, `MY_DEVICE_1` from device family `MY_FAMILY_1` mounted on the board `MY_BOARD_1` supporting the `SERIAL` device:
+Below is an example of all of the files that you would add for a target from vendor `MY_VENDOR`, with an MCU `MY_DEVICE_1`, from device family `MY_FAMILY_1`, mounted on the board `MY_BOARD_1` and supporting the `SERIAL` device:
 
 ```
 mbed-os
@@ -236,7 +236,7 @@ mbed-os
 
 ### HAL porting
 
-There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the API declared in the API header.
+There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the `MCU_NAME` target definition in `targets.json`, and providing an implementation of the API declared in the API header.
 
 device_has       |   API header
 -----------------|------------------
