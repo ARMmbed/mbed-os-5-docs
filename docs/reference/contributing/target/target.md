@@ -1,6 +1,6 @@
 <h2 id="target-port">Porting targets</h2>
 
-This document discusses requirements to port Mbed OS to a derivative target of any one of the Mbed OS Enabled targets. To port the MCU to Mbed OS, as well, along with a custom board based on the MCU, please follow our [more detailed porting guide](docs/development/reference/porting-targets.html). 
+This document discusses requirements for porting Mbed OS to a derivative target of any one of the Mbed OS Enabled targets. To port the MCU to Mbed OS, as well, along with a custom board based on the MCU, please follow our [more detailed porting guide](docs/development/reference/porting-targets.html). 
 
 Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pack. The microcontroller must have these available.
 
