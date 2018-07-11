@@ -2,8 +2,6 @@
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. BLE, unlike the classic Bluetooth standard, reduces power consumption, allowing your BLE device to run for months or years on a coin-cell battery. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
-BLE is a method of transferring small amounts of data. If you have an input method, such as a sensor or button, your BLE device can receive input and transfer it to a phone, tablet or PC. With the advent of BLIP - Bluetooth IP Support - it can also transfer input directly to the internet. You can then use it to store or analyze the information and send commands back to the device.
-
 This two-way communication means you can use a single device to send information and perform actions based on that information. You could [water your garden](http://www.hosepipeban.org.uk/hosepipe-ban-current-situation/) when the ground is dry, put a beacon with your details on your dog's collar or flash a light when a car comes too close to your bicycle.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/BLEsample.png)<span>A BLE setup requires a board with BLE support and a way to control it, for example a phone app or a local touchscreen.</span></span>
@@ -22,7 +20,7 @@ The two most common sources of information that you may want to process are sens
 
 1. *Local processing* means the device itself processes the data and determines what to do. One example is a thermostat, which knows to turn the heat on or off according to a room temperature input and doesn't need instructions from anywhere.
 
-1. *Remote processing* means that you send data to a different device to be handled there. You then either wait for instructions from the remote device or go on gathering and sending data. For example, if you're trying to predict tomorrow's weather, the device sends data (temperature, barometric pressure and so on) to a computer that can analzse it. Then the local device doesn't need the processing power to run a weather program.
+1. *Remote processing* means that you send data to a different device to be handled there. You then either wait for instructions from the remote device or go on gathering and sending data. For example, if you're trying to predict tomorrow's weather, the device sends data (temperature, barometric pressure and so on) to a computer that can analyzse it. Then the local device doesn't need the processing power to run a weather program.
 
 BLE is intended for low power, battery-operated devices, so typical applications will not perform complex processing on the device - processing burns through batteries. Applications will instead export the data to be processed remotely, and wait for a response.
 
@@ -34,7 +32,7 @@ Because of restrictions on energy use in radio operation, BLE is a short-range m
 
 ### Working with apps or websites
 
-Onet way to use BLE is to advertise information to any device in the area without becoming interactive. For example, you could notify every user entering your shop that you'll be open until late this evening. There is no need for any response from the users - it's similar to putting a notice on your door. Users only need a phone app to see these advertisements as notifications. What's key is that this app does not need to be specific to your project - the same notification app can work with any BLE device; there are several generic apps that can do this.
+One way to use BLE is to advertise information to any device in the area without becoming interactive. For example, you could notify every user entering your shop that you'll be open until late this evening. There is no need for any response from the users - it's similar to putting a notice on your door. Users only need a phone app to see these advertisements as notifications. What's key is that this app does not need to be specific to your project - the same notification app can work with any BLE device; there are several generic apps that can do this.
 
 If an advertisement-only solution isn’t enough, you can have a transactional interaction (the fancy way of saying “conversation”) between a client and a device over a BLE connection. This usually requires a custom mobile or web-based app, though some generic apps may be enough to start. In addition to handling the data, the app may provide you with an interface through which you can send commands to the BLE device. A common example is mobile fitness apps that receive your heart rate information from a BLE-based heart rate monitor. The heart rate monitor doesn't store or process information - it just receives your heart rate and sends it to the app. The app displays the heart rate and gives you some control of the BLE device.
 
@@ -52,6 +50,6 @@ At the moment, BLE devices don't have independent internet access. To get intern
 
 1. You can give your board a secondary communication method, such as Ethernet or Wi-Fi. This can easily double the price of the board.
 
-1. The BLE device can get internet over its BLE connection to a mobile phone. This means that when the phone terminates the BLE connection, the BLE device loses its internet access. This doesn't require additional hardware, so it doesn't affect the price of the board. However, for the device to have constant internet access, it needs a phone (or BLE-enabled computer) next to it.
+1. The BLE device can use a gateway (which can be a mobile phone) to exchange data with the internet. The gateway needs to adapt the protocols used because BLE is a non-IP technology. This means that when the phone terminates the BLE connection, the BLE device loses its internet access. This doesn't require additional hardware, so it doesn't affect the price of the board. However, for the device to have constant internet access, it needs a phone (or BLE-enabled computer) next to it.
 
 In the future, routers may accept BLE connections in the same way that they currently accept Wi-Fi connections.
