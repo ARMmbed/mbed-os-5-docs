@@ -1,10 +1,10 @@
 <h2 id="target-port">Porting targets</h2>
 
-This document discusses requirements for porting Mbed OS to a derivative target of any one of the Mbed OS Enabled targets. To port the MCU to Mbed OS, as well, along with a custom board based on the MCU, please follow our [more detailed porting guide](docs/development/reference/porting-targets.html). 
+This document discusses requirements for porting Mbed OS to a derivative target of any one of the Mbed OS Enabled targets. To port the MCU to Mbed OS as well, along with a custom board based on the MCU, please follow our [more detailed porting guide](docs/development/reference/porting-targets.html). 
 
 Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pack. The microcontroller must have these available.
 
-[Mbed Cloud Client](https://cloud.mbed.com/docs/current) provides reference implementation for three Mbed Enabled targets, the K64F, NUCLEO_F429ZI and the UBLOX_EVK_ODIN_W2. You do not need to port either Mbed OS or the Cloud Client if you are using one of these three boards.
+[Mbed Cloud Client](https://cloud.mbed.com/docs/current) provides reference implementation for three Mbed Enabled targets: the K64F, NUCLEO_F429ZI and the UBLOX_EVK_ODIN_W2. You do not need to port Mbed OS or the Cloud Client if you are using one of these three boards.
 
 ### Summary of steps
 
