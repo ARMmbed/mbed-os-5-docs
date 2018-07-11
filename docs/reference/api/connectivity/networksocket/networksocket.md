@@ -5,15 +5,15 @@ section of this book, the Socket API relates to OSI layer 4, the Transport layer
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
 
-In Mbed OS, this socket API is C++ based but closely follows the functionality from POSIX standard (IEEE Std 1003.1) and relevant RFC standards. Socket interface is abstract and protocol agnostic and requires you to specifying the protocol only when creating the socket. On libraries and interfaces, abstract base class may be used, allowing applications to be ported from protocol to another.
+In Mbed OS, this socket API is C++ based but closely follows the functionality from the POSIX standard (IEEE Std 1003.1) and relevant RFC standards. The Socket interface is abstract and protocol agnostic and requires you to specify the protocol only when creating the socket. With libraries and interfaces, you may use the abstract base class, which allows you to port applications from one protocol to another.
 
-### General usage
+### General use
 
 The following steps describe the typical application flow:
 
 1. Initialize a network interface.
 1. Create a socket.
-1. Connect (optional step for datagram protocols)
+1. Connect (optional step for datagram protocols).
 1. Send data.
 1. Receive data.
 1. Close the socket.
@@ -45,20 +45,15 @@ sock.close();
 
 ### Changes in Mbed OS 5.10
 
-Mbed OS Socket API has gone under refactoring for Mbed OS 5.10 release. For most of the applications, these changes are not noticeable as legacy behaviour is still emulated in `TCPSocket` and `UDPSocket` classes.
+The 5.10 release refactors the Mbed OS Socket API. For most of the applications, these changes are not noticeable because the `TCPSocket` and `UDPSocket` classes still emulate legacy behavior.
 
-New design contain Abstract Socket interface that can be used directly by
-applications. Casting `Socket` pointers back to `TCPSocket` or `UDPSocket`
-is no longer necessary.
+The new design contains an abstract socket interface that applications can use directly. Casting `Socket` pointers back to `TCPSocket` or `UDPSocket` is no longer necessary.
 
-Upcasting any protocol specific class to `Socket` has no side effect and is recommended API design. Knowing the exact type is only required when socket is created.
+Upcasting any protocol specific class to `Socket` has no side effect and is a recommended API design. Knowing the exact type is only required when you create the socket.
 
-New design also emphasis usage of 'SocketAddress' for holding the IP
-addresses, instead on textual format. `SocketAddress` is a container class that can be used by other protocols than IP in the future. Legacy string versions of `connect()`, `bind()` and `sendto()` functions do not exist in the `Socket` base class, but they exist in `TCPSocket` and `UDPSocket` classes.
+The new design also emphasizes use of `SocketAddress` for holding the IP addresses, instead on textual format. `SocketAddress` is a container class that protocols other than IP can use in the future. Legacy string versions of `connect()`, `bind()` and `sendto()` functions do not exist in the `Socket` base class, but they exist in `TCPSocket` and `UDPSocket` classes.
 
-New design also deprecates the TCPServer completely, moving its
-functionality directly info 'TCPSocket' itself. Legacy TCPServer class still exist and is fully functional.
-
+The new design also renders the TCPServer API unnecessary, moving its functionality directly info TCPSocket itself. The legacy TCPServer class still exists and is fully functional.
 
 ### Using DNS names
 
@@ -66,8 +61,7 @@ IP stacks operate only on binary IP addresses, but in Internet, servers are know
 
 Previously Socket interface contained methods that can directly accept DNS names and port numbers and do the resolving internally. These APIs are not recommended as they might hide problems in DNS system.
 
-Recommended way is to use [DNS resolver](dns-resolver.html) to convert symbolic names to IP addresses.
-Following example shows how to use DNS in Mbed OS
+Recommended way is to use [DNS resolver](dns-resolver.html) to convert symbolic names to IP addresses. The following example shows how to use DNS in Mbed OS:
 
 ```
 NetworkInteface *net;    // Initialized elsewhere
