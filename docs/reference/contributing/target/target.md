@@ -8,8 +8,8 @@ Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pa
 
 ### Summary of steps
 
-1. Add your target to `targets.json`
-   1. Identify the your target’s features.
+1. Add your target to `targets.json`.
+   1. Identify your target’s features.
    1. Identify any existing parent targets.
    1. Identify macros required for your target's compilation.
    1. Identify supported compilers and the Mbed OS release version.
@@ -18,7 +18,7 @@ Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pa
 1. Add your target port.
    1. Create the directory structure.
    1. Add an entry for the target in `mbed_rtx.h`.
-   1. Add startup code and CMSIS headers, NVIC headers and **all** relevant drivers from CMSIS specifications.
+   1. Add startup code, CMSIS headers, NVIC headers and **all** relevant drivers from the CMSIS specifications.
    1. Implement APIs, HAL, the system clock configuration and any other additional clocks.
    1. Add toolchain-specific linker descriptions.
 1. Add peripherals and pin names for the target.
