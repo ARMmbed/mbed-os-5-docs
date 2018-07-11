@@ -122,7 +122,7 @@ Please refer to your chosen MCU's reference manual for these values.
 
 Ensure that the drivers are present at the correct level in the directory structure:
 
-1. Add startup code and CMSIS specific headers. You may obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL.
+1. Add startup code and CMSIS specific headers. You may obtain the startup code and other CMSIS specific headers from the device manufacturer or the CMSIS packs from KEIL&reg;.
 1. Add peripherals to the `device_has_add` key in `targets.json` and include all relevant drivers for all these peripherals.
 1. Implement Mbed OS HAL APIs for all hardware peripherals mentioned in `device_has`.
 1. Ensure that `Objects.h` declares peripherals and is available in the `/api` directory.
