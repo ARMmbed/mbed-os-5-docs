@@ -2,13 +2,13 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
 
-Socket is the abstract base class for all of the protocol specific Socket types. It defines all of the functions that consist of Mbed OS Socket API. You cannot directly create Socket object as it is abstract, but you can upcast any protocol specific object to abstract Socket object.
+Socket is the abstract base class for all of the protocol-specific socket types. It defines all of the functions that consist of the Mbed OS Socket API. You cannot directly create a Socket object because it is abstract, but you can upcast any protocol-specific object to an abstract Socket object.
 
-This inteface is meant to be used when designing portable application interfaces that do not require specific protocol to be defined. For example, instead of using `TCPSocket*` in methods, application can use `Socket*` to allow both UDP or TCP to work, or even TLS.
+You can use this interface when designing portable application interfaces that do not require specific protocol to be defined. For example, instead of using `TCPSocket*` in methods, the application can use `Socket*` to allow either UDP or TCP to work, or even TLS.
 
-Socket class defines the Mbed OS Socket API and loosely follows POSIX standard ([IEEE Std 1003.1](http://pubs.opengroup.org/onlinepubs/9699919799/)). Following table list methods from Socket API and their relevant POSIX standards:
+The Socket class defines the Mbed OS Socket API and loosely follows the POSIX standard ([IEEE Std 1003.1](http://pubs.opengroup.org/onlinepubs/9699919799/)). The following table lists the methods from the Socket API and their relevant POSIX standards:
 
-| method | Description | POSIX standard |
+| Method | Description | POSIX standard |
 |--------|-------------|----------------|
 | `Socket::connect()`  | Connect socket to a remote address | [connect](http://pubs.opengroup.org/onlinepubs/9699919799/functions/connect.html) |
 | `Socket::close`      | Closes any open connection and deallocates any memory associated with the socket | [close](http://pubs.opengroup.org/onlinepubs/9699919799/functions/close.html) |
@@ -22,18 +22,17 @@ Socket class defines the Mbed OS Socket API and loosely follows POSIX standard (
 | `Socket::setsockopt()` | Set the socket options | [setsockopt](http://pubs.opengroup.org/onlinepubs/9699919799/functions/setsockopt.html) |
 | `Socket::getsockopt()` | Get the socket options | [getsockopt](http://pubs.opengroup.org/onlinepubs/9699919799/functions/getsockopt.html) |
 
-Not all protocols implement every function from the Socket API. For example UDP does not implement `listen()` and `accept()` functions. Also socket options are mostly specific to IP stack in question, and are not implemented on all stacks.
+Not all protocols implement every function from the Socket API. For example, UDP does not implement the `listen()` and `accept()` functions. Also, socket options are mostly specific to the IP stack; they are not implemented on all stacks.
 
 ### Socket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.html)
 
-### Socket Example
+### Socket example
 
-Here is a client example of HTTP transaction over TCPSocket
+Here is a client example of HTTP transaction over TCPSocket:
 
-https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/file/e0496f3424a8/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/file/e0496f3424a8/main.cpp)
 
 ### Related content
 
