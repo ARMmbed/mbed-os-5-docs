@@ -74,9 +74,9 @@ Add the target description to `mbed-os\targets\targets.json` using keys that the
 
 The target’s directory structure has the following hierarchy: 
 
-- The top level lists the manufacturer. This is general to all targets a vendor supports.
+- The top level lists the manufacturer. This is the same for all targets that a vendor supports.
 - The device family. This is specific to a family.
-- A specific device in the family. This applies to only the single device.
+- A specific device in the family. This only applies to the single device.
 - The specific board that uses the MCU in the previous level. You can use this for pin maps.
 
 ```
