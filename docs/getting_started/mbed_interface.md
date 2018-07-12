@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/reference/index.html)</span>
 # How mbed works
 
 The mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit used for assisting in development by programming the device, logging program execution and giving access to the debug access port. Here is how it works...

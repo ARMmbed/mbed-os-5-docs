@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/windows-serial-driver.html)</span>
 # Windows serial driver
 
 You can connect your board to your computer over USB. This should work out of the box on Linux and Mac OS X, but for Windows you will probably need to install a serial port driver:

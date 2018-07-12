@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/reference/mbed-tls-entropy.html)</span>
 # mbed TLS Porting Guide
 
 This document explains how to port [mbed TLS](https://github.com/ARMmbed/mbedtls) to a new mbed target board. It includes an [example implementation](https://github.com/ARMmbed/mbed-tls-lib) for K64F boards.

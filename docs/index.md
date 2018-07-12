@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/introduction/index.html)</span>
 # Introduction to the mbed OS 5 Handbook
 
 Welcome to the mbed OS 5 handbook. 
