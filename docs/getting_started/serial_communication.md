@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/serial-communication.html)</span>
 # Board to PC communication over USB
 
 The mbed microcontroller on your board can communicate with a host PC over the same USB cable that is used for programming.

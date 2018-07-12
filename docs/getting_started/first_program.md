@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/mbed-os-quick-start.html)</span>
 # Your first application
 
 We have an example application called Blinky that you can use to get to know mbed OS and the development tools. It's one of the simplest examples of mbed OS. It shows the use of a DigitalOut object to represent an LED and the non-blocking ``Thread::wait()`` call. This is good practice as if there were other threads, they could be scheduled and run while the first thread is waiting.
