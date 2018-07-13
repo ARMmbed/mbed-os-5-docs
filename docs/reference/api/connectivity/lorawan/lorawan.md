@@ -16,4 +16,6 @@ Please visit our Arm Mbed Online Compiler example, and follow the instructions i
 
 ### Related content
 
-- End-to-end [LoRa on Arm Mbed tutorial](/docs/v5.9/tutorials/LoRa-tutorial.html).
+- [LoRa architecture](lora-tech.html).
+- End-to-end [LoRa on Arm Mbed tutorial](/docs/development/tutorials/LoRa-tutorial.html).
+- [Blog post: Adding a LoRaWAN stack to Mbed OS 5.8](https://os.mbed.com/blog/entry/Adding-a-LoRaWAN-stack-to-Mbed-OS-58/).
