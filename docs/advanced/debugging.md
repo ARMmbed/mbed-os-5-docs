@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/compile-time-errors.html)</span>
 # Debugging
 
 This guide examines some techniques for generating debug information to help find and fix problems with your code, and how to deal with problems you see.

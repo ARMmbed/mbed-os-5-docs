@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tools/setting-up-a-local-debug-toolchain.html)</span>
 # Setting up a local debug toolchain
 
 Most mbed Enabled development boards contain two chips: the target microcontroller and a CMSIS-DAP interface chip. The most common use case of the interface chip is mounting the development board as a USB mass-storage device, making it easy to flash new firmware. However, you can also use this interface chip to debug the target microcontroller without an external debugger, such as a JTAG.
