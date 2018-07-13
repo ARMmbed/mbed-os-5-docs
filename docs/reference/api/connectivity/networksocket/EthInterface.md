@@ -61,4 +61,5 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 
 ### Related content
 
-- [Network socket](/docs/development/reference/network-socket.html) API reference overview.
+- [Network socket](network-socket.html) API reference overview.
+- [Ethernet architecture](ethernet-technology.html).
