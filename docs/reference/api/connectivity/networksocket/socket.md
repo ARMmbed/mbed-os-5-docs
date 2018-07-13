@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
 
-Socket is the abstract base class for all of the protocol-specific socket types. It defines all of the functions that consist of the Mbed OS Socket API. You cannot directly create a Socket object because it is abstract, but you can upcast any protocol-specific object to an abstract Socket object.
+Socket is the abstract base class for all of the protocol-specific socket types. It defines all of the functions that comprise the Mbed OS Socket API. You cannot directly create a Socket object because it is abstract, but you can upcast any protocol-specific object to an abstract Socket object.
 
 You can use this interface when designing portable application interfaces that do not require specific protocol to be defined. For example, instead of using `TCPSocket*` in methods, the application can use `Socket*` to allow either UDP or TCP to work, or even TLS.
 
