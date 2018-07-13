@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tools/greentea.html)</span>
 [![Circle CI](https://circleci.com/gh/ARMmbed/greentea.svg?style=svg)](https://circleci.com/gh/ARMmbed/greentea)
 [![Coverage Status](https://coveralls.io/repos/github/ARMmbed/greentea/badge.svg?branch=master)](https://coveralls.io/github/ARMmbed/greentea?branch=master)
 [![PyPI version](https://badge.fury.io/py/mbed-greentea.svg)](https://badge.fury.io/py/mbed-greentea)

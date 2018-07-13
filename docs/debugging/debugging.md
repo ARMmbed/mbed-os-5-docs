@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/debugging-applications.html)</span>
 # Debugging mbed OS applications
 
 At the heart of mbed is the [Online Compiler](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/online_comp/). While that is incredibly convenient for getting a project started or while prototyping, chances are that at some point you'll miss a debugger, or you'll want to develop while not having an active internet connection. Through debugging, you can do things such as set breakpoints, set watchpoints, view registers, view disassembly, browse memory and examine the callstack. These docs will help you debug your applications.

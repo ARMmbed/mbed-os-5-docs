@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/compile-time-errors.html)</span>
 # Compile time errors
 
 Compile time errors and warnings that incorrect syntax, or misuse of variables or functions, causes. An error prevents the compile process from completing (and therefore no binary file will be created). A warning does not prevent the binary from being created, but you should still review the warning because it may mean that your code is not going to do what you had intended.
