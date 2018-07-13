@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/reference/hardware-accelerated-crypto.html)</span>
 # mbed TLS Hardware Acceleration
 
 This document explains how to add hardware acceleration support for a development board in mbed OS and integrate it with [mbed TLS](https://github.com/ARMmbed/mbedtls).

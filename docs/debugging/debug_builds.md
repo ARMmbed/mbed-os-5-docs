@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tools/test-and-debug.html)</span>
 # Producing debug builds with mbed CLI
 
 After you've set up your [local debug toolchain](toolchain.md), you'll need firmware that includes program symbols (an `.elf` file). Because the Online Compiler only produces binaries that omit the program symbols, you need to compile locally using [mbed CLI](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/dev_tools/cli/).

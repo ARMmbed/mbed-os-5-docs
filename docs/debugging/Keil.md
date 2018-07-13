@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/keil-uvision.html)</span>
 # Debugging mbed OS applications with Keil uVision
 
 This document explains how to build and debug mbed OS applications using Keil uVision 5. Due to the linker limits, this does not work in the free version of uVision. If you do not have a uVision license, you can use [Eclipse](Debugging_Eclipse_pyOCD.md), [Visual Studio Code](vscode.md) or any other IDE that supports debugging through GDB. For more info, please see [Setting up a local debug toolchain](toolchain.md).

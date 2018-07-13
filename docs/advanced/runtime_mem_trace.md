@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/optimizing.html#runtime-memory-tracing)</span>
 # Runtime memory tracing
 
 Running out of memory is a common problem with resource constrained systems such as the MCUs on which mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in mbed OS 5 is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.

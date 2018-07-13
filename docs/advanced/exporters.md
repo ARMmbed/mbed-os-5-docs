@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/reference/porting-exporter-targets.html)</span>
 # About the exporters
 
 Use the mbed exporters to export your code to various third party tools and IDEs. Each exporter implements a `generate` function that produces an IDE specific project file. Exporters benefit from mbed build tools. However, instead of using your source and [config data](config_system.md) to create an executable, we use that information to populate an IDE project file that will be configured to build, flash and debug your code. You can find exporter implementations [here](https://github.com/ARMmbed/mbed-os/tree/master/tools/export).
