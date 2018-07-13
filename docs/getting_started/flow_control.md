@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/application-flow-control.html)</span>
 # Application flow control and task management 
 
 We can use Blinky to explore flow control and task management in mbed OS applications. We'll look at automated actions first, then move on to handling user actions.

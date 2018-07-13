@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/reference/adding-exporters.html)</span>
 # Adding exporters 
 
 This is a guide for adding exporters to the mbed-os tools. It covers the structure of the export subsystem and the individual exporter.
