@@ -1,11 +1,11 @@
 <h2 id="migrating">Mbed OS 2 to 5 migration guide</h2>
 
-This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5.
+This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5. 
 
 ### Prerequisites
 
-- [Mbed CLI](/docs/v5.7/tools/arm-mbed-cli.html).
-- An [offline compiler](/docs/v5.9/tools/index.html#compiler-versions).
+- [Mbed CLI](/docs/latest/tools/arm-mbed-cli.html).
+- An [offline compiler](/docs/latest/tools/index.html#compiler-versions).
 
 ### Identifying old versions of Mbed OS
 
@@ -13,31 +13,33 @@ This guide uses the Grove temperature and humidity sensor as an example: [Grove-
 
 First, navigate to the Hello World repository for the component.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)<span>Hello World repository for the component</span></span>
+
 
 Next, view the files in the Hello World repository. The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)<span>Older version of Mbed OS `mbed.bld` or `mbed-rtos.lib` files in the Hello World repository</span></span>
+
 
 A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.lib` file.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new_mbed_file.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new_mbed_file.png)<span>Mbed OS 5 or later `mbed-os.lib` file in the Hello World respository</span></span>
 
-Some repositories may have both an `mbed.bld` file and a `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace BOTH `mbed.bld` and `mbed-rtos.lib`.
+Some repositories may have both an `mbed.bld` file and an `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace both `mbed.bld` and `mbed-rtos.lib`.
 
 ### Migrating to Mbed OS 5
 
-There are two possible outcomes when migrating to Mbed OS 5:
+Migrating to Mbed OS 5 results in two possible outcomes:
 
 1. Replacing the old Mbed library with Mbed OS is successful because the APIs in the library have not changed. In this instance, you're finished.
-2. Replacing the old Mbed library with Mbed OS produces some compilation errors. These errors can occur in the library or application code for the following two reasons:
+2. Replacing the old Mbed library with Mbed OS produces some compilation errors. These errors can occur in the library or in the application code for the following two reasons:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
-  - There is target specific code, and you need to migrate it to use code for the specific target you are compiling for.
+  - There is target specific code, and you need to migrate it to use the code for the specific target you are compiling for.
 
-The general outline for updating to Mbed OS 5 is:
+To update to Mbed OS 5 with the [Mbed CLI](/docs/latest/tools/arm-mbed-cli.html), run:
 
 ```
-mbed import [URL of Hello World]
+mbed import [URL of Project]
 cd [Project Name]
 mbed remove mbed
 mbed remove mbed-rtos
@@ -48,7 +50,28 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-#### Example component No. 1 - successful initial migration
+To update to Mbed OS 5 with the [Mbed Online Compiler](https://os.mbed.com/docs/latest/tools/arm-mbed-online-compiler.html):
+
+1. Open your project in the Online Compiler.
+1. Right click on **mbed** and select **Delete...**: 
+
+    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)<span>Delete mbed</span></span>
+   
+1. If your project includes `mbed-rtos`, you also need to delete this library to successfully update to Mbed OS 5. Right click on **mbed-rtos**, and select **Delete...**:
+
+    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)<span>Delete mbed-rtos</span></span>
+    
+1. Right click on the name of your project, hover over **Import Library** and then select **From URL**:
+  
+    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-import-url.png)<span>Import library from URL</span></span>
+
+1. Copy and paste the URL for Mbed OS 5 `https://github.com/armmbed/mbed-os`, and then click **Import**:
+
+    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
+
+To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**. 
+
+#### Example component 1 - successful initial migration
 
 Repositories used in this example:
 
@@ -71,9 +94,9 @@ mbed add mbed-os
 mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 ```
 
-It successfully compiles, so no changes are necessary to the `Grove - Buzzer` library or `Hello World` program.
+It successfully compiles, so that no changes to the `Grove - Buzzer` library or `Hello World` program are necessary.
 
-#### Example component No. 2 - application fails to compile
+#### Example component 2 - application fails to compile
 
 Repositories used in this example:
 
@@ -98,7 +121,7 @@ mbed compile -m k64f -t gcc_arm
 
 ##### Compilation errors
 
-After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors already exist.
+After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
 
 Here is the output produced from `mbed compile`:
 
@@ -125,7 +148,7 @@ Compile [  0.8%]: main.cpp
 [mbed] ERROR: Command "c:\python27\python.exe -u C:\Repos\SRF08HelloWorld\mbed-os\tools\make.py -t gcc_arm -m k64f --source . --build .\BUILD\k64f\gcc_arm" in "C:\Repos\SRF08HelloWorld"
 ```
 
-This is a target-specific error. The pins in the `Hello World` application do not exist on this target, K64F. To fix this, replace the SDA/SCL pins with ones present on the K64F. Use the [K64F platform page](https://os.mbed.com/platforms/FRDM-K64F/) to find the correct pins. D14/D15 work. So, `main.cpp` now looks like this:
+This is a target-specific error. The pins in the `Hello World` application do not exist on this target, K64F. To fix this, replace the SDA and SCL pins with the ones present on the K64F. Use the [K64F platform page](https://os.mbed.com/platforms/FRDM-K64F/) to find the correct pins. D14 and D15 work. So, `main.cpp` now looks like this:
 
 ```
 #include "mbed.h"
@@ -145,7 +168,7 @@ int main() {
 
 Now, the program successfully compiles.
 
-#### Example component No. 3 - library fails to compile
+#### Example component 3 - library fails to compile
 
 Repositories used in this example:
 
@@ -170,7 +193,7 @@ mbed compile -m k64f -t gcc_arm
 
 ##### Compilation errors
 
-After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors already exist.
+After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
 
 Here is the output produced from `mbed compile`:
 
@@ -273,7 +296,7 @@ Notice that the `./CN0357/AD7790/AD7790.h` and `./CN0357/CN0357.h` header files 
 Line 114 of the `AD7790.h` header file now looks like this:
 
 ```
-AD7790( float reference_voltage, PinName CS, PinName MOSI, PinName MISO, PinName SCK);
+AD7790(float reference_voltage, PinName CS, PinName MOSI, PinName MISO, PinName SCK);
 ```
 
 Line 77 of the `CN0357.h` header file now looks like this:
@@ -324,4 +347,4 @@ Now, the program successfully compiles.
 
 ### Runtime errors
 
-Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](/docs/v5.9/tutorials/compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
+Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](/docs/latest/tutorials/compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
