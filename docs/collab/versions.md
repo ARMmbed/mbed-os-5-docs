@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tools/version-control.html)</span>
 # Version control
 
 You can use the mbed Online Compiler's version control features to let you version, branch and merge code. It will show a nice representation of the state of your project history:

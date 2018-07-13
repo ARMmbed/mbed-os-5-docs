@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/the-eventqueue-api.html)</span>
 # About the mbed OS event loop
 
 One of the optional mbed OS features is an event loop mechanism that can be used to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:

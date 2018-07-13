@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/introduction/index.html)</span>
 # Introduction to the mbed OS 5 Handbook
 
 <span class="warnings">**Warning**: This is the handbook for Mbed OS 5.5. If you’re working with Mbed OS 5.6 or later, please see the [latest documentation](https://os.mbed.com/docs/latest).</span>
