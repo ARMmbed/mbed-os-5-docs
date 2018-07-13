@@ -1,7 +1,7 @@
 <h2 id="rtos-api">RTOS overview</h2>
 
-The Arm Mbed RTOS APIs provides C++ APIs to manage RTOS objects like thread, synchronization objects and timer. It also provides interfaces for attaching application
-specific idle hook function and to read the tick count from OS. The Arm Mbed RTOS layer also handles RTOS errors and report them into Mbed-OS error handling system.
+Mbed-OS RTOS provide C++ APIs to manage objects like thread, synchronization objects and timer. It also provides interfaces for attaching application
+specific idle hook function, read the OS tick count and implements functionality to report RTOS errors.
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). See [the Doxygen](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__rtos.html) for more information.
 
@@ -25,9 +25,9 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [MemoryPool](/docs/development/reference/memorypool.html): This class that you can use to define and manage fixed-size memory pools
 - [Mail](/docs/development/reference/mail.html): The API that provides a queue combined with a memory pool for allocating messages.
 - [RtosTimer](/docs/development/reference/rtostimer.html): A deprecated class used to control timer functions in the system.
-- [EventFlags](/docs/development/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events.
+- [EventFlags](/docs/development/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. Some EventFlags functions are callable from ISR context and each EventFlags objects can support up to 31 flags.
 - [Event](/docs/development/reference/event.html): The queue to store events, extract them and excute them later.
-- [ConditionVariable](/docs/development/reference/conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal state changes.
+- [ConditionVariable](/docs/development/reference/conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. ConditionVariable functions are not callable from ISR context.
 - [Kernel](/docs/development/reference/kernel.html): Kernel namespace implements functions to control or read RTOS information like tick count.
 
 ##### Default timeouts
@@ -58,5 +58,5 @@ Each `Thread` can wait for signals and be notified of events:
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_signals/)](https://os.mbed.com/teams/mbed_example/code/rtos_signals/file/476186ff82cf/main.cpp)
 
 ##### Status and Error codes
-The Arm Mbed RTOS layer handles RTOS errors and report them using Mbed-OS error handling system. See the list of error codes in [Error Handling](/docs/development/reference/error-handling.html)
+Mbed OS error handling system assigns specific error codes for RTOS related erros. See [Error Handling](/docs/development/reference/error-handling.html)
 for more information on RTOS errors reported.
