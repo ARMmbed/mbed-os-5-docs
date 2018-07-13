@@ -46,3 +46,4 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 ### Related content
 
 - [Storage configuration](configuration-storage.html).
+- [Blog post: LittleFS - A high-integrity embedded file system](https://os.mbed.com/blog/entry/littlefs-high-integrity-embedded-fs/).
