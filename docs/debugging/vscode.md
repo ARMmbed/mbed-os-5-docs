@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/visual-studio-code.html)</span>
 # Debugging mbed OS applications with Visual Studio Code
 
 This document explains how to build and debug mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](toolchain.md).

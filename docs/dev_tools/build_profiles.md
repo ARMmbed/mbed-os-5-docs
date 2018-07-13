@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tools/build-profiles.html)</span>
 # Build Profiles
 mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release*. The Online Compiler uses the *develop* profile. When building from mbed CLI, you can select a profile by adding the ```--profile <profile>``` flag. You can specify custom user-defined profiles by giving the path to the profile.
 

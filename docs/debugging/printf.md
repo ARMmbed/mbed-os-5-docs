@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/debugging-using-printf-statements.html)</span>
 # Debugging using printf() statements
 
 An easy way to inspect what your application is doing is to augment your application with log statements. In mbed, you can use a serial connection to send feedback from your development board back to your computer. This uses the same USB cable that you use to program your device.

@@ -1,3 +1,4 @@
+<span class="warnings">**Out of date**: This is not the most recent version of this page. Please see [the most recent version](https://os.mbed.com/docs/latest/tutorials/compile-time-errors.html)</span>
 # Lights of dead
 
 ![LPC1768 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)    ![LPC11U24 Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)    ![FRMD-KL25Z Lights of dead](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)
