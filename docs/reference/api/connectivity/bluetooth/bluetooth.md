@@ -20,7 +20,7 @@ The two most common sources of information that you may want to process are sens
 
 1. *Local processing* means the device itself processes the data and determines what to do. One example is a thermostat, which knows to turn the heat on or off according to a room temperature input and doesn't need instructions from anywhere.
 
-1. *Remote processing* means that you send data to a different device to be handled there. You then either wait for instructions from the remote device or go on gathering and sending data. For example, if you're trying to predict tomorrow's weather, the device sends data (temperature, barometric pressure and so on) to a computer that can analyzse it. Then the local device doesn't need the processing power to run a weather program.
+1. *Remote processing* means that you send data to a different device to be handled there. You then either wait for instructions from the remote device or go on gathering and sending data. For example, if you're trying to predict tomorrow's weather, the device sends data (temperature, barometric pressure and so on) to a computer that can analyze it. Then the local device doesn't need the processing power to run a weather program.
 
 BLE is intended for low power, battery-operated devices, so typical applications will not perform complex processing on the device - processing burns through batteries. Applications will instead export the data to be processed remotely, and wait for a response.
 
