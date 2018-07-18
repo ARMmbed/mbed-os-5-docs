@@ -82,7 +82,7 @@ There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol lay
 
 Cellular drivers have the same two separate cases as Wi-Fi. If they use an external IP stack, the driver implements the Network stack API. If they use the internal IP stack, LwIP, then they implement the Serial PPP driver.
 
-#### IEEE 802.15.4 RF driver
+#### 6LoWPAN/Thread RF driver
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rf-driver.png)<span>RF driver</span></span>
 
