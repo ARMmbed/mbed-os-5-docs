@@ -42,4 +42,4 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](/docs/v5.9/refe
 
 [LoRaWAN](http://lora-alliance.org) is a long range wide-area network technology that combines long range with low power consumption. LoRaWAN is not IP based.
 
-The [Building your own private LoRa network](/docs/v5.9/reference/building-your-own-private-lora-network.html) section describes LoRA networking.
+The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/v5.9/tutorials/LoRa-tutorial.html) describe LoRA networking.
