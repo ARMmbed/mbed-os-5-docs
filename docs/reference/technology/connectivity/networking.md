@@ -60,7 +60,7 @@ Mbed OS implements the following network interface APIs:
 
 Refer to [Network Interface](network-interfaces.html) API reference for usage instructions.
 
-### Network driver
+### Network drivers
 
 "Network driver" describes different APIs that connect a networking device to the IP stack or Socket API. Below is a description of each driver API.
 
