@@ -36,6 +36,12 @@ Write a message to a device at a baud rate of 19200.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_1/)](https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_1/file/6a0d9cb21969/main.cpp)
 
+#### Example two
+
+Attach a function to call during the generation of serial interrupts. This function defaults to interrupt on an RX pin.
+
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/file/4ab47f33a1ae/main.cpp)
+
 #### Mbed OS example
 
 Common use cases for RawSerial are IRQ heavy UART operations, such as the [ATParser](https://github.com/ARMmbed/ATParser/blob/3209400df676cbf0183a5894f648c71727602d30/BufferedSerial/BufferedSerial.cpp#L29) in the ESP8266 driver. This driver uses UART on user supplied pins to communicate with the offchip ESP8266 module.
