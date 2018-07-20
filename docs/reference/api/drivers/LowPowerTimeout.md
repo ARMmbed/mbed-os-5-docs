@@ -22,3 +22,4 @@ Set up a time out to invert an LED after a given time:
 ### Related content
 
 - [Power management APIs](/docs/v5.9/reference/power-management.html).
+- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).
