@@ -29,3 +29,7 @@ Try this program to set up a Ticker to repeatedly invert an LED:
 Use this example to attach a member function to a ticker:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Ticker_Example/)](https://os.mbed.com/teams/mbed_example/code/Ticker_Example/file/fa1a6e600bdb/main.cpp)
+
+### Related content
+
+- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).
