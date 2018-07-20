@@ -1,4 +1,4 @@
-## Mbed TLS entropy
+## Entropy sources
 
 This document explains how to port [Arm Mbed TLS](https://github.com/ARMmbed/mbedtls) to a new Arm Mbed development board.
 
