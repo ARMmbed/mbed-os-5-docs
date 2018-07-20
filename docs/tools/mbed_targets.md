@@ -7,6 +7,7 @@ Arm Mbed uses JSON as a description language for its build targets. You can find
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
 ```json
+{
     "TEENSY3_1": {
         "inherits": ["Target"],
         "core": "Cortex-M4",
@@ -21,6 +22,7 @@ You are not allowed to redefine existing targets in `custom_targets.json`. To be
         "device_name": "MK20DX256xxx7",
         "detect_code": ["0230"]
     }
+}
 ```
 
 The style that we use for targets is:
