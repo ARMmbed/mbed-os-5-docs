@@ -1,7 +1,6 @@
 <h2 id="rtos-api">RTOS overview</h2>
 
-Mbed-OS RTOS provide C++ APIs to manage objects like thread, synchronization objects and timer. It also provides interfaces for attaching application
-specific idle hook function, read the OS tick count and implements functionality to report RTOS errors.
+The Mbed OS RTOS provides C++ APIs to manage objects like threads, synchronization objects, and timers. It also provides interfaces for attaching application specific idle hook function, read the OS tick count and implements functionality to report RTOS errors.
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). See [the Doxygen](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__rtos.html) for more information.
 
