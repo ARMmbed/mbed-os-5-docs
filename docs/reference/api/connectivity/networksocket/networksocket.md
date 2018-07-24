@@ -53,7 +53,7 @@ Upcasting any protocol specific class to `Socket` has no side effect and is a re
 
 The new design also emphasizes use of `SocketAddress` for holding the IP addresses, instead on textual format. `SocketAddress` is a container class that protocols other than IP can use in the future. Legacy string versions of `connect()`, `bind()` and `sendto()` functions do not exist in the `Socket` base class, but they exist in `TCPSocket` and `UDPSocket` classes.
 
-The new design also renders the TCPServer API unnecessary, moving its functionality directly info TCPSocket itself. The legacy TCPServer class still exists and is fully functional.
+The new design also renders the TCPServer API unnecessary, moving its functionality directly into TCPSocket itself. The legacy TCPServer class still exists and is fully functional.
 
 ### Using DNS names
 
