@@ -8,7 +8,7 @@ Writing software for deeply embedded or connected devices continues to increase 
 
 As software integration complexities increase and demands on the time to market decrease for embedded devices, the ability to prototype and prove concepts quickly is crucial. Mbed OS uses USB drag and drop programming to allow you to rapidly protoype without expensive debug hardware. Basing development efforts on an operating system that is well tested and released on a regular cadence (quarterly [feature releases](https://os.mbed.com/releases/) and biweekly patch releases) allows you to focus on the application and differentiation rather than investing software integration and tooling compatibilities. This effectively multiplies team effectiveness by picking up bug fixes and new target support in patch releases while getting new capabilities in feature releases. That, combined with low power and a small footprint, makes moving from concept to production very low risk.
 
-### Principals
+### Principles
 
 Mbed OS is an open-source operating system actively developed by Arm, in partnership with over 60 partners and the Arm Mbed community of over 340,000 developers throughout the world. Everyone is encouraged to contribute and make Mbed OS even better, and our community has contributed to many of our components and projects. Our developer community is a valuable part of Mbed OS and adds an important layer of transparency.
 
@@ -54,7 +54,7 @@ Developers who do not have a dedicated desktop setup or prefer to work online us
 
 Other tools included as part of Mbed OS work well for developers of all skill sets. For example, you can use our debugging tools, DAPLink and pyOCD, to program and debug their many devices. Mbed OS also includes build tools and supported toolchains and the C libraries of each supported toolchain, including implementation of thread safety support. At the end of the development cycle, you can us the Mbed OS validation tools to test your project. All of these tools make it easy for you to use Mbed OS for your projects throughout the development cycle.
 
-### Conclusion 
+### Conclusion
 
 Mbed OS is a secure, connected, production-ready operating system with a modular design that includes all the tools you need, whatever your skillset. For businesses entering the IoT space requiring an open source industry agnostic OS solution. Using our heritage in architecture, we have built our device software to create a forward-looking yet robust chip to cloud solution.
 
