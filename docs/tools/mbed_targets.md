@@ -359,6 +359,7 @@ For each of these target roles, some restrictions are in place:
   - `SPI`.
   - `SPI_ASYNCH`.
   - `SPISLAVE`.
+  - `SYSTICK_CLK_OFF_DURING_SLEEP`.
 - If `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
 - MCUs, Families and SubFamilies must set `public` to `false`
 
