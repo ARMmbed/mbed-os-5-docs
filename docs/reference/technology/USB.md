@@ -87,7 +87,7 @@ When a USB component adds an endpoint, you can either write to it with `write` o
 
 Below is a diagram showing the typical state machine for read (OUT) and write (IN) transfers.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_endpoint_state_diagram_user_2.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/usb_endpoint_state_diagram_user_3.png)</span>
 
 ### Endpoint configuration
 
