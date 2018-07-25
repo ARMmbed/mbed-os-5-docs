@@ -1138,15 +1138,6 @@
         "branch": "master"
     },
     {
-        "title": "feature-hal-spec-rtc doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-rtc-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-spec-rtc"
-    },
-    {
         "title": "feature-hal-spec-sleep doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "feature-hal-spec-sleep-doxy",
