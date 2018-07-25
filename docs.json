@@ -658,10 +658,6 @@
                 },
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/target.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/bootstrap.md"
                     },
                     {
