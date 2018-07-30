@@ -4,13 +4,13 @@
 
 This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#thread-safety), then discusses [porting them](#considerations-when-porting) to a new target.
 
-### RTOS
+### RTOS - is this header the issue?
 
 One of the major improvements introduced in Mbed OS 5 is a new programming model based on a real time operating system (RTOS). Some earlier versions of Arm Mbed have had optional support for an RTOS. In version 5, RTOS support is a standard feature of the platform, so developers can take advantage of a more flexible programming model based on multiple threads.
 
 As with any multithreaded environment, Mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees the Mbed OS 5 APIs provide when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
 
-The Mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms Mbed OS 5 provides to build thread safe applications.  
+The Mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms Mbed OS 5 provides to build thread safe applications.  f
 
 ### Thread safety
 
