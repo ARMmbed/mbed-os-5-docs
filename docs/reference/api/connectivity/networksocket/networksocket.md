@@ -5,15 +5,15 @@ section of this book, the Socket API relates to OSI layer 4, the Transport layer
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
 
-In Mbed OS, this socket API is C++ based but closely follows the functionality from POSIX standard (IEEE Std 1003.1) and relevant RFC standards. Standards divide sockets into two categories, datagram and stream sockets. Mbed OS instead uses the protocol names UDPSocket for datagrams and TCPSocket for streams.
+In Mbed OS, this socket API is C++ based but closely follows the functionality from the POSIX standard (IEEE Std 1003.1) and relevant RFC standards. The Socket interface is abstract and protocol agnostic and requires you to specify the protocol only when creating the socket. With libraries and interfaces, you may use the abstract base class, which allows you to port applications from one protocol to another.
 
-### General usage
+### General use
 
 The following steps describe the typical application flow:
 
 1. Initialize a network interface.
 1. Create a socket.
-1. Connect (does not apply for UDP).
+1. Connect (optional step for datagram protocols).
 1. Send data.
 1. Receive data.
 1. Close the socket.
@@ -43,15 +43,63 @@ sock.recv(buf, 100);
 sock.close();
 ```
 
-### Network socket classes
+### Changes in Mbed OS 5.10
+
+The 5.10 release refactors the Mbed OS Socket API. For most of the applications, these changes are not noticeable because the `TCPSocket` and `UDPSocket` classes still emulate legacy behavior.
+
+The new design contains an abstract socket interface that applications can use directly. Casting `Socket` pointers back to `TCPSocket` or `UDPSocket` is no longer necessary.
+
+Upcasting any protocol specific class to `Socket` has no side effect and is a recommended API design. Knowing the exact type is only required when you create the socket.
+
+The new design also emphasizes use of `SocketAddress` for holding the IP addresses, instead on textual format. `SocketAddress` is a container class that protocols other than IP can use in the future. Legacy string versions of `connect()`, `bind()` and `sendto()` functions do not exist in the `Socket` base class, but they exist in `TCPSocket` and `UDPSocket` classes.
+
+The new design also renders the TCPServer API unnecessary, moving its functionality directly into TCPSocket itself. The legacy TCPServer class still exists and is fully functional.
+
+### Using DNS names
+
+IP stacks operate only on binary IP addresses, but in Internet, servers are known by their symbolic domain name (DNS). To use these names with Socket interface, each name has to be resolved before.
+
+Previously Socket interface contained methods that can directly accept DNS names and port numbers and do the resolving internally. These APIs are not recommended as they might hide problems in DNS system.
+
+Recommended way is to use [DNS resolver](dns-resolver.html) to convert symbolic names to IP addresses. The following example shows how to use DNS in Mbed OS:
+
+```
+NetworkInteface *net;    // Initialized elsewhere
+
+SocketAddress addr;
+nsapi_error_t ret = net->gethostbyname("www.arm.com", &addr);  // Resolve www.arm.com and store into addr
+
+if (ret == NSAPI_ERROR_OK) {
+    // Resolving was succesfull
+}
+```
+
+See [DNS resolver](dns-resolver.html) for more information.
+
+### Server sockets
+
+Some connection oriented protocols, for example TCP, can also be used for listening incomming connections. To do this
+
+1. Bind socket to specific port by calling `Socket::bind()`
+1. Set socket to listening mode by calling `Socket::listen()`
+1. Accept incomming connection by calling `Socket::accept()`
+
+Accepting new connection return you a pointer to a new `Socket` object that can be used to communicate with the connected peer. When done, you should call this socket's `close()` function to shut down the connection and clean up the reserved resources.
+
+Accepting a connection will leave the original socket to listening mode. You can continue to accept new connections until you destroy the listening socket, or call its `close()` method.
+
+For connectionless protocols, like UDP, each socket can receive from any peer. Therefore `listen()` and `accept()` are not required.
+
+### Network socket interfaces and classes
 
 The network socket API provides a common interface for using sockets on network devices. It's a class-based interface, which is familiar to users experienced with other socket APIs.
 
-- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions.
+- [Socket](socket.html): Abstract base class for all protocols. Specifies the API.
+- [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP.
 - [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
-- [TCPServer](tcpserver.html): This class provides the ability to accept incoming TCP connections.
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 - [Network status](network-status.html): API for monitoring network status changes.
+- [DNS resolver](dns-resolver.html): API for resolving DNS names
 
 ### Network errors
 
