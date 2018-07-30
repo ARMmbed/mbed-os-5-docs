@@ -40,7 +40,7 @@ Write a message to a device at a baud rate of 19200.
 
 Attach a function to call during the generation of serial interrupts. This function defaults to interrupt on an RX pin.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_3/file/4ab47f33a1ae/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_2/)](https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_2/file/3ad999bfc3c4/main.cpp/)
 
 #### Mbed OS example
 
