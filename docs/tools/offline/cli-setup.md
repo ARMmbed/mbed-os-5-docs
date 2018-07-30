@@ -129,7 +129,8 @@ Mbed CLI requires adding the following to the system `PATH`:
 
 You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. Mbed CLI supports the following toolchains:
 
-- [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
+- [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
+- [Arm Compiler 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). Use version 6.8 of Arm Compiler 6. Versions older than 6.8 might be incompatible with the tools.
 - [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
 - [IAR EWARM 7](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM). Use versions 7.70 to 7.80.x of the IAR EWARM; other versions might be incompatible with the tools.
 
@@ -155,7 +156,8 @@ The `-G` switch tells Mbed CLI to set this as a global setting, allowing all pro
 
 Mbed CLI supports a setting for each toolchain path. Below is a list of these settings, along with a description of what path is expected in each setting.
 
-- `ARM_PATH`: The path to the *base* directory of your Arm Compiler installation. This should be the directory containing the directory containing the binaries for `armcc` and friends. For example, if your Arm Compiler 5 executable `armcc` is located at `/home/redacted/ARM_Compiler_5.06u5/bin/armcc`, you set `ARM_PATH` to `/home/redacted/ARM_Compiler_5.06u5`
+- `ARM_PATH`: The path to the *base* directory of your Arm Compiler 5 installation. This should be the directory containing the directory containing the binaries for `armcc` and friends. For example, if your Arm Compiler 5 executable `armcc` is located at `/home/redacted/ARM_Compiler_5.06u5/bin/armcc`, you set `ARM_PATH` to `/home/redacted/ARM_Compiler_5.06u5`
+- `ARMC6_PATH`: The path to the *binary* directory of your Arm Compiler 6 installation. This should be the directory containing the directory containing the binaries for `armcc` and friends. For example, if your Arm Compiler 6 executable `armcc` is located at `C:/Program Files/ARM/armcc6.8/bin/armcc`, you set `ARM_PATH` to `C:/Program Files/ARM/armcc6.8/bin`
 - `IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends. For example, if your IAR EWARM compiler executable is located at `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm/bin/iccarm.exe`, you set `IAR_PATH` to `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm`.
 - `GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends. For example, if your Gcc Arm Embedded toolchain gcc executable is in `/usr/bin/arm-none-eabi-gcc`, you set `GCC_ARM_PATH` to `/usr/bin`.
 
