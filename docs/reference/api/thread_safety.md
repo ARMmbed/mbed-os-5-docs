@@ -4,7 +4,7 @@
 
 This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#thread-safety), then discusses [porting them](#considerations-when-porting) to a new target.
 
-### RTOS - is this header the issue?
+### RTOS
 
 One of the major improvements introduced in Mbed OS 5 is a new programming model based on a real time operating system (RTOS). Some earlier versions of Arm Mbed have had optional support for an RTOS. In version 5, RTOS support is a standard feature of the platform, so developers can take advantage of a more flexible programming model based on multiple threads.
 
