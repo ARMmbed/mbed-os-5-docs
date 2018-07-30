@@ -1,4 +1,4 @@
-<h2 id="target-port">Targets</h2>
+## Targets
 
 Adding a new microcontroller to Arm Mbed OS 5 depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 

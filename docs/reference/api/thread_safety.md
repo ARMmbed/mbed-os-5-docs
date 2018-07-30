@@ -1,4 +1,4 @@
-## Thread Safety and Porting
+## Thread safety and porting
 
 ### About this document
 
