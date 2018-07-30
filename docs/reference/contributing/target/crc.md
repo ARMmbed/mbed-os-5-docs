@@ -43,4 +43,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-crc*"
 
 You can read more about the test cases in the Doxygen:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__crc__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__crc__tests.html)
