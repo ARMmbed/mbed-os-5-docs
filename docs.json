@@ -291,15 +291,15 @@
                         },
                         "sources": [{
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/connectivity/networksocket/socket.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/connectivity/networksocket/UDPSocket.md"
                             },
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/connectivity/networksocket/TCPSocket.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/connectivity/networksocket/TCPServer.md"
                             },
                             {
                                 "type": "markdown",
