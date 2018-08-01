@@ -2,13 +2,12 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips"> We reccomend using the installers whenever possible.
-- [Windows Installer for Mbed CLI](/docs/development/tools/installing-with-the-windows-installer.html)
-- [OSX Installer for Mbed CLI](/docs/development/tools/installing-with-the-osx-installer.html)
-- [Linux - no installer yet, so do install manually](/docs/development/tools/installing-manually.html).
-
-If you really want to you can [install Mbed CLI manually](/docs/development/tools/installing-manually.html), this is only for advanced users. 
+<span class="tips">**Tip:** If you're working on Windows or Mac OS X, we recommend using the installers for Mbed CLI.
+- [Windows installer for Mbed CLI](installing-with-the-windows-installer.html).
+- [Mac OS X installer for Mbed CLI](installing-with-the-osx-installer.html).
 </span>
+
+For Linux, please [install Mbed CLI manually](/docs/development/tools/installing-manually.html). Advanced Windows and Mac OS X users can also install Mbed CLI manually, but we recommend the installers for less experienced developers.
 
 ## Requirements
 
@@ -85,21 +84,18 @@ $ mbed_installer_{version}.exe /S
 
 Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
-## Installing with the OSX Installer
+## Installing with the Mac OS X installer
 
-The OSX CLI Installer is a self contained OSX application that contains GCC, Python, Git and Mercurial.  
+The Mac OS X installer for Mbed CLI is a self-contained OS X application that contains GCC, Python, Git and Mercurial.  
 
-To use the installer simply 
+To use the installer: 
 
-1. Eownload the [OSX Mbed CLI Installer](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg)
-1. Open .dmg
-1. Copy mbed_cli.app to your applications folder
-1. Run mbed_cli.app.
+1. Download the [Mac OS X installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg).
+1. Open `.dmg`.
+1. Copy `mbed_cli.app` to your applications folder.
+1. Run `mbed_cli.app`.
 
-<span class="note">
-Please note that you may need to allow unsigned apps to run for this to work. 
-The first time you run the installer make sure you have an internet connection and it may take a couple minutes to download all the components. From the second run everything will be much faster. 
-</span>
+<span class="note">**Note:** You may need to allow unsigned apps to run for this to work. The first time you run the installer, it make take a couple of minutes to download the components. This requires an internet connection. After the first run, everything will be much faster.</span>
 
 ## Installing manually
 
