@@ -130,7 +130,7 @@ Mbed CLI requires adding the following to the system `PATH`:
 You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. Mbed CLI supports the following toolchains:
 
 - [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
-- [Arm Compiler 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). Use version 6.8 of Arm Compiler 6. Versions older than 6.8 might be incompatible with the tools.
+- [Arm Compiler 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). Use version 6.10 of Arm Compiler 6. Versions older than 6.10 might be incompatible with the tools.
 - [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
 - [IAR EWARM 7](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM). Use versions 7.70 to 7.80.x of the IAR EWARM; other versions might be incompatible with the tools.
 
