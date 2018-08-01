@@ -1,14 +1,17 @@
 <h2 id="rtos-api">RTOS overview</h2>
 
-The Arm Mbed RTOS is a C++ wrapper over the Keil RTX code. For more information about Keil RTX, check [the Keil CMSIS-RTOS tutorial](https://github.com/ARM-software/CMSIS/raw/master/CMSIS/Documentation/RTX/CMSIS_RTOS_Tutorial.pdf) and [the element14 introduction to Keil RTX](https://www.element14.com/community/docs/DOC-46650/l/arm-keil-rtx-real-time-operating-system-overview). You can use these resources as a general introduction to RTOS principles; it is important to be familiar with the concepts behind an RTOS in order to understand this guide.
+The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/tree/master/rtos). See [the Doxygen](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__rtos.html) for more information.
 
-#### SysTick
+#### RTOS Ticker
 
-System tick timer (SysTick) is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). You can use it to perform any task in the system, but for platforms using RTOS, including Mbed OS, it provides an interval for the OS for counting the time and scheduling tasks.
+Platforms using RTOS, including Mbed OS, need a mechanism for counting the time and scheduling tasks. A timer that generates periodic interrupts and is called system tick timer usually does this. Under Mbed OS, we call this mechanism the RTOS ticker.
 
-Mbed OS uses default SysTick source for most targets, but you can override that using the [Tick API](http://arm-software.github.io/CMSIS_5/RTOS2/html/group__CMSIS__RTOS__TickAPI.html) that CMSIS-RTOS2 provides. In which case you'll need to provide your own source of the interrupts.
+SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS platforms 
+implement timers as part of peripherals. Mbed OS supports using SysTick or the peripheral timers as RTOS ticker.
+
+The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](/docs/development/reference/low-power-ticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
 
 #### RTOS APIs
 
@@ -21,8 +24,10 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [MemoryPool](/docs/development/reference/memorypool.html): This class that you can use to define and manage fixed-size memory pools
 - [Mail](/docs/development/reference/mail.html): The API that provides a queue combined with a memory pool for allocating messages.
 - [RtosTimer](/docs/development/reference/rtostimer.html): A deprecated class used to control timer functions in the system.
-- [EventFlags](/docs/development/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events.
+- [EventFlags](/docs/development/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
 - [Event](/docs/development/reference/event.html): The queue to store events, extract them and excute them later.
+- [ConditionVariable](/docs/development/reference/conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
+- [Kernel](/docs/development/reference/kernel.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
 
 ##### Default timeouts
 
@@ -53,19 +58,4 @@ Each `Thread` can wait for signals and be notified of events:
 
 ##### Status and error codes
 
-The CMSIS-RTOS functions will return the following statuses:
-
-- `osOK`: function completed; no event occurred.
-- `osEventSignal`: function completed; signal event occurred.
-- `osEventMessage`: function completed; message event occurred.
-- `osEventMail`: function completed; mail event occurred.
-- `osEventTimeout`: function completed; timeout occurred.
-- `osErrorParameter`: a mandatory parameter was missing or specified an incorrect object.
-- `osErrorResource`: a specified resource was not available.
-- `osErrorTimeoutResource`:  a specified resource was not available within the timeout period.
-- `osErrorISR`: the function cannot be called from interrupt service routines (ISR).
-- `osErrorISRRecursive`: function called multiple times from ISR with same object.
-- `osErrorPriority`: system cannot determine priority or thread has illegal priority.
-- `osErrorNoMemory`: system is out of memory; it was impossible to allocate or reserve memory for the operation.
-- `osErrorValue`: value of a parameter is out of range.
-- `osErrorOS`: unspecified RTOS error - runtime error but no other error message fits.
+The Mbed OS error handling system assigns specific error codes for RTOS-related erros. See [the error handling documentation](/docs/development/reference/error-handling.html) for more information on RTOS errors reported.
