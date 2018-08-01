@@ -6,7 +6,7 @@ The USBKeyboard class provides the functionality of a keyboard. You can send key
 
 ### USBKeyboard class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_keyboard.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_keyboard.html)
 
 ### USBKeyboard example
 
