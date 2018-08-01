@@ -2,7 +2,12 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](/docs/development/tools/installing-with-the-windows-installer.html). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](/docs/development/tools/installing-manually.html).</span>
+<span class="tips">**Tip:** If you're working on Windows or Mac OS X, we recommend using the installers for Mbed CLI.
+- [Windows installer for Mbed CLI](installing-with-the-windows-installer.html).
+- [Mac OS X installer for Mbed CLI](installing-with-the-osx-installer.html).
+</span>
+
+For Linux, please [install Mbed CLI manually](/docs/development/tools/installing-manually.html). Advanced Windows and Mac OS X users can also install Mbed CLI manually, but we recommend the installers for less experienced developers.
 
 ## Requirements
 
@@ -56,8 +61,8 @@ The Windows installer for Mbed CLI includes the following components:
 
 ### Running the installer
 
-1. Download the latest executable from [mbed-windows-installer v0.4.3](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
-2. Run `mbed_installer_v042.exe`.
+1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
+2. Run `mbed_installer_v047.exe`.
 3. Set the installation path.
 4. Choose the installation type:
     - Default: Installs all components.
@@ -78,6 +83,19 @@ $ mbed_installer_{version}.exe /S
 ### After installation
 
 Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+
+## Installing with the Mac OS X installer
+
+The Mac OS X installer for Mbed CLI is a self-contained OS X application that contains GCC, Python, Git and Mercurial.  
+
+To use the installer: 
+
+1. Download the [Mac OS X installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg).
+1. Open `.dmg`.
+1. Copy `mbed_cli.app` to your applications folder.
+1. Run `mbed_cli.app`.
+
+<span class="note">**Note:** You may need to allow unsigned apps to run for this to work. The first time you run the installer, it make take a couple of minutes to download the components. This requires an internet connection. After the first run, everything will be much faster.</span>
 
 ## Installing manually
 
