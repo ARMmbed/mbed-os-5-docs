@@ -1,4 +1,4 @@
-## Software Design
+## Software design
 
 Principles of Arm Mbed software:
 
@@ -16,27 +16,6 @@ Please refer to the [Mbed style guide](/docs/v5.9/reference/guidelines.html#styl
 The Arm Mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the Mbed OS codebase as a single Git repo. We suggest this model for external libraries.
 
 - Modules should be logically grouped in the OS tree. Avoid generic words; be intentional with naming.
-
-    ```
-    - mbed-os
-        |- rtos - user API + any layer required to fit into mbed OS
-        |   |- rtx - third party implementation
-        |   |- windows - third party implementation
-        |   `- tests
-        |       |- unit - rtos related unit tests
-        |       `- functional - rtos related functional tests
-        |- drivers - user API on-chip hardware interfaces (Ticker, DigitalOut, etc)
-        |- util - chip-independent layer (retarget, toolchain, etc)
-        |   `- bootloader - chip-independent bootloader
-        |- net - networking API
-        |   |- stack - network implementations  
-        |   |   |-lwip
-        |   |   `- nanostack
-        |   `- tests - network tests
-        `- tests
-        |- integration - mbed OS integration tests
-        `- smoke - mbed OS smoke tests (blinky, etc)
-    ```
 
 - Prefix each source file with the module name followed by an underscore. This prevents conflicts with other similarly named files in different modules such as `nanostack/thread.c` and `drivers/Thread.cpp`; not all toolchains are able to support object files with the same name.
 
