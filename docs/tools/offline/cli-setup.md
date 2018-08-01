@@ -63,7 +63,7 @@ The Windows installer for Mbed CLI includes the following components:
 ### Running the installer
 
 1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
-2. Run `mbed_installer_v042.exe`.
+2. Run `mbed_installer_v047.exe`.
 3. Set the installation path.
 4. Choose the installation type:
     - Default: Installs all components.
@@ -84,6 +84,22 @@ $ mbed_installer_{version}.exe /S
 ### After installation
 
 Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+
+## Installing with the OSX Installer
+
+The OSX CLI Installer is a self contained OSX application that contains GCC, Python, Git and Mercurial.  
+
+To use the installer simply 
+
+1. Eownload the [OSX Mbed CLI Installer](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg)
+1. Open .dmg
+1. Copy mbed_cli.app to your applications folder
+1. Run mbed_cli.app.
+
+<span class="note">
+Please note that you may need to allow unsigned apps to run for this to work. 
+The first time you run the installer make sure you have an internet connection and it may take a couple minutes to download all the components. From the second run everything will be much faster. 
+</span>
 
 ## Installing manually
 
