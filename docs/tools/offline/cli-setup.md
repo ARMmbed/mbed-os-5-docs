@@ -45,7 +45,17 @@ You may want to install Mbed CLI on a virtual environment if your main environme
 
 ## Installing with the Windows installer
 
-Mbed CLI for Windows installs [Mbed CLI](https://github.com/ARMmbed/mbed-cli) with all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
+The Mbed CLI Windows Installer will install Mbed CLI and all dependent programs onto your windows machine. 
+
+### Running the installer
+
+1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
+2. Run `mbed_installer_v047.exe`.
+3. Set the installation path.
+4. Choose the installation type:
+    - Default: Installs all components.
+    - Advanced: Allows you to select components.
+5. Installer installs all selected components. Close it after it finishes.
 
 ### Included components
 
@@ -58,16 +68,6 @@ The Windows installer for Mbed CLI includes the following components:
     - [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
-
-### Running the installer
-
-1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
-2. Run `mbed_installer_v047.exe`.
-3. Set the installation path.
-4. Choose the installation type:
-    - Default: Installs all components.
-    - Advanced: Allows you to select components.
-5. Installer installs all selected components. Close it after it finishes.
 
 ### Optional: silent install
 
