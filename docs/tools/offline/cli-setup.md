@@ -45,7 +45,7 @@ You may want to install Mbed CLI on a virtual environment if your main environme
 
 ## Installing with the Windows installer
 
-The Mbed CLI Windows Installer will install Mbed CLI and all dependent programs onto your windows machine. 
+The Windows installer for Arm Mbed CLI installs Mbed CLI and all dependent programs onto your Windows machine. 
 
 ### Running the installer
 
