@@ -6,7 +6,7 @@
 
 Use the RtosTimer class to create and control timer functions in the system. A timer function is called when a time period expires, so both one-shot and periodic timers are possible. You can start, restart or stop a timer.
 
-The thread `osTimerThread` handles timers. Callback functions run under the control of this thread and may use CMSIS-RTOS API calls.
+The thread `osTimerThread` handles timers. Callback functions run under the control of this thread and may use underlying RTOS API calls.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rtos_timer.png)</span>
 
