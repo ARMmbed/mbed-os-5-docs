@@ -154,3 +154,58 @@ After exporting a project with the `target.bootloader_img` setting, you are resp
 
 For an unmanaged bootloader:
 After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.
+
+### Prebuilt bootloaders
+
+There are two ways to test prebuilt bootloader mode. This is an option to merge prebuilt bootloaders to your application. `mbed-os\features\FEATURE_BOOTLOADER\` contains the available supported targets with the corresponding prebuilt bootloader organized in folders specific to targets, for example `FEATURE_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F429xI/TARGET_NUCLEO_F429ZI/mbed-bootloader-block_device-sotp-v3_4_0.bin`.
+
+1. Add the BOOTLOADER feature into `mbed_app.json` located in the root application directory
+    ```
+    "target_overrides": {
+        "*": {
+            "target.features_add": ["BOOTLOADER"]
+        }
+    }
+    ```
+1. Add `-C 'target.features_add=["BOOTLOADER"]'` to your `mbed compile` command line arguments
+
+
+Please see [mbed-os-example-feature-bootloader](https://github.com/ARMmbed/mbed-os-example-feature-bootloader) for an example on how to use the bootloader feature.
+
+There are two ways to add a support for new targets
+
+1. Place the prebuilt binary bootloader in `mbed-os/feature/FEATURE_BOOTLOADER` and add the fields below with values corresponding to your binary:
+```
+"target_overrides": {
+        "YOUR_TARGET": {
+            "target.app_offset": "0x10400",
+            "target.header_offset": "0x10000",
+            "target.header_format": [
+                ["magic", "const", "32be", "0x5a51b3d4"],
+                ["headerVersion", "const", "32be", "2"],
+                ["firmwareVersion", "timestamp", "64be", null],
+                ["firmwareSize", "size", "64be", ["application"]],
+                ["firmwareHash", "digest", "SHA256", "application"],
+                ["headerCRC", "digest", "CRCITT32be", "header"]
+            ],
+            "target.bootloader_img": "your_bootloader.bin"
+        },
+```
+1. Edit `mbed_app.json` and override the target bootloader with the path to the bootloader and other fields if necessary.
+```
+    "target_overrides": {
+        "YOUR_TARGET": {
+            "target.bootloader_img": "PATH_TO_BOOTLOADER/your_bootloader.bin"
+            "target.app_offset": "0x10400",
+            "target.header_offset": "0x10000",
+            "target.header_format": [
+                ["magic", "const", "32be", "0x5a51b3d4"],
+                ["headerVersion", "const", "32be", "2"],
+                ["firmwareVersion", "timestamp", "64be", null],
+                ["firmwareSize", "size", "64be", ["application"]],
+                ["firmwareHash", "digest", "SHA256", "application"],
+                ["headerCRC", "digest", "CRCITT32be", "header"]
+            ]
+        }
+    }
+```
