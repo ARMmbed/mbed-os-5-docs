@@ -21,7 +21,7 @@ Mode |  Polarity |  Phase
 2 | 1 | 0  
 3 | 1 | 1  
 
-The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock.
+The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock. To communicate with multiple slave devices connected over the same SPI peripheral, you must use multiple SPI objects, one for each slave, but instantiate them with a different Slave select (SSEL) and configuration corresponding to each slave. Note that the SPI object automatically configures the SPI peripheral with the current object's configuration when the application code invokes the interfaces on the SPI object.
 
 ### SPI class reference
 
