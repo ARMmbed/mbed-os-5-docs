@@ -1,6 +1,9 @@
 <h1 id="mac-port">MAC API porting</h1>
 
 Nanostack has a lower level API for the IEEE 802.15.4-2006 MAC standard. This enables developers to support different MACs, be it SW or HW based solutions. Nanostack offers SW MAC, which you can use when your board does not have 15.4 MAC available.
+SW MAC also supports subset of IEEE 802.15.4-2015 MAC standard. Supported features are:
+- IEEE 802.15.4-2015 enhanced ack
+- Header and paylod Information elements set by MAC user. 
 
 ## SW MAC
 
@@ -13,6 +16,16 @@ ns_sw_mac_create()
 This creates an SW MAC class and sets a callback function to be used by Nanostack.
 
 <span class="notes">**Note:** You must not call `ns_sw_mac_create()` more than once!</span>
+
+### SW MAC IEEE 802.15.4-2015 subset extension
+
+SW MAC support subset from IEEE 802.15.4-2015 standard. Subset include following supported features.
+
+- Data frame send with Payload and Header Information elements defined by MAC user.
+- Enhanced ACK generation and send by MAC
+- Enhanced ACK payload and Information elements write for MAC user
+
+Subset features need proper supported RF driver with new extented driver API commands.
 
 ## Initializing SW MAC
 
@@ -147,13 +160,18 @@ The MAC API class structure `mac_api_t` is defined as below:
 typedef struct mac_api_s {
     //Service user defined initialization function which is called when Nanostack takes MAC into use
     mac_api_initialize              *mac_initialize;
+    mac_api_enable_mcps_ext     *mac_mcps_extension_enable;
     //MAC adapter function callbacks for MLME & MCPS SAP
     mlme_request                    *mlme_req;
     mcps_data_request               *mcps_data_req;
+    mcps_data_request_ext       *mcps_data_req_ext;
     mcps_purge_request                  *mcps_purge_req;
     //Service user defined function callbacks
     mcps_data_confirm               *data_conf_cb;
+    mcps_data_confirm_ext       *data_conf_ext_cb;
     mcps_data_indication                *data_ind_cb;
+    mcps_data_indication_ext    *data_ind_ext_cb;
+    mcps_ack_data_req_ext       *enhanced_ack_data_req_cb;
     mcps_purge_confirm                  *purge_conf_cb;
     mlme_confirm                        *mlme_conf_cb;
     mlme_indication                     *mlme_ind_cb;
@@ -169,11 +187,16 @@ typedef struct mac_api_s {
 Member|Description
 ------|-----------
 `mac_initialize` | MAC initialize function called by Nanostack.
+`mac_mcps_extension_enable` | MAC MCPS IE extension enable function, optional feature. Enable is only possible when driver extension is supported.
 `mlme_req` | MLME request function to use MLME-SAP commands, MAC defines.
 `mcps_data_req` | MCPS data request function to use, MAC defines.
+`mcps_data_req_ext` | MAC MCPS data request with Information element extension function to use.
 `mcps_purge_req` | MCPS purge request function to use, MAC defines.
 `mcps_data_confirm` | MCPS data confirm callback function, service user defines.
+`mcps_data_confirm_ext` | MAC MCPS data confirm with payload callback function.
 `data_ind_cb` | MCPS data indication callback function, service user defines.
+`data_ind_ext_cb` | MAC MCPS data indication with IE extension's callback function.
+`enhanced_ack_data_req_cb` | Enhanced ACK IE element and payload request from MAC user.
 `purge_conf_cb` | MCPS purge confirm callback function, service user defines.
 `mlme_conf_cb` | MLME confirm callback function, service user defines.
 `mlme_ind_cb` | MLME indication callback function, service user defines.
@@ -182,6 +205,161 @@ Member|Description
 `mac_storage_sizes_get` | Getter function to query data storage sizes from MAC.
 `parent_id` | Service user ID used to indentify the MAC service user. Optional.
 `phyMTU` | Maximum Transmission Unit (MTU) used by MAC. Standard 802.15.4 MAC must set 127.
+
+## SW MAC Information element's and Enhanced ACK support
+
+This chapter introduce how to use extented features.
+### Initialize API
+
+```
+typedef int8_t mac_api_enable_mcps_ext(mac_api_t *api, mcps_data_indication_ext *data_ind_cb, mcps_data_confirm_ext *data_cnf_cb, mcps_ack_data_req_ext *ack_data_req_cb);
+```
+
+Parameter|Description
+------|-----------
+`api`|pointer, which is created by application
+`data_ind_cb`|Upper layer function to handle MCPS indications with Information element's.
+`data_cnf_cb`|Upper layer function to handle MCPS confirmation with Information element's.
+`ack_data_req_cb`|Upper layer function for requesting Enhanced ACK payload.
+
+Function can be called when SW MAC is created and initialization procedure is done. Enable could fail if delivered driver does not support required extension's.
+
+#### Data Indication API
+```
+typedef void mcps_data_indication_ext(const mac_api_t* api, const mcps_data_ind_t *data, const mcps_data_ie_list_t *ie_ext);
+```
+Parameter|Description
+------|-----------
+`api`|pointer, which is created by application
+`data`|data MCPS-DATA.indication specific values.
+`ie_ext`|Information element list.
+
+Extented data indication handler is similar than normal indication but it includes Information element list which is defined following way:
+```
+typedef struct mcps_data_ie_list {
+    uint8_t *headerIeList;
+    uint8_t *payloadIeList;
+    uint16_t headerIeListLength;
+    uint16_t payloadIeListLength;
+} mcps_data_ie_list_t;
+```
+
+Member|Description
+------|-----------
+`headerIeList`|Header information IE's list without terminator.
+`payloadIeList`|Payload information IE's list without terminator.
+`headerIeListLength`|Header information IE's list length in bytes.
+`headerIeListLength`|Payload information IE's list length in bytes.
+
+#### Data request API
+```
+typedef void mcps_data_request_ext(const mac_api_t* api, const mcps_data_req_t *data, const mcps_data_req_ie_list_t *ie_ext, const struct channel_list_s *asynch_channel_list);
+```
+Parameter|Description
+------|-----------
+`api`|pointer, which is created by application
+`data`|MCPS-DATA.request specific values.
+`ie_ext`|Information element list to MCPS-DATA.request.
+`asynch_channel_list`|Optional channel list to asynch data request. Give NULL when normal data request.
+
+Asynch data request is mac standard extension. asynch_channel_list include channel mask which channel message is requested to send.
+
+Structure for IEEE 802.15.4-2015 MCPS data extension to Request.
+```
+typedef struct mcps_data_req_ie_list {
+    ns_ie_iovec_t *headerIeVectorList;
+    ns_ie_iovec_t *payloadIeVectorList;
+    uint16_t headerIovLength;
+    uint16_t payloadIovLength;
+} mcps_data_req_ie_list_t;
+```
+
+Member|Description
+------|-----------
+`headerIeVectorList`|Header IE element list.
+`payloadIeVectorList`|Payload IE element list.
+`headerIovLength`|Header IE element list size, set 0 when no elements.
+`payloadIovLength`|Payload IE element list size, set 0 when no elements.
+
+IE element could be divided to multiple vector which MAC just write to message direct. One vector cuold also include multiple Information elements or just header part. That's enable flexible to way to generate list and should enable memory firendly way to share information element's. 
+
+Set `headerIovLength` or `payloadIovLength` to 0 if not send any element.
+
+Scatter-gather descriptor for MCPS request IE Element list.
+```
+typedef struct ns_ie_iovec {
+    void *ieBase;
+    uint_fast16_t iovLen;
+} ns_ie_iovec_t;
+```
+
+Member|Description
+------|-----------
+`ieBase`|IE element pointer.
+`iovLen`|IE element length.
+
+#### Data confirmation API
+
+```
+typedef void mcps_data_confirm_ext(const mac_api_t* api, const mcps_data_conf_t *data, const mcps_data_conf_payload_t *conf_data);
+```
+Parameter|Description
+------|-----------
+`api`|pointer, which is created by application
+`data`|MCPS-DATA.confirm specific values.
+`conf_data`|Possible Confirmation Data.
+
+Confirmation data is packet to next structure:
+
+```
+typedef struct mcps_data_conf_payload_s {
+    uint8_t *headerIeList;
+    uint8_t *payloadIeList;
+    uint8_t *payloadPtr;
+    uint16_t headerIeListLength;
+    uint16_t payloadIeListLength;
+    uint16_t payloadLength;
+} mcps_data_conf_payload_t;
+```
+
+Member|Description
+------|-----------
+`headerIeList`|Header information IE's list without terminator
+`payloadIeList`|Payload information IE's list without terminator.
+`payloadPtr`|Ack payload pointer.
+`headerIeListLength`|Header information IE's list length in bytes.
+`payloadIeListLength`|Payload information IE's list length in bytes.
+`payloadLength`|Payload length in bytes.
+
+#### Enhanced ACK payload and IE write API
+
+```
+typedef void mcps_ack_data_req_ext(const mac_api_t* api, mcps_ack_data_payload_t *data, int8_t rssi, uint8_t lqi);
+```
+Parameter|Description
+------|-----------
+`api`|pointer, which is created by application
+`data`|Pointer where MAC user set Payload and IE element pointers and length.
+`rssi`|Signal strength for received packet.
+`lqi`|Link quality to neighbor.
+
+Signal strength and link quality are just extra information if devices wan't share link quality both way at ack message protocol spesific way.
+
+Structure for give ACK payload:
+```
+typedef struct mcps_ack_data_payload {
+    struct mcps_data_req_ie_list ie_elements;
+    uint8_t *payloadPtr;
+    uint16_t payloadLength;
+} mcps_ack_data_payload_t;
+```
+Member|Description
+------|-----------
+`ie_elements`|IE hader and payload's elements
+`payloadPtr`|Ack payload pointer.
+`payloadLength`|Payload length in bytes.
+
+MAC user should set zero length of to payload or IE list when it not need to add spesific data to ACK.
 
 ## MAC API standard extensions
 
@@ -218,6 +396,7 @@ Nanostack uses MLME attribute extensions which have to be ported to the HW MAC a
 
 | Enumeration type | Value | Description |
 | ---------------- | ----- | ----------- |
+| `macAcceptByPassUnknowDevice` | `0xfc` | Accept data trough MAC if packet is data can be authenticated by group key and MIC. Security enforsment point must be handled carefully these packets. |
 | `macLoadBalancingBeaconTx` | `0xfd` | Trigger to MAC layer to send a beacon. Called by the load balancer module periodically. |
 | `macLoadBalancingAcceptAnyBeacon` | `0xfe` | Configure MAC layer to accept beacons from other networks. Enabled by load balancer, default value is `False`. Value size boolean, `true=enable`, `false=disable`. |
 | `macThreadForceLongAddressForBeacon` | `0xff` | The Thread standard forces the beacon source address to have an extended 64-bit address. |
