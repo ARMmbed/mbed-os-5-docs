@@ -170,6 +170,67 @@ State|Description
 
 ![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
 
+### MESH PHY extended driver support
+
+Mesh IEEE 802.15.4 MAC will automatically use RF driver extended features. These features are needed when MAC user need to send IEEE 802.15.4 frames. MAC extensuon will enable if driver not support extended features. 
+
+Extented driver features enable next feature's:
+
+- MAC to control packet TX time define CCA backoff period before CCA check
+- CCA mode  set for each of tx operation
+- Handle Enhanced ACK send and build
+ 
+Driver side HW need to support next new feature's:
+
+- Driver must implement  32-bit global timestamp with 1 micro seconds resolution
+- Driver must let trough Enhanced ACK packet
+- Driver must implement Interrupt whch read time stamp when it start Receive data typically this is called SFD (start frame detection)
+- Driver tx operation must follow MACconfigured tx timestamp when it do CCA and trig TX process
+
+#### RF driver extended API
+
+The following commands are received as a parameter of the function `extension` defined in the struct of type `phy_device_driver_s` for extended driver features:
+
+Command|Description
+-----|-----------
+`PHY_EXTENSION_DYNAMIC_RF_SUPPORTED`|Read status boolean for support Radio driver support for use all extended features. Nanostack SW MAC call this command automatically when SW MAC is generated and store support information.
+`PHY_EXTENSION_READ_RX_TIME`|Read the 32-bit time of last reception based on global micro seconds time stamp. Command is used inside at RX API call by MAC.
+`PHY_EXTENSION_READ_TX_FINNISH_TIME`|Read the 32-bit time of last finished TX micro seconds based on global time stamp.
+`PHY_EXTENSION_GET_TIMESTAMP`|Read 32-bit constant monotonic time stamp in us.
+`PHY_EXTENSION_SET_CSMA_PARAMETERS`|CSMA parameter's are given by phy_csma_params_t structure remember type cast uint8_t pointer to structure type.
+`PHY_EXTENSION_GET_SYMBOLS_PER_SECOND`|Read 32-bit Symbols per seconds which will help to convert symbol time to real time. Nanostack SW MAC call this command automatically when SW MAC is generated and extension is supported and define symbol time information.
+
+#### CSMA-CA parameter's
+
+This structure defines the PHY device CSMA backoff period start time and CCA modethe following members:
+```
+typedef struct phy_csma_params {
+    uint32_t backoff_time;
+    bool cca_enabled;
+} phy_csma_params_t;
+```
+
+Member|Description
+------|-----------
+`backoff_time`|CSMA Backoff us time before start CCA & TX. 0 should disable current backoff
+`cca_enabled`|True will affect CCA check false start TX direct after backoff.
+
+#### Extended TX process
+
+When extended rf driver is supported MAC will follow next command and processing order for trig TX process:
+
+1. MAC generate random CCA backoff period.
+2. Read current active timestamp by command `PHY_EXTENSION_GET_TIMESTAMP`.
+3. Sum readed timestamp and active period.
+4. Generate and secured packet.
+5. Give CSMA parametrs by `PHY_EXTENSION_SET_CSMA_PARAMETERS`.
+6. Start CCA backoff for CCA check and TX trig to driver by  `tx`function.  Driver should start cca timer based on pre defined timestamp.
+7. Drivers should call `arm_net_phy_tx_done_fn` with status `PHY_LINK_CCA_PREPARE` when configured time is reached MAC return 0 when CCA check and TX start is ok.
+
+
+**Figure 4-3 TX process**
+
+![](./rf_extension_tx_state.png) 
 ### PHY device driver register
 
 This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces for a specific PHY driver.
@@ -221,7 +282,8 @@ typedef enum phy_link_tx_status_e
 	PHY_LINK_TX_DONE_PENDING,
 	PHY_LINK_TX_SUCCESS,
 	PHY_LINK_TX_FAIL,
-	PHY_LINK_CCA_FAIL
+	PHY_LINK_CCA_FAIL,
+	PHY_LINK_CCA_PREPARE
 } phy_link_tx_status_e;
 ```
 
@@ -232,6 +294,7 @@ Parameter|Description
 `TX_SUCCESS`|MAC TX complete MAC will make a decision to enter a wait ack or TX Done state.
 `TX_FAIL`|The link TX process fails.
 `CCA_FAIL`|RF link CCA process fails.
+`PHY_LINK_CCA_PREPARE`|RX Tx timeout prepare operation like channel switch to Tx channel from Receive one If operation fail must return not zero. Driver should call this only when driver extension is supported.
 
 #### PHY interface control types
 
