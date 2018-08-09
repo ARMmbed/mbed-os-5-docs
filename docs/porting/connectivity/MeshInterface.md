@@ -176,6 +176,87 @@ State|Description
 
 ![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
 
+## MESH PHY extended driver support
+
+Mesh IEEE 802.15.4 MAC will automatically use RF driver extended features if those are enabled in driver. These features are needed when MAC user need to send IEEE 802.15.4-2015 frames. MAC extensions are used automatically if driver implements the extension. If these extensions are not implemented the default behaviour is used thus limiting features.
+
+RF driver extension's enable following feature's:
+
+- MAC controlled CCA/CSMA-CA for each of tx operation
+- Support for IEEE 802.15.4-2015 enhanced ack and Information elements
+ 
+RF Driver need to support following new feature's:
+
+- Driver must implement  32-bit global timestamp with 1 micro seconds resolution
+- Driver must let trough Enhanced ACK packet
+- Driver must store time stamp when it starts receiving data . Timestamp is  a reference to  received SFD (Start Frame Detection).
+- Driver must send a packet at requested timestamp. Timestamp is  a reference to  transmitted SFD (Start Frame Detection).
+
+### RF Frame RX rules
+
+It is possible that driver will receive IEEE 802.15.4 2003, 2006 or 2015 frame version's. Driver must be able to detect following items from received radio packet:
+- Packet length
+- RSSI, Received Signal strenght Indication
+- LQI, Link quality Indication
+- MAC frame type from MAC FCF, Frame control field
+- MAC frame version from MAC FCF, Frame control field
+- MAC frame Request ACK bit from MAC FCF, Frame control field
+- Mac packet sequence number
+- Address filter by hardware or driver software validation.
+
+RX rules for frame version 2 (802.15.4-2015 frame version):
+- Frame types which requests ACK. Driver does not generate ACK, because that is done at MAC layer. 
+- ACK frame type must be forwarded to MAC like normal data using `arm_net_phy_rx_fn()` API function.
+
+### RF driver extended API
+
+The RF driver must implement following commands to support dynamic CCA/CSMA-CA and Frequence Hopping features.
+Commands are passed as a parameter in the`extension` function which is defined in the `phy_device_driver_s` struct.
+
+Command|Description
+-----|-----------
+`PHY_EXTENSION_DYNAMIC_RF_SUPPORTED`|Read boolean. If true,  driver must support all following commands.
+`PHY_EXTENSION_READ_RX_TIME`|Read 32-bit time stamp of last received packet.
+`PHY_EXTENSION_READ_TX_FINNISH_TIME`|Read 32-bit time stamp of last finished TX process.
+`PHY_EXTENSION_GET_TIMESTAMP`|Read 32-bit current time stamp.
+`PHY_EXTENSION_SET_CSMA_PARAMETERS`|Write CCA/CSMA-CA parameter's. Parameters are given in phy_csma_params_t structure.
+`PHY_EXTENSION_GET_SYMBOLS_PER_SECOND`|Read 32-bit Symbols per seconds value. Symbol rate is defined by RF configuration.
+
+### CSMA-CA parameter's
+
+This structure defines the CSMA-CA backoff time and CCA mode. Driver must schedule packet sending at given backoff time. Backoff time is a reference to transmitted SFD. 
+```
+typedef struct phy_csma_params {
+    uint32_t backoff_time;
+    bool cca_enabled;
+} phy_csma_params_t;
+```
+
+Member|Description
+------|-----------
+`backoff_time`|CSMA Backoff time in us before start TX. Backoff time 0 must cancel current backoff.
+`cca_enabled`|When True CCA check must be done before start TX.
+
+#### Extended TX process
+
+When extended rf driver is supported MAC uses the following commands and processing order for TX process:
+
+1. MAC generates random tx time using CSMA-CA algorithm.
+2. Read current timestamp by command `PHY_EXTENSION_GET_TIMESTAMP`.
+3. Calculate backoff time using current timestamp and generated random time.
+4. Generate and secure packet.
+5. Give CSMA-CA parameters using command `PHY_EXTENSION_SET_CSMA_PARAMETERS`.
+6. Start TX by calling `tx`function. If backoff time is in future driver must start tx timer based on given timestamp.
+7. After tx timer is elapsed or timestamp was less than current time driver must call `arm_net_phy_tx_done_fn` with status `PHY_LINK_CCA_PREPARE`.
+8. If MAC returns 0 driver must perform CCA check if CCA was enabled. If channel is busy driver must call `arm_net_phy_tx_done_fn` with status `PHY_LINK_CCA_FAIL`.
+9. Start transmission if channel was clear
+10. Driver must call `arm_net_phy_tx_done_fn` with status `PHY_LINK_TX_SUCCESS`.
+11. If ACK is received for this transmission driver must call `arm_net_phy_tx_done_fn` with status `PHY_LINK_TX_DONE` or `PHY_LINK_TX_DONE_PENDING`.
+
+**Figure 4-3 TX process**
+
+![](./rf_extension_tx_state.png)
+ 
 ## PHY device driver register
 
 This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces for a specific PHY driver.
@@ -227,7 +308,8 @@ typedef enum phy_link_tx_status_e
 	PHY_LINK_TX_DONE_PENDING,
 	PHY_LINK_TX_SUCCESS,
 	PHY_LINK_TX_FAIL,
-	PHY_LINK_CCA_FAIL
+	PHY_LINK_CCA_FAIL,
+	PHY_LINK_CCA_PREPARE
 } phy_link_tx_status_e;
 ```
 
@@ -238,6 +320,7 @@ Parameter|Description
 `TX_SUCCESS`|MAC TX complete MAC will make a decision to enter a wait ack or TX Done state.
 `TX_FAIL`|The link TX process fails.
 `CCA_FAIL`|RF link CCA process fails.
+`PHY_LINK_CCA_PREPARE`|Using this parameter driver requests permission for transmission from MAC. Sending is allowed if MAC returns zero. Driver must call this only when driver extension is supported.
 
 ### PHY interface control types
 
