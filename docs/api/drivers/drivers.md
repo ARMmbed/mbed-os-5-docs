@@ -8,6 +8,6 @@ For every driver, there is a required blocking API. Many drivers also have optio
 
 A benefit of blocking APIs is that they can make development easier. They allow for linear programming and straightforward debugging. 
 
-To optimize the benefits from blocking APIs, be sure to use mulitple threads. Don't mix blocking and nonblocking APIs because it can lead to complications in your code and can make debugging more confusing. 
+To optimize the benefits from blocking APIs, be sure to use multiple threads. Don't mix blocking and nonblocking APIs because it can lead to complications in your code and can make debugging more confusing. 
 
 <!---add design patterns about HAL, drivers working together, attach programming model/design pattern that sticks you in interrupt context, all blocking by nature, blockwise or bulk transfers, play down asynchronous natures, focus on blocking--->
