@@ -4,7 +4,7 @@ Driver APIs include analog and digital inputs and outputs on development boards,
 
 ### Blocking nature
 
-For every driver, there is a required blocking API. Many drivers also have optional nonblocking APIs. The difference between blocking and nonblocking APIs lies in situations when you make a call that the program can't fulfill because there aren't enough resources available. In such a scenario, blocking APIs block the task and all following tasks until the resources become available. Nonblocking APIs, however, don't block execution. Instead, nonblocking APIs allow remaining tasks to continue.
+For every driver, there is a required blocking API. Many drivers also have optional nonblocking APIs. The difference between blocking and nonblocking APIs lies in their behavior. Blocking APIs block all following tasks until the current task completes. Nonblocking APIs, however, don't block execution. Instead, nonblocking APIs allow remaining tasks to continue.
 
 A benefit of blocking APIs is that they can make development easier. They allow for linear programming and straightforward debugging. 
 
