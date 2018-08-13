@@ -44,14 +44,14 @@ The above code executes two handler functions (`rise_handler` and `fall_handler`
 This is the output of the above program on an FRDM-K64F board. We reset the board and pressed the SW2 button twice:
 
 ```
-Starting in context 0x20002c50
-fall_handler in context 0x20002c90
-rise_handler in context 0x0
-fall_handler in context 0x20002c90
-rise_handler in context 0x0
+Starting in context 20001fe0
+fall_handler in context 20000b1c
+rise_handler in context 00000000
+fall_handler in context 20000b1c
+rise_handler in context 00000000
 ```
 
-The program starts in the context of the thread that runs the `main` function (`0x29992c5`). When the user presses SW2, `fall_handler` is automatically queued in the event queue, and  it runs later in the context of thread `t` (`0x20002c90`). When the user releases the button, `rise_handler` is executed immediately, and it displays `0x0`, indicating that the code ran in interrupt context.
+The program starts in the context of the thread that runs the `main` function (`20001fe0`). When the user presses SW2, `fall_handler` is automatically queued in the event queue, and  it runs later in the context of thread `t` (`20000b1c`). When the user releases the button, `rise_handler` is executed immediately, and it displays `00000000`, indicating that the code ran in interrupt context.
 
 The code for `rise_handler` is problematic because it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. We can make the code safe by running `rise_handler` in user context (like we already do with `fall_handler`) by replacing this line:
 
