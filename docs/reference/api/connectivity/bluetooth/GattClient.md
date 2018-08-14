@@ -28,4 +28,4 @@ Clients register for these updates by setting the Client Characteristic Configur
 
 ### GattClient example
 
-[![View code](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattClient/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattClient/file/71d7cec222eb/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattClient/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattClient/file/71d7cec222eb/main.cpp)
