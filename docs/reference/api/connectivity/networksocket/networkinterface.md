@@ -13,15 +13,16 @@ Network interface is also the controlling API for application to specify network
 
 ### Network status updates
 
-Application may choose to registed callback for monitoring status changes from network interfaces. This is done by using following API.
+An application may choose to register a callback to monitoring status changes from network interfaces. The application can do this by using the following API:
 
 - [Network status](network-status.html): API for monitoring network status changes.
 
 ### Default network interface
 
-In Mbed OS, targets that provide network connectivity, provide also default network interface. This can be either Ethernet, WiFi, mesh or cellular. Using default interface allows applications to be easily ported to different targets and different connectivity options.
+In Mbed OS, targets that provide network connectivity also provide a default network interface. This can be Ethernet, Wi-Fi, mesh or cellular. Using a default interface allows you to port applications to different targets and connectivity options.
 
-Following example uses default interface for connecting to network:
+The following example uses a default interface to connect to the network:
+
 ```
 NetworkInterface *net = NetworkInterface::get_default_instance();
 
@@ -33,9 +34,10 @@ if (!net) {
 net->connect();
 ```
 
-This example works on all IP based connectivity options supported by Mbed OS. Configuration for default interface is provided by the Mbed OS configuration system on the build time, so on a run time you can just call `connect()` without any parameters.
+This example works on all IP-based connectivity options that Mbed OS supports. The Mbed OS configuration system provides configuration for the default interface at build time, so at run time, you can just call `connect()` without any parameters.
 
-For example, when providing WiFi SSID and password, following `mbed_app.json` may be used:
+For example, when providing Wi-Fi SSID and password, you may use the following `mbed_app.json`:
+
 ```
 {
     "target_overrides": {
@@ -49,26 +51,26 @@ For example, when providing WiFi SSID and password, following `mbed_app.json` ma
 }
 ```
 
-Please see [Selecting the default network interface](configuration-connectivity.html#selecting-the-default-network-interface) for information of how to supply required configuration parameters on different connections.
+Please see [Selecting the default network interface](configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
 
-For targets that provide more than one type of connectivity, you may choose the default by overriding `target.network-default-interface-type` configuration variable.
+For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
 
-Applications may also ask for specific type of connection, as shown in following table:
+Applications may also ask for a specific type of connection, as the following table shows:
 
 |Method|What connectivity is returned| Requirements |
 |------|-----------------------------|--------------|
-|`*WiFiInterface::get_default_instance()`| Wifi interface. | Requires security parameters (mode, SSID, password) |
-|`*EthInterface::get_default_instance()` | Wired Ethernet interface, not WiFi. | none |
-|`*MeshInterface::get_default_instance()` | Returns either `LoWPANNDInterface` or `ThreadInterface` depending on which is set to default | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled |
+|`*WiFiInterface::get_default_instance()`| Wi-Fi interface | Requires security parameters (mode, SSID, password) |
+|`*EthInterface::get_default_instance()` | Wired Ethernet interface, not Wi-Fi | none |
+|`*MeshInterface::get_default_instance()` | Returns either `LoWPANNDInterface` or `ThreadInterface`, depending on which is set to default | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled |
 | `*CellularBase::get_default_instance` | Return cellular connectivity | Requires network parameters (pin, APN, username, password) |
 | `*NetworkInterface::get_default_instance()` | First one from above that is found |  |
 
-Please note that any of those functions may return `NULL` when interface of this type or its configuration is not found.
+Please note that any of those functions may return `NULL` when the interface of this type or its configuration is not found.
 
-### More information
+### Related content
 
-* [Configuring the default network interface](configuration-connectivity.html#selecting-the-default-network-interface)
-* [Network connectivity in Mbed OS](connectivity-tech.html)
-* [IP networking](ip-networking.html)
-* [Network status API](network-status.html)
-* [Network Sockets](network-socket.html)
+- [Configuring the default network interface](configuration-connectivity.html#selecting-the-default-network-interface).
+- [Network connectivity](connectivity-tech.html).
+- [IP networking](ip-networking.html).
+- [Network status API](network-status.html).
+- [Network sockets](network-socket.html).
