@@ -26,6 +26,20 @@ Privacy is a feature that allows a device to avoid being tracked by other (untru
 
 You need to enable privacy by calling `enablePrivacy()` after initializing the SecurityManager because privacy requires SecurityManager to handle IRKs. Set the behavior of privacy enabled devices by using `setCentralPrivacyConfiguration()`, which specifies what the device should be with devices using random addresses, and `setPeripheralPrivacyConfiguration`. Random addresses that privacy enabled devices generate can be of two types: resolvable (by devices who have the IRK) and unresolvable. You can't use unresolvable addresses for connecting and connectable advertising; therefore, use a resolvable one for these, regardless of the privacy configuration.
 
+#### Modulation Schemes
+ 
+When supported by the host and controller, you can select different modulation schemes:
+
+- LE 1M PHY.
+- LE 2M PHY.
+- LE coded PHY.
+ 
+These provide different compromises between bandwidth, power usage and error resiliency (see BLUETOOTH SPECIFICATION Version 5.0 Vol 1, Part A - 1.2).
+ 
+You may set preferred PHYs (separately for RX and TX) using `setPreferredPhys()`. You may also set the currently used PHYs on a selected connection using `setPhy()`. Both of these settings are only advisory, and the controller is allowed to make its own decision on the best PHY to use based on your request, the peer's supported features and the connection's physical conditions.
+ 
+You may query the currently used PHY using `readPhy()`, which returns the result through a call to the registered event handler. You may register the handler with `setEventHandler()`. The events inform about the currently used PHY and of any changes to PHYs, which the controller or the peer may trigger autonomously.
+
 ### GAP class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_gap.html)
