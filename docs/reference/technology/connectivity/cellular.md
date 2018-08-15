@@ -53,7 +53,7 @@ If you use an Mbed OS target and a separate cellular hosted module via a serial 
     }    
 
 You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART.
-    
+
 ### Cellular APIs
 
 As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details which are expected to change frequently.
@@ -145,11 +145,11 @@ An application gives eDRX configuration to the modem which negotiates it with th
 
 ### Considerations for UDP, TCP and non-IP use
 
-Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors. 
+Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors.
 
 TCP is a reliable transmission protocol. For long-lived sessions, periodic keep alive messaging is necessary, which places demands on the main power source. For a long-lived TCP connection, the server application can contact the device. Connections can still have long latencies because the device's use of eDRX power optimization affects when it listens for incoming packets. Mbed TLS supports TLS transport security over TCP. Operators may, however, prevent using TCP over NB-IoT due to device deployment and network planning considerations.
 
-UDP is unreliable, which places the retransmission mechanism burden on the application. UDP does not have a session; thus, the server application can contact the device only for a short while after it has received a UDP message from the device. 
+UDP is unreliable, which places the retransmission mechanism burden on the application. UDP does not have a session; thus, the server application can contact the device only for a short while after it has received a UDP message from the device.
 
 Mbed TLS supports DTLS transport security over UDP.
 
@@ -157,4 +157,4 @@ Non-IP is a new option for communication over NB-IoT. The device sends messages 
 
 For DTLS and TLS transport security, even if the device maintains its own IP address during power save periods, the address may be changed in the network due to Network Address Translation (NAT). NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates renegotiation of the (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimize the renegotiation. Both device and (D)TLS server must support the used mechanism.
 
-To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/latest/reference/tls.html).
+To read more about security, see [Arm Mbed TLS](/docs/development/reference/tls.html).
