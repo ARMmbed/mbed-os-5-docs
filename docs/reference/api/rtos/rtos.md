@@ -8,7 +8,7 @@ The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARM
 
 Platforms using RTOS, including Mbed OS, need a mechanism for counting the time and scheduling tasks. A timer that generates periodic interrupts and is called system tick timer usually does this. Under Mbed OS, we call this mechanism the RTOS ticker.
 
-SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS platforms 
+SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS platforms
 implement timers as part of peripherals. Mbed OS supports using SysTick or the peripheral timers as RTOS ticker.
 
 The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](low-power-ticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
@@ -27,7 +27,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [EventFlags](eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
 - [Event](event.html): The queue to store events, extract them and excute them later.
 - [ConditionVariable](conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
-- [Kernel](kernel.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
+- [Kernel](kernel-interface-functions.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
 
 ##### Default timeouts
 
