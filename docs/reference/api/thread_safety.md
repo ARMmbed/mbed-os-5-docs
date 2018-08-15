@@ -82,7 +82,7 @@ For more information see [rtos/Mutex.h](https://os.mbed.com/docs/v5.9/mbed-os-ap
 
 Mbed OS provides atomic functions to make code **interrupt safe**. If you must modify an object or data structure from interrupts, you can use these atomic functions to synchronize the access.
 
-For more information see[platform/critical.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h).
+For more information see [platform/critical.h](https://github.com/ARMmbed/mbed-os/blob/master/platform/critical.h).
 
 ##### Critical sections
 
