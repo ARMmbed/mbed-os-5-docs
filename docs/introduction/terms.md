@@ -22,7 +22,7 @@
 
 **Bit** - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
 
-**BLE** - [Bluetooth Low Energy](/docs/v5.9/reference/ble.html).
+**BLE** - [Bluetooth Low Energy](/docs/v5.9/reference/bluetooth.html).
 
 **Blinky** - An [example application](/docs/v5.9/tutorials/mbed-os-quick-start.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
