@@ -90,7 +90,7 @@ Mbed OS has several block device implementations for common forms of storage:
 
 - [**HeapBlockDevice**](https://os.mbed.com/docs/v5.9/reference/heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it for testing applications when a storage device is not available.
 
-- **FlashIAPBlockDevice** - Block device adapter for the [FlashIAP driver](https://os.mbed.com/docs/v5.8/reference/flash-iap.html), which provides an in application programming (IAP) interface for the MCU's internal flash memory.
+- **FlashIAPBlockDevice** - Block device adapter for the [FlashIAP driver](https://os.mbed.com/docs/v5.9/reference/flash-iap.html), which provides an in application programming (IAP) interface for the MCU's internal flash memory.
 
 #### Utility block devices
 

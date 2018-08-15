@@ -1,10 +1,10 @@
 <h2 id="blockdevice-port">Block Devices</h2>
 
-Block devices are the basic building block of storage solutions in Mbed OS. 
+Block devices are the basic building block of storage solutions in Mbed OS.
 
 ![MbedOSStorage](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/MbedOS-storage-overview.png)
-  
-File systems are backed by [blockdevice implementations](https://os.mbed.com/docs/v5.8/reference/storage.html). The BlockDevice API performs the low-level interactions with the hardware storage. To add your own block device implementation, we recommend you inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the and [implementing BlockDevice](#implementing-blockdevice) section below.
+
+File systems are backed by [blockdevice implementations](https://os.mbed.com/docs/v5.9/reference/storage.html). The BlockDevice API performs the low-level interactions with the hardware storage. To add your own block device implementation, we recommend you inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the and [implementing BlockDevice](#implementing-blockdevice) section below.
 
 ### Assumptions
 
