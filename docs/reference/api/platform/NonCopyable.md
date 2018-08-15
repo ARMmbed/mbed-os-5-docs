@@ -10,12 +10,12 @@ We recommend using the NonCopyable class whenever a class owns a resource (lock/
 
 ### NonCopyable example
 
-Copying objects of classes used for locking, network encapsulation, hardware bus and so on should not occur. Mbed OS has noncopyable classes, such as [Mutex](/docs/v5.9/reference/mutex.html), [EventFlags](/docs/v5.9/reference/eventflags.html), [BusOut](/docs/v5.9/reference/busout.html), [InterruptIn](/docs/v5.9/reference/interruptin.html) and [I2C](/docs/v5.9/reference/i2c.html).
+Copying objects of classes used for locking, network encapsulation, hardware bus and so on should not occur. Mbed OS has noncopyable classes, such as [Mutex](mutex.html), [EventFlags](eventflags.html), [BusOut](busout.html), [InterruptIn](interruptin.html) and [I2C](i2c.html).
 
 ### Related content
 
-- [Mutex](/docs/v5.9/reference/mutex.html) API reference.
-- [EventFlags](/docs/v5.9/reference/eventflags.html) API reference.
-- [BusOut](/docs/v5.9/reference/busout.html) API reference.
-- [InterruptIn](/docs/v5.9/reference/interruptin.html) API reference.
-- [I2C](/docs/v5.9/reference/i2c.html) API reference.
+- [Mutex](mutex.html) API reference.
+- [EventFlags](eventflags.html) API reference.
+- [BusOut](busout.html) API reference.
+- [InterruptIn](/interruptin.html) API reference.
+- [I2C](i2c.html) API reference.

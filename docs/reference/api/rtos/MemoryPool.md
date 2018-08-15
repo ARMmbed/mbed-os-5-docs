@@ -20,10 +20,10 @@ mpool.free(message);
 
 ### Queue and MemoryPool example
 
-This example shows [Queue](https://os.mbed.com/docs/v5.9/reference/queue.html) and MemoryPool managing measurements.
+This example shows [Queue](queue.html) and MemoryPool managing measurements.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_queue/)](https://os.mbed.com/teams/mbed_example/code/rtos_queue/file/0cb43a362538/main.cpp)
 
 ### Related content
 
-- [Queue](https://os.mbed.com/docs/v5.9/reference/queue.html) API reference.
+- [Queue](queue.html) API reference.

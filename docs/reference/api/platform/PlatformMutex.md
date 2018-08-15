@@ -14,12 +14,12 @@ The code below demonstrates usage of PlatformMutex.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-mutex/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-mutex/file/2084d9e90526/main.cpp)
 
-Mbed OS uses the PlatformMutex class instead of the RTOS mutex for all drivers. For example, please see [AnalogIn](/docs/v5.9/reference/analogin.html), [BusOut](/docs/v5.9/reference/busout.html), [SPI](/docs/v5.9/reference/spi.html), [Serial](/docs/v5.9/reference/serial.html) and [I2C](/docs/v5.9/reference/i2c.html).
+Mbed OS uses the PlatformMutex class instead of the RTOS mutex for all drivers. For example, please see [AnalogIn](analogin.html), [BusOut](busout.html), [SPI](spi.html), [Serial](serial.html) and [I2C](i2c.html).
 
 ### Related content
 
-- [AnalogIn](/docs/v5.9/reference/analogin.html).
-- [BusOut](/docs/v5.9/reference/busout.html).
-- [SPI](/docs/v5.9/reference/spi.html).
-- [Serial](/docs/v5.9/reference/serial.html).
-- [I2C](/docs/v5.9/reference/i2c.html).
+- [AnalogIn](analogin.html).
+- [BusOut](busout.html).
+- [SPI](spi.html).
+- [Serial](serial.html).
+- [I2C](i2c.html).

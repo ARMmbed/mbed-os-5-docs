@@ -1,14 +1,14 @@
 <h2 id="lora-tech">LoRaWAN</h2>
 
 ### LoRaWAN network architecture
- 
+
  A LoRaWAN network consists of three basic network elements:
- 
+
  - Device.
  - Base station.
  - Network Server.
- 
-The base station's job is to speak LoRa with the devices in its coverage area. The real network control lies in the cloud, in other words, the network server. 
+
+The base station's job is to speak LoRa with the devices in its coverage area. The real network control lies in the cloud, in other words, the network server.
 
 You can think of a LoRaWAN as a network with virtualized network layer. The devices talk to the network server using LoRaWAN protocol and making a LoRaWAN network. If multiple base stations are listening to your device, all of them forward your packet to the network server, which means that a LoRaWAN device is not localized to a certain cell.
 
@@ -23,7 +23,7 @@ LoRa Alliance is responsible for standardizing LoRaWAN protocol. There have been
 - LoRaWAN Specification v1.0.X.
 - LoRaWAN Specification v1.1.
 
-Specification v1.0 and v1.0.X have a few differences. The latest specification v1.1 is largely different in terms of how network control expresses itself. Some of the salient features in v1.1 are the improved security primitives and the support for roaming. All the specifications are backward compatible. Regional Parameters Specifications, which address the regional constraints pertaining to radio regulations across the world, augment these standard documents. 
+Specification v1.0 and v1.0.X have a few differences. The latest specification v1.1 is largely different in terms of how network control expresses itself. Some of the salient features in v1.1 are the improved security primitives and the support for roaming. All the specifications are backward compatible. Regional Parameters Specifications, which address the regional constraints pertaining to radio regulations across the world, augment these standard documents.
 
 ### LoRaWAN device classes
 
@@ -37,7 +37,7 @@ A LoRaWAN device always starts as a Class A device. It can later switch to anoth
 
 #### Class A
 
-Class A is a mandatory device class. All LoRaWAN devices must implement a Class A. This class includes battery powered sensors and actuators with no latency constraints. This is the most energy efficient communication class. 
+Class A is a mandatory device class. All LoRaWAN devices must implement a Class A. This class includes battery powered sensors and actuators with no latency constraints. This is the most energy efficient communication class.
 
 In Class A, the device always initiates a communication cycle. When a device transmits a datagram, it opens two receive windows after specific delays. Timings of these delays and the lengths of receive windows themselves are subjected to regional constraints. The transmission, however, is need based. However, it is scheduled or transmitted based on the duty cycle restrictions following an Aloha-like mechanism.
 
@@ -58,15 +58,15 @@ Beacon guard time precedes each beacon, and no ping slot can be placed in that t
 - Beacon guard = 3 seconds.
 - Beacon window = 122.880 seconds.
 
-In total, there can be 4,096 30ms ping slots in the beacon window. 
+In total, there can be 4,096 30ms ping slots in the beacon window.
 
 <span class="notes">**Note:** The Mbed LoRaWAN stack doesn't support Class B at this time.</span>
 
 #### Class C
 
-Class C devices are main powered or have sufficient amount of power supply available. These devices tend to remain in listening mode when they are not transmitting. 
+Class C devices are main powered or have sufficient amount of power supply available. These devices tend to remain in listening mode when they are not transmitting.
 
-Class C devices listen at RX2 window as often as possible. Such devices need to open an RX2 window immediately after the transmission before opening an RX1 window. In other words, you can use the `RECV_DELAY1` time for listening on RX2. At the end of RX1 window, the device opens a continuous RX2 window until another transmission happens. 
+Class C devices listen at RX2 window as often as possible. Such devices need to open an RX2 window immediately after the transmission before opening an RX1 window. In other words, you can use the `RECV_DELAY1` time for listening on RX2. At the end of RX1 window, the device opens a continuous RX2 window until another transmission happens.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/class_c_timing.png)<span>Figure 4: Class C timing diagram</span></span>
 
@@ -117,7 +117,7 @@ There are four design components comprising the Arm Mbed LoRaWAN solution that e
 
 Mbed LoRa radio drivers reside out of the Mbed OS tree. Arm provides support for `SX1272` and `SX1276` LoRa radios, which are the most widely used LoRa end-device radio chipsets.
 
-Arm Mbed OS contains a pure virtual class `LoRaRadio`, which you can use to inherit from and provide an Mbed LoRa radio driver to complement Mbed applications and the Mbed LoRaWAN stack. You can find a complete reference to the `LoRaRadio` class in the [LoRaRadio API reference](https://os.mbed.com/docs/v5.9/reference/loraradio-api.html).
+Arm Mbed OS contains a pure virtual class `LoRaRadio`, which you can use to inherit from and provide an Mbed LoRa radio driver to complement Mbed applications and the Mbed LoRaWAN stack. You can find a complete reference to the `LoRaRadio` class in the [LoRaRadio API reference](loraradio-api.html).
 
 The LoRa radio drivers support both RTOS and non-RTOS environments. For RTOS environments, the drivers defer interrupts using a thread and signaling mechanism for deferred processing. For non-RTOS environments, the driver shares the user thread. A third party driver, which is an implementation of `LoRaRadio` class, can use any of the sync methods Mbed OS provides and is free to use any transport for register access internally. The most important prerequisites are:
 
@@ -167,8 +167,8 @@ if (signal & GENERATE_TX_DONE) {
 ##### Mbed LoRaWAN stack: MAC controller layer
 
 The MAC controller layer consists of various smaller units. Each unit performs a specific task.
- 
-###### LoRaWANStack class 
+
+###### LoRaWANStack class
 
 The `LoRaWANStack` class is the supervisory unit. It runs the state machine of the stack. At one end, it provides a glue layer for the `LoRaWANInterface`, which in turn provides a network interface to the application. At the other end, it controls the division of labor, among other units of the system. This class is responsible for handling interrupts that the radio driver generates, managing states and delegating jobs asked by the application to the next lower unit, in other words, the `LoRaMac` class.
 
@@ -206,16 +206,16 @@ At the moment, it's not possible to change a PHY during run time. You must selec
 
 "target_overrides": {
 	 "*": {
-	 	"lora.phy": { 
+	 	"lora.phy": {
 	 		"help": "LoRa PHY region: EU868, AS923, AU915, 	CN470, CN779, EU433, IN865, KR920, US915, US915_HYBRID",
 	 		"value": "EU868"
 	 		}
 	    }
  }
-``` 
+```
 ##### EventQueue
 
-The Arm Mbed LoRaWAN stack is event driven. To reduce complexity of the overall system, it uses the EventQueue, which the application passes to the stack. Both share this event queue. This ensures that the both stack and application run in the same context. 
+The Arm Mbed LoRaWAN stack is event driven. To reduce complexity of the overall system, it uses the EventQueue, which the application passes to the stack. Both share this event queue. This ensures that the both stack and application run in the same context.
 
 There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](lorawan.html).
 
@@ -250,7 +250,7 @@ A `TX_TIMEOUT` or a `TX_FALURE` event is generated in case of error in TX data p
 
 #### Receiving messages
 
-For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs. 
+For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs.
 
 There are two types of `receive()` methods in the stack. The first is POSIX-like, and you need to tell at what port (instead of a socket ID in Posix format) you wish to receive:
 
@@ -288,5 +288,4 @@ The application can modify this behavior and choose not to send automatic uplink
         "value": false
  }
 
-``` 
-
+```

@@ -1,10 +1,10 @@
 ## Workflow
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/v5.9/reference/guidelines.html#style). Please also read the [Contributor License Agreement (CLA)](/docs/v5.9/reference/guidelines.html#cla) guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](guidelines.html#style). Please also read the [Contributor License Agreement (CLA)](guidelines.html#cla) guidelines because we will immediately close pull requests submitted without a CLA.
 
 ### Mbed OS maintainers
 
-The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code. 
+The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code.
 
 Responsibilities:
 
@@ -38,7 +38,7 @@ Please create separate pull requests for each concern; each pull request needs a
 
 Please submit all Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-suggestions/).
 
-The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports. 
+The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
 We copy issues reported on GitHub to our internal tracker (`ARM Internal Ref: MBOTRIAGE-XXX` comment in the issues and label mirrored set once copied) and regularly triage them.
 
@@ -136,7 +136,7 @@ Fix problems that could leave deep sleep locked unintentionally, along with addi
 
 Tested locally with two targets and all toolchains.
 
-You can see test results [here](just an example). 
+You can see test results [here](just an example).
 
 # Pull request type
 

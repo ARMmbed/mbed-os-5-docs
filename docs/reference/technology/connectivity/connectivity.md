@@ -12,7 +12,7 @@ Below is a brief introduction of the different connectivity technologies that we
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart homes, security, entertainment, proximity sensors, industrial applications and automotives.
 
-To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](/docs/v5.9/reference/bluetooth.html) user API reference.
+To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](bluetooth.html) user API reference.
 
 #### IP Networking
 
@@ -24,7 +24,7 @@ Our Socket API is an API that standardizes all of our connectivity options. It s
 
 Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
 
-You can find descriptions of supported interfaces and protocols in the [IP networking](/docs/v5.9/reference/ip-networking.html) section.
+You can find descriptions of supported interfaces and protocols in the [IP networking](ip-networking.html) section.
 
 #### 6LoWPAN Mesh networking
 
@@ -34,7 +34,7 @@ You can find descriptions of supported interfaces and protocols in the [IP netwo
 
 Applications running on 6LoWPAN based mesh networks use the same Mbed OS Socket API for connectivity.
 
-For descriptions of mesh networks, please see the [6LoWPAN Mesh](/docs/v5.9/reference/technology.html) section.
+For descriptions of mesh networks, please see the [6LoWPAN Mesh](technology.html) section.
 
 #### LoRa
 

@@ -19,7 +19,7 @@ The constructor requires the following:
 
 ### FlashSimBlockDevice example
 
-This FlashSimBlockDevice example takes a [HeapBlockDevice](/docs/v5.9/reference/heapblockdevice.html) and turns it into a simulated flash BD.
+This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html) and turns it into a simulated flash BD.
 
 ```C++
     int erase_unit_size = 512;
@@ -46,4 +46,4 @@ This FlashSimBlockDevice example takes a [HeapBlockDevice](/docs/v5.9/reference/
 
 ### Related content
 
-- [HeapBlockDevice](/docs/v5.9/reference/heapblockdevice.html) API reference.
+- [HeapBlockDevice](heapblockdevice.html) API reference.

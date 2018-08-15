@@ -2,7 +2,7 @@
 
 ### Setup
 
-The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally. 
+The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally.
 
 [**Windows**](#windows) | [**Mac OS X**](#mac-os-x) | [**Linux**](#linux)
 
@@ -144,7 +144,7 @@ $ cd mbed-os-example-blinky
 #### 2. Compile and program board
 
 Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler 5 toolchain:
-  
+
 ```console
 $ mbed compile --target K64F --toolchain ARM --flash
 ```  
@@ -183,9 +183,9 @@ More examples:
   - [Peripheral drivers](https://os.mbed.com/docs/v5.9/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
-  - [Advanced debugging](https://os.mbed.com/docs/v5.9/tutorials/debugging.html).
-  - [Serial communications](https://os.mbed.com/docs/v5.9/tutorials/serial-communication.html).
-  - [Optimizing binary size](https://os.mbed.com/docs/v5.9/tutorials/optimizing.html).
+  - [Advanced debugging](debugging.html).
+  - [Serial communications](serial-communication.html).
+  - [Optimizing binary size](optimizing.html).
 
 - Other resources
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.

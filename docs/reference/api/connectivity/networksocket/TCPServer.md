@@ -6,7 +6,7 @@ The TCPServer class provides the ability to accept incoming TCP connections. The
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass the NetworkStack pointer in the constructor, then you must call open to initialize the socket.
 
-Refer to [TCPSocket](/docs/v5.9/reference/tcpsocket.html) class for TCP `connect`, `send` and `recv` APIs.
+Refer to [TCPSocket](tcpsocket.html) class for TCP `connect`, `send` and `recv` APIs.
 
 ### TCPServer class reference
 
@@ -20,4 +20,4 @@ Here is a TCP server example. It accepts single telnet client connection and sen
 
 ### Related content
 
-- [TCPSocket](/docs/v5.9/reference/tcpsocket.html) API reference.
+- [TCPSocket](tcpsocket.html) API reference.

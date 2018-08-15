@@ -8,7 +8,7 @@ The FAT file system is an established disk-oriented file system that you can fin
 
   - **Embedded** - Built on the ChanFS project, the FAT file system is optimized for embedded systems.
 
-For additional information, please see the [storage overview page](/docs/v5.9/reference/storage.html#declaring-a-file-system).
+For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
 ### Use cases
 
@@ -40,4 +40,4 @@ You can swap the FAT file system in place with other Mbed OS file systems, which
 
 - [Storage configuration](configuration-storage.html).
 - [LittleFileSystem](littlefilesystem.html).
-- [Storage overview](/docs/v5.9/reference/storage.html#declaring-a-file-system).
+- [Storage overview](storage.html#declaring-a-file-system).

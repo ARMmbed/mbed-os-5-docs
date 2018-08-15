@@ -21,7 +21,7 @@ Microcontrollers and flash storage present three challenges for embedded storage
 
 - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, the file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-For additional information, please see the [storage overview page](/docs/v5.9/reference/storage.html#declaring-a-file-system).
+For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
 ### Use cases
 

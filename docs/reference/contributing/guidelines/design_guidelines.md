@@ -9,7 +9,7 @@ Principles of Arm Mbed software:
 
 ### Style
 
-Please refer to the [Mbed style guide](/docs/v5.9/reference/guidelines.html#style).
+Please refer to the [Mbed style guide](guidelines.html#style).
 
 ### Organization
 
@@ -35,7 +35,7 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 - Special directories should follow consistent naming convention.
 
 ### Contribution
-1. Please refer to the [Mbed contribution guide](/docs/v5.9/reference/contributing.html).
+1. Please refer to the [Mbed contribution guide](contributing.html).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:

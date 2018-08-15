@@ -18,7 +18,7 @@ Key features of the Mbed OS cellular APIs include:
 
 OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
-Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](/docs/v5.9/reference/cellular-module-porting.html) for more information.
+Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](cellular-module-porting.html) for more information.
 
 ### Quick start
 
@@ -157,4 +157,4 @@ Non-IP is a new option for communication over NB-IoT. The device sends messages 
 
 For DTLS and TLS transport security, even if the device maintains its own IP address during power save periods, the address may be changed in the network due to Network Address Translation (NAT). NAT is a mechanism to share the few IPv4 addresses among more users. The NAT address change necessitates renegotiation of the (D)TLS security session. The TLS and DTLS protocols support session ID and session ticket mechanisms to optimize the renegotiation. Both device and (D)TLS server must support the used mechanism.
 
-To read more about security, see [Arm Mbed TLS](https://os.mbed.com/docs/v5.9/reference/tls.html).
+To read more about security, see [Arm Mbed TLS](tls.html).

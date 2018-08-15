@@ -74,9 +74,9 @@ More examples:
 	- [Peripheral drivers](https://os.mbed.com/docs/v5.9/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
-	- [Advanced debugging](https://os.mbed.com/docs/v5.9/tutorials/debugging.html).
-	- [Serial communications](https://os.mbed.com/docs/v5.9/tutorials/serial-communication.html).
-	- [Optimizing binary size](https://os.mbed.com/docs/v5.9/tutorials/optimizing.html).
+	- [Advanced debugging](debugging.html).
+	- [Serial communications](serial-communication.html).
+	- [Optimizing binary size](optimizing.html).
 
 - Other resources
 	- [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.

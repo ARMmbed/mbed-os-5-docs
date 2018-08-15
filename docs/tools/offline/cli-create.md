@@ -163,7 +163,7 @@ The arguments for *compile* are:
 
 You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
 
-For more information on build profiles, see [our build profiles](/docs/v5.9/tools/build-profiles.html) and [toolchain profiles](/docs/v5.9/tools/toolchain-profiles.html) pages.
+For more information on build profiles, see [our build profiles](build-profiles.html) and [toolchain profiles](toolchain-profiles.html) pages.
 
 #### Compiling static libraries
 
@@ -195,7 +195,7 @@ Image: ../threaded_blinky-out/threaded_blinky.bin
 
 ### The compile configuration system
 
-The [compile configuration system](/docs/v5.9/tools/configuring-tools.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
+The [compile configuration system](configuring-tools.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
 #### Inspecting the configuration
 
