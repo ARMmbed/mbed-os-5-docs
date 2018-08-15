@@ -32,7 +32,7 @@ Examples:
 - `#m:0x20003240;0x600d-50` encodes a `malloc` that returned 0x20003240. It was called by the instruction at 0x600D with the `size` argument equal to 50.
 - `#f:0x0;0x602f-0x20003240` encodes a `free` that was called by the instruction at 0x602f with the `ptr` argument equal to 0x20003240.
 
-Find the source of the default callback [here](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.c#L81). Besides being useful in itself, it can also serve as a template for user defined callback functions.
+Find the source of the default callback [here](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.cpp#L81). Besides being useful in itself, it can also serve as a template for user defined callback functions.
 
 <span class="tips">**Tip:** Find the full documentation of the callback function in the [memory tracer header file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.h#L42). </span>
 
