@@ -27,7 +27,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [EventFlags](/docs/development/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
 - [Event](/docs/development/reference/event.html): The queue to store events, extract them and excute them later.
 - [ConditionVariable](/docs/development/reference/conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
-- [Kernel](/docs/development/reference/kernel.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
+- [Kernel](/docs/development/reference/kernel-interface-functions.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
 
 ##### Default timeouts
 
