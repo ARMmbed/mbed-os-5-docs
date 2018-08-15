@@ -72,7 +72,7 @@ The RTOS provides several mechanisms to move interrupt processing onto a thread.
 
  - [Signals](https://os.mbed.com/users/mbed_official/code/mbed-rtos/docs/4c105b8d7cae/classrtos_1_1Thread.html).
  - [Queue](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/_queue_8h_source.html).
- - [Mail](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/Mail_8h_source.html).
+ - [Mail](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/_mail_8h_source.html).
 
 <span class="notes">**Note:** In Mbed OS 5, if you attempt to use a mutex from within an interrupt, nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening.</span>
 
