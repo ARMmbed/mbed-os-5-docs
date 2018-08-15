@@ -23,6 +23,6 @@
 
 ### Going further
 
-- The Mbed BLE [API reference](/docs/v5.9/reference/bluetooth.html) offers the full details of the API.
+- The Mbed BLE [API reference](/docs/v5.9/reference/ble.html) offers the full details of the API.
 
 - The Mbed BLE [online community](https://os.mbed.com/teams/Bluetooth-Low-Energy/community/) is also a great place to ask questions and share your knowledge.
