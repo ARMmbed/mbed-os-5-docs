@@ -42,7 +42,6 @@ For example, when providing Wi-Fi SSID and password, you may use the following `
 {
     "target_overrides": {
         "*": {
-            "target.network-default-interface-type": "WIFI",
             "nsapi.default-wifi-security": "WPA_WPA2",
             "nsapi.default-wifi-ssid": "\"ssid\"",
             "nsapi.default-wifi-password": "\"password\""
@@ -53,7 +52,7 @@ For example, when providing Wi-Fi SSID and password, you may use the following `
 
 Please see [Selecting the default network interface](configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
 
-For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
+Targets with connectivity set the `target.network-default-interface-type` configuration variable appropriately, either to their only interface or their most-commonly-used one. For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
 
 Applications may also ask for a specific type of connection, as the following table shows:
 
@@ -62,10 +61,22 @@ Applications may also ask for a specific type of connection, as the following ta
 |`*WiFiInterface::get_default_instance()`| Wi-Fi interface | Requires security parameters (mode, SSID, password) |
 |`*EthInterface::get_default_instance()` | Wired Ethernet interface, not Wi-Fi | none |
 |`*MeshInterface::get_default_instance()` | Returns either `LoWPANNDInterface` or `ThreadInterface`, depending on which is set to default | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled |
-| `*CellularBase::get_default_instance` | Return cellular connectivity | Requires network parameters (pin, APN, username, password) |
-| `*NetworkInterface::get_default_instance()` | First one from above that is found |  |
+| `*CellularBase::get_default_instance()` | Return cellular connectivity | Requires network parameters (pin, APN, username, password) |
+| `*NetworkInterface::get_default_instance()` | One of the above, depending on `target.network-default-interface-type` |  |
 
-Please note that any of those functions may return `NULL` when the interface of this type or its configuration is not found.
+Note that the calls for a specific interface type do not preconfigure credentials such as SSID, as an interface-type-specific application is expected to configure these in code. NULL will be returned if no interface of that type is available.
+
+Calls for a NetworkInterface will request one of the interface types depending on target.default-network-interface-type, and preconfigure the credentials. If credentials can't be preconfigured (for example because nsapi.default-wifi-ssid isn't set), the call returns NULL rather than an unconfigured interface.
+
+An application may check the type of the interface returned by NetworkInterface::get_default_instance() by using the "dynamic downcast" methods:
+```
+// net set from NetworkInterface::get_default_instance() as above
+WiFiInterface *wifi = net->wifiInterface();
+if (wifi) {
+    printf("This is a Wi-Fi board.")
+    // call WiFi-specific methods
+}
+```
 
 ### Related content
 
