@@ -8,7 +8,7 @@ All network-socket API implementations inherit from two classes: a [NetworkStack
 
 #### NetworkInterface Class
 
-The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
+The current NetworkInterface subclasses are [CellularBase](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_cellular_base.html), [EthernetInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/esp-class.png)<span>Class</span></span>
 
