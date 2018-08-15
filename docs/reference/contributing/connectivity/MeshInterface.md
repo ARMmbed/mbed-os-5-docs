@@ -16,7 +16,7 @@ The Mbed OS port of Nanostack consists of a few helper modules that provide an e
     - Security settings.
     - Channel configuration.
     - Connection and reconnection logic.
-- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
+- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
     - An internal event handler is initialized when the stack starts.
     - The event handler is running in its own thread. Not visible for users.
 - [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-interface) class implements the network stack abstration for the socket layer.
