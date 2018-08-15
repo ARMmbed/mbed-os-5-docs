@@ -28,7 +28,7 @@ Mbed TLS has separate modules for the different cryptographic primitives. Hardwa
     - [BLOWFISH](https://tls.mbed.org/api/blowfish_8h.html).
     - [CAMELLIA](https://tls.mbed.org/api/camellia_8h.html).
     - [DES](https://tls.mbed.org/api/des_8h.html): [`mbedtls_des_setkey()`](https://tls.mbed.org/api/des_8h.html#a9ee690737bded4f7f6e12da86110a8e5), [`mbedtls_des_crypt_ecb()`](https://tls.mbed.org/api/des_8h.html#aa713501cc3e30c39a763b4568698f5c1), [`mbedtls_des3_crypt_ecb()`](https://tls.mbed.org/api/des_8h.html#a933b8f629cc201e06f5e89396d065204).
-    - [XTEA](https://tls.mbed.org/api/xtea_8h.htmlm).
+    - [XTEA](https://tls.mbed.org/api/xtea_8h.html).
     - [MD2](https://tls.mbed.org/api/md2_8h.html): [`mbedtls_md2_process()`](https://tls.mbed.org/api/md2_8h.html#a490b39ec88fec878791c43b6460492a7).
     - [MD4](https://tls.mbed.org/api/md4_8h.html): [`mbedtls_md4_process()`](https://tls.mbed.org/api/md4_8h.html#aa199bb5f6a83d2075590c0144e3237db).
     - [MD5](https://tls.mbed.org/api/md5_8h.html): [`mbedtls_md5_process()`](https://tls.mbed.org/api/md5_8h.html#a4a896444a55569fffd338e7810a1e52b).
