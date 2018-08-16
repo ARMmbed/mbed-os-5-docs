@@ -8,7 +8,6 @@ This guide is divided in sections, and generic Nanostack configurations are firs
 
 For understanding the technologies and APIs, please refer to following sections before this one:
 
-- [Network connectivity in Mbed OS](connectivity-tech.html) technology page.
 - [6LoWPAN Mesh technology](mesh-tech.html) page.
 - [6LoWPAN Mesh class reference](mesh-api.html) user API.
 - [Socket API](socket-api.html).
