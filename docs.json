@@ -427,10 +427,6 @@
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/security/TLS.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/uvisor/blob/master/docs/lib/INTRO.md"
                     }
                 ]
             },
