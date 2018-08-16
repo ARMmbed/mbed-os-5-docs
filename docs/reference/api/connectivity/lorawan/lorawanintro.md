@@ -178,4 +178,4 @@ Below is the list of error codes and their description.
 You can find the API documentation for the 'LoRaWANInterface' and 'LoRaRadio' classes below:
 
 - [LoRaWANInterface API docs](lorawan.html): The class that provides APIs for LoRaWAN network stack.
-- [LoRaRadio API docs](loraradio.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
+- [LoRaRadio API docs](loraradio-api.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
