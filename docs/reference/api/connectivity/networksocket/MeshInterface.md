@@ -13,7 +13,7 @@ Nanostack is the networking stack that provides both of these protocols. For mor
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer.
 
-You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](mesh-configuration.html) section documents.
+You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](configuration-mesh.html) section documents.
 
 ### Usage
 
