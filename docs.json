@@ -14,6 +14,14 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/release_process.md"
                 },
                 {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
+                },
+                {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/migrate-from-mbed-os-2-to-5.md"
+                },
+                {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/terms.md"
                 }
@@ -986,18 +994,6 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
-                    }
-                ]
-            },
-            {
-                "title": "Major releases",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/migrate-from-mbed-os-2-to-5.md"
                     }
                 ]
             },
