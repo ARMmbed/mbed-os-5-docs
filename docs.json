@@ -814,7 +814,7 @@
                 "sources": []
             },
             {
-                "title": "Arm Mbed Online Compiler",
+                "title": "Compiling: Arm Mbed Online Compiler",
                 "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/online_comp.md"
@@ -834,14 +834,14 @@
                 ]
             },
             {
-                "title": "Arm Mbed Studio",
+                "title": "Compiling: Arm Mbed Studio",
                 "sources": [{
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/mbed-studio.md"
                 }]
             },
             {
-                "title": "Arm Mbed CLI",
+                "title": "Compiling: Arm Mbed CLI",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli.md"
