@@ -72,4 +72,4 @@ Please visit our Arm Mbed Online Compiler example, and follow the instructions i
 
 ### Related content
 
-- End-to-end [LoRa on Arm Mbed tutorial](https://docs.mbed.com/docs/lora-with-mbed/en/latest/).
+- End-to-end [LoRa on Arm Mbed tutorial](LoRa-tutorial.html).
