@@ -627,30 +627,6 @@
                         }
                     ]
                 }]
-            },
-            {
-                "title": "Tools",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/tools.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/build.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/mbedls.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/exporter.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/hdk.md"
-                    }
-                ]
             }
         ],
         "tags": [
@@ -789,6 +765,7 @@
                     }
                 ]
             },
+                     
             {
                 "title": "Porting exporter targets",
                 "intro": {
@@ -796,10 +773,33 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/exporter.md"
                 },
                 "sources": []
+            },
+            {
+                "title": "Porting tools",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/tools.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/build.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/mbedls.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/exporter.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/hdk.md"
+                    }
+                ]
             }
         ]
     },
-
     {
         "title": "Tools",
         "description": "Details of the tools available for working with Mbed OS",
