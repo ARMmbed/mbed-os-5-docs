@@ -10,7 +10,7 @@ One of the major improvements introduced in Mbed OS 5 is a new programming model
 
 As with any multithreaded environment, Mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees the Mbed OS 5 APIs provide when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
 
-The Mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms Mbed OS 5 provides to build thread safe applications.  f
+The Mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms Mbed OS 5 provides to build thread safe applications.
 
 ### Thread safety
 
