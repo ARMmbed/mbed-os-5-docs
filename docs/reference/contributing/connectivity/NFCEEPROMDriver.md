@@ -88,4 +88,4 @@ These must be used to communicate the results of all asynchronous calls.
 ### Testing
 
 Run tests with:
-`mbed test -m [mcu] -t [toolchain] -n mbed-os-tests-nfceeprom*`.
+`mbed test -m [mcu] -t [toolchain] -n tests-nfc-eeprom*`.
