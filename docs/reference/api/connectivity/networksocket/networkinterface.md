@@ -52,7 +52,7 @@ For example, when providing Wi-Fi SSID and password, you may use the following `
 
 Please see [Selecting the default network interface](configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
 
-Targets with connectivity set the `target.network-default-interface-type` configuration variable appropriately, either to their only interface or their most-commonly-used one. For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
+Targets with connectivity set the `target.network-default-interface-type` configuration variable appropriately, either to their only interface or the one most commonly used. For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
 
 Applications may also ask for a specific type of connection, as the following table shows:
 
@@ -64,11 +64,12 @@ Applications may also ask for a specific type of connection, as the following ta
 | `*CellularBase::get_default_instance()` | Return cellular connectivity | Requires network parameters (pin, APN, username, password) |
 | `*NetworkInterface::get_default_instance()` | One of the above, depending on `target.network-default-interface-type` |  |
 
-Note that the calls for a specific interface type do not preconfigure credentials such as SSID, as an interface-type-specific application is expected to configure these in code. NULL will be returned if no interface of that type is available.
+Note that the calls for a specific interface type do not preconfigure credentials such as SSID because an interface-type-specific application is expected to configure these in code. `NULL` is returned if no interface of that type is available.
 
-Calls for a NetworkInterface will request one of the interface types depending on target.default-network-interface-type, and preconfigure the credentials. If credentials can't be preconfigured (for example because nsapi.default-wifi-ssid isn't set), the call returns NULL rather than an unconfigured interface.
+Calls for a NetworkInterface will request one of the interface types depending on `target.default-network-interface-type`, and preconfigure the credentials. If credentials can't be preconfigured (for example because `nsapi.default-wifi-ssid` isn't set), the call returns `NULL` rather than an unconfigured interface.
 
-An application may check the type of the interface returned by NetworkInterface::get_default_instance() by using the "dynamic downcast" methods:
+An application may check the type of the interface returned by `NetworkInterface::get_default_instance()` by using the "dynamic downcast" methods:
+
 ```
 // net set from NetworkInterface::get_default_instance() as above
 WiFiInterface *wifi = net->wifiInterface();
