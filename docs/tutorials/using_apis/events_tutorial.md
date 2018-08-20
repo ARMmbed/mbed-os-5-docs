@@ -34,7 +34,7 @@ Note that though this document assumes the presence of a single event loop in th
 
 Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/6ae734681f16/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/69c11c7877b6/main.cpp)
 
 The above code executes two handler functions (`rise_handler` and `fall_handler`) in two different contexts:
 
@@ -44,14 +44,14 @@ The above code executes two handler functions (`rise_handler` and `fall_handler`
 This is the output of the above program on an FRDM-K64F board. We reset the board and pressed the SW2 button twice:
 
 ```
-Starting in context 0x20002c50
-fall_handler in context 0x20002c90
-rise_handler in context 0x0
-fall_handler in context 0x20002c90
-rise_handler in context 0x0
+Starting in context 20001fe0
+fall_handler in context 20000b1c
+rise_handler in context 00000000
+fall_handler in context 20000b1c
+rise_handler in context 00000000
 ```
 
-The program starts in the context of the thread that runs the `main` function (`0x29992c5`). When the user presses SW2, `fall_handler` is automatically queued in the event queue, and  it runs later in the context of thread `t` (`0x20002c90`). When the user releases the button, `rise_handler` is executed immediately, and it displays `0x0`, indicating that the code ran in interrupt context.
+The program starts in the context of the thread that runs the `main` function (`20001fe0`). When the user presses SW2, `fall_handler` is automatically queued in the event queue, and  it runs later in the context of thread `t` (`20000b1c`). When the user releases the button, `rise_handler` is executed immediately, and it displays `00000000`, indicating that the code ran in interrupt context.
 
 The code for `rise_handler` is problematic because it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. We can make the code safe by running `rise_handler` in user context (like we already do with `fall_handler`) by replacing this line:
 
