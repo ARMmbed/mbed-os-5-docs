@@ -164,7 +164,7 @@ typedef struct analogin_s analogin_t;
 
 #### Doxygen documentation
 
-All functions and methods should contain documentation using Doxgyen.
+All functions and methods should contain documentation using Doxygen.
 
 ### Compiler settings
 
