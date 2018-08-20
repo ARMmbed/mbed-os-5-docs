@@ -32,9 +32,9 @@
         ]
     },
     {
-        "title": "APIs and Reference",
-        "description": "The reference manual for Mbed OS: APIs, configuration and implementation details",
-        "slug": "reference",
+        "title": "APIs",
+        "description": "The APIs of Mbed OS: platform, drivers, RTOS, connectivity, security and storage",
+        "slug": "apis",
         "type": "markdown",
         "chapters": [{
                 "title": "APIs",
@@ -488,8 +488,18 @@
                         ]
                     }
                 ]
-            },
-            {
+            }
+        ],
+        "tags": [
+            "apis"
+        ]
+    },
+    {
+        "title": "Reference",
+        "description": "The reference manual for Mbed OS: architecture, configuration and contribution details",
+        "slug": "reference",
+        "type": "markdown",
+        "chapters": [{
                 "title": "Architecture",
                 "intro": {
                     "type": "markdown",
