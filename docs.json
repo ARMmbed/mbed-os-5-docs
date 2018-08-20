@@ -642,173 +642,6 @@
         ]
     },
     {
-        "title": "Porting",
-        "description": "",
-        "slug": "porting",
-        "type": "markdown",
-        "chapters": [{
-                "title": "Porting targets",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/thread_safety.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/target.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/us_ticker.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/lp_ticker.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/serial.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/rtc.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/entropy.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/gpio.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/hw-accelerated-crypto.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/rtos.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/tickless.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/sleep.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/ResetReason.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/Watchdog.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/QuadSPI.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/itm.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/usb.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/flash.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/crc.md"
-                    }
-                ]
-            },
-            {
-                "title": "Porting storage",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/storage/storage.md"
-                },
-                "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/storage/BlockDevice.md"
-                }]
-            },
-            {
-                "title": "Porting connectivity",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/connectivity.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/ethernet.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/WifiInterface.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/NetworkStack.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/CellularInterface.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/MeshInterface.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/MeshMAC.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/LoRaPortingGuide.md"
-                    }
-                ]
-            },
-                     
-            {
-                "title": "Porting exporter targets",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/exporter.md"
-                },
-                "sources": []
-            },
-            {
-                "title": "Porting tools",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/tools.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/build.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/mbedls.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/exporter.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/hdk.md"
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "title": "Tools",
         "description": "Details of the tools available for working with Mbed OS",
         "slug": "tools",
@@ -1127,6 +960,173 @@
         ],
         "tags": [
             "tutorials"
+        ]
+    },
+     {
+        "title": "Porting",
+        "description": "",
+        "slug": "porting",
+        "type": "markdown",
+        "chapters": [{
+                "title": "Porting targets",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/thread_safety.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/target.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/us_ticker.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/lp_ticker.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/serial.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/rtc.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/entropy.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/gpio.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/hw-accelerated-crypto.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/rtos.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/tickless.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/sleep.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/ResetReason.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/Watchdog.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/QuadSPI.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/itm.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/usb.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/flash.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/crc.md"
+                    }
+                ]
+            },
+            {
+                "title": "Porting storage",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/storage/storage.md"
+                },
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/storage/BlockDevice.md"
+                }]
+            },
+            {
+                "title": "Porting connectivity",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/connectivity.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/ethernet.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/WifiInterface.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/NetworkStack.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/CellularInterface.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/MeshInterface.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/MeshMAC.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/connectivity/LoRaPortingGuide.md"
+                    }
+                ]
+            },
+                     
+            {
+                "title": "Porting exporter targets",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/exporter.md"
+                },
+                "sources": []
+            },
+            {
+                "title": "Porting tools",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/tools.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/build.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/mbedls.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/exporter.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/tools/hdk.md"
+                    }
+                ]
+            }
         ]
     },
     {
