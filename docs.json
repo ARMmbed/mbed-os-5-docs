@@ -1104,7 +1104,7 @@
                     }
                 ]
             },
-                     
+
             {
                 "title": "Porting exporter targets",
                 "intro": {
@@ -1183,39 +1183,5 @@
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
         "branch": "feature-watchdog"
-    },
-    {
-        "title": "From evaluation to production",
-        "description": "",
-        "slug": "fe2p",
-        "type": "markdown",
-        "chapters": [{
-            "title": "Intro",
-            "intro": {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
-            },
-            "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage2.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
-                }
-            ]
-        }]
     }
 ]
