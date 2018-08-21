@@ -20,7 +20,7 @@ We also provide guidelines for [contributing to Mbed OS](/docs/development/refer
 <table>
 <tbody>
 <tr>
-<td>&nbsp;[Wait](wait.html)</td>
+<td>&nbsp;<a href="wait.html">Wait</a></td>
 <td>&nbsp;[CriticalSectionLock](criticalsectionlock.html)</td>
 <td>&nbsp;[Memory tracing](memory-tracing.html)</td>
 <td>&nbsp;[PlatformMutex](platformmutex.html)</td>
