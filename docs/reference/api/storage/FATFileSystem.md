@@ -20,6 +20,8 @@ The first step to using the FAT file system is formatting storage with FAT. You 
 
 The FAT file system supports external flash; however, it must allocate a full erase block for internal operations, which can become large for some forms of flash. If RAM consumption becomes a problem, we suggest switching to LittleFileSystem. The Mbed OS file system APIs make switching file systems a straightforward task. One common strategy is to use the FAT file system for debugging and switch to LittleFileSystem when the application becomes stable.
 
+The FAT file system is thread safe. Although FAT file system is built on the ChanFS project, synchronizing in the C++ layer allows us to directly use the C++ RTOS APIs.
+
 ### Usage
 
 Instantiate the `FATFileSystem` class with a block device and file path.
