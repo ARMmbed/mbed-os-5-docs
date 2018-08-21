@@ -4,6 +4,8 @@
 
 ### Platform APIs
 
+[Modules that provide consistent user experience.](platform.html)
+
 <table>
 <tbody>
 <tr>
@@ -34,6 +36,8 @@
 </table>
 
 ### Drivers APIs
+
+[Analog and digital input and outputs and digital interfaces.](drivers.html)
 
 <table>
 <tbody>
@@ -80,6 +84,33 @@
 <td><a href="businout.html">BusInOut</a></td>
 <td><a href="lowpowerticker.html">LowPowerTicker</a></td>
 <td><a href="i2c.html">I2C</a></td>
+</tr>
+</tbody>
+</table>
+
+### RTOS
+
+[Handling tasks and events in Mbed OS.](rtos.html)
+
+<table>
+<tbody>
+<tr>
+<td><a href="thread.html">Thread</a></td>
+<td><a href="queue.html">Queue</a></td>
+<td><a href="mail.html">Mail</a></td>
+<td><a href="event.html">Event</a></td>
+</tr>
+<tr>
+<td><a href="mutex.html">Mutex</a></td>
+<td><a href="eventqueue.html">EventQueue</a></td>
+<td><a href="rtostimer.html">RtosTimer</a></td>
+<td><a href="conditionvariable.html">ConditionVariable</a></td>
+</tr>
+<tr>
+<td><a href="semaphore.html">Semaphore</a></td>
+<td><a href="memorypool.html">MemoryPool</a></td>
+<td><a href="eventflags.html">EventFlags</a></td>
+<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
 </tr>
 </tbody>
 </table>
