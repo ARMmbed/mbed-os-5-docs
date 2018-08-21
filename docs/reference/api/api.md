@@ -13,3 +13,35 @@ The [APIs](/docs/development/introduction/glossary.html) in this document are or
 - [Storage](/docs/development/reference/storage.html): working with the file system.
 
 We also provide guidelines for [contributing to Mbed OS](/docs/development/reference/contributing.html).
+
+
+### Platform APIs
+
+<table>
+<tbody>
+<tr>
+<td>&nbsp;[Wait](wait.html)</td>
+<td>&nbsp;[CriticalSectionLock](criticalsectionlock.html)</td>
+<td>&nbsp;[Memory tracing](memory-tracing.html)</td>
+<td>&nbsp;[PlatformMutex](platformmutex.html)</td>
+</tr>
+<tr>
+<td>&nbsp;[CallBack](callback.html)</td>
+<td>&nbsp;[Time](time.html)</td>
+<td>&nbsp;[Error handling](error-handling.html)</td>
+<td>&nbsp;[CircularBuffer](circularbuffer.html)</td>
+</tr>
+<tr>
+<td>&nbsp;[DeepSleepLock](deepsleeplock.html)</td>
+<td>&nbsp;[RTC](rtc.html)</td>
+<td>&nbsp;[Assert](assert.html)</td>
+<td>&nbsp;[ATCmdParser](atcmdparser.html)</td>
+</tr>
+<tr>
+<td>&nbsp;[Power management](power-management.html)</td>
+<td>&nbsp;[Debug](debug.html)</td>
+<td>&nbsp;[NonCopyable](noncopyable.html)</td>
+<td>&nbsp;[Mbed statistics](mbed-statistics.html)</td>
+</tr>
+</tbody>
+</table>
