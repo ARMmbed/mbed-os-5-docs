@@ -20,28 +20,30 @@ We also provide guidelines for [contributing to Mbed OS](/docs/development/refer
 <table>
 <tbody>
 <tr>
-<td>&nbsp;<a href="wait.html">Wait</a></td>
-<td>&nbsp;[CriticalSectionLock](criticalsectionlock.html)</td>
-<td>&nbsp;[Memory tracing](memory-tracing.html)</td>
-<td>&nbsp;[PlatformMutex](platformmutex.html)</td>
+<td><a href="wait.html">Wait</a></td>
+<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
+<td><a href="memory-tracing.html">Memory tracing</a></td>
+<td><a href="platformmutex.html">PlatformMutex</a></td>
 </tr>
 <tr>
-<td>&nbsp;[CallBack](callback.html)</td>
-<td>&nbsp;[Time](time.html)</td>
-<td>&nbsp;[Error handling](error-handling.html)</td>
-<td>&nbsp;[CircularBuffer](circularbuffer.html)</td>
+<td><a href="callback.html">CallBack</a></td>
+<td><a href="time.html">Time</a></td>
+<td><a href="error-handling.html">Error handling</a></td>
+<td><a href="circularbuffer.html">CircularBuffer</a></td>
 </tr>
 <tr>
-<td>&nbsp;[DeepSleepLock](deepsleeplock.html)</td>
-<td>&nbsp;[RTC](rtc.html)</td>
-<td>&nbsp;[Assert](assert.html)</td>
-<td>&nbsp;[ATCmdParser](atcmdparser.html)</td>
+<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
+<td><a href="rtc.html">RTC</a></td>
+<td><a href="assert.html">Assert</a></td>
+<td><a href="atcmdparser.html">ATCmdParser</a></td>
 </tr>
 <tr>
-<td>&nbsp;[Power management](power-management.html)</td>
-<td>&nbsp;[Debug](debug.html)</td>
-<td>&nbsp;[NonCopyable](noncopyable.html)</td>
-<td>&nbsp;[Mbed statistics](mbed-statistics.html)</td>
+<td><a href="power-management.html">Power management</a></td>
+<td><a href="debug.html">Debug</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 </tbody>
 </table>
+
+### Drivers APIs
