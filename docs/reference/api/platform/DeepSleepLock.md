@@ -13,3 +13,8 @@ The `DeepSleepLock` class provides an RAII object for disabling sleep. In other 
 This example shows how you can lock deep sleep to decrease interrupt latency at the expense of increased power consumption.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DeepSleepLock_Example_1/)](https://os.mbed.com/teams/mbed_example/code/DeepSleepLock_Example_1/file/66aac0656e71/main.cpp)
+
+### Related content
+
+- [Power management API references](power-management.html).
+- [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).

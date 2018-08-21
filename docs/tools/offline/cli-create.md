@@ -84,6 +84,28 @@ $ mbed new mbed-classic-program --mbedlib
 
 You can create plain (empty) programs, without either Mbed OS 5 or Mbed OS 2, by using the `--create-only` option.
 
+#### Managing multiple Mbed projects
+
+You can create multiple Mbed projects and use the same Mbed OS library directory for each of these projects with the following commands:
+
+```
+$ cd <projects directory>
+$ mbed import mbed-os
+$ mbed config -G MBED_OS_DIR <projects directory>/mbed-os
+[mbed] <projects directory>/mbed-os now set as global MBED_OS_DIR
+$ mbed new project1
+[mbed] Creating new program "project1" (git)
+$ mbed new project2
+[mbed] Creating new program "project2" (git)
+```
+
+Add your `main.cpp` file and other project files to the `project1` and `project2` directories. Then compile each project from the root `<projects directory>` with the following example commands:
+
+```
+$ mbed compile -t ARM -m LPC1768 --source project1 --source mbed-os --build BUILD/project1
+$ mbed compile -t ARM -m K64F --source project2 --source mbed-os --build BUILD/project2  
+```
+
 ### Compiling workflow
 
 #### Compiling your application
@@ -141,7 +163,7 @@ The arguments for *compile* are:
 
 You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
 
-For more information on build profiles, see [our build profiles](/docs/development/tools/build-profiles.html) and [toolchain profiles](/docs/development/tools/toolchain-profiles.html) pages.
+For more information on build profiles, see [our build profiles](build-profiles.html) and [toolchain profiles](toolchain-profiles.html) pages.
 
 #### Compiling static libraries
 
@@ -173,7 +195,7 @@ Image: ../threaded_blinky-out/threaded_blinky.bin
 
 ### The compile configuration system
 
-The [compile configuration system](/docs/development/tools/configuring-tools.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
+The [compile configuration system](configuring-tools.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
 #### Inspecting the configuration
 

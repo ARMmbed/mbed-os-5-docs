@@ -8,7 +8,7 @@
 
 **Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/development/tools/arm-mbed-cli.html), packaged as `mbed-cli`.
 
-**Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](/docs/development/introduction/index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
+**Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
 **Arm Mbed Online Compiler** - [Arm’s online tool](/docs/development/tools/arm-online-compiler.html), which you can use to create and compile your code.
 
@@ -140,7 +140,7 @@
 
 ### T
 
-**Target** - See [`board`](/docs/development/introduction/glossary.html#board).
+**Target** - See [`board`](glossary.html#board).
 
 **Terminal Application** - [Applications](/docs/development/tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 

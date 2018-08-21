@@ -1,54 +1,44 @@
-## Mbed OS 5
+## Arm Mbed OS
 
-Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand.
+### Problem statement
 
-Your application code is written in C and C++. It uses the *application programming interfaces* (APIs) that Mbed OS provides. These APIs allow your code to work on different microcontrollers in a uniform way. This reduces the challenges of getting started with Arm-based microcontrollers and integrating large software projects.
+Writing software for deeply embedded or connected devices continues to increase in complexity. This complexity is commonly known as “The Internet of Things” (IoT) and is changing the expectations of device capabilities, be it security, robustness, power consumption or device management. Arm Mbed OS is a free, open-source embedded operating system designed specifically for the "things" in the Internet of Things. It includes all the capabilities needed to develop a connected product based on an Arm Cortex-M microcontroller, including security, wired and wireless connectivity, a preemptive RTOS kernel and peripheral drivers for sensors and I/O devices.
 
-#### Where to start
+### Promise
 
-<span class="tips">If you're working on Windows, you might need to [install a serial driver](/docs/development/tutorials/windows-serial-driver.html).
+As software integration complexities increase and demands on the time to market decrease for embedded devices, the ability to prototype and prove concepts quickly is crucial. Mbed OS uses USB drag and drop programming to allow you to rapidly protoype without expensive debug hardware. Basing development efforts on an operating system that is well tested and released on a regular cadence (quarterly [feature releases](https://os.mbed.com/releases/) and biweekly patch releases) allows you to focus on the application and differentiation rather than investing software integration and tooling compatibilities. This effectively multiplies team effectiveness by picking up bug fixes and new target support in patch releases while getting new capabilities in feature releases. That, combined with low power and a small footprint, makes moving from concept to production very low risk.
 
-The easiest way to work with Mbed OS is using one of our development tools. We've set up an example, [Blinky](/docs/development/tutorials/your-first-program.html), that you can try on each of the tools. Blinky teaches you to build and run an application on your board.
+### Principles
 
-Once you know how to build an existing application, it's time to learn [how to write your own applications](/docs/development/reference/index.html).
+Mbed OS is an open-source operating system actively developed by Arm, in partnership with over 60 partners and the Arm Mbed community of over 340,000 developers throughout the world. Everyone is encouraged to contribute and make Mbed OS even better, and our community has contributed to many of our components and projects. Our developer community is a valuable part of Mbed OS and adds an important layer of transparency.
 
-##### Development tools
+Because we release Mbed OS under an Apache 2.0 license, you can confidently use it in commercial and personal projects. You can ask questions about hardware availability and software compatibility on the developer website, forums and question pages. You can contribute software issues and fixes to the development repository on GitHub. For private inquiries that may not be suitable to share in public, please email [support](support@mbed.org). You can find more information about licensing and how to contribute, as well as our code of conduct, on our [contributing page](https://os.mbed.com/contributing/).
 
-- Our offline development tool is [Arm Mbed CLI](/docs/development/tools/arm-mbed-cli.html), a command-line tool. This requires having a toolchain installed on your computer.
-- The [Arm Mbed Online Compiler](/docs/development/tools/arm-online-compiler.html) lets you write and build applications using a web browser.
-- If you're working with third party tools, look at [exporting instructions for the most popular ones](/docs/development/tools/exporting.html).
+### Architecture
 
-##### Communicating with and monitoring your board
+Three principals form the basis of Mbed OS: modular, secure and connected. With a large contributor base, it’s important to have visibility of where and how changes should be made.
 
-You can [monitor and control an Mbed board](/docs/development/tutorials/serial-comm.html) to help you debug and test your applications.
+#### Modular
 
-<span class="tips">**Tip:** Learn more about debugging in the [debugging applications section](/docs/development/tutorials/debugging-applications.html).</span>
+The Hardware Abstraction Layer (HAL) allows support for the basic and most common parts of a microcontroller, such as timers, analog and digital interfaces. A HAL is the foundation of allowing applications to be written against a common set of application programming interfaces (APIs) and where to start from when adding support for a new target.
 
-#### How to continue
+With the HAL, we can create new features on feature branches, and silicon Partners can then port them to Mbed Enabled development boards. Please see more information about HAL APIs in our documentation about [contributing targets](/docs/development/reference/porting-targets.html).
 
-When you've started writing applications using your selected development tool:
+Mbed OS has an RTOS core based on the widely used open-source CMSIS-RTOS RTX. Because of this, Mbed OS supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on features, such as threads, semaphores and mutexes.
 
-- Learn about [collaborative work and version control](/docs/development/tools/collab-online-comp.html).
-- Try one of the [tutorials](/docs/development/tutorials/index.html), which cover concepts such as debugging and memory tracing.
-- Ask questions and give advice on the [forum](https://os.mbed.com/forum/).
+Other features include more complex software components, such as file systems and networking stacks, which may require complex synchronization primitives to ensure deterministic and safe execution or might have multiple compatible drivers. The modular design allows application level composition of storage systems, for instance where the block level storage options vary and are application dependent.
 
-#### Contributing to Mbed OS
+The modular design of Mbed OS means your device automatically includes necessary libraries. It also includes driver support for standard MCU peripherals, such as I2C, serial and SPI. This allows you to concentrate on writing application code.
 
-If you want to contribute to the `mbed-os` codebase, please see [the contribution section](/docs/development/reference/contributing.html).
+#### Secure
 
-You can find past releases and the current release on [GitHub](https://github.com/ARMmbed/mbed-os/releases/).
+We implement our security strategy throughout the device life cycle. Mbed OS security begin with isolated security domains and continue through secure communication. For example, with Mbed OS, you can include SSL and TLS in your projects for secure communications.
 
-#### Porting to Mbed OS
+#### Connected
 
-Our full contributing guide is still being written. For now, we have:
+Mbed OS supports many connectivity options. These include [network sockets](/docs/development/reference/network-socket.html), [Bluetooth](/docs/development/reference/bluetooth.html) and [LoRaWAN](/docs/development/reference/lorawan.html). They also include network interfaces, such as Ethernet, Wi-Fi and 6LoWPAN. Mbed OS is also a Thread-certified component.
 
-- A guide to [contributing targets](/docs/development/reference/contributing-target.html).
-- Information about the [tools you need to contribute targets](/docs/development/reference/contributing-tools.html).
-- APIs about [storage](/docs/development/reference/contributing-storage.html) and [connectivity](/docs/development/reference/contributing-connectivity.html) in relation to porting.
-
-## How Mbed works
-
-The Arm Mbed hardware architecture is designed to make sure you have all the tools and utilities to be productive. Most boards have an integrated debug circuit that assists development by programming the device, logging program execution and giving access to the debug access port. Here is how it works.
+For each connectivity option, Mbed OS provides API class references, reference material and examples.
 
 #### Architecture diagram
 
@@ -56,31 +46,16 @@ This is the basic architecture of an Mbed board:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/MbedOS_002.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
 
-#### How programming works
+### Compatibility
 
-There are two options:
+Mbed OS [includes the tools](/docs/development/tools/index.html) needed for developers of all skill levels. Many experienced developers prefer to work offline using Arm Mbed CLI, our offline command-line tool based on Python. This requires having a toolchain installed on your computer. You can use Mbed CLI to build projects using out three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](/docs/development/tools/exporting.html) for use in other IDEs, such as Keil MDK.
 
-1. When you plug an Mbed Enabled board to your PC using USB, it appears as a USB flash disk. The Mbed interface presents this small disk. It allows you to save Arm microcontroller binaries you want to run directly on to the board, without drivers.
-2. The same USB connection exposes a debug protocol such as CMSIS-DAP. This enables lots of IDEs to program and debug the device.
+Developers who do not have a dedicated desktop setup or prefer to work online use the Arm Mbed Online Compiler, our online development tool, which lets you write and build applications using a web browser. This online IDE requires no setup.
 
-##### How USB serial works
+Other tools included as part of Mbed OS work well for developers of all skill sets. For example, you can use our debugging tools, DAPLink and pyOCD, to program and debug their many devices. Mbed OS also includes build tools and supported toolchains and the C libraries of each supported toolchain, including implementation of thread safety support. At the end of the development cycle, you can us the Mbed OS validation tools to test your project. All of these tools make it easy for you to use Mbed OS for your projects throughout the development cycle.
 
-The Arm Mbed interface also presents a USB serial/com interface. This is basically a UART-USB bridge, and it connects to the interface's UART. So if you send characters out of the target board's UART, the Arm Mbed interface will read them and transfer them over the USB link. When you `printf()`, it is just sending characters to UART. This means that if you make your own PCB, these characters will still appear on UART.
+### Conclusion
 
-##### Notes
+Mbed OS is a secure, connected, production-ready operating system with a modular design that includes all the tools you need, whatever your skillset. For businesses entering the IoT space requiring an open source industry agnostic OS solution. Using our heritage in architecture, we have built our device software to create a forward-looking yet robust chip to cloud solution.
 
-The `.bin` files the Mbed microcontroller accepts are standard raw binaries. Use any compiler you like to generate them. As the separate interface manages programming over JTAG or SWD, you have unlimited control of the target microcontroller. You really are just loading on a raw binary; this means you can build your own PCB using the same target microcontroller, and the same program binary will run on that.
-
-#### The Arm Mbed interface
-
-You can find more information about the Mbed interface and the circuits on which it runs in the [HDK reference manual](/docs/development/reference/contributing-tools.html#arm-mbed-hdk) or on the [DAPLink page](/docs/development/tools/daplink.html). The HDK includes reference circuits you can use to create your own boards, and DAPLink is the firmware that runs on these circuits.
-
-#### Connectivity
-
-The best representation of the connectivity of the Mbed interface is the same diagram we showed above.
-
-The Mbed interface:
-
-- Provides a USB connection to the host computer, which exposes a Mass Storage (flash disk) and a USB serial port.
-- Has an SWD or JTAG connection to the target, so it can program the target flash. You can also use this for debugging.
-- A physical UART connection exists between the target and the interface, which is relayed over the interface's USB serial port.
+This operating system is the core of Arm's Mbed IoT Device Platform. By using Mbed OS, you can create application code that remains clean and portable while taking advantage of security and communication. Use our quick start guide to get started with Mbed OS today.

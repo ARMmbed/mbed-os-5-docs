@@ -1,10 +1,10 @@
-## Mbed TLS entropy
+## Entropy sources
 
-This document explains how to port [Arm Mbed TLS](https://github.com/ARMmbed/mbedtls) to a new Arm Mbed development board.
+This document explains how to port [entropy sources](https://github.com/ARMmbed/mbedtls) to a new Arm Mbed development board.
 
 <span class="notes">**Note:** This part is critical for the security of your product, and you should consult a cryptography expert while considering the choices and implementing them.</span>
 
-### Why Mbed TLS needs entropy
+### Why entropy is necessary
 
 Almost every cryptographic protocol requires random values that no one should be able to predict. A striking example is their use as session keys: It is easy to see that if an adversary can predict the session key, then he can decrypt the whole session. Even if the adversary can't predict it exactly, just with a relatively high probability, he can still recover the contents of the session. For example, if the adversary has a 0.00001% chance of predicting the 256 bit AES session key, then he can break it as easily as if we had used a 23 bit key (that is - very easily).
 
@@ -12,13 +12,13 @@ Creating session keys is only one use for random values; they have far more comp
 
 ### Which entropy source to choose
 
-- If you have a target with a True Random Number Generator (TRNG), then follow Section 3 to allow Mbed TLS to use it.
+- If you have a target with a True Random Number Generator (TRNG), then follow Section 3.
 
-- If you have a target without a TRNG, but with a non-volatile (NV) storage, then read Section 4 for instructions on making Mbed TLS use a random seed as entropy. This seed should be separately initialized with a true random number for each device at manufacturing time.
+- If you have a target without a TRNG, but with a non-volatile (NV) storage, then read Section 4 for instructions on using a random seed as entropy. This seed should be separately initialized with a true random number for each device at manufacturing time.
 
 - If you just want to test Mbed TLS on your target without implementing either of the above, and having no security at all is acceptable, then go to Section 5.
 
-### How to provide Mbed TLS entropy from a hardware entropy source
+### How to provide entropy from a hardware entropy source
 
 #### What kind of a source you can add
 
@@ -70,9 +70,9 @@ int trng_get_bytes(trng_t *obj, uint8_t *output, size_t length, size_t *output_l
 
 - ``trng_t *obj``: `trng_t` is an alias to `trng_s`, and it is the caller's responsibility to initialize it before passing it to this function and release it (with the help of `trng_init()` and `trng_free()`, respectively) when it is not required anymore.
 
-- ``uint8_t *output``: a pointer to the output buffer. The function should write the entropy it collected to the buffer; Mbed TLS then uses this data as entropy. Please consult your board's manual, and write only the strongest entropy possible in this buffer.
+- ``uint8_t *output``: a pointer to the output buffer. The function should write the entropy it collected to the buffer; Mbed then uses this data as entropy. Please consult your board's manual, and write only the strongest entropy possible in this buffer.
 
-    **Warning:** Although it is possible to fill this buffer without a strong hardware entropy source, we strongly advise against it because it will nullify any security provided by Mbed TLS.
+    **Warning:** Although it is possible to fill this buffer without a strong hardware entropy source, we strongly advise against it because it will nullify any security provided by Mbed.
 
 - ``size_t length``: the length of the output buffer. The function shouldn't write more data than this to the output buffer under any circumstances.
 
@@ -90,7 +90,7 @@ To indicate that the target has an entropy source, you have to add `TRNG` to the
 
 If a hardware platform does not have a hardware entropy source to leverage into the entropy pool, alternatives have to be considered. As stated above, a strong entropy source is crucial for security of cryptographic and TLS operations. For platforms that support non-volatile memory, an option is to use the NV seed entropy source that Mbed TLS provides.
 
-This makes Mbed TLS use a fixed amount of entropy as a seed and update this seed each time entropy is gathered with an Mbed TLS entropy collector for the first time. In a simple case it means that the seed is updated after reset at the start of the first TLS connection.
+This uses a fixed amount of entropy as a seed and updates this seed each time an entropy collector gathers entropy for the first time. In a simple case it means that the seed is updated after reset at the start of the first TLS connection.
 
 <span class="notes">**Note:** To make this option a relatively strong compromize, the seed should be initialized separately for each device with true random data at manufacturing time. It has to be true random data, something dependant on, for example the serial number is **not** secure. </span>
 

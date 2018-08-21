@@ -2,7 +2,14 @@
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
-<span class="tips">If you're working on Windows, we recommend you use the [Windows installer for Mbed CLI](/docs/development/tools/installing-with-the-windows-installer.html). For Linux and Mac OS X, refer to the section [Installing Mbed CLI standalone stable version](/docs/development/tools/installing-manually.html).</span>
+<span class="tips">**Tip:** If you're working on Windows or Mac OS X, we recommend using the installers for Mbed CLI:
+- [Windows installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
+- [Mac OS X installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg).
+
+   For details, please see our [documentation for the Windows installer for Mbed CLI](installing-with-the-windows-installer.html) and our [documentation for Mac OS X installer for Mbed CLI](installing-with-the-mac-os-x-installer.html).
+</span>
+
+For Linux, please [install Mbed CLI manually](installing-manually.html). Advanced Windows and Mac OS X users can also install Mbed CLI manually, but we recommend the installers for less experienced developers.
 
 ## Requirements
 
@@ -11,9 +18,8 @@ You can install Mbed CLI on Windows, Linux and Mac OS X.
     - pip.
 
     <span class="notes">**Note:** Python 3 usage is **not compatible** with Mbed OS versions older than 5.9 and Mbed CLI toolchain versions older than 1.7.2. </span>
-    
-    <span class="notes">**Note:** Mbed CLI toolchain versions older than 1.5.1 are **not compatible** with `pip` version 10.0 (or newer). Please use the latest Mbed CLI with newer version of `pip`.</span>
 
+    <span class="notes">**Note:** Mbed CLI toolchain versions older than 1.5.1 are **not compatible** with `pip` version 10.0 (or newer). Please use the latest Mbed CLI with newer version of `pip`.</span>
 
 - **Git and Mercurial:** Mbed CLI supports both Git and Mercurial repositories, and you may need libraries from both sources as you work, so please to install both:
     - [Git](https://git-scm.com/) - version 1.9.5 or later.
@@ -40,7 +46,17 @@ You may want to install Mbed CLI on a virtual environment if your main environme
 
 ## Installing with the Windows installer
 
-Mbed CLI for Windows installs [Mbed CLI](https://github.com/ARMmbed/mbed-cli) with all requirements on Windows 7 and newer (both the 32- and 64-bit versions).
+The Windows installer for Arm Mbed CLI installs Mbed CLI and all dependent programs onto your Windows machine.
+
+### Running the installer
+
+1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
+2. Run `mbed_installer_v047.exe`.
+3. Set the installation path.
+4. Choose the installation type:
+    - Default: Installs all components.
+    - Advanced: Allows you to select components.
+5. Installer installs all selected components. Close it after it finishes.
 
 ### Included components
 
@@ -53,16 +69,6 @@ The Windows installer for Mbed CLI includes the following components:
     - [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
-
-### Running the installer
-
-1. Download the latest executable from [mbed-windows-installer v0.4.3](https://mbed-media.mbed.com/filer_public/50/38/5038849b-16a8-42f3-be7a-43d98c7a3af3/mbed_installer_v043.exe).
-2. Run `mbed_installer_v042.exe`.
-3. Set the installation path.
-4. Choose the installation type:
-    - Default: Installs all components.
-    - Advanced: Allows you to select components.
-5. Installer installs all selected components. Close it after it finishes.
 
 ### Optional: silent install
 
@@ -77,7 +83,20 @@ $ mbed_installer_{version}.exe /S
 
 ### After installation
 
-Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+Please see the [configuration section](configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+
+## Installing with the Mac OS X installer
+
+The Mac OS X installer for Mbed CLI is a self-contained OS X application that contains GCC, Python, Git and Mercurial.  
+
+To use the installer:
+
+1. Download the [Mac OS X installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg).
+1. Open `.dmg`.
+1. Copy `mbed_cli.app` to your applications folder.
+1. Run `mbed_cli.app`.
+
+<span class="note">**Note:** You may need to allow unsigned apps to run for this to work. The first time you run the installer, it make take a couple of minutes to download the components. This requires an internet connection. After the first run, everything will be much faster.</span>
 
 ## Installing manually
 
@@ -113,7 +132,7 @@ On Linux or Mac, you may need to run with `sudo`.
 
 ### After installation
 
-Please see the [configuration section](/docs/development/tools/configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
+Please see the [configuration section](configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
 ## Configuring Mbed CLI
 
@@ -129,7 +148,8 @@ Mbed CLI requires adding the following to the system `PATH`:
 
 You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. Mbed CLI supports the following toolchains:
 
-- [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
+- [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
+- [Arm Compiler 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). Use version 6.10 of Arm Compiler 6. Versions older than 6.10 might be incompatible with the tools.
 - [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
 - [IAR EWARM 7](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM). Use versions 7.70 to 7.80.x of the IAR EWARM; other versions might be incompatible with the tools.
 
@@ -155,7 +175,8 @@ The `-G` switch tells Mbed CLI to set this as a global setting, allowing all pro
 
 Mbed CLI supports a setting for each toolchain path. Below is a list of these settings, along with a description of what path is expected in each setting.
 
-- `ARM_PATH`: The path to the *base* directory of your Arm Compiler installation. This should be the directory containing the directory containing the binaries for `armcc` and friends. For example, if your Arm Compiler 5 executable `armcc` is located at `/home/redacted/ARM_Compiler_5.06u5/bin/armcc`, you set `ARM_PATH` to `/home/redacted/ARM_Compiler_5.06u5`
+- `ARM_PATH`: The path to the *base* directory of your Arm Compiler 5 installation. This should be the directory containing the directory containing the binaries for `armcc` and friends. For example, if your Arm Compiler 5 executable `armcc` is located at `/home/redacted/ARM_Compiler_5.06u5/bin/armcc`, you set `ARM_PATH` to `/home/redacted/ARM_Compiler_5.06u5`
+- `ARMC6_PATH`: The path to the *binary* directory of your Arm Compiler 6 installation. This should be the directory containing the binaries for `armclang` and friends. For example, if your Arm Compiler 6 executable `armclang` is located at `C:/Program Files/ARM/armcc6.10/bin/armclang`, you set `ARMC6_PATH` to `C:/Program Files/ARM/armcc6.10/bin`
 - `IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends. For example, if your IAR EWARM compiler executable is located at `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm/bin/iccarm.exe`, you set `IAR_PATH` to `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm`.
 - `GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends. For example, if your Gcc Arm Embedded toolchain gcc executable is in `/usr/bin/arm-none-eabi-gcc`, you set `GCC_ARM_PATH` to `/usr/bin`.
 

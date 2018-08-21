@@ -6,7 +6,17 @@ The TCPSocket class provides the ability to send a stream of data over TCP. TCPS
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
-Refer to [TCPServer](/docs/development/reference/tcpserver.html) class for TCP server functionality.
+### Server socket
+
+You can also use TCP to listen to incoming connections. To do this:
+
+1. Bind socket to specific port by calling `TCPSocket::bind()`.
+1. Set socket to listening mode by calling `TCPSocket::listen()`.
+1. Accept incoming connection by calling `TCPSocket::accept()`.
+
+Accepting a new connection returns a pointer to a new `Socket` object that you can use to communicate with the connected peer. Afterward, call this socket's `close()` function to shut down the connection and clean up the reserved resources.
+
+Accepting a connection leaves the original socket in listening mode. You can continue to accept new connections until you destroy the listening socket, or call its `close()` method.
 
 ### TCPSocket class reference
 
@@ -14,14 +24,10 @@ Refer to [TCPServer](/docs/development/reference/tcpserver.html) class for TCP s
 
 ### TCPSocket Example
 
-Here is a TCP client example of HTTP transaction using the ESP8266 module.
+Here is a client example of HTTP transaction over TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/file/6a4e57edc2b2/main.cpp)
-
-Here is a TCP client example of HTTP transaction over Ethernet interface.
-
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/file/e0496f3424a8/main.cpp/)
 
 ### Related content
 
-- [TCPServer](/docs/development/reference/tcpserver.html) API reference.
+- [Socket](socket.html) API reference.

@@ -27,7 +27,7 @@ Mbed OS includes a few convenience classes that are tailored for embedded system
 
 - [Callback](/docs/development/reference/callback.html): An API that executes the user’s code in its own context. Many other Mbed OS APIs build on the Callback API by taking a callback to execute.
 - [Time](/docs/development/reference/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- [Error](/docs/development/reference/error.html): A functions that generates a fatal runtime error.
+- [Error](/docs/development/reference/error-handling.html): A functions that generates a fatal runtime error.
 - [NonCopyable](/docs/development/reference/noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
 
 <h4 id="callbacks">Callbacks</h4>
