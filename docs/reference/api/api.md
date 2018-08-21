@@ -39,43 +39,47 @@
 <tbody>
 <tr>
 <td><a href="analogin.html">AnalogIn</a></td>
-<td><a href="analogout.html">AnalogOut</a></td>
-<td><a href="digitalin.html">DigitalIn</a></td>
-<td><a href="digitalout.html">DigitalOut</a></td>
-<td><a href="digitalinout.html">DigitalInOut</a></td>
-<td><a href="busin.html">BusIn</a></td>
-<td><a href="busout.html">BusOut</a></td>
-<td><a href="businout.html">BusInOut</a></td>
-</tr>
-<tr>
 <td><a href="portin.html">PortIn</a></td>
-<td><a href="portout.html">PortOut</a></td>
-<td><a href="portinout.html">PortInOut</a></td>
-<td><a href="pwmout.html">PwmOut</a></td>
-<td><a href="interruptin.html">InterruptIn</a></td>
-<td><a href="timeout.html">Timeout</a></td>
-<td><a href="timer.html">Timer</a></td>
-<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
-</tr>
-<tr>
 <td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
-<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
-<td><a href="flash-iap.html">Flash IAP</a></td>
-<td><a href="rawserial.html">RawSerial</a></td>
-<td><a href="serial.html">Serial</a></td>
-<td><a href="spi.html">SPI</a></td>
-<td><a href="spislave.html">SPISlave</a></td>
-<td><a href="i2c.html">I2C</a></td>
+<td><a href="i2cslave.html">I2CSlave</a></td>
 </tr>
 <tr>
-<td><a href="i2cslave.html">I2CSlave</a></td>
+<td><a href="analogout.html">AnalogOut</a></td>
+<td><a href="portout.html">PortOut</a></td>
+<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
 <td><a href="debug.html">CAN</a></td>
+</tr>
+<tr>
+<td><a href="digitalin.html">DigitalIn</a></td>
+<td><a href="portinout.html">PortInOut</a></td>
+<td><a href="flash-iap.html">Flash IAP</a></td>
 <td><a href="mbedcrc.html">MbedCRC</a></td>
+</tr>
+<tr>
+<td><a href="digitalout.html">DigitalOut</a></td>
+<td><a href="pwmout.html">PwmOut</a></td>
+<td><a href="rawserial.html">RawSerial</a></td>
 <td><a href="devicekey.html">DeviceKey</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+</tr>
+<tr>
+<td><a href="digitalinout.html">DigitalInOut</a></td>
+<td><a href="interruptin.html">InterruptIn</a></td>
+<td><a href="serial.html">Serial</a></td>
+</tr>
+<tr>
+<td><a href="busin.html">BusIn</a></td>
+<td><a href="timeout.html">Timeout</a></td>
+<td><a href="spi.html">SPI</a></td>
+</tr>
+<tr>
+<td><a href="busout.html">BusOut</a></td>
+<td><a href="timer.html">Timer</a></td>
+<td><a href="spislave.html">SPISlave</a></td>
+</tr>
+<tr>
+<td><a href="businout.html">BusInOut</a></td>
+<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
+<td><a href="i2c.html">I2C</a></td>
 </tr>
 </tbody>
 </table>
