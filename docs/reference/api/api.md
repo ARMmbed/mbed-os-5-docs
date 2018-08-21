@@ -1,19 +1,6 @@
 ## API overview
 
-The [APIs](/docs/development/introduction/glossary.html) in this document are organized by the feature, or group of features, they enable.
-
-- [Platform](/docs/development/reference/platform.html): platform modules that provide consistent user experience.
-- [Drivers](/docs/development/reference/drivers.html): analog and digital input and outputs and digital interfaces.
-- [RTOS](/docs/development/reference/rtos.html): handling tasks and events in Mbed OS.
-- [Socket API](network-socket.html): network socket API for TCP/IP.
-- [Network Interfaces](network-interfaces.html): Network interfaces, Ethernet, Wifi, Cellular & Mesh.
-- [Bluetooth](/docs/development/reference/bluetooth.html): bluetooth low energy.
-- [LoRaWAN](/docs/development/reference/lorawan.html): low power wide area network.
-- [Security](/docs/development/reference/security.html): working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.
-- [Storage](/docs/development/reference/storage.html): working with the file system.
-
-We also provide guidelines for [contributing to Mbed OS](/docs/development/reference/contributing.html).
-
+[intro text]
 
 ### Platform APIs
 
@@ -47,3 +34,48 @@ We also provide guidelines for [contributing to Mbed OS](/docs/development/refer
 </table>
 
 ### Drivers APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="analogin.html">AnalogIn</a></td>
+<td><a href="analogout.html">AnalogOut</a></td>
+<td><a href="digitalin.html">DigitalIn</a></td>
+<td><a href="digitalout.html">DigitalOut</a></td>
+<td><a href="digitalinout.html">DigitalInOut</a></td>
+<td><a href="busin.html">BusIn</a></td>
+<td><a href="busout.html">BusOut</a></td>
+<td><a href="businout.html">BusInOut</a></td>
+</tr>
+<tr>
+<td><a href="portin.html">PortIn</a></td>
+<td><a href="portout.html">PortOut</a></td>
+<td><a href="portinout.html">PortInOut</a></td>
+<td><a href="pwmout.html">PwmOut</a></td>
+<td><a href="interruptin.html">InterruptIn</a></td>
+<td><a href="timeout.html">Timeout</a></td>
+<td><a href="timer.html">Timer</a></td>
+<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
+</tr>
+<tr>
+<td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
+<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
+<td><a href="flash-iap.html">Flash IAP</a></td>
+<td><a href="rawserial.html">RawSerial</a></td>
+<td><a href="serial.html">Serial</a></td>
+<td><a href="spi.html">SPI</a></td>
+<td><a href="spislave.html">SPISlave</a></td>
+<td><a href="i2c.html">I2C</a></td>
+</tr>
+<tr>
+<td><a href="i2cslave.html">I2CSlave</a></td>
+<td><a href="debug.html">CAN</a></td>
+<td><a href="mbedcrc.html">MbedCRC</a></td>
+<td><a href="devicekey.html">DeviceKey</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
