@@ -980,7 +980,7 @@
                 ]
             },
             {
-                "title": "Migrationg to Mbed OS 5",
+                "title": "Migrating to Mbed OS 5",
                 "sources": [{
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/migrate-from-mbed-os-2-to-5.md"
