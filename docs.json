@@ -9,10 +9,15 @@
                 "type": "markdown",
                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
             },
-            "sources": [{
+            "sources":[]
+          },
+          {
+            "title": "Release process",
+            "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/release_process.md"
                 },
+                "sources":[
                 {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
@@ -20,13 +25,18 @@
                 {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/migrate-from-mbed-os-2-to-5.md"
-                },
+                }
+              ]
+            },
+            {"title": "Terms",
+              "intro":
                 {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/terms.md"
-                }
-            ]
-        }],
+                },
+                "sources": []
+          }
+        ],
         "tags": [
             "introduction"
         ]
