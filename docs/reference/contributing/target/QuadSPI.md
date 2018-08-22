@@ -4,8 +4,6 @@ Implementing QSPI enables Mbed OS to communicate with external memories much fas
 
 The most common use case is an external memory to use as additional data storage.
 
-<span class="warnings">**Warning:** We are changing the QSPI HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the QSPI API](#implementing-quadspi) section.</span>
-
 ### Assumptions
 
 #### Defined behavior
@@ -28,6 +26,28 @@ To make sure your platform is ready for the upcoming changes, you need to implem
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-qspi-doxy/classmbed_1_1_q_s_p_i.html)
 
 The target needs to define the `qspi_s` structure - target specific QSPI object.
+
+The target needs to define the QSPI interface pin names:
+- `QSPI_FLASHn_XXX` for pins connected to onboard flash memory.
+- `QSPIn_XXX` for pins routed out to external connector.
+
+`n` - is interface index, typically `1` if single QSPI interface available
+
+```
+QSPIn_IO0
+QSPIn_IO1
+QSPIn_IO2
+QSPIn_IO3
+QSPIn_SCK
+QSPIn_CSN
+
+QSPI_FLASHn_IO0
+QSPI_FLASHn_IO1
+QSPI_FLASHn_IO2
+QSPI_FLASHn_IO3
+QSPI_FLASHn_SCK
+QSPI_FLASHn_CSN
+```
 
 Functions to implement:
 
@@ -53,4 +73,8 @@ To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_ha
 
 ### Testing
 
-To be implemented
+The Mbed OS HAL provides a set of conformance tests for the QSPI interface (**Note: QSPI HAL tests require onboard QSPI flash memory**). You can use these tests to validate the correctness of your implementation. To run the QSPI HAL tests, use the following command:
+
+```
+mbed test -t <toolchain> -m <target> -n tests-mbed_hal-qspi
+```
