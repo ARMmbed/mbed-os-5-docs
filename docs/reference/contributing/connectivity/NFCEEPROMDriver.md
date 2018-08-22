@@ -87,5 +87,20 @@ These must be used to communicate the results of all asynchronous calls.
 
 ### Testing
 
-Run tests with:
+A macro `NFCEEPROM` is required for the test to be built. The module containing your driver should comtain `mbed_lib.json`. Add a configuration option for the build system to convert into a macro. Your `mbed_lib.json` could look like this:
+
+```javascript
+{
+    "name": "MBED_NFC_<name of your driver>",
+    "config": {
+        "nfceeprom": {
+            "macro_name": "NFCEEPROM",
+            "value": true,
+            "help": "Device supports NFC EEPROM"
+        }
+    }
+}
+```
+
+Run the tests with:
 `mbed test -m [mcu] -t [toolchain] -n tests-nfc-eeprom*`.
