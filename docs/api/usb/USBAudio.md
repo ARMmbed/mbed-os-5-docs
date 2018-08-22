@@ -2,14 +2,15 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.png)<span>USBAudio class hierarchy</span></span>
 
-You can use the USBAudio interface to send and receive audio data over USB. Once a USB program is loaded onto the Mbed board, you can send audio data to your PC by selecting "Mbed Audio" as your PC's microphone input, and you can have the Mbed board receive audio data from your PC by selecting "Mbed Audio" as your PC's speaker output.
+You can use the USBAudio interface to send and receive audio data over USB. Once a USB program is loaded onto the Mbed board, you can send audio data to your PC by selecting **Mbed Audio** as your PC's microphone input. Your Mbed Enabled board can receive audio data from your PC if you select **Mbed Audio** as your PC's speaker output.
 
-### USBAudio Class Reference
+### USBAudio class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.html)
 
-### USBAudio Square Wave Example    
-This example will output an audio square wave over USB.
+### USBAudio square wave example
+
+This example outputs an audio square wave over USB.
 
 ```C++
 // This example simply generates a square wave. 
@@ -46,8 +47,9 @@ int main() {
 
 ```
 
-### USBAudio Loopback Example    
-This example will loop input audio to the Mbed board back to the host PC, so that the audio may be recorded or listened to via headphones or speakers.
+### USBAudio loopback example
+
+This example loops input audio to the Mbed board back to the host PC, so that you may record the audio or listen to it through headphones or speakers.
 
 ```C++
 // Audio loopback example use:
@@ -73,7 +75,8 @@ int main() {
 }
 ```
 
-### USBAudio Play Sound Data Example   
-This example loads raw audio data to the Mbed board's flash that is then played on the host PC over USB. This example has been tested and works with the NXP FRDM-K64F, which has 1 MB of flash memory. If you are using a board that has less than 1 MB of flash memory, simply delete data from the end of the "data" array and set "NUM_ELEMENTS" accordingly until the program size is small enough to be flashed without exceeding storage. Follow the link below and hit Ctrl + s to save the raw code view for main.cpp.   
+### USBAudio play sound data example
+
+This example loads raw audio data to your board's flash. That data then plays on the host PC over USB. We have tested this example with the NXP FRDM-K64F, which has 1 MB of flash memory. If you are using a board that has less than 1 MB of flash memory, delete data from the end of the `data` array, and set `NUM_ELEMENTS` accordingly until the program size is small enough to flash without exceeding storage. Follow the link below, and click Ctrl + s to save the raw code view for `main.cpp`.   
 
 ##### [main.cpp](https://raw.githubusercontent.com/mrcoulter45/mbed-os-5-docs/USBAudio.md_additions/docs/reference/api/usb/Audio_Play_Sound_Data.cpp)
