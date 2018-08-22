@@ -10,13 +10,13 @@ Examples of tasks you can perform using this library include sending MIDI messag
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_m_i_d_i.html)
 
-The two examples below use a program called "Anvil Studio 32-bit" to play MIDI notes from an Mbed board through the host PC.
-The MIDI notes can be played back through headphones or speakers by following the steps below.
-1. Flash board and make sure the target's USB is plugged into the PC
-2. Open Anvil Studio
-3. Click View > Synthesizers, MIDI + Audio Devices
-4. Uncheck "Synth is too slow to echo incoming events"
-5. Click View > Composer (Staff Editor) to see notes from Mbed board being mapped to sheet music   
+The two examples below use a program called "Anvil Studio 32-bit" to play MIDI notes from an Mbed board through the host PC. You can play back the MIDI notes through headphones or speakers by following the steps below:
+
+1. Flash the board, and ensure the target's USB is plugged into the PC.
+2. Open Anvil Studio.
+3. Click **View > Synthesizers, MIDI + Audio Devices**.
+4. Uncheck **Synth is too slow to echo incoming events**.
+5. Click **View > Composer (Staff Editor)** to see notes from the board being mapped to the sheet music.
 
 ### USBMIDI example  
 
