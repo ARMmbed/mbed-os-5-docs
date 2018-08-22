@@ -4,7 +4,7 @@
         "slug": "introduction",
         "type": "markdown",
         "chapters": [{
-            "title": "Overview",
+            "title": "Mbed OS overview",
             "intro": {
                 "type": "markdown",
                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
