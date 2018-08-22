@@ -875,6 +875,10 @@
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.9/docs/tools/offline/cli-create.md"
                             },
                             {
+                                    "type": "markdown",
+                                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.9/docs/tools/offline/cli-compile.md"
+                            },
+                            {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.9/docs/tools/offline/cli-collaborate.md"
                             },
