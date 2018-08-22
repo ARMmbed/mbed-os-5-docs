@@ -1,4 +1,4 @@
-## Compiling workflow
+## Compile
 
 ### Compiling your application
 
