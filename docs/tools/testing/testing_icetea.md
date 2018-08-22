@@ -52,7 +52,7 @@ For writing your own Python test scripts, you can read further information from 
 
 ##### Writing CLI applications
 
-To be able to run the commands given to the DUT, you need to provide a CLI application that runs on the DUT. There is a library that you can use to create your own CLI application; it is called [mbed-client-cli](https://github.com/ARMmbed/mbed-client-cli). You can also find example Mbed CLI applications from the `mbed-os` repository TODO: Update before publishing [test applications](https://github.com/ARMmbed/mbed-os-icetea-integration/tree/feature-icetea/TEST_APPS/device).
+To be able to run the commands given to the DUT, you need to provide a CLI application that runs on the DUT. There is a library that you can use to create your own CLI application; it is called [mbed-client-cli](https://github.com/ARMmbed/mbed-client-cli). You can also find example Mbed CLI applications from the `mbed-os` repository [test applications](https://github.com/ARMmbed/mbed-os/tree/master/TEST_APPS/device).
 
 ### Debugging tests
 
