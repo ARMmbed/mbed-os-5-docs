@@ -18,8 +18,9 @@ The MIDI notes can be played back through headphones or speakers by following th
 4. Uncheck "Synth is too slow to echo incoming events"
 5. Click View > Composer (Staff Editor) to see notes from Mbed board being mapped to sheet music   
 
-### USBMIDI example   
-Below is an example to send a series of MIDI notes to the host PC.    
+### USBMIDI example  
+
+Below is an example to send a series of MIDI notes to the host PC:    
 
 ```C++
 #include "mbed.h"
@@ -39,8 +40,10 @@ int main() {
 }
 ```
 
-### Play "Take Me Out to the Ball Game" example    
-Below is an example to play "Take Me Out to the Ball Game" (public domain) via MIDI over USB on the host PC.    
+### Play "Take Me Out to the Ball Game" example
+
+You can use USBMIDI to play an entire song, not just a series of notes. "Take Me Out to the Ball Game" is a popular song in the public domain. To play "Take Me Out to the Ball Game" (public domain) using MIDI over USB on the host PC:
+
 ```C++
 #include "mbed.h"
 #include "USBMIDI.h"
