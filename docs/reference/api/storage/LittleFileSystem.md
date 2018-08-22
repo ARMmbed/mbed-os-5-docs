@@ -29,7 +29,7 @@ We built this for microcontrollers with external flash storage. In this context,
 
 For storage on an SD card that is accessible from a PC, use the FATFileSystem due to its portability.
 
-The little file system is thread safe.
+LittleFileSystem is thread safe.
 
 ### Usage
 
