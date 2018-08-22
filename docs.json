@@ -27,7 +27,7 @@
                 }]
             },
             {
-                "title": "Terms",
+                "title": "Glossary",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/terms.md"
