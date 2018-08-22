@@ -12,19 +12,20 @@
                 "sources": []
             },
             {
+                "title": "Mbed OS 2 and Mbed OS 5",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
+                },
+                "sources": []
+            },
+            {
                 "title": "Release process",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/release_process.md"
                 },
                 "sources": []
-            },
-            {
-                "title": "Mbed OS 2 and Mbed OS 5",
-                "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
-                }]
             },
             {
                 "title": "Glossary",
