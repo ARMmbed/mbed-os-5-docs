@@ -16,4 +16,4 @@ The code below demonstrates how you can instantiate, configure and post events.
 
 ### Related content
 
-- [RTOS configuration](https://os-doc-builder.test.mbed.com/docs/development/reference/configuration-rtos.html).
+- [RTOS configuration](/docs/development/reference/configuration-rtos.html).

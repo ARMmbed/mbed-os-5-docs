@@ -2,7 +2,7 @@
 
 ### User perspective
 
-A toolchain or build system profile is a set of flags that is guaranteed to be passed to the underyling compiler suite.
+A toolchain or build system profile is a set of flags that is guaranteed to be passed to the underlying compiler suite.
 
 These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
 
@@ -86,4 +86,4 @@ The toolchains take in an optional argument, ``build_profile``, that maps from f
 | `ld`     | Flags for the Linker                  |
 
 A developer using the API must parse the user-provided files themselves and extract the appropriate subdictionary from the file afterwards.
-The tools provide a convenience function, `tools.options.extract_profile`, that parses a build profile from a `--profile` option given on the command line. This function calls `args_error` when a toolchain profile JSON file does not provide flags for the selected toolchain.
+The tools provide a convenience function, `tools.options.extract_profile`, that parses a build profile from a `--profile` option given on the command-line. This function calls `args_error` when a toolchain profile JSON file does not provide flags for the selected toolchain.

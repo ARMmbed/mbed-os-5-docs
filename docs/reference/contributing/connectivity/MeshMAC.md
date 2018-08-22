@@ -224,7 +224,7 @@ Nanostack uses MLME attribute extensions which have to be ported to the HW MAC a
 
 #### Thread Sleepy End Device (SED) keepalive extension
 
-Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbor table keepalive functionality as well. When SED finishes data polling succesfully, it updates its parents keepalive value in a neighbor table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
+Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbor table keepalive functionality as well. When SED finishes data polling successfully, it updates its parents keepalive value in a neighbor table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
 
 Enumeration extension for MLME communication status enumeration:
 

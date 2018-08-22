@@ -8,26 +8,26 @@ The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARM
 
 Platforms using RTOS, including Mbed OS, need a mechanism for counting the time and scheduling tasks. A timer that generates periodic interrupts and is called system tick timer usually does this. Under Mbed OS, we call this mechanism the RTOS ticker.
 
-SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS platforms 
+SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS platforms
 implement timers as part of peripherals. Mbed OS supports using SysTick or the peripheral timers as RTOS ticker.
 
-The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](/docs/development/reference/low-power-ticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
+The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](low-power-ticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
 
 #### RTOS APIs
 
 The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5.
 
-- [Thread](/docs/development/reference/thread.html): The class that allows defining, creating and controlling parallel tasks.
-- [Mutex](/docs/development/reference/mutex.html): The class used to synchronize the execution of threads.
-- [Semaphore](/docs/development/reference/semaphore.html): The class that manages thread access to a pool of shared resources of a certain type.
-- [Queue](/docs/development/reference/queue.html): The class that allows you to queue pointers to data from producer threads to consumer threads.
-- [MemoryPool](/docs/development/reference/memorypool.html): This class that you can use to define and manage fixed-size memory pools
-- [Mail](/docs/development/reference/mail.html): The API that provides a queue combined with a memory pool for allocating messages.
-- [RtosTimer](/docs/development/reference/rtostimer.html): A deprecated class used to control timer functions in the system.
-- [EventFlags](/docs/development/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
-- [Event](/docs/development/reference/event.html): The queue to store events, extract them and excute them later.
-- [ConditionVariable](/docs/development/reference/conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
-- [Kernel](/docs/development/reference/kernel-interface-functions.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
+- [Thread](thread.html): The class that allows defining, creating and controlling parallel tasks.
+- [Mutex](mutex.html): The class used to synchronize the execution of threads.
+- [Semaphore](semaphore.html): The class that manages thread access to a pool of shared resources of a certain type.
+- [Queue](queue.html): The class that allows you to queue pointers to data from producer threads to consumer threads.
+- [MemoryPool](memorypool.html): This class that you can use to define and manage fixed-size memory pools
+- [Mail](mail.html): The API that provides a queue combined with a memory pool for allocating messages.
+- [RtosTimer](rtostimer.html): A deprecated class used to control timer functions in the system.
+- [EventFlags](eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
+- [Event](event.html): The queue to store events, extract them and excute them later.
+- [ConditionVariable](conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
+- [Kernel](kernel-interface-functions.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
 
 ##### Default timeouts
 
@@ -58,4 +58,4 @@ Each `Thread` can wait for signals and be notified of events:
 
 ##### Status and error codes
 
-The Mbed OS error handling system assigns specific error codes for RTOS-related erros. See [the error handling documentation](/docs/development/reference/error-handling.html) for more information on RTOS errors reported.
+The Mbed OS error handling system assigns specific error codes for RTOS-related erros. See [the error handling documentation](error-handling.html) for more information on RTOS errors reported.

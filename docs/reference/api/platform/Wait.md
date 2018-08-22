@@ -16,4 +16,4 @@ When you call wait, your board's CPU will sleep in the RTOS for the whole number
 
 ### Related content
 
-- [RTOS](/docs/development/reference/rtos.html) overview.
+- [RTOS](rtos.html) overview.

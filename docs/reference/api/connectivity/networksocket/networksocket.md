@@ -1,7 +1,6 @@
 <h2 id="network-socket">Network socket overview</h2>
 
-The application programming interface for IP networking is the Socket API. As described in the [IP networking](ip-networking.html)
-section of this book, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
+The application programming interface for IP networking is the Socket API. As described in the [IP networking](/docs/development/reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
 

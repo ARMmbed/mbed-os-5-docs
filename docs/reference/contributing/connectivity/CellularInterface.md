@@ -1,6 +1,6 @@
 ## Cellular module porting
 
-This document provides guidelines how to make a cellular modem adaptation for Mbed OS. Please see [Cellular API usage](cellular-api.html) about how to use cellular modules from an application point of view.
+This document provides guidelines how to make a cellular modem adaptation for Mbed OS. Please see [Cellular API usage](/docs/development/apis/cellular-api.html) about how to use cellular modules from an application point of view.
 
 ### Adding modem target support
 

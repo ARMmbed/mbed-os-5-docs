@@ -10,7 +10,7 @@ Commissioning a Thread device requires:
 - A working IPv6 network with:
   - An Android device that can ping the border router.
   - A development machine (a PC) that can ping the border router.
-  - A PC and border router with IPv6 addressess assigned to them from the Wi-Fi access point.
+  - A PC and border router with IPv6 addresses assigned to them from the Wi-Fi access point.
 - A Thread-capable end device.
 
 A model network setup could look like this:

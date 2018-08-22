@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
-The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](https://os.mbed.com/docs/development/reference/contributing-storage.html#contributing-filesystem) or write to it directly.
+The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](/docs/development/porting/porting-storage.html#contributing-filesystem) or write to it directly.
 
 The most common types of block-based storage are different forms of flash, but the BlockDevice API can support many different forms of storage, such as SD cards, spinning disks, heap backed storage and so on.
 

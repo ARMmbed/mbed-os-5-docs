@@ -2,7 +2,7 @@
 
 ### A
 
-**API** - [Application programming interface](/docs/development/reference/apis.html).
+**API** - [Application programming interface](/docs/development/apis/index.html).
 
 **Application** - An executable module built out of libraries that acts as a final product.
 
@@ -14,19 +14,17 @@
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
-**Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/development/reference/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
-
-**Arm Mbed uVisor** - A self-contained [software hypervisor](/docs/development/reference/tls.html#uVisor) that creates independent secure domains on ARM Cortex-M3 and M4 micro-controllers.
+**Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/development/apis/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
 ### B
 
 **Bit** - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
 
-**BLE** - [Bluetooth Low Energy](/docs/development/reference/ble.html).
+**BLE** - [Bluetooth Low Energy](/docs/development/apis/ble.html).
 
 **Blinky** - An [example application](/docs/development/tutorials/mbed-os-quick-start.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
-**Block Device** - A [file](/docs/development/reference/contributing-storage.html#block-devices) that represents a device, with data that can be read or written to it in blocks.
+**Block Device** - A [file](/docs/development/porting/porting-storage.html) that represents a device, with data that can be read or written to it in blocks.
 
 **Board** - An Mbed Enabled development board. You can see a [complete list](https://os.mbed.com/platforms/) of Mbed Enabled boards.
 
@@ -42,9 +40,9 @@
 
 ### C
 
-**Callback** - Any [executable code](/docs/development/reference/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
+**Callback** - Any [executable code](/docs/development/apis/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
-**CAN** - [Controller-area network](/docs/development/reference/can.html).
+**CAN** - [Controller-area network](/docs/development/apis/can.html).
 
 **Class** - An extensible program-code-template for creating objects, providing initial values for state and implementations of behavior.
 
@@ -80,7 +78,7 @@
 
 ### I
 
-**I2C** - [Interintegrated Circuit](/docs/development/reference/i2c.html) (short-distance, intraboard communication).
+**I2C** - [Interintegrated Circuit](/docs/development/apis/i2c.html) (short-distance, intraboard communication).
 
 **IDE** - Integrated Development Environment.
 
@@ -124,13 +122,13 @@
 
 **REST** - Representational State Transfer (API).
 
-**RTOS** - [Real-Time Operating System](/docs/development/reference/rtos.html).
+**RTOS** - [Real-Time Operating System](/docs/development/apis/rtos.html).
 
 ### S
 
-**Serial** - A [protocol](/docs/development/reference/serial.html) used in data transmission for the transfer of individual bits of information.
+**Serial** - A [protocol](/docs/development/apis/serial.html) used in data transmission for the transfer of individual bits of information.
 
-**SPI** - [Serial Peripheral Interface](/docs/development/reference/spi.html).
+**SPI** - [Serial Peripheral Interface](/docs/development/apis/spi.html).
 
 **Static Memory** - The allocation of memory at compile time, before the program is executed.
 

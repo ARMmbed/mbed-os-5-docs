@@ -25,7 +25,7 @@ The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-a
   - **Portable** - Due to its support across operating systems, the FAT file system provides access to storage from both the embedded system and your PC.
 
   - **Embedded** - Built on the ChanFS project, the FAT file system is optimized for embedded systems.
-  
+
 - **LocalFileSystem** - The LocalFileSystem is a symbiotic file system that connects to the Mbed board's interface chip if the interface chip has built-in storage. The features available on the LocalFileSystem is dependent on the board's interface chip. **Note:** The LocalFileSystem is only available on the LPC1768 and LPC11U24.
 
 <span class="notes">**Note:** Some file systems may provide a format function for cleanly initializing a file system on an underlying block device or require external tools to set up the file system before the first use.</span>
@@ -88,19 +88,19 @@ Mbed OS has several block device implementations for common forms of storage:
 
 - **SDBlockDevice** - Block device driver for SD cards and eMMC memory chips. SD cards or eMMC chips offer a full FTL layer on top of NAND flash. This makes the storage well-suited for systems that require a about 1GB of memory. Additionally, SD cards are a popular form of portable storage. They are useful if you want to store data that you can access from a PC.
 
-- [**HeapBlockDevice**](https://os.mbed.com/docs/development/reference/heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it for testing applications when a storage device is not available.
+- [**HeapBlockDevice**](heapblockdevice.html) - Block device that simulates storage in RAM using the heap. Do not use the heap block device for storing data persistently because a power loss causes complete loss of data. Instead, use it for testing applications when a storage device is not available.
 
-- **FlashIAPBlockDevice** - Block device adapter for the [FlashIAP driver](/docs/development/reference/flash-iap.html), which provides an in application programming (IAP) interface for the MCU's internal flash memory.
+- **FlashIAPBlockDevice** - Block device adapter for the [FlashIAP driver](flash-iap.html), which provides an in application programming (IAP) interface for the MCU's internal flash memory.
 
 #### Utility block devices
 
 Additionally, Mbed OS contains several utility block devices to give you better control over the allocation of storage.
 
-- [**SlicingBlockDevice**](https://os.mbed.com/docs/development/reference/slicingblockdevice.html) - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
+- [**SlicingBlockDevice**](slicingblockdevice.html) - With the slicing block device, you can partition storage into smaller block devices that you can use independently.
 
-- [**ChainingBlockDevice**](https://os.mbed.com/docs/development/reference/chainingblockdevice.html) - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
+- [**ChainingBlockDevice**](chainingblockdevice.html) - With the chaining block device, you can chain multiple block devices together and extend the usable amount of storage.
 
-- [**MBRBlockDevice**](https://os.mbed.com/docs/development/reference/mbrblockdevice.html) - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
+- [**MBRBlockDevice**](mbrblockdevice.html) - Mbed OS comes with support for storing partitions on disk with a Master Boot Record (MBR). The MBRBlockDevice provides this functionality and supports creating partitions at runtime or using preformatted partitions configured separately from outside the application.
 
 - **ReadOnlyBlockDevice** - With the read-only block device, you can wrap a block device in a read-only layer, ensuring that user of the block device does not modify the storage.
 
@@ -110,6 +110,6 @@ Additionally, Mbed OS contains several utility block devices to give you better 
 
 - **ExhaustibleBlockDevice** - Useful for evaluating how file systems respond to wear, the exhaustible block device simulates wear on another form of storage. You can configure it to expire blocks as necessary.
 
-- [**FlashSimBlockDevice**](https://github.com/ARMmbed/mbed-os-5-docs/blob/new_engine/docs/reference/api/storage/FlashSimBlockDevice.md) - Simulate the behavior of a flash component if the underlying block device doesn't support such behaviour.
+- [**FlashSimBlockDevice**](https://github.com/ARMmbed/mbed-os-5-docs/blob/new_engine/docs/reference/api/storage/FlashSimBlockDevice.md) - Simulate the behavior of a flash component if the underlying block device doesn't support such behavior.
 
 - [**BufferedBlockDevice**](https://github.com/ARMmbed/mbed-os-5-docs/blob/new_engine/docs/reference/api/storage/BufferedBlockDevice.md) - Provides a buffer for the read and program blocks on a block device which reduces the read and program sizes of the underlying block device to 1 B.

@@ -2,7 +2,7 @@
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
-This is the technical reference for callbacks. You should read the [Callbacks](/docs/development/reference/platform.html#callbacks) section of the [Platform Overview](/docs/development/reference/platform.html) first for deeper insight into their use.
+This is the technical reference for callbacks. You should read the [Callbacks](platform.html#callbacks) section of the [Platform Overview](platform.html) first for deeper insight into their use.
 
 ### Callback class reference
 
@@ -19,7 +19,7 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 ### Sonar example
 
-Here is an example that uses everything discussed in the [introduction to callbacks](/docs/development/reference/platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the Callback.
+Here is an example that uses everything discussed in the [introduction to callbacks](platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the Callback.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/)](https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)
 

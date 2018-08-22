@@ -16,7 +16,7 @@ API summary
 
 ### DigitalIn example
 
-To handle an interrupt, see [InterruptIn](/docs/development/reference/interruptin.html).
+To handle an interrupt, see [InterruptIn](interruptin.html).
 
 Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
@@ -24,4 +24,4 @@ Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
 ### Related content
 
-- [InterruptIn](/docs/development/reference/interruptin.html) API reference.
+- [InterruptIn](interruptin.html) API reference.

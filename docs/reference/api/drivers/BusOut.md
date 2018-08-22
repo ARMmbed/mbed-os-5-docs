@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_bus_out.png)<span>BusOut class hierarchy</span></span>
 
-Use the BusOut interface to create a number of [DigitalOut](/docs/development/reference/digitalout.html) pins that you can write as one value. This API is useful for writing multiple outputs at once. You can use this API to write clearer code faster.
+Use the BusOut interface to create a number of [DigitalOut](digitalout.html) pins that you can write as one value. This API is useful for writing multiple outputs at once. You can use this API to write clearer code faster.
 
 You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
@@ -21,4 +21,4 @@ You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
 ### Related content
 
-- [DigitalOut](/docs/development/reference/digitalout.html) API reference.
+- [DigitalOut](digitalout.html) API reference.

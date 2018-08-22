@@ -79,4 +79,4 @@ Registering a status callback that connection state changes trigger depends on w
 
 ### Related content
 
-- [Network socket](/docs/development/reference/network-socket.html) API reference overview.
+- [Network socket](network-socket.html) API reference overview.

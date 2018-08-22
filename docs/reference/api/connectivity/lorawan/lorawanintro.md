@@ -17,7 +17,7 @@ To bring up the Mbed LoRaWAN stack, consider the following progression:
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
-2) A [LoRaRadio](loraradio-api.html) object:
+2) A [LoRaRadio](lorawan-api.html) object:
 
 ```CPP
 // construct a LoRadio object
@@ -178,4 +178,4 @@ Below is the list of error codes and their description.
 You can find the API documentation for the 'LoRaWANInterface' and 'LoRaRadio' classes below:
 
 - [LoRaWANInterface API docs](lorawan.html): The class that provides APIs for LoRaWAN network stack.
-- [LoRaRadio API docs](loraradio.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
+- [LoRaRadio API docs](loraradio-api.html): The class that provides pure virtual APIs to implement a LoRa radio driver.

@@ -8,7 +8,7 @@ NVStore is a lightweight module that stores data by keys in the internal flash f
 
 NVStore uses two Flash areas, active and nonactive. Each area must consist of at least one erasable unit (sector). Data is written to the active area until it becomes full. When it does, garbage collection is invoked. This compacts items from the active area to the nonactive one and switches activity between areas. Each item is kept in an entry containing a header and data, where the header holds the item key, size and CRC.
 
-Unless specifically configured by the user, NVStore selects the last two flash sectors as its areas, with the minimum size of 4KBs. This means that if the sectors are smaller, NVStore uses a few continuous ones for each area. If the automatically selected sectors do not fit your flash configuration, you can override this by setting the addresses and sizes of both areas in `mbed_app.json` for each board. 
+Unless specifically configured by the user, NVStore selects the last two flash sectors as its areas, with the minimum size of 4KBs. This means that if the sectors are smaller, NVStore uses a few continuous ones for each area. If the automatically selected sectors do not fit your flash configuration, you can override this by setting the addresses and sizes of both areas in `mbed_app.json` for each board.
 
 ### NVStore class reference
 
@@ -20,4 +20,4 @@ Unless specifically configured by the user, NVStore selects the last two flash s
 
 ### Related content
 
-- [Storage configuration](configuration-storage.html).
+- [Storage configuration](/docs/development/reference/configuration-storage.html).

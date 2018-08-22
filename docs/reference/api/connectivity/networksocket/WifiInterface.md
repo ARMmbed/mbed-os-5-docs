@@ -26,7 +26,7 @@ To bring up the network interface of an Ethernet-like driver (for example, the O
 1. Call the `connect()` function with an SSID and password for the Wi-Fi network.
     1. Connect the Wi-Fi driver to the Wi-Fi network.
     2. Ensure the network stack acquires the IP address and DNS server address.
-1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/development/reference/network-socket.html).
+1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](network-socket.html).
 
 ### Troubleshooting information
 
@@ -56,7 +56,7 @@ Please note that settings should match the security mode from the access point. 
 
 ### Wi-Fi example
 
-Here is an example of an HTTP client program. The program brings up an ESP8266 as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket. There are multiple [Wi-Fi components](https://os.mbed.com/components/cat/wifi/) that implement the WiFiInterface class. The example below uses the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) and [OdinWiFiInterface](https://github.com/u-blox/ublox-odin-w2-drivers-docs-mbed-5). 
+Here is an example of an HTTP client program. The program brings up an ESP8266 as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket. There are multiple [Wi-Fi components](https://os.mbed.com/components/cat/wifi/) that implement the WiFiInterface class. The example below uses the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) and [OdinWiFiInterface](https://github.com/u-blox/ublox-odin-w2-drivers-docs-mbed-5).
 
 The ESP8266Interface uses AT commands over serial interface to connect to an external Wi-Fi device. The OdinWiFiInterface provides an Ethernet-like driver to the Mbed OS network stack. The network stack uses the driver to connect to Wi-Fi:
 
@@ -66,4 +66,4 @@ The ESP8266Interface uses AT commands over serial interface to connect to an ext
 
 - [Wi-Fi components](https://os.mbed.com/components/cat/wifi/).
 - [Network socket](network-socket.html) API overview.
-- [Wi-Fi architecture](wlan-technology.html).
+- [Wi-Fi architecture](/docs/development/reference/wlan-technology.html).

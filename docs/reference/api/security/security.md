@@ -10,6 +10,5 @@ Security on Arm Mbed OS is divided into the following parts:
 
 For information about working with these modules in Mbed OS context, please refer to the following documents:
 
-- [Connection security through Arm Mbed TLS](/docs/development/reference/tls.html).
+- [Connection security through Arm Mbed TLS](tls.html).
 - Platform Security Architecture - TBD - under development.
-- [Device security through Arm Mbed uVisor](/docs/development/reference/uvisor.html).

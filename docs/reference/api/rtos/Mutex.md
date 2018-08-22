@@ -8,7 +8,7 @@ A Mutex is used to synchronize the execution of threads, for example to protect 
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
 
-<span class="notes">**Note:** Mbed OS uses the [PlatformMutex](/docs/development/reference/platformmutex.html) class instead of the RTOS mutex for all drivers.</span>
+<span class="notes">**Note:** Mbed OS uses the [PlatformMutex](platformmutex.html) class instead of the RTOS mutex for all drivers.</span>
 
 ### Mutex class reference
 
@@ -26,4 +26,4 @@ Use Mutex to protect printf().
 
 ### Related content
 
-- [PlatformMutex](/docs/development/reference/platformmutex.html) API reference.
+- [PlatformMutex](platformmutex.html) API reference.

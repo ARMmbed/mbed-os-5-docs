@@ -30,7 +30,7 @@ Name: lora.appskey
     Description: Set AppSkey (application session key needed for ABP)                                                                
     Defined by: library:lora                                                                                                        
     Value: {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} (set by library:lora)   
-Name: lora.device-address 
+Name: lora.device-address
     Description: Set DevAddr (device address needed for ABP)                                                                                                          
     Defined by: library:lora                                                                                                        
     Value: 0x00000000 (set by library:lora)                                                                                         
@@ -85,4 +85,4 @@ For changing any of these parameters, edit the `mbed_app.json` file in the root 
 
 ### Using APIs from LoRaWANInterface
 
-See the [API reference](https://os.mbed.com/docs/development/reference/lorawan.html) for information about how to use these APIs from the LoRaWANInterface.
+See the [API reference](/docs/development/apis/lorawan.html) for information about how to use these APIs from the LoRaWANInterface.

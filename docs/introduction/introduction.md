@@ -22,7 +22,7 @@ Three principals form the basis of Mbed OS: modular, secure and connected. With 
 
 The Hardware Abstraction Layer (HAL) allows support for the basic and most common parts of a microcontroller, such as timers, analog and digital interfaces. A HAL is the foundation of allowing applications to be written against a common set of application programming interfaces (APIs) and where to start from when adding support for a new target.
 
-With the HAL, we can create new features on feature branches, and silicon Partners can then port them to Mbed Enabled development boards. Please see more information about HAL APIs in our documentation about [contributing targets](/docs/development/reference/porting-targets.html).
+With the HAL, we can create new features on feature branches, and silicon Partners can then port them to Mbed Enabled development boards. Please see more information about HAL APIs in our documentation about [contributing targets](/docs/development/porting/index.html).
 
 Mbed OS has an RTOS core based on the widely used open-source CMSIS-RTOS RTX. Because of this, Mbed OS supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on features, such as threads, semaphores and mutexes.
 
@@ -36,7 +36,7 @@ We implement our security strategy throughout the device life cycle. Mbed OS sec
 
 #### Connected
 
-Mbed OS supports many connectivity options. These include [network sockets](/docs/development/reference/network-socket.html), [Bluetooth](/docs/development/reference/bluetooth.html) and [LoRaWAN](/docs/development/reference/lorawan.html). They also include network interfaces, such as Ethernet, Wi-Fi and 6LoWPAN. Mbed OS is also a Thread-certified component.
+Mbed OS supports many connectivity options. These include [network sockets](/docs/development/apis/network-socket.html), [Bluetooth](/docs/development/apis/bluetooth.html) and [LoRaWAN](/docs/development/apis/lorawan.html). They also include network interfaces, such as Ethernet, Wi-Fi and 6LoWPAN. Mbed OS is also a Thread-certified component.
 
 For each connectivity option, Mbed OS provides API class references, reference material and examples.
 

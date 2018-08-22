@@ -14,11 +14,11 @@ Use the InterruptIn interface to trigger an event when a digital input pin chang
 
 * No printf, malloc or new in ISR: avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are non re-entrant, and their behavior could be corrupted when called from an ISR.
 
-* For `printfs` from interrupt context, use [Event](/docs/development/reference/event.html) instead.
+* For `printfs` from interrupt context, use [Event](event.html) instead.
 
 ### Related
 
-To read an input, see [DigitalIn](/docs/development/reference/digitalin.html).
+To read an input, see [DigitalIn](digitalin.html).
 
 ### InterruptIn hello, world
 
@@ -32,5 +32,5 @@ Try the following example to count rising edges on a pin.
 
 ### Related content
 
-- [Event](/docs/development/reference/event.html) API reference.
-- [DigitalIn](/docs/development/reference/digitalin.html) API reference.
+- [Event](event.html) API reference.
+- [DigitalIn](digitalin.html) API reference.

@@ -38,6 +38,6 @@ You can swap the FAT file system in place with other Mbed OS file systems, which
 
 ### Related content
 
-- [Storage configuration](configuration-storage.html).
+- [Storage configuration](/docs/development/reference/configuration-storage.html).
 - [LittleFileSystem](littlefilesystem.html).
-- [Storage overview](/docs/development/reference/storage.html#declaring-a-file-system).
+- [Storage overview](storage.html#declaring-a-file-system).
