@@ -36,14 +36,17 @@
         "description": "The APIs of Mbed OS: platform, drivers, RTOS, connectivity, security and storage",
         "slug": "apis",
         "type": "markdown",
-        "chapters": [{
+        "category": "apis",
+        "chapters": [
+          {
                 "title": "Full API list",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/api.md"
                 },
-
-                "sub_chapters": [{
+                "sources": []
+              },
+              {
                         "title": "Platform",
                         "intro": {
                             "type": "markdown",
@@ -485,15 +488,12 @@
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/storage/NVStore.md"
                             }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "tags": [
-            "apis"
-        ]
-    },
+                          ]
+                      }],
+                      "tags": [
+                          "apis"
+                      ]
+                  },
     {
         "title": "Reference",
         "description": "The reference manual for Mbed OS: architecture, configuration and contribution details",
