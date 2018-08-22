@@ -1,8 +1,7 @@
 ## API overview
 
-[intro text]
 
-### Platform APIs
+### Platform
 
 [Modules that provide consistent user experience.](platform.html)
 
@@ -35,7 +34,7 @@
 </tbody>
 </table>
 
-### Drivers APIs
+### Drivers
 
 [Analog and digital input and outputs and digital interfaces.](drivers.html)
 
