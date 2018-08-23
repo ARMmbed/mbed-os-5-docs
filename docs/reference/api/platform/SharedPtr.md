@@ -21,7 +21,7 @@ pointer directly with `ptr.get()`.
 
 ### Shared pointer example
 
-```cpp
+```
 #include "platform/SharedPtr.h"
   
 void test() {
