@@ -32,7 +32,7 @@ Due to different use cases between Mbed OS and CMSIS, we modified the source cod
 
 ### Testing
 
-The Mbed OS provides a set of conformance tests for rtos configurations. You can use these tests to validate the correctness of your rtos porting. To run the rtos tests, use the following command:
+Mbed OS provides a set of conformance tests for RTOS configurations. You can use these tests to validate the correctness of your RTOS porting. To run the RTOS tests, use the following command:
 
 ```
 mbed test -t <toolchain> -m <target> -n "tests-mbedmicro-rtos-mbed*"
