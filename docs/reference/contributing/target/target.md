@@ -58,7 +58,7 @@ FLASH            |   flash_api.h
 
 ### Testing
 
-The Mbed OS HAL provides a set of conformance tests for the Mbed OS HAL API. You can use these tests to validate the correctness of your implementation. To run the all of the Mbed OS HAL API tests, use the following command:
+The Mbed OS HAL provides a set of conformance tests for the Mbed OS HAL APIs. You can use these tests to validate the correctness of your implementation. To run the all of the Mbed OS HAL API tests, use the following command:
 
 ```
 mbed test -t <toolchain> -m <target> -n mbed-os-tests-mbed_hal*
