@@ -18,9 +18,9 @@ Traditional software testing is defined into three main levels: unit testing, in
 *-------------------> Amount of tests
 ```
 
-Integration and system testing are performed in an environment where the tests are run with full Mbed OS. Other testing tools for Mbed OS require specific hardware and whole Mbed OS to be built, which means traditional unit testing is not possible.
+Integration and system testing are performed in an environment where the tests are run with full Mbed OS. Other testing tools for Mbed OS require specific embedded hardware and whole Mbed OS to be built, which means traditional unit testing is not possible.
 
-Unit testing takes place in a build environment where each C/C++ class or module is tested in isolation. This means test suites are built into separate test binaries and all access outside is stubbed to remove dependency of any specific hardware or software combination. This allows the testing to be done quickly using native compilers on the build machine.
+Unit testing takes place in a build environment where each C/C++ class or module is tested in isolation. This means test suites are built into separate test binaries and all access outside is stubbed to remove dependency of any specific embedded hardware or software combination. This allows the testing to be done quickly using native compilers on the build machine.
 
 ### Using unit tests
 
