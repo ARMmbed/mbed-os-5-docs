@@ -483,6 +483,14 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.9/docs/reference/api/connectivity/bluetooth/GattClient.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.9/docs/reference/api/connectivity/bluetooth/GattServer.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.9/docs/reference/api/connectivity/bluetooth/SecurityManager.md"
                             },
                             {
