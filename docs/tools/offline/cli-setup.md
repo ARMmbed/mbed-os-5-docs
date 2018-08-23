@@ -25,9 +25,8 @@ For Linux, please [install Mbed CLI manually](installing-manually.html). Advance
     - [Git](https://git-scm.com/) - version 1.9.5 or later.
     - [Mercurial](https://www.mercurial-scm.org/) - version 2.2.2 or later.
 
-- **Command-line compiler or IDE toolchain:** Mbed CLI invokes the [Mbed OS 5](https://github.com/ARMmbed/mbed-os) tools for various features, such as compiling, testing and exporting to industry standard toolchains. To compile your code, you need either a compiler or an IDE:
-    - Compilers: Arm GCC, Arm Compiler 5, IAR.
-    - IDE: Keil uVision, DS-5, IAR Workbench.
+- **Command-line compiler:** Mbed CLI invokes the [Mbed OS 5](https://github.com/ARMmbed/mbed-os) tools for various features, such as compiling, testing and exporting to industry standard toolchains. To compile your code, you need either a compiler:
+    - Compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 and IAR.
 
     <span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may need to also install the i386 architecture package:</span>
 
