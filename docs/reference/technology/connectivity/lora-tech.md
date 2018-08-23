@@ -111,7 +111,7 @@ There are four design components comprising the Arm Mbed LoRaWAN solution that e
 - Mbed LoRa radio driver: constructed by the application and passed down to stack.
 - Mbed LoRaWAN stack, MAC controller layer: controls the operation of the stack.
 - Mbed LoRaWAN stack, PHY layer: computes and provides the regional PHY parameters for processing by MAC controller layer.
-- An `EventQueue` shared between application and the stack for synchronization. It is required that the application constructs an `EventQueue` object and passes it down to stack.
+- An `EventQueue` shared between the application and the stack for synchronization. The application must construct an `EventQueue` object and passes it down to the stack.
 
 <span class="notes">**Note:** LoRaPHY is a stack level protocol layer that handles regional parameters regardless of what radio chip is being used. LoRaRadio is the real instance of a radio driver, controlling the registers and interrupts on the physical chip.</span>
 ##### Mbed LoRa radio driver
