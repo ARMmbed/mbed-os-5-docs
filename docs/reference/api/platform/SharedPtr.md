@@ -7,12 +7,12 @@ It is similar to the `std::shared_ptr` class introduced in C++11. However, this 
 
 Usage: `SharedPtr<Class> ptr(new Class())`
 
-When `ptr` is passed around by value the copy constructor and
-destructor manages the reference count of the raw pointer.
+When `ptr` is passed around by a value, the copy constructor and
+destructor manage the reference count of the raw pointer.
 If the counter reaches zero, `delete` is called on the raw pointer.
 
-To avoid loops, "weak" references should be used by calling the original
-pointer directly through `ptr.get()`.
+To avoid loops, use "weak" references by calling the original
+pointer directly with `ptr.get()`.
 
 
 ### SharedPtr class reference
