@@ -66,8 +66,9 @@ The following steps describe how you can create a new RF driver:
 
 1. Check with an RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
-1. Verify the functionality of your implementation by running the Nanostack RF driver testcase set in mbed OS repository:
-`mbed test --clean --compile --run --icetea -t <toolchain> -m <platform> --test-config MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
+1. Verify the functionality of your implementation by running the Nanostack RF driver testcase set in the Mbed OS repository:
+
+   `mbed test --clean --compile --run --icetea -t <toolchain> -m <platform> --test-config MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
 
 ### Worker thread for Mbed OS
 
