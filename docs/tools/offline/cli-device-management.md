@@ -1,6 +1,6 @@
 ### Updating Devices with Mbed CLI
 
-Mbed CLI includes features that help prepare and ship updates for devices managed through the Device Management Portal. Mbed CLI uses the subcommands starting with `mbed device-management`, `mbed dev-mgmt` or `mbed dm` to manage devices.  As `device-management` is very long to type, the remainder of this document will use the `mbed dm` alias for all device management subcommands. This document walks you through the steps of enabling and using Mbed Device Managment with a project.
+Mbed CLI includes features that help prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html). Mbed CLI uses the subcommands starting with `mbed device-management`, `mbed dev-mgmt` or `mbed dm` to manage devices.  As `device-management` is very long to type, the remainder of this document will use the `mbed dm` alias for all device management subcommands. This document walks you through the steps of enabling and using Mbed Device Managment with a project.
 
 #### Project Setup
 
@@ -15,7 +15,7 @@ $ mbed toolchain GCC_ARM
 Initialize the device management feature of Mbed CLI with the following command:
 
 ```
-$ mbed dm init -d "<company domain name>" -m "<product model identifier>"
+$ mbed dm init -d "<company domain name>" --model-name "<product model identifier>"
 ```
 <span class="notes">**Note:** If you do not want to enter the subject information for your update certificate (country, state, city, organization and so on), add the `-q` flag to the command above.</span>
 
@@ -25,8 +25,8 @@ This command asks for information about your update certificate. When Mbed CLI h
 * A matching private key in `.update-certificates/default.key.pem`.
 * A set of default settings in `.manifest_tool.json`.
 * Mbed Device Management settings in `.mbed_cloud_config.json`, including default settings for:
-    * A unique vendor identifier, based on the domain name supplied to `mbed dm init`.
-    * A unique model identifier, based on the vendor identifier and the model name supplied to `mbed dm init`.
+    * A unique vendor identifier, based on the domain name supplied as the `-d` parameter to `mbed dm init`.
+    * A unique model identifier, based on the vendor identifier and the model name supplied as the `--model-name` to `mbed dm init`.
     * The path of the update certificate and private key.
 * Mbed Device Management update credentials in `update_defalut_resources.c`
 * Mbed Device Management developer credentials in `mbed_cloud_dev_credentials.c`
@@ -53,7 +53,7 @@ This will perform several actions:
 
 #### Multidevice update
 
-If you need to update more than one device, you can use the Mbed Device Management portal to create device filters that can include many devices into an update campaign. First, you need a manifest. After the steps in Project Setup, you can create manifests by:
+To update more than one device, you can use the Mbed Device Management portal to create device filters that include many devices in an update campaign. First, you need a manifest and payload. After the steps in Project Setup, you can create manifests by:
 
 ```
 $ mbed compile
@@ -67,9 +67,9 @@ $ mbed dm update prepare -n <PAYLOAD_NAME> -d <PAYLOAD_DESCRIPTION>\
     --manifest-name <MANIFEST_NAME> --manifest-description <MANIFEST_DESCRIPTION>
 ```
 
-Both methods of creating a manifest use the defaults created in `mbed dm init`. You can override each default using an input file or command-line arguments. See below for more details.
+Both methods of creating a manifest use the defaults created in `mbed dm init`. You can override each default using an input file or command-line arguments.
 
-Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads to Mbed Device Management and you can then create and start an update campaign using the Mbed Cloud portal.
+Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the payload and manifest to Mbed Device Management and you can then create and start an [update campaign](https://cloud.mbed.com/docs/current/updating-firmware/update-campaigns.html) using the Mbed Cloud portal.
 
 ### Advanced usage
 
