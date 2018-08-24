@@ -1,8 +1,10 @@
 ### Updating Devices with Mbed CLI
 
-Mbed CLI includes features that help prepare and ship updates for devices managed through the Device Management Portal. Mbed CLI uses the subcommands starting with `mbed device-management`, `mbed dev-mgmt` or `mbed dm` to manage devices.  As `device-management` is very long to type, the remainder of this document will use the `mbed dm` alias for all device management subcommands.
+Mbed CLI includes features that help prepare and ship updates for devices managed through the Device Management Portal. Mbed CLI uses the subcommands starting with `mbed device-management`, `mbed dev-mgmt` or `mbed dm` to manage devices.  As `device-management` is very long to type, the remainder of this document will use the `mbed dm` alias for all device management subcommands. This document walks you through the steps of enabling and using Mbed Device Managment with a project.
 
-Start by configuring your Mbed Cloud SDK API key, target and toolchain. Obtain the API key from the the Device Management Portal.
+#### Project Setup
+
+Configuring your Mbed Cloud SDK API key, target and toolchain. Obtain the API key from the the Device Management Portal.
 
 ```
 $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
@@ -10,7 +12,7 @@ $ mbed target K64F
 $ mbed toolchain GCC_ARM
 ```
 
-Next, initialize the device management feature of Mbed CLI with the following command:
+Initialize the device management feature of Mbed CLI with the following command:
 
 ```
 $ mbed dm init -d "<company domain name>" -m "<product model identifier>"
@@ -23,9 +25,9 @@ This command asks for information about your update certificate. When Mbed CLI h
 * A matching private key in `.update-certificates/default.key.pem`.
 * A set of default settings in `.manifest_tool.json`.
 * Mbed Device Management settings in `.mbed_cloud_config.json`, including default settings for:
-    * A unique vendor identifier, based on the domain name supplied to `init`.
-    * A unique model identifier, based on the vendor identifier and the model name supplied to `init`.
-    * The path of the certificate and private key.
+    * A unique vendor identifier, based on the domain name supplied to `mbed dm init`.
+    * A unique model identifier, based on the vendor identifier and the model name supplied to `mbed dm init`.
+    * The path of the update certificate and private key.
 * Mbed Device Management update credentials in `update_defalut_resources.c`
 * Mbed Device Management developer credentials in `mbed_cloud_dev_credentials.c`
 
@@ -33,7 +35,7 @@ This command asks for information about your update certificate. When Mbed CLI h
 
 #### Single-device update
 
-Mbed CLI allows development with a device for testing purposes with the `mbed dm update device` command. Once you have run `mbed dm init`, you can perform updates on a single device by:
+Mbed CLI allows development with a device for testing purposes with the `mbed dm update device` command. After following the steps in Project Setup, you can perform firmware updates on a single-device by:
 
 ```
 $ mbed compile
@@ -51,7 +53,7 @@ This will perform several actions:
 
 #### Multidevice update
 
-If you need to update more than one device, you can use the Mbed Device Management portal to create device filters that can include many devices into an update campaign. First, you need a manifest. Once you have run `mbed dm init`, you can create manifests by:
+If you need to update more than one device, you can use the Mbed Device Management portal to create device filters that can include many devices into an update campaign. First, you need a manifest. After the steps in Project Setup, you can create manifests by:
 
 ```
 $ mbed compile
