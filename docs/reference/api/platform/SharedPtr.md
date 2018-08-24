@@ -1,18 +1,14 @@
 ## Shared Pointer
 
-A shared pointer is a "smart" pointer that retains ownership of an object by using
-reference counting accross all smart pointers referencing that object.
+A shared pointer is a "smart" pointer that retains ownership of an object by using reference counting accross all smart pointers referencing that object.
 
 It is similar to the `std::shared_ptr` class introduced in C++11. However, this is not a compatible implementation, as there are no weak pointers, no `make_shared`, no custom deleters, and so on.
 
 Usage: `SharedPtr<Class> ptr(new Class())`
 
-When `ptr` is passed around by a value, the copy constructor and
-destructor manage the reference count of the raw pointer.
-If the counter reaches zero, `delete` is called on the raw pointer.
+When `ptr` is passed around by a value, the copy constructor and destructor manage the reference count of the raw pointer. If the counter reaches zero, `delete` is called on the raw pointer.
 
-To avoid loops, use "weak" references by calling the original
-pointer directly with `ptr.get()`.
+To avoid loops, use "weak" references by calling the original pointer directly with `ptr.get()`.
 
 
 ### SharedPtr class reference
