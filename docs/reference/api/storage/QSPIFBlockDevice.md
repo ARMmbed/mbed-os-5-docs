@@ -4,7 +4,7 @@
 
 The QSPIFBlockDevice is a block device driver for NOR based QSPI flash devices that support SFDP standard. NOR based QSPI flash supports up to 4bits per cycle of instruction, address and data. SFDP based QSPI Flash supports variable bus modes (single, dual, quad), several sector erase size types and multiple regions of sector size types.
 
-SFDP JEDEC standard can be found in: https://www.jedec.org/system/files/docs/JESD216B.pdf
+SFDP JEDEC standard can be found in: https://www.jedec.org/system/files/docs/JESD216C.pdf
 
 QSPIFBlockDevices have the following configurable parameters in its constructors:
 
