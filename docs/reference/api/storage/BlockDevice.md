@@ -8,7 +8,7 @@ The most common types of block-based storage are different forms of flash, but t
 
 #### Block device operations
 
-A block device can perform three operations:
+A block device can perform three operations: 
 
 - Read a region of data from storage.
 - Erase a region of data in storage.
@@ -29,6 +29,66 @@ Block devices are byte addressable but operate in units of "blocks". There are t
 The state of an erased block is **undefined**. The data stored on the block isn't decided until you program the block. This allows the widest range of support for different types of storage.
 
 ![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_erase_block.png)
+
+### BlockDevice get default instance
+Mbed-os configuration allows you to add block devices as components using the targets json file or target overrides in application config file.
+
+When one of the following components is enabled a default block device will be set in the system.
+
+    1. SPIF component.
+    2. DATAFLASH component.
+    3. SD component.
+
+Components can coexist in the system. A device can have SPIF and SD or any combination of block devices enabled but only one default block device.
+
+The list above is in precedence order and show which block device will be the default one if more than one component will be enabled.
+
+#### configuring component:
+Adding "components": ["???"] in targets.json:
+```
+    "K64F": {
+        "supported_form_factors": ["ARDUINO"],
+        "components": ["SD"],
+        "core": "Cortex-M4F",
+        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
+        "extra_labels": ["Freescale", "MCUXpresso_MCUS", "KSDK2_MCUS", "FRDM", "KPSDK_MCUS", "KPSDK_CODE", "MCU_K64F", "Freescale_EMAC"],
+        "is_disk_virtual": true,
+        "macros": ["CPU_MK64FN1M0VMD12", "FSL_RTOS_MBED"],
+        "inherits": ["Target"],
+        "detect_code": ["0240"],
+        "device_has": ["USTICKER", "LPTICKER", "RTC", "CRC", "ANALOGIN", "ANALOGOUT", "EMAC", "I2C", "I2CSLAVE", "INTERRUPTIN", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "SERIAL", "SERIAL_FC", "SERIAL_ASYNCH", "SLEEP", "SPI", "SPI_ASYNCH", "SPISLAVE", "STDIO_MESSAGES", "STORAGE", "TRNG", "FLASH"],
+        "features": ["STORAGE"],
+        "release_versions": ["2", "5"],
+        "device_name": "MK64FN1M0xxx12",
+        "bootloader_supported": true,
+        "overrides": {
+            "network-default-interface-type": "ETHERNET"
+        }
+    },
+```
+Adding "target.components_add": ["???"] in application config file:
+```     
+       "MTB_ADV_WISE_1570": {
+            "target.components_add": ["SPIF"],
+            "target.features_add": ["LWIP"],
+            "platform.default-serial-baud-rate": 9600
+       }
+```
+
+Please note that while a default block device exists an application is not enforced to use it and can create its own one.
+
+### Overriding default block device implementation 
+The get default instance is implemented as MBED_WEAK at features/storage/system_storage/SystemStorage.cpp. That means that it can be overridden by implementing the function without MBED_WEAK and change the default block device for a given application.
+
+```
+#include "HeapBlockDevice.h"
+
+BlockDevice *BlockDevice::get_default_instance()
+{
+    static HeapBlockDevice default_bd(32 *1024);
+    return &default_bd;
+}
+```
 
 ### BlockDevice class reference
 

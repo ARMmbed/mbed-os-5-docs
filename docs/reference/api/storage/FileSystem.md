@@ -6,6 +6,34 @@ The main purpose of a FileSystem is to be instantiated. The FileSystem's constru
 
 The FileSystem's `file` and `dir` functions are protected because you should not use the FileSystem `file` and `dir` functions directly. They are only a convenience for implementors. Instead, the [File](file.html) and [Dir](dir.html) classes provide access to file and directory operations in a C++ class that respects [RAII](/docs/development/introduction/glossary.html#r) and other C++ conventions.
 
+### File system get default instance
+
+Mbed-os configuration allows you to add block devices as components using the targets json file or target overrides in application config file.
+When a component of SPIF, DATAFLASH or SD are configured then the system will support one default file system.
+
+Please note that while a default file system exists an application is not enforced to use it and can create its own one.
+
+The default file system will be created based on the default block device due to performance considerations.
+SPIF and DATAFLASH block devices will support Little file system while SD block device will support FAT file system.
+
+### Overriding default block device implementation
+
+The get default instance is implemented as MBED_WEAK at features/storage/system_storage/SystemStorage.cpp. That means that it can be overridden by implementing the function without MBED_WEAK and change the default block device for a given application.
+
+The following example will override the get default instance of and will always return a FAT file system regardless of the block device type.
+
+```
+#include "FATFileSystem.h"
+
+FileSystem *FileSystem::get_default_instance()
+{
+    static FATFileSystem default_fs("fs" BlockDevice::get_default_instance());
+
+    return &default_fs;
+}
+
+```
+
 ### File system class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html)
