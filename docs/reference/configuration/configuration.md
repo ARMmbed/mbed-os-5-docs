@@ -86,7 +86,7 @@ An application may have one `mbed_app.json` in the root of the application and m
 
 The configuration system allows a user to override any defined configuration parameter with a JSON object named `"target_overrides"`.
 
-The keys in the `"target_overrides"` section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. The values within the `"target_overrides"` section are objects that map configuration parameters, as printed by `mbed compile --conifg`, to new values. See the example `"target_overrides"` section below.
+The keys in the `"target_overrides"` section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. The values within the `"target_overrides"` section are objects that map configuration parameters, as printed by `mbed compile --config`, to new values. See the example `"target_overrides"` section below.
 
 ```JSON
 "target_overrides": {
