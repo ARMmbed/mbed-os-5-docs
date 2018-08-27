@@ -35,7 +35,7 @@ This command asks for information about your update certificate. When Mbed CLI h
 
 #### Single-device update
 
-Mbed CLI provides a subcommand, `mbed dm update device`, for development with a device and for testing purposes. After following the steps in Project Setup, perform firmware updates on a single-device by:
+Mbed CLI provides a subcommand, `mbed dm update device`, for development with a device and for testing purposes. After following the steps in Project Setup, perform firmware updates on a single-device by running:
 
 ```
 $ mbed compile
@@ -58,7 +58,7 @@ This will perform several actions:
 
 #### Multidevice update
 
-To update more than one device, you can use Mbed CLI to generate and upload a manifest and payload and the Mbed Device Management portal to create device filters that include many devices in an update campaign. After the steps in Project Setup, you can create and upload manifests and palyoads by:
+To update more than one device, use Mbed CLI to generate and upload a manifest and payload to the Mbed Device Management portal. Then use the Mbed Device Management portal to create device filters that include many devices in an update campaign. After the steps in Project Setup, you can create and upload manifests and palyoads by running:
 
 ```
 $ mbed compile
