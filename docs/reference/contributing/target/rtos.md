@@ -29,3 +29,11 @@ Due to differences in the Mbed OS and CMSIS directory structure, you can't impor
 ### Modification
 
 Due to different use cases between Mbed OS and CMSIS, we modified the source code. We upstream our changes to the CMSIS repository, but in cases when they aren't compatible with CMSIS requirements, we maintain a small set of changes. We maintain changes as separate commits in `mbed-os`, and SHAs are in the `commit_sha` section of the `cmsis_importer.json` file.
+
+### Testing
+
+Mbed OS provides a set of conformance tests for RTOS configurations. You can use these tests to validate the correctness of your RTOS porting. To run the RTOS tests, use the following command:
+
+```
+mbed test -t <toolchain> -m <target> -n "tests-mbedmicro-rtos-mbed*"
+```
