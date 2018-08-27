@@ -28,10 +28,11 @@ To make sure your platform is ready for the upcoming changes, you need to implem
 The target needs to define the `qspi_s` structure - target specific QSPI object.
 
 The target needs to define the QSPI interface pin names:
+
 - `QSPI_FLASHn_XXX` for pins connected to onboard flash memory.
 - `QSPIn_XXX` for pins routed out to external connector.
 
-`n` - is interface index, typically `1` if single QSPI interface available
+`n` is the interface index, typically `1` if single QSPI interface available.
 
 ```
 QSPIn_IO0
@@ -61,7 +62,7 @@ qspi_status_t qspi_read(qspi_t *obj, const qspi_command_t *command, void *data, 
 
 ```
 
-Use `qspi_write` and `qspi_read` for data transfers. For communicating with a device, use `qspi_command_transfer`.
+Use `qspi_write` and `qspi_read` for data transfers. To communicate with a device, use `qspi_command_transfer`.
 
 To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_has`:
 
@@ -73,7 +74,11 @@ To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_ha
 
 ### Testing
 
-The Mbed OS HAL provides a set of conformance tests for the QSPI interface (**Note: QSPI HAL tests require onboard QSPI flash memory**). You can use these tests to validate the correctness of your implementation. To run the QSPI HAL tests, use the following command:
+The Mbed OS HAL provides a set of conformance tests for the QSPI interface.
+
+<span class="notes">**Note:** QSPI HAL tests require onboard QSPI flash memory.</span>
+
+You can use these tests to validate the correctness of your implementation. To run the QSPI HAL tests, use the following command:
 
 ```
 mbed test -t <toolchain> -m <target> -n tests-mbed_hal-qspi
