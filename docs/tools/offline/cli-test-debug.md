@@ -25,7 +25,7 @@ The arguments to `test` are:
 * `-v` or `--verbose`: for verbose diagnostic output.
 * `-vv` or `--very_verbose`: for very verbose diagnostic output.
 
-Invoke `mbed test`:
+To invoke the `mbed test`:
 
 ```
 $ mbed test -m K64F -t GCC_ARM
