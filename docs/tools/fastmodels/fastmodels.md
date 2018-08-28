@@ -11,6 +11,7 @@ For more details on Fast Models and FVPs, please referencing [Arm Fast Models](h
 
 ## Mbed OS Supported Fast Model FVPs
 Mbed OS is enabled working with following FVPs Cortex-M family with MPS2 platforms:
+
 Fast Models Platforms | Target name in Mbed OS
 ---|---
 FVP_MPS2_Cortex-M0 | FVP_MPS2_M0
