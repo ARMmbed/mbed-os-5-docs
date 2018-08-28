@@ -8,8 +8,6 @@ Usage: `SharedPtr<Class> ptr(new Class())`
 
 When `ptr` is passed around by a value, the copy constructor and destructor manage the reference count of the raw pointer. If the counter reaches zero, `delete` is called on the raw pointer.
 
-To avoid loops, use "weak" references by calling the original pointer directly with `ptr.get()`.
-
 
 ### SharedPtr class reference
 
