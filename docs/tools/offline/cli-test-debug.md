@@ -86,7 +86,7 @@ Test Case:
     Path: .\TESTS\functional\test3
 ```
 
-And in case of icetea:
+And in case of Icetea:
 ```
 $ mbed test -m K64F -t GCC_ARM --icetea --compile-list
 Available icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
@@ -124,7 +124,7 @@ mbedgt: available tests for built 'K64F-ARM', location '.\build\tests\K64F\ARM'
         test 'TESTS-functional-test3'
 ```
 
-In case of icetea:
+In case of Icetea:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --icetea --run-list
@@ -137,7 +137,7 @@ Available icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
 
 ### Compiling and running tests
 
-You can specify to only **build** the tests by using the `--compile` option:
+You can specify that the tests only **build** by using the `--compile` option:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --compile
