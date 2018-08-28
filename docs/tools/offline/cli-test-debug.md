@@ -2,11 +2,11 @@
 
 Use the `mbed test` command to compile and run tests.
 
-There are two testing frameworks: Greentea and Icetea. Greentea provides tests designed for driver porting and target verification. Icetea provides and manages tests for multiple devices under the test (DUTs) at the same time. For example, you can test the network setup for a server and multiple clients, and simultaneously control them from the test environment.
+There are two testing frameworks: Greentea and Icetea. Greentea provides tests designed for driver porting and target verification. Icetea provides and manages tests for multiple devices under the test (DUTs) at the same time. For example, you can test the network setup for a server and multiple clients, simultaneously controlling them from the test environment.
 
 The arguments to `test` are:
-* `-m <MCU>` to select a target for the compilation. If `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
-* `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above), where `toolchain` can be either `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
+* `-m <MCU>`: to select a target for the compilation. If the `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
+* `-t <TOOLCHAIN>`: to select a toolchain from those defined in `mbed_settings.py` above, where `toolchain` can either be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
 * `--compile-list` to list all the tests that can be built.
 * `--run-list` to list all the tests that can be run (they must be built first).
 * `--compile` to only compile the tests.
