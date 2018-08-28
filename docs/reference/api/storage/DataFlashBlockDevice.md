@@ -1,21 +1,10 @@
 # DataFlash block device
 
-Block device driver for I2C based EEPROM devices such as the Adesto AT45DB
-series of devices.
+DataFlashBlockDevice is a block device driver for I2C-based EEPROM devices, such as the Adesto AT45DB series of devices.
 
-DataFlash is a memory protocol that combines flash with SRAM buffers for a
-simple programming interface. DataFlash supports byte-sized read and writes,
-with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash
-provides erase sizes with and extra 16 bytes for error correction codes (ECC)
-so that a flash translation layer (FTL) may still present 512 byte erase sizes.
+DataFlash is a memory protocol that combines flash with SRAM buffers for a programming interface. DataFlash supports byte-sized read and writes, with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash provides erase sizes with an extra 16 bytes for error correction codes (ECC), so a flash translation layer (FTL) may still present 512 byte erase sizes.
 
-The DataFlashBlockDevice can be configured to force the underlying device
-to use either the binary size (ie 512 bytes) or the raw DataFlash size
-(ie 528 bytes).
-
-More info on DataFlash can be found on wikipedia:
-https://en.wikipedia.org/wiki/DataFlash
-
+You can configure the DataFlashBlockDevice to force the underlying device to use either the binary size (in other words, 512 bytes) or the raw DataFlash size (in other words, 528 bytes).
 
 ### DataFlashBlockDevice class reference
 
@@ -58,4 +47,3 @@ int main() {
     dataflash.deinit();
 }
 ```
-
