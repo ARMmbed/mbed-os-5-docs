@@ -7,7 +7,7 @@ Mbed OS provides two entry points for developers to hook into:
 - `main(void)` - Default entry point. All the standard application code goes here.
 - `mbed_main(void)` - Executed directly before `main`. The user can define this.
 
-When execution reaches the entry points, a user can expect a fully initialized system that is ready to execute application code. The Mbed OS boot sequence consists of four phases, target setup, toolchain setup, starting the RTOS and starting the Mbed application. These phases can be seen below:
+When execution reaches the entry points, a user can expect a fully initialized system that is ready to execute application code. The Mbed OS boot sequence consists of four phases: target setup, toolchain setup, starting the RTOS and starting the Mbed application. These phases can be seen below:
 
 1. Setup target
      - Configure clocks
