@@ -149,13 +149,13 @@ In case of icetea only the test applications are built
 $ mbed test -m K64F -t GCC_ARM --compile --icetea
 ```
 
-You can specify to only **run** the tests by using the `--run` option:
+You can specify that the tests only **run** by using the `--run` option:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --run
 ```
 
-If you don't specify any of these, `mbed test` will first compile all available tests and then run them.
+If you don't specify any of these, then `mbed test` will first compile all available tests, and then run them.
 
 ### Limiting the test scope
 
