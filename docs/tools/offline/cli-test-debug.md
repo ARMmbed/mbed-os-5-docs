@@ -7,23 +7,23 @@ There are two testing frameworks: Greentea and Icetea. Greentea provides tests d
 The arguments to `test` are:
 * `-m <MCU>`: to select a target for the compilation. If the `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
 * `-t <TOOLCHAIN>`: to select a toolchain from those defined in `mbed_settings.py` above, where `toolchain` can either be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
-* `--compile-list` to list all the tests that can be built.
-* `--run-list` to list all the tests that can be run (they must be built first).
-* `--compile` to only compile the tests.
-* `--run` to only run the tests.
-* `-n <TESTS_BY_NAME>` to limit the tests built or run to a comma separated list (ex. test1,test2,test3).
-* `--source <SOURCE>` to select the source directory. Default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
-* `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program.
-* `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
-* `-c or --clean` to clean the build directory before compiling.
-* `--test-spec <TEST_SPEC>` to set the path for the test spec file used when building and running tests (the default path is the build directory).
-* `--build-data <BUILD_DATA>` Dump build_data to this file
-* `--app-config <APP_CONFIG>` Path of an app configuration file (Default is to look for 'mbed_app.json')
-* `--test-config <TEST_CONFIG>` Path or mbed OS keyword of a test configuration file. Example: ethernet, odin_wifi, or path/to/config.json
-* `--greentea` Run Greentea tests (as default run only greentea tests)
-* `--icetea` Run Icetea tests. If used without --greentea flag then run only icetea tests.
-* `-v` or `--verbose` for verbose diagnostic output.
-* `-vv` or `--very_verbose` for very verbose diagnostic output.
+* `--compile-list`: to list all the tests that can be built.
+* `--run-list`: to list all the tests that can be run, after they have been built.
+* `--compile`: to only compile the tests.
+* `--run`: to only run the tests.
+* `-n <TESTS_BY_NAME>`: to limit the tests built or run to a comma separated list, for example, test1, test2, test3.
+* `--source <SOURCE>`: to select the source directory. The default is `.` for the the current directory. You can specify multiple source locations, even outside the program tree.
+* `--build <BUILD>`: to select the build directory. The default is `BUILD/` inside your program.
+* `--profile <PATH_TO_BUILD_PROFILE>`: to select a path to a build profile configuration file, for example, `mbed-os/tools/profiles/debug.json`.
+* `-c or --clean`: to clean the build directory before compiling.
+* `--test-spec <TEST_SPEC>`: to set the path for the test specification file used when building and running tests. The default path is the build directory.
+* `--build-data <BUILD_DATA>`: dumps build_data to this file.
+* `--app-config <APP_CONFIG>`: the path of an app configuration file. The default is to look for 'mbed_app.json'.
+* `--test-config <TEST_CONFIG>`: the path or mbed OS keyword of a test configuration file, for example, ethernet, odin_wifi, or path/to/config.json.
+* `--greentea`: to run Greentea tests. As a default, it only runs greentea tests.
+* `--icetea`: to run Icetea tests. If used without the `--greentea` flag, then it will only run icetea tests.
+* `-v` or `--verbose`: for verbose diagnostic output.
+* `-vv` or `--very_verbose`: for very verbose diagnostic output.
 
 Invoke `mbed test`:
 
