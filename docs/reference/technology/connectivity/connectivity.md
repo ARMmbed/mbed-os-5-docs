@@ -43,3 +43,11 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html)
 [LoRaWAN](http://lora-alliance.org) is a long range wide-area network technology that combines long range with low power consumption. LoRaWAN is not IP based.
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/development/tutorials/LoRa-tutorial.html) describe LoRA networking.
+
+### NFC
+
+<span class="images">![](../../api/connectivity/nfc/n_mark.png)<span>NFC</span></span>
+
+Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content, Bluetooth connection initiation/out-of-band pairing.
+
+To learn how to use NFC with Mbed OS, please refer to the [NFC](/docs/development/apis/nfc.html) user API reference.
