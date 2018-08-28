@@ -16,10 +16,10 @@ The Mbed OS port of Nanostack consists of a few helper modules that provide an e
     - Security settings.
     - Channel configuration.
     - Connection and reconnection logic.
-- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
+- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
     - An internal event handler is initialized when the stack starts.
     - The event handler is running in its own thread. Not visible for users.
-- [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface) class implements the network stack abstraction for the socket layer.
+- [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-interface) class implements the network stack abstraction for the socket layer.
     - Initializes the RF driver. See [Providing RF driver](#providing-rf-driver-for-mbed-os-applications).
 
 In Mbed OS, Socket API hides the differences between the networking stacks. Users will only use one of its high level APIs:
@@ -42,7 +42,7 @@ For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterface
 
 Applications use only `LoWPANNDInterface` or `ThreadInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
 
-See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
+See [NanostackRfPhy](https://os.mbed.com/docs/latest/mbed-os-api-doxy/class_nanostack_rf_phy.html) for an up-to-date header file and API.
 
 ### Device Driver API
 

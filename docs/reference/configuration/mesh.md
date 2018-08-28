@@ -23,7 +23,6 @@ An example of the configuration file:
 {
     "target_overrides": {
         "*": {
-            "target.features_add": ["NANOSTACK", "COMMON_PAL"],
             "nanostack.configuration": "lowpan_router",
             "mbed-mesh-api.6lowpan-nd-device-type": "NET_6LOWPAN_ROUTER",
             "mbed-mesh-api.6lowpan-nd-channel": 12,
