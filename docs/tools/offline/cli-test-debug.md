@@ -3,8 +3,7 @@
 Use the `mbed test` command to compile and run tests.
 
 There are two testing frameworks, Greentea and Icetea. Greentea offers tests designed for driver porting and target verification.
-Icetea offers and manages tests that can contain multiple devices under test (DUTs) at the same time. In example you can test a network setup with a server and multiple
-clients and control them at the same time from the test environment.
+Icetea offers and manages tests that can contain multiple devices under test (DUTs) at the same time. In example you can test a network setup with a server and multiple clients and control them at the same time from the test environment.
 
 The arguments to `test` are:
 * `-m <MCU>` to select a target for the compilation. If `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
@@ -145,7 +144,7 @@ You can specify to only **build** the tests by using the `--compile` option:
 $ mbed test -m K64F -t GCC_ARM --compile
 ```
 
-In case of icetea the tests itself is not build but the tests requiring application is build
+In case of icetea only the test applications are built
 
 ```
 $ mbed test -m K64F -t GCC_ARM --compile --icetea
