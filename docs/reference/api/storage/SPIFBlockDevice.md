@@ -1,13 +1,10 @@
-# SPI Flash block device
+## SPI Flash block device
 
-Block device for NOR based SPI flash devices that support SFDP.
+This API is a block device for NOR-based SPI flash devices that support SFDP.
 
-NOR based SPI flash supports byte-sized read and writes, with an erase size of around 4kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
+NOR-based SPI flash supports byte-sized read and writes, with an erase size of around 4 kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
-More info on NOR flash can be found on wikipedia:
-https://en.wikipedia.org/wiki/Flash_memory#NOR_memories
-
-### SPIFBlockDevive class reference
+### SPIFBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>)
 
@@ -45,4 +42,3 @@ int main() {
     spif.deinit();
 }
 ```
-
