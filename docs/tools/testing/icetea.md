@@ -13,8 +13,8 @@ The interface between the test framework and a `DUT` might be,
 for example, UART or stdio.
 
 More detailed documentation on the tool is available
-[here in rst format](https://github.com/ARMmbed/icetea/tree/master/doc-source)
-and [here in markdown format](https://github.com/ARMmbed/icetea/tree/master/doc).
+[in rst format](https://github.com/ARMmbed/icetea/tree/master/doc-source)
+and [in markdown format](https://github.com/ARMmbed/icetea/tree/master/doc).
 
 ### Prerequisites
 Icetea supports Linux (Ubuntu preferred), Windows and OS X. Our main target is Linux.
