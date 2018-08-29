@@ -5,7 +5,7 @@
 
 [Modules that provide consistent user experience.](platform.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="wait.html">Wait</a></td>
@@ -38,7 +38,7 @@
 
 [Analog and digital input and outputs and digital interfaces.](drivers.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="analogin.html">AnalogIn</a></td>
@@ -91,7 +91,7 @@
 
 [Handling tasks and events in Mbed OS.](rtos.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="thread.html">Thread</a></td>
@@ -118,7 +118,7 @@
 
 [Network socket API for TCP/IP.](network-socket.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="socket.html">Socket</a></td>
@@ -137,7 +137,7 @@
 
 [Network interfaces, Ethernet, Wifi, Cellular & Mesh](network-interfaces.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="ethernet.html">Ethernet</a></td>
@@ -156,7 +156,7 @@
 
 [Bluetooth Low Energy](bluetooth.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="ble.html">BLE</a></td>
@@ -182,7 +182,7 @@
 
 [Working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.](security.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="tls.html">TLS</a></td>
@@ -197,7 +197,7 @@
 
 [Working with the file system.](storage.html)
 
-<table>
+<table bgcolor="#00C1DE">
 <tbody>
 <tr>
 <td><a href="filesystem.html">FileSystem</a></td>
