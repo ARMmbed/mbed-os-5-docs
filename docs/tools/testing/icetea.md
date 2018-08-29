@@ -79,7 +79,7 @@ To print Icetea version:
 
 #### Typical use
 
-All of the commands described below might also need other options,
+All of the commands described below might also need other command line options,
 depending on the test case.
 
 **Running test cases using the tc argument**
