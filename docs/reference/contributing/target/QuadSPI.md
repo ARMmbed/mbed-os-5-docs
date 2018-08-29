@@ -76,7 +76,7 @@ To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_ha
 
 The Mbed OS HAL provides a set of conformance tests for the QSPI interface.
 
-<span class="notes">**Note:** QSPI HAL tests require onboard QSPI flash memory.</span>
+<span class="notes">**Note:** QSPI HAL tests require QSPI Flash pins to be defined.</span>
 
 You can use these tests to validate the correctness of your implementation. To run the QSPI HAL tests, use the following command:
 
