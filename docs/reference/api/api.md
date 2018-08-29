@@ -8,28 +8,28 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="wait.html">Wait</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="criticalsectionlock.html">CriticalSectionLock</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="memory-tracing.html">Memory tracing</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="platformmutex.html">PlatformMutex</a></font></td>
+<td><a href="wait.html">Wait</a></td>
+<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
+<td><a href="memory-tracing.html">Memory tracing</a></td>
+<td><a href="platformmutex.html">PlatformMutex</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="callback.html">CallBack</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="time.html">Time</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="error-handling.html">Error handling</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="circularbuffer.html">CircularBuffer</a></font></td>
+<td><a href="callback.html">CallBack</a></td>
+<td><a href="time.html">Time</a></td>
+<td><a href="error-handling.html">Error handling</a></td>
+<td><a href="circularbuffer.html">CircularBuffer</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="deepsleeplock.html">DeepSleepLock</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="rtc.html">RTC</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="assert.html">Assert</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="atcmdparser.html">ATCmdParser</a></font></td>
+<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
+<td><a href="rtc.html">RTC</a></td>
+<td><a href="assert.html">Assert</a></td>
+<td><a href="atcmdparser.html">ATCmdParser</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="power-management.html">Power management</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="debug.html">Debug</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="noncopyable.html">NonCopyable</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="mbed-statistics.html">Mbed statistics</a></font></td>
+<td><a href="power-management.html">Power management</a></td>
+<td><a href="debug.html">Debug</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 </tbody>
 </table>
@@ -41,48 +41,48 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="analogin.html">AnalogIn</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="portin.html">PortIn</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="lowpowertimeout.html">LowPowerTimeout</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="i2cslave.html">I2CSlave</a></font></td>
+<td><a href="analogin.html">AnalogIn</a></td>
+<td><a href="portin.html">PortIn</a></td>
+<td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
+<td><a href="i2cslave.html">I2CSlave</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="analogout.html">AnalogOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="portout.html">PortOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="lowpowertimer.html">LowPowerTimer</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="debug.html">CAN</a></font></td>
+<td><a href="analogout.html">AnalogOut</a></td>
+<td><a href="portout.html">PortOut</a></td>
+<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
+<td><a href="debug.html">CAN</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="digitalin.html">DigitalIn</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="portinout.html">PortInOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="flash-iap.html">Flash IAP</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="mbedcrc.html">MbedCRC</a></font></td>
+<td><a href="digitalin.html">DigitalIn</a></td>
+<td><a href="portinout.html">PortInOut</a></td>
+<td><a href="flash-iap.html">Flash IAP</a></td>
+<td><a href="mbedcrc.html">MbedCRC</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="digitalout.html">DigitalOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="pwmout.html">PwmOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="rawserial.html">RawSerial</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="devicekey.html">DeviceKey</a></font></td>
+<td><a href="digitalout.html">DigitalOut</a></td>
+<td><a href="pwmout.html">PwmOut</a></td>
+<td><a href="rawserial.html">RawSerial</a></td>
+<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="digitalinout.html">DigitalInOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="interruptin.html">InterruptIn</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="serial.html">Serial</a></font></td>
+<td><a href="digitalinout.html">DigitalInOut</a></td>
+<td><a href="interruptin.html">InterruptIn</a></td>
+<td><a href="serial.html">Serial</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="busin.html">BusIn</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="timeout.html">Timeout</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="spi.html">SPI</a></font></td>
+<td><a href="busin.html">BusIn</a></td>
+<td><a href="timeout.html">Timeout</a></td>
+<td><a href="spi.html">SPI</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="busout.html">BusOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="timer.html">Timer</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="spislave.html">SPISlave</a></font></td>
+<td><a href="busout.html">BusOut</a></td>
+<td><a href="timer.html">Timer</a></td>
+<td><a href="spislave.html">SPISlave</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="businout.html">BusInOut</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="lowpowerticker.html">LowPowerTicker</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="i2c.html">I2C</a></font></td>
+<td><a href="businout.html">BusInOut</a></td>
+<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
+<td><a href="i2c.html">I2C</a></td>
 </tr>
 </tbody>
 </table>
@@ -94,22 +94,22 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="thread.html">Thread</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="queue.html">Queue</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="mail.html">Mail</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="event.html">Event</a></font></td>
+<td><a href="thread.html">Thread</a></td>
+<td><a href="queue.html">Queue</a></td>
+<td><a href="mail.html">Mail</a></td>
+<td><a href="event.html">Event</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="mutex.html">Mutex</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="eventqueue.html">EventQueue</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="rtostimer.html">RtosTimer</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="conditionvariable.html">ConditionVariable</a></font></td>
+<td><a href="mutex.html">Mutex</a></td>
+<td><a href="eventqueue.html">EventQueue</a></td>
+<td><a href="rtostimer.html">RtosTimer</a></td>
+<td><a href="conditionvariable.html">ConditionVariable</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="semaphore.html">Semaphore</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="memorypool.html">MemoryPool</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="eventflags.html">EventFlags</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="kernel-interface-functions.html">Kernel interface functions</a></font></td>
+<td><a href="semaphore.html">Semaphore</a></td>
+<td><a href="memorypool.html">MemoryPool</a></td>
+<td><a href="eventflags.html">EventFlags</a></td>
+<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
 </tr>
 </tbody>
 </table>
@@ -121,14 +121,14 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="socket.html">Socket</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="socketaddress.html">SocketAddress</a></font></td>
+<td><a href="socket.html">Socket</a></td>
+<td><a href="socketaddress.html">SocketAddress</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="udpsocket.html">UDPSocket</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="dns-resolver.html">DNS Resolver</a></font></td>
+<td><a href="udpsocket.html">UDPSocket</a></td>
+<td><a href="dns-resolver.html">DNS Resolver</a></td>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="tcpsocket.html">TCPSocket</a></font></td>
+<td><a href="tcpsocket.html">TCPSocket</a></td>
 </tr>
 </tbody>
 </table>
@@ -140,14 +140,14 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="ethernet.html">Ethernet</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="mesh-api.html">6LoWPAN Mesh</a></font></td>
+<td><a href="ethernet.html">Ethernet</a></td>
+<td><a href="mesh-api.html">6LoWPAN Mesh</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="wi-fi.html">Wi-Fi</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="network-status.html">Network status</a></font></td>
+<td><a href="wi-fi.html">Wi-Fi</a></td>
+<td><a href="network-status.html">Network status</a></td>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="cellular-api.html">Cellular</a></font></td>
+<td><a href="cellular-api.html">Cellular</a></td>
 </tr>
 </tbody>
 </table>
@@ -159,17 +159,17 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="ble.html">BLE</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="gattserver.html">GattServer</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="heartrateservice.html">HeartRateService</a></font></td>
+<td><a href="ble.html">BLE</a></td>
+<td><a href="gattserver.html">GattServer</a></td>
+<td><a href="heartrateservice.html">HeartRateService</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="gap.html">GAP</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="securitymanager.html">SecurityManager</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="ibeacon.html">iBeacon</a></font></td>
+<td><a href="gap.html">GAP</a></td>
+<td>SecurityManager</a></td>
+<td><a href="ibeacon.html">iBeacon</a></td>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="gattclient.html">GattClient</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="batteryservice.html">BatteryService</a></font></td>
+<td><a href="gattclient.html">GattClient</a></td>
+<td><a href="batteryservice.html">BatteryService</a></td>
 </tr>
 </tbody>
 </table>
@@ -185,10 +185,10 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="tls.html">TLS</a></font></td>
+<td><a href="tls.html">TLS</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="uvisor.html">uVisor</a></font></td>
+<td><a href="uvisor.html">uVisor</a></td>
 </tr>
 </tbody>
 </table>
@@ -200,26 +200,26 @@
 <table>
 <tbody>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="filesystem.html">FileSystem</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="fatfilesystem.html">FATFileSystem</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="chainingblockdevice.html">ChainingBlockDevice</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></font></td>
+<td><a href="filesystem.html">FileSystem</a></td>
+<td><a href="fatfilesystem.html">FATFileSystem</a></td>
+<td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
+<td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="dir.html">Dir</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="blockdevice.html">BlockDevice</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="slicingblockdevice.html">SlicingBlockDevice</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="nvstore.html">NVStore</a></font></td>
+<td><a href="dir.html">Dir</a></td>
+<td><a href="blockdevice.html">BlockDevice</a></td>
+<td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
+<td><a href="nvstore.html">NVStore</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="file.html">File</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="heapblockdevice.html">HeapBlockDevice</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="profilingblockdevice.html">ProfilingBlockDevice</a></font></td>
+<td><a href="file.html">File</a></td>
+<td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
+<td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
 </tr>
 <tr>
-<td bgcolor="#00C1DE"><font color="white"><a href="littlefilesystem.html">LittleFileSystem</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="mbrblockdevice.html">MBRBlockDevice</a></font></td>
-<td bgcolor="#00C1DE"><font color="white"><a href="bufferedblockdevice.html">BufferedBlockDevice</a></font></td>
+<td><a href="littlefilesystem.html">LittleFileSystem</a></td>
+<td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
+<td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
 </tr>
 </font>
 </tbody>
