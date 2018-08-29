@@ -185,4 +185,4 @@ class Testcase(Bench):
 ```
 
 ### License
-See the [license](https://github.com/ARMmbed/icetea/blob/master/LICENSE) agreement.
+See the [license agreement](https://github.com/ARMmbed/icetea/blob/master/LICENSE).
