@@ -74,7 +74,7 @@ Once you've copied all of the test's source files to your project root, export y
 mbed export -i <IDE name>
 ```
 
-You can find your exported project in `projectfiles/<IDE>_<target>`.
+You can find your exported project in the root project directory.
 
 #### Running a test while debugging
 
