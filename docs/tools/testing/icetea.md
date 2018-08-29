@@ -3,8 +3,8 @@
 Icetea is an automated testing framework for Mbed development.
 It automates the process of flashing Mbed boards, running tests
 and accumulating test results into reports.
-Developers use it for local development as well as for
-automation in a Continuous Integration Environment.
+Developers use it for local development, as well as for
+automation in a Continuous Integration environment.
 
 When testing [`Mbed OS`](https://www.mbed.com/en/platform/mbed-os/)
 Icetea allows you to execute commands remotely via
