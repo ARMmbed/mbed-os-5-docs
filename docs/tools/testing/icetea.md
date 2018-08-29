@@ -6,10 +6,10 @@ and accumulating test results into reports.
 Developers use it for local development, as well as for
 automation in a Continuous Integration environment.
 
-When testing [`Mbed OS`](https://www.mbed.com/en/platform/mbed-os/),
+When testing [Mbed OS](https://www.mbed.com/en/platform/mbed-os/),
 Icetea allows you to execute commands remotely by using
-the command line interface (`CLI`) in a device under test (`DUT`).
-The interface between the test framework and a `DUT` might be,
+the command line interface (CLI) in a device under test (DUT).
+The interface between the test framework and a DUT might be,
 for example, UART or stdio.
 
 More detailed documentation on the tool is available
@@ -18,6 +18,9 @@ and [in markdown format](https://github.com/ARMmbed/icetea/tree/master/doc).
 
 ### Prerequisites
 Icetea supports Linux (Ubuntu preferred), Windows and OS X. Our main target is Linux.
+
+You will need `pip` to install Icetea.
+
 We support both Python 2.7 and 3.5, or later. Some OS specific prerequisites are listed below:
 
 * Linux
@@ -48,11 +51,8 @@ We support both Python 2.7 and 3.5, or later. Some OS specific prerequisites are
 
 #### Optional
 
-* If you wish to decorate your console log with all kinds of colors,
-install the coloredlogs module by using pip: `pip install coloredlogs`
-    * There have been issues with coloredlogs installation on Windows.
-     We might switch to a different module at some point, to enable
-     colored logging on Windows as well.
+* If you wish to decorate your console log with colors, install the `coloredlogs` module by using pip: `pip install coloredlogs`
+    * There have been issues with coloredlogs installation on Windows. There are no alternative solutions for this at the moment.
 
 ### Installation
 
