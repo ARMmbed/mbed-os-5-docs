@@ -87,7 +87,7 @@ To run all existing test cases from the `examples` folder:
 
 **Running an example test case with hardware**
 
-In this example, we assume that a compatible board has been connected
+In this example, we assume that you have connected a compatible board
 to the computer and that an application binary for the board is available.
 The referred test case is available in [the Icetea GitHub repository](https://github.com/ARMmbed/icetea/blob/master/examples/test_cmdline.py).
 
