@@ -199,6 +199,7 @@
 
 <table bgcolor="#00C1DE">
 <tbody>
+<font color="white">
 <tr>
 <td><a href="filesystem.html">FileSystem</a></td>
 <td><a href="fatfilesystem.html">FATFileSystem</a></td>
@@ -221,5 +222,6 @@
 <td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
 <td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
 </tr>
+</font>
 </tbody>
 </table>
