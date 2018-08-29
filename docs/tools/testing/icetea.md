@@ -99,7 +99,7 @@ The referred test case is available in [the Icetea github repository](https://gi
 
 **Using metadata filters**
 
-To run all test cases with testtype regression in the metadata:
+To run all test cases with `testtype` regression in the metadata:
 
 `> icetea --testtype regression --tcdir <test case search path>`
 
