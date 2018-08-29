@@ -6,10 +6,10 @@ and accumulating test results into reports.
 Developers use it for local development, as well as for
 automation in a Continuous Integration environment.
 
-When testing [`Mbed OS`](https://www.mbed.com/en/platform/mbed-os/),
+When testing [Mbed OS](https://www.mbed.com/en/platform/mbed-os/),
 Icetea allows you to execute commands remotely by using
-the command line interface (`CLI`) in a device under test (`DUT`).
-The interface between the test framework and a `DUT` might be,
+the command line interface (CLI) in a device under test (DUT).
+The interface between the test framework and a DUT might be,
 for example, UART or stdio.
 
 More detailed documentation on the tool is available
@@ -18,12 +18,16 @@ and [in markdown format](https://github.com/ARMmbed/icetea/tree/master/doc).
 
 ### Prerequisites
 Icetea supports Linux (Ubuntu preferred), Windows and OS X. Our main target is Linux.
-We support both Python 2.7 and 3.5, or later. Some OS specific prerequisites are listed below:
+We support both Python 2.7 and 3.5, or later.
+
+To install Icetea, you need to have pip installed on your system.
+
+Some OS specific prerequisites are listed below:
 
 * Linux
-    * python-dev and python-lxml
+    * `python-dev` and `python-lxml`
         `sudo apt-get install python-dev python-lxml`
-    * In order to run test cases with hardware in Linux, without sudo rights:
+    * In order to run test cases with hardware in Linux, without superuser rights:
         ```
         sudo usermod -a -G dialout username
         Log out & log in back to Linux
@@ -37,7 +41,7 @@ We support both Python 2.7 and 3.5, or later. Some OS specific prerequisites are
         `STATIC_DEPS=true sudo pip install lxml`
 
 * Windows
-    * python-lxml installation is problematic on Windows, since
+    * `python-lxml` installation is problematic on Windows, since
     it usually requires build tools. It can, however, be installed
     from pre-built binaries.
         * Search the internet for a binary for you system.
@@ -48,19 +52,20 @@ We support both Python 2.7 and 3.5, or later. Some OS specific prerequisites are
 
 #### Optional
 
-* If you wish to decorate your console log with all kinds of colors,
-install the coloredlogs module by using pip: `pip install coloredlogs`
-    * There have been issues with coloredlogs installation on Windows.
-     We might switch to a different module at some point, to enable
-     colored logging on Windows as well.
+* If you wish to decorate your console log with colors, install the `coloredlogs` module using pip: `pip install coloredlogs`
+    * There have been issues with `coloredlogs` installation on Windows. Currently there is no replacement available.
 
 ### Installation
 
-`> pip install icetea`
+`pip install icetea`
+
+Installation can also be done using setup.py if you have cloned the repository:
+
+`python setup.py install`
 
 ### Usage
 
-To print the help page:
+To display the help page:
 
 `icetea --help`
 
@@ -87,9 +92,8 @@ To run all existing test cases from the `examples` folder:
 
 **Running an example test case with hardware**
 
-In this example, we assume that a compatible board has been connected
-to the computer and an application binary for the board is available.
-The referred test case is available in [the icetea github repository](https://github.com/ARMmbed/icetea/blob/master/examples/test_cmdline.py).
+In this example, we assume that you have connected a compatible board to your computer.
+The referred test case is available in [the Icetea github repository](https://github.com/ARMmbed/icetea/blob/master/examples/test_cmdline.py).
 
 `> icetea --tc test_cmdline --tcdir examples --type hardware --bin <path to a binary>`
 
@@ -100,12 +104,12 @@ To run all test cases with testtype regression in the metadata:
 `> icetea --testtype regression --tcdir <test case search path>`
 
 The following metadata filters are available:
-* test type (--testtype)
-* test subtype (--subtype)
-* feature (--feature)
-* test case name (--tc)
-* tested component (--component)
-* test case folder (--group)
+* test type (`--testtype`)
+* test subtype (`--subtype`)
+* feature (`--feature`)
+* test case name (`--tc`)
+* tested component (`--component`)
+* test case folder (`--group`)
 
 **Running a premade suite**
 
