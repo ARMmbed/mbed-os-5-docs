@@ -18,12 +18,12 @@ and [in markdown format](https://github.com/ARMmbed/icetea/tree/master/doc).
 
 ### Prerequisites
 Icetea supports Linux (Ubuntu preferred), Windows and OS X. Our main target is Linux.
-We support both Python 2.7 and 3.5 or later. Some OS specific prerequisites below:
+We support both Python 2.7 and 3.5, or later. Some OS specific prerequisites are listed below:
 
 * Linux
     * python-dev and python-lxml
         `sudo apt-get install python-dev python-lxml`
-    * In order to run test cases with hardware in Linux without sudo rights:
+    * In order to run test cases with hardware in Linux, without sudo rights:
         ```
         sudo usermod -a -G dialout username
         Log out & log in back to Linux
@@ -37,21 +37,21 @@ We support both Python 2.7 and 3.5 or later. Some OS specific prerequisites belo
         `STATIC_DEPS=true sudo pip install lxml`
 
 * Windows
-    * python-lxml installation is problematic on Windows since
-    it usually requires build tools. It can however be installed
+    * python-lxml installation is problematic on Windows, since
+    it usually requires build tools. It can, however, be installed
     from pre-built binaries.
-        * Search for a binary for you system from the internet.
+        * Search the internet for a binary for you system.
         * Navigate to the directory where you downloaded the
         binary and install it with `pip install <insert_file_name>`
-    * You can follow instructions [here](http://lxml.de/installation.html#installation)
+    * You can also follow [these instructions](http://lxml.de/installation.html#installation)
     instead.
 
 #### Optional
 
 * If you wish to decorate your console log with all kinds of colors,
-install the coloredlogs module using pip. `pip install coloredlogs`
+install the coloredlogs module by using pip: `pip install coloredlogs`
     * There have been issues with coloredlogs installation on Windows.
-     We might switch to a different module at some point to enable
+     We might switch to a different module at some point, to enable
      colored logging on Windows as well.
 
 ### Installation
