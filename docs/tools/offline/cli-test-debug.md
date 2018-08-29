@@ -165,7 +165,7 @@ You can limit the scope of the tests built and run by using the `-n` option. Thi
 $ mbed test -m K64F -t GCC_ARM -n TESTS-functional-test1,TESTS-functional-test2
 ```
 
-You can use the wildcard character `*` to run a group of tests that share a common prefix without specifying each test individually. For instance, if you only want to run the three tests `TESTS-functional-test1`, `TESTS-functional-test2` and `TESTS-functional-test3`, but you have other tests in your project, you can run:
+You can use the wildcard character `*` to run a group of tests that share a common prefix without specifying each test individually. For instance, if you only want to run the three tests, `TESTS-functional-test1`, `TESTS-functional-test2` and `TESTS-functional-test3`, but you have other tests in your project, you can run:
 
 ```
 $ mbed test -m NUCLEO_F429ZI -t GCC_ARM -n TESTS-functional*
@@ -204,16 +204,16 @@ mbed-os-program
      | ....
 ```
 
-As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Please note that `TESTS` is a special upper case directory that is excluded from module sources while compiling.
+As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Please note that `TESTS` is a special upper-case directory that is excluded from module sources while compiling.
 
-<span class="notes">**Note:** `mbed test` does not work in applications that contain a  `main` function that is outside of a `TESTS` directory.</span>
+<span class="notes">**Note:** `mbed test` does not work in applications that contain a `main` function that is outside of the `TESTS` directory.</span>
 
 ### Troubleshooting
 
 #### Unable to import Mercurial (mbed.org) programs or libraries.
-1. Check whether you have Mercurial installed in your system path by  running `hg` in command prompt. If you're receiving "command not found" or a similar message, then you need to install Mercurial, and add it to your system path.
+1. Check whether you have Mercurial installed in your system path by  running `hg` in the command prompt. If you are receiving "command not found" or a similar message, then you need to install Mercurial and add it to your system path.
 
 2. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's [certificate management](https://www.mercurial-scm.org/wiki/CACertificates).
 
-#### Various issues when running Mbed CLI in Cygwin environment
-Currently Mbed CLI is not compatible with Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
+#### Various issues when running Mbed CLI in the Cygwin environment
+Mbed CLI is not currently compatible with the Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
