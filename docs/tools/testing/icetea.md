@@ -100,30 +100,30 @@ To run all test cases with test-type regression in the metadata:
 `> icetea --testtype regression --tcdir <test case search path>`
 
 The following metadata filters are available:
-* test type (--testtype)
-* test subtype (--subtype)
-* feature (--feature)
-* test case name (--tc)
-* tested component (--component)
-* test case folder (--group)
+* test type (`--testtype`)
+* test subtype (`--subtype`)
+* feature (`--feature`)
+* test case name (`--tc`)
+* tested component (`--component`)
+* test case folder (`--group`)
 
 **Running a pre-made suite**
 
 Icetea supports a suite-file that describes a number of test cases
-in `json` format.
+in `json` format:
 
 `> icetea --suite <suite file name> --tcdir <test case search path> --suitedir <path to suite directory>`
 
 **Enabling debug level logging**
 
-Use -v or -vv arguments to control logging levels. -v increases the frameworks logging level
-to debug (default is info) and the level of logging in
-certain plugins and external components to info (default is warning).
+Use `-v` or `-vv` arguments to control logging levels. `-v` increases the framework's logging level
+to debug (default is info), the level of logging in
+certain plugins, and external components to info (default is warning).
 --vv increases the level of logging on all Icetea loggers to debug.
 
 **Further details**
 
-For further details on any of the features see our documentation.
+For further details on any of these features, see our documentation.
 
 #### Creating a test case
 Icetea test cases are implemented as Python classes that inherit the Bench object available in `icetea_lib.bench` module.
