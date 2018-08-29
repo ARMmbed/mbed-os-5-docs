@@ -60,7 +60,7 @@ install the coloredlogs module by using pip: `pip install coloredlogs`
 
 ### Usage
 
-To print the help page:
+To display the help page:
 
 `icetea --help`
 
