@@ -138,9 +138,9 @@ This configuration adds a new region, named header, after the bootloader and bef
 
 ### Prebuilt bootloaders
 
-Prebuilt bootloader mode is an option to merge prebuilt bootloaders to your application. `mbed-os\features\FEATURE_BOOTLOADER\` contains the available supported targets with the corresponding prebuilt bootloader organized in folders specific to targets. For example: `FEATURE_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F429xI/TARGET_NUCLEO_F429ZI/mbed-bootloader-block_device-sotp-v3_4_0.bin`.
+Prebuilt bootloader mode is an option to merge prebuilt bootloaders into your application. `mbed-os\features\FEATURE_BOOTLOADER\` contains the available supported targets with the corresponding prebuilt bootloader organized in folders specific to targets. For example: `FEATURE_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F429xI/TARGET_NUCLEO_F429ZI/mbed-bootloader-block_device-sotp-v3_4_0.bin`.
 
-Please note that this bootloader is not the same as the public `mbed-bootloader`, which Mbed OS uses to generate the binaries in `mbed-os`.
+Please note that this bootloader is not the same as the public `mbed-bootloader`, which Mbed OS uses to generate the bootloader binaries in `mbed-os`.
 
 There are two ways to test prebuilt bootloader mode. 
 
@@ -154,7 +154,7 @@ You can add the BOOTLOADER feature into `mbed_app.json` located in the root appl
     }
    ```
 
-Altenratively, you can add `-C 'target.features_add=["BOOTLOADER"]'` to your `mbed compile` command-line arguments.
+Alternatively, you can add `-C 'target.features_add=["BOOTLOADER"]'` to your `mbed compile` command-line arguments.
 
 Please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-feature-bootloader) for an example on how to use the bootloader feature.
 
