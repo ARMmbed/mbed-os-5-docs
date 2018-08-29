@@ -2,24 +2,24 @@
 
 ![QSPIFBlockDevice](QSPIFBlockDevice_Class1.jpg)<span> QSPIFBlockDevice class hierarchy</span></span>
 
-The QSPIFBlockDevice is a block device driver for NOR based QSPI flash devices that support SFDP standard. NOR based QSPI flash supports up to 4bits per cycle of instruction, address and data. SFDP based QSPI Flash supports variable bus modes (single, dual, quad), several sector erase size types and multiple regions of sector size types.
+The QSPIFBlockDevice is a block device driver for NOR-based QSPI Flash devices that support the SFDP standard. NOR-based QSPI Flash supports up to 4 bits per cycle of instruction, address and data. SFDP-based QSPI Flash supports variable bus modes (single, dual and quad), several sector erase size types and multiple regions of sector size types.
 
-SFDP JEDEC standard can be found in: https://www.jedec.org/system/files/docs/JESD216C.pdf
+For more information about the SFDP JEDEC standard, please see [its documentation](https://www.jedec.org/system/files/docs/JESD216C.pdf).
 
 QSPIFBlockDevices have the following configurable parameters in its constructors:
 
 ### QSPIFBlockDevice constructor
 
-  - _io0_ - 1st IO pin used for sending/receiving data during data phase of a transaction
-  - _io1_ - 2nd IO pin used for sending/receiving data during data phase of a transaction
-  - _io2_ - 3rd IO pin used for sending/receiving data during data phase of a transaction
-  - _io3_ - 4th IO pin used for sending/receiving data during data phase of a transaction
-  - _sclk_ - QSPI Clock pin
-  - _csel_ - QSPI Flash chip select pin
-  - _clock-mode_ - specifies the QSPI Clock Polarity mode
-    - QSPIF_POLARITY_MODE_0 (CPOL=0, CPHA=0) - (*default)
-    - QSPIF_POLARITY_MODE_1 (CPOL=1, CPHA=1)
-  - _freq_ - Clock frequency of the QSPI bus (defaults to 40MHz)
+- _io0_ - 1st IO pin used for sending/receiving data during data phase of a transaction
+- _io1_ - 2nd IO pin used for sending/receiving data during data phase of a transaction
+- _io2_ - 3rd IO pin used for sending/receiving data during data phase of a transaction
+- _io3_ - 4th IO pin used for sending/receiving data during data phase of a transaction
+- _sclk_ - QSPI Clock pin
+- _csel_ - QSPI Flash chip select pin
+- _clock-mode_ - specifies the QSPI Clock Polarity mode
+   - QSPIF_POLARITY_MODE_0 (CPOL=0, CPHA=0) - (*default)
+   - QSPIF_POLARITY_MODE_1 (CPOL=1, CPHA=1)
+- _freq_ - Clock frequency of the QSPI bus (defaults to 40MHz)
 
 You can view more information about the configurable settings and functions in the class reference.
 
@@ -29,6 +29,6 @@ You can view more information about the configurable settings and functions in t
 
 ### QSPIFBlockDevice example
 
-Create a QSPIFBlockDevice, erase a sector, program it, read the block back and clean up.
+This example creates a QSPIFBlockDevice, erases a sector, programs it, reads the block back and cleans up.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/QSPIFBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/QSPIFBlockDevice_ex_1/file/5991e7053465/main.cpp)
