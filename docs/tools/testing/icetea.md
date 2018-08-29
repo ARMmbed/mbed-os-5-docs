@@ -126,9 +126,9 @@ certain plugins, and external components to info (default is warning).
 For further details on any of these features, see our documentation.
 
 #### Creating a test case
-Icetea test cases are implemented as Python classes that inherit the Bench object available in `icetea_lib.bench` module.
+Icetea test cases are implemented as Python classes that inherit the bench object available in the `icetea_lib.bench` module.
 The test case needs to have an initialization function that defines the metadata and a case function that implements the test sequence.
-There are two optional functions, setup and teardown. More information is available in our documentation.
+There are two optional functions: setup and teardown. More information is available in our documentation.
 
 An example test case is shown below:
 
