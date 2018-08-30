@@ -34,16 +34,6 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-When one of the following components is enabled, a default block device is set in the system:
-
-1. SPIF component.
-1. DATAFLASH component.
-1. SD component.
-
-Components can coexist in the system. A device can have SPIF and SD or any combination of block devices enabled but only one default block device.
-
-The list above is in the order of precedence shows which block device is the default one if more than one component is enabled.
-
 For details regarding how to configure the default block device please refer to the [storage configuration guide](/docs/development/reference/configuration-storage.html)
 
 ### BlockDevice class reference
