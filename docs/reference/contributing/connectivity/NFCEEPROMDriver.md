@@ -1,4 +1,4 @@
-## NFC EEPROM driver porting guide
+<h2 id="NFC-port">NFC EEPROM driver porting guide</h2>
 
 NFC EEPROM provides low level operations needed to create an NFC TAG. The device usually allows one device at a time to read and write into a shared memory through one of two channels. One is the radio channel that external devices interacting with the device use. The other is wired to the MCU. Either device needs to obtain a session before performing its operations. The session is released as the last step or through a timeout.
 
