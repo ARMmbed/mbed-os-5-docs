@@ -24,7 +24,7 @@ In this example, `myproject` is the project root, and all the source files under
 
 Because test cases can exist throughout a project, the tools must find them in the project's file structure before building them.
 
-Test discovery also obeys the same rules that are used when building your project. This means that tests that are placed under a directory with a prefix such as `TARGET_`, `TOOLCHAIN_` or `FEATURE_` are only discovered, built and run if your current configuration matches this prefix.
+Test discovery also obeys the same rules that are used when building your project. This means that tests that are placed under a directory with a prefix, such as `TARGET_`, `TOOLCHAIN_` or `FEATURE_`, are only discovered, built and run if your current configuration matches this prefix.
 
 For example, if you place a test under the directory `FEATURE_BLE` with the following path:
 
@@ -40,7 +40,7 @@ Tests can also be completely ignored by using the `.mbedignore` file described i
 
 ##### Test names
 
-A test case is named from its position in your project's file structure. For instance, in the above example, a test case with the path `myproject/TESTS/test_group/test_case_1` would be named `tests-test_group-test_case_1`. The name is created by joining the directories that make up the path to the test case with a "dash" (`-`) character. This is a unique name to identify the test case. You will see this name throughout the build and testing process.
+A test case is named by its position in your project's file structure. For instance, in the above example, a test case with the path `myproject/TESTS/test_group/test_case_1` would be named `tests-test_group-test_case_1`. The name is created by joining the directories that make up the path to the test case with a dash `-` character. This is a unique name to identify the test case. You will see this name throughout the build and testing process.
 
 #### Building tests
 
