@@ -78,7 +78,7 @@ The component labeled directories are used for software that implements some fun
 }
 ```
 
-In the above example, `mbed compile` will include files in directories named `COMPONENT_SPIF`, and not directories such as `COMPONENT_SD` or `COMPNONENT_FLASHIAP`.
+In the above example, `mbed compile` will include files in directories named `COMPONENT_SPIF`, and not directories such as `COMPONENT_SD` or `COMPONENT_FLASHIAP`.
 
 #### Toolchain Directories
 
