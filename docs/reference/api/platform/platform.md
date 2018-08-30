@@ -29,6 +29,7 @@ Mbed OS includes a few convenience classes that are tailored for embedded system
 - [Time](time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
 - [Error](error-handling.html): A functions that generates a fatal runtime error.
 - [NonCopyable](noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
+- [Span](span.html): A nonowning view to a sequence of contiguous elements. It can replace the traditional pair of pointer and size arguments passed as array definitions in function calls.
 
 <h4 id="callbacks">Callbacks</h4>
 
