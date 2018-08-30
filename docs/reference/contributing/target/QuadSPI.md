@@ -1,6 +1,6 @@
-<h2 id="quadspi-port">QuadSPI</h2>
+<h2 id="quadspi-port">QuadSPI (QSPI) </h2>
 
-Implementing QSPI enables Mbed OS to communicate with compliant external SPI devices much faster than via standalone SPI due to the inclusion of up to four data lines between the host and a device.
+Implementing QSPI enables Mbed OS to communicate with compliant external SPI devices much faster than with standalone SPI due to the inclusion of up to four data lines between the host and a device.
 
 The most common use case is for external memory to use as additional data storage.
 
@@ -19,9 +19,9 @@ The most common use case is for external memory to use as additional data storag
 
 QSPI peripheral
 
-### Implementing QuadSPI
+### Implementing QSPI
 
-You can implement your own QuadSPI by pulling in the following API header file:
+You can implement your own QSPI by pulling in the following API header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-qspi-doxy/classmbed_1_1_q_s_p_i.html)
 
