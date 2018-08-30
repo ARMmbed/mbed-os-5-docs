@@ -86,11 +86,11 @@ The toolchain labeled directories are used for toolchain specific files such as 
 
 | Toolchain                    | Labels                                                     |
 |------------------------------|------------------------------------------------------------|
-| GCC ARM Embedded             | `TOOLCHAIN_GCC` and `TOOLCHAIN_GCC_ARM`                    |
-| IAR EWARM                    | `TOOLCHAIN_IAR`                                            |
 | ARM compiler 5               | `TOOLCHAIN_ARM` and `TOOLCHAIN_ARM_STD`                    |
 | ARM compiler 5 with microlib | `TOOLCHAIN_ARM` and `TOOLCHAIN_ARM_MICRO`                  |
 | ARM compiler 6               | `TOOLCHAIN_ARM`, `TOOLCHAIN_ARM_STD` and `TOOLCHAIN_ARMC6` |
+| IAR EWARM                    | `TOOLCHAIN_IAR`                                            |
+| GCC ARM Embedded             | `TOOLCHAIN_GCC` and `TOOLCHAIN_GCC_ARM`                    |
 
 When compiling with `-t GCC_ARM` or `mbed toolchain GCC_ARM`, source files found within `TOOLCHAIN_GCC` and `TOOLCHAIN_GCC_ARM` are included and files found within `TOOLCHAIN_IAR` and `TOOLCHAIN_ARM` are not.
 
