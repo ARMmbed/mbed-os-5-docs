@@ -71,13 +71,13 @@ If you need to test with multiple configurations, then you can use the `--app-co
 
 You can run automated tests through Mbed CLI.
 
-The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
+The testing process requires that tests be built and that a test specification JSON file that describes these available tests exists. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
 The Greentea tool handles the actual testing process. To read more about this tool, please visit its [GitHub repository](https://github.com/ARMmbed/greentea).
 
 #### Writing tests
 
-You can write tests for your own project, or add more tests to Mbed OS. You can write tests using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client), [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
+You can write tests for your own project or add more tests to Mbed OS. You can write tests by using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client), and the [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, which are located in `/features/frameworks`. Below is an example test that uses all of these frameworks:
 
 ```c++
 #include "mbed.h"
