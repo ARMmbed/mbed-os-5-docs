@@ -8,13 +8,7 @@ The FileSystem's `file` and `dir` functions are protected because you should not
 
 ### File system get default instance
 
-The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file. When you configure a component of SPIF, DATAFLASH or SD, the system supports one default file system.
-
-Please note that while a default file system exists, an application is not forced to use it and can create its own one.
-
-The default file system is created based on the default block device due to performance considerations.
-
-SPIF and DATAFLASH block devices support the Little file system, and the SD block device supports the FAT file system. However, the application can ovveride this behavior.
+The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
 For details regarding how to configure the default file system or override its implemetation, please refer to the [storage configuration guide](/docs/development/reference/configuration-storage.html).
 
