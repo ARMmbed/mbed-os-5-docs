@@ -50,14 +50,14 @@ When you build tests for a target and a toolchain, the script first discovers th
 
 ##### Building process
 
-The `test.py` script (not to be confused with `tests.py`) located under the `tools` directory handles the process for building tests. This handles the discovery and building of all test cases for a target and toolchain.
+The `test.py` script (not to be confused with `tests.py`), located under the `tools` directory, handles the process for building tests. It handles the discovery and building of all test cases for a target and toolchain.
 
 The full build process is:
 
-1. Build the nontest code (all code not under a `TESTS` folder), but do not link it. The resulting object files are placed in the build directory.
+1. Build the non-test code (all code not under a `TESTS` folder), but do not link it. The resulting object files are placed in the build directory.
 1. Find all tests that match the given target and toolchain.
-1. For each discovered test, build all of its source files and link it with the nontest code that was built in step 1.
-1. If specified, create a test specification file and place it in the given directory for use by testing tools. This is placed in the build directory by default when using Mbed CLI.
+1. For each discovered test, build all of its source files and link it with the non-test code that was built in step 1.
+1. If specified, create a test specification file and place it in the given directory for use by the testing tools. This is placed in the build directory by default when using Mbed CLI.
 
 ##### App config
 
