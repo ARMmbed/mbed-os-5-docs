@@ -38,7 +38,7 @@ The full build process is:
 
 You can run automated tests through Mbed CLI with the `--icetea` option. You can find more information about this in the [Mbed CLI test documentation](/docs/tools/offline/cli-test-debug.md).
 
-The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
+The testing process requires that tests be built and that a test specification JSON file that describes these available tests exists. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
 The test specification JSON is similar for the Greentea and Icetea tests.
 
@@ -48,11 +48,11 @@ The Icetea tool handles the actual testing process. To read more about this tool
 
 ##### Writing test cases
 
-For writing your own Python test scripts, you can read further information from [Icetea Test Case API](https://github.com/ARMmbed/icetea/blob/master/doc/tc_api.md).
+To write your own Python test scripts, please read the further information in [Icetea Test Case API](https://github.com/ARMmbed/icetea/blob/master/doc/tc_api.md).
 
 ##### Writing CLI applications
 
-To be able to run the commands given to the DUT, you need to provide a CLI application that runs on the DUT. There is a library that you can use to create your own CLI application; it is called [mbed-client-cli](https://github.com/ARMmbed/mbed-client-cli). You can also find example Mbed CLI applications from the `mbed-os` repository [test applications](https://github.com/ARMmbed/mbed-os/tree/master/TEST_APPS/device).
+To be able to run the commands given to the DUT, you need to provide a CLI application that runs on the DUT. There is a library that you can use to create your own CLI application, called [mbed-client-cli](https://github.com/ARMmbed/mbed-client-cli). You can also find example Mbed CLI applications in the `mbed-os` repository [test applications](https://github.com/ARMmbed/mbed-os/tree/master/TEST_APPS/device).
 
 ### Debugging tests
 
@@ -62,7 +62,7 @@ Debugging tests is a crucial part of the development and porting process. This s
 
 The most straightforward way to export a test is to copy the test application's source code from its test directory to your project's root. This way, the tools treat it like a normal application.
 
-You can find the path to the test application you wish to export by running the following command:
+You can find the path to the test application that you want to export by running the following command:
 
 ```
 mbed test --compile-list -n <test name> --icetea
@@ -78,9 +78,9 @@ You can find your exported project in the root project directory.
 
 #### Running a test while debugging
 
-After you export your test to your IDE, build the project, and load it onto your target using your debugger.
+After you export your test to your IDE, build the project and load it onto your target by using your debugger.
 
-Bring the target out of reset, and run the program. Your target waits for a command over serial line.
+Bring the target out of reset, and run the program. Your target waits for a command over the serial line.
 
 You can now use Icetea commands to run the test:
 
@@ -88,8 +88,8 @@ You can now use Icetea commands to run the test:
 icetea -m <target> -t <toolchain> --tc <path to testcase>
 ```
 
-This detects your attached target and drives the test. If you need to rerun the test, reset the device with your debugger, run the program and run the same command.
+This detects your attached target and drives the test. If you need to rerun the test, then reset the device with your debugger, run the program and run the same command.
 
 For an explanation of the arguments used in this command, please run `icetea --help`.
 
-Note that instead of running the test you can also open a serial connection to the target and give the Mbed CLI commands manually.
+Note that instead of running the test, you can also open a serial connection to the target and give the Mbed CLI commands manually.
