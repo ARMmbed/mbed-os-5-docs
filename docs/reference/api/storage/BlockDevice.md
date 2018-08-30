@@ -43,52 +43,7 @@ Components can coexist in the system. A device can have SPIF and SD or any combi
 
 The list above is in precedence order and show which block device will be the default one if more than one component will be enabled.
 
-#### configuring component:
-Adding "components": ["???"] in targets.json:
-```
-    "K64F": {
-        "supported_form_factors": ["ARDUINO"],
-        "components": ["SD"],
-        "core": "Cortex-M4F",
-        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
-        "extra_labels": ["Freescale", "MCUXpresso_MCUS", "KSDK2_MCUS", "FRDM", "KPSDK_MCUS", "KPSDK_CODE", "MCU_K64F", "Freescale_EMAC"],
-        "is_disk_virtual": true,
-        "macros": ["CPU_MK64FN1M0VMD12", "FSL_RTOS_MBED"],
-        "inherits": ["Target"],
-        "detect_code": ["0240"],
-        "device_has": ["USTICKER", "LPTICKER", "RTC", "CRC", "ANALOGIN", "ANALOGOUT", "EMAC", "I2C", "I2CSLAVE", "INTERRUPTIN", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "SERIAL", "SERIAL_FC", "SERIAL_ASYNCH", "SLEEP", "SPI", "SPI_ASYNCH", "SPISLAVE", "STDIO_MESSAGES", "STORAGE", "TRNG", "FLASH"],
-        "features": ["STORAGE"],
-        "release_versions": ["2", "5"],
-        "device_name": "MK64FN1M0xxx12",
-        "bootloader_supported": true,
-        "overrides": {
-            "network-default-interface-type": "ETHERNET"
-        }
-    },
-```
-Adding "target.components_add": ["???"] in application config file:
-```     
-       "MTB_ADV_WISE_1570": {
-            "target.components_add": ["SPIF"],
-            "target.features_add": ["LWIP"],
-            "platform.default-serial-baud-rate": 9600
-       }
-```
-
-Please note that while a default block device exists an application is not enforced to use it and can create its own one.
-
-### Overriding default block device implementation 
-The get default instance is implemented as MBED_WEAK at features/storage/system_storage/SystemStorage.cpp. That means that it can be overridden by implementing the function without MBED_WEAK and change the default block device for a given application.
-
-```
-#include "HeapBlockDevice.h"
-
-BlockDevice *BlockDevice::get_default_instance()
-{
-    static HeapBlockDevice default_bd(32 *1024);
-    return &default_bd;
-}
-```
+For details regarding how to configure the default block device please refer to [storage configuration guide](../../configuration/Storage.md)
 
 ### BlockDevice class reference
 

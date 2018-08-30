@@ -15,24 +15,9 @@ Please note that while a default file system exists an application is not enforc
 
 The default file system will be created based on the default block device due to performance considerations.
 SPIF and DATAFLASH block devices will support Little file system while SD block device will support FAT file system.
+However this behaviour can be override by the application.
 
-### Overriding default block device implementation
-
-The get default instance is implemented as MBED_WEAK at features/storage/system_storage/SystemStorage.cpp. That means that it can be overridden by implementing the function without MBED_WEAK and change the default block device for a given application.
-
-The following example will override the get default instance of and will always return a FAT file system regardless of the block device type.
-
-```
-#include "FATFileSystem.h"
-
-FileSystem *FileSystem::get_default_instance()
-{
-    static FATFileSystem default_fs("fs" BlockDevice::get_default_instance());
-
-    return &default_fs;
-}
-
-```
+For details regarding how to configure the default file system or override its implemetation please refer to [storage configuration guide](../../configuration/Storage.md)
 
 ### File system class reference
 
