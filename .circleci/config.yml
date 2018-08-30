@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Validate and build documentation
           command: |
-            docbuilder os-docs /tmp/artifacts --path ~/project/docs.json --github_token "$GITHUB_TOKEN"
+            docbuilder build os-docs /tmp/artifacts --path ~/project/docs.json --github_token "$GITHUB_TOKEN"
       - run:
           name: Move images
           command: |
