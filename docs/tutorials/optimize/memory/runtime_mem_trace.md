@@ -4,11 +4,15 @@ Running out of memory is a common problem with resource constrained systems such
 
 #### Using the memory tracer
 
-The memory tracer is not enabled by default. To enable it, you need to define the **`MBED_MEM_TRACING_ENABLED`** macro. The recommended way to define this macro is to add it to the list of macros defined in your `mbed_app.json`:
+The memory tracer is not enabled by default. To enable it, you need to enable the **`memory-tracing-enabled`** setting in the Mbed OS platform configuration options. We recommend doing this by add it to your `mbed_app.json`:
 
 ```
 {
-    "macros": ["MBED_MEM_TRACING_ENABLED"]
+    "target_overrides": {
+        "*": {
+            "platform.memory-tracing-enabled": true
+        }
+    }
 }
 ```
 
