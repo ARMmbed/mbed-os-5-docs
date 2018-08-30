@@ -2,7 +2,7 @@
 
 Mbed OS provides a set of functions that you can use to study the runtime memory allocation pattern of your software: which sections of the code allocate and free memory and how much memory they need.
 
-You must enable the `memory-tracing-enabled` setting in the Mbed OS platform configuration options to enable memory tracing. The recommended way to enable this setting is to add it to your `mbed_app.json`:
+You must enable the `memory-tracing-enabled` setting in the Mbed OS platform configuration options to enable memory tracing. We recommend doing this by adding it to your `mbed_app.json`:
 
 ```
 {
