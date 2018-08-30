@@ -10,7 +10,7 @@ You can find the Icetea test applications and test cases under the `TEST_APPS` f
 
 ##### Test discovery
 
-When using Icetea under the `mbed-os repository`, the `TEST_APPS folder` stores the CLI applications and the test cases. The `TEST_APPS` folder is located in the root of the `mbed-os` repository. If you are using Icetea somewhere else, you need to provide Icetea the information where the tests reside. You can do this with the `--tcdir <directory>` option.
+When using Icetea under the `mbed-os repository`, the `TEST_APPS folder` stores the CLI applications and the test cases. The `TEST_APPS` folder is located in the root of the `mbed-os` repository. If you are using Icetea somewhere else, then you need to provide Icetea the information where the tests reside. You can do this with the `--tcdir <directory>` option.
 
 ##### Test names
 
@@ -24,19 +24,19 @@ When you build tests for a target and a toolchain, the script first discovers th
 
 ##### Building process
 
-The `test.py` script (not to be confused with `tests.py`) located under the `tools` directory handles the process for building tests. This handles the discovery and building of all test cases for a target and toolchain.
+The `test.py` script (not to be confused with `tests.py`), located under the `tools` directory, handles the process for building tests. It handles the discovery and building of all test cases for a target and toolchain.
 
 The full build process is:
 
-1. Build the nontest code (all code not under a `TESTS` folder), but do not link it. The resulting object files are placed in the build directory.
+1. Build the non-test code (all code not under a `TESTS` folder), but do not link it. The resulting object files are placed in the build directory.
 1. Find all tests that match the given target and toolchain.
 1. Find all the C++ applications that are defined in the tests.
-1. For each discovered C++ application, build all of its source files and link it with the nontest code that was built in step 1.
-1. If specified, create a test specification file and place it in the given directory for use by testing tools. This is placed in the build directory by default when using Mbed CLI.
+1. For each discovered C++ application, build all of its source files and link it with the non-test code that was built in step 1.
+1. If specified, create a test specification file and place it in the given directory for use by the testing tools. This is placed in the build directory by default when using Mbed CLI.
 
 #### Running tests
 
-You can run automated tests through Mbed CLI with the `--icetea` option. You can find more information about this in the [Mbed CLI test documentation] (/docs/tools/offline/cli-test-debug.md).
+You can run automated tests through Mbed CLI with the `--icetea` option. You can find more information about this in the [Mbed CLI test documentation](/docs/tools/offline/cli-test-debug.md).
 
 The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
 
