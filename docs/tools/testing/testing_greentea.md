@@ -59,13 +59,13 @@ The full build process is:
 1. For each discovered test, build all of its source files and link it with the non-test code that was built in step 1.
 1. If specified, create a test specification file and place it in the given directory for use by the testing tools. This is placed in the build directory by default when using Mbed CLI.
 
-##### App config
+##### Application configuration
 
 When building an Mbed application, the presence of an `mbed_app.json` file allows you to set or override different configuration settings from libraries and targets. However, because the tests share a common build, this can cause issues when tests have different configurations that affect the OS.
 
-The build system looks for an `mbed_app.json` file in your shared project files (any directory not inside of a `TESTS` folder). If the system finds it, this configuration file is used for both the nontest code as well as each test case inside your project's source tree. If there is more than one `mbed_app.json` file in the source tree, the config system will error.
+The build system looks for an `mbed_app.json` file in your shared project files (any directory not inside of a `TESTS` folder). If the system finds it, then this configuration file is used for both the non-test code and each test case inside your project's source tree. If there is more than one `mbed_app.json` file in the source tree, then the configuration system will error.
 
-If you need to test with multiple configurations, you can use the `--app-config` option. This overrides the search for an `mbed_app.json` file and uses the config file you specify for the build.
+If you need to test with multiple configurations, then you can use the `--app-config` option. This overrides the search for an `mbed_app.json` file and uses the configuration file that you specify for the build.
 
 #### Running tests
 
