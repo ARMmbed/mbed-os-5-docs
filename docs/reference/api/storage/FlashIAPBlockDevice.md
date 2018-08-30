@@ -1,12 +1,11 @@
 ## FlashIAPBlockDevice
 
-The flash IAP block device is a block device driver built on top of the FlashIAP API. This actually enable using the internal flash memory as a block device. The read size, write size and erase size may defer between different flash chip. use the FlashIAPBlockDevice get function to discover the those size.
-More info can be find in the example below.
+The flash IAP block device is a block device driver built on top of the FlashIAP API. This is enabled using the internal flash memory as a block device. The read size, write size and erase size may differ, depending on the flash chip. Use the FlashIAPBlockDevice `get` function to discover those sizes.
 
-Additional concerns:
-    1. This driver should be use on platforms where the FlashIAP implementation uses external flash or in conjunction with a file system with wear leveling, that can operate on a page size granularity.
+Additional notes:
 
-    2. The FlashIAP may freeze code execution for a long period of time while writing to flash. Not even high-priority IRQs are allowed to run, which may interrupt background processes.
+1. Use this driver on platforms where the FlashIAP implementation uses external flash or in conjunction with a file system with wear leveling, that can operate on a page size granularity.
+1. The FlashIAP may freeze code execution for a long period of time while writing to flash. Not even high-priority IRQs are allowed to run, which may interrupt background processes.
 
 ## FlashIAPBlockDevice class reference
 
