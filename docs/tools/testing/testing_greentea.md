@@ -8,7 +8,7 @@ The way tests are run and compiled in Arm Mbed OS 5 is substantially different f
 
 You can run tests throughout Mbed OS and for your project's code. They are located under a special directory called `TESTS`.
 
-Placing code under this directory means it is ignored when building applications and libraries. This code is only ever used when building tests. This is important because all tests require a `main()` function, and building it with your application would cause multiple `main()` functions to be defined.
+The fact that the code is located under this directory means that it is ignored when building applications and libraries. It is only used when building tests. This is important because all tests require a `main()` function, and building them with your application would cause multiple `main()` functions to be defined.
 
 In addition to being placed under a `TESTS` directory, test sources must exist under two other directories: a test group directory and a test case directory. The following is an example of this structure:
 
@@ -16,9 +16,9 @@ In addition to being placed under a `TESTS` directory, test sources must exist u
 myproject/TESTS/test_group/test_case_1
 ```
 
-In this example, `myproject` is the project root, and all the source files under the `test_case_1` directory are included in the test. The test build also includes any other source files from the OS, libraries and project that apply to the target's configuration.
+In this example, `myproject` is the project root, and all the source files under the `test_case_1` directory are included in the test. The test build also includes any other source files from the OS, libraries and projects that apply to the target's configuration.
 
-<span class="notes">**Note:** You can name both the test group and test case directory anything you like. However, you **must** name the `TESTS` directory `TESTS` for the tools to detect the test cases correctly.</span>
+<span class="notes">**Note:** You can name both the test group and the test case directory anything you like. However, you must name the `TESTS` directory `TESTS` for the tools to detect the test cases correctly.</span>
 
 ##### Test discovery
 
