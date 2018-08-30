@@ -48,7 +48,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 ##### Example program using heap statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/heap_stats_example/)](https://os.mbed.com/teams/mbed_example/code/heap_stats_example/file/c084f1df237e/main.cpp/)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/heap_stats_example/)](https://os.mbed.com/teams/mbed_example/code/heap_stats_example/file/c084f1df237e/main.cpp)
 
 ##### Side effects of enabling heap statistics
 
