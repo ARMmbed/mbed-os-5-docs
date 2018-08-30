@@ -31,19 +31,20 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 ![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_erase_block.png)
 
 ### BlockDevice get default instance
-Mbed-os configuration allows you to add block devices as components using the targets json file or target overrides in application config file.
 
-When one of the following components is enabled a default block device will be set in the system.
+The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-    1. SPIF component.
-    2. DATAFLASH component.
-    3. SD component.
+When one of the following components is enabled, a default block device is set in the system:
+
+1. SPIF component.
+1. DATAFLASH component.
+1. SD component.
 
 Components can coexist in the system. A device can have SPIF and SD or any combination of block devices enabled but only one default block device.
 
-The list above is in precedence order and show which block device will be the default one if more than one component will be enabled.
+The list above is in the order of precedence shows which block device is the default one if more than one component is enabled.
 
-For details regarding how to configure the default block device please refer to [storage configuration guide](../../configuration/Storage.md)
+For details regarding how to configure the default block device please refer to the [storage configuration guide](/docs/development/reference/configuration-storage.html)
 
 ### BlockDevice class reference
 
