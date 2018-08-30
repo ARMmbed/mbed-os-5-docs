@@ -168,7 +168,7 @@ Run the following command when your device is running the test in your debugger:
 mbedhtrun --skip-flashing --skip-reset -p <serial port>:9600
 ```
 
-Replace `<serial port>` with the serial port you found by running `mbed detect` above. So for the example above, the command is:
+Replace `<serial port>` with the serial port that you found by running `mbed detect` above. So, for the example above, the command is:
 
 ```
 mbedhtrun --skip-flashing --skip-reset -p COM270:9600
