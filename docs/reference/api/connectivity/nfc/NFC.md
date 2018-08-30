@@ -106,7 +106,7 @@ A NDEF message is a collection of separate NDEF records where each of these reco
 
 ##### Parsing
 
-The class `mbed::nfc::ndef::MessageParser` parse a buffer of data in input and produces parsing events that are forwarded to its delegate. To help developers we offer a more integrated parser (`mbed::nfc::ndef::common::SimpleMessageParser`) that parses well known NFC types records such as Text, URI or Mime records and produces usable objects out of the box.
+The class `mbed::nfc::ndef::MessageParser` parses a buffer of data in input and produces parsing events that are forwarded to its delegate. To help developers we offer a more integrated parser (`mbed::nfc::ndef::common::SimpleMessageParser`) that parses well known NFC types records such as Text, URI or Mime records and produces usable objects out of the box.
 
 ```
 #include "nfc/ndef/common/SimpleMessageParser.h"
@@ -175,13 +175,13 @@ void parse_ndef_message(const Span<const uint8_t> &buffer) {
 }
 ```
 
-Application can extend capabilities of `SimpleMessageParser` by adding new record parsers (`mbed::nfc::ndef::RecordParser`) at runtime.
+An application can extend capabilities of `SimpleMessageParser` by adding new record parsers (`mbed::nfc::ndef::RecordParser`) at runtime.
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/FIXME)
 
 ##### Construction
 
-The class `mbed::nfc::ndef::MessageBuilder` build a NDEF message into a user provided buffer. `URI`, `Text` and `Mime` type can be serialized in the builder with the help of the member function `append_as_record`.
+The class `mbed::nfc::ndef::MessageBuilder` builds a NDEF message into a user provided buffer. `URI`, `Text` and `Mime` type can be serialized in the builder with the help of the member function `append_as_record`.
 
 ```
 #include "nfc/ndef/MessageBuilder.h"
@@ -194,7 +194,7 @@ size_t build_ndef_message(const Span<uint8_t> &buffer) {
     MessageBuilder builder(buffer);
 
     URI uri(URI::HTTPS_WWW, span_from_cstr("mbed.com"));
-    Text text(Text::UTF8, span_from_cstr("en-US"), span_from_cstr("mbed website"));
+    Text text(Text::UTF8, span_from_cstr("en-US"), span_from_cstr("Mbed website"));
 
     uri.append_as_record(builder);
     text.append_as_record(builder, /* last record */ true);
