@@ -118,7 +118,7 @@ int main() {
 }
 ```
 
-This test first runs a case that succeeds, then a case that fails. This is a good template to use when creating tests. For more complex testing examples, please see the documentation for [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest).
+This test first runs a case that succeeds, then a case that fails. This is a good template to use for creating tests. For more complex testing examples, please see the documentation for [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest).
 
 ### Debugging tests
 
@@ -128,7 +128,7 @@ Debugging tests is a crucial part of the development and porting process. This s
 
 Currently, the easiest way to export a test is to copy the test's source code from its test directory to your project's root. This way, the tools treat it like a normal application.
 
-You can find the path to the test you wish to export by running the following command:
+You can find the path to the test that you want to export by running the following command:
 
 ```
 mbed test --compile-list -n <test name>
@@ -144,11 +144,11 @@ You can find your exported project in the root project directory.
 
 #### Running a test while debugging
 
-Assuming your test was exported correctly to your IDE, build the project, and load it onto your target via your debugger.
+Assuming your test was exported correctly to your IDE, build the project and load it onto your target by using your debugger.
 
-Bring the target out of reset, and run the program. Your target waits for the test tools to send a synchronizing character string over the serial port. Do not run the `mbed test` commands because that will attempt to flash the device, which you've already done with your IDE.
+Bring the target out of reset and run the program. Your target waits for the test tools to send a synchronizing character string over the serial port. Do not run the `mbed test` commands because that will attempt to flash the device, which you've already done with your IDE.
 
-Instead, you can use the underlying test tools to drive the test. [`htrun`](https://github.com/ARMmbed/htrun) is the tool you need to use in this case. Install the requirements for Mbed OS also installs `htrun`. You can also intall `htrun` by running `pip install mbed-host-tests`.
+Instead, you can use the underlying test tools to drive the test. [`htrun`](https://github.com/ARMmbed/htrun) is the tool you need to use in this scenario. Installing the requirements for Mbed OS also installs `htrun`. You can also install `htrun` by running `pip install mbed-host-tests`.
 
 First, find your target's serial port by running the following command:
 
