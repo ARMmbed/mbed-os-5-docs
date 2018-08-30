@@ -48,30 +48,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 ##### Example program using heap statistics
 
-```
-#include "mbed.h"
-#include "mbed_stats.h"
-
-int main(void)
-{
-    mbed_stats_heap_t heap_stats;
-
-    printf("Starting heap stats example\r\n");
-
-    void *allocation = malloc(1000);
-    printf("Freeing 1000 bytes\r\n");
-
-    mbed_stats_heap_get(&heap_stats);
-    printf("Current heap: %lu\r\n", heap_stats.current_size);
-    printf("Max heap size: %lu\r\n", heap_stats.max_size);
-
-    free(allocation);
-
-    mbed_stats_heap_get(&heap_stats);
-    printf("Current heap after: %lu\r\n", heap_stats.current_size);
-    printf("Max heap size after: %lu\r\n", heap_stats.max_size);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/heap_stats_example/)](https://os.mbed.com/teams/mbed_example/code/heap_stats_example/file/c084f1df237e/main.cpp/)
 
 ##### Side effects of enabling heap statistics
 
@@ -121,20 +98,4 @@ Both of these functions return a struct containing the following:
 
 ##### Example program using stack statistics
 
-```
-#include "mbed.h"
-#include "mbed_stats.h"
-
-int main(void)
-{
-    printf("Starting stack stats example\r\n");
-
-    int cnt = osThreadGetCount();
-    mbed_stats_stack_t *stats = (mbed_stats_stack_t*) malloc(cnt * sizeof(mbed_stats_stack_t));
-
-    cnt = mbed_stats_stack_get_each(stats, cnt);
-    for (int i = 0; i < cnt; i++) {
-        printf("Thread: 0x%X, Stack size: %u, Max stack: %u\r\n", stats[i].thread_id, stats[i].reserved_size, stats[i].max_size);
-    }
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/stack_stats_example/)](https://os.mbed.com/teams/mbed_example/code/stack_stats_example/file/539750137652/main.cpp/)
