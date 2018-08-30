@@ -4,6 +4,22 @@ The Mbed OS Build Tools scan your project for source files every time you compil
 
 The Build Tools include every source file found in the project unless it is in a label directory, it is in a test directory or it matches a pattern in an `.mbedignore file`.
 
+### Source Files
+
+Mbed OS Build tools determine what sort of source file it has found based on the file's extension. The following table lists all files that are used in a build.
+
+| Extension           | File Type         | Used by                        |
+|---------------------|-------------------|--------------------------------|
+| `.a`, `.ar`         | Archive           | Toolchain's Linker             |
+| `.c`                | C Source          | Toolchain's C Compiler         |
+| `.cc`, `.cpp`       | C++ Source        | Toolchain's C++ Compiler       |
+| `.h`, `.hpp`, `.hh` | C/C++ Header      | Toolchain's C and C++ Compiler |
+| `.icf`              | IAR Linker File   | IAR's Linker                   |
+| `.ld`               | GCC Linker Script | GCC's Linker (`ld`)            |
+| `.o`                | Object            | Toolchain's Linker             |
+| `.s`, `.S`          | Assembly          | Toolchain's assebler           |
+| `.sct`              | ARM Scatter File  | ARM's Linker (`armlink`)       |
+
 
 ### Label Directories
 
