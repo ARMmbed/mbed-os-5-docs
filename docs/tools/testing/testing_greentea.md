@@ -6,7 +6,7 @@ The way tests are run and compiled in Arm Mbed OS 5 is substantially different f
 
 #### Test code structure
 
-Tests can exist throughout Mbed OS and your project's code. They are located under a special directory called `TESTS` (case is important!).
+You can run tests throughout Mbed OS and for your project's code. They are located under a special directory called `TESTS`.
 
 Placing code under this directory means it is ignored when building applications and libraries. This code is only ever used when building tests. This is important because all tests require a `main()` function, and building it with your application would cause multiple `main()` functions to be defined.
 
