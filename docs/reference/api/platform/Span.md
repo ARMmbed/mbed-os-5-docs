@@ -57,9 +57,9 @@ Span<uint8_t> str_span(hello_mbed);
 
 ptrdiff_t half_size = str_span.size() / 2;
 
-Span<uint8_t> first_half = str_span.first(half_size);
-Span<uint8_t> second_half = str_span.last(half_size);
-Span<uint8_t> middle_half = str_span.subspan(/* offset */ half_size / 2, half_size);
+Span<uint8_t> lower_half = str_span.first(half_size);
+Span<uint8_t> upper_half = str_span.last(half_size);
+Span<uint8_t> interquartile_range = str_span.subspan(/* offset */ half_size / 2, half_size);
 ```
 
 ### Size encoding
