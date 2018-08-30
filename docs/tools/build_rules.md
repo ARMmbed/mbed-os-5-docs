@@ -37,18 +37,18 @@ The target labeled directories are used for selecting sources that are specific 
 
 ```json
 {
-    "FREESCALE": {
+    "MCUXPRESSO": {
         "inherits": ["Target"],
         "public": false
     },
     "TEENSY3_1": {
-        "inherits": ["FREESCALE"],
+        "inherits": ["MCUXPRESSO"],
         "extra_labels": ["K20XX", "K20DX256"]
     }
 }
 ```
 
-The above example will include source files in directories named `TARGET_FREESCALE` and `TARGET_TEENSY3_1`, from the inheritance heirachy and `TARGET_K20XX` and `TARGET_K20DX256` from the `target.extra_labels` value. It will not include source files within `TARGET_NORDIC`, `TARGET_K66F` or `TARGET_NUCLEO_F411` directories as they are not in the list of labels included in the label type `TARGET`
+The above example will include source files in directories named `TARGET_MCUXPRESSO` and `TARGET_TEENSY3_1`, from the inheritance heirachy and `TARGET_K20XX` and `TARGET_K20DX256` from the `target.extra_labels` value. It will not include source files within `TARGET_NORDIC`, `TARGET_K66F` or `TARGET_NUCLEO_F411` directories as they are not in the list of labels included in the label type `TARGET`
 
 #### Feature Directories
 
