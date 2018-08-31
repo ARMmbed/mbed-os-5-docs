@@ -1,6 +1,6 @@
 <h2 id="icetea">Icetea test framework</h2>
 
-Icetea is an automated testing framework for Mbed development. It automates the process of flashing Mbed boards, running tests and accumulating test results into reports. Developers use it for local development, as well as for automation in a Continuous Integration environment.
+Icetea is an automated testing framework for Mbed development. It automates the process of flashing Mbed boards, running tests and accumulating test results into reports. Developers use it for local development, as well as automation in a Continuous Integration environment.
 
 When testing Mbed OS, Icetea allows you to execute commands remotely by using the command-line interface in a device under test (DUT). The interface between the test framework and a DUT might be, for example, UART or stdio.
 
@@ -40,7 +40,7 @@ Icetea supports both Python 2.7 and 3.5, or later. Some OS specific prerequisite
 
 #### Optional
 
-If you wish to decorate your console log with colors, install the `coloredlogs` module by using pip: `pip install coloredlogs`. There have been issues with colored logs installation on Windows. There are no alternative solutions for this at the moment.
+If you wish to decorate your console log with colors, install the `coloredlogs` module by using pip: `pip install coloredlogs`. There have been issues with `coloredlogs` installation on Windows. There are no alternative solutions for this at the moment.
 
 ### Installation
 
@@ -62,7 +62,7 @@ To print the Icetea version:
 
 #### Typical use
 
-All of the commands described below might also require other options, depending on the test case.
+All of the commands described below might also require other commands, depending on the test case.
 
 **Running test cases by using the `tc` argument**
 
@@ -74,7 +74,7 @@ To run all existing test cases from the `examples` folder:
 
 **Running an example test case with hardware**
 
-This example requires a compatible board connected to the computer and an application binary for the board. The referred test case is available in [the Icetea GitHub repository](https://github.com/ARMmbed/icetea/blob/master/examples/test_cmdline.py).
+This example requires a compatible board connected to the computer and an application binary for the board. The test case below is available in [the Icetea GitHub repository](https://github.com/ARMmbed/icetea/blob/master/examples/test_cmdline.py).
 
 `> icetea --tc test_cmdline --tcdir examples --type hardware --bin <path to a binary>`
 
