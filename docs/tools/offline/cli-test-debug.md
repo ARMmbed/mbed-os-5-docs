@@ -2,7 +2,7 @@
 
 Use the `mbed test` command to compile and run tests.
 
-There are two testing frameworks: Greentea and Icetea. Greentea provides tests designed for driver porting and target verification. Icetea provides and manages tests for multiple devices at the same time. Devices being tested are referred to as devices under test (DUTs). For example, you can test the network setup for a server and multiple clients, simultaneously controlling them from the test environment.
+There are two testing frameworks: Greentea and Icetea. Greentea provides tests designed for driver porting and target verification. Icetea provides and manages tests for multiple devices at the same time. For example, you can test the network setup for a server and multiple clients, simultaneously controlling them from the test environment.
 
 The arguments to `test` are:
 
@@ -12,16 +12,16 @@ The arguments to `test` are:
 - `--run-list`: to list all the tests that can be run, after they have been built.
 - `--compile`: to only compile the tests.
 - `--run`: to only run the tests.
-- `-n <TESTS_BY_NAME>`: to limit the tests built or run to a comma separated list, for example, test1, test2, test3.
+- `-n <TESTS_BY_NAME>`: to limit the tests built or run to a comma separated list, for example, `test1, test2, test3`.
 - `--source <SOURCE>`: to select the source directory. The default is `.` for the the current directory. You can specify multiple source locations, even outside the program tree.
 - `--build <BUILD>`: to select the build directory. The default is `BUILD/` inside your program.
 - `--profile <PATH_TO_BUILD_PROFILE>`: to select a path to a build profile configuration file, for example, `mbed-os/tools/profiles/debug.json`.
 - `-c or --clean`: to clean the build directory before compiling.
 - `--test-spec <TEST_SPEC>`: to set the path for the test specification file used when building and running tests. The default path is the build directory.
 - `--build-data <BUILD_DATA>`: dumps build_data to this file.
-- `--app-config <APP_CONFIG>`: the path of an app configuration file. The default is to look for 'mbed_app.json'.
-- `--test-config <TEST_CONFIG>`: the path or mbed OS keyword of a test configuration file, for example, ethernet, odin_wifi, or path/to/config.json.
-- `--greentea`: to run Greentea tests. As a default, it only runs greentea tests.
+- `--app-config <APP_CONFIG>`: the path of an app configuration file. The default is to look for `mbed_app.json`.
+- `--test-config <TEST_CONFIG>`: the path or Mbed OS keyword of a test configuration file, for example, `ethernet`, `odin_wifi` or `path/to/config.json`.
+- `--greentea`: to run Greentea tests. As a default, it only runs Greentea tests.
 - `--icetea`: to run Icetea tests. If used without the `--greentea` flag, then it only runs Icetea tests.
 - `-v` or `--verbose`: for verbose diagnostic output.
 - `-vv` or `--very_verbose`: for very verbose diagnostic output.
@@ -157,7 +157,7 @@ You can specify that the tests only **run** by using the `--run` option:
 $ mbed test -m K64F -t GCC_ARM --run
 ```
 
-If you don't specify any of these, `mbed test` first compilea all available tests and then runs them.
+If you don't specify any of these, `mbed test` first compiles all available tests and then runs them.
 
 ### Limiting the test scope
 
@@ -208,7 +208,7 @@ mbed-os-program
 
 As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Please note that `TESTS` is a special upper-case directory that is excluded from module sources while compiling.
 
-<span class="notes">**Note:** `mbed test` does not work in applications that contain a `main` function that is outside of the `TESTS` directory.</span>
+<span class="notes">**Note:** `mbed test` does not work in applications that contain a `main` function that is outside of a `TESTS` directory.</span>
 
 ### Troubleshooting
 
