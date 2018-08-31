@@ -9,7 +9,7 @@ You can use memory statistics functions to capture heap usage, cumulative stack 
 - `MBED_HEAP_STATS_ENABLED`.
 - `MBED_STACK_STATS_ENABLED`.
 
-@Note: Overhead of 8 bytes is added with each memory allocation call `malloc` or `calloc` when heap memory statistics are enabled.
+<span class="notes">**Note:** Each `malloc` or `calloc` memory allocation call adds an overhead of 8 bytes when heap memory statistics are enabled.</span>
 
 ### Thread statistics
 
