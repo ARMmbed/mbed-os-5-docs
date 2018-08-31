@@ -12,7 +12,7 @@ For more information, please review the related content.
 
 ### QuadSPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.6/mbed-os-api-doxy/classmbed_1_1QSPI.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
 
 ### QuadSPI example
 
