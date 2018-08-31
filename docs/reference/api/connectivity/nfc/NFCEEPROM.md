@@ -1,6 +1,8 @@
 ## NFC EEPROM
 
-To use an NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
+An NFC EEPROM can store NDEF messages. A smartphone can be used to access the message through the NFC interface the EEPROM exposes.
+
+To use an NFC EEPROM, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
 ### NFC EEPROM class reference
 

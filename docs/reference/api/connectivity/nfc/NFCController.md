@@ -1,5 +1,7 @@
 ## NFC controller
 
+Using an NFC controller with Mbed OS allows you to emulate NFC tags that can be read by a smartphone and generate NDEF messages on demand.
+
 To use an NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
 ### NFC controller class reference
