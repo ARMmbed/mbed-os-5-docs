@@ -1,12 +1,12 @@
 ## NFC EEPROM
 
-To use a NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
+To use an NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
-### NFC EEPROM Class Reference
+### NFC EEPROM class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/FIXME)
 
-### NFC EEPROM Example
+### NFC EEPROM example
 
 ```cpp
 #include "stdint.h"
