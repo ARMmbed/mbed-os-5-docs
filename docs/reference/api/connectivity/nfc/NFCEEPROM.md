@@ -1,6 +1,6 @@
 ## NFC EEPROM
 
-An NFC EEPROM can store NDEF messages. A smartphone can be used to access the message through the NFC interface the EEPROM exposes.
+An NFC EEPROM can store NDEF messages. You can use a smartphone access the message through the NFC interface the EEPROM exposes.
 
 To use an NFC EEPROM, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
