@@ -181,6 +181,17 @@
 
 [Low power wide area network.](lorawan.html)
 
+<table>
+<tbody>
+<tr>
+<td><a href="lorawan-api.html">LoRaWANInterface</a></td>
+</tr>
+<tr>
+<td><a href="loraradio-api.html">LoRaRadio</a></td>
+</tr>
+</tbody>
+</table>
+
 ### Security
 
 [Working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.](security.html)
