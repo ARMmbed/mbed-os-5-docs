@@ -1,12 +1,12 @@
-## NFC Controller
+## NFC controller
 
-To use a NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
+To use an NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
-### NFC Controller Class Reference
+### NFC controller class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/FIXME)
 
-### NFC Controller Example
+### NFC controller example
 
 ```cpp
 #include "stdint.h"
