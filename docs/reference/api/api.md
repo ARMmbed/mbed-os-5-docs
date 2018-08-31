@@ -168,7 +168,7 @@
 </tr>
 <tr>
 <td><a href="gap.html">GAP</a></td>
-<td>SecurityManager</a></td>
+<td><a href="secuirtymanager.html">SecurityManager</a></td>
 <td><a href="ibeacon.html">iBeacon</a></td>
 <tr>
 <td><a href="gattclient.html">GattClient</a></td>
@@ -224,6 +224,5 @@
 <td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
 <td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
 </tr>
-</font>
 </tbody>
 </table>
