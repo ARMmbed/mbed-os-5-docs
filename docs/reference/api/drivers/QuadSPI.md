@@ -16,10 +16,10 @@ For more information, please review the related content.
 
 ### QuadSPI example
 
-[![View Example](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-qspi/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-qspi/) 
+[![View Example](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-qspi/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-qspi) 
 
 ### Related content
 
-- <a href="www.st.com/resource/en/application_note/dm00227538.pdf">STMicroelectronics Quad-SPI documentation</a>.
-- <a href="http://www.macronix.com/Lists/Datasheet/Attachments/6270/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf">Macronix MX25R6435F flash memory with Quad-SPI</a>.
-- <a href="http://infocenter.nordicsemi.com/pdf/nRF52840_OPS_v0.5.pdf">Nordic Quad-SPI support in NRF52840</a>.
+- [STMicroelectronics Quad-SPI documentation](www.st.com/resource/en/application_note/dm00227538.pdf).
+- [Macronix MX25R6435F flash memory with Quad-SPI](http://www.macronix.com/Lists/Datasheet/Attachments/6270/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf).
+- [Nordic Quad-SPI support in NRF52840](http://infocenter.nordicsemi.com/pdf/nRF52840_OPS_v0.5.pdf).
