@@ -9,6 +9,8 @@ You can use memory statistics functions to capture heap usage, cumulative stack 
 - `MBED_HEAP_STATS_ENABLED`.
 - `MBED_STACK_STATS_ENABLED`.
 
+<span class="notes">**Note:** Each `malloc` or `calloc` memory allocation call adds an overhead of 8 bytes when heap memory statistics are enabled.</span>
+
 ### Thread statistics
 
 You can use the thread statistics function `mbed_stats_thread_get_each` to capture the thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must build Mbed OS with the `MBED_THREAD_STATS_ENABLED` macro.

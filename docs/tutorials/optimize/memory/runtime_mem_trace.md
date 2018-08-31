@@ -62,3 +62,4 @@ It outputs the following trace:
 
 - The tracer doesn't handle nested calls of the memory functions. For example, if you call `realloc` and the implementation of `realloc` calls `malloc` internally, the call to `malloc` is not traced.
 - The **caller** argument of the callback function isn't always reliable. It doesn't work at all on some toolchains, and it might output erroneous data on others.
+- Overhead of 8 bytes is added to every dynamic memory allocation when memory tracing is enabled.
