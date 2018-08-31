@@ -238,6 +238,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/drivers/QuadSPI.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/api/drivers/I2C.md"
                     },
                     {
