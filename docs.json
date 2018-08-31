@@ -521,6 +521,14 @@
         "slug": "reference",
         "type": "markdown",
         "chapters": [{
+                "title": "Overview",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
+                },
+                "sources": []
+            },
+            {
                 "title": "Architecture",
                 "intro": {
                     "type": "markdown",
