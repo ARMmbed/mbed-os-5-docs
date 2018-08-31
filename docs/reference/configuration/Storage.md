@@ -113,38 +113,26 @@ The list above is in the order of precedence shows which block device is the def
 
 #### Configuring components
 
-Adding "components": ["???"] in targets.json:
+For example, the following entry in `targets.json` enables the SD component:
 
 ```
-    "K64F": {
-        "supported_form_factors": ["ARDUINO"],
+ "K64F": {
         "components": ["SD"],
         "core": "Cortex-M4F",
         "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
-        "extra_labels": ["Freescale", "MCUXpresso_MCUS", "KSDK2_MCUS", "FRDM", "KPSDK_MCUS", "KPSDK_CODE", "MCU_K64F", "Freescale_EMAC"],
-        "is_disk_virtual": true,
-        "macros": ["CPU_MK64FN1M0VMD12", "FSL_RTOS_MBED"],
         "inherits": ["Target"],
-        "detect_code": ["0240"],
-        "device_has": ["USTICKER", "LPTICKER", "RTC", "CRC", "ANALOGIN", "ANALOGOUT", "EMAC", "I2C", "I2CSLAVE", "INTERRUPTIN", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "SERIAL", "SERIAL_FC", "SERIAL_ASYNCH", "SLEEP", "SPI", "SPI_ASYNCH", "SPISLAVE", "STDIO_MESSAGES", "STORAGE", "TRNG", "FLASH"],
         "features": ["STORAGE"],
         "release_versions": ["2", "5"],
-        "device_name": "MK64FN1M0xxx12",
-        "bootloader_supported": true,
-        "overrides": {
-            "network-default-interface-type": "ETHERNET"
-        }
-    },
+        ...
+     },
 ```
 
-Adding "target.components_add": ["???"] in application config file:
+The following `mbed_app.json` snippet enables the SPI flash component when compiling for the MTB_ADV_WISE_1570 target:
 
 ```     
-       "MTB_ADV_WISE_1570": {
-            "target.components_add": ["SPIF"],
-            "target.features_add": ["LWIP"],
-            "platform.default-serial-baud-rate": 9600
-       }
+    "MTB_ADV_WISE_1570": {
+         "target.components_add": ["SPIF"]
+    }
 ```
 
 Please note that while a default block device exists, an application is not forced to use it and can create its own one.
