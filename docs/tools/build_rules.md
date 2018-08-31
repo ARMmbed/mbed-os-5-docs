@@ -66,7 +66,7 @@ In the above example, `mbed compile` includes files in directories named `FEATUR
 
 #### Component directories
 
-The component labeled directories are used for software that implements funtionality. They are within label directory primarily because we don't expect every program to use this software, and including this software in every build would needlessly increase build time.  The configuration value `target.components` entirely controls the set of directories the `COMPONENT` label type includes. The following is a shortened version of an example `targets.json`:
+The component labeled directories are used for software that implements funtionality. They are within label directories primarily because we don't expect every program to use this software, and including this software in every build would needlessly increase build time.  The configuration value `target.components` entirely controls the set of directories the `COMPONENT` label type includes. The following is a shortened version of an example `targets.json`:
 
 ```json
 {
