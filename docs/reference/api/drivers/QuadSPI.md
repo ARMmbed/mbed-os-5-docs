@@ -14,10 +14,6 @@ For more information, please review the related content.
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
 
-### QuadSPI example
-
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-qspi/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-qspi/file/cc0165946232/main.cpp)
-
 ### Related content
 
 - [STMicroelectronics Quad-SPI documentation](www.st.com/resource/en/application_note/dm00227538.pdf).
