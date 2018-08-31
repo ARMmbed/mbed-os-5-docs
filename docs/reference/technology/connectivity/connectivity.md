@@ -46,8 +46,8 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/development/tutoria
 
 ### NFC
 
-<span class="images">![](../../api/connectivity/nfc/n_mark.png)<span>NFC</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>NFC</span></span>
 
-Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content, Bluetooth connection initiation/out-of-band pairing.
+Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content and Bluetooth connection initiation/out-of-band pairing.
 
 To learn how to use NFC with Mbed OS, please refer to the [NFC](/docs/development/apis/nfc.html) user API reference.
