@@ -17,7 +17,7 @@ Mbed OS build tools determine the type of source file found based on the file's 
 | `.icf`              | IAR linker file   | IAR's linker                   |
 | `.ld`               | GCC linker acript | GCC's linker (`ld`)            |
 | `.o`                | Object            | Toolchain's linker             |
-| `.s`, `.S`          | Assembly          | Toolchain's assebler           |
+| `.s`, `.S`          | Assembly          | Toolchain's assembler          |
 | `.sct`              | ARM scatter file  | ARM's linker (`armlink`)       |
 
 
