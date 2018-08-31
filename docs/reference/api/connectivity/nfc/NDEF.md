@@ -1,12 +1,12 @@
 ### NDEF API
 
-We provide API to construct and parse NDEF messages which is the common data format exchange for NFC messages.
+Mbed OS provide this API to construct and parse NDEF messages, which is the common data format exchange for NFC messages.
 
-A NDEF message is a collection of separate NDEF records where each of these records is defined by a type such as URI, Mime, Text that identifies what is contained in the record and a payload.
+An NDEF message is a collection of separate NDEF records. Each of these records is defined by a type, such as URI, Mime and Text, that identifies a payload and what the record contains.
 
 #### Parsing
 
-The class `mbed::nfc::ndef::MessageParser` parses a buffer of data in input and produces parsing events that are forwarded to its delegate. To help developers we offer a more integrated parser (`mbed::nfc::ndef::common::SimpleMessageParser`) that parses well known NFC types records such as Text, URI or Mime records and produces usable objects out of the box.
+The class `mbed::nfc::ndef::MessageParser` parses a buffer of data in input and produces parsing events that are forwarded to its delegate. To help you, we offer a more integrated parser (`mbed::nfc::ndef::common::SimpleMessageParser`) that parses well known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box.
 
 ```
 #include "nfc/ndef/common/SimpleMessageParser.h"
@@ -81,7 +81,7 @@ An application can extend capabilities of `SimpleMessageParser` by adding new re
 
 #### Construction
 
-The class `mbed::nfc::ndef::MessageBuilder` builds a NDEF message into a user provided buffer. `URI`, `Text` and `Mime` type can be serialized in the builder with the help of the member function `append_as_record`.
+The class `mbed::nfc::ndef::MessageBuilder` builds an NDEF message into a user-provided buffer. `URI`, `Text` and `Mime` types can be serialized in the builder with the help of the member function `append_as_record`.
 
 ```
 #include "nfc/ndef/MessageBuilder.h"
