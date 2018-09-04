@@ -135,6 +135,70 @@ This configuration adds a new region, named header, after the bootloader and bef
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
 ```
 
+
+### Prebuilt bootloaders
+
+Prebuilt bootloader mode is an option to merge prebuilt bootloaders into your application. `mbed-os\features\FEATURE_BOOTLOADER\` contains the available supported targets with the corresponding prebuilt bootloader organized in folders specific to targets. For example: `FEATURE_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F429xI/TARGET_NUCLEO_F429ZI/mbed-bootloader-block_device-sotp-v3_4_0.bin`.
+
+Please note that this bootloader is not the same as the public [`mbed-bootloader`](https://github.com/ARMmbed/mbed-bootloader), which Mbed OS uses to generate the bootloader binaries in `mbed-os`.
+
+There are two ways to test prebuilt bootloader mode. 
+
+You can add the BOOTLOADER feature into `mbed_app.json` located in the root application directory:
+
+   ```
+    "target_overrides": {
+        "*": {
+            "target.features_add": ["BOOTLOADER"]
+        }
+    }
+   ```
+
+Alternatively, you can add `-C 'target.features_add=["BOOTLOADER"]'` to your `mbed compile` command-line arguments.
+
+Please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-feature-bootloader) for an example on how to use the bootloader feature.
+
+There are two ways to add support for new targets:
+
+You can place the prebuilt binary bootloader in `mbed-os/feature/FEATURE_BOOTLOADER`, and add the fields below with values corresponding to your binary:
+   
+   ```
+   "target_overrides": {
+           "YOUR_TARGET": {
+               "target.app_offset": "0x10400",
+               "target.header_offset": "0x10000",
+               "target.header_format": [
+                   ["magic", "const", "32be", "0x5a51b3d4"],
+                   ["headerVersion", "const", "32be", "2"],
+                   ["firmwareVersion", "timestamp", "64be", null],
+                   ["firmwareSize", "size", "64be", ["application"]],
+                   ["firmwareHash", "digest", "SHA256", "application"],
+                   ["headerCRC", "digest", "CRCITT32be", "header"]
+               ],
+               "target.bootloader_img": "your_bootloader.bin"
+           },
+   ```
+   
+Alternatively, you can edit `mbed_app.json`, and override the target bootloader with the path to the bootloader and other fields:
+   
+   ```
+       "target_overrides": {
+           "YOUR_TARGET": {
+               "target.bootloader_img": "PATH_TO_BOOTLOADER/your_bootloader.bin"
+               "target.app_offset": "0x10400",
+               "target.header_offset": "0x10000",
+               "target.header_format": [
+                   ["magic", "const", "32be", "0x5a51b3d4"],
+                   ["headerVersion", "const", "32be", "2"],
+                   ["firmwareVersion", "timestamp", "64be", null],
+                   ["firmwareSize", "size", "64be", ["application"]],
+                   ["firmwareHash", "digest", "SHA256", "application"],
+                   ["headerCRC", "digest", "CRCITT32be", "header"]
+               ]
+          }
+       }
+   ```
+   
 ### Unmanaged bootloader
 
 You want to have an unmanaged bootloader when your bootloader's requirements conflict with the requirements of the managed bootloader. You need an unmanaged bootloader when your bootloader does not come before your application in ROM or your application does not start immediately after your bootloader. Unlike a managed bootloader, an unmanaged bootloader does not automatically merge the bootloader image with the application image after building the application. We expect users of an unmanaged bootloader build to construct their own set of scripts built atop the `mbed compile` primitive to perform bootloader and application merging.
