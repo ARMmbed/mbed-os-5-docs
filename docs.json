@@ -835,7 +835,11 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/testing/testing_greentea.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/testing/unit_testing.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/testing/testing_greentea.md
                     },
                     {
                         "type": "markdown",
