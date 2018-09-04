@@ -8,7 +8,7 @@ You can configure the DataFlashBlockDevice to force the underlying device to use
 
 ### DataFlashBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>)
+<!--- [![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>) --->
 
 ### DataFlashBlockDevice example:
 
