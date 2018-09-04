@@ -109,10 +109,8 @@ You now have set up a debug connection. From here, you can flash debug builds, s
 
 ### Semihosting messages
 
-It's possible to send messages from the development board to your computer over the debug port using [semihosting](http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm). Some parts of Mbed OS 5 also use this, such as uVisor. To see semihosting messages:
+It's possible to send messages from the development board to your computer over the debug port using [semihosting](http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm). To see semihosting messages:
 
 1. Install [Netcat](https://en.wikipedia.org/wiki/Netcat).
 2. Connect pyOCD or OpenOCD to your board.
 3. Run `nc localhost 4444`.
-
-<span class="notes">**Note:** uVisor sends most of its messages during startup, so attach Netcat before starting your program.</span>
