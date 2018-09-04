@@ -1,7 +1,7 @@
 ## Full API list
 
 
-### Platform
+### Platform APIs
 
 [Modules that provide consistent user experience.](platform.html)
 
@@ -36,7 +36,7 @@
 </tbody>
 </table>
 
-### Drivers
+### Drivers APIs
 
 [Analog and digital input and outputs and digital interfaces.](drivers.html)
 
@@ -90,7 +90,7 @@
 </tbody>
 </table>
 
-### RTOS
+### RTOS APIs
 
 [Handling tasks and events in Mbed OS.](rtos.html)
 
@@ -117,7 +117,7 @@
 </tbody>
 </table>
 
-### Network socket
+### Network socket APIs
 
 [Network socket API for TCP/IP.](network-socket.html)
 
@@ -136,7 +136,7 @@
 </tbody>
 </table>
 
-### Network interfaces
+### Network interfaces APIs
 
 [Network interfaces, Ethernet, Wifi, Cellular & Mesh](network-interfaces.html)
 
@@ -155,7 +155,7 @@
 </tbody>
 </table>
 
-### Bluetooth Low Energy (BLE)
+### Bluetooth Low Energy (BLE) APIs
 
 [Bluetooth Low Energy](bluetooth.html)
 
@@ -177,7 +177,7 @@
 </tbody>
 </table>
 
-### LoRaWAN
+### LoRaWAN APIs
 
 [Low power wide area network.](lorawan.html)
 
@@ -192,7 +192,7 @@
 </tbody>
 </table>
 
-### Security
+### Security APIs
 
 [Working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.](security.html)
 
@@ -207,7 +207,7 @@
 </tbody>
 </table>
 
-### Storage
+### Storage APIs
 
 [Working with the file system.](storage.html)
 
