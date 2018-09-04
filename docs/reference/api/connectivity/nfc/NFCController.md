@@ -6,7 +6,7 @@ To use an NFC controller, you must initiate the instance with a driver instance,
 
 ### NFC controller class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/FIXME)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.html)
 
 ### NFC controller example
 
