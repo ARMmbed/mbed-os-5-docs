@@ -2,23 +2,31 @@
 
 Use the `mbed test` command to compile and run tests.
 
-The arguments to `test` are:
-* `-m <MCU>` to select a target for the compilation. If `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
-* `-t <TOOLCHAIN>` to select a toolchain (of those defined in `mbed_settings.py`, see above), where `toolchain` can be either `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
-* `--compile-list` to list all the tests that can be built.
-* `--run-list` to list all the tests that can be run (they must be built first).
-* `--compile` to only compile the tests.
-* `--run` to only run the tests.
-* `-n <TESTS_BY_NAME>` to limit the tests built or run to a comma separated list (ex. test1,test2,test3).
-* `--source <SOURCE>` to select the source directory. Default is `.` (the current directory). You can specify multiple source locations, even outside the program tree.
-* `--build <BUILD>` to select the build directory. Default: `BUILD/` inside your program.
-* `--profile <PATH_TO_BUILD_PROFILE>` to select a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
-* `-c or --clean` to clean the build directory before compiling.
-* `--test-spec <TEST_SPEC>` to set the path for the test spec file used when building and running tests (the default path is the build directory).
-* `-v` or `--verbose` for verbose diagnostic output.
-* `-vv` or `--very_verbose` for very verbose diagnostic output.
+There are two testing frameworks: Greentea and Icetea. Greentea provides tests designed for driver porting and target verification. Icetea provides and manages tests for multiple devices at the same time. For example, you can test the network setup for a server and multiple clients, simultaneously controlling them from the test environment.
 
-Invoke `mbed test`:
+The arguments to `test` are:
+
+- `-m <MCU>`: to select a target for the compilation. If the `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
+- `-t <TOOLCHAIN>`: to select a toolchain from those defined in `mbed_settings.py`, where `toolchain` can either be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
+- `--compile-list`: to list all the tests that can be built.
+- `--run-list`: to list all the tests that can be run, after they have been built.
+- `--compile`: to only compile the tests.
+- `--run`: to only run the tests.
+- `-n <TESTS_BY_NAME>`: to limit the tests built or run to a comma separated list, for example, `test1, test2, test3`.
+- `--source <SOURCE>`: to select the source directory. The default is `.` for the the current directory. You can specify multiple source locations, even outside the program tree.
+- `--build <BUILD>`: to select the build directory. The default is `BUILD/` inside your program.
+- `--profile <PATH_TO_BUILD_PROFILE>`: to select a path to a build profile configuration file, for example, `mbed-os/tools/profiles/debug.json`.
+- `-c or --clean`: to clean the build directory before compiling.
+- `--test-spec <TEST_SPEC>`: to set the path for the test specification file used when building and running tests. The default path is the build directory.
+- `--build-data <BUILD_DATA>`: dumps build_data to this file.
+- `--app-config <APP_CONFIG>`: the path of an app configuration file. The default is to look for `mbed_app.json`.
+- `--test-config <TEST_CONFIG>`: the path or Mbed OS keyword of a test configuration file, for example, `ethernet`, `odin_wifi` or `path/to/config.json`.
+- `--greentea`: to run Greentea tests. As a default, it only runs Greentea tests.
+- `--icetea`: to run Icetea tests. If used without the `--greentea` flag, then it only runs Icetea tests.
+- `-v` or `--verbose`: for verbose diagnostic output.
+- `-vv` or `--very_verbose`: for very verbose diagnostic output.
+
+To invoke the `mbed test`:
 
 ```
 $ mbed test -m K64F -t GCC_ARM
@@ -79,6 +87,33 @@ Test Case:
     Path: .\TESTS\functional\test3
 ```
 
+For Icetea:
+
+```
+$ mbed test -m K64F -t GCC_ARM --icetea --compile-list
+Available Icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
+Test Case:
+    Name: test_cmdline
+    Path: ./TEST_APPS/testcases/example/test_cmdline.py
+    Test applications: ./TEST_APPS/device/exampleapp
+Test Case:
+    Name: UDPSOCKET_BIND_PORT
+    Path: ./TEST_APPS/testcases/netsocket/SOCKET_BIND_PORT.py
+    Test applications: ./TEST_APPS/device/socket_app
+Test Case:
+    Name: TCPSOCKET_BIND_PORT
+    Path: ./TEST_APPS/testcases/netsocket/SOCKET_BIND_PORT.py
+    Test applications: ./TEST_APPS/device/socket_app
+Test Case:
+    Name: TCPSERVER_ACCEPT
+    Path: ./TEST_APPS/testcases/netsocket/TCPSERVER_ACCEPT.py
+    Test applications: ./TEST_APPS/device/socket_app
+Test Case:
+    Name: TCPSOCKET_ECHOTEST_BURST_SHORT
+    Path: ./TEST_APPS/testcases/netsocket/TCPSOCKET_ECHOTEST_BURST_SHORT.py
+    Test applications: ./TEST_APPS/device/socket_app
+```
+
 You can find the tests that are available for **running** by using the `--run-list` option:
 
 ```
@@ -91,21 +126,38 @@ mbedgt: available tests for built 'K64F-ARM', location '.\build\tests\K64F\ARM'
         test 'TESTS-functional-test3'
 ```
 
+For Icetea:
+
+```
+$ mbed test -m K64F -t GCC_ARM --icetea --run-list
+Available Icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
+    test 'UDPSOCKET_BIND_PORT'
+    test 'TCPSOCKET_BIND_PORT'
+    test 'TCPSERVER_ACCEPT'
+    test 'TCPSOCKET_ECHOTEST_BURST_SHORT'
+```
+
 ### Compiling and running tests
 
-You can specify to only **build** the tests by using the `--compile` option:
+You can specify that the tests only **build** by using the `--compile` option:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --compile
 ```
 
-You can specify to only **run** the tests by using the `--run` option:
+For Icetea, only the test applications are built:
+
+```
+$ mbed test -m K64F -t GCC_ARM --compile --icetea
+```
+
+You can specify that the tests only **run** by using the `--run` option:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --run
 ```
 
-If you don't specify any of these, `mbed test` will first compile all available tests and then run them.
+If you don't specify any of these, `mbed test` first compiles all available tests and then runs them.
 
 ### Limiting the test scope
 
@@ -115,7 +167,7 @@ You can limit the scope of the tests built and run by using the `-n` option. Thi
 $ mbed test -m K64F -t GCC_ARM -n TESTS-functional-test1,TESTS-functional-test2
 ```
 
-You can use the wildcard character `*` to run a group of tests that share a common prefix without specifying each test individually. For instance, if you only want to run the three tests `TESTS-functional-test1`, `TESTS-functional-test2` and `TESTS-functional-test3`, but you have other tests in your project, you can run:
+You can use the wildcard character `*` to run a group of tests that share a common prefix without specifying each test individually. For instance, if you only want to run the three tests, `TESTS-functional-test1`, `TESTS-functional-test2` and `TESTS-functional-test3`, but you have other tests in your project, you can run:
 
 ```
 $ mbed test -m NUCLEO_F429ZI -t GCC_ARM -n TESTS-functional*
@@ -154,16 +206,17 @@ mbed-os-program
      | ....
 ```
 
-As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Please note that `TESTS` is a special upper case directory that is excluded from module sources while compiling.
+As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Please note that `TESTS` is a special upper-case directory that is excluded from module sources while compiling.
 
-<span class="notes">**Note:** `mbed test` does not work in applications that contain a  `main` function that is outside of a `TESTS` directory.</span>
+<span class="notes">**Note:** `mbed test` does not work in applications that contain a `main` function that is outside of a `TESTS` directory.</span>
 
 ### Troubleshooting
 
-#### Unable to import Mercurial (mbed.org) programs or libraries.
-1. Check whether you have Mercurial installed in your system path by  running `hg` in command prompt. If you're receiving "command not found" or a similar message, then you need to install Mercurial, and add it to your system path.
+#### Import Mercurial (mbed.org) programs or libraries
 
-2. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's [certificate management](https://www.mercurial-scm.org/wiki/CACertificates).
+1. Check whether you have Mercurial installed in your system path by  running `hg` in the command prompt. If you are receiving "command not found" or a similar message, then you need to install Mercurial and add it to your system path.
+1. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's [certificate management](https://www.mercurial-scm.org/wiki/CACertificates).
 
-#### Various issues when running Mbed CLI in Cygwin environment
-Currently Mbed CLI is not compatible with Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
+#### Various issues when running Mbed CLI in the Cygwin environment
+
+Mbed CLI is not currently compatible with the Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
