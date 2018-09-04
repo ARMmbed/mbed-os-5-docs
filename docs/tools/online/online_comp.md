@@ -6,6 +6,17 @@ The Arm Mbed Online Compiler enables you to either write your code from scratch 
 
 The compiler is always available on [`https://os.mbed.com/compiler/`](https://os.mbed.com/compiler/).
 
+## Error codes
+
+* 255 - Unable to connect to the API
+* 254 - The build system is offline
+* 250 - Invalid API response
+* 242 - Compile task timed out
+* 241 - Compile task failed
+* 240 - Invalid task status
+* 235 - Invalid message type
+* 230 - The build system did not finish successfully
+
 ## Keyboard shortcuts
 
 ### Navigation

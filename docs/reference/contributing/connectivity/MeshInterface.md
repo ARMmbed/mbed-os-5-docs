@@ -16,10 +16,10 @@ The Mbed OS port of Nanostack consists of a few helper modules that provide an e
     - Security settings.
     - Channel configuration.
     - Connection and reconnection logic.
-- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
+- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
     - An internal event handler is initialized when the stack starts.
     - The event handler is running in its own thread. Not visible for users.
-- [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface) class implements the network stack abstraction for the socket layer.
+- [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-interface) class implements the network stack abstraction for the socket layer.
     - Initializes the RF driver. See [Providing RF driver](#providing-rf-driver-for-mbed-os-applications).
 
 In Mbed OS, Socket API hides the differences between the networking stacks. Users will only use one of its high level APIs:
@@ -42,7 +42,7 @@ For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterface
 
 Applications use only `LoWPANNDInterface` or `ThreadInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
 
-See [NanostackRfPhy.h](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/nanostack-interface/NanostackRfPhy.h) for an up-to-date header file and API.
+See [NanostackRfPhy](https://os.mbed.com/docs/latest/mbed-os-api-doxy/class_nanostack_rf_phy.html) for an up-to-date header file and API.
 
 ### Device Driver API
 
@@ -66,7 +66,9 @@ The following steps describe how you can create a new RF driver:
 
 1. Check with an RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
-1. Verify the functionality of your implementation using the [Nanostack RF driver test application](https://github.com/ARMmbed/nanostack-rf-driver-tester). (This is currently only available to Mbed OS Partners.)
+1. Verify the functionality of your implementation by running the Nanostack RF driver testcase set in the Mbed OS repository:
+
+   `mbed test --clean --icetea -t <toolchain> -m <platform> --test-config MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
 
 ### Worker thread for Mbed OS
 

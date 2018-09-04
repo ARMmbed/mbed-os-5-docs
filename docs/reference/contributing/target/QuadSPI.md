@@ -1,10 +1,8 @@
-<h2 id="quadspi-port">QuadSPI</h2>
+<h2 id="quadspi-port">QuadSPI (QSPI) </h2>
 
-Implementing QSPI enables Mbed OS to communicate with external memories much faster than via SPI. Because the communication can be up to four lines between the host and a device.
+Implementing QSPI enables Mbed OS to communicate with compliant external SPI devices much faster than with standalone SPI due to the inclusion of up to four data lines between the host and a device.
 
-The most common use case is an external memory to use as additional data storage.
-
-<span class="warnings">**Warning:** We are changing the QSPI HAL API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the QSPI API](#implementing-quadspi) section.</span>
+The most common use case is for external memory to use as additional data storage.
 
 ### Assumptions
 
@@ -21,13 +19,36 @@ The most common use case is an external memory to use as additional data storage
 
 QSPI peripheral
 
-### Implementing QuadSPI
+### Implementing QSPI
 
-To make sure your platform is ready for the upcoming changes, you need to implement the future API and submit it in a separate pull request. You can find the API and specification for the new QuadSPI API in the following header file:
+You can implement your own QSPI by pulling in the following API header file:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-qspi-doxy/classmbed_1_1_q_s_p_i.html)
 
 The target needs to define the `qspi_s` structure - target specific QSPI object.
+
+The target needs to define the QSPI interface pin names:
+
+- `QSPI_FLASHn_XXX` for pins connected to onboard flash memory.
+- `QSPIn_XXX` for pins routed out to external connector.
+
+`n` is the interface index, typically `1` if single QSPI interface available.
+
+```
+QSPIn_IO0
+QSPIn_IO1
+QSPIn_IO2
+QSPIn_IO3
+QSPIn_SCK
+QSPIn_CSN
+
+QSPI_FLASHn_IO0
+QSPI_FLASHn_IO1
+QSPI_FLASHn_IO2
+QSPI_FLASHn_IO3
+QSPI_FLASHn_SCK
+QSPI_FLASHn_CSN
+```
 
 Functions to implement:
 
@@ -41,7 +62,7 @@ qspi_status_t qspi_read(qspi_t *obj, const qspi_command_t *command, void *data, 
 
 ```
 
-Use `qspi_write` and `qspi_read` for data transfers. For communicating with a device, use `qspi_command_transfer`.
+Use `qspi_write` and `qspi_read` for data transfers. To communicate with a device, use `qspi_command_transfer`.
 
 To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_has`:
 
@@ -53,4 +74,12 @@ To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_ha
 
 ### Testing
 
-To be implemented
+The Mbed OS HAL provides a set of conformance tests for the QSPI interface.
+
+<span class="notes">**Note:** QSPI HAL tests require QSPI Flash pins to be defined.</span>
+
+You can use these tests to validate the correctness of your implementation. To run the QSPI HAL tests, use the following command:
+
+```
+mbed test -t <toolchain> -m <target> -n tests-mbed_hal-qspi
+```

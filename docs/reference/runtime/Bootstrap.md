@@ -2,18 +2,36 @@
 
 ### Entry points
 
-Mbed OS provides two entry points for developers to hook into:
+Mbed OS provides two entry points you as a developer to hook into:
 
 - `main(void)` - Default entry point. All the standard application code goes here.
-- `mbed_main(void)` - Executed directly before `main`. The user can define this.
+- `mbed_main(void)` - Executed directly before `main`. You can define this.
 
-When execution reaches the entry points, a user can expect a fully initialized system that is ready to execute application code. For this to happen, the following must have occurred prior to this point:
+When execution reaches the entry points, you can expect a fully initialized system that is ready to execute application code. The Mbed OS boot sequence consists of four phases: target setup, toolchain setup, starting the RTOS and starting the Mbed application. You can see these phases below:
 
-- Low-level platform initialization.
-- Stack and heap initialization.
-- Vector table copied to RAM.
-- Standard library initialized.
-- RTOS initialized and scheduler started.
+1. Set up target.
+   1. Configure clocks.
+   1. Configure watchdog (if applicable).
+   1. Turn on RAM (if applicable).
+   1. Jump to set up toolchain.
+1. Set up toolchain.
+   1. Initialize RAM.
+   1. Initialize standard library.
+   1. Call mbed_init.
+      1. Vector table copied to RAM.
+      1. Vendor SDK initialized.
+      1. Jump to start RTOS.
+1. Start RTOS.
+     1. Create main thread.
+     1. Start scheduler.
+     1. Main thread calls start Mbed.
+1. Start Mbed.
+     1. Call `mbed_main`.
+     1. Call `main`.
+
+Sequence diagram of the boot sequence:
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/boot_sequence.png)<span>A diagram of the Arm Mbed OS 5 boot sequence</span></span>
 
 ### Retargeting
 
