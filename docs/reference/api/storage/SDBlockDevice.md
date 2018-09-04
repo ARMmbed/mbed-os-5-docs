@@ -64,7 +64,7 @@ The figure above shows the Mbed OS software component stack used for data storag
 
 ### SDBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>)
+<!--- [![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>) --->
 
 ### SDBlockDevice example application
 
