@@ -1,6 +1,6 @@
 ## Bootloader
 
-Arm Mbed OS allows you to update your device firmware. Our Pelion IoT platform enables this capability. One of the dependencies is a bootloader running on the device capable of updating the device firmware. The following documentation includes instructions and examples on how to update firmware on a target.
+Arm Mbed OS allows you to update your device firmware, enabled by our Pelion IoT platform. One of the dependencies is a bootloader running on the device capable of updating the device firmware. The following documentation includes instructions and examples on how to update firmware on a target.
 
 ### Dependencies
 
