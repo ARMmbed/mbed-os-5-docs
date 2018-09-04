@@ -175,3 +175,9 @@ Mbed OS provides a powerful configuration system for application development. Ho
 - The default choice of optimization should be size, on all platforms.
 
 [Full documentation](/docs/development/tools/configuring-tools.html).
+
+### Design process and template
+
+If you are designing a new feature or software module for Mbed OS, you must follow the design process and guidelines that the [design process for Mbed OS](https://github.com/ARMmbed/mbed-os/blob/master/docs/design-documents/README.md) describes.
+
+A [software design document template](https://github.com/ARMmbed/mbed-os/blob/master/docs/design-documents/design_template.md) is available. An [example design document](https://github.com/ARMmbed/mbed-os/blob/master/docs/design-documents/example_feature_design/example_feature_design.md) is also available for reference.
