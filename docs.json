@@ -745,6 +745,10 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-device-management.md"
+                            },
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-collaborate.md"
                             },
                             {
