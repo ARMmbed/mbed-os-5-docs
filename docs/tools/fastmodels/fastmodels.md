@@ -61,7 +61,7 @@ The FVPs start running, andthe LEDs on the FVP blink, like:
 
 <span class="notes">**Note:** FVP's `-a` option only takes .elf format images. To use the `--data` option with binary format images, please reference the [FVP Users' Guide](http://arminfo.emea.arm.com/help/index.jsp?topic=/com.arm.doc.100966_1103_00_en/index.html).</span>
 
-### Known issues
+### Notes
 
 1. Timing accuracy of Fast Models can't be guaranteed.
 1. There is no support for external peripherals, such as ESP8266 expansion boards.
