@@ -45,7 +45,7 @@ $ mbed compile
 This generates a payload to update the device with. After generating the payload, update the device through Device Management with:
 
 ```
-$ mbed dm update device -D <device ID>
+$ mbed dm update device -D <device ID> -m <target>
 ```
 
 This performs several actions:
