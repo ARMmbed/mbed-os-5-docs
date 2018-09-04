@@ -6,7 +6,7 @@ NOR-based SPI flash supports byte-sized read and writes, with an erase size of a
 
 ### SPIFBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>)
+<!--- [![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>) --->
 
 ### SPIFBlockDevice example:
 
