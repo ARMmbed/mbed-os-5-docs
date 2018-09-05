@@ -25,7 +25,7 @@ This command asks for information about your update certificate. After completin
 - A certificate in `.update-certificates/default.der`.
 - A matching private key in `.update-certificates/default.key.pem`.
 - A set of default settings in `.manifest_tool.json`.
-- Device Management update credentials in `update_defalut_resources.c`
+- Device Management update credentials in `update_default_resources.c`
 - Device Management settings in `.mbed_cloud_config.json`, including default settings for:
    - A unique vendor identifier, based on the domain name supplied as the `-d` parameter to `mbed dm init`.
    - A unique model identifier, based on the vendor identifier and the model name supplied as the `--model-name` to `mbed dm init`.
