@@ -107,4 +107,4 @@ To run the tests:
     mbed test -n "mbed-os-features-cellular-tests-*" -m TARGET -t TOOLCHAIN --app-config YOURCONFIG.json
     ```
 
-For more information on the  `mbed-greentea` test suite, please visit [its documentation](/docs/development/tools/greentea.html).
+For more information on the  `mbed-greentea` test suite, please visit [its documentation](/docs/development/tools/greentea-testing-applications.html).
