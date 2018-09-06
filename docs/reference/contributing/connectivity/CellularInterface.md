@@ -71,7 +71,7 @@ You can browse the existing `manufacturer-modules` under `features/cellular/fram
 
 ### Adding a new cellular module
 
-You can probably reuse an existing adaptation since most cellular modules are very similar to each other.
+You can probably reuse an existing adaptation because most cellular modules are similar to one another.
 
 You need to create a new folder as _MANUFACTURER/MODULE/_ for your new cellular module in `features/cellular/framework/targets/`. A device class inheriting [AT_CellularDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) is a minimum, and you may need to extend other cellular APIs as well if the default implementation is not sufficient for your cellular module.
 
