@@ -11,7 +11,7 @@ $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
 $ mbed target K64F
 $ mbed toolchain GCC_ARM
 ```
-<span class="notes">**Note:** The API key must have Administrator priveledges to use this feature.</span>
+<span class="notes">**Note:** The API key must have Administrator privileges to use this feature.</span>
 
 Initialize the device management feature of Mbed CLI with the following command:
 
