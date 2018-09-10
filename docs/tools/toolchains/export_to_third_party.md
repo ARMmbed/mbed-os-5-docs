@@ -44,10 +44,9 @@ will have the same flags as if you had compiled with:
 
     $ mbed compile -t arm -m K64F --profile debug
 
-For a complete list of supported export toolchains you can run:
+For a complete list of supported export toolchains, you can run:
 
     $ mbed export -h
-
 
 ### Exporting from the Arm Mbed Online Compiler
 
