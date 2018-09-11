@@ -9,7 +9,6 @@ The storage APIs present in Arm Mbed OS are:
 
 The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
 
-
 #### File systems
 
 - [**LittleFileSystem**](littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
@@ -20,7 +19,7 @@ The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-a
 
   - **Wear leveling** - Because the most common form of embedded storage is erodible flash memories, this file system provides a form of dynamic wear leveling for systems that cannot fit a full flash translation layer.
 
-- [**FATFileSystem**](fatfilesystem.html) - The FAT file system is an established disk-oriented file system that you can find on most operating systems, including Windows, Linux, Mac OS X and Mbed OS.
+- [**FATFileSystem**](fatfilesystem.html) - The FAT file system is an established disk-oriented file system that you can find on most operating systems, including Windows, Linux, macOS and Mbed OS.
 
   - **Portable** - Due to its support across operating systems, the FAT file system provides access to storage from both the embedded system and your PC.
 
