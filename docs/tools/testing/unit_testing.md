@@ -24,4 +24,4 @@ Each test suite requires a name to be configured in the `unittest.cmake` file. T
 
 Unit testing requires external tools you need to install. See the developer [documentation](https://github.com/ARMmbed/mbed-os/blob/master/UNITTESTS/README.md) in GitHub for the full installation guide.
 
-You can build and run unit tests through Arm Mbed CLI. You can also use the tool to generate new test files. For information on using Mbed CLI, please see the [CLI documentation](/docs/development/tools/arm-mbed-cli.html).
+You can build and run unit tests through Arm Mbed CLI. You can also use the tool to generate new test files. To learn how to do so, please see [our instructions about using unit tests with Mbed CLI](test-and-debug.html#unit-testing). For other information on using Mbed CLI, please see the [CLI documentation](/docs/development/tools/arm-mbed-cli.html).
