@@ -57,7 +57,7 @@ The "little" in the little file system comes from the focus on both keeping reso
 
 #### The FATFileSystem
 
-The FAT file system is an established disk-oriented file system that you can find on Mbed OS, Windows, Linux and Mac OS X. Due to its age and popularity, the FAT file system has become the standard for portable storage, such as flash drives and SD cards.
+The FAT file system is an established disk-oriented file system that you can find on Mbed OS, Windows, Linux and macOS. Due to its age and popularity, the FAT file system has become the standard for portable storage, such as flash drives and SD cards.
 
 ##### Portable
 
