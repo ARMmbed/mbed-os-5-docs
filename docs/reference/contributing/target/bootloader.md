@@ -8,7 +8,7 @@ The target needs to support the Flash HAL API. You can find the guide to porting
 
 ### Porting the bootloader
 
-You can learn to port the Update Client bootloader to new targets in [the porting guide](https://cloud.mbed.com/docs/current/porting/porting-the-update-client.html).
+You can learn to port the Update Client bootloader to new targets in [the porting guide](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html).
 
 An example walkthrough of porting the bootloader to the K64F platform can be found [here](https://cloud.mbed.com/docs/current/porting/update-k64f-port.html).
 
