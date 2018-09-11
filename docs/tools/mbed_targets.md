@@ -229,7 +229,7 @@ The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
-We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description](http://www.keil.com/pack/doc/CMSIS/Pack/html/)</a> retrieved from each CMSIS Pack.
+We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/) retrieved from each CMSIS Pack.
 
 The [`"device_name"`](/docs/development/porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
