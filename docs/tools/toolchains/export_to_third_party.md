@@ -117,7 +117,7 @@ When you encounter an error such as these, add the directory containing the comp
 
 Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. Please download and install it.
 
-##### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
+##### Make and Eclipse on Linux and macOS: Nordic platforms using SoftDevices
 
 Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew).
 

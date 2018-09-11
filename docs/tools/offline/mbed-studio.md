@@ -50,7 +50,7 @@ Mbed Studio provides support for formatting, syntax highlighting, locating files
 
 Now, there is a project located in the `Mbed Projects` view with the name `mbed-os-example-blinky` (or whatever project name you provided earlier). Clicking the triangle next to the project expands its contents and reveals the project’s current files and directories.
 
-Double-click on the `main.cpp` file to open it in Mbed Studio’s editor. This file includes the code needed to blink an LED. 
+Double-click on the `main.cpp` file to open it in Mbed Studio’s editor. This file includes the code needed to blink an LED.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Blinky-Main-CPP.png)<span>Explore your new project.</span></span>
 
@@ -74,7 +74,7 @@ Connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to y
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Target-Selection.png)<span>Select a target development board.</span></span>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Target-Auto-Detection.png)<span>Mbed Studio autodetects DAPLink-compatible boards that you have connected through USB.</span></span> 
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Target-Auto-Detection.png)<span>Mbed Studio autodetects DAPLink-compatible boards that you have connected through USB.</span></span>
 
 #### Running the project
 
@@ -90,13 +90,13 @@ Alternatively, you can right-click (Ctrl-click) on the project in the `Mbed Proj
 
 Alternatively, you can choose to build the project automatically through the menu by choosing `Project > Build Automatically`. This tells Mbed Studio to build the projects in the workspace whenever needed. After the build, an `mbed-os-example-blinky.bin` (or `<project name>.bin`) file is ready to run.
 
-Once the build completes, the build artifacts, such as the .bin and .elf binaries, are in the `BUILD` folder under the active project. 
+Once the build completes, the build artifacts, such as the .bin and .elf binaries, are in the `BUILD` folder under the active project.
 
 #### Further exploration
 
 Once you have built a project for a given target board, Eclipse can also index the `mbed-os-example-blinky` project, which means that it creates the appropriate mappings for the selected target. You can refresh this index by right-clicking on the project and selecting `Index > Freshen all files`. After Eclipse completes the indexing process, you can use the `Open declaration` function, or `F3` as a shortcut while hovering over a pin name, such as `led1`. This allows you to look through the dependency tree of the application and explore the underlying Mbed OS library.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Pin-Mapping.gif)<span>Press F3 to open a declaration, such as an IO pin name.</span></span> 
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Pin-Mapping.gif)<span>Press F3 to open a declaration, such as an IO pin name.</span></span>
 
 #### Building automatically
 
@@ -237,12 +237,12 @@ This section lists known issues that currently exist in Mbed Studio.
 Currently, Mbed Studio does not communicate with ST boards because they don’t use DAPLink by default.
 Workaround: None
 
-#### Mac
+#### macOS
 
-The `Eclipse.app` distributed for Mac is not yet signed. Mac OS X may show errors about unknown developers when you double-click to launch.
+The `Eclipse.app` distributed for macOS is not yet signed. macOS may show errors about unknown developers when you double-click to launch.
 Workaround: To launch, Ctrl-click on `Eclipse.app`, and choose `Open`. Then, approve the open action on subsequent warning dialogs.
 
-When CDT (C/C++ Developer Tooling) performs a build, it tries to use the system GCC. If it is not present, Mac OS X prompts to install the Xcode command-line tools.
+When CDT (C/C++ Developer Tooling) performs a build, it tries to use the system GCC. If it is not present, macOS prompts to install the Xcode command-line tools.
 Workaround: None. Follow the prompts to install the command-line tools, and restart Mbed Studio.
 
 #### Linux
@@ -252,7 +252,7 @@ Workaround: None
 
 #### Windows
 
-GCC builds are slower in Windows than Mac or Linux.
+GCC builds are slower in Windows than macOS or Linux.
 Workaround: None, this is also the case when using GCC from the command-line.
 
 ### FAQ
