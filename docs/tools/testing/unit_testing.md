@@ -1,23 +1,5 @@
 ## Unit testing
 
-### Introduction
-
-Traditional software testing is defined into three main levels: unit testing, integration testing and system testing. These levels are often pictured as a pyramid to indicate the amount of testing for each level.
-
-```
-^ Testing level
-|
-|       /\
-|      /  \       System testing
-|     /----\
-|    /      \     Integration testing
-|   /--------\
-|  /          \   Unit testing
-| /------------\
-|
-*-------------------> Amount of tests
-```
-
 We perform integration and system testing in an environment where we run the tests with the full Mbed OS. Other testing tools for Mbed OS require specific embedded hardware, which means traditional unit testing is not possible.
 
 Unit testing takes place in a build environment where we test each C or C++ class or module in isolation. This means we build test suites into separate test binaries and stub all access outside to remove dependencies on any specific embedded hardware or software combination. This allows us to complete the testing using native compilers on the build machine.
