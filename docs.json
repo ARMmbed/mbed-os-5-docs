@@ -1,4 +1,14 @@
-[{
+[
+    {
+        "title": "Mbed OS API doxygen",
+        "description": "The full Mbed OS API documentation in doxygen format",
+        "slug": "mbed-os-api-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "master"
+    },
+        {
         "title": "Introduction",
         "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
@@ -847,6 +857,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/testing/icetea.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/testing/utest.md"
                     },
                     {
@@ -1219,15 +1233,6 @@
                 ]
             }
         ]
-    },
-    {
-        "title": "Mbed OS API doxygen",
-        "description": "The full Mbed OS API documentation in doxygen format",
-        "slug": "mbed-os-api-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "master"
     },
     {
         "title": "feature-hal-spec-usb-device doxygen",
