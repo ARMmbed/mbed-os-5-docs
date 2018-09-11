@@ -88,6 +88,11 @@ Name: nvstore.area_2_size
     Description: Area 2 size
     Defined by: library:nvstore
     No value set
+Name: nvstore.enabled
+    Description: Enabled
+    Defined by: library:nvstore
+    Macro name: NVSTORE_ENABLED
+    Value: 1 (set by library:nvstore)
 Name: nvstore.max_keys
     Description: Maximal number of allowed NVStore keys
     Defined by: library:nvstore
