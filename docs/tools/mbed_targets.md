@@ -233,7 +233,7 @@ We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/
 
 The [`"device_name"`](/docs/development/porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
-[http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 156 of the `.pdsc` file:
+[http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 204 of the `.pdsc` file:
 
 ```xml
 <device Dname="MK20DX256xxx7">
