@@ -1,6 +1,6 @@
 <h2 id="cli-update">Updating devices with Arm Mbed CLI</h2>
 
-Arm Mbed OS allows you to update your device firmware, enabled by our Pelion IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html). Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Pelion Device Management with a project.
+Arm Mbed OS allows you to update your device firmware, enabled by the Pelion IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html). Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Pelion Device Management with a project.
 
 ### Project setup
 
@@ -8,9 +8,10 @@ Configure your Mbed Cloud SDK API key, target and toolchain. Obtain the API key 
 
 ```
 $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
-$ mbed target K64F
-$ mbed toolchain GCC_ARM
+$ mbed target <TARGET>
+$ mbed toolchain <TOOLCHAIN>
 ```
+
 <span class="notes">**Note:** The API key must have Administrator privileges to use this feature.</span>
 
 Initialize the device management feature of Mbed CLI with the following command:
