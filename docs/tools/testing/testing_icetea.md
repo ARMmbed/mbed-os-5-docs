@@ -20,7 +20,7 @@ Test names are defined in the Python scripts themselves. For example, `TEST_APPS
 
 You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the [CLI documentation](/docs/development/tools/arm-mbed-cli.html).
 
-When you build tests for a target and a toolchain, the script discovers the available test cases. The required C++ applications are determined from the available test cases and are built in parallel.
+When you build tests for a target and a toolchain, the script discovers the available test cases. The required C++ applications are determined from the available test cases and build in parallel.
 
 ##### Building process
 
