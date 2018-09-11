@@ -15,9 +15,9 @@ You also need a serial monitor:
 
 - [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
 
-#### Mac OS X
+#### macOS
 
-On Mac OS X, all software comes installed by default.
+On macOS, all software comes installed by default.
 
 #### Linux
 
@@ -70,7 +70,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
-#### Mac OS X
+#### macOS
 
 1. Open a terminal window.
 1. Enter `screen /dev/tty.usbm`, and press `Tab` to autocomplete.
@@ -119,7 +119,7 @@ If you change the baud rate on the device, you also need to change it on your se
 1. Windows:
 	1. In TeraTerm, go to *Setup > Serial Port*.
 	1. Change *Baud rate* to 115200.
-1. mac OS and Linux: Pass the baud rate as the last argument to the `screen` command:
+1. macOS and Linux: Pass the baud rate as the last argument to the `screen` command:
 
     ```
     $ screen /dev/ttyACM0 115200
@@ -326,6 +326,6 @@ Windows:
 
 [![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s){:target="_blank"}
 
-Mac OS X:
+macOS:
 
 [![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s){:target="_blank"}

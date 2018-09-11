@@ -60,7 +60,7 @@ Open the Device Manager by pressing `Windows key + R`. Type `devmgmt.msc`, and c
 
 Run `dmesg | grep tty` from your command-line.
 
-##### Mac OS X
+##### macOS
 
 Run `ls /dev/tty.*` from your command-line.
 
