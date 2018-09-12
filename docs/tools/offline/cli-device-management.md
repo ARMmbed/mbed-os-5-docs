@@ -1,12 +1,12 @@
 <h2 id="cli-update">Updating devices with Arm Mbed CLI</h2>
 
-Arm Mbed OS allows you to update your device firmware, enabled by the Pelion IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html). Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Pelion Device Management with a project.
+Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html). Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Device Management with a project.
 
 ### Requirements
 
-To use the `mbed dm` command to update a device, your device must be running an application with Pelion Device Management Client and a supported managed or unmanaged bootloader.
+To use the `mbed dm` command to update a device, your device must be running an application with Device Management Client and a supported managed or unmanaged bootloader.
 
-This command only works for devices running Pelion Device Management Client, and the application is combined with a bootloader.
+This command only works for devices running Device Management Client, and the application is combined with a bootloader.
 
 ### Project setup
 
@@ -94,4 +94,4 @@ Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the pa
 
 Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://cloud.mbed.com/docs/current/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
 
-To test this feature, you can run the [Pelion Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) on one of our reference platforms.
+To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) on one of our reference platforms.
