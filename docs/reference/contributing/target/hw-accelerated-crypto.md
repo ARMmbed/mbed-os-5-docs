@@ -135,13 +135,7 @@ The default implementation of the modules are usually in the file `feature/mbedt
 
 ### Mbed TLS platform context
 
-Some hardware accelerators require initialization, regardless of specific cryptography engine. For this, `mbedtls_platform_setup()` and `mbedtls_platform_terminate()` was introduced.
-
-When your hardware accelerator driver requires initialization, you should do the following operations:
-
-1. Define `MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT` in `mbedtls_device.h`
-1. Implement `crypto_platform_setup(crypto_platform_ctx *ctx)` and `crypto_platform_terminate(crypto_platform_ctx *ctx)` that will initialize and terminate your hardware accelerator driver.
-1. Define `crypto_platform_ctx` in `crypto_platform.h` in a way that suits your implementation.
+Some hardware accelerators require initialization, regardless of specific cryptography engine. For instructions on how to do this, please see our [security page](/docs/development/apis/tls.html#mbed-tls-platform-context).
 
 ### Considerations for alternative implementations
 
