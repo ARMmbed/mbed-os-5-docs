@@ -66,7 +66,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 #### Release versioning
 
-You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/how-we-release-arm-mbed-os.html).
+You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/release-process.html).
 
 ### Pull request categories
 
