@@ -6,7 +6,7 @@ You can use the `compute` API to calculate CRC for the selected polynomial. If d
 
 ROM polynomial tables are for supported 8/16-bit CCITT, 16-bit IBM and 32-bit ANSI polynomials. By default, ROM tables are used for CRC computation. If ROM tables are not available, then CRC is computed at runtime bit by bit for all data input.
 
-For platforms that support [hardware CRC](hardware-crc.html), the MbedCRC API replaces the software implementation of CRC to take advantage of the hardware acceleration the platform provides.
+For platforms that support [hardware CRC](mbedcrc.html), the MbedCRC API replaces the software implementation of CRC to take advantage of the hardware acceleration the platform provides.
 
 ### MbedCRC class reference
 
@@ -34,4 +34,4 @@ Below is a CRC example for the SD driver.
 
 ### Related content
 
-- [Hardware CRC](hardware-crc.html).
+- [Hardware CRC](mbedcrc.html).
