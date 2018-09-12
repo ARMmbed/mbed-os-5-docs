@@ -10,7 +10,7 @@ This command only works for devices running Device Management Client, and the ap
 
 ### Project setup
 
-Configure your Mbed Cloud SDK API key, target and toolchain. Obtain the API key from the the Device Management Portal.
+Configure your Mbed Cloud SDK API key, target and toolchain. [Obtain the API key](https://cloud.mbed.com/quick-start) from the the Device Management Portal.
 
 ```
 $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
