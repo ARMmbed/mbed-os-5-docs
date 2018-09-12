@@ -50,7 +50,7 @@ For example, when providing Wi-Fi SSID and password, you may use the following `
 }
 ```
 
-Please see [Selecting the default network interface](configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
+Please see [Selecting the default network interface](/docs/development/reference/configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
 
 Targets with connectivity set the `target.network-default-interface-type` configuration variable appropriately, either to their only interface or the one most commonly used. For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
 
@@ -81,8 +81,8 @@ if (wifi) {
 
 ### Related content
 
-- [Configuring the default network interface](configuration-connectivity.html#selecting-the-default-network-interface).
-- [Network connectivity](connectivity-tech.html).
-- [IP networking](ip-networking.html).
+- [Configuring the default network interface](/docs/development/reference/configuration-connectivity.html#selecting-the-default-network-interface).
+- [Network connectivity](/docs/development/reference/connectivity-tech.html).
+- [IP networking](/docs/development/reference/ip-networking.html).
 - [Network status API](network-status.html).
-- [Network sockets](network-socket.html).
+- [Network sockets](/docs/development/apis/network-socket.html).
