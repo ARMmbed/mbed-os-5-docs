@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 ### Getting started
 
-To send data over the serial connection, use the [Serial](/docs/development/reference/serial.html) object.
+To send data over the serial connection, use the [Serial](/docs/development/apis/serial.html) object.
 
 #### Example program
 
@@ -171,12 +171,12 @@ int main() {
 }
 ```
 
-Your board crashes when you press the button because [mutexes guard](/docs/development/reference/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
+Your board crashes when you press the button because [mutexes guard](/docs/development/apis/mutex.html) calls to stdio functions, such as printf, in the Arm C standard library, and mutexes [cannot be called from an ISR](https://www.keil.com/pack/doc/cmsis/RTOS/html/group__CMSIS__RTOS__MutexMgmt.html).
 
 You can avoid this by:
 
-- Signaling from the ISR to the main thread using a [semaphore](/docs/development/reference/semaphore.html) or [mailbox](/docs/development/reference/mail.html), and calling `printf` in the main thread.
-- Using an event dispatching library, such as [Mbed events](/docs/development/reference/event.html).
+- Signaling from the ISR to the main thread using a [semaphore](/docs/development/apis/semaphore.html) or [mailbox](/docs/development/apis/mail.html), and calling `printf` in the main thread.
+- Using an event dispatching library, such as [Mbed events](/docs/development/apis/event.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 
