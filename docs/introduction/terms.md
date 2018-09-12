@@ -6,11 +6,11 @@
 
 **Application** - An executable module built out of libraries that acts as a final product.
 
-**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/development/tools/arm-mbed-cli.html), packaged as `mbed-cli`.
+**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/development/tools/developing-arm-mbed-cli.html), packaged as `mbed-cli`.
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/development/tools/arm-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/development/tools/developing-arm-mbed-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
