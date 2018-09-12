@@ -35,4 +35,4 @@ For more information, please see the following sections:
 - [IP networking](ip-networking.html).
 - [Ethernet](ethernet-technology.html).
 - [Socket API](/docs/development/apis/socket.html).
-- [WifiInterface API](wi-fi.html).
+- [WifiInterface API](/docs/development/apis/wi-fi.html).
