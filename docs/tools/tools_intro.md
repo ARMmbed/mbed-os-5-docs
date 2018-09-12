@@ -15,7 +15,7 @@ We developed Mbed OS 5 using the Mbed CLI tool, which is a Python program that c
 
 ##### Arm Mbed CLI
 
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](arm-mbed-cli.html).
+We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](developing-arm-mbed-cli.html).
 
 ##### Compiler versions
 
@@ -27,7 +27,7 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
 
 ##### Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the [Online Compiler page](arm-online-compiler.html).
+The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the [Online Compiler page](developing-arm-mbed-online-compiler.html).
 
 ##### Third party development tools
 
