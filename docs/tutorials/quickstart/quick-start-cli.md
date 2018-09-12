@@ -179,8 +179,8 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-  - [Mbed OS APIs](/docs/development/reference/apis.html) - list of all APIs available in Mbed OS.
-  - [Peripheral drivers](/docs/development/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+  - [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
+  - [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
   - [Advanced debugging](debugging.html).
