@@ -50,7 +50,7 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-To update to Mbed OS 5 with the [Mbed Online Compiler](/docs/development/tools/arm-mbed-online-compiler.html):
+To update to Mbed OS 5 with the [Mbed Online Compiler](/docs/development/tools/developing-arm-mbed-online-compiler.html):
 
 1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**:
