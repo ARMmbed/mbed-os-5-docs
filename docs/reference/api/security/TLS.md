@@ -52,13 +52,13 @@ As the [examples](#mbed-tls-examples) show, you *must* call the `mbedtls_platfor
 
     if((ret = mbedtls_platform_setup(NULL)) != 0) {
         mbedtls_printf("Platform initialization failed with error %d\r\n", ret);
-        return ret;
+        return 1;
     }
 
     /* call Mbed TLS code here */
 
     mbedtls_platform_teardown(NULL);
-    return ret;
+    return 0;
 ```
 
 ### Other resources
