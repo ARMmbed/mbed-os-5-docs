@@ -233,7 +233,7 @@ Generate files for a new unit test with `mbed test --unittests --new <FILE>`.
 
 ### Building and running unit tests
 
-You can specify to only **build** the unit tests by using the `--compile option:
+You can specify to only **build** the unit tests by using the `--compile` option:
 
 ```
 $ mbed test --unittests --compile
