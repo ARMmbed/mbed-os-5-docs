@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/development/tutorials/mesh.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
@@ -13,7 +13,7 @@ Nanostack is the networking stack that provides both of these protocols. For mor
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer.
 
-You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](mesh-configuration.html) section documents.
+You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](/docs/development/reference/configuration-mesh.html) section documents.
 
 ### Usage
 
@@ -48,4 +48,4 @@ The application below demonstrates a simple light control application, where dev
 
 ### Related content
 
-- [Nanostack](/docs/development/reference/technology.html#nanostack) technology reference material.
+- [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) technology reference material.
