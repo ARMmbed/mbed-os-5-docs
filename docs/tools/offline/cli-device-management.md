@@ -6,7 +6,7 @@ Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Dev
 
 To use the `mbed dm` command to update a device, your device must be running an application with Device Management Client and a supported managed or unmanaged bootloader.
 
-This command only works for devices running Device Management Client, and the application is combined with a bootloader.
+This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://cloud.mbed.com/docs/current/connecting/device-management-client-tutorials.html) on one of our reference platforms.
 
 ### Project setup
 
@@ -93,5 +93,3 @@ Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the pa
 ### Advanced use
 
 Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://cloud.mbed.com/docs/current/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
-
-To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) on one of our reference platforms.
