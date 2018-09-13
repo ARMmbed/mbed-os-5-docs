@@ -12,7 +12,7 @@ The **DeviceInterface** should also inherit one of the following (unless it is a
 
 - [EthInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html).
 - [WiFiInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html).
-- [CellularInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html).
+- [CellularInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html).
 - [MeshInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html).
 
 The **NetworkInterface** implementation provides the following methods:
