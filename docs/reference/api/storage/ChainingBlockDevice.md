@@ -14,7 +14,7 @@ The constructor takes in an array of block device pointers and provides an objec
 
 ### ChainingBlockDevice example
 
-This ChainingBlockDevice example creates a FAT file system across multiple [HeapBlockDevices](/docs/development/reference/heapblockdevice.html).
+This ChainingBlockDevice example creates a FAT file system across multiple [HeapBlockDevices](heapblockdevice.html).
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ChainingBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/ChainingBlockDevice_ex_1/file/8ad9777787ba/main.cpp)
 
