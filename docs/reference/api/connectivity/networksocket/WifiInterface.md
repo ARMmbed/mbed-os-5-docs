@@ -16,7 +16,7 @@ To bring up the network interface of an external Wi-Fi device (for example, the 
     1. Initialize the AT command parser.
 1. Call the `connect()` function with an SSID and password for the Wi-Fi network.
     1. Command the Wi-Fi device to connect to network.
-1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](/docs/development/reference/network-socket.html).
+1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](network-socket.html).
 
 To bring up the network interface of an Ethernet-like driver (for example, the OdinWiFiInterface):
 
