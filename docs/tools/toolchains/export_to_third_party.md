@@ -44,6 +44,10 @@ will have the same flags as if you had compiled with:
 
     $ mbed compile -t arm -m K64F --profile debug
 
+For a complete list of supported export toolchains, you can run:
+
+    $ mbed export -h
+
 ### Exporting from the Arm Mbed Online Compiler
 
 The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
