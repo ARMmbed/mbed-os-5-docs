@@ -75,4 +75,4 @@ This example establishes connection with the cellular network using Mbed OS Cell
 ### Related content
 
 - [Network socket](network-socket.html) API reference overview.
-- [Cellular architecture](cellular.html).
+- [Cellular architecture](/docs/development/reference/cellular.html).
