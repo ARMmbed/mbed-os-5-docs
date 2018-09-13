@@ -1,8 +1,6 @@
 <h2 id="tools-testing">Testing</h2>
 
-Testing is a critical step in the development process. The Arm Mbed ecosystem offers several tools to help you test your code.
-
-Traditional software testing is defined into three main levels: unit testing, integration testing and system testing. These levels are often pictured as a pyramid to indicate the amount of testing for each level.
+Testing is a critical step in the development process. Traditional software testing is defined into three main levels: unit testing, integration testing and system testing. These levels are often pictured as a pyramid to indicate the amount of testing for each level.
 
 ```
 ^ Testing level
@@ -17,6 +15,8 @@ Traditional software testing is defined into three main levels: unit testing, in
 |
 *-------------------> Amount of tests
 ```
+
+The Arm Mbed ecosystem offers several tools to help you test your code.
 
 You can use unit testing tools to build and run Mbed OS unit tests. Each unit test is built into an isolated test executable using a separate build system and build tools native to the development machine without any hardware or software dependencies. You can use the tool with Mbed CLI using the keyword `test` with `--unittests` flag.
 
