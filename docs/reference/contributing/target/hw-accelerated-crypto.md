@@ -133,6 +133,16 @@ To replace a module you have to:
 
 The default implementation of the modules are usually in the file `feature/mbedtls/src/<Module Name>.c`. The ECP module is split to two files: `ecp.c` and `ecp_curves.c`.
 
+### Mbed TLS platform context
+
+Some hardware accelerators require initialization, regardless of the specific cryptography engine. For this, we introduced `mbedtls_platform_setup()` and `mbedtls_platform_terminate()`.
+
+When your hardware accelerator driver requires initialization, do the following operations:
+
+1. Define `MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT` in `mbedtls_device.h`
+1. Implement `crypto_platform_setup(crypto_platform_ctx *ctx)` and `crypto_platform_terminate(crypto_platform_ctx *ctx)`, which initializes and terminates your hardware accelerator driver.
+1. Define `crypto_platform_ctx` in `crypto_platform.h`.
+
 ### Considerations for alternative implementations
 
 #### Concurrency

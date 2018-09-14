@@ -41,6 +41,26 @@ Then create a file named `mbed_app.json` at the root of your application with th
 }
 ```
 
+### Mbed TLS platform context
+
+Some hardware accelerators require initialization, regardless of the specific cryptography engine. For this, we introduced `mbedtls_platform_setup()` and `mbedtls_platform_terminate()`.
+
+As the [examples](#mbed-tls-examples) show, you *must* call the `mbedtls_platform_setup()` function before you call any Mbed TLS API. After using the Mbed TLS API, you *must* call `mbedtls_platform_teardown()` to terminate the platform hardware driver. For readability reasons, we suggest you set the platform context parameter for these functions as `NULL`, as it is not being used in Mbed OS.
+
+```
+    int ret = 0;
+
+    if((ret = mbedtls_platform_setup(NULL)) != 0) {
+        mbedtls_printf("Platform initialization failed with error %d\r\n", ret);
+        return 1;
+    }
+
+    /* call Mbed TLS code here */
+
+    mbedtls_platform_teardown(NULL);
+    return 0;
+```
+
 ### Other resources
 
 The [Mbed TLS website](https://tls.mbed.org) contains many other useful resources for developers, such as [developer documentation](https://tls.mbed.org/dev-corner), [knowledge base articles](https://tls.mbed.org/kb) and a [support forum](https://forums.mbed.com/c/mbed-tls).
