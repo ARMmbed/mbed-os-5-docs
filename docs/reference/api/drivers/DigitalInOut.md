@@ -15,4 +15,4 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 ### DigitalInOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalInOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalInOut_HelloWorld/file/185e0d3e7212/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalInOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalInOut_HelloWorld/file/5ed5244f3929/main.cpp)
