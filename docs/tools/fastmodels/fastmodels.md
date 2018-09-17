@@ -2,7 +2,7 @@
 
 Arm Fast Models are software models of Arm cores, subsystems, peripherals and so on. You can run Mbed OS on the software model instead of the hardware.
 
-This document explains how to build, run and debug Arm Mbed OS applications with Arm Fast Models. Due to licensing, Mbed OS do not provide any Fast Models. If you do not have a Fast Models license yet, you can visit [Arm Fast Models](https://developer.arm.com/products/system-design/fast-models) to obtain an evaluation license.
+This document explains how to build, run and debug Arm Mbed OS applications with Arm Fast Models. Due to licensing, Mbed OS does not provide any Fast Models. If you do not have a Fast Models license yet, you can visit [Arm Fast Models](https://developer.arm.com/products/system-design/fast-models) to obtain an evaluation license.
 
 Fixed Virtual Platforms (FVPs) are prebuilt system-level models after Arm’s reference platforms by Fast Models.
 
@@ -28,7 +28,7 @@ Examples you can successfully run include [`mbed-os-example-thread-statistics`](
 
 The following examples use [`mbed-os-example-blinky`](https://github.com/ARMmbed/mbed-os-example-blinky).
 
-To run Mbed OS examples with Fast Models, you need to install the Fast Models product and set up the license.
+To run Mbed OS examples with Fast Models, you need to install the Fast Models product and set up the license. The [Arm DS-5 Development Studio](https://developer.arm.com/products/software-development-tools/ds-5-development-studio) also provides Fast Models targets. To load a compiled Mbed OS image onto a Fast Models platform, such as the FVP_MPS2_Cortex-M0, you need to add your installation's `bin` folder to your system `PATH`. For example: `C:\Program Files\DS-5 v5.29.1\bin`.
 
 #### Import the example with Arm Mbed CLI 
 
