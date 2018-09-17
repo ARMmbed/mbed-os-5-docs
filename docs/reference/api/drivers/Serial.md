@@ -23,7 +23,7 @@ The default settings for the Mbed microcontroller are described as _9600-8-N-1_,
 
 ### Serial hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/file/e540d7769e69/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/file/18e08b8afd16/main.cpp)
 
 ### Serial examples
 
@@ -31,13 +31,13 @@ The default settings for the Mbed microcontroller are described as _9600-8-N-1_,
 
 Write a message to a device at a baud rate of 19200.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_1/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_1/file/7376f17bb36e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_1/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_1/file/40997137fc4d/main.cpp)
 
 #### Example two
 
 Provide a serial pass-through between the PC and an external UART.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_2/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_2/file/8d318218bac1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_2/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_2/file/4cf190502c9e/main.cpp)
 
 ### Related content
 
