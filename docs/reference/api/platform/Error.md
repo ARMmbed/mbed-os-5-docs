@@ -302,7 +302,7 @@ void save_all_errors() {
 
 The example application below demonstrates usage of error handling APIs:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/file/34cf6e69b337/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-error-handling/file/a2052dd6b341/main.cpp)
 
 ### List of Mbed OS defined error codes and descriptions
 
