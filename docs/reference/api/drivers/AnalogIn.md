@@ -16,7 +16,7 @@ The resolution for an ADC is the smallest distinguishable change in analog input
 
 ### AnalogIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/file/77750f8cba47/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_HelloWorld/file/04e47b45f593/main.cpp)
 
 ### AnalogIn examples
 
@@ -24,10 +24,10 @@ The resolution for an ADC is the smallest distinguishable change in analog input
 
 Control an R/C servo with analog input.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_1/file/490818b6238b/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_1/file/64493a867413/main.cpp)
 
 #### Example two
 
 This example shows AnalogIn reading 16-bit normalized samples.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_2/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_2/file/cb98929b3895/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_2/)](https://os.mbed.com/teams/mbed_example/code/AnalogIn_ex_2/file/803d1b3eb85e/main.cpp)
