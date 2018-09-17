@@ -54,7 +54,7 @@ A `Thread` can be in the following states:
 
 Each `Thread` can wait for signals and be notified of events:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_signals/)](https://os.mbed.com/teams/mbed_example/code/rtos_signals/file/476186ff82cf/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_signals/)](https://os.mbed.com/teams/mbed_example/code/rtos_signals/file/c99eb661c3e6/main.cpp)
 
 ##### Status and error codes
 
