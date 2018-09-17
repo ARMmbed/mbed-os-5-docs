@@ -15,7 +15,7 @@ This is the technical reference for callbacks. You should read the [Callbacks](p
 
 The Callback API provides a convenient way to pass arguments to spawned threads. This example uses a C function pointer in the Callback.
 
- [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/d4b2a035ffe3/main.cpp)
+ [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
 
 ### Sonar example
 
