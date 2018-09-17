@@ -22,13 +22,13 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 Set up a Timeout to invert an LED after a given timeout:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Timeout_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Timeout_HelloWorld/file/46d33a0cb1b1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Timeout_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Timeout_HelloWorld/file/5692f58a7971/main.cpp)
 
 ### Timeout example
 
 Try this example to attach a member function:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Timeout_Example/)](https://os.mbed.com/teams/mbed_example/code/Timeout_Example/file/00cc01bd2e75/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Timeout_Example/)](https://os.mbed.com/teams/mbed_example/code/Timeout_Example/file/517d40d18f1c/main.cpp)
 
 ### Related content
 
