@@ -9,7 +9,7 @@ Additional notes:
 
 ## FlashIAPBlockDevice class reference
 
-<!--- [![View code](https://www.mbed.com/embed/?type=library)](<Should be added after doxygen run>) --->
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_i_a_p_block_device.html)
 
 ## FlashIAPBlockDevicesBlockDevice example:
 
