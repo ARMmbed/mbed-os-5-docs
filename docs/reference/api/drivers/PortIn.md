@@ -10,7 +10,7 @@ A mask can be supplied so only certain bits of a port are used, allowing other b
 
 ### PortIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/mbed_official/code/PortIn_HelloWorld/)](https://os.mbed.com/users/mbed_official/code/PortIn_HelloWorld/file/92064442fd12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/users/mbed_official/code/PortIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/PortIn_HelloWorld/file/e78266d48649/main.cpp)
 
 ### Related content
 
