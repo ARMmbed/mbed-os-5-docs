@@ -165,18 +165,21 @@ All pull requests must be reviewed. The Arm Mbed CI bot determines the most suit
 
 Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
+Label: `needs: CI`
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
 
 #### The CI (Continuous Integration) testing
 
 There are many CI systems available. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
+Label: `needs: review`
 Time: 1 day for CI to complete and report back results.
 
 #### Work needed
 
 A pull request in the work needed state requires additional work due to failed tests, or rework as a result of the review. If a pull request is in this state, then our maintainers request changes from the pull request author.
 
+Label: `needs: work`
 Time: 3 days for the pull request author to action the review comments.
 
 #### Releases
