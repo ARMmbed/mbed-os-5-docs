@@ -1,6 +1,6 @@
 ### NDEF API
 
-Mbed OS provide this API to construct and parse NDEF messages, which is the common data format exchange for NFC messages.
+Mbed OS provides this API to construct and parse NDEF messages, which is the common data format exchange for NFC messages.
 
 An NDEF message is a collection of separate NDEF records. Each of these records is defined by a type, such as URI, Mime and Text, that identifies a payload and what the record contains.
 
