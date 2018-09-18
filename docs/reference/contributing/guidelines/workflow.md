@@ -184,7 +184,7 @@ Time: 3 days for the pull request author to action the review comments.
 
 #### Ready for integration
 
-Pull requests are merged by maintainers during the internal gatekeeping meetings. They take place 3 times a week. Straightforward pull requests can be merged immediately.
+Maintainers merge pull requests during the internal gatekeeping meetings that occur three times a week. They can merge straightforward pull requests immediately.
 
 Label: `Ready for merge`
 Time: 2 days
@@ -204,7 +204,7 @@ We use many other labels to summarize the scope and effect of the changes.
 - *needs: preceding PR* - This pull request cannot yet be merged because it has a dependency on another pull request that needs to merge first.
 - *DO NOT MERGE* - This pull request contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - The pull request specifically affects the named device(s).
-- *component: 'name'* - The pull request specifically affects the named component. Component names follow the structure of Mbed OS (ble, storage, tls, ... etc)
+- *component: 'name'* - The pull request specifically affects the named component. Component names follow the structure of Mbed OS (`ble`, `storage`, `tls` and so on).
 
 The following labels summarize the scope of the pull request.
 
