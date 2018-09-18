@@ -12,8 +12,8 @@ The BatteryService class implements the Bluetooth Battery Service as defined by 
 
 ### BatteryService example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/file/5d8484f69181/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-BatteryLevel/file/5cf292205001/source/main.cpp)
 
 ### Related content
 
-- <a href="https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245138" target="_blank">Bluetooth Battery Service</a> specification.
+- [Bluetooth Battery Service](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245138) specification.
