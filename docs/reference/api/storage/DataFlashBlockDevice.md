@@ -1,4 +1,4 @@
-# DataFlash block device
+## DataFlash block device
 
 DataFlashBlockDevice is a block device driver for I2C-based EEPROM devices, such as the Adesto AT45DB series of devices.
 
