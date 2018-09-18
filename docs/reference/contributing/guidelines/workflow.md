@@ -182,6 +182,13 @@ A pull request in the work needed state requires additional work due to failed t
 Label: `needs: work`
 Time: 3 days for the pull request author to action the review comments.
 
+#### Ready for integration
+
+Pull requests are merged by maintainers during the internal gatekeeping meetings. They take place 3 times a week. Straightforward pull requests can be merged immediately.
+
+Label: `Ready for merge`
+Time: 2 days
+
 #### Releases
 
 When we merge a pull request that we will publish in a patch release, we tag the pull request with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features only go in feature releases.
