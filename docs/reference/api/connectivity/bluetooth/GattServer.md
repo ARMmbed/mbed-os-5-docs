@@ -33,4 +33,4 @@ The term characteristic value update represents Characteristic Value Notificatio
 
 ### GattServer example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattServer/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattServer/file/8fbed496a023/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattServer/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattServer/file/a17a79f0d8af/main.cpp)
