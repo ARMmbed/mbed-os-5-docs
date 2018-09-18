@@ -1,5 +1,7 @@
 ## FileSystem
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.png)<span>FileSystem class hierarchy</span></span>
+
 The file system API provides a common interface for implementing a file system on a [block-based storage device](/docs/development/porting/porting-storage.html#block-devices). The file system API is a class-based interface, but implementing the file system API provides the standard POSIX file API familiar to C users.
 
 The main purpose of a FileSystem is to be instantiated. The FileSystem's constructor can take in a BlockDevice and mount point specified as a string, as well as other implementation-specific configuration options. The mount point can then act as the first directory in any paths in Mbed OS when used with the POSIX API. This gives you access to files inside the file system. The mount point can be `NULL` if you only need to use the FileSystem as a C++ object.
