@@ -1,14 +1,16 @@
-## NFC controller
+## NFCController
+
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.png)<span>NFCController class hierarchy</span></span>
 
 Using an NFC controller with Mbed OS allows you to emulate NFC tags that a smartphone can read, as well as generate NDEF messages on demand.
 
 To use an NFC controller, you must initiate the instance with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
-### NFC controller class reference
+### NFCController class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.html)
 
-### NFC controller example
+### NFCController example
 
 ```cpp
 #include "stdint.h"
