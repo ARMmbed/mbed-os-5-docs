@@ -1,5 +1,7 @@
 ## QuadSPI (QSPI)
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)<span>QSPI class hierarchy</span></span>
+
 The QSPI driver in Mbed OS provides functionality to configure and access QSPI devices connected over a QuadSPI interface.
 
 The QSPI protocol provides a serial communication interface on four data lines between the host and the device. It uses up to six lines in total: one line for chip select, one line for clock and four lines for data in/out. You can use this interface for communication with QSPI devices, such as Flash memory, display devices and other types of devices providing QuadSPI communication support. You can also configure the QSPI interface to work in Single-SPI (traditional SPI) mode or Dual-SPI mode.
