@@ -192,7 +192,22 @@
 </tbody>
 </table>
 
-### Security APIs
+### NFC APIs
+
+[A collection of separate NDEF records.](nfc.html)
+
+<table>
+<tbody>
+<tr>
+<td><a href="lorawan-api.html">LoRaWANInterface</a></td>
+</tr>
+<tr>
+<td><a href="loraradio-api.html">LoRaRadio</a></td>
+</tr>
+</tbody>
+</table>
+
+### Security API
 
 [Working with Arm Mbed uVisor and Arm Mbed TLS in the context of Mbed OS.](security.html)
 
@@ -201,8 +216,6 @@
 <tr>
 <td><a href="tls.html">TLS</a></td>
 </tr>
-<tr>
-<td><a href="uvisor.html">uVisor</a></td>
 </tr>
 </tbody>
 </table>
@@ -218,22 +231,26 @@
 <td><a href="fatfilesystem.html">FATFileSystem</a></td>
 <td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
 <td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
+<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td>
 </tr>
 <tr>
 <td><a href="dir.html">Dir</a></td>
 <td><a href="blockdevice.html">BlockDevice</a></td>
 <td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
+<td><a href="dataflash-block-device.html">DataFlashBlockDevice</a></td>
 <td><a href="nvstore.html">NVStore</a></td>
 </tr>
 <tr>
 <td><a href="file.html">File</a></td>
 <td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
 <td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
+<td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
 </tr>
 <tr>
 <td><a href="littlefilesystem.html">LittleFileSystem</a></td>
 <td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
 <td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
+<td><a href="sdblockdevice.html">SDBlockDevice</a></td>
 </tr>
 </tbody>
 </table>
