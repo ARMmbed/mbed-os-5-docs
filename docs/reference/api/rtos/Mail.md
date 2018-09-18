@@ -14,4 +14,4 @@ Mail works like a queue, with the added benefit of providing a memory pool for a
 
 This code uses `mail` to manage measurement.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_mail/)](https://os.mbed.com/teams/mbed_example/code/rtos_mail/file/6602f2907ac5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_mail/)](https://os.mbed.com/teams/mbed_example/code/rtos_mail/file/9a5d61ef4113/main.cpp)
