@@ -12,7 +12,7 @@ The [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbe
 
 Please visit our Arm Mbed Online Compiler example, and follow the instructions in the `README.md`.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/dc95ac6d6d4e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/315a26cd0165/main.cpp)
 
 ### Related content
 
