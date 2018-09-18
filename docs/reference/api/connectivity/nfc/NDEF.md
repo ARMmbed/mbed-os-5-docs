@@ -79,6 +79,8 @@ An application can extend capabilities of `SimpleMessageParser` by adding new re
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_parser.html)
 
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/structmbed_1_1nfc_1_1ndef_1_1_message_parser_1_1_delegate.html)<span>SimpleMessageParser class hierarchy</span></span>
+
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1common_1_1_simple_message_parser.html)
 
 #### Construction
