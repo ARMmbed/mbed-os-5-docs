@@ -68,7 +68,7 @@ The following steps describe how you can create a new RF driver:
 
 1. Verify the functionality of your implementation by running the Nanostack RF driver testcase set in the Mbed OS repository:
 
-   `mbed test --clean --icetea -t <toolchain> -m <platform> --test-config MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
+   `mbed test --clean --icetea -t <toolchain> -m <platform> --test-config NANOSTACK_MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
 
 ### Worker thread for Mbed OS
 
