@@ -28,7 +28,7 @@ if (evt.status == osEventMessage) {
 
 This example shows `Queue` and [MemoryPool](memorypool.html) managing measurements.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_queue/)](https://os.mbed.com/teams/mbed_example/code/rtos_queue/file/0cb43a362538/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_queue/)](https://os.mbed.com/teams/mbed_example/code/rtos_queue/file/bbbae4aa4768/main.cpp)
 
 ### Related content
 
