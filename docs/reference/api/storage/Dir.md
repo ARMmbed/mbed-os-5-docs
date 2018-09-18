@@ -14,7 +14,7 @@ The Dir class operates as an iterator or stream similarly to the File class, exc
 
 ### File system example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/)](http://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/adaa6c01d727/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/54f958b463d0/main.cpp)
 
 ### Related content
 
