@@ -2,6 +2,10 @@
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 
+
+![Network states](NetworkinterfaceStates.png)
+
+
 #### Usage
 
 The callback needs to handle these possible network states:
@@ -33,23 +37,25 @@ You need to provide the callback function, itself:
 ```cpp
 void status_callback(nsapi_event_t status, intptr_t param)
 {
-    printf("Connection status changed!\r\n");
-    switch(param) {
-        case NSAPI_STATUS_LOCAL_UP:
-            printf("Local IP address set!\r\n");
-            break;
-        case NSAPI_STATUS_GLOBAL_UP:
-            printf("Global IP address set!\r\n");
-            break;
-        case NSAPI_STATUS_DISCONNECTED:
-            printf("No connection to network!\r\n");
-            break;
-        case NSAPI_STATUS_CONNECTING:
-            printf("Connecting to network!\r\n");
-            break;
-        default:
-            printf("Not supported");
-            break;
+    if (status == NSAPI_EVENT_CONNECTION_STATUS_CHANGE) {
+        printf("Connection status changed!\r\n");
+        switch(param) {
+            case NSAPI_STATUS_LOCAL_UP:
+                printf("Local IP address set!\r\n");
+                break;
+            case NSAPI_STATUS_GLOBAL_UP:
+                printf("Global IP address set!\r\n");
+                break;
+            case NSAPI_STATUS_DISCONNECTED:
+                printf("No connection to network!\r\n");
+                break;
+            case NSAPI_STATUS_CONNECTING:
+                printf("Connecting to network!\r\n");
+                break;
+            default:
+                printf("Not supported");
+                break;
+        }
     }
 }
 ```

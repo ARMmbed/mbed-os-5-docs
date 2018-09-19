@@ -11,9 +11,27 @@ Network interface is also the controlling API for application to specify network
 - [Cellular](cellular-api.html): API for connecting to the internet using a cellular device.
 - [Mesh networking interface](mesh-api.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
 
-### Network status updates
+### Network connectivity states
 
-An application may choose to register a callback to monitoring status changes from network interfaces. The application can do this by using the following API:
+When interface is created it starts from the disconnected state. When you call `NetworkInteface::connect()` method, the interface stays connected until `NetworkInterface::disconnect()` method is called. Following diagram illustrates the state changes.
+
+![Network states](NetworkinterfaceStates.png)
+
+All state changes between `Connecting`, `Local connectivity` and `Global route found` are handled by the interface itself. When calling `NetworkInterface::connect()` it might return when either local or global connectivity states are reached. This depends on the connectivity in question. For example Ethernet and WiFi interfaces return when global connectivity is reached. In 6LoWPAN based mesh networks it depends on the standard in use. 6LoWPAN-ND returns when it connects to border router that provides global connection. Thread returns when local mesh network is created and may later get global connection when border router is found.
+
+When network is lost, route is lost or any other cause limits the connectivity, interface may change its state back to `Connecting` or `Local connectivity`. Interface tries reconnecting until application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal back off periods.
+
+An application may check the connection status by calling `nsapi_connection_status_t get_connection_status()` or register a callback to monitoring status changes. Following table lists defined network states with actions that appliction should take on the state change:
+
+| State             |`nsapi_connection_status_t` | Actions to do on application |
+|-------------------|----------------------------|------------------------------|
+|Disconnected       | `NSAPI_STATUS_DISCONNECTED`| Call `connect()`             |
+|Connecting         | `NSAPI_STATUS_CONNECTING`  | Close and destroy all open sockets. Wait until connection is established |
+|Local connectivity | `NSAPI_STATUS_LOCAL_UP`    | You can create sockets and communicate with local devices in the same network |
+|Global route found | `NSAPI_STATUS_GLOBAL_UP`   | You can create sockets and communicate with all hosts |
+
+
+Use following API to register status callbacks:
 
 - [Network status](network-status.html): API for monitoring network status changes.
 
