@@ -17,7 +17,7 @@ We release Mbed OS under an Apache 2.0 license, so you can confidently use it in
 
 This is the basic architecture of an Mbed board:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)</span>
 
 ### Mbed OS foundations
 
