@@ -69,4 +69,8 @@ This is the technical documentation for Mbed OS. We have three types of document
 
 Please see the following sections of our documentation for more information.
 
-<structure review>
+- [APIs](/docs/development/apis/index.html).
+- [Reference](/docs/development/reference/index.html), which contains architectural information about our code.
+- [Tools](/docs/development/tools/index.html), reference material about the tools Mbed OS uses.
+- [Tutorials](/docs/development/tutorials/index.html).
+- [Porting guides](/docs/development/porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
