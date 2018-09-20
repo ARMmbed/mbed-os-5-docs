@@ -6,8 +6,8 @@ Mbed OS is an open-source operating system for platforms using Arm microcontroll
 
 If you want to dive straight in:
 
-* The source code is available on [GitHub](www.github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
-* Or [try our quick start](/docs/development/tutorials/mbed-os-quick-start.html).
+- The source code is available on [GitHub](www.github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
+- Or [try our quick start](/docs/development/tutorials/mbed-os-quick-start.html).
 
 ### Source code and licensing
 
@@ -51,9 +51,9 @@ Arm, its Partners and the Arm Mbed developer community work together to develop 
 
 Broadly speaking, the hardware you can see on our site is of three types:
 
-* **[Modules](https://os.mbed.com/modules/)**: include a microcontroller, IoT centric connectivity and required onboard memory. They are ideal for designing IoT products, from prototyping to mass production. Mbed Enabled Modules have full support for Mbed OS with all available connectivity drivers.
-* **[Boards](https://os.mbed.com/platforms/)**: development boards are an inexpensive way to start developing with Mbed OS and other components.
-* **[Components](https://os.mbed.com/components/)**: the Component Database hosts reusable libraries for different hardware, middleware and IoT services that you can use with Arm Microcontrollers. These components can be used as building blocks for quickly developing prototypes and products.
+- **[Modules](https://os.mbed.com/modules/)**: include a microcontroller, IoT centric connectivity and required onboard memory. They are ideal for designing IoT products, from prototyping to mass production. Mbed Enabled Modules have full support for Mbed OS with all available connectivity drivers.
+- **[Boards](https://os.mbed.com/platforms/)**: development boards are an inexpensive way to start developing with Mbed OS and other components.
+- **[Components](https://os.mbed.com/components/)**: the Component Database hosts reusable libraries for different hardware, middleware and IoT services that you can use with Arm Microcontrollers. These components can be used as building blocks for quickly developing prototypes and products.
 
 ### Tools
 
