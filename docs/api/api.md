@@ -167,7 +167,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tr>
 <tr>
 <td><a href="gap.html">GAP</a></td>
-<td><a href="secuirtymanager.html">SecurityManager</a></td>
+<td><a href="securitymanager.html">SecurityManager</a></td>
 <td><a href="ibeacon.html">iBeacon</a></td>
 <tr>
 <td><a href="gattclient.html">GattClient</a></td>
