@@ -215,7 +215,6 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <tr>
 <td><a href="tls.html">TLS</a></td>
 </tr>
-</tr>
 </tbody>
 </table>
 
