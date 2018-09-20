@@ -1220,7 +1220,7 @@
                 "title": "Porting exporter targets",
                 "intro": {
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/target/exporter.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/exporter.md"
                 },
                 "sources": []
             },
