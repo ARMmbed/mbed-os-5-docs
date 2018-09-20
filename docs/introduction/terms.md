@@ -70,7 +70,7 @@
 
 **GPIO** - General-purpose input/output, a generic pin that is controllable by the user at run-time.
 
-**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/development/tools/greentea.html) is the automated testing tool for Arm Mbed OS development.
+**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/development/tools/greentea-testing-applications.html) is the automated testing tool for Arm Mbed OS development.
 
 ### H
 
