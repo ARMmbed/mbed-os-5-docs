@@ -118,7 +118,7 @@ There are four design components comprising the Arm Mbed LoRaWAN solution that e
 
 Mbed LoRa radio drivers reside outside of the Mbed OS tree. Arm provides support for `SX1272` and `SX1276` LoRa radios, which are the most widely used LoRa end-device radio chipsets.
 
-Arm Mbed OS contains a pure virtual class `LoRaRadio`, which you can use to inherit from and provide an Mbed LoRa radio driver to complement Mbed applications and the Mbed LoRaWAN stack. You can find a complete reference to the `LoRaRadio` class in the [LoRaRadio API reference](/docs/development/apis/loraradio-api.html).
+Arm Mbed OS contains a pure virtual class `LoRaRadio`, which you can use to inherit from and provide an Mbed LoRa radio driver to complement Mbed applications and the Mbed LoRaWAN stack. You can find a complete reference to the `LoRaRadio` class in the [LoRaRadio API reference](/docs/v5.10/apis/loraradio-api.html).
 
 The LoRa radio drivers support both RTOS and non-RTOS environments. For RTOS environments, the drivers defer interrupts using a thread and signaling mechanism for deferred processing. For non-RTOS environments, the driver shares the user thread. A third party driver, which is an implementation of `LoRaRadio` class, can use any of the sync methods Mbed OS provides and is free to use any transport for register access internally. The most important prerequisites are:
 
@@ -218,11 +218,11 @@ At the moment, it's not possible to change a PHY during run time. You must selec
 
 The Arm Mbed LoRaWAN stack is event driven. To reduce complexity of the overall system, it uses the EventQueue, which the application passes to the stack. Both share this event queue. This ensures that the both stack and application run in the same context.
 
-There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](/docs/development/apis/lorawan.html).
+There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](/docs/v5.10/apis/lorawan.html).
 
 #### Connection procedure
 
-This section discusses flows and corresponding state changes in the Mbed LoRaWAN stack relating to the network connection paradigm. For detailed API reference for connection procedure, please visit [LoRaWANInterface API documentation](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `connect()` or `connect(lorawan_connect_t)` APIs.
+This section discusses flows and corresponding state changes in the Mbed LoRaWAN stack relating to the network connection paradigm. For detailed API reference for connection procedure, please visit [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `connect()` or `connect(lorawan_connect_t)` APIs.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/connect_sm.png)<span>Figure 6: connection paradigm flow</span></span>
 
@@ -230,7 +230,7 @@ The Arm Mbed LoRaWAN stack sends a `CONNECTED` event to the application once the
 
 #### Sending messages
 
-For a detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `send()` API. For example:
+For a detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `send()` API. For example:
 
 ```C
 /**send an Unconfirmed message*/
@@ -251,7 +251,7 @@ A `TX_TIMEOUT` or a `TX_FALURE` event is generated in case of error in TX data p
 
 #### Receiving messages
 
-For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs.
+For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs.
 
 There are two types of `receive()` methods in the stack. The first is POSIX-like, and you need to tell at what port (instead of a socket ID in Posix format) you wish to receive:
 

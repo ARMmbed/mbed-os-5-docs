@@ -14,4 +14,4 @@ An example walkthrough of porting the bootloader to the K64F platform can be fou
 
 ### Creating and using a new bootloader
 
-You can learn to create and use a new bootloader in our [tutorials](/docs/development/tutorials/bootloader.html).
+You can learn to create and use a new bootloader in our [tutorials](/docs/v5.10/tutorials/bootloader.html).

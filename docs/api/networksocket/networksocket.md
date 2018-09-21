@@ -1,6 +1,6 @@
 <h2 id="network-socket">Network socket overview</h2>
 
-The application programming interface for IP networking is the Socket API. As described in the [IP networking](/docs/development/reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
+The application programming interface for IP networking is the Socket API. As described in the [IP networking](/docs/v5.10/reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
 
@@ -102,7 +102,7 @@ The network socket API provides a common interface for using sockets on network 
 
 ### Network errors
 
-The convention of the network socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which is one of the error codes in the `nsapi_error_t` [enum](/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
+The convention of the network socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which is one of the error codes in the `nsapi_error_t` [enum](/docs/v5.10/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
 ``` cpp
 /** Enum of standardized error codes

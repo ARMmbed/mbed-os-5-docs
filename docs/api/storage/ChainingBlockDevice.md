@@ -1,6 +1,6 @@
 ## ChainingBlockDevice
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.png)<span>ChainingBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_chaining_block_device.png)<span>ChainingBlockDevice class hierarchy</span></span>
 
 The ChainingBlockDevice class provides a way to chain together multiple block devices. You can then interact with the chained block devices as if they were a single block device of size equal to the sum of each substorage unit. The ChainingBlockDevice acts as an opposite of the [SlicingBlockDevice](slicingblockdevice.html).
 
@@ -10,7 +10,7 @@ The constructor takes in an array of block device pointers and provides an objec
 
 ### ChainingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_chaining_block_device.html)
 
 ### ChainingBlockDevice example
 

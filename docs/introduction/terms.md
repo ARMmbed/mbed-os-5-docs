@@ -2,37 +2,37 @@
 
 ### A
 
-**API** - [Application programming interface](/docs/development/apis/index.html).
+**API** - [Application programming interface](/docs/v5.10/apis/index.html).
 
 **Application** - An executable module built out of libraries that acts as a final product.
 
-**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/development/tools/developing-arm-mbed-cli.html), packaged as `mbed-cli`.
+**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](/docs/v5.10/tools/developing-arm-mbed-cli.html), packaged as `mbed-cli`.
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/development/tools/developing-arm-mbed-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](/docs/v5.10/tools/developing-arm-mbed-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
-**Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/development/apis/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
+**Arm Mbed TLS** - A [comprehensive SSL/TLS solution](/docs/v5.10/apis/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
 ### B
 
 **Bit** - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
 
-**BLE** - [Bluetooth Low Energy](/docs/development/apis/ble.html).
+**BLE** - [Bluetooth Low Energy](/docs/v5.10/apis/ble.html).
 
-**Blinky** - An [example application](/docs/development/tutorials/mbed-os-quick-start.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
+**Blinky** - An [example application](/docs/v5.10/tutorials/mbed-os-quick-start.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
-**Block Device** - A [file](/docs/development/porting/porting-storage.html) that represents a device, with data that can be read or written to it in blocks.
+**Block Device** - A [file](/docs/v5.10/porting/porting-storage.html) that represents a device, with data that can be read or written to it in blocks.
 
 **Board** - An Mbed Enabled development board. You can see a [complete list](https://os.mbed.com/platforms/) of Mbed Enabled boards.
 
 **Boolean** - A binary variable, having two possible values called `true` and `false`.
 
-**Bootloader** - [The program](/docs/development/tutorials/bootloader.html) that loads Mbed OS when a board is turned on.
+**Bootloader** - [The program](/docs/v5.10/tutorials/bootloader.html) that loads Mbed OS when a board is turned on.
 
-**Build Profile** - Mbed OS 5 supports three primary [build profiles](/docs/development/tools/build-profiles.html): develop, debug and release.
+**Build Profile** - Mbed OS 5 supports three primary [build profiles](/docs/v5.10/tools/build-profiles.html): develop, debug and release.
 
 **Build Script** - A build automation and generation utility.
 
@@ -40,9 +40,9 @@
 
 ### C
 
-**Callback** - Any [executable code](/docs/development/apis/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
+**Callback** - Any [executable code](/docs/v5.10/apis/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
-**CAN** - [Controller-area network](/docs/development/apis/can.html).
+**CAN** - [Controller-area network](/docs/v5.10/apis/can.html).
 
 **Class** - An extensible program-code-template for creating objects, providing initial values for state and implementations of behavior.
 
@@ -56,13 +56,13 @@
 
 **DAPLink** - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
-**Debugging** - The [process](/docs/development/tools/debugging.html) of finding and solving problems in code.
+**Debugging** - The [process](/docs/v5.10/tools/debugging.html) of finding and solving problems in code.
 
 **Deprecation** - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
 
 ### E
 
-**Exporter** - Use the Arm Mbed [exporters](/docs/development/tools/exporting.html#about-the-exporters) to export your code to various third party tools and IDEs.
+**Exporter** - Use the Arm Mbed [exporters](/docs/v5.10/tools/exporting.html#about-the-exporters) to export your code to various third party tools and IDEs.
 
 ### G
 
@@ -70,7 +70,7 @@
 
 **GPIO** - General-purpose input/output, a generic pin that is controllable by the user at run-time.
 
-**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/development/tools/greentea-testing-applications.html) is the automated testing tool for Arm Mbed OS development.
+**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.10/tools/greentea-testing-applications.html) is the automated testing tool for Arm Mbed OS development.
 
 ### H
 
@@ -78,7 +78,7 @@
 
 ### I
 
-**I2C** - [Interintegrated Circuit](/docs/development/apis/i2c.html) (short-distance, intraboard communication).
+**I2C** - [Interintegrated Circuit](/docs/v5.10/apis/i2c.html) (short-distance, intraboard communication).
 
 **IDE** - Integrated Development Environment.
 
@@ -122,32 +122,32 @@
 
 **REST** - Representational State Transfer (API).
 
-**RTOS** - [Real-Time Operating System](/docs/development/apis/rtos.html).
+**RTOS** - [Real-Time Operating System](/docs/v5.10/apis/rtos.html).
 
 ### S
 
-**Serial** - A [protocol](/docs/development/apis/serial.html) used in data transmission for the transfer of individual bits of information.
+**Serial** - A [protocol](/docs/v5.10/apis/serial.html) used in data transmission for the transfer of individual bits of information.
 
-**SPI** - [Serial Peripheral Interface](/docs/development/apis/spi.html).
+**SPI** - [Serial Peripheral Interface](/docs/v5.10/apis/spi.html).
 
 **Static Memory** - The allocation of memory at compile time, before the program is executed.
 
 **SSL** - Secure sockets layer.
 
-**STLink** - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
+**STLink** - STMicro's [firmware](https://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](https://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
 ### T
 
 **Target** - See [`board`](glossary.html#board).
 
-**Terminal Application** - [Applications](/docs/development/tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
+**Terminal Application** - [Applications](/docs/v5.10/tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 
 **TLS** - Transport Layer Security.
 
-**Toolchain** - A [group of programming tools](/docs/development/tools/exporting.html#setting-up-a-local-debug-toolchain).
+**Toolchain** - A [group of programming tools](/docs/v5.10/tools/exporting.html#setting-up-a-local-debug-toolchain).
 
 **Travis CI** - a continuous integration service used to build and test software projects hosted at GitHub (see `GitHub`).
 
 ### U
 
-**utest** - A [test harness](/docs/development/tools/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.
+**utest** - A [test harness](/docs/v5.10/tools/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.

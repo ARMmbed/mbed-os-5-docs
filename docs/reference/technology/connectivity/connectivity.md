@@ -12,7 +12,7 @@ Below is a brief introduction of the different connectivity technologies that we
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart homes, security, entertainment, proximity sensors, industrial applications and automotives.
 
-To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](/docs/development/apis/ble.html) user API reference.
+To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](/docs/v5.10/apis/ble.html) user API reference.
 
 #### IP Networking
 
@@ -40,9 +40,9 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html)
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora.png)<span>LoRa</span></span>
 
-[LoRaWAN](http://lora-alliance.org) is a long range wide-area network technology that combines long range with low power consumption. LoRaWAN is not IP based.
+[LoRaWAN](https://lora-alliance.org) is a long range wide-area network technology that combines long range with low power consumption. LoRaWAN is not IP based.
 
-The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/development/tutorials/LoRa-tutorial.html) describe LoRA networking.
+The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/v5.10/tutorials/LoRa-tutorial.html) describe LoRA networking.
 
 ### NFC
 
@@ -50,4 +50,4 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/development/tutoria
 
 Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content and Bluetooth connection initiation/out-of-band pairing.
 
-To learn how to use NFC with Mbed OS, please refer to the [NFC](/docs/development/apis/nfc.html) user API reference.
+To learn how to use NFC with Mbed OS, please refer to the [NFC](/docs/v5.10/apis/nfc.html) user API reference.

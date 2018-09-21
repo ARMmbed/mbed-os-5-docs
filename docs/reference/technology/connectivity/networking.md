@@ -12,7 +12,7 @@ The Socket API is the common API among all IP connectivity methods. All network 
 
 In the OSI model, the Socket API relates to layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
-Refer to [Socket API](/docs/development/apis/network-socket.html) reference for usage instructions.
+Refer to [Socket API](/docs/v5.10/apis/network-socket.html) reference for usage instructions.
 
 ### IP stacks
 
@@ -58,7 +58,7 @@ Mbed OS implements the following network interface APIs:
 - 6LoWPAN-ND mesh networking.
 - Thread mesh networking.
 
-Refer to [Network Interface](/docs/development/apis/network-interfaces.html) API reference for usage instructions.
+Refer to [Network Interface](/docs/v5.10/apis/network-interfaces.html) API reference for usage instructions.
 
 ### Network drivers
 
@@ -90,4 +90,4 @@ On Mesh networks, Nanostack uses IEEE 802.15.4 radios for transmitting and recei
 
 This driver type has no other use cases, so it is implemented in C using a Nanostack-specific API.
 
-Please see the [6LoWPAN Mesh technology section](mesh-tech.html) and [Porting a new RF driver for the 6LoWPAN stack](/docs/development/porting/lora-port.html) for more information.
+Please see the [6LoWPAN Mesh technology section](mesh-tech.html) and [Porting a new RF driver for the 6LoWPAN stack](/docs/v5.10/porting/lora-port.html) for more information.

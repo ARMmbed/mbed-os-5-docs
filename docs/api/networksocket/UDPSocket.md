@@ -1,8 +1,8 @@
 ## UDPSocket
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_u_d_p_socket.png)<span>UDPSocket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_u_d_p_socket.png)<span>UDPSocket class hierarchy</span></span>
 
-The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](/docs/development/apis/tcpsocket.html) when you require guaranteed delivery.
+The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](/docs/v5.10/apis/tcpsocket.html) when you require guaranteed delivery.
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
@@ -12,7 +12,7 @@ If you prefer to use `send()` and `recv()` functions and work only with one peer
 
 ### UDPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_u_d_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_u_d_p_socket.html)
 
 ### UDPSocket Example
 

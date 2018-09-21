@@ -6,7 +6,7 @@ You can use the USBMouse interface to emulate a mouse over the USB port. You can
 
 ### USBMouse class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse.html)
 
 ### USBMouse example
 

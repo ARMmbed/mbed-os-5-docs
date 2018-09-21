@@ -51,7 +51,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Commits should always contain a proper description of their content. Start with a concise and sensible one-line description. Then, elaborate on reasoning of the choices made, descriptions for reviewers and other information that might otherwise be lost.
 - You should always write commits to allow publication, so they can never contain confidential information, reference private documents, links to intranet locations or rude language.
 - Each commit should be the minimum self-contained commit for a change. A commit should always result in a new state that is again in a compilable state. You should (if possible) split large changes into logical smaller commits that help reviewers follow the reasoning behind the full change.
-- Commits and pull request titles should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit#seven-rules):
+- Commits and pull request titles should follow [Chris Beam’s seven rules of great commit messages](https://chris.beams.io/posts/git-commit#seven-rules):
 	1. Separate the subject from the body with a blank line.
 	1. Limit the subject line to 72 characters (note that this is a deviation from Beam's standard).
 	1. Capitalize the subject line.
@@ -68,7 +68,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 #### Release versioning
 
-You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/release-process.html).
+You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/v5.10/introduction/release-process.html).
 
 ### Pull request categories
 

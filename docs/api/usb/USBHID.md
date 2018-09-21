@@ -6,7 +6,7 @@ You can use the USBHID class to send and receive messages over USB. For example,
 
 ### USBHID class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.html)
 
 ### USBHID example
 

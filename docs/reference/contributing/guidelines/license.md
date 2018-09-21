@@ -8,7 +8,7 @@ This chapter covers the different aspects of developing your own libraries for u
 
 When you write original code, you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others.
 
-If you create new software, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well-known license such as one of the ones listed [OSI-approved](http://spdx.org/licenses/), permissive open source software license. Specifically, we recommend the following:
+If you create new software, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well-known license such as one of the ones listed [OSI-approved](https://spdx.org/licenses/), permissive open source software license. Specifically, we recommend the following:
 
 - For original source code, use the Apache 2.0 license.  
 
@@ -18,7 +18,7 @@ If you create new software, such as drivers, libraries and examples, you can app
 
 You must either write all the code you provide yourself, or have the necessary rights to provide code written by someone else.
 
-In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) in every source file following the [recommendations](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
+In all cases, whatever license you use, please use an [SPDX license identifier](https://spdx.org/licenses/) in every source file following the [recommendations](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
 
 ### When to use Apache 2.0
 
@@ -96,7 +96,7 @@ If you decide to use a different license for your work, follow the same pattern:
 
 - Create a *LICENSE* file with a description of the license situation, following the pattern described in the sections above.
 
-- Put the full original license texts in separate documents named *LICENSE-XYZ.txt*, where XYZ is the corresponding [SPDX identifier](http://spdx.org/licenses/) for your license.
+- Put the full original license texts in separate documents named *LICENSE-XYZ.txt*, where XYZ is the corresponding [SPDX identifier](https://spdx.org/licenses/) for your license.
 
 - Begin each source header with your copyright line, the SPDX identifier and the standard header for the license that applies to that single file, if it has one. (See [SPDX Specification, Appendix V](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b).)
 

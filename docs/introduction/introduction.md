@@ -7,11 +7,11 @@ Mbed OS is an open-source operating system for platforms using Arm microcontroll
 If you want to dive straight in:
 
 - The source code is available on [GitHub](www.github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
-- Or [try our quick start](/docs/development/tutorials/mbed-os-quick-start.html).
+- Or [try our quick start](/docs/v5.10/tutorials/mbed-os-quick-start.html).
 
 ### Source code and licensing
 
-We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](/docs/development/reference/license.html).
+We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](/docs/v5.10/reference/license.html).
 
 ### Architecture diagram
 
@@ -57,7 +57,7 @@ Broadly speaking, the hardware you can see on our site is of three types:
 
 ### Tools
 
-The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](/docs/development/tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
+The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](/docs/v5.10/tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
 
 If you prefer to work online, use the Arm Mbed Online Compiler, our online development tool, which lets you write and build applications using a web browser with no additional setup.
 
@@ -69,8 +69,8 @@ This is the technical documentation for Mbed OS. We have three types of document
 
 Please see the following sections of our documentation for more information.
 
-- [APIs](/docs/development/apis/index.html).
-- [Reference](/docs/development/reference/index.html), which contains architectural information about our code.
-- [Tools](/docs/development/tools/index.html), reference material about the tools Mbed OS uses.
-- [Tutorials](/docs/development/tutorials/index.html).
-- [Porting guides](/docs/development/porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
+- [APIs](/docs/v5.10/apis/index.html).
+- [Reference](/docs/v5.10/reference/index.html), which contains architectural information about our code.
+- [Tools](/docs/v5.10/tools/index.html), reference material about the tools Mbed OS uses.
+- [Tutorials](/docs/v5.10/tutorials/index.html).
+- [Porting guides](/docs/v5.10/porting/index.html), for Partners and developers interested in porting targets to Mbed OS.

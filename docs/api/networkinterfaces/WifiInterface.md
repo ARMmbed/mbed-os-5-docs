@@ -1,12 +1,12 @@
 ## Wi-Fi
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
 
 The WifiInterface provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
 ### Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ### Usage
 
@@ -66,4 +66,4 @@ The ESP8266Interface uses AT commands over serial interface to connect to an ext
 
 - [Wi-Fi components](https://os.mbed.com/components/cat/wifi/).
 - [Network socket](network-socket.html) API overview.
-- [Wi-Fi architecture](/docs/development/reference/wlan-technology.html).
+- [Wi-Fi architecture](/docs/v5.10/reference/wlan-technology.html).

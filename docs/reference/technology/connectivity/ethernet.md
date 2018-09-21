@@ -46,5 +46,5 @@ FCS: Frame Check Sequence is used for integrity check. Implemented as CRC-32
 To understand the use of Ethernet and TCP/IP in Mbed OS, please see the following sections:
 
 - [IP networking](ip-networking.html).
-- [Ethernet API](/docs/development/apis/ethernet.html).
-- [Socket API](/docs/development/apis/socket.html).
+- [Ethernet API](/docs/v5.10/apis/ethernet.html).
+- [Socket API](/docs/v5.10/apis/socket.html).

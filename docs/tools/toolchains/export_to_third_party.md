@@ -127,7 +127,7 @@ Make and Eclipse exports on POSIX-like operating systems targeting Nordic device
 
 #### GNU Arm Eclipse (managed CDT projects) with GNU Arm Embedded Toolchain
 
-The [GNU Arm Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
+The [GNU Arm Eclipse](https://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
 
 Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command-line options.
 

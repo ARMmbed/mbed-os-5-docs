@@ -20,11 +20,11 @@ Mbed BLE abstracts read and write operations to offer a single API that can be u
 
 When a server updates a characteristic value, it can forward the new value to any registered clients. Clients may register for these updates on a per-characteristic basis. The server sends the updates by using notifications (no confirmation from client) or indications (client confirms receipt). This mechanism minimizes the number of transactions between a client and a server by avoiding polling.
 
-Clients register for these updates by setting the Client Characteristic Configuration Descriptor (CCCD) value. This is an attribute, and the client needs to discover its descriptor. It is present in the characteristic if its notify or indicate properties are set. 
+Clients register for these updates by setting the Client Characteristic Configuration Descriptor (CCCD) value. This is an attribute, and the client needs to discover its descriptor. It is present in the characteristic if its notify or indicate properties are set.
 
 ### GattClient class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_gatt_client.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_gatt_client.html)
 
 ### GattClient example
 

@@ -7,7 +7,7 @@ The storage APIs present in Arm Mbed OS are:
 
 ### Declaring a file system
 
-The [FileSystem](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
+The [FileSystem](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
 
 #### File systems
 
@@ -69,13 +69,13 @@ The Mbed OS FAT file system is built on the ChanFS project. It is optimized for 
 
 #### C++ classes
 
-The FileSystem class provides the core user C++ API. Mbed OS provides [File](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.html) and [Dir](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_dir.html) classes that represent files and directories in a C++ API.
+The FileSystem class provides the core user C++ API. Mbed OS provides [File](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1_file.html) and [Dir](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1_dir.html) classes that represent files and directories in a C++ API.
 
 ### Declaring a block device
 
-The [BlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.html) class provides the underlying API for raw storage that you can use to back a file system. The BlockDevice API is a standard block-oriented interface built around three modes of operation: read, erase, and program. However, the rules behind this API is flexible enough to allow support for a large range of different storage types.
+The [BlockDevice](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_block_device.html) class provides the underlying API for raw storage that you can use to back a file system. The BlockDevice API is a standard block-oriented interface built around three modes of operation: read, erase, and program. However, the rules behind this API is flexible enough to allow support for a large range of different storage types.
 
-Mbed OS provides standard implementations for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage. Additionally, Mbed OS contains a handful of utility block devices, such as the [SlicingBlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_slicing_block_device.html) and [ChainingBlockDevice](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.html), to give you better control over storage allocation. These utility block devices can be stacked to provide relatively complex storage architectures through relatively simple components.
+Mbed OS provides standard implementations for the more common storage media, and you can extend the BlockDevice class to provide support for unsupported storage. Additionally, Mbed OS contains a handful of utility block devices, such as the [SlicingBlockDevice](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_slicing_block_device.html) and [ChainingBlockDevice](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_chaining_block_device.html), to give you better control over storage allocation. These utility block devices can be stacked to provide relatively complex storage architectures through relatively simple components.
 
 #### Block devices
 

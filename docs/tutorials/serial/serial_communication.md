@@ -37,8 +37,8 @@ Terminal applications run on your host PC. They provide a window where your Mbed
 There are many terminal applications for Windows, including:
 
 - [CoolTerm](http://freeware.the-meiers.org/) - this is the application we use in this example. We use it often because it usually "just works".
-- [Tera Term](http://sourceforge.jp/projects/ttssh2/files).
-- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
+- [Tera Term](https://osdn.net/projects/ttssh2/releases/).
+- [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/).
 - Some Windows PCs come with **Hyperterminal** installed.
 
 #### Configuring the connection
@@ -66,7 +66,7 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try one
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see our [build tools section](/docs/development/tools/index.html).
+If you're not sure how to build these examples and run them on your board, please see our [build tools section](/docs/v5.10/tools/index.html).
 
 #### Echo back characters you type
 

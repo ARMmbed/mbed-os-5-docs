@@ -1,6 +1,6 @@
 ## SPI Flash block device
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
 
 This API is a block device for NOR-based SPI flash devices that support SFDP.
 
@@ -8,7 +8,7 @@ NOR-based SPI flash supports byte-sized read and writes, with an erase size of a
 
 ### SPIFBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
 
 ### SPIFBlockDevice example:
 

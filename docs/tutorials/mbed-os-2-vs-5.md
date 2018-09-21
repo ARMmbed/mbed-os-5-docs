@@ -9,7 +9,7 @@ Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbe
 - Mbed OS 2 and Mbed OS 5 both use the same `mbed.h` file.
 - Drivers are thread-safe in Mbed OS 5. Drivers are not thread-safe in Mbed OS 2.
 
-To migrate from Mbed OS 2 to Mbed OS 5, [please follow our migration tutorial](/docs/development/tutorials/migrating-to-mbed-os-5.html).
+To migrate from Mbed OS 2 to Mbed OS 5, [please follow our migration tutorial](/docs/v5.10/tutorials/migrating-to-mbed-os-5.html).
 
 ### FAQs
 
@@ -36,7 +36,7 @@ To migrate from Mbed OS 2 to Mbed OS 5, [please follow our migration tutorial](/
 
    So, the `if` statement in the `mbed.h` file evaluates to `True`, and the RTOS header file is included. (In other words, it is present.) If you were running an Mbed OS 2 program, this `if` statement in `mbed.h` would evaluate to `False`. Thus, the RTOS is not present in your Mbed OS 2 program.
 
-   If you want to learn more about how these configuration files work, please see [our configuration documentation](/docs/development/tools/configuring-tools.html).
+   If you want to learn more about how these configuration files work, please see [our configuration documentation](/docs/v5.10/tools/configuring-tools.html).
 
 **How can I tell which platforms support Mbed OS 2 or Mbed OS 5?**
 

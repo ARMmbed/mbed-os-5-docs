@@ -4,8 +4,8 @@ This guide is to assist you in the process of updating an existing [component](h
 
 ### Prerequisites
 
-- [Mbed CLI](/docs/development/tools/developing-arm-mbed-cli.html).
-- An [offline compiler](/docs/development/tools/index.html#compiler-versions).
+- [Mbed CLI](/docs/v5.10/tools/developing-arm-mbed-cli.html).
+- An [offline compiler](/docs/v5.10/tools/index.html#compiler-versions).
 
 ### Identifying old versions of Mbed OS
 
@@ -36,7 +36,7 @@ Migrating to Mbed OS 5 results in two possible outcomes:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
   - There is target specific code, and you need to migrate it to use the code for the specific target you are compiling for.
 
-To update to Mbed OS 5 with the [Mbed CLI](/docs/development/tools/developing-arm-mbed-cli.html), run:
+To update to Mbed OS 5 with the [Mbed CLI](/docs/v5.10/tools/developing-arm-mbed-cli.html), run:
 
 ```
 mbed import [URL of Project]
@@ -50,7 +50,7 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-To update to Mbed OS 5 with the [Mbed Online Compiler](/docs/development/tools/developing-arm-mbed-online-compiler.html):
+To update to Mbed OS 5 with the [Mbed Online Compiler](/docs/v5.10/tools/developing-arm-mbed-online-compiler.html):
 
 1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**:

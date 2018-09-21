@@ -29,7 +29,7 @@ Whether the driver is an AT-command driven external IP stack or an Ethernet devi
 
 The driver takes care of the network joining process and presents Mbed OS only Ethernet layer interface, or IP stack. The driver and the device itself do all of the security handshakes.
 
-For description of different driver layer, please read [the IP networking technology](/docs/development/reference/ip-networking.html) section of this book.
+For description of different driver layer, please read [the IP networking technology](/docs/v5.10/reference/ip-networking.html) section of this book.
 
 ### EMAC driver
 
@@ -37,7 +37,7 @@ If the device is implementing Ethernet MAC, the driver provides the EMAC interfa
 
 ### External IP stack
 
-If the device is an eternal IP stack, for example an AT-command driven module, it needs to implement the full `NetworkStack` API. Please refer to the [networkStack porting guide](/docs/development/porting/networkstack.html) for implementation details.
+If the device is an eternal IP stack, for example an AT-command driven module, it needs to implement the full `NetworkStack` API. Please refer to the [networkStack porting guide](/docs/v5.10/porting/networkstack.html) for implementation details.
 
 ### Assumptions
 

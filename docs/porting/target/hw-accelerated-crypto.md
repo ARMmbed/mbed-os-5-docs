@@ -16,7 +16,7 @@ You may want to add hardware acceleration in the following cases:
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
 
-The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
+The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbedtls/blob/v5.10/include/mbedtls/bn_mul.h).
 
 #### What parts can I accelerate?
 
@@ -149,7 +149,7 @@ When your hardware accelerator driver requires initialization, do the following 
 
 Note that functions in Mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
-For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](/docs/development/apis/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](/docs/v5.10/apis/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
 #### Power management
 

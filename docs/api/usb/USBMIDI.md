@@ -8,7 +8,7 @@ Examples of tasks you can perform using this library include sending MIDI messag
 
 ### USBMIDI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_m_i_d_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/feature-hal-spec-usb-device-doxy/class_u_s_b_m_i_d_i.html)
 
 ### USBMIDI example
 

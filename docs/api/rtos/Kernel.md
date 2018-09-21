@@ -4,7 +4,7 @@ The Kernel namespace implements functions to read RTOS information. Currently it
 
 ### Kernel namespace reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
 
 ### `get_ms_count()` example
 

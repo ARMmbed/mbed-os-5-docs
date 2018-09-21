@@ -28,8 +28,8 @@ Please see [Notes on different hardware](https://github.com/ARMmbed/mbed-os-exam
 Following RF shield have been used with Mbed OS mesh examples.
 
 - [FIREFLY 6LOWPAN ARDUINO SHIELD](https://firefly-iot.com/product/firefly-arduino-shield-2-4ghz/).
-- [Freedom Development Board for MCR20A](http://www.nxp.com/products/software-and-tools/hardware-development-tools/freedom-development-boards/freedom-development-board-for-mcr20a-wireless-transceiver:FRDM-CR20A).
-- [X-NUCLEO-IDS01A4](http://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html).
+- [Freedom Development Board for MCR20A](https://www.nxp.com/products/software-and-tools/hardware-development-tools/freedom-development-boards/freedom-development-board-for-mcr20a-wireless-transceiver:FRDM-CR20A).
+- [X-NUCLEO-IDS01A4](https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html).
 - [DVK-NCS36510-MBED-GEVB](https://os.mbed.com/platforms/NCS36510/) Development board, contains internal RF chip.
 
 #### Tested development boards
@@ -49,7 +49,7 @@ The following table shows which development boards have been tested. It does not
 
 Thread network stack can write network configuration settings to the file system and read them in the following startup. The size of the Thread configuration settings is a few thousand bytes. You can store network configuration settings to the file system when:
 
- 1. You enable the file system as instructed in the [Mbed OS storage documentation](/docs/development/apis/storage.html).
+ 1. You enable the file system as instructed in the [Mbed OS storage documentation](/docs/v5.10/apis/storage.html).
  1. You set the file system root path to the Thread network stack by calling the function `ns_file_system_set_root_path(root-path)`. Do this before starting the Thread stack to read possible configuration settings in the first power up.
 
 Depending on the selected file system, the application may need to format the file system before you can use it.

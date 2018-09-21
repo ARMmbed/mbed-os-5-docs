@@ -16,7 +16,7 @@ Download and run the [Mbed CLI Windows .exe installer](https://mbed-media.mbed.c
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
-<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/v5.10/tools/index.html#compiler-versions).</span>
 
 #### Manual installation
 
@@ -30,7 +30,7 @@ Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/do
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/v5.10/tools/index.html#compiler-versions).</span>
 
 ###### 3. Install Mbed CLI
 
@@ -66,7 +66,7 @@ To install Pip, run `sudo easy_install pip` from your command-line.
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/v5.10/tools/index.html#compiler-versions).</span>
 
 ##### 3. Install Mbed CLI
 
@@ -106,7 +106,7 @@ $ sudo apt-get install python2.7 python-pip
 
 Download and install a compiler:
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/v5.10/tools/index.html#compiler-versions).</span>
 
 ##### 3. Install Mbed CLI
 
@@ -169,7 +169,7 @@ $ mbed export --ide uvision --target K64F
 
 #### Printf
 
-Another way to do basic debugging is to use the `printf` command in your code and read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
+Another way to do basic debugging is to use the `printf` command in your code and read the output using a serial terminal, such as [PuTTY](https://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
 Invoke `mbed detect` from your command-line to determine which communication port your board connects to (in other words, `COM18`, `/dev/ttyACM0` and so on). Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS.
 
@@ -179,8 +179,8 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-  - [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
-  - [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+  - [Mbed OS APIs](/docs/v5.10/apis/index.html) - list of all APIs available in Mbed OS.
+  - [Peripheral drivers](/docs/v5.10/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
   - [Advanced debugging](debugging.html).
@@ -190,4 +190,4 @@ More examples:
 - Other resources
   - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
   - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
-  - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
+  - [Youtube channel](https://youtube.com/armmbed) - videos and workshop content.

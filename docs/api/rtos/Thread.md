@@ -1,6 +1,6 @@
 ## Thread
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
 
 The Thread class allows defining, creating and controlling parallel tasks.
 
@@ -8,7 +8,7 @@ The Thread class allows defining, creating and controlling parallel tasks.
 
 ### Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 ```C
 /// Priority values.
@@ -67,7 +67,7 @@ typedef enum {
   osPriorityError         = -1,         ///< System cannot determine priority or illegal priority.
   osPriorityReserved      = 0x7FFFFFFF  ///< Prevents enum down-size compiler optimization.
 } osPriority_t;
-``` 
+```
 
 ### Thread example
 

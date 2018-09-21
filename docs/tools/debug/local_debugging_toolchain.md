@@ -16,7 +16,7 @@ First, make sure you have installed the [GNU Arm Embedded Toolchain](https://lau
 $ arm-none-eabi-gdb --version
 GNU gdb (GNU Tools for ARM Embedded Processors) 7.8.0.20150604-cvs
 Copyright (C) 2014 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
 and "show warranty" for details.
@@ -103,9 +103,9 @@ Remote debugging using localhost:3333
 You now have set up a debug connection. From here, you can flash debug builds, step through code and use any IDE that supports GDB to debug Arm Mbed OS applications. For instructions, see:
 
 1. Producing [debug builds with Arm Mbed CLI](debug-builds-cli.html).
-1. Debugging with [Eclipse](/docs/development/tutorials/eclipse.html).
-1. Debugging with [Keil uVision](/docs/development/tutorials/keil-uvision.html).
-1. Debugging with [Visual Studio Code](/docs/development/tutorials/visual-studio-code.html).
+1. Debugging with [Eclipse](/docs/v5.10/tutorials/eclipse.html).
+1. Debugging with [Keil uVision](/docs/v5.10/tutorials/keil-uvision.html).
+1. Debugging with [Visual Studio Code](/docs/v5.10/tutorials/visual-studio-code.html).
 
 ### Semihosting messages
 

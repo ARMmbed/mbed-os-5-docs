@@ -20,7 +20,7 @@ If you are using an old version of Mbed CLI, you may see compile-time errors. Ma
 
 #### Compiler versions
 
-Mbed OS 5 can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](/docs/development/tools/index.html).
+Mbed OS 5 can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](/docs/v5.10/tools/index.html).
 
 #### Compiler licenses
 
@@ -29,7 +29,7 @@ If using Keil MDK (Arm Compiler) or IAR, make sure you have a license installed.
 ### Investigate whether the Mbed OS application is crashing
 
 - Examine or undo any recent code change you made to see if it is the cause of the crash.
-- Build using the development or [debug build profile](/docs/development/tools/build-profiles.html), so the serial port shows any errors in your program.
+- Build using the development or [debug build profile](/docs/v5.10/tools/build-profiles.html), so the serial port shows any errors in your program.
 - Enable debug prints for components that have them.
 
 ### Take these steps if no output is shown in the serial port

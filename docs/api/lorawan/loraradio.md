@@ -6,11 +6,11 @@ An implementation of this class is passed to the Arm Mbed LoRaWAN stack. Please 
 
 ### LoRaRadio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_lo_ra_radio.html)
 
 ### LoRaRadio example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/315a26cd0165/main.cpp)
 
 ### Related content
-- [LoRa architecture](/docs/development/reference/lora-tech.html).
+- [LoRa architecture](/docs/v5.10/reference/lora-tech.html).

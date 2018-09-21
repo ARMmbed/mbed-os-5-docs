@@ -16,7 +16,7 @@ Mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R
 
 The only exception to this coding style involves third-party code. Third-party code should be added to the `.astyleignore` file located in the Mbed OS root directory.
 
-You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
+You can use [Artistic Style (AStyle)](https://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
 ```
 astyle -n --options=.astylerc $(full_path_to_file)
@@ -73,7 +73,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 - Braces - K&R style.
 
-- One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)).
+- One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](https://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)).
 
 - One line per statement.
 

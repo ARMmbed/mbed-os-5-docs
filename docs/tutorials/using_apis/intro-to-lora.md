@@ -41,8 +41,8 @@ This guide shows you:
 You have [many choices in the gateways](https://www.loriot.io/lora-gateways.html) you can use, but we've had good experience with these three:
 
 - [Kerlink Wirnet station](https://www.kerlink.com/product/wirnet-station/). Expensive (around 1,200 euros) but great build quality and range.
-- [MultiTech conduit](http://www.multitech.com/brands/multiconnect-conduit). About 1/3 of the price of the Kerlink (about 450 euros) and good for smaller setups. MultiTech also has a [rugged outdoor](http://www.multitech.com/brands/multiconnect-conduit-ip67) version. Make sure you also order the LoRa mCard.
-- Building your own with a Raspberry Pi and an [IMST iC880A](http://shop.imst.de/wireless-modules/lora-products/8/ic880a-spi-lorawan-concentrator-868-mhz) concentrator. At about 150 euros, this is a cost-efficient option.
+- [MultiTech conduit](https://www.multitech.com/brands/multiconnect-conduit). About 1/3 of the price of the Kerlink (about 450 euros) and good for smaller setups. MultiTech also has a [rugged outdoor](https://www.multitech.com/brands/multiconnect-conduit-ip67) version. Make sure you also order the LoRa mCard.
+- Building your own with a Raspberry Pi and an [IMST iC880A](https://shop.imst.de/wireless-modules/lora-products/8/ic880a-spi-lorawan-concentrator-868-mhz) concentrator. At about 150 euros, this is a cost-efficient option.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 150 euros.</span></span>
 
@@ -57,7 +57,7 @@ You also need to build devices. If you use Mbed OS (and you should), you can eit
 - A development board with a LoRa transceiver:
     - [L-Tek FF1705](https://os.mbed.com/platforms/L-TEK-FF1705/).
     - [MultiTech xDot](https://os.mbed.com/platforms/MTS-xDot-L151CC/).
-    - [MultiTech mDot](https://os.mbed.com/platforms/MTS-mDot-F411/) and the [UDK2 board](http://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
+    - [MultiTech mDot](https://os.mbed.com/platforms/MTS-mDot-F411/) and the [UDK2 board](https://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
     - [MultiTech mDot EVB](https://os.mbed.com/platforms/mdotevb/).
     - [B-L072Z-LRWAN1 LoRa®Discovery kit](https://os.mbed.com/platforms/ST-Discovery-LRWAN1/).
 - An Mbed OS 5 Enabled development board together with a LoRa shield:
@@ -99,7 +99,7 @@ The conduit is configured with DHCP disabled, so you need to enable this first. 
 
 1. Connect to the conduit using a micro-USB cable.
 1. The gateway appears as a serial device.
-1. You can use a program such as [GNU Screen](https://www.gnu.org/software/screen/) or [PuTTY](http://putty.org) to log into the gateway with the username `root` and password `root`.
+1. You can use a program such as [GNU Screen](https://www.gnu.org/software/screen/) or [PuTTY](https://putty.org) to log into the gateway with the username `root` and password `root`.
 
 <span class="notes">**Note if logging in fails:** If logging in as `root` fails but you can log in with the username `admin` and the password `admin`, you are running the AEP firmware. To proceed, update your gateway firmware to mLinux. Use [these instructions](http://www.multitech.net/developer/software/mlinux/using-mlinux/flashing-mlinux-firmware-for-conduit/).</span>
 
@@ -202,7 +202,7 @@ A disadvantage of the SX1272 and SX1276 LoRa shields is that they block a lot of
 
 LoRaWAN uses an end-to-end encryption scheme that uses two session keys. The network server holds one key, and the application server holds the other. (In this tutorial, TTN fulfils both roles). These session keys are created when the device joins the network. For the initial authentication with the network, the application needs its device EUI, the EUI of the application it wants to join (referred to as the application EUI) and a preshared key (the application key).
 
-The device EUI and application EUI are globally unique identifiers. You can buy a block of EUIs from the [IEEE](http://standards.ieee.org/develop/regauth/tut/eui.pdf). Modules often already come with an EUI, which is printed on the device. If you're using a radio shield you can use an EUI from The Things Network's block.
+The device EUI and application EUI are globally unique identifiers. You can buy a block of EUIs from the [IEEE](https://standards.ieee.org/develop/regauth/tut/eui.pdf). Modules often already come with an EUI, which is printed on the device. If you're using a radio shield you can use an EUI from The Things Network's block.
 
 <span class="notes">**Note:** In LoRaWAN 1.1, the join key replaces the application key, and the join server handles the initial authentication. However, at the time of writing, this is not implemented on The Things Network.</span>
 
@@ -242,7 +242,7 @@ Now that the device is registered in The Things Network, you can start writing c
 
 #### 3.3 - Importing the demo application
 
-Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](/docs/development/tools/index.html)).
+Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](/docs/v5.10/tools/index.html)).
 
 1. [Sign up](https://os.mbed.com/account/signup/?next=%2F) for an account on Arm Mbed, which hosts the Online Compiler.
 1. Find your development board on [the platforms page](https://os.mbed.com/platforms/).
@@ -413,6 +413,6 @@ LoRa/LoRaWAN is a technology with which anyone can set up a network and start bu
 #### More material
 
 - [Webinar: getting started with LoRa using Arm Mbed and The Things Network](https://pages.arm.com/2017-10-29-webinar-registration.html).
-- [Mbed OS LoRaWAN stack documentation](/docs/development/apis/lorawan.html).
+- [Mbed OS LoRaWAN stack documentation](/docs/v5.10/apis/lorawan.html).
 - [Firmware updates over LoRaWAN](https://os.mbed.com/blog/entry/firmware-updates-over-lpwan-lora/).
 - [Presentations from The Things Conference](https://www.youtube.com/playlist?list=PLM8eOeiKY7JUhIyxWWU2-qziejDbBg-pf).
