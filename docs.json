@@ -1255,7 +1255,6 @@
             "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
             "slug": "fe2p",
             "type": "markdown",
-            "hidden": "false",
             "chapters": [{
                 "title": "Intro",
                 "intro": {
