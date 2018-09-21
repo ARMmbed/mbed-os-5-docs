@@ -1,6 +1,6 @@
 ## USBMIDI
 
-<span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.10/feature-hal-spec-usb-device-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
 
 You can use the USBMIDI interface to send and receive MIDI messages over USB using the standard USB-MIDI protocol.
 
