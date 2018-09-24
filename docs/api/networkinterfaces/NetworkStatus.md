@@ -32,28 +32,27 @@ This API requires an interface to be monitored. For example, Ethernet:
 EthernetInterface eth;
 ```
 
-You need to provide the callback function, itself:
+You need to provide the callback function, for example:
 
 ```cpp
+
+bool is_connected = false;
+
 void status_callback(nsapi_event_t status, intptr_t param)
 {
     if (status == NSAPI_EVENT_CONNECTION_STATUS_CHANGE) {
-        printf("Connection status changed!\r\n");
         switch(param) {
-            case NSAPI_STATUS_LOCAL_UP:
-                printf("Local IP address set!\r\n");
-                break;
             case NSAPI_STATUS_GLOBAL_UP:
-                printf("Global IP address set!\r\n");
-                break;
-            case NSAPI_STATUS_DISCONNECTED:
-                printf("No connection to network!\r\n");
-                break;
-            case NSAPI_STATUS_CONNECTING:
-                printf("Connecting to network!\r\n");
+                if (!is_connected) {
+                    start_my_cloud_client();
+                    is_connected = true;
+                }
                 break;
             default:
-                printf("Not supported");
+                if (is_connected) {
+                    stop_my_cloud_client();
+                    is_connected = false;
+                }
                 break;
         }
     }
