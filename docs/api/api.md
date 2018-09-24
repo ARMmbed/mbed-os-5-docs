@@ -201,7 +201,7 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 <td><a href="nfccontroller.html">NFCController</a></td>
 </tr>
 <tr>
-<td><a href="nfc-eeprom.htmll">NFC EEPROM</a></td>
+<td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
 </tr>
 </tbody>
 </table>
