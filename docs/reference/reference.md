@@ -8,6 +8,6 @@ Your application code is written in C++. Your code uses the application programm
 
 This is the basic architecture of an Mbed board:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/MbedOS_002.png)<span>A sketch of a typical Mbed board's hardware architecture</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)</span>
 
 To learn more about our APIs, please see our [API user guides](/docs/v5.10/apis/index.html). To get started on Mbed OS, see our [getting started guide](/docs/v5.10/tutorials/mbed-os-quick-start.html).
