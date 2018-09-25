@@ -51,3 +51,7 @@ struct NFCDelegate : mbed::nfc::NFCController::Delegate {
     }
 };
 ```
+
+#### Related content
+
+- [NFC architecture](/docs/v5.10/reference/nfc-technology.html).
