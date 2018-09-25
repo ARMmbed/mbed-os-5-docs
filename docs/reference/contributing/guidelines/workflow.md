@@ -125,6 +125,12 @@ Documentation changes to markdown files or doxygen documentation (comment-only c
 
 Release: patch
 
+#### Test update
+
+Adding a new test unit or test case.
+
+Release: patch
+
 #### Breaking change
 
 A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
