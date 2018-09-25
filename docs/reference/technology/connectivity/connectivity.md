@@ -14,7 +14,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for perso
 
 To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](/docs/v5.10/apis/ble.html) user API reference.
 
-#### IP Networking
+#### IP networking
 
 Arm Mbed OS supports various IP based connectivity options and IP stacks.
 
@@ -44,7 +44,7 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html)
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/v5.10/tutorials/LoRa-tutorial.html) describe LoRA networking.
 
-### NFC
+#### NFC
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>NFC</span></span>
 
