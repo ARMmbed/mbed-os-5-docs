@@ -14,7 +14,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for perso
 
 To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](/docs/development/apis/ble.html) user API reference.
 
-#### IP Networking
+#### IP networking
 
 Arm Mbed OS supports various IP based connectivity options and IP stacks.
 
