@@ -105,9 +105,9 @@ Refactors are intended for feature releases, if they are not fixing specific iss
 
 Release: feature
 
-#### New target
+#### Target update
 
-Adding a new target is a change for a patch release because it updates the targets folder implementation.
+Updating target implementation (adding a new target or updating already supported target) is a change for a patch release.
 
 Release: patch
 
