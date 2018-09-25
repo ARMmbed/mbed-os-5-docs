@@ -108,3 +108,7 @@ size_t build_ndef_message(const Span<uint8_t> &buffer) {
 ```
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_builder.html)
+
+#### Related content
+
+- [NFC architecture](/docs/v5.10/reference/nfc-technology.html).
