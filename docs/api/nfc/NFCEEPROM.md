@@ -30,3 +30,7 @@ int main() {
     nfc.write_ndef_message();
 }
 ```
+
+#### Related content
+
+- [NFC architecture](/docs/v5.10/reference/nfc-technology.html).
