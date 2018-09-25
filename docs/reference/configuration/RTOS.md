@@ -17,10 +17,30 @@ The following is the complete list of RTOS configuration parameters, as generate
 Configuration parameters
 ------------------------
 
+Name: rtos.idle-thread-stack-size
+    Description: The size of the idle thread's stack
+    Defined by: library:rtos
+    Macro name: MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE
+    Value: 512 (set by library:rtos)
+Name: rtos.main-thread-stack-size
+    Description: The size of the main thread's stack
+    Defined by: library:rtos
+    Macro name: MBED_CONF_RTOS_MAIN_THREAD_STACK_SIZE
+    Value: 4096 (set by library:rtos)
 Name: rtos.present
     Defined by: library:rtos
     Macro name: MBED_CONF_RTOS_PRESENT
     Value: 1 (set by library:rtos)
+Name: rtos.thread-stack-size
+    Description: The default stack size of new threads
+    Defined by: library:rtos
+    Macro name: MBED_CONF_RTOS_THREAD_STACK_SIZE
+    Value: 4096 (set by library:rtos)
+Name: rtos.timer-thread-stack-size
+    Description: The size of the timer thread's stack
+    Defined by: library:rtos
+    Macro name: MBED_CONF_RTOS_TIMER_THREAD_STACK_SIZE
+    Value: 768 (set by library:rtos)
 ```
 
 ### EventQueue configuration parameters
