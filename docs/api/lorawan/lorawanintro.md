@@ -175,7 +175,7 @@ Below is the list of error codes and their description.
 |`LORAWAN_STATUS_NO_FREE_CHANNEL_FOUND`| -1022 | All channels marked used, cannot find a free channel at the moment |
 |`LORAWAN_STATUS_METADATA_NOT_AVAILABLE`| -1023 | Metadata is stale, cannot be made available as its not relevant |
 
-You can find the API documentation for the 'LoRaWANInterface' and 'LoRaRadio' classes below:
+You can find the API documentation for the LoRaWANInterface and LoRaRadio classes below:
 
 - [LoRaWANInterface API docs](lorawan.html): The class that provides APIs for LoRaWAN network stack.
 - [LoRaRadio API docs](loraradio-api.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
