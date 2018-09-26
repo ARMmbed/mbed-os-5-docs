@@ -1120,10 +1120,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/porting/target/rtos.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/porting/target/tickless.md"
                     },
                     {
