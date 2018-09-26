@@ -127,7 +127,7 @@ Release: patch
 
 #### Test update
 
-Adding a new test unit or test case.
+Update a new test unit or test case.
 
 Release: patch
 
