@@ -1280,44 +1280,6 @@
                     "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
                 }]
         },
-        {
-            "title": "Mbed Linux OS",
-            "description": "Staging MBL for a bit",
-            "slug": "mbl",
-            "type": "markdown",
-            "chapters": [{
-                    "title": "Introduction",
-                    "intro": {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbl-docs/blob/master/Docs/introduction.md"
-                    },
-                    "sources":[]
-                },
-                {
-                    "title": "Tutorials",
-                    "sources": [{
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbl-docs/blob/master/Docs/tutorials/set_up_env_and_hardware.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbl-docs/blob/master/Docs/tutorials/quick_start.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbl-docs/blob/master/Docs/tutorials/qr_code.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "API references",
-                    "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbl-docs/blob/master/Docs/API/intro_api.md"
-                    }]
-                }
-            ]
-        },
     {
         "title": "feature-hal-spec-usb-device doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
