@@ -10,10 +10,6 @@ Be consistent with your changes. We define software design principles and coding
 
 The process how and how we review contributions is described in the [workflow](workflow.html) document.
 
-#### CLA
-
-All contributors must have signed [CLA](cla.html).
-
 #### Licenses
 
 License should comply with allowed [licenses described](license.html).
