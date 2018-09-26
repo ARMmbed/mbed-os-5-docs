@@ -61,6 +61,7 @@ To create an application using a bootloader, you must first have created the boo
 "target_overrides": {
     ...
     "<TARGET_NAME>": {
+        "target.features_add": ["BOOTLOADER"],
         "target.bootloader_img": "bootloader/my_bootloader.bin"
     },
     ...
@@ -165,6 +166,7 @@ You can place the prebuilt binary bootloader in `mbed-os/feature/FEATURE_BOOTLOA
    ```
    "target_overrides": {
            "YOUR_TARGET": {
+               "target.features_add": ["BOOTLOADER"],
                "target.app_offset": "0x10400",
                "target.header_offset": "0x10000",
                "target.header_format": [
@@ -184,6 +186,7 @@ Alternatively, you can edit `mbed_app.json`, and override the target bootloader 
    ```
        "target_overrides": {
            "YOUR_TARGET": {
+               "target.features_add": ["BOOTLOADER"],
                "target.bootloader_img": "PATH_TO_BOOTLOADER/your_bootloader.bin"
                "target.app_offset": "0x10400",
                "target.header_offset": "0x10000",
