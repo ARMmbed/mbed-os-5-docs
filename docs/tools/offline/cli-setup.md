@@ -106,7 +106,7 @@ You can get the latest stable version of Mbed CLI through pip by running:
 $ pip install mbed-cli
 ```
 
-On Linux or macOS, you may need to run with `sudo`.
+On Linux, you may need to run with `sudo`. On Mac, you may need to add the `--user` switch.
 
 ### Optional: installing the development version
 
