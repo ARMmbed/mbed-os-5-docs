@@ -188,7 +188,7 @@ Mbed, libraries and application source code can then select different implementa
 
 #### `is_disk_virtual`
 
-When `is_disk_virtual` is enabled, there is a certain amount of delay added after flashing firmware binary to make sure the mount was correct. This field is not used anymore. Daplink uses mbedls to make sure the mount was correct before re-flashing it again.
+When `is_disk_virtual` is enabled, there is a certain amount of delay added after flashing firmware binary to make sure the mount was correct. This field is not used anymore. The Mbed test tools uses `Mbed LS` to make sure the mount was correct before re-flashing it again.
 
 #### `supported_toolchains`
 
@@ -259,7 +259,7 @@ The `device_name` key in `targets.json` is `MK20DX256xxx7` for any target that u
 
 #### `detect_code`
 
-The `detect_code` contains four ASCII characters containing only hexadecimal values (A-F and 0-9). This code is the same for all platforms of the same type. For example, all K64F platforms have a detect_code of 0240. mbedls uses this to identify the platform. This field is not used anymore. Mbed-ls has its own database of detect codes: https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/platform_database.py#L45
+The `detect_code` contains four ASCII characters containing only hexadecimal values (A-F and 0-9). This code is the same for all platforms of the same type. For example, all K64F platforms have a detect_code of 0240. `Mbed LS` uses this to identify the platform. This field is not used anymore. `Mbed LS` has its own database of detect codes: https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/platform_database.py#L45
 
 #### `OUTPUT_EXT`
 
