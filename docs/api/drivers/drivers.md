@@ -12,13 +12,13 @@ The Mbed OS driver APIs include analog and digital inputs and outputs on develop
 
 For every driver, there is a required blocking API. Many drivers also have optional nonblocking APIs. The difference between blocking and nonblocking APIs lies in their behavior. Blocking APIs block the current thread until the API call completes. Nonblocking APIs, however, don't block execution. Instead, nonblocking API calls return a structure that indicates the status of the operation started.
 
-A benefit of blocking APIs is that they can make development easier. Nonblocking APIs allow for linear programming and straightforward debugging. In some situations, they can also increase speed.
+A benefit of blocking APIs is that they can make development easier. Blocking APIs allow for programs structured linearly and straightforward debugging. In some situations, they can also increase speed.
 
 To optimize for the benefits from blocking APIs, be sure to use multiple threads. Avoid mixing blocking and nonblocking APIs in the same thread as it can lead to complications in your code and can make debugging more confusing. 
 
 [Note to self: Add something about blockwise or bulk transfers.]
 
-### Attach programming model
+### Attaching callbacks to drivers
 
 [Note to self: Add content about this design pattern sticking you in interrupt context.]
 
