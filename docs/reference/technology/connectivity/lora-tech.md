@@ -218,7 +218,7 @@ At the moment, it's not possible to change a PHY during run time. You must selec
 
 The Arm Mbed LoRaWAN stack is event driven. To reduce complexity of the overall system, it uses the EventQueue, which the application passes to the stack. Both share this event queue. This ensures that the both stack and application run in the same context.
 
-There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](lorawan.html).
+There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](/docs/development/apis/lorawan.html).
 
 #### Connection procedure
 

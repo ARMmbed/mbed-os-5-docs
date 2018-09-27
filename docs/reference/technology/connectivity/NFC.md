@@ -42,7 +42,7 @@ NFC EEPROMs behave like NFC tags whose memory can either be addressed through a 
 
 NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os-example-nfc) and demonstrate how to create NFC tags that you can be read from and write to using a phone.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/explorenfc_nucleo.png)<span>An Explore-NFC board attached to a Nucleo board</span></span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/explorenfc_nucleo.jpg)<span>An Explore-NFC board attached to a Nucleo board</span></span>
 
 ### API
 

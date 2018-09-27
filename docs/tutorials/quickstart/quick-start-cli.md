@@ -4,7 +4,7 @@
 
 The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally.
 
-[**Windows**](#windows) | [**Mac OS X**](#mac-os-x) | [**Linux**](#linux)
+[**Windows**](#windows) | [**macOS**](#macos) | [**Linux**](#linux)
 
 #### Windows
 
@@ -54,11 +54,11 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### Mac OS X
+#### macOS
 
 ##### 1. Install Python and Pip
 
-Mac OS X 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of Mac OS X, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
+macOS 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of macOS, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
 
 To install Pip, run `sudo easy_install pip` from your command-line.
 
@@ -179,8 +179,8 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-  - [Mbed OS APIs](/docs/development/reference/apis.html) - list of all APIs available in Mbed OS.
-  - [Peripheral drivers](/docs/development/reference/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+  - [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
+  - [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
   - [Advanced debugging](debugging.html).

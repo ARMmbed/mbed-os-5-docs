@@ -72,7 +72,7 @@ Steps to update Eclipse's PATH:
 1. Under *Name*, enter `PATH`.
 1. Under *Value*, add the location of the GNU ARM Embedded Toolchain. To find it:
     - On Windows, from a CMD window, run `where arm-none-eabi-g++`.
-    - On Mac OS and Linux, from a Terminal, run `which arm-none-eabi-g++`.
+    - On macOS and Linux, from a Terminal, run `which arm-none-eabi-g++`.
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse4.png)<span>Setting up PATH</span></span>
 

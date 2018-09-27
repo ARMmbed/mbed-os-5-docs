@@ -27,7 +27,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 ### Exporting from Arm Mbed CLI
 
-[Mbed CLI](arm-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](developing-arm-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -43,6 +43,10 @@ When you export from Mbed CLI, you create a project that compiles with the debug
 will have the same flags as if you had compiled with:
 
     $ mbed compile -t arm -m K64F --profile debug
+
+For a complete list of supported export toolchains, you can run:
+
+    $ mbed export -h
 
 ### Exporting from the Arm Mbed Online Compiler
 
@@ -117,7 +121,7 @@ When you encounter an error such as these, add the directory containing the comp
 
 Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. Please download and install it.
 
-##### Make and Eclipse on Linux and Mac OS X: Nordic platforms using SoftDevices
+##### Make and Eclipse on Linux and macOS: Nordic platforms using SoftDevices
 
 Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew).
 

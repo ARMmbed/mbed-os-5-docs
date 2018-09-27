@@ -32,6 +32,8 @@ Before contributing an enhancement (new feature, new port and so on), please [di
 
 We can only accept contributions through GitHub if you create a pull request from forked versions of our repositories. This allows us to review the contributions in an easy-to-use and reliable way, under public scrutiny.
 
+For security purposes, we require our GitHub contributors to use two-factor authentication on their GitHub accounts. Two-factor authentication adds a layer of security, which reduces the risk of your account being hacked. To enable two-factor authentication, please see [GitHub’s instructions](https://help.github.com/articles/configuring-two-factor-authentication/).
+
 Please create separate pull requests for each concern; each pull request needs a clear unity of purpose. In particular, separate code formatting and style changes from functional changes. This makes each pull request’s true contribution clearer, so review is quicker and easier.
 
 #### Reporting bugs
@@ -66,7 +68,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 #### Release versioning
 
-You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/how-we-release-arm-mbed-os.html).
+You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/release-process.html).
 
 ### Pull request categories
 
@@ -165,19 +167,29 @@ All pull requests must be reviewed. The Arm Mbed CI bot determines the most suit
 
 Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
+Label: `needs: CI`
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
 
 #### The CI (Continuous Integration) testing
 
 There are many CI systems available. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
+Label: `needs: review`
 Time: 1 day for CI to complete and report back results.
 
 #### Work needed
 
 A pull request in the work needed state requires additional work due to failed tests, or rework as a result of the review. If a pull request is in this state, then our maintainers request changes from the pull request author.
 
+Label: `needs: work`
 Time: 3 days for the pull request author to action the review comments.
+
+#### Ready for integration
+
+Maintainers merge pull requests during the internal gatekeeping meetings that occur three times a week. They can merge straightforward pull requests immediately.
+
+Label: `Ready for merge`
+Time: 2 days
 
 #### Releases
 
@@ -194,7 +206,7 @@ We use many other labels to summarize the scope and effect of the changes.
 - *needs: preceding PR* - This pull request cannot yet be merged because it has a dependency on another pull request that needs to merge first.
 - *DO NOT MERGE* - This pull request contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - The pull request specifically affects the named device(s).
-- *component: 'name'* - The pull request specifically affects the named component.
+- *component: 'name'* - The pull request specifically affects the named component. Component names follow the structure of Mbed OS (`ble`, `storage`, `tls` and so on).
 
 The following labels summarize the scope of the pull request.
 

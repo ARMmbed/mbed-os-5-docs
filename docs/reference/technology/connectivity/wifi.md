@@ -30,9 +30,9 @@ In Mbed OS, wireless LAN devices are either external devices or integrated modul
 
 As with Ethernet, Wi-Fi networks are only used for carrying IP traffic in Mbed OS.
 
-For more information, please see the following sections of this book
+For more information, please see the following sections:
 
 - [IP networking](ip-networking.html).
 - [Ethernet](ethernet-technology.html).
-- [Socket API](network-socket.html).
-- [WifiInterface API](wi-fi.html).
+- [Socket API](/docs/development/apis/socket.html).
+- [WifiInterface API](/docs/development/apis/wi-fi.html).

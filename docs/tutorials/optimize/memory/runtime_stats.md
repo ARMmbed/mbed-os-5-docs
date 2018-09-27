@@ -98,4 +98,4 @@ Both of these functions return a struct containing the following:
 
 ##### Example program using stack statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/stack_stats_example/)](https://os.mbed.com/teams/mbed_example/code/stack_stats_example/file/539750137652/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/stack_stats_example/)](http://os.mbed.com/teams/mbed_example/code/stack_stats_example/file/539750137652/main.cpp)

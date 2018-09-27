@@ -6,7 +6,7 @@ This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB,
 
 ### Suggested tools
 
-  - Linux (4.1), but pyOCD and GDB work on Windows and Mac OS.
+  - Linux (4.1), but pyOCD and GDB work on Windows and macOS.
   - pyOCD (0.4.5), which you can obtain on [GitHub](https://github.com/mbedmicro/pyOCD).
   - arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at [linaro](https://launchpad.net/gcc-arm-embedded).
 

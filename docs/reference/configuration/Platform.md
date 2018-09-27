@@ -8,6 +8,10 @@ The following is the complete list of platform configuration parameters, as gene
 Configuration parameters
 ------------------------
 
+Name: platform.cpu-stats-enabled
+    Description: Set to 1 to enable cpu stats. When enabled the function mbed_stats_cpu_get returns non-zero data. See mbed_stats.h for more information
+    Defined by: library:platform
+    No value set
 Name: platform.default-serial-baud-rate
     Description: Default baud rate for a Serial or RawSerial instance (if not specified in the constructor)
     Defined by: library:platform
@@ -17,6 +21,11 @@ Name: platform.error-all-threads-info
     Description: Reports all the threads in the system as part of error report.
     Defined by: library:platform
     No value set
+Name: platform.error-decode-http-url-str
+    Description: HTTP URL string for ARM Mbed-OS Error Decode microsite
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_ERROR_DECODE_HTTP_URL_STR
+    Value: "\nFor more info, visit: https:/\/armmbed.github.io/mbedos-error/?error=0x%08X" (set by library:platform)
 Name: platform.error-filename-capture-enabled
     Description: Enables capture of filename and line number as part of error context capture, this works only for debug and develop builds. On release builds, filename capture is always disabled
     Defined by: library:platform
@@ -34,13 +43,25 @@ Name: platform.force-non-copyable-error
     Description: Force compile time error when a NonCopyable object is copied
     Defined by: library:platform
     No value set
+Name: platform.heap-stats-enabled
+    Description: Set to 1 to enable heap stats. When enabled the function mbed_stats_heap_get returns non-zero data. See mbed_stats.h for more information
+    Defined by: library:platform
+    No value set
 Name: platform.max-error-filename-len
     Description: Sets the maximum length of buffer used for capturing the filename in error context. This needs error-filename-capture-enabled feature.
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_MAX_ERROR_FILENAME_LEN
     Value: 16 (set by library:platform)
+Name: platform.memory-tracing-enabled
+    Description: Enable tracing of each memory call by invoking a callback on each memory operation. See mbed_mem_trace.h in the HAL API for more information
+    Defined by: library:platform
+    No value set
 Name: platform.poll-use-lowpower-timer
     Description: Enable use of low power timer class for poll(). May cause missing events.
+    Defined by: library:platform
+    No value set
+Name: platform.stack-stats-enabled
+    Description: Set to 1 to enable stack stats. When enabled the functions mbed_stats_stack_get and mbed_stats_stack_get_each return non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
     No value set
 Name: platform.stdio-baud-rate
@@ -65,4 +86,12 @@ Name: platform.stdio-flush-at-exit
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT
     Value: 1 (set by library:platform)
+Name: platform.sys-stats-enabled
+    Description: Set to 1 to enable system stats. When enabled the function mbed_stats_sys_get returns non-zero data. See mbed_stats.h for more information
+    Defined by: library:platform
+    No value set
+Name: platform.thread-stats-enabled
+    Description: Set to 1 to enable thread stats. When enabled the function mbed_stats_thread_get_each returns non-zero data. See mbed_stats.h for more information
+    Defined by: library:platform
+    No value set
 ```
