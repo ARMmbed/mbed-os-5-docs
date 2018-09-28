@@ -46,17 +46,15 @@ You can open this project file with uVision5.
 
 When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build-profiles.html). For example, this means that compiling within UVision 5 after this export:
 
-```
     $ mbed export -i uvision5 -m K64F
 
-will have the same flags as if you had compiled with:
+has the same flags as if you had compiled with:
 
     $ mbed compile -t arm -m K64F --profile debug
 
 For a complete list of supported export toolchains, you can run:
 
     $ mbed export -h
-```
 
 ### Before you export
 
