@@ -10,21 +10,20 @@ The Mbed OS driver APIs include analog and digital inputs and outputs on develop
 
 ### Blocking nature
 
-For every driver, there is a required blocking API. Many drivers also have optional nonblocking APIs. The difference between blocking and nonblocking APIs lies in their behavior. Blocking APIs block the current thread until the API call completes. Nonblocking APIs, however, don't block execution. Instead, nonblocking API calls return a structure that indicates the status of the operation started.
+By default, all Mbed OS driver APIs are blocking. In the drivers, blocking APIs block the current thread until the hardware operation completes. Blocking APIs simplify control flow, allow for linearly structured programs and make debugging intuitive. We suggest using blocking APIs as a starting point. You should only consider more complex APIs if the blocking APIs do not satisfy your requirements.
 
-A benefit of blocking APIs is that they can make development easier. Blocking APIs allow for programs structured linearly and straightforward debugging. In some situations, they can also increase speed.
+Mbed OS is built around an RTOS, and to complement this, the drivers are thread safe. This means that if you use multiple drivers in a blocking manner, as long as the drivers are in separate threads, their operations can still be carried out in parallel. When a driver blocks a thread, the RTOS either switches to any nonblocked threads or sleeps. This means that in most cases, an application using blocking APIs has the same advantages as one using nonblocking APIs.
 
-To optimize for the benefits from blocking APIs, be sure to use multiple threads. Avoid mixing blocking and nonblocking APIs in the same thread as it can lead to complications in your code and can make debugging more confusing. 
-
-[Note to self: Add something about blockwise or bulk transfers.]
+In some cases, the drivers provide nonblocking APIs. These APIs configure hardware to run in the background of the processor, without blocking a thread. Nonblocking drivers signal through the attach function once the background operation is complete.
 
 ### Attaching callbacks to drivers
 
-Mbed OS drivers support an asynchronous, also called event-driven, paradigm, using the “attach” interface. You can use this interface to attach a callback function that drivers call during specific events.
+In Mbed OS, the standard API for asynchronous events is the attach function. You can use the attach function to attach a callback function. Drivers call the attached callback function during specific events. You can use this to learn when the state of a nonblocking operation changes or whether other asynchronous events occur.
 
-For example, you can attach a callback function to be called when a driver receives a data received (RX) interrupt.
+For example, you can attach a callback function on a [Serial](serial.html) object, which the Serial object calls when the serial line receives a packet on the RX line.
 
-The callback is executed in a different context, and the callback function should be implemented with what’s permitted in that context. For example, if the callback happens in interrupt context, your callback implementation should only do operations permitted in interrupt context. To help with the implementation of callback functions, the software component or driver exporting the “attach” interface
-documents the context in which the callbacks will be invoked.
+One important thing to note is that when you attach callbacks with this function, the driver calls them in interrupt context. Interrupt context runs at a higher priority than any thread, which means that any code called from the attach callback must be interrupt safe. This excludes any blocking APIs such as blocking drivers, malloc, and mutexes. Or you risk preventing other high-priority interrupts from running, which may break other parts of the OS.
+
+When you need to call code that’s not interrupt safe from interrupt context, you must first defer from the interrupt context to a thread. The easiest way to defer to a thread is to signal a waiting thread through a [Semaphore](semaphore.html). In more complex use cases, you can use an [EventQueue](eventqueue.html) to manage multiple events at once.
 
 <!---add design patterns about HAL, drivers working together, attach programming model/design pattern that sticks you in interrupt context, all blocking by nature, blockwise or bulk transfers, play down asynchronous natures, focus on blocking--->
