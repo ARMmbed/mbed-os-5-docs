@@ -25,6 +25,14 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 
 This may be useful to launch a debug session with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
+### Exporting from the Arm Mbed Online Compiler
+
+The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/export_menu.png)<span>Triggering an export</span></span>
+
+The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
+
 ### Exporting from Arm Mbed CLI
 
 [Mbed CLI](developing-arm-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
@@ -38,6 +46,7 @@ You can open this project file with uVision5.
 
 When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build-profiles.html). For example, this means that compiling within UVision 5 after this export:
 
+```
     $ mbed export -i uvision5 -m K64F
 
 will have the same flags as if you had compiled with:
@@ -47,14 +56,7 @@ will have the same flags as if you had compiled with:
 For a complete list of supported export toolchains, you can run:
 
     $ mbed export -h
-
-### Exporting from the Arm Mbed Online Compiler
-
-The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/export_menu.png)<span>Triggering an export</span></span>
-
-The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
+```
 
 ### Before you export
 
