@@ -6,7 +6,7 @@ Use the SocketAddress class to represent the IP address and port pair of a uniqu
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket_address.html)
 
-### SocketAddress Example
+### SocketAddress example
 
 Here is an example to read current UTC time. This example uses the SocketAddress class to get the server IP address and port.
 
