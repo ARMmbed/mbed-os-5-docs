@@ -455,7 +455,7 @@
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/api/nfc/NFCEEPROM.md"
                     }
                 ]
-            },       
+            },
             {
                 "title": "Security",
                 "intro": {
@@ -627,7 +627,7 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/NFC.md"
-                    },      
+                    },
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Bootstrap.md"
@@ -878,7 +878,7 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/fastmodels/fastmodels.md"
-                    }      
+                    }
                 ]
             },
             {
@@ -1073,7 +1073,7 @@
     },
     {
         "title": "Porting",
-        "description": "",
+        "description": "Information about porting Mbed OS to new targets",
         "slug": "porting",
         "type": "markdown",
         "chapters": [{
