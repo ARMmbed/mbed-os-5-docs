@@ -69,3 +69,4 @@ Here is an example demonstrating how to build a heart rate sensor that can be co
 ### Related content
 
 - Mbed Enabled [targets and components](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) that support BLE.
+- [BLE tutorial](/docs/v5.10/tutorials/ble-tutorial.html).
