@@ -20,11 +20,11 @@ To optimize for the benefits from blocking APIs, be sure to use multiple threads
 
 ### Attaching callbacks to drivers
 
-Mbed OS drivers support an event-driven programming paradigm using the “attach” interface, by which applications or software components can attach a callback function to be called on specific events. For example, an application can attach a callback function to be called when a driver receives a data received (RX) interrupt.
+Mbed OS drivers support an asynchronous, also called event-driven, paradigm, using the “attach” interface. You can use this interface to attach a callback function that drivers call during specific events.
+
+For example, you can attach a callback function to be called when a driver receives a data received (RX) interrupt.
 
 The callback is executed in a different context, and the callback function should be implemented with what’s permitted in that context. For example, if the callback happens in interrupt context, your callback implementation should only do operations permitted in interrupt context. To help with the implementation of callback functions, the software component or driver exporting the “attach” interface
 documents the context in which the callbacks will be invoked.
-
-[Note to self: Add content about this design pattern sticking you in interrupt context.]
 
 <!---add design patterns about HAL, drivers working together, attach programming model/design pattern that sticks you in interrupt context, all blocking by nature, blockwise or bulk transfers, play down asynchronous natures, focus on blocking--->
