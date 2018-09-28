@@ -31,3 +31,4 @@ Here is a client example of HTTP transaction over TCPSocket:
 ### Related content
 
 - [Socket](socket.html) API reference.
+- [Cellular TCP sockets example](/docs/development/tutorials/cellular-tcp-sockets.html).
