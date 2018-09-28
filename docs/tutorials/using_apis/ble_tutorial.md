@@ -1,4 +1,4 @@
-## BLE tutorial
+<h2 id="ble-tutorial">BLE</h2>
 
 ### Getting started
 
