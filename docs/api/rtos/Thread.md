@@ -80,3 +80,7 @@ The code below uses two separate threads to blink two LEDs. The first thread is 
 The Callback API provides a convenient way to pass arguments to spawned threads.  
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
+
+### Related content
+
+- [Application flow control tutorial](docs/development/tutorials/application-flow-control.html).
