@@ -27,3 +27,7 @@ size_t build_ndef_message(const Span<uint8_t> &buffer) {
     return builder.get_message().size();
 }
 ```
+
+### Related content
+
+- [NFC architecture](/docs/development/reference/nfc-technology.html).
