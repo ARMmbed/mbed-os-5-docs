@@ -27,4 +27,5 @@ void main()
 ### Related content
 
 - [DeepSleepLock API reference](deepsleeplock.html).
+- [Power management API reference](power-management.html).
 - [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).
