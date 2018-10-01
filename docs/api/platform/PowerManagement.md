@@ -73,10 +73,6 @@ UNLOCK: mbed_rtx_idle.cpp, ln: 131, lock count: 1
 
 <span class="notes">**Note:** Sleep tracing is a debug feature and should only be enabled during development cycle. Its heavy use of UART can affect the device performance.</span>
 
-#### Example
-
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
-
 ### System reset
 
 Mbed OS provides a standardized call to power cycle the system:
@@ -91,26 +87,6 @@ After the call the processor and most components will reset, but it will not aff
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
 
-### Idle loop
-
-Idle loop is a background system thread, which scheduler executes when no other threads are ready to run. That may happen when your application is waiting for an event to happen. By default, the idle loop invokes sleep manager to enter a sleep mode. You can overwrite this behavior by providing a different handler:
-
-```c++
-void new_idle_loop()
-{
-    // do nothing
-}
-
-void main()
-{
-    rtos_attach_idle_hook(&new_idle_loop);
-}
-```
-
-#### Function reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__rtos___idle.html)
-
 ### Example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/)](https://os.mbed.com/teams/mbed_example/code/SleepManager_Example_1/file/e85412b4147e/main.cpp)
@@ -118,4 +94,5 @@ void main()
 ### Related content
 
 - [DeepSleepLock API reference](deepsleeplock.html).
+- [Idle loop API reference](idle-loop.html).
 - [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).
