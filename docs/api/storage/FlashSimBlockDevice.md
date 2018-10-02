@@ -12,6 +12,8 @@ The constructor requires the following:
 
   - _bd_           -  Block device to back the FlashSimBlockDevice.
   - _erase\_value_ -  Value given to each byte of the erase unit following an erase operation (defaults to 0xFF).
+  
+To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
 
 ### FlashSimBlockDevice class reference
 
@@ -47,3 +49,4 @@ This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html)
 ### Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
+- [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
