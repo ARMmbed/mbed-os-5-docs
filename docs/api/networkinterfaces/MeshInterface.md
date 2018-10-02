@@ -25,7 +25,6 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 
 Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
 
-
 ### Network connection states
 
 After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
@@ -49,3 +48,4 @@ The application below demonstrates a simple light control application, where dev
 ### Related content
 
 - [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) technology reference material.
+- [6LoWPAN and Thread Mesh configuration documentation](https://os.mbed.com/docs/development/reference/configuration-mesh.html).
