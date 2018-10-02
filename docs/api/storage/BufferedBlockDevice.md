@@ -8,6 +8,8 @@ The constructor only requires the underlying block device pointer.
 
   - _bd_ -  Block device to back the BufferedBlockDevice.
 
+To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
+
 ### BufferedBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_buffered_block_device.html)
@@ -42,3 +44,4 @@ This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html)
 ### Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
+- [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
