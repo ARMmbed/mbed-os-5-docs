@@ -6,11 +6,13 @@ This API is a block device for NOR-based SPI flash devices that support SFDP.
 
 NOR-based SPI flash supports byte-sized read and writes, with an erase size of around 4 kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
+To configure this class, please see our [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+
 ### SPIFBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
 
-### SPIFBlockDevice example:
+### SPIFBlockDevice example
 
 ``` cpp
 // Here's an example using the MX25R SPI flash device on the K82F
@@ -44,3 +46,7 @@ int main() {
     spif.deinit();
 }
 ```
+
+### Related content
+
+- [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
