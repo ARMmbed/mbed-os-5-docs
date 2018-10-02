@@ -10,6 +10,8 @@ The constructor takes in the master block device pointer and the start and end a
   - _start_ - Start block address to map to block 0. Negative addresses are calculated from the end of the underlying block device.
   - _end_ - End block address to mark the end of the block device. This block is not mapped; negative addresses are calculated from the end of the underlying block device.
 
+To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
+
 ### SlicingBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_slicing_block_device.html)
@@ -24,3 +26,4 @@ This SlicingBlockDevice example partitions a [HeapBlockDevice](heapblockdevice.h
 
 - [ChainingBlockDevice](chainingblockdevice.html) API reference.
 - [HeapBlockDevice](heapblockdevice.html) API reference.
+- [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
