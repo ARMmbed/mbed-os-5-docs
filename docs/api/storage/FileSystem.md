@@ -39,6 +39,6 @@ For details regarding how to configure the default file system or override its i
 
 ### Related content
 
-- [Storage configuration](/docs//v5.10/reference/configuration-storage.html).
+- [Storage configuration](/docs/v5.10/reference/configuration-storage.html).
 - [File](file.html).
 - [Dir](dir.html).
