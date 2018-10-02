@@ -30,11 +30,11 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 
 ![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_erase_block.png)
 
-### BlockDevice get default instance
+#### BlockDevice get default instance
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-For details regarding how to configure the default block device please refer to the [storage configuration guide](/docs/v5.10/reference/configuration-storage.html)
+For details regarding how to configure the default block device, please refer to the [storage configuration guide](/docs/v5.10/reference/configuration-storage.html).
 
 ### BlockDevice class reference
 
@@ -170,3 +170,7 @@ int main() {
     printf("--- done! ---\n");
 }
 ```
+
+### Related content
+
+- [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
