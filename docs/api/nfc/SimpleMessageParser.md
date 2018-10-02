@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1common_1_1_simple_message_parser.png)<span>SimpleMessageParser class hierarchy</span></span>
 
-The MessageParser class parses a buffer of data in input and produces parsing events that are forwarded to its delegate. To help you, we offer a more integrated parser (`mbed::nfc::ndef::common::SimpleMessageParser`) that parses well known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box.
+The SimpleMessageParser class is a more integrated parser than the MessageParser class. Like MessageParser, SimpleMessageParser parses data and sends it to its delegate. However, SimpleMessageParser also combines MessageParser with a chain record. SimpleMessageParser parses well known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box.
 
 ### SimpleMessageParser class reference
 
@@ -78,3 +78,9 @@ void parse_ndef_message(const Span<const uint8_t> &buffer) {
 ```
 
 An application can extend capabilities of `SimpleMessageParser` by adding new record parsers (`mbed::nfc::ndef::RecordParser`) at runtime.
+
+### Related content
+
+- [MessageParser](messageparser.html) API reference.
+- [MessageBuilder](messagebuilder.html) API reference.
+- [NFC architecture](/docs/development/reference/nfc-technology.html).
