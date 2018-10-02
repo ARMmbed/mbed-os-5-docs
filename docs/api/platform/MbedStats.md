@@ -46,3 +46,7 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 ### CPU usage example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/file/3e6a97bcda48/main.cpp)
+
+### Related content
+
+- [Platform configuration documentation](/docs/v5.10/apis/mbed-statistics.html).
