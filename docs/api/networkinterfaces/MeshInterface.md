@@ -48,4 +48,4 @@ The application below demonstrates a simple light control application, where dev
 ### Related content
 
 - [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) technology reference material.
-- [6LoWPAN and Thread Mesh configuration documentation](https://os.mbed.com/docs/development/reference/configuration-mesh.html).
+- [6LoWPAN and Thread Mesh configuration documentation](/docs/development/reference/configuration-mesh.html).
