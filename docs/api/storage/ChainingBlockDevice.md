@@ -8,6 +8,8 @@ Note that each block device's block size must be a multiple of the other devices
 
 The constructor takes in an array of block device pointers and provides an object from which you can access the grouped block devices as a single device.
 
+To configure this class, please see our [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+
 ### ChainingBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.html)
@@ -26,3 +28,4 @@ This ChainingBlockDevice example shows how to program and read back data from a 
 
 - [SlicingBlockDevice](slicingblockdevice.html) API reference.
 - [HeapBlockDevice](heapblockdevice.html) API reference.
+- [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
