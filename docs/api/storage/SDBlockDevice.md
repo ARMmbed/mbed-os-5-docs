@@ -6,7 +6,7 @@ You can use the Mbed OS SD card block device, so applications can read and write
 
 To configure this class, please see our [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
 
-### Mbed OS file system software componentstack
+### Mbed OS file system software component stack
 
 
     ------------------------
