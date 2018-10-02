@@ -10,7 +10,7 @@ The FAT file system is an established disk-oriented file system that you can fin
 
 For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
-### Use cases
+#### Use cases
 
 The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications using FAT in conjunction with an SD card.
 
@@ -22,13 +22,15 @@ The FAT file system supports external flash; however, it must allocate a full er
 
 The FAT file system is thread safe. Although the FAT file system is built on the ChanFS project, synchronizing in the C++ layer allows you to use the C++ RTOS APIs directly.
 
-### Usage
+#### Usage
 
 Instantiate the `FATFileSystem` class with a block device and file path.
 
 The API that this presents is the standard Mbed OS file system API. Once declared, Mbed OS provides the retargeting layer for the standard C library.
 
 You can swap the FAT file system in place with other Mbed OS file systems, which is a good method for prototyping applications.
+
+To configure this class, please see the [FileSystem configuration documentation](/docs/development/reference/configuration-storage.html#filesystem-default-configuration).
 
 ### FATFileSystem class reference
 
