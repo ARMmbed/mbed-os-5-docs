@@ -1,5 +1,4 @@
-[
-    {
+[{
         "title": "Mbed OS API doxygen",
         "description": "The full Mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api-doxy",
@@ -8,7 +7,7 @@
         "source": "https://github.com/ARMmbed/mbed-os",
         "branch": "master"
     },
-        {
+    {
         "title": "Introduction",
         "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
@@ -463,10 +462,9 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/security.md"
                 },
                 "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/TLS.md"
-                    }
-                ]
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/TLS.md"
+                }]
             },
             {
                 "title": "Storage",
@@ -732,14 +730,10 @@
                 "sources": []
             },
             {
-                "title": "Development: Mbed Online Compiler",
+                "title": "Developing: Mbed Online Compiler",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/oc_tut.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/oc_pr_tut.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/online_comp.md"
                     },
                     {
                         "type": "markdown",
@@ -749,10 +743,7 @@
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/compiler_publishing_code.md"
                     },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/online_comp.md"
-                    },
+
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/compiler_collab.md"
@@ -764,18 +755,26 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/compiler_version_control.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/oc_tut.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/oc_pr_tut.md"
                     }
                 ]
             },
             {
-                "title": "Development: Mbed Studio",
+                "title": "Developing: Mbed Studio",
                 "sources": [{
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/mbed-studio.md"
                 }]
             },
             {
-                "title": "Development: Mbed CLI",
+                "title": "Developing: Mbed CLI",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli.md"
@@ -1239,35 +1238,36 @@
         ]
     },
     {
-            "title": "From evaluation to production",
-            "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
-            "slug": "fe2p",
-            "type": "markdown",
-                "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage2.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
-                }]
-        },
+        "title": "From evaluation to production",
+        "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
+        "slug": "fe2p",
+        "type": "markdown",
+        "sources": [{
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage2.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
+            }
+        ]
+    },
     {
         "title": "feature-hal-spec-usb-device doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
