@@ -686,32 +686,25 @@
                 "title": "Contributing",
                 "intro": {
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/contributing.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/guidelines.md"
                 },
-                "sub_chapters": [{
-                    "title": "Guidelines",
-                    "intro": {
+                "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/guidelines.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/license.md"
                     },
-                    "sources": [{
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/license.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/style.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/design_guidelines.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/workflow.md"
-                        }
-                    ]
-                }]
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/style.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/design_guidelines.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/contributing/guidelines/workflow.md"
+                    }
+                ]
             }
         ],
         "tags": [
