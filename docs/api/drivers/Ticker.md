@@ -32,5 +32,5 @@ Use this example to attach a member function to a ticker:
 
 ### Related content
 
-- [Application flow control tutorial](docs/v5.10/tutorials/application-flow-control.html).
+- [Application flow control tutorial](/docs/v5.10/tutorials/application-flow-control.html).
 - [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).
