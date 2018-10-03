@@ -726,36 +726,36 @@
                 "title": "Developing: Mbed Online Compiler",
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/online_comp.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/online_comp.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/compiler_multiple_authors.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_multiple_authors.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/compiler_publishing_code.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_publishing_code.md"
                     },
 
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/compiler_collab.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_collab.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/compiler_pull_requests.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_pull_requests.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/online/compiler_version_control.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_version_control.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/oc_tut.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_tut.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/using_tools/oc_pr_tut.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_pr_tut.md"
                     }
                 ]
             },
@@ -763,59 +763,59 @@
                 "title": "Developing: Mbed Studio",
                 "sources": [{
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/mbed-studio.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/Studio/mbed-studio.md"
                 }]
             },
             {
                 "title": "Developing: Mbed CLI",
                 "intro": {
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli.md"
                 },
                 "sub_chapters": [{
                         "title": "Installation and setup",
                         "sources": [{
                             "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-setup.md"
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md"
                         }]
                     },
                     {
                         "title": "Working with Mbed CLI",
                         "sources": [{
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-create.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-create.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-compile.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-compile.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-device-management.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-device-management.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-collaborate.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-collaborate.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/cli-test-debug.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-test-debug.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/mbedignore.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/mbedignore.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/build_profiles.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/build_profiles.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/debug_builds_cli.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/debug_builds_cli.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/offline/toolchain_profiles.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/toolchain_profiles.md"
                             }
                         ]
                     }
