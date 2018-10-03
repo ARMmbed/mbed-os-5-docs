@@ -724,9 +724,8 @@
             },
             {
                 "title": "Developing: Mbed Online Compiler",
-                "sub_chapters": [
-                    {
-                        "title": "Using the Online Compiler",
+                "sub_chapters": [{
+                        "title": "Getting started",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/online_comp.md"
@@ -742,7 +741,7 @@
                         ]
                     },
                     {
-                        "title": "Collaborative work",
+                        "title": "Source control",
                         "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_version_control.md"
@@ -753,6 +752,16 @@
                             },
                             {
                                 "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_pr_tut.md"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Collaborative work",
+                        "sources": [
+
+                            {
+                                "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_multiple_authors.md"
                             },
 
@@ -760,23 +769,19 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_collab.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_pr_tut.md"
                             }
                         ]
                     },
                     {
-                            "title": "The Online Compiler reference",
-                            "sources": [
+                        "title": "The Online Compiler reference",
+                        "sources": [
 
-                                {
-                                    "type": "markdown",
-                                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/ide_ref.md"
-                                }
-                            ]
-                        }
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/ide_ref.md"
+                            }
+                        ]
+                    }
                 ]
             },
             {
