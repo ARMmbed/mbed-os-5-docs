@@ -186,6 +186,10 @@ The list in `device_has` defines what hardware a device has.
 
 Mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
 
+#### `is_disk_virtual`
+
+Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sure the mount was correct. This field is not used anymore. The Mbed test tools use `Mbed LS` to make sure the mount was correct before flashing it again.
+
 #### `supported_toolchains`
 
 The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC6`, `GCC_ARM` and `IAR`.
@@ -252,6 +256,10 @@ The [`"device_name"`](/docs/development/porting/index.html) attribute it `target
 ```
 
 The `device_name` key in `targets.json` is `MK20DX256xxx7` for any target that uses this particular MCU.
+
+#### `detect_code`
+
+The `detect_code` contains four ASCII characters containing only hexadecimal values (A-F and 0-9). This code is the same for all platforms of the same type. `Mbed LS` no longer uses this field to identify the platform. Instead, `Mbed LS` has its [own database](https://github.com/ARMmbed/mbed-ls/blob/master/mbed_lstools/platform_database.py#L45) of detect codes.
 
 #### `OUTPUT_EXT`
 
