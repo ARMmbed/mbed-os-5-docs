@@ -83,4 +83,5 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 ### Related content
 
-- [Application flow control tutorial](docs/development/tutorials/application-flow-control.html).
+- [Application flow control tutorial](docs/development/tutorials/using_apis/flow-control.html).
+
