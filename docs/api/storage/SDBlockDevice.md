@@ -124,4 +124,4 @@ int main()
 
 ### Related content
 
-- [BlockDevice configuration](docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
