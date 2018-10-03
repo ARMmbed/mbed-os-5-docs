@@ -724,22 +724,13 @@
             },
             {
                 "title": "Developing: Mbed Online Compiler",
-                "sub_chapters": [{
-                        "title": "The Online Compiler reference",
+                "sub_chapters": [
+                    {
+                        "title": "Using the Online Compiler",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/online_comp.md"
                         },
-                        "sources": [
-
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/ide_ref.md"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Using the Online Compiler",
                         "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_tut.md"
@@ -775,7 +766,17 @@
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_pr_tut.md"
                             }
                         ]
-                    }
+                    },
+                    {
+                            "title": "The Online Compiler reference",
+                            "sources": [
+
+                                {
+                                    "type": "markdown",
+                                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/ide_ref.md"
+                                }
+                            ]
+                        }
                 ]
             },
             {
