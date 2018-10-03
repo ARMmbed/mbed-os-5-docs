@@ -88,6 +88,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/api/platform/IdleLoop.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/api/platform/CriticalSectionLock.md"
                     },
                     {
