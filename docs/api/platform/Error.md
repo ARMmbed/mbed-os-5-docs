@@ -385,3 +385,4 @@ See the below Doxygen file for additional information regarding error code defin
 ### Related content
 
 - Debug and develop [build profiles](/docs/development/tools/build-profiles.html).
+- Mbed OS [error decoder](https://armmbed.github.io/mbedos-error/).
