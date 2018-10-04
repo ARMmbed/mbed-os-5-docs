@@ -47,7 +47,7 @@ Our approach to security is to leverage state-of-the-art industry standard proto
 
 ### Remote firmware update
 
-Mbed OS offers a seamless integration with the Pelion Device Management Update Services. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there.
+Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there.
 
 For more information, see our [Mbed CLI update documentation](https://os.mbed.com/docs/latest/tools/cli-update.html).
 
