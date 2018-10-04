@@ -8,29 +8,30 @@
 <tbody>
 <tr>
 <td><a href="wait.html">Wait</a></td>
+<td><a href="idleloop.html">IdleLoop</a></td>
+<td><a href="debug.html">Debug</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="circularbuffer.html">CircularBuffer</a></td>
+</tr>
+<tr>
+<td><a href="callback.html">Callback</a></td>
 <td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
 <td><a href="memory-tracing.html">Memory tracing</a></td>
 <td><a href="shared-pointer.html">Shared pointer</a></td>
 <td><a href="atcmdparser.html">ATCmdParser</a></td>
 </tr>
 <tr>
-<td><a href="callback.html">Callback</a></td>
+<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
 <td><a href="time.html">Time</a></td>
 <td><a href="error-handling.html">Error handling</a></td>
 <td><a href="span.html">Span</a></td>
 <td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 <tr>
-<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
+<td><a href="power-management.html">Power management</a></td>
 <td><a href="rtc.html">RTC</a></td>
 <td><a href="assert.html">Assert</a></td>
 <td><a href="platformmutex.html">PlatformMutex</a></td>
-</tr>
-<tr>
-<td><a href="power-management.html">Power management</a></td>
-<td><a href="debug.html">Debug</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
-<td><a href="circularbuffer.html">CircularBuffer</a></td>
 </tr>
 </tbody>
 </table>
