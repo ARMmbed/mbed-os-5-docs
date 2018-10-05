@@ -19,6 +19,8 @@ Boot sequences usually have only three stages:
 1. **Bootloader**: a device can store multiple versions. The boot selector will attempt to hand control to the newest bootloader. If that bootloader is not stable or does not operate at all, the boot selector will hand control to an older version. This protects the device from being bricked by a faulty bootloader.
 1. **Application**: follows the exact same logic as the bootloader.
 
+### Bootloader requirements
+
 To allow remote updates, Mbed OS now has a built-in bootloader that meets the following requirements:
 
 * A minimal feature set, to increase the likelihood of correct operation.
@@ -59,7 +61,7 @@ The bootloader is as generic as possible, and relies on a small subset of CMSIS 
 "Optionally, each stage of the boot sequence could generate tracing output to record progress. Each trace message should mention the boot stage and system time (if available). Each boot stage should also emit trace messages revealing its build version at startup."
 -->
 
-### Using the bootloader to manage updates
+#### Using the bootloader to manage updates
 
 Mbed OS uses the bootloader and Update client to manage firmware updates. In short, the update client can point to the location of new firmware version for a stage of the bootloader. When the bootloader next runs, each stage will check for new version information for the subsequent stage; if it finds a version pointer "planted" by the Update client, it will hand control to the planted version.
 
@@ -78,7 +80,7 @@ The bootloader:
     1. Writes the firmware into the storage region on the SD card (or external SPI Flash), as a candidate firmware image.
     1. Reboots, handing control back to the bootloader.
 
-### Using the bootloader to recover a device
+#### Using the bootloader to recover a device
 
 In an upgradeable, multi-stage boot sequence, each boot component (`n`) can accept a new firmware for its "next-stage" (`n+1`), by incorporating the new firmware into its container for available next-stages. To ensure that a device can roll back from faulty updates, however, incorporating a new next-stage (stage `n+1`) firmware by the stage `n` bootloader has the following properties:
 
