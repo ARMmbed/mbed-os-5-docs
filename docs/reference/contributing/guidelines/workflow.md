@@ -105,9 +105,9 @@ Refactors are intended for feature releases, if they are not fixing specific iss
 
 Release: feature
 
-#### New target
+#### Target update
 
-Adding a new target is a change for a patch release because it updates the targets folder implementation.
+Updating target implementation (adding a new target or updating already supported target) is a change for a patch release.
 
 Release: patch
 
@@ -118,6 +118,18 @@ New features target feature releases. A new feature can only be integrated if th
 We consider adding a new functionality to be a feature. It does not matter if it is C++, C or Python.
 
 Release: feature
+
+#### Documentation update
+
+Documentation updates include changes to markdown files or Doxygen documentation (comment-only changes).
+
+Release: patch
+
+#### Test update
+
+Test updates include updates to a new test unit or test case.
+
+Release: patch
 
 #### Breaking change
 
@@ -142,10 +154,13 @@ You can see test results [here](just an example).
 
 # Pull request type
 
-[x] Fix
-[ ] Refactor
-[ ] New Target
-[ ] Feature
+    [X] Fix
+    [ ] Refactor
+    [ ] Target update
+    [ ] Functionality change
+    [ ] Docs update
+    [ ] Test update
+    [ ] Breaking change
 
 ```
 
