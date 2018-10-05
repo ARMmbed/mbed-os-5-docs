@@ -119,15 +119,15 @@ We consider adding a new functionality to be a feature. It does not matter if it
 
 Release: feature
 
-#### Docs update
+#### Documentation update
 
-Documentation changes to markdown files or doxygen documentation (comment-only changes).
+Documentation updates include changes to markdown files or Doxygen documentation (comment-only changes).
 
 Release: patch
 
 #### Test update
 
-Update a new test unit or test case.
+Test updates include updates to a new test unit or test case.
 
 Release: patch
 
