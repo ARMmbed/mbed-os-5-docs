@@ -55,10 +55,17 @@ This means that the default bootloader does not implement secure boot; for high-
 
 <!--I don't think Product is going to like me calling this out.-->
 
+<!--What are 'managed or unmanaged bootloader'? Does that mean our bootloader v one that you ported yourself?-->
+
+### Creating updatable applications
+
+
 
 ### Tool integration
 
-Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. This allows a smooth, single-tool workflow, 
+Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. For a device running an updatable application,
+
+
 
 
 <!--Don't need the manifest tool, don't need to access the portal if I'm only updating one device-->
