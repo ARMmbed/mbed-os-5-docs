@@ -22,7 +22,7 @@ Mbed OS and any application running on top of it can be updated only if the bina
 
 A bootloader is an intermediate stage during system startup responsible for selecting and forwarding control to the next stage in the boot sequence based on validation. Optionally, a bootloader can also install an alternate version of the next stage upon request (firmware update, for example) or when detecting a persistent failure in the next stage.
 
-#### Boot sequences and fault tolerance
+#### Background: boot sequences and fault tolerance
 
 A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, behaviour changes. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible.
 
@@ -38,7 +38,41 @@ Fault tolerance ultimately rests on the sanity of the first-stage bootloader. Th
 
 The Mbed bootloader is practically<!--as in "we did it because it's practical" or "you know, this basically is that"?--> a hybrid of the boot selector and a bootloader, but it fulfils the requirements of the boot selector: it is small enough to minimise the chance of bugs, but it is complex enough to handle installation of new images.<!---"Handle the installation" or just "install"? Is it an overseer, or does it do the work?--> <!--Therefore, the Mbed Bootloader is intended to be a reference implementation for constructing a bootloader.--><!--Not relevant for the Mbed OS one, right???-->
 
-#### Managing updates with the bootloader
+
+#### Managed bootloader tool integration
+
+
+The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
+
+* The bootloader comes before the application in ROM.
+* The application starts immediately after the bootloader.
+
+If the Mbed tool finds a manageable bootloader, the image build process automatically merges the bootloader image with the application image.
+
+#### Unmanaged bootloaders
+
+If your bootloader does not meet the two requirements of a manageable bootloader, you will need an unmanaged bootloader. The Mbed tools will not automatically combine this bootloader with the application image; you will need to write your own scripts to build your full image.
+
+#### Creating a bootloader
+
+We have a full tutorial [for creating a bootloader](/docs/v5.10/tutorials/bootloader.html).
+
+#### Porting a bootloader
+
+If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](/docs/v5.10/porting/bootloader.html).
+
+#### Security
+
+Note two things about the Mbed OS bootloader's design:
+
+1. It does not process encrypted off-chip candidate images.
+1. It does not currently verify signatures of candidate images. To save code size and speed up boot time, we use a unique, per-device Message Authentication Code (MAC) to authenticate the firmware in the bootloader: firmware is distributed with a signature, and the Update client verifies the signature and replaces it with a MAC that the bootloader understands.
+
+This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/current/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
+
+<!--I don't think Product is going to like me calling this out.-->
+
+### Managing updates with the bootloader
 
 When a device downloads new firmware, it stores it locally (in the storage area) and reboots; the device's bootloader then:
 
@@ -55,28 +89,9 @@ When a device downloads new firmware, it stores it locally (in the storage area)
     1. Writes the firmware into the storage region on the SD card (or external SPI Flash), as a candidate firmware image.
     1. Reboots, handing control back to the bootloader.
 
-#### Security
 
-Note two things about the Mbed OS bootloader's design:
+### Development pool integration with Pelion Device Management Update
 
-1. It does not process encrypted off-chip candidate images.
-1. It does not currently verify signatures of candidate images. To save code size and speed up boot time, we use a unique, per-device Message Authentication Code (MAC) to authenticate the firmware in the bootloader: firmware is distributed with a signature, and the Update client verifies the signature and replaces it with a MAC that the bootloader understands.
-
-This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/current/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
-
-<!--I don't think Product is going to like me calling this out.-->
-
-#### Development tool integration for bootloaders (managed bootloader)
-
-
-The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
-
-* The bootloader comes before the application in ROM.
-* The application starts immediately after the bootloader.
-
-If the Mbed tool finds a manageable bootloader, the image build process automatically merges the bootloader image with the application image.
-
-#### Device Management Update
 
 Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. For a device running an updatable application, this means an abstraction of many of the steps of setting up an update campaign.
 
@@ -92,4 +107,3 @@ The integration relies on your development tool using your Device Management acc
 
 * Try the firmware update flow on the Online Compiler.<!--No link yet; it's not live-->
 * Review the [Mbed CLI update commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
-* If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](/docs/v5.10/porting/bootloader.html).
