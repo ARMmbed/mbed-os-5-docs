@@ -576,6 +576,10 @@
                 },
                 "sources": [{
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/firmware_update.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/connectivity.md"
                     },
                     {
@@ -741,6 +745,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_publishing_code.md"
+                            },
+                            {
+                                    "type": "markdown",
+                                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/updating_firmware.md"
                             }
                         ]
                     },

@@ -70,17 +70,17 @@ This means that the default bootloader does not implement secure boot; for high-
 
 
 
-### Tool integration
+### Development tool integration
 
-Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. For a device running an updatable application,
+Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. For a device running an updatable application, this means an abstraction of many of the steps of setting up an update campaign.
 
+<!--How secure is this? Is it only for development devices, or can I use this for deployment?-->
 
+The integration relies on your development tool using your Device Management account's API key. The key allows the development tool to call the Pelion Device Management APIs, which include the ability to generate a manifest, upload the manifest and binary to the server, and deliver the manifest to a device or group of devices.
 
+<!--Technically there are difference between CLI and IDE, and between a single device and device group flow. But I think that's something the tools should cover, not this section-->
 
-<!--Don't need the manifest tool, don't need to access the portal if I'm only updating one device-->
-<!--ship a bin file to a server, pull down a developer certificate (not update????) and call the manifest tool-->
-<!--CLI and IDE do not support Client Lite workflow-->
-
+<span class="notes">**Note**: The tools currently support the update flow for Device Management Client, not Device Management Client Lite.</span>
 
 ### Further reading
 
