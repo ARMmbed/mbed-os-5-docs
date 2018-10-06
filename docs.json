@@ -747,8 +747,8 @@
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_publishing_code.md"
                             },
                             {
-                                    "type": "markdown",
-                                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/updating_firmware.md"
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/updating_firmware.md"
                             }
                         ]
                     },
@@ -1101,29 +1101,74 @@
         "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
         "slug": "production",
         "type": "markdown",
-        "sources": [{
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
+        "chapters": [{
+                "title": "Introduction",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
+                },
+                "sources": []
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
+                "title": "Stage 1: Evaluation",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
+                }]
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage2.md"
+                "title": "Stage 2: Proof of concept",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/intro_s_2.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/1_hardware.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/2_sofware.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/3_connectivity.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/4_security.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/5_integration.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/6_example.md"
+                    }
+
+                ]
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
+                "title": "Stage 3: Prototype",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
+                }]
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
+                "title": "Stage 4: Pilot",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
+                }]
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
+                "title": "Stage 5: Production",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
+                }]
             }
         ]
     },
