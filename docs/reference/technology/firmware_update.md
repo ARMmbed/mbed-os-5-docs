@@ -66,11 +66,17 @@ This means that the default bootloader does not implement secure boot; for high-
 
 <!--I don't think Product is going to like me calling this out.-->
 
-<!--What are 'managed or unmanaged bootloader'? Does that mean our bootloader v one that you ported yourself?-->
+#### Development tool integration for bootloaders (managed bootloader)
 
 
+The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
 
-### Development tool integration
+* The bootloader comes before the application in ROM.
+* The application starts immediately after the bootloader.
+
+If the Mbed tool finds a manageable bootloader, the image build process automatically merges the bootloader image with the application image.
+
+#### Device Management Update
 
 Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. For a device running an updatable application, this means an abstraction of many of the steps of setting up an update campaign.
 
