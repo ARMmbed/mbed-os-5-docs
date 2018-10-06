@@ -1097,6 +1097,37 @@
         ]
     },
     {
+        "title": "From evaluation to production",
+        "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
+        "slug": "fe2p",
+        "type": "markdown",
+        "sources": [{
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage2.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
+            }
+        ]
+    },
+    {
         "title": "Porting",
         "description": "",
         "slug": "porting",
@@ -1264,37 +1295,6 @@
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/tools/hdk.md"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "title": "From evaluation to production",
-        "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
-        "slug": "fe2p",
-        "type": "markdown",
-        "sources": [{
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage2.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
             }
         ]
     },
