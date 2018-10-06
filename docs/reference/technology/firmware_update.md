@@ -7,11 +7,22 @@ Update support in Mbed OS relies on two modifications:
 * Mbed OS now includes the bootloader that manages update verification and installation.
 * Mbed CLI and the Mbed Online Compiler now support update actions, by wrapping around the Update Service and the Manifest Tool.<!--All of these will need links. Later.-->
 
-<span class="tips">Since some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default. You will need to explicitly import the client to your application; this then includes the Update client, which manages firmware updates on the device.</span>
+### Updatable binaries
+
+Mbed OS and any application running on top of it can be updated only if the binary installed on the device has:
+
+1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware, or roll back to an old version if the new version is unstable.
+1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/current/updating-firmware/index.html).
+
+    Note: since some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you will need to explicitly import the client to your application.
+
+1. Permission to access your Device Management account, as well as keys and certificates used to verify the firmware's source and validity.
 
 ### The Mbed OS bootloader
 
 A bootloader is an intermediate stage during system startup responsible for selecting and forwarding control to the next stage in the boot sequence based on validation. Optionally, a bootloader can also install an alternate version of the next stage upon request (firmware update, for example) or when detecting a persistent failure in the next stage.
+
+#### Boot sequences and fault tolerance
 
 A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, behaviour changes. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible.
 
@@ -27,7 +38,7 @@ Fault tolerance ultimately rests on the sanity of the first-stage bootloader. Th
 
 The Mbed bootloader is practically<!--as in "we did it because it's practical" or "you know, this basically is that"?--> a hybrid of the boot selector and a bootloader, but it fulfils the requirements of the boot selector: it is small enough to minimise the chance of bugs, but it is complex enough to handle installation of new images.<!---"Handle the installation" or just "install"? Is it an overseer, or does it do the work?--> <!--Therefore, the Mbed Bootloader is intended to be a reference implementation for constructing a bootloader.--><!--Not relevant for the Mbed OS one, right???-->
 
-### Managing updates with the bootloader
+#### Managing updates with the bootloader
 
 When a device downloads new firmware, it stores it locally (in the storage area) and reboots; the device's bootloader then:
 
@@ -44,7 +55,7 @@ When a device downloads new firmware, it stores it locally (in the storage area)
     1. Writes the firmware into the storage region on the SD card (or external SPI Flash), as a candidate firmware image.
     1. Reboots, handing control back to the bootloader.
 
-### Security
+#### Security
 
 Note two things about the Mbed OS bootloader's design:
 
@@ -56,8 +67,6 @@ This means that the default bootloader does not implement secure boot; for high-
 <!--I don't think Product is going to like me calling this out.-->
 
 <!--What are 'managed or unmanaged bootloader'? Does that mean our bootloader v one that you ported yourself?-->
-
-### Creating updatable applications
 
 
 
