@@ -1098,8 +1098,8 @@
     },
     {
         "title": "From evaluation to production",
-        "description": "Staging for the 02P content; don't worry about it if you don't know what that means",
-        "slug": "production",
+        "description": "",
+        "slug": "evaluation-production",
         "type": "markdown",
         "chapters": [{
                 "title": "Introduction",
@@ -1118,17 +1118,18 @@
             },
             {
                 "title": "Stage 2: Proof of concept",
-                "sources": [{
+                "intro": {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/intro_s_2.md"
                     },
+                "sources": [
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/1_hardware.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/2_sofware.md"
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/2_software.md"
                     },
                     {
                         "type": "markdown",
