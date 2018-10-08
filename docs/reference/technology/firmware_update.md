@@ -5,11 +5,11 @@ Mbed OS integrates the Pelion Device Management firmware update services, so if 
 Update support in Mbed OS relies on two modifications:
 
 * Mbed OS now includes the bootloader that manages update verification and installation.
-* Mbed CLI and the Mbed Online Compiler now support update actions, by wrapping around the Update Service and the Manifest Tool.<!--All of these will need links. Later.-->
+* Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool.<!--All of these will need links. Later.-->
 
 ### Updatable binaries
 
-Mbed OS and any application running on top of it can be updated only if the binary installed on the device has:
+The active firmware, made up of Mbed OS and an application, can be updated only if the binary installed on the device has:
 
 1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware, or roll back to an old version if the new version is unstable.
 1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/current/updating-firmware/index.html).
@@ -20,17 +20,17 @@ Mbed OS and any application running on top of it can be updated only if the bina
 
 ### The Mbed OS bootloader
 
-A bootloader is an intermediate stage during system startup responsible for selecting and forwarding control to the next stage in the boot sequence based on validation. Optionally, a bootloader can also install an alternate version of the next stage upon request (firmware update, for example) or when detecting a persistent failure in the next stage.
+A bootloader is an intermediate stage during system startup responsible for selecting and forwarding control to the next stage in the boot sequence. The Mbed OS bootloader also validates the next stage's sanity and signature before forwarding control to it; if validation fails, the bootloader can install an alternate version of the next stage. It can also install an alternative upon request (firmware update, for example).
 
 #### Background: boot sequences and fault tolerance
 
 A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, behaviour changes. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible.
 
-To protect against faults in the newly installed component, replaced components should be <!--why "should be"? do we or don't we save them?-->saved (up to a certain maximum number of versions). Recovery then relies on a stage being aware of the faulty state of the following stage, and rolling it back. For example, if stage 3 is unstable, needs additional functionality or is otherwise behaving incorrectly, stage 2 (during the *next* startup sequence) can roll stage 3 back to an earlier version before handing over control. This results in a boot-sequence tree that is traversed in a depth-first order as the system recovers from successive faults.
+To protect against faults in the newly installed instance of the stage, replaced stages are saved (up to a certain maximum number of versions). Recovery then relies on a stage being aware of the faulty state of the following stage, and rolling it back. For example, if stage 3 is unstable, needs additional functionality or is otherwise behaving incorrectly, stage 2 (during the *next* startup sequence) can roll stage 3 back to an earlier version before handing over control. This results in a boot-sequence tree that is traversed in a depth-first order as the system recovers from successive faults.
 
 Most boot sequences are composed of only three stages:<!--And for Mbed OS?-->
 
-1. Boot selector (also known as **root bootloader** or **boot selector**): does not get upgraded.
+1. Boot selector (also known as **root bootloader**): does not get upgraded.
 1. Bootloader: upgradable, with several versions stored on the device.
 1. Application: upgradable, with several versions stored on the device.
 
@@ -92,7 +92,7 @@ When a device downloads new firmware, it stores it locally (in the storage area)
 
 ### Development pool integration with Pelion Device Management Update
 
-Mbed CLI and the Online Compiler offer a wrap around the Pelion Device Management Update service and the manifest tool. For a device running an updatable application, this means an abstraction of many of the steps of setting up an update campaign.
+Mbed CLI and the Online Compiler implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, this means an abstraction of many of the steps of setting up an update campaign.
 
 <!--How secure is this? Is it only for development devices, or can I use this for deployment?-->
 
