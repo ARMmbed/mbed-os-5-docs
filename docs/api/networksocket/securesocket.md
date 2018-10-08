@@ -1,14 +1,16 @@
 ## Secure Socket
 
-Mbed OS provides easy interface for creating secure connections in form of TLS stream.
-`TLSSocket` class provides the ability to secure any stream based socket connection, for example TCP stream. This allows existing protocol libraries to be used through secure connections.
+Mbed OS provides an interface for creating secure connections in the form of TLS stream. The `TLSSocket` class provides the ability to secure any stream-based socket connection, for example TCP stream. This allows you to use existing protocol libraries through a secure connections.
 
-`TLSSocket` is inheriting the `Socket` class, which allows any application that uses `Socket` to use `TLSSocket` instead.
-Secure socket both uses Socket interface as its transport layer and implements it. This makes it transport independent and there is no direct dependency to IP stack. For example, we can use HTTP library and give `TLSSocket` for it, to covert it to HTTPS.
+`TLSSocket` inherits the `Socket` class, which allows any application that uses `Socket` to use `TLSSocket` instead. Secure socket both uses Socket interface as its transport layer and implements it. This makes it transport independent, and there is no direct dependency on the IP stack. For example, you can use the HTTP library and give `TLSSocket` to it to covert it to HTTPS.
+
+### API
+
+`TLSSocketWrapper` implements Mbed OS Socket API and extends it with functions that allow configuring security certificates. Please note that for most of the use cases, you are using these methods through `TLSSocket` class.
 
 ### Usage example
 
-TLSSocket API follows Socket API so it is easy to use after setting up:
+The TLSSocket API follows the Socket API, so it is straightforward to use after setting up:
 
 ```
 TLSSocket *socket = new TLSSocket();
@@ -20,16 +22,15 @@ socket->connect(HOST_NAME, PORT)
 socket->send(data, size);
 ```
 
-Please note that internal TLS structures require over 1 kB of RAM, so each TLSSocket should be allocated from heap using `new` command, instead of using stack or statically allocating it.
-
+Please note that internal TLS structures require over 1 kB of RAM, so you need to allocate each TLSSocket from the heap by using the `new` command, instead of using stack or statically allocating it.
 
 ### Design
 
-Internally `TLSSocket` consist of two classes `TLSSocketWrapper` and `TLSSocket` as shown in the following diagram:
+Internally `TLSSocket` consists of two classes, `TLSSocketWrapper` and `TLSSocket`, as shown in the following diagram:
 
 ![TLSSocket UML](tlssocket.png)
 
-The `TLSSocketWrapper` is able to use any `Socket` as its transport. `TLSSocket` is a helper that uses directly `TCPSocket` for its transport, making it easy to adopt existing TCP based applications to TLS.
+The `TLSSocketWrapper` can use any `Socket` as its transport. `TLSSocket` is a helper that uses directly `TCPSocket` for its transport, so you can adopt existing TCP based applications to TLS.
 
 One use case of `TLSSocketWrapper` is that existing TCP socket can be upgraded to TLS, by wrapping it like this:
 
@@ -50,13 +51,9 @@ tls.connect();
 tls.send("HELLO", 5);
 ```
 
-### API
-
-`TLSSocketWrapper` implements Mbed OS Socket API and extends it with functions that allow configuring security certificates. Please note that for most of the use cases, you are using these methods through `TLSSocket` class.
-
 #### Configuring certificates
 
-`TLSSocketWrapper` provides following API to set server certificate. You can use either BASE64 formatted PEM certificate, or binary DER certificates. Later form of these functions just assumes `root_ca_pem` or `client_cert_pem` to be standard C string and counts its lenght and passes to method which takes just `void*` and `len`.
+`TLSSocketWrapper` provides the following API to set server certificate. You can use either BASE64 formatted PEM certificate or binary DER certificates. The later form of these functions assumes `root_ca_pem` or `client_cert_pem` to be standard C string, counts its length and passes to method, which takes only `void*` and `len`.
 
 ```
 /** Sets the certification of Root CA.
@@ -73,7 +70,7 @@ nsapi_error_t TLSSocketWrapper::set_root_ca_cert(const void *root_ca, size_t len
 nsapi_error_t TLSSocketWrapper::set_root_ca_cert(const char *root_ca_pem);
 ```
 
-If client authentication is required, following API allows you to set the client certificate and private key:
+If client authentication is required, the following API allows you to set the client certificate and private key:
 
 ```
 /** Sets client certificate, and client private key.
@@ -100,16 +97,13 @@ nsapi_error_t TLSSocketWrapper::set_client_cert_key(const char *client_cert_pem,
 virtual nsapi_error_t close();
 ```
 
-Destroys the memory allocated by TLS library.
-Also closes the transport socket, unless [transport mode](#transport-modes) is set to `TRANSPORT_KEEP` or `TRANSPORT_CONNECT`.
-
+Destroys the memory allocated by TLS library. Also closes the transport socket, unless [transport mode](#transport-modes) is set to `TRANSPORT_KEEP` or `TRANSPORT_CONNECT`.
 
 ```
 virtual nsapi_error_t connect(const SocketAddress &address);
 ```
 
-Initiates the TCP connection and continues to TLS hanshake. If [transport mode](#transport-modes) is either `TRANSPORT_KEEP` or `TRANSPORT_CLOSE`, TCP is assumed to be open and state directly goes into TLS handshake.
-This is currently forced to blocking mode. After succesfully connecting, you can set it to non-blockin mode.
+Initiates the TCP connection and continues to TLS hanshake. If [transport mode](#transport-modes) is either `TRANSPORT_KEEP` or `TRANSPORT_CLOSE`, TCP is assumed to be open and state directly goes into TLS handshake. This is currently forced to blocking mode. After succesfully connecting, you can set it to non-blockin mode.
 
 ```
 virtual nsapi_size_or_error_t send(const void *data, nsapi_size_t size);
@@ -117,11 +111,10 @@ virtual nsapi_size_or_error_t recv(void *data, nsapi_size_t size);
 virtual nsapi_size_or_error_t sendto(const SocketAddress &address, const void *data, nsapi_size_t size);
 virtual nsapi_size_or_error_t recvfrom(SocketAddress *address, void *data, nsapi_size_t size);
 ```
-These work as expected, but `SocketAddress` parameters are ignored. TLS connection cannot
-change the peer. Also `recvfrom()` call does not set the peer address.
 
-Mbed TLS error codes `MBEDTLS_ERR_SSL_WANT_READ` and `MBEDTLS_ERR_SSL_WANT_WRITE` are
-translated to `NSAPI_ERROR_WOULD_BLOCK` before passing to user.
+These work as expected, but `SocketAddress` parameters are ignored. TLS connection cannot change the peer. Also `recvfrom()` call does not set the peer address.
+
+Mbed TLS error codes `MBEDTLS_ERR_SSL_WANT_READ` and `MBEDTLS_ERR_SSL_WANT_WRITE` are translated to `NSAPI_ERROR_WOULD_BLOCK` before passing to user.
 
 `MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY` is ignored and zero is returned to user (connection closed). Other error codes are passed through.
 
@@ -133,13 +126,14 @@ virtual void sigio(mbed::Callback<void()> func);
 virtual nsapi_error_t setsockopt(int level, int optname, const void *optval, unsigned optlen);
 virtual nsapi_error_t getsockopt(int level, int optname, void *optval, unsigned *optlen);
 ```
-These are passed through to transport socket.
 
+These are passed through to transport socket.
 
 ```
 virtual Socket *accept(nsapi_error_t *error = NULL);
 virtual nsapi_error_t listen(int backlog = 1);
 ```
+
 These are returning `NSAPI_ERROR_UNSUPPORTED` as TLS socket cannot be set to listening mode.
 
 #### Transport modes
