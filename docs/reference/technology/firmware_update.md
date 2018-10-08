@@ -87,11 +87,11 @@ When a device downloads new firmware, it stores it locally (in the storage area)
 
 ### Development pool integration with Pelion Device Management Update
 
-Mbed CLI and the Online Compiler implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, this means an abstraction of many of the steps of setting up an update campaign.
+Mbed CLI and the Online Compiler implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, using Mbed CLI and the Online Compiler's built in update features can reduce the steps needed to run an update campaign.
 
 <!--How secure is this? Is it only for development devices, or can I use this for deployment?-->
 
-Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest, upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/current/service-api-references/update-service.html).
+Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/current/service-api-references/update-service.html).
 <!--Do we actually use one of the SDKs? Python, maybe? If so, link to https://cloud.mbed.com/docs/current/mbed-cloud-sdk-python/update.html-->
 
 <!--Technically there are difference between CLI and IDE, and between a single device and device group flow. But I think that's something the tools should cover, not this section-->
