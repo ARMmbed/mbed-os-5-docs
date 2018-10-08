@@ -5,7 +5,7 @@ Mbed OS integrates the Pelion Device Management firmware update services, so if 
 Update support in Mbed OS relies on two modifications:
 
 * Mbed OS now includes the bootloader that manages update verification and installation.
-* Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool.<!--All of these will need links. Later.-->
+* Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
 
 ### Updatable binaries
 
@@ -51,7 +51,7 @@ If the Mbed tool finds a manageable bootloader, the image build process automati
 
 If your bootloader does not meet the two requirements of a manageable bootloader, you will need an unmanaged bootloader. The Mbed tools will not automatically combine this bootloader with the application image; you will need to write your own scripts to build your full image.
 
-For more information about [managed and unmanaged bootloaders, and how to create bootloaders, see the tutorial](https://os.mbed.com/docs/v5.10/tutorials/bootloader.html).
+For more information about [managed and unmanaged bootloaders, and how to create bootloaders, see the tutorial](/docs/v5.10/tutorials/bootloader.html).
 
 #### Porting a bootloader
 
@@ -64,7 +64,7 @@ Note two things about the Mbed OS bootloader's design:
 1. It does not process encrypted off-chip candidate images.
 1. It does not currently verify signatures of candidate images. To save code size and speed up boot time, we use a unique, per-device Message Authentication Code (MAC) to authenticate the firmware in the bootloader: firmware is distributed with a signature, and the Update client verifies the signature and replaces it with a MAC that the bootloader understands.
 
-This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/current/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
+This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/latest/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
 
 <!--I don't think Product is going to like me calling this out.-->
 
@@ -72,7 +72,6 @@ This means that the default bootloader does not implement secure boot; for high-
 
 When a device downloads new firmware, it stores it locally (in the storage area) and reboots; the device's bootloader then:
 
-1. Takes over after reboot.
 1. Checks the integrity of the active firmware by calculating the hash of the active image and comparing it to the one in the metadata header (the bootloader metadata header is explained below).
 1. Looks for available firmware on the system. There may be more than one image, depending on image sizes.
 1. Chooses the firmware with the latest timestamp.
