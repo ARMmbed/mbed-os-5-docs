@@ -39,7 +39,7 @@ Fault tolerance ultimately rests on the sanity of the first-stage bootloader. Th
 The Mbed bootloader is practically<!--as in "we did it because it's practical" or "you know, this basically is that"?--> a hybrid of the boot selector and a bootloader, but it fulfils the requirements of the boot selector: it is small enough to minimise the chance of bugs, but it is complex enough to handle installation of new images.<!---"Handle the installation" or just "install"? Is it an overseer, or does it do the work?--> <!--Therefore, the Mbed Bootloader is intended to be a reference implementation for constructing a bootloader.--><!--Not relevant for the Mbed OS one, right???-->
 
 
-#### Managed bootloader tool integration
+#### Managed and unamanaged bootloader tool integration
 
 
 The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
@@ -49,13 +49,9 @@ The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
 
 If the Mbed tool finds a manageable bootloader, the image build process automatically merges the bootloader image with the application image.
 
-#### Unmanaged bootloaders
-
 If your bootloader does not meet the two requirements of a manageable bootloader, you will need an unmanaged bootloader. The Mbed tools will not automatically combine this bootloader with the application image; you will need to write your own scripts to build your full image.
 
-#### Creating a bootloader
-
-We have a full tutorial [for creating a bootloader](/docs/v5.10/tutorials/bootloader.html).
+For more inforamtion about [managed and unmanaged bootloaders, see the bootloader creation tutorial](https://os.mbed.com/docs/v5.10/tutorials/bootloader.html).
 
 #### Porting a bootloader
 
