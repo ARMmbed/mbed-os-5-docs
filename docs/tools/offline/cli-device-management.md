@@ -1,6 +1,10 @@
 <h2 id="cli-update">Updating devices with Arm Mbed CLI</h2>
 
-Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html). Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Device Management with a project.
+Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html).
+
+Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Device Management with a project.
+
+<span class="tips">**Tip**: this article is about using device management to update an application on a device in the field. To update dependencies of an application on your computer, [see `mbed update`](https://os.mbed.com/docs/v5.10/tools/compile.html#update-programs-and-libraries).</span>
 
 ### Requirements
 
