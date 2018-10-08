@@ -51,7 +51,7 @@ If the Mbed tool finds a manageable bootloader, the image build process automati
 
 If your bootloader does not meet the two requirements of a manageable bootloader, you will need an unmanaged bootloader. The Mbed tools will not automatically combine this bootloader with the application image; you will need to write your own scripts to build your full image.
 
-For more inforamtion about [managed and unmanaged bootloaders, see the bootloader creation tutorial](https://os.mbed.com/docs/v5.10/tutorials/bootloader.html).
+For more information about [managed and unmanaged bootloaders, and how to create bootloaders, see the tutorial](https://os.mbed.com/docs/v5.10/tutorials/bootloader.html).
 
 #### Porting a bootloader
 
