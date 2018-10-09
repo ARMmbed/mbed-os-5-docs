@@ -28,7 +28,7 @@ A boot sequence can have several stages of bootloaders, leading to an applicatio
 
 To protect against faults in the newly updated components, we store multiple versions (up to a certain maximum number of versions). Each stag is responsible for detecting faults in the following component and rolling it back if it discovers faults. For example, if stage 3 is unstable, needs additional functionality or is otherwise behaving incorrectly, stage 2 (during the *next* startup sequence) can roll stage 3 back to an earlier version before handing over control. This results in a boot-sequence tree that is traversed in a depth-first order as the system recovers from successive faults.
 
-Most boot sequences are composed of only three stages:<!--And for Mbed OS? Answer: See two sentences down?-->
+Most boot sequences are composed of only three stages:
 
 1. Boot selector (also known as **root bootloader** or **stage zero bootloader**): does not get upgraded.
 1. Bootloader: upgradable, with several versions stored on the device.
@@ -64,8 +64,6 @@ Note two things about the Mbed OS bootloader's design:
 
 This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/latest/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
 
-<!--I don't think Product is going to like me calling this out.-->
-
 ### Managing updates with the bootloader
 
 When a device downloads new firmware, it stores it locally (in the storage area) and reboots; the device's bootloader then:
@@ -84,13 +82,11 @@ When a device downloads new firmware, it stores it locally (in the storage area)
 
 ### Development tool integration with Pelion Device Management Update
 
-Mbed CLI and the Online Compiler<!--Please confirm the Online Compiler can do this--> implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, using Mbed CLI and the Online Compiler's built in update features can reduce the steps needed to run an update campaign.
+Mbed CLI and the Online Compiler implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, using Mbed CLI and the Online Compiler's built in update features can reduce the steps needed to run an update campaign.
 
 <span class="notes">**Note**: The default workflow of the development tools is intended only for development and testing purposes. It is not considered secure for production.</span>
 
 Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/current/service-api-references/update-service.html).
-
-<!--Technically there are difference between CLI and IDE, and between a single device and device group flow. But I think that's something the tools should cover, not this section-->
 
 <span class="notes">**Note**: The tools currently support the update flow for Device Management Client, not Device Management Client Lite.</span>
 
