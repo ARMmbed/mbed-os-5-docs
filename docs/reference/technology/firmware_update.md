@@ -1,34 +1,34 @@
 ## Firmware update in Mbed OS
 
-Mbed OS integrates the Pelion Device Management firmware update services, so if you have a Device Management account, you can send binaries to your remote device. The binary includes your full application and Mbed OS code, so you can update one or both of them.
+Mbed OS integrates the Pelion Device Management firmware update services, so if you have a Device Management account, you can send binaries to your remote device. You can update the bootloader independently of the application.
 
-Update support in Mbed OS relies on two modifications:
+Update support in Mbed OS relies on two features:
 
-* Mbed OS now includes the bootloader that manages update verification and installation.
-* Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
+- Mbed OS now includes the bootloader that manages update verification and installation.
+- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
 
 ### Updatable binaries
 
 The active firmware, made up of Mbed OS and an application, can be updated only if the binary installed on the device has:
 
-1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware, or roll back to an old version if the new version is unstable.
+1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware. If for some reason, the update fails, the bootloader falls back to the firmware version last known to work. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions once an update succeeds.
 1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/current/updating-firmware/index.html).
 
-    Note: since some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you will need to explicitly import the client to your application.
+    Note: Because some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you need to explicitly import the client to your application.
 
 1. Permission to access your Device Management account, as well as keys and certificates used to verify the firmware's source and validity.
 
 ### The Mbed OS bootloader
 
-A bootloader is an intermediate stage during system startup responsible for selecting and forwarding control to the next stage in the boot sequence. The Mbed OS bootloader also validates the next stage's sanity and signature before forwarding control to it; if validation fails, the bootloader can install an alternate version of the next stage. It can also install an alternative upon request (firmware update, for example).
+During system startup, a bootloader is responsible for selecting and forwarding control to the next stage in the boot sequence. The Mbed OS bootloader also validates the next stage's sanity and signature before forwarding control to it; if validation fails, the bootloader can select an alternate version of the next stage. It can also install an alternative upon request (in other words, firmware update).
 
 #### Background: boot sequences and fault tolerance
 
-A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, behaviour changes. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible.
+A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, it executs the updated components. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible. This is known as stage 0 bootloader.
 
-To protect against faults in the newly installed instance of the stage, replaced stages are saved (up to a certain maximum number of versions). Recovery then relies on a stage being aware of the faulty state of the following stage, and rolling it back. For example, if stage 3 is unstable, needs additional functionality or is otherwise behaving incorrectly, stage 2 (during the *next* startup sequence) can roll stage 3 back to an earlier version before handing over control. This results in a boot-sequence tree that is traversed in a depth-first order as the system recovers from successive faults.
+To protect against faults in the newly updated components, we store multiple versions (up to a certain maximum number of versions). Each stag is responsible for detecting faults in the following component and rolling it back if it discovers faults. For example, if stage 3 is unstable, needs additional functionality or is otherwise behaving incorrectly, stage 2 (during the *next* startup sequence) can roll stage 3 back to an earlier version before handing over control. This results in a boot-sequence tree that is traversed in a depth-first order as the system recovers from successive faults.
 
-Most boot sequences are composed of only three stages:<!--And for Mbed OS?-->
+Most boot sequences are composed of only three stages:<!--And for Mbed OS? Answer: See two sentences down?-->
 
 1. Boot selector (also known as **root bootloader**): does not get upgraded.
 1. Bootloader: upgradable, with several versions stored on the device.
@@ -36,15 +36,14 @@ Most boot sequences are composed of only three stages:<!--And for Mbed OS?-->
 
 Fault tolerance ultimately rests on the sanity of the first-stage bootloader. This bootloader is usually kept minimal to ensure dependable operation.<!--So what does Mbed OS do? Also, "minimal" is vague. What does it actually mean - that its functionality is limited to starting the sequence?-->
 
-The Mbed bootloader is practically<!--as in "we did it because it's practical" or "you know, this basically is that"?--> a hybrid of the boot selector and a bootloader, but it fulfils the requirements of the boot selector: it is small enough to minimise the chance of bugs, but it is complex enough to handle installation of new images.<!---"Handle the installation" or just "install"? Is it an overseer, or does it do the work?--> <!--Therefore, the Mbed Bootloader is intended to be a reference implementation for constructing a bootloader.--><!--Not relevant for the Mbed OS one, right???-->
-
+The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it fulfills the requirements of the boot selector: It is small enough to minimize the chance of bugs, but it is advanced enough to install new images.<!--Therefore, the Mbed Bootloader is intended to be a reference implementation for constructing a bootloader.--><!--Not relevant for the Mbed OS one, right???-->
 
 #### Managed and unamanaged bootloader tool integration
 
-The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
+The Mbed tools (Mbed CLI, Online Compiler)<!--Please confirm the Online Compiler can do this--> can manage bootloaders where:
 
-* The bootloader comes before the application in ROM.
-* The application starts immediately after the bootloader.
+- The bootloader comes before the application in ROM.
+- The application starts immediately after the bootloader.
 
 If the Mbed tool finds a manageable bootloader, the image build process automatically merges the bootloader image with the application image.
 
@@ -85,9 +84,9 @@ When a device downloads new firmware, it stores it locally (in the storage area)
 
 ### Development tool integration with Pelion Device Management Update
 
-Mbed CLI and the Online Compiler implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, using Mbed CLI and the Online Compiler's built in update features can reduce the steps needed to run an update campaign.
+Mbed CLI and the Online Compiler<!--Please confirm the Online Compiler can do this--> implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, using Mbed CLI and the Online Compiler's built in update features can reduce the steps needed to run an update campaign.
 
-<span class="notes">**Note**: The default workflow of the development tools is intended only for development and testing purposes, not for production.</span>
+<span class="notes">**Note**: The default workflow of the development tools is intended only for development and testing purposes. It is not considered secure for production.</span>
 
 Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/current/service-api-references/update-service.html).
 
@@ -97,5 +96,5 @@ Your development tool needs to use your Device Management account's API key to c
 
 **Tutorials**:
 
-* Try the firmware update flow on the Online Compiler.<!--No link yet; it's not live-->
-* Review the [Mbed CLI update commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
+- Try the firmware update flow on the Online Compiler.<!--No link yet; it's not live-->
+- Review the [Mbed CLI update commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
