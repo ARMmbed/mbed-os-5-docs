@@ -33,19 +33,19 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ### Thread statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-thread-statistics/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-thread-statistics/file/322755e8a0da/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-thread-statistics/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-thread-statistics/file/6d21d2610025/main.cpp)
 
 ### System information example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sys-info/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sys-info/file/c235357f33a9/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sys-info/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sys-info/file/4e2189e2af35/main.cpp)
 
 ### CPU statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-stats/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-stats/file/415446a3ed35/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-stats/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-stats/file/f444da41647a/main.cpp)
 
 ### CPU usage example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/file/3e6a97bcda48/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cpu-usage/file/3a98a42d4031/main.cpp)
 
 ### Related content
 
