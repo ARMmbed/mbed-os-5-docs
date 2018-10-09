@@ -186,7 +186,7 @@ Time: 3 days for reviewers to leave feedback after the maintainers add the "need
 
 #### The CI (Continuous Integration) testing
 
-There are many CI systems available. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
+There are many [CI systems available](/docs/reference/contributing/guidelines/ci.html). Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
 Label: `needs: review`
 Time: 1 day for CI to complete and report back results.
