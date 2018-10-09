@@ -20,7 +20,6 @@ The current maintainers are:
 
 - [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
 - [Martin Kojtal](https://os.mbed.com/users/Kojto).
-- [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
 - [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
 - [Nir Sonnenschein](https://os.mbed.com/users/nirs).
 - [Cruz Monrreal](https://os.mbed.com/users/CM2).
