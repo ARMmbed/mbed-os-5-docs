@@ -70,7 +70,7 @@ To bring up the network interface:
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/file/99e89c0a8f44/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/file/cf737b827270/main.cpp)
 
 ### Related content
 
