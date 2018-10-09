@@ -30,7 +30,7 @@ To protect against faults in the newly updated components, we store multiple ver
 
 Most boot sequences are composed of only three stages:<!--And for Mbed OS? Answer: See two sentences down?-->
 
-1. Boot selector (also known as **root bootloader**): does not get upgraded.
+1. Boot selector (also known as **root bootloader** or **stage zero bootloader**): does not get upgraded.
 1. Bootloader: upgradable, with several versions stored on the device.
 1. Application: upgradable, with several versions stored on the device.
 
