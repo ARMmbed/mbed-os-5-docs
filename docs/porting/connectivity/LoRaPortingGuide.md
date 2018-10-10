@@ -1,6 +1,6 @@
 <h2 id="lora-port">Porting LoRaWAN stack and LoRa RF drivers</h2>
 
-Mbed OS contains a native LoRaWAN stack (inside the Mbed OS tree) augmented with most commonly used LoRa RF drivers (outside the Mbed OS tree). Arm encourages developers around the globe to contribute to any of the Mbed OS features and functionality, including the LoRaWAN stack and related RF drivers using the [general guidelines provided](/docs/development/reference/guidelines.html).
+Mbed OS contains a native LoRaWAN stack (inside the Mbed OS tree) augmented with most commonly used LoRa RF drivers (outside the Mbed OS tree). Arm encourages developers around the globe to contribute to any of the Mbed OS features and functionality, including the LoRaWAN stack and related RF drivers using the [general guidelines provided](/docs/development/reference/contributing.html).
 
 The information in this section can be classified in two subsections:
 

@@ -22,7 +22,7 @@ _9600-8-N-1_, a  common notation for serial port settings, describes the default
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](/docs/development/tutorials/serial-communication.html#windows-serial-driver).</span>
+<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](/docs/development/tutorials//docs/development/tutorials/serial-communication.html#windows-serial-driver).</span>
 
 ### RawSerial hello, world
 

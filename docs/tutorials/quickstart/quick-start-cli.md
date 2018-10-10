@@ -184,7 +184,7 @@ More examples:
 
 - Tutorials
   - [Advanced debugging](debugging.html).
-  - [Serial communications](serial-communication.html).
+  - [Serial communications](/docs/development/tutorials/serial-communication.html).
   - [Optimizing binary size](optimizing.html).
 
 - Other resources

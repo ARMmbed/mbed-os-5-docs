@@ -9,7 +9,7 @@ Principles of Arm Mbed software:
 
 ### Style
 
-Please refer to the [Mbed style guide](/docs/development/reference/guidelines.html#style).
+Please refer to the [Mbed style guide](/docs/development/reference/style.html).
 
 ### Organization
 

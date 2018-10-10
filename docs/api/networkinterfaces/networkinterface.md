@@ -82,7 +82,7 @@ if (wifi) {
 ### Related content
 
 - [Configuring the default network interface](/docs/development/reference/configuration-connectivity.html#selecting-the-default-network-interface).
-- [Network connectivity](/docs/development/reference/connectivity-tech.html).
+- [Network connectivity](/docs/development/reference/connectivity-stacks.html).
 - [IP networking](/docs/development/reference/ip-networking.html).
 - [Network status API](network-status.html).
 - [Network sockets](/docs/development/apis/network-socket.html).
