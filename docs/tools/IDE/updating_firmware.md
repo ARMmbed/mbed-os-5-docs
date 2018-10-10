@@ -2,4 +2,4 @@
 
 The Online Compiler integrates with Pelion Device Management to allow firmware update.
 
-The fastest way to learn about updating through the compiler is to try [the quick start]().<!--We don't have a link yet-->
+The fastest way to learn about updating through the compiler is to try [the quick start](https://cloud.mbed.com/guides/pelion-firmware-update).
