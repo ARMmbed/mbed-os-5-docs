@@ -574,81 +574,89 @@
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/technology.md"
                 },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/firmware_update.md"
+                "sub_chapters": [{
+                        "title": "Stack technologies",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/connectivity.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/networking.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/ethernet.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/wifi.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/cellular.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_intro.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_intro.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_hw.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_commissioning.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_faq.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/02_N_arch.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/04_N_networking.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/lora-tech.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/NFC.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/connectivity.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/networking.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/ethernet.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/wifi.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/cellular.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_hw.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_commissioning.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_faq.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/02_N_arch.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/04_N_networking.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/lora-tech.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/NFC.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Bootstrap.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Memory.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/static_memory_optimization.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Execution.md"
+                        "title": "Underlying technologies",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/firmware_update.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Bootstrap.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Memory.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/static_memory_optimization.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Execution.md"
+                            }
+                        ]
                     }
                 ]
             },
@@ -1119,11 +1127,10 @@
             {
                 "title": "Stage 2: Proof of concept",
                 "intro": {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/intro_s_2.md"
-                    },
-                "sources": [
-                    {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/intro_s_2.md"
+                },
+                "sources": [{
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/1_hardware.md"
                     },
