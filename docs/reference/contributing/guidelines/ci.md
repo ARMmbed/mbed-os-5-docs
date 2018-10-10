@@ -4,9 +4,23 @@ Continuous integration (CI) means mainly automatic testing for pull requests
 
 ### Travis CI
 
-In Mbed OS [Travis CI](https://travis-ci.org/) is used as primary automatic testing and checking run environment.
+In Mbed OS [Travis CI](https://travis-ci.org/ARMmbed/mbed-os) is used as primary automatic testing and checking run environment.
 
-Travis configuration is located in .travis.yml file in Mbed OS root directory. Mbed OS use public travis so test results are publicly available and there are public [documentation available](https://docs.travis-ci.com/).
+Travis configuration is located in [.travis.yml](https://github.com/ARMmbed/mbed-os/blob/master/.travis.yml) file in Mbed OS root directory. Mbed OS use public travis so test results are publicly available and there are public [documentation available](https://docs.travis-ci.com/).
+
+#### Tests
+
+* **continuous-integration/travis-ci/pr** - Main run main
+* **travis-ci/astyle** - Check code style using [astyle](http://astyle.sourceforge.net/)
+* **travis-ci/docs** - [Doxygen](http://www.doxygen.org/) and naming checks:
+** Assert that the Doxygen build produced no warnings
+** Assert that all binary libraries are named correctly
+** Assert that all assebler files are named correctly
+* **travis-ci/events** - Check that Mbed OS compiles and run events tests
+* **travis-ci/gitattributestest** - Check that no changes after clone. This check that .gitattributes is used right way
+* **travis-ci/licence_check** - Checking that there is no GPL licence text in code
+* **travis-ci/littlefs** - Testing littlefs without embedded hardware
+* **travis-ci/tools-py2.7** - Run python tools tests with python 2.7
 
 ### Jenkins
 
@@ -18,7 +32,7 @@ Travis configuration is located in .travis.yml file in Mbed OS root directory. M
 * Jenkins select required tests dynamically based on the code changes. For example. no tests are executed if only markdown (.md) file changes
 * Jenkins run first small amount of tests to provide fast feedback and then more tests
 
-#### What kind of tests jenkins runs?
+#### Tests
 
 * **continuous-integration/jenkins/pr-head** Jenkins main pipeline script execution status
 * **jenkins-ci/cloud-client-test** - Test the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example)
