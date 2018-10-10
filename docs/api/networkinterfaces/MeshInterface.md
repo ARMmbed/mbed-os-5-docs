@@ -43,7 +43,7 @@ See the example application [mbed-os-example-mesh-minimal](https://github.com/AR
 
 The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal/)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/file/8a8b62fea37c/main.cpp)
 
 ### Related content
 
