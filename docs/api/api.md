@@ -8,7 +8,7 @@
 <tbody>
 <tr>
 <td><a href="wait.html">Wait</a></td>
-<td><a href="Idle-loop.html">IdleLoop</a></td>
+<td><a href="idle-loop.html">Idle loop</a></td>
 <td><a href="debug.html">Debug</a></td>
 <td><a href="noncopyable.html">NonCopyable</a></td>
 <td><a href="circularbuffer.html">CircularBuffer</a></td>
