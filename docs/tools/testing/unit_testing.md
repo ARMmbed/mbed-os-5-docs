@@ -90,6 +90,11 @@ With the following steps, you can write a simple unit test. In this example, `rt
 1. Create a test configuration file `UNITTESTS/rtos/Semaphore/unittest.cmake` with the following content:
 
    ```
+      
+   ####################
+   # UNIT TESTS
+   ####################
+
    set(unittest-sources
        ../rtos/Semaphore.cpp
    )
