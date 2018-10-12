@@ -38,11 +38,11 @@ Please create separate pull requests for each concern; each pull request needs a
 
 #### Reporting bugs
 
-Please submit all Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-suggestions/).
+Mbed OS bugs may be submitted [on the forums](https://os.mbed.com/forum/bugs-suggestions/) or directly [on GitHub](https://github.com/ARMmbed/mbed-os)
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker (`ARM Internal Ref: MBOTRIAGE-XXX` comment in the issues and label mirrored set once copied) and regularly triage them.
+We copy issues reported on GitHub to our internal tracker (`Internal Jira reference: https://jira.arm.com/browse/MBOCUSTRIA-xxx` comment in the issues and label mirrored set once copied) and regularly triage them.
 
 ### Guidelines for GitHub pull requests
 
