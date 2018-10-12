@@ -8,11 +8,11 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 ### Warnings and notes
 
-* Timers are based on 32-bit int microsecond counters, so they can only time up to a maximum of 2^31-1 microseconds (30 minutes). They are designed for times between microseconds and seconds. For longer times, you should consider the time() real time clock.
-
 * No blocking code in ISR: avoid any call to wait, infinite while loop or blocking calls in general.
 
 * No printf, malloc or new in ISR: Avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
+
+* While a Timeout is running, deep sleep is blocked to maintain accurate timing. If you don't need microsecond precision, consider using the LowPowerTimeout class instead because this does not block deep sleep mode.
 
 ### Timeout class reference
 
