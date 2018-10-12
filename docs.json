@@ -1,6 +1,6 @@
 [{
         "title": "Mbed OS API doxygen",
-        "description": "The full Mbed OS API documentation in doxygen format",
+        "description": "The full Mbed OS API documentation in doxygen format TEST",
         "slug": "mbed-os-api-doxy",
         "hidden": true,
         "type": "doxygen",
