@@ -2,7 +2,7 @@
 
 #### QSPI class hierarchy
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)</span>
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)</span><span>QSPI class hierarchy</span>
 
 The QSPI driver in Mbed OS provides functionality to configure and access QSPI devices connected over a QuadSPI interface.
 
