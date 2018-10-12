@@ -81,41 +81,40 @@ int main()
 Running this test will output the following:
 
 ```
-{{timeout;20}}
-{{host_test_name;default_auto}}
-{{description;utest greentea example}}
-{{test_id;MBED_OS}}
-{{start}}
-> Running 4 test cases...
+{{__version;1.3.0}}
+{{__timeout;20}}
+{{__host_test_name;default_auto}}
+{{__testcase_count;2}}
+>>> Running 2 test cases...
+{{__testcase_name;Simple Test}}
+{{__testcase_name;Repeating Test}}
 
-> Running case #1: 'Simple Test'...
+>>> Running case #1: 'Simple Test'...
+{{__testcase_start;Simple Test}}
 Simple test called
-> 'Simple Test': 1 passed, 0 failed
+{{__testcase_finish;Simple Test;1;0}}
+>>> 'Simple Test': 1 passed, 0 failed
 
-> Running case #2: 'Repeating Test'...
+>>> Running case #2: 'Repeating Test'...
+{{__testcase_start;Repeating Test}}
 Setting up for 'Repeating Test'
 Called for the 1. time
-> 'Repeating Test': 1 passed, 0 failed
+{{__testcase_finish;Repeating Test;1;0}}
+>>> 'Repeating Test': 1 passed, 0 failed
 
-> Running case #2: 'Repeating Test'...
+>>> Running case #2: 'Repeating Test'...
+{{__testcase_start;Repeating Test}}
 Setting up for 'Repeating Test'
 Called for the 2. time
-> 'Repeating Test': 2 passed, 0 failed
+{{__testcase_finish;Repeating Test;2;0}}
+>>> 'Repeating Test': 2 passed, 0 failed
 
-> Running case #3: 'Asynchronous Test (200ms timeout)'...
-> 'Asynchronous Test (200ms timeout)': 1 passed, 0 failed
-
-> Running case #4: 'Asynchronous Timeout Repeat'...
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> 'Asynchronous Timeout Repeat': 1 passed, 0 failed
-
-> Test cases: 4 passed, 0 failed
-{{success}}
-{{end}}
+>>> Test cases: 2 passed, 0 failed
+{{__testcase_summary;2;0}}
+{{max_heap_usage;0}}
+{{reserved_heap;0}}
+{{end;success}}
+{{__exit;0}}
 ```
 
 ### Handlers
