@@ -6,7 +6,7 @@
 
 A Mutex is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
-<span class="notes"> **Note:** The `Mutex` methods cannot be called from interrupt service routines (ISR). In the current version of Mbed OS, if you attempt to use a mutex from within an ISR, you will get an error, something like this: </span>
+<span class="notes"> **Note:** The `Mutex` methods cannot be called from interrupt service routines (ISR). In the current version of Mbed OS, if you attempt to use a mutex from within an ISR, it will treat that as a fatal system error, and you will see an error like this: </span>
 
 ```C
 ++ MbedOS Error Info ++
@@ -19,6 +19,7 @@ For more info, visit: https://armmbed.github.io/mbedos-error/?error=0x80020115
 -- MbedOS Error Info --
 ```
 
+<span class="notes"> **Note:** If synchronization is required in ISR, consider using semaphores. </span>
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
 
