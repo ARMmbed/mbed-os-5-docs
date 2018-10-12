@@ -27,6 +27,7 @@ This example showcases functionality and proper integration with the [Greentea t
 #include "greentea-client/test_env.h"
 #include "unity.h"
 #include "utest.h"
+```
 
 using namespace utest::v1;
 
@@ -226,7 +227,7 @@ These default handlers are called when you have not overridden a custom handler,
 
 You can specify which default handlers you want to use when wrapping your test cases in the `Specification` class:
 
-```cpp
+```cpp TODO
 // Declare your test specification with a custom setup handler
 // and set the default handlers to the predefined “greentea continue” behavior
 Specification specification(greentea_setup, cases, greentea_continue_handlers);
@@ -294,7 +295,7 @@ There are two functions you need to implement:
 
 Here is the most basic scheduler implementation without any asynchronous support. Note that this does not require any hardware support at all, but you cannot use timeouts in your test cases.
 
-```cpp
+```cpp TODO
 volatile utest_v1_harness_callback_t minimal_callback;
 
 static void* utest_minimal_post(const utest_v1_harness_callback_t callback, const uint32_t delay_ms) {
@@ -330,7 +331,7 @@ void main() // or whatever your custom entry point is
 
 Here is the complete scheduler implementation with any asynchronous support. Note that this does require at least a hardware timer. This example uses `mbed-hal/us_ticker`. Note that you must not execute the callback in the timer interrupt context, but in the main loop context.
 
-```cpp
+```cpp TODO
 volatile utest_v1_harness_callback_t minimal_callback;
 volatile utest_v1_harness_callback_t ticker_callback;
 const ticker_data_t *ticker_data;

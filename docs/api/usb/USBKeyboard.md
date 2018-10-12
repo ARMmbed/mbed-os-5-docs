@@ -10,7 +10,7 @@ The USBKeyboard class provides the functionality of a keyboard. You can send key
 
 ### USBKeyboard example
 
-```C++
+```C++ TODO
 #include "mbed.h"
 #include "USBKeyboard.h"
 

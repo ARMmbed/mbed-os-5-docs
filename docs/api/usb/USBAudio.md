@@ -12,7 +12,7 @@ You can use the USBAudio interface to send and receive audio data over USB. Once
 
 This example outputs an audio square wave over USB.
 
-```C++
+```C++ TODO
 // This example simply generates a square wave. 
 // Use a program like Audacity to record and hear the square wave, or route microphone input to output device.
 #include "mbed.h"

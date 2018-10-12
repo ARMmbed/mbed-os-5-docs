@@ -11,19 +11,19 @@ Ethernet driver for the target and select correct network stack.
 
 To statically initialize the driver, create an object without passing any parameters:
 
-```cpp
+```cpp TODO
 EthernetInterface eth;
 ```
 
 Then, if the default configuration is enough, bring up the interface:
 
-```cpp
+```cpp TODO
 nsapi_error_t status = eth.connect();
 ```
 
 Now, the interface is ready to be used for [network sockets](network-socket.html).
 
-```cpp
+```cpp TODO
 // Open a TCP socket
 TCPSocket socket;
 socket.open(&eth);

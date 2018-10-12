@@ -31,7 +31,7 @@ class LPCTargetCode(object):
 A target that needs this postbuild script run must contain this snippet in `targets/targets.json`:
 
 ```JSON
-"post_binary_hook": {"function": "LPCTargetCode.lpc_patch"},
+"post_binary_hook": {"function": "LPCTargetCode.lpc_patch"}
 ```
 
 When implementing a postbuild script, please be aware of the following considerations:

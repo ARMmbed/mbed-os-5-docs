@@ -22,7 +22,7 @@ The two examples below use a program called "Anvil Studio 32-bit" to play MIDI n
 
 Below is an example to send a series of MIDI notes to the host PC:    
 
-```C++
+```C++ TODO
 #include "mbed.h"
 #include "USBMIDI.h"
 

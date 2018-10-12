@@ -18,7 +18,7 @@ Note that the `MBED_ASSERT` macro is available in the debug and develop [build p
 
 The below function uses `MBED_ASSERT` to validate a pointer to `serial_t` object.
 
-```C
+```C TODO
 uint8_t serial_tx_active(serial_t *obj) {
     MBED_ASSERT(obj);
     ...
@@ -29,7 +29,7 @@ You can use the `MBED_STATIC_ASSERT` macro for compile-time evaluation of expres
 
 The below function uses `MBED_STATIC_ASSERT` to validate the size of the `equeue_timer` structure.
 
-```C
+```C TODO
 void equeue_tick_init() {
     MBED_STATIC_ASSERT(sizeof(equeue_timer) >= sizeof(Timer),"The equeue_timer buffer must fit the class Timer");
     ...

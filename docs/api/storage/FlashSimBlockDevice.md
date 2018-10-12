@@ -23,7 +23,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html) and turns it into a simulated flash BD.
 
-```C++
+```C++ TODO
     int erase_unit_size = 512;
     HeapBlockDevice heap_bd(4 * erase_unit_size, 1, 4, erase_unit_size);
     FlashSimBlockDevice flash_bd(&heap_bd, blank);

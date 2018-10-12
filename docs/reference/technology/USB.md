@@ -22,7 +22,7 @@ The recommended model for synchronizing a USB component is to wrap code requirin
 
 Code requiring locking:
 
-```c
+```c TODO
 void USBComponent::do_something()
 {
     lock();
@@ -35,7 +35,7 @@ void USBComponent::do_something()
 
 Code that expects a caller at a higher level to hold the lock:
 
-```c
+```c TODO
 void USBComponent::do_something_internal()
 {
     assert_locked();
@@ -95,7 +95,7 @@ To ensure a USB component runs on all supported devices, the USB component must 
 
 To simplify the process of selecting endpoints, we recommend you use the EndpointResolver class. A USB component constructs the class with an endpoint table. The USB component can then call the class to find an endpoint of the given type and size. After the component finds all required endpoints, it can call the function `EndpointResolver::valid()` to determine whether this device supports this configuration. Below is an example of this:
 
-```c++
+```c++ TODO
 EndpointResolver resolver(endpoint_table());
 resolver.endpoint_ctrl(CDC_MAX_PACKET_SIZE);
 bulk_in = resolver.endpoint_in(USB_EP_TYPE_BULK, CDC_MAX_PACKET_SIZE);

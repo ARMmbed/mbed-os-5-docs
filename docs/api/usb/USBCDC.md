@@ -10,7 +10,7 @@ The USBCDC class emulates a basic serial port over USB. You can use this serial 
 
 ### USBCDC example
 
-```C++
+```C++ TODO
 #include "mbed.h"
 #include "USBCDC.h"
 

@@ -18,7 +18,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html), whose read size is 256 bytes and program size is 512 bytes, and shows how one can read or program this block device with much smaller read/program sizes, using BufferedBlockDevice.
 
-```C++
+```C++ TODO
 
     HeapBlockDevice heap_bd(1024, 256, 512, 512);
     BufferedBlockDevice buf_bd(&heap_bd);
