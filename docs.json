@@ -1109,7 +1109,7 @@
         ]
     },
     {
-        "title": "From evaluation to production for IoT devices",
+        "title": "Going to production",
         "description": "",
         "slug": "evaluation-production",
         "type": "markdown",
@@ -1140,11 +1140,11 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/2_software.md"
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/3_connectivity.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/3_connectivity.md"
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/2_software.md"
                     },
                     {
                         "type": "markdown",
