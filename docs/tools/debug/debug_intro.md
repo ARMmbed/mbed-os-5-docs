@@ -24,7 +24,7 @@ In your project folder, run:
 # alternatively, use -i make_armc5 for ARMCC, or -i make_iar for IAR
 # replace K64F with your target board
 
-$ mbed export -i make_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
+$ mbed export -i make_gcc_arm -m K64F
 ```
 
 ##### Serial terminal
