@@ -6,7 +6,7 @@ The RawSerial class provides UART functionality without the use of Stream's prin
 
 Serial channels have the following configurable parameters in the constructor:
 
-  - _Tx and Rx Pin_ - The physical serial transmit and receive pins. You can specify a TX or RX pin as Not Connected (NC) to get Simplex communication, or specify both to get full duplex.
+  - _TX and RX Pin_ - The physical serial transmit and receive pins. You can specify a TX or RX pin as Not Connected (NC) to get Simplex communication, or specify both to get Full Duplex communication.
   - _Baud Rate_ - This setting is an optional constructor parameter. Standard baud rates range from a few hundred bits per second to megabits per second. The default baud rate for a serial connection on the microcontroller is 9600 baud. This setting may also be configured at run time.
 
 The following parameters can be configured at run time in the RawSerial object. You can view more information about the configurable settings and functions in the class reference.
