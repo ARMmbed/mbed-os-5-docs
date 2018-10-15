@@ -17,7 +17,7 @@ For more info, visit: https://armmbed.github.io/mbedos-error/?error=0x80020115
 -- MbedOS Error Info --
 ```
 
-<span class="notes"> **Note:** If synchronization is required in ISR, consider using semaphores. </span>
+If synchronization is required in ISR, consider using semaphores.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
 
