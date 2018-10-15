@@ -1,6 +1,8 @@
 ## Timeout
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_timeout.png)<span>Timeout class hierarchy</span></span>
+### Timeout class hierarchy
+
+<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_timeout.png)</span>
 
 Use the Timeout interface to set up an interrupt to call a function after a specified delay.
 
