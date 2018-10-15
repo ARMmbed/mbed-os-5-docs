@@ -38,7 +38,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
    | reserved_size     | Current number of bytes allocated for the heap.   |
    | alloc_cnt         | Current number of allocations.                    |
    | alloc_fail_cnt    | Number of failed allocations.                     |
-
+   | overhead_size     | Overhead added to heap for stats.                 |
 
 #### Example heap statistics use cases
 
