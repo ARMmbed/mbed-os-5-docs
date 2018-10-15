@@ -16,8 +16,13 @@ For more information, please review the related content.
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
 
+### QuadSPI example
+
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/QSPI)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/QSPI/main.cpp)
+
 ### Related content
 
+- [QSPI flash block device](https://github.com/ARMmbed/qspif-blockdevice).
 - [STMicroelectronics Quad-SPI documentation](https://www.st.com/content/ccc/resource/technical/document/application_note/group0/b0/7e/46/a8/5e/c1/48/01/DM00227538/files/DM00227538.pdf/jcr:content/translations/en.DM00227538.pdf).
 - [Macronix MX25R6435F flash memory with Quad-SPI](http://www.macronix.com/Lists/Datasheet/Attachments/6270/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf).
 - [Nordic Quad-SPI support in NRF52840](http://infocenter.nordicsemi.com/pdf/nRF52840_OPS_v0.5.pdf).
