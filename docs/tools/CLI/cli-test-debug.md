@@ -17,7 +17,7 @@ The arguments to `test` are:
 - `-n <TESTS_BY_NAME>`: to limit the tests built or run to a comma separated list, for example, `test1, test2, test3`.
 - `--source <SOURCE>`: to select the source directory. The default is `.` for the the current directory. You can specify multiple source locations, even outside the program tree.
 - `--build <BUILD>`: to select the build directory. The default is `BUILD/` inside your program.
-- `--profile <PATH_TO_BUILD_PROFILE>`: to select a path to a build profile configuration file, for example, `mbed-os/tools/profiles/debug.json`.
+- `--profile <PATH_TO_BUILD_PROFILE>`: to select a path to a build profile configuration file, for example, `mbed-os/tools/profiles/debug.json`. See the dedicated [build profile documentation](/docs/tools/CLI/build_profiles.html) for more detail.
 - `-c or --clean`: to clean the build directory before compiling.
 - `--test-spec <TEST_SPEC>`: to set the path for the test specification file used when building and running tests. The default path is the build directory.
 - `--build-data <BUILD_DATA>`: dumps build_data to this file.
