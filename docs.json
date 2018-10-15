@@ -857,10 +857,6 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/debug_builds_cli.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/toolchain_profiles.md"
                             }
                         ]
                     }
