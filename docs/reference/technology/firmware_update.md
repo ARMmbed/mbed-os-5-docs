@@ -12,7 +12,7 @@ Update support in Mbed OS relies on two features:
 The active firmware, made up of Mbed OS and an application, can be updated only if the binary installed on the device has:
 
 1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware. If for some reason, the update fails, the bootloader falls back to the firmware version last known to work. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions once an update succeeds.
-1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/current/updating-firmware/index.html).
+1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/latest/updating-firmware/index.html).
 
     Note: Because some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you need to explicitly import the client to your application.
 
