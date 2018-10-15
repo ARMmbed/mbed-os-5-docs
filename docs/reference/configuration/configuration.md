@@ -13,7 +13,7 @@ The Arm Mbed OS configuration system gathers and interprets the configuration de
 
 <span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
 
-<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](/docs/latest/tools/CLI/build_profiles.html).</span>
+<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](/docs/latest/tools/CLI/build-profiles.html).</span>
 
 ### Examining available configuration parameters
 
