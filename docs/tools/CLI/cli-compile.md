@@ -134,8 +134,6 @@ To compile in debug mode (as opposed to the default *develop* mode), use `--prof
 $ mbed compile -t GCC_ARM -m K64F --profile mbed-os/tools/profiles/debug.json
 ```
 
-<span class="tips">**Tip:** If you have files that you want to compile only in debug mode, put them in a directory called `TARGET_DEBUG` at any level of your tree (then use `--profile` as explained above).
-</span>
 
 #### Automate toolchain and target selection
 
