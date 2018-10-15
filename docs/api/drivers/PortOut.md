@@ -4,12 +4,9 @@ Use the PortOut interface to define which pins of a hardware GPIO port are set a
 
 A bit mask defines which pins of the GPIO port are set as an output (`1b` = include, `0b` = ignore). The default mask value is `0xFFFFFFFF` which sets all pins as an output.
 
-The pins associated with a GPIO port are defined in the device-specific `PinNames.h` and the respective datasheet or reference manual.
+The device-specific `PinNames.h` and the respective datasheet or reference manual define the pins associated with a GPIO port.
 
-Notes:
-
-- Pins from different GPIO ports can be combined using the [BusOut](busout.html) interface.
-- Use [PortIn](portin.html) to define which GPIO pins are to be used as digital output.
+<span class="notes">**Note:** You can combine pins from different GPIO ports using the [BusOut](busout.html) interface. Use [PortIn](portin.html) to define which GPIO pins are to be used as digital input.</span>
 
 ### PortOut class reference
 
