@@ -17,7 +17,7 @@ Mbed CLI also supports programs based on Mbed OS 2, which it automatically detec
 ```
 $ mbed import https://mbed.org/teams/mbed/code/mbed_blinky/
 [mbed] Importing program "mbed_blinky" from "https://mbed.org/teams/mbed/code/mbed_blinky" at latest revision in the current branch
-[mbed] Adding library "mbed" from "https://os.mbed.com/users/mbed_official/code/mbed/builds" at rev #f9eeca106725
+[mbed] Adding library "mbed" from "http://mbed.org/users/mbed_official/code/mbed/builds" at rev #f9eeca106725
 [mbed] Couldn't find build tools in your program. Downloading the mbed 2.0 SDK tools...
 $ cd mbed-os-example-blinky
 ```

@@ -16,7 +16,7 @@ First, make sure you have installed the [GNU Arm Embedded Toolchain](https://lau
 $ arm-none-eabi-gdb --version
 GNU gdb (GNU Tools for ARM Embedded Processors) 7.8.0.20150604-cvs
 Copyright (C) 2014 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
 and "show warranty" for details.

@@ -19,7 +19,7 @@ Scanners may also request additional information from device advertising by send
 Scanning consists of listening for peer advertising packets. From a scan, a device can identify devices available in its environment.
 
 If the device scans actively, it sends scan request to scannable advertisers and collects their scan responses.
-
+ 
 #### Privacy
 
 Privacy is a feature that allows a device to avoid being tracked by other (untrusted) devices. The device achieves it by periodically generating a new random address. The random address may be a resolvable random address, enabling trusted devices to recognize it as belonging to the same device. These trusted devices receive an Identity Resolution Key (IRK) during pairing. The SecurityManager handles this and relies on the other device accepting and storing the IRK.
@@ -33,7 +33,7 @@ When supported by the host and controller, you can select different modulation s
  - LE 1M PHY.
  - LE 2M PHY.
  - LE coded PHY.
-
+ 
 These provide different compromises between bandwidth, power usage and error resiliency (see BLUETOOTH SPECIFICATION Version 5.0 Vol 1, Part A - 1.2).
 
 You may set preferred PHYs (separately for RX and TX) using `setPreferredPhys()`. You may also set the currently used PHYs on a selected connection using `setPhy()`. Both of these settings are only advisory. The controller is allowed to make its own decision on the best PHY to use based on your request, the peer's supported features and the connection's physical conditions.

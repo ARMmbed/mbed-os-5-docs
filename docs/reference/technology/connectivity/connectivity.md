@@ -40,7 +40,7 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html)
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora.png)<span>LoRa</span></span>
 
-[LoRaWAN](https://lora-alliance.org) is a long range wide-area network technology that combines long range with low power consumption. LoRaWAN is not IP based.
+[LoRaWAN](http://lora-alliance.org) is a long range wide-area network technology that combines long range with low power consumption. LoRaWAN is not IP based.
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/v5.10/tutorials/LoRa-tutorial.html) describe LoRA networking.
 

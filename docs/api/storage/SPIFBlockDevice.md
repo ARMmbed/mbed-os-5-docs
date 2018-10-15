@@ -12,7 +12,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
 
-### SPIFBlockDevice example:
+### SPIFBlockDevice example
 
 ``` cpp
 // Here's an example using the MX25R SPI flash device on the K82F

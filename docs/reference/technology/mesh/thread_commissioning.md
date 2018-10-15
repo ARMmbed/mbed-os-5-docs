@@ -33,7 +33,7 @@ Once the binary is generated, flash the binary to the end device, and run the ap
 
 #### QR code generation
 
-You can use [a free online tool](https://www.qr-code-generator.com/) to generate a QR code.
+You can use [a free online tool](http://www.qr-code-generator.com/) to generate a QR code.
 
 In the online tool, fill in the URL field. The following is an example: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`. Fill in the correct values for your device, and ensure `v=1` is always present. The other required parameters are:
 

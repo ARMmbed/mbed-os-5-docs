@@ -63,7 +63,7 @@ The 6LoWPAN stack can be delivered with optional security components. These comp
 - ECC (ECDSA and ECDHE) (requires X509.3)
 - X509.3 (requires ECC)
 
-The _Elliptic Curve Cryptography_ (ECC) component supports the EEC curve NIST-P256 as defined in the Smart Grid standards collection of the _National Institute of Standards and Technology_ (NIST); see [NIST](https://www.nist.gov/smartgrid/). The stack also provides full x509.3 certificate support along with certificate chaining.
+The _Elliptic Curve Cryptography_ (ECC) component supports the EEC curve NIST-P256 as defined in the Smart Grid standards collection of the _National Institute of Standards and Technology_ (NIST); see [NIST](http://www.nist.gov/smartgrid/). The stack also provides full x509.3 certificate support along with certificate chaining.
 
 The stack essentially allows the end device to be a part of a full _Public Key Infrastructure_ (PKI) security scheme.
 

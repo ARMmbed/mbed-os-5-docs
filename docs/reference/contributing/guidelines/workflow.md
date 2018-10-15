@@ -1,6 +1,6 @@
 ## Workflow
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](guidelines.html#style). Please also read the [Contributor License Agreement (CLA)](guidelines.html#cla) guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/v5.10/reference/style.html). Please also read the [Contributor License Agreement (CLA)](/docs/v5.10/reference/license.html) guidelines because we will immediately close pull requests submitted without a CLA.
 
 ### Mbed OS maintainers
 
@@ -51,7 +51,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Commits should always contain a proper description of their content. Start with a concise and sensible one-line description. Then, elaborate on reasoning of the choices made, descriptions for reviewers and other information that might otherwise be lost.
 - You should always write commits to allow publication, so they can never contain confidential information, reference private documents, links to intranet locations or rude language.
 - Each commit should be the minimum self-contained commit for a change. A commit should always result in a new state that is again in a compilable state. You should (if possible) split large changes into logical smaller commits that help reviewers follow the reasoning behind the full change.
-- Commits and pull request titles should follow [Chris Beam’s seven rules of great commit messages](https://chris.beams.io/posts/git-commit#seven-rules):
+- Commits and pull request titles should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit#seven-rules):
 	1. Separate the subject from the body with a blank line.
 	1. Limit the subject line to 72 characters (note that this is a deviation from Beam's standard).
 	1. Capitalize the subject line.
@@ -154,10 +154,13 @@ You can see test results [here](just an example).
 
 # Pull request type
 
-[x] Fix
-[ ] Refactor
-[ ] New Target
-[ ] Feature
+    [X] Fix
+    [ ] Refactor
+    [ ] Target update
+    [ ] Functionality change
+    [ ] Docs update
+    [ ] Test update
+    [ ] Breaking change
 
 ```
 

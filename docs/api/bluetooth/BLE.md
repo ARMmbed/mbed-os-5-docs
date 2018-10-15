@@ -20,7 +20,7 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Inside_API.png)</span>
 
-`BLE_API` offers building blocks to help construct applications. These fall into two broad categories:
+`BLE_API` offers building blocks to help construct applications. These fall into two broad categories: 
 
 1. Interfaces under **`ble/`** to express BLE constructs, such as GAP, GATT, services and characteristics.
 

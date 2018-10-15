@@ -18,25 +18,25 @@ Icetea supports both Python 2.7 and 3.5, or later. Some OS specific prerequisite
    - python-dev and python-lxml:
       `sudo apt-get install python-dev python-lxml`
    - To run test cases with hardware in Linux, without sudo rights:
-
+   
       ```
       sudo usermod -a -G dialout username
       Log out & log in back to Linux
       ```
-
+   
       This command adds the user `username` to the `dialout` group and grants the required permissions to the USB ports.
-
+      
 - OS X.
    - [XCode developer tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
    - [MacPorts](https://www.macports.org/install.php).
-   - [lxml](https://lxml.de/installation.html#installation):
+   - [lxml](http://lxml.de/installation.html#installation):
       `STATIC_DEPS=true sudo pip install lxml`
 
 - Windows
    - python-lxml installation on Windows usually requires build tools. You can, however, install it from prebuilt binaries.
       - Search the internet for a binary for your system.
       - Navigate to the directory where you downloaded the binary, and install it with `pip install <insert_file_name>`
-   - You can also follow [these instructions](https://lxml.de/installation.html#installation) instead.
+   - You can also follow [these instructions](http://lxml.de/installation.html#installation) instead.
 
 #### Optional
 

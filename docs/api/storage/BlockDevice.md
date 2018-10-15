@@ -8,7 +8,7 @@ The most common types of block-based storage are different forms of flash, but t
 
 #### Block device operations
 
-A block device can perform three operations:
+A block device can perform three operations: 
 
 - Read a region of data from storage.
 - Erase a region of data in storage.
@@ -34,7 +34,7 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-For details regarding how to configure the default block device, please refer to the [storage configuration guide](/docs/v5.10/reference/configuration-storage.html).
+For details regarding how to configure the default block device please refer to the [storage configuration guide](/docs/v5.10/reference/configuration-storage.html)
 
 ### BlockDevice class reference
 

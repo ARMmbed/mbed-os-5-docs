@@ -4,7 +4,9 @@ DataFlashBlockDevice is a block device driver for I2C-based EEPROM devices, such
 
 DataFlash is a memory protocol that combines flash with SRAM buffers for a programming interface. DataFlash supports byte-sized read and writes, with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash provides erase sizes with an extra 16 bytes for error correction codes (ECC), so a flash translation layer (FTL) may still present 512 byte erase sizes.
 
-You can configure the DataFlashBlockDevice to force the underlying device to use either the binary size (in other words, 512 bytes) or the raw DataFlash size (in other words, 528 bytes). To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
+You can configure the DataFlashBlockDevice to force the underlying device to use either the binary size (in other words, 512 bytes) or the raw DataFlash size (in other words, 528 bytes).
+
+To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
 
 ### DataFlashBlockDevice class reference
 

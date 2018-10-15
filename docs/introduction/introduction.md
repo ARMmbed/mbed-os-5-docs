@@ -1,12 +1,12 @@
 ## An introduction to Arm Mbed OS 5
 
-Mbed OS is an open-source operating system designed specifically for Internet of Things (IoT) devices using Arm microcontrollers: low-powered, constrained devices that need to connect to the internet and support peripherals such as sensors and displays. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that you can focus on writing C/C++ applications that call the functionality available on a range of hardware, and reuse your application on any Mbed-compatible platform.
+Mbed OS is an open-source operating system for platforms using Arm microcontrollers designed specifically for Internet of Things (IoT) devices: low-powered, constrained devices that need to connect to the internet. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can focus on writing C/C++ applications that call functionality available on a range of hardware. Mbed OS applications can be reused on any Mbed-compatible platform.
 
 ### Getting started
 
 If you want to dive straight in:
 
-- The source code is available on [GitHub](https://www.github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
+- The source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 - Or [try our quick start](/docs/v5.10/tutorials/mbed-os-quick-start.html).
 
 ### Source code and licensing
@@ -47,9 +47,9 @@ Our approach to security is to leverage state-of-the-art industry standard proto
 
 ### Remote firmware update
 
-Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there.
+Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there. The Online Compiler also offers a quick integration for development flows.
 
-For more information, see our [Mbed CLI update documentation](https://os.mbed.com/docs/latest/tools/cli-update.html).
+For more information, see our [technology page](/docs/v5.10/reference/firmware-update-in-mbed-os.html), the [Mbed CLI update flow](/docs/v5.10/tools/cli-update.html) or the [quick start through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update).
 
 ### Hardware
 

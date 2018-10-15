@@ -28,8 +28,8 @@ Please see [Notes on different hardware](https://github.com/ARMmbed/mbed-os-exam
 Following RF shield have been used with Mbed OS mesh examples.
 
 - [FIREFLY 6LOWPAN ARDUINO SHIELD](https://firefly-iot.com/product/firefly-arduino-shield-2-4ghz/).
-- [Freedom Development Board for MCR20A](https://www.nxp.com/products/software-and-tools/hardware-development-tools/freedom-development-boards/freedom-development-board-for-mcr20a-wireless-transceiver:FRDM-CR20A).
-- [X-NUCLEO-IDS01A4](https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html).
+- [Freedom Development Board for MCR20A](http://www.nxp.com/products/software-and-tools/hardware-development-tools/freedom-development-boards/freedom-development-board-for-mcr20a-wireless-transceiver:FRDM-CR20A).
+- [X-NUCLEO-IDS01A4](http://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-ids01a4.html).
 - [DVK-NCS36510-MBED-GEVB](https://os.mbed.com/platforms/NCS36510/) Development board, contains internal RF chip.
 
 #### Tested development boards

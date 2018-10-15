@@ -35,7 +35,7 @@ The export process generates a ZIP archive with a project file matching your sel
 
 ### Exporting from Arm Mbed CLI
 
-[Mbed CLI](developing-arm-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](developing-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -48,14 +48,14 @@ When you export from Mbed CLI, you create a project that compiles with the debug
 
     $ mbed export -i uvision5 -m K64F
 
-will have the same flags as if you had compiled with:
+has the same flags as if you had compiled with:
 
     $ mbed compile -t arm -m K64F --profile debug
 
 For a complete list of supported export toolchains, you can run:
 
-    $ mbed export -h    
-    
+    $ mbed export -h
+
 ### Before you export
 
 Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries and differences caused by changing compile and link options.
@@ -127,7 +127,7 @@ Make and Eclipse exports on POSIX-like operating systems targeting Nordic device
 
 #### GNU Arm Eclipse (managed CDT projects) with GNU Arm Embedded Toolchain
 
-The [GNU Arm Eclipse](https://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
+The [GNU Arm Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
 
 Managed projects are projects that do not need manually created `make` files, but generate them automatically from a detailed description, which includes the list of source folders, include folders, preprocessor definitions (symbols) and compiler command-line options.
 

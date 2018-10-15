@@ -2,13 +2,13 @@
 
 ### Platform APIs
 
-[Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains. 
+[Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
 
 <table>
 <tbody>
 <tr>
 <td><a href="wait.html">Wait</a></td>
-<td><a href="idleloop.html">IdleLoop</a></td>
+<td><a href="idle-loop.html">Idle loop</a></td>
 <td><a href="debug.html">Debug</a></td>
 <td><a href="noncopyable.html">NonCopyable</a></td>
 <td><a href="circularbuffer.html">CircularBuffer</a></td>

@@ -9,7 +9,7 @@ The pairing process may provide man-in-the-middle protection (MITM). The Securit
 The SecurityManager stores the keys, permanently if possible, to speed security requests on subsequent connections.
 
 Security requests may come explicitly from the user application or implicitly from the GATT server based on attribute requirements.
-
+ 
 #### Pairing
 
 There are several ways to provide different levels of security during pairing depending on your requirements and the facilities the application provides. The process starts with initializing the SecurityManager with default options for new connections. You can later change some settings per link or globally.

@@ -1,14 +1,13 @@
-[
-    {
+[{
         "title": "Mbed OS API doxygen",
         "description": "The full Mbed OS API documentation in doxygen format",
         "slug": "mbed-os-api-doxy",
         "hidden": true,
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "mbed-os-5.10"
+        "branch": "master"
     },
-        {
+    {
         "title": "Introduction",
         "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
@@ -467,10 +466,9 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/api/security/security.md"
                 },
                 "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/api/security/TLS.md"
-                    }
-                ]
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/api/security/TLS.md"
+                }]
             },
             {
                 "title": "Storage",
@@ -576,77 +574,93 @@
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/technology.md"
                 },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/connectivity.md"
+                "sub_chapters": [{
+                        "title": "Connectivity stacks",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/connectivity.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/networking.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/ethernet.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/wifi.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/cellular.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/quick_start_intro.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/thread_intro.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/quick_start_hw.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/thread_commissioning.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/thread_faq.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/02_N_arch.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/04_N_networking.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/lora-tech.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/NFC.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/networking.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/ethernet.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/wifi.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/cellular.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/quick_start_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/thread_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/quick_start_hw.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/thread_commissioning.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/thread_faq.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/02_N_arch.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/mesh/04_N_networking.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/lora-tech.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/connectivity/NFC.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Bootstrap.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Memory.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/static_memory_optimization.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Execution.md"
+                        "title": "Technologies",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/non-stack.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/technology/firmware_update.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Bootstrap.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Memory.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/static_memory_optimization.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/reference/runtime/Execution.md"
+                            }
+                        ]
                     }
                 ]
             },
@@ -729,82 +743,128 @@
                 "sources": []
             },
             {
-                "title": "Developing: Arm Mbed Online Compiler",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/online/online_comp.md"
+                "title": "Developing: Mbed Online Compiler",
+                "sub_chapters": [{
+                        "title": "Getting started",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/online_comp.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/oc_tut.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/compiler_publishing_code.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/updating_firmware.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/online/compiler_collab.md"
+                        "title": "Source control",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/compiler_version_control.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/compiler_pull_requests.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/oc_pr_tut.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/online/compiler_pull_requests.md"
+                        "title": "Collaborative work",
+                        "sources": [
+
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/compiler_multiple_authors.md"
+                            },
+
+
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/compiler_collab.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/online/compiler_version_control.md"
+                        "title": "The Online Compiler reference",
+                        "sources": [
+
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/IDE/ide_ref.md"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "title": "Developing: Arm Mbed Studio",
+                "title": "Developing: Mbed Studio",
                 "sources": [{
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/mbed-studio.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/Studio/mbed-studio.md"
                 }]
             },
             {
-                "title": "Developing: Arm Mbed CLI",
+                "title": "Developing: Mbed CLI",
                 "intro": {
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli.md"
                 },
                 "sub_chapters": [{
                         "title": "Installation and setup",
                         "sources": [{
                             "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli-setup.md"
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli-setup.md"
                         }]
                     },
                     {
                         "title": "Working with Mbed CLI",
                         "sources": [{
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli-create.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli-create.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli-compile.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli-compile.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli-device-management.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli-device-management.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli-collaborate.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli-collaborate.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/cli-test-debug.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/cli-test-debug.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/mbedignore.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/mbedignore.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/build_profiles.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/build_profiles.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/debug_builds_cli.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/debug_builds_cli.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/offline/toolchain_profiles.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tools/CLI/toolchain_profiles.md"
                             }
                         ]
                     }
@@ -929,26 +989,6 @@
                 ]
             },
             {
-                "title": "Using the Mbed Online Compiler",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tutorials/using_tools/oc_tut.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tutorials/using_tools/oc_pr_tut.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tutorials/using_tools/compiler_multiple_authors.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.10/docs/tutorials/using_tools/compiler_publishing_code.md"
-                    }
-                ]
-            },
-            {
                 "title": "Serial communication",
                 "sources": [{
                         "type": "markdown",
@@ -1066,6 +1106,78 @@
         ],
         "tags": [
             "tutorials"
+        ]
+    },
+    {
+        "title": "Going to production",
+        "description": "Taking an IoT device from the initial evaluation stage to full production",
+        "slug": "evaluation-production",
+        "type": "markdown",
+        "chapters": [{
+                "title": "Introduction",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/intro.md"
+                },
+                "sources": []
+            },
+            {
+                "title": "Stage 1: Evaluation",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage1.md"
+                }]
+            },
+            {
+                "title": "Stage 2: Proof of concept",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/intro_s_2.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/1_hardware.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/3_connectivity.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/2_software.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/4_security.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage_2/6_example.md"
+                    }
+
+                ]
+            },
+            {
+                "title": "Stage 3: Prototype",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage3.md"
+                }]
+            },
+            {
+                "title": "Stage 4: Pilot",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage4.md"
+                }]
+            },
+            {
+                "title": "Stage 5: Production",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
+                }]
+            }
         ]
     },
     {

@@ -122,7 +122,6 @@ int main()
 }
 ```
 
-
 ### Related content
 
-- [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).

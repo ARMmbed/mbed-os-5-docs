@@ -21,7 +21,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 #include "mbed.h"
 #include "FlashIAPBlockDevice.h"
 
-// Create flash block device.
+// Create flash block device. 
 FlashIAPBlockDevice bd;
 
 int main() {

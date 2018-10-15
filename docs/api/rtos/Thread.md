@@ -67,7 +67,7 @@ typedef enum {
   osPriorityError         = -1,         ///< System cannot determine priority or illegal priority.
   osPriorityReserved      = 0x7FFFFFFF  ///< Prevents enum down-size compiler optimization.
 } osPriority_t;
-```
+``` 
 
 ### Thread example
 
@@ -84,3 +84,4 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 ### Related content
 
 - [Application flow control tutorial](/docs/v5.10/tutorials/application-flow-control.html).
+

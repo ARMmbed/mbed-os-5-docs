@@ -17,7 +17,7 @@ When `ptr` is passed around by a value, the copy constructor and destructor mana
 
 ```
 #include "platform/SharedPtr.h"
-
+  
 void test() {
     struct MyStruct { int a; };
 

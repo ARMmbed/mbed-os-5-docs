@@ -25,7 +25,6 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 
 Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
 
-
 ### Network connection states
 
 After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.

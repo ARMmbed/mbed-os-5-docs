@@ -1,6 +1,7 @@
-<h2 id="mbed-online-compiler">The Arm Mbed Online Compiler</h2>
+## Getting started
 
-With these step-by-step instructions, you can learn how to use the Online Compiler. These instructions cover importing and creating programs, compiling and downloading and forking. They also go over publishing and working with other developers.
+
+These instructions cover importing and creating programs, compiling and downloading and forking. They also go over publishing and working with other developers.
 
 ## Importing code
 
@@ -96,7 +97,7 @@ The **Compile** menu offers five options:
 
 ### Copying the file to the board
 
-<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](serial-communication.html).</span>
+<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](/docs/v5.10/tutorials/serial-communication.html).</span>
 
 Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
 

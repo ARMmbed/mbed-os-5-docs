@@ -2,7 +2,7 @@
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. BLE, unlike the classic Bluetooth standard, reduces power consumption, allowing your BLE device to run for months or years on a coin-cell battery. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
-This two-way communication means you can use a single device to send information and perform actions based on that information. You could water your garden when the ground is dry, put a beacon with your details on your dog's collar or flash a light when a car comes too close to your bicycle.
+This two-way communication means you can use a single device to send information and perform actions based on that information. You could [water your garden](http://www.hosepipeban.org.uk/hosepipe-ban-current-situation/) when the ground is dry, put a beacon with your details on your dog's collar or flash a light when a car comes too close to your bicycle.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/BLEsample.png)<span>A BLE setup requires a board with BLE support and a way to control it, for example a phone app or a local touchscreen.</span></span>
 
@@ -10,11 +10,11 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 ### Displaying information
 
-The first thing you can do with a BLE device is display information. You can do that with lights or a [display](https://os.mbed.com/components/cat/display/), or you can send the information to a nearby Bluetooth-enabled device, such as a mobile phone.
+The first thing you can do with a BLE device is display information. You can do that with lights or a [display](http://developer.mbed.org/components/cat/display/), or you can send the information to a nearby Bluetooth-enabled device, such as a mobile phone.
 
-The information can be sensor input - for example, you could display the speed as provided by an [accelerometer](https://os.mbed.com/components/cat/sensors-motion/) - or static information that you've programmed onto the device, such as your own details.
+The information can be sensor input - for example, you could display the speed as provided by an [accelerometer](http://developer.mbed.org/components/cat/sensors-motion/) - or static information that you've programmed onto the device, such as your own details. 
 
-### Processing information
+### Processing information 
 
 The two most common sources of information that you may want to process are sensors and user input. In either case, there are two main paradigms for processing:
 

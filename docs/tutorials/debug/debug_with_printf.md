@@ -13,7 +13,7 @@ Install the serial port driver for your development board:
 
 You also need a serial monitor:
 
-- [TeraTerm](https://osdn.net/projects/ttssh2/releases/).
+- [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
 
 #### macOS
 
@@ -68,7 +68,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="images>"![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)<span>Seeing the output over the serial port</span></span>
 
-<span class="notes">**Note:** Unsure which COM port is used? In the [device manager](https://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
+<span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
 #### macOS
 
@@ -324,8 +324,8 @@ void xprintf(const char *format, ...)
 
 Windows:
 
-[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](https://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s){:target="_blank"}
+[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s){:target="_blank"}
 
 macOS:
 
-[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](https://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s){:target="_blank"}
+[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s){:target="_blank"}

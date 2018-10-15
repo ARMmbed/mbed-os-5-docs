@@ -11,7 +11,7 @@ Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mb
 - Plug your Mbed board into your computer, and open its USB device folder.
 - Double click on the `MBED.HTM` file. (This adds your Mbed platform to the Online Compiler.)
 
-If you do not have an Mbed board, go to [os.mbed.com/platforms](https://os.mbed.com/platforms), select a board and click **Add to your Mbed Compiler**.
+If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.com/platforms), select a board and click **Add to your Mbed Compiler**.
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)
 </span>
 
@@ -48,7 +48,7 @@ To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, click the `Ex
 
 #### Printf
 
-Another way to do basic debugging is to use the `printf` command in your code and then read the output using a serial terminal, such as [PuTTY](https://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
+Another way to do basic debugging is to use the `printf` command in your code and then read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
 Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. To determine which communication port your board connects to, follow the instructions for your operating system:
 
@@ -75,10 +75,10 @@ More examples:
 
 - Tutorials
 	- [Advanced debugging](debugging.html).
-	- [Serial communications](serial-communication.html).
+	- [Serial communications](/docs/v5.10/tutorials/serial-communication.html).
 	- [Optimizing binary size](optimizing.html).
 
 - Other resources
 	- [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
 	- [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
-	- [Youtube channel](https://youtube.com/armmbed) - videos and workshop content.
+	- [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
