@@ -14,13 +14,13 @@ One of the serial connections uses the Arm Mbed USB port, allowing you to easily
 
 Serial channels have the following configurable parameters:
 
-  - _Tx and Rx Pin_ - The physical serial transmit and receive pins. You can specify a TX or RX pin as Not Connected (NC) to get Simplex communication, or specify both to get full duplex.
-  - _Baud Rate_ - Standard baud rates range from a few hundred bits per second to megabits per second. The default setting for a serial connection on the Mbed microcontroller is 9600 baud.
-  - _Data length_ - Transferred data can be either 7 or 8 bits long. The default setting for a serial connection on the Mbed microcontroller is 8 bits.
-  - _Parity_ - You can add an optional parity bit. The Serial object automatically sets the parity bit to make the number of 1s in the data either odd or even. Parity settings are *Odd*, *Even* or *None*. The default setting for a serial connection on the Arm Mbed microcontroller is None.
-  - _Stop Bits_ - After the transmission of data and parity bits, the Serial object inserts one or two stop bits to "frame" the data. The default setting for a serial connection on the Mbed microcontroller is one stop bit.
+  - _TX and RX Pin_ - The physical serial transmit and receive pins. You can specify a TX or RX pin as Not Connected (NC) to get Simplex communication, or specify both to get Full Duplex communication.
+  - _Baud Rate_ - Standard baud rates range from a few hundred bits per second to megabits per second. The default setting for a serial connection on the microcontroller is 9600 baud.
+  - _Data length_ - Transferred data can be either 7 or 8 bits long. The default setting for a serial connection on the microcontroller is 8 bits.
+  - _Parity_ - You can add an optional parity bit. The Serial object automatically sets the parity bit to make the number of 1s in the data either odd or even. Parity settings are *Odd*, *Even* or *None*. The default setting for a serial connection on the microcontroller is None.
+  - _Stop Bits_ - After the transmission of data and parity bits, the Serial object inserts one or two stop bits to "frame" the data. The default setting for a serial connection on the microcontroller is one stop bit.
 
-The default settings for the Mbed microcontroller are described as _9600-8-N-1_, a common notation for serial port settings.
+The default settings for the microcontroller are described as _9600-8-N-1_, a common notation for serial port settings.
 
 ### Serial hello, world
 
