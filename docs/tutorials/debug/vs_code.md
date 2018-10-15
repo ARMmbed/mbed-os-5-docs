@@ -40,7 +40,7 @@ In your project folder, run:
 # alternatively, use -i vscode_armc5 for ARMCC, or -i vscode_iar for IAR
 # replace K64F with your target board
 
-$ mbed export -i vscode_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
+$ mbed export -i vscode_gcc_arm -m K64F --profile debug
 ```
 
 ### Configuring the debugger

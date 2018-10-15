@@ -1,6 +1,6 @@
 ## Mbed OS build rules
 
-The Mbed OS build tools scan your project for source files every time you compile. This document describes the rules that the build tools use to decide which source files to include in each build. The Mbed OS build tools use the [target configuration](adding-and-configuring-targets.html) found in `targets.json`, `mbed_app.json` and `mbed_lib.json` as input to these rules.
+The Mbed OS build tools scan your project for source files every time you compile. This document describes the rules that the build tools use to decide which source files to include in each build. The Mbed OS build tools use the [target configuration](adding-and-configuring-targets.html) found in `targets.json`, `mbed_app.json` and `mbed_lib.json` as input to these rules. If you are looking for how to pass options to the compilers, please see the [build profiles documentation](http://os.mbed.com/docs/latest/tools/CLI/build_profiles.html).
 
 The build tools include every source file found in the project unless it is in a label directory, it is in a test directory or it matches a pattern in an `.mbedignore file`.
 

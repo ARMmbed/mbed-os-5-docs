@@ -42,7 +42,7 @@ The arguments for *compile* are:
 - `--source <SOURCE>` selects the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree. Find more details about the `--source` switch in the [build rules documentation](/docs/development/tools/build_rules.html).
 - `--build <BUILD>` selects the build directory. Default: `BUILD/` inside your program root.
    <span class="notes">**Note**: `mbed compile` ignores the current build directory; creating multiple build directories leads to errors.</span>
-- `--profile <PATH_TO_BUILD_PROFILE>` selects a path to a build profile configuration file. Example: `mbed-os/tools/profiles/debug.json`.
+- `--profile <PATH_TO_BUILD_PROFILE>` selects a path to a build profile configuration file. Example: `debug`. See the dedicated [build profile documentation](/docs/tools/CLI/build_profiles.html) for more detail.
 - `--library` compiles the code as a [static `.a/.ar` library](#compiling-static-libraries).
 - `--no-archive` suppresses the creation of `.a/.ar` files created by `--library`, producing many `.o` files instead.
    <span class="notes">**Note**: This option does nothing without `--library`.</span>
@@ -128,14 +128,12 @@ $ mbed compile -t GCC_ARM -m K64F -c -DUVISOR_PRESENT
 
 ##### Compile in debug mode
 
-To compile in debug mode (as opposed to the default *develop* mode), use `--profile mbed-os/tools/profiles/debug.json` in the compile command-line:
+To compile in debug mode (as opposed to the default *develop* mode), use `--profile debug` in the compile command-line:
 
 ```
-$ mbed compile -t GCC_ARM -m K64F --profile mbed-os/tools/profiles/debug.json
+$ mbed compile -t GCC_ARM -m K64F --profile debug
 ```
 
-<span class="tips">**Tip:** If you have files that you want to compile only in debug mode, put them in a directory called `TARGET_DEBUG` at any level of your tree (then use `--profile` as explained above).
-</span>
 
 #### Automate toolchain and target selection
 

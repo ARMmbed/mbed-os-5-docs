@@ -21,7 +21,7 @@ $ mbed compile -o debug-info
 **Arm Mbed 2.0**
 
 ```
-$ mbed compile --profile .temp/tools/profiles/debug.json
+$ mbed compile --profile debug
 ```
 
 ### Exporting with debug symbols
@@ -29,11 +29,11 @@ $ mbed compile --profile .temp/tools/profiles/debug.json
 You can also enable debug symbols when [exporting your project](exporting.html) by using:
 
 ```
-$ mbed export -i uvision -m K64F --profile mbed-os/tools/profiles/debug.json
+$ mbed export -i uvision -m K64F --profile debug
 ```
 
 Make release builds by using:
 
 ```
-$ mbed export -i uvision -m K64F --profile mbed-os/tools/profiles/default.json
+$ mbed export -i uvision -m K64F --profile release
 ```
