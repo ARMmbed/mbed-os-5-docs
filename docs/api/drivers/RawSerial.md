@@ -6,17 +6,17 @@ The RawSerial class provides UART functionality without the use of Stream's prin
 
 Serial channels have the following configurable parameters in the constructor:
 
-  - _Tx and Rx Pin_ - The physical serial transmit and receive pins. You can specify a Tx or Tx pin as Not Connected (NC) to get Simplex communication, or specify both to get full duplex.
-  - _Baud Rate_ - This setting is an optional constructor parameter. Standard baud rates range from a few hundred bits per second to megabits per second. The default setting for a serial connection on the Mbed microcontroller is 9600 baud. This setting may also be configured at run time.
+  - _TX and RX Pin_ - The physical serial transmit and receive pins. You can specify a TX or RX pin as Not Connected (NC) to get Simplex communication, or specify both to get Full Duplex communication.
+  - _Baud Rate_ - This setting is an optional constructor parameter. Standard baud rates range from a few hundred bits per second to megabits per second. The default baud rate for a serial connection on the microcontroller is 9600 baud. This setting may also be configured at run time.
 
-The following parameters can be configured at runtime in the RawSerial object. You can view more information about the configurable settings and functions in the class reference.
+The following parameters can be configured at run time in the RawSerial object. You can view more information about the configurable settings and functions in the class reference.
 
-  - _Baud Rate_ - Standard baud rates range from a few hundred bits per second to megabits per second. The default setting for a serial connection on the Mbed microcontroller is 9600 baud.
-  - _Data length_ - Transferred data can be either 7 or 8 bits long. The default setting for a serial connection on the Mbed microcontroller is 8 bits.
-  - _Parity_ - You can add an optional parity bit. The object automatically sets the parity bit to make the number of 1s in the data either odd or even. Parity settings are *Odd*, *Even* or *None*. The default setting for a serial connection on the Arm Mbed microcontroller is None.
-  - _Stop Bits_ - After the transmission of data and parity bits, the RawSerial object inserts one or two stop bits to "frame" the data. The default setting for a serial connection on the Mbed microcontroller is one stop bit.
+  - _Baud Rate_ - Standard baud rates range from a few hundred bits per second to megabits per second. The default setting for a serial connection on the microcontroller is 9600 baud.
+  - _Data length_ - Transferred data can be either 7 or 8 bits long. The default setting for a serial connection on the microcontroller is 8 bits.
+  - _Parity_ - You can add an optional parity bit. The RawSerial object automatically sets the parity bit to make the number of 1s in the data either odd or even. Parity settings are *Odd*, *Even* or *None*. The default setting for a serial connection on the microcontroller is None.
+  - _Stop Bits_ - After the transmission of data and parity bits, the RawSerial object inserts one or two stop bits to "frame" the data. The default setting for a serial connection on the microcontroller is one stop bit.
 
-_9600-8-N-1_, a  common notation for serial port settings, describes the default settings for the Mbed microcontroller.
+The default settings for the microcontroller are described as _9600-8-N-1_, a common notation for serial port settings.
 
 ### RawSerial class reference
 
