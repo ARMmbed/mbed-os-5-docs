@@ -24,9 +24,9 @@ The order of handler execution is:
 This example showcases functionality and proper integration with the [Greentea testing automation framework](greentea-testing-applications.html), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
 ```cpp
-#include "mbed-drivers/test_env.h"
-#include "utest/utest.h"
-#include "unity/unity.h"
+#include "greentea-client/test_env.h"
+#include "unity.h"
+#include "utest.h"
 
 using namespace utest::v1;
 
@@ -35,9 +35,9 @@ void test_simple() {
     printf("Simple test called\n");
 }
 
-status_t test_repeats_setup(const Case *const source, const size_t index_of_case) {
+utest::v1::status_t test_repeats_setup(const Case *const source, const size_t index_of_case) {
     // Call the default handler for proper reporting
-    status_t status = greentea_case_setup_handler(source, index_of_case);
+    utest::v1::status_t status = greentea_case_setup_handler(source, index_of_case);
     printf("Setting up for '%s'\n", source->get_description());
     return status;
 }
@@ -54,87 +54,67 @@ void test_callback_validate() {
     // Validate the callback
     Harness::validate_callback();
 }
-control_t test_asynchronous() {
-    TEST_ASSERT_TRUE_MESSAGE(true, "(true == false) o_O");
-    // Set up a callback in the future. This may also be an interrupt
-    minar::Scheduler::postCallback(test_callback_validate).delay(minar::milliseconds(100));
-    // Set a 200 ms timeout starting from now
-    return CaseTimeout(200);
-}
 
-control_t test_asynchronous_timeout(const size_t call_count) {
-    TEST_ASSERT_TRUE_MESSAGE(true, "(true == false) o_O");
-    // Set a 200 ms timeout starting from now,
-    // but automatically repeat only this handler on timeout
-    if (call_count >= 5) {
-        // but after the 5th call, the callback finally gets validated
-        minar::Scheduler::postCallback(test_callback_validate).delay(minar::milliseconds(100));
-    }
-    return CaseRepeatHandlerOnTimeout(200);
-}
+// Specify all your test cases here
+Case cases[] = {
+    Case("Simple Test", test_simple),
+    Case("Repeating Test", test_repeats_setup, test_repeats)
+};
 
 // Custom setup handler required for proper Greentea support
-status_t greentea_setup(const size_t number_of_cases) {
+utest::v1::status_t greentea_setup(const size_t number_of_cases) {
     GREENTEA_SETUP(20, "default_auto");
     // Call the default reporting function
     return greentea_test_setup_handler(number_of_cases);
 }
 
-// Specify all your test cases here
-Case cases[] = {
-    Case("Simple Test", test_simple),
-    Case("Repeating Test", test_repeats_setup, test_repeats),
-    Case("Asynchronous Test (200ms timeout)", test_asynchronous),
-    Case("Asynchronous Timeout Repeat", test_asynchronous_timeout)
-};
-
 // Declare your test specification with a custom setup handler
 Specification specification(greentea_setup, cases);
 
-void app_start(int, char**)
+int main()
 {   // Run the test specification
     Harness::run(specification);
 }
+
 ```
 
 Running this test will output the following:
 
 ```
-{{timeout;20}}
-{{host_test_name;default_auto}}
-{{description;utest greentea example}}
-{{test_id;MBED_OS}}
-{{start}}
-> Running 4 test cases...
+{{__version;1.3.0}}
+{{__timeout;20}}
+{{__host_test_name;default_auto}}
+{{__testcase_count;2}}
+>>> Running 2 test cases...
+{{__testcase_name;Simple Test}}
+{{__testcase_name;Repeating Test}}
 
-> Running case #1: 'Simple Test'...
+>>> Running case #1: 'Simple Test'...
+{{__testcase_start;Simple Test}}
 Simple test called
-> 'Simple Test': 1 passed, 0 failed
+{{__testcase_finish;Simple Test;1;0}}
+>>> 'Simple Test': 1 passed, 0 failed
 
-> Running case #2: 'Repeating Test'...
+>>> Running case #2: 'Repeating Test'...
+{{__testcase_start;Repeating Test}}
 Setting up for 'Repeating Test'
 Called for the 1. time
-> 'Repeating Test': 1 passed, 0 failed
+{{__testcase_finish;Repeating Test;1;0}}
+>>> 'Repeating Test': 1 passed, 0 failed
 
-> Running case #2: 'Repeating Test'...
+>>> Running case #2: 'Repeating Test'...
+{{__testcase_start;Repeating Test}}
 Setting up for 'Repeating Test'
 Called for the 2. time
-> 'Repeating Test': 2 passed, 0 failed
+{{__testcase_finish;Repeating Test;2;0}}
+>>> 'Repeating Test': 2 passed, 0 failed
 
-> Running case #3: 'Asynchronous Test (200ms timeout)'...
-> 'Asynchronous Test (200ms timeout)': 1 passed, 0 failed
-
-> Running case #4: 'Asynchronous Timeout Repeat'...
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> failure with reason 'Ignored: Timed Out'
-> 'Asynchronous Timeout Repeat': 1 passed, 0 failed
-
-> Test cases: 4 passed, 0 failed
-{{success}}
-{{end}}
+>>> Test cases: 2 passed, 0 failed
+{{__testcase_summary;2;0}}
+{{max_heap_usage;0}}
+{{reserved_heap;0}}
+{{end;success}}
+{{__exit;0}}
 ```
 
 ### Handlers
