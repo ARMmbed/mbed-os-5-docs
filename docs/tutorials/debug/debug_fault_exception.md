@@ -15,8 +15,9 @@ Please look at the **Technical Reference Manual** and **Arm Architecture Referen
 
 For example, Cortex-M0/M0+ processors (or any ARMv6M processors) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. For ARMv7M processors, MemManage, BusFault and UsageFault exceptions trigger only if they are enabled in System Handler Control and State Register (**SHCSR**). 
 
-Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates. Note that the system also invokes Mbed-OS error handler when an exception happens, and prints out the error info as well.
-See [Error](https://os.mbed.com/docs/latest/apis/error-handling.html) documentation for more info on error info. 
+Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates. Note that the system also invokes the Mbed OS error handler when an exception happens and prints out the error information, as well.
+
+Please see the [Error API reference](https://os.mbed.com/docs/latest/apis/error-handling.html) for more about error information. 
 
 ```
 ++ MbedOS Fault Handler ++
