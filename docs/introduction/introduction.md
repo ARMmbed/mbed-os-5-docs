@@ -49,7 +49,7 @@ Our approach to security is to leverage state-of-the-art industry standard proto
 
 Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there. The Online Compiler also offers a quick integration for development flows.
 
-For more information, see our [technology page](/docs/v5.10/reference/firmware-update-in-mbed-os.html), the [Mbed CLI update flow](/docs/v5.10/tools/cli-update.html) or the [quick start through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update).
+For more information, see our [technology page](/docs/v5.10/reference/firmware-update-in-mbed-os.html), the [Mbed CLI update flow](/docs/v5.10/tools/cli-update.html) or the [quick start through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update) (Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion)).
 
 ### Hardware
 
