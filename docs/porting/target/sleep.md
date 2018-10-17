@@ -30,6 +30,10 @@ You can find the API and specification for the sleep API in the following header
 
 To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
 
+### Targets that disable `systick` in sleep mode
+
+If your target disables `systick` when entering sleep mode, the RTOS scheduler does not function correctly in the default configuration. You can fix this by either adding `SYSTICK_CLK_OFF_DURING_SLEEP` to `device_has`, which disables sleep when the RTOS is present, or by implementing tickless and adding `MBED_TICKLESS`.
+
 ### Testing
 
 The Mbed OS HAL provides a set of conformance tests for Sleep. You can use these tests to validate the correctness of your implementation. To run the Sleep HAL tests, use the following command:
