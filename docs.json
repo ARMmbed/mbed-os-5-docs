@@ -697,6 +697,10 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Storage.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/bootloader.md"
                     }
                 ]
             },
@@ -935,11 +939,8 @@
                 ]
             },
             {
-                "title": "Configuring Tools",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/bootloader.md"
-                    },
+                "title": "Configuring Targets",
+                "sources": [
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/mbed_targets.md"
