@@ -16,20 +16,14 @@ License should comply with allowed [licenses described](license.html).
 
 #### Access to the ARMmbed organisation
 
-If you require direct access to the ARMmbed organisation for one of the following reasons:
+You might require direct access to the ARMmbed organization for one of the following reasons:
 
-* You need access to private repositories
-* You need push access to a repository
-* You are colloborating with Arm staff
+- You need access to private repositories.
+- You need push access to a repository.
+- You are colloborating with Arm staff.
 
-then you can request to become an organisation member. Prior to this you must ensure your GitHub profile
-meets the following requirements:
+If so, you can request to become an organization member. Prior to this, you must ensure your GitHub profile meets the following requirements:
 
-* All users must have 2 Factor Authentication enabled
-
-* Arm staff must have their Name, Company (Arm), Location and Arm email address publicly visible
-
-* All others should have their Name and Company visible. Location would be beneficial as it enables 
-  us to know your region and thus interpret response times accordingly.
-
-
+- All users must have 2 Factor Authentication enabled.
+- Arm staff must have their Name, Company (Arm), Location and Arm email address publicly visible.
+- All others should have their Name and Company visible. Location is beneficial because it enables us to know your region and interpret response times accordingly.
