@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse_keyboard.png)<span>USBMouseKeyboard class hierarchy</span></span>
 
-You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at the same time over the USB port. You can send both presses and mouse movements with this class.
+You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at the same time over the USB port. You can send both key presses and mouse movements with this class.
 
 ### USBMouseKeyboard class reference
 
@@ -11,6 +11,8 @@ You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at 
 ### USBMouseKeyboard example
 
 ```C++
+//Dual mouse/keyboard device example
+//Example will "type" ASCII characters to the screen, move the mouse around in a circle, and assert various media and modifier keys
 #include "mbed.h"
 #include "USBMouseKeyboard.h"
 
@@ -19,20 +21,39 @@ You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at 
 //LED3: SCROLL_LOCK
 BusOut leds(LED1, LED2, LED3);
 
-//USBMouseKeyboard
-USBMouseKeyboard key_mouse;
+//USBMouseKeyboard object
+USBMouseKeyboard key_mouse; 
 
 int main(void) {
+    int16_t x = 0;
+    int16_t y = 0;
+    int32_t radius = 70;
+    int32_t angle = 0;
     while (1) {
+        //moves the coordinates of the mouse around in a circle
+        x = cos((double)angle*3.14/50.0)*radius;
+        y = sin((double)angle*3.14/50.0)*radius;
+        //example of a media key press
         key_mouse.media_control(KEY_VOLUME_DOWN);
+        //example of simple keyboard output
         key_mouse.printf("Hello World from Mbed\r\n");
-        key_mouse.key_code('s', KEY_CTRL);
-        key_mouse.move(20, 0);
-        key_mouse.key_code(KEY_SCROLL_LOCK);
-        wait(1);
+        //function to move the mouse to coordinates "x, y"
+        key_mouse.move(x, y);
+        //example of modifier key press
+        key_mouse.key_code(KEY_CAPS_LOCK);
         leds = key_mouse.lock_status();
+        wait(0.05);
+        key_mouse.media_control(KEY_VOLUME_UP);
+        key_mouse.key_code(KEY_NUM_LOCK);
+        leds = key_mouse.lock_status();
+        wait(0.05);
+        angle += 10;
+        key_mouse.key_code(KEY_SCROLL_LOCK);
+        leds = key_mouse.lock_status();
+        wait(0.05);
     }
 }
+
 ```
 
 ### Related content
