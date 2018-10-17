@@ -60,7 +60,7 @@ Here is an example of an HTTP client program. The program brings up an ESP8266 a
 
 The ESP8266Interface uses AT commands over serial interface to connect to an external Wi-Fi device. The OdinWiFiInterface provides an Ethernet-like driver to the Mbed OS network stack. The network stack uses the driver to connect to Wi-Fi:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-wifi/file/b620d7cac9a2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-wifi/file/122bb3ae6de5/main.cpp)
 
 ### Related content
 
