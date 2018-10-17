@@ -27,9 +27,16 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
 
 ##### Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. For more information, see the [Online Compiler page](developing-mbed-online-compiler.html).
+The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. It switches the backing toolchain based on the architecture version:
 
-For reference, the ARMC6 version the Online Compiler uses is 6.10.
+| Architecture version | Compiler |
+|----                  |----           |
+| Arm v6M       | Arm Compiler 5.06 |
+| Arm v7M       | Arm Compiler 5.06 |
+| Arm v7A       | Arm Compiler 5.06 |
+| Arm v8M       | Arm Compiler 6.10.1 |
+
+For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
 
 ##### Third party development tools
 
