@@ -79,4 +79,4 @@ int main() {
 
 This example loads raw audio data to your board's flash. That data then plays on the host PC over USB. We have tested this example with the NXP FRDM-K64F, which has 1 MB of flash memory. If you are using a board that has less than 1 MB of flash memory, delete data from the end of the `data` array, and set `NUM_ELEMENTS` accordingly until the program size is small enough to flash without exceeding storage. Follow the link below, and click Ctrl + s to save the raw code view for `main.cpp`.   
 
-
+##### [main.cpp](https://raw.githubusercontent.com/mrcoulter45/mbed-os-5-docs/USBAudio.md_additions/docs/reference/api/usb/Audio_Play_Sound_Data.cpp)
