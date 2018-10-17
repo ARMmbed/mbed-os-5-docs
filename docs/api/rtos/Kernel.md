@@ -34,6 +34,6 @@ The function `attach_idle_hook()` can be used to attach a function to be called 
 
 ### `attach_thread_terminate_hook()` example
 
-The function `attach_thread_terminate_hook()` can be used to attach a function to be called when a thread is killed
+The function `attach_thread_terminate_hook()` can be used to attach a function to be called when a thread terminates.
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kernel-hooks)](https://github.com/ARMmbed/mbed-os-example-kernel-hooks/blob/master/main.cpp)
