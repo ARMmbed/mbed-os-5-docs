@@ -31,9 +31,9 @@ The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone w
 
 | Architecture version | Compiler |
 |----                  |----           |
-| Arm v6M       | Arm Compiler 5.06 |
-| Arm v7M       | Arm Compiler 5.06 |
-| Arm v7A       | Arm Compiler 5.06 |
+| Arm v6M       | Arm Compiler 5.06 update 3 |
+| Arm v7M       | Arm Compiler 5.06 update 3 |
+| Arm v7A       | Arm Compiler 5.06 update 3 |
 | Arm v8M       | Arm Compiler 6.10.1 |
 
 For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
