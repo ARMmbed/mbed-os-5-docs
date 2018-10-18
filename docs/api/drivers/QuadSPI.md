@@ -1,6 +1,6 @@
 ## QuadSPI (QSPI)
 
-#### QSPI class hierarchy
+### QSPI class hierarchy
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)</span><span>QSPI class hierarchy</span>
 
@@ -13,7 +13,7 @@ The default configuration for the QSPI interface is 1 MHz, Single-SPI, Mode 0.
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/quadspi.png)</span>
 
 The above diagram shows an example hardware configuration of a Flash memory connected over a QSPI interface.
-  
+
 For more information, please review the related content.
 
 ### QuadSPI class reference

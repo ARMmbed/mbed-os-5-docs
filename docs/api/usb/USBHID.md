@@ -9,7 +9,9 @@ You can use the USBHID class to turn an Mbed board into an HID (Human Interface 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.html)
 
 ### USBHID example   
-##### main.cpp   
+
+#### main.cpp   
+
 ```C++
 #include "mbed.h"
 #include "USBHID.h"
@@ -48,20 +50,23 @@ int main(void) {
     }
 }
 ```   
-##### USBHID.py   
+
+#### USBHID.py   
+
 To use this script, first flash the Mbed board with the code above. Connect the target's USB to the host computer. Then run this script. The script will send 8 bytes of data (1 2 3 4 5 6 7 8) to the Mbed board and will read and print the data sent to the host computer by the Mbed board.   
+
 ```Py
 from pywinusb import hid
 
-# Whenever the host computer receives data from the 
+# Whenever the host computer receives data from the
 # Mbed board, the received data is printed
 def on_data(data):
     print("Got message %s" % data)
 
 '''
-Gets all HIDs currently connected to host computer, 
+Gets all HIDs currently connected to host computer,
 and sets the first device with string "mbed" in its
-vendor name equal to variable mbed. This variable 
+vendor name equal to variable mbed. This variable
 will be used to send data to the Mbed board.
 '''
 all_devices = hid.find_all_hid_devices()
