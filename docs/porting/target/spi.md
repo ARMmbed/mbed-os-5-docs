@@ -37,11 +37,11 @@ This highly configurable interface has a wide range of elements you can adjust:
 - `spi_free()` disables the peripheral clock.
 - `spi_format()` sets :
   - the number of bits per symbol
-  - the mode :
-    0. Clock idle state is *low*, data are sampled when the clock becomes *active* (polarity = 0, phase = 0)
-    1. Clock idle state is *low*, data are sampled when the clock becomes *inactive* (polarity = 0, phase = 1)
-    2. Clock idle state is *high*, data are sampled when the clock becomes *active* (polarity = 1, phase = 0)
-    3. Clock idle state is *high*, data are sampled when the clock becomes *inactive* (polarity = 1, phase = 1)
+  - the mode :  
+    .0 Clock idle state is *low*, data are sampled when the clock becomes *active* (polarity = 0, phase = 0)  
+    .1 Clock idle state is *low*, data are sampled when the clock becomes *inactive* (polarity = 0, phase = 1)  
+    .2 Clock idle state is *high*, data are sampled when the clock becomes *active* (polarity = 1, phase = 0)  
+    .3 Clock idle state is *high*, data are sampled when the clock becomes *inactive* (polarity = 1, phase = 1)
   - the bit ordering (lsb/msb first).
 - `spi_format()` updates the configuration of the peripheral except the baud rate generator.
 - `spi_frequency()` sets the frequency to use during the transfer.
