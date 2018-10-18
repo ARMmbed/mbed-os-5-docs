@@ -1,6 +1,6 @@
 ## Ticker
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_ticker.png)<span>Ticker class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_ticker.png)<span>Ticker class hierarchy</span></span>
 
 Use the Ticker interface to set up a recurring interrupt; it calls a function repeatedly and at a specified rate.
 

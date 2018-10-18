@@ -1,6 +1,6 @@
 ## Serial
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
 
 The [Serial](/docs/development/introduction/glossary.html) interface provides UART functionality. The serial link has two unidirectional channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
 

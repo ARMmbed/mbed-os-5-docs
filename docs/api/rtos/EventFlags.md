@@ -1,6 +1,6 @@
 ## EventFlags
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_event_flags.png)<span>EventFlags class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_event_flags.png)<span>EventFlags class hierarchy</span></span>
 
 The EventFlags class provides a mechanism for setting and waiting for specific conditions. It provides a generic way of notifying other threads about conditions or events. You can think of each instance of the EventFlags class as an event channel. There are 31 different flags available for each event.
 

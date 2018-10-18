@@ -1,6 +1,6 @@
 ## Socket
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
 
 Socket is the abstract base class for all of the protocol-specific socket types. It defines all of the functions that comprise the Mbed OS Socket API. You cannot directly create a Socket object because it is abstract, but you can upcast any protocol-specific object to an abstract Socket object.
 

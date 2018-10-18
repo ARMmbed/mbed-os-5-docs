@@ -1,6 +1,6 @@
 ## SPISlave
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i_slave.png)<span>SPISlave class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i_slave.png)<span>SPISlave class hierarchy</span></span>
 
 Use the SPISlave class to communicate with a SPI master device.
 
