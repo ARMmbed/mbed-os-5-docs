@@ -51,7 +51,7 @@ int main() {
 
 This example loops input audio to the Mbed board back to the host PC, so that you may record the audio or listen to it through headphones or speakers.
 
-```C++
+```C++ TODO
 // Audio loopback example use:
 // 1. Select "Mbed Audio" as your PC's default speaker and microphone devices.
 // 2. Play some sound (YouTube, audio file, etc.) on your PC with Mbed board connected to your PC via the target's USB.

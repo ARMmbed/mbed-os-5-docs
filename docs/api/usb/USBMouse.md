@@ -78,7 +78,7 @@ int main(void)
 
 This example uses a Grove - Thumb Joystick to act as a mouse. Use the joystick to move the mouse around the screen and click the joystick down to do a mouse left click.
 
-```C++
+```C++ TODO
 //Grove - Thumb Joystick mouse
 //Constructor is blocking, so main will not run if the target's USB is not connected
 #include "mbed.h"

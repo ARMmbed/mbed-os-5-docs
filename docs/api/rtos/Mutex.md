@@ -6,7 +6,7 @@ A Mutex is used to synchronize the execution of threads, for example to protect 
 
 The `Mutex` methods cannot be called from interrupt service routines (ISR). In the current version of Mbed OS, if you attempt to use a mutex from within an ISR, it will treat that as a fatal system error, and you will see an error like this:
 
-```C
+```
 ++ MbedOS Error Info ++
 Error Status: 0x80020115 Code: 277 Module: 2
 Error Message: Mutex lock failed
