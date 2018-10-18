@@ -1,3 +1,4 @@
+``` cpp
 #include "mbed.h"
 #include "USBAudio.h"
 
@@ -9386,3 +9387,4 @@ int main() {
         audio.write((uint8_t*)data, NUM_ELEMENTS * 2);
     }
 }
+```
