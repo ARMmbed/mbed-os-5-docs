@@ -4,7 +4,7 @@ Use the Timer interface to create, start, stop and read a timer for measuring sm
 
 You can independently create, start and stop any number of Timer objects.
 
-<span class="notes">**Note:** Timers are based on 32-bit int microsecond counters, so they can only time up to a maximum of 2^31-1 microseconds (30 minutes). They are designed for times between microseconds and seconds. For longer times, use the `time()` real time clock. </span>
+<span class="notes">**Note:** Timers are based on 32-bit int microsecond counters, so they can only time up to a maximum of 2^31-1 microseconds (30 minutes). They are designed for times between microseconds and seconds. For longer times, use the `time()` real time clock.</span>
 
 ### Timer class reference
 
