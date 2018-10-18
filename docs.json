@@ -360,7 +360,7 @@
                 ]
             },
             {
-                "title": "Network Interfaces",
+                "title": "Network interfaces",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/networkinterfaces/networkinterface.md"
@@ -939,7 +939,7 @@
                 ]
             },
             {
-                "title": "Configuring Targets",
+                "title": "Configuring targets",
                 "sources": [
                     {
                         "type": "markdown",
