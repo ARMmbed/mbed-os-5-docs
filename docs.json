@@ -665,6 +665,18 @@
                 ]
             },
             {
+                "title": "Project structure",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
+                            }
+                        ]
+            },
+            {
                 "title": "Configuration",
                 "intro": {
                     "type": "markdown",
@@ -939,15 +951,6 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/fastmodels/fastmodels.md"
-                    }
-                ]
-            },
-            {
-                "title": "Configuring targets",
-                "sources": [
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
                     }
                 ]
             }
