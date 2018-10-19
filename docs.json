@@ -700,7 +700,7 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/bootloader.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/bootloader.md"
                     }
                 ]
             },
@@ -943,11 +943,11 @@
                 "sources": [
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/mbed_targets.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/mbed_targets.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/build_rules.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
                     }
                 ]
             }
