@@ -64,7 +64,7 @@
 <td><a href="digitalout.html">DigitalOut</a></td>
 <td><a href="pwmout.html">PwmOut</a></td>
 <td><a href="flash-iap.html">Flash IAP</a></td>
-<td><a href="debug.html">CAN</a></td>
+<td><a href="can.html">CAN</a></td>
 </tr>
 <tr>
 <td><a href="digitalinout.html">DigitalInOut</a></td>
