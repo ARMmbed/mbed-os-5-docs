@@ -10,7 +10,7 @@ You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at 
 
 ### USBMouseKeyboard example
 
-```C++
+```C++ TODO
 //Dual mouse/keyboard device example
 //Example will "type" ASCII characters to the screen, move the mouse around in a circle, and assert various media and modifier keys
 #include "mbed.h"

@@ -30,12 +30,12 @@ For example,
         "inherits": ["BaseTargetForAll"],
         "device_has": ["ETHERNET", "SPI"],
         "device_name": "NewDevice"
-    },
+    }
 ```
 
 In addition you need to map onboard modem pin aliases to your target board pin names and polarity in `targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h`. If any of the pins are not connected, mark it 'NC'. An example UART configuration:
 
-```C
+```C TODO
 typedef enum {
 
 	MDMTXD = P0_15, // Transmit Data

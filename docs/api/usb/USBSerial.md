@@ -10,7 +10,7 @@ You can use the USBSerial interface to emulate a serial port over USB. You can u
 
 ### USBSerial example
 
-```C++
+```C++ TODO
 #include "mbed.h"
 #include "USBSerial.h"
 

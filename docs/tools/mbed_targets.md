@@ -145,7 +145,7 @@ The list of _configs_ provide a way to modify the values of macros in child targ
 "config": {
     "clock_src": {
         "help": "Clock source to use, can be XTAL or RC",
-        "value": "XTAL",
+        "value": "XTAL"
     },
     "clock_freq": {
         "help": "Clock frequency in Mhz",

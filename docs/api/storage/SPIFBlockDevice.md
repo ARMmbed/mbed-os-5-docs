@@ -14,7 +14,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ### SPIFBlockDevice example
 
-``` cpp
+``` cpp TODO
 // Here's an example using the MX25R SPI flash device on the K82F
 #include "mbed.h"
 #include "SPIFBlockDevice.h"

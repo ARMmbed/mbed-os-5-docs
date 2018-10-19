@@ -37,7 +37,7 @@ DeviceKey is a singleton class, meaning that the system can have only a single i
 
 To instantiate DeviceKey, you need to call its `get_instance` member function as following:
 
-```c++
+```c++ TODO
     DeviceKey &deviceKey = DeviceKey::get_instance();
 ```
 

@@ -11,7 +11,7 @@ If you need keyboard or keyboard and mouse functionality, please see the [USBKey
 
 ### USBMouse example
 
-```C++
+```C++ TODO
 #include "mbed.h"
 #include "USBMouse.h"
 
@@ -39,7 +39,7 @@ int main() {
 
 You can choose either a relative mouse or an absolute mouse. With a relative mouse, the USBMouse move function will move the mouse x, y pixels away from its previous position on the screen. For an absolute mouse, the USBMouse move function will move the mouse to coordinates x, y on the screen. By default, a USBMouse is a relative mouse. For example, you can use an absolute mouse to draw a circle:
 
-```C++
+```C++ TODO
 #include "mbed.h"
 #include "USBMouse.h"
 
@@ -78,7 +78,7 @@ int main(void)
 
 This example uses a Grove - Thumb Joystick to act as a mouse. Use the joystick to move the mouse around the screen and click the joystick down to do a mouse left click.
 
-```C++
+```C++ TODO
 //Grove - Thumb Joystick mouse
 //Constructor is blocking, so main will not run if the target's USB is not connected
 #include "mbed.h"

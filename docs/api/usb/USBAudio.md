@@ -12,7 +12,7 @@ You can use the USBAudio interface to send and receive audio data over USB. Once
 
 This example outputs an audio square wave over USB.
 
-```C++
+```C++ TODO
 // This example simply generates a square wave. 
 // Use a program like Audacity to record and hear the square wave, or route microphone input to output device.
 #include "mbed.h"
@@ -51,7 +51,7 @@ int main() {
 
 This example loops input audio to the Mbed board back to the host PC, so that you may record the audio or listen to it through headphones or speakers.
 
-```C++
+```C++ TODO
 // Audio loopback example use:
 // 1. Select "Mbed Audio" as your PC's default speaker and microphone devices.
 // 2. Play some sound (YouTube, audio file, etc.) on your PC with Mbed board connected to your PC via the target's USB.

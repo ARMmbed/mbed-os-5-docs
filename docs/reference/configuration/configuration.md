@@ -61,7 +61,7 @@ Name: configuration-store.storage_disable
 
 When compiling or exporting, the configuration system generates C preprocessor macro definitions of the configuration parameters. The configuration system writes these definitions in a file named `mbed_config.h` located in the build directory. When compiling the same example as the prior section for target `K64F`, the `mbed_config.h` file includes this snippet (note that the order of the definitions may be different):
 
-```C
+```C NOCI
 // Automatically generated configuration file.
 // DO NOT EDIT, content will be overwritten.
 

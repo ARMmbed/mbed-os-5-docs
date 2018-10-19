@@ -142,7 +142,7 @@ The below link provides the documentation for all the APIs that Mbed OS provides
 
 The code below uses error function to print a fatal error indicating an out-of-memory condition.
 
-```C
+```CPP TODO
 void *operator new(std::size_t count) {
     void *buffer = malloc(count);
     if (NULL == buffer) {
@@ -156,7 +156,7 @@ void *operator new(std::size_t count) {
 
 The code below uses an `MBED_ERROR` macro to print a fatal error indicating an invalid argument with the module name specified as `MODULE_APPLICATION`:
 
-```C
+```CPP
 void receive_data(unsigned char *buffer) {
     if (NULL == buffer) {
         MBED_ERROR( MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null" );
@@ -170,7 +170,7 @@ void receive_data(unsigned char *buffer) {
 
 The code below uses an `MBED_WARNING` macro to report a invalid configuration attempt with the module name specified as `MBED_MODULE_PLATFORM`:
 
-```C
+```CPP
 mbed_error_status_t configure(int config_value) {
     if (config_value > 10) {
         //Log the fact that a invalid configuration attempt was made and return with error code
@@ -188,7 +188,7 @@ mbed_error_status_t configure(int config_value) {
 
 The `MBED_ERROR1` macro is similar to `MBED_ERROR` macro, but it can take an additional context-specific argument. The error handling system also records this value as part of the context capture. The code below uses the `MBED_ERROR1` macro to print a fatal error indicating an out-of-memory condition with a context specific value as the last argument to `MBED_ERROR1` macro:
 
-```C
+```CPP
 void receive_data(unsigned char *buffer) {
     if (NULL == buffer) {
         MBED_ERROR1(MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null", 1024/* Size of allocation which failed */ );
@@ -202,7 +202,7 @@ void receive_data(unsigned char *buffer) {
 
 The `MBED_WARNING1` macro is similar to the `MBED_WARNING` macro, but it can take an additional context-specific argument. The error handling system also records this value as part of the context capture. The code below uses the `MBED_WARNING1` macro to report a warning with a context specific value as the last argument to `MBED_WARNING1` macro:
 
-```C
+```CPP
 mbed_error_status_t configure(int config_value) {
     if (config_value > 10) {
         //Log the fact that a invalid configuration attempt was made and return with error code
@@ -220,7 +220,7 @@ mbed_error_status_t configure(int config_value) {
 
 The code below uses an `MBED_WARNING` macro to report a invalid configuration attempt without module name:
 
-```C
+```CPP
 mbed_error_status_t configure(int config_value) {
     if (config_value > 10) {
         //Log the fact that a invalid configuration attempt was made and return with error code
@@ -238,10 +238,10 @@ mbed_error_status_t configure(int config_value) {
 
 The code below uses the `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls:
 
-```C
+```CPP
 void get_first_error_info() {
     mbed_error_status_t first_error_status = mbed_get_first_error();
-    printf("\nFirst error code = %d", MBED_GET_ERROR_CODE(first_error_status))
+    printf("\nFirst error code = %d", MBED_GET_ERROR_CODE(first_error_status));
 
     //Now retrieve more information associated with this error
     mbed_error_ctx first_error_ctx;
@@ -253,10 +253,10 @@ void get_first_error_info() {
 
 Use the functions `mbed_get_last_error()` and `mbed_get_last_error_info()` to retrieve the last error or last warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls, except that they retrieve the last error or last warning in this case:
 
-```C
+```CPP
 void get_last_error_info() {
     mbed_error_status_t last_error_status = mbed_get_last_error();
-    printf("\nLast error code = %d", MBED_GET_ERROR_CODE(last_error_status))
+    printf("\nLast error code = %d", MBED_GET_ERROR_CODE(last_error_status));
 
     //Now retrieve more information associated with this error
     mbed_error_ctx last_error_ctx;
@@ -268,7 +268,7 @@ void get_last_error_info() {
 
 You can use the function `mbed_get_error_hist_info()` to retrieve the error or warning information from the [error history](#error-history):
 
-```C
+```CPP TODO
 void get_error_info_from_hist() {
     //Retrieve error information from error history
     mbed_error_ctx hist_error_ctx;
@@ -289,7 +289,7 @@ void get_error_info_from_hist() {
 
 You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the [error history](#error-history). You can use this if you have already backed up all the currently logged errors (for example, to a file system or cloud) and want to capture new errors:
 
-```C
+```CPP
 void save_all_errors() {
     //Save the errors first
     save_all_errors();

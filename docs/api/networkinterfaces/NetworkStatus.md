@@ -24,7 +24,7 @@ The callback needs to handle these possible network states:
 
 This API requires an interface to be monitored. For example, Ethernet:
 
-```cpp
+```cpp TODO
 EthernetInterface eth;
 ```
 
@@ -56,7 +56,7 @@ void status_callback(nsapi_event_t status, intptr_t param)
 
 Now, the callback function is registered to the interface.
 
-```cpp
+```cpp TODO
     eth.attach(&status_callback);
 ```
 
@@ -64,7 +64,7 @@ This allows the application to monitor if network interface gets disconnected.
 
 Optionally, the application might want to set the `connect()` method to nonblocking mode and wait until connectivity is fully established.
 
-```cpp
+```cpp TODO
     eth.set_blocking(false);
     eth.connect();              // Return immediately
 ```

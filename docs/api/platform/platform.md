@@ -93,7 +93,7 @@ This API is sufficient for simple applications, but falls apart when there are m
 
 For example, consider applying a low-pass filter to two different ADC modules:
 
-``` c++
+``` c++ TODO
 // Here is a small running-average low-pass filter.
 float low_pass_result;
 void low_pass_step(float data) {
@@ -116,7 +116,7 @@ Without state, callbacks compose poorly. In C, you fix this by adding a "state" 
 
 Here’s the low-pass example using an additional argument for state.
 
-```c++
+```c++ TODO
 class ADC {
    public:
    // Here, the adc_callback_t type is a function that takes in data, as well as a pointer for state
@@ -155,7 +155,7 @@ One of the core features of C++ is the encapsulation of this "state" in classes,
 
 Here’s the low-pass filter example rewritten to use the callback class:
 
-``` c++
+``` c++ TODO
 class ADC {
 public:
     // In this example, the ADC read function calls the user-provided callback

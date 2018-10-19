@@ -131,7 +131,7 @@ The LoRa radio drivers support both RTOS and non-RTOS environments. For RTOS env
 
 The application constructs the `LoRaRadio` object and passes it down to the stack:
 
-```C
+```C TODO
 SX1272_LoRaRadio radio(PIN_NAMES,...);
 LoRaWANInterface lorawan(radio);
 ```
@@ -140,7 +140,7 @@ LoRaWANInterface lorawan(radio);
 
 The stack sets callbacks in `radio_events_t` structure and provides these callbacks to the radio driver:
 
-```C
+```C TODO
 // setting up callbakcs in radio_events_t
 radio_events.tx_done = mbed::callback(this, &LoRaWANStack::tx_interrupt_handler);
 radio_events.rx_done = mbed::callback(this, &LoRaWANStack::rx_interrupt_handler);
@@ -159,7 +159,7 @@ radio.unlock();
 
 The radio driver uses the callbacks it received in the form `radio_events_t` to notify the the upper layers to postprocess an interrupt.
 
-```C
+```C NOCI
 if (signal & GENERATE_TX_DONE) {
 	radio_events->tx_done();
 }
@@ -204,15 +204,14 @@ The implementations of the `LoRaPHY` declare these parameters in a structure whi
 At the moment, it's not possible to change a PHY during run time. You must select a PHY layer before compiling the application using the Mbed configuration system:
 
 ```json
-
 "target_overrides": {
-	 "*": {
-	 	"lora.phy": {
-	 		"help": "LoRa PHY region: EU868, AS923, AU915, 	CN470, CN779, EU433, IN865, KR920, US915, US915_HYBRID",
-	 		"value": "EU868"
-	 		}
-	    }
- }
+    "*": {
+        "lora.phy": {
+            "help": "LoRa PHY region: EU868, AS923, AU915, CN470, CN779, EU433, IN865, KR920, US915, US915_HYBRID",
+            "value": "EU868"
+        }
+    }
+}
 ```
 ##### EventQueue
 
@@ -232,7 +231,7 @@ The Arm Mbed LoRaWAN stack sends a `CONNECTED` event to the application once the
 
 For a detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `send()` API. For example:
 
-```C
+```C NOCI
 /**send an Unconfirmed message*/
 lorawan.send(port, data, length, MSG_UNCONFIRMED_FLAG);
 ```
@@ -255,7 +254,7 @@ For detailed API reference for outgoing messages, please visit the [LoRaWANInter
 
 There are two types of `receive()` methods in the stack. The first is POSIX-like, and you need to tell at what port (instead of a socket ID in Posix format) you wish to receive:
 
-```C
+```C NOCI
 
 /**this means receive any confirmed or unconfirmed message at port my_port*/
 lorawan.receive(my_port, buffer, length, MSG_UNCONFIRMED|MSG_CONFIRMED_FLAG);
