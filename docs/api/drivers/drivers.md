@@ -6,7 +6,7 @@ The Mbed OS driver APIs include analog and digital inputs and outputs on develop
 
 ### Blocking nature
 
-By default, all Mbed OS driver APIs are blocking. In the drivers, blocking APIs block the current thread until the hardware operation completes. Blocking APIs simplify control flow, allow for linearly structured programs and make debugging intuitive. We suggest using blocking APIs as a starting point. You should only consider more complex APIs if the blocking APIs do not satisfy your requirements.
+By default, all Mbed OS driver APIs are blocking. In the drivers, blocking APIs cause the current thread to wait until the hardware operation completes. Blocking APIs simplify control flow, allow for linearly structured programs and make debugging intuitive. We suggest using blocking APIs as a starting point. You should only consider more complex APIs if the blocking APIs do not satisfy your requirements.
 
 Mbed OS is built around an RTOS, and to complement this, the drivers are thread safe. This means that if you use multiple drivers in a blocking manner, as long as the drivers are in separate threads, their operations can still be carried out in parallel. When a driver blocks a thread, the RTOS either switches to any nonblocked threads or sleeps. This means that in most cases, an application using blocking APIs has the same advantages as one using nonblocking APIs.
 
