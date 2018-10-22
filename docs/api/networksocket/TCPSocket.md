@@ -26,7 +26,7 @@ Accepting a connection leaves the original socket in listening mode. You can con
 
 Here is a client example of HTTP transaction over TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-sockets/file/b8986534f233/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/master/main.cpp)
 
 ### Related content
 
