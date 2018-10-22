@@ -35,18 +35,21 @@ Travis configuration is located in [.travis.yml](https://github.com/ARMmbed/mbed
 #### Tests
 
 * **continuous-integration/jenkins/pr-head** Jenkins main pipeline script execution status
-* **jenkins-ci/cloud-client-test** - Test the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example)
-* **jenkins-ci/unittests** - Run [unit tests](/docs/tools/testing/unit_testing.html)
-* **jenkins-ci/greentea-test** - Run [greentea tests](/docs/tools/testing/testing_greentea.html)
-* **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM. Related commands:
+* **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM
  * `mbed test --compile -t <toolchain> -m <target> `
  * `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`
-* **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM
+* **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM. Related commands:
 * **jenkins-ci/build-IAR** - Build Mbed OS and examples with IAR
-* **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM. Related commands:
- * `python tools/build_release.py -p <target> -t <toolchain>`
-* **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM
-* **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR
+* **jenkins-ci/cloud-client-test** - Test the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example)
+* **jenkins-ci/dynamic-memory-usage** - Report dynamic memory usage compared to the master branch
 * **jenkins-ci/exporter** - Export and build exported code. Related commands:
  * `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`
-* **jenkins-ci/dynamic-memory-usage** - Report dynamic memory usage compared to the master branch
+* **jenkins-ci/greentea-test** - Run [greentea tests](/docs/tools/testing/testing_greentea.html)
+* **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM
+ * `python tools/build_release.py -p <target> -t <toolchain>`
+* **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM. Related commands:
+* **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR
+* **jenkins-ci/unittests** - Run [unit tests](/docs/tools/testing/unit_testing.html)
+* **tools-test-linux** - Test that tools works on Linux
+* **tools-test-mac** - Test that tools works on Mac
+* **tools-test-windows** - Test that tools works on Windows
