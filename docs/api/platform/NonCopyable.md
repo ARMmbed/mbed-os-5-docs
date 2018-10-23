@@ -6,7 +6,7 @@ To prevent copy to happen, a common practices has been to declare the copy const
 
 The `NonCopyable` class is here to solves these issue. Simply inherit privately from it and you're done. 
 
-```c++
+```c++ NOCI
 class Resource : NonCopyable<Resource> { /* resource code */ };
 
 Resource r1, r2;
@@ -20,7 +20,7 @@ r1 = r2;
 
 The non copyable properties also transfer to classes that derives from a non copyable class as well as classes that owns a non copyable instance: 
 
-```c++
+```c++ NOCI
 class DerivedResouce : public Resource { /* DerivedResource code */ };
 
 DerivedResouce r1, r2;
