@@ -1,10 +1,10 @@
 ## NonCopyable
 
-By default, C++ objects are copyable. Unfortunately some type of objects like resources or polymorphic types are not meant to be copied as they have unique identities. 
+By default, C++ objects are copyable. However, some types of objects, such as resources or polymorphic types, are not meant to be copied because they have unique identities. 
 
-To prevent copy to happen, a common practices has been to declare the copy constructor and copy assignment operator of non copyable types privates. This pattern has the disadvantage of not being semantically explicit. Therefore it can be hard to find out if a type is copyable or not.
+To prevent copying from happening, a common practice has been to declare the copy constructor and copy assignment operator of noncopyable types as private. This pattern has the disadvantage of not being semantically explicit. Therefore, it can be difficult to find out whether a type is copyable.
 
-The `NonCopyable` class is here to solves these issue. Simply inherit privately from it and you're done. 
+The `NonCopyable` class solves these issue. Use it by inheriting privately from it: 
 
 ```c++ NOCI
 class Resource : NonCopyable<Resource> { /* resource code */ };
@@ -18,7 +18,7 @@ Resource r3 = r1;
 r1 = r2;
 ```
 
-The non copyable properties also transfer to classes that derives from a non copyable class as well as classes that owns a non copyable instance: 
+The noncopyable properties also transfer to classes that derive from a noncopyable class, as well as classes that own a noncopyable instance: 
 
 ```c++ NOCI
 class DerivedResouce : public Resource { /* DerivedResource code */ };
