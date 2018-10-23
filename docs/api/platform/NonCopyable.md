@@ -1,8 +1,51 @@
 ## NonCopyable
 
-The NonCopyable class prevents objects of a class from supporting copy operations. You can easily identify it from its class declaration. It creates a compile-time error if you copy the object. Inheriting from this class results in autogeneration of private copy construction and copy assignment operations, which are not accessible in derived classes.
+By default, C++ objects are copyable. Unfortunately some type of objects like resources or polymorphic types are not meant to be copied as they have unique identities. 
 
-We recommend using the NonCopyable class whenever a class owns a resource (lock/hardware/file) that should not be copied to another class.
+To prevent copy to happen, a common practices has been to declare the copy constructor and copy assignment operator of non copyable types privates. This pattern has the disadvantage of not being semantically explicit. Therefore it can be hard to find out if a type is copyable or not.
+
+The `NonCopyable` class is here to solves these issue. Simply inherit privately from it and you're done. 
+
+```c++
+class Resource : NonCopyable<Resource> { /* resource code */ };
+
+Resource r1, r2;
+
+// Copy construction generates a compile time error.
+Resource r3 = r1;
+
+// Copy assignment generates a compile time error.
+r1 = r2;
+```
+
+The non copyable properties also transfer to classes that derives from a non copyable class as well as classes that owns a non copyable instance: 
+
+```c++
+class DerivedResouce : public Resource { /* DerivedResource code */ };
+
+DerivedResouce r1, r2;
+
+// Copy construction generates a compile time error.
+DerivedResouce r3 = r1;
+
+// Copy assignment generates a compile time error.
+r1 = r2;
+
+class ResourceOwner { 
+    /* code */
+    Resource r;
+};
+
+ResourceOwner o1, o2;
+
+// Copy construction generates a compile time error.
+ResourceOwner o3 = o1;
+
+// Copy assignment generates a compile time error.
+r1 = r2;
+```
+
+We recommend inheriting from the `NonCopyable` class whenever a class is a resource or owns a resource (lock/hardware/file) that should or could not be copied.
 
 ### NonCopyable class reference
 
