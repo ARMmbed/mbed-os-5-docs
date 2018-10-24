@@ -24,7 +24,7 @@ Below is a CRC example to compute 32-bit CRC.
 
 Below is a 32-bit CRC example using `compute_partial` APIs.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/)](https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/file/834c44916a38/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/)](https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/file/d4c48b62da22/main.cpp)
 
 #### Example 3
 
