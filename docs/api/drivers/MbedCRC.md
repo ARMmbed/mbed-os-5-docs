@@ -30,7 +30,7 @@ Below is a 32-bit CRC example using `compute_partial` APIs.
 
 Below is a CRC example for the SD driver.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/)](https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/file/ee110889fa99/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/)](https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/file/97e3e51ca5d5/main.cpp)
 
 ### Related content
 
