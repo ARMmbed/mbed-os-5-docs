@@ -69,7 +69,7 @@ Optionally, the application might want to set the `connect()` method to nonblock
     eth.connect();              // Return immediately
 ```
 
-By default, the `connect()` call blocks until `NSAPI_STATUS_GLOBAL_UP` state is reached. Some applications might require only link-ocal connectivity and therefore do not need to block that long. In those case monitoring the state changes is the preferred behavior.
+By default, the `connect()` call blocks until `NSAPI_STATUS_GLOBAL_UP` state is reached. Some applications might require only link-local connectivity and therefore do not need to block that long. In those case monitoring the state changes is the preferred behavior.
 
 ### Example
 
