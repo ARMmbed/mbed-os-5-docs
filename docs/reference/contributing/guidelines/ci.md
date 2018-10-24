@@ -6,7 +6,7 @@ Continuous integration (CI) means mainly automatic testing for pull requests
 
 In Mbed OS [Travis CI](https://travis-ci.org/ARMmbed/mbed-os) is used as primary automatic testing and checking run environment.
 
-Travis configuration is located in [.travis.yml](https://github.com/ARMmbed/mbed-os/blob/master/.travis.yml) file in Mbed OS root directory. Mbed OS use public travis so test results are publicly available and there are public [documentation available](https://docs.travis-ci.com/).
+Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/mbed-os/blob/master/.travis.yml) file in Mbed OS root directory. Mbed OS uses public travis so test results are publicly available and there are public [documentation available](https://docs.travis-ci.com/).
 
 #### Tests
 
@@ -24,30 +24,30 @@ Travis configuration is located in [.travis.yml](https://github.com/ARMmbed/mbed
 
 ### Jenkins
 
-[Jenkins](https://jenkins.io/) is used to run tests behind firewall. There are multiple reasons to run tests in Jenkins but typically those are related to high amount of concurrent builds or shared secrets.
+[Jenkins](https://jenkins.io/) is used as internal testing and checking environment. Tests which have special requirements for execution enviroment are executed in internal Jenkins. In most cases test logs are published.
 
 #### How it works:
-* Jenkins uses [scripted pipeline syntax](https://jenkins.io/doc/book/pipeline/)
-* There is Jenkinsfile in Mbed OS root folder but that is just trigger for tests. Jenkins scripts are not publicly available at the moment.
-* Jenkins select required tests dynamically based on the code changes. For example. no tests are executed if only markdown (.md) file changes
-* Jenkins run first small amount of tests to provide fast feedback and then more tests
+* Jenkins uses a [scripted pipeline syntax](https://jenkins.io/doc/book/pipeline/)
+* Jenkins scripts are not publicly available. There is Jenkinsfile in Mbed OS root folder but that is just trigger for tests.
+* Jenkins selects required tests dynamically based on the code changes. For example: no tests are executed if only markdown (.md) file are changed
+* Jenkins run first small amount of tests to provide fast feedback and then additional tests
 
 #### Tests
 
 * **continuous-integration/jenkins/pr-head** Jenkins main pipeline script execution status
-* **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM
+* **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM. Related commands:
  * `mbed test --compile -t <toolchain> -m <target> `
  * `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`
-* **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM. Related commands:
+* **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM
 * **jenkins-ci/build-IAR** - Build Mbed OS and examples with IAR
 * **jenkins-ci/cloud-client-test** - Test the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example)
 * **jenkins-ci/dynamic-memory-usage** - Report dynamic memory usage compared to the master branch
 * **jenkins-ci/exporter** - Export and build exported code. Related commands:
  * `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`
 * **jenkins-ci/greentea-test** - Run [greentea tests](/docs/tools/testing/testing_greentea.html)
-* **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM
+* **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM. Related commands:
  * `python tools/build_release.py -p <target> -t <toolchain>`
-* **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM. Related commands:
+* **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM
 * **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR
 * **jenkins-ci/unittests** - Run [unit tests](/docs/tools/testing/unit_testing.html)
 * **tools-test-linux** - Test that tools works on Linux
