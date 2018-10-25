@@ -13,7 +13,7 @@ To be able to receive updates, an application must have:
 - A **connect certificate** to access a Pelion Device Management account. When you run the application on your device, the bootstrap server will use this connect certificate to authenticate your application with your Pelion Device Management account.
 - An **update certificate** to verify that incoming updates come from a trusted source.
 - A **bootloader** to verify and install update images.
-- The Device Management Client, [normally imported as part of the example application](https://github.com/ARMmbed/mbed-cloud-client-example). You can also do this with the [Quick Connect guide we mentioned above](https://cloud.mbed.com/guides/connect-device-to-pelion).
+- The Device Management Client, [normally imported as part of the example application](https://github.com/ARMmbed/mbed-cloud-client-example). You can also import it using the [Quick Connect guide we mentioned above](https://cloud.mbed.com/guides/connect-device-to-pelion).
 
 You need:
 
@@ -45,7 +45,7 @@ In the **Pelion Device Management** dropdown menu, you can:
 
 ### Notes about the developer workflow
 
-The Device Management workflow in the Online Compiler is intended only for development devices; it does not support deployment requirements:
+The Device Management workflow in the Online Compiler is intended only for development devices; it does not support production requirements:
 
 - The Online Compiler uses web crypto to generate the update public certificate and private key and is not available in Internet Explorer or Microsoft Edge.
 - The developer update certificate and key are not suitable for production use cases.
