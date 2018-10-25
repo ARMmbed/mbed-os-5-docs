@@ -205,6 +205,9 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 <tr>
 <td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
 </tr>
+<tr>
+<td><a href="messagebuilder.html">MessageBuilder</a></td>
+</tr>
 </tbody>
 </table>
 
