@@ -14,7 +14,7 @@ To configure this class, please see the [LoRa configuration documentation](/docs
 
 Please visit our Arm Mbed Online Compiler example, and follow the instructions in the `README.md`.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/ceea78461fbd/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/master/main.cpp)
 
 ### Related content
 
