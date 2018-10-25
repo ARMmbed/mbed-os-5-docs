@@ -1,6 +1,6 @@
 ## MessageParser
 
-The MessageParser class is an event-driven NDEF message parser. This class parses a buffer of data in input and produces parsing events. It then forwards these parsing events to its delegate that are forwarded to its delegate. MessageParser notifies the delegate notified whenever an interesting event happens during the parsing.
+The MessageParser class is an event-driven NDEF message parser. This class parses a buffer of data in input and produces parsing events. It then forwards these parsing events to its delegate.
 
 ### MessageParser class reference
 
