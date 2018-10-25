@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1common_1_1_simple_message_parser.png)<span>SimpleMessageParser class hierarchy</span></span>
 
-The SimpleMessageParser class is a more integrated parser than the MessageParser class. Like MessageParser, SimpleMessageParser parses data and sends it to its delegate. However, SimpleMessageParser also combines MessageParser with a chain record. SimpleMessageParser parses well known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box.
+The SimpleMessageParser class is a more integrated parser than the MessageParser class. Like MessageParser, SimpleMessageParser parses data and sends parsing events to its delegate. However, SimpleMessageParser also includes sub parsers  for well known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box. User defined parsers can be injected at runtime to extend the capabilities of the SimpleMessageParser.
 
 ### SimpleMessageParser class reference
 
