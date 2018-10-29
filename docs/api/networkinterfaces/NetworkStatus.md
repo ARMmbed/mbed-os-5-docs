@@ -8,7 +8,7 @@ This interface informs you about connection state changes asynchronously. Provid
 
 The callback needs to handle these possible network states:
 
-```
+```cpp NOCI
 /** Enum of connection status types
  *
  *  Valid error codes have negative values.
@@ -26,13 +26,13 @@ The callback needs to handle these possible network states:
 
 This API requires an interface to be monitored. For example, Ethernet:
 
-```cpp TODO
+```cpp NOCI
 EthernetInterface eth;
 ```
 
 You need to provide the callback function, for example:
 
-```cpp
+```cpp NOCI
 
 bool is_connected = false;
 
@@ -59,7 +59,7 @@ void status_callback(nsapi_event_t status, intptr_t param)
 
 Now, the callback function is registered to the interface.
 
-```cpp TODO
+```cpp NOCI
     eth.attach(&status_callback);
 ```
 
@@ -67,7 +67,7 @@ This allows the application to monitor if network interface gets disconnected.
 
 Optionally, the application might want to set the `connect()` method to nonblocking mode and wait until connectivity is fully established.
 
-```cpp TODO
+```cpp NOCI
     eth.set_blocking(false);
     eth.connect();              // Return immediately
 ```
