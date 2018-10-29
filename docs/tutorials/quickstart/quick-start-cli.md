@@ -34,7 +34,7 @@ Download and install a compiler.
 
 ###### 3. Install Mbed CLI
 
-To install Mbed CLI, run `pip install mbed-cli` from your command-line.
+To install Mbed CLI, run `sudo pip install mbed-cli` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
