@@ -2,11 +2,13 @@
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NetworkinterfaceStates.png)<span>Network states</span></span>
+
 #### Usage
 
 The callback needs to handle these possible network states:
 
-```
+```cpp NOCI
 /** Enum of connection status types
  *
  *  Valid error codes have negative values.
@@ -24,39 +26,40 @@ The callback needs to handle these possible network states:
 
 This API requires an interface to be monitored. For example, Ethernet:
 
-```cpp TODO
+```cpp NOCI
 EthernetInterface eth;
 ```
 
-You need to provide the callback function, itself:
+You need to provide the callback function, for example:
 
-```cpp
+```cpp NOCI
+
+bool is_connected = false;
+
 void status_callback(nsapi_event_t status, intptr_t param)
 {
-    printf("Connection status changed!\r\n");
-    switch(param) {
-        case NSAPI_STATUS_LOCAL_UP:
-            printf("Local IP address set!\r\n");
-            break;
-        case NSAPI_STATUS_GLOBAL_UP:
-            printf("Global IP address set!\r\n");
-            break;
-        case NSAPI_STATUS_DISCONNECTED:
-            printf("No connection to network!\r\n");
-            break;
-        case NSAPI_STATUS_CONNECTING:
-            printf("Connecting to network!\r\n");
-            break;
-        default:
-            printf("Not supported");
-            break;
+    if (status == NSAPI_EVENT_CONNECTION_STATUS_CHANGE) {
+        switch(param) {
+            case NSAPI_STATUS_GLOBAL_UP:
+                if (!is_connected) {
+                    start_my_cloud_client();
+                    is_connected = true;
+                }
+                break;
+            default:
+                if (is_connected) {
+                    stop_my_cloud_client();
+                    is_connected = false;
+                }
+                break;
+        }
     }
 }
 ```
 
 Now, the callback function is registered to the interface.
 
-```cpp TODO
+```cpp NOCI
     eth.attach(&status_callback);
 ```
 
@@ -64,7 +67,7 @@ This allows the application to monitor if network interface gets disconnected.
 
 Optionally, the application might want to set the `connect()` method to nonblocking mode and wait until connectivity is fully established.
 
-```cpp TODO
+```cpp NOCI
     eth.set_blocking(false);
     eth.connect();              // Return immediately
 ```
