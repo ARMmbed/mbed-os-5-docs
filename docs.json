@@ -896,15 +896,19 @@
             },
             {
                 "title": "Exporting",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/export_to_third_party.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/exporters.md"
+                "sub_chapters": [{
+                        "title": "Exporting",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/export_to_third_party.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/exporters.md"
                             }
                         ]
+                    }
+                ]
             },
             {
                 "title": "Debugging",
