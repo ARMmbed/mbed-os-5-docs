@@ -1,8 +1,3 @@
-## Getting started
-
-
-These instructions cover importing and creating programs, compiling and downloading and forking. They also go over publishing and working with other developers.
-
 ## Importing code
 
 There are two methods of importing the code into the online compiler: directly from a program presented on the site, or using the compiler’s Import button:
