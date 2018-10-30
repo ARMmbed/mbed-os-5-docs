@@ -982,25 +982,21 @@
             },
             {
                 "title": "Mbed OS quick start",
-                "sub_chapters": [{
-                        "title": "Getting started",
-                        "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start.md"
-                        },
-                        "sources": [{
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-setup.md"
-                            }
-                        ]
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-setup.md"
                     }
                 ]
             },
