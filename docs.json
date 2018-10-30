@@ -768,24 +768,25 @@
             },
             {
                 "title": "Developing: Mbed Online Compiler",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/online_comp.md"
-                },
                 "sub_chapters": [{
                         "title": "Getting started",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/online_comp.md"
+                        },
                         "sources": [{
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_tut.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_publishing_code.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/updating_firmware.md"
-                        }]
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/oc_tut.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/compiler_publishing_code.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/IDE/updating_firmware.md"
+                            }
+                        ]
                     },
                     {
                         "title": "Source control",
@@ -895,15 +896,15 @@
             },
             {
                 "title": "Exporting",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/export_to_third_party.md"
+                },
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/export_to_third_party.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/exporters.md"
-                    }
-                ]
+                            }
+                        ]
             },
             {
                 "title": "Debugging",
