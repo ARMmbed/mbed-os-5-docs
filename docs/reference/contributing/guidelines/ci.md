@@ -1,6 +1,6 @@
-## Continuous integration
+<h2 id="ci">Continuous integration</h2>
 
-Continuous integration (CI) means mainly automatic testing for pull requests
+Continuous integration (CI) means mainly automatic testing for pull requests.
 
 ### Travis CI
 
@@ -10,46 +10,47 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
 
 #### Tests
 
-* **continuous-integration/travis-ci/pr** - Main run main
-* **travis-ci/astyle** - Check code style using [astyle](http://astyle.sourceforge.net/)
-* **travis-ci/docs** - [Doxygen](http://www.doxygen.org/) and naming checks:
-** Assert that the Doxygen build produced no warnings
-** Assert that all binary libraries are named correctly
-** Assert that all assebler files are named correctly
-* **travis-ci/events** - Check that Mbed OS compiles and run events tests
-* **travis-ci/gitattributestest** - Check that no changes after clone. This check that .gitattributes is used right way
-* **travis-ci/licence_check** - Checking that there is no GPL licence text in code
-* **travis-ci/littlefs** - Testing littlefs without embedded hardware
-* **travis-ci/tools-py2.7** - Run python tools tests with python 2.7
+- **continuous-integration/travis-ci/pr** - Main run main.
+- **travis-ci/astyle** - Check code style using [astyle](http://astyle.sourceforge.net/).
+- **travis-ci/docs** - [Doxygen](http://www.doxygen.org/) and naming checks:
+   - Assert that the Doxygen build produces no warnings.
+   - Assert that all binary libraries are named correctly.
+   - Assert that all assembler files are named correctly.
+- **travis-ci/events** - Check that Mbed OS compiles and run events tests.
+- **travis-ci/gitattributestest** - Check there are no changes after clone. This checks that `.gitattributes` is used correctly.
+- **travis-ci/licence_check** - Check there is no GPL licence text in the code.
+- **travis-ci/littlefs** - Test littlefs without embedded hardware.
+- **travis-ci/tools-py2.7** - Run Python tools tests with Python 2.7.
 
 ### Jenkins
 
-[Jenkins](https://jenkins.io/) is used as internal testing and checking environment. Tests which have special requirements for execution enviroment are executed in internal Jenkins. In most cases test logs are published.
+We use [Jenkins](https://jenkins.io/) as an internal testing and checking environment. We execute tests that have special requirements for the execution enviroment in our internal Jenkins. In most cases, we publish test logs.
 
-#### How it works:
-* Jenkins uses a [scripted pipeline syntax](https://jenkins.io/doc/book/pipeline/)
-* Jenkins scripts are not publicly available. There is Jenkinsfile in Mbed OS root folder but that is just trigger for tests.
-* Jenkins selects required tests dynamically based on the code changes. For example: no tests are executed if only markdown (.md) file are changed
-* Jenkins run first small amount of tests to provide fast feedback and then additional tests
+How it works:
+
+- Jenkins uses a [scripted pipeline syntax](https://jenkins.io/doc/book/pipeline/).
+- Jenkins scripts are not publicly available. There is a Jenkinsfile in the Mbed OS root folder, but that is just a trigger for tests.
+- Jenkins selects required tests dynamically based on the code changes. For example, no tests execute if only markdown (.md) files change.
+- Jenkins runs a first small number of tests to provide fast feedback, and then it runs additional tests.
 
 #### Tests
 
-* **continuous-integration/jenkins/pr-head** Jenkins main pipeline script execution status
-* **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM. Related commands:
- * `mbed test --compile -t <toolchain> -m <target> `
- * `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`
-* **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM
-* **jenkins-ci/build-IAR** - Build Mbed OS and examples with IAR
-* **jenkins-ci/cloud-client-test** - Test the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example)
-* **jenkins-ci/dynamic-memory-usage** - Report dynamic memory usage compared to the master branch
-* **jenkins-ci/exporter** - Export and build exported code. Related commands:
- * `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`
-* **jenkins-ci/greentea-test** - Run [greentea tests](/docs/tools/testing/testing_greentea.html)
-* **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM. Related commands:
- * `python tools/build_release.py -p <target> -t <toolchain>`
-* **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM
-* **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR
-* **jenkins-ci/unittests** - Run [unit tests](/docs/tools/testing/unit_testing.html)
-* **tools-test-linux** - Test that tools works on Linux
-* **tools-test-mac** - Test that tools works on Mac
-* **tools-test-windows** - Test that tools works on Windows
+- **continuous-integration/jenkins/pr-head** - Jenkins main pipeline script execution status.
+- **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM. Related commands:
+   - `mbed test --compile -t <toolchain> -m <target> `.
+   - `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`.
+- **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM.
+- **jenkins-ci/build-IAR** - Build Mbed OS and examples with IAR.
+- **jenkins-ci/cloud-client-test** - Test the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using the [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example).
+- **jenkins-ci/dynamic-memory-usage** - Report dynamic memory use compared to the master branch.
+- **jenkins-ci/exporter** - Export and build exported code. Related commands:
+   - `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`.
+- **jenkins-ci/greentea-test** - Run [greentea tests](/docs/tools/testing/testing_greentea.html).
+- **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM. Related commands:
+   - `python tools/build_release.py -p <target> -t <toolchain>`.
+- **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM.
+- **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR.
+- **jenkins-ci/unittests** - Run [unit tests](/docs/tools/testing/unit_testing.html).
+- **tools-test-linux** - Test that tools work on Linux.
+- **tools-test-mac** - Test that tools work on macOS.
+- **tools-test-windows** - Test that tools work on Windows.
