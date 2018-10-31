@@ -36,7 +36,7 @@ How it works:
 #### Tests
 
 - **continuous-integration/jenkins/pr-head** - Jenkins main pipeline script execution status.
-- **jenkins-ci/build-ARM** - Build Mbed OS and examples with ARM. Related commands:
+- **jenkins-ci/build-ARM** - Build Mbed OS and examples with [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
    - `mbed test --compile -t <toolchain> -m <target> `.
    - `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`.
 - **jenkins-ci/build-GCC_ARM** - Build Mbed OS and examples with GCC_ARM.
@@ -46,7 +46,7 @@ How it works:
 - **jenkins-ci/exporter** - Export and build exported code. Related commands:
    - `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`.
 - **jenkins-ci/greentea-test** - Run [greentea tests](/docs/tools/testing/testing_greentea.html).
-- **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with ARM. Related commands:
+- **jenkins-ci/mbed2-build-ARM** - Build Mbed OS 2 with [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
    - `python tools/build_release.py -p <target> -t <toolchain>`.
 - **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM.
 - **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR.
