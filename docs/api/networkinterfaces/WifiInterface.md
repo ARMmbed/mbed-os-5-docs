@@ -1,7 +1,5 @@
 ## Wi-Fi
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
-
 The WifiInterface provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
 ### Wi-Fi class reference
