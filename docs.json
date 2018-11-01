@@ -18,7 +18,10 @@
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
                 },
-                "sources": []
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
+                }]
             },
             {
                 "title": "Mbed OS 2 and Mbed OS 5",
@@ -664,14 +667,6 @@
         "slug": "config",
         "type": "markdown",
         "chapters": [{
-                "title": "Overview",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
-                },
-                "sources": []
-            },
-            {
                 "title": "Project structure",
                 "intro": {
                     "type": "markdown",
