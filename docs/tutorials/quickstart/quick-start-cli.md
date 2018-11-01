@@ -74,6 +74,8 @@ To install Mbed CLI, run `pip install mbed-cli --user` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
+<span class="notes">**Note:** You may also need to add the new MBbed CLI Python '--user' installation location (for example: '/Users/{username}/Library/Python/2.7/bin') to the PATH.</span>
+
 ##### 4. Setup environment
 
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
