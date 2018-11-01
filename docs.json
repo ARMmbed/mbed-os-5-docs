@@ -18,10 +18,7 @@
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
                 },
-                "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
-                }]
+                "sources": []
             },
             {
                 "title": "Mbed OS 2 and Mbed OS 5",
@@ -569,7 +566,7 @@
         "type": "markdown",
         "intro": {
             "type": "markdown",
-            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/technology.md"
+            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
         },
         "chapters": [{
                 "title": "Connectivity stacks",
