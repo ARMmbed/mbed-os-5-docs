@@ -564,11 +564,15 @@
         "description": "Deep dives into the Mbed OS architecture",
         "slug": "architecture",
         "type": "markdown",
-        "intro": {
-            "type": "markdown",
-            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
-        },
         "chapters": [{
+                "title": "Mbed OS architecture",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
+                },
+                "sources": []
+            },
+            {
                 "title": "Connectivity stacks",
                 "sources": [{
                         "type": "markdown",
@@ -666,13 +670,14 @@
         "chapters": [{
                 "title": "Project structure",
                 "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
-                }]
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
+                    }
+                ]
             },
             {
                 "title": "Configuration",
