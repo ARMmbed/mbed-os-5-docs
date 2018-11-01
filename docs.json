@@ -665,11 +665,11 @@
         "type": "markdown",
         "chapters": [{
                 "title": "Project structure",
-                "intro": {
+                "sources": [{
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
                 },
-                "sources": [{
+                {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
                 }]
