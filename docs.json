@@ -659,9 +659,9 @@
         ]
     },
     {
-        "title": "Reference",
-        "description": "The reference manual for Mbed OS: architecture, configuration and contribution details",
-        "slug": "reference",
+        "title": "Project structures and configuration",
+        "description": "",
+        "slug": "config",
         "type": "markdown",
         "chapters": [{
                 "title": "Overview",
@@ -671,7 +671,6 @@
                 },
                 "sources": []
             },
-
             {
                 "title": "Project structure",
                 "intro": {
@@ -679,10 +678,9 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
                 },
                 "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
-                            }
-                        ]
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
+                }]
             },
             {
                 "title": "Configuration",
@@ -727,34 +725,7 @@
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/bootloader.md"
                     }
                 ]
-            },
-            {
-                "title": "Contributing",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/guidelines.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/license.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/style.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/design_guidelines.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/workflow.md"
-                    }
-                ]
             }
-        ],
-        "tags": [
-            "references"
         ]
     },
     {
@@ -852,13 +823,14 @@
                 "sub_chapters": [{
                         "title": "Installation and setup",
                         "sources": [{
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-setup.md"
-                        },
-                        {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-reqs.md"
-                        }]
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-setup.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-reqs.md"
+                            }
+                        ]
                     },
                     {
                         "title": "Working with Mbed CLI",
@@ -901,18 +873,16 @@
             {
                 "title": "Exporting",
                 "sub_chapters": [{
-                        "title": "Exporting",
-                        "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/export_to_third_party.md"
-                        },
-                        "sources": [{
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/exporters.md"
-                            }
-                        ]
-                    }
-                ]
+                    "title": "Exporting",
+                    "intro": {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/export_to_third_party.md"
+                    },
+                    "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/toolchains/exporters.md"
+                    }]
+                }]
             },
             {
                 "title": "Debugging",
@@ -1197,6 +1167,33 @@
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/evaluation-to-production/blob/master/FE2P/stage5.md"
                 }]
+            }
+        ]
+    },
+    {
+        "title": "Contributing",
+        "description": "",
+        "slug": "contributing",
+        "type": "markdown",
+        "intro": {
+            "type": "markdown",
+            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/guidelines.md"
+        },
+        "sources": [{
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/license.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/style.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/design_guidelines.md"
+            },
+            {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/workflow.md"
             }
         ]
     },
