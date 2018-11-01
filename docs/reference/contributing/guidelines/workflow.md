@@ -219,8 +219,8 @@ We use many other labels to summarize the scope and effect of the changes.
 
 - *needs: preceding PR* - This pull request cannot yet be merged because it has a dependency on another pull request that needs to merge first.
 - *DO NOT MERGE* - This pull request contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
-- *devices: 'name'* - The pull request specifically affects the named device(s).
-- *component: 'name'* - The pull request specifically affects the named component. Component names follow the structure of Mbed OS (`ble`, `storage`, `tls` and so on).
+- *devices: 'name'* - This pull request specifically affects the named device(s).
+- *component: 'name'* - This pull request specifically affects the named component. Component names follow the structure of Mbed OS (`ble`, `storage`, `tls` and so on).
 - *rollup PR* - This pull request is ready to begin CI testing, but will be tested with other pull requests at once.
 
 The following labels summarize the scope of the pull request.
@@ -230,6 +230,8 @@ The following labels summarize the scope of the pull request.
 - *scope: new-target*.
 
 #### Rollup Pull Requests
+
+
 
 At times, Mbed OS will contain many small pull requests that are either unrelated to each other (completely different tests or targets), or have a low risk of failing CI testing (docs changes). At the discretion of a maintainer, a pull request will be additionally tagged with the *rollup PR* label and a script will create a rollup pull request to take through testing. Upon success, the rollup pull request is merged as normal, and all pull requests that were marked with the *rollup PR* label will be marked as merged.
 
