@@ -13,28 +13,34 @@
         "slug": "introduction",
         "type": "markdown",
         "chapters": [{
-          "title": "Introduction",
-          "intro": {
-                  "type": "markdown",
-                  "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
-              },
-        "sources": [
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
+                "title": "Introduction",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
+                },
+                "sources": []
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/release_process.md"
+                "title": "Versions and releases",
+
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/release_process.md"
+                    }
+                ]
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/terms.md"
+                "title": "Glossary",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/terms.md"
+                }]
             }
-        ]
-      }
-    ]
-        ,
+        ],
         "tags": [
             "introduction"
         ]
