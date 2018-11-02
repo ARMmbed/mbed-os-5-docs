@@ -12,38 +12,22 @@
         "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
-        "chapters": [{
-                "title": "Mbed OS overview",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
-                },
-                "sources": []
-            },
-            {
-                "title": "Mbed OS 2 and Mbed OS 5",
-                "intro": {
+        "intro": {
+            "type": "markdown",
+            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/introduction.md"
+        },
+        "sources": [{
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/mbed-os-2-vs-5.md"
                 },
-                "sources": []
-            },
-            {
-                "title": "Release process",
-                "intro": {
+                {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/release_process.md"
                 },
-                "sources": []
-            },
-            {
-                "title": "Glossary",
-                "intro": {
+                {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/introduction/terms.md"
-                },
-                "sources": []
-            }
+                }
         ],
         "tags": [
             "introduction"
