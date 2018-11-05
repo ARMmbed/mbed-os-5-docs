@@ -322,13 +322,16 @@ https://os.mbed.com/docs/latest/tools/testing-applications.html
 
 #### 7.1 Test prerequisites
 
-To run mbed-os tests, at the minimum, the following components must have been ported and verified:
+To run `mbed-os` tests, at the minimum, the following components must have been ported and verified:
 
-DAPLink, serial port (synchronous transfer), microsecond ticker and low power ticker
+- DAPLink.
+- Serial port (synchronous transfer).
+- Microsecond ticker.
+- LowPowerTicker.
 
 #### 7.2 Verify Serial port connection
 
-Load a test binary with printf, verify the text can be seen on your serial terminal program.
+Load a test binary with printf. Verify the text can be seen on your serial terminal program.
 
 #### 7.3 Automated tests
 
@@ -338,11 +341,11 @@ If DAPLink is still under development, follow Step 12.5 to run manual tests.
 
 ##### 7.3.1 Setup
 
-The board under test needs to be supported in mbedls for automated tests to work. If official mbedls pip package hasn't been released, you'll need to direct pip to use your local directory that includes the change to support the new board.
+The board under test needs to be supported in mbedls for automated tests to work. If official mbedls pip package hasn't been released, you need to direct pip to use your local directory that includes the change to support the new board.
 
-Clone your repo from mbed-ls at https://github.com/ARMmbed/mbed-ls. Then run "pip install --editable <your_local_root_to_mbed-ls>".
+Clone your repo from mbed-ls at https://github.com/ARMmbed/mbed-ls. Then run `pip install --editable <your_local_root_to_mbed-ls>`.
 
-Create a mbedls.json file. This file allows you to override and specify the FTDI usb port. You can use mbedls command to find your board ID. The serial port path varies in different operation systems. On Mac OS and Linux, you can use ls /dev/tty.usb* to find the FTDI usbserial device. For Windows, you can find it using device manager, which usually would be something like COM#.
+Create an `mbedls.json` file. This file allows you to override and specify the FTDI USB port. You can use mbedls command to find your board ID. The serial port path varies in different operation systems. On Mac OS and Linux, you can use ls /dev/tty.usb* to find the FTDI usbserial device. For Windows, you can find it using device manager, which usually would be something like COM#.
 
 For example, on macOS:
 
