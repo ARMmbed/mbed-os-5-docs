@@ -18,7 +18,7 @@ You can ensure Mbed CLI installed correctly by running `mbed help` from your com
 
 <span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
 
-#### Manual installation
+##### Manual installation
 
 ###### 1. Download and install Python and Pip
 
@@ -38,7 +38,7 @@ To install Mbed CLI, run `pip install mbed-cli` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
-##### 2. Setup environment
+##### 4. Setup environment
 
 After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. Below is an example using the ARM compiler:
 
@@ -56,19 +56,25 @@ ARM_PATH=<path to ARM bin\>
 
 #### macOS
 
-##### 1. Install Python and Pip
+##### Prebuilt Mbed CLI installer
+
+Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
+
+##### Manual installation
+
+###### 1. Install Python and Pip
 
 macOS 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of macOS, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
 
 To install Pip, run `easy_install --user pip` from your command-line.
 
-##### 2. Install a compiler
+###### 2. Install a compiler
 
 Download and install a compiler.
 
 <span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
 
-##### 3. Install Mbed CLI
+###### 3. Install Mbed CLI
 
 To install Mbed CLI, run `pip install mbed-cli --user` from your command-line.
 
@@ -76,7 +82,7 @@ You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
 <span class="notes">**Note:** You may also need to add the new Mbed CLI Python `--user` installation location (for example: `/Users/{username}/Library/Python/2.7/bin`) to the PATH.</span>
 
-##### 4. Setup environment
+###### 4. Setup environment
 
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
 

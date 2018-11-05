@@ -201,12 +201,14 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 <tbody>
 <tr>
 <td><a href="nfccontroller.html">NFCController</a></td>
+<td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
 </tr>
 <tr>
 <td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
+<td><a href="messagebuilder.html">MessageBuilder</a></td>
 </tr>
 <tr>
-<td><a href="messagebuilder.html">MessageBuilder</a></td>
+<td><a href="messageparser.html">MessageParser</a></td>
 </tr>
 </tbody>
 </table>
