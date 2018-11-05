@@ -21,39 +21,42 @@ The following milestones usually need to happen in order to enable a board/targe
 - Test Mbed OS and Pelion demo applications
    Arm provides a number of demos and examples to help showcase Mbed OS and Pelion.
 
-### Hardware Setup
-#### Hardware Requirements
+### Hardware setup
 
-- Eval board with the targeted MCU
-- (Optional) FTDI TTL232R-3V3 usb cable
+Porting Mbed OS requires the following hardware:
+
+- Eval board with the targeted MCU.
+- (Optional) FTDI TTL232R-3V3 USB cable.
    Some debug probes do not have serial connection such as SWDAP https://os.mbed.com/teams/mbed/wiki/SWDAP. If you have to use such boards, an FTDI cable connecting the TX and RX pin can be used.
-- (Optional) Debug probe
-   If the Interface MCU is not on the eval board, choose an debug probe such as https://os.mbed.com/platforms/SWDAP-LPC11U35/
-- 1-2 Micro USB cables
+- (Optional) Debug probe.
+   If the Interface MCU is not on the eval board, choose an debug probe such as https://os.mbed.com/platforms/SWDAP-LPC11U35/.
+- 1-2 Micro USB cables.
    One Micro USB cable is used to connect the eval board to your development PC. Optionally you may need another cable to connect the debug probe to the PC.
 
 The following items might be helpful in testing SPI, I2C and Pins:
 
-1 CI Test Shield v2.0.0. For details, refer to https://github.com/ARMmbed/ci-test-shield.
-1 Micro SD card for the CI Test Shield.
-3.2 Prepare the Eval Board
+- 1 CI Test Shield v2.0.0. For details, refer to https://github.com/ARMmbed/ci-test-shield.
+- 1 Micro SD card for the CI Test Shield.
+
 Check the user guide of the eval board to see if anything needs to be done prior to using debug probe and running Mbed OS programs.
 
-4 Software Installations
+### Software installations
+
 Install the following packages:
 
-- Python 2.7: https://www.python.org/downloads/release/python-2715/
-- Git: https://git-scm.com/downloads
-- Mbed CLI https://os.mbed.com/docs/v5.10/tools/installation-and-setup.html
-- (Optional) FTDI serial driver http://www.ftdichip.com/Drivers/VCP.htm
-- Toolchains
-   - GNU Arm Embedded Toolchain (GCC): https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads
-   - IAR: https://www.iar.com/iar-embedded-workbench/
-   - Arm Compiler 5 or 6: https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5
+- Python 2.7: https://www.python.org/downloads/release/python-2715/.
+- Git: https://git-scm.com/downloads.
+- Mbed CLI https://os.mbed.com/docs/v5.10/tools/installation-and-setup.html.
+- (Optional) FTDI serial driver http://www.ftdichip.com/Drivers/VCP.htm.
+- Toolchains f4ef4rfrr44.
+   - GNU Arm Embedded Toolchain (GCC): https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads.
+   - IAR: https://www.iar.com/iar-embedded-workbench/.
+   - Arm Compiler 5 or 6: https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5.
 
 Check https://os.mbed.com/docs/latest/tools/index.html for exact tool versions supported in a specific Mbed OS release.
 
-5 Fork Github Repositories
+#### Fork Github repositories
+
 At the minimum, the following repositories need to be forked or branched for the porting project:
 
 - https://github.com/armmbed/daplink
@@ -64,11 +67,10 @@ At the minimum, the following repositories need to be forked or branched for the
 - https://github.com/armmbed/mbed-os-example-blinky
 - https://github.com/armmbed/mbed-cloud-client-example
 
-6 Get Mbed OS Source Code
-6.1 Clone code to your local directory
-The following commands retrieve mbed-os-example-blinky code and redirect mbed-os to point to the newly forked mbed-os repository.
+### 1. Get Mbed OS Source Code
+#### 1.1 Clone code to your local directory
 
-Fork
+The following commands retrieve mbed-os-example-blinky code and redirect mbed-os to point to the newly forked mbed-os repository:
 
 ```
 mbed import mbed-os-example-blinky
@@ -84,7 +86,7 @@ git pull origin master
 git checkout -b <branch_name>
 ```
 
-6.2 Build the Blinky program for an existing target
+#### 1.2 Build the Blinky program for an existing target
 
 ```
 cd mbed-os-example-blinky
@@ -95,7 +97,8 @@ mbed compile --target K64F --toolchain IAR
 
 Verify build succeeds. At this point, you have a working baseline and are ready to add a new target.
 
-7 Add New Target to FlashAlgo
+### 2. Add new target to FlashAlgo
+
 Repo: https://github.com/mbedmicro/flashalgo
 
 Windows PC is required for this step.
@@ -115,7 +118,8 @@ Once Keil MDK starts, open the project file for the desired target in \projectfi
 
 c_blob.c and c_blob_mbed.c. Save these files. c_blob.c will be used in flash_blob.c, c_blob_mbed.c can be used in Flash API.
 
-8 Add New Target to Daplink
+### 3. Add new target to DapLink
+
 Repo: https://github.com/armmbed/daplink.
 
 Windows PC is required for Daplink environment.
@@ -130,9 +134,10 @@ Copy the content of c_blob.c into flash_blob.c.
 
 Refer to https://github.com/ARMmbed/DAPLink/blob/master/docs/AUTOMATED_TESTS.md to run existing Daplink tests to verify the port.
 
-Once Daplink tests pass, create a PR to request merge.
+Once DapLink tests pass, create a PR to request merge.
 
-9 Add New Target to pyOCD
+### 4. Add new target to pyOCD
+
 Follow https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md to setup development environment.
 
 This guide describes how to add a new target to pyOCD:
@@ -143,8 +148,8 @@ Test instructions can be found in https://github.com/mbedmicro/pyOCD/blob/master
 
 Once the changes to support the new target are merged into pyOCD master branch, and subsequently released in PyPi, one can use 'pip install pyOCD" to enable debug.
 
-10 Debug Mbed OS Programs
-10.1 Update DAPLink Interface Firmware
+### 5. Debug Mbed OS programs
+#### 5.1 Update DAPLink interface firmware
 
 - Clone the latest DAPLink firmware with the new target support completed at Step 8.
 - Build DAPLink firmware release package and locate the generated .bin or .hex firmware under DAPLink\uvision_release\<your_board_name_if> directory per instructions at https://github.com/ARMmbed/DAPLink/tree/master/docs.
@@ -159,7 +164,8 @@ pip install --editable <path_to_pyOCD_with_new_target_support>
 
 Make a note of the installation path of pyocd-gdbserver, you'll need it in the next step when you set up Debug Configuration inside the IDE.
 
-10.3 Create GDB pyOCD Debug Configuration
+#### 5.3 Create GDB pyOCD debug configuration
+
 The following procedure is for Eclipse IDE, find similar settings for Keil and IAR.
 
 - Under Debugger, point Executable path and Actual executable path to the pyocd-gdbserver you installed at Step 10.2.
@@ -182,12 +188,14 @@ The following procedure is for Eclipse IDE, find similar settings for Keil and I
    
 - The rest of the settings can be kept default.
 
-11 Recommended Porting Order
+### 6. Recommended Porting Order
+
 Detailed instructions on how to port targets/connectivity/storage are given in https://os.mbed.com/docs/latest/porting/index.html.
 
 Based on criticality and dependency of Mbed OS software stack, the following order is recommended:
 
-11.1 Baremetal mbed-os-example-blinky
+#### 6.1 Baremetal mbed-os-example-blinky
+
 The official mbed-os-example-blinky requires DigitalOut object and timers. Since these modules are yet to be ported, a baremetal Blinky program is recommended.
 
 Modify the Blinky programmed checked out at Step 6.1.
@@ -196,7 +204,8 @@ Baremetal program doesn't rely on rtos,GPIO object or timers. LED toggling is do
 
 This Blinky program is a stop-gap measure, obviously you don't want to commit it to master.
 
-11.2 Bootstrap and Entry Point
+#### 6.2 Bootstrap and entry point
+
 Bootstrap instructions can be found at https://os.mbed.com/docs/v5.9/reference/bootstrap.html.
 
 Mbed OS uses CMSIS Pack. It's possible that this new target does not have CMSIS pack yet. In this case, you'll need to create your own CMSIS files.
@@ -230,7 +239,8 @@ mbed compile --target <target_name> --toolchain ARM
 mbed compile --target <target_name> --toolchain IAR
 ```
 
-11.3 Low Power Ticker
+#### 6.3 LowPowerTicker
+
 Low Power Ticker porting instructions can be found at https://os.mbed.com/docs/latest/porting/low-power-ticker.html.
 
 If this new target provides a low power ticker, porting this will allow OS kernel initialization to succeed. Therefore, upon completion of this task, rtos can be added back in to the build by removing the "rtos" entry from the .mbedignore file.
@@ -239,86 +249,102 @@ The Blinky program should be able to run to main with rtos after low power ticke
 
 There're some low power ticker tests described at https://os.mbed.com/docs/latest/mbed-os-api-doxy/group__hal__lp__ticker__tests.html. These tests rely on UART to work so it's a good time to proceed to UART next.
 
-11.4 Serial Port (Synchronous)
+### 6.4 Serial Port (Synchronous)
+
 Serial port porting instructions can be found here: https://os.mbed.com/docs/latest/porting/serial-port.html.
 
 Serial porting can be done in two stages: synchronous UART and asynchronous UART. It's recommended to get synchronous UART ported as early as possible, because the HAL greentea tests require UART, and printf is a powerful debugging tool.
 
-11.5 Microsecond Ticker
+#### 6.5 Microsecond Ticker
+
 Microsecond ticker porting instructions can be found here: https://os.mbed.com/docs/latest/porting/microsecond-ticker.html.
 
 The vanilla Blinky code uses "wait (n second)" API that invokes both the millisecond ticker and the microsecond ticker. At the conclusion of this step, "wait" API is expected to work and interval should be exact.
 
-11.6 GPIO (Write and Read) and IRQ
+#### 6.6 GPIO (Write and Read) and IRQ
+
 GPIO porting instructions can be found here: https://os.mbed.com/docs/latest/porting/gpio.html.
 
 The vanilla Blinky program uses GPIO. GPIO can be a great tool to help debug using oscilloscope or logic analyzer. It's a good idea to port GPIO prior to other peripherals.
 
-11.7 RTC
+#### 6.7 RTC
+
 RTC pointing instructions can be found here: https://os.mbed.com/docs/latest/porting/rtc-port.html.
 
 RTC is a dependent of SPI master tests.
 
 On some target, RTC is shared with Low Power Ticker. Enable Low Power Ticker instead of RTC on these targets.
 
-11.8 SPI (Master)
+#### 6.8 SPI (Master)
+
 SPI (Master) is used to communicate with storage devices such as SD card with SPI interface. CI test shield supports SD card as a slave device, therefore it can be used to test SPI master implementation if the eval board in use doesn't have a SPI slave.
 
-11.9 TRNG
+#### 6.9 TRNG
+
 Entropy source (TRNG) porting instructions can be found here: https://os.mbed.com/docs/latest/porting/entropy-sources.html.
 
 If the hardware supports TRNG, this must be ported before running Pelion client, since entropy is used by TLS.
 
-11.10 Connectivity
+#### 6.10 Connectivity
+
 Depending on the connectivity type, refer to the corresponding section in https://os.mbed.com/docs/latest/porting/porting-connectivity.html for porting instructions.
 
 Upon completion of porting connectivity, if using WiFi, mbed-os-example-wifi demo shall run successfully at the completion of this step.
 
-11.11 Flash
+#### 6.11 Flash
+
 Flash porting instructions can be found here: https://os.mbed.com/docs/latest/porting/flash.html.
 
 Flash is required by Pelion client. Although there're are two ways to implement flash API, using CMSIS flash algorithms or C source code, it's recommended to use C source code since it's easier to maintain and upgrade. It's also more portable across different platforms.
 
-11.12 Bootloader
+#### 6.12 Bootloader
+
 Bootloader porting instructions can be found here: https://os.mbed.com/docs/latest/porting/bootloader.html.
 
 Bootloader is a separate application. It needs to be created and integrated into Pelion client.
 
-11.13 Pelion Client
+#### 6.13 Pelion Client
+
 Once the above components are ported, you should be ready to demo Connect and Update functionality of Pelion client. See https://cloud.mbed.com/docs/current for details.
 
-11.14 Other HAL Components (Optional)
+#### 6.14 Other HAL Components (Optional)
+
 Depending on the use case and MCU capability, other HAL components may need to be ported at this stage. Follow the instructions here: https://os.mbed.com/docs/latest/porting/index.html.
 
-12 Test Ported Code Using Greentea Framework
-12.1 Greentea Overview
+### 7 Test Ported Code Using Greentea Framework
+
+#### 7.1 Greentea Overview
+
 Read the following page to understand how tests are structured and exported into Eclipse:
 
 https://os.mbed.com/docs/latest/tools/testing-applications.html
 
-12.2 Test Prerequisites
+#### 7.2 Test Prerequisites
+
 To run mbed-os tests, at the minimum, the following components must have been ported and verified:
 
 Daplink, serial port (synchronous transfer), microsecond ticker and low power ticker
 
-12.3 Verify Serial Port Connection
+#### 7.3 Verify Serial Port Connection
+
 Load a test binary with printf, verify the text can be seen on your serial terminal program.
 
-12.4 Automated Tests
+#### 7.4 Automated Tests
+
 If DAPLink is working, initiate the test using mbedgt from the terminal.
 
-If DAPLink is still under development, follow Step 12.5  to run manual tests.
+If DAPLink is still under development, follow Step 12.5 to run manual tests.
 
-12.4.1 Setup
+##### 7.4.1 Setup
+
 The board under test needs to be supported in mbedls for automated tests to work. If official mbedls pip package hasn't been released, you'll need to direct pip to use your local directory that includes the change to support the new board.
 
 Clone your repo from mbed-ls at https://github.com/ARMmbed/mbed-ls. Then run "pip install --editable <your_local_root_to_mbed-ls>".
 
 Create a mbedls.json file. This file allows you to override and specify the FTDI usb port. You can use mbedls command to find your board ID. The serial port path varies in different operation systems. On Mac OS and Linux, you can use ls /dev/tty.usb* to find the FTDI usbserial device. For Windows, you can find it using device manager, which usually would be something like COM#.
 
-E.g, on Mac OS:
+For example, on macOS:
 
-mbedls.json example
 ```
 {
     "33000000e062afa300000000000000000000000097969902": {
@@ -327,17 +353,17 @@ mbedls.json example
 }
 ```
 
-12.4.2 Compile
+##### 7.4.2 Compile
+
 - To compile all tests, run mbed test -compile.
 - To see the list of compiled tests, run mbed test --compile-list.
 - To compile a specific test, run  mbed test -compile -n <test_name> (E.g.: mbed test --compile -n tests-concurrent-gpio).
 
-12.4.3 Run
+##### 7.4.3 Run
+
         To run test, type command mbedgt.
 
 On success, you should get something like this:
-
-Successful mbedgt
 
 ```
 mbedgt: greentea test automation tool ver. 1.4.0
@@ -394,7 +420,8 @@ mbedgt: test case results: 12 OK
 mbedgt: completed in 20.24 sec
 ```
 
-12.5 Manual Tests
+#### 7.5 Manual Tests
+
 Export a test and import it to Eclipse by following the instructions below.
 
 ```
@@ -422,16 +449,22 @@ Run the program. On the host, type the following command:
 
 Customize the serial port path and baudrate as needed.
 
-13 Test Ported Code Using Demo Applications
-13.1 mbed-os-example-blinky
+### 8 Test Ported Code Using Demo Applications
+
+#### 8.1 mbed-os-example-blinky
+
 This application should run after 11.6 is ported.
 
-13.2 mbed-cloud-client-example
+#### 8.2 mbed-cloud-client-example
+
 This application should run after 11.10 is ported.
 
-14 Detailed Test Procedure
-14.1 Mbed OS Built-in Tests
-14.1.1 Build Tests
+### 9 Detailed Test Procedure
+
+#### 9.1 Mbed OS Built-in Tests
+
+##### 9.1.1 Build Tests
+
 All tests can be built under the mbed-os-example-blinky directory.
 
 ```
@@ -450,8 +483,8 @@ cd mbed-os
 mbed test --compile-list
 ```
 
-14.1.2 Execute Tests
-14.1.2.1 Locate Image
+##### 9.1.2 Execute Tests
+###### 9.1.2.1 Locate Image
 
 Test images are located under the following directory:
 
@@ -480,7 +513,7 @@ Path: ./TESTS/mbed_hal/common_tickers
 - common_tickers test image is at mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers.
 - common_tickers_freq test image is at mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers_freq.
 
-14.1.2.2 Program Image
+###### 9.1.2.2 Program Image
 
 The following procedure requires the image to be flashed to the board. You may use Daplink, Eclipse IDE to flash the image. If the new target is already supported by IAR or Keil programming tool, programming can be done using those tools as well. They easiest method is to use the command line tool pyocd-flashtool:
 
@@ -488,17 +521,19 @@ Note: We recommended:
 pyocd-flashtool BUILD/mbed-os-example-blinky.bin or
 pyocd-flashtool BUILD/mbed-os-example-blinky.hex
 
-14.1.2.3 Execute Tests
+###### 9.1.2.3 Execute Tests
 
 Prior to running tests, make sure the serial port is not already opened by programs like screen, Teraterm etc. Close the program if it's open. In addition, verify mbedls lists the new target device. Read https://github.com/armmbed/greentea to troubleshoot issues if test doesn't start.
 
-14.2 Demo Applications
-14.2.1 mbed-os-example-blinky
-14.2.1.1 Application Repository
+#### 9.2 Demo Applications
+
+##### 9.2.1 mbed-os-example-blinky
+
+###### 9.2.1.1 Application Repository
 
 https://github.com/ARMmbed/mbed-os-example-blinky
 
-14.2.1.2 Test Procedure
+###### 9.2.1.2 Test Procedure
 
 (1) Build image:
 
@@ -518,12 +553,12 @@ Program the .bin or .hex image to the board.
 
 (3) Verify the designated LED flashes every 0.5 second. Verify the interval on oscilloscope if desired.
 
-14.2.2 mbed-bootloader
-14.2.2.1 Application Repository
+##### 9.2.2 mbed-bootloader
+###### 9.2.2.1 Application Repository
 
 https://github.com/armmbed/mbed-bootloader
 
-14.2.2.2 Test Procedure
+###### 9.2.2.2 Test Procedure
 
 (1) Build image:
 
@@ -551,12 +586,13 @@ Program the generated .bin or .hex.
 [BOOT] Layout: 0 1006F44
 ```
 
-14.2.3 mbed-cloud-client-example
-14.2.3.1 Application Repository
+##### 9.2.3 mbed-cloud-client-example
+
+###### 9.2.3.1 Application Repository
 
 https://github.com/armmbed/mbed-cloud-client-example
 
-14.2.3.2 Test Procedure
+###### 9.2.3.2 Test Procedure
 
 (1) Setup Pelion Account per instructions on https://cloud.mbed.com/product-overview.
 
