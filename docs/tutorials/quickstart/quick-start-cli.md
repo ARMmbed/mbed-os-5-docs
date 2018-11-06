@@ -12,7 +12,7 @@ Two installation methods are available for Windows. The first is a prebuilt inst
 
 ##### Prebuilt Mbed CLI installer
 
-Download and run the [Mbed CLI Windows .exe installer](https://mbed-media.mbed.com/filer_public/00/c2/00c2bc59-21c5-4ea2-9916-f9c38e5b2aec/mbed_installer_v047.exe).
+Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
