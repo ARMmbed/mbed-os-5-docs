@@ -49,8 +49,8 @@ The Windows installer for Arm Mbed CLI installs Mbed CLI and all dependent progr
 
 ### Running the installer
 
-1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
-2. Run `mbed_installer_v047.exe`.
+1. Download the [latest executable](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
+2. Run the installer.
 3. Set the installation path.
 4. Choose the installation type:
     - Default: Installs all components.
