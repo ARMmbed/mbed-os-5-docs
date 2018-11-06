@@ -101,7 +101,7 @@ This highly configurable interface has a wide range of elements you can adjust:
 A target must also define these elements:
 
 - `#define SPI_COUNT (xxxxxU)`.
-  The number of SPI peripheral available on the device.
+  The number of SPI peripheral available on the device. A good place for that macro is `PeripheralNames.h` next to the `SPIName` enumeration.
 
 #### Notes
 
