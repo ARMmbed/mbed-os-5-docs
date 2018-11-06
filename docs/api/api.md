@@ -32,6 +32,11 @@
 <td><a href="rtc.html">RTC</a></td>
 <td><a href="assert.html">Assert</a></td>
 <td><a href="platformmutex.html">PlatformMutex</a></td>
+<td><a href="mpu-management.html">MPU management</a></td>
+</tr>
+<tr>
+<td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
+<td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
 </tr>
 </tbody>
 </table>
