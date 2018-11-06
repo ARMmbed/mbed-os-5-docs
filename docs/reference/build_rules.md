@@ -123,13 +123,13 @@ None of these files are included in a build run with `mbed compile`. When runnin
 
 ### `.mbedignore`
 
-The `.mbedignore` rules override other rules for excluding files from a build. Files matching patters in an `.mbedignore` file are excluded from a build even if a label rule or a test directory would include the file.
+The `.mbedignore` rules override other rules for excluding files from a build. Files matching patterns in an `.mbedignore` file are excluded from a build even if a label rule or a test directory would include the file.
 
 #### Usage
 
 You can place an `.mbedignore` file in any searched directory.
 
-Avoid defining rules that would cross library boundaries as these can lead to side effects or build problems that are hard to find.
+Avoid defining rules that would cross library boundaries because these can lead to side effects or build problems that are hard to find.
 
 #### Syntax
 
@@ -146,14 +146,14 @@ The following wildcards are accepted:
 
 The file is parsed with Python's [fnmatch](https://docs.python.org/2/library/fnmatch.html). The syntax follows basic shell patterns with the following exceptions:
 
-1. Each line is treated as though it were prefixed with the path of the `.mbedignore` file.
-2. A line cannot start with `.` or `/` (because of rule 1).
+- Each line is treated as though it were prefixed with the path of the `.mbedignore` file.
+- A line cannot start with `.` or `/` (because of the previous rule).
 
 The globbing functionality is not used, so you cannot recursively match a specific file pattern. Instead, you need to define a rule per directory.
 
 #### Example
 
-A file located in `source/obsolete/.mbedignore` with the following content:
+A file located in `source/obsolete/.mbedignore` has the following content:
 
 ```
 *.c
@@ -161,7 +161,7 @@ A file located in `source/obsolete/.mbedignore` with the following content:
 second_level/*.c
 ```
 
-After applying rule 1, the actual patterns used internally for matching the source files are:
+After applying the first rule, the actual patterns used internally for matching the source files are:
 
 ```
 source/obsolete/*.c
