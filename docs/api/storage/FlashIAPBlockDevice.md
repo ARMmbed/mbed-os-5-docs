@@ -1,6 +1,6 @@
 ## FlashIAPBlockDevice
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_i_a_p_block_device.png)<span>FlashIAPBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_i_a_p_block_device.png)<span>FlashIAPBlockDevice class hierarchy</span></span>
 
 The flash IAP block device is a block device driver built on top of the FlashIAP API. This is enabled using the internal flash memory as a block device. The read size, write size and erase size may differ, depending on the flash chip. Use the FlashIAPBlockDevice `get` function to discover those sizes.
 
@@ -17,7 +17,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ### FlashIAPBlockDevicesBlockDevice example:
 
-``` cpp
+``` cpp TODO
 #include "mbed.h"
 #include "FlashIAPBlockDevice.h"
 

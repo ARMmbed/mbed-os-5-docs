@@ -1,6 +1,6 @@
 ## FlashSimBlockDevice
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
 
 The FlashSimBlockDevice class is a block device adapator, whose purpose is to simulate the behavior of a flash component if the underlying block device doesn't support such a behavior. This includes the following:
 
@@ -23,7 +23,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html) and turns it into a simulated flash BD.
 
-```C++
+```C++ TODO
     int erase_unit_size = 512;
     HeapBlockDevice heap_bd(4 * erase_unit_size, 1, 4, erase_unit_size);
     FlashSimBlockDevice flash_bd(&heap_bd, blank);

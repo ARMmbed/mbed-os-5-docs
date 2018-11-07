@@ -4,11 +4,11 @@ The Network-Socket-API (NSAPI) provides a TCP/UDP API on top of any IP based net
 
 ### Class hierarchy
 
-All network-socket API implementations inherit from two classes: a [NetworkStack](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html).
+All network-socket API implementations inherit from two classes: a [NetworkStack](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html).
 
 #### NetworkInterface Class
 
-The current NetworkInterface subclasses are [CellularInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html), [EthernetInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
+The current NetworkInterface subclasses are [CellularInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html), [EthernetInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/esp-class.png)<span>Class</span></span>
 
@@ -23,7 +23,7 @@ Each subclass has distinct pure virtual methods. Visit their class references (l
 
 `NetworkStack` provides a common interface that hardware shares. By implementing the NetworkStack, you can use a class as a target for instantiating network sockets.
 
-`NetworkStack` provides [these functions](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
+`NetworkStack` provides [these functions](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
 
 ### Errors
 
@@ -35,7 +35,7 @@ High-level API calls to an implementation of a network-socket API are **identica
 
 Below is a demonstration with the code that sends an HTTP request over Ethernet:
 
-```C++
+```C++ TODO
     EthernetInterface net;
     int return_code = net.connect();
     if (return_code < 0)
@@ -64,14 +64,14 @@ Below is a demonstration with the code that sends an HTTP request over Ethernet:
 
 To change the connectivity to ESP8266 Wi-Fi, change these lines:
 
-```C++
+```C++ TODO
     EthernetInterface net;
     int return_code = net.connect();
 ```
 
 To:
 
-```C++
+```C++ TODO
     ESP8266Interface net(TX_PIN, RX_PIN);
     int return_code = net.connect("my_ssid", "my_password");
 ```
@@ -176,7 +176,7 @@ To send AT commands 1-2, there is an `ESP8266` method called [`startup(int mode)
 
 The necessary code is:
 
-```C++
+```C++ TODO
 
 bool ESP8266::startup(int mode)
 {
@@ -198,7 +198,7 @@ The parser's `send` function returns true if the command succesully sent to the 
 
 So far, our connect method looks something like:
 
-```C++
+```C++ TODO
 int ESP8266Interface::connect()
 {
     if (!_esp.startup(3)) {
@@ -220,7 +220,7 @@ You implemented similar methods to `startup` in ESP8266 to send AT commands 3-5.
 
 The `NetworkStack` parent class dictates that you implement the functionality of opening a socket. This is the method signature in the interface:
 
-```C++
+```C++ TODO
 int ESP8266Interface::socket_open(void **handle, nsapi_protocol_t proto)
 ```
 
@@ -230,7 +230,7 @@ The ESP8266 module can only handle 5 open sockets, so you want to ensure that yo
 
 So far, the method looks like this:
 
-```C++
+```C++ TODO
 int ESP8266Interface::socket_open(void **handle, nsapi_protocol_t proto)
 {
     // Look for an unused socket
@@ -253,7 +253,7 @@ int ESP8266Interface::socket_open(void **handle, nsapi_protocol_t proto)
 
 After you've determined that you have an open socket, you want to store some information in the `handle` parameter. We've created a `struct` to store information about the socket that will be necessary for network operations:
 
-```C++
+```C++ TODO
 struct esp8266_socket {
     int id; // Socket ID number
     nsapi_protocol_t proto; // TCP or UDP
@@ -264,7 +264,7 @@ struct esp8266_socket {
 
 Create one of these, store some information in it and then point the `handle` at it:
 
-```C++
+```C++ TODO
 int ESP8266Interface::socket_open(void **handle, nsapi_protocol_t proto)
 {
     ...
@@ -287,7 +287,7 @@ See the full implementation [here](https://github.com/ARMmbed/esp8266-driver/blo
 
 The `NetworkStack` parent class dictates that you implement the functionality of connecting a socket to a remote server. This is the method signature in the interface:
 
-```C++
+```C++ TODO
 int ESP8266Interface::socket_connect(void *handle, const SocketAddress &addr)
 ```
 
@@ -295,7 +295,7 @@ In this case, the handle is one that has been assigned in the [`socket_open`](ht
 
 You can cast the void pointer to an `esp8266_socket` pointer. Do this in the body of `socket_connect`:
 
-```C++
+```C++ TODO
 int ESP8266Interface::socket_connect(void *handle, const SocketAddress &addr)
 {
     struct esp8266_socket *socket = (struct esp8266_socket *)handle;
@@ -318,7 +318,7 @@ Access the socket ID and socket protocol from the members of `esp8266_socket`. A
 
 This method sends the AT command for opening a socket to the Wi-Fi module and is defined as follows:
 
-```C++
+```C++ TODO
 bool ESP8266::open(const char *type, int id, const char* addr, int port)
 {
     //IDs only 0-4
@@ -337,7 +337,7 @@ In this instance, use the AT command parser to send `AT+CIPSTART=[id],[TCP or UD
 
 The `NetworkStack` parent class dictates that you implement the functionality of registering a callback on state change of the socket. This is the method signature in the interface:
 
-```C++
+```C++ TODO
 void ESP8266Interface::socket_attach(void *handle, void (*callback)(void *), void *data)
 ```
 
@@ -345,7 +345,7 @@ Call the specified callback on state changes, such as when the socket can recv/s
 
 ESP8266 can have up to five open sockets. You need to keep track of all their callbacks. This [struct](https://github.com/ARMmbed/esp8266-driver/blob/master/ESP8266Interface.h#L269-L272) holds the callback as well as the data of these callbacks. It is stored as a private class variable `_cbs`:
 
-```C++
+```C++ TODO
 struct {
     void (*callback)(void *);
     void *data;
@@ -354,7 +354,7 @@ struct {
 
 The attach method is:
 
-```C++
+```C++ TODO
 void ESP8266Interface::socket_attach(void *handle, void (*callback)(void *), void *data)
 {
     struct esp8266_socket *socket = (struct esp8266_socket *)handle;    
@@ -365,7 +365,7 @@ void ESP8266Interface::socket_attach(void *handle, void (*callback)(void *), voi
 
 Store the information in the `_cbs` struct for use on state changes. There is a method `event()` to call socket callbacks. It looks like this:
 
-```C++
+```C++ TODO
 void ESP8266Interface::event() {
     for (int i = 0; i < ESP8266_SOCKET_COUNT; i++) {
         if (_cbs[i].callback) {

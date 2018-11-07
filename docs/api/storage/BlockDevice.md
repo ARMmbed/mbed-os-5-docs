@@ -1,6 +1,6 @@
 ## BlockDevice
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.png)<span>BlockDevice class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
 The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](/docs/development/porting/porting-storage.html#contributing-filesystem) or write to it directly.
 

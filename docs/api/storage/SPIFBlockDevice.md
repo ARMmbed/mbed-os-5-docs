@@ -1,6 +1,6 @@
 ## SPI Flash block device
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
 
 This API is a block device for NOR-based SPI flash devices that support SFDP.
 
@@ -14,7 +14,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ### SPIFBlockDevice example
 
-``` cpp
+``` cpp TODO
 // Here's an example using the MX25R SPI flash device on the K82F
 #include "mbed.h"
 #include "SPIFBlockDevice.h"

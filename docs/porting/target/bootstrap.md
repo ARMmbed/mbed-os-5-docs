@@ -17,12 +17,17 @@ After adding the core files, the next step is to add linker scripts for Mbed OS.
 If you are updating your own linker script, you must:
 
 - Reserve space for the RAM vector table.
-- Define the start of the heap:
-    - Arm - The heap starts immediately after the region `RW_IRAM1`.
-    - GCC_ARM - The heap starts at the symbol `__end__`.
+- Define the heap region:
+    - Arm - The heap starts immediately after the region `RW_IRAM1` and ends at the start of the `ARM_LIB_STACK` region.
+    - GCC_ARM - The heap starts at the symbol `__end__` and ends at the `__HeapLimit` symbol.
     - IAR - The heap is the `HEAP` region.
-    - Add defines for a relocatable application - `MBED_APP_START` and `MBED_APP_SIZE`.
-    - Add preprocessing directive `#! armcc -E` (ARM compiler only).
+- Define the boot stack region:
+    - Arm - The boot stack is the `ARM_LIB_STACK` region.
+    - GCC_ARM - The boot stack starts at the symbol `__StackLimit` and ends at the symbol `__StackTop`.
+    - IAR - The boot stack is the `CSTACK` region.
+- Add defines for a relocatable application - `MBED_APP_START` and `MBED_APP_SIZE`.
+- Add the define for boot stack size - `MBED_BOOT_STACK_SIZE`.
+- Add preprocessing directive `#! armcc -E` (ARM compiler only).
 
 If you are using the below linker script, then you need to update all the defines in the `/* Device specific values */` section for your target.
 
@@ -49,8 +54,14 @@ Arm linker script template:
   #define MBED_APP_SIZE ROM_SIZE
 #endif
 
+#if !defined(MBED_BOOT_STACK_SIZE)
+  /* This value is normally defined by the tools 
+     to 0x400 for mbed 2 and 0x1000 for mbed 5 */
+  #define MBED_BOOT_STACK_SIZE 0x1000
+#endif
+
 /* Round up VECTORS_SIZE to 8 bytes */
-#define VECTORS_SIZE (((VECTORS * 4) + 7) & ~7)
+#define VECTORS_SIZE (((VECTORS * 4) + 7) AND ~7)
 
 LR_IROM1 MBED_APP_START MBED_APP_SIZE  {
 
@@ -60,8 +71,10 @@ LR_IROM1 MBED_APP_START MBED_APP_SIZE  {
     .ANY (+RO)
   }
 
-  RW_IRAM1 (RAM_START + VECTORS_SIZE) (RAM_SIZE - VECTORS_SIZE)  {  ; RW data
+  RW_IRAM1 (RAM_START + VECTORS_SIZE) (RAM_SIZE - VECTORS_SIZE - MBED_BOOT_STACK_SIZE)  {  ; RW data
     .ANY (+RW +ZI)
+  }
+  ARM_LIB_STACK (RAM_START + RAM_SIZE) EMPTY -MBED_BOOT_STACK_SIZE { ; Stack region growing down
   }
 }
 ```
@@ -88,17 +101,22 @@ if (!isdefinedsymbol(MBED_APP_SIZE)) {
     define symbol MBED_APP_SIZE = ROM_SIZE;
 }
 
+if (!isdefinedsymbol(MBED_BOOT_STACK_SIZE)) {
+    /* This value is normally defined by the tools 
+        to 0x400 for mbed 2 and 0x1000 for mbed 5 */
+    define symbol MBED_BOOT_STACK_SIZE = 0x1000;
+}
+
 /* Round up VECTORS_SIZE to 8 bytes */
 define symbol VECTORS_SIZE = ((VECTORS * 4) + 7) & ~7;
 define symbol RAM_REGION_START = RAM_START + VECTORS_SIZE;
 define symbol RAM_REGION_SIZE = RAM_SIZE - VECTORS_SIZE;
-define symbol ISR_STACK_SIZE = 0x400;
 
 define memory mem with size = 4G;
 define region ROM_region = mem:[from MBED_APP_START size MBED_APP_SIZE];
 define region RAM_region = mem:[from RAM_REGION_START size RAM_REGION_SIZE];
 
-define block CSTACK    with alignment = 8, size = ISR_STACK_SIZE   { };
+define block CSTACK    with alignment = 8, size = MBED_BOOT_STACK_SIZE   { };
 define block HEAP      with alignment = 8, size = HEAP_SIZE     { };
 
 initialize by copy { readwrite };
@@ -131,6 +149,12 @@ GCC linker script template:
 
 #if !defined(MBED_APP_SIZE)
   #define MBED_APP_SIZE ROM_SIZE
+#endif
+
+#if !defined(MBED_BOOT_STACK_SIZE)
+    /* This value is normally defined by the tools 
+       to 0x400 for mbed 2 and 0x1000 for mbed 5 */
+    #define MBED_BOOT_STACK_SIZE 0x1000
 #endif
 
 /* Round up VECTORS_SIZE to 8 bytes */
@@ -265,6 +289,7 @@ SECTIONS
         __end__ = .;
         PROVIDE(end = .);
         *(.heap*)
+        . = ORIGIN(RAM) + LENGTH(RAM) - MBED_BOOT_STACK_SIZE;
         __HeapLimit = .;
     } > RAM
 
@@ -279,7 +304,7 @@ SECTIONS
     /* Set stack top to end of RAM, and stack limit move down by
      * size of stack_dummy section */
     __StackTop = ORIGIN(RAM) + LENGTH(RAM);
-    __StackLimit = __StackTop - SIZEOF(.stack_dummy);
+    __StackLimit = __StackTop - MBED_BOOT_STACK_SIZE;
     PROVIDE(__stack = __StackTop);
 
     /* Check if data + heap + stack exceeds RAM limit */

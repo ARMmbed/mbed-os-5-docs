@@ -12,33 +12,33 @@ To bring up the Mbed LoRaWAN stack, consider the following progression:
 
 1) An [EventQueue](eventqueue.html) object:
 
-```cpp
+```cpp TODO
 // construct an event queue
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
 2) A [LoRaRadio](lorawan-api.html) object:
 
-```CPP
+```CPP TODO
 // construct a LoRadio object
 SX1272_LoRaRadio radio(PIN_NAMES ... );
 ```
 
 3) Instantiate `LoRaWANInterface`, and pass `LoRaRadio` object:
 
-```CPP
+```CPP TODO
 LoRaWANInterface lorawan(radio) ;
 ```
 
 4) Initialize mac layer and pass `EventQueue` object:
 
-```CPP
+```CPP TODO
 lorawan.initialize(&ev_queue);
 ```
 
 5) Set up the event callback:
 
-```cpp
+```cpp TODO
 lorawan_app_callbacks_t callbacks
 callbacks.events = mbed::callback(YOUR_EVENT_HANDLER);
 lorawan.add_app_callbacks(&callbacks);
@@ -46,7 +46,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 6) Add network credentials (security keys) and any configurations:
 
-```CPP
+```CPP TODO
 lorawan_connect_t connection;
 
 connection.connect_type = LORAWAN_CONNECTION_OTAA;
@@ -93,7 +93,7 @@ The Mbed LoRaWAN stack currently maps 3 different callbacks:
 
 An example of attaching your event handler to the stack:
 
-```CPP
+```CPP TODO
 
 void your_event_handler(lorawan_event_t event)
 {
@@ -118,7 +118,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 Link check request is a MAC command defined by the LoRaWAN specification. To receive the response of this MAC command, set the `link_check_resp` callback.
 
-```CPP
+```CPP TODO
 void your_link_check_response(uint8_t demod_margin, uint8_t num_gw)
 {
 	//demod_margin is the demodulation margin
@@ -134,7 +134,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 The battery level callback is different from others. The direction of this callback is from the application to the stack. In other words, it provides information to the stack. The application is reponsible for letting the stack know about the current battery level.
 
-```CPP
+```CPP TODO
 uint8_t your_battery_level()
 {
 	return battery_level;

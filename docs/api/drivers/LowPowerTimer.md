@@ -1,6 +1,6 @@
 ## LowPowerTimer
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_low_power_timer.png)<span>LowPowerTimer class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_low_power_timer.png)<span>LowPowerTimer class hierarchy</span></span>
 
 LowPowerTimer inherits from the Timer Class. The timer in this case continues operating even in deep sleep mode. It relies on `lp_ticker`, which is the low power ticker.
 

@@ -2,7 +2,7 @@
 
 Idle loop is a background system thread, which scheduler executes when no other threads are ready to run. That may happen when your application is waiting for an event to happen. By default, the idle loop invokes sleep manager to enter a sleep mode. You can overwrite this behavior by providing a different handler:
 
-```c++
+```c++ TODO
 void new_idle_loop()
 {
     // do nothing

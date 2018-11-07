@@ -13,6 +13,8 @@ The Arm Mbed OS configuration system gathers and interprets the configuration de
 
 <span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
 
+<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](/docs/latest/tools/CLI/build-profiles.html).</span>
+
 ### Examining available configuration parameters
 
 Mbed CLI includes a command for listing and explaining the compile time configuration, `mbed compile --config`. This command prints a summary of configuration parameters, such as:
@@ -59,7 +61,7 @@ Name: configuration-store.storage_disable
 
 When compiling or exporting, the configuration system generates C preprocessor macro definitions of the configuration parameters. The configuration system writes these definitions in a file named `mbed_config.h` located in the build directory. When compiling the same example as the prior section for target `K64F`, the `mbed_config.h` file includes this snippet (note that the order of the definitions may be different):
 
-```C
+```C NOCI
 // Automatically generated configuration file.
 // DO NOT EDIT, content will be overwritten.
 
