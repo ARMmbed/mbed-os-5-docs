@@ -44,32 +44,28 @@ Check the user guide of the eval board to see if anything needs to be done prior
 
 Install the following packages:
 
-- Python 2.7: https://www.python.org/downloads/release/python-2715/.
-- Git: https://git-scm.com/downloads.
-- Mbed CLI https://os.mbed.com/docs/v5.10/tools/installation-and-setup.html.
-- (Optional) FTDI serial driver http://www.ftdichip.com/Drivers/VCP.htm.
-- Toolchains f4ef4rfrr44.
-   - GNU Arm Embedded Toolchain (GCC): https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads.
-   - IAR: https://www.iar.com/iar-embedded-workbench/.
-   - Arm Compiler 5 or 6: https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5.
+- [Python 2.7](https://www.python.org/downloads/release/python-2715/).
+- [Git](https://git-scm.com/downloads).
+- [Mbed CLI](/docs/development/tools/installation-and-setup.html).
+- (Optional) [FTDI serial driver](http://www.ftdichip.com/Drivers/VCP.htm).
+- Toolchains:
+   - [GNU Arm Embedded Toolchain (GCC)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
+   - [IAR](https://www.iar.com/iar-embedded-workbench/).
+   - [Arm Compiler 5 or 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5).
 
-Check https://os.mbed.com/docs/latest/tools/index.html for exact tool versions supported in a specific Mbed OS release.
+The [tools documentation](https://os.mbed.com/docs/latest/tools/index.html) contains exact tool versions supported in a specific Mbed OS release.
 
-#### Fork Github repositories
+You also need to have forked or branch the following repositories:
 
-At the minimum, the following repositories need to be forked or branched for the porting project:
-
-- https://github.com/armmbed/daplink.
-- https://github.com/mbedmicro/pyocd.
-- https://github.com/mbedmicro/flashalgo.
-- https://github.com/armmbed/mbed-os.
-- https://github.com/armmbed/mbed-bootloader.
-- https://github.com/armmbed/mbed-os-example-blinky.
-- https://github.com/armmbed/mbed-cloud-client-example.
+- [DAPLink](https://github.com/armmbed/daplink).
+- [pyOCD](https://github.com/mbedmicro/pyocd).
+- [FlashAlgo](https://github.com/mbedmicro/flashalgo).
+- [Mbed OS](https://github.com/armmbed/mbed-os).
+- [Mbed OS bootloader](https://github.com/armmbed/mbed-bootloader).
+- [Blinky](https://github.com/armmbed/mbed-os-example-blinky).
+- [Device Management Cloud Client example](https://github.com/armmbed/mbed-cloud-client-example).
 
 ### 1. Get Mbed OS source code
-
-#### 1.1 Clone code to your local directory
 
 The following commands retrieve `mbed-os-example-blinky` code and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
@@ -87,7 +83,7 @@ git pull origin master
 git checkout -b <branch_name>
 ```
 
-#### 1.2 Build the Blinky program for an existing target
+#### 1.1 Build the Blinky program for an existing target
 
 ```
 cd mbed-os-example-blinky
@@ -455,13 +451,9 @@ Customize the serial port path and baudrate as needed.
 
 ### 8 Test ported code using demo applications
 
-#### 8.1 mbed-os-example-blinky
+The `mbed-os-example-blinky` application should run after 11.6 is ported.
 
-This application should run after 11.6 is ported.
-
-#### 8.2 mbed-cloud-client-example
-
-This application should run after 11.10 is ported.
+The `mbed-cloud-client-example` application should run after 11.10 is ported.
 
 ### 9 Detailed test procedure
 
