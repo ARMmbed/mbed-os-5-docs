@@ -585,244 +585,233 @@ Program the generated .bin or .hex.
 
 ##### 9.2.3 mbed-cloud-client-example
 
-###### 9.2.3.1 Application repository
+Use the following test procedure on the `mbed-cloud-client-example` [application repository](https://github.com/armmbed/mbed-cloud-client-example)
 
-https://github.com/armmbed/mbed-cloud-client-example
-
-###### 9.2.3.2 Test procedure
-
-(1) Setup Pelion Account per instructions on https://cloud.mbed.com/product-overview.
-
-(2) Generate API key on Pelion Portal.
-
-(3) Run the following command with the generated API key in mbed-cloud-client-example directory
-
-```
-$ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
-$ mbed target <new_target>
-$ mbed toolchain GCC_ARM
-$ mbed dm init -d "<company domain name>" --model-name <new_target>
-```
-
-Two files update_default_resources.c and mbed_cloud_dev_credentials.c should be created and used in the build.
-
-(4) Customize json files.
-
-The following customization is needed prior to build:
-
-- Modify mbed-os.lib by changing the URL to https://github.com/ARMmbed/mbed-os-new-target
-- Add the new target to mbed-cloud-client-example/mbed_app.json. For example, the code block below adds CC3220SF:
-
-   mbed_app.json example
+1. Set up Pelion Account per instructions on https://cloud.mbed.com/product-overview.
+1. Generate API key on Pelion Portal.
+1. Run the following command with the generated API key in mbed-cloud-client-example directory
+   
    ```
-   ...
-       "target.macros_remove" : ["MBEDTLS_CONFIG_HW_SUPPORT"]
-   },
-   "CC3220SF": {
-       "target.network-default-interface-type" : "WIFI",
-       "update-client.bootloader-details" : "0x01006F44",
-       "update-client.application-details" : "0x01008000",
-       "client_app.auto_partition": "1"
-   }
+   $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
+   $ mbed target <new_target>
+   $ mbed toolchain GCC_ARM
+   $ mbed dm init -d "<company domain name>" --model-name <new_target>
    ```
+
+   Two files update_default_resources.c and mbed_cloud_dev_credentials.c should be created and used in the build.
+
+1. Customize json files.
+   
+   The following customization is needed prior to build:
+   
+   - Modify mbed-os.lib by changing the URL to https://github.com/ARMmbed/mbed-os-new-target
+   - Add the new target to mbed-cloud-client-example/mbed_app.json. For example, the code block below adds CC3220SF:
+   
+      ```
+      ...
+          "target.macros_remove" : ["MBEDTLS_CONFIG_HW_SUPPORT"]
+      },
+      "CC3220SF": {
+          "target.network-default-interface-type" : "WIFI",
+          "update-client.bootloader-details" : "0x01006F44",
+          "update-client.application-details" : "0x01008000",
+          "client_app.auto_partition": "1"
+      }
+      ```
+
    In addition, fill in the SSID and Password in mbed_app.json if connectivity method for the new target is WiFi.
    
    Note that bootloader-details is the value displayed on the serial program while running mbed-bootloader program.
 
-- Add SOTP descriptors to mbed-cloud-client-example/mbed_lib.json, e.g.
-   
-   mbed_app.json example
+   - Add SOTP descriptors to mbed-cloud-client-example/mbed_lib.json, e.g.
+      
+      ```
+      ...
+          "sotp-section-2-size"              : "(16*1024)"
+       },
+       "CC3220SF": {
+           "sotp-section-1-address"           : "(0x01000000+1020*1024)",
+           "sotp-section-1-size"              : "(2*1024)",
+           "sotp-section-2-address"           : "(0x01000000+1022*1024)",
+           "sotp-section-2-size"              : "(2*1024)"
+       }
+      ```
+
+1. Build image.
+
    ```
-   ...
-       "sotp-section-2-size"              : "(16*1024)"
-    },
-    "CC3220SF": {
-        "sotp-section-1-address"           : "(0x01000000+1020*1024)",
-        "sotp-section-1-size"              : "(2*1024)",
-        "sotp-section-2-address"           : "(0x01000000+1022*1024)",
-        "sotp-section-2-size"              : "(2*1024)"
-    }
+   cd mbed-cloud-client-example
+   mbed deploy
+   mbed compile --target <new_target> --toolchain GCC_ARM
    ```
 
-(5) Build image.
+1. Program the generated .bin or .hex to the board.
+1. Verify serial output similar to: 
 
-Build MMC
-```
-cd mbed-cloud-client-example
-mbed deploy
-mbed compile --target <new_target> --toolchain GCC_ARM
-```
+   ```
+   [BOOT] Mbed Bootloader
 
-(6) Program the generated .bin or .hex to the board.
+   [BOOT] ARM: 00000000000000000000
 
-(7) Verify serial output similar to: 
+   [BOOT] OEM: 00000000000000000000
 
-```
-[BOOT] Mbed Bootloader
+   [BOOT] Layout: 0 1006F44
 
-[BOOT] ARM: 00000000000000000000
+   [BOOT] Active firmware integrity check:
 
-[BOOT] OEM: 00000000000000000000
+   [BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
 
-[BOOT] Layout: 0 1006F44
+   [BOOT] SHA256: ABAF3AC1F2D7B8173BC5540DA50E7093C8A479E4C0148090348BD1EA68A0958F
 
-[BOOT] Active firmware integrity check:
+   [BOOT] Version: 1539890967
 
-[BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [BOOT] Slot 0 is empty
 
-[BOOT] SHA256: ABAF3AC1F2D7B8173BC5540DA50E7093C8A479E4C0148090348BD1EA68A0958F
+   [BOOT] Active firmware up-to-date
 
-[BOOT] Version: 1539890967
+   [BOOT] Application's start address: 0x1008400
 
-[BOOT] Slot 0 is empty
+   [BOOT] Application's jump address: 0x1046081
 
-[BOOT] Active firmware up-to-date
+   [BOOT] Application's stack address: 0x20040000
 
-[BOOT] Application's start address: 0x1008400
+   [BOOT] Forwarding to application...
 
-[BOOT] Application's jump address: 0x1046081
 
-[BOOT] Application's stack address: 0x20040000
 
-[BOOT] Forwarding to application...
+   mcc_platform_storage_init() - bd->size() = 16021192704
 
+   mcc_platform_storage_init() - BlockDevice init OK.
 
+   Application ready. Build at: Oct 18 2018 14:29:26
 
-mcc_platform_storage_init() - bd->size() = 16021192704
+   Mbed OS version 99.99.99
 
-mcc_platform_storage_init() - BlockDevice init OK.
+   Start simple mbed Cloud Client
 
-Application ready. Build at: Oct 18 2018 14:29:26
+   Using hardcoded Root of Trust, not suitable for production use.
 
-Mbed OS version 99.99.99
+   Starting developer flow
 
-Start simple mbed Cloud Client
+   mcc_platform_init_connection()
 
-Using hardcoded Root of Trust, not suitable for production use.
+   NSAPI_STATUS_CONNECTING
 
-Starting developer flow
+   NSAPI_STATUS_GLOBAL_UP
 
-mcc_platform_init_connection()
+   Network initialized, connecting...
 
-NSAPI_STATUS_CONNECTING
 
-NSAPI_STATUS_GLOBAL_UP
 
-Network initialized, connecting...
+   Client registered
 
+   Endpoint Name: 016688bda0740000000000010010007a
 
+   Device Id: 016688bda0740000000000010010007a
+   ```
 
-Client registered
+1. Verify device is registered on Pelion portal
+1. Make change in the MCC client and rebuild the firmware.
+1. Perform firmware update
 
-Endpoint Name: 016688bda0740000000000010010007a
+   ```
+   $ mbed dm update device -D <device ID> -m <new_target>
+   ```
 
-Device Id: 016688bda0740000000000010010007a
-```
+   The following serial output is expected if firmware update is successful:
 
-(8) Verify device is registered on Pelion portal
+   ```
+   Firmware download requested
 
-(9) Make change in the MCC client and rebuild the firmware.
+   Authorization granted
 
-(10) Perform firmware update
+   Downloading: [++++++++++++++++++++++++++++++++++++++++++++++++++] 100 %
 
-```
-$ mbed dm update device -D <device ID> -m <new_target>
-```
+   Download completed
 
-The following serial output is expected if firmware update is successful:
+   Firmware install requested
 
-```
-Firmware download requested
+   Authorization granted
+   ```
 
-Authorization granted
+   Power cycle the board.
 
-Downloading: [++++++++++++++++++++++++++++++++++++++++++++++++++] 100 %
+1. Verify the newer firmware is running on the device. Serial output should display the following:
 
-Download completed
+   ```
+   [BOOT] Mbed Bootloader
 
-Firmware install requested
+   [BOOT] ARM: 00000000000000000000
 
-Authorization granted
-```
+   [BOOT] OEM: 00000000000000000000
 
-Power cycle the board.
+   [BOOT] Layout: 0 1006F44
 
-(11) Verify the newer firmware is running on the device. Serial output should display the following:
+   [BOOT] Active firmware integrity check:
 
-```
-[BOOT] Mbed Bootloader
+   [BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
 
-[BOOT] ARM: 00000000000000000000
+   [BOOT] SHA256: ABAF3AC1F2D7B8173BC5540DA50E7093C8A479E4C0148090348BD1EA68A0958F
 
-[BOOT] OEM: 00000000000000000000
+   [BOOT] Version: 1539890967
 
-[BOOT] Layout: 0 1006F44
+   [BOOT] Slot 0 firmware integrity check:
 
-[BOOT] Active firmware integrity check:
+   [BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
 
-[BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [BOOT] SHA256: ABAF3AC1F2D7B8173BC5540DA50E7093C8A479E4C0148090348BD1EA68A0958F
 
-[BOOT] SHA256: ABAF3AC1F2D7B8173BC5540DA50E7093C8A479E4C0148090348BD1EA68A0958F
+   [BOOT] Version: 1539892842
 
-[BOOT] Version: 1539890967
+   [BOOT] Update active firmware using slot 0:
 
-[BOOT] Slot 0 firmware integrity check:
+   [BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
 
-[BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [BOOT] Verify new active firmware:
 
-[BOOT] SHA256: ABAF3AC1F2D7B8173BC5540DA50E7093C8A479E4C0148090348BD1EA68A0958F
+   [BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
 
-[BOOT] Version: 1539892842
+   [BOOT] New active firmware is valid
 
-[BOOT] Update active firmware using slot 0:
+   [BOOT] Application's start address: 0x1008400
 
-[BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [BOOT] Application's jump address: 0x1046081
 
-[BOOT] Verify new active firmware:
+   [BOOT] Application's stack address: 0x20040000
 
-[BOOT] [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [BOOT] Forwarding to application...
 
-[BOOT] New active firmware is valid
 
-[BOOT] Application's start address: 0x1008400
 
-[BOOT] Application's jump address: 0x1046081
+   mcc_platform_storage_init() - bd->size() = 16021192704
 
-[BOOT] Application's stack address: 0x20040000
+   mcc_platform_storage_init() - BlockDevice init OK.
 
-[BOOT] Forwarding to application...
+   Application ready. Build at: Oct 18 2018 14:29:26
 
+   Mbed OS version 99.99.99
 
+   Start simple mbed Cloud Client
 
-mcc_platform_storage_init() - bd->size() = 16021192704
+   Using hardcoded Root of Trust, not suitable for production use.
 
-mcc_platform_storage_init() - BlockDevice init OK.
+   Starting developer flow
 
-Application ready. Build at: Oct 18 2018 14:29:26
+   Developer credentials already exist, continuing..
 
-Mbed OS version 99.99.99
+   mcc_platform_init_connection()
 
-Start simple mbed Cloud Client
+   NSAPI_STATUS_CONNECTING
 
-Using hardcoded Root of Trust, not suitable for production use.
+   NSAPI_STATUS_GLOBAL_UP
 
-Starting developer flow
+   Network initialized, connecting...
 
-Developer credentials already exist, continuing..
 
-mcc_platform_init_connection()
 
-NSAPI_STATUS_CONNECTING
+   Client registered
 
-NSAPI_STATUS_GLOBAL_UP
+   Endpoint Name: 016688bda0740000000000010010007a
 
-Network initialized, connecting...
-
-
-
-Client registered
-
-Endpoint Name: 016688bda0740000000000010010007a
-
-Device Id: 016688bda0740000000000010010007a
-```
+   Device Id: 016688bda0740000000000010010007a
+   ```
