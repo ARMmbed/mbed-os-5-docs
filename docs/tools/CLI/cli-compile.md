@@ -42,6 +42,7 @@ The arguments for *compile* are:
 - `--source <SOURCE>` selects the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree. Find more details about the `--source` switch in the [build rules documentation](/docs/development/tools/mbed-os-build-rules.html).
 - `--build <BUILD>` selects the build directory. Default: `BUILD/` inside your program root.
    <span class="notes">**Note**: `mbed compile` ignores the current build directory; creating multiple build directories leads to errors.</span>
+- `--stats-depth <DEPTH>` summarize memory statistics within the table printed after linking, the CSV map file and the JSON map file for paths with depth greater than `DEPTH`. Default: `2`.
 - `--profile <PATH_TO_BUILD_PROFILE>` selects a path to a build profile configuration file. Example: `debug`. See the dedicated [build profile documentation](/docs/development/tools/CLI/build-profiles.html) for more detail.
 - `--library` compiles the code as a [static `.a/.ar` library](#compiling-static-libraries).
 - `--no-archive` suppresses the creation of `.a/.ar` files created by `--library`, producing many `.o` files instead.
