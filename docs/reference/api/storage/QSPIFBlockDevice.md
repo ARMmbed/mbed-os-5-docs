@@ -14,4 +14,4 @@ For more information about the SFDP JEDEC standard, please see [its documentatio
 
 This example creates a QSPIFBlockDevice, erases a sector, programs it, reads the block back and cleans up.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/QSPIFBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/QSPIFBlockDevice_ex_1/file/5991e7053465/main.cpp)
+[![View code](https://os.mbed.com/teams/mbed_example/code/QSPIFBlockDevice_example/file/5608693b47aa/main.cpp/)](https://os.mbed.com/teams/mbed_example/code/QSPIFBlockDevice_ex_1/file/5991e7053465/main.cpp)
