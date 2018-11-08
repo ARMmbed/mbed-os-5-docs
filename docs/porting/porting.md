@@ -40,6 +40,9 @@ A basic framework is ready after this step. You can do the rest of the porting w
 Porting Mbed OS requires the following hardware:
 
 - An evaluation board with the targeted MCU.
+
+    The new target needs a unique board ID. [Contact Arm]() to get one.
+    
 - A micro USB cables. One Micro USB cable connects the evaluation board to your development PC.
 
 You may also need:
@@ -140,15 +143,17 @@ To add the source code to support the new target:<!--this doesn't quite parse. i
 <!--to do what?-->Follow the steps under **Develop Setup** and **Develop** in the [FlashAlgo documentation](https://github.com/mbedmicro/flashalgo).<!--why send them to another repo for five lines of code? @amanda that readme needs editing if we're going to point to it.-->
 
 <!--when did I open Keil? at the end of the other file?-->
-In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a scuessful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. Use `c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API.<!--when? where?-->
+In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
 
 ### 3. Add your new target to DAPLink
 
-Repo: https://github.com/armmbed/daplink.
+<span class="notes">This step requires a Windows PC.</span>
 
-Windows PC is required for DAPLink environment.
+<span class="notes">The new target needs a unique board ID. [Contact Arm]() to get one.</span>
 
-The new target will need to have a unique board ID. Contact Arm to get one.
+Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
+
+
 
 Follow the instructions below to port a new target:
 
