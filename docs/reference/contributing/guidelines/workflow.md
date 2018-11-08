@@ -175,6 +175,8 @@ The Mbed OS maintainers add labels to a pull request that represent the pull req
 
 Each state is time boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
 
+If a pull request is idle for more than 2 weeks, it will closed. It can be reopened with an update anytime by an author or the maintainer.
+
 #### Reviews
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request and tags that person accordingly.
