@@ -1,48 +1,63 @@
 ## Porting guide
 
-This document provides guidelines to the Mbed community for adding a new MCU target to Mbed OS and Pelion.
+This document provides guidelines for adding a new MCU target to Mbed OS and Pelion.
 
 ### Scope and milestones
 
-The following milestones usually need to happen to port Mbed OS to a board/target:
+The following milestones usually need to happen to port Mbed OS to a board or target:
 
-- Set up development environment.
-   - This involves choosing your primary development PC (Windows, Mac OS or Linux), evaluation board with target MCU, debug probe or an integrated interface chip on the eval board and storage device (SD or external flash).
-   - Due to limitations in some development tools that Mbed OS uses, a Windows PC must be available for DAPLink/Flashalgo development. You can port targets, connectivity and storage on Windows, macOS or Linux.
-- Locate reusable code to port to Mbed OS.
-   - If there's SDK available to speed up the porting process, it's recommended to reuse it, assuming copyright of the existing code is preserved.
-- Choose an IDE and debugger.
-   - Eclipse https://www.eclipse.org/ide/, IAR Embedded Workbench https://www.iar.com/iar-embedded-workbench/ and Keil MDK http://www.keil.com/ are the three common IDEs. Eclipse is license free, and both IAR and Keil IDE require licenses. Currently, Keil MDK is the only tool supported in DAPLink development.
-- Arm and the Mbed OS community actively maintain pyOCD. The Mbed Enabled program requires pyOCD, so ultimately it needs to support the new target. To allow parallel development in porting targets, connectivity and storage while pyOCD is still under development, you can use other IDEs supported on the evaluation board in the beginning phase.
-- Implement and test CMSIS pack, bootstrap, linker script and startup code.
-   - A basic framework is ready after this step. You can do the rest of the porting work in parallel.
-- Implement and test porting APIs.
-   - This includes all components described in https://os.mbed.com/docs/latest/porting/index.html.
-- Test Mbed OS and Pelion demonstration applications.
-   - Arm provides a number of demonstrations and examples to help showcase Mbed OS and Pelion.
+1. Set up a development environment. Please choose:
+   - Your primary development PC (Windows, Mac OS or Linux).
+
+       You can port targets, connectivity and storage on Windows, macOS or Linux. Due to limitations in some development tools that Mbed OS uses, you need a Windows PC for DAPLink/Flashalgo development.
+
+  - An evaluation board with a target MCU, debug probe or an integrated interface chip.<!--I'm guessing the "or" is only for the last two things - debug probe or interface chip. In which case, this sentence requires rewriting.--> The hardware [is reviewed in greater details later in this document]().
+  - A storage device (SD or external flash).
+
+1. Locate reusable code to port to Mbed OS.
+<!--Are the reusable code and SDK related? Are they the same thing?-->
+    If there is an SDK available to speed up the porting process, we recommend reusing it (assuming copyright of the existing code is preserved).
+
+1. Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/).
+
+    Limitations:
+
+    - Eclipse is license free, whereas both IAR and Keil IDE require licenses.
+    - Currently, DAPLink development works only Keil MDK.
+
+1. Arm and the Mbed OS community actively maintain pyOCD.<!--Do we need the info about who maintains pyOCD?--> The [Mbed Enabled](https://www.mbed.com/en/about-mbed/mbed-enabled/introduction/) program requires pyOCD, <!--I don't see that requierment https://www.mbed.com/en/about-mbed/mbed-enabled/requirements/ -->so ultimately pyOCD needs to support the new target. To allow parallel development in porting targets, connectivity and storage while pyOCD is still under development, you can use other IDEs supported on the evaluation board in the beginning phase.<!--Is this actually part of the previous point?-->
+
+1. Implement and test CMSIS pack, bootstrap, linker script and startup code.
+
+A basic framework is ready after this step. You can do the rest of the porting work in parallel:
+
+1. Implement and test porting APIs. This includes all components described in the rest of this porting guide.
+
+1. Test Mbed OS and Pelion example applications (as listed [in the final steps in this porting guide]()). This steps verifies that your new port is fully functional.
 
 ### Hardware setup
 
 Porting Mbed OS requires the following hardware:
 
-- Evaluation board with the targeted MCU.
-- (Optional) FTDI TTL232R-3V3 USB cable.
-   - Some debug probes do not have serial connection such as SWDAP https://os.mbed.com/teams/mbed/wiki/SWDAP. If you have to use such boards, an FTDI cable connecting the TX and RX pin can be used.
-- (Optional) Debug probe.
-   - If the Interface MCU is not on the eval board, choose an debug probe such as https://os.mbed.com/platforms/SWDAP-LPC11U35/.
-- 1-2 Micro USB cables.
-   - One Micro USB cable is used to connect the eval board to your development PC. Optionally you may need another cable to connect the debug probe to the PC.
+- An evaluation board with the targeted MCU.
+- A micro USB cables. One Micro USB cable connects the evaluation board to your development PC.
 
-The following items might be helpful in testing SPI, I2C and Pins:
+You may also need:
 
-- 1 CI Test Shield v2.0.0. For details, refer to https://github.com/ARMmbed/ci-test-shield.
-- 1 Micro SD card for the CI Test Shield.
+- If the interface MCU is not on the evaluation board, choose a debug probe, such as [SDWAP-LPC11U35](https://os.mbed.com/platforms/SWDAP-LPC11U35/). You will then need a micro USB cable (in addition to the micro USB cable listed above).
+- An FTDI TTL232R-3V3 USB cable, for the Tx and Rx pins of debug probes that do not have a serial connection.
+<!--I reversed the order because it seemed that the second will only be relevant if the first one is true. -->
 
-Check the user guide of the eval board to see if anything needs to be done prior to using debug probe and running Mbed OS programs.
+The following items might help you test SPI, I2C and Pins:
 
-### Software installations
+- A CI test shield v2.0.0. For details, refer to [https://github.com/ARMmbed/ci-test-shield](https://github.com/ARMmbed/ci-test-shield).
+- A micro SD card for the CI test shield.
 
-Install the following packages:
+<span class="tips">Check the user guide of the evaluation board to see if anything needs to be done prior to using a debug probe and running Mbed OS programs.</span>
+
+### Software setup
+
+Please install the following:
 
 - [Python 2.7](https://www.python.org/downloads/release/python-2715/).
 - [Git](https://git-scm.com/downloads).
@@ -53,9 +68,9 @@ Install the following packages:
    - [IAR](https://www.iar.com/iar-embedded-workbench/).
    - [Arm Compiler 5 or 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5).
 
-The [tools documentation](https://os.mbed.com/docs/latest/tools/index.html) contains exact tool versions supported in a specific Mbed OS release.
+<span class="notes">The [tools documentation](https://os.mbed.com/docs/latest/tools/index.html) contains the exact tool versions supported in a specific Mbed OS release.</span><!--well... no, that's the support for the latest version of Mbed OS, not each version-->
 
-You also need to have forked or branch the following repositories:
+Please fork or branch the following repositories:
 
 - [DAPLink](https://github.com/armmbed/daplink).
 - [pyOCD](https://github.com/mbedmicro/pyocd).
@@ -168,23 +183,23 @@ Make a note of the installation path of pyocd-gdbserver; you'll need it in the n
 The following procedure is for Eclipse IDE, find similar settings for Keil and IAR.
 
 - Under Debugger, point Executable path and Actual executable path to the pyocd-gdbserver you installed at Step 5.2.
-   
+
    For example,  `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver`.
 
 - In GDB Client Setup, change the executable to `arm-none-eabi-gdb`, which was part of the GNU Arm Embedded Toolchain installed at Step 4.
 
    For example, on Windows, it looks like:
-   
+
    ```
    C:\Program Files (x86)\GNU Tools ARM Embedded\7 2017-q4-major\bin\arm-none-eabi-gdb.exe
    ```
-   
+
    On macOS, it may be:
-   
+
    ```
    /usr/local/mbed-tools/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gdb
    ```
-   
+
 - The rest of the settings can be kept default.
 
 ### 6. Recommended porting order
@@ -467,14 +482,14 @@ All tests can be built under the `mbed-os-example-blinky` directory.
 cd mbed-os-example-blinky
 # Rename main.cpp to main.txt
 mv main.cpp main.txt
- 
+
 #Build tests
 mbed test --compile -m <new_target> -t gcc_arm -c
 # You'll see some build errors. These errors should reduce or eventually disappear as more HAL components are ported.
- 
+
 # Go to mbed-os directory, all built-in tests will be run from there.
 cd mbed-os
- 
+
 # The following command returns the list of tests built:
 mbed test --compile-list
 ```
@@ -488,8 +503,8 @@ Test images are located under the following directory:
 ```
 mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/
 ```
-    
-For example, 
+
+For example,
 
 ```
 $ mbed test --compile-list | grep common_tickers
@@ -514,7 +529,7 @@ Path: ./TESTS/mbed_hal/common_tickers
 
 The following procedure requires the image to be flashed to the board. You may use DAPLink, Eclipse IDE to flash the image. If the new target is already supported by IAR or Keil programming tool, programming can be done using those tools as well. They easiest method is to use the command line tool pyocd-flashtool:
 
-Note: We recommended: 
+Note: We recommended:
 pyocd-flashtool BUILD/mbed-os-example-blinky.bin or
 pyocd-flashtool BUILD/mbed-os-example-blinky.hex
 
@@ -590,7 +605,7 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
 1. Set up Pelion Account per instructions on https://cloud.mbed.com/product-overview.
 1. Generate API key on Pelion Portal.
 1. Run the following command with the generated API key in mbed-cloud-client-example directory
-   
+
    ```
    $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
    $ mbed target <new_target>
@@ -601,12 +616,12 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
    Two files update_default_resources.c and mbed_cloud_dev_credentials.c should be created and used in the build.
 
 1. Customize json files.
-   
+
    The following customization is needed prior to build:
-   
+
    - Modify mbed-os.lib by changing the URL to https://github.com/ARMmbed/mbed-os-new-target
    - Add the new target to mbed-cloud-client-example/mbed_app.json. For example, the code block below adds CC3220SF:
-   
+
       ```
       ...
           "target.macros_remove" : ["MBEDTLS_CONFIG_HW_SUPPORT"]
@@ -620,11 +635,11 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
       ```
 
    In addition, fill in the SSID and Password in mbed_app.json if connectivity method for the new target is WiFi.
-   
+
    Note that bootloader-details is the value displayed on the serial program while running mbed-bootloader program.
 
    - Add SOTP descriptors to mbed-cloud-client-example/mbed_lib.json, e.g.
-      
+
       ```
       ...
           "sotp-section-2-size"              : "(16*1024)"
@@ -646,7 +661,7 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
    ```
 
 1. Program the generated .bin or .hex to the board.
-1. Verify serial output similar to: 
+1. Verify serial output similar to:
 
    ```
    [BOOT] Mbed Bootloader
