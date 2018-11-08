@@ -9,7 +9,7 @@ The following milestones usually need to happen to port Mbed OS to a board or ta
 1. Set up a development environment. Please choose:
    - Your primary development PC (Windows, Mac OS or Linux).
 
-       You can port targets, connectivity and storage on Windows, macOS or Linux. Due to limitations in some development tools that Mbed OS uses, you need a Windows PC for DAPLink/Flashalgo development.
+       You can port targets, connectivity and storage on Windows, macOS or Linux. Due to limitations in some development tools that Mbed OS uses, you need a Windows PC for DAPLink/FlashAlgo development.
 
   - An evaluation board with a target MCU, debug probe or an integrated interface chip.<!--I'm guessing the "or" is only for the last two things - debug probe or interface chip. In which case, this sentence requires rewriting.--> The hardware [is reviewed in greater details later in this document]().
   - A storage device (SD or external flash).
@@ -80,14 +80,21 @@ Please fork or branch the following repositories:
 - [Blinky](https://github.com/armmbed/mbed-os-example-blinky).
 - [Device Management Cloud Client example](https://github.com/armmbed/mbed-cloud-client-example).
 
-### 1. Get Mbed OS source code
+### 1. Get the Mbed OS source code
 
-The following commands retrieve `mbed-os-example-blinky` code and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
+The following Mbed CLI commands retrieve and fork the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
+
+<!--Why would I want to do that? Why are we starting with an application rather than a "clean" Mbed OS?-->
 
 ```
 mbed import mbed-os-example-blinky
 cd mbed-os-example-blinky
-# Edit mbed-os.lib with the URL of your forked repo, e.g., https://github.com/ARMmbed/mbed-os-new-target
+```
+
+Add the URL of your forked repo (such as https://github.com/ARMmbed/mbed-os-new-target) to `mbed-os.lib`.<!--why isn't this at the end? At this point, I haven't created a new repo on GitHub yet--> Then:
+
+
+```
 mbed deploy
 mkdir mbed-os
 cd mbed-os
@@ -100,6 +107,8 @@ git checkout -b <branch_name>
 
 #### 1.1 Build the Blinky program for an existing target
 
+<!--what does that accomplish?-->
+
 ```
 cd mbed-os-example-blinky
 mbed compile --target K64F --toolchain GCC_ARM
@@ -107,30 +116,33 @@ mbed compile --target K64F --toolchain ARM
 mbed compile --target K64F --toolchain IAR
 ```
 
-Verify build succeeds. At this point, you have a working baseline and are ready to add a new target.
+Verify the build succeeds.<!--what if it fails?-->
 
-### 2. Add new target to FlashAlgo
+You now have a working baseline and are ready to add a new target.
 
-Repo: https://github.com/mbedmicro/flashalgo
+### 2. Add a new target to FlashAlgo
 
-Windows PC is required for this step.
+<!--why do I need this step? what is FlashAlgo and why does Mbed OS porting rely on it?-->
 
-Follow the procedure below to add the source code to support the new target:
+<span class="notes">This step requires a Windows PC.</span>
 
-- Add a record to projects.yaml
-- Create <target>.yaml file in the records/projects directory
-- Create FlashDev.c file describing the attributes of the new flash device
-- Create FlashPrg.c to include all necessary functions including Init, UnInit, EraseChip, EraseSector and ProgramPage
+Repo: [https://github.com/mbedmicro/flashalgo](https://github.com/mbedmicro/flashalgo)
 
-This PR can be used as an example: https://github.com/mbedmicro/FlashAlgo/pull/46/files.
+To add the source code to support the new target:<!--this doesn't quite parse. is it two steps?-->
 
-Follow the steps under Develop Setup and Develop section in https://github.com/mbedmicro/flashalgo.
+- Add a record to `projects.yaml`. <!--where is that?-->
+- Create a `<target>.yaml` file in the `records/projects` directory.<!--where is that?-->
+- Create a `FlashDev.c` file describing the attributes of the new flash device.<!--where do I put it?-->
+- Create a `FlashPrg.c` file containing all the necessary functions, including Init, UnInit, EraseChip, EraseSector and ProgramPage.
 
-Once Keil MDK starts, open the project file for the desired target in \projectfiles\uvision<target> and build it. Upon a successful build, you'll find the following files in the build directory:
+<span class="tips">You can use this PR as an example: [https://github.com/mbedmicro/FlashAlgo/pull/46/files](https://github.com/mbedmicro/FlashAlgo/pull/46/files).</span>
 
-c_blob.c and c_blob_mbed.c. Save these files. c_blob.c will be used in flash_blob.c, c_blob_mbed.c can be used in Flash API.
+<!--to do what?-->Follow the steps under **Develop Setup** and **Develop** in the [FlashAlgo documentation](https://github.com/mbedmicro/flashalgo).<!--why send them to another repo for five lines of code? @amanda that readme needs editing if we're going to point to it.-->
 
-### 3. Add new target to DAPLink
+<!--when did I open Keil? at the end of the other file?-->
+In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a scuessful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. Use `c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API.<!--when? where?-->
+
+### 3. Add your new target to DAPLink
 
 Repo: https://github.com/armmbed/daplink.
 
