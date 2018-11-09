@@ -1,4 +1,4 @@
-## Porting guide
+environment## Porting guide
 
 This document provides guidelines for adding a new MCU target to Mbed OS and Pelion.
 
@@ -42,7 +42,7 @@ Porting Mbed OS requires the following hardware:
 - An evaluation board with the targeted MCU.
 
     The new target needs a unique board ID. [Contact Arm]() to get one.
-    
+
 - A micro USB cables. One Micro USB cable connects the evaluation board to your development PC.
 
 You may also need:
@@ -154,28 +154,21 @@ In Keil MDK, open the project file for your target in `\projectfiles\uvision<tar
 Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
 
+1. Follow the [DAPLink target porting instructions](https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET.md).
+1. Copy the content of `c_blob.c` into `flash_blob.c`.
+1. Verify your port by running [DAPLink tests](https://github.com/ARMmbed/DAPLink/blob/master/docs/AUTOMATED_TESTS.md).
+1. When all DAPlink tests pass, create a PR <!--against which repo?-->.
 
-Follow the instructions below to port a new target:
+### 4. Add your new target to pyOCD
 
-https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET.md
+1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
+1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/ADDING_NEW_TARGETS.md).
+1. [Test your new target](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
+<!--not only do we keep sending them outside the docs, we send them back and forth between the same docs-->
 
-Copy the content of c_blob.c into flash_blob.c.
+Wait for your target support to be merged into pyOCD's master branch and released in PyPi. You can then use `pip install pyOCD` to enable debug.
 
-Refer to https://github.com/ARMmbed/DAPLink/blob/master/docs/AUTOMATED_TESTS.md to run existing DAPLink tests to verify the port.
-
-Once DAPLink tests pass, create a PR to request merge.
-
-### 4. Add new target to pyOCD
-
-Follow https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md to setup development environment.
-
-This guide describes how to add a new target to pyOCD:
-
-https://github.com/mbedmicro/pyOCD/blob/master/docs/ADDING_NEW_TARGETS.md
-
-Test instructions can be found in https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md.
-
-Once the changes to support the new target are merged into pyOCD master branch, and subsequently released in PyPi, one can use 'pip install pyOCD" to enable debug.
+<!--how? when? how long does it take? do I have to wait for this to continue with my work?-->
 
 ### 5. Debug Mbed OS programs
 
