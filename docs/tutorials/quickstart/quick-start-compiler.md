@@ -9,7 +9,7 @@ Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mb
 #### Setup environment
 
 - Plug your Mbed board into your computer, and open its USB device folder.
-- Double click on the `MBED.HTM` file. (This adds your Mbed platform to the Online Compiler.)
+- Double click on the `MBED.HTML` file. (This adds your Mbed platform to the Online Compiler.)
 
 If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.com/platforms), select a board and click **Add to your Mbed Compiler**.
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)
@@ -19,9 +19,13 @@ If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.c
 
 #### Import
 
-Visit the Mbed OS [Blinky example repository](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click **"Import into Compiler** button.
+Click the button below to automatically import the example into your online compiler.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_into_compiler.png)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-quick-start-blinky)](https://github.com/ARMmbed/mbed-os-quick-start-blinky/blob/master/main.cpp)
+
+Alternatively you may select the import button on the top left hand side of the screen and copy the [following link](https://github.com/ARMmbed/mbed-os-quick-start-blinky) for the example into the prompt.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_program.png)
 </span>
 
 #### Compile
@@ -70,15 +74,16 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-	- [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
-	- [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+    - [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
+    - [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
-	- [Advanced debugging](debugging.html).
-	- [Serial communications](/docs/development/tutorials/serial-communication.html).
-	- [Optimizing binary size](optimizing.html).
+    - [Advanced debugging](debugging.html).
+    - [Serial communications](/docs/development/tutorials/serial-communication.html).
+    - [Optimizing binary size](optimizing.html).
 
 - Other resources
-	- [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
-	- [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
-	- [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
+    - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
+    - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
+    - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
+
