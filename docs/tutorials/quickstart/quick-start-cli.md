@@ -143,8 +143,8 @@ ARM_PATH=<path to ARM bin\>
 From your command-line, import the example:
 
 ```console
-$ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
-$ cd mbed-os-example-blinky
+$ mbed import https://github.com/ARMmbed/mbed-os-quick-start-blinky
+$ cd mbed-os-quick-start-blinky
 ```
 
 #### 2. Compile and program board
@@ -178,6 +178,8 @@ $ mbed export --ide uvision --target K64F
 Another way to do basic debugging is to use the `printf` command in your code and read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
 Invoke `mbed detect` from your command-line to determine which communication port your board connects to (in other words, `COM18`, `/dev/ttyACM0` and so on). Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS.
+
+Note that the `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`, you can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.
 
 ### Further reading
 
