@@ -54,7 +54,11 @@ To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, click the `Ex
 
 Another way to do basic debugging is to use the `printf` command in your code and then read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
-Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. To determine which communication port your board connects to, follow the instructions for your operating system:
+Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. 
+
+Note that the `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`, you can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.
+
+To determine which communication port your board connects to, follow the instructions for your operating system:
 
 ##### Windows
 
