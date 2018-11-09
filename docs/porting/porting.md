@@ -3,7 +3,7 @@ environment## Porting guide
 This document provides guidelines for adding a new MCU target to Mbed OS and Pelion.
 
 ### Scope and milestones
-
+<!--I'm not sure I see how these milestones follow what's below, at least in numbering-->
 The following milestones usually need to happen to port Mbed OS to a board or target:
 
 1. Set up a development environment. Please choose:
@@ -34,6 +34,8 @@ A basic framework is ready after this step. You can do the rest of the porting w
 1. Implement and test porting APIs. This includes all components described in the rest of this porting guide.
 
 1. Test Mbed OS and Pelion example applications (as listed [in the final steps in this porting guide]()). This steps verifies that your new port is fully functional.
+
+## Setting up
 
 ### Hardware setup
 
@@ -83,7 +85,9 @@ Please fork or branch the following repositories:
 - [Blinky](https://github.com/armmbed/mbed-os-example-blinky).
 - [Device Management Cloud Client example](https://github.com/armmbed/mbed-cloud-client-example).
 
-### 1. Get the Mbed OS source code
+## Getting a working baseline
+
+### Get the Mbed OS source code
 
 The following Mbed CLI commands retrieve and fork the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
@@ -108,7 +112,7 @@ git pull origin master
 git checkout -b <branch_name>
 ```
 
-#### 1.1 Build the Blinky program for an existing target
+### Build the Blinky program for an existing target
 
 <!--what does that accomplish?-->
 
@@ -123,7 +127,9 @@ Verify the build succeeds.<!--what if it fails?-->
 
 You now have a working baseline and are ready to add a new target.
 
-### 2. Add a new target to FlashAlgo
+## Adding a new target
+
+### Add a new target to FlashAlgo
 
 <!--why do I need this step? what is FlashAlgo and why does Mbed OS porting rely on it?-->
 
@@ -145,7 +151,7 @@ To add the source code to support the new target:<!--this doesn't quite parse. i
 <!--when did I open Keil? at the end of the other file?-->
 In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
 
-### 3. Add your new target to DAPLink
+### Add your new target to DAPLink
 
 <span class="notes">This step requires a Windows PC.</span>
 
@@ -153,13 +159,12 @@ In Keil MDK, open the project file for your target in `\projectfiles\uvision<tar
 
 Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
-
-1. Follow the [DAPLink target porting instructions](https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET.md).
+1. [Port a target to DAPLink](https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET.md).
 1. Copy the content of `c_blob.c` into `flash_blob.c`.
 1. Verify your port by running [DAPLink tests](https://github.com/ARMmbed/DAPLink/blob/master/docs/AUTOMATED_TESTS.md).
 1. When all DAPlink tests pass, create a PR <!--against which repo?-->.
 
-### 4. Add your new target to pyOCD
+### Add your new target to pyOCD
 
 1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
 1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/ADDING_NEW_TARGETS.md).
@@ -168,67 +173,88 @@ Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
 Wait for your target support to be merged into pyOCD's master branch and released in PyPi. You can then use `pip install pyOCD` to enable debug.
 
-<!--how? when? how long does it take? do I have to wait for this to continue with my work?-->
+<!--how? when? how long does it take? does Arm do it? do I have to wait for this to continue with my work?-->
 
-### 5. Debug Mbed OS programs
+## Debugging Mbed OS programs
 
-#### 5.1 Update DAPLink interface firmware
+<!--what on earth am I debugging? or am I setting up for later?-->
 
-- Clone the latest DAPLink firmware with the new target support completed at Step 8.
-- Build DAPLink firmware release package and locate the generated .bin or .hex firmware under DAPLink\uvision_release\<your_board_name_if> directory per instructions at https://github.com/ARMmbed/DAPLink/tree/master/docs.
-- Update the Interface firmware by pressing the reset prior to plugging the USB cable to the host, then drag-n-dropping the interface firmware.
+### Update DAPLink interface firmware
 
-#### 5.2 Install pyOCD
+<!--why?-->
 
-You need the pyOCD version completed at step 9. If the pyOCD version with the new target support hasn't been released, use the following command to invoke the local copy:
+1. Clone the latest DAPLink firmware with the new target support completed in Step 8<!--by the time this got to me, there was no step 8 or 9-->.
+1. Use the [DAPLink instructions](https://github.com/ARMmbed/DAPLink/tree/master/docs) to build the DAPLink firmware release package.
+1. Locate the generated .bin or .hex firmware under `DAPLink\uvision_release\<your_board_name_if>`.
+1. To update the interface firmware:
+    1. Press the Reset button.
+    1. Plug the USB cable to the host.
+    1. Drag-n-drop the interface firmware.
 
-```
-pip install --editable <path_to_pyOCD_with_new_target_support>
-```
+### Creating GDB pyOCD debug configuration
 
-Make a note of the installation path of pyocd-gdbserver; you'll need it in the next step when you set up Debug Configuration inside the IDE.
+1. Install pyOCD. You need the version with the new target support. If that hasn't been released yet, you can invoke the local copy:
 
-#### 5.3 Create GDB pyOCD debug configuration
+    ```
+    pip install --editable <path_to_pyOCD_with_new_target_support>
+    ```
 
-The following procedure is for Eclipse IDE, find similar settings for Keil and IAR.
+    Make a note of the installation path of `pyocd-gdbserver`; you'll need it when you set up the debug configuration inside the IDE.
 
-- Under Debugger, point Executable path and Actual executable path to the pyocd-gdbserver you installed at Step 5.2.
+1. The following example is for Eclipse IDE; find similar settings for Keil and IAR.
 
-   For example,  `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver`.
+    1. Under **Debugger**, point the **Executable path** and **Actual executable path** to the `pyocd-gdbserver` you installed earlier.
 
-- In GDB Client Setup, change the executable to `arm-none-eabi-gdb`, which was part of the GNU Arm Embedded Toolchain installed at Step 4.
+       For example: `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver`.
 
-   For example, on Windows, it looks like:
+    1. In **GDB Client Setup**, change the executable to `arm-none-eabi-gdb`, which was part of the GNU Arm Embedded Toolchain you installed earlier.
 
-   ```
-   C:\Program Files (x86)\GNU Tools ARM Embedded\7 2017-q4-major\bin\arm-none-eabi-gdb.exe
-   ```
+       For example, on Windows, it looks like:
 
-   On macOS, it may be:
+       ```
+       C:\Program Files (x86)\GNU Tools ARM Embedded\7 2017-q4-major\bin\arm-none-eabi-gdb.exe
+       ```
 
-   ```
-   /usr/local/mbed-tools/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gdb
-   ```
+       On macOS, it may be:
 
-- The rest of the settings can be kept default.
+       ```
+       /usr/local/mbed-tools/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi-gdb
+       ```
 
-### 6. Recommended porting order
+1. You can use the default values for all other settings.
 
-Detailed instructions on how to port targets/connectivity/storage are given in https://os.mbed.com/docs/latest/porting/index.html.
+## Porting modules
 
-Based on criticality and dependency of Mbed OS software stack, the following order is recommended:
+### Recommended porting order
 
-#### 6.1 Baremetal mbed-os-example-blinky
+Based on criticality and dependency of Mbed OS software stack, we recommend the following order:
 
-The official mbed-os-example-blinky requires DigitalOut object and timers. Since these modules are yet to be ported, a baremetal Blinky program is recommended.
+1. Bare metal (based on the Blinky example).
+1. Bootstrap and entry point.
+1. LowPowerTicker.
+1. Serial port.
+1. Microsecond ticker.
+1. GPIO and IRQ.
+1. RTC.
+1. SPI.
+1. TRNG.
+1. Connectivity.
+1. Flash.
+1. Bootloader.
+1. Pelion Client (optional).
+1. Other HAL components (optional).
 
-Modify the Blinky programmed checked out at Step 6.1.
+Detailed instructions for porting each module are given in the module-specific sections of this documentation.
 
-Baremetal program doesn't rely on rtos,GPIO object or timers. LED toggling is done directly by accessing hardware registers. See an example using CC3220SF LAUNCHXL board at https://github.com/linlingao/mbed-os-example-blinky.
+#### Bare metal mbed-os-example-blinky
 
-This Blinky program is a stop-gap measure, obviously you don't want to commit it to master.
+The official mbed-os-example-blinky uses a DigitalOut object and timers. It doesn't rely on RTOS, GPIO and timers<!--timers shows up once in the "used" list and once in the "unused list"-->. LED toggling is done directly by accessing hardware registers.
 
-#### 6.2 Bootstrap and entry point
+Modify the Blinky program you checked out earlier. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).<!--we're sending official documentation to one of our user accounts?-->
+
+<span class="notes">Blinky is a stop-gap measure; please don't commit it to master.</span>
+
+#### Bootstrap and entry point
 
 Bootstrap instructions can be found at https://os.mbed.com/docs/v5.9/reference/bootstrap.html.
 
@@ -254,7 +280,7 @@ rtos/
 
 This will remove dependencies on timers and peripherals that are yet to be ported.
 
-Upon completion of bootstrap and entry point, you should be able to build and run the baremetal Blinky program.
+Upon completion of bootstrap and entry point, you should be able to build and run the bare metal Blinky program.
 
 ```
 cd mbed-os-example-blinky
