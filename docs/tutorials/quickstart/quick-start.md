@@ -2,32 +2,17 @@
 
 Learn how to leverage the Arm Mbed ecosystem to create IoT applications on hundreds of Arm platforms. This quick start will cover development workflows from selecting your target in the Arm online compiler, to creating your first application, how to flash your target, and how to interact with your device. This guide will conclude with a broad range of examples, conceptual tutorials, end to end applictions, and links to the documentation to empower you to develop on the Arm Mbed OS platform.
 
-## Development Environment
+<h3 id="choose-environment">Choose your environment</h3>
 
-Mbed OS support both online and offline development environments. For the online compiler, continue to the [Online Compiler](#online-compiler), otherwise continue on to [Offline Compilers](#offline-compilers).
+In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Online** and **Offline**.
 
-### Online Compiler
+1) For online development, we provide the Arm Mbed Online Compiler. This is a great choice if you want to get started working with Mbed OS quickly.
 
-The Mbed OS online compiler allows you to dive into importing software and building binaries for your target with no installation or setup required.
+2) For offline development, we provide Arm Mbed CLI, our tool for using Mbed CLI on the command-line. Mbed CLI is compatible with Windows, Linux and OSX. This option provides more configuration options but also requires slightly more setup.
 
-#### Import
+Common to any choice is the ability to import and publish code to Git and Mercurial repositories, export your programs to third party IDEs (Keil UVision, IAR, GCC and so on) for debugging and build new projects.
 
-Visit the [Mbed OS Site](https://os.mbed.com/) and login with your credentials. You need to tell the Online Compiler which device you will be targeting. Please select your target from the [Mbed OS Platform Page](https://os.mbed.com/platforms/) and select `Add to your Mbed compiler` on the right hand side of the page.
+#### Please choose how to proceed
 
-Click the button below to import the example application for your device into the Online Compiler.
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-quick-start)]()
-
-#### Building and Flashing
-
-With the quick start example imported and your target selected, simply click on the `Compile` button. The online compiler uses the Arm 5 compiler. Once the build is complete a binary will be downloaded to your desktop.
-
-At this step your device should be plugged into your computer over USB and will appear as a mounted flash device.
-
-Drag and drop the downloaded binary to target's mounted drive. Reset your board and the new software will be running on the target.
-
-#### Export
-
-The online compiler supports exporting projects for a large number of other IDEs and toolchains to be used offline. Right click on the program in your program workspace on the left hand side of the screen and select `Export Program...`. Select your desired output format from the prompt.
-
-### Offline Compilers
+## [Online with the Mbed Online Compiler](quick-start-online.html). 
+## [Offline with Mbed CLI](quick-start-offline.html) 
