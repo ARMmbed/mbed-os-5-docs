@@ -1,4 +1,4 @@
-environment## Porting guide
+## Porting guide
 
 This document provides guidelines for adding a new MCU target to Mbed OS and Pelion.
 
