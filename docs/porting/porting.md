@@ -231,8 +231,8 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 
 1. Bare metal (based on the Blinky example).
 1. Bootstrap and entry point.
-1. LowPowerTicker.
-1. Serial port.
+1. Low power ticker.
+1. Serial port (synchronous).
 1. Microsecond ticker.
 1. GPIO and IRQ.
 1. RTC.
@@ -246,41 +246,41 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 
 Detailed instructions for porting each module are given in the module-specific sections of this documentation.
 
-#### Bare metal mbed-os-example-blinky
+### Bare metal mbed-os-example-blinky
 
 The official mbed-os-example-blinky uses a DigitalOut object and timers. It doesn't rely on RTOS, GPIO and timers<!--timers shows up once in the "used" list and once in the "unused list"-->. LED toggling is done directly by accessing hardware registers.
 
-Modify the Blinky program you checked out earlier. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).<!--we're sending official documentation to one of our user accounts?-->
+Modify the Blinky program you checked out earlier. <!--to do what?-->You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).<!--we're sending official documentation to one of our user accounts?-->
 
 <span class="notes">Blinky is a stop-gap measure; please don't commit it to master.</span>
 
-#### Bootstrap and entry point
+### Bootstrap and entry point
 
-Bootstrap instructions can be found at https://os.mbed.com/docs/v5.9/reference/bootstrap.html.
+[Bootstrap porting instructions](https://os.mbed.com/docs/latest/reference/bootstrap.html).
 
-Mbed OS uses CMSIS Pack. It's possible that this new target does not have CMSIS pack yet. In this case, you'll need to create your own CMSIS files.
+Mbed OS uses CMSIS Pack. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:<!--how is this related to the topic? And do I do it before or after bootstrap?-->
 
-- Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:
+1. Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:<!--what's the context I'm looking through? my project? what if I'm not using Keil?-->
 
    ```
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Include
    ```
-- Create linker scripts from the template.
+1. Create linker scripts from the template.<!--template or templates?-->
 
-Implement pin mapping and basic peripheral initialization code.
+1. Implement pin mapping and basic peripheral initialization code.
 
-At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called .mbedignore in mbed-os directory if it doesn't exist, add the following entry:
+    At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called `.mbedignore` in your mbed-os directory (if one doesn't exist), and add the following entry:
 
-```
-features/
-events/
-rtos/
-```
+    ```
+    features/
+    events/
+    rtos/
+    ```
 
-This will remove dependencies on timers and peripherals that are yet to be ported.
+    This removes dependencies on timers and peripherals that are yet to be ported.
 
-Upon completion of bootstrap and entry point, you should be able to build and run the bare metal Blinky program.
+When both the bootstrap and entry point are ready, you should be able to build and run the bare metal Blinky program:
 
 ```
 cd mbed-os-example-blinky
@@ -289,77 +289,88 @@ mbed compile --target <target_name> --toolchain ARM
 mbed compile --target <target_name> --toolchain IAR
 ```
 
-#### 6.3 LowPowerTicker
+<!--what do I do if my build fails?-->
 
-Low Power Ticker porting instructions can be found at https://os.mbed.com/docs/latest/porting/low-power-ticker.html.
+### Low power ticker
 
-If this new target provides a low power ticker, porting this will allow OS kernel initialization to succeed. Therefore, upon completion of this task, rtos can be added back in to the build by removing the "rtos" entry from the .mbedignore file.
+[Low power ticker porting instructions](https://os.mbed.com/docs/latest/porting/low-power-ticker.html).
 
-The Blinky program should be able to run to main with rtos after low power ticker is successfully ported. Set a breakpoint at osKernelInitialize and make sure it is called.
+<!--so is porting this module mandatory, or is it conditional - depending on what my hardware has?-->
 
-There're some low power ticker tests described at https://os.mbed.com/docs/latest/mbed-os-api-doxy/group__hal__lp__ticker__tests.html. These tests rely on UART to work so it's a good time to proceed to UART next.
+When you finish porting low power ticker:
 
-### 6.4 Serial Port (Synchronous)
+1. Remove the `rtos` entry from the `.mbedignore` file, because the OS kernel initialization is now possible.
+1. In Blinky, set a breakpoint at `osKernelInitialize` and make sure it is called.
 
-Serial port porting instructions can be found here: https://os.mbed.com/docs/latest/porting/serial-port.html.
+The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/latest/mbed-os-api-doxy/group__hal__lp__ticker__tests.html). They rely on UART, so it's a good time to port UART.<!--if testing LPT requires UART, why don't I port UART first?-->
 
-Serial porting can be done in two stages: synchronous UART and asynchronous UART. It's recommended to get synchronous UART ported as early as possible, because the HAL greentea tests require UART, and printf is a powerful debugging tool.
+### Serial Port (synchronous)
 
-#### 6.5 Microsecond Ticker
+[Serial port porting instructions](https://os.mbed.com/docs/latest/porting/serial-port.html).
 
-Microsecond ticker porting instructions can be found here: https://os.mbed.com/docs/latest/porting/microsecond-ticker.html.
+Serial port porting can be done in two stages: synchronous UART and asynchronous UART. We recommend porting synchronous UART as early as possible, because the HAL Greentea tests require it, and because `printf()` is a powerful debugging tool.
 
-The vanilla Blinky code uses "wait (n second)" API that invokes both the millisecond ticker and the microsecond ticker. At the conclusion of this step, "wait" API is expected to work and interval should be exact.
+### Microsecond Ticker
 
-#### 6.6 GPIO (Write and Read) and IRQ
+[Microsecond ticker porting instructions](https://os.mbed.com/docs/latest/porting/microsecond-ticker.html).
 
-GPIO porting instructions can be found here: https://os.mbed.com/docs/latest/porting/gpio.html.
+When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with Blinky, which invokes both millisecond and microsecond tickers in its `wait (n second)` blinking behaviour.
 
-The vanilla Blinky program uses GPIO. GPIO can be a great tool to help debug using oscilloscope or logic analyzer. It's a good idea to port GPIO prior to other peripherals.
+### GPIO (write and read) and IRQ
 
-#### 6.7 RTC
+[GPIO porting instructions](https://os.mbed.com/docs/latest/porting/gpio.html).
 
-RTC pointing instructions can be found here: https://os.mbed.com/docs/latest/porting/rtc-port.html.
+The vanilla Blinky program uses GPIO, which is a great tool for debuging with an oscilloscope or logic analyzer. It's a good idea to port GPIO before any other peripherals.
 
-RTC is a dependent of SPI master tests.
+### RTC
 
-On some target, RTC is shared with Low Power Ticker. Enable Low Power Ticker instead of RTC on these targets.
+[RTC porting instructions](https://os.mbed.com/docs/latest/porting/rtc-port.html).
 
-#### 6.8 SPI (Master)
+RTC is a dependent of SPI (master) tests.<!--did you mean "dependency"?-->
 
-SPI (Master) is used to communicate with storage devices such as SD card with SPI interface. CI test shield supports SD card as a slave device, therefore it can be used to test SPI master implementation if the eval board in use doesn't have a SPI slave.
+On some targets, RTC is shared with low power ticker. On these targets, enable low power ticker instead of RTC.<!--does that mean "don't bother porting RTC"? What does "enable" mean in this context?-->
 
-#### 6.9 TRNG
+### SPI (master)
 
-Entropy source (TRNG) porting instructions can be found here: https://os.mbed.com/docs/latest/porting/entropy-sources.html.
+SPI (master) is used to communicate with storage devices that have an SPI interface, such as SD cards. The CI test shield supports an SD card as a slave device, so you can use it to test SPI (master) implementations on evaluation boards that don't have an SPI slave.
 
-If the hardware supports TRNG, this must be ported before running Pelion client, since entropy is used by TLS.
+### TRNG
 
-#### 6.10 Connectivity
+[True random number generator entropy source (TRNG) porting instructions](https://os.mbed.com/docs/latest/porting/entropy-sources.html).
 
-Depending on the connectivity type, refer to the corresponding section in https://os.mbed.com/docs/latest/porting/porting-connectivity.html for porting instructions.
+If the hardware supports TRNG, you must port it before running Device Management Client, because the client uses TLS, which in turn uses entropy.
 
-Upon completion of porting connectivity, if using WiFi, mbed-os-example-wifi demo shall run successfully at the completion of this step.
+### Connectivity
 
-#### 6.11 Flash
+[Porting instructions for all connectivity options](https://os.mbed.com/docs/latest/porting/porting-connectivity.html).
 
-Flash porting instructions can be found here: https://os.mbed.com/docs/latest/porting/flash.html.
+When you finish porting WiFi, run [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
+<!--Do we have any other examples, for the other connectivity methods?-->
 
-Flash is required by Pelion client. Although there're are two ways to implement flash API, using CMSIS flash algorithms or C source code, it's recommended to use C source code since it's easier to maintain and upgrade. It's also more portable across different platforms.
+### Flash
 
-#### 6.12 Bootloader
+[Flash porting instructions](https://os.mbed.com/docs/latest/porting/flash.html).
 
-Bootloader porting instructions can be found here: https://os.mbed.com/docs/latest/porting/bootloader.html.
+Flash is required by Device Management Client.
 
-Bootloader is a separate application. It needs to be created and integrated into Pelion client.
+There are two ways to implement flash API: using CMSIS flash algorithms or C source code. We recommend using C source code, because it's easier to maintain and upgrade. It's also more portable across different platforms.
 
-#### 6.13 Pelion Client
+### Bootloader
 
-Once the above components are ported, you should be ready to demo Connect and Update functionality of Pelion client. See https://cloud.mbed.com/docs/current for details.
+[Bootloader porting instructions](https://os.mbed.com/docs/latest/porting/bootloader.html).
 
-#### 6.14 Other HAL Components (Optional)
+The bootloader is a separate application, which needs to be created and integrated into Device Management Client.<!--this is a stub - it's only understandable if you already know everything about bootloader. Needs more info here.-->
 
-Depending on the use case and MCU capability, other HAL components may need to be ported at this stage. Follow the instructions here: https://os.mbed.com/docs/latest/porting/index.html.
+### Device Management Client
+
+<!--But I haven't ported the client yet, have I?-->
+Once the above components are ported, you should be ready to demo the Connect and Update functionalities of the Device Management Client. See https://cloud.mbed.com/docs/current for details.<!--details of what? shouldn't we just send them to the quick starts, if all we want is for them to try connecting and updating?-->
+
+### Other HAL Components (Optional)
+
+You are now ready to port any other HAL components that your use case and MCU requires. These components are covered in the rest of this document.
+
+<!--Amanda, should we organise the modules so that they fit the porting order?-->
 
 ### 7 Test ported code using the Greentea framework
 
