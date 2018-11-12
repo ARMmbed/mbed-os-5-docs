@@ -1,6 +1,6 @@
 ## Workflow
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/development/reference/style.html). Please also read the [Contributor License Agreement (CLA)](/docs/development/reference/license.html) guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/development/reference/style.html).
 
 ### Mbed OS maintainers
 
@@ -20,10 +20,9 @@ The current maintainers are:
 
 - [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
 - [Martin Kojtal](https://os.mbed.com/users/Kojto).
-- [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
 - [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
-- [Sam Grove](https://os.mbed.com/users/sam_grove).
-- [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+- [Nir Sonnenschein](https://os.mbed.com/users/nirs).
+- [Cruz Monrreal](https://os.mbed.com/users/CM2).
 - [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 ### Contributions
@@ -38,11 +37,11 @@ Please create separate pull requests for each concern; each pull request needs a
 
 #### Reporting bugs
 
-Please submit all Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-suggestions/).
+You can submit Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-suggestions/) or directly [on GitHub](https://github.com/ARMmbed/mbed-os)
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker (`ARM Internal Ref: MBOTRIAGE-XXX` comment in the issues and label mirrored set once copied) and regularly triage them.
+We copy issues reported on GitHub to our internal tracker and regularly triage them.
 
 ### Guidelines for GitHub pull requests
 

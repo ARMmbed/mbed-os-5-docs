@@ -24,13 +24,13 @@ Below is a CRC example to compute 32-bit CRC.
 
 Below is a 32-bit CRC example using `compute_partial` APIs.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/)](https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/file/834c44916a38/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/)](https://os.mbed.com/teams/mbed_example/code/CRC_partial_example/file/d4c48b62da22/main.cpp)
 
 #### Example 3
 
 Below is a CRC example for the SD driver.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/)](https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/file/ee110889fa99/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/)](https://os.mbed.com/teams/mbed_example/code/CRC_eample_sd/file/97e3e51ca5d5/main.cpp)
 
 ### Related content
 

@@ -198,7 +198,7 @@ The general form for defining a parameterized macro is:
 
 ```
 #define MACRO_NAME(param1, param2, ...)
-	{body-of-macro}
+    {body-of-macro}
 ```
 
 For example, you can categorize `printf()` statements by severity levels, such as `DEBUG`, `WARNING` and `ERROR`. To do so, define levels of severity. Then, each time you compile or run the program, specify which level you want to use. The macros use the level you specified in an `if` condition. That condition can control the format of the information the macro prints, or whether it prints anything at all. This gives you full control of the debug information presented every run.
@@ -207,11 +207,11 @@ Remember that `printf()` can take as many parameters as you give it. Macros supp
 
 This is an example:
 
-```c
+```c 
 // -- within a header file named something like trace.h --
 enum {
-	TRACE_LEVEL_DEBUG,
-	TRACE_LEVEL_WARNING
+    TRACE_LEVEL_DEBUG,
+    TRACE_LEVEL_WARNING
 };
 /* each time we compile or run the program,
 * we determine what the trace level is.
@@ -220,41 +220,41 @@ enum {
 
 extern unsigned traceLevel;
 
-...
+// ...
 
 // Our first macro prints if the trace level we selected
 // is TRACE_LEVEL_DEBUG or above.
 // The traceLevel is used in the condition
 // and the regular parameters are used in the action that follows the IF
 #define TRACE_DEBUG(formatstring, parameter1, parameter2, ...) \
-	{ if (traceLevel >= TRACE_LEVEL_DEBUG) \
-			{ printf("-D- " formatstring, __VA_ARGS__); } }
+    { if (traceLevel >= TRACE_LEVEL_DEBUG) \
+            { printf("-D- " formatstring, __VA_ARGS__); } }
 // this will include the parameters we passed above
 
 // we create a different macro for each trace level
 #define TRACE_WARNING(formatstring, parameter1, parameter2, ...) \
-	{ if (traceLevel >= TRACE_LEVEL_WARNING) \
-		{ printf("-W- " formatstring, __VA_ARGS__); } }
+    { if (traceLevel >= TRACE_LEVEL_WARNING) \
+        { printf("-W- " formatstring, __VA_ARGS__); } }
 ```
 
 This is another example of macro-replacement that allows a formatted `printf()`. Set `#define MODULE_NAME "<YourModuleName>"` before including the code below, and enjoy colorized `printf()` tagged with the module name that generated it:
 
 ```c
 #define LOG(x, ...) \
-	{ printf("\x1b[34m%12.12s: \x1b[39m"x"\x1b[39;49m\r\n", \
-	MODULE_NAME, ##__VA_ARGS__); fflush(stdout); }
+    { printf("\x1b[34m%12.12s: \x1b[39m"x"\x1b[39;49m\r\n", \
+    MODULE_NAME, ##__VA_ARGS__); fflush(stdout); }
 #define WARN(x, ...) \
-	{ printf("\x1b[34m%12.12s: \x1b[33m"x"\x1b[39;49m\r\n", \
-	MODULE_NAME, ##__VA_ARGS__); fflush(stdout); }
+    { printf("\x1b[34m%12.12s: \x1b[33m"x"\x1b[39;49m\r\n", \
+    MODULE_NAME, ##__VA_ARGS__); fflush(stdout); }
 ```
 
 You can use `ASSERT()` to improve error reporting. It uses `error()` (a part of Arm Mbed OS). `error()` flashes LEDs and puts the program into an infinite loop, preventing further operations. This happens if the `ASSERT()` condition is evaluated as FALSE:
 
 ```c
-#define ASSERT(condition, ...)	{ \
-	if (!(condition))	{ \
-		error("Assert: " __VA_ARGS__); \
-	} }
+#define ASSERT(condition, ...)  { \
+    if (!(condition))   { \
+        error("Assert: " __VA_ARGS__); \
+    } }
 ```
 
 ### Fast circular log buffers based on printf()
@@ -267,56 +267,56 @@ To avoid pushing during the operation’s run, use `sprintf()` to write the log 
 
 This is an example implementation of a ring buffer, which wraps `printf()` using a macro called `xprintf()`. Debug messages accumulated using `xprintf()` can be read circularly starting from `ringBufferTail` and wrapping around (`ringBufferTail` + `HALF_BUFFER_SIZE`). An overwrite by the most recently appended message may garble the first message:
 
-```c
+```c TODO
 #define BUFFER_SIZE 512 /* You need to choose a suitable value here. */
 #define HALF_BUFFER_SIZE (BUFFER_SIZE >> 1)
 
 /* Here's one way of allocating the ring buffer. */
 char ringBuffer[BUFFER_SIZE];
 char *ringBufferStart = ringBuffer;
-char *ringBufferTail  = ringBuffer;
+char *ringBufferTail  = ringBuffer;
 
 void xprintf(const char *format, ...)
 {
-	va_list args;
-	va_start(args, format);
-	size_t largestWritePossible =
-			BUFFER_SIZE - (ringBufferTail - ringBufferStart);
-	int written =
-			vsnprintf(ringBufferTail, largestWritePossible, format, args);
-	va_end(args);
+    va_list args;
+    va_start(args, format);
+    size_t largestWritePossible =
+            BUFFER_SIZE - (ringBufferTail - ringBufferStart);
+    int written =
+            vsnprintf(ringBufferTail, largestWritePossible, format, args);
+    va_end(args);
 
-	if (written < 0) {
-		/* do some error handling */
-		return;
-	}
+    if (written < 0) {
+        /* do some error handling */
+        return;
+    }
 
-	/*
-	* vsnprintf() doesn't write more than 'largestWritePossible' bytes to the
-	* ring buffer (including the terminating null byte '\0'). If the output is
-	* truncated due to this limit, then the return value ('written') is the
-	* number of characters (excluding the terminating null byte) which would
-	* have been written to the final string if enough space had been available.
-	*/
+    /*
+    * vsnprintf() doesn't write more than 'largestWritePossible' bytes to the
+    * ring buffer (including the terminating null byte '\0'). If the output is
+    * truncated due to this limit, then the return value ('written') is the
+    * number of characters (excluding the terminating null byte) which would
+    * have been written to the final string if enough space had been available.
+    */
 
-	if (written > largestWritePossible) {
-		/* There are no easy solutions to tackle this. It
-		* may be easiest to enlarge
-		* your BUFFER_SIZE to avoid this. */
-		return; /* this is a short-cut; you may want to do something else.*/
-	}
+    if (written > largestWritePossible) {
+        /* There are no easy solutions to tackle this. It
+        * may be easiest to enlarge
+        * your BUFFER_SIZE to avoid this. */
+        return; /* this is a short-cut; you may want to do something else.*/
+    }
 
-	ringBufferTail += written;
+    ringBufferTail += written;
 
-	/* Is it time to wrap around? */
-	if (ringBufferTail > (ringBufferStart + HALF_BUFFER_SIZE)) {
-		size_t overflow =
-			ringBufferTail - (ringBufferStart + HALF_BUFFER_SIZE);
-			memmove(ringBufferStart, ringBufferStart
-					+ HALF_BUFFER_SIZE, overflow);
-		ringBufferTail =
-					ringBufferStart + overflow;
-	}
+    /* Is it time to wrap around? */
+    if (ringBufferTail > (ringBufferStart + HALF_BUFFER_SIZE)) {
+        size_t overflow =
+            ringBufferTail - (ringBufferStart + HALF_BUFFER_SIZE);
+            memmove(ringBufferStart, ringBufferStart
+                    + HALF_BUFFER_SIZE, overflow);
+        ringBufferTail =
+                    ringBufferStart + overflow;
+    }
 }
 ```
 

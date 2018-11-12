@@ -43,7 +43,7 @@ In your project folder, run:
 # Replace K64F with your target board
 # If you're not using GCC ARM, use -i eclipse_armc5 for ARMCC, or -i eclipse_iar for IAR
 
-$ mbed export -i eclipse_gcc_arm -m K64F --profile mbed-os/tools/profiles/debug.json
+$ mbed export -i eclipse_gcc_arm -m K64F --profile debug
 ```
 
 ### Importing the project in Eclipse
@@ -121,5 +121,5 @@ We build using Make, but you can also use Mbed CLI for building from Eclipse:
 1. Go to *Project > Properties > C/C++ Build*.
 1. Remove the check *Use default build command*.
 1. Set *Build command* to `mbed`.
-1. Under *Behavior* > *Build (Incremental build)*, select your Mbed CLI build options. For example: `compile -m K64F -t GCC_ARM --profile ${CWD}mbed-os/tools/profiles/debug.json`.
+1. Under *Behavior* > *Build (Incremental build)*, select your Mbed CLI build options. For example: `compile -m K64F -t GCC_ARM --profile debug`.
 1. Make sure to update the paths to the `.elf` file in your debug configuration.

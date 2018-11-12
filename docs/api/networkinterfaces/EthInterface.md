@@ -1,6 +1,6 @@
 ## Ethernet
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.png)<span>EthInterface class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.png)<span>EthInterface class hierarchy</span></span>
 
 The `EthInterface` provides a C++ API for connecting to the internet over Ethernet.
 By default, this class does not require any configuration. It is able to pick up the default
@@ -11,19 +11,19 @@ Ethernet driver for the target and select correct network stack.
 
 To statically initialize the driver, create an object without passing any parameters:
 
-```cpp
+```cpp TODO
 EthernetInterface eth;
 ```
 
 Then, if the default configuration is enough, bring up the interface:
 
-```cpp
+```cpp TODO
 nsapi_error_t status = eth.connect();
 ```
 
 Now, the interface is ready to be used for [network sockets](network-socket.html).
 
-```cpp
+```cpp TODO
 // Open a TCP socket
 TCPSocket socket;
 socket.open(&eth);

@@ -30,7 +30,7 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 
 The entry point of Mbed's `BLE_API` is the BLE class accessible using the header `ble/BLE.h`. This class allows you to obtain a BLE object that includes the basic attributes of a spec-compatible BLE device and can work with any BLE radio:
 
-```c
+```c TODO
 #include "ble/BLE.h"
 
 BLE& mydevicename = BLE::Instance();

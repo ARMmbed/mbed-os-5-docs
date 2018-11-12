@@ -1,6 +1,6 @@
 ## FileSystem
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.png)<span>FileSystem class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.png)<span>FileSystem class hierarchy</span></span>
 
 The file system API provides a common interface for implementing a file system on a [block-based storage device](/docs/development/porting/porting-storage.html#block-devices). The file system API is a class-based interface, but implementing the file system API provides the standard POSIX file API familiar to C users.
 
