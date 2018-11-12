@@ -8,7 +8,7 @@ For more information about the SFDP JEDEC standard, please see [its documentatio
 
 ### QSPIFBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_heap_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_q_s_p_i_f_block_device.html)
 
 ### QSPIFBlockDevice example
 
