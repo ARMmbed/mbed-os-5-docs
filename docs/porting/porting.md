@@ -368,15 +368,25 @@ Once the above components are ported, you should be ready to demo the Connect an
 
 ### Other HAL Components (Optional)
 
-You are now ready to port any other HAL components that your use case and MCU requires. These components are covered in the rest of this document.
+You are now ready to port any other HAL components that your use case and MCU require. These components are covered in the rest of this document.
 
 <!--Amanda, should we organise the modules so that they fit the porting order?-->
 
-### 7 Test ported code using the Greentea framework
+## Testing ported code
+
+<!--wasn't I supposed to test as I go? this makes me think I test all at once, at the end-->
+### Testing with the Greentea framework
+
+<!--does Greentea only work with eclipse?--><!--what if I'm not using eclipse?-->
 
 Read the following page to understand how tests are structured and exported into Eclipse:
 
-https://os.mbed.com/docs/latest/tools/testing-applications.html
+<!--I can only find eclipse content in debugging, not in testing, and not in the page covering Greentea-->
+<!--https://os.mbed.com/docs/v5.10/tutorials/eclipse.html-->
+<!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](https://os.mbed.com/docs/v5.10/tools/greentea-testing-applications.html)-->
+
+<!--This 404s [https://os.mbed.com/docs/latest/tools/testing-applications.html]-->
+
 
 #### 7.1 Test prerequisites
 
@@ -511,14 +521,14 @@ Run the program. On the host, type the following command:
 
 Customize the serial port path and baudrate as needed.
 
-### 8 Test ported code using demo applications
+### Testing with demo applications
 
 The `mbed-os-example-blinky` application should run after 11.6 is ported.
 
 The `mbed-cloud-client-example` application should run after 11.10 is ported.
 
 ### 9 Detailed test procedure
-
+<!--for what, Greentea again?-->
 #### 9.1 Mbed OS Built-in Tests
 
 ##### 9.1.1 Build tests

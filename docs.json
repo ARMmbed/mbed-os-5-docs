@@ -1199,7 +1199,18 @@
         "description": "",
         "slug": "porting",
         "type": "markdown",
-        "chapters": [{
+        "chapters": [
+          {
+            "title": "Porting process",
+            "sources":
+            [
+              {
+                  "type": "markdown",
+                  "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting.md"
+              }
+            ]
+          },
+          {
                 "title": "Porting targets",
                 "intro": {
                     "type": "markdown",
