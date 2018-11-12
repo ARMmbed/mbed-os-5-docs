@@ -232,7 +232,7 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 1. Bare metal (based on the Blinky example).
 1. Bootstrap and entry point.
 1. Low power ticker.
-1. Serial port (synchronous).
+1. Serial port (synchronous transfer).
 1. Microsecond ticker.
 1. GPIO and IRQ.
 1. RTC.
@@ -304,7 +304,7 @@ When you finish porting low power ticker:
 
 The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/latest/mbed-os-api-doxy/group__hal__lp__ticker__tests.html). They rely on UART, so it's a good time to port UART.<!--if testing LPT requires UART, why don't I port UART first?-->
 
-### Serial Port (synchronous)
+### Serial Port (synchronous transfer)
 
 [Serial port porting instructions](https://os.mbed.com/docs/latest/porting/serial-port.html).
 
@@ -378,28 +378,32 @@ You are now ready to port any other HAL components that your use case and MCU re
 ### Testing with the Greentea framework
 
 <!--does Greentea only work with eclipse?--><!--what if I'm not using eclipse?-->
-
-Read the following page to understand how tests are structured and exported into Eclipse:
+<!--did we actually ask people to install Greentea? I don't see it in the lists, unless it's bundled into Mbed CLI-->
+<!--We don't currently link to user docs for Greentea, but we really should - I'm just not sure which link to use-->
 
 <!--I can only find eclipse content in debugging, not in testing, and not in the page covering Greentea-->
 <!--https://os.mbed.com/docs/v5.10/tutorials/eclipse.html-->
 <!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](https://os.mbed.com/docs/v5.10/tools/greentea-testing-applications.html)-->
 
+Read the following page to understand how tests are structured and exported into Eclipse:
+
 <!--This 404s [https://os.mbed.com/docs/latest/tools/testing-applications.html]-->
 
 
-#### 7.1 Test prerequisites
+#### Minimum module requirements for testing
 
-To run `mbed-os` tests, at the minimum, the following components must have been ported and verified:
+To run `mbed-os` tests, you need to have ported and verified at least these components:
+<!--modules or components? I suspect I've been using both interchangeably-->
+<!--you say I need to verify them, but the very next heading is "verify serial port connection"-->
 
 - DAPLink.
+- Low power ticker.
 - Serial port (synchronous transfer).
 - Microsecond ticker.
-- LowPowerTicker.
 
-#### 7.2 Verify Serial port connection
+#### Verify serial port connection
 
-Load a test binary with printf. Verify the text can be seen on your serial terminal program.
+Load a test binary with `printf()`. Verify debug messages can be seen on your serial terminal program.
 
 #### 7.3 Automated tests
 
