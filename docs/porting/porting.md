@@ -389,57 +389,51 @@ Read the following page to understand how tests are structured and exported into
 
 <!--This 404s [https://os.mbed.com/docs/latest/tools/testing-applications.html]-->
 
+#### Prerequisite: minimum component support
 
-#### Minimum module requirements for testing
-
-To run `mbed-os` tests, you need to have ported and verified at least these components:
+To run `mbed-os` tests<!--is that their official name?-->, you need to have ported and verified at least these components:
 <!--modules or components? I suspect I've been using both interchangeably-->
 <!--you say I need to verify them, but the very next heading is "verify serial port connection"-->
 
 - DAPLink.
+
+    <span class="notes">If DAPLink is still under development, please use manual tests.</span><!--the original comment about DAPLink and auto/manual tests said to go to step 12.5, but we don't have 12.5-->
 - Low power ticker.
-- Serial port (synchronous transfer).
+- Serial port (synchronous transfer). To verify that it works, load a test binary with `printf()`. Verify debug messages can be seen on your serial terminal program.
 - Microsecond ticker.
 
-#### Verify serial port connection
+#### Prerequisite: mbedls
 
-Load a test binary with `printf()`. Verify debug messages can be seen on your serial terminal program.
+<!--did we ask them to install that? I don't think we've mentioned it. We need a section that discusses the testing tools-->
 
-#### 7.3 Automated tests
+The board under test needs to be supported in mbedls for automated tests to work.
 
-If DAPLink is working, initiate the test using mbedgt from the terminal.
+If the official mbedls pip package hasn't been released yet, you need to direct pip to use your local directory (which includes the  code changes to support the new board):
 
-If DAPLink is still under development, follow Step 12.5 to run manual tests.
+1. Clone [https://github.com/ARMmbed/mbed-ls](https://github.com/ARMmbed/mbed-ls).
+1. Run `pip install --editable <your_local_root_to_mbed-ls>`.
+1. Create an `mbedls.json` file. This file allows you to override and specify the FTDI USB port.
 
-##### 7.3.1 Setup
+    The serial port path varies in different operation systems. On **Windows**, you can find it through Device Manager; it will usually be something like `COM#`. On **Mac OS** and Linux, you can use `ls /dev/tty.usb*`:
 
-The board under test needs to be supported in mbedls for automated tests to work. If official mbedls pip package hasn't been released, you need to direct pip to use your local directory that includes the change to support the new board.
-
-Clone your repo from mbed-ls at https://github.com/ARMmbed/mbed-ls. Then run `pip install --editable <your_local_root_to_mbed-ls>`.
-
-Create an `mbedls.json` file. This file allows you to override and specify the FTDI USB port. You can use mbedls command to find your board ID. The serial port path varies in different operation systems. On Mac OS and Linux, you can use ls /dev/tty.usb* to find the FTDI usbserial device. For Windows, you can find it using device manager, which usually would be something like COM#.
-
-For example, on macOS:
-
-```
-{
-    "33000000e062afa300000000000000000000000097969902": {
-        "serial_port": "/dev/tty.usbserial-FTGDJJOC"
+    ```
+    {
+        "33000000e062afa300000000000000000000000097969902": {
+            "serial_port": "/dev/tty.usbserial-FTGDJJOC"
+        }
     }
-}
-```
+    ```
 
-##### 7.3.2 Compile
+#### Compiling and running tests
 
-- To compile all tests, run mbed test -compile.
-- To see the list of compiled tests, run mbed test --compile-list.
-- To compile a specific test, run  mbed test -compile -n <test_name> (E.g.: mbed test --compile -n tests-concurrent-gpio).
+1. Compile your tests:
+    - To compile all tests, run `mbed test -compile`.
+    - To see the list of compiled tests, run `mbed test --compile-list`.
+    - To compile a specific test, run  `mbed test -compile -n <test_name>`. For example: `mbed test --compile -n tests-concurrent-gpio)`.
+1. To run your tests, run `mbedgt`.
 
-##### 7.3.3 Run
 
-        To run test, type command mbedgt.
-
-On success, you should get something like this:
+Here is an example of a successful run:
 
 ```
 mbedgt: greentea test automation tool ver. 1.4.0
@@ -496,43 +490,56 @@ mbedgt: test case results: 12 OK
 mbedgt: completed in 20.24 sec
 ```
 
-#### 7.4 Manual tests
+#### Manual testing
 
-Export a test and import it to Eclipse by following the instructions below.
+You may want to run manual tests, for example if DAPLink is still under development. You will need to export your tests from Greente and import them to Eclipse:<!--So there's really just no way around Eclipe?-->
 
-```
-# Find the directory of a test
-mbed test --compile-list -n mbed-os-tests-mbed_hal-common_ticker
-# Copy the source code to the project root directory
-cd <root_dir>
-cp -R mbed-os-example-blinky/mbed-os/TESTS/mbed_hal/common_tickers .
-cd common_tickers
-mbed new .
-rm -rf mbed-os
-# Copy mbed-os directory
-cp -R ../mbed-os-example-blinky/mbed-os .
-# Export to a makefile project
-mbed export -i gcc_arm -m <new_target>
-```
+1. Find the test directory:
 
-Load the program with pyOCD, configure Debug Configuration per instructions at Step 10.3.
+    ```
+    mbed test --compile-list -n mbed-os-tests-mbed_hal-common_ticker
+    ```
 
-Run the program. On the host, type the following command:
+1. Copy the source code to the project root directory:
 
-```
-# mbedhtrun --skip-flashing --skip-reset -p <serial port>:9600 -e mbed-os/TESTS/host_tests
-```
+    ```
+    cd <root_dir>
+    cp -R mbed-os-example-blinky/mbed-os/TESTS/mbed_hal/common_tickers .
+    cd common_tickers
+    mbed new .
+    rm -rf mbed-os
+    ```
 
-Customize the serial port path and baudrate as needed.
+1. Copy the `mbed-os` directory:
+
+    ```
+    cp -R ../mbed-os-example-blinky/mbed-os .
+    ```
+
+1. Export to a makefile project:
+
+    ```
+    mbed export -i gcc_arm -m <new_target>
+    ```
+
+1. Open the project with pyOCD (using the same configuration you used [when you initially set up pyOCD]( Creating GDB pyOCD debug configuration).
+
+1. Run the program:
+
+    ```
+    # mbedhtrun --skip-flashing --skip-reset -p <serial port>:9600 -e mbed-os/TESTS/host_tests
+    ```
+
+    Customize the serial port path and baudrate as needed.
 
 ### Testing with demo applications
 
-The `mbed-os-example-blinky` application should run after 11.6 is ported.
+The `mbed-os-example-blinky` application should run after 11.6 is ported.<!--we don't have these numbers; 9 was the highest we had when I saw this doc; better to just name the module-->
 
-The `mbed-cloud-client-example` application should run after 11.10 is ported.
+The `mbed-cloud-client-example` application should run after the Device Management Client is ported.
 
 ### 9 Detailed test procedure
-<!--for what, Greentea again?-->
+<!--I don't understand the context for this. Is this a review of the tests I can run through either Greentea or manually with pyOCD?-->
 #### 9.1 Mbed OS Built-in Tests
 
 ##### 9.1.1 Build tests
