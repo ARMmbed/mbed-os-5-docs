@@ -26,6 +26,7 @@ Interfaces from low-level to high-level:
 An example of implementations of the interfaces are:
 
 - BlockDevice.
+   - QSPIBlockDevice - Block device driver for NOR-based QSPI Flash devices that support the SFDP standard. 
    - SPIFBlockDevice - Block device driver for NOR-based SPI flash devices that support SFDP. NOR-based SPI flash supports byte-sized read and writes, with an erase size of around 4 kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
    - SDBlockDevice - The SD driver uses the SDCard SPI mode of operation, which is a subset of possible SDCard functionality.
    - FlashIAPBlockDevice - Block device driver bound to the FlashIAP driver in Mbed OS for reading and writing to internal flash. Only use this driver on platforms where the FlashIAP implementation is using external flash or in conjunction with a file system with wear leveling, that can operate on a page size granularity.
@@ -51,47 +52,3 @@ If you choose a file system with a POSIX-like API, then a KVStore API can still 
 You can create multiple file systems in a single flash media. For instance, in a system with multiple privilege levels, the secure software partition may require its own KVStore. The application may also have a KVStore and a LittleFS instance.
 
 SecureStore requires storage at a higher privilege level than the data for holding the CMAC of each of the data items it manages. SecureStore manages its own KVStore, which is intended to be resident in internal flash, in addition to the KVStore used for data storage, which can be on external flash. This simplifies the SecureStore's implementation by reusing existing code that achieves the required wear-leveling properties.
-
-### File and partition instantiation
-
-To reference storage that exists in supported file systems or raw flash pages, you can choose from several possible configurations:
-
-- Internal flash supporting firmware update and KVStore. This is bootloader friendly in terms of memory.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleKVFirmware.png)</span>
-
-- Internal flash supporting a file system for firmware update and KVStore. This is not bootloader friendly in terms of memory.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleFSFirmware.png)</span>
-
-- Internal flash supporting a firmware update block and a file system for KVStore storage. This is bootloader friendly in terms of memory.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleKVFSBLFirmware.png)</span>
-
-- External flash with a file system used for firmware storage and KVStore. This is not bootloader friendly in terms of memory.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleKVFSFirmware.png)</span>
-
-- External flash with an MBR, a partition for block access to a prepared firmware update and a file system used for storage and KVStore. This is bootloader friendly in terms of memory.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleBLFirmwareExt.png)</span>
-
-- Bootloader-friendly firmware images in external flash with secure KVStore.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleKVSecExt.png)</span>
-
-   <span class="notes">**Note:** In this configuration, external flash is limited to KV pairs.</span>
-
-- Bootloader-friendly firmware images in external flash with secure KVStore and file system.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ExampleSecureExtBL.png)</span>
-
-- Bootloader-friendly firmware images in internal flash with KVStore next to secure world, which has its own TDBStore for storing secure information.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/SecureWorld1.png)</span>
-   
-   <span class="notes">**Note:** In this configuration, no interaction is needed because internal flash is already secure.</span>
-
-- Bootloader-friendly firmware images in external flash with a file system next to secure world, which has its own TDBStore for storing secure information. In this case, you can use TDBStore for the device key, as well as securing external flash.
-
-   <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/SecureWorld2.png)</span>
