@@ -533,146 +533,148 @@ You may want to run manual tests, for example if DAPLink is still under developm
     Customize the serial port path and baudrate as needed.
 
 ### Testing with demo applications
+<!--I think this needs sub-chapters - porting and testing could be their own things. But for that, I need to break the file down; I'll do that later-->
 
 The `mbed-os-example-blinky` application should run after 11.6 is ported.<!--we don't have these numbers; 9 was the highest we had when I saw this doc; better to just name the module-->
 
 The `mbed-cloud-client-example` application should run after the Device Management Client is ported.
 
-### 9 Detailed test procedure
+### Detailed test procedure
 <!--I don't understand the context for this. Is this a review of the tests I can run through either Greentea or manually with pyOCD?-->
-#### 9.1 Mbed OS Built-in Tests
+#### Mbed OS built-in tests
 
-##### 9.1.1 Build tests
 
-All tests can be built under the `mbed-os-example-blinky` directory.
+<!--where in the process does this fit? Should we be sending people here from either the automated or manual processes?-->
 
-```
-cd mbed-os-example-blinky
-# Rename main.cpp to main.txt
-mv main.cpp main.txt
+To build and run the Mbed OS tests:
 
-#Build tests
-mbed test --compile -m <new_target> -t gcc_arm -c
-# You'll see some build errors. These errors should reduce or eventually disappear as more HAL components are ported.
+1. In your `mbed-os-example-blinky` clone, rename `main.cpp` to `main.txt`:
 
-# Go to mbed-os directory, all built-in tests will be run from there.
-cd mbed-os
+   ```
+   mv main.cpp main.txt
+   ```
 
-# The following command returns the list of tests built:
-mbed test --compile-list
-```
+1. Build the tests:
 
-##### 9.1.2 Execute tests
+   ```
+   mbed test --compile -m <new_target> -t gcc_arm -c
+   ```
 
-###### 9.1.2.1 Locate image
+   You'll see some build errors. These errors should reduce and eventually disappear as more HAL components are ported.
 
-Test images are located under the following directory:
+1. To run the tests, go to the `mbed-os` directory.
 
-```
-mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/
-```
+   ```
+   cd mbed-os
+   ```
 
-For example,
+   You can see the full list of built tests:
 
-```
-$ mbed test --compile-list | grep common_tickers
 
-    Test Case:
+    ```
+    mbed test --compile-list
+    ```
 
-Name: tests-mbed_hal-common_tickers
+1. Test images are located under the following directory:
 
-Path: ./TESTS/mbed_hal/common_tickers
+    ```
+    mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/
+    ```
 
-  Test Case:
+    For example:
 
-      Name: tests-mbed_hal-common_tickers_freq
+    ```
+    $ mbed test --compile-list | grep common_tickers
 
-      Path: ./TESTS/mbed_hal/common_tickers_freq
-```
+        Test Case:
 
-- common_tickers test image is at mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers.
-- common_tickers_freq test image is at mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers_freq.
+    Name: tests-mbed_hal-common_tickers
 
-###### 9.1.2.2 Program image
+    Path: ./TESTS/mbed_hal/common_tickers
 
-The following procedure requires the image to be flashed to the board. You may use DAPLink, Eclipse IDE to flash the image. If the new target is already supported by IAR or Keil programming tool, programming can be done using those tools as well. They easiest method is to use the command line tool pyocd-flashtool:
+      Test Case:
 
-Note: We recommended:
-pyocd-flashtool BUILD/mbed-os-example-blinky.bin or
-pyocd-flashtool BUILD/mbed-os-example-blinky.hex
+          Name: tests-mbed_hal-common_tickers_freq
 
-###### 9.1.2.3 Execute tests
+          Path: ./TESTS/mbed_hal/common_tickers_freq
+    ```
 
-Prior to running tests, make sure the serial port is not already opened by programs like screen, Teraterm etc. Close the program if it's open. In addition, verify mbedls lists the new target device. Read https://github.com/armmbed/greentea to troubleshoot issues if test doesn't start.
+    - The `common_tickers` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers`.
+    - The `common_tickers_freq` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers_freq.`
+<!--Why do I need to know that?-->
 
-#### 9.2 Demo applications
+1. You need to flash the test image to the board. You can use either DAPLink or Eclipe IDE. You may also be able to use IAR and Keil (if they already support the new target).
 
-##### 9.2.1 mbed-os-example-blinky
+    The easiest method is using the pyOCD flash tool:
 
-###### 9.2.1.1 Application repository
+    ```
+    pyocd-flashtool BUILD/mbed-os-example-blinky.bin or
+    pyocd-flashtool BUILD/mbed-os-example-blinky.hex
+    ```
 
-https://github.com/ARMmbed/mbed-os-example-blinky
+1. Before you begin the test run, please make sure the serial port is not already opened by programs like Screen or Teraterm (close them if they're open). In addition, verify `mbedls` lists the new target device.
 
-###### 9.2.1.2 Test procedure
+    If your test run doesn't start, read [the Greentea documentaiton for troubleshooting](https://github.com/armmbed/greentea).
+    <!--do we have this within the docs, rather than on GitHub?-->
 
-(1) Build image:
+#### Demo applications
+<!--If I understand this section correctly, everything in the "detailed test procedure" should move closer to the earlier references to the same tests-->
 
-```
-git clone https://github.com/ARMmbed/mbed-os-example-blinky.git
-cd mbed-os-example-blinky
-# Open a text editor and change the link in mbed-os.lib to https://github.com/ARMmbed/mbed-os-new-target
-# This step is skipped if mbed-os-new-target has been merged to mbed-os
-vi mbed-os.lib
-mbed deploy
-mbed compile --target <new_target> --toolchain GCC_ARM
-```
+##### mbed-os-example-blinky
 
-(2) Flash Image:
+1. Application repository: [https://github.com/ARMmbed/mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky).
+1. Clone the repo:<!--didn't I do this ages ago?-->
 
-Program the .bin or .hex image to the board.
+    ```
+    git clone https://github.com/ARMmbed/mbed-os-example-blinky.git
+    cd mbed-os-example-blinky
+    ```
 
-(3) Verify the designated LED flashes every 0.5 second. Verify the interval on oscilloscope if desired.
+1. Open a text editor and change the link in `mbed-os.lib` to `https://github.com/ARMmbed/mbed-os-new-target`.<!--I did this as well, didn't I?-->
 
-##### 9.2.2 mbed-bootloader
-###### 9.2.2.1 Application repository
+    Skip this step if `mbed-os-new-target` has been merged into `mbed-os`.
 
-https://github.com/armmbed/mbed-bootloader
+1. Build the image:
 
-###### 9.2.2.2 Test procedure
+    ```
+    vi mbed-os.lib
+    mbed deploy
+    mbed compile --target <new_target> --toolchain GCC_ARM
+    ```
+1. Flash the image (.bin or.hex) to the board.
+1. Verify the designated LED flashes every 0.5 second. You can use an oscilloscope.
 
-(1) Build image:
+#####  mbed-bootloader
+<!--this wasn't listed with the previous list of demo application, which had blinky and client connectivity-->
 
-Build bootloader
+1. Application repository: [https://github.com/armmbed/mbed-bootloader](https://github.com/armmbed/mbed-bootloader).
+1. Build the image:
 
-```
-cd mbed-os-bootloader
-mbed deploy
-mbed compile --target <new_target> --toolchain GCC_ARM --profile=tiny.json
-```
+    ```
+    cd mbed-os-bootloader
+    mbed deploy
+    mbed compile --target <new_target> --toolchain GCC_ARM --profile=tiny.json
+    ```
 
-(2) Flash Image:
+1. Flash the image (.bin or .hex) to the board.
+1. Verify the following on the terminal. Note:The value on the last line will be different.
 
-Program the generated .bin or .hex.
+    ```
+    [BOOT] Mbed Bootloader
 
-(3) Verify the following on the terminal. The value on the last line will be different.
+    [BOOT] ARM: 00000000000000000000
 
-```
-[BOOT] Mbed Bootloader
+    [BOOT] OEM: 00000000000000000000
 
-[BOOT] ARM: 00000000000000000000
+    [BOOT] Layout: 0 1006F44
+    ```
 
-[BOOT] OEM: 00000000000000000000
+##### mbed-cloud-client-example
 
-[BOOT] Layout: 0 1006F44
-```
-
-##### 9.2.3 mbed-cloud-client-example
-
-Use the following test procedure on the `mbed-cloud-client-example` [application repository](https://github.com/armmbed/mbed-cloud-client-example)
-
-1. Set up Pelion Account per instructions on https://cloud.mbed.com/product-overview.
-1. Generate API key on Pelion Portal.
-1. Run the following command with the generated API key in mbed-cloud-client-example directory
+1. Application repository:[https://github.com/armmbed/mbed-cloud-client-example](https://github.com/armmbed/mbed-cloud-client-example).
+1. [Set up a Pelion account](https://cloud.mbed.com/docs/current/account-management/users.html).
+1. [Generate an API key](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html) from the [Device Management Portal](https://portal.mbedcloud.com//login).
+1. In the `mbed-cloud-client-example` clone on your machine, run the following command with the generated API key:
 
    ```
    $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
@@ -681,14 +683,12 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
    $ mbed dm init -d "<company domain name>" --model-name <new_target>
    ```
 
-   Two files update_default_resources.c and mbed_cloud_dev_credentials.c should be created and used in the build.
+   This creates two files: `update_default_resources.c` and `mbed_cloud_dev_credentials.c`. Add these files to your build.
 
-1. Customize json files.
+1. You need to customize four files before building:
 
-   The following customization is needed prior to build:
-
-   - Modify mbed-os.lib by changing the URL to https://github.com/ARMmbed/mbed-os-new-target
-   - Add the new target to mbed-cloud-client-example/mbed_app.json. For example, the code block below adds CC3220SF:
+   - Modify `mbed-os.lib` by changing the URL to `https://github.com/ARMmbed/mbed-os-new-target`.
+   - Add the new target to `mbed-cloud-client-example/mbed_app.json`. For example, the code block below adds `CC3220SF`:
 
       ```
       ...
@@ -702,11 +702,11 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
       }
       ```
 
-   In addition, fill in the SSID and Password in mbed_app.json if connectivity method for the new target is WiFi.
+      Note that `bootloader-details` is the value displayed on your serial terminal program when you run the mbed-bootloader program.
 
-   Note that bootloader-details is the value displayed on the serial program while running mbed-bootloader program.
+   - If your target uses WiFi, fill in the SSID and Password fields in `mbed_app.json`.
 
-   - Add SOTP descriptors to mbed-cloud-client-example/mbed_lib.json, e.g.
+   - Add SOTP descriptors to `mbed-cloud-client-example/mbed_lib.json`. For example:
 
       ```
       ...
@@ -720,7 +720,7 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
        }
       ```
 
-1. Build image.
+1. Build the image:
 
    ```
    cd mbed-cloud-client-example
@@ -728,8 +728,8 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
    mbed compile --target <new_target> --toolchain GCC_ARM
    ```
 
-1. Program the generated .bin or .hex to the board.
-1. Verify serial output similar to:
+1. Flash the image (.bin or .hex) to the board.
+1. Verify your serial output is similar to:
 
    ```
    [BOOT] Mbed Bootloader
@@ -793,9 +793,9 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
    Device Id: 016688bda0740000000000010010007a
    ```
 
-1. Verify device is registered on Pelion portal
-1. Make change in the MCC client and rebuild the firmware.
-1. Perform firmware update
+1. Verify that the device is registered by finding it in the [Device Management Portal](https://portal.mbedcloud.com//login).
+1. Make change in the Device Management Client and rebuild the firmware.
+1. Perform a firmware update:
 
    ```
    $ mbed dm update device -D <device ID> -m <new_target>
@@ -819,7 +819,7 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
 
    Power cycle the board.
 
-1. Verify the newer firmware is running on the device. Serial output should display the following:
+1. Verify the newer firmware is running on the device. The serial output should display the following:
 
    ```
    [BOOT] Mbed Bootloader
@@ -898,3 +898,5 @@ Use the following test procedure on the `mbed-cloud-client-example` [application
 
    Device Id: 016688bda0740000000000010010007a
    ```
+
+<!--this is an abrupt ending. Are we done?-->
