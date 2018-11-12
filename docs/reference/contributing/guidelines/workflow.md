@@ -175,7 +175,7 @@ The Mbed OS maintainers add labels to a pull request that represent the pull req
 
 Each state is time boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
 
-If a pull request is idle for more than 2 weeks, it will be closed. It can be reopened with an update anytime by an author or the maintainer.
+If a pull request is idle for more than two weeks, it will be closed. The author or the maintainer can reopen it at any time.
 
 #### Reviews
 
