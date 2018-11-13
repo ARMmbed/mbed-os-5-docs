@@ -1,17 +1,17 @@
 ## NetworkStack
 
-As explained in [IP Networking architecture](../reference/ip-networking.html) page,
-the [Socket API](../apis/network-socket.html) provides a TCP/UDP API on top of any IP based network stack. With the Socket API, you can write applications and libraries that use TCP/UDP Sockets without regard to the type of IP connectivity. In addition to providing the TCP/UDP API, the Socket API includes virtual base classes for the different IP interface types.
+As explained in the [IP networking architecture](../reference/ip-networking.html) page,
+the [Socket API](../apis/network-socket.html) provides a TCP or UDP API on top of any IP based network stack. With the Socket API, you can write applications and libraries that use TCP or UDP sockets without regard to the type of IP connectivity. In addition to providing the TCP or UDP API, the Socket API includes virtual base classes for the different IP interface types.
 
-In Mbed OS, the actual network stack can be inside of the connectivity module, or software stack provided by Mbed OS. This page provides you a porting guide for these devices that provide external IP stacks. Usually these are AT-command driven modules.
+In Mbed OS, the network stack can be either inside the connectivity module or inside the software stack Mbed OS provides. This page includes a porting guide for devices that provide external IP stacks. Usually, these are AT-command driven modules.
 
-Please study the [Network Connectivity](../reference/connectivity-stacks.html) pages from architecture section before starting the porting work.
+Please study the [network connectivity](../reference/connectivity-stacks.html) pages from the architecture section before you start porting.
 
 ### Class hierarchy
 
-Driver for devices that contain IP stack inherit from two classes: a [NetworkStack](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html) and a communication specific subclass of [NetworkInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html).
+Drivers for devices that contain the IP stack inherit from two classes: a [NetworkStack](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html) and a communication-specific subclass of [NetworkInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html).
 
-Refer to the [IP Networking architecture](../reference/ip-networking.html) for device types.
+Please refer to the [IP networking architecture](../reference/ip-networking.html) for device types.
 
 #### NetworkInterface Class
 
@@ -34,13 +34,13 @@ Each subclass has distinct pure virtual methods. Visit their class references (l
 
 #### Errors
 
-Many functions of `NetworkStack` and `NetworkInterface` have return types of `nsapi_error_t`, which is a type used to represent error codes. You can see a list of these return codes [here](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba). You can view the integer values the error macros in [this file](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_types.h). A negative error code indicates failure, while 0 indicates success.
+Many functions of `NetworkStack` and `NetworkInterface` have return types of `nsapi_error_t`, which is a type used to represent error codes. You can see a [list of these return codes](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba). You can view the [integer values of the error macros](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_types.h). A negative error code indicates failure, and 0 indicates success.
 
 #### The `connect()` method
 
-High-level API calls to an implementation of a network-socket API are **identical** across networking protocols. The only difference is the interface object constructor and the method through which you connect to the network. For example, a Wi-Fi connection requires an SSID and password, a cellular connection requires an APN and Ethernet doesn't require any credentials. Each interface type may provide overloaded `connect()` method with required parameters, but it is preferred to offer these parameters as a configuration values to allow network interfaces to be changed just by changing configuration file.
+High-level API calls to an implementation of a network-socket API are **identical** across networking protocols. The only difference is the interface object constructor and the method through which you connect to the network. For example, a Wi-Fi connection requires an SSID and password, a cellular connection requires an APN and Ethernet doesn't require any credentials. Each interface type may provide an overloaded `connect()` method with required parameters, but the preferred method is to offer these parameters as configuration values to allow the changing of network interfaces by changing a configuration file.
 
-Below is a demonstration with the code that connects to a network and relies that required configuration are provided:
+Below is a demonstration with the code that connects to a network and relies on the required provided configuration:
 
 ```C++ NOCI
     NetworkInterface *net = NetworkInterface::get_default_instance();
@@ -49,11 +49,11 @@ Below is a demonstration with the code that connects to a network and relies tha
         printf("Error connecting to network %d\r\n", return_code);
 ```
 
-To change the example to use other network interfaces or provide configuration values for WiFi or other types, see [Network interface: Default network interface](../apis/network-interfaces.html)
+To change the example to use other network interfaces or provide configuration values for Wi-Fi or other types, please see [the default network interface](../apis/network-interfaces.html).
 
-#### Providing Socket API
+#### Providing the Socket API
 
-`NetworkStack` must implement following API in order to support TCP/UDP sockets:
+`NetworkStack` must implement the following API in order to support TCP or UDP sockets:
 
 ```C++ NOCI
 nsapi_error_t socket_open(nsapi_socket_t *handle, nsapi_protocol_t proto);
@@ -70,20 +70,19 @@ nsapi_error_t setsockopt(nsapi_socket_t handle, int level, int optname, const vo
 nsapi_error_t getsockopt(nsapi_socket_t handle, int level, int optname, void *optval, unsigned *optlen);
 ```
 
-Please note that as the blocking operation mode of Socket is provided by higher level Socket API, the underlying calls to `NetworkStack` object should not block. This forces some network operations to be done in separate worker thread or in shared event queue. Any calls to these functions should return `NSAPI_ERROR_WOULD_BLOCK` in case the operation cannot be immediately completed.
+Please note that as the blocking operation mode of Socket is provided by higher level Socket API, the underlying calls to `NetworkStack` object should not block. This forces some network operations to occur in a separate worker thread or in a shared event queue. Any calls to these functions should return `NSAPI_ERROR_WOULD_BLOCK` in case the operation cannot be immediately completed.
 
-Refer to the Doxygen documentation of [NetworkStack](../mbed-os-api-doxy/class_network_stack.html) for API descriptions.
+Please refer to the Doxygen documentation of [NetworkStack](../mbed-os-api-doxy/class_network_stack.html) for API descriptions.
 
 ### Testing
 
-To test new `NetworkStack` implementations full set of Mbed OS socket tests should be run.
+To test new `NetworkStack` implementations, run the full set of Mbed OS socket tests.
 
-Follow the guide from [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md).
+Follow the guide from the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md).
 
-Building and running the tests require you to provide the `mbed_app.json` as guided, and run the test with `mbed test -n mbed-os-tests-network-*,mbed-os-tests-netsocket*`
+Building and running the tests require you to provide the `mbed_app.json` as guided, and run the test with `mbed test -n mbed-os-tests-network-*,mbed-os-tests-netsocket*`.
 
-
-### Case Study: ESP8266 Wi-Fi component
+### Case study: ESP8266 Wi-Fi component
 
 This example ports a driver for the ESP8266 Wi-Fi module to the NSAPI.
 
