@@ -7,84 +7,176 @@ For more information about SPM, refer to [TODO: WHEN READY, SPM OVERVIEW PAGE LI
 **This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities**
 
 
+## Memory layout
+
+Typically PSA platforms will share same RAM and flash between secure and non secure cores.
+In order to provide PSA isolation level 1 or higher we need to partition both RAM and flash
+in a way described by following drawing:
+
+```text
+                                 RAM
+ +-----------+-------------+--------------------------------------------------+
+ |   Secure  |  Shared     |     Non-Secure                                   |
+ |      RAM  |     RAM     |            RAM                                   |
+ +-----------+-------------+--------------------------------------------------+
+
+                                 Flash
+ +-----------------------+----------------------------------------------------+
+ |   Secure              |     Non-Secure                                     |
+ |      Flash            |            Flash                                   |
+ +-----------------------+----------------------------------------------------+
+
+```
+In order to achieve RAM and Flash partitioning start and size values must be added to target a configuration in `targets.json`.
+The process of defining can be described in the following steps:
+1. secure target must inherit from `SPE_Target` meta-target
+2. non-secure target must inherit from `NSPE_Target`
+3. both targets must override default configuration by specifying flash RAM and shared RAM regions.
+
+```json
+"FUTURE_SEQUANA_M0_PSA": {
+        "inherits": ["SPE_Target", "FUTURE_SEQUANA_M0"],
+        "extra_labels_add": ["PSOC6_PSA"],
+        "components_add": ["SPM_MAILBOX"],
+        "macros_add": ["PSOC6_DYNSRM_DISABLE=1"],
+        "deliver_to_target": "FUTURE_SEQUANA_PSA",
+        "overrides": {
+            "secure-rom-start": "0x10000000",
+            "secure-rom-size": "0x78000",
+            "non-secure-rom-start": "0x10080000",
+            "non-secure-rom-size": "0x78000",
+            "secure-ram-start": "0x08000000",
+            "secure-ram-size": "0x10000",
+            "non-secure-ram-start": "0x08011000",
+            "non-secure-ram-size": "0x36800",
+            "shared-ram-start": "0x08010000",
+            "shared-ram-size": "0x1000"
+        }
+    },
+    "FUTURE_SEQUANA_PSA": {
+        "inherits": ["NSPE_Target", "FUTURE_SEQUANA"],
+        "sub_target": "FUTURE_SEQUANA_M0_PSA",
+        "extra_labels_remove": ["CORDIO"],
+        "extra_labels_add": ["PSOC6_PSA"],
+        "components_add": ["SPM_MAILBOX"],
+        "macros_add": ["PSOC6_DYNSRM_DISABLE=1"],
+        "overrides": {
+            "secure-rom-start": "0x10000000",
+            "secure-rom-size": "0x78000",
+            "non-secure-rom-start": "0x10080000",
+            "non-secure-rom-size": "0x78000",
+            "secure-ram-start": "0x08000000",
+            "secure-ram-size": "0x10000",
+            "non-secure-ram-start": "0x08011000",
+            "non-secure-ram-size": "0x36800",
+            "shared-ram-start": "0x08010000",
+            "shared-ram-size": "0x1000"
+        }
+    }
+```
+
+> Note: shared memory region is required only for multi core architectures.
+
 ## Linker Scripts
 
-Silicon partners must edit the secure and non-secure linker scripts to define sections for RAM, FLASH and SHARED_RAM.
+Linker scripts mast include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions.
+Shared memory region is defined by reserving RAM space for shared memory usage. Shared memory location is target specific and depends on the memory protection scheme applied.
+Typically shared memory will be located before/after non-secure RAM, for saving MPU regions. Shared memory region is considered non-secure memory used by both cores.
 
-Linker scripts guidelines:
-- *__shared_memory_start* symbol is used in SPM code so it must be set with the start address of the shared memory
-- *__shared_memory_start* must be 4 bytes aligned
-- *__shared_memory_end* symbol is used in SPM code so it must be set with the end address of the shared memory
-- SHARED_RAM must have Read/Write permissions from secure and non-secure cores
-- SHARED_RAM address must be 4 bytes aligned
-- SHARED_RAM must be given a minimum memory space of 256 bytes
-- Secure RAM base address must be 4 bytes aligned and have Read/Write permissions only from secure core
-- Secure FLASH base address must be 4 bytes aligned and have Read/Write/Execute permissions only from secure core
-- Non-Secure RAM base address must be 4 bytes aligned and have Read/Write permissions from secure and non-secure cores
-- Non-Secure FLASH base address must be 4 bytes aligned; must have Read permissions from secure and non-secure cores, and Execute permissions from non-secure core; May have Write permissions from secure and non-secure cores
-
-This is an example of the relevant parts inside the linker scripts:
-
-#### SECURE Core Linker Script
-
+### Linker Script example GCC_ARM
 ```
-...
-...
+#if !defined(MBED_ROM_START)
+  #define MBED_ROM_START    0x10000000
+#endif
+
+#if !defined(MBED_ROM_SIZE)
+  #define MBED_ROM_SIZE     0x78000
+#endif
+
+#if !defined(MBED_RAM_START)
+  #define MBED_RAM_START    0x08000000
+#endif
+
+#if !defined(MBED_RAM_SIZE)
+  #define MBED_RAM_SIZE     0x10000
+#endif
+
+/* The MEMORY section below describes the location and size of blocks of memory in the target.
+* Use this section to specify the memory regions available for allocation.
+*/
 MEMORY
 {
-    /* The ram and flash regions control RAM and flash memory allocation for the SECURE core.
-     * You can change the memory allocation by editing the 'ram' and 'flash' regions.
-     * Your changes must be aligned with the corresponding memory regions for the NON-SECURE core in the 
-     * NON-SECURE linker script.
-     */
-    ram               (rwx)   : ORIGIN = 0x08000000, LENGTH = 0x10000
-    shared_ram        (rw)    : ORIGIN = 0x08010000, LENGTH = 0x1000
-    flash             (rx)    : ORIGIN = 0x10000000, LENGTH = 0x78000
-    
-    ...
-    ...
+    ram               (rwx)   : ORIGIN = MBED_RAM_START, LENGTH = MBED_RAM_SIZE
+    flash             (rx)    : ORIGIN = MBED_ROM_START, LENGTH = MBED_ROM_SIZE
+}
+...
+```
+### Linker Script example ARM
+
+```
+#if !defined(MBED_ROM_START)
+  #define MBED_ROM_START    0x10000000
+#endif
+
+#if !defined(MBED_ROM_SIZE)
+  #define MBED_ROM_SIZE     0x78000
+#endif
+
+#if !defined(MBED_RAM_START)
+  #define MBED_RAM_START    0x08000000
+#endif
+
+#if !defined(MBED_RAM_SIZE)
+  #define MBED_RAM_SIZE     0x10000
+#endif
+
+#define MBED_RAM0_START MBED_RAM_START
+#define MBED_RAM0_SIZE  0x100
+#define MBED_RAM1_START (MBED_RAM_START + MBED_RAM0_SIZE)
+#define MBED_RAM1_SIZE  (MBED_RAM_SIZE - MBED_RAM0_SIZE)
+
+LR_IROM1 MBED_ROM_START MBED_ROM_SIZE {
+  ER_IROM1 MBED_ROM_START MBED_ROM_SIZE {
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+  }
+  RW_IRAM0 MBED_RAM0_START UNINIT MBED_RAM0_SIZE { ;no init section
+        *(*nvictable)
+  }
+  RW_IRAM1 MBED_RAM1_START MBED_RAM1_SIZE {
+   .ANY (+RW +ZI)
+  }
+}
+```
+### Linker Script example IAR
+
+```
+if (!isdefinedsymbol(MBED_ROM_START)) {
+  define symbol MBED_ROM_START = 0x10000000;
 }
 
-...
-...
-
-/* .shared_mem section contains memory shared between SECURE core and NON-SECURE core */
-.shared_mem :
-{
-    __shared_memory_start = .;
-    . += 0x1000;
-    __shared_memory_end = .;
-
-    /* Check if section is 4 bytes aligned */
-    ASSERT (((__shared_memory_start % 4) == 0), "Error: shared_mem section is not 4 bytes aligned!!");
-} > shared_ram
-
-...
-...
-```
-
-#### NON-SECURE Core Linker Script
-```
-...
-...
-MEMORY
-{
-    /* The ram and flash regions control RAM and flash memory allocation for the NON-SECURE core.
-     * You can change the memory allocation by editing the 'ram' and 'flash' regions.
-     * Your changes must be aligned with the corresponding memory regions for the SECURE core in the 
-     * SECURE linker script.
-     */
-    ram               (rwx)   : ORIGIN = 0x08011000, LENGTH = 0x36800
-    flash             (rx)    : ORIGIN = 0x10080000, LENGTH = 0x78000
-    
-    ...
-    ...
+if (!isdefinedsymbol(MBED_ROM_SIZE)) {
+  define symbol MBED_ROM_SIZE = 0x78000;
 }
 
-...
+if (!isdefinedsymbol(MBED_RAM_START)) {
+  define symbol MBED_RAM_START = 0x08000000;
+}
+
+if (!isdefinedsymbol(MBED_RAM_SIZE)) {
+  define symbol MBED_RAM_SIZE = 0x10000;
+}
+
+/* RAM */
+define symbol __ICFEDIT_region_IRAM1_start__ = MBED_RAM_START;
+define symbol __ICFEDIT_region_IRAM1_end__   = (MBED_RAM_START + MBED_RAM_SIZE);
+
+/* Flash */
+define symbol __ICFEDIT_region_IROM1_start__ = MBED_ROM_START;
+define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 ...
 ```
-
 
 ## Mailbox
 
@@ -115,10 +207,7 @@ Target specific code of silicon partners who wish to have SPM capabilities must:
 - Implement a list of functions which are being called by SPM code
 - Call other functions supplied by ARM
 
-The HAL can be logically divided into 3 different fields:
-
-#### Addresses
-This part of HAL allows the silicon partner to share the addresses set in the linker scripts with the SPM code. The SPM uses these addresses mostly to enforce access permissions.
+The HAL can be logically divided into 2 different fields:
 
 #### Mailbox
 This part of HAL allows the silicon partner to implement a thin layer of the mailbox mechanism which is specific to their platform.
