@@ -1,17 +1,14 @@
-<h2 id="blockdevice-port">PSA SPM</h2>
+<h2 id="spm-port">PSA SPM</h2>
 
-SPM (Secure Partition Manager) is a part of the PSA Firmware Framework that is responsible for isolating software in Partitions, managing the execution of software within Partitions, and providing IPC between Partitions.
+Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing interprocessor communication (IPC) between partitions.
 
-For more information about SPM, refer to [TODO: WHEN READY, SPM OVERVIEW PAGE LINK]
+For more information about SPM, please refer to [the SPM overview page](/docs/development/apis/mbed-psa.html).
 
 **This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities**
 
+### Memory layout
 
-## Memory layout
-
-Typically PSA platforms will share same RAM and flash between secure and non secure cores.
-In order to provide PSA isolation level 1 or higher we need to partition both RAM and flash
-in a way described by following drawing:
+Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash in a way the following image describes:
 
 ```text
                                  RAM
@@ -27,11 +24,12 @@ in a way described by following drawing:
  +-----------------------+----------------------------------------------------+
 
 ```
-In order to achieve RAM and Flash partitioning start and size values must be added to target a configuration in `targets.json`.
-The process of defining can be described in the following steps:
-1. secure target must inherit from `SPE_Target` meta-target
-2. non-secure target must inherit from `NSPE_Target`
-3. both targets must override default configuration by specifying flash RAM and shared RAM regions.
+
+To achieve RAM and flash partitioning, you must add start and size values to a target configuration in `targets.json`. You can do this with the following steps:
+
+1. Secure target must inherit from `SPE_Target` meta-target.
+2. Nonsecure target must inherit from `NSPE_Target`.
+3. Both targets must override the default configuration by specifying flash RAM and shared RAM regions.
 
 ```json
 "FUTURE_SEQUANA_M0_PSA": {
@@ -75,15 +73,16 @@ The process of defining can be described in the following steps:
     }
 ```
 
-> Note: shared memory region is required only for multi core architectures.
+<span class="notes">**Note:** Only multicore architectures require a shared memory region.</span>
 
-## Linker Scripts
+### Linker scripts
 
-Linker scripts mast include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions.
-Shared memory region is defined by reserving RAM space for shared memory usage. Shared memory location is target specific and depends on the memory protection scheme applied.
-Typically shared memory will be located before/after non-secure RAM, for saving MPU regions. Shared memory region is considered non-secure memory used by both cores.
+Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions. You can define a shared memory region by reserving RAM space for shared memory use. The shared memory location is target specific and depends on the memory protection scheme applied.
 
-### Linker Script example GCC_ARM
+Typically, shared memory is located before or after nonsecure RAM, for saving MPU regions. The shared memory region is nonsecure memory that both cores use.
+
+#### Linker script example GCC_ARM
+
 ```
 #if !defined(MBED_ROM_START)
   #define MBED_ROM_START    0x10000000
@@ -111,7 +110,8 @@ MEMORY
 }
 ...
 ```
-### Linker Script example ARM
+
+#### Linker Script example ARM
 
 ```
 #if !defined(MBED_ROM_START)
@@ -149,7 +149,8 @@ LR_IROM1 MBED_ROM_START MBED_ROM_SIZE {
   }
 }
 ```
-### Linker Script example IAR
+
+#### Linker script example IAR
 
 ```
 if (!isdefinedsymbol(MBED_ROM_START)) {
@@ -178,62 +179,60 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 ...
 ```
 
-## Mailbox
+### Mailbox
 
-Mailbox is the SPM mechanism in charge of Inter Processor Communication, and is **relevant for multi-core systems only**.
+Mailbox is the SPM mechanism in charge of IPC, and is **relevant for multicore systems only**.
 
 #### Concepts
-The mailbox mechanism is based on message queues and dispatcher threads.
-Each core has a single dispatcher thread, and a single message queue.
-The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue. 
+
+The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue. 
 
 #### Requirements
-The SPM mailbox mechanism requires that the platform should have the following capabilities:
-* Inter Processor Communication capabilities - The ability to notify the peer processor about an event (usually implemented with interrupts)
-* Ability to set a RAM section which is shared between the cores
+
+The SPM mailbox mechanism requires the platform to have the following capabilities:
+
+- IPC capabilities - The ability to notify the peer processor about an event (usually implemented with interrupts).
+- Ability to set a RAM section shared between the cores.
 
 #### Porting
-These are the guidelines which should be followed by silicon partners with multi-core systems:
-- For each core, initialize, configure and enable the a mailbox event (usually an interrupt) at SystemInit()
+
+These are the guidelines you should follow if you have multicore systems:
+
+- For each core, initialize, configure and enable the a mailbox event (usually an interrupt) at `SystemInit()`.
 - For each core, implement the mailbox event handler (usually interrupt handler):
-  - This handler must call an ARM callback function. This is explained in more details in the [HAL Functions section](#hal-functions)
-  - It is the silicon partner's responsibility to clear the mailbox event. This can be done in the event handler.
-- For each core, implement the HAL function which notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and explained in more details in the [HAL Functions section](#hal-functions)
+  - This handler must call an Arm callback function. The [HAL functions section](#hal-functions) explains this in more detail.
+  - It is your responsibility to clear the mailbox event. You can do this in the event handler.
+- For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
 
-
-## HAL Functions
+### HAL functions
 
 Target specific code of silicon partners who wish to have SPM capabilities must:
-- Implement a list of functions which are being called by SPM code
-- Call other functions supplied by ARM
 
-The HAL can be logically divided into 2 different fields:
+- Implement a list of functions which are being called by SPM code.
+- Call other functions supplied by ARM.
+
+The HAL can be logically divided into two different fields:
 
 #### Mailbox
-This part of HAL allows the silicon partner to implement a thin layer of the mailbox mechanism which is specific to their platform.
-It must be implemented only by silicon partners with multi-core systems.
+
+This part of HAL allows you to implement a thin layer of the mailbox mechanism that is specific to your platform. You must only implement it if you have multicore systems.
 
 #### Secure Processing Environment
-This part of HAL allows the silicon partner to apply their specific memory protection scheme.
 
-A list of these functions can be found here [TODO: WHEN READY, ADD LINK TO DOXYGEN FILES OF HAL FUNCTIONS]
+This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions]([TODO: WHEN READY, ADD LINK TO DOXYGEN FILES OF HAL FUNCTIONS]).
 
+### Memory protection
 
-## Memory Protection
+Target-specific code must implement the function *spm_hal_memory_protection_init()* called in SPM initialization. This function should apply memory protection schemes to ensure secure memory can only be accessed from secure-state.
 
-As explained in the [HAL Functions section](#hal-functions), target specific code must implement the function *spm_hal_memory_protection_init()* called on SPM initialization.
-This function should apply memory protection schemes to ensure secure memory can only be accessed from secure-state.
+The implementation of this function must be aligned with the SPM general guidelines, as the table below describes. This table describes the allowed operations (Read, Write and Execute) on the secure and nonsecure RAM and FLASH by each core:
 
-The implementation of this function, must be aligned with the SPM general guidelines as described in the table below.
+- X means No access.
+- V means Must be able to access.
+- ? means it is up to the target.
+- X? means it is up to the target, preferably No access.
 
-This table describes the allowed operations (Read / Write / Execute) on the Secure and Non-Secure RAM and FLASH by each core:
-
-- X means No Access
-- V means Must Be Able to Access
-- ? means it is up to the target
-- X? means it is up to the target, preferably No Access
-
-Processor Access    |Secure RAM        |Secure FLASH|Non Secure RAM     |Non Secure FLASH
+Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecure FLASH
 --------------------|------------------|------------|-------------------|----------------
 `Non Secure Read`   |   X              |    X       |        V          |    V
 `Non Secure Write`  |   X              |    X       |        V          |    ?
@@ -242,15 +241,14 @@ Processor Access    |Secure RAM        |Secure FLASH|Non Secure RAM     |Non Sec
 `Secure Write`      |   V              |    V       |        V          |    ?
 `Secure Execute`    |   X?             |    V       |        X          |    ?
 
+### Testing
 
-## Testing
+Arm provides a list of tests to make sure the HAL functions are implemented according to requirements, and the porting is done correctly.
 
-ARM provides a list of tests to make sure the HAL functions are implemented according to requirements, and the porting is done correctly.
+After finalizing the porting, execute the following tests:
 
-After finalizing the porting, the following tests should be executed:
 - [TODO: WHEN READY, ADD TEST NAME]
 - [TODO: WHEN READY, ADD TEST NAME]
 - ...
 
-It is recommended to leave the memory protection part [*spm_hal_memory_protection_init()* implementation] to the end of the porting.
-First implement and test other HAL functions, and after these tests pass, implement *spm_hal_memory_protection_init()* and run the entire test suite again, including the memory protection related tests.
+We recommended you leave the memory protection part (*spm_hal_memory_protection_init()* implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement *spm_hal_memory_protection_init()*, and run the entire test suite again, including the memory protection related tests.
