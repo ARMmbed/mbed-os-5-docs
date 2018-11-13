@@ -2,7 +2,7 @@
 
 The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
-<span class="tips">**Tip:** Please also read [workflow](/docs/development/reference/workflow.html) sections for a review of the process and legal requirements.</span>
+<span class="tips">**Tip:** Please also read the [workflow](/docs/development/reference/workflow.html) section for a review of the process and legal requirements.</span>
 
 ### Code acceptance
 
