@@ -19,14 +19,13 @@ If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.c
 
 #### Import
 
-Click the button below to automatically import the example into your online compiler.
+Click the button below to automatically import the example into the Online Compiler.
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-quick-start-blinky)](https://github.com/ARMmbed/mbed-os-quick-start-blinky/blob/master/main.cpp)
 
-Alternatively you may select the import button on the top left hand side of the screen and copy the [following link](https://github.com/ARMmbed/mbed-os-quick-start-blinky) for the example into the prompt.
+Alternatively, you may select the import button on the top left hand side of the screen and copy the [example link](https://github.com/ARMmbed/mbed-os-quick-start-blinky) into the prompt.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_program.png)
-</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_program.png)</span>
 
 #### Compile
 
@@ -56,7 +55,7 @@ Another way to do basic debugging is to use the `printf` command in your code an
 
 Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. 
 
-Note that the `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`, you can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.
+<span class="notes">**Note:** The `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`. You can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.</span>
 
 To determine which communication port your board connects to, follow the instructions for your operating system:
 
@@ -75,6 +74,7 @@ Run `ls /dev/tty.*` from your command-line.
 ### Further reading
 
 More examples:
+
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
@@ -90,4 +90,3 @@ More examples:
     - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
     - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
     - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
-
