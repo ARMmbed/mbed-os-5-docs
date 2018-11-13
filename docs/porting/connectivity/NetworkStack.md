@@ -36,6 +36,8 @@ Each subclass has distinct pure virtual methods. Visit their class references (l
 
 Many functions of `NetworkStack` and `NetworkInterface` have return types of `nsapi_error_t`, which is a type used to represent error codes. You can see a [list of these return codes](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba). You can view the [integer values of the error macros](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_types.h). A negative error code indicates failure, and 0 indicates success.
 
+Functions that send or receive data, use `nsapi_size_or_error_t` type as a return value, where positive values indicate how much data has been sent or received, negative return values are error codes and zero is indication of closed connection.
+
 #### The `connect()` method
 
 High-level API calls to an implementation of a network-socket API are **identical** across networking protocols. The only difference is the interface object constructor and the method through which you connect to the network. For example, a Wi-Fi connection requires an SSID and password, a cellular connection requires an APN and Ethernet doesn't require any credentials. Each interface type may provide an overloaded `connect()` method with required parameters, but the preferred method is to offer these parameters as configuration values to allow the changing of network interfaces by changing a configuration file.
