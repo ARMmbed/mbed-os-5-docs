@@ -8,7 +8,6 @@ The maintainers are a small group of Mbed OS engineers who are responsible for t
 
 Responsibilities:
 
-1. Check for CLA compliance.
 1. Ensure the relevant stakeholders review pull requests.
 1. Guide contributors both technically and procedurally.
 1. Run pull requests through the CI systems.
@@ -58,7 +57,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 	1. Use the imperative mood in the subject line.
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
-- Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
+- Because we use GitHub, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when.
 - Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
 - All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and test pull requests.
 - Avoid merging commmits. (Always rebase when possible.)
