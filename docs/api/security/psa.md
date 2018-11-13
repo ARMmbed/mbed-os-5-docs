@@ -1,22 +1,8 @@
 ## Mbed PSA
 
-### Terms and abbreviations
+Mbed [PSA](/docs/development/introduction/glossary.html) provides root of trust services and infrastructure for developing IoT applications.
 
-| Term         | Meaning                             |
-|--------------|-------------------------------------|
-| IPC          | Inter Process Communication         |
-| NSPE         | Non-Secure Processing Environment   |
-| PSA          | Platform Security Architecture      |
-| RoT          | Root Of Trust                       |
-| SAU          | Security Attribution Unit           |
-| SPE          | Secure Processing Environment       |
-| SPM          | Secure Partition Manager            |
-
-### Overview
-
-Mbed PSA provides root of trust services and infrastructure for developing IoT applications.
-
-When Mbed OS is running on a PSA Security Model compliant target, Mbed PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a Secure Processing Environment (SPE) and a Non-Secure Processing Environment (NSPE). The Secure Partition Manager (SPM), which uses the target's hardware features, manages the isolation. The SPM provides standardized IPC APIs that abstract the fact that partitions could be living inside a virtualized environment (v8M, TEE on Cortex-A) or inside another chip.
+When Mbed OS is running on a PSA Security Model compliant target, Mbed PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a [Secure Processing Environment (SPE)](/docs/development/introduction/glossary.html) and a [Non-Secure Processing Environment (NSPE)](/docs/development/introduction/glossary.html). The [Secure Partition Manager (SPM)](/docs/development/introduction/glossary.html), which uses the target's hardware features, manages the isolation. The SPM provides standardized [IPC](/docs/development/introduction/glossary.html) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
 
 Mbed PSA bridges the differences between PSA platforms and non-PSA platforms for application developers, allowing them to use the same standard PSA APIs on both platform types.
 
@@ -36,7 +22,7 @@ The SPM and the secure partitions are located in the SPE, isolating them from th
 
 A secure partition is a container for one or more root of trust services, and a platform may have multiple secure partitions. Secure partitions provide the execution environment for security functionality.
 
-Platform hardware, such as the Security Attribution Unit (SAU) and Memory Protection Unit (MPU) in the ARMv8-M platforms, enforces the separation of partitions. Other platforms may use different mechanisms to provide equivalent isolation for the partitions.
+Platform hardware, such as the [Security Attribution Unit (SAU)](/docs/development/introduction/glossary.html) and Memory Protection Unit (MPU) in the ARMv8-M platforms, enforces the separation of partitions. Other platforms may use different mechanisms to provide equivalent isolation for the partitions.
 
 ### Platform types
 
@@ -52,5 +38,5 @@ Mbed PSA supports the following platform types:
 
 Mbed PSA provides the following services:
 
-- PSA RoT internal storage.
+- PSA [RoT](/docs/development/introduction/glossary.html) internal storage.
 - PSA Crypto APIs.
