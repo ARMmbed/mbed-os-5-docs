@@ -179,7 +179,7 @@ Another way to do basic debugging is to use the `printf` command in your code an
 
 Invoke `mbed detect` from your command-line to determine which communication port your board connects to (in other words, `COM18`, `/dev/ttyACM0` and so on). Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS.
 
-Note that the `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`, you can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.
+<span class="notes">**Note:** The `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`, you can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.</span>
 
 ### Further reading
 
