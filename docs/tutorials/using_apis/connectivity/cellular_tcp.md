@@ -1,6 +1,6 @@
 ## Cellular TCP sockets
 
-Establishing a cellular connection to the network with mbed-os only requires the following operations :
+Establishing a cellular connection to the network with Mbed OS only requires the following operations:
 
 ```
 OnboardCellularInterface iface;
@@ -15,9 +15,6 @@ iface.set_credentials(CREDENTIALS);
 iface.connect()
 ```
 
-This example demonstrates how to establish a connection and proceed to a simple TCP echo test.
-[![View Example][1]][2]
+This example demonstrates how to establish a connection and proceed to a simple TCP echo test:
 
-[1]: https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/CellularTCP
-[2]: https://github.com/ARMmbed/mbed-os-examples-docs_only/blog/CellularTCP/main.cpp
-
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/CellularTCP/)](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/CellularTCP/main.cpp)
