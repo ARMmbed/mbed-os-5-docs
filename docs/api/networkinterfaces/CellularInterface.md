@@ -4,13 +4,13 @@
 
 The CellularBase provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which has more information.
+Arm Mbed OS provides a [reference implementation of CellularBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html), which has more information.
 
 #### Cellular
 
 The [CellularBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html).
+Arm Mbed OS provides a [reference implementation of CellularBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html).
 
 ##### Getting started
 
@@ -48,7 +48,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [an easy cellular connection](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
+[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses [a class CellularContext](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html). It depends on the modem whether the application uses PPP or AT mode. We can summarize this particular design as follows:
 
 - It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.

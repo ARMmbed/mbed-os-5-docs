@@ -27,7 +27,7 @@ There are two phases to Mbed OS connectivity, in general:
 1. Connect to a network.
 1. Open a socket to send or receive data.
 
-With cellular, the easiest way to connect your application to the internet over a cellular network is to use the `CellularConnectionFSM` class. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, as Figure 2 illustrates.
+With cellular, the easiest way to connect your application to the internet over a cellular network is to use the `CellularContext` class and `get_default_instance`. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, as Figure 2 illustrates.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-quick-start.png)<span>Figure 2. Connect to cellular network and open a socket</span></span>
 
@@ -48,11 +48,13 @@ If you use an Mbed OS target and a separate cellular hosted module via a serial 
         [
             "CELLULAR_DEVICE=<manufacturer-module>",
             "MDMRXD=<rx-pin-name>",
-            "MDMTXD=<tx-pin-name>"
+            "MDMTXD=<tx-pin-name>",
+            "MDMRTS=<rts-pin-name>",
+            "MDMCTS=<cts-pin-name>"
         ]
-    }    
+    }
 
-You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART.
+You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART. If RTC/CTS are not connected on UART then define MDMRTS and MDMCTS to 'NC'.
 
 ### Cellular APIs
 
@@ -60,11 +62,24 @@ As an application developer, you should use and refer only to classes located un
 
 Cellular APIs are structured based on main functionalities:
 
-- `CellularNetwork` for cellular network features, such as preferred operator and APN.
+- `CellularContext` is the main interface for application. Used to connect to operators APN.
+- `CellularNetwork` for cellular network features, such as registering and attaching to a network.
 - `CellularPower` for cellular hosted module power control, such as enabling power save.
 - `CellularInformation` to read the cellular hosted module type and firmware version.
 - `CellularSIM` to enter the PIN code and other SIM management functions.
 - `CellularSMS` to read and write SMS messages.
+
+CellularContext class can be easily instantiated with `CellularContext::get_default_instance()` which opens `CellularDevice` and via device opens `CellularContext`. Opening `CellularContext` via `get_default_instance` uses default values from mbed_app.json.
+Default values are not defined by default and must be overridden in mbed_app.json if they are needed:
+"target_overrides": {
+        "*": {
+            "nsapi.default-cellular-plmn": "\"12346\"",
+            "nsapi.default-cellular-sim-pin": "\"1234\"",
+            "nsapi.default-cellular-apn": "\"internet\"",
+            "nsapi.default-cellular-username": 0,
+            "nsapi.default-cellular-password": 0
+        }
+    }
 
 The CellularDevice class encloses cellular APIs. Therefore, to use any cellular API, you need to get CellularDevice first. You can then use CellularDevice to open and close cellular APIs, as Figure 3 illustrates.
 
@@ -72,9 +87,11 @@ The CellularDevice class encloses cellular APIs. Therefore, to use any cellular 
 
 When an application has opened a cellular API, you can use it to request API methods. For example:
 
-    CellularNetwork *network  = cellularDevice->get_network();
-    if (network) {
-        printf("Local IP address is %s", network->get_ip_address());
+    CellularContext *ctx  = cellularDevice->create_context();
+    if (ctx) {
+		if (ctx-connect() == NSAPI_ERROR_OK) {
+			printf("Local IP address is %s", ctx->get_ip_address());
+		}
     }
 
 ### UDP and TCP sockets
@@ -119,7 +136,7 @@ Consider the following points when selecting PPP or AT mode:
 
 ### Optimize for power consumption
 
-The `CellularPower` class has methods to optimize power saving. The `set_powerl_level()` offers flexibility to control the reception and transmission power levels. In addition, 3GPP has specified advanced power optimizations that are useful for celluar IoT devices: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
+The `CellularPower` class has methods to optimize power saving. The `set_power_level()` offers flexibility to control the reception and transmission power levels. In addition, 3GPP has specified advanced power optimizations that are useful for celluar IoT devices: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
 
 #### PSM - Power Save Mode
 
