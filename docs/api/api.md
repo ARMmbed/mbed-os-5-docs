@@ -76,7 +76,6 @@
 <td><a href="busin.html">BusIn</a></td>
 <td><a href="ticker.html">Ticker</a></td>
 <td><a href="serial.html">Serial</a></td>
-<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 <tr>
 <td><a href="busout.html">BusOut</a></td>
@@ -221,6 +220,9 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <tbody>
 <tr>
 <td><a href="tls.html">TLS</a></td>
+</tr>
+<tr>
+<td><a href="Devicekey.html">DeviceKey</a></td>
 </tr>
 </tbody>
 </table>
