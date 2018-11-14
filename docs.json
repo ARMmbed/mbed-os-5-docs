@@ -264,10 +264,6 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/drivers/MbedCRC.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/drivers/Devicekey.md"
                     }
                 ]
             },
@@ -476,6 +472,10 @@
                 "sources": [{
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/TLS.md"
+                },
+                {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/Devicekey.md"
                 }]
             },
             {
