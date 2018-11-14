@@ -1,17 +1,16 @@
 ## NetworkStack
 
-As explained in the [IP networking architecture](../reference/ip-networking.html) page,
-the [Socket API](../apis/network-socket.html) provides a TCP or UDP API on top of any IP based network stack. With the Socket API, you can write applications and libraries that use TCP or UDP sockets without regard to the type of IP connectivity. In addition to providing the TCP or UDP API, the Socket API includes virtual base classes for the different IP interface types.
+As explained in the [IP networking architecture](../architecture/ip-networking.html) page, the [Socket API](../apis/network-socket.html) provides a TCP or UDP API on top of any IP based network stack. With the Socket API, you can write applications and libraries that use TCP or UDP sockets without regard to the type of IP connectivity. In addition to providing the TCP or UDP API, the Socket API includes virtual base classes for the different IP interface types.
 
 In Mbed OS, the network stack can be either inside the connectivity module or inside the software stack Mbed OS provides. This page includes a porting guide for devices that provide external IP stacks. Usually, these are AT-command driven modules.
 
-Please study the [network connectivity](../reference/connectivity-stacks.html) pages from the architecture section before you start porting.
+Please study the [network connectivity](../architecture/connectivity-stacks.html) pages from the architecture section before you start porting.
 
 ### Class hierarchy
 
 Drivers for devices that contain the IP stack inherit from two classes: a [NetworkStack](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html) and a communication-specific subclass of [NetworkInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html).
 
-Please refer to the [IP networking architecture](../reference/ip-networking.html) for device types.
+Please refer to the [IP networking architecture](../architecture/ip-networking.html) for device types.
 
 #### NetworkInterface Class
 
