@@ -554,6 +554,10 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/storage/QSPIFBlockDevice.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/storage/NVStore.md"
                     }
                 ]
