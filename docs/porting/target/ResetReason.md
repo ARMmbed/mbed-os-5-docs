@@ -39,4 +39,4 @@ The Mbed OS HAL provides a set of conformance tests for ResetReason. You can use
 mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-reset_reason"
 ```
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/feature-hal-spec-watchdog-doxy/classreset__reason_1_1_reset_reason_test.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/feature-hal-spec-watchdog-doxy/group__hal__reset__reason__tests.html)
