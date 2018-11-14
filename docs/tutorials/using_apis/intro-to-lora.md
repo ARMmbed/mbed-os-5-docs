@@ -278,7 +278,7 @@ To send the current value of the PIR sensor (whether it sees movement), in the O
 1. Open `main.cpp`.
 1. Replace the function `send_message()` with:
 
-    ```cpp
+    ```cpp TODO
     static void send_message() {
         static InterruptIn pir(D5); // If you hooked the sensor up to a different pin, change it here
 
@@ -317,7 +317,7 @@ Now you can verify whether the setup works by flashing this application to your 
 
 By default, the application sends data automatically. If you want to change this, remove this line from `main.cpp`:
 
-```cpp
+```cpp NOCI
 ev_queue.call_every(TX_TIMER, send_message);
 ```
 
@@ -332,7 +332,7 @@ You can toggle the LED on your development board over LoRa. In the Online Compil
 1. Open `main.cpp`.
 1. Replace the `receive_message` function with:
 
-    ```cpp
+    ```cpp TODO
     static void receive_message() {
         static DigitalOut led(LED1, 0); // the LED under control, default value of 0
 

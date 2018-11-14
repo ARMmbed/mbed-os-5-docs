@@ -1,6 +1,6 @@
 ## SPISlave
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i_slave.png)<span>SPISlave class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i_slave.png)<span>SPISlave class hierarchy</span></span>
 
 Use the SPISlave class to communicate with a SPI master device.
 
@@ -17,7 +17,7 @@ Reply to a SPI master as slave:
 ```c++
 #include "mbed.h"
 
-SPISlave device(p5, p6, p7, p8); // mosi, miso, sclk, ssel
+SPISlave device(D9, D11, D12, D13); // mosi, miso, sclk, ssel
 
 int main() {
    device.reply(0x00);              // Prime SPI with first reply

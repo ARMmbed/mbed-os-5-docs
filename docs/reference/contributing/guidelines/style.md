@@ -2,11 +2,11 @@
 
 The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
-<span class="tips">**Tip:** Please also read the [CLA](/docs/development/reference/license.html) and [workflow](/docs/development/reference/workflow.html) sections for a review of the process and legal requirements.</span>
+<span class="tips">**Tip:** Please also read the [workflow](/docs/development/reference/workflow.html) section for a review of the process and legal requirements.</span>
 
 ### Code acceptance
 
-[After the CLA](/docs/development/reference/license.html) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
+After the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
 ### Coding style
 
@@ -26,7 +26,7 @@ File `.astylerc` defines Mbed OS code style and it's located in Mbed OS root dir
 
 #### Code sample
 
-```c
+```c TODO
 static const PinMap PinMap_ADC[] = {
     {PTC2, ADC0_SE4b, 0},
     {NC , NC , 0}
@@ -123,8 +123,8 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 
 As an example:
 
-```c
-#define ADC_INSTANCE_SHIFT 8 
+```cPP TODO
+#define ADC_INSTANCE_SHIFT 8
 
 class AnalogIn {
 public:

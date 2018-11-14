@@ -34,13 +34,13 @@ Most boot sequences are composed of only three stages:
 1. Bootloader: upgradable, with several versions stored on the device.
 1. Application: upgradable, with several versions stored on the device.
 
-Fault tolerance ultimately rests on the sanity of the first-stage bootloader. This bootloader is usually kept minimal to ensure dependable operation.<!--So what does Mbed OS do? Also, "minimal" is vague. What does it actually mean - that its functionality is limited to starting the sequence?-->
+Fault tolerance ultimately rests on the sanity of the first-stage bootloader. This bootloader is usually kept minimal to ensure dependable operation.
 
-The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it fulfills the requirements of the boot selector: It is small enough to minimize the chance of bugs, but it is advanced enough to install new images.<!--Therefore, the Mbed Bootloader is intended to be a reference implementation for constructing a bootloader.--><!--Not relevant for the Mbed OS one, right???-->
+The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it fulfills the requirements of the boot selector: It is small enough to minimize the chance of bugs, but it is advanced enough to install new images.
 
 #### Managed and unamanaged bootloader tool integration
 
-The Mbed tools (Mbed CLI, Online Compiler)<!--Please confirm the Online Compiler can do this--> can manage bootloaders where:
+The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
 
 - The bootloader comes before the application in ROM.
 - The application starts immediately after the bootloader.
@@ -86,11 +86,11 @@ Mbed CLI and the Online Compiler implement the Pelion Device Management Update s
 
 <span class="notes">**Note**: The default workflow of the development tools is intended only for development and testing purposes. It is not considered secure for production.</span>
 
-Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/current/service-api-references/update-service.html).
+Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
 
 <span class="notes">**Note**: The tools currently support the update flow for Device Management Client, not Device Management Client Lite.</span>
 
 **Tutorials**:
 
-- Try the firmware update flow on the Online Compiler.<!--No link yet; it's not live-->
+- Try the firmware [update flow on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update). Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).
 - Review the [Mbed CLI update commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).

@@ -1,6 +1,6 @@
 ## Workflow
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/development/reference/style.html). Please also read the [Contributor License Agreement (CLA)](/docs/development/reference/license.html) guidelines because we will immediately close pull requests submitted without a CLA.
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/development/reference/style.html).
 
 ### Mbed OS maintainers
 
@@ -8,7 +8,6 @@ The maintainers are a small group of Mbed OS engineers who are responsible for t
 
 Responsibilities:
 
-1. Check for CLA compliance.
 1. Ensure the relevant stakeholders review pull requests.
 1. Guide contributors both technically and procedurally.
 1. Run pull requests through the CI systems.
@@ -20,10 +19,9 @@ The current maintainers are:
 
 - [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
 - [Martin Kojtal](https://os.mbed.com/users/Kojto).
-- [Jimmy Brisson](https://os.mbed.com/users/theotherjimmy).
 - [Shrikant Tudavekar](https://os.mbed.com/users/shrikant1213).
-- [Sam Grove](https://os.mbed.com/users/sam_grove).
-- [Cruz Monrreal](https://os.mbed.com/users/MrCruz).
+- [Nir Sonnenschein](https://os.mbed.com/users/nirs).
+- [Cruz Monrreal](https://os.mbed.com/users/CM2).
 - [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 ### Contributions
@@ -38,11 +36,11 @@ Please create separate pull requests for each concern; each pull request needs a
 
 #### Reporting bugs
 
-Please submit all Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-suggestions/).
+You can submit Mbed OS bugs [on the forums](https://os.mbed.com/forum/bugs-suggestions/) or directly [on GitHub](https://github.com/ARMmbed/mbed-os)
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker (`ARM Internal Ref: MBOTRIAGE-XXX` comment in the issues and label mirrored set once copied) and regularly triage them.
+We copy issues reported on GitHub to our internal tracker and regularly triage them.
 
 ### Guidelines for GitHub pull requests
 
@@ -59,7 +57,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 	1. Use the imperative mood in the subject line.
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
-- Because we use GitHub and explicit CLAs, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
+- Because we use GitHub, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when.
 - Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
 - All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and test pull requests.
 - Avoid merging commmits. (Always rebase when possible.)
@@ -175,6 +173,8 @@ Each pull request goes through the following workflow:
 The Mbed OS maintainers add labels to a pull request that represent the pull request workflow states. The Mbed OS maintainers are responsible for moving pull requests through the workflow states.
 
 Each state is time boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
+
+If a pull request is idle for more than two weeks, it will be closed. The author or the maintainer can reopen it at any time.
 
 #### Reviews
 

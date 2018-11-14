@@ -1,6 +1,6 @@
 ## ProfilingBlockDevice
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_profiling_block_device.png)<span>ProfilingBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_profiling_block_device.png)<span>ProfilingBlockDevice class hierarchy</span></span>
 
 The ProfilingBlockDevice class provides a decorator for an existing block device object to log reads, writes and erases.
 

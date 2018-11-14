@@ -1,6 +1,6 @@
 <h2 id="mesh-api">6LoWPAN Mesh</h2>
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
 The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) networking stack.
 
@@ -43,7 +43,7 @@ See the example application [mbed-os-example-mesh-minimal](https://github.com/AR
 
 The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/file/8a8b62fea37c/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/main.cpp)
 
 ### Related content
 

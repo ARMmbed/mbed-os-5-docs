@@ -4,7 +4,7 @@ The C `date` and `time` functions are a group of functions in the standard libra
 
 You can convert time to a human-readable format using `ctime`, `localtime`, `strftime` and other C standard functions.
 
-You cannot use `time`, `mktime` and `localtime` C standard library functions in an interrupt handler with the GCC toolchain. We have added dedicated routines `_rtc_mktime` and `_rtc_localtime`, which are optimized and faster then C standard library functions, to overcome this issue.
+You cannot use `time`, `mktime` and `localtime` C standard library functions in an interrupt handler with the GCC toolchain. We have added dedicated routines `_rtc_mktime` and `_rtc_localtime`, which are optimized and faster than C standard library functions, to overcome this issue.
 
 ### Time function reference
 
@@ -12,7 +12,7 @@ You cannot use `time`, `mktime` and `localtime` C standard library functions in 
 
 ### Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/file/3d395620e01a/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/file/0c6401d671c6/main.cpp)
 
 ### 2038
 

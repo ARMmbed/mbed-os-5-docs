@@ -11,18 +11,18 @@ The idea is to achieve universal application portability. In other words, a sing
 
 The whole porting process consists of two key ingredients:
 
-- An implementation of the [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html) class.
-- An implementation of the [LoRaWANBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_base.html) class.
+- An implementation of the [LoRaRadio](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html) class.
+- An implementation of the [LoRaWANBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_base.html) class.
 
 ### Porting a LoRa RF driver
 
-Arm Mbed OS provides a generic API that serves as a template for any LoRa RF driver. [LoRaRadio](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html) is a pure virtual class and is an attempt to standardize the APIs across all LoRa radios. Mbed Enabled LoRa radio driver implementations present as a LoRaRadio.
+Arm Mbed OS provides a generic API that serves as a template for any LoRa RF driver. [LoRaRadio](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html) is a pure virtual class and is an attempt to standardize the APIs across all LoRa radios. Mbed Enabled LoRa radio driver implementations present as a LoRaRadio.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_radio_inherit.png)<span>Figure 1. Existing Mbed LoRa RF drivers inherit from the LoRaRadio class.</span></span>
 
 For a reference implementation, please see the existing [LoRa RF drivers](https://github.com/ARMmbed/mbed-semtech-lora-rf-drivers). Construction of a LoRaRadio object is a matter of taste. The existing reference drivers allow construction of the LoRaRadio object with full pin definitions to make sure that the driver is usable across platforms with any pin combination. You are free to use any form of construction as long as you provide a LoRaRadio object down to the Arm Mbed LoRaWAN stack. Use of an instance of the `LoRaRadio` class for a third party LoRaWAN stack is beyond the scope of this documentation.
 
-For API use cases, details, explanation and meaning, please see the `LoRaRadio` class reference below. We carefully planned and designed the data structures provided in [LoRaRadio.h](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_lo_ra_radio_8h_source.html). They carry most of what you need to write your LoRa RF driver.
+For API use cases, details, explanation and meaning, please see the `LoRaRadio` class reference below. We carefully planned and designed the data structures provided in [LoRaRadio.h](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_lo_ra_radio_8h_source.html). They carry most of what you need to write your LoRa RF driver.
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
 
@@ -34,9 +34,9 @@ This subsection discusses how a third party LoRaWAN stack can seamlessly provide
 
 <span class="notes">**Note:** The way a third party LoRaWAN stack harnesses the powers of Arm Mbed OS, in other words, synchronization methods (if using RTOS), timers, HAL and so on is beyond the scope of this documentation.</span>
 
-The [LoRaWANBase](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_base.html) class is a pure virtual class providing user facing APIs for a LoRaWAN stack.
+The [LoRaWANBase](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_base.html) class is a pure virtual class providing user facing APIs for a LoRaWAN stack.
 
-The native Arm Mbed LoRaWAN stack implements `LoRaWANBase` as [LoRaWANInterface](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html), which then serves as a network interface for the application. Potentially, any developer or vendor can provide an implementation of `LoRaWANBase`, and that particular implementation would serve as a network interface for the application.
+The native Arm Mbed LoRaWAN stack implements `LoRaWANBase` as [LoRaWANInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html), which then serves as a network interface for the application. Potentially, any developer or vendor can provide an implementation of `LoRaWANBase`, and that particular implementation would serve as a network interface for the application.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_base.png)<span>Figure 2. Inheriting from LoRaWANBase to provide portable APIs.</span></span>
 

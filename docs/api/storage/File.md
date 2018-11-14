@@ -1,6 +1,6 @@
 ## File
 
-<span class="images">![](https://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
+<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
 
 The File class provides access to the underlying storage of a file system in a generic manner. This acts as a buffer between the file system and any technical limitations of the physical storage medium. On the storage, each file is a blob of data referenced by a file name represented as a string. By providing a file name to the `open` function in the File class, you can access the blob of data stored on disk.
 

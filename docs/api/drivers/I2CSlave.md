@@ -12,7 +12,7 @@ Synchronization level: not protected.
 
 Try this example to see how an I2C responder works.
 
-```c++
+```c++ TODO
 #include <mbed.h>
 
 I2CSlave slave(p9, p10);

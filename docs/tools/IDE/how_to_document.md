@@ -46,7 +46,7 @@ The documentation is created out of comment blocks in your code, usually located
 class HelloWorld {
 	public:
 		HelloWorld();
-		printIt(uint32_t delay = 0);
+		void printIt(uint32_t delay = 0);
 };
 ```
 
@@ -68,7 +68,7 @@ class HelloWorld {
 		HelloWorld();
 
 		/** Print the text */
-		printIt(uint32_t delay = 0);
+		void printIt(uint32_t delay = 0);
 };
 ```
 
@@ -82,7 +82,7 @@ class HelloWorld {
 	HelloWorld();
 
 	/// Print the text
-	printIt(uint32_t delay = 0);
+	void printIt(uint32_t delay = 0);
 };
 ```
 
@@ -137,7 +137,7 @@ class HelloWorld {
 		*   1 on success,
 		*   0 on serial error
 		*/
-		printIt(uint32_t delay = 0);
+		void printIt(uint32_t delay = 0);
 };
 ```
 
