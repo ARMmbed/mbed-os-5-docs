@@ -14,6 +14,6 @@ Common to any choice is the ability to import and publish code to Git and Mercur
 
 #### Please choose how to proceed
 
-| Online with the Mbed Online Compiler | Offline with Mbed CLI |
-| --- | --- |
+| Online with the <br>Mbed Online Compiler | Offline with Mbed CLI |
+| :---: | :---: |
 | [![offline](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_next_button.png)](quick-start-online.html)| [![online](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/offline_compile_next_button.png)](quick-start-offline.html) |
