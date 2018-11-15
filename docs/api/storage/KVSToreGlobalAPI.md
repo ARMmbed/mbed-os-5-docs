@@ -29,7 +29,7 @@ The flags explained below can be "ored" (|) and passed to the function set in pa
 **KV_REQUIRE_REPLAY_PROTECTION_FLAG:** The system will keep a copy of the data CMAC in internal memory and will check that the data CMAC corresponds to this saved CMAC, to avoid an attacker from replacing the latest data with a valid old version of the data. This flag will be ignored if selecting the configurations TDB_EXTERNAL_NO_RBP or FILESYSTEM_NO_RBP.
 
 ### full_prefix
-This parameter is used in the iterator kv_iterator_open function to define the subset of filenames that will be returned by kv_iterator_next. The string will be used as a prefix, and each name that starts with exact string passed in full_prefix will be retruned by kv_iterator_next.
+The function kv_iterator_open uses this parameter to define the subset of filenames that will be returned by kv_iterator_next. The function uses the string as a prefix, and each name that starts with exact string passed in full_prefix will be retruned by kv_iterator_next.
 >Note: The full_prefix string must include the /path/ (e.g. /kv/)
 
 

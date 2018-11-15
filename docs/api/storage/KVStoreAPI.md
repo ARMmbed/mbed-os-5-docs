@@ -1,4 +1,7 @@
-# Components implementing KVStore API
+# Classes implementing KVStore API
+KVStore API is a common get/set API implemented by several classes. It allows flexibility in the configuration of a storage solution, that can be built by allocating several combinations of objects. For example, SecureStore can hold a TDBStore or a FileSystemStore, both implementing KVStore API, without any change in functionality.
+Developers should use the static global KVStore API when possible, to get advantage of the flexibility of KVStore configuration.
+It is also possible to instantiate single objects of the classes detailed below and use the KVStore class API directly. KVStore API presents additional functionality not present in the global API, like incremental set (set_start, set_add_data and set_finalize) and incremental get (parameter offset in function get). These APIs must be used with caution, because a second call  to set_start after a call to set_start and before a call to set_finalize, will be held pending on a mutex, until set_finalize is called.
 ## TDBStore - Tiny Database
 TDBStore (Tiny Database Storage) is a lightweight module aimed for storing data on a flash storage. It is part of the KVStore class family, meaning that it supports the get/set interface. It is designed to optimize performance (speed of access), reduce wearing of the flash and to minimize storage overhead. It is also resilient to power failures.
 
