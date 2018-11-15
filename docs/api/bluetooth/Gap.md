@@ -28,7 +28,7 @@ Extended advertising may use multiple PHYs and spread payload across many packet
 
 Similarly, if supported by the controller, periodic advertising may be used to send changing data to many peers. Each peer needs to scan the advertisements on the primary channels and create a sync with a periodic advertisement it's interested in.
 
-There may be many advertising sets active at one time on a single advertiser. This allows it advertise different data at the same time to possibly different peers.
+There may be many advertising sets active at one time on a single advertiser. This allows it advertise different data at the same time possibly to different peers.
 
 Devices that do not support extended and periodic advertising will not see these advertisements. Legacy advertising may be used alongside extended advertising, running at the same time, to support older devices in the environment.
  
