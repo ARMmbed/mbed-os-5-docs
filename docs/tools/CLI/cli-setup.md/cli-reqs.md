@@ -49,8 +49,8 @@ The Windows installer for Mbed CLI includes the following components:
 - **Python** - Mbed CLI is a Python script, so you need Python to use it. The installer installs [version 2.7.13 of Python](https://www.python.org/downloads/release/python-2713/). It is not compatible with Python 3.
 - **Mbed CLI version 1.2.2** - [Mbed CLI](https://github.com/ARMmbed/mbed-cli).
 - **Git and Mercurial** - Mbed CLI supports both Git and Mercurial repositories. Both Git and Mercurial are being installed. `git` and `hg` are added to system's PATH.
-    - [Git](https://git-scm.com/) - version 2.12.2.
-    - [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
+    - [Git](https://git-scm.com/).
+    - [Mercurial](https://www.mercurial-scm.org/).
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
 
