@@ -36,6 +36,10 @@ This is a basic overview of the memory model in Mbed OS.
 | ZI: Global data     |
 |                     |
 +---------------------+
+|     Optional        |
+|  Crash-Data-RAM     |
+|      region         |
++---------------------+
 | RW: Vector table    |
 +=====================+   First address of RAM
 |                     |   Last address of flash
@@ -61,6 +65,7 @@ Inside RAM, you can distinguish two logical types: static and dynamic memory. St
 
 - Static:
     - Vector table (read and write).
+    - Crash data RAM. (see [the error handling documentation](error-handling.html) for more information on this region)
     - Global data.
     - Static data.
     - Stacks for default threads (main, timer, idle and scheduler/ISR).

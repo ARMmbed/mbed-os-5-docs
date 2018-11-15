@@ -94,7 +94,7 @@ Error Message: Fault exception
 Location: 0x5CD1
 Error Value: 0x4A2A
 Current Thread: Id: 0x20001E80 Entry: 0x5EB1 StackSize: 0x1000 StackMem: 0x20000E80 SP: 0x2002FF90
-For more info, visit: https://mbed.com/s/error?error=0x80FF013D&mbedos=999999&core=0x410FC241&compile=1&ver=5060528
+For more info, visit: https://mbed.com/s/error?error=0x80FF013D
 -- MbedOS Error Info --
 ```
 
@@ -129,6 +129,37 @@ Mbed OS application and system developers may need to define error codes specifi
 ### Error hook for applications
 
 Some applications may want to do custom error handling when an error is reported using `MBED_ERROR()` or `MBED_WARNING()`. Applications can accomplish this by registering an error hook function with the Mbed OS error handling system using the **mbed_set_error_hook()** API. This function is called with error context information whenever the system handles an **MBED_ERROR()** or **MBED_WARNING()** invocation. This function should be implemented for re-entrancy because multiple threads may invoke `MBED_ERROR()` or `MBED_WARNING()`, which may cause the error hook to be called in parallel.
+
+### Crash reporting and auto-reboot
+Whenever a fatal error happens in the system, MbedOS error handling system collects key information such as error code, error location, register context(in the case of fault exceptions) etc. and stores them in a special area in RAM region called Crash-data-RAM. The error information stored in Crash-data-RAM is in binary format and follows the `mbed_error_ctx` structure defined in `mbed_error.h`. The system then triggers a warm-reset without losing the RAM contents where we have the error information collected. After the system reboots, during MbedOS initialization the Crash-data-RAM region is checked to find if there is valid error information captured. This is done by using a CRC value calculated over the stored error information and is appended as part of information stored in Crash-data-RAM. If the system detects that the reboot was triggered by a fatal error, it will invoke a callback function with a pointer to the error context structure stored in Crash-data-RAM. The default callback function is defined with `WEAK` attribute, which can be overridden by the application if required. Below is the signature for the callback:
+
+```void mbed_error_reboot_callback(mbed_error_ctx *error_context);```
+
+Note that this callback will be invoked before the system starts executing application `main()`. So the implementation of callback should be aware any resource limitations or availability of resources which are yet to be initialized by application `main()`. Also note that the callback is invoked only when there is a new error. 
+
+#### Adding Crash-data-RAM region for crash reporting
+As mentioned above, the crash reporting feature requires a special memory region, called Crash-data-RAM to work. This region is 256 bytes in size and is allocated using linker scripts for the target for each toolchain. Although all platforms support crash reporting feature, not all targets are currently modified to allocate this Crash-data-RAM region.
+See `mbed_lib.json` in platform directory to see which targets currently enabled with crash reporting. In order to enable crash reporting in other targets, you must modify the linker scripts for those targets to allocate the Crash-data-RAM region. You may refer the linker scripts for one of the targets already enabled with crash reporting to understand how the Crash-data-RAM region is allocated. Below are some guidelines to make the linker script changes.
+
+* The region size should be 256 bytes and aligned at 8-byte offset.
+* If you are enabling the Crash-data-RAM for *ARM compiler*, linker script must export the following symbols:
+__Image$$RW_m_crash_data$$ZI$$Base__ - Indicates start address of Crash-data-RAM region.
+__Image$$RW_m_crash_data$$ZI$$Size__ - Indicates size of Crash-data-RAM region.
+* If you are enabling the Crash-data-RAM for *GCC ARM compiler* or *IAR Compiler*, linker script must export the following symbols:
+__\_\_CRASH_DATA_RAM_START\_\___ - Indicates start address of Crash-data-RAM region.
+__\_\_CRASH_DATA_RAM_END\_\___ - Indicates end address of Crash-data-RAM region.
+
+It's important that these regions should be marked with appropriate attributes(based on toolchain) to mark them as uninitialized region. For example, for ARM Compiler Crash-data-RAM can be marked with attribute *EMPTY*. There is no hard requirement about the placement of this region. The only requirement is that it should be placed such that no other entity is overwriting this region when rebooted or at runtime. But in order to avoid fragmentation its best placed just after the vector table region, or if there is no vector table region, it can be placed at the bottom of RAM(lowest address).
+See [memory model](memory.html) for more info on the placement of this region.
+
+#### Configuring crash reporting and auto-reboot
+MbedOS crash reporting implementation provides many options to configure the crash reporting behavior.
+Below is the list of new configuration options available to configure crash reporting functionality. These configuration options are defined in `mbed_lib.json` under platform directory.
+
+`crash-capture-enabled` - Enables crash context capture when the system enters a fatal error/crash. When this is disabled it also disables other dependent options mentioned below.
+`fatal-error-auto-reboot-enabled` - Setting this to true enables auto-reboot on fatal errors.
+`reboot-crash-report-enabled` - Enables crash report printing over terminal when the system reboots after a fatal error. The format of this report is identical to error reporting structure mentioned in [error report](#error-reporting).
+`error-reboot-max` - Maximum number of auto-reboots permitted on fatal errors. The system will stop auto-rebooting once the maximum limit is reached. Setting this to value 0 will disable auto-reboot.
 
 ### Error handling functions reference
 
@@ -298,11 +329,98 @@ void save_all_errors() {
     mbed_clear_all_errors();
 }
 ```
+
+#### Using `mbed_get_reboot_error_info()` to retrieve the reboot error info
+The error context captured by the error handling system can be retrieved using mbed_get_reboot_error_info() API. See the below code for example usage of that API. 
+In the example below, a status variable reboot_error_detected has been used to track the presence of error context capture.
+
+```CPP TODO
+mbed_error_ctx error_ctx;
+int reboot_error_detected = 0;
+
+//Callback during reboot
+void mbed_error_reboot_callback(mbed_error_ctx *error_context) 
+{
+    printf("error callback received");
+    reboot_error_detected = 1;
+}
+
+// main() runs in its own thread in the OS
+int main() 
+{
+    if (reboot_error_detected == 1) {
+        if (MBED_SUCCESS == mbed_get_reboot_error_info(&error_ctx)) {
+            printf("\nSuccessfully read error context\n");
+    }
+    //main continues...
+}
+```
+
+#### Using `mbed_get_reboot_fault_context()` to retrieve the fault context info
+The fault context captured can be retrieved using mbed_get_reboot_fault_context() API. See the below code for example usage of that API. The example code below checks for error_status using the error context and then retrieves the fault context using mbed_get_reboot_fault_context() API.
+
+```CPP TODO
+mbed_error_ctx error_ctx;
+mbed_fault_context_t fault_ctx;
+int reboot_error_detected = 0;
+
+//Callback during reboot
+void mbed_error_reboot_callback(mbed_error_ctx * error_context) 
+{
+    printf("error callback received");
+    reboot_error_detected = 1;
+}
+
+// main() runs in its own thread in the OS
+int main() 
+{
+    if (reboot_error_detected == 1) {
+        if (MBED_SUCCESS == mbed_get_reboot_error_info(&error_ctx)) {
+            printf("\nRead in reboot info\n");
+            if (error_ctx.error_status == MBED_ERROR_HARDFAULT_EXCEPTION) {
+               if (MBED_SUCCESS == mbed_get_reboot_fault_context(&fault_ctx)) {
+                   printf("\nRead in fault context info\n");
+               }
+            }
+        }
+    }
+    //main continues...
+}
+```
+
+#### Using `mbed_reset_reboot_error_info()` to clear the reboot error info
+`mbed_reset_reboot_error_info()` API can be used to clear the reboot error info if required by the application.
+```CPP TODO
+void clear_reboot_errors() {
+    
+    //Clear the currently stored error info in Crash-data-RAM
+    mbed_reset_reboot_error_info();
+}
+```
+
+#### Using `mbed_reset_reboot_count()` to reset the reboot count
+`mbed_reset_reboot_error_info()` API can be used to specifically reset the reboot count stored as part error information stored in Crash-data-RAM.
+Calling this function will set the reboot count to 0.
+```CPP TODO
+void clear_reboot_count() {
+    
+    //Clear the currently stored error info in Crash-data-RAM
+    mbed_reset_reboot_count();
+}
+```
+
 ### Error handling example
 
 The example application below demonstrates usage of error handling APIs:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.10.4/main.cpp)
+
+### Crash reporting example
+
+The example application below demonstrates crash reporting feature:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/master/main.cpp)
+
 
 ### List of Mbed OS defined error codes and descriptions
 
@@ -313,65 +431,65 @@ Below are the predefined Mbed system error codes and their descriptions:
     MBED_ERROR_CODE_INVALID_DATA                    Invalid data
     MBED_ERROR_CODE_INVALID_FORMAT                  Invalid format
     MBED_ERROR_CODE_INVALID_INDEX                   Invalid Index
-    MBED_ERROR_CODE_INVALID_SIZE                    Inavlid Size
-    MBED_ERROR_CODE_INVALID_OPERATION               Invalid Operation
-    MBED_ERROR_CODE_NOT_FOUND                       Not Found
-    MBED_ERROR_CODE_ACCESS_DENIED                   Access Denied
-    MBED_ERROR_CODE_NOT_SUPPORTED                   Not supported
-    MBED_ERROR_CODE_BUFFER_FULL                     Buffer Full
-    MBED_ERROR_CODE_MEDIA_FULL                      Media/Disk Full
-    MBED_ERROR_CODE_ALREADY_IN_USE                  Already in use
-    MBED_ERROR_CODE_TIMEOUT                         Timeout error
-    MBED_ERROR_CODE_NOT_READY                       Not Ready
-    MBED_ERROR_CODE_FAILED_OPERATION                Requested Operation failed
-    MBED_ERROR_CODE_OPERATION_PROHIBITED            Operation prohibited
-    MBED_ERROR_CODE_OPERATION_ABORTED               Operation failed
-    MBED_ERROR_CODE_WRITE_PROTECTED                 Attempt to write to write-protected resource
-    MBED_ERROR_CODE_NO_RESPONSE                     No response
-    MBED_ERROR_CODE_SEMAPHORE_LOCK_FAILED           Semaphore lock failed
-    MBED_ERROR_CODE_MUTEX_LOCK_FAILED               Mutex lock failed
-    MBED_ERROR_CODE_SEMAPHORE_UNLOCK_FAILED         Semaphore unlock failed
-    MBED_ERROR_CODE_MUTEX_UNLOCK_FAILED             Mutex unlock failed
-    MBED_ERROR_CODE_CRC_ERROR                       CRC error or mismatch
-    MBED_ERROR_CODE_OPEN_FAILED                     Open failed
-    MBED_ERROR_CODE_CLOSE_FAILED                    Close failed
-    MBED_ERROR_CODE_READ_FAILED                     Read failed
-    MBED_ERROR_CODE_WRITE_FAILED                    Write failed
-    MBED_ERROR_CODE_INITIALIZATION_FAILED           Initialization failed
-    MBED_ERROR_CODE_BOOT_FAILURE                    Boot failure
-    MBED_ERROR_CODE_OUT_OF_MEMORY                   Out of memory
-    MBED_ERROR_CODE_OUT_OF_RESOURCES                Out of resources
-    MBED_ERROR_CODE_ALLOC_FAILED                    Alloc failed
-    MBED_ERROR_CODE_FREE_FAILED                     Free failed
-    MBED_ERROR_CODE_OVERFLOW                        Overflow error
-    MBED_ERROR_CODE_UNDERFLOW                       Underflow error
-    MBED_ERROR_CODE_STACK_OVERFLOW                  Stack overflow error
-    MBED_ERROR_CODE_ISR_QUEUE_OVERFLOW              ISR queue overflow
-    MBED_ERROR_CODE_TIMER_QUEUE_OVERFLOW            Timer Queue overflow
-    MBED_ERROR_CODE_CLIB_SPACE_UNAVAILABLE          Standard library error - Space unavailable
-    MBED_ERROR_CODE_CLIB_EXCEPTION                  Standard library error - Exception
-    MBED_ERROR_CODE_CLIB_MUTEX_INIT_FAILURE         Standard library error - Mutex Init failure
-    MBED_ERROR_CODE_CREATE_FAILED                   Create failed
-    MBED_ERROR_CODE_DELETE_FAILED                   Delete failed
-    MBED_ERROR_CODE_THREAD_CREATE_FAILED            Thread Create failed
-    MBED_ERROR_CODE_THREAD_DELETE_FAILED            Thread Delete failed
-    MBED_ERROR_CODE_PROHIBITED_IN_ISR_CONTEXT       Operation Prohibited in ISR context
-    MBED_ERROR_CODE_PINMAP_INVALID                  Pinmap Invalid
-    MBED_ERROR_CODE_RTOS_EVENT                      Unknown Rtos Error
-    MBED_ERROR_CODE_RTOS_THREAD_EVENT               Rtos Thread Error
-    MBED_ERROR_CODE_RTOS_MUTEX_EVENT                Rtos Mutex Error
-    MBED_ERROR_CODE_RTOS_SEMAPHORE_EVENT            Rtos Semaphore Error
-    MBED_ERROR_CODE_RTOS_MEMORY_POOL_EVENT          Rtos Memory Pool Error
-    MBED_ERROR_CODE_RTOS_TIMER_EVENT                Rtos Timer Error
-    MBED_ERROR_CODE_RTOS_EVENT_FLAGS_EVENT          Rtos Event flags Error
-    MBED_ERROR_CODE_RTOS_MESSAGE_QUEUE_EVENT        Rtos Message queue Error
-    MBED_ERROR_CODE_DEVICE_BUSY                     Device Busy
-    MBED_ERROR_CODE_CONFIG_UNSUPPORTED              Configuration not supported
-    MBED_ERROR_CODE_CONFIG_MISMATCH                 Configuration mismatch
-    MBED_ERROR_CODE_ALREADY_INITIALIZED             Already initialized
-    MBED_ERROR_CODE_HARDFAULT_EXCEPTION             HardFault exception
-    MBED_ERROR_CODE_MEMMANAGE_EXCEPTION             MemManage exception
-    MBED_ERROR_CODE_BUSFAULT_EXCEPTION              BusFault exception
+    MBED_ERROR_CODE_INVALID_SIZE                    Invalid Size 
+    MBED_ERROR_CODE_INVALID_OPERATION               Invalid Operation 
+    MBED_ERROR_CODE_NOT_FOUND                       Not Found 
+    MBED_ERROR_CODE_ACCESS_DENIED                   Access Denied 
+    MBED_ERROR_CODE_NOT_SUPPORTED                   Not supported 
+    MBED_ERROR_CODE_BUFFER_FULL                     Buffer Full 
+    MBED_ERROR_CODE_MEDIA_FULL                      Media/Disk Full 
+    MBED_ERROR_CODE_ALREADY_IN_USE                  Already in use 
+    MBED_ERROR_CODE_TIMEOUT                         Timeout error 
+    MBED_ERROR_CODE_NOT_READY                       Not Ready 
+    MBED_ERROR_CODE_FAILED_OPERATION                Requested Operation failed 
+    MBED_ERROR_CODE_OPERATION_PROHIBITED            Operation prohibited 
+    MBED_ERROR_CODE_OPERATION_ABORTED               Operation failed 
+    MBED_ERROR_CODE_WRITE_PROTECTED                 Attempt to write to write-protected resource 
+    MBED_ERROR_CODE_NO_RESPONSE                     No response 
+    MBED_ERROR_CODE_SEMAPHORE_LOCK_FAILED           Semaphore lock failed 
+    MBED_ERROR_CODE_MUTEX_LOCK_FAILED               Mutex lock failed 
+    MBED_ERROR_CODE_SEMAPHORE_UNLOCK_FAILED         Semaphore unlock failed 
+    MBED_ERROR_CODE_MUTEX_UNLOCK_FAILED             Mutex unlock failed 
+    MBED_ERROR_CODE_CRC_ERROR                       CRC error or mismatch 
+    MBED_ERROR_CODE_OPEN_FAILED                     Open failed 
+    MBED_ERROR_CODE_CLOSE_FAILED                    Close failed 
+    MBED_ERROR_CODE_READ_FAILED                     Read failed 
+    MBED_ERROR_CODE_WRITE_FAILED                    Write failed 
+    MBED_ERROR_CODE_INITIALIZATION_FAILED           Initialization failed 
+    MBED_ERROR_CODE_BOOT_FAILURE                    Boot failure 
+    MBED_ERROR_CODE_OUT_OF_MEMORY                   Out of memory 
+    MBED_ERROR_CODE_OUT_OF_RESOURCES                Out of resources 
+    MBED_ERROR_CODE_ALLOC_FAILED                    Alloc failed 
+    MBED_ERROR_CODE_FREE_FAILED                     Free failed 
+    MBED_ERROR_CODE_OVERFLOW                        Overflow error 
+    MBED_ERROR_CODE_UNDERFLOW                       Underflow error 
+    MBED_ERROR_CODE_STACK_OVERFLOW                  Stack overflow error 
+    MBED_ERROR_CODE_ISR_QUEUE_OVERFLOW              ISR queue overflow 
+    MBED_ERROR_CODE_TIMER_QUEUE_OVERFLOW            Timer Queue overflow 
+    MBED_ERROR_CODE_CLIB_SPACE_UNAVAILABLE          Standard library error - Space unavailable 
+    MBED_ERROR_CODE_CLIB_EXCEPTION                  Standard library error - Exception 
+    MBED_ERROR_CODE_CLIB_MUTEX_INIT_FAILURE         Standard library error - Mutex Init failure 
+    MBED_ERROR_CODE_CREATE_FAILED                   Create failed 
+    MBED_ERROR_CODE_DELETE_FAILED                   Delete failed 
+    MBED_ERROR_CODE_THREAD_CREATE_FAILED            Thread Create failed 
+    MBED_ERROR_CODE_THREAD_DELETE_FAILED            Thread Delete failed 
+    MBED_ERROR_CODE_PROHIBITED_IN_ISR_CONTEXT       Operation Prohibited in ISR context 
+    MBED_ERROR_CODE_PINMAP_INVALID                  Pinmap Invalid 
+    MBED_ERROR_CODE_RTOS_EVENT                      Unknown Rtos Error 
+    MBED_ERROR_CODE_RTOS_THREAD_EVENT               Rtos Thread Error 
+    MBED_ERROR_CODE_RTOS_MUTEX_EVENT                Rtos Mutex Error 
+    MBED_ERROR_CODE_RTOS_SEMAPHORE_EVENT            Rtos Semaphore Error 
+    MBED_ERROR_CODE_RTOS_MEMORY_POOL_EVENT          Rtos Memory Pool Error 
+    MBED_ERROR_CODE_RTOS_TIMER_EVENT                Rtos Timer Error 
+    MBED_ERROR_CODE_RTOS_EVENT_FLAGS_EVENT          Rtos Event flags Error 
+    MBED_ERROR_CODE_RTOS_MESSAGE_QUEUE_EVENT        Rtos Message queue Error 
+    MBED_ERROR_CODE_DEVICE_BUSY                     Device Busy 
+    MBED_ERROR_CODE_CONFIG_UNSUPPORTED              Configuration not supported 
+    MBED_ERROR_CODE_CONFIG_MISMATCH                 Configuration mismatch 
+    MBED_ERROR_CODE_ALREADY_INITIALIZED             Already initialized 
+    MBED_ERROR_CODE_HARDFAULT_EXCEPTION             HardFault exception 
+    MBED_ERROR_CODE_MEMMANAGE_EXCEPTION             MemManage exception 
+    MBED_ERROR_CODE_BUSFAULT_EXCEPTION              BusFault exception 
     MBED_ERROR_CODE_USAGEFAULT_EXCEPTION            UsageFault exception
     MBED_ERROR_CODE_BLE_NO_FRAME_INITIALIZED        BLE No frame initialized
     MBED_ERROR_CODE_BLE_BACKEND_CREATION_FAILED     BLE Backend creation failed
