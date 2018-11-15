@@ -104,11 +104,11 @@ Stack Space: 664
 
 ```
 
-## Troubleshooting
+### Troubleshooting
 
 If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
 
-## Related Links
+### Related Links
 
 * [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html)
 * [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html)
