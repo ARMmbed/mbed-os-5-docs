@@ -104,7 +104,7 @@ $ git clone https://github.com/ARMmbed/mbed-cli
 Once cloned, you can install Mbed CLI as a Python package:
 
 ```
-$ python setup.py install
+$ pip install -e ./mbed-cli
 ```
 
 On Linux or macOS, you may need to run with `sudo`.
