@@ -14,13 +14,13 @@ Typically, PSA platforms share the same RAM and flash between secure and nonsecu
                                  RAM
  +-----------+-------------+--------------------------------------------------+
  |   Secure  |  Shared     |     Non-Secure                                   |
- |      RAM  |     RAM     |            RAM                                   |
+ |    RAM    |   RAM       |        RAM                                       |
  +-----------+-------------+--------------------------------------------------+
 
                                  Flash
  +-----------------------+----------------------------------------------------+
  |   Secure              |     Non-Secure                                     |
- |      Flash            |            Flash                                   |
+ |    Flash              |       Flash                                        |
  +-----------------------+----------------------------------------------------+
 
 ```
@@ -79,11 +79,12 @@ To achieve RAM and flash partitioning, you must add start and size values to a t
 
 Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions. You can define a shared memory region by reserving RAM space for shared memory use. The shared memory location is target specific and depends on the memory protection scheme applied.
 
-Typically, shared memory is located before or after nonsecure RAM, for saving MPU regions. The shared memory region is nonsecure memory that both cores use.
+Typically, shared memory is located adjacent (before or after) to the nonsecure RAM, for saving MPU regions. The shared memory region is nonsecure memory that both cores use.
 
-#### Linker script example GCC_ARM
+#### Linker script example for GCC_ARM
 
 ```
+...
 #if !defined(MBED_ROM_START)
   #define MBED_ROM_START    0x10000000
 #endif
@@ -111,9 +112,10 @@ MEMORY
 ...
 ```
 
-#### Linker Script example ARM
+#### Linker script example for ARM
 
 ```
+...
 #if !defined(MBED_ROM_START)
   #define MBED_ROM_START    0x10000000
 #endif
@@ -148,11 +150,13 @@ LR_IROM1 MBED_ROM_START MBED_ROM_SIZE {
    .ANY (+RW +ZI)
   }
 }
+...
 ```
 
-#### Linker script example IAR
+#### Linker script example for IAR
 
 ```
+...
 if (!isdefinedsymbol(MBED_ROM_START)) {
   define symbol MBED_ROM_START = 0x10000000;
 }
@@ -247,8 +251,7 @@ Arm provides a list of tests to make sure the HAL functions are implemented acco
 
 After finalizing the porting, execute the following tests:
 
-- [TODO: WHEN READY, ADD TEST NAME]
-- [TODO: WHEN READY, ADD TEST NAME]
-- ...
+- **tests-psa-spm_smoke:** This test will make sure that the porting of the mailbox mechanism (for dual core systems) is successful.
+- **tests-mbed_hal-spm:** This test will make sure the porting of the memory protection (*spm_hal_memory_protection_init()* implementation) makes the correct partitioning between secure RAM/Flash and non-secure RAM/Flash.
 
 We recommended you leave the memory protection part (*spm_hal_memory_protection_init()* implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement *spm_hal_memory_protection_init()*, and run the entire test suite again, including the memory protection related tests.
