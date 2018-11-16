@@ -10,7 +10,7 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
 
 #### Tests
 
-- **continuous-integration/travis-ci/pr** - Main run main.
+- **continuous-integration/travis-ci/pr** - Run other testing jobs.
 - **travis-ci/astyle** - Check code style using [astyle](http://astyle.sourceforge.net/).
 - **travis-ci/docs** - [Doxygen](http://www.doxygen.org/) and naming checks:
    - Assert that the Doxygen build produces no warnings.
