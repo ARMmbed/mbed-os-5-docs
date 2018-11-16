@@ -131,35 +131,42 @@ Mbed OS application and system developers may need to define error codes specifi
 Some applications may want to do custom error handling when an error is reported using `MBED_ERROR()` or `MBED_WARNING()`. Applications can accomplish this by registering an error hook function with the Mbed OS error handling system using the **mbed_set_error_hook()** API. This function is called with error context information whenever the system handles an **MBED_ERROR()** or **MBED_WARNING()** invocation. This function should be implemented for re-entrancy because multiple threads may invoke `MBED_ERROR()` or `MBED_WARNING()`, which may cause the error hook to be called in parallel.
 
 ### Crash reporting and auto-reboot
-Whenever a fatal error happens in the system, MbedOS error handling system collects key information such as error code, error location, register context(in the case of fault exceptions) etc. and stores them in a reserved RAM region called Crash-data-RAM. The error information stored in Crash-data-RAM is in binary format and follows the `mbed_error_ctx` structure defined in `mbed_error.h`. The system then triggers a warm-reset without losing the RAM contents where we have the error information collected. After the system reboots, during MbedOS initialization the Crash-data-RAM region is checked to find if there is valid error information captured. This is done by using a CRC value calculated over the stored error information and is appended as part of information stored in Crash-data-RAM. If the system detects that the reboot was triggered by a fatal error, it will invoke a callback function with a pointer to the error context structure stored in Crash-data-RAM. The default callback function is defined with `WEAK` attribute, which can be overridden by the application if required. Below is the signature for the callback:
+
+Whenever a fatal error happens in the system, the Mbed OS error handling system collects key information such as error code, error location, register context (in the case of fault exceptions) and so on. The error handing system stores that information in a reserved RAM region called Crash-data-RAM. The error information stored in Crash-data-RAM is in binary format and follows the `mbed_error_ctx` structure defined in `mbed_error.h`. The system then triggers a warm-reset without losing the RAM contents that store the error information. After the system reboots, during Mbed OS initialization, the Crash-data-RAM region is checked to find if there is valid error information captured. This is done by using a CRC value calculated over the stored error information and is appended as part of information stored in Crash-data-RAM. If the system detects that the reboot was triggered by a fatal error, it will invoke a callback function with a pointer to the error context structure stored in Crash-data-RAM. The default callback function is defined with the `WEAK` attribute, which the application can override. Below is the signature for the callback:
 
 ```void mbed_error_reboot_callback(mbed_error_ctx *error_context);```
 
-Note that this callback will be invoked before the system starts executing application `main()`. So the implementation of callback should be aware any resource limitations or availability of resources which are yet to be initialized by application `main()`. Also note that the callback is invoked only when there is a new error. 
+<span class="notes">**Note:** This callback is invoked before the system starts executing the application `main()`. The implementation of callback should be aware any resource limitations or availability. Also, the callback is invoked only when there is a new error.</span>
 
-#### Adding Crash-data-RAM region for crash reporting
-As mentioned above, the crash reporting feature requires a special memory region, called Crash-data-RAM to work. This region is 256 bytes in size and is allocated using linker scripts for the target for each toolchain. Although all platforms support crash reporting feature, not all targets are currently modified to allocate this Crash-data-RAM region.
-See `mbed_lib.json` in the platform directory to see which targets currently enabled with crash reporting. In order to enable crash reporting in other targets, you must modify the linker scripts for those targets to allocate the Crash-data-RAM region. You may refer the linker scripts for one of the targets already enabled with crash reporting to understand how the Crash-data-RAM region is allocated. Below are some guidelines to make the linker script changes.
+#### Adding the Crash-data-RAM region for crash reporting
 
-* The region size should be 256 bytes and aligned at 8-byte offset.
-* If you are enabling the Crash-data-RAM for the *ARM compiler*, linker scripts must export the following symbols:
-__Image$$RW_m_crash_data$$ZI$$Base__ - Indicates start address of Crash-data-RAM region.
-__Image$$RW_m_crash_data$$ZI$$Size__ - Indicates size of Crash-data-RAM region.
-* If you are enabling the Crash-data-RAM for the *GCC ARM compiler* or *IAR Compiler*, linker scripts must export the following symbols:
-__\_\_CRASH_DATA_RAM_START\_\___ - Indicates start address of Crash-data-RAM region.
-__\_\_CRASH_DATA_RAM_END\_\___ - Indicates end address of Crash-data-RAM region.
+The crash reporting feature requires a special memory region, called Crash-data-RAM, to work. This region is 256 bytes and is allocated using linker scripts for the target for each toolchain. Although all platforms support crash reporting feature, not all targets are currently modified to allocate this Crash-data-RAM region.
 
-It's important that this region should be marked with appropriate attributes(based on toolchain) to mark it as uninitialized region. For example, for ARM Compiler Crash-data-RAM can be marked with attribute *EMPTY*. There is no hard requirement about the placement of this region. The only requirement is that it should be placed such that no other entity is overwriting this region when rebooted or at runtime. But in order to avoid fragmentation its best placed just after the vector table region, or if there is no vector table region, it can be placed at the bottom of RAM(lowest address).
+See `mbed_lib.json` in the platform directory to see which targets are currently enabled with crash reporting. To enable crash reporting in other targets, you must modify the linker scripts for those targets to allocate the Crash-data-RAM region. You can refer to the linker scripts for one of the targets already enabled with crash reporting to understand how the Crash-data-RAM region is allocated. Below are some guidelines to make the linker script changes:
+
+- The region size should be 256 bytes and aligned at 8-byte offset.
+- If you are enabling the Crash-data-RAM for the *ARM compiler*, linker scripts must export the following symbols:
+
+   __Image$$RW_m_crash_data$$ZI$$Base__ - Indicates start address of Crash-data-RAM region.
+   __Image$$RW_m_crash_data$$ZI$$Size__ - Indicates size of Crash-data-RAM region.
+
+- If you are enabling the Crash-data-RAM for the *GCC ARM compiler* or *IAR Compiler*, linker scripts must export the following symbols:
+
+   __\_\_CRASH_DATA_RAM_START\_\___ - Indicates start address of Crash-data-RAM region.
+   __\_\_CRASH_DATA_RAM_END\_\___ - Indicates end address of Crash-data-RAM region.
+
+It's important that this region is marked with the appropriate attributes (based on the toolchain) to mark it as an uninitialized region. For example, you can mark the ARM Compiler Crash-data-RAM with the attribute *EMPTY*. The only requirement about the placement of this region is that no other entity can overwrite this region during reboot or at runtime. However, to avoid fragmentation, it's best if you place this region just after the vector table region, or if there is no vector table region, iat the bottom of RAM (lowest address).
+
 See [memory model](memory.html) for more info on the placement of this region.
 
-#### Configuring crash reporting and auto-reboot
-MbedOS crash reporting implementation provides many options to configure the crash reporting behavior.
-Below is the list of configuration options available to configure crash reporting functionality. These configuration options are defined in `mbed_lib.json` under the platform directory.
+#### Configuring crash reporting and autoreboot
 
-* `crash-capture-enabled` - Enables crash context capture when the system enters a fatal error/crash. When this is disabled it also disables other dependent options mentioned below.
-* `fatal-error-auto-reboot-enabled` - Setting this to true enables auto-reboot on fatal errors.
-* `reboot-crash-report-enabled` - Enables crash report printing over terminal when the system reboots after a fatal error. The format of this report is identical to error reporting structure mentioned in [error report](#error-reporting).
-* `error-reboot-max` - Maximum number of auto-reboots permitted on fatal errors. The system will stop auto-rebooting once the maximum limit is reached. Setting this to value 0 will disable auto-reboot.
+The Mbed OS crash reporting implementation provides many options to configure the crash reporting behavior. Below is the list of configuration options available to configure crash reporting functionality. These configuration options are defined in `mbed_lib.json` under the platform directory:
+
+- `crash-capture-enabled` - Enables crash context capture when the system enters a fatal error or crash. When this is disabled, it also disables other dependent options mentioned below.
+- `fatal-error-auto-reboot-enabled` - Setting this to true enables autoreboot on fatal errors.
+- `reboot-crash-report-enabled` - Enables crash report printing through the terminal when the system reboots after a fatal error. The format of this report is identical to error reporting structure mentioned in the [error report](#error-reporting).
+- `error-reboot-max` - Maximum number of autoreboots permitted on fatal errors. The system stop autorebooting once it reaches the maximum limit. Setting this value to 0 disable autoreboot.
 
 Crash reporting feature also provides APIs to read and clear error context information captured in Crash-data-RAM region. Please see the API reference below for [crash reporting related APIs](#crash-reporting-api).
 
@@ -332,10 +339,10 @@ void save_all_errors() {
 }
 ```
 
-<a name="crash-reporting-api"></a>
 #### Using `mbed_get_reboot_error_info()` to retrieve the reboot error info
-In the example below, a status variable reboot_error_detected is set to 1 when the callback is invoked then inside the main() 
-function we read the reboot error info using mbed_get_reboot_error_info().
+
+In the example below, status variable `reboot_error_detected` is set to 1 when the callback is invoked. Then, the `main()`
+function reads the reboot error information using `mbed_get_reboot_error_info()`.
 
 ```CPP TODO
 mbed_error_ctx error_ctx;
@@ -361,8 +368,9 @@ int main()
 ```
 
 #### Using `mbed_get_reboot_fault_context()` to retrieve the fault context info
-The example code below checks for exception error(MBED_ERROR_HARDFAULT_EXCEPTION) using error_status in the error context 
-and then retrieves the fault context using mbed_get_reboot_fault_context().
+
+The example code below checks for the exception error (`MBED_ERROR_HARDFAULT_EXCEPTION`) using `error_status` in the error context 
+and then retrieves the fault context using `mbed_get_reboot_fault_context()`:
 
 ```CPP TODO
 mbed_error_ctx error_ctx;
@@ -394,7 +402,9 @@ int main()
 ```
 
 #### Using `mbed_reset_reboot_error_info()` to clear the reboot error info
-`mbed_reset_reboot_error_info()` can be used to clear the reboot error info if required by the application.
+
+You can use `mbed_reset_reboot_error_info()` tto clear the reboot error information:
+
 ```CPP TODO
 void clear_reboot_errors() {
     
@@ -404,8 +414,9 @@ void clear_reboot_errors() {
 ```
 
 #### Using `mbed_reset_reboot_count()` to reset the reboot count
-`mbed_reset_reboot_error_info()` can be used to specifically reset the reboot count stored as part error information stored in Crash-data-RAM.
-Calling this function will set the reboot count to 0.
+
+You can use `mbed_reset_reboot_error_info()` to specifically reset the reboot count stored in Crash-data-RAM. Calling this function sets the reboot count to 0:
+
 ```CPP TODO
 void clear_reboot_count() {
     
@@ -422,7 +433,7 @@ The example application below demonstrates usage of error handling APIs:
 
 ### Crash reporting example
 
-The example application below demonstrates crash reporting feature:
+The example application below demonstrates the crash reporting feature:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/master/main.cpp)
 
