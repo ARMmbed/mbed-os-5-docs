@@ -1,21 +1,21 @@
 <h2 id="mpu-port">MPU</h2>
 
-Implementing the MPU API enables Mbed OS to provide better security by preventing code execution and code modification where is shouldn't be allowed.
+Implementing the MPU API enables Mbed OS to provide better security by preventing code execution and code modification where it shouldn't be allowed.
 
 ### Assumptions
 
 #### Defined behavior
 
-- The function `mbed_mpu_init` is safe to call repeatedly
-- The function `mbed_mpu_free` disables MPU protection
-- Execution from RAM results in a fault when execute never is enabled. This RAM includes heap, stack, data and zero init
-- Writing to ROM results in a fault when write never is enabled
+- The function `mbed_mpu_init` is safe to call repeatedly.
+- The function `mbed_mpu_free` disables MPU protection.
+- Execution from RAM results in a fault when `execute never` is enabled. This RAM includes heap, stack, data and zero init.
+- Writing to ROM results in a fault when `write never` is enabled.
 
 #### Undefined behavior
 
 - Calling any function other than `mbed_mpu_init` before the initialization of the MPU.
 
-### Dependencies
+### Dependency
 
 Hardware MPU capabilities.
 
@@ -27,9 +27,9 @@ You can find the API and specification for the MPU API in the following header f
 
 To enable MPU support in Mbed OS, add the `MPU` label in the `device_has` option of the target's section in the `targets.json` file.
 
-Targets with a standard ARMv7-M or ARMv8-M MPU, indicated by `__MPU_PRESENT` being defined to 1 in the target's CMSIS header, only need the `MPU` label in the `device_has` for MPU support. This pulls in a common Mbed OS MPU driver, so in this case a target specific driver is not needed.
+Targets with a standard ARMv7-M or ARMv8-M MPU, indicated by `__MPU_PRESENT` being defined to 1 in the target's CMSIS header, only need the `MPU` label in the `device_has` for MPU support. This pulls in a common Mbed OS MPU driver, so you don't need a target-specific driver.
 
-Targets with a standard ARMv7-M or ARMv8-M MPU needing to override the common Mbed OS MPU driver can do so by defining `MBED_MPU_CUSTOM`. This removes the common Mbed OS MPU driver from builds so a target specific one can be used instead.
+Targets with a standard ARMv7-M or ARMv8-M MPU needing to override the common Mbed OS MPU driver can do so by defining `MBED_MPU_CUSTOM`. This removes the common Mbed OS MPU driver from builds, so you can use a target-specific one, instead.
 
 ### Testing
 
