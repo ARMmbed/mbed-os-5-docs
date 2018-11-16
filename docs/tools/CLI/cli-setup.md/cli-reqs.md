@@ -1,16 +1,3 @@
-## Setup options
-
-You can install Mbed CLI on Windows, Linux and macOS.
-
-<span class="tips">**Tip:** If you're working on Windows or macOS, we recommend using the installers for Mbed CLI:
-- [Windows installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
-- [macOS installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg).
-
-   For details, please see our [documentation for the Windows installer for Mbed CLI](installing-with-the-windows-installer.html) and our [documentation for macOS installer for Mbed CLI](installing-with-the-macos-installer.html).
-</span>
-
-For Linux, please [install Mbed CLI manually](installing-manually.html). Advanced Windows and macOS users can also install Mbed CLI manually, but we recommend the installers for less experienced developers.
-
 ## Requirements
 
 - **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
@@ -41,15 +28,14 @@ Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://py
 
 You may want to install Mbed CLI on a virtual environment if your main environment has an unsupported Python version.
 
-
 ## Installing with the Windows installer
 
 The Windows installer for Arm Mbed CLI installs Mbed CLI and all dependent programs onto your Windows machine.
 
 ### Running the installer
 
-1. Download the latest executable from [mbed-windows-installer v0.4.7](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/Mbed_installer_v0.4.7.exe).
-2. Run `mbed_installer_v047.exe`.
+1. Download the [latest executable](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
+2. Run the installer.
 3. Set the installation path.
 4. Choose the installation type:
     - Default: Installs all components.
@@ -63,8 +49,8 @@ The Windows installer for Mbed CLI includes the following components:
 - **Python** - Mbed CLI is a Python script, so you need Python to use it. The installer installs [version 2.7.13 of Python](https://www.python.org/downloads/release/python-2713/). It is not compatible with Python 3.
 - **Mbed CLI version 1.2.2** - [Mbed CLI](https://github.com/ARMmbed/mbed-cli).
 - **Git and Mercurial** - Mbed CLI supports both Git and Mercurial repositories. Both Git and Mercurial are being installed. `git` and `hg` are added to system's PATH.
-    - [Git](https://git-scm.com/) - version 2.12.2.
-    - [Mercurial](https://www.mercurial-scm.org/) - version 4.1.1.
+    - [Git](https://git-scm.com/).
+    - [Mercurial](https://www.mercurial-scm.org/).
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
 
@@ -75,7 +61,6 @@ You can execute the installer silently without user interaction. Add `/S` flag i
 ```
 $ mbed_installer_{version}.exe /S
 ```
-
 
 4. Check [Mbed CLI](https://github.com/ARMmbed/mbed-cli) for more examples.
 
@@ -89,7 +74,7 @@ The macOS installer for Mbed CLI is a self-contained OS X application that conta
 
 To use the installer:
 
-1. Download the [macOS installer for Mbed CLI](http://mbed-os.s3-eu-west-1.amazonaws.com/builds/mbed-cli-v0.0.10.dmg).
+1. Download the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 1. Open `.dmg`.
 1. Copy `mbed_cli.app` to your applications folder.
 1. Run `mbed_cli.app`.
@@ -119,7 +104,7 @@ $ git clone https://github.com/ARMmbed/mbed-cli
 Once cloned, you can install Mbed CLI as a Python package:
 
 ```
-$ python setup.py install
+$ pip install -e ./mbed-cli
 ```
 
 On Linux or macOS, you may need to run with `sudo`.

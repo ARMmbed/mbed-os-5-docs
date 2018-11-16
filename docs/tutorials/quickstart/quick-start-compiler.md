@@ -9,7 +9,7 @@ Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mb
 #### Setup environment
 
 - Plug your Mbed board into your computer, and open its USB device folder.
-- Double click on the `MBED.HTM` file. (This adds your Mbed platform to the Online Compiler.)
+- Double click on the `MBED.HTML` file. (This adds your Mbed platform to the Online Compiler.)
 
 If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.com/platforms), select a board and click **Add to your Mbed Compiler**.
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)
@@ -19,10 +19,13 @@ If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.c
 
 #### Import
 
-Visit the Mbed OS [Blinky example repository](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click **"Import into Compiler** button.
+Click the button below to automatically import the example into the Online Compiler.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_into_compiler.png)
-</span>
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-quick-start-blinky)](https://github.com/ARMmbed/mbed-os-quick-start-blinky/blob/master/main.cpp)
+
+Alternatively, you may select the import button on the top left hand side of the screen and copy the [example link](https://github.com/ARMmbed/mbed-os-quick-start-blinky) into the prompt.
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_program.png)</span>
 
 #### Compile
 
@@ -35,50 +38,5 @@ Click **Compile**. Your browser downloads the program as an executable file.
 
 Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
-Once you have flashed the file to the board, press the board's reset button. The LED blinks.
+After you have flashed the program to the board, press the board's reset button.
 
-### Debug
-
-#### Desktop IDE
-
-To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, click the `Export` button under `Program Details`. Select your export platform and IDE, and click `Export`. Your browser downloads a `.zip` file with the project files.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/export_online_compiler.png)
-</span>
-
-#### Printf
-
-Another way to do basic debugging is to use the `printf` command in your code and then read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
-
-Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. To determine which communication port your board connects to, follow the instructions for your operating system:
-
-##### Windows
-
-Open the Device Manager by pressing `Windows key + R`. Type `devmgmt.msc`, and click `OK`. Under `Ports (COM & LPT)`, your Mbed board is listed as a `USB Serial Device` next to its COM port.
-
-##### Linux
-
-Run `dmesg | grep tty` from your command-line.
-
-##### macOS
-
-Run `ls /dev/tty.*` from your command-line.
-
-### Further reading
-
-More examples:
-- [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
-
-- Documentation
-	- [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
-	- [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
-
-- Tutorials
-	- [Advanced debugging](debugging.html).
-	- [Serial communications](/docs/development/tutorials/serial-communication.html).
-	- [Optimizing binary size](optimizing.html).
-
-- Other resources
-	- [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
-	- [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
-	- [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.

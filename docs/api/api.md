@@ -76,7 +76,6 @@
 <td><a href="busin.html">BusIn</a></td>
 <td><a href="ticker.html">Ticker</a></td>
 <td><a href="serial.html">Serial</a></td>
-<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 <tr>
 <td><a href="busout.html">BusOut</a></td>
@@ -201,9 +200,14 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 <tbody>
 <tr>
 <td><a href="nfccontroller.html">NFCController</a></td>
+<td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
 </tr>
 <tr>
 <td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
+<td><a href="messagebuilder.html">MessageBuilder</a></td>
+</tr>
+<tr>
+<td><a href="messageparser.html">MessageParser</a></td>
 </tr>
 </tbody>
 </table>
@@ -216,6 +220,9 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <tbody>
 <tr>
 <td><a href="tls.html">TLS</a></td>
+</tr>
+<tr>
+<td><a href="Devicekey.html">DeviceKey</a></td>
 </tr>
 </tbody>
 </table>
@@ -238,13 +245,14 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="blockdevice.html">BlockDevice</a></td>
 <td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
 <td><a href="dataflash-block-device.html">DataFlashBlockDevice</a></td>
-<td><a href="nvstore.html">NVStore</a></td>
+<td><a href="qspifblockdevice.html">QSPIFBlockDevice</a></td>
 </tr>
 <tr>
 <td><a href="file.html">File</a></td>
 <td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
 <td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
 <td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
+<td><a href="nvstore.html">NVStore</a></td>
 </tr>
 <tr>
 <td><a href="littlefilesystem.html">LittleFileSystem</a></td>

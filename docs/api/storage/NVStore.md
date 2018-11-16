@@ -16,7 +16,7 @@ Unless specifically configured by the user, NVStore selects the last two flash s
 
 ### NVStore example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nvstore/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nvstore/file/1ca7002f733f/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-nvstore)](https://github.com/ARMmbed/mbed-os-example-nvstore/blob/master/main.cpp)
 
 ### Related content
 

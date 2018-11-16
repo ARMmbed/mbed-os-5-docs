@@ -12,13 +12,13 @@ Two installation methods are available for Windows. The first is a prebuilt inst
 
 ##### Prebuilt Mbed CLI installer
 
-Download and run the [Mbed CLI Windows .exe installer](https://mbed-media.mbed.com/filer_public/00/c2/00c2bc59-21c5-4ea2-9916-f9c38e5b2aec/mbed_installer_v047.exe).
+Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
 <span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
 
-#### Manual installation
+##### Manual installation
 
 ###### 1. Download and install Python and Pip
 
@@ -38,7 +38,7 @@ To install Mbed CLI, run `pip install mbed-cli` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
-##### 2. Setup environment
+##### 4. Setup environment
 
 After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. Below is an example using the ARM compiler:
 
@@ -56,25 +56,33 @@ ARM_PATH=<path to ARM bin\>
 
 #### macOS
 
-##### 1. Install Python and Pip
+##### Prebuilt Mbed CLI installer
+
+Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
+
+##### Manual installation
+
+###### 1. Install Python and Pip
 
 macOS 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of macOS, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
 
-To install Pip, run `sudo easy_install pip` from your command-line.
+To install Pip, run `easy_install --user pip` from your command-line.
 
-##### 2. Install a compiler
+###### 2. Install a compiler
 
 Download and install a compiler.
 
 <span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
 
-##### 3. Install Mbed CLI
+###### 3. Install Mbed CLI
 
-To install Mbed CLI, run `pip install mbed-cli` from your command-line.
+To install Mbed CLI, run `pip install mbed-cli --user` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
-##### 4. Setup environment
+<span class="notes">**Note:** You may also need to add the new Mbed CLI Python `--user` installation location (for example: `/Users/{username}/Library/Python/2.7/bin`) to the PATH.</span>
+
+###### 4. Setup environment
 
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
 
@@ -137,8 +145,8 @@ ARM_PATH=<path to ARM bin\>
 From your command-line, import the example:
 
 ```console
-$ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
-$ cd mbed-os-example-blinky
+$ mbed import https://github.com/ARMmbed/mbed-os-quick-start-blinky
+$ cd mbed-os-quick-start-blinky
 ```
 
 #### 2. Compile and program board
@@ -155,39 +163,3 @@ After you have flashed the program to the board, press the board's reset button.
 
 <span class="notes">**Note:** You can get the name of the board plugged into your computer by running `mbed detect`, and you can get a full list of supported toolchains and targets by running the `mbed compile --supported` command.</span>
 
-### Debug
-
-#### Desktop IDE
-
-To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, use the `mbed export` command to generate project files. For example, for a K64F and Keil uVision:
-
-```console
-$ mbed export --ide uvision --target K64F
-```  
-
-<span class="notes">**Note:** For a full list of supported exporters, run the `mbed export --supported` command.</span>
-
-#### Printf
-
-Another way to do basic debugging is to use the `printf` command in your code and read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
-
-Invoke `mbed detect` from your command-line to determine which communication port your board connects to (in other words, `COM18`, `/dev/ttyACM0` and so on). Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS.
-
-### Further reading
-
-More examples:
-- [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
-
-- Documentation
-  - [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
-  - [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
-
-- Tutorials
-  - [Advanced debugging](debugging.html).
-  - [Serial communications](/docs/development/tutorials/serial-communication.html).
-  - [Optimizing binary size](optimizing.html).
-
-- Other resources
-  - [Components database](https://os.mbed.com/components/) - libraries and example code for various hardware and software components.
-  - [Mbed OS forum](https://os.mbed.com/forum/) - a resource of questions and answers and an active user community. Ask your questions here first.
-  - [Youtube channel](http://youtube.com/armmbed) - videos and workshop content.
