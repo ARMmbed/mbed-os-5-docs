@@ -1,12 +1,12 @@
-## Mbed PSA
+<h2 id="psa-api">The Mbed implementation of PSA</h2>
 
-Mbed [PSA](/docs/development/introduction/glossary.html) provides root of trust services and infrastructure for developing IoT applications.
+The Mbed implementation of [PSA](/docs/development/introduction/glossary.html) provides root of trust services and infrastructure for developing IoT applications.
 
-When Mbed OS is running on a PSA Security Model compliant target, Mbed PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a [Secure Processing Environment (SPE)](/docs/development/introduction/glossary.html) and a [Non-Secure Processing Environment (NSPE)](/docs/development/introduction/glossary.html). The [Secure Partition Manager (SPM)](/docs/development/introduction/glossary.html), which uses the target's hardware features, manages the isolation. The SPM provides standardized [IPC](/docs/development/introduction/glossary.html) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
+When Mbed OS is running on a PSA Security Model compliant target, the Mbed implementation of PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a [Secure Processing Environment (SPE)](/docs/development/introduction/glossary.html) and a [Non-Secure Processing Environment (NSPE)](/docs/development/introduction/glossary.html). The [Secure Partition Manager (SPM)](/docs/development/introduction/glossary.html), which uses the target's hardware features, manages the isolation. The SPM provides standardized [IPC](/docs/development/introduction/glossary.html) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
 
-Mbed PSA bridges the differences between PSA platforms and non-PSA platforms for application developers, allowing them to use the same standard PSA APIs on both platform types.
+The Mbed implementation of PSA bridges the differences between PSA platforms and non-PSA platforms for application developers, allowing them to use the same standard PSA APIs on both platform types.
 
-Mbed PSA allows you to choose the platform type at later phase according to the final application threat model.
+The Mbed implementation of PSA allows you to choose the platform type at later phase according to the final application threat model.
 
 <span class="images">![diagram](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/PSA-standardized-Interfaces-diagram.png)<span>PSA diagram</span></span>
 
@@ -26,17 +26,17 @@ Platform hardware, such as the [Security Attribution Unit (SAU)](/docs/developme
 
 ### Platform types
 
-Mbed PSA supports the following platform types:
+The Mbed implementation of PSA supports the following platform types:
 
-- Non-PSA platform: These are single core ARMv7-M targets. On these targets, Mbed PSA provides the same PSA services exposing PSA APIs as it would on PSA targets. The PSA emulation layer allows seamless software portability to more security-oriented targets.
+- Non-PSA platform: These are single core ARMv7-M targets. On these targets, the Mbed implementation of PSA provides the same PSA services exposing PSA APIs as it would on PSA targets. The PSA emulation layer allows seamless software portability to more security-oriented targets.
 
-- Asymmetric Multiprocessing (AMP) systems: Multicore ARMv7-M targets (for example, PSoC6 featuring CM4 and CM0+ cores). On these targets, one of the cores is dedicated to PSA use only and implements SPE. Mbed PSA provides PSA API proxy implementation on a nonsecure core, which redirects execution to the SPE.
+- Asymmetric Multiprocessing (AMP) systems: Multicore ARMv7-M targets (for example, PSoC6 featuring CM4 and CM0+ cores). On these targets, one of the cores is dedicated to PSA use only and implements SPE. The Mbed implementation of PSA provides PSA API proxy implementation on a nonsecure core, which redirects execution to the SPE.
 
-- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for this platforms is in final stages of development and will be added to the list of Mbed PSA supported platforms shortly.
+- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for this platforms is in final stages of development and will be added to the list of platforms supported by the Mbed implementation of PSA shortly.
 
-### Mbed PSA RoT services
+### RoT services
 
-Mbed PSA provides the following services:
+The Mbed implementation of PSA provides the following services:
 
 - PSA [RoT](/docs/development/introduction/glossary.html) internal storage.
 - PSA Crypto APIs.
