@@ -65,7 +65,7 @@ Inside RAM, you can distinguish two logical types: static and dynamic memory. St
 
 - Static:
     - Vector table (read and write).
-    - Crash data RAM. (see [the error handling documentation](error-handling.html) for more information on this region)
+    - Crash data RAM. (Please see [the error handling documentation](error-handling.html) for more information on this region.)
     - Global data.
     - Static data.
     - Stacks for default threads (main, timer, idle and scheduler/ISR).
