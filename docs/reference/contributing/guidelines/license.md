@@ -106,7 +106,7 @@ If you decide to use a different license for your work, follow the same pattern:
 
 #### Mbed OS principles
 
-By creating a pull request on GitHub, you are agreeing to license your contributions under the same license as the original code. Note that Mbed software is released under a permissive license for all new Mbed contributions. Arm will not accept proprietary code or any code under a "copyleft" license. Accepting such code would prevent us from continuing to distribute our code under the permissive license and stall adoption of our code by third parties.
+By creating a pull request on GitHub against Mbed OS, you are agreeing to license your contributions under the same license as the original code. Note that Mbed software is released under a permissive license for all new Mbed contributions. Arm will not accept proprietary code or any code under a "copyleft" license. Accepting such code would prevent us from continuing to distribute our code under the permissive license and stall adoption of our code by third parties.
 
 Mbed OS uses these same basic principles for its source code and library distributions. Source code we own is distributed under the Apache 2.0 license, and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
 
