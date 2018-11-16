@@ -21,6 +21,7 @@ int main()
     custom_flash_programming();
 }
 ```
+
 ### Related content
 
 - [MPU Management API references](mpu-management.html).
