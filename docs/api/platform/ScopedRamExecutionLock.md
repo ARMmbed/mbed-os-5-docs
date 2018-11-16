@@ -1,6 +1,6 @@
 ## ScopedRamExecutionLock
 
-The `ScopedRamExecutionLock` class provides an RAII object for enabling execution from RAM. In other words, creating a ScopedRamExecutionLock object calls its constructor, which increments the ram execution lock. The ScopedRamExecutionLock object automatically releases the RAM execution lock in its destructor when the object goes out of scope. Another way to look at this is when the ScopedRamExecutionLock object exists, it allows execution from RAM.
+The `ScopedRamExecutionLock` class provides an RAII object for enabling execution from RAM. In other words, creating a ScopedRamExecutionLock object calls its constructor, which increments the RAM execution lock. The ScopedRamExecutionLock object automatically releases the RAM execution lock in its destructor when the object goes out of scope. Another way to look at this is when the ScopedRamExecutionLock object exists, it allows execution from RAM.
 
 ### ScopedRamExecutionLock class reference
 
@@ -8,7 +8,7 @@ The `ScopedRamExecutionLock` class provides an RAII object for enabling executio
 
 ### Example
 
-This example shows how you can enable execution from RAM from main.
+This example shows how you can enable execution from RAM from main:
 
 ```C++
 #include "mbed.h"
