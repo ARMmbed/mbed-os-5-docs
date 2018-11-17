@@ -50,37 +50,50 @@
         "description": "",
         "slug": "quick-start",
         "type": "markdown",
-        "sources": [{
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start.md"
+        "chapters": [{
+                "title": "Introduction",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start.md"
+                },
+                "sources": []
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
+                "title": "Online",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-online-debug.md"
+                    }
+                ]
             },
             {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-online-debug.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli-debug.md"
-            },
-            {
-                "type": "markdown",
-                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-setup.md"
+                "title": "Offline",
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup.md/cli-setup.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli-debug.md"
+                    }
+
+                ]
             }
         ]
     },
@@ -509,13 +522,14 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/security.md"
                 },
                 "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/TLS.md"
-                },
-                {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/TLS.md"
+                    },
+                    {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/security/Devicekey.md"
-                }]
+                    }
+                ]
             },
             {
                 "title": "Storage",
@@ -1250,18 +1264,14 @@
         "description": "",
         "slug": "porting",
         "type": "markdown",
-        "chapters": [
-          {
-            "title": "Porting process",
-            "sources":
-            [
-              {
-                  "type": "markdown",
-                  "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting.md"
-              }
-            ]
-          },
-          {
+        "chapters": [{
+                "title": "Porting process",
+                "sources": [{
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting.md"
+                }]
+            },
+            {
                 "title": "Porting targets",
                 "intro": {
                     "type": "markdown",
