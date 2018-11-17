@@ -1,43 +1,43 @@
-### Example Walk Through
+### Example walkthrough
 
-The quick start example will blink the LED on your platform on and off. The main thread will additionally take a snapshot of the device's runtime statistics and display it over serial to your PC. The snapshot includes:
+The quick start example blinks the LED on your platform on and off. The main thread additionally takes a snapshot of the device's runtime statistics and display them through serial to your PC. The snapshot includes:
 
-* System Information:
-    * Mbed OS Version: Will currently default to 999999
-    * [Compiler ID](#compiler-id)
-    * [CPUID Register Information](#cpuid-register-information)
-    * [Compiler Version](#compiler-version)
-* CPU Statistics
-    * Percentage of runtime that the device has spent awake versus in sleep
-* Heap Statistics
-    * Current heap size
-    * Max heap size which refers to the largest the heap has grown to
-* Thread Statistics
-    * Provides information on all running threads in the OS including
-        * Thread ID
-        * Thread Name
-        * Thread State
-        * Thread Priority
-        * Thread Stack Size
-        * Thread Stack Space
+- System information:
+   - Mbed OS version: Defaults to 999999.
+   - [Compiler ID](#compiler-id).
+   - [CPUID register information](#cpuid-register-information).
+   - [Compiler version](#compiler-version).
+- CPU statistics:
+   - Percentage of runtime the device has spent awake.
+- Heap statistics:
+   - Current heap size.
+   - Maximum size the heap has ever grown.
+- Thread statistics:
+   - Provides information on all running threads in the OS including:
+      - Thread ID.
+      - Thread name.
+      - Thread state.
+      - Thread priority.
+      - Thread stack size.
+      - Thread stack space.
 
 #### Compiler ID
 
-| Compiler | Version Tag |
+| Compiler | Version tag |
 | -------- | ----------- |
 | ARM      | 1           |
 | GCC_ARM  | 2           |
 | IAR      | 3           |
 
-#### Compiler Version
+#### Compiler version
 
-| Compiler | Version Layout |
+| Compiler | Version layout |
 | -------- | -------------- |
 | ARM      | PVVbbbb (P = Major; VV = Minor; bbbb = build number) |
 | GCC      | VVRRPP  (VV = Version; RR = Revision; PP = Patch)    |
 | IAR      | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
 
-#### CPUID Register Information
+#### CPUID register information
 
 | Bit Field | Field Description | Values |
 | --------- | ----------------- | ------ |
@@ -54,20 +54,17 @@ The quick start example will blink the LED on your platform on and off. The main
 |           |                   | 0xD21 = Cortex-M33 |
 |[3:0]      | Revision          | Minor revision: 0x1 = Patch 1 |
 
-
-
 You can view individual examples and additional API information of the statistics collection tools at the bottom of the page in the [related links section](#related-links).
-
 
 ### Output
 
-To view the serial output you can use any terminal client of your choosing such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
+To view the serial output, you can use any terminal client, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
 
-The default baud rate for this application is set to `115200` and may be modified in the `mbed_app.json` file.
+The default baud rate for this application is set to `115200`. You can modify it in the `mbed_app.json` file.
 
-You can find more information on the Mbed OS configuration tools and serail communication in Mbed OS in the related [related links section](#related-links).
+You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the [related links section](#related-links).
 
-The output should contain the following block transmitted at the blinking LED frequency (actual values may vary depending on your target, build profile, and toolchain):
+The output contains the following block transmitted at the blinking LED frequency (actual values may vary depending on your target, build profile and toolchain):
 
 ```
 =============================== SYSTEM INFO  ================================
@@ -106,11 +103,11 @@ Stack Space: 664
 
 ### Troubleshooting
 
-If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
+If you have problems, you can review the [documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
 
-### Related Links
+### Related links
 
-* [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html)
-* [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html)
-* [Mbed OS Serial Communication](https://os.mbed.com/docs/latest/tutorials/serial-communication.html)
+- [Mbed OS statistics API](../apis/mbed-statistics.html).
+- [Mbed OS configuration](../reference/configuration.html).
+- [Mbed OS serial communication](../tutorials/serial-communication.html).
 
