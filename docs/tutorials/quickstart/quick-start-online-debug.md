@@ -33,7 +33,7 @@ Run `ls /dev/tty.*` from your command-line.
 
 More examples:
 
-- [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
+- [Mbed OS tutorials and examples](../tutorials/index.html) - list of Mbed OS 5 example repositories.
 
 - Documentation
     - [Mbed OS APIs](../apis/index.html) - list of all APIs available in Mbed OS.
