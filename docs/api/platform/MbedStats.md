@@ -1,6 +1,6 @@
 ## Mbed statistics
 
-Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS statistics, you must enable the following Mbed OS configuration option.
+Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS platform statistics, you must enable the following Mbed OS configuration option.
 
 ```json
 {
