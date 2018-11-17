@@ -56,7 +56,7 @@ The quick start example blinks the LED on your platform on and off. The main thr
 
 You can view individual examples and additional API information of the statistics collection tools at the bottom of the page in the [related links section](#related-links).
 
-### Output
+#### Output
 
 To view the serial output, you can use any terminal client, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
 
