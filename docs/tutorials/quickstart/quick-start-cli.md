@@ -6,7 +6,7 @@ The setup process for Arm Mbed CLI depends on your operating system. Please choo
 
 [**Windows**](#windows) | [**macOS**](#macos) | [**Linux**](#linux)
 
-#### Windows
+### Windows
 
 Two installation methods are available for Windows. The first is a prebuilt installer that you can use quickly. The second installation method is more flexible and allows for greater customization to better fit your system's needs.
 
@@ -54,7 +54,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### macOS
+### macOS
 
 ##### Prebuilt Mbed CLI installer
 
@@ -98,7 +98,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-#### Linux
+### Linux
 
 ##### 1. Install Python and Pip
 
