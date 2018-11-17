@@ -11,9 +11,9 @@ To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, click the `Ex
 
 Another way to do basic debugging is to use the `printf` command in your code and then read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
-Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. 
+Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS.
 
-<span class="notes">**Note:** The `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`. You can view the [configuration options page](/docs/reference/configuration.html) to learn more about how to configure OS level options.</span>
+<span class="notes">**Note:** The `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`. You can view the [configuration options page](../reference/configuration.html) to learn more about how to configure OS level options.</span>
 
 To determine which communication port your board connects to, follow the instructions for your operating system:
 
@@ -36,12 +36,12 @@ More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.
 
 - Documentation
-    - [Mbed OS APIs](/docs/development/apis/index.html) - list of all APIs available in Mbed OS.
-    - [Peripheral drivers](/docs/development/apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
+    - [Mbed OS APIs](../apis/index.html) - list of all APIs available in Mbed OS.
+    - [Peripheral drivers](../apis/drivers.html) - IO driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials
     - [Advanced debugging](debugging.html).
-    - [Serial communications](/docs/development/tutorials/serial-communication.html).
+    - [Serial communications](../tutorials/serial-communication.html).
     - [Optimizing binary size](optimizing.html).
 
 - Other resources

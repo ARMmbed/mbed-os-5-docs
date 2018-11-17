@@ -16,7 +16,7 @@ Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbe
 
 You can ensure Mbed CLI installed correctly by running `mbed help` from your command-line.
 
-<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
 ##### Manual installation
 
@@ -30,7 +30,7 @@ Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/do
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
 ###### 3. Install Mbed CLI
 
@@ -72,7 +72,7 @@ To install Pip, run `easy_install --user pip` from your command-line.
 
 Download and install a compiler.
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
 ###### 3. Install Mbed CLI
 
@@ -114,7 +114,7 @@ $ sudo apt-get install python2.7 python-pip
 
 Download and install a compiler:
 
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](/docs/development/tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
 ##### 3. Install Mbed CLI
 
@@ -162,4 +162,3 @@ The `--flash` argument automatically flashes the compiled program onto your boar
 After you have flashed the program to the board, press the board's reset button. The LED blinks.
 
 <span class="notes">**Note:** You can get the name of the board plugged into your computer by running `mbed detect`, and you can get a full list of supported toolchains and targets by running the `mbed compile --supported` command.</span>
-

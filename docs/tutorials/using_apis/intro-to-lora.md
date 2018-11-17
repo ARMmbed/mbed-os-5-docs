@@ -242,7 +242,7 @@ Now that the device is registered in The Things Network, you can start writing c
 
 #### 3.3 - Importing the demo application
 
-Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](/docs/development/tools/index.html)).
+Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](../tools/index.html)).
 
 1. [Sign up](https://os.mbed.com/account/signup/?next=%2F) for an account on Arm Mbed, which hosts the Online Compiler.
 1. Find your development board on [the platforms page](https://os.mbed.com/platforms/).
@@ -413,6 +413,6 @@ LoRa/LoRaWAN is a technology with which anyone can set up a network and start bu
 #### More material
 
 - [Webinar: getting started with LoRa using Arm Mbed and The Things Network](https://pages.arm.com/2017-10-29-webinar-registration.html).
-- [Mbed OS LoRaWAN stack documentation](/docs/development/apis/lorawan.html).
+- [Mbed OS LoRaWAN stack documentation](../apis/lorawan.html).
 - [Firmware updates over LoRaWAN](https://os.mbed.com/blog/entry/firmware-updates-over-lpwan-lora/).
 - [Presentations from The Things Conference](https://www.youtube.com/playlist?list=PLM8eOeiKY7JUhIyxWWU2-qziejDbBg-pf).

@@ -8,16 +8,16 @@ When the system crashes due to fault exceptions, the Mbed OS fault exception han
 
 - MemManage Exception - Memory accesses that violate the setup in the MPU and certain illegal memory accesses trigger memory management faults.
 - BusFault Exception - When an error response is received during a transfer on the AHB interfaces, it produces bus faults.
-- UsageFault Exception - Division by zero, unaligned accesses and trying to execute coprocessor instructions can cause usage faults. 
+- UsageFault Exception - Division by zero, unaligned accesses and trying to execute coprocessor instructions can cause usage faults.
 - HardFault Exception - Triggered on all fault conditions or if the corresponding fault handler (one of the above) is not enabled.
 
 Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on these exceptions and the exceptions implemented for the specific core in your system.
 
-For example, Cortex-M0/M0+ processors (or any ARMv6M processors) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. For ARMv7M processors, MemManage, BusFault and UsageFault exceptions trigger only if they are enabled in System Handler Control and State Register (**SHCSR**). 
+For example, Cortex-M0/M0+ processors (or any ARMv6M processors) do not have MemManage, BusFault and UsageFault exceptions implemented. In those cases, all exceptions are reported as HardFault exception. For ARMv7M processors, MemManage, BusFault and UsageFault exceptions trigger only if they are enabled in System Handler Control and State Register (**SHCSR**).
 
 Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates. Note that the system also invokes the Mbed OS error handler when an exception happens and prints out the error information, as well.
 
-Please see the [Error API reference](/docs/development/apis/error-handling.html) for more about error information. 
+Please see the [Error API reference](../apis/error-handling.html) for more about error information. 
 
 ```
 ++ MbedOS Fault Handler ++
