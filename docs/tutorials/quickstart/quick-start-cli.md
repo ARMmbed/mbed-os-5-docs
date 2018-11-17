@@ -6,11 +6,11 @@ The setup process for Arm Mbed CLI depends on your operating system. Please choo
 
 [**Windows**](#windows) | [**macOS**](#macos) | [**Linux**](#linux)
 
-### Windows
+## Windows
 
 Two installation methods are available for Windows. The first is a prebuilt installer that you can use quickly. The second installation method is more flexible and allows for greater customization to better fit your system's needs.
 
-##### Prebuilt Mbed CLI installer
+### Prebuilt Mbed CLI installer
 
 Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
 
@@ -18,27 +18,27 @@ You can ensure Mbed CLI installed correctly by running `mbed help` from your com
 
 <span class="notes">**Note:** The Windows installer only installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-##### Manual installation
+### Manual installation
 
-###### 1. Download and install Python and Pip
+#### 1. Download and install Python and Pip
 
 Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/windows/) or later for Windows. Both Python versions come with their own version of Pip.
 
 <span class="notes">**Note:** When the installer launches, check the checkbox that says **Add Python X.Y to PATH**. Otherwise, Windows does not know where to search for the Python executable.</span>
 
-###### 2. Install a compiler
+#### 2. Install a compiler
 
 Download and install a compiler.
 
 <span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-###### 3. Install Mbed CLI
+#### 3. Install Mbed CLI
 
 To install Mbed CLI, run `pip install mbed-cli` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
-##### 4. Setup environment
+#### 4. Setup environment
 
 After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. Below is an example using the ARM compiler:
 
@@ -54,27 +54,27 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-### macOS
+## macOS
 
-##### Prebuilt Mbed CLI installer
+### Prebuilt Mbed CLI installer
 
 Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-##### Manual installation
+### Manual installation
 
-###### 1. Install Python and Pip
+#### 1. Install Python and Pip
 
 macOS 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of macOS, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
 
 To install Pip, run `easy_install --user pip` from your command-line.
 
-###### 2. Install a compiler
+#### 2. Install a compiler
 
 Download and install a compiler.
 
 <span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-###### 3. Install Mbed CLI
+#### 3. Install Mbed CLI
 
 To install Mbed CLI, run `pip install mbed-cli --user` from your command-line.
 
@@ -82,7 +82,7 @@ You can ensure Mbed CLI installed correctly by running `mbed --version`.
 
 <span class="notes">**Note:** You may also need to add the new Mbed CLI Python `--user` installation location (for example: `/Users/{username}/Library/Python/2.7/bin`) to the PATH.</span>
 
-###### 4. Setup environment
+#### 4. Setup environment
 
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
 
@@ -98,9 +98,9 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-### Linux
+## Linux
 
-##### 1. Install Python and Pip
+### 1. Install Python and Pip
 
 Download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/source/) or later, or use your distribution's package manager to install Python and Pip.
 
@@ -110,19 +110,19 @@ As an example, you can use the following in Ubuntu:
 $ sudo apt-get install python2.7 python-pip
 ```
 
-##### 2. Install a compiler
+### 2. Install a compiler
 
 Download and install a compiler:
 
 <span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-##### 3. Install Mbed CLI
+### 3. Install Mbed CLI
 
 To install Mbed CLI, run `pip install mbed-cli` from your command-line.
 
 You can ensure Mbed CLI installed correctly by running `mbed help`.
 
-##### 4. Setup environment
+### 4. Setup environment
 
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
 
@@ -138,9 +138,9 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-### Code
+## Code
 
-#### 1. Get the code
+### 1. Get the code
 
 From your command-line, import the example:
 
@@ -149,7 +149,7 @@ $ mbed import https://github.com/ARMmbed/mbed-os-quick-start-blinky
 $ cd mbed-os-quick-start-blinky
 ```
 
-#### 2. Compile and program board
+### 2. Compile and program board
 
 Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler 5 toolchain:
 
