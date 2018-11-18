@@ -6,7 +6,57 @@ For more information about SPM, please refer to [the SPM overview page](/docs/de
 
 **This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities**
 
-### Memory layout
+### New target configuration
+
+When adding a new target, a new root target node should be added to mbed-os/targets/targets.json file.
+For PSA support, specific PSA related fields should be defined for this target:
+
+1. Secure target must inherit from `SPE_Target` meta-target.
+2. Nonsecure target must inherit from `NSPE_Target`.
+3. Only for multicore architectures:
+   - Both targets must add "SPM_MAILBOX" component. Mailbox mechanism is explained in [Mailbox section](#mailbox)
+   - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. This is explained in more details in [Memory layout section](#memory-layout)
+   - Secure target must declare which is its corresponding nonsecure target using the "deliver_to_target" field.
+
+These is demonstrated in the example below:
+
+```json
+"FUTURE_SEQUANA_M0_PSA": {
+        "inherits": ["SPE_Target"],
+        "components_add": ["SPM_MAILBOX"],
+        "deliver_to_target": "FUTURE_SEQUANA_PSA",
+        "overrides": {
+            "secure-rom-start": "0x10000000",
+            "secure-rom-size": "0x78000",
+            "non-secure-rom-start": "0x10080000",
+            "non-secure-rom-size": "0x78000",
+            "secure-ram-start": "0x08000000",
+            "secure-ram-size": "0x10000",
+            "non-secure-ram-start": "0x08011000",
+            "non-secure-ram-size": "0x36800",
+            "shared-ram-start": "0x08010000",
+            "shared-ram-size": "0x1000"
+        }
+    },
+    "FUTURE_SEQUANA_PSA": {
+        "inherits": ["NSPE_Target"],
+        "components_add": ["SPM_MAILBOX"],
+        "overrides": {
+            "secure-rom-start": "0x10000000",
+            "secure-rom-size": "0x78000",
+            "non-secure-rom-start": "0x10080000",
+            "non-secure-rom-size": "0x78000",
+            "secure-ram-start": "0x08000000",
+            "secure-ram-size": "0x10000",
+            "non-secure-ram-start": "0x08011000",
+            "non-secure-ram-size": "0x36800",
+            "shared-ram-start": "0x08010000",
+            "shared-ram-size": "0x1000"
+        }
+    }
+```
+
+#### Memory layout
 
 Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash in a way the following image describes:
 
@@ -25,55 +75,7 @@ Typically, PSA platforms share the same RAM and flash between secure and nonsecu
 
 ```
 
-To achieve RAM and flash partitioning, you must add start and size values to a target configuration in `targets.json`. You can do this with the following steps:
-
-1. Secure target must inherit from `SPE_Target` meta-target.
-2. Nonsecure target must inherit from `NSPE_Target`.
-3. Both targets must override the default configuration by specifying flash RAM and shared RAM regions.
-
-```json
-"FUTURE_SEQUANA_M0_PSA": {
-        "inherits": ["SPE_Target", "FUTURE_SEQUANA_M0"],
-        "extra_labels_add": ["PSOC6_PSA"],
-        "components_add": ["SPM_MAILBOX"],
-        "macros_add": ["PSOC6_DYNSRM_DISABLE=1"],
-        "deliver_to_target": "FUTURE_SEQUANA_PSA",
-        "overrides": {
-            "secure-rom-start": "0x10000000",
-            "secure-rom-size": "0x78000",
-            "non-secure-rom-start": "0x10080000",
-            "non-secure-rom-size": "0x78000",
-            "secure-ram-start": "0x08000000",
-            "secure-ram-size": "0x10000",
-            "non-secure-ram-start": "0x08011000",
-            "non-secure-ram-size": "0x36800",
-            "shared-ram-start": "0x08010000",
-            "shared-ram-size": "0x1000"
-        }
-    },
-    "FUTURE_SEQUANA_PSA": {
-        "inherits": ["NSPE_Target", "FUTURE_SEQUANA"],
-        "sub_target": "FUTURE_SEQUANA_M0_PSA",
-        "extra_labels_remove": ["CORDIO"],
-        "extra_labels_add": ["PSOC6_PSA"],
-        "components_add": ["SPM_MAILBOX"],
-        "macros_add": ["PSOC6_DYNSRM_DISABLE=1"],
-        "overrides": {
-            "secure-rom-start": "0x10000000",
-            "secure-rom-size": "0x78000",
-            "non-secure-rom-start": "0x10080000",
-            "non-secure-rom-size": "0x78000",
-            "secure-ram-start": "0x08000000",
-            "secure-ram-size": "0x10000",
-            "non-secure-ram-start": "0x08011000",
-            "non-secure-ram-size": "0x36800",
-            "shared-ram-start": "0x08010000",
-            "shared-ram-size": "0x1000"
-        }
-    }
-```
-
-<span class="notes">**Note:** Only multicore architectures require a shared memory region.</span>
+To achieve RAM and flash partitioning, you must add start and size values to a target configuration in `targets.json` as in the example above.
 
 ### Linker scripts
 
@@ -207,6 +209,7 @@ These are the guidelines you should follow if you have multicore systems:
   - This handler must call an Arm callback function. The [HAL functions section](#hal-functions) explains this in more detail.
   - It is your responsibility to clear the mailbox event. You can do this in the event handler.
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
+- For each core, add the "SPM_MAILBOX" component field for its target node in mbed-os/targets/targets.json file.
 
 ### HAL functions
 
