@@ -1,6 +1,6 @@
 ## Mbed statistics
 
-Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS platform statistics, you must enable the following Mbed OS configuration option.
+Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS platform statistics, you must enable the following Mbed OS configuration option:
 
 ```json
 {
@@ -14,7 +14,7 @@ Mbed OS provides a set of functions that you can use to capture the memory and t
 
 ### Memory statistics
 
-You can use memory statistics functions to capture heap usage, cumulative stack usage or stack usage per thread at runtime. To enable memory usage monitoring, you must enable the following Mbed OS configuration options.
+You can use memory statistics functions to capture heap use, cumulative stack use or stack use for each thread at runtime. To enable memory use monitoring, you must enable the following Mbed OS configuration options:
 
 ```json
 {
@@ -31,13 +31,13 @@ You can use memory statistics functions to capture heap usage, cumulative stack 
 
 ### Thread statistics
 
-You can use the thread statistics function `mbed_stats_thread_get_each` to capture the thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must enable the following Mbed OS configuration options.
+You can use the thread statistics function `mbed_stats_thread_get_each` to capture the thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must enable the following Mbed OS configuration options:
 
 ```json
 {
     "target_overrides": {
         "*": {
-            "platform.thread-stats-enabled": true,
+            "platform.thread-stats-enabled": true
         }
     }
 }
@@ -45,7 +45,7 @@ You can use the thread statistics function `mbed_stats_thread_get_each` to captu
 
 ### System information
 
-You can use the `mbed_stats_sys_get` function to get the CPU ID, compiler information and RAM and ROM memories on the target device. To enable system information fetching, you must enable the following Mbed OS configuration option.
+You can use the `mbed_stats_sys_get` function to get the CPU ID, compiler information and RAM and ROM memories on the target device. To enable system information fetching, you must enable the following Mbed OS configuration option:
 
 ```json
 {
@@ -59,7 +59,7 @@ You can use the `mbed_stats_sys_get` function to get the CPU ID, compiler inform
 
 ### CPU statistics
 
-You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and sleep time information. Timing information available is cumulative since the system is on. Please note CPU statistics depend on the availability of the low power timer in the hardware. To enable fetching of CPU information, you must enable the following Mbed OS configuration option.
+You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and sleep time information. Timing information available is cumulative because the system is on. Please note CPU statistics depend on the availability of the low power timer in the hardware. To enable fetching of CPU information, you must enable the following Mbed OS configuration option:
 
 ```json
 {
