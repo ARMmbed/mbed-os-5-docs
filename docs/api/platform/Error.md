@@ -165,8 +165,7 @@ The Mbed OS crash reporting implementation provides many options to configure th
 
 - `crash-capture-enabled` - Enables crash context capture when the system enters a fatal error or crash. When this is disabled, it also disables other dependent options mentioned below.
 - `fatal-error-auto-reboot-enabled` - Setting this to true enables autoreboot on fatal errors.
-- `reboot-crash-report-enabled` - Enables crash report printing through the terminal when the system reboots after a fatal error. The format of this report is identical to error reporting structure mentioned in the [error report](#error-reporting).
-- `error-reboot-max` - Maximum number of autoreboots permitted on fatal errors. The system stop autorebooting once it reaches the maximum limit. Setting this value to 0 disable autoreboot.
+- `error-reboot-max` - Maximum number of auto-reboots(warm-resets) permitted on fatal errors. The system stop auto-rebooting once it reaches the maximum limit. Setting this value to 0 disable auto-reboot. 
 
 Crash reporting feature also provides APIs to read and clear error context information captured in Crash-data-RAM region. Please see the API reference below for [crash reporting related APIs](#crash-reporting-api).
 
@@ -403,7 +402,7 @@ int main()
 
 #### Using `mbed_reset_reboot_error_info()` to clear the reboot error info
 
-You can use `mbed_reset_reboot_error_info()` tto clear the reboot error information:
+You can use `mbed_reset_reboot_error_info()` to clear the reboot error information:
 
 ```CPP TODO
 void clear_reboot_errors() {
