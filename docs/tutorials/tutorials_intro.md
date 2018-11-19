@@ -7,7 +7,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 <table>
 <tbody>
 <tr>
-<td><a href="../tutorials/mbed-os-quick-start.html">Mbed OS quick start tutorial</a></td>
+<td><a href="../quick-start/index.html">Mbed OS quick start tutorial</a></td>
 </tr>
 <tr>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky">Blinky example</a></td>
@@ -40,7 +40,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <td><a href="../apis/wi-fi.html#wi-fi-example">Wi-Fi example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton">BLE GAP button count example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED">BLE LED example</a></td>
-<td><a href="ble-tutorial.html">LoRa tutorial</a></td>
+<td><a href="LoRa-tutorial.html">LoRa tutorial</a></td>
 </tr>
 <tr>
 <td><a href="../apis/cellular-api.html#cellular-example-connection-establishment">Cellular example</a></td>  
