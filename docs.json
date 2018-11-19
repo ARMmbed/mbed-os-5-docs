@@ -76,7 +76,7 @@
             },
             {
                 "title": "Offline",
-                "sub-chapters": [{
+                "sub_chapters": [{
                         "title": "Setting up",
                         "sources": [{
                                 "type": "markdown",
