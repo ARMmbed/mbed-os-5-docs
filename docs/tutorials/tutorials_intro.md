@@ -1,6 +1,6 @@
 ## Arm Mbed tutorials
 
-The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast to other sections of the documentation, which provide background reference material, this section provides instructions for specific tasks you may wish to perform. This section contains two formats of documentation: tutorials and examples. Tutorials include step-by-step guidance, and examples are code snippets you can use a starting point for your application or as a reference on how to use a particular API.
+The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast to other sections of the documentation, which provide background reference material, this section provides instructions for specific tasks you may wish to perform. This section contains two formats of documentation: tutorials and examples. Tutorials include step-by-step guidance, and examples are code snippets you can use as a starting point for your application or as a reference on how to use a particular API.
 
 ### Getting started
 
