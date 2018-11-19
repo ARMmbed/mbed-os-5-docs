@@ -1,16 +1,14 @@
 ## Secure Socket
 
-Mbed OS provides an interface for creating secure connections in the form of TLS stream. The `TLSSocket` class provides the ability to secure any stream-based socket connection, for example TCP stream. This allows you to use existing protocol libraries through a secure connections.
+Mbed OS provides an interface for creating secure connections in the form of TLS stream. The `TLSSocketWrapper` class provides the ability to secure any stream-based socket connection, for example TCP stream. This allows you to use existing protocol libraries through a secure connections.
 
-`TLSSocket` inherits the `Socket` class, which allows any application that uses `Socket` to use `TLSSocket` instead. Secure socket both uses Socket interface as its transport layer and implements it. This makes it transport independent, and there is no direct dependency on the IP stack. For example, you can use the HTTP library and give `TLSSocket` to it to covert it to HTTPS.
+`TLSSocketWrapper` inherits the `Socket` class, which allows any application that uses `Socket` to use `TLSSocketWrapper` instead. Secure socket both uses Socket interface as its transport layer and implements it. This makes it transport independent, and there is no direct dependency on the IP stack. For example, you can use the HTTP library and give `TLSSocketWrapper` to it to covert it to HTTPS.
 
-### API
-
-`TLSSocketWrapper` implements Mbed OS Socket API and extends it with functions that allow configuring security certificates. Please note that for most of the use cases, you are using these methods through `TLSSocket` class.
+For easy to use API there is helper class called `TLSSocket` that contains internal TCP socket for transport stream.
 
 ### Usage example
 
-The TLSSocket API follows the Socket API, so it is straightforward to use after setting up:
+`TLSSocketWrapper` implements Mbed OS Socket API and extends it with functions that allow configuring security certificates, so it is straightforward to use after setting up. Please note that for most of the use cases, you are using these methods through `TLSSocket` class.
 
 ```
 TLSSocket *socket = new TLSSocket();
@@ -35,7 +33,8 @@ The `TLSSocketWrapper` can use any `Socket` as its transport. `TLSSocket` is a h
 One use case of `TLSSocketWrapper` is that existing TCP socket can be upgraded to TLS, by wrapping it like this:
 
 ```
-TCPSocket connection(net);
+TCPSocket connection;
+connection.open(net);
 connection.connect(SERVER, PORT);
 
 // First talk with the server without encryption
@@ -91,7 +90,7 @@ nsapi_error_t TLSSocketWrapper::set_client_cert_key(const char *client_cert_pem,
 
 #### Socket API
 
-`TLSSocketWrapper` implements [Mbed OS Socket API](https://os.mbed.com/docs/v5.10/apis/network-socket.html) as follows.
+`TLSSocketWrapper` implements [Mbed OS Socket API](../apis/network-socket.html) as follows.
 
 ```
 virtual nsapi_error_t close();
@@ -164,3 +163,9 @@ void set_ssl_config(mbedtls_ssl_config *);
 ```
 
 For guidance of how to use these, please refer to Mbed TLS documentation.
+
+## Related content
+
+- [Security Overview](../apis/security.html)
+- [TLSSocket](../apis/tlssocket.html) API reference.
+- [DTLSSocket](../apis/dtlssocket.html) API reference
