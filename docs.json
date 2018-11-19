@@ -90,9 +90,7 @@
                     },
                     {
                         "title": "Example application",
-
                         "sources": [
-
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
