@@ -1,10 +1,10 @@
 ## DTLSSocket
 
-`DTLSSocket` and `DTLSSocketWrapper` are implementing DTLS stream over existing `Socket` transport. Design and implementation details are explained in [Secure Socket](../reference/securesocket.html) page.
+`DTLSSocket` and `DTLSSocketWrapper` implement DTLS stream over the existing `Socket` transport. You can find design and implementation details in the [Secure Socket](../reference/securesocket.html) page.
 
-For using secure DTLS connections, application utilise the `DTLSSocketWrapper` through Socket API, so existing applications and libraries should be compatible.
+To use secure DTLS connections, application use the `DTLSSocketWrapper` through the Socket API, so existing applications and libraries are compatible.
 
-`DTLSSocketWrapper` is inheriting `TLSSocketWrapper` and uses exactly same API. Only difference is that it uses timers for keeping track of DTLS timeouts. See TLSSocket for usage example.
+`DTLSSocketWrapper` inherits `TLSSocketWrapper` and uses the same API. The only difference is that it uses timers to keep track of DTLS timeouts. Please see [TLSSocket](tlssocket.html) for an example.
 
 ### DTLSSocket class reference
 
