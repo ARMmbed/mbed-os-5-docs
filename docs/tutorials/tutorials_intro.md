@@ -78,7 +78,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <tr>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark">TLS benchmark example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing">TLS hashing example</a></td>
-<td><a href="../apis/devicekey.html#devicekey-example">DeviceKey example</a></td></td>
+<td><a href="../apis/devicekey.html#devicekey-example">DeviceKey example</a></td>
 </tr>
 <tr>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client">TLS client example</a></td>
