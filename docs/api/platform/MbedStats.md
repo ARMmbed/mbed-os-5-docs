@@ -17,7 +17,7 @@ You can use the thread statistics function `mbed_stats_thread_get_each` to captu
 
 ### System information
 
-You can use the `mbed_stats_sys_get` function to get the CPU ID and compiler information. You must build Mbed OS with the `MBED_SYS_STATS_ENABLED` macro to enable fetching of system information.
+You can use the `mbed_stats_sys_get` function to get the CPU ID, compiler information and RAM/ROM memories on target device. You must build Mbed OS with the `MBED_SYS_STATS_ENABLED` macro to enable fetching of system information.
 
 ### CPU statistics
 
