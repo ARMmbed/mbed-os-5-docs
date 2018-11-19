@@ -58,7 +58,7 @@ Here is an example of an HTTP client program. The program brings up an ESP8266 a
 
 The ESP8266Interface uses AT commands over serial interface to connect to an external Wi-Fi device. The OdinWiFiInterface provides an Ethernet-like driver to the Mbed OS network stack. The network stack uses the driver to connect to Wi-Fi:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-wifi)](https://github.com/ARMmbed/mbed-os-example-wifi/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-wifi)](https://github.com/ARMmbed/mbed-os-example-wifi/blob/mbed-os-5.10.0/main.cpp)
 
 ### Related content
 
