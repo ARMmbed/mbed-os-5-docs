@@ -58,7 +58,7 @@ These is demonstrated in the example below:
 
 #### Memory layout
 
-Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash in a way the following image describes:
+Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash to secure and nonsecure parts, in a way the following image describes:
 
 ```text
                                  RAM
@@ -76,6 +76,8 @@ Typically, PSA platforms share the same RAM and flash between secure and nonsecu
 ```
 
 To achieve RAM and flash partitioning, you must add start and size values to a target configuration in `targets.json` as in the example above.
+
+Note that for isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.
 
 ### Linker scripts
 
@@ -187,7 +189,7 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 
 ### Mailbox
 
-Mailbox is the SPM mechanism in charge of IPC, and is **relevant for multicore systems only**.
+Mailbox is the mechanism used to implement Inter Processor Communication and **only relevant for multicore systems**. Mailbox is used by SPM for communicating with secure partitions from nonsecure processing environment.
 
 #### Concepts
 
@@ -205,9 +207,8 @@ The SPM mailbox mechanism requires the platform to have the following capabiliti
 These are the guidelines you should follow if you have multicore systems:
 
 - For each core, initialize, configure and enable the a mailbox event (usually an interrupt) at `SystemInit()`.
-- For each core, implement the mailbox event handler (usually interrupt handler):
-  - This handler must call an Arm callback function. The [HAL functions section](#hal-functions) explains this in more detail.
-  - It is your responsibility to clear the mailbox event. You can do this in the event handler.
+- For each core, implement the IPC event handler (usually interrupt handler):
+  - The handler must call an Arm callback function. Refer to [HAL functions section](#hal-functions) for more details.
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
 - For each core, add the "SPM_MAILBOX" component field for its target node in mbed-os/targets/targets.json file.
 
@@ -216,7 +217,7 @@ These are the guidelines you should follow if you have multicore systems:
 Target specific code of silicon partners who wish to have SPM capabilities must:
 
 - Implement a list of functions which are being called by SPM code.
-- Call other functions supplied by ARM.
+- Call Arm callback functions declared and documented in the HAL header files.
 
 The HAL can be logically divided into two different fields:
 
