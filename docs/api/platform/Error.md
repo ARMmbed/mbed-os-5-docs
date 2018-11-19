@@ -36,7 +36,7 @@ For each error status type, we have defined a range of error codes, which forms 
 
 - Posix error codes: 1 to 255 (Please see the [Posix error codes support](#posix-error-codes-support) section for more details).
 - System error codes: 256 to 4095.
-- Custom error codes: 4096 to 65535. 
+- Custom error codes: 4096 to 65535.
 
 Accordingly, the error status ranges for each type are:
 
@@ -100,7 +100,7 @@ For more info, visit: https://mbed.com/s/error?error=0x80FF013D&mbedos=999999&co
 
 ### Constructing error status values in your implementation
 
-Mbed OS provides the necessary functions and macros for implementations to construct error status values. There are a few ways you can construct error status values. 
+Mbed OS provides the necessary functions and macros for implementations to construct error status values. There are a few ways you can construct error status values.
 
 If you know the module reporting the error you can use the **MBED_MAKE_ERROR()** macro to construct an error status with the module information. For example, if you want to report an unsupported configuration error from the serial driver, you may construct the error status as follows to capture the module information along with a specific error code. The below example constructs an error status value with the error code set to `MBED_ERROR_CODE_CONFIG_UNSUPPORTED` from the serial driver, indicated by module information set to `MBED_MODULE_DRIVER_SERIAL`.
 
@@ -120,7 +120,7 @@ Error handling implementation in Mbed OS keeps track of previous errors in the s
 
 See the below link to learn more about the APIs related to error history:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html) 
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ### Extending error codes
 
@@ -128,7 +128,7 @@ Mbed OS application and system developers may need to define error codes specifi
 
 ### Error hook for applications
 
-Some applications may want to do custom error handling when an error is reported using `MBED_ERROR()` or `MBED_WARNING()`. Applications can accomplish this by registering an error hook function with the Mbed OS error handling system using the **mbed_set_error_hook()** API. This function is called with error context information whenever the system handles an **MBED_ERROR()** or **MBED_WARNING()** invocation. This function should be implemented for re-entrancy because multiple threads may invoke `MBED_ERROR()` or `MBED_WARNING()`, which may cause the error hook to be called in parallel. 
+Some applications may want to do custom error handling when an error is reported using `MBED_ERROR()` or `MBED_WARNING()`. Applications can accomplish this by registering an error hook function with the Mbed OS error handling system using the **mbed_set_error_hook()** API. This function is called with error context information whenever the system handles an **MBED_ERROR()** or **MBED_WARNING()** invocation. This function should be implemented for re-entrancy because multiple threads may invoke `MBED_ERROR()` or `MBED_WARNING()`, which may cause the error hook to be called in parallel.
 
 ### Error handling functions reference
 
@@ -162,7 +162,7 @@ void receive_data(unsigned char *buffer) {
         MBED_ERROR( MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null" );
     }
     // read the data into given buffer
-    
+
 }
 ```
 
@@ -177,7 +177,7 @@ mbed_error_status_t configure(int config_value) {
         MBED_WARNING( MBED_MAKE_ERROR(MBED_MODULE_PLATFORM, MBED_ERROR_CODE_UNSUPPORTED), "Invalid config parameter" );
         return MBED_ERROR_CODE_UNSUPPORTED;
     }
-    
+
     //configure whatever
 
     return MBED_SUCCESS;
@@ -194,7 +194,7 @@ void receive_data(unsigned char *buffer) {
         MBED_ERROR1(MBED_MAKE_ERROR(MBED_MODULE_APPLICATION, MBED_ERROR_CODE_INVALID_ARGUMENT), "Buffer pointer is Null", 1024/* Size of allocation which failed */ );
     }
     // read the data into given buffer
-    
+
 }
 ```
 
@@ -209,7 +209,7 @@ mbed_error_status_t configure(int config_value) {
         MBED_WARNING1(MBED_MAKE_ERROR(MBED_MODULE_PLATFORM, MBED_ERROR_CODE_UNSUPPORTED), "Invalid config parameter", config_value /* Invalid config value */ );
         return MBED_ERROR_CODE_UNSUPPORTED;
     }
-    
+
     //configure whatever
 
     return MBED_SUCCESS;
@@ -227,7 +227,7 @@ mbed_error_status_t configure(int config_value) {
         MBED_WARNING1(MBED_ERROR_UNSUPPORTED, "Invalid config value", 0 );
         return MBED_ERROR_UNSUPPORTED;
     }
-    
+
     //configure whatever
 
     return MBED_SUCCESS;
@@ -313,70 +313,70 @@ Below are the predefined Mbed system error codes and their descriptions:
     MBED_ERROR_CODE_INVALID_DATA                    Invalid data
     MBED_ERROR_CODE_INVALID_FORMAT                  Invalid format
     MBED_ERROR_CODE_INVALID_INDEX                   Invalid Index
-    MBED_ERROR_CODE_INVALID_SIZE                    Inavlid Size 
-    MBED_ERROR_CODE_INVALID_OPERATION               Invalid Operation 
-    MBED_ERROR_CODE_NOT_FOUND                       Not Found 
-    MBED_ERROR_CODE_ACCESS_DENIED                   Access Denied 
-    MBED_ERROR_CODE_NOT_SUPPORTED                   Not supported 
-    MBED_ERROR_CODE_BUFFER_FULL                     Buffer Full 
-    MBED_ERROR_CODE_MEDIA_FULL                      Media/Disk Full 
-    MBED_ERROR_CODE_ALREADY_IN_USE                  Already in use 
-    MBED_ERROR_CODE_TIMEOUT                         Timeout error 
-    MBED_ERROR_CODE_NOT_READY                       Not Ready 
-    MBED_ERROR_CODE_FAILED_OPERATION                Requested Operation failed 
-    MBED_ERROR_CODE_OPERATION_PROHIBITED            Operation prohibited 
-    MBED_ERROR_CODE_OPERATION_ABORTED               Operation failed 
-    MBED_ERROR_CODE_WRITE_PROTECTED                 Attempt to write to write-protected resource 
-    MBED_ERROR_CODE_NO_RESPONSE                     No response 
-    MBED_ERROR_CODE_SEMAPHORE_LOCK_FAILED           Semaphore lock failed 
-    MBED_ERROR_CODE_MUTEX_LOCK_FAILED               Mutex lock failed 
-    MBED_ERROR_CODE_SEMAPHORE_UNLOCK_FAILED         Semaphore unlock failed 
-    MBED_ERROR_CODE_MUTEX_UNLOCK_FAILED             Mutex unlock failed 
-    MBED_ERROR_CODE_CRC_ERROR                       CRC error or mismatch 
-    MBED_ERROR_CODE_OPEN_FAILED                     Open failed 
-    MBED_ERROR_CODE_CLOSE_FAILED                    Close failed 
-    MBED_ERROR_CODE_READ_FAILED                     Read failed 
-    MBED_ERROR_CODE_WRITE_FAILED                    Write failed 
-    MBED_ERROR_CODE_INITIALIZATION_FAILED           Initialization failed 
-    MBED_ERROR_CODE_BOOT_FAILURE                    Boot failure 
-    MBED_ERROR_CODE_OUT_OF_MEMORY                   Out of memory 
-    MBED_ERROR_CODE_OUT_OF_RESOURCES                Out of resources 
-    MBED_ERROR_CODE_ALLOC_FAILED                    Alloc failed 
-    MBED_ERROR_CODE_FREE_FAILED                     Free failed 
-    MBED_ERROR_CODE_OVERFLOW                        Overflow error 
-    MBED_ERROR_CODE_UNDERFLOW                       Underflow error 
-    MBED_ERROR_CODE_STACK_OVERFLOW                  Stack overflow error 
-    MBED_ERROR_CODE_ISR_QUEUE_OVERFLOW              ISR queue overflow 
-    MBED_ERROR_CODE_TIMER_QUEUE_OVERFLOW            Timer Queue overflow 
-    MBED_ERROR_CODE_CLIB_SPACE_UNAVAILABLE          Standard library error - Space unavailable 
-    MBED_ERROR_CODE_CLIB_EXCEPTION                  Standard library error - Exception 
-    MBED_ERROR_CODE_CLIB_MUTEX_INIT_FAILURE         Standard library error - Mutex Init failure 
-    MBED_ERROR_CODE_CREATE_FAILED                   Create failed 
-    MBED_ERROR_CODE_DELETE_FAILED                   Delete failed 
-    MBED_ERROR_CODE_THREAD_CREATE_FAILED            Thread Create failed 
-    MBED_ERROR_CODE_THREAD_DELETE_FAILED            Thread Delete failed 
-    MBED_ERROR_CODE_PROHIBITED_IN_ISR_CONTEXT       Operation Prohibited in ISR context 
-    MBED_ERROR_CODE_PINMAP_INVALID                  Pinmap Invalid 
-    MBED_ERROR_CODE_RTOS_EVENT                      Unknown Rtos Error 
-    MBED_ERROR_CODE_RTOS_THREAD_EVENT               Rtos Thread Error 
-    MBED_ERROR_CODE_RTOS_MUTEX_EVENT                Rtos Mutex Error 
-    MBED_ERROR_CODE_RTOS_SEMAPHORE_EVENT            Rtos Semaphore Error 
-    MBED_ERROR_CODE_RTOS_MEMORY_POOL_EVENT          Rtos Memory Pool Error 
-    MBED_ERROR_CODE_RTOS_TIMER_EVENT                Rtos Timer Error 
-    MBED_ERROR_CODE_RTOS_EVENT_FLAGS_EVENT          Rtos Event flags Error 
-    MBED_ERROR_CODE_RTOS_MESSAGE_QUEUE_EVENT        Rtos Message queue Error 
-    MBED_ERROR_CODE_DEVICE_BUSY                     Device Busy 
-    MBED_ERROR_CODE_CONFIG_UNSUPPORTED              Configuration not supported 
-    MBED_ERROR_CODE_CONFIG_MISMATCH                 Configuration mismatch 
-    MBED_ERROR_CODE_ALREADY_INITIALIZED             Already initialized 
-    MBED_ERROR_CODE_HARDFAULT_EXCEPTION             HardFault exception 
-    MBED_ERROR_CODE_MEMMANAGE_EXCEPTION             MemManage exception 
-    MBED_ERROR_CODE_BUSFAULT_EXCEPTION              BusFault exception 
+    MBED_ERROR_CODE_INVALID_SIZE                    Inavlid Size
+    MBED_ERROR_CODE_INVALID_OPERATION               Invalid Operation
+    MBED_ERROR_CODE_NOT_FOUND                       Not Found
+    MBED_ERROR_CODE_ACCESS_DENIED                   Access Denied
+    MBED_ERROR_CODE_NOT_SUPPORTED                   Not supported
+    MBED_ERROR_CODE_BUFFER_FULL                     Buffer Full
+    MBED_ERROR_CODE_MEDIA_FULL                      Media/Disk Full
+    MBED_ERROR_CODE_ALREADY_IN_USE                  Already in use
+    MBED_ERROR_CODE_TIMEOUT                         Timeout error
+    MBED_ERROR_CODE_NOT_READY                       Not Ready
+    MBED_ERROR_CODE_FAILED_OPERATION                Requested Operation failed
+    MBED_ERROR_CODE_OPERATION_PROHIBITED            Operation prohibited
+    MBED_ERROR_CODE_OPERATION_ABORTED               Operation failed
+    MBED_ERROR_CODE_WRITE_PROTECTED                 Attempt to write to write-protected resource
+    MBED_ERROR_CODE_NO_RESPONSE                     No response
+    MBED_ERROR_CODE_SEMAPHORE_LOCK_FAILED           Semaphore lock failed
+    MBED_ERROR_CODE_MUTEX_LOCK_FAILED               Mutex lock failed
+    MBED_ERROR_CODE_SEMAPHORE_UNLOCK_FAILED         Semaphore unlock failed
+    MBED_ERROR_CODE_MUTEX_UNLOCK_FAILED             Mutex unlock failed
+    MBED_ERROR_CODE_CRC_ERROR                       CRC error or mismatch
+    MBED_ERROR_CODE_OPEN_FAILED                     Open failed
+    MBED_ERROR_CODE_CLOSE_FAILED                    Close failed
+    MBED_ERROR_CODE_READ_FAILED                     Read failed
+    MBED_ERROR_CODE_WRITE_FAILED                    Write failed
+    MBED_ERROR_CODE_INITIALIZATION_FAILED           Initialization failed
+    MBED_ERROR_CODE_BOOT_FAILURE                    Boot failure
+    MBED_ERROR_CODE_OUT_OF_MEMORY                   Out of memory
+    MBED_ERROR_CODE_OUT_OF_RESOURCES                Out of resources
+    MBED_ERROR_CODE_ALLOC_FAILED                    Alloc failed
+    MBED_ERROR_CODE_FREE_FAILED                     Free failed
+    MBED_ERROR_CODE_OVERFLOW                        Overflow error
+    MBED_ERROR_CODE_UNDERFLOW                       Underflow error
+    MBED_ERROR_CODE_STACK_OVERFLOW                  Stack overflow error
+    MBED_ERROR_CODE_ISR_QUEUE_OVERFLOW              ISR queue overflow
+    MBED_ERROR_CODE_TIMER_QUEUE_OVERFLOW            Timer Queue overflow
+    MBED_ERROR_CODE_CLIB_SPACE_UNAVAILABLE          Standard library error - Space unavailable
+    MBED_ERROR_CODE_CLIB_EXCEPTION                  Standard library error - Exception
+    MBED_ERROR_CODE_CLIB_MUTEX_INIT_FAILURE         Standard library error - Mutex Init failure
+    MBED_ERROR_CODE_CREATE_FAILED                   Create failed
+    MBED_ERROR_CODE_DELETE_FAILED                   Delete failed
+    MBED_ERROR_CODE_THREAD_CREATE_FAILED            Thread Create failed
+    MBED_ERROR_CODE_THREAD_DELETE_FAILED            Thread Delete failed
+    MBED_ERROR_CODE_PROHIBITED_IN_ISR_CONTEXT       Operation Prohibited in ISR context
+    MBED_ERROR_CODE_PINMAP_INVALID                  Pinmap Invalid
+    MBED_ERROR_CODE_RTOS_EVENT                      Unknown Rtos Error
+    MBED_ERROR_CODE_RTOS_THREAD_EVENT               Rtos Thread Error
+    MBED_ERROR_CODE_RTOS_MUTEX_EVENT                Rtos Mutex Error
+    MBED_ERROR_CODE_RTOS_SEMAPHORE_EVENT            Rtos Semaphore Error
+    MBED_ERROR_CODE_RTOS_MEMORY_POOL_EVENT          Rtos Memory Pool Error
+    MBED_ERROR_CODE_RTOS_TIMER_EVENT                Rtos Timer Error
+    MBED_ERROR_CODE_RTOS_EVENT_FLAGS_EVENT          Rtos Event flags Error
+    MBED_ERROR_CODE_RTOS_MESSAGE_QUEUE_EVENT        Rtos Message queue Error
+    MBED_ERROR_CODE_DEVICE_BUSY                     Device Busy
+    MBED_ERROR_CODE_CONFIG_UNSUPPORTED              Configuration not supported
+    MBED_ERROR_CODE_CONFIG_MISMATCH                 Configuration mismatch
+    MBED_ERROR_CODE_ALREADY_INITIALIZED             Already initialized
+    MBED_ERROR_CODE_HARDFAULT_EXCEPTION             HardFault exception
+    MBED_ERROR_CODE_MEMMANAGE_EXCEPTION             MemManage exception
+    MBED_ERROR_CODE_BUSFAULT_EXCEPTION              BusFault exception
     MBED_ERROR_CODE_USAGEFAULT_EXCEPTION            UsageFault exception
     MBED_ERROR_CODE_BLE_NO_FRAME_INITIALIZED        BLE No frame initialized
     MBED_ERROR_CODE_BLE_BACKEND_CREATION_FAILED     BLE Backend creation failed
     MBED_ERROR_CODE_BLE_BACKEND_NOT_INITIALIZED     BLE Backend not initialized
-    
+
 Note that the system defined error codes can potentially expand in the future as new error scenarios are identified and incorporated into the Mbed OS error handling system.
 
 For each of the above mentioned error codes, a corresponding system error status value with module information set to `MBED_MODULE_UNKNOWN` has been predefined for convenience and implementations to report errors when the module information is unknown (for example, from exceptions handlers where the module is unknown).
@@ -387,5 +387,5 @@ See the below Doxygen file for additional information regarding error code defin
 
 ### Related content
 
-- Debug and develop [build profiles](/docs/development/tools/build-profiles.html).
+- Debug and develop [build profiles](../tools/build-profiles.html).
 - Mbed OS [error decoder](https://mbed.com/s/error).

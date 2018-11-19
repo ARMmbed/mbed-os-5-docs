@@ -20,4 +20,4 @@ Unless specifically configured by the user, NVStore selects the last two flash s
 
 ### Related content
 
-- [Storage configuration](/docs/development/reference/configuration-storage.html).
+- [Storage configuration](../reference/configuration-storage.html).

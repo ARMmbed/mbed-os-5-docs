@@ -1,7 +1,7 @@
 ## NFC
 
 Near-Field Communication (NFC) is a short-range radio technology. Mbed OS supports NFC card emulation through a controller or NFC EEPROM:
- 
+
  - [NFCController](nfccontroller.html) API reference.
  - [NFCEEPROM](nfc-eeprom.html) API reference.
 
@@ -17,4 +17,4 @@ Mbed OS provides this API to construct and parse NDEF messages:
 
 #### Related content
 
-- [NFC architecture](/docs/development/reference/nfc-technology.html).
+- [NFC architecture](../reference/nfc-technology.html).

@@ -2,18 +2,18 @@
 
 <span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) networking stack.
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](../reference/mesh-tech.html#nanostack) networking stack.
 
 Mbed OS provides two types of IPv6 based mesh networks:
 
 - 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 - Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [6LoWPAN mesh technology](/docs/development/reference/mesh-tech.html) section. Application developers use Nanostack through the Mbed Mesh API.
+Nanostack is the networking stack that provides both of these protocols. For more information on the stack internals, please refer to the [6LoWPAN mesh technology](../reference/mesh-tech.html) section. Application developers use Nanostack through the Mbed Mesh API.
 
 The application can use the `LoWPANNDInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer.
 
-You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](/docs/development/reference/configuration-mesh.html) section documents.
+You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](../reference/configuration-mesh.html) section documents.
 
 ### Usage
 
@@ -47,5 +47,5 @@ The application below demonstrates a simple light control application, where dev
 
 ### Related content
 
-- [Nanostack](/docs/development/reference/mesh-tech.html#nanostack) technology reference material.
-- [6LoWPAN and Thread Mesh configuration documentation](/docs/development/reference/configuration-mesh.html).
+- [Nanostack](../reference/mesh-tech.html#nanostack) technology reference material.
+- [6LoWPAN and Thread Mesh configuration documentation](../reference/configuration-mesh.html).

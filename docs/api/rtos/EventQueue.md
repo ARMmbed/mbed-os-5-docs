@@ -59,4 +59,4 @@ To do this, set the `mbed_app.json` configuration option `events.shared-dispatch
 
 ### Related content
 
-- [EventQueue tutorial](/docs/development/tutorials/the-eventqueue-api.html).
+- [EventQueue tutorial](../tutorials/the-eventqueue-api.html).

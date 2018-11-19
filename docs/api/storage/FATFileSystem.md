@@ -30,7 +30,7 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 You can swap the FAT file system in place with other Mbed OS file systems, which is a good method for prototyping applications.
 
-To configure this class, please see the [FileSystem configuration documentation](/docs/development/reference/configuration-storage.html#filesystem-default-configuration).
+To configure this class, please see the [FileSystem configuration documentation](../reference/configuration-storage.html#filesystem-default-configuration).
 
 ### FATFileSystem class reference
 
@@ -42,6 +42,6 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ### Related content
 
-- [Storage configuration](/docs/development/reference/configuration-storage.html).
+- [Storage configuration](../reference/configuration-storage.html).
 - [LittleFileSystem](littlefilesystem.html).
 - [Storage overview](storage.html#declaring-a-file-system).

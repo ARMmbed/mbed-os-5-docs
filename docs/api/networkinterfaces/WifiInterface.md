@@ -64,4 +64,4 @@ The ESP8266Interface uses AT commands over serial interface to connect to an ext
 
 - [Wi-Fi components](https://os.mbed.com/components/cat/wifi/).
 - [Network socket](network-socket.html) API overview.
-- [Wi-Fi architecture](/docs/development/reference/wlan-technology.html).
+- [Wi-Fi architecture](../reference/wlan-technology.html).

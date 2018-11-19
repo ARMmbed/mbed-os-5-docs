@@ -62,4 +62,4 @@ Here is an example of an HTTP client program. The program brings up Ethernet as 
 ### Related content
 
 - [Network socket](network-socket.html) API reference overview.
-- [Ethernet architecture](/docs/development/reference/ethernet-technology.html).
+- [Ethernet architecture](../reference/ethernet-technology.html).

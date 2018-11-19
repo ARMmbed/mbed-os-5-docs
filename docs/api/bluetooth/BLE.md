@@ -20,7 +20,7 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Inside_API.png)</span>
 
-`BLE_API` offers building blocks to help construct applications. These fall into two broad categories: 
+`BLE_API` offers building blocks to help construct applications. These fall into two broad categories:
 
 1. Interfaces under **`ble/`** to express BLE constructs, such as GAP, GATT, services and characteristics.
 
@@ -69,5 +69,5 @@ Here is an example demonstrating how to build a heart rate sensor that can be co
 ### Related content
 
 - Mbed Enabled [targets and components](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) that support BLE.
-- [BLE tutorial](/docs/development/tutorials/ble-tutorial.html).
+- [BLE tutorial](../tutorials/ble-tutorial.html).
 - [Office Hours video about BLE](https://www.youtube.com/watch?v=j5RJ6UfkylA).

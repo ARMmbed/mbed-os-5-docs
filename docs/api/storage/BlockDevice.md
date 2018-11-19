@@ -2,13 +2,13 @@
 
 <span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
-The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](/docs/development/porting/porting-storage.html#contributing-filesystem) or write to it directly.
+The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](../porting/porting-storage.html#contributing-filesystem) or write to it directly.
 
 The most common types of block-based storage are different forms of flash, but the BlockDevice API can support many different forms of storage, such as SD cards, spinning disks, heap backed storage and so on.
 
 #### Block device operations
 
-A block device can perform three operations: 
+A block device can perform three operations:
 
 - Read a region of data from storage.
 - Erase a region of data in storage.
@@ -34,7 +34,7 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-For details regarding how to configure the default block device please refer to the [storage configuration guide](/docs/development/reference/configuration-storage.html)
+For details regarding how to configure the default block device please refer to the [storage configuration guide](../reference/configuration-storage.html)
 
 ### BlockDevice class reference
 
@@ -173,4 +173,4 @@ int main() {
 
 ### Related content
 
-- [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).

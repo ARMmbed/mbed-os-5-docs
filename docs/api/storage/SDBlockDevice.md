@@ -4,7 +4,7 @@
 
 You can use the Mbed OS SD card block device, so applications can read and write data to flash storage cards using the standard POSIX File API programming interface. Applications use the FAT filesystem and SD block device components to persistently store data on SDCards. The SD block device uses the SD card SPI-mode of operation, which is a subset of possible SD card functionality.
 
-To configure this class, please see our [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
 
 ### Mbed OS file system software component stack
 
@@ -124,4 +124,4 @@ int main()
 
 ### Related content
 
-- [BlockDevice configuration](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration](../reference/configuration-storage.html#blockdevice-default-configuration).

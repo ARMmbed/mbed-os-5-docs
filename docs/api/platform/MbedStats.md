@@ -49,5 +49,5 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ### Related content
 
-- [Platform configuration documentation](/docs/development/apis/mbed-statistics.html).
-- [Optimization tutorial](/docs/development/tutorials/optimizing.html).
+- [Platform configuration documentation](../apis/mbed-statistics.html).
+- [Optimization tutorial](../tutorials/optimizing.html).

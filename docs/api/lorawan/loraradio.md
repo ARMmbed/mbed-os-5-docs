@@ -4,7 +4,7 @@
 
 An implementation of this class is passed to the Arm Mbed LoRaWAN stack. Please see existing [Mbed OS supported drivers](https://github.com/ARMmbed/mbed-semtech-lora-rf-drivers) for more information.
 
-To configure this class, please see the [LoRa configuration documentation](/docs/development/reference/lorawan-configuration.html).
+To configure this class, please see the [LoRa configuration documentation](../reference/lorawan-configuration.html).
 
 ### LoRaRadio class reference
 
@@ -16,5 +16,5 @@ To configure this class, please see the [LoRa configuration documentation](/docs
 
 ### Related content
 
-- [LoRa architecture](/docs/development/reference/lora-tech.html).
-- [LoRa configuration documentation](/docs/development/reference/lorawan-configuration.html).
+- [LoRa architecture](../reference/lora-tech.html).
+- [LoRa configuration documentation](../reference/lorawan-configuration.html).

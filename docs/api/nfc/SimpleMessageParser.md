@@ -83,4 +83,4 @@ An application can extend capabilities of `SimpleMessageParser` by adding new re
 
 - [MessageParser](messageparser.html) API reference.
 - [MessageBuilder](messagebuilder.html) API reference.
-- [NFC architecture](/docs/development/reference/nfc-technology.html).
+- [NFC architecture](../reference/nfc-technology.html).

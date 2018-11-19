@@ -17,4 +17,4 @@ When you call wait, your board's CPU will sleep in the RTOS for the whole number
 ### Related content
 
 - [RTOS](rtos.html) overview.
-- [Application flow control tutorial](/docs/development/tutorials/application-flow-control.html).
+- [Application flow control tutorial](../tutorials/application-flow-control.html).
