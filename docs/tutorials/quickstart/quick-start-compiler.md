@@ -12,7 +12,7 @@ Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mb
 - Double click on the `MBED.HTML` file. (This adds your Mbed platform to the Online Compiler.)
 
 If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.com/platforms), select a board and click **Add to your Mbed Compiler**.
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler2.png)
 </span>
 
 ### Code
@@ -31,7 +31,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 Click **Compile**. Your browser downloads the program as an executable file.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button2.png)
 </span>
 
 #### Program
