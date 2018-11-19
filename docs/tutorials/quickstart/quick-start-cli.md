@@ -1,6 +1,5 @@
-<h2 id="quick-start-offline">Offline - Arm Mbed CLI</h2>
 
-### Setup
+## Setup
 
 The setup process for Arm Mbed CLI depends on your operating system. Please choose your host operating system. The setup instructions for each operating system walk you through how to install Mbed CLI locally.
 
