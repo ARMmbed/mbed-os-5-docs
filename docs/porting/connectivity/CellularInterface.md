@@ -1,10 +1,10 @@
 ## Cellular module porting
 
-This document provides guidelines how to make a cellular modem adaptation for Mbed OS. Please see [Cellular API usage](/docs/development/apis/cellular-api.html) about how to use cellular modules from an application point of view.
+This document provides guidelines how to make a cellular modem adaptation for Mbed OS. Please see [Cellular API usage](../apis/cellular-api.html) about how to use cellular modules from an application point of view.
 
 ### Adding modem target support
 
-For new targets, you may need to modify [targets.json](/docs/development/tools/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
+For new targets, you may need to modify [targets.json](../tools/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
 
 For example,
 
@@ -107,4 +107,4 @@ To run the tests:
     mbed test -n "mbed-os-features-cellular-tests-*" -m TARGET -t TOOLCHAIN --app-config YOURCONFIG.json
     ```
 
-For more information on the  `mbed-greentea` test suite, please visit [its documentation](/docs/development/tools/greentea-testing-applications.html).
+For more information on the  `mbed-greentea` test suite, please visit [its documentation](../tools/greentea-testing-applications.html).

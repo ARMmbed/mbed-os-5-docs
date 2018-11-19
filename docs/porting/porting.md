@@ -66,14 +66,14 @@ Please install the following:
 
 - [Python 2.7](https://www.python.org/downloads/release/python-2715/).
 - [Git](https://git-scm.com/downloads).
-- [Mbed CLI](/docs/development/tools/installation-and-setup.html).
+- [Mbed CLI](../tools/installation-and-setup.html).
 - (Optional) [FTDI serial driver](http://www.ftdichip.com/Drivers/VCP.htm).
 - Toolchains:
    - [GNU Arm Embedded Toolchain (GCC)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
    - [IAR](https://www.iar.com/iar-embedded-workbench/).
    - [Arm Compiler 5 or 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5).
 
-<span class="notes">The [tools documentation](https://os.mbed.com/docs/latest/tools/index.html) contains the exact tool versions supported in a specific Mbed OS release.</span><!--well... no, that's the support for the latest version of Mbed OS, not each version-->
+<span class="notes">The [tools documentation](../tools/index.html) contains the exact tool versions supported in a specific Mbed OS release.</span><!--well... no, that's the support for the latest version of Mbed OS, not each version-->
 
 Please fork or branch the following repositories:
 
@@ -256,7 +256,7 @@ Modify the Blinky program you checked out earlier. <!--to do what?-->You can see
 
 ### Bootstrap and entry point
 
-[Bootstrap porting instructions](https://os.mbed.com/docs/latest/reference/bootstrap.html).
+[Bootstrap porting instructions](../reference/bootstrap.html).
 
 Mbed OS uses CMSIS Pack. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:<!--how is this related to the topic? And do I do it before or after bootstrap?-->
 
@@ -293,7 +293,7 @@ mbed compile --target <target_name> --toolchain IAR
 
 ### Low power ticker
 
-[Low power ticker porting instructions](https://os.mbed.com/docs/latest/porting/low-power-ticker.html).
+[Low power ticker porting instructions](../porting/low-power-ticker.html).
 
 <!--so is porting this module mandatory, or is it conditional - depending on what my hardware has?-->
 
@@ -306,25 +306,25 @@ The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/la
 
 ### Serial Port (synchronous transfer)
 
-[Serial port porting instructions](https://os.mbed.com/docs/latest/porting/serial-port.html).
+[Serial port porting instructions](../porting/serial-port.html).
 
 Serial port porting can be done in two stages: synchronous UART and asynchronous UART. We recommend porting synchronous UART as early as possible, because the HAL Greentea tests require it, and because `printf()` is a powerful debugging tool.
 
 ### Microsecond Ticker
 
-[Microsecond ticker porting instructions](https://os.mbed.com/docs/latest/porting/microsecond-ticker.html).
+[Microsecond ticker porting instructions](../porting/microsecond-ticker.html).
 
-When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with Blinky, which invokes both millisecond and microsecond tickers in its `wait (n second)` blinking behaviour.
+When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with Blinky, which invokes both millisecond and microsecond tickers in its `wait (n second)` blinking behavior.
 
 ### GPIO (write and read) and IRQ
 
-[GPIO porting instructions](https://os.mbed.com/docs/latest/porting/gpio.html).
+[GPIO porting instructions](../porting/gpio.html).
 
-The vanilla Blinky program uses GPIO, which is a great tool for debuging with an oscilloscope or logic analyzer. It's a good idea to port GPIO before any other peripherals.
+The vanilla Blinky program uses GPIO, which is a great tool for debugging with an oscilloscope or logic analyzer. It's a good idea to port GPIO before any other peripherals.
 
 ### RTC
 
-[RTC porting instructions](https://os.mbed.com/docs/latest/porting/rtc-port.html).
+[RTC porting instructions](../porting/rtc-port.html).
 
 RTC is a dependent of SPI (master) tests.<!--did you mean "dependency"?-->
 
@@ -336,20 +336,20 @@ SPI (master) is used to communicate with storage devices that have an SPI interf
 
 ### TRNG
 
-[True random number generator entropy source (TRNG) porting instructions](https://os.mbed.com/docs/latest/porting/entropy-sources.html).
+[True random number generator entropy source (TRNG) porting instructions](../porting/entropy-sources.html).
 
 If the hardware supports TRNG, you must port it before running Device Management Client, because the client uses TLS, which in turn uses entropy.
 
 ### Connectivity
 
-[Porting instructions for all connectivity options](https://os.mbed.com/docs/latest/porting/porting-connectivity.html).
+[Porting instructions for all connectivity options](../porting/porting-connectivity.html).
 
 When you finish porting WiFi, run [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
 <!--Do we have any other examples, for the other connectivity methods?-->
 
 ### Flash
 
-[Flash porting instructions](https://os.mbed.com/docs/latest/porting/flash.html).
+[Flash porting instructions](../porting/flash.html).
 
 Flash is required by Device Management Client.
 
@@ -357,7 +357,7 @@ There are two ways to implement flash API: using CMSIS flash algorithms or C sou
 
 ### Bootloader
 
-[Bootloader porting instructions](https://os.mbed.com/docs/latest/porting/bootloader.html).
+[Bootloader porting instructions](../porting/bootloader.html).
 
 The bootloader is a separate application, which needs to be created and integrated into Device Management Client.<!--this is a stub - it's only understandable if you already know everything about bootloader. Needs more info here.-->
 
@@ -370,7 +370,7 @@ Once the above components are ported, you should be ready to demo the Connect an
 
 You are now ready to port any other HAL components that your use case and MCU require. These components are covered in the rest of this document.
 
-<!--Amanda, should we organise the modules so that they fit the porting order?-->
+<!--Amanda, should we organize the modules so that they fit the porting order?-->
 
 ## Testing ported code
 

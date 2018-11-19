@@ -149,7 +149,7 @@ When your hardware accelerator driver requires initialization, do the following 
 
 Note that functions in Mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
-For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](/docs/development/apis/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
+For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](../apis/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
 #### Power management
 

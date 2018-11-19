@@ -61,7 +61,7 @@ Bootloader-ready declaration of flash VTOR address:
 
 ### `targets.json` metadata
 
-The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as [Adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html) describes.
+The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as [Adding and configuring targets](../tools/adding-and-configuring-targets.html) describes.
 
 ### Start application
 
@@ -75,7 +75,7 @@ There are two options to implement flash HAL:
 
 #### Option 1: CMSIS flash algorithm routines
 
-These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in `mbed-os` to generate flash blobs. Check the flash blobs into the target's HAL. Arm provies an [example](https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae) of how to do this.
+These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in `mbed-os` to generate flash blobs. Check the flash blobs into the target's HAL. Arm provides an [example](https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae) of how to do this.
 
 To enable a CMSIS flash algorithm common layer, a target should define `FLASH_CMSIS_ALGO`. This macro enables the wrapper between CMSIS flash algorithm functions from the flash blobs and flash HAL.
 
