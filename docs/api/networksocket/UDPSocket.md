@@ -4,7 +4,7 @@
 
 The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](/docs/development/apis/tcpsocket.html) when you require guaranteed delivery.
 
-The constructor takes no parameters. To initialize the socket on a specified NetworkInterface you must call `open` method, which takes a NetworkStack pointer.
+The constructor takes no parameters. To initialize the socket on a specified NetworkInterface, you must call `open` method, which takes a NetworkStack pointer.
 
 UDP is a connectionless protocol. This allows you to send and receive packets to and from any remote addresses. Therefore, `Socket::listen()` and `Socket::accept()` functions are not implemented on UDPSocket.
 
