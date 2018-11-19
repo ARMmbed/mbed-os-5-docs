@@ -52,7 +52,7 @@ The Windows installer for Mbed CLI includes the following components:
     - [Git](https://git-scm.com/).
     - [Mercurial](https://www.mercurial-scm.org/).
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- **Mbed Windows serial port driver** - [serial port driver](/docs/development/tutorials/windows-serial-driver.html).
+- **Mbed Windows serial port driver** - [serial port driver](../tutorials/windows-serial-driver.html).
 
 ### Optional: silent install
 

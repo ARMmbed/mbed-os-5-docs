@@ -106,7 +106,7 @@ $ mbed compile -t ARM -m LPC1768 --source project1 --source mbed-os --build BUIL
 $ mbed compile -t ARM -m K64F --source project2 --source mbed-os --build BUILD/project2  
 ```
 
-Find more details on the `--source` switch in the [build rules documentation](/docs/development/tools/mbed-os-build-rules.html).
+Find more details on the `--source` switch in the [build rules documentation](../tools/mbed-os-build-rules.html).
 
 ### Updating to an upstream version
 
