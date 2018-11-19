@@ -1,6 +1,6 @@
 ## Bootloader configuration
 
-This page describes each bootloader configuration parameter in detail. For a guide on using the managed and unmanaged bootloader modes, please see [the bootloader tutorial](/docs/development/tutorials/bootloader.html).
+This page describes each bootloader configuration parameter in detail. For a guide on using the managed and unmanaged bootloader modes, please see [the bootloader tutorial](../tutorials/bootloader.html).
 
 There are 4 configuration parameters that affect the location of an application in ROM:
 
@@ -11,18 +11,18 @@ There are 4 configuration parameters that affect the location of an application 
 - `target.header_format`
 - `target.header_offset`
 - `target.app_offset`
- 
+
 All of these parameters are valid in `targets.json`, `mbed_lib.json` and `mbed_app.json`. You may define them for individual targets and the wildcard target, `*`. A parameter in `mbed_lib.json` overrides a parameter in `targets.json`, and a parameter in `mbed_app.json` overrides one in `mbed_lib.json`.
 
 The presence of any of these parameters defines `APPLICATION_ADDR` and `APPLICATION_SIZE` for C and C++ and `MBED_APP_START` and `MBED_APP_SIZE` for the linker.
- 
+
 ### `target.mbed_app_start`
 
 This parameter defines the start address of your application. You are responsible for the alignment of this address with respect to the flash layout and vector table size of the MCU you are using. When not used in conjunction with `target.mbed_app_size`, the application being built uses the remainder of ROM.
 
 The value of this parameter is available to C and C++ as `APPLICATION_ADDR` and to the linker as `MBED_APP_START`.
 
-This configuration parameter conflicts with `target.bootloader_img` and `target.restrict_size`. 
+This configuration parameter conflicts with `target.bootloader_img` and `target.restrict_size`.
 
 ### `target.mbed_app_size`
 

@@ -5,7 +5,7 @@ Mbed OS integrates the Pelion Device Management firmware update services, so if 
 Update support in Mbed OS relies on two features:
 
 - Mbed OS now includes the bootloader that manages update verification and installation.
-- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
+- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands]../tools/cli-update.html).
 
 ### Updatable binaries
 
@@ -49,11 +49,11 @@ If the Mbed tool finds a manageable bootloader, the image build process automati
 
 If your bootloader does not meet the two requirements of a manageable bootloader, you will need an unmanaged bootloader. The Mbed tools will not automatically combine this bootloader with the application image; you will need to write your own scripts to build your full image.
 
-For more information about [managed and unmanaged bootloaders, and how to create bootloaders, see the tutorial](/docs/v5.10/tutorials/bootloader.html).
+For more information about [managed and unmanaged bootloaders, and how to create bootloaders, see the tutorial](../tutorials/bootloader.html).
 
 #### Porting a bootloader
 
-If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](/docs/v5.10/porting/bootloader.html).
+If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](../porting/bootloader.html).
 
 #### Security
 
@@ -93,4 +93,4 @@ Your development tool needs to use your Device Management account's API key to c
 **Tutorials**:
 
 - Try the firmware [update flow on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update). Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).
-- Review the [Mbed CLI update commands](https://os.mbed.com/docs/v5.10/tools/cli-update.html).
+- Review the [Mbed CLI update commands](../tools/cli-update.html).

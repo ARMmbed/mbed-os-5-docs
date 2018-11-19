@@ -7,13 +7,13 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](/docs/development/tools/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory, and `mbed export` places it in the application root. `mbed compile` runs the Mbed configuration system before invoking the compiler, and `mbed export` runs the configuration system before creating project files.
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../tools/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. `mbed compile` places `mbed_config.h` in the build directory, and `mbed export` places it in the application root. `mbed compile` runs the Mbed configuration system before invoking the compiler, and `mbed export` runs the configuration system before creating project files.
 
 <span class="notes">**Note:** Throughout this document, "library" means any reusable piece of code within its own directory.</span>
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](/docs/development/tools/adding-and-configuring-targets.html).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](../tools/adding-and-configuring-targets.html).</span>
 
-<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](/docs/latest/tools/CLI/build-profiles.html).</span>
+<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](../tools/CLI/build-profiles.html).</span>
 
 ### Examining available configuration parameters
 
@@ -222,7 +222,7 @@ In this JSON file:
 
 All configuration parameters defined in `mylib` have a `mylib.` prefix. In `mbed_app.json`, `buffer_size` is accessible using the name `mylib.buffer_size`.
 
-Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key. 
+Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](../tools/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key.
 
 It is an error for `mbed_lib.json` to override an undefined configuration parameter.
 
@@ -234,7 +234,7 @@ Target configurations contain a set of attributes that you may manipulate with c
 "target.features_add": ["IPV4"]
 ```
 
-It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](/docs/development/tools/adding-and-configuring-targets.html).
+It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](../tools/adding-and-configuring-targets.html).
 
 ### `mbed_app.json` Specification
 

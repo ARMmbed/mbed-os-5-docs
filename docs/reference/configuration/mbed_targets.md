@@ -1,6 +1,6 @@
 ## Adding and configuring targets
 
-Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. If you provide a source directory using the `--source` switch, Mbed looks for `custom_targets.json` in that directory instead. When you add new targets with `custom_targets.json`, they are added to the list of available targets, in addition to the [scanning rules](/docs/development/tools/build-rules.html).
+Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. If you provide a source directory using the `--source` switch, Mbed looks for `custom_targets.json` in that directory instead. When you add new targets with `custom_targets.json`, they are added to the list of available targets, in addition to the [scanning rules](../tools/build-rules.html).
 
 <span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](developing-mbed-cli.html) to take your code offline.</span>
 
@@ -235,7 +235,7 @@ Use this property to pass necessary data for exporting to various third party to
 
 We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/) retrieved from each CMSIS Pack.
 
-The [`"device_name"`](/docs/development/porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+The [`"device_name"`](../porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 204 of the `.pdsc` file:
 

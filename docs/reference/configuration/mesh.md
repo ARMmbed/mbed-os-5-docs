@@ -10,8 +10,8 @@ For understanding the technologies and APIs, please refer to following sections 
 
 - [Network connectivity in Mbed OS](connectivity-stacks.html) technology page.
 - [6LoWPAN Mesh technology](mesh-tech.html) page.
-- [6LoWPAN Mesh class reference](/docs/development/apis/mesh-api.html) user API.
-- [Socket API](/docs/development/apis/network-socket.html).
+- [6LoWPAN Mesh class reference](../apis/mesh-api.html) user API.
+- [Socket API](../apis/network-socket.html).
 
 #### Providing the configuration
 

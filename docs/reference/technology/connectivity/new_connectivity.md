@@ -74,11 +74,11 @@ BLE is optimised for cheap, battery-based devices and has a low memory footprint
 
 Typical applications of BLE are health care, fitness trackers, beacons, smart homes, security, entertainment, proximity sensors, industrial applications and automotives.
 
-To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](/docs/development/apis/ble.html) user API reference.
+To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](../apis/ble.html) user API reference.
 
 ####  IP-based mesh (Thread and Wi-SUN)
 
-As a technology that was designed for deployment, it's not surprising to find that mesh is optimised for a long battery life and low costs.
+As a technology that was designed for deployment, it's not surprising to find that mesh is optimized for a long battery life and low costs.
 
 **Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput - up to 200kb/s - and experience delays.
 
@@ -103,13 +103,13 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html)
 
 #### LoRaWAN
 
-LoRaWAN is optimised for low power consumption and a low memory footprint (allowing low-cost devices). The downside is that it has a very low throughput - no more than 50kb/s - and suffers delays. It is a non-IP based technology.
+LoRaWAN is optimized for low power consumption and a low memory footprint (allowing low-cost devices). The downside is that it has a very low throughput - no more than 50kb/s - and suffers delays. It is a non-IP based technology.
 
 Because of its long range - up to 20km - and low power, it is suitable for low data rate, outdoors solutions.
 
 <!--what's the infrastructure?-->
 
-The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/development/tutorials/LoRa-tutorial.html) describe LoRA networking.
+The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutorial.html) describe LoRA networking.
 
 
 #### NFC
@@ -118,7 +118,7 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](/docs/development/tutoria
 
 Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content and Bluetooth connection initiation/out-of-band pairing.
 
-To learn how to use NFC with Mbed OS, please refer to the [NFC](/docs/development/apis/nfc.html) user API reference.
+To learn how to use NFC with Mbed OS, please refer to the [NFC](../apis/nfc.html) user API reference.
 
 
 #### Memory needs for Pelion-connected devices

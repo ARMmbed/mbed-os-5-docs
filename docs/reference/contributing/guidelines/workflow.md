@@ -1,6 +1,6 @@
 ## Workflow
 
-All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](/docs/development/reference/style.html).
+All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#features) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide and GitHub pull request guidelines](../reference/style.html).
 
 ### Mbed OS maintainers
 
@@ -66,7 +66,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 #### Release versioning
 
-You can find Mbed OS versioning at [How We Release Arm Mbed OS](/docs/development/introduction/release-process.html).
+You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/release-process.html).
 
 ### Pull request categories
 
@@ -245,4 +245,3 @@ Rollup pull requests use the same process as pull requests merging into master, 
 Rollup pull requests are a solution to two types of problem: CI testing duration and semantic conflict problem. Rollup pull requests drastically lower the time to test many pull requests at once. Instead of putting many pull requests through CI, only one goes through testing. This lowers the load on the CI infrastructure and helps close pull requests sooner. The second, more subtle, problem that rollup pull requests solve is the case in which two pull requests pass testing on their own, but as soon as they join together, the way they interact with each other causes tests to fail. For more details, please see [this example](https://bors.tech/essay/2017/02/02/pitch).
 
 A special case occurs when a bundled pull request is updated while its rollup pull request undergoes testing. When a pull request is bundled into a rollup pull request, its commits become a part of the rollup pull request at the time that the rollup pull request source branch is created. If you update the bundled pull requests, its commit history is no longer exactly mirrored in the rollup pull request. If this situation arises, the bundled pull request that was updated _is not_ automatically marked as merged because all changes of the updated bundled pull request were not present in the merged rollup pull request. Maintainers treat the updated, previously bundled pull request as if it were on its own all along.
-

@@ -55,10 +55,11 @@ The mesh minimal uses socket communication and multicasting. See more details in
 #### What if my ISP does not provide IPv6 service? Why do I need IPv6 internet service? Can I use a tunneling service?
 
 Thread is based on the IPv6 protocol. If the communication must go over IPV4 network, there are two solutions available:
+
 - NAT64.
 - IPv6 tunneling.
 
-#### What happens if a packet cannot reach its destination (for example, no internet connection to border router)? What is the responce back to the device?
+#### What happens if a packet cannot reach its destination (for example, no internet connection to border router)? What is the response back to the device?
 
 There are no special Thread codes available, you will have the normal internet error codes. An application must handle the temporary network connection problems with proper retry logic.
 
@@ -74,16 +75,16 @@ IPv6 multicast messages are supported. link-local and realm-local (mesh-local) m
 
 - Usually, global addresses are used to communicate with the remote services. When a device has the destination address, the network stack selects the proper source address and route to that destination.
 - An application developer may implement a protocol (using multicast) for querying the link-local or mesh-local addresses from other devices in the Thread network. Link-local addresses work only over one radio hop. Mesh-local addresses work over multiple hops in the Thread network.
-- The mbed OS mesh API provides functions to query the device's own addresses (link-local or global).
+- The Mbed OS mesh API provides functions to query the device's own addresses (link-local or global).
 
 #### What are the configurable parameters in the Thread devices? What do they mean and where are they documented?
 
-- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [Mbed Mesh API](/docs/development/apis/mesh-api.html).
+- The Thread configurable parameters are the Active Operational Dataset parameters. The parameter explanations can be found in the [Mbed Mesh API](../apis/mesh-api.html).
 More information can be found in the Thread specification.
 - The Thread device configuration includes PSKd and EUI64 (usually the MAC address of the radio chip), that are used to commission the device.
 
 #### What are PSKc and PSKd? Where can find these?
 
-- PSKc is the authentication key for the native or external commissioner. This value is generated from the passphrase of the network combined with the network name and XPANID that are received when scanning the networks. The commissioner application asks for this passphrase after scanning and selecting an available Thread network, exactly the same way as in WiFi.
+- PSKc is the authentication key for the native or external commissioner. This value is generated from the passphrase of the network combined with the network name and XPANID that are received when scanning the networks. The commissioner application asks for this passphrase after scanning and selecting an available Thread network, exactly the same way as in Wi-Fi.
 - PSKd is the authentication key used to authenticate a device to the Thread network in combination with EUI64.
-- These values are printed to a sticker on the device or the device packaging in the form of a QR code that is then scanned by the commissioner application. This will allow the device to be commissioned to the Thread network. After the authentication, the Thread configuration is given to the new device.
+- These values are printed to a sticker on the device or the device packaging in the form of a QR code that is then scanned by the commissioner application. This allows the device to be commissioned to the Thread network. After the authentication, the Thread configuration is given to the new device.
