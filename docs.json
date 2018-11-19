@@ -1105,10 +1105,6 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/debug/debug_tutorials.md"
-                    },
-                    {
-                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/debug/debug_fault_exception.md"
                     },
                     {
