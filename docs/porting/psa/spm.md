@@ -63,13 +63,13 @@ Typically, PSA platforms share the same RAM and flash between secure and nonsecu
 ```text
                                  RAM
  +-----------+-------------+--------------------------------------------------+
- |   Secure  |  Shared     |     Non-Secure                                   |
+ |   Secure  |  Shared     |     Nonsecure                                   |
  |    RAM    |   RAM       |        RAM                                       |
  +-----------+-------------+--------------------------------------------------+
 
                                  Flash
  +-----------------------+----------------------------------------------------+
- |   Secure              |     Non-Secure                                     |
+ |   Secure              |     Nonsecure                                     |
  |    Flash              |       Flash                                        |
  +-----------------------+----------------------------------------------------+
 
@@ -85,7 +85,7 @@ Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` 
 
 Typically, shared memory is located adjacent (before or after) to the nonsecure RAM, for saving MPU regions. The shared memory region is nonsecure memory that both cores use.
 
-#### Linker script example for GCC_ARM
+#### Linker script example for GCC_ARM compiler
 
 ```
 ...
@@ -116,7 +116,7 @@ MEMORY
 ...
 ```
 
-#### Linker script example for ARM
+#### Linker script example for ARM compiler
 
 ```
 ...
@@ -157,7 +157,7 @@ LR_IROM1 MBED_ROM_START MBED_ROM_SIZE {
 ...
 ```
 
-#### Linker script example for IAR
+#### Linker script example for IAR compiler
 
 ```
 ...
@@ -256,6 +256,6 @@ Arm provides a list of tests to make sure the HAL functions are implemented acco
 After finalizing the porting, execute the following tests:
 
 - **tests-psa-spm_smoke:** This test will make sure that the porting of the mailbox mechanism (for dual core systems) is successful.
-- **tests-mbed_hal-spm:** This test will make sure the porting of the memory protection (*spm_hal_memory_protection_init()* implementation) makes the correct partitioning between secure RAM/Flash and non-secure RAM/Flash.
+- **tests-mbed_hal-spm:** This test will make sure the porting of the memory protection (*spm_hal_memory_protection_init()* implementation) makes the correct partitioning between secure RAM/Flash and nonsecure RAM/Flash.
 
 We recommended you leave the memory protection part (*spm_hal_memory_protection_init()* implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement *spm_hal_memory_protection_init()*, and run the entire test suite again, including the memory protection related tests.
