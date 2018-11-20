@@ -113,6 +113,9 @@ These tutorials teach you to communicate with your development board, an essenti
 <tr>
 <td><a href="serial-comm.html">Board to PC communication over USB tutorial</a></td>
 </tr>
+<tr>
+<td><a href="serial-comm.html#minimal-printf">Low memory serial printf</a></td>
+</tr>
 </tbody>
 </table>
 
