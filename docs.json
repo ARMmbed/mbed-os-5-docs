@@ -60,13 +60,12 @@
             },
             {
                 "title": "Online",
-                "sub_chatpers": [{
+                "sub_chapters": [{
                         "title": "Importing the code",
                         "sources": [{
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
                         }]
-
                     },
                     {
                         "title": "Exapmle walkthrough",

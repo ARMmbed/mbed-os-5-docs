@@ -1,8 +1,8 @@
 <h2 id="quick-start">Arm Mbed OS quick start</h2>
 
-This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device. The guide leads to a broad range of examples, conceptual tutorials, end-to-end applications and other documentation, to empower you to develop on the Arm Mbed OS platform.
+This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device.
 
-<!--this needs to tell me what the application does-->
+The quick start example blinks the LED on your board on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. Once you have this application working, you can use the documentation the quick start links to - a broad range of examples, conceptual tutorials and end-to-end applications - to add functionality.
 
 <h3 id="choose-environment">Choose your environment</h3>
 

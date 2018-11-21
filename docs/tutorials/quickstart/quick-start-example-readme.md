@@ -1,7 +1,8 @@
 ## Example walkthrough
 
-The quick start example blinks the LED on your platform on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. The snapshot includes:
+The quick start example blinks the LED on your board on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. The snapshot includes:
 
+<!--how does this list map to what's below? Will be better to add it to the tables than to provide it so far away from the content it refers to-->
 - System information:
    - Mbed OS version: Defaults to 999999.
    - [Compiler ID](#compiler-id).
