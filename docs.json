@@ -113,6 +113,14 @@
                         "sources": []
                     }
                 ]
+            },
+            {
+                "title": "Further reading",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/further_reading.md"
+                },
+                "sources": []
             }
         ]
     },
