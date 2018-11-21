@@ -1,7 +1,5 @@
 ## Further reading
 
-More examples:
-
 - [Mbed OS tutorials and examples](../tutorials/index.html): list of Mbed OS 5 example repositories.
 
 - Documentation:
