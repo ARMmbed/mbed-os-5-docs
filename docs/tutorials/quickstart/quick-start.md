@@ -4,8 +4,6 @@ This quick start covers selecting your target in the Arm Online Compiler and cre
 
 The quick start example blinks the LED on your board on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. Once you have this application working, you can use the documentation the quick start links to - a broad range of examples, conceptual tutorials and end-to-end applications - to add functionality.
 
-<h3 id="choose-environment">Choose your environment</h3>
-
 You can choose to develop **online** or **offline**:
 
 - For online development, we provide the Arm Mbed Online Compiler. This is a great choice if you want to get started working with Mbed OS quickly.
