@@ -79,19 +79,13 @@
                 "sub_chapters": [{
                         "title": "Setting up",
                         "sources": [{
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/CLI/cli-setup/cli-setup.md"
-                            },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
-                            }
-                        ]
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli.md"
+                        }]
                     },
                     {
                         "title": "Example application",
-                        "sources": [
-                            {
+                        "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli-ex-intro.md"
                             },
@@ -638,12 +632,12 @@
         ]
     },
     {
-        "title": "Architecture",
-        "description": "Deep dives into the Mbed OS architecture",
-        "slug": "architecture",
+        "title": "Reference",
+        "description": "The reference manual for Mbed OS: architecture, configuration and contribution details",
+        "slug": "reference",
         "type": "markdown",
         "chapters": [{
-                "title": "Mbed OS architecture",
+                "title": "Overview",
                 "intro": {
                     "type": "markdown",
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/reference.md"
@@ -651,153 +645,161 @@
                 "sources": []
             },
             {
-                "title": "Connectivity stacks",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/connectivity.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/networking.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/ethernet.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/wifi.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/cellular.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_intro.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_hw.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_commissioning.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_faq.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/02_N_arch.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/04_N_networking.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/lora-tech.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/NFC.md"
-                    }
-                ]
-            },
-            {
-                "title": "Technologies",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/non-stack.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/firmware_update.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Bootstrap.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Memory.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/static_memory_optimization.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Execution.md"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "title": "Project structures and configuration",
-        "description": "",
-        "slug": "config",
-        "type": "markdown",
-        "chapters": [{
-                "title": "Project structure",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
-                    }
-                ]
-            },
-            {
-                "title": "Configuration",
+                "title": "Architecture",
                 "intro": {
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/configuration.md"
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/technology.md"
                 },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/mbed_targets.md"
+                "sub_chapters": [{
+                        "title": "Connectivity stacks",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/connectivity.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/networking.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/ethernet.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/wifi.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/cellular.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_intro.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_intro.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/quick_start_hw.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_commissioning.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/thread_faq.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/02_N_arch.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/mesh/04_N_networking.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/lora-tech.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/NFC.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Platform.md"
+                        "title": "Technologies",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/non-stack.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/firmware_update.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Bootstrap.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Memory.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/static_memory_optimization.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Execution.md"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Project structures and configuration",
+                "description": "",
+                "slug": "config",
+                "type": "markdown",
+                "sub_chapters": [{
+                        "title": "Project structure",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/project-structure.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/build_rules.md"
+                            }
+                        ]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Drivers.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/RTOS.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Connectivity.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/mesh.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/lorawanconfig.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Storage.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/bootloader.md"
+                        "title": "Configuration",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/configuration.md"
+                        },
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/mbed_targets.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Platform.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Drivers.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/RTOS.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Connectivity.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/mesh.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/lorawanconfig.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/Storage.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/configuration/bootloader.md"
+                            }
+                        ]
                     }
                 ]
             },
