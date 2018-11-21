@@ -1,6 +1,6 @@
 ### Example walkthrough
 
-The quick start example blinks the LED on your platform on and off. The main thread additionally takes a snapshot of the device's runtime statistics and display them through serial to your PC. The snapshot includes:
+The quick start example blinks the LED on your platform on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. The snapshot includes:
 
 - System information:
    - Mbed OS version: Defaults to 999999.
@@ -110,4 +110,3 @@ If you have problems, you can review the [documentation](../tutorials/debugging.
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
 - [Mbed OS configuration](../reference/configuration.html).
 - [Mbed OS serial communication](../tutorials/serial-communication.html).
-

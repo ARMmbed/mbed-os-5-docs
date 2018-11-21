@@ -1,16 +1,14 @@
 <h2 id="quick-start">Arm Mbed OS quick start</h2>
 
-Learn how to leverage the Arm Mbed ecosystem to create IoT applications on hundreds of Arm platforms. This quick start covers development workflows from selecting your target in the Arm Online Compiler to creating your first application. It also teaches you how to flash your target and how to interact with your device. This guide concludes with a broad range of examples, conceptual tutorials, end-to-end applications and links to the documentation to empower you to develop on the Arm Mbed OS platform.
+This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device. The guide leads to a broad range of examples, conceptual tutorials, end-to-end applications and other documentation, to empower you to develop on the Arm Mbed OS platform.
 
 <h3 id="choose-environment">Choose your environment</h3>
 
-In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Online** and **Offline**.
+You can choose to develop **online** or **offline**:
 
 - For online development, we provide the Arm Mbed Online Compiler. This is a great choice if you want to get started working with Mbed OS quickly.
 
-- For offline development, we provide Arm Mbed CLI, our tool for using Mbed CLI on the command-line. Mbed CLI is compatible with Windows, Linux and macOS. This option provides more configuration options but also requires slightly more setup.
-
-Common to any choice is the ability to import and publish code to Git and Mercurial repositories, export your programs to third-party IDEs (Keil UVision, IAR, GCC and so on) for debugging and build new projects.
+- For offline development, we provide Arm Mbed CLI, our command-line tool. Mbed CLI is compatible with Windows, Linux and macOS. Mbed CLI provides more options, but requires slightly more setup.
 
 #### Please choose how to proceed
 
