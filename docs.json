@@ -59,7 +59,7 @@
                 "sources": []
             },
             {
-                "title": "Online",
+                "title": "Online with the Online Compiler",
                 "sub_chapters": [{
                         "title": "Importing the code",
                         "intro": {
@@ -87,7 +87,7 @@
                 ]
             },
             {
-                "title": "Offline",
+                "title": "Offline with Mbed CLI",
                 "sub_chapters": [{
                         "title": "Setting up",
                         "intro": {
