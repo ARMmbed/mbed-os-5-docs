@@ -1,4 +1,4 @@
-### Example walkthrough
+## Example walkthrough
 
 The quick start example blinks the LED on your platform on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. The snapshot includes:
 
@@ -21,7 +21,7 @@ The quick start example blinks the LED on your platform on and off. The main thr
       - Thread stack size.
       - Thread stack space.
 
-#### Compiler ID
+### Compiler ID
 
 | Compiler | Version tag |
 | -------- | ----------- |
@@ -29,7 +29,7 @@ The quick start example blinks the LED on your platform on and off. The main thr
 | GCC_ARM  | 2           |
 | IAR      | 3           |
 
-#### Compiler version
+### Compiler version
 
 | Compiler | Version layout |
 | -------- | -------------- |
@@ -37,7 +37,7 @@ The quick start example blinks the LED on your platform on and off. The main thr
 | GCC      | VVRRPP  (VV = Version; RR = Revision; PP = Patch)    |
 | IAR      | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
 
-#### CPUID register information
+### CPUID register information
 
 | Bit Field | Field Description | Values |
 | --------- | ----------------- | ------ |
@@ -56,7 +56,7 @@ The quick start example blinks the LED on your platform on and off. The main thr
 
 You can view individual examples and additional API information of the statistics collection tools at the bottom of the page in the [related links section](#related-links).
 
-#### Output
+### Viewing the output
 
 To view the serial output, you can use any terminal client, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
 
@@ -101,11 +101,11 @@ Stack Space: 664
 
 ```
 
-#### Troubleshooting
+### Troubleshooting
 
 If you have problems, you can review the [documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
 
-#### Related links
+### Related links
 
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
 - [Mbed OS configuration](../reference/configuration.html).

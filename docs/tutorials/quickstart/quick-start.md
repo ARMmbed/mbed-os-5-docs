@@ -2,6 +2,8 @@
 
 This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device. The guide leads to a broad range of examples, conceptual tutorials, end-to-end applications and other documentation, to empower you to develop on the Arm Mbed OS platform.
 
+<!--this needs to tell me what the application does-->
+
 <h3 id="choose-environment">Choose your environment</h3>
 
 You can choose to develop **online** or **offline**:
@@ -14,4 +16,4 @@ You can choose to develop **online** or **offline**:
 
 | Online with the <br>Mbed Online Compiler | Offline with Mbed CLI |
 | :---: | :---: |
-| [![offline](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_next_button.png)](quick-start-online.html)| [![online](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/offline_compile_next_button.png)](quick-start-offline.html) |
+| [![offline](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_next_button.png)](../quick-start/online.html)| [![online](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/offline_compile_next_button.png)](../quick-start/offline.html) |

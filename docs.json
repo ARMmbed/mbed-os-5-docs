@@ -60,17 +60,27 @@
             },
             {
                 "title": "Online",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
+                "sub_chatpers": [{
+                        "title": "Importing the code",
+                        "sources": [{
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
+                        }]
+
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
+                        "title": "Exapmle walkthrough",
+                        "sources": [{
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-example-readme.md"
+                        }]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-online-debug.md"
+                        "title": "Debugging",
+                        "sources": [{
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-online-debug.md"
+                        }]
                     }
                 ]
             },
@@ -84,7 +94,7 @@
                         }]
                     },
                     {
-                        "title": "Example application",
+                        "title": "Example walkthrough",
                         "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli-ex-intro.md"
