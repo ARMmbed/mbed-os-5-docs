@@ -36,7 +36,7 @@ To migrate from Mbed OS 2 to Mbed OS 5, [please follow our migration tutorial](.
 
    So, the `if` statement in the `mbed.h` file evaluates to `True`, and the RTOS header file is included. (In other words, it is present.) If you were running an Mbed OS 2 program, this `if` statement in `mbed.h` would evaluate to `False`. Thus, the RTOS is not present in your Mbed OS 2 program.
 
-   If you want to learn more about how these configuration files work, please see [our configuration documentation](../tools/configuring-tools.html).
+   If you want to learn more about how these configuration files work, please see [our configuration documentation](../reference/configuration.html).
 
 **How can I tell which platforms support Mbed OS 2 or Mbed OS 5?**
 
@@ -48,7 +48,7 @@ To migrate from Mbed OS 2 to Mbed OS 5, [please follow our migration tutorial](.
 
    No. Please see the corresponding documentation pages for Mbed OS 2 and Mbed OS 5:
 
-   - [Mbed OS 5 documentation](https://os.mbed.com/docs/latest).
+   - [Mbed OS 5 documentation](https://os.mbed.com/docs).
    - [Mbed OS 5 GitHub repository](https://github.com/armmbed/mbed-os).
    - [Mbed OS 2 handbook](https://os.mbed.com/handbook/Homepage).
    - [Mbed OS 2 library](https://os.mbed.com/users/mbed_official/code/mbed/).

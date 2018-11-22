@@ -22,7 +22,7 @@
 
 **BLE** - [Bluetooth Low Energy](../apis/ble.html).
 
-**Blinky** - An [example application](../tutorials/mbed-os-quick-start.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
+**Blinky** - An [example application](../quick-start/index.html) that you can use to get to know Arm Mbed OS and the development tools. It’s one of the simplest examples of Mbed OS.
 
 **Block Device** - A [file](../porting/porting-storage.html) that represents a device, with data that can be read or written to it in blocks.
 

@@ -222,7 +222,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <td><a href="tls.html">TLS</a></td>
 </tr>
 <tr>
-<td><a href="Devicekey.html">DeviceKey</a></td>
+<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 </tbody>
 </table>

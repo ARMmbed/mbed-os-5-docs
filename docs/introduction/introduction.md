@@ -7,7 +7,7 @@ Mbed OS is an open-source operating system for platforms using Arm microcontroll
 If you want to dive straight in:
 
 - The source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
-- Or [try our quick start](../tutorials/mbed-os-quick-start.html).
+- Or [try our quick start](../quick-start/index.html).
 
 ### Source code and licensing
 

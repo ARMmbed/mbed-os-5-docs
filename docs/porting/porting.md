@@ -382,8 +382,8 @@ You are now ready to port any other HAL components that your use case and MCU re
 <!--We don't currently link to user docs for Greentea, but we really should - I'm just not sure which link to use-->
 
 <!--I can only find eclipse content in debugging, not in testing, and not in the page covering Greentea-->
-<!--https://os.mbed.com/docs/v5.10/tutorials/eclipse.html-->
-<!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](https://os.mbed.com/docs/v5.10/tools/greentea-testing-applications.html)-->
+<!--../tutorials/eclipse.html-->
+<!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](../tools/greentea-testing-applications.html)-->
 
 Read the following page to understand how tests are structured and exported into Eclipse:
 
