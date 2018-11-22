@@ -61,7 +61,7 @@
             {
                 "title": "Online with the Online Compiler",
                 "sub_chapters": [{
-                        "title": "Importing the code",
+                        "title": "Importing and compiling the code",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
@@ -90,11 +90,11 @@
                 "title": "Offline with Mbed CLI",
                 "sub_chapters": [{
                         "title": "Setting up and compiling the code",
-                        "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_setting_up.md"
-                        },
                         "sources": [
+                          {
+                              "type": "markdown",
+                              "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_setting_up.md"
+                          },
                           {
                               "type": "markdown",
                               "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_code.md"
