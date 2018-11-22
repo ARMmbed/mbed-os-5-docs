@@ -12,6 +12,6 @@ You can choose to develop **online** or **offline**:
 
 #### Please choose how to proceed
 
-| Online with the <br>Mbed Online Compiler | Offline with Mbed CLI |
+| [Online with the](../quick-start/online-with-the-online-compiler.html) <br>[Mbed Online Compiler](../quick-start/online-with-the-online-compiler.html) | [Offline with Mbed CLI](../quick-start/offline-with-mbed-cli.html) |
 | :---: | :---: |
 | [![offline](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_next_button.png)](../quick-start/online-with-the-online-compiler.html) | [![online](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/offline_compile_next_button.png)](../quick-start/offline-with-mbed-cli.html) |
