@@ -15,7 +15,7 @@ We developed Mbed OS 5 using the Mbed CLI tool, which is a Python program that c
 
 ##### Arm Mbed CLI
 
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](developing-mbed-cli.html).
+We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS 5. For more information, see the [Mbed CLI page](../tools/developing-mbed-cli.html).
 
 ##### Compiler versions
 

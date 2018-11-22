@@ -66,7 +66,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 #### Release versioning
 
-You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/release-process.html).
+You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html).
 
 ### Pull request categories
 
@@ -187,7 +187,7 @@ Time: 3 days for reviewers to leave feedback after the maintainers add the "need
 
 #### The CI (Continuous Integration) testing
 
-There are many [CI systems available](../contributing/guidelines/ci.html) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
+There are many [CI systems available](../contributing/workflow.html#guidelines-for-github-pull-requests) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
 Label: `needs: review`
 Time: 1 day for CI to complete and report back results.
