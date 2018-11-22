@@ -53,7 +53,7 @@ Stack Space: 664
 
 **Mbed OS version:** Defaults to 999999.<!--can our example show 5.11 or 5.10?-->
 
-**CPUID register information**
+**CPUID register information:**
 
 | Bit Field | Field Description | Values |
 | --------- | ----------------- | ------ |
@@ -79,7 +79,7 @@ Stack Space: 664
 | IAR      | 3           | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
 
 
-#### CPU statistics
+#### CPU statistics
 
 Percentage of runtime the device has spent awake.
 
@@ -98,10 +98,6 @@ Provides information on all running threads in the OS:
 - Priority.
 - Stack size.
 - Stack space.
-
-### Troubleshooting
-
-If you have problems, you can review the [debugging documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.<!--but we have a debugging bit here - why are we pointing to the general debugging tutorial?-->
 
 ### Related links
 
