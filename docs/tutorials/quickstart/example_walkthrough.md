@@ -49,18 +49,11 @@ Stack Space: 664
 
 ### Understanding the output
 
-**System information**
+#### System information
 
-- Mbed OS version: Defaults to 999999.<!--can our example show 5.11 or 5.10?-->
-- Compiler ID:
+**Mbed OS version:** Defaults to 999999.<!--can our example show 5.11 or 5.10?-->
 
-| Compiler | Version tag |
-| -------- | ----------- |
-| ARM      | 1           |
-| GCC_ARM  | 2           |
-| IAR      | 3           |
-
-- CPUID register information
+**CPUID register information**
 
 | Bit Field | Field Description | Values |
 | --------- | ----------------- | ------ |
@@ -77,30 +70,34 @@ Stack Space: 664
 |           |                   | 0xD21 = Cortex-M33 |
 |[3:0]      | Revision          | Minor revision: 0x1 = Patch 1 |
 
-- Compiler version.
+**Compiler ID and version:**
 
-| Compiler | Version layout |
-| -------- | -------------- |
-| ARM      | PVVbbbb (P = Major; VV = Minor; bbbb = build number) |
-| GCC      | VVRRPP  (VV = Version; RR = Revision; PP = Patch)    |
-| IAR      | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
+| Compiler | Version tag | Version layout |
+| -------- | ----------- | -------------- |
+| ARM      | 1           | PVVbbbb (P = Major; VV = Minor; bbbb = build number) |
+| GCC_ARM  | 2           | VVRRPP  (VV = Version; RR = Revision; PP = Patch)    |
+| IAR      | 3           | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
 
 
-**CPU statistics:** Percentage of runtime the device has spent awake.
+#### CPU statistics
 
-**Heap statistics:**
+Percentage of runtime the device has spent awake.
+
+#### Heap statistics
 
 - Current heap size.
-- Maximum size the heap has ever grown.
+- Maximum size the heap has ever reached (*not* the maximum size it can reach).
 
-**Thread statistics:** Provides information on all running threads in the OS:
+#### Thread statistics
 
-- Thread ID.
-- Thread name.
-- Thread state.
-- Thread priority.
-- Thread stack size.
-- Thread stack space.
+Provides information on all running threads in the OS:
+
+- ID.
+- Name.
+- State.
+- Priority.
+- Stack size.
+- Stack space.
 
 ### Troubleshooting
 
