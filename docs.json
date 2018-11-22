@@ -62,11 +62,10 @@
                 "title": "Online with the Online Compiler",
                 "sub_chapters": [{
                         "title": "Importing the code",
-                        "intro": {
+                        "sources": [{
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-compiler.md"
-                        },
-                        "sources": []
+                        }]
                     },
                     {
                         "title": "Example walkthrough",
