@@ -1,4 +1,4 @@
-## Getting the code
+## Compiling the code
 
 1. Get the code
 
