@@ -7,9 +7,9 @@
     - [Peripheral drivers](../apis/drivers.html): I/O driver APIs (I2C, SPI, UART and so on).
 
 - Tutorials:
-    - [Advanced debugging](debugging.html).
+    - [Advanced debugging](../tutorials/debugging.html).
     - [Serial communications](../tutorials/serial-communication.html).
-    - [Optimizing binary size](optimizing.html).
+    - [Optimizing binary size](../tutorials/optimizing.html).
 
 - Other resources:
     - [Components database](https://os.mbed.com/components/): libraries and example code for various hardware and software components.

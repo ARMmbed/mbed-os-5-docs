@@ -50,7 +50,7 @@ How it works:
    - `python tools/build_release.py -p <target> -t <toolchain>`.
 - **jenkins-ci/mbed2-build-GCC_ARM** - Build Mbed OS 2 with GCC_ARM.
 - **jenkins-ci/mbed2-build-IAR** - Build Mbed OS 2 with IAR.
-- **jenkins-ci/unittests** - Run [unit tests](../tools/unit_testing.html).
+- **jenkins-ci/unittests** - Run [unit tests](../tools/unit-testing.html).
 - **tools-test-linux** - Test that tools work on Linux.
 - **tools-test-mac** - Test that tools work on macOS.
 - **tools-test-windows** - Test that tools work on Windows.
