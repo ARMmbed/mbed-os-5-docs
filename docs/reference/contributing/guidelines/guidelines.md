@@ -12,18 +12,18 @@ The process how and how we review contributions is described in the [workflow](w
 
 ### Licenses
 
-License should comply with allowed [licenses described](license.html). 
+License should comply with allowed [licenses described](license.html).
 
-### Access to the ARMmbed organisation
+### Access to the ARMmbed organisation on GitHub
 
 You might require direct access to the ARMmbed organization for one of the following reasons:
 
 - You need access to private repositories.
 - You need push access to a repository.
-- You are colloborating with Arm staff.
+- You are collaborating with Arm staff.
 
 If so, you can request to become an organization member. Prior to this, you must ensure your GitHub profile meets the following requirements:
 
 - All users must have 2 Factor Authentication enabled.
 - Arm staff must have their Name, Company (Arm), Location and Arm email address publicly visible.
-- All others should have their Name and Company visible. Location is beneficial because it enables us to know your region and interpret response times accordingly.
+- All others should have their Name and Company visible. Entering your Location will help us interpret response times according to time zones.
