@@ -11,7 +11,7 @@ If you want to dive straight in:
 
 ### Source code and licensing
 
-We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](../reference/license.html).
+We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](../contributing/license.html).
 
 ### Architecture diagram
 
