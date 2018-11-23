@@ -32,4 +32,4 @@ size_t build_ndef_message(const Span<uint8_t> &buffer) {
 
 - [MessageParser](messageparser.html) API reference.
 - [SimpleMessageParser](simplemessageparser.html) API reference.
-- [NFC architecture](/docs/development/reference/nfc-technology.html).
+- [NFC architecture](../reference/nfc-technology.html).
