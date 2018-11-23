@@ -1245,11 +1245,11 @@
         "description": "",
         "slug": "contributing",
         "type": "markdown",
-        "intro": {
+        "sources": [{
             "type": "markdown",
             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/guidelines.md"
         },
-        "sources": [{
+        {
                 "type": "markdown",
                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/license.md"
             },
