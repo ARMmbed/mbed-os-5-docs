@@ -34,9 +34,7 @@ If your main environment has an unsupported Python version, you may want to inst
 
 #### 2. Install a compiler
 
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR.
-
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
+Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
 
 #### 3. Install Mbed CLI
 
@@ -96,9 +94,7 @@ If your main environment has an unsupported Python version, you may want to inst
 
 #### 2. Install a compiler
 
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR.
-
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
+Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
 
 #### 3. Install Mbed CLI
 
@@ -155,7 +151,7 @@ If your main environment has an unsupported Python version, you may want to inst
 
 ### 2. Install a compiler
 
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR.
+Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
 
 <span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may also need to install the i386 architecture package:</span>
 
@@ -164,9 +160,6 @@ Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Ar
     $ sudo apt-get update
     $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
     ```
-
-<span class="notes">**Note:** To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
-
 
 ### 3. Install Mbed CLI
 
@@ -196,29 +189,26 @@ Mbed CLI will not work properly without some manual configuration.
 
 ### Mandatory: setting PATH variables
 
-Mbed CLI requires adding the following to the system `PATH`:
+Add the following to the system `PATH`:
 
 - The paths for the Git and Mercurial executables (`git` and `hg`).
 
-### Mandatory: toolchain selection
+### Mandatory: setting compiler location
 
-You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. Mbed CLI supports the following toolchains:
-
-- [Arm Compiler 5](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5). Use version 5.06 of Arm Compiler 5. Versions older than 5.06 might be incompatible with the tools.
-- [Arm Compiler 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). Use version 6.10 of Arm Compiler 6. Versions older than 6.10 might be incompatible with the tools.
-- [GNU Arm Embedded toolchain (GCC) version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads). Use version 6 of GCC Arm Embedded; version 5.0 or any older version might be incompatible with the tools.
-- [IAR EWARM 7](https://www.iar.com/iar-embedded-workbench/#!?architecture=ARM). Use versions 7.70 to 7.80.x of the IAR EWARM; other versions might be incompatible with the tools.
-
-You must inform Mbed CLI about the location of your compiler using one of the following methods.
+You must inform Mbed CLI about the location of your compiler using one of the following methods:
 
 - The Mbed CLI configuration command.
 - Adding the compiler's directory to your PATH.
 - Setting an environment variable.
-- The `mbed_settings.py` file in the root of your program. The tools will automatically create this file if it doesn't already exist.
+- The `mbed_settings.py` file in the root of your program. The tools<!--which tools?--> will automatically create this file if it doesn't already exist.
 
-<span class="notes">**Note:** You may configure more than one toolchain. However, you may only use one toolchain at a time. When using C++98 and GNU C99, the only difference between the toolchains is performance.</span>
+<span class="notes">**Note:** You may configure more than one toolchain. However, you may only use one toolchain at a time.</span>
 
-#### Compiler detection through Mbed CLI configuration
+<!--this comment should be in the index page with the other tool information, if at all.
+When using C++98 and GNU C99, the only difference between the toolchains is performance.
+-->
+
+#### Method 1: Mbed CLI configuration
 
 Mbed CLI stores its own configuration about compiler locations both in project local settings, and user wide "global" settings. You may set and view these settings with the `mbed config` command. For example, you set the Arm Compiler 5 location for your user with the command:
 
@@ -236,15 +226,15 @@ Mbed CLI supports a setting for each toolchain path. Below is a list of these se
 - `IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends. For example, if your IAR EWARM compiler executable is located at `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm/bin/iccarm.exe`, you set `IAR_PATH` to `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm`.
 - `GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends. For example, if your Gcc Arm Embedded toolchain gcc executable is in `/usr/bin/arm-none-eabi-gcc`, you set `GCC_ARM_PATH` to `/usr/bin`.
 
-#### Compiler detection through the `PATH`
+#### Method 2: `PATH`
 
 The `mbed compile` command checks your `PATH` for an executable that is part of the compiler suite in question. This check is the same as a shell would perform to find the executable on the command-line. When `mbed compile` finds the executable it is looking for, it prefaces the executable name with the path it found. Mbed CLI does not prefix any executable found for `GCC_ARM`.
 
-#### Compiler detection through environment variable
+#### Method 3: environment variable
 
 Mbed CLI also detects compilers with specially named environment variables. These environment variables are the same as their corresponding configuration variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.
 
-#### Compiler detection through `mbed_settings.py`
+#### Method 4: `mbed_settings.py`
 
 Mbed CLI also uses `mbed_settings.py` to configure toolchains. This file must be a python module, and uses the exact same configuration variables as the Mbed CLI configuration.
 
