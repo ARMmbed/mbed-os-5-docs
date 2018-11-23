@@ -2,9 +2,9 @@
 
 Consistency is an important aspect of a codebase. To ensure consistency in Mbed OS code, we have created contributing guidelines. Any contribution to Mbed OS needs to meet the following criteria:
 
-* Design and coding style: Be consistent with your changes. We define software design principles and coding style in [this document](style.html).
-* Contributions guidance: The process and how we review contributions is described in the [workflow](workflow.html) document.
-* Licenses: Licenses should comply with the [licenses described here](license.html).
+* Design and coding style: Be consistent with your changes. We define software design principles and coding style in [this document](../contributing/style.html).
+* Contributions guidance: The process and how we review contributions is described in the [workflow](../contributing/workflow.html) document.
+* Licenses: Licenses should comply with the [licenses described here](../contributing/license.html).
 
 ### Access to the ARMmbed organisation on GitHub
 
