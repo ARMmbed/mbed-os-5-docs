@@ -54,23 +54,24 @@ If you use an Mbed OS target and a separate cellular hosted module via a serial 
         ]
     }
 
-You need to change the pin-names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS/CTS connected on UART. If RTC/CTS are not connected on UART then define MDMRTS and MDMCTS to 'NC'.
+You need to change the pin names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS and CTS connected on UART. If RTC and CTS are not connected on UART, then define MDMRTS and MDMCTS as `NC`.
 
 ### Cellular APIs
 
-As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details which are expected to change frequently.
+As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details that are expected to change frequently.
 
 Cellular APIs are structured based on main functionalities:
 
-- `CellularContext` is the main interface for application. Used to connect to operators APN.
+- `CellularContext` is the main interface for the application. You can use it to connect to the operator's APN.
 - `CellularNetwork` for cellular network features, such as registering and attaching to a network.
 - `CellularPower` for cellular hosted module power control, such as enabling power save.
 - `CellularInformation` to read the cellular hosted module type and firmware version.
 - `CellularSIM` to enter the PIN code and other SIM management functions.
 - `CellularSMS` to read and write SMS messages.
 
-CellularContext class can be easily instantiated with `CellularContext::get_default_instance()` which opens `CellularDevice` and via device opens `CellularContext`. Opening `CellularContext` via `get_default_instance` uses default values from mbed_app.json.
-Default values are not defined by default and must be overridden in mbed_app.json if they are needed:
+You can instantiate the CellularContext class with `CellularContext::get_default_instance()`, which opens `CellularDevice` and, through the device, opens `CellularContext`. Opening `CellularContext` through `get_default_instance` uses values from `mbed_app.json`.
+These values are not defined by default, and you must override them in `mbed_app.json` if you need them:
+
 "target_overrides": {
         "*": {
             "nsapi.default-cellular-plmn": "\"12346\"",
