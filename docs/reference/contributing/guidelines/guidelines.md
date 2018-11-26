@@ -19,3 +19,11 @@ If so, you can request to become an organization member, but you must first ensu
 - All users must have 2 Factor Authentication enabled.
 - Arm staff must have their Name, Company (Arm), Location and Arm email address publicly visible.
 - All others should have their Name and Company visible. Entering your Location will help us interpret response times according to time zones.
+
+### New repository
+
+Each repository must contain:
+
+- `CONTRIBUTING.md` file (similar to [Mbed OS contributing](https://github.com/ARMmbed/mbed-os/blob/master/CONTRIBUTING.md)).
+- `LICENSE` file - the full license text or overview of every license in the repo with links.
+- `README.md` has a license & contributing section (similar to [Mbed OS license and contributions section](https://github.com/ARMmbed/mbed-os/blob/master/README.md#license-and-contributions)).
