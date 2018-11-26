@@ -23,7 +23,7 @@ The following milestones usually need to happen to port Mbed OS to a board or ta
     Limitations:
 
     - Eclipse is license free, whereas both IAR and Keil IDE require licenses.
-    - Currently, DAPLink development works only Keil MDK.
+    - Currently, DAPLink development works only Keil MDK. You will have to use Keil for pyOCD and DAPLink development.
 
 1. Arm and the Mbed OS community actively maintain pyOCD.<!--Do we need the info about who maintains pyOCD?--> The [Mbed Enabled](https://www.mbed.com/en/about-mbed/mbed-enabled/introduction/) program requires pyOCD, <!--I don't see that requierment https://www.mbed.com/en/about-mbed/mbed-enabled/requirements/ -->so ultimately pyOCD needs to support the new target. To allow parallel development in porting targets, connectivity and storage while pyOCD is still under development, you can use other IDEs supported on the evaluation board in the beginning phase.<!--Is this actually part of the previous point?-->
 
@@ -73,32 +73,34 @@ Please install the following:
    - [IAR](https://www.iar.com/iar-embedded-workbench/).
    - [Arm Compiler 5 or 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5).
 
-<span class="notes">The [tools documentation](../tools/index.html) contains the exact tool versions supported in a specific Mbed OS release.</span><!--well... no, that's the support for the latest version of Mbed OS, not each version-->
+<span class="notes">The [tools documentation](../tools/index.html) contains the exact third party tool versions supported in a specific Mbed OS release.</span>
+
+## Getting a working baseline
+
+### Create forks
 
 Please fork or branch the following repositories:
 
 - [DAPLink](https://github.com/armmbed/daplink).
 - [pyOCD](https://github.com/mbedmicro/pyocd).
 - [FlashAlgo](https://github.com/mbedmicro/flashalgo).
-- [Mbed OS](https://github.com/armmbed/mbed-os).
+- [Mbed OS](https://github.com/armmbed/mbed-os). Use the format `https://github.com/ARMmbed/mbed-os-new-target`.
 - [Mbed OS bootloader](https://github.com/armmbed/mbed-bootloader).
 - [Blinky](https://github.com/armmbed/mbed-os-example-blinky).
 - [Device Management Cloud Client example](https://github.com/armmbed/mbed-cloud-client-example).
 
-## Getting a working baseline
-
 ### Get the Mbed OS source code
 
-The following Mbed CLI commands retrieve and fork the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
-
-<!--Why would I want to do that? Why are we starting with an application rather than a "clean" Mbed OS?-->
+The following Mbed CLI commands retrieve and forks the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
 ```
 mbed import mbed-os-example-blinky
 cd mbed-os-example-blinky
 ```
 
-Add the URL of your forked repo (such as https://github.com/ARMmbed/mbed-os-new-target) to `mbed-os.lib`.<!--why isn't this at the end? At this point, I haven't created a new repo on GitHub yet--> Then:
+
+
+Add the URL of your forked `mbed-os` (such as https://github.com/ARMmbed/mbed-os-new-target) to `mbed-os.lib`.Then:
 
 
 ```
@@ -114,7 +116,7 @@ git checkout -b <branch_name>
 
 ### Build the Blinky program for an existing target
 
-<!--what does that accomplish?-->
+To verify that you have a working fork, please build Blinky to a supported target:
 
 ```
 cd mbed-os-example-blinky
@@ -123,7 +125,7 @@ mbed compile --target K64F --toolchain ARM
 mbed compile --target K64F --toolchain IAR
 ```
 
-Verify the build succeeds.<!--what if it fails?-->
+Verify the build succeeds. <!--add link to debugging page-->
 
 You now have a working baseline and are ready to add a new target.
 
@@ -131,25 +133,25 @@ You now have a working baseline and are ready to add a new target.
 
 ### Add a new target to FlashAlgo
 
-<!--why do I need this step? what is FlashAlgo and why does Mbed OS porting rely on it?-->
+DAPlink requires FlashAlgo to program a target. You need to either write FlashAlgo source code yourself, or use the one provided with your MCU.
 
 <span class="notes">This step requires a Windows PC.</span>
 
 Repo: [https://github.com/mbedmicro/flashalgo](https://github.com/mbedmicro/flashalgo)
 
-To add the source code to support the new target:<!--this doesn't quite parse. is it two steps?-->
+1. To add the Flash programming source code to the FlashAlgo repository:
 
-- Add a record to `projects.yaml`. <!--where is that?-->
-- Create a `<target>.yaml` file in the `records/projects` directory.<!--where is that?-->
-- Create a `FlashDev.c` file describing the attributes of the new flash device.<!--where do I put it?-->
-- Create a `FlashPrg.c` file containing all the necessary functions, including Init, UnInit, EraseChip, EraseSector and ProgramPage.
+    - Add a record to `projects.yaml`.
+    - Create a `<target>.yaml` file in the `records/projects` directory.
+    - Create a `FlashDev.c` file describing the attributes of the new flash device.
+    - Create a `FlashPrg.c` file containing all the necessary functions, including Init, UnInit, EraseChip, EraseSector and ProgramPage.
 
-<span class="tips">You can use this PR as an example: [https://github.com/mbedmicro/FlashAlgo/pull/46/files](https://github.com/mbedmicro/FlashAlgo/pull/46/files).</span>
+    <span class="tips">You can use this PR as an example: [https://github.com/mbedmicro/FlashAlgo/pull/46/files](https://github.com/mbedmicro/FlashAlgo/pull/46/files).</span>
 
-<!--to do what?-->Follow the steps under **Develop Setup** and **Develop** in the [FlashAlgo documentation](https://github.com/mbedmicro/flashalgo).<!--why send them to another repo for five lines of code? @amanda that readme needs editing if we're going to point to it.-->
+1. To generate uVision project files, follow the instructions in **Develop Setup** and **Develop** in the [FlashAlgo documentation](https://github.com/mbedmicro/flashalgo).<!-- @amanda that readme needs editing if we're going to point to it.-->
 
-<!--when did I open Keil? at the end of the other file?-->
-In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
+1. In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
+
 
 ### Add your new target to DAPLink
 
@@ -162,28 +164,30 @@ Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 1. [Port a target to DAPLink](https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET.md).
 1. Copy the content of `c_blob.c` into `flash_blob.c`.
 1. Verify your port by running [DAPLink tests](https://github.com/ARMmbed/DAPLink/blob/master/docs/AUTOMATED_TESTS.md).
-1. When all DAPlink tests pass, create a PR <!--against which repo?-->.
+1. When all DAPlink tests pass create two PRs:
+    - One PR against the DAPLink repository.
+    - One PR against the FlashAlgo repository.
 
 ### Add your new target to pyOCD
+
+To be able to debug your port:
 
 1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
 1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/ADDING_NEW_TARGETS.md).
 1. [Test your new target](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
-<!--not only do we keep sending them outside the docs, we send them back and forth between the same docs-->
 
 Wait for your target support to be merged into pyOCD's master branch and released in PyPi. You can then use `pip install pyOCD` to enable debug.
 
-<!--how? when? how long does it take? does Arm do it? do I have to wait for this to continue with my work?-->
+## Setting up to debug Mbed OS programs
 
-## Debugging Mbed OS programs
-
-<!--what on earth am I debugging? or am I setting up for later?-->
 
 ### Update DAPLink interface firmware
 
-<!--why?-->
+You need to update the new DAPLink interface firmware, which includes the new target support, on your interface MCU.
 
-1. Clone the latest DAPLink firmware with the new target support completed in Step 8<!--by the time this got to me, there was no step 8 or 9-->.
+To include the new target support:
+
+1. Clone the latest DAPLink firmware with the new target support [completed above](#add-your-new-target-to-daplink).
 1. Use the [DAPLink instructions](https://github.com/ARMmbed/DAPLink/tree/master/docs) to build the DAPLink firmware release package.
 1. Locate the generated .bin or .hex firmware under `DAPLink\uvision_release\<your_board_name_if>`.
 1. To update the interface firmware:
@@ -246,11 +250,9 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 
 Detailed instructions for porting each module are given in the module-specific sections of this documentation.
 
-### Bare metal mbed-os-example-blinky
+### Create the bare metal mbed-os-example-blinky
 
-The official mbed-os-example-blinky uses a DigitalOut object and timers. It doesn't rely on RTOS, GPIO and timers<!--timers shows up once in the "used" list and once in the "unused list"-->. LED toggling is done directly by accessing hardware registers.
-
-Modify the Blinky program you checked out earlier. <!--to do what?-->You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).<!--we're sending official documentation to one of our user accounts?-->
+The official mbed-os-example-blinky uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).<!--let's create a bare metal example repo on ARMmbed and then point them at that in the beginning, so they won't have to create the bare metal out of the normal one-->
 
 <span class="notes">Blinky is a stop-gap measure; please don't commit it to master.</span>
 
@@ -258,15 +260,15 @@ Modify the Blinky program you checked out earlier. <!--to do what?-->You can see
 
 [Bootstrap porting instructions](../reference/bootstrap.html).
 
-Mbed OS uses CMSIS Pack. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:<!--how is this related to the topic? And do I do it before or after bootstrap?-->
+Mbed OS uses CMSIS Pack for bootstrap. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:
 
-1. Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:<!--what's the context I'm looking through? my project? what if I'm not using Keil?-->
+1. Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:
 
    ```
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Include
    ```
-1. Create linker scripts from the template.<!--template or templates?-->
+1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
 
@@ -289,20 +291,20 @@ mbed compile --target <target_name> --toolchain ARM
 mbed compile --target <target_name> --toolchain IAR
 ```
 
-<!--what do I do if my build fails?-->
+<!--if it doesn't build, it's their problem. Need to say it nicely.-->
 
 ### Low power ticker
 
-[Low power ticker porting instructions](../porting/low-power-ticker.html).
+<span class="notes">**Note**: Low power ticker is mandatory for any platform that supports it.</span>
 
-<!--so is porting this module mandatory, or is it conditional - depending on what my hardware has?-->
+[Low power ticker porting instructions](../porting/low-power-ticker.html).
 
 When you finish porting low power ticker:
 
 1. Remove the `rtos` entry from the `.mbedignore` file, because the OS kernel initialization is now possible.
 1. In Blinky, set a breakpoint at `osKernelInitialize` and make sure it is called.
 
-The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/latest/mbed-os-api-doxy/group__hal__lp__ticker__tests.html). They rely on UART, so it's a good time to port UART.<!--if testing LPT requires UART, why don't I port UART first?-->
+The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/latest/mbed-os-api-doxy/group__hal__lp__ticker__tests.html). They rely on UART, so it's a good time to port UART.<!--port UART first - change order of sections and in the list above-->
 
 ### Serial Port (synchronous transfer)
 
@@ -326,9 +328,9 @@ The vanilla Blinky program uses GPIO, which is a great tool for debugging with a
 
 [RTC porting instructions](../porting/rtc-port.html).
 
-RTC is a dependent of SPI (master) tests.<!--did you mean "dependency"?-->
+RTC is a dependency of SPI (master) tests.
 
-On some targets, RTC is shared with low power ticker. On these targets, enable low power ticker instead of RTC.<!--does that mean "don't bother porting RTC"? What does "enable" mean in this context?-->
+On some targets, RTC is shared with low power ticker and you can only use one of them. On these targets, you must use low power ticker instead of RTC.
 
 ### SPI (master)
 
@@ -345,7 +347,7 @@ If the hardware supports TRNG, you must port it before running Device Management
 [Porting instructions for all connectivity options](../porting/porting-connectivity.html).
 
 When you finish porting WiFi, run [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
-<!--Do we have any other examples, for the other connectivity methods?-->
+<!--We can add links to the other examples too.-->
 
 ### Flash
 
@@ -359,12 +361,11 @@ There are two ways to implement flash API: using CMSIS flash algorithms or C sou
 
 [Bootloader porting instructions](../porting/bootloader.html).
 
-The bootloader is a separate application, which needs to be created and integrated into Device Management Client.<!--this is a stub - it's only understandable if you already know everything about bootloader. Needs more info here.-->
+The bootloader is a separate application, which needs to be created and integrated into Device Management Client.<!--this is a stub - it's only understandable if you already know everything about bootloader. Needs more info here.--><!--only mandatory if you want to use device management client-->
 
 ### Device Management Client
 
-<!--But I haven't ported the client yet, have I?-->
-Once the above components are ported, you should be ready to demo the Connect and Update functionalities of the Device Management Client. See https://cloud.mbed.com/docs/current for details.<!--details of what? shouldn't we just send them to the quick starts, if all we want is for them to try connecting and updating?-->
+You do not need to manually port Device Management Client; when the above components are ported, you should be ready to demo the Connect and Update functionalities of the Device Management Client. See https://cloud.mbed.com/docs/current for details.<!--point to the quick starts instead of the docs-->
 
 ### Other HAL Components (Optional)
 
@@ -372,9 +373,10 @@ You are now ready to port any other HAL components that your use case and MCU re
 
 <!--Amanda, should we organize the modules so that they fit the porting order?-->
 
-## Testing ported code
+## Setting up to test ported code
 
-<!--wasn't I supposed to test as I go? this makes me think I test all at once, at the end-->
+
+<!-- I was supposed to test as I go, but this makes me think I test all at once, at the end, so we need to clarify this-->
 ### Testing with the Greentea framework
 
 <!--does Greentea only work with eclipse?--><!--what if I'm not using eclipse?-->
@@ -387,7 +389,6 @@ You are now ready to port any other HAL components that your use case and MCU re
 
 Read the following page to understand how tests are structured and exported into Eclipse:
 
-<!--This 404s [https://os.mbed.com/docs/latest/tools/testing-applications.html]-->
 
 #### Prerequisite: minimum component support
 
