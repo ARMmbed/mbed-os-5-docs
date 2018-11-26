@@ -22,7 +22,7 @@ If the device scans actively, it sends scan request to scannable advertisers and
 
 #### Extended and periodic advertising
 
-BLE controllers supporting Bluetooth 5.0 may offer additional advertising and scanning options.
+BLE controllers supporting Bluetooth 5.0 may offer additional advertising and scanning options. Use `isFeatureSupported()` to check feature availability.
 
 Extended advertising may use multiple PHYs and spread the payload across many packets. This allows for much larger payloads. In this scenario, advertising is split across primary advertising on the advertising channels and secondary advertising using channels normally used for sending data to connected devices.
 
