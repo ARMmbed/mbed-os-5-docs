@@ -4,7 +4,7 @@
 
 The TCPSocket class provides the ability to send a stream of data over TCP. TCPSockets maintain a stateful connection that starts with the `connect` member function. After successfully connecting to a server, you can use the `send` and `recv` member functions to send and receive data (similar to writing or reading from a file).
 
-The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
+The constructor takes no parameters. To initialize the socket on a specified NetworkInterface, you must call `open` method, which takes a NetworkStack pointer.
 
 ### Server socket
 
