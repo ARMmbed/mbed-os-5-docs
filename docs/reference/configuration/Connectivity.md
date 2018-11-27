@@ -191,7 +191,7 @@ Example application code can be as simple as:
     if (!net) {
         // There is no default...
     }
-    net->connet();
+    net->connect();
 ```
 
 Boards that provide only Ethernet connectivity do not require any configuration. The default settings are sufficient. Boards that provide other connectivity options require selecting the default interface type and providing settings for it.
@@ -222,6 +222,12 @@ Name: nsapi.default-wifi-ssid
     No value set
 Name: nsapi.default-wifi-password
     Defined by: library:nsapi
+    No value set
+Name: nsapi.default-cellular-plmn
+	Defined by: library:nsapi
+    No value set
+Name: nsapi.default-cellular-sim-pin
+	Defined by: library:nsapi
     No value set
 Name: nsapi.default-cellular-apn
     Defined by: library:nsapi
