@@ -38,7 +38,7 @@ For details regarding how to configure the default block device please refer to 
 
 ### BlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_block_device.html)
 
 ### BlockDevice example
 
