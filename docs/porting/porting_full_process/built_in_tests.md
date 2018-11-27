@@ -10,14 +10,18 @@ It's important to test your port at the end of each module porting, rather than 
 ## Testing with the Greentea framework
 
 <!--does Greentea only work with eclipse?--><!--what if I'm not using eclipse?-->
+<!--From Jimmy: Greentea isn't designed to be used with Eclipse. Eclipse can do something, but it's designed to be run from the command-line.-->
 <!--did we actually ask people to install Greentea? I don't see it in the lists, unless it's bundled into Mbed CLI-->
+<!--From Jimmy: Mbed CLI will install Greentea for you, but that may change in the future.-->
 <!--We don't currently link to user docs for Greentea, but we really should - I'm just not sure which link to use-->
 
 <!--I can only find eclipse content in debugging, not in testing, and not in the page covering Greentea-->
+<!--From Jimmy: Becuse Eclipse is unrelated-->
 <!--../tutorials/eclipse.html-->
 <!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](../tools/greentea-testing-applications.html)-->
 
 Read the following page to understand how tests are structured and exported into Eclipse:
+<!--From Jimmy: Don't export tests to Eclipse or at all. It's not supported, AKA not in CI-->
 
 ### Prerequisites
 
@@ -37,6 +41,7 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 
 <!--did we ask them to install that? I don't think we've mentioned it. We need a section that discusses the testing tools
 Get Brian to confirm whether it's part of the Mbed OS installation or whether we need a new bit in the installation list to cover Greentea and mbedls-->
+<!--From Jimmy: Mbed CLI automatically installs mbed ls, yes, but that may change in the future-->
 
 The board under test needs to be supported in mbedls for automated tests to work.
 
@@ -239,4 +244,4 @@ To build and run the Mbed OS tests:
 1. Before you begin the test run, please make sure the serial port is not already opened by programs like Screen or Teraterm (close them if they're open). In addition, verify `mbedls` lists the new target device.
 
     If your test run doesn't start, read [the Greentea documentation for troubleshooting](https://github.com/armmbed/greentea).
-    <!--do we have this within the docs, rather than on GitHub?-->
+    <!--do we have this within the docs, rather than on GitHub? Answer: We think it's this: https://github.com/armmbed/greentea#common-issues We can add this to our docs.-->
