@@ -1273,21 +1273,36 @@
         "type": "markdown",
         "chapters": [{
                 "title": "Porting process",
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_start.md"
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_start.md"
+                },
+                "sub_chapters": [{
+                        "title": "Setting up",
+                        "intro": {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_reqs.md"
+                        },
+                        "sources": []
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_reqs.md"
+                        "title": "Porting",
+                        "sources": [{
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting.md"
+                        }]
                     },
                     {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_tests.md"
+                        "title": "Testing",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/built_in_tests.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/demo_testing.md"
+                            }
+                        ]
                     }
                 ]
             },
