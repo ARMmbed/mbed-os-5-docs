@@ -176,7 +176,7 @@ Above, the configuration parameters `param1` through `param5` are defined using 
   - `required`: an optional key that specifies whether the parameter must have a value before compiling the code (`false` by default). It's not possible to compile a source tree with one or more required parameters that don't have a value. Generally, setting `required` to true is only useful when `value` is not set.
   - `macro_name`: an optional name for the macro defined at compile time for this configuration parameter. The configuration system automatically figures out the corresponding macro name for a configuration parameter, but the user can override this automatically computed name by specifying `macro_name`.
 
-You define a macro by value by using an integer or string instead of the description object, such as `param3` above.  Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `value` set to the value in place of the description object, the key `help` unset, the key `macro_name` unset, and the key `required` set to `false`.
+You define a macro by value by using an integer or string instead of the description object, such as `param6` above.  Defining a parameter by value is equivalent to a configuration parameter defined with a description object with the key `value` set to the value in place of the description object, the key `help` unset, the key `macro_name` unset, and the key `required` set to `false`.
 
 <span class="notes">**Note:** The name of a parameter in `config` can't contain a dot (`.`) character.</span>
 
