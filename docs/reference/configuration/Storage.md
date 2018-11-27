@@ -1,19 +1,24 @@
-# configuration-storage
+## Storage
 
-This page describes the build-time configurable parameters for storage in Mbed OS.
-# Configuration of storage modules
-- [kv_store configuration](#kv_store-configuration)
-- [LittleFS configuration](#littlefs-configuration)
-- [NVStore configuration](#nvstore-configuration)
-- [Default BlockDevice configuration](#Default-BlockDevice-configuration)
-- [Default FileSystem configuration](#Default-FileSystem-configuration)
-## kv_store Configuration
-Mbed OS provides a storage solution based on kv_store API. Different components that implement the kv_Store API are allocated and configured to support the global API (see XXXXXX-TODO link)
+This page describes the build-time configurable parameters for storage in Mbed OS:
 
-The configuration of the kv_store storage solution is composed from two levels:
-* Top level mbed_lib.json is used to selet the pre-defined configuration by setting the parameter storage_type
-* Sub folder mbed_lib.json for each configuration is used to fine tune the relevant parameters for the selected configuration
-### Configuration structure
+- [KVStore configuration](#kvstore-configuration).
+- [LittleFS configuration](#littlefs-configuration).
+- [NVStore configuration](#nvstore-configuration).
+- [Default BlockDevice configuration](#Default-BlockDevice-configuration).
+- [Default FileSystem configuration](#Default-FileSystem-configuration).
+
+### KVStore configuration
+
+Mbed OS provides a storage solution based on the KVStore API. Different components that implement the KVStore API are allocated and configured to support the [global API](KVStoreGlobal.html).
+
+The configuration of the KVStore storage solution is composed from two levels:
+
+- Use the top level `mbed_lib.json` to selet the predefined configuration by setting the parameter `storage_type`.
+- Use the subfolder `mbed_lib.json` for each configuration to fine tune the relevant parameters for the selected configuration.
+
+#### Configuration structure
+
 ```
 kvstore
 │
@@ -36,41 +41,43 @@ kvstore
             mbed_lib.json
 ```
 
-The kvstore configuration file structure includes six configuration files. The topmost configuration file is used to set up the full configuration of the storage by defining a single parameter (storage_type) to one of the predefined configurations. The configuration files in the subfolders are used to implement the above top level configurations.
+The KVStore configuration file structure includes six configuration files. You can use the topmost configuration file to set up the full configuration of the storage by defining a single parameter (`storage_type`) to one of the predefined configurations. You can use the configuration files in the subfoldersto implement the above top level configurations.
 
-The configuration files can be found under `conf/<configuration name>`.
-* conf/tdb_internal - storage type TDB_INTERNAL configuration is intended to be used when all data will be stored in internal memory only. No need for additional security features. A single TDBStore object will be allocated in internal flash.
-* conf/tdb_external - storage type TDB_EXTERNAL configuration is providing full security and intended to be used when data is stored in external flash. It allocates: SecureStore, TDBStore in external flash and TDBStore in internal flash (for rollback protection - RBP)
-* conf/tdb_external_no_rbp - storage type TDB_EXTERNAL_NO_RBP configuration allows security but without rollback protection. Similar to tdb_external but without the TDBStore in internal memory.
-* conf/filesystem - This configuration will allocate: SecureStore, FileSystemStore, filesystem, TDBStore in internal memory and the required block devices. The allocated file system will be selected according to the COMPONENT set in targets.json, (FATFS for SD card and LITTLEFS for SPIF), however, this can be set differently by overiding the respective parameter. Use this configuration if you need the file system with POSIX API in addition to the set/get API.
-* conf/filesystem_no_rbp - storage type FILESYSTEM_NO_RBP configuration allows security like FILESYSTEM configuration but without rollback protection.
+You can find the configuration files under `conf/<configuration name>`:
+
+- `conf/tdb_internal` - storage type TDB_INTERNAL configuration is intended to be used when all data will be stored in internal memory only. No need for additional security features. A single TDBStore object will be allocated in internal flash.
+- `conf/tdb_external` - storage type TDB_EXTERNAL configuration is providing full security and intended to be used when data is stored in external flash. It allocates: SecureStore, TDBStore in external flash and TDBStore in internal flash (for rollback protection - RBP)
+- `conf/tdb_external_no_rbp` - storage type TDB_EXTERNAL_NO_RBP configuration allows security but without rollback protection. Similar to tdb_external but without the TDBStore in internal memory.
+- `conf/filesystem` - This configuration will allocate: SecureStore, FileSystemStore, filesystem, TDBStore in internal memory and the required block devices. The allocated file system will be selected according to the COMPONENT set in targets.json, (FATFS for SD card and LITTLEFS for SPIF), however, this can be set differently by overiding the respective parameter. Use this configuration if you need the file system with POSIX API in addition to the set/get API.
+- `conf/filesystem_no_rbp` - storage type FILESYSTEM_NO_RBP configuration allows security like FILESYSTEM configuration but without rollback protection.
 
 A stand alone block device will be allocated for each component in internal and external memory and SD cards as required for the configurations. In any case, the full size of the memory allocated for each block device will be used by the respective component.
 
-### Configuration parameters
-The following is a list of all storage parameters available and their description. 
+#### Configuration parameters
 
-* storage_type - Used to select one of the pre-defined configurations.
-    * TDB_INTERNAL
-    * TDB_EXTERNAL
-    * TDB_EXTERNAL_NO_RBP
-    * FILESYSTEM
-    * FILESYSTEM_NO_RBP
-* default_kv - This is a string representing the path for the default kvstore instantiation. Applications can pass an empty path (only the key name) or pass the generated name for this parameter (MBED_CONF_STORAGE_DEFAULT_KV) as the path to use this configuration.
-* internal_size - The size in bytes for the internal FlashIAP block device. This should enable together with the internal_base_address to adjust exactly the size and location where the block device resides on memory. If not defined the block device will try to get the maximum size available.
-* internal_base_address - The address where the internal FlashIAP blockDevice starts. This helps to prevent collisions with other needs like firmware updates. If not defined the start address will be set to the first sector after the application code ends in TDB_internal while in any external configurations with rollback protection support it will be set to end of flash - rbp_internal_size.
-* rbp_number_of_entries - set the number of entries allowed for rollback protection. The default is set to 64. This parameter controls the max number of different keys that can be created with rollback protection flag.
+The following is a list of all storage parameters available and their description:
+
+- `storage_type` - Used to select one of the predefined configurations.
+   - `TDB_INTERNAL`.
+   - `TDB_EXTERNAL`.
+   - `TDB_EXTERNAL_NO_RBP`.
+   - `FILESYSTEM`.
+   - `FILESYSTEM_NO_RBP`.
+- `default_kv` - This is a string representing the path for the default kvstore instantiation. Applications can pass an empty path (only the key name) or pass the generated name for this parameter (MBED_CONF_STORAGE_DEFAULT_KV) as the path to use this configuration.
+- `internal_size` - The size in bytes for the internal FlashIAP block device. This should enable together with the internal_base_address to adjust exactly the size and location where the block device resides on memory. If not defined the block device will try to get the maximum size available.
+- `internal_base_address` - The address where the internal FlashIAP blockDevice starts. This helps to prevent collisions with other needs like firmware updates. If not defined the start address will be set to the first sector after the application code ends in TDB_internal while in any external configurations with rollback protection support it will be set to end of flash - rbp_internal_size.
+- `rbp_number_of_entries` - set the number of entries allowed for rollback protection. The default is set to 64. This parameter controls the max number of different keys that can be created with rollback protection flag.
 rbp_internal_size sets the size for the rollback protection TDBStore in the internal memory. the base address will be calculated as flash ends address - size.
-* filesystem - Options are FAT, LITTLE or default. If not set or set to default the file system type will be selected according to the storage component selected for the board in targets.json file: FAT for "components": ["SD"] and Littlefs for "components": ["SPIF"].
-* blockdevice - Options are default, SPIF, DATAFLASH, QSPIF or SD. If filesystem set to default this parameter is ignored.
-* external_size - The size of the external block device in bytes. If not set the maximum available size will be used. 
-* external_base_address - The start address of the external block device. if not set 0 address will be used.
-* mount_point - mount point for the filesystem. This parameter will be ignored if the filesystem is set to default.
-* folder_path - Path for the working directory where the FileSyetemStore stores the data
+- `filesystem` - Options are FAT, LITTLE or default. If not set or set to default the file system type will be selected according to the storage component selected for the board in targets.json file: FAT for "components": ["SD"] and Littlefs for "components": ["SPIF"].
+- `blockdevice` - Options are default, SPIF, DATAFLASH, QSPIF or SD. If filesystem set to default this parameter is ignored.
+- `external_size` - The size of the external block device in bytes. If not set the maximum available size will be used. 
+- `external_base_address` - The start address of the external block device. if not set 0 address will be used.
+- `mount_point` - mount point for the filesystem. This parameter will be ignored if the filesystem is set to default.
+- `folder_path` - Path for the working directory where the FileSyetemStore stores the data.
 
-### Storage configuration
+#### Storage configuration
 
-Below is the main storage configuration mbed_lib json file. 
+Below is the main storage configuration in the `mbed_lib json` file:
 
 ```
 {
@@ -88,14 +95,16 @@ Below is the main storage configuration mbed_lib json file.
 }
 ```
     
-### TDB_INTERNAL
-The internal configuration should be used for targets willing to save all the data in internal flash 
+#### TDB_INTERNAL
+
+The internal configuration should be used for targets willing to save all the data in internal flash.
 
 ![TDB_Internal](./Internal.jpg)
 
-In this configuration, all kvstore C API will be mapped to the TDBStore in the internal flash. To use this configuration the storage_type parameter in storage mbed_lib.json should be set to TDB_INTERNAL. 
+In this configuration, all KVStore C API will be mapped to the TDBStore in the internal flash. To use this configuration, set the `storage_type parameter` in `storage mbed_lib.json` to `TDB_INTERNAL`. 
 
-Below is the TDB_INTERNAL configuration mbed_lib.json
+Below is the `TDB_INTERNAL` configuration in `mbed_lib.json`:
+
 ```
 {
     "name": "tdb_internal",
@@ -116,17 +125,22 @@ Below is the TDB_INTERNAL configuration mbed_lib.json
 }
 ```
 
-For this configuration please define the section of the internal storage that will be used for data, by defining these parameters in your app.config file: internal_base_address and internal_size. If not defined, the storage will start in the first sector immediately after the end of the application. This can reduce the ability to update the application with a bigger one.
+For this configuration, please define the section of the internal storage that will be used for data, by defining these parameters in your `app.config` file: `internal_base_address` and `internal_size`. If not defined, the storage will start in the first sector immediately after the end of the application. This can reduce the ability to update the application with a bigger one.
 
-### TDB_External
+#### TDB_External
+
 ![External](./TDB_External.jpg)
 
-TDB_EXTERNAL uses a TDBStore in the internal flash for security rollback protection and a TDBStore on the external flash for the data. This configuration all kvstore C API calls are mapped to work with the SecureStore class and this class will handle the use of the two TDBStores. Unless configured differently the external TDBStore will work on top of the default block device, while the internal TDBStore will work with the FlashIAPBlockdevice. 
-The external TDBStore block device can be set to any of the following block devices. SPIF, QSPIF, DATAFASH and SD.
+`TDB_EXTERNAL` uses a TDBStore in the internal flash for security rollback protection and a TDBStore on the external flash for the data. 
 
-This configuration can be enabled by setting storage_type in storage mbed_lib.json to TDB_EXTERNAL.
+In this configuration, all KVStore C API calls are mapped to work with the SecureStore class. This class handles the use of the two TDBStores. Unless configured differently, the external TDBStore will work on top of the default block device, and the internal TDBStore will work with the FlashIAPBlockdevice.
 
-Below is the TDB_EXTERNAL configuration mbed_lib.json
+You can set the external TDBStore block device to any of the following block devices: SPIF, QSPIF, DATAFASH and SD.
+
+You can enable this configuration by setting `storage_type` to `TDB_EXTERNAL` in `storage mbed_lib.json`.
+
+Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
+
 ```
 {
 
@@ -160,16 +174,18 @@ Below is the TDB_EXTERNAL configuration mbed_lib.json
 }
 ```
 
-### TDB_External_no_RBP
+#### TDB_External_no_RBP
+
 ![External](./TDB_External_no_rbp.jpg)
 
-TDB_EXTERNAL_NO_RBF Configuration has no support for rollback protection and therefore less secure.
-The TDB_EXTERNAL_NO_RBP uses only one TDBStore on the external flash for all data. In this configuration all kvstore C API calls are mapped to work with the SecureStore class. The external TDBStore will work on top of the default block device however, external TDBStore block device can be set to any of the following block devices SPIF, QSPIF, DATAFASH and SD.
+The `TDB_EXTERNAL_NO_RBF` configuration has no support for rollback protection and is therefore less secure.
 
+The `TDB_EXTERNAL_NO_RBP` uses only one TDBStore on the external flash for all data. In this configuration, all KVStore C API calls are mapped to work with the SecureStore class. The external TDBStore will work on top of the default block device; however, you can set the external TDBStore block device to any of the following block devices: SPIF, QSPIF, DATAFASH and SD.
 
-This configuration can be enabled by setting storage_type in storage mbed_lib.json to TDB_EXTERNAL_NO_RBP.
+You can enable this configuration by setting `storage_type` to `TDB_EXTERNAL_NO_RBP` in `storage mbed_lib.json`.
 
-Below is the TDB_EXTERNAL_NO_RBP configuration mbed_lib.json
+Below is the `TDB_EXTERNAL_NO_RBP` configuration in `mbed_lib.json`:
+
 ```
 {
     "name": "tdb_external_no_rbp",
@@ -190,14 +206,18 @@ Below is the TDB_EXTERNAL_NO_RBP configuration mbed_lib.json
 }
 ```
 
-### FILESYSTEM
+#### FILESYSTEM
+
 ![FILESYSTEM](./FILESYSTEM.jpg)
 
-The FILESYSTEM configuration resembles the EXTERNAL with the difference that it uses FileSysytemStore on the external flash. By default, the FileSystemStore will use the default filesystem and the default block device.
-In this configuration, all kvstore C API paths are mapped to the SecureStore class and this class will handle the use of the internal TDBStore or external FileSystemStore. 
-This configuration can be enabled by setting storage_type in storage mbed_lib.json to FILESYSTEM. 
+The `FILESYSTEM` configuration resembles the `EXTERNAL` with the difference that it uses FileSystemStore on the external flash. By default, FileSystemStore used the default file system and the default block device.
 
-Below is the FILESYSTEM configuration mbed_lib.json
+In this configuration, all KVStore C API paths are mapped to the SecureStore class. This class handles the use of the internal TDBStore or external FileSystemStore. 
+
+You can enable this configuration by setting `storage_type` to `FILESYSTEM` in `storage mbed_lib.json`. 
+
+Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
+
 ```
 {
     "name": "filesystem_store",
@@ -241,16 +261,21 @@ Below is the FILESYSTEM configuration mbed_lib.json
     }
 }
 ```
-If filesystem is not set the default filesystem and block device will be applied and blockdevice, external_size and external_base_address will be ignored.
 
-### FILESYSTEM_NO_RBP
+If the file system is not set, the default file system and block device will be applied, and `blockdevice`, `external_size` and `external_base_address` will be ignored.
+
+#### FILESYSTEM_NO_RBP
+
 ![FILESYSTEM](./FILESYSTEM_no_rbp.jpg)
 
-The FILESYSTEM_NO_RBP configuration resembles the EXTERNAL_NO_RBP with the difference that it uses FileSysytemStore on the external flash. By default, the FileSystemStore will use the default filesystem and the default block device. This Configuration has no support for rollback protection and therefore less secure.
-in this configuration all kvstore C API calls are mapped to the SecureStore class and this class will handle the use of the external FileSystemStore.
-This configuration can be enabled by setting storage_type in storage mbed_lib.json to FILESYSTEM_NO_RBF. 
+The `FILESYSTEM_NO_RBP` configuration resembles the `EXTERNAL_NO_RBP` with the difference that it uses FileSystemStore on the external flash. By default, FileSystemStore uses the default file system and the default block device. This configuration has no support for rollback protection and is therefore less secure.
 
-Below is the FILESYSTEM configuration mbed_lib.json
+In this configuration, all KVStore C API calls are mapped to the SecureStore class. This class handles the use of the external FileSystemStore.
+
+You can enable this configuration by setting `storage_type` to `FILESYSTEM_NO_RBF` in `storage mbed_lib.json`. 
+
+Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
+
 ```
 {
     "name": "filesystem_store_no_rbp",
@@ -283,10 +308,12 @@ Below is the FILESYSTEM configuration mbed_lib.json
 }
 ```
 
-If filesystem is not set the default filesystem and block device will be applied and blockdevice, external_size and external_base_address will be ignored 
+If the file system is not set, the default file system and block device will be applied, and `blockdevice`, `external_size` and `external_base_address` will be ignored.
 
-### Configuration functions API.
-Applications must call the function **storage_configuration()** to instantiate the required configuration. This function is defined as weak to allow the replacement of this function with a completely different implementation of the instantiation of components.
+#### Configuration functions API
+
+Applications must call the function **storage_configuration()** to instantiate the required configuration. This function is defined as weak to allow the replacement of this function with a completely different implementation of the instantiation of components:
+
 ```
 MBED_WEAK bool storage_configuration()
 {
@@ -294,9 +321,9 @@ MBED_WEAK bool storage_configuration()
 }
 ```
 
-### Override user-defined setup
-in order to create a much more complex setup including using other block devices such as MBRBlockDevice or SlicingBlockDevice, there is a need to override the storage_configuration function and generate any storage configuration of choice. 
+#### Override user-defined setup
 
+To create a much more complex setup, including using other block devices, such as MBRBlockDevice or SlicingBlockDevice, you need to override the `storage_configuration` function and generate any storage configuration.
 
 ## LittleFS configuration
 
