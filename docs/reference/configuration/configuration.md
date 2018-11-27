@@ -144,17 +144,35 @@ For example:
             "help": "The second configuration parameter",
             "required": true
         },
-        "param3": 10
+        "param3": {
+            "help": "The third configuration parameter",
+            "value_min": 0,
+            "value_max": 10,
+            "value": 5
+        },
+        "param4": {
+            "help": "The fourth configuration parameter",
+            "accepted_values": ["test1", "test2", "0x1000"],
+            "value": "test2"
+        },
+        "param5": {
+            "help": "The fifth configuration parameter",
+            "value": null
+        },
+        "param6": 10
     }
 }
 ```
 
-You define a configuration parameter by specifying its name as the key and specifying its value either with a description object or by value. The JSON fragment above defines three configuration parameters named `param1`, `param2` and `param3`.
+You define a configuration parameter by specifying its name as the key and specifying its value either with a description object or by value. Leaving the value field undefined or setting the value field to `null` will allow the parameter to be stored as a configuration option and appear with the `mbed compile --config` command; however, the key will not be defined in `mbed_config.h` and will not affect the application or OS unless it is overridden. See `param2` and `param5` for examples of this. The JSON fragment above defines six configuration parameters named `param1`, `param2`, `param3`, `param4`, `param5` and `param6`.
 
-Above, the configuration parameters `param1` and `param2` are defined using a description object. The description object supports the following keys:
+Above, the configuration parameters `param1` through `param5` are defined using a description object. The description object supports the following keys:
 
   - `help`: an optional help message that describes the purpose of the parameter.
   - `value`: an optional field that defines the value of the parameter.
+  - `value_min`: an optional field that defines the minimum acceptable value of the parameter.
+  - `value_max`: an optional field that defines the maximum acceptable value of the parameter.
+  - `accepted_values`: an optional field that defines a list of acceptable values for the parameter.
   - `required`: an optional key that specifies whether the parameter must have a value before compiling the code (`false` by default). It's not possible to compile a source tree with one or more required parameters that don't have a value. Generally, setting `required` to true is only useful when `value` is not set.
   - `macro_name`: an optional name for the macro defined at compile time for this configuration parameter. The configuration system automatically figures out the corresponding macro name for a configuration parameter, but the user can override this automatically computed name by specifying `macro_name`.
 
