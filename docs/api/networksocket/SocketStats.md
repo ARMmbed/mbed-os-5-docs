@@ -8,7 +8,7 @@ Socket Statistics are stored in intenal data buffer and maintained for closed so
 
 ### SocketStats class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket_stats.html)
 
 ### SocketStats example
 
