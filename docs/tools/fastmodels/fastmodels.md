@@ -25,18 +25,19 @@ FVP_MPS2_Cortex-M7 | FVP_MPS2_M7
 Fast Models can run most of the Mbed OS examples.
 
 Examples you can successfully run include:
-* [`mbed-os-example-blinky`](https://github.com/ARMmbed/mbed-os-example-blinky)
-* [`mbed-os-example-tls`](https://github.com/ARMmbed/mbed-os-example-tls)
-* [`mbed-os-example-devicekey`](https://github.com/ARMmbed/mbed-os-example-devicekey)
-* [`mbed-os-example-nvstore`](https://github.com/ARMmbed/mbed-os-example-nvstore)
-* [`mbed-os-example-thread-statistics`](https://github.com/ARMmbed/mbed-os-example-thread-statistics)
-* [`mbed-os-example-sys-info`](https://github.com/ARMmbed/mbed-os-example-sys-info)
-* [`mbed-os-example-cpu-usage`](https://github.com/ARMmbed/mbed-os-example-cpu-usage)
-* [`mbed-os-example-cpu-stats`](https://github.com/ARMmbed/mbed-os-example-cpu-stats)
-* [`mbed-os-example-error-handling`](https://github.com/ARMmbed/mbed-os-example-error-handling)
-* [`mbed-os-example-filesystem`](https://github.com/ARMmbed/mbed-os-example-filesystem)
-* [`mbed-os-example-blockdevice`](https://github.com/ARMmbed/mbed-os-example-blockdevice)
-* [`mbed-os-example-sockets`](https://github.com/ARMmbed/mbed-os-example-sockets)
+
+- [`mbed-os-example-blinky`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/).
+- [`mbed-os-example-tls`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/).
+- [`mbed-os-example-devicekey`](https://os-doc-builder.test.mbed.com/docs/development/apis/devicekey.html#devicekey-example).
+- [`mbed-os-example-nvstore`](https://os-doc-builder.test.mbed.com/docs/development/apis/nvstore.html#nvstore-example).
+- [`mbed-os-example-thread-statistics`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#thread-statistics-example).
+- [`mbed-os-example-sys-info`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#system-information-example).
+- [`mbed-os-example-cpu-usage`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#cpu-usage-example).
+- [`mbed-os-example-cpu-stats`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#cpu-statistics-example).
+- [`mbed-os-example-error-handling`](https://os-doc-builder.test.mbed.com/docs/development/apis/error-handling.html#error-handling-example).
+- [`mbed-os-example-filesystem`](https://os-doc-builder.test.mbed.com/docs/development/apis/filesystem.html#file-system-example).
+- [`mbed-os-example-blockdevice`](https://os-doc-builder.test.mbed.com/docs/development/apis/blockdevice.html#blockdevice-example).
+- [`mbed-os-example-sockets`](https://os-doc-builder.test.mbed.com/docs/development/apis/socket.html#socket-example).
 
 The following examples use `mbed-os-example-blinky`.
 
@@ -69,30 +70,31 @@ $ FVP_MPS2_Cortex-M3 -a BUILD/FVP_MPS2_M3/GCC_ARM/mbed-os-example-blinky.elf
 
 The FVPs start running, and the LEDs on the FVP blink, like:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fastmodel_cm3.png)
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fastmodel_cm3.png)<span>A screen shot of FVPs running</span></span>
 
-<span>a screen-shot for FVPs running</span></span>
+<span class="notes">**Note:** FVP's `-a` option only takes `.elf` format images. To use the `--data` option with binary format images, please reference the [FVP reference guide](https://developer.arm.com/docs/100966/latest).</span>
 
-<span class="notes">**Note:** FVP's `-a` option only takes .elf format images. To use the `--data` option with binary format images, please reference the [FVP Reference Guide](https://developer.arm.com/docs/100966/latest).</span>
+#### Run Mbed OS sockets examples with Fast Models ethernet
 
-#### Run Mbed OS sockets examples with Fast Models Ethernet
+Fast Models ethernet is a special component not enabled by default.
 
-Fast Models ethernet is a specical compoment which not been enabled by default. Two special options are required when using the ethernet compoment or any networking functions.
+<span class="notes">**Note:** The current version of Fast Model ethernet implementations requires Fast Models 11.3 or later or DS-5 5.29.0 or later. Also, the simulated IP routing only works on TCP and IP protocols, but neither the ICMP nor the IGMP protocol. This means ping does not work. For more details about how the Fast Models ethernet MAC works, please reference the [Fast Models reference manual](https://developer.arm.com/products/system-design/fast-models/docs/100964/latest/introduction/network-set-up/user-mode-networking).</span>
 
-<span class="notes">**Note:** Current version of Fast Model ethernet implementations requires Fast Models 11.3 or later or DS-5 5.29.0 or later. Also the simulated IP routing only works on TCP/IP protocol, but neither ICMP nor IGMP  protocol. which means ping would not work. For more details about how the Fast Models ethernet MAC working, please reference the [Fast Models Reference Manual](https://developer.arm.com/products/system-design/fast-models/docs/100964/latest/introduction/network-set-up/user-mode-networking).</span>
+Here, the `mbed-os-example-sockets` example demonstrates ethernet function. You can build the example as usual:
 
-Here, `mbed-os-example-sockets` example is used to demonstrated ethernet function. The example can be build as usual:
 ```
 $ mbed import mbed-os-example-sockets
 $ cd mbed-os-example-sockets
 $ mbed compile -t GCC_ARM -m FVP_MPS2_M3
 ```
-While launching the mbed OS socket example with Fast Models Ethernet function, arguments  `-C fvp_mps2.smsc_91c111.enabled=1` and `-C fvp_mps2.hostbridge.userNetworking=1` need to be passed in the command line:
+
+While launching the Mbed OS socket example with the Fast Models Ethernet function, you need to pass the arguments  `-C fvp_mps2.smsc_91c111.enabled=1` and `-C fvp_mps2.hostbridge.userNetworking=1` in the command-line:
+
 ```
 $ FVP_MPS2_Cortex-M3 -C fvp_mps2.smsc_91c111.enabled=1 -C fvp_mps2.hostbridge.userNetworking=1 -a BUILD/FVP_MPS2_M3/GCC_ARM/mbed-os-example-sockets.elf
 ```
 
-The FVPs start running, and the console output like::
+The FVPs start running, and the console output looks like:
 
 ```
 Mbed OS Socket example
@@ -106,7 +108,6 @@ recv 181 [HTTP/1.1 200 OK]
 External IP address: 217.140.106.54
 Done
 ```
-
 
 ### Notes
 
