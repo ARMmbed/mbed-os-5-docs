@@ -1,8 +1,9 @@
 ## Testing with the demo applications
 
-The `mbed-os-example-blinky` application should run after GPIO is ported.
+You can use two applications to test your port:
 
-The `mbed-cloud-client-example` application should run after the Device Management Client is ported. It includes a reference bootloader.
+1. When you've ported GPIO (and all preceeding modules), use `mbed-os-example-blinky`.
+1. When you've ported all mandatory modules, use `mbed-cloud-client-example` (the Device Management Client is part of Mbed OS, and you didn't need to manually port it). This test includes a reference bootloader for firmware update testing.
 
 ### mbed-os-example-blinky
 

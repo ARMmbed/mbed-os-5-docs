@@ -244,7 +244,7 @@ When you finish porting the microsecond ticker, the `wait` API should work, and 
 
 The vanilla Blinky program uses GPIO, which is a great tool for debugging with an oscilloscope or logic analyzer. It's a good idea to port GPIO before any other peripherals.
 
-You can now try [using the normal Blinky application]().<!--darn it! okay, link to the bit that tests with the app-->
+You can now try [using the normal Blinky application](../porting/testing-with-the-demo-applications.html).
 
 ### RTC
 
@@ -268,8 +268,13 @@ If the hardware supports TRNG, you must port it before running Device Management
 
 [Porting instructions for all connectivity options](../porting/porting-connectivity.html).
 
-When you finish porting WiFi, run [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
-<!--We can add links to the other examples too.-->
+You can now try running the example applications for your connectivity methods. For example:
+
+* [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble)
+* [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi)
+* [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan)
+* [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
+* [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
 
 ### Flash
 
