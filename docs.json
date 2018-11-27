@@ -1279,11 +1279,10 @@
                 },
                 "sub_chapters": [{
                         "title": "Setting up",
-                        "intro": {
+                        "sources": [{
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_reqs.md"
-                        },
-                        "sources": []
+                        }]
                     },
                     {
                         "title": "Porting",
