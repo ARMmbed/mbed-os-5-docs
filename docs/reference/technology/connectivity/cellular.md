@@ -62,7 +62,7 @@ As an application developer, you should use and refer only to classes located un
 
 Cellular APIs are structured based on main functionalities:
 
-- `CellularContext` is the main interface for the application. You can use it to connect to the operator's APN.
+- `CellularContext` is the main interface for the application. You can use it to connect to the operator's Access Point Name (APN).
 - `CellularNetwork` for cellular network features, such as registering and attaching to a network.
 - `CellularPower` for cellular hosted module power control, such as enabling power save.
 - `CellularInformation` to read the cellular hosted module type and firmware version.
