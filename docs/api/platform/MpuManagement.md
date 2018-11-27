@@ -11,7 +11,7 @@ Mbed OS handles MPU management automatically in the following situations:
 - Memory protection is disabled when starting a new application.
 - Memory protection is disabled while flash programming.
 
-<span class="notes">**Note:** Memory protection should be transparent to most applications and libraries because Mbed OS handles it automatically for operations that need to disable MPU protections, such as flash programming.</span>
+<span class="notes">**Note:** Memory protection should be transparent to most applications and libraries because Mbed OS handles it automatically for operations that need to disable MPU protections, such as flash programming. This is an advanced feature intended for use by advanced developers; it is not required.</span>
 
 #### RAM execute lock
 
