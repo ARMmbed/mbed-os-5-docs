@@ -15,11 +15,11 @@ Mbed OS handles MPU management automatically in the following situations:
 
 #### RAM execute lock
 
-After-boot execution from RAM is not allowed. Libraries requiring the ability to execute from RAM can enable this by acquiring the RAM execution lock. The RAM execution lock has a count associated with it, and you can lock t multiple times. Execution from RAM is disabled only when all components have unlocked it.
+After boot, execution from RAM is not allowed. Libraries requiring the ability to execute from RAM can enable this by acquiring the RAM execution lock. The RAM execution lock has a count associated with it, and you can lock it multiple times. Execution from RAM is disabled only when all components have unlocked it.
 
 #### ROM write lock
 
-After-boot writing to ROM is not allowed. Libraries requiring the ability to writing to ROM can enable this by acquiring the ROM write lock. The ROM write lock has a count associated with it, and you can lock it multiple times. Writing to ROM disablesd only when all components have unlocked it.
+After boot, writing to ROM is not allowed. Libraries requiring the ability to writing to ROM can enable this by acquiring the ROM write lock. The ROM write lock has a count associated with it, and you can lock it multiple times. Writing to ROM disablesd only when all components have unlocked it.
 
 <span class="notes">**Note:** When the ROM write lock is held, many devices will still fault if code writes to ROM.</span>
 
@@ -32,11 +32,11 @@ After-boot writing to ROM is not allowed. Libraries requiring the ability to wri
 ```C
 #include "mbed.h"
 
+// Permanently enable execute from RAM for this application
+ScopedRamExecutionLock make_ram_executable;
+
 int main()
 {
-    // Permanently enable execute from RAM for this application
-    mbed_mpu_manager_lock_mem_xn();
-
     some_function_in_ram();
 }
 ```
