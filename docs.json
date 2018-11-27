@@ -90,15 +90,14 @@
                 "title": "Offline with Mbed CLI",
                 "sub_chapters": [{
                         "title": "Setting up and compiling the code",
-                        "sources": [
-                          {
-                              "type": "markdown",
-                              "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_setting_up.md"
-                          },
-                          {
-                              "type": "markdown",
-                              "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_code.md"
-                          }
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_setting_up.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_code.md"
+                            }
                         ]
                     },
                     {
@@ -1246,10 +1245,10 @@
         "slug": "contributing",
         "type": "markdown",
         "sources": [{
-            "type": "markdown",
-            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/guidelines.md"
-        },
-        {
+                "type": "markdown",
+                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/guidelines.md"
+            },
+            {
                 "type": "markdown",
                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/contributing/guidelines/license.md"
             },
@@ -1275,22 +1274,22 @@
         "chapters": [{
                 "title": "Porting process",
                 "sources": [{
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_start.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_reqs.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting.md"
-                },
-                {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_tests.md"
-                }
-              ]
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_start.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_reqs.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/porting_full_process/porting_tests.md"
+                    }
+                ]
             },
             {
                 "title": "Porting targets",
