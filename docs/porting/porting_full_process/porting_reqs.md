@@ -4,11 +4,16 @@
 
 Porting Mbed OS requires the following hardware:
 
-- An evaluation board with the targeted MCU.
+- A development PC. You can port targets, connectivity and storage on Windows, macOS or Linux. However, due to limitations in some development tools that Mbed OS uses, you need a Windows PC for DAPLink/FlashAlgo development.
+
+-  An evaluation board with a target MCU, debug probe or an integrated interface chip. The hardware [is reviewed in greater details later in this document]().
 
     The new target needs a unique board ID. [Contact Arm]() to get one.
 
-- A micro USB cables. One Micro USB cable connects the evaluation board to your development PC.
+- A storage device (SD or external flash).
+- A micro SD card for the CI test shield.<!--are these the same thing?-->
+
+- A micro USB cable to connect the evaluation board to your development PC.
 
 You may also need:
 
@@ -19,7 +24,6 @@ You may also need:
 The following items might help you test SPI, I2C and Pins:
 
 - A CI test shield v2.0.0. For details, refer to [https://github.com/ARMmbed/ci-test-shield](https://github.com/ARMmbed/ci-test-shield).
-- A micro SD card for the CI test shield.
 
 <span class="tips">Check the user guide of the evaluation board to see if anything needs to be done prior to using a debug probe and running Mbed OS programs.</span>
 
@@ -30,10 +34,13 @@ Please install the following:
 - [Python 2.7](https://www.python.org/downloads/release/python-2715/).
 - [Git](https://git-scm.com/downloads).
 - [Mbed CLI](../tools/installation-and-setup.html).
+- Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/).
+
+    Limitations:
+
+    - Eclipse is license free, whereas both IAR and Keil IDE require licenses.
+    - Currently, DAPLink development works only Keil MDK. You will have to use Keil for pyOCD and DAPLink development.
+
 - (Optional) [FTDI serial driver](http://www.ftdichip.com/Drivers/VCP.htm).
-- Toolchains:
-   - [GNU Arm Embedded Toolchain (GCC)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-   - [IAR](https://www.iar.com/iar-embedded-workbench/).
-   - [Arm Compiler 5 or 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-5).
 
 <span class="notes">The [tools documentation](../tools/index.html) contains the exact third party tool versions supported in a specific Mbed OS release.</span>
