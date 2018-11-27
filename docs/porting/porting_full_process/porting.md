@@ -152,7 +152,7 @@ To include the new target support:
 
 Based on criticality and dependency of Mbed OS software stack, we recommend the following order:
 
-1. Bare metal (based on the Blinky example).
+1. Create a bare metal (based on the Blinky example).
 1. Bootstrap and entry point.
 1. Serial port (synchronous transfer).
 1. Low power ticker.
@@ -283,14 +283,12 @@ There are two ways to implement flash API: using CMSIS flash algorithms or C sou
 
 [Bootloader porting instructions](../porting/bootloader.html).
 
-The bootloader is a separate application, which needs to be created and integrated into Device Management Client.<!--this is a stub - it's only understandable if you already know everything about bootloader. Needs more info here.--><!--only mandatory if you want to use device management client-->
+The bootloader is a separate application, which needs to be created and integrated into Device Management Client to allow firmware updates.
 
 ### Device Management Client
 
-You do not need to manually port Device Management Client; when the above components are ported, you should be ready to demo the Connect and Update functionalities of the Device Management Client. See https://cloud.mbed.com/docs/current for details.<!--point to the quick starts instead of the docs-->
+You do not need to manually port Device Management Client; when the above components are ported, you should be ready to [demo the Connect and Update functionalities of the Device Management Client](https://cloud.mbed.com/guides/connect-device-to-pelion).
 
 ### Other HAL Components (Optional)
 
 You are now ready to port any other HAL components that your use case and MCU require. These components are covered in the rest of this document.
-
-<!--Amanda, should we organize the modules so that they fit the porting order?-->

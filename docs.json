@@ -1314,15 +1314,7 @@
                 },
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/bootloader.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/thread_safety.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/us_ticker.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/serial.md"
                     },
                     {
                         "type": "markdown",
@@ -1330,7 +1322,11 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/serial.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/us_ticker.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/gpio.md"
                     },
                     {
                         "type": "markdown",
@@ -1338,11 +1334,23 @@
                     },
                     {
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/QuadSPI.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/entropy.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/gpio.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/flash.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/bootloader.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/thread_safety.md"
                     },
                     {
                         "type": "markdown",
@@ -1364,10 +1372,7 @@
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/Watchdog.md"
                     },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/QuadSPI.md"
-                    },
+
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/itm.md"
@@ -1376,10 +1381,7 @@
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/usb.md"
                     },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/flash.md"
-                    },
+
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/crc.md"
