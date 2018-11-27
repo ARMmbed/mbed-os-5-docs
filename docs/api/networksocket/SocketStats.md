@@ -1,10 +1,10 @@
 ## SocketStats
 
-Use the SocketStats class to read the network socket statistics. SocketStats Class object is created by "InternetSocket" class when statistics are enabled by `nsapi.socket-stats-enable` config option.
+Use the SocketStats class to read the network socket statistics. When statistics are enabled, you can create the SocketStats class object with the `InternetSocket` class by using the `nsapi.socket-stats-enable` configuration option.
 
-The `SocketStats` class provides the static function `mbed_stats_socket_get_each` to get the network socket information for all sockets both currently in use and closed. Using this function you can know how many sockets are open, destination IP addresses, the amount of data sent and received in bytes, the type of socket and the timestamp of recent "socket state" changes recorded in `last_change_tick`.
+The `SocketStats` class provides the static function `mbed_stats_socket_get_each` to get the network socket information for all sockets both currently in use and closed. Using this function, you can know how many sockets are open, destination IP addresses, the amount of data sent and received in bytes, the type of socket and the timestamp of recent "socket state" changes recorded in `last_change_tick`.
 
-Socket Statistics are stored in intenal data buffer and maintained for closed sockets as well. In case internal data buffer is full, socket closed with oldest timestamp will be over-written. Maximum amount of sockets statistics stored can be configured by `nsapi.socket-stats-max-count` config option.
+Socket statistics are stored in an internal data buffer and maintained for closed sockets, as well. If the internal data buffer is full, the socket closed with the oldest timestamp will be overwritten. You can configure the maximum amount of sockets statistics stored by using the `nsapi.socket-stats-max-count` configuration option.
 
 ### SocketStats class reference
 
