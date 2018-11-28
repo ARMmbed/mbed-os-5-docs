@@ -9,15 +9,15 @@
 
 1. Double click on the `MBED.HTML` file. This adds your Mbed board to the Online Compiler as a compilation target.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler2.png)</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)</span>
 
 ### Importing the code
 
 Click the button below to automatically import the example into the Online Compiler.
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-quick-start-blinky)](https://github.com/ARMmbed/mbed-os-quick-start-blinky/blob/master/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky)](https://github.com/ARMmbed/mbed-os-example-blinky/blob/master/main.cpp)
 
-Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-quick-start-blinky) into the prompt.
+Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-example-blinky) into the prompt.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_program.png)</span>
 
@@ -25,7 +25,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 1. Click **Compile**. Your browser downloads the program as an executable file.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button2.png)</span>
+    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button.png)</span>
 
 1. Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
