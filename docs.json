@@ -578,6 +578,14 @@
                 },
                 "sources": [{
                         "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/storage/KVStoreAPI.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/storage/KVStoreGlobalAPI.md"
+                    },
+                    {
+                        "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/storage/FileSystem.md"
                     },
                     {
@@ -751,6 +759,10 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/firmware_update.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/storage.md"
                             },
                             {
                                 "type": "markdown",
