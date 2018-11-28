@@ -1,6 +1,6 @@
 ## Thread
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
 
 The Thread class allows defining, creating and controlling parallel tasks.
 
@@ -8,7 +8,7 @@ The Thread class allows defining, creating and controlling parallel tasks.
 
 ### Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 ```C
 /// Priority values.
@@ -77,7 +77,7 @@ The code below uses two separate threads to blink two LEDs. The first thread is 
 
 ### Thread example with callbacks
 
-The Callback API provides a convenient way to pass arguments to spawned threads.  
+The Callback API provides a convenient way to pass arguments to spawned threads.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
 

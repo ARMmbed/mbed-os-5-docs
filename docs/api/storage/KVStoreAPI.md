@@ -9,20 +9,20 @@ It is also possible to instantiate single objects of the classes detailed below 
 Classes implementing KVStore API:
 
 - Tiny Database Storage (TDBStore): A lightweight module that stores data on a flash storage. It is part of the KVStore class family, so it supports the get/set interface. It is designed to optimize performance (speed of access), reduce wearing of the flash and minimize storage overhead. It is also resilient to power failures.
-   
+
    - Requirements and assumptions: TDBStore assumes that the underlying block device is fully dedicated for it (starting offset 0). If you want to dedicate only a part of the device to TDBStore, then use a sliced block device, typically with `SlicingBlockDevice`. This feature requires a flash based block device, such as `FlashIAPBlockDevice` or `SpifBlockDevice`. It can work on top of block devices that don't need erasing before writes, such as `HeapBlockDevice` or `SDBlockDevice`, but requires a flash simulator layer for this purpose, like the one offered by `FlashSimBlockDevice`.
 
 - FileSystemStore: A lightweight implementation of the KVStore interface over file systems.
-   
+
    - Requirements and assumptions: FileSystemStore assumes the underlying file system qualities for resilience and file validation. If the underlying file system has no protection against power failures, then neither does FileSystemStore. When initializing this class, it is assumed that the underlying FileSystem is initialized and mounted.
 
 - SecureStore: A KVStore-based storage solution that provides security features on the stored data, such as encryption, authentication, rollback protection and write once, over an underlying KVStore class. It references an additional KVStore class for storing the rollback protection keys.
-   
+
    - Requirements and assumptions: SecureStore assumes that the underlying KVStore instances are instantiated and initialized.
 
 ### KVStore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_k_v_store.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_k_v_store.html)
 
 ### KVStore example
 

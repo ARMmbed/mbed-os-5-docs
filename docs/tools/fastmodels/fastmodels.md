@@ -28,22 +28,22 @@ Examples you can successfully run include:
 
 - [`mbed-os-example-blinky`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/).
 - [`mbed-os-example-tls`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/).
-- [`mbed-os-example-devicekey`](https://os-doc-builder.test.mbed.com/docs/development/apis/devicekey.html#devicekey-example).
-- [`mbed-os-example-nvstore`](https://os-doc-builder.test.mbed.com/docs/development/apis/nvstore.html#nvstore-example).
-- [`mbed-os-example-thread-statistics`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#thread-statistics-example).
-- [`mbed-os-example-sys-info`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#system-information-example).
-- [`mbed-os-example-cpu-usage`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#cpu-usage-example).
-- [`mbed-os-example-cpu-stats`](https://os-doc-builder.test.mbed.com/docs/development/apis/mbed-statistics.html#cpu-statistics-example).
-- [`mbed-os-example-error-handling`](https://os-doc-builder.test.mbed.com/docs/development/apis/error-handling.html#error-handling-example).
-- [`mbed-os-example-filesystem`](https://os-doc-builder.test.mbed.com/docs/development/apis/filesystem.html#file-system-example).
-- [`mbed-os-example-blockdevice`](https://os-doc-builder.test.mbed.com/docs/development/apis/blockdevice.html#blockdevice-example).
-- [`mbed-os-example-sockets`](https://os-doc-builder.test.mbed.com/docs/development/apis/socket.html#socket-example).
+- [`mbed-os-example-devicekey`](https://os.mbed.com/docs/development/apis/devicekey.html#devicekey-example).
+- [`mbed-os-example-nvstore`](https://os.mbed.com/docs/development/apis/nvstore.html#nvstore-example).
+- [`mbed-os-example-thread-statistics`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#thread-statistics-example).
+- [`mbed-os-example-sys-info`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#system-information-example).
+- [`mbed-os-example-cpu-usage`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#cpu-usage-example).
+- [`mbed-os-example-cpu-stats`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#cpu-statistics-example).
+- [`mbed-os-example-error-handling`](https://os.mbed.com/docs/development/apis/error-handling.html#error-handling-example).
+- [`mbed-os-example-filesystem`](https://os.mbed.com/docs/development/apis/filesystem.html#file-system-example).
+- [`mbed-os-example-blockdevice`](https://os.mbed.com/docs/development/apis/blockdevice.html#blockdevice-example).
+- [`mbed-os-example-sockets`](https://os.mbed.com/docs/development/apis/socket.html#socket-example).
 
 The following examples use `mbed-os-example-blinky`.
 
 To run Mbed OS examples with Fast Models, you need to install the Fast Models product and set up the license. The [Arm DS-5 Development Studio](https://developer.arm.com/products/software-development-tools/ds-5-development-studio) also provides Fast Models targets. To load a compiled Mbed OS image onto a Fast Models platform, such as the FVP_MPS2_Cortex-M0, you need to add your installation's `bin` folder to your system `PATH`. For example: `C:\Program Files\DS-5 v5.29.1\bin`.
 
-#### Import the example with Arm Mbed CLI 
+#### Import the example with Arm Mbed CLI
 
 Import the blinky example:
 

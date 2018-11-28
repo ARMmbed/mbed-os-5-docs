@@ -11,7 +11,7 @@ The configuration parameters present in the API's `.json` files determine the al
 ### Parameter details
 
 Below are the nontrivial parameters that are part of the global API.
- 
+
 #### `full_name_key`
 
 This is a string composed of characters valid for file names in the form of **/path/myfilename**.
@@ -37,8 +37,8 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 
 ### Static Global API class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
- 
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
+
 ### Static Global API example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore/)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/master/main.cpp)

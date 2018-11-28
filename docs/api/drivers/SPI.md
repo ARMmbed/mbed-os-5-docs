@@ -1,6 +1,6 @@
 ## SPI
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
 
 The SPI Interface provides a Serial Peripheral Interface Master.
 
@@ -14,18 +14,18 @@ The default settings of the SPI interface are 1MHz, 8-bit, Mode 0.
 
 You can use the SPI interface to write data words out of the SPI port, returning the data received back from the SPI slave. You can also configure the SPI clock frequency and format. The format is set to data word length 8 to 16 bits, and the mode as per the table below:
 
-Mode |  Polarity |  Phase  
----|---|---  
-0 | 0 | 0  
-1 | 0 | 1  
-2 | 1 | 0  
-3 | 1 | 1  
+Mode |  Polarity |  Phase
+---|---|---
+0 | 0 | 0
+1 | 0 | 1
+2 | 1 | 0
+3 | 1 | 1
 
 The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock. To communicate with multiple slave devices connected over the same SPI peripheral, you must use multiple SPI objects, one for each slave, but instantiate them with a different Slave select (SSEL) and configuration corresponding to each slave. Note that the SPI object automatically configures the SPI peripheral with the current object's configuration when the application code invokes the interfaces on the SPI object.
 
 ### SPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
 
 ### SPI hello, world
 

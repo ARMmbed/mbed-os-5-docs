@@ -58,7 +58,7 @@ typedef enum {
 
 ### Adding a new cellular target
 
-You need to specify in [CellularTargets.h](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html) the `<manufacturer-module>` that is mounted on your board.
+You need to specify in [CellularTargets.h](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html) the `<manufacturer-module>` that is mounted on your board.
 
 ```target
 
@@ -73,7 +73,7 @@ You can browse the existing `manufacturer-modules` under `features/cellular/fram
 
 You can probably reuse an existing adaptation because most cellular modules are similar to one another.
 
-You need to create a new folder as _MANUFACTURER/MODULE/_ for your new cellular module in `features/cellular/framework/targets/`. A device class inheriting [AT_CellularDevice](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) is a minimum, and you may need to extend other cellular APIs as well if the default implementation is not sufficient for your cellular module.
+You need to create a new folder as _MANUFACTURER/MODULE/_ for your new cellular module in `features/cellular/framework/targets/`. A device class inheriting [AT_CellularDevice](https://os.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) is a minimum, and you may need to extend other cellular APIs as well if the default implementation is not sufficient for your cellular module.
 
 ### Socket adaptation
 
@@ -86,7 +86,7 @@ If your cellular module has an IP stack, you need to implement the AT commands t
 
 For example implementations of a socket adaptation, look in `features/cellular/framework/targets`.
 
-When the modem has AT and/or PPP mode support in place and the application developer has selected which mode to use, it's up to the cellular framework to instantiate the correct classes. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates [CellularContext class](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html). CellularContext instantiates classes implementing [the AT command layer](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. If an application developer has configured PPP mode in `mbed_app.json` then [AT_CellularContext](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_context_8h_source.html) connects to a cellular network and calls `nsapi_ppp_connect()` to start the data call through the PPP pipe using LWIP sockets.
+When the modem has AT and/or PPP mode support in place and the application developer has selected which mode to use, it's up to the cellular framework to instantiate the correct classes. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates [CellularContext class](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html). CellularContext instantiates classes implementing [the AT command layer](https://os.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. If an application developer has configured PPP mode in `mbed_app.json` then [AT_CellularContext](https://os.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_context_8h_source.html) connects to a cellular network and calls `nsapi_ppp_connect()` to start the data call through the PPP pipe using LWIP sockets.
 
 ### Testing
 

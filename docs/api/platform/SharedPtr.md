@@ -11,13 +11,13 @@ When `ptr` is passed around by a value, the copy constructor and destructor mana
 
 ### SharedPtr class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_shared_ptr.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_shared_ptr.html)
 
 ### Shared pointer example
 
 ```
 #include "platform/SharedPtr.h"
-  
+
 void test() {
     struct MyStruct { int a; };
 

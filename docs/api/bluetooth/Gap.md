@@ -12,7 +12,7 @@ Advertising, scanning and connection all have parameters that let you find a com
 
 Advertising consists of broadcasting at a regular interval a small amount of data containing valuable information about the device. Peer devices listening on BLE advertising channels may scan these packets.
 
-Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information. 
+Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information.
 
 #### Scanning
 
@@ -31,7 +31,7 @@ Similarly, if the controller supports periodic advertising, you may use periodic
 There may be many advertising sets active at one time on a single advertiser. This allows it to advertise different data at the same time, possibly to different peers.
 
 Devices that do not support extended and periodic advertising will not see these advertisements. You may use legacy advertising alongside extended advertising, running at the same time, to support older devices in the environment.
- 
+
 #### Privacy
 
 Privacy is a feature that allows a device to avoid being tracked by other (untrusted) devices. The device achieves it by periodically generating a new random address. The random address may be a resolvable random address, enabling trusted devices to recognize it as belonging to the same device. These trusted devices receive an Identity Resolution Key (IRK) during pairing. The SecurityManager handles this and relies on the other device accepting and storing the IRK.
@@ -45,7 +45,7 @@ When supported by the host and controller, you can select different modulation s
  - LE 1M PHY.
  - LE 2M PHY.
  - LE coded PHY.
- 
+
 These provide different compromises between bandwidth, power usage and error resiliency (see BLUETOOTH SPECIFICATION Version 5.0 Vol 1, Part A - 1.2).
 
 You may set preferred PHYs (separately for RX and TX) using `setPreferredPhys()`. You may also set the currently used PHYs on a selected connection using `setPhy()`. Both of these settings are only advisory. The controller is allowed to make its own decision on the best PHY to use based on your request, the peer's supported features and the connection's physical conditions.
@@ -54,7 +54,7 @@ You may query the currently used PHY using `readPhy()`, which returns the result
 
 ### GAP class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_gap.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_gap.html)
 
 ### GAP example
 
