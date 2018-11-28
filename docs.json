@@ -97,16 +97,12 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/cli_code.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/example_walkthrough.md"
                             }
                         ]
-                    },
-                    {
-                        "title": "Example walkthrough",
-                        "intro": {
-                            "type": "markdown",
-                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/example_walkthrough.md"
-                        },
-                        "sources": []
                     },
                     {
                         "title": "Debugging",
