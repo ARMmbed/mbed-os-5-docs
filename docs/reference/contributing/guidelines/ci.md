@@ -21,7 +21,7 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
 - **travis-ci/licence_check** - Check there is no GPL licence text in the code.
 - **travis-ci/littlefs** - Test littlefs without embedded hardware.
 - **travis-ci/tools-py2.7** - Run Python tools tests with Python 2.7.
-
+- **travis-ci/psa-autogen** - Runs PSA SPM code generator.
 ### Jenkins
 
 We use [Jenkins](https://jenkins.io/) as an internal testing and checking environment. We execute tests that have special requirements for the execution enviroment in our internal Jenkins. In most cases, we publish test logs.
