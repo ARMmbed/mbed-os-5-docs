@@ -46,10 +46,11 @@ The board under test needs to be supported in mbedls for automated tests to work
 If the official mbedls pip package hasn't been released yet, you need to direct pip to use your local directory (which includes the  code changes to support the new board):
 
 1. Clone [https://github.com/ARMmbed/mbed-ls](https://github.com/ARMmbed/mbed-ls).
+1. [Add your target to the platform database](https://github.com/ARMmbed/mbed-ls#adding-platform-support)
 1. Run `pip install --editable <your_local_root_to_mbed-ls>`.
-1. Create an `mbedls.json` file. This file allows you to override and specify the FTDI USB port.
+1. If you're using an external serial probe (like an FTDI USB cable), create an `mbedls.json` file and specify the serial port.
 
-    The serial port path varies in different operation systems. On **Windows**, you can find it through Device Manager; it will usually be something like `COM#`. On **Mac OS** and Linux, you can use `ls /dev/tty.usb*`:
+    The serial port path varies in different operation systems. On **Windows**, you can find it through Device Manager; it will usually be something like `COM#`. On **Mac OS** you can use `ls /dev/tty.usb*`. On Linux you can use `ls /dev/ttyACM*`. The format of `mbedls.json` is as follows:
 
     ```
     {
@@ -59,17 +60,20 @@ If the official mbedls pip package hasn't been released yet, you need to direct 
     }
     ```
 
+    Where `"33000000e062afa300000000000000000000000097969902"` is the correct target id.
+
 ### Compiling and running tests
 
 1. Compile your tests:
-    - To compile all tests, run `mbed test -compile`.
+    - To compile all tests, run `mbed test --compile`.
     - To see the list of compiled tests, run `mbed test --compile-list`.
-    - To compile a specific test, run  `mbed test -compile -n <test_name>`. For example: `mbed test --compile -n tests-concurrent-gpio)`.
-1. To run your tests, run `mbedgt`.
+    - To compile a specific test, run  `mbed test --compile -n <test_name>`. For example: `mbed test --compile -n mbed-os-tests-concurrent-gpio)`.
+1. To run your tests, run `mbed test --run`.
 
 
 Here is an example of a successful run:
 
+<!-- Needs to be updated with output from mbed-cli (mbed test) -->
 ```
 mbedgt: greentea test automation tool ver. 1.4.0
 mbedgt: using multiple test specifications from current directory!
@@ -132,17 +136,16 @@ You may want to run manual tests, for example if DAPLink is still under developm
 1. Find the test directory:
 
     ```
-    mbed test --compile-list -n mbed-os-tests-mbed_hal-common_ticker
+    mbed test -m <new_target> -t gcc_arm --compile-list -n mbed-os-tests-mbed_hal-common_ticker
     ```
 
 1. Copy the source code to the project root directory:
 
     ```
-    cd <root_dir>
+    cd <separate folder from existing porting project>
     cp -R mbed-os-example-blinky/mbed-os/TESTS/mbed_hal/common_tickers .
     cd common_tickers
-    mbed new .
-    rm -rf mbed-os
+    mbed new --create-only .
     ```
 
 1. Copy the `mbed-os` directory:
@@ -156,8 +159,11 @@ You may want to run manual tests, for example if DAPLink is still under developm
     ```
     mbed export -i gcc_arm -m <new_target>
     ```
-
+<!-- gcc_arm is not a valid exporter. A list of valid exporters are here: https://github.com/ARMmbed/mbed-os/blob/master/tools/export/__init__.py#L36-L60 -->
+<!-- If this is actually meant to use Eclipse, a valid eclipse exporter needs to be used (and ensure that the exporter is working before committing it to the docs) -->
 1. Open the project with pyOCD (using the same configuration you used [when you initially set up pyOCD]( Creating GDB pyOCD debug configuration).
+<!-- This isn't really a precise statement. If you're using pyOCD, there needs to be a detailed list of instructions of what commands to run to
+start the gdb server, connect to it with gdb, how to load the binary, etc -->
 
 1. Run the program:
 
@@ -182,23 +188,17 @@ To build and run the Mbed OS tests:
 
 1. Build the tests:
 
+   <!-- any reason why we're doing a clean build here everytime? I'd really recommend dropping this one, build times will be very high -->
    ```
-   mbed test --compile -m <new_target> -t gcc_arm -c
+   mbed test -m <new_target> -t gcc_arm --compile -c
    ```
 
    You'll see some build errors. These errors should reduce and eventually disappear as more HAL components are ported.
 
-1. To run the tests, go to the `mbed-os` directory.
-
-   ```
-   cd mbed-os
-   ```
-
-   You can see the full list of built tests:
-
+1. You can see the full list of built tests:
 
     ```
-    mbed test --compile-list
+    mbed test -m <new_target> -t gcc_arm --compile-list
     ```
 
 1. Test images are located under the following directory:
@@ -210,19 +210,14 @@ To build and run the Mbed OS tests:
     For example:
 
     ```
-    $ mbed test --compile-list | grep common_tickers
+    $ mbed test -m <new_target> -t gcc_arm --compile-list -n *tickers*
 
-        Test Case:
-
-    Name: tests-mbed_hal-common_tickers
-
-    Path: ./TESTS/mbed_hal/common_tickers
-
-      Test Case:
-
-          Name: tests-mbed_hal-common_tickers_freq
-
-          Path: ./TESTS/mbed_hal/common_tickers_freq
+    Test Case:
+        Name: tests-mbed_hal-common_tickers
+        Path: ./TESTS/mbed_hal/common_tickers
+    Test Case:
+        Name: tests-mbed_hal-common_tickers_freq
+        Path: ./TESTS/mbed_hal/common_tickers_freq
     ```
 
     In this example:
@@ -230,13 +225,12 @@ To build and run the Mbed OS tests:
     - The `common_tickers` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers`.
     - The `common_tickers_freq` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers_freq.`
 
-1. You need to flash the test image to the board. You can use either DAPLink or Eclipe IDE. You may also be able to use IAR and Keil (if they already support the new target).
+1. You need to flash the test image to the board. You can use either pyOCD or the Eclipe IDE. You may also be able to use IAR and Keil (if they already support the new target).
 
     The easiest method is using the pyOCD flash tool:
 
     ```
-    pyocd-flashtool BUILD/mbed-os-example-blinky.bin or
-    pyocd-flashtool BUILD/mbed-os-example-blinky.hex
+    pyocd-flashtool BUILD/mbed-os-example-blinky.bin    # Use the .hex file if appropriate
     ```
 
 1. Before you begin the test run, please make sure the serial port is not already opened by programs like Screen or Teraterm (close them if they're open). In addition, verify `mbedls` lists the new target device.

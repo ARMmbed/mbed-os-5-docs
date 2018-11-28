@@ -11,11 +11,11 @@ Porting Mbed OS requires the following hardware:
 
 - A storage device (SD or external flash).
 - A micro SD card for the CI test shield.
-- A micro USB cable to connect the evaluation board to your development PC.
+- A USB cable to connect the evaluation board to your development PC.
 
 You may also need:
 
-- If the interface MCU is not on the evaluation board, choose a debug probe, such as [SDWAP-LPC11U35](https://os.mbed.com/platforms/SWDAP-LPC11U35/). You will then need a micro USB cable (in addition to the micro USB cable listed above).
+- If the interface MCU is not on the evaluation board, choose a debug probe, such as [SWDAP-LPC11U35](https://os.mbed.com/platforms/SWDAP-LPC11U35/). You will then need a micro USB cable (in addition to the micro USB cable listed above).
 - An FTDI TTL232R-3V3 USB cable, for the Tx and Rx pins of debug probes that do not have a serial connection.
 
 The following items might help you test SPI, I2C and pins:
@@ -28,7 +28,7 @@ The following items might help you test SPI, I2C and pins:
 
 Please install the following:
 
-- [Python 2.7](https://www.python.org/downloads/release/python-2715/).
+- [Python](https://www.python.org/downloads).
 - [Git](https://git-scm.com/downloads).
 - [Mbed CLI](../tools/installation-and-setup.html).
 - Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/).

@@ -17,20 +17,23 @@ Please fork or branch the following repositories:
 The following Mbed CLI commands retrieve and forks the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
 ```
-mbed import mbed-os-example-blinky
+git clone mbed-os-example-blinky
 cd mbed-os-example-blinky
 ```
 
-Add the URL of your forked `mbed-os` (such as https://github.com/ARMmbed/mbed-os-new-target) to `mbed-os.lib`.Then:
+Delete the file `mbed-os.lib` (`rm mbed-os.lib` on Linux/macOS, `del mbed-os.lib` on Windows).
+
+Next, add your fork of `mbed-os` (change the url to match your repository).
 
 ```
-mbed deploy
-mkdir mbed-os
+mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
+```
+
+Next, we'll setup the upstream remote and create a branch for the new port.
+
+```
 cd mbed-os
-git init
-git remote add origin https://github.com/<your_username>/mbed-os-new-target
-git remote add upstream https://github.com/ARMmbed/mbed-os-new-target
-git pull origin master
+git remote add upstream https://github.com/ARMmbed/mbed-os
 git checkout -b <branch_name>
 ```
 
@@ -146,13 +149,13 @@ To include the new target support:
 
 1. You can use the default values for all other settings.
 
-## Porting modules
+## Porting modules <!-- This is somewhat confusing, as modules are a "hardware" thing as well, not just software. Perhaps something like "Porting Mbed OS APIs" instead? -->
 
 ### Recommended porting order
 
 Based on criticality and dependency of Mbed OS software stack, we recommend the following order:
 
-1. Create a bare metal (based on the Blinky example).
+1. Create a bare metal (based on the Blinky example). <!-- bare metal what? does then create a project? But we already did that in "Getting a working baseline"... -->
 1. Bootstrap and entry point.
 1. Serial port (synchronous transfer).
 1. Low power ticker.
@@ -174,6 +177,17 @@ Detailed instructions for porting each module are given in the module-specific s
 The official mbed-os-example-blinky uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).
 
 <span class="notes">Blinky is a stop-gap measure; please don't commit it to master.</span>
+<!-- if blinky is a stop gap measure, let's not use blinky. Let's either make a new example or give them a copy and paste snippet in this doc. Something like:
+
+#include "mbed.h"
+
+int main() {
+    // Do interesting things!
+    while(1) {
+    }
+  }
+}
+-->
 
 ### Bootstrap and entry point
 
@@ -182,6 +196,7 @@ The official mbed-os-example-blinky uses a DigitalOut object and timers. The bar
 Mbed OS uses CMSIS Pack for bootstrap. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:
 
 1. Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:
+<!-- Make a note here that Keil needs to be installed as well -->
 
    ```
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
@@ -190,6 +205,7 @@ Mbed OS uses CMSIS Pack for bootstrap. If your target doesn't have CMSIS pack ye
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
+<!-- This is lacking in detail. Are they supposed to implement the Mbed pinmap apis? Or should they do this manually by modifying device registers? -->
 
     At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called `.mbedignore` in your mbed-os directory (if one doesn't exist), and add the following entry:
 
@@ -235,6 +251,8 @@ The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/la
 [Microsecond ticker porting instructions](../porting/microsecond-ticker.html).
 
 When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with Blinky, which invokes both millisecond and microsecond tickers in its `wait (n second)` blinking behavior.
+<!-- Blinky hits the DigitalOut and GPIO apis, so this won't work until the next section completed, correct? Perhaps printf should be used instead, or explicitly
+say to use baremetal GPI (write to device registers directly) -->
 
 ### GPIO (write and read) and IRQ
 

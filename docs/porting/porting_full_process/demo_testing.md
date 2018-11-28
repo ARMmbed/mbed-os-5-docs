@@ -8,26 +8,26 @@ You can use two applications to test your port:
 ### mbed-os-example-blinky
 
 1. Application repository: [https://github.com/ARMmbed/mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky).
-1. Clone the repo, if you haven't done this already while porting:
+1. Import the repo, if you haven't done this already while porting:
 
     ```
-    git clone https://github.com/ARMmbed/mbed-os-example-blinky.git
+    mbed import https://github.com/ARMmbed/mbed-os-example-blinky.git
     cd mbed-os-example-blinky
     ```
+1. If your target has not been merged into `mbed-os`, replace `mbed-os` with your fork (change the url to match your repository).
 
-1. Open a text editor and change the link in `mbed-os.lib` to `https://github.com/ARMmbed/mbed-os-new-target`, if you haven't done this already while porting.
-
-    Skip this step if `mbed-os-new-target` has been merged into `mbed-os`.
+    ```
+    mbed remove mbed-os
+    mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
+    ```
 
 1. Build the image:
 
     ```
-    vi mbed-os.lib
-    mbed deploy
-    mbed compile --target <new_target> --toolchain GCC_ARM
+    mbed compile -m <new_target> -t gcc_arm
     ```
-1. Flash the image (.bin or.hex) to the board.
-1. Verify the designated LED flashes every 0.5 second. You can use an oscilloscope.
+1. Flash the image (.bin or .hex) to the board.
+1. Verify the designated LED flashes every 0.5 second. You can use an oscilloscope for accurate measurement.
 
 
 ### mbed-cloud-client-example
@@ -36,12 +36,11 @@ Start with building the bootloader, which you will need for the firmware update 
 
 
 1. Application repository: [https://github.com/armmbed/mbed-bootloader](https://github.com/armmbed/mbed-bootloader).
+    1. If your target is not merged into `mbed-os` yet you will need to follow the same process as detailed above for adding your fork.
 1. Build the image:
 
     ```
-    cd mbed-os-bootloader
-    mbed deploy
-    mbed compile --target <new_target> --toolchain GCC_ARM --profile=tiny.json
+    mbed compile -m <new_target> -t gcc_arm --profile=tiny.json
     ```
 
 1. Flash the image (.bin or .hex) to the board.
@@ -60,6 +59,7 @@ Start with building the bootloader, which you will need for the firmware update 
 Then, test connectivity and firmware update:
 
 1. Application repository:[https://github.com/armmbed/mbed-cloud-client-example](https://github.com/armmbed/mbed-cloud-client-example).
+    1. Again, if you have not merged your target into `mbed-os` you will need to add your fork.
 1. [Set up a Pelion account](https://cloud.mbed.com/docs/current/account-management/users.html).
 1. [Generate an API key](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html) from the [Device Management Portal](https://portal.mbedcloud.com//login).
 1. In the `mbed-cloud-client-example` clone on your machine, run the following command with the generated API key:
@@ -67,15 +67,13 @@ Then, test connectivity and firmware update:
    ```
    $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
    $ mbed target <new_target>
-   $ mbed toolchain GCC_ARM
+   $ mbed toolchain gcc_arm
    $ mbed dm init -d "<company domain name>" --model-name <new_target>
    ```
 
    This creates two files: `update_default_resources.c` and `mbed_cloud_dev_credentials.c`. Add these files to your build.
 
-1. You need to customize four files before building:
-
-   - Modify `mbed-os.lib` by changing the URL to `https://github.com/ARMmbed/mbed-os-new-target`.
+1. You need to customize three files before building:
    - Add the new target to `mbed-cloud-client-example/mbed_app.json`. For example, the code block below adds `CC3220SF`:
 
       ```
@@ -111,9 +109,7 @@ Then, test connectivity and firmware update:
 1. Build the image:
 
    ```
-   cd mbed-cloud-client-example
-   mbed deploy
-   mbed compile --target <new_target> --toolchain GCC_ARM
+   mbed compile -m <new_target> -t gcc_arm
    ```
 
 1. Flash the image (.bin or .hex) to the board.
@@ -182,7 +178,7 @@ Then, test connectivity and firmware update:
    ```
 
 1. Verify that the device is registered by finding it in the [Device Management Portal](https://portal.mbedcloud.com//login).
-1. Make change in the Device Management Client and rebuild the firmware.
+1. Make change in the application and rebuild the firmware.
 1. Perform a firmware update:
 
    ```
