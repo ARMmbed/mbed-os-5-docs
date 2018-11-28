@@ -37,12 +37,13 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 
 ### Static Global API class reference
 
-<insert link>
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
  
 ### Static Global API example
 
-<insert link>
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore/)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/master/main.cpp)
 
 ### Related content
 
-<insert links>
+- [KVStore API](KVStore.html).
+- [Storage configuration](../reference/configuration-storage.html).
