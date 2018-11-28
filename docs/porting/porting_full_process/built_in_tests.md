@@ -4,7 +4,6 @@ It's important to test your port at the end of each module porting, rather than 
 
 1. Using the Mbed OS built-in tests with *Greentea*.
 1. Using the Mbed OS built-in tests with *manual testing*.
-1. Testing with the example applications.
 
 
 ## Testing with the Greentea framework
@@ -20,7 +19,7 @@ It's important to test your port at the end of each module porting, rather than 
 <!--../tutorials/eclipse.html-->
 <!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](../tools/greentea-testing-applications.html)-->
 
-Read the following page to understand how tests are structured and exported into Eclipse:
+Read the following page to understand how tests are structured:
 <!--From Jimmy: Don't export tests to Eclipse or at all. It's not supported, AKA not in CI-->
 
 ### Prerequisites
