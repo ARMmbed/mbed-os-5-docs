@@ -13,7 +13,7 @@ You can view more information about the configurable settings and functions in t
 
 ### MBRBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_m_b_r_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_m_b_r_block_device_8h_source.html)
 
 ### MBRBlockDevice example
 
