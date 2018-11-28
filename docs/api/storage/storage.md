@@ -2,37 +2,21 @@
 
 The storage APIs present in Arm Mbed OS are:
 
-- [KVStore:](#Components-implementing-KVStore-API) a common interface for components presenting set/get API.
+- [KVStore:](#kvstore) a common interface for components presenting set/get API.
 - [File system:](#declaring-a-file-system) a common interface for using file systems on block devices.
 - [Block device:](#declaring-a-block-device) a common interface for block-based storage devices.
 
-### Components implementing KVStore API
-#### TDBStore - Tiny Database
-TDBStore (Tiny Database Storage) is a lightweight module aimed for storing data on a flash storage. It is part of of the KVStore class family, meaning that it supports the get/set interface. It is designed to optimize performance (speed of access), reduce wearing of the flash and to minimize storage overhead. It is also resilient to power failures.
+### KVStore
 
-##### Requirements and assumptions
-TDBStore assumes that the underlying block device is fully dedicated for it (starting offset 0). If one wishes that only a part of the device is dedicated to TDBStore, then a sliced block device should be used, typically with `SlicingBlockDevice`.   
-In addition, this feature requires a flash based block device such as `FlashIAPBlockDevice` or `SpifBlockDevice`. It can work on top of block devices that don't need erasing before writes, such as `HeapBlockDevice` or `SDBlockDevice`, but requires a flash simulator layer for this purpose, like the one offered by `FlashSimBlockDevice`. 
+The [KVStore API](KVStore.html) is a common get/set API implemented by several classes. It gives you the flexibility to build a storage solution by allocating several combinations of objects.
 
-#### FileSystemStore
+Classes that implementing the KVStore API are:
 
-FileSystemStore is a lightweight implementation of the KVStore interface over file systems.
+- Tiny Database Storage (TDBStore).
+- FileSystemStore.
+- SecureStore.
 
-##### Requirements and assumptions
-
-FileSystemStore assumes the underlying file system qualities for resilience and file validation. This means that if the underlying file system has no protection against power failures, then neither would FileSystemStore have.  
-When initializing this class, it is assumed that the underlying FileSystem is initialized and mounted. 
-
-#### SecureStore
-SecureStore is a KVStore based storage solution, providing security features on the stored data, such as encryption, authentication, rollback protection and write once, over an underlying KVStore class. It references an additional KVStore class for storing the rollback protection keys. 
-
-##### Requirements and assumptions
-
-SecureStore assumes that the underlying KVStore instances are instantiated and initialized. 
-
-#### Static Global API
-The KVStore static API is presented in the file mbed-os\features\storage\kvstore\global_api\kvstore_global_api.h
-This API should be the only API used by applications to access the instances of KVStore components allocated by the selected configuration
+The [KVStore static global API](static-global-api.html) is the only API applications should use to access the instances of KVStore components allocated by the selected configuration.
 
 ### Declaring a file system
 
