@@ -12,7 +12,7 @@ To use secure TLS connections, the application uses the `TLSSocketWrapper` throu
 
 The TLSSocket example creates TLS connection to the HTTPS server and receives a simple response from the server:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/TLSSocket)](https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/TLSSocket/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/TLSSocket)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/TLSSocket/main.cpp)
 
 ### Related content
 

@@ -2,7 +2,7 @@
 
 Arm Mbed TLS provides a comprehensive SSL/TLS solution and makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
-We have adapted and [preintegrated Mbed TLS with Mbed OS](https://github.com/ARMmbed/mbed-os/tree/master/features/mbedtls). You can import it from its standalone [release](https://github.com/ARMmbed/mbedtls). This edition of Mbed TLS does not include test code or the scripts used in the development of the library. You can find all of these in the standalone release.
+We have adapted and [preintegrated Mbed TLS with Mbed OS](https://github.com/ARMmbed/mbed-os/blob/master/features/mbedtls). You can import it from its standalone [release](https://github.com/ARMmbed/mbedtls). This edition of Mbed TLS does not include test code or the scripts used in the development of the library. You can find all of these in the standalone release.
 
 <span class="notes">**Note:** Mbed TLS needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our [porting guide](../contributing/index.html).</span>
 
@@ -10,13 +10,13 @@ We have adapted and [preintegrated Mbed TLS with Mbed OS](https://github.com/ARM
 
 You can try the following examples:
 
-1. [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/tls-client): Downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
+1. [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client): Downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
 
-1. [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
+1. [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
 
-1. [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
+1. [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
 
-1. [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/tree/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
+1. [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
 
 Each of them comes with complete usage instructions as a readme file in the repository.
 

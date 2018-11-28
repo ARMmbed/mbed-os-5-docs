@@ -22,7 +22,7 @@ To use the ATCmdParser, the entity creating the ATCmdParser object passes a refe
 
 #### Example 2
 
-You can find another real world example in the Wi-Fi driver implementation for an [ESP8266 device](https://github.com/ARMmbed/mbed-os/tree/master/components/wifi/esp8266-driver). ESP8266 is a Wi-Fi module that you can connect to an SoC over UART for Wi-Fi support.
+You can find another real world example in the Wi-Fi driver implementation for an [ESP8266 device](https://github.com/ARMmbed/mbed-os/blob/master/components/wifi/esp8266-driver). ESP8266 is a Wi-Fi module that you can connect to an SoC over UART for Wi-Fi support.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/atcmdparser_esp8266.png)</span>
 
