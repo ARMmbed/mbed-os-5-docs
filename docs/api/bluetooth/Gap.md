@@ -12,13 +12,25 @@ Advertising, scanning and connection all have parameters that let you find a com
 
 Advertising consists of broadcasting at a regular interval a small amount of data containing valuable information about the device. Peer devices listening on BLE advertising channels may scan these packets.
 
-Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information.
+Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information. 
 
 #### Scanning
 
 Scanning consists of listening for peer advertising packets. From a scan, a device can identify devices available in its environment.
 
 If the device scans actively, it sends scan request to scannable advertisers and collects their scan responses.
+
+#### Extended and periodic advertising
+
+BLE controllers supporting Bluetooth 5.0 may offer additional advertising and scanning options. Use `isFeatureSupported()` to check feature availability.
+
+Extended advertising may use multiple PHYs and spread the payload across many packets. This allows for much larger payloads. In this scenario, advertising is split across primary advertising on the advertising channels and secondary advertising using channels normally used for sending data to connected devices.
+
+Similarly, if the controller supports periodic advertising, you may use periodic advertising to send changing data to many peers. Each peer needs to scan the advertisements on the primary channels and create a sync with a periodic advertisement it's interested in.
+
+There may be many advertising sets active at one time on a single advertiser. This allows it to advertise different data at the same time, possibly to different peers.
+
+Devices that do not support extended and periodic advertising will not see these advertisements. You may use legacy advertising alongside extended advertising, running at the same time, to support older devices in the environment.
  
 #### Privacy
 
