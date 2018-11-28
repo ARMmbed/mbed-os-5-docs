@@ -23,7 +23,7 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
 - **travis-ci/tools-py2.7** - Run Python tools tests with Python 2.7.
 - **travis-ci/psa-autogen** - Runs PSA SPM code generator.
    - Asserts that all PSA manifests in the tree are in correct form.
-   - Asserts that there are no chnages needed to be made.
+   - Asserts that no changes need to be made.
 
 ### Jenkins
 
