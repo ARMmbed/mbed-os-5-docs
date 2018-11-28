@@ -10,7 +10,7 @@ If you want to port a new file system to Mbed OS on existing storage options you
 
 #### File systems
 
-To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_f_a_t_file_system.html) provides an excellent example.
+To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_f_a_t_file_system_8h_source.html) provides an excellent example.
 
 A minimal file system needs to provide the following functions:
 
@@ -29,4 +29,4 @@ File systems must be backed by a block device in Mbed OS. If you are using suppo
 #### Related content
 
 - [BlockDevice](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_block_device.html).
-- [FAT file system](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_f_a_t_file_system.html).
+- [FAT file system](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/_f_a_t_file_system_8h_source.html).
