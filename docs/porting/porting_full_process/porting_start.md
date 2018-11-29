@@ -8,7 +8,7 @@ You will usually need to go through all of these steps to port Mbed OS:
 
 1. Set up a development environment (including IDE and debugger) and your target.
 
-1. If there is an SDK(or drivers package) already available for your target, you may use it to speed up the porting process. Please ensure that the SDK licensing permits it's existence along with Mbed-OS code base.
+1. If there is an SDK (or drivers package) already available for your target, you may use it to speed up the porting process. Please ensure that the SDK licensing permits its existence along with `mbed-os` code base.
 
 1. The [Mbed Enabled](https://www.mbed.com/en/about-mbed/mbed-enabled/introduction/) program requires pyOCD, so ultimately pyOCD needs to support the new target. To allow parallel development in porting targets, connectivity and storage while pyOCD is still under development, you can use other IDEs supported on the evaluation board in the beginning phase.
 
