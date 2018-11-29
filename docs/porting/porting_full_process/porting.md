@@ -210,8 +210,6 @@ mbed compile --target <target_name> --toolchain ARM
 mbed compile --target <target_name> --toolchain IAR
 ```
 
-Tweak your code until your build succeeds.
-
 ### Serial Port (synchronous transfer)
 
 [Serial port porting instructions](../porting/serial-port.html).
