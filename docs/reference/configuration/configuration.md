@@ -164,7 +164,7 @@ For example:
 }
 ```
 
-You define a configuration parameter by specifying its name as the key and specifying its value either with a description object or by value. Leaving the value field undefined or setting the value field to `null` will allow the parameter to be stored as a configuration option and appear with the `mbed compile --config` command; however, the key will not be defined in `mbed_config.h` and will not affect the application or OS unless it is overridden. See `param2` and `param5` for examples of this. The JSON fragment above defines six configuration parameters named `param1`, `param2`, `param3`, `param4`, `param5` and `param6`.
+You define a configuration parameter by specifying its name as the key and specifying its value either with a description object or by value. Leaving the value field undefined or setting the value field to `null` allows the parameter to be stored as a configuration option and appear with the `mbed compile --config` command; however, the key is not be defined in `mbed_config.h` and does not affect the application or OS unless it is overridden. See `param2` and `param5` for examples of this. The JSON fragment above defines six configuration parameters named `param1`, `param2`, `param3`, `param4`, `param5` and `param6`.
 
 Above, the configuration parameters `param1` through `param5` are defined using a description object. The description object supports the following keys:
 
