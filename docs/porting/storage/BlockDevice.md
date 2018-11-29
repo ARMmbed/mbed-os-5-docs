@@ -42,4 +42,10 @@ You can run BlockDevice tests for heap, MBR and util block devices with the foll
 mbed test -t <toolchain> -m <target> -n features-tests-filesystem-*_block_device
 ```
 
+You can run BlockDevice tests without the file system with the following command:
+
+```
+mbed test -t <toolchain> -m <target> -n mbed-os-features-storage-tests-blockdevice-general_block_device -v
+```
+
 One way to add tests for new block devices is to copy an existing implementation, such as HeapBlockDevice, and change the block device class to your own. You can find tests under the top level `TESTS` folder in the Mbed OS repository.
