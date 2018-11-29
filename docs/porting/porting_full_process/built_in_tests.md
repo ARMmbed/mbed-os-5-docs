@@ -23,7 +23,7 @@ Read the following page to understand how tests are structured:
 <!--From Jimmy: Don't export tests to Eclipse or at all. It's not supported, AKA not in CI-->
 
 ### Prerequisites
-
+<!-- We should have a link to https://github.com/ARMmbed/greentea or at least command to tell user how to download greentea for this page -->
 #### Minimum component support
 
 To run the Mbed OS built-in tests, you need to have ported and verified at least these components:

@@ -8,7 +8,7 @@ Porting Mbed OS requires the following hardware:
 
 -  An evaluation board with a target MCU, debug probe or an integrated interface chip. The hardware [is reviewed in greater details later in this document]().
 
-    The new target needs a unique board ID. [Contact Arm]() to get one.
+    The new target needs a unique board ID. [Contact Arm]() to get one. <!-- This link doesn't work -->
 
 - A storage device (SD or external flash).
 - A micro SD card for the CI test shield.<!--are these the same thing?-->

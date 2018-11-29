@@ -58,7 +58,7 @@ Drivers that are **not protected**:
 
 #### HAL C API
 
-The HAL C API is the porting layer of Mbed OS 5 and is not thread safe. Developers should not typically use this API directly, instead using the higher-level drivers and libraries. If you program directly to the HAL C API, it is your responsibility to synchronize operations with an appropriate mechanism, such as a mutex.
+The HAL C API is the porting layer of Mbed OS 5 and is not thread safe. Developers should not typically use this API directly, instead use the higher-level drivers and libraries. If you program directly to the HAL C API, it is your responsibility to synchronize operations with an appropriate mechanism, such as a mutex.
 
 #### Synchronization mechanisms
 
