@@ -31,7 +31,7 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 
 - DAPLink.
 
-    <span class="notes">If DAPLink is still under development, please [use manual tests](#manual-testing).</span>
+    <span class="notes">If DAPLink is still under development, please [use manual tests](#manual-testing). <!-- This is not pointing to right link  --></span>
 - Low power ticker.
 - Serial port (synchronous transfer). To verify that it works, load a test binary with `printf()`. Verify debug messages can be seen on your serial terminal program.
 - Microsecond ticker.
