@@ -5,8 +5,8 @@
    From your command-line, import the example:
 
    ```console
-   $ mbed import https://github.com/ARMmbed/mbed-os-quick-start-blinky
-   $ cd mbed-os-quick-start-blinky
+   $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
+   $ cd mbed-os-example-blinky
    ```
 
 1. Compile and program your board:

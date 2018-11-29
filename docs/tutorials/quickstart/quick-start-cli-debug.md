@@ -7,7 +7,7 @@ The easiest way to do basic debugging is to use the `printf` command in your cod
 
 For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
-<span class="notes">**Note:** Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. The `mbed-os-quick-start-blinky` example runs at a baud rate of `115200`. You can view the [configuration options page](../reference/configuration.html) to learn more about how to configure OS-level options.</span><!--but the thing I should really do now is set a new baud rate in my terminal, right?-->
+<span class="notes">**Note:** Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. The `mbed-os-example-blinky` example runs at a baud rate of `115200`. You can view the [configuration options page](../reference/configuration.html) to learn more about how to configure OS-level options.</span><!--but the thing I should really do now is set a new baud rate in my terminal, right?-->
 
 ### Exporting to a desktop IDE
 
