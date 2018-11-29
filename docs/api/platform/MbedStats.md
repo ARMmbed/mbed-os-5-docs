@@ -12,6 +12,8 @@ Mbed OS provides a set of functions that you can use to capture the memory and t
 }
 ```
 
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../reference/configuration.html) for more details about `mbed_app.json`. </span>
+
 ### Memory statistics
 
 You can use memory statistics functions to capture heap use, cumulative stack use or stack use for each thread at runtime. To enable memory use monitoring, you must enable the following Mbed OS configuration options:
