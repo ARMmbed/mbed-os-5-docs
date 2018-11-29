@@ -33,9 +33,9 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <tr>
 <td><a href="../apis/socket.html#socket-example">Socket example</a></td>
 <td><a href="ble-tutorial.html">BLE tutorial</a></td>
-<td><a href="../apis/ibeacon.html#ibeacon-example">BLE ibeacon example</a></td>  
+<td><a href="../apis/ibeacon.html#ibeacon-example">BLE ibeacon example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button">BLE service template example</a></td>
-<td><a href="https://os-doc-builder.test.mbed.com/docs/development/apis/socketstats.html#socketstats-example">SocketStats example</a></td>
+<td><a href="https://os.mbed.com/docs/development/apis/socketstats.html#socketstats-example">SocketStats example</a></td>
 </tr>
 <tr>
 <td><a href="../apis/wi-fi.html#wi-fi-example">Wi-Fi example</a></td>
@@ -44,7 +44,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <td><a href="LoRa-tutorial.html">LoRa tutorial</a></td>
 </tr>
 <tr>
-<td><a href="../apis/cellular-api.html#cellular-example-connection-establishment">Cellular example</a></td>  
+<td><a href="../apis/cellular-api.html#cellular-example-connection-establishment">Cellular example</a></td>
 <td><a href="../apis/batteryservice.html#batteryservice-example">BLE battery level example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker">BLE LED blinker example</a></td>
 <td><a href="../apis/lorawan-api.html#lorawan-example">LoRaWAN example</a></td>
