@@ -73,7 +73,7 @@
                         ]
                     },
                     {
-                        "title": "Debugging",
+                        "title": "Debugging with the Online Compiler",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-online-debug.md"
@@ -101,7 +101,7 @@
                         ]
                     },
                     {
-                        "title": "Debugging",
+                        "title": "Debugging with Mbed CLI",
                         "intro": {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/quickstart/quick-start-cli-debug.md"
