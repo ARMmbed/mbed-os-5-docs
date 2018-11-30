@@ -18,6 +18,9 @@ Mbed OS Version: 999999
 CPU ID: 0x410fc241
 Compiler ID: 2
 Compiler Version: 60300
+RAM0: Start 0x20000000 Size: 0x30000
+RAM1: Start 0x1fff0000 Size: 0x10000
+ROM0: Start 0x0 Size: 0x100000
 ================= CPU STATS =================
 Idle: 98% Usage: 2%
 ================ HEAP STATS =================
