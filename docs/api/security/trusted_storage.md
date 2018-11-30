@@ -2,4 +2,4 @@
 
 ## PSA internal trusted storage
 
-Mbed OS uses PSA internal trusted storage APIs to support PSA specifications. For more information about PSA internal trusted storage API, please refer to [the documentation](https://developer.arm.com/products/architecture/security-architectures/platform-security-architecture ).
+Mbed OS uses PSA internal trusted storage APIs to support PSA specifications. For more information about PSA internal trusted storage API, please refer to [the documentation](https://github.com/ARM-software/psa-arch-tests).
