@@ -126,12 +126,15 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tr>
 <td><a href="socket.html">Socket</a></td>
 <td><a href="socketaddress.html">SocketAddress</a></td>
+<td><a href="dtlssocket.html">DTLSSocket</a></td>
 </tr>
 <tr>
 <td><a href="udpsocket.html">UDPSocket</a></td>
 <td><a href="dns-resolver.html">DNS Resolver</a></td>
+<td><a href="socketstats.html">SocketStats</a></td>
 <tr>
 <td><a href="tcpsocket.html">TCPSocket</a></td>
+<td><a href="tlssocket.html">TLS Socket</a></td>
 </tr>
 </tbody>
 </table>
@@ -219,10 +222,11 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <table>
 <tbody>
 <tr>
-<td><a href="tls.html">TLS</a></td>
+<td><a href="psa-api.html">Mbed implementation of PSA</a></td>
+<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 <tr>
-<td><a href="devicekey.html">DeviceKey</a></td>
+<td><a href="tls.html">TLS</a></td>
 </tr>
 </tbody>
 </table>
@@ -234,31 +238,35 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <table>
 <tbody>
 <tr>
-<td><a href="filesystem.html">FileSystem</a></td>
-<td><a href="fatfilesystem.html">FATFileSystem</a></td>
+<td><a href="kvstore.html">KVStore</a></td>
+<td><a href="littlefilesystem.html">LittleFileSystem</a></td>
 <td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
-<td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
-<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="dir.html">Dir</a></td>
-<td><a href="blockdevice.html">BlockDevice</a></td>
-<td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
 <td><a href="dataflash-block-device.html">DataFlashBlockDevice</a></td>
-<td><a href="qspifblockdevice.html">QSPIFBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="file.html">File</a></td>
-<td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
-<td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
-<td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
 <td><a href="nvstore.html">NVStore</a></td>
 </tr>
 <tr>
-<td><a href="littlefilesystem.html">LittleFileSystem</a></td>
-<td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
-<td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
+<td><a href="static-global-api.html">Static Global API</a></td>
+<td><a href="fatfilesystem.html">FATFileSystem</a></td>
+<td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
+<td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
+</tr>
+<tr>
+<td><a href="filesystem.html">FileSystem</a></td>
+<td><a href="blockdevice.html">BlockDevice</a></td>
+<td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
 <td><a href="sdblockdevice.html">SDBlockDevice</a></td>
+</tr>
+<tr>
+<td><a href="dir.html">Dir</a></td>
+<td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
+<td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
+<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td> 
+</tr>
+<tr>
+<td><a href="file.html">File</a></td>
+<td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
+<td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
+<td><a href="qspifblockdevice.html">QSPIFBlockDevice</a></td>
 </tr>
 </tbody>
 </table>
