@@ -687,7 +687,7 @@
                     "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/technology.md"
                 },
                 "sub_chapters": [{
-                        "title": "Connectivity stacks",
+                        "title": "Networking",
                         "sources": [{
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/connectivity/connectivity.md"

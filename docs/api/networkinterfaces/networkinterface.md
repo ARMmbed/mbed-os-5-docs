@@ -100,7 +100,7 @@ if (wifi) {
 ### Related content
 
 - [Configuring the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface).
-- [Network connectivity](../reference/connectivity-stacks.html).
+- [Network connectivity](../reference/networking.html).
 - [IP networking](../reference/ip-networking.html).
 - [Network status API](network-status.html).
 - [Network sockets](../apis/network-socket.html).
