@@ -10,7 +10,7 @@ The `ScopedRamExecutionLock` class provides an RAII object for enabling executio
 
 This example shows how you can enable execution from RAM from main:
 
-```C++
+```C++ NOCI
 #include "mbed.h"
 
 int main()

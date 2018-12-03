@@ -29,7 +29,7 @@ After boot, writing to ROM is not allowed. Libraries requiring the ability to wr
 
 ### Example
 
-```C
+```C++ NOCI
 #include "mbed.h"
 
 // Permanently enable execute from RAM for this application

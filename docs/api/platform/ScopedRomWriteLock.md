@@ -10,7 +10,7 @@ The `ScopedRomWriteLock` class provides an RAII object for enabling writing to R
 
 This example shows how you can enable writes to ROM from main.
 
-```C++
+```C++ NOCI
 #include "mbed.h"
 
 int main()
