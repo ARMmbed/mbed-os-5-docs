@@ -168,7 +168,7 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 1. Flash.
 1. Bootloader.
 1. Pelion Client (optional).
-1. Other HAL components (optional).
+1. Other HAL modules (optional).
 
 Detailed instructions for porting each module are given in the module-specific sections of this documentation.
 
@@ -308,8 +308,8 @@ The bootloader is a separate application, which needs to be created and integrat
 
 ### Device Management Client
 
-You do not need to manually port Device Management Client; when the above components are ported, you should be ready to [demo the Connect and Update functionalities of the Device Management Client](https://cloud.mbed.com/guides/connect-device-to-pelion).
+You do not need to manually port Device Management Client; when the above modules are ported, you should be ready to [demo the Connect and Update functionalities of the Device Management Client](https://cloud.mbed.com/guides/connect-device-to-pelion).
 
-### Other HAL Components (Optional)
+### Other HAL modules (Optional)
 
-You are now ready to port any other HAL components that your use case and MCU require. These components are covered in the rest of this document.
+You are now ready to port any other HAL modules that your use case and MCU require. These modules are covered in the rest of this document.
