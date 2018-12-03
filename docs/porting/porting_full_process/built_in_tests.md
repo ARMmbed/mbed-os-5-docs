@@ -26,9 +26,9 @@ Read the following page to understand how tests are structured:
 
 #### Minimum HAL module support
 
-To run the Mbed OS built-in tests, you need to have ported and verified at least these modules:
+To run the Mbed OS built-in tests, you need to have ported and verified at least these HAL modules:
 
-- DAPLink.
+- DAPLink or compatible interface firmware.
 
     <span class="notes">If DAPLink is still under development, please [use manual tests](../porting/manual-testing.html).</span>
 - Low power ticker.
@@ -43,7 +43,7 @@ Get Brian to confirm whether it's part of the Mbed OS installation or whether we
 
 The board under test needs to be supported in mbedls for automated tests to work.
 
-If the official mbedls pip package hasn't been released yet, you need to direct pip to use your local directory (which includes the  code changes to support the new board):
+If an updated mbedls pip package hasn't been released yet, you need to direct pip to use your local directory (which includes the  code changes to support the new board):
 
 1. Clone [https://github.com/ARMmbed/mbed-ls](https://github.com/ARMmbed/mbed-ls).
 1. [Add your target to the platform database](https://github.com/ARMmbed/mbed-ls#adding-platform-support)
@@ -64,7 +64,7 @@ If the official mbedls pip package hasn't been released yet, you need to direct 
 
 ### Compiling and running tests
 
-1. Compile your tests:
+1. Compile the tests:
     - To compile all tests, run `mbed test --compile`.
     - To see the list of compiled tests, run `mbed test --compile-list`.
     - To compile a specific test, run  `mbed test --compile -n <test_name>`. For example: `mbed test --compile -n mbed-os-tests-concurrent-gpio)`.
@@ -193,7 +193,7 @@ To build and run the Mbed OS tests:
    mbed test -m <new_target> -t gcc_arm --compile -c
    ```
 
-   You'll see some build errors. These errors should reduce and eventually disappear as more HAL components are ported.
+   If you see some build errors, it means that some HAL modules required to run the tests are missing and need porting.
 
 1. You can see the full list of built tests:
 
