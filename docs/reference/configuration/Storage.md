@@ -453,12 +453,31 @@ For example, the following entry in `targets.json` enables the SD component:
 The following `mbed_app.json` snippet enables the SPI flash component when compiling for the MTB_ADV_WISE_1570 target:
 
 ```     
+"target_overrides": {
     "MTB_ADV_WISE_1570": {
          "target.components_add": ["SPIF"]
     }
+}
 ```
 
 Please note that while a default block device exists, an application is not forced to use it and can create its own one.
+
+Enabling the storage feature, SD component, and overriding the default pins can be done within `mbed_app.json`. Using the NRF52_DK target as an example:
+
+```
+"target_overrides": {
+    "NRF52_DK": {
+         "target.features_add": ["STORAGE"],
+         "target.components_add": ["SD"],
+         "sd.SPI_MOSI": "D11",
+         "sd.SPI_MISO": "D12",
+         "sd.SPI_CLK": "D13",
+         "sd.SPI_CS": "D10"
+    }
+}
+```
+
+These values override the default pins assigned to the parameters: `MBED_CONF_SD_SPI_MOSI`, `MBED_CONF_SD_SPI_MISO`, `MBED_CONF_SD_SPI_CLK` and `MBED_CONF_SD_SPI_CS` present within the `mbed_lib.json` file for the SD component in Mbed OS.
 
 #### Overriding default block device implementation
 
