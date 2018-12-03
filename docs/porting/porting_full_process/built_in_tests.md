@@ -2,9 +2,8 @@
 
 It's important to test your port at the end of each module porting, rather than only once when you've imported all modules. There are three testing methods:
 
-1. Using the Mbed OS built-in tests with *Greentea*.
+1. Using the Mbed OS built-in tests with [*Greentea*](../tools/greentea-testing-applications.html).
 1. Using the Mbed OS built-in tests with *manual testing*.
-
 
 ## Testing with the Greentea framework
 
@@ -23,7 +22,7 @@ Read the following page to understand how tests are structured:
 <!--From Jimmy: Don't export tests to Eclipse or at all. It's not supported, AKA not in CI-->
 
 ### Prerequisites
-<!-- We should have a link to https://github.com/ARMmbed/greentea or at least command to tell user how to download greentea for this page -->
+
 #### Minimum component support
 
 To run the Mbed OS built-in tests, you need to have ported and verified at least these components:
@@ -31,7 +30,7 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 
 - DAPLink.
 
-    <span class="notes">If DAPLink is still under development, please [use manual tests](#manual-testing). <!-- This is not pointing to right link  --></span>
+    <span class="notes">If DAPLink is still under development, please [use manual tests](../porting/manual-testing.html).</span>
 - Low power ticker.
 - Serial port (synchronous transfer). To verify that it works, load a test binary with `printf()`. Verify debug messages can be seen on your serial terminal program.
 - Microsecond ticker.
