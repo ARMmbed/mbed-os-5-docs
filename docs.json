@@ -799,9 +799,6 @@
             },
             {
                 "title": "Project structures and configuration",
-                "description": "",
-                "slug": "config",
-                "type": "markdown",
                 "sub_chapters": [{
                         "title": "Project structure",
                         "sources": [{
