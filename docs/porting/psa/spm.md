@@ -227,7 +227,7 @@ This part of HAL allows you to implement a thin layer of the mailbox mechanism t
 
 #### Secure Processing Environment
 
-This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions]([TODO: WHEN READY, ADD LINK TO DOXYGEN FILES OF HAL FUNCTIONS]).
+This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
 
 ### Memory protection
 
