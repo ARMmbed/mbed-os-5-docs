@@ -76,7 +76,7 @@ Repo: [https://github.com/mbedmicro/flashalgo](https://github.com/mbedmicro/flas
 
 <span class="notes">This step requires a Windows PC.</span>
 
-<span class="notes">The new target needs a unique board ID. [Contact Arm]() to get one. <!-- This link doesn't work --> </span>
+<span class="notes">The new target needs a unique board ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com) to get one.</span>
 
 Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
