@@ -4,8 +4,8 @@
 
 Please fork or branch the following repositories:
 
-- [DAPLink](https://github.com/armmbed/daplink).
-- [pyOCD](https://github.com/mbedmicro/pyocd).
+- [DAPLink](https://github.com/armmbed/daplink) or a repository for compatible interface firmware.
+- [pyOCD](https://github.com/mbedmicro/pyocd) or a repository for a similar tool.
 - [FlashAlgo](https://github.com/mbedmicro/flashalgo).
 - [Mbed OS](https://github.com/armmbed/mbed-os). Use the format `https://github.com/ARMmbed/mbed-os-new-target`.
 - [Mbed OS bootloader](https://github.com/armmbed/mbed-bootloader).
@@ -149,7 +149,7 @@ To include the new target support:
 
 1. You can use the default values for all other settings.
 
-## Porting modules <!-- This is somewhat confusing, as modules are a "hardware" thing as well, not just software. Perhaps something like "Porting Mbed OS APIs" instead? -->
+## Porting HAL modules
 
 ### Recommended porting order
 
@@ -286,11 +286,11 @@ If the hardware supports TRNG, you must port it before running Device Management
 
 You can now try running the example applications for your connectivity methods. For example:
 
-* [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble)
-* [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi)
-* [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan)
-* [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
-* [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
+* [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble).
+* [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
+* [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
+* [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular).
+* [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets).
 
 ### Flash
 
