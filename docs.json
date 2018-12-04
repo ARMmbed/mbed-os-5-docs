@@ -768,10 +768,7 @@
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/technology/storage.md"
                             },
-                            {
-                                "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Bootstrap.md"
-                            },
+
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Memory.md"
@@ -779,10 +776,22 @@
                             {
                                 "type": "markdown",
                                 "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/static_memory_optimization.md"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Mbed OS fundamentals",
+                        "sources": [{
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Execution.md"
                             },
                             {
                                 "type": "markdown",
-                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Execution.md"
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/runtime/Bootstrap.md"
+                            },
+                            {
+                                "type": "markdown",
+                                "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/thread_safety.md"
                             }
                         ]
                     }
@@ -1377,7 +1386,7 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/thread_safety.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/thread_porting.md"
                     },
                     {
                         "type": "markdown",
