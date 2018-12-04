@@ -8,15 +8,14 @@ For more information about SPM, please refer to [the SPM overview page](/docs/de
 
 ### New target configuration
 
-When adding a new target, a new root target node should be added to mbed-os/targets/targets.json file.
-For PSA support, specific PSA related fields should be defined for this target:
+When adding a new target, a new root target node should be added to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
 
-1. Secure target must inherit from `SPE_Target` meta-target.
+1. Secure target must inherit from `SPE_Target` metatarget.
 2. Nonsecure target must inherit from `NSPE_Target`.
 3. Only for multicore architectures:
-   - Both targets must add "SPM_MAILBOX" component. Mailbox mechanism is explained in [Mailbox section](#mailbox)
-   - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. This is explained in more details in [Memory layout section](#memory-layout)
-   - Secure target must declare which is its corresponding nonsecure target using the "deliver_to_target" field.
+   - Both targets must add the `SPM_MAILBOX` component. You can read more about the mailbox mechanism in the [mailbox section](#mailbox).
+   - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. The [memory layout section](#memory-layout) explains this in more detail.
+   - Secure target must declare its corresponding nonsecure target using the `deliver_to_target` field.
 
 These is demonstrated in the example below:
 
@@ -210,7 +209,7 @@ These are the guidelines you should follow if you have multicore systems:
 - For each core, implement the IPC event handler (usually interrupt handler):
   - The handler must call an Arm callback function. Refer to [HAL functions section](#hal-functions) for more details.
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
-- For each core, add the "SPM_MAILBOX" component field for its target node in mbed-os/targets/targets.json file.
+- For each core, add the `SPM_MAILBOX` component field for its target node in the `mbed-os/targets/targets.json` file.
 
 ### HAL functions
 
