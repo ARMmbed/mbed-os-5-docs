@@ -1417,10 +1417,13 @@
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/usb.md"
                     },
-
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/crc.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/psa/spm.md"
                     }
                 ]
             },
