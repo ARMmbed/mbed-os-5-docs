@@ -6,6 +6,8 @@ This document provides guidelines for adding a new MCU target to Mbed OS and the
 - Run Device Management client.
 - Meet technical requirements for Mbed Enabled program.
 
+These guidelines use pyOCD and DAPLink in the porting process because they are free and open source. Please note that you can use other interface firmware, but that is outside the scope of this document.
+
 ### Scope and milestones
 
 You will usually need to go through all of these steps to port Mbed OS:
