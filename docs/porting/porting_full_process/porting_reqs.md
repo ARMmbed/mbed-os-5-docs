@@ -4,9 +4,9 @@
 
 Porting Mbed OS requires the following hardware:
 
-- A development PC. You can port targets, connectivity and storage on Windows, macOS or Linux. However, due to limitations in some development tools that Mbed OS uses, you need a Windows PC for FlashAlgo development.
+-  An evaluation board with a target MCU, debug probe or an integrated interface chip. The hardware [is reviewed in greater details later in this document]().
 
-    The new target needs a unique board ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).
+    The new target needs a unique board ID. [Contact Arm]()<!-- need a link here --> to get one.
 
 - A storage device (SD or external flash).
 - A micro SD card for the CI test shield.
@@ -35,8 +35,8 @@ Please install the following:
     Limitations:
 
     - Eclipse is license free, whereas both IAR and Keil IDE require licenses.
-    - Currently, DAPLink development works only Keil MDK. You will have to use Keil if you use pyOCD and DAPLink.
-    - Your target may not be supported in certain IDEs. If your interface firmware does not support mass storage device, you won't be able to do automated testing. If your target has another method of flashing, through the device's debugger, use the [manual testing path](../porting/manual-testing.html).
+    - Your target may not be supported in certain IDEs.
+    - If your interface firmware does not support mass storage device, you won't be able to do automated testing. If your target has another method of flashing, such as self-programming or through a debugger, use the [manual testing path](../porting/manual-testing.html).
 
 - (Optional) [FTDI serial driver](http://www.ftdichip.com/Drivers/VCP.htm).
 
