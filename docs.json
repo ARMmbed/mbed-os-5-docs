@@ -793,7 +793,7 @@
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/thread_safety.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/reference/thread_safety.md"
                     }
                 ]
             },

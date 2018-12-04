@@ -2,7 +2,7 @@
 
 ### About this document
 
-This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#thread-safety), then discusses [porting them](#considerations-when-porting) to a new target.
+This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#thread-safety).
 
 ### RTOS
 
