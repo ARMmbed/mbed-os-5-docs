@@ -227,6 +227,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 </tr>
 <tr>
 <td><a href="tls.html">TLS</a></td>
+<td><a href="psa-storage.html">PSA internal trusted storage</a></td>
 </tr>
 </tbody>
 </table>
