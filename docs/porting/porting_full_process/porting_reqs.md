@@ -5,23 +5,20 @@
 Porting Mbed OS requires the following hardware:
 
 - A development PC. You can port targets, connectivity and storage on Windows, macOS or Linux. However, due to limitations in some development tools that Mbed OS uses, you need a Windows PC for DAPLink/FlashAlgo development.
+-  An evaluation board with a target MCU, debug probe or an integrated interface chip.
 
--  An evaluation board with a target MCU, debug probe or an integrated interface chip. The hardware [is reviewed in greater details later in this document]().
-
-    The new target needs a unique board ID. [Contact Arm]() to get one.
+    The new target needs a unique board ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).
 
 - A storage device (SD or external flash).
-- A micro SD card for the CI test shield.<!--are these the same thing?-->
-
+- A micro SD card for the CI test shield.
 - A micro USB cable to connect the evaluation board to your development PC.
 
 You may also need:
 
 - If the interface MCU is not on the evaluation board, choose a debug probe, such as [SDWAP-LPC11U35](https://os.mbed.com/platforms/SWDAP-LPC11U35/). You will then need a micro USB cable (in addition to the micro USB cable listed above).
 - An FTDI TTL232R-3V3 USB cable, for the Tx and Rx pins of debug probes that do not have a serial connection.
-<!--I reversed the order because it seemed that the second will only be relevant if the first one is true. -->
 
-The following items might help you test SPI, I2C and Pins:
+The following items might help you test SPI, I2C and pins:
 
 - A CI test shield v2.0.0. For details, refer to [https://github.com/ARMmbed/ci-test-shield](https://github.com/ARMmbed/ci-test-shield).
 
