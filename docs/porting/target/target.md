@@ -48,6 +48,7 @@ INTERRUPTIN      |   gpio_irq_api.h
 I2C I2CSLAVE     |   i2c_api.h
 LPTICKER         |   lp_ticker_api.h
 LPTICKER         |   lp_ticker_api.h
+MPU              |   mpu_api.h
 PORT_IN PORT_OUT |   port_api.h
 PWMOUT           |   pwmout_api.h
 RTC              |   rtc_api.h

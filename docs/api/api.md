@@ -8,30 +8,36 @@
 <tbody>
 <tr>
 <td><a href="wait.html">Wait</a></td>
-<td><a href="idle-loop.html">Idle loop</a></td>
-<td><a href="debug.html">Debug</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
-<td><a href="circularbuffer.html">CircularBuffer</a></td>
+<td><a href="rtc.html">RTC</a></td>
+<td><a href="shared-pointer.html">Shared pointer</a></td>
+<td><a href="mpu-management.html">MPU management</a></td>
 </tr>
 <tr>
 <td><a href="callback.html">Callback</a></td>
-<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
-<td><a href="memory-tracing.html">Memory tracing</a></td>
-<td><a href="shared-pointer.html">Shared pointer</a></td>
-<td><a href="atcmdparser.html">ATCmdParser</a></td>
+<td><a href="debug.html">Debug</a></td>
+<td><a href="span.html">Span</a></td>
+<td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
 </tr>
 <tr>
 <td><a href="deepsleeplock.html">DeepSleepLock</a></td>
-<td><a href="time.html">Time</a></td>
-<td><a href="error-handling.html">Error handling</a></td>
-<td><a href="span.html">Span</a></td>
-<td><a href="mbed-statistics.html">Mbed statistics</a></td>
+<td><a href="memory-tracing.html">Memory tracing</a></td>
+<td><a href="platformmutex.html">PlatformMutex</a></td>
+<td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
 </tr>
 <tr>
 <td><a href="power-management.html">Power management</a></td>
-<td><a href="rtc.html">RTC</a></td>
+<td><a href="error-handling.html">Error handling</a></td>
+<td><a href="circularbuffer.html">CircularBuffer</a></td>
+</tr>
+<tr>
+<td><a href="idle-loop.html">Idle loop</a></td>
 <td><a href="assert.html">Assert</a></td>
-<td><a href="platformmutex.html">PlatformMutex</a></td>
+<td><a href="atcmdparser.html">ATCmdParser</a></td>
+</tr>
+<tr>
+<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 </tbody>
 </table>

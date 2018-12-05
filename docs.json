@@ -215,6 +215,18 @@
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/platform/MbedStats.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/platform/MpuManagement.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/platform/ScopedRamExecutionLock.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/api/platform/ScopedRomWriteLock.md"
                     }
                 ]
             },
