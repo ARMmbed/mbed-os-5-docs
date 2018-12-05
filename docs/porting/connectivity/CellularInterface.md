@@ -106,5 +106,6 @@ To run the tests:
     ```
     mbed test -n "mbed-os-features-cellular-tests-*" -m TARGET -t TOOLCHAIN --app-config YOURCONFIG.json
     ```
+1. Run Mbed OS Socket tests. Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for instructions on how to run Mbed OS socket tests.
 
 For more information on the  `mbed-greentea` test suite, please visit [its documentation](../tools/greentea-testing-applications.html).
