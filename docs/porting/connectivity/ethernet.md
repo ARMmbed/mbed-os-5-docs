@@ -144,10 +144,11 @@ For general Greentea information, please see the [Greentea](../tools/greentea-te
 
 EMAC tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
 
-Greentea socket tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
+Greentea socket tests are in the Mbed OS tree under the `TESTS/network/emac` directory. Please see the instructions on [how to run EMAC tests](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/network/emac/README.md) from Mbed OS repository.
 
 The driver should also be exercised with real-world examples, such as the [Arm Mbed Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-client/).
 
 The driver should also be tested with both network stacks available in Mbed OS, as they use the driver somewhat differently - try with the JSON option `nsapi.default-stack` set to each of `LWIP` and `NANOSTACK`.
 
 Nanostack is IPv6 only. IPv6 operation should also be tested with LWIP because this is likely to reveal problems with multicast filtering that IPv4 or Nanostack may not spot.
+Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for instructions how to run Mbed OS socket tests.
