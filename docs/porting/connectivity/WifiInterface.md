@@ -58,4 +58,4 @@ For testing the `WifiInterface` implementation and network joining, we provide a
 
 For testing the Ethernet MAC interface, please refer to the [Ethernet MAC (EMAC) drivers](ethernet-port.html) porting guide. For external IP stacks, these tests do not apply.
 
-To test the stability of the driver or NetworkStack implementation, we provide a set of socket layer tests in the `TESTS/netsocket` tree. Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for instructions how to run Mbed OS socket tests.
+To test the stability of the driver or NetworkStack implementation, we provide a set of socket layer tests in the `TESTS/netsocket` tree. Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for instructions on how to run Mbed OS socket tests.
