@@ -324,8 +324,8 @@ void xprintf(const char *format, ...)
 
 Windows:
 
-[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s){:target="_blank"}
+[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)
 
 macOS:
 
-[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s){:target="_blank"}
+[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)
