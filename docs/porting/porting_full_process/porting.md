@@ -4,8 +4,8 @@
 
 Please fork or branch the following repositories:
 
-- [DAPLink](https://github.com/armmbed/daplink) or a repository for compatible interface firmware.
-- [pyOCD](https://github.com/mbedmicro/pyocd) or a repository for a similar tool.
+- [DAPLink](https://github.com/armmbed/daplink).
+- [pyOCD](https://github.com/mbedmicro/pyocd).
 - [FlashAlgo](https://github.com/mbedmicro/flashalgo).
 - [Mbed OS](https://github.com/armmbed/mbed-os). Use the format `https://github.com/ARMmbed/mbed-os-new-target`.
 - [Mbed OS bootloader](https://github.com/armmbed/mbed-bootloader).
@@ -29,7 +29,7 @@ Next, add your fork of `mbed-os` (change the url to match your repository).
 mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
 ```
 
-Next, we'll setup the upstream remote and create a branch for the new port.
+Next, set up the upstream remote, and create a branch for the new port.
 
 ```
 cd mbed-os
@@ -73,7 +73,7 @@ Repo: [https://github.com/mbedmicro/flashalgo](https://github.com/mbedmicro/flas
 
 1. To generate uVision project files, follow the instructions in **Develop Setup** and **Develop** in the [FlashAlgo documentation](https://github.com/mbedmicro/flashalgo).
 
-1. In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
+1. In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>`, and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
 
 ### Add your new target to DAPLink
 
@@ -155,7 +155,7 @@ To include the new target support:
 
 Based on criticality and dependency of Mbed OS software stack, we recommend the following order:
 
-1. Create a bare metal (based on the Blinky example). <!-- bare metal what? does then create a project? But we already did that in "Getting a working baseline"... -->
+1. Create a bare metal example (based on the Blinky example).
 1. Bootstrap and entry point.
 1. Serial port (synchronous transfer).
 1. Low power ticker.
@@ -174,7 +174,7 @@ Detailed instructions for porting each module are given in the module-specific s
 
 ### Create the bare metal mbed-os-example-blinky
 
-The official mbed-os-example-blinky uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
+The official `mbed-os-example-blinky` uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
 
 [![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp)
 
@@ -184,13 +184,14 @@ The official mbed-os-example-blinky uses a DigitalOut object and timers. The bar
 
 Mbed OS uses CMSIS Pack for bootstrap. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:
 
-1. Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:
+1. Locate CMSIS Device Template files and startup code. On Windows, you can find them in the following directories:
 <!-- Make a note here that Keil needs to be installed as well -->
 
    ```
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Include
    ```
+   
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
@@ -239,9 +240,7 @@ The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/la
 
 [Microsecond ticker porting instructions](../porting/microsecond-ticker.html).
 
-When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with Blinky, which invokes both millisecond and microsecond tickers in its `wait (n second)` blinking behavior.
-<!-- Blinky hits the DigitalOut and GPIO apis, so this won't work until the next section completed, correct? Perhaps printf should be used instead, or explicitly
-say to use baremetal GPI (write to device registers directly) -->
+When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with `printf`.
 
 ### GPIO (write and read) and IRQ
 
@@ -275,11 +274,11 @@ If the hardware supports TRNG, you must port it before running Device Management
 
 You can now try running the example applications for your connectivity methods. For example:
 
-* [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble).
-* [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
-* [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
-* [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular).
-* [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets).
+- [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble).
+- [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
+- [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
+- [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular).
+- [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets).
 
 ### Flash
 
