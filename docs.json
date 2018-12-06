@@ -322,6 +322,9 @@
                         "path": "docs/api/rtos/Thread.md"
                     },
                     {
+                        "path": "docs/api/rtos/ThisThread.md"
+                    },
+                    {
                         "path": "docs/api/rtos/Mutex.md"
                     },
                     {
