@@ -14,11 +14,9 @@ You will usually need to go through all of these steps to port Mbed OS:
 
 1. Set up a development environment (including IDE and debugger) and your target.
 
-1. Locate reusable code to port to Mbed OS.
-<!--Are the reusable code and SDK related? Are they the same thing?-->
-    If there is an SDK available to speed up the porting process, we recommend reusing it (assuming copyright of the existing code is preserved).
+1. Locate reusable code to port to Mbed OS, or write your own.
 
-    <!--I actually don't quite understand this. Is it mandatory to find reusable code (which is implied in the first line), or is it "if you have it, use it"?-->
+    If there is an SDK available to speed up the porting process, we recommend reusing it (assuming copyright of the existing code is preserved).
 
 1. Implement and test CMSIS pack, bootstrap, linker script and startup code.
 
