@@ -174,20 +174,9 @@ Detailed instructions for porting each module are given in the module-specific s
 
 ### Create the bare metal mbed-os-example-blinky
 
-The official mbed-os-example-blinky uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).
+The official mbed-os-example-blinky uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
 
-<span class="notes">Blinky is a stop-gap measure; please don't commit it to master.</span>
-<!-- if blinky is a stop gap measure, let's not use blinky. Let's either make a new example or give them a copy and paste snippet in this doc. Something like:
-
-#include "mbed.h"
-
-int main() {
-    // Do interesting things!
-    while(1) {
-    }
-  }
-}
--->
+[![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp)
 
 ### Bootstrap and entry point
 
