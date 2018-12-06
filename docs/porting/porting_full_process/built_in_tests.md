@@ -5,22 +5,9 @@ It's important to test your port at the end of each module porting, rather than 
 1. Using the Mbed OS built-in tests with [*Greentea*](../tools/greentea-testing-applications.html).
 1. Using the Mbed OS built-in tests with *manual testing*.
 
-
 ## Testing with the Greentea framework
 
-<!--does Greentea only work with eclipse?--><!--what if I'm not using eclipse?-->
-<!--From Jimmy: Greentea isn't designed to be used with Eclipse. Eclipse can do something, but it's designed to be run from the command-line.-->
-<!--did we actually ask people to install Greentea? I don't see it in the lists, unless it's bundled into Mbed CLI-->
-<!--From Jimmy: Mbed CLI will install Greentea for you, but that may change in the future.-->
-<!--We don't currently link to user docs for Greentea, but we really should - I'm just not sure which link to use-->
-
-<!--I can only find eclipse content in debugging, not in testing, and not in the page covering Greentea-->
-<!--From Jimmy: Becuse Eclipse is unrelated-->
-<!--../tutorials/eclipse.html-->
-<!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](../tools/greentea-testing-applications.html)-->
-
 Read the following page to understand how tests are structured:
-<!--From Jimmy: Don't export tests to Eclipse or at all. It's not supported, AKA not in CI-->
 
 ### Prerequisites
 
@@ -36,10 +23,6 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 - Microsecond ticker.
 
 #### mbedls
-
-<!--did we ask them to install that? I don't think we've mentioned it. We need a section that discusses the testing tools
-Get Brian to confirm whether it's part of the Mbed OS installation or whether we need a new bit in the installation list to cover Greentea and mbedls-->
-<!--From Jimmy: Mbed CLI automatically installs mbed ls, yes, but that may change in the future-->
 
 The board under test needs to be supported in mbedls for automated tests to work.
 
@@ -131,7 +114,7 @@ mbedgt: completed in 20.24 sec
 
 ## Manual testing
 
-You may want to run manual tests, for example if DAPLink is still under development. You will need to export your tests from Greentea and import them to your IDE. For example, to work with Eclipse:
+You may want to run manual tests, for example if DAPLink is still under development. You will need to export your tests from Greentea and import them to your IDE. For example:
 
 1. Find the test directory:
 
@@ -157,13 +140,10 @@ You may want to run manual tests, for example if DAPLink is still under developm
 1. Export to a makefile project:
 
     ```
-    mbed export -i gcc_arm -m <new_target>
+    mbed export -i <exporter> -m <new_target>
     ```
-<!-- gcc_arm is not a valid exporter. A list of valid exporters are here: https://github.com/ARMmbed/mbed-os/blob/master/tools/export/__init__.py#L36-L60 -->
-<!-- If this is actually meant to use Eclipse, a valid eclipse exporter needs to be used (and ensure that the exporter is working before committing it to the docs) -->
-1. Open the project with pyOCD (using the same configuration you used [when you initially set up pyOCD]( Creating GDB pyOCD debug configuration).
-<!-- This isn't really a precise statement. If you're using pyOCD, there needs to be a detailed list of instructions of what commands to run to
-start the gdb server, connect to it with gdb, how to load the binary, etc -->
+
+1. Open the project with pyOCD (using the same configuration you used [when you initially set up pyOCD](#creating-GDB-pyOCD-debug-configuration).
 
 1. Run the program:
 
@@ -235,5 +215,4 @@ To build and run the Mbed OS tests:
 
 1. Before you begin the test run, please make sure the serial port is not already opened by programs like Screen or Teraterm (close them if they're open). In addition, verify `mbedls` lists the new target device.
 
-    If your test run doesn't start, read [the Greentea documentation for troubleshooting](https://github.com/armmbed/greentea).
-    <!--do we have this within the docs, rather than on GitHub? Answer: We think it's this: https://github.com/armmbed/greentea#common-issues We can add this to our docs.-->
+    If your test run doesn't start, please read about [troubleshooting Greentea](https://github.com/armmbed/greentea#common-issues).
