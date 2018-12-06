@@ -14,7 +14,7 @@ You can use two applications to test your port:
     mbed import https://github.com/ARMmbed/mbed-os-example-blinky.git
     cd mbed-os-example-blinky
     ```
-1. If your target has not been merged into `mbed-os`, replace `mbed-os` with your fork (change the url to match your repository).
+1. If your target has not been merged into `mbed-os`, replace `mbed-os` with your fork. (Change the URL to match your repository.)
 
     ```
     mbed remove mbed-os
@@ -178,7 +178,7 @@ Then, test connectivity and firmware update:
    ```
 
 1. Verify that the device is registered by finding it in the [Device Management Portal](https://portal.mbedcloud.com//login).
-1. Make change in the application and rebuild the firmware.
+1. Make change in the application, and rebuild the firmware.
 1. Perform a firmware update:
 
    ```
