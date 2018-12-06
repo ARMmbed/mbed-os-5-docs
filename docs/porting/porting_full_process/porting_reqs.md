@@ -5,9 +5,9 @@
 Porting Mbed OS requires the following hardware:
 
 - A development PC. You can port targets, connectivity and storage on Windows, macOS or Linux. However, due to limitations in some development tools that Mbed OS uses, you need a Windows PC for DAPLink/FlashAlgo development.
--  An evaluation board with a target MCU, debug probe or an integrated interface chip. The hardware [is reviewed in greater details later in this document]().
+-  An evaluation board with a target MCU, debug probe or an integrated interface chip.
 
-    The new target needs a unique board ID. [Contact Arm]()<!-- need a link here --> to get one.
+    The new target needs a unique board ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).
 
 - A storage device (SD or external flash).
 - A micro SD card for the CI test shield.
