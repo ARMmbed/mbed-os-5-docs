@@ -40,7 +40,7 @@ In the online tool, fill in the URL field. The following is an example: `v=1&eui
 - `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration). *PSKd must be uppercase characters (0-9, A-Y excluding I,O,Q and Z)*
 - `eui` is equal to the EUI64 address.
 
-You can get EUI64 address for your end device by using method `device_eui64_get` in your application. An example can be found from the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+You can get the EUI64 address for your end device by using the `device_eui64_get` method in your application. Please see the [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for details.
 
 There are four additional (optional) query parameters you can put into this field:
 
