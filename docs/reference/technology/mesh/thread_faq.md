@@ -32,12 +32,11 @@ Ad-hoc networks with devices from different manufacturers can be easily created 
 
 An example application is [downloadable from the Android store](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner).
 
-#### Are there any application examples? What are the Thread features supported/not supported by them?
+#### Are there any application examples?
 
-- Application examples supporting SED and REED types:
-  - [Mbed OS Client example](https://github.com/ARMmbed/mbed-os-example-client).
-  - [Mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+- [Mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 - [Thread border router](https://github.com/ARMmbed/nanostack-border-router).
+- [Mbed Cloud client example](https://github.com/ARMmbed/mbed-cloud-client-example)
 
 #### How to debug and visualize the network?
 
