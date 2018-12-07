@@ -88,7 +88,7 @@ An application may have one `mbed_app.json` in the root of the application and m
 
 The configuration system allows a user to override any defined configuration parameter with a JSON object named `"target_overrides"`.
 
-The keys in the `"target_overrides"` section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. The values within the `"target_overrides"` section are objects that map configuration parameters, as printed by `mbed compile --config`, to new values. See the example `"target_overrides"` section below.
+The keys in the `"target_overrides"` section are the names of a target that the overrides apply to, or the special wildcard `*` that applies to all targets. This `*` special key must be the 1st object in the section.  The values within the `"target_overrides"` section are objects that map configuration parameters, as printed by `mbed compile --config`, to new values. See the example `"target_overrides"` section below.
 
 ```JSON
 "target_overrides": {
@@ -276,5 +276,7 @@ The `mbed_app.json` above defines its own configuration parameter (`welcome_stri
 - When compiling for `NCS36510`, `app.welcome_string` is `"Hello!"`, `target.mac_addr_high` is `"0x11223344"` (from the `NCS36510` override) and `mylib.timer_period` is 100 (from the `*` override).
 - When compiling for `LPC1768`, `app.welcome_string` is `"Hello!"` and `mylib.timer_period` is 100 (also from the `*` override).
 - The final artifact (binary) is named `my-application.bin`, as specified by the `artifact_name` section.
+
+If the `*` special wildcard is used in the `"target_overrides"` section, it must always be the first object.
 
 It is an error for the application configuration to override an undefined configuration parameter.
