@@ -18,7 +18,7 @@ A model network setup could look like this:
 
 #### Building the end node application
 
-By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
+By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh minimal](../apis/mesh-api.html#mesh-example) application as an example.
 
 - `"mbed-mesh-api.thread-use-static-link-config": false` under `"target_overrides":`
 - `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` in to the same level as `"config":` and `"target_overrides":`
@@ -40,7 +40,7 @@ In the online tool, fill in the URL field. The following is an example: `v=1&eui
 - `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration). *PSKd must be uppercase characters (0-9, A-Y excluding I,O,Q and Z)*
 - `eui` is equal to the EUI64 address.
 
-You can get the EUI64 address for your end device by using the `device_eui64_get` method in your application. Please see the [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for details.
+You can get the EUI64 address for your end device by using the `device_eui64_get` method in your application. Please see the [mesh minimal example](../apis/mesh-api.html#mesh-example) for details.
 
 There are four additional (optional) query parameters you can put into this field:
 
