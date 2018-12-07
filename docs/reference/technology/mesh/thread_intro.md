@@ -36,7 +36,7 @@ Mbed Thread is implemented in the Nanostack library, which also supports the 6Lo
 - To connect to the Thread network, use the [Mbed Mesh API](../apis/mesh-api.html) or [Thread interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h).
 - For the socket communication over the Thread network, use the [Mbed sockets API](../apis/network-socket.html).
 
-Nanostack provides a set of C API headers with more functionalities. The [nanostack repository](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/sal-stack-nanostack/nanostack) has the following header files():
+Nanostack provides a set of C API headers with more functionalities. The [nanostack repository](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/sal-stack-nanostack/nanostack) has the following header files:
 
 - `thread_management_if.h` for initializing the stack and managing the network data.
 - `thread_commissioning_api.h` for implementing an on-mesh or a native Thread commissioner.
