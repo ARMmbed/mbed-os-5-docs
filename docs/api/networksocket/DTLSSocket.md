@@ -1,6 +1,6 @@
 ## DTLSSocket
 
-`DTLSSocket` and `DTLSSocketWrapper` implement DTLS stream over the existing `Socket` transport. You can find design and implementation details in the [Secure Socket](../reference/securesocket.html) page.
+`DTLSSocket` and `DTLSSocketWrapper` implement DTLS stream over the existing `Socket` transport. You can find design and implementation details in the [Secure Socket](../reference/secure-socket.html) page.
 
 To use secure DTLS connections, application use the `DTLSSocketWrapper` through the Socket API, so existing applications and libraries are compatible.
 
@@ -12,5 +12,5 @@ To use secure DTLS connections, application use the `DTLSSocketWrapper` through 
 
 ### Related content
 
-- [Secure Socket](../reference/securesocket.html)
+- [Secure Socket](../reference/secure-socket.html)
 - [TLSSocket](tlssocket.html)

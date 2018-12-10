@@ -1,6 +1,6 @@
 ## TLSSocket
 
-`TLSSocket` and `TLSSocketWrapper` implement TLS stream over the existing `Socket` transport. You can find design and implementation details in the [SecureSocket](../reference/securesocket.html) page.
+`TLSSocket` and `TLSSocketWrapper` implement TLS stream over the existing `Socket` transport. You can find design and implementation details in the [SecureSocket](../reference/secure-socket.html) page.
 
 To use secure TLS connections, the application uses the `TLSSocketWrapper` through the Socket API, so existing applications and libraries are compatible.
 
@@ -16,4 +16,4 @@ The TLSSocket example creates TLS connection to the HTTPS server and receives a 
 
 ### Related content
 
-- [SecureSocket](../reference/securesocket.html).
+- [SecureSocket](../reference/secure-socket.html).
