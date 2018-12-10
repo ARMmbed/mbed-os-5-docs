@@ -8,10 +8,23 @@ The following is the complete list of platform configuration parameters, as gene
 Configuration parameters
 ------------------------
 
+Name: platform.all-stats-enabled
+    Description: Set to 1 to enable all platform stats. When enabled the functions mbed_stats_*_get returns non-zero data. See mbed_stats.h for more information
+    Defined by: library:platform
+    No value set
 Name: platform.cpu-stats-enabled
     Description: Set to 1 to enable cpu stats. When enabled the function mbed_stats_cpu_get returns non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
     No value set
+Name: platform.crash-capture-enabled
+    Description: Enables crash context capture when the system enters a fatal error/crash.
+    Defined by: library:platform
+    No value set
+Name: platform.cthunk_count_max
+    Description: The maximum CThunk objects used at the same time. This must be greater than 0 and less 256
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_CTHUNK_COUNT_MAX
+    Value: 8 (set by library:platform)
 Name: platform.default-serial-baud-rate
     Description: Default baud rate for a Serial or RawSerial instance (if not specified in the constructor)
     Defined by: library:platform
@@ -25,7 +38,7 @@ Name: platform.error-decode-http-url-str
     Description: HTTP URL string for ARM Mbed-OS Error Decode microsite
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_ERROR_DECODE_HTTP_URL_STR
-    Value: "\nFor more info, visit: https:/\/armmbed.github.io/mbedos-error/?error=0x%08X" (set by library:platform)
+    Value: "\nFor more info, visit: https://armmbed.github.io/mbedos-error/?error=0x%08X" (set by library:platform)
 Name: platform.error-filename-capture-enabled
     Description: Enables capture of filename and line number as part of error context capture, this works only for debug and develop builds. On release builds, filename capture is always disabled
     Defined by: library:platform
@@ -39,6 +52,15 @@ Name: platform.error-hist-size
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_ERROR_HIST_SIZE
     Value: 4 (set by library:platform)
+Name: platform.error-reboot-max
+    Description: Maximum number of auto reboots permitted when an error happens.
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_ERROR_REBOOT_MAX
+    Value: 1 (set by library:platform)
+Name: platform.fatal-error-auto-reboot-enabled
+    Description: Setting this to true enables auto-reboot on a fatal error.
+    Defined by: library:platform
+    No value set
 Name: platform.force-non-copyable-error
     Description: Force compile time error when a NonCopyable object is copied
     Defined by: library:platform
@@ -94,4 +116,9 @@ Name: platform.thread-stats-enabled
     Description: Set to 1 to enable thread stats. When enabled the function mbed_stats_thread_get_each returns non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
     No value set
+Name: platform.use-mpu
+    Description: Use the MPU if available to fault execution from RAM and writes to ROM. Can be disabled to reduce image size.
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_USE_MPU
+    Value: 1 (set by library:platform)
 ```
