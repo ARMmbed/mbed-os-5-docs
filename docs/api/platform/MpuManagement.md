@@ -13,6 +13,8 @@ Mbed OS handles MPU management automatically in the following situations:
 
 <span class="notes">**Note:** Memory protection should be transparent to most applications and libraries because Mbed OS handles it automatically for operations that need to disable MPU protections, such as flash programming. This is an advanced feature intended for use by advanced developers; it is not required.</span>
 
+<span class="notes">**Note:** The configuration value `platform.use-mpu` can be set to `false` to remove the MPU driver and save code space.</span>
+
 #### RAM execute lock
 
 After boot, execution from RAM is not allowed. Libraries requiring the ability to execute from RAM can enable this by acquiring the RAM execution lock. The RAM execution lock has a count associated with it, and you can lock it multiple times. Execution from RAM is disabled only when all components have unlocked it.
