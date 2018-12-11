@@ -196,14 +196,14 @@ Add the following to the system `PATH`:
 You must inform Mbed CLI about the location of your compiler using one of the following methods:
 
 - The Mbed CLI configuration command.
-- Adding the compiler's directory to your PATH.
 - Setting an environment variable.
+- Adding the compiler's directory to your PATH.
 
 <span class="tips">**Tip:** You may configure more than one toolchain. However, you may only use one toolchain at a time. For more information, see [the multiple toolchains section below](#optional-configuring-multiple-toolchains)</span>
 
 #### Method 1: Mbed CLI configuration
 
-Mbed CLI stores its own configuration about compiler locations in both project local settings and user wide global settings. You may set and view these settings with the `mbed config` command. For example, set the Arm Compiler 5 location for your user with the command:
+Mbed CLI stores its own configuration about compiler locations in both project local settings and user wide global settings. You may set and view these settings with the `mbed config` command. For example, set the Arm Compiler 5 location with the command:
 
 ```
 $ mbed config -G ARM_PATH "C:\Program Files\ARM"
@@ -221,15 +221,28 @@ Mbed CLI supports a setting for each toolchain path:
 | IAR EWARM Compiler | `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm/bin/iccarm.exe` | `IAR_PATH` | `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm`|
 | GCC Arm Embedded Compiler | `/usr/bin/arm-none-eabi-gcc` | `GCC_ARM_PATH` | `/usr/bin`|
 
-#### Method 2: setting the system PATH
 
+#### Method 2: environment variable
+<!-- (Chris) note I moved these -->
+
+<!-- (Chris) added, rushed, wip -->
+In addition to the Mbed CLI configuration, Mbed CLI detects executables that are in toolchain-specific environment variables. These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
+
+Mbed CLI detects compilers with specially named environment variables. These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
+
+#### Method 3: system PATH
+
+<!-- vvv (Chris) added this, may need TLC <3 vvv -->
+In addition to toolchain-specific environment variables, Mbed CLI detects executables that are in your system `PATH`. This means that if you install a toolchain in the system `PATH` (different for each OS), Mbed CLI will automatically find the toolchain. 
+
+<!-- (Chris) rm me?
 The `mbed compile` command checks your system `PATH` for an executable that the toolchain setting specifies. This is the same check that a shell would perform to find the executable on the command-line. `mbed compile` uses absolute path names for every toolchain except `GCC_ARM`.
+-->
 
 <!--so what do I do in this section - set paths? This feels more like background info than instructions. And is the GCC_ARM thing part of the previous sentence, or in contradiction? what should I do with GCC_ARM, if it's in contradiction?-->
 
-#### Method 3: environment variable
 
-Mbed CLI detects compilers with specially named environment variables. These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
+
 
 #### Optional: configuring multiple toolchains
 
@@ -258,6 +271,7 @@ To install `mbed-cli` bash tab completion:
 ## Reference: Working with `mbed config`
 
 <!--should this be here, or in another part of the CLI docs?-->
+<!--(Chris) This is needed above! Should we move this up?-->
 
 The Mbed CLI configuration syntax is:
 
@@ -281,12 +295,10 @@ Command options:
 
 | Option | Explanation |
 | --- | --- |
-| `--global` | Defines the default behavior of Mbed CLI across programs, unless overridden by *local* settings. |
-| None | Any configuration done without `--global` is specific to the Mbed program. It overrides global or default Mbed CLI settings. If you do not specify a value, then Mbed CLI prints the value for this setting in the current working context. |
+| `--global` | Defines the default behavior of Mbed CLI across all applications, unless overridden by *local* settings. |
+| None | Any configuration done without `--global` is specific to a single Mbed application. It overrides global or default Mbed CLI settings. If you do not specify a value, then Mbed CLI prints the value for this setting in the current working context. |
 | `--unset` | Remove a setting. |
 | `--list` | List global and local configuration. |
-
-<!--what does "Mbed program" mean? This isn't a term I've seen us use before-->
 
 Available configurations:
 
