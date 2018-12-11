@@ -183,7 +183,7 @@ ARM_PATH=<path to ARM bin\>
 
 ## After installation - configuring Mbed CLI
 
-Mbed CLI will not work properly without some manual configuration.
+Mbed CLI will not work properly without some manual configuration.<!--I'm still trying to understand whether this is true for people who use the compilers, or only for people who do manual installations-->
 
 ### Mandatory: setting PATH variables
 
@@ -233,7 +233,7 @@ Mbed CLI detects compilers with specially named environment variables. These env
 #### Method 3: system PATH
 
 <!-- vvv (Chris) added this, may need TLC <3 vvv -->
-In addition to toolchain-specific environment variables, Mbed CLI detects executables that are in your system `PATH`. This means that if you install a toolchain in the system `PATH` (different for each OS), Mbed CLI will automatically find the toolchain. 
+In addition to toolchain-specific environment variables, Mbed CLI detects executables that are in your system `PATH`. This means that if you install a toolchain in the system `PATH` (different for each OS), Mbed CLI will automatically find the toolchain.
 
 <!-- (Chris) rm me?
 The `mbed compile` command checks your system `PATH` for an executable that the toolchain setting specifies. This is the same check that a shell would perform to find the executable on the command-line. `mbed compile` uses absolute path names for every toolchain except `GCC_ARM`.
