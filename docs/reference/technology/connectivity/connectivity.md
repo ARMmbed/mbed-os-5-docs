@@ -78,7 +78,7 @@ Additionally, Mbed OS Thread stack is certified using pre-defined test sets for 
 
 6LoWPAN is a compression method for IPv6 packets. Mbed OS supports 6LoWPAN-ND and Thread protocols for forming IPv6 based mesh networks. Both protocols use the same 6LoWPAN compression method but different routing protocols to achieve wireless mesh network.
 
-Applications running on 6LoWPAN-based mesh networks use the same Mbed OS Socket API for connectivity. <!--same as what?-->
+Applications running on 6LoWPAN-based mesh networks use the same Mbed OS Socket API for connectivity.
 
 For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html) section.
 
