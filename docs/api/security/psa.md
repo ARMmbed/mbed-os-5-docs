@@ -1,8 +1,8 @@
 <h2 id="psa-api">The Mbed implementation of PSA</h2>
 
-The Mbed implementation of [PSA](/docs/development/introduction/glossary.html) provides root of trust services and infrastructure for developing IoT applications.
+The Mbed implementation of [PSA](../introduction/glossary.html) provides root of trust services and infrastructure for developing IoT applications.
 
-When Mbed OS is running on a PSA Security Model compliant target, the Mbed implementation of PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a [Secure Processing Environment (SPE)](/docs/development/introduction/glossary.html) and a [Non-Secure Processing Environment (NSPE)](/docs/development/introduction/glossary.html). The [Secure Partition Manager (SPM)](/docs/development/introduction/glossary.html), which uses the target's hardware features, manages the isolation. The SPM provides standardized [IPC](/docs/development/introduction/glossary.html) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
+When Mbed OS is running on a PSA Security Model compliant target, the Mbed implementation of PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a [Secure Processing Environment (SPE)](../introduction/glossary.html) and a [Non-Secure Processing Environment (NSPE)](../introduction/glossary.html). The [Secure Partition Manager (SPM)](../introduction/glossary.html), which uses the target's hardware features, manages the isolation. The SPM provides standardized [IPC](../introduction/glossary.html) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
 
 The Mbed implementation of PSA bridges the differences between PSA platforms and non-PSA platforms for application developers, allowing them to use the same standard PSA APIs on both platform types.
 
@@ -22,7 +22,7 @@ The SPM and the secure partitions are located in the SPE, isolating them from th
 
 A secure partition is a container for one or more root of trust services, and a platform may have multiple secure partitions. Secure partitions provide the execution environment for security functionality.
 
-Platform hardware, such as the [Security Attribution Unit (SAU)](/docs/development/introduction/glossary.html) and Memory Protection Unit (MPU) in the ARMv8-M platforms, enforces the separation of partitions. Other platforms may use different mechanisms to provide equivalent isolation for the partitions.
+Platform hardware, such as the [Security Attribution Unit (SAU)](../introduction/glossary.html) and Memory Protection Unit (MPU) in the ARMv8-M platforms, enforces the separation of partitions. Other platforms may use different mechanisms to provide equivalent isolation for the partitions.
 
 ### Platform types
 
@@ -38,5 +38,5 @@ The Mbed implementation of PSA supports the following platform types:
 
 The Mbed implementation of PSA provides the following services:
 
-- PSA [RoT](/docs/development/introduction/glossary.html) internal storage.
+- PSA [RoT](../introduction/glossary.html) internal storage.
 - PSA Crypto APIs.

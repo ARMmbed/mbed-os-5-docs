@@ -18,4 +18,4 @@ Here is an example to collect socket statistics.
 
 ### Related content
 
-- [IP networking architecture](/docs/development/reference/ip-networking.html).
+- [IP networking architecture](../reference/ip-networking.html).
