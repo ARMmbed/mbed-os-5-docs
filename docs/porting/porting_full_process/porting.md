@@ -14,7 +14,7 @@ Please fork or branch the following repositories:
 
 ### Get the Mbed OS source code
 
-The following Mbed CLI commands retrieve and forks the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
+The following Mbed CLI commands retrieve and fork the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
 ```
 git clone mbed-os-example-blinky
@@ -23,7 +23,7 @@ cd mbed-os-example-blinky
 
 Delete the file `mbed-os.lib` (`rm mbed-os.lib` on Linux/macOS, `del mbed-os.lib` on Windows).
 
-Next, add your fork of `mbed-os` (change the url to match your repository).
+Next, add your fork of `mbed-os` (change the URL to match your repository).
 
 ```
 mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
@@ -48,7 +48,8 @@ mbed compile --target K64F --toolchain ARM
 mbed compile --target K64F --toolchain IAR
 ```
 
-Verify the build succeeds. If it fails, [please see the debugging page](../tutorials/debugging.html).
+Verify the build succeeds.
+Make sure the program runs correctly, if it fails, [please see the debugging page](../tutorials/debugging.html).
 
 You now have a working baseline and are ready to add a new target.
 
@@ -117,9 +118,9 @@ To include the new target support:
     1. Plug the USB cable to the host.
     1. Drag-n-drop the interface firmware.
 
-### Creating GDB pyOCD debug configuration
+### Create GDB pyOCD debug configuration
 
-1. Install pyOCD. You need the version with the new target support. If that hasn't been released yet, you can invoke the local copy:
+1. Install pyOCD. You need the version with the new target support. If you contributed to PyOCD and an updated version hasn't been released yet, you can invoke the local copy:
 
     ```
     pip install --editable <path_to_pyOCD_with_new_target_support>
@@ -131,7 +132,7 @@ To include the new target support:
 
     1. Under **Debugger**, point the **Executable path** and **Actual executable path** to the `pyocd-gdbserver` you installed earlier.
 
-       For example: `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver`.
+       For example: `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver` on macOS.
 
     1. In **GDB Client Setup**, change the executable to `arm-none-eabi-gdb`, which was part of the GNU Arm Embedded Toolchain you installed earlier.
 
@@ -174,7 +175,7 @@ Detailed instructions for porting each module are given in the module-specific s
 
 ### Create the bare metal mbed-os-example-blinky
 
-The official `mbed-os-example-blinky` uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
+The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
 
 [![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp)
 
@@ -182,10 +183,9 @@ The official `mbed-os-example-blinky` uses a DigitalOut object and timers. The b
 
 [Bootstrap porting instructions](../reference/bootstrap.html).
 
-Mbed OS uses CMSIS Pack for bootstrap. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:
+Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementation (which is distributed in CMSIS pack-form) yet, you'll need to create your own CMSIS files:
 
-1. Locate CMSIS Device Template files and startup code. On Windows, you can find them in the following directories:
-<!-- Make a note here that Keil needs to be installed as well -->
+1. Locate CMSIS Device Template files and startup code. On Windows and if uVision is installed, you can find them in the following directories:
 
    ```
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
@@ -266,7 +266,7 @@ SPI (master) is used to communicate with storage devices that have an SPI interf
 
 [True random number generator entropy source (TRNG) porting instructions](../porting/entropy-sources.html).
 
-If the hardware supports TRNG, you must port it before running Device Management Client, because the client uses TLS, which in turn uses entropy.
+If the hardware supports TRNG, you must port it before running Device Management Client, because the client uses TLS, which in turn requires an entropy source.
 
 ### Connectivity
 
@@ -284,9 +284,9 @@ You can now try running the example applications for your connectivity methods. 
 
 [Flash porting instructions](../porting/flash.html).
 
-Flash is required by Device Management Client.
+Flash drivers are required by Device Management Client.
 
-There are two ways to implement flash API: using CMSIS flash algorithms or C source code. We recommend using C source code, because it's easier to maintain and upgrade. It's also more portable across different platforms.
+There are two ways to implement flash API: using CMSIS flash algorithms or vanilla C source code. We recommend using vanilla C source code, because it's easier to maintain and upgrade. It's also more portable across different platforms.
 
 ### Bootloader
 
