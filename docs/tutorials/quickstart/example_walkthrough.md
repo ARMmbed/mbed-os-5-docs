@@ -54,7 +54,7 @@ Stack Space: 664
 
 ##### System information
 
-**Mbed OS version:** Tip of master is represented by 999999. If you are using a release of Mbed OS the version will be configured by the OS. You may modify the version manually in platform/mbed_version.h for custom releases
+**Mbed OS version:** Tip of master is represented by 999999. If you are using a release of Mbed OS the version will be configured by the OS. For custom releases, you can modify the version manually in `platform/mbed_version.h`.
 
 **CPUID register information:**
 
