@@ -31,13 +31,15 @@ For new Mbed projects, we suggest adopting the Apache 2.0 license. Not
 
 More detailed licenses description can be found in the [guidelines/contributing](../contributing/guidelines/license.html).
 
-### Contributing guidelines
+### Tips  
 
-Consistency is an important aspect of a codebase. To ensure consistency in Mbed OS code, we have created contributing guidelines. Any contribution to Mbed OS needs to meet the following criteria:
-
-- Design and coding style: Be consistent with your changes. We define software design principles and coding style in [this document](../contributing/style.html).
-- Contributions guidance: The process and how we review contributions is described in the [workflow](../contributing/workflow.html) document.
-- Licenses: Licenses should comply with the [licenses described here](../contributing/license.html).
+- The maintainers and reviewers are your friends. At times, programming can be very personal. However, it's important to realize that we all share a common goal, and that honest feedback is constructive feedback. 
+- Code consistency and maintainability is more important than functionality. The existing style of a codebase overrules any personal preference. 
+- Larger contributions take longer to be accepted than smaller contributions. The best contributions are small and purposeful, achieving a single goal. You may be asked to split up a contribution if it contains multiple unrelated changes. 
+- Consistency is an important aspect of a codebase. To ensure consistency in Mbed OS code, we have created contributing guidelines. Any contribution to Mbed OS needs to meet the following criteria:
+    - Design and coding style: Be consistent with your changes. We define software design principles and coding style in [this document](../contributing/style.html).
+    - Contributions guidance: The process and how we review contributions is described in the [workflow](../contributing/workflow.html) document.
+    - Licenses: Licenses should comply with the [licenses described here](../contributing/license.html).
 
 ### Access to the ARMmbed organization on GitHub
 
