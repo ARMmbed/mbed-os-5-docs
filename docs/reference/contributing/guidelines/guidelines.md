@@ -1,4 +1,22 @@
-## Contributing guidelines
+## Contributing to Mbed OS
+
+Mbed OS is an open source, device software, ecosystem for the internet of things. Contributions are an important part of the ecosystem and our goal is to make it as simple as possible to become a contributor. 
+
+Contributions can be made to source code and documentation. Both are developed on Github. Mbed uses the same open source license for contributions (inbound) as is used for the license to the project (outbound). Our default and preferred software license is Apache License version 2.0 (Apache-2.0). 
+
+To encourage frictionless collaboration, as well as robust, consistent, and maintainable code, we have built up a set of guidelines for contributing to Mbed. 
+
+### Types of contributions  
+ 
+There are a few categories a contribution may fall under. The type of contribution will impact how it is incorporated into Mbed, as explained here: Each type has different risks and benefits. When contributing it’s important to not mix types, rather, create multiple contributions if needed. Once a contribution is accepted it will appear in the next release based on type of contribution.  
+
+Types of contributions are described in [here](../contributing/workflow.html)
+
+### How to contribute  
+
+Mbed OS has a team of people called maintainers who will help move contributions along, providing guidance and direction. This team is responsible for helping you get your changes in, as well as controlling the overall quality and consistency of the software. Mbed software is developed on GitHub and contributions are accepted in the form of a pull requests. Before any contributions are accepted to any Mbed software there must be a review by at least one other developer experienced with the functionality. For contributions that span multiple functionalities, multiple reviewers may be necessary. Once reviewed the changes will be tested as part of a larger system. The testing includes but is not limited to: functional correctness, static analysis, integration with other parts of the system, code style or formatting and regressions such as code size increase or performance degredation. If any of the testing fails, more work will be needed before the contribution is accepted.
+
+### Contributing guidelines
 
 Consistency is an important aspect of a codebase. To ensure consistency in Mbed OS code, we have created contributing guidelines. Any contribution to Mbed OS needs to meet the following criteria:
 
