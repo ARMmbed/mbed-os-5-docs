@@ -225,10 +225,21 @@ Mbed CLI supports a setting for each toolchain path:
 #### Method 2: environment variable
 <!-- (Chris) note I moved these -->
 
-<!-- (Chris) added, rushed, wip -->
-In addition to the Mbed CLI configuration, Mbed CLI detects executables that are in toolchain-specific environment variables. These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
+<!-- (Chris) added, may need TLC -->
+In addition to the manually configuring Mbed CLI, Mbed CLI detects executables that are in paths specified by toolchain-specific environment variables.
+
+| Toolchain | Environment variable |
+| --------- | --------- |
+| Arm Compiler 5 | `MBED_ARM_PATH` |
+| Arm Compiler 6 | `MBED_ARMC6_PATH` |
+| IAR EWARM Compiler | `MBED_IAR_PATH` |
+| GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |
+
+<!-- rm me
+These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
 
 Mbed CLI detects compilers with specially named environment variables. These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
+-->
 
 #### Method 3: system PATH
 
