@@ -183,7 +183,7 @@ ARM_PATH=<path to ARM bin\>
 
 ## After installation - configuring Mbed CLI
 
-Mbed CLI will not work properly without some manual configuration.<!--I'm still trying to understand whether this is true for people who use the compilers, or only for people who do manual installations-->
+Mbed CLI will not work properly without some manual configuration.<!--I'm still trying to understand whether this is true for people who use the compilers, or only for people who do manual installations. If the answer is that everyone needs it, then we need to link to this from all the installer bits.-->
 
 ### Mandatory: setting PATH variables
 
@@ -223,10 +223,8 @@ Mbed CLI supports a setting for each toolchain path:
 
 
 #### Method 2: environment variable
-<!-- (Chris) note I moved these -->
 
-<!-- (Chris) added, may need TLC -->
-In addition to the manually configuring Mbed CLI, Mbed CLI detects executables that are in paths specified by toolchain-specific environment variables.
+In addition to the manually configured compiler locations, Mbed CLI detects executables that are in paths specified by toolchain-specific environment variables.
 
 | Toolchain | Environment variable |
 | --------- | --------- |
@@ -235,31 +233,13 @@ In addition to the manually configuring Mbed CLI, Mbed CLI detects executables t
 | IAR EWARM Compiler | `MBED_IAR_PATH` |
 | GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |
 
-<!-- rm me
-These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
-
-Mbed CLI detects compilers with specially named environment variables. These environment variables are the same as their corresponding configuration <!--where is the corresponding configuration variable?-->variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.<!--what do I actually do in this section? And is it a standalone, or does it go with something else (since you used "also" I'm not sure)-->
--->
-
 #### Method 3: system PATH
 
-<!-- vvv (Chris) added this, may need TLC <3 vvv -->
 In addition to toolchain-specific environment variables, Mbed CLI detects executables that are in your system `PATH`. This means that if you install a toolchain in the system `PATH` (different for each OS), Mbed CLI will automatically find the toolchain.
-
-<!-- (Chris) rm me?
-The `mbed compile` command checks your system `PATH` for an executable that the toolchain setting specifies. This is the same check that a shell would perform to find the executable on the command-line. `mbed compile` uses absolute path names for every toolchain except `GCC_ARM`.
--->
-
-<!--so what do I do in this section - set paths? This feels more like background info than instructions. And is the GCC_ARM thing part of the previous sentence, or in contradiction? what should I do with GCC_ARM, if it's in contradiction?-->
-
-
-
 
 #### Optional: configuring multiple toolchains
 
 All the settings described in the previous sections can configure a different version of the same toolchain, and Mbed CLI has a set of rules to seamlessly switch between these versions for an individual `mbed compile` or `mbed test` invocation. Mbed CLI picks the most specific version, from most specific to least specific, in this order:
-
-<!--I think you should organise the methods above to match this order-->
 
 1. `mbed_settings.py`
 2. Mbed CLI local configuration
@@ -280,9 +260,6 @@ To install `mbed-cli` bash tab completion:
 [For more information, see the full documentation](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md).
 
 ## Reference: Working with `mbed config`
-
-<!--should this be here, or in another part of the CLI docs?-->
-<!--(Chris) This is needed above! Should we move this up?-->
 
 The Mbed CLI configuration syntax is:
 
