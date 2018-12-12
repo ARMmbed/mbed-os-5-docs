@@ -2,9 +2,9 @@
 
 Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing interprocessor communication (IPC) between partitions.
 
-For more information about SPM, please refer to [the SPM overview page](/docs/development/apis/mbed-psa.html).
+For more information about SPM, please refer to [the SPM overview page](../docs/development/apis/mbed-psa.html).
 
-**This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities**
+<span class="notes">This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities.</span>
 
 ### New target configuration
 
@@ -192,7 +192,7 @@ Mailbox is the mechanism used to implement Inter Processor Communication and **o
 
 #### Concepts
 
-The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue. 
+The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
 
 #### Requirements
 
