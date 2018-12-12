@@ -6,7 +6,7 @@ This document provides guidelines for adding a new MCU target to Mbed OS and the
 - Run Device Management client.
 - Meet technical requirements for Mbed Enabled program.
 
-These guidelines use pyOCD and DAPLink in the porting process because they are free and open source. Please note that you can use other interface firmware, but that is outside the scope of this document.
+These guidelines use pyOCD, our debugger, and DAPLink, our interface firmware, in the porting process because they are free and open source. Please note that you can use other debuggers and interface firmware, but that is outside the scope of this document.
 
 ### Scope and milestones
 
@@ -18,7 +18,7 @@ You will usually need to go through all of these steps to port Mbed OS:
 
     If there is an SDK available to speed up the porting process, we recommend reusing it (assuming copyright of the existing code is preserved).
 
-1. Implement and test CMSIS pack, bootstrap, linker script and startup code.
+1. Implement and test CMSIS headers, bootstrap, linker script and startup code.
 
    A basic framework is ready after this step. You can do the rest of the porting work in parallel:
 
