@@ -8,9 +8,9 @@ To encourage frictionless collaboration, as well as robust, consistent, and main
 
 ### Types of contributions  
  
-There are a few categories a contribution may fall under. The type of contribution will impact how it is incorporated into Mbed, as explained here: Each type has different risks and benefits. When contributing it’s important to not mix types, rather, create multiple contributions if needed. Once a contribution is accepted it will appear in the next release based on type of contribution.  
+There are a few categories a contribution may fall under. Each type has different risks and benefits. When contributing it’s important to not mix types, rather, create multiple contributions if needed. Once a contribution is accepted it will appear in the next release based on type of contribution.  
 
-Types of contributions are described in [here](../contributing/workflow.html)
+The type of contribution will impact how it is incorporated into Mbed OS, as explained [here](../contributing/workflow.html)
 
 ### How to contribute  
 
