@@ -18,7 +18,7 @@ Block device for SD cards.
 
 Block device the heap backs for quick testing.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/HeapBlockDevice.h)](https://github.com/ARMmbed/mbed-os/blob/master/features/filesystem/bd/HeapBlockDevice.h)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os/blob/mbed-os-5.6/features/filesystem/bd/HeapBlockDevice.h)](https://github.com/ARMmbed/mbed-os/blob/mbed-os-5.6/features/filesystem/bd/HeapBlockDevice.h)
 
 #### Block Device NOR-based SPI example
 
