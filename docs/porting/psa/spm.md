@@ -2,7 +2,7 @@
 
 Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing interprocessor communication (IPC) between partitions.
 
-For more information about SPM, please refer to [the SPM overview page](../docs/development/apis/mbed-psa.html).
+For more information about SPM, please refer to [the SPM overview page](../docs/v5.11/apis/mbed-psa.html).
 
 <span class="notes">This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities.</span>
 
@@ -226,7 +226,7 @@ This part of HAL allows you to implement a thin layer of the mailbox mechanism t
 
 #### Secure Processing Environment
 
-This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
+This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/group___s_p_m.html).
 
 ### Memory protection
 
