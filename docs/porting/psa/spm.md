@@ -19,13 +19,11 @@ When adding a new target, a new root target node should be added to the `mbed-os
 
 These is demonstrated in the example below:
 
-<span class="warnings"> **Warning:**  This is a provisional example of PSA configuration for the Future Sequana target in Mbed OS 5.11 and has been introduced as `FUTURE_SEQUANA_PSA`. The PSA configuration will be added into **existing** targets in a future release.</span>
-
 ```json
-"FUTURE_SEQUANA_M0_PSA": {
+"SPM_SECURE_CORE_PSA": {
         "inherits": ["SPE_Target"],
         "components_add": ["SPM_MAILBOX"],
-        "deliver_to_target": "FUTURE_SEQUANA_PSA",
+        "deliver_to_target": "SPM_NONSECURE_CORE_PSA",
         "overrides": {
             "secure-rom-start": "0x10000000",
             "secure-rom-size": "0x78000",
@@ -39,7 +37,7 @@ These is demonstrated in the example below:
             "shared-ram-size": "0x1000"
         }
     },
-    "FUTURE_SEQUANA_PSA": {
+    "SPM_NONSECURE_CORE_PSA": {
         "inherits": ["NSPE_Target"],
         "components_add": ["SPM_MAILBOX"],
         "overrides": {
@@ -261,22 +259,12 @@ After finalizing the porting, execute the following tests:
 
 We recommended you leave the memory protection part (*spm_hal_memory_protection_init()* implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement *spm_hal_memory_protection_init()*, and run the entire test suite again, including the memory protection related tests.
 
-<span class="warnings"> **Warning:**  the `FUTURE_SEQUANA_PSA` target is based on `FUTURE_SEQUANA` and requires a temporary workaround to let the Mbed OS tools to detect the platform. This will be fixed in a future release. Please run this command before running tests on the Future Sequana platform:
+This is an example on how to run SPM tests for an Mbed OS platform (tipicaly a nonsecure core of PSA target):
 
 ```
-mbedls --mock 6000:FUTURE_SEQUANA_PSA
-```
-
-This is an example on how to run SPM tests for the Future Sequana platform:
-
-```
-mbed test -t GCC_ARM -m FUTURE_SEQUANA_PSA -n mbed-os-tests-psa-spm_smoke -v
+mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-psa-spm_smoke -v
 ```
 
 ```
-mbed test -t GCC_ARM -m FUTURE_SEQUANA_PSA -n mbed-os-tests-mbed_hal-spm -v
+mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-mbed_hal-spm -v
 ```
-
-</span>
-
-
