@@ -14,23 +14,26 @@ Please fork or branch the following repositories:
 
 ### Get the Mbed OS source code
 
-The following Mbed CLI commands retrieve and forks the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
+The following Mbed CLI commands retrieve and fork the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
 ```
-mbed import mbed-os-example-blinky
+git clone mbed-os-example-blinky
 cd mbed-os-example-blinky
 ```
 
-Add the URL of your forked `mbed-os` (such as https://github.com/ARMmbed/mbed-os-new-target) to `mbed-os.lib`.Then:
+Delete the file `mbed-os.lib` (`rm mbed-os.lib` on Linux/macOS, `del mbed-os.lib` on Windows).
+
+Next, add your fork of `mbed-os` (change the URL to match your repository).
 
 ```
-mbed deploy
-mkdir mbed-os
+mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
+```
+
+Next, set up the upstream remote, and create a branch for the new port.
+
+```
 cd mbed-os
-git init
-git remote add origin https://github.com/<your_username>/mbed-os-new-target
-git remote add upstream https://github.com/ARMmbed/mbed-os-new-target
-git pull origin master
+git remote add upstream https://github.com/ARMmbed/mbed-os
 git checkout -b <branch_name>
 ```
 
@@ -45,7 +48,8 @@ mbed compile --target K64F --toolchain ARM
 mbed compile --target K64F --toolchain IAR
 ```
 
-Verify the build succeeds. If it fails, [please see the debugging page](../tutorials/debugging.html).
+Verify the build succeeds.
+Make sure the program runs correctly, if it fails, [please see the debugging page](../tutorials/debugging.html).
 
 You now have a working baseline and are ready to add a new target.
 
@@ -70,7 +74,7 @@ Repo: [https://github.com/mbedmicro/flashalgo](https://github.com/mbedmicro/flas
 
 1. To generate uVision project files, follow the instructions in **Develop Setup** and **Develop** in the [FlashAlgo documentation](https://github.com/mbedmicro/flashalgo).
 
-1. In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>` and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
+1. In Keil MDK, open the project file for your target in `\projectfiles\uvision<target>`, and build it. The build directory of a successful build will have the files `c_blob.c` and `c_blob_mbed.c`; save both files. You will use them in the next step (`c_blob.c` in `flash_blob.c`, and `c_blob_mbed.c` in Flash API).
 
 ### Add your new target to DAPLink
 
@@ -114,9 +118,9 @@ To include the new target support:
     1. Plug the USB cable to the host.
     1. Drag-n-drop the interface firmware.
 
-### Creating GDB pyOCD debug configuration
+### Create GDB pyOCD debug configuration
 
-1. Install pyOCD. You need the version with the new target support. If that hasn't been released yet, you can invoke the local copy:
+1. Install pyOCD. You need the version with the new target support. If you contributed to PyOCD and an updated version hasn't been released yet, you can invoke the local copy:
 
     ```
     pip install --editable <path_to_pyOCD_with_new_target_support>
@@ -128,7 +132,7 @@ To include the new target support:
 
     1. Under **Debugger**, point the **Executable path** and **Actual executable path** to the `pyocd-gdbserver` you installed earlier.
 
-       For example: `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver`.
+       For example: `/Library/Frameworks/Python.framework/Versions/2.7/bin/pyocd-gdbserver` on macOS.
 
     1. In **GDB Client Setup**, change the executable to `arm-none-eabi-gdb`, which was part of the GNU Arm Embedded Toolchain you installed earlier.
 
@@ -146,13 +150,13 @@ To include the new target support:
 
 1. You can use the default values for all other settings.
 
-## Porting modules
+## Porting HAL modules
 
 ### Recommended porting order
 
 Based on criticality and dependency of Mbed OS software stack, we recommend the following order:
 
-1. Create a bare metal (based on the Blinky example).
+1. Create a bare metal example (based on the Blinky example).
 1. Bootstrap and entry point.
 1. Serial port (synchronous transfer).
 1. Low power ticker.
@@ -165,31 +169,33 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 1. Flash.
 1. Bootloader.
 1. Pelion Client (optional).
-1. Other HAL components (optional).
+1. Other HAL modules (optional).
 
 Detailed instructions for porting each module are given in the module-specific sections of this documentation.
 
 ### Create the bare metal mbed-os-example-blinky
 
-The official mbed-os-example-blinky uses a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/linlingao/mbed-os-example-blinky).
+The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
 
-<span class="notes">Blinky is a stop-gap measure; please don't commit it to master.</span>
+[![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp)
 
 ### Bootstrap and entry point
 
 [Bootstrap porting instructions](../reference/bootstrap.html).
 
-Mbed OS uses CMSIS Pack for bootstrap. If your target doesn't have CMSIS pack yet, you'll need to create your own CMSIS files:
+Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementation (which is distributed in CMSIS pack-form) yet, you'll need to create your own CMSIS files:
 
-1. Locate CMSIS Device Template files and startup code. On Windows, they can be found in the following directories:
+1. Locate CMSIS Device Template files and startup code. On Windows and if uVision is installed, you can find them in the following directories:
 
    ```
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Include
    ```
+   
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
+<!-- This is lacking in detail. Are they supposed to implement the Mbed pinmap apis? Or should they do this manually by modifying device registers? -->
 
     At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called `.mbedignore` in your mbed-os directory (if one doesn't exist), and add the following entry:
 
@@ -234,7 +240,7 @@ The [Mbed OS doxygen describes LowPowerTicker tests](https://os.mbed.com/docs/la
 
 [Microsecond ticker porting instructions](../porting/microsecond-ticker.html).
 
-When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with Blinky, which invokes both millisecond and microsecond tickers in its `wait (n second)` blinking behavior.
+When you finish porting the microsecond ticker, the `wait` API should work, and the intervals should be exact. You can verify this with `printf`.
 
 ### GPIO (write and read) and IRQ
 
@@ -260,7 +266,7 @@ SPI (master) is used to communicate with storage devices that have an SPI interf
 
 [True random number generator entropy source (TRNG) porting instructions](../porting/entropy-sources.html).
 
-If the hardware supports TRNG, you must port it before running Device Management Client, because the client uses TLS, which in turn uses entropy.
+If the hardware supports TRNG, you must port it before running Device Management Client, because the client uses TLS, which in turn requires an entropy source.
 
 ### Connectivity
 
@@ -268,19 +274,19 @@ If the hardware supports TRNG, you must port it before running Device Management
 
 You can now try running the example applications for your connectivity methods. For example:
 
-* [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble)
-* [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi)
-* [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan)
-* [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
-* [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
+- [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble).
+- [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
+- [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
+- [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular).
+- [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets).
 
 ### Flash
 
 [Flash porting instructions](../porting/flash.html).
 
-Flash is required by Device Management Client.
+Flash drivers are required by Device Management Client.
 
-There are two ways to implement flash API: using CMSIS flash algorithms or C source code. We recommend using C source code, because it's easier to maintain and upgrade. It's also more portable across different platforms.
+There are two ways to implement flash API: using CMSIS flash algorithms or vanilla C source code. We recommend using vanilla C source code, because it's easier to maintain and upgrade. It's also more portable across different platforms.
 
 ### Bootloader
 
@@ -290,8 +296,8 @@ The bootloader is a separate application, which needs to be created and integrat
 
 ### Device Management Client
 
-You do not need to manually port Device Management Client; when the above components are ported, you should be ready to [demo the Connect and Update functionalities of the Device Management Client](https://cloud.mbed.com/guides/connect-device-to-pelion).
+You do not need to manually port Device Management Client; when the above modules are ported, you should be ready to [demo the Connect and Update functionalities of the Device Management Client](https://cloud.mbed.com/guides/connect-device-to-pelion).
 
-### Other HAL Components (Optional)
+### Other HAL modules (Optional)
 
-You are now ready to port any other HAL components that your use case and MCU require. These components are covered in the rest of this document.
+You are now ready to port any other HAL modules that your use case and MCU require. These modules are covered in the rest of this document.

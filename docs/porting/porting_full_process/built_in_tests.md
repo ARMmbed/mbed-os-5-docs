@@ -5,30 +5,17 @@ It's important to test your port at the end of each module porting, rather than 
 1. Using the Mbed OS built-in tests with [*Greentea*](../tools/greentea-testing-applications.html).
 1. Using the Mbed OS built-in tests with *manual testing*.
 
-
 ## Testing with the Greentea framework
 
-<!--does Greentea only work with eclipse?--><!--what if I'm not using eclipse?-->
-<!--From Jimmy: Greentea isn't designed to be used with Eclipse. Eclipse can do something, but it's designed to be run from the command-line.-->
-<!--did we actually ask people to install Greentea? I don't see it in the lists, unless it's bundled into Mbed CLI-->
-<!--From Jimmy: Mbed CLI will install Greentea for you, but that may change in the future.-->
-<!--We don't currently link to user docs for Greentea, but we really should - I'm just not sure which link to use-->
-
-<!--I can only find eclipse content in debugging, not in testing, and not in the page covering Greentea-->
-<!--From Jimmy: Becuse Eclipse is unrelated-->
-<!--../tutorials/eclipse.html-->
-<!--[https://os.mbed.com/docs/latest/tools/greentea-testing-applications.html](../tools/greentea-testing-applications.html)-->
-
 Read the following page to understand how tests are structured:
-<!--From Jimmy: Don't export tests to Eclipse or at all. It's not supported, AKA not in CI-->
 
 ### Prerequisites
 
 #### Minimum HAL module support
 
-To run the Mbed OS built-in tests, you need to have ported and verified at least these modules:
+To run the Mbed OS built-in tests, you need to have ported and verified at least these HAL modules:
 
-- DAPLink.
+- DAPLink or compatible interface firmware.
 
     <span class="notes">If DAPLink is still under development, please [use manual tests](../porting/manual-testing.html).</span>
 - Low power ticker.
@@ -37,19 +24,16 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 
 #### mbedls
 
-<!--did we ask them to install that? I don't think we've mentioned it. We need a section that discusses the testing tools
-Get Brian to confirm whether it's part of the Mbed OS installation or whether we need a new bit in the installation list to cover Greentea and mbedls-->
-<!--From Jimmy: Mbed CLI automatically installs mbed ls, yes, but that may change in the future-->
-
 The board under test needs to be supported in mbedls for automated tests to work.
 
-If the official mbedls pip package hasn't been released yet, you need to direct pip to use your local directory (which includes the  code changes to support the new board):
+If an updated mbedls pip package hasn't been released yet, you need to direct pip to use your local directory (which includes the  code changes to support the new board):
 
 1. Clone [https://github.com/ARMmbed/mbed-ls](https://github.com/ARMmbed/mbed-ls).
+1. [Add your target to the platform database](https://github.com/ARMmbed/mbed-ls#adding-platform-support)
 1. Run `pip install --editable <your_local_root_to_mbed-ls>`.
-1. Create an `mbedls.json` file. This file allows you to override and specify the FTDI USB port.
+1. If you're using an external serial probe (like an FTDI USB cable), create an `mbedls.json` file and specify the serial port.
 
-    The serial port path varies in different operation systems. On **Windows**, you can find it through Device Manager; it will usually be something like `COM#`. On **Mac OS** and Linux, you can use `ls /dev/tty.usb*`:
+    The serial port path varies in different operation systems. On **Windows**, you can find it through Device Manager; it will usually be something like `COM#`. On **Mac OS** you can use `ls /dev/tty.usb*`. On Linux you can use `ls /dev/ttyACM*`. The format of `mbedls.json` is as follows:
 
     ```
     {
@@ -59,17 +43,20 @@ If the official mbedls pip package hasn't been released yet, you need to direct 
     }
     ```
 
+    Where `"33000000e062afa300000000000000000000000097969902"` is the correct target id.
+
 ### Compiling and running tests
 
-1. Compile your tests:
-    - To compile all tests, run `mbed test -compile`.
+1. Compile the tests:
+    - To compile all tests, run `mbed test --compile`.
     - To see the list of compiled tests, run `mbed test --compile-list`.
-    - To compile a specific test, run  `mbed test -compile -n <test_name>`. For example: `mbed test --compile -n tests-concurrent-gpio)`.
-1. To run your tests, run `mbedgt`.
+    - To compile a specific test, run  `mbed test --compile -n <test_name>`. For example: `mbed test --compile -n mbed-os-tests-concurrent-gpio)`.
+1. To run your tests, run `mbed test --run`.
 
 
 Here is an example of a successful run:
 
+<!-- Needs to be updated with output from mbed-cli (mbed test) -->
 ```
 mbedgt: greentea test automation tool ver. 1.4.0
 mbedgt: using multiple test specifications from current directory!
@@ -127,22 +114,21 @@ mbedgt: completed in 20.24 sec
 
 ## Manual testing
 
-You may want to run manual tests, for example if DAPLink is still under development. You will need to export your tests from Greentea and import them to your IDE. For example, to work with Eclipse:
+You may want to run manual tests, for example if DAPLink is still under development. You will need to export your tests from Greentea and import them to your IDE. For example:
 
 1. Find the test directory:
 
     ```
-    mbed test --compile-list -n mbed-os-tests-mbed_hal-common_ticker
+    mbed test -m <new_target> -t gcc_arm --compile-list -n mbed-os-tests-mbed_hal-common_ticker
     ```
 
 1. Copy the source code to the project root directory:
 
     ```
-    cd <root_dir>
+    cd <separate folder from existing porting project>
     cp -R mbed-os-example-blinky/mbed-os/TESTS/mbed_hal/common_tickers .
     cd common_tickers
-    mbed new .
-    rm -rf mbed-os
+    mbed new --create-only .
     ```
 
 1. Copy the `mbed-os` directory:
@@ -154,10 +140,10 @@ You may want to run manual tests, for example if DAPLink is still under developm
 1. Export to a makefile project:
 
     ```
-    mbed export -i gcc_arm -m <new_target>
+    mbed export -i <exporter> -m <new_target>
     ```
 
-1. Open the project with pyOCD (using the same configuration you used [when you initially set up pyOCD]( Creating GDB pyOCD debug configuration).
+1. Open the project with pyOCD (using the same configuration you used [when you initially set up pyOCD](#creating-GDB-pyOCD-debug-configuration).
 
 1. Run the program:
 
@@ -182,23 +168,17 @@ To build and run the Mbed OS tests:
 
 1. Build the tests:
 
+   <!-- any reason why we're doing a clean build here everytime? I'd really recommend dropping this one, build times will be very high -->
    ```
-   mbed test --compile -m <new_target> -t gcc_arm -c
-   ```
-
-   You'll see some build errors. These errors should reduce and eventually disappear as more HAL components are ported.
-
-1. To run the tests, go to the `mbed-os` directory.
-
-   ```
-   cd mbed-os
+   mbed test -m <new_target> -t gcc_arm --compile -c
    ```
 
-   You can see the full list of built tests:
+   If you see some build errors, it means that some HAL modules required to run the tests are missing and need porting.
 
+1. You can see the full list of built tests:
 
     ```
-    mbed test --compile-list
+    mbed test -m <new_target> -t gcc_arm --compile-list
     ```
 
 1. Test images are located under the following directory:
@@ -210,19 +190,14 @@ To build and run the Mbed OS tests:
     For example:
 
     ```
-    $ mbed test --compile-list | grep common_tickers
+    $ mbed test -m <new_target> -t gcc_arm --compile-list -n *tickers*
 
-        Test Case:
-
-    Name: tests-mbed_hal-common_tickers
-
-    Path: ./TESTS/mbed_hal/common_tickers
-
-      Test Case:
-
-          Name: tests-mbed_hal-common_tickers_freq
-
-          Path: ./TESTS/mbed_hal/common_tickers_freq
+    Test Case:
+        Name: tests-mbed_hal-common_tickers
+        Path: ./TESTS/mbed_hal/common_tickers
+    Test Case:
+        Name: tests-mbed_hal-common_tickers_freq
+        Path: ./TESTS/mbed_hal/common_tickers_freq
     ```
 
     In this example:
@@ -230,16 +205,14 @@ To build and run the Mbed OS tests:
     - The `common_tickers` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers`.
     - The `common_tickers_freq` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers_freq.`
 
-1. You need to flash the test image to the board. You can use either DAPLink or Eclipe IDE. You may also be able to use IAR and Keil (if they already support the new target).
+1. You need to flash the test image to the board. You can use either pyOCD or the Eclipe IDE. You may also be able to use IAR and Keil (if they already support the new target).
 
     The easiest method is using the pyOCD flash tool:
 
     ```
-    pyocd-flashtool BUILD/mbed-os-example-blinky.bin or
-    pyocd-flashtool BUILD/mbed-os-example-blinky.hex
+    pyocd-flashtool BUILD/mbed-os-example-blinky.bin    # Use the .hex file if appropriate
     ```
 
 1. Before you begin the test run, please make sure the serial port is not already opened by programs like Screen or Teraterm (close them if they're open). In addition, verify `mbedls` lists the new target device.
 
-    If your test run doesn't start, read [the Greentea documentation for troubleshooting](https://github.com/armmbed/greentea).
-    <!--do we have this within the docs, rather than on GitHub? Answer: We think it's this: https://github.com/armmbed/greentea#common-issues We can add this to our docs.-->
+    If your test run doesn't start, please read about [troubleshooting Greentea](https://github.com/armmbed/greentea#common-issues).
