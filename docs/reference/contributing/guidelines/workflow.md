@@ -93,13 +93,13 @@ We consider the following pull request types.
 
 #### Fix
 
-A bug fix is a change that fixes a specific defect in the codebase with the backward compatibility. These are the highest priority because the positive impact the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Bug fixes are candidates for patch releases.
+A bug fix is a change that fixes a specific defect in the codebase with backwards compatibility. These are the highest priority because of the positive impact the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Bug fixes are candidates for patch releases.
 
 Release: patch
 
 #### Refactor
 
-A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. This some examples would be moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes, and test organization changes. There is always the risk that someone depended on the location or name before a refactor therefore are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases. 
+A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this would be moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes, and test organization changes. There is always the risk that someone depended on the location or name before a refactor therefore these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases. 
 
 Release: feature
 
@@ -111,7 +111,7 @@ Release: patch
 
 #### Functionality change
 
-Any change in the functionality, it can be adding new feature or adding new method or function. It does not matter if it is C++, C or Python.
+Any change in the functionality, it can be adding a new feature, adding a new method or a function. It does not matter if it is C++, C or Python.
 
 A feature contribution contains a new API, capability or behavior. It does not break backwards compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
 
