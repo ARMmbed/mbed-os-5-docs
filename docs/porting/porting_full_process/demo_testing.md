@@ -92,8 +92,8 @@ Then, test connectivity and firmware update:
 
    - If your target uses WiFi, fill in the SSID and Password fields in `mbed_app.json`.
 
-   - Add NVStore descriptors (previously known as SOTP) for storage to `mbed-cloud-client-example/mbed_lib.json`. For example:
-<!-- Don: How does someone figure out what these parameters should be? -->
+   - Add [NVStore descriptors (previously known as SOTP)](https://cloud.mbed.com/docs/porting/porting-a-new-target-for-mbed-os.html) for storage to `mbed-cloud-client-example/mbed_lib.json`. For example:
+
       ```
       ...
           "sotp-section-2-size"              : "(16*1024)"
