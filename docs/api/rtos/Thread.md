@@ -1,6 +1,6 @@
 ## Thread
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
 
 The Thread class allows defining, creating and controlling parallel tasks.
 
@@ -8,7 +8,7 @@ The Thread class allows defining, creating and controlling parallel tasks.
 
 ### Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 ```C
 /// Priority values.

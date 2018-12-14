@@ -1,10 +1,10 @@
 <h2 id="cellular-api">Cellular</h2>
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
 
-The [CellularBase](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularBase](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
 
-Arm Mbed OS provides a [reference implementation of CellularBase](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html), which has more information.
+Arm Mbed OS provides a [reference implementation of CellularBase](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_cellular_context_8h_source.html), which has more information.
 
 ##### Getting started
 
@@ -50,7 +50,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 ### CellularBase class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_cellular_base.html)
 
 ### Usage
 

@@ -4,7 +4,7 @@ The `ScopedRomWriteLock` class provides an RAII object for enabling writing to R
 
 ### ScopedRomWriteLock class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_scoped_rom_write_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classmbed_1_1_scoped_rom_write_lock.html)
 
 ### Example
 
