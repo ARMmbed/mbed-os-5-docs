@@ -1,3 +1,3 @@
 ### Profiling
 
-[A document about profiling. It should include static memory analysis and how to optimize it. This is related to this page: https://os.mbed.com/docs/v5.11/tutorials/memory-optimization.html#memap---static-memory-map-analysis.]
+[A document about profiling. It should include static memory analysis and how to optimize it. This is related to this page: https://os.mbed.com/docs/development/tutorials/memory-optimization.html#memap---static-memory-map-analysis.]

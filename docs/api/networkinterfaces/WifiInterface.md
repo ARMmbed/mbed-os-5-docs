@@ -4,7 +4,7 @@ The WifiInterface provides a simple C++ API for connecting to the internet over 
 
 ### Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_wi_fi_interface_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_wi_fi_interface_8h_source.html)
 
 ### Usage
 

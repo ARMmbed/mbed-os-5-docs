@@ -10,8 +10,6 @@ Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbe
 
 You can verify Mbed CLI installed correctly by running `mbed help` from your command-line.
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
-
 ### Manual installation
 
 #### 1. Download and install prerequisites
@@ -66,8 +64,6 @@ We recommend installing Mbed CLI with our installer. If you need more customizat
 
 Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
-
 ### Manual installation
 
 
@@ -121,9 +117,6 @@ ARM_PATH=<path to ARM bin\>
 ```
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
-
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
-
 
 ## Linux
 
@@ -190,7 +183,7 @@ ARM_PATH=<path to ARM bin\>
 
 ## After installation - configuring Mbed CLI
 
-Mbed CLI may not work properly without some manual configuration.
+Mbed CLI will not work properly without some manual configuration.<!--I'm still trying to understand whether this is true for people who use the compilers, or only for people who do manual installations. If the answer is that everyone needs it, then we need to link to this from all the installer bits.-->
 
 ### Mandatory: setting PATH variables
 
