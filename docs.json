@@ -1042,33 +1042,6 @@
         "branch": "mbed-os-5.8"
     },
     {
-        "title": "feature-hal-spec-rtc doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-rtc-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-spec-rtc"
-    },
-    {
-        "title": "feature-hal-spec-sleep doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-sleep-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-spec-sleep"
-    },
-    {
-        "title": "feature-hal-spec-ticker doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-ticker-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-spec-ticker"
-    },
-    {
         "title": "feature-hal-spec-usb-device doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "feature-hal-spec-usb-device-doxy",
@@ -1076,16 +1049,6 @@
         "type": "doxygen",
         "source": "https://github.com/ARMmbed/mbed-os",
         "branch": "feature-hal-spec-usb-device"
-
-    },
-    {
-        "title": "feature-hal-spec-qspi doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-qspi-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-qspi"
 
     },
     {
