@@ -263,8 +263,6 @@ This example shows how to run SPM tests for a PSA target with a nonsecure core:
 
 ```
 mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-psa-spm_smoke -v
-```
 
-```
 mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-mbed_hal-spm -v
 ```
