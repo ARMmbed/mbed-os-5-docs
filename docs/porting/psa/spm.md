@@ -17,7 +17,7 @@ When adding a new target, a new root target node should be added to the `mbed-os
    - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. The [memory layout section](#memory-layout) explains this in more detail.
    - Secure target must declare its corresponding nonsecure target using the `deliver_to_target` field.
 
-These is demonstrated in the example below:
+The example below demonstrates this:
 
 ```json
 "SPM_SECURE_CORE_PSA": {
@@ -250,16 +250,16 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 
 ### Testing
 
-Arm provides a list of tests to make sure the HAL functions are implemented according to requirements, and the porting is done correctly.
+Arm provides a list of tests to check that the HAL functions are implemented according to requirements, and the porting is done correctly.
 
 After finalizing the porting, execute the following tests:
 
-- **tests-psa-spm_smoke:** This test will make sure that the porting of the mailbox mechanism (for dual core systems) is successful.
-- **tests-mbed_hal-spm:** This test will make sure the porting of the memory protection (*spm_hal_memory_protection_init()* implementation) makes the correct partitioning between secure RAM/Flash and nonsecure RAM/Flash.
+- **tests-psa-spm_smoke:** This test will check that the porting of the mailbox mechanism (for dual core systems) is successful.
+- **tests-mbed_hal-spm:** This test will check the porting of the memory protection (*spm_hal_memory_protection_init()* implementation) makes the correct partitioning between secure RAM/Flash and nonsecure RAM/Flash.
 
-We recommended you leave the memory protection part (*spm_hal_memory_protection_init()* implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement *spm_hal_memory_protection_init()*, and run the entire test suite again, including the memory protection related tests.
+We recommended you leave the memory protection part (`spm_hal_memory_protection_init()` implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement `spm_hal_memory_protection_init()`, and run the entire test suite again, including the memory protection related tests.
 
-This is an example on how to run SPM tests for an Mbed OS platform (tipicaly a nonsecure core of PSA target):
+This example shows how to run SPM tests for a a PSA target with a nonsecure core:
 
 ```
 mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-psa-spm_smoke -v
