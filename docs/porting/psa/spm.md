@@ -259,7 +259,7 @@ After finalizing the porting, execute the following tests:
 
 We recommended you leave the memory protection part (`spm_hal_memory_protection_init()` implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement `spm_hal_memory_protection_init()`, and run the entire test suite again, including the memory protection related tests.
 
-This example shows how to run SPM tests for a a PSA target with a nonsecure core:
+This example shows how to run SPM tests for a PSA target with a nonsecure core:
 
 ```
 mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-psa-spm_smoke -v
