@@ -4,26 +4,26 @@ Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is r
 
 For more information about SPM, please refer to [the SPM overview page](../apis/psa-api.html).
 
-<span class="notes">This page gives guidelines for silicon partners wishing to have Secure Partition Manager capabilities.</span>
+<span class="notes">This page gives guidelines for silicon partners adding SPM capabilities.</span>
 
 ### New target configuration
 
-When adding a new target, a new root target node should be added to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
+When adding a new target, add a new root target node to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
 
-1. Secure target must inherit from `SPE_Target` metatarget.
-2. Nonsecure target must inherit from `NSPE_Target`.
-3. Only for multicore architectures:
+- A secure target must inherit from `SPE_Target` metatarget.
+- A nonsecure target must inherit from `NSPE_Target`.
+- Only for multicore architectures:
    - Both targets must add the `SPM_MAILBOX` component. You can read more about the mailbox mechanism in the [mailbox section](#mailbox).
    - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. The [memory layout section](#memory-layout) explains this in more detail.
-   - Secure target must declare its corresponding nonsecure target using the `deliver_to_target` field.
+   - The secure target must declare its corresponding nonsecure target using the `deliver_to_target` field.
 
-These is demonstrated in the example below:
+The example below demonstrates this:
 
 ```json
-"FUTURE_SEQUANA_M0_PSA": {
+"SPM_SECURE_CORE_PSA": {
         "inherits": ["SPE_Target"],
         "components_add": ["SPM_MAILBOX"],
-        "deliver_to_target": "FUTURE_SEQUANA_PSA",
+        "deliver_to_target": "SPM_NONSECURE_CORE_PSA",
         "overrides": {
             "secure-rom-start": "0x10000000",
             "secure-rom-size": "0x78000",
@@ -37,7 +37,7 @@ These is demonstrated in the example below:
             "shared-ram-size": "0x1000"
         }
     },
-    "FUTURE_SEQUANA_PSA": {
+    "SPM_NONSECURE_CORE_PSA": {
         "inherits": ["NSPE_Target"],
         "components_add": ["SPM_MAILBOX"],
         "overrides": {
@@ -76,7 +76,7 @@ Typically, PSA platforms share the same RAM and flash between secure and nonsecu
 
 To achieve RAM and flash partitioning, you must add start and size values to a target configuration in `targets.json` as in the example above.
 
-Note that for isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.
+<span class="notes">**Note:** For isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.</span>
 
 ### Linker scripts
 
@@ -188,7 +188,7 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 
 ### Mailbox
 
-Mailbox is the mechanism used to implement Inter Processor Communication and **only relevant for multicore systems**. Mailbox is used by SPM for communicating with secure partitions from nonsecure processing environment.
+Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
 
 #### Concepts
 
@@ -198,7 +198,7 @@ The mailbox mechanism is based on message queues and dispatcher threads. Each co
 
 The SPM mailbox mechanism requires the platform to have the following capabilities:
 
-- IPC capabilities - The ability to notify the peer processor about an event (usually implemented with interrupts).
+- IPC capabilities - the ability to notify the peer processor about an event (usually implemented with interrupts).
 - Ability to set a RAM section shared between the cores.
 
 #### Porting
@@ -213,7 +213,7 @@ These are the guidelines you should follow if you have multicore systems:
 
 ### HAL functions
 
-Target specific code of silicon partners who wish to have SPM capabilities must:
+Target-specific code of silicon partners adding SPM capabilities must:
 
 - Implement a list of functions which are being called by SPM code.
 - Call Arm callback functions declared and documented in the HAL header files.
@@ -226,13 +226,13 @@ This part of HAL allows you to implement a thin layer of the mailbox mechanism t
 
 #### Secure Processing Environment
 
-This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
+This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/group___s_p_m.html).
 
 ### Memory protection
 
-Target-specific code must implement the function *spm_hal_memory_protection_init()* called in SPM initialization. This function should apply memory protection schemes to ensure secure memory can only be accessed from secure-state.
+Target-specific code must implement the function `spm_hal_memory_protection_init()` called in SPM initialization. This function applies memory protection schemes to ensure secure memory can only be accessed from secure-state.
 
-The implementation of this function must be aligned with the SPM general guidelines, as the table below describes. This table describes the allowed operations (Read, Write and Execute) on the secure and nonsecure RAM and FLASH by each core:
+The implementation of this function must be aligned with the SPM general guidelines, as the table below describes. This table describes the allowed operations (Read, Write and Execute) on the secure and nonsecure RAM and Flash by each core:
 
 - X means No access.
 - V means Must be able to access.
@@ -250,11 +250,19 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 
 ### Testing
 
-Arm provides a list of tests to make sure the HAL functions are implemented according to requirements, and the porting is done correctly.
+Arm provides a list of tests to check that the HAL functions are implemented according to requirements, and the porting is done correctly.
 
 After finalizing the porting, execute the following tests:
 
-- **tests-psa-spm_smoke:** This test will make sure that the porting of the mailbox mechanism (for dual core systems) is successful.
-- **tests-mbed_hal-spm:** This test will make sure the porting of the memory protection (*spm_hal_memory_protection_init()* implementation) makes the correct partitioning between secure RAM/Flash and nonsecure RAM/Flash.
+- `tests-psa-spm_smoke`: This test checks that the porting of the mailbox mechanism (for dual core systems) is successful.
+- `tests-mbed_hal-spm`: This test checks the porting of the memory protection (`spm_hal_memory_protection_init()` implementation) makes the correct partitioning between secure RAM/Flash and nonsecure RAM/Flash.
 
-We recommended you leave the memory protection part (*spm_hal_memory_protection_init()* implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement *spm_hal_memory_protection_init()*, and run the entire test suite again, including the memory protection related tests.
+We recommended you leave the memory protection part (`spm_hal_memory_protection_init()` implementation) to the end of the porting. First, implement and test other HAL functions. After these tests pass, implement `spm_hal_memory_protection_init()`, and run the entire test suite again, including the memory protection related tests.
+
+This example shows how to run SPM tests for a PSA target with a nonsecure core:
+
+```
+mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-psa-spm_smoke -v
+
+mbed test -t GCC_ARM -m SPM_NONSECURE_CORE_PSA -n mbed-os-tests-mbed_hal-spm -v
+```
