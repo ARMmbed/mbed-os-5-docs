@@ -111,7 +111,7 @@ Release: patch
 
 #### Functionality change
 
-Any change in the functionality, it can be adding a new feature, adding a new method or a function. It does not matter if it is C++, C or Python.
+Any change in the functionality, it can be adding a new feature, adding a new method or a function. Software language does not matter.
 
 A feature contribution contains a new API, capability or behavior. It does not break backwards compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
 
