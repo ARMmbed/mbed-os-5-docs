@@ -34,7 +34,7 @@ A more detailed description on licenses can be found in the [guidelines/contribu
 ### Tips  
 
 - The maintainers and reviewers are your friends. At times, programming can be very personal. However, it's important to realize that we all share a common goal, and that honest feedback is constructive feedback. 
-- Code consistency and maintainability is more important than functionality. The existing style of a codebase overrules any personal preference. 
+- Code consistency and maintainability are more important than functionality. The existing style of a codebase overrules any personal preference. 
 - Larger contributions take longer to be accepted than smaller contributions. The best contributions are small and purposeful, achieving a single goal. You may be asked to split up a contribution if it contains multiple unrelated changes. 
 - Consistency is an important aspect of a codebase. To ensure consistency in Mbed OS code, we have created contributing guidelines. Any contribution to Mbed OS needs to meet the following criteria:
     - Design and coding style: Be consistent with your changes. We define software design principles and coding style in [this document](../contributing/style.html).
