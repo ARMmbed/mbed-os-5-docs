@@ -3,7 +3,7 @@
 You can use two applications to test your port:
 
 1. When you've ported GPIO (and all preceeding modules), use `mbed-os-example-blinky`.
-1. When you've ported all mandatory modules, use `mbed-cloud-client-example` (the Device Management Client is part of Mbed OS, and you didn't need to manually port it). This test includes a reference bootloader for firmware update testing.
+1. When you've ported all mandatory modules, use `mbed-cloud-client-example` (the Device Management Client runs on top of Mbed OS, and you don't need to manually port it). This test includes a reference bootloader for firmware update testing.
 
 ### mbed-os-example-blinky
 
@@ -60,7 +60,7 @@ Then, test connectivity and firmware update:
 
 1. Application repository:[https://github.com/armmbed/mbed-cloud-client-example](https://github.com/armmbed/mbed-cloud-client-example).
     1. Again, if you have not merged your target into `mbed-os` you will need to add your fork.
-1. [Set up a Pelion account](https://cloud.mbed.com/docs/current/account-management/users.html).
+1. [Set up a Pelion Device Management account](https://cloud.mbed.com/docs/current/account-management/users.html).
 1. [Generate an API key](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html) from the [Device Management Portal](https://portal.mbedcloud.com//login).
 1. In the `mbed-cloud-client-example` clone on your machine, run the following command with the generated API key:
 
@@ -92,7 +92,7 @@ Then, test connectivity and firmware update:
 
    - If your target uses WiFi, fill in the SSID and Password fields in `mbed_app.json`.
 
-   - Add SOTP descriptors to `mbed-cloud-client-example/mbed_lib.json`. For example:
+   - Add NVStore descriptors (previously known as SOTP) for storage to `mbed-cloud-client-example/mbed_lib.json`. For example:
 
       ```
       ...
@@ -178,7 +178,7 @@ Then, test connectivity and firmware update:
    ```
 
 1. Verify that the device is registered by finding it in the [Device Management Portal](https://portal.mbedcloud.com//login).
-1. Make change in the application, and rebuild the firmware.
+1. Make a change in the application, and rebuild the firmware.
 1. Perform a firmware update:
 
    ```
