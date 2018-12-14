@@ -1167,24 +1167,6 @@
         "branch": "feature-hal-spec-usb-device"
     },
     {
-        "title": "feature-hal-spec-qspi doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-qspi-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-qspi"
-    },
-    {
-        "title": "feature-hal-spec-sai doxygen",
-        "description": "The full mbed OS API documentation in doxygen format",
-        "slug": "feature-hal-spec-sai-doxy",
-        "hidden": true,
-        "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
-        "branch": "feature-hal-spec-sai"
-    },
-    {
         "title": "feature-hal-spec-watchdog doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
         "slug": "feature-hal-spec-watchdog-doxy",
