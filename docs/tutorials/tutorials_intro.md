@@ -35,7 +35,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <td><a href="ble-tutorial.html">BLE tutorial</a></td>
 <td><a href="../apis/ibeacon.html#ibeacon-example">BLE ibeacon example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button">BLE service template example</a></td>
-<td><a href="https://os.mbed.com/docs/development/apis/socketstats.html#socketstats-example">SocketStats example</a></td>
+<td><a href="https://os.mbed.com/docs/v5.11/apis/socketstats.html#socketstats-example">SocketStats example</a></td>
 </tr>
 <tr>
 <td><a href="../apis/wi-fi.html#wi-fi-example">Wi-Fi example</a></td>

@@ -1,6 +1,6 @@
 ## FlashSimBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
 
 The FlashSimBlockDevice class is a block device adapator, whose purpose is to simulate the behavior of a flash component if the underlying block device doesn't support such a behavior. This includes the following:
 
@@ -17,7 +17,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ### FlashSimBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_flash_sim_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_flash_sim_block_device_8h_source.html)
 
 ### FlashSimBlockDevice example
 

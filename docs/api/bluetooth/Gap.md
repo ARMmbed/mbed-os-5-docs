@@ -54,7 +54,7 @@ You may query the currently used PHY using `readPhy()`, which returns the result
 
 ### GAP class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_gap.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_gap.html)
 
 ### GAP example
 

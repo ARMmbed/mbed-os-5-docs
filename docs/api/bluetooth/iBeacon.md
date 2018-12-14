@@ -8,7 +8,7 @@ The iBeacon class builds an advertising payload mimicking an iBeacon and assigns
 
 ### iBeacon class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classi_beacon.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classi_beacon.html)
 
 ### iBeacon example
 
