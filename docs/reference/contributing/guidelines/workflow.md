@@ -93,7 +93,7 @@ We consider the following pull request types.
 
 #### Fix
 
-A bug fix is a change that fixes a specific defect in the codebase with backwards compatibility. These are the highest priority because of the positive impact the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Bug fixes are candidates for patch releases.
+A bug fix is a change that fixes a specific defect in the codebase with backwards compatibility. These are the highest priority because of the positive impact the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Bug fixes are candidates for patch releases. Large, non-trivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
 
 Release: patch
 
