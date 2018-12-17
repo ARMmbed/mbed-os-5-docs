@@ -163,7 +163,7 @@ void set_ssl_config(mbedtls_ssl_config *);
 
 For guidance of how to use these, please refer to the [Mbed TLS documentation](../apis/tls.html).
 
-## Related content
+### Related content
 
 - [Security overview](../apis/security.html).
 - [TLSSocket](../apis/tlssocket.html) API reference.
