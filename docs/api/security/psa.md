@@ -2,7 +2,7 @@
 
 The Mbed implementation of the Platform Security Architecture (PSA) provides root of trust services and infrastructure for developing IoT applications.
 
-When Mbed OS is running on a PSA Security Model compliant target, the Mbed implementation of PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a Secure Processing Environment (SPE) and a Non-Secure Processing Environment (NSPE). The Secure Partition Manager (SPM), which uses the target's hardware features, manages the isolation. The SPM provides standardized IPC APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
+When Mbed OS is running on a PSA Security Model compliant target, the Mbed implementation of PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a Secure Processing Environment (SPE) and a Non-Secure Processing Environment (NSPE). The Secure Partition Manager (SPM), which uses the target's hardware features, manages the isolation. The SPM provides standardized Inter-Process Communication (IPC) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
 
 The Mbed implementation of PSA bridges the differences between PSA platforms and non-PSA platforms for application developers, allowing them to use the same standard PSA APIs on both platform types.
 
