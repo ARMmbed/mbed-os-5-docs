@@ -31,4 +31,4 @@ Classes implementing KVStore API:
 ### Related content
 
 - [KVStore Global Static API](static-global-api.html).
-- [Storage configuration](../reference/configuration-storage.html).
+- [Storage configuration](../reference/storage.html).
