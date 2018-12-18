@@ -104,13 +104,17 @@ Mbed OS provides the necessary functions and macros for implementations to const
 
 If you know the module reporting the error you can use the **MBED_MAKE_ERROR()** macro to construct an error status with the module information. For example, if you want to report an unsupported configuration error from the serial driver, you may construct the error status as follows to capture the module information along with a specific error code. The below example constructs an error status value with the error code set to `MBED_ERROR_CODE_CONFIG_UNSUPPORTED` from the serial driver, indicated by module information set to `MBED_MODULE_DRIVER_SERIAL`.
 
-```mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_DRIVER_SERIAL, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)```
+```
+mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_DRIVER_SERIAL, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)
+```
 
 There may be scenarios in which the module might have called an API exported from other modules, such as protocol stacks, but has received an error status in return. In those cases, the calling module doesn't know which of the lower layers raised the error, but you may still want to report the error. In those cases, the module can use the predefined error status, such as `MBED_ERROR_CONFIG_UNSUPPORTED`, with the module value already set to `MBED_MODULE_UNKNOWN`.
 
 This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, using predefined values, such as `MBED_ERROR_CONFIG_UNSUPPORTED`, makes it more convenient and easier to read the implementation.
 
-```mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_UNKNOWN, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)```
+```
+mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_UNKNOWN, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)
+```
 
 ### Error history
 
@@ -134,7 +138,9 @@ Some applications may want to do custom error handling when an error is reported
 
 Whenever a fatal error happens in the system, the Mbed OS error handling system collects key information such as error code, error location, register context (in the case of fault exceptions) and so on. The error handing system stores that information in a reserved RAM region called Crash-data-RAM. The error information stored in Crash-data-RAM is in binary format and follows the `mbed_error_ctx` structure defined in `mbed_error.h`. The system then triggers a warm-reset without losing the RAM contents that store the error information. After the system reboots, during Mbed OS initialization, the Crash-data-RAM region is checked to find if there is valid error information captured. This is done by using a CRC value calculated over the stored error information and is appended as part of information stored in Crash-data-RAM. If the system detects that the reboot was triggered by a fatal error, it will invoke a callback function with a pointer to the error context structure stored in Crash-data-RAM. The default callback function is defined with the `WEAK` attribute, which the application can override. Below is the signature for the callback:
 
-```void mbed_error_reboot_callback(mbed_error_ctx *error_context);```
+```
+void mbed_error_reboot_callback(mbed_error_ctx *error_context);
+```
 
 <span class="notes">**Note:** This callback is invoked before the system starts executing the application `main()`. The implementation of callback should be aware any resource limitations or availability. Also, the callback is invoked only when there is a new error.</span>
 
@@ -157,7 +163,7 @@ See `mbed_lib.json` in the platform directory to see which targets are currently
 
 It's important that this region is marked with the appropriate attributes (based on the toolchain) to mark it as an uninitialized region. For example, you can mark the ARM Compiler Crash-data-RAM with the attribute *EMPTY*. The only requirement about the placement of this region is that no other entity can overwrite this region during reboot or at runtime. However, to avoid fragmentation, it's best if you place this region just after the vector table region, or if there is no vector table region, iat the bottom of RAM (lowest address).
 
-See [memory model](memory.html) for more info on the placement of this region.
+See [memory model](../reference/memory.html) for more info on the placement of this region.
 
 #### Configuring crash reporting and autoreboot
 
