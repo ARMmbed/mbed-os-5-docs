@@ -45,5 +45,5 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 
 ### Related content
 
-- [KVStore API](KVStore.html).
+- [KVStore API](../apis/kvstore.html).
 - [Storage configuration](../reference/storage.html).

@@ -8,7 +8,7 @@ The storage APIs present in Arm Mbed OS are:
 
 ### KVStore
 
-The [KVStore API](KVStore.html) is a common get/set API implemented by several classes. It gives you the flexibility to build a storage solution by allocating several combinations of objects.
+The [KVStore API](../apis/kvstore.html) is a common get/set API implemented by several classes. It gives you the flexibility to build a storage solution by allocating several combinations of objects.
 
 Classes that implementing the KVStore API are:
 
