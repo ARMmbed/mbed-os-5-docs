@@ -2,10 +2,10 @@
 
 Security on Arm Mbed OS is divided into the following parts:
 
-- Mbed TLS. For details, please see our [full documentation](https://tls.mbed.org/).
-- Platform Security Architecture (PSA). For details, please see our [full documentation](https://developer.arm.com/products/architecture/security-architectures/platform-security-architecture).
+- Platform Security Architecture (PSA). For information about working with PSA in the context of Mbed OS, please see [Mbed PSA asset protection](../apis/psa-api.html).
 
-For information about working with these modules in Mbed OS context, please refer to the following document:
+    For full details, please see the [PSA site](https://developer.arm.com/products/architecture/security-architectures/platform-security-architecture).
 
-- [Connection security through Arm Mbed TLS](tls.html).
-- [Mbed PSA asset protection](psa.md).
+- Mbed TLS. For information about working with Mbed TLS in the context of Mbed OS, please see [Connection security through Arm Mbed TLS](../apis/tls.html).
+
+    For full details, please see the [Mbed TLS site](https://tls.mbed.org/).
