@@ -38,7 +38,7 @@ The SecurityManager communicates with your application through events. These tri
 
 The most important process is pairing. You may trigger this manually by calling `requestPairing()`. Pairing may also result from the application requiring encryption by calling `setLinkEncryption()` or the application requiring MITM protection through `requestAuthentication()`.
 
-You can call all of these implicitly by using `setLinkSecurity()` to set the required security for the link. The SecurityManager triggers the process required to achieve the set security level. You can only escalate the security level. Asking the SecurityManager for a lower security level than the existing one does not fail but results in a event informing the application through `linkEncryptionResult()` of the current level, (which remains unchanged).
+You can call all of these implicitly by using `setLinkSecurity()` to set the required security for the link. The SecurityManager triggers the process required to achieve the set security level. You can only escalate the security level; asking the SecurityManager for a lower security level than the existing one does not fail, but results in an event informing the application through `linkEncryptionResult()` of the current level (which remains unchanged).
 
 The chosen pairing algorithms depend on the IO capabilities and OOB use settings. They produce appropriate events, which your EventHandler must handle. If your event handler doesn't support all the calls, you must not set IO capabilities or set OOB use in such a way that would trigger them, or else the pairing fails (usually by timing out).
 
