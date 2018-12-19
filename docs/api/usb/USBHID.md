@@ -1,12 +1,12 @@
 ## USBHID
 
-<span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.png)<span>USBHID class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.png)<span>USBHID class hierarchy</span></span>
 
 You can use the USBHID class to turn an Mbed board into an HID (Human Interface Device) that can send and receive messages over USB. For example, you can define your own protocol and communicate between your computer and Mbed with all capabilities of USB communication. To use USBHID, you need a script running on the host side (computer). For example, on a Windows machine, you can use [pywinusb](https://github.com/rene-aguirre/pywinusb). For convenience, there is a Python script attached below that uses pywinusb that can be run on the host computer to send and receive data from the Mbed board.
 
 ### USBHID class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_h_i_d.html)
 
 ### USBHID example   
 

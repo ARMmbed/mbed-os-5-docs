@@ -6,7 +6,7 @@ This API is a block device for NOR-based SPI flash devices that support SFDP.
 
 NOR-based SPI flash supports byte-sized read and writes, with an erase size of around 4 kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
 ### SPIFBlockDevice class reference
 
@@ -49,4 +49,4 @@ int main() {
 
 ### Related content
 
-- [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
