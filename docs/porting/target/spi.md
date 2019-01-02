@@ -102,7 +102,7 @@ A target must also define these elements:
 - `#define SPI_COUNT (xxxxxU)`.
 - The number of SPI peripherals available on the device. A good place for that macro is `PeripheralNames.h` next to the `SPIName` enumeration.
 
-<span class="notes">**Note:**You can find more details about the design choices in the [SPI design document](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-spi/docs/design-documents/hal/0000-spi-overhaul.md).</span>
+<span class="notes">**Note:** You can find more details about the design choices in the [SPI design document](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-spi/docs/design-documents/hal/0000-spi-overhaul.md).</span>
 
 ### Dependencies
 
