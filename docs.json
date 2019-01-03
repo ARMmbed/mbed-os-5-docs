@@ -958,23 +958,23 @@
                 },
                 "sources": [{
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/Docs/Getting-started.md"
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Getting-started.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/Docs/Including-libraries.md"
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Including-libraries.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/Docs/Working-with-source-control.md"
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Working-with-source-control.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/Docs/Getting-your-program-on-an-Mbed-platform.md"
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Getting-your-program-on-an-Mbed-platform.md"
                     },
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/Docs/Debugging.md"
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Debugging.md"
                     }]
             },
             {
