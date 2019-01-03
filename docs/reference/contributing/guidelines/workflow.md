@@ -64,7 +64,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
 
-If commits do not follow above guidelines, you might be requested to modify the commit history (it is often adding more details to address _what_ and _why_ vs _how_).
+If commits do not follow the above guidelines, we may request you modify the commit history (often to add more details to address _what_ and _why_ rather than _how_).
 
 #### Release versioning
 
