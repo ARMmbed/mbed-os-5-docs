@@ -80,3 +80,10 @@ Please see the following sections of our documentation for more information.
 - [Tools](../tools/index.html), reference material about the tools Mbed OS uses.
 - [Tutorials](../tutorials/index.html).
 - [Porting guides](../porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
+
+
+### Recently updated documentation
+
+* We've revised our [porting guidance](../porting/index.html).
+* We've created a [review of the full process of taking a project to production](./evaluation-production/index.html).
+* We've updated our [quick start](../quick-start/index.html) to demonstrate more Mbed OS capabilities.
