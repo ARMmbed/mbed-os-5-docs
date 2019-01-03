@@ -83,6 +83,6 @@ Please see the following sections of our documentation for more information.
 
 ### Recently updated documentation
 
-* We've revised our [porting guidance](../porting/index.html).
-* We've created a [review of the full process of taking a project to production](./evaluation-production/index.html).
-* We've updated our [quick start](../quick-start/index.html) to demonstrate more Mbed OS capabilities.
+* A revised our [porting guidance](../porting/index.html).
+* A [review of the full process of taking a project to production](./evaluation-production/index.html).
+* An updated [quick start](../quick-start/index.html) to demonstrate more Mbed OS capabilities.
