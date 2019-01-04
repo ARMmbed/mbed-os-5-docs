@@ -64,6 +64,8 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
 
+If commits do not follow the above guidelines, we may request you modify the commit history (often to add more details to address _what_ and _why_ rather than _how_).
+
 #### Release versioning
 
 You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html).
