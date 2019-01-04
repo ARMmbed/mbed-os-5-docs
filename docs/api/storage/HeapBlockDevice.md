@@ -1,6 +1,6 @@
 ## HeapBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classmbed_1_1_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
 The HeapBlockDevice class provides a way to simulate block devices for software development or testing. The created blocks are nonvolatile; they do not persist across power cycles.
 
@@ -24,7 +24,7 @@ You can view more information about the configurable settings and functions in t
 
 ### HeapBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_heap_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classmbed_1_1_heap_block_device.html)
 
 ### HeapBlockDevice example
 
