@@ -17,7 +17,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ### FlashSimBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_flash_sim_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.html)
 
 ### FlashSimBlockDevice example
 
