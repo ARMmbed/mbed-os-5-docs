@@ -1,6 +1,6 @@
 ## MBRBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_m_b_r_block_device.png)<span>MBRBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classmbed_1_1_m_b_r_block_device.png)<span>MBRBlockDevice class hierarchy</span></span>
 
 The MBRBlockDevice class provides a way to manage a Master Boot Record (MBR) on a storage device, which allows you to partition the device. Without the MBR, you can still format a storage device with a file system, but including the MBR will allow for future partition modifications.
 
@@ -13,7 +13,7 @@ You can view more information about the configurable settings and functions in t
 
 ### MBRBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_m_b_r_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/classmbed_1_1_m_b_r_block_device.html)
 
 ### MBRBlockDevice example
 
