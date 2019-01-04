@@ -38,7 +38,7 @@ Callback is called from thread context. If the callback takes more than 10ms to 
 
 ### DNS resolver class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_d_n_s_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_d_n_s.html)
 
 ### DNS resolver example
 
