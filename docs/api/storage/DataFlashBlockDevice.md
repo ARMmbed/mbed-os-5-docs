@@ -1,4 +1,6 @@
-## DataFlash block device
+## DataFlashBlockDevice
+
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
 
 DataFlashBlockDevice is a block device driver for I2C-based EEPROM devices, such as the Adesto AT45DB series of devices.
 
