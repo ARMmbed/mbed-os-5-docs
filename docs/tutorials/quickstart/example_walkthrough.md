@@ -6,7 +6,7 @@ The quick start example blinks the LED on your board on and off. The main thread
 
 To view the serial output use any terminal client, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
 
-The default baud rate, or speed, for this application is set to `115200`. You can modify it in the `mbed_app.json` file. To configure your terminal client to this baud rate, change the speed option when selecting the port.
+The default baud rate, or speed, for this application is set to `9600`. You can modify it in the `mbed_app.json` file. To configure your terminal client to this baud rate, change the speed option when selecting the port.
 
 <span class="tips">**Tip:** You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the [related links section](#related-links).</span>
 
