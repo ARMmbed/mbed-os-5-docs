@@ -170,12 +170,9 @@ If a pull request is idle for more than two weeks, it will be closed. The author
 
 #### Reviews
 
-All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. Specific reviewers can be requested by the author by @ tagging those people/teams in the 'Reviewers' section of the pull request template.
-E.g.
-Reviewers 
-@personA @TeamB
+All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. Specific, a PR creator can request reviewers by @ tagging people or teams in the *Reviewers* section of the pull request template. For example, @personA @TeamB.
 
-Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
+GitHub dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 Label: `needs: review`
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
