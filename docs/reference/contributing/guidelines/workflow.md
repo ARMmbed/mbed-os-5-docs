@@ -70,38 +70,19 @@ If commits do not follow the above guidelines, we may request you modify the com
 
 You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html).
 
-### Pull request categories
-
-#### Bug fixes
-
-Every bug fix should contain a test to verify results prior to and after the pull request.
-
-#### Changes and additions
-
-Backward compatible changes (such as refactoring and enhancements) or new target additions can go into patch and feature releases. We only consider features and new functionality additions for feature releases.
-
-#### Features
-
-We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
-
-Each feature has a tech lead. This person is responsible for:
-
-- Rebasing often to track master development.
-- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
-
 ### Pull request types
 
 We consider the following pull request types.
 
 #### Fix
 
-A bug fix is a change that fixes a specific defect in the codebase with backwards compatibility. These are the highest priority because of the positive impact the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Bug fixes are candidates for patch releases. Large, non-trivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
+A bug fix is a change that fixes a specific defect in the codebase with backward compatibility. These are the highest priority because of the positive effect the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Every bug fix should contain a test to verify results prior to and after the pull request. Bug fixes are candidates for patch releases. Large, nontrivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
 
 Release: patch
 
 #### Refactor
 
-A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this would be moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes, and test organization changes. There is always the risk that someone depended on the location or name before a refactor therefore these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases. 
+A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this would be moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes, and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases.
 
 Release: feature
 
@@ -115,7 +96,14 @@ Release: patch
 
 Any change in the functionality, it can be adding a new feature, adding a new method or a function. Software language does not matter.
 
-A feature contribution contains a new API, capability or behavior. It does not break backwards compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
+
+We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
+
+Each feature has a tech lead. This person is responsible for:
+
+- Rebasing often to track master development.
+- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
 Release: feature
 
