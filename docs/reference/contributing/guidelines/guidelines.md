@@ -54,7 +54,6 @@ If you create a new repository in the ARMmbed organization on GitHub, it must fo
 - `LICENSE` file, the full license text or overview of every license in the repository with links.
 - `README.md` with a license and contributing section (similar to [Mbed OS license and contributions section](https://github.com/ARMmbed/mbed-os/blob/master/README.md#license-and-contributions)).
 
-
 ### Tips  
 
 - The maintainers and reviewers are your friends. At times, programming can be personal. However, it's important to realize that we all share a common goal and that honest feedback is constructive feedback.
