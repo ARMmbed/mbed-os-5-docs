@@ -79,7 +79,7 @@ Applications may also ask for a specific type of connection, as the following ta
 |`*WiFiInterface::get_default_instance()`| Wi-Fi interface | Requires security parameters (mode, SSID, password). |
 |`*EthInterface::get_default_instance()` | Wired Ethernet interface, not Wi-Fi | none |
 |`*MeshInterface::get_default_instance()` | Returns either `LoWPANNDInterface` or `ThreadInterface`, depending on which is set to default | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled. |
-| `*CellularBase::get_default_instance()` | Return cellular connectivity | Requires network parameters (pin, APN, username, password). |
+| `*CellularInterface::get_default_instance()` | Return cellular connectivity | Requires network parameters (pin, APN, username, password). |
 | `*NetworkInterface::get_default_instance()` | One of the above, depending on `target.network-default-interface-type`. |  |
 
 Note that the calls for a specific interface type do not preconfigure credentials such as SSID because an interface-type-specific application is expected to configure these in code. `NULL` is returned if no interface of that type is available.

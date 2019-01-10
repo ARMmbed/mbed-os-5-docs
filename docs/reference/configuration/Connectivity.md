@@ -198,11 +198,11 @@ Boards that provide only Ethernet connectivity do not require any configuration.
 
 Select the default interface type by using one of the following `target.network-default-interface-type` parameters:
 
-| `target.network-default-interface-type` | Required configuration |
+| `target.network-default-interface-type` | Configuration parameters |
 |-----------------------------------------|------------------------|
 | `ETHERNET` | nothing |
 | `WIFI`     | `nsapi.default-wifi-security`, `nsapi.default-wifi-ssid` and `nsapi.default-wifi-password` |
-| `CELLULAR` | `nsapi.default-cellular-apn`, `nsapi.default-cellular-username` and `nsapi.default-cellular-password` |
+| `CELLULAR` | `nsapi.default-cellular-sim-pin`, `nsapi.default-cellular-apn`, `nsapi.default-cellular-username` and `nsapi.default-cellular-password`, `nsapi.default-cellular-plmn` |
 | `MESH`     | `nsapi.default-mesh-type` |
 
 ```
@@ -223,9 +223,6 @@ Name: nsapi.default-wifi-ssid
 Name: nsapi.default-wifi-password
     Defined by: library:nsapi
     No value set
-Name: nsapi.default-cellular-plmn
-	Defined by: library:nsapi
-    No value set
 Name: nsapi.default-cellular-sim-pin
 	Defined by: library:nsapi
     No value set
@@ -236,6 +233,9 @@ Name: nsapi.default-cellular-password
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-cellular-username
+    Defined by: library:nsapi
+    No value set
+Name: nsapi.default-cellular-plmn
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-mesh-type
