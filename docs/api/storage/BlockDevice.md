@@ -63,7 +63,13 @@ For details regarding how to configure the default block device please refer to 
 #include <stdio.h>
 #include <algorithm>
 
+ // This will take the system's default block device 
 BlockDevice *bd = BlockDevice::get_default_instance();
+
+// Instead of the default block device, you can define your own block device.
+// For example: HeapBlockDevice with size of 2048 bytes, read size 1, write size 1 and erase size 512.
+// #include "HeapBlockDevice.h"
+// BlockDevice *bd = new HeapBlockDevice(2048, 1, 1, 512);
 
 // Entry point for the example
 int main() {
