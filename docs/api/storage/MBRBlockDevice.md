@@ -23,7 +23,7 @@ Partition a heap backed block device into two partitions. This example also uses
 
 Partition an SD card, and format the new partition with a FAT filesystem. A PC will now be able to recognize the SD card.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/MBRBlockDevice_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/MBRBlockDevice_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/MBRBlockDevice_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/MBRBlockDevice_ex_2/main.cpp)
 
 ### Related content
 
