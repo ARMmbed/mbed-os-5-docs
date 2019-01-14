@@ -6,7 +6,7 @@ _**G**eneric **re**gression **en**vironment for **te**st **a**utomation_
 
 Greentea is the automated testing tool for Arm Mbed OS development. It automates the process of flashing Mbed boards, driving the test and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
 
-This document should help you start using Greentea. Please see the [`htrun` documentation](https://github.com/ARMmbed/htrun), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
+This document should help you start using Greentea. Please see the [`htrun` documentation](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-host-tests), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
 
 ### Prerequisites
 
