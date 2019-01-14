@@ -570,7 +570,7 @@ $ mbedgt --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2
 
 Where `02400203C3423E603EBEC3D8` and `024002031E031E6AE3FFE3D` are the target IDs of platforms attached to your system.
 
-You can view target IDs using the [`mbed-ls`](https://github.com/ARMmbed/mbed-ls) tool (installed with Greentea).
+You can view target IDs using the [`mbed-ls`](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-ls) tool (installed with Greentea).
 
 ```
 $ mbedls
