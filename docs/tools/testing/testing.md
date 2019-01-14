@@ -46,7 +46,7 @@ A test case is named from its position in your project's file structure. For ins
 
 You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the [CLI documentation](arm-mbed-cli.html).
 
-When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the [Greentea documentation here](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
+When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a "test specification" file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the [Greentea documentation here](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea#test-specification-json-format).
 
 ##### Building process
 
@@ -71,9 +71,9 @@ If you need to test with multiple configurations, you can use the `--app-config`
 
 You can run automated tests through Mbed CLI.
 
-The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
+The testing process requires tests to be built and that a test specification JSON file exist that describes these available tests. See the [test specification format](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea#test-specification-json-format).
 
-The Greentea tool handles the actual testing process. To read more about this tool, please visit its [GitHub repository](https://github.com/ARMmbed/greentea).
+The Greentea tool handles the actual testing process. To read more about this tool, please visit its [GitHub repository](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea).
 
 #### Writing tests
 
