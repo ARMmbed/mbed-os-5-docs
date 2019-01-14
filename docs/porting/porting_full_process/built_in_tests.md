@@ -211,4 +211,4 @@ To build and run the Mbed OS tests:
 
 1. Before you begin the test run, please make sure the serial port is not already opened by programs like Screen or Teraterm (close them if they're open). In addition, verify `mbedls` lists the new target device.
 
-    If your test run doesn't start, please read about [troubleshooting Greentea](https://github.com/armmbed/greentea#common-issues).
+    If your test run doesn't start, please read about [troubleshooting Greentea](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea#common-issues).
