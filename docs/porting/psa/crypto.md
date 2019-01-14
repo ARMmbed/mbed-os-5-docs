@@ -1,21 +1,30 @@
 <h2 id="crypto-port">Mbed Crypto</h2>
 
-For information about Mbed Crypto, please refer to [the Mbed Crypto repository](https://github.com/ARMmbed/mbed-crypto).
+Mbed OS provides Mbed Crypto for targets that require support for entropy injection. For information about Mbed Crypto, please refer to [the Mbed Crypto repository](https://github.com/ARMmbed/mbed-crypto).
 
-## Testing
-Mbed OS currently provide two test for Mbed Crypto
-* Test for initialisation of the Mbed Crypto module
-* Test for entropy injection feature
+Both targets newly ported to Mbed OS and existing targets that use entropy injection require passing tests to validate Mbed Crypto functionality.
 
-In order to run these tests make sure the following configuration is set in your target:
-1.  "extra_labels" contains the label "PSA". For example in [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1451) and [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7694) 
-2.  "MBEDTLS_PSA_CRYPTO_C" macro is enabled. For example in [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1454) and [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7697)
-3. "MBEDTLS_ENTROPY_NV_SEED" macro is enabled in the SPE. If the device does not have TRNG or if entropy injection test is wanted. For example in [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7673)
-4. "MBEDTLS_PLATFORM_NV_SEED_READ_MACRO" macro is set to "mbed_default_seed_read" in the SPE. If the device does not have TRNG or if entropy injection test is wanted. For example in [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674)
-5. "MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO" macro is set to mbed_default_seed_write" in the SPE. If the device does not have TRNG or if entropy injection test is wanted. For example in [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674)
+We run tests by default on some supported boards. To run the tests on a custom board, you can also run the tests manually by specifying additional compiler flags from the command-line.
+
+### Testing
+
+Mbed OS currently provides two tests for Mbed Crypto:
+
+- A test for initialization of the Mbed Crypto module.
+- A test for entropy injection feature.
+
+To run these tests, make sure the following configuration is set in your target:
+
+1.  `extra_labels` contains the label `PSA`. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1451) or [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7694).
+1.  `MBEDTLS_PSA_CRYPTO_C` macro is enabled. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1454) or [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7697).
+1. `MBEDTLS_ENTROPY_NV_SEED` macro is enabled in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7673).
+1. `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` macro is set to `mbed_default_seed_read` in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674).
+1. `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO` macro is set to `mbed_default_seed_write` in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674).
 
 ### Compile and run
-In order to compile and run the Mbed Crypto Test run the following command:
+
+To compile and run the Mbed Crypto tests, run the following command:
+
 ```
 mbed test -t <toolchain> -m <target> -n *entropy_inject,*crypto_init
 ```
