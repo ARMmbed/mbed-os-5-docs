@@ -148,7 +148,7 @@ There are six handler types you can, but do not have to, override to customize o
 1. `status_t case_teardown_handler_t(const Case *const source, const size_t passed, const size_t failed, const failure_t reason)`: called after execution of each test case and if testing is aborted.
 1. `status_t case_failure_handler_t(const Case *const source, const failure_t reason)`: called whenever a failure occurs during the execution of a test case.
 
-All handlers are defaulted for integration with the <a href="https://github.com/ARMmbed/greentea" target="_blank">Greentea testing automation framework</a>.
+All handlers are defaulted for integration with the <a href="https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea" target="_blank">Greentea testing automation framework</a>.
 
 ### Test case handlers
 
