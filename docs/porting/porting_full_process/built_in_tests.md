@@ -29,9 +29,10 @@ The platform under test needs to be supported in mbedls for automated tests to w
 
 If an updated mbedls pip package including support for your platform hasn't been released yet, you need to direct pip to use your local directory (which includes the code changes to support the new platform):
 
-1. Clone [https://github.com/ARMmbed/mbed-ls](https://github.com/ARMmbed/mbed-ls).
-1. [Add your target to the platform database](https://github.com/ARMmbed/mbed-ls#adding-platform-support)
-1. Run `pip install --editable <your_local_root_to_mbed-ls>`.
+1. Clone [https://github.com/ARMmbed/mbed-os-tools](https://github.com/ARMmbed/mbed-os-tools).
+1. [Add your target to the platform database](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-ls#adding-platform-support)
+1. Run `pip install --editable <your_local_root_to_mbed-os-tools>`.
+1. Run `pip install --editable <your_local_root_to_mbed-os-tools>/packages/mbed-ls`.
 1. If you're using an external serial probe (like an FTDI USB cable), create an `mbedls.json` file and specify the serial port.
 
     The serial port path varies in different operation systems. On **Windows**, you can find it through Device Manager; it will usually be something like `COM#`. On **Mac OS** you can use `ls /dev/tty.usb*`. On Linux you can use `ls /dev/ttyACM*`. The format of `mbedls.json` is as follows:
