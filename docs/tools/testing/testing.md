@@ -148,7 +148,7 @@ Assuming your test was exported correctly to your IDE, build the project, and lo
 
 Bring the target out of reset, and run the program. Your target waits for the test tools to send a synchronizing character string over the serial port. Do not run the `mbed test` commands because that will attempt to flash the device, which you've already done with your IDE.
 
-Instead, you can use the underlying test tools to drive the test. <a href="https://github.com/ARMmbed/htrun" target="_blank">`htrun`</a> is the tool you need to use in this case. Install the requirements for Mbed OS also installs `htrun`. You can also intall `htrun` by running `pip install mbed-host-tests`.
+Instead, you can use the underlying test tools to drive the test. <a href="https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-host-tests" target="_blank">`htrun`</a> is the tool you need to use in this case. Install the requirements for Mbed OS also installs `htrun`. You can also intall `htrun` by running `pip install mbed-host-tests`.
 
 First, find your target's serial port by running the following command:
 
