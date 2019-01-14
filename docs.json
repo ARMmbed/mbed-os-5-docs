@@ -1251,7 +1251,7 @@
                     "title": "Integrating with Arm Treasure Data",
                     "intro": {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/treasure_data.md"
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/tutorials/treasure_data.md"
                     },
                     "sources": []
                 },
