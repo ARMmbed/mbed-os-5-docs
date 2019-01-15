@@ -38,7 +38,7 @@ The full build process is:
 
 You can run automated tests through Mbed CLI with the `--icetea` option. You can find more information about this in the [Mbed CLI test documentation](test-and-debug.html).
 
-The testing process requires that tests be built and that a test specification JSON file that describes these available tests exists. See the [test specification format](https://github.com/ARMmbed/greentea#test-specification-json-formatted-input).
+The testing process requires that tests be built and that a test specification JSON file that describes these available tests exists. See the [test specification format](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea).
 
 The test specification JSON is similar for the Greentea and Icetea tests.
 
