@@ -17,11 +17,11 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
    - Assert that all binary libraries are named correctly.
    - Assert that all assembler files are named correctly.
 - **travis-ci/doxy-spellcheck** - Check Doxygen comments for spelling errors. Runs on header files in:
-   - Drivers
-   - Platform
-   - RTOS
-   - Events
-   - Features/netsocket
+   - Drivers.
+   - Platform.
+   - RTOS.
+   - Events.
+   - Features/netsocket.
 - **travis-ci/events** - Check that Mbed OS compiles and run events tests.
 - **travis-ci/gitattributestest** - Check there are no changes after clone. This checks that `.gitattributes` is used correctly.
 - **travis-ci/licence_check** - Check there is no GPL licence text in the code.
