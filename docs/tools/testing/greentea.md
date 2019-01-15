@@ -6,7 +6,7 @@ _**G**eneric **re**gression **en**vironment for **te**st **a**utomation_
 
 Greentea is the automated testing tool for Arm Mbed OS development. It automates the process of flashing Mbed boards, driving the test and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
 
-This document should help you start using Greentea. Please see the <a href="https://github.com/ARMmbed/htrun" target="_blank">`htrun` documentation</a>, the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
+This document should help you start using Greentea. Please see the <a href="https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-host-tests" target="_blank">`htrun` documentation</a>, the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
 
 ### Prerequisites
 
@@ -570,7 +570,7 @@ $ mbedgt --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2
 
 Where `02400203C3423E603EBEC3D8` and `024002031E031E6AE3FFE3D` are the target IDs of platforms attached to your system.
 
-You can view target IDs using the <a href="https://github.com/ARMmbed/mbed-ls" target="_blank">`mbed-ls`</a> tool (installed with Greentea).
+You can view target IDs using the <a href="https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-ls" target="_blank">`mbed-ls`</a> tool (installed with Greentea).
 
 ```
 $ mbedls
