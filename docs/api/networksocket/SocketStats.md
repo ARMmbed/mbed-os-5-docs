@@ -1,6 +1,6 @@
 ## SocketStats
 
-Use the SocketStats class to read the network socket statistics. When statistics are enabled, you can create the SocketStats class object with the `InternetSocket` class by using the `nsapi.socket-stats-enable` configuration option.
+Use the SocketStats class to read the network socket statistics. When statistics are enabled, you can create the SocketStats class object with the `InternetSocket` class by using the `nsapi.socket-stats-enabled` configuration option.
 
 The `SocketStats` class provides the static function `mbed_stats_socket_get_each` to get the network socket information for all sockets both currently in use and closed. Using this function, you can know how many sockets are open, destination IP addresses, the amount of data sent and received in bytes, the type of socket and the timestamp of recent "socket state" changes recorded in `last_change_tick`.
 
