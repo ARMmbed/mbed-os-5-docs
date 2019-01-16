@@ -27,7 +27,6 @@ This example showcases functionality and proper integration with the [Greentea t
 #include "greentea-client/test_env.h"
 #include "unity.h"
 #include "utest.h"
-```
 
 using namespace utest::v1;
 
