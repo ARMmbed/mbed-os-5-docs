@@ -3,8 +3,8 @@
 You can install Mbed CLI on Windows, Linux and macOS.
 
 <span class="tips">**Tip:** If you're working on Windows or macOS, we recommend using the installers for Mbed CLI:
-- [Download the Windows installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest). For details, please see [the documentation](../tools/windows.html).
-- [Download the macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest). For details, please see [the documentation](../tools/macos.html).</span>
+[Download the Windows installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest). For details, please see [the documentation](../tools/windows.html).
+[Download the macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest). For details, please see [the documentation](../tools/macos.html).</span>
 
 For Linux, please [install Mbed CLI manually](../tools/linux.html).
 
