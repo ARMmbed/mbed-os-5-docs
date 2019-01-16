@@ -266,7 +266,7 @@ To install `mbed-cli` bash tab completion:
 
 [For more information, see the full documentation](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md).
 
-## Reference: Working with `mbed config`
+## Reference: working with mbed config
 
 The Mbed CLI configuration syntax is:
 
