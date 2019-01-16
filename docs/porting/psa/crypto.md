@@ -4,7 +4,7 @@ Mbed OS provides Mbed Crypto for targets that require support for entropy inject
 
 Both targets newly ported to Mbed OS and existing targets that use entropy injection require passing tests to validate Mbed Crypto functionality.
 
-We run tests by default on some supported boards. To run the tests on a custom board, you can also run the tests manually by specifying additional compiler flags from the command-line.
+We run tests by default on several supported boards. To run the tests on a custom board, you can also run the tests manually by specifying additional compiler flags from the command-line.
 
 ### Testing
 
