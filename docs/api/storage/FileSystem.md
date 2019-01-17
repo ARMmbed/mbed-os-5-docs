@@ -20,7 +20,7 @@ For details regarding how to configure the default file system or override its i
 
 ### File system example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/54f958b463d0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/bc8560ba955d/main.cpp)
 
 ### Sector requirements
 
