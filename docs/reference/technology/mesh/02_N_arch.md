@@ -9,7 +9,7 @@ This chapter introduces the _6LoWPAN stack architecture_. It contains the follow
 
 _IPv6 Low power Wireless Personal Area Network_ (6LoWPAN) is an adaptation layer that enables the use of IPv6 over low power wireless and supports IPv6 and _User Datagram Protocol_ (UDP) header compression. The Internet Protocol (IP) header compression allows 6LoWPAN packets to be compact, making it robust and, ideal for low power and lossy networks. It also handles fragmentation and reassembly of packets in scenarios where payloads larger than the _Maximum Transmission Unit_ (MTU) of the supported interface are transferred (a maximum of 1280 bytes).
 
-The industry leading Arm 6LoWPAN stack is both highly scalable and reliable, but also provides an unrivaled feature set to include a compact source code base and optimal memory usage. Additionally, the 6LoWPAN stack can be supplied with optional software modules for security and embedded web services (Mbed Device Server). The modular structure of the design makes it possible for Arm to accommodate most requirements.
+The industry leading Arm 6LoWPAN stack is both highly scalable and reliable, but also provides an unrivaled feature set to include a compact source code base and optimal memory usage. Additionally, the 6LoWPAN stack can be supplied with optional software modules for security and Pelion Device Management. The modular structure of the design makes it possible for Arm to accommodate most requirements.
 
 The combination of 6LoWPAN stack and 6LoWPAN border router _Access Point_ (AP) software enables developers to use the extremely flexible and multi-purpose mesh communication solution for most applications (see _Figure 1-1_).
 
