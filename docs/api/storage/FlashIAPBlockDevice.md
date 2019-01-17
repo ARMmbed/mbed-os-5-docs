@@ -15,9 +15,9 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_flash_i_a_p_block_device.html)
 
-### FlashIAPBlockDevicesBlockDevice example:
+### FlashIAPBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/FlashIAPBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/FlashIAPBlockDevice/main.cpp)
+[![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/FlashIAPBlockDevice/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/FlashIAPBlockDevice/main.cpp)
 
 ### Related content
 
