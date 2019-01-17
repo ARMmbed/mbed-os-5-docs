@@ -12,9 +12,11 @@ To use secure DTLS connections, application use the `DTLSSocketWrapper` through 
 
 ### DTLSSocket example
 
-Please see the [TLSSocket](tlssocket.html) example.
+Please see the TLSSocket example:
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_t_l_s_socket.html)
 
 ### Related content
 
-- [Secure Socket](../reference/secure-socket.html)
-- [TLSSocket](tlssocket.html)
+- [Secure Socket](../reference/secure-socket.html).
+- [TLSSocket](tlssocket.html).
