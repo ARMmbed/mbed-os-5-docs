@@ -72,7 +72,7 @@ The figure above shows the Mbed OS software component stack used for data storag
 
 ### SDBlockDevice example application
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/SDBlockDevice/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SDBlockDevice/main.cpp)
 
 ### Related content
 
