@@ -15,7 +15,7 @@ Mbed OS build tools determine the type of source file found based on the file's 
 | `.cc`, `.cpp`       | C++ source        | Toolchain's C++ compiler       |
 | `.h`, `.hpp`, `.hh` | C/C++ header      | Toolchain's C and C++ compiler |
 | `.icf`              | IAR linker file   | IAR's linker                   |
-| `.ld`               | GCC linker acript | GCC's linker (`ld`)            |
+| `.ld`               | GCC linker script | GCC's linker (`ld`)            |
 | `.o`                | Object            | Toolchain's linker             |
 | `.s`, `.S`          | Assembly          | Toolchain's assembler          |
 | `.sct`              | ARM scatter file  | ARM's linker (`armlink`)       |
