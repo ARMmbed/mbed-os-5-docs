@@ -10,6 +10,12 @@ To use secure DTLS connections, application use the `DTLSSocketWrapper` through 
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_d_t_l_s_socket.html)
 
+### DTLSSocket example
+
+Please see the TLSSocket example:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/master/)](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/master/main.cpp)
+
 ### Related content
 
 - [Secure Socket](../reference/secure-socket.html)
