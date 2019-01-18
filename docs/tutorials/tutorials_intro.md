@@ -10,7 +10,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 <td><a href="../quick-start/index.html">Mbed OS quick start tutorial</a></td>
 </tr>
 <tr>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky">Blinky example</a></td>
+<td><a href="../quick-start/online-with-the-online-compiler.html#importing-the-code">Blinky example</a></td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +115,7 @@ These tutorials teach you to communicate with your development board, an essenti
 <td><a href="serial-comm.html">Board to PC communication over USB tutorial</a></td>
 </tr>
 <tr>
-<td><a href="serial-comm.html#minimal-printf">Low memory serial printf</a></td>
+<td><a href="serial-comm.html#minimal-printf">Low memory serial printf example</a></td>
 </tr>
 </tbody>
 </table>
