@@ -16,7 +16,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 Create a ProfilingBlockDevice, perform storage operations and report back the read, write and erase counts.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ProfilingBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/ProfilingBlockDevice_ex_1/file/20bf5212cdd6/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/ProfilingBlockDevice/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/ProfilingBlockDevice/main.cpp)
 
 ### Related content
 
