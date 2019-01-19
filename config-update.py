@@ -19,7 +19,11 @@ def main(file):
 
     for start, end in ranges:
         blocks[start] = file[start : end + 3]
-        print(blocks[start].split('Name: ')[1].split('.')[0])
+        try:
+            print(blocks[start].split('Name: ')[1].split('.')[0])
+        
+        except:
+            pass
     
 
     #print(blocks)
