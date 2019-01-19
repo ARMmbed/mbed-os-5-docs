@@ -20,7 +20,10 @@ def main(file):
     for start, end in ranges:
         blocks[start] = file[start : end + 3]
         try:
-            print(blocks[start].split('Name: ')[1].split('.')[0])
+            lib = blocks[start].split('Name: ')[1].split('.')[0]
+            print("=================   %s   =================" % lib)
+            out = subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib])
+            print(out)
         
         except:
             pass
