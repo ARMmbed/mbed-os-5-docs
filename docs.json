@@ -8,7 +8,7 @@
         "branch": "master"
     },
     {
-        "title": "Introduction",
+        "title": "Mbed OS 5",
         "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
