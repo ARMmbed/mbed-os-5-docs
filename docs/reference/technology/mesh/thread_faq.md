@@ -36,7 +36,7 @@ An example application is [downloadable from the Android store](https://play.goo
 
 - [Mesh minimal example](../apis/mesh-api.html#mesh-example).
 - [Thread border router](https://github.com/ARMmbed/nanostack-border-router).
-- [Mbed Cloud client example](https://github.com/ARMmbed/mbed-cloud-client-example)
+- [Device Management client example](https://github.com/ARMmbed/mbed-cloud-client-example).
 
 #### How to debug and visualize the network?
 
