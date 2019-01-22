@@ -83,7 +83,7 @@ $ mbed new first-greentea-test
 
 As specified above, there is a convention where all tests live in the `TESTS/` directory. In the `first-greentea-test` folder create a folder `TESTS/tests/simple-test/`.
 
-![Exporting to Make](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/test01.png)
+![Tree structure for Greentea tests](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/test01.png)
 
 In this folder, create a file `main.cpp`. In here you can use UNITY, utest and the Greentea Client to write your test:
 
@@ -369,10 +369,10 @@ $ mbed test --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2
 
 Where `02400203C3423E603EBEC3D8` and `024002031E031E6AE3FFE3D` are the target IDs of platforms attached to your system.
 
-You can view target IDs using the [`mbed-ls`](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-ls) tool (installed with Greentea).
+You can view target IDs using Mbed CLI:
 
 ```
-$ mbedls
+$ mbed detect
 +--------------+---------------------+------------+------------+-------------------------+
 |platform_name |platform_name_unique |mount_point |serial_port |target_id                |
 +--------------+---------------------+------------+------------+-------------------------+
@@ -381,6 +381,7 @@ $ mbedls
 |LPC1768       |LPC1768[0]           |G:          |COM5        |1010ac87cfc4f23c4c57438d |
 +--------------+---------------------+------------+------------+-------------------------+
 ```
+
 In this case, you won't test one target, the LPC1768.
 
 #### Creating reports
