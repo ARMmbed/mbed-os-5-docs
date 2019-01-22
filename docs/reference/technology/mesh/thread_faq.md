@@ -32,12 +32,11 @@ Ad-hoc networks with devices from different manufacturers can be easily created 
 
 An example application is [downloadable from the Android store](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner).
 
-#### Are there any application examples? What are the Thread features supported/not supported by them?
+#### Are there any application examples?
 
-- Application examples supporting SED and REED types:
-  - [Mbed OS Client example](https://github.com/ARMmbed/mbed-os-example-client).
-  - [Mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+- [Mesh minimal example](../apis/mesh-api.html#mesh-example).
 - [Thread border router](https://github.com/ARMmbed/nanostack-border-router).
+- [Device Management Client example](https://github.com/ARMmbed/mbed-cloud-client-example).
 
 #### How to debug and visualize the network?
 
@@ -50,7 +49,7 @@ Link quality and errors are easiest to debug using Wireshark.
 
 #### How to send/receive with UDP and TCP sockets. How to use multicast groups?
 
-The mesh minimal uses socket communication and multicasting. See more details in the [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
+The mesh minimal uses socket communication and multicasting. See more details in the [mesh minimal example](../apis/mesh-api.html#mesh-example).
 
 #### What if my ISP does not provide IPv6 service? Why do I need IPv6 internet service? Can I use a tunneling service?
 
