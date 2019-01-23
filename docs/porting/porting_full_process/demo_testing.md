@@ -36,7 +36,7 @@ Start with building the bootloader, which you will need for the firmware update 
 
 
 1. Application repository: [https://github.com/armmbed/mbed-bootloader](https://github.com/armmbed/mbed-bootloader).
-    1. If your target is not merged into `mbed-os` yet you will need to follow the same process as detailed above for adding your fork.
+    1. If your target is not merged into `mbed-os` yet, you will need to follow the same process as detailed above for adding your fork.
 1. Build the image:
 
     ```
@@ -58,8 +58,8 @@ Start with building the bootloader, which you will need for the firmware update 
 
 Then, test connectivity and firmware update:
 
-1. Application repository:[https://github.com/armmbed/mbed-cloud-client-example](https://github.com/armmbed/mbed-cloud-client-example).
-    1. Again, if you have not merged your target into `mbed-os` you will need to add your fork.
+1. Application repository: [https://github.com/armmbed/mbed-cloud-client-example](https://github.com/armmbed/mbed-cloud-client-example).
+    1. Again, if you have not merged your target into `mbed-os`, you will need to add your fork.
 1. [Set up a Pelion Device Management account](https://cloud.mbed.com/docs/current/account-management/users.html).
 1. [Generate an API key](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html) from the [Device Management Portal](https://portal.mbedcloud.com//login).
 1. In the `mbed-cloud-client-example` clone on your machine, run the following command with the generated API key:
@@ -92,7 +92,7 @@ Then, test connectivity and firmware update:
 
    - If your target uses WiFi, fill in the SSID and Password fields in `mbed_app.json`.
 
-   - Add NVStore descriptors (previously known as SOTP) for storage to `mbed-cloud-client-example/mbed_lib.json`. For example:
+   - Add [NVStore descriptors (previously known as SOTP)](https://cloud.mbed.com/docs/porting/porting-a-new-target-for-mbed-os.html) for storage to `mbed-cloud-client-example/mbed_lib.json`. For example:
 
       ```
       ...
