@@ -11,14 +11,9 @@ def main(file):
     file_h = open(file, 'r+')
     file   = file_h.read()
     snippet_indices = [m.start() for m in re.finditer('```', file)]
-    print(snippet_indices)
-
-    ranges = list(split_into_pairs(snippet_indices))
 
     blocks = {}
-
-    i = 0
-    for start, end in ranges:
+    for i in range(0, len(snippet_indices) / 2):
         snippet_indices = [m.start() for m in re.finditer('```', file)]
         ranges = list(split_into_pairs(snippet_indices))
         start  = ranges[i][0]
