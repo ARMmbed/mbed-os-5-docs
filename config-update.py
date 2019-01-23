@@ -2,13 +2,13 @@ import sys
 import re
 import subprocess
 
-def split_into_pairs(l): 
-    # looping till length l 
-    for i in range(0, len(l), 2):  
-        yield l[i:i + 2] 
+def split_into_pairs(l):
+    # looping till length l
+    for i in range(0, len(l), 2):
+        yield l[i:i + 2]
 
 def main(file):
-    file_h = open(file, 'r')
+    file_h = open(file, 'r+')
     file   = file_h.read()
     snippet_indices = [m.start() for m in re.finditer('```', file)]
     print(snippet_indices)
@@ -17,24 +17,28 @@ def main(file):
 
     blocks = {}
 
+    i = 0
     for start, end in ranges:
-        blocks[start] = file[start : end + 3]
+        snippet_indices = [m.start() for m in re.finditer('```', file)]
+        ranges = list(split_into_pairs(snippet_indices))
+        start  = ranges[i][0]
+        end    = ranges[i][1]
+
         try:
-            lib = blocks[start].split('Name: ')[1].split('.')[0]
+            blocks[i] = file[start : end + 3]
+            lib = blocks[i].split('Name: ')[1].split('.')[0]
             print("=================   %s   =================" % lib)
             out = subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib])
-            print(out)
-        
-        except:
+            file = file[:start+4] + out[:out.index("Macros") - 1] + file[end:]
+
+        except Exception as e:
+            print("Error")
+            print(e)
             pass
-    
 
-    #print(blocks)
-    print(ranges)
 
-    #out = subprocess.check_output(["mbed", "compile", "--config", "-v"])
-    #print(out)
-
+    file_h.seek(0)
+    file_h.write(file)
     file_h.close()
 
 if __name__ == '__main__':
