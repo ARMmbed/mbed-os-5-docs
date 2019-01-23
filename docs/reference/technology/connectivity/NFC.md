@@ -18,7 +18,7 @@ NFC offers three modes:
 
 Mbed OS supports the card emulation mode, either through the use of a controller or NFC EEPROM.
 
-NFC support is available for the NXP PN512 transceiver. In terms of NFC EEPROMs, a driver for the ST M24SR EEPROM series is available - we also provide a [porting guide](https://os.mbed.com/contributing/connectivity/NFCEEPROMDriver.html) to add support for other NFC EEPROMs.
+NFC support is available for the NXP PN512 transceiver. In terms of NFC EEPROMs, a driver for the ST M24SR EEPROM series is available - we also provide a [porting guide](../porting/NFC-port.html) to add support for other NFC EEPROMs.
 
 We also provide APIs to decode and encode NDEF messages. A NDEF message is a standardized encoding that most NFC devices, such as Android and iOS smartphones, can understand.
 
@@ -40,7 +40,7 @@ NFC EEPROMs behave like NFC tags whose memory can either be addressed through a 
 
 ### Getting started with NFC and example
 
-NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os-example-nfc) and demonstrate how to create NFC tags that you can be read from and write to using a phone.
+NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/nfc) and demonstrate how to create NFC tags that you can be read from and write to using a phone.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/explorenfc_nucleo.jpg)<span>An Explore-NFC board attached to a Nucleo board</span></span>
 
