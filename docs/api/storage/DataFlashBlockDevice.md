@@ -1,4 +1,6 @@
-## DataFlash block device
+## DataFlashBlockDevice
+
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
 
 DataFlashBlockDevice is a block device driver for I2C-based EEPROM devices, such as the Adesto AT45DB series of devices.
 
@@ -6,7 +8,7 @@ DataFlash is a memory protocol that combines flash with SRAM buffers for a progr
 
 You can configure the DataFlashBlockDevice to force the underlying device to use either the binary size (in other words, 512 bytes) or the raw DataFlash size (in other words, 528 bytes).
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
 ### DataFlashBlockDevice class reference
 
@@ -52,4 +54,4 @@ int main() {
 
 ### Related content
 
-- [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

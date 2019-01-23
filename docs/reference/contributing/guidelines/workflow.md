@@ -64,28 +64,11 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
 
+If commits do not follow the above guidelines, we may request you modify the commit history (often to add more details to address _what_ and _why_ rather than _how_).
+
 #### Release versioning
 
 You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html).
-
-### Pull request categories
-
-#### Bug fixes
-
-Every bug fix should contain a test to verify results prior to and after the pull request.
-
-#### Changes and additions
-
-Backward compatible changes (such as refactoring and enhancements) or new target additions can go into patch and feature releases. We only consider features and new functionality additions for feature releases.
-
-#### Features
-
-We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
-
-Each feature has a tech lead. This person is responsible for:
-
-- Rebasing often to track master development.
-- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
 ### Pull request types
 
@@ -93,13 +76,13 @@ We consider the following pull request types.
 
 #### Fix
 
-A bug fix is a backward-compatible internal change that fixes incorrect behavior.
+A bug fix is a change that fixes a specific defect in the codebase with backward compatibility. These are the highest priority because of the positive effect the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Every bug fix should contain a test to verify results prior to and after the pull request. Bug fixes are candidates for patch releases. Large, nontrivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
 
 Release: patch
 
 #### Refactor
 
-Refactors are intended for feature releases, if they are not fixing specific issues, because they can introduce new issues.
+A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this would be moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes, and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases.
 
 Release: feature
 
@@ -109,11 +92,18 @@ Updating target implementation (adding a new target or updating already supporte
 
 Release: patch
 
-#### Feature
+#### Functionality change
 
-New features target feature releases. A new feature can only be integrated if the feature supports most of the targets (if it requires new target HAL implementation).
+Any change in the functionality, it can be adding a new feature, adding a new method or a function. Software language does not matter.
 
-We consider adding a new functionality to be a feature. It does not matter if it is C++, C or Python.
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
+
+We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
+
+Each feature has a tech lead. This person is responsible for:
+
+- Rebasing often to track master development.
+- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
 Release: feature
 
@@ -132,6 +122,8 @@ Release: patch
 #### Breaking change
 
 A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
+
+A contribution containing a breaking change is the most difficult PR to get merged. Any breaking changes in a codebase can have a large negative impact on any users of the codebase. Breaking changes are always limited to a major version release.
 
 Release: major
 
@@ -178,9 +170,9 @@ If a pull request is idle for more than two weeks, it will be closed. The author
 
 #### Reviews
 
-All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request and tags that person accordingly.
+All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. Specific, a PR creator can request reviewers by @ tagging people or teams in the *Reviewers* section of the pull request template. For example, @personA @TeamB.
 
-Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
+GitHub dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 Label: `needs: review`
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.

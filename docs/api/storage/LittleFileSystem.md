@@ -1,6 +1,6 @@
 ## LittleFileSystem
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
 
 The little file system (LittleFS) is a fail-safe file system designed for embedded systems, specifically for microcontrollers that use external flash storage.
 
@@ -37,7 +37,7 @@ Instantiate the `LittleFileSystem` class with a block device and file path.
 
 The API that this presents is the standard Mbed OS file system API. Once declared, Mbed OS provides the retargeting layer for the standard C library.
 
-To configure this class, please see the [FileSystem configuration documentation](../reference/configuration-storage.html#filesystem-default-configuration).
+To configure this class, please see the [FileSystem configuration documentation](../reference/storage.html#filesystem-default-configuration).
 
 ### LittleFileSystem class reference
 
@@ -49,5 +49,5 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ### Related content
 
-- [Storage configuration](../reference/configuration-storage.html).
+- [Storage configuration](../reference/storage.html).
 - [Blog post: LittleFS - A high-integrity embedded file system](https://os.mbed.com/blog/entry/littlefs-high-integrity-embedded-fs/).

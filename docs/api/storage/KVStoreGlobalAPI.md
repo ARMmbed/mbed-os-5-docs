@@ -6,7 +6,7 @@ Applications should use the KVStore static API to access the instances of KVStor
 
 The function `kv_init_storage_config()` allocates and initializes all the components required for the execution of the global API. The API implicitly calls it and can call it several times without side effects.
 
-The configuration parameters present in the API's `.json` files determine the allocation and setup of required KVStore components and block devices. The application's `.json` file, `mbed_app.json`, can override these parameters. Please see the [storage configuration documentation](../config/configuration-storage.html) for details.
+The configuration parameters present in the API's `.json` files determine the allocation and setup of required KVStore components and block devices. The application's `.json` file, `mbed_app.json`, can override these parameters. Please see the [storage configuration documentation](../reference/storage.html) for details.
 
 ### Parameter details
 
@@ -26,7 +26,6 @@ You can "or" (|) the flags below and pass them to the function set in the parame
 
 - **KV_WRITE_ONCE_FLAG:** The system does not an additional call to the function set with the same file name to delete or replace data.
 - **KV_REQUIRE_CONFIDENTIALITY_FLAG:** The system encrypts the data using an AES CTR, a random IV and a key derived from DeviceKey. This flag will be ignored if you select the `TDB_INTERNAL` configuration because the internal memory is seen as protected from physical attacks.
-- **KV_REQUIRE_INTEGRITY_FLAG:** The system calculates a CMAC using a key derived from DeviceKey and checks the data validity when reading from the file (function `get`).
 - **KV_REQUIRE_REPLAY_PROTECTION_FLAG:** The system keeps a copy of the data CMAC in internal memory and checks that the data CMAC corresponds to this saved CMAC. It does this to prevent an attacker replacing the latest data with a valid old version of the data. This flag will be ignored if you select the configuration `TDB_EXTERNAL_NO_RBP` or `FILESYSTEM_NO_RBP`.
 
 #### `full_prefix`
@@ -45,5 +44,5 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 
 ### Related content
 
-- [KVStore API](KVStore.html).
-- [Storage configuration](../reference/configuration-storage.html).
+- [KVStore API](../apis/kvstore.html).
+- [Storage configuration](../reference/storage.html).

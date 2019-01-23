@@ -1,12 +1,12 @@
 ## USBAudio
 
-<span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.png)<span>USBAudio class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.png)<span>USBAudio class hierarchy</span></span>
 
 You can use the USBAudio interface to send and receive audio data over USB. Once a USB program is loaded onto the Mbed board, you can send audio data to your PC by selecting **Mbed Audio** as your PC's microphone input. Your Mbed Enabled board can receive audio data from your PC if you select **Mbed Audio** as your PC's speaker output.
 
 ### USBAudio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_audio.html)
 
 ### USBAudio square wave example
 

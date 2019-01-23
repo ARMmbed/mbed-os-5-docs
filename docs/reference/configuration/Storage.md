@@ -10,7 +10,7 @@ This page describes the build-time configurable parameters for storage in Mbed O
 
 ### KVStore configuration
 
-Mbed OS provides a storage solution based on the KVStore API. Different components that implement the KVStore API are allocated and configured to support the [global API](KVStoreGlobal.html).
+Mbed OS provides a storage solution based on the KVStore API. Different components that implement the KVStore API are allocated and configured to support the [global API](../apis/static-global-api.html).
 
 The configuration of the KVStore storage solution is composed of two levels:
 
@@ -70,7 +70,7 @@ The following is a list of all storage parameters available and their descriptio
 - `rbp_internal_size` - This sets the size for the rollback protection of TDBStore in the internal memory. The base address is calculated as the flash ends address, or the size.
 - `filesystem` - Options are FAT, LITTLE or default. If not set or set to default, the file system type will be selected according to the storage component selected for the board in the `targets.json` file: FAT for "components": ["SD"] and Littlefs for "components": ["SPIF"].
 - `blockdevice` - Options are default, SPIF, DATAFLASH, QSPIF or SD. If the file system is set to default, this parameter is ignored.
-- `external_size` - The size of the external block device in bytes. If this is not set, the maximum available size will be used. 
+- `external_size` - The size of the external block device in bytes. If this is not set, the maximum available size will be used.
 - `external_base_address` - The start address of the external block device. If this is not set, 0 address will be used.
 - `mount_point` - Mount point for the file system. This parameter will be ignored if the file system is set to default.
 - `folder_path` - Path for the working directory where the FileSystemStore stores the data.
@@ -94,14 +94,14 @@ Below is the main storage configuration in the `mbed_lib json` file:
     }
 }
 ```
-    
+
 #### TDB_INTERNAL
 
 Use this internal configuration for targets willing to save all the data in internal flash.
 
 <span class="images">![TDB_Internal](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Internal.jpg)<span>`TDB_Internal`</span></span>
 
-In this configuration, all KVStore C APIs will be mapped to the TDBStore in the internal flash. To use this configuration, set the `storage_type parameter` in `storage mbed_lib.json` to `TDB_INTERNAL`. 
+In this configuration, all KVStore C APIs will be mapped to the TDBStore in the internal flash. To use this configuration, set the `storage_type parameter` in `storage mbed_lib.json` to `TDB_INTERNAL`.
 
 Below is the `TDB_INTERNAL` configuration in `mbed_lib.json`:
 
@@ -131,7 +131,7 @@ For this configuration, please define the section of the internal storage that w
 
 <span class="images">![External](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/TDB_External.jpg)<span>`TDB_External`</span></span>
 
-`TDB_EXTERNAL` uses a TDBStore in the internal flash for security rollback protection and a TDBStore on the external flash for the data. 
+`TDB_EXTERNAL` uses a TDBStore in the internal flash for security rollback protection and a TDBStore on the external flash for the data.
 
 In this configuration, all KVStore C API calls are mapped to work with the SecureStore class. This class handles the use of the two TDBStores. Unless configured differently, the external TDBStore will work on top of the default block device, and the internal TDBStore will work with the FlashIAPBlockdevice.
 
@@ -212,9 +212,9 @@ Below is the `TDB_EXTERNAL_NO_RBP` configuration in `mbed_lib.json`:
 
 The `FILESYSTEM` configuration resembles the `EXTERNAL` with the difference that it uses FileSystemStore on the external flash. By default, FileSystemStore used the default file system and the default block device.
 
-In this configuration, all KVStore C API paths are mapped to the SecureStore class. This class handles the use of the internal TDBStore or external FileSystemStore. 
+In this configuration, all KVStore C API paths are mapped to the SecureStore class. This class handles the use of the internal TDBStore or external FileSystemStore.
 
-You can enable this configuration by setting `storage_type` to `FILESYSTEM` in `storage mbed_lib.json`. 
+You can enable this configuration by setting `storage_type` to `FILESYSTEM` in `storage mbed_lib.json`.
 
 Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
@@ -272,7 +272,7 @@ The `FILESYSTEM_NO_RBP` configuration resembles the `EXTERNAL_NO_RBP` with the d
 
 In this configuration, all KVStore C API calls are mapped to the SecureStore class. This class handles the use of the external FileSystemStore.
 
-You can enable this configuration by setting `storage_type` to `FILESYSTEM_NO_RBF` in `storage mbed_lib.json`. 
+You can enable this configuration by setting `storage_type` to `FILESYSTEM_NO_RBF` in `storage mbed_lib.json`.
 
 Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 

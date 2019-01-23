@@ -1,6 +1,6 @@
 ## HeapBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
 The HeapBlockDevice class provides a way to simulate block devices for software development or testing. The created blocks are nonvolatile; they do not persist across power cycles.
 
@@ -20,11 +20,11 @@ Optionally, you can create a HeapBlockDevice that will set the read, program and
   - _size_ - Size of the block device in bytes.
   - _block_ - Block size in bytes. You can use this to configure the minimum read, program and erase sizes to this value. Default value is 512 bytes.
 
-You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
 ### HeapBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_heap_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_heap_block_device.html)
 
 ### HeapBlockDevice example
 
@@ -38,4 +38,4 @@ The HeapBlockDevice used with MBRBlockDevice showcases partitioning.
 
 ### Related content
 
-- [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

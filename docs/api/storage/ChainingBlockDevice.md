@@ -1,6 +1,6 @@
 ## ChainingBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_chaining_block_device.png)<span>ChainingBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_chaining_block_device.png)<span>ChainingBlockDevice class hierarchy</span></span>
 
 The ChainingBlockDevice class provides a way to chain together multiple block devices. You can then interact with the chained block devices as if they were a single block device of size equal to the sum of each substorage unit. The ChainingBlockDevice acts as an opposite of the [SlicingBlockDevice](slicingblockdevice.html).
 
@@ -8,11 +8,11 @@ Note that each block device's block size must be a multiple of the other devices
 
 The constructor takes in an array of block device pointers and provides an object from which you can access the grouped block devices as a single device.
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
 ### ChainingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_chaining_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_chaining_block_device.html)
 
 ### ChainingBlockDevice example
 
@@ -28,4 +28,4 @@ This ChainingBlockDevice example shows how to program and read back data from a 
 
 - [SlicingBlockDevice](slicingblockdevice.html) API reference.
 - [HeapBlockDevice](heapblockdevice.html) API reference.
-- [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

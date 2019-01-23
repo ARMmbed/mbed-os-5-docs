@@ -1,6 +1,6 @@
 ## FlashSimBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
 
 The FlashSimBlockDevice class is a block device adapator, whose purpose is to simulate the behavior of a flash component if the underlying block device doesn't support such a behavior. This includes the following:
 
@@ -13,11 +13,11 @@ The constructor requires the following:
   - _bd_           -  Block device to back the FlashSimBlockDevice.
   - _erase\_value_ -  Value given to each byte of the erase unit following an erase operation (defaults to 0xFF).
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
 ### FlashSimBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_flash_sim_block_device_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.html)
 
 ### FlashSimBlockDevice example
 
@@ -49,4 +49,4 @@ This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html)
 ### Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
-- [BlockDevice configuration documentation](../reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

@@ -1,5 +1,7 @@
 ## KVStore
 
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_k_v_store.png)<span>KVStore class hierarchy</span></span>
+
 The KVStore API is a common get/set API implemented by several classes. It allows flexibility in the configuration of a storage solution that you can build by allocating several combinations of objects. For example, SecureStore can hold a TDBStore or a FileSystemStore, both implementing the KVStore API, without any change in functionality.
 
 Developers should use the static global KVStore API when possible, to use the flexibility of KVStore configuration.
@@ -31,4 +33,4 @@ Classes implementing KVStore API:
 ### Related content
 
 - [KVStore Global Static API](static-global-api.html).
-- [Storage configuration](../reference/configuration-storage.html).
+- [Storage configuration](../reference/storage.html).

@@ -8,7 +8,7 @@
         "branch": "master"
     },
     {
-        "title": "Introduction",
+        "title": "Mbed OS 5",
         "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
         "slug": "introduction",
         "type": "markdown",
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "title": "Mbed OS quick start",
+        "title": "Quick start",
         "description": "",
         "slug": "quick-start",
         "type": "markdown",
@@ -952,10 +952,30 @@
             },
             {
                 "title": "Developing: Mbed Studio",
-                "sources": [{
+                "intro": {
                     "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tools/Studio/mbed-studio.md"
-                }]
+                    "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Introduction.md"
+                },
+                "sources": [{
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Getting-started.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Including-libraries.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Working-with-source-control.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Getting-your-program-on-an-Mbed-platform.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Debugging.md"
+                    }]
             },
             {
                 "title": "Developing: Mbed CLI",
@@ -1201,6 +1221,14 @@
                 ]
             },
             {
+                "title": "Integrating with Arm Treasure Data",
+                "intro": {
+                    "type": "markdown",
+                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/tutorials/treasure_data.md"
+                },
+                "sources": []
+            },
+            {
                 "title": "Migrating to Mbed OS 5",
                 "intro": {
                     "type": "markdown",
@@ -1417,10 +1445,13 @@
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/Watchdog.md"
                     },
-
                     {
                         "type": "markdown",
                         "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/itm.md"
+                    },
+                    {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/porting/target/mpu.md"
                     },
                     {
                         "type": "markdown",
@@ -1540,6 +1571,15 @@
         "source": "https://github.com/ARMmbed/mbed-os",
         "branch": "feature-hal-spec-sai"
     },
+    {
+        "title": "feature-hal-spec-spi doxygen",
+        "description": "The full mbed OS API documentation in doxygen format",
+        "slug": "feature-hal-spec-spi-doxy",
+        "hidden": true,
+        "type": "doxygen",
+        "source": "https://github.com/ARMmbed/mbed-os",
+        "branch": "feature-hal-spec-spi"
+    }, 
     {
         "title": "feature-hal-spec-watchdog doxygen",
         "description": "The full mbed OS API documentation in doxygen format",

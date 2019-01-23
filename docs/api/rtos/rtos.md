@@ -58,4 +58,4 @@ Each `Thread` can wait for signals and be notified of events:
 
 ##### Status and error codes
 
-The Mbed OS error handling system assigns specific error codes for RTOS-related errors. See [the error handling documentation](error-handling.html) for more information on RTOS errors reported.
+The Mbed OS error handling system assigns specific error codes for RTOS-related errors. See [the error handling documentation](../apis/error-handling.html) for more information on RTOS errors reported.
