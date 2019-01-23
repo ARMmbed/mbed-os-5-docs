@@ -54,8 +54,29 @@ PWMOUT           |   pwmout_api.h
 RTC              |   rtc_api.h
 SLEEP            |   sleep_api.h
 SPI SPISLAVE     |   spi_api.h
+QSPI             |   qspi_api.h
 TRNG             |   trng_api.h
 FLASH            |   flash_api.h
+
+### Pinmap
+
+All HAL APIs which use pins have functions to get the corresponding pin maps. These functions return a `PinMap` array with each entry containing a pin name, a peripheral and a function. The end of the pin map array is indicated by the presence of a NC pin. Below is an example implementation of the function to get the serial tx pinmap:
+
+```C NOCI
+const PinMap PinMap_UART_TX[] = {
+    {P0_19, UART_0, 1},
+    {P1_13, UART_0, 3},
+    {P1_27, UART_0, 2},
+    { NC  , NC    , 0}
+};
+
+const PinMap *serial_tx_pinmap()
+{
+    return PinMap_UART_TX;
+}
+```
+
+Targets which don't make use of a pinmap, such as ones with peripherals that can be connected to any pin, must still define pinmaps as these are needed for testing. For these devices the pinmap does not need to be comprehensive. Instead it should list a representative sample of pins and peripherals so they can be tested appropriately.
 
 ### Testing
 
