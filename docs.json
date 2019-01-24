@@ -952,30 +952,12 @@
             },
             {
                 "title": "Developing: Mbed Studio",
-                "intro": {
-                    "type": "markdown",
-                    "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Introduction.md"
-                },
-                "sources": [{
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Getting-started.md"
-                    },
+                "sources": [
                     {
                         "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Including-libraries.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Working-with-source-control.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Getting-your-program-on-an-Mbed-platform.md"
-                    },
-                    {
-                        "type": "markdown",
-                        "url": "https://github.com/ARMmbed/mbed-studio-docs/blob/master/Docs/Debugging.md"
-                    }]
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/tools/Studio/mbed-studio.md"
+                    }
+                ]
             },
             {
                 "title": "Developing: Mbed CLI",
