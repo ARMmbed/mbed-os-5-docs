@@ -1,6 +1,6 @@
 ## Greentea testing applications
 
-Greentea is the automated testing tool for Arm Mbed OS development. It's a test runner that automates the process of flashing development boards, starting tests, and accumulating test results into test reports. Developers use it for local development as well as for automation in a Continuous Integration environment.
+Greentea is the automated testing tool for Arm Mbed OS development. It's a test runner that automates the process of flashing development boards, starting tests, and accumulating test results into test reports. Developers use it for local development as well as for automation in a continuous integration environment.
 
 Greentea tests run on embedded devices, but Greentea also supports 'host tests'. These are Python scripts that run on a computer and can communicate back to the embedded device. You can for example verify that a value was actually written to the cloud when the device said it did so.
 
@@ -81,9 +81,17 @@ Let's write your first test. Use Mbed CLI to create a new project:
 $ mbed new first-greentea-test
 ```
 
-As specified above, there is a convention where all tests live in the `TESTS/` directory. In the `first-greentea-test` folder create a folder `TESTS/tests/simple-test/`.
+As specified above, there is a convention where all tests live in the `TESTS/` directory. In the `first-greentea-test` folder create a folder `TESTS/test-group/simple-test/`.
 
-![Tree structure for Greentea tests](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/test01.png)
+```
+first-greentea-test/
+└── TESTS/
+    └── test-group/
+        └── simple-test/
+            └── main.cpp
+```
+
+*Test structure for Greentea tests*
 
 In this folder, create a file `main.cpp`. In here you can use UNITY, utest and the Greentea Client to write your test:
 
@@ -95,7 +103,7 @@ In this folder, create a file `main.cpp`. In here you can use UNITY, utest and t
 
 using namespace utest::v1;
 
-// this is how a test looks
+// this is how a test case looks
 static control_t simple_test(const size_t call_count) {
     /* test content here */
     TEST_ASSERT_EQUAL(4, 2 * 2);
@@ -104,13 +112,13 @@ static control_t simple_test(const size_t call_count) {
 }
 
 utest::v1::status_t greentea_setup(const size_t number_of_cases) {
-    // here we specify the timeout (60s) and the host runner (the name of our Python file)
-    GREENTEA_SETUP(1*60, "default_auto");
+    // here we specify the timeout (60s) and the host test (a built-in host test or the name of our Python file)
+    GREENTEA_SETUP(60, "default_auto");
 
     return greentea_test_setup_handler(number_of_cases);
 }
 
-// list of all cases
+// List of test cases in this file
 Case cases[] = {
     Case("simple test", simple_test)
 };
@@ -128,25 +136,25 @@ Let's run this test (tip: to see all tests, run `mbed test --compile-list`):
 
 ```
 # run the test with the GCC_ARM toolchain, automatically detect the target, and run in verbose mode (-v)
-$ mbed test -t GCC_ARM -m auto -v -n tests-tests-simple-test
+$ mbed test -t GCC_ARM -m auto -v -n tests-test-group-simple-test
 ```
 
 This will yield (on a K64F):
 
 ```
 mbedgt: test suite report:
-+--------------+---------------+-------------------------+--------+--------------------+-------------+
-| target       | platform_name | test suite              | result | elapsed_time (sec) | copy_method |
-+--------------+---------------+-------------------------+--------+--------------------+-------------+
-| K64F-GCC_ARM | K64F          | tests-tests-simple-test | OK     | 16.84              | default     |
-+--------------+---------------+-------------------------+--------+--------------------+-------------+
++--------------+---------------+------------------------------+--------+--------------------+-------------+
+| target       | platform_name | test suite                   | result | elapsed_time (sec) | copy_method |
++--------------+---------------+------------------------------+--------+--------------------+-------------+
+| K64F-GCC_ARM | K64F          | tests-test-group-simple-test | OK     | 16.84              | default     |
++--------------+---------------+------------------------------+--------+--------------------+-------------+
 mbedgt: test suite results: 1 OK
 mbedgt: test case report:
-+--------------+---------------+-------------------------+-------------+--------+--------+--------+--------------------+
-| target       | platform_name | test suite              | test case   | passed | failed | result | elapsed_time (sec) |
-+--------------+---------------+-------------------------+-------------+--------+--------+--------+--------------------+
-| K64F-GCC_ARM | K64F          | tests-tests-simple-test | simple test | 1      | 0      | OK     | 0.01               |
-+--------------+---------------+-------------------------+-------------+--------+--------+--------+--------------------+
++--------------+---------------+------------------------------+-------------+--------+--------+--------+--------------------+
+| target       | platform_name | test suite                   | test case   | passed | failed | result | elapsed_time (sec) |
++--------------+---------------+------------------------------+-------------+--------+--------+--------+--------------------+
+| K64F-GCC_ARM | K64F          | tests-test-group-simple-test | simple test | 1      | 0      | OK     | 0.01               |
++--------------+---------------+------------------------------+-------------+--------+--------+--------+--------------------+
 mbedgt: test case results: 1 OK
 mbedgt: completed in 18.64 sec
 ```
@@ -253,7 +261,7 @@ You see the calls to/from the host through the `greentea_send_kv` and `greentea_
 Let's run the test, and see if everything works:
 
 ```
-$ mbed test -v -n tests-tests-integration-test
+$ mbed test -v -n tests-test-group-integration-test
 ```
 
 ### Debugging tests
@@ -320,10 +328,10 @@ This section highlights a few of the capabilities of the Greentea command-line i
 
 #### Listing all tests
 
-You can use the `-l` argument to list all available tests:
+You can use the `--compile-list` argument to list all available tests:
 
 ```
-$ mbed test -l
+$ mbed test --compile-list
 [mbed] Working path "/Users/janjon01/repos/first-greentea-test" (program)
 Test Case:
     Name: mbed-os-components-storage-blockdevice-component_flashiap-tests-filesystem-fopen
@@ -334,6 +342,8 @@ Test Case:
 
 ...
 ```
+
+After compilation you can use the `--run-list` argument to list all tests that are ready to be ran.
 
 #### Executing all tests
 
@@ -347,10 +357,10 @@ You can select test cases by name using the `-n` argument. This command executes
 $ mbed test -n tests-mbedmicro-rtos-mbed-mail
 ```
 
-When using the `-n` argument, you can use the `*` character at the end of a test name to match all tests that share a prefix. This command executes all tests that start with `tests-mbedmicro-rtos`:
+When using the `-n` argument, you can use the `*` character as a wildcard. This command executes all tests that start with `tests-` and have `-rtos-` in them.
 
 ```
-$ mbed test -n tests-mbedmicro-rtos-*
+$ mbed test -n tests-*-rtos-*
 ```
 
 You can use a comma (`,`) to separate test names (argument `-n`) and build names (argument `-t`). This command executes the tests `tests-mbedmicro-rtos-mbed-mail` and `tests-mbed_drivers-c_strings` for the `K64F-ARM` and `K64F-GCC_ARM` builds in the test specification:
@@ -364,15 +374,15 @@ $ mbed test -n tests-mbedmicro-rtos-mbed-mail,tests-mbed_drivers-c_strings -t K6
 You can limit which boards Greentea uses for testing by using the `--use-tids` argument.
 
 ```
-$ mbed test --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2
+$ mbed test --use-tids 02400203C3423E603EBEC3D8,024002031E031E6AE3FFE3D2 --run
 ```
 
 Where `02400203C3423E603EBEC3D8` and `024002031E031E6AE3FFE3D` are the target IDs of platforms attached to your system.
 
-You can view target IDs using Mbed CLI:
+You can view target IDs using [mbed-ls](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-ls), which is installed as part of Mbed CLI.
 
 ```
-$ mbed detect
+$ mbedls
 +--------------+---------------------+------------+------------+-------------------------+
 |platform_name |platform_name_unique |mount_point |serial_port |target_id                |
 +--------------+---------------------+------------+------------+-------------------------+
@@ -393,7 +403,7 @@ Greentea supports a number of report formats.
 This creates an interactive HTML page with test results and logs.
 
 ```
-mbed test --report-html html_report.html
+mbed test --report-html html_report.html --run
 ```
 
 ##### JUnit
@@ -401,7 +411,7 @@ mbed test --report-html html_report.html
 This creates an XML JUnit report, which you can use with popular Continuous Integration software, such as [Jenkins](https://jenkins.io/index.html).
 
 ```
-mbed test --report-junit junit_report.xml
+mbed test --report-junit junit_report.xml --run
 ```
 
 ##### JSON
@@ -409,7 +419,7 @@ mbed test --report-junit junit_report.xml
 This creates a general JSON report.
 
 ```
-mbed test --report-json json_report.json
+mbed test --report-json json_report.json --run
 ```
 
 ##### Plain text
@@ -417,7 +427,7 @@ mbed test --report-json json_report.json
 This creates a human-friendly text summary of the test run.
 
 ```
-mbed test --report-text text_report.text
+mbed test --report-text text_report.text --run
 ```
 
 ### Test specification JSON format
@@ -484,7 +494,7 @@ Place this file in your root folder and name it `test_spec.json`.
 }
 ```
 
-If you now run `mbed test -l` this will now list only these tests:
+If you now run `mbed test --run-list` this will now list only these tests:
 
 ```
 mbedgt: greentea test automation tool ver. 1.2.5
