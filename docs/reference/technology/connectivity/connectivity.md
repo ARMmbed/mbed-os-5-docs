@@ -62,11 +62,11 @@ Typical applications of BLE are health care, fitness trackers, beacons, smart ho
 
 To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
 
-####  IP-based mesh (Thread and Wi-SUN)
+####  IP-based mesh (Thread and 6LoWPAN-ND)
 
 As a technology designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
 
-**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
+**Thread** is designed for indoor use, with a range of only a few meters. **6LoWPAN-ND** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
 
 Mesh networks are self-healing, with no single point of failure. They are more suitable for limited spaces because of the expense in infrastructure setup and maintenance.
 

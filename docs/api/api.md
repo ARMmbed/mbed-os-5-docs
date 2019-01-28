@@ -153,7 +153,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tbody>
 <tr>
 <td><a href="ethernet.html">Ethernet</a></td>
-<td><a href="mesh-api.html">6LoWPAN Mesh</a></td>
+<td><a href="mesh-api.html">Mesh</a></td>
 </tr>
 <tr>
 <td><a href="wi-fi.html">Wi-Fi</a></td>
