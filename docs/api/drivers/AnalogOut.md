@@ -10,10 +10,10 @@ Use the AnalogOut interface to set the output voltage of an analog output pin sp
 
 ### AnalogOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/file/9377dcb1cef3/main.cpp)
+[![View code](https://os.mbed.com/teams/mbed_example/code/AnalogOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/AnalogOut_HelloWorld/file/f2c29bab3feb/main.cpp)
 
 ### AnalogOut example
 
 Create a sine wave.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/AnalogOut_ex_1/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/file/ad8683db322a/main.cpp)
+[![View code](https://os.mbed.com/teams/mbed_example/code/AnalogOut_ex_1/)](https://os.mbed.com/teams/mbed_example/code/AnalogOut_ex_1/file/e758daa05e53/main.cpp)
