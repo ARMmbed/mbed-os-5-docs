@@ -7,7 +7,9 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-Here is how a default JSON file might look like:
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. 
+
+Here is a sample JSON file:
 
 ```JSON
 "target_overrides": {
@@ -21,7 +23,7 @@ Here is how a default JSON file might look like:
 }
 ```
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. For instance, based on the JSON snippet above, you would see the macro, `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY` in `mbed_config.h`. This macro will be created for all targets and would be set to `100`, whereas, macro `MBED_CONF_PLATFORM_STDIO_BAUD_RATE` will be set to `9600` only for K64F. `mbed compile` places `mbed_config.h` in the build directory, and `mbed export` places it in the application root. `mbed compile` runs the Mbed configuration system before invoking the compiler, and `mbed export` runs the configuration system before creating project files.
+Based on the JSON snippet above, you would see the macro, `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY` in `mbed_config.h`. This macro will be created for all targets and would be set to `100`, whereas, macro `MBED_CONF_PLATFORM_STDIO_BAUD_RATE` will be set to `9600` only for K64F. `mbed compile` places `mbed_config.h` in the build directory, and `mbed export` places it in the application root. `mbed compile` runs the Mbed configuration system before invoking the compiler, and `mbed export` runs the configuration system before creating project files.
 
 <span class="notes">**Note:** Throughout this document, "library" means any reusable piece of code within its own directory.</span>
 
