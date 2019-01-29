@@ -6,15 +6,15 @@ Mbed OS offers a strong, integrated stack of standards-based technologies:
 
 For IP devices:
 
-* Arm Mbed Thread.
-* 6LoWPAN.
-* Cellular.
-* NB-IoT.
-* Bluetooth Low Energy (BLE).
+- Arm Mbed Thread.
+- 6LoWPAN.
+- Cellular.
+- NB-IoT.
+- Bluetooth Low Energy (BLE).
 
 Non-IP devices require a gateway:
 
-* LoRaWAN.
+- LoRaWAN.
 
 ### Choosing your connectivity method
 
@@ -50,23 +50,23 @@ The new cellular technologies, NB-IoT and CAT-M1, are designed for IoT devices. 
 
 **Narrow-band-IoT** (NB-IoT) relies on a simple waveform and therefore requires the lowest power consumption of all the cellular methods. It also has fewer components and offers better signal penetration through walls (thanks to lower bitrates and better link budgets). It needs a country-specific chip, because each country uses its own spectrum, which complicates production. It also experiences problems with large transfers, because of its reduced bandwidth.
 
-**CAT-M1** has a higher data rate than NB-IoT (closer to existing cellular behaviour), but is not proven to be more power efficient. Any efficiency gains can be lost because of operator configurations.
+**CAT-M1** has a higher data rate than NB-IoT (closer to existing cellular behavior), but is not proven to be more power efficient. Any efficiency gains can be lost because of operator configurations.
 
 It can be deployed on a single spectrum, reducing antenna configuration complexity, but isn't deployed world-wide, and can take years to be deployed in countries using 3G.
 
 #### Bluetooth Low Energy (BLE)
 
-BLE is optimised for cheap, battery-based devices, and has a low memory footprint. It is widely adopted for connected spaces, but requires setting up an infrastructure. Its range is up to 100 meters, with 1 mbps bandwidth. You need an edge gateway so devices in your network can connect to the internet.
+BLE is optimized for cheap, battery-based devices, and has a low memory footprint. It is widely adopted for connected spaces, but requires setting up an infrastructure. Its range is up to 100 meters, with 1 mbps bandwidth. You need an edge gateway so devices in your network can connect to the internet.
 
 Typical applications of BLE are health care, fitness trackers, beacons, smart homes, security, entertainment, proximity sensors, industrial applications, and automotives.
 
 To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
 
-####  IP-based mesh (Thread and Wi-SUN)
+####  IP-based mesh (Thread and 6LoWPAN-ND)
 
 As a technology designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
 
-**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
+**Thread** is designed for indoor use, with a range of only a few meters. **6LoWPAN-ND** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
 
 Mesh networks are self-healing, with no single point of failure. They are more suitable for limited spaces because of the expense in infrastructure setup and maintenance.
 
