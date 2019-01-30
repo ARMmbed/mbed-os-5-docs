@@ -66,7 +66,7 @@ We recommend installing Mbed CLI with our installer. If you need more customizat
 
 Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
+<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
 
 ### Manual installation
 
