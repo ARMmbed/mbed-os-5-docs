@@ -98,6 +98,12 @@ Any change in the functionality, it can be adding a new feature, adding a new me
 
 A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
 
+Every functionality change pull request must contain release notes section addition to describe the change to users.
+
+It must contain:
+- description of changes with impact analysis 
+- migration guidance: before and after (good to include code snippets to illustrate)
+
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
 Each feature has a tech lead. This person is responsible for:
