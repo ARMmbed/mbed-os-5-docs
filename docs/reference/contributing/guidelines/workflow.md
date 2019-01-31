@@ -103,7 +103,7 @@ Every functionality change pull request must contain a release notes section cal
 It must contain:
 - brief description of changes introduced
 - impact analysis - identify components affected, what are potential consequences for users, why do we need this
-- migration guidance: before and after (good to include code snippets to illustrate)
+- migration guidance: actions for updating the current code. Good to include code snippets to illustrate, before/after
 
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
