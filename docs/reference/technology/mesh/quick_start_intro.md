@@ -4,7 +4,7 @@ This guide provides design guidelines for developing an application on top of th
 
 ### Overview of the 6LoWPAN network
 
-![Node connected to server](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/node_to_server.png)
+![Node connected to server](https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/images/node_to_server_2.jpg)
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
 
