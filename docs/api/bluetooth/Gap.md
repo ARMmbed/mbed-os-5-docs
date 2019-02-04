@@ -56,9 +56,9 @@ You may query the currently used PHY using `readPhy()`, which returns the result
 
 In addition to modulation schemes, MTU (Maximum Transmission Unit) size also strongly affects throughput. Newer controllers will allow you to negotiate bigger MTUs. Since each packet contains overhead bigger packets maximise throughput.
 
-There are two separate MTUs to consider: the ATT_MTU (maximum attribute size) and Data Length. ATT_MTU is dealt with in `GattServer` and `GattClient`. `Gap` only deals with Data Length which is the maximum size of the packet that carries attributes which are fragmented across many such packets. ATT_MTU and Data Length are independent of each other.
+The default value of Data Length supported by all controllers is 23 octets. If both controllers support Data Length Extension and a higher value is negotiated `onDataLengthChange` in the `Gap::EventHandler` will be called.
 
-The default value of Data Length supported by all controllers is 23 octets. If both controllers support Data Length Extension and a higher value is negotiated `onDataLengthChange` in the `Gap::EventHandler` will be called. 
+There are two separate MTUs to consider: the ATT_MTU (maximum attribute size) and Data Length. ATT_MTU is dealt with in `GattServer` and `GattClient`. `Gap` only deals with Data Length which is the maximum size of the packet that carries attributes which are fragmented across many such packets. ATT_MTU and Data Length are independent of each other. 
 
 ### GAP class reference
 

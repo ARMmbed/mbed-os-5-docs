@@ -14,9 +14,11 @@ You must access values of the characteristic and the characteristic descriptor p
 
 You can query the server by invoking the function `areUpdatesEnabled()` to find out if a client has subscribed to a given characteristic's value update.
 
-#### ATT_MTU
+#### Attribute Maximum Transmission Unit (ATT_MTU)
 
-ATT_MTU is the maximum size of the attribute that can fit in an L2CAP packet. This is independent of the Data Length which controls the over-the-air packet payload size (which is dealt with in the GAP). An L2CAP packet will be fragmented over many such packets if required.
+ATT_MTU is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet will be split across multiple operations.
+
+This is independent of the Data Length which controls the over-the-air packet payload size (which is dealt with in the GAP). An L2CAP packet containing the attribute protocol packet will be fragmented over many such packets if required.
 
 Only `GattClient` can trigger the exchange of ATT_MTU between client and server. If an exchange happens the biggest value possible across both devices will be used. 
 
