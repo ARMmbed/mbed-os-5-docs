@@ -241,7 +241,7 @@ static control_t hello_world_test(const size_t call_count) {
 
 utest::v1::status_t greentea_setup(const size_t number_of_cases) {
    // here we specify the timeout (60s) and the host runner (the name of our Python file)
-   GREENTEA_SETUP(1*60, "hello_world_tests");
+   GREENTEA_SETUP(60, "hello_world_tests");
    return greentea_test_setup_handler(number_of_cases);
 }
 
