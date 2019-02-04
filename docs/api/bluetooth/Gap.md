@@ -52,6 +52,14 @@ You may set preferred PHYs (separately for RX and TX) using `setPreferredPhys()`
 
 You may query the currently used PHY using `readPhy()`, which returns the result through a call to the registered event handler. You may register the handler with `setEventHandler()`. The events inform about the currently used PHY and of any changes to PHYs, which the controller or the peer may trigger autonomously.
 
+#### Data Length (over-the-air MTU)
+
+In addition to modulation schemes, MTU (Maximum Transmission Unit) size also strongly affects throughput. Newer controllers will allow you to negotiate bigger MTUs. Since each packet contains overhead bigger packets maximise throughput.
+
+There are two separate MTUs to consider: the ATT_MTU (maximum attribute size) and Data Length. ATT_MTU is dealt with in `GattServer` and `GattClient`. `Gap` only deals with Data Length which is the maximum size of the packet that carries attributes which are fragmented across many such packets. ATT_MTU and Data Length are independent of each other.
+
+The default value of Data Length supported by all controllers is 23 octets. If both controllers support Data Length Extension and a higher value is negotiated `onDataLengthChange` in the `Gap::EventHandler` will be called. 
+
 ### GAP class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_gap.html)

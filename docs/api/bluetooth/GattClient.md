@@ -16,6 +16,14 @@ As a result of the discovery process, the client can start interacting with the 
 
 Mbed BLE abstracts read and write operations to offer a single API that can be used to read or write characteristic values. The application code does not have to handle the necessary fragmentation or reassembly process if the attribute value to be transported can't fit in a single data packet.
 
+#### ATT_MTU
+
+ATT_MTU is the maximum size of the attribute that can fit in an L2CAP packet. This is independent of the Data Length which controls the over-the-air packet payload size (which is dealt with in the GAP). An L2CAP packet will be fragmented over many such packets if required.
+
+Only `GattClient` can trigger the exchange of ATT_MTU between client and server. The host may trigger the exchange which may also be requested manually using `negotiateAttMtu`. If an exchange happens the biggest value possible across both devices will be used. Negotiation is only a best effort process and does not guarantee a higher value being set. 
+
+ATT_MTU is at least 23 octets by default. If a larger size is negotiated the user application will be informed through the `onAttMtuChange` function called in the `GattClient::EventHandler` (`GattServer::EventHandler` will also be informed).
+
 #### Server initiated events
 
 When a server updates a characteristic value, it can forward the new value to any registered clients. Clients may register for these updates on a per-characteristic basis. The server sends the updates by using notifications (no confirmation from client) or indications (client confirms receipt). This mechanism minimizes the number of transactions between a client and a server by avoiding polling.

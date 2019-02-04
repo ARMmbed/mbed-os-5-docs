@@ -14,6 +14,14 @@ You must access values of the characteristic and the characteristic descriptor p
 
 You can query the server by invoking the function `areUpdatesEnabled()` to find out if a client has subscribed to a given characteristic's value update.
 
+#### ATT_MTU
+
+ATT_MTU is the maximum size of the attribute that can fit in an L2CAP packet. This is independent of the Data Length which controls the over-the-air packet payload size (which is dealt with in the GAP). An L2CAP packet will be fragmented over many such packets if required.
+
+Only `GattClient` can trigger the exchange of ATT_MTU between client and server. If an exchange happens the biggest value possible across both devices will be used. 
+
+ATT_MTU is at least 23 octets by default. If a larger size is negotiated the user application will be informed through the `onAttMtuChange` function called in the `GattServer::EventHandler` (`GattClient::EventHandler` will also be informed).
+
 #### Events
 
 You can register several event handlers with the GattServer that it will call to notify you of client (remote application connected to the server) and server activities:
