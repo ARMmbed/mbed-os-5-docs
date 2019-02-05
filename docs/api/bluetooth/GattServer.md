@@ -1,6 +1,8 @@
 ## GattServer
 
-A GattServer is a collection of GattServices. These services contain characteristics that a peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
+Generic Attribute Profile (GATT) is used to discover services, characteristics and descriptors and to perform operations on them. The interaction happens between two peers, one of which is the client (who initiates interactions) and the other the server (which responds). Attribute Protocol (ATT) is used to implement this interaction.
+
+'GattServer' is a collection of GattServices. These services contain characteristics that a `GattClient` on the peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
 
 #### Server layout
 
