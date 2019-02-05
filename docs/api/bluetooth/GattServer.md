@@ -14,7 +14,7 @@ You must access values of the characteristic and the characteristic descriptor p
 
 You can query the server by invoking the function `areUpdatesEnabled()` to find out if a client has subscribed to a given characteristic's value update.
 
-#### Attribute Maximum Transmission Unit (ATT_MTU)
+#### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
 
 ATT_MTU is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet will be split across multiple operations.
 
