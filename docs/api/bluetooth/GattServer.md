@@ -1,8 +1,8 @@
 ## GattServer
 
-Generic Attribute Profile (GATT) is used to discover services, characteristics and descriptors and to perform operations on them. The interaction happens between two peers, one of which is the client (who initiates interactions) and the other the server (which responds). Attribute Protocol (ATT) is used to implement this interaction.
+You can use Generic Attribute Profile (GATT) to discover services, characteristics and descriptors and to perform operations on them. The interaction happens between two peers, one of which is the client (which initiates interactions) and the other is the server (which responds). You can use Attribute Protocol (ATT) to implement this interaction.
 
-'GattServer' is a collection of GattServices. These services contain characteristics that a `GattClient` on the peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
+`GattServer` is a collection of GattServices. These services contain characteristics that a `GattClient` on the peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
 
 #### Server layout
 
@@ -18,13 +18,13 @@ You can query the server by invoking the function `areUpdatesEnabled()` to find 
 
 #### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
 
-ATT_MTU is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet will be split across multiple operations.
+`ATT_MTU` is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet are split across multiple operations.
 
-This is independent of the Data Length which controls the over-the-air packet payload size (which is dealt with in the GAP). An L2CAP packet containing the attribute protocol packet will be fragmented over many such packets if required.
+This is independent of the data length, which controls the over-the-air packet payload size (which the GAP handles). An L2CAP packet containing the attribute protocol packet is fragmented over many packets if required.
 
-Only `GattClient` can trigger the exchange of ATT_MTU between client and server. If an exchange happens the biggest value possible across both devices will be used. 
+Only `GattClient` can trigger the exchange of `ATT_MTU` between client and server. If an exchange happens, the biggest value possible across both devices will be used. 
 
-ATT_MTU is at least 23 octets by default. If a larger size is negotiated the user application will be informed through the `onAttMtuChange` function called in the `GattServer::EventHandler` (`GattClient::EventHandler` will also be informed).
+`ATT_MTU` is at least 23 octets by default. If a larger size is negotiated, the user application will be informed through the `onAttMtuChange` function called in the `GattServer::EventHandler`. (`GattClient::EventHandler` is also informed.)
 
 #### Events
 
