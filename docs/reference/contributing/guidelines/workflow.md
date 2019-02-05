@@ -106,6 +106,8 @@ It must contain:
 - An analysis of effects: components affected, potential consequences for users and reasons for the addition or change.
 - Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
 
+<span class="notes">**Note:** We may use this content in our official release notes.</span>
+
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
 Each feature has a tech lead. This person is responsible for:
