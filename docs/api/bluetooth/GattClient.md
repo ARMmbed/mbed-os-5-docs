@@ -16,7 +16,7 @@ As a result of the discovery process, the client can start interacting with the 
 
 Mbed BLE abstracts read and write operations to offer a single API that can be used to read or write characteristic values. The application code does not have to handle the necessary fragmentation or reassembly process if the attribute value to be transported can't fit in a single data packet.
 
-#### Attribute Maximum Transmission Unit (ATT_MTU)
+#### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
 
 ATT_MTU is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet will be split across multiple operations.
 
