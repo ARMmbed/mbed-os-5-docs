@@ -58,7 +58,7 @@ In addition to modulation schemes, Maximum Transmission Unit (MTU) size also str
 
 There are two separate MTUs to consider: the `ATT_MTU` (maximum attribute size) and data length. `GattServer` and `GattClient` affect `ATT_MTU`. `Gap` only deals with data length, which is the maximum size of the packet that carries attributes that are fragmented across many such packets.
 
-The default value of data length supported by all controllers is 23 octets. If both controllers support data length extension and a higher value is negotiated, `onDataLengthChange` in the `Gap::EventHandler` will be called.
+The default value of data length supported by all controllers is 23 octets. If both controllers support data length extension and a higher value is negotiated, the BLE stack will call `onDataLengthChange` in the `Gap::EventHandler` registered by the user.
 
 `ATT_MTU` and data length are independent of each other. 
 
