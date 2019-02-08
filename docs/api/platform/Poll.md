@@ -11,7 +11,7 @@ See the POSIX specification of `poll` for full details of the API. Mbed OS provi
 
 Note that the `poll` is not affected by the blocking or nonblocking setting of the individual file handles. The `timeout` argument always determines the wait behavior: 0 for immediate (nonblocking) return, -1 for wait forever or positive for a limited wait.
 
-Ordinary POSIX files are readable and writable using poll.
+As per the POSIX specification, `poll` always indicates that ordinary files (as opposed to devices) are readable and writable.
 
 ### Poll reference
 
