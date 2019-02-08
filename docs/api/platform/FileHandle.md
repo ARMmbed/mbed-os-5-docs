@@ -6,13 +6,17 @@ For general information on [files](file.html) and [filing systems](filesystem.ht
 
 The `FileHandle` abstraction represents an already-opened file or device, so it has no `open` method of its own - the opening may take the form of a call to another class that returns a `FileHandle`, such as `FileSystem::open`, or it may be implicit in the construction of an object such as `UARTSerial`.
 
-The `FileHandle` abstraction permits stream-handling code to be device-independent. For example, you can use the the `FileHandle` API to retarget the console input and output streams used for C's `stdin` and `stdout` to something other than the default serial port. You can also retarget `ATCmdParser` and the PPP connection to lwIP work on abstract `FileHandle` pointers.
+The `FileHandle` abstraction permits stream-handling code to be device-independent, rather than tied to a specific device like a serial port. Examples of such code in Mbed OS are:
+
+- The console input and output streams (`stdin` and `stdout`).
+- The `ATCmdParser` helper.
+- The PPP connection to lwIP.
 
 Exactly which operations a `FileHandle` supports depends on the underlying device, and in turn restricts what applications it is suitable for. For example, a database application might require random-access and `seek`, but this may not be available on a limited file system, and certainly not on a stream device. Only a `File` on a full `FileSystem`, such as `FATFileSystem`, would generally implement the entire API. Specialized devices may have particular limitations or behavior, which limit their general utility. Devices that do not implement a particular call indicate it by an error return - often `ENOSYS`, but sometimes more specific errors, such as `ESPIPE` apply; please see the POSIX specifications for details.
 
 ### Relationship of FileHandle to other APIs
 
-You can use `FileHandle` directly, but POSX or C/C++ APIs often manipulate it. Stdio calls taking `FILE *stream` call the POSIX APIs taking `int fd`, which call methods on `FileHandle` objects.
+You can use a `FileHandle` directly, or you can use standard POSIX or C/C++ APIs to manipulate it. Stdio calls taking `FILE *stream` call the POSIX APIs taking `int fd`, which call methods on `FileHandle` objects.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/filehandle_callstack.png)</span>
 
@@ -47,7 +51,7 @@ Calls are provided to attach already-opened lower levels to the higher levels:
 
 The standard POSIX function `int fileno(FILE *stream)` may be available to map from `FILE` to file descriptor, depending on the toolchain and C library in use - it is not usable in fully portable Mbed OS code.
 
-Given those limitations on mapping, if code needs to access the lower levels, use a lower-level open call, so the lower-level handle is known. Then, that is bound to the higher level.
+As it is not possible to map from higher levels to lower levels, if code needs to access the lower levels, use a lower-level open call, so the lower-level handle is known. Then, bind that to the higher level..
 
 The POSIX file descriptors for the console are available as `STDIN_FILENO`, `STDOUT_FILENO` and `STDERR_FILENO`, permitting operations such as `fsync(STDERR_FILENO)`, which would for example drain `UARTSerial`s output buffer.
 
