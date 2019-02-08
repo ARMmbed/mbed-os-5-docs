@@ -86,7 +86,7 @@ Please see the following sections of our documentation for more information.
 
 ### Recently updated documentation
 
+- API references for [FileHandle](../apis/filehandle.html) and [Poll](../apis/poll.html).
 - An updated [contributing guide](../contributing/index.html).
 - A revised [porting guide](../porting/index.html).
 - A [review of the full process of taking a project to production](./evaluation-production/index.html).
-- An updated [quick start](../quick-start/index.html) to demonstrate more Mbed OS capabilities.
