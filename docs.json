@@ -215,6 +215,14 @@
                         },
                         {
                             "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/api/platform/FileHandle.md"
+                        },
+                        {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/api/platform/Poll.md"
+                        },
+                        {
+                            "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/api/platform/PlatformMutex.md"
                         },
                         {
