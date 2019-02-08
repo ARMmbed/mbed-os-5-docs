@@ -34,7 +34,7 @@ This parameter conflicts with `target.bootloader_img` and `target.restrict_size`
 
 ### target.bootloader_img
 
-This parameter defines the bootloader image to be used during the built-in postbuild merge process. `target.bootloader_img` implicitly defines the start of the current application's code segment by taking the size of the bootloader and rounding up to the next flash erase block boundary. The built-in postbuild merge process automatically combines the current application with the image this parameter references.
+This parameter defines the bootloader image to be used during the built-in postbuild merge process. The path specified in `target.bootloader_img` is relative to the configuration file that overrides it. `target.bootloader_img` implicitly defines the start of the current application's code segment by taking the size of the bootloader and rounding up to the next flash erase block boundary. The built-in postbuild merge process automatically combines the current application with the image this parameter references.
 
 The start address of the current application, as computed above, is available to C and C++ as `APPLICATION_ADDR` and to the linker as `MBED_APP_START`. The size of the current application is available as `APPLICATION_SIZE` and `MBED_APP_SIZE`. This parameter also defines `BOOTLOADER_ADDR` and `BOOTLOADER_SIZE` as the start address and size of the provided bootloader.
 
