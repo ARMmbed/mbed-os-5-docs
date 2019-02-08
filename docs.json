@@ -171,6 +171,12 @@
                         "path": "docs/api/platform/Span.md"
                     },
                     {
+                        "path": "docs/api/platform/FileHandle.md"
+                    },
+                    {
+                        "path": "docs/api/platform/Poll.md"
+                    },
+                    {
                         "path": "docs/api/platform/PlatformMutex.md"
                     },
                     {
