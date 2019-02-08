@@ -1,6 +1,8 @@
 ## FileHandle
 
-For general information on [files](file.html) and [filing systems](filesystem.html) in persistant storage, see their documentation. This chapter covers the abstract API, with an emphasis on devices.
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
+
+For general information on [files](file.html) and [filing systems](filesystem.html) in persistent storage, see their documentation. This chapter covers the abstract API, with an emphasis on devices.
 
 `FileHandle` is an abstract class representing a device that supports file-like operations, such as `read` and `write`. This may be an actual `File` on a storage device provided by a `FileSystem` or a device such as `UARTSerial`.
 
@@ -124,7 +126,7 @@ As such, you can only use `Stream`-based devices for blocking I/O, such as throu
  
 ### FileHandle class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
 
 ### FileHandle using C library example
 
