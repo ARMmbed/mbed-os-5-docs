@@ -13,7 +13,7 @@ Mbed OS currently provides two tests for Mbed Crypto:
 - A test for initialization of the Mbed Crypto module.
 - A test for entropy injection feature.
 
-To run these tests, make sure the following configuration is set in your target:
+To run these tests, make sure make sure your target configuration is set:
 
 1.  `extra_labels` contains the label `PSA`. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1451) or [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7694).
 1.  `MBEDTLS_PSA_CRYPTO_C` macro is enabled. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1454) or [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7697).
