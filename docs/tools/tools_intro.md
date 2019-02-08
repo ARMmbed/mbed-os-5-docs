@@ -21,23 +21,26 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 
 Mbed OS 5 can be built with various toolchains. The currently supported versions are:
 
-- [Arm compiler 5.06 update 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
+- [Arm compiler 6.11](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
 - [GNU Arm Embedded version  6 (6-2017-q1-update)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- [IAR Embedded Workbench 8.32](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
+- [IAR Embedded Workbench 8.32.1](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
 
 ##### Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE, and should be familiar to anyone who's been working with Mbed for a while. It switches the backing toolchain based on the architecture version:
+The Mbed Online Compiler is our in-house IDE and should be familiar to anyone who's been working with Mbed for a while. It switches the backing toolchain based on the architecture version as in the table below.
 
 | Architecture version | Compiler |
 |----                  |----           |
-| Arm v6M       | Arm Compiler 5.06 update 6 |
-| Arm v7M       | Arm Compiler 5.06 update 6 |
-| Arm v7A       | Arm Compiler 5.06 update 6 |
-| Arm v8M       | Arm Compiler 6.10.1 |
+| Arm v6M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the Arm toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../reference/configuration/mbed_targets.html)) |
+| Arm v7M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the Arm toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../reference/configuration/mbed_targets.html)) |
+| Arm v7A       | `Arm Compiler 6.11` |
+| Arm v8M       | `Arm Compiler 6.11` |
 
 For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
+
+<span class="note"> **Note:** With Mbed-OS 5.12 release, ARM Compiler 6 will be the default ARM toolchain for all Mbed OS targets. Majority of Mbed OS targets/platforms are already compatible with ARM Compiler 6. Few targets currently using/supporting ARM Compiler 5 will also be migrated to ARM Compiler in future. Please be aware that all new/existing Mbed OS targets/developers must use ARM Compiler 6 for future development as all source code contributions to Mbed OS will be validated with ARM Compiler 6. </span>
 
 ##### Third party development tools
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](exporting.html).
+
