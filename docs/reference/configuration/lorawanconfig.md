@@ -1,4 +1,4 @@
-<h2 id="lorawan-configuration">LoRaWAN</h2>
+<h2 idd="lorawan-configuration">LoRaWAN</h2>
 
 Various parameters for Mbed LoRaWAN stack can be configured via either C++ APIs or by using the Mbed configuration system.
 
@@ -140,25 +140,4 @@ For changing any of these parameters, edit the `mbed_app.json` file in the root 
 ### Using APIs from LoRaWANInterface
 
 See the [API reference](../apis/lorawan.html) for information about how to use these APIs from the LoRaWANInterface.
-  Value: 1 (set by library:lora)
-Name: lora.tx-max-size
-    Description: Maximum outgoing buffer size
-    Defined by: library:lora
-    Value: 64 (set by library:lora)
-```
 
-For changing any of these parameters, edit the `mbed_app.json` file in the root of your application. Prefix the parameter name with `lora.`, e.g., `lora.my-parameter: value`.
-
-```json
-"target_overrides": {
-    "*": {
-        "lora.device-address":  "0x12345678",
-        "lora.over-the-air-activation": true,
-        "lora.duty-cycle-on": true
-    }
-}
-```
-
-### Using APIs from LoRaWANInterface
-
-See the [API reference](../apis/lorawan.html) for information about how to use these APIs from the LoRaWANInterface.
