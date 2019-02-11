@@ -8,6 +8,8 @@ def split_into_pairs(l):
         yield l[i:i + 2]
 
 def main(file):
+    if (file == NULL):
+        file = '../docs/reference/configuration'
     file_h = open(file, 'r+')
     file   = file_h.read()
     snippet_indices = [m.start() for m in re.finditer('```', file)]
