@@ -1,4 +1,4 @@
-d="configuration-platform">Platform</h2>
+<h2 id="configuration-platform">Platform</h2>
 
 The platform configurations allow for customization of platform level OS options. These options include error handling properties and serial communication configuration settings for STDIO. They work out of platform because they affect system level `printf` calls, not Serial objects, with the exception of `default-serial-baud-rate`.
 
@@ -118,4 +118,3 @@ Name: platform.use-mpu
     Macro name: MBED_CONF_PLATFORM_USE_MPU
     Value: 1 (set by library:platform)
 ```
-

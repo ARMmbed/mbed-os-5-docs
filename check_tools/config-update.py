@@ -27,7 +27,6 @@ def main(file):
                 lib = blocks[i].split('Name: ')[1].split('.')[0]
                 print("=================   %s   =================" % lib)
                 out = subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]).decode()
-                print("File Replace Indices: %d : %d" % (start+4, end))
                 file = file[:start+4] + out[:out.index("Macros") - 1] + file[end:]
 
         except Exception as e:

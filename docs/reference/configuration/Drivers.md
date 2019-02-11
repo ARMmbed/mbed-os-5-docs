@@ -18,4 +18,3 @@ Name: drivers.uart-serial-txbuf-size
     Macro name: MBED_CONF_DRIVERS_UART_SERIAL_TXBUF_SIZE
     Value: 256 (set by library:drivers)
 ```
-
