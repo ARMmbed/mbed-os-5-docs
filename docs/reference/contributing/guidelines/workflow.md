@@ -63,6 +63,7 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Avoid merging commmits. (Always rebase when possible.)
 - Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
+- Smaller pull requests are easier to review, faster to integrate. Use dependencies – split your work by pull request type or functional changes. Adding 3rd party driver ? Send it in a separate pull request and add it as a dependency to your pull request.
 
 If commits do not follow the above guidelines, we may request you modify the commit history (often to add more details to address _what_ and _why_ rather than _how_).
 
