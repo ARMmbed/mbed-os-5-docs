@@ -3,7 +3,6 @@ import re
 import subprocess
 
 def split_into_pairs(l):
-    # looping till length l
     for i in range(0, len(l), 2):
         yield l[i:i + 2]
 
@@ -14,6 +13,7 @@ def main(file):
 
     blocks = {}
     for i in range(0, int(len(snippet_indices) / 2)):
+        # Need to rerun on every loop as the indices change each iteration
         snippet_indices = [m.start() for m in re.finditer('```', file)]
         ranges = list(split_into_pairs(snippet_indices))
         start  = ranges[i][0]
@@ -46,6 +46,11 @@ if __name__ == '__main__':
         path = '../docs/reference/configuration'
     else:
         path = sys.argv[1]
+
+    if (path == '-h' or path == '--help'):
+        print("By default the script runs out of the docs tools directory and iterates through reference/configuration.\n"
+              "You may pass in a directory path that will run on all files contained within, or a single file path optionally.")
+        exit(0)
 
     if (os.path.isfile(path)):
         main(path)
