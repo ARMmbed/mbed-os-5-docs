@@ -51,5 +51,6 @@ if __name__ == '__main__':
         main(path)
     else:
         for doc in os.listdir(path):
-            print('_____ %s _____' % os.path.join(path, doc))
-            main(os.path.join(path, doc))
+            if (doc != 'configuration.md'):
+                print('_____ %s _____' % os.path.join(path, doc))
+                main(os.path.join(path, doc))
