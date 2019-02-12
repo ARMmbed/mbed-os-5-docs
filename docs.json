@@ -1578,6 +1578,14 @@
                     ]
                 },
                 {
+                    "title": "Porting bootstrap",
+                    "intro": {
+                        "type": "markdown",
+                        "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/porting/target/bootstrap.md"
+                    },
+                    "sources": []
+                },
+                {
                     "title": "Porting exporter targets",
                     "intro": {
                         "type": "markdown",
