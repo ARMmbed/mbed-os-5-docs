@@ -34,7 +34,7 @@ By changing `"value": true,` to `false` you can disable each feature.
 
 ##### Configurable features
 
-These are feature that can be deselected.
+These are feature that can be disabled:
 
 - observer (scanning)
 - broadcaster (advertising)
