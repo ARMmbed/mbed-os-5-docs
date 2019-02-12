@@ -63,8 +63,11 @@ Once the project builds, you can configure the debugger. The configuration depen
 If the build fails with an error:
 
 1. `make[1]: arm-none-eabi-g++: No such file or directory`, you need to configure Eclipse's PATH (not your OS PATH).
-1. `Program "make" not found in PATH`, install [GNU-Make utility](http://gnuwin32.sourceforge.net/packages/make.htm), and configure Eclipse's PATH.
-
+1. `Program "make" not found in PATH`, install GNU-Make utility, version at least 4.0:
+    - On Windows, you can find a compatible version of Make in [Cygwin](https://www.cygwin.com/) and [MSYS2](https://www.msys2.org/) distrubitions. Install the `make` package, and add either `C:/cygwin64/bin` or `C:/msys64/usr/bin` to Eclipse's PATH.
+    - On macOS, you can install `make` as part of [Xcode command-line tools](https://developer.apple.com/download/more/).
+    - On Linux, the distrubition package manager provides `make`.
+    
 Steps to update Eclipse's PATH:
 
 1. In Eclipse, click *Project > Properties > C/C++ Build > Environment*.
