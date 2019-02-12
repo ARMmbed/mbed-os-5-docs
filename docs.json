@@ -1219,7 +1219,13 @@
                     }
                 ]
             },
-
+            {
+                "title": "Porting bootstrap",
+                "intro": {
+                    "path": "docs/porting/target/bootstrap.md"
+                },
+                "sources": []
+            },
             {
                 "title": "Porting exporter targets",
                 "intro": {
