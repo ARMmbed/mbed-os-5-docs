@@ -39,23 +39,23 @@ In order to clearly reflect the Apache 2.0 license, please create two text files
 
 - The full original [Apache 2.0 license text](http://www.apache.org/licenses/LICENSE-2.0) in *LICENSE-apache-2.0.txt*
 
-Each source header should *start with* your copyright line, the SPDX identifier and the Apache 2.0 header as shown here:
+   Each source header should *start with* your copyright line, the SPDX identifier and the Apache 2.0 header as shown here:
 
-```
-Copyright (c) [First year]-[Last year], **Your Name or Company Here**
-SPDX-License-Identifier: Apache-2.0
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-either express or implied.
-
-See the License for the specific language governing permissions and limitations under the License.
-```
+   ```
+   Copyright (c) [First year]-[Last year], **Your Name or Company Here**
+   SPDX-License-Identifier: Apache-2.0
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   
+   You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+   
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+   either express or implied.
+   
+   See the License for the specific language governing permissions and limitations under the License.
+   ```
 
 ### When to use the Permissive Binary License
 
