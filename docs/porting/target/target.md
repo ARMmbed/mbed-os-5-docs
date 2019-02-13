@@ -58,9 +58,9 @@ QSPI             |   qspi_api.h
 TRNG             |   trng_api.h
 FLASH            |   flash_api.h
 
-### Pinmap
+### PinMap
 
-All HAL APIs which use pins have functions to get the corresponding pin maps. These functions return a `PinMap` array with each entry containing a pin name, a peripheral and a function. The end of the pin map array is indicated by the presence of a NC pin. Below is an example implementation of the function to get the serial tx pinmap:
+All HAL APIs that use pins have functions to get the corresponding pin maps. These functions return a `PinMap` array with each entry containing a pin name, a peripheral and a function. The presence of an NC pin indicates the end of the pin map array. Below is an example implementation of the function to get the serial transmit pin map:
 
 ```C NOCI
 const PinMap PinMap_UART_TX[] = {
@@ -76,7 +76,7 @@ const PinMap *serial_tx_pinmap()
 }
 ```
 
-Targets which don't make use of a pinmap, such as ones with peripherals that can be connected to any pin, must still define pinmaps as these are needed for testing. For these devices the pinmap does not need to be comprehensive. Instead it should list a representative sample of pins and peripherals so they can be tested appropriately.
+Targets that don't use a pinmap, such as ones with peripherals that can connect to any pin, must still define pin maps because testing requires them. For these devices, the pin map does not need to be comprehensive. Instead, it should list a representative sample of pins and peripherals, so they can be tested appropriately.
 
 ### Testing
 
