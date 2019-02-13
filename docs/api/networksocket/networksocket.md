@@ -1,6 +1,6 @@
 <h2 id="network-socket">Network socket overview</h2>
 
-The application programming interface for IP networking is the Socket API. As described in the [IP networking](../reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API is abstract and supports various protocols such as TCP, UDP and Non-IP data delivery for NB-IoT cellular networks.
+The application programming interface for IP networking is the Socket API. As described in the [IP networking](../reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API is abstract and supports various protocols such as TCP, UDP and non-IP data delivery for NB-IoT cellular networks.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking.png)<span>Sockets</span></span>
 
@@ -97,7 +97,7 @@ The network socket API provides a common interface for using sockets on network 
 - [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP.
 - [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
-- [CellularNonIPSocket](cellularnonipsocket.html): This class provides the ability to send and receive 3GPP Non-IP datagrams (NIDD) using Cellular IoT feature.
+- [CellularNonIPSocket](cellularnonipsocket.html): This class provides the ability to send and receive 3GPP non-IP datagrams (NIDD) using our cellular IoT feature.
 - [Network status](network-status.html): API for monitoring network status changes.
 - [DNS resolver](dns-resolver.html): API for resolving DNS names
 
