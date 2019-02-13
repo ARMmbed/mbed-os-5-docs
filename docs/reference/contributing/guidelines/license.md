@@ -30,10 +30,12 @@ The full text of the license can be found on the [Apache website](http://www.apa
 
 In order to clearly reflect the Apache 2.0 license, please create two text files:
 
-- A *LICENSE* file with the following text:</br>
+- A *LICENSE* file with the following text:
 
-<pre>Unless specifically indicated otherwise in a file, files are licensed under the Apache 2.0 license,
-as can be found in: LICENSE-apache-2.0.txt</pre>
+   ```
+   Unless specifically indicated otherwise in a file, files are licensed under the Apache 2.0 license,
+   as can be found in: LICENSE-apache-2.0.txt
+   ```
 
 - The full original [Apache 2.0 license text](http://www.apache.org/licenses/LICENSE-2.0) in *LICENSE-apache-2.0.txt*
 
