@@ -1176,6 +1176,9 @@
                     },
                     {
                         "path": "docs/porting/psa/spm.md"
+                    },
+                    {
+                        "path": "docs/porting/psa/crypto.md"
                     }
                 ]
             },
