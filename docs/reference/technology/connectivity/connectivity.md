@@ -93,7 +93,6 @@ Because of its long range (up to 20 km) and low power, it is suitable for low da
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutorial.html) describe LoRA networking.
 
-
 #### NFC
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>NFC</span></span>
@@ -102,9 +101,9 @@ Near-field communication (NFC) is a short range (few centimeters) wireless techn
 
 To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview](../apis/nfc.html).
 
-#### NB-IoT Cellular
+#### NB-IoT cellular
 
-Non-IP Data Delivery(NIDD) is a new feature for communication over NB-IoT. It is enabled by Control Plane CIoT EPS optimization and meant to provide improved support of small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
+Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. It is enabled by Control Plane cellular IoT EPS optimization and meant to provide improved support of small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
 
 To learn how to use this feature with Mbed OS, please refer to [CellularNonIPSocket](../apis/cellularnonipsocket.html).
 
