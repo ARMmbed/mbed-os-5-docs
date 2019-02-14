@@ -1520,6 +1520,10 @@
                         {
                             "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/porting/psa/spm.md"
+                        },
+                        {
+                            "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/porting/psa/crypto.md"
                         }
                     ]
                 },
