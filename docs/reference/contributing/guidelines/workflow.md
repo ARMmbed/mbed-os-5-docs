@@ -168,7 +168,7 @@ You can see test results [here](just an example).
 
 Each pull request goes through the following workflow:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Workflow.png)<span>The workflow of merging a pull request</span></span>
+![Pull request workflow](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/5.11/docs/images/Workflow.png)
 
 ### Pull request states
 
