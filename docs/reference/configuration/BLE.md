@@ -8,7 +8,7 @@ To understand what each feature provides please refer to the API docs and the Bl
 
 To minimise the size of the BLE stack, BLE defines a set of build options.
 
-The configuration is contained in the `mbed_lib.json` configuration file. By default all the features are enabled.
+The configuration is contained in the `mbed_lib.json` configuration file located in `mbed-os/features/FEATURE_BLE/`. By default all the features are enabled.
 
 Turning off individual features will remove the code and any memory allocations required by that feature. Some features depend on each other - see the comments in the configuration file. These dependencies will be enforced during compile time.
 
@@ -36,17 +36,30 @@ By changing `"value": true,` to `false` you can disable each feature.
 
 These are feature that can be disabled:
 
-- observer (scanning)
-- broadcaster (advertising)
-- peripheral (a connectable broadcaster)
-- central (an observer that can connect)
-- gatt client
-- gatt server
-- security (link encryption, key management)
-- secure connections
-- signing
-- whitelist (filtering based on a list of known devices)
-- privacy (resolving random addresses based on keys)
-- phy management (2M and Coded PHYs)
-- extended advertising
-- periodic advertising
+| Feature              | Config option name                 | Description                               | Dependency  |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Observer             | `ble-role-observer`                | Observer role, allows listening for
+                                                              and processing advertising packets        | None        |
+| Broadcaster          | `ble-role-broadcaster`             | Broadcaster role, allows sending
+                                                              advertising packets.                      | None        |
+| Central              | `ble-role-central`                 | Central role, initiates connections       | Observer    |
+| Peripheral           | `ble-role-peripheral`              | Peripheral role, accepts connections      | Broadcaster |
+| GATT Client          | `ble-feature-gatt-client`          | GATT Client support (requests remote
+                                                              operations on attributes).                | Peripheral 
+                                                                                                          or Central  |
+| GATT Server          | `ble-feature-gatt-server`          | GATT Server support (executes
+                                                              operations on stored attributes).         | Peripheral
+                                                                                                          or Central  |
+| Security             | `ble-feature-security`             | Security support (keys management).       | Peripheral
+                                                                                                          or Central  |
+| Secure Connections   | `ble-feature-secure-connections`   | Secure Connections support.               | Security    |
+| Signing              | `ble-feature-signing`              | Signing support (signed writes).          | Security    |
+| Whitelist            | `ble-feature-whitelist`            | whitelist support (peer filtering).       | Security    |
+| Privacy              | `ble-feature-privacy`              | Privacy support (random resolvable
+                                                              addresses).                               | Security    |
+| PHY Management       | `ble-feature-phy-management`       | Additional PHY support (2M and Coded).    | None        |
+| Extended Advertising | `ble-feature-extended-advertising` | Extended advertising support (multiple
+                                                              advertising sets, secondary channels)     | Phy
+                                                                                                          Management  |
+| Periodic Advertising | `ble-feature-periodic-advertising` | Periodic advertising support.             | Extended
+                                                                                                          Advertising |
