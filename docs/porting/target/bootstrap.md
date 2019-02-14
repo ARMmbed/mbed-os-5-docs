@@ -18,7 +18,7 @@ If you are updating your own linker script, you must:
 
 - Reserve space for the RAM vector table.
 - Define the heap region:
-    - Arm - The heap starts immediately after the region `RW_IRAM1` and ends at the start of the `ARM_LIB_STACK` region.
+    - Arm - The heap is the `ARM_LIB_HEAP` region.
     - GCC_ARM - The heap starts at the symbol `__end__` and ends at the `__HeapLimit` symbol.
     - IAR - The heap is the `HEAP` region.
 - Define the boot stack region:
@@ -38,43 +38,44 @@ Arm linker script template:
 
 /* Device specific values */
 
-#define ROM_START   0x08000000
-#define ROM_SIZE    0x200000
-#define RAM_START   0x20000000
-#define RAM_SIZE    0x30000
-#define VECTORS     107   /* This value must match NVIC_NUM_VECTORS */
+/* Tools provide -DMBED_ROM_START=xxx -DMBED_ROM_SIZE=xxx -DMBED_RAM_START=xxx -DMBED_RAM_SIZE=xxx */
+
+#define VECTORS     xx   /* This value must match NVIC_NUM_VECTORS */
 
 /* Common - Do not change */
 
 #if !defined(MBED_APP_START)
-  #define MBED_APP_START ROM_START
+  #define MBED_APP_START  MBED_ROM_START
 #endif
 
 #if !defined(MBED_APP_SIZE)
-  #define MBED_APP_SIZE ROM_SIZE
+  #define MBED_APP_SIZE  MBED_ROM_SIZE
 #endif
 
 #if !defined(MBED_BOOT_STACK_SIZE)
-  /* This value is normally defined by the tools 
-     to 0x400 for mbed 2 and 0x1000 for mbed 5 */
-  #define MBED_BOOT_STACK_SIZE 0x1000
+/* This value is normally defined by the tools to 0x1000 for baremetal and 0x400 for RTOS */
+  #define MBED_BOOT_STACK_SIZE  0x400
 #endif
 
 /* Round up VECTORS_SIZE to 8 bytes */
-#define VECTORS_SIZE (((VECTORS * 4) + 7) AND ~7)
+#define VECTORS_SIZE  (((VECTORS * 4) + 7) AND ~7)
 
-LR_IROM1 MBED_APP_START MBED_APP_SIZE  {
+LR_IROM1  MBED_APP_START  MBED_APP_SIZE  {
 
-  ER_IROM1 MBED_APP_START MBED_APP_SIZE  {
+  ER_IROM1  MBED_APP_START  MBED_APP_SIZE  {
     *.o (RESET, +First)
     *(InRoot$$Sections)
     .ANY (+RO)
   }
 
-  RW_IRAM1 (RAM_START + VECTORS_SIZE) (RAM_SIZE - VECTORS_SIZE - MBED_BOOT_STACK_SIZE)  {  ; RW data
+  RW_IRAM1  (RAM_START + VECTORS_SIZE)  {  ; RW data
     .ANY (+RW +ZI)
   }
-  ARM_LIB_STACK (RAM_START + RAM_SIZE) EMPTY -MBED_BOOT_STACK_SIZE { ; Stack region growing down
+
+  ARM_LIB_HEAP  AlignExpr(+0, 16)  EMPTY  (MBED_RAM_START + MBED_RAM_SIZE - MBED_BOOT_STACK_SIZE - AlignExpr(ImageLimit(RW_IRAM1), 16))  { ; Heap growing up
+  }
+
+  ARM_LIB_STACK  (RAM_START + RAM_SIZE)  EMPTY  -MBED_BOOT_STACK_SIZE  { ; Stack region growing down
   }
 }
 ```
@@ -84,33 +85,31 @@ IAR linker script template:
 ```
 /* Device specific values */
 
-define symbol ROM_START   = 0x08000000;
-define symbol ROM_SIZE    = 0x200000;
-define symbol RAM_START   = 0x20000000;
-define symbol RAM_SIZE    = 0x30000;
-define symbol VECTORS     = 107; /* This value must match NVIC_NUM_VECTORS */
+/* Tools provide -DMBED_ROM_START=xxx -DMBED_ROM_SIZE=xxx -DMBED_RAM_START=xxx -DMBED_RAM_SIZE=xxx */
+
+define symbol VECTORS     = xx; /* This value must match NVIC_NUM_VECTORS */
 define symbol HEAP_SIZE   = 0x10000;
 
 /* Common - Do not change */
 
 if (!isdefinedsymbol(MBED_APP_START)) {
-    define symbol MBED_APP_START = ROM_START;
+    define symbol MBED_APP_START = MBED_ROM_START;
 }
 
 if (!isdefinedsymbol(MBED_APP_SIZE)) {
-    define symbol MBED_APP_SIZE = ROM_SIZE;
+    define symbol MBED_APP_SIZE = MBED_ROM_SIZE;
 }
 
 if (!isdefinedsymbol(MBED_BOOT_STACK_SIZE)) {
     /* This value is normally defined by the tools 
-        to 0x400 for mbed 2 and 0x1000 for mbed 5 */
-    define symbol MBED_BOOT_STACK_SIZE = 0x1000;
+        to 0x1000 for baremetal and 0x400 for RTOS */
+    define symbol MBED_BOOT_STACK_SIZE = 0x400;
 }
 
 /* Round up VECTORS_SIZE to 8 bytes */
 define symbol VECTORS_SIZE = ((VECTORS * 4) + 7) & ~7;
-define symbol RAM_REGION_START = RAM_START + VECTORS_SIZE;
-define symbol RAM_REGION_SIZE = RAM_SIZE - VECTORS_SIZE;
+define symbol RAM_REGION_START = MBED_RAM_START + VECTORS_SIZE;
+define symbol RAM_REGION_SIZE = MBED_RAM_SIZE - VECTORS_SIZE;
 
 define memory mem with size = 4G;
 define region ROM_region = mem:[from MBED_APP_START size MBED_APP_SIZE];
@@ -135,25 +134,23 @@ GCC linker script template:
 ```
 /* Device specific values */
 
-#define ROM_START   0x08000000
-#define ROM_SIZE    0x200000
-#define RAM_START   0x20000000
-#define RAM_SIZE    0x30000
-#define VECTORS     107   /* This value must match NVIC_NUM_VECTORS */
+/* Tools provide -DMBED_ROM_START=xxx -DMBED_ROM_SIZE=xxx -DMBED_RAM_START=xxx -DMBED_RAM_SIZE=xxx */
+
+#define VECTORS     xx   /* This value must match NVIC_NUM_VECTORS */
 
 /* Common - Do not change */
 
 #if !defined(MBED_APP_START)
-  #define MBED_APP_START ROM_START
+  #define MBED_APP_START  MBED_ROM_START
 #endif
 
 #if !defined(MBED_APP_SIZE)
-  #define MBED_APP_SIZE ROM_SIZE
+  #define MBED_APP_SIZE  MBED_ROM_SIZE
 #endif
 
 #if !defined(MBED_BOOT_STACK_SIZE)
     /* This value is normally defined by the tools 
-       to 0x400 for mbed 2 and 0x1000 for mbed 5 */
+       to 0x1000 for baremetal and 0x400 for RTOS */
     #define MBED_BOOT_STACK_SIZE 0x1000
 #endif
 
@@ -163,7 +160,7 @@ GCC linker script template:
 MEMORY
 {
     FLASH (rx)   : ORIGIN = MBED_APP_START, LENGTH = MBED_APP_SIZE
-    RAM (rwx)    : ORIGIN = RAM_START + VECTORS_SIZE, LENGTH = RAM_SIZE - VECTORS_SIZE
+    RAM (rwx)    : ORIGIN = MBED_RAM_START + VECTORS_SIZE, LENGTH = MBED_RAM_SIZE - VECTORS_SIZE
 }
 
 /* Linker script to place sections and symbol values. Should be used together
@@ -258,7 +255,6 @@ SECTIONS
         KEEP(*(SORT(.init_array.*)))
         KEEP(*(.init_array))
         PROVIDE_HIDDEN (__init_array_end = .);
-
 
         . = ALIGN(4);
         /* finit data */
