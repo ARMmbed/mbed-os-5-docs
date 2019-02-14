@@ -35,31 +35,44 @@ By changing `"value": true,` to `false` you can disable each feature.
 ##### Configurable features
 
 These are feature that can be disabled:
-
+```
+|----------------------|------------------------------------|-------------------------------------------|-------------|
 | Feature              | Config option name                 | Description                               | Dependency  |
 |----------------------|------------------------------------|-------------------------------------------|-------------|
-| Observer             | `ble-role-observer`                | Observer role, allows listening for
-                                                              and processing advertising packets        | None        |
-| Broadcaster          | `ble-role-broadcaster`             | Broadcaster role, allows sending
-                                                              advertising packets.                      | None        |
+| Observer             | `ble-role-observer`                | Observer role, allows listening for       | None        |
+|                                                           | and processing advertising packets         |             |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Broadcaster          | `ble-role-broadcaster`             | Broadcaster role, allows sending          | None        |
+|                                                           | advertising packets.                      |             |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
 | Central              | `ble-role-central`                 | Central role, initiates connections       | Observer    |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
 | Peripheral           | `ble-role-peripheral`              | Peripheral role, accepts connections      | Broadcaster |
-| GATT Client          | `ble-feature-gatt-client`          | GATT Client support (requests remote
-                                                              operations on attributes).                | Peripheral 
-                                                                                                          or Central  |
-| GATT Server          | `ble-feature-gatt-server`          | GATT Server support (executes
-                                                              operations on stored attributes).         | Peripheral
-                                                                                                          or Central  |
-| Security             | `ble-feature-security`             | Security support (keys management).       | Peripheral
-                                                                                                          or Central  |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| GATT Client          | `ble-feature-gatt-client`          | GATT Client support (requests remote      | Peripheral  | 
+|                                                           | operations on attributes).                | or Central  |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| GATT Server          | `ble-feature-gatt-server`          | GATT Server support (executes             | Peripheral  |
+|                                                           | operations on stored attributes).         | or Central  |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Security             | `ble-feature-security`             | Security support (keys management).       | Peripheral  |
+|                                                           |                                           | or Central  |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
 | Secure Connections   | `ble-feature-secure-connections`   | Secure Connections support.               | Security    |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
 | Signing              | `ble-feature-signing`              | Signing support (signed writes).          | Security    |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
 | Whitelist            | `ble-feature-whitelist`            | whitelist support (peer filtering).       | Security    |
-| Privacy              | `ble-feature-privacy`              | Privacy support (random resolvable
-                                                              addresses).                               | Security    |
-| PHY Management       | `ble-feature-phy-management`       | Additional PHY support (2M and Coded).    | None        |
-| Extended Advertising | `ble-feature-extended-advertising` | Extended advertising support (multiple
-                                                              advertising sets, secondary channels)     | Phy
-                                                                                                          Management  |
-| Periodic Advertising | `ble-feature-periodic-advertising` | Periodic advertising support.             | Extended
-                                                                                                          Advertising |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Privacy              | `ble-feature-privacy`              | Privacy support (random resolvable        | Security    |
+|                                                           | addresses).                               |             |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Phy Management       | `ble-feature-phy-management`       | Additional PHY support (2M and Coded).    | None        |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Extended Advertising | `ble-feature-extended-advertising` | Extended advertising support (multiple    | Phy         |
+|                                                           | advertising sets, secondary channels)     | Management  |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+| Periodic Advertising | `ble-feature-periodic-advertising` | Periodic advertising support.             | Extended    |
+|                      |                                    |                                           | Advertising |
+|----------------------|------------------------------------|-------------------------------------------|-------------|
+```                                                                                                          Advertising |
