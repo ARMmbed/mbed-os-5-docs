@@ -29,6 +29,8 @@ def main(file):
                 out = subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]).decode()
                 file = file[:start+4] + out[:out.index("Macros") - 1] + file[end:]
 
+        # Originally added for debugging purposes, catch and display exceptions before
+        # continuing without exiting to provide a complete list of errors found 
         except Exception as e:
             print("Error")
             print(e)
