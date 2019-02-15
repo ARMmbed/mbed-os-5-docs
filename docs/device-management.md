@@ -1,8 +1,6 @@
 <h2 id="device-management">Device Management for Mbed OS</h2>
 
-(This was previously called Simple Mbed Cloud Client.)
-
-This provides a way to add device management capabilities to Mbed OS devices using the Arm Pelion Device Management IoT platform.
+This feature provides a way to add device management capabilities to Mbed OS devices using the Arm Pelion Device Management IoT platform.
 
 It:
 
