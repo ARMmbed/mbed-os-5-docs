@@ -1257,6 +1257,22 @@
             }
         ]
     },
+     {
+        "title": "Device Management for Mbed OS",
+        "description": "",
+        "slug": "device-management",
+        "type": "markdown",
+        "sources": [{
+                "path": "docs/device-management.md"
+            },
+            {
+                "path": "docs/device-management-config.md"
+            },
+            {
+                "path": "docs/device-management-test.md"
+            }
+        ]
+    },
     {
         "title": "feature-hal-spec-usb-device doxygen",
         "description": "The full mbed OS API documentation in doxygen format",
