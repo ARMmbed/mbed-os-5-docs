@@ -151,7 +151,7 @@ GCC linker script template:
 #if !defined(MBED_BOOT_STACK_SIZE)
     /* This value is normally defined by the tools 
        to 0x1000 for baremetal and 0x400 for RTOS */
-    #define MBED_BOOT_STACK_SIZE 0x1000
+    #define MBED_BOOT_STACK_SIZE 0x400
 #endif
 
 /* Round up VECTORS_SIZE to 8 bytes */
@@ -234,8 +234,8 @@ SECTIONS
 
     /* Location counter can end up 2byte aligned with narrow Thumb code but
        __etext is assumed by startup code to be the LMA of a section in RAM
-       which must be 4byte aligned */
-    __etext = ALIGN (4);
+       which must be 8-byte aligned */
+    __etext = ALIGN (8);
 
     .data : AT (__etext)
     {
@@ -243,20 +243,20 @@ SECTIONS
         *(vtable)
         *(.data*)
 
-        . = ALIGN(4);
+        . = ALIGN(8);
         /* preinit data */
         PROVIDE_HIDDEN (__preinit_array_start = .);
         KEEP(*(.preinit_array))
         PROVIDE_HIDDEN (__preinit_array_end = .);
 
-        . = ALIGN(4);
+        . = ALIGN(8);
         /* init data */
         PROVIDE_HIDDEN (__init_array_start = .);
         KEEP(*(SORT(.init_array.*)))
         KEEP(*(.init_array))
         PROVIDE_HIDDEN (__init_array_end = .);
 
-        . = ALIGN(4);
+        . = ALIGN(8);
         /* finit data */
         PROVIDE_HIDDEN (__fini_array_start = .);
         KEEP(*(SORT(.fini_array.*)))
@@ -264,19 +264,32 @@ SECTIONS
         PROVIDE_HIDDEN (__fini_array_end = .);
 
         KEEP(*(.jcr*))
-        . = ALIGN(4);
+        . = ALIGN(8);
         /* All data end */
         __data_end__ = .;
 
     } > RAM
 
+    /* Uninitialized data section
+     * This region is not initialized by the C/C++ library and can be used to
+     * store state across soft reboots. */
+    .uninitialized (NOLOAD):
+    {
+        . = ALIGN(32);
+        __uninitialized_start = .;
+        *(.uninitialized)
+        KEEP(*(.keep.uninitialized))
+        . = ALIGN(32);
+        __uninitialized_end = .;
+    } > RAM
+    
     .bss :
     {
-        . = ALIGN(4);
+        . = ALIGN(8);
         __bss_start__ = .;
         *(.bss*)
         *(COMMON)
-        . = ALIGN(4);
+        . = ALIGN(8);
         __bss_end__ = .;
     } > RAM
 
