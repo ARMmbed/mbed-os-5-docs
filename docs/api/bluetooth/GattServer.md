@@ -18,13 +18,7 @@ You can query the server by invoking the function `areUpdatesEnabled()` to find 
 
 #### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
 
-`ATT_MTU` is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet are split across multiple operations.
-
-This is independent of the data length, which controls the over-the-air packet payload size (which the GAP handles). An L2CAP packet containing the attribute protocol packet is fragmented over many packets if required.
-
-Only `GattClient` can trigger the exchange of `ATT_MTU` between client and server. If an exchange happens, the biggest value possible across both devices will be used. 
-
-`ATT_MTU` is at least 23 octets by default. If a larger size is negotiated, the user application will be informed through the `onAttMtuChange` function called in the `GattServer::EventHandler`. (`GattClient::EventHandler` is also informed.)
+See [GattClient Documentation](../apis/gattclient.html).
 
 #### Events
 
