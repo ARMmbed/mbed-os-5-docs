@@ -44,8 +44,7 @@ Example configuration files are provide under `configs/` directory. You may over
 
 An example of the `mbed_app.json` file:
 
-```
-...
+``` json
     "target_overrides": {
         "*": {
             "nanostack.configuration": "lowpan_router",
@@ -62,7 +61,8 @@ An example of the `mbed_app.json` file:
             "mcr20a.provide-default": false,
             "target.device_has_add": ["802_15_4_PHY"],
             "target.network-default-interface-type": "MESH"
-        },
+        }
+    }
 ```
 
 The following tables show the values to use in the `mbed_app.json` file for your devices in different networks.
@@ -120,7 +120,7 @@ To change the RF driver, modify the `mbed_app.json` file by setting preferred RF
 
 ```json
 "atmel-rf.provide-default": false,
-"mcr20a.provide-default": true,
+"mcr20a.provide-default": true
 ```
 
 ### Compile the application
@@ -194,7 +194,7 @@ Nanostack uses internal heap, which you can configure in the `.json`. A thread e
 In `mbed_app.json`, you find the following line:
 
 ```
-"mbed-mesh-api.heap-size": 15000,
+"mbed-mesh-api.heap-size": 15000
 ```
 
 For 6LoWPAN, you can try 12 kB. For the smallest memory use, configure the node to be in nonrouting mode. See [module-configuration](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api#module-configuration) for more detail.
@@ -208,7 +208,7 @@ The Mesh API has the [use-malloc-for-heap](https://github.com/ARMmbed/mbed-os/bl
 Add the following line to `mbed_app.json` to test:
 
 ```
-"mbed-mesh-api.use-malloc-for-heap": true,
+"mbed-mesh-api.use-malloc-for-heap": true
 ```
 
 #### Use release profile
