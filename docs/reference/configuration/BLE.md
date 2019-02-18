@@ -36,10 +36,10 @@ By changing `"value": true,` to `false` you can disable each feature.
 
 These are feature that can be disabled:
 
+```
 Configuration parameters
 ------------------------
 
-```
 Name: ble.ble-role-observer
     Description: Include observer BLE role support (scanning for and processing advertising packets).
     Defined by: library:ble
