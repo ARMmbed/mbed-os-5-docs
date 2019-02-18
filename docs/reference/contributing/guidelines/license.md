@@ -30,7 +30,7 @@ The full text of the license can be found on the [Apache website](http://www.apa
 
 In order to clearly reflect the Apache 2.0 license, please create two text files:
 
-- A *LICENSE* file with the following text:
+- A *LICENSE.md* file with the following text:
 
    ```
    Unless specifically indicated otherwise in a file, files are licensed under the Apache 2.0 license,
@@ -69,7 +69,7 @@ The full text can be found on [mbed.com](https://www.mbed.com/licenses/PBL-1.0).
 
 In order to clearly reflect the PBL license, please create three text files:
 
-- A *LICENSE* file with:
+- A *LICENSE.md* file with:
 
 <pre>Unless specifically indicated otherwise in a file, files are licensed under the Permissive Binary License,
 as can be found in: LICENSE-permissive-binary-license-1.0.txt</pre>
@@ -96,13 +96,13 @@ See the License for the specific language governing permissions and limitations
 
 If you decide to use a different license for your work, follow the same pattern:
 
-- Create a *LICENSE* file with a description of the license situation, following the pattern described in the sections above.
+- Create a *LICENSE.md* file with a description of the license situation, following the pattern described in the sections above.
 
 - Put the full original license texts in separate documents named *LICENSE-XYZ.txt*, where XYZ is the corresponding [SPDX identifier](http://spdx.org/licenses/) for your license.
 
 - Begin each source header with your copyright line, the SPDX identifier and the standard header for the license that applies to that single file, if it has one. (See [SPDX Specification, Appendix V](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b).)
 
-- If more than one license applies to the source file, then use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE* file and in each source file.
+- If more than one license applies to the source file, then use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE.md* file and in each source file.
 
 ### Contributing to the Mbed OS codebase
 
