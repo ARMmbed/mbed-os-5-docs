@@ -1209,6 +1209,9 @@
                     "path": "docs/porting/connectivity/connectivity.md"
                 },
                 "sources": [{
+                        "path": "docs/porting/connectivity/Layer3IP.md"
+                    },
+                    {
                         "path": "docs/porting/connectivity/ethernet.md"
                     },
                     {
