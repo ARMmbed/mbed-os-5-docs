@@ -1145,6 +1145,9 @@
                         "path": "docs/porting/target/rtc.md"
                     },
                     {
+                        "path": "docs/porting/target/spi.md"
+                    },
+                    {
                         "path": "docs/porting/target/QuadSPI.md"
                     },
                     {
