@@ -15,11 +15,11 @@ NetworkInterface is also the controlling API that the application uses to specif
 
 When you create a network interface, it starts from the disconnected state. When you call `NetworkInteface::connect()`, the interface stays connected until you call `NetworkInterface::disconnect()`. The following diagram illustrates the state changes:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NetworkinterfaceStates.png)<span>Network states</span></span>
+<span class="images">![](../../images/NetworkinterfaceStates.png)<span>Network states</span></span>
 
-The interface handles all state changes itself between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. 6LoWPAN-ND returns when it connects to a border router that provides global connection. The thread returns when you create a local mesh network and may later get global connection when it finds a border router.
+The interface handles all state changes itself between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. 6LoWPAN-ND returns when it connects to a border router that provides global connection. The Thread returns when you create a local mesh network and may later get global connection when it finds a border router.
 
-When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal back off periods, and not all interfaces implement the reconnection logic.
+When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface usually reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal back off periods, and not all interfaces implement the reconnection logic at all. Refer to table below on how different interfaces behave.
 
 An application may check the connection status by calling `nsapi_connection_status_t get_connection_status()` or register a callback to monitoring status changes. The following table lists defined network states with actions that applictions should take on the state change:
 
@@ -34,6 +34,17 @@ An application may check the connection status by calling `nsapi_connection_stat
 Use the following API to register status callbacks:
 
 - [Network status](network-status.html): API for monitoring network status changes.
+
+Error handling and reconnection logic depends on the network interface used. Use following table to determine what actions your application needs to do on each network type.
+
+| `NetworkInterface` sub class | Does it reconnect automatically? | Possible states |
+|------------------------------|---------------------------------|-----------------|
+| `EthernetInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
+| `WiFiInterface` | Yes, when onboard network stack is used.<br />For external modules, it depends on the driver.<br />See examples below. | - |
+| `OdinWiFiInterface` or<br /> `RTWInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
+| `ESP8266Interface` | Yes  | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
+| `CellularInterface` | Mostly no | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`<br />`CellularInterface` may also send Cellular specific states specified in `CellularCommon.h` |
+| `LoWPANNDInterface` or<br />`ThreadInterface` or<br />`WisunInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />4.`NSAPI_STATUS_LOCAL_UP`<br />4.`NSAPI_STATUS_GLOBAL_UP`|
 
 ### Default network interface
 
@@ -96,6 +107,17 @@ if (wifi) {
     // call WiFi-specific methods
 }
 ```
+
+### Notes on portable applications
+
+When application is expected to be portable between different network interfaces, following guidelines should be used:
+
+1. Use only `NetworkInterface::get_default_instance()` for getting the interface.
+2. Register network status handler and implement reconnection logic.
+
+See previous section [Default network interface](#default-network-interface) on how to use the portable API for network interface.
+
+For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
 ### Related content
 
