@@ -18,7 +18,7 @@ You can query the server by invoking the function `areUpdatesEnabled()` to find 
 
 #### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
 
-See [GattClient Documentation](../apis/gattclient.html).
+The Attribute Protocol Maximum Transmission Unit (`ATT_MTU`) is the maximum size of the attribute protocol packet. For details, please see the [GattClient Documentation](../apis/gattclient.html).
 
 #### Events
 
