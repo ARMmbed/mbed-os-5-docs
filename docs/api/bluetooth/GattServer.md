@@ -1,6 +1,8 @@
 ## GattServer
 
-A GattServer is a collection of GattServices. These services contain characteristics that a peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
+You can use Generic Attribute Profile (GATT) to discover services, characteristics and descriptors and to perform operations on them. The interaction happens between two peers, one of which is the client (which initiates interactions) and the other is the server (which responds). You can use Attribute Protocol (ATT) to implement this interaction.
+
+`GattServer` is a collection of GattServices. These services contain characteristics that a `GattClient` on the peer connected to the device may read or write. These characteristics may also emit updates to subscribed clients when their values change.
 
 #### Server layout
 
@@ -13,6 +15,10 @@ There are no defined primitives that remove a single service; however, a call to
 You must access values of the characteristic and the characteristic descriptor present in the GattServer through the handle assigned to them when you registered the service. The GattServer class offers several types of `read()` and `write()` functions that retrieve or mutate an attribute value.
 
 You can query the server by invoking the function `areUpdatesEnabled()` to find out if a client has subscribed to a given characteristic's value update.
+
+#### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
+
+The Attribute Protocol Maximum Transmission Unit (`ATT_MTU`) is the maximum size of the attribute protocol packet. For details, please see the [GattClient Documentation](../apis/gattclient.html).
 
 #### Events
 
