@@ -1,6 +1,6 @@
 <h2 id="l3-porting">IP Layer3 (L3IP) drivers</h2>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/l3ip.png)<span>L3IP API</span></span>
+![L3IP API](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/blob/development/docs/images/l3ip.png)
 
 This document describes how to port and test a cellular IP Layer3 (L3IP) driver to Mbed OS.
 
@@ -10,7 +10,7 @@ If the device has an off-board network stack, a driver needs to implement [Netwo
  
 ### Abstractions
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/l3ip-driver.png)<span>L3IP driver</span></span>
+![L3IP driver](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/blob/development/docs/images/l3ip-driver.png)
 
 The L3IP interface abstracts network stacks and drivers and easily permits multiple instances. The key API classes are:
 
