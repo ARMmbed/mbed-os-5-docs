@@ -6,7 +6,7 @@ The constructor takes no parameters. To initialize the socket on a specified Net
 
 [`CellularContext`](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h.html) sets up the modem into the Control Plane optimization mode of operation if it is requested and if the cellular network supports it.
 
-Control plane optimization is a new feature for cellular IoT (CIoT). With it, the device can use cellular control channels for data communications, to save power and resources. It does this by using less radio singling.
+Control plane optimization is a new feature for cellular IoT (CIoT). With it, the device can use cellular control channels for data communications, to save power and resources by using less radio signaling.
 
 Note: <span class="notes">**Note:** Non-IP use usually requires integration to a cellular operator messaging service. The service supports a web API to send to and receive the non-IP using devices.</span>
 
