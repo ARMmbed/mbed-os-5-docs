@@ -42,7 +42,6 @@ When configuring MbedTLS on Mbed OS, developers should add the Mbed TLS ciphersu
 "mbedtls.ecdhe-ecdsa-with-aes-128-gcm-sha256": 1
 ```
 in their `target_overrides` section. Developer should include as many ciphersuites as they deem necessary, keeping in mind that the more they add, the larger the binary footprint of MbedTLS will be on their device.
-
 ### Pelion Client
 As a shortcut, the configuration system supports an option, `mbedtls.pelion-client`, that enables the ciphersuites required by the Pelion Cloud Service. To allow a device to connect to Pelion, developers need only enable this option.
 
