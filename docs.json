@@ -919,6 +919,9 @@
                         "path": "docs/tutorials/using_apis/connectivity/cellular_tcp.md"
                     },
                     {
+                        "path": "docs/tutorials/using_apis/connectivity/light-control.md"
+                    },
+                    {
                         "path": "docs/tutorials/using_apis/ble_tutorial.md"
                     },
                     {
