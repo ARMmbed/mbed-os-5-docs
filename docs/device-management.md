@@ -45,7 +45,7 @@ Useful references:
 
 1. Reference the library from the `main.cpp` file, and add network and storage drivers. Finally, initialize the SimpleMbedCloudClient library. This is the architecture of a device management application with Mbed OS:
 
-    ```cpp
+    ```cpp NOCI
     #include "simple-mbed-cloud-client.h"
     #include <Block device>
     #include <Filesystem>
