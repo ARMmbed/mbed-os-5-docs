@@ -1,4 +1,4 @@
-## Example mesh application for Mbed OS
+<h2 id="light-control">Light control tutorial</h2>
 
 The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
