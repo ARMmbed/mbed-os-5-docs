@@ -25,7 +25,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <tbody>
 <tr>
 <td><a href="cellular-tcp-sockets.html">TCP sockets tutorial</a></td>
-<td><a href="../apis/mesh-api.html#mesh-example">Mesh example</a></td>
+<td><a href="../tutorials/light-control.html">Mesh light control tutorial</a></td>
 <td><a href="../apis/heartrateservice.html#heartrateservice-example">BLE heart rate example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer">BLE thermometer example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nfc-SmartPoster">NFC example</a></td>
