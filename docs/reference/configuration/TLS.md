@@ -42,6 +42,136 @@ When configuring MbedTLS on Mbed OS, developers should add the Mbed TLS ciphersu
 "mbedtls.ecdhe-ecdsa-with-aes-128-gcm-sha256": 1
 ```
 in their `target_overrides` section. Developer should include as many ciphersuites as they deem necessary, keeping in mind that the more they add, the larger the binary footprint of MbedTLS will be on their device.
+
+### Configuration Paramaters
+
+The following list can be found locally by running `mbed compile --config -v --prefix mbedtls`.
+
+```
+Configuration parameters
+------------------------
+Name: mbedtls.app-config-file
+    Description: Use an application provided config file instead of any other MBEDTLS configuration options
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-ecdsa-with-aes-128-cbc-sha256
+    Description: Include support for the TLS-ECDH-ECDSA-WITH-AES-128-CBC-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-ecdsa-with-aes-128-gcm-sha256
+    Description: Include support for the TLS-ECDH-ECDSA-WITH-AES-128-GCM-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-ecdsa-with-aes-256-cbc-sha384
+    Description: Include support for the TLS-ECDH-ECDSA-WITH-AES-256-CBC-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-ecdsa-with-aes-256-gcm-sha384
+    Description: Include support for the TLS-ECDH-ECDSA-WITH-AES-256-GCM-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-rsa-with-aes-128-cbc-sha256
+    Description: Include support for TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-rsa-with-aes-128-gcm-sha256
+    Description: Include support for the TLS-ECDH-RSA-WITH-AES-128-GCM-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-rsa-with-aes-256-cbc-sha384
+    Description: Include support for the TLS-ECDH-RSA-WITH-AES-256-CBC-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdh-rsa-with-aes-256-gcm-sha384
+    Description: Include support for the TLS-ECDH-RSA-WITH-AES-256-GCM-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdhe-ecdsa-with-aes-128-cbc-sha256
+    Description: Include support for the TLS-ECDHE-ECDSA-WITH-AES-128-CBC-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdhe-ecdsa-with-aes-128-gcm-sha256
+    Description: Include support for the TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256 ciphersuites
+    Defined by: library:mbedtls
+    Macro name: MBED_CONF_MBEDTLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    Value: 1 (set by library:mbedtls)
+Name: mbedtls.ecdhe-ecdsa-with-aes-256-cbc-sha384
+    Description: Include support for the TLS-ECDHE-ECDSA-WITH-AES-256-CBC-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdhe-ecdsa-with-aes-256-gcm-sha384
+    Description: Include support for the TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    Macro name: MBED_CONF_MBEDTLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    Value: 1 (set by library:mbedtls)
+Name: mbedtls.ecdhe-ecdsa-with-aes-ccm
+    Description: Include support for the TLS-ECDHE-ECDSA-WITH-AES-*-CCM* ciphersuites
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdhe-rsa-with-aes-128-cbc-sha256
+    Description: Include support for the TLS-ECDHE-RSA-WITH-AES-128-CBC-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdhe-rsa-with-aes-128-gcm-sha256
+    Description: Include support for TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.ecdhe-rsa-with-aes-256-cbc-sha384
+    Description: Include support for the TLS-ECDHE-RSA-WITH-AES-256-CBC-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    Macro name: MBED_CONF_MBEDTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+    Value: 1 (set by library:mbedtls)
+Name: mbedtls.ecdhe-rsa-with-aes-256-gcm-sha384
+    Description: Include support for the TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.pelion-client
+    Description: Include support needed to connect to Pelion Cloud
+    Defined by: library:mbedtls
+    Macro name: MBED_CONF_MBEDTLS_PELION_CLIENT
+    Value: 1 (set by library:mbedtls)
+Name: mbedtls.pelion-mini-client
+    Description: Include support needed to connect to Pelion Cloud as a mini client
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.psk-with-aes-128-cbc-sha256
+    Description: Include support for the TLS-PSK-WITH-AES-128-CBC-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.psk-with-aes-128-gcm-sha256
+    Description: Include support for the TLS-PSK-WITH-AES-128-GCM-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.psk-with-aes-256-cbc-sha384
+    Description: Include support for the TLS-PSK-WITH-AES-256-CBC-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.psk-with-aes-256-gcm-sha384
+    Description: Include support for the TLS-PSK-WITH-AES-256-GCM-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.psk-with-aes-ccm
+    Description: Include support for the TLS-PSK-WITH-AES-*-CCM* ciphersuites
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.rsa-with-aes-128-cbc-sha256
+    Description: Include support for the TLS-RSA-WITH-AES-128-CBC-SHA256 cipersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.rsa-with-aes-128-gcm-sha256
+    Description: Include support for the TLS-RSA-WITH-AES-128-GCM-SHA256 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.rsa-with-aes-256-cbc-sha256
+    Description: Include support for the TLS-RSA-WITH-AES-256-CBC-SHA256 cipersuite
+    Defined by: library:mbedtls
+    No value set
+Name: mbedtls.rsa-with-aes-256-gcm-sha384
+    Description: Include support for the TLS-RSA-WITH-AES-256-GCM-SHA384 ciphersuite
+    Defined by: library:mbedtls
+    No value set
+```
+
 ### Pelion Client
 As a shortcut, the configuration system supports an option, `mbedtls.pelion-client`, that enables the ciphersuites required by the Pelion Cloud Service. To allow a device to connect to Pelion, developers need only enable this option.
 
