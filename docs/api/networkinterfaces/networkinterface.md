@@ -119,6 +119,16 @@ See previous section [Default network interface](#default-network-interface) on 
 
 For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
+
+### Asynchronous operation
+
+`NetworkInterface::connect()` and `NetworkInterface::disconnect()` are blocking by default. When application prefers asyncronous operation
+it can set the interface into non-blocking mode by calling `NetworkInterface::set_blocking(false)`. This has to be done for each interface separately.
+
+When interface is operating in asyncronous mode, the return values of `connect()` and `disconnect()` have slightly different meaning. Basically calling `connect()` starts the asyncronous operation which aims to have the device in `GLOBAL_UP` state. Calling `disconnect()` has the target state being `DISCONNECTED`. Return codes in asyncronous mode do not anymore reflect the connection status. Most common return codes in asyncronous mode is `NSAPI_ERROR_OK` which means that operation just started. Refer to Doxygen documentation of [NetworkInterface::connect()](https://os.mbed.com/docs/mbed-os/v5.11/mbed-os-api-doxy/class_network_interface.html#aaf6bf1dfffbe6a5626b7b52eaa542b6e) and [NetworkInterface::disconnect()](https://os.mbed.com/docs/mbed-os/v5.11/mbed-os-api-doxy/class_network_interface.html#afdda3f62c7d73df183ee2d352e8cd146) for return values of these functions.
+
+For checking the whether the interface is connected, application needs to register the status callback for the interface. Refer to [Network status API](network-status.html) how to do it.
+
 ### Related content
 
 - [Configuring the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface).
