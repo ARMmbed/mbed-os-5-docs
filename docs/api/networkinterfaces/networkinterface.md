@@ -119,6 +119,18 @@ See previous section [Default network interface](#default-network-interface) on 
 
 For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
+### Using multiple network interfaces
+
+In Mbed OS, applications usually use just one network interface at a time, and most APIs are designed to work with such assumption.
+With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two build in IP stacks and numerous external IP stacks provided by modules. Refer to [Architecture:IP networking](reference/ip-networking.html) section for explanation of how different stacks are integrated into Mbed OS.
+
+When using two network interfaces where both are operating on different IP stacks, they can work independently, as there is no common data paths. Such example can be application that uses on-board Ethernet interface and any of the external WiFi modules.
+
+When using two network interfaces where both use the same IP stacks, there are limitations. Both IP stacks, LwIP and Nanostack, are build using assumption that there is only one active interface.
+For the Mbed OS 5.12, the LwIP routing core was modified to support multiple active interfaces, but it has its own limitations as well. When you have more than one active interfaces in LwIP, only one is the default, which all the outgoing traffic flows through.
+If you need to force the traffic to only one of the interface, you need to use `Socket::setsockopt(NSAPI_SOCKET, NSAPI_BIND_TO_DEVICE, <interface name>, <interface name length>)` to bind the socket into one interface. Interface name can get fetched from `NetworkInterface::get_interface_name()` call.
+
+Another, more common, case is where only one of the interface is active at a time. In this case, there is no need for `Socket::setsockopt()` if another interface is brought down as there is only one route option. This works when LwIP is used, but not verified with Nanostack as it is used only on specific use cases. like mesh routing.
 
 ### Asynchronous operation
 
