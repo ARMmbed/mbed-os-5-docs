@@ -26,14 +26,8 @@ void send_data()
 
 ```
 
-### attach_idle_hook() example
+### Kernel hooks example
 
-The function `attach_idle_hook()` can be used to attach a function to be called by the RTOS idle task. The below code snippet demostrates the usage.
-
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kernel-hooks)](https://github.com/ARMmbed/mbed-os-example-kernel-hooks/blob/master/main.cpp)
-
-### attach_thread_terminate_hook() example
-
-The function `attach_thread_terminate_hook()` can be used to attach a function to be called when a thread terminates.
+You can use the function `attach_idle_hook()` to attach a function to be called by the RTOS idle task. You can use the function `attach_thread_terminate_hook()` to attach a function to be called when a thread terminates. The below code snippet demostrates the usage of these hooks.
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kernel-hooks)](https://github.com/ARMmbed/mbed-os-example-kernel-hooks/blob/master/main.cpp)
