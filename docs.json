@@ -1463,6 +1463,10 @@
                         },
                         {
                             "type": "markdown",
+                            "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/porting/target/spi.md"
+                        },
+                        {
+                            "type": "markdown",
                             "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/porting/target/QuadSPI.md"
                         },
                         {
