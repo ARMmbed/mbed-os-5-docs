@@ -2,7 +2,7 @@
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NetworkinterfaceStates.png)<span>Network states</span></span>
+<span class="images">![](../../images/NetworkinterfaceStates.png)<span>Network states</span></span>
 
 #### Usage
 
@@ -73,6 +73,40 @@ Optionally, the application might want to set the `connect()` method to nonblock
 ```
 
 By default, the `connect()` call blocks until `NSAPI_STATUS_GLOBAL_UP` state is reached. Some applications might require only link-local connectivity and therefore do not need to block that long. In those case monitoring the state changes is the preferred behavior.
+
+### Using multiple connection status callbacks
+
+In Mbed OS 5.12, the NetworkInterface API is extended with two new functions regarding status callbacks. Applications now have possibility to use these new APIs to register more than one callback per network interface. New APIs is as follows:
+
+```
+    /** Add event listener for interface.
+     *
+     * This API allows multiple callback to be registered for a single interface.
+     * When first called, internal list of event handlers are created and registered to
+     * interface through attach() API.
+     *
+     * Application may only use attach() or add_event_listener() interface. Mixing usage
+     * of both leads to undefined behavior.
+     *
+     *  @param status_cb The callback for status changes.
+     */
+    void add_event_listener(mbed::Callback<void(nsapi_event_t, intptr_t)> status_cb);
+
+    /** Remove event listener from interface.
+     *
+     * Remove previously added callback from the handler list.
+     *
+     *  @param status_cb The callback to unregister.
+     */
+    void remove_event_listener(mbed::Callback<void(nsapi_event_t, intptr_t)> status_cb);
+```
+
+The callback prototype is exactly same as for the `NetworkInterface::attach()`, so it makes easy for applications to be refactored.
+
+The `NetworkInterface::attach()` is still functional, and it is a porting API that each interface should provide. The new API uses internally `NetworkInterface::attach()` so application cannot use both APIs at the same time.
+Application should either be completely refactored to new API by replacing `NetworkInterface::attach()` calls with `NetworkInterface::add_event_listener()` or remain using the `NetworkInterface::attach()`.
+
+The new API is completely optional and has small RAM and ROM impact, so applications are not required to use it. Both APIs are still supported but usage is limited to either one of these.
 
 ### Example
 
