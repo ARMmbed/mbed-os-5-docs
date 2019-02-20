@@ -135,15 +135,16 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tr>
 <td><a href="socket.html">Socket</a></td>
 <td><a href="socketaddress.html">SocketAddress</a></td>
-<td><a href="dtlssocket.html">DTLSSocket</a></td>
+<td><a href="tlssocket.html">TLSSocket</a></td>
 </tr>
 <tr>
 <td><a href="udpsocket.html">UDPSocket</a></td>
-<td><a href="dns-resolver.html">DNS Resolver</a></td>
-<td><a href="socketstats.html">SocketStats</a></td>
+<td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
+<td><a href="dtlssocket.html">DTLSSocket</a></td>
 <tr>
 <td><a href="tcpsocket.html">TCPSocket</a></td>
-<td><a href="tlssocket.html">TLS Socket</a></td>
+<td><a href="dns-resolver.html">DNS resolver</a></td>
+<td><a href="socketstats.html">SocketStats</a></td>
 </tr>
 </tbody>
 </table>
