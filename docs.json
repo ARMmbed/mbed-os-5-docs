@@ -354,6 +354,9 @@
                         "path": "docs/api/networksocket/SocketAddress.md"
                     },
                     {
+                        "path": "docs/api/networksocket/CellularNonIPSocket.md"
+                    },
+                    {
                         "path": "docs/api/networksocket/DNS.md"
                     },
                     {
