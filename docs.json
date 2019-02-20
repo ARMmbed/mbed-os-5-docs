@@ -1281,13 +1281,13 @@
         "slug": "device-management",
         "type": "markdown",
         "sources": [{
-                "path": "docs/device-management.md"
+                "path": "docs/pelion_ready/device-management.md"
             },
             {
-                "path": "docs/device-management-config.md"
+                "path": "docs/pelion_ready/device-management-config.md"
             },
             {
-                "path": "docs/device-management-test.md"
+                "path": "docs/pelion_ready/device-management-test.md"
             }
         ]
     },
