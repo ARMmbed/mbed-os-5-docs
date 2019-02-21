@@ -30,7 +30,7 @@ def main(file):
                 file = file[:start+4] + out[:out.index("Macros") - 1] + file[end:]
 
         # Originally added for debugging purposes, catch and display exceptions before
-        # continuing without exiting to provide a complete list of errors found 
+        # continuing without exiting to provide a complete list of errors found
         except Exception as e:
             print("Error")
             print(e)
@@ -58,8 +58,10 @@ if __name__ == '__main__':
 
     if (os.path.isfile(path)):
         main(path)
-    else:
+    elif (os.path.isdir(path)):
         for doc in os.listdir(path):
             if (doc != 'configuration.md'):
                 print('_____ %s _____' % os.path.join(path, doc))
                 main(os.path.join(path, doc))
+    else:
+        print("Please provide a valid file or directory path")
