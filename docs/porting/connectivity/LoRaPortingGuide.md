@@ -68,8 +68,6 @@ Please follow the detailed reference of `LoRaWANBase` to understand what these A
 
 You must implement the `initialize(events::EventQueue *queue)` API. Our design philosophy is that we wish to support the tiniest of devices with very little memory, and an event queue shared between the application and network stack is the best option in terms of memory.
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_lo_ra_w_a_n_base.html)
-
 ### Testing
 
 <span class="notes">**Note:** We'll publish automated tests for LoRa soon. For Mbed Partners that want to start porting Lora drivers, please contact your Partner lead.</span>
