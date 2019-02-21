@@ -71,9 +71,9 @@ jobs:
       script:
         # Run scripts to search for added prohibited words
         - python check_tools/validate.py -c -i check_tools/prohibited.txt -f . &> check_tools/pr_black_list.log
-        - git remote add upstream https://github.com/armmbed/Handbook.git
-        - git fetch --depth=1 upstream new_engine
-        - git checkout new_engine
+        - git remote add upstream https://github.com/armmbed/mbed-os-5-docs.git
+        - git fetch --depth=1 upstream development
+        - git checkout development
         - python check_tools/validate.py -c -i check_tools/prohibited.txt -f . &> check_tools/head_black_list.log
         - python check_tools/smartdiff.py
 # Manage statuses
