@@ -179,3 +179,6 @@ As a shortcut, the configuration system supports an option, `mbedtls.pelion-clie
 Since the options in the `mbed_lib.json` file are not complete enough to handle all configuration options, users may still opt to use the MbedTLS configuration mechanism built in to the library. This involves creating a custom configuration header file. For instructions on how to do this, please refer to https://tls.mbed.org/kb/compiling-and-building/how-do-i-configure-mbedtls.
 
 Once the header file is created, the user needs to specify the path to that file in a `mbedtls.app-config-file` entry in their `mbed_app.json` file. Entries in this file will supersede any other Mbed TLS selections made in the `mbed_app.json` file. Thus, if, in their custom header file,  a developer `#undefs` something needed for a selected ciphersuite, they will encounter either a build-time or run-time error.
+
+# Platforms Without Entropy Sources
+On platforms that lack an entropy source, none of the ciphersuites are operational, as TLS requires entropy to function properly. Therefore, for these platforms, the ciphersuite selections will be ignored. If a developer wants to enable specific algorithms for MbedTLS, they can use the traditional method of creating a header file, and then setting the `mbedtls.app-config-file` parameter.
