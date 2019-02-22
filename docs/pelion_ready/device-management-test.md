@@ -69,7 +69,7 @@ Mbed Device Management tests rely on the Python SDK to test the end-to-end solut
     $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
     ```
 
-    For instructions on how to generate an API key, please [see the documentation](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html#generating-an-api-key).
+    For instructions on how to generate an API key, please [see the documentation](https://cloud.mbed.com/docs/latest/integrate-web-app/api-keys.html#generating-an-api-key).
 
 1. Initialize your Pelion DM credentials (once per project):
 
