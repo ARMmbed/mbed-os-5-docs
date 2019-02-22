@@ -7,11 +7,11 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 - Make using:
     - GNU Arm Embedded Toolchain.
     - Arm Compiler 5.
-    - IAR Arm Compiler (versions 7.70 to 7.80.x).
+    - IAR Arm Compiler (version 8.32).
 - Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
     - GNU Arm Embedded Toolchain.
     - Arm Compiler 5.
-    - IAR Arm Compiler (versions 7.70 to 7.80.x).
+    - IAR Arm Compiler (versions 8.32).
 - GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain.
 - DS-5.
 - LPCXpresso.
