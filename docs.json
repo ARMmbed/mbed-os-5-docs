@@ -975,13 +975,6 @@
                 ]
             },
             {
-                "title": "Integrating with Arm Treasure Data",
-                "intro": {
-                    "path": "docs/tutorials/treasure_data.md"
-                },
-                "sources": []
-            },
-            {
                 "title": "Migrating to Mbed OS 5",
                 "intro": {
                     "path": "docs/tutorials/migrate-from-mbed-os-2-to-5.md"
@@ -1208,7 +1201,15 @@
         "slug": "mbed-os-pelion",
         "type": "markdown",
         "description": "",
-        "chapters": [{
+        "chapters": [
+          {
+            "title": "Introduction",
+            "intro": {
+              "path": "docs/pelion_ready/introduction_chip2cloud.md"
+            },
+            "sources": []
+          },
+          {
                 "title": "Device Management for Mbed OS",
                 "sources": [{
                         "path": "docs/pelion_ready/device-management.md"
@@ -1220,6 +1221,13 @@
                         "path": "docs/pelion_ready/device-management-test.md"
                     }
                 ]
+            },
+            {
+                "title": "Integrating with Arm Treasure Data",
+                "intro": {
+                    "path": "docs/tutorials/treasure_data.md"
+                },
+                "sources": []
             },
             {
                 "title": "Going to production",
