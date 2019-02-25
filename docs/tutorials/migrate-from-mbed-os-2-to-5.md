@@ -348,3 +348,13 @@ Now, the program successfully compiles.
 ### Runtime errors
 
 Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
+
+### Enable Bare-metal
+
+Enabling bare-metal profile allows you to build mbed-os without an rtos. In order to enable it, you have to complete the migration to `Mbed OS 5`. Once the migration is completed, you can enable bare-metal by creating an `mbed-app.json` with the following contents:
+
+```
+{
+    "requires": ["bare-metal"]
+}
+```
