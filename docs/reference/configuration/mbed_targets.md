@@ -196,7 +196,7 @@ The `supported_toolchains` property is the list of toolchains that support a tar
 
 If you specify `ARMC5` in `supported_toolchains`, it means the corresponding target supports `Arm Compiler 5.06 update 6`.
 
-If a target lists both ARMC5 and ARM (or ARMC6) in `supported_toolchains`, the ARM Compiler 6.11 will be used when compiling with `ARM` option for `--toolchain`.
+If a target lists both `ARMC5` and `ARM` (or `ARMC6`) in `supported_toolchains`, the Arm Compiler 6.11 will be used when compiling with `ARM` option for `--toolchain`.
 
 <span class="notes">**Note:** Although you can specify `ARMC5` in `supported_toolchains` in `targets.json`, it's not a valid option for `--toolchain` when compiling using [Mbed CLI](../tools/developing-mbed-cli.html).</span>
 
