@@ -1,4 +1,4 @@
-## Bare metal APIs
+## Bare-metal APIs
 <h3 id="analog-i-o">Analog I/O</h3>
 <ul><li>AnalogIn - Read the voltage applied to an analog input pin
 </li><li>AnalogOut - Set the voltage of an analog output pin
