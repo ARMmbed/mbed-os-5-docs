@@ -90,7 +90,10 @@ Release: feature
 
 Updating target implementation (adding a new target or updating already supported target) is a change for a patch release.
 
+A test report for the new target must be part of the pull request. The new target must pass all Mbed OS functional and system validation tests (using `mbed test` command) for the current Mbed OS major release, including all Mbed OS supported toolchains.
+
 Release: patch
+
 
 #### Functionality change
 
