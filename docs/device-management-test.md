@@ -59,9 +59,9 @@ Device Management tests rely on the Python SDK to test the end-to-end solution. 
 
 1. Import an example application for Device Management that contains the corresponding configuration for your target.
 
-   Please refer to the following [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Pelion IoT Platform service, register resources and get ready to receive a firmware update.
+   Please refer to the following [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Device Management service, register resources and get ready to receive a firmware update.
 
-   Also, there are board-specific applications that focus on providing more elaborate hardware features with Mbed OS and the Pelion IoT Platform. These are available in the Pelion [quick start](https://cloud.mbed.com/quick-start).
+   Also, there are board-specific applications that focus on providing more elaborate hardware features with Mbed OS and Device Management. These are available in the Pelion [quick start](https://cloud.mbed.com/quick-start).
 
 1. Set a global `mbed config` variable `CLOUD_SDK_API_KEY` on the host machine valid for the account your device will connect to. For example:
 
@@ -107,7 +107,7 @@ Occasionally, if the test failed during a previous attempt, the SMCC Greentea te
 
 #### Device identity is inconsistent
 
-If your device ID in Device Management is inconsistent over a device reset, it could be because it is failing to open the credentials on the storage held in the Enhanced Secure File System. Typically, this is because the device cannot access the Root of Trust stored in SOTP.
+If your device ID in Device Management is inconsistent when your device resets, it could be because it is failing to open the credentials on the storage held in the Enhanced Secure File System. Typically, this is because the device cannot access the Root of Trust stored in SOTP.
 
 One way to verify this is to see if the storage is reformatted after a device reset when `format-storage-layer-on-error` is set to `1` in `mbed_app.json`.  It would appear on the serial terminal output from the device as:
 
