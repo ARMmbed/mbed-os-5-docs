@@ -10,7 +10,7 @@ It:
 - Helps users avoid doing blocking network operations in interrupt contexts, by automatically deferring actions to a separate thread.
 - Provides end-to-end Greentea tests for Device Management.
 
-This library makes it trivial to expose sensors, actuators and other variables to a cloud service. For a complete Device Management Client API, please see our [documentation](https://cloud.mbed.com/docs/current/mbed-cloud-client/index.html). <!---This isn't a link to API references, though.--->
+This library makes it trivial to expose sensors, actuators and other variables to a cloud service. For a complete Device Management Client API, please see our [documentation](https://cloud.mbed.com/docs/current/client-api-references/index.html).
 
 ### Device Management for your Mbed OS application
 
@@ -92,9 +92,9 @@ This creates your private and public key pair and also initialize various `.c` f
 
 #### Example applications
 
-To help you start quickly, please refer to the following [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Pelion IoT Platform service, register resources and get ready to receive a firmware update.
+To help you start quickly, please refer to the following [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Device Management service, register resources and get ready to receive a firmware update.
 
-Also, there are a number of board-specific applications that focus on providing more elaborate hardware features with Mbed OS and the Pelion IoT Platform. These are available in the Device Management [quick start](https://cloud.mbed.com/quick-start). Please see the reference table below, organized by vendor name, for details:
+Also, there are a number of board-specific applications that focus on providing more elaborate hardware features with Mbed OS and Device Management. These are available in the Device Management [quick start](https://cloud.mbed.com/quick-start). Please see the reference table below, organized by vendor name, for details:
 
 Platform                        |  Connectivity      | Storage   | Example URL
 --------------------------------| -------------------| --------- | --------------------
