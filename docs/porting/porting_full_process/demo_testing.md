@@ -60,8 +60,8 @@ Then, test connectivity and firmware update:
 
 1. Application repository:[https://github.com/armmbed/mbed-cloud-client-example](https://github.com/armmbed/mbed-cloud-client-example).
     1. Again, if you have not merged your target into `mbed-os` you will need to add your fork.
-1. [Set up a Pelion Device Management account](https://cloud.mbed.com/docs/current/account-management/users.html).
-1. [Generate an API key](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html) from the [Device Management Portal](https://portal.mbedcloud.com//login).
+1. [Set up a Pelion Device Management account](https://cloud.mbed.com/docs/latest/account-management/users.html).
+1. [Generate an API key](https://cloud.mbed.com/docs/latest/integrate-web-app/api-keys.html) from the [Device Management Portal](https://portal.mbedcloud.com//login).
 1. In the `mbed-cloud-client-example` clone on your machine, run the following command with the generated API key:
 
    ```

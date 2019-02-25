@@ -157,6 +157,21 @@ Name: cellular.use-apn-lookup
     Defined by: library:cellular
     Macro name: MBED_CONF_CELLULAR_USE_APN_LOOKUP
     Value: 1 (set by library:cellular)
+Name: cellular.debug-at
+    Description: Enable AT debug prints
+    Defined by: library:cellular
+    Macro name: MBED_CONF_CELLULAR_DEBUG_AT
+    Value: 0 (set by library:cellular)
+Name: cellular.radio-access-technology
+    Description: Radio access technology to use. Value in integer: GSM=0, GSM_COMPACT=1, UTRAN=2, EGPRS=3, HSDPA=4, HSUPA=5, HSDPA_HSUPA=6, E_UTRAN=7, CATM1=8 ,NB1=9
+    Defined by: library:cellular
+    Macro name: MBED_CONF_CELLULAR_RADIO_ACCESS_TECHNOLOGY
+    Value: null (set by library:cellular)
+Name: cellular.control-plane-opt
+    Description: Enables control plane CIoT EPS optimisation
+    Defined by: library:cellular
+    Macro name: MBED_CONF_CELLULAR_CONTROL_PLANE_OPT
+    Value: 0 (set by library:cellular)
 Name: ppp-cell-iface.apn-lookup
     Defined by: library:ppp-cell-iface
     Macro name: MBED_CONF_PPP_CELL_IFACE_APN_LOOKUP
@@ -198,11 +213,11 @@ Boards that provide only Ethernet connectivity do not require any configuration.
 
 Select the default interface type by using one of the following `target.network-default-interface-type` parameters:
 
-| `target.network-default-interface-type` | Required configuration |
+| `target.network-default-interface-type` | Configuration parameters |
 |-----------------------------------------|------------------------|
 | `ETHERNET` | nothing |
 | `WIFI`     | `nsapi.default-wifi-security`, `nsapi.default-wifi-ssid` and `nsapi.default-wifi-password` |
-| `CELLULAR` | `nsapi.default-cellular-apn`, `nsapi.default-cellular-username` and `nsapi.default-cellular-password` |
+| `CELLULAR` | `nsapi.default-cellular-sim-pin`, `nsapi.default-cellular-apn`, `nsapi.default-cellular-username` and `nsapi.default-cellular-password`, `nsapi.default-cellular-plmn` |
 | `MESH`     | `nsapi.default-mesh-type` |
 
 ```
@@ -223,9 +238,6 @@ Name: nsapi.default-wifi-ssid
 Name: nsapi.default-wifi-password
     Defined by: library:nsapi
     No value set
-Name: nsapi.default-cellular-plmn
-	Defined by: library:nsapi
-    No value set
 Name: nsapi.default-cellular-sim-pin
 	Defined by: library:nsapi
     No value set
@@ -236,6 +248,9 @@ Name: nsapi.default-cellular-password
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-cellular-username
+    Defined by: library:nsapi
+    No value set
+Name: nsapi.default-cellular-plmn
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-mesh-type

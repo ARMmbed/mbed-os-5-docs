@@ -354,6 +354,9 @@
                         "path": "docs/api/networksocket/SocketAddress.md"
                     },
                     {
+                        "path": "docs/api/networksocket/CellularNonIPSocket.md"
+                    },
+                    {
                         "path": "docs/api/networksocket/DNS.md"
                     },
                     {
@@ -771,7 +774,7 @@
             {
                 "title": "Developing: Mbed Studio",
                 "sources": [{
-                    "url": "https://github.com/ARMmbed/mbed-os-5-docs/blob/5.11/docs/tools/Studio/mbed-studio.md"
+                    "url": "docs/tools/Studio/mbed-studio.md"
                 }]
             },
             {
@@ -914,9 +917,6 @@
                         "path": "docs/tutorials/using_apis/flow_control.md"
                     },
                     {
-                        "path": "docs/tutorials/using_apis/connectivity/cellular_tcp.md"
-                    },
-                    {
                         "path": "docs/tutorials/using_apis/connectivity/light-control.md"
                     },
                     {
@@ -993,7 +993,6 @@
             "tutorials"
         ]
     },
-
     {
         "title": "Contributing",
         "description": "",

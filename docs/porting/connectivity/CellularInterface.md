@@ -1,8 +1,8 @@
-## Cellular module porting
+## Cellular device porting
 
-This document provides guidelines how to make a cellular modem adaptation for Mbed OS. Please see [Cellular API usage](../apis/cellular-api.html) about how to use cellular modules from an application point of view.
+This document provides guidelines how to make a cellular device adaptation for Mbed OS.
 
-### Adding modem target support
+### Adding cellular on an Mbed OS target
 
 For new targets, you may need to modify [targets.json](../reference/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
 
@@ -56,9 +56,9 @@ typedef enum {
 
 ```
 
-### Adding a new cellular target
+### Adding a new cellular device
 
-You need to specify in [CellularTargets.h](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html) the `<manufacturer-module>` that is mounted on your board.
+You need to specify in [CellularTargets.h](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_targets_8h_source.html) the `<manufacturer-module>` mounted on your board.
 
 ```target
 

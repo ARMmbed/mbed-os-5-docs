@@ -10,7 +10,7 @@ It:
 - Helps users avoid doing blocking network operations in interrupt contexts, by automatically defering actions to a separate thread.
 - Provides end-to-end Greentea tests for Pelion Device Management.
 
-This library makes it trivial to expose sensors, actuators and other variables to a cloud service. For a complete Pelion Device Management Client API, please see our [documentation](https://cloud.mbed.com/docs/current/mbed-cloud-client/index.html).
+This library makes it trivial to expose sensors, actuators and other variables to a cloud service. For a complete Pelion Device Management Client API, please see our [documentation](https://cloud.mbed.com/docs/latest/mbed-cloud-client/index.html).
 
 ### Device management for your Mbed OS application
 
