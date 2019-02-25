@@ -5,12 +5,12 @@ Mbed OS contains a native LoRaWAN stack (inside the Mbed OS tree) augmented with
 The information in this section can be classified in two subsections:
 
 - Porting a LoRa RF driver for the Arm Mbed LoRaWAN stack.
-- Device design guide to use Arm Mbed LoRaWAN stack.
+- Device design guide to use the Arm Mbed LoRaWAN stack.
 
 The whole porting process consists of two key ingredients:
 
 - An implementation of the [LoRaRadio](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html) class.
-- Design considerations for utilizing [LoRaWANInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) class.
+- Design considerations for using [LoRaWANInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) class.
 
 ### Porting a LoRa RF driver
 
@@ -24,11 +24,11 @@ For API use cases, details, explanation and meaning, please see the `LoRaRadio` 
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
 
-### Device design guide for LoRaWAN Stack
+### Device design guide for LoRaWAN stack
 
-The vision driving Arm Mbed OS entails one operating system for myriad IoT technologies encompassing a multitude of devices or platforms. However, it does not limit the user to design something specific or tailored to his or her needs. It is trivial to derive from `LoRaWANInterface` class and override the APIs provided therein to seamlessly integrate a 3rd party stack, if required. 
+The vision driving Arm Mbed OS entails one operating system for myriad IoT technologies encompassing a multitude of devices or platforms. However, it does not limit the user to design something specific or tailored to his or her needs. You can derive from the `LoRaWANInterface` class and override the APIs provided there to integrate a third party stack. 
 
-This subsection discusses how LoRaWAN stack can be integrated in the devices on the system level.
+This subsection discusses how you can integrate the LoRaWAN stack in the devices on the system level.
 
 <span class="notes">**Note:** The way a third party LoRaWAN stack harnesses the powers of Arm Mbed OS, in other words, synchronization methods (if using RTOS), timers, HAL and so on is beyond the scope of this documentation.</span>
 
@@ -54,7 +54,7 @@ An RF-MCU is an SoC including an MCU and LoRa transceiver on the same silicon pa
 
 **Case 4: Design based on a LoRa modem**
 
-A LoRa modem is a component that contains a stack and RF circuitry as a full package, mostly wired to a host MCU. In this case, if the developer wishes to be compliant with the existing applications, he or she may choose to write an adapter layer, which under the hood could be AT commands to control the modem.
+A LoRa modem is a component that contains a stack and RF circuitry as a full package, mostly wired to a host MCU. In this case, if the developer wishes to be compliant with the existing applications, he or she may choose to write an adapter layer, which could be AT commands to control the modem.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_modem.png)<span>Figure 5. Design based on LoRa modem.</span></span>
 
