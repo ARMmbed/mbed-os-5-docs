@@ -17,9 +17,9 @@ When you create a network interface, it starts from the disconnected state. When
 
 <span class="images">![](../../images/NetworkinterfaceStates.png)<span>Network states</span></span>
 
-The interface handles all state changes itself between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides global connection. The `ThreadInterface` returns from `connect()` call when it joins a local mesh network. It may later get global connection when it finds a border router.
+The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection. The `ThreadInterface` returns from `connect()` call when it joins a local mesh network. It may later get a global connection when it finds a border router.
 
-When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface usually reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal back off periods, and not all interfaces implement the reconnection logic at all. Refer to table below on how different interfaces behave.
+When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface usually reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal backoff periods, and not all interfaces implement the reconnection logic at all. Please refer to table below for information on how different interfaces behave.
 
 An application may check the connection status by calling `nsapi_connection_status_t get_connection_status()` or register a callback to monitoring status changes. The following table lists defined network states with actions that applictions should take on the state change:
 
@@ -30,14 +30,13 @@ An application may check the connection status by calling `nsapi_connection_stat
 | Local connectivity | `NSAPI_STATUS_LOCAL_UP`    | You can create sockets and communicate with local devices in the same network. |
 | Global route found | `NSAPI_STATUS_GLOBAL_UP`   | You can create sockets and communicate with all hosts. |
 
-
 Use the following API to register status callbacks:
 
 - [Network status](network-status.html): API for monitoring network status changes.
 
-Error handling and reconnection logic depends on the network interface used. Use following table to determine what actions your application needs to do on each network type.
+Error handling and reconnection logic depends on the network interface. Please use the following table to determine what actions your application needs to do on each network type.
 
-| `NetworkInterface` sub class | Does it reconnect automatically? | Possible states |
+| `NetworkInterface` subclass | Does it reconnect automatically? | Possible states |
 |------------------------------|---------------------------------|-----------------|
 | `EthernetInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
 | `WiFiInterface` | Yes, when onboard network stack is used.<br />For external modules, it depends on the driver.<br />See examples below. | - |
@@ -110,36 +109,36 @@ if (wifi) {
 
 ### Notes on portable applications
 
-When application is expected to be portable between different network interfaces, following guidelines should be used:
+When you expect an application to be portable between different network interfaces, please use the following guidelines:
 
 1. Use only `NetworkInterface::get_default_instance()` for getting the interface.
-2. Register network status handler and implement reconnection logic.
+1. Register the network status handler, and implement reconnection logic.
 
-See previous section [Default network interface](#default-network-interface) on how to use the portable API for network interface.
+Please see the previous section, [Default network interface](#default-network-interface), on how to use the portable API for the network interface.
 
 For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
 ### Using multiple network interfaces
 
-In Mbed OS, applications usually use just one network interface at a time, and most APIs are designed to work with such assumption.
-With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two build in IP stacks and numerous external IP stacks provided by modules. Refer to [Architecture:IP networking](reference/ip-networking.html) section for explanation of how different stacks are integrated into Mbed OS.
+In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](reference/ip-networking.html) section for an explanation of how different stacks are integrated into Mbed OS.
 
-When using two network interfaces where both are operating on different IP stacks, they can work independently, as there is no common data paths. Such example can be application that uses on-board Ethernet interface and any of the external WiFi modules.
+When you use two network interfaces and both are operating on different IP stacks, the interfaces can work independently because there is no common data path, for example an application that uses an on-board Ethernet interface and any of the external Wi-Fi modules.
 
-When using two network interfaces where both use the same IP stacks, there are limitations. Both IP stacks, LwIP and Nanostack, are build using assumption that there is only one active interface.
-For the Mbed OS 5.12, the LwIP routing core was modified to support multiple active interfaces, but it has its own limitations as well. When you have more than one active interfaces in LwIP, only one is the default, which all the outgoing traffic flows through.
-If you need to force the traffic to only one of the interface, you need to use `Socket::setsockopt(NSAPI_SOCKET, NSAPI_BIND_TO_DEVICE, <interface name>, <interface name length>)` to bind the socket into one interface. Interface name can get fetched from `NetworkInterface::get_interface_name()` call.
+When you use two network interfaces and both use the same IP stacks, there are limitations.
 
-Another, more common, case is where only one of the interface is active at a time. In this case, there is no need for `Socket::setsockopt()` if another interface is brought down as there is only one route option. This works when LwIP is used, but not verified with Nanostack as it is used only on specific use cases. like mesh routing.
+We have modified the LwIP routing core to support multiple active interfaces, but when more than one active interface is active in LwIP, only one is the default. All the outgoing traffic flows through it.
+
+If you need to force the traffic to only one of the interfaces, you need to use `Socket::setsockopt(NSAPI_SOCKET, NSAPI_BIND_TO_DEVICE, <interface name>, <interface name length>)` to bind the socket into one interface. You can fetch the interface name from the `NetworkInterface::get_interface_name()` call.
+
+Another, more common, case is where only one of the interface is active at a time. In this case, there is no need for `Socket::setsockopt()` if another interface is brought down because there is only one route option. This works with LwIP but is not verified with Nanostack because it is used only on specific use cases, such as mesh routing.
 
 ### Asynchronous operation
 
-`NetworkInterface::connect()` and `NetworkInterface::disconnect()` are blocking by default. When application prefers asyncronous operation
-it can set the interface into non-blocking mode by calling `NetworkInterface::set_blocking(false)`. This has to be done for each interface separately.
+`NetworkInterface::connect()` and `NetworkInterface::disconnect()` are blocking by default. When an application prefers asynchronous operation, it can set the interface into nonblocking mode by calling `NetworkInterface::set_blocking(false)`. This has to be done for each interface separately.
 
-When interface is operating in asyncronous mode, the return values of `connect()` and `disconnect()` have slightly different meaning. Basically calling `connect()` starts the asyncronous operation which aims to have the device in `GLOBAL_UP` state. Calling `disconnect()` has the target state being `DISCONNECTED`. Return codes in asyncronous mode do not anymore reflect the connection status. Most common return codes in asyncronous mode is `NSAPI_ERROR_OK` which means that operation just started. Refer to Doxygen documentation of [NetworkInterface::connect()](https://os.mbed.com/docs/mbed-os/v5.11/mbed-os-api-doxy/class_network_interface.html#aaf6bf1dfffbe6a5626b7b52eaa542b6e) and [NetworkInterface::disconnect()](https://os.mbed.com/docs/mbed-os/v5.11/mbed-os-api-doxy/class_network_interface.html#afdda3f62c7d73df183ee2d352e8cd146) for return values of these functions.
+When an interface operates in asynchronous mode, the return values of `connect()` and `disconnect()` have slightly different meanings. Calling `connect()` starts the asynchronous operation, which puts the device in the `GLOBAL_UP` state. Calling `disconnect()` puts the target in the `DISCONNECTED` state. Return code in asynchronous mode does not reflect the connection status. The most common return codes in asynchronous mode is `NSAPI_ERROR_OK`, which means that operation just started. Please refer to the Doxygen documentation of [NetworkInterface::connect()](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_network_interface.html#aaf6bf1dfffbe6a5626b7b52eaa542b6e) and [NetworkInterface::disconnect()](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_network_interface.html#afdda3f62c7d73df183ee2d352e8cd146) for return values of these functions.
 
-For checking the whether the interface is connected, application needs to register the status callback for the interface. Refer to [Network status API](network-status.html) how to do it.
+To check whether the interface is connected, the application needs to register the status callback for the interface. Please refer to the [Network status API](network-status.html) for information on how to do so.
 
 ### Related content
 
