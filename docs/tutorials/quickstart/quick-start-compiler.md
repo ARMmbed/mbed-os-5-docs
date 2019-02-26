@@ -29,7 +29,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
     1. **NOTE** To build with the Mbed OS Bare Metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file as in the following snippet:
 
-    ```JSON
+    ```NOCI
     {
         "requires": ["bare-metal"],
         "target_overrides": {
