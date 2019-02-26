@@ -5,11 +5,11 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 - Keil uVision5.
 - IAR Systems.
 - Make using:
-    - GNU Arm Embedded Toolchain.
+    - GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
     - Arm Compiler 5.
     - IAR Arm Compiler (version 8.32).
 - Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
-    - GNU Arm Embedded Toolchain.
+    - GNU Arm Embedded Toolchain  6 (6-2017-q1-update).
     - Arm Compiler 5.
     - IAR Arm Compiler (versions 8.32).
 - GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain.
