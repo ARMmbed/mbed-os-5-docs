@@ -300,4 +300,4 @@ You do not need to manually port Device Management Client; when the above module
 
 ### Other HAL modules (Optional)
 
-You are now ready to port any other HAL modules that your use case and MCU require. These modules are covered in the rest of this document.
+You are now ready to port any other HAL modules that your use case and MCU require. These modules are covered in the rest of this document, with the exception of [Mbed Cordio, which has its own porting documentation](https://os.mbed.com/docs/mbed-cordio/latest/porting-pal/index.html).

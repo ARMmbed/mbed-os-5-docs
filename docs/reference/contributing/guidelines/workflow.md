@@ -58,34 +58,18 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
 - Because we use GitHub, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when.
-- Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
+- Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing the domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
 - All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and test pull requests.
 - Avoid merging commmits. (Always rebase when possible.)
 - Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
+- Smaller pull requests are easier to review and faster to integrate. Use dependencies – split your work by pull request type or functional changes. To add a third-party driver, send it in a separate pull request, and add it as a dependency to your pull request.
+
+If commits do not follow the above guidelines, we may request you modify the commit history (often to add more details to address _what_ and _why_ rather than _how_).
 
 #### Release versioning
 
 You can find Mbed OS versioning at [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html).
-
-### Pull request categories
-
-#### Bug fixes
-
-Every bug fix should contain a test to verify results prior to and after the pull request.
-
-#### Changes and additions
-
-Backward compatible changes (such as refactoring and enhancements) or new target additions can go into patch and feature releases. We only consider features and new functionality additions for feature releases.
-
-#### Features
-
-We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
-
-Each feature has a tech lead. This person is responsible for:
-
-- Rebasing often to track master development.
-- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
 ### Pull request types
 
@@ -93,13 +77,13 @@ We consider the following pull request types.
 
 #### Fix
 
-A bug fix is a change that fixes a specific defect in the codebase with backwards compatibility. These are the highest priority because of the positive impact the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Bug fixes are candidates for patch releases. Large, non-trivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
+A bug fix is a change that fixes a specific defect in the codebase with backward compatibility. These are the highest priority because of the positive effect the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Every bug fix should contain a test to verify results prior to and after the pull request. Bug fixes are candidates for patch releases. Large, nontrivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
 
 Release: patch
 
 #### Refactor
 
-A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this would be moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes, and test organization changes. There is always the risk that someone depended on the location or name before a refactor therefore these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases. 
+A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this are moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases.
 
 Release: feature
 
@@ -107,13 +91,33 @@ Release: feature
 
 Updating target implementation (adding a new target or updating already supported target) is a change for a patch release.
 
+A test report for the new target must be part of the pull request. The new target must pass all Mbed OS functional and system validation tests (using `mbed test` command) for the current Mbed OS major release, including all Mbed OS supported toolchains.
+
 Release: patch
+
 
 #### Functionality change
 
-Any change in the functionality, it can be adding a new feature, adding a new method or a function. Software language does not matter.
+A functionality change can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
 
-A feature contribution contains a new API, capability or behavior. It does not break backwards compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
+
+Every pull request changing or adding functionality must contain a release notes section called "Release notes" to describe the changes to users.
+
+It must contain:
+
+- A brief description of changes introduced.
+- An analysis of effects: components affected, potential consequences for users and reasons for the addition or change.
+- Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
+
+<span class="notes">**Note:** We may use this content in our official release notes.</span>
+
+We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
+
+Each feature has a tech lead. This person is responsible for:
+
+- Rebasing often to track master development.
+- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
 
 Release: feature
 
@@ -168,7 +172,7 @@ You can see test results [here](just an example).
 
 Each pull request goes through the following workflow:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Workflow.png)<span>The workflow of merging a pull request</span></span>
+![Pull request workflow](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/5.11/docs/images/Workflow.png)
 
 ### Pull request states
 
@@ -180,16 +184,16 @@ If a pull request is idle for more than two weeks, it will be closed. The author
 
 #### Reviews
 
-All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request and tags that person accordingly.
+All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. A PR creator can request specific reviewers by @ tagging people or teams in the *Reviewers* section of the pull request template. For example, @personA @TeamB.
 
-Github dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
+GitHub dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 Label: `needs: review`
 Time: 3 days for reviewers to leave feedback after the maintainers add the "needs: review" label.
 
-#### The CI (Continuous Integration) testing
+#### The Continuous Integration (CI) testing
 
-There are many [CI systems available](../contributing/workflow.html#guidelines-for-github-pull-requests) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
+There are many [CI systems available](../contributing/workflow.html#guidelines-for-github-pull-requests) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that pull request has on the code base. Irrespective of which CI tests run, Mbed OS has an all-green policy, meaning that all the CI jobs that are triggered must pass before we merge the pull request.
 
 Label: `needs: CI`
 Time: 1 day for CI to complete and report back results.

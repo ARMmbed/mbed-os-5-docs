@@ -76,7 +76,17 @@ This is the technical documentation for Mbed OS. We have three types of document
 Please see the following sections of our documentation for more information.
 
 - [APIs](../apis/index.html).
-- [Reference](../reference/index.html), which contains architectural information about our code.
+- [Quick start](../quick-start/index.html), a guide to creating your first application.
+- [Reference](../reference/index.html), architectural information about our code.
 - [Tools](../tools/index.html), reference material about the tools Mbed OS uses.
 - [Tutorials](../tutorials/index.html).
+- [Going to production](../evaluation-production/index.html), the process of connecting Mbed OS devices to Pelion Device Management for large-scale production.
+- [Contributing](../contributing/index.html), guidelines about contributing to our open-source project.
 - [Porting guides](../porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
+
+### Recently updated documentation
+
+- API references for [FileHandle](../apis/filehandle.html) and [Poll](../apis/poll.html).
+- An updated [contributing guide](../contributing/index.html).
+- A revised [porting guide](../porting/index.html).
+- A [review of the full process of taking a project to production](./evaluation-production/index.html).

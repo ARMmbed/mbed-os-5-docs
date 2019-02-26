@@ -4,24 +4,23 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 
 - Keil uVision5.
 - IAR Systems.
+- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
+    - GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
+    - Arm Compiler 5.
+    - IAR Arm Compiler (version 8.32).
+- GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain 6.
 - Make using:
     - GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
     - Arm Compiler 5.
     - IAR Arm Compiler (version 8.32).
-- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
-    - GNU Arm Embedded Toolchain  6 (6-2017-q1-update).
-    - Arm Compiler 5.
-    - IAR Arm Compiler (versions 8.32).
-- GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain.
-- DS-5.
-- LPCXpresso.
-- Kinetis Design Studio.
-- Simplicity Studio.
-- Atmel Studio.
-- SW4STM32 System Workbench for STM32.
-- CooCox CoIDE.
+- Code::Blocks.
+- Cross Core Embedded Studio.
 - e2studio.
-- Emblocks.
+- Embitz.
+- MCUXpresso.
+- NetBeans.
+- Qt Creator.
+- SW4STM32 System Workbench for STM32.
 
 This may be useful to launch a debug session with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
@@ -155,24 +154,3 @@ Prior to version 2.6.1 of GNU Arm Eclipse, the build tools of the GNU Arm Eclips
 
 <span class="notes">**Note:** There is a deletion of a character here. The command-line should read `./mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/lwip_lowpan6.o`.</span>
 
-##### Kinetis Design Studio (Freescale KDS) with GNU Arm Embedded Toolchain
-
-Freescale KDS now ships with the GNU Arm Embedded Toolchain. You may need to update a linker flag depending on the version of tools installed.
-
-1. Press **Alt + Enter** or **Option** + **Enter**. The **C++ Build** dialog box opens.
-1. In **Settings**, select **Tool Settings**.
-1. Any file extension that is `.s` needs to be changed to `.S` (lowercase to uppercase):
-
-	__KDS >= 3.0__
-
-	``-specs=nosys.specs``
-
-	__KDS < 3.0__
-
-	``-nanolibc``
-
-#### Atmel Studio
-
-The Mbed libraries contain CMSIS startup files.
-
-When importing an Mbed project into [Atmel Studio](http://www.atmel.com/Microsite/atmel-studio/), you must uncheck the **migrate to current infrastructure** box.

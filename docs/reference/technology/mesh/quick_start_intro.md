@@ -1,10 +1,10 @@
-<h2 id="mesh-tech">6LoWPAN Mesh</h2>
+<h2 id="mesh-tech">Mesh</h2>
 
 This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
 
 ### Overview of the 6LoWPAN network
 
-![Node connected to server](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/node_to_server.png)
+![Node connected to server](https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/images/node_to_server_2.jpg?raw=true)
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
 
@@ -36,7 +36,7 @@ A 6LoWPAN host is a type of node that does not route any packets. It has only on
 
 A 6LoWPAN sleepy host is a 6LoWPAN host that is periodically allowed to sleep and turn off its radio.
 
-#### Different types of 6LoWPAN mesh networks
+#### Different types of mesh networks
 
 6LoWPAN-based mesh networks cannot be described as a uniform standardized network type, such as Wi-Fi. Depending on the business requirements and use cases the network may have different setups and requirements.
 
@@ -57,13 +57,3 @@ In a mesh/tree network, all nodes are configured as 6LoWPAN routers.
 In a 6LoWPAN network, RPL protocol is used for forming the routing topology. Every node selects a primary parent for routing so the result looks like a tree.
 
 This network type allows to cover large areas because each node extends the range of the network. However, the packet is retransmitted on every hop, which means that the transfer capacity of the network decreases as the size of the network increases.
-
-##### Example networks
-
-![Example networks](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/examples.png)
-
-In the further chapters, we provide recommendations for three different network sizes:
-
-- A sensor network for an apartment.
-- A sensor/actuator network for a building.
-- A sensor/actuator network for a city.

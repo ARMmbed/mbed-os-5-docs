@@ -6,7 +6,7 @@ The Arm Mbed OS ecosystem includes many tools designed to work with Mbed OS and 
 
 The two Mbed OS development tools are Mbed CLI and the Mbed Online Compiler. Both of the development tools perform the same process:
 
-- Bring the Mbed OS source code from GitHub or `mbed.org`, along with all dependencies.
+- Bring the Mbed OS source code from GitHub or `mbed.com`, along with all dependencies.
 - Compile your code with Mbed OS for a target, so you have a single file to flash to your board.
 
 We developed Mbed OS 5 using the Mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an Mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.

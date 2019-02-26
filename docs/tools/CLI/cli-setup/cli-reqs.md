@@ -66,7 +66,7 @@ We recommend installing Mbed CLI with our installer. If you need more customizat
 
 Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
+<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
 
 ### Manual installation
 
@@ -122,7 +122,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
+<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
 
 
 ## Linux
@@ -266,7 +266,7 @@ To install `mbed-cli` bash tab completion:
 
 [For more information, see the full documentation](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md).
 
-## Reference: Working with `mbed config`
+## Reference: Working with mbed config
 
 The Mbed CLI configuration syntax is:
 

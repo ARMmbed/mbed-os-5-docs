@@ -1,4 +1,4 @@
-<h2 id="mesh-api">6LoWPAN Mesh</h2>
+<h2 id="mesh-api">Mesh</h2>
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
@@ -41,11 +41,10 @@ See the example application [mbed-os-example-mesh-minimal](https://github.com/AR
 
 ### Mesh example
 
-The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-5.10.0/main.cpp)
+To learn how to use mesh, please see our [light control tutorial](../tutorials/light-control.html), which demonstrates a light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
 ### Related content
 
 - [Nanostack](../reference/mesh-tech.html#nanostack) technology reference material.
 - [6LoWPAN and Thread Mesh configuration documentation](../reference/configuration-mesh.html).
+- [Light control tutorial](../tutorials/light-control.html).

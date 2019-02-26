@@ -12,7 +12,7 @@ Update support in Mbed OS relies on two features:
 The active firmware, made up of Mbed OS and an application, can be updated only if the binary installed on the device has:
 
 1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware. If for some reason, the update fails, the bootloader falls back to the firmware version last known to work. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions once an update succeeds.
-1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/current/updating-firmware/index.html).
+1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/latest/updating-firmware/index.html).
 
     Note: Because some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you need to explicitly import the client to your application.
 
@@ -62,7 +62,7 @@ Note two things about the Mbed OS bootloader's design:
 1. It does not process encrypted off-chip candidate images.
 1. It does not currently verify signatures of candidate images. To save code size and speed up boot time, we use a unique, per-device Message Authentication Code (MAC) to authenticate the firmware in the bootloader: firmware is distributed with a signature, and the Update client verifies the signature and replaces it with a MAC that the bootloader understands.
 
-This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/latest/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
+This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/latest/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/latest/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
 
 ### Managing updates with the bootloader
 
