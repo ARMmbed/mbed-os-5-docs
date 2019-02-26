@@ -223,7 +223,7 @@ Mbed CLI supports a setting for each toolchain path:
 
 | Toolchain | Example binary location | Setting name | Example path |
 | --------- | --------- | ---------| --------- |
-| Arm Compiler 5 | `C:/Program Files/ARM_Compiler_5.06u5/bin/armcc` | `ARM_PATH` | `C:/Program Files/ARM_Compiler_5.06u5` |
+| Arm Compiler 5 | `C:/Program Files/ARM_Compiler_5.06u6/bin/armcc` | `ARM_PATH` | `C:/Program Files/ARM_Compiler_5.06u6` |
 | Arm Compiler 6 | `C:/Program Files/ARM/armcc6.10/bin/armclang` | `ARMC6_PATH` | `C:/Program Files/ARM/armcc6.10/bin` |
 | IAR EWARM Compiler | `C:/Program Files/IAR Systems/Embedded Workbench 8.2/arm/bin/iccarm.exe` | `IAR_PATH` | `C:/Program Files/IAR Systems/Embedded Workbench 8.2/arm`|
 | GCC Arm Embedded Compiler | `/usr/bin/arm-none-eabi-gcc` | `GCC_ARM_PATH` | `/usr/bin`|
