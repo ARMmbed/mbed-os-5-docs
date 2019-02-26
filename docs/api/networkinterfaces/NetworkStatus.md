@@ -76,16 +76,16 @@ By default, the `connect()` call blocks until `NSAPI_STATUS_GLOBAL_UP` state is 
 
 ### Using multiple connection status callbacks
 
-In Mbed OS 5.12, the NetworkInterface API is extended with two new functions regarding status callbacks. Applications now have possibility to use these new APIs to register more than one callback per network interface. New APIs is as follows:
+The NetworkInterface API includes two functions that the applications can use to register more than one status callback for each network interface:
 
 ```
     /** Add event listener for interface.
      *
      * This API allows multiple callback to be registered for a single interface.
-     * When first called, internal list of event handlers are created and registered to
+     * When first called, an internal list of event handlers is created and registered to
      * interface through attach() API.
      *
-     * Application may only use attach() or add_event_listener() interface. Mixing usage
+     * The application may only use the attach() or add_event_listener() interface. Mixing use
      * of both leads to undefined behavior.
      *
      *  @param status_cb The callback for status changes.
@@ -101,18 +101,19 @@ In Mbed OS 5.12, the NetworkInterface API is extended with two new functions reg
     void remove_event_listener(mbed::Callback<void(nsapi_event_t, intptr_t)> status_cb);
 ```
 
-The callback prototype is exactly same as for the `NetworkInterface::attach()`, so it makes easy for applications to be refactored.
+The callback prototype is the same as that for the `NetworkInterface::attach()`.
 
-The `NetworkInterface::attach()` is still functional, and it is a porting API that each interface should provide. The new API uses internally `NetworkInterface::attach()` so application cannot use both APIs at the same time.
-Application should either be completely refactored to new API by replacing `NetworkInterface::attach()` calls with `NetworkInterface::add_event_listener()` or remain using the `NetworkInterface::attach()`.
+The `NetworkInterface::attach()` is still functional, and it is a porting API that each interface should provide. The functions above use `NetworkInterface::attach()` internally, so the application cannot use both at the same time.
 
-The new API is completely optional and has small RAM and ROM impact, so applications are not required to use it. Both APIs are still supported but usage is limited to either one of these.
+You must either refactor the application by replacing `NetworkInterface::attach()` calls with `NetworkInterface::add_event_listener()`, or the application must remain using the `NetworkInterface::attach()`.
+
+This optional and has a small RAM and ROM increase, so applications are not required to use it. Both APIs are still supported, but use is limited to one at a time.
 
 ### Example
 
 Registering a status callback that connection state changes trigger depends on whether the network interface provides this functionality.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/file/8a8191e3d305/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/file/c66df92cf71b/main.cpp)
 
 ### Related content
 
