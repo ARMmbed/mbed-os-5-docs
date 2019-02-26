@@ -10,7 +10,9 @@ The default baud rate, or speed, for this application is set to `9600`. You can 
 
 <span class="tips">**Tip:** You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the [related links section](#related-links).</span>
 
-The output transmits the system, CPU, heap, and thread information. Note that if you are building with the Mbed OS Bare Metal profile that you will not get thread information.
+The output transmits the system, CPU, heap and thread information. 
+
+<span class="notes">**Note:** If you are building with the Mbed OS bare metal profile, you will not get thread information.</span>
 
 #### Understanding the output
 
