@@ -53,7 +53,7 @@ Arm linker script template:
 #endif
 
 #if !defined(MBED_BOOT_STACK_SIZE)
-/* This value is normally defined by the tools to 0x1000 for baremetal and 0x400 for RTOS */
+/* This value is normally defined by the tools to 0x1000 for bare metal and 0x400 for RTOS */
   #define MBED_BOOT_STACK_SIZE  0x400
 #endif
 
@@ -102,7 +102,7 @@ if (!isdefinedsymbol(MBED_APP_SIZE)) {
 
 if (!isdefinedsymbol(MBED_BOOT_STACK_SIZE)) {
     /* This value is normally defined by the tools 
-        to 0x1000 for baremetal and 0x400 for RTOS */
+        to 0x1000 for bare metal and 0x400 for RTOS */
     define symbol MBED_BOOT_STACK_SIZE = 0x400;
 }
 
@@ -150,7 +150,7 @@ GCC linker script template:
 
 #if !defined(MBED_BOOT_STACK_SIZE)
     /* This value is normally defined by the tools 
-       to 0x1000 for baremetal and 0x400 for RTOS */
+       to 0x1000 for bare metal and 0x400 for RTOS */
     #define MBED_BOOT_STACK_SIZE 0x400
 #endif
 
