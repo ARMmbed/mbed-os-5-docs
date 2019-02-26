@@ -33,7 +33,7 @@ For example,
     }
 ```
 
-In addition you need to map onboard modem pin aliases to your target board pin names and polarity in `targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h`. If any of the pins are not connected, mark it 'NC'. An example UART configuration is shown below:
+In addition, you need to map onboard modem pin aliases to your target board pin names and polarity in `targets/TARGET_FAMILY/YOUR_TARGET/PinNames.h`. If any pin is not connected, mark it 'NC'. An example UART configuration is shown below:
 
 ```
 typedef enum {
@@ -56,13 +56,13 @@ typedef enum {
 
 ```
 
-If your board has an onboard modem, you need to implement `NetworkInterface::get_target_default_instance` that instantiates the default cellular device driver for your modem with the default pin configurations and power up/down functionality. Typically onboard drivers are named as `ONBOARD_xxx.cpp` in your Mbed OS target folder, where `xxx` stands for a cellular device modem driver. You may need to create a new cellular device driver class for your modem in the `features/cellular/framework/targets/` folder, if not already existing.
+If the board has an onboard modem, you need to implement `NetworkInterface::get_target_default_instance`, which instantiates the default cellular device driver for your modem with the default pin configurations and power up/down functionality. Typically, onboard drivers are named `ONBOARD_xxx.cpp` in the Mbed OS target folder, where `xxx` stands for a cellular device modem driver. You may need to create a new cellular device driver class for your modem in the `features/cellular/framework/targets/` folder.
 
 ### Adding a new cellular device driver
 
-A generic cellular driver `features/cellular/framework/targets/GENERIC/GENERIC_AT3GPP/GENERIC_AT3GPP.cpp` class inheriting [AT_CellularDevice](https://os.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) has been written to serve as a default driver for porting. It uses only the standard AT commands from 3GPP TS 27.007 to communicate with a modem. You need to copy the generic class and modify its `cellular_properties array` to define which features are supported by your modem. You may also need to override any non-standard AT commands in AT_xxx classes implementing cellular APIs. Please check other drivers to see how they are done, in order to find out what methods are typically overridden.
+A generic cellular driver `features/cellular/framework/targets/GENERIC/GENERIC_AT3GPP/GENERIC_AT3GPP.cpp` class inheriting [AT_CellularDevice](https://os.mbed.com/docs/development/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) is the default driver for porting. It uses only the standard AT commands from 3GPP TS 27.007 to communicate with a modem. You need to copy the generic class and modify its `cellular_properties array` to define which features your modem supports. You may also need to override any nonstandard AT commands in AT_xxx classes implementing cellular APIs. Please view other drivers as examples to determine which methods to override.
 
-In addition to the driver class you need to copy and modify `features/cellular/framework/targets/GENERIC/GENERIC_AT3GPP/mbed_lib.json` that defines correct pins and other setup for your modem.
+In addition to the driver class, you need to copy and modify `features/cellular/framework/targets/GENERIC/GENERIC_AT3GPP/mbed_lib.json`, which defines correct pins and other setup for your modem.
 
 ### Socket adaptation
 
@@ -71,7 +71,7 @@ You can implement the socket API in two ways:
 - Use the IP stack on the cellular module (AT mode).
 - Use the LWIP stack on Mbed OS (PPP mode).
 
-A modem can support both the AT and PPP modes, but an application developer needs to select at compile time which mode should be used. PPP and/or AT mode selection is made in the application's `mbed_app.json` configuration file using the `lwip.ppp-enabled` flag.
+A modem can support both the AT and PPP modes, but an application developer needs to select at compile time which mode should be used. PPP and AT mode selection occur in the application's `mbed_app.json` configuration file using the `lwip.ppp-enabled` flag.
 
 If the modem supports PPP mode, you can use the LWIP stack to handle sockets and IP connectivity for your modem. If your cellular module has an IP stack, you need to implement AT commands to control network sockets. For example implementations of a socket adaptation, look in `features/cellular/framework/targets`.
 
@@ -79,7 +79,7 @@ When the modem has AT and/or PPP mode support in place and the application devel
 
 ### Testing
 
-Once you have your Mbed OS target and cellular device drivers implemented verify them by running `mbed-greentea` tests.
+Once you have implemented the cellular device drivers on the Mbed OS target, verify them by running `mbed-greentea` tests.
 
 To run the tests:
 
@@ -89,10 +89,10 @@ To run the tests:
     mbed test --compile-list
     ```
 
-1.  Run Mbed OS Network interface tests, see [Network Interface test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/network/interface/README.md).
+1.  Run Mbed OS Network interface tests. Please see the [Network Interface test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/network/interface/README.md) for more details.
 
-1. Run Mbed OS Socket tests, see [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md).
+1. Run Mbed OS Socket tests. Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for more details.
 
-For more information on the  `mbed-greentea` test suite, please visit [its documentation](../tools/greentea-testing-applications.html).
+For more information on the `mbed-greentea` test suite, please visit [its documentation](../tools/greentea-testing-applications.html).
 
-You may also find [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) useful for testing.
+You may also find the [Mbed OS cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) useful for testing.
