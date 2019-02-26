@@ -21,7 +21,7 @@
 
    <span class="tips">**Tip:** You can get the name of the board plugged into your computer by running `mbed detect`, and you can get a full list of supported toolchains and targets by running the `mbed compile --supported` command.</span>
 
-    1. **NOTE** To build with the Mbed OS Bare Metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file as in the following snippet:
+   <span class="notes">**Note:** To build with the Mbed OS bare metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file:
 
       ```NOCI
       {
@@ -29,5 +29,6 @@
           "target_overrides": {
               "*": {
       ```
+   </span>
 
 1. Press the board's reset button. The LED blinks.
