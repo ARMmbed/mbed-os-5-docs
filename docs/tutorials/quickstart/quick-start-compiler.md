@@ -27,7 +27,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button.png)</span>
 
-    1. **NOTE** To build with the Mbed OS Bare Metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file as in the following snippet:
+    <span class="notes">**Note:** To build with the Mbed OS bare metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file:
 
     ```NOCI
     {
@@ -35,6 +35,7 @@ Alternatively, you may select the import button on the top left hand side of the
         "target_overrides": {
             "*": {
     ```
+   </span>
 
 1. Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
