@@ -57,7 +57,7 @@ has the same flags as if you had compiled with:
 
 For a complete list of supported export toolchains, you can run:
 
-    $ mbed export -h
+    $ mbed export --supported ides
 
 ### Before you export
 
