@@ -1,12 +1,12 @@
 ## USBCDC
 
-<span class="images">![](https://os.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_c_d_c.png)<span>USBCDC class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c.png)<span>USBCDC class hierarchy</span></span>
 
 The USBCDC class emulates a basic serial port over USB. You can use this serial port to send or receive data. If you want printf functionality, please see the [USBSerial](USBSerial.html) class.
 
 ### USBCDC class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c.html)
 
 ### USBCDC example
 
