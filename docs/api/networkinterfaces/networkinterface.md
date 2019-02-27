@@ -19,7 +19,7 @@ When you create a network interface, it starts from the disconnected state. When
 
 The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection. The `ThreadInterface` returns from `connect()` call when it joins a local mesh network. It may later get a global connection when it finds a border router.
 
-When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface usually reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal backoff periods, and not all interfaces implement the reconnection logic at all. Please refer to table below for information on how different interfaces behave.
+When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal backoff periods, and not all interfaces implement the reconnection logic at all. Please refer to table below for information on how different interfaces behave.
 
 An application may check the connection status by calling `nsapi_connection_status_t get_connection_status()` or register a callback to monitoring status changes. The following table lists defined network states with actions that applictions should take on the state change:
 
@@ -126,7 +126,7 @@ When you use two network interfaces and both are operating on different IP stack
 
 When you use two network interfaces and both use the same IP stacks, there are limitations.
 
-We have modified the LwIP routing core to support multiple active interfaces, but when more than one active interface is active in LwIP, only one is the default. All the outgoing traffic flows through it.
+We have modified the LwIP routing core to support multiple active interfaces, but when more than one interface is active in LwIP, only one is the default. All the outgoing traffic flows through it.
 
 If you need to force the traffic to only one of the interfaces, you need to use `Socket::setsockopt(NSAPI_SOCKET, NSAPI_BIND_TO_DEVICE, <interface name>, <interface name length>)` to bind the socket into one interface. You can fetch the interface name from the `NetworkInterface::get_interface_name()` call.
 
