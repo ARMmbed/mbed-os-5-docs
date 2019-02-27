@@ -40,7 +40,7 @@ Where:
 ### Cryptographic configuration
 By default, the PSA compliance tests run using the default Mbed OS cryptography configuration (the configuration can be found at `features/mbedtls/inc/mbedtls/config.h` in the Mbed OS directory). When you use the default configuration, only tests supported by the configuration run.
 
-For an example of how to run the tests with a different configuration, see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
+You can override the default Mbed OS cryptography configuration using an `mbed_app.json` file. For an example of how to use an `mbed_app.json` file to override the default cryptography configuration, see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
 
 ### Sample test output
 When the tests run, they output state information to the serial output. Below is an example of a successful run (running the first crypto test scenario):
