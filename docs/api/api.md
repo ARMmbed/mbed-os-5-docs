@@ -126,6 +126,30 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tbody>
 </table>
 
+### USB APIs
+
+The Mbed OS classes providing USB peripheral functionality, also known as [USB components](../apis/usb.html), inherit from USBDevice and provide specific USB peripherial functionality.
+
+<table>
+<tbody>
+<tr>
+<td><a href="usbserial.html">USBSerial</a></td>
+<td><a href="usbcdc.html">USBCDC</a></td>
+<td><a href="usbmouse.html">USBMouse</a></td>
+</tr>
+<tr>
+<td><a href="usbaudio.html">USBAudio</a></td>
+<td><a href="usbmsd.html">USBMSD</a></td>
+<td><a href="usbkeyboard.html">USBKeyboard</a></td>
+</tr>
+<tr>
+<td><a href="usbhid.html">USBHID</a></td>
+<td><a href="usbmidi.html">USBMIDI</a></td>
+<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
+</tr>
+</tbody>
+</table>
+
 ### Network socket APIs
 
 [Network socket APIs](network-socket.html) include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
