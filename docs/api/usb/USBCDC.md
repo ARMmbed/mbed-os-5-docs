@@ -22,7 +22,7 @@ int main(void) {
     {
         char msg[] = "Hello world\r\n";
         cdc.send((uint8_t*)msg, strlen(msg));
-        wait(1);
+        wait(1.0);
     }
 }
 ```
