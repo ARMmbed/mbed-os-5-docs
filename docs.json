@@ -951,6 +951,9 @@
                         "path": "docs/tutorials/using_apis/flow_control.md"
                     },
                     {
+                        "path": "docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                    },
+                    {
                         "path": "docs/tutorials/using_apis/connectivity/light-control.md"
                     },
                     {
