@@ -3,10 +3,12 @@
 Mbed OS bare metal supports the following APIs:
 
 <h3 id="analog-i-o">Analog I/O</h3>
+
 - AnalogIn - Read the voltage applied to an analog input pin.
 - AnalogOut - Set the voltage of an analog output pin.
 
 <h3 id="digital-i-o">Digital I/O</h3>
+
 - DigitalIn - Configure and control a digital input pin.
 - DigitalOut - Configure and control a digital output pin.
 - DigitalInOut - Bidirectional digital pins.
@@ -24,6 +26,7 @@ Mbed OS bare metal supports the following APIs:
 - InterruptIn - Trigger an event when a digital input pin changes.
 
 <h3 id="timers">Timers</h3>
+
 - Timer - Create, start, stop and read a timer.
 - Timeout - Call a function after a specified delay.
 - Ticker - Repeatedly call a function.
@@ -32,6 +35,7 @@ Mbed OS bare metal supports the following APIs:
 - Time - Get and set the realtime clock.
 
 <h3 id="digital-interfaces">Digital Interfaces</h3>
+
 - Serial - Serial/UART bus.
 
 - SPI - SPI bus master.
