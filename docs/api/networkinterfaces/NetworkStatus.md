@@ -2,7 +2,7 @@
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 
-<span class="images">![](../../images/NetworkinterfaceStates.png)<span>Network states</span></span>
+![Network states](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/NetworkinterfaceStates.png)
 
 #### Usage
 
