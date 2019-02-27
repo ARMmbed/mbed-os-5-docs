@@ -22,7 +22,7 @@ int main(void) {
     while(1)
     {
         serial.printf("I am a virtual serial port\r\n");
-        wait(1);
+        wait(1.0);
     }
 }
 ```
