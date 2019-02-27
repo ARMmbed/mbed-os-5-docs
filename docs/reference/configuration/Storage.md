@@ -334,32 +334,11 @@ Note that LittleFS has 4 levels of debug logging. By default, all logging is ena
 ```
 Configuration parameters
 ------------------------
-
 Name: littlefs.block_size
     Description: Size of an erasable block. This does not impact ram consumption and may be larger than the physical erase size. However, this should be kept small as each file currently takes up an entire block.
     Defined by: library:littlefs
     Macro name: MBED_LFS_BLOCK_SIZE
     Value: 512 (set by library:littlefs)
-Name: littlefs.prog_size
-    Description: Minimum size of a block program. This determines the size of program buffers. This may be larger than the physical program size to improve performance by caching more of the block device.
-    Defined by: library:littlefs
-    Macro name: MBED_LFS_PROG_SIZE
-    Value: 64 (set by library:littlefs)
-Name: littlefs.read_size
-    Description: Minimum size of a block read. This determines the size of read buffers. This may be larger than the physical read size to improve performance by caching more of the block device.
-    Defined by: library:littlefs
-    Macro name: MBED_LFS_READ_SIZE
-    Value: 64 (set by library:littlefs)
-Name: littlefs.lookahead
-    Description: Number of blocks to lookahead during block allocation. A larger lookahead reduces the number of passes required to allocate a block. The lookahead buffer requires only 1 bit per block so it can be quite large with little ram impact. Should be a multiple of 32.
-    Defined by: library:littlefs
-    Macro name: MBED_LFS_LOOKAHEAD
-    Value: 512 (set by library:littlefs)
-Name: littlefs.intrinsics
-    Description: Enable intrinsics for bit operations such as ctz, popc, and le32 conversion. Can be disabled to help debug toolchain issues
-    Defined by: library:littlefs
-    Macro name: MBED_LFS_INTRINSICS
-    Value: 1 (set by library:littlefs)
 Name: littlefs.enable_assert
     Description: Enables asserts, true = enabled, false = disabled, null = disabled only in release builds
     Defined by: library:littlefs
@@ -380,6 +359,26 @@ Name: littlefs.enable_warn
     Description: Enables warn logging, true = enabled, false = disabled, null = disabled only in release builds
     Defined by: library:littlefs
     No value set
+Name: littlefs.intrinsics
+    Description: Enable intrinsics for bit operations such as ctz, popc, and le32 conversion. Can be disabled to help debug toolchain issues
+    Defined by: library:littlefs
+    Macro name: MBED_LFS_INTRINSICS
+    Value: 1 (set by library:littlefs)
+Name: littlefs.lookahead
+    Description: Number of blocks to lookahead during block allocation. A larger lookahead reduces the number of passes required to allocate a block. The lookahead buffer requires only 1 bit per block so it can be quite large with little ram impact. Should be a multiple of 32.
+    Defined by: library:littlefs
+    Macro name: MBED_LFS_LOOKAHEAD
+    Value: 512 (set by library:littlefs)
+Name: littlefs.prog_size
+    Description: Minimum size of a block program. This determines the size of program buffers. This may be larger than the physical program size to improve performance by caching more of the block device.
+    Defined by: library:littlefs
+    Macro name: MBED_LFS_PROG_SIZE
+    Value: 64 (set by library:littlefs)
+Name: littlefs.read_size
+    Description: Minimum size of a block read. This determines the size of read buffers. This may be larger than the physical read size to improve performance by caching more of the block device.
+    Defined by: library:littlefs
+    Macro name: MBED_LFS_READ_SIZE
+    Value: 64 (set by library:littlefs)
 ```
 
 ### NVStore configuration
@@ -389,7 +388,6 @@ NVStore does not need much configuration. It relies only on the regions of inter
 ```
 Configuration parameters
 ------------------------
-
 Name: nvstore.area_1_address
     Description: Area 1 address
     Defined by: library:nvstore

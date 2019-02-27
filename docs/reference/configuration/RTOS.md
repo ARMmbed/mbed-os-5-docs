@@ -16,12 +16,16 @@ The following is the complete list of RTOS configuration parameters, as generate
 ```
 Configuration parameters
 ------------------------
-
 Name: rtos.idle-thread-stack-size
     Description: The size of the idle thread's stack
     Defined by: library:rtos
     Macro name: MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE
     Value: 512 (set by library:rtos)
+Name: rtos.idle-thread-stack-size-tickless-extra
+    Description: Additional size to add to the idle thread when tickless is enabled and LPTICKER_DELAY_TICKS is used
+    Defined by: library:rtos
+    Macro name: MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE_TICKLESS_EXTRA
+    Value: 256 (set by library:rtos)
 Name: rtos.main-thread-stack-size
     Description: The size of the main thread's stack
     Defined by: library:rtos
@@ -46,6 +50,8 @@ Name: rtos.timer-thread-stack-size
 ### EventQueue configuration parameters
 
 ```
+Configuration parameters
+------------------------
 Name: events.present
     Defined by: library:events
     Macro name: MBED_CONF_EVENTS_PRESENT
@@ -73,7 +79,7 @@ Name: events.shared-stacksize
     Description: Stack size (bytes) for shared event queue thread
     Defined by: library:events
     Macro name: MBED_CONF_EVENTS_SHARED_STACKSIZE
-    Value: 1024 (set by library:events)
+    Value: 2048 (set by library:events)
 Name: events.use-lowpower-timer-ticker
     Description: Enable use of low power timer and ticker classes in non-RTOS builds. May reduce the accuracy of the event queue. In RTOS builds, the RTOS tick count is used, and this configuration option has no effect.
     Defined by: library:events

@@ -7,7 +7,6 @@ The following is the complete list of driver configuration parameters, as genera
 ```
 Configuration parameters
 ------------------------
-
 Name: drivers.uart-serial-rxbuf-size
     Description: Default RX buffer size for a UARTSerial instance (unit Bytes))
     Defined by: library:drivers
