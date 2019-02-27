@@ -15,6 +15,10 @@ Try this example to see how an I2C responder works.
 ```c++ TODO
 #include <mbed.h>
 
+#if !DEVICE_I2CSLAVE
+  #error [NOT_SUPPORTED] I2C Slave is not supported
+#endif
+
 I2CSlave slave(p9, p10);
 
 int main() {
