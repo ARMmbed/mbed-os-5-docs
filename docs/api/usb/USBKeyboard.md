@@ -20,7 +20,7 @@ int main(void)
 {
   while (1) {
       key.printf("Hello World\r\n");
-      wait(1);
+      wait(1.0);
   }
 }
 ```
