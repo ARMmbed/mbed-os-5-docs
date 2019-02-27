@@ -19,14 +19,12 @@ def main(file):
         start  = ranges[i][0]
         end    = ranges[i][1]
 
-        print(snippet_indices)
-
         try:
             blocks[i] = file[start : end + 3]
             if ('Name: ' in blocks[i]):
                 lib = blocks[i].split('Name: ')[1].split('.')[0]
                 print("=================   %s   =================" % lib)
-                out = subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]).decode()
+                out = str(subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]))
                 file = file[:start+4] + out[:out.index("Macros") - 1] + file[end:]
 
         # Originally added for debugging purposes, catch and display exceptions before
