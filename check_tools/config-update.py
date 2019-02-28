@@ -18,7 +18,7 @@ LIBRARIES BUILD
 # each configuration doc page with the output from `mbed compile --config -v`
 # for the page's appropriate prefix.
 #
-# By default the script when run from the check_tools directory will run
+# By default, when run from the check_tools directory, the script runs
 # through each Markdown file in `docs/reference/configuration/`. An
 # optional file or directory path may be passed in a parameter to run the
 # script on a specific file or directroy outside the default path. 
