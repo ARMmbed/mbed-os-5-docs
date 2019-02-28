@@ -12,9 +12,10 @@ For IP devices:
 * NB-IoT.
 * Bluetooth Low Energy (BLE).
 
-Non-IP devices require a gateway:
+Non-IP devices:
 
 * LoRaWAN.
+* Cellular.
 
 ### Choosing your connectivity method
 
@@ -62,11 +63,11 @@ Typical applications of BLE are health care, fitness trackers, beacons, smart ho
 
 To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
 
-####  IP-based mesh (Thread and Wi-SUN)
+####  IP-based mesh (Thread and 6LoWPAN-ND)
 
 As a technology designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
 
-**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
+**Thread** is designed for indoor use, with a range of only a few meters. **6LoWPAN-ND** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
 
 Mesh networks are self-healing, with no single point of failure. They are more suitable for limited spaces because of the expense in infrastructure setup and maintenance.
 
@@ -92,7 +93,6 @@ Because of its long range (up to 20 km) and low power, it is suitable for low da
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutorial.html) describe LoRA networking.
 
-
 #### NFC
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>NFC</span></span>
@@ -100,6 +100,12 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutoria
 Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content and Bluetooth connection initiation/out-of-band pairing.
 
 To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview](../apis/nfc.html).
+
+#### NB-IoT cellular
+
+Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. It is enabled by Control Plane cellular IoT EPS optimization and meant to provide improved support of small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
+
+To learn how to use this feature with Mbed OS, please refer to [CellularNonIPSocket](../apis/cellularnonipsocket.html).
 
 #### Memory needs for Pelion-connected devices
 

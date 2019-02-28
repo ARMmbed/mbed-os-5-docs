@@ -8,36 +8,39 @@
 <tbody>
 <tr>
 <td><a href="wait.html">Wait</a></td>
-<td><a href="rtc.html">RTC</a></td>
-<td><a href="shared-pointer.html">Shared pointer</a></td>
-<td><a href="mpu-management.html">MPU management</a></td>
-</tr>
-<tr>
-<td><a href="callback.html">Callback</a></td>
-<td><a href="debug.html">Debug</a></td>
-<td><a href="span.html">Span</a></td>
-<td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
-</tr>
-<tr>
-<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
-<td><a href="memory-tracing.html">Memory tracing</a></td>
-<td><a href="platformmutex.html">PlatformMutex</a></td>
-<td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
-</tr>
-<tr>
-<td><a href="power-management.html">Power management</a></td>
-<td><a href="error-handling.html">Error handling</a></td>
+<td><a href="time.html">Time</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
 <td><a href="circularbuffer.html">CircularBuffer</a></td>
 </tr>
 <tr>
-<td><a href="idle-loop.html">Idle loop</a></td>
-<td><a href="assert.html">Assert</a></td>
+<td><a href="callback.html">Callback</a></td>
+<td><a href="rtc.html">RTC</a></td>
+<td><a href="shared-pointer.html">Shared pointer</a></td>
 <td><a href="atcmdparser.html">ATCmdParser</a></td>
 </tr>
 <tr>
-<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
+<td><a href="debug.html">Debug</a></td>
+<td><a href="span.html">Span</a></td>
 <td><a href="mbed-statistics.html">Mbed statistics</a></td>
+</tr>
+<tr>
+<td><a href="power-management.html">Power management</a></td>
+<td><a href="memory-tracing.html">Memory tracing</a></td>
+<td><a href="filehandle.html">FileHandle</a></td>
+<td><a href="mpu-management.html">MPU management</a></td>
+</tr>
+<tr>
+<td><a href="idle-loop.html">Idle loop</a></td>
+<td><a href="error-handling.html">Error handling</a></td>
+<td><a href="poll.html">Poll</a></td>
+<td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
+</tr>
+<tr>
+<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
+<td><a href="assert.html">Assert</a></td>
+<td><a href="platformmutex.html">PlatformMutex</a></td>
+<td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
 </tr>
 </tbody>
 </table>
@@ -123,6 +126,30 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tbody>
 </table>
 
+### USB APIs
+
+The Mbed OS classes providing USB peripheral functionality, also known as [USB components](../apis/usb.html), inherit from USBDevice and provide specific USB peripherial functionality.
+
+<table>
+<tbody>
+<tr>
+<td><a href="usbserial.html">USBSerial</a></td>
+<td><a href="usbcdc.html">USBCDC</a></td>
+<td><a href="usbmouse.html">USBMouse</a></td>
+</tr>
+<tr>
+<td><a href="usbaudio.html">USBAudio</a></td>
+<td><a href="usbmsd.html">USBMSD</a></td>
+<td><a href="usbkeyboard.html">USBKeyboard</a></td>
+</tr>
+<tr>
+<td><a href="usbhid.html">USBHID</a></td>
+<td><a href="usbmidi.html">USBMIDI</a></td>
+<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
+</tr>
+</tbody>
+</table>
+
 ### Network socket APIs
 
 [Network socket APIs](network-socket.html) include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
@@ -132,15 +159,16 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tr>
 <td><a href="socket.html">Socket</a></td>
 <td><a href="socketaddress.html">SocketAddress</a></td>
-<td><a href="dtlssocket.html">DTLSSocket</a></td>
+<td><a href="tlssocket.html">TLSSocket</a></td>
 </tr>
 <tr>
 <td><a href="udpsocket.html">UDPSocket</a></td>
-<td><a href="dns-resolver.html">DNS Resolver</a></td>
-<td><a href="socketstats.html">SocketStats</a></td>
+<td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
+<td><a href="dtlssocket.html">DTLSSocket</a></td>
 <tr>
 <td><a href="tcpsocket.html">TCPSocket</a></td>
-<td><a href="tlssocket.html">TLS Socket</a></td>
+<td><a href="dns-resolver.html">DNS resolver</a></td>
+<td><a href="socketstats.html">SocketStats</a></td>
 </tr>
 </tbody>
 </table>
@@ -153,7 +181,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tbody>
 <tr>
 <td><a href="ethernet.html">Ethernet</a></td>
-<td><a href="mesh-api.html">6LoWPAN Mesh</a></td>
+<td><a href="mesh-api.html">Mesh</a></td>
 </tr>
 <tr>
 <td><a href="wi-fi.html">Wi-Fi</a></td>

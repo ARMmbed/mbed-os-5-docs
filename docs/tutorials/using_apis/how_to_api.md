@@ -4,7 +4,7 @@ This section contains step-by-step tutorials that show you how to perform specif
 
 ### Connectivity
 
-- [TCP sockets](cellular-tcp-sockets.html).
+- [Light control using Mesh](../tutorials/light-control.html).
 - [BLE](ble-tutorial.html).
 - [LoRa Network](LoRa-tutorial.html).
 

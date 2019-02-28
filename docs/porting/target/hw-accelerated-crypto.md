@@ -141,7 +141,7 @@ When your hardware accelerator driver requires initialization, do the following 
 
 1. Define `MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT` in `mbedtls_device.h`
 1. Implement `crypto_platform_setup(crypto_platform_ctx *ctx)` and `crypto_platform_terminate(crypto_platform_ctx *ctx)`, which initializes and terminates your hardware accelerator driver.
-1. Define `crypto_platform_ctx` in `crypto_platform.h`.
+1. Define `crypto_platform_ctx` in `crypto_device_platform.h`.
 
 ### Considerations for alternative implementations
 

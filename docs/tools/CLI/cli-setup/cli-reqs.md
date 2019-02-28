@@ -66,7 +66,7 @@ We recommend installing Mbed CLI with our installer. If you need more customizat
 
 Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
+<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
 
 ### Manual installation
 
@@ -122,7 +122,7 @@ ARM_PATH=<path to ARM bin\>
 
 <span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
+<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
 
 
 ## Linux
@@ -223,9 +223,9 @@ Mbed CLI supports a setting for each toolchain path:
 
 | Toolchain | Example binary location | Setting name | Example path |
 | --------- | --------- | ---------| --------- |
-| Arm Compiler 5 | `C:/Program Files/ARM_Compiler_5.06u5/bin/armcc` | `ARM_PATH` | `C:/Program Files/ARM_Compiler_5.06u5` |
+| Arm Compiler 5 | `C:/Program Files/ARM_Compiler_5.06u6/bin/armcc` | `ARM_PATH` | `C:/Program Files/ARM_Compiler_5.06u6` |
 | Arm Compiler 6 | `C:/Program Files/ARM/armcc6.10/bin/armclang` | `ARMC6_PATH` | `C:/Program Files/ARM/armcc6.10/bin` |
-| IAR EWARM Compiler | `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm/bin/iccarm.exe` | `IAR_PATH` | `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm`|
+| IAR EWARM Compiler | `C:/Program Files/IAR Systems/Embedded Workbench 8.2/arm/bin/iccarm.exe` | `IAR_PATH` | `C:/Program Files/IAR Systems/Embedded Workbench 8.2/arm`|
 | GCC Arm Embedded Compiler | `/usr/bin/arm-none-eabi-gcc` | `GCC_ARM_PATH` | `/usr/bin`|
 
 
@@ -266,7 +266,7 @@ To install `mbed-cli` bash tab completion:
 
 [For more information, see the full documentation](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md).
 
-## Reference: Working with `mbed config`
+## Reference: Working with mbed config
 
 The Mbed CLI configuration syntax is:
 

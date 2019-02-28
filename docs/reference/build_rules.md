@@ -8,17 +8,17 @@ The build tools include every source file found in the project unless it is in a
 
 Mbed OS build tools determine the type of source file found based on the file's extension. The following table lists all files used in a build:
 
-| Extension           | File type         | Used by                        |
-|---------------------|-------------------|--------------------------------|
-| `.a`, `.ar`         | Archive           | Toolchain's linker             |
-| `.c`                | C source          | Toolchain's C compiler         |
-| `.cc`, `.cpp`       | C++ source        | Toolchain's C++ compiler       |
-| `.h`, `.hpp`, `.hh` | C/C++ header      | Toolchain's C and C++ compiler |
-| `.icf`              | IAR linker file   | IAR's linker                   |
-| `.ld`               | GCC linker acript | GCC's linker (`ld`)            |
-| `.o`                | Object            | Toolchain's linker             |
-| `.s`, `.S`          | Assembly          | Toolchain's assembler          |
-| `.sct`              | ARM scatter file  | ARM's linker (`armlink`)       |
+| Extension                   | File type         | Used by                        |
+|-----------------------------|-------------------|--------------------------------|
+| `.a`, `.ar`                 | Archive           | Toolchain's linker             |
+| `.c`                        | C source          | Toolchain's C compiler         |
+| `.cc`, `.cpp`               | C++ source        | Toolchain's C++ compiler       |
+| `.h`, `.hpp`, `.hh`, `.inc` | C/C++ header      | Toolchain's C and C++ compiler |
+| `.icf`                      | IAR linker file   | IAR's linker                   |
+| `.ld`                       | GCC linker script | GCC's linker (`ld`)            |
+| `.o`                        | Object            | Toolchain's linker             |
+| `.s`, `.S`                  | Assembly          | Toolchain's assembler          |
+| `.sct`                      | ARM scatter file  | ARM's linker (`armlink`)       |
 
 
 ### Label directories

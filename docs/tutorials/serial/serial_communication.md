@@ -62,6 +62,10 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try one
 - [Minicom](https://help.ubuntu.com/community/Minicom).
 - [GNU Screen](https://www.gnu.org/software/screen/manual/screen.html).
 
+### Minimal Printf
+
+For low memory devices you may optionally use the [ArmMbed minimal printf library](https://github.com/ARMmbed/minimal-printf). 
+
 ### Additional examples
 
 Use your terminal application to interact with the following examples.

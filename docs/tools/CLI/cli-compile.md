@@ -57,7 +57,7 @@ The arguments for *compile* are:
 
 You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
 
-For more information on build profiles, see [our build profiles](build-profiles.html) and [toolchain profiles](../tools/build-profiles.html) pages.
+For more information, please see [our build profiles](../tools/build-profiles.html) pages.
 
 ### Compiling static libraries
 

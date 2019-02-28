@@ -1,4 +1,4 @@
-## Cellular
+## Cellular networking
 
 Mbed OS cellular provides your IoT application with access to world-wide operator-maintained cellular networks, both IP and non-IP, as Figure 1 illustrates. Mbed OS cellular implementation is based on international 3GPP and OMA standards, and it has been verified to work with all cellular networks such as NB-IoT, CAT-M1, 4G LTE, 3G WCDMA and GPRS.
 
@@ -12,49 +12,30 @@ Key features of the Mbed OS cellular APIs include:
 
 - Compatible with 3GPP TS 27.007 and 27.005.
 - Implements core functionality for OMA Lightweight M2M Client.
-- Hosted cellular modules on Mbed Enabled boards.
+- Supports many Mbed Enabled cellular boards.
 
 3GPP TS 27.007 and 27.005 are standards to provide consistent cellular network data connectivity and SMS over an AT command interface for cellular devices, regardless of the underlying cellular network.
 
 OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
-Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](../porting/porting-connectivity.html#cellularinterface) for more information.
+Many Mbed Enabled boards already support cellular connectivity. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](../porting/cellular-module-porting.html) for more information.
 
 ### Quick start
 
-There are two phases to Mbed OS connectivity, in general:
+To use cellular data connection:
 
 1. Connect to a network.
 1. Open a socket to send or receive data.
 
-With cellular, the easiest way to connect your application to the internet over a cellular network is to use the `CellularContext` class and `get_default_instance`. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual, as Figure 2 illustrates.
+With cellular, the easiest way to connect your application to the internet over a cellular network is to use the `CellularContext` class and `get_default_instance`. It encapsulates most of the complexity of connecting to the cellular network and also reports any changes in connection status to your application. When connected to a cellular network, you can use Mbed OS network sockets as usual.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-quick-start.png)<span>Figure 2. Connect to cellular network and open a socket</span></span>
+A network interface instantiated directly or using calls such as `CellularInterface::get_default_instance()` or `CellularContext::get_default_instance()` is initially unconfigured. You can call `NetworkInterface::set_default_parameters()` to set the default parameters that would have been set if the interface had been requested using `NetworkInterface::get_default_instance()`.
 
 If you want to see code, you can go to our [cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/).
 
-### Cellular hosted module
+### Cellular device selection
 
-If you are using an Mbed OS target that has a supported on-board (mounted) cellular hosted module then cellular framework decides the correct cellular hosted module at compile-time. You can run `mbedls` to find out your current Mbed OS target and then match that to the supported targets in the `CellularTargets.h` file, where a CELLULAR_DEVICE macro is defined based on the Mbed OS target definition and can be used as a C++ class type to instantiate a driver class (inherited from `CellularDevice.h`).
-
-You can browse `CellularTargets.h` file to find out if the hosted module you are using is already supported. In case the hosted module is not yet supported, you could adapt some existing driver for your needs.
-
-Some Mbed OS target boards may have several different kind of cellular hosted modules on-board. In that case, the cellular hosted module driver detects at runtime the actual hosted module that is currently mounted and adapts to that specific cellular hosted module during runtime.
-
-If you use an Mbed OS target and a separate cellular hosted module via a serial line (UART), you need to configure in your `mbed_app.json` configuration file which cellular hosted module to use and which UART pins are connected between the Mbed OS target board and the cellular hosted module:
-
-    {
-        "macros":
-        [
-            "CELLULAR_DEVICE=<manufacturer-module>",
-            "MDMRXD=<rx-pin-name>",
-            "MDMTXD=<tx-pin-name>",
-            "MDMRTS=<rts-pin-name>",
-            "MDMCTS=<cts-pin-name>"
-        ]
-    }
-
-You need to change the pin names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS and CTS connected on UART. If RTC and CTS are not connected on UART, then define MDMRTS and MDMCTS as `NC`.
+If an Mbed OS target board has an on-board cellular device then the cellular framework uses that by default when calling `get_default_instance()`. The default cellular device instance can be overridden in the cellular driver `mbed_lib.json` files or an application can override  `NetworkInterface::get_default_instance()`.
 
 ### Cellular APIs
 
@@ -64,14 +45,12 @@ Cellular APIs are structured based on main functionalities:
 
 - `CellularContext` is the main interface for the application. You can use it to connect to the operator's Access Point Name (APN).
 - `CellularNetwork` for cellular network features, such as registering and attaching to a network.
-- `CellularPower` for cellular hosted module power control, such as enabling power save.
-- `CellularInformation` to read the cellular hosted module type and firmware version.
-- `CellularSIM` to enter the PIN code and other SIM management functions.
+- `CellularInformation` to read the cellular device and SIM information.
 - `CellularSMS` to read and write SMS messages.
 
 You can instantiate the CellularContext class with `CellularContext::get_default_instance()`, which opens `CellularDevice` and, through the device, opens `CellularContext`. Opening `CellularContext` through `get_default_instance` uses values from `mbed_app.json`.
 These values are not defined by default, and you must override them in `mbed_app.json` if you need them:
-
+```
 "target_overrides": {
         "*": {
             "nsapi.default-cellular-plmn": "\"12346\"",
@@ -81,25 +60,21 @@ These values are not defined by default, and you must override them in `mbed_app
             "nsapi.default-cellular-password": 0
         }
     }
-
-The CellularDevice class encloses cellular APIs. Therefore, to use any cellular API, you need to get CellularDevice first. You can then use CellularDevice to open and close cellular APIs, as Figure 3 illustrates.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-device.png)<span>Figure 3. Use CellularDevice to open Cellular APIs</span></span>
+```
+The CellularDevice class encloses cellular APIs. Therefore, to use a cellular API, you need to get CellularDevice first. You can then use CellularDevice to open and close cellular APIs.
 
 When an application has opened a cellular API, you can use it to request API methods. For example:
-
+```
     CellularContext *ctx  = cellularDevice->create_context();
     if (ctx) {
-		if (ctx-connect() == NSAPI_ERROR_OK) {
-			printf("Local IP address is %s", ctx->get_ip_address());
-		}
+    		if (ctx->connect() == NSAPI_ERROR_OK) {
+      			printf("Local IP address is %s", ctx->get_ip_address());
+    		}
     }
-
+```
 ### UDP and TCP sockets
 
-If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack, which is part of Mbed OS, or to use the IP stack on the cellular hosted module. Figure 4 illustrates IP stack deployment.
-
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-ip-stack.png)<span>Figure 4. IP stack can be used in PPP or AT mode</span></span>
+If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack (PPP mode), which is part of Mbed OS, or to use the IP stack on the cellular device (AT mode).
 
 #### PPP mode with the LWIP stack on Mbed OS
 
@@ -128,7 +103,7 @@ The AT mode is enabled when the PPP mode is not enabled:
 
 Consider the following points when selecting PPP or AT mode:
 
-- Your cellular hosted module may support only AT or PPP mode.
+- A cellular device may support only AT or PPP mode.
 - PPP mode supports both UDP and TCP sockets.
 - PPP mode does not allow AT commands after connecting to data mode.
 - PPP mode uses the LWIP stack, which uses memory from your Mbed OS application.
@@ -137,11 +112,11 @@ Consider the following points when selecting PPP or AT mode:
 
 ### Optimize for power consumption
 
-The `CellularPower` class has methods to optimize power saving. The `set_power_level()` offers flexibility to control the reception and transmission power levels. In addition, 3GPP has specified advanced power optimizations that are useful for celluar IoT devices: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
+The cellular API has methods to optimize power saving: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
 
 #### PSM - Power Save Mode
 
-    opt_power_save_mode(int periodic_time, int active_time)
+    set_power_save_mode(int periodic_time, int active_time)
 
 The new 4G modems implementing specifications release 13 and later include PSM. PSM allows the application to tell the modem and network that it does not expect any data in a given time interval, the `periodic_time`. The modem and network can optimize the sleep state and network resource reservations based on this information. During the PSM time, nothing can contact the device from the network side. The application can still send at any time. PSM time can be hours, days or weeks.
 
@@ -153,7 +128,7 @@ PSM configuration is negotiated with the network, and the actual PSM time that n
 
 #### eDRX - extended Discontinuous Reception
 
-    opt_receive_period(int mode, EDRXAccessTechnology act_type, uint8_t edrx_value)
+    set_receive_period(int mode, EDRXAccessTechnology act_type, uint8_t edrx_value)
 
 eDRX tells how long the device sleeps in continuous connection. The device needs to be able to receive data, but it can tell the network that it checks for incoming messages, for example only every 200 seconds. It can receive messages but only at the given times to allow battery saving sleep periods. These time values are greatly extended compared to normal 4G data transmission – hence the name.
 

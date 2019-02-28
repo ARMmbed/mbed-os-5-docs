@@ -1,10 +1,8 @@
-<h2 id="cellular-api">Cellular</h2>
+<h2 id="cellular-api">Cellular API</h2>
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.png)<span>CellularInterface class hierarchy</span></span>
 
-The [CellularBase](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_base_8h_source.html) provides a C++ API for connecting to the internet over a Cellular device.
-
-Arm Mbed OS provides a [reference implementation of CellularBase](https://os.mbed.com/docs/development/mbed-os-api-doxy/_cellular_context_8h_source.html), which has more information.
+The [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html) class provides a C++ API for connecting to the internet over a Cellular device.
 
 ##### Getting started
 
@@ -48,15 +46,15 @@ You can use and extend a cellular interface in various different ways. For examp
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
 - After registration, the driver opens a PPP pipe using LWIP with the cellular modem and connects to the internet. If AT only mode is in use, then modem-specific AT commands are used for socket data control.
 
-### CellularBase class reference
+### CellularInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html)
 
 ### Usage
 
 To bring up the network interface:
 
-1. Instantiate an implementation of the CellularBase class.
+1. Instantiate an implementation of the CellularInterface class.
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
 1. Once connected, you can use Mbed OS [network sockets](network-socket.html) as usual.
 
@@ -69,6 +67,6 @@ This example establishes connection with the cellular network using Mbed OS Cell
 ### Related content
 
 - [Network socket](network-socket.html) API reference overview.
-- [Cellular architecture](../reference/cellular.html).
+- [Cellular overview](../reference/cellular.html) describes cellular architecture and its usage in more detail.
 - [Cellular TCP sockets example](../tutorials/cellular-tcp-sockets.html).
 - [Cellular configuration documentation](../reference/configuration-connectivity.html).

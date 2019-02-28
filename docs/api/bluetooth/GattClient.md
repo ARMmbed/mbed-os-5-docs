@@ -1,6 +1,6 @@
 ## GattClient
 
-GattClient defines procedures required for interacting with a remote GattServer.
+You can use Generic Attribute Profile (GATT) to discover services, characteristics and descriptors and to perform operations on them. The interaction happens between two peers, one of which is the client (which initiates interactions) and the other is the server (which responds). You can use Attribute Protocol (ATT) to implement this interaction. `GattClient` defines procedures required for interacting with a remote `GattServer`.
 
 #### Discovery procedures
 
@@ -15,6 +15,16 @@ The layout of the descriptors of a characteristic may also be issued as an extra
 As a result of the discovery process, the client can start interacting with the characteristic discovered. Depending on the characteristic properties (acquired during discovery), a client can read or write the value of a given characteristic.
 
 Mbed BLE abstracts read and write operations to offer a single API that can be used to read or write characteristic values. The application code does not have to handle the necessary fragmentation or reassembly process if the attribute value to be transported can't fit in a single data packet.
+
+#### Attribute Protocol Maximum Transmission Unit (ATT_MTU)
+
+`ATT_MTU` is the maximum size of the attribute protocol packet. Operation on attributes too large to fit into a single packet are split across multiple operations.
+
+This is independent of the data length, which controls the over-the-air packet payload size (which the GAP handles). An L2CAP packet containing the attribute protocol packet is fragmented over many packets if required.
+
+Only `GattClient` can trigger the exchange of `ATT_MTU` between client and server. Depending on the implementation of the bluetooth stack, the client may trigger the exchange upon connection. You may also manually request the exchange using `negotiateAttMtu`. If an exchange happens, the biggest value possible across both devices will be used. Negotiation is only a best-effort process and does not guarantee a higher value being set.
+
+`ATT_MTU` is at least 23 octets by default. If a larger size is negotiated, the user application will be informed through the `onAttMtuChange` function called in the `GattClient::EventHandler`. (`GattServer::EventHandler` is also informed.)
 
 #### Server initiated events
 

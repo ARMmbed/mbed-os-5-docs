@@ -22,8 +22,8 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 Mbed OS 5 can be built with various toolchains. The currently supported versions are:
 
 - [Arm compiler 5.06 update 6](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
-- [GNU Arm Embedded version 6](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- [IAR Embedded Workbench 7.8](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
+- [GNU Arm Embedded version  6 (6-2017-q1-update)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
+- [IAR Embedded Workbench 8.32](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
 
 ##### Arm Mbed Online Compiler
 

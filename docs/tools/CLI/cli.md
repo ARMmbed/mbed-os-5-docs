@@ -4,7 +4,7 @@ Many experienced developers prefer to work offline. To meet this need, Arm provi
 
 Mbed CLI enables Git- and Mercurial-based version control, dependencies management, code publishing, support for remotely hosted repositories (GitHub, GitLab and mbed.org), use of the Arm Mbed OS build system, export functions and other operations.
 
-This document covers the installation and usage of Mbed CLI. You can find our legacy CLI documentation in the [README](https://github.com/ARMmbed/mbed-cli/blob/master/README.md).
+This document covers the installation and usage of Mbed CLI. You can find our legacy CLI documentation in the [README](https://github.com/ARMmbed/mbed-cli/blob/1.8.3/README.md).
 
 ### Feedback
 

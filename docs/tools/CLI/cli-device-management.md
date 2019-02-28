@@ -1,6 +1,6 @@
 <h2 id="cli-update">Updating devices</h2>
 
-Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/current/introduction/index.html).
+Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/latest/introduction/index.html).
 
 Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Device Management with a project.
 
@@ -10,11 +10,11 @@ Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mb
 
 To use the `mbed dm` command to update a device, your device must be running an application with Device Management Client and a supported managed or unmanaged bootloader.
 
-This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://cloud.mbed.com/docs/current/connecting/device-management-client-tutorials.html) on one of our reference platforms.
+This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://cloud.mbed.com/docs/latest/connecting/device-management-client-tutorials.html) on one of our reference platforms.
 
 ### Project setup
 
-Configure your Mbed Cloud SDK API key, target and toolchain. [Obtain the API key](https://cloud.mbed.com/docs/current/integrate-web-app/api-keys.html) from the the Device Management Portal.
+Configure your Mbed Cloud SDK API key, target and toolchain. [Obtain the API key](https://cloud.mbed.com/docs/latest/integrate-web-app/api-keys.html) from the the Device Management Portal.
 
 ```
 $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
@@ -92,8 +92,8 @@ $ mbed dm update prepare -n <PAYLOAD_NAME> -d <PAYLOAD_DESCRIPTION>\
 
 Both methods of creating a manifest use the defaults created in `mbed dm init`. You can override each default using an input file or command-line arguments.
 
-Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the payload and manifest to Device Management, and you can then create and start an [update campaign](https://cloud.mbed.com/docs/current/updating-firmware/update-campaigns.html) using the Device Management Portal.
+Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the payload and manifest to Device Management, and you can then create and start an [update campaign](https://cloud.mbed.com/docs/latest/updating-firmware/update-campaigns.html) using the Device Management Portal.
 
 ### Advanced use
 
-Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://cloud.mbed.com/docs/current/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
+Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://cloud.mbed.com/docs/latest/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
