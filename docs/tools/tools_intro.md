@@ -38,7 +38,7 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 
 For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
 
-<span class="note"> **Note:** With Mbed-OS 5.12 release, ARM Compiler 6 will be the default ARM toolchain for all Mbed OS targets. Majority of Mbed OS targets/platforms are already compatible with ARM Compiler 6. Few targets currently using/supporting ARM Compiler 5 will also be migrated to ARM Compiler in future. Please be aware that all new/existing Mbed OS targets/developers must use ARM Compiler 6 for future development and all code contributions to Mbed OS will be validated with ARM Compiler 6. </span>
+<span class="note"> **Note:** With Mbed-OS 5.12 release, ARM Compiler 6 will be the default ARM toolchain for Mbed-OS developmet. Majority of Mbed OS targets/platforms are already compatible with ARM Compiler 6. Some existing targets still using/supporting ARM Compiler 5 will also be migrated to ARM Compiler 6 in future. Please be aware that all new/existing Mbed OS targets/developers must use ARM Compiler 6 for future development and all code contributions to Mbed OS will be validated with ARM Compiler 6. </span>
 
 ##### Third party development tools
 
