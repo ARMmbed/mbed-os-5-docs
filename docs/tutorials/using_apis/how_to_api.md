@@ -16,6 +16,12 @@ ___
 
 ___
 
+
+### USB
+
+- [USB audio player](mbed-usb-wav-audio-player.html).
+
+___
 ### Drivers
 
 - [Flow control using Ticker and Wait](application-flow-control.html).
