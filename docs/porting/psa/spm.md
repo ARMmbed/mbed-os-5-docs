@@ -6,7 +6,18 @@ For more information about SPM, please refer to [the SPM overview page](../apis/
 
 <span class="notes">This page gives guidelines for silicon partners adding SPM capabilities.</span>
 
+mbed-os 
+
 ### New target configuration
+
+#### Platform types
+
+- Non-PSA platform: These are single core ARMv7-M targets. On these targets, the Mbed implementation of PSA provides the same PSA services exposing PSA APIs as it would on PSA targets. The PSA emulation layer allows seamless software portability to more security-oriented targets.
+- Asymmetric Multiprocessing (AMP) systems: Multicore ARMv7-M targets (for example, PSoC6 featuring CM4 and CM0+ cores). On these targets, one of the cores is dedicated to PSA use only and implements SPE.
+- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for this platforms is based on *specialized* [TrustedFirmware-M](https://www.trustedfirmware.org) implementation.
+
+
+#### JSON target definition
 
 When adding a new target, add a new root target node to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
 
@@ -17,7 +28,7 @@ When adding a new target, add a new root target node to the `mbed-os/targets/tar
    - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. The [memory layout section](#memory-layout) explains this in more detail.
    - The secure target must declare its corresponding nonsecure target using the `deliver_to_target` field.
 
-The example below demonstrates this:
+The example below demonstrates:
 
 ```json
 "SPM_SECURE_CORE_PSA": {
@@ -55,6 +66,20 @@ The example below demonstrates this:
     }
 ```
 
+Following flags & Labels are should be added to each target type to add right version of source files to a compilation:
+
+| Label \ Core                  | V7-single<br>(Target) | V7-dual NSPE<br>(NSPE_Target) | V7-dual SPE<br>(SPE_Target) | V8-NS<br>(NSPE_Target) | V8-S<br>(SPE_Target) |
+| ----------------------        |:---------------------:|:-----------------------------:|:---------------------------:|:----------------------:|:--------------------:|
+| component: `PSA_SRV_IMPL`     | V                     |                               | V                           |                        | V                    |
+| component: `PSA_SRV_EMUL`     | V                     |                               |                             |                        |                      |
+| component: `PSA_SRV_IPC`      |                       | V                             | V                           | V                      | V                    |
+| component: `SPE`              |                       |                               | V                           |                        | V                    |
+| component: `NSPE`             | V                     | V                             |                             | V                      |                      |
+| component: `SPM_MAILBOX`      |                       | V                             | V                           |                        |                      |
+| label: `MBED_SPM`             |                       | V                             | V                           |                        |                      |
+| label: `TFM`                  |                       |                               |                             | V                      | V                    |
+
+
 #### Memory layout
 
 Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash to secure and nonsecure parts, in a way the following image describes:
@@ -78,7 +103,7 @@ To achieve RAM and flash partitioning, you must add start and size values to a t
 
 <span class="notes">**Note:** For isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.</span>
 
-### Linker scripts
+### Linker scripts concepts
 
 Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions. You can define a shared memory region by reserving RAM space for shared memory use. The shared memory location is target specific and depends on the memory protection scheme applied.
 
@@ -186,22 +211,7 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 ...
 ```
 
-### Mailbox
-
-Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
-
-#### Concepts
-
-The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
-
-#### Requirements
-
-The SPM mailbox mechanism requires the platform to have the following capabilities:
-
-- IPC capabilities - the ability to notify the peer processor about an event (usually implemented with interrupts).
-- Ability to set a RAM section shared between the cores.
-
-#### Porting
+###  Mbed-SPM porting (Asymmetric Multiprocessing systems - Multicore ARMv7-M)
 
 These are the guidelines you should follow if you have multicore systems:
 
@@ -211,7 +221,7 @@ These are the guidelines you should follow if you have multicore systems:
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
 - For each core, add the `SPM_MAILBOX` component field for its target node in the `mbed-os/targets/targets.json` file.
 
-### HAL functions
+#### HAL functions
 
 Target-specific code of silicon partners adding SPM capabilities must:
 
@@ -220,10 +230,24 @@ Target-specific code of silicon partners adding SPM capabilities must:
 
 The HAL can be logically divided into two different fields:
 
-#### Mailbox
 
-This part of HAL allows you to implement a thin layer of the mailbox mechanism that is specific to your platform. You must only implement it if you have multicore systems.
+#### Mailbox 
 
+Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
+
+##### Concepts
+
+The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
+
+##### Requirements
+
+The SPM mailbox mechanism requires the platform to have the following capabilities:
+
+- IPC capabilities - the ability to notify the peer processor about an event (usually implemented with interrupts).
+- Ability to set a RAM section shared between the cores.
+
+
+This part of HAL allows you to implement a thin layer of the mailbox mechanism that is specific to your platform.
 #### Secure Processing Environment
 
 This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
@@ -247,6 +271,12 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 `Secure Read`       |   V              |    V       |        V          |    V
 `Secure Write`      |   V              |    V       |        V          |    ?
 `Secure Execute`    |   X?             |    V       |        X          |    ?
+
+
+###  TF-M SPM porting for (ARMv8-M targets)
+
+TF-M HAL functions are defined in `tfm_spm_hal.h`
+
 
 ### Testing
 

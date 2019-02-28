@@ -1,0 +1,11 @@
+digraph {
+    PSA_LIFECYCLE_ASSEMBLY_AND_TEST -> PSA_LIFECYCLE_ASSEMBLY_AND_TEST [label=<<font color='red'><b>ITS reset</b></font>>];
+    PSA_LIFECYCLE_ASSEMBLY_AND_TEST -> PSA_LIFECYCLE_PSA_ROT_PROVISIONING [style=dashed, color=grey, label=<<font color='red'><b>ITS reset</b></font> and reboot>];
+    PSA_LIFECYCLE_PSA_ROT_PROVISIONING -> PSA_LIFECYCLE_SECURED [style=dashed, color=grey, label="reboot"];
+    PSA_LIFECYCLE_SECURED -> PSA_LIFECYCLE_NON_PSA_ROT_DEBUG [style=dashed, color=grey, label="reboot"];
+    PSA_LIFECYCLE_SECURED -> PSA_LIFECYCLE_RECOVERABLE_PSA_ROT_DEBUG [style=dashed, color=grey, label="reboot"];
+    PSA_LIFECYCLE_SECURED -> PSA_LIFECYCLE_DECOMMISSIONED [style=dashed, color=grey, label="reboot"];
+
+    PSA_LIFECYCLE_NON_PSA_ROT_DEBUG -> PSA_LIFECYCLE_SECURED [style=dashed, color=grey, label="reboot"];
+    PSA_LIFECYCLE_RECOVERABLE_PSA_ROT_DEBUG -> PSA_LIFECYCLE_SECURED [style=dashed, color=grey, label="reboot"];
+}
