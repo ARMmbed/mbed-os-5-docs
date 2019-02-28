@@ -62,6 +62,16 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 </tbody>
 </table>
 
+#### Using USB APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="mbed-usb-wav-audio-player.html">USB audio player tutorial</a></td>
+</tr>
+</tbody>
+</table>
+
 #### Using drivers APIs
 
 <table>
