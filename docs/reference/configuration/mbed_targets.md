@@ -199,7 +199,7 @@ If you specify `ARMC5` in `supported_toolchains`, it means the corresponding tar
 If a target lists both `ARMC5` and `ARM` (or `ARMC6`) in `supported_toolchains`, the Arm Compiler 6.11 will be used when compiling with `ARM` option for `--toolchain`.
 
 <span class="notes">**Note:** Although you can specify `ARMC5` in `supported_toolchains` in `targets.json`, it's not a valid option for `--toolchain` when compiling using [Mbed CLI](../tools/developing-mbed-cli.html).
-With Mbed-OS 5.12 release, ARM Compiler 6 will be the default ARM toolchain for Mbed-OS developmet. Majority of Mbed OS targets/platforms are already compatible with ARM Compiler 6. Some existing targets still using/supporting ARM Compiler 5 will also be migrated to ARM Compiler 6 in future. Please be aware that all new/existing Mbed OS targets/developers must use ARM Compiler 6 for future development and all code contributions to Mbed OS will be validated with ARM Compiler 6.
+Arm Compiler 6 is the default ARM toolchain for Mbed OS developmet. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will be migrated to Arm Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development, and we will validate all code contributions to Mbed OS Arm Compiler 6.
 </span>
 
 #### default_toolchain
