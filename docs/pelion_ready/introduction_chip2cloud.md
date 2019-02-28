@@ -1,4 +1,4 @@
-## Using Mbed OS devices and Pelion Iot Platform
+## Using Mbed OS devices and the Pelion IoT Platform
 
 You can connect Mbed OS devices to the Pelion Iot Platform and use [the full suite of IoT services](https://cloud.mbed.com/): Device Management, Connectivity Management and Data Management.
 
