@@ -21,7 +21,13 @@ LIBRARIES BUILD
 # By default the script when run from the check_tools directory will run
 # through each Markdown file in `docs/reference/configuration/`. An
 # optional file or directory path may be passed in a parameter to run the
-# script on a specific file or directroy outside the default path.
+# script on a specific file or directroy outside the default path. 
+#
+# Note that you need to run this with a local copy of whichever version of
+# Mbed OS you wish to update the configuration parameters with.
+#
+# You can run this script with:
+# python config-update.py <OPTIONAL FILE/DIR PATH>
 
 import sys, os
 import re
