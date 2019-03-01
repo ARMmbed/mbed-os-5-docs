@@ -723,6 +723,9 @@
                                 "path": "docs/reference/configuration/mesh.md"
                             },
                             {
+                                "path": "docs/reference/configuration/BLE.md"
+                            },
+                            {
                                 "path": "docs/reference/configuration/lorawanconfig.md"
                             },
                             {
