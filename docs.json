@@ -641,6 +641,9 @@
                                 "path": "docs/reference/technology/connectivity/cellular.md"
                             },
                             {
+                                "path": "docs/reference/technology/mesh/wisun_intro.md"
+                            },
+                            {
                                 "path": "docs/reference/technology/mesh/quick_start_intro.md"
                             },
                             {
