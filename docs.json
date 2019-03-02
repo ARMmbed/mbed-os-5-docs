@@ -641,22 +641,22 @@
                                 "path": "docs/reference/technology/connectivity/cellular.md"
                             },
                             {
-                                "path": "docs/reference/technology/mesh/wisun_intro.md"
-                            },
-                            {
-                                "path": "docs/reference/technology/mesh/quick_start_intro.md"
-                            },
-                            {
                                 "path": "docs/reference/technology/mesh/thread_intro.md"
-                            },
-                            {
-                                "path": "docs/reference/technology/mesh/quick_start_hw.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/thread_commissioning.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/thread_faq.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/wisun_intro.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/quick_start_intro.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/quick_start_hw.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/02_N_arch.md"
