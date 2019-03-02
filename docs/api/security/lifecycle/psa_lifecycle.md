@@ -1,4 +1,7 @@
-<h2 id="psa-lifecycle">PSA lifecycle reference API</h2>
+## PSA lifecycle
+
+
+### Description
 
 PSA Lifecycle allows fine grained control over target RoT without compromising on developer experience.
 PSA Lifecycle can be described by following state machine:
@@ -15,4 +18,11 @@ Lifecycle can be specified during build time by `MBED_CONF_LIFECYCLE_STATE` macr
 
 In mbed-os PSA Lifecycle is implemented as part of [platform service](../platform_servcie.md)
 
-TODO: link to doxygen
+### Specification
+
+More details can be found in [Platform Security Architecture - Firmware Framework ](https://pages.arm.com/psa-resources-ff.html)
+
+
+###Doxygen:
+
+[![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/lifecycle_8h.html)
