@@ -1,6 +1,9 @@
-<h2 id="platform-service">Platfrom Service API</h2>
+## Platfrom Service
 
+### Description
 Platform service introduces system reset and PSA Lifecycle APIs.
-PSA platform service may be extended by target vendors to expose target peripherals only accessible from secure side.
+System reset API can be used to request system reset from NSPE.
 
-Todo: link to doxygen
+### Doxygen
+
+[![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/lifecycle_8h.html)
