@@ -4,7 +4,7 @@
 
 PSA internal storage APIs allows saving and retrieving data from PSA internal flash.
 
-PSA internal storage is implementation varies depending on the target type:
+PSA internal storage implementation varies depending on the target type:
 - on single core ARMv7-M target it PSA internal storage APIs are implemented by calling to "default" internal TDBStore instance.
 - on PSA targets implementing SPM, PSA internal storage implemented as a secure service. PSA internal storage has access control list, 
   which makes sure that only the entries created from NSPE will be accessible to it.
