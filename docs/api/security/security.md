@@ -4,9 +4,9 @@ Security on Arm Mbed OS is divided into the following parts:
 
 - [PSA SPM](./spm.md) - used for accessing secure services within Secure Processing environment (on PSA targets only)
 
-- [PSA internal storage](./psa_internal_storage.md) - used to save PSA RoT state
+- [PSA internal storage](../storage/psa_internal_storage.md) - used to save PSA RoT state
 
-- [PSA protected storage](./psa_protected_storage.md)
+- [PSA protected storage](../storage/psa_protected_storage.md)
 
 - [PSA Crypto](psa_crypto.md) 
 
