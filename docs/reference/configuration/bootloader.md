@@ -2,7 +2,7 @@
 
 This page describes each bootloader configuration parameter in detail. For a guide on using the managed and unmanaged bootloader modes, please see [the bootloader tutorial](../tutorials/bootloader.html).
 
-There are a number of configuration parameters that affect the location of an application in ROM:
+The following configuration parameters affect the location of an application in ROM:
 
 - `target.mbed_app_start`
 - `target.mbed_app_size`
@@ -86,7 +86,7 @@ You may use this parameter in conjunction with `target.bootloader_img`, `target.
 
 This parameter directly assigns the offset of the beginning of the header section defined in `target.header_format`. This parameter creates space between the bootloader and application header or asserts that the bootloader is at most as big as the specified offset.
 
-**NOTE:** This offset is relative to the start of ROM. This is important for targets with ROM that does not start at address `0x0`.
+<span class="notes">**Note:** This offset is relative to the start of ROM. This is important for targets with ROM that does not start at address `0x0`.</span>
 
 You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_format` and `target.app_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`.
 
@@ -94,6 +94,6 @@ You may use this parameter in conjunction with `target.bootloader_img`, `target.
 
 This parameter assigns the offset of the beginning of the application section that follows the header. This parameter creates space between the application header and the application.
 
-**NOTE:** This offset is relative to the start of ROM. This is important for targets with ROM that does not start at address `0x0`.
+<span class="notes">**Note:** This offset is relative to the start of ROM. This is important for targets with ROM that does not start at address `0x0`.</span>
 
 You may use this parameter in conjunction with `target.bootloader_img`, `target.restrict_size`, `target.header_format` and `target.header_offset`. It conflicts with `target.mbed_app_start` and `target.mbed_app_size`.
