@@ -8,8 +8,6 @@ The interface is made up of two lines for all communication:
   - SCL: Serial Clock
   - SDA: Serial Data
 
-### Assumptions
-
 #### Defined Behaviours
 
 - `i2c_init`:
