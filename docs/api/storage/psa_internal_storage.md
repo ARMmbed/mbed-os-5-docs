@@ -1,6 +1,6 @@
 ## PSA internal storage
 
-PSA internal storage APIs enable saving data to and retrieving data from a PSA internal flash.
+PSA internal storage APIs enable software running in a secure environment to save data to and retrieve data from a PSA internal flash.
 
 The PSA internal storage functionality varies depending on the target type:
 
