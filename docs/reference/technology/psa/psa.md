@@ -32,7 +32,7 @@ The Mbed implementation of PSA supports the following platform types:
 
 - Asymmetric Multiprocessing (AMP) systems: Multicore ARMv7-M targets (for example, PSoC6 featuring CM4 and CM0+ cores). On these targets, one of the cores is dedicated to PSA use only and implements SPE. The Mbed implementation of PSA provides PSA API proxy implementation on a nonsecure core, which redirects execution to the SPE.
 
-- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for this platforms is based on *specialized* [TrustedFirmware-M](https://www.trustedfirmware.org) implementation.
+- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for these platforms is based on a *specialized* [TrustedFirmware-M](https://www.trustedfirmware.org) implementation.
 
 ### RoT services
 
@@ -40,6 +40,6 @@ The Mbed implementation of PSA provides the following services:
 
 - PSA [RoT](../introduction/glossary.html) internal storage.
 - [PSA Crypto APIs (on GitHub)](https://github.com/ARMmbed/mbed-crypto/tree/development/docs).
-- PSA Attestation - TBD
-- [PSA Lifecycle](./lifecycle/psa_lifecycle.md)
-- [PSA Platform service](./platform_service.md)
+- [PSA attestation](../apis/psa_attestation.html).
+- [PSA lifecycle](../apis/psa_lifecycle.html).
+- [PSA platform service](../apis/platform_service.html).
