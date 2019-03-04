@@ -2,7 +2,7 @@
 
 This page describes each bootloader configuration parameter in detail. For a guide on using the managed and unmanaged bootloader modes, please see [the bootloader tutorial](../tutorials/bootloader.html).
 
-There are 4 configuration parameters that affect the location of an application in ROM:
+There are a number of configuration parameters that affect the location of an application in ROM:
 
 - `target.mbed_app_start`
 - `target.mbed_app_size`
