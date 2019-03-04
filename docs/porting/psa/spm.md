@@ -1,21 +1,16 @@
 <h2 id="spm-port">PSA SPM</h2>
 
-Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing interprocessor communication (IPC) between partitions.
+Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing inter-process communication (IPC) between partitions.
 
 For more information about SPM, please refer to [the SPM overview page](../apis/psa-api.html).
 
 <span class="notes">This page gives guidelines for silicon partners adding SPM capabilities.</span>
 
-mbed-os 
-
 ### New target configuration
 
 #### Platform types
 
-- Non-PSA platform: These are single core ARMv7-M targets. On these targets, the Mbed implementation of PSA provides the same PSA services exposing PSA APIs as it would on PSA targets. The PSA emulation layer allows seamless software portability to more security-oriented targets.
-- Asymmetric Multiprocessing (AMP) systems: Multicore ARMv7-M targets (for example, PSoC6 featuring CM4 and CM0+ cores). On these targets, one of the cores is dedicated to PSA use only and implements SPE.
-- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for this platforms is based on *specialized* [TrustedFirmware-M](https://www.trustedfirmware.org) implementation.
-
+For information about the platform types supported by the Mbed implementation of PSA, see [Platform types](../reference/psa-api.html#platform-types).
 
 #### JSON target definition
 
@@ -66,18 +61,18 @@ The example below demonstrates:
     }
 ```
 
-Following flags & Labels are should be added to each target type to add right version of source files to a compilation:
+The following flags and labels must be added to each target type to add the relevant version of the source files to a compilation:
 
-| Label \ Core                  | V7-single<br>(Target) | V7-dual NSPE<br>(NSPE_Target) | V7-dual SPE<br>(SPE_Target) | V8-NS<br>(NSPE_Target) | V8-S<br>(SPE_Target) |
+| Label/core                  | V7-single<br>(Target) | V7-dual NSPE<br>(NSPE_Target) | V7-dual SPE<br>(SPE_Target) | V8-NS<br>(NSPE_Target) | V8-S<br>(SPE_Target) |
 | ----------------------        |:---------------------:|:-----------------------------:|:---------------------------:|:----------------------:|:--------------------:|
-| component: `PSA_SRV_IMPL`     | V                     |                               | V                           |                        | V                    |
-| component: `PSA_SRV_EMUL`     | V                     |                               |                             |                        |                      |
-| component: `PSA_SRV_IPC`      |                       | V                             | V                           | V                      | V                    |
-| component: `SPE`              |                       |                               | V                           |                        | V                    |
-| component: `NSPE`             | V                     | V                             |                             | V                      |                      |
-| component: `SPM_MAILBOX`      |                       | V                             | V                           |                        |                      |
-| label: `MBED_SPM`             |                       | V                             | V                           |                        |                      |
-| label: `TFM`                  |                       |                               |                             | V                      | V                    |
+| `PSA_SRV_IMPL` (component)    | &#10003;                    |                               | &#10003;                           |                        | &#10003;                    |
+| `PSA_SRV_EMUL` (component)     | &#10003;                     |                               |                             |                        |                      |
+| `PSA_SRV_IPC` (component)       |                       | &#10003;                             | &#10003;                           | &#10003;                      | &#10003;                    |
+| `SPE` (component)              |                       |                               | &#10003;                           |                        | &#10003;                    |
+| `NSPE` (component)             | &#10003;                     | &#10003;                             |                             | &#10003;                      |                      |
+| `SPM_MAILBOX` (component)      |                       | &#10003;                             | &#10003;                           |                        |                      |
+| `MBED_SPM` (label)             |                       | &#10003;                             | &#10003;                           |                        |                      |
+| `TFM` (label)                  |                       |                               |                             | &#10003;                      | &#10003;                    |
 
 
 #### Memory layout
@@ -103,7 +98,7 @@ To achieve RAM and flash partitioning, you must add start and size values to a t
 
 <span class="notes">**Note:** For isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.</span>
 
-### Linker scripts concepts
+### Linker script concepts
 
 Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions. You can define a shared memory region by reserving RAM space for shared memory use. The shared memory location is target specific and depends on the memory protection scheme applied.
 
@@ -211,13 +206,13 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 ...
 ```
 
-###  Mbed-SPM porting (Asymmetric Multiprocessing systems - Multicore ARMv7-M)
+###  Porting SPM (asymmetric multiprocessing systems - multicore ARMv7-M)
 
 These are the guidelines you should follow if you have multicore systems:
 
-- For each core, initialize, configure and enable the a mailbox event (usually an interrupt) at `SystemInit()`.
+- For each core, initialize, configure and enable the mailbox event (usually an interrupt) at `SystemInit()`.
 - For each core, implement the IPC event handler (usually interrupt handler):
-  - The handler must call an Arm callback function. Refer to [HAL functions section](#hal-functions) for more details.
+  - The handler must call an Arm callback function. See the [HAL functions section](#hal-functions) for more details.
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
 - For each core, add the `SPM_MAILBOX` component field for its target node in the `mbed-os/targets/targets.json` file.
 
@@ -231,15 +226,15 @@ Target-specific code of silicon partners adding SPM capabilities must:
 The HAL can be logically divided into two different fields:
 
 
-#### Mailbox 
+##### Mailbox
 
 Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
 
-##### Concepts
+###### Concepts
 
 The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
 
-##### Requirements
+###### Requirements
 
 The SPM mailbox mechanism requires the platform to have the following capabilities:
 
@@ -247,8 +242,9 @@ The SPM mailbox mechanism requires the platform to have the following capabiliti
 - Ability to set a RAM section shared between the cores.
 
 
-This part of HAL allows you to implement a thin layer of the mailbox mechanism that is specific to your platform.
-#### Secure Processing Environment
+This part of HAL enables you to implement a thin, platform-specific layer of the mailbox mechanism.
+
+##### Secure Processing Environment
 
 This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
 
@@ -265,17 +261,17 @@ The implementation of this function must be aligned with the SPM general guideli
 
 Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecure FLASH
 --------------------|------------------|------------|-------------------|----------------
-`Non Secure Read`   |   X              |    X       |        V          |    V
-`Non Secure Write`  |   X              |    X       |        V          |    ?
-`Non Secure Execute`|   X              |    X       |        X?         |    V
-`Secure Read`       |   V              |    V       |        V          |    V
-`Secure Write`      |   V              |    V       |        V          |    ?
-`Secure Execute`    |   X?             |    V       |        X          |    ?
+`Non Secure Read`   |   X              |    X       |        &#10003;          |    &#10003;
+`Non Secure Write`  |   X              |    X       |        &#10003;          |    ?
+`Non Secure Execute`|   X              |    X       |        X?         |    &#10003;
+`Secure Read`       |   &#10003;              |    &#10003;       |        &#10003;          |    &#10003;
+`Secure Write`      |   &#10003;              |    &#10003;       |        &#10003;          |    ?
+`Secure Execute`    |   X?             |    &#10003;       |        X          |    ?
 
 
-###  TF-M SPM porting for (ARMv8-M targets)
+###  TF-M SPM porting (for ARMv8-M targets)
 
-TF-M HAL functions are defined in `tfm_spm_hal.h`
+TF-M HAL functions are defined in `tfm_spm_hal.h`.
 
 
 ### Testing
