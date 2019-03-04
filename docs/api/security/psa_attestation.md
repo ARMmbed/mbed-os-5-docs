@@ -1,7 +1,5 @@
 ## PSA Attestation
 
-### Description
-
 The PSA initial attestation service enables an application to prove a device's identity to a caller during the authentication process.
 
 The initial attestation service creates a token that contains a fixed set of device-specific data, on request. To sign the token, the device must contain an attestation key pair, which is unique per device. The service uses the attestation private key to sign the token, and the caller uses the public key to verify the token's authenticity.
@@ -44,7 +42,10 @@ The token might also include data about the distinct software components on the 
 
 In the current implementation, a bootloader does not exist in single and dual V7; therefore, we have provided temporary hardcoded boot status data claims in the `attestation_bootloader_data.c` file, including `HW version`, `Boot seed`, and some `Software components` entries. `Security lifecycle` should also be part of the boot status, but in the current implementation, it is provided by calling the `psa_security_lifecycle_state()` API directly.
 
- 
-PSA specification can be found here [PSA Secure Storage](https://pages.arm.com/PSA-APIs)
+### PSA attestation class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/psa__prot__internal__storage_8h.html)
+[![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/???.html)
+
+### Related content
+
+* [PSA specification](https://pages.arm.com/PSA-APIs).
