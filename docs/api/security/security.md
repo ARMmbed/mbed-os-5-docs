@@ -4,9 +4,9 @@ Security on Arm Mbed OS is divided into the following parts:
 
 - [Platform Security Architecture (PSA) Secure Partition Manager (SPM)](../spm.html) - Accesses secure services within a secure processing environment (on PSA targets only).
 
-- [PSA internal storage](../apis/psa_internal_storage.html) - Saves the PSA root of trust (RoT) state.
+- [PSA internal storage](../storage/psa_internal_storage.html) - Saves the PSA root of trust (RoT) state.
 
-- [PSA protected storage](../apis/psa_protected_storage.html) - Saves data to and retrieves data from PSA protected storage.
+- [PSA protected storage](../storage/psa_protected_storage.html) - Saves data to and retrieves data from PSA protected storage.
 
 - [PSA Crypto](../apis/psa_crypto.html) - A reference implementation of the cryptography interface of PSA.
 
