@@ -28,6 +28,6 @@
           "target_overrides": {
               "*": {
       ```
-</br></span>
+   </span>
 
 1. Press the board's reset button. The LED blinks.
