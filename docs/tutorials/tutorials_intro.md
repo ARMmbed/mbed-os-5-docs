@@ -19,6 +19,93 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 These tutorials show you how to perform specific tasks that use the Arm Mbed APIs:
 
+#### Using platform APIs
+
+### Platform APIs
+
+[Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
+
+<table>
+<tbody>
+<tr>
+<td><a href="../apis/wait.html#example">Wait example</a></td>
+<td><a href="../apis/criticalsectionlock.html#criticalsectionlock-example">CriticalSectionLock example</a></td>
+<td><a href="../apis/assert.html#assert-example">Assert example</a></td>
+<td><a href="../apis/circularbuffer.html#circularbuffer-example">CircularBuffer example</a></td>
+<td><a href="../apis/mbed-statistics.html#cpu-usage-example">CPU usage example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/callback.html#serial-passthrough-example-with-callbacks">Serial passthrough example with callbacks</a></td>
+<td><a href="../apis/time.html#time-example">Time example</a></td>
+<td><a href="../apis/shared-pointer.html#shared-pointer-example">SharedPtr example</a></td>
+<td><a href="../apis/atcmdparser.html#atcmdparser-examples">ATCmdParser example</a></td>
+<td><a href="../apis/mpu-management.html#example">MPU management example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/callback.html#thread-example-with-callbacks">Thread example with callbacks</a></td>
+<td><a href="../apis/rtc.html#rtc-time-example">RTC example</a></td>
+<td><a href="../apis/span.html#span-example">Span example</a></td>
+<td><a href="../apis/mbed-statistics.html#memory-statistics-example">Mbed statistics example</a></td>
+<td><a href="../apis/scopedramexecutionlock.html#example">ScopedRamExecutionLock example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/callback.html#sonar-example">Sonar example with callbacks</a></td>
+<td><a href="../apis/debug.html#debug-example">Debug example</a></td>
+<td><a href="../apis/filehandle.html#filehandle-using-c-library-example">FileHandle example using the C library</a></td>
+<td><a href="../apis/mbed-statistics.html#memory-statistics-example">Memory statistics example</a></td>
+<td><a href="../apis/scopedromwritelock.html#scopedromwritelock-class-reference">ScopedRomWriteLock example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/deepsleeplock.html#example">DeepSleepLock example</a></td>
+<td><a href="../apis/memory-tracing.html#memory-tracing-example">Memory tracing example</a></td>
+<td><a href="../apis/filehandle.html#filehandle-sigio-example">FileHandle sigio example</a></td>
+<td><a href="../apis/mbed-statistics.html#thread-statistics-example">Thread statistics example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/power-management.html#example">PowerManagement example</a></td>
+<td><a href="../apis/error-handling.html#error-handling-example">Error handling example</a></td>
+<td><a href="../apis/poll.html#poll-example">Poll example</a></td>
+<td><a href="../apis/mbed-statistics.html#system-information-example">System information example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/idle-loop.html#example">IdleLoop example</a></td>
+<td><a href="../apis/error-handling.html#crash-reporting-example">Crash reporting example</a></td>
+<td><a href="../apis/platformmutex.html#platformmutex-example">PlatformMutex example</a></td>
+<td><a href="../apis/mbed-statistics.html#cpu-statistics-example">CPU statistics example</a></td>
+</tr>
+</tbody>
+</table>
+
+#### Using drivers APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="application-flow-control.html">Flow control tutorial</a></td>
+</tr>
+</tbody>
+</table>
+
+#### Using RTOS APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="the-eventqueue-api.html">EventQueue tutorial</a></td>
+</tr>
+</tbody>
+</table>
+
+#### Using USB APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="mbed-usb-wav-audio-player.html">USB audio player tutorial</a></td>
+</tr>
+</tbody>
+</table>
+
 #### Using connectivity APIs
 
 <table>
@@ -48,36 +135,6 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 <td><a href="../apis/batteryservice.html#batteryservice-example">BLE battery level example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker">BLE LED blinker example</a></td>
 <td><a href="../apis/lorawan-api.html#lorawan-example">LoRaWAN example</a></td>
-</tr>
-</tbody>
-</table>
-
-#### Using RTOS APIs
-
-<table>
-<tbody>
-<tr>
-<td><a href="the-eventqueue-api.html">EventQueue tutorial</a></td>
-</tr>
-</tbody>
-</table>
-
-#### Using USB APIs
-
-<table>
-<tbody>
-<tr>
-<td><a href="mbed-usb-wav-audio-player.html">USB audio player tutorial</a></td>
-</tr>
-</tbody>
-</table>
-
-#### Using drivers APIs
-
-<table>
-<tbody>
-<tr>
-<td><a href="application-flow-control.html">Flow control tutorial</a></td>
 </tr>
 </tbody>
 </table>
