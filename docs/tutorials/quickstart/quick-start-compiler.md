@@ -34,7 +34,7 @@ Alternatively, you may select the import button on the top left hand side of the
         "target_overrides": {
             "*": {
     ```
-</br></span>
+   </br></span>
 
 1. Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
