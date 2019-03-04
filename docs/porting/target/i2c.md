@@ -11,9 +11,10 @@ The interface is made up of two lines for all communication:
 #### Defined Behaviours
 
 - `i2c_init`:
-  - Initialises the peripheral pins specified in the input parameters.
-  - Initialises the peripheral in master mode if `is_slave` is false.
-  - Initialises the peripheral in slave mode if `is_slave` is true and `supports_slave_mode` is true.
+  - Initializes the peripheral pins specified in the input parameters.
+  - Initializes the peripheral in master mode if `is_slave` is false.
+  - Initializes the peripheral in slave mode if `is_slave` is true and `supports_slave_mode` is true.
+  - Initializes all `i2c_t` object fields.
 - `i2c_free`:
   - Resets the pins used to initialise the peripheral to their default state.
   - Disables the peripheral clock.
