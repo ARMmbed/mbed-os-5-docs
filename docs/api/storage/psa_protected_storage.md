@@ -1,19 +1,15 @@
-## PSA Protected Storage
+## PSA protected storage
 
-### Description
+PSA protected storage APIs enable saving data to and retrieving data from PSA protected storage.
 
-PSA Protected storage APIs allows saving and retrieving data from PSA protected storage.
+Unlike [PSA internal storage](../apis/psa_internal_storage.html), PSA protected storage always runs on the NSPE side and redirects calls to the KVStore instance.
 
-Unlike [PSA Internal storage](./psa_internal_storage.md), PSA Protected storage implemented to always run in NSPE side and redirect the calls to KVStore instance.
-
-TODO: Danniel Benor - review and add links to this page from Storage landing page 
-
-### Specification
-
-API specification in mbed-os specific context can be found here: [mbed-os/Storage](../../storage/storage.md) 
-
-PSA specification can be found here [PSA Secure Storage](https://pages.arm.com/PSA-APIs)
-
-### Doxygen
+### PSA protected storage class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/protected__storage_8h.html)
+
+### Related content
+
+* [API specification in Mbed OS](../apis/storage.html)
+
+* [PSA Secure Storage](https://pages.arm.com/PSA-APIs).
