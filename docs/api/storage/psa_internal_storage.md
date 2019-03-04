@@ -4,8 +4,8 @@ PSA internal storage APIs enable software running in a secure environment to sav
 
 The PSA internal storage functionality varies depending on the target type:
 
-* On a single core ARMv7-M target, PSA internal storage APIs call the default internal TDBStore instance.
-* On PSA targets that implement Secure Partition Manager (SPM), PSA internal storage is implemented as a secure service. The service uses an access control list to ensure that it only accesses entries created from the Non-Secure Processing Environment (NSPE).
+* On a single core ARMv7-M target, PSA internal storage APIs call the default internal TDBStore instance allocated by the KVStore configuration. For more information, see [KVStore configuration](..reference/storage.html#kvstore-configuration).
+* On PSA targets that implement Secure Partition Manager (SPM), PSA internal storage is implemented as a secure service. The service uses an access control list, which ensures that software executed in the Non-Secure Processing Environment (NSPE) cannot access entries created by the Secure Processing Environment (SPE).
 
 ### PSA internal storage class reference
 
