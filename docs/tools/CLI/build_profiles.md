@@ -1,6 +1,6 @@
 <h2 id="build-profiles">Build profiles</h2>
 
-Arm Mbed OS 5 pre-defines three build configurations which is basically a collection of toolchain flags used during build, and we call them `build profile`. These are *develop*, *debug* and *release*. The Online Compiler uses the *develop*. When building from Arm Mbed CLI, you can select the build configuration by adding the `--profile <`**build profile** `name>` flag. You can also specify custom/user-defined configurations by giving the path to the JSON file defining the build configuration.
+Arm Mbed OS 5 defines three build configurations, each of which is known as a `build profile`. These are collections of toolchain flags used during the build. The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When  building from Arm Mbed CLI, you can select the build configuration by adding the `--profile <`**build profile** `name>` flag. You can also specify custom- or user-defined configurations by giving the path to the JSON file defining the build configuration.
 
 ### Develop
 
@@ -8,8 +8,8 @@ Arm Mbed OS 5 pre-defines three build configurations which is basically a collec
 - Full error information. For example, asserts have file name and line number.
 - Hard to follow code flow when using a debugger.
 - Chip goes to sleep when idle:
-    * Debugger is likely to drop connection.
-    * Breaks the local file system on the [Arm Mbed interface](../introduction/index.html) on some boards.
+   - Debugger is likely to drop connection.
+   - Breaks the local file system on the [Arm Mbed interface](../introduction/index.html) on some boards.
 
 ### Debug
 
@@ -20,19 +20,19 @@ Arm Mbed OS 5 pre-defines three build configurations which is basically a collec
 
 ### Release
 
-- Smallest codesize and still fast.
+- Smallest code size and still fast.
 - Minimal error information.
 - Chip goes to sleep when going idle:
-    - Debugger is likely to drop connection.
-    - Breaks the local file system on the [Mbed interface](../introduction/index.html) on some boards.
+   - Debugger is likely to drop connection.
+   - Breaks the local file system on the [Mbed interface](../introduction/index.html) on some boards.
 
 ### User-defined
 
-As mentioned above `build profile` defines the set of flags that is guaranteed to be passed to the underlying compiler suite.
+As mentioned above, the `build profile` defines the set of flags that is guaranteed to be passed to the underlying compiler suite.
 
 These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
 
-#### JSON `build profile` format
+#### JSON build profile format
 
 The JSON object that represents a toolchain configuration is a dictionary mapping from toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
 
