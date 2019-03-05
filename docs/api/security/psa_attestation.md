@@ -44,7 +44,7 @@ In the current implementation, a bootloader does not exist in single and dual V7
 
 ### PSA attestation class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/???.html)
+[![View code](https://www.mbed.com/embed/?type=library)]
 
 ### Related content
 
