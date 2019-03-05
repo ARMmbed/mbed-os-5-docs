@@ -7,7 +7,8 @@ Mbed OS offers a strong, integrated stack of standards-based technologies:
 For IP devices:
 
 * Arm Mbed Thread.
-* 6LoWPAN.
+* Wi-SUN.
+* 6LoWPAN-ND.
 * Cellular.
 * NB-IoT.
 * Bluetooth Low Energy (BLE).
@@ -63,11 +64,11 @@ Typical applications of BLE are health care, fitness trackers, beacons, smart ho
 
 To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
 
-####  IP-based mesh (Thread and 6LoWPAN-ND)
+####  IP-based mesh (Thread, Wi-SUN and 6LoWPAN-ND)
 
 As a technology designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
 
-**Thread** is designed for indoor use, with a range of only a few meters. **6LoWPAN-ND** has a range of up to one kilometer, and is therefore better suited for external use. Both technologies have a low throughput of up to 200 kbps and experience delays.
+**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** and **6LoWPAN-ND** has a range of up to one kilometer, and is therefore better suited for external use. Throughput of Mesh technologies is up to 200 kbps.
 
 Mesh networks are self-healing, with no single point of failure. They are more suitable for limited spaces because of the expense in infrastructure setup and maintenance.
 
@@ -77,11 +78,11 @@ Additionally, Mbed OS Thread stack is certified using pre-defined test sets for 
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mesh.png)<span>Tree type mesh</span></span>
 
-6LoWPAN is a compression method for IPv6 packets. Mbed OS supports 6LoWPAN-ND and Thread protocols for forming IPv6 based mesh networks. Both protocols use the same 6LoWPAN compression method but different routing protocols to achieve wireless mesh network.
+6LoWPAN is a compression method for IPv6 packets. Mbed OS supports Wi-SUN, 6LoWPAN-ND and Thread protocols for forming IPv6 based mesh networks. All protocols use the same 6LoWPAN compression method but different routing protocols to achieve wireless mesh network.
 
 Applications running on 6LoWPAN-based mesh networks use the same Mbed OS Socket API for connectivity.
 
-For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html) section.
+For descriptions of different mesh networks, please see the [Thread](thread-tech), [Wi-SUN](wisun-tech) and [6LoWPAN-ND Mesh](mesh-tech.html) section.
 
 ### Non-IP networking
 

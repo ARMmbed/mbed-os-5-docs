@@ -1,3 +1,5 @@
+<h2 id="wisun-tech">Wi-SUN</h2>
+
 ## Wi-SUN
 
 The Wi-SUN Field Area Network (FAN) is based on open standards from IEEE802, IETF, ANSI/TIA and ETSI.
@@ -33,4 +35,4 @@ You can find an example using the [Mesh C++ API](../apis/mesh-api.html) for buil
 
 #### Border router
 
-You can find an example using the [Nanostack API](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/sal-stack-nanostack/nanostack) to biuld a Wi-SUN border router at [nanostack border router](https://github.com/ARMmbed/nanostack-border-router).
+You can find an example using the [Nanostack API](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/sal-stack-nanostack/nanostack) to build a Wi-SUN border router at [nanostack border router](https://github.com/ARMmbed/nanostack-border-router).
