@@ -2,7 +2,7 @@
 
 PSA protected storage APIs enable saving data to and retrieving data from PSA protected storage.
 
-Unlike [PSA internal storage](../apis/psa_internal_storage.html), PSA protected storage always runs the Non-Secure Processing Environment (NSPE) and redirects calls to the KVStore static API.
+Unlike [PSA internal storage](../apis/psa_internal_storage.html), PSA protected storage always runs in the Non-Secure Processing Environment (NSPE) and redirects calls to the KVStore static API.
 
 <span class="notes">**Note:** In general, we recommend using the [KVStore static API](../storage/KVStoreGlobalAPI.html) in the NSPE.</span>
 
