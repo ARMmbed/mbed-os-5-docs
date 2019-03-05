@@ -21,8 +21,6 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 
 #### Using platform APIs
 
-### Platform APIs
-
 [Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
 
 <table>
