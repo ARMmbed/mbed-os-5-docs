@@ -108,26 +108,6 @@
         ]
     },
     {
-        "title": "Mbed OS bare metal",
-        "description": "The Mbed OS bare metal profile",
-        "slug": "bare-metal",
-        "type": "markdown",
-        "chapters": [{
-                "title": "Introduction",
-                "intro": {
-                    "path": "docs/bare_metal.md"
-                },
-                "sources": []
-            },
-            {
-                "title": "Bare metal APIs",
-                "sources": [{
-                    "path": "docs/baremetal_api.md"
-                }]
-            }
-        ]
-    },
-    {
         "title": "APIs",
         "description": "The APIs of Mbed OS: platform, drivers, RTOS, connectivity, security and storage",
         "slug": "apis",
@@ -353,40 +333,6 @@
                     },
                     {
                         "path": "docs/api/rtos/Kernel.md"
-                    }
-                ]
-            },
-            {
-                "title": "USB",
-                "intro": {
-                    "path": "docs/api/usb/usb_component.md"
-                },
-                "sources": [{
-                        "path": "docs/api/usb/USBSerial.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBAudio.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBHID.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBCDC.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBMSD.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBMIDI.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBMouse.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBKeyboard.md"
-                    },
-                    {
-                        "path": "docs/api/usb/USBMouseKeyboard.md"
                     }
                 ]
             },
@@ -656,22 +602,19 @@
                                 "path": "docs/reference/technology/connectivity/cellular.md"
                             },
                             {
+                                "path": "docs/reference/technology/mesh/quick_start_intro.md"
+                            },
+                            {
                                 "path": "docs/reference/technology/mesh/thread_intro.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/quick_start_hw.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/thread_commissioning.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/thread_faq.md"
-                            },
-                            {
-                                "path": "docs/reference/technology/mesh/wisun_intro.md"
-                            },
-                            {
-                                "path": "docs/reference/technology/mesh/quick_start_intro.md"
-                            },
-                            {
-                                "path": "docs/reference/technology/mesh/quick_start_hw.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/02_N_arch.md"
@@ -761,9 +704,6 @@
                             },
                             {
                                 "path": "docs/reference/configuration/mesh.md"
-                            },
-                            {
-                                "path": "docs/reference/configuration/BLE.md"
                             },
                             {
                                 "path": "docs/reference/configuration/lorawanconfig.md"
@@ -992,9 +932,6 @@
                     },
                     {
                         "path": "docs/tutorials/using_apis/flow_control.md"
-                    },
-                    {
-                        "path": "docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
                     },
                     {
                         "path": "docs/tutorials/using_apis/connectivity/light-control.md"
@@ -1314,35 +1251,35 @@
                 "sub_chapters": [{
                         "title": "Introduction",
                         "intro": {
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/intro.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/intro.md"
                         },
                         "sources": []
                     },
                     {
                         "title": "Stage 1: Evaluation",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage1.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage1.md"
                         }]
                     },
                     {
                         "title": "Stage 2: Proof of concept",
                         "intro": {
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/intro_s_2.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/intro_s_2.md"
                         },
                         "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/1_hardware.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/1_hardware.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/3_connectivity.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/3_connectivity.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/2_software.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/2_software.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/4_security.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/4_security.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/6_example.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/6_example.md"
                             }
 
                         ]
@@ -1350,19 +1287,19 @@
                     {
                         "title": "Stage 3: Prototype",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage3.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage3.md"
                         }]
                     },
                     {
                         "title": "Stage 4: Pilot",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage4.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage4.md"
                         }]
                     },
                     {
                         "title": "Stage 5: Production",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage5.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage5.md"
                         }]
                     }
                 ]
