@@ -1,8 +1,8 @@
 <h2 id="build-profiles">Build profiles</h2>
 
-Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release*. The Online Compiler uses the *develop* profile. When building from Arm Mbed CLI, you can select a profile by adding the `--profile <profile>` flag. You can specify custom user-defined profiles by giving the path to the profile.
+Arm Mbed OS 5 pre-defines three build configurations which is basically a collection of toolchain flags used during build, and we call them `build profile`. These are *develop*, *debug* and *release*. The Online Compiler uses the *develop*. When building from Arm Mbed CLI, you can select the build configuration by adding the `--profile <`**build profile** `name>` flag. You can also specify custom/user-defined configurations by giving the path to the JSON file defining the build configuration.
 
-### Develop profile
+### Develop
 
 - Small and fast code.
 - Full error information. For example, asserts have file name and line number.
@@ -11,32 +11,32 @@ Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *rel
     * Debugger is likely to drop connection.
     * Breaks the local file system on the [Arm Mbed interface](../introduction/index.html) on some boards.
 
-### Debug profile
+### Debug
 
-- Largest and slowest profile.
+- Largest and slowest performance.
 - Full error information. For example, asserts have file name and line number.
 - Easy to step through code with a debugger.
 - Disabled sleep mode.
 
-### Release profile
+### Release
 
-- Smallest profile and still fast.
+- Smallest codesize and still fast.
 - Minimal error information.
 - Chip goes to sleep when going idle:
     - Debugger is likely to drop connection.
     - Breaks the local file system on the [Mbed interface](../introduction/index.html) on some boards.
 
-### User defined profiles
+### User-defined
 
-A toolchain or build system profile is a set of flags that is guaranteed to be passed to the underlying compiler suite.
+As mentioned above `build profile` defines the set of flags that is guaranteed to be passed to the underlying compiler suite.
 
 These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
 
-#### JSON toolchain profile format
+#### JSON `build profile` format
 
-The JSON object that represents a toolchain profile is a dictionary mapping from toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
+The JSON object that represents a toolchain configuration is a dictionary mapping from toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
 
-The structure is as follows: each toolchain supported by a toolchain profile has a dictionary in the root dictionary. This dictionary contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
+The structure is as follows: each toolchain to be supported has a dictionary in the root dictionary. This dictionary contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
 
 The required flag types are:
 
@@ -50,7 +50,7 @@ The required flag types are:
 
 #### Example
 
-An example of a toolchain profile:
+An example of a `build profile`:
 
 ```json
 {
@@ -89,7 +89,7 @@ An example of a toolchain profile:
 }
 ```
 
-From this toolchain profile, we can tell that:
+For the above example, we can tell that:
 
 - `GCC_ARM`, `ARM` and `IAR` compiler suites are supported.
 - The `ARM` C and C++ compilers will be using optimization level `-O3`.
