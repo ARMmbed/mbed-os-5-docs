@@ -1,13 +1,13 @@
-## PSA Attestation
+## PSA attestation
 
 The PSA initial attestation service enables an application to prove a device's identity to a caller during the authentication process.
 
-The initial attestation service creates a token that contains a fixed set of device-specific data, on request. To sign the token, the device must contain an attestation key pair, which is unique per device. The service uses the attestation private key to sign the token, and the caller uses the public key to verify the token's authenticity.
+The initial attestation service creates a token that contains a fixed set of device-specific data, upon request. To sign the token, the device must contain an attestation key pair, which is unique per device. The service uses the attestation private key to sign the token, and the caller uses the public key to verify the token's authenticity.
 
 The PSA initial attestation service is based on the TF-M attestation service, which is available in the [TF-M repository]( https://git.trustedfirmware.org/trusted-firmware-m.git/).
 
 ### Specification
-The initial attestation service exposes the following PSA interface:
+The initial attestation service exposes the following PSA interfaces:
 ```
 enum psa_attest_err_t
 psa_initial_attest_get_token(const uint8_t *challenge_obj,
@@ -44,7 +44,7 @@ In the current implementation, a bootloader does not exist in single and dual V7
 
 ### PSA attestation class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)]
+[![View code](https://www.mbed.com/embed/?type=library)]()
 
 ### Related content
 

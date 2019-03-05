@@ -15,6 +15,6 @@ The implementation of PSA internal storage varies depending on the target type:
 
 ### Related content
 
-* [Storage overview (Mbed OS)](..apis/storage.html).
+* [API specification in Mbed OS](../apis/storage.html).
 
 * [PSA secure storage](https://pages.arm.com/PSA-APIs).

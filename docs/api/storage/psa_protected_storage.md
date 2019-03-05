@@ -10,6 +10,6 @@ Unlike [PSA internal storage](../apis/psa_internal_storage.html), PSA protected 
 
 ### Related content
 
-* [API specification in Mbed OS](../apis/storage.html)
+* [API specification in Mbed OS](../apis/storage.html).
 
 * [PSA Secure Storage](https://pages.arm.com/PSA-APIs).
