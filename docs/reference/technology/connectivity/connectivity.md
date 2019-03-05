@@ -68,7 +68,7 @@ To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../
 
 As a technology designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
 
-**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** and **6LoWPAN-ND** has a range of up to one kilometer, and is therefore better suited for external use. Throughput of Mesh technologies is up to 200 kbps.
+**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** and **6LoWPAN-ND** have a range of up to one kilometer and are therefore better suited for external use. Throughput of Mesh technologies is up to 200 kbps.
 
 Mesh networks are self-healing, with no single point of failure. They are more suitable for limited spaces because of the expense in infrastructure setup and maintenance.
 
@@ -82,7 +82,7 @@ Additionally, Mbed OS Thread stack is certified using pre-defined test sets for 
 
 Applications running on 6LoWPAN-based mesh networks use the same Mbed OS Socket API for connectivity.
 
-For descriptions of different mesh networks, please see the [Thread](thread-tech), [Wi-SUN](wisun-tech) and [6LoWPAN-ND Mesh](mesh-tech.html) section.
+For descriptions of different mesh networks, please see the [Thread](thread-tech), [Wi-SUN](wisun-tech) and [6LoWPAN-ND Mesh](mesh-tech.html) sections.
 
 ### Non-IP networking
 
