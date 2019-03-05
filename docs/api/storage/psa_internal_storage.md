@@ -11,8 +11,6 @@ The PSA internal storage functionality varies depending on the target type:
 
 [![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/psa__prot__internal__storage_8h.html)
 
-### Example
-
 ### Related content
 
 * [API specification in Mbed OS](../apis/storage.html).
