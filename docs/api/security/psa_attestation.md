@@ -1,4 +1,4 @@
-## PSA Attestation
+## PSA attestation
 
 The PSA initial attestation service enables an application to prove a device's identity to a caller during the authentication process.
 
