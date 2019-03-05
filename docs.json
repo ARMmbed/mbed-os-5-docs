@@ -518,16 +518,25 @@
                     "path": "docs/api/security/security.md"
                 },
                 "sources": [{
-                        "path": "docs/api/security/psa.md"
+                        "path": "docs/api/security/psa_attestation.md"
+                    },
+                    {
+                        "path": "docs/api/security/psa_crypto.md"
+                    },
+                    {
+                        "path": "docs/api/security/lifecycle/psa_lifecycle.md"
+                    },
+                    {
+                        "path": "docs/api/security/platform_service.md"
+                    },
+                    {
+                        "path": "docs/api/security/spm.md"
                     },
                     {
                         "path": "docs/api/security/TLS.md"
                     },
                     {
                         "path": "docs/api/security/Devicekey.md"
-                    },
-                    {
-                        "path": "docs/api/security/trusted_storage.md"
                     }
                 ]
             },
@@ -598,6 +607,12 @@
                     },
                     {
                         "path": "docs/api/storage/NVStore.md"
+                    },
+                    {
+                        "path": "docs/api/storage/psa_internal_storage.md"
+                    },
+                    {
+                        "path": "docs/api/storage/psa_protected_storage.md"
                     }
                 ]
             }
@@ -687,7 +702,7 @@
                                 "path": "docs/reference/technology/storage.md"
                             },
                             {
-                                "path": "docs/reference/technology/USB.md"
+                            "path": "docs/api/security/psa.md"
                             },
                             {
                                 "path": "docs/reference/runtime/Memory.md"
