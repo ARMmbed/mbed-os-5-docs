@@ -6,6 +6,11 @@ The storage APIs present in Arm Mbed OS are:
 - [File system:](#declaring-a-file-system) a common interface for using file systems on block devices.
 - [Block device:](#declaring-a-block-device) a common interface for block-based storage devices.
 
+Additionally, the following PSA-compliant APIs are present in Mbed OS:
+
+- [PSA Protected Storage:](../apis/psa-protected-storage.html) PSA-compliant API for a Non-Secure Processing Environment (NSPE).
+- [PSA Internal Storage:](../apis/psa-internal-storage.html) PSA-compliant API for a Secure Processing Environment (SPE).
+
 ### KVStore
 
 The [KVStore API](../apis/kvstore.html) is a common get/set API implemented by several classes. It gives you the flexibility to build a storage solution by allocating several combinations of objects.
@@ -23,6 +28,8 @@ The [KVStore static global API](static-global-api.html) is the only API applicat
 The [FileSystem](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html) class provides the core API for file system operations. You must provide a block device to back the file system, which provides the raw storage for the file system. When you declare a file system with a name, you can open files on the file system through the `open` and `fopen` functions or through the File class's `open` function.
 
 #### File systems
+
+File systems are the strongest persistent storage solutions in Mbed OS, providing an extensive POSIX API. We highly recommend using the little file system for embedded applications because of to its resilience to power failures.
 
 - [**LittleFileSystem**](littlefilesystem.html) - The little file system (LittleFS) is a fail-safe file system we designed for embedded systems, specifically for microcontrollers that use flash storage.
 
