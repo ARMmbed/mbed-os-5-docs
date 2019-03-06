@@ -38,8 +38,8 @@ The Mbed implementation of PSA supports the following platform types:
 
 The Mbed implementation of PSA provides the following services:
 
-- PSA [RoT](../introduction/glossary.html) internal storage.
-- [PSA Crypto APIs (on GitHub)](https://github.com/ARMmbed/mbed-crypto/tree/development/docs).
-- [PSA attestation](../apis/psa_attestation.html).
-- [PSA lifecycle](../apis/psa_lifecycle.html).
-- [PSA platform service](../apis/platform_service.html).
+- [PSA RoT internal storage](..apis/psa-internal-storage.html).
+- [PSA crypto](../apis/psa-crypto.html).
+- [PSA attestation](../apis/psa-attestation.html).
+- [PSA lifecycle](../apis/psa-lifecycle.html).
+- [PSA platform service](../apis/platform-service.html).
