@@ -22,7 +22,7 @@ Accepting a connection leaves the original socket in listening mode. You can con
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_t_c_p_socket.html)
 
-### TCPSocket Example
+### TCPSocket example
 
 Here is a client example of HTTP transaction over TCPSocket:
 
