@@ -14,7 +14,7 @@ The order of pins in the constructor is the reverse order of the pins in the byt
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
 
-### BusInOut Hello World!
+### BusInOut hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/BusInOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/BusInOut_HelloWorld/file/910f6ba3c4a3/main.cpp)
 
