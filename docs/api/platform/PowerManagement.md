@@ -38,7 +38,15 @@ These Mbed OS drivers can lock the deep sleep:
 - `SPI`.
 - `I2C`.
 - `CAN`.
-- `SerialBase`.
+- `SerialBase` (and hence `Serial` and `UARTSerial`)
+
+#### Console versus deep sleep
+
+By default, on entry to `main`, the deep sleep lock will not be held, so deep sleep will be possible until a driver or other code locks it.
+
+However, if `platform.stdio-buffered-serial` is set to true, then `UARTSerial` installs an interrupt handler to receive serial data for `stdin`. This will block deep sleep. To permit deep sleep, input must be suspended (permanently or temporarily). Making the call `mbed_file_handle(STDIN_FILENO)->enable_input(false)` from the application gives the console driver, whatever it is, permission to stop reception. If `UARTSerial` is providing `stdin`, this removes the receive interrupt handler and releases the deep sleep lock.
+
+For more information see [`FileHandle`](filehandle.html).
 
 #### Sleep/Deep sleep profiling tool
 
