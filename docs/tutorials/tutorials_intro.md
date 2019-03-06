@@ -249,11 +249,28 @@ These tutorials and examples show you how to perform specific tasks that use the
 <table>
 <tbody>
 <tr>
-<td><a href="../apis/filesystem.html#file-system-example">FileSystem example</a></td>
-<td><a href="../apis/nvstore.html#nvstore-example">NVStore example</a></td>
+<td><a href="../apis/kvstore.html#kvstore-example">KVStore example</a></td>
+<td><a href="../apis/mbrblockdevice.html#mbrblockdevice-example">MBRBlockDevice example</a></td>
+<td><a href="../apis/bufferedblockdevice.html#bufferedblockdevice-example">BufferedBlockDevice example</a></td>
+<td><a href="../apis/sdblockdevice.html#sdblockdevice-example-application">SDBlockDevice example application</a></td>
+</tr>
+<tr>
+<td><a href="../apis/filesystem.html#file-system-example">File system example</a></td>
+<td><a href="../apis/chainingblockdevice.html#chainingblockdevice-example">ChainingBlockDevice example</a></td>
+<td><a href="../apis/flashsimblockdevice.html#flashsimblockdevice-example">FlashSimBlockDevice example</a></td>
+<td><a href="../apis/spi-flash-block-device.html#spifblockdevice-example">SPIFBlockDevice example</a></td>
 </tr>
 <tr>
 <td><a href="../apis/blockdevice.html#blockdevice-example">BlockDevice example</a></td>
+<td><a href="../apis/slicingblockdevice.html#slicingblockdevice-example">SlicingBlockDevice example</a></td>
+<td><a href="../apis/dataflashblockdevice.html#dataflashblockdevice-example">DataFlashBlockDevice example</a></td>
+<td><a href="../apis/qspifblockdevice.html#qspifblockdevice-examplel">QSPIFBlockDevice example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/heapblockdevice.html#heapblockdevice-example">HeapBlockDevice example</a></td>
+<td><a href="../apis/profilingblockdevice.html#profilingblockdevice-example">ProfilingBlockDevice example</a></td>
+<td><a href="../apis/flashiapblockdevice.html#flashiapblockdevice-example">FlashIAPBlockDevice example</a></td>
+<td><a href="../apis/nvstore.html#nvstore-example">NVStore example</a></td>
 </tr>
 </tbody>
 </table>
