@@ -1203,12 +1203,6 @@
             "path": "docs/porting/target/crc.md"
           },
           {
-            "path": "docs/porting/psa/spm.md"
-          },
-          {
-            "path": "docs/porting/psa/crypto.md"
-          },
-          {
             "title": "PSA-compliant targets",
             "intro": {
               "path": "docs/porting/psa/porting_psa.md"
