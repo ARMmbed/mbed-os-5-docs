@@ -90,7 +90,7 @@ You can use our debugging tools, DAPLink and pyOCD, to program and debug
 This is the technical documentation for Mbed OS. We have three types of documents: references, tutorials and porting guides. Our references are background technical material about our APIs, architecture and runtime execution. Our tutorials are step-by-step instructions that show you how to perform specific tasks and solve problems. Our porting guides show our silicon Partners how to port Mbed OS to their targets.
 
 Please see the following sections of our documentation for more information.
-
+<!--update for 5.12 - Mbed OS and the Pelion IoT Platform, Mbed OS bare metal-->
 - [APIs](../apis/index.html).
 - [Quick start](../quick-start/index.html), a guide to creating your first application.
 - [Reference](../reference/index.html), architectural information about our code.
@@ -101,7 +101,7 @@ Please see the following sections of our documentation for more information.
 - [Porting guides](../porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
 
 <h3 id="docs-updates">Recently updated documentation</h3>
-
+<!--update for 5.12 - Pelion Ready, Mbed OS bare metal including a mention of the quick start additions, security, Wi-Sun and the updates around Mesh... what else we got?-->
 - API references for [FileHandle](../apis/filehandle.html) and [Poll](../apis/poll.html).
 - An updated [contributing guide](../contributing/index.html).
 - A revised [porting guide](../porting/index.html).
