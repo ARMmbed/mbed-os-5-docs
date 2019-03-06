@@ -1137,9 +1137,6 @@
                         "path": "docs/porting/target/QuadSPI.md"
                     },
                     {
-                        "path": "docs/porting/target/entropy.md"
-                    },
-                    {
                         "path": "docs/porting/target/flash.md"
                     },
                     {
@@ -1147,9 +1144,6 @@
                     },
                     {
                         "path": "docs/porting/target/thread_porting.md"
-                    },
-                    {
-                        "path": "docs/porting/target/hw-accelerated-crypto.md"
                     },
                     {
                         "path": "docs/porting/target/tickless.md"
@@ -1174,15 +1168,26 @@
                     },
                     {
                         "path": "docs/porting/target/crc.md"
-                    },
-                    {
-                        "path": "docs/porting/psa/spm.md"
-                    },
-                    {
-                        "path": "docs/porting/psa/crypto.md"
                     }
                 ]
             },
+            {
+                "title": "Porting security",
+                "intro": {
+                    "path": "docs/porting/psa/spm.md"
+                },
+                "sources": [{
+                        "path": "docs/porting/psa/crypto.md"
+                    },
+                    {
+                        "path": "docs/porting/target/entropy.md"
+                    },
+                    {
+                        "path": "docs/porting/target/hw-accelerated-crypto.md"
+                    }
+                ]
+            },
+
             {
                 "title": "Porting storage",
                 "intro": {
