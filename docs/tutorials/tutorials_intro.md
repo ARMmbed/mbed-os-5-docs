@@ -141,6 +141,29 @@ These tutorials and examples show you how to perform specific tasks that use the
 <tbody>
 <tr>
 <td><a href="the-eventqueue-api.html">EventQueue tutorial</a></td>
+<td><a href="../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue">EventQueue example: chaining events from more than one queue</a></td>
+<td><a href="../apis/mutex.html#mutex-example">Mutex example</a></td>
+<td><a href="../apis/memorypool.html#memorypool-examplel">MemoryPool example</a></td>
+<td><a href="../kernel-interface-functions.html#get-ms-count-examplel">Kernel interface get_ms_count() example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl">EventQueue example: deferring from interrupt context</a></td>
+<td><a href="../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main">Shared event example: running the shared queue from main</a></td>
+<td><a href="../apis/semaphore.html#semaphore-example">Semaphore example</a></td>
+<td><a href="../apis/mail.html#mail-example">Mail example</a></td>
+<td><a href="../apis/kernel-interface-functions.html#kernel-hooks-example">Kernel hooks example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/eventqueue.html#shared-event-example-deferring-from-interrupt-context">Shared event example: deferring from interrupt context</a></td>
+<td><a href="../apis/thread.html#thread-example">Thread example</a></td>
+<td><a href="../apis/queue.html#queue-example">Queue example</a></td>
+<td><a href="../apis/eventflags.html#eventflags-example">EventFlags example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue">EventQueue example: posting events to the queue</a></td>
+<td><a href="../apis/thread.html#thread-example-with-callbacks">Thread example with callbacks</a></td>
+<td><a href="../apis/queue.html#queue-and-memorypool-example">Queue and MemoryPool example</a></td>
+<td><a href="../apis/conditionvariable.html#conditionvariable-example">ConditionVariable example</a></td>
 </tr>
 </tbody>
 </table>
