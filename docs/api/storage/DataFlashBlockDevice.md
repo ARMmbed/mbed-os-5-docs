@@ -14,7 +14,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.html)
 
-### DataFlashBlockDevice example:
+### DataFlashBlockDevice example
 
 ``` cpp TODO
 // Here's an example using the AT45DB on the K64F
