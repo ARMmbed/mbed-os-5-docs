@@ -26,7 +26,7 @@ Arm Mbed OS 5 defines three build configurations, each of which is known as a `b
    - Debugger is likely to drop connection.
    - Breaks the local file system on the [Mbed interface](../introduction/index.html) on some boards.
 
-### User-defined
+### User-defined `build profile`
 
 As mentioned above, the `build profile` defines the set of flags that is guaranteed to be passed to the underlying compiler suite.
 
