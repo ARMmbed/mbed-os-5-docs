@@ -195,35 +195,95 @@ These tutorials and examples show you how to perform specific tasks that use the
 </tbody>
 </table>
 
-#### Using connectivity APIs
+#### Using network socket APIs
 
 <table>
 <tbody>
 <tr>
 <td><a href="cellular-tcp-sockets.html">TCP sockets tutorial</a></td>
-<td><a href="../tutorials/light-control.html">Mesh light control tutorial</a></td>
-<td><a href="../apis/heartrateservice.html#heartrateservice-example">BLE heart rate example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer">BLE thermometer example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-nfc-SmartPoster">NFC example</a></td>
+<td><a href="../apis/udpsocket.html#udpsocket-example">UDPSocket example</a></td>
+<td><a href="../apis/socketaddress.html#socketaddress-example">SocketAddress example</a></td>
+<td><a href="../apis/dns-resolver.html#dns-resolver-example">DNS resolver example</a></td>
+<td><a href="../apis/dtlssocket.html#dtlssocket-example">DTLSSocket example</a></td>
 </tr>
 <tr>
 <td><a href="../apis/socket.html#socket-example">Socket example</a></td>
-<td><a href="ble-tutorial.html">BLE tutorial</a></td>
-<td><a href="../apis/ibeacon.html#ibeacon-example">BLE ibeacon example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button">BLE service template example</a></td>
-<td><a href="https://os.mbed.com/docs/development/apis/socketstats.html#socketstats-example">SocketStats example</a></td>
+<td><a href="../apis/tcpsocket.html#tcpsocket-example">TCPSocket example</a></td>
+<td><a href="../apis/non-ip-cellular-socket.html#cellularnonipsocket-example">Non-IP cellular socket example</a></td>
+<td><a href="../apis/tlssocket.html#tlssocket-example">TLSSocket example</a></td>
+<td><a href="../apis/socketstats.html#socketstats-example">SocketStats example</a></td>
+</tbody>
+</table>
+
+#### Using network interfaces APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="../tutorials/light-control.html">Mesh light control tutorial</a></td>
+<td><a href="../apis/wi-fi.html#wi-fi-example">Wi-Fi example</a></td>
+<td><a href="../apis/network-status.html#example">Network status example</a></td>
 </tr>
 <tr>
-<td><a href="../apis/wi-fi.html#wi-fi-example">Wi-Fi example</a></td>
+<td><a href="../apis/ethernet.html#ethinterface-example">EthInterface example</a></td>
+<td><a href="../apis/cellular-api.html#cellular-example-connection-establishment">Cellular example</a></td>
+</tr>
+</tbody>
+</table>
+
+#### Using bluetooth APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="ble-tutorial.html">BLE tutorial</a></td>
+<td><a href="../apis/gap.html#gap-example">GAP example</a></td>
+<td><a href="../apis/securitymanager.html#securitymanager-example">SecurityManager example</a></td>
+<td><a href="../apis/ibeacon.html#ibeacon-example">BLE ibeacon example</a></td>
+<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker">BLE LED blinker example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/ble.html#example-ble-beacon">BLE beacon example</a></td>
+<td><a href="../apis/gattclient.html#gattclient-example">GattClient example</a></td>
+<td><a href="../apis/batteryservice.html#batteryservice-example">BLE battery level example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton">BLE GAP button count example</a></td>
+<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer">BLE thermometer example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/ble.html#example-ble-heart-rate-monitor">BLE heart rate monitor example</a></td>
+<td><a href="../apis/gattserver.html#gattserver-example">GattServer example</a></td>
+<td><a href="../apis/heartrateservice.html#heartrateservice-example">BLE heart rate example</a></td>
 <td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED">BLE LED example</a></td>
+<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button">BLE service template example</a></td>
+</tr>
+</tbody>
+</table>
+
+#### Using LoRa APIs
+
+<table>
+<tbody>
+<tr>
 <td><a href="LoRa-tutorial.html">LoRa tutorial</a></td>
 </tr>
 <tr>
-<td><a href="../apis/cellular-api.html#cellular-example-connection-establishment">Cellular example</a></td>
-<td><a href="../apis/batteryservice.html#batteryservice-example">BLE battery level example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker">BLE LED blinker example</a></td>
 <td><a href="../apis/lorawan-api.html#lorawan-example">LoRaWAN example</a></td>
+</tr>
+</tbody>
+</table>
+
+#### Using NFC APIs
+
+<table>
+<tbody>
+<tr>
+<td><a href="../apis/nfccontroller.html#nfccontroller-example">NFCController example</a></td>
+<td><a href="../apis/messageparser.html#messageparser-example">MessageParser example</a></td>
+<td><a href="../apis/messagebuilder.html#messagebuilder-example">MessageBuilder example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/nfc-eeprom.html#nfceeprom-example"></a>NFCEEPROM example</a></td>
+<td><a href="../apis/simplemessageparser.html#simplemessageparser-example">SimpleMessageParser example</a></td>
 </tr>
 </tbody>
 </table>
