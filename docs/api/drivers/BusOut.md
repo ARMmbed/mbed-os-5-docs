@@ -15,7 +15,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_bus_out.html)
 
-### BusOut Hello World!
+### BusOut hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/BusOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/BusOut_HelloWorld/file/b07a5ecb7618/main.cpp)
 
