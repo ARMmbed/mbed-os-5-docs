@@ -174,6 +174,23 @@ These tutorials and examples show you how to perform specific tasks that use the
 <tbody>
 <tr>
 <td><a href="mbed-usb-wav-audio-player.html">USB audio player tutorial</a></td>
+<td><a href="../apis/usbaudio.html#usbaudio-play-sound-data-example">USBAudio sound data example</a></td>
+<td><a href="../apis/usbcdc.html#usbcdc-example">USBCDC example</a></td>
+<td><a href="../apis/usbmidi.html#play-take-me-out-to-the-ball-game-example">USBMIDI "Take Me Out to the Ball Game" example</a></td>
+<td><a href="../apis/usbkeyboard.html#usbkeyboard-example">USBKeyboard example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/usbaudio.html#usbaudio-square-wave-example">USBAudio square wave example</a></td>
+<td><a href="../apis/usbserial.html#usbserial-example">USBSerial example</a></td>
+<td><a href="../apis/usbmsd.html#usbmsd-example">USBMSD example</a></td>
+<td><a href="../apis/usbmouse.html#usbmouse-example">USBMouse example</a></td>
+<td><a href="../apis/usbmousekeyboard.html#usbmousekeyboard-example">USBMouseKeyboard example</a></td>
+</tr>
+<tr>
+<td><a href="../apis/usbaudio.html#usbaudio-loopback-example">USBAudio loopback example</a></td>
+<td><a href="../apis/usbhid.html#usbhid-example">USBHID example</a></td>
+<td><a href="../apis/usbmidi.html#usbmidi-example">USBMIDI example</a></td>
+<td><a href="../apis/usbmouse.html#usbmouse-joystick-example">USBMouse joystick example</a></td>
 </tr>
 </tbody>
 </table>
