@@ -14,7 +14,7 @@ If you prefer to use `send()` and `recv()` functions and work only with one peer
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_u_d_p_socket.html)
 
-### UDPSocket Example
+### UDPSocket example
 
 This UDP example reads the current UTC time by sending a request to the NIST Internet Time Service:
 
