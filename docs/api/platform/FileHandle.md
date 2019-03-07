@@ -34,6 +34,7 @@ Blocking I/O                   | Yes (always)            | Yes (default)        
 Nonblocking I/O                | No                      | Yes                    | Yes
 Poll                           | No                      | Yes (struct pollfd)    | Yes (struct pollfh)
 Sigio                          | No                      | No                     | Yes
+Disable input or output        | No                      | No                     | Yes
 Device-specific extensions     | No                      | No                     | Possible using derived types
 Newline conversion             | Yes (enabled with JSON) | No                     | No
 Error indications              | EOF, ferror, set errno  | Return -1, set errno   | Return negative error code
@@ -51,9 +52,13 @@ Calls are provided to attach already-opened lower levels to the higher levels:
 - `FILE *fdopen(int fd, const char *mode)` bind a POSIX file descriptor to a stdio FILE.
 - `FILE *fdopen(FileHandle *fh, const char *mode)` bind a FileHandle to a stdio FILE.
 
+The only call provided to map from higher level to lower-level is:
+
+- `FileHandle *mbed_file_handle(int fd)` obtain the FileHandle for a POSIX file descriptor
+
 The standard POSIX function `int fileno(FILE *stream)` may be available to map from `FILE` to file descriptor, depending on the toolchain and C library in use - it is not usable in fully portable Mbed OS code.
 
-As it is not possible to map from higher levels to lower levels, if code needs to access the lower levels, use a lower-level open call, so the lower-level handle is known. Then, bind that to the higher level..
+It is not possible to map from `FILE` to lower levels. If code needs to access the lower levels, rather than use `fopen`, use a lower-level open call. Then, use `fdopen` to create the `FILE`.
 
 The POSIX file descriptors for the console are available as `STDIN_FILENO`, `STDOUT_FILENO` and `STDERR_FILENO`, permitting operations such as `fsync(STDERR_FILENO)`, which would for example drain `UARTSerial`s output buffer.
 
@@ -111,6 +116,14 @@ Important notes on sigio:
 - Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`. 
 
 Ordinary files do not generate sigio callbacks because they are always readable and writable.
+
+#### Suspending a device
+
+Having a device open through a `FileHandle` may cost power, especially if open for input. For example, for `UARTSerial` to be able to receive data, the system must not enter deep sleep, so deep sleep is prevented while the `UARTSerial` is active.
+
+To permit power saving, you can close or destroy the `FileHandle`, or you can indicate that you do not currently require input or output by calling `FileHandle::enable_input` or `FileHandle::enable_output`. Disabling input or output effectively suspends the device in that direction, which can permit power saving.
+
+This is particularly useful when an application does not require console input - it can indicate this by calling `mbed_file_handle(STDIN_FILENO)->enable_input(false)` once at the start of the program. This permits deep sleep when `platform.stdio-buffered-serial` is set to true.
 
 #### Stream-derived FileHandles
 
@@ -214,3 +227,4 @@ int main()
 - [File](file.html).
 - [FileSystem](filesystem.html).
 - [Poll](poll.html).
+- [Power management](powermanagement.html).
