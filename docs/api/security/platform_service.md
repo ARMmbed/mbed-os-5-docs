@@ -6,4 +6,4 @@ The System Reset API enables a Non-Secure Processing Environment (NSPE) to reque
 
 ### Platform service class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](../mbed-os-api-doxy/lifecycle_8h.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/lifecycle_8h.html)
