@@ -8,8 +8,8 @@ The storage APIs present in Arm Mbed OS are:
 
 Additionally, the following PSA-compliant APIs are present in Mbed OS:
 
-- [PSA Protected Storage:](../apis/psa-protected-storage.html) PSA-compliant API for a Non-Secure Processing Environment (NSPE).
-- [PSA Internal Storage:](../apis/psa-internal-storage.html) PSA-compliant API for a Secure Processing Environment (SPE).
+- [PSA protected storage:](../apis/psa-protected-storage.html) PSA-compliant API for a Non-Secure Processing Environment (NSPE).
+- [PSA internal storage:](../apis/psa-internal-storage.html) PSA-compliant API for a Secure Processing Environment (SPE).
 
 ### KVStore
 
