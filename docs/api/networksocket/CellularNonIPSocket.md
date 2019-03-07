@@ -28,6 +28,8 @@ You can request Control Plane optimization mode either with CellularDevice's [`c
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_cellular_non_i_p_socket.html)
 
+### CellularNonIPSocket example
+
 The following code demonstrates how to create and use a cellular non-IP socket:
 
 ```

@@ -192,7 +192,15 @@ Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sur
 
 #### supported_toolchains
 
-The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC6`, `GCC_ARM` and `IAR`.
+The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC5`, `ARMC6`, `GCC_ARM` and `IAR`.
+
+If you specify `ARMC5` in `supported_toolchains`, it means the corresponding target supports `Arm Compiler 5.06 update 6`.
+
+If a target lists both `ARMC5` and `ARM` (or `ARMC6`) in `supported_toolchains`, the Arm Compiler 6.11 will be used when compiling with `ARM` option for `--toolchain`.
+
+<span class="notes">**Note:** Although you can specify `ARMC5` in `supported_toolchains` in `targets.json`, it's not a valid option for `--toolchain` when compiling using [Mbed CLI](../tools/developing-mbed-cli.html).
+Arm Compiler 6 is the default ARM toolchain for Mbed OS developmet. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will be migrated to Arm Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development, and we will validate all code contributions to Mbed OS Arm Compiler 6.
+</span>
 
 #### default_toolchain
 
@@ -427,3 +435,7 @@ The `orphans` command shows all targets that you cannot reach from a public targ
 - EFR32MG1P132F256GM48
 - EFR32MG1_BRD4150
 ```
+
+### Related content
+
+- [Developing: Mbed CLI](../tools/developing-mbed-cli.html).

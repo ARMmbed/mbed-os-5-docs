@@ -141,33 +141,6 @@ A contribution containing a breaking change is the most difficult PR to get merg
 
 Release: major
 
-### Pull request template
-
-Below is a good example of a pull request:
-
-```
-Fix deep sleep locking bug
-
-# Description
-
-Fix problems that could leave deep sleep locked unintentionally, along with adding tests to verify this behavior is fixed.
-
-Tested locally with two targets and all toolchains.
-
-You can see test results [here](just an example).
-
-# Pull request type
-
-    [X] Fix
-    [ ] Refactor
-    [ ] Target update
-    [ ] Functionality change
-    [ ] Docs update
-    [ ] Test update
-    [ ] Breaking change
-
-```
-
 ### GitHub pull requests workflow
 
 Each pull request goes through the following workflow:
