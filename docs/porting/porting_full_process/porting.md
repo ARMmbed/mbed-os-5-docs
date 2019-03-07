@@ -156,7 +156,7 @@ To include the new target support:
 
 Based on criticality and dependency of Mbed OS software stack, we recommend the following order:
 
-1. Create a bare metal example (based on the Blinky example).
+1. Create a basic example (based on the Blinky example).
 1. Bootstrap and entry point.
 1. Serial port (synchronous transfer).
 1. Low power ticker.
@@ -173,11 +173,11 @@ Based on criticality and dependency of Mbed OS software stack, we recommend the 
 
 Detailed instructions for porting each module are given in the module-specific sections of this documentation.
 
-### Create the bare metal mbed-os-example-blinky
+### Create the example mbed-os-example-blinky
 
-The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
+The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The direct register version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/main.cpp).
 
-[![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/main.cpp)
 
 ### Bootstrap and entry point
 
@@ -195,7 +195,6 @@ Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementa
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
-<!-- This is lacking in detail. Are they supposed to implement the Mbed pinmap apis? Or should they do this manually by modifying device registers? -->
 
     At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called `.mbedignore` in your mbed-os directory (if one doesn't exist), and add the following entry:
 
@@ -207,7 +206,7 @@ Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementa
 
     This removes dependencies on timers and peripherals that are yet to be ported.
 
-When both the bootstrap and entry point are ready, you should be able to build and run the bare metal Blinky program:
+When both the bootstrap and entry point are ready, you should be able to build and run the direct register Blinky program:
 
 ```
 cd mbed-os-example-blinky
