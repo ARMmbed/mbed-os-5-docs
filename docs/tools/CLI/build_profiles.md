@@ -1,7 +1,6 @@
 <h2 id="build-profiles">Build profiles</h2>
 
-Arm Mbed OS 5 defines three collections of toolchain flags used during the build. These are __build profile__.
-These are collections of toolchain flags used during the build. The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you can select the build configuration by adding the `--profile <`__build profile__ `name>` flag. You can also specify custom- or user-defined configurations by giving the path to the JSON file defining the build configuration.
+Arm Mbed OS 5 defines three collections of toolchain flags used during the build. These are __build profiles__. These are collections of toolchain flags used during the build. The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you can select the build configuration by adding the `--profile <`__build profile__ `name>` flag. You can also specify custom- or user-defined configurations by giving the path to the JSON file defining the build configuration.
 
 ### Develop
 
@@ -37,7 +36,7 @@ These flags are stored in a JSON file that may be merged with other JSON files o
 
 The JSON object that represents toolchain configurations for mapping each supported toolchains, such as `GCC_ARM`, to their flags, like `-O3`.
 
-The structure is as follows: each toolchain to be supported has an object in the root object. This object contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
+Each toolchain to be supported has an object in the root object. This object contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
 
 The required flag types are:
 
@@ -90,10 +89,10 @@ An example of a __build profile__:
 }
 ```
 
-For the above example, we can tell that:
+In the above example, you can tell that:
 
 - `GCC_ARM`, `ARM` and `IAR` compiler suites are supported.
-- The `ARM` C and C++ compilers will be using optimization level `-O3`.
-- The `IAR` linker will skip dynamic initialization.
+- The `ARM` C and C++ compilers use optimization level `-O3`.
+- The `IAR` linker skips dynamic initialization.
 
 And so on.
