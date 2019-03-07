@@ -34,9 +34,9 @@ These flags are stored in a JSON file that may be merged with other JSON files o
 
 #### JSON build profile format
 
-The JSON object that represents toolchain configurations for mapping each supported toolchains, such as `GCC_ARM`, to their flags, like `-O3`.
+The JSON object that represents toolchain configurations for mapping each supported toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
 
-Each toolchain to be supported has an object in the root object. This object contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
+Each toolchain to be supported is represented by a child object in the root object. Each child object contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
 
 The required flag types are:
 
