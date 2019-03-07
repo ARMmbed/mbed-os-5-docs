@@ -92,6 +92,8 @@
 <td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
 <td><a href="spislave.html">SPISlave</a></td>
 </tr>
+</tbody>
+</table>
 
 ### RTOS APIs
 
