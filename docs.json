@@ -683,9 +683,6 @@
                 "path": "docs/reference/technology/storage.md"
               },
               {
-                "path": "docs/reference/technology/psa/psa.md"
-              },
-              {
                 "path": "docs/reference/runtime/Memory.md"
               },
               {
