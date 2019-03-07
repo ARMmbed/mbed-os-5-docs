@@ -58,7 +58,7 @@ The only call provided to map from higher level to lower-level is:
 
 The standard POSIX function `int fileno(FILE *stream)` may be available to map from `FILE` to file descriptor, depending on the toolchain and C library in use - it is not usable in fully portable Mbed OS code.
 
-As it is not possible to map from `FILE` to lower levels, if code needs to access the lower levels, rather than use `fopen`, use a lower-level open call then `fdopen` to create the `FILE`.
+It is not possible to map from `FILE` to lower levels. If code needs to access the lower levels, rather than use `fopen`, use a lower-level open call. Then, use `fdopen` to create the `FILE`.
 
 The POSIX file descriptors for the console are available as `STDIN_FILENO`, `STDOUT_FILENO` and `STDERR_FILENO`, permitting operations such as `fsync(STDERR_FILENO)`, which would for example drain `UARTSerial`s output buffer.
 
@@ -119,11 +119,11 @@ Ordinary files do not generate sigio callbacks because they are always readable 
 
 #### Suspending a device
 
-Having a device open via a `FileHandle` may cost power, especially if open for input. For example, for `UARTSerial` to be able to receive data, the system must not enter deep sleep, so deep sleep will be prevented while the `UARTSerial` is active.
+Having a device open through a `FileHandle` may cost power, especially if open for input. For example, for `UARTSerial` to be able to receive data, the system must not enter deep sleep, so deep sleep is prevented while the `UARTSerial` is active.
 
-To permit power saving, the device can be closed or destroyed, or you can indicate that you do not currently require input or output by calling `FileHandle::enable_input` or `FileHandle::enable_output`.  Disabling input or output effectively suspends the device in that direction, which can permit power saving.
+To permit power saving, you can close or destroy the device, or you can indicate that you do not currently require input or output by calling `FileHandle::enable_input` or `FileHandle::enable_output`. Disabling input or output effectively suspends the device in that direction, which can permit power saving.
 
-This is particularly useful when an application does not require console input - it can indicate this by calling `mbed_file_handle(STDIN_FILENO)->enable_input(false)` once at the start of the program. This will permit deep sleep when `platform.stdio-buffered-serial` is set to true.
+This is particularly useful when an application does not require console input - it can indicate this by calling `mbed_file_handle(STDIN_FILENO)->enable_input(false)` once at the start of the program. This permits deep sleep when `platform.stdio-buffered-serial` is set to true.
 
 #### Stream-derived FileHandles
 
