@@ -1,10 +1,11 @@
 <h2 id="contributing-storage">Storage</h2>
 
-Storage support is split between file systems and their underlying block device support. The [storage API page](../apis/storage.html) has more information on existing APIs in Mbed OS for both interface.
+Mbed OS provides different storage solutions, all built on top of blockdevice interface. When adding a new platform you need to add the supported blockdevices to the components list in targets.json file. The blockdevices are located under the [components folder]( https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice). In order to enable a blockdevice under the folder COMPONENT_XXX add the string "XXX" to the component list for the target in targets.json. e.g. for internal memory blockdevice COMPONENT_FLASHIAP add "components_add": ["FLASHIAP"] to your target section in targets.json file
+[storage API page](../../apis/storage.html) has more information on existing storage solutions in Mbed OS.
 
 #### Block Device
 
-Adding a block device implementation is required for backing filesystems on new hardware. You can extend the [BlockDevice](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_block_device.html) class to provide support for unsupported storage.
+Adding a block device implementation maybe required if the new storage hardware is not supported by the existing blockdevices. You can extend the [BlockDevice](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_block_device.html) class to provide support for unsupported storage.
 
 If you want to port a new file system to Mbed OS on existing storage options you can skip to the following section.
 
