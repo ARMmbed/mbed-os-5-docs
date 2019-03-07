@@ -281,12 +281,14 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="fatfilesystem.html">FATFileSystem</a></td>
 <td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
 <td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
+<td><a href="../apis/psa-internal-storage.html">PSA internal storage</a></td>
 </tr>
 <tr>
 <td><a href="filesystem.html">FileSystem</a></td>
 <td><a href="blockdevice.html">BlockDevice</a></td>
 <td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
 <td><a href="sdblockdevice.html">SDBlockDevice</a></td>
+<td><a href="../apis/psa-protected-storage.html">PSA protected storage</a></td>
 </tr>
 <tr>
 <td><a href="dir.html">Dir</a></td>
