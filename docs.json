@@ -521,6 +521,9 @@
                         "path": "docs/api/security/psa.md"
                     },
                     {
+                        "path": "docs/api/security/crypto.md"
+                    },
+                    {
                         "path": "docs/api/security/TLS.md"
                     },
                     {
