@@ -38,15 +38,15 @@ These Mbed OS drivers can lock the deep sleep:
 - `SPI`.
 - `I2C`.
 - `CAN`.
-- `SerialBase` (and hence `Serial` and `UARTSerial`)
+- `SerialBase` (and hence `Serial` and `UARTSerial`).
 
-#### Console versus deep sleep
+#### Console and deep sleep
 
-By default, on entry to `main`, the deep sleep lock will not be held, so deep sleep will be possible until a driver or other code locks it.
+By default, on entry to `main`, the deep sleep lock is not held, so deep sleep is possible until a driver or other code locks it.
 
-However, if `platform.stdio-buffered-serial` is set to true, then `UARTSerial` installs an interrupt handler to receive serial data for `stdin`. This will block deep sleep. To permit deep sleep, input must be suspended (permanently or temporarily). Making the call `mbed_file_handle(STDIN_FILENO)->enable_input(false)` from the application gives the console driver, whatever it is, permission to stop reception. If `UARTSerial` is providing `stdin`, this removes the receive interrupt handler and releases the deep sleep lock.
+However, if `platform.stdio-buffered-serial` is set to true, then `UARTSerial` installs an interrupt handler to receive serial data for `stdin`. This blocks deep sleep. To permit deep sleep, you must suspend input (permanently or temporarily). Making the call `mbed_file_handle(STDIN_FILENO)->enable_input(false)` from the application gives the console driver, whatever it is, permission to stop reception. If `UARTSerial` provides `stdin`, this removes the receive interrupt handler and releases the deep sleep lock.
 
-For more information see [`FileHandle`](filehandle.html).
+For more information, please see [`FileHandle`](filehandle.html).
 
 #### Sleep/Deep sleep profiling tool
 
@@ -54,9 +54,9 @@ Mbed OS can help you to understand the sleep patterns of your device, specifical
 
 Mbed OS will print sleep traces on the standard output, which by default is UART. Some of the events that we track:
 
-* Locking deep sleep: `LOCK: <file name>, ln: <line in file>, lock count: <number of locks held>`
-* Unlocking deep sleep: `UNLOCK: <file name>, ln: <line in file>, lock count: <number of locks held>`
-* Entering sleep: Mbed OS will print a list of locks preventing the board from entering a deep sleep:
+- Locking deep sleep: `LOCK: <file name>, ln: <line in file>, lock count: <number of locks held>`.
+- Unlocking deep sleep: `UNLOCK: <file name>, ln: <line in file>, lock count: <number of locks held>`.
+- Entering sleep: Mbed OS will print a list of locks preventing the board from entering a deep sleep:
 
 ```
 Sleep locks held:
