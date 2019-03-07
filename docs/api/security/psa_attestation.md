@@ -7,7 +7,9 @@ The initial attestation service creates a token that contains a fixed set of dev
 The PSA initial attestation service is based on the TF-M attestation service, which is available in the [TF-M repository]( https://git.trustedfirmware.org/trusted-firmware-m.git/).
 
 ### Specification
+
 The initial attestation service exposes the following PSA interfaces:
+
 ```
 enum psa_attest_err_t
 psa_initial_attest_get_token(const uint8_t *challenge_obj,
@@ -54,4 +56,4 @@ In the current implementation, a bootloader does not exist in single and dual V7
 
 ### Related content
 
-* [PSA specification](https://pages.arm.com/PSA-APIs).
+- [PSA specification](https://pages.arm.com/PSA-APIs).
