@@ -11,7 +11,7 @@
 
 1. Compile and program your board:
 
-   1. Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler 5 toolchain:
+   Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler 5 toolchain:
 
        ```console
        $ mbed compile --target K64F --toolchain ARM --flash
@@ -21,13 +21,12 @@
 
    <span class="tips">**Tip:** You can get the name of the board plugged into your computer by running `mbed detect`, and you can get a full list of supported toolchains and targets by running the `mbed compile --supported` command.</span>
 
-   <span class="notes">**Note:** To build with the Mbed OS bare metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file:<br>
-      ```NOCI
+   <span class="notes">**Note:** To build with the Mbed OS bare metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file:</span>
+   ```NOCI
       {
           "requires": ["bare-metal"],
           "target_overrides": {
               "*": {
-      ```
-</br></span>
+   ```
 
 1. Press the board's reset button. The LED blinks.

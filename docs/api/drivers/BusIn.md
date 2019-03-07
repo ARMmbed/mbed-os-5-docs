@@ -14,6 +14,6 @@ You can use any of the numbered Arm Mbed pins as a DigitalIn in the BusIn.
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_bus_in.html)
 
-### BusIn Hello World!
+### BusIn hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/BusIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/BusIn_HelloWorld/file/1e81bff34109/main.cpp)
