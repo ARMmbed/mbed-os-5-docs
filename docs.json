@@ -1202,19 +1202,18 @@
         ]
       },
       {
-        "title": "PSA-compliant targets",
+        "title": "Porting security",
         "intro": {
-          "path": "docs/porting/psa/porting_psa.md"
-        },
-        "sources": [
-          {
             "path": "docs/porting/psa/spm.md"
-          },
-          {
-            "path": "docs/porting/psa/crypto.md"
-          },
-          {
-            "path": "docs/porting/psa/testing_psa_service_compliance.md"
+        },
+        "sources": [{
+                "path": "docs/porting/psa/crypto.md"
+            },
+            {
+                "path": "docs/porting/target/entropy.md"
+            },
+            {
+                "path": "docs/porting/target/hw-accelerated-crypto.md"
           }
         ]
       },
