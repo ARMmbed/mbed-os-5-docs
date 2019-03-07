@@ -1,4 +1,4 @@
-## PSA attestation
+## PSA initial attestation
 
 The PSA initial attestation service enables an application to prove a device's identity to a caller during the authentication process.
 
@@ -32,7 +32,9 @@ The size of the token that the service creates is highly dependent on the number
 
 To get the exact size of the created token, call the `psa_initial_attest_get_token_size()` function.
 
-You must call the `psa_crypto_init()` API before calling the attestation API.
+<span class="note"> **Note:** You must call the `psa_crypto_init()` API before calling the attestation API.</span>
+
+### Claims in the initial attestation token
 
 The initial attestation token consists of claims. A claim is a data item, which is represented as a key-value pair.
 
@@ -42,11 +44,11 @@ The token might also include data about the distinct software components on the 
 
 In the current implementation, a bootloader does not exist in single and dual V7; therefore, we have provided temporary hardcoded boot status data claims in the `attestation_bootloader_data.c` file, including `HW version`, `Boot seed`, and some `Software components` entries. `Security lifecycle` should also be part of the boot status, but in the current implementation, it is provided by calling the `psa_security_lifecycle_state()` API directly.
 
-### PSA attestation class reference
+### PSA initial attestation class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group___p_s_a-_attestation.html)
 
-### PSA attestation example
+### PSA initial attestation example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os/blob/master/TESTS/psa/attestation)](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/psa/attestation/main.cpp)
 
