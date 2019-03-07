@@ -8,4 +8,4 @@ Platform Security Architecture (PSA) Secure Partition Manager (SPM) APIs enable 
 
 ### Related content
 
-* [Platform Security Architecture - Firmware Framework](https://pages.arm.com/psa-resources-ff.html).
+- [Platform Security Architecture - Firmware Framework](https://pages.arm.com/psa-resources-ff.html).
