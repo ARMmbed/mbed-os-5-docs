@@ -513,100 +513,115 @@
                 ]
             },
             {
-                "title": "Security",
-                "intro": {
-                    "path": "docs/api/security/security.md"
-                },
-                "sources": [{
-                        "path": "docs/api/security/psa.md"
-                    },
-                    {
-                        "path": "docs/api/security/crypto.md"
-                    },
-                    {
-                        "path": "docs/api/security/TLS.md"
-                    },
-                    {
-                        "path": "docs/api/security/Devicekey.md"
-                    },
-                    {
-                        "path": "docs/api/security/trusted_storage.md"
-                    }
+
+            "title": "Security",
+    "intro": {
+      "path": "docs/api/security/security.md"
+    },
+    "sources": [
+      {
+        "path": "docs/api/security/psa_attestation.md"
+      },
+      {
+        "path": "docs/api/security/crypto.md"
+      },
+      {
+        "path": "docs/api/security/psa_lifecycle.md"
+      },
+      {
+        "path": "docs/api/security/platform_service.md"
+      },
+      {
+        "path": "docs/api/security/spm.md"
+      },
+      {
+        "path": "docs/api/security/TLS.md"
+      },
+      {
+        "path": "docs/api/security/Devicekey.md"
+      }
                 ]
             },
             {
-                "title": "Storage",
-                "intro": {
-                    "path": "docs/api/storage/storage.md"
-                },
-                "sources": [{
-                        "path": "docs/api/storage/KVStoreAPI.md"
-                    },
-                    {
-                        "path": "docs/api/storage/KVStoreGlobalAPI.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FileSystem.md"
-                    },
-                    {
-                        "path": "docs/api/storage/Dir.md"
-                    },
-                    {
-                        "path": "docs/api/storage/File.md"
-                    },
-                    {
-                        "path": "docs/api/storage/LittleFileSystem.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FATFileSystem.md"
-                    },
-                    {
-                        "path": "docs/api/storage/BlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/HeapBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/MBRBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/ChainingBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/SlicingBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/ProfilingBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/BufferedBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FlashSimBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/DataFlashBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FlashIAPBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/SDBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/SPIFBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/QSPIFBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/NVStore.md"
-                    }
-                ]
-            }
-        ],
-        "tags": [
-            "apis"
+            "title": "Storage",
+    "intro": {
+      "path": "docs/api/storage/storage.md"
+    },
+    "sources": [
+      {
+        "path": "docs/api/storage/KVStoreAPI.md"
+      },
+      {
+        "path": "docs/api/storage/KVStoreGlobalAPI.md"
+      },
+      {
+        "path": "docs/api/storage/FileSystem.md"
+      },
+      {
+        "path": "docs/api/storage/Dir.md"
+      },
+      {
+        "path": "docs/api/storage/File.md"
+      },
+      {
+        "path": "docs/api/storage/LittleFileSystem.md"
+      },
+      {
+        "path": "docs/api/storage/FATFileSystem.md"
+      },
+      {
+        "path": "docs/api/storage/BlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/HeapBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/MBRBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/ChainingBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/SlicingBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/ProfilingBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/BufferedBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/FlashSimBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/DataFlashBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/FlashIAPBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/SDBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/SPIFBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/QSPIFBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/NVStore.md"
+      },
+      {
+        "path": "docs/api/storage/psa_internal_storage.md"
+      },
+      {
+        "path": "docs/api/storage/psa_protected_storage.md"
+      }
+    ]
+  }
+],
+"tags": [
+  "apis"
         ]
     },
     {
