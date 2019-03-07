@@ -44,3 +44,39 @@ For more information, please see the [Online Compiler page](developing-mbed-onli
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](exporting.html).
 
+#### Forcing compilation with ARM Compiler 5 for targets already supporting ARM Compiler 6
+
+It's possible that some developers may need to update to Mbed 5.12 release but still requires compiling with ARM Compiler 5 until they are in possession of ARM Compiler 6.
+In those cases, you may still be able to use ARM Compiler 5 depending on the target. If your target uses any ARM Compiler 6 specific binaries or code, then it may not
+be able to compile with ARM Compiler 5 or you may see undefined behaviors. In other cases, if you want to try force ARM Compiler 5 you can do so with the following options:
+
+##### By creating a mbed_app.json to override `supported_toolchains`
+
+In this method, you can create or update your `mbed_app.json` with the following content. Note that you can still keep other entries such as `GCC_ARM` or `IAR` while overriding `supported_toolchains` as below.
+
+```
+{
+  "target_overrides": {
+      "*": {
+          "target.supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"]
+      }
+  }
+}
+```
+
+##### By local modifications to `targets.json`
+
+In this method, you have to modify the `supported_toolchains` entry for your target in targets.json to remove all `ARM`, `ARMC6` entries and replace it with `ARMC5`. Note that you can still keep other entries such as `GCC_ARM` or `IAR`.
+
+See below for example:
+```
+"MY_TARGET_NAME": {
+        "supported_form_factors": [...],
+        "core": "Cortex-M4",
+        "supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"],
+        ...
+}
+```
+
+<span class="note"> **Note:** The above methods to override ARM toolchain version is made available only to enable developers migrating from ARM Compiler 5 to ARM Compiler 6. Future releases of Mbed OS may remove
+this option and thus developers are strongly encouraged to move to ARM Compiler 6.</span>
