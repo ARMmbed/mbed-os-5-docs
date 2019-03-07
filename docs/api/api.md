@@ -250,13 +250,15 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <table>
 <tbody>
 <tr>
-<td><a href="psa-api.html">Mbed implementation of PSA</a></td>
-<td><a href="tls.html">TLS</a></td>
-<td><a href="psa-storage.html">PSA internal trusted storage</a></td>
+<td><a href="../apis/psa-initial-attestation.html">PSA attestation</a></td>
+<td><a href="../apis/psa-lifecycle.html">PSA lifecycle</a></td>
+<td><a href="../apis/psa-spm.html">PSA SPM</a></td>
+<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 <tr>
 <td><a href="mbed-crypto.html">Mbed Crypto</a></td>
-<td><a href="devicekey.html">DeviceKey</a></td>
+<td><a href="../apis/platform-service.html">Platform service</a></td>
+<td><a href="tls.html">TLS</a></td>
 </tr>
 </tbody>
 </table>
