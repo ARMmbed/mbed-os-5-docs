@@ -38,16 +38,16 @@ The Mbed implementation of PSA supports the following platform types:
 
 The Mbed implementation of PSA provides the following services:
 
-- [PSA RoT internal storage](..apis/psa-internal-storage.html).
-- [PSA crypto](../apis/psa-crypto.html).
-- [PSA attestation](../apis/psa-attestation.html).
+- [PSA RoT internal storage](../apis/psa-internal-storage.html).
+- [PSA Crypto](../apis/mbed-crypto.html).
+- [PSA attestation](../apis/psa-initial-attestation.html).
 - [PSA lifecycle](../apis/psa-lifecycle.html).
 - [PSA platform service](../apis/platform-service.html).
-- [PSA Secure Partition Manager (SPM)](../apis/spm-apis.html)
+- [PSA Secure Partition Manager (SPM)](../apis/psa-spm.html)
 
 ### Additional Mbed OS security APIs
 
 Arm Mbed OS provides the following additional security APIs:
 
-- [Device key](../apis/DeviceKey.html) - Implements key derivation from a root of trust key.
+- [Device key](../apis/devicekey.html) - Implements key derivation from a root of trust key.
 - [Mbed TLS](../apis/tls.html) - A comprehensive SSL/TLS solution. For full details, see the [Mbed TLS site](https://tls.mbed.org/).
