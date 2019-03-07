@@ -501,7 +501,7 @@
             "path": "docs/api/security/psa_crypto.md"
           },
           {
-            "path": "docs/api/security/lifecycle/psa_lifecycle.md"
+            "path": "docs/api/security/psa_lifecycle.md"
           },
           {
             "path": "docs/api/security/platform_service.md"
