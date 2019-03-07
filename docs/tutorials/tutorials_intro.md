@@ -343,12 +343,10 @@ These tutorials teach you to communicate with your development board, an essenti
 <tbody>
 <tr>
 <td><a href="windows-serial-driver.html">Windows serial driver tutorial</a></td>
+<td><a href="serial-comm.html#minimal-printf">Low memory serial printf example</a></td>
 </tr>
 <tr>
 <td><a href="serial-comm.html">Board to PC communication over USB tutorial</a></td>
-</tr>
-<tr>
-<td><a href="serial-comm.html#minimal-printf">Low memory serial printf example</a></td>
 </tr>
 </tbody>
 </table>
