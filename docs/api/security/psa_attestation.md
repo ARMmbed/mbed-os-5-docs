@@ -46,6 +46,10 @@ In the current implementation, a bootloader does not exist in single and dual V7
 
 [![View code](https://www.mbed.com/embed/?type=library)]()
 
+### PSA attestation example
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os/blob/master/TESTS/psa/attestation)](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/psa/attestation/main.cpp)
+
 ### Related content
 
 * [PSA specification](https://pages.arm.com/PSA-APIs).
