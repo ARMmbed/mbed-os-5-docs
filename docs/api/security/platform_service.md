@@ -1,10 +1,8 @@
 ## Platform service
 
-The Platform service introduces System Reset and [PSA Lifecycle](./lifecycle/psa_lifecycle.md) APIs.
+The Platform service introduces System Reset and [PSA Lifecycle](../lifecycle/psa-lifecycle.html) APIs.
 
-The System Reset API allows Nonsecure Processing environment to request a system reset.
-[Trusted Base System Architecture for M (TBSA-M)](https://pages.arm.com/psa-resources-tbsa-m.html) specification defines that power state should be managed by SPE.
-System reset will be carried out by SPE once all critical task are finished.
+The System Reset API enables a Non-Secure Processing Environment (NSPE) to request a system reset. The [Trusted Base System Architecture for M (TBSA-M)](https://pages.arm.com/psa-resources-tbsa-m.html) specification defines that power state must be managed by the Secure Processing Environment (SPE). System reset is carried out by the SPE after all critical tasks are finished.
 
 ### Platform service class reference
 
