@@ -18,7 +18,7 @@ The Mbed TLS configuration system configures Mbed Crypto. Please refer to [Mbed 
 
 This example covers some basic use of the PSA Crypto API, as well as factory entropy injection:
 
-[![View code](https://github.com/ARMmbed/mbed-os-example-mbed-crypto/)](https://github.com/ARMmbed/mbed-os-example-mbed-crypto/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mbed-crypto/)](https://github.com/ARMmbed/mbed-os-example-mbed-crypto/blob/master/main.cpp)
 
 For further information, please refer to the README file in [the example repository](https://github.com/ARMmbed/mbed-os-example-mbed-crypto).
 
