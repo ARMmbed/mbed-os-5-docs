@@ -1201,23 +1201,23 @@
           },
           {
             "path": "docs/porting/target/crc.md"
+          }
+        ]
+      },
+      {
+        "title": "PSA-compliant targets",
+        "intro": {
+          "path": "docs/porting/psa/porting_psa.md"
+        },
+        "sources": [
+          {
+            "path": "docs/porting/psa/spm.md"
           },
           {
-            "title": "PSA-compliant targets",
-            "intro": {
-              "path": "docs/porting/psa/porting_psa.md"
-            },
-            "sources": [
-              {
-                "path": "docs/porting/psa/spm.md"
-              },
-              {
-                "path": "docs/porting/psa/crypto.md"
-              },
-              {
-                "path": "docs/porting/psa/testing_psa_service_compliance.md"
-              }
-            ]
+            "path": "docs/porting/psa/crypto.md"
+          },
+          {
+            "path": "docs/porting/psa/testing_psa_service_compliance.md"
           }
         ]
       },
