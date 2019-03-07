@@ -522,7 +522,7 @@
         "path": "docs/api/security/psa_attestation.md"
       },
       {
-        "path": "docs/api/security/psa_crypto.md"
+        "path": "docs/api/security/crypto.md"
       },
       {
         "path": "docs/api/security/psa_lifecycle.md"
