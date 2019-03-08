@@ -1,6 +1,6 @@
 <h2 id="build-profiles">Build profiles</h2>
 
-Arm Mbed OS 5 defines three collections of toolchain flags used during the build. These are __build profiles__. The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you may select the build profile by passing your desired build profile, by name or path, to the --profile argument. You can also specify custom- or user-defined build profiles by giving the path to the JSON file defining the build profile.
+Arm Mbed OS 5 defines three collections of toolchain flags used during the build. These are __build profiles__. These are collections of toolchain flags used during the build. The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you may select the __build profile__ by passing your desired build profile, by name or path, to the __--profile__ argument.
 
 ### Develop
 
@@ -28,9 +28,9 @@ Arm Mbed OS 5 defines three collections of toolchain flags used during the build
 
 ### User-defined build profile
 
-As mentioned above, the __build profile__ defines the set of flags that is guaranteed to be passed to the underlying compiler suite.
+As mentioned above, the __build profile__ defines the set of flags that is guaranteed to be passed to the underlying compiler suite. You can also create custom or user-defined __build profile__ using a JSON file acording to the __build profile__ format mentioned in [JSON build profile format](#JSON-build-profile-format).
 
-These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
+These flags stored in the JSON file may also be merged with other JSON files of the same structure.
 
 #### JSON build profile format
 
