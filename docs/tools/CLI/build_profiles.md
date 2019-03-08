@@ -1,6 +1,6 @@
 <h2 id="build-profiles">Build profiles</h2>
 
-Arm Mbed OS 5 defines three collections of toolchain flags used during the build. These are __build profiles__. These are collections of toolchain flags used during the build. The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you may select the __build profile__ by passing your desired build profile, by name or path, to the __--profile__ argument.
+Arm Mbed OS 5 defines three collections of toolchain flags used during the build. These are __build profiles__.  The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you may select the __build profile__ by passing your desired build profile, by name or path, to the `--profile` argument.
 
 ### Develop
 
@@ -34,9 +34,8 @@ These flags stored in the JSON file may also be merged with other JSON files of 
 
 #### JSON build profile format
 
-The __build profiles__ are implemented as JSON files with the root object representing toolchain configurations for mapping each supported toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
-
-Each toolchain to be supported is represented by a child object in the JSON root object. Each child object contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
+The __build profiles__ are JSON files with the root object containing key-value pairs for each supported toolchain, such as `GCC_ARM`.
+Each key, representing the toolchain, contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
 
 The required flag types are:
 
