@@ -21,12 +21,9 @@
 
    <span class="tips">**Tip:** You can get the name of the board plugged into your computer by running `mbed detect`, and you can get a full list of supported toolchains and targets by running the `mbed compile --supported` command.</span>
 
-   <span class="notes">**Note:** To build with the Mbed OS bare metal profile, add `"requires": ["bare-metal"]` to the `mbed_app.json` file:</span>
+   <span class="notes">**Note:** The Blinky example is configured to build with the BareMetal profile by default. To enable the RTOS and other Mbed OS libraries, remove the following line from `mbed_app.json`:</span>
    ```NOCI
-      {
           "requires": ["bare-metal"],
-          "target_overrides": {
-              "*": {
    ```
 
 1. Press the board's reset button. The LED blinks.
