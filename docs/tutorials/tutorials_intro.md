@@ -283,7 +283,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 <td><a href="../apis/messagebuilder.html#messagebuilder-example">MessageBuilder example</a></td>
 </tr>
 <tr>
-<td><a href="../apis/nfc-eeprom.html#nfceeprom-example"></a>NFCEEPROM example</a></td>
+<td><a href="../apis/nfc-eeprom.html#nfceeprom-example">NFCEEPROM example</a></td>
 <td><a href="../apis/simplemessageparser.html#simplemessageparser-example">SimpleMessageParser example</a></td>
 </tr>
 </tbody>
