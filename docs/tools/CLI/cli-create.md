@@ -114,7 +114,7 @@ You can update programs and libraries on your local machine so that they pull in
 
 As with any Mbed CLI command, `mbed update` uses the current directory as a working context. Before calling `mbed update`, you should change your working directory to the one you want to update. For example, if you're updating `mbed-os`, use `cd mbed-os` before you begin updating.
 
-<span class="tips">**Tip:** Synchronizing library references: Before triggering an update, you may want to synchronize any changes that you've made to the program structure by running mbed sync, which updates the necessary library references and removes the invalid ones.</span>
+<span class="tips">**Tip:** Synchronizing library references: Before triggering an update, you may want to synchronize any changes that you've made to the program structure by running `mbed sync`, which updates the necessary library references and removes the invalid ones.</span>
 
 #### Protection against overwriting local changes
 
