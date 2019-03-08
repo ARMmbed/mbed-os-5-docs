@@ -212,6 +212,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 <td><a href="../apis/non-ip-cellular-socket.html#cellularnonipsocket-example">Non-IP cellular socket example</a></td>
 <td><a href="../apis/tlssocket.html#tlssocket-example">TLSSocket example</a></td>
 <td><a href="../apis/socketstats.html#socketstats-example">SocketStats example</a></td>
+</tr>
 </tbody>
 </table>
 
