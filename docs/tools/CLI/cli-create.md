@@ -108,9 +108,59 @@ $ mbed compile -t ARM -m K64F --source project2 --source mbed-os --build BUILD/p
 
 Find more details on the `--source` switch in the [build rules documentation](../reference/mbed-os-build-rules.html).
 
-### Updating to an upstream version
+### Updating programs and libraries
 
-#### Updating a program
+You can update programs and libraries on your local machine so that they pull in changes from the remote sources (Git or Mercurial).
+
+As with any Mbed CLI command, `mbed update` uses the current directory as a working context. Before calling `mbed update`, you should change your working directory to the one you want to update. For example, if you're updating `mbed-os`, use `cd mbed-os` before you begin updating.
+
+<span class="tips">**Tip:** Synchronizing library references: Before triggering an update, you may want to synchronize any changes that you've made to the program structure by running mbed sync, which updates the necessary library references and removes the invalid ones.</span>
+
+#### Protection against overwriting local changes
+
+The update command fails if there are changes in your program or library that `mbed update` could overwrite. This is by design. Mbed CLI does not run operations that would result in overwriting uncommitted local changes. If you get an error, take care of your local changes (commit or use one of the options below), and then rerun `mbed update`.
+
+#### Updating to an upstream version
+
+Before updating a program or a library, it's good to know the names of the stable releases, usually marked with a tag using a common format, such as `1.2`, `v1.0.1`, `r5.6`, `mbed-os-5.6` and so on.
+
+You can find stable release versions of a program or a library using the `mbed releases` command:
+
+```
+$ cd mbed-os
+$ mbed releases
+mbed-os (#182bbd51bc8d, tags: latest, mbed-os-5.6.5)
+  ...
+  * mbed-os-5.6.0 
+  * mbed-os-5.6.1 
+  * mbed-os-5.6.2 
+  * mbed-os-5.6.3 
+  * mbed-os-5.6.4 
+  * mbed-os-5.6.5  <- current
+```
+
+You can also recursively list stable releases for your program and libraries using the `-r` switch, for example `mbed releases -r`.
+
+Lastly, you can list unstable releases, such as release candidates, alphas and betas by using the `-u` switch.
+
+```
+$ cd mbed-client
+$ mbed releases -u
+mbed-client (#31e5ce203cc0, tags: v3.0.0)
+  * mbed-os-5.0-rc1 
+  * mbed-os-5.0-rc2 
+  * r0.5-rc4 
+  ...
+  * v2.2.0 
+  * v2.2.1 
+  * v3.0.0  <- current
+```
+
+You can use the `-a` switch to print release and revision hash pairs.
+
+Mbed CLI recognizes stable release if the tags are in standard versioning format, such as `MAJOR[.MINOR][.PATCH][.BUILD]`, and optionally prefixed with `v`, `r` or `mbed-os`. Unstable releases can be suffixed with any letter/number/hyphen/dot combination.
+
+##### Updating a program
 
 To update your program to another upstream version, go to the root folder of the program, and run:
 
@@ -120,27 +170,27 @@ $ mbed update [branch|tag|revision]
 
 This fetches new revisions from the remote repository, updating the program to the specified branch, tag or revision. If you don't specify any of these, then `mbed update` updates to the latest revision of the current branch. `mbed update` performs this series of actions recursively against all dependencies in the program tree.
 
-#### Updating a library
+##### Updating a library
 
 You can change the working directory to a library folder and use `mbed update` to update that library and its dependencies to a different revision than the one referenced in the parent program or library. This allows you to experiment with different versions of libraries/dependencies in the program tree without having to change the parent program or library.
 
 There are three additional options that modify how unpublished local libraries are handled:
 
-* `mbed update --clean-deps` - Update the current program or library and its dependencies, and discard all local unpublished repositories. Use this with caution because your local unpublished repositories cannot be restored unless you have a backup copy.
+- `mbed update --clean-deps` - Update the current program or library and its dependencies, and discard all local unpublished repositories. Use this with caution because your local unpublished repositories cannot be restored unless you have a backup copy.
 
-* `mbed update --clean-files` - Update the current program or library and its dependencies, discard local uncommitted changes and remove any untracked or ignored files. Use this with caution because your local unpublished repositories cannot be restored unless you have a backup copy.
+- `mbed update --clean-files` - Update the current program or library and its dependencies, discard local uncommitted changes and remove any untracked or ignored files. Use this with caution because your local unpublished repositories cannot be restored unless you have a backup copy.
 
-* `mbed update --ignore` - Update the current program or library and its dependencies, and ignore any local unpublished libraries (they won't be deleted or modified, just ignored).
+- `mbed update --ignore` - Update the current program or library and its dependencies, and ignore any local unpublished libraries (they won't be deleted or modified, just ignored).
 
-#### Updating examples
+##### Updating examples
 
 There are two main scenarios when updating:
 
-* Update with local uncommitted changes: *dirty* update.
+- Update with local uncommitted changes: *dirty* update.
 
 Run `mbed update [branch|revision|tag_name]`. You might have to commit or stash your changes if the source control tool (Git or Mercurial) throws an error that the update will overwrite local changes.
 
-* Discard local uncommitted changes: *clean* update.
+- Discard local uncommitted changes: *clean* update.
 
 Run `mbed update [branch|revision|tag_name] --clean`
 
@@ -148,13 +198,13 @@ Specifying a branch to `mbed update` will only check out that branch and won't a
 
 <span class="warnings">**Warning**: The `--clean` option tells Mbed CLI to update that program or library and its dependencies and discard all local changes. This action cannot be undone; use with caution.</span>
 
-#### Combining update options
+##### Combining update options
 
 You can combine the options of the Mbed update command for the following scenarios:
 
-* `mbed update --clean --clean-deps --clean-files` - Update the current program or library and its dependencies, remove all local unpublished libraries, discard local uncommitted changes and remove all untracked or ignored files. This wipes every single change that you made in the source tree and restores the stock layout.
+- `mbed update --clean --clean-deps --clean-files` - Update the current program or library and its dependencies, remove all local unpublished libraries, discard local uncommitted changes and remove all untracked or ignored files. This wipes every single change that you made in the source tree and restores the stock layout.
 
-* `mbed update --clean --ignore` - Update the current program or library and its dependencies, but ignore any local repositories. Mbed CLI updates whatever it can from the public repositories.
+- `mbed update --clean --ignore` - Update the current program or library and its dependencies, but ignore any local repositories. Mbed CLI updates whatever it can from the public repositories.
 
 Use these with caution because your uncommitted changes and unpublished libraries cannot be restored.
 
@@ -180,3 +230,9 @@ If no subcommand is specified to `mbed cache`, Mbed CLI prints the current cache
 For safety reasons, Mbed CLI uses the `mbed-cache` subfolder to a user specified location. This ensures that no user files are deleted during `purge` even if the user has specified root/system folder as a cache location (for example, `mbed cache dir /` or `mbed cache dir C:\`).
 
 **Security notice**: If you use cache location outside your user home/profile directory, then other system users might be able to access the repository cache and therefore the data of the cached repositories.
+
+#### Offline mode
+
+Through the caching feature in Mbed CLI, you can enable offline mode, which uses the already cached repositories on your system. You can enable offline mode by adding the `--offline` switch to `mbed import`, `mbed add`, `mbed update` and `mbed new`.
+
+In offline mode, Mbed CLI looks up locally cached repositories and uses them without fetching new content from their remote repositories. This is particularly useful if for example you are in a plane and you'd like to create another Mbed OS project (assuming you've imported or created one before), but you don't have access to the internet. By using the command `mbed new <project_name> --offline`, you can create the project with Mbed OS included.
