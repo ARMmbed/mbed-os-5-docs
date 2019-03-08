@@ -143,8 +143,8 @@ These tutorials and examples show you how to perform specific tasks that use the
 <td><a href="the-eventqueue-api.html">EventQueue tutorial</a></td>
 <td><a href="../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue">EventQueue example: chaining events from more than one queue</a></td>
 <td><a href="../apis/mutex.html#mutex-example">Mutex example</a></td>
-<td><a href="../apis/memorypool.html#memorypool-examplel">MemoryPool example</a></td>
-<td><a href="../kernel-interface-functions.html#get-ms-count-examplel">Kernel interface get_ms_count() example</a></td>
+<td><a href="../apis/memorypool.html#memorypool-example">MemoryPool example</a></td>
+<td><a href="../kernel-interface-functions.html#get-ms-count-example">Kernel interface get_ms_count() example</a></td>
 </tr>
 <tr>
 <td><a href="../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl">EventQueue example: deferring from interrupt context</a></td>
@@ -325,7 +325,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 <td><a href="../apis/blockdevice.html#blockdevice-example">BlockDevice example</a></td>
 <td><a href="../apis/slicingblockdevice.html#slicingblockdevice-example">SlicingBlockDevice example</a></td>
 <td><a href="../apis/dataflashblockdevice.html#dataflashblockdevice-example">DataFlashBlockDevice example</a></td>
-<td><a href="../apis/qspifblockdevice.html#qspifblockdevice-examplel">QSPIFBlockDevice example</a></td>
+<td><a href="../apis/qspifblockdevice.html#qspifblockdevice-example">QSPIFBlockDevice example</a></td>
 </tr>
 <tr>
 <td><a href="../apis/heapblockdevice.html#heapblockdevice-example">HeapBlockDevice example</a></td>
