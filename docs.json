@@ -991,6 +991,9 @@
                         "path": "docs/tutorials/using_apis/how_to_api.md"
                     },
                     {
+                        "path": "docs/tutorials/using_apis/alarm-tutorial.md"
+                    },
+                    {
                         "path": "docs/tutorials/using_apis/events_tutorial.md"
                     },
                     {
