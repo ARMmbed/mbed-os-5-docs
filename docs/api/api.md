@@ -201,8 +201,6 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <td><a href="gattserver.html">GattServer</a></td>
 <td><a href="batteryservice.html">BatteryService</a></td>
 <td><a href="ibeacon.html">iBeacon</a></td>
-<tr>
-
 </tr>
 </tbody>
 </table>
