@@ -281,3 +281,11 @@ $ mbed test --unittests --new rtos/Semaphore.cpp
 #### Various issues when running Mbed CLI in the Cygwin environment
 
 Mbed CLI is not currently compatible with the Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
+
+#### Downloading Mbed 2 library builds
+
+Mbed 2 library builds can be large and may require a download manager on slower connections. You may download the library manually with the following steps:
+
+1. Go to Mbed OS 2 releases, and choose a revision - https://os.mbed.com/users/mbed_official/code/mbed/graph/
+1. Click on revision of your choice, for example, the revision 4f6c30876dfa is located at https://os.mbed.com/users/mbed_official/code/mbed/rev/4f6c30876dfa/
+1. In the URL, change rev to archive and append zip. For example, the URL above, https://os.mbed.com/users/mbed_official/code/mbed/rev/4f6c30876dfa/, is modified to https://os.mbed.com/users/mbed_official/code/mbed/archive/4f6c30876dfa/zip
