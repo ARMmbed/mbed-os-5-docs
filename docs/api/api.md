@@ -237,9 +237,6 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 <td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
 <td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
 </tr>
-<tr>
-
-</tr>
 </tbody>
 </table>
 
