@@ -110,7 +110,7 @@ Find more details on the `--source` switch in the [build rules documentation](..
 
 ### Updating programs and libraries
 
-You can update programs and libraries on your local machine so that they pull in changes from the remote sources (Git or Mercurial).
+You can update programs and libraries on your local machine, so they update to the latest released version from the remote sources (Git or Mercurial).
 
 As with any Mbed CLI command, `mbed update` uses the current directory as a working context. Before calling `mbed update`, you should change your working directory to the one you want to update. For example, if you're updating `mbed-os`, use `cd mbed-os` before you begin updating.
 
@@ -118,7 +118,7 @@ As with any Mbed CLI command, `mbed update` uses the current directory as a work
 
 #### Protection against overwriting local changes
 
-The update command fails if there are changes in your program or library that `mbed update` could overwrite. This is by design. Mbed CLI does not run operations that would result in overwriting uncommitted local changes. If you get an error, take care of your local changes (commit or use one of the options below), and then rerun `mbed update`.
+The update command fails if there are changes in your program or library that `mbed update` could overwrite. This is by design. Mbed CLI does not run operations that would result in overwriting uncommitted local changes. If you get an error, take care of your local changes, and then rerun `mbed update`.
 
 #### Updating to an upstream version
 
