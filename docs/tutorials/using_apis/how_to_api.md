@@ -24,5 +24,5 @@ ___
 
 ### Drivers
 
-- [Alarm tutorial using DigitalOut, InterruptIn and LowPowerTicker](/tutorials/alarm-tutorial.html).
+- [Alarm tutorial using DigitalOut, InterruptIn and LowPowerTicker](../tutorials/alarm-tutorial.html).
 - [Flow control using Ticker and Wait](application-flow-control.html).
