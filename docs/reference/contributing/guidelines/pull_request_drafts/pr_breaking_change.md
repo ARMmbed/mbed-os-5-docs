@@ -4,7 +4,7 @@
 
 ### Release notes
 
-#### Brief description
+#### Description
 
 #### Analysis of effects
 
