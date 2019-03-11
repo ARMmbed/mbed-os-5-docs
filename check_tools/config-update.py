@@ -105,17 +105,19 @@ def main(file):
                     print("\t------- Tag: %s -------" % tag)
 
                     start_of_config_block = file.find('Name:', start)
-                    updated_config = str(file[ : start_of_config_block]) # + "Configuration parameters\n------------------------\n")
+                    updated_config = str(file[ : start_of_config_block])
                     for line in out.splitlines():
                         if 'Name' in line and tag in line:
                             updated_config += line
 
                             # Collect all text until next parameter name. If there's no following 'Name:' token, its the last
-                            # config option, match to 'Macros' instead to termiante the block
-                            if out.find('Name:', out.find(line) + 4) > 0:
-                                updated_config += out[out.find('\n', out.find(line)) : out.find('Name:', out.find(line) + 4)]
+                            # config option, match to 'Macros' instead to termiante the block. Offset starting index to avoid finding
+                            # the current line's 'Name:' token.
+                            eol = out.find('\n', out.find(line))
+                            if out.find('Name:', out.find(line) + len('Name:')) > 0:
+                                updated_config += out[eol : out.find('Name:', out.find(line) + len('Name:'))]
                             else:
-                                updated_config += out[out.find('\n', out.find(line)) : out.find('Macros', out.find(line) + 4)]
+                                updated_config += out[eol : out.find('Macros', out.find(line))]
 
                     updated_config += str(file[end:])
                 else:
