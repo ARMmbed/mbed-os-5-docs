@@ -4,9 +4,10 @@
 
 ### Release notes
 
-#### Description
+#### Reason for change
 
 #### Analysis of effects
 
-#### Migration
+#### Migration path
+
 
