@@ -112,6 +112,8 @@ It must contain:
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
 
+Pull request template addition for functional changes [here](./pull_request_drafts/pr_functional_change.md).
+
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
 Each feature has a tech lead. This person is responsible for:
@@ -146,6 +148,10 @@ It must contain:
 - A brief description of changes introduced, including justification description.
 - An analysis of effects: components affected, potential consequences for users and reasons for breaking user space.
 - Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
+
+<span class="notes">**Note:** We may use this content in our official release notes.</span>
+
+Pull request template addition [here](./pull_request_drafts/pr_breaking_change.md).
 
 The breaking change pull requests must be approved by a project tech-lead and the Mbed OS tech lead.
 
