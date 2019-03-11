@@ -83,6 +83,11 @@ These tutorials and examples show you how to perform specific tasks that use the
 | DigitalOut | | | [DigitalOut Hello, World](../apis/digitalout.html#digitalout-hello-world)|
 | InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
 
+
+### InterruptIn
+
+
+
 <table>
 <tbody>
 <tr>
@@ -147,6 +152,23 @@ These tutorials and examples show you how to perform specific tasks that use the
 
 #### Using RTOS APIs
 
+Option 1:
+
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)</br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) </br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) </br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)</br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [Tutorial](the-eventqueue-api.html)|
+| Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
+| MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
+| Kernel | [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)</br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
+| Thread | [Thread example](../apis/thread.html#thread-example)</br> [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)</br> | |
+| Semaphore  | [Semaphore example](../apis/semaphore.html#semaphore-example) | |
+| Mail | [Mail example](../apis/mail.html#mail-example) | |
+| EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
+| ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
+| Queue | [Queue example](../apis/queue.html#queue-example) </br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
+
+Option 2:
+
 <table>
 <tbody>
 <tr>
@@ -177,6 +199,56 @@ These tutorials and examples show you how to perform specific tasks that use the
 </tr>
 </tbody>
 </table>
+
+Option 3:
+
+#### EventQueue
+
+* [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<
+* [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl)
+* [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue)
+* [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)
+*  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)
+* [Tutorial](the-eventqueue-api.html)
+
+#### Mutex
+
+[Mutex example](../apis/mutex.html#mutex-example)
+
+#### MemoryPool
+
+[MemoryPool example](../apis/memorypool.html#memorypool-example)
+
+#### Kernel
+
+* [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)
+* [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example)
+
+#### Thread
+
+* [Thread example](../apis/thread.html#thread-example)
+* [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)
+
+#### Semaphore
+
+[Semaphore example](../apis/semaphore.html#semaphore-example)
+
+#### Mail
+
+[Mail example](../apis/mail.html#mail-example)
+
+#### EventFlags
+
+[EventFlags example](../apis/eventflags.html#eventflags-example)
+
+#### ConditionVariable
+
+[ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example)
+
+#### Queue
+
+* [Queue example](../apis/queue.html#queue-example)
+* [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)
 
 #### Using USB APIs
 
