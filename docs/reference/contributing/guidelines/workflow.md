@@ -139,6 +139,16 @@ A breaking change is any change that results in breaking user space. It should h
 
 A contribution containing a breaking change is the most difficult PR to get merged. Any breaking changes in a codebase can have a large negative impact on any users of the codebase. Breaking changes are always limited to a major version release.
 
+Every pull request with breaking change must contain a release notes section called "Release notes" to describe the changes to users.
+
+It must contain:
+
+- A brief description of changes introduced, including justification description.
+- An analysis of effects: components affected, potential consequences for users and reasons for breaking user space.
+- Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
+
+The breaking change pull requests must be approved by a project tech-lead and the Mbed OS tech lead.
+
 Release: major
 
 ### GitHub pull requests workflow
