@@ -1,5 +1,5 @@
 <!--
-    These sections should part of the PR template for any breaking change
+    These sections should be part of the PR template for any breaking change.
 -->
 
 ### Release notes
