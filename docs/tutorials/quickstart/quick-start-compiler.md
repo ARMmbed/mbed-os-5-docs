@@ -27,7 +27,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button.png)</span>
 
-    <span class="notes">**Note:** The Blinky example is configured to build with the BareMetal profile by default. To enable the RTOS and other Mbed OS libraries, remove the following line from `mbed_app.json`:</span>
+    <span class="notes">**Note:** The Blinky example is configured to build with the bare metal profile by default. To enable the RTOS and other Mbed OS libraries, remove the following line from `mbed_app.json`:</span>
     ```NOCI
            "requires": ["bare-metal"],
     ```
