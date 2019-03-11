@@ -10,9 +10,9 @@ The default baud rate, or speed, for this application is set to `9600`. You can 
 
 <span class="tips">**Tip:** You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the [related links section](#related-links).</span>
 
-The output transmits the system, CPU, and heap information. 
+The output transmits the system, CPU and heap information. 
 
-<span class="notes">**Note:** The Blinky example by default is built with the BareMetal build profile which disables the RTOS. If you build with a standard profile you will also get Thread information. To remove the BareMetal profile, remove `"requires": ["bare-metal"],` from the `mbed_app.json` file.</span>
+<span class="notes">**Note:** The Blinky example by default is built with the bare metal build profile, which disables the RTOS. If you build with a standard profile, you also see Thread information. To remove the bare metal profile, remove `"requires": ["bare-metal"],` from the `mbed_app.json` file.</span>
 
 #### Understanding the output
 
@@ -57,7 +57,7 @@ Percentage of runtime the device has spent awake.
 
 ##### Thread statistics
 
-**Note** These stats are only visible on full RTOS builds, disable the BareMetal profile to view these stats.
+<span class="notes">**Note:** These stats are only visible on full RTOS builds. Please disable the bare metal profile to view these stats.</span>
 
 Provides information on all running threads in the OS:
 
