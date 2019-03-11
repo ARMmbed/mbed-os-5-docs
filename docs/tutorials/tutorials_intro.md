@@ -77,11 +77,11 @@ These tutorials and examples show you how to perform specific tasks that use the
 
 | API | Examples | Tutorials | Hello, World |
 | --- | --- | --- | --- |
-| Flow control | | [application-flow-control.html](Flow control tutorial) | |
+| Flow control | | [Flow control tutorial](application-flow-control.html) | |
 | Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
 | Alarm | | [Alarm tutorial](../tutorials/alarm-tutorial.html) | |
 | DigitalOut | | | [DigitalOut Hello, World](../apis/digitalout.html#digitalout-hello-world)|
-| InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) | 
+| InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
 
 <table>
 <tbody>
