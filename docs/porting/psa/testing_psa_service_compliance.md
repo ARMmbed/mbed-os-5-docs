@@ -19,13 +19,13 @@ Every test suite contains a folder for each of the test scenarios. Each test sce
 To compile and run PSA compliance tests in Mbed OS, run the following command:
 
 ```
-mbed test -t <toolchain> -m <target> -n mbed-os-components-target_psa-tests-compliance_<test suite>_<test case number>
+mbed test -t <toolchain> -m <target> -n components-target_psa-tests-compliance_<test suite>_<test case number>
 ```
 Where:
 
-* `<toolchain>` may be `GCC_ARM`, `ARM` or `IAR`.
+* `<toolchain>` may be `ARM`, `ARMC6`, `GCC_ARM` or `IAR`.
 
-* `<target>` is  your target.
+* `<target>` is your PSA-compliant target platform.
 
 * `<test suite>` is:
     * For crypto tests: `crypto-test`.
@@ -36,11 +36,17 @@ Where:
     * For crypto tests: `c001`, `c002`, and so on.
     * For internal trusted storage tests: `s001`, `s002`, and so on.
     * For attestation tests: `a001`, `a002`, and so on.
+    
+You can also use an asterisk (`*`) to compile and run the entire set of PSA compliance tests:
+
+```
+mbed test -t <toolchain> -m <target> -n components-target_psa-tests-compliance_*
+```
 
 ### Cryptographic configuration
 By default, the PSA compliance tests run using the default Mbed OS cryptography configuration (the configuration can be found at `features/mbedtls/inc/mbedtls/config.h` in the Mbed OS directory). When you use the default configuration, only tests supported by the configuration run.
 
-You can override the default Mbed OS cryptography configuration using an `mbed_app.json` file. For an example of how to use an `mbed_app.json` file to override the default cryptography configuration, see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
+You can override the default Mbed OS cryptography configuration using an `mbed_app.json` file, or by supplying your custom configuration file directly using a command line compilation flag. For an example of how to use an `mbed_app.json` file to override the default cryptography configuration, see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
 
 ### Sample test output
 When the tests run, they output state information to the serial output. Below is an example of a successful run (running the first crypto test scenario):
