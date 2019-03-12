@@ -201,25 +201,20 @@ These tutorials teach you to communicate with your development board, an essenti
 
 These tutorials show you how to install, export a project to and start a debugging session with different IDEs.
 
-<table>
-<tbody>
-<tr>
-<td><a href="debugging.html">Troubleshooting common issues tutorial</a></td>
-<td><a href="compile-time-errors.html">Compile time errors tutorial</a></td>
-<td><a href="keil-uvision.html">Keil uVision debugging tutorial</a></td>
-</tr>
-<tr>
-<td><a href="analyzing-mbed-os-crash-dump.html">Analyzing Mbed OS crash dump tutorial</a></td>
-<td><a href="debugging-using-printf-statements.html">`printf` debugging tutorial</a></td>
-<td><a href="visual-studio-code.html">Visual Studio Code debugging tutorial</a></td>
-</tr>
-<tr>
-<td><a href="../apis/error-handling.html#error-handling-example">Error handling example</a></td>
-<td><a href="eclipse.html">Eclipse debugging tutorial</a></td>
-<td><a href="debug-microbit.html">BBC micro:bit, pyOCD and GDB debugging tutorial</a></td>
-</tr>
-</tbody>
-</table>
+#### Tools
+
+* [Eclipse](../tutorials/eclipse.html).
+* [Keil uVision](../tutorials/keil-uvision.html).
+* [Visual Studio](../tutorials/visual-studio-code.html).
+* [BBC micro:bit, pyOCD and GDB debugging tutorial](../tutorials/debug-microbit.html).
+
+#### Methods
+
+* [Troubleshooting common issues](../tutorials/debugging.html).
+* [Analyzing Mbed OS crash dump tutorial](../tutorials/analyzing-mbed-os-crash-dump.html).
+* [Compile time errors tutorial](../tutorials/compile-time-errors.html).
+* [Debugging using `printf` statements](../tutorials/debugging-using-printf-statements.html).
+* [Error handling API example](../apis/error-handling.html#error-handling-example)
 
 ### Bootloader
 
