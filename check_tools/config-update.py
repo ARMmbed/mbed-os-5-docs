@@ -1,14 +1,58 @@
+#! /usr/bin/env python
+"""
+mbed SDK
+Copyright (c) 2019 ARM Limited
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+LIBRARIES BUILD
+"""
+
+# Script to automatically update the configuration parameters list in
+# each configuration doc page with the output from `mbed compile --config -v`
+# for the page's appropriate prefix.
+#
+# By default, when run from the check_tools directory, the script runs
+# through each Markdown file in `docs/reference/configuration/`. An
+# optional file or directory path may be passed in a parameter to run the
+# script on a specific file or directroy outside the default path. 
+#
+# Note that you need to run this with a local copy of whichever version of
+# Mbed OS you wish to update the configuration parameters with.
+#
+# You can run this script with:
+# python config-update.py <OPTIONAL FILE/DIR PATH>
+
 import sys, os
 import re
 import subprocess
 
 def split_into_pairs(l):
+    """ Split the provided list into a, b pairs.
+        [1, 2, 3, 4] -> [[1, 2], [3, 4]]
+    Args:
+    l - list of values to be split
+
+    Returns:
+    List of split pairs
+    """
     for i in range(0, len(l), 2):
         yield l[i:i + 2]
 
 def main(file):
     file_h = open(file, 'r+')
     file   = file_h.read()
+
+    # Collect indices of markdown code block ticks, split into start,end pairs
+    # with `split_into_pairs` below. Collect the config parameter prefix used in
+    # the current block if viable and replace the contents with the output of
+    # the Mbed CLI config verbose list command.
     snippet_indices = [m.start() for m in re.finditer('```', file)]
 
     blocks = {}

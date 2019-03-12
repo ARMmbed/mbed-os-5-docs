@@ -1,8 +1,8 @@
-<h2 id="mesh-tech">Mesh</h2>
+<h2 id="mesh-tech">6LoWPAN-ND</h2>
 
-This guide provides design guidelines for developing an application on top of the 6LoWPAN mesh solution. The APIs and technologies are not discussed in detail here.
+This guide provides design guidelines for developing an application on top of the 6LoWPAN-ND mesh solution. The APIs and technologies are not discussed in detail here.
 
-### Overview of the 6LoWPAN network
+### Overview of the 6LoWPAN-ND network
 
 ![Node connected to server](https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/images/node_to_server_2.jpg?raw=true)
 

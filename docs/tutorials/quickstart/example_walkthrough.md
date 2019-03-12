@@ -10,45 +10,9 @@ The default baud rate, or speed, for this application is set to `9600`. You can 
 
 <span class="tips">**Tip:** You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the [related links section](#related-links).</span>
 
-The output transmits the following block at the blinking LED frequency (actual values may vary depending on your target, build profile and toolchain):
+The output transmits the system, CPU, heap and thread information. 
 
-```
-=============================== SYSTEM INFO  ================================
-Mbed OS Version: 999999
-CPU ID: 0x410fc241
-Compiler ID: 2
-Compiler Version: 60300
-RAM0: Start 0x20000000 Size: 0x30000
-RAM1: Start 0x1fff0000 Size: 0x10000
-ROM0: Start 0x0 Size: 0x100000
-================= CPU STATS =================
-Idle: 98% Usage: 2%
-================ HEAP STATS =================
-Current heap: 1096
-Max heap size: 1096
-================ THREAD STATS ===============
-ID: 0x20001eac
-Name: main_thread
-State: 2
-Priority: 24
-Stack Size: 4096
-Stack Space: 3296
-
-ID: 0x20000f5c
-Name: idle_thread
-State: 1
-Priority: 1
-Stack Size: 512
-Stack Space: 352
-
-ID: 0x20000f18
-Name: timer_thread
-State: 3
-Priority: 40
-Stack Size: 768
-Stack Space: 664
-
-```
+<span class="notes">**Note:** If you are building with the Mbed OS bare metal profile, you will not get thread information.</span>
 
 #### Understanding the output
 

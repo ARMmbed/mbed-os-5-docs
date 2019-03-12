@@ -14,6 +14,16 @@ You can run tests throughout Mbed OS and for your project's code. They are locat
 
 The fact that the code is located under this directory means that it is ignored when building applications and libraries. It is only used when building tests. This is important because all tests require a `main()` function, and building them with your application would cause multiple `main()` functions to be defined.
 
+The macro `MBED_TEST_MODE` is defined when building tests with Mbed CLI versions 1.9.0 and later. You can wrap your application's `main()` function in a preprocessor check to prevent multiple `main()` functions from being defined:
+
+```c++
+#if !MBED_TEST_MODE
+int main() {
+    // Application code
+}
+#endif
+```
+
 In addition to being placed under a `TESTS` directory, test sources must exist under two other directories: a test group directory and a test case directory. The following is an example of this structure:
 
 ```

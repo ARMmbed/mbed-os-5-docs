@@ -1,12 +1,18 @@
 <h2 id="spm-port">PSA SPM</h2>
 
-Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing interprocessor communication (IPC) between partitions.
+Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing inter-process communication (IPC) between partitions.
 
 For more information about SPM, please refer to [the SPM overview page](../apis/psa-api.html).
 
 <span class="notes">This page gives guidelines for silicon partners adding SPM capabilities.</span>
 
 ### New target configuration
+
+#### Platform types
+
+For information about the platform types supported by the Mbed implementation of PSA, see [Platform types](../reference/psa-api.html#platform-types).
+
+#### JSON target definition
 
 When adding a new target, add a new root target node to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
 
@@ -17,7 +23,7 @@ When adding a new target, add a new root target node to the `mbed-os/targets/tar
    - Both targets must override the default configuration by specifying flash RAM and shared RAM regions. The [memory layout section](#memory-layout) explains this in more detail.
    - The secure target must declare its corresponding nonsecure target using the `deliver_to_target` field.
 
-The example below demonstrates this:
+The example below demonstrates:
 
 ```json
 "SPM_SECURE_CORE_PSA": {
@@ -55,6 +61,20 @@ The example below demonstrates this:
     }
 ```
 
+The following flags and labels must be added to each target type to add the relevant version of the source files to a compilation:
+
+| Label/core                  | V7-single<br>(Target) | V7-dual NSPE<br>(NSPE_Target) | V7-dual SPE<br>(SPE_Target) | V8-NS<br>(NSPE_Target) | V8-S<br>(SPE_Target) |
+| ----------------------        |:---------------------:|:-----------------------------:|:---------------------------:|:----------------------:|:--------------------:|
+| `PSA_SRV_IMPL` (component)    | &#10003;                    |                               | &#10003;                           |                        | &#10003;                    |
+| `PSA_SRV_EMUL` (component)     | &#10003;                     |                               |                             |                        |                      |
+| `PSA_SRV_IPC` (component)       |                       | &#10003;                             | &#10003;                           | &#10003;                      | &#10003;                    |
+| `SPE` (component)              |                       |                               | &#10003;                           |                        | &#10003;                    |
+| `NSPE` (component)             | &#10003;                     | &#10003;                             |                             | &#10003;                      |                      |
+| `SPM_MAILBOX` (component)      |                       | &#10003;                             | &#10003;                           |                        |                      |
+| `MBED_SPM` (label)             |                       | &#10003;                             | &#10003;                           |                        |                      |
+| `TFM` (label)                  |                       |                               |                             | &#10003;                      | &#10003;                    |
+
+
 #### Memory layout
 
 Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash to secure and nonsecure parts, in a way the following image describes:
@@ -78,7 +98,7 @@ To achieve RAM and flash partitioning, you must add start and size values to a t
 
 <span class="notes">**Note:** For isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.</span>
 
-### Linker scripts
+### Linker script concepts
 
 Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions. You can define a shared memory region by reserving RAM space for shared memory use. The shared memory location is target specific and depends on the memory protection scheme applied.
 
@@ -186,32 +206,17 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 ...
 ```
 
-### Mailbox
-
-Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
-
-#### Concepts
-
-The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
-
-#### Requirements
-
-The SPM mailbox mechanism requires the platform to have the following capabilities:
-
-- IPC capabilities - the ability to notify the peer processor about an event (usually implemented with interrupts).
-- Ability to set a RAM section shared between the cores.
-
-#### Porting
+###  Porting SPM (asymmetric multiprocessing systems - multicore ARMv7-M)
 
 These are the guidelines you should follow if you have multicore systems:
 
-- For each core, initialize, configure and enable the a mailbox event (usually an interrupt) at `SystemInit()`.
+- For each core, initialize, configure and enable the mailbox event (usually an interrupt) at `SystemInit()`.
 - For each core, implement the IPC event handler (usually interrupt handler):
-  - The handler must call an Arm callback function. Refer to [HAL functions section](#hal-functions) for more details.
+  - The handler must call an Arm callback function. See the [HAL functions section](#hal-functions) for more details.
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
 - For each core, add the `SPM_MAILBOX` component field for its target node in the `mbed-os/targets/targets.json` file.
 
-### HAL functions
+#### HAL functions
 
 Target-specific code of silicon partners adding SPM capabilities must:
 
@@ -220,11 +225,26 @@ Target-specific code of silicon partners adding SPM capabilities must:
 
 The HAL can be logically divided into two different fields:
 
-#### Mailbox
 
-This part of HAL allows you to implement a thin layer of the mailbox mechanism that is specific to your platform. You must only implement it if you have multicore systems.
+##### Mailbox
 
-#### Secure Processing Environment
+Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
+
+###### Concepts
+
+The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
+
+###### Requirements
+
+The SPM mailbox mechanism requires the platform to have the following capabilities:
+
+- IPC capabilities - the ability to notify the peer processor about an event (usually implemented with interrupts).
+- Ability to set a RAM section shared between the cores.
+
+
+This part of HAL enables you to implement a thin, platform-specific layer of the mailbox mechanism.
+
+##### Secure Processing Environment
 
 This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
 
@@ -241,12 +261,18 @@ The implementation of this function must be aligned with the SPM general guideli
 
 Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecure FLASH
 --------------------|------------------|------------|-------------------|----------------
-`Non Secure Read`   |   X              |    X       |        V          |    V
-`Non Secure Write`  |   X              |    X       |        V          |    ?
-`Non Secure Execute`|   X              |    X       |        X?         |    V
-`Secure Read`       |   V              |    V       |        V          |    V
-`Secure Write`      |   V              |    V       |        V          |    ?
-`Secure Execute`    |   X?             |    V       |        X          |    ?
+`Non Secure Read`   |   X              |    X       |        &#10003;          |    &#10003;
+`Non Secure Write`  |   X              |    X       |        &#10003;          |    ?
+`Non Secure Execute`|   X              |    X       |        X?         |    &#10003;
+`Secure Read`       |   &#10003;              |    &#10003;       |        &#10003;          |    &#10003;
+`Secure Write`      |   &#10003;              |    &#10003;       |        &#10003;          |    ?
+`Secure Execute`    |   X?             |    &#10003;       |        X          |    ?
+
+
+###  TF-M SPM porting (for ARMv8-M targets)
+
+TF-M HAL functions are defined in `tfm_spm_hal.h`.
+
 
 ### Testing
 

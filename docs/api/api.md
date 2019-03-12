@@ -53,47 +53,43 @@
 <tbody>
 <tr>
 <td><a href="analogin.html">AnalogIn</a></td>
-<td><a href="portin.html">PortIn</a></td>
-<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
+<td><a href="busout.html">BusOut</a></td>
+<td><a href="interruptin.html">InterruptIn</a></td>
+<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
 <td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
 </tr>
 <tr>
 <td><a href="analogout.html">AnalogOut</a></td>
-<td><a href="portout.html">PortOut</a></td>
-<td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
+<td><a href="businout.html">BusInOut</a></td>
+<td><a href="ticker.html">Ticker</a></td>
+<td><a href="flash-iap.html">Flash IAP</a></td>
 <td><a href="i2c.html">I2C</a></td>
 </tr>
 <tr>
 <td><a href="digitalin.html">DigitalIn</a></td>
-<td><a href="portinout.html">PortInOut</a></td>
-<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
+<td><a href="portin.html">PortIn</a></td>
+<td><a href="timeout.html">Timeout</a></td>
+<td><a href="rawserial.html">RawSerial</a></td>
 <td><a href="i2cslave.html">I2CSlave</a></td>
 </tr>
 <tr>
 <td><a href="digitalout.html">DigitalOut</a></td>
-<td><a href="pwmout.html">PwmOut</a></td>
-<td><a href="flash-iap.html">Flash IAP</a></td>
+<td><a href="portout.html">PortOut</a></td>
+<td><a href="timer.html">Timer</a></td>
+<td><a href="serial.html">Serial</a></td>
 <td><a href="can.html">CAN</a></td>
 </tr>
 <tr>
 <td><a href="digitalinout.html">DigitalInOut</a></td>
-<td><a href="interruptin.html">InterruptIn</a></td>
-<td><a href="rawserial.html">RawSerial</a></td>
+<td><a href="portinout.html">PortInOut</a></td>
+<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
+<td><a href="spi.html">SPI</a></td>
 <td><a href="mbedcrc.html">MbedCRC</a></td>
 </tr>
 <tr>
 <td><a href="busin.html">BusIn</a></td>
-<td><a href="ticker.html">Ticker</a></td>
-<td><a href="serial.html">Serial</a></td>
-</tr>
-<tr>
-<td><a href="busout.html">BusOut</a></td>
-<td><a href="timeout.html">Timeout</a></td>
-<td><a href="spi.html">SPI</a></td>
-</tr>
-<tr>
-<td><a href="businout.html">BusInOut</a></td>
-<td><a href="timer.html">Timer</a></td>
+<td><a href="pwmout.html">PwmOut</a></td>
+<td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
 <td><a href="spislave.html">SPISlave</a></td>
 </tr>
 </tbody>
@@ -134,18 +130,16 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tbody>
 <tr>
 <td><a href="usbserial.html">USBSerial</a></td>
-<td><a href="usbcdc.html">USBCDC</a></td>
+<td><a href="usbhid.html">USBHID</a></td>
+<td><a href="usbmsd.html">USBMSD</a></td>
 <td><a href="usbmouse.html">USBMouse</a></td>
+<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
 </tr>
 <tr>
 <td><a href="usbaudio.html">USBAudio</a></td>
-<td><a href="usbmsd.html">USBMSD</a></td>
-<td><a href="usbkeyboard.html">USBKeyboard</a></td>
-</tr>
-<tr>
-<td><a href="usbhid.html">USBHID</a></td>
+<td><a href="usbcdc.html">USBCDC</a></td>
 <td><a href="usbmidi.html">USBMIDI</a></td>
-<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
+<td><a href="usbkeyboard.html">USBKeyboard</a></td>
 </tr>
 </tbody>
 </table>
@@ -158,18 +152,16 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tbody>
 <tr>
 <td><a href="socket.html">Socket</a></td>
-<td><a href="socketaddress.html">SocketAddress</a></td>
+<td><a href="tcpsocket.html">TCPSocket</a></td>
+<td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
 <td><a href="tlssocket.html">TLSSocket</a></td>
+<td><a href="socketstats.html">SocketStats</a></td>
 </tr>
 <tr>
 <td><a href="udpsocket.html">UDPSocket</a></td>
-<td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
-<td><a href="dtlssocket.html">DTLSSocket</a></td>
-<tr>
-<td><a href="tcpsocket.html">TCPSocket</a></td>
+<td><a href="socketaddress.html">SocketAddress</a></td>
 <td><a href="dns-resolver.html">DNS resolver</a></td>
-<td><a href="socketstats.html">SocketStats</a></td>
-</tr>
+<td><a href="dtlssocket.html">DTLSSocket</a></td>
 </tbody>
 </table>
 
@@ -181,13 +173,13 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tbody>
 <tr>
 <td><a href="ethernet.html">Ethernet</a></td>
-<td><a href="mesh-api.html">Mesh</a></td>
+<td><a href="cellular-api.html">Cellular</a></td>
+<td><a href="network-status.html">Network status</a></td>
 </tr>
 <tr>
 <td><a href="wi-fi.html">Wi-Fi</a></td>
-<td><a href="network-status.html">Network status</a></td>
+<td><a href="mesh-api.html">Mesh</a></td>
 <tr>
-<td><a href="cellular-api.html">Cellular</a></td>
 </tr>
 </tbody>
 </table>
@@ -200,16 +192,15 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tbody>
 <tr>
 <td><a href="ble.html">BLE</a></td>
-<td><a href="gattserver.html">GattServer</a></td>
+<td><a href="gattclient.html">GattClient</a></td>
+<td><a href="securitymanager.html">SecurityManager</a></td>
 <td><a href="heartrateservice.html">HeartRateService</a></td>
 </tr>
 <tr>
 <td><a href="gap.html">GAP</a></td>
-<td><a href="securitymanager.html">SecurityManager</a></td>
-<td><a href="ibeacon.html">iBeacon</a></td>
-<tr>
-<td><a href="gattclient.html">GattClient</a></td>
+<td><a href="gattserver.html">GattServer</a></td>
 <td><a href="batteryservice.html">BatteryService</a></td>
+<td><a href="ibeacon.html">iBeacon</a></td>
 </tr>
 </tbody>
 </table>
@@ -237,14 +228,12 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 <tbody>
 <tr>
 <td><a href="nfccontroller.html">NFCController</a></td>
-<td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
-</tr>
-<tr>
-<td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
+<td><a href="messageparser.html">MessageParser</a></td>
 <td><a href="messagebuilder.html">MessageBuilder</a></td>
 </tr>
 <tr>
-<td><a href="messageparser.html">MessageParser</a></td>
+<td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
+<td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
 </tr>
 </tbody>
 </table>
@@ -256,12 +245,15 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <table>
 <tbody>
 <tr>
-<td><a href="psa-api.html">Mbed implementation of PSA</a></td>
+<td><a href="../apis/psa-initial-attestation.html">PSA attestation</a></td>
+<td><a href="../apis/psa-lifecycle.html">PSA lifecycle</a></td>
+<td><a href="../apis/psa-spm.html">PSA SPM</a></td>
 <td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 <tr>
+<td><a href="mbed-crypto.html">Mbed Crypto</a></td>
+<td><a href="../apis/platform-service.html">Platform service</a></td>
 <td><a href="tls.html">TLS</a></td>
-<td><a href="psa-storage.html">PSA internal trusted storage</a></td>
 </tr>
 </tbody>
 </table>
@@ -284,12 +276,14 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="fatfilesystem.html">FATFileSystem</a></td>
 <td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
 <td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
+<td><a href="../apis/psa-internal-storage.html">PSA internal storage</a></td>
 </tr>
 <tr>
 <td><a href="filesystem.html">FileSystem</a></td>
 <td><a href="blockdevice.html">BlockDevice</a></td>
 <td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
 <td><a href="sdblockdevice.html">SDBlockDevice</a></td>
+<td><a href="../apis/psa-protected-storage.html">PSA protected storage</a></td>
 </tr>
 <tr>
 <td><a href="dir.html">Dir</a></td>

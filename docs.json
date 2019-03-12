@@ -108,6 +108,26 @@
         ]
     },
     {
+        "title": "Mbed OS bare metal",
+        "description": "The Mbed OS bare metal profile",
+        "slug": "bare-metal",
+        "type": "markdown",
+        "chapters": [{
+                "title": "Introduction",
+                "intro": {
+                    "path": "docs/bare_metal.md"
+                },
+                "sources": []
+            },
+            {
+                "title": "Bare metal APIs",
+                "sources": [{
+                    "path": "docs/baremetal_api.md"
+                }]
+            }
+        ]
+    },
+    {
         "title": "APIs",
         "description": "The APIs of Mbed OS: platform, drivers, RTOS, connectivity, security and storage",
         "slug": "apis",
@@ -493,97 +513,115 @@
                 ]
             },
             {
-                "title": "Security",
-                "intro": {
-                    "path": "docs/api/security/security.md"
-                },
-                "sources": [{
-                        "path": "docs/api/security/psa.md"
-                    },
-                    {
-                        "path": "docs/api/security/TLS.md"
-                    },
-                    {
-                        "path": "docs/api/security/Devicekey.md"
-                    },
-                    {
-                        "path": "docs/api/security/trusted_storage.md"
-                    }
+
+            "title": "Security",
+    "intro": {
+      "path": "docs/api/security/security.md"
+    },
+    "sources": [
+      {
+        "path": "docs/api/security/psa_attestation.md"
+      },
+      {
+        "path": "docs/api/security/crypto.md"
+      },
+      {
+        "path": "docs/api/security/psa_lifecycle.md"
+      },
+      {
+        "path": "docs/api/security/platform_service.md"
+      },
+      {
+        "path": "docs/api/security/spm.md"
+      },
+      {
+        "path": "docs/api/security/TLS.md"
+      },
+      {
+        "path": "docs/api/security/Devicekey.md"
+      }
                 ]
             },
             {
-                "title": "Storage",
-                "intro": {
-                    "path": "docs/api/storage/storage.md"
-                },
-                "sources": [{
-                        "path": "docs/api/storage/KVStoreAPI.md"
-                    },
-                    {
-                        "path": "docs/api/storage/KVStoreGlobalAPI.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FileSystem.md"
-                    },
-                    {
-                        "path": "docs/api/storage/Dir.md"
-                    },
-                    {
-                        "path": "docs/api/storage/File.md"
-                    },
-                    {
-                        "path": "docs/api/storage/LittleFileSystem.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FATFileSystem.md"
-                    },
-                    {
-                        "path": "docs/api/storage/BlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/HeapBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/MBRBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/ChainingBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/SlicingBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/ProfilingBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/BufferedBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FlashSimBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/DataFlashBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/FlashIAPBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/SDBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/SPIFBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/QSPIFBlockDevice.md"
-                    },
-                    {
-                        "path": "docs/api/storage/NVStore.md"
-                    }
-                ]
-            }
-        ],
-        "tags": [
-            "apis"
+            "title": "Storage",
+    "intro": {
+      "path": "docs/api/storage/storage.md"
+    },
+    "sources": [
+      {
+        "path": "docs/api/storage/KVStoreAPI.md"
+      },
+      {
+        "path": "docs/api/storage/KVStoreGlobalAPI.md"
+      },
+      {
+        "path": "docs/api/storage/FileSystem.md"
+      },
+      {
+        "path": "docs/api/storage/Dir.md"
+      },
+      {
+        "path": "docs/api/storage/File.md"
+      },
+      {
+        "path": "docs/api/storage/LittleFileSystem.md"
+      },
+      {
+        "path": "docs/api/storage/FATFileSystem.md"
+      },
+      {
+        "path": "docs/api/storage/BlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/HeapBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/MBRBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/ChainingBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/SlicingBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/ProfilingBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/BufferedBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/FlashSimBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/DataFlashBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/FlashIAPBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/SDBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/SPIFBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/QSPIFBlockDevice.md"
+      },
+      {
+        "path": "docs/api/storage/NVStore.md"
+      },
+      {
+        "path": "docs/api/storage/psa_internal_storage.md"
+      },
+      {
+        "path": "docs/api/storage/psa_protected_storage.md"
+      }
+    ]
+  }
+],
+"tags": [
+  "apis"
         ]
     },
     {
@@ -621,19 +659,22 @@
                                 "path": "docs/reference/technology/connectivity/cellular.md"
                             },
                             {
-                                "path": "docs/reference/technology/mesh/quick_start_intro.md"
-                            },
-                            {
                                 "path": "docs/reference/technology/mesh/thread_intro.md"
-                            },
-                            {
-                                "path": "docs/reference/technology/mesh/quick_start_hw.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/thread_commissioning.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/thread_faq.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/wisun_intro.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/quick_start_intro.md"
+                            },
+                            {
+                                "path": "docs/reference/technology/mesh/quick_start_hw.md"
                             },
                             {
                                 "path": "docs/reference/technology/mesh/02_N_arch.md"
@@ -663,7 +704,9 @@
                             {
                                 "path": "docs/reference/technology/storage.md"
                             },
-
+                            {
+                                "path": "docs/reference/technology/USB.md"
+                            },
                             {
                                 "path": "docs/reference/runtime/Memory.md"
                             },
@@ -721,6 +764,9 @@
                             },
                             {
                                 "path": "docs/reference/configuration/mesh.md"
+                            },
+                            {
+                                "path": "docs/reference/configuration/BLE.md"
                             },
                             {
                                 "path": "docs/reference/configuration/lorawanconfig.md"
@@ -945,6 +991,9 @@
                         "path": "docs/tutorials/using_apis/how_to_api.md"
                     },
                     {
+                        "path": "docs/tutorials/using_apis/alarm-tutorial.md"
+                    },
+                    {
                         "path": "docs/tutorials/using_apis/events_tutorial.md"
                     },
                     {
@@ -1109,9 +1158,6 @@
                         "path": "docs/porting/target/QuadSPI.md"
                     },
                     {
-                        "path": "docs/porting/target/entropy.md"
-                    },
-                    {
                         "path": "docs/porting/target/flash.md"
                     },
                     {
@@ -1119,9 +1165,6 @@
                     },
                     {
                         "path": "docs/porting/target/thread_porting.md"
-                    },
-                    {
-                        "path": "docs/porting/target/hw-accelerated-crypto.md"
                     },
                     {
                         "path": "docs/porting/target/tickless.md"
@@ -1146,15 +1189,26 @@
                     },
                     {
                         "path": "docs/porting/target/crc.md"
-                    },
-                    {
-                        "path": "docs/porting/psa/spm.md"
-                    },
-                    {
-                        "path": "docs/porting/psa/crypto.md"
                     }
                 ]
             },
+            {
+                "title": "Porting security",
+                "intro": {
+                    "path": "docs/porting/psa/spm.md"
+                },
+                "sources": [{
+                        "path": "docs/porting/psa/crypto.md"
+                    },
+                    {
+                        "path": "docs/porting/target/entropy.md"
+                    },
+                    {
+                        "path": "docs/porting/target/hw-accelerated-crypto.md"
+                    }
+                ]
+            },
+
             {
                 "title": "Porting storage",
                 "intro": {
@@ -1271,35 +1325,35 @@
                 "sub_chapters": [{
                         "title": "Introduction",
                         "intro": {
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/intro.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/intro.md"
                         },
                         "sources": []
                     },
                     {
                         "title": "Stage 1: Evaluation",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage1.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage1.md"
                         }]
                     },
                     {
                         "title": "Stage 2: Proof of concept",
                         "intro": {
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/intro_s_2.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/intro_s_2.md"
                         },
                         "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/1_hardware.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/1_hardware.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/3_connectivity.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/3_connectivity.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/2_software.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/2_software.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/4_security.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/4_security.md"
                             },
                             {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage_2/6_example.md"
+                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/6_example.md"
                             }
 
                         ]
@@ -1307,19 +1361,19 @@
                     {
                         "title": "Stage 3: Prototype",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage3.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage3.md"
                         }]
                     },
                     {
                         "title": "Stage 4: Pilot",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage4.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage4.md"
                         }]
                     },
                     {
                         "title": "Stage 5: Production",
                         "sources": [{
-                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.11/FE2P/stage5.md"
+                            "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage5.md"
                         }]
                     }
                 ]
