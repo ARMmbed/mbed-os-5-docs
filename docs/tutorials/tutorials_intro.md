@@ -109,17 +109,17 @@ And the following tutorials:
 
 #### Using network socket APIs
 
-| API | Examples | Tutorials |
-| --- | --- | --- |
-| Socket | [Socket example](../apis/socket.html#socket-example) | |
-| UDPSocket | [UDPSocket example](../apis/udpsocket.html#udpsocket-example) | |
-| TCPSocket | [TCPSocket example](../apis/tcpsocket.html#tcpsocket-example) | TCPSocket tutorial |
-| SocketAddress | [SocketAddress example](../apis/socketaddress.html#socketaddress-example) | |
-| Non-IP cellular socket | [Non-IP cellular socket example](../apis/non-ip-cellular-socket.html#cellularnonipsocket-example) | |
-| DNS Resolver | [DNS Resolver example](../apis/dns-resolver.html#dns-resolver-example) | |
-| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | |
-| DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) | |
-| SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | |
+| API | Examples |
+| --- | --- |
+| Socket | [Socket example](../apis/socket.html#socket-example) |
+| UDPSocket | [UDPSocket example](../apis/udpsocket.html#udpsocket-example) |
+| TCPSocket | [TCPSocket example](../apis/tcpsocket.html#tcpsocket-example) |
+| SocketAddress | [SocketAddress example](../apis/socketaddress.html#socketaddress-example) |
+| Non-IP cellular socket | [Non-IP cellular socket example](../apis/non-ip-cellular-socket.html#cellularnonipsocket-example) |
+| DNS Resolver | [DNS Resolver example](../apis/dns-resolver.html#dns-resolver-example) |
+| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) |
+| DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) |
+| SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | 
 
 #### Using network interfaces APIs
 
