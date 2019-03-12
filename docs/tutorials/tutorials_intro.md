@@ -85,8 +85,6 @@ And the following tutorials:
 
 #### Using RTOS APIs
 
-Option 1:
-
 | API | Examples | Tutorials |
 | --- | --- | --- |
 | EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [Tutorial](the-eventqueue-api.html)|
@@ -99,89 +97,6 @@ Option 1:
 | EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
 | ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
 | Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
-
-Option 2:
-
-<table>
-<tbody>
-<tr>
-<td><a href="the-eventqueue-api.html">EventQueue tutorial</a></td>
-<td><a href="../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue">EventQueue example: chaining events from more than one queue</a></td>
-<td><a href="../apis/mutex.html#mutex-example">Mutex example</a></td>
-<td><a href="../apis/memorypool.html#memorypool-example">MemoryPool example</a></td>
-<td><a href="../kernel-interface-functions.html#get-ms-count-example">Kernel interface get_ms_count() example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl">EventQueue example: deferring from interrupt context</a></td>
-<td><a href="../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main">Shared event example: running the shared queue from main</a></td>
-<td><a href="../apis/semaphore.html#semaphore-example">Semaphore example</a></td>
-<td><a href="../apis/mail.html#mail-example">Mail example</a></td>
-<td><a href="../apis/kernel-interface-functions.html#kernel-hooks-example">Kernel hooks example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/eventqueue.html#shared-event-example-deferring-from-interrupt-context">Shared event example: deferring from interrupt context</a></td>
-<td><a href="../apis/thread.html#thread-example">Thread example</a></td>
-<td><a href="../apis/queue.html#queue-example">Queue example</a></td>
-<td><a href="../apis/eventflags.html#eventflags-example">EventFlags example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue">EventQueue example: posting events to the queue</a></td>
-<td><a href="../apis/thread.html#thread-example-with-callbacks">Thread example with callbacks</a></td>
-<td><a href="../apis/queue.html#queue-and-memorypool-example">Queue and MemoryPool example</a></td>
-<td><a href="../apis/conditionvariable.html#conditionvariable-example">ConditionVariable example</a></td>
-</tr>
-</tbody>
-</table>
-
-Option 3:
-
-#### EventQueue
-
-* [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<
-* [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl)
-* [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue)
-* [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)
-*  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)
-* [Tutorial](the-eventqueue-api.html)
-
-#### Mutex
-
-[Mutex example](../apis/mutex.html#mutex-example)
-
-#### MemoryPool
-
-[MemoryPool example](../apis/memorypool.html#memorypool-example)
-
-#### Kernel
-
-* [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)
-* [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example)
-
-#### Thread
-
-* [Thread example](../apis/thread.html#thread-example)
-* [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)
-
-#### Semaphore
-
-[Semaphore example](../apis/semaphore.html#semaphore-example)
-
-#### Mail
-
-[Mail example](../apis/mail.html#mail-example)
-
-#### EventFlags
-
-[EventFlags example](../apis/eventflags.html#eventflags-example)
-
-#### ConditionVariable
-
-[ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example)
-
-#### Queue
-
-* [Queue example](../apis/queue.html#queue-example)
-* [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)
 
 #### Using USB APIs
 
