@@ -4,7 +4,7 @@
 
 The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the Nanostack networking stack.
 
-Mbed OS provides 3 types of IPv6 based mesh networks:
+Mbed OS provides three types of IPv6 based mesh networks:
 
 - 6LoWPAN_ND, loosely following the Zigbee-IP specification.
 - Wi-SUN, following the specification from Wi-SUN alliance.
