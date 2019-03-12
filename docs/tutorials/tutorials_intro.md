@@ -218,16 +218,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 ### Bootloader
 
-<table>
-<tbody>
-<tr>
-<td><a href="bootloader.html">Creating and using a bootloader tutorial</a></td>
-</tr>
-<tr>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader">Bootloader example</a></td>
-</tr>
-</tbody>
-</table>
+A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader).
 
 ### Optimizing
 
