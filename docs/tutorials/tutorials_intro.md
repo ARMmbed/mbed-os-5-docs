@@ -134,31 +134,17 @@ And the following tutorials:
 
 #### Using bluetooth APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="ble-tutorial.html">BLE tutorial</a></td>
-<td><a href="../apis/gap.html#gap-example">GAP example</a></td>
-<td><a href="../apis/securitymanager.html#securitymanager-example">SecurityManager example</a></td>
-<td><a href="../apis/ibeacon.html#ibeacon-example">BLE ibeacon example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker">BLE LED blinker example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/ble.html#example-ble-beacon">BLE beacon example</a></td>
-<td><a href="../apis/gattclient.html#gattclient-example">GattClient example</a></td>
-<td><a href="../apis/batteryservice.html#batteryservice-example">BLE battery level example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton">BLE GAP button count example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer">BLE thermometer example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/ble.html#example-ble-heart-rate-monitor">BLE heart rate monitor example</a></td>
-<td><a href="../apis/gattserver.html#gattserver-example">GattServer example</a></td>
-<td><a href="../apis/heartrateservice.html#heartrateservice-example">BLE heart rate example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED">BLE LED example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button">BLE service template example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| BLE | [Beacon example](../apis/ble.html#example-ble-beacon) <br> [Heart rate example](../apis/ble.html#example-ble-heart-rate-monitor)| [BLE tutorial](../tutorials/ble-tutorial.html) <br> [BLE service templates](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button/) |
+| GAP | [GAP example](../apis/gap.html#gap-example) <br> [Button count example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton)| |
+| GattClient | [GattClient example](../apis/gattclient.html#gattclient-example) | [LED](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker) <br> [Thermometer](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer)|
+| GattServer | [GattServer example](../apis/gattserver.html#gattserver-example) | |
+| SecurityManager | [SecurityManager example](../apis/securitymanager.html#securitymanager-example) | |
+| BatteryService | [Battery level example](../apis/batteryservice.html#batteryservice-example) | |
+| HeartRateService | [Heart rate service example](../apis/heartrateservice.html#heartrateservice-example) | |
+| ibeacon | [ibeacon example](../apis/ibeacon.html#ibeacon-example) | |
+
 
 #### Using LoRa APIs
 
