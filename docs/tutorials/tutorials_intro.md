@@ -87,7 +87,7 @@ And the following tutorials:
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [Tutorial](the-eventqueue-api.html)|
+| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [EventQueue tutorial](the-eventqueue-api.html)|
 | Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
 | MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
 | Kernel | [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
@@ -100,30 +100,18 @@ And the following tutorials:
 
 #### Using USB APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="mbed-usb-wav-audio-player.html">USB audio player tutorial</a></td>
-<td><a href="../apis/usbaudio.html#usbaudio-play-sound-data-example">USBAudio sound data example</a></td>
-<td><a href="../apis/usbcdc.html#usbcdc-example">USBCDC example</a></td>
-<td><a href="../apis/usbmidi.html#play-take-me-out-to-the-ball-game-example">USBMIDI "Take Me Out to the Ball Game" example</a></td>
-<td><a href="../apis/usbkeyboard.html#usbkeyboard-example">USBKeyboard example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/usbaudio.html#usbaudio-square-wave-example">USBAudio square wave example</a></td>
-<td><a href="../apis/usbserial.html#usbserial-example">USBSerial example</a></td>
-<td><a href="../apis/usbmsd.html#usbmsd-example">USBMSD example</a></td>
-<td><a href="../apis/usbmouse.html#usbmouse-example">USBMouse example</a></td>
-<td><a href="../apis/usbmousekeyboard.html#usbmousekeyboard-example">USBMouseKeyboard example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/usbaudio.html#usbaudio-loopback-example">USBAudio loopback example</a></td>
-<td><a href="../apis/usbhid.html#usbhid-example">USBHID example</a></td>
-<td><a href="../apis/usbmidi.html#usbmidi-example">USBMIDI example</a></td>
-<td><a href="../apis/usbmouse.html#usbmouse-joystick-example">USBMouse joystick example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| USBSerial | [USBSerial example](../apis/usbserial.html#usbserial-example) | |
+| USBAudio | [Sound data example](../apis/usbaudio.html#usbaudio-play-sound-data-example) <br> [Square wave example](../apis/usbaudio.html#usbaudio-square-wave-exampl) <br> [Loopback example](../apis/usbaudio.html#usbaudio-loopback-example) | [Audio player tutorial](../mbed-usb-wav-audio-player.html) |
+| USBHID | [USBHID example](../apis/usbhid.html#usbhid-example) | |
+| USBCDC | [USBCDC example](../apis/usbcdc.html#usbcdc-example) | |
+| USBMSD | [USBMSD example](../apis/usbmsd.html#usbmsd-example) | |
+| USBMIDI | [USBMIDI example](../apis/usbmidi.html#usbmidi-example) <br> ["Take Me Out to the Ball Game" example](../apis/usbmidi.html#play-take-me-out-to-the-ball-game-example) | |
+| USBMouse | [USBMouse example](../apis/usbmouse.html#usbmouse-example) <br> [Joystick example](../apis/usbmouse.html#usbmouse-joystick-example) | |
+| USBKeyboard | [USBKeyboard example](../apis/usbkeyboard.html#usbkeyboard-example) | |
+| USBMouseKeyboard | [USBMouseKeyboard](../apis/usbmousekeyboard.html#usbmousekeyboard-example) | |
+
 
 #### Using network socket APIs
 
