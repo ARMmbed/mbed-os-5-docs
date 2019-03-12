@@ -438,5 +438,5 @@ The `orphans` command shows all targets that you cannot reach from a public targ
 
 ### Related content
 
-- [Defining a PSA-compliant target in targets.json](../reference/adding-and-configuring-targets.html#defining-a-psa-compliant-target-in-targets.json)
+- [Defining a PSA-compliant target in targets.json](../reference/adding-and-configuring-targets.html#defining-a-psa-compliant-target-in-targets.json).
 - [Developing: Mbed CLI](../tools/developing-mbed-cli.html).
