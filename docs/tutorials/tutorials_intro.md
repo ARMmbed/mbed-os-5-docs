@@ -152,19 +152,13 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 
 #### Using NFC APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="../apis/nfccontroller.html#nfccontroller-example">NFCController example</a></td>
-<td><a href="../apis/messageparser.html#messageparser-example">MessageParser example</a></td>
-<td><a href="../apis/messagebuilder.html#messagebuilder-example">MessageBuilder example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/nfc-eeprom.html#nfceeprom-example">NFCEEPROM example</a></td>
-<td><a href="../apis/simplemessageparser.html#simplemessageparser-example">SimpleMessageParser example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples |
+| --- | --- |
+| NFCController | [NFCController example](../apis/nfccontroller.html#nfccontroller-example) |
+| NFCEEPROM | [NFCEEPROM example](../apis/nfc-eeprom.html#nfceeprom-example) |
+| MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) |
+| SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
+| MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
 
 #### Using security APIs
 
