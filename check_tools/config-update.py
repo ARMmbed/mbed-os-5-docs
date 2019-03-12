@@ -21,7 +21,7 @@ LIBRARIES BUILD
 # By default, when run from the check_tools directory, the script runs
 # through each Markdown file in `docs/reference/configuration/`. An
 # optional file or directory path may be passed in a parameter to run the
-# script on a specific file or directroy outside the default path. 
+# script on a specific file or directroy outside the default path.
 #
 # Note that you need to run this with a local copy of whichever version of
 # Mbed OS you wish to update the configuration parameters with.
@@ -44,6 +44,18 @@ def split_into_pairs(l):
     """
     for i in range(0, len(l), 2):
         yield l[i:i + 2]
+
+def is_string(line):
+    """ Determine if the provided string contains
+        alphabetical characters (case insensitive)
+    Args:
+    line - string to scan
+
+    Returns:
+    Match object if the string contains [a-z], else None
+    """
+    regexp = re.compile(r'[a-z]', re.IGNORECASE)
+    return regexp.search(line)
 
 def main(file):
     file_h = open(file, 'r+')
@@ -69,7 +81,46 @@ def main(file):
                 lib = blocks[i].split('Name: ')[1].split('.')[0]
                 print("=================   %s   =================" % lib)
                 out = str(subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]))
-                file = file[:start+4] + out[:out.index("Macros") - 1] + file[end:]
+
+                # Some APIs break config options into logical blocks in their config files.
+                # If a tag is applied to a parameter block, only display parameter names that contain that tag
+                # For example:
+                #   ```heap
+                #   mbed-mesh-api.heap-size
+                #       ...
+                #   mbed-mesh-api.heap-stat-info
+                #       ..
+                #   ......
+                #   ```
+                #
+                # On encountering a block with a tag, collect the common parameter token,
+                # and split the configuration list output into its components.
+                # Collect tag (if present), split <TAG> from ```<TAG> at current index
+                # Check with regex for string to cover for potential trailing whitespaces
+                tag = file[start : file.find('\n', start)].split('`')[-1]
+                if is_string(tag):
+                    print("\t------- Tag: %s -------" % tag)
+
+                    start_of_config_block = file.find('Name:', start)
+                    updated_config = str(file[ : start_of_config_block])
+                    for line in out.splitlines():
+                        if 'Name' in line and tag in line:
+                            updated_config += line
+
+                            # Collect all text until next parameter name. If there's no following 'Name:' token, its the last
+                            # config option, match to 'Macros' instead to termiante the block. Offset starting index to avoid finding
+                            # the current line's 'Name:' token.
+                            eol = out.find('\n', out.find(line))
+                            if out.find('Name:', out.find(line) + len('Name:')) > 0:
+                                updated_config += out[eol : out.find('Name:', out.find(line) + len('Name:'))]
+                            else:
+                                updated_config += out[eol : out.find('Macros', out.find(line))]
+
+                    updated_config += str(file[end:])
+                else:
+                    updated_config = str(file[:start+4] + out[:out.index("Macros") - 1] + file[end:])
+
+                file = updated_config
 
         # Originally added for debugging purposes, catch and display exceptions before
         # continuing without exiting to provide a complete list of errors found
