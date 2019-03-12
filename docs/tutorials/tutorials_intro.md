@@ -4,9 +4,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 ### Getting started
 
-
 <td><a href="../quick-start/index.html">Mbed OS quick start tutorial</a></td>
-
 
 ### Using the APIs
 
@@ -41,9 +39,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
 | ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
 
-
 #### Using drivers APIs
-
 
 | API | Examples  | Hello, World |
 | --- | ---  | --- |
@@ -81,7 +77,6 @@ And the following tutorials:
 
 * [Application flow control](../tutorials/application-flow-control.html)
 * [Alarm](../tutorials/alarm-tutorial.html)
-
 
 #### Using RTOS APIs
 
@@ -126,22 +121,16 @@ And the following tutorials:
 | DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) | |
 | SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | |
 
-
 #### Using network interfaces APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="../tutorials/light-control.html">Mesh light control tutorial</a></td>
-<td><a href="../apis/wi-fi.html#wi-fi-example">Wi-Fi example</a></td>
-<td><a href="../apis/network-status.html#example">Network status example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/ethernet.html#ethinterface-example">EthInterface example</a></td>
-<td><a href="../apis/cellular-api.html#cellular-example-connection-establishment">Cellular example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| EthInterface | [EthInterface example](../apis/ethernet.html#ethinterface-example) | |
+| Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
+| Cellular | [Cellular example](../apis/cellular-api.html#cellular-example-connection-establishment) | |
+| Mesh | | [Light control tutorial](../tutorials/light-control.html) |
+| Network status | [Network status example](../apis/network-status.html#example) | |
+
 
 #### Using bluetooth APIs
 
