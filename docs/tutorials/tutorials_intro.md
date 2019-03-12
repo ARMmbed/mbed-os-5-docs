@@ -112,27 +112,20 @@ And the following tutorials:
 | USBKeyboard | [USBKeyboard example](../apis/usbkeyboard.html#usbkeyboard-example) | |
 | USBMouseKeyboard | [USBMouseKeyboard](../apis/usbmousekeyboard.html#usbmousekeyboard-example) | |
 
-
 #### Using network socket APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="cellular-tcp-sockets.html">TCP sockets tutorial</a></td>
-<td><a href="../apis/udpsocket.html#udpsocket-example">UDPSocket example</a></td>
-<td><a href="../apis/socketaddress.html#socketaddress-example">SocketAddress example</a></td>
-<td><a href="../apis/dns-resolver.html#dns-resolver-example">DNS resolver example</a></td>
-<td><a href="../apis/dtlssocket.html#dtlssocket-example">DTLSSocket example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/socket.html#socket-example">Socket example</a></td>
-<td><a href="../apis/tcpsocket.html#tcpsocket-example">TCPSocket example</a></td>
-<td><a href="../apis/non-ip-cellular-socket.html#cellularnonipsocket-example">Non-IP cellular socket example</a></td>
-<td><a href="../apis/tlssocket.html#tlssocket-example">TLSSocket example</a></td>
-<td><a href="../apis/socketstats.html#socketstats-example">SocketStats example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| Socket | [Socket example](../apis/socket.html#socket-example) | |
+| UDPSocket | [UDPSocket example](../apis/udpsocket.html#udpsocket-example) | |
+| TCPSocket | [TCPSocket example](../apis/tcpsocket.html#tcpsocket-example) | TCPSocket tutorial |
+| SocketAddress | [SocketAddress example](../apis/socketaddress.html#socketaddress-example) | |
+| Non-IP cellular socket | [Non-IP cellular socket example](../apis/non-ip-cellular-socket.html#cellularnonipsocket-example) | |
+| DNS Resolver | [DNS Resolver example](../apis/dns-resolver.html#dns-resolver-example) | |
+| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | |
+| DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) | |
+| SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | |
+
 
 #### Using network interfaces APIs
 
