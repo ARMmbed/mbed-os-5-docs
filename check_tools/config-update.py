@@ -85,8 +85,8 @@ def main(file):
                 print("=================   %s   =================" % lib)
                 out = str(subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]))
 
-                # Some APIs break config optioins into logical blocks in their config files.
-                # If a tag is applied to a parameter block, only display parameter names that contains that tag
+                # Some APIs break config options into logical blocks in their config files.
+                # If a tag is applied to a parameter block, only display parameter names that contain that tag
                 # For example:
                 #   ```heap
                 #   mbed-mesh-api.heap-size
@@ -96,7 +96,7 @@ def main(file):
                 #   ......
                 #   ```
                 #
-                # On encountering a block with tag, collect the common parameter token
+                # On encountering a block with a tag, collect the common parameter token,
                 # and split the configuration list output into its components.
                 # Collect tag (if present), split <TAG> from ```<TAG> at current index
                 # Check with regex for string to cover for potential trailing whitespaces
