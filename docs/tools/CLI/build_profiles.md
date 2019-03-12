@@ -34,8 +34,7 @@ These flags stored in the JSON file may also be merged with other JSON files of 
 
 #### JSON build profile format
 
-The __build profiles__ are JSON files with the root object containing key-value pairs for each supported toolchain, such as `GCC_ARM`.
-Each key, representing the toolchain, contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
+The __build profiles__ are JSON files with the root object containing key-value pairs for each supported toolchain, such as `GCC_ARM`. Each key is a toolchain name and every value contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
 
 The required flag types are:
 
