@@ -17,7 +17,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | API | Examples |
 | --- | --- |
 | Wait | [Wait example](../apis/wait.html#example) |
-| callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)</br> [Thread example](../apis/callback.html#thread-example-with-callbacks)</br> [Sonar example](../apis/callback.html#sonar-example) |
+| callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
 | DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
 | PowerManagement | [PowerManagement example](../apis/power-management.html#example) |
 | IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
@@ -26,17 +26,17 @@ These tutorials and examples show you how to perform specific tasks that use the
 | RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
 | Debug | [Debug example](../apis/debug.html#debug-example) |
 | Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
-| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)</br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
+| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)<br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
 | Assert | [Assert example](../apis/assert.html#assert-example) |
 | NonCopyable | [NonCopyable example](apis/noncopyable.html#noncopyable-example) |
 | SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
 | Span | [Span example](../apis/span.html#span-example) |
-| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)</br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
+| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)<br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
 | Poll | [Poll example](../apis/poll.html#poll-example) |
 | PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
 | CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
 | ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
-| Mbed statistics | [CPU usage example](../apis/mbed-statistics.html#cpu-usage-example)</br> [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) </br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) </br> [System information example](../apis/mbed-statistics.html#system-information-example) </br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
+| Mbed statistics | [CPU usage example](../apis/mbed-statistics.html#cpu-usage-example)<br> [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
 | MPU management | [MPU management example](../apis/mpu-management.html#example) |
 | ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
 | ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
@@ -89,16 +89,16 @@ Option 1:
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)</br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) </br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) </br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)</br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [Tutorial](the-eventqueue-api.html)|
+| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [Tutorial](the-eventqueue-api.html)|
 | Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
 | MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
-| Kernel | [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)</br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
-| Thread | [Thread example](../apis/thread.html#thread-example)</br> [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)</br> | |
+| Kernel | [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
+| Thread | [Thread example](../apis/thread.html#thread-example)<br> [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)<br> | |
 | Semaphore  | [Semaphore example](../apis/semaphore.html#semaphore-example) | |
 | Mail | [Mail example](../apis/mail.html#mail-example) | |
 | EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
 | ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
-| Queue | [Queue example](../apis/queue.html#queue-example) </br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
+| Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
 
 Option 2:
 
