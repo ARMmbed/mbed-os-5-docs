@@ -2,7 +2,7 @@
 
 Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing inter-process communication (IPC) between partitions.
 
-For more information about SPM, please refer to [the SPM overview page](../apis/psa-api.html).
+For more information about SPM, see the [SPM API page](../apis/psa-spm.html).
 
 <span class="notes">This page gives guidelines for silicon partners adding SPM capabilities.</span>
 
@@ -12,11 +12,11 @@ For more information about SPM, please refer to [the SPM overview page](../apis/
 
 For information about the platform types supported by the Mbed implementation of PSA, see [Platform types](../reference/psa-api.html#platform-types).
 
-#### JSON target definition
+#### Defining a PSA-compliant target in targets.json
 
 When adding a new target, add a new root target node to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
 
-- A secure target must inherit from `SPE_Target` metatarget.
+- A secure target must inherit from the `SPE_Target` metatarget.
 - A nonsecure target must inherit from `NSPE_Target`.
 - Only for multicore architectures:
    - Both targets must add the `SPM_MAILBOX` component. You can read more about the mailbox mechanism in the [mailbox section](#mailbox).
@@ -74,6 +74,8 @@ The following flags and labels must be added to each target type to add the rele
 | `MBED_SPM` (label)             |                       | &#10003;                             | &#10003;                           |                        |                      |
 | `TFM` (label)                  |                       |                               |                             | &#10003;                      | &#10003;                    |
 
+
+For more information about working with the `targets.json` file, see [Adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
 #### Memory layout
 
