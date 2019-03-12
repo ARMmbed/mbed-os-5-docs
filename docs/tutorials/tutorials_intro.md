@@ -119,7 +119,7 @@ And the following tutorials:
 | DNS Resolver | [DNS Resolver example](../apis/dns-resolver.html#dns-resolver-example) |
 | TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) |
 | DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) |
-| SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | 
+| SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) |
 
 #### Using network interfaces APIs
 
@@ -148,16 +148,7 @@ And the following tutorials:
 
 #### Using LoRa APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="LoRa-tutorial.html">LoRa tutorial</a></td>
-</tr>
-<tr>
-<td><a href="../apis/lorawan-api.html#lorawan-example">LoRaWAN example</a></td>
-</tr>
-</tbody>
-</table>
+A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example for the API](../apis/lorawan-api.html#lorawan-example).
 
 #### Using NFC APIs
 
