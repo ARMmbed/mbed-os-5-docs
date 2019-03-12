@@ -45,80 +45,43 @@ These tutorials and examples show you how to perform specific tasks that use the
 #### Using drivers APIs
 
 
-| API | Examples | Tutorials | Hello, World |
-| --- | --- | --- | --- |
-| Flow control | | [Flow control tutorial](application-flow-control.html) | |
-| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
-| Alarm | | [Alarm tutorial](../tutorials/alarm-tutorial.html) | |
-| DigitalOut | | | [DigitalOut Hello, World](../apis/digitalout.html#digitalout-hello-world)|
-| InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
+| API | Examples  | Hello, World |
+| --- | ---  | --- |
+| AnalogIn | [AnalogIn example](../apis/analogin.html#analogin-examples) | [AnalogIn Hello, World](../apis/analogin.html#analogin-hello-world)|
+| AnalogOut | [AnalogOut example](../apis/analogout.html#analogout-example) | [AnalogIn Hello, World](../apis/analogout.html#analogout-hello-world) |
+| DigitalIn | [DigitalIn exanple](../apis/digitalin.html#digitalin-example) | [DigitlaIn Hellw, World](../apis/digitalin.html#digitalin-hello-world) |
+| DigitalOut | | [DigitalOut Hello, World](../apis/digitalout.html#digitalout-hello-world) |
+| DigitalInOut | | [DigitalInOut Hello, World](../apis/digitalinout.html#digitalinout-hello-world) |
+| BusIn | | [BusIn Hello, World](../apis/busin.html#busin-hello-world) |
+| BusOut | | [BusOut Hello, World](../apis/busout.html#busout-hello-world) |
+| BusInOut | | [BusInOut Hello, World](../apis/businout.html#businout-hello-world) |
+| PortIn | | [PortIn Hello, World](../apis/portin.html#portin-hello-world) |
+| PortOut | | [PortOut Hello, World](../apis/portout.html#portout-hello-world) |
+| PortInOut | | [PortInOut Hello, World](../apis/portinout.html#portinout-hello-world) |
+| PwmOut | [PwmOut example](../apis/pwmout.html#pwmout-code-examples) | [PwmOut Hello, World](../apis/pwmout.html#pwmout-hello-world) |
+| InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
+| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
+| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
+| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
+| LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
+| LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
+| LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
+| Flash IAP | [Flash IAP example](apis/flash-iap.html#flash-iap-example) | |
+| RawSerial | [RawSerial example](../apis/rawserial.html#rawserial-examples) | [RawSerial Hello, World](../apis/rawserial.html#rawserial-hello-world) |
+| Serial | [Serial example](../apis/serial.html#serial-examples) | [Serial Hello, World](../apis/serial.html#serial-hello-world) |
+| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
+| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
+| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
+| I2C | | [I2C Hello, World](apis/i2c.html#i2c-hello-world) |
+| I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
+| CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
+| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
 
+And the following tutorials:
 
-### InterruptIn
+* [Application flow control](../tutorials/application-flow-control.html)
+* [Alarm](../tutorials/alarm-tutorial.html)
 
-
-
-<table>
-<tbody>
-<tr>
-<td><a href="application-flow-control.html">Flow control tutorial</a></td>
-<td><a href="../apis/analogin.html#analogin-examples">AnalogIn examples</a></td>
-<td><a href="../apis/portin.html#portin-hello-world">PortIn hello, world</a></td>
-<td><a href="../apis/lowpowertimer.html#lowpowertimer-example">LowPowerTimer example</a></td>
-<td><a href="../apis/i2cslave.html#i2cslave-example">I2CSlave example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/ticker.html#ticker-hello-world">Ticker hello, world</a></td>
-<td><a href="../apis/analogout.html#analogout-hello-world">AnalogOut hello, world</a></td>
-<td><a href="../apis/portout.html#portout-hello-world">PortOut hello, world</a></td>
-<td><a href="../apis/rawserial.html#rawserial-hello-world">RawSerial hello, world</a></td>
-<td><a href="../apis/mbedcrc.html#mbedcrc-examples">MbedCRC examples</a></td>
-</tr>
-<tr>
-<td><a href="../apis/ticker.html#ticker-examples">Ticker example</a></td>
-<td><a href="../apis/analogout.html#analogout-example">AnalogOut example</a></td>
-<td><a href="../apis/portinout.html#portinout-hello-world">PortInOut hello, world</a></td>
-<td><a href="../apis/rawserial.html#rawserial-examples">RawSerial examples</a></td>
-<td><a href="../apis/can.html#can-hello-world">CAN hello, world</a></td>
-</tr>
-<tr>
-<td><a href="../tutorials/alarm-tutorial.html">Alarm tutorial</a></td>
-<td><a href="../apis/digitalin.html#digitalin-hello-world">DigitalIn hello, world</a></td>
-<td><a href="../apis/pwmout.html#pwmout-hello-world">PwmOut hello, world</a></td>
-<td><a href="../apis/serial.html#serial-hello-world">Serial hello, world</a></td>
-</tr>
-<tr>
-<td><a href="../apis/digitalout.html#digitalout-hello-world">DigitalOut hello, world</a></td>
-<td><a href="../apis/digitalin.html#digitalin-example">DigitalIn example</a></td>
-<td><a href="../apis/pwmout.html#pwmout-code-examples">PwmOut examples</a></td>
-<td><a href="../apis/serial.html#serial-examples">Serial examples</a></td>
-</tr>
-<tr>
-<td><a href="../apis/interruptin.html#interruptin-hello-world">InterruptIn hello, world</a></td>
-<td><a href="../apis/digitalinout.html#digitalinout-hello-world">DigitalInOut hello, world</a></td>
-<td><a href="../apis/timeout.html#timeout-hello-world">Timeout hello, world</a></td>
-<td><a href="../apis/spi.html#spi-hello-world">SPI hello, world</a></td>
-</tr>
-<tr>
-<td><a href="../apis/interruptin.html#interruptin-example">InterruptIn example</a></td>
-<td><a href="../apis/busin.html#busin-hello-world">BusIn hello, world</a></td>
-<td><a href="../apis/timeout.html#timeout-example">Timeout example</a></td>
-<td><a href="/apis/spislave.html#spislave-example">SPISlave example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/lowpowerticker.html#lowpowerticker-example">LowPowerTicker example</a></td>
-<td><a href="../apis/busout.html#busout-hello-world">BusOut hello, world</a></td>
-<td><a href="../apis/timer.html#timer-hello-world">Timer hello, world</a></td>
-<td><a href="../apis/quadspi-qspi.html#quadspi-example">QuadSPI example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/analogin.html#analogin-hello-world">AnalogIn hello, world</a></td>
-<td><a href="../apis/businout.html#businout-hello-world">BusInOut hello, world</a></td>
-<td><a href="../apis/lowpowertimeout.html#lowpowertimeout-example">LowPowerTimeout example</a></td>
-<td><a href="../apis/i2c.html#i2c-hello-world">I2CSlave hello, world</a></td>
-</tr>
-</tbody>
-</table>
 
 #### Using RTOS APIs
 
