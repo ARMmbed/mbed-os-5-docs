@@ -112,7 +112,7 @@ It must contain:
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
 
-Pull request template addition for functional changes [here](./pull_request_drafts/pr_functional_change.md).
+For more details, please see the [pull request template addition for functional changes](./pull_request_drafts/pr_functional_change.md).
 
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
@@ -151,9 +151,9 @@ It must contain:
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
 
-Pull request template addition [here](./pull_request_drafts/pr_breaking_change.md).
+For more details, please see the [pull request template addition](./pull_request_drafts/pr_breaking_change.md).
 
-The breaking change pull requests must be approved by a project tech-lead and the Mbed OS tech lead.
+A project technical lead and the Mbed OS technical lead must approve breaking change pull requests.
 
 Release: major
 
