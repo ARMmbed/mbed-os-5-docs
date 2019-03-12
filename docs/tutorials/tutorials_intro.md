@@ -4,16 +4,9 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 ### Getting started
 
-<table>
-<tbody>
-<tr>
+
 <td><a href="../quick-start/index.html">Mbed OS quick start tutorial</a></td>
-</tr>
-<tr>
-<td><a href="../quick-start/online-with-the-online-compiler.html#importing-the-code">Blinky example</a></td>
-</tr>
-</tbody>
-</table>
+
 
 ### Using the APIs
 
@@ -21,56 +14,33 @@ These tutorials and examples show you how to perform specific tasks that use the
 
 #### Using platform APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="../apis/wait.html#example">Wait example</a></td>
-<td><a href="../apis/criticalsectionlock.html#criticalsectionlock-example">CriticalSectionLock example</a></td>
-<td><a href="../apis/assert.html#assert-example">Assert example</a></td>
-<td><a href="../apis/circularbuffer.html#circularbuffer-example">CircularBuffer example</a></td>
-<td><a href="../apis/mbed-statistics.html#cpu-usage-example">CPU usage example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/callback.html#serial-passthrough-example-with-callbacks">Serial passthrough example with callbacks</a></td>
-<td><a href="../apis/time.html#time-example">Time example</a></td>
-<td><a href="../apis/shared-pointer.html#shared-pointer-example">SharedPtr example</a></td>
-<td><a href="../apis/atcmdparser.html#atcmdparser-examples">ATCmdParser example</a></td>
-<td><a href="../apis/mpu-management.html#example">MPU management example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/callback.html#thread-example-with-callbacks">Thread example with callbacks</a></td>
-<td><a href="../apis/rtc.html#rtc-time-example">RTC example</a></td>
-<td><a href="../apis/span.html#span-example">Span example</a></td>
-<td><a href="../apis/mbed-statistics.html#memory-statistics-example">Mbed statistics example</a></td>
-<td><a href="../apis/scopedramexecutionlock.html#example">ScopedRamExecutionLock example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/callback.html#sonar-example">Sonar example with callbacks</a></td>
-<td><a href="../apis/debug.html#debug-example">Debug example</a></td>
-<td><a href="../apis/filehandle.html#filehandle-using-c-library-example">FileHandle example using the C library</a></td>
-<td><a href="../apis/mbed-statistics.html#memory-statistics-example">Memory statistics example</a></td>
-<td><a href="../apis/scopedromwritelock.html#scopedromwritelock-class-reference">ScopedRomWriteLock example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/deepsleeplock.html#example">DeepSleepLock example</a></td>
-<td><a href="../apis/memory-tracing.html#memory-tracing-example">Memory tracing example</a></td>
-<td><a href="../apis/filehandle.html#filehandle-sigio-example">FileHandle sigio example</a></td>
-<td><a href="../apis/mbed-statistics.html#thread-statistics-example">Thread statistics example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/power-management.html#example">PowerManagement example</a></td>
-<td><a href="../apis/error-handling.html#error-handling-example">Error handling example</a></td>
-<td><a href="../apis/poll.html#poll-example">Poll example</a></td>
-<td><a href="../apis/mbed-statistics.html#system-information-example">System information example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/idle-loop.html#example">IdleLoop example</a></td>
-<td><a href="../apis/error-handling.html#crash-reporting-example">Crash reporting example</a></td>
-<td><a href="../apis/platformmutex.html#platformmutex-example">PlatformMutex example</a></td>
-<td><a href="../apis/mbed-statistics.html#cpu-statistics-example">CPU statistics example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples |
+| --- | --- |
+| Wait | [Wait example](../apis/wait.html#example) |
+| callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)</br> [Thread example](../apis/callback.html#thread-example-with-callbacks)</br> [Sonar example](../apis/callback.html#sonar-example) |
+| DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
+| PowerManagement | [PowerManagement example](../apis/power-management.html#example) |
+| IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
+| CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
+| Time | [Time example](../apis/time.html#time-example) |
+| RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
+| Debug | [Debug example](../apis/debug.html#debug-example) |
+| Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
+| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)</br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
+| Assert | [Assert example](../apis/assert.html#assert-example) |
+| NonCopyable | [NonCopyable example](apis/noncopyable.html#noncopyable-example) |
+| SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
+| Span | [Span example](../apis/span.html#span-example) |
+| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)</br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
+| Poll | [Poll example](../apis/poll.html#poll-example) |
+| PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
+| CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
+| ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
+| Mbed statistics | [CPU usage example](../apis/mbed-statistics.html#cpu-usage-example)</br> [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) </br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) </br> [System information example](../apis/mbed-statistics.html#system-information-example) </br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
+| MPU management | [MPU management example](../apis/mpu-management.html#example) |
+| ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
+| ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
+
 
 #### Using drivers APIs
 
