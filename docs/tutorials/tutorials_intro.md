@@ -170,50 +170,32 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 
 #### Using storage APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="../apis/kvstore.html#kvstore-example">KVStore example</a></td>
-<td><a href="../apis/mbrblockdevice.html#mbrblockdevice-example">MBRBlockDevice example</a></td>
-<td><a href="../apis/bufferedblockdevice.html#bufferedblockdevice-example">BufferedBlockDevice example</a></td>
-<td><a href="../apis/sdblockdevice.html#sdblockdevice-example-application">SDBlockDevice example application</a></td>
-</tr>
-<tr>
-<td><a href="../apis/filesystem.html#file-system-example">File system example</a></td>
-<td><a href="../apis/chainingblockdevice.html#chainingblockdevice-example">ChainingBlockDevice example</a></td>
-<td><a href="../apis/flashsimblockdevice.html#flashsimblockdevice-example">FlashSimBlockDevice example</a></td>
-<td><a href="../apis/spi-flash-block-device.html#spifblockdevice-example">SPIFBlockDevice example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/blockdevice.html#blockdevice-example">BlockDevice example</a></td>
-<td><a href="../apis/slicingblockdevice.html#slicingblockdevice-example">SlicingBlockDevice example</a></td>
-<td><a href="../apis/dataflashblockdevice.html#dataflashblockdevice-example">DataFlashBlockDevice example</a></td>
-<td><a href="../apis/qspifblockdevice.html#qspifblockdevice-example">QSPIFBlockDevice example</a></td>
-</tr>
-<tr>
-<td><a href="../apis/heapblockdevice.html#heapblockdevice-example">HeapBlockDevice example</a></td>
-<td><a href="../apis/profilingblockdevice.html#profilingblockdevice-example">ProfilingBlockDevice example</a></td>
-<td><a href="../apis/flashiapblockdevice.html#flashiapblockdevice-example">FlashIAPBlockDevice example</a></td>
-<td><a href="../apis/nvstore.html#nvstore-example">NVStore example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples |
+| --- | --- |
+| KVStore | [KVStore example](../apis/kvstore.html#kvstore-example) |
+| FileSystem | [FileSystem example](../apis/filesystem.html#file-system-example) |
+| BlockDevice | [BlockDevice example](../apis/blockdevice.html#blockdevice-example) |
+| HeapBlockDevice | [HeapBlockDevice example](../apis/heapblockdevice.html#heapblockdevice-example) |
+| MBRBlockDevice | [MBRBlockDevice example](../apis/mbrblockdevice.html#mbrblockdevice-example) |
+| ChainingBlockDevice | [ChainingBlockDevice example](../apis/chainingblockdevice.html#chainingblockdevice-example) |
+| SlicingBlockDevice | [SlicingBlockDevice](../apis/slicingblockdevice.html#slicingblockdevice-example) |
+| ProfilingBlockDevice | [ProfilingBlockDevice example](../apis/profilingblockdevice.html#profilingblockdevice-example) |
+| BufferedBlockDevice | [BufferedBlockDevice example](../apis/bufferedblockdevice.html#bufferedblockdevice-example) |
+| FlashSimBlockDevice | [FlashSimBlockDevice example](../apis/flashsimblockdevice.html#flashsimblockdevice-example) |
+| DataFlashBlockDevice | [DataFlashBlockDevice example](../apis/dataflashblockdevice.html#dataflashblockdevice-example) |
+| FlashIAPBlockDevice | [FlashIAPBlockDevice example](../apis/flashiapblockdevice.html#flashiapblockdevice-example) |
+| SDBlockDevice | [SDBlockDevice example](../apis/sdblockdevice.html#sdblockdevice-example-application) |
+| SPIFBlockDevice | [SPIFBlockDevice example](../apis/spi-flash-block-device.html#spifblockdevice-example) |
+| QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
+| NVStore | [NVStore](../apis/nvstore.html#nvstore-example) |
 
 ### Serial communication
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
-<table>
-<tbody>
-<tr>
-<td><a href="windows-serial-driver.html">Windows serial driver tutorial</a></td>
-<td><a href="serial-comm.html#minimal-printf">Low memory serial printf example</a></td>
-</tr>
-<tr>
-<td><a href="serial-comm.html">Board to PC communication over USB tutorial</a></td>
-</tr>
-</tbody>
-</table>
+* [Windows serial driver tutorial](../tutorials/windows-serial-driver.html)
+* [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
+* [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
 
 ### Debugging
 
