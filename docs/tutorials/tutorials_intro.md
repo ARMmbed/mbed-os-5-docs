@@ -162,19 +162,11 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 
 #### Using security APIs
 
-<table>
-<tbody>
-<tr>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark">TLS benchmark example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing">TLS hashing example</a></td>
-<td><a href="../apis/devicekey.html#devicekey-example">DeviceKey example</a></td>
-</tr>
-<tr>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client">TLS client example</a></td>
-<td><a href="https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt">TLS authenticated encryption example</a></td>
-</tr>
-</tbody>
-</table>
+| API | Examples |
+| --- | --- |
+| TLS | [Benchmark example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark) <br> [Hashing example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing) <br> [Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client) <br> [Authenticated encryption example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt) |
+| DeviceKey | [DeviceKey example](../apis/devicekey.html#devicekey-example) |
+
 
 #### Using storage APIs
 
