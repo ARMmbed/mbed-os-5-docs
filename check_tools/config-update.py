@@ -52,13 +52,10 @@ def is_string(line):
     line - string to scan
 
     Returns:
-    True if the string contains [a-z], else False
+    Match object if the string contains [a-z], else None
     """
     regexp = re.compile(r'[a-z]', re.IGNORECASE)
-    if regexp.search(line):
-        return True
-    else:
-        return False
+    return regexp.search(line)
 
 def main(file):
     file_h = open(file, 'r+')
