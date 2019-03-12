@@ -1,7 +1,5 @@
 <h2 id="wisun-tech">Wi-SUN</h2>
 
-## Wi-SUN
-
 The Wi-SUN Field Area Network (FAN) is based on open standards from IEEE802, IETF, ANSI/TIA and ETSI.
 
 Wi-SUN FAN operates on license-exempt sub-GHz RF band and uses frequency hopping to lower interference. Therefore, Wi-SUN is well suited for outdoor installations and dense urban neighborhoods.
