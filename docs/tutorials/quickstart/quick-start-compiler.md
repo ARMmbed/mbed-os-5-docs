@@ -9,8 +9,6 @@
 
 1. Double click on the `MBED.HTML` file. This adds your Mbed board to the Online Compiler as a compilation target.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)</span>
-
 ### Importing the code
 
 Click the button below to automatically import the example into the Online Compiler.
