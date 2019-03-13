@@ -28,9 +28,9 @@ Arm Mbed OS 5 defines three collections of toolchain flags used during the build
 
 ### User-defined build profile
 
-As mentioned above, the __build profile__ defines the set of flags that is guaranteed to be passed to the underlying compiler suite. You can also create a custom or user-defined __build profile__ using a JSON file acording to the __build profile__ format mentioned in [JSON build profile format](#JSON-build-profile-format).
+As mentioned above, the __build profile__ defines the set of flags that is passed to the underlying compiler suite. You can also create a custom or user-defined __build profile__ using a JSON file according to the __build profile__ format mentioned in [JSON build profile format](#JSON-build-profile-format).
 
-These flags stored in the JSON file may also be merged with other JSON files of the same structure.
+These flags stored in the JSON file are merged with other JSON files of the same structure when multiple `--profile` arguments are passed on the command line.
 
 #### JSON build profile format
 
