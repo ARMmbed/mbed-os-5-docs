@@ -14,8 +14,6 @@
     1. Select a board.
     1. On the board page, click **Add to your Mbed Compiler**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)</span>
-
 ### Importing the code
 
 Click the button below to automatically import the example into the Online Compiler.
