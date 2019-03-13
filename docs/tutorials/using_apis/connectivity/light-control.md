@@ -106,7 +106,7 @@ The Thread stack learns the network settings from the commissioning process and 
 
 The networking stack in this example requires TLS functionality to be enabled on Mbed TLS. On devices where hardware entropy is not present, TLS is disabled by default. This results in compile time failures or linking failures.
 
-To learn why entropy is required, read the [TLS porting guide](../reference/mbed-tls-entropy.html).
+To learn why entropy is required, read the [TLS porting guide](../porting/entropy-sources.html).
 
 See [Notes on different hardware](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/Hardware.md) for known combinations of development boards and RF shields that have been tested.
 
