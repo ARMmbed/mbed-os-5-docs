@@ -53,7 +53,7 @@ be able to compile with ARM Compiler 5 or you may see undefined behaviors. In ot
 
 ##### By creating a mbed_app.json to override `supported_toolchains`
 
-In this method, you can create or update your `mbed_app.json` with the following content. Note that you can still keep other entries such as `GCC_ARM` or `IAR` while overriding `supported_toolchains` as below.
+In this method, you can create or update your `mbed_app.json` with the following content. Override `supported_toolchains` as below.
 
 ```
 {
