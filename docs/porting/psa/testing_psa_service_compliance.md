@@ -1,4 +1,4 @@
-<h2 id="crypto-port">Testing PSA service compliance</h2>
+<h2 id="psa-compliance-port">Testing PSA service compliance</h2>
 
 Mbed OS provides an integrated version of the Platform Security Architecture (PSA) test suite running over the Greentea test infrastructure. You can use these tests on PSA services that you develop or customize on PSA-enabled platforms to verify the compliance of the services to the PSA specification.
 
