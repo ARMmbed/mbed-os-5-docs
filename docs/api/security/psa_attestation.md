@@ -46,13 +46,13 @@ The token might also include data about the distinct software components on the 
 
 In the current implementation, a bootloader does not exist in single and dual V7; therefore, we have provided temporary hardcoded boot status data claims in the `attestation_bootloader_data.c` file, including `HW version`, `Boot seed`, and some `Software components` entries. `Security lifecycle` should also be part of the boot status, but in the current implementation, it is provided by calling the `psa_security_lifecycle_state()` API directly.
 
-### PSA initial attestation class reference
+### PSA initial attestation reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group___p_s_a-_attestation.html)
 
 ### PSA initial attestation example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os/blob/master/TESTS/psa/attestation)](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/psa/attestation/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-attestation/blob/attestation_example)](https://github.com/ARMmbed/mbed-os-example-attestation/blob/attestation_example/main.cpp)
 
 ### Related content
 
