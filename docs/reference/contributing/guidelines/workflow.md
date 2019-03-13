@@ -107,7 +107,7 @@ Every pull request changing or adding functionality must contain a release notes
 It must contain:
 
 - A brief description of changes introduced.
-- An analysis of effects: components affected, potential consequences for users and reasons for the addition or change.
+- An analysis of effects: components affected, potential consequences for users.
 - Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
@@ -146,7 +146,7 @@ Every pull request with breaking change must contain a release notes section cal
 It must contain:
 
 - A brief description of changes introduced, including justification description.
-- An analysis of effects: components affected, potential consequences for users and reasons for breaking user space.
+- An analysis of effects: components affected, potential consequences for users.
 - Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
