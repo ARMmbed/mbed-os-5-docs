@@ -36,8 +36,8 @@ Where:
    - For crypto tests: `c001`, `c002`, and so on.
    - For internal trusted storage tests: `s001`, `s002`, and so on.
    - For attestation tests: `a001`, `a002`, and so on.
-    
-You can also use an asterisk (`*`) to compile and run the entire set of PSA compliance tests:
+
+You can also use an asterisk (`*`), or other wildcards, to compile and run the entire set of PSA compliance tests:
 
 ```
 mbed test -t <toolchain> -m <target> -n components-target_psa-tests-compliance_*
@@ -47,7 +47,9 @@ mbed test -t <toolchain> -m <target> -n components-target_psa-tests-compliance_*
 
 By default, the PSA compliance tests run using the default Mbed OS cryptography configuration. (You can find the configuration at `features/mbedtls/inc/mbedtls/config.h` in the Mbed OS directory). When you use the default configuration, only tests supported by the configuration run.
 
-You can override the default Mbed OS cryptography configuration using an `mbed_app.json` file or by supplying your custom configuration file directly using a command-line compilation flag. For an example of how to use an `mbed_app.json` file to override the default cryptography configuration, please see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
+You can override the default Mbed OS cryptography configuration using an `mbed_app.json` file, or by passing the `MBEDTLS_USER_CONFIG_FILE=<path to your custom configuration file>` flag in the compilation command.
+
+For an example of how to use an `mbed_app.json` file to override the default cryptography configuration, please see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
 
 ### Sample test output
 
