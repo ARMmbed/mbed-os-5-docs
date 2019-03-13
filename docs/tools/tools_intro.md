@@ -59,7 +59,7 @@ In this method, you can create or update your `mbed_app.json` with the following
 {
   "target_overrides": {
       "*": {
-          "target.supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"]
+          "target.supported_toolchains": ["ARMC5"]
       }
   }
 }
