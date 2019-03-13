@@ -61,11 +61,11 @@ Edit the `mbed_app.json` file, and create a new entry under `target_overrides` w
 - **SOTP** - Define two SOTP or NVStore regions that Device Management will use to store its special keys, which encrypt the data stored. Use the last two Flash sectors (if possible) to ensure that they don't get overwritten when new firmware is applied. For example:
 
    ```
-            "device_management.sotp-section-1-address"            : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(128*1024))",
-            "device_management.sotp-section-1-size"               : "(128*1024)",
-            "device_management.sotp-section-2-address"            : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(128*1024))",
-            "device_management.sotp-section-2-size"               : "(128*1024)",
-            "device_management.sotp-num-sections" : 2
+            "device-management.sotp-section-1-address"            : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(128*1024))",
+            "device-management.sotp-section-1-size"               : "(128*1024)",
+            "device-management.sotp-section-2-address"            : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(128*1024))",
+            "device-management.sotp-section-2-size"               : "(128*1024)",
+            "device-management.sotp-num-sections" : 2
    ```
 
 `*-address` defines the start of the Flash sector, and `*-size` defines the actual sector size. `sotp-num-sections` should always be set to `2`.
