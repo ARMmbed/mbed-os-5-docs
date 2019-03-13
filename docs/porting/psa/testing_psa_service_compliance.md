@@ -53,26 +53,24 @@ For an example of how to use an `mbed_app.json` file to override the default cry
 
 ### Sample test output
 
-When the tests run, they output state information to the serial output. Below is an example of a successful run (running the first crypto test scenario):
+When the tests run, they output state information to the serial output. Below is an example of a successful run:
 
 ```
-TEST: 201 | DESCRIPTION: Testing psa_crypto_init API: Basic
-[Info] Executing tests from non-secure{{__testcase_start;Check1}}
+mbedgt: mbed-host-test-runner: started
+mbedgt: checking for GCOV data...
+mbedgt: test on hardware with target id: 190000006c0f1507036c0f1500000000000000002e127069
+mbedgt: test suite 'components-target_psa-tests-compliance_its-test_s009' ............................ OK in 55.01 sec
+test case: 'Check1' .......................................................................... OK in 0.40 sec
+mbedgt: mbed-host-test-runner: started
+mbedgt: checking for GCOV data...
+mbedgt: test on hardware with target id: 190000006c0f1507036c0f1500000000000000002e127069
+mbedgt: test suite 'components-target_psa-tests-compliance_its-test_s008' ............................ OK in 55.21 sec
+test case: 'Check1' .......................................................................... OK in 0.10 sec
+test case: 'Check2' .......................................................................... OK in 0.09 sec
 
-[Check 1] Test calling crypto functions before psa_crypto_init
-{{__testcase_finish;Check1;1;0}}
-
-{{__testcase_start;Check2}}
-
-[Check 2] Test psa_crypto_init
-{{__testcase_finish;Check2;1;0}}
-
-{{__testcase_start;Check3}}
-
-[Check 3] Test multiple psa_crypto_init
-{{__testcase_finish;Check3;1;0}}
-
-{{end;success}}
-
-{{__exit;0}}
+mbedgt: test suite report:
+| target | platform_name | test suite | result | elapsed_time (sec) | copy_method |
+|---------------------------------|---------------------|------------------------------------------------------|---------|--------------------|-------------|
+| CY8CKIT_062_WIFI_BT_PSA-GCC_ARM | CY8CKIT_062_WIFI_BT | components-target_psa-tests-compliance_its-test_s001 | OK | 19.45 | default |
+| CY8CKIT_062_WIFI_BT_PSA-GCC_ARM | CY8CKIT_062_WIFI_BT | components-target_psa-tests-compliance_its-test_s002 | OK | 55.34 | default |
 ```
