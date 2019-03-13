@@ -15,7 +15,7 @@ You can specify the lifecycle value during build time using the `MBED_CONF_LIFEC
 
 In Mbed OS, the PSA lifecycle is implemented as part of the [platform service](../apis/platform-service.html).
 
-### PSA lifecycle class reference
+### PSA lifecycle reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/lifecycle_8h.html)
 
