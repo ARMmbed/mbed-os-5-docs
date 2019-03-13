@@ -6,4 +6,4 @@ You can install Mbed CLI on Windows, Linux and macOS.
 
 For Linux, please [install Mbed CLI manually](../tools/linux.html).
 
-Advanced Windows and macOS users can also install Mbed CLI manually and take advantaged of the configuration options, but we recommend the installers for less experienced developers.
+Advanced Windows and macOS users can also install Mbed CLI manually and take advantage of the configuration options, but we recommend the installers for less experienced developers.
