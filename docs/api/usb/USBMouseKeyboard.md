@@ -58,5 +58,5 @@ int main(void) {
 
 ### Related content
 
-- [USBMouse](USBMouse.html).
-- [USBKeyboard](USBKeyboard.html).
+- [USBMouse](../apis/usbmouse.html).
+- [USBKeyboard](../apis/usbkeyboard.html).
