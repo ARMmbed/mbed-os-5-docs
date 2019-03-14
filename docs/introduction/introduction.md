@@ -104,9 +104,8 @@ Please see the following sections of our documentation for more information.
 
 <h3 id="docs-updates">Recently updated documentation</h3>
 
-<!--update for 5.12 - Pelion Ready, Mbed OS bare metal including a mention of the quick start additions, security, Wi-Sun and the updates around Mesh... what else we got?-->
-
-- API references for [FileHandle](../apis/filehandle.html) and [Poll](../apis/poll.html).
-- An updated [contributing guide](../contributing/index.html).
-- A revised [porting guide](../porting/index.html).
-- A [review of the full process of taking a project to production](./evaluation-production/index.html).
+* An [introduction to Mbed OS bare metal profile](../bare-metal/index.html), and updates to the [quick start for a bare metal build](../quick-start/index.html).
+* New documentation for the [Mbed OS implementation of the Platform Security Architecture (PSA)](../apis/security.html) and [Mbed Crypto](../apis/mbed-crypto.html).
+* Updates to the [Mesh API documentation](../apis/mesh-api.html) and related reference material, including [the Wi-Sun Field Area Network (FAN)](../reference/wisun-tech.html).
+* A new guide [for using Pelion Device Management with Mbed OS devices](../mbed-os-pelion/device-management-for-mbed-os.html), and a new location [for our evaluation to production process review](../mbed-os-pelion/going-to-production.html).
+* New [USB APIs](../apis/usb.html).
