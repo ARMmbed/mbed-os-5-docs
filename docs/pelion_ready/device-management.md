@@ -31,7 +31,7 @@ Useful references:
 
 - Check which Mbed OS platforms are supported in the [Device Management quick start guide](https://cloud.mbed.com/quick-start).
 - Check the [storage options available](../reference/storage.html).
-- Check the [network options available](../reference/network-socket.html).
+- Check the [network options available](../reference/networking.html).
 
 #### Adding a device management feature to your application
 
