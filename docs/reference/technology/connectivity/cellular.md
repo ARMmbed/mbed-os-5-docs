@@ -18,7 +18,7 @@ Key features of the Mbed OS cellular APIs include:
 
 OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device management. The Mbed OS cellular API provides core functionality to implement the LWM2M Client. For more information, please see _OMA LightweightM2M_ and _OMA LWM2M Object Connectivity Management_ at [OMA Specifications](http://openmobilealliance.org/wp/index.html).
 
-Many Mbed Enabled boards already support cellular connectivity. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](../porting/cellular-module-porting.html) for more information.
+Many Mbed Enabled boards already support cellular connectivity. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](../porting/cellular-device-porting.html) for more information.
 
 ### Quick start
 
