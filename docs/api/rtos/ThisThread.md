@@ -10,4 +10,4 @@ Use the ThisThread class to control the current thread.
 
 Spawn a thread to blink for 5 seconds before setting a flag to trigger the thread to terminate.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed/code/rtos_timer/)](https://os.mbed.com/teams/mbed/code/rtos_timer/file/tip/m<TODO>?.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thisthread/)](https://github.com/ARMmbed/mbed-os-example-thisthread/blob/master/main.cpp)
