@@ -103,6 +103,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tbody>
 <tr>
 <td><a href="thread.html">Thread</a></td>
+<td><a href="thisthread.html">ThisThread</a></td>
 <td><a href="queue.html">Queue</a></td>
 <td><a href="mail.html">Mail</a></td>
 <td><a href="event.html">Event</a></td>
