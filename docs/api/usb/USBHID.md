@@ -96,6 +96,6 @@ mbed.find_output_reports()[0].send(message)
 
 ### Related content
 
-- [USBMouse](USBMouse.html).
-- [USBKeyboard](USBKeyboard.html).
-- [USBMouseKeyboard](USBMouseKeyboard.html).
+- [USBMouse](../apis/usbmouse.html).
+- [USBKeyboard](../apis/usbkeyboard.html).
+- [USBMouseKeyboard](../apis/usbmousekeyboard.html).
