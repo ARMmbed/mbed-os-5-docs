@@ -14,7 +14,7 @@ For full documentation about bootloaders and firmware update, please read the fo
 
 - [Introduction to Mbed OS bootloaders](../porting/bootloader.html).
 - [Creating and using an Mbed OS bootloader](../tutorials/bootloader.html).
-- [Bootloader configuration in Mbed OS](../tools/configuring-tools.html).
+- [Bootloader configuration in Mbed OS](../reference/bootloader-configuration.html).
 - [Mbed Bootloader for Device Management](https://github.com/ARMmbed/mbed-bootloader).
 - [Updating devices with Mbed CLI](../tools/cli-update.html).
 
