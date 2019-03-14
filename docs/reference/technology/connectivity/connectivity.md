@@ -6,17 +6,17 @@ Mbed OS offers a strong, integrated stack of standards-based technologies:
 
 For IP devices:
 
-* Arm Mbed Thread.
-* Wi-SUN.
-* 6LoWPAN-ND.
-* Cellular.
-* NB-IoT.
-* Bluetooth Low Energy (BLE).
+- Arm Mbed Thread.
+- Wi-SUN.
+- 6LoWPAN-ND.
+- Cellular.
+- NB-IoT.
+- Bluetooth Low Energy (BLE).
 
 Non-IP devices:
 
-* LoRaWAN.
-* Cellular.
+- LoRaWAN.
+- Cellular.
 
 ### Choosing your connectivity method
 
@@ -82,7 +82,7 @@ Additionally, Mbed OS Thread stack is certified using pre-defined test sets for 
 
 Applications running on 6LoWPAN-based mesh networks use the same Mbed OS Socket API for connectivity.
 
-For descriptions of different mesh networks, please see the [Thread](thread-tech), [Wi-SUN](wisun-tech) and [6LoWPAN-ND Mesh](mesh-tech.html) sections.
+For descriptions of different mesh networks, please see the [Thread](../reference/thread-tech.html), [Wi-SUN](../reference/wisun-tech.html) and [6LoWPAN-ND Mesh](../reference/mesh-tech.html) sections.
 
 ### Non-IP networking
 
@@ -106,13 +106,13 @@ To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview]
 
 Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. It is enabled by Control Plane cellular IoT EPS optimization and meant to provide improved support of small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
 
-To learn how to use this feature with Mbed OS, please refer to [CellularNonIPSocket](../apis/cellularnonipsocket.html).
+To learn how to use this feature with Mbed OS, please refer to [CellularNonIPSocket](../apis/non-ip-cellular-socket.html).
 
 #### Memory needs for Pelion-connected devices
 
 Mbed OS's baseline memory footprint, without Pelion connectivity, is 2.8kb of RAM and 8.2kb of flash. When you add connectivity and full functionality, the footprint grows:
 
-* For **Device Management Client Lite**, the smaller of the two connectivity libraries: A total of 20 KB RAM, 210 KB flash. This includes not just Ethernet connectivity, but also startup and runtime demands, the size of Client Lite itself and additional drivers. Client Lite is currently available only to certain customer account types.
-* For **Device Management Client**: A total of 137 KB RAM, 330 KB flash. This adds FileSystem and the full Client to the functionality.
+- For **Device Management Client Lite**, the smaller of the two connectivity libraries: A total of 20 KB RAM, 210 KB flash. This includes not just Ethernet connectivity, but also startup and runtime demands, the size of Client Lite itself and additional drivers. Client Lite is currently available only to certain customer account types.
+- For **Device Management Client**: A total of 137 KB RAM, 330 KB flash. This adds FileSystem and the full Client to the functionality.
 
 These two connectivity libraries give you the choice of a range of devices. Mbed OS with Client Lite can work on devices with only 64kb RAM and 256kb flash. Mbed OS with the full Client fits comfortably on devices with 128 KB RAM and 1024 KB flash.
