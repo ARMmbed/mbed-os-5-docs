@@ -2,7 +2,7 @@
 
 PSA protected storage APIs enable saving data to and retrieving data from PSA protected storage.
 
-Unlike [PSA internal storage](../apis/psa_internal_storage.html), PSA protected storage always runs on the NSPE side and redirects calls to the KVStore instance.
+Unlike [PSA internal storage](../apis/psa-internal-storage.html), PSA protected storage always runs on the NSPE side and redirects calls to the KVStore instance.
 
 ### PSA protected storage class reference
 
@@ -10,6 +10,5 @@ Unlike [PSA internal storage](../apis/psa_internal_storage.html), PSA protected 
 
 ### Related content
 
-* [API specification in Mbed OS](../apis/storage.html).
-
-* [PSA Secure Storage](https://pages.arm.com/PSA-APIs).
+- [API specification in Mbed OS](../apis/storage.html).
+- [PSA Secure Storage](https://pages.arm.com/PSA-APIs).
