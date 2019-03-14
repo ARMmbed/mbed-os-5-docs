@@ -42,7 +42,6 @@ The Mbed implementation of PSA provides the following services:
 - [PSA Crypto](../apis/mbed-crypto.html).
 - [PSA attestation](../apis/psa-initial-attestation.html).
 - [PSA lifecycle](../apis/psa-lifecycle.html).
-- [PSA platform service](../apis/platform-service.html).
 
 ### Additional Mbed OS security APIs
 
