@@ -269,7 +269,7 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="kvstore.html">KVStore</a></td>
 <td><a href="littlefilesystem.html">LittleFileSystem</a></td>
 <td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
-<td><a href="dataflash-block-device.html">DataFlashBlockDevice</a></td>
+<td><a href="../apis/dataflashblockdevice.html">DataFlashBlockDevice</a></td>
 <td><a href="nvstore.html">NVStore</a></td>
 </tr>
 <tr>
