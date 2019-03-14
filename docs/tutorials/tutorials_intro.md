@@ -26,7 +26,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
 | Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)<br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
 | Assert | [Assert example](../apis/assert.html#assert-example) |
-| NonCopyable | [NonCopyable example](apis/noncopyable.html#noncopyable-example) |
+| NonCopyable | [NonCopyable example](../apis/noncopyable.html#noncopyable-example) |
 | SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
 | Span | [Span example](../apis/span.html#span-example) |
 | FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)<br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
@@ -62,21 +62,21 @@ These tutorials and examples show you how to perform specific tasks that use the
 | LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
 | LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
 | LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
-| Flash IAP | [Flash IAP example](apis/flash-iap.html#flash-iap-example) | |
+| Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
 | RawSerial | [RawSerial example](../apis/rawserial.html#rawserial-examples) | [RawSerial Hello, World](../apis/rawserial.html#rawserial-hello-world) |
 | Serial | [Serial example](../apis/serial.html#serial-examples) | [Serial Hello, World](../apis/serial.html#serial-hello-world) |
 | SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
 | SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
 | QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
-| I2C | | [I2C Hello, World](apis/i2c.html#i2c-hello-world) |
+| I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
 | MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
 
 And the following tutorials:
 
-* [Application flow control](../tutorials/application-flow-control.html)
-* [Alarm](../tutorials/alarm-tutorial.html)
+- [Application flow control](../tutorials/application-flow-control.html)
+- [Alarm](../tutorials/alarm-tutorial.html)
 
 #### Using RTOS APIs
 
@@ -85,7 +85,7 @@ And the following tutorials:
 | EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main) | [EventQueue tutorial](the-eventqueue-api.html)|
 | Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
 | MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
-| Kernel | [Example: get_ms_count()](../kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
+| Kernel | [Example: get_ms_count()](../apis/kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
 | Thread | [Thread example](../apis/thread.html#thread-example)<br> [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)<br> | |
 | Semaphore  | [Semaphore example](../apis/semaphore.html#semaphore-example) | |
 | Mail | [Mail example](../apis/mail.html#mail-example) | |
@@ -98,7 +98,7 @@ And the following tutorials:
 | API | Examples | Tutorials |
 | --- | --- | --- |
 | USBSerial | [USBSerial example](../apis/usbserial.html#usbserial-example) | |
-| USBAudio | [Sound data example](../apis/usbaudio.html#usbaudio-play-sound-data-example) <br> [Square wave example](../apis/usbaudio.html#usbaudio-square-wave-exampl) <br> [Loopback example](../apis/usbaudio.html#usbaudio-loopback-example) | [Audio player tutorial](../mbed-usb-wav-audio-player.html) |
+| USBAudio | [Sound data example](../apis/usbaudio.html#usbaudio-play-sound-data-example) <br> [Square wave example](../apis/usbaudio.html#usbaudio-square-wave-exampl) <br> [Loopback example](../apis/usbaudio.html#usbaudio-loopback-example) | [Audio player tutorial](../tutorials/mbed-usb-wav-audio-player.html) |
 | USBHID | [USBHID example](../apis/usbhid.html#usbhid-example) | |
 | USBCDC | [USBCDC example](../apis/usbcdc.html#usbcdc-example) | |
 | USBMSD | [USBMSD example](../apis/usbmsd.html#usbmsd-example) | |
@@ -193,9 +193,9 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
-* [Windows serial driver tutorial](../tutorials/windows-serial-driver.html)
-* [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
-* [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
+- [Windows serial driver tutorial](../tutorials/windows-serial-driver.html)
+- [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
+- [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
 
 ### Debugging
 
@@ -203,18 +203,18 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 #### Tools
 
-* [Eclipse](../tutorials/eclipse.html).
-* [Keil uVision](../tutorials/keil-uvision.html).
-* [Visual Studio](../tutorials/visual-studio-code.html).
-* [BBC micro:bit, pyOCD and GDB debugging tutorial](../tutorials/debug-microbit.html).
+- [Eclipse](../tutorials/eclipse.html).
+- [Keil uVision](../tutorials/keil-uvision.html).
+- [Visual Studio](../tutorials/visual-studio-code.html).
+- [BBC micro:bit, pyOCD and GDB debugging tutorial](../tutorials/debug-microbit.html).
 
 #### Methods
 
-* [Troubleshooting common issues](../tutorials/debugging.html).
-* [Analyzing Mbed OS crash dump tutorial](../tutorials/analyzing-mbed-os-crash-dump.html).
-* [Compile time errors tutorial](../tutorials/compile-time-errors.html).
-* [Debugging using `printf` statements](../tutorials/debugging-using-printf-statements.html).
-* [Error handling API example](../apis/error-handling.html#error-handling-example)
+- [Troubleshooting common issues](../tutorials/debugging.html).
+- [Analyzing Mbed OS crash dump tutorial](../tutorials/analyzing-mbed-os-crash-dump.html).
+- [Compile time errors tutorial](../tutorials/compile-time-errors.html).
+- [Debugging using `printf` statements](../tutorials/debugging-using-printf-statements.html).
+- [Error handling API example](../apis/error-handling.html#error-handling-example)
 
 ### Bootloader
 
