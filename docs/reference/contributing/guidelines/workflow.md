@@ -106,11 +106,13 @@ Every pull request changing or adding functionality must contain a release notes
 
 It must contain:
 
-- A brief description of changes introduced.
-- An analysis of effects: components affected, potential consequences for users and reasons for the addition or change.
+- A brief description of changes introduced, including justification description.
+- An analysis of effects: components affected and potential consequences for users.
 - Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
+
+For more details, please see the [pull request template addition for functional changes](./pull_request_drafts/pr_functional_change.md).
 
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
@@ -138,6 +140,20 @@ Release: patch
 A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
 
 A contribution containing a breaking change is the most difficult PR to get merged. Any breaking changes in a codebase can have a large negative impact on any users of the codebase. Breaking changes are always limited to a major version release.
+
+Every pull request with breaking change must contain a release notes section called "Release notes" to describe the changes to users.
+
+It must contain:
+
+- A brief description of changes introduced, including justification description.
+- An analysis of effects: components affected, potential consequences for users.
+- Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
+
+<span class="notes">**Note:** We may use this content in our official release notes.</span>
+
+For more details, please see the [pull request template addition](./pull_request_drafts/pr_breaking_change.md).
+
+A project technical lead and the Mbed OS technical lead must approve breaking change pull requests.
 
 Release: major
 
