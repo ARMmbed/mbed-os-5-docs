@@ -45,7 +45,7 @@ For more information, please see the [Online Compiler page](developing-mbed-onli
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](exporting.html).
 
-<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;"> **Note:** We encourage you to switch to Arm Compiler 6 soon because we will deprecate Arm Compiler 5 support in the future. However, if you need to update to Mbed OS 5.12 but still require compiling with Arm Compiler 5 until you are in possession of Arm Compiler 6, we provide methods to override the Arm toolchain version. If you do this, your target may not be able to compile with Arm Compiler 5, or you may see undefined behaviors.
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;"> Note: We encourage you to switch to Arm Compiler 6 soon because we will deprecate Arm Compiler 5 support in the future. However, if you need to update to Mbed OS 5.12 but still require compiling with Arm Compiler 5 until you are in possession of Arm Compiler 6, we provide methods to override the Arm toolchain version. If you do this, your target may not be able to compile with Arm Compiler 5, or you may see undefined behaviors.
 
 To force Arm Compiler 5, you can use the following options:
 
