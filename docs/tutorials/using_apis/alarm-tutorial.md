@@ -25,30 +25,7 @@ Invoke `mbed compile`, and specify the name of your platform and your favorite t
 mbed compile -m K64F -t ARM
 ```
 
-Your PC may take a few minutes to compile your code. At the end, you see the following result:
-
-```
-[snip]
-| Module               |         .text |     .data |        .bss |
-|----------------------|---------------|-----------|-------------|
-| [lib]/dl7M_tlf.a     | 10780(+10780) | 364(+364) |   716(+716) |
-| [lib]/dlpp7M_tl_fc.a |       84(+84) |     0(+0) |       0(+0) |
-| [lib]/m7M_tls.a      |   2358(+2358) |     0(+0) |       0(+0) |
-| [lib]/rt7M_tl.a      |   1194(+1194) |     0(+0) |       0(+0) |
-| [misc]               |     215(+215) |     0(+0) |       0(+0) |
-| main.o               |     820(+820) |     0(+0) |   200(+200) |
-| mbed-os/drivers      |     490(+490) |     0(+0) |       0(+0) |
-| mbed-os/features     |     114(+114) |     0(+0) |   184(+184) |
-| mbed-os/hal          |   2070(+2070) |     8(+8) |   132(+132) |
-| mbed-os/platform     |   2938(+2938) | 112(+112) |   176(+176) |
-| mbed-os/rtos         |   8928(+8928) | 168(+168) | 6437(+6437) |
-| mbed-os/targets      | 10174(+10174) |   20(+20) | 1018(+1018) |
-| Subtotals            | 40165(+40165) | 672(+672) | 8863(+8863) |
-Total Static RAM memory (data + bss): 9535(+9535) bytes
-Total Flash memory (text + data): 40837(+40837) bytes
-
-Image: ./BUILD/K64F/IAR/mbed-os-example-alarm.bin
-```
+Your PC may take a few minutes to compile your code.
 
 #### Program the board
 
