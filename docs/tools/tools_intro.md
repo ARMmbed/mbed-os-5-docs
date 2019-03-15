@@ -49,7 +49,7 @@ You can export your project from any of our tools to third party tools. For inst
 
 To force Arm Compiler 5, you can use the following options:
 
-- Create or update your `mbed_app.json` as below. This is the recommended method for applications to use ARM Compiler 5.
+- Create or update your `mbed_app.json` as below. This is the recommended method for applications to use Arm Compiler 5.
 
 ```
 {
@@ -61,7 +61,7 @@ To force Arm Compiler 5, you can use the following options:
 }
 ```
 
-- For porting a target that cannot use Arm Compiler 6 at this time, modify the `supported_toolchains` entry in targets.json to replace all `ARM`, `ARMC6` entries with `ARMC5` as below.  
+- For porting a target that cannot use Arm Compiler 6 at this time, modify the `supported_toolchains` entry in `targets.json` to replace all `ARM` and `ARMC6` entries with `ARMC5`:  
 
 ```
 "MY_TARGET_NAME": {
