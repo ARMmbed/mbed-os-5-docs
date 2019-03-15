@@ -21,7 +21,8 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 
 Mbed OS 5 can be built with various toolchains. The currently supported versions are:
 
-- [Arm compiler 6.11](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
+- [Arm Compiler 6.11 (default ARM toolchain)](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
+- [Arm Compiler 5.06 update 6 (to be deprecated in the future)](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
 - [GNU Arm Embedded version  6 (6-2017-q1-update)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - [IAR Embedded Workbench 8.32.1](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
 
@@ -44,3 +45,30 @@ For more information, please see the [Online Compiler page](developing-mbed-onli
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](exporting.html).
 
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;"> **Note:** We encourage you to switch to Arm Compiler 6 soon because we will deprecate Arm Compiler 5 support in the future. However, if you need to update to Mbed OS 5.12 but still require compiling with Arm Compiler 5 until you are in possession of Arm Compiler 6, we provide methods to override the Arm toolchain version. If you do this, your target may not be able to compile with Arm Compiler 5, or you may see undefined behaviors.
+
+To force Arm Compiler 5, you can use the following options:
+
+- Create or update your `mbed_app.json` as below. This is the recommended method for applications to use Arm Compiler 5.
+
+```
+{
+  "target_overrides": {
+      "*": {
+          "target.supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"]
+      }
+  }
+}
+```
+
+- For porting a target that cannot use Arm Compiler 6 at this time, modify the `supported_toolchains` entry in `targets.json` to replace all `ARM` and `ARMC6` entries with `ARMC5`:  
+
+```
+"MY_TARGET_NAME": {
+        "supported_form_factors": [...],
+        "core": "Cortex-M4",
+        "supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"],
+        ...
+}
+```
+</div> 
