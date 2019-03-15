@@ -23,7 +23,7 @@ To export your project to uVision, you can use either the Online Compiler or Mbe
 
     ```
     # replace K64F with your target board
-    $ mbed export -i uvision5 -m K64F
+    $ mbed export -i uvision6 -m K64F
     ```
 
 ### Starting a debug session
