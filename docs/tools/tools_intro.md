@@ -45,31 +45,24 @@ For more information, please see the [Online Compiler page](developing-mbed-onli
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see [the Exporting to third party toolchains page](exporting.html).
 
-#### Forcing compilation with ARM Compiler 5 for targets already supporting ARM Compiler 6
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;"> **Note:** We encourage you to switch to Arm Compiler 6 soon because we will deprecate Arm Compiler 5 support in the future. However, if you need to update to Mbed OS 5.12 but still require compiling with Arm Compiler 5 until you are in possession of Arm Compiler 6, we provide methods to override the Arm toolchain version. If you do this, your target may not be able to compile with Arm Compiler 5, or you may see undefined behaviors.
 
-It's possible that some developers may need to update to Mbed 5.12 release but still requires compiling with ARM Compiler 5 until they are in possession of ARM Compiler 6.
-In those cases, you may still be able to use ARM Compiler 5 depending on the target. If your target uses any ARM Compiler 6 specific binaries or code, then it may not
-be able to compile with ARM Compiler 5 or you may see undefined behaviors. In other cases, if you want to try force ARM Compiler 5 you can do so with the following options:
+To force Arm Compiler 5, you can use the following options:
 
-##### By creating a mbed_app.json to override `supported_toolchains`
-
-In this method, you can create or update your `mbed_app.json` with the following content. Override `supported_toolchains` as below.
+- Create or update your `mbed_app.json` with:
 
 ```
 {
   "target_overrides": {
       "*": {
-          "target.supported_toolchains": ["ARMC5"]
+          "target.supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"]
       }
   }
 }
 ```
 
-##### By local modifications to `targets.json`
+- Modify the `supported_toolchains` entry in targets.json to replace all `ARM`, `ARMC6` entries with `ARMC5`: 
 
-In this method, you have to modify the `supported_toolchains` entry for your target in targets.json to remove all `ARM`, `ARMC6` entries and replace it with `ARMC5`. Note that you can still keep other entries such as `GCC_ARM` or `IAR`.
-
-See below for example:
 ```
 "MY_TARGET_NAME": {
         "supported_form_factors": [...],
@@ -78,5 +71,4 @@ See below for example:
         ...
 }
 ```
-
-<span class="note"> **Note:** The above methods to override ARM toolchain version is made available only to enable developers migrating from ARM Compiler 5 to ARM Compiler 6. We encourage developers to make plans to switch to ARM Compiler 6 soon, as we plan to deprecate ARM Compiler 5 support in the future and this migration would ensure that your software is compatible with it. </span>
+</div> 
