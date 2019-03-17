@@ -532,12 +532,6 @@
         "path": "docs/api/security/psa_lifecycle.md"
       },
       {
-        "path": "docs/api/security/platform_service.md"
-      },
-      {
-        "path": "docs/api/security/spm.md"
-      },
-      {
         "path": "docs/api/security/TLS.md"
       },
       {
