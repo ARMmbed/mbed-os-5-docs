@@ -275,6 +275,9 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 
 TF-M HAL functions are defined in `tfm_spm_hal.h`.
 
+### System reset
+
+According to the [Trusted Base System Architecture for M (TBSA-M)](https://pages.arm.com/psa-resources-tbsa-m.html) specification, the Secure Processing Environment (SPE) must manage the power state. To implement `NVIC_SystemReset` on the nonsecure side, Mbed OS provides the `mbed_psa_system_reset()` API. This API sends a request for a reset, and the SPE carries out a system reset after all critical tasks are complete.
 
 ### Testing
 
