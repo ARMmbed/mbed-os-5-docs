@@ -8,7 +8,7 @@ Major releases happen infrequently and indicate a possible change in the structu
 
 They can include:
 
-- Incompatible functionality changes (including redesign, removal and new additions).
+- Incompatible functionality changes (including redesign, removal and new additions). 
 - Removal of deprecated functionality.
 
 ### Feature release
