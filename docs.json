@@ -1059,10 +1059,13 @@
             },
             {
                 "title": "Migrating to Mbed OS 5",
-                "intro": {
-                    "path": "docs/tutorials/migrate-from-mbed-os-2-to-5.md"
-                },
-                "sources": []
+                "sources": [{
+                        "path": "docs/tutorials/migrate-from-mbed-os-2-to-5.md"
+                    },
+                    {
+                        "path": "docs/tutorials/migrate-from-mbed-os-2-to-5-examples.md"
+                    }
+                ]
             }
         ],
         "tags": [
