@@ -88,7 +88,7 @@ The name of the target's Arm core.
 
 Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"Cortex-M4"`, `"Cortex-M4F"`, `"Cortex-M7"`, `"Cortex-M7F"`, `"Cortex-A9"`, `"Cortex-M23"`, `"Cortex-M23-NS"`, `"Cortex-M33"`, `"Cortex-M33-NS"`
 
-<span class="notes">**Note:** Mbed OS supports v8-M architecture devices (Cortex-M23 and Cortex-M33) on the ARMC6 toolchain (version 6.10).</span>
+<span class="notes">**Note:** Mbed OS supports v8-M architecture devices (Cortex-M23 and Cortex-M33) on the Arm Compiler 6 toolchain (version 6.10).</span>
 
 #### public
 
@@ -96,7 +96,7 @@ The `public` property controls which targets the Mbed build system allows users 
 
 If `public` is not defined for a target, it defaults to `true`.
 
-<span class="notes">**Note:** Unlike other target properties, **the value of `public` is not inherited from a parent to its children**.</span>
+<span class="notes">**Note:** Unlike other target properties, the value of `public` is not inherited from a parent to its children.</span>
 
 ### macros, macros_add and macros_remove
 
@@ -198,8 +198,7 @@ If you specify `ARMC5` in `supported_toolchains`, it means the corresponding tar
 
 If a target lists both `ARMC5` and `ARM` (or `ARMC6`) in `supported_toolchains`, the Arm Compiler 6.11 will be used when compiling with `ARM` option for `--toolchain`.
 
-<span class="notes">**Note:** Although you can specify `ARMC5` in `supported_toolchains` in `targets.json`, it's not a valid option for `--toolchain` when compiling using [Mbed CLI](../tools/developing-mbed-cli.html).
-Arm Compiler 6 is the default ARM toolchain for Mbed OS developmet. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will be migrated to Arm Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development, and we will validate all code contributions to Mbed OS Arm Compiler 6.
+<span class="notes">**Note:** Although you can specify `ARMC5` in `supported_toolchains` in `targets.json`, it's not a valid option for `--toolchain` when compiling using [Mbed CLI](../tools/developing-mbed-cli.html). Arm Compiler 6 is the default Arm toolchain for Mbed OS development. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will be migrated to Arm Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development, and we will validate all code contributions to Mbed OS Arm Compiler 6.
 </span>
 
 #### default_toolchain
