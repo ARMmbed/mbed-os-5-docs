@@ -257,7 +257,7 @@ Target-specific code must implement the function `spm_hal_memory_protection_init
 The implementation of this function must be aligned with the SPM general guidelines, as the table below describes. This table describes the allowed operations (Read, Write and Execute) on the secure and nonsecure RAM and Flash by each core:
 
 - X means No access.
-- V means Must be able to access.
+- &#10003; means Must be able to access.
 - ? means it is up to the target.
 - X? means it is up to the target, preferably No access.
 
@@ -273,9 +273,11 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 
 ###  TF-M SPM porting (for ARMv8-M targets)
 
-TF-M HAL functions are defined in `tfm_spm_hal.h`.
-More instructions and context can be found [here](https://github.com/ARMmbed/mbed-os/blob/master/components/TARGET_PSA/TARGET_TFM/tf-m-integration.md)
-TF-M sources are integrated from [trusted-firmware-m.git](https://git.trustedfirmware.org/trusted-firmware-m.git/about/)
+The `tfm_spm_hal.h` file defines TF-M HAL functions.
+
+Mbed OS integrates TF-M sources from [trusted-firmware-m.git](https://git.trustedfirmware.org/trusted-firmware-m.git/about/).
+
+For more information about Mbed OS builds and related concepts, please see [Mbed OS build rules](../reference/mbed-os-build-rules.html).
 
 
 ### System reset
