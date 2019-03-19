@@ -274,6 +274,9 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 ###  TF-M SPM porting (for ARMv8-M targets)
 
 TF-M HAL functions are defined in `tfm_spm_hal.h`.
+More instructions and context can be found [here](https://github.com/ARMmbed/mbed-os/blob/master/components/TARGET_PSA/TARGET_TFM/tf-m-integration.md)
+TF-M sources are integrated from [trusted-firmware-m.git](https://git.trustedfirmware.org/trusted-firmware-m.git/about/)
+
 
 ### System reset
 
