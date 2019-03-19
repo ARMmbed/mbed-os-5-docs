@@ -42,7 +42,7 @@ To update to Mbed OS 5 with the [Mbed CLI](../tools/developing-mbed-cli.html), r
 mbed import [URL of Project]
 cd [Project Name]
 mbed remove mbed
-mbed remove mbed-rtos
+
 mbed add mbed-os
 ```
 

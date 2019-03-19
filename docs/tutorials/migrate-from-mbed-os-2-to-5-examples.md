@@ -16,7 +16,7 @@ In the command-line, run:
 mbed import https://os.mbed.com/teams/Seeed/code/Seeed_Grove_Buzzer/
 cd Seeed_Grove_Buzzer
 mbed remove mbed
-mbed remove mbed-rtos
+
 mbed add mbed-os
 mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 ```
@@ -41,7 +41,7 @@ In the command-line, run:
 mbed import https://os.mbed.com/users/melse/code/SRF08HelloWorld/
 cd SRF08HelloWorld
 mbed remove mbed
-mbed remove mbed-rtos
+
 mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```
@@ -113,7 +113,7 @@ In the command-line, run:
 mbed import http://mbed.org/teams/AnalogDevices/code/CN0357-helloworld/
 cd CN0357-helloworld
 mbed remove mbed
-mbed remove mbed-rtos
+
 mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```

@@ -120,9 +120,9 @@
                 "sources": []
             },
             {
-                "title": "Migrating from Mbed OS 2 to 5",
+                "title": "Migrating from Mbed OS 2 to 5 Baremetal",
                 "sources": [{
-                    "path": "docs/tutorials/migrate-from-mbed-os-2-to-5-baremetal.md"
+                    "path": "docs/tutorials/migrate-from-mbed-os-2-to-5.md"
                 }]
             },
             {
