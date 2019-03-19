@@ -1,4 +1,4 @@
-<h2 id="migrating">Mbed OS 2 to 5 migration guide</h2>
+## Mbed OS 2 to 5 migration guide
 
 This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5.
 
