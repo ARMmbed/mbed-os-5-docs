@@ -120,6 +120,12 @@
                 "sources": []
             },
             {
+                "title": "Migrating from Mbed OS 2 to 5",
+                "sources": [{
+                    "path": "docs/tutorials/migrate-from-mbed-os-2-to-5-baremetal.md"
+                }]
+            },
+            {
                 "title": "Bare metal APIs",
                 "sources": [{
                     "path": "docs/baremetal_api.md"
