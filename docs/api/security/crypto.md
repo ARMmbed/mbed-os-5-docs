@@ -8,7 +8,7 @@ We have adapted and [integrated Mbed Crypto with Mbed OS](https://github.com/ARM
 
 You can import Mbed Crypto from its standalone [release](https://github.com/ARMmbed/mbed-crypto). Mbed Crypto as integrated with Mbed OS does not include all test code or scripts used in the development of the library. You can find all of these in the standalone release.
 
-<span class="notes">**Note:** Mbed Crypto, like Mbed TLS, needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our [porting guide](../porting/index.html).</span>
+<span class="notes">**Note:** Mbed Crypto, like Mbed TLS, needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our [porting guide](../porting/entropy-sources.html).</span>
 
 ### Configuring Mbed Crypto features
 
