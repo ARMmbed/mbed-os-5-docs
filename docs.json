@@ -130,6 +130,12 @@
                 "sources": [{
                     "path": "docs/baremetal_api.md"
                 }]
+            },
+            {
+                "title": "Bare metal Example",
+                "sources": [{
+                    "path": "docs/baremetal_example.md"
+                }]
             }
         ]
     },
