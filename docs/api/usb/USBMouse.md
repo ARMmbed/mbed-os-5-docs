@@ -145,4 +145,4 @@ int main() {
 ### Related content
 
 - [USBKeyboard](../apis/usbkeyboard.html).
-- [USBMouseKeyboard](USBMouseKeyboard.html).
+- [USBMouseKeyboard](../apis/usbmousekeyboard.html).
