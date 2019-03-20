@@ -25,10 +25,14 @@ Mbed OS build tools determine the type of source file found based on the file's 
 
 Label directories are directories that follow a naming convention: an upper case label type followed by an underscore followed by a label. The Mbed OS build tools define four label types:
 
-- `TARGET`, constructed from the configuration value `target.extra_labels` and the name of the targets.
-- `FEATURE`, constructed from the configuration value `target.features`.
-- `COMPONENT`, controlled from the configuration value `target.components`.
+- `TARGET`, constructed from the configuration value `target.extra_labels` or `extra_labels_add` and the name of the targets.
+- `FEATURE`, constructed from the configuration value `target.features` or `features_add`.
+- `COMPONENT`, controlled from the configuration value `target.components` or `components_add`.
 - `TOOLCHAIN`, controlled completely by the toolchain used to build.
+
+The Mbed OS build tools skip all label directories, unless you configure them explicitly, as described above.
+
+The `target.<label directory>` syntax overrides existing label directories that are set in a different configuration file or inherited from a parent target. The `target.<label directory>_add` syntax extends the existing configuration.
 
 #### Target directories
 
