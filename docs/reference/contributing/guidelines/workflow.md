@@ -100,7 +100,7 @@ Release: patch
 
 A functionality change can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
 
-A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases. 
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, it's easy for a new feature to introduce bugs and a support burden. The introduction of new features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases.
 
 Every pull request changing or adding functionality must contain a release notes section called "Release notes" to describe the changes to users.
 
@@ -112,7 +112,7 @@ It must contain:
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
 
-For more details, please see the [pull request template addition for functional changes](./pull_request_drafts/pr_functional_change.md).
+For more details, please see the [pull request template addition for functional changes](../pull_request_drafts/pr_functional_change.md).
 
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
 
@@ -151,7 +151,7 @@ It must contain:
 
 <span class="notes">**Note:** We may use this content in our official release notes.</span>
 
-For more details, please see the [pull request template addition](./pull_request_drafts/pr_breaking_change.md).
+For more details, please see the [pull request template addition](../pull_request_drafts/pr_breaking_change.md).
 
 A project technical lead and the Mbed OS technical lead must approve breaking change pull requests.
 

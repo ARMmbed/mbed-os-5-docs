@@ -13,7 +13,7 @@ The following is a state machine depiction of the PSA lifecycle:
 
 You can specify the lifecycle value during build time using the `MBED_CONF_LIFECYCLE_STATE` macro. The default lifecycle value is `PSA_LIFECYCLE_ASSEMBLY_AND_TEST`.
 
-In Mbed OS, the PSA lifecycle is implemented as part of the [platform service](../apis/platform-service.html).
+In Mbed OS, the PSA lifecycle is implemented as part of the platform service.
 
 ### PSA lifecycle reference
 

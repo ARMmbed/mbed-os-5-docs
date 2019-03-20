@@ -10,7 +10,7 @@ Mbed OS provides three types of IPv6 based mesh networks:
 - Wi-SUN, following the specification from Wi-SUN alliance.
 - Thread, following the specification from Thread Group.
 
-Nanostack is the networking stack that provides these protocols. For more information on the stack internals, please refer to the [Thread](../reference/thread.html), [Wi-SUN](../reference/wi-sun.html) and [6LowPAN](../reference/mesh-tech.html) sections. Application developers use Nanostack through the Mbed Mesh API.
+Nanostack is the networking stack that provides these protocols. For more information on the stack internals, please refer to the [Thread](../reference/thread-tech.html), [Wi-SUN](../reference/wisun-tech.html) and [6LowPAN](../reference/mesh-tech.html) sections. Application developers use Nanostack through the Mbed Mesh API.
 
 The application can use the `LoWPANNDInterface`, `WisunInterface` or `ThreadInterface` object for connecting to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer.
 
@@ -46,8 +46,8 @@ To learn how to use mesh, please see our [light control tutorial](../tutorials/l
 
 ### Related content
 
-- [Thread](../reference/thread.html) technology reference material.
-- [Wi-SUN](../reference/wi-sun.html) technology reference material.
+- [Thread](../reference/thread-tech.html) technology reference material.
+- [Wi-SUN](../reference/wisun-tech.html) technology reference material.
 - [6LowPAN](../reference/mesh-tech.html) technology reference material.
 - [6LoWPAN, Wi-SUN and Thread Mesh configuration documentation](../reference/configuration-mesh.html).
 - [Light control tutorial](../tutorials/light-control.html).
