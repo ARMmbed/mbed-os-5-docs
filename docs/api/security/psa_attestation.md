@@ -1,6 +1,6 @@
 ## PSA initial attestation
 
-The PSA initial attestation service enables an application to prove a device's identity to a caller during the authentication process.
+The PSA initial attestation service enables an application to prove a device's identity to any server and application, as part of the authentication process.
 
 The initial attestation service creates a token that contains a fixed set of device-specific data, upon request. To sign the token, the device must contain an attestation key pair, which is unique per device. The service uses the attestation private key to sign the token, and the caller uses the public key to verify the token's authenticity.
 
@@ -28,9 +28,9 @@ psa_attestation_inject_key(const uint8_t *key_data,
                         size_t *public_key_data_length);
 ```
 
-To generate or import a key pair and export the public key in binary format, call the `psa_attestation_inject_key()` function. The function stores the attestation key as a persistent key with a specific key-id.
+To generate or import a key pair and export the public key in binary format, call the `psa_attestation_inject_key()` function. The function stores the attestation key as a persistent key with a specific `key-id`.
 
-The size of the token that the service creates is highly dependent on the number of software components in the system and the provided attributes of these components. The caller must allocate a sufficiently large buffer for the initial attestation service to create the token into.
+The size of the token that the service creates is highly dependent on the number of software components in the system and the provided attributes of these components. The calling server or device must allocate a sufficiently large buffer for the initial attestation service to create the token into.
 
 To get the exact size of the created token, call the `psa_initial_attest_get_token_size()` function.
 
