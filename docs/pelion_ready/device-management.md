@@ -1,8 +1,6 @@
 <h2 id="device-management">Device Management for Mbed OS</h2>
 
-This feature provides a way to add device management capabilities to Mbed OS devices using the Pelion Device Management service.
-
-It:
+Pelion Client provides a way to add device management capabilities to Mbed OS devices using the Pelion Device Management service. It:
 
 - Enables applications to connect and perform firmware updates in a few lines of code.
 - Runs separately from your main application; it does not take over your main loop.
@@ -10,7 +8,7 @@ It:
 - Helps users avoid doing blocking network operations in interrupt contexts, by automatically deferring actions to a separate thread.
 - Provides end-to-end Greentea tests for Device Management.
 
-This library makes it trivial to expose sensors, actuators and other variables to a cloud service. For a complete Device Management Client API, please see our [documentation](https://cloud.mbed.com/docs/current/client-api-references/index.html).
+Pelion Client makes it trivial to expose sensors, actuators and other variables to a cloud service. For a complete Device Management Client API, please see our [documentation](https://cloud.mbed.com/docs/current/client-api-references/index.html).
 
 ### Device Management for your Mbed OS application
 
@@ -35,7 +33,7 @@ Useful references:
 
 #### Adding a device management feature to your application
 
-1. Add this library to your Mbed OS project:
+1. Add Pelion Client to your Mbed OS project:
 
    ```
    $ mbed add https://github.com/ARMmbed/simple-mbed-cloud-client
@@ -43,7 +41,9 @@ Useful references:
 
    If you do not have an Mbed OS project to add, you can create one with `mbed new <your_application_name>` and then the `mbed add` step above.
 
-1. Reference the library from the `main.cpp` file, and add network and storage drivers. Finally, initialize the SimpleMbedCloudClient library. This is the architecture of a device management application with Mbed OS:
+1. Reference the library from the `main.cpp` file, and add network and storage drivers.
+
+1. Finally, initialize the `simple-mbed-cloud-client` library:
 
     ```cpp NOCI
     #include "simple-mbed-cloud-client.h"
