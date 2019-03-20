@@ -215,7 +215,7 @@ The configuration system appends a prefix to the name of each parameter, so a pa
 | `config` | No | Configuration parameters defined for use in this library. |
 | `target_overrides` | No | Overrides for target configuration parameters and configuration parameters of the current library. |
 
-The following is an example library, `mylib`.
+Below is an example `mbed_lib.json` description for a library called `mylib`:
 
 ```JSON
 {
