@@ -108,26 +108,6 @@
         ]
     },
     {
-        "title": "Mbed OS bare metal",
-        "description": "The Mbed OS bare metal profile",
-        "slug": "bare-metal",
-        "type": "markdown",
-        "chapters": [{
-                "title": "Introduction",
-                "intro": {
-                    "path": "docs/bare_metal.md"
-                },
-                "sources": []
-            },
-            {
-                "title": "Bare metal APIs",
-                "sources": [{
-                    "path": "docs/baremetal_api.md"
-                }]
-            }
-        ]
-    },
-    {
         "title": "APIs",
         "description": "The APIs of Mbed OS: platform, drivers, RTOS, connectivity, security and storage",
         "slug": "apis",
@@ -517,108 +497,106 @@
             },
             {
 
-            "title": "Security",
-    "intro": {
-      "path": "docs/api/security/security.md"
-    },
-    "sources": [
-      {
-        "path": "docs/api/security/psa_attestation.md"
-      },
-      {
-        "path": "docs/api/security/crypto.md"
-      },
-      {
-        "path": "docs/api/security/psa_lifecycle.md"
-      },
-      {
-        "path": "docs/api/security/TLS.md"
-      },
-      {
-        "path": "docs/api/security/Devicekey.md"
-      }
+                "title": "Security",
+                "intro": {
+                    "path": "docs/api/security/security.md"
+                },
+                "sources": [{
+                        "path": "docs/api/security/psa_attestation.md"
+                    },
+                    {
+                        "path": "docs/api/security/crypto.md"
+                    },
+                    {
+                        "path": "docs/api/security/psa_lifecycle.md"
+                    },
+                    {
+                        "path": "docs/api/security/TLS.md"
+                    },
+                    {
+                        "path": "docs/api/security/Devicekey.md"
+                    }
                 ]
             },
             {
-            "title": "Storage",
-    "intro": {
-      "path": "docs/api/storage/storage.md"
-    },
-    "sources": [
-      {
-        "path": "docs/api/storage/KVStoreAPI.md"
-      },
-      {
-        "path": "docs/api/storage/KVStoreGlobalAPI.md"
-      },
-      {
-        "path": "docs/api/storage/FileSystem.md"
-      },
-      {
-        "path": "docs/api/storage/Dir.md"
-      },
-      {
-        "path": "docs/api/storage/File.md"
-      },
-      {
-        "path": "docs/api/storage/LittleFileSystem.md"
-      },
-      {
-        "path": "docs/api/storage/FATFileSystem.md"
-      },
-      {
-        "path": "docs/api/storage/BlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/HeapBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/MBRBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/ChainingBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/SlicingBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/ProfilingBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/BufferedBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/FlashSimBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/DataFlashBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/FlashIAPBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/SDBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/SPIFBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/QSPIFBlockDevice.md"
-      },
-      {
-        "path": "docs/api/storage/NVStore.md"
-      },
-      {
-        "path": "docs/api/storage/psa_internal_storage.md"
-      },
-      {
-        "path": "docs/api/storage/psa_protected_storage.md"
-      }
-    ]
-  }
-],
-"tags": [
-  "apis"
+                "title": "Storage",
+                "intro": {
+                    "path": "docs/api/storage/storage.md"
+                },
+                "sources": [{
+                        "path": "docs/api/storage/KVStoreAPI.md"
+                    },
+                    {
+                        "path": "docs/api/storage/KVStoreGlobalAPI.md"
+                    },
+                    {
+                        "path": "docs/api/storage/FileSystem.md"
+                    },
+                    {
+                        "path": "docs/api/storage/Dir.md"
+                    },
+                    {
+                        "path": "docs/api/storage/File.md"
+                    },
+                    {
+                        "path": "docs/api/storage/LittleFileSystem.md"
+                    },
+                    {
+                        "path": "docs/api/storage/FATFileSystem.md"
+                    },
+                    {
+                        "path": "docs/api/storage/BlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/HeapBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/MBRBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/ChainingBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/SlicingBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/ProfilingBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/BufferedBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/FlashSimBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/DataFlashBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/FlashIAPBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/SDBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/SPIFBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/QSPIFBlockDevice.md"
+                    },
+                    {
+                        "path": "docs/api/storage/NVStore.md"
+                    },
+                    {
+                        "path": "docs/api/storage/psa_internal_storage.md"
+                    },
+                    {
+                        "path": "docs/api/storage/psa_protected_storage.md"
+                    }
+                ]
+            }
+        ],
+        "tags": [
+            "apis"
         ]
     },
     {
@@ -724,6 +702,23 @@
                     },
                     {
                         "path": "docs/reference/thread_safety.md"
+                    }
+                ]
+            },
+            {
+                "title": "Mbed OS bare metal",
+                "sub_chapters": [{
+                        "title": "Introduction",
+                        "intro": {
+                            "path": "docs/bare_metal.md"
+                        },
+                        "sources": []
+                    },
+                    {
+                        "title": "Bare metal APIs",
+                        "sources": [{
+                            "path": "docs/baremetal_api.md"
+                        }]
                     }
                 ]
             },
@@ -1203,7 +1198,7 @@
                     {
                         "path": "docs/porting/target/hw-accelerated-crypto.md"
                     },
-                    {                                               
+                    {
                         "path": "docs/porting/psa/testing_psa_service_compliance.md"
                     }
                 ]
@@ -1292,15 +1287,14 @@
         "slug": "mbed-os-pelion",
         "type": "markdown",
         "description": "",
-        "chapters": [
-          {
-            "title": "Introduction",
-            "intro": {
-              "path": "docs/pelion_ready/introduction_chip2cloud.md"
+        "chapters": [{
+                "title": "Introduction",
+                "intro": {
+                    "path": "docs/pelion_ready/introduction_chip2cloud.md"
+                },
+                "sources": []
             },
-            "sources": []
-          },
-          {
+            {
                 "title": "Device Management for Mbed OS",
                 "sources": [{
                         "path": "docs/pelion_ready/device-management.md"
