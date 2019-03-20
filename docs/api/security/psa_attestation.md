@@ -1,6 +1,6 @@
 ## PSA initial attestation
 
-The PSA initial attestation service enables an application to prove a device's identity to any server or device before communicating data, as part of the authentication process.
+The PSA initial attestation service enables an application to prove a device's identity to any server and application, as part of the authentication process.
 
 The initial attestation service creates a token that contains a fixed set of device-specific data, upon request. To sign the token, the device must contain an attestation key pair, which is unique per device. The service uses the attestation private key to sign the token, and the caller uses the public key to verify the token's authenticity.
 
