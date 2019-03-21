@@ -710,14 +710,14 @@
                 "sub_chapters": [{
                         "title": "Introduction",
                         "intro": {
-                            "path": "docs/bare_metal/bare_metal.md"
+                            "path": "docs/reference/bare_metal/bare_metal.md"
                         },
                         "sources": []
                     },
                     {
                         "title": "Bare metal APIs",
                         "sources": [{
-                            "path": "docs/bare_metal/bare_metal_api.md"
+                            "path": "docs/reference/bare_metal/bare_metal_api.md"
                         }]
                     }
                 ]
