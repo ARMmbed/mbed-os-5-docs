@@ -43,38 +43,12 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 | Arm v7A       | `Arm Compiler 6.11` |
 | Arm v8M       | `Arm Compiler 6.11` |
 
-For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;"> 
+Note: Please note that Arm Compiler 6 is the default Arm Compiler for Mbed OS development. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will be migrated to Arm Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development as Arm Compiler 5 support will be deprecated in future.
+</div>
 
-<span class="note"> **Note:** Arm Compiler 6 is the default ARM toolchain for Mbed OS development. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will also be migrated to ARM Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development, and we will validate all code contributions to Mbed OS with Arm Compiler 6. </span>
+For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
 
 ##### Third party development tools
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](exporting.html).
-
-<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;"> Note: We encourage you to switch to Arm Compiler 6 soon because we will deprecate Arm Compiler 5 support in the future. However, if you need to update to Mbed OS 5.12 but still require compiling with Arm Compiler 5 until you are in possession of Arm Compiler 6, we provide methods to override the Arm toolchain version. If you do this, your target may not be able to compile with Arm Compiler 5, or you may see undefined behaviors.
-
-To force Arm Compiler 5, you can use the following options:
-
-- Create or update your `mbed_app.json` as below. This is the recommended method for applications to use Arm Compiler 5.
-
-```
-{
-  "target_overrides": {
-      "*": {
-          "target.supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"]
-      }
-  }
-}
-```
-
-- For porting a target that cannot use Arm Compiler 6 at this time, modify the `supported_toolchains` entry in `targets.json` to replace all `ARM` and `ARMC6` entries with `ARMC5`:  
-
-```
-"MY_TARGET_NAME": {
-        "supported_form_factors": [...],
-        "core": "Cortex-M4",
-        "supported_toolchains": ["ARMC5", "GCC_ARM", "IAR"],
-        ...
-}
-```
-</div>
