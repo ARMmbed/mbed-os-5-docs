@@ -196,15 +196,15 @@ The `supported_toolchains` property is the list of toolchains that support a tar
 
 When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
-- If you specify `ARMC5` in `supported_toolchains`, it means the target supports Arm Compiler 5 (version 5.06 update 6) only, and the build system uses Arm Compiler 5 when you specify `-t ARM` or `-t ARMC5` with `mbed compile` command. 
+- If the target supports only Arm Compiler 5 (version 5.06 update 6), `supported_toolchains` specifies `ARMC5`. The build system uses Arm Compiler 5 when you use `-t ARM` or `-t ARMC5` with `mbed compile` command. 
 
-- If you specify `ARMC6` in `supported_toolchains`, it means the target supports Arm Compiler 6 (version 6.11) only, and the build system uses Arm Compiler 6 when you specify `-t ARM` or `-t ARMC6` with `mbed compile` command.
+- If the target supports only Arm Compiler 6 (version 6.11), `supported_toolchains` specifies `ARMC6`. The build system uses Arm Compiler 6 when you use `-t ARM` or `-t ARMC6` with `mbed compile` command.
 
-- If you specify `ARM` in `supported_toolchains`, it means the target supports compiling with both Arm Compiler 5 and Arm Compiler 6. Arm Compiler 6 is the default Arm Compiler for Mbed OS. If a target specifies `ARM` in `supported_toolchains`, the system defaults to using Arm Compiler 6 when you specify `-t ARM` with `mbed compile` command. If the build system fails to detect a valid configuration for Arm Compiler 6, it automatically (without any manual intervention) tries to detect if a valid confguration for Arm Compiler 5 exists and continues using Arm Compiler 5 if it successfully detects Arm Compiler 5. You may see a warning message in your standard output from the build system indicating this behavior.
+- If the target supports compiling with both Arm Compiler 5 and Arm Compiler 6, `supported_toolchains` specifies `ARM`. Arm Compiler 6 is the default Arm Compiler for Mbed OS. If a target specifies `ARM` in `supported_toolchains`, the system defaults to using Arm Compiler 6 when you use `-t ARM` with the `mbed compile` command. If the build system fails to detect a valid configuration for Arm Compiler 6, it automatically (without any manual intervention) detects if a valid configuration for Arm Compiler 5 exists and continues using Arm Compiler 5 if it successfully detects Arm Compiler 5. You will see a warning message in your standard output from the build system indicating this behavior.
 
 - You can only specify one of `ARM`, `ARMC5` or `ARMC6` for `supported_toolchains` for a target in `targets/targets.json` or `custom_targets.json`.
 
-- It's invalid to specify `-t ARMC5` with the `mbed compile` command for a target that specifies `ARMC6` for `supported_toolchains` or vice-versa.
+- It's invalid to use `-t ARMC5` with the `mbed compile` command for a target that specifies `ARMC6` for `supported_toolchains`, and it's invalid to use `-t ARMC6` if `supported_toolchains` specifies `ARMC5`.
 
 <span class="notes">**Note:** Arm Compiler 6 is the default Arm Compiler for Mbed OS development. Most Mbed OS platforms are already compatible with Arm Compiler 6. Some existing targets still supporting Arm Compiler 5 will be migrated to Arm Compiler 6 in the future. Please be aware that you must use Arm Compiler 6 for future development because Arm Compiler 5 support will be deprecated in September 2019.</span>
 
