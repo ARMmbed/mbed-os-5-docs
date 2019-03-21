@@ -15,7 +15,7 @@ For full documentation about bootloaders and firmware update, please read the fo
 - [Introduction to Mbed OS bootloaders](../porting/bootloader.html).
 - [Creating and using an Mbed OS bootloader](../tutorials/bootloader.html).
 - [Bootloader configuration in Mbed OS](../reference/bootloader-configuration.html).
-- [Mbed Bootloader for Device Management](https://github.com/ARMmbed/mbed-bootloader).
+- [Mbed Bootloader for Device Management](https://github.com/ARMmbed/mbed-bootloader), or the short introduction [in the Device Management documentation](https://cloud.mbed.com/docs/current/updating-firmware/bootloaders.html).
 - [Updating devices with Mbed CLI](../tools/cli-update.html).
 
 To hasten this process, you can copy the configuration from the [application example](https://github.com/ARMmbed/pelion-ready-example/blob/master/mbed_app.json) as the basis for your application configuration.
@@ -148,12 +148,13 @@ Before jumping to the next step, you should compile and flash the bootloader and
             "update-client.application-details": "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
    ```
 
-   <span class="notes">**Note:**    
+   **Note:**    
+
       - `update-client.application-details` should be identical in both `bootloader_app.json` and `mbed_app.json`.
       - `target.app_offset` is relative offset to `flash-start-address` you specified in `mbed_app.json` and `bootloader_app.json`, and is the hex value of the offset specified by `application-start-address` in `bootloader_app.json`. For example,  `(MBED_CONF_APP_FLASH_START_ADDRESS+65*1024)` dec equals `0x10400` hex.
-      - `target.header_offset` is also relative offset to the `flash-start-address` you specified in the `bootloader_app.json`, and is the hex value of the offset specified by `update-client.application-details`. For example, `(MBED_CONF_APP_FLASH_START_ADDRESS+64*1024)` dec equals `0x10000` hex.</span>
+      - `target.header_offset` is also relative offset to the `flash-start-address` you specified in the `bootloader_app.json`, and is the hex value of the offset specified by `update-client.application-details`. For example, `(MBED_CONF_APP_FLASH_START_ADDRESS+64*1024)` dec equals `0x10000` hex.
 
-1. Finally, compile and rerun all tests, including the firmware update ones with:
+1. Compile and rerun all tests, including the firmware update ones with:
 
    ```
    $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect -DMBED_TEST_MODE --compile
