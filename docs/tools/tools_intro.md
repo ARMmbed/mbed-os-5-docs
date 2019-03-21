@@ -30,7 +30,7 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
 
 Mbed Studio is our new in-house desktop IDE. Mbed Studio is now available to anyone with an Mbed account as a public beta. You can download it for Windows and Mac, and access the documentation at [os.mbed.com/studio](https://os.mbed.com/studio).
 
-Mbed Studio is designed to speed up your development flow and provide functionality that helps you to get the most out of Mbed OS. To complement our popular Online Compiler and command line tools we want to give you the tooling you need in a desktop IDE to have a quick development, debug and deploy cycle when you build your next product.
+To complement our popular Mbed Online Compiler and command-line tools, we created Mbed Studio, the tooling you need in a desktop IDE to have a quick development, debug and deploy cycle when you build your next product. Mbed Studio speeds up your development flow and provides functionality that helps you get the most out of Mbed OS.
 
 ##### Arm Mbed Online Compiler
 
