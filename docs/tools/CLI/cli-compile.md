@@ -37,8 +37,9 @@ Image: BUILD/K64F/GCC_ARM/mbed-os-program.bin
 The arguments for *compile* are:
 
 - `-m <MCU>` selects a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
-- `-t <TOOLCHAIN>` selects a toolchain defined in `mbed_settings.py`. The value can be `ARM` (Arm Compiler), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
-   <span class="notes">**Note**: `mbed compile -t ARM` selects the Arm Compiler major version based on the Arm architecture version of your target. Arm architecture versions 6 and 7 use Arm Compiler 5, and Arm architecture version 8 uses Arm Compiler 6.</span>
+- `-t <TOOLCHAIN>` selects a toolchain defined in `mbed_settings.py`. The value can be `ARM` (Arm Compiler 6 or ARM Compiler 5), `ARMC5` (ARM Compiler 5), `ARMC6` (Arm Compiler 6), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
+   <span class="notes">**Note**: `mbed compile -t ARM` selects the Arm Compiler major version based on the Arm architecture version of your target and `supported_toolchains` configuration.
+   Please see `supported_toolchains` in [Adding and configuring targets](../reference/adding-and-configuring-targets.html) and `Compiler versions` in [Arm Mbed tools](../tools/tools_intro.html) for more information on toolchain configuration and usage.</span>
 - `--source <SOURCE>` selects the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree. Find more details about the `--source` switch in the [build rules documentation](../reference/mbed-os-build-rules.html).
 - `--build <BUILD>` selects the build directory. Default: `BUILD/` inside your program root.
    <span class="notes">**Note**: `mbed compile` ignores the current build directory; creating multiple build directories leads to errors.</span>
