@@ -719,6 +719,12 @@
                         "sources": [{
                             "path": "docs/reference/bare_metal/bare_metal_api.md"
                         }]
+                    },
+                    {
+                        "title": "Bare metal example application",
+                        "sources": [{
+                            "path": "docs/baremetal_example.md"
+                        }]
                     }
                 ]
             },
