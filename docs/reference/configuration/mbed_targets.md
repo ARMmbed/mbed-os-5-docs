@@ -196,7 +196,7 @@ The `supported_toolchains` property is the list of toolchains that support a tar
 
 When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
-- If the target supports only Arm Compiler 5 (version 5.06 update 6), `supported_toolchains` specifies `ARMC5`. The build system uses Arm Compiler 5 when you use `-t ARM` or `-t ARMC5` with `mbed compile` command. 
+- If the target supports only Arm Compiler 5 (version 5.06 update 6), `supported_toolchains` specifies `ARMC5`. The build system uses Arm Compiler 5 when you use `-t ARM` or `-t ARMC5` with `mbed compile` command.
 
 - If the target supports only Arm Compiler 6 (version 6.11), `supported_toolchains` specifies `ARMC6`. The build system uses Arm Compiler 6 when you use `-t ARM` or `-t ARMC6` with `mbed compile` command.
 
@@ -206,7 +206,7 @@ When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
 - It's invalid to use `-t ARMC5` with the `mbed compile` command for a target that specifies `ARMC6` for `supported_toolchains`, and it's invalid to use `-t ARMC6` if `supported_toolchains` specifies `ARMC5`.
 
-<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development, and is [free for use with Mbed OS]((https://os.mbed.com/docs/mbed-os/development/tools/index.html#compiler-versions). Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.
+<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development, and is [free for use with Mbed OS](https://os.mbed.com/docs/mbed-os/development/tools/index.html#compiler-versions). Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.
 .</span>
 
 #### default_toolchain
