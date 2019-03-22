@@ -1,3 +1,7 @@
+### Pull request template: breaking changes
+
+
+```
 <!--
     These sections should be part of the PR template for any breaking change.
 -->
@@ -9,3 +13,4 @@
 #### Analysis of effects
 
 #### Migration path
+```
