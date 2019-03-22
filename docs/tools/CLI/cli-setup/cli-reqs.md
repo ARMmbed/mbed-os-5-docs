@@ -228,6 +228,12 @@ Mbed CLI supports a setting for each toolchain path:
 | IAR EWARM Compiler | `C:/Program Files/IAR Systems/Embedded Workbench 8.2/arm/bin/iccarm.exe` | `IAR_PATH` | `C:/Program Files/IAR Systems/Embedded Workbench 8.2/arm`|
 | GCC Arm Embedded Compiler | `/usr/bin/arm-none-eabi-gcc` | `GCC_ARM_PATH` | `/usr/bin`|
 
+##### Using Arm Compiler 6 from Mbed Studio
+Mbed Studio comes with a free version of Arm Compiler 6 when it's used with Mbed OS. It requires configuring the `ARMC6_PATH` as well as setting an environment variable to manage the license.
+
+For Mbed Studio version 0.4.0, the Arm Compiler 6 executable is located in `./tools/ac6/bin`. This path is relative to the installation directory of Mbed Studio. On Windows for example, the default path is `C:\MbedStudio\tools\ac6\bin`.
+
+You must also set the environment variable `ARMLMD_LICENSE_FILE` to the path of Mbed Studio's Arm Compiler 6 license. For Mbed Studio version 0.4.0, the license is located at `./tools/ac6-license.dat`. This path is relative to the installation directory of Mbed Studio. On Windows for example, the default path is `C:\MbedStudio\tools\ac6-license.dat`. Note that this environment variable is not managed by Mbed CLI, so you must set it appropriately in your environment.
 
 #### Method 2: environment variable
 
