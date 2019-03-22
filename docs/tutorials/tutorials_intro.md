@@ -232,6 +232,7 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 <tr>
 <td><a href="../apis/mbed-statistics.html#system-information-example">System information example</a></td>
 <td><a href="../apis/mbed-statistics.html#cpu-statistics-example">CPU statistics example</a></td>
+<td><a href="../reference/bare-metal-example.html">Blinky bare metal example</a></td>
 </tr>
 </tbody>
 </table>
