@@ -131,11 +131,11 @@ $ cd mbed-os
 $ mbed releases
 mbed-os (#182bbd51bc8d, tags: latest, mbed-os-5.6.5)
   ...
-  * mbed-os-5.6.0 
-  * mbed-os-5.6.1 
-  * mbed-os-5.6.2 
-  * mbed-os-5.6.3 
-  * mbed-os-5.6.4 
+  * mbed-os-5.6.0
+  * mbed-os-5.6.1
+  * mbed-os-5.6.2
+  * mbed-os-5.6.3
+  * mbed-os-5.6.4
   * mbed-os-5.6.5  <- current
 ```
 
@@ -147,12 +147,12 @@ Lastly, you can list unstable releases, such as release candidates, alphas and b
 $ cd mbed-client
 $ mbed releases -u
 mbed-client (#31e5ce203cc0, tags: v3.0.0)
-  * mbed-os-5.0-rc1 
-  * mbed-os-5.0-rc2 
-  * r0.5-rc4 
+  * mbed-os-5.0-rc1
+  * mbed-os-5.0-rc2
+  * r0.5-rc4
   ...
-  * v2.2.0 
-  * v2.2.1 
+  * v2.2.0
+  * v2.2.1
   * v3.0.0  <- current
 ```
 
@@ -235,4 +235,4 @@ For safety reasons, Mbed CLI uses the `mbed-cache` subfolder to a user specified
 
 Through the caching feature in Mbed CLI, you can enable offline mode, which uses the already cached repositories on your system. You can enable offline mode by adding the `--offline` switch to `mbed import`, `mbed add`, `mbed update` and `mbed new`.
 
-In offline mode, Mbed CLI looks up locally cached repositories and uses them without fetching new content from their remote repositories. This is particularly useful if for example you are in a plane and you'd like to create another Mbed OS project (assuming you've imported or created one before), but you don't have access to the internet. By using the command `mbed new <project_name> --offline`, you can create the project with Mbed OS included.
+In offline mode, Mbed CLI looks up locally cached repositories and uses them without fetching new content from their remote repositories. This is particularly useful if, for example, you are on a flight and you'd like to create another Mbed OS project (assuming you've imported or created one before), but you don't have access to the internet. By using the command `mbed new <project_name> --offline`, you can create the project with Mbed OS included.
