@@ -1085,6 +1085,12 @@
                 "path": "docs/reference/contributing/guidelines/workflow.md"
             },
             {
+                "path": "docs/reference/contributing/guidelines/pull_request_drafts/pr_breaking_change.md"
+            },
+            {
+                "path": "docs/reference/contributing/guidelines/pull_request_drafts/pr_functional_change.md"
+            },
+            {
                 "path": "docs/reference/contributing/guidelines/ci.md"
             }
         ]
