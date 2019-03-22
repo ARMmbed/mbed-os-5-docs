@@ -108,6 +108,29 @@ $ mbed compile -t ARM -m K64F --source project2 --source mbed-os --build BUILD/p
 
 Find more details on the `--source` switch in the [build rules documentation](../reference/mbed-os-build-rules.html).
 
+### Importing a program
+
+You can import an existing program by using the `mbed import` command.
+
+```
+$ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0
+[mbed] Working path "C:\dev" (directory)
+[mbed] Importing program "mbed-os-example-blinky" from "https://github.com/ARMmbed/mbed-os-example-blinky" at branch/tag "mbed-os-5.11.0"
+[mbed] Adding library "mbed-os" from "https://github.com/ARMmbed/mbed-os" at rev #6a0a86538c0b
+```
+
+You can change what version of the program is imported by changing what comes after the `#` character. You may supply a commit hash, a branch name, or a tag name. If you do not provide any of these (nor the `#` character), the latest commit on the `master` branch is imported.
+
+A project is named after the last part of the URL by default. In the above example, a directory named `mbed-os-example-blinky` will be created to contain the imported program. If you wish to change the name of the project while importing, you can do this by supplying it as an extra positional argument:
+
+```
+$ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0 my-blinky
+```
+
+In this case, a directory named `my-blinky` will be created instead.
+
+Running `mbed import` within an existing program will result in an error. If you wish to add a library to an existing project, you can use the `mbed add` command in a similar manner.
+
 ### Updating programs and libraries
 
 You can update programs and libraries on your local machine, so they update to the latest released version from the remote sources (Git or Mercurial).
