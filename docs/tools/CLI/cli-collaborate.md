@@ -16,18 +16,6 @@ Don't forget to set the current directory as the root of your program:
 $ mbed new .
 ```
 
-### Exporting to desktop IDEs
-
-If you need to debug your code, you can export your source tree to an IDE project file to use the IDE's debugging facilities. Mbed CLI supports exporting to Keil uVision, IAR Workbench, a Makefile using GCC Arm, Eclipse using GCC Arm and other IDEs.
-
-For example, to export to uVision, run:
-
-```
-$ mbed export -i uvision -m K64F
-```
-
-Mbed CLI creates a `.uvprojx` file in the root project directory. You can open the project file with uVision.
-
 #### Serial terminal
 
 You can open a serial terminal to the serial port of a connected Mbed target (usually board) using the `mbed sterm` command. If no serial port is specified, Mbed CLI will attempt to detect the connected Mbed targets and their serial ports.
