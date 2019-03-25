@@ -129,7 +129,7 @@ $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0 m
 
 In this case, a directory named `my-blinky` will be created instead.
 
-Running `mbed import` within an existing program will result in an error. If you wish to add a library to an existing project, you can use the `mbed add` command in a similar manner.
+<span class="tips">**Tip**: Running `mbed import` within an existing program will result in an error. To add a library to an existing project, use the `mbed add` command.</span>
 
 ### Updating programs and libraries
 
