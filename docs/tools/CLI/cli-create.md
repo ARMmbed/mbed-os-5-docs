@@ -121,13 +121,44 @@ $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0
 
 You can specify which version to import using `#` followed by a commit hash, a branch name, or a tag name. If you do not provide any of these (nor the `#` character), the latest commit on the `master` branch will be imported.
 
-A project's default name is the last part of the URL (excluding `#` and its value). In the example above, the imported program's project folder is `mbed-os-example-blinky`. To specify a different name, supply it as an extra positional argument in the import command. For example, to name your project `my-blinky`, run:
+A project's default name is the last part of the URL (excluding `#` and its value). In the example above, the imported program's project folder is `mbed-os-example-blinky`. To specify a different name, supply it as an extra positional argument in the `mbed import` command. For example, to name your project `my-blinky`, run:
 
 ```
 $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0 my-blinky
 ```
 
 <span class="tips">**Tip**: Running `mbed import` within an existing program will result in an error. To add a library to an existing project, use the `mbed add` command.</span>
+
+### Adding libraries to programs
+
+You can use the `mbed add` command to add a library to a program. Run the following command within your project directory:
+
+```
+$ mbed add https://github.com/ARMmbed/mbed-cloud-client
+[mbed] Working path "C:\dev\mbed-os-example-blinky" (program)
+[mbed] Adding library "mbed-cloud-client" from "https://github.com/ARMmbed/mbed-cloud-client" at latest revision in the current branch
+[mbed] Updating reference "mbed-cloud-client" -> "https://github.com/ARMmbed/mbed-cloud-client/#377c6b8fb0f8b66be03408a438ff0cd96be0c454"
+```
+
+Like the `mbed import` command, you can specify which version to use by using `#` at the end of the URL followed by a commit hash, a branch name, or a tag name. If you do not provide any of these (nor the `#` character), the latest commit on the `master` branch will be used.
+
+The `mbed add` command will clone the repository specified, checkout to the correct version, and write the URL and _commit hash_ to a `.lib` file. Branches and tags can point to different commits over the lifetime of a repository, so to ensure the project's state is always reproducible, the commit hash is written to the `.lib` file. This `.lib` file should be committed to the project repository to track the dependency.
+
+A library's default name is the last part of the URL (excluding `#` and its value). In the example above, the cloned library's folder is `mbed-cloud-client`. To specify a different name, supply it as an extra positional argument in the `mbed add` command. For example, to name your library `my-mcc`, run:
+
+```
+$ mbed add https://github.com/ARMmbed/mbed-cloud-client my-mcc
+```
+
+### Removing libraries
+
+Remove a library (and it's `.lib` file) from your project by supplying the path to the library to the `mbed remove` command. Continuing the example from above, run the following from your project directory to remove the library that was added previously:
+
+```
+$ mbed remove mbed-cloud-client
+```
+
+Commit the removal of the `.lib` file from your project to remove the dependency.
 
 ### Updating programs and libraries
 
