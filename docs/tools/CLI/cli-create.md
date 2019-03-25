@@ -127,8 +127,6 @@ A project's default name is the last part of the URL (excluding `#` and its valu
 $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0 my-blinky
 ```
 
-In this case, a directory named `my-blinky` will be created instead.
-
 <span class="tips">**Tip**: Running `mbed import` within an existing program will result in an error. To add a library to an existing project, use the `mbed add` command.</span>
 
 ### Updating programs and libraries
