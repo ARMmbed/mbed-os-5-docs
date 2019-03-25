@@ -121,7 +121,7 @@ $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0
 
 You can specify which version to import using `#` followed by a commit hash, a branch name, or a tag name. If you do not provide any of these (nor the `#` character), the latest commit on the `master` branch will be imported.
 
-A project is named after the last part of the URL by default. In the above example, a directory named `mbed-os-example-blinky` will be created to contain the imported program. If you wish to change the name of the project while importing, you can do this by supplying it as an extra positional argument:
+A project's default name is the last part of the URL (excluding `#` and its value). In the example above, the imported program's project folder is `mbed-os-example-blinky`. To specify a different name, supply it as an extra positional argument in the import command. For example, to name your project `my-blinky`, run:
 
 ```
 $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0 my-blinky
