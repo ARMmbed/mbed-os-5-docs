@@ -723,7 +723,7 @@
                     {
                         "title": "Bare metal example application",
                         "sources": [{
-                            "path": "docs/baremetal_example.md"
+                            "path": "docs/reference/bare_metal/baremetal_example.md"
                         }]
                     }
                 ]
