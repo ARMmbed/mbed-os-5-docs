@@ -35,7 +35,7 @@ The term characteristic value update represents Characteristic Value Notificatio
 
 ### GattServer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_gatt_server.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_gatt_server.html)
 
 ### GattServer example
 

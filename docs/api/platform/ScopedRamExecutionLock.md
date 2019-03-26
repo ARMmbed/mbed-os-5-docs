@@ -4,7 +4,7 @@ The `ScopedRamExecutionLock` class provides an RAII object for enabling executio
 
 ### ScopedRamExecutionLock class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_scoped_ram_execution_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.12/mbed-os-api-doxy/classmbed_1_1_scoped_ram_execution_lock.html)
 
 ### Example
 

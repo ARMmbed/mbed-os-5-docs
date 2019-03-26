@@ -8,7 +8,7 @@ To configure this class, please see the [LoRa configuration documentation](../re
 
 ### LoRaRadio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_lo_ra_radio.html)
 
 ### LoRaRadio example
 
