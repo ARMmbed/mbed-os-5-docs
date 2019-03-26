@@ -1,40 +1,7 @@
 
 ## Collaborate
 
-### Importing an existing program
-
-Use `mbed import` to clone an existing program and all its dependencies to your machine:
-
-```
-$ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
-[mbed] Importing program "mbed-os-example-blinky" from "https://github.com/ARMmbed/mbed-os-example-blinky" at latest revision in the current branch
-[mbed] Adding library "mbed-os" from "https://github.com/ARMmbed/mbed-os" at rev #dd36dc4228b5
-$ cd mbed-os-example-blinky
-```
-
-Mbed CLI also supports programs based on Mbed OS 2, which it automatically detects and which do not require additional options:
-
-```
-$ mbed import https://mbed.org/teams/mbed/code/mbed_blinky/
-[mbed] Importing program "mbed_blinky" from "https://mbed.org/teams/mbed/code/mbed_blinky" at latest revision in the current branch
-[mbed] Adding library "mbed" from "http://mbed.org/users/mbed_official/code/mbed/builds" at rev #f9eeca106725
-[mbed] Couldn't find build tools in your program. Downloading the mbed 2.0 SDK tools...
-$ cd mbed-os-example-blinky
-```
-
-You can use the "import" command without specifying a full URL; Mbed CLI adds a [prefix](https://github.com/ARMmbed) to the URL if one is not present. For example, this command:
-
-```
-$ mbed import mbed-os-example-blinky
-```
-
-is equivalent to this command:
-
-```
-$ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
-```
-
-### Importing from a Git or GitHub clone
+### Importing from a cloned repository
 
 If you have manually cloned a Git repository into your workspace and you want to add all missing libraries, then you can use the `deploy` command:
 
@@ -47,87 +14,6 @@ Don't forget to set the current directory as the root of your program:
 
 ```
 $ mbed new .
-```
-
-### Adding and removing libraries
-
-While working on your code, you may need to add another library to your application or remove existing libraries.
-
-Adding a new library to your program is not the same as cloning the repository. Don't clone a library using `hg` or `git`; use `mbed add` to add the library. This ensures that all libraries and sublibraries are populated as well.
-
-Removing a library from your program is not the same as deleting the library directory. Mbed CLI updates and removes library reference files. Use `mbed remove` to remove the library; don't remove its directory with `rm`.
-
-#### Adding a library
-
-Use `mbed add` to add the latest revision of a library:
-
-```
-$ mbed add https://developer.mbed.org/users/wim/code/TextLCD/
-```
-
-Use the `URL#hash` format to add a library from a URL at a specific revision hash:
-
-```
-$ mbed add https://developer.mbed.org/users/wim/code/TextLCD/#e5a0dcb43ecc
-```
-
-#### Specifying a destination directory
-
-If you want to specify a directory to which to add your library, you can give an additional argument to ``add``, which names that directory. For example, If you'd rather add the previous library in a directory called "text-lcd" (instead of TextLCD):
-
-```
-$ mbed add https://developer.mbed.org/users/wim/code/TextLCD/ text-lcd
-```
-
-Although Mbed CLI supports this functionality, we don't encourage it. Adding a library with a name that differs from its source repository can lead to confusion.
-
-#### Removing a library
-
-If at any point you decide that you don't need a library any more, you can use `mbed remove` with the path of the library:
-
-```
-$ mbed remove text-lcd
-```
-
-### Exporting to desktop IDEs
-
-If you need to debug your code, you can export your source tree to an IDE project file to use the IDE's debugging facilities. Mbed CLI supports exporting to Keil uVision, IAR Workbench, a Makefile using GCC Arm, Eclipse using GCC Arm and other IDEs.
-
-For example, to export to uVision, run:
-
-```
-$ mbed export -i uvision -m K64F
-```
-
-Mbed CLI creates a `.uvprojx` file in the root project directory. You can open the project file with uVision.
-
-#### Serial terminal
-
-You can open a serial terminal to the serial port of a connected Mbed target (usually board) using the `mbed sterm` command. If no serial port is specified, Mbed CLI will attempt to detect the connected Mbed targets and their serial ports.
-
-There are various options to `mbed sterm`:
-
-- `--port <serial port>` to specify system serial port to connect to.
-- `--baudrate <numeric>` to select the communication baudrate, where the default value is 9600.
-- `--echo <on|off>` to switch local echo (default is `on`).
-- `--reset` to reset the connected target by sending Break before opening the serial terminal.
-
-You can also set default port, baudrate and echo mode using the `TERM_PORT`, `TERM_BAUDRATE` and `TERM_ECHO` Mbed CLI configuration options.
-
-The following shortcuts are available within the serial terminal:
-
-- Ctrl+b - Send Break (reset target)
-- Ctrl+c - Exit terminal
-- Ctrl+e - Toggle local echo
-- Ctrl+h - Help
-- Ctrl+t - Menu escape key
-
-More shortcuts can be viewed within the serial terminal's help menu (Ctrl+h).
-
-You can also add the `--sterm` option to `mbed compile -f` to compile a new program, flash the program/firmware image to the connected target and then open the serial terminal to its serial port:
-
-```
-$ mbed compile -t GCC_ARM -m K64F -f --sterm
 ```
 
 ### Publishing changes
@@ -182,15 +68,15 @@ When you create a new (local) version control managed program or library, its re
 1. Copy the URL/location of the new repository in your clipboard.
 1. Open command-line in the local repository directory (for example, change directory to `mbed-os-example/local-lib`).
 1. To associate the local repository:
-   
+
    - For Git, run `git remote add origin <url-or-path-to-your-remote-repo>`.
    - For Mercurial, edit .hg/hgrc and add (or replace if exists):
-      
+
       ```
       [paths]
       default = <url-or-path-to-your-remote-repo>
       ```
-   
+
 1. Run `mbed publish` to publish your changes.
 
 In a scenario with nested local repositories, start with the leaf repositories first.
