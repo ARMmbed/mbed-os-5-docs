@@ -12,7 +12,7 @@ API summary
 
 ### DigitalIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/file/954ac88dda04/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/file/9377dcb1cef3/main.cpp)
 
 ### DigitalIn example
 
@@ -20,7 +20,7 @@ To handle an interrupt, see [InterruptIn](interruptin.html).
 
 Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/file/10c4d3aa026e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/file/ad8683db322a/main.cpp)
 
 ### Related content
 
