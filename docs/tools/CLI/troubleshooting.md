@@ -3,7 +3,7 @@
 
 ### Missing Python dependencies
 
-Mbed CLI attempts to automatically installs missing Python dependencies. This step can fail if Mbed CLI does not have permission to install them. If it fails, Mbed CLI will print out a warning and a suggested command to run with the necessary permissions:
+Mbed CLI attempts to automatically install missing Python dependencies. If Mbed CLI doesn't have the necessary permissions, installation fails and Mbed CLI prints out a warning and a suggested command to run with the necessary permissions:
 
 ```
 Missing Python modules were not auto-installed.
