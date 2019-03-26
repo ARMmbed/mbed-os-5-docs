@@ -277,8 +277,8 @@ You can open a serial terminal to the serial port of a connected Mbed target (us
 
 There are various options to `mbed sterm`:
 
-- `--port <serial port>` to specify system serial port to connect to.
-- `--baudrate <numeric>` to select the communication baudrate, where the default value is 9600.
+- `--port <serial port>` to specify a system serial port to connect to.
+- `--baudrate <numeric>` to select the communication baudrate; the default value is 9600.
 - `--echo <on|off>` to switch local echo (default is `on`).
 - `--reset` to reset the connected target by sending Break before opening the serial terminal.
 
@@ -286,13 +286,13 @@ You can also set default port, baudrate and echo mode using the `TERM_PORT`, `TE
 
 The following shortcuts are available within the serial terminal:
 
-- Ctrl+b - Send Break (reset target)
-- Ctrl+c - Exit terminal
-- Ctrl+e - Toggle local echo
-- Ctrl+h - Help
-- Ctrl+t - Menu escape key
+- <kbd>Ctrl</kbd>+<kbd>B</kbd> - Send Break (reset target)
+- <kbd>Ctrl</kbd>+<kbd>C</kbd> - Exit terminal
+- <kbd>Ctrl</kbd>+<kbd>E</kbd> - Toggle local echo
+- <kbd>Ctrl</kbd>+<kbd>H</kbd> - Help
+- <kbd>Ctrl</kbd>+<kbd>T</kbd> - Menu escape key
 
-More shortcuts can be viewed within the serial terminal's help menu (Ctrl+h).
+You can view more shortcuts in the serial terminal's help menu (<kbd>Ctrl</kbd>+<kbd>H</kbd>).
 
 You can also add the `--sterm` option to `mbed compile -f` to compile a new program, flash the program/firmware image to the connected target and then open the serial terminal to its serial port:
 

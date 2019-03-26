@@ -127,7 +127,7 @@ A project's default name is the last part of the URL (excluding `#` and its valu
 $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky#mbed-os-5.11.0 my-blinky
 ```
 
-<span class="tips">**Tip**: Running `mbed import` within an existing program will result in an error. To add a library to an existing project, use the `mbed add` command.</span>
+<span class="tips">**Tip**: Running `mbed import` within an existing program will result in an error. To add a library to an existing project, use the `mbed add` command (reviewed below).</span>
 
 ### Adding libraries to programs
 
@@ -142,7 +142,7 @@ $ mbed add https://github.com/ARMmbed/mbed-cloud-client
 
 Like the `mbed import` command, you can specify which version to use by using `#` at the end of the URL followed by a commit hash, a branch name, or a tag name. If you do not provide any of these (nor the `#` character), the latest commit on the `master` branch will be used.
 
-The `mbed add` command will clone the repository specified, checkout to the correct version, and write the URL and _commit hash_ to a `.lib` file. Branches and tags can point to different commits over the lifetime of a repository, so to ensure the project's state is always reproducible, the commit hash is written to the `.lib` file. This `.lib` file should be committed to the project repository to track the dependency.
+The `mbed add` command clones the repository specified, check out to the correct version, and write the URL and _commit hash_ to a `.lib` file. Branches and tags can point to different commits over the lifetime of a repository, so to ensure the project's state is always reproducible, the commit hash is written to the `.lib` file. This `.lib` file should be committed to the project repository to track the dependency.
 
 A library's default name is the last part of the URL (excluding `#` and its value). In the example above, the cloned library's folder is `mbed-cloud-client`. To specify a different name, supply it as an extra positional argument in the `mbed add` command. For example, to name your library `my-mcc`, run:
 
@@ -152,7 +152,7 @@ $ mbed add https://github.com/ARMmbed/mbed-cloud-client my-mcc
 
 ### Removing libraries
 
-Remove a library (and it's `.lib` file) from your project by supplying the path to the library to the `mbed remove` command. Continuing the example from above, run the following from your project directory to remove the library that was added previously:
+To remove a library (and its `.lib` file) from your project, use the `mbed remove` command with the path to the library. Continuing the example above, run the following from your project directory to remove the library that you added previously:
 
 ```
 $ mbed remove mbed-cloud-client
