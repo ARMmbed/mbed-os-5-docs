@@ -42,5 +42,5 @@ If you see no output, this can indicate a serial port problem. Find the reason f
 
 ### Advanced debugging your application
 
-There might be cases when finding the root cause of the problem requires more investigation and the use of addition debug tools. You can export the project to a third party IDE and use the Mbed interface port of your Mbed board to download and execute the Mbed OS application step by step. Read <a href="https://os.mbed.com/docs/v5.6/tutorials/debugging.html" target="_blank">our tutorial</a>, which guides you through this process.
+There might be cases when finding the root cause of the problem requires more investigation and the use of addition debug tools. You can export the project to a third party IDE and use the Mbed interface port of your Mbed board to download and execute the Mbed OS application step by step. Read on to be guided through this process.
 
