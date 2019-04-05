@@ -323,9 +323,6 @@
                         "path": "docs/api/rtos/Mail.md"
                     },
                     {
-                        "path": "docs/api/rtos/RtosTimer.md"
-                    },
-                    {
                         "path": "docs/api/rtos/EventFlags.md"
                     },
                     {
