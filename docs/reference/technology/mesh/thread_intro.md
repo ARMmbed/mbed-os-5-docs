@@ -1,6 +1,6 @@
 <h2 id="thread-tech">Thread</h2>
 
-Thread was designed with one goal in mind; to create the best way to connect and control products in home. The key features of Thread are:
+Thread was designed with one goal in mind; to create the best way to connect and control products in a home environment. The key features of Thread are:
 
 - Designed for home.
 - Built-in security.
