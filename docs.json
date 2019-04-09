@@ -889,7 +889,10 @@
                             },
                             {
                                 "path": "docs/tools/CLI/debug_builds_cli.md"
-                            }
+                            },
+                            {
+                                "path": "docs/tools/CLI/troubleshooting.md"
+                            },
                         ]
                     }
                 ]
