@@ -179,7 +179,6 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tr>
 <td><a href="wi-fi.html">Wi-Fi</a></td>
 <td><a href="mesh-api.html">Mesh</a></td>
-<tr>
 </tr>
 </tbody>
 </table>
