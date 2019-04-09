@@ -215,9 +215,9 @@ Further, the exporters have limited support for the postbuild merge that bootloa
 
 **Managed bootloader projects**
 
-The postbuild merge step is available when exporting to uVision from an offline project. This requires Mbed CLI and all of the Python dependencies to be installed on the local system.
+The postbuild merge step is available when exporting to uVision from an offline project. This requires the installation of Mbed CLI and all of the Python dependencies on the local system.
 
-All other exporters do not implement the postbuild merge step. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this bootloader image, the device will not boot correctly.
+No other exporters implement the postbuild merge step. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. If you do not flash this bootloader image, the device does not boot correctly.
 
 **Unmanaged bootloader projects**
 
