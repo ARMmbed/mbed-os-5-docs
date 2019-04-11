@@ -6,7 +6,7 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 Mbed’s `BLE_API` interfaces with the BLE controller on the platform. It hides the BLE stack’s complexity behind C++ abstractions and is compatible with all BLE-enabled Mbed platforms. The Mbed OS `BLE_API` automatically configuring the clocks, timers and other hardware peripherals to work at their lowest power consumption.
 
-### `BLE_API`, bridges and stacks
+## `BLE_API`, bridges and stacks
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/BLEDiagram.png)</span>
 
@@ -16,7 +16,7 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 - The bridge software is specific to each vendor’s platform. It provides the instantiations for the interfaces `BLE_API` offers and helps drive the underlying controller and Bluetooth stack.
 - The Bluetooth stack implements the Bluetooth protocol and is specific to the controller, so a vendor using different controllers may provide different stacks.
 
-### Inside `BLE_API`
+## Inside `BLE_API`
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Inside_API.png)</span>
 
@@ -26,7 +26,7 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 
 1. Classes under `ble/services` to offer reference implementations for many of the commonly used GATT profiles. The code under 'services/' isn't essential, but it’s a useful starting point for prototyping. We continue to implement the standard GATT profiles.
 
-### The BLEDevice class and header
+## The BLEDevice class and header
 
 The entry point of Mbed's `BLE_API` is the BLE class accessible using the header `ble/BLE.h`. This class allows you to obtain a BLE object that includes the basic attributes of a spec-compatible BLE device and can work with any BLE radio:
 
@@ -42,7 +42,7 @@ The class's member functions can be divided by purpose:
 
 1. Accessor to Bluetooth Modules that manage GAP, GATT or the security.
 
-### Usage
+## Usage
 
 1. Set up advertising and connection modes.
 1. Assign UUIDs to the service and its characteristic.
