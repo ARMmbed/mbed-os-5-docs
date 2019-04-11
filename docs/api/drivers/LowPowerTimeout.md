@@ -4,7 +4,7 @@
 
 Use the LowPowerTimeout interface to set up an interrupt to call a function after a specified delay. You can create any number of LowPowerTimeout objects. This allows multiple outstanding interrupts at the same time. For more information about power management, please see our [power management APIs](power-management.html).
 
-### Notes
+## Notes
 
 - No blocking code in ISR: Avoid any call to wait, infinite while loop or blocking calls in general.
 - No printf, malloc or new in ISR: Avoid any call to bulky library functions. In particular, certain library functions (such as printf, malloc and new) are not re-entrant, and their behavior could be corrupted when called from an ISR.
