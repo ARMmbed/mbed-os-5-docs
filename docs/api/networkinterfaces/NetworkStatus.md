@@ -4,7 +4,7 @@ This interface informs you about connection state changes asynchronously. Provid
 
 ![Network states](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/NetworkinterfaceStates.png)
 
-### Usage
+## Usage
 
 The callback needs to handle these possible network states:
 
