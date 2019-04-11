@@ -1,6 +1,6 @@
-<h2 id="ble-tutorial">BLE</h2>
+<h1 id="ble-tutorial">BLE</h1>
 
-### Getting started
+## Getting started
 
 1. Choose an [Arm Mbed board that supports BLE](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3), such as the [NRF51-DK](https://os.mbed.com/platforms/Nordic-nRF51-DK/).
 
@@ -21,7 +21,7 @@
 
     <span>**Tip:** Despite the differences between the different Mbed OS versions, there is only **one** version of Mbed BLE, and it is easy to move code from one version of the OS to another. Choose the sample you use according to the version of Mbed OS supported by your development board.</span>
 
-### Going further
+## Going further
 
 - The Mbed BLE [API reference](../apis/ble.html) offers the full details of the API.
 

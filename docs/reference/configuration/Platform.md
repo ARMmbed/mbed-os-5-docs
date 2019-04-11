@@ -1,4 +1,4 @@
-<h2 id="configuration-platform">Platform</h2>
+<h1 id="configuration-platform">Platform</h1>
 
 The platform configurations allow for customization of platform level OS options. These options include error handling properties and serial communication configuration settings for STDIO. They work out of platform because they affect system level `printf` calls, not Serial objects, with the exception of `default-serial-baud-rate`.
 

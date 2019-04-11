@@ -1,4 +1,4 @@
-<h2 id="ethernet-technology">Ethernet</h2>
+<h1 id="ethernet-technology">Ethernet</h1>
 
 The term "Ethernet" refers to technologies first introduced in 1980 and standardized in 1983 as IEEE 802.3. Ethernet is a wired network, usually implemented by twisted pair wiring, but optical fibre and coaxials exist, as well. However, coaxial has been superseded, and no one uses it anymore.
 
@@ -8,7 +8,7 @@ Ethernet works with cable lengths of up to 100 meters. When connected to a switc
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ethernet-segment.png)<span>Ethernet segment</span></span>
 
-### Ethernet connection speeds
+## Ethernet connection speeds
 
 Since introducing the initial standard, IEEE has improved Ethernet by making it faster and cheaper and has released subsequent standards covering these improvements.
 
@@ -22,7 +22,7 @@ Since introducing the initial standard, IEEE has improved Ethernet by making it 
 
 Today, most Ethernet devices are capable of automatically negotiating connection speeds of 10/100/1000 Mbit/s with the switch. However, embedded devices rarely support 1 Gb/s connection speed.
 
-### Ethernet frames
+## Ethernet frames
 
 Ethernet framing has remained nearly untouched after its initial introduction, making it possible to connect devices with various speeds to the same Ethernet segment. Mbed OS only uses Ethernet for carrying IP frames.
 
@@ -41,7 +41,7 @@ Q-Tag: Optional virtual lan ID.
 
 FCS: Frame Check Sequence is used for integrity check. Implemented as CRC-32
 
-### Follow-up information
+## Follow-up information
 
 To understand the use of Ethernet and TCP/IP in Mbed OS, please see the following sections:
 

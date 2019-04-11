@@ -1,6 +1,6 @@
-<h3 id="thread-commissioning">How to commission a Thread device in practice</h3>
+<h2 id="thread-commissioning">How to commission a Thread device in practice</h2>
 
-#### Requirements
+### Requirements
 
 Commissioning a Thread device requires:
 
@@ -16,7 +16,7 @@ Commissioning a Thread device requires:
 A model network setup could look like this:
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Thread_network_setup.PNG)<span>Sample network setup</span></span>
 
-#### Building the end node application
+### Building the end node application
 
 By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh minimal](../apis/mesh-api.html#mesh-example) application as an example.
 
@@ -31,7 +31,7 @@ Now build the application for your chosen target from Mbed CLI with:
 
 Once the binary is generated, flash the binary to the end device, and run the application. Do not power on the end device until the [border router](https://github.com/ARMmbed/nanostack-border-router) has obtained an IPv6 address from the Wi-Fi access point.
 
-#### QR code generation
+### QR code generation
 
 You can use [a free online tool](http://www.qr-code-generator.com/) to generate a QR code.
 
@@ -51,7 +51,7 @@ There are four additional (optional) query parameters you can put into this fiel
 
 Once you have completed the details, proceed to generate the QR code for your end device.
 
-#### Using the Thread commissioning application
+### Using the Thread commissioning application
 
 You can use the [Thread Android application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) for commissioning. Download and install this on your Android device, turn on Wi-Fi and start the app. Then follow these steps after ensuring all the requirements listed above are satisfied:
 

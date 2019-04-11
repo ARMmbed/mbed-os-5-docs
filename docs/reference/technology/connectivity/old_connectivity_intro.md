@@ -1,4 +1,4 @@
-<h2 id="connectivity-tech">Network connectivity in Mbed OS</h2>
+<h1 id="connectivity-tech">Network connectivity in Mbed OS</h1>
 
 Mbed OS supports a wide range of connectivity options. This section helps you to understand how to connect Mbed OS based devices to the outside world.
 
@@ -6,7 +6,7 @@ Mbed OS supports a wide range of connectivity options. This section helps you to
 
 Below is a brief introduction of the different connectivity technologies that we support.
 
-#### Bluetooth low energy
+### Bluetooth low energy
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/bluetooth.png)<span>Bluetooth</span></span>
 
@@ -14,7 +14,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for perso
 
 To learn how to use Bluetooth low energy on Mbed OS, please refer to the [Bluetooth](../apis/ble.html) user API reference.
 
-#### IP networking
+### IP networking
 
 Arm Mbed OS supports various IP based connectivity options and IP stacks.
 
@@ -26,7 +26,7 @@ Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
 
 You can find descriptions of supported interfaces and protocols in the [IP networking](ip-networking.html) section.
 
-#### 6LoWPAN Mesh networking
+### 6LoWPAN Mesh networking
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mesh.png)<span>Tree type mesh</span></span>
 
@@ -36,7 +36,7 @@ Applications running on 6LoWPAN based mesh networks use the same Mbed OS Socket 
 
 For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html) section.
 
-#### LoRa
+### LoRa
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora.png)<span>LoRa</span></span>
 
@@ -44,7 +44,7 @@ For descriptions of mesh networks, please see the [6LoWPAN Mesh](mesh-tech.html)
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutorial.html) describe LoRA networking.
 
-#### NFC
+### NFC
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>NFC</span></span>
 

@@ -1,4 +1,4 @@
-<h2 id="spi-port">Serial Peripheral Interface (SPI)</h2>
+<h1 id="spi-port">Serial Peripheral Interface (SPI)</h1>
 
 The **Serial Peripheral Interface** allows you to send or receive a data stream over a synchronous serial interface made of 3 to 4 lines.
 
@@ -16,9 +16,9 @@ This highly configurable interface has elements you can adjust:
 
 <span class="warnings">**Warning:** We are introducing the SPI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the SPI API](#implementing-the-spi-api) section.
 
-### Assumptions
+## Assumptions
 
-#### Defined behaviors
+### Defined behaviors
 
 - `spi_get_module()` returns the `SPIName` unique identifier to the peripheral associated to this SPI channel.
 - `spi_get_capabilities()` fills the given `spi_capabilities_t` instance.
@@ -75,7 +75,7 @@ This highly configurable interface has elements you can adjust:
 - The `spi_async_event_t` must be filled with the number of symbols clocked on the bus during this transfer and a boolean value indicated if an error has occurred.
 - `spi_transfer_async_abort()` aborts an ongoing asynchronous transfer.
 
-#### Undefined behaviors
+### Undefined behaviors
 
 - Calling `spi_init()` multiple times on the same `spi_t` without `spi_free()`'ing it first.
 - Calling any method other than `spi_init()` on an uninitialized or freed `spi_t`.
@@ -95,7 +95,7 @@ This highly configurable interface has elements you can adjust:
 - Calling `spi_transfer_async_abort()` while no asynchronous transfer is being processed (no transfer or a synchronous transfer).
 - In half-duplex mode, any mechanism (if any is present) to detect or prevent collision is implementation defined.
 
-#### Other requirements
+### Other requirements
 
 A target must also define these elements:
 
@@ -104,11 +104,11 @@ A target must also define these elements:
 
 <span class="notes">**Note:** You can find more details about the design choices in the [SPI design document](https://github.com/ARMmbed/mbed-os/blob/feature-hal-spec-spi/docs/design-documents/hal/0000-spi-overhaul.md).</span>
 
-### Dependencies
+## Dependencies
 
 Hardware SPI capabilities.
 
-### Implementing the SPI API
+## Implementing the SPI API
 
 You can find the API and specification for the SPI API in the following class reference:
 
@@ -117,7 +117,7 @@ You can find the API and specification for the SPI API in the following class re
 To enable SPI support in Mbed OS, add the `SPI` label in the `device_has` option of the target's section in the `targets.json` file.
 You can also add the `SPI_ASYNCH` label in the `device_has` option to enable the asynchronous API.
 
-### Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for SPI. You can use these tests to validate the correctness of your implementation. To run the SPI HAL tests, use the following command:
 

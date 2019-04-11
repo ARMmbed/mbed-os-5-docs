@@ -1,11 +1,11 @@
-### Nanostack
+## Nanostack
 
 This chapter introduces the _6LoWPAN stack architecture_. It contains the following sections:
 
 - [_Architecture](#architecture).
 - [_6LoWPAN stack](#6lowpan-stack).
 
-#### Architecture
+### Architecture
 
 _IPv6 Low power Wireless Personal Area Network_ (6LoWPAN) is an adaptation layer that enables the use of IPv6 over low power wireless and supports IPv6 and _User Datagram Protocol_ (UDP) header compression. The Internet Protocol (IP) header compression allows 6LoWPAN packets to be compact, making it robust and, ideal for low power and lossy networks. It also handles fragmentation and reassembly of packets in scenarios where payloads larger than the _Maximum Transmission Unit_ (MTU) of the supported interface are transferred (a maximum of 1280 bytes).
 
@@ -17,7 +17,7 @@ The combination of 6LoWPAN stack and 6LoWPAN border router _Access Point_ (AP) s
 
 ![nw-arc](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_network_architecture.png)
 
-#### 6LoWPAN stack
+### 6LoWPAN stack
 
 The 6LoWPAN stack is modular in design and uses an extremely lightweight event environment that allows the developer to run the stack completely in standalone mode without a need for a third-party _Operating System_ (OS). Additional benefits of the model are lower hardware requirements in the terms of flash and RAM usage. This approach significantly reduces integration effort and, thus, reduces your time-to-market. The stack can also be used in a configuration so that the developer can run it as a task or thread, for example, within a full _Real-time Operating System_ (RTOS). However, this will inevitably increase the system resource requirement because additional resources are required by the RTOS.
 
@@ -36,7 +36,7 @@ These components are illustrated in _Figure 1-2_.
 
 <span class="notes">**Note**: For simplicity, the event core is shown to be part of the same component, alongside  the protocol modules.</span>
 
-##### Event core
+#### Event core
 
 The event core is responsible for the low level events, scheduling and system timer functions. The core module provides all the basic functionality that the rest of the modules need  (with the exception of the application modules) and is undertaken with a low resource requirement. The design objective has been to reserve and use minimal resources of the hardware platform and, instead, leave all unnecessary timers, for example, unused so that the developer has full control over these resources from the application layer.
 
@@ -44,7 +44,7 @@ The event system provides the application with the tools and functionality that 
 
 The event system relies on Platform API to provide portable set of functions that it needs. These platform drivers are then ported for each operating system or embedded platform you want to run the 6LoWPAN stack.
 
-##### Protocol modules
+#### Protocol modules
 
 The 6LoWPAN stack implements a wide range of protocols as individual modules, which is illustrated in _Figure 1-2_. These modules are designed to use an internal data structure that is used to exchange packets. The stack uses a no-copy design wherever possible because in some modules a packet may be copied to provide a re-transmission functionality, as mandated by related standards.
 
@@ -52,7 +52,7 @@ The  modular design of the 6LoWPAN stack allows some modules to be omitted from 
 
 At the upper-edge of the 6LoWPAN stack, the Socket _Application Programming Interface_ (API) is exposed (see _Figure 1-2_). This API is designed to provide a _Berkeley Software Distribution_ (BSD) socket-like interface for the application to receive and transmit packets using standard IPv6 address and port number definitions. The function names also roughly follow the BSD socket definitions with some minor modifications due to the nature of the event environment. The intention is to clearly indicate to the developer that minute differences exist between the embedded socket interface and a full BSD socket interface.
 
-##### Optional security components
+#### Optional security components
 
 The 6LoWPAN stack can be delivered with optional security components. These components provide strong security mechanisms that offer data authentication, device authentication and authorization, and data encryption. The stack supports the following standards:
 
@@ -69,7 +69,7 @@ The stack essentially allows the end device to be a part of a full _Public Key I
 
 <span class="notes">**Note**: The 6LoWPAN stack is dependent of the _Advanced Encryption Standard_ (AES)-_Counter Mode Cipher_* (CCM*) component that is part of the core stack.</span>
 
-##### Application modules
+#### Application modules
 
 The 6LoWPAN stack runs on a lightweight event-based system that allows low power consumption and minimal latency. Application logic is implemented in a specific event handler called tasklet. The 6LoWPAN stack allows the developer to define multiple tasklets to ease the task of application design. Each of these tasklets can then have full access to the network stack and its features. The system relies on events and does not attempt to provide real multi-thread services, so the developer does not need to be concerned about multiple access to resources.
 
@@ -83,7 +83,7 @@ _Figure 1-3_ shows the various protocol modules that make up the 6LoWPAN stack, 
 
 ![osi](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lowpan_stack_osi_model.png)
 
-#### Protocol layers and related standards
+### Protocol layers and related standards
 
 The related standards supported by the stack are:
 
@@ -142,11 +142,11 @@ The related standards supported by the stack are:
 	- RFC5289.
 	- IETF draft-mcgrew-tls-aes-ccm-ecc-05.
 
-#### Interfaces
+### Interfaces
 
 The 6LoWPAN stack offers application developers programming interfaces for configuring the 6LoWPAN network, defining security levels and sending and receiving packets. The 6LoWPAN stack requires the developers to provide functions for platform specific tasks and network drivers for physical layer. For more information on programming interfaces, see [Mbed Mesh API](../apis/mesh-api.html).
 
-#### Operation modes
+### Operation modes
 
 In 6LoWPAN network, the following roles are described in RFCs:
 

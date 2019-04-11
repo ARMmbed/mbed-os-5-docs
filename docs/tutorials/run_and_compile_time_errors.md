@@ -1,4 +1,4 @@
-## Compile time errors
+# Compile time errors
 
 Compile time errors and warnings that incorrect syntax, or misuse of variables or functions, causes. An error prevents the compile process from completing (and therefore no binary file will be created). A warning does not prevent the binary from being created, but you should still review the warning because it may mean that your code is not going to do what you had intended.
 
@@ -11,7 +11,7 @@ Common errors are:
 
 For more information about compile time errors or warning, please see [the list of Mbed OS defined error codes and descriptions](../apis/error-handling.html#list-of-mbed-os-defined-error-codes-and-descriptions). If you have questions about a compile time error or warning that you do not understand, please post to the [Arm Mbed forums](https://os.mbed.com/questions/).
 
-### Runtime errors and siren lights
+## Runtime errors and siren lights
 
 <span class="images">![LPC1768 siren lights](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)</span>
 

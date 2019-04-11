@@ -1,4 +1,4 @@
-## Exporting
+# Exporting
 
 If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
@@ -28,7 +28,7 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 
 This may be useful to launch a debug session with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
-### Exporting from the Arm Mbed Online Compiler
+## Exporting from the Arm Mbed Online Compiler
 
 The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
 
@@ -36,7 +36,7 @@ The Arm Mbed Online Compiler has a built-in export mechanism that supports the s
 
 The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
 
-### Exporting from Arm Mbed CLI
+## Exporting from Arm Mbed CLI
 
 [Mbed CLI](../tools/developing-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
@@ -59,7 +59,7 @@ For a complete list of supported export toolchains, you can run:
 
     $ mbed export --supported ides
 
-### Before you export
+## Before you export
 
 Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries and differences caused by changing compile and link options.
 
@@ -67,9 +67,9 @@ Although we support exporting your project and libraries to an alternate toolcha
 
 We will do our best to maintain the exported libraries and project files, but please understand we cannot cover all cases and combinations, or provide support for use of these alternative tools themselves.
 
-### Third party tool notes
+## Third party tool notes
 
-#### Makefiles and Arm Mbed OS 2 projects
+### Makefiles and Arm Mbed OS 2 projects
 
 When you export an Arm Mbed OS 2 project with a Makefile exporter or an exporter that uses a Makefile, you may have to modify the flags to remove some linker flags. You may see an error, such as the one below, in your compiler output.
 
@@ -97,7 +97,7 @@ make: *** [all] Error 2
 
 If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r`, `-Wl,--wrap,_realloc_r` and `-Wl,--wrap,_calloc_r`from the `LD_FLAGS` variable in the Makefile.
 
-#### Make and Eclipse (GNU Arm Embedded Toolchain, IAR Compiler, Arm Compiler 5)
+### Make and Eclipse (GNU Arm Embedded Toolchain, IAR Compiler, Arm Compiler 5)
 
 <span class="notes">**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.</span>
 
@@ -120,15 +120,15 @@ make (e=2): The system cannot find the file specified.
 
 When you encounter an error such as these, add the directory containing the compiler executable to your `PATH` environment variable. Afterward, you may need to open a new terminal or log out and log in for the changes to take effect.
 
-##### Make and Eclipse on Windows: Nordic platforms using SoftDevices
+#### Make and Eclipse on Windows: Nordic platforms using SoftDevices
 
 Make and Eclipse exports targeting Nordic devices require the [Nordic nrf51_SDK](http://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v6.x.x/nrf51_sdk_v6_1_0_b2ec2e6.msi) on Windows. Please download and install it.
 
-##### Make and Eclipse on Linux and macOS: Nordic platforms using SoftDevices
+#### Make and Eclipse on Linux and macOS: Nordic platforms using SoftDevices
 
 Make and Eclipse exports on POSIX-like operating systems targeting Nordic devices require the `srec_cat` executable from the [sRecord](http://srecord.sourceforge.net) package. It may be available from your package manager (such as apt-get or Brew).
 
-#### GNU Arm Eclipse (managed CDT projects) with GNU Arm Embedded Toolchain
+### GNU Arm Eclipse (managed CDT projects) with GNU Arm Embedded Toolchain
 
 The [GNU Arm Eclipse](http://gnuarmeclipse.github.io) exporter generates ready to run managed CDT projects.
 
@@ -150,7 +150,7 @@ You can open this new project with an Eclipse CDT, which has the GNU Arm Eclipse
 
 <span class="notes">**Note:** Using the Mbed command-line tools to build and export GNU Arm Eclipse breaks compile. Running `mbed export -I gnuarmeclipse` touches `.mbedignore`, which includes Nanostack. Trying to run `mbed compile` again fails because the exporter touches `.mbedignore`.</span>
 
-#### GNU Arm Eclipse on Windows: 8Kb command length limitation
+### GNU Arm Eclipse on Windows: 8Kb command length limitation
 
 Prior to version 2.6.1 of GNU Arm Eclipse, the build tools of the GNU Arm Eclipse plugin used the Windows `cmd.exe` shell. This exposed the build system to a limitation of `cmd.exe`. Please upgrade your version of GNU Arm Eclipse if you encounter a problem such as:
 

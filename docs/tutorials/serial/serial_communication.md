@@ -1,4 +1,4 @@
-<h2 id="serial-comm">Board to PC communication over USB</h2>
+<h1 id="serial-comm">Board to PC communication over USB</h1>
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
@@ -10,7 +10,7 @@ This allows you to:
 - Read input from the host PC keyboard.
 - Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
 
-### Hello, world
+## Hello, world
 
 This program prints a "Hello World" message that you can view on a [terminal application](#terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
@@ -26,13 +26,13 @@ int main() {
 }
 ```
 
-### Using terminal applications
+## Using terminal applications
 
 Terminal applications run on your host PC. They provide a window where your Mbed board can print and where you can type characters back to your board.
 
 <span class="tips">**Serial configuration:** The standard setup for the USB serial port is 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1)</span>
 
-#### Installing an application for Windows
+### Installing an application for Windows
 
 There are many terminal applications for Windows, including:
 
@@ -41,7 +41,7 @@ There are many terminal applications for Windows, including:
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
 - Some Windows PCs come with **Hyperterminal** installed.
 
-#### Configuring the connection
+### Configuring the connection
 
 1. Plug in your Mbed board.
 1. Open CoolTerm.
@@ -55,24 +55,24 @@ Check your connection parameters:
 
 Your terminal program is now configured and connected.
 
-### Using terminal applications on Linux
+## Using terminal applications on Linux
 
 CoolTerm should work under Linux. If for some reason it doesn't, you can try one of the following:
 
 - [Minicom](https://help.ubuntu.com/community/Minicom).
 - [GNU Screen](https://www.gnu.org/software/screen/manual/screen.html).
 
-### Minimal Printf
+## Minimal Printf
 
 For low memory devices you may optionally use the [ArmMbed minimal printf library](https://github.com/ARMmbed/minimal-printf). 
 
-### Additional examples
+## Additional examples
 
 Use your terminal application to interact with the following examples.
 
 If you're not sure how to build these examples and run them on your board, please see our [build tools section](../tools/index.html).
 
-#### Echo back characters you type
+### Echo back characters you type
 
 ```cpp
 #include "mbed.h"
@@ -87,7 +87,7 @@ int main() {
 }
 ```
 
-#### Use the U and D keys to make LED1 brighter or dimmer
+### Use the U and D keys to make LED1 brighter or dimmer
 
 <span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
@@ -118,7 +118,7 @@ int main() {
 }
 ```
 
-#### Pass characters in both directions
+### Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
@@ -145,7 +145,7 @@ int main() {
 }
 ```
 
-#### Using stdin, stdout and stderr
+### Using stdin, stdout and stderr
 
 By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
 
@@ -158,7 +158,7 @@ int main() {
 }
 ```
 
-#### Read to a buffer
+### Read to a buffer
 
 ```cpp
 #include "mbed.h"

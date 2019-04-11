@@ -1,4 +1,4 @@
-## Setting up a local debug toolchain
+# Setting up a local debug toolchain
 
 Most Arm Mbed Enabled development boards contain two chips: the target microcontroller and a CMSIS-DAP interface chip. The most common use case of the interface chip is mounting the development board as a USB mass-storage device, making it easy to flash new firmware. However, you can also use this interface chip to debug the target microcontroller without an external debugger, such as a JTAG.
 
@@ -6,7 +6,7 @@ This offers debugging capabilities for stack trace analysis, register dumps and 
 
 <span class="tips">**Tip:** The CMSIS-DAP interface chip does not have to be on the development board. You can also use it as an off-board solution with the [SWDAP debugging probe](https://os.mbed.com/teams/mbed/wiki/SWDAP). This is a good solution if you're making a custom board and do not want the added cost (or space required) of an extra interface chip and USB port.</span>
 
-### Running a debug server
+## Running a debug server
 
 To connect to the debug interface, [OpenOCD](https://github.com/mbedmicro/pyOCD) support most boards. If the debug interface on your board is classified as 'CMSIS-DAP' or 'DAPLink' (most boards), you can use pyOCD. If not, use OpenOCD.
 
@@ -22,7 +22,7 @@ There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
 and "show warranty" for details.
 ```
 
-### pyOCD
+## pyOCD
 
 If pyOCD supports your board, install [Python 2.7](https://www.python.org/downloads/). Then install pyOCD:
 
@@ -48,7 +48,7 @@ INFO:root:GDB server started at port:3333
 
 A GDB server is now listening at localhost:3333.
 
-### OpenOCD
+## OpenOCD
 
 If OpenOCD supports your board, first install [OpenOCD](http://openocd.org). OpenOCD cannot automatically detect the connected board, so you must determine what configuration you need for your development board. In general, searching for 'chipset openOCD' yields useful results.
 
@@ -79,7 +79,7 @@ adapter speed: 4000 kHz
 
 A GDB server is now listening at localhost:3333.
 
-### Connecting GDB
+## Connecting GDB
 
 You can now verify that the debug connection works via GDB. Open another terminal window and run:
 
@@ -107,7 +107,7 @@ You now have set up a debug connection. From here, you can flash debug builds, s
 1. Debugging with [Keil uVision](../tutorials/keil-uvision.html).
 1. Debugging with [Visual Studio Code](../tutorials/visual-studio-code.html).
 
-### Semihosting messages
+## Semihosting messages
 
 It's possible to send messages from the development board to your computer over the debug port using [semihosting](http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm). To see semihosting messages:
 

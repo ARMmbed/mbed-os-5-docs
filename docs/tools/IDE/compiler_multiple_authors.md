@@ -1,22 +1,22 @@
-## Multiple authors
+# Multiple authors
 
 Repositories on [`os.mbed.com`](https://os.mbed.com) are not limited to one author for each repository. Instead, several authors may have the right to publish to the same repository, allowing them to collaborate on a project. Other users, who may be interested in using the project's code but are not concerned with the individual authors, can interact with a single repository.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mult_authors.png)<span>Developers can use code that multiple authors created</span></span>
 
-### Adding a new author to your repository
+## Adding a new author to your repository
 
 To grant permission for another author to commit to your repository, use the **Repository Administration** link in your repository on the Arm Mbed website.
 
 	<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/privacy_settings.png)<span>Allowing other users to add to your repository</span></span>
 
-### Day to day usage
+## Day to day usage
 
 The key difference between single-author and multiple-author workflows is that multiple-author workflows require that the changes from one author be **merged** with those of another author when both authors simultaneously commit to a single parent revision.
 
 The following are some common operations you will need to do day to day. You won't necessarily need to do all of them, and not necessarily in the order shown.
 
-### Pulling from the public repository
+## Pulling from the public repository
 
 When there are changes that exist on the public repository but not in your workspace repository, we call them "incoming" changes. The Revisions panel tells you when and what incoming changes are available.
 
@@ -24,7 +24,7 @@ To bring the changes into your own workspace repository, click the **Update** bu
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/multi_revision_history.png)<span>Updating your private workspace with changes from the public repository</span></span>
 
-### Merging your changes (if necessary)
+## Merging your changes (if necessary)
 
 If you have not made any commits or changes while your co-author has been working, then no merging will be necessary.
 
@@ -38,7 +38,7 @@ The Revisions panel shows one person's changes diverging from another person's c
 
 To join the two branches, click the **Merge** button. You may need to resolve conflicts, as explained below.
 
-### Resolve merge conflicts (if needed)
+## Resolve merge conflicts (if needed)
 
 The merge function combines the changes from one or more branches into a single branch.
 
@@ -56,7 +56,7 @@ Wherever there is a conflict, Mercurial annotates the source code with markings 
 
 The first save of a file after being opened in a conflicted state marks it as resolved and removes the red highlight.
 
-### Commit the merge
+## Commit the merge
 
 After you merge the code, you have to commit it. This makes the joining of the two branches permanent. Once you commit, your Revisions pane looks something like this:
 
@@ -64,7 +64,7 @@ After you merge the code, you have to commit it. This makes the joining of the t
 
 You can see the two branches coming back together at "merged revision 1 with revision 2".
 
-### Pushing back to the repository
+## Pushing back to the repository
 
 Once all branches and conflicts are resolved and joined back into one, you would typically retest your program or library. When all tests pass, you can push your changes and the merged result back to the public repository.
 

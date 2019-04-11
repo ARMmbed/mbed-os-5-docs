@@ -1,6 +1,6 @@
-### Static memory optimization
+## Static memory optimization
 
-#### Removing unused modules
+### Removing unused modules
 
 For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-blinky), a program that flashes an LED, typical memory usage is split among the following modules:
 
@@ -21,7 +21,7 @@ For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-bl
 
 The `features/frameworks` module includes the Mbed OS test tools, even if you are no longer testing your program. Because of this, you are building one of our test harnesses into every binary. [Removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) saves a significant amount of RAM and flash memory.
 
-##### `Printf` and UART
+#### `Printf` and UART
 
 The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output - forcing the `printf` and UART drivers to be compiled in and requiring a large amount of flash memory.
 
@@ -42,7 +42,7 @@ To disable error logging to serial output, set the `NDEBUG` macro and the follow
 
 <span class="notes">**Note:** Different compilers, different results; compiling with one compiler yields different memory usage savings than compiling with another.</span>
 
-##### Embedded targets
+#### Embedded targets
 
 You can also take advantage of the fact that these programs only run on embedded targets. When you run a C++ application on a desktop computer, the operating system constructs every global C++ object before calling `main`. It also registers a handle to destroy these objects when the program ends. The code the compiler injects has some implications for the application:
 

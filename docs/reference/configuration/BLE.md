@@ -1,10 +1,10 @@
-<h2 id="configuration-ble">BLE</h2>
+<h1 id="configuration-ble">BLE</h1>
 
 This page describes build-time configurable parameters for BLE. A resource constrained device can limit its functionality to decrease the memory and flash use of the BLE module. 
 
 To understand what each feature provides, please refer to the API docs and the Bluetooth specification.
 
-#### Build time configuration of the BLE feature
+### Build time configuration of the BLE feature
 
 To minimize the size of the BLE stack, BLE defines a set of build options.
 
@@ -14,7 +14,7 @@ Turning off individual features removes the code and any memory allocations requ
 
 Trying to use a disabled feature results in a compile time error or an error reporting the feature as unimplemented at run time.
 
-#### Changing the configuration
+### Changing the configuration
 
 An excerpt from the configuration file:
 
@@ -32,7 +32,7 @@ An excerpt from the configuration file:
 
 By changing `"value": true,` to `false`, you can disable each feature.
 
-##### Configurable features
+#### Configurable features
 
 These are feature that you can disable:
 

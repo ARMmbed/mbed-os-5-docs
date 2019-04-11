@@ -1,4 +1,4 @@
-## Bare metal example
+# Bare metal example
 
 To learn about using the bare metal profile on Mbed OS 5, please see the Blinky bare metal example:
 

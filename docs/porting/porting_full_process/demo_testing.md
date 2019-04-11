@@ -1,11 +1,11 @@
-## Testing with the demo applications
+# Testing with the demo applications
 
 You can use two applications to test your port:
 
 1. When you've ported GPIO (and all preceeding modules), use `mbed-os-example-blinky`.
 1. When you've ported all mandatory modules, use `mbed-cloud-client-example` (the Device Management Client runs on top of Mbed OS, and you don't need to manually port it). This test includes a reference bootloader for firmware update testing.
 
-### mbed-os-example-blinky
+## mbed-os-example-blinky
 
 1. Application repository: [https://github.com/ARMmbed/mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky).
 1. Import the repo, if you haven't done this already while porting:
@@ -30,7 +30,7 @@ You can use two applications to test your port:
 1. Verify the designated LED flashes every 0.5 second. You can use an oscilloscope for accurate measurement.
 
 
-### mbed-cloud-client-example
+## mbed-cloud-client-example
 
 Start with building the bootloader, which you will need for the firmware update portion of this test:
 

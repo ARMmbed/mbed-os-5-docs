@@ -1,4 +1,4 @@
-## Firmware update in Mbed OS
+# Firmware update in Mbed OS
 
 Mbed OS integrates the Pelion Device Management firmware update services, so if you have a Device Management account, you can send binaries to your remote device. You can update the bootloader independently of the application.
 
@@ -7,7 +7,7 @@ Update support in Mbed OS relies on two features:
 - Mbed OS now includes the bootloader that manages update verification and installation.
 - Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands]../tools/cli-update.html).
 
-### Updatable binaries
+## Updatable binaries
 
 The active firmware, made up of Mbed OS and an application, can be updated only if the binary installed on the device has:
 
@@ -18,11 +18,11 @@ The active firmware, made up of Mbed OS and an application, can be updated only 
 
 1. Permission to access your Device Management account, as well as keys and certificates used to verify the firmware's source and validity.
 
-### The Mbed OS bootloader
+## The Mbed OS bootloader
 
 During system startup, a bootloader is responsible for selecting and forwarding control to the next stage in the boot sequence. The Mbed OS bootloader also validates the next stage's sanity and signature before forwarding control to it; if validation fails, the bootloader can select an alternate version of the next stage. It can also install an alternative upon request (in other words, firmware update).
 
-#### Background: boot sequences and fault tolerance
+### Background: boot sequences and fault tolerance
 
 A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, it executs the updated components. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible. This is known as stage 0 bootloader.
 
@@ -38,7 +38,7 @@ Fault tolerance ultimately rests on the sanity of the first-stage bootloader. Th
 
 The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it fulfills the requirements of the boot selector: It is small enough to minimize the chance of bugs, but it is advanced enough to install new images.
 
-#### Managed and unamanaged bootloader tool integration
+### Managed and unamanaged bootloader tool integration
 
 The Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
 
@@ -51,11 +51,11 @@ If your bootloader does not meet the two requirements of a manageable bootloader
 
 For more information about [managed and unmanaged bootloaders, and how to create bootloaders, see the tutorial](../tutorials/bootloader.html).
 
-#### Porting a bootloader
+### Porting a bootloader
 
 If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](../porting/bootloader.html).
 
-#### Security
+### Security
 
 Note two things about the Mbed OS bootloader's design:
 
@@ -64,7 +64,7 @@ Note two things about the Mbed OS bootloader's design:
 
 This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/latest/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/latest/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
 
-### Managing updates with the bootloader
+## Managing updates with the bootloader
 
 When a device downloads new firmware, it stores it locally (in the storage area) and reboots; the device's bootloader then:
 
@@ -80,7 +80,7 @@ When a device downloads new firmware, it stores it locally (in the storage area)
     1. Writes the firmware into the storage region on the SD card (or external SPI Flash), as a candidate firmware image.
     1. Reboots, handing control back to the bootloader.
 
-### Development tool integration with Pelion Device Management Update
+## Development tool integration with Pelion Device Management Update
 
 Mbed CLI and the Online Compiler implement the Pelion Device Management Update service by directly using the service's APIs and the manifest tool. For a device running an updatable application, using Mbed CLI and the Online Compiler's built in update features can reduce the steps needed to run an update campaign.
 

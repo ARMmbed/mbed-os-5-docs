@@ -1,4 +1,4 @@
-## Fast Models
+# Fast Models
 
 Arm Fast Models are software models of Arm cores, subsystems, peripherals and so on. You can run Mbed OS on the software model instead of the hardware.
 
@@ -8,7 +8,7 @@ Fixed Virtual Platforms (FVPs) are prebuilt system-level models after Arm’s re
 
 For more details on Fast Models and FVPs, please reference further documentation about [Arm Fast Models](https://developer.arm.com/products/system-design/fast-models) or [FVPs](https://developer.arm.com/products/system-design/fixed-virtual-platforms).
 
-### Supported Fast Models FVPs
+## Supported Fast Models FVPs
 
 Mbed OS has enabled working with following FVPs Cortex-M family with the MPS2 platforms:
 
@@ -20,7 +20,7 @@ FVP_MPS2_Cortex-M3 | FVP_MPS2_M3
 FVP_MPS2_Cortex-M4 | FVP_MPS2_M4
 FVP_MPS2_Cortex-M7 | FVP_MPS2_M7
 
-### Mbed OS examples on Fast Models
+## Mbed OS examples on Fast Models
 
 Fast Models can run most of the Mbed OS examples.
 
@@ -43,7 +43,7 @@ The following examples use `mbed-os-example-blinky`.
 
 To run Mbed OS examples with Fast Models, you need to install the Fast Models product and set up the license. The [Arm DS-5 Development Studio](https://developer.arm.com/products/software-development-tools/ds-5-development-studio) also provides Fast Models targets. To load a compiled Mbed OS image onto a Fast Models platform, such as the FVP_MPS2_Cortex-M0, you need to add your installation's `bin` folder to your system `PATH`. For example: `C:\Program Files\DS-5 v5.29.1\bin`.
 
-#### Import the example with Arm Mbed CLI
+### Import the example with Arm Mbed CLI
 
 Import the blinky example:
 
@@ -52,7 +52,7 @@ $ mbed import mbed-os-example-blinky
 $ cd mbed-os-example-blinky
 ```
 
-#### Build the example with Mbed CLI
+### Build the example with Mbed CLI
 
 Fast Models targets are enabled to be built with all three major toolchains: ARM, GCC_ARM and IAR. To build the blinky example for the FVP_MPS2_Cortex-M3 target with the GCC complier, run:
 
@@ -60,7 +60,7 @@ Fast Models targets are enabled to be built with all three major toolchains: ARM
 $ mbed compile -t GCC_ARM -m FVP_MPS2_M3
 ```
 
-#### Run Mbed OS examples with Fast Models
+### Run Mbed OS examples with Fast Models
 
 Load the compiled example image to the FVP_MPS2_Cortex-M3 target. To do so, pass the `-a` option to the Fast Models target. For example:
 
@@ -74,7 +74,7 @@ The FVPs start running, and the LEDs on the FVP blink, like:
 
 <span class="notes">**Note:** FVP's `-a` option only takes `.elf` format images. To use the `--data` option with binary format images, please reference the [FVP reference guide](https://developer.arm.com/docs/100966/latest).</span>
 
-#### Run Mbed OS sockets examples with Fast Models ethernet
+### Run Mbed OS sockets examples with Fast Models ethernet
 
 Fast Models ethernet is a special component not enabled by default.
 
@@ -109,7 +109,7 @@ External IP address: 217.140.106.54
 Done
 ```
 
-### Notes
+## Notes
 
 1. Timing accuracy of Fast Models can't be guaranteed.
 1. There is no support for external peripherals, such as ESP8266 expansion boards.

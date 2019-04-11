@@ -1,4 +1,4 @@
-<h2 id="configuration-connectivity">Connectivity</h2>
+<h1 id="configuration-connectivity">Connectivity</h1>
 
 This page describes build-time configurable parameters for connectivity in Mbed OS.
 
@@ -143,7 +143,7 @@ Name: lwip.use-mbed-trace
     No value set
 ```
 
-### Selecting the default network interface
+## Selecting the default network interface
 
 Applications can use the default network interface without directly specifying its type. This requires settings from `mbed_app.json` to work.
 

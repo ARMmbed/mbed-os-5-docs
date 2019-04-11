@@ -1,4 +1,4 @@
-## Publishing code
+# Publishing code
 
 Publishing copies your program or library from your **private** workspace to your **public** Arm Mbed website profile.
 

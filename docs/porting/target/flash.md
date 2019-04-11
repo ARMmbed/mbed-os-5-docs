@@ -1,4 +1,4 @@
-## Flash
+# Flash
 
 Update target to support bootloader.
 
@@ -8,7 +8,7 @@ Update target to support bootloader.
 1. Implement flash HAL API.
 1. Verify changes with tests.
 
-### Linker script updates
+## Linker script updates
 
 When building a bootloader application or an application that uses a bootloader, the Arm Mbed OS build system automatically defines values for the start of application flash, `MBED_APP_START`, and size of application flash, `MBED_APP_SIZE`, when preprocessing the linker script. When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all toolchains - GCC Arm (.ld), Arm (.sct) and IAR (.icf). You can find examples of this for the [k64f](https://github.com/ARMmbed/mbed-os/commit/579b2fbe40c40a443dc2aaa6850304eccf1dd87e), [stm32f429](https://github.com/ARMmbed/mbed-os/commit/ca8873b160eb438d18f7b4186f8f84e7578a9959), [odin-w2](https://github.com/ARMmbed/mbed-os/commit/bcab66c26d18d837362ea92afca9f4de1b668070).
 
@@ -59,21 +59,21 @@ Bootloader-ready declaration of flash VTOR address:
 #endif
 ```
 
-### `targets.json` metadata
+## `targets.json` metadata
 
 The managed and unmanaged bootloader builds require some target metadata from CMSIS Packs. Add a `"device_name"` attribute to your target as [Adding and configuring targets](../reference/adding-and-configuring-targets.html) describes.
 
-### Start application
+## Start application
 
 The `mbed_start_application` implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the Arm Mbed_application code file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_application.c). If `mbed_start_application` does not support your target, you must implement this function in the target HAL.
 
-### Flash HAL
+## Flash HAL
 
 For a bootloader to perform updates, you must implement the flash API. This consists of implementing the function in [flash_api.h](https://github.com/ARMmbed/mbed-os/blob/master/hal/flash_api.h) and adding the correct fields to targets.json.
 
 There are two options to implement flash HAL:
 
-#### Option 1: CMSIS flash algorithm routines
+### Option 1: CMSIS flash algorithm routines
 
 These are quick to implement. They use CMSIS device packs and scripts to generate binary blobs. Because these flash algorithms do not have well-specified behavior, they might disable cache, reconfigure clocks and other actions you may not expect. Therefore, proper testing is required. First, make sure CMSIS device packs support your device. Run a script in `mbed-os` to generate flash blobs. Check the flash blobs into the target's HAL. Arm provides an [example](https://github.com/ARMmbed/mbed-os/commit/071235415e3f0b6d698df6e944c522bdae8ff4ae) of how to do this.
 
@@ -87,7 +87,7 @@ To enable a CMSIS flash algorithm common layer, a target should define `FLASH_CM
 
 The CMSIS algorithm common layer provides a [trampoline](https://github.com/ARMmbed/mbed-os/blob/master/hal/TARGET_FLASH_CMSIS_ALGO/flash_common_algo.c), which uses a flash algorithm blob. It invokes CMSIS FLASH API, which the [CMSIS-Pack Algorithm Functions page](http://arm-software.github.io/CMSIS_5/Pack/html/algorithmFunc.html) defines.
 
-#### Option 2: Your own HAL driver
+### Option 2: Your own HAL driver
 
 If CMSIS packs do not support a target, you can implement flash HAL by writing your own HAL driver.
 
@@ -118,7 +118,7 @@ Finally, to indicate that your device fully supports bootloaders, set the field 
 "bootloader_supported": true
 ```
 
-### Tests
+## Tests
 
 The following tests for the `FlashIAP` class and flash HAL are located in the `mbed-os/TESTS` folder.
 
@@ -130,7 +130,7 @@ They test all flash API functionality. To run the tests, use these commands:
 - Flash IAP: `mbed test -m TARGET_NAME -n tests-mbed_drivers-flashiap`.
 - Flash HAL: `mbed test -m TARGET_NAME -n tests-mbed_hal-flash`.
 
-### Troubleshooting
+## Troubleshooting
 
 - For targets with VTOR, a target might have a VTOR address defined to a hardcoded address as mentioned in the [Linker script updates](#linker-script-updates) section.
 

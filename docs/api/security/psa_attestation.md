@@ -1,4 +1,4 @@
-## PSA initial attestation
+# PSA initial attestation
 
 The PSA initial attestation service enables an application to prove a device's identity to any server and application, as part of the authentication process.
 
@@ -6,7 +6,7 @@ The initial attestation service creates a token that contains a fixed set of dev
 
 The PSA initial attestation service is based on the TF-M attestation service, which is available in the [TF-M repository]( https://git.trustedfirmware.org/trusted-firmware-m.git/).
 
-### Specification
+## Specification
 
 The initial attestation service exposes the following PSA interfaces:
 
@@ -36,7 +36,7 @@ To get the exact size of the created token, call the `psa_initial_attest_get_tok
 
 <span class="note"> **Note:** You must call the `psa_crypto_init()` API before calling the attestation API.</span>
 
-### Claims in the initial attestation token
+## Claims in the initial attestation token
 
 The initial attestation token consists of claims. A claim is a data item, which is represented as a key-value pair.
 
@@ -46,14 +46,14 @@ The token might also include data about the distinct software components on the 
 
 In the current implementation, a bootloader does not exist in single and dual V7; therefore, we have provided temporary hardcoded boot status data claims in the `attestation_bootloader_data.c` file, including `HW version`, `Boot seed`, and some `Software components` entries. `Security lifecycle` should also be part of the boot status, but in the current implementation, it is provided by calling the `psa_security_lifecycle_state()` API directly.
 
-### PSA initial attestation reference
+## PSA initial attestation reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.12/mbed-os-api-doxy/group___p_s_a-_attestation.html)
 
-### PSA initial attestation example
+## PSA initial attestation example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-attestation/blob/attestation_example)](https://github.com/ARMmbed/mbed-os-example-attestation/blob/mbed-os-5.12/main.cpp)
 
-### Related content
+## Related content
 
 - [PSA specification](https://pages.arm.com/PSA-APIs).

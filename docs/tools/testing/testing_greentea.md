@@ -1,4 +1,4 @@
-## Greentea testing applications
+# Greentea testing applications
 
 Greentea is the automated testing tool for Arm Mbed OS development. It's a test runner that automates the process of flashing development boards, starting tests and accumulating test results into test reports. You can use it for local development, as well as for automation in a continuous integration environment.
 
@@ -6,9 +6,9 @@ Greentea tests run on embedded devices, but Greentea also supports `host tests`.
 
 This document will help you start using Greentea. Please see the [`htrun` documentation](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-host-tests), the tool Greentea uses to drive tests, for the technical details of the interactions between the platform and the host machine.
 
-### Using tests
+## Using tests
 
-#### Test code structure
+### Test code structure
 
 You can run tests throughout Mbed OS and for your project's code. They are located under a special directory called `TESTS`.
 
@@ -34,7 +34,7 @@ In this example, `myproject` is the project root, and all the source files under
 
 <span class="notes">**Note:** You can name both the test group and the test case directory anything you like. However, you must name the `TESTS` directory `TESTS` for the tools to detect the test cases correctly.</span>
 
-##### Test discovery
+#### Test discovery
 
 Because test cases can exist throughout a project, the tools must find them in the project's file structure before building them.
 
@@ -52,17 +52,17 @@ Generally, a test should not be placed under a `TARGET_` or `TOOLCHAIN_` directo
 
 Tests can also be completely ignored by using the `.mbedignore` file described in the [documentation](../reference/mbed-os-build-rules.html).
 
-##### Test names
+#### Test names
 
 A test case is named by its position in your project's file structure. For instance, in the above example, a test case with the path `myproject/TESTS/test_group/test_case_1` would be named `tests-test_group-test_case_1`. The name is created by joining the directories that make up the path to the test case with a dash `-` character. This is a unique name to identify the test case. You will see this name throughout the build and testing process.
 
-#### Building tests
+### Building tests
 
 You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the [CLI documentation](../tools/developing-mbed-cli.html).
 
 When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a **test specification** file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the [Greentea documentation](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea#test-specification-json-formatted-input).
 
-##### Building process
+#### Building process
 
 The `test.py` script (not to be confused with `tests.py`), located under the `tools` directory, handles the process for building tests. It handles the discovery and building of all test cases for a target and toolchain.
 
@@ -73,7 +73,7 @@ The full build process is:
 1. For each discovered test, build all of its source files and link it with the non-test code that was built in step 1.
 1. If specified, create a test specification file and place it in the given directory for use by the testing tools. This is placed in the build directory by default when using Mbed CLI.
 
-##### Application configuration
+#### Application configuration
 
 When building an Mbed application, the presence of an `mbed_app.json` file allows you to set or override different configuration settings from libraries and targets. However, because the tests share a common build, this can cause issues when tests have different configurations that affect the OS.
 
@@ -81,7 +81,7 @@ The build system looks for an `mbed_app.json` file in your shared project files 
 
 If you need to test with multiple configurations, then you can use the `--app-config` option. This overrides the search for an `mbed_app.json` file and uses the configuration file that you specify for the build.
 
-### Writing your first test
+## Writing your first test
 
 You can write tests for your own project or add more tests to Mbed OS. You can write tests by using the [Greentea client](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/greentea-client) and the [UNITY](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity) and [utest](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/utest) frameworks, which are located in `/features/frameworks`.
 
@@ -140,7 +140,7 @@ int main() {
 }
 ```
 
-#### Running the test
+### Running the test
 
 <span class="tips">**Tip:** To see all tests, run `mbed test --compile-list`.</span>
 
@@ -173,13 +173,13 @@ mbedgt: completed in 18.64 sec
 
 Change the test in a way that it fails (for example, expect 6 instead of 4), rerun the test and observe the difference.
 
-### Writing integration tests using host tests
+## Writing integration tests using host tests
 
 The previous test was self-contained. Everything that ran only affected the microcontroller. However, typical test cases involve peripherals in the real world. This raises questions such as: Did my device actually get an internet connection, or did my device actually register with my cloud service? (We have [a lot of these](https://github.com/ARMmbed/simple-mbed-cloud-client/tree/master/TESTS) for Pelion Device Management.) To test these scenarios, you can use a host test that runs on your computer. After the device says it did something, you can verify that it happened and then pass or fail the test accordingly.
 
 To interact with the host test from the device, you can use two functions: `greentea_send_kv` and `greentea_parse_kv`. The latter blocks until it gets a message back from the host.
 
-#### Creating the host test
+### Creating the host test
 
 This example writes an integration test that sends `hello` to the host and waits until it receives `world`. Create a file called `hello_world_tests.py` in the `TESTS/host_tests` folder, and fill it with:
 
@@ -219,7 +219,7 @@ class HelloWorldHostTests(BaseHostTest):
 
 This registers one function you can call from the device: `init`. The function checks whether the value was `hello`, and if so, returns `world` back to the device using the `send_kv` function.
 
-#### Creating the Greentea test
+### Creating the Greentea test
 
 This example writes the embedded part of this test. Create a new file `main.cpp` in `TESTS/tests/integration-test`, and fill it with:
 
@@ -276,11 +276,11 @@ Run the test:
 $ mbed test -v -n tests-test-group-integration-test
 ```
 
-### Debugging tests
+## Debugging tests
 
 Debugging tests is a crucial part of the development and porting process. This section covers exporting the test and driving the test with the test tools while the target is attached to a debugger.
 
-#### Exporting tests
+### Exporting tests
 
 The easiest way to export a test is to copy the test's source code from its test directory to your project's root. This way, the tools treat it like a normal application.
 
@@ -298,7 +298,7 @@ mbed export -i <IDE name>
 
 You can find your exported project in the root project directory.
 
-#### Running a test while debugging
+### Running a test while debugging
 
 Assuming your test was exported correctly to your IDE, build the project and load it onto your target by using your debugger.
 
@@ -334,11 +334,11 @@ This detects your attached target and drives the test. If you need to rerun the 
 
 For an explanation of the arguments used in this command, please run `mbedhtrun --help`.
 
-### Command-line use
+## Command-line use
 
 This section highlights a few of the capabilities of the Greentea command-line interface. For a full list of the available options, please run `mbed test --help`.
 
-#### Listing all tests
+### Listing all tests
 
 You can use the `--compile-list` argument to list all available tests:
 
@@ -357,11 +357,11 @@ Test Case:
 
 After compilation, you can use the `--run-list` argument to list all tests that are ready to be ran.
 
-#### Executing all tests
+### Executing all tests
 
 The default action of Greentea using `mbed test` is to execute all tests found. You can also add `-v` to make the output more verbose.
 
-#### Limiting tests
+### Limiting tests
 
 You can select test cases by name using the `-n` argument. This command executes all tests named `tests-mbedmicro-rtos-mbed-mail` from all builds in the test specification:
 
@@ -381,7 +381,7 @@ You can use a comma (`,`) to separate test names (argument `-n`) and build names
 $ mbed test -n tests-mbedmicro-rtos-mbed-mail,tests-mbed_drivers-c_strings -t K64F-ARM,K64F-GCC_ARM
 ```
 
-#### Selecting platforms
+### Selecting platforms
 
 You can limit which boards Greentea uses for testing by using the `--use-tids` argument.
 
@@ -406,11 +406,11 @@ $ mbedls
 
 In this case, you won't test one target, the LPC1768.
 
-#### Creating reports
+### Creating reports
 
 Greentea supports a number of report formats.
 
-##### HTML
+#### HTML
 
 This creates an interactive HTML page with test results and logs.
 
@@ -418,7 +418,7 @@ This creates an interactive HTML page with test results and logs.
 mbed test --report-html html_report.html --run
 ```
 
-##### JUnit
+#### JUnit
 
 This creates an XML JUnit report, which you can use with popular Continuous Integration software, such as [Jenkins](https://jenkins.io/index.html).
 
@@ -426,7 +426,7 @@ This creates an XML JUnit report, which you can use with popular Continuous Inte
 mbed test --report-junit junit_report.xml --run
 ```
 
-##### JSON
+#### JSON
 
 This creates a general JSON report.
 
@@ -434,7 +434,7 @@ This creates a general JSON report.
 mbed test --report-json json_report.json --run
 ```
 
-##### Plain text
+#### Plain text
 
 This creates a human-friendly text summary of the test run.
 
@@ -442,7 +442,7 @@ This creates a human-friendly text summary of the test run.
 mbed test --report-text text_report.text --run
 ```
 
-### Test specification JSON format
+## Test specification JSON format
 
 The Greentea test specification format decouples the tool from your build system. It provides important data, such as test names, paths to test binaries and the platform on which the binaries should run. This file is automatically generated when running tests through Mbed CLI, but you can also provide it yourself. This way you can control exactly which tests are run and through which compilers.
 
@@ -450,7 +450,7 @@ Greentea automatically looks for files called `test_spec.json` in your working d
 
 When you use the `-t` / `--target` argument with the `--test-spec` argument, you can select which "build" to use. In the example below, you could provide the arguments `--test-spec test_spec.json -t K64F-ARM` to only run that build's tests.
 
-#### Example of test specification file
+### Example of test specification file
 
 The below example uses two defined builds:
 
@@ -521,6 +521,6 @@ mbedgt: available tests for built 'K64F-ARM', location 'BUILD/tests/K64F/ARM'
 ```
 
 
-### Known issues
+## Known issues
 
 There cannot be a `main()` function outside of a `TESTS` directory when building and running tests. This is because this function will be included in the nontest code build, as described in the [building process](#building-process) section. When the test code is compiled and linked with the nontest code build, a linker error will occur, due to there being multiple `main()` functions defined. This is why you should either rename your main application file if you need to build and run tests, or use a different project. Note that this does not affect building projects or applications, only building and running tests.

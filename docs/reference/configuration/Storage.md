@@ -1,4 +1,4 @@
-## Storage
+# Storage
 
 This page describes the build-time configurable parameters for storage in Mbed OS:
 
@@ -8,7 +8,7 @@ This page describes the build-time configurable parameters for storage in Mbed O
 - [Default BlockDevice configuration](#Default-BlockDevice-configuration).
 - [Default FileSystem configuration](#Default-FileSystem-configuration).
 
-### KVStore configuration
+## KVStore configuration
 
 Mbed OS provides a storage solution based on the KVStore API. Different components that implement the KVStore API are allocated and configured to support the [global API](../apis/static-global-api.html).
 
@@ -17,7 +17,7 @@ The configuration of the KVStore storage solution is composed of two levels:
 - Use the top level `mbed_lib.json` to selet the predefined configuration by setting the parameter `storage_type`.
 - Use the subfolder `mbed_lib.json` for each configuration to fine tune the relevant parameters for the selected configuration.
 
-#### Configuration structure
+### Configuration structure
 
 ```
 kvstore
@@ -53,7 +53,7 @@ You can find the configuration files under `conf/<configuration name>`:
 
 A standalone block device is allocated for each component in internal and external memory and SD cards as required for the configurations. The full size of the memory allocated for each block device will be used by the respective component.
 
-#### Configuration parameters
+### Configuration parameters
 
 The following is a list of all storage parameters available and their descriptions:
 
@@ -75,7 +75,7 @@ The following is a list of all storage parameters available and their descriptio
 - `mount_point` - Mount point for the file system. This parameter will be ignored if the file system is set to default.
 - `folder_path` - Path for the working directory where the FileSystemStore stores the data.
 
-#### Storage configuration
+### Storage configuration
 
 Below is the main storage configuration in the `mbed_lib json` file:
 
@@ -95,7 +95,7 @@ Below is the main storage configuration in the `mbed_lib json` file:
 }
 ```
 
-#### TDB_INTERNAL
+### TDB_INTERNAL
 
 Use this internal configuration for targets willing to save all the data in internal flash.
 
@@ -127,7 +127,7 @@ Below is the `TDB_INTERNAL` configuration in `mbed_lib.json`:
 
 For this configuration, please define the section of the internal storage that will be used for data, by defining these parameters in your `app.config` file: `internal_base_address` and `internal_size`. If not defined, the storage will start in the first sector immediately after the end of the application. This can reduce the ability to update the application with a bigger one.
 
-#### TDB_External
+### TDB_External
 
 <span class="images">![External](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/TDB_External.jpg)<span>`TDB_External`</span></span>
 
@@ -174,7 +174,7 @@ Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
 }
 ```
 
-#### TDB_External_no_RBP
+### TDB_External_no_RBP
 
 <span class="images">![External](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/TDB_External_no_rbp.jpg)<span>`TDB_External_no_RBP`</span></span>
 
@@ -206,7 +206,7 @@ Below is the `TDB_EXTERNAL_NO_RBP` configuration in `mbed_lib.json`:
 }
 ```
 
-#### FILESYSTEM
+### FILESYSTEM
 
 <span class="images">![FILESYSTEM](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/FILESYSTEM.jpg)<span>`FILESYSTEM`</span></span>
 
@@ -264,7 +264,7 @@ Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
 If the file system is not set, the default file system and block device will be applied, and `blockdevice`, `external_size` and `external_base_address` will be ignored.
 
-#### FILESYSTEM_NO_RBP
+### FILESYSTEM_NO_RBP
 
 <span class="images">![FILESYSTEM](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/FILESYSTEM_no_rbp.jpg)<span>`FILESYSTEM_NO_RBP`</span></span>
 
@@ -310,7 +310,7 @@ Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
 If the file system is not set, the default file system and block device will be applied, and `blockdevice`, `external_size` and `external_base_address` will be ignored.
 
-#### Configuration functions API
+### Configuration functions API
 
 Applications must call the function **storage_configuration()** to instantiate the required configuration. This function is defined as weak to allow the replacement of this function with a completely different implementation of the instantiation of components:
 
@@ -321,11 +321,11 @@ MBED_WEAK bool storage_configuration()
 }
 ```
 
-#### Override user-defined setup
+### Override user-defined setup
 
 To create a much more complex setup, including using other block devices, such as MBRBlockDevice or SlicingBlockDevice, you need to override the `storage_configuration` function and generate any storage configuration.
 
-### LittleFS configuration
+## LittleFS configuration
 
 LittleFS provides several configuration options that you can use to tweak the performance of the file system on different hardware. By default, this file system finds the optimal configuration from the underlying block device's geometry, but you can override this to optimize special situations. For example, if your device has a large amount of RAM, you can increase the `read_size` and `prog_size` configuration options for a minor speed improvement.
 
@@ -381,7 +381,7 @@ Name: littlefs.read_size
     Value: 64 (set by library:littlefs)
 ```
 
-### NVStore configuration
+## NVStore configuration
 
 NVStore does not need much configuration. It relies only on the regions of internal flash specified in the `area_*_address` and `area_*_size` for the two areas. Additionally, you can use `max_keys` to manage the amount of RAM NVStore keys needs. Note that `max_keys` defaults to the number of keys Mbed OS needs. You only need to modify it if an application uses NVStore directly.
 
@@ -416,7 +416,7 @@ Name: nvstore.max_keys
     Value: 16 (set by library:nvstore)
 ```
 
-### BlockDevice - default configuration
+## BlockDevice - default configuration
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
@@ -432,7 +432,7 @@ Components can coexist in the system. A device can have SPIF and SD or any combi
 
 The list above is in the order of precedence shows which block device is the default one if more than one component is enabled.
 
-#### Configuring components
+### Configuring components
 
 For example, the following entry in `targets.json` enables the SD component:
 
@@ -477,7 +477,7 @@ Enabling the storage feature, SD component, and overriding the default pins can 
 
 These values override the default pins assigned to the parameters: `MBED_CONF_SD_SPI_MOSI`, `MBED_CONF_SD_SPI_MISO`, `MBED_CONF_SD_SPI_CLK` and `MBED_CONF_SD_SPI_CS` present within the `mbed_lib.json` file for the SD component in Mbed OS.
 
-#### Overriding default block device implementation
+### Overriding default block device implementation
 
 The get default instance is implemented as [MBED_WEAK](https://github.com/ARMmbed/mbed-os/blob/40058871de290edc758a21ae6d8f2ec1d1b3533d/platform/mbed_toolchain.h#L120) at `features/storage/system_storage/SystemStorage.cpp`. That means that can override it by implementing the function without `MBED_WEAK` and change the default block device for a given application.
 
@@ -491,7 +491,7 @@ BlockDevice *BlockDevice::get_default_instance()
 }
 ```
 
-### FileSystem - default configuration
+## FileSystem - default configuration
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file. When you configure a component of SPIF, DATAFLASH or SD, the system supports one default file system.
 
@@ -501,7 +501,7 @@ The default file system is created based on the default block device due to perf
 
 SPIF and DATAFLASH block devices support the Little file system, and the SD block device supports the FAT file system. However, the application can ovveride this behavior.
 
-#### Overriding default block device implementation
+### Overriding default block device implementation
 
 The get default instance is implemented as `MBED_WEAK` at `features/storage/system_storage/SystemStorage.cpp`. That means you can overridde it by implementing the function without `MBED_WEAK` and change the default block device for a given application.
 

@@ -1,4 +1,4 @@
-<h2 id="nfc-technology">NFC</h2>
+<h1 id="nfc-technology">NFC</h1>
 
 NFC stands for Near-Field Communication and is a short-range radio technology. You can use it to enable use cases such as contactless payments, access control and device pairing.
 
@@ -6,7 +6,7 @@ NFC stands for Near-Field Communication and is a short-range radio technology. Y
 
 You can find more details on NFC about the [NFC Forum's website](https://nfc-forum.org/what-is-nfc/).
 
-### NFC support in Mbed OS
+## NFC support in Mbed OS
 
 Historically, NFC encompasses multiple protocols. NFC support in Mbed OS is based on the specifications the [NFC Forum](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-forum-technical-specifications/) publishes.
 
@@ -28,7 +28,7 @@ The NFC Forum defines 5 Tag specifications, which define how to transmit and rec
 
 When using a controller, the Mbed OS NFC Framework can implement the [Type 4 Tag platform](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/tag-type-technical-specifications/). This means that the initiator can gnerate NDEF messages dynamically before each read and parse it after each write.
 
-### NFC controllers and NFC EEPROMs
+## NFC controllers and NFC EEPROMs
 
 These components address different use cases, and you need to consider two factors: cost and functionality.
 
@@ -38,18 +38,18 @@ NFC controllers typically support a large subset (if not all) of NFC Forum funct
 
 NFC EEPROMs behave like NFC tags whose memory can either be addressed through a wired (such as I2C) or NFC air interface. One benefit is that these work autonomously from a microcontroller. Some of them can also use the NFC field as a power source if they are powered off at the time.
 
-### Getting started with NFC and example
+## Getting started with NFC and example
 
 NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/nfc) and demonstrate how to create NFC tags that you can be read from and write to using a phone.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/explorenfc_nucleo.jpg)<span>An Explore-NFC board attached to a Nucleo board</span></span>
 
-### API
+## API
 
 There are two entrypoints for the API, depending on whether you are using a NFC Controller or EEPROM.
 
 You must initiate either entry point with a driver instance, an event queue and a scratch buffer for NDEF messages.
 
-### Design
+## Design
 
 A detailed design document is available [within the Mbed OS source tree](https://github.com/ARMmbed/mbed-os/docs/design-documents/nfc/nfc_design.md). It details the rationale behind the API design.

@@ -1,8 +1,8 @@
-## Eclipse
+# Eclipse
 
 This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [choose a compiler with which to build your project](../tools/index.html#compiler-versions).
 
-### Installing Eclipse
+## Installing Eclipse
 
 You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
 
@@ -20,11 +20,11 @@ You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
     1. Click **Next** repeatedly, and accept the license agreements.
     1. Click **Finish**. If prompted to restart Eclipse, click **Yes**.
 
-### Exporting a project
+## Exporting a project
 
 To export your project to Eclipse, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
 
-#### Online compiler
+### Online compiler
 
 1. Right click on your project.
 1. Select *Export Program...*.
@@ -35,7 +35,7 @@ To export your project to Eclipse, you can use either the Arm Mbed Online Compil
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse1.png)<span>Exporting to Eclipse</span></span>
 
-#### Arm Mbed CLI
+### Arm Mbed CLI
 
 In your project folder, run:
 
@@ -46,7 +46,7 @@ In your project folder, run:
 $ mbed export -i eclipse_gcc_arm -m K64F --profile debug
 ```
 
-### Importing the project in Eclipse
+## Importing the project in Eclipse
 
 1. Open Eclipse.
 1. On the *Welcome* screen, select *Import a project with a working Makefile*.
@@ -79,7 +79,7 @@ Steps to update Eclipse's PATH:
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse4.png)<span>Setting up PATH</span></span>
 
-#### pyOCD
+### pyOCD
 
 1. Select *Run > Debug Configurations...*.
 1. If no configuration exists under *GDB pyOCD Debugging*, click on *New launch configuration*.
@@ -96,7 +96,7 @@ Steps to update Eclipse's PATH:
 1. Click *Apply*.
 1. Click *Debug* to start debugging.
 
-#### OpenOCD
+### OpenOCD
 
 1. Select *Run > Debug Configurations...*.
 1. If a configuration already exists under *GDB pyOCD Debugging*, please remove it.
@@ -117,7 +117,7 @@ Steps to update Eclipse's PATH:
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/eclipse9.png)<span>Debugging an Mbed OS 5 application in Eclipse</span></span>
 
-### Building with Mbed CLI
+## Building with Mbed CLI
 
 We build using Make, but you can also use Mbed CLI for building from Eclipse:
 

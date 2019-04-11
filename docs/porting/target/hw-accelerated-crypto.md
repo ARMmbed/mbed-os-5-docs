@@ -1,10 +1,10 @@
-## Hardware Accelerated Crypto
+# Hardware Accelerated Crypto
 
 This document explains how to add hardware acceleration support for a development board in Arm Mbed OS and integrate it with [Arm Mbed TLS](https://github.com/ARMmbed/mbedtls).
 
-### Introduction
+## Introduction
 
-#### Why should I add hardware acceleration?
+### Why should I add hardware acceleration?
 
 Whether the application developer uses Mbed TLS as a cryptographic library or as a TLS stack, cryptographic operations can be expensive in time and can impact the overall performance of application software. Hardware accelerators improve performance of cryptographic operations, which improves overall performance and response time as well.
 
@@ -18,7 +18,7 @@ You may want to add hardware acceleration in the following cases:
 
 The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
 
-#### What parts can I accelerate?
+### What parts can I accelerate?
 
 Mbed TLS has separate modules for the different cryptographic primitives. Hardware acceleration interface is available for the following modules and functions:
 
@@ -39,7 +39,7 @@ Mbed TLS has separate modules for the different cryptographic primitives. Hardwa
 - Asymmetric:
     - ECP: [`mbedtls_internal_ecp_randomize_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#aac10047640a6fcdd19bd1466371d896d), [`mbedtls_internal_ecp_add_mixed()`](https://tls.mbed.org/api/ecp__internal_8h.html#a3a3d7f9ac767f9007ad9c8d451394b08), [`mbedtls_internal_ecp_double_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#ae86c1581847bc201cd41b794647296ac), [`mbedtls_internal_ecp_normalize_jac_many()`](https://tls.mbed.org/api/ecp__internal_8h.html#a915f188f33640d90fa11eb13e99114d5), [`mbedtls_internal_ecp_normalize_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#a9f4a88693c277d48e2b98ce42c89965e), [`mbedtls_internal_ecp_double_add_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#ae7b63bf0cfe62021e976b166fb422b54), [`mbedtls_internal_ecp_randomize_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#a498b09b2a7c458847c9fd46b39808575), [`mbedtls_internal_ecp_normalize_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#a45992cb245da01f5802ef6e544b9bac4).
 
-#### How can I make Mbed TLS use my hardware accelerator?
+### How can I make Mbed TLS use my hardware accelerator?
 
 You have to provide an alternative implementation for the parts of Mbed TLS that you want to accelerate.
 
@@ -49,9 +49,9 @@ The easier and safer way to extend functionality is to [override some or all of 
 
 No matter which approach you choose, please note the [considerations below](#considerations-for-alternative-implementations).
 
-### Adding acceleration by replacing functions
+## Adding acceleration by replacing functions
 
-#### Process overview
+### Process overview
 
 1. First, you should consider what kind of functionality your hardware provides. Does the processor have some accelerated cryptographic subroutines? Or does your board have a full hardware cryptography module, securely storing keys and providing the functionality of high level cryptographic primitives?
 
@@ -68,13 +68,13 @@ No matter which approach you choose, please note the [considerations below](#con
 
 1. Because Mbed TLS is implemented as a static link library in Arm Mbed OS, you also have to notify the compiler or linker that the alternative implementations are present. To do this, you have to set the macros corresponding to the selected functions. You can read more on this in the [subsection about setting macros](#how-to-set-the-macros).
 
-#### How to implement the functions
+### How to implement the functions
 
 These functions have the same name as the ones they replace. There is a [doxygen documentation for the original functions](https://tls.mbed.org/api/). The exception to the naming conventions is the ECP module and parts of the AES module, where an internal API is exposed to enable hardware acceleration. These functions too have a doxygen documentation, and you can find them in the `ecp_internal.h` and `aes.h` header files. The function declarations have to remain unchanged; otherwise, Mbed TLS can't use them.
 
 Clone the [Mbed OS repository](https://github.com/ARMmbed/mbed-os) and copy the source code of your function definitions to the `features/mbedtls/targets/TARGET_XXXX` directory specific to your target. Create a pull request when your code is finished and production ready. You may create a directory structure similar to the one you have for the HAL if you feel it appropriate.
 
-#### How to implement ECP module functions
+### How to implement ECP module functions
 
 Mbed TLS supports only curves over prime fields and uses mostly curves of short Weierstrass form. The function `mbedtls_internal_ecp_add_mixed` and the functions having `_jac_` in their names are related to point arithmetic on curves in short Weierstrass form. The only Montgomery curve supported is Curve25519. To accelerate operations on this curve, you have to replace the three functions with `_mxz_` in their name. For more information on elliptic curves in Mbed TLS, see the [corresponding Knowledge Base article](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool).
 
@@ -82,7 +82,7 @@ The method of accelerating the ECP module may support different kinds of ellipti
 
 To resolve this, you can move the setup of the hardware to the `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free` functions and let Mbed TLS call them whenever it is necessary. Please keep in mind that `mbedtls_internal_ecp_init` should return 0 upon a successful setup and `MBEDTLS_ERR_ECP_FEATURE_UNAVAILABLE` otherwise.
 
-#### How to set the macros
+### How to set the macros
 
 You will have to set some macros to notify Mbed TLS and the compiler or linker about the presence of your functions or module implementation.
 
@@ -117,7 +117,7 @@ When overriding functions from the ECP module, please note:
 
 - The ECP interface requires the implementation of some utility functions (`mbedtls_internal_ecp_grp_capable`, `mbedtls_internal_ecp_init` and `mbedtls_internal_ecp_free`), therefore you need to notify the compiler or linker about these functions by defining the `MBEDTLS_ECP_INTERNAL_ALT` macro.
 
-### Adding acceleration by replacing modules
+## Adding acceleration by replacing modules
 
 Replacing the whole module is the harder way, because it usually takes much more effort than providing alternatives for a handful of functions. It is also less safe, not just because taking this road can cause complications during the maintenance period, but also because it can lead to increased security risks. For example, if the alternative module implementation contains the duplicate of some Mbed TLS code, then keeping it up to date is an extra effort; not doing so may raise security risks.
 
@@ -129,11 +129,11 @@ To replace a module you have to:
 
 - Set the macro `MBEDTLS_<Module Name>_ALT` to notify Mbed TLS and the compiler or linker about the replacement. You can read more on this in the [subsection about setting macros](#how-to-set-the-macros).
 
-#### Where to find the default implementations
+### Where to find the default implementations
 
 The default implementation of the modules are usually in the file `feature/mbedtls/src/<Module Name>.c`. The ECP module is split to two files: `ecp.c` and `ecp_curves.c`.
 
-### Mbed TLS platform context
+## Mbed TLS platform context
 
 Some hardware accelerators require initialization, regardless of the specific cryptography engine. For this, we introduced `mbedtls_platform_setup()` and `mbedtls_platform_terminate()`.
 
@@ -143,15 +143,15 @@ When your hardware accelerator driver requires initialization, do the following 
 1. Implement `crypto_platform_setup(crypto_platform_ctx *ctx)` and `crypto_platform_terminate(crypto_platform_ctx *ctx)`, which initializes and terminates your hardware accelerator driver.
 1. Define `crypto_platform_ctx` in `crypto_device_platform.h`.
 
-### Considerations for alternative implementations
+## Considerations for alternative implementations
 
-#### Concurrency
+### Concurrency
 
 Note that functions in Mbed TLS can be called from multiple threads and from multiple processes at the same time. Because hardware accelerators are usually a unique resource, it is important to protect all functions against concurrent access.
 
 For short actions, disabling interrupts for the duration of the operation may be enough. When it is not desirable to prevent context switches during the execution of the operation, you must protect the operation with a mutual exclusion primitive such as a [mutex](../apis/mutex.html). Make sure to unlock the mutex or restore the interrupt status when returning from the function even if an error occurs.
 
-#### Power management
+### Power management
 
 The current framework does not provide an interface to initialize and shut down accelerator hardware. One approach is to perform any necessary hardware initialization during system startup (outside of Mbed TLS); however this may not be desirable for power consumption reasons. At the other end of the spectrum, it is possible to initialize the hardware at the beginning of each function and shut it down after reading the results. This is a viable strategy if initialization is cheap enough.
 

@@ -1,4 +1,4 @@
-## Device Management configuration
+# Device Management configuration
 
 Device Management configuration has five distinct areas:
 
@@ -20,7 +20,7 @@ For full documentation about bootloaders and firmware update, please read the fo
 
 To hasten this process, you can copy the configuration from the [application example](https://github.com/ARMmbed/pelion-ready-example/blob/master/mbed_app.json) as the basis for your application configuration.
 
-### 1. Application configuration
+## 1. Application configuration
 
 Edit the `mbed_app.json` file, and create a new entry under `target_overrides` with the target name for your device:
 
@@ -84,7 +84,7 @@ To run the tests:
 $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect --run -v
 ```
 
-### 2. Bootloader configuration
+## 2. Bootloader configuration
 
 After you've successfully passed the "Connect" tests as described above, you can enable firmware update feature by adding a bootloader to your application.
 
@@ -134,7 +134,7 @@ After you've successfully passed the "Connect" tests as described above, you can
 <span class="notes">**Note:** `mbed-bootloader` is primarily optimized for `GCC_ARM`, so you may want to compile it with that toolchain.
 Before jumping to the next step, you should compile and flash the bootloader and then connect over the virtual comport to ensure the bootloader is running correctly. You can ignore errors related to checksum verification or failure to jump to application - these are expected at this stage.</span>
 
-### 3. Add the bootloader to your application
+## 3. Add the bootloader to your application
 
 1. Copy the compiled bootloader from `mbed-bootloader-extended/BUILDS/<TARGET>/<TOOLCHAIN>-TINY/mbed-bootloader.bin` to `<your_application_name>/bootloader/mbed-bootloader-<TARGET>.bin`.
 

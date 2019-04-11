@@ -1,6 +1,6 @@
-## Bootstrap
+# Bootstrap
 
-### Entry points
+## Entry points
 
 Mbed OS provides two entry points you as a developer to hook into:
 
@@ -33,7 +33,7 @@ Sequence diagram of the boot sequence:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/boot_sequence.png)<span>A diagram of the Arm Mbed OS 5 boot sequence</span></span>
 
-### Retargeting
+## Retargeting
 
 Mbed OS redefines multiple standard C library functions to enable them to work in a predictable and familiar way on a remote embedded target device:
 

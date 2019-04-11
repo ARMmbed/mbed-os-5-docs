@@ -1,8 +1,8 @@
-## Platform overview
+# Platform overview
 
 The role of the platform modules is to provide general purpose MCU management infrastructure, a few common data structures and  a consistent user experience on top of different standard libraries and toolchains. This page contains reference material about these subjects.
 
-### General MCU Management Infrastructure
+## General MCU Management Infrastructure
 
 Mbed OS eases MCU management through the use of several scoped locks and several global APIs.
 
@@ -14,14 +14,14 @@ Mbed OS also provides global APIs for the sleep and preemption global resources.
 - [Power management](power-management.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
 - [DeepSleepLock](deepsleeplock.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
 
-### Common data structures
+## Common data structures
 
 Mbed OS provides the CircularBuffer and ATCmdParser as these are commonly used utilities in embedded systems.
 
 - [CircularBuffer](circularbuffer.html): The class that provides APIs to push and pop data from a buffer in an interrupt safe fashion.
 - [ATCmdParser](atcmdparser.html): An Mbed OS compatible AT command parser and serializer.
 
-### C++ ergonomics extensions
+## C++ ergonomics extensions
 
 Mbed OS includes a few convenience classes that are tailored for embedded systems development. These are the `Callback`, `Error` and `NonCopyable` classes.
 
@@ -56,7 +56,7 @@ Serial serial(USBTX, USBRX);
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](platform.html#the-importance-of-state) section.
 
-##### Why should you use Callbacks?
+#### Why should you use Callbacks?
 
 Supporting all of the standard C++ function types is difficult for an API developer. An API developer must consider state, C++ Function objects, const correctness and volatile correctness.
 

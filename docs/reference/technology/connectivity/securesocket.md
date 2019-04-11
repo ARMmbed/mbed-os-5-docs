@@ -1,4 +1,4 @@
-## Secure Socket
+# Secure Socket
 
 Mbed OS provides an interface for creating secure connections in the form of TLS stream. The `TLSSocketWrapper` class gives you the ability to secure any stream-based socket connection, for example TCP stream. This allows you to use existing protocol libraries through secure connections.
 
@@ -6,7 +6,7 @@ Mbed OS provides an interface for creating secure connections in the form of TLS
 
 The helper class called `TLSSocket` contains internal TCP socket for transport stream.
 
-### Usage example
+## Usage example
 
 `TLSSocketWrapper` implements the Mbed OS Socket API and extends it with functions that allow configuring security certificates, so it is straightforward to use after setting up. Please note that for most of the use cases, you are using these methods through `TLSSocket` class:
 
@@ -22,7 +22,7 @@ socket->send(data, size);
 
 Please note that internal TLS structures require over 1 kB of RAM, so you need to allocate each TLSSocket from the heap by using the `new` command, instead of using stack or statically allocating it.
 
-### Design
+## Design
 
 Internally `TLSSocket` consists of two classes, `TLSSocketWrapper` and `TLSSocket`, as shown in the following diagram:
 
@@ -50,7 +50,7 @@ tls.connect();
 tls.send("HELLO", 5);
 ```
 
-#### Configuring certificates
+### Configuring certificates
 
 `TLSSocketWrapper` provides the following API to set server certificate. You can use either BASE64 formatted PEM certificate or binary DER certificates. The latter form of these functions assumes `root_ca_pem` or `client_cert_pem` to be standard C string, counts its length and passes to method, which takes only `void*` and `len`.
 
@@ -88,7 +88,7 @@ nsapi_error_t TLSSocketWrapper::set_client_cert_key(const void *client_cert_pem,
 nsapi_error_t TLSSocketWrapper::set_client_cert_key(const char *client_cert_pem, const char *client_private_key_pem);
 ```
 
-#### Socket API
+### Socket API
 
 `TLSSocketWrapper` implements the [Mbed OS Socket API](../apis/network-socket.html):
 
@@ -135,7 +135,7 @@ virtual nsapi_error_t listen(int backlog = 1);
 
 These are returning `NSAPI_ERROR_UNSUPPORTED` as you can't set TLS socket to listening mode.
 
-#### Transport modes
+### Transport modes
 
 `TLSSocketWrapper` has four modes that are given in the constructor and affect how the transport Socket is used in connection and closing phases:
 
@@ -148,7 +148,7 @@ These are returning `NSAPI_ERROR_UNSUPPORTED` as you can't set TLS socket to lis
 
 The default mode is `TRANSPORT_CONNECT_AND_CLOSE`.
 
-#### Advanced use: using internal Mbed TLS structures
+### Advanced use: using internal Mbed TLS structures
 
 You may choose to use internal Mbed TLS structures to configure the TLS instance. This is supported by exposing some Mbed TLS structures like this:
 
@@ -163,7 +163,7 @@ void set_ssl_config(mbedtls_ssl_config *);
 
 For guidance of how to use these, please refer to the [Mbed TLS documentation](../apis/tls.html).
 
-### Related content
+## Related content
 
 - [Security overview](../apis/security.html).
 - [TLSSocket](../apis/tlssocket.html) API reference.

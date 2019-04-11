@@ -1,8 +1,8 @@
-<h2 id="device-management-test">Validation and testing</h2>
+<h1 id="device-management-test">Validation and testing</h1>
 
 Device Management provides built-in tests to help you define your device management configuration. Before running these tests, we recommend you refer to the [testing setup](#testing-setup) section below.
 
-### Test suites
+## Test suites
 
 | **Test suite** | **Description** |
 | ------------- | ------------- |
@@ -12,7 +12,7 @@ Device Management provides built-in tests to help you define your device managem
 | `net-multi` | Network multithreaded test for 1, 2 and 3 download threads with 1kb receive buffer size. |
 | `stress-net-fs` | Network and file system single and multithreaded tests:<ul><li>1 thread (sequential) - 1 download (1kb buffer), 1 file thread (1kb buffer)</li><li>2 parallel threads - 1 download, 1 file thread (1kb buffer)</li><li>3 parallel threads - 1 download, 2 file (256 bytes, 1 kb buffer)</li><li>4 parallel threads - 1 download, 3 file (1 byte, 256 bytes, 1kb buffer)</li></ul> |
 
-### Test cases - connect
+## Test cases - connect
 
 | **Test case** | **Description** |
 | ------------- | ------------- |
@@ -29,7 +29,7 @@ Device Management provides built-in tests to help you define your device managem
 | `ResourceLwM2M PUT Test` | Verifies the device can perform a PUT request on an LwM2M resource by setting a new value. |
 | `Resource LwM2M POST Test` | Verifies the device can execute a POST on an LwM2M resource and the callback function on the device is called. |
 
-### Test cases - update
+## Test cases - update
 
 | **Test case** | **Description** |
 | ------------- | ------------- |
@@ -45,7 +45,7 @@ Device Management provides built-in tests to help you define your device managem
 | `Pelion DM Re-register` | Reregisters the device with Device Management using the new firmware and previously bootstrapped credentials. |
 | `Post-update Identity` | Verifies that the device identity is preserved over firmware update and device reset, confirming that Root of Trust is stored in SOTP correctly. |
 
-### Requirements
+## Requirements
 
 Device Management tests rely on the Python SDK to test the end-to-end solution. To install the Python SDK:
 
@@ -55,7 +55,7 @@ Device Management tests rely on the Python SDK to test the end-to-end solution. 
 
 <span class="notes">**Note:** The Python SDK requires Python 2.7.10+ or Python 3.4.3+, built with SSL support.</span>
 
-### Testing setup
+## Testing setup
 
 1. Import an example application for Device Management that contains the corresponding configuration for your target.
 
@@ -93,19 +93,19 @@ Device Management tests rely on the Python SDK to test the end-to-end solution. 
     $ mbed test -t <toolchain> -m <platform> --app-config mbed_app.json -n simple-mbed-cloud-client-tests-* --run -v
     ```
 
-### Troubleshooting
+## Troubleshooting
 
 Below are common issues and fixes.
 
-#### Autoformatting failed with error -5005
+### Autoformatting failed with error -5005
 
 This is due to an issue with the storage block device. If using an SD card, ensure that the SD card is seated properly.
 
-#### SYNC_FAILED during testing
+### SYNC_FAILED during testing
 
 Occasionally, if the test failed during a previous attempt, the SMCC Greentea tests fail to sync. If this is the case, please replug your device to the host PC. Additionally, you may need to update your DAPLink or ST-Link interface firmware.
 
-#### Device identity is inconsistent
+### Device identity is inconsistent
 
 If your device ID in Device Management is inconsistent when your device resets, it could be because it is failing to open the credentials on the storage held in the Enhanced Secure File System. Typically, this is because the device cannot access the Root of Trust stored in SOTP.
 
@@ -129,7 +129,7 @@ When this occurs, look at the SOTP sectors defined in `mbed_app.json`:
 
 Ensure that the sectors are correct according to the flash layout of your device, and they are not being overwritten during the programming of the device. ST-Link devices overwrite these sectors when you use drag-and-drop of `.bin` files. Thus, moving the SOTP sectors to the end sectors of flash ensures they are not overwritten.
 
-#### Stack overflow
+### Stack overflow
 
 If you receive a stack overflow error, increase the Mbed OS main stack size to at least 6000. You can do this by modifying the following parameter in `mbed_app.json`:
 
@@ -137,10 +137,10 @@ If you receive a stack overflow error, increase the Mbed OS main stack size to a
  "MBED_CONF_APP_MAIN_STACK_SIZE=6000",
 ```
 
-#### Device failed to register
+### Device failed to register
 
 Check the device allocation on your Device Management account to see if you are allowed additional devices to connect. You can delete development devices. After being deleted, they will not count toward your allocation.
 
-### Known issues
+## Known issues
 
 Check open issues on [GitHub](https://github.com/ARMmbed/simple-mbed-cloud-client/issues).

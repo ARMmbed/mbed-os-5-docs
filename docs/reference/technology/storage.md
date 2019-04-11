@@ -1,4 +1,4 @@
-<h2 id="storage-tech">Storage</h2>
+<h1 id="storage-tech">Storage</h1>
 
 We designed the architecture of the Mbed OS storage solution with the following properties:
 
@@ -6,13 +6,13 @@ We designed the architecture of the Mbed OS storage solution with the following 
 - No wear-leveling for firmware, both active and future updates.
 - Security applied to external storage.
 
-### Architectural design
+## Architectural design
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/storagearch.png)<span>Mbed OS storage C++ class names (Blue indicates implementation and yellow indicates interfaces)</span></span>
 
 Storage in Mbed OS is composed of multiple layers that stack. With these stackable layers, you can configure the storage system that is most appropriate for your needs. For example, if you only need to store small, fixed-size data, you can use TDBStore. If you need a POSIX-like API for random access of larger files, such as logs or databases, then LittleFS is a good choice. 
 
-### Class hierarchy
+## Class hierarchy
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/storageclasshierarchy.png)<span>Storage class hierarchy (Blue indicates implementation classes, and yellow indicates interfaces)</span></span>
 
@@ -45,7 +45,7 @@ An example of implementations of the interfaces are:
    - FileSystemStore - Class that provides a key-value store API on top of a POSIX-like file system API.
    - SecureStore - Class that provides encryption, authentication and rollback protection on top of the KVStore API. It requires two KVStore implementations, one that provides the storage for the KV pairs and one that provides storage for the CMACs that protect KV pairs stored in the KVStore.
 
-#### Security
+### Security
 
 If you choose a file system with a POSIX-like API, then a KVStore API can still be made available through the FileSystemStore adapter class. Then, if you require security features, the SecureStore can be added on top of the layer stack. The SecureStore can only sit on top of a KVStore and cannot work on top of a POSIX-like API due to this requiring a vastly more complex design.
 
