@@ -8,19 +8,19 @@ The other side of the process is the act of scanning, which listens for advertis
 
 Advertising, scanning and connection all have parameters that let you find a compromise between desired power consumption levels, latency and efficiency of these processes.
 
-### Advertising
+## Advertising
 
 Advertising consists of broadcasting at a regular interval a small amount of data containing valuable information about the device. Peer devices listening on BLE advertising channels may scan these packets.
 
 Scanners may also request additional information from device advertising by sending a scan request. If the broadcaster accepts scan requests, it can reply with a scan response packet containing additional information.
 
-### Scanning
+## Scanning
 
 Scanning consists of listening for peer advertising packets. From a scan, a device can identify devices available in its environment.
 
 If the device scans actively, it sends scan request to scannable advertisers and collects their scan responses.
 
-### Extended and periodic advertising
+## Extended and periodic advertising
 
 BLE controllers supporting Bluetooth 5.0 may offer additional advertising and scanning options. Use `isFeatureSupported()` to check feature availability.
 
@@ -32,13 +32,13 @@ There may be many advertising sets active at one time on a single advertiser. Th
 
 Devices that do not support extended and periodic advertising will not see these advertisements. You may use legacy advertising alongside extended advertising, running at the same time, to support older devices in the environment.
 
-### Privacy
+## Privacy
 
 Privacy is a feature that allows a device to avoid being tracked by other (untrusted) devices. The device achieves it by periodically generating a new random address. The random address may be a resolvable random address, enabling trusted devices to recognize it as belonging to the same device. These trusted devices receive an Identity Resolution Key (IRK) during pairing. The SecurityManager handles this and relies on the other device accepting and storing the IRK.
 
 You need to enable privacy by calling `enablePrivacy()` after initializing the SecurityManager because privacy requires SecurityManager to handle IRKs. Set the behavior of privacy enabled devices by using `setCentralPrivacyConfiguration()`, which specifies what the device should be with devices using random addresses, and `setPeripheralPrivacyConfiguration`. Random addresses that privacy enabled devices generate can be of two types: resolvable (by devices who have the IRK) and unresolvable. You can't use unresolvable addresses for connecting and connectable advertising; therefore, use a resolvable one for these, regardless of the privacy configuration.
 
-### Modulation schemes
+## Modulation schemes
 
 When supported by the host and controller, you can select different modulation schemes:
 
@@ -52,7 +52,7 @@ You may set preferred PHYs (separately for RX and TX) using `setPreferredPhys()`
 
 You may query the currently used PHY using `readPhy()`, which returns the result through a call to the registered event handler. You may register the handler with `setEventHandler()`. The events inform about the currently used PHY and of any changes to PHYs, which the controller or the peer may trigger autonomously.
 
-### Data length (over-the-air MTU)
+## Data length (over-the-air MTU)
 
 In addition to modulation schemes, Maximum Transmission Unit (MTU) size also strongly affects throughput. Newer controllers allow you to negotiate bigger MTUs. Because each packet contains overhead, bigger packets maximize throughput.
 
