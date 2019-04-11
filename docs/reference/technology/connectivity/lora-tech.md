@@ -1,4 +1,4 @@
-<h2 id="lora-tech">LoRaWAN</h2>
+<h1 id="lora-tech">LoRaWAN</h1>
 
 ## LoRaWAN network architecture
 

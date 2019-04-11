@@ -1,4 +1,4 @@
-<h2 id="quick-start">Arm Mbed OS quick start</h2>
+<h1 id="quick-start">Arm Mbed OS quick start</h1>
 
 This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device.
 

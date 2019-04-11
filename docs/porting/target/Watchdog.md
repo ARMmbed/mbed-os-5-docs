@@ -1,4 +1,4 @@
-<h2 id="watchdog-port">Watchdog</h2>
+<h1 id="watchdog-port">Watchdog</h1>
 
 The Watchdog HAL API provides a low-level interface to the Independent Watchdog Timer of a target. Implementing the Watchdog API is not mandatory, but by implementing it, you can use the hardware watchdog timer to detect and recover from computer malfunctions.
 

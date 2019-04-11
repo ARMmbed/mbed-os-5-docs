@@ -1,4 +1,4 @@
-<h2 id="ide-update">Updating devices</h2>
+<h1 id="ide-update">Updating devices</h1>
 
 The Online Compiler integrates with Pelion Device Management's remote firmware update services.
 

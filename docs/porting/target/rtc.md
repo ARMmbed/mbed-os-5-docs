@@ -1,4 +1,4 @@
-<h2 id="rtc-port">RTC</h2>
+<h1 id="rtc-port">RTC</h1>
 
 Implementing RTC enables Mbed OS to keep track of the current time. The standard library time keeping functions, such as `time`, use it.
 

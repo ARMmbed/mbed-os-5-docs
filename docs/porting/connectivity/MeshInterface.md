@@ -1,4 +1,4 @@
-<h2 id="6lowpan-port">6LoWPAN stack</h2>
+<h1 id="6lowpan-port">6LoWPAN stack</h1>
 
 Device drivers are a set of functions for providing PHY layer devices for the 6LoWPAN stack:
 

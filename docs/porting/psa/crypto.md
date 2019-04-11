@@ -1,4 +1,4 @@
-<h2 id="crypto-port">Mbed Crypto</h2>
+<h1 id="crypto-port">Mbed Crypto</h1>
 
 Mbed OS provides Mbed Crypto for targets that require support for entropy injection. For information about Mbed Crypto, please refer to [the Mbed Crypto repository](https://github.com/ARMmbed/mbed-crypto).
 

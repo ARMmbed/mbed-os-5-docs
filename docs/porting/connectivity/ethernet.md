@@ -1,4 +1,4 @@
-<h2 id="ethernet-port">Ethernet MAC (EMAC) drivers</h2>
+<h1 id="ethernet-port">Ethernet MAC (EMAC) drivers</h1>
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/emac.png)<span>Emac API</span></span>
 

@@ -1,4 +1,4 @@
-<h2 id="quadspi-port">QuadSPI (QSPI) </h2>
+<h1 id="quadspi-port">QuadSPI (QSPI) </h1>
 
 Implementing QSPI enables Mbed OS to communicate with compliant external SPI devices much faster than with standalone SPI due to the inclusion of up to four data lines between the host and a device.
 

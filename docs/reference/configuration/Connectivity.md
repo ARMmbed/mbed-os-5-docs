@@ -1,4 +1,4 @@
-<h2 id="configuration-connectivity">Connectivity</h2>
+<h1 id="configuration-connectivity">Connectivity</h1>
 
 This page describes build-time configurable parameters for connectivity in Mbed OS.
 

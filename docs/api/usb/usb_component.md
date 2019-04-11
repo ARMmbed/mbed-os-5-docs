@@ -1,4 +1,4 @@
-<h2 id="usb-overview">USB components overview</h2>
+<h1 id="usb-overview">USB components overview</h1>
 
 The Universal Serial Bus (USB) is the most widely used bus in today's computer. USB has been designed to standardize connections between the computer and peripherals. For example, keyboards, mice, USB audio devices, printers, scanners, disk drives and cameras can use the same bus to exchange data with a computer.
 

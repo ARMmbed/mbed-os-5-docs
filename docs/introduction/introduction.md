@@ -4,7 +4,7 @@ Mbed OS is an open-source operating system for platforms using Arm microcontroll
 
 <section class="row">
 <div class="columns large-6 medium-6 small-12">
-  <h3>On this page</h3>
+  <h2>On this page</h2>
   <ul class="guides-list">
           <ul data-tab-content>
                 <li><a href="#getting-started">Getting Started</a></li>
@@ -18,18 +18,18 @@ Mbed OS is an open-source operating system for platforms using Arm microcontroll
 </div>
 </section>
 
-<h3 id="getting-started">Getting started</h3>
+<h2 id="getting-started">Getting started</h2>
 
 If you want to dive straight in:
 
 - The source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 - Or [try our quick start](../quick-start/index.html).
 
-<h3 id="licensing">Source code and licensing</h3>
+<h2 id="licensing">Source code and licensing</h2>
 
 We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](../contributing/license.html).
 
-<h3 id="architecture">Architecture diagram</h3>
+<h2 id="architecture">Architecture diagram</h2>
 
 This is the basic architecture of an Mbed board:
 
@@ -77,7 +77,7 @@ Broadly speaking, the hardware you can see on our site is of three types:
 - **[Boards](https://os.mbed.com/platforms/)**: development boards are an inexpensive way to start developing with Mbed OS and other components.
 - **[Components](https://os.mbed.com/components/)**: the Component Database hosts reusable libraries for different hardware, middleware and IoT services that you can use with Arm Microcontrollers. These components can be used as building blocks for quickly developing prototypes and products.
 
-<h3 id="tools">Tools</h3>
+<h2 id="tools">Tools</h2>
 
 The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](../tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
 
@@ -85,7 +85,7 @@ If you prefer to work online, use the Arm Mbed Online Compiler, our online d
 
 You can use our debugging tools, DAPLink and pyOCD, to program and debug many devices. At the end of the development cycle, you can use the Mbed OS validation tools, Greentea and utest, to test your project.
 
-<h3 id="the-docs">The documentation</h3>
+<h2 id="the-docs">The documentation</h2>
 
 This is the technical documentation for Mbed OS. We have three types of documents: references, tutorials and porting guides. Our references are background technical material about our APIs, architecture and runtime execution. Our tutorials are step-by-step instructions that show you how to perform specific tasks and solve problems. Our porting guides show our silicon Partners how to port Mbed OS to their targets.
 
@@ -100,7 +100,7 @@ Please see the following sections of our documentation for more information.
 - [Contributing](../contributing/index.html), guidelines about contributing to our open-source project.
 - [Porting guides](../porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
 
-<h3 id="docs-updates">Recently updated documentation</h3>
+<h2 id="docs-updates">Recently updated documentation</h2>
 
 - An [introduction to Mbed OS bare metal profile](../reference/mbed-os-bare-metal.html), and updates to the [quick start for a bare metal build](../quick-start/index.html).
 - New documentation for the [Mbed OS implementation of the Platform Security Architecture (PSA)](../apis/security.html) and [Mbed Crypto](../apis/mbed-crypto.html).

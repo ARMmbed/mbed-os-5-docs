@@ -1,4 +1,4 @@
-<h2 id="wlan-technology">Wireless LAN</h2>
+<h1 id="wlan-technology">Wireless LAN</h1>
 
 One of the most popular connectivity technologies is Wireless LAN (Wireless Fidelity - Wi-Fi) as standardized in IEEE 802.11. It extends the Ethernet standards by making Ethernet wireless and adding required security.
 

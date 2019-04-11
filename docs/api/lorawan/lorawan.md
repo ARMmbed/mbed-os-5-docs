@@ -1,4 +1,4 @@
-<h2 id="lorawan-api">LoRaWAN network interface</h2>
+<h1 id="lorawan-api">LoRaWAN network interface</h1>
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.png)<span> 
 LoRaWANInterface class hierarchy</span></span>

@@ -1,4 +1,4 @@
-<h2 id="itm-port">Instrumentation Trace Macrocell</h2>
+<h1 id="itm-port">Instrumentation Trace Macrocell</h1>
 
 For targets with Arm [CoreSight](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0314h/) (for example, Cortex-M3 and Cortex-M4), the Instrumentation Trace Macrocell (ITM) provides a lightweight, nonintrusive way to collect debug trace output.
 

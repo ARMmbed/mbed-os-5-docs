@@ -1,4 +1,4 @@
-<h2 id="icetea">Icetea test framework</h2>
+<h1 id="icetea">Icetea test framework</h1>
 
 Icetea is an automated testing framework for Mbed development. It automates the process of flashing Mbed boards, running tests and accumulating test results into reports. Developers use it for local development, as well as automation in a Continuous Integration environment.
 

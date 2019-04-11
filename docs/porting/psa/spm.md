@@ -1,4 +1,4 @@
-<h2 id="spm-port">PSA SPM</h2>
+<h1 id="spm-port">PSA SPM</h1>
 
 Secure Partition Manager (SPM) is a part of the PSA Firmware Framework that is responsible for isolating software in partitions, managing the execution of software within partitions and providing inter-process communication (IPC) between partitions.
 

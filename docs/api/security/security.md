@@ -1,4 +1,4 @@
-<h2 id="psa-api">The Mbed implementation of PSA</h2>
+<h1 id="psa-api">The Mbed implementation of PSA</h1>
 
 The Mbed implementation of the Platform Security Architecture (PSA) provides root of trust services and infrastructure for developing IoT applications.
 

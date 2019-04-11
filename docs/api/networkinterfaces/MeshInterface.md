@@ -1,4 +1,4 @@
-<h2 id="mesh-api">Mesh</h2>
+<h1 id="mesh-api">Mesh</h1>
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 

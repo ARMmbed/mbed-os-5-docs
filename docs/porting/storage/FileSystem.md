@@ -1,4 +1,4 @@
-<h2 id="contributing-filesystem">FileSystem</h2>
+<h1 id="contributing-filesystem">FileSystem</h1>
 
 [Include a brief description here.]
 

@@ -1,4 +1,4 @@
-<h2 id="storage-tech">Storage</h2>
+<h1 id="storage-tech">Storage</h1>
 
 We designed the architecture of the Mbed OS storage solution with the following properties:
 

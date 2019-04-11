@@ -1,4 +1,4 @@
-<h2 id="configuration-ble">BLE</h2>
+<h1 id="configuration-ble">BLE</h1>
 
 This page describes build-time configurable parameters for BLE. A resource constrained device can limit its functionality to decrease the memory and flash use of the BLE module. 
 

@@ -1,4 +1,4 @@
-<h2 id="device-management-test">Validation and testing</h2>
+<h1 id="device-management-test">Validation and testing</h1>
 
 Device Management provides built-in tests to help you define your device management configuration. Before running these tests, we recommend you refer to the [testing setup](#testing-setup) section below.
 

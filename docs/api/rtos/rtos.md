@@ -1,4 +1,4 @@
-<h2 id="rtos-api">RTOS overview</h2>
+<h1 id="rtos-api">RTOS overview</h1>
 
 The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 

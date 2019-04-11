@@ -1,4 +1,4 @@
-<h2 id="sai-port">Serial Audio Interface (SAI)</h2>
+<h1 id="sai-port">Serial Audio Interface (SAI)</h1>
 
 The **Serial Audio Interface** allows you to send or receive an audio stream over a synchronous serial interface made of 3 to 4 lines.
 

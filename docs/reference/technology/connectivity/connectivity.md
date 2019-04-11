@@ -1,4 +1,4 @@
-<h2 id="connectivity-tech">Network connectivity in Mbed OS</h2>
+<h1 id="connectivity-tech">Network connectivity in Mbed OS</h1>
 
 ## Supported connectivity technologies
 

@@ -1,4 +1,4 @@
-<h2 id="thread-tech">Thread</h2>
+<h1 id="thread-tech">Thread</h1>
 
 Thread was designed with one goal in mind; to create the best way to connect and control products in a home environment. The key features of Thread are:
 

@@ -31,7 +31,7 @@ Mbed OS includes a few convenience classes that are tailored for embedded system
 - [NonCopyable](noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
 - [Span](span.html): A nonowning view to a sequence of contiguous elements. It can replace the traditional pair of pointer and size arguments passed as array definitions in function calls.
 
-<h4 id="callbacks">Callbacks</h4>
+### Callbacks
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 

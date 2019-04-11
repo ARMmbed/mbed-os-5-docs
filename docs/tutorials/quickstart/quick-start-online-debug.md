@@ -1,4 +1,4 @@
-<h2 id="debug-ide-qs">Debugging the quick start</h2>
+<h1 id="debug-ide-qs">Debugging the quick start</h1>
 
 ## Using printf
 

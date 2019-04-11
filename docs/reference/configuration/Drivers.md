@@ -1,4 +1,4 @@
-<h2 id="configuration-drivers">Drivers</h2>
+<h1 id="configuration-drivers">Drivers</h1>
 
 The driver configurations allows for customization of the OS driver layer. Options in this section pertain to hardware IO. You can find additional serial settings for `printf` in the [platform config page](configuration-platform.html). With the exception of `default-serial-baud-rate` these settings do not affect Serial objects.
 

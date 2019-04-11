@@ -1,4 +1,4 @@
-<h2 id="network-socket">Network socket overview</h2>
+<h1 id="network-socket">Network socket overview</h1>
 
 The application programming interface for IP networking is the Socket API. As described in the [IP networking](../reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API is abstract and supports various protocols such as TCP, UDP and non-IP data delivery for NB-IoT cellular networks.
 

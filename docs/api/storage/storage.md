@@ -1,4 +1,4 @@
-<h2 id="storage-api">Storage overview</h2>
+<h1 id="storage-api">Storage overview</h1>
 
 The storage APIs present in Arm Mbed OS are:
 

@@ -1,4 +1,4 @@
-<h2 id="network-status">Network status</h2>
+<h1 id="network-status">Network status</h1>
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 

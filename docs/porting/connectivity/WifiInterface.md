@@ -1,4 +1,4 @@
-<h2 id="wifi-port">Wi-Fi</h2>
+<h1 id="wifi-port">Wi-Fi</h1>
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/wifi.png)<span>Wi-Fi driver</span></span>
 

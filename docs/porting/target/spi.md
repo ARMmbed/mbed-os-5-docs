@@ -1,4 +1,4 @@
-<h2 id="spi-port">Serial Peripheral Interface (SPI)</h2>
+<h1 id="spi-port">Serial Peripheral Interface (SPI)</h1>
 
 The **Serial Peripheral Interface** allows you to send or receive a data stream over a synchronous serial interface made of 3 to 4 lines.
 

@@ -1,4 +1,4 @@
-<h2 id="cli-update">Updating devices</h2>
+<h1 id="cli-update">Updating devices</h1>
 
 Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/latest/introduction/index.html).
 

@@ -1,4 +1,4 @@
-<h2 id="contributing-storage">Storage</h2>
+<h1 id="contributing-storage">Storage</h1>
 
 Mbed OS provides various storage solutions, all built on top of the [BlockDevice interface](../apis/blockdevice.html). 
 

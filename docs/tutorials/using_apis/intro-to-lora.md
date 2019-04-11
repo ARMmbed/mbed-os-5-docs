@@ -1,4 +1,4 @@
-<h2 id="LoRa-tutorial">Building a private LoRa network</h2>
+<h1 id="LoRa-tutorial">Building a private LoRa network</h1>
 
 There is a lot of interest in [LoRa](https://www.lora-alliance.org), a wide-area network solution that promises kilometers of range with low power consumption, a perfect fit for the Internet of Things. Telecom operators are rolling out LoRa networks, but because LoRa operates in the [open spectrum](https://en.wikipedia.org/wiki/ISM_band), you can also set up your own network. This article discusses what you need to build a private LoRa network and how to use the network to send data from an Arm Mbed end node to the cloud.
 

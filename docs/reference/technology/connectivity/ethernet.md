@@ -1,4 +1,4 @@
-<h2 id="ethernet-technology">Ethernet</h2>
+<h1 id="ethernet-technology">Ethernet</h1>
 
 The term "Ethernet" refers to technologies first introduced in 1980 and standardized in 1983 as IEEE 802.3. Ethernet is a wired network, usually implemented by twisted pair wiring, but optical fibre and coaxials exist, as well. However, coaxial has been superseded, and no one uses it anymore.
 

@@ -1,4 +1,4 @@
-<h2 id="mbed-cli">Overview</h2>
+<h1 id="mbed-cli">Overview</h1>
 
 Many experienced developers prefer to work offline. To meet this need, Arm provides Arm Mbed CLI, a command-line tool packaged as `mbed-cli` and based on Python.
 

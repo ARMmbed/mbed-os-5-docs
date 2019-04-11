@@ -1,4 +1,4 @@
-<h2 id="connectivity-tech">Network connectivity in Mbed OS</h2>
+<h1 id="connectivity-tech">Network connectivity in Mbed OS</h1>
 
 Mbed OS supports a wide range of connectivity options. This section helps you to understand how to connect Mbed OS based devices to the outside world.
 

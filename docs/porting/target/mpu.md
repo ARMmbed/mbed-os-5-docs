@@ -1,4 +1,4 @@
-<h2 id="mpu-port">MPU</h2>
+<h1 id="mpu-port">MPU</h1>
 
 Implementing the MPU API enables Mbed OS to provide better security by preventing code execution and code modification where it shouldn't be allowed.
 

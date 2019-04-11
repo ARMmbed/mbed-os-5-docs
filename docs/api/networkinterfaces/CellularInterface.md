@@ -1,4 +1,4 @@
-<h2 id="cellular-api">Cellular API</h2>
+<h1 id="cellular-api">Cellular API</h1>
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.png)<span>CellularInterface class hierarchy</span></span>
 

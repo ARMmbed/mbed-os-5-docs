@@ -1,2 +1,2 @@
-<h2 id="configuration-tls">TLS</h2>
+<h1 id="configuration-tls">TLS</h1>
 

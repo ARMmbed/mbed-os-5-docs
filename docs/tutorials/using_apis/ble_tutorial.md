@@ -1,4 +1,4 @@
-<h2 id="ble-tutorial">BLE</h2>
+<h1 id="ble-tutorial">BLE</h1>
 
 ## Getting started
 

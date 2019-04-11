@@ -1,4 +1,4 @@
-<h2 id="nfc-technology">NFC</h2>
+<h1 id="nfc-technology">NFC</h1>
 
 NFC stands for Near-Field Communication and is a short-range radio technology. You can use it to enable use cases such as contactless payments, access control and device pairing.
 

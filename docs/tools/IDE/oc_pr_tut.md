@@ -1,4 +1,4 @@
-<h2 id="pr-tutorial">Creating and reviewing pull requests</h2>
+<h1 id="pr-tutorial">Creating and reviewing pull requests</h1>
 
 ## Creating a new request
 

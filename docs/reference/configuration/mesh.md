@@ -1,4 +1,4 @@
-<h2 id="configuration-mesh">6LoWPAN, Wi-SUN and Thread Mesh</h2>
+<h1 id="configuration-mesh">6LoWPAN, Wi-SUN and Thread Mesh</h1>
 
 This page describes build-time configurable parameters for 6LoWPAN-, Wi-SUN- and Thread-based mesh networks. Mbed OS supports 3 main mesh protocols: 6LoWPAN-ND, Wi-SUN and Thread. Depending on the selected protocol, you can configure different set of values.
 

@@ -1,4 +1,4 @@
-<h2 id="quick-start-online">Using the Online Compiler</h2>
+<h1 id="quick-start-online">Using the Online Compiler</h1>
 
 ## Setting up
 

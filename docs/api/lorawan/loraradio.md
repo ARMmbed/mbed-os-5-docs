@@ -1,4 +1,4 @@
-<h2 id="loraradio-api">LoRa radio driver</h2>
+<h1 id="loraradio-api">LoRa radio driver</h1>
 
 `LoRaRadio` is a pure virtual class that defines APIs for a LoRa radio driver.
 

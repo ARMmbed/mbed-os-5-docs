@@ -1,4 +1,4 @@
-<h2 id="light-control">Light control tutorial</h2>
+<h1 id="light-control">Light control tutorial</h1>
 
 The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 

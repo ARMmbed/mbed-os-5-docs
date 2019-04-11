@@ -1,4 +1,4 @@
-<h2 id="l3-porting">IP Layer3 (L3IP) drivers</h2>
+<h1 id="l3-porting">IP Layer3 (L3IP) drivers</h1>
 
 ![L3IP API](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/l3ip.png)
 

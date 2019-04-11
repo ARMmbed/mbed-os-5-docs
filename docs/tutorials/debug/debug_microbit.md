@@ -1,4 +1,4 @@
-<h2 id="debug-microbit">Debugging the BBC micro:bit with pyOCD and GDB</h2>
+<h1 id="debug-microbit">Debugging the BBC micro:bit with pyOCD and GDB</h1>
 
 This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB, you'll first understand what is happening on the chip and why the program doesn't follow the expected behavior. You will then attempt to modify its behavior by writing directly into the chip's memory.
 
