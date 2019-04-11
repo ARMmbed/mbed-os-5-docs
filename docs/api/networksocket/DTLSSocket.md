@@ -8,7 +8,7 @@ To use secure DTLS connections, application use the `DTLSSocketWrapper` through 
 
 ## DTLSSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_d_t_l_s_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_d_t_l_s_socket.html)
 
 ## DTLSSocket example
 

@@ -89,7 +89,7 @@ You can use our debugging tools, DAPLink and pyOCD, to program and debug
 
 This is the technical documentation for Mbed OS. We have three types of documents: references, tutorials and porting guides. Our references are background technical material about our APIs, architecture and runtime execution. Our tutorials are step-by-step instructions that show you how to perform specific tasks and solve problems. Our porting guides show our silicon Partners how to port Mbed OS to their targets.
 
-Please see the following sections of our documentation for more information.
+Please see the following sections of our documentation for more information:
 
 - [APIs](../apis/index.html).
 - [Quick start](../quick-start/index.html), a guide to creating your first application.

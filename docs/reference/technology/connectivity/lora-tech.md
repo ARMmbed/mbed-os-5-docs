@@ -221,7 +221,7 @@ There are certain events that the application sends in response to various netwo
 
 ### Connection procedure
 
-This section discusses flows and corresponding state changes in the Mbed LoRaWAN stack relating to the network connection paradigm. For detailed API reference for connection procedure, please visit [LoRaWANInterface API documentation](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `connect()` or `connect(lorawan_connect_t)` APIs.
+This section discusses flows and corresponding state changes in the Mbed LoRaWAN stack relating to the network connection paradigm. For detailed API reference for connection procedure, please visit [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `connect()` or `connect(lorawan_connect_t)` APIs.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/connect_sm.png)<span>Figure 6: connection paradigm flow</span></span>
 
@@ -229,7 +229,7 @@ The Arm Mbed LoRaWAN stack sends a `CONNECTED` event to the application once the
 
 ### Sending messages
 
-For a detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `send()` API. For example:
+For a detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `send()` API. For example:
 
 ```C NOCI
 /**send an Unconfirmed message*/
@@ -250,7 +250,7 @@ A `TX_TIMEOUT` or a `TX_FALURE` event is generated in case of error in TX data p
 
 ### Receiving messages
 
-For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs.
+For detailed API reference for outgoing messages, please visit the [LoRaWANInterface API documentation](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `receive()` APIs.
 
 There are two types of `receive()` methods in the stack. The first is POSIX-like, and you need to tell at what port (instead of a socket ID in Posix format) you wish to receive:
 

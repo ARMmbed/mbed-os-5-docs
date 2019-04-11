@@ -1,12 +1,12 @@
 # USBMouseKeyboard
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_mouse_keyboard.png)<span>USBMouseKeyboard class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.12/mbed-os-api-doxy/class_u_s_b_mouse_keyboard.png)<span>USBMouseKeyboard class hierarchy</span></span>
 
 You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at the same time over the USB port. You can send both key presses and mouse movements with this class.
 
 ## USBMouseKeyboard class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_mouse_keyboard.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.12/mbed-os-api-doxy/class_u_s_b_mouse_keyboard.html)
 
 ## USBMouseKeyboard example
 
@@ -22,7 +22,7 @@ You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at 
 BusOut leds(LED1, LED2, LED3);
 
 //USBMouseKeyboard object
-USBMouseKeyboard key_mouse; 
+USBMouseKeyboard key_mouse;
 
 int main(void) {
     int16_t x = 0;

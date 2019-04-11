@@ -8,13 +8,13 @@ Please study the [network connectivity](../reference/networking.html) pages from
 
 ## Class hierarchy
 
-Drivers for devices that contain the IP stack inherit from two classes: a [NetworkStack](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html) and a communication-specific subclass of [NetworkInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html).
+Drivers for devices that contain the IP stack inherit from two classes: a [NetworkStack](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_network_stack.html) and a communication-specific subclass of [NetworkInterface](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_network_interface.html).
 
 Please refer to the [IP networking architecture](../reference/ip-networking.html) for device types.
 
 ### NetworkInterface Class
 
-The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
+The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/esp-class.png)<span>Class</span></span>
 
@@ -29,11 +29,11 @@ Each subclass has distinct pure virtual methods. Visit their class references (l
 
 `NetworkStack` provides a common interface that hardware shares. By implementing the NetworkStack, you can use a class as a target for instantiating network sockets.
 
-`NetworkStack` provides [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
+`NetworkStack` provides [these functions](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_network_stack.html). Look for the function signature like [`declarator virt-specifier(optional) = 0`](http://en.cppreference.com/w/cpp/language/abstract_class) to determine which functions are pure virtual and which you must override in your child class.
 
 ### Errors
 
-Many functions of `NetworkStack` and `NetworkInterface` have return types of `nsapi_error_t`, which is a type used to represent error codes. You can see a [list of these return codes](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba). You can view the [integer values of the error macros](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_types.h). A negative error code indicates failure, and 0 indicates success.
+Many functions of `NetworkStack` and `NetworkInterface` have return types of `nsapi_error_t`, which is a type used to represent error codes. You can see a [list of these return codes](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba). You can view the [integer values of the error macros](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/nsapi_types.h). A negative error code indicates failure, and 0 indicates success.
 
 Functions that send or receive data, use `nsapi_size_or_error_t` type as a return value, where positive values indicate how much data has been sent or received, negative return values are error codes and zero is indication of closed connection.
 
