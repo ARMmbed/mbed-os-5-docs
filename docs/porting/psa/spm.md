@@ -248,7 +248,7 @@ This part of HAL enables you to implement a thin, platform-specific layer of the
 
 #### Secure Processing Environment
 
-This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/group___s_p_m.html).
+This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](https://os.mbed.com/docs/development/mbed-os-api-doxy/group___s_p_m.html).
 
 ## Memory protection
 

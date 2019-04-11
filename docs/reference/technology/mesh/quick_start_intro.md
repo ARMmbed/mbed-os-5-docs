@@ -4,7 +4,7 @@ This guide provides design guidelines for developing an application on top of th
 
 ## Overview of the 6LoWPAN-ND network
 
-![Node connected to server](https://github.com/ARMmbed/mbed-os-5-docs/blob/v5.12/docs/images/node_to_server_2.jpg?raw=true)
+![Node connected to server](https://github.com/ARMmbed/mbed-os-5-docs/blob/development/docs/images/node_to_server_2.jpg?raw=true)
 
 Typically, the 6LoWPAN network consists of one border router on multiple low-powered nodes. The nodes are connected to a cloud service for feeding in the sensor or control data.
 

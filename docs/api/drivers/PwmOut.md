@@ -9,7 +9,7 @@ Use the PwmOut interface to control the frequency and duty cycle of a PWM signal
 
 ## PwmOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/_pwm_out_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_pwm_out_8h_source.html)
 
 
 ## PwmOut hello, world

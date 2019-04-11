@@ -1,6 +1,6 @@
 # FileHandle
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.12/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
 
 For general information on [files](file.html) and [filing systems](filesystem.html) in persistent storage, see their documentation. This chapter covers the abstract API, with an emphasis on devices.
 
@@ -20,7 +20,7 @@ Exactly which operations a `FileHandle` supports depends on the underlying devic
 
 You can use a `FileHandle` directly, or you can use standard POSIX or C/C++ APIs to manipulate it. Stdio calls taking `FILE *stream` call the POSIX APIs taking `int fd`, which call methods on `FileHandle` objects.
 
-![FileHandle callstack](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/v5.12/docs/images/filehandle_callstack2.jpg)
+![FileHandle callstack](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/filehandle_callstack2.jpg)
 
 The `FileHandle` may be implicitly created by a higher layer, as in a call to `fopen`. In this case, the name lookup produces a `FileHandle` and POSIX file descriptor internally.
 
@@ -87,14 +87,14 @@ Because targets can redirect the console in this way, portable applications shou
     // Don't do:
     Serial serial(USBTX, USBRX);
     serial.printf("Hello!\r\n");
-
+    
     // Do do:
     printf("Hello!\n");  // assume platform.stdio-convert-newlines is true
 ```
 
-Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`.
+Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. 
 
-Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analogue to redirect to an unnamed device by file descriptor or `FileHandle` pointer.
+Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analogue to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
 
 ### Polling and nonblocking
 
@@ -113,7 +113,7 @@ Important notes on sigio:
 - The sigio may be issued from interrupt context. You cannot portably issue `read` or `write` calls directly from this callback, so you should queue an [`Event`](event.html) or wake a thread to perform the `read` or `write`.
 - The sigio callback is only guaranteed when a `FileHandle` _becomes_ readable or writable. If you do not fully drain the input or fully fill the output, no sigio may be generated. This is also important on start-up - don't wait for sigio before attempting to read or write for the first time, but only use it as a "try again" signal after seeing an `EAGAIN` error.
 - Spurious sigios are permitted - you can't assume data will be available after a sigio.
-- Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`.
+- Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`. 
 
 Ordinary files do not generate sigio callbacks because they are always readable and writable.
 
@@ -136,10 +136,10 @@ Note that `FileHandle` implementations derived from `Stream`, such as `Serial`, 
 - `Stream` returns 0 from `isatty`, which can slightly confuse the C library (for example defeating newline conversion and causing buffering).
 
 As such, you can only use `Stream`-based devices for blocking I/O, such as through the C library, so we don't recommend use of `Stream` to implement a `FileHandle` for more general use.
-
+ 
 ## FileHandle class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.12/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
 
 ## FileHandle using C library example
 
@@ -164,10 +164,10 @@ int main()
 {
     // Perform device-specific setup
     device.set_baud(19200);
-
+    
     // Once set up, access through the C library
     FILE *devin = fdopen(&device, "r");
-
+    
     while (1) {
         putchar(fgetc(devin));
         led2 = !led2;
@@ -206,10 +206,10 @@ int main()
 {
     // UARTSerial-specific method - all others are from FileHandle base class
     device.set_baud(19200);
-
+    
     // Ensure that device.read() returns -EAGAIN when out of data
     device.set_blocking(false);
-
+    
     // sigio callback is deferred to event queue, as we cannot in general
     // perform read() calls directly from the sigio() callback.
     device.sigio(mbed_event_queue()->event(callback_ex));
