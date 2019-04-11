@@ -4,7 +4,7 @@
 
 The DNS resolver provides an interface to do DNS host name resolutions. You can use DNS host name resolution to convert resource names to IP addresses. You can make DNS host name resolution after connecting the interface. You can use the returned IP address to make the socket connection.
 
-### Usage
+## Usage
 
 The DNS resolver supports both blocking and asynchronous DNS host name resolutions.
 
@@ -24,7 +24,7 @@ To cancel an asynchronous host name resolution:
 1. Store the unique ID that the `gethostbyname_async()` call returns.
 1. Call the `gethostbyname_async_cancel()` with a unique ID to cancel the asynchronous address resolution.
 
-### Asynchronous operation
+## Asynchronous operation
 
 The DNS resolver has a cache for the host names and IP addresses. If the host name is found from the cache, the `gethostbyname_async()` function returns a success right away. The callback is called before the function returns.
 
