@@ -6,7 +6,7 @@ The BlockDevice API provides an interface for access to block-based storage. You
 
 The most common types of block-based storage are different forms of flash, but the BlockDevice API can support many different forms of storage, such as SD cards, spinning disks, heap backed storage and so on.
 
-### Block device operations
+## Block device operations
 
 A block device can perform three operations:
 
@@ -16,7 +16,7 @@ A block device can perform three operations:
 
 A full write to a block device involves first erasing the region of memory you plan to program and then programming the data to the region of memory. The reason for this separation is that block devices can have different limitations for erasing and writing to regions on the device.
 
-### Block device blocks
+## Block device blocks
 
 Block devices are byte addressable but operate in units of "blocks". There are three types of blocks for the three types of block device operations: read blocks, erase blocks and program blocks.
 
@@ -24,13 +24,13 @@ Block devices are byte addressable but operate in units of "blocks". There are t
 
 ![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_block_size.png)
 
-### Erased blocks
+## Erased blocks
 
 The state of an erased block is **undefined**. The data stored on the block isn't decided until you program the block. This allows the widest range of support for different types of storage.
 
 ![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_erase_block.png)
 
-### BlockDevice get default instance
+## BlockDevice get default instance
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
