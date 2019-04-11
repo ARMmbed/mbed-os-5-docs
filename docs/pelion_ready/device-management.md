@@ -19,9 +19,9 @@ This guide builds on the [quick connect guide](https://os.mbed.com/guides/connec
 
 <span class="tips">**Tip**: To learn more about Device Management Client, please see our [Device Management documentation](https://cloud.mbed.com/docs/latest/client-api-references/index.html).</span>
 
-### Device Management for your Mbed OS application
+## Device Management for your Mbed OS application
 
-#### Requirements
+### Requirements
 
 Not every device (microcontroller, module or board) is capable of running device management features. Although you can add or extend some hardware capabilities, such as connectivity, storage and TRNG, others are impossible or inconvenient to extend (for example, RAM or flash).
 
@@ -42,7 +42,7 @@ Useful references:
 - Check the [storage options available](../reference/storage.html).
 - Check the [network options available](../reference/networking.html).
 
-#### Adding Device Management connectivity to your application
+### Adding Device Management connectivity to your application
 
 1. Add Pelion Client to your Mbed OS project:
 
@@ -103,7 +103,7 @@ Useful references:
 
 This creates your private and public key pair and also initialize various `.c` files with these credentials, so you can use Connect and (firmware) Update device management features.
 
-#### Example applications
+### Example applications
 
 To help you start quickly, please refer to the following [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Device Management service, register resources and get ready to receive a firmware update.
 

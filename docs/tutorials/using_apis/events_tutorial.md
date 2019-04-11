@@ -1,4 +1,4 @@
-## The EventQueue API
+# The EventQueue API
 
 One of the optional Arm Mbed OS features is an event loop mechanism that you can use to defer the execution of code to a different context. In particular, a common use of an event loop is to postpone the execution of a code sequence from an interrupt handler to a user context. This is useful because of the specific constraints of code that runs in an interrupt handler:
 
@@ -10,7 +10,7 @@ The event loop offers a solution to these issues in the form of an API that can 
 
 In Mbed OS, events are pointers to functions (and optionally function arguments). An event loop extracts events from a queue and executes them.
 
-### Creating an event loop
+## Creating an event loop
 
 You must create and start the event loop manually. The simplest way to achieve that is to create a `Thread` and run the event queue's `dispatch` method in the thread:
 
@@ -30,7 +30,7 @@ int main () {
 
 Note that though this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer from running more than one event loop, simply by following the create/start pattern above for each of them.
 
-### Using the event loop
+## Using the event loop
 
 Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
@@ -99,17 +99,17 @@ The scenario above (splitting an interrupt handler's code into time critical cod
 
 We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
-### Prioritization
+## Prioritization
 
 The EventQueue has no concept of event priority. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. The EventQueue only schedules events based on time. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must appropriately set the priority of the thread dispatching each EventQueue instance.
 
-### EventQueue memory pool
+## EventQueue memory pool
 
 When you create an instance of the [EventQueue](../apis/event.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
 
 Various sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event.
 
-#### Calculating the number of events
+### Calculating the number of events
 
 If your project only uses fix-sized events, you can use a counter that tracks the number of events the EventQueue has dispatched.
 
@@ -130,7 +130,7 @@ queue.call(func, 1, 2, 3); // fails
 // exist in the memory region
 ```
 
-#### Failure due to fragmentation
+### Failure due to fragmentation
 
 The following example would fail because of fragmentation:
 
@@ -150,6 +150,6 @@ queue.call(func, 1, 2, 3); // requires 4 words of storage, so allocation fails
 
 Four words of storage are free but only for allocations of one word or less. The solution to this failure is to increase the size of your EventQueue. Having the proper sized EventQueue prevents you from running out of space for events in the future.
 
-#### More about events
+### More about events
 
 This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).

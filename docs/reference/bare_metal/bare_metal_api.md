@@ -1,4 +1,4 @@
-## Bare metal APIs
+# Bare metal APIs
 
 Mbed OS bare metal supports the following APIs:
 

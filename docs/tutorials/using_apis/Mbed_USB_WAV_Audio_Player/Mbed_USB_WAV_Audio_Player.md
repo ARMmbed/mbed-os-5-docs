@@ -1,8 +1,8 @@
-## Mbed USB WAV audio player
+# Mbed USB WAV audio player
 
 This tutorial explains how to put together a USB WAV audio player with Mbed. You will load a WAV file onto an SD card connected to an Mbed board. You can then play the WAV file from the board on a host computer over USB. Once connected, the Mbed board acts as a USB microphone. The sound that the microphone is "recording" is actually sound data read from the SD card and sent to the host computer. This allows the sound to be played on speakers or headphones or recorded with a program, such as Audacity.
 
-### Libraries
+## Libraries
 
 This tutorial uses several Mbed libraries:
 
@@ -12,14 +12,14 @@ This tutorial uses several Mbed libraries:
 
 This tutorial uses the USBAudio class of the USB library to send audio data from the Mbed board to the host PC. It uses the SDBlockDevice and FATFileSystem classes of the `sd-driver` library, so you can store the WAV files on an SD card and the Mbed board can access them. Lastly, it uses the AudioPlayer and WaveAudioStream classes of the AudioPlayer library to access the audio data from the WAV file on the SD card.
 
-### What you need
+## What you need
 
 - Mbed Enabled board.
 - SD card.
 - SD card shield (if board does not already have an SD card port).
 - USB cable.
 
-### Setup
+## Setup
 
 The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
@@ -47,7 +47,7 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
    
 1. See [Troubleshooting](#troubleshooting) if issues persist.
  
-### main.cpp
+## main.cpp
 
 ```c++ NOCI
 // Mbed WAV Audio Player
@@ -97,11 +97,11 @@ int main() {
 }
 ```
 
-### Example WAV file  
+## Example WAV file  
 
 [Bach-minuet-in-g.wav](https://github.com/mrcoulter45/mbed-os-5-docs/raw/Mbed_USB_WAV_Audio_Player_Tutorial/docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav)
 
-### Troubleshooting   
+## Troubleshooting   
 
 If USB properties of the Mbed USB WAV Audio Player are altered, such as the sample rate or number of channels, the Mbed board will need to be deleted and re-installed in the host PC's installed device list. In Device Manager, click View > Devices by Connection. Find "Mbed Audio" and uninstall the device. Reset the board and repeat Setup step 6. If problems still persist, be sure to format the WAV file correctly, as is denoted in Setup step 4.   
 

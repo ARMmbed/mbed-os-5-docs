@@ -1,10 +1,10 @@
-## Span
+# Span
 
 A Span is a nonowning view to a sequence of contiguous elements.
 
 It can replace the traditional pair of pointer and size arguments passed as array definitions in function calls.
 
-### Construction
+## Construction
 
 Span objects can be constructed from a reference to a C++ array, a pointer to the sequence viewed and its size or the range of the sequence viewed:
 
@@ -16,7 +16,7 @@ Span<const uint8_t> span_from_ptr_and_size(str, sizeof(str));
 Span<const uint8_t> span_from_range(str, str + sizeof(str));
 ```
 
-### Operations
+## Operations
 
 You can copy and assign Span objects like regular value types with the help of the copy constructor or the copy assignment (=) operator.
 
@@ -62,7 +62,7 @@ Span<uint8_t> upper_half = str_span.last(half_size);
 Span<uint8_t> interquartile_range = str_span.subspan(/* offset */ half_size / 2, half_size);
 ```
 
-### Size encoding
+## Size encoding
 
 You can encode the size of the sequence in the type itself or in the value of the instance with the help of the template parameter Extent:
 
@@ -86,12 +86,12 @@ long_span = span_mac_address;
 
 When you encode the size of the sequence viewed in the Span value, Span instances can view an empty sequence. The function `empty()` helps client code decide whether Span is viewing valid content or not.
 
-### Span class reference
+## Span class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/structmbed_1_1_span.html)
 
 
-### Span example
+## Span example
 
 ```
 template<typename T>

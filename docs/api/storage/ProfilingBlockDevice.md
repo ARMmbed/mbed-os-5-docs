@@ -1,4 +1,4 @@
-## ProfilingBlockDevice
+# ProfilingBlockDevice
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_profiling_block_device.png)<span>ProfilingBlockDevice class hierarchy</span></span>
 
@@ -8,16 +8,16 @@ ProfilingBlockDevices take in a pointer to the block device being profiled as th
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### ProfilingBlockDevice class reference
+## ProfilingBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_profiling_block_device.html)
 
-### ProfilingBlockDevice example
+## ProfilingBlockDevice example
 
 Create a ProfilingBlockDevice, perform storage operations and report back the read, write and erase counts.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/ProfilingBlockDevice/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/ProfilingBlockDevice/main.cpp)
 
-### Related content
+## Related content
 
 - [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

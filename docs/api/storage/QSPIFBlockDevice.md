@@ -1,4 +1,4 @@
-## QSPIFBlockDevice
+# QSPIFBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_q_s_p_i_f_block_device.png)<span>QSPIFBlockDevice class hierarchy</span></span>
 
@@ -7,11 +7,11 @@ The QSPIFBlockDevice is a block device driver for NOR-based QSPI Flash devices t
 
 For more information about the SFDP JEDEC standard, please see [its documentation](https://www.jedec.org/system/files/docs/JESD216C.pdf).
 
-### QSPIFBlockDevice class reference
+## QSPIFBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_q_s_p_i_f_block_device.html)
 
-### QSPIFBlockDevice example
+## QSPIFBlockDevice example
 
 This example creates a QSPIFBlockDevice, erases a sector, programs it, reads the block back and cleans up.
 

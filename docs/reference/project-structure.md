@@ -1,4 +1,4 @@
-## Structure of an Mbed OS project
+# Structure of an Mbed OS project
 
 Every Mbed OS project is composed of a:
 

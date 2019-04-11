@@ -6,7 +6,7 @@ Both targets newly ported to Mbed OS and existing targets that use entropy injec
 
 We run tests by default on several supported boards. To run the tests on a custom board, you can also run the tests manually by specifying additional compiler flags from the command-line.
 
-### Testing
+## Testing
 
 Mbed OS currently provides two tests for Mbed Crypto:
 
@@ -21,7 +21,7 @@ To run these tests, make sure make sure your target configuration is set:
 1. `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` macro is set to `mbed_default_seed_read` in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674).
 1. `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO` macro is set to `mbed_default_seed_write` in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674).
 
-### Compile and run
+## Compile and run
 
 To compile and run the Mbed Crypto tests, run the following command:
 

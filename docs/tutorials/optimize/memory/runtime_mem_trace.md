@@ -1,8 +1,8 @@
-### Runtime memory tracing
+## Runtime memory tracing
 
 Running out of memory is a common problem with resource constrained systems such as the MCUs on which Arm Mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in Mbed OS 5 is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
 
-#### Using the memory tracer
+### Using the memory tracer
 
 The memory tracer is not enabled by default. To enable it, you need to enable the **`memory-tracing-enabled`** setting in the Mbed OS platform configuration options. We recommend doing this by adding it to your `mbed_app.json`:
 
@@ -40,7 +40,7 @@ Find the source of the default callback [here](https://github.com/ARMmbed/mbed-o
 
 <span class="tips">**Tip:** Find the full documentation of the callback function in the [memory tracer header file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.h#L42). </span>
 
-#### Example
+### Example
 
 A simple code example that uses the memory tracer on a K64F board:
 
@@ -58,7 +58,7 @@ It outputs the following trace:
 ...
 ```
 
-#### Limitations
+### Limitations
 
 - The tracer doesn't handle nested calls of the memory functions. For example, if you call `realloc` and the implementation of `realloc` calls `malloc` internally, the call to `malloc` is not traced.
 - The **caller** argument of the callback function isn't always reliable. It doesn't work at all on some toolchains, and it might output erroneous data on others.

@@ -1,4 +1,4 @@
-## USBMIDI
+# USBMIDI
 
 <span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
 
@@ -6,7 +6,7 @@ You can use the USBMIDI interface to send and receive MIDI messages over USB usi
 
 Examples of tasks you can perform using this library include sending MIDI messages to a computer (such as to record in a sequencer, or trigger a software synthesiser) and receiving messages from a computer (such as actuating things based on MIDI events).
 
-### USBMIDI class reference
+## USBMIDI class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_i_d_i.html)
 
@@ -18,7 +18,7 @@ The two examples below use a program called "Anvil Studio 32-bit" to play MIDI n
 4. Uncheck **Synth is too slow to echo incoming events**.
 5. Click **View > Composer (Staff Editor)** to see notes from the board being mapped to the sheet music.
 
-### USBMIDI example  
+## USBMIDI example  
 
 Below is an example to send a series of MIDI notes to the host PC:    
 
@@ -40,7 +40,7 @@ int main() {
 }
 ```
 
-### Play "Take Me Out to the Ball Game" example
+## Play "Take Me Out to the Ball Game" example
 
 You can use USBMIDI to play an entire song, not just a series of notes. "Take Me Out to the Ball Game" is a popular song in the public domain. To play "Take Me Out to the Ball Game" (public domain) using MIDI over USB on the host PC:
 

@@ -1,4 +1,4 @@
-## Ethernet
+# Ethernet
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.png)<span>EthInterface class hierarchy</span></span>
 
@@ -7,7 +7,7 @@ By default, this class does not require any configuration. It is able to pick up
 Ethernet driver for the target and select correct network stack.
 
 
-### Usage
+## Usage
 
 To statically initialize the driver, create an object without passing any parameters:
 
@@ -33,7 +33,7 @@ UDPSocket socket;
 socket.open(&eth);
 ```
 
-### Configuration
+## Configuration
 
 For EthernetInterface, there are two possible configurations:
 
@@ -42,24 +42,24 @@ For EthernetInterface, there are two possible configurations:
 
 Refer to the API below for how to set the IP addresses by calling the `set_network()` function.
 
-### Troubleshooting information
+## Troubleshooting information
 
 Network interface `connect` failure causes:
 
 - `NSAPI_ERROR_NO_CONNECTION` indicates that the Ethernet link up has failed. Check that the Ethernet connection is working.
 - `NSAPI_ERROR_DHCP_FAILURE` indicates that acquiring the IP address has failed. Check that the IP address configuration service is working.
 
-### EthInterface class reference
+## EthInterface class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html)
 
-### EthInterface example
+## EthInterface example
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface and uses it to perform an HTTP transaction over a TCPSocket:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/50f1485931f1/main.cpp)
 
-### Related content
+## Related content
 
 - [Network socket](network-socket.html) API reference overview.
 - [Ethernet architecture](../reference/ethernet-technology.html).

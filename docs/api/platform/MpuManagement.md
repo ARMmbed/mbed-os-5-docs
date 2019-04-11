@@ -1,4 +1,4 @@
-## MPU management
+# MPU management
 
 Memory protection for Mbed OS is enabled automatically for devices that support the MPU API. The MPU management functions provided here allow libraries and applications to turn off these memory protections if necessary. The memory protection the MPU provides does the following:
 
@@ -15,21 +15,21 @@ Mbed OS handles MPU management automatically in the following situations:
 
 <span class="notes">**Note:** The configuration value `platform.use-mpu` can be set to `false` to remove the MPU driver and save code space.</span>
 
-#### RAM execute lock
+### RAM execute lock
 
 After boot, execution from RAM is not allowed. Libraries requiring the ability to execute from RAM can enable this by acquiring the RAM execution lock. The RAM execution lock has a count associated with it, and you can lock it multiple times. Execution from RAM is disabled only when all components have unlocked it.
 
-#### ROM write lock
+### ROM write lock
 
 After boot, writing to ROM is not allowed. Libraries requiring the ability to writing to ROM can enable this by acquiring the ROM write lock. The ROM write lock has a count associated with it, and you can lock it multiple times. Writing to ROM disablesd only when all components have unlocked it.
 
 <span class="notes">**Note:** When the ROM write lock is held, many devices will still fault if code writes to ROM.</span>
 
-### Function reference
+## Function reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__platform__mpu__mgmt.html)
 
-### Example
+## Example
 
 ```C++ NOCI
 #include "mbed.h"
@@ -43,7 +43,7 @@ int main()
 }
 ```
 
-### Related content
+## Related content
 
 - [ScopedRamExecutionLock API reference](scopedramexecutionlock.html).
 - [ScopedRomWriteLock API reference](scopedromwritelock.html).

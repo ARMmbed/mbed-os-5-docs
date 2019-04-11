@@ -1,4 +1,4 @@
-## Debug
+# Debug
 
 Mbed OS provides a set of debug functions that you can use to output debug messages to `STDIO` at runtime. `mbed_debug.h` declares these functions, which are available only in debug builds.
 
@@ -25,10 +25,10 @@ void *operator new(std::size_t count) {
 }
 ```
 
-### Debug functions reference
+## Debug functions reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__debug_8h_source.html)
 
-### Debug example
+## Debug example
 
 [![View Example](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp)

@@ -1,4 +1,4 @@
-## SlicingBlockDevice
+# SlicingBlockDevice
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.png)<span>SlicingBlockDevice class hierarchy</span></span>
 
@@ -12,17 +12,17 @@ The constructor takes in the master block device pointer and the start and end a
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### SlicingBlockDevice class reference
+## SlicingBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.html)
 
-### SlicingBlockDevice example
+## SlicingBlockDevice example
 
 This SlicingBlockDevice example partitions a [HeapBlockDevice](heapblockdevice.html) into three subunits and showcases programming and reading back data segments through both the underlying master block device and the sliced subunits.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SlicingBlockDevice/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SlicingBlockDevice/main.cpp)
 
-### Related content
+## Related content
 
 - [ChainingBlockDevice](chainingblockdevice.html) API reference.
 - [HeapBlockDevice](heapblockdevice.html) API reference.

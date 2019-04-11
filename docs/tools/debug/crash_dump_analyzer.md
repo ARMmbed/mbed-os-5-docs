@@ -1,8 +1,8 @@
-## Crash log parser tool
+# Crash log parser tool
 
 You can use this postprocessing tool to parse and analyze the crash dump generated when an exception happens.
 
-### Capturing the crash log
+## Capturing the crash log
 
 When an exception happens, the Mbed OS exception handler prints the crash information to STDOUT, (which is usually your serial port). The crash information contains the register context at the time of the exception and the current threads in the system. Registers captured depend on the specific Cortex-M core you are using. For example, if your target is using Cortex-M0, some registers, such as MMFSR, BFSR and UFSR may not be available and do not appear in the crash log.
 
@@ -60,7 +60,7 @@ To generate more information from this crash dump, copy and save this crash info
 
 <span class="notes">**Note:** Make sure you copy the section with the text `MbedOS Fault Handler` because the tool looks for that header.</span>
 
-### Running the crash log parser
+## Running the crash log parser
 
 Run the tool as below with crash data file, map file and elf file as arguments.
 

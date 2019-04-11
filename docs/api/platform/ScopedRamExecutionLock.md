@@ -1,12 +1,12 @@
-## ScopedRamExecutionLock
+# ScopedRamExecutionLock
 
 The `ScopedRamExecutionLock` class provides an RAII object for enabling execution from RAM. In other words, creating a ScopedRamExecutionLock object calls its constructor, which increments the RAM execution lock. The ScopedRamExecutionLock object automatically releases the RAM execution lock in its destructor when the object goes out of scope. Another way to look at this is when the ScopedRamExecutionLock object exists, it allows execution from RAM.
 
-### ScopedRamExecutionLock class reference
+## ScopedRamExecutionLock class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_scoped_ram_execution_lock.html)
 
-### Example
+## Example
 
 This example shows how you can enable execution from RAM from main:
 
@@ -21,6 +21,6 @@ int main()
     some_function_in_ram();
 }
 ```
-### Related content
+## Related content
 
 - [MPU Management API references](mpu-management.html).

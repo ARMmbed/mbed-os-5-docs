@@ -1,4 +1,4 @@
-## DataFlashBlockDevice
+# DataFlashBlockDevice
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
 
@@ -10,11 +10,11 @@ You can configure the DataFlashBlockDevice to force the underlying device to use
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### DataFlashBlockDevice class reference
+## DataFlashBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.html)
 
-### DataFlashBlockDevice example
+## DataFlashBlockDevice example
 
 ``` cpp TODO
 // Here's an example using the AT45DB on the K64F
@@ -52,6 +52,6 @@ int main() {
 }
 ```
 
-### Related content
+## Related content
 
 - [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

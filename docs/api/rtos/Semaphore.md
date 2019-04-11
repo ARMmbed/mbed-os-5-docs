@@ -1,4 +1,4 @@
-## Semaphore
+# Semaphore
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_semaphore.png)<span>Semaphore class hierarchy</span></span>
 
@@ -6,11 +6,11 @@ A semaphore manages thread access to a pool of shared resources of a certain typ
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Semaphore.png)</span>
 
-### Semaphore class reference
+## Semaphore class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_semaphore.html)
 
-### Semaphore example
+## Semaphore example
 
 Use Semaphore to protect printf().
 

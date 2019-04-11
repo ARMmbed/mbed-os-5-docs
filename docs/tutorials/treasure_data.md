@@ -1,4 +1,4 @@
-## Arm Treasure Data and Mbed OS
+# Arm Treasure Data and Mbed OS
 
 We've been working on integrating Mbed OS with Treasure Data, a customer data platform (CDP) that brings all your enterprise data together for a single, actionable view of your customer:
 
