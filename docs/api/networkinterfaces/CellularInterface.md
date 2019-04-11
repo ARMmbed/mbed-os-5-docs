@@ -4,7 +4,7 @@
 
 The [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html) class provides a C++ API for connecting to the internet over a Cellular device.
 
-#### Getting started
+## Getting started
 
 1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
 
@@ -28,7 +28,7 @@ Received from echo server 4 Bytes
 Success. Exiting
 ```
 
-#### Basic working principles
+## Basic working principles
 
 You can use and extend a cellular interface in various different ways. For example,
 
