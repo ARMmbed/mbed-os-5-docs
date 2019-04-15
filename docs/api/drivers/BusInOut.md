@@ -4,7 +4,7 @@
 
 Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](digitalinout.html) pins that you can read and write as one value.
 
-You can use any of the numbered Arm Mbed pins as a DigitalInOut.
+You can create a BusInOut object from any microcontroller pins that are capable of performing digital input and output functions. There is no restriction on the port or bus that the pins are physically connected to.
 
 **Tip:**
 
