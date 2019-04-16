@@ -8,7 +8,9 @@ The USBCDC_ECM class emulates an Ethernet interface over USB. You can use the in
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.html)
 
-Note: Windows doesn’t have native support for USB CDC-ECM model and thus requires third party drivers.
+<span class="notes">**Note:** Because Windows doesn’t provide native support for the USB CDC-ECM model, you must use third party drivers to use this class on Windows.</span>
+
+## USBCDC_ECM example
 
 The example below sends an Ethernet frame that carries "Hello world" payload with a custom EtherType to the host PC. You can capture the frame by using a program called "Wireshark":
 
@@ -17,9 +19,6 @@ The example below sends an Ethernet frame that carries "Hello world" payload wit
 3. Click **Capture > Options** to select the correct capture interface.
 4. Click **Capture > Start**.
 5. Click captured packet from source address 12:34:56:78:9a:bc to see the "Hello world" payload.
-
-
-## USBCDC_ECM example
 
 ```C++ TODO
 #include "mbed.h"
