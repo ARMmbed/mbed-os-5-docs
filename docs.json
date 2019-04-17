@@ -646,16 +646,7 @@
                                     "path": "docs/reference/technology/mesh/wisun_intro.md"
                                 },
                                 {
-                                    "path": "docs/reference/technology/mesh/quick_start_intro.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/quick_start_hw.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/02_N_arch.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/04_N_networking.md"
+                                    "path": "docs/reference/technology/mesh/6lowpan_nd_intro.md"
                                 },
                                 {
                                     "path": "docs/reference/technology/connectivity/lora-tech.md"
