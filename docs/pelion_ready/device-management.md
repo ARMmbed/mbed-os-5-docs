@@ -32,7 +32,7 @@ The minimum requirements to add device management feature to your application ar
 - Real Time Clock (RTC).
 - (Optional but recommended) True Random Number Generator (TRNG).
 - A storage device: SD card, SPI flash, QSPI flash or data flash.
-- IP connectivity: Ethernet, Wi-Fi, cellular, 6LoWPAN or Thread.
+- IP connectivity: Ethernet, Wi-Fi, cellular, Mesh (6LoWPAN-ND, Wi-SUN or Thread).
 
 Additionally, we recommend the latest version of Mbed OS support the device and any additional complementary hardware components, or that they have support for the APIs provided in the latest releases of Mbed OS.
 
