@@ -1,6 +1,6 @@
-<h1 id="configuration-mesh">6LoWPAN, Wi-SUN and Thread Mesh</h1>
+<h1 id="configuration-mesh">6LoWPAN-ND, Wi-SUN and Thread Mesh</h1>
 
-This page describes build-time configurable parameters for 6LoWPAN-, Wi-SUN- and Thread-based mesh networks. Mbed OS supports 3 main mesh protocols: 6LoWPAN-ND, Wi-SUN and Thread. Depending on the selected protocol, you can configure different set of values.
+This page describes build-time configurable parameters for 6LoWPAN-ND-, Wi-SUN- and Thread-based mesh networks. Mbed OS supports 3 main mesh protocols: 6LoWPAN-ND, Wi-SUN and Thread. Depending on the selected protocol, you can configure different set of values.
 
 There is one mesh-capable stack in Mbed OS called Nanostack.
 
@@ -11,7 +11,7 @@ For understanding the technologies and APIs, please refer to following sections 
 - [Network connectivity in Mbed OS](../reference/networking.html) technology page.
 - [Thread](../reference/thread-tech.html) technology reference page.
 - [Wi-SUN](../reference/wisun-tech.html) technology reference page.
-- [6LowPAN](../reference/mesh-tech.html) technology reference page.
+- [6LowPAN-ND](../reference/6LoWPAN-ND-tech.html) technology reference page.
 - [Mesh class reference](../apis/mesh-api.html) user API.
 - [Socket API](../apis/network-socket.html).
 
@@ -54,8 +54,6 @@ Option name | Features supported | Estimated binary size of Nanostack
 <span class="notes">**Note:** The binary sizes have been estimated using GNU Arm Embedded Toolchain version 4.9. They differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
 If you want to optimize the flash usage, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case.
-
-See the [mesh technology overview](mesh-tech.html) for the definition of star and mesh networks. These same principles apply also to the Wi-SUN and Thread protocols.
 
 Select the protocol the network is based on:
 
@@ -241,7 +239,7 @@ Name: mbed-mesh-api.thread-use-static-link-config
     Value: 1 (set by library:mbed-mesh-api)
 ```
 
-### 6LoWPAN related configuration parameters
+### 6LoWPAN-ND related configuration parameters
 
 The following parameters are only valid for the 6LoWPAN-ND mesh network. These are in use when the application uses the `LoWPANNDInterface` class.
 

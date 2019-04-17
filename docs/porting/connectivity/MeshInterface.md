@@ -64,7 +64,7 @@ The following steps describe how you can create a new RF driver:
 
 1. Implement the `NanostackRfPhy` API.
 
-1. Check with an RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
+1. Check with an RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN-ND bootstrap should start with IEEE 802.15.4 Beacon Request packets.
 
 1. Build the Nanostack MAC tester application:
 

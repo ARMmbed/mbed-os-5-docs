@@ -130,11 +130,21 @@ Now, the Thread network is ready to accept new joiner devices.
 
 <span class="notes">**Note:** Thread uses hashing and elliptic curve algorithms for the secure communication. PSKd(s) and EUI64(s) are never transmitted in plain text over the peer to peer connection.</span>
 
+### Storing configuration settings to File system
+
+Thread network stack can write network configuration settings to the file system and read them in the following startup. The size of the Thread configuration settings is a few thousand bytes. You can store network configuration settings to the file system when:
+
+ 1. You enable the file system as instructed in the [Mbed OS storage documentation](../apis/storage.html).
+ 1. You set the file system root path to the Thread network stack by calling the function `ns_file_system_set_root_path(root-path)`. Do this before starting the Thread stack to read possible configuration settings in the first power up.
+
+Depending on the selected file system, the application may need to format the file system before you can use it.
+
+
 ## How to start on Mbed OS
 
 The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the [Nanostack border router](https://github.com/ARMmbed/nanostack-border-router). An external [Commissioning application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) (Android) is already available. Also an IOS version will be available soon.
 
-See [Thread commissioning guide](mesh-tech.html#thread-commissioning) how to commission a Thread device to the network in practice.
+See [Thread commissioning guide](thread-tech.html#thread-commissioning) how to commission a Thread device to the network in practice.
 
 ## The maturity of the Mbed OS Thread implementation
 

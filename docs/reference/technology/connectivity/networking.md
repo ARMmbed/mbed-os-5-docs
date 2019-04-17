@@ -83,7 +83,7 @@ There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol lay
 
 Cellular drivers have the same two separate cases as Wi-Fi. If they use an external IP stack, the driver implements the Network stack API. If they use the internal IP stack, LwIP, then they implement the Serial PPP driver.
 
-### Mesh (Wi-SUN, 6LoWPAN, Thread) RF driver
+### Mesh (Wi-SUN, 6LoWPAN-ND, Thread) RF driver
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/rf-driver.png)<span>RF driver</span></span>
 
@@ -91,4 +91,4 @@ On Mesh networks, Nanostack uses IEEE 802.15.4 radios for transmitting and recei
 
 This driver type has no other use cases, so it is implemented in C using a Nanostack-specific API.
 
-Please see the [6LoWPAN technology section](mesh-tech.html) and [Porting a new RF driver for the 6LoWPAN stack](../porting/lora-port.html) for more information.
+Please see the [Porting a new RF driver for the 6LoWPAN stack](../porting/lora-port.html) for more information.

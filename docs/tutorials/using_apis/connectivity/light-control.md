@@ -2,8 +2,6 @@
 
 The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
-See the [6LoWPAN overview](../reference/mesh-tech.html) for the definition of star and mesh networks. These same principles apply also to Thread protocol.
-
 ## Download the application
 
 ```
@@ -91,7 +89,7 @@ The following tables show the values to use in the `mbed_app.json` file for your
 #### Thread commissioning
 
 By default, the Thread application uses the static network link configuration defined in the [mesh API configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json).
-If you want to commission a Thread device, see [how to commission a Thread device in practice](../reference/mesh-tech.html#thread-commissioning).
+If you want to commission a Thread device, see [how to commission a Thread device in practice](../reference/thread-tech.html#thread-commissioning).
 
 The Thread stack learns the network settings from the commissioning process and saves them to RAM memory. Therefore, the learned network settings are lost when you restart the device next time. To prevent re-commissioning, you can save the Thread configuration settings to an SD card as follows (only in `K64F`):
 
