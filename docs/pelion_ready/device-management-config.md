@@ -88,7 +88,7 @@ $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect --run -v
 
 ## Bootloader configuration
 
-When the "connect" tests have completed successfully, you can enable the firmware update feature by adding a bootloader to your application.
+When the "connect" tests have passed, you can enable the firmware update feature by adding a bootloader to your application.
 
 1. Import the official [mbed-bootloader](https://github.com/ARMmbed/mbed-bootloader/) repository as a new application:
 
