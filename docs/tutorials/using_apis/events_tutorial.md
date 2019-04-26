@@ -6,7 +6,7 @@ One of the optional Arm Mbed OS features is an event loop mechanism that you can
 - You cannot use various RTOS objects and functions from an interrupt context.
 - As a general rule, the code needs to finish as fast as possible, to allow other interrupts to be handled.
 
-The event loop offers a solution to these issues in the form of an API that can defer execution of code from the interrupt context to the user context. More generally, the event loop can be used anywhere in a program (not necessarily in an interrupt handler) to defer code execution to a different context.
+The event loop offers a solution to these issues in the form of an API that can defer execution of code from the interrupt context to the user context.<!--you've already said that--> More generally, the event loop can be used anywhere in a program (not necessarily in an interrupt handler) to defer code execution to a different context.
 
 In Mbed OS, events are pointers to functions (and optionally function arguments). An event loop extracts events from a queue and executes them.
 
@@ -28,7 +28,7 @@ int main () {
 }
 ```
 
-Note that though this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer from running more than one event loop, simply by following the create/start pattern above for each of them.
+Note that though this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer<!--why did we switch from "you" to "the programmer"?--> from running more than one event loop, by following the create/start pattern above for each of them.
 
 ## Using the event loop
 
@@ -51,7 +51,7 @@ fall_handler in context 20000b1c
 rise_handler in context 00000000
 ```
 
-The program starts in the context of the thread that runs the `main` function (`20001fe0`). When the user presses SW2, `fall_handler` is automatically queued in the event queue, and  it runs later in the context of thread `t` (`20000b1c`). When the user releases the button, `rise_handler` is executed immediately, and it displays `00000000`, indicating that the code ran in interrupt context.
+The program starts in the context of the thread that runs the `main` function (`20001fe0`). When the user presses SW2<!--why did we switch from "we" to "the user"?-->, `fall_handler` is automatically queued in the event queue, and it runs later in the context of thread `t` (`20000b1c`). When the user<!--we/the user--> releases the button, `rise_handler` is executed immediately, and it displays `00000000`, indicating that the code ran in interrupt context.
 
 The code for `rise_handler` is problematic because it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. We can make the code safe by running `rise_handler` in user context (like we already do with `fall_handler`) by replacing this line:
 
@@ -67,7 +67,7 @@ sw.rise(queue.event(rise_handler));
 
 The code is safe now, but we may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code, this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt.
 
-Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to the user's action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context.
+Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to the user's<!--we/the user--> action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context.
 
 The solution is to split `rise_handler` into two parts: the time critical part will run in interrupt context, while the non-critical part (displaying the message) will run in user context. This is easily doable using `queue.call`:
 
@@ -95,25 +95,27 @@ fall_handler in context 0x20002c90
 rise_handler_user_context in context 0x20002c90
 ```
 
-The scenario above (splitting an interrupt handler's code into time critical code and non-time critical code) is another common pattern that you can easily implement with event queues; queuing code that's not interrupt safe is not the only thing you can use event queues for. Any kind of code can be queued and deferred for later execution.
+The scenario above (splitting an interrupt handler's code into time critical code and non-time critical code) is another<!--"another" is a weird word here; I think this sentence is struggling because its points is at the end, and the semicolon highlights the difficulty--> common pattern that you can easily implement with event queues; queuing code that's not interrupt safe is not the only thing you can use event queues for. Any kind of code can be queued and deferred for later execution.
 
-We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
+We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK<!--do we talk about SDK for Mbed OS anywhere else?-->. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
 ## Prioritization
 
-The EventQueue has no concept of event priority. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. The EventQueue only schedules events based on time. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must appropriately set the priority of the thread dispatching each EventQueue instance.
+The EventQueue has no concept of event priority. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. The EventQueue only schedules events based on time<!--feels like maybe this should be the second sentence rather than the third-->. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must appropriately<!--just because "appropriately priority" is a mouth-full, is there another word?--> set the priority of the thread dispatching each EventQueue instance.
 
 ## EventQueue memory pool
 
-When you create an instance of the [EventQueue](../apis/event.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
+When you create an instance of the [EventQueue](../apis/event.html),<!--why do we suddenly link to it here? shouldn't it come in the intro, if that's the API this whole tutorial relies on?--> you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the EventQueue supports various sized events.
 
 Various sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event.
+
+<!--this seems like it's missing a clear link to the following bits-->
 
 ### Calculating the number of events
 
 If your project only uses fix-sized events, you can use a counter that tracks the number of events the EventQueue has dispatched.
 
-If your projects uses variable-sized events, you can calculate the number of available events of a specific size because successfully allocated memory is never fragmented further. However, untouched space can service any event that fits, which complicates such a calculation.
+If your project uses variable-sized<!--are variable-sized and various sized the same?--> events, you can calculate the number of available events of a specific size because successfully allocated memory is never fragmented further. However, untouched space can service any event that fits, which complicates such a calculation.<!--and? and how does all this tie to the code - what is it showing?-->
 
 ```
 EventQueue queue(8*sizeof(int)); // 8 words of storage
@@ -152,4 +154,4 @@ Four words of storage are free but only for allocations of one word or less. The
 
 ### More about events
 
-This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).
+This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md)<!--why isn't this part of the docs in some way? I think they can include it in the doxygen, for example--> shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).<!--that's a header-->

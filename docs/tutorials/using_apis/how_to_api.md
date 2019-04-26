@@ -26,3 +26,5 @@ ___
 
 - [Alarm tutorial using DigitalOut, InterruptIn and LowPowerTicker](../tutorials/alarm-tutorial.html).
 - [Flow control using Ticker and Wait](application-flow-control.html).
+
+<!--The ToC and the list here should match. For example, the connectivity tutorials are listed first here but are last in the ToC, and the EventQueue is stuck between the two driver tutorials-->
