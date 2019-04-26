@@ -18,12 +18,12 @@ For a simple program like [Blinky](https://github.com/ARMmbed/mbed-os-example-bl
 | Subtotals           | 53932 |  2312 | 10520 |
 +---------------------+-------+-------+-------+
 ```
-
+<!---Is there a reason this is in backticks?--->
 The `features/frameworks` module includes the Mbed OS test tools, even if you are no longer testing your program. Because of this, you are building one of our test harnesses into every binary. [Removing this module](https://github.com/ARMmbed/mbed-os/pull/2559) saves a significant amount of RAM and flash memory.
 
 #### `Printf` and UART
 
-The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output - forcing the `printf` and UART drivers to be compiled in and requiring a large amount of flash memory.
+The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output. This forces the `printf` and UART drivers to compile in and requires a large amount of flash memory.
 
 To disable error logging to serial output, set the `NDEBUG` macro and the following configuration parameter in your program's `mbed_app.json` file:
 
@@ -40,8 +40,8 @@ To disable error logging to serial output, set the `NDEBUG` macro and the follow
 }
 ```
 
-<span class="notes">**Note:** Different compilers, different results; compiling with one compiler yields different memory usage savings than compiling with another.</span>
-
+<span class="notes">**Note:** Different compilers yield different results. Compiling with one compiler yields different memory usage savings than compiling with another.</span>
+<!---Snappy, but redundant--->
 #### Embedded targets
 
 You can also take advantage of the fact that these programs only run on embedded targets. When you run a C++ application on a desktop computer, the operating system constructs every global C++ object before calling `main`. It also registers a handle to destroy these objects when the program ends. The code the compiler injects has some implications for the application:
@@ -49,6 +49,6 @@ You can also take advantage of the fact that these programs only run on embedded
 - The code that the compiler injects consumes memory.
 - It implies dynamic memory allocation and thus requires the binary to include `malloc`, even when the application does not use it.
 
-When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime. 
+When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. You can save more RAM and flash memory usage by [removing destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and by eliminating the code to destruct objects when the operating system calls `exit()` at runtime.
 
 <span class="notes">**Note:** Mbed OS 5.2.0+ enables removing destructor registration by default.</span>
