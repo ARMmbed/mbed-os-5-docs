@@ -20,8 +20,9 @@ Non-IP devices require a gateway:
 - Cellular.
 
 <!--- What about NFC?--->
-## Choosing your connectivity method
 
+<!---What if we move this to the ../technology.md file?--->
+## Choosing your connectivity method
 
 There is a wide variety of possibilities for connected devices, and no globally correct connectivity method. Choose a method that fits your application needs, then choose a device that can support that method. If you're already committed to a device type, you may need to adjust your application to work within that device's connectivity constraints.
 
@@ -31,6 +32,7 @@ Mbed OS supports various IP-based connectivity options and IP stacks.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking-simple.png)</span>
 
+<!---This could use a caption, IMO--->
 Our Socket API standardizes all of our connectivity options. It supports both IPv4 and IPv6. Applications are portable regardless of final connectivity option.
 
 Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
@@ -47,7 +49,7 @@ End devices for Wi-Fi are complicated due to hardware requirements and limitatio
 
 ### Cellular
 
-Cellular has a variable throughput, reaching 10 Mbps. Its coverage is extensive, and its range is 25-100km, so it is commonly used in transportation and logistics. It is also well suited for proof of concept, because, like Wi-Fi, it relies on an existing infrastructure. It's suitable for a wide variety of use cases, from monitoring temperature sensors, to streaming video.
+Cellular has a variable throughput, reaching 10 Mbps. Its coverage is extensive, and its range is 25-100 km, so it is commonly used in transportation and logistics. It is also well suited for proof of concept, because, like Wi-Fi, it relies on an existing infrastructure. It's suitable for a wide variety of use cases, from monitoring temperature sensors to streaming video.
 
 Cellular coverage, load balancing, and reliability are the responsibility of the providers, not the application. However, network access is subscription-based, so there is a direct correlation between usage and cost.
 
@@ -57,7 +59,7 @@ The new cellular technologies, NB-IoT and CAT-M1, are designed for IoT devices. 
 
 **CAT-M1** has a higher data rate than NB-IoT (closer to existing cellular behavior), but is not proven to be more power efficient. Any efficiency gains can be lost because of operator configurations.
 
-It can be deployed on a single spectrum, reducing antenna configuration complexity, but isn't deployed world-wide, and can take years to be deployed in countries using 3G.
+It can be deployed on a single spectrum, reducing antenna configuration complexity, but isn't deployed world-wide, and can take years to deploy in countries using 3G.
 
 ### Bluetooth Low Energy (BLE)
 
@@ -69,13 +71,13 @@ To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../
 
 ###  IP-based mesh (Thread, Wi-SUN and 6LoWPAN-ND)
 
-Originally designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
+Designed with large-scale deployment in mind, mesh is optimized for long battery life and low cost.
 
-**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** and **6LoWPAN-ND** have a range of up to one kilometer and are therefore better suited for external use. Throughput of Mesh technologies is up to 200 kbps.
+**Thread** is designed for indoor use, with a range of only a few meters. **Wi-SUN** and **6LoWPAN-ND** have a range of up to one kilometer and are therefore better suited for external use. Throughput of Mesh technologies is up to 200 Kbps.
 
 Mesh networks are self-healing, with no single point of failure. They are more suitable for limited spaces because of the expense in infrastructure setup and maintenance.
 
-Additionally, Mbed OS Thread stack is certified using pre-defined test sets for stability, reliability, and performance to ensure high quality, production-ready delivery for application and product creation.
+Additionally, Mbed OS Thread stack is certified using predefined test sets for stability, reliability, and performance to ensure high quality, production-ready delivery for application and product creation.
 
 ### 6LoWPAN Mesh networking
 
@@ -91,7 +93,7 @@ For descriptions of different mesh networks, please see the [Thread](../referenc
 
 ### LoRaWAN
 
-LoRaWAN is optimized for low power consumption and memory footprint, reducing device cost. The downside is low throughput of no more than 50 kbps, as well as delays. It is a non-IP-based technology.
+LoRaWAN is optimized for low power consumption and memory footprint, reducing device cost. The downside is low throughput of no more than 50 Kbps, as well as delays. It is a non-IP-based technology.
 
 Because of its long range (up to 20 km) and low power, it is suitable for low data rate, outdoors solutions.
 
@@ -107,7 +109,7 @@ To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview]
 
 ### NB-IoT cellular
 
-Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. It is enabled by Control Plane cellular IoT EPS optimization, to provide improved support for small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
+Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. It is enabled by Control Plane cellular IoT EPS optimization, to provide improved support for small data transfer. It transports user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
 
 To learn how to use this feature with Mbed OS, please refer to [CellularNonIPSocket](../apis/non-ip-cellular-socket.html).
 
@@ -115,7 +117,7 @@ To learn how to use this feature with Mbed OS, please refer to [CellularNonIPSoc
 
 Mbed OS's baseline memory footprint, without Pelion connectivity, is 2.8 KB RAM and 8.2 KB flash. When you add connectivity and full functionality, the footprint grows:
 
-- For **Device Management Client Lite**, the smaller of the two connectivity libraries: A total of 20 KB RAM, 210 KB flash. This includes not just Ethernet connectivity, but also startup and runtime demands, the size of Client Lite itself and additional drivers. Client Lite is currently available only to certain customer account types.
+- For **Device Management Client Lite**, the smaller of the two connectivity libraries: A total of 20 KB RAM, 210 KB flash. This includes not just Ethernet connectivity, but also startup and runtime demands, the size of Client Lite itself, and additional drivers. Client Lite is currently available only to certain customer account types.
 - For **Device Management Client**: A total of 137 KB RAM, 330 KB flash. This adds FileSystem and the full Client to the functionality.
 
 These two connectivity libraries give you the choice of a range of devices. Mbed OS with Client Lite can work on devices with only 64 KB RAM and 256 KB flash. Mbed OS with the full Client fits comfortably on devices with 128 KB RAM and 1024 KB flash.
