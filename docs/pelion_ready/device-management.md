@@ -2,7 +2,7 @@
 
 Pelion Client is an abstraction of Device Management Client, and lets Mbed OS devices use [Pelion Device Management services](https://www.pelion.com/docs/device-management/current/welcome/index.html). Pelion Client:
 
-- Provides LwM2M Resources - variables that sync automatically through Device Management. Pelion Client makes it trivial to expose sensors, actuators and other variables to a cloud service.
+- Provides LwM2M Resources, which are variables that sync automatically through Device Management. Pelion Client makes it possible to expose sensors, actuators and other variables to a cloud service.
 - Supports firmware updates with just a few lines of code.
 - Runs separately from your main application; it does not take over your main loop.
 - Helps avoid blocking network operations in interrupt contexts, by automatically deferring actions to a separate thread.
