@@ -37,7 +37,7 @@ Our Socket API standardizes all of our connectivity options. It supports both IP
 
 Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
 
-You can find descriptions of supported interfaces and protocols in the [IP networking](#ip-networking.html) section.
+You can find descriptions of supported interfaces and protocols in the [IP networking](../reference/ip-networking.html) section.
 
 ### Wi-Fi
 
