@@ -42,7 +42,7 @@ Edit the `mbed_app.json` file, and create a new entry under `target_overrides` w
 
    Valid options are `SD`, `SPIF`, `QSPIF` and `FLASHIAP` (not recommended). For more available options, see the [block device components](https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice).
 
-   You also have to specify the block device pin configuration, which may vary from one block device type to another. Here's an example for `SD`:
+   You must also specify the block device pin configuration, which may vary from one block device type to another. Here's an example for `SD`:
 
    ```
             "sd.SPI_MOSI"                      : "PE_6",
