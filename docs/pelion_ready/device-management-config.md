@@ -10,7 +10,7 @@ Device Management configuration has five distinct areas:
 
 Except for connectivity, the majority of the configuration is shared between the application and bootloader, which ensures the bootloader can correctly find, verify, authorize and apply an update to the device application.
 
-For more details about bootloaders and firmware update, read the following documents:
+For more information on bootloaders and firmware update, see:
 
 - [Introduction to Mbed OS bootloaders](../porting/bootloader.html).
 - [Creating and using an Mbed OS bootloader](../tutorials/bootloader.html).
