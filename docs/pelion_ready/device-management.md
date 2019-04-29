@@ -27,8 +27,8 @@ Not every device (microcontroller, module or board) is capable of running device
 
 The minimum requirements to add device management feature to your application are:
 
-- RAM: 128 K or more.
-- Flash: 512 K or more.
+- RAM: 128 KiB or more.
+- Flash: 512 KiB or more.
 - Real Time Clock (RTC).
 - (Optional but recommended) True Random Number Generator (TRNG).
 - A storage device: SD card, SPI flash, QSPI flash or data flash.
