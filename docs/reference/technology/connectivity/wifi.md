@@ -20,7 +20,7 @@ The original version of the standard IEEE 802.11 was released in 1997. Updates a
 | 802.11n | 2009 | 6.5 - 600 | Both 2.4 Ghz and 5 Ghz |
 | 802.11ac | 2013 | 6.5 - 1000 | 5 Ghz |
 
-Today, new access points and computers support all a/b/g/n/ac standards, and most embedded devices offer only a/b/g/n capability. The device and the access point negotiate speed and standard automatically without requiring user configuration.git check
+Today, new access points and computers support all a/b/g/n/ac standards, and most embedded devices offer only a/b/g/n capability. The device and the access point negotiate speed and standard automatically without requiring a user configuration.git check.
 
 ## Wi-Fi in Mbed OS
 
