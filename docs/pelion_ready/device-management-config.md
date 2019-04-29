@@ -74,7 +74,7 @@ Edit the `mbed_app.json` file, and create a new entry under `target_overrides` w
 
 At this point, we recommend that you run the "connect" test suite, which verifies that the device can successfully bootstrap, register and send and receive data from Device Management with the provided configuration.
 
-If you already configured your Device Management API key and initialized your credentials as described in [Adding Device Management connectivity to your application](../mbed-os-pelion/device-management-for-mbed-os.html#adding-device-management-connectivity-to-your-application), you can compile the "connect" tests as follows:
+If you already configured your Device Management API key and initialized your credentials as described in [Adding Device Management connectivity to your application](../mbed-os-pelion/device-management-for-mbed-os.html#adding-device-management-connectivity-to-your-application), you can compile the "connect" tests:
 
 ```
 $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect -DMBED_TEST_MODE --compile
