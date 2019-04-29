@@ -49,7 +49,7 @@ Finally, Mbed OS implements the retargeting layer and boot process integration o
 
 ## Connectivity
 
-Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN-ND, Thread, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
+Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN-ND, Thread, Wi-SUN, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
 
 The networking and connectivity stacks are flexible enough to meet the needs of the most demanding IoT device designs, whether a combination of a single chip microcontroller and radio, or multiple chips connected across serial buses. System designers can have confidence in our certified connectivity stacks, such as our certified Thread stack, because of their maturity, interoperability and validated components.
 
@@ -104,6 +104,6 @@ Please see the following sections of our documentation for more information.
 
 - An [introduction to Mbed OS bare metal profile](../reference/mbed-os-bare-metal.html), and updates to the [quick start for a bare metal build](../quick-start/index.html).
 - New documentation for the [Mbed OS implementation of the Platform Security Architecture (PSA)](../apis/security.html) and [Mbed Crypto](../apis/mbed-crypto.html).
-- Updates to the [Mesh API documentation](../apis/mesh-api.html) and related reference material, including [the Wi-Sun Field Area Network (FAN)](../reference/wisun-tech.html).
+- Updates to the [Mesh API documentation](../apis/mesh-api.html) and related reference material, including [the Wi-SUN Field Area Network (FAN)](../reference/wisun-tech.html).
 - A new guide [for using Pelion Device Management with Mbed OS devices](../mbed-os-pelion/device-management-for-mbed-os.html), and a new location [for our evaluation to production process review](../mbed-os-pelion/going-to-production.html).
 - New [USB APIs](../apis/usb.html).
