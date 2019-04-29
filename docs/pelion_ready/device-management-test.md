@@ -12,7 +12,6 @@ Device Management tests rely on the Python SDK to test the end-to-end solution. 
 
 <span class="notes">**Note:** The Python SDK requires Python 2.7.10+ or Python 3.4.3+, built with SSL support.</span>
 
-
 ## Test setup
 
 1. Import an example application for Device Management that contains the corresponding configuration for your target.
@@ -35,9 +34,9 @@ Device Management tests rely on the Python SDK to test the end-to-end solution. 
     $ mbed dm init -d "<your company name.com>" --model-name "<product model identifier>"
     ```
 
-    This creates your private and public key pair and also initializes various `.c` files with these credentials, so that you can use Device Management Connect and (firmware) Update.
+    This creates your private and public key pair and also initializes various `.c` files with these credentials, so you can use Device Management Connect and (firmware) Update.
 
-1. Remove the `main.cpp` application from the project, or ensure that the content of the file is wrapped with `#ifndef MBED_TEST_MODE`.
+1. Remove the `main.cpp` application from the project, or ensure the content of the file is wrapped with `#ifndef MBED_TEST_MODE`.
 
 1. Compile the tests with the `MBED_TEST_MODE` compilation flag.
 
@@ -96,7 +95,7 @@ Device Management tests rely on the Python SDK to test the end-to-end solution. 
 
 ## Troubleshooting
 
-Common issues and fixes to them.
+This section describes some common issues and fixes to them.
 
 ### Autoformatting failed with error -5005
 
@@ -108,7 +107,7 @@ Occasionally, if a test has failed, the next SMCC Greentea tests fail to sync. R
 
 ### Device identity is inconsistent
 
-If your device ID in Device Management is inconsistent when your device resets, the device is probably failing to open the credentials on the storage held in the Enhanced Secure File System. Typically, the reason is that the device cannot access the Root of Trust stored in SOTP.
+If your device ID in Device Management is inconsistent when your device resets, the device is probably failing to open the credentials on the storage held in the Enhanced Secure File System. Typically, the reason is the device cannot access the Root of Trust stored in SOTP.
 
 One way to verify this is to see if the storage is reformatted after a device reset when `format-storage-layer-on-error` is set to `1` in `mbed_app.json`. It would appear on the serial terminal output from the device as:
 
