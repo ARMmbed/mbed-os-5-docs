@@ -39,8 +39,8 @@ Additionally, we recommend that the latest version of Mbed OS supports the devic
 Useful references:
 
 - [Supported Mbed OS platforms](https://cloud.mbed.com/quick-start).
-- [Storage options available](../reference/storage.html).
-- [Network options available](../reference/networking.html).
+- [Storage options](../reference/storage.html).
+- [Network options](../reference/networking.html).
 
 ### Adding Device Management connectivity to your application
 
