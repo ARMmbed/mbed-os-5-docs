@@ -72,7 +72,7 @@ Edit the `mbed_app.json` file, and create a new entry under `target_overrides` w
    - `*-size` defines the actual sector size. 
    - `sotp-num-sections` should always be set to `2`.
 
-At this point, we recommend that you run the "connect" test suite, which verifies that the device can successfully bootstrap, register and send and receive data from Device Management with the provided configuration.
+At this point, we recommend you run the "connect" test suite, which verifies that the device can successfully bootstrap, register and send and receive data from Device Management with the provided configuration.
 
 If you already configured your Device Management API key and initialized your credentials as described in [Adding Device Management connectivity to your application](../mbed-os-pelion/device-management-for-mbed-os.html#adding-device-management-connectivity-to-your-application), you can compile the "connect" tests:
 
@@ -88,7 +88,7 @@ $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect --run -v
 
 ## Bootloader configuration
 
-When the "connect" tests have passed, you can enable the firmware update feature by adding a bootloader to your application.
+When the "connect" tests have passed, enable the firmware update feature by adding a bootloader to your application.
 
 1. Import the official [mbed-bootloader](https://github.com/ARMmbed/mbed-bootloader/) repository as a new application:
 
@@ -140,7 +140,7 @@ When the "connect" tests have passed, you can enable the firmware update feature
    ```
 
 <span class="notes">**Note:** `mbed-bootloader` is primarily optimized for `GCC_ARM`, so you may want to compile it with that toolchain.
-Before adding the bootloader to your application, you need to compile and flash the bootloader and then connect over the virtual com port to ensure the bootloader is running correctly. You can ignore errors related to checksum verification or failure to jump to application - these are expected at this stage.</span>
+Before adding the bootloader to your application, compile and flash the bootloader and then connect over the virtual com port to ensure the bootloader is running correctly. You can ignore errors related to checksum verification or failure to jump to application - these are expected at this stage.</span>
 
 ## Adding the bootloader to your application
 
@@ -160,7 +160,7 @@ Before adding the bootloader to your application, you need to compile and flash 
       - `target.app_offset` is the relative offset to `flash-start-address` you specified in `mbed_app.json` and `bootloader_app.json`, and is the hex value of the offset specified by `application-start-address` in `bootloader_app.json`. For example,  `(MBED_CONF_APP_FLASH_START_ADDRESS+65*1024)` dec equals `0x10400` hex.
       - `target.header_offset` is also the relative offset to the `flash-start-address` you specified in the `bootloader_app.json`, and is the hex value of the offset specified by `update-client.application-details`. For example, `(MBED_CONF_APP_FLASH_START_ADDRESS+64*1024)` dec equals `0x10000` hex.
 
-1. Compile and rerun all tests, including the firmware update ones as follows:
+1. Compile and rerun all tests, including the firmware update ones:
 
    ```
    $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect -DMBED_TEST_MODE --compile
