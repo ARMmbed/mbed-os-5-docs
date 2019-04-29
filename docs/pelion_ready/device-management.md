@@ -23,7 +23,7 @@ This guide builds on the [quick connect guide](https://os.mbed.com/guides/connec
 
 ### Requirements
 
-Not every device (microcontroller, module or board) is capable of running device management features. Although you can add or extend some hardware capabilities, such as connectivity, storage and TRNG. Others are impossible or inconvenient to extend (for example, RAM or flash).
+Not every device (microcontroller, module or board) is capable of running device management features. You can add or extend some hardware capabilities, such as connectivity, storage and TRNG. Others are impossible or inconvenient to extend (for example, RAM or flash).
 
 The minimum requirements to add device management feature to your application are:
 
