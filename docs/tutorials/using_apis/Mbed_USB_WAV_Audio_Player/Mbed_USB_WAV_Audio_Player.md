@@ -1,6 +1,4 @@
-# Mbed USB WAV audio player
-
-<!--since the library isn't called Mbed USB, just USB, and since this lives in the Mbed docs - can we remove "mbed" from the title?-->
+# USB WAV audio player
 
 This tutorial explains how to put together a USB WAV audio player with Mbed OS. You will load a WAV file onto an SD card connected to an Mbed board, and then connect that board to your computer. The Mbed board acts as the computer's USB microphone. The sound that the microphone is "recording" is the data on the SD card that it sends to the host computer. This allows the sound to be played on speakers or headphones or recorded with a program, such as Audacity.
 
@@ -16,7 +14,7 @@ This tutorial uses several Mbed libraries:
 
 This tutorial uses the USBAudio class of the USB library to send audio data from the Mbed board to the host PC. It uses the SDBlockDevice and FATFileSystem classes of the `sd-driver` library, so you can store the WAV files on an SD card and the Mbed board can access them. Lastly, it uses the AudioPlayer and WaveAudioStream classes of the AudioPlayer library to access the audio data from the WAV file on the SD card.
 
-## What you need
+## Requirements
 
 - Mbed Enabled board.
 - SD card.
@@ -42,7 +40,7 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 1. Make sure the SPI pins for the SDBlockDevice object are correct for your board. For example, in the code below, line 10 sets up SPI for the SDBlockDevice for the NXP-K64F Mbed board.
 1. Load a WAV file onto the SD card. The example below uses a public domain WAV file called ["Bach-minuet-in-g.wav"](https://github.com/mrcoulter45/mbed-os-5-docs/raw/Mbed_USB_WAV_Audio_Player_Tutorial/docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav) that is inside a "songs" directory on the SD card<!--no it isn't; you need to download it and put it on the SD card-->.
 
-    If you want to use another file, it must be WAV, PCM signed 16-bit little endian, or else it will not play (because USBAudio does not support any other WAV formats). The WAV file can have any sampling rate and can have any number of channels. You can use [Online-convert](https://audio.online-convert.com/convert-to-wav) to generate WAV files with different formats from any source audio file. The file "Bach-minuet-in-g.wav" is already in the correct format.
+   If you want to use another file, it must be WAV, PCM signed 16-bit little endian, or else it will not play (because USBAudio does not support any other WAV formats). The WAV file can have any sampling rate and any number of channels. You can use [Online-convert](https://audio.online-convert.com/convert-to-wav) to generate WAV files with different formats from any source audio file. The file "Bach-minuet-in-g.wav" is already in the correct format.
 
    ![Convert audio to WAV](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img1.png)
 
@@ -50,7 +48,7 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 1. Make sure that the board is connected to the host PC over USB.
 1. Select `Mbed Audio` as the host PC's default audio input device.
 
-    On Windows, in Control Panel, set `View by` to `Category` in the top right corner. Then, navigate to `Hardware` and `Sound` > `Sound`, and in the recording tab, right click on `Microphone Mbed Audio` > `Properties` > `Listen`. Check the `Listen to this Device` box, and click `Apply`. The audio from the WAV file is now audible through whichever output device is selected for the host PC's audio output. If `View by` is not set to `Category`, audio will be under Sound in Control Panel:
+    On Windows, in Control Panel, set **View by** to **Category** in the top right corner. Then, navigate to **Hardware** and **Sound** > **Sound**, and in the recording tab, right click on **Microphone Mbed Audio** > **Properties** > **Listen**. Check the **Listen to this Device** box, and click **Apply**. The audio from the WAV file is now audible through whichever output device is selected for the host PC's audio output. If **View by** is not set to **Category**, audio will be under Sound in Control Panel:
 
    ![Sound](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img2.PNG)
 
