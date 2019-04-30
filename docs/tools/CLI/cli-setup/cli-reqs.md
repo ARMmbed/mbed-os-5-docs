@@ -233,14 +233,19 @@ Mbed CLI supports a setting for each toolchain path:
 Mbed Studio comes with a free version of Arm Compiler 6 for use with Mbed OS. If you want to use Arm Compiler 6 with Mbed CLI:
 
 1. Install [Mbed Studio](https://os.mbed.com/docs/mbed-studio/latest/introduction/index.html).
-1. Configure the `ARMC6_PATH`.
+1. Configure the environment variable `ARMC6_PATH`:
 
-    For Mbed Studio 0.5 and later, the Arm Compiler 6 executable is located in `ac6/bin` folder. This path is relative to the Mbed Studio application data:
+    For Mbed Studio 0.5 and later, the Arm Compiler 6 executable is located in the following path:
 
-    - Windows: `C:\{user}\AppData\Local\Mbed Studio\mbed-studio-tools`
+    - Windows: `C:\Users\<user>\AppData\Local\Mbed Studio\.mbed-studio-tools\ac6\bin`
+    - Mac: `/Library/Application Support/Mbed Studio/mbed-studio-tools/ac6/bin`
+
+1. Set the environment variable `ARMLMD_LICENSE_FILE`: 
+
+    For Mbed Studio 0.5 and later, the Arm Compiler 6 license file, `ac6-license.dat`, is located in the following path:
+
+    - Windows: `C:\Users\<user>\AppData\Local\Mbed Studio\.mbed-studio-tools`
     - Mac: `/Library/Application Support/Mbed Studio/mbed-studio-tools`
-
-1. Set the environment variable `ARMLMD_LICENSE_FILE` to the path of Mbed Studio's Arm Compiler 6 license. For Mbed Studio 0.5 and later, the license is located at `ac6-license.dat`. This file is relative to the Mbed Studio application data defined above.
 
     Note that this environment variable is not managed by Mbed CLI, so you must set it appropriately in your environment.
 
