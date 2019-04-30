@@ -46,6 +46,10 @@ If so, you can request to become an organization member, but you must first ensu
 - Arm staff must have their Name, Company (Arm) and Location publicly visible.
 - All others should have their Name and Company visible. Including your Location helps us interpret response times according to time zones.
 
+### Leaving ARMmbed organization
+
+When leaving the organization please follow the following [best practice](https://help.github.com/en/articles/best-practices-for-leaving-your-company).
+
 ## Creating new repositories
 
 If you create a new repository in the ARMmbed organization on GitHub, it must follow some rules. Each repository must contain a:
