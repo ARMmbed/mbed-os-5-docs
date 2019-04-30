@@ -23,7 +23,7 @@ The `features/frameworks` module includes the Mbed OS test tools, even if you ar
 
 #### `Printf` and UART
 
-The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output. This forces the `printf` and UART drivers to compile in and requires a large amount of flash memory.
+The linker can also remove other modules that your program does not use. For example, [Blinky's](https://github.com/ARMmbed/mbed-os-example-blinky) `main` program doesn't use `printf` or UART drivers. However, every Mbed OS module handles traces and assertions by redirecting their error messages to `printf` on serial output. This forces the `printf` and UART drivers to compile and requires a large amount of flash memory.
 
 To disable error logging to serial output, set the `NDEBUG` macro and the following configuration parameter in your program's `mbed_app.json` file:
 
