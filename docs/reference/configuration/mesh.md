@@ -1,10 +1,8 @@
 <h1 id="configuration-mesh">6LoWPAN Mesh</h1>
 
-This page describes build-time configurable parameters 6LoWPAN-based mesh networks. Mbed OS supports 3 main mesh protocols: **6LoWPAN-ND**, **Wi-SUN** and **Thread**. Depending on the selected protocol, you can configure different set of values.
+This page describes build-time configurable parameters for 6LoWPAN-based mesh networks (**6LoWPAN-ND**, **Wi-SUN** and **Thread**). 6LoWPAN mesh protocols are implemented in Mbed OS library called [Nanostack](../reference/nanostack-introduction-tech.html) that can also be configured.
 
-6LoWPAN mesh protocols are implemented in Mbed OS library called Nanostack that can be configured.
-
-This guide is divided in sections, and generic Nanostack configurations are first, followed by those for Thread, 6LoWPAN-ND and then Wi-SUN.
+This guide is divided in sections, and generic Nanostack configurations are explained first, followed by those for Thread, 6LoWPAN-ND and then Wi-SUN.
 
 For understanding the technologies and APIs, please refer to following sections before this one:
 
@@ -17,7 +15,7 @@ For understanding the technologies and APIs, please refer to following sections 
 
 ### Providing the configuration
 
-The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
+The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*` `nsapi.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
 
 An example of the configuration file:
 
@@ -26,6 +24,7 @@ An example of the configuration file:
     "target_overrides": {
         "*": {
             "nanostack.configuration": "lowpan_router",
+            "nsapi.default-mesh-type": "LOWPAN",
             "mbed-mesh-api.6lowpan-nd-device-type": "NET_6LOWPAN_ROUTER",
             "mbed-mesh-api.6lowpan-nd-channel": 12,
         }
@@ -34,13 +33,15 @@ An example of the configuration file:
 
 <span class="notes">**Note:** The configuration files for 6LoWPAN, Wi-SUN and Thread are provided for development or testing purposes. When setting up the production configuration, the user needs to have a good understanding of the whole system.</span>
 
-### Build time configuration of the stack
+### Build time configuration of the Nanostack
 
-To minimize the size of the produced network stack, Nanostack defines a set of build options that are used to compile only needed functionality.
+To minimize the size of the produced 6LoWPAN network stack, Nanostack defines a set of build options that are used to compile only needed functionality.
 
 #### Build options for different mesh types
 
-Option name | Features supported | Estimated binary size of Nanostack
+If you want to optimize the flash usage, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case. The following table includes Nanostack binary size when compiled with different build options in `nanostack.configuration`.
+
+Option name (`nanostack.configuration`) | Features supported | Estimated binary size of Nanostack
 ------------| -------------------|------------------------------------
 `ethernet_host` | Only Ethernet host support, no mesh networking. | 80 kB
 `lowpan_border_router` | 6LoWPAN-ND border router support. | 183 kB
@@ -56,43 +57,41 @@ Option name | Features supported | Estimated binary size of Nanostack
 
 <span class="notes">**Note:** The binary sizes have been estimated using Arm Compiler 6.11. They differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
-If you want to optimize the flash usage, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case.
-
-Select the protocol the network is based on:
-
-- 6LoWPAN-ND.
-- Wi-SUN.
-- Thread.
-
-Select the device role:
-
-- Mesh network. A router. (default)
-- Star network. A nonrouting device, also known as a host or sleepy host.
+A correct `nanostack.configuration` build option can be selected based on the selected mesh network protocol (Wi-SUN, Thread, 6LoWPAN-ND) and device role (border router, router or host):
 
 In the application, choose from the following interface classes:
 
-- For 6LoWPAN-ND based network, use `LoWPANNDInterface`.
-- For Wi-SUN FAN based network, use `WisunInterface`.
-- For Thread based network, use `ThreadInterface`.
+- For 6LoWPAN-ND based network, use `LoWPANNDInterface` interface class.
+- For Wi-SUN FAN based network, use `WisunInterface` interface class.
+- For Thread based network, use `ThreadInterface` interface class.
 
-Then you may optionally choose to select the nonrouting mode for those networks. The following tables show the values to use in the `mbed_app.json` file for your devices in different networks.
+Then you may optionally choose to select the nonrouting mode for those networks. The following tables show the values to use in the `mbed_app.json` file for your devices in different networks (`nsapi.default-mesh-type`).
 
-**mesh-type: MESH_LOWPAN**
+**nsapi.default-mesh-type: LOWPAN**
 
 | Device role | `nanostack.configuration` value | `mbed-mesh-api.6lowpan-nd-device-type` |
 |-----------|-------------------------|------------------------------------|
 | Mesh router (default) | `lowpan_router` | `NET_6LOWPAN_ROUTER` |
 | Nonrouting device | `lowpan_host` | `NET_6LOWPAN_HOST` |
 
-**mesh-type: MESH_THREAD**
+**nsapi.default-mesh-type: THREAD**
 
 | Device role |`nanostack.configuration` value | `mbed-mesh-api.thread-device-type` |
 |-----------|-------------------------|------------------------------------|
 | Mesh router (default) | `thread_router` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
 | Nonrouting device | `thread_end_device` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
 
+**nsapi.default-mesh-type: WISUN**
+
+|Device role|`nanostack.configuration` value|
+|-----------|-------------------------|
+|Mesh router (default) | ws_router |
+| Nonrouting device | - |
+
+
 ### Nanostack's configuration
 
+The following configuration allows you to configure Nanostack features that are common to all mesh protocols.
 ```
 Configuration parameters
 ------------------------
@@ -145,7 +144,7 @@ Generic configuration allows you to fine tune Nanostack's heap usage.
 Configuration parameters
 ------------------------
 Name: mbed-mesh-api.heap-size
-    Description: Nanostack's heap size [bytes: 0-65534]
+    Description: Nanostack's heap size [bytes: 0-‭4294967295‬]
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_HEAP_SIZE
     Value: 32500 (set by library:mbed-mesh-api)
