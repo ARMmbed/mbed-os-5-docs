@@ -20,7 +20,7 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 
 ## Related content
 
- - [mesh tutorial](../tutorial/mesh-tutorial.html) for introduction to Mesh technology.
+ - [Mesh tutorial](../tutorials/mesh-tutorial.html) for introduction to Mesh technology.
 - [Thread](../reference/thread-tech.html) technology reference material.
 - [Wi-SUN](../reference/wisun-tech.html) technology reference material.
 - [6LowPAN-ND](../reference/6LoWPAN-ND-tech.html) technology reference material.
