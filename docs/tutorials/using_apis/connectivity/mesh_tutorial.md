@@ -2,7 +2,7 @@
 
 ## Selecting Mesh protocol
 
-Mbed OS supports variety of 802.15.4 based Mesh protocols. There is support for [Wi-SUN](../reference/wisun.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols and they all have their own unique characteristics. For example, Thread is designed for Home automation use while Wi-SUN and 6LoWPAN-ND are targeted more for Utilities and Smart metering. In addition, Wi-SUN and Thread are having certification programs to ensure interoperability between devices from different vendors.
+Mbed OS supports variety of 802.15.4 based Mesh protocols. There is support for [Wi-SUN](../reference/wisun-tech.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols and they all have their own unique characteristics. For example, Thread is designed for Home automation use while Wi-SUN and 6LoWPAN-ND are targeted more for Utilities and Smart metering. In addition, Wi-SUN and Thread are having certification programs to ensure interoperability between devices from different vendors.
 
 What Mesh protocol to select?
 TBD
@@ -31,7 +31,7 @@ Application may need to store data permanently to the device storage that may ha
 The following Mbed APIs are useful with the Mesh application:
 
 * [Mbed Mesh API](../apis/mesh-api.html) to create a Mesh Network. 
-* [Network Status API](../apis/network-interface.html) to receive indications about Mesh network connectivity status. 
+* [Network Status API](../apis/network-status.html) to receive indications about Mesh network connectivity status. 
 * [Mbed Socket API](../apis/socket.html) to communicate with a remote peer using IP sockets once Mesh network is established.
 
 Next chapters give you quick overview of the API mentioned and also code examples.
@@ -85,7 +85,7 @@ You can find more example configuration files from the [Mesh minimal example](ht
 ### Mbed Network Status API
 If application need to be aware of the changes in the network connection status, then Mbed Network status API provides API for it. Application needs to implement callback method and register it to the used interface.
 
-For more details see Network Status API in [Network Status API](FIX TO POINT TO API)
+For more details see Network Status API in [Network Status API](../apis/network-status.html)
 
 ### Mbed Socket API
 The following code snipplet illutrates how data can be sent to remote peer using Mbed Socket API. 
