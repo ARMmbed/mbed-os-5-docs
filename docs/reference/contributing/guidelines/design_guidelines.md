@@ -131,18 +131,16 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 ## Documentation
 
-- Document all entities in an `.h` file using doxygen comment blocks. Doxygen comment blocks start with `/**` or `/*!` and end with `*/`:
+- Document all entities in an `.h` file using doxygen comment blocks above the documented entity. Doxygen comment blocks start with `/**` or `/*!` and end with `*/`.
 
+    For example:
     ```
-    /**
-     * ... text ...
+    /** psa_crypto_ipc_s struct used for some of the
+     * PSA Crypto APIs that need psa_key_handle_t and psa_algorithm_t arguments.
+     * To use the existing infrastructure of the SPM-IPC we provide a struct to
+     * pack them together.
      */
-    ```
-    Or:
-    ```
-    /*!
-     * ... text ...
-     */
+    typedef struct psa_crypto_ipc_s {
     ```    
     Each line of a long comment block usually also starts with `*`, but that is optional.
 - Doxygen enables you to group entities into groups, called **modules**. To define a module, use the `\defgroup` (or `@defgroup`) command in a comment block:
@@ -150,6 +148,9 @@ A general module can be split into two APIs, the frontend (or user API) and the 
     ```
     * \defgroup <single-word identifier> <group name that appears in the documentation>
     ```
+    To add a member to an existing group, use the `\ingroup` (or `@ingroup`) command inside its documentation block. You can also group members using the open marker `@{` before the group and the closing marker `@}` after the group.
+
+    Alternatively, you can use `\addtogroup <label>` command inside a documentation block to add an entity to a group.
 
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
 
