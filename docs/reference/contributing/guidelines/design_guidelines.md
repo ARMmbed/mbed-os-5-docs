@@ -30,7 +30,7 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 - As an entry point for the module (from the user space), we suggest a single header file. For example: `mbed.h`, `rtos.h`.
 - Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
 - In C++ modules, the API should be contained in a namespace that matches the module’s name. For example: `mbed::Ticker`, `rtos::Thread`, `netsocket::Socket`.
-- Define the internal class types in each C++ module inside an anonymous namespace. In C++, you cannot have different definitions of the same class name in different source files, even if they are not externally visible. In practice, a name collision often doesn't cause a problem; however, it can cause a build failure when link time optimization (LTO) is enabled, or a runtime failure if templates are instantiated using the internal classes. 
+- Define the internal class types in each C++ module inside an anonymous namespace. In C++, you cannot have different definitions of the same class name in different source files, even if they are not externally visible. In practice, a name collision often doesn't cause a problem; however, it can cause a build failure when link time optimization (LTO) is enabled, or a runtime failure if templates are instantiated using the internal classes.
 - In C modules, every nonstatic function and type should be prefixed with the module’s name followed by an underscore. For example: `mbed_critical_section_enter()`, `lwip_gethostbyname(host)`.
 - A module contained in the Mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
 - Special directories should follow consistent naming convention.
@@ -131,6 +131,20 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 ## Documentation
 
+- Document all entities in an `.h` file using doxygen comment blocks. Doxygen comment blocks start with `/**` or `/*!` and end with `*/`:
+
+    ```
+    /**
+     * ... text ...
+     */
+    ```
+    Or:
+    ```
+    /*!
+     * ... text ...
+     */
+    ```    
+    Each line of a long comment block usually also starts with `*`, but that is optional.
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
 
     ``` cpp
@@ -141,7 +155,6 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
      osStatus lock(uint32_t millisec=osWaitForever);
     ```
-
 - The doxygen of each class's header file must contain a use example using `@code` and `@endcode`.
 - Each API should also provide an `@code` and `@endcode` section building upon the class header example.
 - If more specific information is needed about a method, this should be accomplished using `@note`.
