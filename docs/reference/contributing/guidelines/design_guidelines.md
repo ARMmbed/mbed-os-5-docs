@@ -145,6 +145,12 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
     ```    
     Each line of a long comment block usually also starts with `*`, but that is optional.
+- Doxygen enables you to group entities into groups, called **modules**. To define a module, use the `\defgroup` (or `@defgroup`) command in a comment block:
+
+    ```
+    * \defgroup <single-word identifier> <group name that appears in the documentation>
+    ```
+
 - Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
 
     ``` cpp
