@@ -128,7 +128,7 @@ And the following tutorials:
 | EthInterface | [EthInterface example](../apis/ethernet.html#ethinterface-example) | |
 | Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
 | Cellular | [Cellular example](../apis/cellular-api.html#cellular-example-connection-establishment) | |
-| Mesh | | [Light control tutorial](../tutorials/light-control.html) |
+| Mesh | | [Mesh tutorial](../tutorials/mesh-tutorial.html) <br>  [Light control tutorial](../tutorials/light-control.html) |
 | Network status | [Network status example](../apis/network-status.html#example) | |
 
 
