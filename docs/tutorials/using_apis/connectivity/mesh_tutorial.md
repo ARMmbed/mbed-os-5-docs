@@ -1,12 +1,8 @@
-<h1 id="mesh-tutorial">Selecting Mesh protocol</h1>
+<h1 id="mesh-tutorial">Mesh tutorial</h1>
 
-## Selecting Mesh protocol
+## Introduction
 
 Mbed OS supports variety of 802.15.4 based Mesh protocols. There is support for [Wi-SUN](../reference/wisun-tech.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols and they all have their own unique characteristics. For example, Thread is designed for Home automation use while Wi-SUN and 6LoWPAN-ND are targeted more for Utilities and Smart metering. In addition, Wi-SUN and Thread are having certification programs to ensure interoperability between devices from different vendors.
-
-What Mesh protocol to select?
-TBD
-
 
 
 ## Mesh application design principles
@@ -15,15 +11,15 @@ TBD
 
 Mesh networks usually have bigger latency than what wired networks have. Application should adopt its functionality to the longer network delays.
 
-Mesh network has limited network throughput and therefore it is not recommended to fill RF channel with redundant traffic. Especially when dealing with multi-hop network the network throughput can drop dramatically and RF channel becomes easily saturate due retransmission.
+Mesh network has limited network throughput and therefore it is not recommended to fill RF channel with additional traffic. Especially when dealing with multi-hop network the network throughput can drop dramatically and RF channel becomes easily saturate due retransmission. UDP socket communication should be preferred over TCP due higher throughput.
 
-Mesh operates on license exempt RF band and there are also other users utilizing the same radio spectrum. For example, Wi-Fi channels are overlapping with some Mesh channels in 2.4 GHz frequency range.
+Mesh operates on license exempt RF band and there are also other users utilizing the same radio spectrum. For example, Wi-Fi channels are overlapping with some Mesh channels in 2.4 GHz frequency range. If possible, application should select Wi-Fi free channel for operation.
 
 The application should not consume too much device constrained resources, like CPU, memory and other peripherals. Mesh protocols require certain amount of CPU cycles in order to operate properly. Application must not hog all CPU power to itself. Also, tracing should be limited to debugging purposes only.
 
 Sometimes Mesh application is running on the battery-operated device and therefore battery life is critical for the device lifetime. To optimize device energy consumption application can utilize device sleep modes. 
 
-Application may need to store data permanently to the device storage that may have finite number of write and erase times. After certain number of write and erase cycles the storage integrity suffers. 
+Application may need to store data permanently to the device storage that may have finite number of write and erase times. After certain number of write and erase cycles the storage integrity suffers. The application developer should estimate used storage lifetime with selected storage write interval.
 
 
 ## Mesh Application Programming Interfaces
@@ -40,7 +36,7 @@ Next chapters give you quick overview of the API mentioned and also code example
 Mbed Mesh API allows application to create, connect and disconnect to Mesh network. Mbed Mesh API provides easy to use API for Mesh application developers by hiding complexity of the Nanostack API.
 
 ### Configuration
-Mesh default configuration values are defined in the Mbed Mesh API file `mbed_lib.json`and they can be overwritten in application configuration file `mbed_app.json`. 
+Mesh default configuration values are defined in the Mbed Mesh API file `mbed_lib.json`and they can be overwritten in application configuration file `mbed_app.json`. Configuration options are explained in document [6LoWPAN Mesh](../reference/configuration-mesh.html).
 
 ### Connecting to Mesh network
 
@@ -61,11 +57,12 @@ Connecting to the Mesh network is described in the following code snipplet.
         int connect_status = mesh->connect();
         if (connect_status) {
             printf("Connection failed! %d\n", connect_status);
-            return error;
+            return -1;
         }
     }
 
-Mesh network type (Wi-SUN, Thread or 6LoWPAN-ND), RF radio shield and other configuration parameters are defined in the application configuration file `mbed_app.json`.  Below is an example configuration file for Thread device that has Atmel RF AT86RF233 shield connected.
+Mesh network type (Wi-SUN, Thread or 6LoWPAN-ND), RF radio shield and other configuration parameters are defined in the application configuration file `mbed_app.json`.  
+Below is an example configuration file for Thread device that has Atmel RF AT86RF233 shield connected.
 
     {
         "target_overrides": {
@@ -88,33 +85,14 @@ If application need to be aware of the changes in the network connection status,
 For more details see Network Status API in [Network Status API](../apis/network-status.html)
 
 ### Mbed Socket API
-The following code snipplet illutrates how data can be sent to remote peer using Mbed Socket API. 
 
+6LoWPAN mesh network supports socket communication using [Mbed Socket API](../apis/socket.html). 
 
-    #include "mbed.h"
-    #include "nanostack/socket_api.h"
-    #include "ip6string.h"
+Examples how to use sockets can be found from Mbed OS documentation: 
 
-    #define UDP_PORT 1234
-    #define REMOTE_ADDR_STR "ff15::810a:64d1"
-
-    void socket_example(NetworkInterface *mesh)
-    {
-        uint8_t addr[16];
-        UDPSocket* my_socket;
-        char send_buf[20] = {0};
-        
-        my_socket = new UDPSocket();
-        my_socket->open(mesh);
-        stoip6(REMOTE_ADDR_STR, strlen(REMOTE_ADDR_STR), addr); 
-        SocketAddress send_sockAddr(addr, NSAPI_IPv6, UDP_PORT);
-        my_socket->sendto(send_sockAddr, send_buf, 20);
-        my_socket->close();
-    }
-
-### Example Application
-
-What comes here?
+* [Socket example](../apis/socket.html#socket-example)
+* [UDPSocket example](../apis/udpsocket.html#udpsocket-example)
+* [TCPSocket example](../apis/tcpsocket.html#tcpsocket-example)
 
 
 ## Mesh Border Router

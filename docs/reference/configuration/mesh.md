@@ -129,10 +129,6 @@ Name: nanostack-hal.event_loop_thread_stack_size
     Defined by: library:nanostack-hal
     Macro name: MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_THREAD_STACK_SIZE
     Value: 6144 (set by library:nanostack-hal)
-Name: nanostack-hal.nvm_cfstore
-    Description: Use cfstore as a NVM storage. Else RAM simulation will be used
-    Defined by: library:nanostack-hal
-    No value set
 ```
 
 
@@ -322,7 +318,7 @@ Name: mbed-mesh-api.wisun-network-name
     Description: default network name for wisun network
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_NETWORK_NAME
-    Value: "NETWORK_NAME" (set by library:mbed-mesh-api)
+    Value: "Wi-SUN Network" (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-operating-class
     Description: Operating class.
     Defined by: library:mbed-mesh-api
