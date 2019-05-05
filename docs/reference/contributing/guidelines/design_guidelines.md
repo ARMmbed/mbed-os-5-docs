@@ -131,7 +131,9 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 ## Documentation
 
-- Document all entities in an `.h` file using doxygen comment blocks above the documented entity. Doxygen comment blocks start with `/**` or `/*!` and end with `*/`.
+- Document all entities in an `.h` file using doxygen comment blocks above the documented entity.
+
+    Doxygen comment blocks start with `/**` or `/*!` and end with `*/`.
 
     For example:
     ```
@@ -143,16 +145,42 @@ A general module can be split into two APIs, the frontend (or user API) and the 
     typedef struct psa_crypto_ipc_s {
     ```    
     Each line of a long comment block usually also starts with `*`, but that is optional.
-- Doxygen enables you to group entities into groups, called **modules**. To define a module, use the `\defgroup` (or `@defgroup`) command in a comment block:
+- Begin each `.h` file as follows:
 
     ```
-    * \defgroup <single-word identifier> <group name that appears in the documentation>
+    /**
+     * \file <file name>
+     * \brief <short file description>
+     */
     ```
-    To add a member to an existing group, use the `\ingroup` (or `@ingroup`) command inside its documentation block. You can also group members using the open marker `@{` before the group and the closing marker `@}` after the group.
+- Doxygen enables you to group entities. These groups are called **modules** in doxygen and they are listed on the Modules page of the generated documentation.
 
-    Alternatively, you can use `\addtogroup <label>` command inside a documentation block to add an entity to a group.
+    **To define a module:**
 
-- Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
+    Use the `\defgroup` (or `@defgroup`) command. Provide a short description of the group using the `\brief` command:
+
+    ```
+    /**
+     * ...
+     * \defgroup <one-word identifier; not in generated documentation> <group name; appears in the documentation>
+     * \brief <short group description>
+     */
+    ```
+    For example:
+    ```
+    /**
+     * \defgroup psa_cryto PSA Crypto APIs
+     * \brief PSA cryptography module, which contains Mbed TLS platfom definitions.
+     */
+    ```
+
+    **To add a member to a module:**
+
+    Use the `\ingroup` (or `@ingroup`). You can also group members using the open marker `@{` before the group and the closing marker `@}` after the group.
+
+    Alternatively, use the `\addtogroup <label>` command inside a documentation block to add an entity to a group.
+
+- For each function and class in a module, provide a doxygen comment that documents the function and each argument and return value:
 
     ``` cpp
     /** Wait until a Mutex becomes available.
