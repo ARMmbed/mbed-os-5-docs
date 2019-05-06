@@ -102,7 +102,7 @@ This destroys the memory the TLS library allocates. It also closes the transport
 virtual nsapi_error_t connect(const SocketAddress &address);
 ```
 
-The code above initiates the TCP connection and continues to TLS handshake. If [transport mode](#transport-modes) is either `TRANSPORT_KEEP` or `TRANSPORT_CLOSE`, TCP is assumed to be open and state directly goes into TLS handshake. This is currently forced to blocking mode. After successfully connecting, you can set it to nonblocking mode:
+The code above initiates the TCP connection and continues to the TLS handshake. If [transport mode](#transport-modes) is either `TRANSPORT_KEEP` or `TRANSPORT_CLOSE`, TCP is assumed to be open and state directly goes into TLS handshake. This is currently forced to blocking mode. After connecting, you can set it to nonblocking mode:
 
 ```
 virtual nsapi_size_or_error_t send(const void *data, nsapi_size_t size);
