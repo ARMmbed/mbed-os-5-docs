@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A functional Mbed OS USB device consists of three parts: an implementation of USBPhy, the USBDevice stack and a USB component code.
+A functional Mbed OS USB device consists an implementation of USBPhy, the USBDevice stack and a USB component code:
 
 - USBPhy provides raw access to USB in the role of a USB Device.
 - USBDevice is the core of Mbed OS's USB stack and is responsible for state management and synchronization.
