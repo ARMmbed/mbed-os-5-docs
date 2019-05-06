@@ -14,7 +14,7 @@ The active firmware, made up of Mbed OS and an application, can be updated only 
 1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware. If for some reason, the update fails, the bootloader falls back to the firmware version last known to work. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions once an update succeeds.
 1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/latest/updating-firmware/index.html).
 
-  <span class="notes">**Note:** Because some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you need to explicitly import the client to your application.</span>
+  <span class="notes">**Note:** Because some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default. You must explicitly import the client to your application.</span>
 
 1. Permission to access your Device Management account, as well as keys and certificates to verify the firmware's source and validity.
 
@@ -86,7 +86,7 @@ Mbed CLI and the Online Compiler implement the Pelion Device Management Update s
 
 <span class="notes">**Note**: The default workflow of the development tools is intended only for development and testing purposes. It is not secure for production.</span>
 
-Your development tool needs to use your Device Management account's API key to call the Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
+Your development tool needs to use your Device Management account API key to call the APIs. Once it has access to the APIs, it can generate a manifest, upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
 
 <span class="notes">**Note**: The tools currently support the update flow for Device Management Client, not Device Management Client Lite.</span>
 <!---Is this still true?--->

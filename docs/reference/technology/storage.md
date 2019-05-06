@@ -39,7 +39,7 @@ An example of implementations of the interfaces are:
 - FileHandle.
    - File - Class that provides read and write access to files on a file system.
    - BlockDeviceFile - Class that provides read and write access to raw block device storage in the form of a FileHandle.
-   - UARTSerial - The UARTSerial class provides read and write access to a device's serial hardware. It is an example of a non-storage device that you can access as a file.
+   - UARTSerial - The UARTSerial class provides read and write access to a device's serial hardware. It is an example of a nonstorage device that you can access as a file.
 - KVStore.
    - TDBStore - Default implementation of the KVStore API. It provides static wear-leveling and quick access for when you have a small number of KV pairs.
    - FileSystemStore - Class that provides a key-value store API on top of a POSIX-like file system API.

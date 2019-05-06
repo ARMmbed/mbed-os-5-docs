@@ -16,7 +16,7 @@ You can see the interaction of these three components in this diagram:
 
 ## Synchronization
 
-The class *USBDevice* is an interrupt-safe class. It uses a critical section to provide thread- and interrupt-safe locking. USB components inheriting from USBDevice can use this lock, but it is not required.
+The class **USBDevice** is interrupt-safe. It uses a critical section to provide thread- and interrupt-safe locking. USB components inheriting from USBDevice can use this lock, but it is not required.
 
 The recommended model for synchronizing a USB component is to wrap code requiring synchronization in a call to `USBDevice::lock` and `USBDevice::unlock`. Functions or callbacks already synchronized by a caller at a higher level should document this locking requirement by calling `USBDevice::assert_locked` in the first line of the function or callback.
 
@@ -93,7 +93,7 @@ Below is a diagram showing the typical state machine for read (OUT) and write (I
 
 To ensure a USB component runs on all supported devices, the USB component must select the configuration descriptor's endpoints based on the current device. This is because endpoint number and endpoint functionality can differ by device. A USB component can determine the features of USBPhy by examining its endpoint table.
 
-To simplify the process of selecting endpoints, use the *EndpointResolver* class. A USB component constructs the class with an endpoint table. The USB component can then call the class to find an endpoint of the given type and size. After the component finds all required endpoints, it can call the function `EndpointResolver::valid()` to determine whether this device supports this configuration. Below is an example of this:
+To simplify the process of selecting endpoints, use the **EndpointResolver** class. A USB component constructs the class with an endpoint table. The USB component can then call the class to find an endpoint of the given type and size. After the component finds all required endpoints, it can call the function `EndpointResolver::valid()` to determine whether this device supports this configuration. Below is an example of this:
 
 ```c++ TODO
 EndpointResolver resolver(endpoint_table());

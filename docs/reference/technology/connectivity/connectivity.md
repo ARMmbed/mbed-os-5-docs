@@ -37,7 +37,7 @@ Our Socket API standardizes all of our connectivity options. It supports both IP
 
 Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
 
-You can find descriptions of supported interfaces and protocols in the [IP networking](../reference/ip-networking.html) section.
+Descriptions of supported interfaces and protocols are in [IP networking](../reference/ip-networking.html).
 
 ### Wi-Fi
 
@@ -63,7 +63,7 @@ It can be deployed on a single spectrum, reducing antenna configuration complexi
 
 ### Bluetooth Low Energy (BLE)
 
-BLE is optimized for cheap, battery-based devices, and has a low memory footprint. It is widely adopted for connected spaces, but requires setting up an infrastructure. Its range is up to 100 meters, with 1 Mbps bandwidth. You need an edge gateway so devices in your network can connect to the internet.
+BLE is optimized for cheap, battery-based devices, and has a low memory footprint. It is widely adopted for connected spaces, but requires setting up an infrastructure. Its range is up to 100 meters, with 1 Mbps bandwidth. You need an Edge gateway so devices in your network can connect to the internet.
 
 Typical applications of BLE are health care, fitness trackers, beacons, smart homes, security, entertainment, proximity sensors, industrial applications, and automotives.
 

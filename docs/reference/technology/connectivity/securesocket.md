@@ -20,7 +20,7 @@ socket->connect(HOST_NAME, PORT)
 socket->send(data, size);
 ```
 
-Please note that internal TLS structures require over 1 KB of RAM, so you need to allocate each TLS Socket from the heap by using the `new` command, instead of using stack or statically allocating it.
+<span class="notes">**Note:** Internal TLS structures require over 1 KB of RAM. Allocate each TLS Socket from the heap by using the `new` command, instead of using stack or statically allocating it.</span>
 
 ## Design
 
