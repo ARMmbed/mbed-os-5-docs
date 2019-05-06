@@ -237,7 +237,7 @@ Mbed Studio comes with a free version of Arm Compiler 6 for use with Mbed OS. If
 
     For Mbed Studio 0.5 and later, the Arm Compiler 6 executable is located in the following path:
 
-    - Windows: `C:\Users\<user>\AppData\Local\Mbed Studio\.mbed-studio-tools\ac6\bin`
+    - Windows: `C:\Users\<user>\AppData\Local\Mbed Studio\mbed-studio-tools\ac6\bin`
     - Mac: `/Library/Application Support/Mbed Studio/mbed-studio-tools/ac6/bin`
 
 1. Set the environment variable `ARMLMD_LICENSE_FILE`: 
