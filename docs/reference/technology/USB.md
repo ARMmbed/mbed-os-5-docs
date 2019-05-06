@@ -60,7 +60,7 @@ The USB device can enter a state with less functionality at any time. This could
 <!---initially confusing wording--->
 ## USB component callbacks
 
-All callbacks that USBDevice sends to its children are prefixed with `callback_*`. USBDevice calls these callbacks with the USB lock held. One notable callback is `callback_state_change`, which USB components can use generically to handle leaving the Configured state. The USB stack automatically exits the Configured state on disconnect, power loss or USB reset.
+All callbacks USBDevice sends to its children are prefixed with `callback_*`. USBDevice calls these callbacks with the USB lock held. One notable callback is `callback_state_change`, which USB components can use generically to handle leaving the Configured state. The USB stack automatically exits the Configured state on disconnect, power loss or USB reset.
 
 ### Control request state machine
 
