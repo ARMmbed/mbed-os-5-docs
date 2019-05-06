@@ -87,3 +87,8 @@ Cortex-M3 and Cortex-M4 processors have write buffers, which are high-speed memo
 You can verify if you are encountering an imprecise fault by looking at the **BFSR.IMPRECISERR** (bit 2 of **BFSR**) status bit. To help debugging such situations, you can disable the write buffer by setting **DISDEFWBUF** bit in the Auxiliary Control Register (**ACTLR**), which makes those exceptions precise.
 
 Please look at the **Technical Reference Manual** and **Arm Architecture Reference Manual** documents for more information on fault exception types and information on these registers. Note that disabling the write buffer affects performance, so you probably don't want to do that in production code.
+
+## Related content
+
+- [Office Hours video about Crash Dump Analysis](https://www.youtube.com/watch?v=7xKWFSnUye8).
+- Mbed OS [error decoder](https://mbed.com/s/error).
