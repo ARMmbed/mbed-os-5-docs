@@ -98,7 +98,7 @@ When the "connect" tests have passed, enable the firmware update feature by addi
   
     `mbed import mbed-bootloader-extended`.
 
-1. In the imported bootloader application, edit the configuration, for example `mbed-bootloader-extended/mbed_app.json`. Add a new target entry and specify:
+1. In the imported bootloader application, edit the configuration, for example `mbed-bootloader-extended/mbed_app.json`. Add a new target entry, and specify:
 
    - **Flash** - Define the basics for the microcontroller flash (the same as in `mbed_app.json`). For example:
 
