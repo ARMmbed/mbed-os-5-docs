@@ -27,7 +27,7 @@ Mbed OS 5 can be built with various toolchains. The currently supported versions
   - A paid version is also included in [Keil MDK 5.27](http://www2.keil.com/mdk5/).
 - [Arm Compiler 5.06 update 6 (to be deprecated in the future)](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
 - [GNU Arm Embedded version  6 (6-2017-q1-update)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- [IAR Embedded Workbench 8.32.1](https://www.iar.com/iar-embedded-workbench/tools-for-arm/arm-cortex-m-edition/).
+- [IAR Embedded Workbench 8.32.1](https://iar.com/mbed).
 
 #### Arm Mbed Studio
 
