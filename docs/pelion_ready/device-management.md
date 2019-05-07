@@ -34,7 +34,7 @@ The minimum requirements to add device management feature to your application ar
 - A storage device: SD card, SPI flash, QSPI flash or data flash.
 - IP connectivity: Ethernet, Wi-Fi, cellular, 6LoWPAN or Thread.
 
-Additionally, we recommend that the latest version of Mbed OS supports the device and any additional complementary hardware components, or that they have support for the APIs provided in the latest releases of Mbed OS.
+Additionally, we recommend the latest version of Mbed OS supports the device and any additional complementary hardware components, or that they have support for the APIs provided in the latest releases of Mbed OS.
 
 Useful references:
 
