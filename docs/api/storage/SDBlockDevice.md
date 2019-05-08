@@ -68,7 +68,7 @@ The figure above shows the Mbed OS software component stack used for data storag
 
 ## Mbed OS `erase` for SDBlockDevice
 
-There is a difference between `erase` as usually defined for SD cards and the definition in Mbed OS: In Mbed OS, `erase` prepares the block device for writing. Because an SD card doesn't need preparation, the `erase` function doesn't work on SDBlockDevice.
+There is a difference between `erase` as usually defined for SD cards and the definition in Mbed OS: In Mbed OS, `erase` prepares the block device for writing. Because an SD card doesn't need preparation, `erase` is not applicable on SDBlock device; it's a no-op operation.
 
 ## SDBlockDevice class reference
 
