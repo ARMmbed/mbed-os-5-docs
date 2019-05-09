@@ -5,13 +5,13 @@ There are two ways to send data securely from Mbed OS to Treasure Data:
 - HTTPS library - Send data directly to the Treasure Data REST API.
 - fluentd using fluent logger library - Send data to a hosted fluentd instance that aggregates and forwards the data on to your treasure data account.
 
-Both libraries are secured with Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity: 
+Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity: 
 
-- Code size on chip - The HTTPS library is ~50KB of ROM space on chip, this due to the HTTP stack. Both libraries use mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
+- Code size on chip - The HTTPS library is ~50KB of ROM space on chip, this due to the HTTP stack. Both libraries use Mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
 - Data size in transit - The HTTPS library sends data as a ASCII JSON string. The fluend library uses MessagePack (binary encoded json) across a TLS connection. This means that on average the fluentd library will use less bandwidth to send an equivalent message. When you pay per byte transmitted from both your power budget and data plan it matters.
 - Maintenance - Initially, it may be simpler to setup the HTTPS library on a device and have it send data directly to treasure data, but what if you want to change what the device is doing or how its data is reported? If you are using the HTTPS library you will need to issue a firmware update to every device to change how it formats its data, but if you are using a fluend server you can simply modify the fluentd config file on the server to change how data is formatted/processed.
 
-That said, lets cover how to setup both!
+The following steps show how to send data using first the HTTPS library and then using fluentd.
 
 ## HTTPS library
 
@@ -23,9 +23,9 @@ https://www.youtube.com/watch?v=_tqD6GLMHQA
 
 You can compile the program through any of our three development tools:
 
-- [Mbed Studio](https://os.mbed.com/studio/).
-- Online Compiler - `ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
-- Offline - Mbed CLI - `mbed import https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
+- [Arm Mbed Studio](https://os.mbed.com/studio/).
+- Arm Online Compiler - `ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
+- Arm Mbed CLI (offline) - `mbed import https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
 
 ### Setup variables
 
@@ -50,7 +50,7 @@ You can compile the program through any of our three development tools:
 
 ### Compile and load
 
-Next, you can compile and load your code onto your board. If you are unfamiliar with how to compile and load code, please look at the Mbed OS Quickstart tutorial.
+Next, you can compile and load your code onto your board. If you are unfamiliar with how to compile and load code, please look at the Mbed OS quick start tutorial.
 
 Once you have compiled your code and loaded it onto your board, open a serial terminal, and connect it to the board. View the output:
 
@@ -116,7 +116,7 @@ For mass deployments. we recommend you use fluentd or fluentbit to aggregate and
 
 #### Install
 
-First, install fluentd. Please see the [fluentd quickstart](https://docs.fluentd.org/v1.0/articles/quickstart) for details.
+First, install fluentd. Please see the [fluentd quick start](https://docs.fluentd.org/v1.0/articles/quickstart) for details.
 
 Experienced users can use `gem install fluentd fluent-plugin-td`.
 
