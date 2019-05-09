@@ -108,7 +108,7 @@ If you experience issues, ensure you have at least 10KB of space left on your st
 
 ## fluentd
 
-For mass deployments. we recommend you use fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
+For mass deployments, we recommend you use fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
 
 <INSERT YOUTUBE VIDEO FOR FLUENTD HERE: COMING SOON>
 
@@ -211,9 +211,7 @@ Successful output on the fluentd terminal:
 
 #### Setting Treasure Data databases and tables
 
-The second field in the tag of your embedded code determines the database. For example, sending data to a tag called `td.mydatabase.mytable` logs the data to the database called `mydatabase` in the table `mytable`.
-
-Feel free to modify the example configuration file to try this out.
+The second field in the tag of your embedded code determines the database. For example, sending data to a tag called `td.mydatabase.mytable` logs the data to the database called `mydatabase` in the table `mytable`. You can modify the example configuration file to see this.
 
 ### Debugging
 
