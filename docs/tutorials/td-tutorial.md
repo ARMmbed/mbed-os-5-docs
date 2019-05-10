@@ -177,7 +177,7 @@ To send data to fluentd over TLS (securely):
 1. Run `openssl s_client -connect localhost:24228 -showcerts`.
 1. Copy the certificate to `fluentd-sslcert.h`. If you are running the fluentd server on localhost, this certificate will change every time you restart fluentd. You need to rerun this command and recompile your embedded code every time you restart fluentd.
 1. Modify the call in `main.cpp` to the FluentLogger object.
-1. Change the IP address to the IP address of the fluentd server, or if you are hosting it in the cloud, change it to the web address where it is hosted. **It is important that the IP address in the main.cpp file matches the IP address set in the CN field fo the fluentd server. Otherwise, it will not work because Mbed TLS uses strict CN verification.**
+1. Change the IP address to the IP address of the fluentd server, or if you are hosting it in the cloud, change it to the web address where it is hosted. **It is important that the IP address in the main.cpp file matches the IP address set in the CN field of the fluentd server. Otherwise, it will not work because Mbed TLS uses strict CN verification.**
 1. Compile the code and load it onto your board.
 
 ### Success
