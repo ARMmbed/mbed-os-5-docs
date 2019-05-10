@@ -67,7 +67,7 @@ The full text is at [mbed.com](https://www.mbed.com/licenses/PBL-1.0).
 
 ## How to apply PBL correctly
 
-To clearly reflect the PBL license, please createtje following three text files:
+To clearly reflect the PBL license, please create the following three text files:
 
 - A *LICENSE.md* file with:
 
