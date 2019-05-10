@@ -1,11 +1,13 @@
 # Compile
 
-## Compiling your application
+The following section goes into detail about some of the arguments available with the `mbed compile` command. Please run `mbed compile --help` locally to get a full list of arguments.
 
-Use the `mbed compile` command to compile your code:
+## Compile your application
+
+Use the `mbed compile` command to compile your code. Supply the `-m` and `-t` arguments to set your target and toolchain respectively:
 
 ```
-$ mbed compile -t ARM -m K64F
+$ mbed compile -m K64F -t ARM
 Building project mbed-os-program (K64F, GCC_ARM)
 Compile: aesni.c
 Compile: blowfish.c
@@ -33,80 +35,105 @@ Total RAM memory (data + bss + heap + stack): 109096 bytes
 Total Flash memory (text + data + misc): 66014 bytes
 Image: BUILD/K64F/GCC_ARM/mbed-os-program.bin
 ```
+### Set the target
 
-The arguments for *compile* are:
-
-- `-m <MCU>` selects a target. If `detect` or `auto` parameter is passed to `-m`, then Mbed CLI detects the connected target.
-- `-t <TOOLCHAIN>` selects a toolchain defined in `mbed_settings.py`. The value can be `ARM` (Arm Compiler 6 or ARM Compiler 5), `ARMC5` (ARM Compiler 5), `ARMC6` (Arm Compiler 6), `GCC_ARM` (GNU Arm Embedded) or `IAR` (IAR Embedded Workbench for Arm).
-   <span class="notes">**Note**: `mbed compile -t ARM` selects the Arm Compiler major version based on the Arm architecture version of your target and `supported_toolchains` configuration.
-   Please see `supported_toolchains` in [Adding and configuring targets](../reference/adding-and-configuring-targets.html) and `Compiler versions` in [Arm Mbed tools](../tools/index.html) for more information on toolchain configuration and usage.</span>
-- `--source <SOURCE>` selects the source directory. The default is `.` (the current directory). You can specify multiple source locations, even outside the program tree. Find more details about the `--source` switch in the [build rules documentation](../reference/mbed-os-build-rules.html).
-- `--build <BUILD>` selects the build directory. Default: `BUILD/` inside your program root.
-   <span class="notes">**Note**: `mbed compile` ignores the current build directory; creating multiple build directories leads to errors.</span>
-- `--stats-depth <DEPTH>` summarizes memory statistics within the table printed after linking, the CSV map file and the JSON map file for paths with depth greater than `DEPTH`. Default: `2`.
-- `--profile <PATH_TO_BUILD_PROFILE>` selects a path to a build profile configuration file. Example: `debug`. See the dedicated [build profile documentation](../tools/build-profiles.html) for more detail.
-- `--library` compiles the code as a [static `.a/.ar` library](#compiling-static-libraries).
-- `--no-archive` suppresses the creation of `.a/.ar` files created by `--library`, producing many `.o` files instead.
-   <span class="notes">**Note**: This option does nothing without `--library`.</span>
-- `--config` inspects the runtime compile configuration (see below).
-- `-S` or `--supported` shows a matrix of the supported targets and toolchains.
-- `-f` or `--flash` flashes/programs a connected target after successful compile.
-- `-c ` builds from scratch, a clean build or rebuild.
-- `-j <jobs>` controls the compile processes on your machine. The default value is 0, which infers the number of processes from the number of cores on your machine. You can use `-j 1` to trigger a sequential compile of source code.
-- `-v` or `--verbose` shows verbose diagnostic output.
-- `-vv` or `--very_verbose` shows very verbose diagnostic output.
-
-You can find the compiled binary, ELF image, memory usage and link statistics in the `BUILD` subdirectory of your program.
-
-For more information, please see [our build profiles](../tools/build-profiles.html) pages.
-
-## Compiling static libraries
-
-You can build a static library of your code by adding the `--library` argument to `mbed compile`. Static libraries are useful when you want to build multiple applications from the same Mbed OS codebase without having to recompile for every application. To achieve this:
-
-1. Build a static library for `mbed-os`.
-2. Compile multiple applications or tests against the static library:
+You can set the default target with the `mbed target` command to avoid having to supply the `-m` argument:
 
 ```
-$ mbed compile -t ARM -m K64F --library --no-archive --source=mbed-os --build=../mbed-os-build
-Building library mbed-os (K64F, ARM)
-[...]
-Completed in: (47.4)s
-
-$ mbed compile -t ARM -m K64F --source=mbed-os/TESTS/integration/basic --source=../mbed-os-build --build=../basic-out
-Building project basic (K64F, ARM)
-Compile: main.cpp
-Link: basic
-Elf2Bin: basic
-Image: ../basic-out/basic.bin
-
-$ mbed compile -t ARM -m K64F --source=mbed-os/TESTS/integration/threaded_blinky --source=../mbed-os-build --build=..\/hreaded_blinky-out
-Building project threaded_blinky (K64F, ARM)
-Compile: main.cpp
-Link: threaded_blinky
-Elf2Bin: threaded_blinky
-Image: ../threaded_blinky-out/threaded_blinky.bin
+$ mbed target K64F
+[mbed] Working path "C:\project" (program)
+[mbed] K64F now set as default target in program "project"
 ```
 
-## The compile configuration system
+Mbed CLI can detect the target connected to the system and use that as the build target. Enable this behavior by setting the target to `detect` or `auto`.
 
-The [compile configuration system](../tools/compile.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
+### Set the toolchain
 
-### Inspecting the configuration
-
-You can use `mbed compile --config` to view the configuration:
+You can set the default target with the `mbed toolchain` command to avoid having to supply the `-t` argument:
 
 ```
-$ mbed compile --config -t GCC_ARM -m K64F
+$ mbed target GCC_ARM
+[mbed] Working path "C:\project" (program)
+[mbed] GCC_ARM now set as default toolchain in program "project"
 ```
 
-To display more verbose information about the configuration parameters, use `-v`:
+The valid toolchain values are as follows:
+
+| Argument value | Toolchain |
+| --------- | --------- |
+| `ARM` | Arm Compiler 5 or Arm Compiler 6 (based on environment) |
+| `ARMC5` | Arm Compiler 5 |
+| `ARMC6` | Arm Compiler 6 |
+| `IAR` | IAR EWARM Compiler |
+| `GCC_ARM` | GNU Arm Embedded Compiler (GCC) |
+
+### Perform a clean build
+
+To rebuild the project, use the `-c/--clean` argument:
+
+```
+mbed compile -c
+```
+
+### Flash and monitor the target with the built program
+
+You can flash a connected target with the built program by adding the `-f/--flash` argument:
+
+```
+mbed compile -f
+```
+
+You can also read and write to the target's serial port by adding the `--sterm` argument (this can be chained with the `-f/--flash` argument):
+
+
+## Build sources and output
+
+
+### Source directories
+
+Mbed CLI includes the program's root directory as the source directory as well as all subdirectories. You can control what directories are used by using the `--source` argument. You can supply multiple `--source` arguments to include multiple directories:
+
+```
+$ mbed compile --source ./src --source ./lib
+```
+
+### Build directory
+
+The default build directory is in the root of your project in a directory called `BUILD`. You can set the build directory `--build` argument:
+
+```
+$ mbed compile --build my_build
+```
+
+### Build profiles
+
+Build profiles are used to control what arguments are passed to the compiler. For more information about build profiles, please see the [build profile documentation](../tools/build-profiles.html).
+
+The default build profile is set to `develop`, which enables debug logging. There is also a `debug` profile (for enabling debug symbols) and a `release` profile (for disabling debug logging, saving program size). This is controlled with the `--profile` argument:
+
+```
+$ mbed compile --profile debug
+```
+
+### Build a library
+
+If you wish to build a static library instead of a linked executable, you can use the `--library` argument:
+
+```
+$ mbed compile --library
+```
+
+To suppress the creation of the `.a/.ar` archive (and instead leave the `.o` object files), use the `--no-archive` argument in addition to the `--library` argument. 
+
+## Configuration system
+
+You can use `mbed compile --config` to view the configuration (use the `-v` argument to display more information):
 
 ```
 $ mbed compile --config -t GCC_ARM -m K64F -v
 ```
 
-It's possible to filter the output of `mbed compile --config` by specifying one or more prefixes for the configuration parameters that Mbed CLI displays. For example, to display only the configuration defined by the targets:
+It's possible to filter the output of `mbed compile --config` by specifying one or more `--prefix` arguments for the configuration parameters that Mbed CLI displays. For example, to display only the configuration defined by the targets:
 
 ```
 $ mbed compile --config -t GCC_ARM -m K64F --prefix target
@@ -118,39 +145,10 @@ You may use `--prefix` more than once. To display only the application and targe
 $ mbed compile --config -t GCC_ARM -m K64F --prefix target --prefix app
 ```
 
-### Compile-time customizations
+### Define macros
 
-#### Macros
-
-You can specify macros in your command-line using the -D option. For example:
+Define macros when compiling by using the `-D` argument:
 
 ```
-$ mbed compile -t GCC_ARM -m K64F -c -DUVISOR_PRESENT
+$ mbed compile -D MY_MACRO -D MY_VALUE=1
 ```
-
-#### Compile in debug mode
-
-To compile in debug mode (as opposed to the default *develop* mode), use `--profile debug` in the compile command-line:
-
-```
-$ mbed compile -t GCC_ARM -m K64F --profile debug
-```
-
-
-### Automate toolchain and target selection
-
-Using `mbed target <target>` and `mbed toolchain <toolchain>`, you can set the default target and toolchain for your program. You won't have to specify these every time you compile or generate IDE project files.
-
-You can also use `mbed target detect`, which detects the connected target board and uses it as a parameter to every subsequent compile and export.
-
-### Update programs and libraries
-
-You can update programs and libraries on your local machine so that they pull in changes from the remote sources (Git or Mercurial).
-
-As with any Mbed CLI command, `mbed update` uses the current directory as a working context. Before calling `mbed update`, you should change your working directory to the one you want to update. For example, if you're updating `mbed-os`, use `cd mbed-os` before you begin updating.
-
-<span class="tips">**Tip: Synchronizing library references:** Before triggering an update, you may want to synchronize any changes that you've made to the program structure by running `mbed sync`, which updates the necessary library references and removes the invalid ones.</span>
-
-#### Protect against overwriting local changes
-
-The update command fails if there are changes in your program or library that `mbed update` could overwrite. This is by design. Mbed CLI does not run operations that would result in overwriting uncommitted local changes. If you get an error, take care of your local changes (commit or use one of the options below), and then rerun `mbed update`.
