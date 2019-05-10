@@ -5,13 +5,13 @@ There are two ways to send data securely from Mbed OS to Treasure Data:
 - HTTPS library - Send data directly to the Treasure Data REST API.
 - Fluentd using fluent logger library - Send data to a hosted Fluentd instance that aggregates and forwards the data on to your treasure data account.
 
-Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity: 
+Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the Fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity: 
 
 - Code size on chip - The HTTPS library is ~50KB of ROM space on chip. This is due to the HTTP stack. Both libraries use Mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
 - Data size in transit - The HTTPS library sends data as an ASCII JSON string. The Fluend library uses MessagePack (binary encoded JSON) across a TLS connection. This means that on average the Fluentd library uses less bandwidth to send an equivalent message. When you pay per byte transmitted from both your power budget and data plan it matters.
 - Maintenance - Initially, setting up the HTTPS library on a device and having it send data directly to Treasure Data is easier, but what if you want to change what the device is doing or how its data is reported? If you are using the HTTPS library, you must issue a firmware update to every device to change how it formats its data. However, if you are using a Fluend server, you can modify the Fluentd config file on the server to change how data is formatted and processed.
 
-The following steps show how to send data using first the HTTPS library and then using fluentd.
+The following steps show how to send data using first the HTTPS library and then using Fluentd.
 
 ## HTTPS library
 
@@ -106,29 +106,29 @@ order by time asc;
 
 If you experience issues, ensure you have at least 10KB of space left on your stack. You can also change the `TD_DEBUG` macro to `true` to turn on the Treasure Data debug printfs.
 
-## fluentd
+## Fluentd
 
-For mass deployments, we recommend you use fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
+For mass deployments, we recommend you use Fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your Fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
 
 <INSERT YOUTUBE VIDEO FOR FLUENTD HERE: COMING SOON>
 
-### Set up fluentd
+### Set up Fluentd
 
 #### Install
 
-First, install fluentd. Please see the [fluentd quick start](https://docs.fluentd.org/v1.0/articles/quickstart) for details.
+First, install Fluentd. Please see the [Fluentd quick start](https://docs.fluentd.org/v1.0/articles/quickstart) for details.
 
-Experienced users can use `gem install fluentd fluent-plugin-td`.
+Experienced users can use `gem install Fluentd fluent-plugin-td`.
 
 #### Download example code
 
-Download the [example code](https://github.com/BlackstoneEngineering/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the fluentd configuration files. 
+Download the [example code](https://github.com/BlackstoneEngineering/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the Fluentd configuration files. 
 
 #### Set configuration file
 
-Run fluentd using the provided configuration file `fluentd --config ./fluentd-setup/fluentd.conf -vv`. This file opens two ports, port 24227 for unencrypted TCP traffic and port 24228 for TLS encrypted traffic. The configuration is provided for reference. We strongly suggest using TLS encryption on port 24228 to secure your data in transit.
+Run Fluentd using the provided configuration file `fluentd --config ./fluentd-setup/fluentd.conf -vv`. This file opens two ports, port 24227 for unencrypted TCP traffic and port 24228 for TLS encrypted traffic. The configuration is provided for reference. We strongly suggest using TLS encryption on port 24228 to secure your data in transit.
 
-You can either run fluentd on a public IP address with CA signed certificates (suggested for deployments), or locally on your machine using self signed certificates (recommended for prototyping/testing).
+You can either run Fluentd on a public IP address with CA signed certificates (suggested for deployments), or locally on your machine using self signed certificates (recommended for prototyping/testing).
 
 ##### Signed by CA, running in cloud
 
@@ -144,10 +144,10 @@ If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd
 
 https://youtu.be/elB22i4y1yU 
 
-If you are running the fluentd server locally on your machine to develop a proof of concept (PoC), you need to generate a new self-signed certificate where the Common Name (CN) is the IP address of your machine and modify the fluentd.conf file with the IP address of your machine. Each time you restart the fluentd instance, it generates a new certificate that you need to copy and paste into your embedded code.
+If you are running the Fluentd server locally on your machine to develop a proof of concept (PoC), you need to generate a new self-signed certificate where the Common Name (CN) is the IP address of your machine and modify the `fluentd.conf` file with the IP address of your machine. Each time you restart the Fluentd instance, it generates a new certificate that you need to copy and paste into your embedded code.
 
-1. Change the `generate_cert_common_name` parameter in `fluentd.conf` to be the IP address of the computer running the fluentd server.
-1. Run ` openssl req -new -x509 -sha256 -days 1095 -newkey rsa:2048 -keyout fluentd.key -out fluentd.crt` to generate new certificates. When entering the prompted values, make sure to match the parameters in the `fluentd.conf` file (US, CA, Mountain View and so on). **Make sure the CN field is set to the IP address of the fluentd server**.
+1. Change the `generate_cert_common_name` parameter in `fluentd.conf` to be the IP address of the computer running the Fluentd server.
+1. Run ` openssl req -new -x509 -sha256 -days 1095 -newkey rsa:2048 -keyout fluentd.key -out fluentd.crt` to generate new certificates. When entering the prompted values, make sure to match the parameters in the `fluentd.conf` file (US, CA, Mountain View and so on). **Make sure the CN field is set to the IP address of the Fluentd server**.
 
 For example:
 
@@ -172,17 +172,17 @@ $ mbed compile --target auto --toolchain GCC_ARM --flash --sterm
 
 #### Secure (TLS)
 
-To send data to fluentd over TLS (securely):
+To send data to Fluentd over TLS (securely):
 
 1. Run `openssl s_client -connect localhost:24228 -showcerts`.
-1. Copy the certificate to `fluentd-sslcert.h`. If you are running the fluentd server on localhost, this certificate will change every time you restart fluentd. You need to rerun this command and recompile your embedded code every time you restart fluentd.
+1. Copy the certificate to `fluentd-sslcert.h`. If you are running the Fluentd server on localhost, this certificate will change every time you restart Fluentd. You need to rerun this command and recompile your embedded code every time you restart Fluentd.
 1. Modify the call in `main.cpp` to the FluentLogger object.
-1. Change the IP address to the IP address of the fluentd server, or if you are hosting it in the cloud, change it to the web address where it is hosted. **It is important that the IP address in the main.cpp file matches the IP address set in the CN field of the fluentd server. Otherwise, it will not work because Mbed TLS uses strict CN verification.**
+1. Change the IP address to the IP address of the Fluentd server, or if you are hosting it in the cloud, change it to the web address where it is hosted. **It is important that the IP address in the main.cpp file matches the IP address set in the CN field of the Fluentd server. Otherwise, it will not work because Mbed TLS uses strict CN verification.**
 1. Compile the code and load it onto your board.
 
 ### Success
 
-Successful output on the fluentd terminal:
+Successful output on the Fluentd terminal:
 
 ```sterm
  -0500 debug.test: ["sint",0,1,-1,-128,-32768,-2147483648]
