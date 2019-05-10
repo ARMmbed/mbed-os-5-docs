@@ -3,25 +3,25 @@
 There are two ways to send data securely from Mbed OS to Treasure Data:
 
 - HTTPS library - Send data directly to the Treasure Data REST API.
-- fluentd using fluent logger library - Send data to a hosted fluentd instance that aggregates and forwards the data on to your treasure data account.
+- Fluentd using fluent logger library - Send data to a hosted Fluentd instance that aggregates and forwards the data on to your treasure data account.
 
 Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity: 
 
-- Code size on chip - The HTTPS library is ~50KB of ROM space on chip, this due to the HTTP stack. Both libraries use Mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
-- Data size in transit - The HTTPS library sends data as a ASCII JSON string. The fluend library uses MessagePack (binary encoded json) across a TLS connection. This means that on average the fluentd library will use less bandwidth to send an equivalent message. When you pay per byte transmitted from both your power budget and data plan it matters.
-- Maintenance - Initially, it may be simpler to setup the HTTPS library on a device and have it send data directly to treasure data, but what if you want to change what the device is doing or how its data is reported? If you are using the HTTPS library you will need to issue a firmware update to every device to change how it formats its data, but if you are using a fluend server you can simply modify the fluentd config file on the server to change how data is formatted/processed.
+- Code size on chip - The HTTPS library is ~50KB of ROM space on chip. This is due to the HTTP stack. Both libraries use Mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
+- Data size in transit - The HTTPS library sends data as an ASCII JSON string. The Fluend library uses MessagePack (binary encoded JSON) across a TLS connection. This means that on average the Fluentd library uses less bandwidth to send an equivalent message. When you pay per byte transmitted from both your power budget and data plan it matters.
+- Maintenance - Initially, setting up the HTTPS library on a device and having it send data directly to Treasure Data is easier, but what if you want to change what the device is doing or how its data is reported? If you are using the HTTPS library, you must issue a firmware update to every device to change how it formats its data. However, if you are using a Fluend server, you can modify the Fluentd config file on the server to change how data is formatted and processed.
 
 The following steps show how to send data using first the HTTPS library and then using fluentd.
 
 ## HTTPS library
 
-To use the HTTPS library, use this program: https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then send heap/CPU/stack/system information to Treasure Data.
+To use the HTTPS library, use this program: https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
 
 https://www.youtube.com/watch?v=_tqD6GLMHQA
 
 ### Import code
 
-You can compile the program through any of our three development tools:
+You can compile the program using any of the following development tools:
 
 - [Arm Mbed Studio](https://os.mbed.com/studio/).
 - Arm Online Compiler - `ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
@@ -52,7 +52,7 @@ You can compile the program through any of our three development tools:
 
 Next, you can compile and load your code onto your board. If you are unfamiliar with how to compile and load code, please look at the Mbed OS quick start tutorial.
 
-Once you have compiled your code and loaded it onto your board, open a serial terminal, and connect it to the board. View the output:
+After you have compiled your code and loaded it onto your board, open a serial terminal, and connect it to the board. View the output:
 
 ```
 --- Terminal on /dev/tty.usbmodem146103 - 9600,8,N,1 ---
@@ -78,16 +78,16 @@ Gateway: 192.168.43.249
 
 ### Verify data in Treasure Data
 
-Go to the [Database list in Treasure data](https://console.treasuredata.com/app/databases), and open the `test_database` you created earlier. You can see the data from the board in the database. There is a 3- to 5-minute delay from when the data is sent to the database until the visualization system lets you see it, so please be patient, and wait for it to arrive. Be sure to refresh the page.
+Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/databases), and open the `test_database` you created earlier. You can see the data from the board in the database. There is a 3- to 5-minute delay from when the data is sent to the database until the visualization system lets you see it, so please be patient, and wait for it to arrive. Be sure to refresh the page.
 
 <span class="notes">**Note:** The database tab shows how much data you have in the database and gives a few samples, but it does not show all your data. For that, you need to run queries.</span>
 
 ### Run queries
 
-Now that you have data in Treasure data, it's time to analyze and use the data. 
+Now that you have data in Treasure Data, it's time to analyze and use the data. 
 
 1. Go to the [Queries tab] (https://console.treasuredata.com/app/queries/editor).
-2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360001457427-Presto-Query-Engine-Introduction).
+2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360007995693).
 
 #### Select all fields
 
@@ -95,7 +95,7 @@ Run `select * from cpu_info` to get a full list of all fields in the table.
 
 #### Select certain fields, order by time
 
-This query selects only certain columns from the table and then order them by the time field in ascending value, you can also replace `asc` with `desc` to get the order reversed.
+This query selects only certain columns from the table and orders them by the time field in ascending value. You can also replace `asc` with `desc` to get the order reversed.
 
 ```
 select time, current_size, total_size, alloc_cnt, max_size, reserved_size, alloc_fail_cnt from heap_info
@@ -175,7 +175,7 @@ $ mbed compile --target auto --toolchain GCC_ARM --flash --sterm
 To send data to fluentd over TLS (securely):
 
 1. Run `openssl s_client -connect localhost:24228 -showcerts`.
-1. Copy the certificate to `fluentd-sslcert.h`. If you are running the fluentd server on localhost, this certificate will change every time you restart fluentd. You eed to rerun this command and recompile your embedded code every time you restart fluentd.
+1. Copy the certificate to `fluentd-sslcert.h`. If you are running the fluentd server on localhost, this certificate will change every time you restart fluentd. You need to rerun this command and recompile your embedded code every time you restart fluentd.
 1. Modify the call in `main.cpp` to the FluentLogger object.
 1. Change the IP address to the IP address of the fluentd server, or if you are hosting it in the cloud, change it to the web address where it is hosted. **It is important that the IP address in the main.cpp file matches the IP address set in the CN field fo the fluentd server. Otherwise, it will not work because Mbed TLS uses strict CN verification.**
 1. Compile the code and load it onto your board.
