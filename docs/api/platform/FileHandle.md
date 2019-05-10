@@ -69,14 +69,15 @@ If a target has serial support, by default a serial port is used for the console
 The target can override this by providing `mbed::mbed_target_override_console` to specify an alternative `FileHandle`. For example, a target using SWO might have:
 
 ```
-    namespace mbed
+namespace mbed
+{
+    FileHandle *mbed_target_override_console(int)
     {
-        FileHandle *mbed_target_override_console(int)
-        {
-            static SerialWireOutput swo;
-            return &swo;
-        }
+        // SerialWireOutput
+        static SerialWireOutput swo;
+        return &swo;
     }
+}
 ```
 
 Then any program using `printf` on that target sends its output over the SWO, rather than serial.
@@ -87,12 +88,44 @@ Because targets can redirect the console in this way, portable applications shou
     // Don't do:
     Serial serial(USBTX, USBRX);
     serial.printf("Hello!\r\n");
-    
+
     // Do do:
     printf("Hello!\n");  // assume platform.stdio-convert-newlines is true
 ```
 
-Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. 
+Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. Below are two examples that show how the console can be redirected to a debugger using semihosting or through another application specific serial port:
+
+```
+namespace mbed
+{
+    FileHandle *mbed_override_console(int fileno)
+    {
+        // Semihosting allows "virtual" console access through a debugger.
+        static LocalFileSystem fs("host");
+        if (fileno == STDIN_FILENO) {
+            static FileHandle *in_terminal;
+            static int in_open_result = fs.open(&in_terminal, ":tt", O_RDONLY);
+            return in_terminal;
+        } else {
+            static FileHandle *out_terminal;
+            static int out_open_result = fs.open(&out_terminal, ":tt", O_WRONLY);
+            return out_terminal;
+        }
+    }
+}
+```
+Application can redirect the console to a different serial port in case the default one is needed for another use:
+
+```
+namespace
+{
+    FileHandle *mbed_override_console(int)
+    {
+        static UARTSerial uart(PA_0, PA_1);
+        return &uart;
+    }
+}
+```
 
 Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analogue to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
 
