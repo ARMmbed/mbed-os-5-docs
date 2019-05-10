@@ -31,7 +31,7 @@ Most Mbed OS software is licensed under a permissive license. The three most
 
 For new Mbed projects, we suggest adopting the Apache 2.0 license.
 
-<span class="notes">**Note:**An Mbed software release under a permissive license cannot accept any code that is licensed under a "copyleft" license. Doing so would prevent us from distributing our code under the permissive license. You are welcome to use Mbed software with copyleft licenses, as long as the rules of the copyleft license are followed.</span>
+<span class="notes">**Note:** An Mbed software release under a permissive license cannot accept any code that is licensed under a "copyleft" license. Doing so would prevent us from distributing our code under the permissive license. You are welcome to use Mbed software with copyleft licenses, as long as the rules of the copyleft license are followed.</span>
 
 Please, see the [contributing guidelines](../contributing/license.html) for a more detailed description on licenses.
 
