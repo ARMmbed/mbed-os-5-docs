@@ -51,7 +51,7 @@ You can request to become an organization member, but you must first ensure your
 
 ### Leaving the ARMmbed organization
 
-When leaving the organization, please follow the [best practices](https://help.github.com/en/articles/best-practices-for-leaving-your-company).
+When leaving the organization, please follow [best practices](https://help.github.com/en/articles/best-practices-for-leaving-your-company).
 
 ## Creating new repositories
 
