@@ -135,7 +135,7 @@ Environment variables can be used to set the location of the compiler. Be sure t
 | IAR EWARM Compiler | `MBED_IAR_PATH` |
 | GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |
 
-## Further optional configuration
+## Optional configuration
 
 ### Bash completion
 
