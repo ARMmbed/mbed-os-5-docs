@@ -37,7 +37,7 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 Mbed OS 5 can be built with various toolchains. The currently supported versions are:
 
 - Arm Compiler 6.11 (default ARM toolchain).
-  - A free version when it's used with Mbed OS is included with [Mbed Studio](https://os.mbed.com/studio/). For information on using this with Mbed CLI, please see the [After installation - configuring Mbed CLI page](../tools/after-installation-configuring-mbed-cli.html).
+  - A free version when it's used with Mbed OS is included with [Mbed Studio](https://os.mbed.com/studio/). For information on using this with Mbed CLI, please see the [manual installation instructions for Mbed CLI](../tools/manual-installation.html#use-arm-compiler-6-from-mbed-studio).
   - A paid version is available as [Arm Compiler 6.11 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
   - A paid version is also included in [Keil MDK 5.27](http://www2.keil.com/mdk5/).
 - [Arm Compiler 5.06 update 6 (to be deprecated in the future)](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
