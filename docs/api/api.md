@@ -25,7 +25,7 @@
 <td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 <tr>
-<td><a href="power-management.html">Power management</a></td>
+<td><a href="power-management.html">Power management (sleep)</a></td>
 <td><a href="memory-tracing.html">Memory tracing</a></td>
 <td><a href="filehandle.html">FileHandle</a></td>
 <td><a href="mpu-management.html">MPU management</a></td>
@@ -270,7 +270,7 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="dir.html">Dir</a></td>
 <td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
 <td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
-<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td> 
+<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td>
 </tr>
 <tr>
 <td><a href="file.html">File</a></td>
