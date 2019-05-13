@@ -1,8 +1,8 @@
 <h1 id="device-management">Device Management for Mbed OS</h1>
 
-Pelion Client is an abstraction of the Device Management Client, and lets Mbed OS devices use the [Pelion Device Management Services](https://cloud.mbed.com/docs/latest/welcome/index.html). Pelion Client:
+Pelion Client is an abstraction of Device Management Client, and lets Mbed OS devices use [Pelion Device Management services](https://www.pelion.com/docs/device-management/current/welcome/index.html). Pelion Client:
 
-- Provides LwM2M resources - variables that sync automatically through Device Management. Pelion Client makes it trivial to expose sensors, actuators and other variables to a cloud service.
+- Provides LwM2M Resources, which are variables that sync automatically through Device Management. Pelion Client makes it possible to expose sensors, actuators and other variables to a cloud service.
 - Supports firmware updates with just a few lines of code.
 - Runs separately from your main application; it does not take over your main loop.
 - Helps avoid blocking network operations in interrupt contexts, by automatically deferring actions to a separate thread.
@@ -17,30 +17,30 @@ This guide builds on the [quick connect guide](https://os.mbed.com/guides/connec
 - [Validation and testing](../mbed-os-pelion/device-management-test.html).
 - [Troubleshooting](../mbed-os-pelion/device-management-test.html#troubleshooting).
 
-<span class="tips">**Tip**: To learn more about Device Management Client, please see our [Device Management documentation](https://cloud.mbed.com/docs/latest/client-api-references/index.html).</span>
+<span class="tips">**Tip**: To learn more about Device Management Client, see the [API documentation](https://www.pelion.com/docs/device-management/current/client-api-references/index.html) and the [tutorials](https://www.pelion.com/docs/device-management/current/connecting/device-management-client-tutorials.html).</span>
 
 ## Device Management for your Mbed OS application
 
 ### Requirements
 
-Not every device (microcontroller, module or board) is capable of running device management features. Although you can add or extend some hardware capabilities, such as connectivity, storage and TRNG, others are impossible or inconvenient to extend (for example, RAM or flash).
+Not every device (microcontroller, module or board) is capable of running device management features. You can add or extend some hardware capabilities, such as connectivity, storage and TRNG. Others are impossible or inconvenient to extend (for example, RAM or flash).
 
 The minimum requirements to add device management feature to your application are:
 
-- RAM: 128K or more.
-- Flash: 512K or more.
+- RAM: 128 KiB or more.
+- Flash: 512 KiB or more.
 - Real Time Clock (RTC).
 - (Optional but recommended) True Random Number Generator (TRNG).
 - A storage device: SD card, SPI flash, QSPI flash or data flash.
 - IP connectivity: Ethernet, Wi-Fi, cellular, 6LoWPAN or Thread.
 
-Additionally, we recommend the latest version of Mbed OS support the device and any additional complementary hardware components, or that they have support for the APIs provided in the latest releases of Mbed OS.
+Additionally, we recommend the latest version of Mbed OS supports the device and any additional complementary hardware components, or that they have support for the APIs provided in the latest releases of Mbed OS.
 
 Useful references:
 
-- Check which Mbed OS platforms are supported in the [Device Management quick start guide](https://cloud.mbed.com/quick-start).
-- Check the [storage options available](../reference/storage.html).
-- Check the [network options available](../reference/networking.html).
+- [Supported Mbed OS platforms](https://cloud.mbed.com/quick-start).
+- [Storage options](../reference/storage.html).
+- [Network options](../reference/networking.html).
 
 ### Adding Device Management connectivity to your application
 
@@ -52,7 +52,7 @@ Useful references:
    $ mbed add https://github.com/ARMmbed/simple-mbed-cloud-client
    ```
 
-   If you do not have an Mbed OS project to add, you can create one with `mbed new <your_application_name>` and then the `mbed add` step above.
+   If you do not have an Mbed OS project to add, you can create one with `mbed new <your_application_name>` and then run `mbed add`.
 
 1. Reference the library from the `main.cpp` file, and add network and storage drivers.
 
@@ -93,7 +93,7 @@ Useful references:
     $ mbed config -G CLOUD_SDK_API_KEY <your-api-key>
     ```
 
-    <span class="tips">If you don't have an API key available, then log in to [Device Management Portal](https://portal.mbedcloud.com/), navigate to `Access Management` and `API keys`, and create a new one.</span>
+    <span class="tips">**Tip**: If you don't have an API key available, log in to [Device Management Portal](https://portal.mbedcloud.com/), navigate to `Access Management` and `API keys`, and create a new one.</span>
 
 1. Install the Device Management certificate:
 
@@ -101,13 +101,13 @@ Useful references:
     $ mbed dm init -d "<your company name.com>" --model-name "<product model identifier>"
     ```
 
-This creates your private and public key pair and also initialize various `.c` files with these credentials, so you can use Connect and (firmware) Update device management features.
+This creates your private and public key pair and also initializes various `.c` files with these credentials, so you can use Connect and (firmware) Update device management features.
 
 ### Example applications
 
-To help you start quickly, please refer to the following [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Device Management service, register resources and get ready to receive a firmware update.
+To help you start quickly, refer to the [application example](https://github.com/ARMmbed/pelion-ready-example). It demonstrates how to connect to the Device Management service, register Resources and get ready to receive a firmware update.
 
-Also, there are a number of board-specific applications that focus on providing more elaborate hardware features with Mbed OS and Device Management. These are available in the Device Management [quick start](https://cloud.mbed.com/quick-start). Please see the reference table below, organized by vendor name, for details:
+There are also several board-specific applications that focus on providing more elaborate hardware features with Mbed OS and Device Management. These are available in the [Device Management quick start](https://cloud.mbed.com/quick-start). See the reference table, organized by vendor name, for details:
 
 Platform                        |  Connectivity      | Storage   | Example URL
 --------------------------------| -------------------| --------- | --------------------
