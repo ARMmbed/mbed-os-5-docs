@@ -1,9 +1,11 @@
 # Installers
 
-The installers are a great way to get started with Mbed OS quickly if you are using Windows or macOS.
+The installers are a great way to get started with Mbed OS:
 
-- For Windows, download the installer [here](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
-- For macOS, download the installer [here](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
+- [Windows installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
+- [macOS installer](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
+
+There is no installer for Linux; please follow the manual installation guide.
 
 <span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
@@ -11,36 +13,41 @@ The installers are a great way to get started with Mbed OS quickly if you are us
 
 ## Dependencies
 
-- [Python](https://www.python.org/) - versions 2.7.x, 3.6.x, and 3.7.x are supported.
-    - We recommend using Python 2 since [Python 3 support for Mercurial is still in the early stages](https://www.mercurial-scm.org/wiki/Python3).
+- [Python](https://www.python.org/) - we support versions 2.7.x, 3.6.x, and 3.7.x.
 
-    <span class="notes">Python 3 is not supported for Mbed OS versions older than 5.9.0.</span>
+    We recommend using Python 2, since [Python 3 support for Mercurial is still in the early stages](https://www.mercurial-scm.org/wiki/Python3).
+
+    <span class="notes">Python 3 is not supported for Mbed OS versions earlier than 5.9.0.</span>
+
 - [pip](https://pip.pypa.io/en/stable/)
 
-    <span class="notes">**Note:** Mbed CLI versions 1.5.0 and older are **not compatible** with `pip` version 10.0 (or newer). Please use Mbed CLI versions 1.5.1 or later with recent versions of `pip`.</span>
+    <span class="notes">**Note:** Mbed CLI versions 1.5.0 and earlier are **not compatible** with `pip` version 10.0 (or newer). Please use Mbed CLI versions 1.5.1 or later with recent versions of `pip`.</span>
 
-- [Git](https://git-scm.com/) - versions 1.9.5 or greater are supported.
-- [Mercurial](https://www.mercurial-scm.org/) - versions 2.2.2 or greater are supported.
+- [Git](https://git-scm.com/) - versions 1.9.5 or later are supported.
 
-<span class="notes">**Note:** Both Git and Mercurial are required to ensure all applications and libraries can be retrieved.</span>
+- [Mercurial](https://www.mercurial-scm.org/) - versions 2.2.2 or later are supported.
+
+<span class="notes">**Note:** You need both Git and Mercurial, to ensure all applications and libraries can be retrieved.</span>
 
 ## 1. Install dependencies
 
+<!--this is repeating the dependencies list-->
+
 ### Instructions for Windows
 
-1. Download and install [Python](https://www.python.org/downloads/windows/).
-    1. Python for Windows includes `pip`.
+1. Download and install [Python](https://www.python.org/downloads/windows/) (which includes `pip`).
 1. Download and install [Git](https://git-scm.com/downloads).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads).
 
 ### Instructions for macOS
-1. macOS 10.8+ comes with Python 2.7 preinstalled
-    1. If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
+1. macOS 10.8 and later comes with Python 2.7 preinstalled.
+
+    * If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
        ```
         curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
         python get-pip.py
         ```
-    1. If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
+    * If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
 1. Download and install [Git](https://git-scm.com/downloads).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads).
 
@@ -56,15 +63,15 @@ sudo apt install python2.7 python-pip git mercurial
 
 ## 2. Install Mbed CLI
 
-To install Mbed CLI, run the following command:
+To install Mbed CLI with pip:
 
 ```
 pip install mbed-cli
 ```
 
-You can verify Mbed CLI installed correctly by running `mbed --help`.
+To verify Mbed CLI installed correctly, run `mbed --help`.
 
-To update Mbed CLI in the future, run:
+To update Mbed CLI, run:
 
 ```
 pip install -U mbed-cli
@@ -72,61 +79,61 @@ pip install -U mbed-cli
 
 ## 3. Install a compiler
 
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
+Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../tools/index.html#compiler-versions).
 
-<span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux system, you may also need to install the i386 architecture package. You can install this on Ubuntu with the following commands:</span>
+**Note:** When installing the Arm Compiler 5 on a 64-bit Linux system, you may also need to install the i386 architecture package. As as example on Ubuntu:
 
 ```
-<<<<<<< HEAD
-$ mbed config -G ARM_PATH <path to ARM bin\>
-[mbed] <path to ARM bin\> now set as global ARM_PATH
-
-$ mbed config --list
-[mbed] Global config:
-ARM_PATH=<path to ARM bin\>
-
-=======
 $ sudo dpkg --add-architecture i386
 $ sudo apt-get update
 $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
->>>>>>> Overhaul the CLI installation documents
 ```
 
 ## 4. Configure the compiler location
 
-Mbed CLI needs to know where the compiler is installed to build projects. It will look in these locations in the following order:
+To build project, Mbed CLI needs to know where the compiler is installed. It checks three configuration options in the following order:
 
-1. Mbed CLI config (local first, then global)
-1. Environment variables
-1. System path
+1. Mbed CLI config (local first, then global).
+1. Environment variables.
+1. System path.
+
+<!--the order in the list is the same as the original text, but the content has been changed so that PATH is first rather than last. Why?-->
 
 ### Install compilers in the system PATH
 
-Installing the compilers in the system PATH is most often the easiest method, as the compiler installation process will often place the executables in your system's PATH automatically.
+Installing the compilers in the system PATH is most often the easiest method, as the compiler installation process will often place the executables in your system's PATH automatically.<!--often? what does it depend on?-->
+
+<!--what was wrong with the original text
+
+"In addition to toolchain-specific environment variables, Mbed CLI detects executables that are in your system PATH. This means that if you install a toolchain in the system PATH (different for each OS), Mbed CLI will automatically find the toolchain."
+
+-->
 
 ### Configure compiler location with Mbed CLI
 
-It is necessary to configure the location of the compiler with Mbed CLI if you cannot place the compiler in the system PATH or if you have to use a different version of the compiler. Use the `mbed config` command to set this location:
+If you cannot place the compiler in the system PATH, or if you have to use a different version of the compiler than the one in your system path, you must configure the location of the compiler with Mbed CLI. Use the `mbed config` command to set the compiler's location:
 
 ```
 $ mbed config -G ARM_PATH "C:\Program Files\ARM"
 [mbed] C:\Program Files\ARM now set as global ARM_PATH
 ```
 
-Use the `-G` argument to se the compiler location globally. Omit the `-G` argument to use this compiler location for a specific project.
+The `-G` argument sets the location globally, so that it applies to all projects. You can omit the argument if you are configuring a compiler location for a specific project.
 
-Each toolchain requires a specific directory to be used when setting the location:
+<!--Each toolchain requires a specific directory to be used when setting the location:--> <!--I don't think this sentence improves on the original. What it implies is "each toolchain has one universally correct path no all computers everywhere" which we know isn't true. The original version was "Mbed CLI supports a setting for each toolchain path:" which isn't great, but is far less confusing.-->
 
-| Toolchain | Example binary location | Setting name | Example path |
+Each toolchain has its own setting name, and must have a path to <!--where? some of the example paths are down to `bin`, some are to a different level. what's the rule?-->
+
+| Toolchain | Setting name | Example binary location | Example path |
 | --------- | --------- | ---------| --------- |
-| Arm Compiler 5.06u6 | `C:\Program Files\ARM_Compiler_5.06u6\bin\armcc` | `ARM_PATH` | `C:\Program Files\ARM_Compiler_5.06u6` |
-| Arm Compiler 6.11 | `C:\Program Files\ARMCompiler6.11\bin\armclang` | `ARMC6_PATH` | `C:\Program Files\ARMCo/mpiler6.11\bin` |
-| IAR EWARM Compiler 8.32.1 | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm\bin\iccarm.exe` | `IAR_PATH` | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm`|
-| GCC Arm Embedded Compiler | `/usr/bin/arm-none-eabi-gcc` | `GCC_ARM_PATH` | `/usr/bin`|
+| Arm Compiler 5.06u6 | `ARM_PATH` | `C:\Program Files\ARM_Compiler_5.06u6\bin\armcc` | `C:\Program Files\ARM_Compiler_5.06u6` |
+| Arm Compiler 6.11 | `ARMC6_PATH` | `C:\Program Files\ARMCompiler6.11\bin\armclang` | `C:\Program Files\ARMCompiler6.11\bin` |
+| IAR EWARM Compiler 8.32.1 | `IAR_PATH` | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm\bin\iccarm.exe` |  `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm`|
+| GCC Arm Embedded Compiler | `GCC_ARM_PATH` |`/usr/bin/arm-none-eabi-gcc` |  `/usr/bin`|
 
 ### Configure compiler location with environment variables
 
-Environment variables can be used to set the location of the compiler. Be sure to use the correct path as described in the previous section [Configuring compiler location with Mbed CLI](#configuring-compiler-location-with-mbed-cli).
+You can set the location of the compiler with environment variables. Use the path listed in the previous section [Configuring compiler location with Mbed CLI](#configuring-compiler-location-with-mbed-cli).
 
 | Toolchain | Environment variable |
 | --------- | --------- |
@@ -141,7 +148,7 @@ Environment variables can be used to set the location of the compiler. Be sure t
 
 To install `mbed-cli` bash completion:
 
-1. Clone the Mbed CLI repository: `git clone https://github.com/ARMmbed/mbed-cli`
+1. Clone the Mbed CLI repository: `git clone https://github.com/ARMmbed/mbed-cli`.
 1. Navigate to the `mbed-cli/tools/bash_completion` directory.
 1. Copy the `mbed` script into the  `~/.bash_completion.d` directory (you may need to create this directory first).
 1. Restart the terminal
