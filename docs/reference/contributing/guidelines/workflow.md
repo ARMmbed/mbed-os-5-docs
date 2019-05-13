@@ -59,7 +59,7 @@ If commits do not follow the above guidelines, we may request that you modify th
 
 ### Release versioning
 
-Mbed OS versioning is explained at [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html).
+[How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html) explains Mbed OS versioning.
 
 ## Pull request types
 
@@ -89,7 +89,7 @@ Release: patch
 
 A functionality change can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
 
-A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, as they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, majority of targets support and comprehensive test coverage proving the correctness of the feature per the documentation.<!-- Something missing after the comma: majority of.... --> Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases.
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, support for most targets and comprehensive test coverage. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases.
 
 Every pull request changing or adding functionality must contain a "Release notes" section describing the changes to users.
 
@@ -151,7 +151,6 @@ Release: major
 Each pull request goes through the following workflow:
 
 ![Pull request workflow](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/5.11/docs/images/Workflow.png)
-<!-- aren't the images sourced from AWS? -->
 
 ## Pull request states
 
@@ -225,9 +224,9 @@ If a rollup pull request fails CI testing, maintainers identify the problematic 
 
 #### How it works
 
-Rollup pull requests use the same process as pull requests merging into master, except that pull requests are merged into a rebased temporary branch. All pull requests with the *rollup PR* label are cloned and merged into the temporary branch. If no merge conflicts arise, a pull request is opened with the temporary branch. Once the rollup pull request merges, all other pull requests that went into building <!-- A bit complicated. How about ... went into building -> were included in --> the rollup pull request are also _marked_ as merged because their contents are now part of master.
+Rollup pull requests use the same process as pull requests merging into master, except that pull requests are merged into a rebased temporary branch. All pull requests with the *rollup PR* label are cloned and merged into the temporary branch. If no merge conflicts arise, a pull request is opened with the temporary branch. Once the rollup pull request merges, all other pull requests that were included in the build the rollup pull request are also _marked_ as merged because their contents are now part of master.
 
-Rollup pull requests are a solution to two types of problem: CI testing duration and semantic conflict problem. 
+Rollup pull requests are a solution to two types of problem: CI testing duration and semantic conflict. 
 
 - Rollup pull requests drastically lower the time to test many pull requests at once. Instead of putting many pull requests through CI, only one goes through testing. This lowers the load on the CI infrastructure and helps close pull requests sooner. 
 
