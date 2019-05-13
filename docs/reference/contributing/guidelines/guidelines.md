@@ -9,7 +9,6 @@ To encourage collaboration, as well as robust, consistent and maintainable code,
 ## How to contribute  
 
 Mbed OS has a team of maintainers who provide guidance and direction to contributors. This team is responsible for helping you get your changes in, as well as controlling the overall quality and consistency of the software. 
-<!-- I left out the first link, as we have the same link in the next paragraph -->
 
 We accept contributions in the form of pull requests. Each pull request must be reviewed by at least one other developer experienced with the functionality. For contributions that span multiple functionalities, multiple reviewers may be necessary. After reviews are complete, we test the changes as part of a larger system. The testing includes but is not limited to: functional correctness, static analysis, integration with other parts of the system, code style or formatting and regressions, such as code size increase or performance degredation. If any of the tests fail, more work will be needed before we accept the contribution. For more information about how to contribute, please see [our workflow](../contributing/workflow.html#mbed-os-maintainers).
 
@@ -31,7 +30,7 @@ Most Mbed OS software is licensed under a permissive license. The three most
 
 For new Mbed projects, we suggest adopting the Apache 2.0 license.
 
-<span class="notes">**Note:** An Mbed software release under a permissive license cannot accept any code that is licensed under a "copyleft" license. Doing so would prevent us from distributing our code under the permissive license. You are welcome to use Mbed software with copyleft licenses, as long as the rules of the copyleft license are followed.</span>
+<span class="notes">**Note:** An Mbed software release under a permissive license cannot accept any code that is licensed under a "copyleft" license. Doing so would prevent us from distributing our code under the permissive license. You are welcome to use Mbed software with copyleft licenses, as long as you follow the rules of the copyleft license.</span>
 
 Please, see the [contributing guidelines](../contributing/license.html) for a more detailed description of licenses.
 
