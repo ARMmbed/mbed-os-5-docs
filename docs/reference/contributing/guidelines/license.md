@@ -79,7 +79,7 @@ To clearly reflect the PBL license, please create the following three text files
 
 - A *DEPENDENCIES* file with the dependencies that this binary requires to work properly. This is to make sure that third parties integrating the binary in their own distribution are aware that they need to include the relevant dependencies. If your binary does not have any dependencies, the file should state so (that is, say “No dependencies”); don't omit this file.
 
-    Each source header should *start with* your copyright line, the SPDX identifier and the PBL header:
+    Each source header should *start with* the copyright line, SPDX identifier and PBL header:
 
     ```
     Copyright (c) [First year]-[Last year], **Your Name Here**, All Rights Reserved SPDX-License-Identifier: LicenseRef-PBL
