@@ -1,8 +1,48 @@
 <h1 id="mesh-tutorial">Mesh tutorial</h1>
 
+
 ## Introduction
 
-Mbed OS supports variety of 802.15.4 based Mesh protocols. There is support for [Wi-SUN](../reference/wisun-tech.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols and they all have their own unique characteristics. For example, Thread is designed for Home automation use while Wi-SUN and 6LoWPAN-ND are targeted more for Utilities and Smart metering. In addition, Wi-SUN and Thread are having certification programs to ensure interoperability between devices from different vendors.
+Mesh network is a dynamically created network that relies on the intelligence of individual nodes to create working connectivity across longer distances than what is possible in the radio range of a individual device. Usually there will be multiple paths to other nodes that increases network resilience in case of failure of the individual node. The mesh network consists of routers and end devices to provide the IP connectivity to application layer. Border router allows devices in mesh to connect to external internet. 
+
+The mesh network allows wireless connectivity as it operates on top of IEEE 802.15.4 based RF transievers. It operates on license-exempt RF band and may therefore be vulnarable to interference from other  devices operating on the same RF spectrum.
+
+This tutorial will:
+
+ * guide you to select correct Mesh protocol based on mesh network characteristics.
+ * give you some ideas what should be taken into consideration when designing application that uses Mesh protocol.
+ * describe what kind of APIs are available.
+ * intoduce Mesh border router to you.
+
+
+## Selecting correct Mesh protocol
+
+Mbed OS supports variety of 802.15.4 based Mesh protocols. There is support for [Wi-SUN](../reference/wisun-tech.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols and they all have their own unique characteristics. Selecting the best mesh protocol for application depends on the application characteristics and interoperability requirements of installation. Different mesh networks are highly optimized for application specific requirements.
+
+### Thread Mesh network characteristics
+
+ * Optimized point to point communication and network formation.
+ * No single point of failure. Operation is possible even inside rooms without any other infrastructure.
+ * Fast multicast communication.
+ * Low power sleeping end devices for battery operated applications.
+ * Interoperability enabled through certification process.
+
+Example use cases: Home automation, Light control, building sensor networks, Commercial building automation
+
+### Wi-SUN mesh network characteristics
+ * Certificate based authentication.
+ * Large hop count networks for up to 24 hop from border router.
+ * Frequency hopping to handle harsh radio conditions.
+ * Interoperability enabled through certification process.
+
+Example use cases: Street light control, Electricity/gas/water meters, Municipal applications
+
+### 6LowPAN ND mesh Network characteristics
+ * Certificate based authentication.
+ * Large hop count networks for up to 24 hop.
+ * Optimized frequency hopping for high throughput and network size.
+
+Example use cases: Street light control, Electricity/gas/water meters, Municipal applications
 
 
 ## Mesh application design principles
@@ -118,8 +158,8 @@ There is plenty of configuration options available for the Border Router. The fo
 
 | Configuration value | Description |
 |--------------------------------|-------------------|
-| heap-size                | Size of Heap reserved for the Border Router. The bigger the network the more Heap should be allocated. Typically, more than 64kB is required. |
-| radio-type               | Type of attached 802.15.4 radio shield. Can be `ATMEL`, `MCR20`, `S2LP`, `SPIRIT1`. |
+| heap-size                | Size of Heap reserved for the Border Router. The bigger the network the more Heap should be allocated. Typically, more than 64kB will be required for operation. |
+| radio-type               | Type of attached 802.15.4 radio shield. Can be like `ATMEL`, `MCR20`, `S2LP`, `SPIRIT1`. More radio shileds will be added in the future. |
 | mesh-mode           | Type of Mesh network, can be either `LOWPAN_WS`, `THREAD` or `LOWPAN_ND`. |
 | backhaul-dynamic-bootstrap | By default set to `true` to learn backhaul-prefix from backbone IPv6 Router Advertisement (RA). Set to `false` to use static backhaul-prefix configured in `backhaul-prefix` field. |
 
