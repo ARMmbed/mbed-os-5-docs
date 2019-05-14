@@ -879,9 +879,6 @@
                                     "path": "docs/tools/CLI/cli-compile.md"
                                 },
                                 {
-                                    "path": "docs/tools/CLI/cli-device-management.md"
-                                },
-                                {
                                     "path": "docs/tools/CLI/cli-collaborate.md"
                                 },
                                 {
@@ -892,6 +889,9 @@
                                 },
                                 {
                                     "path": "docs/tools/CLI/debug_builds_cli.md"
+                                },
+                                {
+                                    "path": "docs/tools/CLI/cli-device-management.md"
                                 },
                                 {
                                     "path": "docs/tools/CLI/troubleshooting.md"

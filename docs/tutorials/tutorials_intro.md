@@ -17,7 +17,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | Wait | [Wait example](../apis/wait.html#example) |
 | callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
 | DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
-| PowerManagement | [PowerManagement example](../apis/power-management.html#example) |
+| PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
 | IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
 | CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
 | Time | [Time example](../apis/time.html#time-example) |
