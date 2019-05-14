@@ -207,9 +207,7 @@ Successful output on the Fluentd terminal:
  
 ```
 
-### Configure
-
-#### Setting Treasure Data databases and tables
+### Setting Treasure Data databases and tables
 
 The second field in the tag of your embedded code determines the database. For example, sending data to a tag called `td.mydatabase.mytable` logs the data to the database called `mydatabase` in the table `mytable`. You can modify the example configuration file to see this.
 
