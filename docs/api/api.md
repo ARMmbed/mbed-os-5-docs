@@ -25,7 +25,7 @@
 <td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 <tr>
-<td><a href="power-management.html">Power management (sleep)</a></td>
+<td><a href="power-management-sleep.html">Power management (sleep)</a></td>
 <td><a href="memory-tracing.html">Memory tracing</a></td>
 <td><a href="filehandle.html">FileHandle</a></td>
 <td><a href="mpu-management.html">MPU management</a></td>
