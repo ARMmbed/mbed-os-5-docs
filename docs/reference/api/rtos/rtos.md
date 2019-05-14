@@ -22,7 +22,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [Mail](/docs/v5.8/reference/mail.html): The API that provides a queue combined with a memory pool for allocating messages.
 - [RtosTimer](/docs/v5.8/reference/rtostimer.html): A deprecated class used to control timer functions in the system.
 - [EventFlags](/docs/v5.8/reference/eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events.
-- [Event](/docs/v5.8/reference/event.html): The queue to store events, extract them and excute them later.
+- [Event](/docs/v5.8/reference/event.html): The queue to store events, extract them and execute them later.
 
 ##### Default timeouts
 
