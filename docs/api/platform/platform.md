@@ -11,7 +11,7 @@ The locks, `DeepSleepLock` and `CriticalSectionLock`, use RAII to create a scope
 Mbed OS also provides global APIs for the sleep and preemption global resources. The `PowerManagement` module includes a function to go to sleep now and the `Wait` module include a function to preempt now.
 - [Wait](wait.html): An API that provides simple wait capabilities. These wait capabilities are integrated with the RTOS to schedule another thread if the current thread is blocked. If all threads are blocked, the idle thread will save power by putting the MCU to sleep.
 - [CriticalSectionLock](criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
-- [Power management](power-management.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
+- [Power management](power-management-sleep.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
 - [DeepSleepLock](deepsleeplock.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
 
 ## Common data structures

@@ -227,4 +227,4 @@ int main()
 - [File](file.html).
 - [FileSystem](filesystem.html).
 - [Poll](poll.html).
-- [Power management](../apis/power-management.html).
+- [Power management](../apis/power-management-sleep.html).

@@ -16,5 +16,5 @@ This example shows how you can lock deep sleep to decrease interrupt latency at 
 
 ## Related content
 
-- [Power management API references](power-management.html).
+- [Power management API references](power-management-sleep.html).
 - [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).
