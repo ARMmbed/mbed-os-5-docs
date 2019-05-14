@@ -79,7 +79,8 @@ Data rates in the mesh networks range depending on regulations from 50kbps to 30
 
 Additionally, Mbed OS Thread stack is certified using pre-defined test sets for stability, reliability, and performance to ensure high quality, production-ready delivery for application and product creation.
 
-For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../reference/thread-tech.html), [Wi-SUN](../reference/wisun-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) mesh networks.
+[Mesh tutorial](../tutorials/mesh-tutorial.html) provides you additional information regarding Mesh. 
+For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../reference/thread-tech.html), [Wi-SUN](../reference/wisun-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) mesh networks. 
 
 ## Non-IP networking
 

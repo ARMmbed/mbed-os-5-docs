@@ -1,6 +1,6 @@
 <h1 id="configuration-mesh">6LoWPAN Mesh</h1>
 
-This page describes build-time configurable parameters for 6LoWPAN-based mesh networks (**6LoWPAN-ND**, **Wi-SUN** and **Thread**). 6LoWPAN mesh protocols are implemented in Mbed OS library called [Nanostack](../reference/nanostack-introduction-tech.html) that can also be configured.
+This page describes build-time configurable parameters for 6LoWPAN-based mesh networks (**6LoWPAN-ND**, **Wi-SUN** and **Thread**). 6LoWPAN mesh protocols are implemented in Mbed OS library called Nanostack that also contains separte configuration.
 
 This guide is divided in sections, and generic Nanostack configurations are explained first, followed by those for Thread, 6LoWPAN-ND and then Wi-SUN.
 

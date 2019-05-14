@@ -27,4 +27,3 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 - [Mesh configuration](../reference/configuration-mesh.html).
 - [Light control tutorial](../tutorials/light-control.html), in which devices can control the LED status of all devices in the network.
 - [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) example application.
-- [Nanostack](../reference/nanostack-introduction-tech.html) reference material, which includes information on the mesh stack internals.

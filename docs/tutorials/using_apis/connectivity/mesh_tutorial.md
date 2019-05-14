@@ -3,16 +3,17 @@
 
 ## Introduction
 
-Mesh network is a dynamically created network that relies on the intelligence of individual nodes to create working connectivity across longer distances than what is possible in the radio range of a individual device. Usually there will be multiple paths to other nodes that increases network resilience in case of failure of the individual node. The mesh network consists of routers and end devices to provide the IP connectivity to application layer. Border router allows devices in mesh to connect to external internet. 
+Mesh network is a dynamically created network that relies on the intelligence of individual nodes to create working connectivity across longer distances than what is possible in the radio range of an individual device. Usually there will be multiple paths to other nodes that increases network resilience in case of failure of the individual node. The mesh network consists of routers and end devices to provide the IP connectivity to application layer. Border router allows devices in mesh to connect to external internet. 
 
-The mesh network allows wireless connectivity as it operates on top of IEEE 802.15.4 based RF transievers. It operates on license-exempt RF band and may therefore be vulnarable to interference from other  devices operating on the same RF spectrum.
+The mesh network allows wireless connectivity as it operates on top of IEEE 802.15.4 based RF transceivers. It operates on license-exempt RF band and may therefore be vulnerable to interference from other devices operating on the same RF spectrum.
 
 This tutorial will:
 
  * guide you to select correct Mesh protocol based on mesh network characteristics.
  * give you some ideas what should be taken into consideration when designing application that uses Mesh protocol.
- * describe what kind of APIs are available.
- * intoduce Mesh border router to you.
+ * describe what kind of APIs are useful for Mesh.
+ * introduce Mesh border router to you.
+ * introduce nanostack that contains implmentations of 6LoWPAN Mesh protocols.
 
 
 ## Selecting correct Mesh protocol
