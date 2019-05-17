@@ -177,7 +177,7 @@ You can verify Mbed CLI installed correctly by running `mbed help`.
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
 
 ```
-$ mbed config -G ARM_PATH <path to ARM bin\>"
+$ mbed config -G ARM_PATH <path to ARM bin\>
 [mbed] <path to ARM bin\> now set as global ARM_PATH
 
 $ mbed config --list
