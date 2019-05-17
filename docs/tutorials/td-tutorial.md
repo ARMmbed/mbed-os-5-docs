@@ -15,7 +15,7 @@ The following steps show how to send data using first the HTTPS library and then
 
 ## HTTPS library
 
-To use the HTTPS library, use this program: https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
+To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest) program. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
 
 https://youtu.be/47tVPmp38zs
 
