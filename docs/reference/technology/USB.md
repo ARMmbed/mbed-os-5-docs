@@ -56,7 +56,7 @@ USB defines five separate states of a device: **Attached**, **Powered**, **Defau
 | Address    |    No new functionality                  |
 | Configured |    All enabled endpoints are functional  |
 
-The USB device can enter a state with less functionality at any time. This could be due to a loss of power or surprise disconnect. When leaving or outside of the Configured state, USBDevice ignores writes to and reads from all endpoints other than endpoint 0.
+Random power loss or disconnect can cause the USB device to lose functionality. When leaving or outside of the Configured state, USBDevice ignores writes to and reads from all endpoints other than endpoint 0.
 <!---initially confusing wording--->
 ## USB component callbacks
 
