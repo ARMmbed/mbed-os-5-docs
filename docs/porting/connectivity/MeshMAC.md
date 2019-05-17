@@ -206,7 +206,7 @@ Member|Description
 `parent_id` | Service user ID used to indentify the MAC service user. Optional.
 `phyMTU` | Maximum Transmission Unit (MTU) used by MAC. Standard 802.15.4 MAC must set 127.
 
-## SW MAC Information element's and Enhanced ACK support
+## IEEE 802.15.4 MAC sublayer extended APIs
 
 This chapter introduce how to use extented features.
 ### Initialize API

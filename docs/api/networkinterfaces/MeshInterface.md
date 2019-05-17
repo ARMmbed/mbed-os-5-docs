@@ -18,6 +18,35 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html)
 
+## Mesh example
+
+The following code snippet illustrate how Mesh interfaces can be used.
+```c++
+#include "mbed.h"
+
+int main(void)
+{
+    MeshInterface *mesh = MeshInterface::get_default_instance();
+
+    int status = mesh->connect();
+    if (status) {
+        printf("Connection failed! error %d\n", status);
+        return status;
+    }
+
+    printf("Connected!\n");
+
+    UDPSocket sock;
+    status = sock.open(mesh);
+    if (status) {
+        printf("Failed to open socket, error %d\n", status);
+    }
+
+    // Now interface is connected, and I can communicate with Sockets
+}
+
+```
+
 ## Related content
 
 - [Mesh tutorial](../tutorials/mesh-tutorial.html) to start using mesh technology.
