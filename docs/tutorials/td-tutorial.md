@@ -225,5 +225,4 @@ For more verbose debug messages, turn on the following flags in `mbed_app.json`:
 	}
 }
  
-"mbed-trace.enable" : true
 ```
