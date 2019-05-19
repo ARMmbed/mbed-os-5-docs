@@ -214,7 +214,16 @@ The second field in the tag of your embedded code determines the database. For e
 For more verbose debug messages, turn on the following flags in `mbed_app.json`:
 
 ```json
-MBEDTLS_SSL_DEBUG_ALL=1
+{
+	"macros": [
+		"MBEDTLS_SSL_DEBUG_ALL = 1"
+	],
+	"target_overrides": {
+		"*": {
+			"mbed-trace.enable": true
+		}
+	}
+}
  
 "mbed-trace.enable" : true
 ```
