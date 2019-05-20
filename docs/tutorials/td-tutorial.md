@@ -17,7 +17,7 @@ The following steps show how to send data using first the HTTPS library and then
 
 To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest) program. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
 
-https://youtu.be/47tVPmp38zs
+<span class="images">[![Video tutorial](https://img.youtube.com/vi/47tVPmp38zs/0.jpg)](https://youtu.be/47tVPmp38zs)</span>
 
 ### Import code
 
@@ -140,7 +140,7 @@ If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd
 
 ##### Self-signed certificates on localhost
 
-https://youtu.be/LR1JG79xSoQ
+<span class="images">[![Video tutorial](https://img.youtube.com/vi/LR1JG79xSoQ/0.jpg)](https://youtu.be/LR1JG79xSoQ)</span>
 
 If you are running the Fluentd server locally on your machine to develop a proof of concept (PoC), you need to generate a new self-signed certificate where the Common Name (CN) is the IP address of your machine and modify the `fluentd.conf` file with the IP address of your machine. Each time you restart the Fluentd instance, it generates a new certificate that you need to copy and paste into your embedded code.
 
