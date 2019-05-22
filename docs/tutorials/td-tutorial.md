@@ -5,7 +5,7 @@ There are two ways to send data securely from Mbed OS to Treasure Data:
 - HTTPS library - Send data directly to the Treasure Data REST API.
 - Fluentd using fluent logger library - Send data to a hosted Fluentd instance that aggregates and forwards the data on to your treasure data account.
 
-Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the Fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity: 
+Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the Fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity:
 
 - Code size on chip - The HTTPS library is ~50KB of ROM space on chip. This is due to the HTTP stack. Both libraries use Mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
 - Data size in transit - The HTTPS library sends data as an ASCII JSON string. The Fluend library uses MessagePack (binary encoded JSON) across a TLS connection. This means that on average the Fluentd library uses less bandwidth to send an equivalent message. When you pay per byte transmitted from both your power budget and data plan it matters.
@@ -33,14 +33,14 @@ You can compile the program using any of the following development tools:
 
    ```
    "api-key":{
-   
-   
+
+
    "help": "REST API Key for Treasure Data",
-    
+
    "value": "\"REPLACE_WITH_YOUR_KEY\""
-    
+
    },
-    
+
    ```
 
 1. Wi-Fi credentials (optional): If you're using Wi-Fi, add your SSID/password. If you are using ethernet, you do not need to add Wi-Fi credentials.
@@ -60,18 +60,18 @@ Treasure Data REST API Demo
 Connecting to the network using the default network interface...
 Connected to the network successfully. IP address: 192.168.43.202
 Success
- 
+
 MAC: C4:7F:51:02:D9:5D
 IP: 192.168.43.202
 Netmask: 255.255.255.0
 Gateway: 192.168.43.249
- 
+
  Sending CPU Data: '{"uptime":6918609,"idle_time":0,"sleep_time":509277,"deep_sleep_time":0}'
- 
+
  Sending Heap Data: '{"current_size":15260,"max_size":75334,"total_size":747954,"reserved_size":307232,"alloc_cnt":12,"alloc_fail_cnt":0}'
- 
+
  Sending Stack Data: '{"thread_id":0,"max_size":4820,"reserved_size":12632,"stack_cnt":4}'
- 
+
  Sending System Data: '{"os_version":51104,"cpu_id":1091551809,"compiler_id":2,"compiler_version":60300}'
 
 ```
@@ -80,11 +80,13 @@ Gateway: 192.168.43.249
 
 Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/databases), and open the `test_database` you created earlier. You can see the data from the board in the database. There is a 3- to 5-minute delay from when the data is sent to the database until the visualization system lets you see it, so please be patient, and wait for it to arrive. Be sure to refresh the page.
 
+<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_1.png</span>
+
 <span class="notes">**Note:** The database tab shows how much data you have in the database and gives a few samples, but it does not show all your data. For that, you need to run queries.</span>
 
 ### Run queries
 
-Now that you have data in Treasure Data, it's time to analyze and use the data. 
+Now that you have data in Treasure Data, it's time to analyze and use the data.
 
 1. Go to the [Queries tab] (https://console.treasuredata.com/app/queries/editor).
 2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360007995693).
@@ -93,6 +95,8 @@ Now that you have data in Treasure Data, it's time to analyze and use the data.
 
 Run `select * from cpu_info` to get a full list of all fields in the table.
 
+<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_2.png</span>
+
 #### Select certain fields, order by time
 
 This query selects only certain columns from the table and orders them by the time field in ascending value. You can also replace `asc` with `desc` to get the order reversed.
@@ -100,7 +104,9 @@ This query selects only certain columns from the table and orders them by the ti
 ```
 select time, current_size, total_size, alloc_cnt, max_size, reserved_size, alloc_fail_cnt from heap_info
 order by time asc;
-``` 
+```
+
+<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_3.png</span>
 
 ### Troubleshooting
 
@@ -109,6 +115,8 @@ If you experience issues, ensure you have at least 10KB of space left on your st
 ## Fluentd
 
 For mass deployments, we recommend you use Fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your Fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
+
+<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_4.png</span>
 
 ### Set up Fluentd
 
@@ -120,7 +128,7 @@ Experienced users can use `gem install Fluentd fluent-plugin-td`.
 
 #### Download example code
 
-Download the [example code](https://github.com/BlackstoneEngineering/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the Fluentd configuration files. 
+Download the [example code](https://github.com/BlackstoneEngineering/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the Fluentd configuration files.
 
 #### Set configuration file
 
@@ -159,6 +167,8 @@ Common Name (eg, fully qualified host name) []:192.168.1.85
 Email Address []:
 ```
 
+<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fluentd-run.gif</span>
+
 ### Mbed OS setup
 
 Run the example code on your device. You can either [import to the Mbed Online Compiler](http://os.mbed.com/compiler/?import=https%3A%2F%2Fgithub.com%2FBlackstoneEngineering%2Fmbed-os-example-fluentlogger) or use Mbed CLI to clone it locally, compile and load it to the board:
@@ -182,6 +192,9 @@ To send data to Fluentd over TLS (securely):
 
 Successful output on the Fluentd terminal:
 
+<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed-os-success.gif</span>
+
+
 ```sterm
  -0500 debug.test: ["sint",0,1,-1,-128,-32768,-2147483648]
  -0500 [trace]: #0 fluent/log.rb:281:trace: connected fluent socket addr="192.168.1.95" port=5522
@@ -202,7 +215,7 @@ Successful output on the Fluentd terminal:
  -0500 [trace]: #0 fluent/log.rb:281:trace: connected fluent socket addr="192.168.1.95" port=5526
  -0500 [trace]: #0 fluent/log.rb:281:trace: accepted fluent socket addr="192.168.1.95" port=5526
  -0500 debug.test: {"string":"Hi!","float":0.3333333432674408,"double":0.3333333333333333}
- 
+
 ```
 
 ### Setting Treasure Data databases and tables
@@ -224,5 +237,5 @@ For more verbose debug messages, turn on the following flags in `mbed_app.json`:
 		}
 	}
 }
- 
+
 ```
