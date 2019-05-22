@@ -102,6 +102,7 @@ Please see the following sections of our documentation for more information:
 
 <h2 id="docs-updates">Recently updated documentation</h2>
 
+- [A tutorial for sending data to Arm Treasure Data from an Mbed OS device](../mbed-os-pelion/send-data-securely-to-arm-treasure-data.html).
 - An [introduction to Mbed OS bare metal profile](../reference/mbed-os-bare-metal.html), and updates to the [quick start for a bare metal build](../quick-start/index.html).
 - New documentation for the [Mbed OS implementation of the Platform Security Architecture (PSA)](../apis/security.html) and [Mbed Crypto](../apis/mbed-crypto.html).
 - Updates to the [Mesh API documentation](../apis/mesh-api.html) and related reference material, including [the Wi-Sun Field Area Network (FAN)](../reference/wisun-tech.html).

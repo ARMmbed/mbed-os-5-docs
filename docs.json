@@ -1320,6 +1320,7 @@
                     {
                         "path": "docs/pelion_ready/device-management-config.md"
                     },
+
                     {
                         "path": "docs/pelion_ready/device-management-test.md"
                     }
@@ -1328,10 +1329,11 @@
             {
                 "title": "Integrating with Arm Treasure Data",
                 "intro": {
-                    "path": "docs/tutorials/treasure_data.md"
+                    "path": "docs/tutorials/treasure_data.md"},
+                    "sources": [{
+                        "path": "docs/tutorials/td-tutorial.md"
+                    }]
                 },
-                "sources": []
-            },
             {
                 "title": "Going to production",
                 "sub_chapters": [{
