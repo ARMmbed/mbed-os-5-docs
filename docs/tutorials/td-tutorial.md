@@ -1,17 +1,17 @@
 # Send data securely to Arm Treasure Data
 
-There are two ways to send data securely from Mbed OS to Treasure Data:
+This tutorial introduces securely sending data from Mbed OS devices to Arm Treasure Data using two methods: 
 
 - HTTPS library - Send data directly to the Treasure Data REST API.
 - Fluentd using fluent logger library - Send data to a hosted Fluentd instance that aggregates and forwards the data on to your treasure data account.
 
-Both libraries are secured with Arm Mbed TLS in transit and are equally secure. We recommend the HTTPS library for development and the Fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity:
+Arm Mbed TLS provides equal in-transit security to both libraries. We recommend the HTTPS library for development and the Fluentd library for production. The tradeoff between the two is size of code on chip, size of data in transit and setup complexity:
 
 - Code size on chip - The HTTPS library is ~50KB of ROM space on chip. This is due to the HTTP stack. Both libraries use Mbed TLS to secure the connections, which is ~7KB per connection on your stack for both libraries.
 - Data size in transit - The HTTPS library sends data as an ASCII JSON string. The Fluend library uses MessagePack (binary encoded JSON) across a TLS connection. This means that on average the Fluentd library uses less bandwidth to send an equivalent message. When you pay per byte transmitted from both your power budget and data plan it matters.
-- Maintenance - Initially, setting up the HTTPS library on a device and having it send data directly to Treasure Data is easier, but what if you want to change what the device is doing or how its data is reported? If you are using the HTTPS library, you must issue a firmware update to every device to change how it formats its data. However, if you are using a Fluend server, you can modify the Fluentd config file on the server to change how data is formatted and processed.
+- Maintenance - Initially, setting up the HTTPS library on a device and having it send data directly to Treasure Data is easier, but what if you want to change what the device is doing or how its data is reported? If you are using the HTTPS library, you must issue a firmware update to every device to change how it formats its data, whereas if you are using a Fluend server, you can modify the Fluentd config file on the server to change how data is formatted and processed.
 
-The following steps show how to send data using first the HTTPS library and then using Fluentd.
+The following steps show how to send data using first the HTTPS library and then Fluentd.
 
 ## HTTPS library
 
@@ -23,13 +23,22 @@ To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://gi
 
 You can compile the program using any of the following development tools:
 
-- [Arm Mbed Studio](https://os.mbed.com/studio/).
-- Arm Online Compiler - `ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
-- Arm Mbed CLI (offline) - `mbed import https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest`
+- Arm Mbed CLI (offline): 
 
-### Setup variables
+```
+mbed import https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest
+```
 
-1. Configure the Treasure Data API key in `mbed_app.json` by change the `api-key` variable:
+- Arm Online Compiler:
+
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest)](https://github.com/BlackstoneEngineering/mbed-os-example-treasuredata-rest/blob/master/main.cpp)
+
+Or use the link [ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest](ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest)
+
+
+### Set up variables
+
+1. Configure the Treasure Data API key in `mbed_app.json` by changing the `api-key` variable:
 
    ```
    "api-key":{
@@ -43,14 +52,14 @@ You can compile the program using any of the following development tools:
 
    ```
 
-1. Wi-Fi credentials (optional): If you're using Wi-Fi, add your SSID/password. If you are using ethernet, you do not need to add Wi-Fi credentials.
+1. Wi-Fi credentials: If you're using Wi-Fi, add your SSID/password. If you are using ethernet, you do not need to add Wi-Fi credentials.
 
 1. Create a database called `test_database` in Treasure Data.
    <span class="notes">**Note:** The tables are created automatically.</span>
 
 ### Compile and load
 
-Next, you can compile and load your code onto your board. If you are unfamiliar with how to compile and load code, please look at the Mbed OS quick start tutorial.
+Next, you can compile and load your code onto your board. If you are not familiar with how to compile and load code, please look at the Mbed OS quick start tutorial.
 
 After you have compiled your code and loaded it onto your board, open a serial terminal, and connect it to the board. View the output:
 
@@ -86,7 +95,7 @@ Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/
 
 ### Run queries
 
-Now that you have data in Treasure Data, it's time to analyze and use the data.
+Now that you have data in Treasure Data, it's time to analyze and use it.
 
 1. Go to the [Queries tab] (https://console.treasuredata.com/app/queries/editor).
 2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360007995693).
@@ -132,7 +141,7 @@ Download the [example code](https://github.com/BlackstoneEngineering/mbed-os-exa
 
 #### Set configuration file
 
-Run Fluentd using the provided configuration file `fluentd --config ./fluentd-setup/fluentd.conf -vv`. This file opens two ports, port 24227 for unencrypted TCP traffic and port 24228 for TLS encrypted traffic. The configuration is provided for reference. We strongly suggest using TLS encryption on port 24228 to secure your data in transit.
+Run Fluentd using the provided configuration file `fluentd --config ./fluentd-setup/fluentd.conf -vv`. This file opens two ports: port 24227 for unencrypted TCP traffic and port 24228 for TLS encrypted traffic. The configuration is provided for reference. We strongly suggest using TLS encryption on port 24228 to secure your data in transit.
 
 You can either run Fluentd on a public IP address with CA signed certificates (suggested for deployments), or locally on your machine using self signed certificates (recommended for prototyping/testing).
 
@@ -150,7 +159,7 @@ If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/LR1JG79xSoQ/0.jpg)](https://youtu.be/LR1JG79xSoQ)</span>
 
-If you are running the Fluentd server locally on your machine to develop a proof of concept (PoC), you need to generate a new self-signed certificate where the Common Name (CN) is the IP address of your machine and modify the `fluentd.conf` file with the IP address of your machine. Each time you restart the Fluentd instance, it generates a new certificate that you need to copy and paste into your embedded code.
+If you are running the Fluentd server locally on your machine to develop a proof of concept (PoC), you need to generate a new self-signed certificate (where the Common Name (CN) is the IP address of your machine), and modify the `fluentd.conf` file with the IP address of your machine. Each time you restart the Fluentd instance, it generates a new certificate that you need to copy and paste into your embedded code.
 
 1. Change the `generate_cert_common_name` parameter in `fluentd.conf` to be the IP address of the computer running the Fluentd server.
 1. Run ` openssl req -new -x509 -sha256 -days 1095 -newkey rsa:2048 -keyout fluentd.key -out fluentd.crt` to generate new certificates. When entering the prompted values, make sure to match the parameters in the `fluentd.conf` file (US, CA, Mountain View and so on). **Make sure the CN field is set to the IP address of the Fluentd server**.
