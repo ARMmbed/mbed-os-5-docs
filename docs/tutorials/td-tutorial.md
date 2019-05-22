@@ -80,7 +80,7 @@ Gateway: 192.168.43.249
 
 Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/databases), and open the `test_database` you created earlier. You can see the data from the board in the database. There is a 3- to 5-minute delay from when the data is sent to the database until the visualization system lets you see it, so please be patient, and wait for it to arrive. Be sure to refresh the page.
 
-<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_1.png</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_1.png)</span>
 
 <span class="notes">**Note:** The database tab shows how much data you have in the database and gives a few samples, but it does not show all your data. For that, you need to run queries.</span>
 
@@ -95,7 +95,7 @@ Now that you have data in Treasure Data, it's time to analyze and use the data.
 
 Run `select * from cpu_info` to get a full list of all fields in the table.
 
-<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_2.png</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_2.png)</span>
 
 #### Select certain fields, order by time
 
@@ -106,7 +106,7 @@ select time, current_size, total_size, alloc_cnt, max_size, reserved_size, alloc
 order by time asc;
 ```
 
-<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_3.png</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_3.png)</span>
 
 ### Troubleshooting
 
@@ -116,7 +116,7 @@ If you experience issues, ensure you have at least 10KB of space left on your st
 
 For mass deployments, we recommend you use Fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your Fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
 
-<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_4.png</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/td_tutorial_4.png)</span>
 
 ### Set up Fluentd
 
@@ -167,7 +167,7 @@ Common Name (eg, fully qualified host name) []:192.168.1.85
 Email Address []:
 ```
 
-<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fluentd-run.gif</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fluentd-run.gif)</span>
 
 ### Mbed OS setup
 
@@ -192,7 +192,7 @@ To send data to Fluentd over TLS (securely):
 
 Successful output on the Fluentd terminal:
 
-<span class="images">https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed-os-success.gif</span>
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed-os-success.gif)</span>
 
 
 ```sterm
