@@ -1,6 +1,6 @@
 # Send data securely to Arm Treasure Data
 
-This tutorial introduces securely sending data from Mbed OS devices to Arm Treasure Data using two methods: 
+This tutorial introduces securely sending data from Mbed OS devices to Arm Treasure Data using two methods:
 
 - HTTPS library - Send data directly to the Treasure Data REST API.
 - Fluentd using fluent logger library - Send data to a hosted Fluentd instance that aggregates and forwards the data on to your treasure data account.
@@ -17,13 +17,13 @@ The following steps show how to send data using first the HTTPS library and then
 
 To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest) program. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
 
-<span class="images">[![Video tutorial](https://img.youtube.com/vi/47tVPmp38zs/0.jpg)](https://youtu.be/47tVPmp38zs)</span>
+<span class="images">[![Video tutorial](https://img.youtube.com/vi/ky-HDNFZw8w/0.jpg)](https://youtu.be/ky-HDNFZw8w)</span>
 
 ### Import code
 
 You can compile the program using any of the following development tools:
 
-- Arm Mbed CLI (offline): 
+- Arm Mbed CLI (offline):
 
 ```
 mbed import https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest
@@ -157,7 +157,7 @@ If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd
 
 ##### Self-signed certificates on localhost
 
-<span class="images">[![Video tutorial](https://img.youtube.com/vi/LR1JG79xSoQ/0.jpg)](https://youtu.be/LR1JG79xSoQ)</span>
+<span class="images">[![Video tutorial](https://img.youtube.com/vi/DpnNaVxEhvA/0.jpg)](https://youtu.be/DpnNaVxEhvA)</span>
 
 If you are running the Fluentd server locally on your machine to develop a proof of concept (PoC), you need to generate a new self-signed certificate (where the Common Name (CN) is the IP address of your machine), and modify the `fluentd.conf` file with the IP address of your machine. Each time you restart the Fluentd instance, it generates a new certificate that you need to copy and paste into your embedded code.
 
