@@ -1330,7 +1330,9 @@
                     "intro": {
                         "path": "docs/tutorials/treasure_data.md"
                     },
-                    "sources": []
+                    "sources": [{
+                        "path": "docs/tutorials/td-tutorial.md"
+                    }]
                 },
                 {
                     "title": "Going to production",
