@@ -82,7 +82,7 @@ namespace mbed
 
 Then any program using `printf` on that target sends its output over the SWO, rather than serial.
 
-Because targets can redirect the console in this way, portable applications should not use constructs like `Serial(USBTX, USBRX)`, assuming that this will access the console. Instead they should use `stdin`/`stdout`/`stderr` or `STDIN_FILENO`/`STDOUT_FILENO`/`STDERR_FILENO`.
+Because targets can redirect the console in this way, portable applications should not use constructs such as `Serial(USBTX, USBRX)`, assuming that this will access the console. Instead they should use `stdin`/`stdout`/`stderr` or `STDIN_FILENO`/`STDOUT_FILENO`/`STDERR_FILENO`.
 
 ```
     // Don't do:
@@ -93,7 +93,7 @@ Because targets can redirect the console in this way, portable applications shou
     printf("Hello!\n");  // assume platform.stdio-convert-newlines is true
 ```
 
-Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. Below are two examples that show how the console can be redirected to a debugger using semihosting or through another application specific serial port:
+Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. Below are two examples that show how you can redirect the console to a debugger using semihosting or another application-specific serial port:
 
 ```
 namespace mbed
@@ -114,7 +114,8 @@ namespace mbed
     }
 }
 ```
-Application can redirect the console to a different serial port in case the default one is needed for another use:
+
+The application can redirect the console to a different serial port if you need the default port for another use:
 
 ```
 namespace
@@ -127,11 +128,11 @@ namespace
 }
 ```
 
-Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analogue to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
+Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
 
 ### Polling and nonblocking
 
-By default `FileHandle`s conventionally block until a `read` or `write` operation completes. This is the only behavior supported by normal `File`s, and is expected by the C library's `stdio` functions.
+By default, `FileHandle`s conventionally block until a `read` or `write` operation completes. This is the only behavior supported by normal `File`s, and is expected by the C library's `stdio` functions.
 
 Device-type `FileHandle`s, such as `UARTSerial`, are expected to also support nonblocking operation, which permits the `read` and `write` calls to return immediately when unable to transfer data. Please see the API reference pages of these functions for more information.
 
