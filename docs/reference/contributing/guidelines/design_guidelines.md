@@ -157,11 +157,11 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
     ```
     
-    These are the file names and descriptions that appear on the Files page of the generated documentation.
+    These are the file names and descriptions that appear on the **Files** page of the generated documentation.
 
     <span class="notes">**Note:** Doxygen commands start with a backslash (`\`) or an at sign (`@`). You can use the `\` and `@`characters interchangeably in commands; for example, you can use `\file` or `@file`.</span>
     
-- Doxygen enables you to group entities. These groups are called **modules** in doxygen, and they are listed on the Modules page of the generated documentation.
+- Doxygen enables you to group entities. These groups are called **modules** in doxygen, and they are listed on the **Modules** page of the generated documentation.
 
     **To define a module:**
 
