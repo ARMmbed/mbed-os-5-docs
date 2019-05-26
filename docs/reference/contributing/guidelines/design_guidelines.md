@@ -146,7 +146,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
     typedef struct psa_crypto_ipc_s {
     ```    
     
-    Each line of a long comment block usually also starts with `*`, but that is optional.
+    Each line of a long comment block also starts with `*`.
     
 - Begin each `.h` file by documenting the file name and providing a short description of the file using the `\file` and `\brief` commands:
 
