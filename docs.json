@@ -357,6 +357,9 @@
                             "path": "docs/api/usb/USBCDC.md"
                         },
                         {
+                            "path": "docs/api/usb/USBCDC_ECM.md"
+                        },
+                        {
                             "path": "docs/api/usb/USBMSD.md"
                         },
                         {
