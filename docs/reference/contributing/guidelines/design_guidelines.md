@@ -131,7 +131,68 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 
 ## Documentation
 
-- Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
+- Document all entities in a `.h` file using doxygen comment blocks.
+
+    Doxygen comment blocks start with `/**` or `/*!` and end with `*/`, and you put them above the documented entity.
+
+    For example:
+    
+    ```
+    /** psa_crypto_ipc_s struct used for some of the
+     * PSA Crypto APIs that need psa_key_handle_t and psa_algorithm_t arguments.
+     * To use the existing infrastructure of the SPM-IPC we provide a struct to
+     * pack them together.
+     */
+    typedef struct psa_crypto_ipc_s {
+    ```    
+    
+    Each line of a long comment block also starts with `*`.
+    
+- Begin each `.h` file by documenting the file name and providing a short description of the file using the `\file` and `\brief` commands:
+
+    ```
+    /**
+     * @file <file name>
+     * @brief <short file description>
+     */
+    ```
+    
+    These are the file names and descriptions that appear on the **Files** page of the generated documentation.
+
+    <span class="notes">**Note:** Doxygen commands start with a backslash (`\`) or an at sign (`@`). You can use the `\` and `@`characters interchangeably in commands; for example, you can use `\file` or `@file`.</span>
+    
+- Doxygen enables you to group entities. These groups are called **modules** in doxygen, and they are listed on the **Modules** page of the generated documentation.
+
+    **To define a module:**
+
+    Use the `@defgroup` command, and provide a short description of the group using the `@brief` command:
+
+    ```
+    /**
+     * ...
+     * @defgroup <one-word identifier; not in generated documentation> <group name; appears in the documentation>
+     * @brief <short group description>
+     */
+    ```
+    
+    For example:
+    
+    ```
+    /**
+     * @defgroup psa_cryto PSA Crypto APIs
+     * @brief PSA cryptography module, which contains Mbed TLS platfom definitions.
+     */
+    ```
+    
+    <span class="notes">**Note:** The one-word identifier immediately following the `@defgroup` command - for instance, `psa_cryto` in the example above - is not part of the group name in the generated documentation.</span>
+
+    **To add a member to a module:**
+
+    Use the `@ingroup` command. You can also group members using the open marker `@{` before the group and the closing marker `@}` after the group.
+
+    Alternatively, use the `@addtogroup <label>` command inside a documentation block to add an entity to a group.
+
+- For each function and class in a module, provide a doxygen comment that documents the function and each argument and return value:
 
     ``` cpp
     /** Wait until a Mutex becomes available.
@@ -141,10 +202,10 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
      osStatus lock(uint32_t millisec=osWaitForever);
     ```
-
+    
 - The doxygen of each class's header file must contain a use example using `@code` and `@endcode`.
 - Each API should also provide an `@code` and `@endcode` section building upon the class header example.
-- If more specific information is needed about a method, this should be accomplished using `@note`.
+- If more specific information is needed about a method, provide this information using the `@note` command.
 - If a method is deprecated, it must use the `@deprecated` tag and include a description of what method to replace it with.
 - Each module should provide a README that documents the module:
     - The README should start with a small paragraph describing the module to users with no prior knowledge.
