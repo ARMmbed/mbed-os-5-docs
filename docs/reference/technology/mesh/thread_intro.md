@@ -19,7 +19,7 @@ Read more at the [Thread Group site](http://www.threadgroup.org/).
 
 Mbed OS is an open source embedded operating system designed specifically to facilitate the creation and deployment of commercial, standards-based IoT solutions at scale. Mbed OS features full support for Thread to simplify development of secure IoT applications in home and to ease the Thread product certification. The Mbed OS Thread stack is a Thread Group certified component.
 
-## Mbed Thread is based on the Mbed OS key elements
+## Thread stack is based on the Mbed OS key elements
 
 The key elements of Mbed OS are:
 
@@ -29,7 +29,7 @@ The key elements of Mbed OS are:
 - Mbed RTOS (Arm CMSIS-RTOS) providing the real time software execution.
 - Toolchain and IDE support.
 
-Mbed Thread is implemented in the Nanostack library, which also supports the 6LoWPAN protocol. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](../apis/mesh-api.html) for building Thread applications.
+Thread stack is implemented in the Nanostack library, which also supports other 6LoWPAN-based protocols. In Mbed OS, the Thread stack runs in its own RTOS thread using an internal event scheduler. Mbed OS provides the [Mesh C++ API](../apis/mesh-api.html) for building Thread applications.
 
 - To connect to the Thread network, use the [Thread interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed-mesh-api/ThreadInterface.h).
 - For the socket communication over the Thread network, use the [Mbed sockets API](../apis/network-socket.html).
@@ -130,11 +130,21 @@ Now, the Thread network is ready to accept new joiner devices.
 
 <span class="notes">**Note:** Thread uses hashing and elliptic curve algorithms for the secure communication. PSKd(s) and EUI64(s) are never transmitted in plain text over the peer to peer connection.</span>
 
+### Storing configuration settings to File system
+
+Thread network stack can write network configuration settings to the file system and read them in the following startup. The size of the Thread configuration settings is a few thousand bytes. You can store network configuration settings to the file system when:
+
+ 1. You enable the file system as instructed in the [Mbed OS storage documentation](../apis/storage.html).
+ 1. You set the file system root path to the Thread network stack by calling the function `ns_file_system_set_root_path(root-path)`. Do this before starting the Thread stack to read possible configuration settings in the first power up.
+
+Depending on the selected file system, the application may need to format the file system before you can use it.
+
+
 ## How to start on Mbed OS
 
 The Mbed OS Thread stack supports all three types of commissioners. You can create an external commissioner application by using the Thread MeshCoP protocol or use the Mbed OS APIs (`thread_commissioning_api.h`) to implement a native or an on-mesh commissioner. Currently, there is no reference implementation for native or on-mesh commissioners. External commissioning is supported through the [Nanostack border router](https://github.com/ARMmbed/nanostack-border-router). An external [Commissioning application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) (Android) is already available. Also an IOS version will be available soon.
 
-See [Thread commissioning guide](mesh-tech.html#thread-commissioning) how to commission a Thread device to the network in practice.
+See [Thread commissioning guide](thread-tech.html#thread-commissioning) how to commission a Thread device to the network in practice.
 
 ## The maturity of the Mbed OS Thread implementation
 

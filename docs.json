@@ -649,16 +649,7 @@
                                     "path": "docs/reference/technology/mesh/wisun_intro.md"
                                 },
                                 {
-                                    "path": "docs/reference/technology/mesh/quick_start_intro.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/quick_start_hw.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/02_N_arch.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/04_N_networking.md"
+                                    "path": "docs/reference/technology/mesh/6lowpan_nd_intro.md"
                                 },
                                 {
                                     "path": "docs/reference/technology/connectivity/lora-tech.md"
@@ -1005,6 +996,9 @@
                         },
                         {
                             "path": "docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                        },
+                        {
+                            "path": "docs/tutorials/using_apis/connectivity/mesh_tutorial.md"
                         },
                         {
                             "path": "docs/tutorials/using_apis/connectivity/light-control.md"
