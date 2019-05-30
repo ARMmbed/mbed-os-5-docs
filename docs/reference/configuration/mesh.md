@@ -1,6 +1,6 @@
 <h1 id="configuration-mesh">6LoWPAN Mesh</h1>
 
-This page describes build-time configurable parameters for 6LoWPAN-based mesh networks (**6LoWPAN-ND**, **Wi-SUN** and **Thread**). 6LoWPAN mesh protocols are implemented in Mbed OS library called Nanostack that also contains separte configuration.
+This page describes build-time configurable parameters for 6LoWPAN-based mesh networks (**6LoWPAN-ND**, **Wi-SUN** and **Thread**). An Mbed OS library called Nanostack, which has a separate configuration, implements the 6LoWPAN mesh protocols.
 
 This guide is divided in sections, and generic Nanostack configurations are explained first, followed by those for Thread, 6LoWPAN-ND and then Wi-SUN.
 
@@ -15,7 +15,7 @@ For understanding the technologies and APIs, please refer to following sections 
 
 ### Providing the configuration
 
-The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*` `nsapi.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
+The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*`, `nsapi.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
 
 An example of the configuration file:
 
@@ -33,13 +33,13 @@ An example of the configuration file:
 
 <span class="notes">**Note:** The configuration files for 6LoWPAN, Wi-SUN and Thread are provided for development or testing purposes. When setting up the production configuration, the user needs to have a good understanding of the whole system.</span>
 
-### Build time configuration of the Nanostack
+### Nanostack build time configuration
 
 To minimize the size of the produced 6LoWPAN network stack, Nanostack defines a set of build options that are used to compile only needed functionality.
 
 #### Build options for different mesh types
 
-If you want to optimize the flash usage, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case. The following table includes Nanostack binary size when compiled with different build options in `nanostack.configuration`.
+If you want to optimize the flash use, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case. The following table includes the Nanostack binary size when compiled with different build options in `nanostack.configuration`:
 
 Option name (`nanostack.configuration`) | Features supported | Estimated binary size of Nanostack
 ------------| -------------------|------------------------------------
@@ -55,9 +55,9 @@ Option name (`nanostack.configuration`) | Features supported | Estimated binary 
 `ws_border_router` | Wi-SUN border router support. | 261 kB
 `ws_router` | Wi-SUN router. | 228 kB
 
-<span class="notes">**Note:** The binary sizes have been estimated using Arm Compiler 6.11. They differ based on the toolchains or the status of the repository. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
+<span class="notes">**Note:** The binary sizes have been estimated using Arm Compiler 6.11. They differ based on the toolchains and repository status. The final size can only be estimated when linking the final application. The indicated size only gives you a guideline of what kind of changes to expect between different options.</span>
 
-A correct `nanostack.configuration` build option can be selected based on the selected mesh network protocol (Wi-SUN, Thread, 6LoWPAN-ND) and device role (border router, router or host):
+You can select the correct `nanostack.configuration` build option based on the mesh network protocol (Wi-SUN, Thread, 6LoWPAN-ND) and device role (border router, router or host) you use.
 
 In the application, choose from the following interface classes:
 
@@ -65,7 +65,7 @@ In the application, choose from the following interface classes:
 - For Wi-SUN FAN based network, use `WisunInterface` interface class.
 - For Thread based network, use `ThreadInterface` interface class.
 
-Then you may optionally choose to select the nonrouting mode for those networks. The following tables show the values to use in the `mbed_app.json` file for your devices in different networks (`nsapi.default-mesh-type`).
+Then you may optionally choose to select the nonrouting mode for those networks. The following tables show the values to use in the `mbed_app.json` file for your devices in different networks (`nsapi.default-mesh-type`):
 
 **nsapi.default-mesh-type: LOWPAN**
 
@@ -88,10 +88,10 @@ Then you may optionally choose to select the nonrouting mode for those networks.
 |Mesh router (default) | ws_router |
 | Nonrouting device | - |
 
-
 ### Nanostack's configuration
 
-The following configuration allows you to configure Nanostack features that are common to all mesh protocols.
+This configuration allows you to configure Nanostack features common to all mesh protocols:
+
 ```
 Configuration parameters
 ------------------------
@@ -131,10 +131,9 @@ Name: nanostack-hal.event_loop_thread_stack_size
     Value: 6144 (set by library:nanostack-hal)
 ```
 
-
 ### Generic Mbed mesh API configuration values
 
-Generic configuration allows you to fine tune Nanostack's heap usage.
+This configuration allows you to adjust Nanostack's heap usage:
 
 ```heap
 Configuration parameters
@@ -161,7 +160,7 @@ Name: mbed-mesh-api.use-malloc-for-heap
 
 ### Thread related configuration parameters
 
-Following parameters are only valid for Thread mesh protocol. These are in use when application uses `ThreadInterface` class.
+The following parameters are only valid for the Thread mesh protocol. These are in use when application uses `ThreadInterface` class:
 
 ```thread
 Configuration parameters
@@ -239,7 +238,7 @@ Name: mbed-mesh-api.thread-use-static-link-config
 
 ### 6LoWPAN-ND related configuration parameters
 
-The following parameters are only valid for the 6LoWPAN-ND mesh network. These are in use when the application uses the `LoWPANNDInterface` class.
+The following parameters are only valid for the 6LoWPAN-ND mesh network. These are in use when the application uses the `LoWPANNDInterface` class:
 
 ```6lowpan
 Configuration parameters
@@ -291,7 +290,7 @@ Name: mbed-mesh-api.6lowpan-nd-security-mode
 
 ### Wi-SUN related configuration parameters
 
-The following parameters are only valid for the Wi-SUN FAN mesh network. These are in use when the application uses the `WisunInterface` class.
+The following parameters are only valid for the Wi-SUN FAN mesh network. These are in use when the application uses the `WisunInterface` class:
 
 ```wisun
 Configuration parameters
