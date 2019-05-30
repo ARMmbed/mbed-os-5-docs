@@ -91,4 +91,4 @@ On Mesh networks, Nanostack uses IEEE 802.15.4 radios for transmitting and recei
 
 This driver type has no other use cases, so it is implemented in C using a Nanostack-specific API.
 
-Please see the [Porting a new RF driver for the 6LoWPAN stack](../porting/lora-port.html) for more information.
+Please see [Porting a new RF driver for the 6LoWPAN stack](../porting/lora-port.html) for more information.
