@@ -131,15 +131,16 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tr>
 <td><a href="usbserial.html">USBSerial</a></td>
 <td><a href="usbhid.html">USBHID</a></td>
-<td><a href="usbmsd.html">USBMSD</a></td>
-<td><a href="usbmouse.html">USBMouse</a></td>
-<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
+<td><a href="usbcdc-ecm.html">USBCDC_ECM</a></td>
+<td><a href="usbmidi.html">USBMIDI</a></td>
+<td><a href="usbkeyboard.html">USBKeyboard</a></td>
 </tr>
 <tr>
 <td><a href="usbaudio.html">USBAudio</a></td>
 <td><a href="usbcdc.html">USBCDC</a></td>
-<td><a href="usbmidi.html">USBMIDI</a></td>
-<td><a href="usbkeyboard.html">USBKeyboard</a></td>
+<td><a href="usbmsd.html">USBMSD</a></td>
+<td><a href="usbmouse.html">USBMouse</a></td>
+<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
 </tr>
 </tbody>
 </table>
