@@ -37,7 +37,7 @@ Detailed instructions for supported operating systems are below.
 In a terminal window:
 
 1. Install [Homebrew](https://brew.sh/).
-1. Install Xcode Command Line Tools with `xcode-select --install`.
+1. Install Xcode command-line tools with `xcode-select --install`.
 1. Install CMake with: `brew install cmake`.
 1. Install Python and Pip:
 
