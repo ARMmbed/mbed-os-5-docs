@@ -4,11 +4,11 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/blob/master/rtos). See [the Doxygen](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__rtos.html) for more information.
 
-### RTOS memory consideration
+### Memory considerations
 
-Memory for all of the RTOS primitives is allocated as part of the C++ objects usually on the stack, unless you explicitly use dynamic allocation in which case it will be placed on the heap. Exceptions to this rule are user's thread stacks, which by default are allocated on the heap. You can provide your own memory in the construction if you'd rather not use dynamic memory in your system, for details see [Thread](thread.html) class.
+Memory for the RTOS primitives is allocated as part of the C++ objects on the stack unless you explicitly use dynamic allocation, in which case it is placed on the heap. Exceptions to this rule are user's thread stacks, which by default are allocated on the heap. You can provide your own memory in the construction if you'd rather not use dynamic memory in your system. For details, please see the [Thread](thread.html) class documentation.
 
-If you are familiar with RTX memory model, it's important to note Mbed OS overrides RTX'es default memory pool approach, with model described above.
+<span class="notes">**Note:** Mbed OS overrides the RTX default memory pool approach.</span>
 
 ### RTOS Ticker
 
