@@ -8,8 +8,9 @@ The Thread class allows defining, creating and controlling parallel tasks.
 
 ## Memory considerations
 
-All the internal thread data structures are part of the C++ class, but by default, the thread stack will be allocated on the heap. Memory will be allocated at the runtime, during the call to `start` method. If dynamic memory usage is not desirable, user can provide their own static memory using the constructor parameters.
-Default stack size is 4K, but it can be overridden by application using config system by setting `THREAD_STACK_SIZE` option to the required size in mbed_app.json, for details see [configuration](../../reference/configuration/configuration.md).
+All the internal thread data structures are part of the C++ class, but by default, the thread stack is allocated on the heap. Memory is allocated at the run time during the call to `start` method. If you don't want to use dynamic memory, you can provide your own static memory using the constructor parameters.
+
+The default stack size is 4K. However, the application can override it by using the configuration system and setting the `THREAD_STACK_SIZE` option to the required size in `mbed_app.json`. For details, please see the [configuration documentation](../../reference/configuration/configuration.md).
 
 ## Thread class reference
 
