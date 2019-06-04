@@ -6,7 +6,11 @@ CircularBuffer class is interrupt safe; all data operations are performed inside
 
 CircularBuffer is a templated class supporting different datatypes. The declaration of the CircularBuffer class must specify datatype and buffer size.
 
-### Declaration example
+## Memory considerations
+
+The actual data buffer is allocated as part of the CircularBuffer object memory.
+
+## Declaration example
 
 This is an example of `BUF_SIZE` long integer CircularBuffer:
 
