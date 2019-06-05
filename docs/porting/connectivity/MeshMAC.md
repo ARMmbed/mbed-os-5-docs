@@ -1,9 +1,9 @@
-<h1 id="mac-port">Porting IEEE 802.15.4 MAC drive</h1>
+<h1 id="mac-port">Porting IEEE 802.15.4 MAC driver</h1>
 
 Nanostack has a lower-level API for the IEEE 802.15.4-2006 MAC standard. This enables developers to support different MACs for software- and hardware-based solutions. Nanostack offers SW MAC, which you can use when your board does not have 15.4 MAC available. SW MAC also supports a subset of IEEE 802.15.4-2015 MAC standard. Supported features are:
 
 - IEEE 802.15.4-2015 enhanced ack.
-- Header and payload information elements set by MAC user. 
+- Header and payload information elements set by MAC user.
 
 ## SW MAC
 
@@ -37,7 +37,7 @@ Deploy SW MAC:
     - A sleepy device needs only 1-4 as the size of the `device_decription_table_size`.
     - The minimum and recommended `key_description_table_size` for the Thread stack is 4 (2 for 6LoWPAN).
     - The recommended value for `key_lookup_size` is 1 and for `key_usage_size` 3.
-    
+
 1. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class. Nanostack initializes SW MAC before using it.
 
 ## Example
@@ -285,12 +285,12 @@ typedef struct mcps_data_req_ie_list {
 
 Member|Description
 ------|-----------
-`headerIeVectorList`|Header IE element list.
-`payloadIeVectorList`|Payload IE element list.
-`headerIovLength`|Header IE element list size, set 0 when no elements.
-`payloadIovLength`|Payload IE element list size, set 0 when no elements.
+`headerIeVectorList`|Header IE element list. `NULL` if no elements.
+`payloadIeVectorList`|Payload IE element list. `NULL` if no elements.
+`headerIovLength`|Header IE element list size, set to 0 if no elements.
+`payloadIovLength`|Payload IE element list size, set to 0 if no elements.
 
-IE element could be divided to multiple vector, which MAC just write to message direct. One vector could also include multiple information elements or just header part. That's enable flexible to way to generate list and should enable memory friendly way to share information elements. 
+IE element could be divided to multiple vector, which MAC just write to message direct. One vector could also include multiple information elements or just header part. That's enable flexible to way to generate list and should enable memory friendly way to share information elements.
 
 Set `headerIovLength` or `payloadIovLength` to 0 if not send any element.
 
@@ -351,11 +351,11 @@ typedef void mcps_ack_data_req_ext(const mac_api_t* api, mcps_ack_data_payload_t
 Parameter|Description
 ------|-----------
 `api`|Pointer, which the application creates.
-`data`|Pointer where MAC user sets payload, IE element pointers and length.
+`data`|Pointer where MAC user sets payload, IE pointers and length.
 `rssi`|Signal strength for received packet.
 `lqi`|Link quality to neighbor.
 
-Signal strength and link quality are just extra information if devices won't share link quality both ways at ack message protocol spesific way.
+Signal strength and link quality are additional information that devices can share in an Ack message.
 
 Structure for give Ack payload:
 
@@ -369,11 +369,11 @@ typedef struct mcps_ack_data_payload {
 
 Member|Description
 ------|-----------
-`ie_elements`|IE hader and payload's elements.
+`ie_elements`|Information element header and payload elements.
 `payloadPtr`|Ack payload pointer.
 `payloadLength`|Payload length in bytes.
 
-MAC user should set zero length of to payload or IE list when it not need to add specific data to Ack.
+If payload length is zero, `payloadPtr` is `NULL`. Information element headers may also contain empty vectors.
 
 ## MAC API standard extensions
 
