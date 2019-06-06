@@ -211,10 +211,14 @@ Although the exporters can export bootloader projects using the bootloader param
 
 The exporters do not interpret Mbed OS configuration, and any changes to configuration parameters, especially bootloader parameters, require you to rerun the `mbed export` command.
 
-Further, the exporters do not implement the postbuild merge that bootloader builds use.
+Further, the exporters have limited support for the postbuild merge that bootloader builds use.
 
-For a managed bootloader:
-After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this bootloader image, the device will not boot correctly.
+**Managed bootloader projects**
 
-For an unmanaged bootloader:
+The postbuild merge step is available when exporting to uVision from an offline project. This requires the installation of Mbed CLI and all of the Python dependencies on the local system.
+
+No other exporters implement the postbuild merge step. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. If you do not flash this bootloader image, the device does not boot correctly.
+
+**Unmanaged bootloader projects**
+
 After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.

@@ -357,6 +357,9 @@
                             "path": "docs/api/usb/USBCDC.md"
                         },
                         {
+                            "path": "docs/api/usb/USBCDC_ECM.md"
+                        },
+                        {
                             "path": "docs/api/usb/USBMSD.md"
                         },
                         {
@@ -646,16 +649,7 @@
                                     "path": "docs/reference/technology/mesh/wisun_intro.md"
                                 },
                                 {
-                                    "path": "docs/reference/technology/mesh/quick_start_intro.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/quick_start_hw.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/02_N_arch.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/04_N_networking.md"
+                                    "path": "docs/reference/technology/mesh/6lowpan_nd_intro.md"
                                 },
                                 {
                                     "path": "docs/reference/technology/connectivity/lora-tech.md"
@@ -879,9 +873,6 @@
                                     "path": "docs/tools/CLI/cli-compile.md"
                                 },
                                 {
-                                    "path": "docs/tools/CLI/cli-device-management.md"
-                                },
-                                {
                                     "path": "docs/tools/CLI/cli-collaborate.md"
                                 },
                                 {
@@ -892,6 +883,9 @@
                                 },
                                 {
                                     "path": "docs/tools/CLI/debug_builds_cli.md"
+                                },
+                                {
+                                    "path": "docs/tools/CLI/cli-device-management.md"
                                 },
                                 {
                                     "path": "docs/tools/CLI/troubleshooting.md"
@@ -1002,6 +996,9 @@
                         },
                         {
                             "path": "docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                        },
+                        {
+                            "path": "docs/tutorials/using_apis/connectivity/mesh_tutorial.md"
                         },
                         {
                             "path": "docs/tutorials/using_apis/connectivity/light-control.md"
@@ -1330,7 +1327,9 @@
                     "intro": {
                         "path": "docs/tutorials/treasure_data.md"
                     },
-                    "sources": []
+                    "sources": [{
+                        "path": "docs/tutorials/td-tutorial.md"
+                    }]
                 },
                 {
                     "title": "Going to production",

@@ -25,7 +25,7 @@
 <td><a href="mbed-statistics.html">Mbed statistics</a></td>
 </tr>
 <tr>
-<td><a href="power-management.html">Power management</a></td>
+<td><a href="power-management-sleep.html">Power management (sleep)</a></td>
 <td><a href="memory-tracing.html">Memory tracing</a></td>
 <td><a href="filehandle.html">FileHandle</a></td>
 <td><a href="mpu-management.html">MPU management</a></td>
@@ -131,15 +131,16 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <tr>
 <td><a href="usbserial.html">USBSerial</a></td>
 <td><a href="usbhid.html">USBHID</a></td>
-<td><a href="usbmsd.html">USBMSD</a></td>
-<td><a href="usbmouse.html">USBMouse</a></td>
-<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
+<td><a href="usbcdc-ecm.html">USBCDC_ECM</a></td>
+<td><a href="usbmidi.html">USBMIDI</a></td>
+<td><a href="usbkeyboard.html">USBKeyboard</a></td>
 </tr>
 <tr>
 <td><a href="usbaudio.html">USBAudio</a></td>
 <td><a href="usbcdc.html">USBCDC</a></td>
-<td><a href="usbmidi.html">USBMIDI</a></td>
-<td><a href="usbkeyboard.html">USBKeyboard</a></td>
+<td><a href="usbmsd.html">USBMSD</a></td>
+<td><a href="usbmouse.html">USBMouse</a></td>
+<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
 </tr>
 </tbody>
 </table>
@@ -286,7 +287,7 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="dir.html">Dir</a></td>
 <td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
 <td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
-<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td> 
+<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td>
 </tr>
 <tr>
 <td><a href="file.html">File</a></td>

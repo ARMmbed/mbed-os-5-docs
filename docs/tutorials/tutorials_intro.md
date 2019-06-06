@@ -17,7 +17,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | Wait | [Wait example](../apis/wait.html#example) |
 | callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
 | DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
-| PowerManagement | [PowerManagement example](../apis/power-management.html#example) |
+| PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
 | IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
 | CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
 | Time | [Time example](../apis/time.html#time-example) |
@@ -128,7 +128,7 @@ And the following tutorials:
 | EthInterface | [EthInterface example](../apis/ethernet.html#ethinterface-example) | |
 | Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
 | Cellular | [Cellular example](../apis/cellular-api.html#cellular-example-connection-establishment) | |
-| Mesh | | [Light control tutorial](../tutorials/light-control.html) |
+| Mesh | | [Mesh tutorial](../tutorials/mesh-tutorial.html) <br>  [Light control tutorial](../tutorials/light-control.html) |
 | Network status | [Network status example](../apis/network-status.html#example) | |
 
 
