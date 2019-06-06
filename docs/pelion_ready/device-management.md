@@ -109,21 +109,26 @@ To help you start quickly, refer to the [application example](https://github.com
 
 There are also several board-specific applications that focus on providing more elaborate hardware features with Mbed OS and Device Management. These are available in the [Device Management quick start](https://cloud.mbed.com/quick-start). See the reference table, organized by vendor name, for details:
 
-Platform                        |  Connectivity      | Storage   | Example URL
---------------------------------| -------------------| --------- | --------------------
-Nuvoton NUMAKER-IOT-M487        | Wi-Fi              | SD Card   | https://os.mbed.com/teams/Nuvoton/code/pelion-example-common/
-Nuvoton NUMAKER-PFM-M487        | Ethernet           | SD Card   | https://os.mbed.com/teams/Nuvoton/code/pelion-example-common/
-Nuvoton NUMAKER-PFM-NUC472      | Ethernet           | SD Card   |https://os.mbed.com/teams/Nuvoton/code/pelion-example-common/
-NXP FRDM-K64F                   | Ethernet           | SD Card   | https://os.mbed.com/teams/NXP/code/mbed-cloud-connect-example-ethernet
-NXP FRDM-K66F                   | Ethernet           | SD Card   | https://os.mbed.com/teams/NXP/code/mbed-cloud-connect-example-ethernet
-Renesas GR-LCYHEE               | Wi-Fi              | SD Card   | https://os.mbed.com/teams/Renesas/code/pelion-example-common/
-Sigma Delta Technologies SDT64B | Ethernet           | SD Card   | https://os.mbed.com/teams/Sigma-Delta-Technologies/code/pelion-example-common
-ST DISCO_L475E_IOT01A           | Wi-Fi              | QSPI      | https://os.mbed.com/teams/ST/code/pelion-example-disco-iot01/
-ST DISCO_F413H                  | Wi-Fi              | QSPI      | https://os.mbed.com/teams/ST/code/pelion-example-common/
-ST DISCO_F746NG                 | Ethernet           | QSPI      | https://os.mbed.com/teams/ST/code/pelion-example-common/
-ST NUCLEO_F429ZI                | Ethernet           | SD Card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
-ST NUCLEO_F767ZI                | Ethernet           | SD Card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
-ST NUCLEO_F746ZG                | Ethernet           | SD Card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
-ST NUCLEO_F207ZG                | Ethernet           | SD Card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
-UBlox EVK ODIN W2               | Wi-Fi              | SD Card   | https://os.mbed.com/teams/ublox/code/pelion-example-common/
-UBlox C030 U201                 | Cellular           | SD Card   | https://os.mbed.com/teams/ublox/code/pelion-example-common/
+Platform                          |  Connectivity      | Storage   | Example URL
+----------------------------------| -------------------| --------- | --------------------
+Nuvoton NuMaker IOT-M487          | Wi-Fi              | SD card   | https://os.mbed.com/teams/Nuvoton/code/pelion-example-common/
+Nuvoton NuMaker PFM-M487          | Ethernet           | SD card   | https://os.mbed.com/teams/Nuvoton/code/pelion-example-common/
+Nuvoton NuMaker PFM-NUC472        | Ethernet           | SD card   | https://os.mbed.com/teams/Nuvoton/code/pelion-example-common/
+NXP FRDM-K64F                     | Ethernet           | SD card   | https://os.mbed.com/teams/NXP/code/mbed-cloud-connect-example-ethernet
+NXP FRDM-K66F                     | Ethernet           | SD card   | https://os.mbed.com/teams/NXP/code/mbed-cloud-connect-example-ethernet
+Renesas GR-LYCHEE                 | Wi-Fi              | SD card   | https://os.mbed.com/teams/Renesas/code/pelion-example-common/
+Renesas GR-PEACH                  | Ethernet           | SD card   | https://os.mbed.com/teams/Renesas/code/pelion-example-common/
+RHOMBIO_L476DMW1K                 | Wi-Fi              | QSPI      | https://os.mbed.com/teams/Rhombio/code/pelion-example-rhombio-l476dmw1k/
+Seeed WIO 3G                      | Cellular 3G        | SD card   | https://os.mbed.com/teams/Seeed/code/pelion-example-common/
+Sigma Delta Technologies SDT64B   | Ethernet           | SD card   | https://os.mbed.com/teams/Sigma-Delta-Technologies/code/pelion-example-common
+ST DISCO-L475E_IOT01A             | Wi-Fi              | QSPI      | https://os.mbed.com/teams/ST/code/pelion-example-disco-iot01/
+ST DISCO-F413H                    | Wi-Fi              | QSPI      | https://os.mbed.com/teams/ST/code/pelion-example-common/
+ST DISCO-F746NG                   | Ethernet           | QSPI      | https://os.mbed.com/teams/ST/code/pelion-example-common/
+ST NUCLEO-F429ZI                  | Ethernet           | SD card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
+ST NUCLEO-F767ZI                  | Ethernet           | SD card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
+ST NUCLEO_F746ZG                  | Ethernet           | SD card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
+ST NUCLEO-F207ZG                  | Ethernet           | SD card   | https://os.mbed.com/teams/ST/code/pelion-example-common/
+Silicon Labs Thunderboard Sense 2 | 15.4               | SPI       | https://os.mbed.com/teams/SiliconLabs/code/pelion-example-tbsense2/
+Silicon Labs EFM32 Giant Gecko 11 | Ethernet           | QSPI      | https://os.mbed.com/teams/SiliconLabs/code/pelion-example-common/
+u-blox EVK-ODIN-W2                | Wi-Fi              | SD card   | https://os.mbed.com/teams/ublox/code/pelion-example-common/
+u-blox C030-U201                  | Cellular           | SD card   | https://os.mbed.com/teams/ublox/code/pelion-example-common/
