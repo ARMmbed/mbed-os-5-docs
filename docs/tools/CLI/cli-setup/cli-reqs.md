@@ -177,7 +177,7 @@ You can verify Mbed CLI installed correctly by running `mbed help`.
 For any installed toolchain, be sure to add the Mbed CLI global configuration:
 
 ```
-$ mbed config -G ARM_PATH <path to ARM bin\>"
+$ mbed config -G ARM_PATH <path to ARM bin\>
 [mbed] <path to ARM bin\> now set as global ARM_PATH
 
 $ mbed config --list
@@ -233,11 +233,19 @@ Mbed CLI supports a setting for each toolchain path:
 Mbed Studio comes with a free version of Arm Compiler 6 for use with Mbed OS. If you want to use Arm Compiler 6 with Mbed CLI:
 
 1. Install [Mbed Studio](https://os.mbed.com/docs/mbed-studio/latest/introduction/index.html).
-1. Configure the `ARMC6_PATH`.
+1. Configure the environment variable `ARMC6_PATH`:
 
-    For Mbed Studio 0.4 and later, the Arm Compiler 6 executable is located in `./tools/ac6/bin`. This path is relative to the installation directory of Mbed Studio. On Windows, for example, the default path is `C:\MbedStudio\tools\ac6\bin`.
+    For Mbed Studio 0.5 and later, the Arm Compiler 6 executable is located in the following path:
 
-1. Set the environment variable `ARMLMD_LICENSE_FILE` to the path of Mbed Studio's Arm Compiler 6 license. For Mbed Studio 0.4 and later, the license is located at `./tools/ac6-license.dat`. This path is relative to the installation directory of Mbed Studio. On Windows, for example, the default path is `C:\MbedStudio\tools\ac6-license.dat`. 
+    - Windows: `C:\Users\<user>\AppData\Local\Mbed Studio\mbed-studio-tools\ac6\bin`
+    - Mac: `/Library/Application Support/Mbed Studio/mbed-studio-tools/ac6/bin`
+
+1. Set the environment variable `ARMLMD_LICENSE_FILE`: 
+
+    For Mbed Studio 0.5 and later, the Arm Compiler 6 license file, `ac6-license.dat`, is located in the following path:
+
+    - Windows: `C:\Users\<user>\AppData\Local\Mbed Studio\mbed-studio-tools`
+    - Mac: `/Library/Application Support/Mbed Studio/mbed-studio-tools`
 
     Note that this environment variable is not managed by Mbed CLI, so you must set it appropriately in your environment.
 
@@ -317,6 +325,7 @@ Available configurations:
 | `protocol` | The default protocol used for importing or cloning programs and libraries. The possible values are `https`, `http` and `ssh`. Use `ssh` if you have generated and registered SSH keys (Public Key Authentication) with a service such as GitHub, GitLab, or Bitbucket. For more information, see [SSH keys on GitHub](https://help.github.com/articles/generating-an-ssh-key/). | Default: `https`. |
 | `depth` | The *clone* depth for importing or cloning. Applies only to *Git* repositories. Note that though this option may improve cloning speed, it may also prevent you from correctly checking out a dependency tree when the reference revision hash is older than the clone depth. For more information, see [shallow clones on GitHub](https://git-scm.com/docs/git-clone). | No default. |
 | `cache` | The local path that stores small copies of the imported or cloned repositories. Mbed CLI uses it to minimize traffic and speed up future imports of the same repositories. Use `on` or `enabled` to turn on caching in the system temp path. Use `none` to turn caching off. | Default: none (disabled). |
+| `color` | Enables the console to display output information with colors. Use `on` to turn color on. | Default: none (disabled). |
 
 ## Updating Mbed CLI
 

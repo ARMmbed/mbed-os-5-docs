@@ -9,7 +9,7 @@ NetworkInterface is also the controlling API that the application uses to specif
 - [Ethernet](ethernet.html): API for connecting to the internet over an Ethernet connection.
 - [Wi-Fi](wi-fi.html): API for connecting to the internet with a Wi-Fi device.
 - [Cellular](cellular-api.html): API for connecting to the internet using a cellular device.
-- [Mesh networking interface](mesh-api.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
+- [Mesh networking interface](mesh-api.html): API for connecting to the IPv6-based mesh networks.
 
 ## Network connectivity states
 
