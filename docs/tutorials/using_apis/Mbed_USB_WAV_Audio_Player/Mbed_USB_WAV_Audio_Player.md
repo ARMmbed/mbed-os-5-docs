@@ -2,7 +2,28 @@
 
 This tutorial explains how to put together a USB WAV audio player with Mbed OS. You will load a WAV file onto an SD card connected to an Mbed board, and then connect that board to your computer. The Mbed board acts as the computer's USB microphone. The sound that the microphone is "recording" is the data on the SD card that it sends to the host computer. This allows the sound to be played on speakers or headphones or recorded with a program, such as Audacity.
 
-<!--this is more an example than a tutorial; I'm not really learning a whole lot here. If there as a discussion about some of the choices made in the code, that would be interesting.-->
+The example code below uses the following libraries in addition to `mbed.h`:
+
+- `USBAudio.h` for accessing functions associated with USB audio.
+- `SDBlockDevice.h` to make use of the SD card.
+- `FATFileSystem.h` to set up a FAT file system on the SD card.
+- `AudioPlayer.h` to access functions associated with reading and writing audio data.
+- `WaveAudioStream.h` to access functions associated with WAV files.
+
+This tutorial begins with the creation of a SPI connection to the SD card (SD object) and the creation of a FAT filesystem on the SD card (fs object). 
+
+After that, it guides you to:
+
+1. Set the SPI frequency to 25,000,000 Hz. 
+1. Open the song (WAV) file that you have previously stored onto the SD card with the `file.open()` function. The string input parameter to this function must match the name of the file as it is on the SD card ("songs/Bach-minuet-in-g.wav"). 
+1. Check the file is a valid WAV file by making it into a WaveAudioStream object and checking with the `song.get_valid()` function.
+1. Check that the WAV file is 16-bit by making sure the `song.get_bytes_per_sample()` returns 2 (2 bytes). 
+1. Create the USBAudio object that allows you to write the data from the WAV file to the computer. 
+1. Initialize this object by giving it the parameters `true` to connect on initialization, a receive frequency of 8000 Hz, the number of channels used by the WAV file, a transmit frequency that matches the sample rate of the WAV file and the number of channels the WAV file uses. 
+1. Write all of the data from the WAV file to the computer over USB. This is done by reading data from the WAV file into a 1500-byte buffer and then writing the contents of that buffer to the computer through the `audio.write()` function until you reach the end of the data in the WAV file. 
+1. Close the WAV file object, and the program exits.
+
+The steps below describe this in more detail.
 
 ## Libraries
 
@@ -38,13 +59,13 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
 1. Copy and paste the example code below into `main.cpp`.
 1. Make sure the SPI pins for the SDBlockDevice object are correct for your board. For example, in the code below, line 10 sets up SPI for the SDBlockDevice for the NXP-K64F Mbed board.
-1. Load a WAV file onto the SD card. The example below uses a public domain WAV file called ["Bach-minuet-in-g.wav"](https://github.com/mrcoulter45/mbed-os-5-docs/raw/Mbed_USB_WAV_Audio_Player_Tutorial/docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav) that is inside a "songs" directory on the SD card<!--no it isn't; you need to download it and put it on the SD card-->.
+1. Load a WAV file onto the SD card. The example below uses a public domain WAV file called ["Bach-minuet-in-g.wav"](https://github.com/mrcoulter45/mbed-os-5-docs/raw/Mbed_USB_WAV_Audio_Player_Tutorial/docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav). To use it, download it and put it in a "songs" directory on the SD card.
 
    If you want to use another file, it must be WAV, PCM signed 16-bit little endian, or else it will not play (because USBAudio does not support any other WAV formats). The WAV file can have any sampling rate and any number of channels. You can use [Online-convert](https://audio.online-convert.com/convert-to-wav) to generate WAV files with different formats from any source audio file. The file "Bach-minuet-in-g.wav" is already in the correct format.
 
    ![Convert audio to WAV](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img1.png)
 
-1. Compile the program and flash the binary.<!--some tutorials, like the alarm tutorial, explain how to do this. Some don't. It might be best to create a page for the tutorials that has building and flashing instructions and link to the troubleshooting section, and then just link all tutorials to it instead of explaining it again and again-->
+1. Compile the program and flash the binary.
 1. Make sure that the board is connected to the host PC over USB.
 1. Select `Mbed Audio` as the host PC's default audio input device.
 
@@ -61,8 +82,6 @@ If USB properties of the Mbed USB WAV Audio Player are altered, such as the samp
 ![Device manager](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img4.png)
 
 ## main.cpp
-
-<!--can we get this not hardcoded?-->
 
 ```c++ NOCI
 // Mbed WAV Audio Player
@@ -111,8 +130,6 @@ int main() {
     song.close();//Close the WAV file
 }
 ```
-
-<!--sometimes we explain PuTTy when we use printf(), sometimes we don't-->
 
 ## Example WAV file  
 
