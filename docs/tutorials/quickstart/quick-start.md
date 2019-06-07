@@ -15,3 +15,5 @@ You can choose to develop **online** or **offline**:
 | [Online with the Mbed Online Compiler](../quick-start/online-with-the-online-compiler.html) | [Offline with Mbed CLI](../quick-start/offline-with-mbed-cli.html) |
 | :---: | :---: |
 | [![offline](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_next_button.png)](../quick-start/online-with-the-online-compiler.html) | [![online](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/offline_compile_next_button.png)](../quick-start/offline-with-mbed-cli.html) |
+
+If you're interested in Arm Mbed Studio, [see its standalone documentation](https://os.mbed.com/docs/mbed-studio/latest).
