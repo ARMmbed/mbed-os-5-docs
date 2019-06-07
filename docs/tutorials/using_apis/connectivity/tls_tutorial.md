@@ -1,0 +1,172 @@
+<h1 id="tls-tutorial">TLS Tutorial</h1>
+
+Since mbed-os 5.11 the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave very similar to normal TCP sockets, but they will automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [Jan Jongboom's blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), will help you understand and make use of TLS encryption in mbed-os.
+
+In particular, this tutorial:
+
+- Introduces the basic concepts of CA certificates.
+- Explains how to practically obtain them and embed into your application, using TLSSockets.
+- Points to further reading on client's key and certificate verification.
+
+## Certificate Authorities
+
+Unlike desktop operating systems such as Windows or macOS, Mbed OS does not have a central list of trusted Certificate Authorities (CAs). This means that when you want to talk to a server over TLS you need to provide the list of root CAs yourself. Finding the root CA can be done quickly via Firefox (or any other browser) or via OpenSSL.
+
+### Firefox
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/root-ca-selection.png "Getting root CA in Firefox")<span>Getting root CA in Firefox.</span></span>
+
+1. Use Firefox to go to a page that uses HTTPS and is hosted on the same domain as the server you want to talk to over a TLS Socket.
+1. Click `Tools` > `Page Info`.
+1. Click `Security`.
+1. Click `View Certificate`.
+1. Choose the `Details` tab.
+1. Click on the top item in the certificate hierarchy, this is the root CA.
+1. Click `Export`.
+1. This gives you a `.crt` file. Store it inside your project, so you can find it back later.
+
+### OpenSSL
+
+1. Open a terminal and run:
+```
+$ openssl s_client -connect os.mbed.com:443 -showcerts
+```
+(Replace `os.mbed.com:443` with your host and port)
+
+2. Then look for the last occurance of `-----BEGIN CERTIFICATE-----`.
+3. Copy everything from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----` and store in a file. 
+
+<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tlssocket02.png "Getting root CA via OpenSSL")<span>Getting root CA via OpenSSL.</span></span>
+
+## Placing the CA in code
+
+To use the CA in code, you need to store it in a string, and escape the content. For example:
+
+```c
+// note that every line ends with `\n`
+// To add more root certificates, just concatenate them.
+const char SSL_CA_PEM[] = "-----BEGIN CERTIFICATE-----\n"
+    "MIIDdTCCAl2gAwIBAgILBAAAAAABFUtaw5QwDQYJKoZIhvcNAQEFBQAwVzELMAkG\n"
+    // rest of your certificate
+    "-----END CERTIFICATE-----\n"
+    // You can also concatenate multiple certificates.
+    "-----BEGIN CERTIFICATE-----\n"
+    "BAYTAlVTMSUwIwYDVQQKExxTdGFyZmllbGQgVGVjaG5vbG9naWVzLCBJbmMuMTIw\n"
+    // rest of your second certificate
+    "-----END CERTIFICATE-----\n";
+```
+
+## Enabling logging
+
+The TLS Socket library uses the [mbed-trace](https://github.com/ARMmbed/mbed-os/blob/1bbcfff8f331c2e00a3883ea27ca3c91461bc7a9/features/frameworks/mbed-trace/README.md) library that is part of Mbed OS for logging. Thus, if you want to see the TLS handshakes you'll need to enable the trace library. In addition, you can specify the debug level for the TLS socket. Create a file named `mbed_app.json` in the root of your project, and add the following to enable tracing:
+
+```json
+{
+    "macros": ["MBEDTLS_SHA1_C=1"],
+    "target_overrides": {
+        "*": {
+            "mbed-trace.enable": 1,
+            "tls-socket.debug-level": 0
+        }
+    }
+}
+```
+
+Note that enabling traces in `mbed_app.json` is not enough to actually show them. You still need to tell the trace library where it needs to write to. Calling `mbed_trace_init();` from code will write the traces to the default serial UART port, so you can see them through a serial monitor - the same as when you call `printf`.
+
+## Making an HTTPS request to os.mbed.com
+
+With everything in place we can now set up a TLS socket connection. On the Mbed website there's a file called hello.txt which returns `Hello World!` in plain text. Let's retrieve it!
+
+<span class="notes">**Note:** If you're looking for a fully fledged HTTP/HTTPS library, take a look at [mbed-http](https://os.mbed.com/teams/sandbox/code/mbed-http/) - it also uses TLS Sockets underneath.</span>
+
+### Setting up a TLS socket
+
+<span class="notes">**Note:** There is an [example TLS Socket project](https://github.com/ARMmbed/mbed-os-example-tls-socket) available.</span>
+
+You set up a TLS socket in the same way as you set up a TCP socket, except you call `set_root_ca_cert` with the root CA string.
+
+```cpp
+#include "mbed.h"
+#include "NetworkInterface.h"
+#include <TLSSocket.h>
+
+const char SSL_CA_PEM[] = /* your certificate, see above */ "";
+ 
+int main (void) {
+
+// Get a network interface
+NetworkInterface *network = NetworkInterface::get_default_instance();
+if (network->connect() != 0) {
+    printf("Could not connect to the network...\n");
+    return 1;
+}
+ 
+nsapi_error_t r;
+ 
+// setting up TLS socket
+TLSSocket* socket = new TLSSocket();
+if ((r = socket->open(network)) != NSAPI_ERROR_OK) {
+    printf("TLS socket open failed (%d)\n", r);
+    return 1;
+}
+if ((r = socket->set_root_ca_cert(SSL_CA_PEM)) != NSAPI_ERROR_OK) {
+    printf("TLS socket set_root_ca_cert failed (%d)\n", r);
+    return 1;
+}
+if ((r = socket->connect("os.mbed.com", 443)) != NSAPI_ERROR_OK) {
+    printf("TLS socket connect failed (%d)\n", r);
+    return 1;
+}
+
+}
+```
+
+This now makes the request, and returns the content of the file. Hello world indeed.
+
+```
+Setting up TLS socket...
+[INFO][TLSW]: mbedtls_ssl_conf_ca_chain()
+[INFO][TLSW]: mbedtls_ssl_config_defaults()
+[INFO][TLSW]: mbedtls_ssl_conf_authmode()
+[INFO][TLSW]: mbedtls_ssl_conf_rng()
+[INFO][TLSW]: mbedtls_ssl_setup()
+[INFO][TLSW]: Starting TLS handshake with os.mbed.com
+[INFO][TLSW]: TLS connection to os.mbed.com established
+ 
+[DBG ][TLSW]: Server certificate:
+    cert. version     : 3
+    serial number     : 03:56:D4:79:41:63:31:CA:E0:56:06:61
+    … snip ...
+ 
+[INFO][TLSW]: Certificate verification passed
+```
+
+You can also take a look at the [complete example](https://github.com/janjongboom/mbed-simulator/blob/6e9f45c61fb10e1983668e777d68e939247b377d/demos/tlssocket/main.cpp).
+
+**Note:** In case you come across a message saying that the signature's algorithm is missing:
+
+```
+[ERR ][TLSW]: mbedtls_x509_crt_parse() failed: -0x262e (-9774): X509 - Signature algorithm (oid) is unsupported : OID - OID is not found
+```
+
+then you might need to add the following line in `target_overrides` section of your `mbed_app.json` file:
+
+```json
+    "target_overrides": {
+        "*": {
+            "target.macros_add" : ["MBEDTLS_SHA1_C"]
+        }
+    }
+```
+
+### Providing client's certificate and key
+
+The CA certification only allows you to verify the server's authenticity. 
+
+TLS handshake is also able to perform the second stage of verification where the client's certificate is verified to confirm its authenticity.
+
+To achieve this, the TLS socket's `set_client_cert_key()` function has to be called, which will store your key + certificate pair within the TLS socket. This may be required in cases where the server needs to verify the client's identity for secure communication, e.g. when your IoT device wants to send (and not just receive) some data to the server.
+
+The mechanism of providing the client's key and certificate to TLS socket is the same as in case of CA certificate. The best examples of how and when to perform this operations can be found in the [cloud demo applications](https://github.com/coisme/Mbed-to-AWS-IoT).
+
