@@ -46,7 +46,7 @@
     },
     {
         "title": "Quick start",
-        "description": "",
+        "description": "Guide to getting started using Mbed OS",
         "slug": "quick-start",
         "type": "markdown",
         "chapters": [{
@@ -1075,7 +1075,7 @@
     },
     {
         "title": "Contributing",
-        "description": "",
+        "description": "Guide to contributing to Mbed OS source code and documentation and information about contribution workflow and licensing",
         "slug": "contributing",
         "type": "markdown",
         "sources": [{
@@ -1106,7 +1106,7 @@
     },
     {
         "title": "Porting",
-        "description": "",
+        "description": "Porting guidelines for adding a new MCU target to Mbed OS and the Pelion IoT Platform and using HAL APIs",
         "slug": "porting",
         "type": "markdown",
         "chapters": [{
@@ -1304,7 +1304,7 @@
         "title": "Mbed OS and the Pelion IoT Platform",
         "slug": "mbed-os-pelion",
         "type": "markdown",
-        "description": "",
+        "description": "How to go to production with Mbed OS-based IoT devices, the Pelion IoT platform and Arm Treasure Data (Data Management)",
         "chapters": [{
                 "title": "Introduction",
                 "intro": {
