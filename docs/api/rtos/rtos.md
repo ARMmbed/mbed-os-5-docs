@@ -47,7 +47,7 @@ A `Thread` can be in the following states:
 - `Waiting`: Threads that are waiting for an event to occur.
 - `Inactive`: Threads that are not created or terminated. These threads typically consume no system resources.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_status.png)</span>
+<span class="images">![](../../images/thread_status.png)</span>
 
 ### Signals
 

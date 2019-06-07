@@ -12,7 +12,7 @@ In a 6LoWPAN network, devices can have different roles. The colors in the illust
 
 ### Border router (6LBR)
 
-![Border router](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/br.png)
+![Border router](../../../images/br.png)
 
 A border router is the coordinator of the 6LoWPAN network. It handles the translations between the 6LoWPAN and IPv6 networks. Arm does not provide translation to IPv4 network due to the limited address space. We recommend using IPv6 tunnels over an IPv4 network when operating in such an environment.
 
@@ -20,13 +20,13 @@ The border router also authenticates the nodes joining the network and keeps tra
 
 ### 6LoWPAN router (6LR)
 
-![6LoWPAN router](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lr.png)
+![6LoWPAN router](../../../images/6lr.png)
 
 A 6LoWPAN router is a node that can route packets. This role is required to form a topological or mesh network. This configuration does not allow nodes to sleep because they route packets to their siblings.
 
 ### 6LoWPAN host (6LH)
 
-![6LoWPAN Host](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/6lh.png)
+![6LoWPAN Host](../../../images/6lh.png)
 
 A 6LoWPAN host is a type of node that does not route any packets. It has only one parent routing the packets.
 
@@ -40,7 +40,7 @@ A 6LoWPAN sleepy host is a 6LoWPAN host that is periodically allowed to sleep an
 
 ### Star network
 
-![Start topology](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/star_topology.png)
+![Start topology](../../../images/star_topology.png)
 
 Star topology is the simplest form of a mesh network. Actually, it is not mesh at all. Every node connects directly to the border router.
 
@@ -48,7 +48,7 @@ In a star network, nodes can be very low-power devices with least amount of RAM 
 
 ### Mesh/tree network
 
-![Tree type mesh](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mesh.png)
+![Tree type mesh](../../../images/mesh.png)
 
 In a mesh/tree network, all nodes are configured as 6LoWPAN routers.
 

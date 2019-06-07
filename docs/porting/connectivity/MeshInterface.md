@@ -10,7 +10,7 @@ Device drivers are a set of functions for providing PHY layer devices for the 6L
 
 The Mbed OS port of Nanostack consists of a few helper modules that provide an easier API for users and a Platform API for working inside the operating system.
 
-![Nanostack inside Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
+![Nanostack inside Mbed OS](../../images/nanostack_in_mbed_OS.png)
 
 - Mbed Mesh API controls and initializes Nanostack on Mbed OS.
     - Security settings.
@@ -28,7 +28,7 @@ In Mbed OS, Socket API hides the differences between the networking stacks. User
 - TCPSocket.
 - TCPServer.
 
-![Sockets in Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbedOS_sockets.png)
+![Sockets in Mbed OS](../../images/mbedOS_sockets.png)
 
 For an example of a simple application using Nanostack, see [Example mesh application for Mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
@@ -38,7 +38,7 @@ For more information, see the [documentation of the Socket API](../apis/network-
 
 For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterfaceNanostack` requires the driver object to be provided when initializing.
 
-![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
+![NanostackRfPhy](../../images/NanostackRfPhy.png)
 
 Applications use only `LoWPANNDInterface` or `ThreadInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
 
@@ -146,7 +146,7 @@ For more details on the TX process, see _Figure 4-1_.
 
 **Figure 4-1 RF driver states**
 
-![scan](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ed_scan_process.png)
+![scan](../../images/ed_scan_process.png)
 
 In sniffer mode, the device only receives packets, never ACKs, and it does not send them.
 
@@ -174,7 +174,7 @@ State|Description
 
 **Figure 4-2 TX process**
 
-![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
+![tx](../../images/tx_process.png)
 
 ## PHY device driver register
 

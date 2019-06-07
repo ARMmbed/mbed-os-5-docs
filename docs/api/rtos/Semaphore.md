@@ -4,7 +4,7 @@
 
 A semaphore manages thread access to a pool of shared resources of a certain type.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Semaphore.png)</span>
+<span class="images">![](../../images/Semaphore.png)</span>
 
 ## Semaphore class reference
 

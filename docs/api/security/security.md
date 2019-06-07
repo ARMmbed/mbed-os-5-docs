@@ -8,7 +8,7 @@ The Mbed implementation of PSA bridges the differences between PSA platforms and
 
 The Mbed implementation of PSA allows you to choose the platform type at later phase according to the final application threat model.
 
-<span class="images">![diagram](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/PSA-standardized-Interfaces-diagram.png)<span>PSA diagram</span></span>
+<span class="images">![diagram](../../images/PSA-standardized-Interfaces-diagram.png)<span>PSA diagram</span></span>
 
 ## SPM
 

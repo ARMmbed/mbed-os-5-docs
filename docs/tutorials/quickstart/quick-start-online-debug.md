@@ -30,4 +30,4 @@ To debug using a desktop IDE such as Keil uVision, IAR or Eclipse:
 1. Click **Export**.
 1. Your browser downloads a `.zip` file with the project files.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/export_online_compiler.png)</span>
+<span class="images">![](../../images/export_online_compiler.png)</span>

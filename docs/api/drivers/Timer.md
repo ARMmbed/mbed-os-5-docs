@@ -1,6 +1,6 @@
 # Timer
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
+<span class="images">![](../../images/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
 
 Use the Timer interface to create, start, stop and read a timer for measuring precise times (better than millisecond precision).
 

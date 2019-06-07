@@ -19,7 +19,7 @@ For more info, visit: https://armmbed.github.io/mbedos-error/?error=0x80020115
 
 If synchronization is required in ISR, consider using semaphores.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
+<span class="images">![](../../images/Mutex.png)</span>
 
 <span class="notes">**Note:** Mbed OS uses the [PlatformMutex](platformmutex.html) class instead of the RTOS mutex for all drivers.</span>
 

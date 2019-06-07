@@ -64,9 +64,9 @@ Compile this program, and flash it on your development board. You now can inspec
 1. Click *OK*.
 1. Log messages appear in the main window.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf1.png)<span>Selecting the COM port</span></span>
+<span class="images">![](../../images/printf1.png)<span>Selecting the COM port</span></span>
 
-<span class="images>"![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf2.png)<span>Seeing the output over the serial port</span></span>
+<span class="images>"![](../../images/printf2.png)<span>Seeing the output over the serial port</span></span>
 
 <span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
@@ -125,7 +125,7 @@ If you change the baud rate on the device, you also need to change it on your se
     $ screen /dev/ttyACM0 115200
     ```
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf3.png)<span>Changing the baud rate</span></span>
+<span class="images">![](../../images/printf3.png)<span>Changing the baud rate</span></span>
 
 ## Printf()
 
@@ -324,8 +324,8 @@ void xprintf(const char *format, ...)
 
 Windows:
 
-[![Debugging using printf() calls on Windows](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)
+[![Debugging using printf() calls on Windows](../../images/printf4.png)](http://www.youtube.com/watch?v=jAMTXK9HjfU&feature=youtu.be&t=31s)
 
 macOS:
 
-[![Debugging using printf() calls on macOS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)
+[![Debugging using printf() calls on macOS](../../images/printf5.png)](http://www.youtube.com/watch?v=IR8Di53AGSk&feature=youtu.be&t=34s)
