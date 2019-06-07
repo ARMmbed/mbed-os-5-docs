@@ -8,4 +8,4 @@ The documentation covers:
 1. [Integrating with Arm Treasure Data (Data Management)](../mbed-os-pelion/integrating-with-arm-treasure-data.html).
 1. [A full review of the production process](../mbed-os-pelion/going-to-production.html) for Mbed OS-based IoT devices.
 
-<span class="images">![](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/pelion_iot_platform.png)</span>
+<span class="images">![](../images/pelion_iot_platform.png)</span>
