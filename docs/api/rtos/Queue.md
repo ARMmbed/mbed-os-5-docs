@@ -4,7 +4,7 @@
 
 A Queue allows you to queue pointers to data from producer threads to consumer threads.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/queue.png)</span>
+<span class="images">![](../../images/queue.png)</span>
 
 ## Queue class reference
 

@@ -99,7 +99,7 @@ Below is the main storage configuration in the `mbed_lib json` file:
 
 Use this internal configuration for targets willing to save all the data in internal flash.
 
-<span class="images">![TDB_Internal](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Internal.jpg)<span>`TDB_Internal`</span></span>
+<span class="images">![TDB_Internal](../../images/Internal.jpg)<span>`TDB_Internal`</span></span>
 
 In this configuration, all KVStore C APIs will be mapped to the TDBStore in the internal flash. To use this configuration, set the `storage_type parameter` in `storage mbed_lib.json` to `TDB_INTERNAL`.
 
@@ -129,7 +129,7 @@ For this configuration, please define the section of the internal storage that w
 
 ### TDB_External
 
-<span class="images">![External](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/TDB_External.jpg)<span>`TDB_External`</span></span>
+<span class="images">![External](../../images/TDB_External.jpg)<span>`TDB_External`</span></span>
 
 `TDB_EXTERNAL` uses a TDBStore in the internal flash for security rollback protection and a TDBStore on the external flash for the data.
 
@@ -176,7 +176,7 @@ Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
 
 ### TDB_External_no_RBP
 
-<span class="images">![External](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/TDB_External_no_rbp.jpg)<span>`TDB_External_no_RBP`</span></span>
+<span class="images">![External](../../images/TDB_External_no_rbp.jpg)<span>`TDB_External_no_RBP`</span></span>
 
 The `TDB_EXTERNAL_NO_RBF` configuration has no support for rollback protection and is therefore less secure.
 
@@ -208,7 +208,7 @@ Below is the `TDB_EXTERNAL_NO_RBP` configuration in `mbed_lib.json`:
 
 ### FILESYSTEM
 
-<span class="images">![FILESYSTEM](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/FILESYSTEM.jpg)<span>`FILESYSTEM`</span></span>
+<span class="images">![FILESYSTEM](../../images/FILESYSTEM.jpg)<span>`FILESYSTEM`</span></span>
 
 The `FILESYSTEM` configuration resembles the `EXTERNAL` with the difference that it uses FileSystemStore on the external flash. By default, FileSystemStore used the default file system and the default block device.
 
@@ -266,7 +266,7 @@ If the file system is not set, the default file system and block device will be 
 
 ### FILESYSTEM_NO_RBP
 
-<span class="images">![FILESYSTEM](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/FILESYSTEM_no_rbp.jpg)<span>`FILESYSTEM_NO_RBP`</span></span>
+<span class="images">![FILESYSTEM](../../images/FILESYSTEM_no_rbp.jpg)<span>`FILESYSTEM_NO_RBP`</span></span>
 
 The `FILESYSTEM_NO_RBP` configuration resembles the `EXTERNAL_NO_RBP` with the difference that it uses FileSystemStore on the external flash. By default, FileSystemStore uses the default file system and the default block device. This configuration has no support for rollback protection and is therefore less secure.
 

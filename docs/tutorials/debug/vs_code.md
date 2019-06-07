@@ -12,7 +12,7 @@ You need to install Visual Studio Code with the C/C++ extensions to begin.
 1. Open Visual Studio Code, and click on the **Extensions** button.
 1. Search for the C/C++ plugin (by Microsoft) and click **Install**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode2.png)<span>Installing the C/C++ plugin in Visual Studio Code</span></span>
+    <span class="images">![](../../images/vscode2.png)<span>Installing the C/C++ plugin in Visual Studio Code</span></span>
 
 1. When prompted, restart the IDE.
 
@@ -30,7 +30,7 @@ To export your project to Visual Studio Code, you can use either the Online Comp
 
 1. Click **Export**, and unpack at a convenient location.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode1.png)<span>Exporting to Visual Studio Code</span></span>
+    <span class="images">![](../../images/vscode1.png)<span>Exporting to Visual Studio Code</span></span>
 
 ### Arm Mbed CLI
 
@@ -54,7 +54,7 @@ To configure the debugger for your project:
      1. Change `debugServerPath` to point to the location of `openocd`.
      1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](../tools/exporting.html).
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode3.png)<span>Configuring the debugger</span></span>
+    <span class="images">![](../../images/vscode3.png)<span>Configuring the debugger</span></span>
 
 <span class="notes">**Note:** If you installed the GNU Arm Embedded Toolchain in a nondefault location (for example, through the Arm Mbed CLI installer), you need to update the `MIDebuggerPath` to the full path of your copy of `arm-none-eabi-gdb`. To find the new path, open a terminal, and run `where arm-none-eabi-gdb` (Windows) or `which arm-none-eabi-gdb` (macOS and Linux).</span>
 
@@ -62,13 +62,13 @@ To configure the debugger for your project:
 
 1. On the **Debug** tab, click the **Play** icon.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode4.png)<span>Starting the debug session</span></span>
+    <span class="images">![](../../images/vscode4.png)<span>Starting the debug session</span></span>
 
 1. The project builds, and debugging starts when the build succeeds.
 1. To see warnings or errors, select **View > Problems**.
 1. Click on **Debug Console** to see the debug output (this is not activated automatically).
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode5.png)<span>Running the debugger</span></span>
+    <span class="images">![](../../images/vscode5.png)<span>Running the debugger</span></span>
 
 <span class="tips">**Tip:** You can use the Debug Console to interact with the device over GDB and use functionality the UI does not expose. For example, to see the registers, type `-exec info registers`. To put a watch on a memory location, type `-exec watch *0xdeadbeef`.</span>
 

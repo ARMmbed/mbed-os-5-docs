@@ -8,7 +8,7 @@ Mbed’s `BLE_API` interfaces with the BLE controller on the platform. It hides 
 
 ## `BLE_API`, bridges and stacks
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/BLEDiagram.png)</span>
+<span class="images">![](../../images/BLEDiagram.png)</span>
 
 You can build a BLE application using Mbed OS, `BLE_API` and a controller-specific Bluetooth stack together with some bridge software to adapt it to `BLE_API`:
 
@@ -18,7 +18,7 @@ You can build a BLE application using Mbed OS, `BLE_API` and a controller-specif
 
 ## Inside `BLE_API`
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Inside_API.png)</span>
+<span class="images">![](../../images/Inside_API.png)</span>
 
 `BLE_API` offers building blocks to help construct applications. These fall into two broad categories:
 

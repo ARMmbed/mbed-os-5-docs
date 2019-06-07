@@ -32,7 +32,7 @@ This may be useful to launch a debug session with your favorite tool while using
 
 The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/export_menu.png)<span>Triggering an export</span></span>
+<span class="images">![](../../images/export_menu.png)<span>Triggering an export</span></span>
 
 The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
 

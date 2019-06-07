@@ -1,6 +1,6 @@
 <h1 id="ethernet-port">Ethernet MAC (EMAC) drivers</h1>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/emac.png)<span>Emac API</span></span>
+<span class="images">![](../../images/emac.png)<span>Emac API</span></span>
 
 This document describes how to port and test an Ethernet MAC (EMAC) driver to Mbed OS.
 
@@ -10,7 +10,7 @@ The scope of this document is limited to Ethernet (IEEE 802.3) or Ethernet-like 
 
 ## Abstractions
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/emac-driver.png)<span>EMAC driver</span></span>
+<span class="images">![](../../images/emac-driver.png)<span>EMAC driver</span></span>
 
 The EMAC interface abstracts network stacks and drivers and easily permits multiple instances. The key API classes are:
 

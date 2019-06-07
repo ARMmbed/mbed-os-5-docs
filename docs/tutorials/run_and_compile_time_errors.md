@@ -13,11 +13,11 @@ For more information about compile time errors or warning, please see [the list 
 
 ## Runtime errors and siren lights
 
-<span class="images">![LPC1768 siren lights](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights1.gif)</span>
+<span class="images">![LPC1768 siren lights](../images/lights1.gif)</span>
 
-<span class="images">![LPC11U24 siren lights](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights2.gif)</span>
+<span class="images">![LPC11U24 siren lights](../images/lights2.gif)</span>
 
-<span class="images">![FRMD-KL25Z siren lights](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lights3.gif)</span>
+<span class="images">![FRMD-KL25Z siren lights](../images/lights3.gif)</span>
 
 *LPC1768, LPC11U24 and FRDM-KL25Z showing their distinctive pattern of siren lights*
 
