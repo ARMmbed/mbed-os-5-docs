@@ -177,7 +177,7 @@ Detailed instructions for porting each module are given in the module-specific s
 
 The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
 
-[![View code](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/main.cpp)
 
 ## Bootstrap and entry point
 
@@ -191,7 +191,7 @@ Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementa
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Source
    C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\_Template_Vendor\Vendor\Device\Include
    ```
-   
+
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
