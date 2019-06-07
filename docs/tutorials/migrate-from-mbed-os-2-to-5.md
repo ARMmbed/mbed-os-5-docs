@@ -13,17 +13,17 @@ This guide uses the Grove temperature and humidity sensor as an example: [Grove-
 
 First, navigate to the Hello World repository for the component.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)<span>Hello World repository for the component</span></span>
+<span class="images">![](../images/hello_world_import.png)<span>Hello World repository for the component</span></span>
 
 
 Next, view the files in the Hello World repository. The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)<span>Older version of Mbed OS `mbed.bld` or `mbed-rtos.lib` files in the Hello World repository</span></span>
+<span class="images">![](../images/old_mbed_file.png)<span>Older version of Mbed OS `mbed.bld` or `mbed-rtos.lib` files in the Hello World repository</span></span>
 
 
 A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.lib` file.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new_mbed_file.png)<span>Mbed OS 5 or later `mbed-os.lib` file in the Hello World respository</span></span>
+<span class="images">![](../images/new_mbed_file.png)<span>Mbed OS 5 or later `mbed-os.lib` file in the Hello World respository</span></span>
 
 Some repositories may have both an `mbed.bld` file and an `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace both `mbed.bld` and `mbed-rtos.lib`.
 
@@ -54,19 +54,19 @@ To update to Mbed OS 5 with the [Mbed Online Compiler](../tools/developing-mbed-
 1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)<span>Delete mbed</span></span>
+    <span class="images">![](../images/mbed2-delete-mbed.png)<span>Delete mbed</span></span>
 
 1. If your project includes `mbed-rtos`, you also need to delete this library to successfully update to Mbed OS 5. Right click on **mbed-rtos**, and select **Delete...**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)<span>Delete mbed-rtos</span></span>
+    <span class="images">![](../images/mbed2-delete-mbed-rtos.png)<span>Delete mbed-rtos</span></span>
 
 1. Right click on the name of your project, hover over **Import Library** and then select **From URL**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-import-url.png)<span>Import library from URL</span></span>
+    <span class="images">![](../images/mbed2-import-url.png)<span>Import library from URL</span></span>
 
 1. Copy and paste the URL for Mbed OS 5 `https://github.com/armmbed/mbed-os`, and then click **Import**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
+    <span class="images">![](../images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
 
 To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**.
 
