@@ -26,7 +26,7 @@ Please note that internal TLS structures require over 1 kB of RAM, so you need t
 
 Internally `TLSSocket` consists of two classes, `TLSSocketWrapper` and `TLSSocket`, as shown in the following diagram:
 
-<span class="images">![TLSSocket UML](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tlssocket.png)<span>TLSSocket UML</span></span>
+<span class="images">![TLSSocket UML](../../../images/tlssocket.png)<span>TLSSocket UML</span></span>
 
 The `TLSSocketWrapper` can use any `Socket` as its transport. `TLSSocket` is a helper that uses directly `TCPSocket` for its transport, so you can adopt existing TCP based applications to TLS.
 

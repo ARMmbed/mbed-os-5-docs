@@ -26,7 +26,7 @@ There is a wide variety of possibilities for connected devices, and there is no 
 
 Mbed OS supports various IP-based connectivity options and IP stacks.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ip-networking-simple.png)</span>
+<span class="images">![](../../../images/ip-networking-simple.png)</span>
 
 Our Socket API standardizes all of our connectivity options. It supports both IPv4 and IPv6. Applications are portable regardless of final connectivity option.
 
@@ -76,7 +76,7 @@ Additionally, Mbed OS Thread stack is certified using pre-defined test sets for 
 
 ### 6LoWPAN Mesh networking
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mesh.png)<span>Tree type mesh</span></span>
+<span class="images">![](../../../images/mesh.png)<span>Tree type mesh</span></span>
 
 6LoWPAN is a compression method for IPv6 packets. Mbed OS supports Wi-SUN, 6LoWPAN-ND and Thread protocols for forming IPv6 based mesh networks. All protocols use the same 6LoWPAN compression method but different routing protocols to achieve wireless mesh network.
 
@@ -96,7 +96,7 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutoria
 
 ### NFC
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>NFC</span></span>
+<span class="images">![](../../../images/n_mark.png)<span>NFC</span></span>
 
 Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, easy sharing of small content and Bluetooth connection initiation/out-of-band pairing.
 
