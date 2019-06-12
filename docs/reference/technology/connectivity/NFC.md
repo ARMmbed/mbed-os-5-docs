@@ -52,4 +52,4 @@ You must initiate either entry point with a driver instance, an event queue and 
 
 ## Design
 
-A detailed design document is available [within the Mbed OS source tree](https://github.com/ARMmbed/mbed-os/docs/design-documents/nfc/nfc_design.md). It details the rationale behind the API design.
+A detailed design document is available [within the Mbed OS source tree](https://github.com/ARMmbed/mbed-os/blob/master/docs/design-documents/nfc/nfc_design.md). It details the rationale behind the API design.
