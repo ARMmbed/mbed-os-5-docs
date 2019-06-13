@@ -94,6 +94,8 @@ To run the FPGA test shield test, perform the following steps:
 
 1. Ensure the FPGA test shield is programmed with the latest firmware version.
 1. Connect the FPGA test shield to the Device Under Test.
+1. Set the jumper on the FPGA test shield to select USB power.
+1. Connect the power to the FPGA test shield using a USB cable.
 1. Add the `FPGA_CI_TEST_SHIELD` component to the Device Under Test in the `targets.json` configuration file.
 1. Run the test:
 
