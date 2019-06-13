@@ -15,8 +15,8 @@ Mbed OS currently provides two tests for Mbed Crypto:
 
 To run these tests, make sure make sure your target configuration is set:
 
-1.  `extra_labels` contains the label `PSA`. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/mbed-os-5.13.0-rc2/targets/targets.json#L1485) or [LPC55S69](https://github.com/ARMmbed/mbed-os/blob/mbed-os-5.13.0-rc2/targets/targets.json#L2129).
-1.  The `MBEDTLS_PSA_CRYPTO_C` macro is enabled for NSPE or SPE targets. Please see an example using the [LPC55S69](https://github.com/ARMmbed/mbed-os/blob/mbed-os-5.13.0-rc2/targets/targets.json#L2124).
+1.  `extra_labels` contains the label `PSA`.
+1.  The `MBEDTLS_PSA_CRYPTO_C` macro is enabled for NSPE or SPE targets.
 
 Additionally, if the device does not have a TRNG or if you'd like to run the entropy injection test, ensure the Mbed TLS configuration is set on the SPE:
 
