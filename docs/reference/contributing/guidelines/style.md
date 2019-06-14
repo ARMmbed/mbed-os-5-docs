@@ -169,7 +169,7 @@ All functions and methods should contain documentation using Doxygen.
 
 ## Compiler settings
 
-All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 5 and IAR EWARM. Mbed OS:
+All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded and IAR EWARM. Mbed OS:
 
 - Uses the GNU99 standard for C.
 - Uses the GNU++98 standard for C++.
