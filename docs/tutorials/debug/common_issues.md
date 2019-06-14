@@ -26,7 +26,7 @@ The default profiles for the GCC and Arm toolchains now select C++14 and C11. So
 
 - A space is required when a macro follows a string literal, for example in C99-style `printf` formats:
    
-   ```C++
+   ```C++ NOCI
        uint32_t val;
        printf("val = %"PRIu32, val); // Not valid in C++11
        printf("val = %" PRIu32, val); // OK
@@ -36,7 +36,7 @@ The default profiles for the GCC and Arm toolchains now select C++14 and C11. So
    
 - Initializer lists cannot have implicit narrowing conversions:
    
-   ```C++
+   ```C++ NOCI
        uint32_t x;
        uint8_t array1[] = { x }; // Not valid in C++11
        uint8_t array2[] = { 0xffff }; // Not valid in C++11
