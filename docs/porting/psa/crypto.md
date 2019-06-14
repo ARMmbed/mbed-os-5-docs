@@ -15,11 +15,14 @@ Mbed OS currently provides two tests for Mbed Crypto:
 
 To run these tests, make sure make sure your target configuration is set:
 
-1.  `extra_labels` contains the label `PSA`. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1451) or [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7694).
-1.  `MBEDTLS_PSA_CRYPTO_C` macro is enabled. Please see an example using the [K64F](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L1454) or [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7697).
-1. `MBEDTLS_ENTROPY_NV_SEED` macro is enabled in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7673).
-1. `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` macro is set to `mbed_default_seed_read` in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674).
-1. `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO` macro is set to `mbed_default_seed_write` in the SPE if the device does not have TRNG or if you want the entropy injection test. Please see an example using the [Future Sequana](https://github.com/ARMmbed/mbed-os/blob/master/targets/targets.json#L7674).
+1.  `extra_labels` contains the label `PSA`.
+1.  The `MBEDTLS_PSA_CRYPTO_C` macro is enabled for NSPE or SPE targets.
+
+Additionally, if the device does not have a TRNG or if you'd like to run the entropy injection test, ensure the Mbed TLS configuration is set on the SPE:
+
+1. The `MBEDTLS_ENTROPY_NV_SEED` and `MBEDTLS_PSA_ENTROPY_INJECTION` macros are enabled.
+1. The `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` macro is set to `mbed_default_seed_read`.
+1. The `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO` macro is set to `mbed_default_seed_write`.
 
 ## Compile and run
 
