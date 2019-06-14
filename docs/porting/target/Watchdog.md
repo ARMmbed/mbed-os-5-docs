@@ -11,7 +11,8 @@ Implement the ResetReason API when implementing the Watchdog API. The ResetReaso
 - Sleep and debug modes don't stop the watchdog timer from counting down.
 - The function `hal_watchdog_init` is safe to call repeatedly. The function's implementation must not do anything if `hal_watchdog_init` has already initialized the hardware watchdog timer.
 - Maximum supported timeout is `UINT32_MAX` milliseconds; minimum timeout is 1ms.
-- The timeout must be accurate to the nearest millisecond.
+- The watchdog should trigger at or after the timeout value.
+- The watchdog should trigger before twice the timeout value.
 
 ### Undefined behavior
 
@@ -20,7 +21,6 @@ Implement the ResetReason API when implementing the Watchdog API. The ResetReaso
 ### Notes
 
 - A software reset may not stop the watchdog timer; the behavior is platform specific.
-- Timing on most platforms is based on the timeout registers and a prescaler value. They should be accurate to the nearest millisecond but may be off my a several µs.
 
 ## Dependency
 
