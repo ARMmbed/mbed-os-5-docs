@@ -22,7 +22,7 @@ If you are using an old version of Mbed CLI, you may see compile-time errors. Ma
 
 Mbed OS 5 can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../tools/index.html).
 
-The default profiles for the GCC and Arm toolchains now select C++14 and C11. Some applications may fail to compile because they use constructs that were valid in C++98 but not in C++14. This may also apply to your applications if you are migrating from older Mbed OS versions that used IAR 7. To fix these common compatibilitiy issues:
+The default toolchain profiles now select C++14 and C11. Some applications that worked with older versions of Mbed OS may fail to compile because they use constructs that were valid in C++98 but not in C++14. To fix these common compatibility issues:
 
 - A space is required when a macro follows a string literal, for example in C99-style `printf` formats:
    
