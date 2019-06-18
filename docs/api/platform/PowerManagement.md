@@ -93,7 +93,7 @@ After the call the processor and most components will reset, but it will not aff
 
 ## Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.13/mbed-os-api-doxy/group__platform__power__mgmt.html)
 
 ## Example
 

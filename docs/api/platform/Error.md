@@ -124,7 +124,7 @@ Error handling implementation in Mbed OS keeps track of previous errors in the s
 
 See the below link to learn more about the APIs related to error history:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.13/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Extending error codes
 
@@ -179,7 +179,7 @@ Crash reporting feature also provides APIs to read and clear error context infor
 
 The below link provides the documentation for all the APIs that Mbed OS provides for error definitions and handling:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.13/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Error handling API examples
 
@@ -521,7 +521,7 @@ For each of the above mentioned error codes, a corresponding system error status
 
 See the below Doxygen file for additional information regarding error code definitions:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.13/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Related content
 
@@ -529,4 +529,3 @@ See the below Doxygen file for additional information regarding error code defin
 - Mbed OS [error decoder](https://mbed.com/s/error).
 - [Office Hours video about Crash Reporting](https://www.youtube.com/watch?v=SdC_aM-aZNc).
 - [Office Hours video about Crash Dump Analysis](https://www.youtube.com/watch?v=7xKWFSnUye8).
-
