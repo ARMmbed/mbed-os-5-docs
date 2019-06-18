@@ -2,4 +2,4 @@
 
 To learn about using the bare metal profile on Mbed OS 5, please see the Blinky bare metal example:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-blinky-baremetal/)](https://github.com/armmbed/mbed-os-example-blinky-baremetal/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-blinky-baremetal/)](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal/blob/mbed-os-5.13/main.cpp)

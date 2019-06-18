@@ -14,7 +14,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 #### To enable heap stats using `mbed_app.json`:
 
 1. Add the following to `mbed_app.json`:
-   
+
    ```
    {
        "macros": [
@@ -99,4 +99,4 @@ Both of these functions return a struct containing the following:
 
 #### Example program using stack statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/stack_stats_example/)](http://os.mbed.com/teams/mbed_example/code/stack_stats_example/file/539750137652/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/stack_stats_example/)](https://os.mbed.com/teams/mbed_example/code/stack_stats_example/file/dcc8640ad89c/main.cpp)
