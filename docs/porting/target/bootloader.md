@@ -11,7 +11,7 @@ The target needs to support the Flash HAL API. You can find the guide to porting
 You can learn to port the Update Client bootloader to new targets in [the porting guide](https://cloud.mbed.com/docs/latest/porting/porting-the-device-management-update-client.html).
 
 An example walkthrough of porting the bootloader to the K64F platform can be found [here](https://cloud.mbed.com/docs/latest/porting/update-k64f-port.html).
-
+<!---The new board reference for porting is now the NUCLEO-F411RE.--->
 ## Creating and using a new bootloader
 
 You can learn to create and use a new bootloader in our [tutorials](../tutorials/bootloader.html).
