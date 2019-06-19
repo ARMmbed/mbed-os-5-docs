@@ -99,4 +99,4 @@ To run the FPGA test shield test, perform the following steps:
 1. Add the `FPGA_CI_TEST_SHIELD` component to the Device Under Test in the `targets.json` configuration file.
 1. Run the test:
 
-   `mbed test -t GCC_ARM -m K66F -n tests-mbed_hal_fpga_ci_test_shield-spi_slave -v`
+   `tests-mbed_hal_fpga_ci_test_shield-spi`
