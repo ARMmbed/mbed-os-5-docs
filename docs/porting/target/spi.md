@@ -128,3 +128,11 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-spi*"
 You can read more about the test cases:
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.13/feature-hal-spec-spi-doxy/group__hal__spi__tests.html)
+
+To test SPI using the FPGA test shield:
+
+1. Check out `feature-hal-spec-spi` mbed-os branch.
+1. Run the tests:
+
+   - SPI master: `mbed test -t GCC_ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield-spi_master -v`
+   - SPI slave: `mbed test -t GCC_ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield-spi_slave -v`
