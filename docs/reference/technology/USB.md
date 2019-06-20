@@ -56,8 +56,8 @@ USB defines five separate states of a device: **Attached**, **Powered**, **Defau
 | Address    |    No new functionality                  |
 | Configured |    All enabled endpoints are functional  |
 
-Random power loss or disconnect can cause the USB device to lose functionality. When leaving or outside of the Configured state, USBDevice ignores writes to and reads from all endpoints other than endpoint 0.
-<!---initially confusing wording--->
+Random power loss can cause the USB device to lose functionality. When leaving or outside of the Configured state, USBDevice ignores writes to and reads from all endpoints other than endpoint 0.
+
 ## USB component callbacks
 
 All callbacks USBDevice sends to its children are prefixed with `callback_*`. USBDevice calls these callbacks with the USB lock held. One notable callback is `callback_state_change`, which USB components can use generically to handle leaving the Configured state. The USB stack automatically exits the Configured state on disconnect, power loss or USB reset.
