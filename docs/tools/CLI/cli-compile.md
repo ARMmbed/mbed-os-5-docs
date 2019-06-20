@@ -1,10 +1,8 @@
-# Compile
-
-
+# Compiling mbed compile --library --no-archive
 
 This section details some of the arguments available with the `mbed compile` command. Please run `mbed compile --help` to get a full list of arguments.
 
-## Compile your application
+## Compiling your application
 
 Use the `mbed compile` command to compile your code. Supply the `-m` and `-t` arguments to set your target and toolchain, respectively.
 
@@ -12,17 +10,15 @@ To find your board's target name, use `--supported`.
 
 The valid toolchain values are:
 
-<!--does "based on environment" mean "whichever one is installed"?-->
-
 | Argument value | Toolchain |
 | --------- | --------- |
-| `ARM` | Arm Compiler 5 or Arm Compiler 6 (based on environment) |
+| `ARM` | Arm Compiler 5 or Arm Compiler 6 (whichever is installed) |
 | `ARMC5` | Arm Compiler 5 |
 | `ARMC6` | Arm Compiler 6 |
 | `IAR` | IAR EWARM Compiler |
 | `GCC_ARM` | GNU Arm Embedded Compiler (GCC) |
 
-As an example, for the K64F and ARM Compiler:
+As an example, for the K64F and Arm Compiler:
 
 ```
 $ mbed compile -m K64F -t ARM
@@ -54,7 +50,7 @@ Total Flash memory (text + data + misc): 66014 bytes
 Image: BUILD/K64F/GCC_ARM/mbed-os-program.bin
 ```
 
-### Set default or detected target
+### Setting a default target
 
 To set a default target, use the `mbed target` command with the name of your target (in this example, the K64F):
 
@@ -70,7 +66,7 @@ Alternatively, pass `detect` instead of your target name to automatically use th
 $ mbed target detect
 ```
 
-### Set default toolchain
+### Setting a default toolchain
 
 To set a default toolchain, use the `mbed toolchain` command:
 
@@ -80,7 +76,7 @@ $ mbed toolchain GCC_ARM
 [mbed] GCC_ARM now set as default toolchain in program "project"
 ```
 
-### Perform a clean build
+### Performing a clean build
 
 To rebuild the project, use the `-c/--clean` argument:
 
@@ -88,7 +84,7 @@ To rebuild the project, use the `-c/--clean` argument:
 mbed compile -c
 ```
 
-### Flash the built program and monitor the target
+### Flashing the built program and monitor the target
 
 You can flash the built program to the connected target by adding the `-f/--flash` argument to the `compile` command:
 
@@ -100,9 +96,7 @@ You can also read and write to the target's serial port by adding the `--sterm` 
 
 <!--missing example-->
 
-
 ## Build sources and output
-
 
 ### Source directories
 
@@ -114,14 +108,13 @@ $ mbed compile --source ./src --source ./lib
 
 ### Build directory
 
-The default build directory is in the root of your project, and is called `BUILD`. You can set the build directory with the `--build` argument:
+The default build directory is in the root of your project and is called `BUILD`. You can set the build directory with the `--build` argument:
 
 ```
 $ mbed compile --build my_build
 ```
 
-### Build a library
-<!--this feels like it should be "building", especially since we have "build directory"; "building" makes it clearer that this is a verb, whereas the previous one was a noun-->
+### Building a library
 
 To build a static library instead of a linked executable, use the `--library` argument:
 
@@ -131,7 +124,8 @@ $ mbed compile --library
 
 To suppress the creation of the `.a/.ar` archive (and instead leave the `.o` object files), use both the `--library` and `--no-archive` arguments:
 
-<!--example please-->
+   `mbed compile --library --no-archive`
+
 ## Build profiles
 
 Build profiles control which arguments are passed to the compiler. For more information about build profiles, please see the [build profile documentation](../tools/build-profiles.html).
@@ -146,7 +140,7 @@ $ mbed compile --profile debug
 
 ## Configuration system
 
-The Mbed OS configuration system customises compile time configuration parameters. For more info, [see the full configuration system documentation](./reference/configuration.html).
+The Mbed OS configuration system customizes compile time configuration parameters. For more information, please see [the full configuration system documentation](../reference/configuration.html).
 
 To view your current configuration, use `mbed compile --config` (use the `-v` argument to display more information):
 
@@ -166,9 +160,9 @@ You may use `--prefix` more than once. To display only the application and targe
 $ mbed compile --config -t GCC_ARM -m K64F --prefix target --prefix app
 ```
 
-### Define macros
+### Defining macros
 
-To define macros when compiling, use the `-D` argument:<!--are you defining them here, or calling them? and is this the same as https://os.mbed.com/docs/mbed-os/v5.12/reference/configuration.html-->
+To define macros when compiling, use the `-D` argument:
 
 ```
 $ mbed compile -D MY_MACRO -D MY_VALUE=1
