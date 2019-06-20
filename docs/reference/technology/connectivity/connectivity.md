@@ -6,22 +6,18 @@ Mbed OS offers a strong, integrated stack of standards-based technologies:
 
 For IP devices:
 
+- Cellular.
+- NB-IoT.
 - Thread.
 - Wi-SUN.
 - 6LoWPAN-ND.
-- Cellular.
-- NB-IoT.
 - Bluetooth Low Energy (BLE).
 
-<!--- Order and headings do not reflect what're in the lists below--->
 Non-IP devices require a gateway:
 
 - LoRaWAN.
 - Cellular.
 
-<!--- What about NFC?--->
-
-<!---What if we move this to the ../technology.md file?--->
 ## Choosing your connectivity method
 
 There is a wide variety of possibilities for connected devices, and there is no globally correct connectivity method. Choose a method that fits your application needs, and then choose a device that can support that method. If you're already committed to a device type, you may need to adjust your application to work within that device's connectivity constraints.
@@ -30,9 +26,8 @@ There is a wide variety of possibilities for connected devices, and there is no 
 
 Mbed OS supports various IP-based connectivity options and IP stacks.
 
-<span class="images">![](../../../images/ip-networking-simple.png)</span>
+<span class="images">![](../../../images/ip-networking-simple.png)<span>Connectivity stack architecture in Mbed OS</span></span>
 
-<!---This could use a caption, IMO--->
 Our Socket API standardizes all of our connectivity options. It supports both IPv4 and IPv6. Applications are portable regardless of final connectivity option.
 
 Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
