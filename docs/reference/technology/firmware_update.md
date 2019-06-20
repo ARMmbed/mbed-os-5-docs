@@ -53,8 +53,8 @@ For more information about [managed and unmanaged bootloaders, and how to create
 
 ### Porting a bootloader
 
-If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](../porting/bootloader.html).
-<!---Are there really two of these guides, or should we just have one link to the bootloader cloud-side docs in the porting section, as below?--->
+If you're interested in porting the Update client and bootloader to new hardware, please [review the porting section](https://www.pelion.com/docs/device-management/current/porting/porting-the-device-management-update-client.html).
+
 ### Security
 
 Note two things about the Mbed OS bootloader's design:
@@ -89,7 +89,7 @@ Mbed CLI and the Online Compiler implement the Pelion Device Management Update s
 Your development tool needs to use your Device Management account API key to call the APIs. Once it has access to the APIs, it can generate a manifest, upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
 
 <span class="notes">**Note**: The tools currently support the update flow for Device Management Client, not Device Management Client Lite.</span>
-<!---Is this still true?--->
+
 **Tutorials**:
 
 - Try the firmware [update flow on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update). Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).
