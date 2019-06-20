@@ -53,7 +53,7 @@ Please note that the interface API is not the same as the network driver. The in
 Mbed OS implements the following network interface APIs:
 
 - Ethernet.
-- WiFi.
+- Wi-Fi.
 - Cellular (PPP).
 - 6LoWPAN-ND mesh networking.
 - Thread mesh networking.

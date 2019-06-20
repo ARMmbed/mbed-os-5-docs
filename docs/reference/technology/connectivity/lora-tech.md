@@ -51,7 +51,7 @@ The base stations transmit a beacon every 128 seconds, and all Class B nodes are
 
 <span class="images">![](../../../images/class_b_timing.png)<span>Figure 3: Class B timing diagram</span></span>
 
-Beacon guard time precedes each beacon, and no ping slot can be placed in that time period. A ping slot is a 30ms unit that you can assign to a Class B device. Beacon reserved is a time period when the actual beacon is sent. Beacon window is the time period when you can open and assign ping slots.
+Beacon guard time precedes each beacon, and no ping slot can be placed in that time period. A ping slot is a 30 ms unit that you can assign to a Class B device. Beacon reserved is a time period when the actual beacon is sent. Beacon window is the time period when you can open and assign ping slots.
 
 - Beacon period = 128 seconds.
 - Beacon reserved = 2.120 seconds.
@@ -157,7 +157,7 @@ radio.unlock();
 ```
 ##### Example: radio generating interrupt
 
-The radio driver uses the callbacks it received in the form `radio_events_t` to notify the the upper layers to postprocess an interrupt.
+The radio driver uses the callbacks it received in the form `radio_events_t` to notify the upper layers to postprocess an interrupt:
 
 ```C NOCI
 if (signal & GENERATE_TX_DONE) {
@@ -276,7 +276,7 @@ The flow for reception looks like this:
 By default, the stack handles the case automatically if any data is pending on the network server side waiting to be delivered to the device or if there are any MAC command responses that require an immediate uplink.
 
 - When there is pending data indicated by fPending bit set in the previous downlink message sent by Network Server, the stack will automatically generate an empty outgoing message, if not configured otherwise. Application will not receive a `TX_DONE` in this case. The application may receive subsequent `RX_DONE` events as per reception of the pending data.
-- If a MAC command requires an immediate response, the stack generates an empty uplink automatically if not configured otherwise. The `TX_DONE` event is supressed because it was an automatic uplink.
+- If a MAC command requires an immediate response, the stack generates an empty uplink automatically if not configured otherwise. The `TX_DONE` event is suppressed because it was an automatic uplink.
 
 While the automatic uplink transaction is taking place, you receive a `LORAWAN_STATUS_WOULD_BLOCK` error message if you attempt to do a data uplink.
 

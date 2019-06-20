@@ -1,6 +1,6 @@
 <h1 id="storage-tech">Storage</h1>
 
-We designed the architecture of the Mbed OS storage solution with the following properties:
+The architecture of the Mbed OS storage solution has the following properties:
 
 - Wear-leveling of internal and external flash storage.
 - No wear-leveling for firmware, both active and future updates.
@@ -10,7 +10,7 @@ We designed the architecture of the Mbed OS storage solution with the following 
 
 <span class="images">![](../../images/storagearch.png)<span>Mbed OS storage C++ class names (Blue indicates implementation and yellow indicates interfaces)</span></span>
 
-Storage in Mbed OS is composed of multiple layers that stack. With these stackable layers, you can configure the storage system that is most appropriate for your needs. For example, if you only need to store small, fixed-size data, you can use TDBStore. If you need a POSIX-like API for random access of larger files, such as logs or databases, then LittleFS is a good choice. 
+Storage in Mbed OS is composed of multiple layers that stack. With these stackable layers, you can configure the storage system that is most appropriate for your needs. For example, if you only need to store small, fixed-size data, you can use TDBStore. If you need a POSIX-like API for random access of larger files, such as logs or databases, then LittleFS is a good choice.
 
 ## Class hierarchy
 
@@ -26,7 +26,7 @@ Interfaces from low-level to high-level:
 An example of implementations of the interfaces are:
 
 - BlockDevice.
-   - QSPIBlockDevice - Block device driver for NOR-based QSPI Flash devices that support the SFDP standard. 
+   - QSPIBlockDevice - Block device driver for NOR-based QSPI Flash devices that support the SFDP standard.
    - SPIFBlockDevice - Block device driver for NOR-based SPI flash devices that support SFDP. NOR-based SPI flash supports byte-sized read and writes, with an erase size of around 4 kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
    - SDBlockDevice - The SD driver uses the SDCard SPI mode of operation, which is a subset of possible SDCard functionality.
    - FlashIAPBlockDevice - Block device driver bound to the FlashIAP driver in Mbed OS for reading and writing to internal flash. Only use this driver on platforms where the FlashIAP implementation is using external flash or in conjunction with a file system with wear leveling, that can operate on a page size granularity.

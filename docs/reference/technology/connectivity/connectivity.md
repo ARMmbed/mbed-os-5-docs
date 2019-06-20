@@ -6,14 +6,14 @@ Mbed OS offers a strong, integrated stack of standards-based technologies:
 
 For IP devices:
 
+- Cellular.
+- NB-IoT.
 - Thread.
 - Wi-SUN.
 - 6LoWPAN-ND.
-- Cellular.
-- NB-IoT.
 - Bluetooth Low Energy (BLE).
 
-Non-IP devices:
+Non-IP devices require a gateway:
 
 - LoRaWAN.
 - Cellular.
@@ -26,7 +26,7 @@ There is a wide variety of possibilities for connected devices, and there is no 
 
 Mbed OS supports various IP-based connectivity options and IP stacks.
 
-<span class="images">![](../../../images/ip-networking-simple.png)</span>
+<span class="images">![](../../../images/ip-networking-simple.png)<span>Connectivity stack architecture in Mbed OS</span></span>
 
 Our Socket API standardizes all of our connectivity options. It supports both IPv4 and IPv6. Applications are portable regardless of final connectivity option.
 
@@ -34,7 +34,7 @@ Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
 
 ### Wi-Fi
 
-Wi-Fi has a relatively high throughput of up to 1 gbps, which is suitable for data-heavy applications. The cost of this throughput is high power consumption. Wi-Fi is not ideal for long-term deployments of battery-powered devices. It can also prove problematic where other devices compete for the same bandwidth.
+Wi-Fi has a relatively high throughput of up to 1 Gbps, which is suitable for data-heavy applications. The cost of this throughput is high power consumption. Wi-Fi is not ideal for long-term deployments of battery-powered devices. It can also prove problematic where other devices compete for the same bandwidth.
 
 It works for proof-of-concept devices because the infrastructure is in place in most offices, and its WPA2 security is familiar to developers.
 
@@ -42,7 +42,7 @@ End devices for Wi-Fi are complicated due to hardware requirements and limitatio
 
 ### Cellular
 
-Cellular has a variable throughput, reaching 10 mbps. Its coverage is extensive, and its range is 25-100km, so it is commonly used in transportation and logistics. It is also well-suited for proof of concept because, like Wi-Fi, it relies on an existing infrastructure. It's suitable for many use cases, from monitoring temperature sensors to streaming video.
+Cellular has a variable throughput, reaching 10 Mbps. Its coverage is extensive, and its range is 25-100 km, so it is commonly used in transportation and logistics. It is also well suited for proof of concept, because, like Wi-Fi, it relies on an existing infrastructure. It's suitable for many use cases, from monitoring temperature sensors to streaming video.
 
 Cellular coverage, load balancing and reliability are the responsibility of the providers, not the application. However, network access is subscription based, so there is a direct correlation between use and cost.
 

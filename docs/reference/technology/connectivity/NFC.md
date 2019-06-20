@@ -26,7 +26,7 @@ An NFC EEPROM can read from and write to a NDEF message. A NFC initiator can acc
 
 The NFC Forum defines 5 Tag specifications, which define how to transmit and receive NDEF messages on top of various NFC technologies.
 
-When using a controller, the Mbed OS NFC Framework can implement the [Type 4 Tag platform](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/tag-type-technical-specifications/). This means that the initiator can gnerate NDEF messages dynamically before each read and parse it after each write.
+When using a controller, the Mbed OS NFC Framework can implement the [Type 4 Tag platform](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/tag-type-technical-specifications/). This means that the initiator can generate NDEF messages dynamically before each read and parse it after each write.
 
 ## NFC controllers and NFC EEPROMs
 
@@ -46,7 +46,7 @@ NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os/tree/m
 
 ## API
 
-There are two entrypoints for the API, depending on whether you are using a NFC Controller or EEPROM.
+There are two entry points for the API, depending on whether you are using a NFC Controller or EEPROM.
 
 You must initiate either entry point with a driver instance, an event queue and a scratch buffer for NDEF messages.
 

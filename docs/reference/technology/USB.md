@@ -2,11 +2,11 @@
 
 ## Introduction
 
-A functional Mbed OS USB device consists of three parts - an implementation of USBPhy, the USBDevice stack and a USB component code:
+A functional Mbed OS USB device consists an implementation of USBPhy, the USBDevice stack and a USB component code:
 
-- USBPhy - provides raw access to USB in the role of a USB Device.
-- USBDevice - the core of Mbed OS's USB stack and is responsible for state management and synchronization.
-- USB component - code that inherits from USBDevice and provides the desired USB interfaces.
+- USBPhy provides raw access to USB in the role of a USB Device.
+- USBDevice is the core of Mbed OS's USB stack and is responsible for state management and synchronization.
+- USB component is code that inherits from USBDevice and provides the desired USB interfaces.
 
 <span class="images">![](../../images/usb_inheritance_diagram.png)</span>
 
@@ -16,9 +16,9 @@ You can see the interaction of these three components in this diagram:
 
 ## Synchronization
 
-The class USBDevice is an interrupt-safe class. It uses a critical section to provide thread- and interrupt-safe locking. USB components inheriting from USBDevice can use this lock, but it is not required.
+The class **USBDevice** is interrupt-safe. It uses a critical section to provide thread- and interrupt-safe locking. USB components inheriting from USBDevice can use this lock, but it is not required.
 
-The recommended model for synchronizing a USB component is to wrap code requiring synchronization in a call to `USBDevice::lock` and `USBDevice::unlock`. Functions or callbacks that a caller at a higher level has already synchronized should document this locking requirement by calling `USBDevice::assert_locked` in the first line of the function or callback.
+The recommended model for synchronizing a USB component is to wrap code requiring synchronization in a call to `USBDevice::lock` and `USBDevice::unlock`. Functions or callbacks already synchronized by a caller at a higher level should document this locking requirement by calling `USBDevice::assert_locked` in the first line of the function or callback.
 
 Code requiring locking:
 
@@ -46,7 +46,7 @@ void USBComponent::do_something_internal()
 
 ## USB device state
 
-USB defines 5 separate states a device can be in - Attached, Powered, Default, Address and Configured. Each state adds functionality. The Attached state has the least functionality, and the Configured state has the most functionality.
+USB defines five separate states of a device: **Attached**, **Powered**, **Default**, **Address** and **Configured**. Each state adds functionality. The **Attached** state has the least functionality, and the **Configured** state has the most functionality.
 
 | State      | Functionality                            |
 |:----------:|:----------------------------------------:|
@@ -56,11 +56,11 @@ USB defines 5 separate states a device can be in - Attached, Powered, Default, A
 | Address    |    No new functionality                  |
 | Configured |    All enabled endpoints are functional  |
 
-At any time, the USB device can enter a state with less functionality. This could be due to a loss of power event or a surprise USB disconnect. When leaving or outside of the Configured state, USBDevice ignores writes to and reads from all endpoints other than endpoint 0.
+Random power loss can cause the USB device to lose functionality. When leaving or outside of the Configured state, USBDevice ignores writes to and reads from all endpoints other than endpoint 0.
 
 ## USB component callbacks
 
-All callbacks USBDevice sends to its children are prefixed with callback_*. USBDevice calls these callbacks with the USB lock held. One notable callback is `callback_state_change`, which USB components can use generically to handle leaving the Configured state. The USB stack automatically exits the Configured state on disconnect, power loss or USB reset.
+All callbacks USBDevice sends to its children are prefixed with `callback_*`. USBDevice calls these callbacks with the USB lock held. One notable callback is `callback_state_change`, which USB components can use generically to handle leaving the Configured state. The USB stack automatically exits the Configured state on disconnect, power loss or USB reset.
 
 ### Control request state machine
 
@@ -93,7 +93,7 @@ Below is a diagram showing the typical state machine for read (OUT) and write (I
 
 To ensure a USB component runs on all supported devices, the USB component must select the configuration descriptor's endpoints based on the current device. This is because endpoint number and endpoint functionality can differ by device. A USB component can determine the features of USBPhy by examining its endpoint table.
 
-To simplify the process of selecting endpoints, we recommend you use the EndpointResolver class. A USB component constructs the class with an endpoint table. The USB component can then call the class to find an endpoint of the given type and size. After the component finds all required endpoints, it can call the function `EndpointResolver::valid()` to determine whether this device supports this configuration. Below is an example of this:
+To simplify the process of selecting endpoints, use the **EndpointResolver** class. A USB component constructs the class with an endpoint table. The USB component can then call the class to find an endpoint of the given type and size. After the component finds all required endpoints, it can call the function `EndpointResolver::valid()` to determine whether this device supports this configuration. Below is an example of this:
 
 ```c++ TODO
 EndpointResolver resolver(endpoint_table());
