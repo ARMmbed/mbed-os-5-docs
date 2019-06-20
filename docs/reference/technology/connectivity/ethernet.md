@@ -1,7 +1,7 @@
 <h1 id="ethernet-technology">Ethernet</h1>
 
 The term **Ethernet** refers to technologies first introduced in 1980 and standardized in 1983 as **IEEE 802.3**. Ethernet is a wired network, usually implemented by twisted pair wiring, or optical fiber and coaxials. However, coaxial has largely become obsolete.
-<!---note that fiber is still pretty uncommon?--->
+
 Initially, the speed from the standard was 1 Mbps, but later standards increased it first to 10 Mbps, and later 100 Mbps and 1 Gbps. The latter two are the most popular connection speeds today.
 
 Ethernet works with cable lengths of up to 100 meters. When connected to a switch, Ethernet allows the maximum segment length to span 200 meters.
