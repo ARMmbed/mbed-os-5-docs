@@ -150,7 +150,7 @@ Release: major
 
 Each pull request goes through the following workflow:
 
-![Pull request workflow](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/5.11/docs/images/Workflow.png)
+![Pull request workflow](../../../images/Workflow.png)
 
 ## Pull request states
 

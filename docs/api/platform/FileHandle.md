@@ -20,7 +20,7 @@ Exactly which operations a `FileHandle` supports depends on the underlying devic
 
 You can use a `FileHandle` directly, or you can use standard POSIX or C/C++ APIs to manipulate it. Stdio calls taking `FILE *stream` call the POSIX APIs taking `int fd`, which call methods on `FileHandle` objects.
 
-![FileHandle callstack](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/filehandle_callstack2.jpg)
+![FileHandle callstack](../../images/filehandle_callstack2.jpg)
 
 The `FileHandle` may be implicitly created by a higher layer, as in a call to `fopen`. In this case, the name lookup produces a `FileHandle` and POSIX file descriptor internally.
 

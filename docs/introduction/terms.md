@@ -142,6 +142,8 @@
 
 **Terminal Application** - [Applications](../tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 
+**Timeout** - The [maximum amount of time](../apis/timeout.html) an operation can take before it is considered a failure and stopped.
+
 **TLS** - Transport Layer Security.
 
 **Toolchain** - A [group of programming tools](../tools/exporting.html#setting-up-a-local-debug-toolchain).

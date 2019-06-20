@@ -8,13 +8,13 @@ The architecture of the Mbed OS storage solution has the following properties:
 
 ## Architectural design
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/storagearch.png)<span>Mbed OS storage C++ class names (Blue indicates implementation; yellow indicates interfaces.)</span></span>
+<span class="images">![](../../images/storagearch.png)<span>Mbed OS storage C++ class names (Blue indicates implementation and yellow indicates interfaces)</span></span>
 
 Storage in Mbed OS is composed of multiple layers that stack. With these stackable layers, you can configure the storage system that is most appropriate for your needs. For example, if you only need to store small, fixed-size data, you can use TDBStore. If you need a POSIX-like API for random access of larger files, such as logs or databases, then LittleFS is a good choice.
 
 ## Class hierarchy
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/storageclasshierarchy.png)<span>Storage class hierarchy (Blue indicates implementation classes, and yellow indicates interfaces)</span></span>
+<span class="images">![](../../images/storageclasshierarchy.png)<span>Storage class hierarchy (Blue indicates implementation classes, and yellow indicates interfaces)</span></span>
 
 Interfaces from low-level to high-level:
 

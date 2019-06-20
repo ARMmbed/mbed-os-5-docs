@@ -16,7 +16,7 @@ The whole porting process consists of two key ingredients:
 
 Arm Mbed OS provides a generic API that serves as a template for any LoRa RF driver. [LoRaRadio](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html) is a pure virtual class and is an attempt to standardize the APIs across all LoRa radios. Mbed Enabled LoRa radio driver implementations present as a LoRaRadio.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_radio_inherit.png)<span>Figure 1. Existing Mbed LoRa RF drivers inherit from the LoRaRadio class.</span></span>
+<span class="images">![](../../images/lora_radio_inherit.png)<span>Figure 1. Existing Mbed LoRa RF drivers inherit from the LoRaRadio class.</span></span>
 
 For a reference implementation, please see the existing [LoRa RF drivers](https://github.com/ARMmbed/mbed-semtech-lora-rf-drivers). Construction of a LoRaRadio object is a matter of taste. The existing reference drivers allow construction of the LoRaRadio object with full pin definitions to make sure that the driver is usable across platforms with any pin combination. You are free to use any form of construction as long as you provide a LoRaRadio object down to the Arm Mbed LoRaWAN stack. Use of an instance of the `LoRaRadio` class for a third party LoRaWAN stack is beyond the scope of this documentation.
 
@@ -40,7 +40,7 @@ There can be many different scenarios when it comes to devices supporting LoRaWA
 
 This design pattern follows the generic architecture with the LoRa radio part based on the LoRa transceiver and antenna plus associated RF circuitry from any vendor. The developer chooses only the LoRa radio chipset and the LoRaWAN stack, and the application runs on the MCU. In this case, you can use any Mbed compatible LoRaWAN stack, in other words, the native Mbed OS LoRaWAN stack or your ported LoRaWAN stack.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_radio_chipset.png)<span>Figure 3. Design based on LoRa RF chipset.</span></span>
+<span class="images">![](../../images/lora_radio_chipset.png)<span>Figure 3. Design based on LoRa RF chipset.</span></span>
 
 **Case 2: Design based on a LoRa module**
 
@@ -50,13 +50,13 @@ A LoRa module means that the LoRa transceiver and an MCU are bound together (not
 
 An RF-MCU is an SoC including an MCU and LoRa transceiver on the same silicon package. From a developer’s point of view, this design is identical to a module-based design described in Case 2.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_module.png)<span>Figure 4. Design based on LoRa module (both as integrated on board and on chip).</span></span>
+<span class="images">![](../../images/lora_module.png)<span>Figure 4. Design based on LoRa module (both as integrated on board and on chip).</span></span>
 
 **Case 4: Design based on a LoRa modem**
 
 A LoRa modem is a component that contains a stack and RF circuitry as a full package, mostly wired to a host MCU. In this case, if the developer wishes to be compliant with the existing applications, he or she may choose to write an adapter layer, which could be AT commands to control the modem.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora_modem.png)<span>Figure 5. Design based on LoRa modem.</span></span>
+<span class="images">![](../../images/lora_modem.png)<span>Figure 5. Design based on LoRa modem.</span></span>
 
 Please follow the detailed reference of `LoRaWANInterface` to understand what these APIs and related data structures mean and why are they designed in this way.
 

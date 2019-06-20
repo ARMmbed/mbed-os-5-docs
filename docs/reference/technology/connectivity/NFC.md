@@ -2,7 +2,7 @@
 
 NFC stands for Near-Field Communication and is a short-range radio technology. You can use it to enable use cases such as contactless payments, access control and device pairing.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/n_mark.png)<span>N Mark</span></span>
+<span class="images">![](../../../images/n_mark.png)<span>N Mark</span></span>
 
 You can find more details on NFC about the [NFC Forum's website](https://nfc-forum.org/what-is-nfc/).
 
@@ -42,7 +42,7 @@ NFC EEPROMs behave like NFC tags whose memory can either be addressed through a 
 
 NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/nfc) and demonstrate how to create NFC tags that you can be read from and write to using a phone.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/explorenfc_nucleo.jpg)<span>An Explore-NFC board attached to a NUCLEO board</span></span>
+<span class="images">![](../../../images/explorenfc_nucleo.jpg)<span>An Explore-NFC board attached to a Nucleo board</span></span>
 
 ## API
 
@@ -52,4 +52,4 @@ You must initiate either entry point with a driver instance, an event queue and 
 
 ## Design
 
-A detailed design document is available [within the Mbed OS source tree](https://github.com/ARMmbed/mbed-os/docs/design-documents/nfc/nfc_design.md). It details the rationale behind the API design.
+A detailed design document is available [within the Mbed OS source tree](https://github.com/ARMmbed/mbed-os/blob/master/docs/design-documents/nfc/nfc_design.md). It details the rationale behind the API design.

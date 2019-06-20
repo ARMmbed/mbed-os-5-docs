@@ -51,9 +51,6 @@ int main(void)
 ## Related content
 
 - [Mesh tutorial](../tutorials/mesh-tutorial.html) to start using mesh technology.
-- [Thread](../reference/thread-tech.html) technology reference material.
-- [Wi-SUN](../reference/wisun-tech.html) technology reference material.
-- [6LowPAN-ND](../reference/6LoWPAN-ND-tech.html) technology reference material.
-- [Mesh configuration](../reference/configuration-mesh.html).
 - [Light control tutorial](../tutorials/light-control.html), in which devices can control the LED status of all devices in the network.
-- [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) example application.
+- [Mesh configuration](../reference/configuration-mesh.html).
+- [Networking connectivity](../reference/networking.html) architecture reference material.

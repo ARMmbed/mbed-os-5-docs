@@ -1,6 +1,6 @@
 <h1 id="wifi-port">Wi-Fi</h1>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/wifi.png)<span>Wi-Fi driver</span></span>
+<span class="images">![](../../images/wifi.png)<span>Wi-Fi driver</span></span>
 
 This document describes how to port and test an IEEE 802.11 Wi-Fi driver to Mbed OS. There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol layer it implements. Wi-Fi drivers are either a special case of Ethernet driver or external IP stacks. Wi-Fi drivers require configuration from an application and, therefore, implement both the low-level EMAC API or network stack API and the high-level controlling interface API called `WiFiInterface`.
 

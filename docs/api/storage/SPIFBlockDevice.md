@@ -4,6 +4,8 @@
 
 This API is a block device for NOR-based SPI flash devices that support SFDP.
 
+<span class="notes">**Note:** Multiple protocols exist for SPI flash devices. This driver is for the SFDP SPI flash protocol. If your device uses the DataFlash protocol, you need the [DataflashBlockDevice](dataflashblockdevice.html)</span>
+
 NOR-based SPI flash supports byte-sized read and writes, with an erase size of around 4 kbytes. An erase sets a block to all 1s, with successive writes clearing set bits.
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
