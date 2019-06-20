@@ -33,6 +33,6 @@ As with Ethernet, Wi-Fi networks are only used for carrying IP traffic in Mbed O
 For more information, please see the following sections:
 
 - [IP networking](ip-networking.html).
-- [Ethernet](ethernet-technology.html). <!---Can links be like this, or do they need ../reference/?--->
+- [Ethernet](ethernet-technology.html).
 - [Socket API](../apis/socket.html).
 - [WifiInterface API](../apis/wi-fi.html).
