@@ -104,6 +104,5 @@ Please see the following sections of our documentation for more information.
 
 - A [mesh tutorial](../tutorials/mesh-tutorial.html) about selecting and using a mesh protocol.
 - Guides to porting [IEEE 802.15.4 MAC driver](../porting/mac-port.html) and [IEEE 802.15.4 RF driver](../porting/6lowpan-port.html).
+- Updated instructions for [troubleshooting common issues](../tutorials/debugging.html).
 - [A tutorial for sending data to Arm Treasure Data from an Mbed OS device](../mbed-os-pelion/send-data-securely-to-arm-treasure-data.html).
-- An [introduction to Mbed OS bare metal profile](../reference/mbed-os-bare-metal.html), and updates to the [quick start for a bare metal build](../quick-start/index.html).
-- New [USB APIs](../apis/usb.html).
