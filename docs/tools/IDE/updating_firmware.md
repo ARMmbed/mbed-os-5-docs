@@ -19,10 +19,10 @@ To be able to receive updates, an application must have:
 
 You need:
 
-- A **private key** so you can sign the firmware update manifest file. <!---check vocabulary---><!---
-- A **manifest file**, which defines the update, including the location of the new firmware image and the type of device the update applies to. The manifest file is signed with the private key to assure the device that the image is from a trusted source and has not been tampered with. <!---We often just call it a manifest, not a manifest file.---><!---
+- A **private key** so you can sign the firmware update manifest.<!---
+- A **manifest**, which defines the update, including the location of the new firmware image and the type of device the update applies to. The manifest is signed with the private key to assure the device that the image is from a trusted source and has not been tampered with.<!---
 
-For development use cases only, you can use the Online Compiler to generate the certificates and the manifest file. For production use cases, you would use offline tools to generate and store them securely. Learn more [about the developer workflow](#notes-about-the-developer-workflow).
+For development use cases only, you can use the Online Compiler to generate the certificates and the manifest. For production use cases, you would use offline tools to generate and store them securely. Learn more [about the developer workflow](#notes-about-the-developer-workflow).
 
 ## Creating an update image
 
