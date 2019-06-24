@@ -10,6 +10,6 @@ The target needs to support the Flash HAL API. You can find the guide to porting
 
 You can learn to port the Update client bootloader to new targets in [the porting guide](https://www.pelion.com/docs/device-management/current/porting/porting-the-device-management-update-client.html).
 
-An example walkthrough of porting the bootloader to the NUCLEO-F411RE target can be found [here](https://www.pelion.com/docs/device-management/current/porting/porting-a-new-target-for-mbed-os-using-sotp.html).
+For details, see our guide about [porting the bootloader to a target](https://www.pelion.com/docs/device-management/current/porting/porting-a-new-target-for-mbed-os-using-sotp.html).
 
 You can learn to create and use a new bootloader in our [tutorials](../tutorials/bootloader.html).
