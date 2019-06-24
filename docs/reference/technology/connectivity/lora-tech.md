@@ -79,7 +79,7 @@ The LoRaWAN specification defines two methods for connecting to an access networ
 
 ### Over the air activation (OTAA)
 
-OTAA consists of an exchange of MAC messages between the device and network server. The device sends a `JOIN REQUEST` to the network server containing an app EUI, a device EUI and device nonce (random value). The device EUI is like a MAC address and uniquely identifies the device in the network. The app EUI is the application identifier allocated to the device by the network server (out of band fashion). The `JOIN REQUEST` is sent unencrypted to the network server. In response, the network server sends a `JOIN ACCEPT` message to the device, which is encrypted by using yet another key, the app key, which the network provider provides to the device (out of band) just like the app EUI. The device then uses this app key, app nonce (random value or unique to the network provider), network ID and device nonce (another random value) to locally compute the network session key and app session key.
+OTAA consists of an exchange of MAC messages between the device and network server. The device sends a `JOIN REQUEST` to the network server containing an app EUI, a device EUI and device nonce (random value). The device EUI is like a MAC address and uniquely identifies the device in the network. The app EUI is the application identifier allocated to the device by the network server (out of band fashion). The `JOIN REQUEST` is sent unencrypted to the network server. In response, the network server sends a `JOIN ACCEPT` message to the device, which is encrypted by the app key, which the network provider provides to the device (out of band) just like the app EUI. The device then uses this app key, app nonce (random value or unique to the network provider), network ID and device nonce (another random value) to locally compute the network session key and app session key.
 
 ### Activation by personalization (ABP)
 
@@ -185,7 +185,7 @@ This class keeps the time base for the stack. It extracts the system time base f
 
 ##### LoRaMacCrypto class
 
-You can use the `LoRaMacCrypto` class for encoding and decoding LoRaWAN packets using Mbed TLS.
+You can use the `LoRaMacCrypto` class for encoding and decoding LoRaWAN packets using the crypto libraries of Mbed TLS.
 
 ##### LoRaMacCommand class
 
