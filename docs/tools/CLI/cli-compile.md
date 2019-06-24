@@ -94,7 +94,9 @@ mbed compile -f
 
 You can also read and write to the target's serial port by adding the `--sterm` argument (this can be chained with the `-f/--flash` argument):
 
-<!--missing example-->
+```
+mbed compile -f --sterm
+```
 
 ## Build sources and output
 
