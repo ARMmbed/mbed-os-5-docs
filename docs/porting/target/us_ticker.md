@@ -49,9 +49,9 @@ To enable microsecond ticker support in Mbed OS, add the `USTICKER` label in the
 
 ### Optimizing the microsecond ticker API
 
-The generic ticker API uses the `ticker_info_t` structure to determine each hardware counter's frequency and width. This then requires run-time calculations to convert between the hardware counter and the 64-bit microsecond count used by the generic API.
+The generic ticker API uses the `ticker_info_t` structure to determine each hardware counter's frequency and width. This then requires runtime calculations to convert between the hardware counter and the 64-bit microsecond count used by the generic API.
 
-In addition to the generic `ticker_info_t`, the target can also provide compile-time information about the microsecond ticker by defining the macros `US_TICKER_PERIOD_NUM`, `US_TICKER_PERIOD_DEN` and `US_TICKER_MASK`. If provided, these permit greatly optimized versions of APIs like `wait_us`. See the header file for full details.
+In addition to the generic `ticker_info_t`, the target can also provide compile-time information about the microsecond ticker by defining the macros `US_TICKER_PERIOD_NUM`, `US_TICKER_PERIOD_DEN` and `US_TICKER_MASK`. If provided, these permit greatly optimized versions of APIs such as `wait_us`. See the header file for full details.
 
 ## Testing
 
