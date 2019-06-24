@@ -92,5 +92,6 @@ Your development tool needs to use your Device Management account's API key to c
 
 **Tutorials**:
 
-- Try the firmware [update process on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update). Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).
+- Try the firmware [update process on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update).
+   <span class="notes">**Note:** You first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).</span>
 - Review the [Mbed CLI update commands](../tools/cli-update.html).
