@@ -33,6 +33,7 @@ $ mbed dm init -d "<company domain name>" --model-name "<product model identifie
 <span class="notes">**Note:** If you do not want to enter the subject information for your update certificate (country, state, city, organization and so on), add the `-q` flag to the command above.</span>
 
 This command asks for information about your update certificate. After completing the prompts, Mbed CLI creates several files:
+>This is actually more detailed and nicer than the information we have in the DM docs. Can we steal it?
 
 - A certificate in `.update-certificates/default.der`.
 - A matching private key in `.update-certificates/default.key.pem`.
