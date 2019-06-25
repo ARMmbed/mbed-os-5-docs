@@ -49,3 +49,4 @@ The Mbed OS HAL provides a set of conformance tests for the HAL USBPhy API. You 
 ```
 mbed test -t <toolchain> -m <target> -n mbed-os-tests-usb_device-*
 ```
+For **setup instructions**, known issues and more information about USB tests, see the [README](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/usb_device/README.md).
