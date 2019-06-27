@@ -1,7 +1,5 @@
 # Alarm tutorial
 
-<!--this really is more an example than a tutorial; it just does something, without explaining the principles behind it-->
-
 This tutorial is for an alarm application that uses a simple countdown mechanism. It relies on two input buttons to set, activate and silence the alarm. During the countdown, the device is in sleep mode. When the countdown ends and the alarm triggers, an LED and a digital out pin go high. They go back to low when the alarm is reset.
 
 The LEDs provides some feedback to the user: when setting the alarm, the LEDs blink to show the input was recognised. When the alarm is fully set, the LEDs blink the configured delay once, before letting the device go into sleep mode.
@@ -21,24 +19,24 @@ If using the Online Compiler, click the **Import into Mbed IDE** button below:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Alarm)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Alarm/main.cpp)
 
-## Compile and flash to your board<!--might be best to move this, and the troubleshooting bit, to a new page that all the tutorials can link to-->
+## Compile and flash to your board
 
 1. To compile the application:
 
-    * If using Mbed CLI, invoke `mbed compile`, and specify the name of your platform and toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5 and FRDM-K64F:
+   - If using Mbed CLI, invoke `mbed compile`, and specify the name of your platform and toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5 and FRDM-K64F:
 
-    ```
-    mbed compile -m K64F -t ARM
-    ```
+   ```
+   mbed compile -m K64F -t ARM
+   ```
 
-    * If using the Online Compiler, click the **Compile** button.
+   - If using the Online Compiler, click the **Compile** button.
 
-    Your PC may take a few minutes to compile your code.
+   Your PC may take a few minutes to compile your code.
 
-1. Fine the compiled binary:
+1. Find the compiled binary:
 
-    * If using the Online Compiler, the compiled binary will be downloaded to your default location.
-    * If using Mbed CLI, the compiled binary will be next to the source code, in your local copy of the example.
+   - If using the Online Compiler, the compiled binary will be downloaded to your default location.
+   - If using Mbed CLI, the compiled binary will be next to the source code, in your local copy of the example.
 
 1. Connect your Mbed device to the computer over USB.
 1. Copy the binary file to the Mbed device.
