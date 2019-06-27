@@ -4,7 +4,7 @@ This tutorial is for an alarm application that uses a simple countdown mechanism
 
 The LEDs provides some feedback to the user: when setting the alarm, the LEDs blink to show the input was recognised. When the alarm is fully set, the LEDs blink the configured delay once, before letting the device go into sleep mode.
 
-<span class="tips">You can complete this tutorial with the Mbed Online Compiler or [Mbed CLI](../tools/installation-and-setup.html).</span>
+<span class="tips">**Tip:** You can complete this tutorial with the Mbed Online Compiler or [Mbed CLI](../tools/installation-and-setup.html).</span>
 
 ## Import the example application
 
