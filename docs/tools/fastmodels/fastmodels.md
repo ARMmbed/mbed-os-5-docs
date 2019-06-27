@@ -70,7 +70,7 @@ $ FVP_MPS2_Cortex-M3 -a BUILD/FVP_MPS2_M3/GCC_ARM/mbed-os-example-blinky.elf
 
 The FVPs start running, and the LEDs on the FVP blink, like:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/fastmodel_cm3.png)<span>A screen shot of FVPs running</span></span>
+<span class="images">![](../../images/fastmodel_cm3.png)<span>A screen shot of FVPs running</span></span>
 
 <span class="notes">**Note:** FVP's `-a` option only takes `.elf` format images. To use the `--data` option with binary format images, please reference the [FVP reference guide](https://developer.arm.com/docs/100966/latest).</span>
 

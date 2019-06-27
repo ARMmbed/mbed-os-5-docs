@@ -66,6 +66,10 @@ The figure above shows the Mbed OS software component stack used for data storag
 - The Block API. The SDCard block device is a persistent storage block device.
 - The SPI module provides the Mbed OS SPI API.
 
+## Mbed OS `erase` for SDBlockDevice
+
+There is a difference between `erase` as usually defined for SD cards and the definition in Mbed OS: In Mbed OS, `erase` prepares the block device for writing. Because an SD card doesn't need preparation, `erase` is not applicable on SDBlockDevice; it's a no-op operation.
+
 ## SDBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.html)

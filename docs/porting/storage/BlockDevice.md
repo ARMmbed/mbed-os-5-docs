@@ -2,7 +2,7 @@
 
 Block devices are the basic building block of storage solutions in Mbed OS.
 
-![MbedOSStorage](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/MbedOS-storage-overview.png)
+![MbedOSStorage](../../images/MbedOS-storage-overview.png)
 
 File systems are backed by [blockdevice implementations](../apis/blockdevice.html). The BlockDevice API performs the low-level interactions with the hardware storage. To add your own block device implementation, we recommend you inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the and [implementing BlockDevice](#implementing-blockdevice) section below.
 
@@ -18,7 +18,7 @@ File systems are backed by [blockdevice implementations](../apis/blockdevice.htm
 
 ### Notes
 
-![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_block_size.png)
+![blockdevicesectors](../../images/blockdevice_block_size.png)
 
 Erase, program and read block sizes may not be the same; however, they must be multiples of one another.
 

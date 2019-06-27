@@ -6,6 +6,12 @@ The Thread class allows defining, creating and controlling parallel tasks.
 
 <span class="notes">**Note:** The function `main` is a special thread function that is started at system initialization.</span>
 
+## Memory considerations
+
+All the internal thread data structures are part of the C++ class, but by default, the thread stack is allocated on the heap. Memory is allocated at the run time during the call to `start` method. If you don't want to use dynamic memory, you can provide your own static memory using the constructor parameters.
+
+The default stack size is 4K. However, the application can override it by using the configuration system and setting the `THREAD_STACK_SIZE` option to the required size in `mbed_app.json`. For details, please see the [configuration documentation](../../reference/configuration/configuration.md).
+
 ## Thread class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)

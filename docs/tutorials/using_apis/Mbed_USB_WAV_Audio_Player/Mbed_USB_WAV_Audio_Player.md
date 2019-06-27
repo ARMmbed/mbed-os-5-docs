@@ -56,15 +56,13 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
    `mbed add https://github.com/ARMmbed/sd-driver`    
    `mbed add https://github.com/c1728p9/AudioPlayer`
-
+   
 1. Copy and paste the [example code](../tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav) into `main.cpp`.
-1. Make sure the SPI pins for the SDBlockDevice object are correct for your board. For example, in the code below, line 10 sets up SPI for the SDBlockDevice for the NXP-K64F Mbed board.
-1. Load a WAV file onto the SD card. The example below uses a public domain WAV file called ["Bach-minuet-in-g.wav"](../docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav). To use it, download it and put it in a `songs` directory on the SD card.
-
-   If you want to use another file, it must be WAV, PCM signed 16-bit little endian, or else it will not play (because USBAudio does not support any other WAV formats). The WAV file can have any sampling rate and any number of channels. You can use [Online-convert](https://audio.online-convert.com/convert-to-wav) to generate WAV files with different formats from any source audio file. The file "Bach-minuet-in-g.wav" is already in the correct format.
-
-   ![Convert audio to WAV](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img1.png)
-
+1. Make sure the SPI pins for the SDBlockDevice object are updated and correct for your board. For example, in the example below, line 10 sets up SPI for the SDBlockDevice for the NXP K64F Mbed board.
+1. Load WAV file(s) onto SD card. The example below uses a public domain WAV file called "Bach-minuet-in-g.wav" (attached below for download) that is inside a "songs" directory on the SD card. It is important that the WAV file be PCM signed 16-bit little endian, or else it will not play becaues USBAudio does not support any other WAV formats. The WAV file can have any sampling rate and can have any number of channels. You can use [Online-convert](https://audio.online-convert.com/convert-to-wav) to achieve WAV files with different formats from any source audio file. The file "Bach-minuet-in-g.wav" is already in the correct format.
+   
+   ![Convert audio to WAV](../../../images/Mbed_USB_WAV_Audio_Player_img1.png)
+   
 1. Compile the program and flash the binary.
 1. Make sure that the board is connected to the host PC over USB.
 1. Select `Mbed Audio` as the host PC's default audio input device.
@@ -134,3 +132,9 @@ int main() {
 ## Example WAV file  
 
 [Bach-minuet-in-g.wav](https://github.com/mrcoulter45/mbed-os-5-docs/raw/Mbed_USB_WAV_Audio_Player_Tutorial/docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav)
+
+## Troubleshooting   
+
+If USB properties of the Mbed USB WAV Audio Player are altered, such as the sample rate or number of channels, the Mbed board will need to be deleted and re-installed in the host PC's installed device list. In Device Manager, click View > Devices by Connection. Find "Mbed Audio" and uninstall the device. Reset the board and repeat Setup step 6. If problems still persist, be sure to format the WAV file correctly, as is denoted in Setup step 4.   
+
+![Device manager](../../../images/Mbed_USB_WAV_Audio_Player_img4.png)

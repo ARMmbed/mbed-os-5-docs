@@ -9,13 +9,13 @@ NetworkInterface is also the controlling API that the application uses to specif
 - [Ethernet](ethernet.html): API for connecting to the internet over an Ethernet connection.
 - [Wi-Fi](wi-fi.html): API for connecting to the internet with a Wi-Fi device.
 - [Cellular](cellular-api.html): API for connecting to the internet using a cellular device.
-- [Mesh networking interface](mesh-api.html): Mbed OS provides two kinds of IPv6-based mesh networks - 6LoWPAN_ND and Thread.
+- [Mesh networking interface](mesh-api.html): API for connecting to the IPv6-based mesh networks.
 
 ## Network connectivity states
 
 When you create a network interface, it starts from the disconnected state. When you call `NetworkInteface::connect()`, the interface stays connected until you call `NetworkInterface::disconnect()`. The following diagram illustrates the state changes:
 
-![Network states](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/NetworkinterfaceStates.png)
+![Network states](../../images/NetworkinterfaceStates.png)
 
 The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection. The `ThreadInterface` returns from `connect()` call when it joins a local mesh network. It may later get a global connection when it finds a border router.
 

@@ -4,7 +4,8 @@ This section contains step-by-step tutorials that show you how to perform specif
 
 ## Connectivity
 
-- [Light control using Mesh](../tutorials/light-control.html).
+- [Choosing and connecting a mesh protocol](../tutorials/mesh-tutorial.html).
+- [Light control using mesh](../tutorials/light-control.html).
 - [BLE](ble-tutorial.html).
 - [LoRa Network](LoRa-tutorial.html).
 

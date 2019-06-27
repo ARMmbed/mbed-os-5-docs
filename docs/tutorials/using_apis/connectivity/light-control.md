@@ -93,8 +93,8 @@ A sample `mbed_app.json` file:
 
 #### Thread commissioning
 
-By default, the Thread application uses the static network link configuration defined in the <!--mesh or Mesh?-->>[mesh API configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json).
-If you want to commission a Thread device, see [how to commission a Thread device in practice](../reference/mesh-tech.html#thread-commissioning).
+By default, the Thread application uses the static network link configuration defined in the [Mesh API configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json).
+If you want to commission a Thread device, see [how to commission a Thread device in practice](../reference/thread-tech.html#thread-commissioning).
 
 The Thread stack learns the network settings from the commissioning process and, by default, saves them to RAM memory. Therefore, the learned network settings are lost every time you restart the device. To prevent the need to recommission, save the Thread configuration settings to an SD card instead of RAM (only for the `K64F`):<!--why? can't it work with other boards that have an SD card?-->
 

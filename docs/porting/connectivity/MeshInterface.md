@@ -1,85 +1,203 @@
-<h1 id="6lowpan-port">6LoWPAN stack</h1>
+<h1 id="6lowpan-port">IEEE 802.15.4 RF driver</h1>
 
-Device drivers are a set of functions for providing PHY layer devices for the 6LoWPAN stack:
-
-- registering the device.
-- receiving function.
-- a set of device controlling functions.
-
-## How Nanostack runs inside Mbed OS
-
-The Mbed OS port of Nanostack consists of a few helper modules that provide an easier API for users and a Platform API for working inside the operating system.
-
-![Nanostack inside Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/nanostack_in_mbed_OS.png)
-
-- Mbed Mesh API controls and initializes Nanostack on Mbed OS.
-    - Security settings.
-    - Channel configuration.
-    - Connection and reconnection logic.
-- [nanostack-hal-mbed-cmsis-rtos](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-hal-mbed-cmsis-rtos) implements Platform API for Mbed OS.
-    - An internal event handler is initialized when the stack starts.
-    - The event handler is running in its own thread. Not visible for users.
-- [NanostackInterface](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/nanostack-interface) class implements the network stack abstraction for the socket layer.
-    - Initializes the RF driver. See [Providing RF driver](#providing-rf-driver-for-mbed-os-applications).
-
-In Mbed OS, Socket API hides the differences between the networking stacks. Users will only use one of its high level APIs:
-
-- UDPSocket.
-- TCPSocket.
-- TCPServer.
-
-![Sockets in Mbed OS](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbedOS_sockets.png)
-
-For an example of a simple application using Nanostack, see [Example mesh application for Mbed OS](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
-
-For more information, see the [documentation of the Socket API](../apis/network-socket.html).
-
-### Providing RF driver for Mbed OS applications
-
-For Mbed OS 5, the RF driver implements the `NanostackRfPhy` API. `MeshInterfaceNanostack` requires the driver object to be provided when initializing.
-
-![NanostackRfPhy](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NanostackRfPhy.png)
-
-Applications use only `LoWPANNDInterface` or `ThreadInterface` directly to set up the network and provide a driver. The rest of the classes provide an abstration between Nanostack and Socket layers of Mbed OS.
-
-See [NanostackRfPhy](../mbed-os-api-doxy/class_nanostack_rf_phy.html) for an up-to-date header file and API.
-
-## Device Driver API
-
-The 6LoWPAN stack uses Device Driver API to communicate with different physical layer drivers. The 6LoWPAN stack supports different device types for PHY layer and special cases where raw IPv6 datagrams are forwarded to a driver.
-
-The driver must first be registered with the 6LoWPAN stack using the `phy_device_driver_s` structure defined in the section [_PHY device driver register_](#phy-device-driver-register). This structure defines all the functions that the stack uses when calling a device driver. When the device driver must call the driver API from the stack, it uses the ID number received in the registration phase to distinguish between different devices. The following sections define the contents of the driver structures and API interfaces that the driver can use.
-
-## How to create a new RF driver
+## Porting a new RF driver
 
 The following steps describe how you can create a new RF driver:
 
-1. Read through the section [_Example RF driver_](#example-rf-driver). You can use this example code as your starting point.
-
-1. Fill in the actual transceiver-specific parts of the RF driver.
-
-1. Register the driver to the 6LoWPAN stack on your application. You can use the example node applications with your driver.
-
-1. Create a MAC that is suitable for your purpose (802.15.4, Ethernet or serial).
-
-1. Implement the `NanostackRfPhy` API.
-
-1. Check with an RF sniffer tool that you can see RF packets transmitted when you start your device. The 6LoWPAN bootstrap should start with IEEE 802.15.4 Beacon Request packets.
-
+1. Please see the [Nanostack PHY API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/sal-stack-nanostack/nanostack/platform/arm_hal_phy.h).
+1. Please read through the [_Example RF driver_](#example-rf-driver) section. You can use this example code to start.
+1. Please see the reference implementations for [simple](https://github.com/ARMmbed/mbed-os/blob/master/components/802.15.4_RF/atmel-rf-driver/source/NanostackRfPhyAtmel.cpp) and [extended](https://github.com/ARMmbed/mbed-os/blob/master/components/802.15.4_RF/stm-s2lp-rf-driver/source/NanostackRfPhys2lp.cpp) RF drivers.
+1. Please read usage of the worker thread [_Worker thread for Mbed OS_](#worker-thread-for-mbed-os).
+1. Please see [_Implementing PHY API_](#implementing-phy-api) for details how to implement callbacks and API functions:
+   
+   - Global time stamp functionality.
+   - RF driver registration.
+   - Address write callback.
+   - State control callback.
+   - RF extension callback.
+   - TX functionality.
+   - RX functionality.
+   
 1. Build the Nanostack MAC tester application:
-
+   
    `mbed test --clean --compile --icetea -t <toolchain> -m <platform> -DICETEA_MAC_TESTER_ENABLED --test-config NANOSTACK_MAC_TESTER -n address_read_and_write`
-
+   
 1. Verify the functionality of your implementation by running the Nanostack RF driver testcase set in the Mbed OS repository:
-
+   
    `mbed test --run --icetea -t <toolchain> -m <platform> --test-config NANOSTACK_MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
+
+<span class="notes">**Note:** The MAC tester application is a basic verification tool for the RF driver. When going to production, please use more specific RF driver testing.</span>
+
+## Implementing the PHY API
+
+PHY API guidance is separated into ***simple*** and ***extended*** implementations, which depend on the configuration you use:
+
+- You can use the ***simple*** implementation with:
+
+   - Thread.
+   - 6LoWPAN without frequency hopping.
+   
+- You can use the ***extended*** implementation with:
+
+   - Thread.
+   - 6LoWPAN with and without frequency hopping.
+   - Wi-SUN.
+   
+### Global time stamp functionality
+
+This functionality is necessary only with the ***extended*** implementation.
+
+The RF driver must implement a timer with a one-microsecond resolution to return a 32-bit time stamp value. The driver must be able to return the current time stamp when Nanostack requests it. The driver must store the time stamp of received packets where the time is referenced to the first byte after the SFD of the received frame.
+
+### RF driver registration
+
+Use `arm_net_phy_register` to register the RF driver to Nanostack. The function returns the driver ID, which you must use when creating the MAC instance. Registration is similar for both the ***simple*** and ***extended*** implementations. You must fill the structure of `phy_driver`:
+
+Parameter|Value
+-----|-----------
+`link_type`|`PHY_LINK_15_4_2_4GHZ_TYPE` or `PHY_LINK_15_4_SUBGHZ_TYPE`.
+`PHY_MAC`|PHY driver must deliver a unique 64-bit MAC address.
+`driver_description`|Name of the driver.
+`phy_channel_pages`|Default RF configurations.
+`phy_MTU`|MTU size. Typical values: 127 for 802.15.4-2006, 2047 for 802.15.4g-2012.
+`phy_header_length`|Extra header to be allocated for transmitted packet by MAC. Typically 0.
+`phy_tail_length`|Extra tail to be allocated for transmitted packet by MAC. Typically 0.
+`address_write`|RF address write callback function.
+`extension`|RF extension callback function.
+`state_control`|RF state control callback function.
+`tx`|RF packet transmit callback function.
+
+Any other callbacks and parameters must be nullified.
+
+### Address write callback
+
+Nanostack calls the address write callback `int8_t (*address_write)(phy_address_type_e, uint8_t *)` to set addresses for RF receive filtering. This callback is similar for both the ***simple*** and ***extended*** implementations.
+
+Address type|Use
+-----|-----------
+`PHY_MAC_64BIT`|Driver must set given 64-bit address as the receive address filter.
+`PHY_MAC_16BIT`|Driver must set given 16-bit address as the receive address filter.
+`PHY_MAC_PANID`|Driver must set given 16-bit PAN ID as the receive PAN ID filter.
+
+### State control callback
+
+Nanostack calls the state control callback `int8_t (*state_control)(phy_interface_state_e, uint8_t)` to change the RF state. This callback is similar for both the ***simple*** and ***extended*** implementations.
+
+State|Use
+-----|-----------
+`PHY_INTERFACE_RESET`|Driver must stop any active TX and RX processes and set radio to idle state.
+`PHY_INTERFACE_DOWN`|Driver must stop any active TX and RX processes and set radio to sleep or idle state.
+`PHY_INTERFACE_UP`|Driver must wake up the radio and enable receiver on a channel that was given as parameter.
+`PHY_INTERFACE_RX_ENERGY_STATE`|Driver must initialize energy detection on a channel that was given as parameter. Nanostack reads the ED result using RF extension `PHY_EXTENSION_READ_CHANNEL_ENERGY`.
+`PHY_INTERFACE_SNIFFER_STATE`|Driver must enable receiver on a channel that was given as parameter. All filtering must be disabled. This state is used only if device is set as Sniffer.
+
+### RF extension callback
+
+Nanostack calls the RF extension callback `int8_t (*extension)(phy_extension_type_e, uint8_t *)` to set or get various PHY parameters. Some of the extensions are needed only with ***extended*** implementations.
+
+Mandatory for ***simple*** and ***extended*** implementations:
+
+Extension type|Use
+-----|-----------
+`PHY_EXTENSION_CTRL_PENDING_BIT`|Driver must set frame pending bit of the Ack frames high or low depending on the value of given (uint8_t *) parameter. If parameter > 0, set frame pending bit to 1 and otherwise to 0.
+`PHY_EXTENSION_READ_LAST_ACK_PENDING_STATUS`|Driver must return the state of the frame pending bit used in last transmitted Ack frame. State (0 or 1) must be written to given (uint8_t *) parameter.
+`PHY_EXTENSION_READ_CHANNEL_ENERGY`|Driver must return the read channel energy. Value must be written in given (uint8_t *) parameter as an 8-bit integer.
+`PHY_EXTENSION_ACCEPT_ANY_BEACON`|Driver must stop filtering received 802.15.4 Beacon frames and accept them all if the given (uint8_t *) parameter is > 0.
+
+Mandatory for ***extended*** implementation:
+
+Extension type|Use
+-----|-----------
+`PHY_EXTENSION_SET_CHANNEL`|Driver must enable receiver on a channel which was given as parameter. If radio is currently receiving or transmitting a frame, channel should be changed after the TX/RX process.
+`PHY_EXTENSION_READ_RX_TIME`|Driver must return the time stamp of last received packet. Time stamp must be referenced to first byte after SFD field of the received packet.
+`PHY_EXTENSION_DYNAMIC_RF_SUPPORTED`|Driver must return 1 if it supports ***extended*** RF driver implementation. By default, Nanostack assumes ***simple*** implementation is used. Value (0 or 1) must be written to given (`uint8_t *`) parameter.
+`PHY_EXTENSION_GET_TIMESTAMP`|Driver must return 32-bit time stamp by writing it to given (`uint8_t *`) parameter.
+`PHY_EXTENSION_SET_CSMA_PARAMETERS`|Driver must read `phy_csma_params_t` type structure behind given (`uint8_t *`) parameter. If parameter `backoff_time` is 0, any on-going transmission must be canceled and radio set to receive state on the current channel. 32-bit `backoff_time` and boolean `cca_enabled` must be stored because they will be used for next packet transmission.
+`PHY_EXTENSION_GET_SYMBOLS_PER_SECOND`|Driver must return symbol rate as symbols per second. 32-bit value must be written to given (`uint8_t *`) parameter.
+`PHY_EXTENSION_SET_RF_CONFIGURATION`|Driver must read `phy_rf_channel_configuration_s` type structure behind given (`uint8_t *`) parameter. Driver must start using given RF configuration as soon as possible. If radio is currently receiving or transmitting a frame, configuration should be changed after the TX/RX process.
+
+Optional:
+
+Extension type|Use
+-----|-----------
+`PHY_EXTENSION_FILTERING_SUPPORT`|If RF driver can support filtering and acking certain MAC frame types, it can set the corresponding bit in a given (`uint8_t *`) parameter to 1, which disables the filtering of this frame type from Nanostack.
+
+### TX functionality
+
+Nanostack calls the TX callback `int8_t (*tx)(uint8_t *, uint16_t, uint8_t, data_protocol_e)` to start packet transmission. To implement the TX callback, follow either the ***simple*** or ***extended*** implementation path:
+
+1. Driver must return -1 if it is currently busy (already transmitting or receiving) or 0 if it can start transmission.
+1. When TX callback allows starting the transmission by returning 0, it must tell to Nanostack when the transmission is done by calling `phy_tx_done_cb` with proper TX done status. Parameter `tx_handle` in a TX done call must be set to same value as in a corresponding TX (start) call.
+1. Copy transmitted data from behind given first (`uint8_t *`) parameter to radio TX FIFO and prepare radio ready for transmission. Data behind this pointer is valid and unchanged until the driver calls the `phy_tx_done_cb`, which allows data to be copied to TX FIFO also when RF driver has returned from the TX function.
+
+***Simple*** implementation:
+
+1. Start optional CSMA-CA period or check CCA immediately. Using a short (1-5 ms) randomly generated CSMA-CA period significantly reduces the number of collisions when network size increases.
+1. If the channel is not available, call `phy_tx_done_cb` with status `PHY_LINK_CCA_FAIL`. If the RF driver performs several CCA attempts, the `cca_retry` parameter must list the number of attempts.
+1. If channel is available, start transmission immediately.
+1. When transmission is finished, call `phy_tx_done_cb` with status `PHY_LINK_TX_SUCCESS`.
+1. If the Ack frame was received for transmitted packet, call `phy_tx_done_cb` with status `PHY_LINK_TX_DONE` or `PHY_LINK_TX_DONE_PENDING` depending on the state of frame pending field in the Ack frame.
+   
+   <span class="notes">**Note:** It is the RF driver's responsibility to compare the sequence number of the transmitted data and received Ack frame.</span>
+   
+1. If the driver performed MAC retransmissions, the `tx_retry` parameter must list the number of retry attempt.
+
+***Extended*** implementation:
+
+1. Read the stored CCA mode (`cca_enabled`), which Nanostack set with the `PHY_EXTENSION_SET_CSMA_PARAMETERS` event just before the current transmission. If `cca_enabled` equals to `false`, the driver must not check CCA but proceed to next step as if the channel was available.
+1. Read the stored backoff time, which Nanostack set with the `PHY_EXTENSION_SET_CSMA_PARAMETERS` event just before the current transmission. If the backoff time is 0, cancel the transmission.
+1. Calculate the length of the CSMA-CA period using the time stamp and given backoff time: `csma_ca = backoff_time - current_time`.
+1. Start the CSMA-CA timer with the calculated `csma_ca`. This timer must operate with 1 microsecond resolution. If `csma_ca` is larger than 65000 us, start the CSMA-CA timer with a minimum possible timeout value (1 us).
+1. When the CSMA-CA timeout has passed, the driver must call `phy_tx_done_cb` with status `PHY_LINK_CCA_PREPARE` to read the state of the CSMA-CA process. State is given as a return value of the `phy_tx_done_cb` call.
+1. If the state is `PHY_TX_NOT_ALLOWED`, cancel the transmission. There is no need for an additional `phy_tx_done_cb` call. Ensure the receiver is enabled.
+1. If the state is `PHY_RESTART_CSMA`, check the CCA immediately. If the channel is not available, call `phy_tx_done_cb` with status `PHY_LINK_CCA_FAIL`. If the channel is available, call `phy_tx_done_cb` with status `PHY_LINK_CCA_OK`, and return to step 4. Note that Nanostack has updated CCA mode and backoff time with the `PHY_EXTENSION_SET_CSMA_PARAMETERS` event.
+1. If the state is `PHY_TX_ALLOWED`, check the CCA immediately. If the channel is not available, call `phy_tx_done_cb` with status `PHY_LINK_CCA_FAIL`. If the channel is available, start transmission of the packet immediately.
+1. When transmission finishes, call `phy_tx_done_cb` with status `PHY_LINK_TX_SUCCESS`.
+1. If Ack frame was received for the transmitted packet, call `phy_tx_done_cb` with status `PHY_LINK_TX_DONE` or `PHY_LINK_TX_DONE_PENDING`, depending on the state of frame pending field in Ack.
+   
+   <span class="notes">**Note:** It is the RF driver's responsibility to compare the sequence number of the transmitted data and received Ack frame unless the IEEE 802.15.4-2015 frames are used.</span>
+   
+1. The driver must not generate additional CSMA-CA or MAC retransmission attempts with ***extended*** implementation because the transmitted frame contains timing critical information, which Nanostack needs to update before every attempt.
+
+### RX functionality
+
+When Nanostack has called `PHY_INTERFACE_UP` RF state, the receiver must be kept enabled on a channel given by the `PHY_INTERFACE_UP` or `PHY_EXTENSION_SET_CHANNEL` event unless transmission is active until the `PHY_INTERFACE_RESET` or `PHY_INTERFACE_DOWN` RF state is called. RX functionality is similar for both ***simple*** and ***extended*** implementation. Depending on your application, the driver only needs to handle the wanted frame type (for example, 802.15.4-2006 or 802.15.4-2015).
+
+Nanostack is capable of filtering and acking IEEE 802.15.4-2015 frames. The RF driver must filter and ack any other frame version. For a received frame, the driver must call the RX callback `arm_net_phy_rx_fn *phy_rx_cb(const uint8_t *data_ptr, uint16_t data_len, uint8_t link_quality, int8_t dbm, int8_t driver_id)`, where: 
+ 
+- `data_ptr` - Pointer to the beginning of received MAC frame.
+- `data_len` - MAC frame length.
+- `link_quality` - LQI of the received frame.
+- `dbm` - RSSI of the received frame.
+- `driver_id` - ID of the RF driver.
+
+To handle the received frame, check the frame version of a received packet. For IEEE 802.15.4-2015 frames, call `phy_rx_cb`.
+
+For other frame types:
+   
+   1. Check if the received frame is Ack. If true, check if the received frame is Ack for a packet the driver previously sent. If true, call `phy_tx_done_cb` with status `PHY_LINK_TX_DONE` or `PHY_LINK_TX_DONE_PENDING`, depending on the state of frame pending field in Ack.
+   1. Otherwise, filter PAN ID and MAC address:
+   
+      - Drop packet by PAN ID filter if all conditions below are true:
+         
+         - Received destination PAN id ID not broadcast (0xffff).
+         - Nodes own PAN ID is set (not 0xffff).
+         - Received destination PAN ID does not equal to nodes PAN ID.
+	 
+      - Frame is not IEEE 802.15.4 Beacon frame. This condition is necessary only if `PHY_EXTENSION_ACCEPT_ANY_BEACON` is set by Nanostack. 
+       - Drop packet by address filter if all conditions below are true:
+          
+          - Received destination address is not broadcast address.
+          - Received destiantion address does not equal to nodes 16-bit or 64-bit MAC address.
+	  
+   1. If received frame passes the filtering, check if ack is required, and transmit it immediately.
+   1. If received frame passes the filtering, call `phy_rx_cb`.
 
 ## Worker thread for Mbed OS
 
-Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, the mutex cannot be used
-from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement their own worker thread to handle the interrupt requests.
+Nanostack's interfaces use mutexes for protecting the access from multiple threads. In Mbed OS, you cannot use the mutex from an interrupt. The same applies to all APIs that have internal locking and multithread support. Therefore, each driver must implement its own worker thread to handle the interrupt requests.
 
-Example: Use worked thread and signals from an interrupt
+Example: Use the worker thread and signals from an interrupt.
 
 ```
 // Signals from interrupt routines
@@ -95,7 +213,7 @@ static void rf_interrupt(void)
     irq_thread.signal_set(SIG_RADIO);
 }
 
-static void rf_timer_signal(void)
+static void rf_timer_interrupt(void)
 {
     irq_thread.signal_set(SIG_TIMER);
 }
@@ -121,292 +239,21 @@ void rf_worker_thread(void)
 
 ...
 // Somewhere in the initialization code
-irq_thread.start(rf_if_irq_task);
+irq_thread.start(rf_worker_thread);
 
 ```
-
-## RF driver states
-
-_Figure 11-1_ below shows the basic states of the RF driver.
-
-The basic states in more detail:
-
-State|Description
------|-----------
-`DOWN`|This is the initial state of the driver. The radio is not used in this state.
-`RX ACTIVE`|In this state, the driver has the radio turned on and it can receive a packet or ACK from the radio. The driver can also go from this state to the `TX ACTIVE` state to transmit a packet.
-`TX ACTIVE`|In this state, the driver will try to start a transmission:<br>1. It must first check that it is not currently busy doing something else.<br>2. It must check that the channel is free.<br>3. Finally, it can try to transmit the packet.
-`SNIFFER`|This mode can be implemented to enable using the device as a packet sniffer. In this state, the RX is always on and the received packets are sent to the application layer but nothing is transmitted back.
-`ED SCAN`|This mode can be implemented to enable energy scan. It enables scanning the energy from channels one by one and nothing else.
-`ANY STATE`|This state represents all the states in the state machine.
-
-<span class="notes">**Note**: The driver [initialization and registration](#phy-device-driver-register) using the function `arm_net_phy_register` must be performed before the driver is functional.</span>
-
-For more details on the TX process, see _Figure 4-1_.
-
-**Figure 4-1 RF driver states**
-
-![scan](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ed_scan_process.png)
-
-In sniffer mode, the device only receives packets, never ACKs, and it does not send them.
-
-The following commands are received as a parameter of the function `state_control` defined in the struct of type `phy_device_driver_s`:
-
-- `PHY_INTERFACE_UP`
-- `PHY_INTERFACE_DOWN`
-- `PHY_INTERFACE_RESET`
-- `PHY_INTERFACE_RX_ENERGY_STATE`
-- `PHY_INTERFACE_SNIFFER_STATE`
-
-The following commands are received as a parameter of the function `extension` defined in the struct of type `phy_device_driver_s`:
-
-- `PHY_EXTENSION_READ_CHANNEL_ENERGY`
-- `PHY_EXTENSION_SET_CHANNEL`
-
-_Figure 4-2_ describes the TX process.
-
-The following describes the states in more detail:
-
-State|Description
------|-----------
-`CCA PROCESS`|In the _Clear Channel Assessment_ (CCA) process, the radio checks that the channel is free before it starts sending anything to avoid collisions. Before starting the actual CCA process, the driver checks that it is not currently receiving a packet from the radio, in which case the CCA process fails.
-`SEND PACKET`|In this state, the driver commands the radio to send the data given to the driver as a parameter from the function tx defined in the struct of type `phy_device_driver_s`.
-
-**Figure 4-2 TX process**
-
-![tx](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_process.png)
-
-## PHY device driver register
-
-This function is for the dynamic registration of a PHY device driver. The 6LoWPAN stack allocates its own device driver list internally. This list is used when an application creates network interfaces for a specific PHY driver.
-
-To register a PHY driver to the stack:
-
-```
-int8_t arm_net_phy_register(phy_device_driver_s *phy_driver);
-```
-
-## PHY data RX API
-
-This is a callback that is part of the device driver structure and initialized by the stack when a driver is registered.
-
-The driver calls this function to push the received data from a PHY to the stack:
-
-```
-typedef int8_t arm_net_phy_rx_fn(const uint8_t *data_ptr, uint16_t data_len, uint8_t link_quality, int8_t dbm, int8_t driver_id);
-```
-
-## PHY data TX done API
-
-This is a callback that is part of the device driver structure and initialized by the stack when a driver is registered.
-
-The driver calls this function when it has completed a transmit attempt:
-
-```
-typedef int8_t arm_net_phy_tx_done_fn(int8_t driver_id, uint8_t tx_handle, phy_link_tx_status_e status, uint8_t cca_retry, uint8_t tx_retry);
-```
-
-When the PHY device handles the CSMA-CA and auto-retry, the stack needs to know the total number of CCA attempts or TX attempts made in case of error. The stack retries the CCA phase 8 times and the TX attempt 4 times. These may be handled by the hardware.
-
-If the CSMA-CA is handled by the hardware, the `cca_retry` should return a value larger than 7 if returning `PHY_LINK_CCA_FAIL` status to the stack. If the total number of CCA retries is less than 8, the stack initiates a new CCA phase.
-
-When the hardware handles the auto-retry mode, the error cases should report the number of TX attempts made in the `tx_retry` parameter. If the total number of retries is less that 4, the stack initiates a retransmission.
-
-## PHY driver structure and enumeration definitions
-
-This section introduces driver API specific structures and enumerations.
-
-### PHY TX process status code
-
-This enumeration defines the PHY TX process status code:
-
-```
-typedef enum phy_link_tx_status_e
-{
-	PHY_LINK_TX_DONE,
-	PHY_LINK_TX_DONE_PENDING,
-	PHY_LINK_TX_SUCCESS,
-	PHY_LINK_TX_FAIL,
-	PHY_LINK_CCA_FAIL
-} phy_link_tx_status_e;
-```
-
-Parameter|Description
----------|-----------
-`TX_DONE`|TX process is Ready and ACK RX.
-`TX_DONE_PENDING`|TX process is OK with an ACK pending flag.
-`TX_SUCCESS`|MAC TX complete MAC will make a decision to enter a wait ack or TX Done state.
-`TX_FAIL`|The link TX process fails.
-`CCA_FAIL`|RF link CCA process fails.
-
-### PHY interface control types
-
-This enumeration defines the PHY interface control types:
-
-```
-typedef enum phy_interface_state_e
-{
-	PHY_INTERFACE_RESET,
-	PHY_INTERFACE_DOWN,
-	PHY_INTERFACE_UP
-} phy_interface_state_e;
-```
-
-Parameter|Description
----------|-----------
-`RESET`|Resets a PHY driver and sets it to idle.
-`DOWN`|Disables the PHY interface driver (RF radio disabled).
-`UP`|Enables the PHY interface driver (RF radio receiver ON).
-
-### PHY device driver
-
-This PHY device driver structure comprises the following members:
-
-```
-typedef struct phy_device_driver_s
-{
-	phy_link_type_e link_type;
-	driver_data_request_e data_request_layer;
-	uint8_t *PHY_MAC;
-	uint16_t phy_MTU;                                               /**< Define MAX PHY layer MTU size. */
-	char * driver_description;
-	uint16_t phy_MTU;
-	uint8_t phy_tail_length;
-	uint8_t phy_header_length;
-	int8_t (*state_control)(phy_interface_state_e, uint8_t);
-	int8_t (*tx)(uint8_t *,uint16_t,uint8_t, data_protocol_e);
-	int8_t (*address_write)(phy_address_type_e ,uint8_t *);
-	int8_t (*extension)(phy_extension_type_e,uint8_t *);
-	const phy_device_channel_page_s *phy_channel_pages;
-
-	//Upper layer callbacks, set with arm_net_phy_init();
-	arm_net_phy_rx *phy_rx_cb;
-	arm_net_phy_tx_done *phy_tx_done_cb;
-	//Virtual upper layer rx/tx functions
-	arm_net_virtual_rx *arm_net_virtual_rx_cb;
-	arm_net_virtual_tx *arm_net_virtual_tx_cb;
-	uint16_t tunnel_type;
-} phy_device_driver_s;
-```
-
-Member|Description
-------|-----------
-`link_type`|Defines the device driver type.
-`data_request_layer`|Defines the interface Data OUT protocol.
-`PHY_MAC`|A pointer to a 48-bit or 64-bit MAC address.
-`PHY_MTU`|The size of the maximum transmission unit.
-`driver_description`|A short driver-specific description in Null-terminated string format.
-`phy_MTU`|The maximum MTU size of the physical layer.
-`phy_tail_length`|The tail length used by the PHY driver.
-`phy_header_length`|The header length used by the PDU PHY driver.
-`state_control`|A function pointer to the interface state control.
-`tx`|A function pointer to the interface TX functionality.
-`address_write`|A function pointer to the interface address writing (PAN ID, short address).
-`extension`|A function pointer to the interface extension control.
-`phy_channel_pages`|This pointer must be set only when the interface type is:<br>`NET_INTERFACE_WIFI`<br>`NET_INTERFACE_RF_6LOWPAN`<br>`NET_INTERFACE_RF_ZIGBEEIP`
-`phy_rx_cb`|A function pointer to the upper layer RX callback. Must be initialized to NULL, is set by MAC layer.
-`phy_tx_done_cb`|A function pointer to the upper layer TX callback. Must be initialized to NULL, is set by MAC layer.
-`arm_net_virtual_rx_cb`|A function pointer to the upper layer RX callback. Only needed by a virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver.
-`arm_net_virtual_tx_cb`|A function pointer to the upper layer tx callback. Only needed by virtual RF driver! Must be initialized to NULL, is set by MAC layer or virtual RF driver
-`tunnel_type`|TUN driver type. This is only valid when link type is PHY_TUN
-
-### PHY device channel page information
-
-This structure defines the PHY device channel page information and comprises the following members:
-
-```
-typedef struct phy_device_channel_page_s
-{
-	channel_page_e channel_page;
-	const phy_rf_channel_configuration_s *rf_channel_configuration;
-} phy_device_channel_page_s;
-```
-
-Member|Description
-------|-----------
-`channel_page`|The supported channel page(s).
-`rf_channel_configuration`|The used RF configuration for the channel page.
-
-### PHY device link type
-
-This enumeration defines the PHY device link types:
-
-```
-typedef enum phy_link_type_e
-{
-	PHY_LINK_ETHERNET_TYPE,
-	PHY_LINK_15_4_2_4GHZ_TYPE,
-	PHY_LINK_15_4_SUBGHZ_TYPE,
-	PHY_LINK_TUN,
-	PHY_LINK_SLIP,
-} phy_link_type_e;
-```
-
-Parameter|Description
----------|-----------
-`ETHERNET_TYPE`|The standard IEEE 802 Ethernet type.
-`15_4_2_4GHZ_TYPE`|The standard 802.15.4 2.4GHz radio.
-`15_4_SUBGHZ_TYPE`|The standard 802.15.4 sub-1GHz radio 868/915MHz.
-`TUN`|The Linux virtual TUN interface.
-`SLIP`|The SLIP interface.
-
-### PHY device RF channel configuration
-
-This structure defines the PHY device RF configuration:
-
-```
-typedef struct phy_rf_channel_configuration_s
-{
-	uint32_t channel_0_center_frequency;
-	uint32_t channel_spacing;
-	uint32_t datarate;
-	uint16_t number_of_channels;
-	phy_modulation_e modulation;
-} phy_rf_channel_configuration_s;
-```
-
-Member|Description
-------|-----------
-`channel_0_center_frequency`|The first channel center frequency.
-`channel_spacing`|The RF channel spacing.
-`datarate`|The RF datarate.
-`number_of_channels`|The number of supported channels.
-`modulation`|The RF modulation method.
-
-### PHY device RF modulation methods
-
-This enumeration defines the PHY device RF modulation methods:
-
-```
-typedef enum phy_modulation_e
-{
-	M_OFDM,
-	M_OQPSK,
-	M_BPSK,
-	M_GFSK,
-	M_UNDEFINED
-} phy_modulation_e;
-```
-
-Parameter|Description
----------|-----------
-`M_OFDM`|The OFDM modulation method.
-`M_OQPSK`|The OQPSK modulation method.
-`M_BPSK`|The BPSK modulation method.
-`M_GFSK`|The GFSK modulation method.
-`M_UNDEFINED`|The RF modulation method undefined.
 
 ## Example RF driver
 
-The following code example is not a complete driver but shows you how to use the API to create a RF driver.
+The following code example is not a complete driver but shows you how to use the API to create a RF driver:
 
 ```
 static uint8_t mac_address[8];
 static phy_device_driver_s device_driver;
 static int8_t rf_radio_driver_id = -1;
 
-const phy_rf_channel_configuration_s phy_2_4ghz = {2405000000, 5000000, 250000, 16, M_OQPSK};
-const phy_rf_channel_configuration_s phy_subghz = {868300000, 2000000, 250000, 11, M_OQPSK};
+const phy_rf_channel_configuration_s phy_2_4ghz = {2405000000, 5000000, 250000, 16, M_OQPSK, MODULATION_INDEX_UNDEFINED};
+const phy_rf_channel_configuration_s phy_subghz = {868300000, 2000000, 250000, 11, M_OQPSK, MODULATION_INDEX_UNDEFINED};
 
 static phy_device_channel_page_s phy_channel_pages[] = {
 	{CHANNEL_PAGE_0, &phy_2_4ghz},
@@ -475,7 +322,11 @@ void rf_handle_rx_end(void)
     if(!rf_buffer_len)
         return;
 
-    /* If waiting for ACK, check here if the packet is an ACK to a message previously sent */
+    /* If waiting for ACK, check here if the packet is an ACK to a message previously sent (non IEEE 802.15.4-2015). Remember to call phy_tx_done_cb with either PHY_LINK_TX_DONE or PHY_LINK_TX_DONE_PENDING status */
+
+    /* Filter the packet here unless it was already done by the hardware (non IEEE 802.15.4-2015) */
+	
+    /* Send Ack here if needed unless it was already done by the hardware (non IEEE 802.15.4-2015) */
 
     /* Get link information */
     rf_rssi = rf_get_rssi();
@@ -507,9 +358,10 @@ int8_t rf_start_cca(uint8_t *data_ptr, uint16_t data_length, uint8_t tx_handle, 
         /*Store the sequence number for ACK handling*/
         tx_sequence = *(data_ptr + 2);
 
-        /* Store date and start CCA process here */
+        /* Store data and start CCA process here */
         /* When the CCA process is ready send the packet */
         /* Note: Before sending the packet you need to calculate and add a checksum to it, unless done automatically by the radio */
+        /* Note: phy_tx_done_cb must be called when transmission is done (PHY_LINK_TX_SUCCESS) or when CCA returns unavailable channel (PHY_LINK_CCA_FAIL) */
     }
 
     /*Return success*/
@@ -557,6 +409,8 @@ static int8_t rf_extension(phy_extension_type_e extension_type, uint8_t *data_pt
             break;
         /*Set channel, used for setting channel for energy scan*/
         case PHY_EXTENSION_SET_CHANNEL:
+            rf_channel_set(rf_channel);
+            rf_receive();
             break;
         /*Read energy on the channel*/
         case PHY_EXTENSION_READ_CHANNEL_ENERGY:

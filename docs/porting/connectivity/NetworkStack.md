@@ -16,7 +16,7 @@ Please refer to the [IP networking architecture](../reference/ip-networking.html
 
 The current NetworkInterface subclasses are [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html), [EthernetInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html), [MeshInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html) and [WiFiInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html). Your communication interface is a subclass of one of these, as well as the NetworkStack. For example, the [ESP8266Interface](https://github.com/ARMmbed/esp8266-driver) inheritance structure looks like this:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/esp-class.png)<span>Class</span></span>
+<span class="images">![](../../images/esp-class.png)<span>Class</span></span>
 
 There are three [pure virtual methods](https://en.wikipedia.org/wiki/Virtual_function#Abstract_classes_and_pure_virtual_functions) in the NetworkInterface class.
 - [`connect()`](https://github.com/ARMmbed/mbed-os/blob/master/features/netsocket/NetworkInterface.h#L99) - to connect the interface to the network.

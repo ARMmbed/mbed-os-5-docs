@@ -4,6 +4,12 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/blob/master/rtos). See [the Doxygen](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__rtos.html) for more information.
 
+### Memory considerations
+
+Memory for the RTOS primitives is allocated as part of the C++ objects on the stack unless you explicitly use dynamic allocation, in which case it is placed on the heap. Exceptions to this rule are user's thread stacks, which by default are allocated on the heap. You can provide your own memory in the construction if you'd rather not use dynamic memory in your system. For details, please see the [Thread](thread.html) class documentation.
+
+<span class="notes">**Note:** Mbed OS overrides the RTX default memory pool approach.</span>
+
 ### RTOS Ticker
 
 Platforms using RTOS, including Mbed OS, need a mechanism for counting the time and scheduling tasks. A timer that generates periodic interrupts and is called system tick timer usually does this. Under Mbed OS, we call this mechanism the RTOS ticker.
@@ -24,7 +30,7 @@ The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as we
 - [MemoryPool](memorypool.html): This class that you can use to define and manage fixed-size memory pools
 - [Mail](mail.html): The API that provides a queue combined with a memory pool for allocating messages.
 - [EventFlags](eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
-- [Event](event.html): The queue to store events, extract them and excute them later.
+- [Event](event.html): The queue to store events, extract them and execute them later.
 - [ConditionVariable](conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
 - [Kernel](kernel-interface-functions.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
 
@@ -47,7 +53,7 @@ A `Thread` can be in the following states:
 - `Waiting`: Threads that are waiting for an event to occur.
 - `Inactive`: Threads that are not created or terminated. These threads typically consume no system resources.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/thread_status.png)</span>
+<span class="images">![](../../images/thread_status.png)</span>
 
 #### Signals
 

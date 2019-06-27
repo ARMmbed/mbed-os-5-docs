@@ -33,7 +33,7 @@ We release Mbed OS under an Apache 2.0 license, so you can confidently use it in
 
 This is the basic architecture of an Mbed board:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)</span>
+<span class="images">![](../images/Mbed_OS_diagram_for_intro.png)</span>
 
 ## Mbed OS foundations
 
@@ -49,7 +49,7 @@ Finally, Mbed OS implements the retargeting layer and boot process integration o
 
 ## Connectivity
 
-Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN, Thread, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
+Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN-ND, Thread, Wi-SUN, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
 
 The networking and connectivity stacks are flexible enough to meet the needs of the most demanding IoT device designs, whether a combination of a single chip microcontroller and radio, or multiple chips connected across serial buses. System designers can have confidence in our certified connectivity stacks, such as our certified Thread stack, because of their maturity, interoperability and validated components.
 
@@ -102,8 +102,7 @@ Please see the following sections of our documentation for more information.
 
 <h2 id="docs-updates">Recently updated documentation</h2>
 
-- An [introduction to Mbed OS bare metal profile](../reference/mbed-os-bare-metal.html), and updates to the [quick start for a bare metal build](../quick-start/index.html).
-- New documentation for the [Mbed OS implementation of the Platform Security Architecture (PSA)](../apis/security.html) and [Mbed Crypto](../apis/mbed-crypto.html).
-- Updates to the [Mesh API documentation](../apis/mesh-api.html) and related reference material, including [the Wi-Sun Field Area Network (FAN)](../reference/wisun-tech.html).
-- A new guide [for using Pelion Device Management with Mbed OS devices](../mbed-os-pelion/device-management-for-mbed-os.html), and a new location [for our evaluation to production process review](../mbed-os-pelion/going-to-production.html).
-- New [USB APIs](../apis/usb.html).
+- A [mesh tutorial](../tutorials/mesh-tutorial.html) about selecting and using a mesh protocol.
+- Guides to porting [IEEE 802.15.4 MAC driver](../porting/mac-port.html) and [IEEE 802.15.4 RF driver](../porting/6lowpan-port.html).
+- Updated instructions for [troubleshooting common issues](../tutorials/debugging.html).
+- [A tutorial for sending data to Arm Treasure Data from an Mbed OS device](../mbed-os-pelion/send-data-securely-to-arm-treasure-data.html).

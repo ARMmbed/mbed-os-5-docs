@@ -20,7 +20,7 @@ Exactly which operations a `FileHandle` supports depends on the underlying devic
 
 You can use a `FileHandle` directly, or you can use standard POSIX or C/C++ APIs to manipulate it. Stdio calls taking `FILE *stream` call the POSIX APIs taking `int fd`, which call methods on `FileHandle` objects.
 
-![FileHandle callstack](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/filehandle_callstack2.jpg)
+![FileHandle callstack](../../images/filehandle_callstack2.jpg)
 
 The `FileHandle` may be implicitly created by a higher layer, as in a call to `fopen`. In this case, the name lookup produces a `FileHandle` and POSIX file descriptor internally.
 
@@ -69,36 +69,70 @@ If a target has serial support, by default a serial port is used for the console
 The target can override this by providing `mbed::mbed_target_override_console` to specify an alternative `FileHandle`. For example, a target using SWO might have:
 
 ```
-    namespace mbed
+namespace mbed
+{
+    FileHandle *mbed_target_override_console(int)
     {
-        FileHandle *mbed_target_override_console(int)
-        {
-            static SerialWireOutput swo;
-            return &swo;
-        }
+        // SerialWireOutput
+        static SerialWireOutput swo;
+        return &swo;
     }
+}
 ```
 
 Then any program using `printf` on that target sends its output over the SWO, rather than serial.
 
-Because targets can redirect the console in this way, portable applications should not use constructs like `Serial(USBTX, USBRX)`, assuming that this will access the console. Instead they should use `stdin`/`stdout`/`stderr` or `STDIN_FILENO`/`STDOUT_FILENO`/`STDERR_FILENO`.
+Because targets can redirect the console in this way, portable applications should not use constructs such as `Serial(USBTX, USBRX)`, assuming that this will access the console. Instead they should use `stdin`/`stdout`/`stderr` or `STDIN_FILENO`/`STDOUT_FILENO`/`STDERR_FILENO`.
 
 ```
     // Don't do:
     Serial serial(USBTX, USBRX);
     serial.printf("Hello!\r\n");
-    
+
     // Do do:
     printf("Hello!\n");  // assume platform.stdio-convert-newlines is true
 ```
 
-Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. 
+Beyond the target-specific override, an application can override the target's default behavior itself by providing `mbed::mbed_override_console`. Below are two examples that show how you can redirect the console to a debugger using semihosting or another application-specific serial port:
 
-Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analogue to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
+```
+namespace mbed
+{
+    FileHandle *mbed_override_console(int fileno)
+    {
+        // Semihosting allows "virtual" console access through a debugger.
+        static LocalFileSystem fs("host");
+        if (fileno == STDIN_FILENO) {
+            static FileHandle *in_terminal;
+            static int in_open_result = fs.open(&in_terminal, ":tt", O_RDONLY);
+            return in_terminal;
+        } else {
+            static FileHandle *out_terminal;
+            static int out_open_result = fs.open(&out_terminal, ":tt", O_WRONLY);
+            return out_terminal;
+        }
+    }
+}
+```
+
+The application can redirect the console to a different serial port if you need the default port for another use:
+
+```
+namespace
+{
+    FileHandle *mbed_override_console(int)
+    {
+        static UARTSerial uart(PA_0, PA_1);
+        return &uart;
+    }
+}
+```
+
+Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
 
 ### Polling and nonblocking
 
-By default `FileHandle`s conventionally block until a `read` or `write` operation completes. This is the only behavior supported by normal `File`s, and is expected by the C library's `stdio` functions.
+By default, `FileHandle`s conventionally block until a `read` or `write` operation completes. This is the only behavior supported by normal `File`s, and is expected by the C library's `stdio` functions.
 
 Device-type `FileHandle`s, such as `UARTSerial`, are expected to also support nonblocking operation, which permits the `read` and `write` calls to return immediately when unable to transfer data. Please see the API reference pages of these functions for more information.
 
@@ -227,4 +261,4 @@ int main()
 - [File](file.html).
 - [FileSystem](filesystem.html).
 - [Poll](poll.html).
-- [Power management](../apis/power-management.html).
+- [Power management](../apis/power-management-sleep.html).

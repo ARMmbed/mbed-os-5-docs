@@ -8,7 +8,7 @@ There is a lot of interest in [LoRa](https://www.lora-alliance.org), a wide-area
 
 A typical LoRa network consists of four parts: devices, gateways, a network service and an application:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora1_2.png)<span>Topology of a LoRa network</span></span>
+<span class="images">![](../../images/lora1_2.png)<span>Topology of a LoRa network</span></span>
 
 For hardware, you need devices and gateways, similar to how you would set up a Wi-Fi network. Gateways are simple: they scan the spectrum and capture LoRa packets. There is no gateway pinning here. Devices are not associated with a single gateway; thus, all gateways within range of a device receive the signal. The gateways then forward their data to a network service that handles the packet.
 
@@ -36,7 +36,7 @@ This guide shows you:
 
 <span class="notes">**Note:** The frequency that LoRa uses differs among regions. Make sure your gateways and devices are legal in your jurisdiction. For example, use 915 MHz radios in the United States and 868 MHz radios in Europe. You can find more information in the [LoRaWAN regional parameters](http://net868.ru/assets/pdf/LoRaWAN-Regional-Parameters-v1.1rA.PDF) specification.</span>
 
-### 1.1 - Choosing a gateway
+### Choosing a gateway
 
 You have [many choices in the gateways](https://www.loriot.io/lora-gateways.html) you can use, but we've had good experience with these three:
 
@@ -44,13 +44,13 @@ You have [many choices in the gateways](https://www.loriot.io/lora-gateways.html
 - [MultiTech conduit](http://www.multitech.com/brands/multiconnect-conduit). About 1/3 of the price of the Kerlink (about 450 euros) and good for smaller setups. MultiTech also has a [rugged outdoor](http://www.multitech.com/brands/multiconnect-conduit-ip67) version. Make sure you also order the LoRa mCard.
 - Building your own with a Raspberry Pi and an [IMST iC880A](http://shop.imst.de/wireless-modules/lora-products/8/ic880a-spi-lorawan-concentrator-868-mhz) concentrator. At about 150 euros, this is a cost-efficient option.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 150 euros.</span></span>
+<span class="images">![](../../images/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 150 euros.</span></span>
 
 For development purposes, one gateway is enough, but in a production deployment, you need at least two because there will always be dark spots in your network.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora18.jpg)<span>Kerlink Wirnet station overlooking the Oslo fjord.</span></span>
+<span class="images">![](../../images/lora18.jpg)<span>Kerlink Wirnet station overlooking the Oslo fjord.</span></span>
 
-### 1.2 - Choosing a device
+### Choosing a device
 
 You also need to build devices. If you use Mbed OS (and you should), you can either use:
 
@@ -68,17 +68,17 @@ This tutorial applies to all combinations listed above.
 
 <span class="notes">**Note:** When ordering hardware, always make sure you get the variant that works in your region (for example 868 MHz in Europe and 915 MHz in the US).</span>
 
-### 1.3 - Network server
+### Network server
 
 For software, you need a server that understands the LoRa protocol and can interpret the data the device sends. It's possible to use your own (Semtech can give you its reference implementation if you sign an NDA), but there are also companies building LoRa network servers as a service, handling everything on your behalf. This article uses [The Things Network](https://www.thethingsnetwork.org), an open source, globally distributed network service that also has a free hosted community edition.
 
 Because a network server only processes your data and doesn't store it, you need a somewhere to store your messages, as well. The Things Network allows you to hook into its service through an MQTT client and forward your data to the cloud service of your choice (or straight to your application).
 
-## 2. Setting up the gateway
+## Setting up the gateway
 
 You now need to configure the gateway by installing software to scan the spectrum and forward all LoRa packets to the network server. Below are setup instructions for the three gateways suggested earlier.
 
-### 2.1 - Prerequisites
+### Prerequisites
 
 #### Kerlink Wirnet stations
 
@@ -113,21 +113,21 @@ Now that you are connected, you can set up the gateway:
 
 Follow the instructions in [this document](https://github.com/ttn-zh/ic880a-gateway/wiki).
 
-### 2.2 - Registering the gateway
+### Registering the gateway
 
 1. [Sign up](https://console.thethingsnetwork.org) for an account at The Things Network.
 1. You're redirected to the dashboard page.
 1. Click **Gateways**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn1.png)</span>
+    <span class="images">![](../../images/ttn1.png)</span>
 
 1. Click **Register gateway**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn2.png)</span>
+    <span class="images">![](../../images/ttn2.png)</span>
 
 1. Fill in the details of your gateway.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn3.png)<span>Gateway details: The Things Network uses the gateway location to create coverage maps, so make sure the location is set correctly.</span></span>
+    <span class="images">![](../../images/ttn3.png)<span>Gateway details: The Things Network uses the gateway location to create coverage maps, so make sure the location is set correctly.</span></span>
 
 1. If you use the Kerlink Wirnet station:
     - Tick **I'm using the legacy packet forwarder**.
@@ -142,15 +142,15 @@ Follow the instructions in [this document](https://github.com/ttn-zh/ic880a-gate
 
 If you use the MultiTech conduit, you need the 'Gateway key' to authenticate the gateway to the network. Copy it.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn4.png)</span>
+<span class="images">![](../../images/ttn4.png)</span>
 
-### 2.3 - Installing the packet forwarder
+### Installing the packet forwarder
 
 #### Kerlink Wirnet station or Raspberry Pi
 
 No further action required. The gateway shows as 'Connected' in the TTN console.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn7.png)<span>Connected!</span></span>
+<span class="images">![](../../images/ttn7.png)<span>Connected!</span></span>
 
 #### MultiTech conduit
 
@@ -163,7 +163,7 @@ No further action required. The gateway shows as 'Connected' in the TTN console.
 
 1. A wizard starts. Answer the questions.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn5.png)</span>
+    <span class="images">![](../../images/ttn5.png)</span>
 
 1. After the gateway reboots, log back in.
 1. Then run (again):
@@ -174,19 +174,19 @@ No further action required. The gateway shows as 'Connected' in the TTN console.
 
 1. Fill in the remaining questions.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn6.png)<span>Wizard (2) for configuring the MultiTech Conduit</span></span>
+    <span class="images">![](../../images/ttn6.png)<span>Wizard (2) for configuring the MultiTech Conduit</span></span>
 
 1. After this, the gateway shows as **Connected** in the TTN console.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn7.png)<span>Connected!</span></span>
+    <span class="images">![](../../images/ttn7.png)<span>Connected!</span></span>
 
-## 3. Building a device
+## Building a device
 
 This section explains how to build a device that can send sensor data over the LoRa network. For example, you can create a motion sensor using a [PIR sensor](https://www.adafruit.com/products/189) (less than 10 euros). Of course, you can use any other sensor.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora6.jpg)<span>PIR sensor hooked up to a Nordic Semiconductor nRF51-DK with a SX1276 LoRa shield</span></span>
+<span class="images">![](../../images/lora6.jpg)<span>PIR sensor hooked up to a Nordic Semiconductor nRF51-DK with a SX1276 LoRa shield</span></span>
 
-### 3.1 - Some notes on writing firmware
+### Some notes on writing firmware
 
 #### Restrictions on sending data
 
@@ -198,7 +198,7 @@ LoRaWAN has a feature called Adaptive Data Rating (ADR), through which the netwo
 
 A disadvantage of the SX1272 and SX1276 LoRa shields is that they block a lot of pins. You can solder new headers on the back of the shield to add new peripherals, or use a microcontroller such as the nRF51-DK or a NUCLEO board that has more pins available than just the Arduino headers.
 
-### 3.2 - Registering the device on The Things Network
+### Registering the device on The Things Network
 
 LoRaWAN uses an end-to-end encryption scheme that uses two session keys. The network server holds one key, and the application server holds the other. (In this tutorial, TTN fulfils both roles). These session keys are created when the device joins the network. For the initial authentication with the network, the application needs its device EUI, the EUI of the application it wants to join (referred to as the application EUI) and a preshared key (the application key).
 
@@ -212,35 +212,35 @@ Register the device in The Things Network, and generate some keys:
 1. Click **Applications**.
 1. Click **Add application**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn8.png)</span>
+    <span class="images">![](../../images/ttn8.png)</span>
 
 1. Fill in the details of your application, and click **Add application**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn9.png)<span>Filling in the application details in The Things Network.</span></span>
+    <span class="images">![](../../images/ttn9.png)<span>Filling in the application details in The Things Network.</span></span>
 
 1. You're redirected to the application page. Under **Devices**, click **Register device**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn10.png)</span>
+    <span class="images">![](../../images/ttn10.png)</span>
 
 1. If your device has an EUI printed on it, enter this in **Device EUI**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn11.png)<span>The device EUI is often printed on the module or on the box.</span></span>
+    <span class="images">![](../../images/ttn11.png)<span>The device EUI is often printed on the module or on the box.</span></span>
 
 1. If your device does not have an EUI printed on it, press the **generate** button to allocate an EUI from a block owned by The Things Network. Do **not** make an EUI up; it must be globally unique.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn12.png)</span>
+    <span class="images">![](../../images/ttn12.png)</span>
 
 1. Fill in the rest of the details, and click **Register**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn13.png)</span>
+    <span class="images">![](../../images/ttn13.png)</span>
 
 1. The device page opens. It contains the keys that your device uses when authenticating with the network. Click the `<>` button to get the keys as a byte array. This makes it easy to copy the keys into code.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn14.png)</span>
+    <span class="images">![](../../images/ttn14.png)</span>
 
 Now that the device is registered in The Things Network, you can start writing code!
 
-### 3.3 - Importing the demo application
+### Importing the demo application
 
 Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](../tools/index.html)).
 
@@ -251,13 +251,13 @@ Mbed comes with the Arm Mbed Online Compiler, which you can use to build applica
 1. Click **Import this program**.
 1. You're redirected to the Online Compiler, where you can give the program a name.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora7_2.png)<span>Importing a program to get started</span></span>
+    <span class="images">![](../../images/lora7_2.png)<span>Importing a program to get started</span></span>
 
 <span class="notes">**Note:** Make sure you select the correct board in the top right corner of the compiler.</span>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora8_2.png)<span>Selecting the correct board</span></span>
+<span class="images">![](../../images/lora8_2.png)<span>Selecting the correct board</span></span>
 
-### 3.4 - Setting keys
+### Setting keys
 
 In the Online Compiler:
 
@@ -267,7 +267,7 @@ In the Online Compiler:
 1. Under `lora.application-eui`, enter the application EUI from the TTN console.
 1. Under `lora.application-key`, enter the application key from the TTN console.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn15.png)<span>Correct keys set in `mbed_app.json`</span></span>
+    <span class="images">![](../../images/ttn15.png)<span>Correct keys set in `mbed_app.json`</span></span>
 
 1. Under `lora.phy` specify the channel plan for your region. A list of possible values is listed under '[Selecting a PHY'](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/) in the docs.
 
@@ -295,19 +295,19 @@ To send the current value of the PIR sensor (whether it sees movement), in the O
     }
     ```
 
-### 3.5 - Verifying the setup
+### Verifying the setup
 
 Now you can verify whether the setup works by flashing this application to your board.
 
 1. In the Online Compiler, click the **Compile** button.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora10.png)<span>Compile button</span></span>
+    <span class="images">![](../../images/lora10.png)<span>Compile button</span></span>
 
 1. When compilation succeeds, the compiler sends a file to your computer.
 1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](windows-serial-driver.html).
 1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Data** tab:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn19.png)<span>We've got data!</span></span>
+    <span class="images">![](../../images/ttn19.png)<span>We've got data!</span></span>
 
 <span class="notes">**Note 1:** You can hook a [serial monitor](serial-comm.html) up to the development board (baud rate 115,200) to see debugging messages.</span>
 
@@ -323,7 +323,7 @@ ev_queue.call_every(TX_TIMER, send_message);
 
 Call `send_message` whenever you want (for example after the state of the sensor changes). Note that you still need to adhere to the duty cycle, so you may not be able to send data immediately.
 
-### 3.6 - Relaying data back to the device
+### Relaying data back to the device
 
 You can also send data back to the device. Because LoRaWAN (in Class-A mode, which you're using here) is not continuously connected to the network, you need to wait for a receive (RX) window to occur to receive data. An RX window opens after a transmission. So you need to *send* to the network before you can receive a message. If you send a message from The Things Network to your device, the network automatically queues the message and delivers it in the next RX window.
 
@@ -358,28 +358,28 @@ You can toggle the LED on your development board over LoRa. In the Online Compil
 1. Compile, and flash the application.
 1. When the device is back online, use the The Things Network console to queue a message. Go to your device page, and under **Downlink**, select port **21** and data `01`. Then press **Send**.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn16.png)<span>Queuing a downlink message over port 21</span></span>
+    <span class="images">![](../../images/ttn16.png)<span>Queuing a downlink message over port 21</span></span>
 
 1. After the next transmission, the LED toggles, and a message appears on the serial console. Try the same thing now by sending `0`.
 
-## 4. Getting your data out of the The Things Network
+## Getting your data out of the The Things Network
 
 The system works and sends data in two directions, but the data is not stored anywhere. You can change that. The Things Network offers a data API to get the data out of the network. You can then store it on your own servers or forward it to a cloud service.
 
 For this tutorial, we built a small web application that listens for events from the movement sensors and shows an overview of all sensors. To use this application, you need a recent version of [Node.js](https://nodejs.org) installed on your computer.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lora19.png)<span>Demo application</span></span>
+<span class="images">![](../../images/lora19.png)<span>Demo application</span></span>
 
 To build this application, first grab an access key from The Things Network:
 
 1. Go to your application in the TTN console.
 1. Locate your **Application ID**, and make note of it.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn17.png)</span>
+    <span class="images">![](../../images/ttn17.png)</span>
 
 1. Locate your **Access Key**, click the **show** button and make note of it, as well.
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/ttn18.png)</span>
+    <span class="images">![](../../images/ttn18.png)</span>
 
 Now clone, the demo application, and run it.
 
@@ -406,7 +406,7 @@ Now clone, the demo application, and run it.
 
 1. Now, open a web browser, and navigate to http://localhost:5270 to see the application running.
 
-## 5. Recap
+## Recap
 
 LoRa/LoRaWAN is a technology with which anyone can set up a network and start building long-range IoT devices with a relatively small investment. We hope this guide helped you get started, and we would love to see what you build with LoRa and Mbed.
 

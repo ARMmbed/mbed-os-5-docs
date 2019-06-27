@@ -12,7 +12,7 @@ The base station's job is to speak LoRa with the devices in its coverage area. T
 
 You can think of a LoRaWAN as a network with virtualized network layer. The devices talk to the network server using LoRaWAN protocol and making a LoRaWAN network. If multiple base stations are listening to your device, all of them forward your packet to the network server, which means that a LoRaWAN device is not localized to a certain cell.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/lorawan_nwk_arch.png)<span>Figure 1: general network architecture</span></span>
+<span class="images">![](../../../images/lorawan_nwk_arch.png)<span>Figure 1: general network architecture</span></span>
 
 Usually the network topology looks like a one-hop star network. However, there may be cases in which a repeater is involved in the radio path working as a middle-man between the base station and the device. The current standard specification does not allow more than one repeater.
 
@@ -41,7 +41,7 @@ Class A is a mandatory device class. All LoRaWAN devices must implement a Class 
 
 In Class A, the device always initiates a communication cycle. When a device transmits a datagram, it opens two receive windows after specific delays. Timings of these delays and the lengths of receive windows themselves are subjected to regional constraints. The transmission, however, is need based. However, it is scheduled or transmitted based on the duty cycle restrictions following an Aloha-like mechanism.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/class_a_timing.png)<span>Figure 2: Class A timing diagram</span></span>
+<span class="images">![](../../../images/class_a_timing.png)<span>Figure 2: Class A timing diagram</span></span>
 
 ### Class B
 
@@ -49,9 +49,9 @@ Class B devices allow for receive slots at scheduled times. For this purpose, th
 
 The base stations transmit a beacon every 128 seconds, and all Class B nodes are assigned a time slot within the 128 second cycle and are told when to listen.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/class_b_timing.png)<span>Figure 3: Class B timing diagram</span></span>
+<span class="images">![](../../../images/class_b_timing.png)<span>Figure 3: Class B timing diagram</span></span>
 
-Beacon guard time precedes each beacon, and no ping slot can be placed in that time period. A ping slot is a 30ms unit that you can assign to a Class B device. Beacon reserved is a time period when the actual beacon is sent. Beacon window is the time period when you can open and assign ping slots.
+Beacon guard time precedes each beacon, and no ping slot can be placed in that time period. A ping slot is a 30 ms unit that you can assign to a Class B device. Beacon reserved is a time period when the actual beacon is sent. Beacon window is the time period when you can open and assign ping slots.
 
 - Beacon period = 128 seconds.
 - Beacon reserved = 2.120 seconds.
@@ -68,7 +68,7 @@ Class C devices are main powered or have sufficient amount of power supply avail
 
 Class C devices listen at RX2 window as often as possible. Such devices need to open an RX2 window immediately after the transmission before opening an RX1 window. In other words, you can use the `RECV_DELAY1` time for listening on RX2. At the end of RX1 window, the device opens a continuous RX2 window until another transmission happens.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/class_c_timing.png)<span>Figure 4: Class C timing diagram</span></span>
+<span class="images">![](../../../images/class_c_timing.png)<span>Figure 4: Class C timing diagram</span></span>
 
 ## LoRaWAN connection types
 
@@ -79,7 +79,7 @@ The LoRaWAN specification defines two methods for connecting to an access networ
 
 ### Over the air activation (OTAA)
 
-OTAA consists of an exchange of MAC messages between the device and network server. The device sends a `JOIN REQUEST` to the network server containing an app EUI, a device EUI and device nonce (random value). The device EUI is like a MAC address and uniquely identifies the device in the network. The app EUI is the application identifier allocated to the device by the network server (out of band fashion). The `JOIN REQUEST` is sent unencrypted to the network server. In response, the network server sends a `JOIN ACCEPT` message to the device, which is encrypted by using yet another key, the app key, which the network provider provides to the device (out of band) just like the app EUI. The device then uses this app key, app nonce (random value or unique to the network provider), network ID and device nonce (another random value) to locally compute the network session key and app session key.
+OTAA consists of an exchange of MAC messages between the device and network server. The device sends a `JOIN REQUEST` to the network server containing an app EUI, a device EUI and device nonce (random value). The device EUI is like a MAC address and uniquely identifies the device in the network. The app EUI is the application identifier allocated to the device by the network server (out of band fashion). The `JOIN REQUEST` is sent unencrypted to the network server. In response, the network server sends a `JOIN ACCEPT` message to the device, which is encrypted by the app key, which the network provider provides to the device (out of band) just like the app EUI. The device then uses this app key, app nonce (random value or unique to the network provider), network ID and device nonce (another random value) to locally compute the network session key and app session key.
 
 ### Activation by personalization (ABP)
 
@@ -104,7 +104,7 @@ Arm Mbed OS comes loaded with a tiny, secure, thread safe LoRaWAN stack (followi
 
 The stack is layered in logical order and is highly configurable. It currently supports Class A and Class C of LoRaWAN devices.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/class_structure_lorawan.png)<span>Figure 5: Mbed LoRaWAN stack class hierarchy</span></span>
+<span class="images">![](../../../images/class_structure_lorawan.png)<span>Figure 5: Mbed LoRaWAN stack class hierarchy</span></span>
 
 There are four design components comprising the Arm Mbed LoRaWAN solution that enrich the application with all the necessary tools to operate as a LoRaWAN device:
 
@@ -157,7 +157,7 @@ radio.unlock();
 ```
 ##### Example: radio generating interrupt
 
-The radio driver uses the callbacks it received in the form `radio_events_t` to notify the the upper layers to postprocess an interrupt.
+The radio driver uses the callbacks it received in the form `radio_events_t` to notify the upper layers to postprocess an interrupt:
 
 ```C NOCI
 if (signal & GENERATE_TX_DONE) {
@@ -185,7 +185,7 @@ This class keeps the time base for the stack. It extracts the system time base f
 
 ##### LoRaMacCrypto class
 
-You can use the `LoRaMacCrypto` class for encoding and decoding LoRaWAN packets using Mbed TLS.
+You can use the `LoRaMacCrypto` class for encoding and decoding LoRaWAN packets using the crypto libraries of Mbed TLS.
 
 ##### LoRaMacCommand class
 
@@ -223,7 +223,7 @@ There are certain events that the application sends in response to various netwo
 
 This section discusses flows and corresponding state changes in the Mbed LoRaWAN stack relating to the network connection paradigm. For detailed API reference for connection procedure, please visit [LoRaWANInterface API documentation](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `connect()` or `connect(lorawan_connect_t)` APIs.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/connect_sm.png)<span>Figure 6: connection paradigm flow</span></span>
+<span class="images">![](../../../images/connect_sm.png)<span>Figure 6: connection paradigm flow</span></span>
 
 The Arm Mbed LoRaWAN stack sends a `CONNECTED` event to the application once the activation completes. The stack retries a specific number of times before sending a `JOIN_FAILURE` event to the application if the stack did not receive a `JOIN ACCEPT` message.
 
@@ -238,9 +238,9 @@ lorawan.send(port, data, length, MSG_UNCONFIRMED_FLAG);
 
 Flows for sending an unconfirmed or confirmed message look like this:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_unconfirmed_sm.png)<span>Figure 7: Unconfirmed Message Flow</span></span>
+<span class="images">![](../../../images/tx_unconfirmed_sm.png)<span>Figure 7: Unconfirmed Message Flow</span></span>
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tx_confirmed_sm.png)<span>Figure 8: Confirmed Message Flow</span></span>
+<span class="images">![](../../../images/tx_confirmed_sm.png)<span>Figure 8: Confirmed Message Flow</span></span>
 
 For an unconfirmed message, the stack sends a `TX_DONE` event to the application when a transmission has happened and both RX window slots are elapsed (in Class C right after transmission as RX2 never gets elapsed in Class C).
 
@@ -269,14 +269,14 @@ Receive APIs return `LORAWAN_STATUS_WOULD_BLOCK` if there is nothing to read. Th
 
 The flow for reception looks like this:
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/recv_sm.png)<span>Figure 9: Receive Message Flow</span></span>
+<span class="images">![](../../../images/recv_sm.png)<span>Figure 9: Receive Message Flow</span></span>
 
 ### Automatic handling of pending data and MAC commands
 
 By default, the stack handles the case automatically if any data is pending on the network server side waiting to be delivered to the device or if there are any MAC command responses that require an immediate uplink.
 
 - When there is pending data indicated by fPending bit set in the previous downlink message sent by Network Server, the stack will automatically generate an empty outgoing message, if not configured otherwise. Application will not receive a `TX_DONE` in this case. The application may receive subsequent `RX_DONE` events as per reception of the pending data.
-- If a MAC command requires an immediate response, the stack generates an empty uplink automatically if not configured otherwise. The `TX_DONE` event is supressed because it was an automatic uplink.
+- If a MAC command requires an immediate response, the stack generates an empty uplink automatically if not configured otherwise. The `TX_DONE` event is suppressed because it was an automatic uplink.
 
 While the automatic uplink transaction is taking place, you receive a `LORAWAN_STATUS_WOULD_BLOCK` error message if you attempt to do a data uplink.
 

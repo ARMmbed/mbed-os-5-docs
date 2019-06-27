@@ -85,3 +85,18 @@ The Mbed OS HAL provides a set of conformance tests for the Mbed OS HAL APIs. Yo
 ```
 mbed test -t <toolchain> -m <target> -n mbed-os-tests-mbed_hal*
 ```
+
+### FPGA
+ 
+You can test your port using the FPGA test shield component, which you can find in the `mbed-os` repository.
+
+To run the FPGA test shield test, perform the following steps:
+
+1. Ensure the FPGA test shield is programmed with the latest firmware version.
+1. Connect the FPGA test shield to the Device Under Test.
+1. Set the jumper on the FPGA test shield to select USB power.
+1. Connect the power to the FPGA test shield using a USB cable.
+1. Add the `FPGA_CI_TEST_SHIELD` component to the Device Under Test in the `targets.json` configuration file.
+1. Run the test:
+
+   `tests-mbed_hal_fpga_ci_test_shield-spi`

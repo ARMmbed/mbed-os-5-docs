@@ -20,13 +20,13 @@ socket->connect(HOST_NAME, PORT)
 socket->send(data, size);
 ```
 
-Please note that internal TLS structures require over 1 kB of RAM, so you need to allocate each TLSSocket from the heap by using the `new` command, instead of using stack or statically allocating it.
+<span class="notes">**Note:** Internal TLS structures require over 1 KB of RAM. Allocate each TLS Socket from the heap by using the `new` command, instead of using stack or statically allocating it.</span>
 
 ## Design
 
 Internally `TLSSocket` consists of two classes, `TLSSocketWrapper` and `TLSSocket`, as shown in the following diagram:
 
-<span class="images">![TLSSocket UML](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tlssocket.png)<span>TLSSocket UML</span></span>
+<span class="images">![TLSSocket UML](../../../images/tlssocket.png)<span>TLSSocket UML</span></span>
 
 The `TLSSocketWrapper` can use any `Socket` as its transport. `TLSSocket` is a helper that uses directly `TCPSocket` for its transport, so you can adopt existing TCP based applications to TLS.
 
@@ -102,7 +102,7 @@ This destroys the memory the TLS library allocates. It also closes the transport
 virtual nsapi_error_t connect(const SocketAddress &address);
 ```
 
-The code above initiates the TCP connection and continues to TLS hanshake. If [transport mode](#transport-modes) is either `TRANSPORT_KEEP` or `TRANSPORT_CLOSE`, TCP is assumed to be open and state directly goes into TLS handshake. This is currently forced to blocking mode. After succesfully connecting, you can set it to nonblocking mode:
+The code above initiates the TCP connection and continues to the TLS handshake. If [transport mode](#transport-modes) is either `TRANSPORT_KEEP` or `TRANSPORT_CLOSE`, TCP is assumed to be open and state directly goes into TLS handshake. This is currently forced to blocking mode. After connecting, you can set it to nonblocking mode:
 
 ```
 virtual nsapi_size_or_error_t send(const void *data, nsapi_size_t size);
@@ -139,8 +139,8 @@ These are returning `NSAPI_ERROR_UNSUPPORTED` as you can't set TLS socket to lis
 
 `TLSSocketWrapper` has four modes that are given in the constructor and affect how the transport Socket is used in connection and closing phases:
 
-|Mode|Behavior on trasport socket|
-|----|----------------------------|
+| Mode | Behavior on transport socket |
+|------|------------------------------|
 |TRANSPORT_KEEP | Keep the transport as it is. Does not call `connect()` or `close()` methods. |
 |TRANSPORT_CONNECT_AND_CLOSE | Both `connect()` and `close()` are called. (default) |
 |TRANSPORT_CONNECT | Call `connect()`, but do not close the connection when finished.  |
