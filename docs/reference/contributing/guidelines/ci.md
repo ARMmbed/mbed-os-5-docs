@@ -1,14 +1,14 @@
-<h2 id="ci">Continuous integration</h2>
+<h1 id="ci">Continuous integration</h1>
 
 Continuous integration (CI) means mainly automatic testing for pull requests.
 
-### Travis CI
+## Travis CI
 
 In Mbed OS [Travis CI](https://travis-ci.org/ARMmbed/mbed-os) is used as primary automatic testing and checking run environment.
 
 Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/mbed-os/blob/master/.travis.yml) file in Mbed OS root directory. Mbed OS uses public travis so test results are publicly available and there are public [documentation available](https://docs.travis-ci.com/).
 
-#### Tests
+### Tests
 
 - **continuous-integration/travis-ci/pr** - Travis run main.
 - **travis-ci/astyle** - Check code style using [astyle](http://astyle.sourceforge.net/).
@@ -31,7 +31,7 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
    - Asserts that all PSA manifests in the tree are in correct form.
    - Asserts that no changes need to be made.
 
-### Jenkins
+## Jenkins
 
 We use [Jenkins](https://jenkins.io/) as an internal testing and checking environment. We execute tests that have special requirements for the execution enviroment in our internal Jenkins. In most cases, we publish test logs.
 
@@ -42,7 +42,7 @@ How it works:
 - Jenkins selects required tests dynamically based on the code changes. For example, no tests execute if only markdown (.md) files change.
 - Jenkins runs a first small number of tests to provide fast feedback, and then it runs additional tests.
 
-#### Tests
+### Tests
 
 - **continuous-integration/jenkins/pr-head** - Jenkins main pipeline script execution status.
 - **jenkins-ci/build-ARM** - Build Mbed OS and examples with [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:

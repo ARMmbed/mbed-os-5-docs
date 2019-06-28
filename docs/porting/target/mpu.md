@@ -1,25 +1,25 @@
-<h2 id="mpu-port">MPU</h2>
+<h1 id="mpu-port">MPU</h1>
 
 Implementing the MPU API enables Mbed OS to provide better security by preventing code execution and code modification where it shouldn't be allowed.
 
-### Assumptions
+## Assumptions
 
-#### Defined behavior
+### Defined behavior
 
 - The function `mbed_mpu_init` is safe to call repeatedly.
 - The function `mbed_mpu_free` disables MPU protection.
 - Execution from RAM results in a fault when `execute never` is enabled. This RAM includes heap, stack, data and zero init.
 - Writing to ROM results in a fault when `write never` is enabled.
 
-#### Undefined behavior
+### Undefined behavior
 
 - Calling any function other than `mbed_mpu_init` before the initialization of the MPU.
 
-### Dependency
+## Dependency
 
 Hardware MPU capabilities.
 
-### Implementing the MPU API
+## Implementing the MPU API
 
 You can find the API and specification for the MPU API in the following header file:
 
@@ -31,7 +31,7 @@ Targets with a standard ARMv7-M or ARMv8-M MPU, indicated by `__MPU_PRESENT` bei
 
 Targets with a standard ARMv7-M or ARMv8-M MPU needing to override the common Mbed OS MPU driver can do so by defining `MBED_MPU_CUSTOM`. This removes the common Mbed OS MPU driver from builds, so you can use a target-specific one, instead.
 
-### Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for the MPU API. You can use these tests to validate the correctness of your implementation. To run the MPU HAL tests, use the following command:
 

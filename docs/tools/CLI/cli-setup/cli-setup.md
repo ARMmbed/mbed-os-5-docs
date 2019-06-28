@@ -1,4 +1,4 @@
-## Setup options
+# Setup options
 
 You can install Mbed CLI on Windows, Linux and macOS.
 

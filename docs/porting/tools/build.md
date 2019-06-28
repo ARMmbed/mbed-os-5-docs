@@ -1,8 +1,8 @@
-## Build tools
+# Build tools
 
 Mbed OS includes tools for building itself in the `tools` directory. These build tools include target-specific postbuild scripts. When adding a target, you may need to add a postbuild script. Use a postbuild script to modify a linked application binary in ways that the linker cannot, such as inserting a checksum at a specific offset. Postbuild scripts are rarely exportable, and you should use them only when you have exhausted all other options.
 
-### Postbuild scripts
+## Postbuild scripts
 
 The tools include postbuild scripts for tasks that modify an application binary after it is linked. These tasks are written in Python as static methods of a class within the `tools.targets` module. The tasks are specified as `Class.method` in `targets.json`. 
 
@@ -13,7 +13,7 @@ The tools call the static method with 4 parameters:
  3) Path to the `.elf` file the linker generates.
  4) Path to the binary file generated after link, or the `.elf` file if the code did not generate a binary.
 
-### Implementation
+## Implementation
 
 To add a postbuild script, add a class with a single method into the `tools/targets/__init__.py` python file, such as:
 

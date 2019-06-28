@@ -1,12 +1,12 @@
-## Debugging
+# Debugging
 
 There are extensive instructions on debugging Arm Mbed OS 5 applications with [uVision 5](../tutorials/keil-uvision.html), [Eclipse](../tutorials/eclipse.html) and [Visual Studio Code](../tutorials/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS 5 applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](setting-up-a-local-debug-toolchain.html).
 
-### Exporting your project
+## Exporting your project
 
 Although you can use our tools to generate project files specific to many IDEs, you can also use our tools to generate Makefiles. Almost any C/C++ IDE can use Makefiles to build your project. To generate a Makefile, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
 
-#### Online Compiler
+### Online Compiler
 
 1. Right click on your project.
 1. Select *Export Program...*.
@@ -16,7 +16,7 @@ Although you can use our tools to generate project files specific to many IDEs, 
 
 ![Exporting to Make](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/other_ides1.png)
 
-#### Mbed CLI
+### Mbed CLI
 
 In your project folder, run:
 
@@ -27,7 +27,7 @@ In your project folder, run:
 $ mbed export -i make_gcc_arm -m K64F
 ```
 
-##### Serial terminal
+#### Serial terminal
 
 You can open a serial terminal to the COM port of a connected Mbed target (usually board) using the `mbed sterm` command. If no COM port is specified, Mbed CLI detects the connected Mbed targets and their COM ports.
 
@@ -55,7 +55,7 @@ You can also add the `--sterm` option to `mbed compile -f` to compile a new prog
 $ mbed compile -t GCC_ARM -m K64F -f --sterm
 ```
 
-### Building your project
+## Building your project
 
 You can now configure your IDE to build this project by setting the build command to:
 
@@ -65,7 +65,7 @@ make -j
 
 The resulting binary will end up at `BUILD\projectname.elf`.
 
-### Debugging your project
+## Debugging your project
 
 To debug your project, you first need to start a [debug server](setting-up-a-local-debug-toolchain.html#running-a-debug-server). This is often exposed as a setting in your IDE under 'Remote debugging' or 'Debug server'.
 

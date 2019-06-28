@@ -1,4 +1,4 @@
-<h2 id="ethernet-port">Ethernet MAC (EMAC) drivers</h2>
+<h1 id="ethernet-port">Ethernet MAC (EMAC) drivers</h1>
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/emac.png)<span>Emac API</span></span>
 
@@ -8,7 +8,7 @@ The scope of this document is limited to Ethernet (IEEE 802.3) or Ethernet-like 
 
 (If the device has an off-board network stack, a driver needs to implement `NetworkStack` directly instead to pass network calls to the offboard stack).
 
-### Abstractions
+## Abstractions
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/emac-driver.png)<span>EMAC driver</span></span>
 
@@ -21,7 +21,7 @@ The EMAC interface abstracts network stacks and drivers and easily permits multi
 - `EMACMemoryManager` - a memory manager used to pass data between driver and stack.
 - `EMACInterface`- a `NetworkInterface` that uses an `EMAC` driver and an `OnboardNetworkStack`.
 
-### The EMAC driver core
+## The EMAC driver core
 
 The first step in the port is to create a driver class that you can instantiate to control your device. You must derive this class from the `EMAC` class. A network stack (or test framework) uses this API to control your driver.
 
@@ -31,7 +31,7 @@ Class EMAC is entirely abstract - you need to implement about a dozen calls to a
 
 There are also callback registration functions for upcalls from the driver - the stack can register callback functions for packet reception and link status changes.
 
-#### Initialization steps
+### Initialization steps
 
 The EMAC driver class is instantiated during the creation of the network interface. When the network interface is brought up, the network stack powers the EMAC driver.
 
@@ -53,7 +53,7 @@ Steps that the network stack uses to power the EMAC driver:
 1. The network stack might query for the memory buffer align preference from the driver.
     1. The network stack is not required to use the alignment for the memory buffers on link out.
 
-### The EMAC memory manager
+## The EMAC memory manager
 
 The Ethernet MAC memory manager class provides abstracted memory interface toward memory modules used in different network stacks. For the send and receive paths, data is transferred in memory buffers controlled through an `EMACMemoryManager` object. The network stack using an EMAC driver provides it with a reference to the memory manager in use before powering up - this is constant as long as the EMAC is powered.
 
@@ -63,7 +63,7 @@ On the output call, the EMAC driver is given ownership of a buffer chain - it mu
 
 For reception, the EMAC driver must allocate memory from the `EMACMemoryManager` to store the received packets - this is then passed to the link input callback, which frees it. By preference, you should allocate this memory using the pool, but if contiguous memory is necessary, you can allocate it from the heap.
 
-### EthernetInterface
+## EthernetInterface
 
 If your driver is a pure Ethernet driver, no further implementation is necessary. The class `EthernetInterface` can use any `EMAC` driver to provide an Mbed OS `NetworkInterface`:
 
@@ -76,7 +76,7 @@ If your driver is a pure Ethernet driver, no further implementation is necessary
 
 This attaches the default network stack (usually LWIP - the other alternative is Nanostack) to the specified EMAC driver, and provides all the `NetworkInterface` and `NetworkStack` APIs.
 
-### Being the default EMAC or EthernetInterface
+## Being the default EMAC or EthernetInterface
 
 To make your EMAC the default for applications, define the static function `EMAC::get_default_instance()` to return an instance of your EMAC:
 
@@ -97,7 +97,7 @@ This permits this example application code to work:
 
 A target label usually gates this definition. As target code, your definition of `EMAC::get_default_instance()` must be weak - this permits application code to override it.
 
-### Wi-Fi interfaces
+## Wi-Fi interfaces
 
 As a Wi-Fi interface, a little more work is necessary - at a minimum, you need to implement the extra configuration calls in `WiFiInterface`. This is because the network stacks and EMAC APIs only relate to the Ethernet-like data path - they have no knowledge of any other configuration mechanisms and assume they are already set up.
 
@@ -122,21 +122,21 @@ Note also that your constructor must allow the network stack to be specified usi
     MyWiFiInterface(OnboardNetworkStack &stack = OnboardNetworkStack::get_default_instance());
 ```
 
-### OnboardNetworkStack
+## OnboardNetworkStack
 
 The precise details of the `OnboardNetworkStack` API should not concern an EMAC driver writer - it provides the mechanism to bind a driver to a stack, and the APIs needed to implement a `NetworkInterface`, but this is handled by `EMACInterface`, either as a base class of your own `XXXInterface` or as the base of `EthernetInterface`.
 
-### DEVICE_EMAC
+## DEVICE_EMAC
 
 At present, as an interim measure, targets providing `EMAC::get_default_instance()` should add "EMAC" in `device_has` in their `targets.json`. This activates network tests in CI builds.
 
 This is subject to change, but is necessary in lieu of the previous typical behavior of gating tests on `FEATURE_LWIP`.
 
-### Tuning memory allocations
+## Tuning memory allocations
 
 Depending on its use of pool and heap memory and other factors, a driver might want to tune the configuration of particular network stacks. You can do this using the `mbed_lib.json` of each network stack, using their `target_overrides` section.
 
-### Testing
+## Testing
 
 The Mbed OS tree contains Greentea-based tests that exercise the EMAC API directly, and more general socket tests.
 

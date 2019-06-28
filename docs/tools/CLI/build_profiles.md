@@ -1,8 +1,8 @@
-<h2 id="build-profiles">Build profiles</h2>
+<h1 id="build-profiles">Build profiles</h1>
 
 Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *release*. The Online Compiler uses the *develop* profile. When building from Arm Mbed CLI, you can select a profile by adding the `--profile <profile>` flag. You can specify custom user-defined profiles by giving the path to the profile.
 
-### Develop profile
+## Develop profile
 
 - Small and fast code.
 - Full error information. For example, asserts have file name and line number.
@@ -11,14 +11,14 @@ Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *rel
     * Debugger is likely to drop connection.
     * Breaks the local file system on the [Arm Mbed interface](../introduction/index.html) on some boards.
 
-### Debug profile
+## Debug profile
 
 - Largest and slowest profile.
 - Full error information. For example, asserts have file name and line number.
 - Easy to step through code with a debugger.
 - Disabled sleep mode.
 
-### Release profile
+## Release profile
 
 - Smallest profile and still fast.
 - Minimal error information.
@@ -26,13 +26,13 @@ Arm Mbed OS 5 supports three primary build profiles: *develop*, *debug* and *rel
     - Debugger is likely to drop connection.
     - Breaks the local file system on the [Mbed interface](../introduction/index.html) on some boards.
 
-### User defined profiles
+## User defined profiles
 
 A toolchain or build system profile is a set of flags that is guaranteed to be passed to the underlying compiler suite.
 
 These flags are stored in a JSON file that may be merged with other JSON files of the same structure.
 
-#### JSON toolchain profile format
+### JSON toolchain profile format
 
 The JSON object that represents a toolchain profile is a dictionary mapping from toolchains, such as `GCC_ARM`, to their flags, such as `-O3`.
 
@@ -48,7 +48,7 @@ The required flag types are:
 | `cxx`    | Flags for the C++ Compiler            |
 | `ld`     | Flags for the Linker                  |
 
-#### Example
+### Example
 
 An example of a toolchain profile:
 

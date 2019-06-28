@@ -1,10 +1,10 @@
-## Drivers overview
+# Drivers overview
 
 Drivers provide access to general purpose microcontroller hardware. Drivers typically access a microcontroller's hardware peripherals directly, and may form the lowest lever of a protocol or network stack.
 
 The Mbed OS driver APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices. With these drivers, you can read or set the voltage of analog pins, control digital pins individually or grouped into a bus and trigger an event when more data is available on the bus. You can also control the frequency and mark to space ratio, or duty cycle, of a Pulse Width Modulated (PWM) digital output.
 
-### Blocking nature
+## Blocking nature
 
 By default, all Mbed OS driver APIs are blocking. In the drivers, blocking APIs cause the current thread to wait until the hardware operation completes. Blocking APIs simplify control flow, allow for linearly structured programs and make debugging intuitive. We suggest using blocking APIs as a starting point. You should only consider more complex APIs if the blocking APIs do not satisfy your requirements.
 
@@ -12,7 +12,7 @@ Mbed OS is built around an RTOS, and to complement this, the drivers are thread 
 
 In some cases, the drivers provide nonblocking APIs. These APIs configure hardware to run in the background of the processor, without blocking a thread. Nonblocking drivers signal through the attach function once the background operation is complete.
 
-### Attaching callbacks to drivers
+## Attaching callbacks to drivers
 
 In Mbed OS, the standard API for asynchronous events is the attach function. You can use the attach function to attach a callback function. Drivers call the attached callback function during specific events. You can use this to learn when the state of a nonblocking operation changes or whether other asynchronous events occur.
 

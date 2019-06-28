@@ -1,6 +1,6 @@
-<h2 id="quick-start-online">Using the Online Compiler</h2>
+<h1 id="quick-start-online">Using the Online Compiler</h1>
 
-### Setting up
+## Setting up
 
 1. [Create an Mbed account](https://os.mbed.com/account/signup/).
 1. Plug your Mbed board into your computer, and open its USB device folder.
@@ -9,7 +9,7 @@
 
 1. Double click on the `MBED.HTML` file. This adds your Mbed board to the Online Compiler as a compilation target.
 
-### Importing the code
+## Importing the code
 
 Click the button below to automatically import the example into the Online Compiler.
 
@@ -19,7 +19,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_program.png)</span>
 
-### Compiling and flashing (programming)
+## Compiling and flashing (programming)
 
 1. Click **Compile**. Your browser downloads the program as an executable file.
 

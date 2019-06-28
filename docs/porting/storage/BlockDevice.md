@@ -1,4 +1,4 @@
-<h2 id="blockdevice-port">Block Devices</h2>
+<h1 id="blockdevice-port">Block Devices</h1>
 
 Block devices are the basic building block of storage solutions in Mbed OS.
 
@@ -6,23 +6,23 @@ Block devices are the basic building block of storage solutions in Mbed OS.
 
 File systems are backed by [blockdevice implementations](../apis/blockdevice.html). The BlockDevice API performs the low-level interactions with the hardware storage. To add your own block device implementation, we recommend you inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the and [implementing BlockDevice](#implementing-blockdevice) section below.
 
-### Assumptions
+## Assumptions
 
-#### Defined behavior
+### Defined behavior
 
 - Erase leaves memory as undefined. It does not set memory to a predetermined value.
 
-#### Undefined behavior
+### Undefined behavior
 
 - Programming without erase is undefined behavior.
 
-#### Notes
+### Notes
 
 ![blockdevicesectors](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/blockdevice_block_size.png)
 
 Erase, program and read block sizes may not be the same; however, they must be multiples of one another.
 
-### Implementing BlockDevice
+## Implementing BlockDevice
 
 You can find the BlockDevice class on the master branch under the `features/storage/blockdevice` path in Mbed OS.
 
@@ -34,7 +34,7 @@ The primary functions to implement are:
 - `int program(void *buffer, bd_addr_t addr, bd_size_t size);`
 - `int erase(bd_addr_t addr, bd_size_t size);`
 
-### Testing
+## Testing
 
 You can run BlockDevice tests for heap, MBR and util block devices with the following command:
 

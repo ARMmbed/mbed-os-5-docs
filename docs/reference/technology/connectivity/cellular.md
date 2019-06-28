@@ -1,4 +1,4 @@
-## Cellular
+# Cellular
 
 Mbed OS cellular provides your IoT application with access to world-wide operator-maintained cellular networks, both IP and non-IP, as Figure 1 illustrates. Mbed OS cellular implementation is based on international 3GPP and OMA standards, and it has been verified to work with all cellular networks such as NB-IoT, CAT-M1, 4G LTE, 3G WCDMA and GPRS.
 
@@ -6,7 +6,7 @@ Mbed OS cellular provides your IoT application with access to world-wide operato
 
 Please read about [Mbed OS connectivity technology](https://www.mbed.com/en/technologies/connectivity/) if you are not yet familiar with it.
 
-### Key features
+## Key features
 
 Key features of the Mbed OS cellular APIs include:
 
@@ -20,7 +20,7 @@ OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device m
 
 Mbed OS already supports several Mbed Enabled boards with on-board cellular hosted modules. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](../porting/porting-connectivity.html#cellularinterface) for more information.
 
-### Quick start
+## Quick start
 
 There are two phases to Mbed OS connectivity, in general:
 
@@ -33,7 +33,7 @@ With cellular, the easiest way to connect your application to the internet over 
 
 If you want to see code, you can go to our [cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/).
 
-### Cellular hosted module
+## Cellular hosted module
 
 If you are using an Mbed OS target that has a supported on-board (mounted) cellular hosted module then cellular framework decides the correct cellular hosted module at compile-time. You can run `mbedls` to find out your current Mbed OS target and then match that to the supported targets in the `CellularTargets.h` file, where a CELLULAR_DEVICE macro is defined based on the Mbed OS target definition and can be used as a C++ class type to instantiate a driver class (inherited from `CellularDevice.h`).
 
@@ -56,7 +56,7 @@ If you use an Mbed OS target and a separate cellular hosted module via a serial 
 
 You need to change the pin names above to actual pins, such as D0 and D1, according to your Mbed target. You may also need to define MDMRTS and MDMCTS pins if you have RTS and CTS connected on UART. If RTC and CTS are not connected on UART, then define MDMRTS and MDMCTS as `NC`.
 
-### Cellular APIs
+## Cellular APIs
 
 As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details that are expected to change frequently.
 
@@ -95,13 +95,13 @@ When an application has opened a cellular API, you can use it to request API met
 		}
     }
 
-### UDP and TCP sockets
+## UDP and TCP sockets
 
 If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack, which is part of Mbed OS, or to use the IP stack on the cellular hosted module. Figure 4 illustrates IP stack deployment.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/api-cellular-ip-stack.png)<span>Figure 4. IP stack can be used in PPP or AT mode</span></span>
 
-#### PPP mode with the LWIP stack on Mbed OS
+### PPP mode with the LWIP stack on Mbed OS
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_PPP.png)</span>
 
@@ -114,7 +114,7 @@ You can enable PPP mode and also configure LWIP features in the application conf
     "lwip.ipv6-enabled": true
     "lwip.tcp-enabled": true
 
-#### AT mode with the IP stack on the modem
+### AT mode with the IP stack on the modem
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Cell_AT.png)</span>
 
@@ -124,7 +124,7 @@ The AT mode is enabled when the PPP mode is not enabled:
 
     "lwip.ppp-enabled": false
 
-#### Should you use PPP or AT mode?
+### Should you use PPP or AT mode?
 
 Consider the following points when selecting PPP or AT mode:
 
@@ -135,11 +135,11 @@ Consider the following points when selecting PPP or AT mode:
 - AT mode typically supports only UDP sockets.
 - AT mode is potentially better optimized for power consumption.
 
-### Optimize for power consumption
+## Optimize for power consumption
 
 The `CellularPower` class has methods to optimize power saving. The `set_power_level()` offers flexibility to control the reception and transmission power levels. In addition, 3GPP has specified advanced power optimizations that are useful for celluar IoT devices: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
 
-#### PSM - Power Save Mode
+### PSM - Power Save Mode
 
     opt_power_save_mode(int periodic_time, int active_time)
 
@@ -151,7 +151,7 @@ This feature offers great power savings for periodically reporting devices. Betw
 
 PSM configuration is negotiated with the network, and the actual PSM time that network has accepted may differ from that requested.
 
-#### eDRX - extended Discontinuous Reception
+### eDRX - extended Discontinuous Reception
 
     opt_receive_period(int mode, EDRXAccessTechnology act_type, uint8_t edrx_value)
 
@@ -161,7 +161,7 @@ This feature serves devices that need smaller latencies. A connection is kept op
 
 An application gives eDRX configuration to the modem which negotiates it with the network. The time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
 
-### Considerations for UDP, TCP and non-IP use
+## Considerations for UDP, TCP and non-IP use
 
 Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors.
 

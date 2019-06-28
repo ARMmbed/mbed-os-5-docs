@@ -1,6 +1,6 @@
-## Setting up
+# Setting up
 
-### Hardware setup
+## Hardware setup
 
 Porting Mbed OS requires the following hardware:
 
@@ -24,7 +24,7 @@ The following items might help you test SPI, I2C and pins:
 
 <span class="tips">Check the user guide of the evaluation board to see if anything needs to be done prior to using a debug probe and running Mbed OS programs.</span>
 
-### Software setup
+## Software setup
 
 Please install the following:
 

@@ -1,4 +1,4 @@
-## Mbed OS reference book
+# Mbed OS reference book
 
 This section gives background reference information about Mbed OS. This content includes architectural details and technical information about the configuration system.
 

@@ -1,4 +1,4 @@
-## Further reading
+# Further reading
 
 - [Mbed OS tutorials and examples](../tutorials/index.html): list of Mbed OS 5 example repositories.
 

@@ -1,8 +1,8 @@
-<h2 id="contributing-connectivity">Connectivity</h2>
+<h1 id="contributing-connectivity">Connectivity</h1>
 
-### The network socket API
+## The network socket API
 
-#### New device
+### New device
 
 The NetworkSocketAPI is designed to make porting new devices as easy as possible and only requires a handful of methods for a minimal implementation.
 

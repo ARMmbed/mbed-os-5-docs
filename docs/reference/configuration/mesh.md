@@ -1,4 +1,4 @@
-<h2 id="configuration-mesh">6LoWPAN and Thread Mesh</h2>
+<h1 id="configuration-mesh">6LoWPAN and Thread Mesh</h1>
 
 This page describes build-time configurable parameters for 6LoWPAN- and Thread-based mesh networks. Mbed OS supports two main mesh protocols: 6LoWPAN-ND and Thread. Depending on the selected protocol, you can configure different set of values.
 
@@ -13,7 +13,7 @@ For understanding the technologies and APIs, please refer to following sections 
 - [6LoWPAN Mesh class reference](../apis/mesh-api.html) user API.
 - [Socket API](../apis/network-socket.html).
 
-#### Providing the configuration
+### Providing the configuration
 
 The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
 
@@ -32,11 +32,11 @@ An example of the configuration file:
 
 <span class="notes">**Note:** The configuration files for 6LoWPAN and Thread are provided for development or testing purposes. When setting up the production configuration, the user needs to have a good understanding of the whole system.</span>
 
-#### Build time configuration of the stack
+### Build time configuration of the stack
 
 To minimize the size of the produced network stack, Nanostack defines a set of build options.
 
-##### Build options for different mesh types
+#### Build options for different mesh types
 
 Option name | Features supported | Estimated binary size of Nanostack
 ------------| -------------------|------------------------------------
@@ -86,7 +86,7 @@ Then you may optionally choose to select the nonrouting mode for those networks.
 | Mesh router (default) | `thread_router` | `MESH_DEVICE_TYPE_THREAD_ROUTER` |
 | Nonrouting device | `thread_end_device` | `MESH_DEVICE_TYPE_THREAD_SLEEPY_END_DEVICE` |
 
-#### Nanostack's configuration
+### Nanostack's configuration
 
 ```
 Configuration parameters
@@ -124,7 +124,7 @@ Name: nanostack.configuration
     Value: nanostack_full (set by library:nanostack)
 ```
 
-#### Generic Mbed mesh API configuration values
+### Generic Mbed mesh API configuration values
 
 Generic configuration allows you to fine tune Nanostack's heap usage.
 
@@ -144,7 +144,7 @@ Name: mbed-mesh-api.heap-size
 
 ```
 
-#### Thread related configuration parameters
+### Thread related configuration parameters
 
 Following parameters are only valid for Thread mesh protocol. These are in use when application uses `ThreadInterface` class.
 
@@ -223,7 +223,7 @@ Name: mbed-mesh-api.thread-use-static-link-config
     Value: 1 (set by library:mbed-mesh-api)
 ```
 
-#### 6LoWPAN related configuration parameters
+### 6LoWPAN related configuration parameters
 
 The following parameters are only valid for the 6LoWPAN-ND mesh network. These are in use when the application uses the `LoWPANNDInterface` class.
 

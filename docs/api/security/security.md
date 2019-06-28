@@ -1,4 +1,4 @@
-## Security overview
+# Security overview
 
 Security on Arm Mbed OS is divided into the following parts:
 

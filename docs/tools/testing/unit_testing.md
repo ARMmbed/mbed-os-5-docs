@@ -1,12 +1,12 @@
-## Unit testing
+# Unit testing
 
 This document describes how to write and test unit tests for Mbed OS. To prevent and solve problems, please see the [troubleshooting](#troubleshooting) section.
 
-### Introduction
+## Introduction
 
 Unit tests test code in small sections on a host machine. Unlike other testing tools, unit testing doesn't require embedded hardware, and it doesn't need to build the full operating system. Because of this, unit testing can result in faster tests than other testing tools. Unit testing takes place in a build environment where we test each C or C++ class or module in isolation. This means we build test suites into separate test binaries and stub all access outside to remove dependencies on any specific embedded hardware or software combination. This allows us to complete the testing using native compilers on the build machine.
 
-### Prerequisites
+## Prerequisites
 
 Please install the following dependencies to use Mbed OS unit testing. 
 
@@ -20,7 +20,7 @@ Please install the following dependencies to use Mbed OS unit testing.
 
 Detailed instructions for supported operating systems are below.
 
-#### Installing dependencies on Debian or Ubuntu
+### Installing dependencies on Debian or Ubuntu
 
 1. `sudo apt-get -y install build-essential cmake`
 1. Install Python and Pip with:
@@ -32,7 +32,7 @@ Detailed instructions for supported operating systems are below.
 
 1. Install Gcovr and [Mbed CLI](../tools/developing-mbed-cli.html) with `pip install "gcovr>=4.1" mbed-cli`.
 
-#### Installing dependencies on macOS
+### Installing dependencies on macOS
 
 1. Install [Homebrew](https://brew.sh/).
 1. Install GCC compilers and CMake with: `brew install gcc cmake`.
@@ -45,7 +45,7 @@ Detailed instructions for supported operating systems are below.
 
 1. Install Gcovr and [Mbed CLI](../tools/developing-mbed-cli.html) with `pip install "gcovr>=4.1" mbed-cli`.
 
-#### Installing dependencies on Windows
+### Installing dependencies on Windows
 
 1. Download and install [MinGW-W64](http://mingw-w64.org/).
 1. Download CMake binaries from https://cmake.org/download/, and run the installer.
@@ -53,25 +53,25 @@ Detailed instructions for supported operating systems are below.
 1. Add MinGW, CMake and Python into system PATH.
 1. Install Gcovr and [Mbed CLI](../tools/developing-mbed-cli.html) with `pip install "gcovr>=4.1" mbed-cli`.
 
-### Test code structure
+## Test code structure
 
 Unit tests are located in the Mbed OS repository under the `UNITTESTS` folder. We recommend unit test files use an identical directory path to the file under test. This makes it easier to find unit tests for a particular class or a module. For example, if the file under test is `some/example/path/ClassName.cpp`, then all the test files are in the `UNITTESTS/some/example/path/ClassName` directory. Each test suite needs to have its own `unittest.cmake` file for test configuration.
 
-#### Test discovery
+### Test discovery
 
 Registering unit tests for running is automatic, and the test runner handles registration. However, test files are not automatically assigned to be built. We build unit tests by using a separate build system, which searches for unit tests under the `UNITTESTS` directory.
 
 For the build system to find and build any test suite automatically, you must include a unit test configuration file named `unittest.cmake` for each unit test suite. This configuration file contains all the source files required for the build.
 
-#### Test names
+### Test names
 
 The build system automatically generates names of test suites. The name is constructed by taking a relative file path from the UNITTESTS directory to the test directory and replacing path separators with dashes. For example, the test suite name for `some/example/path/ClassName.cpp` is `some-example-path-ClassName`. Suite names are used when deciding which test suites to run.
 
-### Unit testing with Mbed CLI
+## Unit testing with Mbed CLI
 
 Mbed CLI supports unit tests through `mbed test --unittests` command. To learn how to use unit tests with Mbed CLI, please see the [appropriate documentation section](test-and-debug.html#unit-testing). For other information on using Mbed CLI, please see the [CLI documentation in handbook](../tools/developing-mbed-cli.html).
 
-### Writing unit tests
+## Writing unit tests
 
 Create two files in the test directory for each test suite:
 
@@ -157,11 +157,11 @@ TEST_F(TestSemaphore, constructor)
 }
 ```
 
-### Building and running unit tests
+## Building and running unit tests
 
 Use Mbed CLI to build and run unit tests. For advanced use, you can run CMake and a make program directly.
 
-#### Build tests directly with CMake
+### Build tests directly with CMake
 
 1. Create a build directory `mkdir UNITTESTS/build`.
 1. Move to the build directory `cd UNITTESTS/build`.
@@ -171,22 +171,22 @@ Use Mbed CLI to build and run unit tests. For advanced use, you can run CMake an
    - See the [CMake manual](https://cmake.org/cmake/help/v3.0/manual/cmake.1.html) for more information.
 1. Run a make program (Make, Gmake, Mingw32-make and so on) to build the tests.
 
-#### Run tests directly with CTest
+### Run tests directly with CTest
 
 Run a test binary in the build directory to run a unit test suite. To run multiple test suites at once, use CTest test runner. Run CTest with `ctest`. Add `-v` to get results for each test case. See the [CTest manual](https://cmake.org/cmake/help/v3.0/manual/ctest.1.html) for more information.
 
-#### Run tests with GUI test runner
+### Run tests with GUI test runner
 
 1. Install *gtest-runner* using the [documentation](https://github.com/nholthaus/gtest-runner).
 1. Run *gtest-runner*
 1. Add test executables into the list.
 1. Run them.
 
-### Get code coverage
+## Get code coverage
 
 Use Mbed CLI to generate code coverage reports. For advanced use, you can run Gcovr or any other code coverage tool directly in the build directory.
 
-### Troubleshooting
+## Troubleshooting
 
 **Problem:** Generic problems with CMake or with the build process.
 * **Solution**: Delete the build directory. Make sure that CMake, g++, gcc and a make program can be found in the path and are correct versions.

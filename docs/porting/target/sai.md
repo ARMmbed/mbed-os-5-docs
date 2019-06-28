@@ -1,4 +1,4 @@
-<h2 id="sai-port">Serial Audio Interface (SAI)</h2>
+<h1 id="sai-port">Serial Audio Interface (SAI)</h1>
 
 The **Serial Audio Interface** allows you to send or receive an audio stream over a synchronous serial interface made of 3 to 4 lines.
 
@@ -18,9 +18,9 @@ This highly configurable interface has a wide range of elements you can adjust:
 
 <span class="warnings">**Warning:** We are introducing the SAI API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the SAI API](#implementing-the-sai-api) section.
 
-### Assumptions
+## Assumptions
 
-#### Defined behavior
+### Defined behavior
 
 - `sai_init()` returns `SAI_RESULT_INVALID_PARAM` if at least one of the given parameters is undefined (NULL).
 - `sai_init()` returns `SAI_RESULT_ALREADY_INITIALIZED` if SAI is already initialized.
@@ -44,12 +44,12 @@ If the device is a *transmitter*:
 - `sai_transfer()` if `psample` is NULL; it pushes one '0' sample to the FiFo and returns true.
 - `sai_transfer()` if `psample` is not NULL; it pushes the pointed sample to the FiFo and returns true.
 
-#### Undefined behavior
+### Undefined behavior
 
 - Calling any function other than `sai_init()` before the initialization of the SAI.
 - Calling any function other than `sai_init()` after calling `sai_free()`.
 
-#### Other requirements
+### Other requirements
 
 A target must also define these elements to allow tests to be run:
 
@@ -59,7 +59,7 @@ A target must also define these elements to allow tests to be run:
   - SAI_A_MCLK, SAI_A_BCLK, SAI_A_WCLK and SAI_A_SD.
   - SAI_B_MCLK, SAI_B_BCLK, SAI_B_WCLK and SAI_B_SD.
 
-#### Notes
+### Notes
 
 When implementing this API, consider a transceiver supporting asynchronous rx/tx as 2 different peripherals:
 
@@ -68,11 +68,11 @@ When implementing this API, consider a transceiver supporting asynchronous rx/tx
 
 The first allocated channel may or may not limit the second one's feature. For example, in a peripheral that supports asynchronous rx/tx but requires the format of both instances to be the same, the first allocated instance sets the format and ties the second one to this format.
 
-### Dependencies
+## Dependencies
 
 Hardware SAI/I2S capabilities.
 
-### Implementing the SAI API
+## Implementing the SAI API
 
 You can find the API and specification for the SAI API in the following class reference:
 
@@ -80,7 +80,7 @@ You can find the API and specification for the SAI API in the following class re
 
 To enable SAI support in Mbed OS, add the `SAI` label in the `device_has` option of the target's section in the `targets.json` file.
 
-### Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for SAI. You can use these tests to validate the correctness of your implementation. To run the SAI HAL tests, use the following command:
 

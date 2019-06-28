@@ -1,11 +1,11 @@
-## UARTService
+# UARTService
 
 [Add description here.]
 
-### UARTService class reference
+## UARTService class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_u_a_r_t_service.html)
 
-### UARTService example
+## UARTService example
 
 [Add example here.]

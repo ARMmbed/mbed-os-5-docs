@@ -1,8 +1,8 @@
-## Arm Mbed tutorials
+# Arm Mbed tutorials
 
 The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast to other sections of the documentation, which provide background reference material, this section provides instructions for specific tasks you may wish to perform. This section contains two formats of documentation: tutorials and examples. Tutorials include step-by-step guidance, and examples are code snippets you can use as a starting point for your application or as a reference on how to use a particular API.
 
-### Getting started
+## Getting started
 
 <table>
 <tbody>
@@ -15,11 +15,11 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 </tbody>
 </table>
 
-### Using the APIs
+## Using the APIs
 
 These tutorials show you how to perform specific tasks that use the Arm Mbed APIs:
 
-#### Using connectivity APIs
+### Using connectivity APIs
 
 <table>
 <tbody>
@@ -52,7 +52,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 </tbody>
 </table>
 
-#### Using RTOS APIs
+### Using RTOS APIs
 
 <table>
 <tbody>
@@ -62,7 +62,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 </tbody>
 </table>
 
-#### Using drivers APIs
+### Using drivers APIs
 
 <table>
 <tbody>
@@ -72,7 +72,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 </tbody>
 </table>
 
-#### Using security APIs
+### Using security APIs
 
 <table>
 <tbody>
@@ -88,7 +88,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 </tbody>
 </table>
 
-#### Using storage APIs
+### Using storage APIs
 
 <table>
 <tbody>
@@ -102,7 +102,7 @@ These tutorials show you how to perform specific tasks that use the Arm Mbed API
 </tbody>
 </table>
 
-### Serial communication
+## Serial communication
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
@@ -120,7 +120,7 @@ These tutorials teach you to communicate with your development board, an essenti
 </tbody>
 </table>
 
-### Debugging
+## Debugging
 
 These tutorials show you how to install, export a project to and start a debugging session with different IDEs.
 
@@ -144,7 +144,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 </tbody>
 </table>
 
-### Bootloader
+## Bootloader
 
 <table>
 <tbody>
@@ -157,7 +157,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 </tbody>
 </table>
 
-### Optimizing
+## Optimizing
 
 <table>
 <tbody>
@@ -173,12 +173,12 @@ These tutorials show you how to install, export a project to and start a debuggi
 </tbody>
 </table>
 
-### Integrating with Arm Treasure Data
+## Integrating with Arm Treasure Data
 
 [Links to tutorials](../tutorials/integrating-with-arm-treasure-data.html) on the Arm Treasure Data site.
 
 
-### Migrating to Mbed OS 5
+## Migrating to Mbed OS 5
 
 <table>
 <tbody>

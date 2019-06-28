@@ -1,5 +1,6 @@
 {
     "product_name": "Mbed OS 5",
+    "split_pages_on": "h1",
     "books": [
         {
             "title": "Mbed OS API doxygen",

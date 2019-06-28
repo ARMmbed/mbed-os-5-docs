@@ -1,10 +1,10 @@
-## Debugging using printf() statements
+# Debugging using printf() statements
 
 An easy way to inspect what your application is doing is to augment your application with log statements. In Arm Mbed, you can use a serial connection to send feedback from your development board back to your computer. This uses the same USB cable that you use to program your device.
 
-### Prerequisites
+## Prerequisites
 
-#### Windows
+### Windows
 
 Install the serial port driver for your development board:
 
@@ -15,19 +15,19 @@ You also need a serial monitor:
 
 - [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
 
-#### macOS
+### macOS
 
 On macOS, all software comes installed by default.
 
-#### Linux
+### Linux
 
 If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/).
 
-### Getting started
+## Getting started
 
 To send data over the serial connection, use the [Serial](../apis/serial.html) object.
 
-#### Example program
+### Example program
 
 This program blinks the LED on your development board and prints a message every time the LED changes state:
 
@@ -53,9 +53,9 @@ int main() {
 
 Compile this program, and flash it on your development board. You now can inspect these messages using a serial monitor.
 
-#### Seeing the log messages
+### Seeing the log messages
 
-#### Windows
+### Windows
 
 1. Open TeraTerm.
 1. Click *File > New Connection*.
@@ -70,7 +70,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
 
-#### macOS
+### macOS
 
 1. Open a terminal window.
 1. Enter `screen /dev/tty.usbm`, and press `Tab` to autocomplete.
@@ -81,7 +81,7 @@ Compile this program, and flash it on your development board. You now can inspec
     - `Ctrl+\`
     - `y`
 
-#### Linux
+### Linux
 
 1. Open a terminal window.
 1. Find the handler for your device:
@@ -99,7 +99,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 <span class="notes">**Note:** To avoid using `sudo`, set up a udev rule.</span>
 
-#### Setting the baud rate
+### Setting the baud rate
 
 By default, the speed at which the microcontroller and your computer communicate (the baud rate) is set to 9600 baud. This setting fits most use cases, but you can change it by calling the `baud` function on the serial object:
 
@@ -127,7 +127,7 @@ If you change the baud rate on the device, you also need to change it on your se
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/printf3.png)<span>Changing the baud rate</span></span>
 
-### Printf()
+## Printf()
 
 As seen above, you use the `printf()` function to communicate back to the user:
 
@@ -143,13 +143,13 @@ As seen above, you use the `printf()` function to communicate back to the user:
 
 The limited code-space on the microcontroller's internal flash and the delay of the program require you to use `printf()` judiciously. Be careful about using it in an event handler, which we expect to terminate within a few microseconds.
 
-#### Parameters
+### Parameters
 
 `printf()` can receive any number of parameters without knowing how many to expect.
 
 You need to provide a format string with format specifiers, followed by a matching number of arguments. For example, `printf(“temp too high %d”, temp)`: the format string is `temp too high %d`, and the format specifier is `%d`. The last part is the argument: `temp`. It matches the format specifier `%d`, which specifies an integer.
 
-### Printf() from an interrupt context
+## Printf() from an interrupt context
 
 If you run this code, you may receive an unpleasant surprise:
 
@@ -180,7 +180,7 @@ You can avoid this by:
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 
-### Printf() macros
+## Printf() macros
 
 You can use macro-replacement, which the preprocessor performs, to do some nifty tricks with `printf()`.
 
@@ -257,7 +257,7 @@ You can use `ASSERT()` to improve error reporting. It uses `error()` (a part of 
     } }
 ```
 
-### Fast circular log buffers based on printf()
+## Fast circular log buffers based on printf()
 
 When capturing logs from events that occur in rapid succession, using `printf()` may introduce unacceptable runtime latencies, which might alter the system's behavior or destabilize it. But delays in `printf()` aren’t because of the cost of generating the messages. The biggest cause of delay with `printf()` is actually pushing the logs to the UART. The solution is not to avoid `printf()` but to avoid pushing the logs to the UART while the operation you're debugging is running.
 
@@ -320,7 +320,7 @@ void xprintf(const char *format, ...)
 }
 ```
 
-### Video tutorials
+## Video tutorials
 
 Windows:
 

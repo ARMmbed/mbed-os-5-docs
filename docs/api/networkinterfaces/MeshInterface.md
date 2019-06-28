@@ -1,4 +1,4 @@
-<h2 id="mesh-api">Mesh</h2>
+<h1 id="mesh-api">Mesh</h1>
 
 <span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
@@ -15,37 +15,37 @@ The application can use the `LoWPANNDInterface` or `ThreadInterface` object for 
 
 You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](../reference/configuration-mesh.html) section documents.
 
-### Usage
+## Usage
 
 1. Create a network interface and driver objects.
 1. Initialize the interface with given PHY driver.
 1. Connect to network.
 
-### Supported mesh networking modes
+## Supported mesh networking modes
 
 Currently, 6LoWPAN-ND (neighbor discovery) and Thread bootstrap modes are supported.
 
-### Network connection states
+## Network connection states
 
 After the initialization, the network state is `MESH_DISCONNECTED`. After a successful connection, the state changes to `MESH_CONNECTED` and when disconnected from the network the state is changed back to `MESH_DISCONNECTED`.
 
 In case of connection errors, the state is changed to some of the connection error states. In an error state, there is no need to make a `disconnect` request and the application is allowed to attempt connecting again.
 
-### Getting started
+## Getting started
 
 See the example application [mbed-os-example-mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) for usage.
 
-### Mesh class reference
+## Mesh class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_mesh_interface.html)
 
-### Mesh example
+## Mesh example
 
 The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND or Thread network.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/mesh_led_control_example.cpp)
 
-### Related content
+## Related content
 
 - [Nanostack](../reference/mesh-tech.html#nanostack) technology reference material.
 - [6LoWPAN and Thread Mesh configuration documentation](../reference/configuration-mesh.html).

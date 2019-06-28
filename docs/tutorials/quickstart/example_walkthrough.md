@@ -1,8 +1,8 @@
-### Example walkthrough
+## Example walkthrough
 
 The quick start example blinks the LED on your board on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC.
 
-#### Viewing the output
+### Viewing the output
 
 To view the serial output use any terminal client, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
 
@@ -50,9 +50,9 @@ Stack Space: 664
 
 ```
 
-#### Understanding the output
+### Understanding the output
 
-##### System information
+#### System information
 
 **Mbed OS version:** Tip of master is represented by 999999. If you are using a tagged release of Mbed OS, the version will be configured by the OS. For custom releases, you can modify the version manually in `platform/mbed_version.h`.
 
@@ -82,16 +82,16 @@ Stack Space: 664
 | IAR      | 3           | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
 
 
-##### CPU statistics
+#### CPU statistics
 
 Percentage of runtime the device has spent awake.
 
-##### Heap statistics
+#### Heap statistics
 
 - Current heap size.
 - Maximum size the heap has ever reached (*not* the maximum size it can reach).
 
-##### Thread statistics
+#### Thread statistics
 
 Provides information on all running threads in the OS:
 
@@ -102,7 +102,7 @@ Provides information on all running threads in the OS:
 - Stack size.
 - Stack space.
 
-#### Related links
+### Related links
 
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
 - [Mbed OS configuration](../reference/configuration.html).

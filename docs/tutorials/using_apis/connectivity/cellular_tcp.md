@@ -1,4 +1,4 @@
-## Cellular TCP sockets
+# Cellular TCP sockets
 
 Establishing a cellular connection to the network with Mbed OS only requires the following operations:
 

@@ -1,15 +1,15 @@
-## USBMouse
+# USBMouse
 
 <span class="images">![](https://os.mbed.com/docs/v5.11/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse.png)<span>USBMouse class hierarchy</span></span>
 
 You can use the USBMouse interface to emulate a mouse over the USB port. You can choose relative or absolute coordinates and send clicks, button state and scroll wheel movements.
 If you need keyboard or keyboard and mouse functionality, please see the [USBKeyboard](USBKeyboard.html) and [USBMouseKeyboard](USBMouseKeyboard.html) classes.
 
-### USBMouse class reference
+## USBMouse class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.11/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse.html)
 
-### USBMouse example
+## USBMouse example
 
 ```C++ TODO
 #include "mbed.h"
@@ -74,7 +74,7 @@ int main(void)
 }
 ```
 
-### USBMouse Joystick example  
+## USBMouse Joystick example  
 
 This example uses a Grove - Thumb Joystick to act as a mouse. Use the joystick to move the mouse around the screen and click the joystick down to do a mouse left click.
 
@@ -143,7 +143,7 @@ int main() {
 
 ```
 
-### Related content
+## Related content
 
 - [USBMouse](USBMouse.html).
 - [USBMouseKeyboard](USBMouseKeyboard.html).

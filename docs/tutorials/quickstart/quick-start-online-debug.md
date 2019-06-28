@@ -1,6 +1,6 @@
-<h2 id="debug-ide-qs">Debugging the quick start</h2>
+<h1 id="debug-ide-qs">Debugging the quick start</h1>
 
-### Using printf
+## Using printf
 
 The easiest way to do basic debugging is to use the `printf` command in your code, then read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/).
 
@@ -21,7 +21,7 @@ To determine which communication port your board connects to:
 
 1. **On macOS**: Run `ls /dev/tty.*` from your command-line.
 
-### Exporting to a desktop IDE
+## Exporting to a desktop IDE
 
 To debug using a desktop IDE such as Keil uVision, IAR or Eclipse:
 

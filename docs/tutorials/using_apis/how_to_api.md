@@ -1,8 +1,8 @@
-## Using the APIs
+# Using the APIs
 
 This section contains step-by-step tutorials that show you how to perform specific tasks that use the Arm Mbed APIs.
 
-### Connectivity
+## Connectivity
 
 - [TCP sockets](cellular-tcp-sockets.html).
 - [BLE](ble-tutorial.html).
@@ -10,12 +10,12 @@ This section contains step-by-step tutorials that show you how to perform specif
 
 ___
 
-### RTOS
+## RTOS
 
 - [EventQueue](the-eventqueue-api.html).
 
 ___
 
-### Drivers
+## Drivers
 
 - [Flow control using Ticker and Wait](application-flow-control.html).

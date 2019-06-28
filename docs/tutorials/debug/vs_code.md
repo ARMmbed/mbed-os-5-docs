@@ -1,10 +1,10 @@
-## Visual Studio Code
+# Visual Studio Code
 
 This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](../tools/setting-up-a-local-debug-toolchain.html).
 
 Also install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](../tools/developing-mbed-cli.html) to build the project.
 
-### Installing Visual Studio Code
+## Installing Visual Studio Code
 
 You need to install Visual Studio Code with the C/C++ extensions to begin.
 
@@ -16,11 +16,11 @@ You need to install Visual Studio Code with the C/C++ extensions to begin.
 
 1. When prompted, restart the IDE.
 
-### Exporting a project
+## Exporting a project
 
 To export your project to Visual Studio Code, you can use either the Online Compiler or Arm Mbed CLI.
 
-#### Online Compiler
+### Online Compiler
 
 1. Right click on your project.
 1. Select **Export Program...**.
@@ -32,7 +32,7 @@ To export your project to Visual Studio Code, you can use either the Online Comp
 
     <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/vscode1.png)<span>Exporting to Visual Studio Code</span></span>
 
-#### Arm Mbed CLI
+### Arm Mbed CLI
 
 In your project folder, run:
 
@@ -43,7 +43,7 @@ In your project folder, run:
 $ mbed export -i vscode_gcc_arm -m K64F --profile debug
 ```
 
-### Configuring the debugger
+## Configuring the debugger
 
 To configure the debugger for your project:
 
@@ -58,7 +58,7 @@ To configure the debugger for your project:
 
 <span class="notes">**Note:** If you installed the GNU Arm Embedded Toolchain in a nondefault location (for example, through the Arm Mbed CLI installer), you need to update the `MIDebuggerPath` to the full path of your copy of `arm-none-eabi-gdb`. To find the new path, open a terminal, and run `where arm-none-eabi-gdb` (Windows) or `which arm-none-eabi-gdb` (macOS and Linux).</span>
 
-### Debugging your project
+## Debugging your project
 
 1. On the **Debug** tab, click the **Play** icon.
 
@@ -72,7 +72,7 @@ To configure the debugger for your project:
 
 <span class="tips">**Tip:** You can use the Debug Console to interact with the device over GDB and use functionality the UI does not expose. For example, to see the registers, type `-exec info registers`. To put a watch on a memory location, type `-exec watch *0xdeadbeef`.</span>
 
-### Building with Mbed CLI
+## Building with Mbed CLI
 
 Visual Studio Code uses `make` to build your application by default. You can also build with Mbed CLI. To do this:
 

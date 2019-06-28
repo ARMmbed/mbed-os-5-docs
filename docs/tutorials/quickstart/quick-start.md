@@ -1,4 +1,4 @@
-<h2 id="quick-start">Arm Mbed OS quick start</h2>
+<h1 id="quick-start">Arm Mbed OS quick start</h1>
 
 This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device.
 
@@ -10,7 +10,7 @@ You can choose to develop **online** or **offline**:
 
 - For offline development, we provide Arm Mbed CLI, our command-line tool. Mbed CLI is compatible with Windows, Linux and macOS. Mbed CLI provides more options, but requires slightly more setup.
 
-#### Please choose how to proceed
+### Please choose how to proceed
 
 | [Online with the Mbed Online Compiler](../quick-start/online-with-the-online-compiler.html) | [Offline with Mbed CLI](../quick-start/offline-with-mbed-cli.html) |
 | :---: | :---: |

@@ -1,6 +1,6 @@
-## Execution
+# Execution
 
-### Threads
+## Threads
 
 Your application (`main` function) starts execution in the main thread, but it's not the only thread running in Mbed OS. There are many threads running system services, such as:
 * Main - The default thread that executes the application's `main` function. The main thread has 4kB of stack space by default. The application can configure it in `mbed_app.json` by defining the `MAIN_STACK_SIZE` parameter.
@@ -9,14 +9,14 @@ Your application (`main` function) starts execution in the main thread, but it's
 
 On top of the standard system threads, some drivers may use additional threads. Users can create threads using the [Thread class](../apis/thread.html).
 
-### Modes
+## Modes
 
 Mbed OS executes in two modes:
 
 * Thread mode - Default application mode. All user threads execute in this mode. It uses dedicated thread specific stack memory.
 * Handler mode - Interrupt mode, system code and interrupt handlers execute in this mode. It uses static system ISR stack memory.
 
-#### Handler mode
+### Handler mode
 
 All the ISR handlers execute in this mode. You can use the same RTOS API in ISR handlers. The important difference between the modes is that code written for the handler mode can't wait; it executes as fast as possible and returns to the thread mode. Therefore:
 

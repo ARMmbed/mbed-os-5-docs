@@ -1,4 +1,4 @@
-<h2 id="cellular-api">Cellular</h2>
+<h1 id="cellular-api">Cellular</h1>
 
 <span class="images">![](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_cellular_base.png)<span>CellularBase class hierarchy</span></span>
 
@@ -6,7 +6,7 @@ The [CellularBase](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_cellular_bas
 
 Arm Mbed OS provides a [reference implementation of CellularBase](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/_cellular_context_8h_source.html), which has more information.
 
-##### Getting started
+#### Getting started
 
 1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
 
@@ -30,7 +30,7 @@ Received from echo server 4 Bytes
 Success. Exiting
 ```
 
-##### Basic working principles
+#### Basic working principles
 
 You can use and extend a cellular interface in various different ways. For example,
 
@@ -48,11 +48,11 @@ You can use and extend a cellular interface in various different ways. For examp
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.
 - After registration, the driver opens a PPP pipe using LWIP with the cellular modem and connects to the internet. If AT only mode is in use, then modem-specific AT commands are used for socket data control.
 
-### CellularBase class reference
+## CellularBase class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.11/mbed-os-api-doxy/class_cellular_base.html)
 
-### Usage
+## Usage
 
 To bring up the network interface:
 
@@ -60,13 +60,13 @@ To bring up the network interface:
 1. Call the `connect(pincode, apn)` function with a PIN code for your SIM card and an APN for your network.
 1. Once connected, you can use Mbed OS [network sockets](network-socket.html) as usual.
 
-### Cellular example: connection establishment
+## Cellular example: connection establishment
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cellular)](https://github.com/ARMmbed/mbed-os-example-cellular/blob/mbed-os-5.10.3/main.cpp)
 
-### Related content
+## Related content
 
 - [Network socket](network-socket.html) API reference overview.
 - [Cellular architecture](../reference/cellular.html).
