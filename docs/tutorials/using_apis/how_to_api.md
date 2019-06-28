@@ -2,18 +2,11 @@
 
 This section contains step-by-step tutorials that show you how to perform specific tasks that use the Arm Mbed APIs.
 
-## Connectivity
+## Drivers and RTOS
 
-- [Choosing and connecting a mesh protocol](../tutorials/mesh-tutorial.html).
-- [Light control using mesh](../tutorials/light-control.html).
-- [BLE](ble-tutorial.html).
-- [LoRa Network](LoRa-tutorial.html).
-
-___
-
-## RTOS
-
+- [Alarm tutorial using DigitalOut, InterruptIn and LowPowerTicker](../tutorials/alarm-tutorial.html).
 - [EventQueue](the-eventqueue-api.html).
+- [Flow control using Ticker and Wait](application-flow-control.html).
 
 ___
 
@@ -23,9 +16,9 @@ ___
 
 ___
 
-## Drivers
+## Connectivity
 
-- [Alarm tutorial using DigitalOut, InterruptIn and LowPowerTicker](../tutorials/alarm-tutorial.html).
-- [Flow control using Ticker and Wait](application-flow-control.html).
-
-<!--The ToC and the list here should match. For example, the connectivity tutorials are listed first here but are last in the ToC, and the EventQueue is stuck between the two driver tutorials-->
+- [Choosing and connecting a mesh protocol](../tutorials/mesh-tutorial.html).
+- [Light control using mesh](../tutorials/light-control.html).
+- [BLE](ble-tutorial.html).
+- [LoRa Network](LoRa-tutorial.html).
