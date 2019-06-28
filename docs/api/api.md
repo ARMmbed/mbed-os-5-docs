@@ -1,6 +1,6 @@
-## Full API list
+# Full API list
 
-### Platform APIs
+## Platform APIs
 
 [Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
 
@@ -36,7 +36,7 @@
 </tbody>
 </table>
 
-### Drivers APIs
+## Drivers APIs
 
 [Driver APIs](drivers.html) include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.
 
@@ -91,7 +91,7 @@
 </tbody>
 </table>
 
-### RTOS APIs
+## RTOS APIs
 
 The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
@@ -118,7 +118,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tbody>
 </table>
 
-### Network socket APIs
+## Network socket APIs
 
 [Network socket APIs](network-socket.html) include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
 
@@ -137,7 +137,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tbody>
 </table>
 
-### Network interfaces APIs
+## Network interfaces APIs
 
 [Network interfaces](network-interfaces.html) are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.
 
@@ -156,7 +156,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tbody>
 </table>
 
-### Bluetooth Low Energy (BLE) APIs
+## Bluetooth Low Energy (BLE) APIs
 
 [Bluetooth low energy (BLE)](bluetooth.html) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
@@ -178,7 +178,7 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 </tbody>
 </table>
 
-### LoRaWAN APIs
+## LoRaWAN APIs
 
 Arm Mbed OS provides a native network stack for [LoRaWAN](lorawan.html). LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
@@ -193,7 +193,7 @@ Arm Mbed OS provides a native network stack for [LoRaWAN](lorawan.html). LoRaWAN
 </tbody>
 </table>
 
-### NFC APIs
+## NFC APIs
 
 You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio technology, to enable use cases such as contactless payments, access control and device pairing.
 
@@ -212,7 +212,7 @@ You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio tech
 </tbody>
 </table>
 
-### Security API
+## Security API
 
 With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
 
@@ -224,7 +224,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 </tbody>
 </table>
 
-### Storage APIs
+## Storage APIs
 
 The [storage APIs](storage.html) include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.
 

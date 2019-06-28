@@ -1,8 +1,8 @@
-## Cellular module porting
+# Cellular module porting
 
 This document provides guidelines how to make a cellular modem adaptation for Mbed OS. Please see [Cellular API usage](/docs/v5.10/apis/cellular-api.html) about how to use cellular modules from an application point of view.
 
-### Adding modem target support
+## Adding modem target support
 
 For new targets, you may need to modify [targets.json](/docs/v5.10/tools/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
 
@@ -56,7 +56,7 @@ typedef enum {
 
 ```
 
-### Adding a new cellular target
+## Adding a new cellular target
 
 You need to specify in [CellularTargets.h](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_cellular_targets_8h_source.html) the `<manufacturer-module>` that is mounted on your board.
 
@@ -69,13 +69,13 @@ You need to specify in [CellularTargets.h](https://os.mbed.com/docs/v5.10/mbed-o
 
 You can browse the existing `manufacturer-modules` under `features/cellular/framework/targets`. If none of those are compatible with your module then you need to make a new cellular module adaptation.
 
-### Adding a new cellular module
+## Adding a new cellular module
 
 You can probably reuse an existing adaptation because most cellular modules are similar to one another.
 
 You need to create a new folder as _MANUFACTURER/MODULE/_ for your new cellular module in `features/cellular/framework/targets/`. A device class inheriting [AT_CellularDevice](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) is a minimum, and you may need to extend other cellular APIs as well if the default implementation is not sufficient for your cellular module.
 
-### Socket adaptation
+## Socket adaptation
 
 You can implement the socket API in two ways:
 
@@ -88,7 +88,7 @@ For example implementations of a socket adaptation, look in `features/cellular/f
 
 When the modem has AT and/or PPP mode support in place and the application developer has selected which mode to use, it's up to the cellular framework to instantiate the correct classes. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates [EasyCellularConnection class](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_easy_cellular_connection_8h_source.html), which in turn instantiates [CellularConnectionFSM class](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_cellular_connection_f_s_m_8h_source.html). CellularConnectionFSM instantiates classes implementing [the AT command layer](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. If an application developer has configured PPP mode in `mbed_app.json` then [AT_CellularNetwork](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_a_t___cellular_network_8h_source.html) connects to a cellular network and calls `nsapi_ppp_connect()` to start the data call through the PPP pipe using LWIP sockets.
 
-### Testing
+## Testing
 
 Once you have your target and driver port ready, you can verify your implementation by running port verification tests on your system. You must have `mbed-greentea` installed for this.
 

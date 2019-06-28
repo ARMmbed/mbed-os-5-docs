@@ -1,10 +1,10 @@
-<h2 id="usb-overview">USB components overview</h2>
+<h1 id="usb-overview">USB components overview</h1>
 
 The Universal Serial Bus (USB) is the most widely used bus in today's computer. USB has been designed to standardize connections between the computer and peripherals. For example, keyboards, mice, USB audio devices, printers, scanners, disk drives and cameras can use the same bus to exchange data with a computer.
 
 This document refers to the Mbed OS classes providing USB peripheral functionality as USB components. These USB components inherit from USBDevice and provide specific USB peripherial functionality. Below is information common to all of the Mbed OS USB components and how to use them.
 
-### Component construction
+## Component construction
 
 Constructing a USB component with the default parameters perform initialization for you. Once the constructor is finished then the device is ready to be used. This process:
 
@@ -82,7 +82,7 @@ int main(void)
 }
 ```
 
-### USB component state
+## USB component state
 
 The `connect()` and `disconnect()` functions control the state of the physical USB line to the host. When a device is connected, it is visible to the host PC to which it is attached. Once connected, the host PC must finish setup.
 

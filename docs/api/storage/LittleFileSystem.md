@@ -1,4 +1,4 @@
-## LittleFileSystem
+# LittleFileSystem
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
 
@@ -23,7 +23,7 @@ Microcontrollers and flash storage present three challenges for embedded storage
 
 For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
-#### Use cases
+### Use cases
 
 We built this for microcontrollers with external flash storage. In this context, it outperforms the other Mbed OS file systems in terms of RAM, ROM, wear and runtime.
 
@@ -31,7 +31,7 @@ For storage on an SD card that is accessible from a PC, use the FATFileSystem du
 
 LittleFileSystem is thread safe.
 
-#### Usage
+### Usage
 
 Instantiate the `LittleFileSystem` class with a block device and file path.
 
@@ -39,15 +39,15 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 To configure this class, please see the [FileSystem configuration documentation](/docs/v5.10/reference/configuration-storage.html#filesystem-default-configuration).
 
-### LittleFileSystem class reference
+## LittleFileSystem class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_little_file_system.html)
 
-### LittleFileSystem example
+## LittleFileSystem example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/54f958b463d0/main.cpp)
 
-### Related content
+## Related content
 
 - [Storage configuration](/docs/v5.10/reference/configuration-storage.html).
 - [Blog post: LittleFS - A high-integrity embedded file system](https://os.mbed.com/blog/entry/littlefs-high-integrity-embedded-fs/).

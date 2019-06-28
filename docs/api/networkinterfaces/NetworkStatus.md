@@ -1,10 +1,10 @@
-<h2 id="network-status">Network status</h2>
+<h1 id="network-status">Network status</h1>
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/NetworkinterfaceStates.png)<span>Network states</span></span>
 
-#### Usage
+### Usage
 
 The callback needs to handle these possible network states:
 
@@ -74,12 +74,12 @@ Optionally, the application might want to set the `connect()` method to nonblock
 
 By default, the `connect()` call blocks until `NSAPI_STATUS_GLOBAL_UP` state is reached. Some applications might require only link-local connectivity and therefore do not need to block that long. In those case monitoring the state changes is the preferred behavior.
 
-### Example
+## Example
 
 Registering a status callback that connection state changes trigger depends on whether the network interface provides this functionality.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_ConnStateCb_Example/file/8a8191e3d305/main.cpp)
 
-### Related content
+## Related content
 
 - [Network socket](network-socket.html) API reference overview.

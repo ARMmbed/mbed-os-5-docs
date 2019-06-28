@@ -1,13 +1,13 @@
-## Ignoring files from mbed build
+# Ignoring files from mbed build
 
 An `.mbedignore` file tells the `mbed compile` and `mbed export` commands which files and directories to ignore (not process).
 
-### Usage
+## Usage
 You can place an `.mbedignore` file in any directory searched by `mbed compile` or `mbed export`.
 
 Avoid defining rules that would cross the library boundaries; these can lead to side effects or build problems that are hard to find.
 
-### Syntax
+## Syntax
 
 Each line in the `.mbedignore` file is a file pattern used for matching files. `mbed compile` and `mbed export` ignore every file that matches any pattern found in any `.mbedignore` file.
 
@@ -29,7 +29,7 @@ The globbing functionality is not used, so you cannot recursively match a specif
 
 You can use relative paths, so you can match files deeper in the build tree. However, avoid crossing library boundaries.
 
-### Example
+## Example
 
 A file located in `source/obsolete/.mbedignore` with the following content:
 

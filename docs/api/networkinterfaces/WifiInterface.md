@@ -1,12 +1,12 @@
-## Wi-Fi
+# Wi-Fi
 
 The WifiInterface provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
-### Wi-Fi class reference
+## Wi-Fi class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/_wi_fi_interface_8h_source.html)
 
-### Usage
+## Usage
 
 To bring up the network interface of an external Wi-Fi device (for example, the ESP8266Interface):
 
@@ -26,7 +26,7 @@ To bring up the network interface of an Ethernet-like driver (for example, the O
     2. Ensure the network stack acquires the IP address and DNS server address.
 1. Once connected, you can use the WiFiInterface as a target for opening [network sockets](network-socket.html).
 
-### Troubleshooting information
+## Troubleshooting information
 
 Network interface `connect()` and `set_credential()` might return following errors:
 
@@ -38,7 +38,7 @@ Network interface `connect()` and `set_credential()` might return following erro
 | `NSAPI_ERROR_AUTH_FAILURE` | Wrong password given. |
 | `NSAPI_ERROR_DEVICE_ERROR` | Unknown failure happened in the device. The device may not be capable of reporting more descriptive error codes. |
 
-### Security
+## Security
 
 For specifying security settings, both `connect()` and `set_credential()` have optional parameter `nsapi_security_t security`, which defines the security mode the device uses. WifiInterface supports the following security modes:
 
@@ -52,7 +52,7 @@ For specifying security settings, both `connect()` and `set_credential()` have o
 
 Please note that settings should match the security mode from the access point. Also, not all drivers support every mode. For most compatible settings, use `NSAPI_SECURITY_WPA_WPA2`, and set the Wi-Fi access point to allow only WPA2 mode.
 
-### Wi-Fi example
+## Wi-Fi example
 
 Here is an example of an HTTP client program. The program brings up an ESP8266 as the underlying network interface, and uses it to perform an HTTP transaction over a TCPSocket. There are multiple [Wi-Fi components](https://os.mbed.com/components/cat/wifi/) that implement the WiFiInterface class. The example below uses the [ESP8266Interface](https://github.com/armmbed/esp8266-driver) and [OdinWiFiInterface](https://github.com/u-blox/ublox-odin-w2-drivers-docs-mbed-5).
 
@@ -60,7 +60,7 @@ The ESP8266Interface uses AT commands over serial interface to connect to an ext
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocketWiFi_Example/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-wifi/file/122bb3ae6de5/main.cpp)
 
-### Related content
+## Related content
 
 - [Wi-Fi components](https://os.mbed.com/components/cat/wifi/).
 - [Network socket](network-socket.html) API overview.

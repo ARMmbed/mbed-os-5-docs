@@ -1,4 +1,4 @@
-## Serial communication overview
+# Serial communication overview
 
 Communicating with your development board is an essential part of programming and debugging. [Terminal applications](serial-comm.html#terminal-applications) make this communication easier. Using terminal applications is often the second step of debugging after blinking lights, and it can give you more information than flashing lights can.
 

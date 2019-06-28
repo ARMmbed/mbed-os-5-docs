@@ -1,14 +1,14 @@
-## USBMouseKeyboard
+# USBMouseKeyboard
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse_keyboard.png)<span>USBMouseKeyboard class hierarchy</span></span>
 
 You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at the same time over the USB port. You can send both presses and mouse movements with this class.
 
-### USBMouseKeyboard class reference
+## USBMouseKeyboard class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.10/feature-hal-spec-usb-device-doxy/class_u_s_b_mouse_keyboard.html)
 
-### USBMouseKeyboard example
+## USBMouseKeyboard example
 
 ```C++
 #include "mbed.h"
@@ -35,7 +35,7 @@ int main(void) {
 }
 ```
 
-### Related content
+## Related content
 
 - [USBMouse](USBMouse.html).
 - [USBKeyboard](USBKeyboard.html).

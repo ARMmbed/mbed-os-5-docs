@@ -1,12 +1,12 @@
-<h2 id="quick-start-online">Arm Mbed Online Compiler</h2>
+<h1 id="quick-start-online">Arm Mbed Online Compiler</h1>
 
-### Setup
+## Setup
 
-#### Create an Arm Mbed account
+### Create an Arm Mbed account
 
 Go to [os.mbed.com](https://os.mbed.com/), and [create an account](https://os.mbed.com/account/signup/).
 
-#### Setup environment
+### Setup environment
 
 - Plug your Mbed board into your computer, and open its USB device folder.
 - Double click on the `MBED.HTM` file. (This adds your Mbed platform to the Online Compiler.)
@@ -15,56 +15,56 @@ If you do not have an Mbed board, go to [os.mbed.com/platforms](http://os.mbed.c
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/add_to_compiler.png)
 </span>
 
-### Code
+## Code
 
-#### Import
+### Import
 
 Visit the Mbed OS [Blinky example repository](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/), and click **"Import into Compiler** button.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import_into_compiler.png)
 </span>
 
-#### Compile
+### Compile
 
 Click **Compile**. Your browser downloads the program as an executable file.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/online_compile_button.png)
 </span>
 
-#### Program
+### Program
 
 Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
 Once you have flashed the file to the board, press the board's reset button. The LED blinks.
 
-### Debug
+## Debug
 
-#### Desktop IDE
+### Desktop IDE
 
 To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, click the `Export` button under `Program Details`. Select your export platform and IDE, and click `Export`. Your browser downloads a `.zip` file with the project files.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/export_online_compiler.png)
 </span>
 
-#### Printf
+### Printf
 
 Another way to do basic debugging is to use the `printf` command in your code and then read the output using a serial terminal, such as [PuTTY](http://www.putty.org/) or [CoolTerm](http://freeware.the-meiers.org/). For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device.
 
 Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. To determine which communication port your board connects to, follow the instructions for your operating system:
 
-##### Windows
+#### Windows
 
 Open the Device Manager by pressing `Windows key + R`. Type `devmgmt.msc`, and click `OK`. Under `Ports (COM & LPT)`, your Mbed board is listed as a `USB Serial Device` next to its COM port.
 
-##### Linux
+#### Linux
 
 Run `dmesg | grep tty` from your command-line.
 
-##### macOS
+#### macOS
 
 Run `ls /dev/tty.*` from your command-line.
 
-### Further reading
+## Further reading
 
 More examples:
 - [Mbed OS examples](https://os.mbed.com/teams/mbed-os-examples/code/) - list of Mbed OS 5 example repositories.

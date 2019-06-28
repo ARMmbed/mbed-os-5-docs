@@ -1,4 +1,4 @@
-## QuadSPI (QSPI)
+# QuadSPI (QSPI)
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)<span>QSPI class hierarchy</span></span>
 
@@ -12,15 +12,15 @@ The default configuration for the QSPI interface is 1 MHz, Single-SPI, Mode 0.
   
 For more information, please review the related content.
 
-### QuadSPI class reference
+## QuadSPI class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
 
-### QuadSPI example
+## QuadSPI example
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/QSPI)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/QSPI/main.cpp)
 
-### Related content
+## Related content
 
 - [QSPI flash block device](https://github.com/ARMmbed/qspif-blockdevice).
 - [STMicroelectronics Quad-SPI documentation](https://www.st.com/content/ccc/resource/technical/document/application_note/group0/b0/7e/46/a8/5e/c1/48/01/DM00227538/files/DM00227538.pdf/jcr:content/translations/en.DM00227538.pdf).

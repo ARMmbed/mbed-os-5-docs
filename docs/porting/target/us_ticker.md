@@ -1,10 +1,10 @@
-## Microsecond ticker
+# Microsecond ticker
 
 Implementing the microsecond ticker enables Mbed OS to perform operations that require precise timing. You can use this API to schedule events, record elapsed time and perform submillisecond delays.
 
-### Assumptions
+## Assumptions
 
-#### Defined behavior
+### Defined behavior
 
 - Has a reported frequency between 250KHz and 8MHz.
 - Has a counter that is at least 16 bits wide.
@@ -19,14 +19,14 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 - The function `ticker_fire_interrupt` causes `ticker_irq_handler` to be called immediately from interrupt context.
 - The ticker operations `ticker_read`, `ticker_clear_interrupt`, `ticker_set_interrupt` and `ticker_fire_interrupt` take less than 20us to complete.
 
-#### Undefined behavior
+### Undefined behavior
 
 - Calling any function other than `ticker_init` before the initialization of the ticker.
 - Whether `ticker_irq_handler` is called a second time if the time wraps and matches the value set by `ticker_set_interrupt` again.
 - Calling `ticker_set_interrupt` with a value that has more than the supported number of bits.
 - Calling any function other than `us_ticker_init` after calling `us_ticker_free`.
 
-#### Notes
+### Notes
 
 Be careful around these common trouble areas when implementing this API:
 
@@ -34,11 +34,11 @@ Be careful around these common trouble areas when implementing this API:
 - The ticker keeps counting when it rolls over
 - The ticker interrupt fires when the compare value is set to 0 and overflow occurs
 
-### Dependencies
+## Dependencies
 
 To implement this API, the device must have a hardware counter that has a count value at least 16 bits wide and can operate between 250KHz and 8MHz.
 
-### Implementing the microsecond ticker API
+## Implementing the microsecond ticker API
 
 You can find the API and specification for the microsecond ticker API in the following header file:
 
@@ -46,7 +46,7 @@ You can find the API and specification for the microsecond ticker API in the fol
 
 To enable microsecond ticker support in Mbed OS, add the `USTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
 
-### Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for the microsecond ticker. You can use these tests to validate the correctness of your implementation. To run the microsecond ticker HAL tests, use the following command:
 

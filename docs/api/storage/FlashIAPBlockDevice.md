@@ -1,4 +1,4 @@
-## FlashIAPBlockDevice
+# FlashIAPBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_flash_i_a_p_block_device.png)<span>FlashIAPBlockDevice class hierarchy</span></span>
 
@@ -11,11 +11,11 @@ Additional notes:
 
 To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
 
-### FlashIAPBlockDevice class reference
+## FlashIAPBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_flash_i_a_p_block_device.html)
 
-### FlashIAPBlockDevicesBlockDevice example:
+## FlashIAPBlockDevicesBlockDevice example:
 
 ``` cpp
 #include "mbed.h"
@@ -49,6 +49,6 @@ int main() {
 }
 ```
 
-### Related content
+## Related content
 
 - [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).

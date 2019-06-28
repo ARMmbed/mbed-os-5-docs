@@ -1,4 +1,4 @@
-## MBRBlockDevice
+# MBRBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_m_b_r_block_device.png)<span>MBRBlockDevice class hierarchy</span></span>
 
@@ -11,11 +11,11 @@ MBRBlockDevices have the following configurable parameters in the constructor:
 
 You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
 
-### MBRBlockDevice class reference
+## MBRBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_m_b_r_block_device.html)
 
-### MBRBlockDevice example
+## MBRBlockDevice example
 
 Partition a heap backed block device into two partitions. This example also uses the [HeapBlockDevice](heapblockdevice.html).
 
@@ -25,7 +25,7 @@ Partition an SD card, and format the new partition with a FAT filesystem. A PC w
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_2/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_2/file/a48b7099a59c/main.cpp)
 
-### Related content
+## Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
 - [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).

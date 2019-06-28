@@ -1,4 +1,4 @@
-## SDBlockDevice
+# SDBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_d_block_device.png)<span>SDBlockDevice class hierarchy</span></span>
 
@@ -6,7 +6,7 @@ You can use the Mbed OS SD card block device, so applications can read and write
 
 To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
 
-### Mbed OS file system software component stack
+## Mbed OS file system software component stack
 
 
     ------------------------
@@ -66,11 +66,11 @@ The figure above shows the Mbed OS software component stack used for data storag
 - The Block API. The SDCard block device is a persistent storage block device.
 - The SPI module provides the Mbed OS SPI API.
 
-### SDBlockDevice class reference
+## SDBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_d_block_device.html)
 
-### SDBlockDevice example application
+## SDBlockDevice example application
 
 The following sample code illustrates how to use the SD block device API:
 
@@ -122,6 +122,6 @@ int main()
 }
 ```
 
-### Related content
+## Related content
 
 - [BlockDevice configuration](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).

@@ -1,8 +1,8 @@
-## Analyzing Mbed OS crash dump
+# Analyzing Mbed OS crash dump
 
 This tutorial explains the crash dump generation in Mbed OS and how to analyze the crash dump data.
 
-### Crash dump generation on fault exception
+## Crash dump generation on fault exception
 
 When the system crashes due to fault exceptions, the Mbed OS fault exception handler is invoked and generates a crash dump containing register context and current thread information. This information prints to your serial (STDOUT) terminal. The register context generated is the state of registers at the instance when the exception triggers. The following Cortex-M fault exceptions trigger the Mbed OS fault exception handler.
 
@@ -70,7 +70,7 @@ For more info, visit: https://armmbed.github.io/mbedos-error/?error=0x80FF013D
 
 ```
 
-### Analyzing crash dump
+## Analyzing crash dump
 
 In the example above, you can see that the crash dump indicates the fault exception type (see **FaultType**), the register context (see **Context**) at the time of exception and the current threads (see **Thread Info**) in the system, along with their stack information.
 
@@ -80,7 +80,7 @@ Note that the **LR** value may not reflect the actual caller, depending on the i
 
 The thread information section is split into five subsections corresponding to the state of the thread. For each thread: state of the thread (**State**), entry function address (**EntryFn**), stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**) are reported. You can use the linker address map to find the thread entry function from the **EntryFn** value. You can also use the stack size (**Stack Size**), stack top (**Mem**) and current stack pointer (**SP**) value to determine if there is thread stack overflow. For example, if the **SP** value is smaller than the **Mem** value, it indicates stack overflow for that thread.
 
-### Debugging imprecise bus faults
+## Debugging imprecise bus faults
 
 Cortex-M3 and Cortex-M4 processors have write buffers, which are high-speed memory between the processor and main memory whose purpose is to optimize stores to main memory. This is great for performance because the processor can proceed to the next instruction without having to wait for the write transaction to complete. However, this can cause imprecise bus faults in which the processor could have executed instructions, including branch instructions, by the time bus fault triggers. This makes it harder to debug imprecise faults because you cannot tell which instruction caused the fault because the **PC** value reported points to the current instruction being executed, which may not be the instruction that triggered the fault.
 

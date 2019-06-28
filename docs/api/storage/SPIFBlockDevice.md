@@ -1,4 +1,4 @@
-## SPI Flash block device
+# SPI Flash block device
 
 <span class="images">![](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
 
@@ -8,11 +8,11 @@ NOR-based SPI flash supports byte-sized read and writes, with an erase size of a
 
 To configure this class, please see our [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).
 
-### SPIFBlockDevice class reference
+## SPIFBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.10/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
 
-### SPIFBlockDevice example
+## SPIFBlockDevice example
 
 ``` cpp
 // Here's an example using the MX25R SPI flash device on the K82F
@@ -47,6 +47,6 @@ int main() {
 }
 ```
 
-### Related content
+## Related content
 
 - [BlockDevice configuration documentation](/docs/v5.10/reference/configuration-storage.html#blockdevice-default-configuration).

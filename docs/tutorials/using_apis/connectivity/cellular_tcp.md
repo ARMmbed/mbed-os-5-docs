@@ -1,4 +1,4 @@
-## Cellular TCP sockets
+# Cellular TCP sockets
 
 This example opens a TCP socket with an echo server and performs a TCP transaction.
 

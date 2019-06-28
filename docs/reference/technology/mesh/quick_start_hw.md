@@ -1,6 +1,6 @@
-### Configuring the hardware
+## Configuring the hardware
 
-#### Selecting your radio
+### Selecting your radio
 
 6LoWPAN network uses IEEE 802.15.4 radios and therefore, operates on one of the following unlicensed frequency bands:
 
@@ -14,7 +14,7 @@ The data rate varies from 20 kbit/s to 250 kbit/s. Consider the data rate availa
 
 <span class="tips">**Rule of thumb:** The bandwidth per node is divided by the number of nodes in the network and the number of hops.</span>
 
-#### File system
+### File system
 
 Thread network stack can write network configuration settings to the file system and read them in the following startup. The size of the Thread configuration settings is a few thousand bytes. You can store network configuration settings to the file system when:
 

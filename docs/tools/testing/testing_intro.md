@@ -1,4 +1,4 @@
-<h2 id="tools-testing">Testing</h2>
+<h1 id="tools-testing">Testing</h1>
 
 Testing is a critical step in the development process. Traditional software testing can be described as three levels of testing: unit testing, integration testing and system testing. These levels are often pictured as a pyramid to indicate the amount of testing needed for each level.
 

@@ -1,4 +1,4 @@
-<h2 id="quick-start">Choose your environment</h2>
+<h1 id="quick-start">Choose your environment</h1>
 
 In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Online** and **Offline**.
 
@@ -8,7 +8,7 @@ In the Arm Mbed ecosystem, you have a choice in how you want to develop, **Onlin
 
 Common to any choice is the ability to import and publish code to Git and Mercurial repositories, export your programs to third party IDEs (Keil UVision, IAR, GCC and so on) for debugging and build new projects.
 
-#### Please choose how to proceed
+### Please choose how to proceed
 
 - [Online with the Mbed Online Compiler](quick-start-online.html).
 - [Offline with Mbed CLI](quick-start-offline.html).

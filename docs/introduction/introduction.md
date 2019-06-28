@@ -1,25 +1,25 @@
-## An introduction to Arm Mbed OS 5
+# An introduction to Arm Mbed OS 5
 
 Mbed OS is an open-source operating system for platforms using Arm microcontrollers designed specifically for Internet of Things (IoT) devices: low-powered, constrained devices that need to connect to the internet. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can focus on writing C/C++ applications that call functionality available on a range of hardware. Mbed OS applications can be reused on any Mbed-compatible platform.
 
-### Getting started
+## Getting started
 
 If you want to dive straight in:
 
 - The source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 - Or [try our quick start](/docs/v5.10/tutorials/mbed-os-quick-start.html).
 
-### Source code and licensing
+## Source code and licensing
 
 We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](/docs/v5.10/reference/license.html).
 
-### Architecture diagram
+## Architecture diagram
 
 This is the basic architecture of an Mbed board:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed_OS_diagram_for_intro.png)</span>
 
-### Mbed OS foundations
+## Mbed OS foundations
 
 Mbed OS uses a hardware abstraction layer (HAL) to support the most common parts of a microcontroller, such as timers. This foundation facilitates writing applications against a common set of application programming interfaces (APIs); your device automatically includes necessary libraries and driver support for standard MCU peripherals, such as I2C, serial and SPI.
 
@@ -31,7 +31,7 @@ The structure of Mbed OS enables matching applications and storage systems. In o
 
 Finally, Mbed OS implements the retargeting layer and boot process integration of each supported toolchain for you, so application development feels similar to C or C++ development for any other operating system.
 
-### Connectivity
+## Connectivity
 
 Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN, Thread, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
 
@@ -39,19 +39,19 @@ The networking and connectivity stacks are flexible enough to meet the needs of 
 
 Mbed OS fully supports our Pelion IoT Platform, so you can manage your deployed devices and their data. Together, Mbed OS and Pelion comprise a coherent ecosystem that meets the needs of most production-ready projects.
 
-### Security
+## Security
 
 The Pelion IoT Platform has built-in security at all levels, stressing both protection against violations and mitigation of their consequences. Alongside hardened cloud services, robust communication stacks and safe firmware updates, Mbed offers two security-specific embedded building blocks: [Arm Mbed TLS](https://www.mbed.com/en/technologies/security/mbed-tls/) and a Secure Partition Manager (SPM) that meets industry best practices as part of Arm’s Platform Security Architecture. Mbed TLS secures communication channels between a device and gateway or server, and the use of a secure partition manager and isolated security domains for trusted system services reduces the attack surface. All together, this provides a unique chip-to-cloud security model, relying on the low-level capabilities the Arm ecosystem silicon Partners provide to secure the data and identity of cloud-connected devices.
 
 Our approach to security is to leverage state-of-the-art industry standard protocols, ciphers and encryption suites following the recommendations from NIST and other related organizations. This gives us access to the latest work by the global security research community, rather than a limited in-house resource.  We regularly verify the results of these efforts with code reviews, penetration exercises and other methods.
 
-### Remote firmware update
+## Remote firmware update
 
 Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there. The Online Compiler also offers a quick integration for development flows.
 
 For more information, see our [technology page](/docs/v5.10/reference/firmware-update-in-mbed-os.html), the [Mbed CLI update flow](/docs/v5.10/tools/cli-update.html) or the [quick start through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update) (Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion)).
 
-### Hardware
+## Hardware
 
 Arm, its Partners and the Arm Mbed developer community work together to develop the Mbed OS project. This thriving ecosystem means that Mbed OS includes drivers for a lot of different hardware, so you can concentrate on clean and portable application code.
 
@@ -61,7 +61,7 @@ Broadly speaking, the hardware you can see on our site is of three types:
 - **[Boards](https://os.mbed.com/platforms/)**: development boards are an inexpensive way to start developing with Mbed OS and other components.
 - **[Components](https://os.mbed.com/components/)**: the Component Database hosts reusable libraries for different hardware, middleware and IoT services that you can use with Arm Microcontrollers. These components can be used as building blocks for quickly developing prototypes and products.
 
-### Tools
+## Tools
 
 The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](/docs/v5.10/tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
 
@@ -69,7 +69,7 @@ If you prefer to work online, use the Arm Mbed Online Compiler, our online d
 
 You can use our debugging tools, DAPLink and pyOCD, to program and debug many devices. At the end of the development cycle, you can use the Mbed OS validation tools, Greentea and utest, to test your project.
 
-### The documentation
+## The documentation
 
 This is the technical documentation for Mbed OS. We have three types of documents: references, tutorials and porting guides. Our references are background technical material about our APIs, architecture and runtime execution. Our tutorials are step-by-step instructions that show you how to perform specific tasks and solve problems. Our porting guides show our silicon Partners how to port Mbed OS to their targets.
 
