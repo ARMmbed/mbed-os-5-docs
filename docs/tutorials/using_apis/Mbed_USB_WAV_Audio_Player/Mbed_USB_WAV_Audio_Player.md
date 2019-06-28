@@ -69,9 +69,9 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
     On Windows, in Control Panel, set **View by** to **Category** in the top right corner. Then, navigate to **Hardware** and **Sound** > **Sound**, and in the recording tab, right click on **Microphone Mbed Audio** > **Properties** > **Listen**. Check the **Listen to this Device** box, and click **Apply**. The audio from the WAV file is now audible through whichever output device is selected for the host PC's audio output. If **View by** is not set to **Category**, audio will be under Sound in Control Panel:
 
-   ![Sound](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img2.PNG)
+   ![Sound](../../../images/Mbed_USB_WAV_Audio_Player_img2.PNG)
 
-   ![Microphone properties](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img3.PNG)
+   ![Microphone properties](../../../images/Mbed_USB_WAV_Audio_Player_img3.PNG)
 
 ## Troubleshooting   
 
