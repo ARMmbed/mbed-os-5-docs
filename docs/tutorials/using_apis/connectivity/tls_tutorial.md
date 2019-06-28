@@ -1,6 +1,6 @@
 <h1 id="tls-tutorial">TLS Tutorial</h1>
 
-Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), will help you understand and use of TLS encryption in Mbed OS.
+Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), will help you understand and use TLS encryption in Mbed OS.
 
 In particular, this tutorial:
 
