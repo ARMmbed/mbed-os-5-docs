@@ -6,6 +6,14 @@ See the [6LoWPAN overview](../reference/mesh-tech.html) for the definition of st
 
 [Please install Mbed CLI to complete the tutorial](../tools/installation-and-setup.html).
 
+## Requirements
+
+This tutorial requires:
+
+- Hardware that supports entropy.
+- A radio.
+- An RF driver.
+
 ## Import the application
 
 If using Mbed CLI:
@@ -38,8 +46,8 @@ The following tables show the values to use in the `mbed_app.json` file for your
 
 For both, you can select the device role:
 
-- Mesh network.<!--should this be a colon?--> A router. (default)
-- Star network.<!--should this be a colon?--> Nonrouting device. Also known as a host or sleepy host.
+- Mesh network: a router. (default)
+- Star network: nonrouting device. Also known as a host or sleepy host.
 
 ### 6LoWPAN-ND
 
@@ -107,7 +115,7 @@ The Thread stack learns the network settings from the commissioning process and,
 
 ## Security-based hardware requirements
 
-The networking stack in this example requires TLS functionality to be enabled on Mbed TLS<!--did you mean "on Mbed OS"?--><!--"requires x to be enabled on y" is a bit clumsy-->. On devices where hardware entropy is not present, TLS is disabled by default. This results in compile time failures or linking failures.
+The networking stack in this example requires TLS functionality. On devices where hardware entropy is not present, TLS is disabled by default. This results in compile time failures or linking failures.
 
 To learn why entropy is required, read the [TLS porting guide](../porting/entropy-sources.html).<!--the first sentence said "TLS functionality", but the next two references were specifically for hardware entropy. which is correct?-->
 
@@ -119,8 +127,7 @@ Check how LEDs and buttons are configured for your hardware, and update the `.js
 
 ## Radio and radio driver
 
-To run a 6LoWPAN-ND network, you need a working RF driver for Nanostack. This example uses the Atmel AT86RF233 by default.<!--somewhere near the beginning of this tutorial we should have specified hardware requirements in general terms: must support hardware entropy, must have a radio--> Place the shield on top of your board.
-
+To run a 6LoWPAN-ND network, you need a working RF driver for Nanostack. This example uses the Atmel AT86RF233 by default. Place the shield on top of your board.
 
 To change the RF driver, set the preferred RF driver `provide_default` value to `true` in `mbed_app.json`. For example, to use the MCR20a RF driver:
 
@@ -150,11 +157,11 @@ The border router supports static and dynamic backhaul configuration. The static
 
 Remember to connect the Ethernet cable between the border router and your router<!--router and router? router and board?-->. Then power on the board.<!--it was already powered on to flash it. did I disconnect it from the computer at some point? did I power it off?--><!--is this really part of "update your router"? won't it be equally valid if my border router was already correct?-->
 
-## Testing (with border router)
+## Testing with border router
 
 By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message.<!--so do I need a second application that I can flash to other devices that I connect to the network? or do I just need more devices using the same application? this should be explained at the beginning--> Note that the Thread devices can form a network without the existence of the border router. The following applies only to the case when the border router is set up.
 
-As soon as both the border router and the target are running, you can verify the correct behavior<!--is this verifying the full behaviour, or just that I connected to the network?-->. Open a serial console, and see the IP address obtained by the device.
+As soon as both the border router and the target are running, you can verify the correct behavior<!--is this verifying the full behavior, or just that I connected to the network?-->. Open a serial console, and see the IP address obtained by the device.
 
 <span class="notes">**Note:** This application uses the baud rate of 115200.</span>
 
@@ -169,11 +176,11 @@ You can use this IP address to `ping` from your PC and verify that the connectio
 
 On some limited platforms, for example NCS36510 or KW24D, running this application might cause the device to run out of RAM or ROM. In those cases, you can try optimizing memory use.
 
-### Use a customised Mbed TLS configuration
+### Use a customized Mbed TLS configuration
 
 The [example Mbed TLS configuration](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/mbedtls_config.h) minimizes the RAM and ROM use of the application; it saves you 8.7 kB of RAM but uses 6.8 kB of additional flash. This is not guaranteed to work on every Mbed Enabled platform.<!--what does it do? and why isn't the smaller version the default? what are its disadvantages?-->
 
-You can customise the Mbed TLS configuration by adding `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` to the `.json` file.
+You can customize the Mbed TLS configuration by adding `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` to the `.json` file.
 
 ### Disable the LED control example
 
@@ -199,7 +206,7 @@ In `mbed_app.json`, you find the following line:
 "mbed-mesh-api.heap-size": 15000
 ```
 
-For 6LoWPAN, you can try 12 kB. For the smallest memory use, configure the node to be in non-routing mode. See [module-configuration](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api#module-configuration) for more detail.
+For 6LoWPAN, you can try 12 kB. For the smallest memory use, configure the node to be in nonrouting mode. See [module-configuration](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api#module-configuration) for more detail.
 
 ### Move the Nanostack's heap to the system heap
 
