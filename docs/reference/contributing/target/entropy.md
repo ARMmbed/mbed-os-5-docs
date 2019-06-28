@@ -1,16 +1,16 @@
-## Entropy sources
+# Entropy sources
 
 This document explains how to port [entropy sources](https://github.com/ARMmbed/mbedtls) to a new Arm Mbed development board.
 
 <span class="notes">**Note:** This part is critical for the security of your product, and you should consult a cryptography expert while considering the choices and implementing them.</span>
 
-### Why entropy is necessary
+## Why entropy is necessary
 
 Almost every cryptographic protocol requires random values that no one should be able to predict. A striking example is their use as session keys: It is easy to see that if an adversary can predict the session key, then he can decrypt the whole session. Even if the adversary can't predict it exactly, just with a relatively high probability, he can still recover the contents of the session. For example, if the adversary has a 0.00001% chance of predicting the 256 bit AES session key, then he can break it as easily as if we had used a 23 bit key (that is - very easily).
 
 Creating session keys is only one use for random values; they have far more complicated applications. In these more complex use cases, the connection between the predictability of the values and the security of the protocol is not as obvious, but it is still crucial.
 
-### Which entropy source to choose
+## Which entropy source to choose
 
 - If you have a target with a True Random Number Generator (TRNG), then follow Section 3.
 
@@ -18,9 +18,9 @@ Creating session keys is only one use for random values; they have far more comp
 
 - If you just want to test Mbed TLS on your target without implementing either of the above, and having no security at all is acceptable, then go to Section 5.
 
-### How to provide entropy from a hardware entropy source
+## How to provide entropy from a hardware entropy source
 
-#### What kind of a source you can add
+### What kind of a source you can add
 
 It is important that you only add a TRNG as described in this section. For the purposes of this document a device is considered a TRNG only if:
 
@@ -32,7 +32,7 @@ It is important that you only add a TRNG as described in this section. For the p
 
 For example, an integrated circuit extracting statistically random data from two oscillators of unknown frequencies and independent phases is considered a TRNG, but anything derived from a real time clock is NOT.
 
-#### How to add an entropy source
+### How to add an entropy source
 
 Mbed TLS distinguishes between strong and weak entropy sources. Of the sources registered by default, two are strong: /dev/urandom and Windows CryptoAPI. However, these resources are not available on many embedded platforms, and the default behaviour of Mbed TLS is to refuse to work if there are no strong sources present. To get around this, Mbed TLS assumes that the hardware entropy source you register (as explained in this section) is a TRNG and thus treats it as strong.
 
@@ -43,15 +43,15 @@ The preferred way to provide a custom entropy source:
 
 The next two sections explain how to do this.
 
-### How to implement the TRNG API
+## How to implement the TRNG API
 
 The implementation of this interface has to be located in the Arm Mbed OS directory specific to your target. The name of this directory is of the form `targets/.../TARGET_<target name>`. For example, in the case of K64F targets, it is `targets/TARGET_Freescale/TARGET_KSDK2_MCUS/TARGET_MCU_K64F/`.
 
-#### Data structure
+### Data structure
 
 You have to define a structure `trng_s` that holds all the information needed to operate the peripheral and describe its state.
 
-#### Initialization and release
+### Initialization and release
 
 To enable initializing and releasing the peripheral, you must implement the following functions:
 
@@ -60,7 +60,7 @@ void trng_init(trng_t *obj);
 void trng_free(trng_t *obj);
 ```
 
-#### The entropy collector function
+### The entropy collector function
 
 The function `trng_get_bytes()` serves as the primary interface to the entropy source. It is expected to load the collected entropy to the buffer and is declared as follows:
 
@@ -78,7 +78,7 @@ int trng_get_bytes(trng_t *obj, uint8_t *output, size_t length, size_t *output_l
 
 - ``size_t *output_length``: the length of the data written into the output buffer. It tells the caller how much entropy has been collected and how many bytes of the output buffer it can use. It should always reflect the exact amount of entropy collected; setting it higher than the actual number of bytes collected is a serious security risk.
 
-#### Indicating the presence of a TRNG
+### Indicating the presence of a TRNG
 
 To indicate that the target has an entropy source, you have to add `TRNG` to the capabilities of the target in `targets/targets.json`:
 
@@ -86,7 +86,7 @@ To indicate that the target has an entropy source, you have to add `TRNG` to the
 "device_has": ["TRNG", etc.]
 ```
 
-### How to implement the non-volatile seed entropy source
+## How to implement the non-volatile seed entropy source
 
 If a hardware platform does not have a hardware entropy source to leverage into the entropy pool, alternatives have to be considered. As stated above, a strong entropy source is crucial for security of cryptographic and TLS operations. For platforms that support non-volatile memory, an option is to use the NV seed entropy source that Mbed TLS provides.
 
@@ -94,7 +94,7 @@ This uses a fixed amount of entropy as a seed and updates this seed each time an
 
 <span class="notes">**Note:** To make this option a relatively strong compromize, the seed should be initialized separately for each device with true random data at manufacturing time. It has to be true random data, something dependant on, for example the serial number is **not** secure. </span>
 
-#### Enabling NV seed entropy source support
+### Enabling NV seed entropy source support
 
 To enable the NV seed entropy source, you have to add `MBEDTLS_ENTROPY_NV_SEED` to your macros in `targets.json`:
 
@@ -106,7 +106,7 @@ This ensures the entropy pool knows it can use the NV seed entropy source.
 
 By default the platform adaptation functions write/read a seed file called *seedfile*. If you have a system that does not support regular POSIX file operations (Arm Mbed OS does not support them by default), the default platform-adaptation functions will not be useful to you, and you will need to provide platform-adaptation functions (see next section).
 
-#### Providing platform-adaptation functions
+### Providing platform-adaptation functions
 
 The NV seed entropy source needs to know how to retrieve and store the seed in non-volatile memory. So in order to make the NV seed entropy source work, two platform-layer functions need to be provided.
 
@@ -125,11 +125,11 @@ There are three methods for setting those functions pointers (similar to all pla
 * `MBEDTLS_PLATFORM_STD_NV_SEED_READ` and `MBEDTLS_PLATFORM_STD_NV_SEED_WRITE` (requires `MBEDTLS_PLATFORM_NV_SEED_ALT`). By setting these two macros to the relevant function names, the default read/write functions are replaced at compile-time, and you still have the option to replace them at runtime as well.
 * `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` and `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO`. By setting these two macros to the relevant functions names, the read/write functions are replaced at compile-time.
 
-### How to test without entropy sources
+## How to test without entropy sources
 
 Both of the above options are secure if done properly, and depending on the platform may need more or less development work. In some cases it may be necessary to test Mbed TLS on boards without entropy. For these kinds of scenarios, Mbed TLS provides a compile time switch to enable testing without entropy sources.
 
-#### Setting the macros
+### Setting the macros
 
 This option is very dangerous because compiling with it results in a build that is not secure! You have to let Mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 

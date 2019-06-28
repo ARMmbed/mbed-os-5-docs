@@ -1,4 +1,4 @@
-## FATFileSystem
+# FATFileSystem
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_f_a_t_file_system.png)<span>FATFileSystem class hierarchy</span></span>
 
@@ -10,7 +10,7 @@ The FAT file system is an established disk-oriented file system that you can fin
 
 For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
-### Use cases
+## Use cases
 
 The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications using FAT in conjunction with an SD card.
 
@@ -20,7 +20,7 @@ The first step to using the FAT file system is formatting storage with FAT. You 
 
 The FAT file system supports external flash; however, it must allocate a full erase block for internal operations, which can become large for some forms of flash. If RAM consumption becomes a problem, we suggest switching to LittleFileSystem. The Mbed OS file system APIs make switching file systems a straightforward task. One common strategy is to use the FAT file system for debugging and switch to LittleFileSystem when the application becomes stable.
 
-### Usage
+## Usage
 
 Instantiate the `FATFileSystem` class with a block device and file path.
 
@@ -28,15 +28,15 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 You can swap the FAT file system in place with other Mbed OS file systems, which is a good method for prototyping applications.
 
-### FATFileSystem class reference
+## FATFileSystem class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_f_a_t_file_system.html)
 
-### FATFileSystem example
+## FATFileSystem example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/adaa6c01d727/main.cpp)
 
-### Related content
+## Related content
 
 - [Storage configuration](configuration-storage.html).
 - [LittleFileSystem](littlefilesystem.html).

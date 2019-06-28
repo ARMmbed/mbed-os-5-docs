@@ -1,4 +1,4 @@
-## Test and debug
+# Test and debug
 
 Use the `mbed test` command to compile and run tests.
 
@@ -62,7 +62,7 @@ mbedgt: completed in 21.28 sec
 
 You can find the compiled binaries and test artifacts in the `BUILD/tests/<TARGET>/<TOOLCHAIN>` directory of your program.
 
-### Finding available tests
+## Finding available tests
 
 You can find the tests that are available for **building** by using the `--compile-list` option:
 
@@ -91,7 +91,7 @@ mbedgt: available tests for built 'K64F-ARM', location '.\build\tests\K64F\ARM'
         test 'TESTS-functional-test3'
 ```
 
-### Compiling and running tests
+## Compiling and running tests
 
 You can specify to only **build** the tests by using the `--compile` option:
 
@@ -107,7 +107,7 @@ $ mbed test -m K64F -t GCC_ARM --run
 
 If you don't specify any of these, `mbed test` will first compile all available tests and then run them.
 
-### Limiting the test scope
+## Limiting the test scope
 
 You can limit the scope of the tests built and run by using the `-n` option. This takes a comma-separated list of test names as an argument:
 
@@ -123,7 +123,7 @@ $ mbed test -m NUCLEO_F429ZI -t GCC_ARM -n TESTS-functional*
 
 <span class="notes">**Note:** Some shells expand the wildcard character `*` into file names that exist in your working directory. To prevent this behavior, please see your shell's documentation.</span>
 
-### Test directory structure
+## Test directory structure
 
 Test code must follow this directory structure:
 
@@ -158,12 +158,12 @@ As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Plea
 
 <span class="notes">**Note:** `mbed test` does not work in applications that contain a  `main` function that is outside of a `TESTS` directory.</span>
 
-### Troubleshooting
+## Troubleshooting
 
-#### Unable to import Mercurial (mbed.org) programs or libraries.
+### Unable to import Mercurial (mbed.org) programs or libraries.
 1. Check whether you have Mercurial installed in your system path by  running `hg` in command prompt. If you're receiving "command not found" or a similar message, then you need to install Mercurial, and add it to your system path.
 
 2. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's [certificate management](https://www.mercurial-scm.org/wiki/CACertificates).
 
-#### Various issues when running Mbed CLI in Cygwin environment
+### Various issues when running Mbed CLI in Cygwin environment
 Currently Mbed CLI is not compatible with Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).

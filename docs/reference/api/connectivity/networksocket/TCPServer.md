@@ -1,4 +1,4 @@
-## TCPServer
+# TCPServer
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_t_c_p_server.png)<span>TCPServer class hierarchy</span></span>
 
@@ -8,16 +8,16 @@ The constructor takes in the NetworkStack pointer to open the socket on the spec
 
 Refer to [TCPSocket](tcpsocket.html) class for TCP `connect`, `send` and `recv` APIs.
 
-### TCPServer class reference
+## TCPServer class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_t_c_p_server.html)
 
-### TCPServer example
+## TCPServer example
 
 Here is a TCP server example. It accepts single telnet client connection and sends buffer data.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-tcp-server/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-tcp-server/file/ddb5698aa782/main.cpp)
 
-### Related content
+## Related content
 
 - [TCPSocket](tcpsocket.html) API reference.

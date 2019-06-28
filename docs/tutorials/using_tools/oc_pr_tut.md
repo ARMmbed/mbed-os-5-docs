@@ -1,6 +1,6 @@
-<h2 id="pr-tutorial">Creating and reviewing pull requests</h2>
+<h1 id="pr-tutorial">Creating and reviewing pull requests</h1>
 
-### Creating a new request
+## Creating a new request
 
 All pull requests are created and recorded against the remote repository, the one receiving the modifications if the pull request is accepted.
 
@@ -24,7 +24,7 @@ The pull request is added to the **Pull Requests** page of the repository, and a
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/pull_request_created.png)<span>Sending the pull request</span></span>
 
-### Editing an existing pull request
+## Editing an existing pull request
 
 Pull requests are `limited` to the latest revision at the moment of sending. This means that you can publish more changes to your repository, and the other party only sees the changes that were available when the pull request was created.
 
@@ -34,9 +34,9 @@ To update your pull request to the latest revision:
 1. Check the **Update request to latest revision(s)?** checkbox.
 1. Submit the edit. The other party is notified that you edited the pull request.
 
-### Managing a pull request you receive
+## Managing a pull request you receive
 
-#### Viewing pull requests
+### Viewing pull requests
 
 When a pull request is sent to a repository to which you're author or coauthor, you receive an email notification with the pull request details and a link to the pull request page.
 
@@ -52,7 +52,7 @@ On each pull request page, you can discuss changes, coding standards and so on b
 
 To quickly close a pull request without reviewing it, click the **Close** button.
 
-#### Reviewing a pull request
+### Reviewing a pull request
 
 Most online services that offer source code and version control hosting let you review and merge pull requests.
 
@@ -78,7 +78,7 @@ Newly introduced revisions are marked in green. These are the proposed changes -
 
 The Mbed Online Compiler remembers the pull request status of an imported program or library across sessions, so you can always close the Revision History panel and continue the review later. For example, you can open one of the changed files in the Editor and click **Compile** to check whether the code compiles successfully. If it does, you can download and test it on your Mbed Enabled device.
 
-#### Accepting a pull request
+### Accepting a pull request
 
 Click the **Accept** button in the bottom panel, and an accept confirmation dialog opens:
 
@@ -92,7 +92,7 @@ Accepting a pull request publishes to your repository both the contents of that 
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/pull_request_closed.png)<span>Viewing the pull request after accepting it</span></span>
 
-#### Rejecting a pull request
+### Rejecting a pull request
 
 If you choose to reject the pull request:
 

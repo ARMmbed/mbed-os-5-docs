@@ -1,24 +1,24 @@
-<h2 id="mbed-studio">Arm Mbed Studio alpha</h2>
+<h1 id="mbed-studio">Arm Mbed Studio alpha</h1>
 
 Arm Mbed Studio is a local development environment for Mbed OS projects. This document helps Mbed OS developers use Mbed Studio to code, run, and debug Mbed OS programs to supported Mbed Enabled devices. The Mbed Studio project is based on the Eclipse framework and extends Eclipse’s IDE capability to provide a more focused experience for developing with Mbed OS. In particular, it allows users to develop and run code offline. It also provides access to existing online resources.
 
-### Current status and downloads
+## Current status and downloads
 
 Mbed Studio is currently in closed alpha. You can [request access](https://os.mbed.com/studio/) if you're happy to provide feedback. During this phase, some features are still in progress, and there are frequent updates to the product. The user interface will also change during this phase, so the screenshots below will correspondingly change.
 
-### Prerequisites
+## Prerequisites
 
 We currently support only DAPLink devices and use pyOCD for debug. This means that you need a supported development board with updated DAPLink firmware during the alpha phase.
 
-### Getting started
+## Getting started
 
 This section shows the steps of creating, exploring, running and debugging an example project packaged with Mbed Studio. After reading it, you will have a better understanding of how you can use Mbed Studio to develop for Mbed OS. Start Mbed Studio, and follow the steps below.
 
-#### On startup
+### On startup
 
 When you launch Mbed Studio, you see a login screen (unless you're using an internal release), which requires you to sign in with your Mbed username and password. Sign in with your Mbed credentials. If you're an alpha user, you can continue through to the workspace.
 
-#### Creating a new project based on an example
+### Creating a new project based on an example
 
 When you arrive in your workspace, it's empty - clean, white and lacking in programs. It's time to start populating it.
 
@@ -38,13 +38,13 @@ Additionally, you can create a blank project with the `Empty Project` radio butt
 
 Mbed Studio now begins to create the project in the workspace and shows its progress on the final screen of the wizard. Once complete, you can see the project in your workspace within the Mbed Projects view.
 
-##### Active and inactive projects
+#### Active and inactive projects
 
 Mbed Studio introduces the concept of an active project into Eclipse. The user interface updates automatically based on target selection and the active project, rather than requiring you as the user to create lots of different build and debug configurations. This creates behavior that is more consistent with our Online Compiler and adds default behavior to icons such as build, run and debug.
 
 New projects become the active project by default, and you can make a project active by right-clicking and selecting `Set as active project`.
 
-#### Explore or edit the project
+### Explore or edit the project
 
 Mbed Studio provides support for formatting, syntax highlighting, locating files, comparing files and navigating to lower level code, such as pin definitions for your target hardware. For a more general look at the features provided by Eclipse, consult the [Eclipse](http://help.eclipse.org/neon/index.jsp) online help documentation.
 
@@ -54,7 +54,7 @@ Double-click on the `main.cpp` file to open it in Mbed Studio’s editor. This f
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Blinky-Main-CPP.png)<span>Explore your new project.</span></span>
 
-#### Adding libraries to a project
+### Adding libraries to a project
 
 Mbed Studio supports importing libraries from GitHub. To import a library, right-click on the `Mbed Projects` view, and select `Import`. Now click `Mbed > Import Mbed library into existing project`. Choose the program that you want to add the library to.
 
@@ -68,7 +68,7 @@ Click `Finish`, and Mbed Studio adds the library to your program of choice.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-ESP8266-Library.png)<span>The imported library in the workspace.</span></span>
 
-### Connecting a board
+## Connecting a board
 
 Connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to your machine, or select a target development board from the target dropdown. Mbed Studio detects the board, and a dialog asks to switch targets. Accept this, and you are ready to build and run the example.
 
@@ -76,11 +76,11 @@ Connect an [Mbed Enabled development board](https://os.mbed.com/platforms/) to y
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Target-Auto-Detection.png)<span>Mbed Studio autodetects DAPLink-compatible boards that you have connected through USB.</span></span> 
 
-#### Running the project
+### Running the project
 
 This section covers the necessary steps of building and running the project on a connected board. Mbed Studio must recognize the board for the instructions in the Run section to work.
 
-### Build
+## Build
 
 Before you can run the program, Mbed Studio needs to build a binary using a compiler. For the alpha version of Mbed Studio this compiler is GCC. There are multiple ways to start a build, but the easiest is to click the build icon.
 
@@ -92,13 +92,13 @@ Alternatively, you can choose to build the project automatically through the men
 
 Once the build completes, the build artifacts, such as the .bin and .elf binaries, are in the `BUILD` folder under the active project. 
 
-#### Further exploration
+### Further exploration
 
 Once you have built a project for a given target board, Eclipse can also index the `mbed-os-example-blinky` project, which means that it creates the appropriate mappings for the selected target. You can refresh this index by right-clicking on the project and selecting `Index > Freshen all files`. After Eclipse completes the indexing process, you can use the `Open declaration` function, or `F3` as a shortcut while hovering over a pin name, such as `led1`. This allows you to look through the dependency tree of the application and explore the underlying Mbed OS library.
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mbed-Studio-Pin-Mapping.gif)<span>Press F3 to open a declaration, such as an IO pin name.</span></span> 
 
-#### Building automatically
+### Building automatically
 
 Mbed Studio uses the tools built into Mbed OS to determine what builds and where the output of a build goes. The build tools build on request or (if the `Project > Build Automatically` option is checked) when you change and save a source file. The build operation only builds components that have changed and does nothing if nothing changed. Mbed Studio regards all projects in the workspace as part of the same system, so it initially builds all projects. Pressing the build button also ensures that all workspace projects build (if required).
 
@@ -106,7 +106,7 @@ The aim is to maintain a system that is always in a built state, providing rapid
 
 Under some circumstances (in particularly large projects, or when the target device changes frequently), you may wish to turn off automatic builds and build individual projects on request. To do this, select Build from the project right-click menu.
 
-### Run
+## Run
 
 Now that you have built the `mbed-os-example-blinky project`, you can run it on your target board. Running a project consists of several phases, which you can abstract if you click the green run icon.
 
@@ -126,13 +126,13 @@ To make it happen, click the green run icon to launch the default run configurat
 
 Watch the primary LED on your connected target begin to blink!
 
-### Debug
+## Debug
 
 Now that you have learned the basics of Mbed Studio, it is time to learn how to debug projects within the IDE. There is a debug configuration specifically for debugging Mbed OS projects, which generates automatically. To launch a debug session on your development board, click the debug icon.
 
 There are also additional configurations for more advanced debugging. This section covers the Mbed OS debug configuration, as well as the advanced PyOCD GDB debug configuration.
 
-#### Simple debugging
+### Simple debugging
 
 To begin debugging, click the bug icon, which launches the default debug configuration. A prompt asks you to switch to the debug perspective. Click `Yes` to switch. The debug perspective opens additional views, including a Debugger console, Debug view (which shows active threads and where the debugger stops), Variables, Memory and your code editor, which stops on a breakpoint by default.
 
@@ -146,7 +146,7 @@ Click `Choose...` next to the project textbox, and select the project you wish t
 
 Mbed Studio automatically switches into the Mbed Debug perspective when debugging with the Mbed Debug launch configuration. The project also brakes on a default break point.
 
-#### Advanced debugging
+### Advanced debugging
 
 If you want more control over the options regarding debugging, this section is for you. This section describes how to create a PyOCD GDB debug configuration. This configuration allows you to change more settings, such as ports and executable locations for the GDB client and server.
 
@@ -174,13 +174,13 @@ On Windows machines, the two bundled executables are located at:
 
 When you have configured everything, select `Apply` in the lower right side of the panel, and the click the blue Debug button just below that.
 
-### Library management
+## Library management
 
 Mbed Studio allows you to add libraries to your application from either GitHub or the Mbed OS developer site. Importing a program also imports the associated libraries. Management of these libraries takes place using the `Library Management` view, which appears on the right hand side of Mbed Studio.
 
 You can update libraries imported from GitHub to any commit ID or branch. Libraries imported from the Mbed OS developer site are imported as a "snapshot" and do not contain history.
 
-#### Adding and removing libraries
+### Adding and removing libraries
 
 You can add a library from the Mbed OS developer site or GitHub by clicking the dropdown arrow in the `Library management` view and selecting **Add a library to the project...**. This opens a dialog, which allows you to paste an Mbed OS developer site library URL plus commit ID, or a link to a repository in GitHub.
 
@@ -188,7 +188,7 @@ You can add a library from the Mbed OS developer site or GitHub by clicking the 
 
 You can also remove libraries by right-clicking on a library and selecting **Remove library from the project**.
 
-#### Viewing and updating libraries
+### Viewing and updating libraries
 
 You can view the libraries present in your application in the `Library Management` view, and also as folders inside the application structure in the `Mbed Projects` view. The `Library Management` view lists each library, alongside its version indicator.
 
@@ -198,46 +198,46 @@ To update a library, right click on the library that you want to update, and sel
 
 To update a library that you have imported from the Mbed OS developer site, delete it, and then import again at a different commit ID.
 
-### Help
+## Help
 
 This section outlines known issues and provides answers to common questions.
 
-#### Glossary
+### Glossary
 
-##### Workspace
+#### Workspace
 
 Mbed Studio automatically sets up the workspace. Use it to keep track of settings and user preferences for all of the projects you open in Mbed Studio.
 
-##### Project
+#### Project
 
 A project is a group of associated files, directories and settings. The `Mbed Projects` view lists these projects. In Mbed Studio, each project represents an Mbed OS program or an Mbed OS library. An Mbed Studio project can also represent a program that includes libraries, as well.
 
-##### View
+#### View
 
 In Mbed Studio, a view is a window that has a label, and sometimes options, specific to that window. Examples are the editor, Mbed Projects, Console and Outline.
 
-##### Perspective
+#### Perspective
 
 A perspective is a collection of views, which group functionally in Eclipse. An example of a perspective is the debug perspective.
 
-##### Program
+#### Program
 
 This term denotes a project that contains code that runs on an Mbed Enabled device.
 
-##### Library
+#### Library
 
 This term denotes a project that contains code meant to be included in other Mbed OS programs.
 
-### Known issues
+## Known issues
 
 This section lists known issues that currently exist in Mbed Studio.
 
-#### General
+### General
 
 Currently, Mbed Studio does not communicate with ST boards because they don’t use DAPLink by default.
 Workaround: None
 
-#### Mac
+### Mac
 
 The `Eclipse.app` distributed for Mac is not yet signed. Mac OS X may show errors about unknown developers when you double-click to launch.
 Workaround: To launch, Ctrl-click on `Eclipse.app`, and choose `Open`. Then, approve the open action on subsequent warning dialogs.
@@ -245,17 +245,17 @@ Workaround: To launch, Ctrl-click on `Eclipse.app`, and choose `Open`. Then, app
 When CDT (C/C++ Developer Tooling) performs a build, it tries to use the system GCC. If it is not present, Mac OS X prompts to install the Xcode command-line tools.
 Workaround: None. Follow the prompts to install the command-line tools, and restart Mbed Studio.
 
-#### Linux
+### Linux
 
 Mbed Studio does not currently pick up target boards in the Linux version. This is an issue with the detection of USB. Interacting with boards is not possible currently.
 Workaround: None
 
-#### Windows
+### Windows
 
 GCC builds are slower in Windows than Mac or Linux.
 Workaround: None, this is also the case when using GCC from the command-line.
 
-### FAQ
+## FAQ
 
 This section includes common questions and answers.
 

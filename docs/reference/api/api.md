@@ -1,4 +1,4 @@
-## API overview
+# API overview
 
 The [APIs](/docs/v5.9/introduction/glossary.html) in this document are organized by the feature, or group of features, they enable.
 

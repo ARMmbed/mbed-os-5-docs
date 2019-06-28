@@ -1,4 +1,4 @@
-## Setup options
+# Setup options
 
 You can install Mbed CLI on Windows, Linux and Mac OS X.
 
@@ -9,7 +9,7 @@ You can install Mbed CLI on Windows, Linux and Mac OS X.
 
 For Linux, please [install Mbed CLI manually](installing-manually.html). Advanced Windows and Mac OS X users can also install Mbed CLI manually, but we recommend the installers for less experienced developers.
 
-## Requirements
+# Requirements
 
 - **Python:** Mbed CLI is a Python script, so you'll need Python to use it:
     - We test Mbed CLI with [Python versions 2.7.11 and 3.6.5](https://www.python.org/downloads/) and later.
@@ -36,18 +36,18 @@ For Linux, please [install Mbed CLI manually](installing-manually.html). Advance
     $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
     ```
 
-### Working with virtual environments
+## Working with virtual environments
 
 Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv).
 
 You may want to install Mbed CLI on a virtual environment if your main environment has an unsupported Python version.
 
 
-## Installing with the Windows installer
+# Installing with the Windows installer
 
 The Windows installer for Arm Mbed CLI installs Mbed CLI and all dependent programs onto your Windows machine. 
 
-### Running the installer
+## Running the installer
 
 1. Download the [latest executable](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
 2. Run the installer.
@@ -57,7 +57,7 @@ The Windows installer for Arm Mbed CLI installs Mbed CLI and all dependent progr
     - Advanced: Allows you to select components.
 5. Installer installs all selected components. Close it after it finishes.
 
-### Included components
+## Included components
 
 The Windows installer for Mbed CLI includes the following components:
 
@@ -69,7 +69,7 @@ The Windows installer for Mbed CLI includes the following components:
 - **GNU Arm Embedded Toolchain** - [GNU Embedded Toolchain for Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - **Mbed Windows serial port driver** - [serial port driver](/docs/v5.9/tutorials/windows-serial-driver.html).
 
-### Optional: silent install
+## Optional: silent install
 
 You can execute the installer silently without user interaction. Add `/S` flag in Windows command prompt during installation.
 
@@ -80,11 +80,11 @@ $ mbed_installer_{version}.exe /S
 
 4. Check [Mbed CLI](https://github.com/ARMmbed/mbed-cli) for more examples.
 
-### After installation
+## After installation
 
 Please see the [configuration section](configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
-## Installing with the Mac OS X installer
+# Installing with the Mac OS X installer
 
 The Mac OS X installer for Mbed CLI is a self-contained OS X application that contains GCC, Python, Git and Mercurial.  
 
@@ -97,9 +97,9 @@ To use the installer:
 
 <span class="note">**Note:** You may need to allow unsigned apps to run for this to work. The first time you run the installer, it make take a couple of minutes to download the components. This requires an internet connection. After the first run, everything will be much faster.</span>
 
-## Installing manually
+# Installing manually
 
-### Installing the stable version
+## Installing the stable version
 
 You can get the latest stable version of Mbed CLI through pip by running:
 
@@ -109,7 +109,7 @@ $ pip install mbed-cli
 
 On Linux or Mac, you may need to run with `sudo`.
 
-### Optional: installing the development version
+## Optional: installing the development version
 
 If you are interested in working with the development version (and perhaps contributing to Mbed CLI), clone the [development repository](https://github.com/ARMmbed/mbed-cli):
 
@@ -125,25 +125,25 @@ $ python setup.py install
 
 On Linux or Mac, you may need to run with `sudo`.
 
-### Video tutorial for manual installation
+## Video tutorial for manual installation
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/cM0dFoTuU14/0.jpg)](https://www.youtube.com/watch?v=cM0dFoTuU14)</span>
 
-### After installation
+## After installation
 
 Please see the [configuration section](configuring-mbed-cli.html); Mbed CLI will not work properly without some manual configuration.
 
-## Configuring Mbed CLI
+# Configuring Mbed CLI
 
 There are some configuration that you must set before you can work with Mbed CLI.
 
-### Mandatory: setting PATH variables
+## Mandatory: setting PATH variables
 
 Mbed CLI requires adding the following to the system `PATH`:
 
 - The paths for the Git and Mercurial executables (`git` and `hg`).
 
-### Mandatory: toolchain selection
+## Mandatory: toolchain selection
 
 You need to tell Mbed CLI where to find the toolchains that you want to use for compiling. Mbed CLI supports the following toolchains:
 
@@ -161,7 +161,7 @@ You must inform Mbed CLI about the location of your compiler using one of the fo
 
 <span class="notes">**Note:** You may configure more than one toolchain. However, you may only use one toolchain at a time. When using C++98 and GNU C99, the only difference between the toolchains is performance.</span>
 
-#### Through Mbed CLI configuration
+### Through Mbed CLI configuration
 
 Mbed CLI stores its own configuration about compiler locations both in project local settings, and user wide "global" settings. You may set and view these settings with the `mbed config` command. For example, you set the Arm Compiler 5 location for your user with the command:
 
@@ -178,21 +178,21 @@ Mbed CLI supports a setting for each toolchain path. Below is a list of these se
 - `IAR_PATH`: The path to the *base* directory of your IAR EWARM Compiler installation. This should be the directory containing the binaries for `iccarm` and friends. For example, if your IAR EWARM compiler executable is located at `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm/bin/iccarm.exe`, you set `IAR_PATH` to `C:/Program Files/IAR Systems/Embedded Workbench 7.5/arm`.
 - `GCC_ARM_PATH`: The path to the *binary* directory of your GCC Arm Embedded Compiler installation. This should be the directory containing the binaries for `arm-none-eabi-gcc` and friends. For example, if your Gcc Arm Embedded toolchain gcc executable is in `/usr/bin/arm-none-eabi-gcc`, you set `GCC_ARM_PATH` to `/usr/bin`.
 
-#### Compiler detection through the `PATH`
+### Compiler detection through the `PATH`
 
 The `mbed compile` command checks your `PATH` for an executable that is part of the compiler suite in question. This check is the same as a shell would perform to find the executable on the command-line. When `mbed compile` finds the executable it is looking for, it prefaces the executable name with the path it found. Mbed CLI does not prefix any executable found for `GCC_ARM`.
 
-#### Set environment variable
+### Set environment variable
 
 Mbed CLI also detects compilers with specially named environment variables. These environment variables are the same as their corresponding configuration variable, with a prefix of `MBED_` added. For example, when configuring Arm Compiler 5, you set the `MBED_ARM_PATH` environment variable to the base directory of your Arm Compiler 5 installation.
 
-#### Through `mbed_settings.py`
+### Through `mbed_settings.py`
 
 Mbed CLI also uses `mbed_settings.py` to configure toolchains. This file must be a python module, and uses the exact same configuration variables as the Mbed CLI configuration.
 
 <span class="notes">**Note:** Because `mbed_settings.py` contains local settings (possibly relevant only to a single OS on a single machine), you should not check it into version control.</span>
 
-#### Optional: configuring multiple toolchains
+### Optional: configuring multiple toolchains
 
 Mbed CLI has a few rules that allow you to seamlessly switch between different versions of the same toolchain when switching between different projects. The settings described in prior sections all can configure a different version of the same toolchain. When multiple settings are available for a single toolchain, Mbed CLI picks the most specific setting. The settings, from most specific to least specific are:
 
@@ -206,7 +206,7 @@ When resolving which setting is used for an individual `mbed compile` or `mbed t
 
 To use a standard toolchain for general purpose development, you may use any method 3 through 5. For overriding a toolchain version for a specific project, you may use methods 1 and 2. All of these methods for configuring a toolchain may coexist.
 
-### Optional: add Bash tab completion
+## Optional: add Bash tab completion
 
 To install `mbed-cli` bash tab completion:
 
@@ -216,7 +216,7 @@ To install `mbed-cli` bash tab completion:
 
 [Full documentation](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md)
 
-### Working with `mbed config`
+## Working with `mbed config`
 
 The Mbed CLI configuration syntax is:
 

@@ -1,4 +1,4 @@
-## UDPSocket
+# UDPSocket
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_u_d_p_socket.png)<span>UDPSocket class hierarchy</span></span>
 
@@ -6,16 +6,16 @@ The UDPSocket class provides the ability to send packets of data over UDP, using
 
 The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
 
-### UDPSocket class reference
+## UDPSocket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_u_d_p_socket.html)
 
-### UDPSocket Example
+## UDPSocket Example
 
 Here is a UDP example to read the current UTC time by sending a request to the NIST Internet Time Service.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-udp-sockets/file/cf516d904427/main.cpp)
 
-### Related content
+## Related content
 
 - [TCPSocket](tcpsocket.html) API reference.

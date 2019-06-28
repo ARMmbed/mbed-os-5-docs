@@ -1,4 +1,4 @@
-## Using the APIs
+# Using the APIs
 
 This section contains step-by-step tutorials that show you how to perform specific tasks that use the Arm Mbed APIs, and covers the following APIs:
 

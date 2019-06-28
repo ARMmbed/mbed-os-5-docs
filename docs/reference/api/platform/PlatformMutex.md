@@ -1,14 +1,14 @@
-## PlatformMutex
+# PlatformMutex
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_platform_mutex.png)<span>PlatformMutex class hierarchy</span></span>
 
 The PlarformMutex class provides mutex stub functions in the absence of RTOS. This class enables you to use driver/application code when the RTOS is not present.
 
-### PlatformMutex class reference
+## PlatformMutex class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_platform_mutex.html)
 
-### PlatformMutex example
+## PlatformMutex example
 
 The code below demonstrates usage of PlatformMutex.
 
@@ -16,7 +16,7 @@ The code below demonstrates usage of PlatformMutex.
 
 Mbed OS uses the PlatformMutex class instead of the RTOS mutex for all drivers. For example, please see [AnalogIn](analogin.html), [BusOut](busout.html), [SPI](spi.html), [Serial](serial.html) and [I2C](i2c.html).
 
-### Related content
+## Related content
 
 - [AnalogIn](analogin.html).
 - [BusOut](busout.html).

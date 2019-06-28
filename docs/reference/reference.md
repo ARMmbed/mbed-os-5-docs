@@ -1,4 +1,4 @@
-## Mbed OS reference book
+# Mbed OS reference book
 
 Arm Mbed OS lets you write applications that run on embedded devices, by providing the layer that interprets your application's code in a way the hardware can understand. This section covers technical API details. To get started on Mbed OS, see our [getting started guide](/docs/v5.9/tutorials/mbed-os-quick-start.html).
 

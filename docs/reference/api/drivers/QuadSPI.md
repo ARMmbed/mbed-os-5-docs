@@ -1,11 +1,11 @@
-## QuadSPI
+# QuadSPI
 
 [Add description here.]
 
-### QuadSPI class reference
+## QuadSPI class reference
 
 [Add class reference here.]
 
-### QuadSPI example
+## QuadSPI example
 
 [Add brief description followed by example here.]

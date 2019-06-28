@@ -1,6 +1,6 @@
-## Bootstrap
+# Bootstrap
 
-### Entry points
+## Entry points
 
 Mbed OS provides two entry points for developers to hook into:
 
@@ -15,7 +15,7 @@ When execution reaches the entry points, a user can expect a fully initialized s
 - Standard library initialized.
 - RTOS initialized and scheduler started.
 
-### Retargeting
+## Retargeting
 
 Mbed OS redefines multiple standard C library functions to enable them to work in a predictable and familiar way on a remote embedded target device:
 

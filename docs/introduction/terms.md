@@ -1,6 +1,6 @@
-## Glossary
+# Glossary
 
-### A
+## A
 
 **API** - [Application programming interface](/docs/v5.9/reference/apis.html).
 
@@ -18,7 +18,7 @@
 
 **Arm Mbed uVisor** - A self-contained [software hypervisor](/docs/v5.9/reference/tls.html#uVisor) that creates independent secure domains on ARM Cortex-M3 and M4 micro-controllers.
 
-### B
+## B
 
 **Bit** - A basic unit of digital information that can be one of two values: `0` (`false`) or `1` (`true`).
 
@@ -40,7 +40,7 @@
 
 **Byte** - A unit of digital information that consists of 8 bits (see `Bit`).
 
-### C
+## C
 
 **Callback** - Any [executable code](/docs/v5.9/reference/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
@@ -54,7 +54,7 @@
 
 **CMSIS-DAP** - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
-### D
+## D
 
 **DAPLink** - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
@@ -62,11 +62,11 @@
 
 **Deprecation** - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
 
-### E
+## E
 
 **Exporter** - Use the Arm Mbed [exporters](/docs/v5.9/tools/exporting.html#about-the-exporters) to export your code to various third party tools and IDEs.
 
-### G
+## G
 
 **GitHub** - A web-based [Git development platform](https://github.com/armmbed/mbed-os) for version-controlled repositories.
 
@@ -74,11 +74,11 @@
 
 **Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](/docs/v5.9/tools/greentea.html) is the automated testing tool for Arm Mbed OS development.
 
-### H
+## H
 
 **htrun** - An Mbed OS command used to drive test binary flashing, device reset and test execution.
 
-### I
+## I
 
 **I2C** - [Interintegrated Circuit](/docs/v5.9/reference/i2c.html) (short-distance, intraboard communication).
 
@@ -86,13 +86,13 @@
 
 **int** - Short for "integer", it is a variable type that can be used to define numeric variables holding whole numbers.
 
-### L
+## L
 
 **Library** - A module that you can use to build applications.
 
 **LoRA** - Long range (low power wireless platform).
 
-### M
+## M
 
 **Makefile** - A file containing a set of directives used with the make build automation tool.
 
@@ -100,11 +100,11 @@
 
 **Module** - A self-contained unit of code containing classes and functions.
 
-### N
+## N
 
 **Nibble** - A unit of digital information that consists of 4 bits (see `Bit`).
 
-### P
+## P
 
 **Platform** - See `board`.
 
@@ -114,11 +114,11 @@
 
 **Pull Request** - Used by version-controlled repositories to propose and collaborate on changes.
 
-### Q
+## Q
 
 **Quickstart** - A getting started guide to Mbed OS.
 
-### R
+## R
 
 **RAII** - Resource Acquisition Is Initialization.
 
@@ -126,7 +126,7 @@
 
 **RTOS** - [Real-Time Operating System](/docs/v5.9/reference/rtos.html).
 
-### S
+## S
 
 **Serial** - A [protocol](/docs/v5.9/reference/serial.html) used in data transmission for the transfer of individual bits of information.
 
@@ -138,7 +138,7 @@
 
 **STLink** - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
-### T
+## T
 
 **Target** - See [`board`](glossary.html#board).
 
@@ -150,6 +150,6 @@
 
 **Travis CI** - a continuous integration service used to build and test software projects hosted at GitHub (see `GitHub`).
 
-### U
+## U
 
 **utest** - A [test harness](/docs/v5.9/tools/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.

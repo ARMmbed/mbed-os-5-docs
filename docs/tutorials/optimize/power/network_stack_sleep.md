@@ -1,3 +1,3 @@
-### Network stack during sleep
+## Network stack during sleep
 
 [A document explaining how to deal with network stacks while sleeping]

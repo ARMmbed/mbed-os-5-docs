@@ -1,12 +1,12 @@
-## Assert
+# Assert
 
 Mbed OS provides a set of macros that evaluates an expression and prints an error message if the expression evaluates to false. There are two types of macros, one for evaluating the expression during runtime and one for compile-time evaluation. `mbed_assert.h` defines these macros.
 
-### Assert macros reference
+## Assert macros reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/mbed__assert_8h_source.html)
 
-### Assert example
+## Assert example
 
 You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If the evaluation fails, an error message is printed to STDIO in the below format.
 
@@ -36,6 +36,6 @@ void equeue_tick_init() {
 }
 ```
 
-### Related content
+## Related content
 
 - [Build profile](/docs/v5.9/tools/build-profiles.html) documentation.

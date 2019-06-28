@@ -1,4 +1,4 @@
-<h2 id="network-socket">Network socket overview</h2>
+<h1 id="network-socket">Network socket overview</h1>
 
 The application programming interface for IP networking is the Socket API. As described in the [IP networking](ip-networking.html)
 section of this book, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
@@ -7,7 +7,7 @@ section of this book, the Socket API relates to OSI layer 4, the Transport layer
 
 In Mbed OS, this socket API is C++ based but closely follows the functionality from POSIX standard (IEEE Std 1003.1) and relevant RFC standards. Standards divide sockets into two categories, datagram and stream sockets. Mbed OS instead uses the protocol names UDPSocket for datagrams and TCPSocket for streams.
 
-### General usage
+## General usage
 
 The following steps describe the typical application flow:
 
@@ -43,7 +43,7 @@ sock.recv(buf, 100);
 sock.close();
 ```
 
-### Network socket classes
+## Network socket classes
 
 The network socket API provides a common interface for using sockets on network devices. It's a class-based interface, which is familiar to users experienced with other socket APIs.
 
@@ -53,7 +53,7 @@ The network socket API provides a common interface for using sockets on network 
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
 - [Network status](network-status.html): API for monitoring network status changes.
 
-### Network errors
+## Network errors
 
 The convention of the network socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which is one of the error codes in the `nsapi_error_t` [enum](/docs/v5.9/mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
@@ -87,7 +87,7 @@ enum nsapi_error {
 };
 ```
 
-### Nonblocking operation
+## Nonblocking operation
 
 The network socket API also supports nonblocking operations. The `set_blocking()` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return `NSAPI_ERROR_WOULD_BLOCK` when a transaction cannot immediately complete.
 

@@ -1,4 +1,4 @@
-## ChainingBlockDevice
+# ChainingBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_chaining_block_device.png)<span>ChainingBlockDevice class hierarchy</span></span>
 
@@ -8,11 +8,11 @@ Note that each block device's block size must be a multiple of the other devices
 
 The constructor takes in an array of block device pointers and provides an object from which you can access the grouped block devices as a single device.
 
-### ChainingBlockDevice class reference
+## ChainingBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_chaining_block_device.html)
 
-### ChainingBlockDevice example
+## ChainingBlockDevice example
 
 This ChainingBlockDevice example creates a FAT file system across multiple [HeapBlockDevices](heapblockdevice.html).
 
@@ -22,7 +22,7 @@ This ChainingBlockDevice example shows how to program and read back data from a 
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/ChainingBlockDevice_ex_2/)](https://os.mbed.com/teams/mbed_example/code/ChainingBlockDevice_ex_2/file/70419b9d778a/main.cpp)
 
-### Related content
+## Related content
 
 - [SlicingBlockDevice](slicingblockdevice.html) API reference.
 - [HeapBlockDevice](heapblockdevice.html) API reference.

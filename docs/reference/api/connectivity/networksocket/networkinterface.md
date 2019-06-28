@@ -1,4 +1,4 @@
-## Network interface overview
+# Network interface overview
 
 A socket requires a NetworkInterface instance when opened to indicate which NetworkInterface the socket should be created on. The NetworkInterface provides a network stack that implements the underlying socket operations.
 

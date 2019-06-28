@@ -1,4 +1,4 @@
-## Mutex
+# Mutex
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
 
@@ -10,11 +10,11 @@ A Mutex is used to synchronize the execution of threads, for example to protect 
 
 <span class="notes">**Note:** Mbed OS uses the [PlatformMutex](platformmutex.html) class instead of the RTOS mutex for all drivers.</span>
 
-### Mutex class reference
+## Mutex class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 
-### Mutex example
+## Mutex example
 
 Use Mutex to protect printf().
 
@@ -24,6 +24,6 @@ Use Mutex to protect printf().
 
 <span class="notes">**Note:** Because of the mutexes in the Arm C standard library, you cannot use `stdio` (`printf`, `putc`, `getc` and so on), `malloc` and `new` in ISR. </span>
 
-### Related content
+## Related content
 
 - [PlatformMutex](platformmutex.html) API reference.

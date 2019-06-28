@@ -1,4 +1,4 @@
-## TCPSocket
+# TCPSocket
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_t_c_p_socket.png)<span>TCPSocket class hierarchy</span></span>
 
@@ -8,11 +8,11 @@ The constructor takes in the NetworkStack pointer to open the socket on the spec
 
 Refer to [TCPServer](tcpserver.html) class for TCP server functionality.
 
-### TCPSocket class reference
+## TCPSocket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_t_c_p_socket.html)
 
-### TCPSocket Example
+## TCPSocket Example
 
 Here is a TCP client example of HTTP transaction using the ESP8266 module.
 
@@ -22,6 +22,6 @@ Here is a TCP client example of HTTP transaction over Ethernet interface.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/6b383744246e/main.cpp)
 
-### Related content
+## Related content
 
 - [TCPServer](tcpserver.html) API reference.

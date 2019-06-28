@@ -1,4 +1,4 @@
-## LoRaWAN overview
+# LoRaWAN overview
 
 LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
@@ -6,7 +6,7 @@ Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mb
 
 The [LoRaWANInterface](lorawan-api.html) provides a C++ API for connecting to the internet over a LoRa network.
 
-### Usage
+## Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression:
 
@@ -60,7 +60,7 @@ lorawan.connect(connection);
 
 Owing to the fact that most of the LoRaWAN devices are simple telemetry devices, the stack and its operation need to be as simple as possible. That's why the Mbed LoRaWAN stack is event driven.
 
-#### Network events and callbacks
+### Network events and callbacks
 
 Here is the list of possible events that you can post from the stack to the application:
 
@@ -79,7 +79,7 @@ Here is the list of possible events that you can post from the stack to the appl
 
 The application must attach an event handler to the stack. The `LoRaWANInterface` provides an API to attach various callbacks to the stacks. One such callback is the event handler callback.
 
-#### Application callbacks
+### Application callbacks
 
 The Mbed LoRaWAN stack currently maps 3 different callbacks:
 
@@ -89,7 +89,7 @@ The Mbed LoRaWAN stack currently maps 3 different callbacks:
 | `Link check response callback` |Optional, Direction: from stack to application |
 | `Battery level callabck` | Optional, Direction: from application to stack |
 
-##### Event handler
+#### Event handler
 
 An example of attaching your event handler to the stack:
 
@@ -114,7 +114,7 @@ callbacks.events = mbed::callback(your_event_handler);
 lorawan.add_app_callbacks(&callbacks);
 ```
 
-##### Link check response handler
+#### Link check response handler
 
 Link check request is a MAC command defined by the LoRaWAN specification. To receive the response of this MAC command, set the `link_check_resp` callback.
 
@@ -130,7 +130,7 @@ lorawan.add_app_callbacks(&callbacks);
 
 ```
 
-##### Battery level handler
+#### Battery level handler
 
 The battery level callback is different from others. The direction of this callback is from the application to the stack. In other words, it provides information to the stack. The application is reponsible for letting the stack know about the current battery level.
 
@@ -144,7 +144,7 @@ callbacks.battery_level = mbed::callback(your_battery_level);
 lorawan.add_app_callbacks(&callbacks);
 ```
 
-##### Error codes
+#### Error codes
 
 All operations on `LoRaWANInterface` return an error code `lorawan_status_t` that reflects success or failure of the operation.
 

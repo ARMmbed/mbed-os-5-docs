@@ -1,6 +1,6 @@
-## Compile
+# Compile
 
-### Compiling your application
+## Compiling your application
 
 Use the `mbed compile` command to compile your code:
 
@@ -57,7 +57,7 @@ You can find the compiled binary, ELF image, memory usage and link statistics in
 
 For more information on build profiles, see [our build profiles](build-profiles.html) and [toolchain profiles](toolchain-profiles.html) pages.
 
-### Compiling static libraries
+## Compiling static libraries
 
 You can build a static library of your code by adding the `--library` argument to `mbed compile`. Static libraries are useful when you want to build multiple applications from the same Mbed OS codebase without having to recompile for every application. To achieve this:
 
@@ -85,11 +85,11 @@ Elf2Bin: threaded_blinky
 Image: ../threaded_blinky-out/threaded_blinky.bin
 ```
 
-### The compile configuration system
+## The compile configuration system
 
 The [compile configuration system](configuring-tools.html) provides a flexible mechanism for configuring the Mbed program, its libraries and the build target.
 
-#### Inspecting the configuration
+### Inspecting the configuration
 
 You can use `mbed compile --config` to view the configuration:
 
@@ -115,9 +115,9 @@ You may use `--prefix` more than once. To display only the application and targe
 $ mbed compile --config -t GCC_ARM -m K64F --prefix target --prefix app
 ```
 
-#### Compile-time customizations
+### Compile-time customizations
 
-##### Macros
+#### Macros
 
 You can specify macros in your command-line using the -D option. For example:
 
@@ -125,7 +125,7 @@ You can specify macros in your command-line using the -D option. For example:
 $ mbed compile -t GCC_ARM -m K64F -c -DUVISOR_PRESENT
 ```
 
-##### Compile in debug mode
+#### Compile in debug mode
 
 To compile in debug mode (as opposed to the default *develop* mode), use `--profile mbed-os/tools/profiles/debug.json` in the compile command-line:
 
@@ -136,13 +136,13 @@ $ mbed compile -t GCC_ARM -m K64F --profile mbed-os/tools/profiles/debug.json
 <span class="tips">**Tip:** If you have files that you want to compile only in debug mode, put them in a directory called `TARGET_DEBUG` at any level of your tree (then use `--profile` as explained above).
 </span>
 
-#### Automate toolchain and target selection
+### Automate toolchain and target selection
 
 Using `mbed target <target>` and `mbed toolchain <toolchain>`, you can set the default target and toolchain for your program. You won't have to specify these every time you compile or generate IDE project files.
 
 You can also use `mbed target detect`, which detects the connected target board and uses it as a parameter to every subsequent compile and export.
 
-#### Update programs and libraries
+### Update programs and libraries
 
 You can update programs and libraries on your local machine so that they pull in changes from the remote sources (Git or Mercurial).
 
@@ -150,6 +150,6 @@ As with any Mbed CLI command, `mbed update` uses the current directory as a work
 
 <span class="tips">**Tip: Synchronizing library references:** Before triggering an update, you may want to synchronize any changes that you've made to the program structure by running `mbed sync`, which updates the necessary library references and removes the invalid ones.</span>
 
-##### Protect against overwriting local changes
+#### Protect against overwriting local changes
 
 The update command fails if there are changes in your program or library that `mbed update` could overwrite. This is by design. Mbed CLI does not run operations that would result in overwriting uncommitted local changes. If you get an error, take care of your local changes (commit or use one of the options below), and then rerun `mbed update`.

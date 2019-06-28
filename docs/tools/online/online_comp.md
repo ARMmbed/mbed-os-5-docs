@@ -1,4 +1,4 @@
-<h2 id="arm-mbed-online-compiler">Online Compiler Overview</h2>
+<h1 id="arm-mbed-online-compiler">Online Compiler Overview</h1>
 
 Developers who do not have a dedicated desktop setup may prefer to work online. With the Arm Mbed ecosystem, you can work online, in addition to offline. Arm's online tool is the Arm Mbed Online Compiler.
 
@@ -6,9 +6,9 @@ The Arm Mbed Online Compiler enables you to either write your code from scratch 
 
 The compiler is always available on [`https://os.mbed.com/compiler/`](https://os.mbed.com/compiler/).
 
-## Keyboard shortcuts
+# Keyboard shortcuts
 
-### Navigation
+## Navigation
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -27,7 +27,7 @@ The compiler is always available on [`https://os.mbed.com/compiler/`](https://os
 | Ctrl + up arrow | Scroll up one row |
 | Ctrl + down arrow | Scroll down one row |                            
 
-### Ctrl key sequences
+## Ctrl key sequences
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -59,7 +59,7 @@ The compiler is always available on [`https://os.mbed.com/compiler/`](https://os
 | Ctrl + / | Toggle line comment (using slashes) |
 | Ctrl + Shift + / | Toggle block comment (using /* ... */)|
 
-### Misc
+## Misc
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -74,9 +74,9 @@ The compiler is always available on [`https://os.mbed.com/compiler/`](https://os
 | F9 | Compile and download |
 | F10 | Compile all and download |
 
-### Touch device shortcuts
+## Touch device shortcuts
 
-#### Editor
+### Editor
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -86,7 +86,7 @@ The compiler is always available on [`https://os.mbed.com/compiler/`](https://os
 | Hold | Context menu |
 | Touch + drag | Text selection until the touch is released (opens context menu) |
 
-#### Compiler IDE
+### Compiler IDE
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|

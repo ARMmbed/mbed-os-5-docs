@@ -1,4 +1,4 @@
-## ProfilingBlockDevice
+# ProfilingBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_profiling_block_device.png)<span>ProfilingBlockDevice class hierarchy</span></span>
 
@@ -6,11 +6,11 @@ The ProfilingBlockDevice class provides a decorator for an existing block device
 
 ProfilingBlockDevices take in a pointer to the block device being profiled as the only configurable parameter. If you want to count a storage operation such as programming, reading or writing to a block device, you should use the ProfilingBlockDevice object as the interface to the storage block rather than the underlying device. The below example highlights this use case.
 
-### ProfilingBlockDevice class reference
+## ProfilingBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/class_profiling_block_device.html)
 
-### ProfilingBlockDevice example
+## ProfilingBlockDevice example
 
 Create a ProfilingBlockDevice, perform storage operations and report back the read, write and erase counts.
 

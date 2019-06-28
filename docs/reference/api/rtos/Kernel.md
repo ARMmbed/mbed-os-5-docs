@@ -1,12 +1,12 @@
-## Kernel interface functions
+# Kernel interface functions
 
 The Kernel namespace implements functions to read RTOS information. Currently it implements one function to read the current RTOS kernel millisecond tick count.
 
-### Kernel namespace reference
+## Kernel namespace reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
 
-### `get_ms_count()` example
+## `get_ms_count()` example
 
 Kernel implements one function named `get_ms_count()` to read the current RTOS kernel millisecond tick count. The below code snippet demonstrates use of the `get_ms_count()` function to calculate the elapsed time:
 

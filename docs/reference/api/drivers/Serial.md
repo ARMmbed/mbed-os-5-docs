@@ -1,4 +1,4 @@
-## Serial
+# Serial
 
 <span class="images">![](https://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
 
@@ -6,7 +6,7 @@ The [Serial](/docs/v5.9/introduction/glossary.html) interface provides UART func
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
 
-### Serial class reference
+## Serial class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.9/mbed-os-api-doxy/classmbed_1_1_serial.html)
 
@@ -21,25 +21,25 @@ Serial channels have a number of configurable parameters:
 
 The default settings for the Mbed microcontroller are described as _9600-8-N-1_, a  common notation for serial port settings.
 
-### Serial hello, world
+## Serial hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Serial_HelloWorld/file/e540d7769e69/main.cpp)
 
-### Serial examples
+## Serial examples
 
-#### Example one
+### Example one
 
 Write a message to a device at a baud rate of 19200.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_1/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_1/file/7376f17bb36e/main.cpp)
 
-#### Example two
+### Example two
 
 Provide a serial pass-through between the PC and an external UART.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Serial_ex_2/)](https://os.mbed.com/teams/mbed_example/code/Serial_ex_2/file/8d318218bac1/main.cpp)
 
-### Related content
+## Related content
 
 - [Serial](/docs/v5.9/introduction/glossary.html) glossary entry.
 - [Windows serial configuration](/docs/v5.9/tutorials/windows-serial-driver.html).

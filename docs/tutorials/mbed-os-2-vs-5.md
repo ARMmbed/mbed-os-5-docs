@@ -1,15 +1,15 @@
-## Arm Mbed OS 2 vs. Arm Mbed OS 5
+# Arm Mbed OS 2 vs. Arm Mbed OS 5
 
 Arm Mbed OS 5 is a superset of Arm Mbed OS 2. This means that Mbed OS 5 *is* Mbed OS 2 but with more features, such as an RTOS.
 
-### Overview
+## Overview
 
 - Mbed OS 5 is a *superset* of Mbed OS 2.
 - Mbed OS 5 is a combination of both Mbed OS 2 and Mbed-RTOS.
 - Mbed OS 2 and Mbed OS 5 both use the same `mbed.h` file.
 - Drivers are thread-safe in Mbed OS 5. Drivers are not thread-safe in Mbed OS 2.
 
-### FAQs
+## FAQs
 
 **Do Mbed OS 2 and Mbed OS 5 use the same header file?**
 
