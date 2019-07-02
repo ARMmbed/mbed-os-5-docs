@@ -4,13 +4,13 @@ IoT devices often claim they can run ten years on one battery, but building low-
 
 ## Power modes
 
-Mbed OS contains three power modes:
+Mbed OS contains three [power modes](../apis/power-management-sleep.html):
 
 - Active - The MCU and all clocks are running.
 - Sleep - The core system clock is disabled. This eliminates dynamic power that the processor, memory systems and buses use.
 - Deep sleep - In addition to the core system clock, all high-frequency clocks are disabled, and the [SysTick](../apis/rtos.html) is disabled.
 
-Switching between these power modes occurs automatically. When all threads in the system are idle, Mbed OS yields control to the [idle thread](../apis/idle-loop.html). The idle thread then invokes the sleep manager, which brings the system to sleep or deep sleep mode. The idle thread also sets a timer to wake up the system again, but you can also wake up the system through an external interrupt or the Real-Time Clock (RTC).
+Switching between these power modes occurs automatically. When all threads in the system are idle, Mbed OS yields control to the [idle thread](../apis/idle-loop.html). The idle thread then invokes the sleep manager, which brings the system to sleep or deep sleep mode. The idle thread also sets a timer to wake up the system again, but you can also wake up the system through an external interrupt or the low power ticker.
 
 For example, this application automatically brings the system to sleep mode between blinking the LED:
 
@@ -39,7 +39,7 @@ This leads to significant energy savings without any modification from you. For 
 
 <span class="images">![Deep sleep](../../../images/deepsleep1.png)<span>In deep sleep mode, the idle current goes down to 358 uA. The jitter is noise from the energy profiler.</span></span>
 
-**Note:** The current consumption differs wildly between devices, even when comparing between MCUs from the same vendor. Look at the data sheet for your MCU to get an indication of power consumption in sleep and deep sleep mode.
+<span class="notes">**Note:** The current consumption differs wildly between devices, even when comparing between MCUs from the same vendor. Look at the data sheet for your MCU to get an indication of power consumption in sleep and deep sleep mode.</span>
 
 ### Sleep and deep sleep
 
@@ -193,7 +193,7 @@ When all threads are paused, the system [idle hook](../apis/idle-loop.html) is i
    - All peripherals need to operate the same way they do in active mode.
 - `hal_deepsleep()`:
    - Wake-up time should be less than 10 ms.
-   - The MCU should be able to wake up from the low-power ticker, from the RTC, from an external interrupt and from the watchdog timer.
+   - The MCU should be able to wake up from the low-power ticker, an external interrupt and the watchdog timer.
    - High-speed clocks should be turned off.
    - RTC is running and keeps time.
 
@@ -201,13 +201,11 @@ Both HAL sleep functions work like an Arm Wait For Interrupt (WFI) instruction, 
 
 This is also why the MCU wakes up from sleep every millisecond when tickless is not enabled. In nontickless mode, SysTick needs to fire every millisecond and does this by setting an interrupt on the usticker. Right after the SysTick, the sleep manager puts the MCU back to sleep. However, this also means that in nontickless mode, you can't put the MCU in deep sleep because the wake-up latency is bigger than the SysTick interval.
 
-For more information on the design of tickless and the sleep manager, please see the [office hours video with Bartek Szwatkowski](https://www.youtube.com/watch?v=OFfOlBaegdg).
+For more information on the design of tickless and the sleep manager, please see the [office hours video with Bartek Szatkowski](https://www.youtube.com/watch?v=OFfOlBaegdg).
 
 ### Hibernate mode without RAM retention
 
-All sleep modes in Mbed OS are implemented with RAM retention, but some MCUs have even lower power modes that completely stop the MCU and won't retain any information. After waking up, the MCU starts execution from the beginning of the program. Typically the only way to wake up from this mode is through an interrupt on a wake-up pin or from the RTC if it's running.
-
-The Mbed OS sleep API does not cover this use case, but you can write device-specific code that leverages this mode. For example, here is an Mbed OS 5 library to put STM32 devices [in standby mode](https://os.mbed.com/teams/sandbox/code/stm32-standby-rtc-wakeup/) and wake them up from the RTC. 
+All sleep modes in Mbed OS are implemented with RAM retention, but some MCUs have even lower power modes that completely stop the MCU and won't retain any information. After waking up, the MCU starts execution from the beginning of the program. Typically the only way to wake up from this mode is through an interrupt on a wake-up pin or from the low power ticker.
 
 ### Measuring power consumption
 
@@ -268,4 +266,4 @@ This is related to the maximum timeout of the hardware low power ticker. It can 
 
 ### Device does not sleep in bare-metal mode
 
-The sleep manager does not load when running Mbed OS in bare-metal mode. We may add this capability in a future release.
+The sleep manager does not load when running Mbed OS in bare-metal mode. We may add this capability in a future release. If you are developing in bare metal mode, call the `sleep()` function manually, and make sure you set up the wake up source.
