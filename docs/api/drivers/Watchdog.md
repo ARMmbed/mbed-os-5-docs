@@ -1,6 +1,6 @@
 # Watchdog
 
-Use the Watchdog interface to set up a hardware watchdog. If you fail to refresh the watchdog periodically, it will reset the system after a set period of time.
+Use the Watchdog interface to set up a hardware watchdog timer that will reset the system in the case of system failures or malfunctions. If you fail to refresh the watchdog periodically, it will reset the system after a set period of time.
 
 <span class="notes">**Note:** There is only one instance in the system. Use `Watchdog::get_instance()` to obtain a reference. </span>
 

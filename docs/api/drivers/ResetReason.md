@@ -1,12 +1,16 @@
 ## ResetReason
 
-Use the ResetReason interface to access hardware reset reason registers in a portable fashion.
+Use the ResetReason interface to determine the cause of the last system reset in a portable fashion.
+
+When the system restarts, the reason for the restart is contained in the system registers at boot time in a platform specific manner. This API provides a generic method of fetching the reason for the restart.
 
 ### ResetReason class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_resetreason.html)
 
 ### ResetReason example
+
+Check the cause of the last system reset.
 
 ```c++
 #include "mbed.h"
