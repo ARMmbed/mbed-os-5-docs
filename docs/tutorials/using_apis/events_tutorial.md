@@ -6,7 +6,7 @@ One of the optional Arm Mbed OS features is an event loop mechanism that you can
 - You cannot use various RTOS objects and functions from an interrupt context.
 - As a general rule, the code needs to finish as fast as possible, to allow other interrupts to be handled.
 
-The event loop offers a solution to these issues in the form of an API that can defer execution of code from the interrupt context to the user context.<!--you've already said that--> More generally, the event loop can be used anywhere in a program (not necessarily in an interrupt handler) to defer code execution to a different context.
+The event loop offers a solution to these issues. You can use the event loop anywhere in a program (not necessarily in an interrupt handler) to defer code execution to a different context.
 
 In Mbed OS, events are pointers to functions (and optionally function arguments). An event loop extracts events from a queue and executes them.
 
@@ -28,11 +28,11 @@ int main () {
 }
 ```
 
-Note that though this document assumes the presence of a single event loop in the system, there's nothing preventing the programmer<!--why did we switch from "you" to "the programmer"?--> from running more than one event loop, by following the create/start pattern above for each of them.
+<span class="notes">**Note:** Although this document assumes the presence of a single event loop in the system, there's nothing preventing you from running more than one event loop by following the create/start pattern above for each of them.</span>
 
 ## Using the event loop
 
-Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
+Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler runs in interrupt context, and the `fall` handler runs in user context (more specifically, in the context of the event loop's thread). You can find the full code for the example below:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/69c11c7877b6/main.cpp)
 
@@ -41,7 +41,7 @@ The above code executes two handler functions (`rise_handler` and `fall_handler`
 1. In interrupt context when a rising edge is detected on `SW2` (`rise_handler`).
 2. In the context of the event loop's thread function when a falling edge is detected on `SW2` (`fall_handler`). `queue.event()` is called with `fall_handler` as an argument to specify that `fall_handler` will run in user context instead of interrupt context.
 
-This is the output of the above program on an FRDM-K64F board. We reset the board and pressed the SW2 button twice:
+This is the output of the above program on an FRDM-K64F board. Reset the board, and press the SW2 button twice:
 
 ```
 Starting in context 20001fe0
@@ -51,9 +51,9 @@ fall_handler in context 20000b1c
 rise_handler in context 00000000
 ```
 
-The program starts in the context of the thread that runs the `main` function (`20001fe0`). When the user presses SW2<!--why did we switch from "we" to "the user"?-->, `fall_handler` is automatically queued in the event queue, and it runs later in the context of thread `t` (`20000b1c`). When the user<!--we/the user--> releases the button, `rise_handler` is executed immediately, and it displays `00000000`, indicating that the code ran in interrupt context.
+The program starts in the context of the thread that runs the `main` function (`20001fe0`). When you press SW2, `fall_handler` is automatically queued in the event queue, and it runs later in the context of thread `t` (`20000b1c`). When you release the button, `rise_handler` is executed immediately, and it displays `00000000`, indicating that the code ran in interrupt context.
 
-The code for `rise_handler` is problematic because it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. We can make the code safe by running `rise_handler` in user context (like we already do with `fall_handler`) by replacing this line:
+The code for `rise_handler` is problematic because it calls `printf` in interrupt context, which is a potentially unsafe operation. Fortunately, this is exactly the kind of problem that event queues can solve. You can make the code safe by running `rise_handler` in user context (like you already do with `fall_handler`) by replacing this line:
 
 ```
 sw.rise(rise_handler);
@@ -65,9 +65,9 @@ with this line:
 sw.rise(queue.event(rise_handler));
 ```
 
-The code is safe now, but we may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code, this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt.
+The code is safe now, but you may have introduced another problem: latency. After the change above, the call to `rise_handler` will be queued, which means that it no longer runs immediately after the interrupt is raised. For this example code, this isn't a problem, but some applications might need the code to respond as fast as possible to an interrupt.
 
-Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to the user's<!--we/the user--> action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context.
+Let's assume that `rise_handler` must toggle the LED as quickly as possible in response to your action on SW2. To do that, it must run in interrupt context. However, `rise_handler` still needs to print a message indicating that the handler was called; that's problematic because it's not safe to call `printf` from an interrupt context.
 
 The solution is to split `rise_handler` into two parts: the time critical part will run in interrupt context, while the non-critical part (displaying the message) will run in user context. This is easily doable using `queue.call`:
 
@@ -80,7 +80,7 @@ void rise_handler(void) {
     // Execute the time critical part first
     led1 = !led1;
     // The rest can execute later in user context (and can contain code that's not interrupt safe).
-    // We use the 'queue.call' function to add an event (the call to 'rise_handler_user_context') to the queue.
+    // Use the 'queue.call' function to add an event (the call to 'rise_handler_user_context') to the queue.
     queue.call(rise_handler_user_context);
 }
 ```
@@ -95,13 +95,13 @@ fall_handler in context 0x20002c90
 rise_handler_user_context in context 0x20002c90
 ```
 
-The scenario above (splitting an interrupt handler's code into time critical code and non-time critical code) is another<!--"another" is a weird word here; I think this sentence is struggling because its points is at the end, and the semicolon highlights the difficulty--> common pattern that you can easily implement with event queues; queuing code that's not interrupt safe is not the only thing you can use event queues for. Any kind of code can be queued and deferred for later execution.
+Queuing code that's not interrupt safe, as in the example above, is not the only thing you can use event queues for. Any kind of code can be queued and deferred for later execution.
 
-We used `InterruptIn` for the example above, but the same kind of code can be used with any `attach()`-like functions in the SDK<!--do we talk about SDK for Mbed OS anywhere else?-->. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
+The example above uses `InterruptIn`, but you can use the same kind of code with any `attach()`-like functions. Examples include `Serial::attach()`, `Ticker::attach()`, `Ticker::attach_us()`, `Timeout::attach()`.
 
 ## Prioritization
 
-The EventQueue has no concept of event priority. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. The EventQueue only schedules events based on time<!--feels like maybe this should be the second sentence rather than the third-->. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must appropriately<!--just because "appropriately priority" is a mouth-full, is there another word?--> set the priority of the thread dispatching each EventQueue instance.
+The EventQueue has no concept of event priority. It only schedules events based on time. If you schedule events to run at the same time, the order in which the events run relative to one another is undefined. If you want to separate your events into different priorities, you must instantiate an EventQueue for each priority. You must set the priority of the thread dispatching each EventQueue instance.
 
 ## EventQueue memory pool
 
@@ -115,13 +115,13 @@ Various sized events introduce fragmentation to the memory region. This fragment
 
 If your project only uses fix-sized events, you can use a counter that tracks the number of events the EventQueue has dispatched.
 
-If your project uses variable-sized<!--are variable-sized and various sized the same?--> events, you can calculate the number of available events of a specific size because successfully allocated memory is never fragmented further. However, untouched space can service any event that fits, which complicates such a calculation.<!--and? and how does all this tie to the code - what is it showing?-->
+If your project uses variable-sized events, you can calculate the number of available events of a specific size because successfully allocated memory is never fragmented further. However, untouched space can service any event that fits, which complicates such a calculation.<!--and? and how does all this tie to the code - what is it showing?-->
 
 ```
 EventQueue queue(8*sizeof(int)); // 8 words of storage
 queue.call(func, 1);       // requires 2 words of storage
 queue.call(func, 1, 2, 3); // requires 4 words of storage
-// after this we have 2 words of storage left
+// after this, 2 words of storage are left
 
 queue.dispatch(); // free all pending events
 
@@ -154,4 +154,4 @@ Four words of storage are free but only for allocations of one word or less. The
 
 ### More about events
 
-This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md)<!--why isn't this part of the docs in some way? I think they can include it in the doxygen, for example--> shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).<!--that's a header-->
+This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/mbed-os/v5.13/mbed-os-api-doxy/classevents_1_1_event_queue.html).
