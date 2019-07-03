@@ -10,7 +10,7 @@ If you fail to refresh the watchdog periodically, it resets the system after a s
 
 ### Watchdog class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_watchdog.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_watchdog.html)
 
 ### Watchdog example
 
