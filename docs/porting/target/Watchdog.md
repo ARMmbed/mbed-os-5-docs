@@ -28,7 +28,9 @@ Hardware Independent Watchdog support.
 
 ## Implementing Watchdog
 
-You can find the API and specification for the Watchdog API in its header file.
+You can find the API and specification for the Watchdog API in its HAL API reference:
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog.html)
 
 To enable Watchdog support in Mbed OS, add the `WATCHDOG` label in the `device_has` option of the target's section in the `targets.json` file.
 
