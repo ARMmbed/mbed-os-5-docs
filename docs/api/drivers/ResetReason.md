@@ -1,8 +1,8 @@
 ## ResetReason
 
-Use the ResetReason interface to determine the cause of the last system reset in a portable fashion.
+When the system restarts, the system registers contain the reason for the restart at boot time in a platform specific manner. This API provides a generic method of fetching the reason for the restart.
 
-When the system restarts, the reason for the restart is contained in the system registers at boot time in a platform specific manner. This API provides a generic method of fetching the reason for the restart.
+You can use the ResetReason interface to determine the cause of the last system reset in a portable fashion.
 
 ### ResetReason class reference
 
@@ -10,7 +10,7 @@ When the system restarts, the reason for the restart is contained in the system 
 
 ### ResetReason example
 
-Check the cause of the last system reset.
+Check the cause of the last system reset:
 
 ```c++
 #include "mbed.h"
