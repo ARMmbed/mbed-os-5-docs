@@ -1,10 +1,12 @@
 # Watchdog
 
-Use the Watchdog interface to set up a hardware watchdog timer that will reset the system in the case of system failures or malfunctions. If you fail to refresh the watchdog periodically, it will reset the system after a set period of time.
+You can use the Watchdog interface to set up a hardware watchdog timer that resets the system in the case of system failures or malfunctions. 
 
 <span class="notes">**Note:** There is only one instance in the system. Use `Watchdog::get_instance()` to obtain a reference. </span>
 
-<span class="notes">**Note:** The maximum amount of time that you can set as the Watchdog timeout varies depending on the target hardware. You can check the maximum value by calling `Watchdog::get_instance().get_max_timeout()`.</span>
+If you fail to refresh the watchdog periodically, it resets the system after a set period of time.
+
+<span class="notes">**Note:** The maximum amount of time you can set as the Watchdog timeout varies depending on the target hardware. You can check the maximum value by calling `Watchdog::get_instance().get_max_timeout()`.</span>
 
 ### Watchdog class reference
 
@@ -12,7 +14,7 @@ Use the Watchdog interface to set up a hardware watchdog timer that will reset t
 
 ### Watchdog example
 
-Create a watchdog timer that expires after 5 seconds and that you refresh by pushing BUTTON1 on the target board.
+This example creates a watchdog timer that expires after five seconds and that you can refresh by pushing BUTTON1 on the target board:
 
 ```c++
 #include "mbed.h"
