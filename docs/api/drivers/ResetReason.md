@@ -6,7 +6,7 @@ You can use the ResetReason interface to determine the cause of the last system 
 
 ### ResetReason class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/v5.8/mbed-os-api-doxy/classmbed_1_1_resetreason.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/_reset_reason_8h_source.html)
 
 ### ResetReason example
 
