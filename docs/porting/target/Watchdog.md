@@ -41,3 +41,7 @@ The Mbed OS HAL provides a set of conformance tests for Watchdog. You can use th
 ```
 mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-watchdog*"
 ```
+
+For more details, please see:
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog__tests.html)
