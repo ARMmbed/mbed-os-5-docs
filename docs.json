@@ -857,9 +857,6 @@
                     "sub_chapters": [{
                             "title": "Installation and setup",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-setup/cli-setup.md"
-                                },
-                                {
                                     "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
                                 }
                             ]

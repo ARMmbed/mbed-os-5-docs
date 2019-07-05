@@ -206,7 +206,7 @@ When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
 - It's invalid to use `-t ARMC5` with the `mbed compile` command for a target that specifies `ARMC6` for `supported_toolchains`, and it's invalid to use `-t ARMC6` if `supported_toolchains` specifies `ARMC5`.
 
-<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development, and is [free for use with Mbed OS](../tools/after-installation-configuring-mbed-cli.html#using-arm-compiler-6-from-mbed-studio). Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.</span>
+<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.</span>
 
 ### default_toolchain
 

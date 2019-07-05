@@ -1,236 +1,106 @@
-# Windows
+# Installers
 
-We recommend installing Mbed CLI with our installer. If you need more customization, you can perform a manual install.
+The installers are a great way to get started with Mbed OS:
 
-## Prebuilt Mbed CLI installer
+- [Windows installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
+- [macOS installer](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-Download and run the [Mbed CLI Windows .exe installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
+There is no installer for Linux; please follow the manual installation guide.
 
-<span class="notes">**Note:** The Windows installer installs the GNU Arm embedded toolchain. If you want to compile using Arm Compiler 5 or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-You can verify Mbed CLI installed correctly by running `mbed help` from your command-line.
+# Manual installation
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](#after-installation-configuring-mbed-cli).</span>
+## 1. Install dependencies
 
-## Manual installation
+### Instructions for Windows
 
-### 1. Download and install prerequisites
+1. Download and install [Python 2.7.x](https://www.python.org/downloads/windows/) (which includes `pip`).
+1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
+1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
-- **Python:** Mbed CLI is a Python script, so [you'll need Python to use it](https://www.python.org/downloads/). We test Mbed CLI with Python versions 2.7.11, and with 3.6.5 and greater.
+### Instructions for macOS
+1. macOS 10.8 and later comes with Python 2.7 preinstalled.
 
-    <span class="notes">**Note:** Python 3 usage is **not compatible** with Mbed OS versions older than 5.9 and Mbed CLI toolchain versions older than 1.7.2. </span>
+    * If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
+       ```
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        python get-pip.py
+        ```
+    * If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
+1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
+1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
-- **pip**.
+### Instructions for Linux
 
-    <span class="notes">**Note:** Mbed CLI toolchain versions older than 1.5.1 are **not compatible** with `pip` version 10.0 (or newer). Please use the latest Mbed CLI with newer version of `pip`.</span>
+Linux distributions typically manage software through package managers. The specific commands to install the dependencies will vary depending on your distribution. Please see your distribution's documentation for more information.
 
-- **Git and Mercurial:** Mbed CLI supports both Git and Mercurial repositories, and you may need libraries from both sources as you work, so please install both:
-    - [Git](https://git-scm.com/) - version 1.9.5 or greater.
-    - [Mercurial](https://www.mercurial-scm.org/) - version 2.2.2 or greater.
-
-**Optional: Using a virtual environments**
-
-If your main environment has an unsupported Python version, you may want to install Mbed CLI on a virtual environment. Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv).
-
-### 2. Install a compiler
-
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
-
-### 3. Install Mbed CLI
-
-To install Mbed CLI, run `pip install mbed-cli` from your command-line.
-
-You can verify Mbed CLI installed correctly by running `mbed --version`.
-
-### 4. Set up the environment
-
-After installation is complete, be sure to add any available toolchains to Mbed CLI's global configuration. Below is an example using the ARM compiler:
+As an example, the following is a command to install all dependencies on Ubuntu:
 
 ```
-> mbed config -G ARM_PATH <path to ARM bin\>"
-[mbed] <path to ARM bin\> now set as global ARM_PATH
-
-> mbed config --list
-[mbed] Global config:
-ARM_PATH=<path to ARM bin\>
-
+sudo apt install python2.7 python-pip git mercurial
 ```
 
-<span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
+## 2. Install Mbed CLI
 
-# macOS
-
-We recommend installing Mbed CLI with our installer. If you need more customization, you can perform a manual install.
-
-## Prebuilt Mbed CLI installer
-
-Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
-
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
-
-## Manual installation
-
-
-### 1. Download and install prerequisites
-
-- **Python:** Mbed CLI is a Python script, so [you'll need Python to use it](https://www.python.org/downloads/). We test Mbed CLI with Python versions 2.7.11, and with 3.6.5 and greater.
-
-    macOS 10.8+ comes with Python 2.7 preinstalled by Apple. If you are running an earlier version of macOS, download and install [Python versions 2.7.11 or 3.6.5](https://www.python.org/downloads/mac-osx/) or later.
-
-    <span class="notes">**Note:** Python 3 usage is **not compatible** with Mbed OS versions older than 5.9 and Mbed CLI toolchain versions older than 1.7.2. </span>
-
-- **pip**.
-
-    To install Pip, run `easy_install --user pip` from your command-line.
-
-    <span class="notes">**Note:** Mbed CLI toolchain versions older than 1.5.1 are **not compatible** with `pip` version 10.0 (or newer). Please use the latest Mbed CLI with newer version of `pip`.</span>
-
-- **Git and Mercurial:** Mbed CLI supports both Git and Mercurial repositories, and you may need libraries from both sources as you work, so please install both:
-    - [Git](https://git-scm.com/) - version 1.9.5 or greater.
-    - [Mercurial](https://www.mercurial-scm.org/) - version 2.2.2 or greater.
-
-**Optional: Using a virtual environments**
-
-If your main environment has an unsupported Python version, you may want to install Mbed CLI on a virtual environment. Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv).
-
-
-### 2. Install a compiler
-
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
-
-### 3. Install Mbed CLI
-
-To install Mbed CLI, run `pip install mbed-cli --user` from your command-line.
-
-You can verify Mbed CLI installed correctly by running `mbed --version`.
-
-<span class="notes">**Note:** You may also need to add the new Mbed CLI Python `--user` installation location (for example: `/Users/{username}/Library/Python/2.7/bin`) to the PATH.</span>
-
-### 4. Set up the environment
-
-For any installed toolchain, be sure to add the Mbed CLI global configuration:
+To install Mbed CLI with pip:
 
 ```
-$ mbed config -G ARM_PATH <path to ARM bin\>"
-[mbed] <path to ARM bin\> now set as global ARM_PATH
-
-$ mbed config --list
-[mbed] Global config:
-ARM_PATH=<path to ARM bin\>
-
+pip install mbed-cli
 ```
 
-<span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
+To verify Mbed CLI installed correctly, run `mbed --help`.
 
-<span class="tips">**Tip:** Mbed CLI may not work properly without [some manual configuration of compiler, Git and Mercurial paths](../tools/after-installation-configuring-mbed-cli.html).</span>
-
-
-# Linux
-
-
-### 1. Download and install prerequisites
-
-- **Python:** Mbed CLI is a Python script, so [you'll need Python to use it](https://www.python.org/downloads/). We test Mbed CLI with Python versions 2.7.11, and with 3.6.5 and greater.
-
-    You can download and install Python, or use your package manager. For example, you can use the following in Ubuntu (note that it includes pip, the following item on our list):
-
-    ```console
-    $ sudo apt-get install python2.7 python-pip
-    ```
-
-    <span class="notes">**Note:** Python 3 usage is **not compatible** with Mbed OS versions older than 5.9 and Mbed CLI toolchain versions older than 1.7.2. </span>
-
-- **pip**.
-
-    To install Pip, run `easy_install --user pip` from your command-line.
-
-    <span class="notes">**Note:** Mbed CLI toolchain versions older than 1.5.1 are **not compatible** with `pip` version 10.0 (or newer). Please use the latest Mbed CLI with newer version of `pip`.</span>
-
-- **Git and Mercurial:** Mbed CLI supports both Git and Mercurial repositories, and you may need libraries from both sources as you work, so please install both:
-    - [Git](https://git-scm.com/) - version 1.9.5 or greater.
-    - [Mercurial](https://www.mercurial-scm.org/) - version 2.2.2 or greater.
-
-**Optional: Using a virtual environments**
-
-If your main environment has an unsupported Python version, you may want to install Mbed CLI on a virtual environment. Mbed CLI is compatible with [Virtual Python Environment (virtualenv)](https://pypi.python.org/pypi/virtualenv).
-
-## 2. Install a compiler
-
-Download and install one of the following compilers: GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR. To download the latest toolchains, visit the [supported compilers page](../tools/index.html#compiler-versions).
-
-<span class="notes">**Note:** When installing the Arm Compiler 5 on a 64-bit Linux machine, you may also need to install the i386 architecture package:</span>
-
-    ```
-    $ sudo dpkg --add-architecture i386
-    $ sudo apt-get update
-    $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
-    ```
-
-## 3. Install Mbed CLI
-
-To install Mbed CLI, run `pip install mbed-cli` from your command-line.
-
-You can verify Mbed CLI installed correctly by running `mbed help`.
-
-## 4. Set up the environment
-
-For any installed toolchain, be sure to add the Mbed CLI global configuration:
+To update Mbed CLI, run:
 
 ```
-$ mbed config -G ARM_PATH <path to ARM bin\>
-[mbed] <path to ARM bin\> now set as global ARM_PATH
-
-$ mbed config --list
-[mbed] Global config:
-ARM_PATH=<path to ARM bin\>
-
+pip install -U mbed-cli
 ```
 
-<span class="notes">**Note:** You can also apply the same configuration to the IAR and GNU toolchains using `IAR_PATH` or `GCC_ARM_PATH`.</span>
+## 3. Install a compiler
 
-# After installation - configuring Mbed CLI
+Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../tools/index.html#compiler-versions).
 
-Mbed CLI may not work properly without some manual configuration.
+**Note:** When installing the Arm Compiler 5 on a 64-bit Linux system, you may also need to install the i386 architecture package. As as example on Ubuntu:
 
-## Mandatory: setting PATH variables
+```
+$ sudo dpkg --add-architecture i386
+$ sudo apt-get update
+$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+```
 
-Add the following to the system `PATH`:
+## 4. Configure the compiler location
 
-- The paths for the Git and Mercurial executables (`git` and `hg`).
+To build project, Mbed CLI needs to know where the compiler is installed. It checks three configuration options in the following order:
 
-## Mandatory: setting compiler location
+1. Mbed CLI config (local first, then global).
+1. Environment variables.
+1. System path.
 
-You must inform Mbed CLI about the location of your compiler using one of the following methods:
+### Configure compiler location with Mbed CLI
 
-- The Mbed CLI configuration command.
-- Setting an environment variable.
-- Adding the compiler's directory to your PATH.
-
-<span class="tips">**Tip:** You may configure more than one toolchain. However, you may only use one toolchain at a time. For more information, see [the multiple toolchains section below](#optional-configuring-multiple-toolchains)</span>
-
-### Method 1: Mbed CLI configuration
-
-Mbed CLI stores its own configuration about compiler locations in both project local settings and user wide global settings. You may set and view these settings with the `mbed config` command. For example, set the Arm Compiler 5 location with the command:
+If you cannot place the compiler in the system PATH, or if you have to use a different version of the compiler than the one in your system path, you must configure the location of the compiler with Mbed CLI. Use the `mbed config` command to set the compiler's location:
 
 ```
 $ mbed config -G ARM_PATH "C:\Program Files\ARM"
 [mbed] C:\Program Files\ARM now set as global ARM_PATH
 ```
 
-The `-G` switch tells Mbed CLI to set this as a global setting, allowing all projects your user owns to compile with Arm Compiler 5. If you want only a local setting for `ARM_PATH`, omit the `-G` switch.
+The `-G` argument sets the location globally, so that it applies to all projects. You can omit the argument if you are configuring a compiler location for a specific project.
 
 Mbed CLI supports a setting for each toolchain path:
 
-| Toolchain | Example binary location | Setting name | Example path |
+| Toolchain | Setting name | Example binary location | Example path |
 | --------- | --------- | ---------| --------- |
-| Arm Compiler 5.06u6 | `C:\Program Files\ARM_Compiler_5.06u6\bin\armcc` | `ARM_PATH` | `C:\Program Files\ARM_Compiler_5.06u6` |
-| Arm Compiler 6.11 | `C:\Program Files\ARMCompiler6.11\bin\armclang` | `ARMC6_PATH` | `C:\Program Files\ARMCompiler6.11\bin` |
-| IAR EWARM Compiler 8.32.1 | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm\bin\iccarm.exe` | `IAR_PATH` | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm`|
-| GCC Arm Embedded Compiler | `/usr/bin/arm-none-eabi-gcc` | `GCC_ARM_PATH` | `/usr/bin`|
+| Arm Compiler 5.06u6 | `ARM_PATH` | `C:\Program Files\ARM_Compiler_5.06u6\bin\armcc` | `C:\Program Files\ARM_Compiler_5.06u6` |
+| Arm Compiler 6.11 | `ARMC6_PATH` | `C:\Program Files\ARMCompiler6.11\bin\armclang` | `C:\Program Files\ARMCompiler6.11\bin` |
+| IAR EWARM Compiler 8.32.1 | `IAR_PATH` | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm\bin\iccarm.exe` |  `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm`|
+| GCC Arm Embedded Compiler | `GCC_ARM_PATH` |`/usr/bin/arm-none-eabi-gcc` |  `/usr/bin`|
 
-### Method 2: environment variable
 
-In addition to the manually configured compiler locations, Mbed CLI detects executables that are in paths specified by toolchain-specific environment variables.
+### Configure compiler location with environment variables
+
+You can set the location of the compiler with environment variables. Use the path listed in the previous section [Configuring compiler location with Mbed CLI](#configuring-compiler-location-with-mbed-cli).
 
 | Toolchain | Environment variable |
 | --------- | --------- |
@@ -239,33 +109,22 @@ In addition to the manually configured compiler locations, Mbed CLI detects exec
 | IAR EWARM Compiler | `MBED_IAR_PATH` |
 | GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |
 
-### Method 3: system PATH
+### Install compilers in the system PATH
 
-In addition to toolchain-specific environment variables, Mbed CLI detects executables that are in your system `PATH`. This means that if you install a toolchain in the system `PATH` (different for each OS), Mbed CLI will automatically find the toolchain.
+Installing the compilers in the system PATH will allow the tools to automatically discover the compilers without further configuration. Most compiler installers have an option to add the compiler to the system PATH for you.
 
-### Optional: configuring multiple toolchains
+## Optional configuration
 
-All the settings described in the previous sections can configure a different version of the same toolchain, and Mbed CLI has a set of rules to seamlessly switch between these versions for an individual `mbed compile` or `mbed test` invocation. Mbed CLI picks the most specific version, from most specific to least specific, in this order:
+### Bash completion
 
-1. `mbed_settings.py`
-2. Mbed CLI local configuration
-3. Mbed CLI global configuration
-4. Environment variables
-5. The `PATH` environment variable
+To install `mbed-cli` bash completion:
 
-To use a standard toolchain for general purpose development, you may use any method from 3 to 5. To override a toolchain version for a specific project, you may use methods 1 and 2. All of these methods may coexist.
+1. Clone the Mbed CLI repository: `git clone https://github.com/ARMmbed/mbed-cli`.
+1. Navigate to the `mbed-cli/tools/bash_completion` directory.
+1. Copy the `mbed` script into the  `~/.bash_completion.d` directory (you may need to create this directory first).
+1. Restart the terminal.
 
-## Optional: add bash tab completion
-
-To install `mbed-cli` bash tab completion:
-
-1. Navigate to the `tools/bash_completion` directory.
-1. Copy the `mbed` script into your `/etc/bash_completion.d/` or `/usr/local/etc/bash_completion.d` directory.
-1. Reload your terminal.
-
-[For more information, see the full documentation](https://github.com/ARMmbed/mbed-cli/blob/master/tools/bash_completion/install.md).
-
-# Reference: Working with mbed config
+# Configuration options
 
 The Mbed CLI configuration syntax is:
 
@@ -304,12 +163,3 @@ Available configurations:
 | `protocol` | The default protocol used for importing or cloning programs and libraries. The possible values are `https`, `http` and `ssh`. Use `ssh` if you have generated and registered SSH keys (Public Key Authentication) with a service such as GitHub, GitLab, or Bitbucket. For more information, see [SSH keys on GitHub](https://help.github.com/articles/generating-an-ssh-key/). | Default: `https`. |
 | `depth` | The *clone* depth for importing or cloning. Applies only to *Git* repositories. Note that though this option may improve cloning speed, it may also prevent you from correctly checking out a dependency tree when the reference revision hash is older than the clone depth. For more information, see [shallow clones on GitHub](https://git-scm.com/docs/git-clone). | No default. |
 | `cache` | The local path that stores small copies of the imported or cloned repositories. Mbed CLI uses it to minimize traffic and speed up future imports of the same repositories. Use `on` or `enabled` to turn on caching in the system temp path. Use `none` to turn caching off. | Default: none (disabled). |
-| `color` | Enables the console to display output information with colors. Use `on` to turn color on. | Default: none (disabled). |
-
-## Updating Mbed CLI
-
-To update an existing installation of Mbed CLI, run:
-
-```
-pip install -U mbed-cli
-```
