@@ -1390,15 +1390,6 @@
             ]
         },
         {
-            "title": "feature-hal-spec-usb-device doxygen",
-            "description": "The full mbed OS API documentation in doxygen format",
-            "slug": "feature-hal-spec-usb-device-doxy",
-            "hidden": true,
-            "type": "doxygen",
-            "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "feature-hal-spec-usb-device"
-        },
-        {
             "title": "feature-hal-spec-sai doxygen",
             "description": "The full mbed OS API documentation in doxygen format",
             "slug": "feature-hal-spec-sai-doxy",
