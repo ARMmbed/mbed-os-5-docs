@@ -94,7 +94,7 @@ Hardware I2C capabilities.
 
 You can find the API and specification for the I2C API in the following class reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-i2c-doxy/classmbed_1_1_i_2_c.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/feature-i2c-doxy/classmbed_1_1_i2_c.html)
 
 To enable I2C support in Mbed OS, add the `I2C` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -111,5 +111,5 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal_fpga_ci_test_shield-i2c"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-i2c-doxy/group__hal__i2c__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/feature-i2c-doxy/group__hal__i2c__tests.html)
 
