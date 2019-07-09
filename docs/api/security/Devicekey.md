@@ -17,7 +17,7 @@ The characteristics required by this root of trust are:
 - It must be at least 128 bits.
 - It must be kept secret.
 
-The DeviceKey feature keeps the root of trust key in internal storage, using the NVStore component. Internal storage provides protection from external physical attacks to the device.
+The DeviceKey feature keeps the root of trust key in internal storage, using the KVStore component. Internal storage provides protection from external physical attacks to the device.
 
 The root of trust is generated at the first use of DeviceKey if the true random number generator is available in the device. If no true random number generator is available, you must pass the injected root of trust key to the DeviceKey before you call the key derivation API.
 
