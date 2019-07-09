@@ -5,7 +5,7 @@ Mbed OS integrates the Pelion Device Management firmware update services, so if 
 Update support in Mbed OS relies on two features:
 
 - Mbed OS now includes the bootloader that manages update verification and installation.
-- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands]../tools/cli-update.html).
+- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands](../tools/cli-update.html).
 
 ## Updatable binaries
 
