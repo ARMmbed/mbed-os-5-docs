@@ -61,6 +61,19 @@ jobs:
             source /tmp/env
             docbuilder publish /tmp/workspace/artifacts/$CIRCLE_BRANCH_NO_SLASH iot-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/$CIRCLE_SHA1
 
+  push_redirects_to_s3:
+    executor: doc_builder
+    steps:
+      - checkout
+      - setup_aws_credentials
+      - write_env_variables
+      - *attach_workspace
+      - run:
+          name: Upload redirects.json to s3
+          command: |
+            source /tmp/env
+            docbuilder upload_file ~/project/redirects.json iot-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/redirects.json
+
   zip_documentation:
     machine: true
     steps:
@@ -72,6 +85,18 @@ jobs:
             zip -r /tmp/workspace/docs.zip .
       - store_artifacts:
           path: /tmp/workspace/docs.zip
+
+  list_pages:
+    machine: true
+    steps:
+      - write_env_variables
+      - *attach_workspace
+      - run:
+          name: List all built docs pages
+          command: |
+            source /tmp/env
+            cd /tmp/workspace/artifacts/$CIRCLE_BRANCH_NO_SLASH
+            find -maxdepth 2 -type f -name '*.html' -printf '%P\n'
 
   make_live:
     executor: doc_builder
@@ -92,7 +117,13 @@ workflows:
       - publish_to_s3:
           requires:
             - build
+      - push_redirects_to_s3:
+          requires:
+            - build
       - zip_documentation:
+          requires:
+            - build
+      - list_pages:
           requires:
             - build
 #       - await_approval:
