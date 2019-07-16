@@ -95,9 +95,9 @@ Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
 To be able to debug your port:
 
-1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
-1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/ADDING_NEW_TARGETS.md).
-1. [Test your new target](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
+1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/developers_guide.md).
+1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/adding_new_targets.md).
+1. [Test your new target](https://github.com/mbedmicro/pyOCD/blob/master/docs/developers_guide.md).
 
 Wait for your target support to be merged into pyOCD's master branch and released in PyPi. You can then use `pip install pyOCD` to enable debug.
 
