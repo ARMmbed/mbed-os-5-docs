@@ -23,6 +23,9 @@ The interface is made up of two lines for all communication:
    - Sets the frequency to use for the transfer.
    - Returns the actual frequency used.
    - Must leave all other configuration unchanged.
+- `i2c_set_clock_stretching`:
+   - Enables or disables clock stretching for the peripheral when in slave mode.
+   - Does nothing when called in master mode.
 - `i2c_timeout`:
    - Sets the transmision timeout to use for the following blocking transfers.
    - If the timeout is not set, the default timeout is used.
