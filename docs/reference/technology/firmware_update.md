@@ -20,7 +20,6 @@ The active firmware, made up of Mbed OS and an application, can be updated only 
 ## The Mbed OS boot loader
 
 During system startup, a boot loader is responsible for selecting and forwarding control to the next stage in the boot sequence. The Mbed OS boot loader also validates the next stage's sanity and signature before forwarding control to it; if validation fails, the boot loader can select an alternate version of the next stage. It can also install an alternative upon request (in other words, firmware update).
->This is much more detail than the DM boot loader docs go into. Who wants to own it? I'd say it makes more sense to store it in the DM docs, and link out. Is the boot loader related to anything besides Update client?
 
 ### Background: boot sequences and fault tolerance
 
