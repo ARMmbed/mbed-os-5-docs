@@ -33,9 +33,6 @@ mbed import https://github.com/armmbed/mbed-os-example-treasuredata-rest
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-treasuredata-rest)](https://github.com/armmbed/mbed-os-example-treasuredata-rest/blob/master/main.cpp)
 
-Or use the link [ide.mbed.com/compiler?import=https://github.com/armmbed/mbed-os-example-treasuredata-rest](ide.mbed.com/compiler?import=https://github.com/armmbed/mbed-os-example-treasuredata-rest)
-
-
 ### Set up variables
 
 1. Configure the Treasure Data API key in `mbed_app.json` by changing the `api-key` variable:
@@ -97,7 +94,7 @@ Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/
 
 Now that you have data in Treasure Data, it's time to analyze and use it.
 
-1. Go to the [Queries tab] (https://console.treasuredata.com/app/queries/editor).
+1. Go to the [Queries tab](https://console.treasuredata.com/app/queries/editor).
 2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360007995693).
 
 #### Select all fields
