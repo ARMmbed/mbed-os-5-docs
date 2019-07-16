@@ -92,7 +92,7 @@
 </tr>
 <td><a href="busout.html">BusOut</a></td>
 <td><a href="ticker.html">Ticker</a></td>
-<td><a href="spislave.html">ResetReason</a></td>
+<td><a href="resetreason.html">ResetReason</a></td>
 <td><a href="i2c.html">I2C</a></td>
 </tr>
 </tbody>
