@@ -195,7 +195,6 @@ Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementa
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
-<!-- This is lacking in detail. Are they supposed to implement the Mbed pinmap apis? Or should they do this manually by modifying device registers? -->
 
     At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called `.mbedignore` in your mbed-os directory (if one doesn't exist), and add the following entry:
 
