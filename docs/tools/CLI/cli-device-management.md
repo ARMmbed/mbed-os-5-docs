@@ -6,6 +6,7 @@ Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mb
 
 <span class="tips">**Tip**: this article is about using Device Management to update an application on a device in the field. To update dependencies of an application on your computer, [see `mbed update`](../tools/compile.html#update-programs-and-libraries).</span>
 >Should probably be a 'for more information, see the Device Management documentation' link here. The rest is covered in Tools and Requirements, as well as the end-to-end Update tutorials.
+
 ## Requirements
 
 To use the `mbed dm` command to update a device, your device must be running an application with Device Management Client and a supported managed or unmanaged boot loader.
@@ -92,8 +93,8 @@ $ mbed dm update prepare -n <PAYLOAD_NAME> -d <PAYLOAD_DESCRIPTION>\
 
 Both methods of creating a manifest use the defaults created in `mbed dm init`. You can override each default using an input file or command-line arguments.
 
-Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the payload and manifest to Device Management, and you can then create and start an [update campaign](https://cloud.mbed.com/docs/latest/updating-firmware/update-campaigns.html) using the Device Management Portal.
+Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the payload and manifest to Device Management, and you can then create and start an [update campaign](https://www.pelion.com/docs/device-management/current/updating-firmware/update-campaigns.html) using the Device Management Portal.
 --->
 ## Advanced use
 
-Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://cloud.mbed.com/docs/latest/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
+Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://www.pelion.com/docs/device-management/current/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
