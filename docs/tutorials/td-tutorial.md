@@ -31,7 +31,7 @@ mbed import https://github.com/armmbed/mbed-os-example-treasuredata-rest
 
 - Arm Online Compiler:
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-treasuredata-rest)](https://github.com/armmbed/mbed-os-example-treasuredata-rest)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-treasuredata-rest)](https://github.com/armmbed/mbed-os-example-treasuredata-rest/blob/master/main.cpp)
 
 ### Set up variables
 
