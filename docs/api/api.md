@@ -90,6 +90,7 @@
 <td><a href="watchdog.html">Watchdog</a></td>
 <td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
 </tr>
+<tr>
 <td><a href="busout.html">BusOut</a></td>
 <td><a href="ticker.html">Ticker</a></td>
 <td><a href="resetreason.html">ResetReason</a></td>
