@@ -1,14 +1,14 @@
-## ResetReason
+# ResetReason
 
 When the system restarts, the system registers contain the reason for the restart at boot time in a platform specific manner. This API provides a generic method of fetching the reason for the restart.
 
 You can use the ResetReason interface to determine the cause of the last system reset in a portable fashion.
 
-### ResetReason class reference
+## ResetReason class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_reset_reason.html)
 
-### ResetReason example
+## ResetReason example
 
 Check the cause of the last system reset:
 
