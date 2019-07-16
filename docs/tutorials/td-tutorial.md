@@ -15,7 +15,7 @@ The following steps show how to send data using first the HTTPS library and then
 
 ## HTTPS library
 
-To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest) program. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
+To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://github.com/armmbed/mbed-os-example-treasuredata-rest) program. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/ky-HDNFZw8w/0.jpg)](https://youtu.be/ky-HDNFZw8w)</span>
 
@@ -26,15 +26,12 @@ You can compile the program using any of the following development tools:
 - Arm Mbed CLI (offline):
 
 ```
-mbed import https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest
+mbed import https://github.com/armmbed/mbed-os-example-treasuredata-rest
 ```
 
 - Arm Online Compiler:
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest)](https://github.com/BlackstoneEngineering/mbed-os-example-treasuredata-rest/blob/master/main.cpp)
-
-Or use the link [ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest](ide.mbed.com/compiler?import=https://github.com/blackstoneengineering/mbed-os-example-treasuredata-rest)
-
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-treasuredata-rest)](https://github.com/armmbed/mbed-os-example-treasuredata-rest)
 
 ### Set up variables
 
@@ -97,7 +94,7 @@ Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/
 
 Now that you have data in Treasure Data, it's time to analyze and use it.
 
-1. Go to the [Queries tab] (https://console.treasuredata.com/app/queries/editor).
+1. Go to the [Queries tab](https://console.treasuredata.com/app/queries/editor).
 2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360007995693).
 
 #### Select all fields
@@ -137,7 +134,7 @@ Experienced users can use `gem install Fluentd fluent-plugin-td`.
 
 #### Download example code
 
-Download the [example code](https://github.com/BlackstoneEngineering/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the Fluentd configuration files.
+Download the [example code](https://github.com/armmbed/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the Fluentd configuration files.
 
 #### Set configuration file
 
@@ -180,10 +177,10 @@ Email Address []:
 
 ### Mbed OS setup
 
-Run the example code on your device. You can either [import to the Mbed Online Compiler](http://os.mbed.com/compiler/?import=https%3A%2F%2Fgithub.com%2FBlackstoneEngineering%2Fmbed-os-example-fluentlogger) or use Mbed CLI to clone it locally, compile and load it to the board:
+Run the example code on your device. You can either [import to the Mbed Online Compiler](http://os.mbed.com/compiler/?import=https%3A%2F%2Fgithub.com%2Farmmbed%2Fmbed-os-example-fluentlogger) or use Mbed CLI to clone it locally, compile and load it to the board:
 
 ```shell
-$ mbed import https://github.com/BlackstoneEngineering/mbed-os-example-fluentlogger
+$ mbed import https://github.com/armmbed/mbed-os-example-fluentlogger
 $ mbed compile --target auto --toolchain GCC_ARM --flash --sterm
 ```
 
