@@ -265,6 +265,12 @@
                             "path": "docs/api/drivers/LowPowerTimer.md"
                         },
                         {
+                            "path": "docs/api/drivers/Watchdog.md"
+                        },
+                        {
+                            "path": "docs/api/drivers/ResetReason.md"
+                        },
+                        {
                             "path": "docs/api/drivers/FlashIAP.md"
                         },
                         {
