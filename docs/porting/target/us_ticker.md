@@ -18,6 +18,7 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 - It is safe to call `ticker_set_interrupt` repeatedly before the handler is called.
 - The function `ticker_fire_interrupt` causes `ticker_irq_handler` to be called immediately from interrupt context.
 - The ticker operations `ticker_read`, `ticker_clear_interrupt`, `ticker_set_interrupt` and `ticker_fire_interrupt` take less than 20us to complete.
+- The ticker operations `ticker_init` and `ticker_read` are atomic.
 
 ### Undefined behavior
 
@@ -45,6 +46,12 @@ You can find the API and specification for the microsecond ticker API in the fol
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.13/mbed-os-api-doxy/group__hal__us__ticker.html)
 
 To enable microsecond ticker support in Mbed OS, add the `USTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
+
+### Optimizing the microsecond ticker API
+
+The generic ticker API uses the `ticker_info_t` structure to determine each hardware counter's frequency and width. This then requires runtime calculations to convert between the hardware counter and the 64-bit microsecond count used by the generic API.
+
+In addition to the generic `ticker_info_t`, the target can also provide compile-time information about the microsecond ticker by defining the macros `US_TICKER_PERIOD_NUM`, `US_TICKER_PERIOD_DEN` and `US_TICKER_MASK`. If provided, these permit greatly optimized versions of APIs such as `wait_us`. Please see the header file for full details.
 
 ## Testing
 
