@@ -1655,15 +1655,6 @@
             "type": "doxygen",
             "source": "https://github.com/ARMmbed/mbed-os",
             "branch": "feature-hal-spec-spi"
-        },
-        {
-            "title": "feature-hal-spec-watchdog doxygen",
-            "description": "The full Mbed OS API documentation in doxygen format",
-            "slug": "feature-hal-spec-watchdog-doxy",
-            "hidden": true,
-            "type": "doxygen",
-            "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "feature-watchdog"
         }
     ]
 }
