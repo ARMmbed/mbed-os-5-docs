@@ -1,5 +1,7 @@
 # Watchdog
 
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.13/mbed-os-api-doxy/classmbed_1_1_watchdog.html)<span>Watchdog class hierarchy</span></span>
+
 You can use the Watchdog interface to set up a hardware watchdog timer that resets the system in the case of system failures or malfunctions. 
 
 <span class="notes">**Note:** There is only one instance in the system. Use `Watchdog::get_instance()` to obtain a reference. </span>
