@@ -20,24 +20,35 @@ The Mbed TLS library was written in C and it has a small amount of hand-optimize
 
 ### What parts can I accelerate?
 
-Mbed TLS has separate modules for the different cryptographic primitives. Hardware acceleration interface is available for the following modules and functions:
+Mbed TLS has separate modules for the different cryptographic primitives. In some of these modules, you may be able to accelerate only specific functions. You don't need to implement functions marked as deprecated unless you are working with old applications that use old deprecated APIs. Hardware acceleration interface is available for the following modules:
 
 - Symmetric
-    - [AES](https://tls.mbed.org/api/aes_8h.html): [`mbedtls_aes_setkey_enc()`](https://tls.mbed.org/api/aes_8h.html#acec17c6592b98876106d035c372b1efa), [`mbedtls_aes_setkey_dec()`](https://tls.mbed.org/api/aes_8h.html#a11580b789634605dd57e425eadb56617), [`mbedtls_internal_aes_encrypt()`](https://tls.mbed.org/api/aes_8h.html#a78da421a44bb3e01a3e2d2e98f989a28), [`mbedtls_internal_aes_decrypt()`](https://tls.mbed.org/api/aes_8h.html#ae3e7a68be582d306ab5d96fb4fc043a6).
+    - [AES](https://tls.mbed.org/api/aes_8h.html).
     - [ARC4](https://tls.mbed.org/api/arc4_8h.html).
+    - [ARIA](https://tls.mbed.org/api/aria_8h.html).
     - [BLOWFISH](https://tls.mbed.org/api/blowfish_8h.html).
     - [CAMELLIA](https://tls.mbed.org/api/camellia_8h.html).
-    - [DES](https://tls.mbed.org/api/des_8h.html): [`mbedtls_des_setkey()`](https://tls.mbed.org/api/des_8h.html#a9ee690737bded4f7f6e12da86110a8e5), [`mbedtls_des_crypt_ecb()`](https://tls.mbed.org/api/des_8h.html#aa713501cc3e30c39a763b4568698f5c1), [`mbedtls_des3_crypt_ecb()`](https://tls.mbed.org/api/des_8h.html#a933b8f629cc201e06f5e89396d065204).
+    - [CCM](https://tls.mbed.org/api/ccm_8h.html).
+    - [CHACHA20](https://tls.mbed.org/api/chacha20_8h.html).
+    - [CHACHAPOLY](https://tls.mbed.org/api/chachapoly_8h.html).
+    - [CMAC](https://tls.mbed.org/api/cmac_8h.html).
+    - [DES](https://tls.mbed.org/api/des_8h.html).
+    - [DHM](https://tls.mbed.org/api/dhm_8h.html).
+    - [ECJPAKE](https://tls.mbed.org/api/ecjpake_8h.html).
+    - [GCM](https://tls.mbed.org/api/gcm_8h.html).
+    - [MD2](https://tls.mbed.org/api/md2_8h.html).
+    - [MD4](https://tls.mbed.org/api/md4_8h.html).
+    - [MD5](https://tls.mbed.org/api/md5_8h.html).
+    - [NIST_KW](https://tls.mbed.org/api/nist__kw_8h.html).
+    - [POLY1305](https://tls.mbed.org/api/poly1305_8h.html).
+    - [RIPEMD160](https://tls.mbed.org/api/ripemd160_8h.html).
+    - [RSA](https://tls.mbed.org/api/rsa_8h.html).
+    - [SHA1](https://tls.mbed.org/api/sha1_8h.html).
+    - [SHA256](https://tls.mbed.org/api/sha256_8h.html).
+    - [SHA512](https://tls.mbed.org/api/sha512_8h.html).
     - [XTEA](https://tls.mbed.org/api/xtea_8h.htmlm).
-    - [MD2](https://tls.mbed.org/api/md2_8h.html): [`mbedtls_md2_process()`](https://tls.mbed.org/api/md2_8h.html#a490b39ec88fec878791c43b6460492a7).
-    - [MD4](https://tls.mbed.org/api/md4_8h.html): [`mbedtls_md4_process()`](https://tls.mbed.org/api/md4_8h.html#aa199bb5f6a83d2075590c0144e3237db).
-    - [MD5](https://tls.mbed.org/api/md5_8h.html): [`mbedtls_md5_process()`](https://tls.mbed.org/api/md5_8h.html#a4a896444a55569fffd338e7810a1e52b).
-    - [RIPEMD160](https://tls.mbed.org/api/ripemd160_8h.html): [`mbedtls_ripemd160_process()`](https://tls.mbed.org/api/ripemd160_8h.html#a36256369d5d29e86e65ec5c46a6383d5).
-    - [SHA1](https://tls.mbed.org/api/sha1_8h.html): [`mbedtls_sha1_process()`](https://tls.mbed.org/api/sha1_8h.html#a70417cbb2e95ce553501caef9bd6e076).
-    - [SHA256](https://tls.mbed.org/api/sha256_8h.html): [`mbedtls_sha256_process()`](https://tls.mbed.org/api/sha256_8h.html#a1166c1d669de6fe668623612d936f402).
-    - [SHA512](https://tls.mbed.org/api/sha512_8h.html): [`mbedtls_sha512_process()`](https://tls.mbed.org/api/sha512_8h.html#a297e591e713063151226993d52ad74a3).
 - Asymmetric:
-    - ECP: [`mbedtls_internal_ecp_randomize_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#aac10047640a6fcdd19bd1466371d896d), [`mbedtls_internal_ecp_add_mixed()`](https://tls.mbed.org/api/ecp__internal_8h.html#a3a3d7f9ac767f9007ad9c8d451394b08), [`mbedtls_internal_ecp_double_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#ae86c1581847bc201cd41b794647296ac), [`mbedtls_internal_ecp_normalize_jac_many()`](https://tls.mbed.org/api/ecp__internal_8h.html#a915f188f33640d90fa11eb13e99114d5), [`mbedtls_internal_ecp_normalize_jac()`](https://tls.mbed.org/api/ecp__internal_8h.html#a9f4a88693c277d48e2b98ce42c89965e), [`mbedtls_internal_ecp_double_add_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#ae7b63bf0cfe62021e976b166fb422b54), [`mbedtls_internal_ecp_randomize_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#a498b09b2a7c458847c9fd46b39808575), [`mbedtls_internal_ecp_normalize_mxz()`](https://tls.mbed.org/api/ecp__internal_8h.html#a45992cb245da01f5802ef6e544b9bac4).
+    - [ECP](https://tls.mbed.org/api/ecp_8h.html).
 
 ### How can I make Mbed TLS use my hardware accelerator?
 

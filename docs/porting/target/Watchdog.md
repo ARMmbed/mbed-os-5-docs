@@ -11,7 +11,8 @@ Implement the ResetReason API when implementing the Watchdog API. The ResetReaso
 - Sleep and debug modes don't stop the watchdog timer from counting down.
 - The function `hal_watchdog_init` is safe to call repeatedly. The function's implementation must not do anything if `hal_watchdog_init` has already initialized the hardware watchdog timer.
 - Maximum supported timeout is `UINT32_MAX` milliseconds; minimum timeout is 1ms.
-- The timeout must be accurate to the nearest millisecond.
+- The watchdog should trigger at or after the timeout value.
+- The watchdog should trigger before twice the timeout value.
 
 ### Undefined behavior
 
@@ -20,7 +21,6 @@ Implement the ResetReason API when implementing the Watchdog API. The ResetReaso
 ### Notes
 
 - A software reset may not stop the watchdog timer; the behavior is platform specific.
-- Timing on most platforms is based on the timeout registers and a prescaler value. They should be accurate to the nearest millisecond but may be off my a several µs.
 
 ## Dependency
 
@@ -28,9 +28,9 @@ Hardware Independent Watchdog support.
 
 ## Implementing Watchdog
 
-You can find the API and specification for the Watchdog API in the following header file:
+You can find the API and specification for the Watchdog API in its HAL API reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/feature-hal-spec-watchdog-doxy/classmbed_1_1_watchdog.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog.html)
 
 To enable Watchdog support in Mbed OS, add the `WATCHDOG` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -42,8 +42,6 @@ The Mbed OS HAL provides a set of conformance tests for Watchdog. You can use th
 mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-watchdog*"
 ```
 
-You can read more about the test cases here:
+For more details, please see:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/feature-hal-spec-watchdog-doxy/watchdog__api__tests_8h_source.html)
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/feature-hal-spec-watchdog-doxy/watchdog__reset__tests_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog__tests.html)

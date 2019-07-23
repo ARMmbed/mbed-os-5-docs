@@ -95,9 +95,9 @@ Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
 To be able to debug your port:
 
-1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
-1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/ADDING_NEW_TARGETS.md).
-1. [Test your new target](https://github.com/mbedmicro/pyOCD/blob/master/docs/DEVELOPERS_GUIDE.md).
+1. Set up a [development environment](https://github.com/mbedmicro/pyOCD/blob/master/docs/developers_guide.md).
+1. Add [a new target to pyOCD](https://github.com/mbedmicro/pyOCD/blob/master/docs/adding_new_targets.md).
+1. [Test your new target](https://github.com/mbedmicro/pyOCD/blob/master/docs/developers_guide.md).
 
 Wait for your target support to be merged into pyOCD's master branch and released in PyPi. You can then use `pip install pyOCD` to enable debug.
 
@@ -175,7 +175,7 @@ Detailed instructions for porting each module are given in the module-specific s
 
 ## Create the bare metal mbed-os-example-blinky
 
-The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object. You can see [an example using the CC3220SF-LAUNCHXL board](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Baremetal-Blinky/main.cpp).
+The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The bare metal version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/main.cpp)
 
@@ -195,7 +195,6 @@ Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementa
 1. Create linker scripts from the templates.
 
 1. Implement pin mapping and basic peripheral initialization code.
-<!-- This is lacking in detail. Are they supposed to implement the Mbed pinmap apis? Or should they do this manually by modifying device registers? -->
 
     At this point, none of the peripherals for the new target has been implemented. To build for this new target with just the bootstrap, create a file called `.mbedignore` in your mbed-os directory (if one doesn't exist), and add the following entry:
 

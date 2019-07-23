@@ -265,6 +265,12 @@
                             "path": "docs/api/drivers/LowPowerTimer.md"
                         },
                         {
+                            "path": "docs/api/drivers/Watchdog.md"
+                        },
+                        {
+                            "path": "docs/api/drivers/ResetReason.md"
+                        },
+                        {
                             "path": "docs/api/drivers/FlashIAP.md"
                         },
                         {
@@ -857,9 +863,6 @@
                     "sub_chapters": [{
                             "title": "Installation and setup",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-setup/cli-setup.md"
-                                },
-                                {
                                     "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
                                 }
                             ]
@@ -1393,17 +1396,17 @@
             ]
         },
         {
-            "title": "feature-hal-spec-usb-device doxygen",
-            "description": "The full mbed OS API documentation in doxygen format",
-            "slug": "feature-hal-spec-usb-device-doxy",
+            "title": "feature-i2c doxygen",
+            "description": "The full Mbed OS API documentation in doxygen format",
+            "slug": "feature-i2c-doxy",
             "hidden": true,
             "type": "doxygen",
             "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "feature-hal-spec-usb-device"
+            "branch": "feature-i2c"
         },
         {
             "title": "feature-hal-spec-sai doxygen",
-            "description": "The full mbed OS API documentation in doxygen format",
+            "description": "The full Mbed OS API documentation in doxygen format",
             "slug": "feature-hal-spec-sai-doxy",
             "hidden": true,
             "type": "doxygen",
@@ -1412,21 +1415,12 @@
         },
         {
             "title": "feature-hal-spec-spi doxygen",
-            "description": "The full mbed OS API documentation in doxygen format",
+            "description": "The full Mbed OS API documentation in doxygen format",
             "slug": "feature-hal-spec-spi-doxy",
             "hidden": true,
             "type": "doxygen",
             "source": "https://github.com/ARMmbed/mbed-os",
             "branch": "feature-hal-spec-spi"
-        },
-        {
-            "title": "feature-hal-spec-watchdog doxygen",
-            "description": "The full mbed OS API documentation in doxygen format",
-            "slug": "feature-hal-spec-watchdog-doxy",
-            "hidden": true,
-            "type": "doxygen",
-            "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "feature-watchdog"
         }
     ]
 }

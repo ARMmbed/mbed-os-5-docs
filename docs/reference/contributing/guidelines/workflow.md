@@ -150,7 +150,7 @@ Release: major
 
 Each pull request goes through the following workflow:
 
-![Pull request workflow](../../../images/Workflow.png)
+<span class="images">![Pull request workflow](../../../images/Workflow3.png)<span>Pull request workflow</span></span>
 
 ## Pull request states
 
