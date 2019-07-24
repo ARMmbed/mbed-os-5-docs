@@ -7,6 +7,8 @@ The interface is made up of two lines for all communication:
 - Serial Clock (SCL).
 - Serial Data (SDA).
 
+<span class="warnings">**Warning:** We are introducing the I2C API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the I2C API](#implementing-the-i2c-api) section.
+
 ## Defined behaviors
 
 - `i2c_init`:
