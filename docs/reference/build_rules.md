@@ -125,7 +125,7 @@ TESTS
 
 None of these files are included in a build run with `mbed compile`. When running `mbed test` or `mbed test --compile`, the `TESTS/events/queue` test case compiles without the sources from `TESTS/events/timing` or `TESTS/integration/basic`.
 
-## `.mbedignore`
+## .mbedignore
 
 The `.mbedignore` rules override other rules for excluding files from a build. Files matching patterns in an `.mbedignore` file are excluded from a build even if a label rule or a test directory would include the file.
 
