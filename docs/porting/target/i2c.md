@@ -1,4 +1,4 @@
-<h1 id="i2c-port">Inter-integrated circuit (I2C)</h1>
+<h1 id="i2c-port">Inter-integrated circuit (I2C) </h1>
 
 I2C is a serial protocol for two-wire interface to connect low-speed devices in embedded systems. The I2C API allows control and configuration of this interface.
 
