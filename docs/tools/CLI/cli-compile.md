@@ -1,4 +1,4 @@
-# Compiling mbed compile --library --no-archive
+# Compiling
 
 This section details some of the arguments available with the `mbed compile` command. Please run `mbed compile --help` to get a full list of arguments.
 
