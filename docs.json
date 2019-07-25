@@ -1396,6 +1396,15 @@
             ]
         },
         {
+            "title": "feature-i2c doxygen",
+            "description": "The full Mbed OS API documentation in doxygen format",
+            "slug": "feature-i2c-doxy",
+            "hidden": true,
+            "type": "doxygen",
+            "source": "https://github.com/ARMmbed/mbed-os",
+            "branch": "feature-i2c"
+        },
+        {
             "title": "feature-hal-spec-sai doxygen",
             "description": "The full mbed OS API documentation in doxygen format",
             "slug": "feature-hal-spec-sai-doxy",
