@@ -44,6 +44,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-watchdog*"
 
 You can read more about the test cases here:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/feature-hal-spec-watchdog-doxy/watchdog__api__tests_8h_source.html)
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/feature-hal-spec-watchdog-doxy/watchdog__reset__tests_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog__tests.html)
