@@ -1,6 +1,6 @@
 <h1 id="tls-tutorial">TLS Tutorial</h1>
 
-Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), will help you understand and use TLS encryption in Mbed OS.
+Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), will help you understand and use TLS encryption in Mbed OS. The TLS (Transport Layer Security) is a successor of SSL (Secure Sockets Layer) and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured on-line services, such as cloud IoT platforms.
 
 In particular, this tutorial:
 
@@ -42,9 +42,9 @@ You can use any browser to find the root CAs, but this tutorial uses Firefox:
 
 <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/tlssocket02.png "Getting root CA via OpenSSL")<span>Getting root CA through OpenSSL.</span></span>
 
-## Placing the CA in code
+## Placing the CA certificate in code
 
-To use the CA in code, you need to store it in a string and escape the content. For example:
+To use the CA certificate in code, you need to place it in a C-style string variable initialized with a multi-line string literal. For example:
 
 ```c
 // Every line ends with `\n`
