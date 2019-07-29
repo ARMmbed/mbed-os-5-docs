@@ -92,35 +92,45 @@ You set up a TLS socket in the same way as you set up a TCP socket, except you c
 
 ```cpp
 #include "mbed.h"
-#include "NetworkInterface.h"
-#include <TLSSocket.h>
+#include "mbed_trace.h"
 
-const char SSL_CA_PEM[] = /* your certificate, see above */ "";
+const char cert[] = /* your certificate, see above */ "";
  
 int main (void) {
 
-// Get a network interface
-NetworkInterface *network = NetworkInterface::get_default_instance();
-if (network->connect() != 0) {
-    printf("Could not connect to the network...\n");
-    return 1;
+nsapi_size_or_error_t result;
+NetworkInterface *net = NetworkInterface::get_default_instance();
+
+if (!net) {
+    printf("Error! No network inteface found.\n");
+    return 0;
 }
- 
-nsapi_error_t r;
- 
-// setting up TLS socket
-TLSSocket* socket = new TLSSocket();
-if ((r = socket->open(network)) != NSAPI_ERROR_OK) {
-    printf("TLS socket open failed (%d)\n", r);
-    return 1;
+
+printf("Connecting to network\n");
+result = net->connect();
+if (result != 0) {
+    printf("Error! net->connect() returned: %d\n", result);
+    return result;
 }
-if ((r = socket->set_root_ca_cert(SSL_CA_PEM)) != NSAPI_ERROR_OK) {
-    printf("TLS socket set_root_ca_cert failed (%d)\n", r);
-    return 1;
+
+TLSSocket *socket = new TLSSocket;
+result = socket->set_root_ca_cert(cert);
+if (result != 0) {
+    printf("Error: socket->set_root_ca_cert() returned %d\n", result);
+    return result;
 }
-if ((r = socket->connect("os.mbed.com", 443)) != NSAPI_ERROR_OK) {
-    printf("TLS socket connect failed (%d)\n", r);
-    return 1;
+
+result = socket->open(net);
+if (result != 0) {
+    printf("Error! socket->open() returned: %d\n", result);
+    return result;
+}
+
+printf("Connecting to os.mbed.com\n");
+result = socket->connect("os.mbed.com", 443);
+if (result != 0) {
+    printf("Error! socket->connect() returned: %d\n", result);
+    return result;
 }
 
 }
@@ -129,7 +139,6 @@ if ((r = socket->connect("os.mbed.com", 443)) != NSAPI_ERROR_OK) {
 This now makes the request and returns the content of the file.
 
 ```
-Setting up TLS socket...
 [INFO][TLSW]: mbedtls_ssl_conf_ca_chain()
 [INFO][TLSW]: mbedtls_ssl_config_defaults()
 [INFO][TLSW]: mbedtls_ssl_conf_authmode()
@@ -146,7 +155,7 @@ Setting up TLS socket...
 [INFO][TLSW]: Certificate verification passed
 ```
 
-You can also look at the [complete example](https://github.com/janjongboom/mbed-simulator/blob/6e9f45c61fb10e1983668e777d68e939247b377d/demos/tlssocket/main.cpp) for more details.
+You can also look at the [complete example](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/master/main.cpp) for more details.
 
 <span class="notes">**Note:** If you come across a message saying the signature's algorithm is missing: <br>
 ```
