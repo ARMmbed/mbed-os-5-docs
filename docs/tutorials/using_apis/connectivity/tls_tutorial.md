@@ -1,6 +1,6 @@
-<h1 id="tls-tutorial">TLS Tutorial</h1>
+<h1 id="tls-tutorial">Using Mbed TLS to communicate securely</h1>
 
-Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), will help you understand and use TLS encryption in Mbed OS. The TLS (Transport Layer Security) is a successor of SSL (Secure Sockets Layer) and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured on-line services, such as cloud IoT platforms.
+Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), helps you understand and use TLS encryption in Mbed OS. The Transport Layer Security (TLS) is a successor of Secure Sockets Layer (SSL), and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured online services, such as cloud IoT platforms.
 
 In particular, this tutorial:
 
@@ -8,7 +8,7 @@ In particular, this tutorial:
 - Explains how to practically obtain them and embed them in your application using TLSSockets.
 - Points to further reading on client's key and certificate verification.
 
-## Certificate Authorities
+## Certificate Authorities (CAs)
 
 Unlike desktop operating systems, such as Windows or macOS, Mbed OS does not have a central list of trusted Certificate Authorities (CAs). This means that when you want to talk to a server through TLS, you need to provide the list of root CAs, yourself. You can find the root CAs quickly through your browser or through OpenSSL.
 
@@ -44,7 +44,7 @@ You can use any browser to find the root CAs, but this tutorial uses Firefox:
 
 ## Placing the CA certificate in code
 
-To use the CA certificate in code, you need to place it in a C-style string variable initialized with a multi-line string literal. For example:
+To use the CA certificate in code, place it in a C-style string variable initialized with a multiline string literal. For example:
 
 ```c
 // Every line ends with `\n`
