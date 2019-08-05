@@ -6,7 +6,8 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 
 #### Defined behavior
 
-- Has a reported frequency between 250KHz and 8MHz.
+- Has a reported frequency between 250KHz and 8MHz for counters which are less than 32 bits wide.
+- Has a reported frequency up to 100MHz for counters which are 32 bits wide.
 - Has a counter that is at least 16 bits wide.
 - The function `ticker_init` is safe to call repeatedly.
 - The function `ticker_init` allows the ticker to keep counting and disables the ticker interrupt.
