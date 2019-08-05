@@ -102,7 +102,9 @@ jobs:
           command: |
             source /tmp/env
             cd /tmp/workspace/artifacts/$CIRCLE_BRANCH_NO_SLASH
-            find -maxdepth 2 -type f -name '*.html' -printf '%P\n'
+            find -maxdepth 2 -type f -name '*.html' -not -path "*-doxy/*" -printf '%P\n' > /tmp/workspace/page_list.txt
+      - store_artifacts:
+          path: /tmp/workspace/page_list.txt
 
   make_live:
     executor: doc_builder
