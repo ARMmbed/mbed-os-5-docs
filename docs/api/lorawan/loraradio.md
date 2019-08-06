@@ -1,20 +1,20 @@
-<h2 id="loraradio-api">LoRa radio driver</h2>
+<h1 id="loraradio-api">LoRa radio driver</h1>
 
 `LoRaRadio` is a pure virtual class that defines APIs for a LoRa radio driver.
 
 An implementation of this class is passed to the Arm Mbed LoRaWAN stack. Please see existing [Mbed OS supported drivers](https://github.com/ARMmbed/mbed-semtech-lora-rf-drivers) for more information.
 
-To configure this class, please see the [LoRa configuration documentation](/docs/development/reference/lorawan-configuration.html).
+To configure this class, please see the [LoRa configuration documentation](../reference/lorawan-configuration.html).
 
-### LoRaRadio class reference
+## LoRaRadio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
 
-### LoRaRadio example
+## LoRaRadio example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/file/ceea78461fbd/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-5.12/main.cpp)
 
-### Related content
+## Related content
 
-- [LoRa architecture](/docs/development/reference/lora-tech.html).
-- [LoRa configuration documentation](/docs/development/reference/lorawan-configuration.html).
+- [LoRa architecture](../reference/lora-tech.html).
+- [LoRa configuration documentation](../reference/lorawan-configuration.html).

@@ -1,4 +1,4 @@
-<h2 id="icetea">Icetea test framework</h2>
+<h1 id="icetea">Icetea test framework</h1>
 
 Icetea is an automated testing framework for Mbed development. It automates the process of flashing Mbed boards, running tests and accumulating test results into reports. Developers use it for local development, as well as automation in a Continuous Integration environment.
 
@@ -6,7 +6,7 @@ When testing Mbed OS, Icetea allows you to execute commands remotely by using th
 
 More detailed documentation on the tool is available [in rst format](https://github.com/ARMmbed/icetea/tree/master/doc-source) and [in markdown format](https://github.com/ARMmbed/icetea/tree/master/doc).
 
-### Prerequisites
+## Prerequisites
 
 Icetea supports Linux (Ubuntu preferred), Windows and OS X. Our main target is Linux.
 
@@ -38,15 +38,15 @@ Icetea supports both Python 2.7 and 3.5, or later. Some OS specific prerequisite
       - Navigate to the directory where you downloaded the binary, and install it with `pip install <insert_file_name>`
    - You can also follow [these instructions](http://lxml.de/installation.html#installation) instead.
 
-#### Optional
+### Optional
 
 If you wish to decorate your console log with colors, install the `coloredlogs` module by using pip: `pip install coloredlogs`. There have been issues with `coloredlogs` installation on Windows. There are no alternative solutions for this at the moment.
 
-### Installation
+## Installation
 
 `> pip install icetea`
 
-### Use
+## Use
 
 To display the help page:
 
@@ -60,7 +60,7 @@ To print the Icetea version:
 
 `icetea --version`
 
-#### Typical use
+### Typical use
 
 All of the commands described below might also require other commands, depending on the test case.
 
@@ -103,7 +103,7 @@ Icetea supports a suite file that describes a number of test cases in `json` for
 
 Use `-v` or `-vv` arguments to control logging levels. `-v` increases the framework's logging level to debug (default is info), the level of logging in certain plugins and external components to info (default is warning). `--vv` increases the level of logging on all Icetea loggers to debug.
 
-#### Creating a test case
+### Creating a test case
 
 Icetea test cases are implemented as Python classes that inherit the bench object available in the `icetea_lib.bench` module. The test case needs to have an initialization function that defines the metadata and a case function that implements the test sequence. There are two optional functions: setup and teardown.
 
@@ -161,6 +161,6 @@ class Testcase(Bench):
         pass
 ```
 
-### License
+## License
 
 For licensing details, please see the [license agreement](https://github.com/ARMmbed/icetea/blob/master/LICENSE).

@@ -1,12 +1,12 @@
-## SDBlockDevice
+# SDBlockDevice
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.png)<span>SDBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.png)<span>SDBlockDevice class hierarchy</span></span>
 
 You can use the Mbed OS SD card block device, so applications can read and write data to flash storage cards using the standard POSIX File API programming interface. Applications use the FAT filesystem and SD block device components to persistently store data on SDCards. The SD block device uses the SD card SPI-mode of operation, which is a subset of possible SD card functionality.
 
-To configure this class, please see our [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### Mbed OS file system software component stack
+## Mbed OS file system software component stack
 
 
     ------------------------
@@ -66,62 +66,18 @@ The figure above shows the Mbed OS software component stack used for data storag
 - The Block API. The SDCard block device is a persistent storage block device.
 - The SPI module provides the Mbed OS SPI API.
 
-### SDBlockDevice class reference
+## Mbed OS `erase` for SDBlockDevice
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.html)
+There is a difference between `erase` as usually defined for SD cards and the definition in Mbed OS: In Mbed OS, `erase` prepares the block device for writing. Because an SD card doesn't need preparation, `erase` is not applicable on SDBlockDevice; it's a no-op operation.
 
-### SDBlockDevice example application
+## SDBlockDevice class reference
 
-The following sample code illustrates how to use the SD block device API:
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.html)
 
-``` cpp TODO
-#include "mbed.h"
-#include "SDBlockDevice.h"
+## SDBlockDevice example application
 
-// Instantiate the SDBlockDevice by specifying the SPI pins connected to the SDCard
-// socket. The PINS are:
-//     MOSI (Master Out Slave In)
-//     MISO (Master In Slave Out)
-//     SCLK (Serial Clock)
-//     CS (Chip Select)
-SDBlockDevice sd(MBED_CONF_SD_SPI_MOSI, MBED_CONF_SD_SPI_MISO, MBED_CONF_SD_SPI_CLK, MBED_CONF_SD_SPI_CS);
-uint8_t block[512] = "Hello World!\n";
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SDBlockDevice/main.cpp)
 
-int main()
-{
-    // call the SDBlockDevice instance initialisation method.
-    if ( 0 != sd.init()) {
-        printf("Init failed \n");
-        return -1;
-    }
-    printf("sd size: %llu\n",         sd.size());
-    printf("sd read size: %llu\n",    sd.get_read_size());
-    printf("sd program size: %llu\n", sd.get_program_size());
-    printf("sd erase size: %llu\n",   sd.get_erase_size());
+## Related content
 
-    // set the frequency
-    if ( 0 != sd.frequency(5000000)) {
-        printf("Error setting frequency \n");
-    }
-
-    if ( 0 != sd.erase(0, sd.get_erase_size())) {
-        printf("Error Erasing block \n");
-    }
-
-    // Write some the data block to the device
-    if ( 0 == sd.program(block, 0, 512)) {
-        // read the data block from the device
-        if ( 0 == sd.read(block, 0, 512)) {
-            // print the contents of the block
-            printf("%s", block);
-        }
-    }
-
-    // call the SDBlockDevice instance de-initialisation method.
-    sd.deinit();
-}
-```
-
-### Related content
-
-- [BlockDevice configuration](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration](../reference/storage.html#blockdevice-default-configuration).

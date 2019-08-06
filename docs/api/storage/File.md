@@ -1,6 +1,6 @@
-## File
+# File
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
 
 The File class provides access to the underlying storage of a file system in a generic manner. This acts as a buffer between the file system and any technical limitations of the physical storage medium. On the storage, each file is a blob of data referenced by a file name represented as a string. By providing a file name to the `open` function in the File class, you can access the blob of data stored on disk.
 
@@ -12,15 +12,15 @@ A File operates like an infinitely long reel of tape. Each File object keeps tra
 
 Combining `read`, `write`, and `seek` on a File allows both streaming and random access to data stored on external memory without necessarily buffering the file contents on the device's RAM.
 
-### File class reference
+## File class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.html)
 
-### File system example
+## File system example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-filesystem/file/54f958b463d0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.12/main.cpp)
 
-### Related content
+## Related content
 
 - [FileSystem](filesystem.html).
 - [Dir](dir.html).

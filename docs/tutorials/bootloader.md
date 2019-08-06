@@ -1,12 +1,12 @@
-## Creating and using a bootloader
+# Creating and using a bootloader
 
-This guide explains how to create a bootloader, how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
+This guide explains how to create a [bootloader](../reference/bootloader-configuration.html), how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
-### Arm Mbed OS managed bootloader
+## Arm Mbed OS managed bootloader
 
 The tools of Arm Mbed OS know how to manage some bootloader projects. The tools can manage bootloader projects where the bootloader comes before the application in ROM and the application starts immediately after the bootloader. If your bootloader does not meet both of these requirements, then please read the [unmanaged bootloader section](#unmanaged-bootloader). A managed bootloader project automatically merges the bootloader image with the application image as part of the application image build process.
 
-#### Creating the bootloader
+### Creating the bootloader
 
 Creating a bootloader is similar to creating a regular application. The only additional step you need is to specify the size of the bootloader as a target override in `mbed_app.json` in the target field `target.restrict_size`:
 
@@ -53,7 +53,7 @@ mbed_start_application(POST_APPLICATION_ADDR);
 
 For an example showing how to create a bootloader, see the [mbed-os-example-bootloader](https://github.com/armmbed/mbed-os-example-bootloader) repository.
 
-#### Creating the main program
+### Creating the main program
 
 To create an application using a bootloader, you must first have created the bootloader binary and added it to the current project. You must then specify the bootloader image in `mbed_app.json` in the `target_override` section:
 
@@ -93,7 +93,7 @@ It produces the following ROM layout:
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
 ```
 
-#### Adding an application header
+### Adding an application header
 
 Take this one step further, and add a metadata header to the bootloader and application, so the bootloader can verify the integrity of the application. Create an `mbed_lib.json` that the bootloader and application share and that has the following contents.
 
@@ -136,13 +136,13 @@ This configuration adds a new region, named header, after the bootloader and bef
 ```
 
 
-### Prebuilt bootloaders
+## Prebuilt bootloaders
 
 Prebuilt bootloader mode is an option to merge prebuilt bootloaders into your application. `mbed-os\features\FEATURE_BOOTLOADER\` contains the available supported targets with the corresponding prebuilt bootloader organized in folders specific to targets. For example: `FEATURE_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F429xI/TARGET_NUCLEO_F429ZI/mbed-bootloader-block_device-sotp-v3_4_0.bin`.
 
 Please note that this bootloader is not the same as the public [`mbed-bootloader`](https://github.com/ARMmbed/mbed-bootloader), which Mbed OS uses to generate the bootloader binaries in `mbed-os`.
 
-There are two ways to test prebuilt bootloader mode. 
+There are two ways to test prebuilt bootloader mode.
 
 You can add the BOOTLOADER feature into `mbed_app.json` located in the root application directory:
 
@@ -161,7 +161,7 @@ Please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-f
 There are two ways to add support for new targets:
 
 You can place the prebuilt binary bootloader in `mbed-os/feature/FEATURE_BOOTLOADER`, and add the fields below with values corresponding to your binary:
-   
+
    ```
    "target_overrides": {
            "YOUR_TARGET": {
@@ -178,9 +178,9 @@ You can place the prebuilt binary bootloader in `mbed-os/feature/FEATURE_BOOTLOA
                "target.bootloader_img": "your_bootloader.bin"
            },
    ```
-   
+
 Alternatively, you can edit `mbed_app.json`, and override the target bootloader with the path to the bootloader and other fields:
-   
+
    ```
        "target_overrides": {
            "YOUR_TARGET": {
@@ -198,23 +198,27 @@ Alternatively, you can edit `mbed_app.json`, and override the target bootloader 
           }
        }
    ```
-   
-### Unmanaged bootloader
+
+## Unmanaged bootloader
 
 You want to have an unmanaged bootloader when your bootloader's requirements conflict with the requirements of the managed bootloader. You need an unmanaged bootloader when your bootloader does not come before your application in ROM or your application does not start immediately after your bootloader. Unlike a managed bootloader, an unmanaged bootloader does not automatically merge the bootloader image with the application image after building the application. We expect users of an unmanaged bootloader build to construct their own set of scripts built atop the `mbed compile` primitive to perform bootloader and application merging.
 
-An unmanaged bootloader build is a method of controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [bootloader configuration](/docs/development/tools/configuring-tools.html) for complete descriptions of these options.
+An unmanaged bootloader build is a method of controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [bootloader configuration](../reference/bootloader-configuration.html) for complete descriptions of these options.
 
-### Exporter limitations
+## Exporter limitations
 
 Although the exporters can export bootloader projects using the bootloader parameters, there are some limitations.
 
 The exporters do not interpret Mbed OS configuration, and any changes to configuration parameters, especially bootloader parameters, require you to rerun the `mbed export` command.
 
-Further, the exporters do not implement the postbuild merge that bootloader builds use.
+Further, the exporters have limited support for the postbuild merge that bootloader builds use.
 
-For a managed bootloader:
-After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. Without flashing this bootloader image, the device will not boot correctly.
+**Managed bootloader projects**
 
-For an unmanaged bootloader:
+The postbuild merge step is available when exporting to uVision from an offline project. This requires the installation of Mbed CLI and all of the Python dependencies on the local system.
+
+No other exporters implement the postbuild merge step. After exporting a project with the `target.bootloader_img` setting, you are responsible for flashing the binary mentioned in the configuration parameter. If you do not flash this bootloader image, the device does not boot correctly.
+
+**Unmanaged bootloader projects**
+
 After exporting a project with the `target.mbed_app_start` setting, you are responsible for ensuring that a boot loader is present, if needed. Without flashing this boot loader image, the device will not boot correctly.

@@ -1,6 +1,6 @@
-<h3 id="thread-commissioning">How to commission a Thread device in practice</h3>
+<h2 id="thread-commissioning">How to commission a Thread device in practice</h2>
 
-#### Requirements
+### Requirements
 
 Commissioning a Thread device requires:
 
@@ -14,11 +14,11 @@ Commissioning a Thread device requires:
 - A Thread-capable end device.
 
 A model network setup could look like this:
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Thread_network_setup.PNG)<span>Sample network setup</span></span>
+<span class="images">![](../../../images/Thread_network_setup.PNG)<span>Sample network setup</span></span>
 
-#### Building the end node application
+### Building the end node application
 
-By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh-minimal](https://github.com/ARMmbed/mbed-os-example-mesh-minimal) application as an example.
+By default, the Mbed Thread applications/examples use the static network link configuration defined in the [mesh-api configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json). If you want to use the Thread commissioning, add the following lines to your `.json` file. You can use the [mesh minimal](../apis/mesh-api.html#mesh-example) application as an example.
 
 - `"mbed-mesh-api.thread-use-static-link-config": false` under `"target_overrides":`
 - `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` in to the same level as `"config":` and `"target_overrides":`
@@ -31,18 +31,16 @@ Now build the application for your chosen target from Mbed CLI with:
 
 Once the binary is generated, flash the binary to the end device, and run the application. Do not power on the end device until the [border router](https://github.com/ARMmbed/nanostack-border-router) has obtained an IPv6 address from the Wi-Fi access point.
 
-#### QR code generation
+### QR code generation
 
 You can use [a free online tool](http://www.qr-code-generator.com/) to generate a QR code.
 
-In the online tool, fill in the URL field. The following is an example: `v=1&eui=000b57fffe07a8be&cc=PV7TUCB0`. Fill in the correct values for your device, and ensure `v=1` is always present. The other required parameters are:
+In the online tool, fill in the URL field. The following is an example: `v=1&eui=000b57fffe07a8be&cc=ABCDEFGH`. Fill in the correct values for your device, and ensure `v=1` is always present. The other required parameters are:
 
 - `cc` is the PSKd, which is configured in the `.json` file (see the mesh-api configuration). *PSKd must be uppercase characters (0-9, A-Y excluding I,O,Q and Z)*
-- `eui` is equal to the RF MAC address by default.
+- `eui` is equal to the EUI64 address.
 
-To get the MAC address for your end device, connect the node to the Thread network with static configuration enabled. In other words, `"mbed-mesh-api.thread-use-static-link-config": true`, unless you have your own configuration for the MAC address.
-
-For example, in the **mesh-minimal** application, place this `printf("MAC address = %s\n", mesh.get_mac_address());` after `printf("connected. IP = %s\n", mesh.get_ip_address());`
+You can get the EUI64 address for your end device by using the `device_eui64_get` method in your application. Please see the [mesh minimal example](../apis/mesh-api.html#mesh-example) for details.
 
 There are four additional (optional) query parameters you can put into this field:
 
@@ -53,7 +51,7 @@ There are four additional (optional) query parameters you can put into this fiel
 
 Once you have completed the details, proceed to generate the QR code for your end device.
 
-#### Using the Thread commissioning application
+### Using the Thread commissioning application
 
 You can use the [Thread Android application](https://play.google.com/store/apps/details?id=org.threadgroup.commissioner) for commissioning. Download and install this on your Android device, turn on Wi-Fi and start the app. Then follow these steps after ensuring all the requirements listed above are satisfied:
 

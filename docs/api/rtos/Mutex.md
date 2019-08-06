@@ -1,6 +1,6 @@
-## Mutex
+# Mutex
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
 
 A Mutex is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
@@ -19,15 +19,15 @@ For more info, visit: https://armmbed.github.io/mbedos-error/?error=0x80020115
 
 If synchronization is required in ISR, consider using semaphores.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/Mutex.png)</span>
+<span class="images">![](../../images/Mutex.png)</span>
 
 <span class="notes">**Note:** Mbed OS uses the [PlatformMutex](platformmutex.html) class instead of the RTOS mutex for all drivers.</span>
 
-### Mutex class reference
+## Mutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 
-### Mutex example
+## Mutex example
 
 Use Mutex to protect printf().
 
@@ -37,6 +37,6 @@ Use Mutex to protect printf().
 
 <span class="notes">**Note:** Because of the mutexes in the Arm C standard library, you cannot use `stdio` (`printf`, `putc`, `getc` and so on), `malloc` and `new` in ISR. </span>
 
-### Related content
+## Related content
 
 - [PlatformMutex](platformmutex.html) API reference.

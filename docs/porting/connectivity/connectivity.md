@@ -1,19 +1,19 @@
-<h2 id="contributing-connectivity">Connectivity</h2>
+<h1 id="contributing-connectivity">Connectivity</h1>
 
-### The network socket API
+## The network socket API
 
-#### New device
+### New device
 
 The NetworkSocketAPI is designed to make porting new devices as easy as possible and only requires a handful of methods for a minimal implementation.
 
-A new device must implement a [NetworkInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html), with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
+A new device must implement a [NetworkInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html), with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
 
 The **DeviceInterface** should also inherit one of the following (unless it is an abstract device):
 
-- [EthInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html).
-- [WiFiInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html).
-- [CellularInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_base.html).
-- [MeshInterface](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html).
+- [EthInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html).
+- [WiFiInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html).
+- [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html).
+- [MeshInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html).
 
 The **NetworkInterface** implementation provides the following methods:
 

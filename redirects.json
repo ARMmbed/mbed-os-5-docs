@@ -1,0 +1,9 @@
+{
+  "reference/mesh-tech.html" : "/reference/6LoWPAN-ND-tech.html",
+  "tools/windows.html" : "tools/installation-and-setup.html",
+  "tools/macos.html" : "tools/installation-and-setup.html",
+  "tools/linux.html" : "tools/manual-installation.html",
+  "tools/after-installation-configuring-mbed-cli.html" : "tools/manual-installation.html",
+  "tools/reference-working-with-mbed-config.html" : "tools/configuration-options.html",
+  "tutorials/mbed-usb-wav-audio-player.html" : "tutorials/usb-wav-audio-player.html"
+}

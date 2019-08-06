@@ -1,12 +1,10 @@
-## USB device
+# USB device
 
 The HAL USBPhy API provides physical access to the USB bus in the role of a USB device. Implementing this API enables the use of any supported class driver, such as CDC, HID and MSD.
 
-<span class="warnings">**Warning:** We are changing the USB API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [Implementing the USB](#implementing-usb) section.
+## Assumptions
 
-### Assumptions
-
-#### Defined behavior
+### Defined behavior
 
 - You can use any endpoint configurations that fit in the parameters of the table returned by `USBPhy::endpoint_table`.
 - You can use all endpoints in any valid endpoint configuration concurrently.
@@ -22,7 +20,7 @@ The HAL USBPhy API provides physical access to the USB bus in the role of a USB 
 - Endpoint 0 naks all transactions aside from setup packets until higher-level code calls one of `USBPhy::ep0_read`, `USBPhy::ep0_write` or `USBPhy::ep0_stall`.
 - Endpoint 0 stall automatically clears on reception of a setup packet.
 
-#### Undefined behavior
+### Undefined behavior
 
 - Calling `USBPhy::endpoint_add` or `USBPhy::endpoint_remove` outside of the control requests SetInterface or SetConfiguration.
 - Calling `USBPhy::endpoint_remove` on an endpoint that has an ongoing read or write operation. To avoid undefined behavior, you must abort ongoing operations with `USBPhy::endpoint_abort`.
@@ -30,24 +28,26 @@ The HAL USBPhy API provides physical access to the USB bus in the role of a USB 
 - Devices behavior is undefined if latency is greater than 10ms when a reset occurs - see USB spec 7.1.7.5.
 - Calling any of the USBPhy::endpoint_* functions on endpoint 0.
 
-#### Notes
+### Notes
 
 - Make sure USBPhy sends USBPhyEvents in the correct order when multiple packets are present. USBPhy must send IN endpoint events before OUT endpoint events if both are pending.
 - A host PC may resend setup packets to a USB device if there is noise on the USB line. The USBPhy should be able to handle this scenario and respond to the setup packet with an ACK.
 - Bidirectional protocols making use of alternating IN and OUT phases should not rely on the last ACK an IN transfer to indicate that the OUT phase should start. Instead, the OUT phase should be started at the same time the last IN transfer is started. This is because the ACK to the last in transfer may be dropped if there is noise on the USB line. If dropped, it will only be resent on the next IN phase. You can find more information on this in section 8.5.3.3 of the USB specification.
 
-### Implementing USB
+## Implementing USB
 
-To add support for the HAL USBPhy API, you need to implement this API and submit pull requests against the `feature-hal-spec-usb-device` branch. Please see the API and specification for the HAL USBPhy API for more information:
+You can find the HAL API and specification for USB in the following module:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/feature-hal-spec-usb-device-doxy/class_u_s_b_phy.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__usb__device__core.html)
 
 To enable the HAL USBPhy API in Mbed OS, add the `USBDEVICE` label in the `device_has` option of the target's section in the `targets.json` file.
 
-### Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for the HAL USBPhy API. You can use these tests to validate the correctness of your implementation. To run the HAL USBPhy API tests, use the following command:
 
 ```
 mbed test -t <toolchain> -m <target> -n mbed-os-tests-usb_device-*
 ```
+
+For **setup instructions**, known issues and more information about USB tests, please see the [README](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/usb_device/README.md).

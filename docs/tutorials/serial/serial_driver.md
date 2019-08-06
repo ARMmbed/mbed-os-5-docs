@@ -1,4 +1,4 @@
-## Windows serial driver
+# Windows serial driver
 
 You can connect your board to your computer over USB. This should work out of the box on Linux and macOS, but for Windows earlier than Windows 10, you will probably need to install a serial port driver:
 
@@ -7,7 +7,7 @@ You can connect your board to your computer over USB. This should work out of th
 1. Close all Explorer windows showing the Mbed drive.
 1. Run the installer. This may take some time or display a few "unsigned driver" warnings.
 
-### Troubleshooting
+## Troubleshooting
 
 **If you have multiple Mbed devices but the serial port only appears for one of them**
 : Make sure you run the installer for every device (plug in the device over USB and run the installer again); Windows loads the driver based on the serial number, so it needs to be run for each device individually.

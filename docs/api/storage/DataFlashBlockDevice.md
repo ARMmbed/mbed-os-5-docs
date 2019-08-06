@@ -1,18 +1,22 @@
-## DataFlash block device
+# DataFlashBlockDevice
 
-DataFlashBlockDevice is a block device driver for I2C-based EEPROM devices, such as the Adesto AT45DB series of devices.
+<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
+
+DataFlashBlockDevice is a block device driver for serial flash devices that support the Atmel DataFlash protocol, such as the Adesto AT45DB series of devices.
+
+<span class="notes">**Note:** Multiple protocols exist for SPI flash devices. This driver is for the DataFlash protocol. If your device uses the SFDP flash protocol, you need the [SPIFBlockDevice](spifblockdevice.html)</span>
 
 DataFlash is a memory protocol that combines flash with SRAM buffers for a programming interface. DataFlash supports byte-sized read and writes, with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash provides erase sizes with an extra 16 bytes for error correction codes (ECC), so a flash translation layer (FTL) may still present 512 byte erase sizes.
 
 You can configure the DataFlashBlockDevice to force the underlying device to use either the binary size (in other words, 512 bytes) or the raw DataFlash size (in other words, 528 bytes).
 
-To configure this class, please see our [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### DataFlashBlockDevice class reference
+## DataFlashBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.html)
 
-### DataFlashBlockDevice example:
+## DataFlashBlockDevice example
 
 ``` cpp TODO
 // Here's an example using the AT45DB on the K64F
@@ -50,6 +54,6 @@ int main() {
 }
 ```
 
-### Related content
+## Related content
 
-- [BlockDevice configuration documentation](/docs/development/reference/configuration-storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

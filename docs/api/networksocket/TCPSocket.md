@@ -1,12 +1,12 @@
-## TCPSocket
+# TCPSocket
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_t_c_p_socket.png)<span>TCPSocket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_t_c_p_socket.png)<span>TCPSocket class hierarchy</span></span>
 
 The TCPSocket class provides the ability to send a stream of data over TCP. TCPSockets maintain a stateful connection that starts with the `connect` member function. After successfully connecting to a server, you can use the `send` and `recv` member functions to send and receive data (similar to writing or reading from a file).
 
-The constructor takes in the NetworkStack pointer to open the socket on the specified NetworkInterface. If you do not pass in the constructor, then you must call `open` to initialize the socket.
+The constructor takes no parameters. To initialize the socket on a specified NetworkInterface, you must call `open` method, which takes a NetworkStack pointer.
 
-### Server socket
+## Server socket
 
 You can also use TCP to listen to incoming connections. To do this:
 
@@ -18,17 +18,16 @@ Accepting a new connection returns a pointer to a new `Socket` object that you c
 
 Accepting a connection leaves the original socket in listening mode. You can continue to accept new connections until you destroy the listening socket, or call its `close()` method.
 
-### TCPSocket class reference
+## TCPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_t_c_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_t_c_p_socket.html)
 
-### TCPSocket Example
+## TCPSocket example
 
 Here is a client example of HTTP transaction over TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-5.12/main.cpp)
 
-### Related content
+## Related content
 
 - [Socket](socket.html) API reference.
-- [Cellular TCP sockets example](/docs/development/tutorials/cellular-tcp-sockets.html).

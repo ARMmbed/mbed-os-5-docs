@@ -1,33 +1,33 @@
-<h2 id="migrating">Mbed OS 2 to 5 migration guide</h2>
+<h1 id="migrating">Mbed OS 2 to 5 migration guide</h1>
 
 This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5.
 
-### Prerequisites
+## Prerequisites
 
-- [Mbed CLI](/docs/development/tools/developing-mbed-cli.html).
-- An [offline compiler](/docs/development/tools/index.html#compiler-versions).
+- [Mbed CLI](../tools/developing-mbed-cli.html).
+- An [offline compiler](../tools/index.html#compiler-versions).
 
-### Identifying old versions of Mbed OS
+## Identifying old versions of Mbed OS
 
 This guide uses the Grove temperature and humidity sensor as an example: [Grove-TempHumi-Sensor](https://os.mbed.com/components/Grove-TempHumi-Sensor/).
 
 First, navigate to the Hello World repository for the component.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/hello_world_import.png)<span>Hello World repository for the component</span></span>
+<span class="images">![](../images/hello_world_import.png)<span>Hello World repository for the component</span></span>
 
 
 Next, view the files in the Hello World repository. The presence of an `mbed.bld` or `mbed-rtos.lib` file signifies that this program uses an older version of Mbed OS (older than Mbed OS 5).
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/old_mbed_file.png)<span>Older version of Mbed OS `mbed.bld` or `mbed-rtos.lib` files in the Hello World repository</span></span>
+<span class="images">![](../images/old_mbed_file.png)<span>Older version of Mbed OS `mbed.bld` or `mbed-rtos.lib` files in the Hello World repository</span></span>
 
 
 A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.lib` file.
 
-<span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/new_mbed_file.png)<span>Mbed OS 5 or later `mbed-os.lib` file in the Hello World respository</span></span>
+<span class="images">![](../images/new_mbed_file.png)<span>Mbed OS 5 or later `mbed-os.lib` file in the Hello World respository</span></span>
 
 Some repositories may have both an `mbed.bld` file and an `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace both `mbed.bld` and `mbed-rtos.lib`.
 
-### Migrating to Mbed OS 5
+## Migrating to Mbed OS 5
 
 Migrating to Mbed OS 5 results in two possible outcomes:
 
@@ -36,13 +36,12 @@ Migrating to Mbed OS 5 results in two possible outcomes:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
   - There is target specific code, and you need to migrate it to use the code for the specific target you are compiling for.
 
-To update to Mbed OS 5 with the [Mbed CLI](/docs/development/tools/developing-mbed-cli.html), run:
+To update to Mbed OS 5 with the [Mbed CLI](../tools/developing-mbed-cli.html), run:
 
 ```
 mbed import [URL of Project]
 cd [Project Name]
 mbed remove mbed
-mbed remove mbed-rtos
 mbed add mbed-os
 ```
 
@@ -50,28 +49,28 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-To update to Mbed OS 5 with the [Mbed Online Compiler](/docs/development/tools/developing-mbed-online-compiler.html):
+To update to Mbed OS 5 with the [Mbed Online Compiler](../tools/developing-mbed-online-compiler.html):
 
 1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed.png)<span>Delete mbed</span></span>
+    <span class="images">![](../images/mbed2-delete-mbed.png)<span>Delete mbed</span></span>
 
 1. If your project includes `mbed-rtos`, you also need to delete this library to successfully update to Mbed OS 5. Right click on **mbed-rtos**, and select **Delete...**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-delete-mbed-rtos.png)<span>Delete mbed-rtos</span></span>
+    <span class="images">![](../images/mbed2-delete-mbed-rtos.png)<span>Delete mbed-rtos</span></span>
 
 1. Right click on the name of your project, hover over **Import Library** and then select **From URL**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/mbed2-import-url.png)<span>Import library from URL</span></span>
+    <span class="images">![](../images/mbed2-import-url.png)<span>Import library from URL</span></span>
 
 1. Copy and paste the URL for Mbed OS 5 `https://github.com/armmbed/mbed-os`, and then click **Import**:
 
-    <span class="images">![](https://s3-us-west-2.amazonaws.com/mbed-os-docs-images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
+    <span class="images">![](../images/import-mbed-os.png)<span>Mbed OS 5 URL</span></span>
 
 To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**.
 
-#### Example component 1 - successful initial migration
+### Example component 1 - successful initial migration
 
 Repositories used in this example:
 
@@ -89,14 +88,13 @@ In the command-line, run:
 mbed import https://os.mbed.com/teams/Seeed/code/Seeed_Grove_Buzzer/
 cd Seeed_Grove_Buzzer
 mbed remove mbed
-mbed remove mbed-rtos
 mbed add mbed-os
 mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 ```
 
 It successfully compiles, so that no changes to the `Grove - Buzzer` library or `Hello World` program are necessary.
 
-#### Example component 2 - application fails to compile
+### Example component 2 - application fails to compile
 
 Repositories used in this example:
 
@@ -114,12 +112,11 @@ In the command-line, run:
 mbed import https://os.mbed.com/users/melse/code/SRF08HelloWorld/
 cd SRF08HelloWorld
 mbed remove mbed
-mbed remove mbed-rtos
 mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```
 
-##### Compilation errors
+#### Compilation errors
 
 After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
 
@@ -168,183 +165,16 @@ int main() {
 
 Now, the program successfully compiles.
 
-#### Example component 3 - library fails to compile
-
-Repositories used in this example:
-
-- Component: [CN0357 - Toxic gas measurement](https://os.mbed.com/components/CN0357-Toxic-gas-measurement/).
-- Hello World repo: [CN0357-helloworld](https://os.mbed.com/teams/AnalogDevices/code/CN0357-helloworld/).
-
-Compile configuration used in this example:
-
-- Platform: [FRDM-K64F](https://os.mbed.com/platforms/FRDM-K64F/).
-- Toolchain: [GCC ARM](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-
-In the command-line, run:
-
-```
-mbed import http://mbed.org/teams/AnalogDevices/code/CN0357-helloworld/
-cd CN0357-helloworld
-mbed remove mbed
-mbed remove mbed-rtos
-mbed add mbed-os
-mbed compile -m k64f -t gcc_arm
-```
-
-##### Compilation errors
-
-After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
-
-Here is the output produced from `mbed compile`:
-
-```
-Building project CN0357-helloworld (K64F, GCC_ARM)
-Scan: .
-Scan: mbed
-Scan: env
-Scan: FEATURE_LWIP
-Scan: FEATURE_STORAGE
-Compile [  0.3%]: AD5270.cpp
-[Error] AD5270.h@91,25: 'SPI_CS' was not declared in this scope
-[Error] AD5270.h@91,80: 'SPI_MOSI' was not declared in this scope
-[Error] AD5270.h@91,105: 'SPI_MISO' was not declared in this scope
-[Error] AD5270.h@91,129: 'SPI_SCK' was not declared in this scope
-[ERROR] In file included from ./CN0357/AD5270/AD5270.cpp:50:0:
-./CN0357/AD5270/AD5270.h:91:25: error: 'SPI_CS' was not declared in this scope
-     AD5270(PinName CS = SPI_CS, float max_resistance = 20000.0, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                         ^~~~~~
-./CN0357/AD5270/AD5270.h:91:80: error: 'SPI_MOSI' was not declared in this scope
-     AD5270(PinName CS = SPI_CS, float max_resistance = 20000.0, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                ^~~~~~~~
-./CN0357/AD5270/AD5270.h:91:105: error: 'SPI_MISO' was not declared in this scope
-     AD5270(PinName CS = SPI_CS, float max_resistance = 20000.0, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                                         ^~~~~~~~
-In file included from ./CN0357/AD5270/AD5270.cpp:50:0:
-./CN0357/AD5270/AD5270.h:91:129: error: 'SPI_SCK' was not declared in this scope
-     AD5270(PinName CS = SPI_CS, float max_resistance = 20000.0, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                                                                 ^~~~~~~
-
-[mbed] ERROR: "/usr/local/opt/python/bin/python2.7" returned error code 1.
-[mbed] ERROR: Command "/usr/local/opt/python/bin/python2.7 -u /Users/jenplu01/Repos/CN0357-helloworld/mbed-os/tools/make.py -t gcc_arm -m k64f --source . --build ./BUILD/k64f/gcc_arm" in "/Users/jenplu01/Repos/CN0357-helloworld"
----
-```
-
-The errors relating to "was not declared in this scope" are library-specific errors. To fix this, go into the `./CN0357/AD5270/AD5270.h` header file and remove the constructor's default arguments. Line 91 of the `AD5270.h` header file now looks like this:
-
-```
-AD5270(PinName CS, float max_resistance, PinName MOSI, PinName MISO, PinName SCK);
-```
-
-Run `mbed compile` again:
-
-```
-Building project CN0357-helloworld (K64F, GCC_ARM)
-Scan: .
-Scan: mbed
-Scan: env
-Scan: FEATURE_LWIP
-Scan: FEATURE_STORAGE
-Compile [  2.5%]: main.cpp
-[Error] AD7790.h@114,51: 'SPI_CS' was not declared in this scope
-[Error] AD7790.h@114,74: 'SPI_MOSI' was not declared in this scope
-[Error] AD7790.h@114,99: 'SPI_MISO' was not declared in this scope
-[Error] AD7790.h@114,123: 'SPI_SCK' was not declared in this scope
-[Error] CN0357.h@77,73: 'SPI_MOSI' was not declared in this scope
-[Error] CN0357.h@77,98: 'SPI_MISO' was not declared in this scope
-[Error] CN0357.h@77,122: 'SPI_SCK' was not declared in this scope
-[Error] main.cpp@111,12: call to 'CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)' uses the default argument for parameter 3, which is not yet defined
-[Error] main.cpp@111,0: call to 'CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)' uses the default argument for parameter 4, which is not yet defined
-[Error] main.cpp@111,0: call to 'CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)' uses the default argument for parameter 5, which is not yet defined
-[ERROR] In file included from ./CN0357/CN0357.h:52:0,
-                 from ./main.cpp:48:
-./CN0357/AD7790/AD7790.h:114:51: error: 'SPI_CS' was not declared in this scope
-     AD7790( float reference_voltage, PinName CS = SPI_CS, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                   ^~~~~~
-./CN0357/AD7790/AD7790.h:114:74: error: 'SPI_MOSI' was not declared in this scope
-     AD7790( float reference_voltage, PinName CS = SPI_CS, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                          ^~~~~~~~
-./CN0357/AD7790/AD7790.h:114:99: error: 'SPI_MISO' was not declared in this scope
-     AD7790( float reference_voltage, PinName CS = SPI_CS, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                                   ^~~~~~~~
-./CN0357/AD7790/AD7790.h:114:123: error: 'SPI_SCK' was not declared in this scope
-     AD7790( float reference_voltage, PinName CS = SPI_CS, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                                                           ^~~~~~~
-In file included from ./main.cpp:48:0:
-./CN0357/CN0357.h:77:73: error: 'SPI_MOSI' was not declared in this scope
-     CN0357(PinName CSAD7790 = D8, PinName CSAD5270 = D6, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                         ^~~~~~~~
-./CN0357/CN0357.h:77:98: error: 'SPI_MISO' was not declared in this scope
-     CN0357(PinName CSAD7790 = D8, PinName CSAD5270 = D6, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                                  ^~~~~~~~
-./CN0357/CN0357.h:77:122: error: 'SPI_SCK' was not declared in this scope
-     CN0357(PinName CSAD7790 = D8, PinName CSAD5270 = D6, PinName MOSI = SPI_MOSI, PinName MISO = SPI_MISO, PinName SCK = SPI_SCK);
-                                                                                                                          ^~~~~~~
-./main.cpp: In function 'int main()':
-./main.cpp:111:12: error: call to 'CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)' uses the default argument for parameter 3, which is not yet defined
-     CN0357 cn0357;
-            ^~~~~~
-./main.cpp:111:12: error: call to 'CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)' uses the default argument for parameter 4, which is not yet defined
-./main.cpp:111:12: error: call to 'CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)' uses the default argument for parameter 5, which is not yet defined
-
-[mbed] ERROR: "/usr/local/opt/python/bin/python2.7" returned error code 1.
-[mbed] ERROR: Command "/usr/local/opt/python/bin/python2.7 -u /Users/jenplu01/Repos/temp/CN0357-helloworld/mbed-os/tools/make.py -t gcc_arm -m k64f --source . --build ./BUILD/k64f/gcc_arm" in "/Users/jenplu01/Repos/temp/CN0357-helloworld"
----
-```
-
-Notice that the `./CN0357/AD7790/AD7790.h` and `./CN0357/CN0357.h` header files also have similar "was not declared in this scope" errors. You need to remove the constructor's default arguments again in both files.
-
-Line 114 of the `AD7790.h` header file now looks like this:
-
-```
-AD7790(float reference_voltage, PinName CS, PinName MOSI, PinName MISO, PinName SCK);
-```
-
-Line 77 of the `CN0357.h` header file now looks like this:
-
-```
-CN0357(PinName CSAD7790, PinName CSAD5270, PinName MOSI, PinName MISO, PinName SCK);
-```
-
-Run `mbed compile` once again. You now have the following errors:
-
-```
-Building project CN0357-helloworld (K64F, GCC_ARM)
-Scan: .
-Scan: mbed
-Scan: env
-Scan: FEATURE_LWIP
-Scan: FEATURE_STORAGE
-Compile [  5.1%]: Ticker.cpp
-Compile [  5.4%]: Timeout.cpp
-Compile [  5.6%]: main.cpp
-[Error] main.cpp@111,12: no matching function for call to 'CN0357::CN0357()'
-[ERROR] ./main.cpp: In function 'int main()':
-./main.cpp:111:12: error: no matching function for call to 'CN0357::CN0357()'
-     CN0357 cn0357;
-            ^~~~~~
-In file included from ./main.cpp:48:0:
-./CN0357/CN0357.h:77:5: note: candidate: CN0357::CN0357(PinName, PinName, PinName, PinName, PinName)
-     CN0357(PinName CSAD7790, PinName CSAD5270, PinName MOSI, PinName MISO, PinName SCK);
-     ^~~~~~
-./CN0357/CN0357.h:77:5: note:   candidate expects 5 arguments, 0 provided
-./CN0357/CN0357.h:58:7: note: candidate: CN0357::CN0357(const CN0357&)
- class CN0357
-       ^~~~~~
-./CN0357/CN0357.h:58:7: note:   candidate expects 1 argument, 0 provided
-
-[mbed] ERROR: "/usr/local/opt/python/bin/python2.7" returned error code 1.
-[mbed] ERROR: Command "/usr/local/opt/python/bin/python2.7 -u /Users/jenplu01/Repos/temp/CN0357-helloworld/mbed-os/tools/make.py -t gcc_arm -m k64f --source . --build ./BUILD/k64f/gcc_arm" in "/Users/jenplu01/Repos/temp/CN0357-helloworld"
----
-```
-
-These errors are now due to the CN0357 variable in `main.cpp` no longer having sufficient arguments. Go into `main.cpp`, and modify the initialization of the `CN0357 cn0357;` variable on line 111 to include the K64F's pin names. Line 111 now looks like this:
-
-```
-CN0357 cn0357(D8, D6, D11, D12, D13); // CSAD7790, CSAD5270, MOSI, MISO, SCK
-```
-
-Now, the program successfully compiles.
-
-### Runtime errors
+## Runtime errors
 
 Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
+
+## Enabling Mbed OS bare metal
+
+Enabling the Mbed OS bare metal profile allows you to build Mbed OS without an RTOS. To enable it, you have to complete the [migration to Mbed OS 5](#migrating-to-mbed-os-5). Once the migration is complete, you can enable Mbed OS bare metal by creating an `mbed_app.json` with the following contents:
+
+```
+{
+    "requires": ["bare-metal"]
+}
+```

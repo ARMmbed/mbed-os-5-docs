@@ -1,14 +1,20 @@
-## Thread
+# Thread
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
 
 The Thread class allows defining, creating and controlling parallel tasks.
 
 <span class="notes">**Note:** The function `main` is a special thread function that is started at system initialization.</span>
 
-### Thread class reference
+## Memory considerations
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
+All the internal thread data structures are part of the C++ class, but by default, the thread stack is allocated on the heap. Memory is allocated at the run time during the call to `start` method. If you don't want to use dynamic memory, you can provide your own static memory using the constructor parameters.
+
+The default stack size is 4K. However, the application can override it by using the configuration system and setting the `THREAD_STACK_SIZE` option to the required size in `mbed_app.json`. For details, please see the [configuration documentation](../../reference/configuration/configuration.md).
+
+## Thread class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 ```C
 /// Priority values.
@@ -67,21 +73,21 @@ typedef enum {
   osPriorityError         = -1,         ///< System cannot determine priority or illegal priority.
   osPriorityReserved      = 0x7FFFFFFF  ///< Prevents enum down-size compiler optimization.
 } osPriority_t;
-``` 
+```
 
-### Thread example
+## Thread example
 
 The code below uses two separate threads to blink two LEDs. The first thread is automatically created and executes the `main` function; the second thread is created explicitly inside `main`.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_basic/)](https://os.mbed.com/teams/mbed_example/code/rtos_basic/file/012b1294c1c4/main.cpp)
 
-### Thread example with callbacks
+## Thread example with callbacks
 
-The Callback API provides a convenient way to pass arguments to spawned threads.  
+The Callback API provides a convenient way to pass arguments to spawned threads.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
 
-### Related content
+## Related content
 
-- [Application flow control tutorial](/docs/development/tutorials/application-flow-control.html).
-
+- [Application flow control tutorial](../tutorials/application-flow-control.html).
+- [ThisThread API reference](../apis/thisthread.html).

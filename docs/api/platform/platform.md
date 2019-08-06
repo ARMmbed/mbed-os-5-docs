@@ -1,8 +1,8 @@
-## Platform overview
+# Platform overview
 
 The role of the platform modules is to provide general purpose MCU management infrastructure, a few common data structures and  a consistent user experience on top of different standard libraries and toolchains. This page contains reference material about these subjects.
 
-### General MCU Management Infrastructure
+## General MCU Management Infrastructure
 
 Mbed OS eases MCU management through the use of several scoped locks and several global APIs.
 
@@ -11,27 +11,27 @@ The locks, `DeepSleepLock` and `CriticalSectionLock`, use RAII to create a scope
 Mbed OS also provides global APIs for the sleep and preemption global resources. The `PowerManagement` module includes a function to go to sleep now and the `Wait` module include a function to preempt now.
 - [Wait](wait.html): An API that provides simple wait capabilities. These wait capabilities are integrated with the RTOS to schedule another thread if the current thread is blocked. If all threads are blocked, the idle thread will save power by putting the MCU to sleep.
 - [CriticalSectionLock](criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
-- [Power management](power-management.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
+- [Power management](power-management-sleep.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
 - [DeepSleepLock](deepsleeplock.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
 
-### Common data structures
+## Common data structures
 
 Mbed OS provides the CircularBuffer and ATCmdParser as these are commonly used utilities in embedded systems.
 
 - [CircularBuffer](circularbuffer.html): The class that provides APIs to push and pop data from a buffer in an interrupt safe fashion.
 - [ATCmdParser](atcmdparser.html): An Mbed OS compatible AT command parser and serializer.
 
-### C++ ergonomics extensions
+## C++ ergonomics extensions
 
 Mbed OS includes a few convenience classes that are tailored for embedded systems development. These are the `Callback`, `Error` and `NonCopyable` classes.
 
 - [Callback](callback.html): An API that executes the user’s code in its own context. Many other Mbed OS APIs build on the Callback API by taking a callback to execute.
 - [Time](time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
-- [Error](error-handling.html): A functions that generates a fatal runtime error.
+- [Error](../apis/error-handling.html): A functions that generates a fatal runtime error.
 - [NonCopyable](noncopyable.html): An API that tags a class as not supporting copy operations. It creates a compile-time error if you copy the object.
 - [Span](span.html): A nonowning view to a sequence of contiguous elements. It can replace the traditional pair of pointer and size arguments passed as array definitions in function calls.
 
-<h4 id="callbacks">Callbacks</h4>
+### Callbacks
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
@@ -56,7 +56,7 @@ Serial serial(USBTX, USBRX);
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](platform.html#the-importance-of-state) section.
 
-##### Why should you use Callbacks?
+#### Why should you use Callbacks?
 
 Supporting all of the standard C++ function types is difficult for an API developer. An API developer must consider state, C++ Function objects, const correctness and volatile correctness.
 

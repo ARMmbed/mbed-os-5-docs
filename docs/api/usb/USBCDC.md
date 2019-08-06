@@ -1,14 +1,14 @@
-## USBCDC
+# USBCDC
 
-<span class="images">![](https://os.mbed.com/docs/v5.9/feature-hal-spec-usb-device-doxy/class_u_s_b_c_d_c.png)<span>USBCDC class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c.png)<span>USBCDC class hierarchy</span></span>
 
-The USBCDC class emulates a basic serial port over USB. You can use this serial port to send or receive data. If you want printf functionality, please see the [USBSerial](USBSerial.html) class.
+The USBCDC class emulates a basic serial port over USB. You can use this serial port to send or receive data. If you want printf functionality, please see the [USBSerial](../apis/usbserial.html) class.
 
-### USBCDC class reference
+## USBCDC class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.8/feature-hal-spec-usb-device-doxy/class_u_s_b_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c.html)
 
-### USBCDC example
+## USBCDC example
 
 ```C++ TODO
 #include "mbed.h"
@@ -22,11 +22,11 @@ int main(void) {
     {
         char msg[] = "Hello world\r\n";
         cdc.send((uint8_t*)msg, strlen(msg));
-        wait(1);
+        wait(1.0);
     }
 }
 ```
 
-### Related content
+## Related content
 
-- [USBSerial](USBSerial.html).
+- [USBSerial](../apis/usbserial.html).

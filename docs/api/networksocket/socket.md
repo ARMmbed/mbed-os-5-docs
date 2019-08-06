@@ -1,6 +1,6 @@
-## Socket
+# Socket
 
-<span class="images">![](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
 
 Socket is the abstract base class for all of the protocol-specific socket types. It defines all of the functions that comprise the Mbed OS Socket API. You cannot directly create a Socket object because it is abstract, but you can upcast any protocol-specific object to an abstract Socket object.
 
@@ -24,18 +24,18 @@ The Socket class defines the Mbed OS Socket API and loosely follows the POSIX st
 
 Not all protocols implement every function from the Socket API. For example, UDP does not implement the `listen()` and `accept()` functions. Also, socket options are mostly specific to the IP stack; they are not implemented on all stacks.
 
-### Socket class reference
+## Socket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/class_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_socket.html)
 
-### Socket example
+## Socket example
 
 Here is a client example of HTTP transaction over TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-5.12/main.cpp)
 
-### Related content
+## Related content
 
 - [TCPSocket](tcpsocket.html) API reference.
 - [UDPSocket](tcpsocket.html) API reference.
-- [Socket](/docs/development/reference/ip-networking.html#socket-api) architecture.
+- [Socket](../reference/ip-networking.html#socket-api) architecture.

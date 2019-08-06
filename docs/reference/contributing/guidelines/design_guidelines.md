@@ -1,4 +1,4 @@
-## Software Design
+# Software Design
 
 Principles of Arm Mbed software:
 
@@ -7,11 +7,11 @@ Principles of Arm Mbed software:
 - Simple.
 - Reliable.
 
-### Style
+## Style
 
-Please refer to the [Mbed style guide](/docs/development/reference/style.html).
+Please refer to the [Mbed style guide](../contributing/style.html).
 
-### Organization
+## Organization
 
 The Arm Mbed OS codebase is organized into conceptual submodules to limit the scope and complexity of individual contributions. These modules are contained in the Mbed OS codebase as a single Git repo. We suggest this model for external libraries.
 
@@ -30,12 +30,13 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 - As an entry point for the module (from the user space), we suggest a single header file. For example: `mbed.h`, `rtos.h`.
 - Header files should limit external includes to avoid indirectly exposing unrelated APIs. Header files should not expand namespaces.
 - In C++ modules, the API should be contained in a namespace that matches the module’s name. For example: `mbed::Ticker`, `rtos::Thread`, `netsocket::Socket`.
+- Define the internal class types in each C++ module inside an anonymous namespace. In C++, you cannot have different definitions of the same class name in different source files, even if they are not externally visible. In practice, a name collision often doesn't cause a problem; however, it can cause a build failure when link time optimization (LTO) is enabled, or a runtime failure if templates are instantiated using the internal classes.
 - In C modules, every nonstatic function and type should be prefixed with the module’s name followed by an underscore. For example: `mbed_critical_section_enter()`, `lwip_gethostbyname(host)`.
 - A module contained in the Mbed OS codebase may be mirrored in a separate repo. The source repo should be clearly identified and linked to from the module's README.
 - Special directories should follow consistent naming convention.
 
-### Contribution
-1. Please refer to the [Mbed contribution guide](/docs/development/reference/contributing.html).
+## Contribution
+1. Please refer to the [Mbed contribution guide](../contributing/index.html).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
 1. Commit message should be prefixed with the submodule name and a colon:
@@ -49,17 +50,16 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 1. Patches must land on master before being backported to one or more release branches.
 1. Feature development may happen in a separate branch, and brought to master when complete.
 1. The master branch and release branches must never be rewritten.
-1. All contributors must sign [the CLA](https://os.mbed.com/contributor_agreement).
 1. For incoming sources, the only acceptable licenses are:
     - MIT.
     - Apache.
     - Permissive Binary License.
 
-### API design
+## API design
 
 A general module can be split into two APIs, the frontend (or user API) and the backend (or porting layer). The user API describes the programmer interface that the library implements. For Mbed OS, the user-facing API should adopt a C++ class-based interface, while the porting layer should adopt a C-compatible interface.
 
-#### API design - user API
+### API design - user API
 
 - Each module should provide an object-oriented C++ user API.
 - The current standard is strictly C++03 (for portability).
@@ -110,7 +110,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
     - Code that is functionally incorrect.
     - Code that is not safe (synchronization) or that results in undefined behavior.
 
-#### API design - porting layer
+### API design - porting layer
 
 - Each module should provide a C-compatible porting layer.
 - The current standards are strictly C99 (for portability).
@@ -119,7 +119,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - The porting layer should be designed to allow as much variance in the implementation as is reasonable.
 - Simplicity is beautiful.
 
-#### Thread and IRQ safety
+### Thread and IRQ safety
 
 - User APIs should be thread safe.
 - If a user API is intended to be interrupt safe, this should be clearly documented.
@@ -129,9 +129,70 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - If a callback is called in interrupt context, the API responsible should be clearly documented with a warning.
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
 
-### Documentation
+## Documentation
 
-- Each function and class in a module should provide a doxygen comment that documents the function and each argument and return value:
+- Document all entities in a `.h` file using doxygen comment blocks.
+
+    Doxygen comment blocks start with `/**` or `/*!` and end with `*/`, and you put them above the documented entity.
+
+    For example:
+    
+    ```
+    /** psa_crypto_ipc_s struct used for some of the
+     * PSA Crypto APIs that need psa_key_handle_t and psa_algorithm_t arguments.
+     * To use the existing infrastructure of the SPM-IPC we provide a struct to
+     * pack them together.
+     */
+    typedef struct psa_crypto_ipc_s {
+    ```    
+    
+    Each line of a long comment block also starts with `*`.
+    
+- Begin each `.h` file by documenting the file name and providing a short description of the file using the `\file` and `\brief` commands:
+
+    ```
+    /**
+     * @file <file name>
+     * @brief <short file description>
+     */
+    ```
+    
+    These are the file names and descriptions that appear on the **Files** page of the generated documentation.
+
+    <span class="notes">**Note:** Doxygen commands start with a backslash (`\`) or an at sign (`@`). You can use the `\` and `@`characters interchangeably in commands; for example, you can use `\file` or `@file`.</span>
+    
+- Doxygen enables you to group entities. These groups are called **modules** in doxygen, and they are listed on the **Modules** page of the generated documentation.
+
+    **To define a module:**
+
+    Use the `@defgroup` command, and provide a short description of the group using the `@brief` command:
+
+    ```
+    /**
+     * ...
+     * @defgroup <one-word identifier; not in generated documentation> <group name; appears in the documentation>
+     * @brief <short group description>
+     */
+    ```
+    
+    For example:
+    
+    ```
+    /**
+     * @defgroup psa_cryto PSA Crypto APIs
+     * @brief PSA cryptography module, which contains Mbed TLS platfom definitions.
+     */
+    ```
+    
+    <span class="notes">**Note:** The one-word identifier immediately following the `@defgroup` command - for instance, `psa_cryto` in the example above - is not part of the group name in the generated documentation.</span>
+
+    **To add a member to a module:**
+
+    Use the `@ingroup` command. You can also group members using the open marker `@{` before the group and the closing marker `@}` after the group.
+
+    Alternatively, use the `@addtogroup <label>` command inside a documentation block to add an entity to a group.
+
+- For each function and class in a module, provide a doxygen comment that documents the function and each argument and return value:
 
     ``` cpp
     /** Wait until a Mutex becomes available.
@@ -141,10 +202,10 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
      osStatus lock(uint32_t millisec=osWaitForever);
     ```
-
+    
 - The doxygen of each class's header file must contain a use example using `@code` and `@endcode`.
 - Each API should also provide an `@code` and `@endcode` section building upon the class header example.
-- If more specific information is needed about a method, this should be accomplished using `@note`.
+- If more specific information is needed about a method, provide this information using the `@note` command.
 - If a method is deprecated, it must use the `@deprecated` tag and include a description of what method to replace it with.
 - Each module should provide a README that documents the module:
     - The README should start with a small paragraph describing the module to users with no prior knowledge.
@@ -153,16 +214,16 @@ A general module can be split into two APIs, the frontend (or user API) and the 
     - If a module contains tests, the README should provide testing instruction.
 - Extended documentation should be located in the module’s `docs` directory with appropriate links from the module’s README.
 
-### Testing
+## Testing
 
 - Each module should contain a `tests` directory with tests that cover the module’s functionality.
 - Tests should be organized based on the class being tested; roughly one test file per class.
 - Tests included in the codebase must be compatible with the Mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
-[Full documentation](/docs/development/tools/test-and-debug.html).
+[Full documentation](../tools/test-and-debug.html).
 
-### Configuration
+## Configuration
 
 Mbed OS provides a powerful configuration system for application development. However, modules should also be concerned with remaining configurable outside of the Mbed build system. Modules should provide well-documented configuration options in a simple header file.
 
@@ -174,9 +235,9 @@ Mbed OS provides a powerful configuration system for application development. Ho
 - Targets and applications should be able to override each configuration.
 - The default choice of optimization should be size, on all platforms.
 
-[Full documentation](/docs/development/tools/configuring-tools.html).
+[Full documentation](../reference/configuration.html).
 
-### Design process and template
+## Design process and template
 
 If you are designing a new feature or software module for Mbed OS, you must follow the design process and guidelines that the [design process for Mbed OS](https://github.com/ARMmbed/mbed-os/blob/master/docs/design-documents/README.md) describes.
 

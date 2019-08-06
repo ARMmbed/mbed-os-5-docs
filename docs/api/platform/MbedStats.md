@@ -1,53 +1,103 @@
-## Mbed statistics
+# Mbed statistics
 
-Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS statistics, you must build code with the `MBED_ALL_STATS_ENABLED` macro.
+Mbed OS provides a set of functions that you can use to capture the memory and thread statistics at runtime. `mbed_stats.h` declares these functions. To enable all Mbed OS platform statistics, you must enable the following Mbed OS configuration option:
 
-### Memory statistics
+```json
+{
+    "target_overrides": {
+        "*": {
+            "platform.all-stats-enabled": true
+        }
+    }
+}
+```
 
-You can use memory statistics functions to capture heap usage, cumulative stack usage or stack usage per thread at runtime. To enable memory usage monitoring, you must build Mbed OS with the following macros:
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../reference/configuration.html) for more details about `mbed_app.json`. </span>
 
-- `MBED_HEAP_STATS_ENABLED`.
-- `MBED_STACK_STATS_ENABLED`.
+## Memory statistics
+
+You can use memory statistics functions to capture heap use, cumulative stack use or stack use for each thread at runtime. To enable memory use monitoring, you must enable the following Mbed OS configuration options:
+
+```json
+{
+    "target_overrides": {
+        "*": {
+            "platform.heap-stats-enabled": true,
+            "platform.stack-stats-enabled": true
+        }
+    }
+}
+```
 
 <span class="notes">**Note:** Each `malloc` or `calloc` memory allocation call adds an overhead of 8 bytes when heap memory statistics are enabled.</span>
 
-### Thread statistics
+## Thread statistics
 
-You can use the thread statistics function `mbed_stats_thread_get_each` to capture the thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must build Mbed OS with the `MBED_THREAD_STATS_ENABLED` macro.
+You can use the thread statistics function `mbed_stats_thread_get_each` to capture the thread ID, state, priority, name and stack information for all active threads at runtime. To enable thread monitoring, you must enable the following Mbed OS configuration options:
 
-### System information
+```json
+{
+    "target_overrides": {
+        "*": {
+            "platform.thread-stats-enabled": true
+        }
+    }
+}
+```
 
-You can use the `mbed_stats_sys_get` function to get the CPU ID and compiler information. You must build Mbed OS with the `MBED_SYS_STATS_ENABLED` macro to enable fetching of system information.
+## System information
 
-### CPU statistics
+You can use the `mbed_stats_sys_get` function to get the CPU ID, compiler information and RAM and ROM memories on the target device. To enable system information fetching, you must enable the following Mbed OS configuration option:
 
-You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and sleep time information. Timing information available is cumulative since the system is on. You must build Mbed OS with the `MBED_CPU_STATS_ENABLED` macro to enable fetching of CPU information. Please note CPU statistics depend on the availability of the low power timer in the hardware.
+```json
+{
+    "target_overrides": {
+        "*": {
+            "platform.sys-stats-enabled": true
+        }
+    }
+}
+```
 
-### Mbed statistics function reference
+## CPU statistics
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
+You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and sleep time information. Timing information available is cumulative because the system is on. Please note CPU statistics depend on the availability of the low power timer in the hardware. To enable fetching of CPU information, you must enable the following Mbed OS configuration option:
 
-### Memory statistics example
+```json
+{
+    "target_overrides": {
+        "*": {
+            "platform.cpu-stats-enabled": true
+        }
+    }
+}
+```
+
+## Mbed statistics function reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
+
+## Memory statistics example
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp)
 
-### Thread statistics example
+## Thread statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-5.12/main.cpp)
 
-### System information example
+## System information example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-5.12/main.cpp)
 
-### CPU statistics example
+## CPU statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-5.12/main.cpp)
 
-### CPU usage example
+## CPU usage example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-usage/)](https://github.com/ARMmbed/mbed-os-example-cpu-usage/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-usage/)](https://github.com/ARMmbed/mbed-os-example-cpu-usage/blob/mbed-os-5.12/main.cpp)
 
-### Related content
+## Related content
 
-- [Platform configuration documentation](/docs/development/apis/mbed-statistics.html).
-- [Optimization tutorial](/docs/development/tutorials/optimizing.html).
+- [Platform configuration documentation](../apis/mbed-statistics.html).
+- [Optimization tutorial](../tutorials/optimizing.html).
