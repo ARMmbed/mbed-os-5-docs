@@ -6,8 +6,8 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 
 #### Defined behavior
 
-- Has a reported frequency between 250KHz and 8MHz for counters which are less than 32 bits wide.
-- Has a reported frequency up to 100MHz for counters which are 32 bits wide.
+- Has a reported frequency between 250 KHz and 8 MHz for counters that are less than 32 bits wide.
+- Has a reported frequency up to 100 MHz for counters that are 32 bits wide.
 - Has a counter that is at least 16 bits wide.
 - The function `ticker_init` is safe to call repeatedly.
 - The function `ticker_init` allows the ticker to keep counting and disables the ticker interrupt.
@@ -18,7 +18,7 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 - The ticker interrupt fires only when the ticker time increments to or past the value set by `ticker_set_interrupt`.
 - It is safe to call `ticker_set_interrupt` repeatedly before the handler is called.
 - The function `ticker_fire_interrupt` causes `ticker_irq_handler` to be called immediately from interrupt context.
-- The ticker operations `ticker_read`, `ticker_clear_interrupt`, `ticker_set_interrupt` and `ticker_fire_interrupt` take less than 20us to complete.
+- The ticker operations `ticker_read`, `ticker_clear_interrupt`, `ticker_set_interrupt` and `ticker_fire_interrupt` take less than 20 us to complete.
 
 #### Undefined behavior
 
@@ -31,19 +31,19 @@ Implementing the microsecond ticker enables Mbed OS to perform operations that r
 
 Be careful around these common trouble areas when implementing this API:
 
-- The ticker cannot drift when rescheduled repeatedly
-- The ticker keeps counting when it rolls over
-- The ticker interrupt fires when the compare value is set to 0 and overflow occurs
+- The ticker cannot drift when rescheduled repeatedly.
+- The ticker keeps counting when it rolls over.
+- The ticker interrupt fires when the compare value is set to 0 and overflow occurs.
 
 ### Dependencies
 
-To implement this API, the device must have a hardware counter that has a count value at least 16 bits wide and can operate between 250KHz and 8MHz.
+To implement this API, the device must have a hardware counter that has a count value at least 16 bits wide and can operate between 250 KHz and 8 MHz.
 
 ### Implementing the microsecond ticker API
 
 You can find the API and specification for the microsecond ticker API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__us__ticker.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__hal__us__ticker.html)
 
 To enable microsecond ticker support in Mbed OS, add the `USTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -57,8 +57,8 @@ mbed test -t <toolchain> -m <target> -n tests-mbed_hal-common_ticker*,tests-mbed
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__us__ticker.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__hal__us__ticker.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__hal__ticker__tests.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os-doc-builder.test.mbed.com/docs/development/mbed-os-api-doxy/group__hal__us__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__hal__us__ticker__tests.html)
