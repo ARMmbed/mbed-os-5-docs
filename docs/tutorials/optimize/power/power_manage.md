@@ -14,7 +14,7 @@ Switching between these power modes occurs automatically. When all threads in th
 
 For example, this application automatically brings the system to sleep mode between blinking the LED:
 
-```cpp
+```cpp NOCI
 #include "mbed.h"
 
 DigitalOut led(LED1);
@@ -62,7 +62,7 @@ To enable CPU statistics, which show you how much time is spent in various modes
 
 You can now call the `mbed_stats_cpu_get()` function to retrieve information on sleep behavior. For example:
 
-```cpp
+```cpp NOCI
 #include "mbed.h"
 #include "mbed_stats.h"
 
@@ -134,7 +134,7 @@ The sleep manager maintains a list of all active deep sleep locks and can log th
 
 For example, you can create a `Ticker` object that blinks the LED. The `Ticker` requires the high-frequency timers to be active:
 
-```
+``` NOCI
 #include "mbed.h"
 
 static DigitalOut led(LED1);
