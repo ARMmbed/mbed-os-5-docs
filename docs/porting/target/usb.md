@@ -38,7 +38,7 @@ The HAL USBPhy API provides physical access to the USB bus in the role of a USB 
 
 You can find the HAL API and specification for USB in the following module:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__usb__device__core.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__drivers___u_s_b_device.html)
 
 To enable the HAL USBPhy API in Mbed OS, add the `USBDEVICE` label in the `device_has` option of the target's section in the `targets.json` file.
 
