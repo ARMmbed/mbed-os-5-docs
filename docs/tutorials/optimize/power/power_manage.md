@@ -103,7 +103,7 @@ As stated before, some drivers and components can block deep sleep, either becau
 
 If your code requires blocking deep sleep, you can acquire a sleep lock. While the lock is active, Mbed OS will not bring the MCU into deep sleep mode. You can do this either by calling:
 
-```cpp
+```cpp NOCI
 sleep_manager_lock_deep_sleep();
 
 // ... do your operation
