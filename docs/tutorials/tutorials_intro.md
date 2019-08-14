@@ -228,6 +228,7 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 <td><a href="optimizing.html">Memory optimizations tutorial</a></td>
 <td><a href="../apis/mbed-statistics.html#thread-statistics-example">Thread statistics example</a></td>
 <td><a href="../apis/mbed-statistics.html#cpu-usage-example">CPU usage example</a></td>
+<td><a href="power-optimization.html">Power optimization tutorial</a></td>
 </tr>
 <tr>
 <td><a href="../apis/mbed-statistics.html#system-information-example">System information example</a></td>
