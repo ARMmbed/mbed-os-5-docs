@@ -104,5 +104,5 @@ Please see the following sections of our documentation for more information.
 
 - A [power optimization tutorial](../tutorials/power-optimization.html) about measuring and reducing power consumption.
 - A [mesh tutorial](../tutorials/mesh-tutorial.html) about selecting and using a mesh protocol.
-- Guides to porting [IEEE 802.15.4 MAC driver](../porting/mac-port.html) and [IEEE 802.15.4 RF driver](../porting/6lowpan-port.html).
-- Updated instructions for [troubleshooting common issues](../tutorials/debugging.html).
+- Porting guides for the [IEEE 802.15.4 MAC](../porting/mac-port.html) and [IEEE 802.15.4 RF](../porting/6lowpan-port.html) drivers.
+- Porting guides for the [Watchdog](../porting/watchdog-port.html), [RestReason](../porting/resetreason-port.html) and [I2C](../porting/i2c-port.html) APIs.
