@@ -18,7 +18,7 @@ ImaginaryBoard is the same as the standard NRF52840 development kit, but you wan
    
    Below is a short summary of the MCU target. For simplicity, areas have been omitted.
    
-   From mbed-os/targets/targets.json:
+   From `mbed-os/targets/targets.json`:
    
    ```
        "MCU_NRF52840": {
