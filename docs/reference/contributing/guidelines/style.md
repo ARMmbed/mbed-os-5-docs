@@ -71,35 +71,20 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 ### Rules
 
 - Indentation - four spaces. Please do not use tabs.
-
 - Braces - K&R style.
-
 - One true brace style (1TBS) - use braces for statements of type `if`, `else`, `while` and `for` (exception [from K&R](http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS)).
-
 - One line per statement.
-
 - Preprocessor macro starts at the beginning of a new line; the code inside is indented according to the code above it.
-
 - Cases within `switch` are indented (exception from K&R).
-
 - Space after statements of type `if`, `while`, `for`, `switch`. The same applies to binary operators (like, `+` and `*`) and the ternary operator (`?` and `:`).
-
 - Each line preferably has at most 120 characters.
-
 - Comments should use proper spelling and grammar.
-
 - For pointers or references, the symbols `*` or `&` are adjacent to a name (`analogin_t *obj`. `analogin_t &obj`). If you omit the name, place the space between the type and `*` (such as `int *` or `int &`).
-
 - For function return pointers or references, the symbols `*` or `&` are adjacent to a function name (`int *func()` or `int &func()`).
-
 - Don't leave trailing spaces at the end of lines.
-
 - Empty lines should have no trailing spaces.
-
 - Unix line endings are default option for files.
-
 - Use capital letters for macros.
-
 - A file should have an empty line at the end.
 
 ### Naming conventions
@@ -107,19 +92,14 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 #### Classes
 
 - Begin with a capital letter, and each word within a class also begins with a capital letter (AnalogIn, BusInOut).
-
 - Methods contain small letters, with words separated by underscore.
-
 - Private members start with an underscore: ``__User defined types (typedef)))``.
-
 - Structures - `suffix _t` - to denote it is a user-defined type.
-
 - Enumeration - the type name and values name - same naming convention as classes (for example MyNewEnum).
 
 #### Functions
 
 - Contain lower case letters (as methods within classes).
-
 - Words separated by underscore (wait_ms, read_u16).
 
 An example:
@@ -161,6 +141,21 @@ struct analogin_s {
 };
 
 typedef struct analogin_s analogin_t;
+```
+
+#### Namespaces
+
+Namespaces used to group subsystems are lower case, such as `rtos` and `event`. If not in a specific subsystem, C++ APIs are in namespace `mbed`. A few APIs remain in the global namespace for backward compatibility.
+
+Occasionally, namespaces are used to act as-if "static singleton" objects. One example is namespace `ThisThread` in `rtos` (which was modeled after C++11 `std::this_thread`). These namespaces follow the class naming convention, so calls to their functions look like calls to static class methods. 
+
+Below is an example of typical namespace use in a source file:
+
+```
+    using namespace rtos;
+    
+    ThisThread::sleep_for(1000);
+    
 ```
 
 ### Doxygen documentation
