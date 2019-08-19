@@ -2,7 +2,7 @@
 
 1. Get the code
 
-   From your command-line, import the example:
+   After the installation of Mbed CLI is complete, import the example by opening a command-line shell and entering:
 
    ```console
    $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
