@@ -128,8 +128,10 @@ When you use target inheritance, you may alter the values of `extra_labels` usin
 ### features, features_add and features_remove
 
 The list of _features_ enables software features on a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources. Unlike `extra_labels`, the build system recognizes a fixed set of values in the `features` list. The build system recognizes the following features:
- - `BLE`.
- - `STORAGE`.
+
+- `BOOTLOADER`.
+- `BLE`.
+- `CRYPTOCELL310`.
 
 The build system errors when you use features outside of this list.
 
