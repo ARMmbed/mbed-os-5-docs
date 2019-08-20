@@ -4,6 +4,6 @@ The standard library family of `printf` (`printf`, `sprintf`, `fprintf` and so o
  
 A solution to reduce code space is to replace the standard `printf` calls with a smaller implementation.
 
-Mbed OS provides a [`miniml-printf` library](https://github.com/ARMmbed/mbed-os/blob/master/platform/source/minimal-printf/README.md) that offers a subset of the `printf` features. (It does not support all the format specifiers.) You can also achieve further flash savings if your application does not require 64-bit integers, floating point or FILE stream printing.
+Mbed OS provides the [`minimal-printf` library](https://github.com/ARMmbed/mbed-os/blob/master/platform/source/minimal-printf/README.md) which offers a subset of the `printf` features (not all format specifiers are supported). You can also achieve further flash savings if your application does not require 64-bit integers, floating point or FILE stream printing by disabling support via the [configuration file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_lib.json).
 
 For a memory footprint comparison between standard `printf` and `minimal-printf`, please see our [Blinky size comparison](https://github.com/ARMmbed/mbed-os/tree/master/platform/source/minimal-printf#size-comparison).
