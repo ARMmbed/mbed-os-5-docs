@@ -1060,6 +1060,9 @@
                             "path": "docs/tutorials/optimize/memory/runtime_stats.md"
                         },
                         {
+                            "path": "docs/tutorials/optimize/memory/printf.md"
+                        },
+                        {
                             "path": "docs/tutorials/optimize/power/power_manage.md"
                         }
                     ]
