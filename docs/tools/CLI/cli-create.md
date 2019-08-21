@@ -81,9 +81,13 @@ $ mbed new mbed-classic-program --mbedlib
 You can create plain (empty) programs, without either Mbed OS 5 or Mbed OS 2, by using the `--create-only` option.
 
 ### Managing multiple Mbed projects
-By default there is a copy of mbed-os checked-out into each of your active mbed project directories.
-The configuration option ```MBED_OS_DIR``` allows you to create multiple mbed projects and use the same Mbed OS library directory for each of these projects.
-The ```MBED_OS_DIR``` configuration option should be set as an absolute path to a directory containing an implementation of mbed-os.
+
+By default, a copy of `mbed-os` is checked out into each of your active Mbed project directories.
+
+The configuration option `MBED_OS_DIR` allows you to create multiple Mbed projects and use the same Mbed OS library directory for each of these projects.
+
+Set the `MBED_OS_DIR` configuration option as an absolute path to a directory containing an implementation of `mbed-os`.
+
 The following commands illustrate this:
 
 ```
