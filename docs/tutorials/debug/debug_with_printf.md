@@ -143,6 +143,9 @@ As seen above, you use the `printf()` function to communicate back to the user:
 
 The limited code-space on the microcontroller's internal flash and the delay of the program require you to use `printf()` judiciously. Be careful about using it in an event handler, which we expect to terminate within a few microseconds.
 
+
+<span class="notes">**Note:** For printf-related memory considerations, please read our documentation about [printf and reducing memory](../tutorials/optimizing.html#printf-and-reducing-memory).</span>
+
 ### Parameters
 
 `printf()` can receive any number of parameters without knowing how many to expect.
