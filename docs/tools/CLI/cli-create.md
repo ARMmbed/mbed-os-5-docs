@@ -82,24 +82,30 @@ You can create plain (empty) programs, without either Mbed OS 5 or Mbed OS 2, by
 
 ### Managing multiple Mbed projects
 
-You can create multiple Mbed projects and use the same Mbed OS library directory for each of these projects with the following commands:
+By default, a copy of `mbed-os` is checked out into each of your active Mbed project directories.
+
+The configuration option `MBED_OS_DIR` allows you to create multiple Mbed projects and use the same Mbed OS library directory for each of these projects.
+
+Set the `MBED_OS_DIR` configuration option as an absolute path to a directory containing an implementation of `mbed-os`.
+
+The following commands illustrate this:
 
 ```
-$ cd <projects directory>
+$ cd /absolute/path/to/project/dir
 $ mbed import mbed-os
-$ mbed config -G MBED_OS_DIR <projects directory>/mbed-os
-[mbed] <projects directory>/mbed-os now set as global MBED_OS_DIR
+$ mbed config -G MBED_OS_DIR /absolute/path/to/project/dir/mbed-os
+[mbed] /absolute/path/to/project/dir/mbed-os now set as global MBED_OS_DIR
 $ mbed new project1
 [mbed] Creating new program "project1" (git)
 $ mbed new project2
 [mbed] Creating new program "project2" (git)
 ```
 
-Add your `main.cpp` file and other project files to the `project1` and `project2` directories. Then compile each project from the root `<projects directory>` with the following example commands:
+Add your `main.cpp` file and other project files to the `project1` and `project2` directories. Then compile each project from the root `/absolute/path/to/project/dir` with the following example commands:
 
 ```
 $ mbed compile -t ARM -m LPC1768 --source project1 --source mbed-os --build BUILD/project1
-$ mbed compile -t ARM -m K64F --source project2 --source mbed-os --build BUILD/project2  
+$ mbed compile -t ARM -m K64F --source project2 --source mbed-os --build BUILD/project2
 ```
 
 Find more details on the `--source` switch in the [build rules documentation](../reference/mbed-os-build-rules.html).
