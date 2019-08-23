@@ -1,18 +1,22 @@
 # Porting Mbed OS to a custom board
 
-If you are designing a board similar to an existing Mbed Enabled board, you can use target inheritance to configure your board to meet your needs. In previous versions of Mbed OS (before Mbed OS 5.8), adding a new target required modifying the `mbed-os` directory tree itself, but now you can extend an existing MCU port with a `custom_target.json` file and by adding source files that complete a port outside of `mbed-os`.
+If you are designing a board similar to an existing Mbed Enabled board, you can use target inheritance to configure your board to meet your needs. You can extend an existing MCU port with a `custom_target.json` file and by adding source files that complete a port outside of `mbed-os`.
 
-For detailed information about all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
+To do this, you need:
 
-## Extending an existing Mbed Enabled MCU target configuration
+- The new board you are designing.
+- Configuration details for the existing board.
+- Experience using the command-line.
+
+## Extending an existing MCU target configuration
 
 As an example, consider a situation in which you are creating a new board based on an existing Mbed Enabled board. This tutorial considers a new board called ImaginaryBoard that is based on NRF52840.
 
 ImaginaryBoard is the same as the standard NRF52840 development kit, but you want to remove some unused features, such as AnalogIn, and change the way some pins are connected.
 
-1. Choose a target in Mbed OS that your board can inherit from. 
+1. Choose a board in Mbed OS that your board can inherit from. 
 
-   If that existing target follows one of the recommended inheritance patterns, such as Family -> MCU -> Board, then it makes it simple to just inherit the MCU target information and add your own board information. In some cases, you may need to inherit a Family or Board and add or replace configurations accordingly.
+   If that existing board follows one of the recommended inheritance patterns, such as Family -> MCU -> Board, then it makes it simple to just inherit the MCU target information and add your own board information. In some cases, you may need to inherit a family or board and add or replace configurations accordingly.
 
    In this example, there is an MCU target configuration in `mbed-os/targets/targets.json` that the new board can inherit from. It is called MCU_NRF52840.
    
@@ -82,13 +86,13 @@ ImaginaryBoard is the same as the standard NRF52840 development kit, but you wan
 
 1. (Optional) You can also use `device_has_add` to add additional drivers.
 
-   <span class="notes">**Note:** If you choose to add a driver, you may have to provide the driver implementation if it is not already available for your hardware.</span>
+   <span class="notes">**Note:** If you choose to add a driver, you may have to provide the driver implementation if it is not already available for your hardware. Please see the drivers in the [Porting targets]../porting/porting-targets.html) section for more details.</span>
 
 1. (Optional) Similarly, you can use `features_add`, `features_remove`, `components_add`, `components_remove`, `macros_add` and `macros_remove`.
 
 ## Configuring the code directory and folders
 
-The target source code directory should follow a similar structure as the target configuration.
+The target source code directory should follow a structure similar to that of the target configuration.
 
 For example, in the `mbed-os/targets` folder, the directories follow this pattern:
 
@@ -153,8 +157,12 @@ When successful, it compiles, links and generates a .bin or .hex file.
 
 ### Additional notes
 
-- Many targets also use the `extra labels` configuration option to include directories in a build. Often this feature is used to include Family and MCU target directories instead of target inheritance.  
+- Many boards also use the `extra labels` configuration option to include directories in a build. Often this feature is used to include Family and MCU target directories instead of target inheritance.  
 - Unless your board has an Mbed Enabled debug interface, you need a method of flashing the memory on your board.
+
+## Further reading
+
+For more information about configuring boards, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
 ### Todo:
 
