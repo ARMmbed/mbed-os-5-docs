@@ -13,6 +13,7 @@ This tutorial requires:
 - Hardware that supports entropy.
 - A radio.
 - An RF driver.
+- A separate application, `nanostack-border-router` to test the border router.
 
 ## Import the application
 
@@ -104,7 +105,7 @@ A sample `mbed_app.json` file:
 By default, the Thread application uses the static network link configuration defined in the [Mesh API configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json).
 If you want to commission a Thread device, see [how to commission a Thread device in practice](../reference/thread-tech.html#thread-commissioning).
 
-The Thread stack learns the network settings from the commissioning process and, by default, saves them to RAM memory. Therefore, the learned network settings are lost every time you restart the device. To prevent the need to recommission, save the Thread configuration settings to an SD card instead of RAM (only for the `K64F`):<!--why? can't it work with other boards that have an SD card?-->
+The Thread stack learns the network settings from the commissioning process and, by default, saves them to RAM memory. Therefore, the learned network settings are lost every time you restart the device. If you are using a K64F, you can prevent the need to recommission: save the Thread configuration settings to an SD card instead of RAM.
 
 - Change `storage-device` to `MESH_NVM_SD_CARD` in the `./configs/mesh_thread.json` file.
 - Enable commissioning as described in the referred instructions.<!--there are two links in the above paragraph; spare people rereading and give them a link here, too-->
@@ -117,7 +118,7 @@ The Thread stack learns the network settings from the commissioning process and,
 
 The networking stack in this example requires TLS functionality. On devices where hardware entropy is not present, TLS is disabled by default. This results in compile time failures or linking failures.
 
-To learn why entropy is required, read the [TLS porting guide](../porting/entropy-sources.html).<!--the first sentence said "TLS functionality", but the next two references were specifically for hardware entropy. which is correct?-->
+To learn why entropy is required, read the [TLS porting guide](../porting/entropy-sources.html).
 
 See [Notes on different hardware](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/Hardware.md) for combinations of development boards and RF shields that we have tested.
 
@@ -153,13 +154,13 @@ To change the RF driver, set the preferred RF driver `provide_default` value to 
 
 This example supports the [Nanostack-border-router](https://github.com/ARMmbed/nanostack-border-router).
 
-The border router supports static and dynamic backhaul configuration. The static configuration is good for testing, but the dynamic one works <!--this phrasing is misleading, I think. why are testing and dynamic allocation contradictory?--> if your network infrastructure supplies an IPv6 address. Make sure that you use the appropriate mode.<!--is this what I'm supposedly updating?-->
+The border router supports static and dynamic backhaul configuration. Use the static configuration if your network infrastructure does not supply an IPv6 address. If your network infrastructure provides IPv6 connectivity, then the border router learns an IPv6 prefix from the router advertisements, and you can use the dynamic configuration.
 
-Remember to connect the Ethernet cable between the border router and your router<!--router and router? router and board?-->. Then power on the board.<!--it was already powered on to flash it. did I disconnect it from the computer at some point? did I power it off?--><!--is this really part of "update your router"? won't it be equally valid if my border router was already correct?-->
+Remember to connect the Ethernet cable between the board and your router. Then power cycle on the board.
 
 ## Testing with border router
 
-By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message.<!--so do I need a second application that I can flash to other devices that I connect to the network? or do I just need more devices using the same application? this should be explained at the beginning--> Note that the Thread devices can form a network without the existence of the border router. The following applies only to the case when the border router is set up.
+By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message. Note that the Thread devices can form a network without the existence of the border router. The following applies only to the case when the border router is set up.
 
 As soon as both the border router and the target are running, you can verify the correct behavior<!--is this verifying the full behavior, or just that I connected to the network?-->. Open a serial console, and see the IP address obtained by the device.
 
