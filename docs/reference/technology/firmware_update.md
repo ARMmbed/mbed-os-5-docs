@@ -86,12 +86,12 @@ Mbed CLI and the Online Compiler implement the Pelion Device Management Update s
 
 <span class="notes">**Note**: The default workflow of the development tools is intended only for development and testing purposes. It is not considered secure for production.</span>
 
-Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
+Your development tool needs to use your Device Management account's API key to call the Pelion Device Management APIs. Once it has access to the APIs, it can generate a manifest and upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://www.pelion.com/docs/device-management/current/service-api-references/update-service.html).
 
 <span class="notes">**Note**: The tools currently support the update process for Device Management Client, not Device Management Client Lite.</span>
 
 **Tutorials**:
 
-- Try the firmware [update process on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update).
-   <span class="notes">**Note:** You first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).</span>
+- Try the firmware [update process on the Online Compiler](../guides/pelion-firmware-update/).
+   <span class="notes">**Note:** You first need to [use the connecting quick guide to set up the original application](../guides/connect-device-to-pelion).</span>
 - Review the [Mbed CLI update commands](../tools/cli-update.html).
