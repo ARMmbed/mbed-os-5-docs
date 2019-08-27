@@ -47,7 +47,7 @@ sudo apt install python2.7 python-pip git mercurial
 
 ## 2. Install Mbed CLI
 
-<span class="notes">**Note:** We suggest you install Mbed CLI from within a virtual environment and run all commands from within your virtual environment.</span>
+<span class="notes">**Note:** We suggest you install Mbed CLI from within a virtual environment and run all commands from within your virtual environment. This will ensure that changes made by the Mbed CLI installation do not propagate to the rest of your system and cause unexpected changes in behavior in any existing Python installation.</span>
 
 To install Mbed CLI with pip:
 
