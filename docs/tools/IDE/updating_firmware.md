@@ -43,7 +43,7 @@ In the **Pelion Device Management** dropdown menu:
 
 - Create an update image:
 
-   - **Publish Firmware Update**: Build your program, then upload it to your Pelion Device Management account, so you can use it as a firmware update. This build does not include the certificates or the bootloader.
+   - **Publish Firmware Update**: Build your program, and then upload it to your Pelion Device Management account, so you can use it as a firmware update. This build does not include the certificates or the bootloader.
 
    This stage also creates a manifest for the update and asks for your private key to sign the manifest.
 
