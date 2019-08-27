@@ -1,6 +1,6 @@
 # Integration tests
 
-Mbed OS provides a set of integration tests to help you identify integration issues around storage devices and connectivity devices.
+Mbed OS provides a set of integration tests to help you identify integration issues around storage devices and connectivity devices. If you're using a custom board, these tests can also help you verify your board works well in your environment.
 
 ## Test suites
 
@@ -22,7 +22,7 @@ If a platform has both of them enabled by default (in `targets.json`), then you 
     $ mbed test -t <toolchain> -m <platform> -n *integration-* -DINTEGRATION_TESTS -v
     ```
     
-If a platform doesn't have default storage or connectivity device and may require extra shield to run the integration test. In this case, you can pass a `target_extended.json` file in the command-line to configure the target:
+If a board doesn't have default connectivity and storage, it requires an extra shield to run the integration test. In this case, you can pass a `target_extended.json` file in the command-line to configure the target:
 
    ```
    $ mbed test -t <toolchain> -m <platform> -n *integration-* -DINTEGRATION_TESTS --app-config TESTS\integration\COMMON\target_extended.json -v
@@ -50,7 +50,7 @@ If required, edit the `target_extended.json` file, and create a new entry under 
             "target.components_add" : ["SD"],
    ```
 
-   Valid options are `SD`, `SPIF`, `QSPIF` and `FLASHIAP` (not recommended). For more available options, please see the [block device components](https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice).
+   Valid options are `SD`, `SPIF` and `QSPIF`. For more available options, please see the [block device components](https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice).
 
    You also have to specify the block device pin configuration, which may vary from one block device type to another. Here's an example for `SD`:
    
