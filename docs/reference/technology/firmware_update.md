@@ -5,14 +5,14 @@ Mbed OS integrates the Pelion Device Management firmware update services, so if 
 Update support in Mbed OS relies on two features:
 
 - Mbed OS now includes the bootloader that manages update verification and installation.
-- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands]../tools/cli-update.html).
+- Mbed CLI and the Mbed Online Compiler now support update actions, by using the Update Service APIs and the Manifest Tool. We have a quick start [for updating through the Online Compiler](https://os.mbed.com/guides/pelion-firmware-update/), and a review [of the Mbed CLI flow and commands](../tools/cli-update.html).
 
 ## Updatable binaries
 
 The active firmware, made up of Mbed OS and an application, can be updated only if the binary installed on the device has:
 
 1. A bootloader, as [reviewed below](#the-mbed-os-bootloader). The bootloader can load a new version of the firmware. If for some reason, the update fails, the bootloader falls back to the firmware version last known to work. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions once an update succeeds.
-1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://cloud.mbed.com/docs/latest/updating-firmware/index.html).
+1. Mbed OS with the Device Management Client (which includes the Update client). The clients allow your device to communicate with the Device Management Update service, receive update manifests and firmware, and verify the binary's validity. They are [reviewed in details in our Pelion Device Management documentation](https://www.pelion.com/docs/device-management/current/updating-firmware/index.html).
 
     Note: Because some embedded devices don't require remote update capabilities, Mbed OS does not include the Device Management Client by default; you need to explicitly import the client to your application.
 
@@ -62,7 +62,7 @@ Note two things about the Mbed OS bootloader's design:
 1. It does not process encrypted off-chip candidate images.
 1. It does not currently verify signatures of candidate images. To save code size and speed up boot time, we use a unique, per-device Message Authentication Code (MAC) to authenticate the firmware in the bootloader: firmware is distributed with a signature, and the Update client verifies the signature and replaces it with a MAC that the bootloader understands.
 
-This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://cloud.mbed.com/docs/latest/updating-firmware/bootloaders.html) and the [porting section](https://cloud.mbed.com/docs/latest/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
+This means that the default bootloader does not implement secure boot; for high-security applications, further implementation is required. Please see [the full bootloader documentation](https://www.pelion.com/docs/device-management/current/updating-firmware/bootloaders.html) and the [porting section](https://www.pelion.com/docs/device-management/current/porting/porting-the-device-management-update-client.html) on the Pelion Device Management site.
 
 ## Managing updates with the bootloader
 
@@ -73,7 +73,7 @@ When a device downloads new firmware, it stores it locally (in the storage area)
 1. Chooses the firmware with the latest timestamp.
 1. Checks the integrity of the image in the storage area by checking its hash against its internal metadata header.
 1. Copies the image in the storage area to the active application region if it is applicable.
-1. Forwards control to the start of the active firmware, which contains the Update client (part of Device Management client). The Update client runs the Pelion Device Management update process:
+1. Forwards control to the start of the active firmware, which contains the Update client (part of Device Management Client). The Update client runs the Pelion Device Management update process:
     1. Receives a notification from one of its update sources.
     1. Downloads the new manifest and parses it to obtain the firmware URI.
     1. Fetches the firmware from one of its update sources. Either the manifest or a cost-ranking algorithm specifies the update source to use.
@@ -92,6 +92,6 @@ Your development tool needs to use your Device Management account's API key to c
 
 **Tutorials**:
 
-- Try the firmware [update process on the Online Compiler](../guides/pelion-firmware-update/).
-   <span class="notes">**Note:** You first need to [use the connecting quick guide to set up the original application](../guides/connect-device-to-pelion).</span>
+- Try the firmware [update process on the Online Compiler](https://os.mbed.com/guides/pelion-firmware-update/).
+   <span class="notes">**Note:** You first need to [use the connecting quick guide to set up the original application](https://os.mbed.com/guides/connect-device-to-pelion/).</span>
 - Review the [Mbed CLI update commands](../tools/cli-update.html).
