@@ -1139,6 +1139,9 @@
                                 },
                                 {
                                     "path": "docs/porting/porting_full_process/demo_testing.md"
+                                },
+                                {
+                                    "path": "docs/porting/porting_full_process/integration-tests.md"
                                 }
                             ]
                         }
