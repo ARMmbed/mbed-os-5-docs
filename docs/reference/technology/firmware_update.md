@@ -2,7 +2,7 @@
 
 Mbed OS integrates Pelion Device Management firmware update services, so if you have a Device Management account, you can send binaries to your remote device.
 
-Mbed OS now includes the bootloader that manages update verification and installation for Pelion Client.
+Mbed OS now includes the bootloader that manages update verification and installation for Device Management Client.
 
 Mbed CLI and the Mbed Online Compiler now support update actions using the Update Service API and manifest tool. We have a quick start guide [for updating through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update), and a review [of the Mbed CLI flow and commands](../tools/cli-update.html).
 
