@@ -152,4 +152,27 @@ Four words of storage are free but only for allocations of one word or less. The
 
 ### More about events
 
-This is only a small part of how event queues work in Mbed OS. The `EventQueue` and `Event` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).
+This is only a small part of how event queues work in Mbed OS. The `EventQueue`, `Event` and `UserAllocatedEvent` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).
+
+## Static queue
+
+EventQueue API provides mechanism for creating so called static queue, a queue that doesn't use any dynamic memory allocation at all and accepts only user allocated events. Once you created static queue (by passing zero as `size` to its constructor) you can post any number of `UserAllocatedEvent` to it. Using static EventQueue combined with UserAllocatedEvent gives the warranty that no dynamic memory allocation will take place while queue creation and events posting & dispatching. Going even further you can declare queue and events as static objects (static in C++ sense) and then memory for them will be reserved at compile time as on below example.
+
+```
+void handler(int data) { ... }
+
+// Static queue with not internal storage for dynamic events
+// accepts only user allocated events
+static EventQueue queue(0);
+// Create user allocated events
+static auto e1 = make_user_allocated_event(handler, 2);
+static auto e2 = queue.make_user_allocated_event(handler, 3);
+
+int main()
+{
+    e1.call_on(&queue);
+    e2.call();
+
+   queue.dispatch(1);
+}
+```

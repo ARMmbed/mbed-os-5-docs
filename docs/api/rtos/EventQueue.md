@@ -57,6 +57,12 @@ To do this, set the `mbed_app.json` configuration option `events.shared-dispatch
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/file/154179bdc39d/main.cpp)
 
+## Static EventQueue example: posting user allocated events to the static queue
+
+If you want to be 100% sure that you program won't fail due to queue memory exhaustion or you don't want no dynamic memory allocation in it you should use static EventQueue.
+
+TODO: example code here
+
 ## Related content
 
 - [EventQueue tutorial](../tutorials/the-eventqueue-api.html).
