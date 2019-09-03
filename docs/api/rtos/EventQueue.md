@@ -59,7 +59,7 @@ To do this, set the `mbed_app.json` configuration option `events.shared-dispatch
 
 ## Static EventQueue example: posting user allocated events to the static queue
 
-If you want to be 100% sure that you program won't fail due to queue memory exhaustion or you don't want no dynamic memory allocation in it you should use static EventQueue.
+Use static EventQueue to prevent your program failing due to queue memory exhaustion or to prevent dynamic memory allocation:
 
 TODO: example code here
 
