@@ -156,7 +156,7 @@ This is only a small part of how event queues work in Mbed OS. The `EventQueue`,
 
 ## Static queue
 
-EventQueue API provides mechanism for creating so called static queue, a queue that doesn't use any dynamic memory allocation at all and accepts only user allocated events. Once you created static queue (by passing zero as `size` to its constructor) you can post any number of `UserAllocatedEvent` to it. Using static EventQueue combined with UserAllocatedEvent gives the warranty that no dynamic memory allocation will take place while queue creation and events posting & dispatching. Going even further you can declare queue and events as static objects (static in C++ sense) and then memory for them will be reserved at compile time as on below example.
+The EventQueue API provides a mechanism for creating a static queue, a queue that doesn't use any dynamic memory allocation and accepts only user-allocated events. After you create a static queue (by passing zero as `size` to its constructor), you can post `UserAllocatedEvent` to it. Using static EventQueue combined with UserAllocatedEvent ensures no dynamic memory allocation will take place during queue creation and events posting and dispatching. You can also declare queues and events as static objects (static in the C++ sense), and then memory for them will be reserved at compile time:
 
 ```
 void handler(int data) { ... }
