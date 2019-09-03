@@ -20,7 +20,7 @@ To run these tests, make sure make sure your target configuration is set:
 
 Additionally, if the device does not have a TRNG or if you'd like to run the entropy injection test, ensure the Mbed TLS configuration is set on the SPE:
 
-1. The `MBEDTLS_ENTROPY_NV_SEED` and `MBEDTLS_PSA_ENTROPY_INJECTION` macros are enabled.
+1. The `MBEDTLS_ENTROPY_NV_SEED` and `MBEDTLS_PSA_INJECT_ENTROPY` macros are enabled.
 1. The `MBEDTLS_PLATFORM_NV_SEED_READ_MACRO` macro is set to `mbed_default_seed_read`.
 1. The `MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO` macro is set to `mbed_default_seed_write`.
 
