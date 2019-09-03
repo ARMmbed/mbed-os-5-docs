@@ -20,14 +20,18 @@ There is no installer for Linux; please follow the manual installation guide.
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
 ### Instructions for macOS
+
 1. macOS 10.8 and later comes with Python 2.7 preinstalled.
 
-    * If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
-       ```
+   - If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
+   
+      ```
         curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
         python get-pip.py
-        ```
-    * If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
+      ```
+      
+   - If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
+
 1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
@@ -42,6 +46,8 @@ sudo apt install python2.7 python-pip git mercurial
 ```
 
 ## 2. Install Mbed CLI
+
+<span class="notes">**Note:** We suggest you install Mbed CLI from within a virtual environment and run all commands from within your virtual environment. This will ensure that changes made by the Mbed CLI installation do not propagate to the rest of your system and cause unexpected changes in behavior in any existing Python installation.</span>
 
 To install Mbed CLI with pip:
 
