@@ -1,6 +1,15 @@
 # UserAllocatedEvent
 
-The `UserAllocatedEvent` class provides APIs to create and configure static events. `UserAllocatedEvent` advantage over `Event` is that it embeds all underlying event data and doesn't require any memory allocation while posting and dispatching on to the EventQueue. To configure event timings use `delay` and `period` APIs. You can use `call` and `try_call` API to post an event to the underlying EventQueue or `call_on` and `try_call_on` API to bind and post an event to the EventQueue passed as function argument, and you can use `cancel` to cancel the most recently posted event. As the `UserAllocatedEvent` holds event data it can't be posted more then one at the time. It means that if the event object has to be reused the previous dispatch has to finish or event has to be canceled. `try_call` API can be used to sample the event state. `try_call` call will try to post event and will return false with no action until the previous dispatching won't finish.
+The `UserAllocatedEvent` class provides APIs to create and configure static events. The advantage in using `UserAllocatedEvent` instead of `Event` is `UserAllocatedEvent` embeds all underlying event data and doesn't require any memory allocation while posting and dispatching to the EventQueue.
+
+This class includes the following APIs:
+
+- `delay` and `period` to configure event timings.
+- `call` and `try_call` to post an event to the underlying EventQueue.
+- `call_on` and `try_call_on` to bind and post an event to the EventQueue as a function argument.
+- `cancel` to cancel the most recently posted event.
+
+Because the `UserAllocatedEvent` holds event data, you can post only one event object to it at a time. This means that if the event object has to be reused, the previous dispatch has to finish or the event has to be canceled. You can use the `try_call` API to sample the event state. This call tries to post an event and returns false with no action until the previous dispatching finishes.
 
 The UserAllocatedEvent class is thread safe. The `call`, `try_call` and `cancel` APIs are IRQ safe.
 
@@ -10,7 +19,7 @@ The UserAllocatedEvent class is thread safe. The `call`, `try_call` and `cancel`
 
 ## Static EventQueue example: posting user allocated events to the queue
 
-The code below demonstrates how you can instantiate, configure and post events.
+This example demonstrates how you can instantiate, configure and post events:
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-events/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-events/file/86c4bf2d90fa/main.cpp)
 
