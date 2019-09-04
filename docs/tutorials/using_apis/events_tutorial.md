@@ -154,25 +154,8 @@ Four words of storage are free but only for allocations of one word or less. The
 
 This is only a small part of how event queues work in Mbed OS. The `EventQueue`, `Event` and `UserAllocatedEvent` classes in the `mbed-events` library offer a lot of features that this document does not cover, including calling functions with arguments, queueing functions to be called after a delay or queueing functions to be called periodically. The [README of the `mbed-events` library](https://github.com/ARMmbed/mbed-os/blob/master/events/README.md) shows more ways to use events and event queues. To see the implementation of the events library, review [the equeue library](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_queue_8h_source.html).
 
-## Static queue
+## Static EventQueue
 
 The EventQueue API provides a mechanism for creating a static queue, a queue that doesn't use any dynamic memory allocation and accepts only user-allocated events. After you create a static queue (by passing zero as `size` to its constructor), you can post `UserAllocatedEvent` to it. Using static EventQueue combined with UserAllocatedEvent ensures no dynamic memory allocation will take place during queue creation and events posting and dispatching. You can also declare queues and events as static objects (static in the C++ sense), and then memory for them will be reserved at compile time:
 
-```
-void handler(int data) { ... }
-
-// Static queue with not internal storage for dynamic events
-// accepts only user allocated events
-static EventQueue queue(0);
-// Create user allocated events
-static auto e1 = make_user_allocated_event(handler, 2);
-static auto e2 = queue.make_user_allocated_event(handler, 3);
-
-int main()
-{
-    e1.call_on(&queue);
-    e2.call();
-
-   queue.dispatch(1);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/events/static-event-queue/UserAllocatedEvent_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/events/static-event-queue/UserAllocatedEvent_ex_1/main.cpp)
