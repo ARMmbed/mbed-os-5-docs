@@ -40,6 +40,12 @@ jobs:
       - setup_aws_credentials
       - write_env_variables
       - run:
+          name: Validate redirects
+          command: |
+            if [ -f "$HOME/project/redirects.json" ]; then
+              python -mjson.tool "$HOME/project/redirects.json" > /dev/null
+            fi
+      - run:
           name: Validate and build documentation
           command: |
             source /tmp/env
