@@ -326,7 +326,10 @@
                             "path": "docs/api/rtos/EventQueue.md"
                         },
                         {
-                            "path": "docs/api/rtos/MemoryPool.md"
+                            "path": "docs/api/rtos/EventQueue.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/UserAllocatedEvent.md"
                         },
                         {
                             "path": "docs/api/rtos/Mail.md"
