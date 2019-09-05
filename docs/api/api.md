@@ -108,20 +108,21 @@ The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as thre
 <tr>
 <td><a href="thread.html">Thread</a></td>
 <td><a href="semaphore.html">Semaphore</a></td>
-<td><a href="memorypool.html">MemoryPool</a></td>
-<td><a href="event.html">Event</a></td>
+<td><a href="userallocatedevent.html">UserAllocatedEvent</a></td>
+<td><a href="eventflags.html">EventFlags</a></td>
+<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
 </tr>
 <tr>
 <td><a href="thisthread.html">ThisThread</a></td>
 <td><a href="queue.html">Queue</a></td>
-<td><a href="mail.html">Mail</a></td>
-<td><a href="conditionvariable.html">ConditionVariable</a></td>
+<td><a href="memorypool.html">MemoryPool</a></td>
+<td><a href="event.html">Event</a></td>
 </tr>
 <tr>
 <td><a href="mutex.html">Mutex</a></td>
 <td><a href="eventqueue.html">EventQueue</a></td>
-<td><a href="eventflags.html">EventFlags</a></td>
-<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
+<td><a href="mail.html">Mail</a></td>
+<td><a href="conditionvariable.html">ConditionVariable</a></td>
 </tr>
 </tbody>
 </table>
