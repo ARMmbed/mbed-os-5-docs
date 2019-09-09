@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
-The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](../reference/nanostack-introduction-tech.html) networking stack. 
+The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](../reference/6LoWPAN-ND-tech.html) networking stack. 
 
 Mbed OS provides three types of IPv6-based mesh networks:
 
