@@ -4,7 +4,7 @@
 
 DataFlashBlockDevice is a block device driver for serial flash devices that support the Atmel DataFlash protocol, such as the Adesto AT45DB series of devices.
 
-<span class="notes">**Note:** Multiple protocols exist for SPI flash devices. This driver is for the DataFlash protocol. If your device uses the SFDP flash protocol, you need the [SPIFBlockDevice](spifblockdevice.html)</span>
+<span class="notes">**Note:** Multiple protocols exist for SPI flash devices. This driver is for the DataFlash protocol. If your device uses the SFDP flash protocol, you need the [SPIFlashBlockDevice](../apis/spi-flash-block-device.html).</span>
 
 DataFlash is a memory protocol that combines flash with SRAM buffers for a programming interface. DataFlash supports byte-sized read and writes, with an erase size of around 528 bytes or sometimes 1056 bytes. DataFlash provides erase sizes with an extra 16 bytes for error correction codes (ECC), so a flash translation layer (FTL) may still present 512 byte erase sizes.
 
