@@ -57,7 +57,7 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
    `mbed add https://github.com/ARMmbed/sd-driver`    
    `mbed add https://github.com/c1728p9/AudioPlayer`
    
-1. Copy and paste the [example code](../tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav) into `main.cpp`.
+1. Copy and paste the [example code](../tutorials/usb-wav-audio-player.html#example-wav-file) into `main.cpp`.
 1. Make sure the SPI pins for the SDBlockDevice object are updated and correct for your board. For example, in the example below, line 10 sets up SPI for the SDBlockDevice for the NXP K64F Mbed board.
 1. Load WAV file(s) onto SD card. The example below uses a public domain WAV file called "Bach-minuet-in-g.wav" (attached below for download) that is inside a "songs" directory on the SD card. It is important that the WAV file be PCM signed 16-bit little endian, or else it will not play becaues USBAudio does not support any other WAV formats. The WAV file can have any sampling rate and can have any number of channels. You can use [Online-convert](https://audio.online-convert.com/convert-to-wav) to achieve WAV files with different formats from any source audio file. The file "Bach-minuet-in-g.wav" is already in the correct format.
    
