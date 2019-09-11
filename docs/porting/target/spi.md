@@ -39,7 +39,7 @@ This highly configurable interface has elements you can adjust:
    - The number of bits per symbol.
    - The mode:
      .0 Clock idle state is *low*, data are sampled when the clock becomes *active* (polarity = 0, phase = 0).
-     .1 Clock idle state is *low*, data are sampled when the clock becomes *inactive* (polarity = 0, phase = 1). 
+     .1 Clock idle state is *low*, data are sampled when the clock becomes *inactive* (polarity = 0, phase = 1).
      .2 Clock idle state is *high*, data are sampled when the clock becomes *active* (polarity = 1, phase = 0).
      .3 Clock idle state is *high*, data are sampled when the clock becomes *inactive* (polarity = 1, phase = 1).
    - The bit ordering (lsb/msb first).
@@ -112,7 +112,7 @@ Hardware SPI capabilities.
 
 You can find the API and specification for the SPI API in the following class reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.14/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html)
 
 To enable SPI support in Mbed OS, add the `SPI` label in the `device_has` option of the target's section in the `targets.json` file.
 You can also add the `SPI_ASYNCH` label in the `device_has` option to enable the asynchronous API.
@@ -127,7 +127,7 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-spi*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/feature-hal-spec-spi-doxy/group__hal__spi__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.14/feature-hal-spec-spi-doxy/group__hal__spi__tests.html)
 
 To test SPI using the FPGA test shield:
 

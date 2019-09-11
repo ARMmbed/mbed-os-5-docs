@@ -1,6 +1,6 @@
 # USBMIDI
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
 
 You can use the USBMIDI interface to send and receive MIDI messages over USB using the standard USB-MIDI protocol.
 
@@ -8,7 +8,7 @@ Examples of tasks you can perform using this library include sending MIDI messag
 
 ## USBMIDI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_i_d_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/class_u_s_b_m_i_d_i.html)
 
 The two examples below use a program called "Anvil Studio 32-bit" to play MIDI notes from an Mbed board through the host PC. You can play back the MIDI notes through headphones or speakers by following the steps below:
 
@@ -97,98 +97,98 @@ void TakeMeOutToTheBallGame(){
     //https://www.bethsnotesplus.com/2012/09/take-me-out-to-ball-game.html
     PlayNote(C, OCTAVE5, HALF_NOTE);
     PlayNote(C, OCTAVE6, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
     PlayNote(E, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(G, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(D, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(C, OCTAVE5, HALF_NOTE);
     PlayNote(C, OCTAVE6, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
     PlayNote(E, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(G, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(G, OCTAVE5, HALF_NOTE);
     PlayNote(REST, 0, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(Gs, OCTAVE5, QUARTER_NOTE);
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(E, OCTAVE5, QUARTER_NOTE);
     PlayNote(F, OCTAVE5, QUARTER_NOTE);
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, HALF_NOTE);
     PlayNote(F, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(D, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(A, OCTAVE5, HALF_NOTE);
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(B, OCTAVE5, QUARTER_NOTE);
     PlayNote(C, OCTAVE6, QUARTER_NOTE);
-    
+
     PlayNote(D, OCTAVE6, QUARTER_NOTE);
     PlayNote(B, OCTAVE5, QUARTER_NOTE);
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
     PlayNote(E, OCTAVE5, QUARTER_NOTE);
     PlayNote(D, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(C, OCTAVE5, HALF_NOTE);
     PlayNote(C, OCTAVE6, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
     PlayNote(E, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(G, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(D, OCTAVE5, HALF_NOTE);
     PlayNote(D, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(C, OCTAVE5, HALF_NOTE);
     PlayNote(D, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(E, OCTAVE5, QUARTER_NOTE);
     PlayNote(F, OCTAVE5, QUARTER_NOTE);
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
     PlayNote(B, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(C, OCTAVE6, THREE_FORTHS_NOTE);
-    
+
     PlayNote(C, OCTAVE6, THREE_FORTHS_NOTE);
-    
+
     PlayNote(C, OCTAVE6, QUARTER_NOTE);
     PlayNote(B, OCTAVE5, QUARTER_NOTE);
     PlayNote(A, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
     PlayNote(Fs, OCTAVE5, QUARTER_NOTE);
     PlayNote(G, OCTAVE5, QUARTER_NOTE);
-    
+
     PlayNote(A, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(B, OCTAVE5, THREE_FORTHS_NOTE);
-    
+
     PlayNote(C, OCTAVE6, THREE_FORTHS_NOTE);
-    
+
     PlayNote(C, OCTAVE6, HALF_NOTE);
     PlayNote(REST, 0, QUARTER_NOTE);
 }

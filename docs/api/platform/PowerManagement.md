@@ -79,7 +79,7 @@ Sleep locks held:
 UNLOCK: mbed_rtx_idle.cpp, ln: 131, lock count: 1
 ```
 
-<span class="notes">**Note:** Sleep tracing is a debug feature and should only be enabled during development cycle. Its heavy use of UART can affect the device performance.</span>
+<span class="notes">**Note:** Sleep tracing is a debug feature and should only be enabled during the development cycle. Its heavy use of UART can affect the device performance.</span>
 
 ## System reset
 
@@ -93,7 +93,7 @@ After the call the processor and most components will reset, but it will not aff
 
 ## Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.14/mbed-os-api-doxy/group__platform__power__mgmt.html)
 
 ## Example
 

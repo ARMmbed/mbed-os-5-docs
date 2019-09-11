@@ -1,6 +1,6 @@
 # GAP
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_gap.png)<span>Gap class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/class_gap.png)<span>Gap class hierarchy</span></span>
 
 The Generic Access Profile is the layer of the stack that handles connectivity tasks. This includes link establishment and termination, advertising and scanning.
 
@@ -62,11 +62,11 @@ There are two separate MTUs to consider: the `ATT_MTU` (maximum attribute size) 
 
 The default value of data length supported by all controllers is 23 octets. If both controllers support data length extension and a higher value is negotiated, the BLE stack will call `onDataLengthChange` in the `Gap::EventHandler` registered by the user.
 
-`ATT_MTU` and data length are independent of each other. 
+`ATT_MTU` and data length are independent of each other.
 
 ## GAP class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_gap.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.14/mbed-os-api-doxy/class_gap.html)
 
 ## GAP example
 

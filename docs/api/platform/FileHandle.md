@@ -1,6 +1,6 @@
 # FileHandle
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
 
 For general information on [files](file.html) and [filing systems](filesystem.html) in persistent storage, see their documentation. This chapter covers the abstract API, with an emphasis on devices.
 
@@ -43,7 +43,7 @@ Portability                    | High                    | Medium               
 You can mix the APIs if you're careful, for example setting up a callback initially with `FileHandle::sigio` but performing all subsequent operations using POSIX.
 
 <span class="notes">**Note:** `errno` is not thread-local on all toolchains. This may cause problems with error handling if multiple threads are using POSIX or C file APIs simultaneously.</span>
- 
+
 ### Mapping between APIs
 
 Calls are provided to attach already-opened lower levels to the higher levels:
@@ -128,7 +128,7 @@ namespace
 }
 ```
 
-Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
+Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer.
 
 ### Polling and nonblocking
 
@@ -147,7 +147,7 @@ Important notes on sigio:
 - The sigio may be issued from interrupt context. You cannot portably issue `read` or `write` calls directly from this callback, so you should queue an [`Event`](event.html) or wake a thread to perform the `read` or `write`.
 - The sigio callback is only guaranteed when a `FileHandle` _becomes_ readable or writable. If you do not fully drain the input or fully fill the output, no sigio may be generated. This is also important on start-up - don't wait for sigio before attempting to read or write for the first time, but only use it as a "try again" signal after seeing an `EAGAIN` error.
 - Spurious sigios are permitted - you can't assume data will be available after a sigio.
-- Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`. 
+- Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`.
 
 Ordinary files do not generate sigio callbacks because they are always readable and writable.
 
@@ -170,10 +170,10 @@ Note that `FileHandle` implementations derived from `Stream`, such as `Serial`, 
 - `Stream` returns 0 from `isatty`, which can slightly confuse the C library (for example defeating newline conversion and causing buffering).
 
 As such, you can only use `Stream`-based devices for blocking I/O, such as through the C library, so we don't recommend use of `Stream` to implement a `FileHandle` for more general use.
- 
+
 ## FileHandle class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.14/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
 
 ## FileHandle using C library example
 
@@ -198,10 +198,10 @@ int main()
 {
     // Perform device-specific setup
     device.set_baud(19200);
-    
+
     // Once set up, access through the C library
     FILE *devin = fdopen(&device, "r");
-    
+
     while (1) {
         putchar(fgetc(devin));
         led2 = !led2;
@@ -240,10 +240,10 @@ int main()
 {
     // UARTSerial-specific method - all others are from FileHandle base class
     device.set_baud(19200);
-    
+
     // Ensure that device.read() returns -EAGAIN when out of data
     device.set_blocking(false);
-    
+
     // sigio callback is deferred to event queue, as we cannot in general
     // perform read() calls directly from the sigio() callback.
     device.sigio(mbed_event_queue()->event(callback_ex));

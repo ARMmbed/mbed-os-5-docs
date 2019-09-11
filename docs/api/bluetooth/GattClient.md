@@ -34,7 +34,7 @@ Clients register for these updates by setting the Client Characteristic Configur
 
 ## GattClient class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_gatt_client.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.14/mbed-os-api-doxy/class_gatt_client.html)
 
 ## GattClient example
 

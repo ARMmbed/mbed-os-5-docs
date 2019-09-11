@@ -30,7 +30,7 @@ Hardware Independent Watchdog support.
 
 You can find the API and specification for the Watchdog API in its HAL API reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/group__hal__watchdog.html)
 
 To enable Watchdog support in Mbed OS, add the `WATCHDOG` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -44,4 +44,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-watchdog*"
 
 For more details, please see:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__watchdog__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/group__hal__watchdog__tests.html)
