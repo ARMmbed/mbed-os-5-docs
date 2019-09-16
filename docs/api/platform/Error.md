@@ -434,13 +434,13 @@ void clear_reboot_count() {
 
 The example application below demonstrates usage of error handling APIs:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.14/main.cpp)
 
 ## Crash reporting example
 
 The example application below demonstrates the crash reporting feature:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-5.12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-5.14/main.cpp)
 
 ## List of Mbed OS defined error codes and descriptions
 
