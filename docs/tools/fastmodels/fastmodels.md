@@ -28,16 +28,16 @@ Examples you can successfully run include:
 
 - [`mbed-os-example-blinky`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/).
 - [`mbed-os-example-tls`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/).
-- [`mbed-os-example-devicekey`](https://os.mbed.com/docs/development/apis/devicekey.html#devicekey-example).
-- [`mbed-os-example-nvstore`](https://os.mbed.com/docs/development/apis/nvstore.html#nvstore-example).
-- [`mbed-os-example-thread-statistics`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#thread-statistics-example).
-- [`mbed-os-example-sys-info`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#system-information-example).
-- [`mbed-os-example-cpu-usage`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#cpu-usage-example).
-- [`mbed-os-example-cpu-stats`](https://os.mbed.com/docs/development/apis/mbed-statistics.html#cpu-statistics-example).
-- [`mbed-os-example-error-handling`](https://os.mbed.com/docs/development/apis/error-handling.html#error-handling-example).
-- [`mbed-os-example-filesystem`](https://os.mbed.com/docs/development/apis/filesystem.html#file-system-example).
-- [`mbed-os-example-blockdevice`](https://os.mbed.com/docs/development/apis/blockdevice.html#blockdevice-example).
-- [`mbed-os-example-sockets`](https://os.mbed.com/docs/development/apis/socket.html#socket-example).
+- [`mbed-os-example-devicekey`](../apis/devicekey.html#devicekey-example).
+- [`mbed-os-example-nvstore`](../apis/nvstore.html#nvstore-example).
+- [`mbed-os-example-thread-statistics`](../apis/mbed-statistics.html#thread-statistics-example).
+- [`mbed-os-example-sys-info`](../apis/mbed-statistics.html#system-information-example).
+- [`mbed-os-example-cpu-usage`](../apis/mbed-statistics.html#cpu-usage-example).
+- [`mbed-os-example-cpu-stats`](../apis/mbed-statistics.html#cpu-statistics-example).
+- [`mbed-os-example-error-handling`](../apis/error-handling.html#error-handling-example).
+- [`mbed-os-example-filesystem`](../apis/filesystem.html#file-system-example).
+- [`mbed-os-example-blockdevice`](../apis/blockdevice.html#blockdevice-example).
+- [`mbed-os-example-sockets`](../apis/socket.html#socket-example).
 
 The following examples use `mbed-os-example-blinky`.
 
