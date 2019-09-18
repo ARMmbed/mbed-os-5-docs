@@ -179,4 +179,4 @@ The TLS handshake can also perform the second stage of verification where the cl
 
 To achieve this, you must call the TLS socket's `set_client_cert_key()` function, which stores your key and certificate pair within the TLS socket. This may be required in cases where the server needs to verify the client's identity for secure communication, for example when your IoT device wants to send (and not just receive) some data to the server.
 
-The mechanism of providing the client's key and certificate to TLS socket is the same as in case of CA certificate. You can find examples of how and when to perform this operation in the [cloud demo applications](https://github.com/coisme/Mbed-to-AWS-IoT).
+The mechanism of providing the client's key and certificate to TLS socket is the same as in case of CA certificate.
