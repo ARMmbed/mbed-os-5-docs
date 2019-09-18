@@ -1014,6 +1014,9 @@
                         },
                         {
                             "path": "docs/tutorials/using_apis/intro-to-lora.md"
+                        },
+                        {
+                            "path": "docs/tutorials/using_apis/connectivity/tls_tutorial.md"
                         }
                     ]
                 },
