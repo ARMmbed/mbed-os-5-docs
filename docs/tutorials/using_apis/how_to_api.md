@@ -8,6 +8,7 @@ This section contains step-by-step tutorials that show you how to perform specif
 - [Light control using mesh](../tutorials/light-control.html).
 - [BLE](ble-tutorial.html).
 - [LoRa Network](LoRa-tutorial.html).
+- [Using Mbed TLS to communicate securely](../tutorials/tls-tutorial.html).
 
 ___
 
