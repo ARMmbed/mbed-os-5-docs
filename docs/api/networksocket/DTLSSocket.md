@@ -16,7 +16,7 @@ To use secure DTLS connections, application use the `DTLSSocketWrapper` through 
 
 Please see the TLSSocket example:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/master/)](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/mbed-os-5.12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/master/)](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/mbed-os-5.14/main.cpp)
 
 ## Related content
 
