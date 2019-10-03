@@ -203,6 +203,8 @@ This is also why the MCU wakes up from sleep every millisecond when tickless is 
 
 For more information on the design of tickless and the sleep manager, please see the [office hours video with Bartek Szatkowski](https://www.youtube.com/watch?v=OFfOlBaegdg).
 
+For information about the tradeoff between power savings and memory footprint in tickless mode, please see the [power management API reference](../apis/power-management-sleep.html).
+
 ### Hibernate mode without RAM retention
 
 All sleep modes in Mbed OS are implemented with RAM retention, but some MCUs have even lower power modes that completely stop the MCU and won't retain any information. After waking up, the MCU starts execution from the beginning of the program. Typically the only way to wake up from this mode is through an interrupt on a wake-up pin or from the low power ticker.
