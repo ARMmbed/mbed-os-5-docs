@@ -81,6 +81,20 @@ UNLOCK: mbed_rtx_idle.cpp, ln: 131, lock count: 1
 
 <span class="notes">**Note:** Sleep tracing is a debug feature and should only be enabled during development cycle. Its heavy use of UART can affect the device performance.</span>
 
+There is a small trade-off between power saving and memory footprint. When tickless mode is enabled, the memory footprint of your application is slightly bigger. Therefore, if tickless mode does not fit your application requirement, you can disable tickless and achieve further memory optimization. To do that, override the default configuration in the application `mbed_app.json`:
+
+```json
+{
+    "target_overrides": {
+        "*": {
+            "target.macros_remove": ["MBED_TICKLESS"]
+        }
+    }
+}
+```
+
+Depending on the target, the memory saving is up to 312 bytes for static RAM and up to 832 bytes for flash memory.
+
 ## System reset
 
 Mbed OS provides a standardized call to power cycle the system:
