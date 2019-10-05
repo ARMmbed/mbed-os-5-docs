@@ -12,7 +12,7 @@ You can use the USBHID class to turn an Mbed board into an HID (Human Interface 
 
 ### main.cpp   
 
-```C++ TODO
+```C++
 #include <stdio.h>
 
 #include "mbed.h"
