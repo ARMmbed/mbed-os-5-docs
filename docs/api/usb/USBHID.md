@@ -12,44 +12,49 @@ You can use the USBHID class to turn an Mbed board into an HID (Human Interface 
 
 ### main.cpp   
 
-```C++ TODO
+```C++
+#include <stdio.h>
+
 #include "mbed.h"
-#include "USBHID.h"
+#include "drivers/USBHID.h"
 
-//We declare a USBHID device. By default input and output reports are 64 bytes long.
-USBHID hid(true, 8, 8);
+// Declare a USBHID device
+USBHID HID(8, 8, 0x1234, 0x0006, 0x0001, true);
 
-Serial pc(USBTX, USBRX);
+HID_REPORT output_report = {
+    .length = 8,
+    .data = {0}
+};
+HID_REPORT input_report = {
+    .length = 0,
+    .data = {0}
+};
 
-//This report will contain data to be sent
-HID_REPORT send_report;
-HID_REPORT recv_report;
+DigitalOut led_out(LED1);
 
-DigitalOut l1(LED1);
-
-int main(void) {
-    send_report.length = 8;
-
+int main(void)
+{
     while (1) {
 
-        //Fill the report
-        for (int i = 0; i < send_report.length; i++)
-            send_report.data[i] = rand() & 0xff;
+        // Fill the report
+        for (int i = 0; i < output_report.length; i++) {
+            output_report.data[i] = rand() & UINT8_MAX;
+        }
 
-        //Send the report
-        hid.send(&send_report);
+        // Send the report
+        HID.send(&output_report);
 
-        //try to read a msg
-        if(hid.read_nb(&recv_report)) {
-            l1 = !l1;
-            for(int i = 0; i < recv_report.length; i++) {
-                pc.printf("%d ", recv_report.data[i]);
+        // Try to read a msg
+        if (HID.read_nb(&input_report)) {
+            led_out = !led_out;
+            for (int i = 0; i < input_report.length; i++) {
+                printf("%d ", input_report.data[i]);
             }
-            pc.printf("\r\n");
+            printf("\r\n");
         }
     }
 }
-```   
+```
 
 ### USBHID.py   
 
@@ -61,7 +66,7 @@ from pywinusb import hid
 # Whenever the host computer receives data from the
 # Mbed board, the received data is printed
 def on_data(data):
-    print("Got message %s" % data)
+    print(f"Got message {data}")
 
 '''
 Gets all HIDs currently connected to host computer,
@@ -69,30 +74,25 @@ and sets the first device with string "mbed" in its
 vendor name equal to variable mbed. This variable
 will be used to send data to the Mbed board.
 '''
-all_devices = hid.find_all_hid_devices()
-mbeds = [dev for dev in all_devices if dev.vendor_name.find("mbed") >= 0]
-if len(mbeds) == 0:
-    print("No HID devices found")
-    exit(-1)
-mbed = mbeds[0]
+all_hid_devices = hid.find_all_hid_devices()
+mbed_devices = [d for d in all_hid_devices if "mbed" in d.vendor_name]
 
-# Sends 8 bytes of data to the Mbed board
-# The Mbed board should receive the data "1 2 3 4 5 6 7 8"
-mbed.open()
-mbed.set_raw_data_handler(on_data)
-message = bytearray(9)
-message[1] = 1
-message[2] = 2
-message[3] = 3
-message[4] = 4
-message[5] = 5
-message[6] = 6
-message[7] = 7
-message[8] = 8
+if mbed_devices is None:
+    raise ValueError("No HID devices found")
 
-mbed.find_output_reports()[0].send(message)
+# A buffer of bytes representing the values 1-8
+# The first byte is the report ID which must be 0
+buffer = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-```   
+mbed_devices[0].open()
+# Set custom raw data handler
+mbed_devices[0].set_raw_data_handler(on_data)
+
+# Send the message to the Mbed board
+out_report = mbed_devices[0].find_output_reports()
+out_report[0].set_raw_data(buffer)
+out_report[0].send()
+```
 
 ## Related content
 
