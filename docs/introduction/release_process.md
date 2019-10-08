@@ -13,7 +13,7 @@ They can include:
 
 ## Feature release
 
-Feature releases occur once a quarter. As their name suggests, feature releases introduce new features to the code base. Unlike major releases, feature releases are backward compatible (source compatible). The second digit in the release number indicates the feature release. For example, Mbed OS 5.1.0 indicates major version 5, feature version 1.
+As their name suggests, feature releases introduce new features to the code base. Unlike major releases, feature releases are backward compatible (source compatible). The second digit in the release number indicates the feature release. For example, Mbed OS 5.1.0 indicates major version 5, feature version 1.
 
 They can include:
 
@@ -25,7 +25,7 @@ They can include:
 
 ## Patch release
 
-Patch releases occur every two weeks. They are also backward compatible (source compatible). The last digit in the release number indicates the patch release. In Mbed OS 5.2.3, `3` shows the patch release is the third release in Mbed 5.2.
+Patch releases occur on the third Wednesday of every month. They are also backward compatible (source compatible). The last digit in the release number indicates the patch release. In Mbed OS 5.2.3, `3` shows the patch release is the third release in Mbed 5.2.
 
 They can include:
 
