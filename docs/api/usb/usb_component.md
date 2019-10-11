@@ -90,6 +90,6 @@ USB components provide at least one service. When a service is available for use
 
 ## USB component and power saving
 
-Instantiated USB components prevent devices from going to deep sleep due to USBPhy holding a deep sleep lock. It is possible to temporarily disable USB using `USBDevice::deinit()` to permit deep sleep. However, it is up to the user to make sure all the data transfers have concluded to avoid any data corruption. The USB host controls the enumeration process so it chooses when and how the device will be restored. Even if the device state is returned to what it was before the disconnect, the host PC software may not be where it left off - for example a serial port may need to be re-opended by the user.
+Some instantiated USB components prevent devices from going to deep sleep because their `USBPhyHw` implentation holds a deep sleep lock. You can temporarily disable USB using `USBDevice::deinit()` to permit deep sleep. However, you must make sure all the data transfers have concluded to avoid any data corruption. The USB host controls the enumeration process, so it chooses when and how to restore the device. Even if the device state is returned to what it was before the disconnect, the host PC software may not be where it left off - for example, you may need to reopen a serial port.
 
-`USBDevice::connect()` can be used to resume USB components operation when USB power is detected after it was previously suspended via `USBDevice::deinit()`.
+You can use `USBDevice::connect()` to resume USB component operation when USB power is detected after it was previously suspended through `USBDevice::deinit()`.
