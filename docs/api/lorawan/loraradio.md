@@ -12,7 +12,7 @@ To configure this class, please see the [LoRa configuration documentation](../re
 
 ## LoRaRadio example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-5.12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-5.14/main.cpp)
 
 ## Related content
 

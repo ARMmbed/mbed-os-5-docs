@@ -15,11 +15,10 @@ To configure this class, please see the [LoRa configuration documentation](../re
 
 Please visit our Arm Mbed Online Compiler example, and follow the instructions in the `README.md`.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-5.12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-5.14/main.cpp)
 
 ## Related content
 
 - [LoRa configuration documentation](../reference/lorawan-configuration.html).
 - [LoRa architecture](../reference/lora-tech.html).
 - End-to-end [LoRa on Arm Mbed tutorial](../tutorials/LoRa-tutorial.html).
-- [Blog post: Adding a LoRaWAN stack to Mbed OS 5.8](https://os.mbed.com/blog/entry/Adding-a-LoRaWAN-stack-to-Mbed-OS-58/).

@@ -14,7 +14,7 @@ Socket statistics are stored in an internal data buffer and maintained for close
 
 Here is an example to collect socket statistics.
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-socket-stats)](https://github.com/ARMmbed/mbed-os-example-socket-stats/blob/mbed-os-5.12/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-socket-stats)](https://github.com/ARMmbed/mbed-os-example-socket-stats/blob/mbed-os-5.14/main.cpp)
 
 ## Related content
 

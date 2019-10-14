@@ -52,7 +52,7 @@ In the current implementation, a bootloader does not exist in single and dual V7
 
 ## PSA initial attestation example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-attestation/blob/attestation_example)](https://github.com/ARMmbed/mbed-os-example-attestation/blob/mbed-os-5.12/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-attestation/blob/attestation_example)](https://github.com/ARMmbed/mbed-os-example-attestation/blob/mbed-os-5.14/main.cpp)
 
 ## Related content
 

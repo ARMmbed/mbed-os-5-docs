@@ -12,6 +12,6 @@ The iBeacon class builds an advertising payload mimicking an iBeacon and assigns
 
 ## iBeacon example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_Beacon/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.12/BLE_Beacon/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_Beacon/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.14/BLE_Beacon/source/main.cpp)
 
 <span class="notes">**Note:** You can find more information at the [Apple iBeacon page](https://developer.apple.com/ibeacon/).</span>

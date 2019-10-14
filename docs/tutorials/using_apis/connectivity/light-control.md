@@ -11,7 +11,7 @@ cd mbed-os-example-mesh-minimal
 
 Or click `Import into Mbed IDE` in the example below:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-5.10.0/mesh_led_control_example.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-5.14/mesh_led_control_example.cpp)
 
 ## Change the channel settings (optional)
 
@@ -114,7 +114,7 @@ You also need to check how LEDs and buttons are configured for your hardware, an
 
 To run a 6LoWPAN-ND network, you need a working RF driver for Nanostack. This example uses the Atmel AT86RF233 by default.
 
-To change the RF driver, modify the `mbed_app.json` file by setting preferred RF driver `provide_default` value to true, For example, to use MCR20a RF driver: 
+To change the RF driver, modify the `mbed_app.json` file by setting preferred RF driver `provide_default` value to true, For example, to use MCR20a RF driver:
 
 ```json
 "atmel-rf.provide-default": false,
@@ -224,4 +224,3 @@ $ mbed compile -m KW24D -t IAR --profile release
 ## Troubleshooting
 
 If you have problems, you can review the [documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
-
