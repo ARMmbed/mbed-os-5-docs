@@ -58,13 +58,13 @@ The class's member functions can be divided by purpose:
 
 Here is an example demonstrating how you can create a BLE beacon.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_Beacon/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.12/BLE_Beacon/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_Beacon/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.14/BLE_Beacon/source/main.cpp)
 
 ## Example: BLE heart rate monitor
 
 Here is an example demonstrating how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_HeartRate/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.12/BLE_HeartRate/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_HeartRate/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.14/BLE_HeartRate/source/main.cpp)
 
 ## Related content
 
