@@ -87,3 +87,9 @@ int main(void)
 The `connect()` and `disconnect()` functions control the state of the physical USB line to the host. When a device is connected, it is visible to the host PC to which it is attached. Once connected, the host PC must finish setup.
 
 USB components provide at least one service. When a service is available for use, it is `ready`. For example, the USBSerial component enters the `ready` state after a serial port has been opened on the host PC. To determine whether a USB component's service is ready, you can use the `ready()` function. It returns `true` if the USB component is ready for use and `false` otherwise. Some components provide multiple services, such as USBAudio, which can send or receive data and has two separate ready functions - `read_ready()` and `write_ready()`. Furthermore, for each `ready()` function, there is also a corresponding `wait_ready()` function, which you can use to block until the USB component's service is available.
+
+## USB component and power saving
+
+Some instantiated USB components prevent devices from going to deep sleep because their `USBPhyHw` implentation holds a deep sleep lock. You can temporarily disable USB using `USBDevice::deinit()` to permit deep sleep. However, you must make sure all the data transfers have concluded to avoid any data corruption. The USB host controls the enumeration process, so it chooses when and how to restore the device. Even if the device state is returned to what it was before the disconnect, the host PC software may not be where it left off - for example, you may need to reopen a serial port.
+
+You can use `USBDevice::connect()` to resume USB component operation when USB power is detected after it was previously suspended through `USBDevice::deinit()`.
