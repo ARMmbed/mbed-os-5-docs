@@ -8,12 +8,6 @@ To use secure TLS connections, the application uses the `TLSSocketWrapper` throu
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.12/mbed-os-api-doxy/class_t_l_s_socket.html)
 
-## TLSSocket example
-
-The TLSSocket example creates TLS connection to the HTTPS server and receives a simple response from the server:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/master/)](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/mbed-os-5.12/main.cpp)
-
 ## Related content
 
 - [SecureSocket](../reference/secure-socket.html).
