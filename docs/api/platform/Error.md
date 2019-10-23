@@ -430,6 +430,12 @@ void clear_reboot_count() {
 }
 ```
 
+## Error handling example
+
+The example application below demonstrates usage of error handling APIs:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.12/main.cpp)
+
 ## Crash reporting example
 
 The example application below demonstrates the crash reporting feature:
