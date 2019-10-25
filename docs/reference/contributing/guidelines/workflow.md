@@ -126,7 +126,7 @@ A bug fix is a change that fixes a specific defect in the codebase with backward
 
 ##### Refactor
 
-A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this are moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases.
+A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this are moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. 
 
 ##### Target update
 
@@ -146,10 +146,9 @@ Test updates include updates to a new test unit or test case.
 
 This can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
 
-A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, support for most targets and comprehensive test coverage. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases.
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, support for most targets and comprehensive test coverage. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. 
 
-We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or 
-tech leads may create the new branches by following the naming convention: "feature-" prefix.
+We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or Mbed OS technical leads may create the new branches by following the naming convention: "feature-" prefix.
 
 Each feature has a Mbed OS technical lead. This person is responsible for:
 
