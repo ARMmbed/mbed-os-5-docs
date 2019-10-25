@@ -150,11 +150,12 @@ A feature contribution contains a new API, capability or behavior. It does not b
 
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or 
 tech leads may create the new branches by following the naming convention: "feature-" prefix.
-Each 
-Each feature has a tech lead. This person is responsible for:
+
+Each feature has a Mbed OS technical lead. This person is responsible for:
 
 - Rebasing often to track master development.
-- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
+- Reviewing any addition to the feature branch. 
+- Approving all feature change pull requests.
 
 #### Major update
 
