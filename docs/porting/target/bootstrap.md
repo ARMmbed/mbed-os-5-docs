@@ -10,6 +10,10 @@ The startup file contains interrupt vectors and low-level core and platform init
 
 For more information about startup files, please see the [CMSIS documentation](http://www.keil.com/pack/doc/CMSIS/Core/html/startup_s_pg.html).
 
+The template startup file in the CMSIS documentation includes heap and stack regions in the assembler. Omit these regions in Mbed OS because they come from the [linker script](#linker-scripts).
+
+The initial stack pointer the vector table specifies should be derived from the linker script (as `|ARM_LIB_STACK$$ZI$$Limit|`, `__StackTop` or `sfe(CSTACK)`), rather than hardcoded in the startup file.
+
 ### Linker scripts
 
 After adding the core files, the next step is to add linker scripts for Mbed OS. To do this, you can either use the linker scripts below and change the defines for your target or you can  modify an existing linker script to be compatible with Mbed OS. You need to provide a version of the linker script for each Mbed OS supported toolchain.
