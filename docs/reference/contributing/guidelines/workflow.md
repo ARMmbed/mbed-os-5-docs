@@ -63,9 +63,7 @@ If commits do not follow the above guidelines, we may request that you modify th
 
 ## Pull request template
 
-The following template is automatically provided on the raising of a pull request against mbed-os.
-The details required will depend on the type of pull request being raised. See below for a more detailed
-explanation of the requirements.
+The following template is automatically provided when you raise a pull request against `mbed-os`. The details required depend on the type of pull request you create:
 
     ### Description (*required*)
 
@@ -107,14 +105,14 @@ explanation of the requirements.
 
 ### Description field
 
-There are two parts to the description, both of which are required.
-The first is a summary of the pull request. This should clearly state the reason for the PR and what 
-the changes entail. The second part requires the author to state what, if any, documentation changes 
-also need to be made to accompany the changes.
+There are two parts to the description, both of which are required:
+
+- The summary of the pull request clearly states the reason for the PR and what the changes involve.
+- The documentation section requires you to state what, if any, documentation changes need to accompany the code changes.
 
 ### Pull request type
 
-There are three pull request types and these correspond to the 3 main categories specified in semantic versionning, Patch, Feature (Minor) and Major.
+There are three pull request types, and these correspond to the three main categories specified in semantic versioning: patch, feature (minor) and major.
 
 #### Patch update
 
