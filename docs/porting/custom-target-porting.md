@@ -152,7 +152,7 @@ You may be wondering why there are more directory levels than target configurati
       
 1. Modify the files.
 
-   `PinNames.h` is the most common file to be edited. For our example, the ImaginaryBoard is using I2C but connected to different supported signals. Change the I2C pin macro definitions from:
+   `PinNames.h` is the most common file to be edited. For our example, the ImaginaryBoard uses I2C connected to different supported signals. Change the I2C pin macro definitions from:
    
    ```
    I2C_SCL     = D15,
