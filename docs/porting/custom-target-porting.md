@@ -99,7 +99,7 @@ Assuming you have Mbed CLI installed, follow these steps to make the port.
    
    - (Optional) You can also use `device_has_add` to add additional drivers.
 
-   <span class="notes">**Note:** If you choose to add a driver, you may have to provide the driver implementation if it is not already available for your hardware.</span>
+   <span class="notes">**Note:** If you choose to add a driver that is not already available for your hardware, you will have to provide the driver implementation.</span>
 
    - (Optional) Similarly, you can use `features_add`, `features_remove`, `components_add`, `components_remove`, `macros_add` and `macros_remove` to add/remove configurations.
 
