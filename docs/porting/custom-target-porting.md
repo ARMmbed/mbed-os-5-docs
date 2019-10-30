@@ -10,7 +10,7 @@ This tutorial covers the most common methods used to create a custom port with `
 
 As an example, consider a situation in which you are creating a new board based on an existing Mbed Enabled board. For this tutorial, consider a new board called `ImaginaryBoard` that is based on [DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/).
 
-`ImaginaryBoard` shares most of the same features of DISCO-L475VG-IOT01A, but it does not use `AnalogOut`, `AnalogIn`, `CAN` or `USB`. Some pins are also connected differently on the new board.
+`ImaginaryBoard` shares most of the features of DISCO-L475VG-IOT01A, but it does not use `AnalogOut`, `AnalogIn`, `CAN` or `USB`. Some pins are also connected differently on the new board.
 
 Assuming you have Mbed CLI installed, follow these steps to make the port.
 
