@@ -4,7 +4,7 @@ When designing a custom board based on an existing Mbed Enabled board, you may n
 
 Mbed OS supports target inheritance, which allows you to extend an existing microcontroller (MCU) target and just add software and configurations required for your board. You have the ability to add a file named `custom_target.json` to your project, which can store your custom target configurations without the need to modify `targets.json`.
 
-This tutorial provides a quick overview on how to create a custom port using `custom_target.json`. It covers the most common methods. For detailed information covering all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
+This tutorial covers the most common methods used to create a custom port with `custom_target.json`. For detailed information covering all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
 ## Extending an existing MCU target configuration
 
