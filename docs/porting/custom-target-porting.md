@@ -120,7 +120,7 @@ For example, in the `mbed-os/targets` folder, the target directories for DISCO_L
 
 Boards typically inherit files that support the MCU, MCU family and MCU vendor. When adding a new board, you need to add a new set of files for the board.
 
-You may be wondering why there are more directory levels than target configuration levels. This is because many targets use the `extra_labels_add` feature in the target configuration. The following keywords `STM32L4`, `STM32L475xG`, `STM32L475VG` resolve to `TARGET_STM32L4`, `TARGET_STM32L475xG`, `TARGET_STM32L475VG` respectively. With those labels applied, these directory names get included in the build for this target.
+You may be wondering why there are more directory levels than target configuration levels. This is because many targets use the `extra_labels_add` feature in the target configuration. The keywords `STM32L4`, `STM32L475xG`, `STM32L475VG` resolve to `TARGET_STM32L4`, `TARGET_STM32L475xG`, `TARGET_STM32L475VG` respectively. With those labels applied, these directory names get included in the build for this target.
 
 1. Create a new directory called `TARGET_IMAGINARYBOARD` at the top level of your project.
    
