@@ -224,7 +224,7 @@ You may be wondering why there are more directory levels than target configurati
 
 1. Program the board.  
 
-  You can test this simple example using a `DISCO-L475VG-IOT01A`. If you actually created a `ImaginaryBoard` board, you could use that too.  
+  You can test this simple example using a `DISCO-L475VG-IOT01A`. If you actually created an `ImaginaryBoard` board, you could use that too.  
   
   <span class="notes">**Note:** Unless your board has an Mbed Enabled debug interface, you need a method of flashing the memory on your board. </span>
   
