@@ -89,7 +89,7 @@ Assuming you have Mbed CLI installed, follow these steps to make the port.
 
    - The `macros_add` section was changed to remove `USBHOST_OTHER` because USB is not used on the new board.
 
-   - The `device_has_add` section was changed to not add the `ANALOGOUT`, `CAN`, `USBDEVICE` drivers because those features are not used on the new board.
+   - The `device_has_add` section was changed to not add the `ANALOGOUT`, `CAN`, and `USBDEVICE` drivers because those features are not used on the new board.
 
    - A new section, `device_has_remove`, was added. This removes `ANALOGIN`, `I2CSLAVE`, and `I2C_ASYNCH` drivers because these features are also not used.  The reason why `device_has_remove` is used in this case is because the board is inheriting from the MCU Family configuration `FAMILY_STM32`, which has those drivers added by default.
 
