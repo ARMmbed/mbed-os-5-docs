@@ -1,18 +1,18 @@
-# Porting Mbed OS to a custom board
+# Using Mbed OS on a custom board
 
-When designing a custom board based on an existing Mbed Enabled board, you may need to make configuration and software changes to adapt Mbed OS to run on your new board. This is called a software port. The necessary changes may include adaptations for the unique design choices you have made for your new board, such as clocking, pin connections and peripheral usage. This can often be accomplished by adding configuration and source files to an Mbed OS-based application project without the need to modify files within `mbed-os`, itself. If you don't plan to push your changes to the upstream `mbed-os` repository, this simplifies your software configuration management by allowing you to keep your new files separate.
+When designing a custom microcontroller board to run Mbed OS, you may need to make software customizations for the unique design choices you have made for your new board, such as clocking, pin connections, and peripheral usage. This can be accomplished by adding configuration and source files to an Mbed OS-based application project without the need to modify files within Mbed Os itself. If you are using Mbed OS version 5.8 and later, you can add a file named `custom_targets.json` to your project, which can store your custom target configurations. If your board is based on an existing Mbed Enabled microcontroller, you can simply extend that board configuration without the need to implement all the files yourself.
 
-Mbed OS supports target inheritance, which allows you to extend an existing microcontroller (MCU) target and just add software and configurations required for your board. You have the ability to add a file named `custom_target.json` to your project, which can store your custom target configurations without the need to modify `targets.json`.
-
-This tutorial covers the most common methods used to create a custom port with `custom_target.json`. For detailed information covering all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
+This tutorial covers the most common methods used to create a custom port of Mbed OS when starting from an existing Mbed Enabled board. For detailed information on how to create a port from scratch, go to the [Mbed Porting guide](../porting/index.html). Additionally, not all possible aspects of target configuration are covered. For detailed information on all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
 ## Extending an existing MCU target configuration
 
-As an example, consider a situation in which you are creating a new board based on an existing Mbed Enabled board. For this tutorial, consider a new board called `ImaginaryBoard` that is based on [DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/).
+Consider a situation in which you are creating a new board based on an existing Mbed Enabled board. For this tutorial, we will list the steps to create the software for a new board we will call `ImaginaryBoard`. This board will be based on [DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). It will share most of the features of DISCO-L475VG-IOT01A, but it does not use `AnalogOut`, `AnalogIn`, `CAN`, or `USB`. Some pins are connected differently on the new board. 
 
-`ImaginaryBoard` shares most of the features of DISCO-L475VG-IOT01A, but it does not use `AnalogOut`, `AnalogIn`, `CAN` or `USB`. Some pins are also connected differently on the new board.
+Follow these steps to create a custom port for Mbed OS:
 
-Assuming you have Mbed CLI installed, follow these steps to make the port.
+### Get everything ready
+
+1. [Install Mbed CLI](../tools/installation-and-setup.html) if you don't already have it.
 
 1. (Optional) Create a new Mbed program (for example, `mbed-os-imaginary-port`).
 
@@ -20,11 +20,11 @@ Assuming you have Mbed CLI installed, follow these steps to make the port.
 
    ```
    mbed new --program mbed-os-imaginary-port
-   ```
-  
-   This command imports `mbed-os` from the [official Mbed OS source repository](https://github.com/armmbed/mbed-os) into a new directory called `mbed-os-imaginary-port`.
 
-   Now, change directories into your new project:  
+   ```
+   This command will create a new program folder called `mbed-os-imaginary-port` and then import `mbed-os` from the [official Mbed OS source repository](https://github.com/armmbed/mbed-os) into it.
+
+1. Change directories into your new project:
 
   ```
   cd mbed-os-imaginary-port
@@ -32,11 +32,13 @@ Assuming you have Mbed CLI installed, follow these steps to make the port.
 
 1. Create a new file named `custom_targets.json` at the same level as the `mbed-os` directory:
 
-   Inspect the contents of `mbed-os/targets/targets.json`. For this example, search for `DISCO_L475VG_IOT01A`.
+1. Inspect the contents of `mbed-os/targets/targets.json`. For this example, search for `DISCO_L475VG_IOT01A`.
 
-   Copy the contents from the `DISCO_L475VG_IOT01A` section into your `custom_targets.json` file. Be sure to include brackets `{ }` surrounding the content.
+1. Copy the contents from the `DISCO_L475VG_IOT01A` section into your `custom_targets.json` file. Be sure to include brackets `{ }` surrounding the content.
 
-   Then make changes for your board. For example, after making changes, the full contents look like this:
+### Start customizing
+
+1. Now make changes to `custom_targets.json` for your board. For example, after making changes, the full contents look like this:
    
    ```
    {
@@ -83,31 +85,42 @@ Assuming you have Mbed CLI installed, follow these steps to make the port.
 
    Let's review the changes one by one.
 
+#### Things changed
+
    - The board name was changed from `DISCO_L475VG_IOT01A` to `IMAGINARYBOARD` so the board can be uniquely identified.
 
-   - The `detect_code` was changed from `0764` to `1234`. The `detect_code` is a unique number that identifies the board to the Mbed OS test tools. This number is typically built into the debug interface.
+   - The `detect_code` was changed from `0764` to `1234`. The `detect_code` is a unique number that identifies the board to the Mbed OS test tools. For Mbed Enabled boards, this number is exposed through the debug interface with Mbed CLI by typing `mbedls`.
 
    - The `macros_add` section was changed to remove `USBHOST_OTHER` because USB is not used on the new board.
 
    - The `device_has_add` section was changed to not add the `ANALOGOUT`, `CAN`, and `USBDEVICE` drivers because those features are not used on the new board.
 
-   - A new section, `device_has_remove`, was added. This removes `ANALOGIN`, `I2CSLAVE`, and `I2C_ASYNCH` drivers because these features are also not used.  The reason why `device_has_remove` is used in this case is because the board is inheriting from the MCU Family configuration `FAMILY_STM32`, which has those drivers added by default.
+#### Things added
 
-   All the other configurations for the board are inherited from the MCU Family configuration called `FAMILY_STM32`.  
+    - A new section, `device_has_remove`, was added. This removes the `ANALOGIN`, `I2CSLAVE`, and `I2C_ASYNCH` drivers because these features are also not used. The reason why `device_has_remove` is used in this case is because the board is inheriting from the MCU Family configuration `FAMILY_STM32`, which has those drivers added by default.
 
-   Here are some other typical changes that might be needed.
+
+#### Other things you may need to add 
+
+    Here are some other changes that might also be needed.
    
-   - (Optional) You can also use `device_has_add` to add additional drivers.
+    - You can also use `device_has_add` to add additional drivers.
 
-   <span class="notes">**Note:** If you choose to add a driver that is not already available for your hardware, you will have to provide the driver implementation.</span>
+    <span class="notes">**Note:** If you choose to add a driver that is not already available for your hardware, you will have to provide the driver implementation.</span>
 
-   - (Optional) Similarly, you can use `features_add`, `features_remove`, `components_add`, `components_remove`, `macros_add` and `macros_remove` to add or remove configurations.
+    - You can use `features_add`, `features_remove`, `components_add`, `components_remove`, `macros_add` and `macros_remove` to add or remove configurations.
+
+
+#### Where other configurations live 
+
+    All the other configurations for the board are inherited from the MCU Family configuration called `FAMILY_STM32`.
+
 
 ## Configuring the target code directories
 
-In some cases, the target source code directories follow a similar structure as the target configuration, but they could have a few more levels.
+   In some cases, the target source code directories follow a similar structure as the target configuration, but they could have a few more levels.
 
-For example, in the `mbed-os/targets` folder, the target directories for DISCO_L475VG_IOT01A follow this pattern:
+   For example, in the `mbed-os/targets` folder, the target directories for DISCO_L475VG_IOT01A follow this pattern:
 
    ```
    mbed-os
@@ -118,41 +131,33 @@ For example, in the `mbed-os/targets` folder, the target directories for DISCO_L
              |                    |_TARGET_DISCO_L475VG_IOT01A     <- Board
    ```
 
-Boards typically inherit files that support the MCU, MCU family and MCU vendor. When adding a new board, you need to add a new set of files for the board.
+    Boards typically inherit files that support the MCU, MCU family, and MCU vendor. When adding a new board, you need to add a new set of files for the board.
 
-You may be wondering why there are more directory levels than target configuration levels. This is because many targets use the `extra_labels_add` feature in the target configuration. The keywords `STM32L4`, `STM32L475xG`, `STM32L475VG` resolve to `TARGET_STM32L4`, `TARGET_STM32L475xG`, `TARGET_STM32L475VG` respectively. With those labels applied, these directory names get included in the build for this target.
+    You may be wondering why there are more directory levels than target configuration levels. This is because many targets utilize the `extra_labels_add` feature in the target configuration. The keywords `STM32L4`, `STM32L475xG`, `STM32L475VG` resolve to `TARGET_STM32L4`, `TARGET_STM32L475xG`, `TARGET_STM32L475VG` respectively. With those labels applied, these directory names get included in the build for this target.
 
-1. Create a new directory called `TARGET_IMAGINARYBOARD` at the top level of your project.
-   
-   Your directory should look something like this:
-   
-   ```
-   custom_target.json
-   TARGET_IMAGINARYBOARD
-   mbed-os
-   .mbed
-   mbed_settings.py
-   mbed-os.lib
-   ```
-   
-1. Now place source files for the board.
-   
-   Inspect the files at `mbed-os\targets\TARGET_STM\TARGET_STM32L4\TARGET_STM32L475xG\TARGET_DISCO_L475VG_IOT01A`. You should find the following files or similar:
-   
-   `PeripheralNames.h`, `PeripheralPins.c`, `PinNames.h`, `system_clock.c`
-   
-   Copy the files into your new `TARGET_IMAGINARYBOARD` directory.
-   
-   The files provide these capabilities.
+
+### Get everything ready
+
+1. Create a new directory called `TARGET_IMAGINARYBOARD` at the top level of your project to store the source files for your board.
       
-   - `PeripheralNames.h` describes the available peripherals and their base addresses.
-   - `PeripheralPins.c` describes the available pins and their association with peripherals.
-   - `PinNames.h` sets macros for pins that define their function.
-   - `system_clock.c` vendor specific file that initializes the system and sets up the clocks.
+    Inspect the files at `mbed-os\targets\TARGET_STM\TARGET_STM32L4\TARGET_STM32L475xG\TARGET_DISCO_L475VG_IOT01A`. You should find the following files or similar:  
+   
+    `PeripheralNames.h`, `PeripheralPins.c`, `PinNames.h`, `system_clock.c`
+   
+    Copy the files into your new `TARGET_IMAGINARYBOARD` directory.
+   
+    The files provide these capabilities.
+      
+    - `PeripheralNames.h` describes the available peripherals and their base addresses.
+    - `PeripheralPins.c` describes the available pins and their association with peripherals.
+    - `PinNames.h` sets macros for pins that define their function.
+    - `system_clock.c` vendor specific file that initializes the system and sets up the clocks.
+
+### Start customizing
       
 1. Modify the files.
 
-   `PinNames.h` is the most common file to be edited. For our example, the ImaginaryBoard uses I2C connected to different supported signals. Change the I2C pin macro definitions from:
+   `PinNames.h` is the most common file to be edited. For our example, the ImaginaryBoard uses I2C but connected to different supported signals. Change the I2C pin macro definitions from:
    
    ```
    I2C_SCL     = D15,
@@ -166,9 +171,7 @@ You may be wondering why there are more directory levels than target configurati
    I2C_SDA     = PC_1,
    ```
    
-   This edit is mainly for convenience if your application code uses standard I2C pin names `I2C_SDA` and `I2C_SCL`.
-   
-   You may also choose to add or remove peripherals, add or remove pins or change the clock frequency by editing `PeripheralNames.h`, `PeripheralPins.c` or `system_clock.c`. In our example, for simplicity, we will not edit these files.
+    You may also choose to add or remove peripherals, add or remove pins, or change the clock frequency by editing `PeripheralNames.h`, `PeripheralPins.c`, or `system_clock.c`. In our example, for simplicity, we will not edit these files. 
    
 1. (Optional) Add additional files.
 
@@ -191,10 +194,10 @@ You may be wondering why there are more directory levels than target configurati
         }
     }
     ``` 
-
-    This blinks an LED. Just make sure LED1 is defined for the board.
     
-    Your directory now looks something like this:
+    This blinks an led. If `LED1` is not defined, inspect `PinNames.h` for a valid pin definition for an available led.
+       
+    Your directory should now look something like this:
     
     ```
     main.cpp
@@ -205,11 +208,11 @@ You may be wondering why there are more directory levels than target configurati
     mbed_settings.py
     mbed-os.lib
     ```
-    
-1. Compile the project.
-   
-  With the target configuration set and files added, it is ready to compile. Run the command:
 
+## Test your code 
+    
+1. Compile the application.
+   
    ```
    mbed compile -m IMAGINARYBOARD -t <toolchain>
    ```
@@ -222,9 +225,9 @@ You may be wondering why there are more directory levels than target configurati
    Image: .\BUILD\IMAGINARYBOARD\GCC_ARM\mbed-os-imaginary-port.bin
    ```
 
-1. Program the board.  
+1. Program the board.
 
-  You can test this simple example using a `DISCO-L475VG-IOT01A`. If you actually created an `ImaginaryBoard` board, you could use that too.  
+  You can test this simple example using a `DISCO-L475VG-IOT01A`. If you actually created a `ImaginaryBoard` board, you could use that too.
   
   <span class="notes">**Note:** Unless your board has an Mbed Enabled debug interface, you need a method of flashing the memory on your board. </span>
   
@@ -232,7 +235,11 @@ You may be wondering why there are more directory levels than target configurati
   
   Locate the binary file and drag it onto the disk drive name for the board (for example, `DIS_L4IOT`).
   
-  After the file transfer is complete, press the reset button on the board. You should see the LED blinking.
+  Wait for the file transfer to complete.
+  
+1. Run the application
+
+  Press the reset button on the board. You should see the led blinking.
  
 1. (Optional) Run automated tests.
 
@@ -256,4 +263,7 @@ You may be wondering why there are more directory levels than target configurati
   
   The tests should start running.
   
+  For more information on testing a new board, go to the [Testing your port](../porting/testing.html) section of the porting guide.
+  
+### Success! 
 Now you have successfully ported Mbed OS to a new board.
