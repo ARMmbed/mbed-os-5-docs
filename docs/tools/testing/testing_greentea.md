@@ -273,7 +273,7 @@ You see the calls to and from the host through the `greentea_send_kv` and `green
 Run the test:
 
 ```
-$ mbed test -v -n tests-test-group-integration-test
+$ mbed test -v -n tests-tests-integration-test
 ```
 
 ## Debugging tests
