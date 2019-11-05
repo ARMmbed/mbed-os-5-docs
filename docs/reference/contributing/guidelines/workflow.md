@@ -61,90 +61,131 @@ If commits do not follow the above guidelines, we may request that you modify th
 
 [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html) explains Mbed OS versioning.
 
-## Pull request types
+## Pull request template
 
-We consider the following pull request types.
+The following template is automatically provided when you raise a pull request against `mbed-os`. The details required depend on the type of pull request you create:
 
-### Fix
+    ### Description (*required*)
+
+    ##### Summary of change (*What the change is for and why*)
+
+
+    ##### Documentation (*Details of any document updates required*)
+
+
+    ----------------------------------------------------------------------------------------------------------------
+    ### Pull request type (*required*)
+
+        [] Patch update (Bug fix / Target update / Docs update / Test update / Refactor)
+        [] Feature update (New feature / Functionality change / New API)
+        [] Major update (Breaking change E.g. Return code change / API behaviour change)
+
+    ----------------------------------------------------------------------------------------------------------------
+    ### Test results (*required*)
+
+        [] No Tests required for this change (E.g docs only update)
+        [] Covered by existing mbed-os tests (Greentea or Unittest)
+        [] Tests / results supplied as part of this PR
+        
+        
+    ----------------------------------------------------------------------------------------------------------------
+    ### Reviewers (*optional*)
+
+
+    ----------------------------------------------------------------------------------------------------------------
+    ### Release Notes (*required for feature/major PRs*)
+
+
+    ##### Summary of changes
+
+    ##### Impact of changes
+
+    ##### Migration actions required
+
+
+### Description field
+
+There are two parts to the description, both of which are required:
+
+- The summary of the pull request clearly states the reason for the PR and what the changes involve.
+- The documentation section requires you to state what, if any, documentation changes need to accompany the code changes.
+
+### Pull request type
+
+There are three pull request types, and these correspond to the three main categories specified in semantic versioning: patch, feature (minor) and major.
+
+#### Patch update
+
+This can contain any of the following changes:
+
+##### Bug Fix
 
 A bug fix is a change that fixes a specific defect in the codebase with backward compatibility. These are the highest priority because of the positive effect the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Every bug fix should contain a test to verify results before and after the pull request. Bug fixes are candidates for patch releases. Large, nontrivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
 
-Release: patch
+##### Refactor
 
-### Refactor
+A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this are moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. 
 
-A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this are moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. Refactors are candidates for feature releases.
-
-Release: feature
-
-### Target update
+##### Target update
 
 Updating target implementation (adding a new target or updating already supported target) is a change for a patch release.
 
 A test report for the new target must be part of the pull request. The new target must pass all Mbed OS functional and system validation tests (using `mbed test` command) for the current Mbed OS major release, including all Mbed OS supported toolchains.
 
-Release: patch
-
-### Functionality change
-
-A functionality change can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
-
-A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, support for most targets and comprehensive test coverage. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. Features are candidates for feature releases.
-
-Every pull request changing or adding functionality must contain a "Release notes" section describing the changes to users.
-
-It must contain:
-
-- A brief description of changes introduced, including justification.
-- An analysis of effects: components affected and potential consequences for users.
-- Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
-
-<span class="notes">**Note:** We may use this content in our official release notes.</span>
-
-For more details, please see the [pull request template addition for functional changes](#pull-request-template-functional-changes).
-
-We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers create the new branches by following the naming convention: "feature-" prefix.
-
-Each feature has a tech lead. This person is responsible for:
-
-- Rebasing often to track master development.
-- Reviewing any addition to the feature branch (approval required by the feature tech lead or another assigned person).
-
-Release: feature
-
-### Documentation update
+##### Documentation update
 
 Documentation updates include changes to markdown files or Doxygen documentation (comment-only changes).
 
-Release: patch
-
-### Test update
+##### Test update
 
 Test updates include updates to a new test unit or test case.
 
-Release: patch
+#### Feature update
 
-### Breaking change
+This can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
 
-A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
+A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, support for most targets and comprehensive test coverage. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. 
 
-A contribution containing a breaking change is the most difficult PR to get merged. Any breaking changes in a codebase can have a large negative impact on any users of the codebase. Breaking changes are always limited to a major version release.
+We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or Mbed OS technical leads may create the new branches by following the naming convention: "feature-" prefix.
 
-Every pull request with breaking change must contain a release notes section called "Release notes" to describe the changes to users.
+Each feature has a Mbed OS technical lead. This person is responsible for:
 
-It must contain:
+- Rebasing often to track master development.
+- Reviewing any addition to the feature branch. 
+- Approving all feature change pull requests.
 
-- A brief description of changes introduced, including justification description.
-- An analysis of effects: components affected, potential consequences for users.
-- Migration guidance: actions for updating the current code. Please include code snippets to illustrate before and after the addition or change.
+#### Major update
 
-<span class="notes">**Note:** We may use this content in our official release notes.</span>
+This is for breaking changes and should be rare. A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
 
-Please see the [Pull request template](../contributing/workflow.html#pull-request-template-breaking-changes).
+A contribution containing a breaking change is the most difficult PR to get merged. Any breaking changes in a codebase can have a large negative effect on any users of the codebase. Breaking changes are always limited to a major version release.
 
 A project technical lead and the Mbed OS technical lead must approve breaking change pull requests.
 
-Release: major
+### Test results
+
+This section is to indicate what test results, if any, are required for the PR. The three options are:
+
+- No tests required for this change (for example, a documentation-only update).
+- Changes will be tested by existing `mbed-os` tests (Greentea or Unittest).
+- Tests and results will be supplied as part of this PR. For this option, post the tests and test results
+  below the tick boxes.
+    
+### Reviewers
+
+A bot automatically adds reviewers based on the files that are actually changed. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
+
+### Release Notes
+
+Every pull request changing or adding functionality must fill in the "Release notes" section. This applies to feature and major PRs. For both these types, you must complete the "Summary of changes" section. Provide a brief description of changes introduced, including justification.
+
+For major PRs, it is also compulsory to complete the "Impact of changes" and "Migration actions required".
+
+The impact of changes must contain an analysis of effects: components affected and potential consequences for users.
+
+The migration actions required should describe how to migrate from a previous version of the code being changed to the new version. Please include code snippets to illustrate before and after the addition or change.
+
+The release notes section is automatically pulled into the overall release notes for a feature or major release. This should be considered when you write the entries.
 
 ## GitHub pull requests workflow
 
@@ -166,37 +207,46 @@ All pull requests must be reviewed. The Arm Mbed CI bot determines the most suit
 
 GitHub dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
-Label: `needs: review`
-Time: Three days for reviewers to leave feedback after the maintainers add the label.
+- Label: `needs: review`.
+- Time: Three days for reviewers to leave feedback after the maintainers add the label.
 
 ### The Continuous Integration (CI) testing
 
 There are many [CI systems available](../contributing/ci.html) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that it has on the code base. Irrespective of which CI tests run, Mbed OS has an all-green policy, meaning that all triggered CI jobs must pass before we merge the pull request.
 
-- Label: `needs: CI`
+- Label: `needs: CI`.
 - Time: One day for CI to complete and report back results.
 
 ### Work needed
 
 A pull request in the "work needed" state requires additional work due to failed tests, or rework as a result of the review. If a pull request is in this state, our maintainers request changes from the pull request author.
 
-- Label: `needs: work`
+- Label: `needs: work`.
 - Time: Three days for the pull request author to action the review comments.
 
 ### Ready for integration
 
 Maintainers merge pull requests during the internal gatekeeping meetings that occur three times a week. They can merge straightforward pull requests immediately.
 
-- Label: `Ready for merge`
-- Time: Two days
+- Label: `Ready for merge`.
+- Time: Two days.
 
 ### Releases
 
 When we merge a pull request that we will publish in a patch release, we tag it with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features are only published in feature releases.
 
-The release tag has the following format:
+The release tag has the format:
 
-*release-version: 5.f.p* - Where `f` is the feature release and `p` the patch release.
+*release-version: m.f.p*
+
+Where:
+
+- `m` is the major release.
+- `f` is the feature release.
+- `p` is the patch release.
+
+From time to time there may be additional suffixes added which could represent a release candidate or 
+alpha/beta release etc
 
 ## Additional labels
 
