@@ -14,6 +14,7 @@ Implement the ResetReason API when implementing the Watchdog API. The ResetReaso
 - The uncalibrated watchdog should trigger at or after the timeout value multiplied by the frequency accuracy ratio of its oscillator (typical_frequency divided by max_frequency).
 - The calibrated watchdog should trigger at or after the timeout value.
 - The watchdog should trigger before twice the timeout value.
+- The watchdog may trigger as late as twice the timeout value in deepsleep mode.
 
 ### Undefined behavior
 
