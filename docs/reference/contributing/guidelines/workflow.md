@@ -33,7 +33,7 @@ Please create separate pull requests for each topic; each pull request needs a c
 
 ### Reporting bugs
 
-You can submit Mbed OS bugs on the [forums](https://os.mbed.com/forum/bugs-suggestions/) or directly on [GitHub](https://github.com/ARMmbed/mbed-os).
+You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed-os). Questions or enhancement requests should be submitted on the [forums](https://os.mbed.com/forum/bugs-suggestions/).
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
