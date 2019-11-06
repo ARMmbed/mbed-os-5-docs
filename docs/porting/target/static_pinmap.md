@@ -1,39 +1,41 @@
-<h2 id="explicit-pinmap-port">Explicit Pinmap extension</h2>
+<h2 id="static-pinmap-port">Static Pinmap extension</h2>
 
-The **Explicit Pinmap extension** allows the peripheral configuration (pin/periheral/function) to be explicitly specified in the HAL API function.
+The **Static Pinmap extension** allows the peripheral configuration (pin/periheral/function) to be staticly specified in the HAL API function.
 
 ### Overview and background
 
-HAL APIs making use of pins take these pins in their constructor and use those pins to lookup which peripheral/function to use. The process of looking up the peripheral/function requires there to be a pinmap table that maps pins to peripherals/functions. This pinmap table takes up ROM which could be saved if the pinmap wasn't used. Explicit pinmap extension provides additional HAL API/constructors which takes pinmap as a parameter where pin/peripheral/function is specified explicitly and there is no need to use the pinmap tables. 
+In modern MCUs peripherals often can be mapped to different pins and each pin can have multiple functions. Mbed supports dynamic pin mapping, meaning that pins can be reconfigured at run time to be used by different driver. That provides great flexibility, but it's not free. There's non trivial ROM cost to maintain the pinmap tables and infrastructure to parse it. In some use cases this flexibility is worth the cost. Quite often pin configuration is frozen at hw design stage and doesn't require runtime modification. Shifting this configuration to compile time will allow us free memory associated with the dynamic approach.
 
-Supported peripherals:  
- - `PWM`  
- - `AnalogIn`  
- - `AnalogOut`  
- - `SPI`  
- - `I2C`  
- - `UART`  
- - `QSPI`  
- - `CAN`  
+HAL APIs making use of pins take these pins in their constructor and use those pins to lookup which peripheral/function to use. The process of looking up the peripheral/function requires there to be a pinmap table that maps pins to peripherals/functions. This pinmap table takes up ROM which could be saved if the pinmap wasn't used. Static pinmap extension provides additional HAL API/constructors which takes pinmap as a parameter where pin/peripheral/function is specified staticly and there is no need to use the pinmap tables.
+
+Supported peripherals:
+ - `PWM`
+ - `AnalogIn`
+ - `AnalogOut`
+ - `SPI`
+ - `I2C`
+ - `UART`
+ - `QSPI`
+ - `CAN`
  
 ### Requirements and assumptions
 
-1. Provide types which will hold explicit pinmaps for peripherals(`PWM`, `AnalogIn`, `AnalogOut`, `SPI`, `I2C`, `UART`, `QSPI`, `CAN`).
-2. Provide `xxx_init_direct(xxx_t *obj, explicit_pinmap_t *)` functions to HAL API (these functions will not use pinmap tables).
-3. Provide additional constructors in drivers layer which will use the `xxx_init_direct(xxx_t *obj, explicit_pinmap_t*)` HAL functions.
-4. Provide default weak implementations of `xxx_init_direct(explicit_pinmap_t *)` functions. These functions will call standard `xxx_init(xxx_t *obj, PinName, ...)` function (backward compatibility for targets which do not support explicit pinmap mechanism).
+1. Provide types which will hold static pinmaps for peripherals(`PWM`, `AnalogIn`, `AnalogOut`, `SPI`, `I2C`, `UART`, `QSPI`, `CAN`).
+2. Provide `xxx_init_direct(xxx_t *obj, static_pinmap_t *)` functions to HAL API (these functions will not use pinmap tables).
+3. Provide additional constructors in drivers layer which will use the `xxx_init_direct(xxx_t *obj, static_pinmap_t*)` HAL functions.
+4. Provide default weak implementations of `xxx_init_direct(static_pinmap_t *)` functions. These functions will call standard `xxx_init(xxx_t *obj, PinName, ...)` function (backward compatibility for targets which do not support static pinmap mechanism).
 5. Provide `constexpr` utility functions to lookup for pin mapping in compile time (requires C++14).
 6. Provide `constexpr` pin-map tables in the header file.
 7. Provide macros for the pin-map tables.
-8. Provide `EXPLICIT_PINMAP_READY` macro in `PinNames.h`.
+8. Provide `STATIC_PINMAP_READY` macro in `PinNames.h`.
 
-### Implementing explicit pin-map extension
+### Implementing static pin-map extension
 
-Most of the above points are already implemented. If you want to make explicit pinmap available on your platform please perform the following steps:  
+Most of the above points are already implemented. If you want to make static pinmap available on your platform please perform the following steps:  
 
-- Provide implementation of `xxx_init_direct(xxx_t *obj, explicit_pinmap_t *)` function (which does not use pinmap tables).  
-    - `xxx_init()` will use pinmap tables to determine associated peripheral/function with the given pins, populate the pin-map structure and call void `xxx_init_direct()`.  
-    - `xxx_init_direct()` will perform peripheral initialization using given explicit pinmap structure.  
+- Provide implementation of `xxx_init_direct(xxx_t *obj, static_pinmap_t *)` function (which does not use pinmap tables).
+    - `xxx_init()` will use pinmap tables to determine associated peripheral/function with the given pins, populate the pin-map structure and call void `xxx_init_direct()`.
+    - `xxx_init_direct()` will perform peripheral initialization using given static pinmap structure.
 
 Example implementation below:
 
@@ -54,18 +56,18 @@ void xxx_init(xxx_t *obj, PinName pin)
     int peripheral = (int)pinmap_peripheral(pin, PinMap_xxx);
     int function = (int)pinmap_find_function(pin, PinMap_xxx);
 
-    const PinMap explicit_pinmap = {pin, peripheral, function};
+    const PinMap static_pinmap = {pin, peripheral, function};
 
-    xxx_init_direct(obj, &explicit_pinmap);
+    xxx_init_direct(obj, &static_pinmap);
 }
 ```
 
 - Provide `constexpr` pin-map tables in the header file.
 
-Move pinmap tables from `PeripheralPins.c` to `PeripheralPinMaps.h` (create new file) and add `constexpr` specifier in the pin-map table declarations.  
-The tables are required in the header file, so can be included and used by constant expression utility functions to find and return mapping without pulling the pin-map table into the image.  
+Move pinmap tables from `PeripheralPins.c` to `PeripheralPinMaps.h` (create new file) and add `constexpr` specifier in the pin-map table declarations.
+The tables are required in the header file, so can be included and used by constant expression utility functions to find and return mapping without pulling the pin-map table into the image.
 
-**Note:**  
+**Note:**
 Please include `<mstd_cstddef>` module and use `MSTD_CONSTEXPR_OBJ_11` macro instead `constexpr` specifier. This must be done for backward compatibility with `ARM 5` compiler which does not support constant expressions. When `ARM 5` compiler is in use `MSTD_CONSTEXPR_OBJ_11` will be translated to `const`.  
 
 Example pin-map table below:
@@ -114,18 +116,18 @@ Since pin-map table names are not common across all targets the following macros
 #define PINMAP_CAN_TD [PinMap CAN RD]
 ```
 
-- Provide `EXPLICIT_PINMAP_READY` macro in `PinNames.h`  
+- Provide `STATIC_PINMAP_READY` macro in `PinNames.h`  
 
-Adding this macro will enable the explicit pin-map support for the target.
+Adding this macro will enable the static pin-map support for the target.
 
 ```
 /* If this macro is defined, then constexpr utility functions for pin-map seach can be used. */
-#define EXPLICIT_PINMAP_READY 1
+#define STATIC_PINMAP_READY 1
 ```
 
 ### Example usage/testing
 
-Use code below to check if explicit pinmap extension works. 
+Use code below to check if static pinmap extension works.
 
 ```
 int main()
@@ -133,19 +135,19 @@ int main()
     /* Regular use */
     SPI spi(D1, D2, D3, D4);
 
-    /* Explicit pinmap */
-    const spi_pinmap_t explicit_spi_pinmap = {SPI_1, D1, 2, D2, 2, D3, 2, D4, 2};
-    SPI spi(explicit_spi_pinmap);
+    /* Static pinmap */
+    const spi_pinmap_t static_spi_pinmap = {SPI_1, D1, 2, D2, 2, D3, 2, D4, 2};
+    SPI spi(static_spi_pinmap);
 
-    /* Explicit pinmap with constexpr utility function */
-    constexpr spi_pinmap_t explicit_spi_pinmap = get_spi_pinmap(D1, D2, D3, D4);
-    SPI spi(explicit_spi_pinmap);
+    /* Static pinmap with constexpr utility function */
+    constexpr spi_pinmap_t static_spi_pinmap = get_spi_pinmap(D1, D2, D3, D4);
+    SPI spi(static_spi_pinmap);
 
     return 0;
 }
 ```
 
-When explicit pinmap extension is used we should get some ROM savings:  
+When static pinmap extension is used we should get some ROM savings:  
 
 ```
 | Module                          |        .text |   .data |       .bss |
@@ -161,8 +163,8 @@ When explicit pinmap extension is used we should get some ROM savings:  
 | hal\mbed_pinmap_common.o        |      0(-272) |   0(+0) |      0(+0) |  // removed pinmap lib (this is common for all peripherals)
 | hal\mbed_ticker_api.o           |      978(+0) |   0(+0) |      0(+0) |
 | hal\mbed_us_ticker_api.o        |      114(+0) |   4(+0) |     65(+0) |
-| main.o                          |      70(+32) |   0(+0) |      0(+0) |  // extra space for explicit pinmap structure in application
-| platform\source                 |    5683(+46) |  64(+0) |    249(+0) |  // extra space for UART explicit pinmap structure to initialize the console
+| main.o                          |      70(+32) |   0(+0) |      0(+0) |  // extra space for static pinmap structure in application
+| platform\source                 |    5683(+46) |  64(+0) |    249(+0) |  // extra space for UART static pinmap structure to initialize the console
 | rtos\source                     |     8990(+0) | 168(+0) |   6626(+0) |
 | targets\TARGET_Freescale        |  16581(-816) |  12(+0) |    340(+0) |  // removed pinmaps + driver code reduction
 | Subtotals                       | 44290(-1010) | 264(+0) | 205518(+0) |
@@ -176,6 +178,6 @@ Run FPGA tests to check if your implementation is valid:
  mbed test -t ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield*
 ```
 
-**Note:**  
-Your target must be ready to run FPGA-Test-Shield tests.  
+**Note:**
+Your target must be ready to run FPGA-Test-Shield tests.
 Currently the following peripherals can be tested: `Analogin`, `SPI`, `I2C`, `PWM`, `UART`.
