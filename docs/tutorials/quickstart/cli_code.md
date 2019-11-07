@@ -30,3 +30,9 @@
    ```
 
 1. Press the board's reset button. The LED blinks.
+
+## Related links
+
+- [Mbed OS statistics API](../apis/mbed-statistics.html).
+- [Mbed OS configuration](../reference/configuration.html).
+- [Mbed OS serial communication](../tutorials/serial-communication.html).
