@@ -2,7 +2,7 @@
 
 This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device.
 
-The quick start example blinks the LED on your board on and off. The main thread also takes a snapshot of the device's runtime statistics and displays them over a serial connection to your PC. Once you have this application working, you can use the documentation the quick start links to - a broad range of examples, conceptual tutorials and end-to-end applications - to add functionality.
+The quick start example blinks the LED on your board on and off every 500 milliseconds. Once you have this application working, you can use the documentation the quick start links to - a broad range of examples, conceptual tutorials and end-to-end applications - to add functionality.
 
 You can choose to develop **online** or **offline**:
 
