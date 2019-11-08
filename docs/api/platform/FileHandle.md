@@ -130,6 +130,12 @@ namespace
 
 Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
 
+### Suppressing console output
+
+To suppress output, you can create a class derived from FileHandle to act as a mux and supply that to the console. That leverages the Mbed OS "redirect" `stdout` logic.
+
+More portably, you could ensure all your code uses your own `FILE *output_stream` rather than `stdout`, and you could dynamically change that between `stdout` and `fdopen(Sink)`. That then doesn't rely on "under C library" retargeting of `stdout`. Instead, you must switch streams at the application level.
+
 ### Polling and nonblocking
 
 By default, `FileHandle`s conventionally block until a `read` or `write` operation completes. This is the only behavior supported by normal `File`s, and is expected by the C library's `stdio` functions.
