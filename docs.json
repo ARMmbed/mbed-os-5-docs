@@ -62,9 +62,6 @@
                             "title": "Importing and compiling the code",
                             "sources": [{
                                     "path": "docs/tutorials/quickstart/quick-start-compiler.md"
-                                },
-                                {
-                                    "path": "docs/tutorials/quickstart/example_walkthrough.md"
                                 }
                             ]
                         },
@@ -86,9 +83,6 @@
                                 },
                                 {
                                     "path": "docs/tutorials/quickstart/cli_code.md"
-                                },
-                                {
-                                    "path": "docs/tutorials/quickstart/example_walkthrough.md"
                                 }
                             ]
                         },
