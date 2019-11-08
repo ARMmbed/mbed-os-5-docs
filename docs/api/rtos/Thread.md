@@ -10,6 +10,8 @@ The Thread class allows defining, creating and controlling parallel tasks.
 
 All the internal thread data structures are part of the C++ class, but by default, the thread stack is allocated on the heap. Memory is allocated at the run time during the call to `start` method. If you don't want to use dynamic memory, you can provide your own static memory using the constructor parameters.
 
+The main thread stack size is specified as `rtos.main-thread-stack-size` in the configuration .json file. That defines the main thread for `mbed_rtos_start` in `mbed_rtos_rtx.c`.
+
 The default stack size is 4K. However, the application can override it by using the configuration system and setting the `THREAD_STACK_SIZE` option to the required size in `mbed_app.json`. For details, please see the [configuration documentation](../../reference/configuration/configuration.md).
 
 ## Thread class reference
