@@ -107,19 +107,15 @@ Below is the `TDB_INTERNAL` configuration in `mbed_lib.json`:
 
 ```
 {
-    "name": "tdb_internal",
+    "name": "storage_tdb_internal",
     "config": {
         "internal_size": {
-            "help": "Size of the FlashIAP block device",
-            "value": "NULL"
+            "help": "Size of the FlashIAP block device. default size will be from internal_base_address till the end of the internal flash.",
+            "value": "0"
         },
         "internal_base_address": {
-            "help": "If not defined the default is the first sector after the application code ends.",
-            "value": "NULL"
-        },
-        "rbp_number_of_entries": {
-            "help": "If not defined default is 64",
-            "value": "64"
+            "help": "If default, the base address is set to the first sector after the application code ends.",
+            "value": "0"
         }
     }
 }
@@ -143,32 +139,27 @@ Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
 
 ```
 {
-
-    "name": "tdb_external",
+    "name": "storage_tdb_external",
     "config": {
         "rbp_internal_size": {
-            "help": "If not defined default size is 4K*#enteries/32",
-            "value": "NULL"
-        },
-        "rbp_number_of_entries": {
-            "help": "If not defined default is 64",
-            "value": "64"
+            "help": "Default is the size of the 2 last sectors of internal flash",
+            "value": "0"
         },
         "internal_base_address": {
-            "help": "If not defined the default is the first sector after the application code ends.",
-            "value": "NULL"
+            "help": "If default, the base address is set to the first sector after the application code ends.",
+            "value": "0"
         },
         "blockdevice": {
-            "help": "Options are default, SPIF, DATAFASH, QSPIF or SD",
-            "value": "NULL"
+            "help": "Options are default, SPIF, DATAFASH, QSPIF, SD or other. If default the block device will be chosen by the defined component. If other, override get_other_blockdevice() to support block device out of Mbed OS tree.",
+            "value": "default"
         },
         "external_size": {
-            "help": "Size of the external block device",
-            "value": "NULL"
+            "help": "Size in bytes of the external block device, if default the maximum size available is used.",
+            "value": "0"
         },
         "external_base_address": {
-            "help": "If not defined the default is from address 0",
-            "value": "NULL"
+            "help": "The default will set start address to address 0",
+            "value": "0"
         }
     }
 }
@@ -188,19 +179,19 @@ Below is the `TDB_EXTERNAL_NO_RBP` configuration in `mbed_lib.json`:
 
 ```
 {
-    "name": "tdb_external_no_rbp",
+    "name": "storage_tdb_external_no_rbp",
     "config": {
         "external_size": {
-            "help": "Size of the external block device",
-            "value": "NULL"
+            "help": "Size in bytes of the external block device, if default the maximum size available is used.",
+            "value": "0"
         },
         "external_base_address": {
-            "help": "If not defined the default is from address 0",
-            "value": "NULL"
+            "help": "The default will set start address to address 0",
+            "value": "0"
         },
         "blockdevice": {
-            "help": "Options are default, SPIF, DATAFASH, QSPIF or FILESYSTEM",
-            "value": "NULL"
+            "help": "Options are default, SPIF, DATAFASH, QSPIF, SD or other. If default the block device will be chosen by the defined component. If other, override get_other_blockdevice() to support block device out of Mbed OS tree.",
+            "value": "default"
         }
     }
 }
@@ -220,43 +211,39 @@ Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
 ```
 {
-    "name": "filesystem_store",
+    "name": "storage_filesystem",
     "config": {
         "rbp_internal_size": {
-            "help": "If not defined default size is 4K*#enteries/32",
-            "value": "NULL"
-        },
-        "rbp_number_of_entries": {
-            "help": "If not defined default is 64",
-            "value": "64"
+            "help": "Default is the size of the 2 last sectors of internal flash",
+            "value": "0"
         },
         "internal_base_address": {
-            "help": "If not defined the default is the first sector after the application code ends.",
-            "value": "NULL"
+            "help": "If default, base address is the first sector after the application code",
+            "value": "0"
         },
         "filesystem": {
-            "help": "Options are default, FAT or LITTLE. If not specified default filesystem will be used",
-            "value": "NULL"
+            "help": "Options are default, FAT or LITTLE. If default value the filesystem is chosen by the blockdevice type",
+            "value": "default"
         },
         "blockdevice": {
-            "help": "Options are default, SPIF, DATAFASH, QSPIF or FILESYSTEM. If not set the default block device will be used",
-            "value": "NULL"
+            "help": "Options are default, SPIF, DATAFASH, QSPIF, SD or other. If default, the block device will be chosen according to the component defined in targets.json. If other, override get_other_blockdevice() to support block device out of Mbed OS tree.",
+            "value": "default"
         },
         "external_size": {
-            "help": "Size in bytes of the external block device, if not specified the maximum is the default.",
-            "value": "NULL"
+            "help": "Size in bytes of the external block device, if default value, the maximum size available is used.",
+            "value": "0"
         },
         "external_base_address": {
-            "help": "If not defined the default is from address 0",
-            "value": "NULL"
+            "help": "The default will set start address to address 0",
+            "value": "0"
         },    
         "mount_point": {
-            "help": "Where to mount the filesystem. Ignored if the default file system is applied.",
-            "value": "/sd"
+            "help": "Where to mount the filesystem.",
+            "value": "kv"
         },
         "folder_path": {
-            "help": "Path for the working directory where the FileSyetemStore stores the data",
-            "value": "/kvstore"
+            "help": "Path for the working directory where the FileSystemStore stores the data",
+            "value": "kvstore"
         }
     }
 }
@@ -278,31 +265,31 @@ Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
 ```
 {
-    "name": "filesystem_store_no_rbp",
+    "name": "storage_filesystem_no_rbp",
     "config": {
         "filesystem": {
-            "help": "Options are default, FAT or LITTLE. If not specified default filesystem will be used",
-            "value": "NULL"
+            "help": "Options are default, FAT or LITTLE. If default value the filesystem is chosen by the blockdevice type",
+            "value": "default"
         },
         "blockdevice": {
-            "help": "Options are default, SPIF, DATAFASH, QSPIF or FILESYSTEM. If not set the default block device will be used",
-            "value": "NULL"
+            "help": "Options are default, SPIF, DATAFLASH, QSPIF, SD or other. If default the block device will be chosen by the defined component. If other, override get_other_blockdevice() to support block device out of Mbed OS tree.",
+            "value": "default"
         },
         "external_size": {
-            "help": "Size in bytes of the external block device, if not specified the maximum is the default.",
-            "value": "NULL"
+            "help": "Size in bytes of the external block device, if default the maximum size available is used.",
+            "value": "0"
         },
         "external_base_address": {
-            "help": "If not defined the default is from address 0",
-            "value": "NULL"
+            "help": "The default will set start address to address 0",
+            "value": "0"
         },    
         "mount_point": {
-            "help": "Where to mount the filesystem. Ignored if the default file system is applied.",
-            "value": "/sd"
+            "help": "Where to mount the filesystem.",
+            "value": "kv"
         },
         "folder_path": {
-            "help": "Path for the working directory where the FileSyetemStore stores the data",
-            "value": "/kvstore"
+            "help": "Path for the working directory where the FileSystemStore stores the data",
+            "value": "kvstore"
         }
     }
 }
