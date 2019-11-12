@@ -89,6 +89,12 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
 
+## Debugging tips
+
+When debugging Thread, check the full RTX state (ready, blocked and so on) for a deadlock (two things waiting for each other) or a missed signal leading to an event machine stall. You can confirm a deadlock if you see two threads in the "blocked" state waiting for a resource that the other is supposed to signal.
+
+To reduce deadlocks, proactively code in a safe way by maintaining a mental ordering of your mutexes and never claiming a high-level mutex while holding a low-level one.
+
 ## Related content
 
 - [Application flow control tutorial](../tutorials/application-flow-control.html).
