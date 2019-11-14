@@ -130,9 +130,11 @@ namespace
 
 Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
 
-### Suppressing console output
+#### Suppressing console output
 
-To suppress output, you can create a class derived from FileHandle to act as a mux and supply that to the console. That leverages the Mbed OS "redirect" `stdout` logic.
+To always suppress output, you can provide an `mbed_override_console` that returns a sink class that discards output. (For UART console targets, you can simply set `target.console-uart` to `false` in `your mbed_app.json`.)
+
+To temporarily suppress output, `mbed_override_console` can return a class that acts as a switchable mux between a sink and the real output.
 
 More portably, you could ensure all your code uses your own `FILE *output_stream` rather than `stdout`, and you could dynamically change that between `stdout` and `fdopen(Sink)`. That then doesn't rely on "under C library" retargeting of `stdout`. Instead, you must switch streams at the application level.
 
