@@ -12,6 +12,8 @@ All the internal thread data structures are part of the C++ class, but by defaul
 
 The default stack size is 4K. However, the application can override it by using the configuration system and setting the `THREAD_STACK_SIZE` option to the required size in `mbed_app.json`. For details, please see the [configuration documentation](../../reference/configuration/configuration.md).
 
+<span class="notes">**Note:** The main thread stack size is specified as `rtos.main-thread-stack-size` in the configuration .json file. That defines the main thread for `mbed_rtos_start` in `mbed_rtos_rtx.c`.</span>
+
 ## Thread class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
@@ -86,6 +88,12 @@ The code below uses two separate threads to blink two LEDs. The first thread is 
 The Callback API provides a convenient way to pass arguments to spawned threads.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
+
+## Debugging tips
+
+When debugging threads, check the full RTX state (ready, blocked and so on) for a deadlock (two things waiting for each other) or a missed signal leading to an event machine stall. You can confirm a deadlock if you see two threads in the "blocked" state each waiting for a resource that the other is supposed to signal.
+
+To reduce deadlocks, proactively code in a safe way by never claiming a high-level mutex while holding a low-level one.
 
 ## Related content
 
