@@ -10,7 +10,7 @@ For platforms that support [hardware CRC](mbedcrc.html), the MbedCRC API replace
 
 ## MbedCRC class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.14/mbed-os-api-doxy/classmbed_1_1_mbed_c_r_c.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.14/mbed-os-api-doxy/structcrc__mbed__config.html)
 
 ## MbedCRC examples
 
