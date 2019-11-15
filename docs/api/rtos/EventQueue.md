@@ -61,7 +61,7 @@ To do this, set the `mbed_app.json` configuration option `events.shared-dispatch
 
 Use static EventQueue to prevent your program from failing due to queue memory exhaustion or to prevent dynamic memory allocation:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/events/static-event-queue/UserAllocatedEvent_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/events/static-event-queue/UserAllocatedEvent_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/UserAllocatedEvent_ex_1)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/UserAllocatedEvent_ex_1/main.cpp)
 
 ## Related content
 
