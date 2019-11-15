@@ -23,4 +23,4 @@ The example below sends an Ethernet frame that carries "Hello world" payload wit
 5. Click captured packet from source address 12:34:56:78:9a:bc to see the "Hello world" payload.
 
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/USB/USBCDC_ECM)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/USB/USBCDC_ECM/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/v5.14/USB/USBCDC_ECM)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/v5.14/USB/USBCDC_ECM/main.cpp)

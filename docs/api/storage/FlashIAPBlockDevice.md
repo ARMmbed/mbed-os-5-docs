@@ -17,7 +17,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## FlashIAPBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/FlashIAPBlockDevice/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/FlashIAPBlockDevice/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/v5.14/blockdevices/FlashIAPBlockDevice/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/v5.14/blockdevices/FlashIAPBlockDevice/main.cpp)
 
 ## Related content
 
