@@ -132,7 +132,7 @@ Alternatively, an application could use the standard C `freopen` function to red
 
 #### Suppressing console output
 
-To always suppress output, you can provide an `mbed_override_console` that returns a sink class that discards output. (For UART console targets, you can simply set `target.console-uart` to `false` in `your mbed_app.json`.)
+To always suppress output, you can provide an `mbed_override_console` that returns a sink class that discards output. (For UART console targets, you can simply set `target.console-uart` to `false` in your `mbed_app.json`.)
 
 To temporarily suppress output, `mbed_override_console` can return a class that acts as a switchable mux between a sink and the real output.
 
