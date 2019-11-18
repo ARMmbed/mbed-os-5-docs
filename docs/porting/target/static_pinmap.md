@@ -18,24 +18,13 @@ Supported peripherals:
  - `QSPI`
  - `CAN`
  
-### Requirements and assumptions
-
-1. Provide types which will hold static pinmaps for peripherals(`PWM`, `AnalogIn`, `AnalogOut`, `SPI`, `I2C`, `UART`, `QSPI`, `CAN`).
-2. Provide `xxx_init_direct(xxx_t *obj, static_pinmap_t *)` functions to HAL API (these functions will not use pinmap tables).
-3. Provide additional constructors in drivers layer which will use the `xxx_init_direct(xxx_t *obj, static_pinmap_t*)` HAL functions.
-4. Provide default weak implementations of `xxx_init_direct(static_pinmap_t *)` functions. These functions will call standard `xxx_init(xxx_t *obj, PinName, ...)` function (backward compatibility for targets which do not support static pinmap mechanism).
-5. Provide `constexpr` utility functions to lookup for pin mapping in compile time (requires C++14).
-6. Provide `constexpr` pin-map tables in the header file.
-7. Provide macros for the pin-map tables.
-8. Provide `STATIC_PINMAP_READY` macro in `PinNames.h`.
-
 ### Implementing static pin-map extension
 
-Most of the above points are already implemented. If you want to make static pinmap available on your platform please perform the following steps:  
+If you want to make static pinmap available on your platform please perform the following steps:  
 
-- Provide implementation of `xxx_init_direct(xxx_t *obj, static_pinmap_t *)` function (which does not use pinmap tables).
-    - `xxx_init()` will use pinmap tables to determine associated peripheral/function with the given pins, populate the pin-map structure and call void `xxx_init_direct()`.
-    - `xxx_init_direct()` will perform peripheral initialization using given static pinmap structure.
+- Provide implementation of `xxx_init_direct(xxx_t *obj, static_pinmap_t *)` function and update implementation of `xxx_init()`.
+    - `xxx_init()` usees pinmap tables to determine associated peripheral/function with the given pins, populates the pin-map structure and calls void `xxx_init_direct()`.
+    - `xxx_init_direct()` performs peripheral initialization using given static pinmap structure.
 
 Example implementation below:
 
@@ -68,7 +57,7 @@ Move pinmap tables from `PeripheralPins.c` to `PeripheralPinMaps.h` (create new 
 The tables are required in the header file, so can be included and used by constant expression utility functions to find and return mapping without pulling the pin-map table into the image.
 
 **Note:**
-Please include `<mstd_cstddef>` module and use `MSTD_CONSTEXPR_OBJ_11` macro instead `constexpr` specifier. This must be done for backward compatibility with `ARM 5` compiler which does not support constant expressions. When `ARM 5` compiler is in use `MSTD_CONSTEXPR_OBJ_11` will be translated to `const`.  
+Please include `<mstd_cstddef>` module and use `MSTD_CONSTEXPR_OBJ_11` macro instead `constexpr` specifier. When `PeripheralPinMaps.h` is included from the Mbed OS C++ code, we need to see it as `constexpr`, but if the target code includes it from C, it has to have it as `const`.
 
 Example pin-map table below:
 
@@ -180,4 +169,3 @@ Run FPGA tests to check if your implementation is valid:
 
 **Note:**
 Your target must be ready to run FPGA-Test-Shield tests.
-Currently the following peripherals can be tested: `Analogin`, `SPI`, `I2C`, `PWM`, `UART`.
