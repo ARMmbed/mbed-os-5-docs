@@ -1,5 +1,7 @@
 # Power management (sleep)
 
+<span class="tips">**Tip:** This API replaces the deprecated Wait API.</span>
+
 ## Sleep
 
 There is only one sleep function in Mbed OS:
