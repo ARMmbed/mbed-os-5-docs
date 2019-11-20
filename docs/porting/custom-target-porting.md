@@ -88,7 +88,7 @@ Follow these steps to create a custom port for Mbed OS:
 #### Changes
 
 1. The board name changed from `DISCO_L475VG_IOT01A` to `IMAGINARYBOARD`, so the board can be uniquely identified.
-1. The `detect_code` changed from `0764` to `1234`. The `detect_code` is a unique number that identifies the board to the Mbed OS test tools. For Mbed Enabled boards, this number is exposed through the debug interface with Mbed CLI by typing `mbedls`.
+1. The `detect_code` changed from `0764` to `1234`. The `detect_code` is a unique four-digit hexadecimal value, also called a `Platform ID`, that identifies the board to the Mbed OS test tools. For Mbed Enabled boards, this number is exposed through the debug interface with Mbed CLI by typing `mbedls`.
 1. The `macros_add` section changed to remove `USBHOST_OTHER` because the new board does not use USB.
 1. The `device_has_add` section was changed to remove the `ANALOGOUT`, `CAN`, and `USBDEVICE` drivers because the new board doesn't use those features.
 
@@ -233,9 +233,9 @@ There are more directory levels than target configuration levels because many ta
  
 1. (Optional) Run automated tests.
 
-   With an Mbed Enabled debug interface, you can also run the Mbed OS automated tests on your port. Because a new board has a new name unknown to the Mbed tools, you need to tell the tools which `detect_code` to associate it to.
+   With an Mbed Enabled debug interface, you can also run the Mbed OS automated tests on your port. Because a new board has a new name unknown to the Mbed tools, you need to tell the tools which `Platform ID` (aka `detect_code`) to associate it to.
    
-   To do this, you can use the `mbedls` `mock` command option. This tutorial tests with a `DISCO-L475VG-IOT01A`, which has a debug interface that exposes `0764` as its detect code. If you have a new board that uses a different `detect_code`, such as `1234`, then use that.
+   To do this, you can use the `mbedls` `mock` command option. This tutorial tests with a `DISCO-L475VG-IOT01A`, which has a debug interface that exposes `0764` as its `Platform ID`. If you have a new board that uses a different `Platform ID`, such as `1234`, then use that.
   
    For the `ImaginaryBoard` based on `DISCO-L475VG-IOT01A`, run this command.
 
@@ -243,7 +243,7 @@ There are more directory levels than target configuration levels because many ta
    mbedls --mock 0764:IMAGINARYBOARD
    ```
    
-   <span class="notes">**Note:** Contact the Arm Mbed team to get a unique ID if you plan to have your board coexist with other Mbed Enabled boards while running automated tests.</span>
+  <span class="notes">**Note:** If you intend to release a new target to the Mbed community, it needs a unique Platform ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).</span>
 
 1. Run the tests, with the following command:
    
