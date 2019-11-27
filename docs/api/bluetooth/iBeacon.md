@@ -1,5 +1,7 @@
 # iBeacon
 
+<span class="notes">**Note:** This class has been deprecated.</span>
+
 iBeacon is an Apple technology based on BLE that you can use as an indoor positioning system. It allows iOS apps to track if the user enters a specific region and offers actions and notification aware of the user context.
 
 The iBeacon class builds an advertising payload mimicking an iBeacon and assigns it to a given BLE interface.

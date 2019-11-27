@@ -1,6 +1,6 @@
 # UARTService
 
-[Add description here.]
+<span class="notes">**Note:** This service has been deprecated.</span>
 
 ## UARTService class reference
 
