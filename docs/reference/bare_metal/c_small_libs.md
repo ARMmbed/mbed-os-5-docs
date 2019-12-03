@@ -1,4 +1,4 @@
-# Using small C libraries in Mbed OS
+<h1 id="using-small-c-libraries">Using small C libraries in Mbed OS</h1>
 
 If your application does not use a RTOS then you should build it in the bare metal mode to achieve memory savings. Both the `ARM` and `GCC_ARM` toolchains support code optimised versions of their C standard libraries, `microlib` and `newlib-nano`. It is safe to use these smaller C libraries in bare metal mode and we recommend using them. Note that a Mbed OS application can build with these libraries in non bare metal mode but you need to be aware of some restrictions in their usage, in particular in regard to thread-safety, as will be described later.
 
