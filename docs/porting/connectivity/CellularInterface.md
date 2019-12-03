@@ -2,7 +2,7 @@
 
 This document provides guidelines how to make a cellular device adaptation for Mbed OS.
 
-**Note:** Application developers should use only the `API` folder where Cellular public API is defined. All other Cellular APIs are considered as internal APIs and can change in between any release. If modem vendors want their drivers to be maintained for internal API changes, they need to contribute their drivers to mbed-os/master.
+<span class="notes">**Note:** Application developers should use only the `API` folder, where the public Cellular API is defined. All other Cellular APIs are internal APIs and can change in between releases. Modem vendors who want their drivers to be maintained for internal API changes must contribute their drivers to `mbed-os/master`.</span>
 
 ## Adding cellular on an Mbed OS target
 
