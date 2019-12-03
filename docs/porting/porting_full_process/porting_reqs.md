@@ -10,8 +10,7 @@ Porting Mbed OS requires the following hardware:
 - A micro SD card for the CI test shield.
 - A USB cable to connect the evaluation board to your development PC.
 
-
-<span class="notes">**Note:** The new target needs a unique board ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).</span>
+<span class="notes">**Note:** If you intend to release a new target to the Mbed community, it needs a unique four-digit hexadecimal identifier called a Platform ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).</span>
 
 If there is no interface MCU on the board you may also need:
 
