@@ -24,7 +24,7 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 | Arm v7A       | `Arm Compiler 6.11` |
 | Arm v8M       | `Arm Compiler 6.11` |
 
-<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.</span>
+<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. All platforms are already compatible with it. Please do not use Arm Compiler 5 in any new development as it will be deprecated in the future.</span>
 
 For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
 
