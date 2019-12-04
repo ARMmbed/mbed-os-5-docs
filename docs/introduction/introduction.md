@@ -102,8 +102,7 @@ Please see the following sections of our documentation for more information.
 
 <h2 id="docs-updates">Recently updated documentation</h2>
 
+- A guide to [porting a custom board](../porting/porting-a-custom-board.html).
 - The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
 - A [power optimization tutorial](../tutorials/power-optimization.html) about measuring and reducing power consumption.
 - A [mesh tutorial](../tutorials/mesh-tutorial.html) about selecting and using a mesh protocol.
-- Porting guides for the [IEEE 802.15.4 MAC](../porting/mac-port.html) and [IEEE 802.15.4 RF](../porting/6lowpan-port.html) drivers.
-- Porting guides for the [Watchdog](../porting/watchdog-port.html), [RestReason](../porting/resetreason-port.html) and [I2C](../porting/i2c-port.html) APIs.
