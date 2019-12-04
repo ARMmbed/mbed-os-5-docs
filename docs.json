@@ -1148,6 +1148,12 @@
                     ]
                 },
                 {
+                    "title": "Porting a custom board",
+                    "intro": {
+                        "path": "docs/porting/custom-target-porting.md"
+                    }
+                },    
+                {
                     "title": "Porting targets",
                     "intro": {
                         "path": "docs/porting/target/target.md"
