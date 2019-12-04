@@ -31,7 +31,7 @@ The generated keys can be 128 or 256 bits in length.
 
 `device_inject_root_of_trust`: You must call this API once in the lifecycle of the device, before any call to key derivation, if the device does not support true random number generator (`DEVICE_TRNG` is not defined).
 
-### Using DeviceKey 
+### Using DeviceKey
 
 DeviceKey is a singleton class, meaning that the system can have only a single instance of it.
 
@@ -45,7 +45,7 @@ To instantiate DeviceKey, you need to call its `get_instance` member function as
 
 Run the DeviceKey functionality test with the `mbed` command as following:
 
-``` 
+```
     mbed test -n features-device_key-tests-device_key-functionality
 ```
 
@@ -55,4 +55,4 @@ Run the DeviceKey functionality test with the `mbed` command as following:
 
 ## DeviceKey example
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/master/DeviceKey)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/DeviceKey/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/tree/5.10/DeviceKey)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/5.10/DeviceKey/main.cpp)
