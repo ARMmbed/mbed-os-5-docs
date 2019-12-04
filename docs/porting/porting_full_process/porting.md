@@ -177,7 +177,7 @@ Detailed instructions for porting each module are given in the module-specific s
 
 The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and timers. The direct register version of the example doesn't rely on RTOS, GPIO and timers; LED toggling is done directly by accessing hardware registers. Modify the Blinky program you checked out earlier to not use the timer and DigitalOut object:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Direct-Register-Blinky/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/5.11/Direct-Register-Blinky/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/5.11/Direct-Register-Blinky/main.cpp)
 
 ## Bootstrap and entry point
 

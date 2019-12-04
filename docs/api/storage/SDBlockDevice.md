@@ -74,7 +74,7 @@ The figure above shows the Mbed OS software component stack used for data storag
 
 The following sample code illustrates how to use the SD block device API:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/blockdevices/SDBlockDevice/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/5.11/blockdevices/SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/5.11/blockdevices/SDBlockDevice/main.cpp)
 
 ## Related content
 
