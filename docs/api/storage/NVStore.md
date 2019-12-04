@@ -1,6 +1,6 @@
 # NVStore
 
-<span class="warnings">**Warning:** This API will be deprecated. In its place, please use [KVStore](../apis/kvstore.html).</span>
+<span class="warnings">**Warning:** This API is deprecated. In its place, please use [KVStore](../apis/kvstore.html).</span>
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_n_v_store.png)<span>NVStore class hierarchy</span></span>
 
