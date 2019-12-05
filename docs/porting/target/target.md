@@ -76,7 +76,7 @@ const PinMap *serial_tx_pinmap()
 }
 ```
 
-Targets that don't use a pin map, such as ones with peripherals that can connect to any pin, must still define pin maps because testing requires them. For these devices, the pin map does not need to be comprehensive. Instead, it should list a representative sample of pins and peripherals, so they can be tested appropriately.
+Targets that don't use a pin map, such as ones with peripherals that can connect to any pin, must still define pin maps because testing requires them. For these devices, the pin map does not need to be comprehensive. Instead, it should list a representative sample of pins and peripherals, so they can be tested appropriately. Please see the [static pin map extension documentation](../porting/static-pinmap-port.html) for information about how to statically specify the peripheral configuration (pin, peripheral or function) in the HAL API function.
 
 ## Testing
 
