@@ -2,6 +2,8 @@
 
 This document provides guidelines how to make a cellular device adaptation for Mbed OS.
 
+<span class="notes">**Note:** Application developers should use only the `API` folder, where the public Cellular API is defined. All other Cellular APIs are internal APIs and can change in between releases. Modem vendors who want their drivers to be maintained for internal API changes must contribute their drivers to `mbed-os/master`.</span>
+
 ## Adding cellular on an Mbed OS target
 
 For new targets, you may need to modify [targets.json](../reference/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
