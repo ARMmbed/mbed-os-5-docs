@@ -1159,6 +1159,9 @@
                         "path": "docs/porting/target/target.md"
                     },
                     "sources": [{
+                            "path": "docs/porting/target/static_pinmap.md"
+                        },
+                        {
                             "path": "docs/porting/target/serial.md"
                         },
                         {
