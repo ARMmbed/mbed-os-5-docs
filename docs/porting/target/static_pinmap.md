@@ -1,10 +1,10 @@
-<h1 id="static-pinmap-port">Static Pinmap extension</h1>
+<h1 id="static-pinmap-port">Static pin map extension</h1>
 
-The **Static Pinmap extension** allows you to statically specify the peripheral configuration (pin, peripheral or function) in the HAL API function.
+The **static pin map extension** allows you to statically specify the peripheral configuration (pin, peripheral or function) in the HAL API function.
 
 In modern MCUs, you can often map peripherals to different pins, and each pin can have multiple functions. Mbed supports dynamic pin mapping, meaning you can reconfigure pins at run time for different drivers to use. That provides great flexibility, but it's not free. There's a nontrivial ROM cost to maintain the pin map tables and infrastructure to parse it. In some use cases, this flexibility is worth the cost. Often, pin configuration is frozen at the hardware design stage and doesn't require run time modification. Shifting this configuration to compile time allows free memory associated with the dynamic approach.
 
-HAL APIs using pins take these pins in their constructor and use those pins to look up which peripheral or function to use. The process of looking up the peripheral or function requires there to be a pin map table that maps pins to peripherals or functions. This pin map table takes up ROM. Static pinmap extension provides additional HAL API constructors, which take pin map as a parameter where the pin, peripheral or function is specified statically, and there is no need to use the pin map tables.
+HAL APIs using pins take these pins in their constructor and use those pins to look up which peripheral or function to use. The process of looking up the peripheral or function requires there to be a pin map table that maps pins to peripherals or functions. This pin map table takes up ROM. The static pin map extension provides additional HAL API constructors, which take pin map as a parameter where the pin, peripheral or function is specified statically, and there is no need to use the pin map tables.
 
 Supported peripherals:
 
@@ -172,4 +172,4 @@ Run FPGA tests to check whether your implementation is valid:
  mbed test -t ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield*
 ```
 
-<span class="notes">**Note:** Your target must be ready to run FPGA-Test-Shield tests.</span>
+<span class="notes">**Note:** Your target must be ready to run FPGA Test Shield tests.</span>
