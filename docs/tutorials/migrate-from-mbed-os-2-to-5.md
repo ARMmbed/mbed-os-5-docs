@@ -171,10 +171,4 @@ Although the program or library now compiles successfully, runtime errors may st
 
 <h2 id="enabling-bare-metal">Enabling Mbed OS bare metal</h2>
 
-Enabling the Mbed OS bare metal profile allows you to build Mbed OS without an RTOS. To enable it, you have to complete the [migration to Mbed OS 5](#migrating-to-mbed-os-5). Once the migration is complete, you can enable Mbed OS bare metal by creating an `mbed_app.json` with the following contents:
-
-```
-{
-    "requires": ["bare-metal"]
-}
-```
+Enabling the Mbed OS bare metal profile allows you to build Mbed OS without an RTOS. To enable it, you have to complete the [migration to Mbed OS 5](#migrating-to-mbed-os-5). Once the migration is complete, you can enable Mbed OS bare metal by following the instructions in the [bare metal example](../reference/bare-metal-example-application.html).
