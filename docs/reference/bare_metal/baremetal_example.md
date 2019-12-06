@@ -1,6 +1,12 @@
 # Bare metal example
 
-To use this example, [enable bare metal](../tutorials/migrating-to-mbed-os-5.html#enabling-bare-metal).
+To enable Mbed OS bare metal, create an `mbed_app.json` with the following contents:
+
+```
+{
+    "requires": ["bare-metal"]
+}
+```
 
 To learn about using the bare metal profile on Mbed OS 5, please see the Blinky bare metal example:
 
