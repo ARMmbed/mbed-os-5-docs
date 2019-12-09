@@ -14,7 +14,7 @@ void run_timer_event(Callback<void(float)> on_timer) {
 }
 ```
 
-The only thing to watch out for is that the Callback type has a null Callback, just like a null function pointer. Uninitialized callbacks are null and assert if you call them. If you want a call to always succeed, you need to check if it is null first.
+The only thing to watch out for is that the Callback type has an empty Callback, just like a null function pointer. Default initialized callbacks are empty and assert if you call them. If a callback may be empty, you need to check if it is empty before calling it.
 
 ``` c++
 void run_timer_event(Callback<void(float)> on_timer) {
@@ -23,6 +23,8 @@ void run_timer_event(Callback<void(float)> on_timer) {
     }
 }
 ```
+
+Callbacks can be reset to empty by assigning `nullptr`.
 
 The Callback class is what’s known in C++ as a “Concrete Type”. That is, the Callback class is lightweight enough to be passed around like an int, pointer or other primitive type.
 
