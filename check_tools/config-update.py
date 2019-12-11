@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python2
 """
 mbed SDK
 Copyright (c) 2019 ARM Limited
@@ -23,11 +23,18 @@ LIBRARIES BUILD
 # optional file or directory path may be passed in a parameter to run the
 # script on a specific file or directroy outside the default path.
 #
-# Note that you need to run this with a local copy of whichever version of
-# Mbed OS you wish to update the configuration parameters with.
+# You need to copy the mbed-os-5-docs repository to a Mbed OS repository
+# in order to run the script.
 #
-# You can run this script with:
-# python config-update.py <OPTIONAL FILE/DIR PATH>
+# The config markdown files will be updated using the content of the mbed_lib.json
+# files found in the Mbed OS repository. Ensure your current working directory is
+# mbed-os-5docs/check_tools when running the script as there is a relative path in the script.
+# When in the check_tools directory, run `$ python2 config-update` to update all config markdown files.
+#
+# If you only want to update a single config markdown file run
+# `$ python2 config-update.py ../docs/reference/configuration/xxxx.md`
+#
+# Note: The script does not produce a correct output with Python 3.x
 
 import sys, os
 import re
