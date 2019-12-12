@@ -8,4 +8,4 @@ Mbed OS provides the [`minimal-printf` library](https://github.com/ARMmbed/mbed-
 
 For a memory footprint comparison between standard `printf` and `minimal-printf`, please see our [Blinky size comparison](https://github.com/ARMmbed/mbed-os/tree/master/platform/source/minimal-printf#size-comparison).
 
-Applications that do not require file handling can further reduce their memory footprint by enabling the system I/O minimal console retarget. This can be done by enabling the configuration parameter `platform.stdio-minimal-console-only`. See the [platform configuration](https://os.mbed.com/docs/mbed-os/v5.14/reference/configuration-platform.html) reference for more information.
+To further reduce the memory footprint of applications that don't require file handling, enable the system I/O minimal console retarget. You can do this by enabling the configuration parameter `platform.stdio-minimal-console-only`. Please see the [platform configuration](../reference/configuration-platform.html) reference for more information.
