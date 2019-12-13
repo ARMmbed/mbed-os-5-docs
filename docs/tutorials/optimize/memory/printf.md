@@ -7,3 +7,5 @@ A solution to reduce code space is to replace the standard `printf` calls with a
 Mbed OS provides the [`minimal-printf` library](https://github.com/ARMmbed/mbed-os/blob/master/platform/source/minimal-printf/README.md), which offers a subset of the `printf` features (not all format specifiers are supported). You can also achieve further flash savings if your application does not require 64-bit integers or floating point printing.
 
 For a memory footprint comparison between standard `printf` and `minimal-printf`, please see our [Blinky size comparison](https://github.com/ARMmbed/mbed-os/tree/master/platform/source/minimal-printf#size-comparison).
+
+To further reduce the memory footprint of applications that don't require file handling, enable the system I/O minimal console retarget. You can do this by enabling the configuration parameter `platform.stdio-minimal-console-only`. Please see the [platform configuration](../reference/configuration-platform.html) reference for more information.
