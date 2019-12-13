@@ -74,8 +74,26 @@ Name: platform.memory-tracing-enabled
     Description: Enable tracing of each memory call by invoking a callback on each memory operation. See mbed_mem_trace.h in the HAL API for more information
     Defined by: library:platform
     No value set
+Name: platform.minimal-printf-enable-64-bit
+    Description: Enable printing 64 bit integers when using mprintf profile
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_MINIMAL_PRINTF_ENABLE_64_BIT
+    Value: 1 (set by library:platform)
+Name: platform.minimal-printf-enable-floating-point
+    Description: Enable floating point printing when using mprintf profile
+    Defined by: library:platform
+    No value set
+Name: platform.minimal-printf-set-floating-point-max-decimals
+    Description: Maximum number of decimals to be printed
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_MINIMAL_PRINTF_SET_FLOATING_POINT_MAX_DECIMALS
+    Value: 6 (set by library:platform)
 Name: platform.poll-use-lowpower-timer
     Description: Enable use of low power timer class for poll(). May cause missing events.
+    Defined by: library:platform
+    No value set
+Name: platform.stack-dump-enabled
+    Description: Set to true to enable stack dump.
     Defined by: library:platform
     No value set
 Name: platform.stack-stats-enabled
@@ -83,12 +101,12 @@ Name: platform.stack-stats-enabled
     Defined by: library:platform
     No value set
 Name: platform.stdio-baud-rate
-    Description: Baud rate for stdio
+    Description: (Applies if target.console-uart is true.) Baud rate for stdio
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_STDIO_BAUD_RATE
     Value: 9600 (set by library:platform)
 Name: platform.stdio-buffered-serial
-    Description: Use UARTSerial driver to obtain buffered serial I/O on stdin/stdout/stderr. If false, unbuffered serial_getc and serial_putc are used directly.
+    Description: (Applies if target.console-uart is true and stdio-minimal-console-only is false.) Use UARTSerial driver to obtain buffered serial I/O on stdin/stdout/stderr. If false, unbuffered serial_getc and serial_putc are used directly.
     Defined by: library:platform
     No value set
 Name: platform.stdio-convert-newlines
@@ -104,6 +122,10 @@ Name: platform.stdio-flush-at-exit
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT
     Value: 1 (set by library:platform)
+Name: platform.stdio-minimal-console-only
+    Description: (Ignores stdio-buffered-serial) Creates a console for basic unbuffered I/O operations. Enable if your application does not require file handles to access the serial interface. The POSIX `fsync` function will always an error.
+    Defined by: library:platform
+    No value set
 Name: platform.sys-stats-enabled
     Description: Set to 1 to enable system stats. When enabled the function mbed_stats_sys_get returns non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
