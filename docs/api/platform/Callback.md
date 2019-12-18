@@ -24,7 +24,7 @@ void run_timer_event(Callback<void(float)> on_timer) {
 }
 ```
 
-Callbacks can be reset to empty by assigning `nullptr`.
+You can reset Callbacks to empty by assigning `nullptr`.
 
 The Callback class is what’s known in C++ as a “Concrete Type”. That is, the Callback class is lightweight enough to be passed around like an int, pointer or other primitive type.
 
