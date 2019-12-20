@@ -5,7 +5,7 @@
 
 <span class="notes">**Note:** Some functions, variables or types have been deprecated. Please see the class reference linked below for details.</span>
 
-The [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html) class provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularInterface](../mbed-os-api-doxy/class_cellular_interface.html) class provides a C++ API for connecting to the internet over a Cellular device.
 
 ## Getting started
 

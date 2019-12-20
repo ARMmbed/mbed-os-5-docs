@@ -6,7 +6,7 @@
 
 The NetworkSocketAPI is designed to make porting new devices as easy as possible and only requires a handful of methods for a minimal implementation.
 
-A new device must implement a [NetworkInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_network_interface.html), with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
+A new device must implement a [NetworkInterface](../mbed-os-api-doxy/class_network_interface.html), with the naming convention of **DeviceInterface** - where **Device** is a unique name that represents the device or network processor.
 
 The **DeviceInterface** should also inherit one of the following (unless it is an abstract device):
 
