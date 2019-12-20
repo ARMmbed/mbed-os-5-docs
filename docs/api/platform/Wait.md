@@ -1,5 +1,7 @@
 # Wait
 
+<span class="notes">**Note:** `wait` is deprecated in favor of explicit sleep functions. To sleep, replace `wait` with `ThisThread::sleep_for` (C++) or `thread_sleep_for` (C). To wait (without sleeping), call `wait_us`. `wait_us` is safe to call from ISR context.</span>
+
 Wait functions provide simple wait capabilities. The OS scheduler puts the current thread in `waiting state`, allowing another thread to execute. Even better: If there are no other threads in `ready state`, it can put the whole microcontroller to `sleep`, saving energy.
 
 ## Avoiding OS delay
