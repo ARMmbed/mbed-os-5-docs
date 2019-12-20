@@ -1,19 +1,19 @@
 # USBAudio
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_audio.png)<span>USBAudio class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/class_u_s_b_audio.png)<span>USBAudio class hierarchy</span></span>
 
 You can use the USBAudio interface to send and receive audio data over USB. Once a USB program is loaded onto the Mbed board, you can send audio data to your PC by selecting **Mbed Audio** as your PC's microphone input. Your Mbed Enabled board can receive audio data from your PC if you select **Mbed Audio** as your PC's speaker output.
 
 ## USBAudio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_audio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/class_u_s_b_audio.html)
 
 ## USBAudio square wave example
 
 This example outputs an audio square wave over USB.
 
 ```C++ TODO
-// This example simply generates a square wave. 
+// This example simply generates a square wave.
 // Use a program like Audacity to record and hear the square wave, or route microphone input to output device.
 #include "mbed.h"
 #include "USBAudio.h"
