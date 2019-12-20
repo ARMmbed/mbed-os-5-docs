@@ -36,6 +36,8 @@ They can include:
 
 Binary compatibility is not guaranteed with any release.
 
+For a list of the planned 2020 Mbed OS release dates, please see [our blog post](https://os.mbed.com/blog/entry/Mbed-OS-2020-release-dates/).
+
 ## The release process
 
 Every release goes through a rigorous review and testing process. We stage changes to the `release-candidate` branch in the `mbed-os` repository.
