@@ -10,10 +10,10 @@ A new device must implement a [NetworkInterface](https://os.mbed.com/docs/develo
 
 The **DeviceInterface** should also inherit one of the following (unless it is an abstract device):
 
-- [EthInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_eth_interface.html).
-- [WiFiInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_wi_fi_interface.html).
-- [CellularInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_cellular_interface.html).
-- [MeshInterface](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html).
+- [EthInterface](../mbed-os-api-doxy/class_eth_interface.html).
+- [WiFiInterface](../mbed-os-api-doxy/class_wi_fi_interface.html).
+- [CellularInterface](../mbed-os-api-doxy/class_cellular_interface.html).
+- [MeshInterface](../mbed-os-api-doxy/class_mesh_interface.html).
 
 The **NetworkInterface** implementation provides the following methods:
 
