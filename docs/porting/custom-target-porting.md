@@ -26,10 +26,10 @@ Follow these steps to create a custom port for Mbed OS:
 
 1. Change directories into your new project:
 
-  ```
-  cd mbed-os-imaginary-port
-  ```
-
+   ```
+   cd mbed-os-imaginary-port
+   ```
+   
 1. Create a new file named `custom_targets.json` at the same level as the `mbed-os` directory.
 
 1. Inspect the contents of `mbed-os/targets/targets.json`. For this example, search for `DISCO_L475VG_IOT01A`.
