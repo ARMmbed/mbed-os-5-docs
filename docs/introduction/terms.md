@@ -74,7 +74,7 @@
 
 ## H
 
-**hardware** - See `board`.
+**Hardware** - See `board`.
 
 **htrun** - An Mbed OS command used to drive test binary flashing, device reset and test execution.
 
