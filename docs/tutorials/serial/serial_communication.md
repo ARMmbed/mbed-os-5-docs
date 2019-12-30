@@ -6,7 +6,7 @@ The Arm Mbed microcontroller on your board can communicate with a host PC over t
 
 This allows you to:
 
-- Print out messages to a [host PC terminal (useful for debugging)](#terminal-applications).
+- Print out messages to a [host PC terminal (useful for debugging)](#using-terminal-applications).
 - Read input from the host PC keyboard.
 - Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
 
