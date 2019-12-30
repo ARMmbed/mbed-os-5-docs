@@ -12,7 +12,7 @@ This allows you to:
 
 ## Hello, world
 
-This program prints a "Hello World" message that you can view on a [terminal application](#terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
+This program prints a "Hello World" message that you can view on a [terminal application](#using-terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
 
 ```cpp
