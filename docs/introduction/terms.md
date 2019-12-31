@@ -116,7 +116,7 @@
 
 ## Q
 
-**Quickstart** - A getting started guide to Mbed OS.
+**Quick start** - A getting started guide to Mbed OS.
 
 ## R
 
