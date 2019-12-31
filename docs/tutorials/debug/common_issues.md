@@ -4,6 +4,10 @@ When you start using Mbed OS, you may find small challenges in a few cases. This
 
 ## Use the latest tools
 
+### Mbed Studio
+
+Mbed Studio comes with a built-in debugger. For instructions on using the debugger mode and debugger tools, please see the [Mbed Studio debugging documentation](https://os.mbed.com/docs/mbed-studio/latest/using-mbed-studio/debugging.html).
+
 ### Mbed CLI
 
 If you are using an old version of Mbed CLI, you may see compile-time errors. Make sure `mbed-cli` is working correctly and you are using the [latest version](https://github.com/ARMmbed/mbed-cli/releases). You can check the version of `mbed-cli` by writing:
