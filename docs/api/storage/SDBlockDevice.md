@@ -8,7 +8,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## How to wire an external SD-card module to a developer board
 
-<span class="images">![](../../../images/usb.1fd16bbc5ed9.jpeg)<span>How to wire an external SD-card module to a developer board</span></span>
+<span class="images">![](../images/usb.1fd16bbc5ed9.jpeg)<span>How to wire an external SD-card module to a developer board</span></span>
 
 1. Ensure your micro SD card is plugged in to your device.
 1. Connect the device to your computer with a USB cable.
