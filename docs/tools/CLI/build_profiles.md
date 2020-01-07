@@ -18,6 +18,8 @@ Arm Mbed OS 5 defines three collections of toolchain flags used during the build
 - Easy to step through code with a debugger.
 - Disabled sleep mode.
 
+**NOTE: The debug profile uses the optimization flags that may cause unwanted behavior during debugging (eg: out-of-order jumps, optimized-out variables). If this occurs, you can try setting the compiler's optimization setting to the lowest possible (ie: for GCC, change `-Og` to `-O0`). See your toolchain's documentation for more information. **
+
 ## Release
 
 - Smallest code size and still fast.
