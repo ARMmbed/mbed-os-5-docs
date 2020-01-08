@@ -722,6 +722,12 @@
                             "sources": [{
                                 "path": "docs/reference/bare_metal/baremetal_example.md"
                             }]
+                        },
+                        {
+                            "title": "Using small C libraries",
+                            "sources": [{
+                                "path": "docs/reference/bare_metal/c_small_libs.md"
+                            }]
                         }
                     ]
                 },
