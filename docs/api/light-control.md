@@ -187,7 +187,7 @@ This saves you 4 kB of RAM.
 
 ### Change Nanostack's heap size
 
-Nanostack uses internal heap, which you can configure in the `.json`. A thread end device with comissioning enabled requires at least 15 kB to run.
+Nanostack uses internal heap, which you can configure in the `.json`. A thread end device with commissioning enabled requires at least 15 kB to run.
 
 In `mbed_app.json`, you find the following line:
 
