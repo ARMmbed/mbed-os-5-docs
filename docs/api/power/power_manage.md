@@ -33,11 +33,11 @@ The same principles also apply when using multiple threads or while using the [E
 
 This leads to significant energy savings without any modification from you. For example, these images show the program mentioned above running first without sleeping, then with sleep mode enabled and finally with deep sleep mode enabled:
 
-<span class="images">![No sleep](../../../images/idle-3.png)<span>Without sleeping, the MCU always consumes at least 43 mA.</span></span>
+<span class="images">![No sleep](../../images/idle-3.png)<span>Without sleeping, the MCU always consumes at least 43 mA.</span></span>
 
-<span class="images">![Sleep](../../../images/sleep.png)<span>By enabling sleep, the idle current goes down to 15 mA with clear peaks whenever you run some code.</span></span>
+<span class="images">![Sleep](../../images/sleep.png)<span>By enabling sleep, the idle current goes down to 15 mA with clear peaks whenever you run some code.</span></span>
 
-<span class="images">![Deep sleep](../../../images/deepsleep1.png)<span>In deep sleep mode, the idle current goes down to 358 uA. The jitter is noise from the energy profiler.</span></span>
+<span class="images">![Deep sleep](../../images/deepsleep1.png)<span>In deep sleep mode, the idle current goes down to 358 uA. The jitter is noise from the energy profiler.</span></span>
 
 <span class="notes">**Note:** The current consumption differs wildly between devices, even when comparing between MCUs from the same vendor. Look at the data sheet for your MCU to get an indication of power consumption in sleep and deep sleep mode.</span>
 
@@ -222,7 +222,7 @@ Accurately measuring the power consumption of deep sleep is challenging because 
 
 1. Disable any peripherals that draw power but are not part of your application (such as a power LED). This might require you to physically remove components.
 
-<span class="images">![Current measurement setup for this article](../../../images/sleep-setup-jan.JPG)<span>Current measurement setup for this article</span></span>
+<span class="images">![Current measurement setup for this article](../../images/sleep-setup-jan.JPG)<span>Current measurement setup for this article</span></span>
 
 This is the current measurement setup for the images earlier in this article. The STLink debug circuit is physically disconnected from the development board to avoid powering the debug circuit during measurement. The jumper wires from the STLink to the development board are there to reprogram the device. On the NUCLEO-F446RE board resistor R32 is removed to disable the power LED. The EFM32 Giant Gecko acts as the power source for the board, connecting VMCU on the Giant Gecko to 3.3 V on the NUCLEO-F446RE (and GND to GND). You can use Simplicity Studio to see the current measurement.
 
@@ -258,7 +258,7 @@ MBED_CONF_TARGET_TICKLESS_FROM_US_TICKER=0
 
 Some devices wake from deep sleep for a small period every second, even when the device is instructed to wake up much later.
 
-<span class="images">![Blinky with 10 second interval on DISCO-L475VG-IOT01A1](../../../images/deepsleep-wakeup.png)<span>Blinky with 10 second interval on DISCO-L475VG-IOT01A1</span></span>
+<span class="images">![Blinky with 10 second interval on DISCO-L475VG-IOT01A1](../../images/deepsleep-wakeup.png)<span>Blinky with 10 second interval on DISCO-L475VG-IOT01A1</span></span>
 
 This is related to the maximum timeout of the hardware low power ticker. It can only be asleep accurately for one second, so the device wakes up every second, and Mbed OS brings the device back into deep sleep afterward. You often can override this behavior by choosing a different clock source, but this is device specific. Look at the data sheet for your MCU. On the DISCO-L475VG-IOT01A1, you can override this by adding the following line to the `target_overrides` section of your `mbed_app.json`:
 
