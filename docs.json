@@ -723,7 +723,15 @@
                     "intro": {
                         "path": "docs/api/power/power_manage.md"
                     },
-                    "sources": [
+                    "sources": [{
+                        "path": "docs/api/power/PowerManagement.md"
+                    },
+                    {
+                        "path": "docs/api/power/DeepSleepLock.md"
+                    },
+                    {
+                        "path": "docs/api/power/IdleLoop.md"
+                    }
                     ]
                 },
                 {
@@ -758,15 +766,6 @@
                         },
                         {
                             "path": "docs/api/platform/Callback.md"
-                        },
-                        {
-                            "path": "docs/api/platform/DeepSleepLock.md"
-                        },
-                        {
-                            "path": "docs/api/platform/PowerManagement.md"
-                        },
-                        {
-                            "path": "docs/api/platform/IdleLoop.md"
                         },
                         {
                             "path": "docs/api/platform/CriticalSectionLock.md"
