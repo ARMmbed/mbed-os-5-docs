@@ -282,7 +282,7 @@
                             "path": "docs/api/rtos/events_tutorial.md"
                         },
                         {
-                            "path": "docs/program-setup/thread_safety.md"
+                            "path": "docs/api/rtos/thread_safety.md"
                         }
                     ]
                 },
