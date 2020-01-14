@@ -22,7 +22,7 @@ Click the button below to automatically import the example into the Online Compi
 
 Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-example-blinky) into the prompt.
 
-<span class="images">![](../../images/import_program.png)</span>
+<span class="images">![](../images/import_program.png)</span>
 
 ## Compiling and flashing (programming)
 
@@ -37,7 +37,7 @@ Alternatively, you may select the import button on the top left hand side of the
             "*": {
     ```
 
-    <span class="images">![](../../images/online_compile_button.png)</span>
+    <span class="images">![](../images/online_compile_button.png)</span>
 
     The Online Compiler compiles the code into an executable file, which your browser downloads.
 
