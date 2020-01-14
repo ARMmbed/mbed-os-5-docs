@@ -2,7 +2,7 @@
 
 IP Networking in Mbed OS is layered in three clearly defined API levels. The diagram below shows the layers next to the closest matching [OSI model](https://en.wikipedia.org/wiki/OSI_model) layers.
 
-<span class="images">![](../../images/ip-networking.png)<span>IP networking</span></span>
+<span class="images">![](../images/ip-networking.png)<span>IP networking</span></span>
 
 The following sections introduce the APIs and technologies implemented in each level.
 
