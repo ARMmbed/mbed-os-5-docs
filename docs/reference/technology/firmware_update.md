@@ -16,12 +16,12 @@ An updatable binary includes:
 * Device Management Client (which includes the Update client). The client allows your device to communicate with the Update service, receive update manifests and firmware, and verify firmware validity. These are [covered in our Device Management documentation](https://www.pelion.com/docs/device-management/latest/updating-firmware/index.html).
 
   <span class="notes">**Note:** Because some embedded devices don't require remote update capabilities, Mbed OS does not include Device Management Client by default. You must explicitly import the client to your application.</span>
-  
+
 * Permission to access your Device Management account, as well as keys and certificates to verify the firmware source and validity.
 
 ## The Pelion bootloader
 
-During system startup, a bootloader is responsible for selecting and forwarding control to the next stage in the boot sequence. The Pelion bootloader validates the next stage's sanity and signature before forwarding control to it; if validation fails, the bootloader can select an alternate version of the next stage. It can also install an alternative upon request (in other words, firmware update).
+During system startup, a [bootloader](https://www.pelion.com/docs/device-management/latest/updating-firmware/bootloaders.html) is responsible for selecting and forwarding control to the next stage in the boot sequence. The Pelion bootloader validates the next stage's sanity and signature before forwarding control to it; if validation fails, the bootloader can select an alternate version of the next stage. It can also install an alternative upon request (in other words, firmware update).
 
 ### Porting a bootloader
 
@@ -48,6 +48,6 @@ Your development tool needs to use your Device Management account API key to cal
 
 **Tutorials**:
 
-- Follow the Quick Connect guide, if you haven't already, to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion).
-  - Once your device is connected, try the firmware [update flow on the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update).
+- Follow the Quick Connect guide, if you haven't already, to set up the original application](https://os.mbed.com/guides/connect-device-to-pelion/).
+  - Once your device is connected, try the firmware [update flow on the Online Compiler](https://os.mbed.com/guides/pelion-firmware-update).
 - Review the [Mbed CLI update commands](../tools/cli-update.html).
