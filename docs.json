@@ -210,7 +210,7 @@
                                     "path": "docs/api/lorawan/lorawanconfig.md"
                                 },
                                 {
-                                    "path": "docs/api/storage-config.md"
+                                    "path": "docs/api/storage/storage-config.md"
                                 },
                                 {
                                     "path": "docs/program-setup/bootloader.md"
