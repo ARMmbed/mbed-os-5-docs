@@ -261,9 +261,6 @@
                             "path": "docs/api/rtos/UserAllocatedEvent.md"
                         },
                         {
-                            "path": "docs/api/rtos/MemoryPool.md"
-                        },
-                        {
                             "path": "docs/api/rtos/Mail.md"
                         },
                         {
@@ -338,15 +335,6 @@
                         },
                         {
                             "path": "docs/api/io/Timer.md"
-                        },
-                        {
-                            "path": "docs/api/io/LowPowerTicker.md"
-                        },
-                        {
-                            "path": "docs/api/io/LowPowerTimeout.md"
-                        },
-                        {
-                            "path": "docs/api/io/LowPowerTimer.md"
                         },
                         {
                             "path": "docs/api/io/Watchdog.md"
@@ -731,6 +719,15 @@
                     },
                     {
                         "path": "docs/api/power/IdleLoop.md"
+                    },
+                    {
+                        "path": "docs/api/power/LowPowerTicker.md"
+                    },
+                    {
+                        "path": "docs/api/power/LowPowerTimeout.md"
+                    },
+                    {
+                        "path": "docs/api/power/LowPowerTimer.md"
                     }
                     ]
                 },
@@ -756,6 +753,9 @@
                         },
                         {
                             "path": "docs/api/memory/MemTrace.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MemoryPool.md"
                         },
                         {
                             "path": "docs/program-setup/runtime/Memory.md"
