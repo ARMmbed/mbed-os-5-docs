@@ -749,6 +749,15 @@
                             "path": "docs/api/memory/printf.md"
                         },
                         {
+                            "path": "docs/api/memory/MbedStats.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MpuManagement.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MemTrace.md"
+                        },
+                        {
                             "path": "docs/program-setup/runtime/Memory.md"
                         },
                         {
@@ -780,9 +789,6 @@
                             "path": "docs/api/platform/Debug.md"
                         },
                         {
-                            "path": "docs/api/platform/MemTrace.md"
-                        },
-                        {
                             "path": "docs/api/platform/Error.md"
                         },
                         {
@@ -811,12 +817,6 @@
                         },
                         {
                             "path": "docs/api/platform/ATCmdParser.md"
-                        },
-                        {
-                            "path": "docs/api/platform/MbedStats.md"
-                        },
-                        {
-                            "path": "docs/api/platform/MpuManagement.md"
                         },
                         {
                             "path": "docs/api/platform/ScopedRamExecutionLock.md"
