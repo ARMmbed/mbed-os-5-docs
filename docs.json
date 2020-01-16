@@ -141,22 +141,17 @@
                 },
                 {
                     "title": "Mbed OS bare metal",
-                    "sub_chapters": [{
-                            "title": "Introduction",
-                            "intro": {
-                                "path": "docs/program-setup/bare_metal/bare_metal.md"
-                            },
-                            "sources": [
+                    "sources": [{
+                            "path": "docs/program-setup/bare_metal/bare_metal.md"
+                        },
                         {
-                          "path": "docs/program-setup/bare_metal/bare_metal_api.md"
+                            "path": "docs/program-setup/bare_metal/bare_metal_api.md"
                         },
                         {
                             "path": "docs/program-setup/bare_metal/baremetal_example.md"
                         },
                         {
                             "path": "docs/program-setup/bare_metal/c_small_libs.md"
-                        }
-                            ]
                         }
                     ]
                 },
