@@ -146,25 +146,17 @@
                             "intro": {
                                 "path": "docs/program-setup/bare_metal/bare_metal.md"
                             },
-                            "sources": []
+                            "sources": [
+                        {
+                          "path": "docs/program-setup/bare_metal/bare_metal_api.md"
                         },
                         {
-                            "title": "Bare metal APIs",
-                            "sources": [{
-                                "path": "docs/program-setup/bare_metal/bare_metal_api.md"
-                            }]
+                            "path": "docs/program-setup/bare_metal/baremetal_example.md"
                         },
                         {
-                            "title": "Bare metal example application",
-                            "sources": [{
-                                "path": "docs/program-setup/bare_metal/baremetal_example.md"
-                            }]
-                        },
-                        {
-                            "title": "Using small C libraries",
-                            "sources": [{
-                                "path": "docs/program-setup/bare_metal/c_small_libs.md"
-                            }]
+                            "path": "docs/program-setup/bare_metal/c_small_libs.md"
+                        }
+                            ]
                         }
                     ]
                 },
