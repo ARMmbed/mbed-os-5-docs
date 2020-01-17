@@ -9,7 +9,7 @@ You can build with the smaller C libraries by creating an `mbed_app.json` with t
   "requires": ["bare-metal"],
   "target_overrides": {
     "*": {
-      "target.default_lib": "small"
+      "target.c_lib": "small"
     }
   }
 }

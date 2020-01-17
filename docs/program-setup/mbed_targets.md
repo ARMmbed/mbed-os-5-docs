@@ -281,9 +281,9 @@ The `detect_code` contains four ASCII characters containing only hexadecimal val
 
 The `OUTPUT_EXT` property controls the file type emitted for a target by the build system. You may set `OUTPUT_EXT` to `bin` for binary format, `hex` for Intel HEX format and `elf` for ELF format. We discourage using the `elf` value for `OUTPUT_EXT` because the build system must always emit an ELF file.
 
-### default_lib
+### c_lib
 
-The `delault_lib` property controls which library, small or standard, the `GCC_ARM` toolchain links. The `default_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
+The `c_lib` property controls which library, small or standard, the `GCC_ARM` toolchain links. The `c_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
 
 ### bootloader_supported
 
@@ -336,7 +336,7 @@ For each of these target roles, some restrictions are in place:
 - MCUs are required to have, and Families and Subfamilies may have:
   - `release_versions`.
   - `supported_toolchains`.
-  - `default_lib`.
+  - `c_lib`.
   - `public`.
   - `device_has`.
 - Modules and Boards may have the following keys:
@@ -398,7 +398,7 @@ target errors:
   - EFM32 is not allowed in extra_labels
   EFM32GG990F1024:
   - macros found, and is not allowed
-  - default_lib not found, and is required
+  - c_lib not found, and is required
   - device_has not found, and is required
   EFM32GG_STK3700:
   - progen found, and is not allowed
@@ -410,7 +410,7 @@ target errors:
   - EFM32 is not allowed in extra_labels
   EFM32WG990F256:
   - macros found, and is not allowed
-  - default_lib not found, and is required
+  - c_lib not found, and is required
   - device_has not found, and is required
   EFM32WG_STK3800:
   - progen found, and is not allowed
@@ -422,7 +422,7 @@ hierarchy errors:
 target errors:
   LPC11U24_301:
   - release_versions not found, and is required
-  - default_lib not found, and is required
+  - c_lib not found, and is required
   - public not found, and is required
 ```
 
