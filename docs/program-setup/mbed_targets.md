@@ -283,7 +283,7 @@ The `OUTPUT_EXT` property controls the file type emitted for a target by the bui
 
 ### c_lib
 
-The `c_lib` property controls which library, small or standard, the `GCC_ARM` toolchain links. The `c_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
+The `c_lib` property controls which library, small or standard, the toolchain links. The `c_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
 
 ### bootloader_supported
 
