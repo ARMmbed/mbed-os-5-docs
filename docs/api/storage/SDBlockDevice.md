@@ -8,7 +8,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## How to wire an external SD-card module to a developer board
 
-<span class="images">![](../images/sd-wiring.png)<span>How to wire an external SD-card module to a developer board</span></span>
+<span class="images">![](../../images/sd-wiring.png)<span>How to wire an external SD-card module to a developer board</span></span>
 
 1. In `mbed_app.json`, override the SD pin mapping based on the wiring. For example: 
 
