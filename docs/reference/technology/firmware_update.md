@@ -10,14 +10,14 @@ Mbed CLI and the Mbed Online Compiler support update actions using the Update Se
 
 An updatable binary includes:
 
-* The user application.
-* A bootloader, as [explained below](#the-pelion-bootloader). The bootloader can load a new version of the firmware. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions once an update succeeds.
-* Mbed OS, or another operating system.
-* Device Management Client (which includes the Update client). The client allows your device to communicate with the Update service, receive update manifests and firmware, and verify firmware validity. These are [covered in our Device Management documentation](https://www.pelion.com/docs/device-management/latest/updating-firmware/index.html).
+- The user application.
+- A bootloader, as [explained below](#the-pelion-bootloader). The bootloader can load a new version of the firmware. As a security feature, the default behavior of the bootloader is to refuse to roll back to old firmware versions after an update succeeds.
+- Mbed OS or another operating system.
+- Device Management Client (which includes the Update client). The client allows your device to communicate with the Update service, receive update manifests and firmware and verify firmware validity. Please see our [Device Management documentation](https://www.pelion.com/docs/device-management/latest/updating-firmware/index.html) for more details.
 
   <span class="notes">**Note:** Because some embedded devices don't require remote update capabilities, Mbed OS does not include Device Management Client by default. You must explicitly import the client to your application.</span>
 
-* Permission to access your Device Management account, as well as keys and certificates to verify the firmware source and validity.
+- Permission to access your Device Management account, as well as keys and certificates to verify the firmware source and validity.
 
 ## The Pelion bootloader
 
@@ -42,12 +42,12 @@ Mbed CLI and the Online Compiler implement the Device Management Update service 
 
 <span class="notes">**Note**: The development tool workflow is intended only for development and testing purposes. It is not secure for production.</span>
 
-Your development tool needs to use your Device Management account API key to call the APIs. Once it has access to the APIs, it can generate a manifest, upload the manifest and binary to the server, and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
+Your development tool needs to use your Device Management account API key to call the APIs. After it has access to the APIs, it can generate a manifest, upload the manifest and binary to the server and deliver the manifest to a device or group of devices. For more information, see [the update API documentation](https://cloud.mbed.com/docs/latest/service-api-references/update-service.html).
 
 <span class="notes">**Note**: The tools currently support the update flow for Device Management Client, not Device Management Client Lite.</span>
 
 **Tutorials**:
 
 - Follow the Quick Connect guide, if you haven't already, to set up the original application](https://os.mbed.com/guides/connect-device-to-pelion/).
-  - Once your device is connected, try the firmware [update flow on the Online Compiler](https://os.mbed.com/guides/pelion-firmware-update).
+  - After your device is connected, try the firmware [update flow on the Online Compiler](https://os.mbed.com/guides/pelion-firmware-update).
 - Review the [Mbed CLI update commands](../tools/cli-update.html).
