@@ -267,6 +267,9 @@
                         },
                         {
                             "path": "docs/api/rtos/thread_safety.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/four_ways_to_blinky_tutorial.md"
                         }
                     ]
                 },
