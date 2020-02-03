@@ -34,7 +34,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
 | CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
 | ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
-| Mbed statistics | [CPU usage example](../apis/mbed-statistics.html#cpu-usage-example)<br> [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
+| Mbed statistics | [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
 | MPU management | [MPU management example](../apis/mpu-management.html#example) |
 | ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
 | ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
