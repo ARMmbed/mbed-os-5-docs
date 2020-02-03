@@ -129,8 +129,8 @@ queue.dispatch(); // free all pending events
 
 queue.call(func, 1, 2, 3); // requires 13 words of storage (9+4)
 queue.call(func, 1, 2, 3); // fails
-// storage has been fragmented into 2 events with 11 and 13 words
-// of storage, no space is left for an another 13 word event even though 2 words
+// storage has been fragmented into two events with 11 and 13 words
+// of storage, no space is left for an another 13 word event even though two words
 // exist in the memory region
 ```
 
@@ -151,12 +151,12 @@ queue.call(func0);       // requires 10 word of storage (9+1)
 // 0 words of storage remain
 
 queue.dispatch();  // free all pending events
-// all memory is free again (40 words) and in ten-word chunks
+// all memory is free again (40 words) and in 10-word chunks
 
 queue.call(func3, 1, 2, 3); // requires 13 words of storage (9+4), so allocation fails
 ```
 
-Forty words of storage are free but only for allocations of ten word or less. The solution to this failure is to increase the size of your EventQueue. Having the proper sized EventQueue prevents you from running out of space for events in the future.
+Forty words of storage are free but only for allocations of 10 words or fewer. The solution to this failure is to increase the size of your EventQueue. Having the proper sized EventQueue prevents you from running out of space for events in the future.
 
 ### More about events
 
