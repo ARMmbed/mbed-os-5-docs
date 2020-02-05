@@ -24,7 +24,6 @@
                 },
                 {
                     "title": "Versions and releases",
-
                     "sources": [{
                             "path": "docs/migrating/mbed-os-2-vs-5.md"
                         },
@@ -35,9 +34,10 @@
                 },
                 {
                     "title": "Glossary",
-                    "sources": [{
+                    "intro": {
                         "path": "docs/introduction/terms.md"
-                    }]
+                    },
+                    "sources" :[]
                 }
             ],
             "tags": [
