@@ -110,7 +110,7 @@
             "slug": "program-setup",
             "type": "markdown",
             "chapters": [{
-                    "title": "Overview",
+                    "title": "Concepts",
                     "intro": {
                         "path": "docs/program-setup/reference.md"
                     },
