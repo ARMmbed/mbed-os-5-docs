@@ -116,17 +116,12 @@
                     },
                     "sources": [
                       {
-                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "Mbed OS fundamentals",
-                    "sources": [{
                             "path": "docs/program-setup/runtime/Execution.md"
                         },
                         {
                             "path": "docs/program-setup/runtime/Bootstrap.md"
+                        },
+                        {"path": "docs/program-setup/managed-unmanaged-bootloader.md"
                         }
                     ]
                 },
