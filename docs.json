@@ -121,13 +121,13 @@
                         {
                             "path": "docs/program-setup/runtime/Bootstrap.md"
                         },
-                        {   "path": "docs/program-setup/managed-unmanaged-bootloader.md"
-                        },
                         {
                             "path": "docs/program-setup/project-structure.md"
                         },
                         {
                             "path": "docs/program-setup/build_rules.md"
+                        },
+                        {   "path": "docs/program-setup/managed-unmanaged-bootloader.md"
                         }
                     ]
                 },
