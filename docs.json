@@ -116,15 +116,6 @@
                     },
                     "sources": [
                       {
-                          "path": "docs/program-setup/serial/serial-overview.md"
-                        },
-                        {
-                            "path": "docs/program-setup/serial/serial_driver.md"
-                        },
-                        {
-                            "path": "docs/program-setup/serial/serial_communication.md"
-                        },
-                        {
                             "path": "docs/program-setup/managed-unmanaged-bootloader.md"
                         }
                     ]
@@ -136,6 +127,19 @@
                         },
                         {
                             "path": "docs/program-setup/runtime/Bootstrap.md"
+                        }
+                    ]
+                },
+                {
+                    "title": "Serial communication",
+                    "sources": [{
+                            "path": "docs/program-setup/serial/serial-overview.md"
+                        },
+                        {
+                            "path": "docs/program-setup/serial/serial_driver.md"
+                        },
+                        {
+                            "path": "docs/program-setup/serial/serial_communication.md"
                         }
                     ]
                 },
