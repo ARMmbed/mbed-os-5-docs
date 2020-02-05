@@ -121,7 +121,13 @@
                         {
                             "path": "docs/program-setup/runtime/Bootstrap.md"
                         },
-                        {"path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                        {   "path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                        },
+                        {
+                            "path": "docs/program-setup/project-structure.md"
+                        },
+                        {
+                            "path": "docs/program-setup/build_rules.md"
                         }
                     ]
                 },
@@ -155,18 +161,6 @@
                     ]
                 },
                 {
-                    "title": "Project structures and configuration",
-                    "sub_chapters": [{
-                            "title": "Project structure",
-                            "sources": [{
-                                    "path": "docs/program-setup/project-structure.md"
-                                },
-                                {
-                                    "path": "docs/program-setup/build_rules.md"
-                                }
-                            ]
-                        },
-                        {
                             "title": "Configuration",
                             "intro": {
                                 "path": "docs/program-setup/configuration.md"
@@ -200,8 +194,6 @@
                                 },
                                 {
                                     "path": "docs/program-setup/bootloader.md"
-                                }
-                            ]
                         }
                     ]
                 }
