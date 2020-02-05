@@ -8,7 +8,7 @@ The PSA initial attestation service is based on the TF-M attestation service, wh
 
 ## Specification
 
-The initial attestation service exposes the following PSA interfaces:
+The initial attestation service exposes the following PSA interfaces (based on the Beta-0 spec of the PSA Attestation API):
 
 ```
 enum psa_attest_err_t
