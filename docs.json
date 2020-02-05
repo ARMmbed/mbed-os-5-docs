@@ -34,10 +34,10 @@
                 },
                 {
                     "title": "Glossary",
-                    "intro": {
-                        "path": "docs/introduction/terms.md"
-                    },
-                    "sources" :[]
+                    "sources": [{
+                            "path": "docs/introduction/terms.md"
+                        }
+                    ]
                 }
             ],
             "tags": [
