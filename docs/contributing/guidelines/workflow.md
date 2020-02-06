@@ -178,7 +178,7 @@ A bot automatically adds reviewers based on the files that are actually changed.
 
 ### Release Notes
 
-Every pull request changing or adding functionality must fill in the "Release notes" section. This applies to feature and major PRs. For both these types, you must complete the "Summary of changes" section. Provide a brief description of changes introduced, including justification.
+Every pull request changing or adding functionality must fill in the "Summary of changes" section.
 
 For major PRs, it is also compulsory to complete the "Impact of changes" and "Migration actions required".
 
