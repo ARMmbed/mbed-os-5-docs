@@ -227,10 +227,12 @@ A pull request in the "work needed" state requires additional work due to failed
 
 ### Ready for integration
 
-Maintainers merge pull requests during the internal gatekeeping meetings that occur three times a week. They can merge straightforward pull requests immediately.
+A pull request is ready for merge when the pull request completed the reviews and tests.
+
+Maintainers merge pull requests as they have write access to the main master branch. Pull request integration happens at any time of the day.
 
 - Label: `Ready for merge`.
-- Time: Two days.
+- Time: One day.
 
 ### Releases
 
