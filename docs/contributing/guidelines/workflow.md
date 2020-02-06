@@ -70,6 +70,9 @@ The following template is automatically provided when you raise a pull request a
 
     ##### Summary of change (*What the change is for and why*)
 
+    ###### Impact of changes
+
+    ###### Migration actions required
 
     ##### Documentation (*Details of any document updates required*)
 
@@ -91,18 +94,6 @@ The following template is automatically provided when you raise a pull request a
         
     ----------------------------------------------------------------------------------------------------------------
     ### Reviewers (*optional*)
-
-
-    ----------------------------------------------------------------------------------------------------------------
-    ### Release Notes (*required for feature/major PRs*)
-
-
-    ##### Summary of changes
-
-    ##### Impact of changes
-
-    ##### Migration actions required
-
 
 ### Description field
 
