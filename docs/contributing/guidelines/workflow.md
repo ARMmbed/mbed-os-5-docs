@@ -165,7 +165,7 @@ This section is to indicate what test results, if any, are required for the PR. 
     
 ### Reviewers
 
-A bot automatically adds reviewers based on the files that are actually changed. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
+A bot automatically adds reviewers based on the files that are actually changed. It uses internal reviewers database. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
 
 ### Release Notes
 
