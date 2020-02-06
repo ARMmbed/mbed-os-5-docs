@@ -196,7 +196,7 @@ Each pull request goes through the following workflow:
 
 ## Pull request states
 
-The Mbed OS maintainers add labels to a pull request to describe its workflow states. The Mbed OS maintainers are responsible for moving pull requests through the workflow states.
+Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify file.yml. The Mbed OS maintainers are responsible for moving pull requests through the workflow states.
 
 Each state is time-boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
 
@@ -209,7 +209,7 @@ All pull requests must be reviewed. The Arm Mbed CI bot determines the most suit
 GitHub dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 - Label: `needs: review`.
-- Time: Three days for reviewers to leave feedback after the maintainers add the label.
+- Time: Three days for reviewers to leave feedback after the autoreviewer bot add the label.
 
 ### The Continuous Integration (CI) testing
 
