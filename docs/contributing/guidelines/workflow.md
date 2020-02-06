@@ -37,7 +37,7 @@ You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker and regularly triage them.
+We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx".
 
 ## Guidelines for GitHub pull requests
 
