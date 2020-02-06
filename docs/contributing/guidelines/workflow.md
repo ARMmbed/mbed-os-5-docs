@@ -196,7 +196,7 @@ Each pull request goes through the following workflow:
 
 ## Pull request states
 
-Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify file.yml. The Mbed OS maintainers are responsible for moving pull requests through the workflow states.
+Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify file.yml. The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from Mergify bot.
 
 Each state is time-boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
 
