@@ -257,6 +257,9 @@ We use many other labels to summarize the scope and effect of the changes:
 - *mirrored* - the git2jira bot mirrored an issue to our internal Jira
 - *JIRA status:* - an internal jira ticket status propagated to Github issue. It can be: OPEN, IN PROGRESS, CLOSED, RESOLVED or REOPENED.
 - *closed in jira* - mirrored internal Jira issue was closed
+- *Manually patch* - a pull request needs manual cherry-picking for the release candidate to resolve conflicts
+- *rollup PR* - rollup pull request, more details in the section below
+- *risk: x* - How big risks is the pull request for a specific release. Options are: green, amber or red.
 
 The following labels summarize the scope of the pull request:
 
