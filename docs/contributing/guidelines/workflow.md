@@ -260,12 +260,19 @@ We use many other labels to summarize the scope and effect of the changes:
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
 - *rollup PR* - Ready for CI testing, but will instead be brought into a rollup pull request to test multiple pull requests at once.
+- *Release review required* - additional release version approval is required
+- *release version missing* - a merged pull request does not contain release label, it should be fixed by the maintainers team
+- *BREAKING-CHANGE* - a pull request introducing breaking change
+- *mirrored* - the git2jira bot mirrored an issue to our internal Jira
+- *JIRA status:* - an internal jira ticket status propagated to Github issue. It can be: OPEN, IN PROGRESS, CLOSED, RESOLVED or REOPENED.
+- *closed in jira* - mirrored internal Jira issue was closed
 
 The following labels summarize the scope of the pull request:
 
 - *scope: bug-fix*.
 - *scope: feature*.
 - *scope: new-target*
+- *scope: refactor*
 
 ### Rollup pull requests
 
