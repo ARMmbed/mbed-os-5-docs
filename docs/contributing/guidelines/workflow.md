@@ -247,7 +247,7 @@ alpha/beta release etc
 We use many other labels to summarize the scope and effect of the changes:
 
 - *needs: preceding PR* - Cannot yet be merged because it has a dependency on another pull request that needs to merge first.
-- *DO NOT MERGE* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
+- *do not merge* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
 - *rollup PR* - Ready for CI testing, but will instead be brought into a rollup pull request to test multiple pull requests at once.
