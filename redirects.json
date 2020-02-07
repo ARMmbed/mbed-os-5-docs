@@ -1,5 +1,5 @@
 {
-  "reference/mesh-tech.html" : "/reference/6LoWPAN-ND-tech.html",
+  "reference/mesh-tech.html" : "reference/6LoWPAN-ND-tech.html",
   "tools/developing-arm-mbed-cli.html" : "tools/developing-mbed-cli.html",
   "tools/windows.html" : "tools/installation-and-setup.html",
   "tools/macos.html" : "tools/installation-and-setup.html",
