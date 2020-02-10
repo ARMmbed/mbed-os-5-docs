@@ -18,7 +18,7 @@ To migrate from Mbed OS 2 to Mbed OS 5, [please follow our migration tutorial](.
    Yes. Inside the `mbed.h` file in your Mbed OS project, you can see `if` statements that look at `MBED_CONF` variables. The `mbed_lib.json` files located in their respective Mbed OS directory define these variables. For example, in `mbed.h` you can find the following lines:
 
    ```
-   #if MBED_CONF_RTOS_PRESENT
+   #if MBED_CONF_RTOS_API_PRESENT
    #include "rtos/rtos.h"
    #endif
    ```
