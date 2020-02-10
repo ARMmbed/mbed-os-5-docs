@@ -204,6 +204,664 @@
             "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
             "slug": "apis",
             "type": "markdown",
+            "chapters": [{
+                    "title": "Full API list",
+                    "intro": {
+                        "path": "docs/api/api.md"
+                    },
+                    "sources": []
+                },
+                {
+                    "title": "RTOS and event handling",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/api/rtos/thread_safety.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/api/rtos/Kernel.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/api/rtos/events_tutorial.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Input/Output (I/O)",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/io/drivers.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/api/io/flow_control.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Data storage",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/storage/storage.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/storage/storage-arch.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Network Socket",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/networksocket/networksocket.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/networking-arch.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Network interfaces",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/networkinterfaces/networkinterface.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/api/networkinterfaces/EthInterface.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/api/networkinterfaces/mesh_tutorial.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "USB",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/usb/usb_component.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/api/usb/USBSerial.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/usb/usb-arch.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Bluetooth",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/bluetooth/bluetooth.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/api/bluetooth/Gap.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/api/bluetooth/ble_tutorial.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "LoRaWAN",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "NFC",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Cloud connection",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Security",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Power",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Memory",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Utilities",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Examples and tutorials",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "APIs",
+            "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
+            "slug": "apis",
+            "type": "markdown",
             "category": "apis",
             "chapters": [{
                     "title": "Full API list",
