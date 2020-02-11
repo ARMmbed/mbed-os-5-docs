@@ -27,7 +27,7 @@ The code executes two handler functions (`rise_handler` and `fall_handler`) in t
 1. In interrupt context when a rising edge is detected on `SW2` (`rise_handler`).
 2. In the context of the event loop's thread function when a falling edge is detected on `SW2` (`fall_handler`). You can use the `fall_handler` function as an argument to `queue.event()` to specify that `fall_handler` runs in user context instead of interrupt context.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_1/)](https://os.mbed.com/teams/mbed_example/code/events_ex_1/file/69c11c7877b6/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_1)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_1/main.cpp)
 
 ## Shared event example: deferring from interrupt context
 
