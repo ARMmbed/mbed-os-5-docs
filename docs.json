@@ -1,6 +1,5 @@
 {
     "product_name": "Mbed OS 6",
-    "split_pages_on": "h1",
     "books": [{
             "title": "Mbed OS API doxygen",
             "description": "The full Mbed OS API documentation in doxygen format",
@@ -909,7 +908,7 @@
                         {
                             "title": "Architecture",
                             "intro": {
-                                "path": "security/securesocket-arch.md"
+                                "path": "docs/api/security/securesocket-arch.md"
                             },
                             "sources": []
                         }
