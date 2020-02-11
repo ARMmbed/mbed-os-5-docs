@@ -10,20 +10,7 @@ The USBKeyboard class provides the functionality of a keyboard. You can send key
 
 ## USBKeyboard example
 
-```C++ TODO
-#include "mbed.h"
-#include "USBKeyboard.h"
-
-USBKeyboard key;
-
-int main(void)
-{
-  while (1) {
-      key.printf("Hello World\r\n");
-      wait(1.0);
-  }
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBKeyboard)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBKeyboard/main.cpp)
 
 ## Related content
 
