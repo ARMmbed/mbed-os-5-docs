@@ -2,11 +2,11 @@
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
-The `UnbufferedSerial` class provides UART functionality with an API similar to the [`BufferedSerial`](./BufferedSerial.md) class. The classes also share the same default configurations.
+The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/BufferedSerial.html) class. The classes also share the same default configurations.
 
-Unlike the `BufferedSerial` class, the `UnbufferedSerial` class does not use intermediary buffers to store bytes to transmit to or read from the hardware. The user application is responsible for processing each byte as they are received. The method to read data returns only one byte for every call. It is therefore suitable when more control is required and for use in interrupt handlers with the RTOS. The class can however be used to write multiple bytes at once. Since it does not acquire a mutex lock, care must be taken that only one instance is using the serial port.
+Unlike the BufferedSerial class, the UnbufferedSerial class does not use intermediary buffers to store bytes to transmit to or read from the hardware. The user application is responsible for processing each byte as it is received. The method to read data returns only one byte for every call. Therefore, we recommend you use this class when you need more control and for use in interrupt handlers with the RTOS. You can also use this class to write multiple bytes at once. Because it does not acquire a mutex lock, you must ensure only one instance uses the serial port.
 
-For normal blocking application that require a serial channel for something other than the console, `BufferedSerial` will perform better than `UnbufferedSerial` and will cause less CPU load and latency issues. `UnbufferedSerial` should only be used by applications that are short of RAM and cannot afford buffering or need more control of the serial port and use it from IRQ.
+For normal blocking applications that require a serial channel for something other than the console, BufferedSerial performs better than `UnbufferedSerial` and causes less CPU load and fewer latency issues. Only applications that are short of RAM and cannot afford buffering or that need more control of the serial port and use it from IRQ should use UnbufferedSerial.
 
 You can view more information about the configurable settings and functions in the class reference.
 
@@ -18,9 +18,8 @@ You can view more information about the configurable settings and functions in t
 
 ## Example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/UnbufferedSerial/)](https://os.mbed.com/teams/mbed_example/code/UnbufferedSerial/file/112a40a5991a/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial/main.cpp)
 
+### Mbed OS use
 
-### Mbed OS usage
-
-Common use cases for `UnbufferedSerial` are IRQ heavy UART operations, such as the [BLE cordio in the transport driver](https://github.com/ARMmbed/mbed-os/blob/master/features/FEATURE_BLE/targets/TARGET_CORDIO/driver/H4TransportDriver.cpp#L62).
+Common use cases for `UnbufferedSerial` are IRQ heavy UART operations, such as [BLE Cordio in the transport driver](https://github.com/ARMmbed/mbed-os/blob/master/features/FEATURE_BLE/targets/TARGET_CORDIO/driver/H4TransportDriver.cpp#L62).
