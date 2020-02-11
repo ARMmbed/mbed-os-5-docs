@@ -862,7 +862,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/security/security.md"
                                 }
                             ]
                         },
@@ -883,21 +883,33 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/security/psa_attestation.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/security/crypto.md"
+                        },
+                        {
+                            "path": "docs/api/security/psa_lifecycle.md"
+                        },
+                        {
+                            "path": "docs/api/security/TLS.md"
+                        },
+                        {
+                            "path": "docs/api/security/Devicekey.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/security/tls_tutorial.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Architecture",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "security/securesocket-arch.md"
                             },
                             "sources": []
                         }
@@ -908,7 +920,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/power/power_manage.md"
                                 }
                             ]
                         },
@@ -929,9 +941,24 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/power/PowerManagement.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/power/DeepSleepLock.md"
+                        },
+                        {
+                            "path": "docs/api/power/IdleLoop.md"
+                        },
+                        {
+                            "path": "docs/api/power/LowPowerTicker.md"
+                        },
+                        {
+                            "path": "docs/api/power/LowPowerTimeout.md"
+                        },
+                        {
+                            "path": "docs/api/power/LowPowerTimer.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -954,7 +981,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/memory/memory_intro.md"
                                 }
                             ]
                         },
@@ -975,14 +1002,35 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/memory/runtime_mem_trace.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/memory/runtime_stats.md"
+                        },
+                        {
+                            "path": "docs/api/memory/printf.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MbedStats.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MpuManagement.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MemTrace.md"
+                        },
+                        {
+                            "path": "docs/api/memory/MemoryPool.md"
+                        },
+                        {
+                            "path": "docs/program-setup/runtime/Memory.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/program-setup/runtime/static_memory_optimization.md"
                             },
                             "sources": []
                         },
@@ -1000,7 +1048,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/platform/platform.md"
                                 }
                             ]
                         },
@@ -1021,9 +1069,60 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/platform/Wait.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/platform/Callback.md"
+                        },
+                        {
+                            "path": "docs/api/platform/CriticalSectionLock.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Time.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Rtc.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Debug.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Error.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Assert.md"
+                        },
+                        {
+                            "path": "docs/api/platform/NonCopyable.md"
+                        },
+                        {
+                            "path": "docs/api/platform/SharedPtr.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Span.md"
+                        },
+                        {
+                            "path": "docs/api/platform/FileHandle.md"
+                        },
+                        {
+                            "path": "docs/api/platform/Poll.md"
+                        },
+                        {
+                            "path": "docs/api/platform/PlatformMutex.md"
+                        },
+                        {
+                            "path": "docs/api/platform/CircularBuffer.md"
+                        },
+                        {
+                            "path": "docs/api/platform/ATCmdParser.md"
+                        },
+                        {
+                            "path": "docs/api/platform/ScopedRamExecutionLock.md"
+                        },
+                        {
+                            "path": "docs/api/platform/ScopedRomWriteLock.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
