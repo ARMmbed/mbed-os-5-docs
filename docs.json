@@ -237,9 +237,42 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/api/rtos/Kernel.md"
+                                "path": "docs/api/rtos/Thread.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/rtos/ThisThread.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/Mutex.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/Semaphore.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/Queue.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/EventQueue.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/UserAllocatedEvent.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/Mail.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/EventFlags.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/Event.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/ConditionVariable.md"
+                        },
+                        {
+                            "path": "docs/api/rtos/Kernel.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -283,16 +316,102 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/io/drivers.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/io/AnalogIn.md"
+                        },
+                        {
+                            "path": "docs/api/io/AnalogOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/DigitalIn.md"
+                        },
+                        {
+                            "path": "docs/api/io/DigitalOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/DigitalInOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/BusIn.md"
+                        },
+                        {
+                            "path": "docs/api/io/BusOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/BusInOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/PortIn.md"
+                        },
+                        {
+                            "path": "docs/api/io/PortOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/PortInOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/PwmOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/InterruptIn.md"
+                        },
+                        {
+                            "path": "docs/api/io/Ticker.md"
+                        },
+                        {
+                            "path": "docs/api/io/TimeOut.md"
+                        },
+                        {
+                            "path": "docs/api/io/Timer.md"
+                        },
+                        {
+                            "path": "docs/api/io/Watchdog.md"
+                        },
+                        {
+                            "path": "docs/api/io/ResetReason.md"
+                        },
+                        {
+                            "path": "docs/api/io/FlashIAP.md"
+                        },
+                        {
+                            "path": "docs/api/io/RawSerial.md"
+                        },
+                        {
+                            "path": "docs/api/io/Serial.md"
+                        },
+                        {
+                            "path": "docs/api/io/SPI.md"
+                        },
+                        {
+                            "path": "docs/api/io/SPISlave.md"
+                        },
+                        {
+                            "path": "docs/api/io/QuadSPI.md"
+                        },
+                        {
+                            "path": "docs/api/io/I2C.md"
+                        },
+                        {
+                            "path": "docs/api/io/I2CSlave.md"
+                        },
+                        {
+                            "path": "docs/api/io/CAN.md"
+                        },
+                        {
+                            "path": "docs/api/io/MbedCRC.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
                             "intro": {
                                 "path": "docs/api/io/flow_control.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/io/alarm-tutorial.md"
+                        }]
                         },
                         {
                             "title": "Architecture",
@@ -329,9 +448,69 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/storage/KVStoreAPI.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/storage/KVStoreGlobalAPI.md"
+                        },
+                        {
+                            "path": "docs/api/storage/FileSystem.md"
+                        },
+                        {
+                            "path": "docs/api/storage/Dir.md"
+                        },
+                        {
+                            "path": "docs/api/storage/File.md"
+                        },
+                        {
+                            "path": "docs/api/storage/LittleFileSystem.md"
+                        },
+                        {
+                            "path": "docs/api/storage/FATFileSystem.md"
+                        },
+                        {
+                            "path": "docs/api/storage/BlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/HeapBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/MBRBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/ChainingBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/SlicingBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/ProfilingBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/BufferedBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/FlashSimBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/DataFlashBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/FlashIAPBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/SDBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/SPIFBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/QSPIFBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/NVStore.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -345,7 +524,14 @@
                             "intro": {
                                 "path": "docs/api/storage/storage-arch.md"
                             },
-                            "sources": []
+                            "sources": [                        
+                            {
+                            "path": "docs/api/storage/psa_internal_storage.md"
+                            },
+                            {
+                            "path": "docs/api/storage/psa_protected_storage.md"
+                            }
+                            ]
                         }
                     ]
                 },
