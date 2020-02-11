@@ -261,6 +261,7 @@ We use many other labels to summarize the scope and effect of the changes:
 - *rollup PR* - rollup pull request, more details in the section below.
 - *risk: x* - How big a risk is the pull request. Options are: green, amber or red.
 - *open for community contributions* - Arm does not intend to fix this issue in the near future.
+- *mirror internally* - this pull request will be manually mirrored to our internal Jira.
 
 The following labels summarize the scope of the pull request:
 
