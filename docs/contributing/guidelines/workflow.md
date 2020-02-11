@@ -37,7 +37,7 @@ You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx".
+We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx" and provides labels showing the current state of the mirrored issues.
 
 ## Guidelines for GitHub pull requests
 
@@ -200,7 +200,7 @@ All pull requests must be reviewed. The Arm Mbed CI bot determines the most suit
 Mergify dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 - Label: `needs: review`.
-- Time: Three days for reviewers to leave feedback after the autoreviewer bot add the label.
+- Time: Three days for reviewers to leave feedback after the autoreviewer bot has added the label.
 
 ### The Continuous Integration (CI) testing
 
@@ -218,9 +218,9 @@ A pull request in the "work needed" state requires additional work due to failed
 
 ### Ready for integration
 
-A pull request is ready for merge when the pull request completed the reviews and tests.
+A pull request is ready for merge once all the reviews and tests are complete.
 
-Maintainers merge pull requests as they have write access to the main master branch. Pull request integration happens at any time of the day.
+Maintainers merge pull requests as they have write access to the main master branch. Pull request integration happens at any time of the day. This may be automated in the future.
 
 - Label: `Ready for merge`.
 - Time: One day.
@@ -251,15 +251,15 @@ We use many other labels to summarize the scope and effect of the changes:
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
 - *rollup PR* - Ready for CI testing, but will instead be brought into a rollup pull request to test multiple pull requests at once.
-- *Release review required* - additional release version approval is required
-- *release version missing* - a merged pull request does not contain release label, it should be fixed by the maintainers team
-- *BREAKING-CHANGE* - a pull request introducing breaking change
-- *mirrored* - the git2jira bot mirrored an issue to our internal Jira
+- *Release review required* - additional release version approval is required.
+- *release version missing* - a merged pull request does not contain a release label, it should be fixed by the maintainers team.
+- *BREAKING-CHANGE* - this pull request introduces a breaking change.
+- *mirrored* - the git2jira bot mirrored an issue to our internal Jira.
 - *JIRA status:* - an internal jira ticket status propagated to Github issue. It can be: OPEN, IN PROGRESS, CLOSED, RESOLVED or REOPENED.
-- *closed in jira* - mirrored internal Jira issue was closed
-- *Manually patch* - a pull request needs manual cherry-picking for the release candidate to resolve conflicts
-- *rollup PR* - rollup pull request, more details in the section below
-- *risk: x* - How big risks is the pull request for a specific release. Options are: green, amber or red.
+- *closed in jira* - mirrored internal Jira issue was closed.
+- *Manually patch* - a pull request needs manual cherry-picking for the release candidate to resolve conflicts.
+- *rollup PR* - rollup pull request, more details in the section below.
+- *risk: x* - How big a risk is the pull request. Options are: green, amber or red.
 
 The following labels summarize the scope of the pull request:
 
