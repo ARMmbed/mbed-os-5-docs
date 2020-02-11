@@ -250,7 +250,6 @@ We use many other labels to summarize the scope and effect of the changes:
 - *do not merge* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
-- *rollup PR* - Ready for CI testing, but will instead be brought into a rollup pull request to test multiple pull requests at once.
 - *Release review required* - additional release version approval is required.
 - *release version missing* - a merged pull request does not contain a release label, it should be fixed by the maintainers team.
 - *BREAKING-CHANGE* - this pull request introduces a breaking change.
