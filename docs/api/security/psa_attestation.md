@@ -8,6 +8,8 @@ The PSA initial attestation service is based on the TF-M attestation service, wh
 
 ## Specification
 
+<span class="notes">**Note:** The version of PSA Attestation shipping with Mbed OS implements PSA Attestation API v1.0beta0.</span>
+
 The initial attestation service exposes the following PSA interfaces:
 
 ```
