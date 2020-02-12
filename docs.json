@@ -560,9 +560,33 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/networksocket/socket.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/networksocket/UDPSocket.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/TCPSocket.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/SocketAddress.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/CellularNonIPSocket.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/DNS.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/TLSSocket.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/DTLSSocket.md"
+                        },
+                        {
+                            "path": "docs/api/networksocket/SocketStats.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -608,21 +632,57 @@
                             "intro": {
                                 "path": "docs/api/networkinterfaces/EthInterface.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/networkinterfaces/WifiInterface.md"
+                        },
+                        {
+                            "path": "docs/api/networkinterfaces/CellularInterface.md"
+                        },
+                        {
+                            "path": "docs/api/networkinterfaces/MeshInterface.md"
+                        },
+                        {
+                            "path": "docs/api/networkinterfaces/NetworkStatus.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh_tutorial.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/light-control.md"
+                            }
+                          ]
                         },
                         {
                             "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
+                            },
+                            {
+                            "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
+                            },
+                            {
+                            "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                            },
+                            {
+                            "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                            },
+                            {
+                            "path": "docs/api/networkinterfaces/wifi-arch.md"
+                            },
+                            {
+                            "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                            },
+                            {
+                            "path": "docs/api/networkinterfaces/cellular-arch.md"
+                            }
+                          ]
                         }
                     ]
                 },
@@ -654,7 +714,34 @@
                             "intro": {
                                 "path": "docs/api/usb/USBSerial.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/usb/USBAudio.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBHID.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBCDC.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBCDC_ECM.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBMSD.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBMIDI.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBMouse.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBKeyboard.md"
+                        },
+                        {
+                            "path": "docs/api/usb/USBMouseKeyboard.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -698,9 +785,30 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/api/bluetooth/Gap.md"
+                                "path": "docs/api/bluetooth/BLE.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/bluetooth/Gap.md"
+                        },
+                        {
+                            "path": "docs/api/bluetooth/GattClient.md"
+                        },
+                        {
+                            "path": "docs/api/bluetooth/GattServer.md"
+                        },
+                        {
+                            "path": "docs/api/bluetooth/SecurityManager.md"
+                        },
+                        {
+                            "path": "docs/api/bluetooth/BatteryService.md"
+                        },
+                        {
+                            "path": "docs/api/bluetooth/HeartRateService.md"
+                        },
+                        {
+                            "path": "docs/api/bluetooth/iBeacon.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -723,7 +831,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/lorawan/lorawanintro.md"
                                 }
                             ]
                         },
@@ -744,21 +852,24 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/lorawan/lorawan.md"
                             },
-                            "sources": []
+                            "sources": [{
+                                "path": "docs/api/lorawan/loraradio.md"
+                            }
+                          ]
                         },
                         {
                             "title": "Examples and tutorials",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/lorawan/intro-to-lora.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Architecture",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/lorawan/lora-tech.md"
                             },
                             "sources": []
                         }
@@ -769,7 +880,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/nfc/NDEF.md"
                                 }
                             ]
                         },
@@ -790,9 +901,21 @@
                         {
                             "title": "APIs",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/nfc/NFCController.md"
                             },
-                            "sources": []
+                            "sources": [{
+                            "path": "docs/api/nfc/NFCEEPROM.md"
+                        },
+                        {
+                            "path": "docs/api/nfc/MessageParser.md"
+                        },
+                        {
+                            "path": "docs/api/nfc/SimpleMessageParser.md"
+                        },
+                        {
+                            "path": "docs/api/nfc/MessageBuilder.md"
+                        }
+                   ]
                         },
                         {
                             "title": "Examples and tutorials",
@@ -804,7 +927,7 @@
                         {
                             "title": "Architecture",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/nfc/nfc-arch.md"
                             },
                             "sources": []
                         }
@@ -815,7 +938,7 @@
                     "sub_chapters": [{
                             "title": "Concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/firmware_update.md"
                                 }
                             ]
                         },
