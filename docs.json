@@ -160,36 +160,12 @@
                     ]
                 },
                 {
-                            "title": "Configuration",
+                            "title": "Advanced configuration",
                             "intro": {
                                 "path": "docs/program-setup/configuration.md"
                             },
                             "sources": [{
                                     "path": "docs/program-setup/mbed_targets.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/platform-config.md"
-                                },
-                                {
-                                    "path": "docs/api/io/io-config.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/rtos-config.md"
-                                },
-                                {
-                                    "path": "docs/api/connectivity-config.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-config.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/ble-config.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/lorawanconfig.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/storage-config.md"
                                 },
                                 {
                                     "path": "docs/program-setup/bootloader.md"
@@ -222,7 +198,7 @@
                         {
                             "title": "RTOS and event handling options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/rtos/rtos-config.md"
                             },
                             "sources": []
                         },
@@ -301,7 +277,7 @@
                         {
                             "title": "I/O options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/io/io-config.md"
                             },
                             "sources": []
                         },
@@ -433,7 +409,7 @@
                         {
                             "title": "Data storage options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/storage/storage-config.md"
                             },
                             "sources": []
                         },
@@ -546,7 +522,7 @@
                         {
                             "title": "Network socket options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/connectivity-config.md"
                             },
                             "sources": []
                         },
@@ -616,7 +592,7 @@
                         {
                             "title": "Network interfaces options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/networkinterfaces/mesh-config.md"
                             },
                             "sources": []
                         },
@@ -771,7 +747,7 @@
                         {
                             "title": "Bluetooth options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/bluetooth/ble-config.md"
                             },
                             "sources": []
                         },
@@ -838,7 +814,7 @@
                         {
                             "title": "LoRaWAN options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/lorawan/lorawanconfig.md"
                             },
                             "sources": []
                         },
@@ -1177,7 +1153,7 @@
                         {
                             "title": "Utilities options and config",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/api/platform/platform-config.md"
                             },
                             "sources": []
                         },
