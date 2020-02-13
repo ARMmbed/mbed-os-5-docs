@@ -213,28 +213,28 @@
                 {
                     "title": "RTOS and event handling",
                     "sub_chapters": [{
-                            "title": "Concepts",
+                            "title": "RTOS and event handling concepts",
                             "sources": [{
                                     "path": "docs/api/rtos/rtos.md"
                                 }
                             ]
                         },
                         {
-                            "title": "Options and config",
+                            "title": "RTOS and event handling options and config",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "General information",
+                            "title": "RTOS and event handling general information",
                             "intro": {
                                 "path": "docs/api/rtos/thread_safety.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "APIs",
+                            "title": "RTOS and event handling APIs",
                             "intro": {
                                 "path": "docs/api/rtos/Thread.md"
                             },
@@ -274,14 +274,14 @@
                    ]
                         },
                         {
-                            "title": "Examples and tutorials",
+                            "title": "RTOS and event handling examples and tutorials",
                             "intro": {
                                 "path": "docs/api/rtos/events_tutorial.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Architecture",
+                            "title": "RTOS and event handling architecture",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
