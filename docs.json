@@ -160,15 +160,15 @@
                     ]
                 },
                 {
-                            "title": "Advanced configuration",
-                            "intro": {
+                    "title": "Advanced configuration",
+                    "intro": {
                                 "path": "docs/program-setup/configuration.md"
                             },
-                            "sources": [{
-                                    "path": "docs/program-setup/mbed_targets.md"
+                    "sources": [{
+                                "path": "docs/program-setup/mbed_targets.md"
                                 },
                                 {
-                                    "path": "docs/program-setup/bootloader.md"
+                                "path": "docs/program-setup/bootloader.md"
                         }
                     ]
                 }
@@ -250,7 +250,7 @@
                    ]
                         },
                         {
-                            "title": "RTOS and event handling examples and tutorials",
+                            "title": "RTOS and event handling tutorials",
                             "intro": {
                                 "path": "docs/api/rtos/events_tutorial.md"
                             },
@@ -380,7 +380,7 @@
                    ]
                         },
                         {
-                            "title": "I/O examples and tutorials",
+                            "title": "I/O tutorials",
                             "intro": {
                                 "path": "docs/api/io/flow_control.md"
                             },
@@ -488,7 +488,7 @@
                    ]
                         },
                         {
-                            "title": "Data storage examples and tutorials",
+                            "title": "Data storage tutorials",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
@@ -565,7 +565,7 @@
                    ]
                         },
                         {
-                            "title": "Network socket examples and tutorials",
+                            "title": "Network socket tutorials",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
@@ -623,7 +623,7 @@
                    ]
                         },
                         {
-                            "title": "Network interfaces examples and tutorials",
+                            "title": "Network interfaces tutorials",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh_tutorial.md"
                             },
@@ -720,7 +720,7 @@
                    ]
                         },
                         {
-                            "title": "USB examples and tutorials",
+                            "title": "USB tutorials",
                             "intro": {
                                 "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
                             },
@@ -787,7 +787,7 @@
                    ]
                         },
                         {
-                            "title": "Bluetooth examples and tutorials",
+                            "title": "Bluetooth tutorials",
                             "intro": {
                                 "path": "docs/api/bluetooth/ble_tutorial.md"
                             },
@@ -836,7 +836,7 @@
                           ]
                         },
                         {
-                            "title": "LoRaWAN examples and tutorials",
+                            "title": "LoRaWAN tutorials",
                             "intro": {
                                 "path": "docs/api/lorawan/intro-to-lora.md"
                             },
@@ -894,7 +894,7 @@
                    ]
                         },
                         {
-                            "title": "NFC examples and tutorials",
+                            "title": "NFC tutorials",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
@@ -940,7 +940,7 @@
                             "sources": []
                         },
                         {
-                            "title": "Cloud connection examples and tutorials",
+                            "title": "Cloud connection tutorials",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
@@ -998,7 +998,7 @@
                    ]
                         },
                         {
-                            "title": "Security examples and tutorials",
+                            "title": "Security tutorials",
                             "intro": {
                                 "path": "docs/api/security/tls_tutorial.md"
                             },
@@ -1059,7 +1059,7 @@
                    ]
                         },
                         {
-                            "title": "Power examples and tutorials",
+                            "title": "Power tutorials",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
@@ -1126,7 +1126,7 @@
                    ]
                         },
                         {
-                            "title": "Memory examples and tutorials",
+                            "title": "Memory tutorials",
                             "intro": {
                                 "path": "docs/program-setup/runtime/static_memory_optimization.md"
                             },
@@ -1223,7 +1223,7 @@
                    ]
                         },
                         {
-                            "title": "Utilities examples and tutorials",
+                            "title": "Utilities tutorials",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-online-debug.md"
                             },
