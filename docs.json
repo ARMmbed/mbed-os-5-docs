@@ -198,7 +198,7 @@
                     "sub_chapters": [{
                             "title": "RTOS and event handling options and config",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos-config.m"
+                                    "path": "docs/api/rtos/rtos-config.md"
                                 }
                             ]
                         },
