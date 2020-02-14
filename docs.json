@@ -255,13 +255,6 @@
                                 "path": "docs/api/rtos/events_tutorial.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "RTOS and event handling architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -278,13 +271,6 @@
                             "title": "I/O options and config",
                             "intro": {
                                 "path": "docs/api/io/io-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "I/O general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
@@ -387,13 +373,6 @@
                             "sources": [{
                             "path": "docs/api/io/alarm-tutorial.md"
                         }]
-                        },
-                        {
-                            "title": "I/O architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -410,13 +389,6 @@
                             "title": "Data storage options and config",
                             "intro": {
                                 "path": "docs/api/storage/storage-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Data storage general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
@@ -488,13 +460,6 @@
                    ]
                         },
                         {
-                            "title": "Data storage tutorials",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "Data storage architecture",
                             "intro": {
                                 "path": "docs/api/storage/storage-arch.md"
@@ -523,13 +488,6 @@
                             "title": "Network socket options and config",
                             "intro": {
                                 "path": "docs/api/connectivity-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Network socket general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
@@ -565,13 +523,6 @@
                    ]
                         },
                         {
-                            "title": "Network socket tutorials",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "Network socket architecture",
                             "intro": {
                                 "path": "docs/api/networking-arch.md"
@@ -593,13 +544,6 @@
                             "title": "Network interfaces options and config",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Network interfaces general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
@@ -672,20 +616,6 @@
                             ]
                         },
                         {
-                            "title": "USB options and config",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "USB general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "USB APIs",
                             "intro": {
                                 "path": "docs/api/usb/USBSerial.md"
@@ -752,13 +682,6 @@
                             "sources": []
                         },
                         {
-                            "title": "Bluetooth general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "Bluetooth APIs",
                             "intro": {
                                 "path": "docs/api/bluetooth/BLE.md"
@@ -792,13 +715,6 @@
                                 "path": "docs/api/bluetooth/ble_tutorial.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "Bluetooth architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -815,13 +731,6 @@
                             "title": "LoRaWAN options and config",
                             "intro": {
                                 "path": "docs/api/lorawan/lorawanconfig.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "LoRaWAN general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
@@ -861,20 +770,6 @@
                             ]
                         },
                         {
-                            "title": "NFC options and config",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "NFC general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "NFC APIs",
                             "intro": {
                                 "path": "docs/api/nfc/NFCController.md"
@@ -894,13 +789,6 @@
                    ]
                         },
                         {
-                            "title": "NFC tutorials",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "NFC architecture",
                             "intro": {
                                 "path": "docs/api/nfc/nfc-arch.md"
@@ -917,41 +805,6 @@
                                     "path": "docs/api/firmware_update.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Cloud connection options and config",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Cloud connection general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Cloud connection APIs",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Cloud connection tutorials",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Cloud connection architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -963,20 +816,6 @@
                                     "path": "docs/api/security/security.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Security options and config",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Security general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         },
                         {
                             "title": "Security APIs",
@@ -1023,20 +862,6 @@
                             ]
                         },
                         {
-                            "title": "Power options and config",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Power general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "Power APIs",
                             "intro": {
                                 "path": "docs/api/power/PowerManagement.md"
@@ -1057,20 +882,6 @@
                             "path": "docs/api/power/LowPowerTimer.md"
                         }
                    ]
-                        },
-                        {
-                            "title": "Power tutorials",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Power architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -1082,20 +893,6 @@
                                     "path": "docs/api/memory/memory_intro.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Memory options and config",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Memory general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         },
                         {
                             "title": "Memory APIs",
@@ -1131,13 +928,6 @@
                                 "path": "docs/program-setup/runtime/static_memory_optimization.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "Memory architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -1154,13 +944,6 @@
                             "title": "Utilities options and config",
                             "intro": {
                                 "path": "docs/api/platform/platform-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Utilities general information",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         },
@@ -1221,20 +1004,6 @@
                             "path": "docs/api/platform/ScopedRomWriteLock.md"
                         }
                    ]
-                        },
-                        {
-                            "title": "Utilities tutorials",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Utilities architecture",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 }
