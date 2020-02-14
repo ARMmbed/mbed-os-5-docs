@@ -188,19 +188,19 @@
                 },
                 {
                     "title": "RTOS and event handling",
+                    "intro": {
+                        "path": "docs/api/rtos/rtos.md"
+                    },
+                    "sources": []
+                },
+                {
+                    "title": "RTOS and event handling options and config",
                     "sub_chapters": [{
-                            "title": "RTOS and event handling concepts",
+                            "title": "RTOS and event handling options and config",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/rtos/rtos-config.m"
                                 }
                             ]
-                        },
-                        {
-                            "title": "RTOS and event handling options and config",
-                            "intro": {
-                                "path": "docs/api/rtos/rtos-config.md"
-                            },
-                            "sources": []
                         },
                         {
                             "title": "RTOS and event handling general information",
