@@ -189,6 +189,7 @@
                 {
                     "title": "RTOS and event handling",
                     "sub_chapters": [{
+                            "title": "RTOS and event handling concepts",
                             "sources": [{
                                     "path": "docs/api/rtos/rtos.md"
                                 }
