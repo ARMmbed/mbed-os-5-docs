@@ -1,8 +1,8 @@
-# Power optimization
+## Power optimization
 
 IoT devices often claim they can run ten years on one battery, but building low-powered nodes is challenging. Complex products use multiple threads, a variety of active timers and sometimes a second core handling network connectivity. Sensors and other peripherals also use power. To help you manage these complexities while using the least amount of power, Mbed OS contains a number of low-power features, including low power tickers, tickless mode and the sleep manager. This tutorial explains how to use these features.
 
-## Power modes
+### Power modes
 
 Mbed OS contains three [power modes](../apis/power-management-sleep.html):
 
@@ -41,7 +41,7 @@ This leads to significant energy savings without any modification from you. For 
 
 <span class="notes">**Note:** The current consumption differs wildly between devices, even when comparing between MCUs from the same vendor. Look at the data sheet for your MCU to get an indication of power consumption in sleep and deep sleep mode.</span>
 
-### Sleep and deep sleep
+#### Sleep and deep sleep
 
 Whether the sleep manager puts the MCU in deep sleep instead of sleep depends on:
 
@@ -52,7 +52,7 @@ Whether the sleep manager puts the MCU in deep sleep instead of sleep depends on
 
 To help you understand how much time the MCU spends in active, sleep and deep sleep modes and to determine what might be blocking deep sleep, you can enable CPU statistics and the sleep tracer.
 
-### CPU statistics
+#### CPU statistics
 
 To enable CPU statistics, which show you how much time is spent in various modes, add the following line to the `target_overrides` section of your `mbed_app.json` file:
 
@@ -99,7 +99,7 @@ Uptime: 12613 Sleep time: 1 Deep Sleep: 12591
 
 As stated before, some drivers and components can block deep sleep, either because they need access to the high-frequency timers (such as the `Timer` object), or because they cannot handle the latency that waking up from deep sleep introduces. This happens for example when attaching a receive interrupt on a UART. By the time the interrupt fires, the data that was written to the UART could no longer be there.
 
-#### Acquiring a sleep lock
+##### Acquiring a sleep lock
 
 If your code requires blocking deep sleep, you can acquire a sleep lock. While the lock is active, Mbed OS will not bring the MCU into deep sleep mode. You can do this either by calling:
 
@@ -124,7 +124,7 @@ Or through the [DeepSleepLock](../mbed-os-api-doxy/_deep_sleep_lock_8h_source.ht
 
 In addition, the `DeepSleepLock` object also has `lock` and `unlock` functions, which are useful for asynchronous operations.
 
-#### Seeing active sleep locks
+##### Seeing active sleep locks
 
 The sleep manager maintains a list of all active deep sleep locks and can log these whenever the device goes into sleep mode. This helps you determine what is blocking sleep. To enable these log messages, add the following macro to the `macros` section of your `mbed_app.json` file:
 
@@ -166,7 +166,7 @@ Every time the device goes to sleep, this tells you a sleep lock is active. It a
 
 **Tip:** Too much output from the sleep tracer? For a cleaner log, you can disable the code that logs all active locks when going to sleep in [mbed_sleep_manager.c](https://github.com/ARMmbed/mbed-os/blob/8e819de43e88a11428f3f7d21db7f6e7a534058a/platform/mbed_sleep_manager.c).
 
-#### Mbed OS drivers that block deep sleep
+##### Mbed OS drivers that block deep sleep
 
 This is a list of core Mbed OS drivers that block deep sleep:
 
@@ -181,9 +181,9 @@ This is a list of core Mbed OS drivers that block deep sleep:
 
 Device-specific drivers (such as USB stacks) and networking drivers might also block deep sleep.
 
-## Advanced topics
+### Advanced topics
 
-### Inner workings
+#### Inner workings
 
 When all threads are paused, the system [idle hook](../apis/idle-loop.html) is invoked. By default (though you can override this behavior), this yields control to the sleep manager. The sleep manager then either calls `hal_sleep()` or `hal_deepsleep()`, depending on whether deep is locked or permitted. The device implements these HAL functions, according to the following specifications:
 
@@ -205,11 +205,11 @@ For more information on the design of tickless and the sleep manager, please see
 
 For information about the tradeoff between power savings and memory footprint in tickless mode, please see the [power management API reference](../apis/power-management-sleep.html).
 
-### Hibernate mode without RAM retention
+#### Hibernate mode without RAM retention
 
 All sleep modes in Mbed OS are implemented with RAM retention, but some MCUs have even lower power modes that completely stop the MCU and won't retain any information. After waking up, the MCU starts execution from the beginning of the program. Typically the only way to wake up from this mode is through an interrupt on a wake-up pin or from the low power ticker.
 
-### Measuring power consumption
+#### Measuring power consumption
 
 Accurately measuring the power consumption of deep sleep is challenging because of the huge dynamic range required, with current ranging from 1 uA to 100 mA. Also, the MCU is often awake for a very short amount of time, so measuring by hand is not practical. In addition, almost all Mbed Enabled development boards have a debug circuit that draws power (often much more than the MCU itself). Therefore, for accurate power measurement, you need:
 
@@ -228,15 +228,15 @@ This is the current measurement setup for the images earlier in this article. Th
 
 Unfortunately there is no generic way of doing this. There are probably hints in the help guide for your development board.
 
-### Choosing and shutting down peripherals
+#### Choosing and shutting down peripherals
 
 It might seem like an open door, but putting the MCU to sleep is only part of a low power design: Peripherals can draw much more power than the MCU. The LED in the beginning of the article is drawing ~2.8 mA, much more than the rest of the circuit in deep sleep. Therefore, make sure to choose components that fit your power budget and shut peripherals down when you don't use them. Radios often have sleep modes you can invoke, so make sure your drivers use these.
 
 Another option to consider is using a lower voltage design. Many MCUs can run at 1.8 V instead of 3.3 V, and choosing peripherals that can run on the same voltage drastically reduces your overall power consumption.
 
-## Troubleshooting
+### Troubleshooting
 
-### Stack overflow when enabling sleep tracing or CPU statistics
+#### Stack overflow when enabling sleep tracing or CPU statistics
 
 When enabling sleep tracing or CPU stats, the idle thread has to allocate more data. On some devices, this leads to stack overflows on the idle thread. If you encounter this, you can increase the stack size of the idle thread by adding the following section under `target_overrides` in `mbed_app.json`:
 
@@ -244,7 +244,7 @@ When enabling sleep tracing or CPU stats, the idle thread has to allocate more d
         "rtos.idle-thread-stack-size": 1024
 ```
 
-### Device not entering deep sleep even though tickless is enabled
+#### Device not entering deep sleep even though tickless is enabled
 
 On some devices, the interrupt latency when running on the low-power tickers causes the device to drop bytes when running the serial at higher baud rates (such as 115,200). To mitigate this, these devices run tickless from the microsecond ticker instead of the low-power ticker, and this blocks deep sleep.
 
@@ -254,7 +254,7 @@ If your application does not require high baud rates, you can set the following 
 MBED_CONF_TARGET_TICKLESS_FROM_US_TICKER=0
 ```
 
-### Device wakes up from deep sleep every second (or other period)
+#### Device wakes up from deep sleep every second (or other period)
 
 Some devices wake from deep sleep for a small period every second, even when the device is instructed to wake up much later.
 
@@ -266,6 +266,6 @@ This is related to the maximum timeout of the hardware low power ticker. It can 
         "target.lpticker_lptim_clock": 4
 ```
 
-### Device does not sleep in bare-metal mode
+#### Device does not sleep in bare-metal mode
 
 The sleep manager does not load when running Mbed OS in bare-metal mode. We may add this capability in a future release. If you are developing in bare metal mode, call the `sleep()` function manually, and make sure you set up the wake up source.
