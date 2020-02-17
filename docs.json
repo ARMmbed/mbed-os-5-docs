@@ -190,10 +190,10 @@
                     "title": "RTOS and event handling",
                     "sub_chapters": [{
                             "title": "RTOS and event handling concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/rtos/rtos.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "RTOS and event handling options and config",
@@ -464,7 +464,7 @@
                             "intro": {
                                 "path": "docs/api/storage/storage-arch.md"
                             },
-                            "sources": [                        
+                            "sources": [
                             {
                             "path": "docs/api/storage/psa_internal_storage.md"
                             },
