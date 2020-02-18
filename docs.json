@@ -262,10 +262,10 @@
                     "title": "Input/Output (I/O)",
                     "sub_chapters": [{
                             "title": "I/O concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/io/drivers.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "I/O options and config",
@@ -380,10 +380,10 @@
                     "title": "Data storage",
                     "sub_chapters": [{
                             "title": "Concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/storage/storage.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Data storage options and config",
@@ -479,10 +479,10 @@
                     "title": "Network Socket",
                     "sub_chapters": [{
                             "title": "Concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/networksocket/networksocket.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Network socket options and config",
@@ -535,10 +535,10 @@
                     "title": "Network interfaces",
                     "sub_chapters": [{
                             "title": "Concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/networkinterfaces/networkinterface.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Network interfaces options and config",
@@ -610,10 +610,10 @@
                     "title": "USB",
                     "sub_chapters": [{
                             "title": "USB concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/usb/usb_component.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "USB APIs",
@@ -669,10 +669,10 @@
                     "title": "Bluetooth",
                     "sub_chapters": [{
                             "title": "Bluetooth concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/bluetooth/bluetooth.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Bluetooth options and config",
@@ -722,10 +722,10 @@
                     "title": "LoRaWAN",
                     "sub_chapters": [{
                             "title": "LoRaWAN concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/lorawan/lorawanintro.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "LoRaWAN options and config",
@@ -764,10 +764,10 @@
                     "title": "NFC",
                     "sub_chapters": [{
                             "title": "NFC concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/nfc/NDEF.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "NFC APIs",
@@ -812,10 +812,10 @@
                     "title": "Security",
                     "sub_chapters": [{
                             "title": "Security concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/security/security.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Security APIs",
@@ -856,10 +856,10 @@
                     "title": "Power",
                     "sub_chapters": [{
                             "title": "Power concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/power/power_manage.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Power APIs",
@@ -889,10 +889,10 @@
                     "title": "Memory",
                     "sub_chapters": [{
                             "title": "Memory concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/memory/memory_intro.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Memory APIs",
@@ -935,10 +935,10 @@
                     "title": "Utilities",
                     "sub_chapters": [{
                             "title": "Utilities concepts",
-                            "sources": [{
+                            "intro": {
                                     "path": "docs/api/platform/platform.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         },
                         {
                             "title": "Utilities options and config",
