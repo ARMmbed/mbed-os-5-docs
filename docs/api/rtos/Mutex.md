@@ -23,7 +23,7 @@ If synchronization is required in ISR, consider using semaphores.
 
 <span class="notes">**Note:** Mbed OS uses the [PlatformMutex](platformmutex.html) class instead of the RTOS mutex for all drivers.</span>
 
-## Mutex class reference
+### Mutex class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 

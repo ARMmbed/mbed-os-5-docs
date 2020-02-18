@@ -1,4 +1,4 @@
-# BufferedSerial
+## BufferedSerial
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_buffered_serial.png)<span>`BufferedSerial` class hierarchy</span></span>
 
@@ -25,7 +25,7 @@ Using intermediary buffers allows the UART interface to be used reliably for inp
 
 The RX and TX buffers are circular buffers with preallocated sizes configurable using the configuration parameters `uart-serial-rxbuf-size` and `uart-serial-txbuf-size`. You can find both configuration parameters in `drivers/mbed_lib.json`.
 
-## Configuration
+### Configuration
 
 The following parameters can be configured at object instantiation:
 
@@ -48,19 +48,19 @@ You can also configure hardware flow control if necessary.
 
 You can view more information about the configurable settings and functions in the class reference.
 
-## BufferedSerial class reference
+### BufferedSerial class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_buffered_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. Please see the [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver) document for more information.</span>
 
-## BufferedSerial examples
+### BufferedSerial examples
 
 This example toggles an LED and echoes input to a terminal:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BufferedSerial_echo)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BufferedSerial_echo/main.cpp)
 
-### Printing to the console
+#### Printing to the console
 
 Mbed OS redefines target-dependent I/O functions in the C library to allow you to use the C standard I/O library functions (`s\v\f\n\printf`, `scanf` and so on) in your application for printing to the console.
 

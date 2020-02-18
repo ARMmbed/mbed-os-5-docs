@@ -2,7 +2,7 @@
 
 The Kernel namespace implements interfaces to attach a function to some kernel events and also to read the kernel tick count.
 
-## Kernel namespace reference
+### Kernel namespace reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
 

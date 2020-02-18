@@ -12,7 +12,7 @@ You can use the `dispatch` and `dispatch_forever` APIs to execute pending events
 
 Mbed OS provides two shared queues software can use. This can avoid the need to create private event dispatch threads and reduce the total amount of RAM used.
 
-## EventQueue class reference
+### EventQueue class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classevents_1_1_event_queue.html)
 
