@@ -4,8 +4,6 @@ This chapter covers the different aspects of developing your own libraries for u
 - [Creating and licensing](#licensing-binaries-and-libraries): Create and license your own binaries and libraries.
 - [The Arm Mbed OS codebase](#contributing-to-the-mbed-os-codebase): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
 
-We use scancode-toolkit to enforce the license in binaries and libraries. Please see "Continuous integration (CI) testing" section for more information.
-
 ## Licensing binaries and libraries
 
 When you write original code, you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others.
@@ -104,6 +102,22 @@ If you decide to use a different license for your work, follow the same pattern:
 - Begin each source header with your copyright line, the SPDX identifier and the standard header for the license that applies to that single file, if it has one. (See [SPDX Specification, Appendix V](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b).)
 
 - If more than one license applies to the source file, use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE.md* file and in each source file.
+
+## License check in pull requests
+
+We use scancode-toolkit to enforce the license in binaries and libraries. Please see "Continuous integration (CI) testing" section for more information.
+
+To scan the files in SCANCODE folder, please use:
+
+```
+scancode --license --json-pp mbed-os.json SCANCODE
+```
+
+Run our script to check if files confirm to this license guide:
+
+```
+python tools/test/travis-ci/scancode-evaluate.py -f mbed-os.json
+```
 
 ## Contributing to the Mbed OS codebase
 
