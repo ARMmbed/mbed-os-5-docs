@@ -4,6 +4,8 @@ This chapter covers the different aspects of developing your own libraries for u
 - [Creating and licensing](#licensing-binaries-and-libraries): Create and license your own binaries and libraries.
 - [The Arm Mbed OS codebase](#contributing-to-the-mbed-os-codebase): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
 
+We use scancode-toolkit to enforce the license in binaries and libraries. Please see "Continuous integration (CI) testing" section for more information.
+
 ## Licensing binaries and libraries
 
 When you write original code, you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others.
