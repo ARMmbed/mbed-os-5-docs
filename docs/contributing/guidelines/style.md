@@ -1,14 +1,14 @@
-# Style
+## Style
 
 The Arm Mbed OS codebase is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](../contributing/workflow.html#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
 <span class="tips">**Tip:** Please also read the [workflow](../contributing/workflow.html) section for a review of the process and legal requirements.</span>
 
-## Code acceptance
+### Code acceptance
 
 After the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
-## Coding style
+### Coding style
 
 Whether you're writing new code or fixing bugs in existing code, please follow the Mbed OS coding style.
 
@@ -24,7 +24,7 @@ astyle -n --options=.astylerc $(full_path_to_file)
 
 File `.astylerc` defines Mbed OS code style and it's in the Mbed OS root directory.
 
-### Code sample
+#### Code sample
 
 ```c TODO
 static const PinMap PinMap_ADC[] = {
@@ -68,7 +68,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 }
 ```
 
-### Rules
+#### Rules
 
 - Indentation - four spaces. Please do not use tabs.
 - Braces - K&R style.
@@ -87,9 +87,9 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 - Use capital letters for macros.
 - A file should have an empty line at the end.
 
-### Naming conventions
+#### Naming conventions
 
-#### Classes
+##### Classes
 
 - Begin with a capital letter, and each word within a class also begins with a capital letter (AnalogIn, BusInOut).
 - Methods contain small letters, with words separated by underscore.
@@ -97,7 +97,7 @@ uint32_t adc_function(analogin_t *obj, uint32_t options)
 - Structures - `suffix _t` - to denote it is a user-defined type.
 - Enumeration - the type name and values name - same naming convention as classes (for example MyNewEnum).
 
-#### Functions
+##### Functions
 
 - Contain lower case letters (as methods within classes).
 - Words separated by underscore (wait_ms, read_u16).
@@ -143,26 +143,26 @@ struct analogin_s {
 typedef struct analogin_s analogin_t;
 ```
 
-#### Namespaces
+##### Namespaces
 
 Namespaces used to group subsystems are lower case, such as `rtos` and `event`. If not in a specific subsystem, C++ APIs are in namespace `mbed`. A few APIs remain in the global namespace for backward compatibility.
 
-Occasionally, namespaces are used to act as-if "static singleton" objects. One example is namespace `ThisThread` in `rtos` (which was modeled after C++11 `std::this_thread`). These namespaces follow the class naming convention, so calls to their functions look like calls to static class methods. 
+Occasionally, namespaces are used to act as-if "static singleton" objects. One example is namespace `ThisThread` in `rtos` (which was modeled after C++11 `std::this_thread`). These namespaces follow the class naming convention, so calls to their functions look like calls to static class methods.
 
 Below is an example of typical namespace use in a source file:
 
 ```
     using namespace rtos;
-    
+
     ThisThread::sleep_for(1000);
-    
+
 ```
 
-### Doxygen documentation
+#### Doxygen documentation
 
 All functions and methods should contain documentation using Doxygen.
 
-## Compiler settings
+### Compiler settings
 
 All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded, Arm Compiler 6 and IAR EWARM. Mbed OS:
 
