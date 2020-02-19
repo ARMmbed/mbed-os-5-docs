@@ -389,7 +389,19 @@
                             "intro": {
                                     "path": "docs/api/storage/storage.md"
                                 },
-                                "sources": []
+                                "sources": [{
+                                "path": "docs/api/storage/storage-config.md"
+                            },
+                            {
+                                "path": "docs/api/storage/storage-arch.md"
+                            },
+                            {
+                                "path": "docs/api/storage/psa_internal_storage.md"
+                            },
+                            {
+                                "path": "docs/api/storage/psa_protected_storage.md"
+                            }
+                          ]
                         },
                         {
                             "title": "Options and config",
@@ -464,20 +476,6 @@
                             "path": "docs/api/storage/NVStore.md"
                         }
                    ]
-                        },
-                        {
-                            "title": "Architecture",
-                            "intro": {
-                                "path": "docs/api/storage/storage-arch.md"
-                            },
-                            "sources": [
-                            {
-                            "path": "docs/api/storage/psa_internal_storage.md"
-                            },
-                            {
-                            "path": "docs/api/storage/psa_protected_storage.md"
-                            }
-                            ]
                         }
                     ]
                 },
