@@ -189,28 +189,28 @@
                 {
                     "title": "RTOS and event handling",
                     "sub_chapters": [{
-                            "title": "RTOS and event handling concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/rtos/rtos.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "RTOS and event handling options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/rtos/rtos-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "RTOS and event handling general information",
+                            "title": "General information",
                             "intro": {
                                 "path": "docs/api/rtos/thread_safety.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "RTOS and event handling APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/rtos/Thread.md"
                             },
@@ -250,7 +250,7 @@
                    ]
                         },
                         {
-                            "title": "RTOS and event handling tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/rtos/events_tutorial.md"
                             },
@@ -261,21 +261,21 @@
                 {
                     "title": "Input/Output (I/O)",
                     "sub_chapters": [{
-                            "title": "I/O concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/io/drivers.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "I/O options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/io/io-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "I/O APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/io/drivers.md"
                             },
@@ -372,7 +372,7 @@
                    ]
                         },
                         {
-                            "title": "I/O tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/io/flow_control.md"
                             },
@@ -392,14 +392,14 @@
                                 "sources": []
                         },
                         {
-                            "title": "Data storage options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/storage/storage-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Data storage APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/storage/KVStoreAPI.md"
                             },
@@ -466,7 +466,7 @@
                    ]
                         },
                         {
-                            "title": "Data storage architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/storage/storage-arch.md"
                             },
@@ -482,7 +482,7 @@
                     ]
                 },
                 {
-                    "title": "Network Socket",
+                    "title": "Network socket",
                     "sub_chapters": [{
                             "title": "Concepts",
                             "intro": {
@@ -491,14 +491,14 @@
                                 "sources": []
                         },
                         {
-                            "title": "Network socket options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/connectivity-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Network socket APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/networksocket/socket.md"
                             },
@@ -529,7 +529,7 @@
                    ]
                         },
                         {
-                            "title": "Network socket architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/networking-arch.md"
                             },
@@ -547,14 +547,14 @@
                                 "sources": []
                         },
                         {
-                            "title": "Network interfaces options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Network interfaces APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/EthInterface.md"
                             },
@@ -573,7 +573,7 @@
                    ]
                         },
                         {
-                            "title": "Network interfaces tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh_tutorial.md"
                             },
@@ -583,7 +583,7 @@
                           ]
                         },
                         {
-                            "title": "Network interfaces architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
                             },
@@ -615,14 +615,14 @@
                 {
                     "title": "USB",
                     "sub_chapters": [{
-                            "title": "USB concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/usb/usb_component.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "USB APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/usb/USBSerial.md"
                             },
@@ -656,14 +656,14 @@
                    ]
                         },
                         {
-                            "title": "USB tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "USB architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/usb/usb-arch.md"
                             },
@@ -674,21 +674,21 @@
                 {
                     "title": "Bluetooth",
                     "sub_chapters": [{
-                            "title": "Bluetooth concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/bluetooth/bluetooth.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "Bluetooth options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/bluetooth/ble-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Bluetooth APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/bluetooth/BLE.md"
                             },
@@ -716,7 +716,7 @@
                    ]
                         },
                         {
-                            "title": "Bluetooth tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/bluetooth/ble_tutorial.md"
                             },
@@ -727,21 +727,21 @@
                 {
                     "title": "LoRaWAN",
                     "sub_chapters": [{
-                            "title": "LoRaWAN concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/lorawan/lorawanintro.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "LoRaWAN options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/lorawan/lorawanconfig.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "LoRaWAN APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/lorawan/lorawan.md"
                             },
@@ -751,14 +751,14 @@
                           ]
                         },
                         {
-                            "title": "LoRaWAN tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/lorawan/intro-to-lora.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "LoRaWAN architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/lorawan/lora-tech.md"
                             },
@@ -769,14 +769,14 @@
                 {
                     "title": "NFC",
                     "sub_chapters": [{
-                            "title": "NFC concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/nfc/NDEF.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "NFC APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/nfc/NFCController.md"
                             },
@@ -795,7 +795,7 @@
                    ]
                         },
                         {
-                            "title": "NFC architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/nfc/nfc-arch.md"
                             },
@@ -806,25 +806,25 @@
                 {
                     "title": "Cloud connection",
                     "sub_chapters": [{
-                            "title": "Cloud connection concepts",
-                            "sources": [{
+                            "title": "Concepts",
+                            "intro": {
                                     "path": "docs/api/firmware_update.md"
-                                }
-                            ]
+                                },
+                                "sources": []
                         }
-                    ]
+                  ]
                 },
                 {
                     "title": "Security",
                     "sub_chapters": [{
-                            "title": "Security concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/security/security.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "Security APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/security/psa_attestation.md"
                             },
@@ -843,14 +843,14 @@
                    ]
                         },
                         {
-                            "title": "Security tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/api/security/tls_tutorial.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Security architecture",
+                            "title": "Architecture",
                             "intro": {
                                 "path": "docs/api/security/securesocket-arch.md"
                             },
@@ -861,14 +861,14 @@
                 {
                     "title": "Power",
                     "sub_chapters": [{
-                            "title": "Power concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/power/power_manage.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "Power APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/power/PowerManagement.md"
                             },
@@ -894,14 +894,14 @@
                 {
                     "title": "Memory",
                     "sub_chapters": [{
-                            "title": "Memory concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/memory/memory_intro.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "Memory APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/memory/runtime_mem_trace.md"
                             },
@@ -929,7 +929,7 @@
                    ]
                         },
                         {
-                            "title": "Memory tutorials",
+                            "title": "Tutorials",
                             "intro": {
                                 "path": "docs/program-setup/runtime/static_memory_optimization.md"
                             },
@@ -940,21 +940,21 @@
                 {
                     "title": "Utilities",
                     "sub_chapters": [{
-                            "title": "Utilities concepts",
+                            "title": "Concepts",
                             "intro": {
                                     "path": "docs/api/platform/platform.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "Utilities options and config",
+                            "title": "Options and config",
                             "intro": {
                                 "path": "docs/api/platform/platform-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Utilities APIs",
+                            "title": "APIs",
                             "intro": {
                                 "path": "docs/api/platform/Wait.md"
                             },
