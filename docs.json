@@ -396,12 +396,6 @@
                                 "path": "docs/api/storage/storage-arch.md"
                             },
                             {
-                                "path": "docs/api/storage/psa_internal_storage.md"
-                            },
-                            {
-                                "path": "docs/api/storage/psa_protected_storage.md"
-                            },
-                            {
                                 "path": "docs/api/storage/KVStoreAPI.md"
                             },
                         {
@@ -460,6 +454,12 @@
                         },
                         {
                             "path": "docs/api/storage/QSPIFBlockDevice.md"
+                        },
+                        {
+                            "path": "docs/api/storage/psa_internal_storage.md"
+                        },
+                        {
+                            "path": "docs/api/storage/psa_protected_storage.md"
                         },
                         {
                             "path": "docs/api/storage/NVStore.md"
