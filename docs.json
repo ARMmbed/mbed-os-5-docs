@@ -189,28 +189,28 @@
                 {
                     "title": "RTOS and event handling",
                     "sub_chapters": [{
-                            "title": "Concepts",
+                            "title": "RTOS and event handling concepts",
                             "intro": {
                                     "path": "docs/api/rtos/rtos.md"
                                 },
                                 "sources": []
                         },
                         {
-                            "title": "Options and config",
+                            "title": "RTOS and event handling options and config",
                             "intro": {
                                 "path": "docs/api/rtos/rtos-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "General information",
+                            "title": "RTOS and event handling general information",
                             "intro": {
                                 "path": "docs/api/rtos/thread_safety.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "APIs",
+                            "title": "RTOS and event handling APIs",
                             "intro": {
                                 "path": "docs/api/rtos/Thread.md"
                             },
@@ -250,7 +250,7 @@
                    ]
                         },
                         {
-                            "title": "Tutorials",
+                            "title": "RTOS and event handling tutorials",
                             "intro": {
                                 "path": "docs/api/rtos/events_tutorial.md"
                             },
