@@ -1,4 +1,4 @@
-# Cellular networking
+## Cellular networking
 
 Mbed OS cellular provides your IoT application with access to world-wide operator-maintained cellular networks, both IP and non-IP, as Figure 1 illustrates. Mbed OS cellular implementation is based on international 3GPP and OMA standards, and it has been verified to work with all cellular networks such as NB-IoT, CAT-M1, 4G LTE, 3G WCDMA and GPRS.
 
@@ -6,7 +6,7 @@ Mbed OS cellular provides your IoT application with access to world-wide operato
 
 Please read about [Mbed OS connectivity technology](https://www.mbed.com/en/technologies/connectivity/) if you are not yet familiar with it.
 
-## Key features
+### Key features
 
 Key features of the Mbed OS cellular APIs include:
 
@@ -20,7 +20,7 @@ OMA Lightweight M2M is a protocol from the Open Mobile Alliance for IoT device m
 
 Many Mbed Enabled boards already support cellular connectivity. Because Mbed OS is an open source platform, developers can enable support for new cellular boards with our adaptation framework. Please see our [cellular porting guide](../porting/cellular-device-porting.html) for more information.
 
-## Quick start
+### Quick start
 
 To use cellular data connection:
 
@@ -33,11 +33,11 @@ A network interface instantiated directly or using calls such as `CellularInterf
 
 If you want to see code, you can go to our [cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/).
 
-## Cellular device selection
+### Cellular device selection
 
 If an Mbed OS target board has an on-board cellular device then the cellular framework uses that by default when calling `get_default_instance()`. The default cellular device instance can be overridden in the cellular driver `mbed_lib.json` files or an application can override  `NetworkInterface::get_default_instance()`.
 
-## Cellular APIs
+### Cellular APIs
 
 As an application developer, you should use and refer only to classes located under API folder. All the other classes have implementation details that are expected to change frequently.
 
@@ -50,6 +50,7 @@ Cellular APIs are structured based on main functionalities:
 
 You can instantiate the CellularContext class with `CellularContext::get_default_instance()`, which opens `CellularDevice` and, through the device, opens `CellularContext`. Opening `CellularContext` through `get_default_instance` uses values from `mbed_app.json`.
 These values are not defined by default, and you must override them in `mbed_app.json` if you need them:
+
 ```
 "target_overrides": {
         "*": {
@@ -72,11 +73,12 @@ When an application has opened a cellular API, you can use it to request API met
     		}
     }
 ```
-## UDP and TCP sockets
+
+### UDP and TCP sockets
 
 If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack (PPP mode), which is part of Mbed OS, or to use the IP stack on the cellular device (AT mode).
 
-### PPP mode with the LWIP stack on Mbed OS
+#### PPP mode with the LWIP stack on Mbed OS
 
 <span class="images">![](../../images/Cell_PPP.png)</span>
 
@@ -89,7 +91,7 @@ You can enable PPP mode and also configure LWIP features in the application conf
     "lwip.ipv6-enabled": true
     "lwip.tcp-enabled": true
 
-### AT mode with the IP stack on the modem
+#### AT mode with the IP stack on the modem
 
 <span class="images">![](../../images/Cell_AT.png)</span>
 
@@ -99,7 +101,7 @@ The AT mode is enabled when the PPP mode is not enabled:
 
     "lwip.ppp-enabled": false
 
-### Should you use PPP or AT mode?
+#### Should you use PPP or AT mode?
 
 Consider the following points when selecting PPP or AT mode:
 
@@ -110,11 +112,11 @@ Consider the following points when selecting PPP or AT mode:
 - AT mode typically supports only UDP sockets.
 - AT mode is potentially better optimized for power consumption.
 
-## Optimize for power consumption
+### Optimize for power consumption
 
 The cellular API has methods to optimize power saving: Power Save Mode (PSM) and extended Discontinuous Reception (eDRX).
 
-### PSM - Power Save Mode
+#### PSM - Power Save Mode
 
     set_power_save_mode(int periodic_time, int active_time)
 
@@ -126,7 +128,7 @@ This feature offers great power savings for periodically reporting devices. Betw
 
 PSM configuration is negotiated with the network, and the actual PSM time that network has accepted may differ from that requested.
 
-### eDRX - extended Discontinuous Reception
+#### eDRX - extended Discontinuous Reception
 
     set_receive_period(int mode, EDRXAccessTechnology act_type, uint8_t edrx_value)
 
@@ -136,7 +138,7 @@ This feature serves devices that need smaller latencies. A connection is kept op
 
 An application gives eDRX configuration to the modem which negotiates it with the network. The time accepted by the network may differ from the requested time. Availability of this optimization depends on the cellular network.
 
-## Considerations for UDP, TCP and non-IP use
+### Considerations for UDP, TCP and non-IP use
 
 Which networking protocol to use depends on multiple factors. Server communication model, power consumption, reliability need and operator support are the biggest factors.
 
