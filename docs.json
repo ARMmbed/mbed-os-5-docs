@@ -400,22 +400,11 @@
                             },
                             {
                                 "path": "docs/api/storage/psa_protected_storage.md"
-                            }
-                          ]
-                        },
-                        {
-                            "title": "Options and config",
-                            "intro": {
-                                "path": "docs/api/storage/storage-config.md"
                             },
-                            "sources": []
-                        },
-                        {
-                            "title": "APIs",
-                            "intro": {
+                            {
                                 "path": "docs/api/storage/KVStoreAPI.md"
                             },
-                            "sources": [{
+                        {
                             "path": "docs/api/storage/KVStoreGlobalAPI.md"
                         },
                         {
@@ -475,8 +464,8 @@
                         {
                             "path": "docs/api/storage/NVStore.md"
                         }
-                   ]
-                        }
+                      ]
+                     }
                     ]
                 },
                 {
