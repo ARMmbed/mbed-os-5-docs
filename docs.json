@@ -399,7 +399,7 @@
                         {
                             "title": "APIs",
                             "sources": [{
-                                    "path": ""docs/api/storage/KVStoreAPI.m"d"
+                                    "path": "docs/api/storage/KVStoreAPI.md"
                                 },
                                 {
                                     "path": "docs/api/storage/KVStoreGlobalAPI.md"
