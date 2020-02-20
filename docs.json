@@ -173,7 +173,7 @@
             ]
         },
         {
-            "title": "APIs",
+            "title": "Full API references",
             "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
             "slug": "apis",
             "type": "markdown",
@@ -399,7 +399,7 @@
                         {
                             "title": "APIs",
                             "sources": [{
-                                    "path": "docs/api/storage/KVStoreAPI.md"
+                                    "path": ""docs/api/storage/KVStoreAPI.m"d"
                                 },
                                 {
                                     "path": "docs/api/storage/KVStoreGlobalAPI.md"
