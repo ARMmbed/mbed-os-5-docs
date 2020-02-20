@@ -257,30 +257,9 @@ We use many other labels to summarize the scope and effect of the changes:
 - *DO NOT MERGE* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
-- *rollup PR* - Ready for CI testing, but will instead be brought into a rollup pull request to test multiple pull requests at once.
 
 The following labels summarize the scope of the pull request:
 
 - *scope: bug-fix*.
 - *scope: feature*.
 - *scope: new-target*
-
-#### Rollup pull requests
-
-When Mbed OS has many small, orthogonal pull requests waiting for CI testing to start, maintainers can bundle multiple ones into a single pull request referred to as a rollup pull request. Once this rollup pull request passes CI testing and merges, the bundled pull requests used to build the rollup pull request also automatically merge.
-
-By the time the maintainers select a pull request to be integrated into a rollup pull request, it already has a release label and is waiting to start CI testing. Each bundled pull request gains a *rollup PR* label. Once the rollup pull request is generated, a comment is added to the bundled pull request, informing the bundled pull request's author.
-
-If a rollup pull request fails CI testing, maintainers identify the problematic bundled pull requests, update their statuses and provide additional guidance on what went wrong. Critically, if a bundled pull request is updated *while* it is already in a rollup pull request, and the rollup pull request passes CI and merges, the updated bundled pull request *does not* automatically merge.
-
-##### How it works
-
-Rollup pull requests use the same process as pull requests merging into master, except that pull requests are merged into a rebased temporary branch. All pull requests with the *rollup PR* label are cloned and merged into the temporary branch. If no merge conflicts arise, a pull request is opened with the temporary branch. Once the rollup pull request merges, all other pull requests that were included in the build the rollup pull request are also _marked_ as merged because their contents are now part of master.
-
-Rollup pull requests are a solution to two types of problem: CI testing duration and semantic conflict.
-
-- Rollup pull requests drastically lower the time to test many pull requests at once. Instead of putting many pull requests through CI, only one goes through testing. This lowers the load on the CI infrastructure and helps close pull requests sooner.
-
-- The second, more subtle problem that rollup pull requests solve is the case in which two pull requests pass testing on their own, but as soon as they join together, the way they interact with each other causes tests to fail. See more [about semantic conflicts](https://bors.tech/essay/2017/02/02/pitch).
-
-A special case occurs when a bundled pull request is updated while its rollup pull request undergoes testing. When a pull request is bundled into a rollup pull request, its commits become a part of the rollup pull request at the time that the rollup pull request source branch is created. If you update the bundled pull request, its commit history is no longer exactly mirrored in the rollup pull request. In this situation, the bundled pull request that was updated _is not_ automatically marked as merged because all changes of the updated bundled pull request were not present in the merged rollup pull request. Maintainers treat the updated, previously bundled pull request as if it were on its own all along.
