@@ -665,13 +665,10 @@
                 },
                 {
                     "title": "Bluetooth",
-                    "sub_chapters": [{
-                            "title": "Concepts",
-                            "intro": {
-                                "path": "docs/api/bluetooth/bluetooth.md"
-                            },
-                            "sources": []
-                        },
+                    "intro": {
+                        "path": "docs/api/bluetooth/bluetooth.md"
+                    },
+                    "sub_chapters": [
                         {
                             "title": "Options and config",
                             "intro": {
