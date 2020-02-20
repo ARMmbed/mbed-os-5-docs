@@ -1,6 +1,6 @@
 # Test and debug
 
-## Testing
+# Testing
 
 Use the `mbed test` command to compile and run tests.
 
@@ -72,7 +72,7 @@ mbedgt: completed in 21.28 sec
 
 You can find the compiled binaries and test artifacts in the `BUILD/tests/<TARGET>/<TOOLCHAIN>` directory of your program.
 
-## Finding available tests
+# Finding available tests
 
 You can find the tests that are available for **building** by using the `--compile-list` option:
 
@@ -139,7 +139,7 @@ Available Icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
     test 'TCPSOCKET_ECHOTEST_BURST_SHORT'
 ```
 
-## Compiling and running tests
+# Compiling and running tests
 
 You can specify that the tests only **build** by using the `--compile` option:
 
@@ -161,7 +161,7 @@ $ mbed test -m K64F -t GCC_ARM --run
 
 If you don't specify any of these, `mbed test` first compiles all available tests and then runs them.
 
-## Limiting the test scope
+# Limiting the test scope
 
 You can limit the scope of the tests built and run by using the `-n` option. This takes a comma-separated list of test names as an argument:
 
@@ -177,7 +177,7 @@ $ mbed test -m NUCLEO_F429ZI -t GCC_ARM -n TESTS-functional*
 
 <span class="notes">**Note:** Some shells expand the wildcard character `*` into file names that exist in your working directory. To prevent this behavior, please see your shell's documentation.</span>
 
-## Test directory structure
+# Test directory structure
 
 Test code must follow this directory structure:
 
@@ -212,7 +212,7 @@ As shown above, tests exist inside `TESTS\testgroup\testcase\` directories. Plea
 
 <span class="notes">**Note:** `mbed test` does not work in applications that contain a `main` function that is outside of a `TESTS` directory.</span>
 
-## Unit testing
+# Unit testing
 
 Use the `mbed test --unittests` command to build and run unit tests, or to generate files for new unit tests.
 
@@ -231,7 +231,7 @@ Build and run unit tests with `mbed test --unittests`. The arguments are:
 
 Generate files for a new unit test with `mbed test --unittests --new <FILE>`.
 
-## Building and running unit tests
+# Building and running unit tests
 
 You can specify to only **build** the unit tests by using the `--compile` option:
 
@@ -247,7 +247,7 @@ $ mbed test --unittests --run
 
 If you do not specify any of these, `mbed test --unittests` builds all available unit tests and runs them.
 
-## Running a subset of tests
+# Running a subset of tests
 
 You can run a **limited set** of unit tests by using the `-r` or `--regex` option. This takes a regular expression, which it compares against the test names. For example, to run all cellular unit tests, you can specify:
 
@@ -255,7 +255,7 @@ You can run a **limited set** of unit tests by using the `-r` or `--regex` optio
 $ mbed test --unittests -r cellular
 ```
 
-## Getting code coverage
+# Getting code coverage
 
 You can generate a code coverage report by using the `--coverage` option. For example, to create an html report, you can specify:
 
@@ -263,7 +263,7 @@ You can generate a code coverage report by using the `--coverage` option. For ex
 $ mbed test --unittests --coverage html
 ```
 
-## Creating new unit tests
+# Creating new unit tests
 
 All unit tests are under the `mbed-os/UNITTESTS` directory. You can **generate** the necessary files for a unit test by using the `--new` option. For example, to create the files for `rtos/Semaphore.cpp`, you can specify:
 
@@ -271,7 +271,7 @@ All unit tests are under the `mbed-os/UNITTESTS` directory. You can **generate**
 $ mbed test --unittests --new rtos/Semaphore.cpp
 ```
 
-## Serial terminal
+# Serial terminal
 
 You can open a serial terminal to the serial port of a connected Mbed target (usually board) using the `mbed sterm` command. If no serial port is specified, Mbed CLI will attempt to detect the connected Mbed targets and their serial ports.
 
@@ -300,18 +300,18 @@ You can also add the `--sterm` option to `mbed compile -f` to compile a new prog
 $ mbed compile -t GCC_ARM -m K64F -f --sterm
 ```
 
-## Troubleshooting
+# Troubleshooting
 
-### Import Mercurial (mbed.org) programs or libraries
+## Import Mercurial (mbed.org) programs or libraries
 
 1. Check whether you have Mercurial installed in your system path by  running `hg` in the command prompt. If you are receiving "command not found" or a similar message, then you need to install Mercurial and add it to your system path.
 1. Try to clone a Mercurial repository directly. For example, `hg clone https://developer.mbed.org/teams/mbed/code/mbed_blinky/`. If you receive an error similar to `abort: error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.:590)`, then your system certificates are out of date. You need to update your system certificates and possibly add the host certificate fingerprint of `mbed.com` and `mbed.org`. You can read more about Mercurial's [certificate management](https://www.mercurial-scm.org/wiki/CACertificates).
 
-### Various issues when running Mbed CLI in the Cygwin environment
+## Various issues when running Mbed CLI in the Cygwin environment
 
 Mbed CLI is not currently compatible with the Cygwin environment and [cannot be executed inside it](https://github.com/ARMmbed/mbed-cli/issues/299).
 
-### Downloading Mbed 2 library builds
+## Downloading Mbed 2 library builds
 
 Mbed 2 library builds can be large and may require a download manager on slower connections. You may download the library manually with the following steps:
 

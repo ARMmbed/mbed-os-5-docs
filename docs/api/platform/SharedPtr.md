@@ -1,4 +1,4 @@
-## Shared Pointer
+# Shared Pointer
 
 A shared pointer is a "smart" pointer that retains ownership of an object by using reference counting accross all smart pointers referencing that object.
 
@@ -9,11 +9,11 @@ Usage: `SharedPtr<Class> ptr(new Class())`
 When `ptr` is passed around by a value, the copy constructor and destructor manage the reference count of the raw pointer. If the counter reaches zero, `delete` is called on the raw pointer.
 
 
-### SharedPtr class reference
+## SharedPtr class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_shared_ptr.html)
 
-### Shared pointer example
+## Shared pointer example
 
 ```
 #include "platform/SharedPtr.h"

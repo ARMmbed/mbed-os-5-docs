@@ -1,10 +1,10 @@
-## License
+# License
 
 This chapter covers the different aspects of developing your own libraries for use in Arm Mbed devices, as well as items to keep in mind during development, such as licensing. It covers:
 - [Creating and licensing](#licensing-binaries-and-libraries): Create and license your own binaries and libraries.
 - [The Arm Mbed OS codebase](#contributing-to-the-mbed-os-codebase): Use GitHub to contribute additions and bug fixes to Mbed OS itself.
 
-### Licensing binaries and libraries
+## Licensing binaries and libraries
 
 When you write original code, you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others.
 
@@ -20,13 +20,13 @@ You must either write all the code you provide yourself, or have the necessary r
 
 In all cases, whatever license you use, please use an [SPDX license identifier](http://spdx.org/licenses/) in every source file following the [recommendations](https://spdx.org/spdx-specification-21-web-version#h.twlc0ztnng3b) to make it easier for users to understand and review licenses.
 
-### When to use Apache 2.0
+## When to use Apache 2.0
 
 Apache 2.0 is a permissive, free and open source software license that allows other parties to use, modify and redistribute the code in source and binary form. Compared to the often used Berkeley Software Distribution (BSD) license, Apache 2.0 provides an express patent grant from contributors to users.
 
 The full text of the license is on the [Apache website](http://www.apache.org/licenses/LICENSE-2.0). For more information about Apache 2.0, see [the FAQ](http://www.apache.org/foundation/license-faq.html).
 
-### How to apply Apache 2.0 correctly
+## How to apply Apache 2.0 correctly
 
 To clearly reflect the Apache 2.0 license, please create two text files:
 
@@ -57,7 +57,7 @@ To clearly reflect the Apache 2.0 license, please create two text files:
    See the License for the specific language governing permissions and limitations under the License.
    ```
 
-### When to use PBL
+## When to use PBL
 
 PBL is a permissive license based on BSD-3-Clause and designed specifically for binary blobs. It is minimal but covers the basics, including an express patent grant.
 
@@ -65,7 +65,7 @@ It allows you to share a binary blob and the relevant headers, and allows others
 
 The full text is at [mbed.com](https://www.mbed.com/licenses/PBL-1.0).
 
-### How to apply PBL correctly
+## How to apply PBL correctly
 
 To clearly reflect the PBL license, please create the following three text files:
 
@@ -91,7 +91,7 @@ To clearly reflect the PBL license, please create the following three text files
     See the License for the specific language governing permissions and limitations under the License.
     ```
 
-### Using a different license
+## Using a different license
 
 If you decide to use a different license for your work, follow the same pattern:
 
@@ -103,9 +103,9 @@ If you decide to use a different license for your work, follow the same pattern:
 
 - If more than one license applies to the source file, use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE.md* file and in each source file.
 
-### Contributing to the Mbed OS codebase
+## Contributing to the Mbed OS codebase
 
-#### Mbed OS principles
+### Mbed OS principles
 
 By creating a pull request on GitHub against Mbed OS, you agree to license your contributions under the same license as the original code. Mbed software is released under a permissive license for all new Mbed contributions. Arm will not accept proprietary code or any code under a "copyleft" license. Accepting such code would prevent us from distributing our code under the permissive license and stall adoption of our code by third parties.
 

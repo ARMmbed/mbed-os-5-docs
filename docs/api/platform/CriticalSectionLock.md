@@ -1,4 +1,4 @@
-## CriticalSectionLock
+# CriticalSectionLock
 
 The CriticalSectionLock class provides a mechanism to access a resource without interruption. With the `CriticalSectionLock::enable` API, you can enter critical section with interrupts disabled. The `CriticalSectionLock::disable()` API is the exit from critical section, and the last exit call restores the state of interrupts.
 
@@ -8,11 +8,11 @@ Mbed OS supports nesting of critical section, and the destructor enables interru
 
 <span class="notes">**Note:** You must not use time-consuming operations, standard library and RTOS functions inside critical section.</span>
 
-### CriticalSectionLock class reference
+## CriticalSectionLock class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
 
-### CriticalSectionLock example
+## CriticalSectionLock example
 
 Here is an example that demonstrates a race condition issue and how CriticalSectionLock helps resolves it.
 

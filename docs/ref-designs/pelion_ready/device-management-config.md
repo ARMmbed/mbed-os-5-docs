@@ -20,7 +20,7 @@ For more information on bootloaders and firmware update, see:
 
 To speed up this process, you can copy the configuration from the [application example](https://github.com/ARMmbed/pelion-ready-example/blob/master/mbed_app.json) as the basis for your application configuration.
 
-## Application configuration
+# Application configuration
 
 Edit the `mbed_app.json` file, and create a new entry under `target_overrides` with the target name for your device:
 
@@ -86,7 +86,7 @@ To run the tests:
 $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect --run -v
 ```
 
-## Bootloader configuration
+# Bootloader configuration
 
 When the "connect" tests have passed, enable the firmware update feature by adding a bootloader to your application.
 
@@ -142,7 +142,7 @@ When the "connect" tests have passed, enable the firmware update feature by addi
 <span class="notes">**Note:** `mbed-bootloader` is primarily optimized for `GCC_ARM`, so you may want to compile it with that toolchain.
 Before adding the bootloader to your application, compile and flash the bootloader and then connect over the virtual com port to ensure the bootloader is running correctly. You can ignore errors related to checksum verification or failure to jump to application - these are expected at this stage.</span>
 
-## Adding the bootloader to your application
+# Adding the bootloader to your application
 
 1. Copy the compiled bootloader from `mbed-bootloader-extended/BUILDS/<TARGET>/<TOOLCHAIN>-TINY/mbed-bootloader.bin` to `<your_application_name>/bootloader/mbed-bootloader-<TARGET>.bin`.
 

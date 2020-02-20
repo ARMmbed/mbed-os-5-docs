@@ -1,4 +1,4 @@
-## Adding and configuring targets
+# Adding and configuring targets
 
 Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. If you provide a source directory using the `--source` switch, Mbed looks for `custom_targets.json` in that directory instead. When you add new targets with `custom_targets.json`, they are added to the list of available targets, in addition to the [scanning rules](../reference/mbed-os-build-rules.html).
 
@@ -32,11 +32,11 @@ The style that we use for targets is:
  - Lists take up at most one line.
  - Long lines are not split.
 
-### Standard properties
+## Standard properties
 
 This section lists all the properties the Mbed build system understands. Unless specified otherwise, all properties are optional.
 
-#### inherits
+### inherits
 
 The description of an Mbed target can "inherit" from one or more descriptions of other targets. When a target, called a _child_ inherits from another target, called its _parent_, the child automatically copies all the properties from the parent. After the child has copied the properties of the parent, it may then overwrite, add or remove from those properties. In our example above, `TEENSY3_1` inherits from `Target`. This is the definition of `Target`:
 
@@ -82,7 +82,7 @@ Avoid using multiple inheritance for your targets. If you use multiple inheritan
 
 For more details about the Python method resolution order, please see [this Python tutorial](http://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path).
 
-#### core
+### core
 
 The name of the target's Arm core.
 
@@ -90,7 +90,7 @@ Possible values: `"Cortex-M0"`, `"Cortex-M0+"`, `"Cortex-M1"`, `"Cortex-M3"`, `"
 
 <span class="notes">**Note:** Mbed OS supports v8-M architecture devices (Cortex-M23 and Cortex-M33) on the Arm Compiler 6 toolchain (version 6.10).</span>
 
-#### public
+### public
 
 The `public` property controls which targets the Mbed build system allows users to build. You may define targets as parents for other targets. When you define such a target, its description must set the `public` property to `false`. `Target`, shown above, sets `public` to `false` for this reason.
 
@@ -98,7 +98,7 @@ If `public` is not defined for a target, it defaults to `true`.
 
 <span class="notes">**Note:** Unlike other target properties, the value of `public` is not inherited from a parent to its children.</span>
 
-### macros, macros_add and macros_remove
+## macros, macros_add and macros_remove
 
 The `macros` property defines a list of macros that are available when compiling code. You may define these macros with or without a value. For example, the declaration `"macros": ["NO_VALUE", "VALUE=10"]` will add `-DNO_VALUE -DVALUE=10` to the compiler's command-line.
 
@@ -119,13 +119,13 @@ For example:
 
 In this configuration, the value of `TargetB.macros` is `["PARENT_MACRO1", "CHILD_MACRO1"]`.
 
-#### extra_labels, extra_labels_add and extra_labels_remove
+### extra_labels, extra_labels_add and extra_labels_remove
 
 The list of _labels_ defines how the build system looks for sources, include directories and so on. `extra_labels` makes the build system aware of additional directories that it must scan for such files.
 
 When you use target inheritance, you may alter the values of `extra_labels` using `extra_labels_add` and `extra_labels_remove`. This is similar to the `macros_add` and `macros_remove` mechanism described in the previous section.
 
-#### features, features_add and features_remove
+### features, features_add and features_remove
 
 The list of _features_ enables software features on a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources. Unlike `extra_labels`, the build system recognizes a fixed set of values in the `features` list. The build system recognizes the following features:
 
@@ -137,7 +137,7 @@ The build system errors when you use features outside of this list.
 
 When you use target inheritance, you may alter the values of `features` using `features_add` and `features_remove`. This is similar to the `macros_add` and `macros_remove` mechanism the previous section describes.
 
-#### config and overrides
+### config and overrides
 
 <span class="notes">**Note:** The [Arm Mbed configuration system](../tools/compile.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
 
@@ -182,17 +182,17 @@ You can also modify config values for a project using the `target_overrides` key
 
 This section, in an `mbed_app.json` file, sets the clock source to `RC` on all targets and the clock frequency to 16Mhz on just the `NRF51_DK` target.
 
-#### device_has
+### device_has
 
 The list in `device_has` defines what hardware a device has.
 
 Mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
 
-#### is_disk_virtual
+### is_disk_virtual
 
 Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sure the mount was correct. This field is not used anymore. The Mbed test tools use `Mbed LS` to make sure the mount was correct before flashing it again.
 
-#### supported_toolchains
+### supported_toolchains
 
 The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC5`, `ARMC6`, `GCC_ARM` and `IAR`.
 
@@ -210,11 +210,11 @@ When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
 <span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.</span>
 
-#### default_toolchain
+### default_toolchain
 
 The `default_toolchain` property names the toolchain that compiles code for this target in the Online Compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
 
-#### post_binary_hook
+### post_binary_hook
 
 Some targets require specific actions to generate a programmable binary image. Specify these actions using the `post_binary_hook` property and custom Python code. The value of `post_binary_hook` must be a JSON object with keys `function` and optionally `toolchain`. Within the `post_binary_hook` JSON object, the `function` key must contain a Python function that is accessible from the namespace of `tools/targets/__init__.py`, and the optional `toolchain` key must contain a list of toolchains that require processing from the `post_binary_hook`. When you do not specify the `toolchains` key for a `post_binary_hook`, you can assume the `post_binary_hook` applies to all toolchains. For the `TEENSY3_1` target above, the definition of `post_binary_hook` looks like this:
 
@@ -245,7 +245,7 @@ class TEENSY3_1Code:
 
 The `post_build_hook` for the `TEENSY3_1` converts the output file (`binf`) from binary format to Intel HEX format. See the other hooks in `tools/targets/__init__.py` for more examples of hook code.
 
-#### device_name
+### device_name
 
 Use this property to pass necessary data for exporting to various third party tools and IDEs and for building applications with bootloaders.
 
@@ -273,39 +273,39 @@ The [`"device_name"`](../porting/index.html) attribute it `targets.json` maps fr
 
 The `device_name` key in `targets.json` is `MK20DX256xxx7` for any target that uses this particular MCU.
 
-#### detect_code
+### detect_code
 
 The `detect_code` contains four ASCII characters containing only hexadecimal values (A-F and 0-9). This code is the same for all platforms of the same type. `Mbed LS` no longer uses this field to identify the platform. Instead, `Mbed LS` has its [own database](https://github.com/ARMmbed/mbed-os-tools/blob/master/src/mbed_os_tools/detect/platform_database.py) of detect codes.
 
-#### OUTPUT_EXT
+### OUTPUT_EXT
 
 The `OUTPUT_EXT` property controls the file type emitted for a target by the build system. You may set `OUTPUT_EXT` to `bin` for binary format, `hex` for Intel HEX format and `elf` for ELF format. We discourage using the `elf` value for `OUTPUT_EXT` because the build system must always emit an ELF file.
 
-#### c_lib
+### c_lib
 
 The `c_lib` property controls which library, small or standard, the toolchain links. The `c_lib` property may take on the values `std` for the standard library and `small` for the reduced size library.
 
-#### bootloader_supported
+### bootloader_supported
 
 The `bootloader_supported` property controls whether the build system allows a bootloader or a bootloader-using application to be built for a target. The default value of `bootloader_supported` is `false`.
 
-#### release_versions
+### release_versions
 
 The `release_versions` property is a list of major versions of Mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of Mbed OS 2, and `5`, indicating the support of Mbed OS 5. We build all targets that are released for Mbed OS 2 as a static library. Targets are released for Mbed OS 2 by putting a `2` in the `release_version` list.
 
-#### supported_form_factors
+### supported_form_factors
 
 The `supported_form_factors` property is an optional list of form factors that a development board supports. You can use this property in C, C++ and assembly language by passing a macro prefixed with `TARGET_FF_` to the compiler. The accepted values for `supported_form_factors` are `ARDUINO`, which indicates compatibility with Arduino headers, and `MORPHO`, which indicates compatibility with ST Morpho headers.
 
-### Style guide
+## Style guide
 
 A linting script for `targets.json` is available as `tools/targets/lint.py` in Mbed OS. This script is a utility for avoiding common errors when defining targets and detecting style inconsistencies between targets. This linting script displays style errors based on a few rules outlined below.
 
-#### Rules enforced
+### Rules enforced
 
 There are two sets of rules: rules that affect how you must structure target inheritance and rules that govern what each role within the inheritance hierarchy can do.
 
-##### Inheritance rules
+#### Inheritance rules
 
 A target's inheritance must look like one of these:
 
@@ -320,7 +320,7 @@ Family -> Subfamily -> MCU -> Module -> Board
 
 The linting script guesses where the Boards and Modules stop and the MCUs, Families and Subfamilies begin. An MCU, Family or Subfamily must have at least one Board or Module above it in any hierarchy.
 
-##### Role rules
+#### Role rules
 
 For each of these target roles, some restrictions are in place:
 - Families, MCUs and Subfamilies may contain the following keys:
@@ -379,11 +379,11 @@ For each of these target roles, some restrictions are in place:
 - If `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
 - MCUs, Families and SubFamilies must set `public` to `false`
 
-#### Sample output
+### Sample output
 
 The linting script takes three subcommands: `targets`, `all-targets` and `orphans`.
 
-##### targets and all-targets commands
+#### targets and all-targets commands
 
 The `targets` and `all-targets` commands both show errors within public inheritance hierarchies. For example:
 
@@ -428,7 +428,7 @@ target errors:
 
 The `all-targets` command is very verbose, with output that matches the format above but is too long to reproduce here.
 
-##### orphans command
+#### orphans command
 
 The `orphans` command shows all targets that you cannot reach from a public target.
 
@@ -444,7 +444,7 @@ The `orphans` command shows all targets that you cannot reach from a public targ
 - EFR32MG1_BRD4150
 ```
 
-### Related content
+## Related content
 
 - [Defining a PSA-compliant target in targets.json](../reference/adding-and-configuring-targets.html#defining-a-psa-compliant-target-in-targets.json).
 - [Developing: Mbed CLI](../tools/developing-mbed-cli.html).

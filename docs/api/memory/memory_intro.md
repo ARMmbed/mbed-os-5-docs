@@ -1,4 +1,4 @@
-## Memory optimizations
+# Memory optimizations
 
 Beginning with Mbed OS 5, new features such as RTOS created an increase in flash and RAM usage. This guide explains how to visualize the memory model in Mbed OS and how to instrument and optimize program memory use for release builds using Mbed OS 5.
 

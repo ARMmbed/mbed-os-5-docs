@@ -1,12 +1,12 @@
-## MessageBuilder
+# MessageBuilder
 
 Mbed OS provides this API to construct NDEF messages, the common data format exchange for NFC messages. The class `mbed::nfc::ndef::MessageBuilder` builds an NDEF message into a user-provided buffer. `URI`, `Text` and `Mime` types can be serialized in the builder with the help of the member function `append_as_record`.
 
-### MessageBuilder class reference
+## MessageBuilder class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_builder.html)
 
-### MessageBuilder example
+## MessageBuilder example
 
 ```
 #include "nfc/ndef/MessageBuilder.h"
@@ -28,7 +28,7 @@ size_t build_ndef_message(const Span<uint8_t> &buffer) {
 }
 ```
 
-### Related content
+## Related content
 
 - [MessageParser](messageparser.html) API reference.
 - [SimpleMessageParser](simplemessageparser.html) API reference.

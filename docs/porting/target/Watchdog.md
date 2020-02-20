@@ -4,9 +4,9 @@ The Watchdog HAL API provides a low-level interface to the Independent Watchdog 
 
 Implement the ResetReason API when implementing the Watchdog API. The ResetReason API allows you to detect at boot time whether a watchdog caused the last reset.
 
-## Assumptions
+# Assumptions
 
-### Defined behavior
+## Defined behavior
 
 - Sleep and debug modes don't stop the watchdog timer from counting down.
 - The function `hal_watchdog_init` is safe to call repeatedly. The function's implementation must not do anything if `hal_watchdog_init` has already initialized the hardware watchdog timer.
@@ -16,19 +16,19 @@ Implement the ResetReason API when implementing the Watchdog API. The ResetReaso
 - The watchdog should trigger before twice the timeout value.
 - The watchdog may trigger as late as twice the timeout value in deep sleep mode.
 
-### Undefined behavior
+## Undefined behavior
 
 - Calling any function other than `hal_watchdog_init` or `hal_watchdog_get_platform_features` before you have initialized the watchdog.
 
-### Notes
+## Notes
 
 - A software reset may not stop the watchdog timer; the behavior is platform specific.
 
-## Dependency
+# Dependency
 
 Hardware Independent Watchdog support.
 
-## Implementing Watchdog
+# Implementing Watchdog
 
 You can find the API and specification for the Watchdog API in its HAL API reference:
 
@@ -36,7 +36,7 @@ You can find the API and specification for the Watchdog API in its HAL API refer
 
 To enable Watchdog support in Mbed OS, add the `WATCHDOG` label in the `device_has` option of the target's section in the `targets.json` file.
 
-## Testing
+# Testing
 
 The Mbed OS HAL provides a set of conformance tests for Watchdog. You can use these tests to validate the correctness of your implementation. To run the Watchdog HAL tests use the following command:
 

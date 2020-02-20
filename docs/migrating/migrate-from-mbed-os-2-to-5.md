@@ -2,12 +2,12 @@
 
 This guide is to assist you in the process of updating an existing [component](https://os.mbed.com/components/), library or program from Mbed OS 2 to Mbed OS 5.
 
-## Prerequisites
+# Prerequisites
 
 - [Mbed CLI](../tools/developing-mbed-cli.html).
 - An [offline compiler](../tools/index.html#compiler-versions).
 
-## Identifying old versions of Mbed OS
+# Identifying old versions of Mbed OS
 
 This guide uses the Grove temperature and humidity sensor as an example: [Grove-TempHumi-Sensor](https://os.mbed.com/components/Grove-TempHumi-Sensor/).
 
@@ -27,7 +27,7 @@ A program that uses and has been tested with Mbed OS 5 or later has an `mbed-os.
 
 Some repositories may have both an `mbed.bld` file and an `mbed-rtos.lib` file present. Mbed-RTOS is the precursor to Mbed OS 5, which combines the older Mbed OS 2 library with Mbed-RTOS. So, Mbed OS 5 can replace both `mbed.bld` and `mbed-rtos.lib`.
 
-## Migrating to Mbed OS 5
+# Migrating to Mbed OS 5
 
 Migrating to Mbed OS 5 results in two possible outcomes:
 
@@ -70,7 +70,7 @@ To update to Mbed OS 5 with the [Mbed Online Compiler](../tools/developing-mbed-
 
 To determine the success of migration, select your board in the top right corner of the Online Compiler, and click  **Compile**.
 
-### Example component 1 - successful initial migration
+## Example component 1 - successful initial migration
 
 Repositories used in this example:
 
@@ -94,7 +94,7 @@ mbed compile -m ublox_evk_odin_w2 -t gcc_arm
 
 It successfully compiles, so that no changes to the `Grove - Buzzer` library or `Hello World` program are necessary.
 
-### Example component 2 - application fails to compile
+## Example component 2 - application fails to compile
 
 Repositories used in this example:
 
@@ -116,7 +116,7 @@ mbed add mbed-os
 mbed compile -m k64f -t gcc_arm
 ```
 
-#### Compilation errors
+### Compilation errors
 
 After you have cloned the repository to your computer and deployed the latest version of Mbed OS, check whether any compilation errors exist.
 
@@ -165,7 +165,7 @@ int main() {
 
 Now, the program successfully compiles.
 
-## Runtime errors
+# Runtime errors
 
 Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
 

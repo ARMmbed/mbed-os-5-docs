@@ -1,4 +1,4 @@
-## FlashSimBlockDevice
+# FlashSimBlockDevice
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
 
@@ -15,11 +15,11 @@ The constructor requires the following:
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### FlashSimBlockDevice class reference
+## FlashSimBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.html)
 
-### FlashSimBlockDevice example
+## FlashSimBlockDevice example
 
 This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html) and turns it into a simulated flash BD.
 
@@ -46,7 +46,7 @@ This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html)
     err = flash_bd.program(buf, 0, sizeof(buf));
 ```
 
-### Related content
+## Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
 - [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

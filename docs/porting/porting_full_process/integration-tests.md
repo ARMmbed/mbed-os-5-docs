@@ -2,7 +2,7 @@
 
 Mbed OS provides a set of integration tests to help you identify integration issues around storage devices and connectivity devices. If you're using a custom board, these tests can also help you verify your board works well in your environment.
 
-## Test suites
+# Test suites
 
 | **Test suite** | **Description** |
 | ------------- | ------------- |
@@ -12,7 +12,7 @@ Mbed OS provides a set of integration tests to help you identify integration iss
 | `net-multi` | Network multithreaded test for 1, 2 and 3 download threads with 1kb receive buffer size. |
 | `stress-net-fs` | Network and file system single and multithreaded tests:<ul><li>memory allocation - 10k, 20k, 40k, 60k</li><li>1 thread (sequential) - 1 download (1kb buffer), 1 file thread (1kb buffer)</li><li>2 parallel threads - 1 download, 1 file thread (1kb buffer)</li><li>3 parallel threads - 1 download, 2 file (256 bytes, 1 kb buffer)</li><li>4 parallel threads - 1 download, 3 file (1 byte, 256 bytes, 1kb buffer)</li></ul> |
 
-## Execute tests
+# Execute tests
 
 The integration test requires you to configure both the connectivity and storage devices.
 
@@ -30,7 +30,7 @@ If a board doesn't have default connectivity and storage, it requires an extra s
    
 A preconfiguration file is defined in the COMMON folder, and that file covers some of the platform connectivity and storage combinations. However, this preconfiguration file might contain some compoments drivers not included in `mbed-os` (for example, `WIFI_WIZFI310` and `NUSD`). You must add those drivers manually. If you have your own platform or want to define your own configuration, please follow the [configuration guide](#tests-configuration).
 
-## Tests configuration
+# Tests configuration
 
 If required, edit the `target_extended.json` file, and create a new entry under `target_overrides` with the target name for your device:
 

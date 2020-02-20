@@ -12,7 +12,7 @@ The whole porting process consists of two key ingredients:
 - An implementation of the [LoRaRadio](../mbed-os-api-doxy/class_lo_ra_radio.html) class.
 - Design considerations for using [LoRaWANInterface](../mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html) class.
 
-## Porting a LoRa RF driver
+# Porting a LoRa RF driver
 
 Arm Mbed OS provides a generic API that serves as a template for any LoRa RF driver. [LoRaRadio](../mbed-os-api-doxy/class_lo_ra_radio.html) is a pure virtual class and is an attempt to standardize the APIs across all LoRa radios. Mbed Enabled LoRa radio driver implementations present as a LoRaRadio.
 
@@ -24,7 +24,7 @@ For API use cases, details, explanation and meaning, please see the `LoRaRadio` 
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_radio.html)
 
-## Device design guide for LoRaWAN stack
+# Device design guide for LoRaWAN stack
 
 The vision driving Arm Mbed OS entails one operating system for myriad IoT technologies encompassing a multitude of devices or platforms. However, it does not limit the user to design something specific or tailored to his or her needs. You can derive from the `LoRaWANInterface` class and override the APIs provided there to integrate a third party stack.
 
@@ -62,6 +62,6 @@ Please follow the detailed reference of `LoRaWANInterface` to understand what th
 
 You must implement the `initialize(events::EventQueue *queue)` API. Our design philosophy is that we wish to support the tiniest of devices with very little memory, and an event queue shared between the application and network stack is the best option in terms of memory.
 
-## Testing
+# Testing
 
 <span class="notes">**Note:** We'll publish automated tests for LoRa soon. For Mbed Partners that want to start porting Lora drivers, please contact your Partner lead.</span>

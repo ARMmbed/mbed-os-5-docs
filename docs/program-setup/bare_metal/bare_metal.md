@@ -1,4 +1,4 @@
-## Mbed OS bare metal profile
+# Mbed OS bare metal profile
 
 There are many use cases for IoT devices. Different use cases require different configurations, connectivity and security. They also have different requirements for resource consumption. Many products must operate in ultraconstrained environments on tiny MCUs with low memory and compute power available. We created the Mbed OS bare metal profile for IoT devices that require ultraconstrained resources.
 

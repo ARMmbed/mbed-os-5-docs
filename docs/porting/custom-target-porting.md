@@ -4,13 +4,13 @@ When designing a custom microcontroller board to run Mbed OS, you may need to ma
 
 This tutorial covers the most common methods used to create a custom port of Mbed OS when starting from an existing Mbed Enabled board. For detailed information on how to create a port from scratch, go to the [Mbed Porting guide](../porting/index.html). Additionally, not all possible aspects of target configuration are covered. For detailed information on all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
-## Extending an existing MCU target configuration
+# Extending an existing MCU target configuration
 
 Consider a situation in which you are creating a new board based on an existing Mbed Enabled board. This tutorial lists the steps to create the software for a new board we will call `ImaginaryBoard`. This board is based on [DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/). It shares most of the features of DISCO-L475VG-IOT01A, but it does not use `AnalogOut`, `AnalogIn`, `CAN` or `USB`. Some pins are connected differently on the new board. 
 
 Follow these steps to create a custom port for Mbed OS:
 
-### Preparing
+## Preparing
 
 1. [Install Mbed CLI](../tools/installation-and-setup.html) if you don't already have it.
 
@@ -36,7 +36,7 @@ Follow these steps to create a custom port for Mbed OS:
 
 1. Copy the contents from the `DISCO_L475VG_IOT01A` section into your `custom_targets.json` file. Be sure to include brackets `{ }` surrounding the content.
 
-### Customizing
+## Customizing
 
 1. Make changes to `custom_targets.json` for your board.
 
@@ -92,11 +92,11 @@ Follow these steps to create a custom port for Mbed OS:
    }
    ```
 
-#### Additions
+### Additions
 
 A new section, `device_has_remove`, was added. This removes the `ANALOGIN`, `I2CSLAVE` and `I2C_ASYNCH` drivers because these features are also not used. The reason why `device_has_remove` is used in this case is because the board is inheriting from the MCU Family configuration `FAMILY_STM32`, which has those drivers added by default.
 
-#### Other possible additions 
+### Other possible additions 
 
 Other changes you may need include:
 
@@ -105,11 +105,11 @@ Other changes you may need include:
 
    <span class="notes">**Note:** If you choose to add a driver that is not already available for your hardware, you will have to provide the driver implementation.</span>
 
-#### Where other configurations live 
+### Where other configurations live 
 
 All the other configurations for the board are inherited from the MCU Family configuration called `FAMILY_STM32`.
 
-## Configuring the target code directories
+# Configuring the target code directories
 
 In some cases, the target source code directories follow a similar structure to the target configuration, but they could have a few more levels.
 
@@ -128,7 +128,7 @@ Boards typically inherit files that support the MCU, MCU family and MCU vendor. 
 
 There are more directory levels than target configuration levels because many targets use the `extra_labels_add` feature in the target configuration. The keywords `STM32L4`, `STM32L475xG` and `STM32L475VG` resolve to `TARGET_STM32L4`, `TARGET_STM32L475xG` and `TARGET_STM32L475VG`, respectively. With those labels applied, the build includes these directory names for this target.
 
-### Preparing
+## Preparing
 
 1. Create a new directory called `TARGET_IMAGINARYBOARD` at the top level of your project to store the source files for your board.
       
@@ -145,7 +145,7 @@ There are more directory levels than target configuration levels because many ta
    - `PinNames.h` sets macros for pins that define their function.
    - `system_clock.c` vendor specific file that initializes the system and sets up the clocks.
 
-### Customizing
+## Customizing
       
 1. Modify the files.
 
@@ -199,7 +199,7 @@ There are more directory levels than target configuration levels because many ta
    mbed-os.lib
    ```
 
-## Testing your code 
+# Testing your code 
     
 1. Compile the application:
    

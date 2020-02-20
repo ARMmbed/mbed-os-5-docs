@@ -1,4 +1,4 @@
-## BufferedBlockDevice
+# BufferedBlockDevice
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_buffered_block_device.png)<span>BufferedBlockDevice class hierarchy</span></span>
 
@@ -10,11 +10,11 @@ The constructor only requires the underlying block device pointer.
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### BufferedBlockDevice class reference
+## BufferedBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_buffered_block_device.html)
 
-### BufferedBlockDevice example
+## BufferedBlockDevice example
 
 This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html), whose read size is 256 bytes and program size is 512 bytes, and shows how one can read or program this block device with much smaller read/program sizes, using BufferedBlockDevice.
 
@@ -41,7 +41,7 @@ This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html)
     err = buf_bd.sync();
 ```
 
-### Related content
+## Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
 - [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

@@ -1,4 +1,4 @@
-## Poll
+# Poll
 
 The `poll` functions perform timed waits on one or more [file handles](filehandle.html).
 
@@ -13,11 +13,11 @@ Note that the `poll` is not affected by the blocking or nonblocking setting of t
 
 As per the POSIX specification, `poll` always indicates that ordinary files (as opposed to devices) are readable and writable.
 
-### Poll reference
+## Poll reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__poll.html)
 
-### Poll example
+## Poll example
 
 ```
 // Transfer bidirectional data between two ports, acting as a virtual link.
@@ -78,6 +78,6 @@ int main()
 }
 ```
 
-### Related content
+## Related content
 
 - [FileHandle](filehandle.html).

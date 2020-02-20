@@ -1,6 +1,6 @@
 <h1 id="connectivity-tech">Network connectivity in Mbed OS</h1>
 
-## Supported connectivity technologies
+# Supported connectivity technologies
 
 Mbed OS offers a strong, integrated stack of standards-based technologies:
 
@@ -18,11 +18,11 @@ Non-IP devices require a gateway:
 - LoRaWAN.
 - Cellular.
 
-## Choosing your connectivity method
+# Choosing your connectivity method
 
 There is a wide variety of possibilities for connected devices, and there is no globally correct connectivity method. Choose a method that fits your application needs, and then choose a device that can support that method. If you're already committed to a device type, you may need to adjust your application to work within that device's connectivity constraints.
 
-## Internet protocol (IP) networking
+# Internet protocol (IP) networking
 
 Mbed OS supports various IP-based connectivity options and IP stacks.
 
@@ -32,7 +32,7 @@ Our Socket API standardizes all of our connectivity options. It supports both IP
 
 Mbed OS provides network drivers, such as Ethernet, Wi-Fi and cellular.
 
-### Wi-Fi
+## Wi-Fi
 
 Wi-Fi has a relatively high throughput of up to 1 Gbps, which is suitable for data-heavy applications. The cost of this throughput is high power consumption. Wi-Fi is not ideal for long-term deployments of battery-powered devices. It can also prove problematic where other devices compete for the same bandwidth.
 
@@ -40,7 +40,7 @@ It works for proof-of-concept devices because the infrastructure is in place in 
 
 End devices for Wi-Fi are complicated due to hardware requirements and limitations. The network cost depends on whether the deployment location already includes a well-maintained Wi-Fi infrastructure. Wi-Fi is ubiquitous indoors, and Wi-Fi devices have a range of tens of meters, so for certain applications, such as those for homes and offices, the infrastructure likely already exists.
 
-### Cellular
+## Cellular
 
 Cellular has a variable throughput, reaching 10 Mbps. Its coverage is extensive, and its range is 25-100 km, so it is commonly used in transportation and logistics. It is also well suited for proof of concept, because, like Wi-Fi, it relies on an existing infrastructure. It's suitable for many use cases, from monitoring temperature sensors to streaming video.
 
@@ -54,7 +54,7 @@ The new cellular technologies, NB-IoT and CAT-M1, are designed for IoT devices. 
 
 It can be deployed on a single spectrum, reducing antenna configuration complexity, but isn't deployed worldwide and can take years to be deployed in countries using 3G.
 
-### Bluetooth Low Energy (BLE)
+## Bluetooth Low Energy (BLE)
 
 BLE is optimized for cheap, battery-based devices and has a low memory footprint. It is widely adopted for connected spaces but requires setting up an infrastructure. Its range is up to 100 meters, with 1 mbps bandwidth. You need an edge gateway, so devices in your network can connect to the internet.
 
@@ -62,7 +62,7 @@ Typical applications of BLE are health care, fitness trackers, beacons, smart ho
 
 To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
 
-### 6LoWPAN Mesh 
+## 6LoWPAN Mesh 
 
 Mesh networks are designed to form IPv6 networks automatically for a larger area than is possible with single radio link. TDifferent protocols form flexible network topology using different design principles. As a technology designed for large-scale deployment, 6LoWPAN-based mesh is optimized for long battery life and low cost.
 
@@ -80,9 +80,9 @@ Additionally, Mbed OS Thread stack is certified using predefined test sets for s
 
 For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../reference/thread-tech.html), [Wi-SUN](../reference/wisun-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) mesh networks.
 
-## Non-IP networking
+# Non-IP networking
 
-### LoRaWAN
+## LoRaWAN
 
 LoRaWAN, a technology not based on IP, is optimized for low power consumption and a low memory footprint (allowing low-cost devices). The downside is a low throughput of no more than 50 kbps, as well as delays.
 
@@ -90,7 +90,7 @@ Because of its long range (up to 20 km) and low power, it is suitable for outdoo
 
 The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutorial.html) describe LoRA networking in detail.
 
-### NFC
+## NFC
 
 <span class="images">![](../../images/n_mark.png)<span>NFC</span></span>
 
@@ -98,7 +98,7 @@ Near-field communication (NFC) is a short range (few centimeters) wireless techn
 
 To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview](../apis/nfc.html).
 
-### NB-IoT cellular
+## NB-IoT cellular
 
 Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. Control Plane cellular IoT EPS optimization enables NIDD, which is meant to provide improved support of small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
 

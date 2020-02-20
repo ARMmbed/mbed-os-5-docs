@@ -12,11 +12,11 @@ This tutorial:
 - Introduces mesh border routers.
 - Introduces Nanostack, which contains implmentations of 6LoWPAN mMesh protocols.
 
-## Selecting the correct mesh protocol
+# Selecting the correct mesh protocol
 
 Mbed OS supports a variety of 802.15.4-based mesh protocols. There is support for [Wi-SUN](../reference/wisun-tech.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols, each with its own characteristics. Selecting the best mesh protocol for your application depends on the application characteristics and interoperability requirements of installation. Different mesh networks are optimized for application-specific requirements.
 
-### Thread mesh network characteristics
+## Thread mesh network characteristics
 
 - Optimized point to point communication and network formation.
 - No single point of failure. Operation is possible even inside rooms without any other infrastructure.
@@ -26,7 +26,7 @@ Mbed OS supports a variety of 802.15.4-based mesh protocols. There is support fo
 
 Example use cases: home automation, light control, building sensor networks and commercial building automation.
 
-### Wi-SUN mesh network characteristics
+## Wi-SUN mesh network characteristics
 
 - Certificate-based authentication.
 - Large hop count networks for up to 24 hops from the border router.
@@ -35,7 +35,7 @@ Example use cases: home automation, light control, building sensor networks and 
 
 Example use cases: street light control; electricity, gas and water meters; and municipal applications.
 
-### 6LowPAN ND mesh network characteristics
+## 6LowPAN ND mesh network characteristics
 
 - Certificate-based authentication.
 - Large hop count networks for up to 24 hops.
@@ -43,7 +43,7 @@ Example use cases: street light control; electricity, gas and water meters; and 
 
 Example use cases: street light control; electricity, gas and water meters; and municipal applications.
 
-## Mesh application design principles
+# Mesh application design principles
 
 6LoWPAN-based 802.15.4 mesh networks are designed to work on a lossy network. They operate on a licence-exempt frequency band and are therefore prone to RF channel interference that may cause the network connection to drop unexpectedly. Applications must be designed to recover from the instantaneous network shortage. If a network request fails, then the application must be able retry the request again.
 
@@ -59,7 +59,7 @@ Sometimes a mesh application runs on the battery-operated device; therefore, bat
 
 The application may need to store data permanently to the device storage, which may have a finite number of write and erase times. After a certain number of write and erase cycles, the storage integrity suffers. Estimate the used storage lifetime with the selected storage write interval.
 
-## Mesh APIs
+# Mesh APIs
 
 The following Mbed OS APIs are useful with the mesh application:
 
@@ -69,11 +69,11 @@ The following Mbed OS APIs are useful with the mesh application:
 
 The Mesh API allows applications to create, connect and disconnect to Mesh network. Mbed OS provides the Mesh API to mesh application developers to hide the complexity of the Nanostack API.
 
-### Configuration
+## Configuration
 
 The mesh API file `mbed_lib.json` defines the mesh default configuration values, which you can overwrite in the application configuration file `mbed_app.json`. For an explanation of configuration options, please see the [6LoWPAN mesh configuration document](../reference/configuration-mesh.html).
 
-### Connecting to the mesh network
+## Connecting to the mesh network
 
 Connect to the mesh network:
 
@@ -118,13 +118,13 @@ Below is an example configuration file for a Thread device connected to an Atmel
 
 You can find more example configuration files in the [mesh minimal example](https://github.com/ARMmbed/mbed-os-example-mesh-minimal).
 
-### NetworkStatus API
+## NetworkStatus API
 
 Mbed OS provides the NetworkStatus API for use cases in which an application needs to be aware of the changes in the network connection status. The application needs to implement the callback method and register it to the user interface.
 
 For more details, please see the [NetworkStatus API](../apis/network-status.html).
 
-### Socket API
+## Socket API
 
 The 6LoWPAN mesh network supports socket communication using the [Mbed OS Socket API](../apis/socket.html). You can find examples on how to use sockets in the Mbed OS API documentation: 
 
@@ -132,7 +132,7 @@ The 6LoWPAN mesh network supports socket communication using the [Mbed OS Socket
 - [UDPSocket example](../apis/udpsocket.html#udpsocket-example).
 - [TCPSocket example](../apis/tcpsocket.html#tcpsocket-example).
 
-## Mesh border router
+# Mesh border router
 
 A mesh border router can connect a mesh network to another IP-based network. It allows end-to-end IP connectivity between devices in a mesh network and devices in an external IP network.
 
@@ -147,7 +147,7 @@ A border router provides an IPv6 prefix for the mesh network. The border router 
 
 Once the backbone-prefix is received, the border router starts the DHCPv6 server and advertises the new prefix to the mesh network. Then, devices in the mesh network react to the advertised prefix and can solicit a new IPv6 address from the DHCPv6 server running in the border router.
 
-### Configuration
+## Configuration
 
 You can compile the border router at compile time by modifying flags in the configuration file `mbed_app.json`. 
 

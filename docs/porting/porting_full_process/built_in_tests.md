@@ -9,9 +9,9 @@ It's important to test your port at the end of each module porting, rather than 
 
 Read the following page to understand how tests are structured:
 
-## Prerequisites
+# Prerequisites
 
-### Minimum HAL module support
+## Minimum HAL module support
 
 To run the Mbed OS built-in tests, you need to have ported and verified at least these HAL modules:
 
@@ -23,7 +23,7 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 You'll also need to have ported DAPLink or compatible interface firmware to your interface chip.
     <span class="notes">If DAPLink is still under development, you can still [run tests manually](../porting/manual-testing.html).</span>
 
-### mbedls
+## mbedls
 
 The platform under test needs to be supported in mbedls for automated tests to work.
 
@@ -47,7 +47,7 @@ If an updated mbedls pip package including support for your platform hasn't been
 
     Where `"33000000e062afa300000000000000000000000097969902"` is the correct target id.
 
-## Compiling and running tests
+# Compiling and running tests
 
 1. Compile the tests:
     - To compile all tests, run `mbed test --compile`.

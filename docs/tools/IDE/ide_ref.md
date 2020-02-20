@@ -12,7 +12,7 @@
 
 # Keyboard shortcuts
 
-## Navigation
+# Navigation
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -31,7 +31,7 @@
 | Ctrl + up arrow | Scroll up one row |
 | Ctrl + down arrow | Scroll down one row |
 
-## Ctrl key sequences
+# Ctrl key sequences
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -63,7 +63,7 @@
 | Ctrl + / | Toggle line comment (using slashes) |
 | Ctrl + Shift + / | Toggle block comment (using /* ... */)|
 
-## Misc
+# Misc
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -78,9 +78,9 @@
 | F9 | Compile and download |
 | F10 | Compile all and download |
 
-## Touch device shortcuts
+# Touch device shortcuts
 
-### Editor
+## Editor
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|
@@ -90,7 +90,7 @@
 | Hold | Context menu |
 | Touch + drag | Text selection until the touch is released (opens context menu) |
 
-### Compiler IDE
+## Compiler IDE
 
 | Shortcut   | Description                                       |
 |------------|---------------------------------------------------|

@@ -6,7 +6,7 @@ The application programming interface for IP networking is the Socket API. As de
 
 In Mbed OS, this socket API is C++ based but closely follows the functionality from the POSIX standard (IEEE Std 1003.1) and relevant RFC standards. The Socket interface is abstract and protocol agnostic and requires you to specify the protocol only when creating the socket. With libraries and interfaces, you may use the abstract base class, which allows you to port applications from one protocol to another.
 
-### General use
+## General use
 
 The following steps describe the typical application flow:
 
@@ -42,7 +42,7 @@ sock.recv(buf, 100);
 sock.close();
 ```
 
-### Changes in Mbed OS 5.10
+## Changes in Mbed OS 5.10
 
 The 5.10 release refactors the Mbed OS Socket API. For most of the applications, these changes are not noticeable because the `TCPSocket` and `UDPSocket` classes still emulate legacy behavior.
 
@@ -54,7 +54,7 @@ The new design also emphasizes use of `SocketAddress` for holding the IP address
 
 The new design also renders the TCPServer API unnecessary, moving its functionality directly into TCPSocket itself. The legacy TCPServer class still exists and is fully functional.
 
-### Using DNS names
+## Using DNS names
 
 IP stacks operate only on binary IP addresses, but in Internet, servers are known by their symbolic domain name (DNS). To use these names with Socket interface, each name has to be resolved before.
 
@@ -75,7 +75,7 @@ if (ret == NSAPI_ERROR_OK) {
 
 See [DNS resolver](dns-resolver.html) for more information.
 
-### Server sockets
+## Server sockets
 
 Some connection oriented protocols, for example TCP, can also be used for listening incomming connections. To do this
 
@@ -89,7 +89,7 @@ Accepting a connection will leave the original socket to listening mode. You can
 
 For connectionless protocols, like UDP, each socket can receive from any peer. Therefore `listen()` and `accept()` are not required.
 
-## Network socket interfaces and classes
+# Network socket interfaces and classes
 
 The network socket API provides a common interface for using sockets on network devices. It's a class-based interface, which is familiar to users experienced with other socket APIs.
 
@@ -101,7 +101,7 @@ The network socket API provides a common interface for using sockets on network 
 - [Network status](network-status.html): API for monitoring network status changes.
 - [DNS resolver](dns-resolver.html): API for resolving DNS names
 
-### Network errors
+## Network errors
 
 The convention of the network socket API is for functions to return negative error codes to indicate failure. On success, a function may return zero or a non-negative integer to indicate the size of a transaction. On failure, a function must return a negative integer, which is one of the error codes in the `nsapi_error_t` [enum](../mbed-os-api-doxy/group__netsocket.html#gac21eb8156cf9af198349069cdc7afeba):
 
@@ -135,7 +135,7 @@ enum nsapi_error {
 };
 ```
 
-### Nonblocking operation
+## Nonblocking operation
 
 The network socket API also supports nonblocking operations. The `set_blocking()` member function changes the state of a socket. When a socket is in nonblocking mode, socket operations return `NSAPI_ERROR_WOULD_BLOCK` when a transaction cannot immediately complete.
 

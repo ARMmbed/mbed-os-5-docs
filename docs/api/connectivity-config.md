@@ -143,7 +143,7 @@ Name: lwip.use-mbed-trace
     No value set
 ```
 
-## Selecting the default network interface
+# Selecting the default network interface
 
 Applications can use the default network interface without directly specifying its type. This requires settings from `mbed_app.json` to work.
 

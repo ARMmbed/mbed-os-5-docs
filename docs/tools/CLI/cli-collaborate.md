@@ -1,7 +1,7 @@
 
 # Collaborate
 
-## Importing from a cloned repository
+# Importing from a cloned repository
 
 If you have manually cloned a Git repository into your workspace and you want to add all missing libraries, then you can use the `deploy` command:
 
@@ -16,9 +16,9 @@ Don't forget to set the current directory as the root of your program:
 $ mbed new .
 ```
 
-## Publishing changes
+# Publishing changes
 
-### Checking status
+## Checking status
 
 As you develop your program, you'll edit parts of it. You can get the status of all the repositories in your program (recursively) by running `mbed status`. If a repository has uncommitted changes, this command displays these changes.
 
@@ -44,7 +44,7 @@ Here's an example:
 
 You can then commit or discard these changes through that repository's version control system.
 
-### Pushing upstream
+## Pushing upstream
 
 To push the changes in your local tree upstream, run `mbed publish`. `mbed publish` works recursively, pushing the leaf dependencies first, then updating the dependents and pushing them too.
 
@@ -60,7 +60,7 @@ my-mbed-os-example (a5ac4bf2e468)
 
 Let's assume that you make changes to `iot-client`. `mbed publish` detects the change on the leaf `iot-client` dependency and asks you to commit it. Then `mbed publish` detects that `my-libs` depends on `iot-client`, updates the `my-libs` dependency on `iot-client` to its latest version by updating the `iot-client.lib` file and asks you to commit it. This propagates up to `my-libs` and finally to your program, `my-mbed-os-example`.
 
-### Publishing a local program or library
+## Publishing a local program or library
 
 When you create a new (local) version control managed program or library, its revision history exists only locally. The repository is not associated with the remote one. To publish the local repository, please follow these steps:
 
@@ -81,7 +81,7 @@ When you create a new (local) version control managed program or library, its re
 
 In a scenario with nested local repositories, start with the leaf repositories first.
 
-## The forking workflow
+# The forking workflow
 
 Git enables a workflow where the publish/push repository may be different than the original ("origin") one. This allows new revisions in a fork repository while maintaining an association with the original repository. To use this workflow, first import an Mbed OS program or Mbed OS itself, and then associate the push remote with your fork. For example:
 

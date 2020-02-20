@@ -8,7 +8,7 @@ To users, these networks behave exactly as Ethernet but without cables.
 
 A WLAN network typically consists of an access point (AP) connected to an Ethernet backbone and multiple stations (STA) connecting the same access point. You can identify networks by their name, which the standard refers to as **service set identifier** (SSID). Multiple access points can serve the same network, and you can identify each AP by its **basic service set identifier** (BSSID).
 
-### Standards
+## Standards
 
 The original version of the standard IEEE 802.11 was released in 1997. Updates and extended standards later made it obsolete.
 
@@ -22,7 +22,7 @@ The original version of the standard IEEE 802.11 was released in 1997. Updates a
 
 Today, new access points and computers support all a/b/g/n/ac standards, and most embedded devices offer only a/b/g/n capability. The device and the access point negotiate speed and standard automatically without requiring a user configuration.git check.
 
-### Wi-Fi in Mbed OS
+## Wi-Fi in Mbed OS
 
 <span class="images">![](../../images/wifi.png)<span>Wi-Fi driver</span></span>
 

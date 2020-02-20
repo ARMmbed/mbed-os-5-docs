@@ -11,7 +11,7 @@ By default, there are four threads running after boot: the ISR/scheduler thread,
 
 This is the complete list of RTOS configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
 
-## RTOS configuration parameters
+# RTOS configuration parameters
 
 ```
 Configuration parameters
@@ -47,7 +47,7 @@ Name: rtos.timer-thread-stack-size
     Value: 768 (set by library:rtos)
 ```
 
-## EventQueue configuration parameters
+# EventQueue configuration parameters
 
 ```
 Configuration parameters

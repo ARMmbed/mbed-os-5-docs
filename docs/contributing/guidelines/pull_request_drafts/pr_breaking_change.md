@@ -1,4 +1,4 @@
-## Pull request template: breaking changes
+# Pull request template: breaking changes
 
 
 ```
@@ -6,11 +6,11 @@
     These sections should be part of the PR template for any breaking change.
 -->
 
-## Release notes
+# Release notes
 
-### Reason for change
+## Reason for change
 
-### Analysis of effects
+## Analysis of effects
 
-### Migration path
+## Migration path
 ```

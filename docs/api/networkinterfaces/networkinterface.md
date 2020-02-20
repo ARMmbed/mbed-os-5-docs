@@ -1,17 +1,17 @@
-## Network interface overview
+# Network interface overview
 
 A socket requires a NetworkInterface instance to indicate which NetworkInterface the socket should be created on. The NetworkInterface provides a network stack that implements the underlying socket operations.
 
 NetworkInterface is also the controlling API that the application uses to specify the network configuration.
 
-### Existing network interfaces:
+## Existing network interfaces:
 
 - [Ethernet](ethernet.html): API for connecting to the internet over an Ethernet connection.
 - [Wi-Fi](wi-fi.html): API for connecting to the internet with a Wi-Fi device.
 - [Cellular](cellular-api.html): API for connecting to the internet using a cellular device.
 - [Mesh networking interface](mesh-api.html): API for connecting to the IPv6-based mesh networks.
 
-### Network connectivity states
+## Network connectivity states
 
 When you create a network interface, it starts from the disconnected state. When you call `NetworkInteface::connect()`, the interface stays connected until you call `NetworkInterface::disconnect()`. The following diagram illustrates the state changes:
 
@@ -45,7 +45,7 @@ Error handling and reconnection logic depends on the network interface. Please u
 | `CellularInterface` | Mostly no | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`<br />`CellularInterface` may also send Cellular specific states specified in `CellularCommon.h` |
 | `LoWPANNDInterface` or<br />`ThreadInterface` or<br />`WisunInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />4.`NSAPI_STATUS_LOCAL_UP`<br />4.`NSAPI_STATUS_GLOBAL_UP`|
 
-### Default network interface
+## Default network interface
 
 In Mbed OS, targets that provide network connectivity also provide a default network interface. This can be Ethernet, Wi-Fi, mesh or cellular. Using a default interface allows you to port applications to different targets and connectivity options.
 
@@ -107,7 +107,7 @@ if (wifi) {
 }
 ```
 
-### Notes on portable applications
+## Notes on portable applications
 
 When you expect an application to be portable between different network interfaces, please use the following guidelines:
 
@@ -118,7 +118,7 @@ Please see the previous section, [Default network interface](#default-network-in
 
 For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
-## Using multiple network interfaces
+# Using multiple network interfaces
 
 In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](../reference/ip-networking.html) section for an explanation of how different stacks are integrated into Mbed OS.
 
@@ -132,7 +132,7 @@ If you need to force the traffic to only one of the interfaces, you need to use 
 
 Another, more common, case is where only one of the interface is active at a time. In this case, there is no need for `Socket::setsockopt()` if another interface is brought down because there is only one route option. This works with LwIP but is not verified with Nanostack because it is used only on specific use cases, such as mesh routing.
 
-### Asynchronous operation
+## Asynchronous operation
 
 `NetworkInterface::connect()` and `NetworkInterface::disconnect()` are blocking by default. When an application prefers asynchronous operation, it can set the interface into nonblocking mode by calling `NetworkInterface::set_blocking(false)`. This has to be done for each interface separately.
 
@@ -140,7 +140,7 @@ When an interface operates in asynchronous mode, the return values of `connect()
 
 To check whether the interface is connected, the application needs to register the status callback for the interface. Please refer to the [Network status API](network-status.html) for information on how to do so.
 
-### Related content
+## Related content
 
 - [Configuring the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface).
 - [Network connectivity](../reference/networking.html).

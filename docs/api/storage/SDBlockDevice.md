@@ -1,4 +1,4 @@
-## SDBlockDevice
+# SDBlockDevice
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.png)<span>SDBlockDevice class hierarchy</span></span>
 
@@ -6,7 +6,7 @@ You can use the Mbed OS SD card block device, so applications can read and write
 
 To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-### How to wire an external SD-card module to a developer board
+## How to wire an external SD-card module to a developer board
 
 <span class="images">![](../../images/sd-wiring.png)<span>How to wire an external SD-card module to a developer board</span></span>
 
@@ -32,7 +32,7 @@ The device appears as removable storage.
 
 <span class="tips">**Tip:** You may need to remove and manually format your micro SD card, flash the binary to the device and then reinsert your micro SD card.</span>
 
-### Mbed OS file system software component stack
+## Mbed OS file system software component stack
 
 
     ------------------------
@@ -92,18 +92,18 @@ The figure above shows the Mbed OS software component stack used for data storag
 - The Block API. The SDCard block device is a persistent storage block device.
 - The SPI module provides the Mbed OS SPI API.
 
-### Mbed OS `erase` for SDBlockDevice
+## Mbed OS `erase` for SDBlockDevice
 
 There is a difference between `erase` as usually defined for SD cards and the definition in Mbed OS: In Mbed OS, `erase` prepares the block device for writing. Because an SD card doesn't need preparation, `erase` is not applicable on SDBlockDevice; it's a no-op operation.
 
-### SDBlockDevice class reference
+## SDBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.html)
 
-### SDBlockDevice example application
+## SDBlockDevice example application
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/SDBlockDevice/main.cpp)
 
-### Related content
+## Related content
 
 - [BlockDevice configuration](../reference/storage.html#blockdevice-default-configuration).

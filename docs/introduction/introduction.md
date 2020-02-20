@@ -35,7 +35,7 @@ This is the basic architecture of an Mbed board:
 
 <span class="images">![](../images/Mbed_OS_diagram_for_intro.png)</span>
 
-## Mbed OS foundations
+# Mbed OS foundations
 
 Mbed OS uses a hardware abstraction layer (HAL) to support the most common parts of a microcontroller, such as timers. This foundation facilitates writing applications against a common set of application programming interfaces (APIs); your device automatically includes necessary libraries and driver support for standard MCU peripherals, such as I2C, serial and SPI.
 
@@ -47,7 +47,7 @@ The structure of Mbed OS enables matching applications and storage systems. In o
 
 Finally, Mbed OS implements the retargeting layer and boot process integration of each supported toolchain for you, so application development feels similar to C or C++ development for any other operating system.
 
-## Connectivity
+# Connectivity
 
 Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN-ND, Thread, Wi-SUN, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
 
@@ -55,19 +55,19 @@ The networking and connectivity stacks are flexible enough to meet the needs of 
 
 Mbed OS fully supports our Pelion IoT Platform, so you can manage your deployed devices and their data. Together, Mbed OS and Pelion comprise a coherent ecosystem that meets the needs of most production-ready projects.
 
-## Security
+# Security
 
 The Pelion IoT Platform has built-in security at all levels, stressing both protection against violations and mitigation of their consequences. Alongside hardened cloud services, robust communication stacks and safe firmware updates, Mbed offers two security-specific embedded building blocks: [Arm Mbed TLS](https://www.mbed.com/en/technologies/security/mbed-tls/) and a Secure Partition Manager (SPM) that meets industry best practices as part of Arm’s Platform Security Architecture. Mbed TLS secures communication channels between a device and gateway or server, and the use of a secure partition manager and isolated security domains for trusted system services reduces the attack surface. All together, this provides a unique chip-to-cloud security model, relying on the low-level capabilities the Arm ecosystem silicon Partners provide to secure the data and identity of cloud-connected devices.
 
 Our approach to security is to leverage state-of-the-art industry standard protocols, ciphers and encryption suites following the recommendations from NIST and other related organizations. This gives us access to the latest work by the global security research community, rather than a limited in-house resource.  We regularly verify the results of these efforts with code reviews, penetration exercises and other methods.
 
-## Remote firmware update
+# Remote firmware update
 
 Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there. The Online Compiler also offers a quick integration for development flows.
 
 For more information, see our [technology page](../reference/firmware-update-in-mbed-os.html), the [Mbed CLI update flow](../tools/cli-update.html) or the [quick start through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update) (Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion)).
 
-## Hardware
+# Hardware
 
 Arm, its Partners and the Arm Mbed developer community work together to develop the Mbed OS project. This thriving ecosystem means that Mbed OS includes drivers for a lot of different hardware, so you can concentrate on clean and portable application code.
 

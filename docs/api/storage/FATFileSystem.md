@@ -1,4 +1,4 @@
-## FATFileSystem
+# FATFileSystem
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_f_a_t_file_system.png)<span>FATFileSystem class hierarchy</span></span>
 
@@ -10,7 +10,7 @@ The FAT file system is an established disk-oriented file system that you can fin
 
 For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
-### Use cases
+## Use cases
 
 The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications using FAT in conjunction with an SD card.
 
@@ -22,7 +22,7 @@ The FAT file system supports external flash; however, it must allocate a full er
 
 The FAT file system is thread safe. Although the FAT file system is built on the ChanFS project, synchronizing in the C++ layer allows you to use the C++ RTOS APIs directly.
 
-### Usage
+## Usage
 
 Instantiate the `FATFileSystem` class with a block device and file path.
 
@@ -32,15 +32,15 @@ You can swap the FAT file system in place with other Mbed OS file systems, which
 
 To configure this class, please see the [FileSystem configuration documentation](../reference/storage.html#filesystem-default-configuration).
 
-### FATFileSystem class reference
+## FATFileSystem class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_f_a_t_file_system.html)
 
-### FATFileSystem example
+## FATFileSystem example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.14/main.cpp)
 
-### Related content
+## Related content
 
 - [Storage configuration](../reference/storage.html).
 - [LittleFileSystem](littlefilesystem.html).

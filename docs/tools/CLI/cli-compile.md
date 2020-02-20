@@ -2,7 +2,7 @@
 
 This section details some of the arguments available with the `mbed compile` command. Please run `mbed compile --help` to get a full list of arguments.
 
-## Compiling your application
+# Compiling your application
 
 Use the `mbed compile` command to compile your code. Supply the `-m` and `-t` arguments to set your target and toolchain, respectively.
 
@@ -50,7 +50,7 @@ Total Flash memory (text + data + misc): 66014 bytes
 Image: BUILD/K64F/GCC_ARM/mbed-os-program.bin
 ```
 
-### Setting a default target
+## Setting a default target
 
 To set a default target, use the `mbed target` command with the name of your target (in this example, the K64F):
 
@@ -66,7 +66,7 @@ Alternatively, pass `detect` instead of your target name to automatically use th
 $ mbed target detect
 ```
 
-### Setting a default toolchain
+## Setting a default toolchain
 
 To set a default toolchain, use the `mbed toolchain` command:
 
@@ -76,7 +76,7 @@ $ mbed toolchain GCC_ARM
 [mbed] GCC_ARM now set as default toolchain in program "project"
 ```
 
-### Performing a clean build
+## Performing a clean build
 
 To rebuild the project, use the `-c/--clean` argument:
 
@@ -84,7 +84,7 @@ To rebuild the project, use the `-c/--clean` argument:
 mbed compile -c
 ```
 
-### Flashing the built program and monitor the target
+## Flashing the built program and monitor the target
 
 You can flash the built program to the connected target by adding the `-f/--flash` argument to the `compile` command:
 
@@ -98,9 +98,9 @@ You can also read and write to the target's serial port by adding the `--sterm` 
 mbed compile -f --sterm
 ```
 
-## Build sources and output
+# Build sources and output
 
-### Source directories
+## Source directories
 
 By default, Mbed CLI includes the program's root directory and all its subdirectories as the source directory. To control which directories are used, use the `--source` argument. You can supply multiple `--source` arguments to include multiple directories:
 
@@ -108,7 +108,7 @@ By default, Mbed CLI includes the program's root directory and all its subdirect
 $ mbed compile --source ./src --source ./lib
 ```
 
-### Build directory
+## Build directory
 
 The default build directory is in the root of your project and is called `BUILD`. You can set the build directory with the `--build` argument:
 
@@ -116,7 +116,7 @@ The default build directory is in the root of your project and is called `BUILD`
 $ mbed compile --build my_build
 ```
 
-### Building a library
+## Building a library
 
 To build a static library instead of a linked executable, use the `--library` argument:
 
@@ -128,7 +128,7 @@ To suppress the creation of the `.a/.ar` archive (and instead leave the `.o` obj
 
    `mbed compile --library --no-archive`
 
-## Build profiles
+# Build profiles
 
 Build profiles control which arguments are passed to the compiler. For more information about build profiles, please see the [build profile documentation](../tools/build-profiles.html).
 
@@ -140,7 +140,7 @@ To select a profile, use the `--profile` argument:
 $ mbed compile --profile debug
 ```
 
-## Configuration system
+# Configuration system
 
 The Mbed OS configuration system customizes compile time configuration parameters. For more information, please see [the full configuration system documentation](../reference/configuration.html).
 
@@ -162,7 +162,7 @@ You may use `--prefix` more than once. To display only the application and targe
 $ mbed compile --config -t GCC_ARM -m K64F --prefix target --prefix app
 ```
 
-### Defining macros
+## Defining macros
 
 To define macros when compiling, use the `-D` argument:
 

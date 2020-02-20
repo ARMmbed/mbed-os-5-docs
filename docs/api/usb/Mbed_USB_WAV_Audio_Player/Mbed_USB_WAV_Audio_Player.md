@@ -25,7 +25,7 @@ After that, it guides you to:
 
 The steps below describe this in more detail.
 
-## Libraries
+# Libraries
 
 This tutorial uses several Mbed libraries:
 
@@ -35,7 +35,7 @@ This tutorial uses several Mbed libraries:
 
 This tutorial uses the USBAudio class of the USB library to send audio data from the Mbed board to the host PC. It uses the SDBlockDevice and FATFileSystem classes of the `sd-driver` library, so you can store the WAV files on an SD card and the Mbed board can access them. Lastly, it uses the AudioPlayer and WaveAudioStream classes of the AudioPlayer library to access the audio data from the WAV file on the SD card.
 
-## Requirements
+# Requirements
 
 - Mbed Enabled board.
 - SD card.
@@ -44,7 +44,7 @@ This tutorial uses the USBAudio class of the USB library to send audio data from
 
 [Please install Mbed CLI to complete the tutorial](../tools/installation-and-setup.html).
 
-## Setup
+# Setup
 
 The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
@@ -73,21 +73,21 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
    ![Microphone properties](../../../images/Mbed_USB_WAV_Audio_Player_img3.PNG)
 
-## Troubleshooting   
+# Troubleshooting   
 
 If USB properties of the Mbed USB WAV Audio Player are altered, such as the sample rate or number of channels, the Mbed board will need to be deleted and re-installed in the host PC's installed device list. In Device Manager, click **View > Devices by Connection**. Find "Mbed Audio" and uninstall the device. Reset the board and repeat Setup step 6. If problems still persist, be sure to format the WAV file correctly, as is denoted in Setup step 4.   
 
 ![Device manager](https://raw.githubusercontent.com/ARMmbed/mbed-os-5-docs/development/docs/images/Mbed_USB_WAV_Audio_Player_img4.png)
 
-## main.cpp
+# main.cpp
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player/main.cpp)
 
-## Example WAV file  
+# Example WAV file  
 
 [Bach-minuet-in-g.wav](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player/Bach-minuet-in-g.wav)
 
-## Troubleshooting   
+# Troubleshooting   
 
 If USB properties of the Mbed USB WAV Audio Player are altered, such as the sample rate or number of channels, the Mbed board will need to be deleted and re-installed in the host PC's installed device list. In Device Manager, click View > Devices by Connection. Find "Mbed Audio" and uninstall the device. Reset the board and repeat Setup step 6. If problems still persist, be sure to format the WAV file correctly, as is denoted in Setup step 4.   
 

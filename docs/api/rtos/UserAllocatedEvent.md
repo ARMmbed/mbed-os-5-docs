@@ -1,4 +1,4 @@
-## UserAllocatedEvent
+# UserAllocatedEvent
 
 The `UserAllocatedEvent` class provides APIs to create and configure static events. The advantage in using `UserAllocatedEvent` instead of `Event` is `UserAllocatedEvent` embeds all underlying event data and doesn't require any memory allocation while posting and dispatching to the EventQueue.
 
@@ -13,17 +13,17 @@ Because the `UserAllocatedEvent` holds event data, you can post only one event o
 
 The UserAllocatedEvent class is thread safe. The `call`, `try_call` and `cancel` APIs are IRQ safe.
 
-### UserAllocatedEvent class reference
+## UserAllocatedEvent class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classevents_1_1_user_allocated_event.html)
 
-### Static EventQueue example: posting user allocated events to the queue
+## Static EventQueue example: posting user allocated events to the queue
 
 This example demonstrates how you can instantiate, configure and post events:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/UserAllocatedEvent_ex_1)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/UserAllocatedEvent_ex_1/main.cpp)
 
-### Related content
+## Related content
 
 - [RTOS configuration](../reference/configuration-rtos.html).
 - [EventQueue tutorial](../tutorials/the-eventqueue-api.html).

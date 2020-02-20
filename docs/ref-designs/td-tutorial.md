@@ -13,13 +13,13 @@ Arm Mbed TLS provides equal in-transit security to both libraries. We recommend 
 
 The following steps show how to send data using first the HTTPS library and then Fluentd.
 
-## HTTPS library
+# HTTPS library
 
 To use the HTTPS library, use the [mbed-os-example-treasuredata-rest](https://github.com/armmbed/mbed-os-example-treasuredata-rest) program. This program turns on Mbed OS device statistics by enabling the `MBED_ALL_STATS_ENABLED` macro and then sends heap/CPU/stack/system information to Treasure Data.
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/ky-HDNFZw8w/0.jpg)](https://youtu.be/ky-HDNFZw8w)</span>
 
-### Import code
+## Import code
 
 You can compile the program using any of the following development tools:
 
@@ -33,7 +33,7 @@ mbed import https://github.com/armmbed/mbed-os-example-treasuredata-rest
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-treasuredata-rest)](https://github.com/armmbed/mbed-os-example-treasuredata-rest/blob/master/main.cpp)
 
-### Set up variables
+## Set up variables
 
 1. Configure the Treasure Data API key in `mbed_app.json` by changing the `api-key` variable:
 
@@ -54,7 +54,7 @@ mbed import https://github.com/armmbed/mbed-os-example-treasuredata-rest
 1. Create a database called `test_database` in Treasure Data.
    <span class="notes">**Note:** The tables are created automatically.</span>
 
-### Compile and load
+## Compile and load
 
 Next, you can compile and load your code onto your board. If you are not familiar with how to compile and load code, please look at the Mbed OS quick start tutorial.
 
@@ -82,7 +82,7 @@ Gateway: 192.168.43.249
 
 ```
 
-### Verify data in Treasure Data
+## Verify data in Treasure Data
 
 Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/databases), and open the `test_database` you created earlier. You can see the data from the board in the database. There is a 3- to 5-minute delay from when the data is sent to the database until the visualization system lets you see it, so please be patient, and wait for it to arrive. Be sure to refresh the page.
 
@@ -90,20 +90,20 @@ Go to the [Database list in Treasure Data](https://console.treasuredata.com/app/
 
 <span class="notes">**Note:** The database tab shows how much data you have in the database and gives a few samples, but it does not show all your data. For that, you need to run queries.</span>
 
-### Run queries
+## Run queries
 
 Now that you have data in Treasure Data, it's time to analyze and use it.
 
 1. Go to the [Queries tab](https://console.treasuredata.com/app/queries/editor).
 2. Select the `test_database`, and run some queries. To learn more about how to run queries, please read the [Treasure Data documentation](https://support.treasuredata.com/hc/en-us/articles/360007995693).
 
-#### Select all fields
+### Select all fields
 
 Run `select * from cpu_info` to get a full list of all fields in the table.
 
 <span class="images">![](../images/td_tutorial_2.png)</span>
 
-#### Select certain fields, order by time
+### Select certain fields, order by time
 
 This query selects only certain columns from the table and orders them by the time field in ascending value. You can also replace `asc` with `desc` to get the order reversed.
 
@@ -114,35 +114,35 @@ order by time asc;
 
 <span class="images">![](../images/td_tutorial_3.png)</span>
 
-### Troubleshooting
+## Troubleshooting
 
 If you experience issues, ensure you have at least 10KB of space left on your stack. You can also change the `TD_DEBUG` macro to `true` to turn on the Treasure Data debug printfs.
 
-## Fluentd
+# Fluentd
 
 For mass deployments, we recommend you use Fluentd or fluentbit to aggregate and forward the data into Treasure Data. Depending on where you host your Fluentd instance, you will need to follow slightly different setup instructions. (localhost on your machine with self signed certificates or at a public IP address in the cloud with Certificate Authority (CA) signed certificates). This example uses MessagePack (a binary encoded JSON) to encode the data.
 
 <span class="images">![](../images/td_tutorial_4.png)</span>
 
-### Set up Fluentd
+## Set up Fluentd
 
-#### Install
+### Install
 
 First, install Fluentd. Please see the [Fluentd quick start](https://docs.fluentd.org/v1.0/articles/quickstart) for details.
 
 Experienced users can use `gem install Fluentd fluent-plugin-td`.
 
-#### Download example code
+### Download example code
 
 Download the [example code](https://github.com/armmbed/mbed-os-example-fluentlogger). This repository contains both the embedded example code and the Fluentd configuration files.
 
-#### Set configuration file
+### Set configuration file
 
 Run Fluentd using the provided configuration file `fluentd --config ./fluentd-setup/fluentd.conf -vv`. This file opens two ports: port 24227 for unencrypted TCP traffic and port 24228 for TLS encrypted traffic. The configuration is provided for reference. We strongly suggest using TLS encryption on port 24228 to secure your data in transit.
 
 You can either run Fluentd on a public IP address with CA signed certificates (suggested for deployments), or locally on your machine using self signed certificates (recommended for prototyping/testing).
 
-##### Signed by CA, running in cloud
+#### Signed by CA, running in cloud
 
 If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd.key` files with the CA certificates. Then uncomment the lines in the `fluentd.conf` file for CA trusted certificates, comment out the lines for self-signed certificates and change the passphrase to match for your certificate:
 
@@ -152,7 +152,7 @@ If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd
 	# private_key_passphrase YOUR_PASSPHRASE
 ```
 
-##### Self-signed certificates on localhost
+#### Self-signed certificates on localhost
 
 <span class="images">[![Video tutorial](https://img.youtube.com/vi/DpnNaVxEhvA/0.jpg)](https://youtu.be/DpnNaVxEhvA)</span>
 
@@ -175,7 +175,7 @@ Email Address []:
 
 <span class="images">![](../images/fluentd-run.gif)</span>
 
-### Mbed OS setup
+## Mbed OS setup
 
 Run the example code on your device. You can either [import to the Mbed Online Compiler](http://os.mbed.com/compiler/?import=https%3A%2F%2Fgithub.com%2Farmmbed%2Fmbed-os-example-fluentlogger) or use Mbed CLI to clone it locally, compile and load it to the board:
 
@@ -184,7 +184,7 @@ $ mbed import https://github.com/armmbed/mbed-os-example-fluentlogger
 $ mbed compile --target auto --toolchain GCC_ARM --flash --sterm
 ```
 
-#### Secure (TLS)
+### Secure (TLS)
 
 To send data to Fluentd over TLS (securely):
 
@@ -194,7 +194,7 @@ To send data to Fluentd over TLS (securely):
 1. Change the IP address to the IP address of the Fluentd server, or if you are hosting it in the cloud, change it to the web address where it is hosted. **It is important that the IP address in the main.cpp file matches the IP address set in the CN field of the Fluentd server. Otherwise, it will not work because Mbed TLS uses strict CN verification.**
 1. Compile the code and load it onto your board.
 
-### Success
+## Success
 
 Successful output on the Fluentd terminal:
 
@@ -224,11 +224,11 @@ Successful output on the Fluentd terminal:
 
 ```
 
-### Setting Treasure Data databases and tables
+## Setting Treasure Data databases and tables
 
 The second field in the tag of your embedded code determines the database. For example, sending data to a tag called `td.mydatabase.mytable` logs the data to the database called `mydatabase` in the table `mytable`. You can modify the example configuration file to see this.
 
-### Debugging
+## Debugging
 
 For more verbose debug messages, turn on the following flags in `mbed_app.json`:
 

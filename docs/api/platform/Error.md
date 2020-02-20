@@ -9,7 +9,7 @@ Conceptually, error handling is a platform service that the Mbed OS platform lay
 1. Provides ISR-safe and Thread-safe error handling APIs.
 1. Provides mechanisms for extending the error status definitions.
 
-### Error status usage
+## Error status usage
 
 Mbed OS predefines a set of system errors, and it defines **Error Status** as a 32-bit signed integer in **NEGATIVE space**. The **mbed_error_status_t** type represents the error status values.
 
@@ -22,7 +22,7 @@ You can use error status:
 - As system error codes
   - Used to report error conditions to the OS error handling subsystem.
 
-### Error status types
+## Error status types
 
 Mbed OS error status encoding defines three types of error status values. Note that type of error status is encoded into the 32-bit signed integer.
 
@@ -30,7 +30,7 @@ Mbed OS error status encoding defines three types of error status values. Note t
 - Posix errors - See [Posix error codes support](#posix-error-codes-support).
 - Custom defined errors - See [extending error codes](#extending-error-codes).
 
-### Error code and error status ranges
+## Error code and error status ranges
 
 For each error status type, we have defined a range of error codes, which forms the least significant 16-bits of 32-bit error status values. Based on error code definitions below are the error code ranges for each error type:
 
@@ -49,7 +49,7 @@ Note that error codes are always encoded into error status values when reporting
 
 Mbed OS system error status values can also capture the module reporting the error by encoding the module identifier in the error status, depending on the type of error status. The module information prints to the terminal as part of the [error report](#error-reporting). We provide the error status values and ranges for information purposes, but no implementation should assume or manipulate the bit fields in the encoding directly. Implementation using Mbed OS error handling and reporting APIs should deal with error status, such as an opaque object, and should use Mbed OS provided macros and functions to manipulate or interpret the error status values.
 
-### Posix error codes support
+## Posix error codes support
 
 Many modules (such as file systems) under Mbed OS use Posix error codes. For this reason, Mbed OS error status definitions capture Posix error codes, as well, under the new error encoding scheme. Error code definitions also ensure that Posix error code values don’t overlap with Mbed error code values. This makes it easier for developers to report Posix error codes into the Mbed OS error handling system.
 
@@ -57,7 +57,7 @@ To incorporate Posix error code representation into Mbed OS, a portion of error 
 
 **Although we support Posix error codes for compatibility reasons, we highly encourage all future Mbed OS focused implementations to use Mbed OS error definitions, so errors reported work seamlessly with error reporting and handling implementation in Mbed OS.**
 
-### Error context capture
+## Error context capture
 
 The error handling system in Mbed OS automatically captures the thread context for each error reported into the system. The context captured includes the following information:
 
@@ -73,7 +73,7 @@ The error handling system in Mbed OS automatically captures the thread context f
 
 STDOUT emits this captured context in the case of fatal errors. In the case of warnings, it is recorded by the system, and you can retrieve it later for system diagnostics, external reporting and debugging purposes. See the [error history](#error-history) section for information on how the error history feature works in Mbed OS. The [error handling API examples](#error-handling-api-examples) also include more information on how to use error retrieval APIs.
 
-### Error reporting
+## Error reporting
 
 Mbed OS provides three ways to report an error using the error handling implementation:
 
@@ -98,7 +98,7 @@ For more info, visit: https://mbed.com/s/error?error=0x80FF013D
 -- MbedOS Error Info --
 ```
 
-### Constructing error status values in your implementation
+## Constructing error status values in your implementation
 
 Mbed OS provides the necessary functions and macros for implementations to construct error status values. There are a few ways you can construct error status values.
 
@@ -116,7 +116,7 @@ This is equivalent to defining an error status with `MODULE_UNKNOWN`. However, u
 mbed_error_status_t error = MBED_MAKE_ERROR(MBED_MODULE_UNKNOWN, MBED_ERROR_CODE_CONFIG_UNSUPPORTED)
 ```
 
-### Error history
+## Error history
 
 Error handling implementation in Mbed OS keeps track of previous errors in the system. This feature is called **Error history** and is configurable using the configuration value **MBED_CONF_PLATFORM_ERROR_HIST_ENABLED**.
 
@@ -126,15 +126,15 @@ See the below link to learn more about the APIs related to error history:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
-### Extending error codes
+## Extending error codes
 
 Mbed OS application and system developers may need to define error codes specific to their the applications. However, these error codes may not be applicable to the broader system to be defined as system error codes. In those cases, applications can predefine custom error codes using the **MBED_DEFINE_CUSTOM_ERROR()** macro. **MBED_DEFINE_CUSTOM_ERROR()** macro specifically defines error status values whose type will be of **Custom Defined Errors** as mentioned above in the [error status types and error code ranges](#error-status-types-and-error-code-ranges) section. If you are defining custom error codes, we advise to capture those definitions in `mbed_error.h` under custom error codes definitions.
 
-### Error hook for applications
+## Error hook for applications
 
 Some applications may want to do custom error handling when an error is reported using `MBED_ERROR()` or `MBED_WARNING()`. Applications can accomplish this by registering an error hook function with the Mbed OS error handling system using the **mbed_set_error_hook()** API. This function is called with error context information whenever the system handles an **MBED_ERROR()** or **MBED_WARNING()** invocation. This function should be implemented for re-entrancy because multiple threads may invoke `MBED_ERROR()` or `MBED_WARNING()`, which may cause the error hook to be called in parallel.
 
-### Crash reporting and auto-reboot
+## Crash reporting and auto-reboot
 
 Whenever a fatal error happens in the system, the Mbed OS error handling system collects key information such as error code, error location, register context (in the case of fault exceptions) and so on. The error handing system stores that information in a reserved RAM region called Crash-data-RAM. The error information stored in Crash-data-RAM is in binary format and follows the `mbed_error_ctx` structure defined in `mbed_error.h`. The system then triggers a warm-reset without losing the RAM contents that store the error information. After the system reboots, during Mbed OS initialization, the Crash-data-RAM region is checked to find if there is valid error information captured. This is done by using a CRC value calculated over the stored error information and is appended as part of information stored in Crash-data-RAM. If the system detects that the reboot was triggered by a fatal error, it will invoke a callback function with a pointer to the error context structure stored in Crash-data-RAM. The default callback function is defined with the `WEAK` attribute, which the application can override. Below is the signature for the callback:
 
@@ -144,7 +144,7 @@ void mbed_error_reboot_callback(mbed_error_ctx *error_context);
 
 <span class="notes">**Note:** This callback is invoked before the system starts executing the application `main()`. The implementation of callback should be aware any resource limitations or availability. Also, the callback is invoked only when there is a new error.</span>
 
-#### Adding the Crash-data-RAM region for crash reporting
+### Adding the Crash-data-RAM region for crash reporting
 
 The crash reporting feature requires a special memory region, called Crash-data-RAM, to work. This region is 256 bytes and is allocated using linker scripts for the target for each toolchain. Although all platforms support crash reporting feature, not all targets are currently modified to allocate this Crash-data-RAM region.
 
@@ -165,7 +165,7 @@ It's important that this region is marked with the appropriate attributes (based
 
 See [memory model](../reference/memory.html) for more info on the placement of this region.
 
-#### Configuring crash reporting and autoreboot
+### Configuring crash reporting and autoreboot
 
 The Mbed OS crash reporting implementation provides many options to configure the crash reporting behavior. Below is the list of configuration options available to configure crash reporting functionality. These configuration options are defined in `mbed_lib.json` under the platform directory:
 
@@ -175,15 +175,15 @@ The Mbed OS crash reporting implementation provides many options to configure th
 
 Crash reporting feature also provides APIs to read and clear error context information captured in Crash-data-RAM region. Please see the API reference below for [crash reporting related APIs](#crash-reporting-api).
 
-### Error handling functions reference
+## Error handling functions reference
 
 The below link provides the documentation for all the APIs that Mbed OS provides for error definitions and handling:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
-### Error handling API examples
+## Error handling API examples
 
-#### Using the `error()` function
+### Using the `error()` function
 
 The code below uses error function to print a fatal error indicating an out-of-memory condition.
 
@@ -197,7 +197,7 @@ void *operator new(std::size_t count) {
 }
 ```
 
-#### Using the `MBED_ERROR()` macro with module information
+### Using the `MBED_ERROR()` macro with module information
 
 The code below uses an `MBED_ERROR` macro to print a fatal error indicating an invalid argument with the module name specified as `MODULE_APPLICATION`:
 
@@ -211,7 +211,7 @@ void receive_data(unsigned char *buffer) {
 }
 ```
 
-#### Using the `MBED_WARNING()` macro with module information and return with Mbed error status
+### Using the `MBED_WARNING()` macro with module information and return with Mbed error status
 
 The code below uses an `MBED_WARNING` macro to report a invalid configuration attempt with the module name specified as `MBED_MODULE_PLATFORM`:
 
@@ -229,7 +229,7 @@ mbed_error_status_t configure(int config_value) {
 }
 ```
 
-#### Using the `MBED_ERROR1()` macro
+### Using the `MBED_ERROR1()` macro
 
 The `MBED_ERROR1` macro is similar to `MBED_ERROR` macro, but it can take an additional context-specific argument. The error handling system also records this value as part of the context capture. The code below uses the `MBED_ERROR1` macro to print a fatal error indicating an out-of-memory condition with a context specific value as the last argument to `MBED_ERROR1` macro:
 
@@ -243,7 +243,7 @@ void receive_data(unsigned char *buffer) {
 }
 ```
 
-#### Using the `MBED_WARNING1()` macro
+### Using the `MBED_WARNING1()` macro
 
 The `MBED_WARNING1` macro is similar to the `MBED_WARNING` macro, but it can take an additional context-specific argument. The error handling system also records this value as part of the context capture. The code below uses the `MBED_WARNING1` macro to report a warning with a context specific value as the last argument to `MBED_WARNING1` macro:
 
@@ -261,7 +261,7 @@ mbed_error_status_t configure(int config_value) {
 }
 ```
 
-#### Using `MBED_WARNING()` macro without module information
+### Using `MBED_WARNING()` macro without module information
 
 The code below uses an `MBED_WARNING` macro to report a invalid configuration attempt without module name:
 
@@ -279,7 +279,7 @@ mbed_error_status_t configure(int config_value) {
 }
 ```
 
-#### Using `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
+### Using `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system
 
 The code below uses the `mbed_get_first_error()` and `mbed_get_first_error_info()` functions to retrieve the first error or first warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls:
 
@@ -294,7 +294,7 @@ void get_first_error_info() {
 }
 ```
 
-#### Using `mbed_get_last_error()` and `mbed_get_last_error_info()` functions to retrieve the last error or last warning logged in the system
+### Using `mbed_get_last_error()` and `mbed_get_last_error_info()` functions to retrieve the last error or last warning logged in the system
 
 Use the functions `mbed_get_last_error()` and `mbed_get_last_error_info()` to retrieve the last error or last warning logged in the system using `MBED_WARNING()/MBED_ERROR()` calls. Note that these are similar to `mbed_get_first_error()` and `mbed_get_first_error_info()` calls, except that they retrieve the last error or last warning in this case:
 
@@ -309,7 +309,7 @@ void get_last_error_info() {
 }
 ```
 
-#### Using `mbed_get_error_hist_info()` and `mbed_get_error_hist_count()` to retrieve the error or warning information from the error history
+### Using `mbed_get_error_hist_info()` and `mbed_get_error_hist_count()` to retrieve the error or warning information from the error history
 
 You can use the function `mbed_get_error_hist_info()` to retrieve the error or warning information from the [error history](#error-history):
 
@@ -330,7 +330,7 @@ void get_error_info_from_hist() {
 }
 ```
 
-#### Using `mbed_clear_all_errors()` to clear the error history
+### Using `mbed_clear_all_errors()` to clear the error history
 
 You can use the function `mbed_clear_all_errors()` to clear all currently logged errors from the [error history](#error-history). You can use this if you have already backed up all the currently logged errors (for example, to a file system or cloud) and want to capture new errors:
 
@@ -344,7 +344,7 @@ void save_all_errors() {
 }
 ```
 
-#### Using `mbed_get_reboot_error_info()` to retrieve the reboot error info
+### Using `mbed_get_reboot_error_info()` to retrieve the reboot error info
 
 In the example below, status variable `reboot_error_detected` is set to 1 when the callback is invoked. Then, the `main()`
 function reads the reboot error information using `mbed_get_reboot_error_info()`.
@@ -372,7 +372,7 @@ int main()
 }
 ```
 
-#### Using `mbed_get_reboot_fault_context()` to retrieve the fault context info
+### Using `mbed_get_reboot_fault_context()` to retrieve the fault context info
 
 The example code below checks for the exception error (`MBED_ERROR_HARDFAULT_EXCEPTION`) using `error_status` in the error context
 and then retrieves the fault context using `mbed_get_reboot_fault_context()`:
@@ -406,7 +406,7 @@ int main()
 }
 ```
 
-#### Using `mbed_reset_reboot_error_info()` to clear the reboot error info
+### Using `mbed_reset_reboot_error_info()` to clear the reboot error info
 
 You can use `mbed_reset_reboot_error_info()` to clear the reboot error information:
 
@@ -418,7 +418,7 @@ void clear_reboot_errors() {
 }
 ```
 
-#### Using `mbed_reset_reboot_count()` to reset the reboot count
+### Using `mbed_reset_reboot_count()` to reset the reboot count
 
 You can use `mbed_reset_reboot_error_info()` to specifically reset the reboot count stored in Crash-data-RAM. Calling this function sets the reboot count to 0:
 
@@ -430,19 +430,19 @@ void clear_reboot_count() {
 }
 ```
 
-### Error handling example
+## Error handling example
 
 The example application below demonstrates usage of error handling APIs:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.14/main.cpp)
 
-### Crash reporting example
+## Crash reporting example
 
 The example application below demonstrates the crash reporting feature:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-5.14/main.cpp)
 
-### List of Mbed OS defined error codes and descriptions
+## List of Mbed OS defined error codes and descriptions
 
 Below are the predefined Mbed system error codes and their descriptions:
 
@@ -523,7 +523,7 @@ See the below Doxygen file for additional information regarding error code defin
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
-### Related content
+## Related content
 
 - Debug and develop [build profiles](../tools/build-profiles.html).
 - Mbed OS [error decoder](https://mbed.com/s/error).

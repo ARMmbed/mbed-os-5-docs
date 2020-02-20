@@ -1,4 +1,4 @@
-## UnbufferedSerial
+# UnbufferedSerial
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
@@ -10,16 +10,16 @@ For normal blocking applications that require a serial channel for something oth
 
 You can view more information about the configurable settings and functions in the class reference.
 
-### Class reference
+## Class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver).</span>
 
-### Example
+## Example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial/main.cpp)
 
-### Mbed OS use
+## Mbed OS use
 
 Common use cases for `UnbufferedSerial` are IRQ heavy UART operations, such as [BLE Cordio in the transport driver](https://github.com/ARMmbed/mbed-os/blob/master/features/FEATURE_BLE/targets/TARGET_CORDIO/driver/H4TransportDriver.cpp#L62).

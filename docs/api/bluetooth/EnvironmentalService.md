@@ -1,11 +1,11 @@
-## EnvironmentalService
+# EnvironmentalService
 
 [Add description here.]
 
-### EnvironmentalService class reference
+## EnvironmentalService class reference
 
 [![View code](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_environmental_service.html)
 
-### EnvironmentalService example
+## EnvironmentalService example
 
 [Add example here.]

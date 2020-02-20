@@ -2,15 +2,15 @@
 
 The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast to other sections of the documentation, which provide background reference material, this section provides instructions for specific tasks you may wish to perform. This section contains two formats of documentation: tutorials and examples. Tutorials include step-by-step guidance, and examples are code snippets you can use as a starting point for your application or as a reference on how to use a particular API.
 
-## Getting started
+# Getting started
 
 <td><a href="../quick-start/index.html">Mbed OS quick start tutorial</a></td>
 
-## Using the APIs
+# Using the APIs
 
 These tutorials and examples show you how to perform specific tasks that use the Arm Mbed APIs:
 
-### Using platform APIs
+## Using platform APIs
 
 | API | Examples |
 | --- | --- |
@@ -39,7 +39,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
 | ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
 
-### Using drivers APIs
+## Using drivers APIs
 
 | API | Examples  | Hello, World |
 | --- | ---  | --- |
@@ -78,7 +78,7 @@ And the following tutorials:
 - [Application flow control](../tutorials/application-flow-control.html)
 - [Alarm](../tutorials/alarm-tutorial.html)
 
-### Using RTOS APIs
+## Using RTOS APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ And the following tutorials:
 | ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
 | Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
 
-### Using USB APIs
+## Using USB APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ And the following tutorials:
 | USBKeyboard | [USBKeyboard example](../apis/usbkeyboard.html#usbkeyboard-example) | |
 | USBMouseKeyboard | [USBMouseKeyboard](../apis/usbmousekeyboard.html#usbmousekeyboard-example) | |
 
-### Using network socket APIs
+## Using network socket APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -123,7 +123,7 @@ And the following tutorials:
 | DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) | |
 | SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | |
 
-### Using network interfaces APIs
+## Using network interfaces APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -134,7 +134,7 @@ And the following tutorials:
 | Network status | [Network status example](../apis/network-status.html#example) | |
 
 
-### Using bluetooth APIs
+## Using bluetooth APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -148,11 +148,11 @@ And the following tutorials:
 | ibeacon | [ibeacon example](../apis/ibeacon.html#ibeacon-example) | |
 
 
-### Using LoRa APIs
+## Using LoRa APIs
 
 A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example for the API](../apis/lorawan-api.html#lorawan-example).
 
-### Using NFC APIs
+## Using NFC APIs
 
 | API | Examples |
 | --- | --- |
@@ -162,7 +162,7 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
 | MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
 
-### Using security APIs
+## Using security APIs
 
 | API | Examples |
 | --- | --- |
@@ -170,7 +170,7 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | DeviceKey | [DeviceKey example](../apis/devicekey.html#devicekey-example) |
 
 
-### Using storage APIs
+## Using storage APIs
 
 | API | Examples |
 | --- | --- |
@@ -191,7 +191,7 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
 | NVStore | [NVStore](../apis/nvstore.html#nvstore-example) |
 
-## Serial communication
+# Serial communication
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
@@ -199,18 +199,18 @@ These tutorials teach you to communicate with your development board, an essenti
 - [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
 - [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
 
-## Debugging
+# Debugging
 
 These tutorials show you how to install, export a project to and start a debugging session with different IDEs.
 
-### Tools
+## Tools
 
 - [Eclipse](../tutorials/eclipse.html).
 - [Keil uVision](../tutorials/keil-uvision.html).
 - [Visual Studio](../tutorials/visual-studio-code.html).
 - [BBC micro:bit, pyOCD and GDB debugging tutorial](../tutorials/debug-microbit.html).
 
-### Methods
+## Methods
 
 - [Troubleshooting common issues](../tutorials/debugging.html).
 - [Analyzing Mbed OS crash dump tutorial](../tutorials/analyzing-mbed-os-crash-dump.html).
@@ -218,11 +218,11 @@ These tutorials show you how to install, export a project to and start a debuggi
 - [Debugging using `printf` statements](../tutorials/debugging-using-printf-statements.html).
 - [Error handling API example](../apis/error-handling.html#error-handling-example)
 
-## Bootloader
+# Bootloader
 
 A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader).
 
-## Optimizing
+# Optimizing
 
 <table>
 <tbody>
@@ -240,6 +240,6 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tbody>
 </table>
 
-## Migrating to Mbed OS 5
+# Migrating to Mbed OS 5
 
 [Mbed OS 2 to 5 migration tutorial](../tutorials/migrating-to-mbed-os-5.html)
