@@ -396,7 +396,7 @@
                             ]
                         },
                         {
-                            "title": "APIs",
+                            "title": "Data Storage APIs",
                             "sources": [{
                                     "path": "docs/api/storage/KVStoreAPI.md"
                                 },
@@ -941,10 +941,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/platform/Wait.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/platform/Wait.md"
+                              },
+                              {
                                     "path": "docs/api/platform/Callback.md"
                                 },
                                 {
