@@ -1,4 +1,4 @@
-<h2 id="ci">Continuous integration (CI) testing</h2>
+<h1 id="ci">Continuous integration (CI) testing</h1>
 
 Continuous integration (CI) testing is an integral part of the Mbed OS contribution workflow. CI testing refers mainly to automatic testing for pull requests.
 

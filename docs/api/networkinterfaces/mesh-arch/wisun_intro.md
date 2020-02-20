@@ -1,4 +1,4 @@
-<h2 id="wisun-tech">Wi-SUN</h2>
+<h1 id="wisun-tech">Wi-SUN</h1>
 
 The Wi-SUN Field Area Network (FAN) is based on open standards from IEEE802, IETF, ANSI/TIA and ETSI.
 

@@ -1,4 +1,4 @@
-<h2 id="minar-migration">Migrating from MINAR (Arm Mbed OS 3)</h2>
+<h1 id="minar-migration">Migrating from MINAR (Arm Mbed OS 3)</h1>
 
 If you're looking to migrate your Arm Mbed application from Mbed OS 3 to Arm Mbed OS 5, one of the first things you're likely to notice is that [MINAR](https://github.com/ARMmbed/minar) (the event schduler in Mbed OS 3) does not exist in Mbed OS 5. This might be inconvenient, but there are different strategies that you can apply to port your Mbed OS 3 application to Mbed OS 5. This document presents some of these strategies from the MINAR perspective.
 

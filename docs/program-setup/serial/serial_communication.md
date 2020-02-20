@@ -1,4 +1,4 @@
-<h2 id="serial-comm">Board to PC communication over USB</h2>
+<h1 id="serial-comm">Board to PC communication over USB</h1>
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 

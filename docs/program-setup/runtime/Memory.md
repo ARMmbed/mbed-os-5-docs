@@ -1,4 +1,4 @@
-<h2 id="memory-model">Memory</h2>
+<h1 id="memory-model">Memory</h1>
 
 This is a basic overview of the memory model in Mbed OS.
 

@@ -1,4 +1,4 @@
-<h2 id="thread-commissioning">How to commission a Thread device in practice</h2>
+<h1 id="thread-commissioning">How to commission a Thread device in practice</h1>
 
 ## Requirements
 

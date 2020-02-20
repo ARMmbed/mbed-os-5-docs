@@ -1,4 +1,4 @@
-<h2 id="6LoWPAN-ND-tech">6LoWPAN-ND</h2>
+<h1 id="6LoWPAN-ND-tech">6LoWPAN-ND</h1>
 
 6LoWPAN-ND (IPv6 over Low-Power Wireless Personal Area Networks with Neighbor Discovery) is a mesh protocol that loosely follows the [Zigbee-IP](https://www.zigbee.org/) specification. 6LoWPAN-ND allows IP-based networking to all nodes in the network.
 

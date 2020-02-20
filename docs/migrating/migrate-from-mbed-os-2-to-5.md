@@ -169,6 +169,6 @@ Now, the program successfully compiles.
 
 Although the program or library now compiles successfully, runtime errors may still be present. Please visit the [compile-time errors tutorial](compile-time-errors.html#runtime-errors-and-lights-of-the-dead) for further debugging tips about common errors.
 
-<h2 id="enabling-bare-metal">Enabling Mbed OS bare metal</h2>
+<h1 id="enabling-bare-metal">Enabling Mbed OS bare metal</h1>
 
 Enabling the Mbed OS bare metal profile allows you to build Mbed OS without an RTOS. To enable it, you have to complete the [migration to Mbed OS 5](#migrating-to-mbed-os-5). Once the migration is complete, you can enable Mbed OS bare metal by following the instructions in the [bare metal example](../reference/bare-metal-example-application.html).
