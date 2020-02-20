@@ -1,4 +1,4 @@
-# File
+## File
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
 
@@ -12,15 +12,15 @@ A File operates like an infinitely long reel of tape. Each File object keeps tra
 
 Combining `read`, `write`, and `seek` on a File allows both streaming and random access to data stored on external memory without necessarily buffering the file contents on the device's RAM.
 
-## File class reference
+### File class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file.html)
 
-## File system example
+### File system example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.14/main.cpp)
 
-## Related content
+### Related content
 
 - [FileSystem](filesystem.html).
 - [Dir](dir.html).

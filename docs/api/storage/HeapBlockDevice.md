@@ -1,4 +1,4 @@
-# HeapBlockDevice
+## HeapBlockDevice
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
@@ -22,11 +22,11 @@ Optionally, you can create a HeapBlockDevice that will set the read, program and
 
 You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
 
-## HeapBlockDevice class reference
+### HeapBlockDevice class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_heap_block_device.html)
 
-## HeapBlockDevice example
+### HeapBlockDevice example
 
 Create a HeapBlockDevice, program it, read the block back and clean up.
 
@@ -36,6 +36,6 @@ The HeapBlockDevice used with MBRBlockDevice showcases partitioning.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/)](https://os.mbed.com/teams/mbed_example/code/MBRBlockDevice_ex_1/file/daa62d7aa9f9/main.cpp)
 
-## Related content
+### Related content
 
 - [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).

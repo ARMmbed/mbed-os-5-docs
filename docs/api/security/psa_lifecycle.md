@@ -1,4 +1,4 @@
-# PSA lifecycle
+## PSA lifecycle
 
 The PSA lifecycle API enables setting the lifecycle state.
 
@@ -15,10 +15,10 @@ You can specify the lifecycle value during build time using the `MBED_CONF_LIFEC
 
 In Mbed OS, the PSA lifecycle is implemented as part of the platform service.
 
-## PSA lifecycle reference
+### PSA lifecycle reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/lifecycle_8h.html)
 
-## Related content
+### Related content
 
 - [Platform Security Architecture - Firmware Framework](https://pages.arm.com/psa-resources-ff.html).

@@ -1,4 +1,4 @@
-# LittleFileSystem
+## LittleFileSystem
 
 <span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
 
@@ -39,15 +39,15 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 To configure this class, please see the [FileSystem configuration documentation](../reference/storage.html#filesystem-default-configuration).
 
-## LittleFileSystem class reference
+### LittleFileSystem class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.html)
 
-## LittleFileSystem example
+### LittleFileSystem example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.14/main.cpp)
 
-## Related content
+### Related content
 
 - [Storage configuration](../reference/storage.html).
 - [Blog post: LittleFS - A high-integrity embedded file system](https://os.mbed.com/blog/entry/littlefs-high-integrity-embedded-fs/).

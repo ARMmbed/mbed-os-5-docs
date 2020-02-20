@@ -1,33 +1,21 @@
-# USBMSD
+## USBMSD
 
 <span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_s_d.png)<span>USBMSD class hierarchy</span></span>
 
 You can use the USBMSD interface to emulate a mass storage device over USB. You can use this class to store or load data to and from a storage chip, such as SDcard or Flash. This class implements the MSD protocol and takes in a [BlockDevice](blockdevice.html) to interact with a storage chip.
 
-## USBMSD class reference
+### USBMSD class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_s_d.html)
 
-## USBMSD example
+### USBMSD SDBlockDevice example
 
-```C++ TODO
-#include "mbed.h"
-#include "SDBlockDevice.h"
-#include "USBMSD.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_SDBlockDevice/main.cpp)
 
-SDBlockDevice sd(PTE3, PTE1, PTE2, PTE4);
-USBMSD usb(&sd);
+### USBMSD HeapBlockDevice example
 
-int main() {
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_HeapBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_HeapBlockDevice/main.cpp)
 
-    while(true) {
-        usb.process();
-    }
-
-    return 0;
-}
-```
-
-## Related content
+### Related content
 
 - [BlockDevice](blockdevice.html).

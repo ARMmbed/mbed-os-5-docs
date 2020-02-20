@@ -1,4 +1,4 @@
-# FileSystem
+## FileSystem
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.png)<span>FileSystem class hierarchy</span></span>
 
@@ -14,15 +14,15 @@ The Mbed OS configuration allows you to add block devices as components using th
 
 For details regarding how to configure the default file system or override its implemetation, please refer to the [storage configuration guide](../reference/storage.html).
 
-## File system class reference
+### File system class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html)
 
-## File system example
+### File system example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.14/main.cpp)
 
-## Sector requirements
+### Sector requirements
 
 **LittleFS requirements:**
 
@@ -37,7 +37,7 @@ For details regarding how to configure the default file system or override its i
 - 1 block per dir.
 - 1 block per file.
 
-## Related content
+### Related content
 
 - [Storage configuration](../reference/storage.html).
 - [File](file.html).
