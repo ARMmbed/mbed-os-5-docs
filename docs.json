@@ -209,10 +209,11 @@
                         },
                         {
                             "title": "RTOS and event handling APIs",
-                            "intro": {
-                                "path": "docs/api/rtos/Thread.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/rtos/Thread.md"
+                              },
+                              {
                                     "path": "docs/api/rtos/ThisThread.md"
                                 },
                                 {
@@ -488,10 +489,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/networksocket/socket.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                 "path": "docs/api/networksocket/socket.md"
+                             },
+                             {
                                     "path": "docs/api/networksocket/UDPSocket.md"
                                 },
                                 {
@@ -544,10 +546,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/networkinterfaces/EthInterface.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/networkinterfaces/EthInterface.md"
+                              },
+                              {
                                     "path": "docs/api/networkinterfaces/WifiInterface.md"
                                 },
                                 {
@@ -611,10 +614,10 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
+                            "sources": [{
                                 "path": "docs/api/usb/USBSerial.md"
                             },
-                            "sources": [{
+                            {
                                     "path": "docs/api/usb/USBAudio.md"
                                 },
                                 {
@@ -677,10 +680,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/bluetooth/BLE.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/bluetooth/BLE.md"
+                              },
+                              {
                                     "path": "docs/api/bluetooth/Gap.md"
                                 },
                                 {
@@ -730,10 +734,10 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
+                            "sources": [{
                                 "path": "docs/api/lorawan/lorawan.md"
                             },
-                            "sources": [{
+                            {
                                 "path": "docs/api/lorawan/loraradio.md"
                             }]
                         },
@@ -764,10 +768,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/nfc/NFCController.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/nfc/NFCController.md"
+                              },
+                              {
                                     "path": "docs/api/nfc/NFCEEPROM.md"
                                 },
                                 {
@@ -811,10 +816,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/security/psa_attestation.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/security/psa_attestation.md"
+                              },
+                              {
                                     "path": "docs/api/security/crypto.md"
                                 },
                                 {
@@ -855,10 +861,10 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/power/PowerManagement.md"
-                            },
                             "sources": [{
+                                "path": "docs/api/power/PowerManagement.md"
+                            }
+                            ,{
                                     "path": "docs/api/power/DeepSleepLock.md"
                                 },
                                 {
@@ -888,10 +894,11 @@
                         },
                         {
                             "title": "APIs",
-                            "intro": {
-                                "path": "docs/api/memory/runtime_mem_trace.md"
-                            },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/memory/runtime_mem_trace.md"
+                              },
+                              {
                                     "path": "docs/api/memory/runtime_stats.md"
                                 },
                                 {
