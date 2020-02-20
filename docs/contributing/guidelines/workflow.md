@@ -1,8 +1,8 @@
-# Workflow
+## Workflow
 
 All code changes and additions to Mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#functionality-change) and [bugs](#reporting-bugs). In both cases, please follow the [code style guide](../contributing/style.html) and [GitHub pull request guidelines](#guidelines-for-github-pull-requests).
 
-## Mbed OS maintainers
+### Mbed OS maintainers
 
 The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code.
 
@@ -21,7 +21,7 @@ The current maintainers are:
 - [Martin Kojtal](https://os.mbed.com/users/Kojto).
 - [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
-## Contributions
+### Contributions
 
 Before contributing an enhancement (for example, a new feature or new port), please [discuss it on the forums](https://os.mbed.com/forum/bugs-suggestions/) to avoid duplication of work, as we or others might be working on a related feature.
 
@@ -31,7 +31,7 @@ For security purposes, we require our GitHub contributors to use two-factor auth
 
 Please create separate pull requests for each topic; each pull request needs a clear unity of purpose. In particular, separate code formatting and style changes from functional changes. This makes each pull request’s true contribution clearer, so review is quicker and easier.
 
-### Reporting bugs
+#### Reporting bugs
 
 You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed-os). Please submit questions or enhancement requests on the [forums](https://os.mbed.com/forum/bugs-suggestions/).
 
@@ -39,7 +39,7 @@ The bug report should be reproducible (fails for others) and specific (where and
 
 We copy issues reported on GitHub to our internal tracker and regularly triage them.
 
-## Guidelines for GitHub pull requests
+### Guidelines for GitHub pull requests
 
 Pull requests on GitHub have to meet the following requirements to keep the code and commit history clean:
 
@@ -58,11 +58,11 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 
 If commits do not follow the above guidelines, we may request that you modify the commit history (often to add more details to address _what_ and _why_ rather than _how_).
 
-### Release versioning
+#### Release versioning
 
 [How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html) explains Mbed OS versioning.
 
-## Pull request template
+### Pull request template
 
 The following template is automatically provided when you raise a pull request against `mbed-os`. The details required depend on the type of pull request you create:
 
@@ -87,8 +87,8 @@ The following template is automatically provided when you raise a pull request a
         [] No Tests required for this change (E.g docs only update)
         [] Covered by existing mbed-os tests (Greentea or Unittest)
         [] Tests / results supplied as part of this PR
-        
-        
+
+
     ----------------------------------------------------------------------------------------------------------------
     ### Reviewers (*optional*)
 
@@ -104,44 +104,44 @@ The following template is automatically provided when you raise a pull request a
     ##### Migration actions required
 
 
-### Description field
+#### Description field
 
 There are two parts to the description, both of which are required:
 
 - The summary of the pull request clearly states the reason for the PR and what the changes involve.
 - The documentation section requires you to state what, if any, documentation changes need to accompany the code changes.
 
-### Pull request type
+#### Pull request type
 
 There are three pull request types, and these correspond to the three main categories specified in semantic versioning: patch, feature (minor) and major.
 
-#### Patch update
+##### Patch update
 
 This can contain any of the following changes:
 
-##### Bug Fix
+###### Bug Fix
 
 A bug fix is a change that fixes a specific defect in the codebase with backward compatibility. These are the highest priority because of the positive effect the change will have on users developing against the same code. A bug fix should be limited to restoring the documented or proven otherwise, originally intended behavior. Every bug fix should contain a test to verify results before and after the pull request. Bug fixes are candidates for patch releases. Large, nontrivial bug fixes approaching the size of refactors run the risk of being considered refactors themselves.
 
-##### Refactor
+###### Refactor
 
 A refactor is a contribution that modifies the codebase without fixing a bug or changing the existing behavior. Examples of this are moving functions or variables between translation units, renaming source files or folders, scope modification for nonpublic code, documentation structure changes and test organization changes. There is always the risk that someone depended on the location or name before a refactor; therefore, these are lower in priority than bug fixes and might require detailed justification for the change. 
 
-##### Target update
+###### Target update
 
 Updating target implementation (adding a new target or updating already supported target) is a change for a patch release.
 
 A test report for the new target must be part of the pull request. The new target must pass all Mbed OS functional and system validation tests (using `mbed test` command) for the current Mbed OS major release, including all Mbed OS supported toolchains.
 
-##### Documentation update
+###### Documentation update
 
 Documentation updates include changes to markdown files or Doxygen documentation (comment-only changes).
 
-##### Test update
+###### Test update
 
 Test updates include updates to a new test unit or test case.
 
-#### Feature update
+##### Feature update
 
 This can be any change in the functionality, including adding a new feature, a new method or a function. Software language does not matter.
 
@@ -152,10 +152,10 @@ We initially implement new features on separate branches in the Mbed OS reposito
 Each feature has a Mbed OS technical lead. This person is responsible for:
 
 - Rebasing often to track master development.
-- Reviewing any addition to the feature branch. 
+- Reviewing any addition to the feature branch.
 - Approving all feature change pull requests.
 
-#### Major update
+##### Major update
 
 This is for breaking changes and should be rare. A breaking change is any change that results in breaking user space. It should have strong justification for us to consider it. Often, such changes can be backward compatible, for example, deprecating the old functionality and introducing the new replacement.
 
@@ -163,7 +163,7 @@ A contribution containing a breaking change is the most difficult PR to get merg
 
 A project technical lead and the Mbed OS technical lead must approve breaking change pull requests.
 
-### Test results
+#### Test results
 
 This section is to indicate what test results, if any, are required for the PR. The three options are:
 
@@ -171,12 +171,12 @@ This section is to indicate what test results, if any, are required for the PR. 
 - Changes will be tested by existing `mbed-os` tests (Greentea or Unittest).
 - Tests and results will be supplied as part of this PR. For this option, post the tests and test results
   below the tick boxes.
-    
-### Reviewers
+
+#### Reviewers
 
 A bot automatically adds reviewers based on the files that are actually changed. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
 
-### Release Notes
+#### Release notes
 
 Every pull request changing or adding functionality must fill in the "Release notes" section. This applies to feature and major PRs. For both these types, you must complete the "Summary of changes" section. Provide a brief description of changes introduced, including justification.
 
@@ -194,7 +194,7 @@ Each pull request goes through the following workflow:
 
 <span class="images">![Pull request workflow](../../images/Workflow3.png)<span>Pull request workflow</span></span>
 
-## Pull request states
+### Pull request states
 
 The Mbed OS maintainers add labels to a pull request to describe its workflow states. The Mbed OS maintainers are responsible for moving pull requests through the workflow states.
 
@@ -202,7 +202,7 @@ Each state is time-boxed. In most cases, this is sufficient time to move to anot
 
 If a pull request is idle for more than two weeks, it will be closed. The author or the maintainer can reopen it at any time.
 
-### Reviews
+#### Reviews
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. A PR creator can request specific reviewers by @ tagging people or teams in the *Reviewers* section of the pull request template. For example, @personA @TeamB.
 
@@ -211,28 +211,28 @@ GitHub dismisses a reviewer's status after any change to the pull request commit
 - Label: `needs: review`.
 - Time: Three days for reviewers to leave feedback after the maintainers add the label.
 
-### The Continuous Integration (CI) testing
+#### The Continuous Integration (CI) testing
 
 There are many [CI systems available](../contributing/ci.html) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that it has on the code base. Irrespective of which CI tests run, Mbed OS has an all-green policy, meaning that all triggered CI jobs must pass before we merge the pull request.
 
 - Label: `needs: CI`.
 - Time: One day for CI to complete and report back results.
 
-### Work needed
+#### Work needed
 
 A pull request in the "work needed" state requires additional work due to failed tests, or rework as a result of the review. If a pull request is in this state, our maintainers request changes from the pull request author.
 
 - Label: `needs: work`.
 - Time: Three days for the pull request author to action the review comments.
 
-### Ready for integration
+#### Ready for integration
 
 Maintainers merge pull requests during the internal gatekeeping meetings that occur three times a week. They can merge straightforward pull requests immediately.
 
 - Label: `Ready for merge`.
 - Time: Two days.
 
-### Releases
+#### Releases
 
 When we merge a pull request that we will publish in a patch release, we tag it with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features are only published in feature releases.
 
@@ -246,10 +246,10 @@ Where:
 - `f` is the feature release.
 - `p` is the patch release.
 
-From time to time there may be additional suffixes added which could represent a release candidate or 
+From time to time there may be additional suffixes added which could represent a release candidate or
 alpha/beta release etc
 
-## Additional labels
+### Additional labels
 
 We use many other labels to summarize the scope and effect of the changes:
 

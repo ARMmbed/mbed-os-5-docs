@@ -1,4 +1,4 @@
-# SocketStats
+## SocketStats
 
 Use the SocketStats class to read the network socket statistics. When statistics are enabled, you can create the SocketStats class object with the `InternetSocket` class by using the `nsapi.socket-stats-enabled` configuration option.
 
@@ -6,16 +6,16 @@ The `SocketStats` class provides the static function `mbed_stats_socket_get_each
 
 Socket statistics are stored in an internal data buffer and maintained for closed sockets, as well. If the internal data buffer is full, the socket closed with the oldest timestamp will be overwritten. You can configure the maximum amount of sockets statistics stored by using the `nsapi.socket-stats-max-count` configuration option.
 
-## SocketStats class reference
+### SocketStats class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_socket_stats.html)
 
-## SocketStats example
+### SocketStats example
 
 Here is an example to collect socket statistics.
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-socket-stats)](https://github.com/ARMmbed/mbed-os-example-socket-stats/blob/mbed-os-5.14/main.cpp)
 
-## Related content
+### Related content
 
 - [IP networking architecture](../reference/ip-networking.html).

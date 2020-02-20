@@ -1,4 +1,4 @@
-# Mbed Crypto
+## Mbed Crypto
 
 Arm Mbed Crypto is the reference implementation of the cryptography interface of the Arm Platform Security Architecture (PSA).
 
@@ -10,11 +10,11 @@ You can import Mbed Crypto from its standalone [release](https://github.com/ARMm
 
 <span class="notes">**Note:** Mbed Crypto, like Mbed TLS, needs a secure source of random numbers; make sure that your target board has one and that it is fully ported to Arm Mbed OS. You can read more about this in our [porting guide](../porting/entropy-sources.html).</span>
 
-## Configuring Mbed Crypto features
+### Configuring Mbed Crypto features
 
 The Mbed TLS configuration system configures Mbed Crypto. Please refer to [Mbed TLS documentation for how to configure Mbed TLS and Mbed Crypto](../apis/tls.html#configuring-mbed-tls-features).
 
-## Mbed Crypto examples
+### Mbed Crypto examples
 
 This example covers some basic use of the PSA Crypto API, as well as factory entropy injection:
 
@@ -22,7 +22,7 @@ This example covers some basic use of the PSA Crypto API, as well as factory ent
 
 For further information, please refer to the README file in [the example repository](https://github.com/ARMmbed/mbed-os-example-mbed-crypto).
 
-## Other resources
+### Other resources
 
 The [Mbed Crypto project homepage on GitHub](https://github.com/ARMmbed/mbed-crypto) contains the following
 resources:

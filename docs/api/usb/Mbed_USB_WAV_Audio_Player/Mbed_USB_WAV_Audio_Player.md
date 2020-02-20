@@ -81,57 +81,11 @@ If USB properties of the Mbed USB WAV Audio Player are altered, such as the samp
 
 ## main.cpp
 
-```c++ NOCI
-// Mbed WAV Audio Player
-#include "mbed.h"
-#include "USBAudio.h"
-#include "SDBlockDevice.h"
-#include "FATFileSystem.h"
-#include "AudioPlayer.h"
-#include "WaveAudioStream.h"
-
-// Connection for SD card
-SDBlockDevice sd(PTE3, PTE1, PTE2, PTE4);//MOSI, MISO, SCLK, CS
-FATFileSystem fs("sd", &sd);
-
-int main() {
-    // Set the maximum speed so it can keep up with audio
-    sd.frequency(25000000);
-    // Load WAV file from SD card
-    // WAV file must be PCM signed 16-bit little endian
-    File file;
-    if (file.open(&fs, "songs/Bach-minuet-in-g.wav") != 0) {
-        error("Could not open 'songs/Bach-minuet-in-g.wav'\r\n");
-    }
-    WaveAudioStream song(&file);//"song" is the audio data object
-    // Check to see if file is a valid WAV file
-    if(song.get_valid() == 0){
-        error("ERROR: not valid WAV file\r\n");
-    }
-    // WAV file must be 16-bit
-    if(song.get_bytes_per_sample() != 2){
-        error("ERROR: WAV file not 2 bytes per sample (16-bit)\r\n");
-    }
-    USBAudio audio(true, 8000, song.get_channels(), song.get_sample_rate(), song.get_channels());
-    uint8_t buffer[1500];
-    int num_bytes_read;
-    printf("Playing Audio\r\n");
-    // Reads and plays data from WAV file over USB until song is over
-    while(1){
-        num_bytes_read = song.read(buffer, 1500);
-        if(num_bytes_read == -1){
-            printf("Song Over\r\n");
-            break;
-        }
-        audio.write(buffer, num_bytes_read);
-    }
-    song.close();//Close the WAV file
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player/main.cpp)
 
 ## Example WAV file  
 
-[Bach-minuet-in-g.wav](https://github.com/mrcoulter45/mbed-os-5-docs/raw/Mbed_USB_WAV_Audio_Player_Tutorial/docs/tutorials/using_apis/Mbed_USB_WAV_Audio_Player/Bach-minuet-in-g.wav)
+[Bach-minuet-in-g.wav](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player/Bach-minuet-in-g.wav)
 
 ## Troubleshooting   
 
