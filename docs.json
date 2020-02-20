@@ -397,7 +397,7 @@
                             ]
                         },
                         {
-                            "title": "Data Storage APIs",
+                            "title": "APIs",
                             "sources": [{
                                     "path": "docs/api/storage/KVStoreAPI.md"
                                 },
