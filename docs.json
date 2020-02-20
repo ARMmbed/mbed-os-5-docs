@@ -394,7 +394,12 @@
                             },
                             {
                                 "path": "docs/api/storage/storage-arch.md"
-                            },
+                            }
+                          ]
+                        },
+                        {
+                            "title": "APIs",
+                            "sources": [
                             {
                                 "path": "docs/api/storage/KVStoreAPI.md"
                             },
