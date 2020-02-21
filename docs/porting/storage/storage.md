@@ -6,13 +6,13 @@ When you add a new platform, you must add the supported block devices to the lis
 
 For more information about existing storage solutions in Mbed OS, see the [Storage API page](../apis/storage.html).
 
-### Block Device
+## Block Device
 
 You might have to add a block device implementation if you have new storage hardware that is not supported by the existing block devices. You can extend the [BlockDevice](../mbed-os-api-doxy/classmbed_1_1_block_device.html) class to provide support for unsupported storage.
 
 If you want to port a new file system to Mbed OS on existing storage options you can skip to the following section.
 
-### File systems
+## File systems
 
 To implement a new file system in Mbed OS, an implementor needs to provide the abstract functions in the file system interface. The [FAT file system](../mbed-os-api-doxy/_f_a_t_file_system_8h_source.html) provides an excellent example.
 
@@ -30,7 +30,7 @@ Here is the full API that a file system may implement:
 
 File systems must be backed by a block device in Mbed OS. If you are using supported hardware, then you can use the Mbed OS block device classes. Otherwise, view the [block device porting section](#block-device) earlier in this guide.
 
-### Related content
+## Related content
 
 - [BlockDevice](../mbed-os-api-doxy/classmbed_1_1_block_device.html).
 - [FAT file system](../mbed-os-api-doxy/_f_a_t_file_system_8h_source.html).

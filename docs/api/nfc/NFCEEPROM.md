@@ -31,6 +31,6 @@ int main() {
 }
 ```
 
-### Related content
+## Related content
 
 - [NFC architecture](../reference/nfc-technology.html).

@@ -118,7 +118,7 @@ Please see the previous section, [Default network interface](#default-network-in
 
 For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
-## Using multiple network interfaces
+# Using multiple network interfaces
 
 In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](../reference/ip-networking.html) section for an explanation of how different stacks are integrated into Mbed OS.
 

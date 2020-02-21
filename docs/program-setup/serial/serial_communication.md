@@ -63,9 +63,9 @@ CoolTerm should work under Linux. If for some reason it doesn't, you can try one
 
 ## Minimal Printf
 
-For low memory devices you may optionally use the [ArmMbed minimal printf library](https://github.com/ARMmbed/minimal-printf). 
+For low memory devices you may optionally use the [ArmMbed minimal printf library](https://github.com/ARMmbed/minimal-printf).
 
-## Additional examples
+# Additional examples
 
 Use your terminal application to interact with the following examples.
 

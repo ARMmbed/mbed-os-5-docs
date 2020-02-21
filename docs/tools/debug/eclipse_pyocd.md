@@ -40,8 +40,8 @@ To export your project to Eclipse, you can use either the Arm Mbed Online Compil
 In your project folder, run:
 
 ```
-# Replace K64F with your target board
-# If you're not using GCC ARM, use -i eclipse_armc5 for ARMCC, or -i eclipse_iar for IAR
+## Replace K64F with your target board
+## If you're not using GCC ARM, use -i eclipse_armc5 for ARMCC, or -i eclipse_iar for IAR
 
 $ mbed export -i eclipse_gcc_arm -m K64F --profile debug
 ```

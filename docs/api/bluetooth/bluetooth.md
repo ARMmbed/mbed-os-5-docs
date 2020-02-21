@@ -12,9 +12,9 @@ Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software soluti
 
 The first thing you can do with a BLE device is display information. You can do that with lights or a [display](http://developer.mbed.org/components/cat/display/), or you can send the information to a nearby Bluetooth-enabled device, such as a mobile phone.
 
-The information can be sensor input - for example, you could display the speed as provided by an [accelerometer](http://developer.mbed.org/components/cat/sensors-motion/) - or static information that you've programmed onto the device, such as your own details. 
+The information can be sensor input - for example, you could display the speed as provided by an [accelerometer](http://developer.mbed.org/components/cat/sensors-motion/) - or static information that you've programmed onto the device, such as your own details.
 
-## Processing information 
+## Processing information
 
 The two most common sources of information that you may want to process are sensors and user input. In either case, there are two main paradigms for processing:
 

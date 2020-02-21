@@ -21,7 +21,7 @@ There are two methods of importing the code into the online compiler: directly f
 
 	Double click a program to import it.
 
-# Creating a new program
+## Creating a new program
 
 1. From the **New** menu, select **New Program**:
 
@@ -54,7 +54,7 @@ There are two methods of importing the code into the online compiler: directly f
 
     1. Select **Import**.
 
-# Getting your program on your board
+## Getting your program on your board
 
 The Arm Mbed Online Compiler builds a file that can run on your board. All you need to do is:
 
@@ -98,7 +98,7 @@ Your board should appear on your computer as removable storage. To run your prog
 
 <span class="images">![](../../images/device_on_mac.png)<span>The device appears as removable storage, under the name `MBED`</span></span>
 
-# Forking a repository
+## Forking a repository
 
 When you add changes to an imported repository in your private workspace, you may want to publish them for others to use.
 

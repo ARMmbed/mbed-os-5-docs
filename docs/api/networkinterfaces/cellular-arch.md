@@ -50,6 +50,7 @@ Cellular APIs are structured based on main functionalities:
 
 You can instantiate the CellularContext class with `CellularContext::get_default_instance()`, which opens `CellularDevice` and, through the device, opens `CellularContext`. Opening `CellularContext` through `get_default_instance` uses values from `mbed_app.json`.
 These values are not defined by default, and you must override them in `mbed_app.json` if you need them:
+
 ```
 "target_overrides": {
         "*": {
@@ -72,6 +73,7 @@ When an application has opened a cellular API, you can use it to request API met
     		}
     }
 ```
+
 ## UDP and TCP sockets
 
 If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular has an option to use either the LWIP stack (PPP mode), which is part of Mbed OS, or to use the IP stack on the cellular device (AT mode).

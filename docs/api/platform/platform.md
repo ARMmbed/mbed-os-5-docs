@@ -70,7 +70,7 @@ Another useful C++ feature is volatile-correctness. When volatile-correctness is
 
 C++ provides the tools to delegate this complexity to a single class. This class is the Callback class. The Callback class should be familiar to users of the std::function class that C++11 introduced and is available for older versions of C++.
 
-<h5 id="the-importance-of-state">The importance of state</h5>
+<h6 id="the-importance-of-state">The importance of state</h6>
 
 Callbacks may have two important pieces of information, the code to execute and the state associated with the callback.
 

@@ -66,34 +66,45 @@ If commits do not follow the above guidelines, we may request that you modify th
 
 The following template is automatically provided when you raise a pull request against `mbed-os`. The details required depend on the type of pull request you create:
 
-    ### Description (*required*)
+    ## Description (*required*)
 
-    ##### Summary of change (*What the change is for and why*)
+    #### Summary of change (*What the change is for and why*)
 
     ###### Impact of changes
 
     ###### Migration actions required
 
-    ##### Documentation (*Details of any document updates required*)
+    #### Documentation (*Details of any document updates required*)
 
 
     ----------------------------------------------------------------------------------------------------------------
-    ### Pull request type (*required*)
+    ## Pull request type (*required*)
 
         [] Patch update (Bug fix / Target update / Docs update / Test update / Refactor)
         [] Feature update (New feature / Functionality change / New API)
         [] Major update (Breaking change E.g. Return code change / API behaviour change)
 
     ----------------------------------------------------------------------------------------------------------------
-    ### Test results (*required*)
+    ## Test results (*required*)
 
         [] No Tests required for this change (E.g docs only update)
         [] Covered by existing mbed-os tests (Greentea or Unittest)
         [] Tests / results supplied as part of this PR
-        
-        
+
+
     ----------------------------------------------------------------------------------------------------------------
-    ### Reviewers (*optional*)
+    ## Reviewers (*optional*)
+
+    ----------------------------------------------------------------------------------------------------------------
+    ## Release Notes (*required for feature/major PRs*)
+
+
+    #### Summary of changes
+
+    #### Impact of changes
+
+    #### Migration actions required
+
 
 ### Description field
 
@@ -143,7 +154,7 @@ We initially implement new features on separate branches in the Mbed OS reposito
 Each feature has a Mbed OS technical lead. This person is responsible for:
 
 - Rebasing often to track master development.
-- Reviewing any addition to the feature branch. 
+- Reviewing any addition to the feature branch.
 - Approving all feature change pull requests.
 
 #### Major update
@@ -162,12 +173,12 @@ This section is to indicate what test results, if any, are required for the PR. 
 - Changes will be tested by existing `mbed-os` tests (Greentea or Unittest).
 - Tests and results will be supplied as part of this PR. For this option, post the tests and test results
   below the tick boxes.
-    
+
 ### Reviewers
 
 A bot automatically adds reviewers based on the files that are actually changed. It uses an internal reviewers database. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
 
-### Release Notes
+### Release notes
 
 Every pull request changing or adding functionality must fill in the "Summary of changes" section.
 
@@ -179,7 +190,7 @@ The migration actions required should describe how to migrate from a previous ve
 
 The release notes section is automatically pulled into the overall release notes for a feature or major release. This should be considered when you write the entries.
 
-## GitHub pull requests workflow
+# GitHub pull requests workflow
 
 Each pull request goes through the following workflow:
 
@@ -239,7 +250,7 @@ Where:
 - `f` is the feature release.
 - `p` is the patch release.
 
-From time to time there may be additional suffixes added which could represent a release candidate or 
+From time to time there may be additional suffixes added which could represent a release candidate or
 alpha/beta release etc
 
 ## Additional labels

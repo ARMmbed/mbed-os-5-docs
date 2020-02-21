@@ -36,6 +36,7 @@ The Arm Mbed OS codebase is organized into conceptual submodules to limit the sc
 - Special directories should follow consistent naming convention.
 
 ## Contribution
+
 1. Please refer to the [Mbed contribution guide](../contributing/index.html).
 1. Each pull request should serve a single purpose.
 1. The code must compile every commit.
@@ -136,7 +137,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
     Doxygen comment blocks start with `/**` or `/*!` and end with `*/`, and you put them above the documented entity.
 
     For example:
-    
+
     ```
     /** psa_crypto_ipc_s struct used for some of the
      * PSA Crypto APIs that need psa_key_handle_t and psa_algorithm_t arguments.
@@ -145,9 +146,9 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
     typedef struct psa_crypto_ipc_s {
     ```    
-    
+
     Each line of a long comment block also starts with `*`.
-    
+
 - Begin each `.h` file by documenting the file name and providing a short description of the file using the `\file` and `\brief` commands:
 
     ```
@@ -156,11 +157,11 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      * @brief <short file description>
      */
     ```
-    
+
     These are the file names and descriptions that appear on the **Files** page of the generated documentation.
 
     <span class="notes">**Note:** Doxygen commands start with a backslash (`\`) or an at sign (`@`). You can use the `\` and `@`characters interchangeably in commands; for example, you can use `\file` or `@file`.</span>
-    
+
 - Doxygen enables you to group entities. These groups are called **modules** in doxygen, and they are listed on the **Modules** page of the generated documentation.
 
     **To define a module:**
@@ -174,16 +175,16 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      * @brief <short group description>
      */
     ```
-    
+
     For example:
-    
+
     ```
     /**
      * @defgroup psa_cryto PSA Crypto APIs
      * @brief PSA cryptography module, which contains Mbed TLS platfom definitions.
      */
     ```
-    
+
     <span class="notes">**Note:** The one-word identifier immediately following the `@defgroup` command - for instance, `psa_cryto` in the example above - is not part of the group name in the generated documentation.</span>
 
     **To add a member to a module:**
@@ -202,7 +203,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
      */
      osStatus lock(uint32_t millisec=osWaitForever);
     ```
-    
+
 - The doxygen of each class's header file must contain a use example using `@code` and `@endcode`.
 - Each API should also provide an `@code` and `@endcode` section building upon the class header example.
 - If more specific information is needed about a method, provide this information using the `@note` command.

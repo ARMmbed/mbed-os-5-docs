@@ -6,7 +6,7 @@ The HeapBlockDevice class provides a way to simulate block devices for software 
 
 HeapBlockDevices have the following configurable parameters in either one of two constructors:
 
-### Verbose constructor
+## Verbose constructor
 
   - _size_ - Size of the block device in bytes.
   - _read_size_ - Minimum read size required in bytes.
@@ -15,7 +15,7 @@ HeapBlockDevices have the following configurable parameters in either one of two
 
 Optionally, you can create a HeapBlockDevice that will set the read, program and erase sizes to the same size rather than requiring each parameter be repeated if all of the values are constrained by a common block size.
 
-### Shortened constructor
+## Shortened constructor
 
   - _size_ - Size of the block device in bytes.
   - _block_ - Block size in bytes. You can use this to configure the minimum read, program and erase sizes to this value. Default value is 512 bytes.

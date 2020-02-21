@@ -14,7 +14,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 ### To enable heap stats using `mbed_app.json`:
 
 1. Add the following to `mbed_app.json`:
-   
+
    ```
    {
        "macros": [

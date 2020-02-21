@@ -147,7 +147,7 @@ int main() {
 Run the test:
 
 ```
-# run the test with the GCC_ARM toolchain, automatically detect the target, and run in verbose mode (-v)
+## run the test with the GCC_ARM toolchain, automatically detect the target, and run in verbose mode (-v)
 $ mbed test -t GCC_ARM -m auto -v -n tests-test-group-simple-test
 ```
 
@@ -192,17 +192,17 @@ class HelloWorldHostTests(BaseHostTest):
     def _callback_init(self, key, value, timestamp):
         self.logger.prn_inf('Received \'init\' value=%s' % value)
 
-        # sleep...
+        ## sleep...
         time.sleep(2)
 
-        # if value equals 'hello' we'll send back world, otherwise not
+        ## if value equals 'hello' we'll send back world, otherwise not
         if (value == 'hello'):
             self.send_kv('init', 'world')
         else:
             self.send_kv('init', 'not world')
 
     def setup(self):
-        # all functions that can be called from the client
+        ## all functions that can be called from the client
         self.register_callback('init', self._callback_init)
 
     def result(self):

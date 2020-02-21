@@ -35,9 +35,8 @@
                 {
                     "title": "Glossary",
                     "sources": [{
-                            "path": "docs/introduction/terms.md"
-                        }
-                    ]
+                        "path": "docs/introduction/terms.md"
+                    }]
                 }
             ],
             "tags": [
@@ -61,9 +60,8 @@
                     "sub_chapters": [{
                             "title": "Importing and compiling the code",
                             "sources": [{
-                                    "path": "docs/quick-start/quick-start-compiler.md"
-                                }
-                            ]
+                                "path": "docs/quick-start/quick-start-compiler.md"
+                            }]
                         },
                         {
                             "title": "Debugging with the Online Compiler",
@@ -114,8 +112,7 @@
                     "intro": {
                         "path": "docs/program-setup/reference.md"
                     },
-                    "sources": [
-                      {
+                    "sources": [{
                             "path": "docs/program-setup/runtime/Execution.md"
                         },
                         {
@@ -127,7 +124,8 @@
                         {
                             "path": "docs/program-setup/build_rules.md"
                         },
-                        {   "path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                        {
+                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
                         }
                     ]
                 },
@@ -161,50 +159,25 @@
                     ]
                 },
                 {
-                            "title": "Configuration",
-                            "intro": {
-                                "path": "docs/program-setup/configuration.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/program-setup/mbed_targets.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/platform-config.md"
-                                },
-                                {
-                                    "path": "docs/api/io/io-config.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/rtos-config.md"
-                                },
-                                {
-                                    "path": "docs/api/connectivity-config.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-config.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/ble-config.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/lorawanconfig.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/storage-config.md"
-                                },
-                                {
-                                    "path": "docs/program-setup/bootloader.md"
+                    "title": "Advanced configuration",
+                    "intro": {
+                        "path": "docs/program-setup/configuration.md"
+                    },
+                    "sources": [{
+                            "path": "docs/program-setup/mbed_targets.md"
+                        },
+                        {
+                            "path": "docs/program-setup/bootloader.md"
                         }
                     ]
                 }
             ]
         },
         {
-            "title": "APIs",
+            "title": "Full API references",
             "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
             "slug": "apis",
             "type": "markdown",
-            "category": "apis",
             "chapters": [{
                     "title": "Full API list",
                     "intro": {
@@ -217,47 +190,66 @@
                     "intro": {
                         "path": "docs/api/rtos/rtos.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/rtos/Thread.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/rtos/rtos-config.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/rtos/ThisThread.md"
+                            "title": "General information",
+                            "intro": {
+                                "path": "docs/api/rtos/thread_safety.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/rtos/Mutex.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/rtos/Thread.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/ThisThread.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Mutex.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Semaphore.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Queue.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/EventQueue.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/UserAllocatedEvent.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Mail.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/EventFlags.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Event.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/ConditionVariable.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Kernel.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/rtos/Semaphore.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Queue.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/EventQueue.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/UserAllocatedEvent.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Mail.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/EventFlags.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Event.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/ConditionVariable.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Kernel.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/events_tutorial.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/thread_safety.md"
+                            "title": "Tutorials",
+                            "intro": {
+                                "path": "docs/api/rtos/events_tutorial.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -266,95 +258,119 @@
                     "intro": {
                         "path": "docs/api/io/drivers.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/io/AnalogIn.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/io/io-config.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/io/AnalogOut.md"
+                            "title": "APIs",
+                            "intro": {
+                                "path": "docs/api/io/drivers.md"
+                            },
+                            "sources": [{
+                                    "path": "docs/api/io/AnalogIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/AnalogOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/DigitalIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/DigitalOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/DigitalInOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusInOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PortIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PortOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PortInOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PwmOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/InterruptIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Ticker.md"
+                                },
+                                {
+                                    "path": "docs/api/io/TimeOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Timer.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Watchdog.md"
+                                },
+                                {
+                                    "path": "docs/api/io/ResetReason.md"
+                                },
+                                {
+                                    "path": "docs/api/io/FlashIAP.md"
+                                },
+                                {
+                                    "path": "docs/api/io/RawSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Serial.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BufferedSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/io/UnbufferedSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/io/SPI.md"
+                                },
+                                {
+                                    "path": "docs/api/io/SPISlave.md"
+                                },
+                                {
+                                    "path": "docs/api/io/QuadSPI.md"
+                                },
+                                {
+                                    "path": "docs/api/io/I2C.md"
+                                },
+                                {
+                                    "path": "docs/api/io/I2CSlave.md"
+                                },
+                                {
+                                    "path": "docs/api/io/CAN.md"
+                                },
+                                {
+                                    "path": "docs/api/io/MbedCRC.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/io/DigitalIn.md"
-                        },
-                        {
-                            "path": "docs/api/io/DigitalOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/DigitalInOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/BusIn.md"
-                        },
-                        {
-                            "path": "docs/api/io/BusOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/BusInOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/PortIn.md"
-                        },
-                        {
-                            "path": "docs/api/io/PortOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/PortInOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/PwmOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/InterruptIn.md"
-                        },
-                        {
-                            "path": "docs/api/io/Ticker.md"
-                        },
-                        {
-                            "path": "docs/api/io/TimeOut.md"
-                        },
-                        {
-                            "path": "docs/api/io/Timer.md"
-                        },
-                        {
-                            "path": "docs/api/io/Watchdog.md"
-                        },
-                        {
-                            "path": "docs/api/io/ResetReason.md"
-                        },
-                        {
-                            "path": "docs/api/io/FlashIAP.md"
-                        },
-                        {
-                            "path": "docs/api/io/RawSerial.md"
-                        },
-                        {
-                            "path": "docs/api/io/Serial.md"
-                        },
-                        {
-                            "path": "docs/api/io/SPI.md"
-                        },
-                        {
-                            "path": "docs/api/io/SPISlave.md"
-                        },
-                        {
-                            "path": "docs/api/io/QuadSPI.md"
-                        },
-                        {
-                            "path": "docs/api/io/I2C.md"
-                        },
-                        {
-                            "path": "docs/api/io/I2CSlave.md"
-                        },
-                        {
-                            "path": "docs/api/io/CAN.md"
-                        },
-                        {
-                            "path": "docs/api/io/MbedCRC.md"
-                        },
-                        {
-                            "path": "docs/api/io/flow_control.md"
-                        },
-                        {
-                            "path": "docs/api/io/alarm-tutorial.md"
+                            "title": "Tutorials",
+                            "sources": [{
+                                    "path": "docs/api/io/flow_control.md"
+                                },
+                                {
+                                    "path": "docs/api/io/alarm-tutorial.md"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -363,114 +379,140 @@
                     "intro": {
                         "path": "docs/api/storage/storage.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/storage/KVStoreAPI.md"
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "sources": [{
+                                    "path": "docs/api/storage/storage-config.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/storage-arch.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/storage/KVStoreGlobalAPI.md"
-                        },
-                        {
-                            "path": "docs/api/storage/FileSystem.md"
-                        },
-                        {
-                            "path": "docs/api/storage/Dir.md"
-                        },
-                        {
-                            "path": "docs/api/storage/File.md"
-                        },
-                        {
-                            "path": "docs/api/storage/LittleFileSystem.md"
-                        },
-                        {
-                            "path": "docs/api/storage/FATFileSystem.md"
-                        },
-                        {
-                            "path": "docs/api/storage/BlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/HeapBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/MBRBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/ChainingBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/SlicingBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/ProfilingBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/BufferedBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/FlashSimBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/DataFlashBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/FlashIAPBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/SDBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/SPIFBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/QSPIFBlockDevice.md"
-                        },
-                        {
-                            "path": "docs/api/storage/NVStore.md"
-                        },
-                        {
-                            "path": "docs/api/storage/psa_internal_storage.md"
-                        },
-                        {
-                            "path": "docs/api/storage/psa_protected_storage.md"
-                        },
-                        {
-                            "path": "docs/api/storage/storage-arch.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/storage/KVStoreAPI.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/KVStoreGlobalAPI.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/FileSystem.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/Dir.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/File.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/LittleFileSystem.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/FATFileSystem.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/BlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/HeapBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/MBRBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/ChainingBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/SlicingBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/ProfilingBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/BufferedBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/FlashSimBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/DataFlashBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/FlashIAPBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/SDBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/SPIFBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/QSPIFBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/psa_internal_storage.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/psa_protected_storage.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/NVStore.md"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "title": "Network Socket",
+                    "title": "Network socket",
                     "intro": {
                         "path": "docs/api/networksocket/networksocket.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/networksocket/socket.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/connectivity-config.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/networksocket/UDPSocket.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/networksocket/socket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/UDPSocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/TCPSocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/SocketAddress.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/CellularNonIPSocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/DNS.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/TLSSocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/DTLSSocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/SocketStats.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/networksocket/TCPSocket.md"
-                        },
-                        {
-                            "path": "docs/api/networksocket/SocketAddress.md"
-                        },
-                        {
-                            "path": "docs/api/networksocket/CellularNonIPSocket.md"
-                        },
-                        {
-                            "path": "docs/api/networksocket/DNS.md"
-                        },
-                        {
-                            "path": "docs/api/networksocket/TLSSocket.md"
-                        },
-                        {
-                            "path": "docs/api/networksocket/DTLSSocket.md"
-                        },
-                        {
-                            "path": "docs/api/networksocket/SocketStats.md"
-                        },
-                        {
-                            "path": "docs/api/networking-arch.md"
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/networking-arch.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -479,50 +521,69 @@
                     "intro": {
                         "path": "docs/api/networkinterfaces/networkinterface.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/networkinterfaces/EthInterface.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/networkinterfaces/mesh-config.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/networkinterfaces/WifiInterface.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/networkinterfaces/EthInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/WifiInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/CellularInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/MeshInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/NetworkStatus.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/networkinterfaces/wifi-arch.md"
+                            "title": "Tutorials",
+                            "sources": [{
+                                    "path": "docs/api/networkinterfaces/mesh_tutorial.md"
+                                },
+                                {
+                                    "path": "docs/api/light-control.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/networkinterfaces/CellularInterface.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/MeshInterface.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/NetworkStatus.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/mesh_tutorial.md"
-                        },
-                        {
-                            "path": "docs/api/light-control.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/ethernet-arch.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/cellular-arch.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
-                        },
-                        {
-                            "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                            },
+                            "sources": [{
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/wifi-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -531,41 +592,53 @@
                     "intro": {
                         "path": "docs/api/usb/usb_component.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/usb/USBSerial.md"
+                    "sub_chapters": [{
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/usb/USBSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBAudio.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBHID.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouseKeyboard.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/usb/USBAudio.md"
+                            "title": "Tutorials",
+                            "intro": {
+                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/usb/USBHID.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBCDC.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBCDC_ECM.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBMSD.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBMIDI.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBMouse.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBKeyboard.md"
-                        },
-                        {
-                            "path": "docs/api/usb/USBMouseKeyboard.md"
-                        },
-                        {
-                            "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                        },
-                        {
-                            "path": "docs/api/usb/usb-arch.md"
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/usb/usb-arch.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -574,32 +647,47 @@
                     "intro": {
                         "path": "docs/api/bluetooth/bluetooth.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/bluetooth/BLE.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/bluetooth/ble-config.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/bluetooth/Gap.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/bluetooth/BLE.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/Gap.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/GattClient.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/GattServer.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/SecurityManager.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/BatteryService.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/HeartRateService.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/iBeacon.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/bluetooth/GattClient.md"
-                        },
-                        {
-                            "path": "docs/api/bluetooth/GattServer.md"
-                        },
-                        {
-                            "path": "docs/api/bluetooth/SecurityManager.md"
-                        },
-                        {
-                            "path": "docs/api/bluetooth/BatteryService.md"
-                        },
-                        {
-                            "path": "docs/api/bluetooth/HeartRateService.md"
-                        },
-                        {
-                            "path": "docs/api/bluetooth/iBeacon.md"
-                        },
-                        {
-                            "path": "docs/api/bluetooth/ble_tutorial.md"
+                            "title": "Tutorials",
+                            "intro": {
+                                "path": "docs/api/bluetooth/ble_tutorial.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -608,17 +696,36 @@
                     "intro": {
                         "path": "docs/api/lorawan/lorawanintro.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/lorawan/lorawan.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/lorawan/lorawanconfig.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/lorawan/loraradio.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/lorawan/lorawan.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/loraradio.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/lorawan/intro-to-lora.md"
+                            "title": "Tutorials",
+                            "intro": {
+                                "path": "docs/api/lorawan/intro-to-lora.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/lorawan/lora-tech.md"
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/lorawan/lora-tech.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -627,60 +734,81 @@
                     "intro": {
                         "path": "docs/api/nfc/NDEF.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/nfc/NFCController.md"
+                    "sub_chapters": [{
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/nfc/NFCController.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/NFCEEPROM.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/MessageParser.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/SimpleMessageParser.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/MessageBuilder.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/nfc/NFCEEPROM.md"
-                        },
-                        {
-                            "path": "docs/api/nfc/MessageParser.md"
-                        },
-                        {
-                            "path": "docs/api/nfc/SimpleMessageParser.md"
-                        },
-                        {
-                            "path": "docs/api/nfc/MessageBuilder.md"
-                        },
-                        {
-                            "path": "docs/api/nfc/nfc-arch.md"
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/nfc/nfc-arch.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
                 {
                     "title": "Cloud connection",
-                    "intro": {
-                        "path": "docs/api/firmware_update.md"
-                    },
-                    "sources": [
-                    ]
+                    "sub_chapters": [{
+                        "title": "Concepts",
+                        "intro": {
+                            "path": "docs/api/firmware_update.md"
+                        },
+                        "sources": []
+                    }]
                 },
                 {
-
                     "title": "Security",
                     "intro": {
                         "path": "docs/api/security/security.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/security/psa_attestation.md"
+                    "sub_chapters": [{
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/security/psa_attestation.md"
+                                },
+                                {
+                                    "path": "docs/api/security/crypto.md"
+                                },
+                                {
+                                    "path": "docs/api/security/psa_lifecycle.md"
+                                },
+                                {
+                                    "path": "docs/api/security/TLS.md"
+                                },
+                                {
+                                    "path": "docs/api/security/Devicekey.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/security/crypto.md"
+                            "title": "Tutorials",
+                            "intro": {
+                                "path": "docs/api/security/tls_tutorial.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/security/psa_lifecycle.md"
-                        },
-                        {
-                            "path": "docs/api/security/TLS.md"
-                        },
-                        {
-                            "path": "docs/api/security/Devicekey.md"
-                        },
-                        {
-                            "path": "docs/api/security/tls_tutorial.md"
-                        },
-                        {
-                            "path": "docs/api/security/securesocket-arch.md"
+                            "title": "Architecture",
+                            "intro": {
+                                "path": "docs/api/security/securesocket-arch.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -689,57 +817,67 @@
                     "intro": {
                         "path": "docs/api/power/power_manage.md"
                     },
-                    "sources": [{
-                        "path": "docs/api/power/PowerManagement.md"
-                    },
-                    {
-                        "path": "docs/api/power/DeepSleepLock.md"
-                    },
-                    {
-                        "path": "docs/api/power/IdleLoop.md"
-                    },
-                    {
-                        "path": "docs/api/power/LowPowerTicker.md"
-                    },
-                    {
-                        "path": "docs/api/power/LowPowerTimeout.md"
-                    },
-                    {
-                        "path": "docs/api/power/LowPowerTimer.md"
-                    }
-                    ]
+                    "sub_chapters": [{
+                        "title": "APIs",
+                        "sources": [{
+                                "path": "docs/api/power/PowerManagement.md"
+                            }, {
+                                "path": "docs/api/power/DeepSleepLock.md"
+                            },
+                            {
+                                "path": "docs/api/power/IdleLoop.md"
+                            },
+                            {
+                                "path": "docs/api/power/LowPowerTicker.md"
+                            },
+                            {
+                                "path": "docs/api/power/LowPowerTimeout.md"
+                            },
+                            {
+                                "path": "docs/api/power/LowPowerTimer.md"
+                            }
+                        ]
+                    }]
                 },
                 {
                     "title": "Memory",
                     "intro": {
                         "path": "docs/api/memory/memory_intro.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/memory/runtime_mem_trace.md"
+                    "sub_chapters": [{
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/memory/runtime_mem_trace.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/runtime_stats.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/printf.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/MbedStats.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/MpuManagement.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/MemTrace.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/MemoryPool.md"
+                                },
+                                {
+                                    "path": "docs/program-setup/runtime/Memory.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/api/memory/runtime_stats.md"
-                        },
-                        {
-                            "path": "docs/api/memory/printf.md"
-                        },
-                        {
-                            "path": "docs/api/memory/MbedStats.md"
-                        },
-                        {
-                            "path": "docs/api/memory/MpuManagement.md"
-                        },
-                        {
-                            "path": "docs/api/memory/MemTrace.md"
-                        },
-                        {
-                            "path": "docs/api/memory/MemoryPool.md"
-                        },
-                        {
-                            "path": "docs/program-setup/runtime/Memory.md"
-                        },
-                        {
-                            "path": "docs/program-setup/runtime/static_memory_optimization.md"
+                            "title": "Tutorials",
+                            "intro": {
+                                "path": "docs/program-setup/runtime/static_memory_optimization.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -748,65 +886,73 @@
                     "intro": {
                         "path": "docs/api/platform/platform.md"
                     },
-                    "sources": [{
-                            "path": "docs/api/platform/Wait.md"
+                    "sub_chapters": [{
+                            "title": "Options and config",
+                            "intro": {
+                                "path": "docs/api/platform/platform-config.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "path": "docs/api/platform/Callback.md"
-                        },
-                        {
-                            "path": "docs/api/platform/CriticalSectionLock.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Time.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Rtc.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Debug.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Error.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Assert.md"
-                        },
-                        {
-                            "path": "docs/api/platform/NonCopyable.md"
-                        },
-                        {
-                            "path": "docs/api/platform/SharedPtr.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Span.md"
-                        },
-                        {
-                            "path": "docs/api/platform/FileHandle.md"
-                        },
-                        {
-                            "path": "docs/api/platform/Poll.md"
-                        },
-                        {
-                            "path": "docs/api/platform/PlatformMutex.md"
-                        },
-                        {
-                            "path": "docs/api/platform/CircularBuffer.md"
-                        },
-                        {
-                            "path": "docs/api/platform/ATCmdParser.md"
-                        },
-                        {
-                            "path": "docs/api/platform/ScopedRamExecutionLock.md"
-                        },
-                        {
-                            "path": "docs/api/platform/ScopedRomWriteLock.md"
+                            "title": "APIs",
+                            "sources": [{
+                                    "path": "docs/api/platform/Wait.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Callback.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/CriticalSectionLock.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Time.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Rtc.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Debug.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Error.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Assert.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/NonCopyable.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/SharedPtr.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Span.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/FileHandle.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Poll.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/PlatformMutex.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/CircularBuffer.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ATCmdParser.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ScopedRamExecutionLock.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ScopedRomWriteLock.md"
+                                }
+                            ]
                         }
                     ]
                 }
-            ],
-            "tags": [
-                "apis"
             ]
         },
         {
@@ -815,13 +961,12 @@
             "slug": "migrating",
             "type": "markdown",
             "chapters": [{
-                    "title": "Overview",
-                    "intro": {
-                        "path": "docs/migrating/migrate-from-mbed-os-2-to-5.md"
-                    },
-                    "sources": []
-                }
-            ],
+                "title": "Overview",
+                "intro": {
+                    "path": "docs/migrating/migrate-from-mbed-os-2-to-5.md"
+                },
+                "sources": []
+            }],
             "tags": [
                 "migrating"
             ]
@@ -908,9 +1053,8 @@
                     "sub_chapters": [{
                             "title": "Installation and setup",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
-                                }
-                            ]
+                                "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
+                            }]
                         },
                         {
                             "title": "Working with Mbed CLI",

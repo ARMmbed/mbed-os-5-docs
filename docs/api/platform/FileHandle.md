@@ -16,7 +16,7 @@ The `FileHandle` abstraction permits stream-handling code to be device-independe
 
 Exactly which operations a `FileHandle` supports depends on the underlying device, and in turn restricts what applications it is suitable for. For example, a database application might require random-access and `seek`, but this may not be available on a limited file system, and certainly not on a stream device. Only a `File` on a full `FileSystem`, such as `FATFileSystem`, would generally implement the entire API. Specialized devices may have particular limitations or behavior, which limit their general utility. Devices that do not implement a particular call indicate it by an error return - often `ENOSYS`, but sometimes more specific errors, such as `ESPIPE` apply; please see the POSIX specifications for details.
 
-### Relationship of FileHandle to other APIs
+## Relationship of FileHandle to other APIs
 
 You can use a `FileHandle` directly, or you can use standard POSIX or C/C++ APIs to manipulate it. Stdio calls taking `FILE *stream` call the POSIX APIs taking `int fd`, which call methods on `FileHandle` objects.
 
@@ -43,8 +43,8 @@ Portability                    | High                    | Medium               
 You can mix the APIs if you're careful, for example setting up a callback initially with `FileHandle::sigio` but performing all subsequent operations using POSIX.
 
 <span class="notes">**Note:** `errno` is not thread-local on all toolchains. This may cause problems with error handling if multiple threads are using POSIX or C file APIs simultaneously.</span>
- 
-### Mapping between APIs
+
+## Mapping between APIs
 
 Calls are provided to attach already-opened lower levels to the higher levels:
 
@@ -62,7 +62,7 @@ It is not possible to map from `FILE` to lower levels. If code needs to access t
 
 The POSIX file descriptors for the console are available as `STDIN_FILENO`, `STDOUT_FILENO` and `STDERR_FILENO`, permitting operations such as `fsync(STDERR_FILENO)`, which would for example drain `UARTSerial`s output buffer.
 
-### Redirecting the console
+## Redirecting the console
 
 If a target has serial support, by default a serial port is used for the console. The pins and settings for the port selection come from target header files and JSON settings. This uses either an internal `DirectSerial` if unbuffered (for backwards compatibility) or `UARTSerial` if `platform.stdio-buffered-serial` is `true`.
 
@@ -128,9 +128,9 @@ namespace
 }
 ```
 
-Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer. 
+Alternatively, an application could use the standard C `freopen` function to redirect `stdout` to a named file or device while running. However there is no `fdreopen` analog to redirect to an unnamed device by file descriptor or `FileHandle` pointer.
 
-#### Suppressing console output
+### Suppressing console output
 
 To always suppress output, you can provide an `mbed_override_console` that returns a sink class that discards output. (For UART console targets, you can simply set `target.console-uart` to `false` in your `mbed_app.json`.)
 
@@ -138,7 +138,7 @@ To temporarily suppress output, `mbed_override_console` can return a class that 
 
 More portably, you could ensure all your code uses your own `FILE *output_stream` rather than `stdout`, and you could dynamically change that between `stdout` and `fdopen(Sink)`. That then doesn't rely on "under C library" retargeting of `stdout`. Instead, you must switch streams at the application level.
 
-### Polling and nonblocking
+## Polling and nonblocking
 
 By default, `FileHandle`s conventionally block until a `read` or `write` operation completes. This is the only behavior supported by normal `File`s, and is expected by the C library's `stdio` functions.
 
@@ -146,7 +146,7 @@ Device-type `FileHandle`s, such as `UARTSerial`, are expected to also support no
 
 For a timed wait for data, or to monitor multiple `FileHandle`s, see [`poll`](poll.html)
 
-### Event-driven I/O
+## Event-driven I/O
 
 If using nonblocking I/O, you probably want to know when to next attempt a `read` or `write` if they indicate no data is available. `FileHandle::sigio` lets you attach a `Callback`, which is called whenever the `FileHandle` becomes readable or writable.
 
@@ -155,11 +155,11 @@ Important notes on sigio:
 - The sigio may be issued from interrupt context. You cannot portably issue `read` or `write` calls directly from this callback, so you should queue an [`Event`](event.html) or wake a thread to perform the `read` or `write`.
 - The sigio callback is only guaranteed when a `FileHandle` _becomes_ readable or writable. If you do not fully drain the input or fully fill the output, no sigio may be generated. This is also important on start-up - don't wait for sigio before attempting to read or write for the first time, but only use it as a "try again" signal after seeing an `EAGAIN` error.
 - Spurious sigios are permitted - you can't assume data will be available after a sigio.
-- Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`. 
+- Given all the above, use of sigio normally implies use of nonblocking mode or possibly `poll`.
 
 Ordinary files do not generate sigio callbacks because they are always readable and writable.
 
-### Suspending a device
+## Suspending a device
 
 Having a device open through a `FileHandle` may cost power, especially if open for input. For example, for `UARTSerial` to be able to receive data, the system must not enter deep sleep, so deep sleep is prevented while the `UARTSerial` is active.
 
@@ -167,7 +167,7 @@ To permit power saving, you can close or destroy the `FileHandle`, or you can in
 
 This is particularly useful when an application does not require console input - it can indicate this by calling `mbed_file_handle(STDIN_FILENO)->enable_input(false)` once at the start of the program. This permits deep sleep when `platform.stdio-buffered-serial` is set to true.
 
-### Stream-derived FileHandles
+## Stream-derived FileHandles
 
 `Stream` is a legacy class that provides an abstract interface for streams similar to the `FileHandle` class. The difference is that the `Stream` API is built around the `getc` and `putc` set of functions, whereas `FileHandle` is built around `read` and `write`. This makes implementations simpler but limits what is possible with the API. Because of this, implementing the `FileHandle` API directly is suggested API for new device drivers.
 
@@ -178,7 +178,7 @@ Note that `FileHandle` implementations derived from `Stream`, such as `Serial`, 
 - `Stream` returns 0 from `isatty`, which can slightly confuse the C library (for example defeating newline conversion and causing buffering).
 
 As such, you can only use `Stream`-based devices for blocking I/O, such as through the C library, so we don't recommend use of `Stream` to implement a `FileHandle` for more general use.
- 
+
 ## FileHandle class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
@@ -206,10 +206,10 @@ int main()
 {
     // Perform device-specific setup
     device.set_baud(19200);
-    
+
     // Once set up, access through the C library
     FILE *devin = fdopen(&device, "r");
-    
+
     while (1) {
         putchar(fgetc(devin));
         led2 = !led2;
@@ -248,10 +248,10 @@ int main()
 {
     // UARTSerial-specific method - all others are from FileHandle base class
     device.set_baud(19200);
-    
+
     // Ensure that device.read() returns -EAGAIN when out of data
     device.set_blocking(false);
-    
+
     // sigio callback is deferred to event queue, as we cannot in general
     // perform read() calls directly from the sigio() callback.
     device.sigio(mbed_event_queue()->event(callback_ex));

@@ -89,7 +89,7 @@ Accepting a connection will leave the original socket to listening mode. You can
 
 For connectionless protocols, like UDP, each socket can receive from any peer. Therefore `listen()` and `accept()` are not required.
 
-## Network socket interfaces and classes
+# Network socket interfaces and classes
 
 The network socket API provides a common interface for using sockets on network devices. It's a class-based interface, which is familiar to users experienced with other socket APIs.
 

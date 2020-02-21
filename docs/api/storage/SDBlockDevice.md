@@ -10,7 +10,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 <span class="images">![](../../images/sd-wiring.png)<span>How to wire an external SD-card module to a developer board</span></span>
 
-1. In `mbed_app.json`, override the SD pin mapping based on the wiring. For example: 
+1. In `mbed_app.json`, override the SD pin mapping based on the wiring. For example:
 
    ```
    "sd.SPI_MOSI" : "PC_3",
@@ -18,8 +18,8 @@ To configure this class, please see our [BlockDevice configuration documentation
    "sd.SPI_CLK"  : "PC_7",
    "sd.SPI_CS"   : "PB_9",
    ```
-   
-1. Add the `SD` component to `mbed_app.json`: 
+
+1. Add the `SD` component to `mbed_app.json`:
 
    ```
    "target.components_add" : ["SD"],

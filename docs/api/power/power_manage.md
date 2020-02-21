@@ -95,7 +95,7 @@ Uptime: 12613 Sleep time: 1 Deep Sleep: 12591
 
 (The uptime does not go up by exactly 2000 ms because you also spend time writing the data out over serial).
 
-### Blocking deep sleep
+## Blocking deep sleep
 
 As stated before, some drivers and components can block deep sleep, either because they need access to the high-frequency timers (such as the `Timer` object), or because they cannot handle the latency that waking up from deep sleep introduces. This happens for example when attaching a receive interrupt on a UART. By the time the interrupt fires, the data that was written to the UART could no longer be there.
 

@@ -23,6 +23,7 @@ int main()
     some_function_in_ram();
 }
 ```
+
 ## Related content
 
 - [MPU Management API references](mpu-management.html).

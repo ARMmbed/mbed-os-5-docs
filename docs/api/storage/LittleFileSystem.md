@@ -23,7 +23,7 @@ Microcontrollers and flash storage present three challenges for embedded storage
 
 For additional information, please see the [storage overview page](storage.html#declaring-a-file-system).
 
-### Use cases
+## Use cases
 
 We built this for microcontrollers with external flash storage. In this context, it outperforms the other Mbed OS file systems in terms of RAM, ROM, wear and runtime.
 
@@ -31,7 +31,7 @@ For storage on an SD card that is accessible from a PC, use the FATFileSystem du
 
 LittleFileSystem is thread safe.
 
-### Usage
+## Usage
 
 Instantiate the `LittleFileSystem` class with a block device and file path.
 

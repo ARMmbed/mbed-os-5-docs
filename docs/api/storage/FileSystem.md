@@ -8,7 +8,7 @@ The main purpose of a FileSystem is to be instantiated. The FileSystem's constru
 
 The FileSystem's `file` and `dir` functions are protected because you should not use the FileSystem `file` and `dir` functions directly. They are only a convenience for implementors. Instead, the [File](file.html) and [Dir](dir.html) classes provide access to file and directory operations in a C++ class that respects [RAII](../introduction/glossary.html#r) and other C++ conventions.
 
-### File system get default instance
+## File system get default instance
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 

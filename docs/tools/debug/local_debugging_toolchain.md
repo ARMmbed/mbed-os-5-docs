@@ -37,7 +37,7 @@ $ pyocd-gdbserver
 
 INFO:root:DAP SWD MODE initialized
 INFO:root:K64F not in secure state
-# ...
+## ...
 INFO:root:CPU core is Cortex-M4
 INFO:root:FPU present
 INFO:root:6 hardware breakpoints, 4 literal comparators
@@ -70,7 +70,7 @@ adapter speed: 2000 kHz
 adapter_nsrst_delay: 100
 none separate
 srst_only separate srst_nogate srst_open_drain connect_deassert_srst
-# ...
+## ...
 stm32f4x.cpu: target state: halted
 target halted due to debug-request, current mode: Thread
 xPSR: 0x01000000 pc: 0x08000504 msp: 0x20020000

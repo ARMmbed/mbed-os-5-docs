@@ -1,4 +1,4 @@
-# Storage
+<h1 id="storage-config">Configuration</h1>
 
 This page describes the build-time configurable parameters for storage in Mbed OS:
 

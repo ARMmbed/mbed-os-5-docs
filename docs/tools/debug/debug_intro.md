@@ -21,8 +21,8 @@ Although you can use our tools to generate project files specific to many IDEs, 
 In your project folder, run:
 
 ```
-# alternatively, use -i make_armc5 for ARMCC, or -i make_iar for IAR
-# replace K64F with your target board
+## alternatively, use -i make_armc5 for ARMCC, or -i make_iar for IAR
+## replace K64F with your target board
 
 $ mbed export -i make_gcc_arm -m K64F
 ```

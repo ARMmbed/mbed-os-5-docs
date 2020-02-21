@@ -183,27 +183,27 @@ Test code must follow this directory structure:
 
 ```
 mbed-os-program
- |- main.cpp            # Optional main.cpp with main() if it is an application module.
- |- pqr.lib             # Required libs
+ |- main.cpp            ## Optional main.cpp with main() if it is an application module.
+ |- pqr.lib             ## Required libs
  |- xyz.lib
  |- mbed-os
- |  |- frameworks        # Test dependencies
- |  |  `_greentea-client # Greentea client required by tests.
+ |  |- frameworks        ## Test dependencies
+ |  |  `_greentea-client ## Greentea client required by tests.
  |  |...
- |  `- TESTS              # Tests directory. Special name upper case TESTS is excluded during application build process
- |     |- TestGroup1      # Test Group directory
- |     |  `- TestCase1    # Test case source directory
- |     |      `- main.cpp # Test source
+ |  `- TESTS              ## Tests directory. Special name upper case TESTS is excluded during application build process
+ |     |- TestGroup1      ## Test Group directory
+ |     |  `- TestCase1    ## Test case source directory
+ |     |      `- main.cpp ## Test source
  |     |- TestGroup2
  |     |   `- TestCase2
  |     |      `- main.cpp
- |     `- host_tests      # Python host tests script directory
+ |     `- host_tests      ## Python host tests script directory
  |        |- host_test1.py
  |        `- host_test2.py
- `- build                 # Build directory
-     |- <TARGET>          # Target directory
-     | `- <TOOLCHAIN>     # Toolchain directory
-     |   |- TestCase1.bin # Test binary
+ `- build                 ## Build directory
+     |- <TARGET>          ## Target directory
+     | `- <TOOLCHAIN>     ## Toolchain directory
+     |   |- TestCase1.bin ## Test binary
      |   `- TestCase2.bin
      | ....
 ```

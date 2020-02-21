@@ -147,15 +147,15 @@ typedef struct analogin_s analogin_t;
 
 Namespaces used to group subsystems are lower case, such as `rtos` and `event`. If not in a specific subsystem, C++ APIs are in namespace `mbed`. A few APIs remain in the global namespace for backward compatibility.
 
-Occasionally, namespaces are used to act as-if "static singleton" objects. One example is namespace `ThisThread` in `rtos` (which was modeled after C++11 `std::this_thread`). These namespaces follow the class naming convention, so calls to their functions look like calls to static class methods. 
+Occasionally, namespaces are used to act as-if "static singleton" objects. One example is namespace `ThisThread` in `rtos` (which was modeled after C++11 `std::this_thread`). These namespaces follow the class naming convention, so calls to their functions look like calls to static class methods.
 
 Below is an example of typical namespace use in a source file:
 
 ```
     using namespace rtos;
-    
+
     ThisThread::sleep_for(1000);
-    
+
 ```
 
 ### Doxygen documentation

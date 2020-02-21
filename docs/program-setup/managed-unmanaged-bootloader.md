@@ -68,12 +68,12 @@ To create an application using a bootloader, you must first have created the boo
 
 Adding this field has the following effects:
 
-* When a build occurs, the application builds for the address immediately after the bootloader. The build system does this automatically by defining the symbols `MBED_APP_START` and `MBED_APP_SIZE` in the linker script (`.sct`, `.ld` or `.icf`).
-* At the end of building, the build image is automatically combined with the bootloader to create the final image.
+- When a build occurs, the application builds for the address immediately after the bootloader. The build system does this automatically by defining the symbols `MBED_APP_START` and `MBED_APP_SIZE` in the linker script (`.sct`, `.ld` or `.icf`).
+- At the end of building, the build image is automatically combined with the bootloader to create the final image.
 
     <span class="notes">**Note:** When building offline, the original uncombined image is in the same directory `<project-name>_application.bin`.</span>
 
-* It defines the symbols `APPLICATION_ADDR`, `APPLICATION_SIZE`, `BOOTLOADER_ADDR` and `BOOTLOADER_SIZE`.
+- It defines the symbols `APPLICATION_ADDR`, `APPLICATION_SIZE`, `BOOTLOADER_ADDR` and `BOOTLOADER_SIZE`.
 
 It produces the following ROM layout:
 

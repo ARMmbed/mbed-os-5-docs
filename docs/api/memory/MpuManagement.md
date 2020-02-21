@@ -15,11 +15,11 @@ Mbed OS handles MPU management automatically in the following situations:
 
 <span class="notes">**Note:** The configuration value `platform.use-mpu` can be set to `false` to remove the MPU driver and save code space.</span>
 
-### RAM execute lock
+## RAM execute lock
 
 After boot, execution from RAM is not allowed. Libraries requiring the ability to execute from RAM can enable this by acquiring the RAM execution lock. The RAM execution lock has a count associated with it, and you can lock it multiple times. Execution from RAM is disabled only when all components have unlocked it.
 
-### ROM write lock
+## ROM write lock
 
 After boot, writing to ROM is not allowed. Libraries requiring the ability to writing to ROM can enable this by acquiring the ROM write lock. The ROM write lock has a count associated with it, and you can lock it multiple times. Writing to ROM disablesd only when all components have unlocked it.
 

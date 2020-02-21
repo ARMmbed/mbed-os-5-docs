@@ -1,4 +1,4 @@
-## printf and reducing memory
+# printf and reducing memory
 
 The standard library family of `printf` (`printf`, `sprintf`, `fprintf` and so on) calls takes a lot of code space. This is because there are multiple format specifiers, and it is not possible to optimize the code at build time. Even a single `printf` call in your application pulls in the entire standard library.
  

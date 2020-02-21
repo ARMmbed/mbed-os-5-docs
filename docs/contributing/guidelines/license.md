@@ -44,16 +44,16 @@ To clearly reflect the Apache 2.0 license, please create two text files:
    ```
    Copyright (c) [First year]-[Last year], **Your Name or Company Here**
    SPDX-License-Identifier: Apache-2.0
-   
+
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
-   
+
    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-   
+
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
    either express or implied.
-   
+
    See the License for the specific language governing permissions and limitations under the License.
    ```
 
@@ -83,7 +83,7 @@ To clearly reflect the PBL license, please create the following three text files
 
     ```
     Copyright (c) [First year]-[Last year], **Your Name Here**, All Rights Reserved SPDX-License-Identifier: LicenseRef-PBL
-    
+
     This file and the related binary are licensed under the Permissive Binary License, Version 1.0 (the "License"); you may not use these files except in compliance with the License.
 
     You may obtain a copy of the License here: LICENSE-permissive-binary-license-1.0.txt and at https://www.mbed.com/licenses/PBL-1.0

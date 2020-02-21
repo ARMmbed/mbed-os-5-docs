@@ -13,7 +13,7 @@ For understanding the technologies and APIs, please refer to following sections 
 - [Mesh class reference](../apis/mesh-api.html) user API.
 - [Socket API](../apis/network-socket.html).
 
-### Providing the configuration
+## Providing the configuration
 
 The application needs to create an `mbed_app.json` configuration file if you want to use other than default settings. Values are either prefixed with `nanostack.*`, `nsapi.*` or `mbed-mesh-api.*`, depending on which internal module they configure.
 
@@ -33,11 +33,11 @@ An example of the configuration file:
 
 <span class="notes">**Note:** The configuration files for 6LoWPAN, Wi-SUN and Thread are provided for development or testing purposes. When setting up the production configuration, the user needs to have a good understanding of the whole system.</span>
 
-### Nanostack build time configuration
+## Nanostack build time configuration
 
 To minimize the size of the produced 6LoWPAN network stack, Nanostack defines a set of build options that are used to compile only needed functionality.
 
-#### Build options for different mesh types
+### Build options for different mesh types
 
 If you want to optimize the flash use, you need to configure Nanostack. The configuration to choose depends mostly on the preferred use case. The following table includes the Nanostack binary size when compiled with different build options in `nanostack.configuration`:
 
@@ -88,7 +88,7 @@ Then you may optionally choose to select the nonrouting mode for those networks.
 |Mesh router (default) | ws_router |
 | Nonrouting device | - |
 
-### Nanostack's configuration
+## Nanostack's configuration
 
 This configuration allows you to configure Nanostack features common to all mesh protocols:
 
@@ -131,7 +131,7 @@ Name: nanostack-hal.event_loop_thread_stack_size
     Value: 6144 (set by library:nanostack-hal)
 ```
 
-### Generic Mbed mesh API configuration values
+## Generic Mbed mesh API configuration values
 
 This configuration allows you to adjust Nanostack's heap usage:
 
@@ -158,7 +158,7 @@ Name: mbed-mesh-api.use-malloc-for-heap
     No value set
 ```
 
-### Thread related configuration parameters
+## Thread related configuration parameters
 
 The following parameters are only valid for the Thread mesh protocol. These are in use when application uses `ThreadInterface` class:
 
@@ -236,7 +236,7 @@ Name: mbed-mesh-api.thread-use-static-link-config
     Value: 1 (set by library:mbed-mesh-api)
 ```
 
-### 6LoWPAN-ND related configuration parameters
+## 6LoWPAN-ND related configuration parameters
 
 The following parameters are only valid for the 6LoWPAN-ND mesh network. These are in use when the application uses the `LoWPANNDInterface` class:
 
@@ -288,7 +288,7 @@ Name: mbed-mesh-api.6lowpan-nd-security-mode
     Value: NONE (set by library:mbed-mesh-api)
 ```
 
-### Wi-SUN related configuration parameters
+## Wi-SUN related configuration parameters
 
 The following parameters are only valid for the Wi-SUN FAN mesh network. These are in use when the application uses the `WisunInterface` class:
 

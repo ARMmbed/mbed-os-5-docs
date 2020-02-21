@@ -1,4 +1,3 @@
-
 # Create
 
 ## Understanding the working context and program root
@@ -8,7 +7,7 @@ Mbed CLI uses the current directory as a working context, in a similar way to Gi
 ```
 $ cd mbed-example-program
 $ cd mbed-os
-$ mbed update master   # This will update "mbed-os", not "my-program"
+$ mbed update master   ## This will update "mbed-os", not "my-program"
 ```
 
 Various Mbed CLI features require a program root, which should be under version control - either [Mercurial](https://git-scm.com/). This makes it possible to switch between revisions of the whole program and its libraries, control the program history, synchronize the program with remote repositories, share it with others and so on. Version control is also the primary and preferred delivery mechanism for Mbed OS source code, which allows everyone to contribute to Mbed OS.

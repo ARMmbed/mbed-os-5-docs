@@ -1,4 +1,3 @@
-
 # Collaborate
 
 ## Importing from a cloned repository
