@@ -4,19 +4,19 @@ This tutorial shows how to debug a program on the BBC micro:bit. Using only GDB,
 
 <span class="notes">**Note:** The micro:bit's processor is based on the Nordic nRF51.</span>
 
-# Suggested tools
+## Suggested tools
 
   - Linux (4.1), but pyOCD and GDB work on Windows and macOS.
   - pyOCD (0.4.5), which you can obtain on [GitHub](https://github.com/mbedmicro/pyOCD).
   - arm-none-eabi-gdb (7.9.1). It is usually present in package managers, or you can get it at [linaro](https://launchpad.net/gcc-arm-embedded).
 
-# Looking at a basic program
+## Looking at a basic program
 
 Look at `hello.hex`, a program printing "hello world" to the serial console. You can find the hex file at [hello.hex](https://github.com/iriark01/Debugging-docs/blob/master/Docs/Debugging/hello.hex).
 
 <span class="notes">**Note:** Shell commands begin with `$`, GDB commands with `(gdb)`.</span>
 
-## Analysis
+### Analysis
 
 Start with an image for the micro:bit. It is supposed to print something on the serial output, but nothing appears.
 
@@ -158,7 +158,7 @@ A quick test confirms that the program is using baudrate 9600 instead of 115200,
 
 The next section shows how you can modify what is printed without rebuilding anything. If you feel adventurous, the following section shows one method of changing the baudrate to 115200 using only GDB.
 
-## Changing the printf string
+### Changing the printf string
 
 You can now connect with a serial client at 9600 bauds and check that the program is printing something.
 
@@ -182,7 +182,7 @@ Then, change the string on the stack. Because the program ends right after this 
 
 The new string appears on your console.
 
-## Investigating the actual bug
+### Investigating the actual bug
 
 After analyzing Arm Mbed's [serial API](https://os.mbed.com/users/mbed_official/code/mbed/docs/bad568076d81//classmbed_1_1Serial.html), you see that the Serial class inherits from SerialBase. From the assembly point of view, calling `serial_instance.printf(string)` is, in essence, like calling `Serial::printf(serial_instance, string)`. You saw previously that the instance's address is `r0 = 0x20002880`.
 
@@ -272,9 +272,9 @@ Then execute your patch:
 
 You see "Hello world" written at 115200 bauds on your console.
 
-# Cheat sheet
+## Cheat sheet
 
-## Commands
+### Commands
 
 This section describes some useful commands.
 
@@ -301,22 +301,22 @@ This section describes some useful commands.
                                 Locate a 0-terminated string in RAM
     find 0x0, +0x40000, 0x2580  Locate a word in flash
 
-    # By default, only flash and RAM are accessible. The following allows to
-    # fiddle with memory mapped IO:
+    ## By default, only flash and RAM are accessible. The following allows to
+    ## fiddle with memory mapped IO:
     mem 0x40000000 0x40001000   add the clock memory location.
     info mem
 
-    # To show the value of LFCLKSRC:
+    ## To show the value of LFCLKSRC:
     x/x 0x40000518              (0: RC clock, 1: external)
 
-    # To change it:
+    ## To change it:
     set *0x40000518 = 0
 
     In the same vein, inspect ARM system registers:
     mem 0xe000e000 0xe000f000
     x/x 0xe000ed28              show CFSR
 
-## Example: GDB init script
+### Example: GDB init script
 
 Pure GDB scripts can be limited and cumbersome to write. If you want to automate, you can directly script pyOCD or GDB using Python.
 
@@ -329,10 +329,10 @@ To initialize GDB with the `-x` switch:
 
     disp /i $pc
 
-    # ARMv7-M peripherals
+    ## ARMv7-M peripherals
     mem 0x40000000 0x5fffffff
 
-    # ARMv7-M system registers
+    ## ARMv7-M system registers
     mem 0xe0000000 0xffffffff
 
     define run_program
@@ -342,10 +342,10 @@ To initialize GDB with the `-x` switch:
     end
 
     define show_context
-        # function used by pc, below
+        ## function used by pc, below
         set $before = $arg0
 
-        # haem... Roughly two bytes per instruction.
+        ## haem... Roughly two bytes per instruction.
         if $before > (int)$pc * 2
             set $before = (int)$pc / 2
         end

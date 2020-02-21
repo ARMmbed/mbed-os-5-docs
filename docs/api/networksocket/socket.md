@@ -24,17 +24,17 @@ The Socket class defines the Mbed OS Socket API and loosely follows the POSIX st
 
 Not all protocols implement every function from the Socket API. For example, UDP does not implement the `listen()` and `accept()` functions. Also, socket options are mostly specific to the IP stack; they are not implemented on all stacks.
 
-# Socket class reference
+## Socket class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_socket.html)
 
-# Socket example
+## Socket example
 
 Here is a client example of HTTP transaction over TCPSocket:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/mbed-os-5.14/main.cpp)
 
-# Related content
+## Related content
 
 - [TCPSocket](tcpsocket.html) API reference.
 - [UDPSocket](tcpsocket.html) API reference.

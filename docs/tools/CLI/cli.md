@@ -6,6 +6,6 @@ Mbed CLI enables Git- and Mercurial-based version control, dependencies manageme
 
 This document covers the installation and usage of Mbed CLI. You can find our legacy CLI documentation in the [README](https://github.com/ARMmbed/mbed-cli/blob/1.8.3/README.md).
 
-# Feedback
+## Feedback
 
 We're keen to learn about your experience with Mbed CLI on other operating systems at the [Mbed CLI development page](https://github.com/ARMmbed/mbed-cli).

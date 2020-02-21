@@ -8,11 +8,11 @@ In particular, this tutorial:
 - Explains how to practically obtain them and embed them in your application using TLSSockets.
 - Points to further reading on client's key and certificate verification.
 
-# Certificate Authorities (CAs)
+## Certificate Authorities (CAs)
 
 Unlike desktop operating systems, such as Windows or macOS, Mbed OS does not have a central list of trusted Certificate Authorities (CAs). This means that when you want to talk to a server through TLS, you need to provide the list of root CAs, yourself. You can find the root CAs quickly through your browser or through OpenSSL.
 
-## Browser
+### Browser
 
 You can use any browser to find the root CAs, but this tutorial uses Firefox:
 
@@ -27,7 +27,7 @@ You can use any browser to find the root CAs, but this tutorial uses Firefox:
 1. Click `Export`.
 1. This gives you a `.crt` file. Store it inside your project, so you can find it later.
 
-## OpenSSL
+### OpenSSL
 
 1. Open a terminal and run:
 
@@ -38,11 +38,11 @@ You can use any browser to find the root CAs, but this tutorial uses Firefox:
    (Replace `os.mbed.com:443` with your host and port.)
 
 1. Look for the last occurance of `-----BEGIN CERTIFICATE-----`.
-1. Copy everything from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----`, and store it in a file. 
+1. Copy everything from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----`, and store it in a file.
 
 <span class="images">![](../../images/tlssocket02.png "Getting root CA via OpenSSL")<span>Getting a root CA through OpenSSL</span></span>
 
-# Placing the CA certificate in code
+## Placing the CA certificate in code
 
 To use the CA certificate in code, place it in a C-style string variable initialized with a multiline string literal. For example:
 
@@ -60,7 +60,7 @@ const char SSL_CA_PEM[] = "-----BEGIN CERTIFICATE-----\n"
     "-----END CERTIFICATE-----\n";
 ```
 
-# Enabling logging
+## Enabling logging
 
 The TLS Socket library uses the [mbed-trace](https://github.com/ARMmbed/mbed-os/blob/1bbcfff8f331c2e00a3883ea27ca3c91461bc7a9/features/frameworks/mbed-trace/README.md) library that is part of Mbed OS for logging. To see the TLS handshakes, you need to enable the trace library. In addition, you can specify the debug level for the TLS socket. Create a file named `mbed_app.json` in the root of your project, and add the following to enable tracing:
 
@@ -78,13 +78,13 @@ The TLS Socket library uses the [mbed-trace](https://github.com/ARMmbed/mbed-os/
 
 <span class="notes">**Note:** Enabling traces in `mbed_app.json` is not enough to actually show them. You still need to tell the trace library where it needs to write. Calling `mbed_trace_init();` from code writes the traces to the default serial UART port, so you can see them through a serial monitor, the same as when you call `printf`.</span>
 
-# Making an HTTPS request to os.mbed.com
+## Making an HTTPS request to os.mbed.com
 
 With everything in place, you can now set up a TLS socket connection. On the Mbed website is a file called `hello.txt`, which returns `Hello World!` in plain text.
 
 <span class="notes">**Note:** If you're looking for a fully fledged HTTP/HTTPS library, look at [mbed-http](https://os.mbed.com/teams/sandbox/code/mbed-http/). It also uses TLS Sockets underneath.</span>
 
-## Setting up a TLS socket
+### Setting up a TLS socket
 
 <span class="notes">**Note:** There is an [example TLS Socket project](https://github.com/ARMmbed/mbed-os-example-tls-socket) available.</span>
 
@@ -95,7 +95,7 @@ You set up a TLS socket in the same way as you set up a TCP socket, except you c
 #include "mbed_trace.h"
 
 const char cert[] = /* your certificate, see above */ "";
- 
+
 int main (void) {
 
 nsapi_size_or_error_t result;
@@ -146,12 +146,12 @@ This now makes the request and returns the content of the file.
 [INFO][TLSW]: mbedtls_ssl_setup()
 [INFO][TLSW]: Starting TLS handshake with os.mbed.com
 [INFO][TLSW]: TLS connection to os.mbed.com established
- 
+
 [DBG ][TLSW]: Server certificate:
     cert. version     : 3
     serial number     : 03:56:D4:79:41:63:31:CA:E0:56:06:61
     … snip ...
- 
+
 [INFO][TLSW]: Certificate verification passed
 ```
 
@@ -171,7 +171,7 @@ then you may need to add the following line in `target_overrides` section of you
 ```
 </span>
 
-## Providing client's certificate and key
+### Providing client's certificate and key
 
 The CA certification only allows you to verify the server's authenticity.
 

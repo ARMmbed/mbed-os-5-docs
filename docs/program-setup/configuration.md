@@ -7,7 +7,7 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. 
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros.
 
 Here is a sample JSON file:
 
@@ -31,7 +31,7 @@ If you use the example JSON snippet above, you can see the macro `MBED_CONF_CELL
 
 <span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](../tools/build-profiles.html).</span>
 
-# Examining available configuration parameters
+## Examining available configuration parameters
 
 Mbed CLI includes a command for listing and explaining the compile time configuration, `mbed compile --config`. This command prints a summary of configuration parameters, such as:
 
@@ -73,7 +73,7 @@ Name: configuration-store.storage_disable
 <output truncated for brevity>
 ```
 
-# Using configuration data in code
+## Using configuration data in code
 
 When compiling or exporting, the configuration system generates C preprocessor macro definitions of the configuration parameters. The configuration system writes these definitions in a file named `mbed_config.h` located in the build directory. When compiling the same example as the prior section for target `K64F`, the `mbed_config.h` file includes this snippet (note that the order of the definitions may be different):
 
@@ -90,17 +90,17 @@ When compiling or exporting, the configuration system generates C preprocessor m
 <file truncated for brevity>
 ```
 
-The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. The configuration system constructs a prefixed name from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The configuration system then capitalizes the prefixed name and converts it to a valid C macro name. For example, the configuration system converts the `random_max_start_delay` configuration parameter in the library `cellular` to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`. We strongly discourage using the `macro_name` field unless the intent is to support an already defined macro that is heavily used in Mbed OS or user applications. We discourage the use of `macro_name` because macros created by JSON are prefixed with `MBED_CONF_`, which makes them easy to identify and link to a particular configuration file, unlike `macro_names`, which can be mistaken to be local for a particular file or feature. 
+The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. The configuration system constructs a prefixed name from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The configuration system then capitalizes the prefixed name and converts it to a valid C macro name. For example, the configuration system converts the `random_max_start_delay` configuration parameter in the library `cellular` to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`. We strongly discourage using the `macro_name` field unless the intent is to support an already defined macro that is heavily used in Mbed OS or user applications. We discourage the use of `macro_name` because macros created by JSON are prefixed with `MBED_CONF_`, which makes them easy to identify and link to a particular configuration file, unlike `macro_names`, which can be mistaken to be local for a particular file or feature.
 
 The Mbed OS build tools instruct the compiler to process the file `mbed_config.h` as if it were the first include of any C or C++ source file, so you do not have to include `mbed_config.h` manually.
 
 Do not edit `mbed_config.h` manually. It may be overwritten the next time you compile or export your application, and you will lose all your changes.
 
-# Configuration parameters in `mbed_app.json`, `mbed_lib.json`
+## Configuration parameters in `mbed_app.json`, `mbed_lib.json`
 
 An application may have one `mbed_app.json` in the root of the application and many `mbed_lib.json` files throughout the application. When present, `mbed_app.json` may override configuration parameters defined in libraries and the target, and it may define new configuration parameters.
 
-## Overriding configuration parameters
+### Overriding configuration parameters
 
 The configuration system allows a user to override any defined configuration parameter with a JSON object named `"target_overrides"`.
 
@@ -142,7 +142,7 @@ The order in which overrides are considered is:
  1. Libraries override target configuration with `mbed_lib.json`.
  2. The application overrides target and library configuration with `mbed_app.json`
 
-## Defining configuration parameters
+### Defining configuration parameters
 
 The configuration system understands configuration parameters that targets, libraries and applications define using a JSON object called "config".
 
@@ -204,7 +204,7 @@ The configuration system appends a prefix to the name of each parameter, so a pa
 | Any library | The name of the library, as found in the `name` section of `mbed_lib.json`, followed by a dot (.) |
 | Application | `app.` |
 
-# `mbed_lib.json` format specification
+## `mbed_lib.json` format specification
 
 `mbed_lib.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are sections. See the allowed sections and their meanings below:
 
@@ -260,7 +260,7 @@ Use `target_overrides` to override the values of the parameters, depending on th
 
 It is an error for `mbed_lib.json` to override an undefined configuration parameter.
 
-## Overriding target attributes
+### Overriding target attributes
 
 Target configurations contain a set of attributes that you may manipulate with configuration. You may override these attributes as if they were a normal configuration parameter. Attributes may be cumulative, in which case they are a list of items. You may add to a cumulative attribute by overriding a configuration parameter with the name of the cumulative attribute suffixed with `_add` and remove from a cumulative attribute with the suffix `_remove`. When you override, add to or subtract from a cumulative attribute, the value must be a list of items to replace the definition with, add or remove. For example, add the value `IPV4` to a target's features list with the syntax:
 
@@ -270,7 +270,7 @@ Target configurations contain a set of attributes that you may manipulate with c
 
 It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
-# `mbed_app.json` Specification
+## `mbed_app.json` Specification
 
 `mbed_app.json` may be present at the root of your application or specified as the argument of the `--app-config` parameter to `mbed compile` and `mbed export`. When you create a new Mbed project using `mbed new`, you create `mbed_app.json` by default in the root of the application. The configuration system interprets only one `mbed_app.json` during `mbed compile` or `mbed export`, unlike library configurations. Like `mbed_lib.json`, `mbed_app.json` is a JSON formatted document that contains a root JSON Object. The keys within this object are sections. The allowed sections and their meanings are below:
 

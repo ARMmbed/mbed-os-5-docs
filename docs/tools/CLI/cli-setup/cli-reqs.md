@@ -9,33 +9,33 @@ There is no installer for Linux; please follow the manual installation guide.
 
 <span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-# Manual installation
+## Manual installation
 
-# 1. Install dependencies
+## 1. Install dependencies
 
-## Instructions for Windows
+### Instructions for Windows
 
 1. Download and install [Python 2.7.x](https://www.python.org/downloads/windows/) (which includes `pip`).
 1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
-## Instructions for macOS
+### Instructions for macOS
 
 1. macOS 10.8 and later comes with Python 2.7 preinstalled.
 
    - If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
-   
+
       ```
         curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
         python get-pip.py
       ```
-      
+
    - If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
 
 1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
-## Instructions for Linux
+### Instructions for Linux
 
 Linux distributions typically manage software through package managers. The specific commands to install the dependencies will vary depending on your distribution. Please see your distribution's documentation for more information.
 
@@ -45,7 +45,7 @@ As an example, the following is a command to install all dependencies on Ubuntu:
 sudo apt install python2.7 python-pip git mercurial
 ```
 
-# 2. Install Mbed CLI
+## 2. Install Mbed CLI
 
 <span class="notes">**Note:** We suggest you install Mbed CLI from within a virtual environment and run all commands from within your virtual environment. This will ensure that changes made by the Mbed CLI installation do not propagate to the rest of your system and cause unexpected changes in behavior in any existing Python installation.</span>
 
@@ -63,7 +63,7 @@ To update Mbed CLI, run:
 pip install -U mbed-cli
 ```
 
-# 3. Install a compiler
+## 3. Install a compiler
 
 Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../tools/index.html#compiler-versions).
 
@@ -75,7 +75,7 @@ $ sudo apt-get update
 $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
 ```
 
-# 4. Configure the compiler location
+## 4. Configure the compiler location
 
 To build project, Mbed CLI needs to know where the compiler is installed. It checks three configuration options in the following order:
 
@@ -83,7 +83,7 @@ To build project, Mbed CLI needs to know where the compiler is installed. It che
 1. Environment variables.
 1. System path.
 
-## Configure compiler location with Mbed CLI
+### Configure compiler location with Mbed CLI
 
 If you cannot place the compiler in the system PATH, or if you have to use a different version of the compiler than the one in your system path, you must configure the location of the compiler with Mbed CLI. Use the `mbed config` command to set the compiler's location:
 
@@ -104,7 +104,7 @@ Mbed CLI supports a setting for each toolchain path:
 | GCC Arm Embedded Compiler | `GCC_ARM_PATH` |`/usr/bin/arm-none-eabi-gcc` |  `/usr/bin`|
 
 
-## Configure compiler location with environment variables
+### Configure compiler location with environment variables
 
 You can set the location of the compiler with environment variables. Use the path listed in the previous section [Configuring compiler location with Mbed CLI](#configuring-compiler-location-with-mbed-cli).
 
@@ -115,13 +115,13 @@ You can set the location of the compiler with environment variables. Use the pat
 | IAR EWARM Compiler | `MBED_IAR_PATH` |
 | GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |
 
-## Install compilers in the system PATH
+### Install compilers in the system PATH
 
 Installing the compilers in the system PATH will allow the tools to automatically discover the compilers without further configuration. Most compiler installers have an option to add the compiler to the system PATH for you.
 
-# Optional configuration
+## Optional configuration
 
-## Bash completion
+### Bash completion
 
 To install `mbed-cli` bash completion:
 
@@ -130,7 +130,7 @@ To install `mbed-cli` bash completion:
 1. Copy the `mbed` script into the  `~/.bash_completion.d` directory (you may need to create this directory first).
 1. Restart the terminal.
 
-# Configuration options
+## Configuration options
 
 The Mbed CLI configuration syntax is:
 

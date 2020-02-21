@@ -1,6 +1,6 @@
 <h1 id="quick-start-online">Using the Online Compiler</h1>
 
-# Setting up
+## Setting up
 
 1. [Create an Mbed account](https://os.mbed.com/account/signup/).
 1. If you have an Mbed Board:
@@ -14,7 +14,7 @@
     1. Select a board.
     1. On the board page, click **Add to your Mbed Compiler**.
 
-# Importing the code
+## Importing the code
 
 Click the button below to automatically import the example into the Online Compiler.
 
@@ -24,7 +24,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 <span class="images">![](../images/import_program.png)</span>
 
-# Compiling and flashing (programming)
+## Compiling and flashing (programming)
 
 1. Click **Compile**.
 
@@ -45,7 +45,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 1. Press the board's reset button.
 
-# Related links
+## Related links
 
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
 - [Mbed OS configuration](../reference/configuration.html).

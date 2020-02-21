@@ -20,7 +20,7 @@ For more information on bootloaders and firmware update, see:
 
 To speed up this process, you can copy the configuration from the [application example](https://github.com/ARMmbed/pelion-ready-example/blob/master/mbed_app.json) as the basis for your application configuration.
 
-# Application configuration
+## Application configuration
 
 Edit the `mbed_app.json` file, and create a new entry under `target_overrides` with the target name for your device:
 
@@ -69,7 +69,7 @@ Edit the `mbed_app.json` file, and create a new entry under `target_overrides` w
    ```
 
    - `*-address` defines the start of the flash sector.
-   - `*-size` defines the actual sector size. 
+   - `*-size` defines the actual sector size.
    - `sotp-num-sections` should always be set to `2`.
 
 At this point, we recommend you run the "connect" test suite, which verifies that the device can successfully bootstrap, register and send and receive data from Device Management with the provided configuration.
@@ -86,16 +86,16 @@ To run the tests:
 $ mbed test -t <TOOLCHAIN> -m <BOARD> -n simple*dev*connect --run -v
 ```
 
-# Bootloader configuration
+## Bootloader configuration
 
 When the "connect" tests have passed, enable the firmware update feature by adding a bootloader to your application.
 
 1. Import the official [mbed-bootloader](https://github.com/ARMmbed/mbed-bootloader/) repository as a new application:
 
     `mbed import mbed-bootloader`
-  
+
     Alternatively, you can import the [mbed-bootloader-extended](https://github.com/ARMmbed/mbed-bootloader-extended/) repository that builds on top of `mbed-bootloader` and extends the support for file systems and storage drivers:
-  
+
     `mbed import mbed-bootloader-extended`.
 
 1. In the imported bootloader application, edit the configuration, for example `mbed-bootloader-extended/mbed_app.json`. Add a new target entry, and specify:
@@ -142,7 +142,7 @@ When the "connect" tests have passed, enable the firmware update feature by addi
 <span class="notes">**Note:** `mbed-bootloader` is primarily optimized for `GCC_ARM`, so you may want to compile it with that toolchain.
 Before adding the bootloader to your application, compile and flash the bootloader and then connect over the virtual com port to ensure the bootloader is running correctly. You can ignore errors related to checksum verification or failure to jump to application - these are expected at this stage.</span>
 
-# Adding the bootloader to your application
+## Adding the bootloader to your application
 
 1. Copy the compiled bootloader from `mbed-bootloader-extended/BUILDS/<TARGET>/<TOOLCHAIN>-TINY/mbed-bootloader.bin` to `<your_application_name>/bootloader/mbed-bootloader-<TARGET>.bin`.
 
@@ -155,7 +155,7 @@ Before adding the bootloader to your application, compile and flash the bootload
             "target.header_offset"             : "0x10000",
             "update-client.application-details": "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
    ```
-  
+
       - `update-client.application-details` must be identical in `bootloader_app.json` and `mbed_app.json`.
       - `target.app_offset` is the relative offset to `flash-start-address` you specified in `mbed_app.json` and `bootloader_app.json`, and is the hex value of the offset specified by `application-start-address` in `bootloader_app.json`. For example,  `(MBED_CONF_APP_FLASH_START_ADDRESS+65*1024)` dec equals `0x10400` hex.
       - `target.header_offset` is also the relative offset to the `flash-start-address` you specified in the `bootloader_app.json`, and is the hex value of the offset specified by `update-client.application-details`. For example, `(MBED_CONF_APP_FLASH_START_ADDRESS+64*1024)` dec equals `0x10000` hex.

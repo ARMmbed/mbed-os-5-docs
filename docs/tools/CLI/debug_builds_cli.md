@@ -4,7 +4,7 @@ After you've set up your [local debug toolchain](../tools/build-profiles.html), 
 
 <span class="notes">**Note:** Make sure to do a clean build when switching to and from debug and release by removing the `BUILD` folder.</span>
 
-# Compile commands
+## Compile commands
 
 **Arm Mbed OS 5.2 and later**
 
@@ -24,7 +24,7 @@ $ mbed compile -o debug-info
 $ mbed compile --profile debug
 ```
 
-# Exporting with debug symbols
+## Exporting with debug symbols
 
 You can also enable debug symbols when [exporting your project](exporting.html) by using:
 

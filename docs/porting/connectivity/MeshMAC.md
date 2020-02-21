@@ -5,7 +5,7 @@ Nanostack has a lower-level API for the IEEE 802.15.4-2006 MAC standard. This en
 - IEEE 802.15.4-2015 enhanced ack.
 - Header and payload information elements set by MAC user.
 
-# SW MAC
+## SW MAC
 
 Nanostack includes an IEEE 802.15.4-based SW MAC class. You can use SW MAC when your board does not support MAC. To use the SW MAC service, you must have a working RF driver registered to Nanostack. To create SW MAC, call the following function:
 
@@ -17,7 +17,7 @@ This creates an SW MAC class and sets a callback function to be used by Nanostac
 
 <span class="notes">**Note:** You must not call `ns_sw_mac_create()` more than once.</span>
 
-## SW MAC IEEE 802.15.4-2015 subset extension
+### SW MAC IEEE 802.15.4-2015 subset extension
 
 SW MAC supports a subset of the IEEE 802.15.4-2015 standard. The subset includes the following supported features:
 
@@ -27,7 +27,7 @@ SW MAC supports a subset of the IEEE 802.15.4-2015 standard. The subset includes
 
 The subset features need a proper supported RF driver with extended driver API commands.
 
-# Initializing SW MAC
+## Initializing SW MAC
 
 Deploy SW MAC:
 
@@ -40,7 +40,7 @@ Deploy SW MAC:
 
 1. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class. Nanostack initializes SW MAC before using it.
 
-# Example
+## Example
 
 This code snippet creates SW MAC with a neighbor table of size 16 and three key descriptions:
 
@@ -61,7 +61,7 @@ int8_t generate_6lowpan_interface(int8_t rf_phy_device_register_id)
 }
 ```
 
-# Enabling FHSS
+## Enabling FHSS
 
 SW MAC supports FHSS. To enable it, you need to do the following:
 
@@ -71,7 +71,7 @@ SW MAC supports FHSS. To enable it, you need to do the following:
 1. Call `ns_sw_mac_fhss_register()` to register FHSS to SW MAC.
 1. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class.
 
-# IEEE 802.15.4 MAC sublayer APIs
+## IEEE 802.15.4 MAC sublayer APIs
 
 The stack uses the IEEE 802.15.4 defined MAC management service entity (MLME-SAP) and MAC data service (MCPS-SAP) interfaces. MAC API follows MCPS and MLME primitives defined by the IEEE 802.15.4-2006 standard.
 
@@ -91,7 +91,7 @@ The following header files define the MAC API:
 - `mac_mcps.h` - Definitions for MCPS-SAP primitives.
 - `mac_common_defines.h` - Definitions for common MAC constants.
 
-# MCPS-SAP interface
+## MCPS-SAP interface
 
 MCPS-SAP defines 802.15.4 data flow API with the following primitives:
 
@@ -103,11 +103,11 @@ MCPS-SAP defines 802.15.4 data flow API with the following primitives:
 | `MCPS-PURGE-REQ` | Cancel ongoing `MCPS-DATA-REQ` from MAC. |
 | `MCPS-PURGE-CONF` | Confirmation from MAC to `MCPS-PURGE-REQ` operation. |
 
-# MLME-SAP interface
+## MLME-SAP interface
 
 MLME-SAP defines a set of different management primitives, and this document introduces both supported and unsupported primitives in Nanostack.
 
-## Supported MLME APIs
+### Supported MLME APIs
 
 MLME-SAP primitives used by Nanostack:
 
@@ -126,7 +126,7 @@ MLME-SAP primitives used by Nanostack:
 | `MLME-SYNCH-LOSS-IND` | Indicates synchronization loss from wireless PAN. Only used by SW MAC when FHSS is in use! |
 | `MLME-POLL-REQ` | Request MAC to do data poll to parent. |
 
-## Unsupported MLME APIs
+### Unsupported MLME APIs
 
 Unsupported MLME-SAP primitives:
 
@@ -150,7 +150,7 @@ Unsupported MLME-SAP primitives:
 | `MLME-START-CONF` | Yes | Confirmation for MLME start request. |
 | `MLME-SYNCH-REQ` | Not yet | Request MAC to synchronize with coordinator. |
 
-# MAC API class introduction
+## MAC API class introduction
 
 This chapter introduces MAC mesh interface `mac_api_s`. It is a structure that defines the function callbacks needed by a service user.
 
@@ -208,11 +208,11 @@ Member|Description
 `parent_id` | Service user ID used to indentify the MAC service user. Optional.
 `phyMTU` | Maximum Transmission Unit (MTU) used by MAC. Standard 802.15.4 MAC must set 127.
 
-# IEEE 802.15.4 MAC sublayer extended APIs
+## IEEE 802.15.4 MAC sublayer extended APIs
 
 This document introduces how to use extented features.
 
-## Initialize API
+### Initialize API
 
 ```
 typedef int8_t mac_api_enable_mcps_ext(mac_api_t *api, mcps_data_indication_ext *data_ind_cb, mcps_data_confirm_ext *data_cnf_cb, mcps_ack_data_req_ext *ack_data_req_cb);
@@ -227,7 +227,7 @@ Parameter|Description
 
 Function can be called when SW MAC is created and initialization procedure is done. Enable could fail if delivered driver does not support required extensions.
 
-### Data Indication API
+#### Data Indication API
 
 ```
 typedef void mcps_data_indication_ext(const mac_api_t* api, const mcps_data_ind_t *data, const mcps_data_ie_list_t *ie_ext);
@@ -257,7 +257,7 @@ Member|Description
 `headerIeListLength`|Header information IE's list length in bytes.
 `headerIeListLength`|Payload information IE's list length in bytes.
 
-### Data request API
+#### Data request API
 
 ```
 typedef void mcps_data_request_ext(const mac_api_t* api, const mcps_data_req_t *data, const mcps_data_req_ie_list_t *ie_ext, const struct channel_list_s *asynch_channel_list);
@@ -308,7 +308,7 @@ Member|Description
 `ieBase`|IE element pointer.
 `iovLen`|IE element length.
 
-### Data confirmation API
+#### Data confirmation API
 
 ```
 typedef void mcps_data_confirm_ext(const mac_api_t* api, const mcps_data_conf_t *data, const mcps_data_conf_payload_t *conf_data);
@@ -342,7 +342,7 @@ Member|Description
 `payloadIeListLength`|Payload information IE's list length in bytes.
 `payloadLength`|Payload length in bytes.
 
-### Enhanced ACK payload and IE write API
+#### Enhanced ACK payload and IE write API
 
 ```
 typedef void mcps_ack_data_req_ext(const mac_api_t* api, mcps_ack_data_payload_t *data, int8_t rssi, uint8_t lqi);
@@ -375,11 +375,11 @@ Member|Description
 
 If payload length is zero, `payloadPtr` is `NULL`. Information element headers may also contain empty vectors.
 
-# MAC API standard extensions
+## MAC API standard extensions
 
 This section introduces MAC API standard extensions.
 
-## MAC 64-bit address set and get
+### MAC 64-bit address set and get
 
 Nanostack uses 64-bit address set and get. There are two 64-bit addresses available:
 
@@ -395,7 +395,7 @@ Address set and get support two different 64-bit addresses:
 | `MAC_EXTENDED_READ_ONLY` | A unique EUI64. |
 | `MAC_EXTENDED_DYNAMIC` | Dynamic 64-bit address. Same as EUI64 after boot. |
 
-## MAC maximum storage information get
+### MAC maximum storage information get
 
 Usually, HW MAC and SW MAC have static keys and neighbor list sizes. Nanostack always asks the maximum size to limit its neighbor table size. The service user must define the `mac_storage_sizes_get()` function returning the following values:
 
@@ -404,7 +404,7 @@ Usually, HW MAC and SW MAC have static keys and neighbor list sizes. Nanostack a
 
 <span class="notes">**Note:** The key description list size must be at least 4 if using Thread.</span>
 
-## MLME attribute extension
+### MLME attribute extension
 
 Nanostack uses MLME attribute extensions, which you must port to the HW MAC adapter. To configure the extensions, use the `MLME-SET-REQ` command.
 
@@ -415,7 +415,7 @@ Nanostack uses MLME attribute extensions, which you must port to the HW MAC adap
 | `macLoadBalancingAcceptAnyBeacon` | `0xfe` | Configure MAC layer to accept beacons from other networks. Enabled by load balancer, default value is `False`. Value size boolean, `true=enable`, `false=disable`. |
 | `macThreadForceLongAddressForBeacon` | `0xff` | The Thread standard forces the beacon source address to have an extended 64-bit address. |
 
-## Thread Sleepy End Device (SED) keepalive extension
+### Thread Sleepy End Device (SED) keepalive extension
 
 Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbor table keepalive functionality, as well. When SED finishes data polling successfully, it updates its parents keepalive value in a neighbor table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
 
@@ -425,7 +425,7 @@ Enumeration extension for MLME communication status enumeration:
 | ---------------- | ----- | ----------- |
 | `MLME_DATA_POLL_NOTIFICATION` | `0xff` | Thread requirement for MLME-COMM-STATUS to start indicating the successful data poll events. |
 
-# HW MAC
+## HW MAC
 
 To use HW MAC, you need to create an adapter class that links function calls between Nanostack and HW MAC. To create the adapter class, implement the functions defined in the `mac_api_s` structure. When HW MAC generates an event, the adapter must handle it and do a parameter adaptation before calling the correct function from the `mac_api_s` structure. You may need the same parameter adaptation for requests from Nanostack to HW MAC.
 
