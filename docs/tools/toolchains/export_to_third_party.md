@@ -157,4 +157,3 @@ Prior to version 2.6.1 of GNU Arm Eclipse, the build tools of the GNU Arm Eclips
     arm-none-eabi-g++: error: ./mbed-os/features/FEATURE_LWIP/lwi-interface/lwip/src/netif/lwip_lowpan6.o: No such file or directory
 
 <span class="notes">**Note:** There is a deletion of a character here. The command-line should read `./mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/lwip_lowpan6.o`.</span>
-

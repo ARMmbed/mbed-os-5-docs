@@ -1,4 +1,4 @@
-## NonCopyable
+# NonCopyable
 
 By default, C++ objects are copyable. However, some types of objects, such as resources or polymorphic types, are not meant to be copied because they have unique identities.
 
@@ -47,15 +47,15 @@ r1 = r2;
 
 We recommend inheriting from the `NonCopyable` class whenever a class is a resource or owns a resource (lock/hardware/file) that should or could not be copied.
 
-### NonCopyable class reference
+## NonCopyable class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_non_copyable.html)
 
-### NonCopyable example
+## NonCopyable example
 
 Copying objects of classes used for locking, network encapsulation, hardware bus and so on should not occur. Mbed OS has noncopyable classes, such as [Mutex](mutex.html), [EventFlags](eventflags.html), [BusOut](busout.html), [InterruptIn](interruptin.html) and [I2C](i2c.html).
 
-### Related content
+## Related content
 
 - [Mutex](mutex.html) API reference.
 - [EventFlags](eventflags.html) API reference.

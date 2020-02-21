@@ -1,4 +1,4 @@
-## Flash IAP
+# Flash IAP
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.png)<span>FlashIAP class hierarchy</span></span>
 
@@ -20,12 +20,12 @@ Be aware that Flash IAP might disable interrupts for a long time. This can affec
 
 This class is thread-safe.
 
-### Flash IAP class reference
+## Flash IAP class reference
 
 View the full C++ API:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.html)
 
-### Flash IAP example
+## Flash IAP example
 
 For an example that uses the `FlashIAP` driver, please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader).

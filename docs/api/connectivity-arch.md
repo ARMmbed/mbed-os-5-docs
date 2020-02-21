@@ -62,7 +62,7 @@ Typical applications of BLE are health care, fitness trackers, beacons, smart ho
 
 To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
 
-### 6LoWPAN Mesh 
+### 6LoWPAN Mesh
 
 Mesh networks are designed to form IPv6 networks automatically for a larger area than is possible with single radio link. TDifferent protocols form flexible network topology using different design principles. As a technology designed for large-scale deployment, 6LoWPAN-based mesh is optimized for long battery life and low cost.
 

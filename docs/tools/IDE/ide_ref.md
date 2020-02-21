@@ -1,4 +1,3 @@
-
 # Error codes
 
 * 255 - Unable to connect to the API
@@ -10,7 +9,7 @@
 * 235 - Invalid message type
 * 230 - The build system did not finish successfully
 
-# Keyboard shortcuts
+## Keyboard shortcuts
 
 ## Navigation
 

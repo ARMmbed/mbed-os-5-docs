@@ -410,7 +410,7 @@ Now clone, the demo application, and run it.
 
 LoRa/LoRaWAN is a technology with which anyone can set up a network and start building long-range IoT devices with a relatively small investment. We hope this guide helped you get started, and we would love to see what you build with LoRa and Mbed.
 
-### More material
+## More material
 
 - [Webinar: getting started with LoRa using Arm Mbed and The Things Network](https://pages.arm.com/2017-10-29-webinar-registration.html).
 - [Mbed OS LoRaWAN stack documentation](../apis/lorawan.html).

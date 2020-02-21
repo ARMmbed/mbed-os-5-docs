@@ -7,7 +7,7 @@ The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, cus
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros. 
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros.
 
 Here is a sample JSON file:
 
@@ -90,7 +90,7 @@ When compiling or exporting, the configuration system generates C preprocessor m
 <file truncated for brevity>
 ```
 
-The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. The configuration system constructs a prefixed name from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The configuration system then capitalizes the prefixed name and converts it to a valid C macro name. For example, the configuration system converts the `random_max_start_delay` configuration parameter in the library `cellular` to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`. We strongly discourage using the `macro_name` field unless the intent is to support an already defined macro that is heavily used in Mbed OS or user applications. We discourage the use of `macro_name` because macros created by JSON are prefixed with `MBED_CONF_`, which makes them easy to identify and link to a particular configuration file, unlike `macro_names`, which can be mistaken to be local for a particular file or feature. 
+The name of the macro for a configuration parameter is either a prefixed name or explicitly specified by `macro_name`. The configuration system constructs a prefixed name from the prefix `MBED_CONF_`, followed by the name of the library or `APP`, followed by the name of the parameter. The configuration system then capitalizes the prefixed name and converts it to a valid C macro name. For example, the configuration system converts the `random_max_start_delay` configuration parameter in the library `cellular` to `MBED_CONF_CELLULAR_RANDOM_MAX_START_DELAY`. We strongly discourage using the `macro_name` field unless the intent is to support an already defined macro that is heavily used in Mbed OS or user applications. We discourage the use of `macro_name` because macros created by JSON are prefixed with `MBED_CONF_`, which makes them easy to identify and link to a particular configuration file, unlike `macro_names`, which can be mistaken to be local for a particular file or feature.
 
 The Mbed OS build tools instruct the compiler to process the file `mbed_config.h` as if it were the first include of any C or C++ source file, so you do not have to include `mbed_config.h` manually.
 

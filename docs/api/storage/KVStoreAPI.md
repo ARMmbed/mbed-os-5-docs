@@ -1,4 +1,4 @@
-## KVStore
+# KVStore
 
 <span class="tips">**Tip:** This API replaces the deprecated NVStore API.</span>
 
@@ -24,15 +24,15 @@ Classes implementing KVStore API:
 
    - Requirements and assumptions: SecureStore assumes that the underlying KVStore instances are instantiated and initialized.
 
-### KVStore class reference
+## KVStore class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_k_v_store.html)
 
-### KVStore example
+## KVStore example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/mbed-os-5.14/main.cpp)
 
-### Related content
+## Related content
 
 - [KVStore Global Static API](static-global-api.html).
 - [Storage configuration](../reference/storage.html).

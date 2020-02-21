@@ -17,7 +17,7 @@ For example, Cortex-M0/M0+ processors (or any ARMv6M processors) do not have Mem
 
 Below is an example of the crash dump (with a description of registers) that the Mbed OS fault exception handler generates. Note that the system also invokes the Mbed OS error handler when an exception happens and prints out the error information, as well.
 
-Please see the [Error API reference](../apis/error-handling.html) for more about error information. 
+Please see the [Error API reference](../apis/error-handling.html) for more about error information.
 
 ```
 ++ MbedOS Fault Handler ++

@@ -32,7 +32,7 @@ This subsection discusses how you can integrate the LoRaWAN stack in the devices
 
 <span class="notes">**Note:** The way a third party LoRaWAN stack harnesses the powers of Arm Mbed OS, in other words, synchronization methods (if using RTOS), timers, HAL and so on is beyond the scope of this documentation.</span>
 
-The native Arm Mbed LoRaWAN stack provides [LoRaWANInterface](../mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html), which serves as a network interface for the application. 
+The native Arm Mbed LoRaWAN stack provides [LoRaWANInterface](../mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html), which serves as a network interface for the application.
 
 There can be many different scenarios when it comes to devices supporting LoRaWAN technology:
 

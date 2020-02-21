@@ -72,7 +72,7 @@ If your event management occurs in a function called `manage_event`, you should 
 `event_queue()->call(&manage_event);`
 
 The `EventQueue` also accepts passed in parameters and objects for nonstatic method calls. Please see the `EventQueue` documentation for details on calling functions on the queue.
-    
+
 ### Communicating events back to the NFCTarget
 
 All events call methods in the `Delegate` class object that has been set by the `NFCTarget`. Delegate is accessible through:

@@ -301,15 +301,15 @@ This section describes some useful commands.
                                 Locate a 0-terminated string in RAM
     find 0x0, +0x40000, 0x2580  Locate a word in flash
 
-    # By default, only flash and RAM are accessible. The following allows to
-    # fiddle with memory mapped IO:
+    ## By default, only flash and RAM are accessible. The following allows to
+    ## fiddle with memory mapped IO:
     mem 0x40000000 0x40001000   add the clock memory location.
     info mem
 
-    # To show the value of LFCLKSRC:
+    ## To show the value of LFCLKSRC:
     x/x 0x40000518              (0: RC clock, 1: external)
 
-    # To change it:
+    ## To change it:
     set *0x40000518 = 0
 
     In the same vein, inspect ARM system registers:
@@ -329,10 +329,10 @@ To initialize GDB with the `-x` switch:
 
     disp /i $pc
 
-    # ARMv7-M peripherals
+    ## ARMv7-M peripherals
     mem 0x40000000 0x5fffffff
 
-    # ARMv7-M system registers
+    ## ARMv7-M system registers
     mem 0xe0000000 0xffffffff
 
     define run_program
@@ -342,10 +342,10 @@ To initialize GDB with the `-x` switch:
     end
 
     define show_context
-        # function used by pc, below
+        ## function used by pc, below
         set $before = $arg0
 
-        # haem... Roughly two bytes per instruction.
+        ## haem... Roughly two bytes per instruction.
         if $before > (int)$pc * 2
             set $before = (int)$pc / 2
         end

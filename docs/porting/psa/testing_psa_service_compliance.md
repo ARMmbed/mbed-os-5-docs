@@ -4,7 +4,7 @@ Mbed OS provides an integrated version of the Platform Security Architecture (PS
 
 For information about PSA compliance tests, please see [the PSA compliance test repository](https://github.com/ARM-software/psa-arch-tests).
 
-## Test directory layout
+# Test directory layout
 
 The tests are divided into three groups, corresponding to the PSA services:
 
@@ -14,7 +14,7 @@ The tests are divided into three groups, corresponding to the PSA services:
 
 Every test suite contains a folder for each of the test scenarios. Each test scenario may run one or more test vectors.
 
-## Compiling and running tests
+# Compiling and running tests
 
 To compile and run PSA compliance tests in Mbed OS, run the following command:
 
@@ -43,7 +43,7 @@ You can also use an asterisk (`*`), or other wildcards, to compile and run the e
 mbed test -t <toolchain> -m <target> -n components-target_psa-tests-compliance_*
 ```
 
-## Cryptographic configuration
+# Cryptographic configuration
 
 By default, the PSA compliance tests run using the default Mbed OS cryptography configuration. (You can find the configuration at `features/mbedtls/inc/mbedtls/config.h` in the Mbed OS directory). When you use the default configuration, only tests supported by the configuration run.
 
@@ -51,7 +51,7 @@ You can override the default Mbed OS cryptography configuration using an `mbed_a
 
 For an example of how to use an `mbed_app.json` file to override the default cryptography configuration, please see the [mbed-os-psa-compliance-tests-example repository](https://github.com/ARMmbed/mbed-os-psa-compliance-tests-example).
 
-## Sample test output
+# Sample test output
 
 When the tests run, they output state information to the serial output. Below is an example of a successful run:
 

@@ -1,5 +1,6 @@
 {
     "product_name": "Mbed OS 6",
+    "split_pages_on": "h1",
     "books": [{
             "title": "Mbed OS API doxygen",
             "description": "The full Mbed OS API documentation in doxygen format",
@@ -173,7 +174,7 @@
             ]
         },
         {
-            "title": "APIs",
+            "title": "Full API references",
             "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
             "slug": "apis",
             "type": "markdown",
@@ -664,13 +665,10 @@
                 },
                 {
                     "title": "Bluetooth",
-                    "sub_chapters": [{
-                            "title": "Concepts",
-                            "intro": {
-                                "path": "docs/api/bluetooth/bluetooth.md"
-                            },
-                            "sources": []
-                        },
+                    "intro": {
+                        "path": "docs/api/bluetooth/bluetooth.md"
+                    },
+                    "sub_chapters": [
                         {
                             "title": "Options and config",
                             "intro": {

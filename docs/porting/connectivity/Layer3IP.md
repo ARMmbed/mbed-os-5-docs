@@ -7,7 +7,7 @@ This document describes how to port and test a cellular IP Layer3 (L3IP) driver 
 The scope of this document is limited to advanced cellular modems, where the device presents an additional IP Layer3 interface to send and receive frames, and one of the onboard network stacks that runs on Mbed OS on the host processor uses this.
 
 If the device has an off-board network stack, a driver needs to implement [NetworkStack](../porting/networkstack.html) directly instead of passing network calls to the offboard stack.
- 
+
 ## Abstractions
 
 ![L3IP driver](../../images/l3ip-driver.png)
@@ -73,7 +73,7 @@ The user application code can create IP Layer3:
 ```
 
 This attaches the default network stack (usually LWIP - the other alternative is Nanostack) to the specified L3IP driver and provides all the `NetworkInterface` and `NetworkStack` APIs.
- 
+
 Below is an example of a target device driver class that needs to be implemented:
 
 ```
@@ -94,16 +94,16 @@ Below is an example of a target device driver class that needs to be implemented
 
 You can find this driver class example in the `mbed-os/TESTS/network/l3ip` directory.
 
-## Being the default interface 
+## Being the default interface
 
 In Mbed OS, targets may provide default network interfaces through an automated factory method. You can do this with the following call:
 
 	NetworkInterface::get_default_instance()
 
 This way, you can create an ethernet, Wi-Fi, mesh or cellular interface. The interface type depends on the `NETWORK_DEFAULT_INTERFACE_TYPE` value in the JSON configuration. Any interface you create this way is set as the default.
- 
+
 IP Layer3 Interface doesn't use `NetworkInterface::get_default_instance`, so it is not set as the default when you create it.
- 
+
 To set IP Layer3 as the default interface, you can use a new member of `set_as_default()`. This method is not limited to IP Layer3 and can set any network interface as default.
 
 ## Cellular interfaces
@@ -111,17 +111,17 @@ To set IP Layer3 as the default interface, you can use a new member of `set_as_d
 As a cellular interface, a little more work is necessary - at a minimum, you need to implement the extra configuration calls in `L3IPInterface`. This is because the network stacks and IP Layer3 APIs only relate to the basic data path - they have no knowledge of any other configuration mechanisms and assume they are already set up.
 
 To do this, create a C++ class that inherits from both `L3IPInterface` and a base class for the new IP Layer3 cellular interface solution. The `L3IPInterface` is a helper class that implements all the core `NetworkInterface` functionality for you. You then need to implement the extra configuration methods.
- 
+
 You don't usually directly expose the `L3IP` driver class of a cellular  driver because it is not usually declared as `L3IP::get_default_instance`, but you would pass it to the constructor of your base `L3IPInterface`. This then makes it visible using the `getl3ip` method, which provides access to the L3IP device driver instance. The `getl3ip` method is a member of the `L3IPInterface` class.
 
 ## OnboardNetworkStack
 
 You do not have to memorize the precise details of the `OnboardNetworkStack` API. It provides the mechanism to bind a driver to a stack and the APIs needed to implement a `NetworkInterface`, but `L3IPInterface` handles this.
- 
+
 ## Tuning memory allocations
 
 Depending on a driver's use of pool and heap memory and other factors, you might want to tune the configuration of particular network stack. You can do this using the `mbed_lib.json` of each network stack, using the `target_overrides` section.
- 
+
 ## Testing
 
 The Mbed OS tree contains Greentea-based tests that exercise the L3IP API directly, along with more general socket tests.

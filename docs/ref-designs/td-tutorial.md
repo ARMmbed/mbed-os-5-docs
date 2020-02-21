@@ -147,9 +147,9 @@ You can either run Fluentd on a public IP address with CA signed certificates (s
 If you have valid certificates from a CA, replace the `fluentd.crt` and `fluentd.key` files with the CA certificates. Then uncomment the lines in the `fluentd.conf` file for CA trusted certificates, comment out the lines for self-signed certificates and change the passphrase to match for your certificate:
 
 ```
-	# cert_path ~/mbed-os-example-fluentlogger/fluentd-setup/fluentd.crt
-	# private_key_path ~mbed-os-example-fluentlogger/fluentd-setup/fluentd.key
-	# private_key_passphrase YOUR_PASSPHRASE
+	## cert_path ~/mbed-os-example-fluentlogger/fluentd-setup/fluentd.crt
+	## private_key_path ~mbed-os-example-fluentlogger/fluentd-setup/fluentd.key
+	## private_key_passphrase YOUR_PASSPHRASE
 ```
 
 ##### Self-signed certificates on localhost

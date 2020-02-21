@@ -9,7 +9,7 @@ There is no installer for Linux; please follow the manual installation guide.
 
 <span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 
-# Manual installation
+## Manual installation
 
 ## 1. Install dependencies
 
@@ -24,12 +24,12 @@ There is no installer for Linux; please follow the manual installation guide.
 1. macOS 10.8 and later comes with Python 2.7 preinstalled.
 
    - If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
-   
+
       ```
         curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
         python get-pip.py
       ```
-      
+
    - If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
 
 1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
@@ -130,7 +130,7 @@ To install `mbed-cli` bash completion:
 1. Copy the `mbed` script into the  `~/.bash_completion.d` directory (you may need to create this directory first).
 1. Restart the terminal.
 
-# Configuration options
+## Configuration options
 
 The Mbed CLI configuration syntax is:
 

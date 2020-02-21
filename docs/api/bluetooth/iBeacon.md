@@ -1,4 +1,4 @@
-## iBeacon
+# iBeacon
 
 <span class="notes">**Note:** This class has been deprecated.</span>
 
@@ -8,11 +8,11 @@ The iBeacon class builds an advertising payload mimicking an iBeacon and assigns
 
 <span class="warnings"> **Warning:** To manufacture iBeacons, you must obtain a license from Apple. For more information, please see [Apple's website](https://developer.apple.com/ibeacon/). The license also grants access to the iBeacon's technical specification.</span>
 
-### iBeacon class reference
+## iBeacon class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/i_beacon_8h_source.html)
 
-### iBeacon example
+## iBeacon example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_Beacon/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.14/BLE_Beacon/source/main.cpp)
 

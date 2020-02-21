@@ -38,7 +38,7 @@ You can use any browser to find the root CAs, but this tutorial uses Firefox:
    (Replace `os.mbed.com:443` with your host and port.)
 
 1. Look for the last occurance of `-----BEGIN CERTIFICATE-----`.
-1. Copy everything from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----`, and store it in a file. 
+1. Copy everything from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----`, and store it in a file.
 
 <span class="images">![](../../images/tlssocket02.png "Getting root CA via OpenSSL")<span>Getting a root CA through OpenSSL</span></span>
 
@@ -95,7 +95,7 @@ You set up a TLS socket in the same way as you set up a TCP socket, except you c
 #include "mbed_trace.h"
 
 const char cert[] = /* your certificate, see above */ "";
- 
+
 int main (void) {
 
 nsapi_size_or_error_t result;
@@ -146,12 +146,12 @@ This now makes the request and returns the content of the file.
 [INFO][TLSW]: mbedtls_ssl_setup()
 [INFO][TLSW]: Starting TLS handshake with os.mbed.com
 [INFO][TLSW]: TLS connection to os.mbed.com established
- 
+
 [DBG ][TLSW]: Server certificate:
     cert. version     : 3
     serial number     : 03:56:D4:79:41:63:31:CA:E0:56:06:61
     … snip ...
- 
+
 [INFO][TLSW]: Certificate verification passed
 ```
 

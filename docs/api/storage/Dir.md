@@ -1,4 +1,4 @@
-## Dir
+# Dir
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_dir.png)<span>Dir class hierarchy</span></span>
 
@@ -8,15 +8,15 @@ The Dir class operates as an iterator or stream similarly to the File class, exc
 
 <span class="notes">**Note:** Iterating through a directory may return the file names '.' and '..', which are special file names for the current directory and the parent directory. When performing operations recursively, it is acceptable to treat any file starting with the character '.' as a special or "hidden" file.</span>
 
-### Dir class API
+## Dir class API
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_dir.html)
 
-### File system example
+## File system example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.14/main.cpp)
 
-### Related content
+## Related content
 
 - [FileSystem](filesystem.html).
 - [File](file.html).

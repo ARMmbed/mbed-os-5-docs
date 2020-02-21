@@ -17,7 +17,7 @@ Supported peripherals:
  - `QSPI`.
  - `CAN`.
  
-## Implementing static pin map extension
+# Implementing static pin map extension
 
 If you want to make static pin map available on your platform please perform the following steps:  
 
@@ -113,7 +113,7 @@ If you want to make static pin map available on your platform please perform the
    #define STATIC_PINMAP_READY 1
    ```
    
-## Testing
+# Testing
 
 Use the code below to test the static pin map extension:
 

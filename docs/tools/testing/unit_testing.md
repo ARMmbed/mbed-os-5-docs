@@ -178,17 +178,17 @@ With the following steps, you can write a unit test. This example creates dummy 
     **unittest.cmake**
 
     ```
-    # Add here additional test specific include paths
+    ## Add here additional test specific include paths
     set(unittest-includes ${unittest-includes}
         ../example
     )
 
-    # Add here classes under test
+    ## Add here classes under test
     set(unittest-sources
         ../example/MyClass.cpp
     )
 
-    # Add here test classes and stubs
+    ## Add here test classes and stubs
     set(unittest-test-sources
         example/MyClass/test_MyClass.cpp
         stubs/OtherClass_stub.cpp
@@ -260,7 +260,7 @@ Use Mbed CLI to build and run unit tests. For advanced use, you can run CMake an
    - Add `-DCOVERAGE=True` to add coverage compiler flags.
    - Add `-Dgtest_disable_pthreads=ON` to run in a single thread.
    - See the [CMake manual](https://cmake.org/cmake/help/v3.0/manual/cmake.1.html) for more information.
-   
+
 1. Run a Make program to build tests.
 
 #### Run tests directly with CTest

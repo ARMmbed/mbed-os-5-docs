@@ -1,4 +1,4 @@
-## RawSerial
+# RawSerial
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_raw_serial.png)<span>RawSerial class hierarchy</span></span>
 
@@ -18,30 +18,30 @@ The following parameters can be configured at run time in the RawSerial object. 
 
 The default settings for the microcontroller are described as _9600-8-N-1_, a common notation for serial port settings.
 
-### RawSerial class reference
+## RawSerial class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver).</span>
 
-### RawSerial hello, world
+## RawSerial hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/RawSerial_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/RawSerial_HelloWorld/file/112a40a5991a/main.cpp)
 
-### RawSerial examples
+## RawSerial examples
 
-#### Example one
+### Example one
 
 Write a message to a device at a baud rate of 19200.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_1/)](https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_1/file/6a0d9cb21969/main.cpp)
 
-#### Example two
+### Example two
 
 Attach a function to call during the generation of serial interrupts. This function defaults to interrupt on an RX pin.
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_2/)](https://os.mbed.com/teams/mbed_example/code/RawSerial_ex_2/file/3ad999bfc3c4/main.cpp)
 
-#### Mbed OS example
+### Mbed OS example
 
 Common use cases for RawSerial are IRQ heavy UART operations, such as the [ATParser](https://github.com/ARMmbed/ATParser/blob/3209400df676cbf0183a5894f648c71727602d30/BufferedSerial/BufferedSerial.cpp#L29) in the ESP8266 driver. This driver uses UART on user supplied pins to communicate with the offchip ESP8266 module.

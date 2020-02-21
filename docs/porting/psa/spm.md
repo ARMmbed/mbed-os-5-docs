@@ -6,13 +6,13 @@ For more information about SPM, please see the [SPM API page](../apis/security.h
 
 <span class="notes">This page gives guidelines for silicon partners adding SPM capabilities.</span>
 
-## New target configuration
+# New target configuration
 
-### Platform types
+## Platform types
 
 For information about the platform types supported by the Mbed implementation of PSA, see [Platform types](../apis/security.html).
 
-### Defining a PSA-compliant target in targets.json
+## Defining a PSA-compliant target in targets.json
 
 When adding a new target, add a new root target node to the `mbed-os/targets/targets.json` file. For PSA support, define specific PSA-related fields for this target:
 
@@ -77,7 +77,7 @@ The following flags and labels must be added to each target type to add the rele
 
 For more information about working with the `targets.json` file, please see [Adding and configuring targets](../reference/adding-and-configuring-targets.html).
 
-### Memory layout
+## Memory layout
 
 Typically, PSA platforms share the same RAM and flash between secure and nonsecure cores. To provide PSA isolation level 1 or higher, you need to partition both RAM and flash to secure and nonsecure parts, in a way the following image describes:
 
@@ -100,13 +100,13 @@ To achieve RAM and flash partitioning, you must add start and size values to a t
 
 <span class="notes">**Note:** For isolation levels higher than 1, on top of the partitioning between secure and nonsecure parts, secure flash and RAM must have an inner level of partitioning, creating sections per secure partition.</span>
 
-## Linker script concepts
+# Linker script concepts
 
 Linker scripts must include `MBED_ROM_START`, `MBED_ROM_SIZE`, `MBED_RAM_START` and `MBED_RAM_START` macros for defining memory regions. You can define a shared memory region by reserving RAM space for shared memory use. The shared memory location is target specific and depends on the memory protection scheme applied.
 
 Typically, shared memory is located adjacent (before or after) to the nonsecure RAM, for saving MPU regions. The shared memory region is nonsecure memory that both cores use.
 
-### Linker script example for GCC_ARM compiler
+## Linker script example for GCC_ARM compiler
 
 ```
 ...
@@ -137,7 +137,7 @@ MEMORY
 ...
 ```
 
-### Linker script example for ARM compiler
+## Linker script example for ARM compiler
 
 ```
 ...
@@ -178,7 +178,7 @@ LR_IROM1 MBED_ROM_START MBED_ROM_SIZE {
 ...
 ```
 
-### Linker script example for IAR compiler
+## Linker script example for IAR compiler
 
 ```
 ...
@@ -208,7 +208,7 @@ define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
 ...
 ```
 
-##  Porting SPM (asymmetric multiprocessing systems - multicore ARMv7-M)
+#  Porting SPM (asymmetric multiprocessing systems - multicore ARMv7-M)
 
 These are the guidelines you should follow if you have multicore systems:
 
@@ -218,7 +218,7 @@ These are the guidelines you should follow if you have multicore systems:
 - For each core, implement the HAL function that notifies the peer processor about a mailbox event occurrence. This is a part of the HAL, and the section below explains this in more detail.
 - For each core, add the `SPM_MAILBOX` component field for its target node in the `mbed-os/targets/targets.json` file.
 
-### HAL functions
+## HAL functions
 
 Target-specific code of silicon partners adding SPM capabilities must:
 
@@ -228,15 +228,15 @@ Target-specific code of silicon partners adding SPM capabilities must:
 The HAL can be logically divided into two different fields:
 
 
-#### Mailbox
+### Mailbox
 
 Mailbox is the mechanism used to implement IPC and is **only relevant for multicore systems**. SPM uses mailbox to communicate with secure partitions from a nonsecure processing environment.
 
-##### Concepts
+#### Concepts
 
 The mailbox mechanism is based on message queues and dispatcher threads. Each core has a single dispatcher thread and a single message queue. The dispatcher thread waits on a mailbox event. Once this event occurs, the dispatcher thread reads and runs "tasks" accumulated on its local message queue.
 
-##### Requirements
+#### Requirements
 
 The SPM mailbox mechanism requires the platform to have the following capabilities:
 
@@ -246,11 +246,11 @@ The SPM mailbox mechanism requires the platform to have the following capabiliti
 
 This part of HAL enables you to implement a thin, platform-specific layer of the mailbox mechanism.
 
-#### Secure Processing Environment
+### Secure Processing Environment
 
 This part of HAL allows you to apply your specific memory protection scheme. You can find a list of [these functions](../mbed-os-api-doxy/group___s_p_m.html).
 
-## Memory protection
+# Memory protection
 
 Target-specific code must implement the function `spm_hal_memory_protection_init()` called in SPM initialization. This function applies memory protection schemes to ensure secure memory can only be accessed from secure-state.
 
@@ -271,7 +271,7 @@ Processor access    |Secure RAM        |Secure FLASH|Nonsecure RAM      |Nonsecu
 `Secure Execute`    |   X?             |    &#10003;       |        X          |    ?
 
 
-##  TF-M SPM porting (for ARMv8-M targets)
+#  TF-M SPM porting (for ARMv8-M targets)
 
 The `tfm_spm_hal.h` file defines TF-M HAL functions.
 
@@ -280,11 +280,11 @@ Mbed OS integrates TF-M sources from [trusted-firmware-m.git](https://git.truste
 For more information about Mbed OS builds and related concepts, please see [Mbed OS build rules](../reference/mbed-os-build-rules.html).
 
 
-## System reset
+# System reset
 
 According to the [Trusted Base System Architecture for M (TBSA-M)](https://pages.arm.com/psa-resources-tbsa-m.html) specification, the Secure Processing Environment (SPE) must manage the power state. To implement `NVIC_SystemReset` on the nonsecure side, Mbed OS provides the `mbed_psa_system_reset()` API. This API sends a request for a reset, and the SPE carries out a system reset after all critical tasks are complete.
 
-## Testing
+# Testing
 
 Arm provides a list of tests to check that the HAL functions are implemented according to requirements, and the porting is done correctly.
 

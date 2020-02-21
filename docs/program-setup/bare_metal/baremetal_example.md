@@ -1,4 +1,4 @@
-## Bare metal example
+# Bare metal example
 
 To enable Mbed OS bare metal, create an `mbed_app.json` with the following contents:
 

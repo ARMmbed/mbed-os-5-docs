@@ -1,4 +1,4 @@
-## ATCmdParser
+# ATCmdParser
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_a_t_cmd_parser.png)<span>ATCmdParser class hierarchy</span></span>
 
@@ -10,17 +10,17 @@ For example, the UARTSerial communication driver implements the FileHandle inter
 
 To use the ATCmdParser, the entity creating the ATCmdParser object passes a reference of object implementing FileHandle interface as an argument to the ATCmdParser constructor. The ATCmdParser also supports configuring a specific output delimiter character sequence, depending on the interface or device connected to the communication interface.
 
-### ATCmdParser class reference
+## ATCmdParser class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_a_t_cmd_parser.html)
 
-### ATCmdParser examples
+## ATCmdParser examples
 
-#### Example 1
+### Example 1
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-atcmdparser)](https://github.com/ARMmbed/mbed-os-example-atcmdparser/blob/master/main.cpp)
 
-#### Example 2
+### Example 2
 
 You can find another real world example in the Wi-Fi driver implementation for an [ESP8266 device](https://github.com/ARMmbed/mbed-os/blob/master/components/wifi/esp8266-driver). ESP8266 is a Wi-Fi module that you can connect to an SoC over UART for Wi-Fi support.
 

@@ -1,4 +1,4 @@
-# NetworkStack
+## NetworkStack
 
 As explained in the [IP networking architecture](../reference/ip-networking.html) page, the [Socket API](../apis/network-socket.html) provides a TCP or UDP API on top of any IP based network stack. With the Socket API, you can write applications and libraries that use TCP or UDP sockets without regard to the type of IP connectivity. In addition to providing the TCP or UDP API, the Socket API includes virtual base classes for the different IP interface types.
 

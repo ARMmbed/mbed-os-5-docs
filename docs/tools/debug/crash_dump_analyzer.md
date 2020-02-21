@@ -6,7 +6,7 @@ You can use this postprocessing tool to parse and analyze the crash dump generat
 
 When an exception happens, the Mbed OS exception handler prints the crash information to STDOUT, (which is usually your serial port). The crash information contains the register context at the time of the exception and the current threads in the system. Registers captured depend on the specific Cortex-M core you are using. For example, if your target is using Cortex-M0, some registers, such as MMFSR, BFSR and UFSR may not be available and do not appear in the crash log.
 
-The information printed out to STDOUT will be similar to the following: 
+The information printed out to STDOUT will be similar to the following:
 
 ```
 ++ MbedOS Fault Handler ++
@@ -56,7 +56,7 @@ State: 00000001 EntryFn: 00009F59 Stack Size: 00000200 Mem: 20000348 SP: 2000050
 -- MbedOS Fault Handler --
 ```
 
-To generate more information from this crash dump, copy and save this crash information to a text file, and run the `crash_log_parser.py` tool as below. 
+To generate more information from this crash dump, copy and save this crash information to a text file, and run the `crash_log_parser.py` tool as below.
 
 <span class="notes">**Note:** Make sure you copy the section with the text `MbedOS Fault Handler` because the tool looks for that header.</span>
 

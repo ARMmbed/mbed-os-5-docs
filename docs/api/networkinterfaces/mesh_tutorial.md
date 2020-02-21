@@ -1,6 +1,6 @@
 <h1 id="mesh-tutorial">Mesh tutorial</h1>
 
-A mesh network is a dynamically created network that relies on the intelligence of individual nodes to create working connectivity across longer distances than what is possible in the radio range of an individual device. Usually there are multiple paths to other nodes, which increases network resilience in case an individual node fails. The mesh network consists of routers and end devices to provide the IP connectivity to the application layer. Border router allows devices in mesh to connect to the external internet. 
+A mesh network is a dynamically created network that relies on the intelligence of individual nodes to create working connectivity across longer distances than what is possible in the radio range of an individual device. Usually there are multiple paths to other nodes, which increases network resilience in case an individual node fails. The mesh network consists of routers and end devices to provide the IP connectivity to the application layer. Border router allows devices in mesh to connect to the external internet.
 
 The mesh network allows wireless connectivity by operating on top of IEEE 802.15.4-based RF transceivers. The network operates on a license-exempt RF band and may therefore be vulnerable to interference from other devices operating on the same RF spectrum.
 
@@ -55,7 +55,7 @@ Mesh operates on a license-exempt RF band, and other users also use the same rad
 
 The application should not consume too many device constrained resources, such as CPU, memory and other peripherals. Mesh protocols require a certain number of CPU cycles to operate properly. The application must not hog all CPU power to itself. Also, tracing should be limited to debugging purposes only.
 
-Sometimes a mesh application runs on the battery-operated device; therefore, battery life is critical for the device lifetime. To optimize device energy consumption, the application can use device sleep modes. 
+Sometimes a mesh application runs on the battery-operated device; therefore, battery life is critical for the device lifetime. To optimize device energy consumption, the application can use device sleep modes.
 
 The application may need to store data permanently to the device storage, which may have a finite number of write and erase times. After a certain number of write and erase cycles, the storage integrity suffers. Estimate the used storage lifetime with the selected storage write interval.
 
@@ -63,8 +63,8 @@ The application may need to store data permanently to the device storage, which 
 
 The following Mbed OS APIs are useful with the mesh application:
 
-- [Mesh API](../apis/mesh-api.html) to create a mesh network. 
-- [NetworkStatus API](../apis/network-status.html) to receive indications about mesh network connectivity status. 
+- [Mesh API](../apis/mesh-api.html) to create a mesh network.
+- [NetworkStatus API](../apis/network-status.html) to receive indications about mesh network connectivity status.
 - [Socket API](../apis/socket.html) to communicate with a remote peer using IP sockets once you establish the mesh network.
 
 The Mesh API allows applications to create, connect and disconnect to Mesh network. Mbed OS provides the Mesh API to mesh application developers to hide the complexity of the Nanostack API.
@@ -81,7 +81,7 @@ Connect to the mesh network:
     #include "mbed.h"
     #include "rtos.h"
     #include "NanostackInterface.h"
-    
+
     int main(void)
     {
         MeshInterface *mesh;
@@ -126,7 +126,7 @@ For more details, please see the [NetworkStatus API](../apis/network-status.html
 
 ### Socket API
 
-The 6LoWPAN mesh network supports socket communication using the [Mbed OS Socket API](../apis/socket.html). You can find examples on how to use sockets in the Mbed OS API documentation: 
+The 6LoWPAN mesh network supports socket communication using the [Mbed OS Socket API](../apis/socket.html). You can find examples on how to use sockets in the Mbed OS API documentation:
 
 - [Socket example](../apis/socket.html#socket-example).
 - [UDPSocket example](../apis/udpsocket.html#udpsocket-example).
@@ -149,7 +149,7 @@ Once the backbone-prefix is received, the border router starts the DHCPv6 server
 
 ### Configuration
 
-You can compile the border router at compile time by modifying flags in the configuration file `mbed_app.json`. 
+You can compile the border router at compile time by modifying flags in the configuration file `mbed_app.json`.
 
 There are many configuration options available for the border router. This table lists some of the most important configuration values:
 

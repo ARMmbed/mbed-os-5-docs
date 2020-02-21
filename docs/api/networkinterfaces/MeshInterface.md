@@ -1,4 +1,4 @@
-<h2 id="mesh-api">Mesh</h2>
+<h1 id="mesh-api">Mesh</h1>
 
 <span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.png)<span>MeshInterface class hierarchy</span></span>
 
@@ -14,11 +14,11 @@ The application can use the `LoWPANNDInterface`, `WisunInterface` or `ThreadInte
 
 You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](../reference/configuration-mesh.html) section documents.
 
-### Mesh class reference
+## Mesh class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_mesh_interface.html)
 
-### Mesh example
+## Mesh example
 
 The following code snippet illustrates how you can use the MeshInterface API:
 
@@ -48,7 +48,7 @@ int main(void)
 
 ```
 
-### Related content
+## Related content
 
 - [Mesh tutorial](../tutorials/mesh-tutorial.html) to start using mesh technology.
 - [Light control tutorial](../tutorials/light-control.html), in which devices can control the LED status of all devices in the network.
