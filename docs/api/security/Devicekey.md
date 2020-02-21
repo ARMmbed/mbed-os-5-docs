@@ -19,13 +19,17 @@ The characteristics required by this root of trust are:
 
 The DeviceKey feature keeps the root of trust key in internal storage, using the NVStore component. Internal storage provides protection from external physical attacks to the device.
 
-The root of trust is generated at the first use of DeviceKey if the true random number generator is available in the device. If no true random number generator is available, you must pass the injected root of trust key to the DeviceKey before you call the key derivation API.
+The root of trust is not generated at the first use of DeviceKey. It must be created explicitly before. If the true random number generator is available in the device it is used for root of trust generation. Otherwise injected root of trust must be passed to the DeviceKey before key derivation API call.
 
 ### Key derivation API
 
-`generate_derived_key`: This API generates a new key based on an array of data ([salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) the caller provides. A single salt value always generates the same key, so if you need a new key, you must use a new salt value. The salt can have any value - array, string and so on.
+`generate_derived_key`: This API generates a new key based on an array of data ([salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) the caller provides. A single salt value always generates the same key, so if you need a new key, you must use a new salt value. The salt can have any value - array, string and so on. Root of trust must be generated or injected earlier, otherwise error will be returned. 
 
 The generated keys can be 128 or 256 bits in length.
+
+#### Root of Trust generation
+
+`generate_root_of_trust`: You must call this API once in the lifecycle of the device, before any call to key derivation, if the device supports true random number generator (`DEVICE_TRNG` is defined).
 
 #### Root of Trust Injection API
 
@@ -39,6 +43,12 @@ To instantiate DeviceKey, you need to call its `get_instance` member function as
 
 ```c++ TODO
     DeviceKey &deviceKey = DeviceKey::get_instance();
+```
+
+To generate root of trust before key derivation:
+
+```c++ TODO
+    DeviceKey &deviceKey = DeviceKey::get_instance().generate_root_of_trust();
 ```
 
 #### Testing DeviceKey
