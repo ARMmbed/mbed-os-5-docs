@@ -37,7 +37,7 @@ You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx" and provides labels showing the current state of the mirrored issues.
+We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds an internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx" and provides labels showing the current state of the mirrored issues.
 
 ## Guidelines for GitHub pull requests
 
@@ -165,7 +165,7 @@ This section is to indicate what test results, if any, are required for the PR. 
     
 ### Reviewers
 
-A bot automatically adds reviewers based on the files that are actually changed. It uses internal reviewers database. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
+A bot automatically adds reviewers based on the files that are actually changed. It uses an internal reviewers database. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
 
 ### Release Notes
 
@@ -187,7 +187,7 @@ Each pull request goes through the following workflow:
 
 ## Pull request states
 
-Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify file.yml. The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from Mergify bot.
+Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify.yml file. The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from the mergify bot.
 
 Each state is time-boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
 
@@ -218,9 +218,9 @@ A pull request in the "work needed" state requires additional work due to failed
 
 ### Ready for integration
 
-A pull request is ready for merge once all the reviews and tests are complete.
+A pull request is ready for merge after all the reviews and tests are complete.
 
-Maintainers merge pull requests as they have write access to the main master branch. Pull request integration happens at any time of the day. This may be automated in the future.
+Maintainers merge pull requests because they have write access to the main master branch. Pull request integration happens at any time of the day. This may be automated in the future.
 
 - Label: `Ready for merge`.
 - Time: One day.
@@ -250,17 +250,16 @@ We use many other labels to summarize the scope and effect of the changes:
 - *do not merge* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
-- *Release review required* - additional release version approval is required.
-- *release version missing* - a merged pull request does not contain a release label, it should be fixed by the maintainers team.
-- *BREAKING-CHANGE* - this pull request introduces a breaking change.
-- *mirrored* - the git2jira bot mirrored an issue to our internal Jira.
-- *JIRA status:* - an internal jira ticket status propagated to Github issue. It can be: OPEN, IN PROGRESS, CLOSED, RESOLVED or REOPENED.
-- *closed in jira* - mirrored internal Jira issue was closed.
-- *Manually patch* - a pull request needs manual cherry-picking for the release candidate to resolve conflicts.
-- *rollup PR* - rollup pull request, more details in the section below.
-- *risk: x* - How big a risk is the pull request. Options are: green, amber or red.
+- *Release review required* - Additional release version approval is required.
+- *release version missing* - A merged pull request does not contain a release label; the maintainers team should fix this.
+- *BREAKING-CHANGE* - This pull request introduces a breaking change.
+- *mirrored* - The git2jira bot mirrored an issue to our internal Jira.
+- *JIRA status:* - An internal Jira ticket status propagated to Github issues. It can be: OPEN, IN PROGRESS, CLOSED, RESOLVED or REOPENED.
+- *closed in jira* - Mirrored internal Jira issue was closed.
+- *Manually patch* - A pull request needs manual cherry-picking for the release candidate to resolve conflicts.
+- *risk: x* - The pull request risk level. Options are green, amber or red.
 - *open for community contributions* - Arm does not intend to fix this issue in the near future.
-- *mirror internally* - this pull request will be manually mirrored to our internal Jira.
+- *mirror internally* - This pull request will be manually mirrored to our internal Jira.
 
 The following labels summarize the scope of the pull request:
 
@@ -268,23 +267,3 @@ The following labels summarize the scope of the pull request:
 - *scope: feature*.
 - *scope: new-target*
 - *scope: refactor*
-
-### Rollup pull requests
-
-When Mbed OS has many small, orthogonal pull requests waiting for CI testing to start, maintainers can bundle multiple ones into a single pull request referred to as a rollup pull request. Once this rollup pull request passes CI testing and merges, the bundled pull requests used to build the rollup pull request also automatically merge.
-
-By the time the maintainers select a pull request to be integrated into a rollup pull request, it already has a release label and is waiting to start CI testing. Each bundled pull request gains a *rollup PR* label. Once the rollup pull request is generated, a comment is added to the bundled pull request, informing the bundled pull request's author.
-
-If a rollup pull request fails CI testing, maintainers identify the problematic bundled pull requests, update their statuses and provide additional guidance on what went wrong. Critically, if a bundled pull request is updated *while* it is already in a rollup pull request, and the rollup pull request passes CI and merges, the updated bundled pull request *does not* automatically merge.
-
-#### How it works
-
-Rollup pull requests use the same process as pull requests merging into master, except that pull requests are merged into a rebased temporary branch. All pull requests with the *rollup PR* label are cloned and merged into the temporary branch. If no merge conflicts arise, a pull request is opened with the temporary branch. Once the rollup pull request merges, all other pull requests that were included in the build the rollup pull request are also _marked_ as merged because their contents are now part of master.
-
-Rollup pull requests are a solution to two types of problem: CI testing duration and semantic conflict. 
-
-- Rollup pull requests drastically lower the time to test many pull requests at once. Instead of putting many pull requests through CI, only one goes through testing. This lowers the load on the CI infrastructure and helps close pull requests sooner. 
-
-- The second, more subtle problem that rollup pull requests solve is the case in which two pull requests pass testing on their own, but as soon as they join together, the way they interact with each other causes tests to fail. See more [about semantic conflicts](https://bors.tech/essay/2017/02/02/pitch).
-
-A special case occurs when a bundled pull request is updated while its rollup pull request undergoes testing. When a pull request is bundled into a rollup pull request, its commits become a part of the rollup pull request at the time that the rollup pull request source branch is created. If you update the bundled pull request, its commit history is no longer exactly mirrored in the rollup pull request. In this situation, the bundled pull request that was updated _is not_ automatically marked as merged because all changes of the updated bundled pull request were not present in the merged rollup pull request. Maintainers treat the updated, previously bundled pull request as if it were on its own all along.
