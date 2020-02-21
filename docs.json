@@ -328,7 +328,10 @@
                                     "path": "docs/api/io/FlashIAP.md"
                                 },
                                 {
-                                    "path": "docs/api/io/RawSerial.md"
+                                    "path": "docs/api/io/BufferedSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/io/UnbufferedSerial.md"
                                 },
                                 {
                                     "path": "docs/api/io/Serial.md"

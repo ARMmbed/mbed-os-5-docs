@@ -62,7 +62,8 @@
 <td><a href="analogout.html">AnalogOut</a></td>
 <td><a href="portin.html">PortIn</a></td>
 <td><a href="timer.html">Timer</a></td>
-<td><a href="rawserial.html">RawSerial</a></td>
+<td><a href="bufferedserial.html">BufferedSerial</a></td>
+<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
 <td><a href="can.html">CAN</a></td>
 </tr>
 <tr>
