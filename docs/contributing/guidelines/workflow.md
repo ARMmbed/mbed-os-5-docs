@@ -250,8 +250,7 @@ Where:
 - `f` is the feature release.
 - `p` is the patch release.
 
-From time to time there may be additional suffixes added which could represent a release candidate or
-alpha/beta release etc
+We may add additional suffixes, which could represent a release candidate, alpha or beta release or so on.
 
 ## Additional labels
 
@@ -276,5 +275,5 @@ The following labels summarize the scope of the pull request:
 
 - *scope: bug-fix*.
 - *scope: feature*.
-- *scope: new-target*
-- *scope: refactor*
+- *scope: new-target*.
+- *scope: refactor*.
