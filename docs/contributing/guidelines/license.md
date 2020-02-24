@@ -107,7 +107,7 @@ If you decide to use a different license for your work, follow the same pattern:
 
 We use scancode-toolkit to enforce the license in binaries and libraries. Please see "Continuous integration (CI) testing" section for more information.
 
-To scan the files in SCANCODE folder, please use:
+To scan the files in the SCANCODE folder, please use:
 
 ```
 scancode --license --json-pp mbed-os.json SCANCODE

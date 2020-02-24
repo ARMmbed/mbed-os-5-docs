@@ -24,7 +24,7 @@ Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/
    - Features/netsocket.
 - **travis-ci/events** - Checks that Mbed OS compiles and run events tests.
 - **travis-ci/gitattributestest** - Checks there are no changes after clone. This checks that `.gitattributes` is used correctly.
-- **travis-ci/licence_check** - Checks there is only permissive license in files, including SPDX identifier.
+- **travis-ci/licence_check** - Checks only a permissive license in the files, including SPDX identifier.
 - **travis-ci/littlefs** - Tests littlefs without embedded hardware.
 - **travis-ci/tools-py2.7** - Runs Python tools tests with Python 2.7.
 - **travis-ci/psa-autogen** - Runs PSA SPM code generator.
