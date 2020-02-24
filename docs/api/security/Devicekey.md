@@ -19,7 +19,7 @@ The characteristics required by this root of trust are:
 
 The DeviceKey feature keeps the root of trust key in internal storage, using the KVStore component. Internal storage provides protection from external physical attacks to the device.
 
-The root of trust is generated at the first use of DeviceKey if the true random number generator is available in the device. If no true random number generator is available, you must pass the injected root of trust key to the DeviceKey before you call the key derivation API.
+The root of trust must be created before its first use. Otherwise key  derivation API  will fail.
 
 ## Key derivation API
 
@@ -27,9 +27,43 @@ The root of trust is generated at the first use of DeviceKey if the true random 
 
 The generated keys can be 128 or 256 bits in length.
 
-### Root of Trust Injection API
+### Root of Trust generation API
 
-`device_inject_root_of_trust`: You must call this API once in the lifecycle of the device, before any call to key derivation, if the device does not support true random number generator (`DEVICE_TRNG` is not defined).
+DeviceKey class needs ROT ready to use  before derivation API first call. There are two options to achieve it:
+
+
+- Create device key using built-in random number generator 
+
+- Manually fill device key data array 
+
+Both cases requires injecting this key data to kvstore  reserved area.  
+
+The first way is used when device supports random number generator -  ` DEVICE_TRNG` is defined.
+Then  `generate_root_of_trust` must be called only once.
+
+```c++ NOCI
+int status = DeviceKey::get_instance().generate_root_of_trust();
+if(status == DEVICEKEY_SUCCESS) {
+    //success
+} else {
+   //error
+}
+```
+
+If `DEVICE_TRNG` is not defined  then key buffer must be filled manually and followed by `device_inject_root_of_trust` call. The example below shows an injection of a dummy key.  
+
+```c++ NOCI
+uint32_t key[DEVICE_KEY_32BYTE / sizeof(uint32_t)];
+memcpy(key, "12345678123456781234567812345678", DEVICE_KEY_32BYTE);
+int size = DEVICE_KEY_32BYTE;
+
+int status = DeviceKey::get_instance().device_inject_root_of_trust(key, size);
+if(status == DEVICEKEY_SUCCESS) {
+    //success
+} else {
+    //error
+}
+``` 
 
 ### Using DeviceKey
 
