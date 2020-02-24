@@ -22,6 +22,7 @@ queue.put(message);
 osEvent evt = queue.get();
 if (evt.status == osEventMessage) {
     message_t *message = (message_t*)evt.value.p;
+}
 ```
 
 ### Queue and MemoryPool example
