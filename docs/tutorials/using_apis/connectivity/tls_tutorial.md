@@ -127,7 +127,7 @@ if (result != 0) {
 }
 
 printf("Connecting to os.mbed.com\n");
-result = socket->connect("os.mbed.com", 443);
+result = socket->connect(SocketAddress("os.mbed.com", 443));
 if (result != 0) {
     printf("Error! socket->connect() returned: %d\n", result);
     return result;
