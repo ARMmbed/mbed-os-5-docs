@@ -12,7 +12,7 @@ The Event class is thread safe. The `post` and `cancel` APIs are IRQ safe.
 
 The code below demonstrates how you can instantiate, configure and post events.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-events/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-events/file/86c4bf2d90fa/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/mbed-os-example-events/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/mbed-os-example-events/main.cpp)
 
 ## Related content
 
