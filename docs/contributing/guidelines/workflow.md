@@ -37,7 +37,7 @@ You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker and regularly triage them.
+We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds an internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx" and provides labels showing the current state of the mirrored issues.
 
 ## Guidelines for GitHub pull requests
 
@@ -70,6 +70,9 @@ The following template is automatically provided when you raise a pull request a
 
     #### Summary of change (*What the change is for and why*)
 
+    ###### Impact of changes
+
+    ###### Migration actions required
 
     #### Documentation (*Details of any document updates required*)
 
@@ -91,7 +94,6 @@ The following template is automatically provided when you raise a pull request a
 
     ----------------------------------------------------------------------------------------------------------------
     ## Reviewers (*optional*)
-
 
     ----------------------------------------------------------------------------------------------------------------
     ## Release Notes (*required for feature/major PRs*)
@@ -174,11 +176,11 @@ This section is to indicate what test results, if any, are required for the PR. 
 
 ### Reviewers
 
-A bot automatically adds reviewers based on the files that are actually changed. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
+A bot automatically adds reviewers based on the files that are actually changed. It uses an internal reviewers database. However, this section gives you the option to specify additional, specific reviewers. Tag required reviewers here, such as @adbridge, @0xc0170.
 
 ### Release notes
 
-Every pull request changing or adding functionality must fill in the "Release notes" section. This applies to feature and major PRs. For both these types, you must complete the "Summary of changes" section. Provide a brief description of changes introduced, including justification.
+Every pull request changing or adding functionality must fill in the "Summary of changes" section.
 
 For major PRs, it is also compulsory to complete the "Impact of changes" and "Migration actions required".
 
@@ -196,7 +198,7 @@ Each pull request goes through the following workflow:
 
 ## Pull request states
 
-The Mbed OS maintainers add labels to a pull request to describe its workflow states. The Mbed OS maintainers are responsible for moving pull requests through the workflow states.
+Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify.yml file. The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from the mergify bot.
 
 Each state is time-boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
 
@@ -206,10 +208,10 @@ If a pull request is idle for more than two weeks, it will be closed. The author
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. A PR creator can request specific reviewers by @ tagging people or teams in the *Reviewers* section of the pull request template. For example, @personA @TeamB.
 
-GitHub dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
+Mergify dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 - Label: `needs: review`.
-- Time: Three days for reviewers to leave feedback after the maintainers add the label.
+- Time: Three days for reviewers to leave feedback after the autoreviewer bot has added the label.
 
 ### The Continuous Integration (CI) testing
 
@@ -227,10 +229,12 @@ A pull request in the "work needed" state requires additional work due to failed
 
 ### Ready for integration
 
-Maintainers merge pull requests during the internal gatekeeping meetings that occur three times a week. They can merge straightforward pull requests immediately.
+A pull request is ready for merge after all the reviews and tests are complete.
+
+Maintainers merge pull requests because they have write access to the main master branch. Pull request integration happens at any time of the day. This may be automated in the future.
 
 - Label: `Ready for merge`.
-- Time: Two days.
+- Time: One day.
 
 ### Releases
 
@@ -246,20 +250,30 @@ Where:
 - `f` is the feature release.
 - `p` is the patch release.
 
-From time to time there may be additional suffixes added which could represent a release candidate or
-alpha/beta release etc
+We may add additional suffixes, which could represent a release candidate, alpha or beta release or so on.
 
 ## Additional labels
 
 We use many other labels to summarize the scope and effect of the changes:
 
 - *needs: preceding PR* - Cannot yet be merged because it has a dependency on another pull request that needs to merge first.
-- *DO NOT MERGE* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
+- *do not merge* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
+- *Release review required* - Additional release version approval is required.
+- *release version missing* - A merged pull request does not contain a release label; the maintainers team should fix this.
+- *BREAKING-CHANGE* - This pull request introduces a breaking change.
+- *mirrored* - The git2jira bot mirrored an issue to our internal Jira.
+- *JIRA status:* - An internal Jira ticket status propagated to Github issues. It can be: OPEN, IN PROGRESS, CLOSED, RESOLVED or REOPENED.
+- *closed in jira* - Mirrored internal Jira issue was closed.
+- *Manually patch* - A pull request needs manual cherry-picking for the release candidate to resolve conflicts.
+- *risk: x* - The pull request risk level. Options are green, amber or red.
+- *open for community contributions* - Arm does not intend to fix this issue in the near future.
+- *mirror internally* - This pull request will be manually mirrored to our internal Jira.
 
 The following labels summarize the scope of the pull request:
 
 - *scope: bug-fix*.
 - *scope: feature*.
-- *scope: new-target*
+- *scope: new-target*.
+- *scope: refactor*.
