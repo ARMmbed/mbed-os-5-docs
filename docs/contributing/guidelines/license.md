@@ -103,6 +103,22 @@ If you decide to use a different license for your work, follow the same pattern:
 
 - If more than one license applies to the source file, use an SPDX license expression (see [SPDX Specification, Appendix IV](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)), to reflect the presence of multiple licenses in your *LICENSE.md* file and in each source file.
 
+## License check in pull requests
+
+We use scancode-toolkit to enforce the license in binaries and libraries. Please see "Continuous integration (CI) testing" section for more information.
+
+To scan the files in the SCANCODE folder, please use:
+
+```
+scancode --license --json-pp mbed-os.json SCANCODE
+```
+
+Run our script to check if files confirm to this license guide:
+
+```
+python tools/test/travis-ci/scancode-evaluate.py -f mbed-os.json
+```
+
 ## Contributing to the Mbed OS codebase
 
 ### Mbed OS principles
