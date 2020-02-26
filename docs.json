@@ -1,5 +1,5 @@
 {
-    "product_name": "Mbed OS 5",
+    "product_name": "Mbed OS 6.0.0 Preview",
     "split_pages_on": "h1",
     "books": [{
             "title": "Mbed OS API doxygen",
@@ -11,7 +11,7 @@
             "branch": "master"
         },
         {
-            "title": "Mbed OS 5",
+            "title": "Mbed OS 6 preview",
             "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
             "slug": "introduction",
             "type": "markdown",

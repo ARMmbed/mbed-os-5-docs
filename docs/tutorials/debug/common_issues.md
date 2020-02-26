@@ -24,7 +24,7 @@ If you are using an old version of Mbed CLI, you may see compile-time errors. Ma
 
 ### Compiler versions
 
-Mbed OS 5 can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../tools/index.html).
+Mbed OS 6.0.0 Preview can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../tools/index.html).
 
 The default toolchain profiles now select C++14 and C11. Some applications that worked with older versions of Mbed OS may fail to compile because they use constructs that were valid in C++98 but not in C++14. To fix these common compatibility issues:
 

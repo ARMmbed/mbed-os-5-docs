@@ -17,7 +17,7 @@ Various Mbed CLI features require a program root, which should be under version 
 
 ## Application workflow
 
-Mbed CLI can create and import programs based on both Mbed OS 2 and Mbed OS 5.
+Mbed CLI can create and import programs based on Mbed OS 2, Mbed OS 5 and Mbed OS 6.0.0 Preview.
 
 The basic workflow for Mbed CLI is to:
 
@@ -32,9 +32,9 @@ To support long-term development, Mbed CLI offers source control, including sele
 
 ## Creating a program
 
-You can create new applications as Mbed OS 5, Mbed OS 2 or a non-versioned (blank) projects.
+You can create new applications as Mbed OS 5, Mbed OS 6.0.0 Preview, Mbed OS 2 or a non-versioned (blank) projects.
 
-### For Mbed OS 5
+### For Mbed OS 5 or Mbed OS 6.0.0 Preview
 
 When you create a new program, Mbed CLI automatically imports the latest [Mbed OS release](https://github.com/ARMmbed/mbed-os/). Each release includes all the components: code, build tools and IDE exporters.
 
@@ -78,7 +78,7 @@ $ mbed new mbed-classic-program --mbedlib
 
 ### Without OS version
 
-You can create plain (empty) programs, without either Mbed OS 5 or Mbed OS 2, by using the `--create-only` option.
+You can create plain (empty) programs, without Mbed OS 6.0.0 Preview, Mbed OS 5 or Mbed OS 2, by using the `--create-only` option.
 
 ### Managing multiple Mbed projects
 

@@ -4,9 +4,9 @@ There are many use cases for IoT devices. Different use cases require different 
 
 <span class="images">![Mbed OS bare metal profile block diagram](../../images/bare_metal_block_diagram.png)<span>Mbed OS bare metal profile block digram</span></span>
 
-The Mbed OS bare metal profile is a compact profile of Mbed OS 5 without an RTOS. The Mbed OS bare metal profile is API compatible with Mbed OS 5 and supports a subset of features of Mbed OS 5, such as analog I/O, digital I/O, timers and digital interfaces, such as SPI, I2C, Serial and CAN. Mbed Studio, Mbed CLI and the Mbed Online Compiler all support the Mbed OS bare metal profile.
+The Mbed OS bare metal profile is a compact profile of Mbed OS 6.0.0 Preview without an RTOS. The Mbed OS bare metal profile is API compatible with Mbed OS 6.0.0 Preview and supports a subset of features of Mbed OS 6.0.0 Preview , such as analog I/O, digital I/O, timers and digital interfaces, such as SPI, I2C, Serial and CAN. Mbed Studio, Mbed CLI and the Mbed Online Compiler all support the Mbed OS bare metal profile.
 
-| Features | Mbed OS 5 bare metal  | Mbed OS 5 |
+| Features | Mbed OS 6.0.0 Preview bare metal  | Mbed OS 6.0.0 Preview |
 | --- | ---  | --- |
 | Analog I/O | Available | Available |
 | Digital I/O | Available | Available |

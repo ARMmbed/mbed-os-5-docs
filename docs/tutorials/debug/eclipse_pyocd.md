@@ -115,7 +115,7 @@ Steps to update Eclipse's PATH:
 1. Click *Apply*.
 1. Click *Debug* to start debugging.
 
-    <span class="images">![](../../images/eclipse9.png)<span>Debugging an Mbed OS 5 application in Eclipse</span></span>
+    <span class="images">![](../../images/eclipse9.png)<span>Debugging an Mbed OS 6.0.0 Preview application in Eclipse</span></span>
 
 ## Building with Mbed CLI
 

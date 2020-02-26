@@ -31,7 +31,7 @@ When execution reaches the entry points, you can expect a fully initialized syst
 
 Sequence diagram of the boot sequence:
 
-<span class="images">![](../../images/boot_sequence.png)<span>A diagram of the Arm Mbed OS 5 boot sequence</span></span>
+<span class="images">![](../../images/boot_sequence.png)<span>A diagram of the Arm Mbed OS 6.0.0 Preview boot sequence</span></span>
 
 ## Retargeting
 

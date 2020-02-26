@@ -32,7 +32,7 @@
 
 **Bootloader** - [The program](../tutorials/bootloader.html) that loads Mbed OS when a board is turned on.
 
-**Build Profile** - Mbed OS 5 supports three primary [build profiles](../tools/build-profiles.html): develop, debug and release.
+**Build Profile** - Mbed OS 6.0.0 Preview supports three primary [build profiles](../tools/build-profiles.html): develop, debug and release.
 
 **Build Script** - A build automation and generation utility.
 

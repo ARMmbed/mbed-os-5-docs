@@ -6,17 +6,17 @@ This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#th
 
 ## RTOS
 
-One of the major improvements introduced in Mbed OS 5 is a new programming model based on a real time operating system (RTOS). Some earlier versions of Arm Mbed have had optional support for an RTOS. In version 5, RTOS support is a standard feature of the platform, so developers can take advantage of a more flexible programming model based on multiple threads.
+One of the major improvements introduced in Mbed OS 6.0.0 Preview is a new programming model based on a real time operating system (RTOS). Some earlier versions of Arm Mbed have had optional support for an RTOS. In version 5, RTOS support is a standard feature of the platform, so developers can take advantage of a more flexible programming model based on multiple threads.
 
-As with any multithreaded environment, Mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees the Mbed OS 5 APIs provide when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
+As with any multithreaded environment, Mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees the Mbed OS 6.0.0 Preview APIs provide when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
 
-The Mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms Mbed OS 5 provides to build thread safe applications.
+The Mbed OS library contains internal synchronization to provide various levels of thread safety. This document describes the mechanisms Mbed OS 6.0.0 Preview provides to build thread safe applications.
 
 ## Thread safety
 
 ### Synchronization levels
 
-Different components within Mbed OS 5 provide different levels of synchronization:
+Different components within Mbed OS 6.0.0 Preview provide different levels of synchronization:
 
 1. **Interrupt safe** - safe for use from multiple threads and interrupts; operation is done atomically or in a critical section. The behavior is well defined when used from both interrupts and threads.
 2. **Thread safe** - safe for use from multiple threads; operation is protected by an RTOS primitive and can be used from multiple threads, but will cause problems if used from an interrupt service routine.
@@ -71,7 +71,7 @@ The RTOS provides several mechanisms to move interrupt processing onto a thread.
  - [Queue](../mbed-os-api-doxy/classrtos_1_1_queue.html).
  - [Mail](../mbed-os-api-doxy/classrtos_1_1_mail.html).
 
-<span class="notes">**Note:** In Mbed OS 5, if you attempt to use a mutex from within an interrupt, nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening.</span>
+<span class="notes">**Note:** In Mbed OS 6.0.0 Preview , if you attempt to use a mutex from within an interrupt, nothing happens; attempts to lock a mutex will succeed immediately, regardless of whether the lock is actually free. In other words, if you acquire a mutex lock in an interrupt, you can break the thread safety mechanisms and introduce race conditions into an otherwise safe piece of code. Future versions of Mbed OS will provide warnings and ultimately prevent this from happening.</span>
 
 For more information see [rtos/Mutex.h](../mbed-os-api-doxy/_mutex_8h_source.html).
 
