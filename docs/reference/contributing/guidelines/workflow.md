@@ -194,7 +194,7 @@ The release notes section is automatically pulled into the overall release notes
 
 Each pull request goes through the following workflow:
 
-<span class="images">![Pull request workflow](../../images/Workflow3.png)<span>Pull request workflow</span></span>
+<span class="images">![Pull request workflow](../../../images/Workflow3.png)<span>Pull request workflow</span></span>
 
 ## Pull request states
 
