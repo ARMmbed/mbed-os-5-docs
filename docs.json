@@ -274,6 +274,12 @@
                             "path": "docs/api/drivers/Serial.md"
                         },
                         {
+                            "path": "docs/api/drivers/BufferedSerial.md"
+                        },
+                        {
+                            "path": "docs/api/drivers/UnbufferedSerial.md"
+                        },
+                        {
                             "path": "docs/api/drivers/SPI.md"
                         },
                         {
