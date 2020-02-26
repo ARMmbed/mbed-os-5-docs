@@ -10,7 +10,7 @@ When you write original code, you own the copyright and can choose to make it av
 
 If you create new software, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well-known license such as one of the ones listed [OSI-approved](http://spdx.org/licenses/), permissive open source software license. Specifically, we recommend the following:
 
-- For original source code, use the Apache 2.0 license.  
+- For original source code, use the Apache 2.0 license.  
 
 - For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License (PBL)](https://www.mbed.com/licenses/PBL-1.0). This is designed to be compatible with Apache 2.0 and the Mbed OS codebase.
 
@@ -44,16 +44,16 @@ To clearly reflect the Apache 2.0 license, please create two text files:
    ```
    Copyright (c) [First year]-[Last year], **Your Name or Company Here**
    SPDX-License-Identifier: Apache-2.0
-   
+
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
-   
+
    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-   
+
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
    either express or implied.
-   
+
    See the License for the specific language governing permissions and limitations under the License.
    ```
 
@@ -83,12 +83,12 @@ To clearly reflect the PBL license, please create the following three text files
 
     ```
     Copyright (c) [First year]-[Last year], **Your Name Here**, All Rights Reserved SPDX-License-Identifier: LicenseRef-PBL
-    
+
     This file and the related binary are licensed under the Permissive Binary License, Version 1.0 (the "License"); you may not use these files except in compliance with the License.
 
     You may obtain a copy of the License here: LICENSE-permissive-binary-license-1.0.txt and at https://www.mbed.com/licenses/PBL-1.0
 
-    See the License for the specific language governing permissions and limitations under the License.
+    See the License for the specific language governing permissions and limitations under the License.
     ```
 
 ## Using a different license
@@ -123,7 +123,7 @@ python tools/test/travis-ci/scancode-evaluate.py -f mbed-os.json
 
 ### Mbed OS principles
 
-By creating a pull request on GitHub against Mbed OS, you agree to license your contributions under the same license as the original code. Mbed software is released under a permissive license for all new Mbed contributions. Arm will not accept proprietary code or any code under a "copyleft" license. Accepting such code would prevent us from distributing our code under the permissive license and stall adoption of our code by third parties.
+By creating a pull request on GitHub against Mbed OS, you agree to license your contributions under the same license as the original code. Mbed software is released under a permissive license for all new Mbed contributions. Arm will not accept proprietary code or any code under a "copyleft" license. Accepting such code would prevent us from distributing our code under the permissive license and stall adoption of our code by third parties.
 
 Mbed OS uses these same basic principles for its source code and library distributions. Source code we own is distributed under the Apache 2.0 license, and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under the original license.
 
