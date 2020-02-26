@@ -19,27 +19,24 @@ The characteristics required by this root of trust are:
 
 The DeviceKey feature keeps the root of trust key in internal storage, using the KVStore component. Internal storage provides protection from external physical attacks to the device.
 
-The root of trust must be created before its first use. Otherwise key  derivation API  will fail.
+The root of trust must be created before its first use. Otherwise, the key derivation API fails.
 
 ## Key derivation API
 
 `generate_derived_key`: This API generates a new key based on an array of data ([salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) the caller provides. A single salt value always generates the same key, so if you need a new key, you must use a new salt value. The salt can have any value - array, string and so on.
 
-The generated keys can be 128 or 256 bits in length.
+The generated keys can be 128b or 256b in length.
 
 ### Root of Trust generation API
 
-DeviceKey class needs ROT ready to use  before derivation API first call. There are two options to achieve it:
+DeviceKey class needs root of trust ready to use before the derivation API's first call. There are two options to achieve this:
 
+- Create a device key using a built-in random number generator.
+- Manually fill the device key data array.
 
-- Create device key using built-in random number generator 
+Both cases requires injecting this key data to the KVStore reserved area.
 
-- Manually fill device key data array 
-
-Both cases requires injecting this key data to kvstore  reserved area.  
-
-The first way is used when device supports random number generator -  ` DEVICE_TRNG` is defined.
-Then  `generate_root_of_trust` must be called only once.
+Use this first method when the device supports a random number generator - when ` DEVICE_TRNG` is defined. Then, call `generate_root_of_trust` only once.
 
 ```c++ NOCI
 int status = DeviceKey::get_instance().generate_root_of_trust();
@@ -50,7 +47,7 @@ if(status == DEVICEKEY_SUCCESS) {
 }
 ```
 
-If `DEVICE_TRNG` is not defined  then key buffer must be filled manually and followed by `device_inject_root_of_trust` call. The example below shows an injection of a dummy key.  
+If `DEVICE_TRNG` is not defined, the key buffer must be filled manually and followed by `device_inject_root_of_trust` call. The example below shows an injection of a dummy key:
 
 ```c++ NOCI
 uint32_t key[DEVICE_KEY_32BYTE / sizeof(uint32_t)];
@@ -67,9 +64,9 @@ if(status == DEVICEKEY_SUCCESS) {
 
 ### Using DeviceKey
 
-DeviceKey is a singleton class, meaning that the system can have only a single instance of it.
+DeviceKey is a singleton class, meaning the system can have only a single instance of it.
 
-To instantiate DeviceKey, you need to call its `get_instance` member function as following:
+To instantiate DeviceKey, call its `get_instance` member function:
 
 ```c++ TODO
     DeviceKey &deviceKey = DeviceKey::get_instance();
@@ -77,7 +74,7 @@ To instantiate DeviceKey, you need to call its `get_instance` member function as
 
 ### Testing DeviceKey
 
-Run the DeviceKey functionality test with the `mbed` command as following:
+Run the DeviceKey functionality test with the `mbed`:
 
 ```
     mbed test -n features-device_key-tests-device_key-functionality
