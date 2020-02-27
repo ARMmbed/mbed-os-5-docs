@@ -1,54 +1,54 @@
 # Link Time Optimization
 
-Link Time Optimization (LTO) is a program memory usage optimization mechanism performed by compiler at link time. At compile time compiler creates special intermediate representation of all translation units and then optimize them as a single unit at link time resulting in much better optimization comparing to non-LTO builds.
+Link Time Optimization (LTO) is a program memory usage optimization mechanism that the compiler performs at link time. At compile time, the compiler creates a special intermediate representation of all translation units. It then optimizes them as a single unit at link time, which uses less memory than non-LTO builds.
 
 ## Using LTO in Mbed OS
 
-In Mbed OS build system LTO is implemented as an optional profile extension placed in `tools\profiles\extensions\lto.json`. When enabled, build profile is amended with LTO flags. LTO perform heavy memory optimizations what breaks debugging, so it's recommended to use it only with release profile.
+The Mbed OS build system implements LTO as an optional profile extension in `tools\profiles\extensions\lto.json`. Enabling LTO amends the build profile with LTO flags. LTO performs heavy memory optimizations that break debugging, so it's recommended to use it only with release profile.
 
-To enable LTO add `--profile` option with LTO file path `tools\profiles\extensions\lto.json` in to the build command.
+To enable LTO add `--profile` option with LTO file path `tools\profiles\extensions\lto.json` to the build command.
 
-<span class="notes">**Note**: For profile extensions you have to put full path relative to the project's root folder.</span>
+<span class="notes">**Note**: For profile extensions you have to put the full path relative to the project's root folder.</span>
 
-To enable LTO together with `release` profile for MbedOS example :
+To enable LTO with the `release` profile:
+
 ```
 mbed compile -t TOOLCHAIN -m TARGET --profile release --profile mbed-os/tools/profiles/extensions/lto.json
 ```
 
-Example LTO profile memory savings for [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
+Example LTO profile memory savings for [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky):
 
-|Build type|Total Static RAM memory (data + bss)|Total Flash memory (text + data)|
+|Build type|Total static RAM memory (data + BSS)|Total flash memory (text + data)|
 | --- | --- | --- |
-| GCC_ARM - release - no LTO | 12096 B | 44628 B |
-| GCC_ARM - release - LTO | 11800 B | 41088 B |
-|***saved memory***|296 B|3540 B|
-| ARM - release - no LTO | 10365 B | 35496 B |
-| ARM - release - LTO | 10153 B | 31514 B |
-|***saved memory***|212 B|‭3982‬ B|
+| GCC_ARM - release - no LTO | 12,096B | 44,628B |
+| GCC_ARM - release - LTO | 11,800B | 41,088B |
+|***saved memory***|296B|3,540B|
+| ARM - release - no LTO | 10,365B | 35,496B |
+| ARM - release - LTO | 10,153B | 31,514B |
+|***saved memory***|212B|‭3,982‬B|
 
 LTO profile build results for [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example)
 
-|Build type|Total Static RAM memory (data + bss)|Total Flash memory (text + data)|
+|Build type|Total Static RAM memory (data + BSS)|Total Flash memory (text + data)|
 | --- | --- | --- |
-| GCC_ARM - release - no LTO | 59760 B | 389637 B |
-| GCC_ARM - release - LTO | 59432 B | 354167 B |
-|***saved memory***| 328 B | ‭35470‬ B|
-| ARM - release - no LTO | 58099 B | 353849 B |
-| ARM - release - LTO | 57150 B | 322500 B |
-|***saved memory***| 949 B | ‭31349‬ B|
+| GCC_ARM - release - no LTO | 59,760B | 389,637B |
+| GCC_ARM - release - LTO | 59,432B | 354,167B |
+|***saved memory***| 328B | ‭35,470‬B|
+| ARM - release - no LTO | 58,099B | 353,849B |
+| ARM - release - LTO | 57,150B | 322,500B |
+|***saved memory***| 949B | ‭31,349‬B|
 
-
-<span class="notes">**Note**: In LTO builds compiler produce bytecode/bitcode instead of regular object code. And it's hard to analyse this output by object code analysis tools.</span>
+<span class="notes">**Note**: In LTO builds, the compiler produces bytecode/bitcode instead of regular object code. It's hard to analyze this output with object code analysis tools.</span>
 
 ## Limitations
 
 - LTO slows down build process.
 - It’s very hard to control memory placement when using LTO.
-- LTO perform heavy memory optimizations what breaks debugging.
-- In LTO builds compiler produce bytecode/bitcode instead of regular object code. And it's hard to analyse this output with object code analysis tools.
-- LTO could causes increases to the stack space needed due to cross-object inlining.
+- LTO performs heavy memory optimizations that break debugging.
+- In LTO builds, the compiler produce bytecode/bitcode instead of regular object code. It's hard to analyze this output with object code analysis tools.
+- LTO could cause increases to the stack space needed due to cross-object inlining.
 
-### ARM
+### Arm
 
 - No bitcode libraries: armlink only supports bitcode objects on the command line. It does not support bitcode objects coming from libraries. armlink gives an error message if it encounters a file containing bitcode while loading from a library.
 - Partial Linking is not supported with LTO as it only works with elf objects not bitcode files.
@@ -57,10 +57,10 @@ LTO profile build results for [mbed-cloud-client-example](https://github.com/ARM
 
 ### IAR
 
-- There is no LTO available for IAR compiler.
+- There is no LTO available for the IAR compiler.
 
 ### GCC_ARM
 
-- The minimal required version of the `GCC_ARM` is now the GNU Arm Embedded Toolchain Version 9-2019-q4-major. Earlier `GCC_ARM` versions can cause various issues when the `-flto` flag is used, e.g. a platform specific error during the final link stage on Windows hosts with GCC8
-- The `noinline` attribute has to be used for every function that must be placed into a specific section (specified with a `section(".section_name")` attribute). In general, when a function is considered for inlining, the `section` attribute is always ignored. However, with the link-time optimizer enabled, the chances for inlining are much higher because the inliner works across multiple translation units. As a result, the output sections' sizes change compared to a non-lto build. This may lead to a `section ".section_name" will not fit in region "region_name"` type errors.
-- There is a bug in all gcc versions causing that LTO removes C functions declared as weak in assembler (see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83967 https://bugs.launchpad.net/gcc-arm-embedded/+bug/1747966). MbedOS build system provides fix for this. In case of exporting MbedOS project to other buildsystem the problem will emerge. This can be fixed by changing the order of object files in the linker command. Objects providing the weak symbols and compiled from assembly must be listed before the objects providing the strong symbols.
+- The minimal required version of `GCC_ARM` is now the GNU Arm Embedded Toolchain Version 9-2019-q4-major. Earlier `GCC_ARM` versions can cause various issues when the `-flto` flag is used, for example a platform-specific error during the final link stage on Windows hosts with GCC8.
+- The `noinline` attribute has to be used for every function that must be placed into a specific section (specified with a `section(".section_name")` attribute). In general, when a function is considered for inlining, the `section` attribute is always ignored. However, with the link-time optimizer enabled, the chances for inlining are much higher because the inliner works across multiple translation units. As a result, the output sections' sizes change compared to a non-lto build. This may lead to `section ".section_name" will not fit in region "region_name"` type errors.
+- There is a bug in all GCC versions causing that LTO removes C functions declared as weak in assembler (see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83967 https://bugs.launchpad.net/gcc-arm-embedded/+bug/1747966). The Mbed OS build system provides a fix for this. In case of exporting Mbed OS project to other build system the problem will emerge. This can be fixed by changing the order of object files in the linker command. Objects providing the weak symbols and compiled from assembly must be listed before the objects providing the strong symbols.
