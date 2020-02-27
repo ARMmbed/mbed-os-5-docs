@@ -76,12 +76,14 @@
 <td><a href="digitalout.html">DigitalOut</a></td>
 <td><a href="portinout.html">PortInOut</a></td>
 <td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
+<td><a href="bufferedserial.html">BufferedSerial</a></td>
 <td><a href="spi.html">SPI</a></td>
 </tr>
 <tr>
 <td><a href="digitalinout.html">DigitalInOut</a></td>
 <td><a href="pwmout.html">PwmOut</a></td>
 <td><a href="lowpowertimer.html">LowPowerTimer</a></td>
+<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
 <td><a href="spislave.html">SPISlave</a></td>
 </tr>
 <tr>
