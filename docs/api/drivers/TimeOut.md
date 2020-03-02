@@ -1,6 +1,6 @@
 # Timeout
 
-<span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_timeout.png)<span>Timeout class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_timeout.png)<span>Timeout class hierarchy</span></span>
 
 Use the Timeout interface to set up an interrupt to call a function after a specified delay.
 
@@ -16,7 +16,7 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 ## Timeout class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_timeout.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_timeout.html)
 
 ## Timeout hello, world
 

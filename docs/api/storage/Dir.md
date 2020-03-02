@@ -1,6 +1,6 @@
 # Dir
 
-<span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_dir.png)<span>Dir class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_dir.png)<span>Dir class hierarchy</span></span>
 
 With a file system, the Dir class allows you to iterate over directories on the underlying storage. Directories, also called folders, are a way to group files. Each directory has a name that forms a part of the path to any files stored in that directory. Additionally, you can use `rename` operations at the file system level to change a directory's name and efficiently change the path to any files in that directory. To make a new directory, use the `mkdir` function in the [FileSystem](filesystem.html) class.
 
@@ -10,7 +10,7 @@ The Dir class operates as an iterator or stream similarly to the File class, exc
 
 ## Dir class API
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_dir.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_dir.html)
 
 ## File system example
 

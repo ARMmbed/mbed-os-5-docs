@@ -1,6 +1,6 @@
 # Semaphore
 
-<span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classrtos_1_1_semaphore.png)<span>Semaphore class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classrtos_1_1_semaphore.png)<span>Semaphore class hierarchy</span></span>
 
 A semaphore manages thread access to a pool of shared resources of a certain type.
 
@@ -8,7 +8,7 @@ A semaphore manages thread access to a pool of shared resources of a certain typ
 
 ## Semaphore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classrtos_1_1_semaphore.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classrtos_1_1_semaphore.html)
 
 ## Semaphore example
 

@@ -1,6 +1,6 @@
 # NFCController
 
-<span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.png)<span>NFCController class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.png)<span>NFCController class hierarchy</span></span>
 
 Using an NFC controller with Mbed OS allows you to emulate NFC tags that a smartphone can read, as well as generate NDEF messages on demand.
 
@@ -8,7 +8,7 @@ To use an NFC controller, you must initiate the instance with a driver instance,
 
 ## NFCController class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.html)
 
 ## NFCController example
 

@@ -1,6 +1,6 @@
 # RawSerial
 
-<span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_raw_serial.png)<span>RawSerial class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_raw_serial.png)<span>RawSerial class hierarchy</span></span>
 
 The RawSerial class provides UART functionality without the use of Stream's print and scan functions the way the Serial class does. RawSerial does not retarget the standard library print and scan functions. Instead, RawSerial reimplements the print and scan functions to use each target's underlying serial communication functions. See the porting guide for [target serial support](../porting/serial-port.html). This makes RawSerial suitable for use in interrupt handlers with the RTOS.
 
@@ -20,7 +20,7 @@ The default settings for the microcontroller are described as _9600-8-N-1_, a co
 
 ## RawSerial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver).</span>
 

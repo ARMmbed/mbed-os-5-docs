@@ -1,6 +1,6 @@
 # QSPIFBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/class_q_s_p_i_f_block_device.png)<span>QSPIFBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_q_s_p_i_f_block_device.png)<span>QSPIFBlockDevice class hierarchy</span></span>
 
 
 The QSPIFBlockDevice is a block device driver for NOR-based QSPI Flash devices that support the SFDP standard. NOR-based QSPI Flash supports up to 4 bits per cycle of instruction, address and data. SFDP-based QSPI Flash supports variable bus modes (single, dual and quad), several sector erase size types and multiple regions of sector size types.
@@ -9,7 +9,7 @@ For more information about the SFDP JEDEC standard, please see [its documentatio
 
 ## QSPIFBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/class_q_s_p_i_f_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_q_s_p_i_f_block_device.html)
 
 ## QSPIFBlockDevice example
 
