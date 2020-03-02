@@ -26,7 +26,7 @@ Erase, program and read block sizes may not be the same; however, they must be m
 
 You can find the BlockDevice class on the master branch under the `features/storage/blockdevice` path in Mbed OS.
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_block_device.html)
 
 The primary functions to implement are:
 

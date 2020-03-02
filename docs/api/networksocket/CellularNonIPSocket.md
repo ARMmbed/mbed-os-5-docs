@@ -28,7 +28,7 @@ You can request Control Plane optimization mode either with CellularDevice's [`c
 
 ## CellularNonIPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_cellular_non_i_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_cellular_non_i_p_socket.html)
 
 ## CellularNonIPSocket example
 

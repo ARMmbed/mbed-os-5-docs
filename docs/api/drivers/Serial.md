@@ -1,6 +1,6 @@
 # Serial
 
-<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
 
 The [Serial](../introduction/glossary.html) interface provides UART functionality. The serial link has two unidirectional channels, one for sending and one for receiving. The link is asynchronous, and so both ends of the serial link must be configured to use the same settings.
 
@@ -8,7 +8,7 @@ One of the serial connections uses the Arm Mbed USB port, allowing you to easily
 
 ## Serial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](../tutorials/windows-serial-driver.html).</span>
 

@@ -1,6 +1,6 @@
 # SPI
 
-<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
 
 The SPI Interface provides a Serial Peripheral Interface Master.
 
@@ -25,7 +25,7 @@ The SPI master generates a clock to synchronously drive a serial bit stream slav
 
 ## SPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
 
 ## SPI hello, world
 

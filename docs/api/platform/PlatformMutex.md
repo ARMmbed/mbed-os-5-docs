@@ -1,6 +1,6 @@
 # PlatformMutex
 
-<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_platform_mutex.png)<span>PlatformMutex class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_platform_mutex.png)<span>PlatformMutex class hierarchy</span></span>
 
 You can use the PlatformMutex class to synchronize the execution of threads.
 
@@ -10,7 +10,7 @@ The Mbed OS drivers use the PlatformMutex class instead of [Mutex](mutex.html). 
 
 ## PlatformMutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_platform_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_platform_mutex.html)
 
 ## PlatformMutex example
 
