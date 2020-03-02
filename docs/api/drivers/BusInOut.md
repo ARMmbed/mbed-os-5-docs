@@ -1,6 +1,6 @@
 # BusInOut
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/classmbed_1_1_bus_in_out.png)<span>BusInOut class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_bus_in_out.png)<span>BusInOut class hierarchy</span></span>
 
 Use the BusInOut interface as a bidirectional bus that supports up to 16 [DigitalInOut](digitalinout.html) pins that you can read and write as one value.
 
@@ -12,7 +12,7 @@ The order of pins in the constructor is the reverse order of the pins in the byt
 
 ## BusInOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_bus_in_out.html)
 
 ## BusInOut hello, world
 

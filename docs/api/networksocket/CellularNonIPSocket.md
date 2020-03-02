@@ -1,6 +1,6 @@
 # Non-IP cellular socket
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/classmbed_1_1_cellular_non_i_p_socket.png)<span>CellularNonIPSocket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_cellular_non_i_p_socket.png)<span>CellularNonIPSocket class hierarchy</span></span>
 
 The CellularNonIPSocket class provides, through standard socket `send` and `recv` member functions, the ability to send and receive 3GPP non-IP datagrams (NIDD) using our cellular IoT feature. This feature is implemented in the [`ControlPlane_netif`](../mbed-os-api-doxy/classmbed_1_1_control_plane__netif.html) class.
 

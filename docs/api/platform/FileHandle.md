@@ -1,6 +1,6 @@
 # FileHandle
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
 
 For general information on [files](file.html) and [filing systems](filesystem.html) in persistent storage, see their documentation. This chapter covers the abstract API, with an emphasis on devices.
 

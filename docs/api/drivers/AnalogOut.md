@@ -6,7 +6,7 @@ Use the AnalogOut interface to set the output voltage of an analog output pin sp
 
 ## AnalogOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/classmbed_1_1_analog_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_analog_out.html)
 
 ## AnalogOut hello, world
 

@@ -46,7 +46,7 @@ The simplest example is a pairing of a device with no IO capabilities and no OOB
 
 ## SecurityManager class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/class_security_manager.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_security_manager.html)
 
 ## SecurityManager example
 

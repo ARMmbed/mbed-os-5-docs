@@ -2,7 +2,7 @@
 
 <span class="notes">**Note:** Some functions, variables or types have been deprecated. Please see the class reference linked below for details.</span>
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/class_gap.png)<span>Gap class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_gap.png)<span>Gap class hierarchy</span></span>
 
 The Generic Access Profile is the layer of the stack that handles connectivity tasks. This includes link establishment and termination, advertising and scanning.
 
@@ -68,7 +68,7 @@ The default value of data length supported by all controllers is 23 octets. If b
 
 ## GAP class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v5.15/mbed-os-api-doxy/class_gap.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_gap.html)
 
 ## GAP example
 
