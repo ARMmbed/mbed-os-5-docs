@@ -1,10 +1,10 @@
 <h1 id="cellular-api">Cellular API</h1>
 
-<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_cellular_interface.png)<span>CellularInterface class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/class_cellular_interface.png)<span>CellularInterface class hierarchy</span></span>
 
 <span class="notes">**Note:** Some functions, variables or types have been deprecated. Please see the class reference linked below for details.</span>
 
-The [CellularInterface](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_cellular_interface.html) class provides a C++ API for connecting to the internet over a Cellular device.
+The [CellularInterface](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/class_cellular_interface.html) class provides a C++ API for connecting to the internet over a Cellular device.
 
 ## Getting started
 
@@ -50,7 +50,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 ## CellularInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/class_cellular_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/class_cellular_interface.html)
 
 ## Usage
 

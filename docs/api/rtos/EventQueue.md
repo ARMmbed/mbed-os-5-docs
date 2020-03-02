@@ -1,6 +1,6 @@
 # EventQueue
 
-<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classevents_1_1_event_queue.png)<span>EventQueue class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classevents_1_1_event_queue.png)<span>EventQueue class hierarchy</span></span>
 
 The EventQueue class provides a flexible queue for scheduling events. You can use the EventQueue class for synchronization between multiple threads, or to move events out of interrupt context (deferred execution of time consuming or non-ISR safe operations).
 
@@ -14,11 +14,11 @@ Mbed OS provides two shared queues software can use. This can avoid the need to 
 
 ## EventQueue class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classevents_1_1_event_queue.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classevents_1_1_event_queue.html)
 
 ## Shared event queue reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/mbed__shared__queues_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/mbed__shared__queues_8h_source.html)
 
 ## EventQueue example: deferring from interrupt context
 

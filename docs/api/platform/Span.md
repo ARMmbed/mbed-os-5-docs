@@ -88,7 +88,7 @@ When you encode the size of the sequence viewed in the Span value, Span instance
 
 ## Span class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/structmbed_1_1_span.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/structmbed_1_1_span.html)
 
 
 ## Span example

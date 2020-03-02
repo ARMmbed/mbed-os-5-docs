@@ -1,6 +1,6 @@
 # Thread
 
-<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
 
 The Thread class allows defining, creating and controlling parallel tasks.
 
@@ -16,7 +16,7 @@ The default stack size is 4K. However, the application can override it by using 
 
 ## Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classrtos_1_1_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classrtos_1_1_thread.html)
 
 ```C
 /// Priority values.

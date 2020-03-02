@@ -8,7 +8,7 @@ You cannot use `time`, `mktime` and `localtime` C standard library functions in 
 
 ## Time function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/mbed__mktime_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/mbed__mktime_8h_source.html)
 
 ## Time example
 

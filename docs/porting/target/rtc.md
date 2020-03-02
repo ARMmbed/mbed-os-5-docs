@@ -32,7 +32,7 @@ Hardware RTC capabilities.
 
 You can find the API and specification for the RTC API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/group__hal__rtc.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/group__hal__rtc.html)
 
 To enable RTC support in Mbed OS, add the `RTC` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -46,4 +46,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-rtc*"
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/group__hal__rtc__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/group__hal__rtc__tests.html)
