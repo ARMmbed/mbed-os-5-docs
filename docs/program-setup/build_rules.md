@@ -34,6 +34,8 @@ The Mbed OS build tools skip all label directories, unless you configure them ex
 
 For more information about using, extending and removing labels, please see [Adding and configuring targets](../reference/adding-and-configuring-targets.html#extra-labels-extra-labels-add-and-extra-labels-remove).
 
+<span class="notes">**Note:** `mbed-os` contains `include` folders, which contain header files. Every header file in these folders is added (following rules about `TARGET`, `FEATURE`, `COMPONENT` and TOOLCHAIN). Everything that is not skipped is included.</span>
+
 ### Target directories
 
 The target labeled directories are used for selecting sources specific to an MCU or MCU family. The set of directories included in a given build is all of the names of the targets in the inheritance hierarchy and the `target.extra_labels`. The following is an example `targets.json`:
