@@ -4,7 +4,7 @@ The Kernel namespace implements interfaces to attach a function to some kernel e
 
 ## Kernel namespace reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/namespacertos_1_1_kernel.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
 
 ## get_ms_count() example
 

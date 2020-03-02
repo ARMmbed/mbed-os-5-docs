@@ -1,6 +1,6 @@
 # DeviceKey
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classmbed_1_1_device_key.png)<span>DeviceKey class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_device_key.png)<span>DeviceKey class hierarchy</span></span>
 
 DeviceKey is a mechanism that implements key derivation from a root of trust key. The DeviceKey mechanism generates symmetric keys that security features need. You can use these keys for encryption, authentication and more. The DeviceKey API allows key derivation without exposing the actual root of trust, to reduce the possibility of accidental exposure of the root of trust outside the device.
 
@@ -51,7 +51,7 @@ Run the DeviceKey functionality test with the `mbed` command as following:
 
 ## DeviceKey API class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classmbed_1_1_device_key.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_device_key.html)
 
 ## DeviceKey example
 

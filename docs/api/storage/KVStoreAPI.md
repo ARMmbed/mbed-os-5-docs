@@ -26,7 +26,7 @@ Classes implementing KVStore API:
 
 ## KVStore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_digital_out.html/classmbed_1_1_k_v_store.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_k_v_store.html)
 
 ## KVStore example
 
