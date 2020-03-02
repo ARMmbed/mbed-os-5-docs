@@ -181,7 +181,7 @@ As such, you can only use `Stream`-based devices for blocking I/O, such as throu
 
 ## FileHandle class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
 
 ## FileHandle using C library example
 

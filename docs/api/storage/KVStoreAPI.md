@@ -2,7 +2,7 @@
 
 <span class="tips">**Tip:** This API replaces the deprecated NVStore API.</span>
 
-<span class="images">![](http://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_k_v_store.png)<span>KVStore class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_k_v_store.png)<span>KVStore class hierarchy</span></span>
 
 The KVStore API is a common get/set API implemented by several classes. It allows flexibility in the configuration of a storage solution that you can build by allocating several combinations of objects. For example, SecureStore can hold a TDBStore or a FileSystemStore, both implementing the KVStore API, without any change in functionality.
 

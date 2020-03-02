@@ -112,7 +112,7 @@ Hardware SPI capabilities.
 
 You can find the API and specification for the SPI API in the following class reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.15/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/6.0.0-preview/feature-hal-spec-spi-doxy/classmbed_1_1_s_p_i.html)
 
 To enable SPI support in Mbed OS, add the `SPI` label in the `device_has` option of the target's section in the `targets.json` file.
 You can also add the `SPI_ASYNCH` label in the `device_has` option to enable the asynchronous API.
@@ -127,7 +127,7 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-spi*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v5.15/feature-hal-spec-spi-doxy/group__hal__spi__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/6.0.0-preview/feature-hal-spec-spi-doxy/group__hal__spi__tests.html)
 
 To test SPI using the FPGA test shield:
 
