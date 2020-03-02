@@ -15,20 +15,4 @@ When `ptr` is passed around by a value, the copy constructor and destructor mana
 
 ## Shared pointer example
 
-```
-#include "platform/SharedPtr.h"
-
-void test() {
-    struct MyStruct { int a; };
-
-    // Create shared pointer
-    SharedPtr<MyStruct> ptr( new MyStruct );
-
-    // Increase reference count
-    SharedPtr<MyStruct> ptr2( ptr );
-
-    ptr = nullptr; // Reference to the struct instance is still held by ptr2
-
-    ptr2 = nullptr; // The raw pointer is freed
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Shared_pointer)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Shared_pointer/main.cpp)
