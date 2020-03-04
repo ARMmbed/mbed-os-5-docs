@@ -36,7 +36,7 @@ DeviceKey class needs root of trust ready to use before the derivation API's fir
 
 Both cases requires injecting this key data to the KVStore reserved area.
 
-When `DEVICE_TRNG` is defined, the device supports a random number generator, and you may generate the key by calling `generate_root_of_trust()`. The call succeeds only if the key does not already exist. Subsequent calls will fail if you don't modify the existing key.
+When `DEVICE_TRNG` is defined, the device supports a random number generator, and you may generate the key by calling `generate_root_of_trust()`. The call succeeds only if the key does not already exist. You can't change the existing key.
 
 ```c++ NOCI
 int status = DeviceKey::get_instance().generate_root_of_trust();
