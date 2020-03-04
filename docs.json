@@ -146,30 +146,6 @@
                         },
                         {
                             "path": "docs/api/drivers/PortInOut.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/PwmOut.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/InterruptIn.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/Ticker.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/TimeOut.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/Timer.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/LowPowerTicker.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/LowPowerTimeout.md"
-                        },
-                        {
-                            "path": "docs/api/drivers/LowPowerTimer.md"
                         }
                     ]
                 },
@@ -183,18 +159,6 @@
                         },
                         {
                             "path": "docs/api/rtos/ThisThread.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Mutex.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Semaphore.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/Queue.md"
-                        },
-                        {
-                            "path": "docs/api/rtos/EventQueue.md"
                         }
                     ]
                 }
@@ -214,26 +178,6 @@
                         "path": "docs/reference/reference.md"
                     },
                     "sources": []
-                },
-                {
-                    "title": "Architecture",
-                    "intro": {
-                        "path": "docs/reference/technology/technology.md"
-                    },
-                    "sources": []
-                },
-                {
-                    "title": "Mbed OS fundamentals",
-                    "sources": [{
-                            "path": "docs/reference/runtime/Execution.md"
-                        },
-                        {
-                            "path": "docs/reference/runtime/Bootstrap.md"
-                        },
-                        {
-                            "path": "docs/reference/thread_safety.md"
-                        }
-                    ]
                 },
                 {
                     "title": "Mbed OS bare metal",
@@ -257,57 +201,6 @@
                             }]
                         }
                     ]
-                },
-                {
-                    "title": "Project structures and configuration",
-                    "sub_chapters": [{
-                            "title": "Project structure",
-                            "sources": [{
-                                    "path": "docs/reference/project-structure.md"
-                                },
-                                {
-                                    "path": "docs/reference/build_rules.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Configuration",
-                            "intro": {
-                                "path": "docs/reference/configuration/configuration.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/reference/configuration/mbed_targets.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/Platform.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/Drivers.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/RTOS.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/Connectivity.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/mesh.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/BLE.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/lorawanconfig.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/Storage.md"
-                                },
-                                {
-                                    "path": "docs/reference/configuration/bootloader.md"
-                                }
-                            ]
-                        }
-                    ]
                 }
             ]
         },
@@ -322,62 +215,6 @@
                         "path": "docs/tools/tools_intro.md"
                     },
                     "sources": []
-                },
-                {
-                    "title": "Developing: Mbed Online Compiler",
-                    "sub_chapters": [{
-                            "title": "Getting started",
-                            "intro": {
-                                "path": "docs/tools/IDE/online_comp.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/tools/IDE/oc_tut.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/compiler_publishing_code.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/updating_firmware.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Source control",
-                            "sources": [{
-                                    "path": "docs/tools/IDE/compiler_version_control.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/compiler_pull_requests.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/oc_pr_tut.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Collaborative work",
-                            "sources": [
-
-                                {
-                                    "path": "docs/tools/IDE/compiler_multiple_authors.md"
-                                },
-
-
-                                {
-                                    "path": "docs/tools/IDE/compiler_collab.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "The Online Compiler reference",
-                            "sources": [
-
-                                {
-                                    "path": "docs/tools/IDE/ide_ref.md"
-                                }
-                            ]
-                        }
-                    ]
                 },
                 {
                     "title": "Developing: Mbed Studio",
