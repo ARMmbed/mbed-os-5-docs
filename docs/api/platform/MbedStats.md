@@ -83,15 +83,15 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ## Thread statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-5.15/main.cpp)
 
 ## System information example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-5.15/main.cpp)
 
 ## CPU statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-5.15/main.cpp)
 
 ## Related content
 
