@@ -1,6 +1,6 @@
 # BufferedSerial
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_buffered_serial.png)<span>`BufferedSerial` class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_buffered_serial.png)<span>`BufferedSerial` class hierarchy</span></span>
 
 The `BufferedSerial` class provides UART functionality. We recommend you use this class for serial data transfers. You can use it to send and receive bytes of data in a sequence using separate transmit (TX) and receive pins (RX). A device can interface with another device (such as sensors, printers or another board) to exchange data or to send text to be displayed on a text-based computer interface.
 
@@ -50,7 +50,7 @@ You can view more information about the configurable settings and functions in t
 
 ## BufferedSerial class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_buffered_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_buffered_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. Please see the [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver) document for more information.</span>
 

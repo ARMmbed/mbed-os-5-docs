@@ -96,7 +96,7 @@ For more information see [platform/critical.h](../mbed-os-api-doxy/critical_8h_s
 
 - Network Socket API - **Thread safe**: public calls are protected by a mutex.
 - Nanostack - **Not protected**:  in general, we recommend that Mbed developers use our 6LoWPAN stack through the Network Socket API. If you wish to use Nanostack directly, you need to be aware of how it uses threads. The core of Nanostack runs on a tasklet mechanism, scheduled on a single underlying OS thread. Developers who wish to call directly to Nanostack must create their own tasklet and make Nanostack calls from there. Because there is only one OS thread servicing all tasklets, there is no need for further synchronization between tasklets. See the [6LoWPAN documentation](../apis/mesh-api.html).
-- `mbed-tls` - **Not protected**: function calls are safe from any thread as long as the objects they operate on are properly protected - see the [documentation](https://tls.mbed.org/kb/development/thread-safety-and-multi-threading).
+- `mbed-tls` - **Not protected**: function calls are safe from any thread as long as the objects they operate on are properly protected - see the [documentation](https://tls.mbed.org/kb/6.0.0-preview/thread-safety-and-multi-threading).
 - Mbed client - **Thread safe**: public calls are protected by a mutex.
 - BLE - **Not protected**: the expected use case for BLE is to run on one thread and serialize all events to that thread. This is analogous to the way Nanostack uses a thread. We provide a number of examples that showcase how to use BLE in a thread-safe way, including the [Eddystone Service](https://github.com/ARMmbed/ble-examples-morpheus/blob/mbed_cli_update/BLE_EddystoneService/source/main.cpp).
 

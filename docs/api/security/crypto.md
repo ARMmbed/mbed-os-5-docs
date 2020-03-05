@@ -29,4 +29,4 @@ resources:
 
  - [An overview of the PSA Crypto API](https://github.com/ARMmbed/mbed-crypto/blob/psa-api-1.0-beta/docs/PSA_Crypto_API_Overview.pdf).
  - [The PSA Crypto API reference](https://github.com/ARMmbed/mbed-crypto/blob/psa-api-1.0-beta/docs/PSA_Crypto_API_Reference.pdf).
- - [Other general developer documentation](https://github.com/ARMmbed/mbed-crypto/tree/development/docs).
+ - [Other general developer documentation](https://github.com/ARMmbed/mbed-crypto/tree/6.0.0-preview/docs).
