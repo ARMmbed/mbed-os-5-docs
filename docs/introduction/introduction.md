@@ -102,8 +102,8 @@ Please see the following sections of our documentation for more information.
 
 <h2 id="docs-updates">Recently updated documentation</h2>
 
+- New API references for [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
+- New content about [using small C libraries in Mbed OS bare metal](../reference/using-small-c-libraries.html).
 - A guide to [porting a custom board](../porting/porting-a-custom-board.html).
 - A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
 - The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
-- A [power optimization tutorial](../tutorials/power-optimization.html) about measuring and reducing power consumption.
-- A [mesh tutorial](../tutorials/mesh-tutorial.html) about selecting and using a mesh protocol.
