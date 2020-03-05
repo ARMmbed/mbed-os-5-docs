@@ -24,22 +24,22 @@ If you are using an old version of Mbed CLI, you may see compile-time errors. Ma
 
 ### Compiler versions
 
-Mbed OS 6.0.0 Preview can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../tools/index.html).
+Mbed OS can be built with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../tools/index.html).
 
 The default toolchain profiles now select C++14 and C11. Some applications that worked with older versions of Mbed OS may fail to compile because they use constructs that were valid in C++98 but not in C++14. To fix these common compatibility issues:
 
 - A space is required when a macro follows a string literal, for example in C99-style `printf` formats:
-   
+
    ```C++ NOCI
        uint32_t val;
        printf("val = %"PRIu32, val); // Not valid in C++11
        printf("val = %" PRIu32, val); // OK
    ```
-   
+
    Without the space, C++11 interprets it as being a request for a user-defined "PRIu32-type" string literal.
-   
+
 - Initializer lists cannot have implicit narrowing conversions:
-   
+
    ```C++ NOCI
        uint32_t x;
        uint8_t array1[] = { x }; // Not valid in C++11

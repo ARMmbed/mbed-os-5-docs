@@ -1,6 +1,6 @@
 <h1 id="target-port">Targets</h1>
 
-Adding a new microcontroller to Arm Mbed OS 6.0.0 Preview depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
+Adding a new microcontroller to Arm Mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
 ## Adding a new microcontroller and board
 
@@ -87,7 +87,7 @@ mbed test -t <toolchain> -m <target> -n mbed-os-tests-mbed_hal*
 ```
 
 ### FPGA
- 
+
 You can test your port using the FPGA test shield component, which you can find in the `mbed-os` repository.
 
 To run the FPGA test shield test, perform the following steps:

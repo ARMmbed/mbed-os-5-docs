@@ -1,6 +1,6 @@
 ## Runtime memory tracing
 
-Running out of memory is a common problem with resource constrained systems such as the MCUs on which Arm Mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in Mbed OS 6.0.0 Preview is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
+Running out of memory is a common problem with resource constrained systems such as the MCUs on which Arm Mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in Mbed OS is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
 
 ### Using the memory tracer
 

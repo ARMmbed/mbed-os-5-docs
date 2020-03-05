@@ -21,7 +21,7 @@ The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want t
 
 ### RTOS APIs
 
-The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 6.0.0 Preview , as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 6.0.0 Preview (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 6.0.0 Preview .
+The RTOS APIs handle creation and destruction of threads in Arm Mbed OS, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS.
 
 - [Thread](thread.html): The class that allows defining, creating and controlling parallel tasks.
 - [ThisThread](thisthread.html): The class with which you can control the current thread.

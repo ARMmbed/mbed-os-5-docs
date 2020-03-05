@@ -1,6 +1,6 @@
 # Further reading
 
-- [Mbed OS tutorials and examples](../tutorials/index.html): list of Mbed OS 6.0.0 Preview example repositories.
+- [Mbed OS tutorials and examples](../tutorials/index.html): list of Mbed OS example repositories.
 
 - Documentation:
     - [Mbed OS APIs](../apis/index.html): list of all APIs available in Mbed OS.

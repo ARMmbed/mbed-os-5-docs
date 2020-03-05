@@ -14,7 +14,7 @@
 
 1. Compile and run our BLE samples:
 
-    - **Arm Mbed OS 6.0.0 Preview samples** are available on [os.mbed.com](https://os.mbed.com/teams/mbed-os-examples/) and [GitHub](https://github.com/ARMmbed/mbed-os-example-ble):
+    - **Arm Mbed OS samples** are available on [os.mbed.com](https://os.mbed.com/teams/mbed-os-examples/) and [GitHub](https://github.com/ARMmbed/mbed-os-example-ble):
         - The [beacon](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Beacon/) example is a good starting point; it demonstrates how you can create a BLE beacon with just a few lines of code.  
         - The [heart rate monitor](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-HeartRate/) example demonstrates how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
         - The [LED](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker/) are a single example, which demonstrates how a client (LED) and a server (LED blinker) work together over BLE.

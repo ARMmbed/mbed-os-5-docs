@@ -9,9 +9,9 @@ The three Mbed OS development tools are Mbed Studio, Mbed CLI and the Mbed Onlin
 - Bring the Mbed OS source code from GitHub or `mbed.com`, along with all dependencies.
 - Compile your code with Mbed OS for a target, so you have a single file to flash to your board.
 
-We developed Mbed OS 6.0.0 Preview using the Mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an Mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
+We developed Mbed OS using the Mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an Mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
 
-`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS 6.0.0 Preview, so you can also use Mbed Studio or the Mbed Online Compiler for building Mbed OS 6.0.0 Preview examples and programs. Beginner developers or those who are not comfortable with the command-line may prefer Mbed Studio or the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the Arm Mbed OS 2 ecosystem.
+`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS, so you can also use Mbed Studio or the Mbed Online Compiler for building Mbed OS examples and programs. Beginner developers or those who are not comfortable with the command-line may prefer Mbed Studio or the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the Arm Mbed OS 2 ecosystem.
 
 ## Arm Mbed Online Compiler
 
@@ -34,7 +34,7 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 
 ### Compiler versions
 
-Mbed OS 6.0.0 Preview can be built with various toolchains. The currently supported versions are:
+Mbed OS can be built with various toolchains. The currently supported versions are:
 
 - Arm Compiler 6.13 (default ARM toolchain).
   - A paid version is available as [Arm Compiler 6.13 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
