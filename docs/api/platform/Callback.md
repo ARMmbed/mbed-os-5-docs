@@ -39,7 +39,7 @@ The Callback class is what’s known in C++ as a “Concrete Type”. That is, t
 
 The Callback API provides a convenient way to pass arguments to spawned threads. This example uses a C function pointer in the Callback.
 
- [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/file/5938bdb7b0bb/main.cpp)
+ [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Threading_with_callback/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Threading_with_callback/main.cpp)
 
 ## Sonar example
 

@@ -35,19 +35,19 @@ Like the previous example, this defers from interrupt to an event queue thread. 
 
 As the event queue is shared, you should limit the execution time of your event functions to avoid delaying other users’ events excessively.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_1/file/7c7d5b625e59/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Shared_Events_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Shared_Events_1/main.cpp)
 
 ## EventQueue example: posting events to the queue
 
 The code below demonstrates queueing functions to be called after a delay and queueing functions to be called periodically.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_2/)](https://os.mbed.com/teams/mbed_example/code/events_ex_2/file/488fe91e2e80/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
 
 ## EventQueue example: chaining events from more than one queue
 
 Event queues easily align with module boundaries, where event dispatch can implicitly synchronize internal state. Multiple modules can use independent event queues but still be composed through the `EventQueue::chain` function.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/events_ex_3/)](https://os.mbed.com/teams/mbed_example/code/events_ex_3/file/fca134a32b61/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_3/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_3/main.cpp)
 
 ## Shared event example: running the shared queue from main
 
@@ -55,7 +55,7 @@ To further save RAM, if you have no other work to do in your main function after
 
 To do this, set the `mbed_app.json` configuration option `events.shared-dispatch-from-application` to true, and add a dispatch call to main, as in this example. (The prints now show the same context for startup and `fall_handler`).
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/)](https://os.mbed.com/teams/mbed_example/code/Shared_Events_2/file/154179bdc39d/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Shared_Events_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Shared_Events_2/main.cpp)
 
 ## Static EventQueue example: posting user allocated events to the static queue
 

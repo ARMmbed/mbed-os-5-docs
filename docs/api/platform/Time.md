@@ -12,7 +12,7 @@ You cannot use `time`, `mktime` and `localtime` C standard library functions in 
 
 ## Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/time_HelloWorld/file/0c6401d671c6/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/time_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/time_HelloWorld/main.cpp)
 
 ## 2038
 

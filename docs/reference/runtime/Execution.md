@@ -27,4 +27,4 @@ All the ISR handlers execute in this mode. You can use the same RTOS API in ISR 
 
 This example uses a message from the queue to trigger an interrupt.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_isr/)](https://os.mbed.com/teams/mbed_example/code/rtos_isr/file/985db97e8ae0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Isr/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Isr/main.cpp)
