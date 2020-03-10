@@ -265,9 +265,6 @@
                             "path": "docs/api/drivers/FlashIAP.md"
                         },
                         {
-                            "path": "docs/api/drivers/Serial.md"
-                        },
-                        {
                             "path": "docs/api/drivers/BufferedSerial.md"
                         },
                         {
