@@ -62,14 +62,13 @@
 <td><a href="portin.html">PortIn</a></td>
 <td><a href="timer.html">Timer</a></td>
 <td><a href="bufferedserial.html">BufferedSerial</a></td>
-<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
 <td><a href="can.html">CAN</a></td>
 </tr>
 <tr>
 <td><a href="digitalin.html">DigitalIn</a></td>
 <td><a href="portout.html">PortOut</a></td>
 <td><a href="lowpowerticker.html">LowPowerTicker</a></td>
-<td><a href="serial.html">Serial</a></td>
+<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
 <td><a href="mbedcrc.html">MbedCRC</a></td>
 </tr>
 <tr>
