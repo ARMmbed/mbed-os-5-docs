@@ -63,7 +63,8 @@ These tutorials and examples show you how to perform specific tasks that use the
 | LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
 | LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
 | Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
-| RawSerial | [RawSerial example](../apis/rawserial.html#rawserial-examples) | [RawSerial Hello, World](../apis/rawserial.html#rawserial-hello-world) |
+| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
+| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
 | Serial | [Serial example](../apis/serial.html#serial-examples) | [Serial Hello, World](../apis/serial.html#serial-hello-world) |
 | SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
 | SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
