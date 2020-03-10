@@ -7,12 +7,6 @@
 <table>
 <tbody>
 <tr>
-<td><a href="wait.html">Wait</a></td>
-<td><a href="time.html">Time</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
-<td><a href="circularbuffer.html">CircularBuffer</a></td>
-</tr>
-<tr>
 <td><a href="callback.html">Callback</a></td>
 <td><a href="rtc.html">RTC</a></td>
 <td><a href="shared-pointer.html">Shared pointer</a></td>
@@ -41,6 +35,11 @@
 <td><a href="assert.html">Assert</a></td>
 <td><a href="platformmutex.html">PlatformMutex</a></td>
 <td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
+</tr>
+<tr>
+<td><a href="time.html">Time</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="circularbuffer.html">CircularBuffer</a></td>
 </tr>
 </tbody>
 </table>
