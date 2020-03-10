@@ -123,9 +123,6 @@
                         "path": "docs/api/platform/platform.md"
                     },
                     "sources": [{
-                            "path": "docs/api/platform/Wait.md"
-                        },
-                        {
                             "path": "docs/api/platform/Callback.md"
                         },
                         {
