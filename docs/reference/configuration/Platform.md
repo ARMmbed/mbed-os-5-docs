@@ -26,7 +26,7 @@ Name: platform.cthunk_count_max
     Macro name: MBED_CONF_PLATFORM_CTHUNK_COUNT_MAX
     Value: 8 (set by library:platform)
 Name: platform.default-serial-baud-rate
-    Description: Default baud rate for a Serial or RawSerial instance (if not specified in the constructor)
+    Description: Default baud rate for a serial object (if not specified in the constructor)
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE
     Value: 9600 (set by library:platform)
