@@ -189,7 +189,6 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SDBlockDevice | [SDBlockDevice example](../apis/sdblockdevice.html#sdblockdevice-example-application) |
 | SPIFBlockDevice | [SPIFBlockDevice example](../apis/spi-flash-block-device.html#spifblockdevice-example) |
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
-| NVStore | [NVStore](../apis/nvstore.html#nvstore-example) |
 
 ## Serial communication
 
