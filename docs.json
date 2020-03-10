@@ -456,9 +456,6 @@
                                 },
                                 {
                                     "path": "docs/api/storage/psa_protected_storage.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/NVStore.md"
                                 }
                             ]
                         }
