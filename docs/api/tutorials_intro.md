@@ -64,7 +64,6 @@ These tutorials and examples show you how to perform specific tasks that use the
 | Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
 | BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
 | UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
-| Serial | [Serial example](../apis/serial.html#serial-examples) | [Serial Hello, World](../apis/serial.html#serial-hello-world) |
 | SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
 | SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
 | QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
