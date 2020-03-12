@@ -14,7 +14,7 @@ The Mbed OS drivers use the PlatformMutex class instead of [Mutex](mutex.html). 
 
 ## PlatformMutex example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-mutex/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-mutex/file/2084d9e90526/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/PlatformMutex_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/PlatformMutex_ex_1/main.cpp)
 
 ## Related content
 
