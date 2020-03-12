@@ -31,4 +31,4 @@ The SPI master generates a clock to synchronously drive a serial bit stream slav
 
 The following example uses the WHOAMI register. The WHOAMI register is an ID register of the slave device. In other words, it's just an example that you can write to a slave's register. In this example, Mbed OS acts as the SPI master, and DigitalOut acts as the slave chip select (cs).
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/SPI_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/SPI_HelloWorld/file/3789302f33bc/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/SPI_HelloWorld/)](github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/SPI_HelloWorld/main.cpp)
