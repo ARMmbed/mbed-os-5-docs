@@ -12,7 +12,9 @@ You can use the LowPowerTimer interface to create, start, stop and read a timer 
 
 ## LowPowerTimer example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/LowPowerTimer-example/)](https://os.mbed.com/teams/mbed_example/code/LowPowerTimer-example/file/13760b19fc77/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/lowpowerTimer_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/lowpowerTimer_ex_1/main.cpp
+
+)
 
 ## Related content
 
