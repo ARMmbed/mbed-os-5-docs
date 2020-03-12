@@ -44,7 +44,7 @@ We can wait for digital input the same way we waited for time to pass - using a 
 
 <span class="tips">**Tip:** You may need to change the `SW1` pin, as the button on your board may be called something else. Please refer to the pinmap on the [boards page](https://os.mbed.com/platforms/).</span>
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-Busy-Wait-Button)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-Busy-Wait-Button/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-Active-Polling-Button)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-Active-Polling-Button/main.cpp)
 
 We constantly poll the button to see whether it has a value that matches `button_press`. If it matches, we toggle the LED and wait 1 second.
 
