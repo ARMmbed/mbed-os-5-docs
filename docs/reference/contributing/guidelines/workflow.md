@@ -277,3 +277,13 @@ The following labels summarize the scope of the pull request:
 - *scope: feature*.
 - *scope: new-target*.
 - *scope: refactor*.
+
+
+### Documentation contribution labels
+
+The [documentation repository](https://github.com/ARMmbed/mbed-os-5-docs) uses some of the same labels that the `mbed-os` repository does. In addition, it includes: 
+
+- *code dependency* - The feature or change this pull request describes has not yet merged into `master` in `mbed-os`. Even if all the required reviewers have reviewed and approved this pull request, it must wait to merge until its code does.
+- *wait to merge* - This pull request is a work in progress and is not yet ready for full review. 
+- *Scripting work - not for writers* - This issue requires a change too large or frequent for us to do manually. Instead, a script needs to be created to fix this issue.
+- *help wanted* - The documentation team does not know how to answer this question and welcomes help in answering it.
