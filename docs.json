@@ -371,15 +371,19 @@
                         "path": "docs/api/storage/storage.md"
                     },
                     "sub_chapters": [{
-                            "title": "Data concepts",
-                            "sources": [{
-                                    "path": "docs/api/storage/storage-config.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/storage-arch.md"
-                                }
-                            ]
+                            "title": "Data options and config",
+                            "intro": {
+                                "path": "docs/api/storage/storage-config.md"
+                            },
+                            "sources": []
                         },
+                        {
+                            "title": "Data architecture",
+                            "intro": {
+                                "path": "docs/api/storage/storage-arch.md"
+                            },
+                            "sources": []
+                        },                        
                         {
                             "title": "Data APIs",
                             "sources": [{
