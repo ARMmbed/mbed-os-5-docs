@@ -198,6 +198,13 @@
                             "sources": []
                         },
                         {
+                            "title": "RTOS general information",
+                            "intro": {
+                                "path": "docs/api/rtos/thread_safety.md"
+                            },
+                            "sources": []
+                        },
+                        {
                             "title": "RTOS APIs",
                             "sources": [{
                                     "path": "docs/api/rtos/Thread.md"
@@ -241,13 +248,6 @@
                             "title": "RTOS tutorials",
                             "intro": {
                                 "path": "docs/api/rtos/events_tutorial.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "RTOS general information",
-                            "intro": {
-                                "path": "docs/api/rtos/thread_safety.md"
                             },
                             "sources": []
                         }
@@ -376,14 +376,7 @@
                                 "path": "docs/api/storage/storage-config.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "Data architecture",
-                            "intro": {
-                                "path": "docs/api/storage/storage-arch.md"
-                            },
-                            "sources": []
-                        },                        
+                        },                 
                         {
                             "title": "Data APIs",
                             "sources": [{
@@ -453,7 +446,14 @@
                                     "path": "docs/api/storage/psa_protected_storage.md"
                                 }
                             ]
-                        }
+                        },
+                        {
+                            "title": "Data architecture",
+                            "intro": {
+                                "path": "docs/api/storage/storage-arch.md"
+                            },
+                            "sources": []
+                        }      
                     ]
                 },
                 {
