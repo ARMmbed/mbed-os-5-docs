@@ -267,9 +267,6 @@
                         },
                         {
                             "title": "I/O APIs",
-                            "intro": {
-                                "path": "docs/api/io/drivers.md"
-                            },
                             "sources": [{
                                     "path": "docs/api/io/AnalogIn.md"
                                 },
