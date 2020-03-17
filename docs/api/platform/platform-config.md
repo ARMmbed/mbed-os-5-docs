@@ -2,7 +2,7 @@
 
 The utilities configurations allow for customization of utilities-level OS options. These options include error handling properties and serial communication configuration settings for STDIO. They affect system level `printf` calls, not Serial objects, with the exception of `default-serial-baud-rate`.
 
-This is the complete list of utilities configuration parameters. To view all utilities parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
+This is the complete list of utilities configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
 
 ```
 Configuration parameters
