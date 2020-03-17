@@ -523,13 +523,6 @@
                         "path": "docs/api/networkinterfaces/networkinterface.md"
                     },
                     "sub_chapters": [{
-                            "title": "Options and config",
-                            "intro": {
-                                "path": "docs/api/networkinterfaces/mesh-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "APIs",
                             "sources": [{
                                     "path": "docs/api/networkinterfaces/EthInterface.md"
@@ -649,13 +642,6 @@
                         "path": "docs/api/bluetooth/bluetooth.md"
                     },
                     "sub_chapters": [{
-                            "title": "BLE options and config",
-                            "intro": {
-                                "path": "docs/api/bluetooth/ble-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "BLE APIs",
                             "sources": [{
                                     "path": "docs/api/bluetooth/BLE.md"
@@ -698,13 +684,6 @@
                         "path": "docs/api/lorawan/lorawanintro.md"
                     },
                     "sub_chapters": [{
-                            "title": "LoRaWAN options and config",
-                            "intro": {
-                                "path": "docs/api/lorawan/lorawanconfig.md"
-                            },
-                            "sources": []
-                        },
-                        {
                             "title": "LoRaWAN APIs",
                             "sources": [{
                                     "path": "docs/api/lorawan/lorawan.md"
