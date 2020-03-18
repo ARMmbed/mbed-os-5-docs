@@ -14,19 +14,4 @@ The default format is set to 8 bits, mode 0 and a clock frequency of 1MHz. Synch
 
 Reply to a SPI master as slave:
 
-```c++
-#include "mbed.h"
-
-SPISlave device(D9, D11, D12, D13); // mosi, miso, sclk, ssel
-
-int main() {
-   device.reply(0x00);              // Prime SPI with first reply
-   while(1) {
-       if(device.receive()) {
-           int v = device.read();   // Read byte from master
-           v = (v + 1) % 0x100;     // Add one to it, modulo 256
-           device.reply(v);         // Make this the next reply
-       }
-   }
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/SPISlave)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/SPISlave/main.cpp)
