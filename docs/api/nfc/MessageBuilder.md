@@ -8,25 +8,7 @@ Mbed OS provides this API to construct NDEF messages, the common data format exc
 
 ## MessageBuilder example
 
-```
-#include "nfc/ndef/MessageBuilder.h"
-
-using mbed::nfc::ndef::MessageBuilder;
-using mbed::nfc::ndef::common::Text;
-using mbed::nfc::ndef::common::URI;
-
-size_t build_ndef_message(const Span<uint8_t> &buffer) {
-    MessageBuilder builder(buffer);
-
-    URI uri(URI::HTTPS_WWW, span_from_cstr("mbed.com"));
-    Text text(Text::UTF8, span_from_cstr("en-US"), span_from_cstr("Mbed website"));
-
-    uri.append_as_record(builder);
-    text.append_as_record(builder, /* last record */ true);
-
-    return builder.get_message().size();
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NFC/MessageBuilder)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NFC/MessageBuilder/main.cpp)
 
 ## Related content
 
