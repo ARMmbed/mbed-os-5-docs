@@ -505,6 +505,96 @@
                                 },
                                 {
                                     "path": "docs/api/networksocket/SocketStats.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/EthInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/WifiInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/CellularInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/MeshInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/NetworkStatus.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBAudio.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBHID.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouseKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/BLE.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/Gap.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/GattClient.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/GattServer.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/SecurityManager.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/BatteryService.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/HeartRateService.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/iBeacon.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lorawan.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/loraradio.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/NFCController.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/NFCEEPROM.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/MessageParser.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/SimpleMessageParser.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/MessageBuilder.md"
                                 }
                             ]
                         },
@@ -573,146 +663,31 @@
                     "title": "Network interfaces",
                     "intro": {
                         "path": "docs/api/networkinterfaces/networkinterface.md"
-                    },
-                    "sub_chapters": [{
-                            "title": "APIs",
-                            "sources": [{
-                                    "path": "docs/api/networkinterfaces/EthInterface.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/WifiInterface.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/CellularInterface.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/MeshInterface.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/NetworkStatus.md"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
                     "title": "USB",
                     "intro": {
                         "path": "docs/api/usb/usb_component.md"
-                    },
-                    "sub_chapters": [{
-                            "title": "USB APIs",
-                            "sources": [{
-                                    "path": "docs/api/usb/USBSerial.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBAudio.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBHID.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC_ECM.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMSD.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMIDI.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouse.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBKeyboard.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouseKeyboard.md"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
                     "title": "Bluetooth",
                     "intro": {
                         "path": "docs/api/bluetooth/bluetooth.md"
-                    },
-                    "sub_chapters": [{
-                            "title": "BLE APIs",
-                            "sources": [{
-                                    "path": "docs/api/bluetooth/BLE.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/Gap.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/GattClient.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/GattServer.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/SecurityManager.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/BatteryService.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/HeartRateService.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/iBeacon.md"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
                     "title": "LoRaWAN",
                     "intro": {
                         "path": "docs/api/lorawan/lorawanintro.md"
-                    },
-                    "sub_chapters": [{
-                            "title": "LoRaWAN APIs",
-                            "sources": [{
-                                    "path": "docs/api/lorawan/lorawan.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/loraradio.md"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
                     "title": "NFC",
                     "intro": {
                         "path": "docs/api/nfc/NDEF.md"
-                    },
-                    "sub_chapters": [{
-                            "title": "NFC APIs",
-                            "sources": [{
-                                    "path": "docs/api/nfc/NFCController.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/NFCEEPROM.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/MessageParser.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/SimpleMessageParser.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/MessageBuilder.md"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
                     "title": "Cloud connection",
