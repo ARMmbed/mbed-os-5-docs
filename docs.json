@@ -462,19 +462,38 @@
                         "path": "docs/api/networksocket/networksocket.md"
                     },
                     "sub_chapters": [{
-                            "title": "Options and config",
+                            "title": "Concepts",
                             "intro": {
-                                "path": "docs/api/connectivity-config.md"
+                                "path": "docs/api/networkinterfaces/networkinterface.md"
                             },
                             "sources": [{
-                                "path": "docs/api/lorawan/lorawanconfig.md"
+                                "path": "docs/api/usb/usb_component.md"
                             },
                             {
-                                "path": "docs/api/bluetooth/ble-config.md"
+                                "path": "docs/api/bluetooth/bluetooth.md"
                             },
                             {
-                                "path": "docs/api/networkinterfaces/mesh-config.md"
+                                "path": "docs/api/lorawan/lorawanintro.md"
+                            },
+                            {
+                                "path": "docs/api/nfc/NDEF.md"
                             }
+                            ]
+                        },
+                        {
+                            "title": "Options and config",
+                            "sources": [{
+                                    "path": "docs/api/connectivity-config.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lorawanconfig.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/ble-config.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-config.md"
+                                }
                             ]
                         },
                         {
@@ -658,36 +677,6 @@
                           ]
                         }
                     ]
-                },
-                {
-                    "title": "Network interfaces",
-                    "intro": {
-                        "path": "docs/api/networkinterfaces/networkinterface.md"
-                    }
-                },
-                {
-                    "title": "USB",
-                    "intro": {
-                        "path": "docs/api/usb/usb_component.md"
-                    }
-                },
-                {
-                    "title": "Bluetooth",
-                    "intro": {
-                        "path": "docs/api/bluetooth/bluetooth.md"
-                    }
-                },
-                {
-                    "title": "LoRaWAN",
-                    "intro": {
-                        "path": "docs/api/lorawan/lorawanintro.md"
-                    }
-                },
-                {
-                    "title": "NFC",
-                    "intro": {
-                        "path": "docs/api/nfc/NDEF.md"
-                    }
                 },
                 {
                     "title": "Cloud connection",
