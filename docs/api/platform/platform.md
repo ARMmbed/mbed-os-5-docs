@@ -1,8 +1,8 @@
-# Platform overview
+# Utilities overview
 
-The role of the platform modules is to provide general purpose MCU management infrastructure, a few common data structures and  a consistent user experience on top of different standard libraries and toolchains. This page contains reference material about these subjects.
+The role of the utilities APIs is to provide general purpose MCU management infrastructure, a few common data structures and  a consistent user experience on top of different standard libraries and toolchains. This page contains reference material about these subjects.
 
-## General MCU Management Infrastructure
+## General MCU management infrastructure
 
 Mbed OS eases MCU management through the use of several scoped locks and several global APIs.
 

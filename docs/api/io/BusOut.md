@@ -17,7 +17,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
 ## BusOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/BusOut_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/BusOut_HelloWorld/file/b07a5ecb7618/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BusOut_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BusOut_ex_1/main.cpp)
 
 ## Related content
 

@@ -1,8 +1,8 @@
-<h1 id="configuration-platform">Platform</h1>
+<h1 id="configuration-util">Utilities</h1>
 
-The platform configurations allow for customization of platform level OS options. These options include error handling properties and serial communication configuration settings for STDIO. They work out of platform because they affect system level `printf` calls, not Serial objects, with the exception of `default-serial-baud-rate`.
+The utilities configurations allow for customization of utilities-level OS options. These options include error handling properties and serial communication configuration settings for STDIO. They affect system level `printf` calls, not Serial objects, with the exception of `default-serial-baud-rate`.
 
-This is the complete list of platform configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
+This is the complete list of utilities configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
 
 ```
 Configuration parameters
@@ -26,7 +26,7 @@ Name: platform.cthunk_count_max
     Macro name: MBED_CONF_PLATFORM_CTHUNK_COUNT_MAX
     Value: 8 (set by library:platform)
 Name: platform.default-serial-baud-rate
-    Description: Default baud rate for a Serial or RawSerial instance (if not specified in the constructor)
+    Description: Default baud rate for a serial object (if not specified in the constructor)
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE
     Value: 9600 (set by library:platform)

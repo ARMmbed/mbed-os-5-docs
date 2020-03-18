@@ -10,7 +10,7 @@ You can use any of the numbered Arm Mbed pins can be used as a DigitalIn.
 
 ## DigitalIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_HelloWorld/file/9377dcb1cef3/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/DigitalIn_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/DigitalIn_ex_1/main.cpp)
 
 ## DigitalIn example
 
@@ -18,7 +18,7 @@ To handle an interrupt, see [InterruptIn](interruptin.html).
 
 Examples of logical functions - boolean logic NOT, AND, OR, XOR:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/)](https://os.mbed.com/teams/mbed_example/code/DigitalIn_ex_1/file/ad8683db322a/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/DigitalIn_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/DigitalIn_ex_2/main.cpp)
 
 ## Related content
 

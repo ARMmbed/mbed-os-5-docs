@@ -16,7 +16,7 @@ You can view more information about the configurable settings and functions in t
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver).</span>
 
-## Example
+## UnbufferedSerial Example
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial/main.cpp)
 

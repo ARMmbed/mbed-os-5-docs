@@ -30,7 +30,7 @@ Classes implementing KVStore API:
 
 ## KVStore example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/mbed-os-5.15/main.cpp)
 
 ## Related content
 
