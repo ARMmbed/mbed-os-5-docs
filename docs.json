@@ -513,7 +513,40 @@
                             "intro": {
                                 "path": "docs/api/networking-arch.md"
                             },
-                            "sources": []
+                            "sources": [{
+                                "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/wifi-arch.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                            },
+                            {
+                                "path": "docs/api/networkinterfaces/cellular-arch.md"
+                            },
+                            {
+                                "path": "docs/api/usb/usb-arch.md"
+                            },
+                            {
+                                "path": "docs/api/lorawan/lora-tech.md"
+                            },
+                            {
+                                "path": "docs/api/nfc/nfc-arch.md"
+                            }
+                          ]
                         }
                     ]
                 },
@@ -548,34 +581,6 @@
                                 },
                                 {
                                     "path": "docs/api/light-control.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Architecture",
-                            "intro": {
-                                "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/wifi-arch.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/ethernet-arch.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
                                 }
                             ]
                         }
@@ -624,13 +629,6 @@
                             "title": "USB tutorials",
                             "intro": {
                                 "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "USB architecture",
-                            "intro": {
-                                "path": "docs/api/usb/usb-arch.md"
                             },
                             "sources": []
                         }
@@ -699,13 +697,6 @@
                                 "path": "docs/api/lorawan/intro-to-lora.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "LoRaWAN architecture",
-                            "intro": {
-                                "path": "docs/api/lorawan/lora-tech.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -732,13 +723,6 @@
                                     "path": "docs/api/nfc/MessageBuilder.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "NFC architecture",
-                            "intro": {
-                                "path": "docs/api/nfc/nfc-arch.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
