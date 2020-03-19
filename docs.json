@@ -837,13 +837,21 @@
                         "path": "docs/api/memory/runtime_mem_trace.md"
                     },
                     "sub_chapters": [{
-                            "title": "Memory APIs",
+                            "title": "Memory Concepts",
                             "sources": [{
                                     "path": "docs/api/memory/runtime_stats.md"
                                 },
                                 {
                                     "path": "docs/api/memory/printf.md"
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Memory APIs",
+                            "intro": {
+                                "path": "docs/program-setup/runtime/static_memory_optimization.md"
+                            },
+                            "sources": [                                
                                 {
                                     "path": "docs/api/memory/MbedStats.md"
                                 },
