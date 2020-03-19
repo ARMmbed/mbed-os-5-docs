@@ -18,28 +18,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html), whose read size is 256 bytes and program size is 512 bytes, and shows how one can read or program this block device with much smaller read/program sizes, using BufferedBlockDevice.
 
-```C++ TODO
-
-    HeapBlockDevice heap_bd(1024, 256, 512, 512);
-    BufferedBlockDevice buf_bd(&heap_bd);
-
-    // This initializes the buffered block device (as well as the underlying heap block device)
-    int err = buf_bd.init();
-
-    uint8_t buf[8];
-    for (int i = 0; i < sizeof(buf); i++) {
-         buf[i] = i;
-    }
-
-    // Now we can program an 8 byte buffer (couldn't do that in underlying BD, having 512-byte program size)
-    err = buf_bd.program(buf, 0, sizeof(buf));
-
-    // Now we can also read one byte
-    err = buf_bd.read(buf, 0, 1);
-
-    // Ensure programmed data is flushed to the underlying block device
-    err = buf_bd.sync();
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/BufferedBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/BufferedBlockDevice/main.cpp)
 
 ## Related content
 
