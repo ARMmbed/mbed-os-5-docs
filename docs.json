@@ -834,14 +834,11 @@
                 {
                     "title": "Memory",
                     "intro": {
-                        "path": "docs/api/memory/memory_intro.md"
+                        "path": "docs/api/memory/runtime_mem_trace.md"
                     },
                     "sub_chapters": [{
                             "title": "Memory APIs",
                             "sources": [{
-                                    "path": "docs/api/memory/runtime_mem_trace.md"
-                                },
-                                {
                                     "path": "docs/api/memory/runtime_stats.md"
                                 },
                                 {
