@@ -12,17 +12,8 @@ The `ScopedRamExecutionLock` class provides an RAII object for enabling executio
 
 This example shows how you can enable execution from RAM from main:
 
-```C++ NOCI
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/ScopedRamExecutionLock)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/ScopedRamExecutionLock/main.cpp)
 
-int main()
-{
-    // Enable execution from RAM while in main
-    ScopedRamExecutionLock make_ram_executable;
-
-    some_function_in_ram();
-}
-```
 ## Related content
 
 - [MPU Management API references](mpu-management.html).
