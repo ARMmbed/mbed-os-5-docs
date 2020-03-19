@@ -185,85 +185,11 @@ As such, you can only use `Stream`-based devices for blocking I/O, such as throu
 
 ## FileHandle using C library example
 
-```
-// Continuously monitor a serial device, and every time it outputs a
-// character, send it to the console and toggle LED2. Can use the C library
-// to access the device as only using blocking I/O.
-//
-// Note that the console is accessed using putchar - this will be accessing
-// a FileHandle-based device under the surface, but the particular device can be
-// target-dependent. This makes the program portable to different devices
-// with different console types, with the only target-dependence being
-// knowledge of which pins the serial device we're monitoring is attached to,
-// which can be configured using JSON.
-
-static DigitalOut led2(LED2);
-
-// UARTSerial derives from FileHandle
-static UARTSerial device(MBED_CONF_APP_DEVICE_TX, MBED_CONF_APP_DEVICE_RX);
-
-int main()
-{
-    // Perform device-specific setup
-    device.set_baud(19200);
-
-    // Once set up, access through the C library
-    FILE *devin = fdopen(&device, "r");
-
-    while (1) {
-        putchar(fgetc(devin));
-        led2 = !led2;
-    }
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle/main.cpp)
 
 ## FileHandle sigio example
 
-```
-// Main thread flashes LED1, while we monitor a serial-attached device
-// in the background. Every time that device outputs a character, we echo
-// it to the console and toggle LED2.
-#include "mbed.h"
-
-static DigitalOut led1(LED1);
-static DigitalOut led2(LED2);
-
-static UARTSerial device(MBED_CONF_APP_DEVICE_TX, MBED_CONF_APP_DEVICE_RX);
-
-static void callback_ex()
-{
-    // always read until data is exhausted - we may not get another
-    // sigio otherwise
-    while (1) {
-        char c;
-        if (device.read(&c, 1) != 1) {
-            break;
-        }
-        putchar(c);
-        led2 = !led2;
-    }
-}
-
-int main()
-{
-    // UARTSerial-specific method - all others are from FileHandle base class
-    device.set_baud(19200);
-
-    // Ensure that device.read() returns -EAGAIN when out of data
-    device.set_blocking(false);
-
-    // sigio callback is deferred to event queue, as we cannot in general
-    // perform read() calls directly from the sigio() callback.
-    device.sigio(mbed_event_queue()->event(callback_ex));
-
-    while (1) {
-        led1 = !led1;
-        wait(0.5);
-    }
-}
-
-```
-
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle_sigio)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle_sigio/main.cpp)
 ## Related content
 
 - [File](file.html).
