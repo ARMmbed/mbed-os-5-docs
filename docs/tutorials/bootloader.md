@@ -6,6 +6,33 @@ This guide explains how to create a [bootloader](../reference/bootloader-configu
 
 The tools of Arm Mbed OS know how to manage some bootloader projects. The tools can manage bootloader projects where the bootloader comes before the application in ROM and the application starts immediately after the bootloader. If your bootloader does not meet both of these requirements, then please read the [unmanaged bootloader section](#unmanaged-bootloader). A managed bootloader project automatically merges the bootloader image with the application image as part of the application image build process.
 
+### Background: boot sequences and fault tolerance
+
+A boot sequence can have several stages of bootloaders, leading to an application. The different stages (including the application) may need to evolve over time, to add features or bug-fixes. Upgrades are possible for boot sequences with two or more stages: any active stage can replace the next stage in the sequence; when the system restarts, it executes the updated components. Typically, however, the very first stage isn't replaced; because it takes control on startup, a faulty upgrade of this stage can make recovery impossible. This is known as stage 0 bootloader.
+
+To protect against faults in the newly updated components, we store multiple versions (up to a certain maximum number of versions). Each stage is responsible for detecting faults in the following component and rolling it back if it discovers faults. For example, if the third stage is unstable, needs additional functionality or is otherwise behaving incorrectly, the second stage (during the *next* startup sequence) can roll the third stage back to an earlier version before handing over control. This results in a boot sequence tree traversed depth-first as the system recovers from successive faults.
+
+Most boot sequences are composed of three stages:
+
+1. Boot selector (also known as **root bootloader** or **stage zero bootloader**): does not get upgraded.
+1. Bootloader: upgradable, with several versions stored on the device.
+1. Application: upgradable, with several versions stored on the device.
+
+Fault tolerance ultimately rests on the sanity of the first-stage bootloader. This bootloader is usually kept minimal to ensure dependable operation.
+
+The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it fulfills the requirements of the boot selector: It is small enough to minimize the chance of bugs, but advanced enough to install new images.
+
+### Managed and unmanaged bootloader tool integration
+
+Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
+
+- The bootloader comes before the application in ROM.
+- The application starts immediately after the bootloader.
+
+If the Mbed tool finds a managed bootloader, the image build process automatically merges the bootloader image with the application image.
+
+If your bootloader does not meet the two requirements of a manageable bootloader, you will need an unmanaged bootloader. The Mbed tools do not automatically combine this bootloader with the application image; you need to write your own scripts to build your full image.
+
 ### Creating the bootloader
 
 Creating a bootloader is similar to creating a regular application. The only additional step you need is to specify the size of the bootloader as a target override in `mbed_app.json` in the target field `target.restrict_size`:
@@ -134,7 +161,6 @@ This configuration adds a new region, named header, after the bootloader and bef
 |                   |
 +-------------------+   BOOTLOADER_ADDR == Start of ROM
 ```
-
 
 ## Prebuilt bootloaders
 
