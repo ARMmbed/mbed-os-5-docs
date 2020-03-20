@@ -1,6 +1,6 @@
 # Creating and using a bootloader
 
-This guide explains how to create a [bootloader](../reference/bootloader-configuration.html), how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
+A bootloader is a program that loads Mbed OS when a board is turned on. This guide explains how to create a [bootloader](../reference/bootloader-configuration.html), how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
 ## Arm Mbed OS managed bootloader
 
