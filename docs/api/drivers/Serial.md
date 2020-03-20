@@ -8,12 +8,6 @@ The [Serial](../introduction/glossary.html) interface provides UART functionalit
 
 One of the serial connections uses the Arm Mbed USB port, allowing you to easily communicate with your host PC.
 
-## Serial class reference
-
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_serial.html)
-
-<span class="notes">**Note**: On a Windows machine, you will need to install a USB serial driver. See [Windows serial configuration](../tutorials/windows-serial-driver.html).</span>
-
 Serial channels have the following configurable parameters:
 
   - _TX and RX Pin_ - The physical serial transmit and receive pins. You can specify a TX or RX pin as Not Connected (NC) to get Simplex communication, or specify both to get Full Duplex communication.
