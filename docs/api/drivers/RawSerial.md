@@ -20,6 +20,12 @@ The following parameters can be configured at run time in the RawSerial object. 
 
 The default settings for the microcontroller are described as _9600-8-N-1_, a common notation for serial port settings.
 
+## RawSerial class reference
+
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_raw_serial.html)
+
+<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver).</span>
+
 ## RawSerial hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/RawSerial_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/RawSerial_HelloWorld/file/112a40a5991a/main.cpp)
