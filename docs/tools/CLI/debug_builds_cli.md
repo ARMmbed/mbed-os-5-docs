@@ -4,24 +4,10 @@ After you've set up your [local debug toolchain](../tools/build-profiles.html), 
 
 <span class="notes">**Note:** Make sure to do a clean build when switching to and from debug and release by removing the `BUILD` folder.</span>
 
-## Compile commands
-
-**Arm Mbed OS 5.2 and later**
+## Compile command
 
 ```
 $ mbed compile --profile mbed-os/tools/profiles/debug.json
-```
-
-**Arm Mbed OS 5.0 and 5.1**
-
-```
-$ mbed compile -o debug-info
-```
-
-**Arm Mbed 2.0**
-
-```
-$ mbed compile --profile debug
 ```
 
 ## Exporting with debug symbols

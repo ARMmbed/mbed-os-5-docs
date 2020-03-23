@@ -21,7 +21,7 @@ A few micro:bit How To videos:
 - [Accelerometer](https://www.youtube.com/watch?v=_WGKBxSW_AE)
 - [Proximity heart](https://www.youtube.com/watch?v=xKWQSjg6rX4)
 
-## JavaScript on Arm Mbed OS 5
+## JavaScript on Arm Mbed OS
 
 - [Building IoT devices with JavaScript](https://os.mbed.com/javascript-on-mbed/)
 - [Blinky in JavaScript](https://github.com/ARMmbed/mbed-js-example)
