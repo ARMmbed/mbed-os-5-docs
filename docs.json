@@ -1081,7 +1081,7 @@
                     ]
                 },
                 {
-                    "title": "Exporting",
+                    "title": "Third-party build tools",
                     "sub_chapters": [{
                         "title": "Exporting",
                         "intro": {
@@ -1093,7 +1093,7 @@
                     }]
                 },
                 {
-                    "title": "Debugging",
+                    "title": "Debug tools",
                     "sources": [{
                             "path": "docs/tools/debug/debug_intro.md"
                         },
@@ -1136,7 +1136,7 @@
                     ]
                 },
                 {
-                    "title": "Testing",
+                    "title": "Test tools",
                     "sources": [{
                             "path": "docs/tools/testing/testing_intro.md"
                         },
