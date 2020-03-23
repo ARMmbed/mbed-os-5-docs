@@ -1202,7 +1202,7 @@
             "slug": "porting",
             "type": "markdown",
             "chapters": [{
-                    "title": "Porting process",
+                    "title": "Full port",
                     "intro": {
                         "path": "docs/porting/porting_full_process/porting_start.md"
                     },
@@ -1234,7 +1234,7 @@
                     ]
                 },
                 {
-                    "title": "Porting a custom board",
+                    "title": "Derivative port",
                     "intro": {
                         "path": "docs/porting/custom-target-porting.md"
                     }
