@@ -1137,28 +1137,30 @@
                 },
                 {
                     "title": "Test tools",
-                    "sources": [{
+                    "sub_chapters": [{
+                        "title": "Testing",
+                        "intro": {
                             "path": "docs/tools/testing/testing_intro.md"
                         },
-                        {
+                        "sources": [{
                             "path": "docs/tools/testing/unit_testing.md"
-                        },
-                        {
+						},
+						{
                             "path": "docs/tools/testing/testing_greentea.md"
-                        },
-                        {
+						},
+						{
                             "path": "docs/tools/testing/testing_icetea.md"
-                        },
-                        {
+						},
+						{
                             "path": "docs/tools/testing/icetea.md"
-                        },
-                        {
+						},
+						{
                             "path": "docs/tools/testing/utest.md"
-                        },
-                        {
+						},
+						{
                             "path": "docs/tools/fastmodels/fastmodels.md"
-                        }
-                    ]
+						}]
+                    }]
                 }
             ],
             "tags": [
