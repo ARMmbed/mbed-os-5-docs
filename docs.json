@@ -1044,38 +1044,61 @@
                         "path": "docs/tools/CLI/cli.md"
                     },
                     "sub_chapters": [{
-                            "title": "Installation and setup",
+                            "title": "Install and set up",
                             "sources": [{
                                 "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
                             }]
                         },
                         {
-                            "title": "Working with Mbed CLI",
+                            "title": "Create",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-create.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-compile.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-collaborate.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-test-debug.md"
-                                },
-                                {
+                                "path": "docs/tools/CLI/cli-create.md"
+                            }]
+                        },
+                        {
+                            "title": "Compile",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-compile.md"
+                            }]
+                        },
+                        {
+                            "title": "Create",
+                            "sources": []
+                        },
+
+                        {
+                            "title": "Test and debug",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-test-debug.md"
+                            }]
+                        },
+                        {
+                            "title": "Build profiles",
+                            "sources": [{
                                     "path": "docs/tools/CLI/build_profiles.md"
                                 },
                                 {
                                     "path": "docs/tools/CLI/debug_builds_cli.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-device-management.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/troubleshooting.md"
                                 }
                             ]
+                        },
+                        {
+                            "title": "Update devices",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-device-management.md"
+                            }]
+                        },
+                        {
+                            "title": "Collaborate",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-collaborate.md"
+                            }]
+                        },
+                        {
+                            "title": "Troubleshoot",
+                            "sources": [{
+                                "path": "docs/tools/CLI/troubleshooting.md"
+                            }]
                         }
                     ]
                 },
