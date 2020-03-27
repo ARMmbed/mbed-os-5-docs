@@ -965,11 +965,18 @@
             ]
         },
         {
-            "title": "Mbed build tools",
+            "title": "Build tools",
             "description": "",
-            "slug": "mbed-build-tools",
+            "slug": "build-tools",
             "type": "markdown",
             "chapters": [{
+                    "title": "Overview",
+                    "intro": {
+                        "path": "docs/tools/tools_intro.md"
+                    },
+                    "sources": []
+                },
+                {
                     "title": "Mbed Online Compiler",
                     "sub_chapters": [{
                             "title": "Getting started",
@@ -1071,19 +1078,16 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "title": "Exporting to third-party buid tools",
-            "description": "",
-            "slug": "exporting",
-            "type": "markdown",
-            "sources": [{
-                    "path": "docs/tools/toolchains/export_to_third_party.md"
                 },
                 {
-                    "path": "docs/tools/toolchains/exporters.md"
+                    "title": "Exporting to third-party buid tools",
+                    "sources": [{
+                            "path": "docs/tools/toolchains/export_to_third_party.md"
+                        },
+                        {
+                            "path": "docs/tools/toolchains/exporters.md"
+                        }
+                    ]
                 }
             ]
         },
