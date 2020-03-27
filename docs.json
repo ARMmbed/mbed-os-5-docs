@@ -376,7 +376,7 @@
                                 "path": "docs/api/storage/storage-config.md"
                             },
                             "sources": []
-                        },                 
+                        },
                         {
                             "title": "Data APIs",
                             "sources": [{
@@ -453,7 +453,7 @@
                                 "path": "docs/api/storage/storage-arch.md"
                             },
                             "sources": []
-                        }      
+                        }
                     ]
                 },
                 {
@@ -851,8 +851,7 @@
                             "intro": {
                                 "path": "docs/program-setup/runtime/static_memory_optimization.md"
                             },
-                            "sources": [                                
-                                {
+                            "sources": [{
                                     "path": "docs/api/memory/MbedStats.md"
                                 },
                                 {
@@ -966,19 +965,12 @@
             ]
         },
         {
-            "title": "Tools",
-            "description": "Details of the tools available for working with Mbed OS",
-            "slug": "tools",
+            "title": "Mbed build tools",
+            "description": "",
+            "slug": "mbed-build-tools",
             "type": "markdown",
             "chapters": [{
-                    "title": "Overview",
-                    "intro": {
-                        "path": "docs/tools/tools_intro.md"
-                    },
-                    "sources": []
-                },
-                {
-                    "title": "Developing: Mbed Online Compiler",
+                    "title": "Mbed Online Compiler",
                     "sub_chapters": [{
                             "title": "Getting started",
                             "intro": {
@@ -1034,13 +1026,13 @@
                     ]
                 },
                 {
-                    "title": "Developing: Mbed Studio",
+                    "title": "Mbed Studio",
                     "sources": [{
                         "path": "docs/tools/Studio/mbed-studio.md"
                     }]
                 },
                 {
-                    "title": "Developing: Mbed CLI",
+                    "title": "Mbed CLI",
                     "intro": {
                         "path": "docs/tools/CLI/cli.md"
                     },
@@ -1079,21 +1071,29 @@
                             ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "title": "Exporting to third-party buid tools",
+            "description": "",
+            "slug": "exporting",
+            "type": "markdown",
+            "sources": [{
+                    "path": "docs/tools/toolchains/export_to_third_party.md"
                 },
                 {
-                    "title": "Third-party build tools",
-                    "sub_chapters": [{
-                        "title": "Exporting",
-                        "intro": {
-                            "path": "docs/tools/toolchains/export_to_third_party.md"
-                        },
-                        "sources": [{
-                            "path": "docs/tools/toolchains/exporters.md"
-                        }]
-                    }]
-                },
-                {
-                    "title": "Debug tools",
+                    "path": "docs/tools/toolchains/exporters.md"
+                }
+            ]
+        },
+        {
+            "title": "Debugging and testing ",
+            "description": "",
+            "slug": "debug-test",
+            "type": "markdown",
+            "chapters": [{
+                    "title": "Debugging",
                     "sources": [{
                             "path": "docs/tools/debug/debug_intro.md"
                         },
@@ -1143,28 +1143,26 @@
                             "path": "docs/tools/testing/testing_intro.md"
                         },
                         "sources": [{
-                            "path": "docs/tools/testing/unit_testing.md"
-						},
-						{
-                            "path": "docs/tools/testing/testing_greentea.md"
-						},
-						{
-                            "path": "docs/tools/testing/testing_icetea.md"
-						},
-						{
-                            "path": "docs/tools/testing/icetea.md"
-						},
-						{
-                            "path": "docs/tools/testing/utest.md"
-						},
-						{
-                            "path": "docs/tools/fastmodels/fastmodels.md"
-						}]
+                                "path": "docs/tools/testing/unit_testing.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/testing_greentea.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/testing_icetea.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/icetea.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/utest.md"
+                            },
+                            {
+                                "path": "docs/tools/fastmodels/fastmodels.md"
+                            }
+                        ]
                     }]
                 }
-            ],
-            "tags": [
-                "tools"
             ]
         },
         {
