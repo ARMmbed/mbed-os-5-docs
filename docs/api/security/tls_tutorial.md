@@ -90,51 +90,8 @@ With everything in place, you can now set up a TLS socket connection. On the Mbe
 
 You set up a TLS socket in the same way as you set up a TCP socket, except you call `set_root_ca_cert` with the root CA string.
 
-```cpp
-#include "mbed.h"
-#include "mbed_trace.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/TLS_Communication/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/TLS_Communication/main.cpp)
 
-const char cert[] = /* your certificate, see above */ "";
-
-int main (void) {
-
-nsapi_size_or_error_t result;
-NetworkInterface *net = NetworkInterface::get_default_instance();
-
-if (!net) {
-    printf("Error! No network inteface found.\n");
-    return 0;
-}
-
-printf("Connecting to network\n");
-result = net->connect();
-if (result != 0) {
-    printf("Error! net->connect() returned: %d\n", result);
-    return result;
-}
-
-TLSSocket *socket = new TLSSocket;
-result = socket->set_root_ca_cert(cert);
-if (result != 0) {
-    printf("Error: socket->set_root_ca_cert() returned %d\n", result);
-    return result;
-}
-
-result = socket->open(net);
-if (result != 0) {
-    printf("Error! socket->open() returned: %d\n", result);
-    return result;
-}
-
-printf("Connecting to os.mbed.com\n");
-result = socket->connect(SocketAddress("os.mbed.com", 443));
-if (result != 0) {
-    printf("Error! socket->connect() returned: %d\n", result);
-    return result;
-}
-
-}
-```
 
 This now makes the request and returns the content of the file.
 
