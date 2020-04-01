@@ -36,7 +36,7 @@ Here is an example that uses a ticker object:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-Ticker)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-Ticker/main.cpp)
 
-<span class="tips">**Tip:** You may want to read the [power optimization](https://os.mbed.com/docs/mbed-os/v5.15/tutorials/power-optimization.html) tutorial to understand how to achieve power savings. </span>
+<span class="tips">**Tip:** You may want to read the [power optimization](../tutorials/power-optimization.html) tutorial to understand how to achieve power savings. </span>
 
 ### Thread
 
