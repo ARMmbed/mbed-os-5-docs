@@ -105,40 +105,7 @@ first-greentea-test/
 
 In this folder, create a file `main.cpp`. You can use UNITY, utest and the Greentea client to write your test:
 
-```cpp
-#include "mbed.h"
-#include "utest/utest.h"
-#include "unity/unity.h"
-#include "greentea-client/test_env.h"
-
-using namespace utest::v1;
-
-// This is how a test case looks
-static control_t simple_test(const size_t call_count) {
-    /* test content here */
-    TEST_ASSERT_EQUAL(4, 2 * 2);
-
-    return CaseNext;
-}
-
-utest::v1::status_t greentea_setup(const size_t number_of_cases) {
-    // Here, we specify the timeout (60s) and the host test (a built-in host test or the name of our Python file)
-    GREENTEA_SETUP(60, "default_auto");
-
-    return greentea_test_setup_handler(number_of_cases);
-}
-
-// List of test cases in this file
-Case cases[] = {
-    Case("simple test", simple_test)
-};
-
-Specification specification(greentea_setup, cases);
-
-int main() {
-    return !Harness::run(specification);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tools_Testing/Greentea_Ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tools_Testing/Greentea_Ex_1/main.cpp)
 
 ### Running the test
 
@@ -223,50 +190,7 @@ This registers one function you can call from the device: `init`. The function c
 
 This example writes the embedded part of this test. Create a new file `main.cpp` in `TESTS/tests/integration-test`, and fill it with:
 
-```cpp
-#include "mbed.h"
-#include "utest/utest.h"
-#include "unity/unity.h"
-#include "greentea-client/test_env.h"
-
-using namespace utest::v1;
-
-static control_t hello_world_test(const size_t call_count) {
-    // send a message to the host runner
-    greentea_send_kv("init", "hello");
-
-    // wait until we get a message back
-    // if this takes too long, the timeout will trigger, so no need to handle this here
-    char _key[20], _value[128];
-    while (1) {
-        greentea_parse_kv(_key, _value, sizeof(_key), sizeof(_value));
-
-        // check if the key equals init, and if the return value is 'world'
-        if (strcmp(_key, "init") == 0) {
-            TEST_ASSERT_EQUAL(0, strcmp(_value, "world"));
-            break;
-        }
-    }
-
-   return CaseNext;
-}
-
-utest::v1::status_t greentea_setup(const size_t number_of_cases) {
-   // here, we specify the timeout (60s) and the host runner (the name of our Python file)
-   GREENTEA_SETUP(60, "hello_world_tests");
-   return greentea_test_setup_handler(number_of_cases);
-}
-
-Case cases[] = {
-   Case("hello world", hello_world_test)
-};
-
-Specification specification(greentea_setup, cases);
-
-int main() {
-   return !Harness::run(specification);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tools_Testing/Greentea_Ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tools_Testing/Greentea_Ex_2/main.cpp)
 
 You see the calls to and from the host through the `greentea_send_kv` and `greentea_parse_kv` functions. Note the `GREENTEA_SETUP` call. This specifies which host test to use, and the test is then automatically loaded when running (based on the Python name).
 
