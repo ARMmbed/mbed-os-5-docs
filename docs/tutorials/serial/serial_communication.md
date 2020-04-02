@@ -14,17 +14,7 @@ This allows you to:
 
 This program prints a "Hello World" message that you can view on a [terminal application](#terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
-
-```cpp
-#include "mbed.h"
-
-Serial pc(USBTX, USBRX); // tx, rx
-
-int main() {
-    pc.printf("Hello World!\n");
-    while(1);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/main.cpp)
 
 ## Using terminal applications
 
