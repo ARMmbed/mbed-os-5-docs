@@ -55,7 +55,7 @@ Network interface `connect` failure causes:
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface and uses it to perform an HTTP transaction over a TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/)](https://os.mbed.com/teams/mbed_example/code/TCPSocket_Example/file/50f1485931f1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NetworkSocket/TCPSocket/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NetworkSocket/TCPSocket/main.cpp)
 
 ## Related content
 
