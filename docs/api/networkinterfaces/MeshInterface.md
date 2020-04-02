@@ -22,31 +22,7 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 
 The following code snippet illustrates how you can use the MeshInterface API:
 
-```c++
-#include "mbed.h"
-
-int main(void)
-{
-    MeshInterface *mesh = MeshInterface::get_default_instance();
-
-    int status = mesh->connect();
-    if (status) {
-        printf("Connection failed! error %d\n", status);
-        return status;
-    }
-
-    printf("Connected!\n");
-
-    UDPSocket sock;
-    status = sock.open(mesh);
-    if (status) {
-        printf("Failed to open socket, error %d\n", status);
-    }
-
-    // Now the interface is connected, and I can communicate with Sockets
-}
-
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NetworkInterface/Mesh_Ex1)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NetworkInterface/Mesh_Ex1/main.cpp)
 
 ## Related content
 
