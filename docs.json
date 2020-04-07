@@ -350,6 +350,36 @@
                                 },
                                 {
                                     "path": "docs/api/io/MbedCRC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBAudio.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBHID.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouseKeyboard.md"
                                 }
                             ]
                         },
@@ -376,7 +406,7 @@
                                 "path": "docs/api/storage/storage-config.md"
                             },
                             "sources": []
-                        },                 
+                        },
                         {
                             "title": "Data APIs",
                             "sources": [{
@@ -453,11 +483,11 @@
                                 "path": "docs/api/storage/storage-arch.md"
                             },
                             "sources": []
-                        }      
+                        }
                     ]
                 },
                 {
-                    "title": "Device networking",
+                    "title": "Connectivity",
                     "intro": {
                         "path": "docs/api/networksocket/networksocket.md"
                     },
@@ -467,17 +497,17 @@
                                 "path": "docs/api/networkinterfaces/networkinterface.md"
                             },
                             "sources": [{
-                                "path": "docs/api/usb/usb_component.md"
-                            },
-                            {
-                                "path": "docs/api/bluetooth/bluetooth.md"
-                            },
-                            {
-                                "path": "docs/api/lorawan/lorawanintro.md"
-                            },
-                            {
-                                "path": "docs/api/nfc/NDEF.md"
-                            }
+                                    "path": "docs/api/usb/usb_component.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/bluetooth.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lorawanintro.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/NDEF.md"
+                                }
                             ]
                         },
                         {
@@ -497,33 +527,9 @@
                             ]
                         },
                         {
-                            "title": "APIs",
+                            "title": "Network inteface APIs",
                             "sources": [{
                                     "path": "docs/api/networksocket/socket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/UDPSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/TCPSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/SocketAddress.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/CellularNonIPSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/DNS.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/TLSSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/DTLSSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/SocketStats.md"
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/EthInterface.md"
@@ -541,36 +547,54 @@
                                     "path": "docs/api/networkinterfaces/NetworkStatus.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBSerial.md"
+                                    "path": "docs/api/nfc/MessageParser.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBAudio.md"
+                                    "path": "docs/api/nfc/SimpleMessageParser.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBHID.md"
+                                    "path": "docs/api/nfc/MessageBuilder.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Socket APIs",
+                            "sources": [{
+                                    "path": "docs/api/networksocket/UDPSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBCDC.md"
+                                    "path": "docs/api/networksocket/TCPSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                    "path": "docs/api/networksocket/SocketAddress.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMSD.md"
+                                    "path": "docs/api/networksocket/CellularNonIPSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMIDI.md"
+                                    "path": "docs/api/networksocket/SocketStats.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Secure socket APIs",
+                            "sources": [{
+                                    "path": "docs/api/networksocket/TLSSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMouse.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBKeyboard.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouseKeyboard.md"
-                                },
-                                {
+                                    "path": "docs/api/networksocket/DTLSSocket.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "DNS APIs",
+                            "sources": [{
+                                "path": "docs/api/networksocket/DNS.md"
+                            }]
+                        },
+                        {
+                            "title": "Bluethooth APIs",
+                            "sources": [{
                                     "path": "docs/api/bluetooth/BLE.md"
                                 },
                                 {
@@ -593,27 +617,26 @@
                                 },
                                 {
                                     "path": "docs/api/bluetooth/iBeacon.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/lorawan.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/loraradio.md"
-                                },
-                                {
+                                }
+                            ]
+                        },
+                        {
+                            "title": "NFC APIs",
+                            "sources": [{
                                     "path": "docs/api/nfc/NFCController.md"
                                 },
                                 {
                                     "path": "docs/api/nfc/NFCEEPROM.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "LoRAWAN APIs",
+                            "sources": [{
+                                    "path": "docs/api/lorawan/lorawan.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/MessageParser.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/SimpleMessageParser.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/MessageBuilder.md"
+                                    "path": "docs/api/lorawan/loraradio.md"
                                 }
                             ]
                         },
@@ -642,39 +665,39 @@
                                 "path": "docs/api/networking-arch.md"
                             },
                             "sources": [{
-                                "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/wifi-arch.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/ethernet-arch.md"
-                            },
-                            {
-                                "path": "docs/api/networkinterfaces/cellular-arch.md"
-                            },
-                            {
-                                "path": "docs/api/usb/usb-arch.md"
-                            },
-                            {
-                                "path": "docs/api/lorawan/lora-tech.md"
-                            },
-                            {
-                                "path": "docs/api/nfc/nfc-arch.md"
-                            }
-                          ]
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/wifi-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/usb-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lora-tech.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/nfc-arch.md"
+                                }
+                            ]
                         }
                     ]
                 },
