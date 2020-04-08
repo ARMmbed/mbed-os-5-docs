@@ -19,7 +19,7 @@ If using the Mbed Online Compiler, use the **Import into Mbed IDE** button below
 
 ### Compile
 
-Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler:
+Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler and K64F platform:
 
 ```
 mbed compile -m K64F -t ARM
