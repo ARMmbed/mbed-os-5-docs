@@ -38,7 +38,7 @@ The export process generates a ZIP archive with a project file matching your sel
 
 ## Exporting from Arm Mbed CLI
 
-[Mbed CLI](../tools/developing-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](../tools/developing-mbed-cli.html) currently supports [exporting](../tools/exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
@@ -157,4 +157,3 @@ Prior to version 2.6.1 of GNU Arm Eclipse, the build tools of the GNU Arm Eclips
     arm-none-eabi-g++: error: ./mbed-os/features/FEATURE_LWIP/lwi-interface/lwip/src/netif/lwip_lowpan6.o: No such file or directory
 
 <span class="notes">**Note:** There is a deletion of a character here. The command-line should read `./mbed-os/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/lwip_lowpan6.o`.</span>
-
