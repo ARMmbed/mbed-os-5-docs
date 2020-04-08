@@ -1162,6 +1162,7 @@
             "title": "Mbed OS bare metal",
             "description": "",
             "slug": "bare-metal",
+            "type": "markdown",
             "sources": [{
                     "path": "docs/program-setup/bare_metal/bare_metal.md"
                 },
