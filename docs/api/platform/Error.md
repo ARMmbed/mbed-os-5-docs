@@ -527,5 +527,3 @@ See the below Doxygen file for additional information regarding error code defin
 
 - Debug and develop [build profiles](../tools/build-profiles.html).
 - Mbed OS [error decoder](https://mbed.com/s/error).
-- [Office Hours video about Crash Reporting](https://www.youtube.com/watch?v=SdC_aM-aZNc).
-- [Office Hours video about Crash Dump Analysis](https://www.youtube.com/watch?v=7xKWFSnUye8).
