@@ -6,6 +6,12 @@
    - [Mbed OS APIs](../apis/index.html): list of all APIs available in Mbed OS.
    - [Peripheral drivers](../apis/drivers.html): I/O driver APIs (I2C, SPI, UART and so on).
 
+
+- Related links
+    - [Mbed OS statistics API](../apis/mbed-statistics.html).
+    - [Mbed OS configuration](../reference/configuration.html).
+    - [Mbed OS serial communication](../tutorials/serial-communication.html).
+
 - Tutorials:
    - [Advanced debugging](../tutorials/debugging.html).
    - [Serial communications](../tutorials/serial-communication.html).
