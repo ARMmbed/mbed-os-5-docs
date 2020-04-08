@@ -12,7 +12,7 @@ $ mbed compile --profile mbed-os/tools/profiles/debug.json
 
 ## Exporting with debug symbols
 
-You can also enable debug symbols when [exporting your project](exporting.html) by using:
+You can also enable debug symbols when [exporting your project](../tools/exporting.html) by using:
 
 ```
 $ mbed export -i uvision -m K64F --profile debug
