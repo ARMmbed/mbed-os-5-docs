@@ -144,22 +144,6 @@
                     ]
                 },
                 {
-                    "title": "Mbed OS bare metal",
-                    "sources": [{
-                            "path": "docs/program-setup/bare_metal/bare_metal.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bare_metal/bare_metal_api.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bare_metal/baremetal_example.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bare_metal/c_small_libs.md"
-                        }
-                    ]
-                },
-                {
                     "title": "Advanced configuration",
                     "intro": {
                         "path": "docs/program-setup/configuration.md"
@@ -947,22 +931,6 @@
             ]
         },
         {
-            "title": "Migrating existing projects",
-            "description": "Migrate from existing projects and from previous versions of Mbed OS",
-            "slug": "migrating",
-            "type": "markdown",
-            "chapters": [{
-                "title": "Overview",
-                "intro": {
-                    "path": "docs/migrating/migrate-from-mbed-os-2-to-5.md"
-                },
-                "sources": []
-            }],
-            "tags": [
-                "migrating"
-            ]
-        },
-        {
             "title": "Build tools",
             "description": "",
             "slug": "build-tools",
@@ -1187,6 +1155,24 @@
                             }
                         ]
                     }]
+                }
+            ]
+        },
+        {
+            "title": "Mbed OS bare metal",
+            "description": "",
+            "slug": "bare-metal",
+            "sources": [{
+                    "path": "docs/program-setup/bare_metal/bare_metal.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/bare_metal_api.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/baremetal_example.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/c_small_libs.md"
                 }
             ]
         },
