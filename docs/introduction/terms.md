@@ -14,6 +14,8 @@
 
 **Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
 
+**Arm Mbed Studio** - A local development environment for Mbed OS programs written in C/C++. Mbed Studio [has its own documentation](https://os.mbed.com/docs/mbed-studio/).
+
 **Arm Mbed TLS** - A [comprehensive SSL/TLS solution](../apis/tls.html) that makes it easy for developers to include cryptographic and SSL/TLS capabilities in their software and embedded products. As an SSL library, it provides an intuitive API, readable source code and a minimal and highly configurable code footprint.
 
 ## B
