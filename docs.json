@@ -24,9 +24,7 @@
                 },
                 {
                     "title": "Versions and releases",
-                    "sources": [{
-                            "path": "docs/migrating/mbed-os-2-vs-5.md"
-                        },
+                    "sources": [
                         {
                             "path": "docs/introduction/release_process.md"
                         }
