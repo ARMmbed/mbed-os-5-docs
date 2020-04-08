@@ -26,15 +26,19 @@
 
 **Block Device** - A [file](../porting/porting-storage.html) that represents a device, with data that can be read or written to it in blocks.
 
-**Board** - An Mbed Enabled development board. You can see a [complete list](https://os.mbed.com/platforms/) of Mbed Enabled boards.
+**Board** - Hardware that can run an Mbed OS application. Usually refers to an [Mbed Enabled development board](https://os.mbed.com/platforms/). Its software representation in the build tools is as a target.
 
 **Boolean** - A binary variable, having two possible values called `true` and `false`.
 
 **Bootloader** - [The program](../tutorials/bootloader.html) that loads Mbed OS when a board is turned on.
 
+**Build** - The full process of converting an application's source code into a binary that can be flashed onto a board. The build cannot be board-agnostic; it is always done for a specific board, represented as the build target (see **target**).
+
 **Build Profile** - Mbed OS supports three primary [build profiles](../tools/build-profiles.html): develop, debug and release.
 
 **Build Script** - A build automation and generation utility.
+
+**Build target** or **target** - A software representation of a physical device, listed in either `targets.json` or `custom_targets.json`. A build (with Mbed CLI, the Online Compiler and Mbed Studio) is always done for a specific target.
 
 **Byte** - A unit of digital information that consists of 8 bits (see `Bit`).
 
@@ -139,8 +143,6 @@
 **STLink** - STMicro's [firmware](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link007.html) that performs the same tasks as DAPLink but uses a different [driver](http://www.st.com/content/st_com/en/products/embedded-software/development-tool-software/stsw-link009.html).
 
 ## T
-
-**Target** - See [`board`](glossary.html#board).
 
 **Terminal Application** - [Applications](../tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 
