@@ -196,7 +196,7 @@ Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sur
 
 The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `ARMC5`, `UARM`, `ARMC6`, `GCC_ARM` and `IAR`.
 
-<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM; you must use Arm Compiler 6.</span>
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
 
 When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
@@ -212,7 +212,7 @@ When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
 ### default_toolchain
 
-<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM; you must use Arm Compiler 6.</span>
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
 
 The `default_toolchain` property names the toolchain that compiles code for this target in the Online Compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
 
