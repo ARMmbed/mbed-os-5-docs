@@ -12,11 +12,11 @@ The valid toolchain values are:
 
 | Argument value | Toolchain |
 | --------- | --------- |
-| `ARM` | Arm Compiler 5 or Arm Compiler 6 (whichever is installed) |
-| `ARMC5` | Arm Compiler 5 |
-| `ARMC6` | Arm Compiler 6 |
+| `ARM` or `ARMC6` | Arm Compiler 6 |
 | `IAR` | IAR EWARM Compiler |
 | `GCC_ARM` | GNU Arm Embedded Compiler (GCC) |
+
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM; using `ARM` will default to Arm Compiler 6.</span>
 
 As an example, for the K64F and Arm Compiler:
 

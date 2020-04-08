@@ -19,12 +19,12 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 
 | Architecture version | Compiler |
 |----                  |----           |
-| Arm v6M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the ARM toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../reference/adding-and-configuring-targets.html)) |
-| Arm v7M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the ARM toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../reference/adding-and-configuring-targets.html)) |
+| Arm v6M       | `Arm Compiler 6.11` |
+| Arm v7M       | `Arm Compiler 6.11` |
 | Arm v7A       | `Arm Compiler 6.11` |
 | Arm v8M       | `Arm Compiler 6.11` |
 
-<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. All platforms are already compatible with it. Please do not use Arm Compiler 5 in any new development as it will be deprecated in the future.</span>
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
 
 For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
 
@@ -39,7 +39,6 @@ You can build Mbed OS can be built with various toolchains. The currently suppor
 - Arm Compiler 6.13 (default ARM toolchain).
   - A paid version is available as [Arm Compiler 6.13 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
   - A paid version is also included in [Keil MDK 5.29](http://www2.keil.com/mdk5/529).
-- [Arm Compiler 5.06 update 6 (to be deprecated in the future)](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/downloads).
 - [GNU Arm Embedded version 9 (9-2019-q4-major)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
 - [IAR Embedded Workbench 8.32.1](https://iar.com/mbed).
 

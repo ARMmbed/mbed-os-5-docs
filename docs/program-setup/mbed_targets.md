@@ -194,7 +194,9 @@ Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sur
 
 ### supported_toolchains
 
-The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC5`, `ARMC6`, `GCC_ARM` and `IAR`.
+The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `ARMC5`, `UARM`, `ARMC6`, `GCC_ARM` and `IAR`.
+
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM; you must use Arm Compiler 6.</span>
 
 When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
@@ -208,9 +210,9 @@ When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
 
 - It's invalid to use `-t ARMC5` with the `mbed compile` command for a target that specifies `ARMC6` for `supported_toolchains`, and it's invalid to use `-t ARMC6` if `supported_toolchains` specifies `ARMC5`.
 
-<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.</span>
-
 ### default_toolchain
+
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM; you must use Arm Compiler 6.</span>
 
 The `default_toolchain` property names the toolchain that compiles code for this target in the Online Compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
 

@@ -89,8 +89,6 @@ The toolchain labeled directories are used for toolchain specific files, such as
 
 | Toolchain                    | Labels                                                     |
 |------------------------------|------------------------------------------------------------|
-| ARM compiler 5               | `TOOLCHAIN_ARM` and `TOOLCHAIN_ARM_STD`                    |
-| ARM compiler 5 with microlib | `TOOLCHAIN_ARM` and `TOOLCHAIN_ARM_MICRO`                  |
 | ARM compiler 6               | `TOOLCHAIN_ARM`, `TOOLCHAIN_ARM_STD` and `TOOLCHAIN_ARMC6` |
 | IAR EWARM                    | `TOOLCHAIN_IAR`                                            |
 | GCC ARM Embedded             | `TOOLCHAIN_GCC` and `TOOLCHAIN_GCC_ARM`                    |

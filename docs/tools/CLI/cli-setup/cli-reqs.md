@@ -65,15 +65,7 @@ pip install -U mbed-cli
 
 ## 3. Install a compiler
 
-Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../tools/index.html#compiler-versions).
-
-**Note:** When installing the Arm Compiler 5 on a 64-bit Linux system, you may also need to install the i386 architecture package. As as example on Ubuntu:
-
-```
-$ sudo dpkg --add-architecture i386
-$ sudo apt-get update
-$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
-```
+Download and install one of the following compilers: [GCC Arm, Arm Compiler 6 or IAR](../tools/index.html#compiler-versions).
 
 ## 4. Configure the compiler location
 
@@ -98,7 +90,6 @@ Mbed CLI supports a setting for each toolchain path:
 
 | Toolchain | Setting name | Example binary location | Example path |
 | --------- | --------- | ---------| --------- |
-| Arm Compiler 5.06u6 | `ARM_PATH` | `C:\Program Files\ARM_Compiler_5.06u6\bin\armcc` | `C:\Program Files\ARM_Compiler_5.06u6` |
 | Arm Compiler 6.11 | `ARMC6_PATH` | `C:\Program Files\ARMCompiler6.11\bin\armclang` | `C:\Program Files\ARMCompiler6.11\bin` |
 | IAR EWARM Compiler 8.32.1 | `IAR_PATH` | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm\bin\iccarm.exe` |  `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm`|
 | GCC Arm Embedded Compiler | `GCC_ARM_PATH` |`/usr/bin/arm-none-eabi-gcc` |  `/usr/bin`|
@@ -110,7 +101,6 @@ You can set the location of the compiler with environment variables. Use the pat
 
 | Toolchain | Environment variable |
 | --------- | --------- |
-| Arm Compiler 5 | `MBED_ARM_PATH` |
 | Arm Compiler 6 | `MBED_ARMC6_PATH` |
 | IAR EWARM Compiler | `MBED_IAR_PATH` |
 | GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |

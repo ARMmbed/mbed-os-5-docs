@@ -9,7 +9,7 @@ There are two testing frameworks: Greentea and Icetea. Greentea provides tests d
 The arguments to `test` are:
 
 - `-m <MCU>`: to select a target for the compilation. If the `detect` or `auto` parameter is passed, then Mbed CLI will attempt to detect the connected target and compile against it.
-- `-t <TOOLCHAIN>`: to select a toolchain from those defined in `mbed_settings.py`, where `toolchain` can either be `ARM` (Arm Compiler 5), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
+- `-t <TOOLCHAIN>`: to select a toolchain from those defined in `mbed_settings.py`, where `toolchain` can either be `ARM` (Arm Compiler 6), `GCC_ARM` (GNU Arm Embedded), or `IAR` (IAR Embedded Workbench for Arm).
 - `--compile-list`: to list all the tests that can be built.
 - `--run-list`: to list all the tests that can be run, after they have been built.
 - `--compile`: to only compile the tests.

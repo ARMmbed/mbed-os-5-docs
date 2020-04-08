@@ -11,7 +11,7 @@
 
 1. Compile and program your board:
 
-   Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler 5 toolchain:
+   Invoke `mbed compile`, and specify the name of your platform and your installed toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the K64F platform and Arm Compiler toolchain:
 
     ```console
     $ mbed compile --target K64F --toolchain ARM --flash
