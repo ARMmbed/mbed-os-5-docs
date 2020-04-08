@@ -54,24 +54,7 @@
                     "sources": []
                 },
                 {
-                    "title": "Online with the Online Compiler",
-                    "sub_chapters": [{
-                            "title": "Importing and compiling the code",
-                            "sources": [{
-                                "path": "docs/quick-start/quick-start-compiler.md"
-                            }]
-                        },
-                        {
-                            "title": "Debugging with the Online Compiler",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
-                            },
-                            "sources": []
-                        }
-                    ]
-                },
-                {
-                    "title": "Offline with Mbed CLI",
+                    "title": "Build and debug with Mbed CLI",
                     "sub_chapters": [{
                             "title": "Setting up and compiling the code",
                             "sources": [{
@@ -86,6 +69,23 @@
                             "title": "Debugging with Mbed CLI",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-cli-debug.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Build and debug with the Online Compiler",
+                    "sub_chapters": [{
+                            "title": "Importing and compiling the code",
+                            "sources": [{
+                                "path": "docs/quick-start/quick-start-compiler.md"
+                            }]
+                        },
+                        {
+                            "title": "Debugging with the Online Compiler",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         }
