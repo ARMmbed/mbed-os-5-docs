@@ -132,14 +132,12 @@
                 },
                 {
                     "title": "Serial communication",
-                    "sources": [{
-                            "path": "docs/program-setup/serial/serial-overview.md"
+                    "sources": [
+                        {
+                            "path": "docs/program-setup/serial/serial_communication.md"
                         },
                         {
                             "path": "docs/program-setup/serial/serial_driver.md"
-                        },
-                        {
-                            "path": "docs/program-setup/serial/serial_communication.md"
                         }
                     ]
                 },
@@ -1069,7 +1067,7 @@
                     ]
                 },
                 {
-                    "title": "Exporting to third-party buid tools",
+                    "title": "Third-party build tools",
                     "sources": [{
                             "path": "docs/tools/toolchains/export_to_third_party.md"
                         },

@@ -16,7 +16,6 @@ This program prints a "Hello World" message that you can view on a [terminal app
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/main.cpp)
 
-
 ## Using terminal applications
 
 Terminal applications run on your host PC. They provide a window where your Mbed board can print and where you can type characters back to your board.
@@ -63,12 +62,11 @@ Use your terminal application to interact with the following examples.
 
 If you're not sure how to build these examples and run them on your board, please see our [build tools section](../tools/index.html).
 
-### Echo back characters you type
+## Echo back characters you type
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_EchoBack/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_EchoBack/main.cpp)
 
-
-### Use the U and D keys to make LED1 brighter or dimmer
+## Use the U and D keys to make LED1 brighter or dimmer
 
 <span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
@@ -76,21 +74,18 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_LEDControl/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_LEDControl/main.cpp)
 
-
-### Pass characters in both directions
+## Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_PassCharacters/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_PassCharacters/main.cpp)
 
-
-### Using stdin, stdout and stderr
+## Using stdin, stdout and stderr
 
 By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/main.cpp)
 
-### Read to a buffer
+## Read to a buffer
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_ReadToBuffer/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_ReadToBuffer/main.cpp)
-
