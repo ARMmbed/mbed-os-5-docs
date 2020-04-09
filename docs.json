@@ -668,9 +668,6 @@
                                 },
                                 {
                                     "path": "docs/api/bluetooth/HeartRateService.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/iBeacon.md"
                                 }
                             ]
                         },
