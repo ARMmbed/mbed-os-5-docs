@@ -175,7 +175,7 @@
         },
         {
             "title": "APIs",
-            "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
+            "description": "",
             "slug": "apis",
             "type": "markdown",
             "chapters": [{
@@ -456,42 +456,41 @@
                         }
                     ]
                 },
-
                 {
                     "title": "Connectivity",
-                    "sub_chapters": [
-                      {
-                          "title": "Connectivity support in Mbed OS",
-                          "intro": {
-                              "path": "docs/api/networking-arch.md"
-                          },
-                          "sources": [{
-                                  "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
-                              },
-                              {
-                                  "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
-                              },
-                              {
-                                  "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
-                              },
-                              {
-                                  "path": "docs/api/networkinterfaces/wifi-arch.md"
-                              },
-                              {
-                                  "path": "docs/api/networkinterfaces/ethernet-arch.md"
-                              },
-                              {
-                                  "path": "docs/api/networkinterfaces/cellular-arch.md"
-                              },
-                              {
-                                  "path": "docs/api/lorawan/lora-tech.md"
-                              },
-                              {
-                                  "path": "docs/api/nfc/nfc-arch.md"
-                              }
-                          ]
-                      },
-                      {
+                    "sub_chapters": [{
+                            "title": "Connectivity support in Mbed OS",
+                            "intro": {
+                                "path": "docs/api/networking-arch.md"
+                            },
+                            "sources": [
+                                {
+                                    "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/wifi-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
+                                },
+                                {
+                                        "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/nfc-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lora-tech.md"
+                                }
+                            ]
+                        },
+                        {
                             "title": "Network interface APIs",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/networkinterface.md"
@@ -699,11 +698,10 @@
                             ]
                         },
                         {
-                          "title": "USB architecture",
-                          "sources": [{
-                              "path": "docs/api/usb/usb-arch.md"
-                          }
-                        ]
+                            "title": "USB architecture",
+                            "sources": [{
+                                "path": "docs/api/usb/usb-arch.md"
+                            }]
                         },
                         {
                             "title": "USB tutorials",
