@@ -56,7 +56,3 @@ After you have completed the steps above, add `small` to the `supported_c_libs` 
     "iar": ["std"]
 }
 ```
-
-### Note on uARM toolchain
-
-The uARM toolchain is the ARMC6 toolchain with the Arm microlib, the C micro-library. This toolchain will be deprecated after 5.15.
