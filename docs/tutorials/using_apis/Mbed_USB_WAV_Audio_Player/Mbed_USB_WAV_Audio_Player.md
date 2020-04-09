@@ -31,7 +31,7 @@ This tutorial uses several Mbed libraries:
 
 - [USB](../apis/usb.html) (part of Mbed OS).
 - [sd-driver](https://github.com/ARMmbed/sd-driver) (external library).
-- [AudioPlayer](https://github.com/c1728p9/AudioPlayer) (external library).
+- [AudioPlayer](https://github.com/ARMmbed/AudioPlayer) (external library).
 
 This tutorial uses the USBAudio class of the USB library to send audio data from the Mbed board to the host PC. It uses the SDBlockDevice and FATFileSystem classes of the `sd-driver` library, so you can store the WAV files on an SD card and the Mbed board can access them. Lastly, it uses the AudioPlayer and WaveAudioStream classes of the AudioPlayer library to access the audio data from the WAV file on the SD card.
 
@@ -52,10 +52,10 @@ The following steps demonstrate the setup and use of the Mbed WAV audio player:
 
    `mbed new <project name>`
 
-1. Add the [sd-driver](https://github.com/ARMmbed/sd-driver) and [AudioPlayer](https://github.com/c1728p9/AudioPlayer) libraries to the new Mbed project directory:
+1. Add the [sd-driver](https://github.com/ARMmbed/sd-driver) and [AudioPlayer](https://github.com/ARMmbed/AudioPlayer) libraries to the new Mbed project directory:
 
    `mbed add https://github.com/ARMmbed/sd-driver`    
-   `mbed add https://github.com/c1728p9/AudioPlayer`
+   `mbed add https://github.com/ARMmbed/AudioPlayer`
 
 1. Copy and paste the [example code](../tutorials/usb-wav-audio-player.html#example-wav-file) into `main.cpp`.
 1. Make sure the SPI pins for the SDBlockDevice object are updated and correct for your board. For example, in the example below, line 10 sets up SPI for the SDBlockDevice for the NXP K64F Mbed board.
