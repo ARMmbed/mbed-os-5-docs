@@ -456,45 +456,50 @@
                         }
                     ]
                 },
+
                 {
                     "title": "Connectivity",
-
-                    "sub_chapters": [{
-                            "title": "Concepts",
-
-                            "sources": [{
-                                    "path": "docs/api/bluetooth/bluetooth.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/lorawanintro.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/NDEF.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Options and config",
-                            "sources": [{
-                                    "path": "docs/api/connectivity-config.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/lorawanconfig.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/ble-config.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-config.md"
-                                }
-                            ]
-                        },
-                        {
+                    "sub_chapters": [
+                      {
+                          "title": "Connectivity support in Mbed OS",
+                          "intro": {
+                              "path": "docs/api/networking-arch.md"
+                          },
+                          "sources": [{
+                                  "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                              },
+                              {
+                                  "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                              },
+                              {
+                                  "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                              },
+                              {
+                                  "path": "docs/api/networkinterfaces/wifi-arch.md"
+                              },
+                              {
+                                  "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                              },
+                              {
+                                  "path": "docs/api/networkinterfaces/cellular-arch.md"
+                              },
+                              {
+                                  "path": "docs/api/lorawan/lora-tech.md"
+                              },
+                              {
+                                  "path": "docs/api/nfc/nfc-arch.md"
+                              }
+                          ]
+                      },
+                      {
                             "title": "Network interface APIs",
                             "intro": {
                                 "path": "docs/api/networkinterfaces/networkinterface.md"
                             },
                             "sources": [{
+                                    "path": "docs/api/connectivity-config.md"
+                                },
+                                {
                                     "path": "docs/api/networksocket/socket.md"
                                 },
                                 {
@@ -562,8 +567,14 @@
                             }]
                         },
                         {
-                            "title": "Bluethooth APIs",
+                            "title": "Bluetooth APIs",
+                            "intro": {
+                                "path": "docs/api/bluetooth/bluetooth.md"
+                            },
                             "sources": [{
+                                    "path": "docs/api/bluetooth/ble-config.md"
+                                },
+                                {
                                     "path": "docs/api/bluetooth/BLE.md"
                                 },
                                 {
@@ -588,6 +599,9 @@
                         },
                         {
                             "title": "NFC APIs",
+                            "intro": {
+                                "path": "docs/api/nfc/NDEF.md"
+                            },
                             "sources": [{
                                     "path": "docs/api/nfc/NFCController.md"
                                 },
@@ -598,7 +612,13 @@
                         },
                         {
                             "title": "LoRAWAN APIs",
+                            "intro": {
+                                "path": "docs/api/lorawan/lorawanintro.md"
+                            },
                             "sources": [{
+                                    "path": "docs/api/lorawan/lorawanconfig.md"
+                                },
+                                {
                                     "path": "docs/api/lorawan/lorawan.md"
                                 },
                                 {
@@ -612,6 +632,15 @@
                                     "path": "docs/api/networkinterfaces/mesh_tutorial.md"
                                 },
                                 {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-config.md"
+                                },
+                                {
                                     "path": "docs/api/light-control.md"
                                 },
 
@@ -621,46 +650,7 @@
                                 {
                                     "path": "docs/api/lorawan/intro-to-lora.md"
                                 }
-                            ]
-                        },
-                        {
-                            "title": "Architecture",
-                            "intro": {
-                                "path": "docs/api/networking-arch.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/wifi-arch.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/ethernet-arch.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/usb-arch.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/lora-tech.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/nfc-arch.md"
-                                }
+
                             ]
                         }
                     ]
@@ -707,6 +697,13 @@
                                     "path": "docs/api/usb/USBMouseKeyboard.md"
                                 }
                             ]
+                        },
+                        {
+                          "title": "USB architecture",
+                          "sources": [{
+                              "path": "docs/api/usb/usb-arch.md"
+                          }
+                        ]
                         },
                         {
                             "title": "USB tutorials",
