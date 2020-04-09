@@ -237,7 +237,3 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tr>
 </tbody>
 </table>
-
-## Migrating to Mbed OS 5
-
-[Mbed OS 2 to 5 migration tutorial](../tutorials/migrating-to-mbed-os-5.html)
