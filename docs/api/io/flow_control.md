@@ -24,7 +24,10 @@ Notice `printf()`; you can enable this by uncommenting the line (remove the `//`
 
 #### Suspend thread execution
 
-A better alternative to busy wait is to suspend thread execution while waiting. You can use the `ThisThread::sleep_for` C++ API or `thread_sleep_for` C API.
+A better alternative to busy wait is to suspend thread execution while waiting. Use:
+
+ * For C++: The `ThisThread::sleep_for` API 
+ * For C: The `thread_sleep_for` API.
 
 ### Ticker
 
