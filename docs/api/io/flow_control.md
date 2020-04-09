@@ -20,7 +20,7 @@ Busy wait is a method that blocks the processor for a period of time. This is an
 
 Notice `printf()`; you can enable this by uncommenting the line (remove the `//`). `printf()` prints to the terminal, so you can use it to get debug information.
 
-<span class="tips">**Tip:** Busy wait is inefficient and should be avoided. </span>
+<span class="tips">**Tip:** Busy wait is inefficient, and we recommend not using it. </span>
 
 #### Suspend thread execution
 
