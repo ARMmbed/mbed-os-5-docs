@@ -33,7 +33,7 @@ A better alternative to busy wait is to suspend thread execution while waiting. 
 
 Tickers and timers are another way of creating a time interval. These methods allow other code to run while you are waiting. During the wait period, if no threads are running, the idle thread can automatically put the system to sleep.
 
-If you don't need the precision of a high-frequency timer/ticker, we recommend that you use LowPowerTimer/LowPowerTicker instead because this will allow the system to be put in deep sleep mode.
+If you don't need the precision of a high-frequency timer or ticker, we recommend that you use LowPowerTimer or LowPowerTicker instead. This allows the system to be put in deep sleep mode.
 
 Here is an example that uses a ticker object:
 
