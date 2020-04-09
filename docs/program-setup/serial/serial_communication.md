@@ -14,16 +14,8 @@ This allows you to:
 
 This program prints a "Hello World" message that you can view on a [terminal application](#using-terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/main.cpp)
 
-Serial pc(USBTX, USBRX); // tx, rx
-
-int main() {
-    pc.printf("Hello World!\n");
-    while(1);
-}
-```
 
 ## Using terminal applications
 
@@ -73,18 +65,8 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 ### Echo back characters you type
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_EchoBack/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_EchoBack/main.cpp)
 
-Serial pc(USBTX, USBRX);
-
-int main() {
-    pc.printf("Echoes back to the screen anything you type\n");
-    while(1) {
-        pc.putc(pc.getc());
-    }
-}
-```
 
 ### Use the U and D keys to make LED1 brighter or dimmer
 
@@ -92,85 +74,23 @@ int main() {
 
 <span class="images">![](../../images/NUCLEOF401RE.png)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_LEDControl/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_LEDControl/main.cpp)
 
-Serial pc(USBTX, USBRX); // tx, rx
-PwmOut led(LED1);
-
-float brightness = 0.0;
-
-int main() {
-    pc.printf("Press U to turn LED1 brightness up, D to turn it down\n");
-
-    while(1) {
-        char c = pc.getc();
-        if((c == 'u') && (brightness < 0.5)) {
-            brightness += 0.01;
-            led = brightness;
-        }
-        if((c == 'd') && (brightness > 0.0)) {
-            brightness -= 0.01;
-            led = brightness;
-        }   
-    }
-}
-```
 
 ### Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_PassCharacters/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_PassCharacters/main.cpp)
 
-Serial pc(USBTX, USBRX);
-Serial uart(D1, D0);
-
-DigitalOut pc_activity(LED1);
-DigitalOut uart_activity(LED2);
-
-int main() {
-    while(1) {
-        if(pc.readable()) {
-            uart.putc(pc.getc());
-            pc_activity = !pc_activity;
-        }
-        if(uart.readable()) {
-            pc.putc(uart.getc());
-            uart_activity = !uart_activity;
-        }
-    }
-}
-```
 
 ### Using stdin, stdout and stderr
 
 By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
 
-```cpp
-#include "mbed.h"
-
-int main() {
-    printf("Hello World!\n");
-    while(1);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/main.cpp)
 
 ### Read to a buffer
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_ReadToBuffer/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_ReadToBuffer/main.cpp)
 
-DigitalOut myled(LED1);
-Serial pc(USBTX, USBRX);
-
-int main() {
-    char c;
-    char buffer[128];
-
-    pc.gets(buffer, 4);
-    pc.printf("I got '%s'\n", buffer);
-    while(1);
-}
-```

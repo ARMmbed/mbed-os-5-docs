@@ -25,12 +25,8 @@
                 {
                     "title": "Versions and releases",
                     "sources": [{
-                            "path": "docs/migrating/mbed-os-2-vs-5.md"
-                        },
-                        {
-                            "path": "docs/introduction/release_process.md"
-                        }
-                    ]
+                        "path": "docs/introduction/release_process.md"
+                    }]
                 },
                 {
                     "title": "Glossary",
@@ -56,38 +52,43 @@
                     "sources": []
                 },
                 {
-                    "title": "Online with the Online Compiler",
+                    "title": "Build and debug with Mbed CLI",
                     "sub_chapters": [{
-                            "title": "Importing and compiling the code",
-                            "sources": [{
-                                "path": "docs/quick-start/quick-start-compiler.md"
-                            }]
+                            "title": "Installing Mbed CLI",
+                            "intro": {
+                                "path": "docs/quick-start/cli_setting_up.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "title": "Debugging with the Online Compiler",
+                            "title": "Compiling the code",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
+                                "path": "docs/quick-start/cli_code.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Debugging with Mbed CLI",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-cli-debug.md"
                             },
                             "sources": []
                         }
                     ]
                 },
                 {
-                    "title": "Offline with Mbed CLI",
+                    "title": "Build and debug with the Online Compiler",
                     "sub_chapters": [{
-                            "title": "Setting up and compiling the code",
-                            "sources": [{
-                                    "path": "docs/quick-start/cli_setting_up.md"
-                                },
-                                {
-                                    "path": "docs/quick-start/cli_code.md"
-                                }
-                            ]
+                            "title": "Importing and compiling the code",
+                            "intro": {
+                                "path": "docs/quick-start/quick-start-compiler.md"
+                            },
+                            "sources": []
                         },
                         {
-                            "title": "Debugging with Mbed CLI",
+                            "title": "Debugging with the Online Compiler",
                             "intro": {
-                                "path": "docs/quick-start/quick-start-cli-debug.md"
+                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         }
@@ -139,22 +140,6 @@
                         },
                         {
                             "path": "docs/program-setup/serial/serial_communication.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "Mbed OS bare metal",
-                    "sources": [{
-                            "path": "docs/program-setup/bare_metal/bare_metal.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bare_metal/bare_metal_api.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bare_metal/baremetal_example.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bare_metal/c_small_libs.md"
                         }
                     ]
                 },
@@ -642,7 +627,6 @@
                                 {
                                     "path": "docs/api/light-control.md"
                                 },
-
                                 {
                                     "path": "docs/api/bluetooth/ble_tutorial.md"
                                 },
@@ -791,20 +775,24 @@
                 {
                     "title": "Memory",
                     "intro": {
-                        "path": "docs/api/memory/memory_intro.md"
+                        "path": "docs/api/memory/runtime_mem_trace.md"
                     },
                     "sub_chapters": [{
-                            "title": "Memory APIs",
+                            "title": "Memory Concepts",
                             "sources": [{
-                                    "path": "docs/api/memory/runtime_mem_trace.md"
-                                },
-                                {
                                     "path": "docs/api/memory/runtime_stats.md"
                                 },
                                 {
                                     "path": "docs/api/memory/printf.md"
-                                },
-                                {
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Memory APIs",
+                            "intro": {
+                                "path": "docs/program-setup/runtime/static_memory_optimization.md"
+                            },
+                            "sources": [{
                                     "path": "docs/api/memory/MbedStats.md"
                                 },
                                 {
@@ -902,25 +890,9 @@
             ]
         },
         {
-            "title": "Migrating existing projects",
-            "description": "Migrate from existing projects and from previous versions of Mbed OS",
-            "slug": "migrating",
-            "type": "markdown",
-            "chapters": [{
-                "title": "Overview",
-                "intro": {
-                    "path": "docs/migrating/migrate-from-mbed-os-2-to-5.md"
-                },
-                "sources": []
-            }],
-            "tags": [
-                "migrating"
-            ]
-        },
-        {
-            "title": "Tools",
-            "description": "Details of the tools available for working with Mbed OS",
-            "slug": "tools",
+            "title": "Build tools",
+            "description": "",
+            "slug": "build-tools",
             "type": "markdown",
             "chapters": [{
                     "title": "Overview",
@@ -930,7 +902,7 @@
                     "sources": []
                 },
                 {
-                    "title": "Developing: Mbed Online Compiler",
+                    "title": "Mbed Online Compiler",
                     "sub_chapters": [{
                             "title": "Getting started",
                             "intro": {
@@ -986,65 +958,93 @@
                     ]
                 },
                 {
-                    "title": "Developing: Mbed Studio",
+                    "title": "Mbed Studio",
                     "sources": [{
                         "path": "docs/tools/Studio/mbed-studio.md"
                     }]
                 },
                 {
-                    "title": "Developing: Mbed CLI",
+                    "title": "Mbed CLI",
                     "intro": {
                         "path": "docs/tools/CLI/cli.md"
                     },
                     "sub_chapters": [{
-                            "title": "Installation and setup",
+                            "title": "Install and set up",
                             "sources": [{
                                 "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
                             }]
                         },
                         {
-                            "title": "Working with Mbed CLI",
+                            "title": "Create",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-create.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-compile.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-collaborate.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-test-debug.md"
-                                },
-                                {
+                                "path": "docs/tools/CLI/cli-create.md"
+                            }]
+                        },
+                        {
+                            "title": "Compile",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-compile.md"
+                            }]
+                        },
+                        {
+                            "title": "Create",
+                            "sources": []
+                        },
+
+                        {
+                            "title": "Test and debug",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-test-debug.md"
+                            }]
+                        },
+                        {
+                            "title": "Build profiles",
+                            "sources": [{
                                     "path": "docs/tools/CLI/build_profiles.md"
                                 },
                                 {
                                     "path": "docs/tools/CLI/debug_builds_cli.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/cli-device-management.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/troubleshooting.md"
                                 }
                             ]
+                        },
+                        {
+                            "title": "Update devices",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-device-management.md"
+                            }]
+                        },
+                        {
+                            "title": "Collaborate",
+                            "sources": [{
+                                "path": "docs/tools/CLI/cli-collaborate.md"
+                            }]
+                        },
+                        {
+                            "title": "Troubleshoot",
+                            "sources": [{
+                                "path": "docs/tools/CLI/troubleshooting.md"
+                            }]
                         }
                     ]
                 },
                 {
-                    "title": "Exporting",
-                    "sub_chapters": [{
-                        "title": "Exporting",
-                        "intro": {
+                    "title": "Exporting to third-party buid tools",
+                    "sources": [{
                             "path": "docs/tools/toolchains/export_to_third_party.md"
                         },
-                        "sources": [{
+                        {
                             "path": "docs/tools/toolchains/exporters.md"
-                        }]
-                    }]
-                },
-                {
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Debugging and testing ",
+            "description": "",
+            "slug": "debug-test",
+            "type": "markdown",
+            "chapters": [{
                     "title": "Debugging",
                     "sources": [{
                             "path": "docs/tools/debug/debug_intro.md"
@@ -1088,33 +1088,52 @@
                     ]
                 },
                 {
-                    "title": "Testing",
-                    "sources": [{
+                    "title": "Test tools",
+                    "sub_chapters": [{
+                        "title": "Testing",
+                        "intro": {
                             "path": "docs/tools/testing/testing_intro.md"
                         },
-                        {
-                            "path": "docs/tools/testing/unit_testing.md"
-                        },
-                        {
-                            "path": "docs/tools/testing/testing_greentea.md"
-                        },
-                        {
-                            "path": "docs/tools/testing/testing_icetea.md"
-                        },
-                        {
-                            "path": "docs/tools/testing/icetea.md"
-                        },
-                        {
-                            "path": "docs/tools/testing/utest.md"
-                        },
-                        {
-                            "path": "docs/tools/fastmodels/fastmodels.md"
-                        }
-                    ]
+                        "sources": [{
+                                "path": "docs/tools/testing/unit_testing.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/testing_greentea.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/testing_icetea.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/icetea.md"
+                            },
+                            {
+                                "path": "docs/tools/testing/utest.md"
+                            },
+                            {
+                                "path": "docs/tools/fastmodels/fastmodels.md"
+                            }
+                        ]
+                    }]
                 }
-            ],
-            "tags": [
-                "tools"
+            ]
+        },
+        {
+            "title": "Mbed OS bare metal",
+            "description": "",
+            "slug": "bare-metal",
+            "type": "markdown",
+            "sources": [{
+                    "path": "docs/program-setup/bare_metal/bare_metal.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/bare_metal_api.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/baremetal_example.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/c_small_libs.md"
+                }
             ]
         },
         {
@@ -1154,7 +1173,7 @@
             "slug": "porting",
             "type": "markdown",
             "chapters": [{
-                    "title": "Porting process",
+                    "title": "Full port",
                     "intro": {
                         "path": "docs/porting/porting_full_process/porting_start.md"
                     },
@@ -1186,7 +1205,7 @@
                     ]
                 },
                 {
-                    "title": "Porting a custom board",
+                    "title": "Derivative port",
                     "intro": {
                         "path": "docs/porting/custom-target-porting.md"
                     }

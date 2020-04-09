@@ -30,7 +30,7 @@ To export your project to uVision, you can use either the Online Compiler or Mbe
 
 The exported project contains a `.uvprojx` file. Double click on this file to open the project in uVision. uVision 5 does not support nested folders in the tree, so find your application source code by looking for a folder with the same name as your project.
 
-<span class="images">![](../../images/uvision2.png)<span>Debugging an Mbed OS 5 program in uVision 5</span></span>
+<span class="images">![](../../images/uvision2.png)<span>Debugging an Mbed OS program in uVision 5</span></span>
 
 To build your project and start a debug session:
 

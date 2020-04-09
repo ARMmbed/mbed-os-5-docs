@@ -12,17 +12,7 @@ The `ScopedRomWriteLock` class provides an RAII object for enabling writing to R
 
 This example shows how you can enable writes to ROM from main.
 
-```C++ NOCI
-#include "mbed.h"
-
-int main()
-{
-    // Enable execution from RAM while in main
-    ScopedRomWriteLock make_rom_writable;
-
-    custom_flash_programming();
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/ScopedRomWriteLock)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/ScopedRomWriteLock/main.cpp)
 
 ## Related content
 
