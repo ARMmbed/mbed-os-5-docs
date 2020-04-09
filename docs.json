@@ -174,7 +174,7 @@
             ]
         },
         {
-            "title": "Full API references",
+            "title": "APIs",
             "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
             "slug": "apis",
             "type": "markdown",
@@ -350,36 +350,6 @@
                                 },
                                 {
                                     "path": "docs/api/io/MbedCRC.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBSerial.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBAudio.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBHID.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC_ECM.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMSD.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMIDI.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouse.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBKeyboard.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouseKeyboard.md"
                                 }
                             ]
                         },
@@ -488,18 +458,11 @@
                 },
                 {
                     "title": "Connectivity",
-                    "intro": {
-                        "path": "docs/api/networksocket/networksocket.md"
-                    },
+
                     "sub_chapters": [{
                             "title": "Concepts",
-                            "intro": {
-                                "path": "docs/api/networkinterfaces/networkinterface.md"
-                            },
+
                             "sources": [{
-                                    "path": "docs/api/usb/usb_component.md"
-                                },
-                                {
                                     "path": "docs/api/bluetooth/bluetooth.md"
                                 },
                                 {
@@ -527,7 +490,10 @@
                             ]
                         },
                         {
-                            "title": "Network inteface APIs",
+                            "title": "Network interface APIs",
+                            "intro": {
+                                "path": "docs/api/networkinterfaces/networkinterface.md"
+                            },
                             "sources": [{
                                     "path": "docs/api/networksocket/socket.md"
                                 },
@@ -559,6 +525,9 @@
                         },
                         {
                             "title": "Socket APIs",
+                            "intro": {
+                                "path": "docs/api/networksocket/networksocket.md"
+                            },
                             "sources": [{
                                     "path": "docs/api/networksocket/UDPSocket.md"
                                 },
@@ -648,9 +617,7 @@
                                 {
                                     "path": "docs/api/light-control.md"
                                 },
-                                {
-                                    "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                                },
+
                                 {
                                     "path": "docs/api/bluetooth/ble_tutorial.md"
                                 },
@@ -698,6 +665,57 @@
                                     "path": "docs/api/nfc/nfc-arch.md"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "title": "USB",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "intro": {
+                                "path": "docs/api/usb/usb_component.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "USB APIs",
+                            "sources": [{
+                                    "path": "docs/api/usb/USBSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBAudio.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBHID.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouseKeyboard.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "USB tutorials",
+                            "sources": [{
+                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                            }]
                         }
                     ]
                 },
