@@ -763,16 +763,6 @@
                     ]
                 },
                 {
-                    "title": "Cloud connection",
-                    "sub_chapters": [{
-                        "title": "Concepts",
-                        "intro": {
-                            "path": "docs/api/firmware_update.md"
-                        },
-                        "sources": []
-                    }]
-                },
-                {
                     "title": "Security",
                     "intro": {
                         "path": "docs/api/security/security.md"
@@ -1429,12 +1419,6 @@
                     "title": "Device Management for Mbed OS",
                     "sources": [{
                             "path": "docs/ref-designs/pelion_ready/device-management.md"
-                        },
-                        {
-                            "path": "docs/ref-designs/pelion_ready/device-management-config.md"
-                        },
-                        {
-                            "path": "docs/ref-designs/pelion_ready/device-management-test.md"
                         }
                     ]
                 },
