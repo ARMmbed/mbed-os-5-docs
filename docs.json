@@ -328,9 +328,6 @@
                                     "path": "docs/api/io/FlashIAP.md"
                                 },
                                 {
-                                    "path": "docs/api/io/RawSerial.md"
-                                },
-                                {
                                     "path": "docs/api/io/Serial.md"
                                 },
                                 {
