@@ -1,10 +1,16 @@
 # Further reading
 
-- [Mbed OS tutorials and examples](../tutorials/index.html): list of Mbed OS 5 example repositories.
+- [Mbed OS tutorials and examples](../tutorials/index.html): list of Mbed OS example repositories.
 
 - Documentation:
    - [Mbed OS APIs](../apis/index.html): list of all APIs available in Mbed OS.
    - [Peripheral drivers](../apis/drivers.html): I/O driver APIs (I2C, SPI, UART and so on).
+
+
+- Related links
+    - [Mbed OS statistics API](../apis/mbed-statistics.html).
+    - [Mbed OS configuration](../reference/configuration.html).
+    - [Mbed OS serial communication](../tutorials/serial-communication.html).
 
 - Tutorials:
    - [Advanced debugging](../tutorials/debugging.html).

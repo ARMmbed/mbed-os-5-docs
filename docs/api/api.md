@@ -1,5 +1,7 @@
 # Full API list
 
+<!--this page has to be redone
+
 ## Platform APIs
 
 [Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
@@ -204,7 +206,6 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <td><a href="gap.html">GAP</a></td>
 <td><a href="gattserver.html">GattServer</a></td>
 <td><a href="batteryservice.html">BatteryService</a></td>
-<td><a href="ibeacon.html">iBeacon</a></td>
 </tr>
 </tbody>
 </table>
@@ -300,3 +301,5 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 </tr>
 </tbody>
 </table>
+
+-->

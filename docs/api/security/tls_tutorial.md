@@ -1,6 +1,6 @@
 <h1 id="tls-tutorial">Using Mbed TLS to communicate securely</h1>
 
-Since Mbed OS 5.11, the [IP networking interface](../reference/ip-networking.html) has been extended to include [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), helps you understand and use TLS encryption in Mbed OS. The Transport Layer Security (TLS) is a successor of Secure Sockets Layer (SSL), and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured online services, such as cloud IoT platforms.
+The [IP networking interface](../reference/ip-networking.html) includes [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), helps you understand and use TLS encryption in Mbed OS. The Transport Layer Security (TLS) is a successor of Secure Sockets Layer (SSL), and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured online services, such as cloud IoT platforms.
 
 In particular, this tutorial:
 
@@ -90,51 +90,8 @@ With everything in place, you can now set up a TLS socket connection. On the Mbe
 
 You set up a TLS socket in the same way as you set up a TCP socket, except you call `set_root_ca_cert` with the root CA string.
 
-```cpp
-#include "mbed.h"
-#include "mbed_trace.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/TLS_Communication/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/TLS_Communication/main.cpp)
 
-const char cert[] = /* your certificate, see above */ "";
-
-int main (void) {
-
-nsapi_size_or_error_t result;
-NetworkInterface *net = NetworkInterface::get_default_instance();
-
-if (!net) {
-    printf("Error! No network inteface found.\n");
-    return 0;
-}
-
-printf("Connecting to network\n");
-result = net->connect();
-if (result != 0) {
-    printf("Error! net->connect() returned: %d\n", result);
-    return result;
-}
-
-TLSSocket *socket = new TLSSocket;
-result = socket->set_root_ca_cert(cert);
-if (result != 0) {
-    printf("Error: socket->set_root_ca_cert() returned %d\n", result);
-    return result;
-}
-
-result = socket->open(net);
-if (result != 0) {
-    printf("Error! socket->open() returned: %d\n", result);
-    return result;
-}
-
-printf("Connecting to os.mbed.com\n");
-result = socket->connect(SocketAddress("os.mbed.com", 443));
-if (result != 0) {
-    printf("Error! socket->connect() returned: %d\n", result);
-    return result;
-}
-
-}
-```
 
 This now makes the request and returns the content of the file.
 

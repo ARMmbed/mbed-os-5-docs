@@ -60,7 +60,7 @@ You also need to build devices. If you use Mbed OS (and you should), you can eit
     - [MultiTech mDot](https://os.mbed.com/platforms/MTS-mDot-F411/) and the [UDK2 board](http://www.digikey.com/product-detail/en/multi-tech-systems-inc/MTUDK2-ST-MDOT/591-1278-ND/5247463).
     - [MultiTech mDot EVB](https://os.mbed.com/platforms/mdotevb/).
     - [B-L072Z-LRWAN1 LoRa®Discovery kit](https://os.mbed.com/platforms/ST-Discovery-LRWAN1/).
-- An Mbed OS 5 Enabled development board together with a LoRa shield:
+- An Mbed OS Enabled development board together with a LoRa shield:
     - [SX1272MB2xAS](https://os.mbed.com/components/SX1272MB2xAS/) - shield based on the SX1272 transceiver.
     - [SX1276MB1xAS](https://os.mbed.com/components/SX1276MB1xAS/) - shield based on the SX1276 transceiver.
 

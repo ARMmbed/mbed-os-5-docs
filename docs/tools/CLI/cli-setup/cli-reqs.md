@@ -5,7 +5,7 @@ The installers are a great way to get started with Mbed OS:
 - [Windows installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
 - [macOS installer](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-There is no installer for Linux; please follow the manual installation guide.
+There is no installer for Linux; please follow the [manual installation guide](../tools/manual-installation.html).
 
 <span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
 

@@ -144,7 +144,7 @@ And the following tutorials:
 | SecurityManager | [SecurityManager example](../apis/securitymanager.html#securitymanager-example) | |
 | BatteryService | [Battery level example](../apis/batteryservice.html#batteryservice-example) | |
 | HeartRateService | [Heart rate service example](../apis/heartrateservice.html#heartrateservice-example) | |
-| ibeacon | [ibeacon example](../apis/ibeacon.html#ibeacon-example) | |
+
 
 
 ### Using LoRa APIs

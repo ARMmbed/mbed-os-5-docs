@@ -29,7 +29,3 @@ Set up a Timeout to invert an LED after a given timeout:
 Try this example to attach a member function:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_Example/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_Example/main.cpp)
-
-## Related content
-
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).

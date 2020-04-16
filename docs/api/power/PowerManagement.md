@@ -117,4 +117,3 @@ After the call the processor and most components will reset, but it will not aff
 
 - [DeepSleepLock API reference](deepsleeplock.html).
 - [Idle loop API reference](idle-loop.html).
-- [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).

@@ -7,7 +7,7 @@ Please fork or branch the following repositories:
 - [DAPLink](https://github.com/armmbed/daplink).
 - [pyOCD](https://github.com/mbedmicro/pyocd).
 - [FlashAlgo](https://github.com/mbedmicro/flashalgo).
-- [Mbed OS](https://github.com/armmbed/mbed-os). Use the format `https://github.com/ARMmbed/mbed-os-new-target`.
+- [Mbed OS](https://github.com/armmbed/mbed-os). Create a development branch, and name it using the format `https://github.com/ARMmbed/mbed-os-new-target`.
 - [Mbed OS bootloader](https://github.com/armmbed/mbed-bootloader).
 - [Blinky](https://github.com/armmbed/mbed-os-example-blinky).
 - [Device Management Cloud Client example](https://github.com/armmbed/mbed-cloud-client-example).

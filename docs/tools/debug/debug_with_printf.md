@@ -31,25 +31,8 @@ To send data over the serial connection, use the [Serial](../apis/serial.html) o
 
 This program blinks the LED on your development board and prints a message every time the LED changes state:
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_BlinksLED/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_BlinksLED/main.cpp)
 
-// define the Serial object
-Serial pc(USBTX, USBRX);
-
-DigitalOut led1(LED1);
-
-int main() {
-    while (true) {
-        led1 = !led1;
-
-        // Print something over the serial connection
-        pc.printf("Blink! LED is now %d\r\n", led1.read());
-
-        wait(0.5);
-    }
-}
-```
 
 Compile this program, and flash it on your development board. You now can inspect these messages using a serial monitor.
 
@@ -103,16 +86,8 @@ Compile this program, and flash it on your development board. You now can inspec
 
 By default, the speed at which the microcontroller and your computer communicate (the baud rate) is set to 9600 baud. This setting fits most use cases, but you can change it by calling the `baud` function on the serial object:
 
-```cpp
-#include "mbed.h"
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_SetBaudRate/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_SetBaudRate/main.cpp)
 
-Serial pc(USBTX, USBRX);
-
-int main() {
-    pc.baud(115200);
-    pc.printf("Hello World!\r\n");
-}
-```
 
 If you change the baud rate on the device, you also need to change it on your serial monitor:
 
