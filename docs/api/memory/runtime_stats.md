@@ -1,6 +1,6 @@
 # Runtime memory statistics
 
-Arm Mbed OS 5 provides various runtime statistics to help characterize resource usage. This allows easy identification of potential problems, such as a stack close to overflowing. The metrics currently supported are available for the [heap](#heap-statistics) and the [stack](#stack-statistics).
+Arm Mbed OS provides various runtime statistics to help characterize resource usage. This allows easy identification of potential problems, such as a stack close to overflowing. The metrics currently supported are available for the [heap](#heap-statistics) and the [stack](#stack-statistics).
 
 ## Heap statistics
 
@@ -49,7 +49,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 ### Example program using heap statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/heap_stats_example/)](https://os.mbed.com/teams/mbed_example/code/heap_stats_example/file/c084f1df237e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Heap_Stats_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Heap_Stats_ex_1/main.cpp)
 
 ### Side effects of enabling heap statistics
 
@@ -99,4 +99,4 @@ Both of these functions return a struct containing the following:
 
 ### Example program using stack statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/stack_stats_example/)](http://os.mbed.com/teams/mbed_example/code/stack_stats_example/file/539750137652/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Stack_Stats_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Stack_Stats_ex_1/main.cpp)

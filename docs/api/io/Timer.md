@@ -17,8 +17,4 @@ You can independently create, start and stop any number of Timer objects.
 
 ## Timer hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Timer_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Timer_HelloWorld/file/0d21eea06da7/main.cpp)
-
-## Related content
-
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timer_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timer_HelloWorld/main.cpp)

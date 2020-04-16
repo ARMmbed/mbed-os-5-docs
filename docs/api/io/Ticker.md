@@ -22,15 +22,14 @@ You can create any number of Ticker objects, allowing multiple outstanding inter
 
 Try this program to set up a Ticker to repeatedly invert an LED:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Ticker_HelloWorld/)](https://os.mbed.com/teams/mbed_example/code/Ticker_HelloWorld/file/1b2dcb20aad0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Ticker_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Ticker_HelloWorld/main.cpp)
 
 ## Ticker examples
 
 Use this example to attach a member function to a ticker:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/Ticker_Example/)](https://os.mbed.com/teams/mbed_example/code/Ticker_Example/file/982ebb531653/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Ticker_Example/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Ticker_Example/main.cpp)
 
 ## Related content
 
 - [Application flow control tutorial](../tutorials/application-flow-control.html).
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).

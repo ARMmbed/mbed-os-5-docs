@@ -1,6 +1,6 @@
 # Runtime memory tracing
 
-Running out of memory is a common problem with resource constrained systems such as the MCUs on which Arm Mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in Mbed OS 5 is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
+Running out of memory is a common problem with resource constrained systems such as the MCUs on which Arm Mbed OS runs. When faced with an out of memory error, you often need to understand how your software uses dynamic memory. The runtime memory tracer in Mbed OS is the tool that shows the runtime memory allocation patterns of your software: which parts of the code allocate and free memory and how much memory they need.
 
 ## Using the memory tracer
 
@@ -44,7 +44,7 @@ Find the source of the default callback [here](https://github.com/ARMmbed/mbed-o
 
 A simple code example that uses the memory tracer on a K64F board:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/memory_tracing_example/)](http://os.mbed.com/teams/mbed_example/code/memory_tracing_example/file/168ab14e6694/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Memory_tracing_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Memory_tracing_ex_1/main.cpp)
 
 It outputs the following trace:
 

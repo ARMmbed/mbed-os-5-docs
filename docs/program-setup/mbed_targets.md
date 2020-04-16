@@ -291,7 +291,7 @@ The `bootloader_supported` property controls whether the build system allows a b
 
 ### release_versions
 
-The `release_versions` property is a list of major versions of Mbed OS that the target supports. The list within `release_versions` may only contain `2`, indicating that the support of Mbed OS 2, and `5`, indicating the support of Mbed OS 5. We build all targets that are released for Mbed OS 2 as a static library. Targets are released for Mbed OS 2 by putting a `2` in the `release_version` list.
+The `release_versions` property is a list of major versions of Mbed OS that the target supports.
 
 ### supported_form_factors
 

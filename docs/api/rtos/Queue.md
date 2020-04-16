@@ -22,13 +22,14 @@ queue.put(message);
 osEvent evt = queue.get();
 if (evt.status == osEventMessage) {
     message_t *message = (message_t*)evt.value.p;
+}
 ```
 
 ## Queue and MemoryPool example
 
 This example shows `Queue` and [MemoryPool](memorypool.html) managing measurements.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_queue/)](https://os.mbed.com/teams/mbed_example/code/rtos_queue/file/bbbae4aa4768/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Queue)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Queue/main.cpp)
 
 ## Related content
 

@@ -14,8 +14,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 
 | API | Examples |
 | --- | --- |
-| Wait | [Wait example](../apis/wait.html#example) |
-| callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
+| Callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
 | DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
 | PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
 | IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
@@ -63,8 +62,8 @@ These tutorials and examples show you how to perform specific tasks that use the
 | LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
 | LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
 | Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
-| RawSerial | [RawSerial example](../apis/rawserial.html#rawserial-examples) | [RawSerial Hello, World](../apis/rawserial.html#rawserial-hello-world) |
-| Serial | [Serial example](../apis/serial.html#serial-examples) | [Serial Hello, World](../apis/serial.html#serial-hello-world) |
+| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
+| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
 | SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
 | SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
 | QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
@@ -145,7 +144,7 @@ And the following tutorials:
 | SecurityManager | [SecurityManager example](../apis/securitymanager.html#securitymanager-example) | |
 | BatteryService | [Battery level example](../apis/batteryservice.html#batteryservice-example) | |
 | HeartRateService | [Heart rate service example](../apis/heartrateservice.html#heartrateservice-example) | |
-| ibeacon | [ibeacon example](../apis/ibeacon.html#ibeacon-example) | |
+
 
 
 ### Using LoRa APIs
@@ -189,7 +188,6 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SDBlockDevice | [SDBlockDevice example](../apis/sdblockdevice.html#sdblockdevice-example-application) |
 | SPIFBlockDevice | [SPIFBlockDevice example](../apis/spi-flash-block-device.html#spifblockdevice-example) |
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
-| NVStore | [NVStore](../apis/nvstore.html#nvstore-example) |
 
 ## Serial communication
 

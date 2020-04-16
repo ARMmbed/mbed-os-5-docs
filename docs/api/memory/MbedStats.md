@@ -79,19 +79,19 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ## Memory statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/)](https://os.mbed.com/teams/mbed_example/code/mbed-os-example-platform-utils/file/92b97ba04fd3/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Utils_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Utils_ex_1/main.cpp)
 
 ## Thread statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-5.15/main.cpp)
 
 ## System information example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-5.15/main.cpp)
 
 ## CPU statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-5.15/main.cpp)
 
 ## Related content
 

@@ -2,7 +2,7 @@
 
 The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
-The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/blob/master/rtos). See [the Doxygen](../mbed-os-api-doxy/group__rtos.html) for more information.
+The code of the Mbed RTOS can be found in the [`mbed-os`](https://github.com/ARMmbed/mbed-os) repository, in the [RTOS subdirectory](https://github.com/ARMmbed/mbed-os/blob/master/rtos). See [the Doxygen](../mbed-os-api-doxy/group__rtos-public-api.html) for more information.
 
 ## Memory considerations
 
@@ -21,7 +21,7 @@ The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want t
 
 ## RTOS APIs
 
-The RTOS APIs handle creation and destruction of threads in Arm Mbed OS 5, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS 5 (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS 5.
+The RTOS APIs handle creation and destruction of threads in Arm Mbed OS, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS.
 
 - [Thread](thread.html): The class that allows defining, creating and controlling parallel tasks.
 - [ThisThread](thisthread.html): The class with which you can control the current thread.

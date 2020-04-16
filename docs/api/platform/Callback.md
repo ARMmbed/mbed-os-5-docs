@@ -33,7 +33,7 @@ The Callback class is what’s known in C++ as a “Concrete Type”. That is, t
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_callback.html)
 
 ## Serial passthrough example with callbacks
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/rtos_threading_with_callback/)](https://os.mbed.com/users/mbedAustin/code/SerialPassthrough/file/96cb82af9996/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Callback_SerialPassthrough/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Callback_SerialPassthrough/main.cpp)
 
 ## Thread example with callbacks
 
@@ -45,4 +45,4 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 Here is an example that uses everything discussed in the [introduction to callbacks](platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the Callback.
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/)](https://os.mbed.com/teams/mbed_example/code/callback-sonar-example/file/1713cdc51510/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Sonar)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Sonar/main.cpp)

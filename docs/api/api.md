@@ -1,17 +1,13 @@
 # Full API list
 
+<!--this page has to be redone
+
 ## Platform APIs
 
 [Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
 
 <table>
 <tbody>
-<tr>
-<td><a href="wait.html">Wait</a></td>
-<td><a href="time.html">Time</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
-<td><a href="circularbuffer.html">CircularBuffer</a></td>
-</tr>
 <tr>
 <td><a href="callback.html">Callback</a></td>
 <td><a href="rtc.html">RTC</a></td>
@@ -42,6 +38,11 @@
 <td><a href="platformmutex.html">PlatformMutex</a></td>
 <td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
 </tr>
+<tr>
+<td><a href="time.html">Time</a></td>
+<td><a href="noncopyable.html">NonCopyable</a></td>
+<td><a href="circularbuffer.html">CircularBuffer</a></td>
+</tr>
 </tbody>
 </table>
 
@@ -62,14 +63,14 @@
 <td><a href="analogout.html">AnalogOut</a></td>
 <td><a href="portin.html">PortIn</a></td>
 <td><a href="timer.html">Timer</a></td>
-<td><a href="rawserial.html">RawSerial</a></td>
+<td><a href="bufferedserial.html">BufferedSerial</a></td>
 <td><a href="can.html">CAN</a></td>
 </tr>
 <tr>
 <td><a href="digitalin.html">DigitalIn</a></td>
 <td><a href="portout.html">PortOut</a></td>
 <td><a href="lowpowerticker.html">LowPowerTicker</a></td>
-<td><a href="serial.html">Serial</a></td>
+<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
 <td><a href="mbedcrc.html">MbedCRC</a></td>
 </tr>
 <tr>
@@ -205,7 +206,6 @@ The Mbed OS classes providing USB peripheral functionality, also known as [USB c
 <td><a href="gap.html">GAP</a></td>
 <td><a href="gattserver.html">GattServer</a></td>
 <td><a href="batteryservice.html">BatteryService</a></td>
-<td><a href="ibeacon.html">iBeacon</a></td>
 </tr>
 </tbody>
 </table>
@@ -272,21 +272,20 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 <td><a href="littlefilesystem.html">LittleFileSystem</a></td>
 <td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
 <td><a href="../apis/dataflashblockdevice.html">DataFlashBlockDevice</a></td>
-<td><a href="nvstore.html">NVStore</a></td>
+<td><a href="../apis/psa-internal-storage.html">PSA internal storage</a></td>
 </tr>
 <tr>
 <td><a href="static-global-api.html">Static Global API</a></td>
 <td><a href="fatfilesystem.html">FATFileSystem</a></td>
 <td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
 <td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
-<td><a href="../apis/psa-internal-storage.html">PSA internal storage</a></td>
+<td><a href="../apis/psa-protected-storage.html">PSA protected storage</a></td>
 </tr>
 <tr>
 <td><a href="filesystem.html">FileSystem</a></td>
 <td><a href="blockdevice.html">BlockDevice</a></td>
 <td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
 <td><a href="sdblockdevice.html">SDBlockDevice</a></td>
-<td><a href="../apis/psa-protected-storage.html">PSA protected storage</a></td>
 </tr>
 <tr>
 <td><a href="dir.html">Dir</a></td>
@@ -302,3 +301,5 @@ The [storage APIs](storage.html) include file system APIs, for file system opera
 </tr>
 </tbody>
 </table>
+
+-->

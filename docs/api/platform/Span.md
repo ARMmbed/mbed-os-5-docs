@@ -93,54 +93,11 @@ When you encode the size of the sequence viewed in the Span value, Span instance
 
 ## Span example
 
-```
-template<typename T>
-Span<const T> split(Span<const T> &range, const T& separator) {
-    const ptrdiff_t out_of_range = range.size();
+C++ code:
 
-    ptrdiff_t start;
-    for (start = 0; start != out_of_range && range[start] == separator; ++start) { }
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Span_cpp)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Span_cpp/main.cpp)
 
-    ptrdiff_t last;
-    for (last = start; last != out_of_range && range[last] != separator; ++last) { }
 
-    Span<const T> result = range.subspan(start, last - start);
-    range = range.subspan(last);
-    return result;
-}
+C code:
 
-Span<const char> buffer("Hello World! Hello mbed-os!");
-while(buffer.empty() == false) {
-    Span<const char> token = split(buffer, ' ');
-    printf("token: %.*s\r\n", token.size(), token.data());
-}
-
-//------------------------------------------------------------------------------
-// Equivalent C-like code
-
-template<typename T>
-void split(const T** in_ptr, ptrdiff_t* in_size, const T** token_ptr, ptrdiff_t* token_size, const T& separator) {
-    const ptrdiff_t out_of_range = *in_size;
-
-    ptrdiff_t start;
-    for (start = 0; start != out_of_range && (*in_ptr)[start] == separator; ++start) { }
-
-    ptrdiff_t last;
-    for (last = start; last != out_of_range && (*in_ptr)[last] != separator; ++last) { }
-
-    *token_ptr = *in_ptr + start;
-    *token_size = last - start;
-
-    *in_size = *in_size - last;
-    *in_ptr = *in_ptr + last;
-}
-
-const char* buffer_ptr = str;
-ptrdiff_t buffer_size = sizeof(str);
-while (buffer_size) {
-    const char* token_ptr = NULL;
-    ptrdiff_t token_size = 0;
-    split(&buffer_ptr, &buffer_size, &token_ptr, &token_size, ' ');
-    printf("token: %.*s\r\n", token_size, token_ptr);
-}
-```
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Span_c)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Span_c/main.cpp)

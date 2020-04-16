@@ -434,13 +434,13 @@ void clear_reboot_count() {
 
 The example application below demonstrates usage of error handling APIs:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-5.15/main.cpp)
 
 ## Crash reporting example
 
 The example application below demonstrates the crash reporting feature:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-5.14/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-5.15/main.cpp)
 
 ## List of Mbed OS defined error codes and descriptions
 
@@ -527,5 +527,3 @@ See the below Doxygen file for additional information regarding error code defin
 
 - Debug and develop [build profiles](../tools/build-profiles.html).
 - Mbed OS [error decoder](https://mbed.com/s/error).
-- [Office Hours video about Crash Reporting](https://www.youtube.com/watch?v=SdC_aM-aZNc).
-- [Office Hours video about Crash Dump Analysis](https://www.youtube.com/watch?v=7xKWFSnUye8).

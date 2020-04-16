@@ -1,4 +1,4 @@
-# An introduction to Arm Mbed OS 5
+# An introduction to Arm Mbed OS 6
 
 Mbed OS is an open-source operating system for platforms using Arm microcontrollers designed specifically for Internet of Things (IoT) devices: low-powered, constrained devices that need to connect to the internet. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can focus on writing C/C++ applications that call functionality available on a range of hardware. Mbed OS applications can be reused on any Mbed-compatible platform.
 
@@ -102,8 +102,8 @@ Please see the following sections of our documentation for more information.
 
 <h1 id="docs-updates">Recently updated documentation</h1>
 
+- New API references for [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
+- New content about [using small C libraries in Mbed OS bare metal](../reference/using-small-c-libraries.html).
 - A guide to [porting a custom board](../porting/porting-a-custom-board.html).
 - A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
 - The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
-- A [power optimization tutorial](../tutorials/power-optimization.html) about measuring and reducing power consumption.
-- A [mesh tutorial](../tutorials/mesh-tutorial.html) about selecting and using a mesh protocol.

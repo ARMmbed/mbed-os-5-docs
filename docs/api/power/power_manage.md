@@ -201,8 +201,6 @@ Both HAL sleep functions work like an Arm Wait For Interrupt (WFI) instruction, 
 
 This is also why the MCU wakes up from sleep every millisecond when tickless is not enabled. In nontickless mode, SysTick needs to fire every millisecond and does this by setting an interrupt on the usticker. Right after the SysTick, the sleep manager puts the MCU back to sleep. However, this also means that in nontickless mode, you can't put the MCU in deep sleep because the wake-up latency is bigger than the SysTick interval.
 
-For more information on the design of tickless and the sleep manager, please see the [office hours video with Bartek Szatkowski](https://www.youtube.com/watch?v=OFfOlBaegdg).
-
 For information about the tradeoff between power savings and memory footprint in tickless mode, please see the [power management API reference](../apis/power-management-sleep.html).
 
 ### Hibernate mode without RAM retention

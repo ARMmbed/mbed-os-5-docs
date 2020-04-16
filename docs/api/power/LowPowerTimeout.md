@@ -17,9 +17,8 @@ Use the LowPowerTimeout interface to set up an interrupt to call a function afte
 
 Set up a time out to invert an LED after a given time:
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/LowPowerTimeout-example/)](https://os.mbed.com/teams/mbed_example/code/LowPowerTimeout-example/file/28699dc8770e/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/lowpowerTimeout_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/lowpowerTimeout_ex_1/main.cpp)
 
 ## Related content
 
 - [Power management APIs](power-management-sleep.html).
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).
