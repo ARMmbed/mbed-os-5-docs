@@ -104,59 +104,6 @@
             ]
         },
         {
-            "title": "Program setup",
-            "description": "The reference manual for Mbed OS: architecture, configuration and contribution details",
-            "slug": "program-setup",
-            "type": "markdown",
-            "chapters": [{
-                    "title": "Concepts",
-                    "intro": {
-                        "path": "docs/program-setup/reference.md"
-                    },
-                    "sources": [{
-                            "path": "docs/program-setup/runtime/Execution.md"
-                        },
-                        {
-                            "path": "docs/program-setup/runtime/Bootstrap.md"
-                        },
-                        {
-                            "path": "docs/program-setup/project-structure.md"
-                        },
-                        {
-                            "path": "docs/program-setup/build_rules.md"
-                        },
-                        {
-                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "Serial communication",
-                    "sources": [
-                        {
-                            "path": "docs/program-setup/serial/serial_communication.md"
-                        },
-                        {
-                            "path": "docs/program-setup/serial/serial_driver.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "Advanced configuration",
-                    "intro": {
-                        "path": "docs/program-setup/configuration.md"
-                    },
-                    "sources": [{
-                            "path": "docs/program-setup/mbed_targets.md"
-                        },
-                        {
-                            "path": "docs/program-setup/bootloader.md"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "title": "APIs",
             "description": "The APIs of Mbed OS: RTOS, I/O, storage, networking, Cloud connection, security, power, memory and utilities",
             "slug": "apis",
@@ -923,6 +870,59 @@
                                     "path": "docs/api/platform/ScopedRomWriteLock.md"
                                 }
                             ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Program setup",
+            "description": "The reference manual for Mbed OS: architecture, configuration and contribution details",
+            "slug": "program-setup",
+            "type": "markdown",
+            "chapters": [{
+                    "title": "Concepts",
+                    "intro": {
+                        "path": "docs/program-setup/reference.md"
+                    },
+                    "sources": [{
+                            "path": "docs/program-setup/runtime/Execution.md"
+                        },
+                        {
+                            "path": "docs/program-setup/runtime/Bootstrap.md"
+                        },
+                        {
+                            "path": "docs/program-setup/project-structure.md"
+                        },
+                        {
+                            "path": "docs/program-setup/build_rules.md"
+                        },
+                        {
+                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                        }
+                    ]
+                },
+                {
+                    "title": "Serial communication",
+                    "sources": [
+                        {
+                            "path": "docs/program-setup/serial/serial_communication.md"
+                        },
+                        {
+                            "path": "docs/program-setup/serial/serial_driver.md"
+                        }
+                    ]
+                },
+                {
+                    "title": "Advanced configuration",
+                    "intro": {
+                        "path": "docs/program-setup/configuration.md"
+                    },
+                    "sources": [{
+                            "path": "docs/program-setup/mbed_targets.md"
+                        },
+                        {
+                            "path": "docs/program-setup/bootloader.md"
                         }
                     ]
                 }
