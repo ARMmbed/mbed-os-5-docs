@@ -1405,13 +1405,7 @@
             "slug": "mbed-os-pelion",
             "type": "markdown",
             "description": "How to go to production with Mbed OS-based IoT devices, the Pelion IoT platform and Arm Treasure Data (Data Management)",
-            "chapters": [{
-                    "title": "Introduction",
-                    "intro": {
-                        "path": "docs/ref-designs/pelion_ready/introduction_chip2cloud.md"
-                    },
-                    "sources": []
-                },
+            "chapters": [
                 {
                     "title": "Device Management for Mbed OS",
                     "sources": [{
@@ -1427,66 +1421,7 @@
                     "sources": [{
                         "path": "docs/ref-designs/td-tutorial.md"
                     }]
-                },
-                {
-                    "title": "Going to production",
-                    "sub_chapters": [{
-                            "title": "Introduction",
-                            "intro": {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/intro.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Stage 1: Evaluation",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage1.md"
-                            }]
-                        },
-                        {
-                            "title": "Stage 2: Proof of concept",
-                            "intro": {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/intro_s_2.md"
-                            },
-                            "sources": [{
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/1_hardware.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/3_connectivity.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/2_software.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/4_security.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/6_example.md"
-                                }
-
-                            ]
-                        },
-                        {
-                            "title": "Stage 3: Prototype",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage3.md"
-                            }]
-                        },
-                        {
-                            "title": "Stage 4: Pilot",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage4.md"
-                            }]
-                        },
-                        {
-                            "title": "Stage 5: Production",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage5.md"
-                            }]
-                        }
-                    ]
                 }
-
             ]
         },
         {
