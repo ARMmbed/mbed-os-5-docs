@@ -292,7 +292,6 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <td><a href="mpu-management.html">mpug_mgmt (MPU management)</a></td>
 <td><a href="memory-tracing.html">mbed_mem_trace (Memory tracing)</a></td>
 <td><a href="memorypool.html">MemoryPool</a></td>
-<td><a href="memory.html">Memory</a></td>
 </tr>
 </tbody>
 </table>

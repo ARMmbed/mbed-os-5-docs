@@ -719,6 +719,9 @@
                                 },
                                 {
                                     "path": "docs/api/memory/printf.md"
+                                },
+                                {
+                                    "path": "docs/program-setup/runtime/Memory.md"
                                 }
                             ]
                         },
@@ -738,9 +741,6 @@
                                 },
                                 {
                                     "path": "docs/api/memory/MemoryPool.md"
-                                },
-                                {
-                                    "path": "docs/program-setup/runtime/Memory.md"
                                 }
                             ]
                         },
