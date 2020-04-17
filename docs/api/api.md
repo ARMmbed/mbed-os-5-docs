@@ -1,4 +1,147 @@
 # Full API list
+<!--these are now just the APIs - do I want to add the tutorials?-->
+
+## RTOS and event handling
+
+<table>
+<tbody>
+<tr>
+<td><a href="rtos-apis.html">Thread</a></td>
+<td><a href="thisthread.html">ThisThread</a></td>
+<td><a href="mutex.html">Mutex</a></td>
+<td><a href="semaphore.html">Semaphore</a></td>
+</tr>
+<tr>
+<td><a href="queue.html">Queue</a></td>
+<td><a href="eventqueue.html">EventQueue</a></td>
+<td><a href="userallocatedevent.html">UserAllocatedEvent</a></td>
+<td><a href="mail.html">Mail</a></td>
+</tr>
+<tr>
+<td><a href="eventflags.html">EventFlags</a></td>
+<td><a href="event.html">Event</a></td>
+<td><a href="conditionvariable.html">Conditionvariable</a></td>
+<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
+</tr>
+</tbody>
+</table>
+
+## Input/Output
+
+<table>
+<tbody>
+<tr>
+<td><a href="i-o-apis.html">AnalogIn</a></td>
+<td><a href="analogout.html">AnalogOut</a></td>
+<td><a href="digitalin.html">DigitalIn</a></td>
+<td><a href="digitalout.html">DigitalOut</a></td>
+<td><a href="digitalinout.html">DigitalInOut</a></td>
+</tr>
+<tr>
+<td><a href="busin.html">BusIn</a></td>
+<td><a href="busout.html">BusOut</a></td>
+<td><a href="businout.html">BusInOut</a></td>
+<td><a href="portin.html">PortIn</a></td>
+<td><a href="portout.html">PortOut</a></td>
+</tr>
+<tr>
+<td><a href="portinout.html">PortInOut</a></td>
+<td><a href="pwmout.html">PwmOut</a></td>
+<td><a href="interruptin.html">InterruptIn</a></td>
+<td><a href="ticker.html">Ticker</a></td>
+<td><a href="timeout.html">Timeout</a></td>
+</tr>
+<tr>
+<td><a href="timer.html">Timer</a></td>
+<td><a href="watchdog.html">Watchdog</a></td>
+<td><a href="resetreason.html">ResetReason</a></td>
+<td><a href="flash-iap.html">Flash IAP</a></td>
+<td><a href="bufferedserial.html">BufferedSerial</a></td>
+</tr>
+<tr>
+<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
+<td><a href="spi.html">SPI</a></td>
+<td><a href="spislave.html">SPISlave</a></td>
+<td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
+<td><a href="i2c.html">I2C</a></td>
+</tr>
+<tr>
+<td><a href="i2cslave.html">I2CSlave</a></td>
+<td><a href="can.html">CAN</a></td>
+<td><a href="mbedcrc.html">MbedCRC</a></td>
+</tr>
+</tbody>
+</table>
+
+## Data storage
+
+<table>
+<tbody>
+<tr>
+<td><a href="data-apis.html">KVStore</a></td>
+<td><a href="static-global-api.html">Static Global API</a></td>
+<td><a href="filesystem.html">FileSystem</a></td>
+<td><a href="dir.html">Dir</a></td>
+<td><a href="file.html">File</a></td>
+</tr>
+<tr>
+<td><a href="littlefilesystem.html">LittleFileSystem</a></td>
+<td><a href="fatfilesystem.html">FATFileSystem</a></td>
+<td><a href="blockdevice.html">BlockDevice</a></td>
+<td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
+<td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
+</tr>
+<tr>
+<td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
+<td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
+<td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
+<td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
+<td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
+</tr>
+<tr>
+<td><a href="dataflashblockdevice.html">DataFlashBlockDevice</a></td>
+<td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
+<td><a href="sdblockdevice.html">SDBlockDevice</a></td>
+<td><a href="spi-flash-block-device.html">SPI Flash block device</a></td>
+<td><a href="qspifblockdevice.html">QSPIFBlockDevice</a></td>
+</tr>
+<tr>
+<td><a href="psa-internal-storage.html">PSA internal storage</a></td>
+<td><a href="psa-protected-storage.html">PSA protected storage</a></td>
+</tr>
+</tbody>
+</table>
+
+
+## Connectivity
+
+### Network interface
+
+<table>
+<tbody>
+<tr>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+</tr>
+</tbody>
+</table>
+
+##
+
+<table>
+<tbody>
+<tr>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+<td><a href=".html"></a></td>
+</tr>
+</tbody>
+</table>
 
 <!--this page has to be redone
 
