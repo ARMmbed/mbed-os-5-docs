@@ -641,16 +641,6 @@
                     ]
                 },
                 {
-                    "title": "Cloud connection",
-                    "sub_chapters": [{
-                        "title": "Concepts",
-                        "intro": {
-                            "path": "docs/api/firmware_update.md"
-                        },
-                        "sources": []
-                    }]
-                },
-                {
                     "title": "Security",
                     "intro": {
                         "path": "docs/api/security/security.md"
@@ -661,10 +651,10 @@
                                     "path": "docs/api/security/psa_attestation.md"
                                 },
                                 {
-                                    "path": "docs/api/security/crypto.md"
+                                    "path": "docs/api/security/psa_lifecycle.md"
                                 },
                                 {
-                                    "path": "docs/api/security/psa_lifecycle.md"
+                                    "path": "docs/api/security/crypto.md"
                                 },
                                 {
                                     "path": "docs/api/security/TLS.md"
