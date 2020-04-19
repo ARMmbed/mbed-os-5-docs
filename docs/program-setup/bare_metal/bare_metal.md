@@ -4,19 +4,125 @@ There are many use cases for IoT devices. Different use cases require different 
 
 <span class="images">![Mbed OS bare metal profile block diagram](../../images/bare_metal_block_diagram.png)<span>Mbed OS bare metal profile block digram</span></span>
 
-The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. The Mbed OS bare metal profile is API compatible with Mbed OS and supports a subset of Mbed OS features, such as analog I/O, digital I/O, timers and digital interfaces, such as SPI, I2C, Serial and CAN. Mbed Studio, Mbed CLI and the Mbed Online Compiler all support the Mbed OS bare metal profile.
+The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. Most of the Mbed OS APIs are compatible with bare metal profile and below table shows the availability of various Mbed OS features and components on bare metal profile.
 
-| Features | Mbed OS bare metal  | Mbed OS |
-| --- | ---  | --- |
-| Analog I/O | Available | Available |
-| Digital I/O | Available | Available |
-| Digital interfaces | Available | Available |
-| Timers | Available | Available |
-| Development tools<br> (For example, Mbed CLI, Mbed Studio, Mbed Online Compiler, GCC, Arm Compiler 6 and so on) | Available | Available |
-| Support for Mbed Enabled development boards | Available | Available |
-| RTOS | Not available | Available |
-| Storage | Ecosystem libraries | Available |
-| Mbed TLS | Not available | Available |
-| Mbed PSA | Not available | Available |
-
-To begin using the Mbed OS bare metal profile from Mbed OS 2, please follow our [instructions](../tutorials/migrating-to-mbed-os-5.html).
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Features/Components</th>
+            <th>Mbed OS bare metal</th>
+            <th> Mbed OS RTOS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="8">Mbed OS Core</td>
+            <td >Drivers</td>
+            <td>Available (Except USBCDC_ECM)</td>
+            <td>Available</td>
+        </tr>
+        <tr>        
+            <td >Events</td>
+            <td>Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>        
+            <td >HAL APIs</td>
+            <td>Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>        
+            <td >Platform APIs</td>
+            <td>Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>        
+            <td >RTOS</td>
+            <td><span style="color:red">Not Available</span></span></td>
+            <td>Available</td>
+        </tr>  
+                <tr>        
+            <td >RTOS APIs</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr> 
+        <tr>        
+            <td >Storage</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr> 
+        <tr>        
+            <td >Development tools<br> (For example, Mbed CLI, Mbed Studio, Mbed Online Compiler, GCC, Arm Compiler 6 and so on)</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr>      
+        <tr>
+            <td rowspan="9">Connectivity</td>
+            <td >802.15.4_RF</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Wifi</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Cellular</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>LWIP stack</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Nanostack</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Network Socket</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>BLE</td>
+            <td>Available (Except<br> TARGET_NORDIC_CORDIO)</td>
+            <td>Available</td>
+        </tr>    
+        <tr>
+            <td>LoRaWAN</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr>  
+        <tr>
+            <td>NFC</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Security</td>
+            <td>PSA</td>
+            <td><span style="color:red">Not Available</span></td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Cryptocell</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr> 
+        <tr>
+            <td>Device key</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr>  
+        <tr>
+            <td>Mbed TLS</td>
+            <td>Available</td>
+            <td>Available</td>
+        </tr>
+    </tbody>
+</table>
