@@ -9,10 +9,10 @@ references:
 executors:
   doc_builder:
     docker:
-      - image: mbed/doc_builder:latest
-        auth:
-          username: $DOCKER_USER
-          password: $DOCKER_PASS
+      - image: $AWS_QA_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/otg/doc-builder:latest
+        aws_auth:
+          aws_access_key_id: $AWS_QA_ACCESS_KEY_ID
+          aws_secret_access_key: $AWS_QA_SECRET_KEY
 
 commands:
   setup_aws_credentials:
