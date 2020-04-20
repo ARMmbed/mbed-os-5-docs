@@ -327,3 +327,11 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 </tr>
 </tbody>
 </table>
+
+## Deprecated APIs
+
+Some Mbed OS 5 APIs are not supported in Mbed OS 6, and you'll need to replace them in your code.
+
+| Deprecated API | Replaced by |
+| - | - |
+| Serial | [BufferedSerial](../apis/bufferedserial.html), [UnbufferedSerial](../apis/unbufferedserial.html) |

@@ -10,35 +10,26 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 These tutorials and examples show you how to perform specific tasks that use the Arm Mbed APIs:
 
-### Using platform APIs
 
-| API | Examples |
-| --- | --- |
-| Callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
-| DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
-| PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
-| IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
-| CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
-| Time | [Time example](../apis/time.html#time-example) |
-| RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
-| Debug | [Debug example](../apis/debug.html#debug-example) |
-| Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
-| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)<br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
-| Assert | [Assert example](../apis/assert.html#assert-example) |
-| NonCopyable | [NonCopyable example](../apis/noncopyable.html#noncopyable-example) |
-| SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
-| Span | [Span example](../apis/span.html#span-example) |
-| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)<br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
-| Poll | [Poll example](../apis/poll.html#poll-example) |
-| PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
-| CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
-| ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
-| Mbed statistics | [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
-| MPU management | [MPU management example](../apis/mpu-management.html#example) |
-| ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
-| ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
+### Using RTOS APIs
 
-### Using drivers APIs
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](the-eventqueue-api.html)|
+| UserAllocatedEvent | [Static event queue example](../apis/userallocatedevent.html#static-eventqueue-example-posting-user-allocated-events-to-the-queue) | |
+| Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
+| MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
+| Kernel | [Example: get_ms_count()](../apis/kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
+| Thread | [Thread example](../apis/thread.html#thread-example)<br> [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)<br> | |
+| ThisThread | [ThisThread example](../apis/thisthread.html#thisthread-example) | |
+| Semaphore  | [Semaphore example](../apis/semaphore.html#semaphore-example) | |
+| Mail | [Mail example](../apis/mail.html#mail-example) | |
+| EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
+| ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
+| Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
+
+
+### Using Input/Output (I/O) APIs
 
 | API | Examples  | Hello, World |
 | --- | ---  | --- |
@@ -76,23 +67,6 @@ And the following tutorials:
 
 - [Application flow control](../tutorials/application-flow-control.html)
 - [Alarm](../tutorials/alarm-tutorial.html)
-
-### Using RTOS APIs
-
-| API | Examples | Tutorials |
-| --- | --- | --- |
-| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](the-eventqueue-api.html)|
-| UserAllocatedEvent | [Static event queue example](../apis/userallocatedevent.html#static-eventqueue-example-posting-user-allocated-events-to-the-queue) | |
-| Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
-| MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
-| Kernel | [Example: get_ms_count()](../apis/kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
-| Thread | [Thread example](../apis/thread.html#thread-example)<br> [Thread example with callbacks](../apis/thread.html#thread-example-with-callbacks)<br> | |
-| ThisThread | [ThisThread example](../apis/thisthread.html#thisthread-example) | |
-| Semaphore  | [Semaphore example](../apis/semaphore.html#semaphore-example) | |
-| Mail | [Mail example](../apis/mail.html#mail-example) | |
-| EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
-| ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
-| Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
 
 ### Using USB APIs
 
@@ -188,6 +162,36 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SDBlockDevice | [SDBlockDevice example](../apis/sdblockdevice.html#sdblockdevice-example-application) |
 | SPIFBlockDevice | [SPIFBlockDevice example](../apis/spi-flash-block-device.html#spifblockdevice-example) |
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
+
+
+### Using utility APIs
+
+| API | Examples |
+| --- | --- |
+| Callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
+| DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
+| PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
+| IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
+| CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
+| Time | [Time example](../apis/time.html#time-example) |
+| RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
+| Debug | [Debug example](../apis/debug.html#debug-example) |
+| Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
+| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)<br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
+| Assert | [Assert example](../apis/assert.html#assert-example) |
+| NonCopyable | [NonCopyable example](../apis/noncopyable.html#noncopyable-example) |
+| SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
+| Span | [Span example](../apis/span.html#span-example) |
+| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)<br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
+| Poll | [Poll example](../apis/poll.html#poll-example) |
+| PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
+| CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
+| ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
+| Mbed statistics | [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
+| MPU management | [MPU management example](../apis/mpu-management.html#example) |
+| ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
+| ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
+
 
 ## Serial communication
 

@@ -11,7 +11,7 @@
             "branch": "master"
         },
         {
-            "title": "Mbed OS 6",
+            "title": "Introduction to Mbed OS 6",
             "description": "Introducing Mbed OS: the overview, architecture, features and licensing",
             "slug": "introduction",
             "type": "markdown",
@@ -37,6 +37,25 @@
             ],
             "tags": [
                 "introduction"
+            ]
+        },
+        {
+            "title": "Mbed OS bare metal profile",
+            "description": "",
+            "slug": "bare-metal",
+            "type": "markdown",
+            "sources": [{
+                    "path": "docs/program-setup/bare_metal/bare_metal.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/bare_metal_api.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/baremetal_example.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/c_small_libs.md"
+                }
             ]
         },
         {
@@ -104,7 +123,16 @@
             ]
         },
         {
-            "title": "APIs",
+            "title": "Tutorials",
+            "description": "",
+            "slug": "tutorials",
+            "type": "markdown",
+            "sources": [{
+                "path": "docs/introduction/tutorials_intro.md"
+            }]
+        },
+        {
+            "title": "API references, configurations and tutorials",
             "description": "",
             "slug": "apis",
             "type": "markdown",
@@ -393,8 +421,7 @@
                             "intro": {
                                 "path": "docs/api/networking-arch.md"
                             },
-                            "sources": [
-                                {
+                            "sources": [{
                                     "path": "docs/api/networkinterfaces/ethernet-arch.md"
                                 },
                                 {
@@ -404,7 +431,7 @@
                                     "path": "docs/api/networkinterfaces/cellular-arch.md"
                                 },
                                 {
-                                        "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
@@ -831,9 +858,6 @@
             "type": "markdown",
             "chapters": [{
                     "title": "Concepts",
-                    "intro": {
-                        "path": "docs/program-setup/reference.md"
-                    },
                     "sources": [{
                             "path": "docs/program-setup/runtime/Execution.md"
                         },
@@ -853,8 +877,7 @@
                 },
                 {
                     "title": "Serial communication",
-                    "sources": [
-                        {
+                    "sources": [{
                             "path": "docs/program-setup/serial/serial_communication.md"
                         },
                         {
@@ -1102,25 +1125,6 @@
                             }
                         ]
                     }]
-                }
-            ]
-        },
-        {
-            "title": "Mbed OS bare metal",
-            "description": "",
-            "slug": "bare-metal",
-            "type": "markdown",
-            "sources": [{
-                    "path": "docs/program-setup/bare_metal/bare_metal.md"
-                },
-                {
-                    "path": "docs/program-setup/bare_metal/bare_metal_api.md"
-                },
-                {
-                    "path": "docs/program-setup/bare_metal/baremetal_example.md"
-                },
-                {
-                    "path": "docs/program-setup/bare_metal/c_small_libs.md"
                 }
             ]
         },
