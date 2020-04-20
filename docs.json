@@ -123,16 +123,7 @@
             ]
         },
         {
-            "title": "Tutorials",
-            "description": "",
-            "slug": "tutorials",
-            "type": "markdown",
-            "sources": [{
-                "path": "docs/introduction/tutorials_intro.md"
-            }]
-        },
-        {
-            "title": "API references, configurations and tutorials",
+            "title": "API references and tutorials",
             "description": "",
             "slug": "apis",
             "type": "markdown",
@@ -1127,6 +1118,15 @@
                     }]
                 }
             ]
+        },
+        {
+            "title": "Tutorials",
+            "description": "",
+            "slug": "tutorials",
+            "type": "markdown",
+            "sources": [{
+                "path": "docs/introduction/tutorials_intro.md"
+            }]
         },
         {
             "title": "Contributing",
