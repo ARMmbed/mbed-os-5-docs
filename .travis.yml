@@ -24,6 +24,7 @@ install:
   - sudo apt-get install gcc-arm-embedded
   # Get mbed-os
   - git clone https://github.com/armmbed/mbed-os.git
+  - git checkout mbed-os-5.15
   # Install python dependencies
   - pip install -r mbed-os/requirements.txt
 
