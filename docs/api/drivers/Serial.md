@@ -1,6 +1,6 @@
 # Serial
 
-<span class="notes">**Note:** This API has been deprecated in favor of BufferedSerial and UnbufferedSerial.</span>
+<span class="notes">**Note:** In Mbed OS 6, this API will be deprecated in favor of BufferedSerial and UnbufferedSerial.</span>
 
 <span class="images">![](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/classmbed_1_1_serial.png)<span>Serial class hierarchy</span></span>
 
