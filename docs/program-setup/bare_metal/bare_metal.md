@@ -1,22 +1,19 @@
 # Mbed OS bare metal profile
 
-There are many use cases for IoT devices. Different use cases require different configurations, connectivity and security. They also have different requirements for resource consumption. Many products must operate in ultraconstrained environments on tiny MCUs with low memory and compute power available. We created the Mbed OS bare metal profile for IoT devices that require ultraconstrained resources.
+Bare metal is a profile of Mbed OS for ultraconstrained devices. Unlike the full Mbed OS, which by default includes all APIs, the bare metal profile starts with a minimal set of APIs to which you can add only the APIs your application or hardware demand. This helps you control the size of your final binary.<!--not sure that's a good term-->
+
+Bare metal doesn't use the RTOS APIs. Instead, it relies on timers to control the workflow.
+<!--not sure I get it - I looked at both Blinky examples and they both use thread_sleep_for, even though the bare metal one doesn't include mbed_thread.h-->
+<!--what other APIs does it have or not have by default?-->
+
+The Mbed OS tools - Mbed CLI, Mbed Online Compiler and Mbed Studio all support working with the bare metal profile.
+
+Note that Mbed TLS and Mbed Crypto are not supported for bare metal.
 
 <span class="images">![Mbed OS bare metal profile block diagram](../../images/bare_metal_block_diagram.png)<span>Mbed OS bare metal profile block digram</span></span>
 
-The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. The Mbed OS bare metal profile is API compatible with Mbed OS and supports a subset of Mbed OS features, such as analog I/O, digital I/O, timers and digital interfaces, such as SPI, I2C, Serial and CAN. Mbed Studio, Mbed CLI and the Mbed Online Compiler all support the Mbed OS bare metal profile.
+## Documentation
 
-| Features | Mbed OS bare metal  | Mbed OS |
-| --- | ---  | --- |
-| Analog I/O | Available | Available |
-| Digital I/O | Available | Available |
-| Digital interfaces | Available | Available |
-| Timers | Available | Available |
-| Development tools<br> (For example, Mbed CLI, Mbed Studio, Mbed Online Compiler, GCC, Arm Compiler 6 and so on) | Available | Available |
-| Support for Mbed Enabled development boards | Available | Available |
-| RTOS | Not available | Available |
-| Storage | Ecosystem libraries | Available |
-| Mbed TLS | Not available | Available |
-| Mbed PSA | Not available | Available |
-
-To begin using the Mbed OS bare metal profile from Mbed OS 2, please follow our [instructions](../tutorials/migrating-to-mbed-os-5.html).
+- To see how to enable the profile, or to try the bare metal Blinky, see [our example page]().
+- To learn how to add APIs, [see the bare metal API page]().
+- If you're an Mbed OS 2 user, migrate to the Mbed OS 6 bare metal profile by following [our migration guide]().<!--that's not application develoeprs though, right? it's for hardware people?-->

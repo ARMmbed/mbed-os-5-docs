@@ -1,6 +1,6 @@
 # Bare metal example
 
-To enable Mbed OS bare metal, create an `mbed_app.json` with the following contents:
+By default, Mbed OS is built in full whenever you create an application binary. To build only the bare metal profile, create an `mbed_app.json` in your application with the following contents:
 
 ```
 {
