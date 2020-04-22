@@ -29,6 +29,36 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 </tbody>
 </table>
 
+## Drivers
+
+The drivers are digital interfaces that allow your board to interface with a computer or external devices.
+
+<table>
+<tbody>
+<tr>
+<td><a href="ticker.html">Ticker</a></td>
+<td><a href="timeout.html">Timeout</a></td>
+<td><a href="timer.html">Timer</a></td>
+<td><a href="watchdog.html">Watchdog</a></td>
+<td><a href="resetreason.html">ResetReason</a></td>
+</tr>
+<tr>
+<td><a href="flash-iap.html">Flash IAP</a></td>
+<td><a href="bufferedserial.html">BufferedSerial</a></td>
+<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
+<td><a href="spi.html">SPI</a></td>
+<td><a href="spislave.html">SPISlave</a></td>
+</tr>
+<tr>
+<td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
+<td><a href="i2c.html">I2C</a></td>
+<td><a href="i2cslave.html">I2CSlave</a></td>
+<td><a href="can.html">CAN</a></td>
+<td><a href="mbedcrc.html">MbedCRC</a></td>
+</tr>
+</tbody>
+</table>
+
 ## Input/Output
 
 Input/Output APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.
@@ -53,27 +83,6 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 <td><a href="portinout.html">PortInOut</a></td>
 <td><a href="pwmout.html">PwmOut</a></td>
 <td><a href="interruptin.html">InterruptIn</a></td>
-<td><a href="ticker.html">Ticker</a></td>
-<td><a href="timeout.html">Timeout</a></td>
-</tr>
-<tr>
-<td><a href="timer.html">Timer</a></td>
-<td><a href="watchdog.html">Watchdog</a></td>
-<td><a href="resetreason.html">ResetReason</a></td>
-<td><a href="flash-iap.html">Flash IAP</a></td>
-<td><a href="bufferedserial.html">BufferedSerial</a></td>
-</tr>
-<tr>
-<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
-<td><a href="spi.html">SPI</a></td>
-<td><a href="spislave.html">SPISlave</a></td>
-<td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
-<td><a href="i2c.html">I2C</a></td>
-</tr>
-<tr>
-<td><a href="i2cslave.html">I2CSlave</a></td>
-<td><a href="can.html">CAN</a></td>
-<td><a href="mbedcrc.html">MbedCRC</a></td>
 </tr>
 </tbody>
 </table>

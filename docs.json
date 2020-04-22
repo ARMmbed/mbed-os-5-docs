@@ -203,58 +203,20 @@
                     ]
                 },
                 {
-                    "title": "Input/Output (I/O)",
+                    "title": "Drivers",
                     "intro": {
                         "path": "docs/api/io/drivers.md"
                     },
                     "sub_chapters": [{
-                            "title": "I/O options and config",
+                            "title": "Drvier options and config",
                             "intro": {
                                 "path": "docs/api/io/io-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "I/O APIs",
-                            "sources": [{
-                                    "path": "docs/api/io/AnalogIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/AnalogOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PwmOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/InterruptIn.md"
-                                },
+                            "title": "Driver APIs",
+                            "sources": [
                                 {
                                     "path": "docs/api/io/Ticker.md"
                                 },
@@ -303,12 +265,63 @@
                             ]
                         },
                         {
-                            "title": "I/O tutorials",
+                            "title": "Drivers tutorials",
                             "sources": [{
                                     "path": "docs/api/io/flow_control.md"
                                 },
                                 {
                                     "path": "docs/api/io/alarm-tutorial.md"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Input/Output (I/O)",
+                    "intro": {
+                        "path": "docs/api/io/io_intro.md"
+                    },
+                    "sub_chapters": [
+                        {
+                            "title": "I/O APIs",
+                            "sources": [{
+                                    "path": "docs/api/io/AnalogIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/AnalogOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/DigitalIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/DigitalOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/DigitalInOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusInOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PortIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PortOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PortInOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/PwmOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/InterruptIn.md"
                                 }
                             ]
                         }
