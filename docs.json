@@ -55,6 +55,9 @@
                 },
                 {
                     "path": "docs/program-setup/bare_metal/c_small_libs.md"
+                },
+                {
+                    "path": "docs/program-setup/bare_metal/mbed2_porting.md"
                 }
             ]
         },
