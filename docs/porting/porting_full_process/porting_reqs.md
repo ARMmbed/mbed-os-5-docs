@@ -1,6 +1,6 @@
 # Setting up
 
-# Hardware setup
+## Hardware setup
 
 Porting Mbed OS requires the following hardware:
 
@@ -23,14 +23,14 @@ The following items might help you test SPI, I2C and pins:
 
 <span class="tips">Check the user guide of the evaluation board to see if anything needs to be done prior to using a debug probe and running Mbed OS programs.</span>
 
-# Software setup
+## Software setup
 
 Please install the following:
 
 - [Python](https://www.python.org/downloads).
 - [Git](https://git-scm.com/downloads).
 - [Mbed CLI](../tools/installation-and-setup.html).
-- Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/). 
+- Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/).
 
     Limitations:
 
