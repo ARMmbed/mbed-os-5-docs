@@ -47,6 +47,10 @@ The structure of Mbed OS enables matching applications and storage systems. In o
 
 Finally, Mbed OS implements the retargeting layer and boot process integration of each supported toolchain for you, so application development feels similar to C or C++ development for any other operating system.
 
+## Profiles
+
+<!--full v bare metal-->
+
 ## Connectivity
 
 Arm works with its Partners to enable Bluetooth Low Energy, NFC, RFID, LoRa, 6LoWPAN-ND, Thread, Wi-SUN, Ethernet, Wi-Fi, cellular and mobile IoT (LPWA) across devices and system architectures running Mbed OS. Mbed OS offers a stable core of existing connectivity technologies. At the same time, it adds modern ones in quarterly feature releases, keeping you informed of industry trends so you can transition to new, innovative solutions that generate business value.
@@ -61,12 +65,6 @@ The Pelion IoT Platform has built-in security at all levels, stressing both prot
 
 Our approach to security is to leverage state-of-the-art industry standard protocols, ciphers and encryption suites following the recommendations from NIST and other related organizations. This gives us access to the latest work by the global security research community, rather than a limited in-house resource.  We regularly verify the results of these efforts with code reviews, penetration exercises and other methods.
 
-## Remote firmware update
-
-Mbed OS offers a seamless integration with the Pelion Device Management Update Services, so you can update your device's application or version of Mbed OS. The Arm Mbed CLI development tool can build update payloads, generate their manifests and send them to your development device with two commands. If you want to update device groups, you can generate and upload your manifest and payload to the Device Management Portal and run a standard campaign from there. The Online Compiler also offers a quick integration for development flows.
-
-For more information, see our [technology page](../reference/firmware-update-in-mbed-os.html), the [Mbed CLI update flow](../tools/cli-update.html) or the [quick start through the Online Compiler](https://cloud.mbed.com/guides/pelion-firmware-update) (Note: you first need to [use the connecting quick guide to set up the original application](https://cloud.mbed.com/guides/connect-device-to-pelion)).
-
 ## Hardware
 
 Arm, its Partners and the Arm Mbed developer community work together to develop the Mbed OS project. This thriving ecosystem means that Mbed OS includes drivers for a lot of different hardware, so you can concentrate on clean and portable application code.
@@ -79,8 +77,8 @@ Broadly speaking, the hardware you can see on our site is of three types:
 
 <h1 id="tools">Tools</h1>
 
-The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](../tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
-
+The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR<!--did we remove one of these?-->. You can also [export projects](../tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
+<!--mbed studio-->
 If you prefer to work online, use the Arm Mbed Online Compiler, our online development tool, which lets you write and build applications using a web browser with no additional setup.
 
 You can use our debugging tools, DAPLink and pyOCD, to program and debug many devices. At the end of the development cycle, you can use the Mbed OS validation tools, Greentea and utest, to test your project.
@@ -89,18 +87,9 @@ You can use our debugging tools, DAPLink and pyOCD, to program and debug
 
 This is the technical documentation for Mbed OS. We have three types of documents: references, tutorials and porting guides. Our references are background technical material about our APIs, architecture and runtime execution. Our tutorials are step-by-step instructions that show you how to perform specific tasks and solve problems. Our porting guides show our silicon Partners how to port Mbed OS to their targets.
 
-Please see the following sections of our documentation for more information.
-
-- [APIs](../apis/index.html).
-- [Quick start](../quick-start/index.html), a guide to creating your first application.
-- [Reference](../reference/index.html), architectural information about our code.
-- [Tools](../tools/index.html), reference material about the tools Mbed OS uses.
-- [Tutorials](../tutorials/index.html).
-- [Going to production](../mbed-os-pelion/going-to-production.html), the process of connecting Mbed OS devices to Pelion Device Management for large-scale production.
-- [Contributing](../contributing/index.html), guidelines about contributing to our open-source project.
-- [Porting guides](../porting/index.html), for Partners and developers interested in porting targets to Mbed OS.
-
 <h1 id="docs-updates">Recently updated documentation</h1>
+
+<!--bare metal, list of deprecated APIs, new API structure, porting updates...-->
 
 - New API references for [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
 - New content about [using small C libraries in Mbed OS bare metal](../reference/using-small-c-libraries.html).
