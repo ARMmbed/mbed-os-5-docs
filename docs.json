@@ -1,3 +1,4 @@
+
 {
     "product_name": "Mbed OS 6",
     "split_pages_on": "h1",
@@ -219,8 +220,7 @@
                         },
                         {
                             "title": "Driver APIs",
-                            "sources": [
-                                {
+                            "sources": [{
                                     "path": "docs/api/io/Ticker.md"
                                 },
                                 {
@@ -284,51 +284,49 @@
                     "intro": {
                         "path": "docs/api/io/io_intro.md"
                     },
-                    "sub_chapters": [
-                        {
-                            "title": "I/O APIs",
-                            "sources": [{
-                                    "path": "docs/api/io/AnalogIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/AnalogOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PwmOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/InterruptIn.md"
-                                }
-                            ]
-                        }
-                    ]
+                    "sub_chapters": [{
+                        "title": "I/O APIs",
+                        "sources": [{
+                                "path": "docs/api/io/AnalogIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/AnalogOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PwmOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/InterruptIn.md"
+                            }
+                        ]
+                    }]
                 },
                 {
                     "title": "Data storage",
@@ -1005,7 +1003,7 @@
                             },
                             "sources": []
                         },
-                                              {
+                        {
                             "title": "Test and debug",
                             "intro": {
                                 "path": "docs/tools/CLI/cli-test-debug.md"
@@ -1065,10 +1063,9 @@
             "chapters": [{
                     "title": "Debugging",
                     "intro": {
-                            "path": "docs/tools/debug/debug_intro.md"
-                        },
-                    "sources": [
-                        {
+                        "path": "docs/tools/debug/debug_intro.md"
+                    },
+                    "sources": [{
                             "path": "docs/tools/debug/debugging_mbed_os_apps.md"
                         },
                         {
@@ -1291,10 +1288,10 @@
                 },
                 {
                     "title": "Porting security",
-                    "intro": {
+                    "sources": [{
                         "path": "docs/porting/psa/spm.md"
                     },
-                    "sources": [{
+                    {
                             "path": "docs/porting/psa/crypto.md"
                         },
                         {
@@ -1322,10 +1319,10 @@
                 },
                 {
                     "title": "Porting connectivity",
-                    "intro": {
+                    "sources": [{
                         "path": "docs/porting/connectivity/connectivity.md"
                     },
-                    "sources": [{
+                    {
                             "path": "docs/porting/connectivity/Layer3IP.md"
                         },
                         {
