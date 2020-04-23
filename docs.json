@@ -1004,12 +1004,7 @@
                                 "path": "docs/tools/CLI/cli-compile.md"
                             }]
                         },
-                        {
-                            "title": "Create",
-                            "sources": []
-                        },
-
-                        {
+                                              {
                             "title": "Test and debug",
                             "sources": [{
                                 "path": "docs/tools/CLI/cli-test-debug.md"
@@ -1058,7 +1053,7 @@
             ]
         },
         {
-            "title": "Debugging and testing ",
+            "title": "Debugging and testing",
             "description": "",
             "slug": "debug-test",
             "type": "markdown",
