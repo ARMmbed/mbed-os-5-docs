@@ -36,7 +36,7 @@ The drivers are digital interfaces that allow your board to interface with a com
 <table>
 <tbody>
 <tr>
-<td><a href="ticker.html">Ticker</a></td>
+<td><a href="driver-apis.html">Ticker</a></td>
 <td><a href="timeout.html">Timeout</a></td>
 <td><a href="timer.html">Timer</a></td>
 <td><a href="watchdog.html">Watchdog</a></td>
