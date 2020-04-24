@@ -337,9 +337,9 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 </tbody>
 </table>
 
-## Deprecated APIs
+## Deprecated APIs: moving from Mbed OS 5 to 6
 
-Some Mbed OS 5 APIs are not supported in Mbed OS 6, and you'll need to replace them in your code.
+If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs:
 
 | Deprecated API | Replaced by |
 | - | - |
