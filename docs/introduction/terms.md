@@ -4,7 +4,7 @@
 
 **API** - [Application programming interface](../apis/index.html).
 
-**Application** - An executable module built out of libraries that acts as a final product.
+**Application** - An executable software module built out of libraries that acts as a final product.
 
 **Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](../tools/developing-mbed-cli.html), packaged as `mbed-cli`.
 
@@ -12,7 +12,7 @@
 
 **Arm Mbed Online Compiler** - [Arm’s online tool](../tools/developing-mbed-online-compiler.html), which you can use to create and compile your code.
 
-**Arm Mbed OS** - Arm's [platform operating system](https://os.mbed.com/docs) for the Internet of Things.
+**Arm Mbed OS** - Arm's [operating system](https://os.mbed.com/docs) for the Internet of Things.
 
 **Arm Mbed Studio** - A local development environment for Mbed OS programs written in C/C++. Mbed Studio [has its own documentation](https://os.mbed.com/docs/mbed-studio/).
 
@@ -28,19 +28,19 @@
 
 **Block Device** - A [file](../porting/porting-storage.html) that represents a device, with data that can be read or written to it in blocks.
 
-**Board** - Hardware that can run an Mbed OS application. Usually refers to an [Mbed Enabled development board](https://os.mbed.com/platforms/). Its software representation in the build tools is as a target.
+**Board** - Hardware that can run an Mbed OS application. Usually refers to an [Mbed Enabled development board](https://os.mbed.com/platforms/), but can also be a custom board. Its software representation in the build tools is as a build target.
 
 **Boolean** - A binary variable, having two possible values called `true` and `false`.
 
 **Bootloader** - [The program](../tutorials/bootloader.html) that loads Mbed OS when a board is turned on.
 
-**Build** - The full process of converting an application's source code into a binary that can be flashed onto a board. The build cannot be board-agnostic; it is always done for a specific board, represented as the build target (see **target**).
+**Build** - The full process of converting an application's source code into a binary that can be flashed onto a board. The build cannot be board-agnostic; it is always done for a specific board, represented as the build target (see **Build target**).
 
 **Build Profile** - Mbed OS supports three primary [build profiles](../tools/build-profiles.html): develop, debug and release.
 
 **Build Script** - A build automation and generation utility.
 
-**Build target** or **target** - A software representation of a physical device, listed in either `targets.json` or `custom_targets.json`. A build (with Mbed CLI, the Online Compiler and Mbed Studio) is always done for a specific target.
+**Build target** or **target** - A destination for a software build, for example an MCU, development board or custom board. Build targets are defined in either `targets.json` or `custom_targets.json`. A build (with Mbed CLI, the Online Compiler and Mbed Studio) is always done for a specific target.
 
 **Byte** - A unit of digital information that consists of 8 bits (see `Bit`).
 
@@ -50,11 +50,16 @@
 
 **CAN** - [Controller-area network](../apis/can.html).
 
-**Class** - An extensible program-code-template for creating objects, providing initial values for state and implementations of behavior.
-
 **CI** - Continuous integration.
 
+**Class** - An extensible program-code-template for creating objects, providing initial values for state and implementations of behavior.
+
 **CLI** - Command-line interface.
+
+**Component**
+
+    - In software: An implementation of a hardware module.
+    - In hardware: See [https://os.mbed.com/components/](https://os.mbed.com/components/).
 
 **CMSIS-DAP** - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
@@ -82,7 +87,7 @@
 
 **Hardware** - See `board`.
 
-**htrun** - An Mbed OS command used to drive test binary flashing, device reset and test execution.
+**htrun** - An Mbed OS command used to drive test binary flashing, hardware reset and test execution.
 
 ## I
 
@@ -94,7 +99,7 @@
 
 ## L
 
-**Library** - A module that you can use to build applications.
+**Library** - A software module that you can use to build applications.
 
 **LoRA** - Long range (low power wireless platform).
 
@@ -104,7 +109,9 @@
 
 **Mesh** - A network topology in which each node relays data for the network.
 
-**Module** - A self-contained unit of code containing classes and functions.
+**Module**
+    - In software: A self-contained unit of code containing classes and functions.
+    - In hardware: A microcontroller, IoT centric connectivity and required onboard memory. See [https://os.mbed.com/modules/](https://os.mbed.com/modules/).
 
 ## N
 
