@@ -15,12 +15,13 @@ Most of the Mbed OS APIs are also supported with the Mbed OS bare metal profile.
 <td><a href="semaphore.html">Semaphore</a></td>
 <td><a href="userallocatedevent.html">UserAllocatedEvent</a></td>
 <td><a href="eventflags.html">EventFlags</a></td>
-<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
+<td><a href="kernel-interface-functions.html">Kernel interface functions<br><i>(Only get_ms_count API)<i></a></td>
 </tr>
 <tr>
 <td><a href="thisthread.html">ThisThread</a></td>
 <td><a href="event.html">Event</a></td>
 <td><a href="eventqueue.html">EventQueue</a></td>
+<td><a href="mutex.html">Mutex</a></td>
 </tr>
 </tbody>
 </table>
@@ -29,8 +30,8 @@ Most of the Mbed OS APIs are also supported with the Mbed OS bare metal profile.
 <table>
 <tbody>
 <tr>
+<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
 <td><a href="rtos-apis.html">Thread</a></td>
-<td><a href="mutex.html">Mutex</a></td>
 <td><a href="queue.html">Queue</a></td>
 </tr>
 <tr>
@@ -148,32 +149,7 @@ The data storage APIs include file system APIs, for file system operations, and 
 
 ## Connectivity
 
-### Common APIs
-<table>
-<tbody>
-<tr>
-<td><a href="#ble">BLE</a></td>
-<td><a href="#nfc">NFC</a></td>
-<td><a href="#lorawan">LoRaWAN</a></td>
-</tr>
-</tbody>
-</table>
-
-### RTOS only supported APIs
-<table>
-<tbody>
-<tr>
-<td><a href="#network-interface">Network interface</a></td>
-<td><a href="#socket">Socket</a></td>
-</tr>
-<tr>
-<td><a href="#secure-socket">Secure socket</a></td>
-<td><a href="#dns">DNS</a></td>
-</tr>
-</tbody>
-</table>
-
-#### Network interface
+### Network interface (*RTOS only*)
 
 Network interfaces are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.
 
@@ -195,7 +171,7 @@ Network interfaces are the application level APIs where users choose the driver,
 </tbody>
 </table>
 
-#### Socket
+### Socket (*RTOS only*)
 
 Socket APIs include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
 
@@ -211,7 +187,7 @@ Socket APIs include the application programming interface for IP networking. In 
 </tbody>
 </table>
 
-#### Secure socket
+### Secure socket (*RTOS only*)
 
 <table>
 <tbody>
@@ -222,7 +198,7 @@ Socket APIs include the application programming interface for IP networking. In 
 </tbody>
 </table>
 
-#### DNS
+### DNS (*RTOS only*)
 
 <table>
 <tbody>
@@ -232,7 +208,7 @@ Socket APIs include the application programming interface for IP networking. In 
 </tbody>
 </table>
 
-#### BLE
+### BLE
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
@@ -252,7 +228,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for build
 </tbody>
 </table>
 
-#### NFC
+### NFC
 
 You can use Near-Field Communication (NFC), a short-range radio technology, for use cases such as contactless payments, access control and device pairing.
 
@@ -265,7 +241,7 @@ You can use Near-Field Communication (NFC), a short-range radio technology, for 
 </tbody>
 </table>
 
-#### LoRaWAN
+### LoRaWAN
 
 Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
@@ -313,17 +289,22 @@ The Mbed OS classes providing USB peripheral functionality, also known as USB co
 
 With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
 
+<table>
+<tbody>
+<tr>
+<td><a href="mbed-crypto.html">Mbed Crypto</a></td>
+<td><a href="tls.html">TLS</a></td>
+<td><a href="devicekey.html">DeviceKey</a></td>
+</tr>
+</tbody>
+</table>
+
 ### RTOS only supported APIs
 <table>
 <tbody>
 <tr>
 <td><a href="security-apis.html">PSA initial attestation</a></td>
 <td><a href="psa-lifecycle.html">PSA lifecycle</a></td>
-<td><a href="mbed-crypto.html">Mbed Crypto</a></td>
-</tr>
-<tr>
-<td><a href="tls.html">TLS</a></td>
-<td><a href="devicekey.html">DeviceKey</a></td>
 </tr>
 </tbody>
 </table>
@@ -415,5 +396,4 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 | Serial | [BufferedSerial](../apis/bufferedserial.html), [UnbufferedSerial](../apis/unbufferedserial.html) |
 
 **_Note_**
-- The components webpage is linked here most probably shows an example based on RTOS.
-- When the component is listed only "RTOS only supported APIs" then it likely to work only on RTOS.
+- When you click, any component from the table it takes to its description webpage, but it mostly shows an example based on RTOS.

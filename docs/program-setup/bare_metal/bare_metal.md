@@ -10,13 +10,13 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
     <thead>
         <tr>
             <th colspan="2">Features/Components</th>
-            <th>Mbed OS bare metal</th>
-            <th> Mbed OS RTOS</th>
+            <th>Mbed OS bare metal profile</th>
+            <th> Mbed OS full profile</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td rowspan="8">Mbed OS Core</td>
+            <td rowspan="8">Core</td>
             <td >Drivers</td>
             <td>Available (Except USBCDC_ECM)</td>
             <td>Available</td>
@@ -110,12 +110,12 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
             <td>Available</td>
         </tr>
         <tr>
-            <td>Cryptocell</td>
+            <td>Mbed Crypto</td>
             <td>Available</td>
             <td>Available</td>
         </tr> 
         <tr>
-            <td>Device key</td>
+            <td>Devicekey</td>
             <td>Available</td>
             <td>Available</td>
         </tr>  
