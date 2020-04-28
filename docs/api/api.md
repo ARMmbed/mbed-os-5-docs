@@ -7,8 +7,8 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Thread](../apis/rtos-apis.html) | &#9745; | |
-| [ThisThread](../apis/thisthread.html) | &#9745; | |
+| [Thread](../apis/rtos-apis.html) | &#10003; | |
+| [ThisThread](../apis/thisthread.html) | &#10004; | |
 | [Mutex](../apis/mutex.html) | &#9745; | Partial |
 | [Semaphore](../apis/semaphore.html) | &#9745; | &#9745;|
 | [Queue](../apis/queue.html) | &#9745; | |
