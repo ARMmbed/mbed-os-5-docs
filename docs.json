@@ -1,4 +1,3 @@
-
 {
     "product_name": "Mbed OS 6",
     "split_pages_on": "h1",
@@ -461,9 +460,6 @@
                                     "path": "docs/api/connectivity-config.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/socket.md"
-                                },
-                                {
                                     "path": "docs/api/networkinterfaces/EthInterface.md"
                                 },
                                 {
@@ -495,6 +491,8 @@
                                 "path": "docs/api/networksocket/networksocket.md"
                             },
                             "sources": [{
+                                    "path": "docs/api/networksocket/socket.md"
+                                }, {
                                     "path": "docs/api/networksocket/UDPSocket.md"
                                 },
                                 {
@@ -1289,9 +1287,9 @@
                 {
                     "title": "Porting security",
                     "sources": [{
-                        "path": "docs/porting/psa/spm.md"
-                    },
-                    {
+                            "path": "docs/porting/psa/spm.md"
+                        },
+                        {
                             "path": "docs/porting/psa/crypto.md"
                         },
                         {
@@ -1320,9 +1318,9 @@
                 {
                     "title": "Porting connectivity",
                     "sources": [{
-                        "path": "docs/porting/connectivity/connectivity.md"
-                    },
-                    {
+                            "path": "docs/porting/connectivity/connectivity.md"
+                        },
+                        {
                             "path": "docs/porting/connectivity/Layer3IP.md"
                         },
                         {
