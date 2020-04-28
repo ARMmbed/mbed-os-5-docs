@@ -1,7 +1,7 @@
 # Full API list
 <!--these are now just the APIs - do I want to add the tutorials?-->
 
-This document lists Mbed OS components supported APIs. In general, it lists both common APIs (RTOS and the bare metal profile supported), and RTOS only supported APIs, but occasionally, It has either one.
+Mbed OS supports two profiles: the full profile, when an RTOS is present, and the bare metal profile which is a subset of the full profile.  In the list below, APIs which are supported in bare metal are noted with an asterik. A double asterisk indicates that the API is partially supported in bare metal.
 
 ## RTOS and event handling
 
