@@ -5,7 +5,7 @@ Mbed OS supports two profiles: the full profile, when an RTOS is present, and th
 
 ## RTOS and event handling
 
-The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
+The Mbed OS RTOS capabilities include managing objects such as threads and synchronization objects. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
 Most of the Mbed OS APIs are also supported with the Mbed OS bare metal profile.
 
