@@ -90,8 +90,8 @@ The data storage APIs include file system APIs, for file system operations, and 
 | [SDBlockDevice](../apis/sdblockdevice.html) | &#10004; | &#10004; |
 | [SPI Flash block device](../apis/spi-flash-block-device.html)| &#10004; | &#10004; |
 | [QSPIFBlockDevice](../apis/qspifblockdevice.html) | &#10004; | &#10004; |
-| [PSA internal storage](../apis/psa-internal-storage.html) | &#10004; | &#10004; |
-| [PSA protected storage](../apis/psa-protected-storage.html) | &#10004; | &#10004; |
+| [PSA internal storage](../apis/psa-internal-storage.html) | &#10004; |  |
+| [PSA protected storage](../apis/psa-protected-storage.html) | &#10004; |  |
 
 ## Connectivity
 
@@ -99,62 +99,42 @@ The data storage APIs include file system APIs, for file system operations, and 
 
 Network interfaces are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.
 
-<table>
-<tbody>
-<tr>
-<td><a href="ethernet.html">Ethernet</a></td>
-<td><a href="wi-fi.html">Wi-Fi</a></td>
-<td><a href="cellular-api.html">Cellular</a></td>
-<td><a href="mesh-api.html">Mesh</a></td>
-</tr>
-<tr>
-<td><a href="network-status.html">Network status</a></td>
-<td><a href="messageparser.html">MessageParser</a></td>
-<td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
-<td><a href="messagebuilder.html">MessageBuilder</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Ethernet](../apis/ethernet.html) | &#10004; | |
+| [Wi-Fi](../apis/wi-fi.html) | &#10004; | |
+| [Cellular](../apis/cellular-api.html) | &#10004; | |
+| [Mesh](../apis/mesh-api.htm) | &#10004; | |
+| [Network status](../apis/network-status.html) | &#10004; | |
+| [MessageParser](../apis/messageparser.html) | &#10004; | |
+| [SimpleMessageParser](../apis/simplemessageparser.html) | &#10004; | |
+| [MessageBuilder](../apis/messagebuilder.html) | &#10004; | |
 
 ### Socket
 
 Socket APIs include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
 
-<table>
-<tbody>
-<tr>
-<td><a href="socket.html">Socket</a></td>
-<td><a href="udpsocket.html">UDPSocket</a></td>
-<td><a href="tcpsocket.html">TCPSocket</a></td>
-</tr>
-<tr>
-<td><a href="socketaddress.html">SocketAddress</a></td>
-<td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
-<td><a href="socketstats.html">SocketStats</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Socket](../apis/socket.html) | &#10004; | |
+| [UDPSocket](../apis/udpsocket.html) | &#10004; |  |
+| [TCPSocket](../apis/tcpsocket.html) | &#10004; |  |
+| [SocketAddress](../apis/socketaddress.html) | &#10004; | |
+| [Non-IP cellular socket](../apis/non-ip-cellular-socket.html) | &#10004; | |
+| [SocketStats](../apis/socketstats.html) | &#10004; | |
 
 ### Secure socket
 
-<table>
-<tbody>
-<tr>
-<td><a href="secure-socket-apis.html">TLSSocket</a></td>
-<td><a href="dtlssocket.html">DTLSSocket</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [TLSSocket](../apis/secure-socket-apis.html) | &#10004; | |
+| [DTLSSocket](../apis/dtlssocket.html) | &#10004; |  |
 
 ### DNS
 
-<table>
-<tbody>
-<tr>
-<td><a href="dns-apis.html">DNS Resolver</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [DNS Resolver](../apis/dns-apis.html) | &#10004; | |
 
 ### BLE
 
