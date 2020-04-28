@@ -90,7 +90,7 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
         </tr>
         <tr>
             <td>BLE</td>
-            <td>Available (Except<br> TARGET_NORDIC_CORDIO)</td>
+            <td>Available <br>(Except TARGET_NORDIC_CORDIO)</td>
             <td>Available</td>
         </tr>    
         <tr>
