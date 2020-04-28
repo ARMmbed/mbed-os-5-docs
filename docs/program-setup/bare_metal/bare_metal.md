@@ -52,7 +52,7 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
             <td>Available</td>
         </tr> 
         <tr>        
-            <td >Development tools<br> (For example, Mbed CLI, Mbed Studio, Mbed Online Compiler, GCC, Arm Compiler 6 and so on)</td>
+            <td >Development tools<br> (Mbed CLI, Mbed Studio, Mbed Online Compiler etc.)</td>
             <td>Available</td>
             <td>Available</td>
         </tr>      
