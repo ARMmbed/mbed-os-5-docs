@@ -5,28 +5,21 @@
 
 The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
-<table>
-<tbody>
-<tr>
-<td><a href="rtos-apis.html">Thread</a></td>
-<td><a href="thisthread.html">ThisThread</a></td>
-<td><a href="mutex.html">Mutex</a></td>
-<td><a href="semaphore.html">Semaphore</a></td>
-</tr>
-<tr>
-<td><a href="queue.html">Queue</a></td>
-<td><a href="eventqueue.html">EventQueue</a></td>
-<td><a href="userallocatedevent.html">UserAllocatedEvent</a></td>
-<td><a href="mail.html">Mail</a></td>
-</tr>
-<tr>
-<td><a href="eventflags.html">EventFlags</a></td>
-<td><a href="event.html">Event</a></td>
-<td><a href="conditionvariable.html">Conditionvariable</a></td>
-<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Thread](../apis/rtos-apis.html) | &#9745; | |
+| [ThisThread](../apis/thisthread.html) | &#9745; | |
+| [Mutex](../apis/mutex.html) | &#9745; | Partial |
+| [Semaphore](../apis/semaphore.html) | &#9745; | &#9745;|
+| [Queue](../apis/queue.html) | &#9745; | |
+| [EventQueue](../apis/eventqueue.html) | &#9745; | |
+| [UserAllocatedEvent](../apis/userallocatedevent.html) | &#9745; | &#9745; |
+| [Mail](../apis/mail.html) | &#9745; | |
+| [EventFlags](../apis/eventflags.html) | &#9745; | |
+| [Event](../apis/event.html) | &#9745; | |
+| [Conditionvariable](../apis/conditionvariable.html) | &#9745; | |
+| [Kernel interface functions](../apis/kernel-interface-functions.html) | &#9745; | Partial |
+
 
 ## Drivers
 
@@ -35,7 +28,7 @@ The drivers are digital interfaces that allow your board to interface with a com
 <table>
 <tbody>
 <tr>
-<td><a href="ticker.html">Ticker</a></td>
+<td><a href="driver-apis.html">Ticker</a></td>
 <td><a href="timeout.html">Timeout</a></td>
 <td><a href="timer.html">Timer</a></td>
 <td><a href="watchdog.html">Watchdog</a></td>
@@ -137,7 +130,6 @@ Network interfaces are the application level APIs where users choose the driver,
 <table>
 <tbody>
 <tr>
-<td><a href="socket.html">Socket</a></td>
 <td><a href="ethernet.html">Ethernet</a></td>
 <td><a href="wi-fi.html">Wi-Fi</a></td>
 <td><a href="cellular-api.html">Cellular</a></td>
@@ -159,8 +151,11 @@ Socket APIs include the application programming interface for IP networking. In 
 <table>
 <tbody>
 <tr>
+<td><a href="socket.html">Socket</a></td>
 <td><a href="udpsocket.html">UDPSocket</a></td>
 <td><a href="tcpsocket.html">TCPSocket</a></td>
+</tr>
+<tr>
 <td><a href="socketaddress.html">SocketAddress</a></td>
 <td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
 <td><a href="socketstats.html">SocketStats</a></td>
@@ -336,9 +331,9 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 </tbody>
 </table>
 
-## Deprecated APIs
+## Deprecated APIs: moving from Mbed OS 5 to 6
 
-Some Mbed OS 5 APIs are not supported in Mbed OS 6, and you'll need to replace them in your code.
+If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs:
 
 | Deprecated API | Replaced by |
 | - | - |
