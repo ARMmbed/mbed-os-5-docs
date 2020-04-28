@@ -27,7 +27,7 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
             <td>Available</td>
         </tr>
         <tr>        
-            <td >HAL APIs</td>
+            <td >HAL</td>
             <td>Available</span></td>
             <td>Available</td>
         </tr>
