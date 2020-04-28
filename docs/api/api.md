@@ -29,7 +29,6 @@ Most of the Mbed OS APIs are also supported with the Mbed OS bare metal profile.
 ### RTOS only supported APIs
 <table>
 <tr>
-<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
 <td><a href="rtos-apis.html">Thread</a></td>
 <td><a href="queue.html">Queue</a></td>
 </tr>
