@@ -18,7 +18,7 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
         <tr>
             <td rowspan="8">Core</td>
             <td >Drivers</td>
-            <td>Available (Except USBCDC_ECM)</td>
+            <td>Available <br>(Except USBCDC_ECM)</td>
             <td>Available</td>
         </tr>
         <tr>        
