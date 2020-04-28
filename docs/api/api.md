@@ -1,5 +1,6 @@
 # Full API list
 <!--these are now just the APIs - do I want to add the tutorials?-->
+<!--add a few words about full v bare-->
 
 ## RTOS and event handling
 
@@ -7,119 +8,90 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Thread](../apis/rtos-apis.html) | &#10003; | |
-| [ThisThread](../apis/thisthread.html) | &#10004; | |
-| [Mutex](../apis/mutex.html) | &#9745; | Partial |
-| [Semaphore](../apis/semaphore.html) | &#9745; | &#9745;|
-| [Queue](../apis/queue.html) | &#9745; | |
-| [EventQueue](../apis/eventqueue.html) | &#9745; | |
-| [UserAllocatedEvent](../apis/userallocatedevent.html) | &#9745; | &#9745; |
-| [Mail](../apis/mail.html) | &#9745; | |
-| [EventFlags](../apis/eventflags.html) | &#9745; | |
-| [Event](../apis/event.html) | &#9745; | |
-| [Conditionvariable](../apis/conditionvariable.html) | &#9745; | |
-| [Kernel interface functions](../apis/kernel-interface-functions.html) | &#9745; | Partial |
-
+| [Thread](../apis/rtos-apis.html) | &#10004; | |
+| [ThisThread](../apis/thisthread.html) | &#10004; | &#10004; |
+| [Mutex](../apis/mutex.html) | &#10004; | Partial |
+| [Semaphore](../apis/semaphore.html) | &#10004; | &#10004;|
+| [Queue](../apis/queue.html) | &#10004; | |
+| [EventQueue](../apis/eventqueue.html) | &#10004; | &#10004; |
+| [UserAllocatedEvent](../apis/userallocatedevent.html) | &#10004; | &#10004; |
+| [Mail](../apis/mail.html) | &#10004; | |
+| [EventFlags](../apis/eventflags.html) | &#10004; | &#10004; |
+| [Event](../apis/event.html) | &#10004; | &#10004; |
+| [Conditionvariable](../apis/conditionvariable.html) | &#10004; | |
+| [Kernel interface functions](../apis/kernel-interface-functions.html) | &#10004; | Partial |
 
 ## Drivers
 
 The drivers are digital interfaces that allow your board to interface with a computer or external devices.
 
-<table>
-<tbody>
-<tr>
-<td><a href="driver-apis.html">Ticker</a></td>
-<td><a href="timeout.html">Timeout</a></td>
-<td><a href="timer.html">Timer</a></td>
-<td><a href="watchdog.html">Watchdog</a></td>
-<td><a href="resetreason.html">ResetReason</a></td>
-</tr>
-<tr>
-<td><a href="flash-iap.html">Flash IAP</a></td>
-<td><a href="bufferedserial.html">BufferedSerial</a></td>
-<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
-<td><a href="spi.html">SPI</a></td>
-<td><a href="spislave.html">SPISlave</a></td>
-</tr>
-<tr>
-<td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
-<td><a href="i2c.html">I2C</a></td>
-<td><a href="i2cslave.html">I2CSlave</a></td>
-<td><a href="can.html">CAN</a></td>
-<td><a href="mbedcrc.html">MbedCRC</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Ticker](../apis/driver-apis.html) | &#10004; | &#10004; |
+| [Timeout](../apis/timeout.html) | &#10004; | &#10004; |
+| [Timer](../apis/timer.html) | &#10004; | &#10004; |
+| [Watchdog](../apis/watchdog.html) | &#10004; | &#10004;|
+| [ResetReason](../apis/resetreason.html) | &#10004; | &#10004; |
+| [Flash IAP](../apis/flash-iap.html) | &#10004; | &#10004; |
+| [BufferedSerial](../apis/bufferedserial.html) | &#10004; | &#10004; |
+| [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004; |
+| [SPI](../apis/spi.html) | &#10004; | &#10004; |
+| [SPISlave](../apis/spislave.html) | &#10004; | &#10004; |
+| [QuadSPI (QSPI)](../apis/quadspi-qspi.html) | &#10004; | &#10004; |
+| [I2C](../apis/i2c.html) | &#10004; | &#10004; |
+| [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004; |
+| [CAN](../apis/can.html)| &#10004; | &#10004; |
+| [MbedCRC](../apis/mbedcrc.html) | &#10004; | &#10004; |
 
 ## Input/Output
 
 Input/Output APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.
 
-<table>
-<tbody>
-<tr>
-<td><a href="i-o-apis.html">AnalogIn</a></td>
-<td><a href="analogout.html">AnalogOut</a></td>
-<td><a href="digitalin.html">DigitalIn</a></td>
-<td><a href="digitalout.html">DigitalOut</a></td>
-<td><a href="digitalinout.html">DigitalInOut</a></td>
-</tr>
-<tr>
-<td><a href="busin.html">BusIn</a></td>
-<td><a href="busout.html">BusOut</a></td>
-<td><a href="businout.html">BusInOut</a></td>
-<td><a href="portin.html">PortIn</a></td>
-<td><a href="portout.html">PortOut</a></td>
-</tr>
-<tr>
-<td><a href="portinout.html">PortInOut</a></td>
-<td><a href="pwmout.html">PwmOut</a></td>
-<td><a href="interruptin.html">InterruptIn</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [AnalogIn](../apis/i-o-apis.html) | &#10004; | &#10004; |
+| [AnalogOut](../apis/analogout.html) | &#10004; | &#10004; |
+| [DigitalIn](../apis/digitalin.html) | &#10004; | &#10004; |
+| [DigitalOut](../apis/digitalout.html) | &#10004; | &#10004;|
+| [DigitalInOut](../apis/digitalinout.html) | &#10004; | &#10004; |
+| [BusIn](../apis/busin.html) | &#10004; | &#10004; |
+| [BusOut](../apis/busout.html) | &#10004; | &#10004; |
+| [BusInOut](../apis/businout.html) | &#10004; | &#10004; |
+| [PortIn](../apis/portin.html) | &#10004; | &#10004; |
+| [PortOut](../apis/portout.html) | &#10004; | &#10004; |
+| [PortInOut](../apis/portinout.html) | &#10004; | &#10004; |
+| [PwmOut](../apis/pwmout.html) | &#10004; | &#10004; |
+| [InterruptIn](../apis/interruptin.html) | &#10004; | &#10004; |
 
 ## Data storage
 
 The data storage APIs include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.
 
-<table>
-<tbody>
-<tr>
-<td><a href="data-apis.html">KVStore</a></td>
-<td><a href="static-global-api.html">Static Global API</a></td>
-<td><a href="filesystem.html">FileSystem</a></td>
-<td><a href="dir.html">Dir</a></td>
-<td><a href="file.html">File</a></td>
-</tr>
-<tr>
-<td><a href="littlefilesystem.html">LittleFileSystem</a></td>
-<td><a href="fatfilesystem.html">FATFileSystem</a></td>
-<td><a href="blockdevice.html">BlockDevice</a></td>
-<td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
-<td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
-<td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
-<td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
-<td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
-<td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="dataflashblockdevice.html">DataFlashBlockDevice</a></td>
-<td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
-<td><a href="sdblockdevice.html">SDBlockDevice</a></td>
-<td><a href="spi-flash-block-device.html">SPI Flash block device</a></td>
-<td><a href="qspifblockdevice.html">QSPIFBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="psa-internal-storage.html">PSA internal storage</a></td>
-<td><a href="psa-protected-storage.html">PSA protected storage</a></td>
-</tr>
-</tbody>
-</table>
 
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [KVStore](../apis/data-apis) | &#10004; | &#10004; |
+| [Static Global API](../apis/static-global-api.html) | &#10004; | &#10004; |
+| [FileSystem](../apis/filesystem.html) | &#10004; | &#10004; |
+| [Dir](../apis/dir.html) | &#10004; | &#10004;|
+| [File](../apis/file.html) | &#10004; | &#10004; |
+| [LittleFileSystem](../apis/littlefilesystem.html) | &#10004; | &#10004; |
+| [FATFileSystem](../apis/fatfilesystem.html) | &#10004; | &#10004; |
+| [BlockDevice](../apis/blockdevice.html) | &#10004; | &#10004; |
+| [HeapBlockDevice](../apis/heapblockdevice.html) | &#10004; | &#10004; |
+| [MBRBlockDevice](../apis/mbrblockdevice.html) | &#10004; | &#10004; |
+| [ChainingBlockDevice](../apis/chainingblockdevice.html) | &#10004; | &#10004; |
+| [SlicingBlockDevice](../apis/slicingblockdevice.html) | &#10004; | &#10004; |
+| [ProfilingBlockDevice](../apis/profilingblockdevice.htm) | &#10004; | &#10004; |
+| [BufferedBlockDevice](../apis/bufferedblockdevice.html) | &#10004; | &#10004; |
+| [FlashSimBlockDevice](../apis/flashsimblockdevice.html) | &#10004; | &#10004; |
+| [DataFlashBlockDevice](../apis/dataflashblockdevice.html) | &#10004; | &#10004; |
+| [FlashIAPBlockDevice](../apis/flashiapblockdevice.html) | &#10004; | &#10004; |
+| [SDBlockDevice](../apis/sdblockdevice.html) | &#10004; | &#10004; |
+| [SPI Flash block device](../apis/spi-flash-block-device.html)| &#10004; | &#10004; |
+| [QSPIFBlockDevice](../apis/qspifblockdevice.html) | &#10004; | &#10004; |
+| [PSA internal storage](../apis/psa-internal-storage.html) | &#10004; | &#10004; |
+| [PSA protected storage](../apis/psa-protected-storage.html) | &#10004; | &#10004; |
 
 ## Connectivity
 
