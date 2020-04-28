@@ -32,7 +32,7 @@ Most of the Mbed OS APIs are also supported with the Mbed OS bare metal profile.
 <td><a href="rtos-apis.html">Thread</a></td>
 <td><a href="queue.html">Queue</a></td>
 <td><a href="mail.html">Mail</a></td>
-<td><a href="conditionvariable.html">Conditionvariable</a></td>
+<td><a href="conditionvariable.html">ConditionVariable</a></td>
 </tr>
 </tbody>
 </table>
