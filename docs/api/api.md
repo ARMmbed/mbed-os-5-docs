@@ -138,7 +138,6 @@ Network interfaces are the application level APIs where users choose the driver,
 <table>
 <tbody>
 <tr>
-<td><a href="socket.html">Socket</a></td>
 <td><a href="ethernet.html">Ethernet</a></td>
 <td><a href="wi-fi.html">Wi-Fi</a></td>
 <td><a href="cellular-api.html">Cellular</a></td>
@@ -160,8 +159,11 @@ Socket APIs include the application programming interface for IP networking. In 
 <table>
 <tbody>
 <tr>
+<td><a href="socket.html">Socket</a></td>
 <td><a href="udpsocket.html">UDPSocket</a></td>
 <td><a href="tcpsocket.html">TCPSocket</a></td>
+</tr>
+<tr>
 <td><a href="socketaddress.html">SocketAddress</a></td>
 <td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
 <td><a href="socketstats.html">SocketStats</a></td>
