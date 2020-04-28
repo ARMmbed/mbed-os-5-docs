@@ -13,7 +13,7 @@ Most of the Mbed OS APIs are also supported with the Mbed OS bare metal profile.
 <tbody>
 <tr>
 <td><a href="semaphore.html">Semaphore<span>*</span></a></td>
-<td><a href="userallocatedevent.html">UserAllocatedEvent</a></td>
+<td><a href="userallocatedevent.html">UserAllocatedEvent<span>*</span></a></td>
 <td><a href="eventflags.html">EventFlags</a></td>
 <td><a href="kernel-interface-functions.html">Kernel interface functions<br><i>(Only get_ms_count API)<i></a></td>
 </tr>
