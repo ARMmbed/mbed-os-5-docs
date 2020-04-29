@@ -1,7 +1,5 @@
 # Mbed OS bare metal profile
 
-<img src="../../images/bare_metal_block_diagram.png" align="right" />
-
 Bare metal is a profile of Mbed OS for ultraconstrained hardware. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that development boards require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional - you can pull them in if you need the features they enable, but you'll probably leave most of them out - reducing your application's final size.
 
 Bare metal uses a subset of Mbed OS's RTOS APIs, without becoming a full RTOS. It's therefore suitable for applications that do not require complex thread management. This not only simplifies your application code, it also means you can use APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
