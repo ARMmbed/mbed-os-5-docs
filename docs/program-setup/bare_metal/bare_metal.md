@@ -2,10 +2,11 @@
 
 <img src="../../images/bare_metal_block_diagram.png" width="35%" align="right" />
 
-
 Bare metal is a profile of Mbed OS for ultraconstrained devices. Unlike the full Mbed OS, which by default includes all APIs, the bare metal profile starts with a minimal set of APIs to which you can add only the APIs your application or hardware demand. This helps you control the size of your final binary.<!--not sure that's a good term-->
 
-Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX, <!--which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.-->
+Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX,
+<!--I need to read about this - I think RTX underlies our RTOS but I'm not too clear on how this works and why it saves me memory not to use it-->
+<!--which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.-->
 
 <!--If your application does not use an RTOS, build it in the bare metal mode to achieve memory savings. -->
 <!--should we explain something about the problems of non-RTOS?-->
@@ -14,7 +15,7 @@ Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX, <
 
 For a breakdown of supported APIs, please see [the full API list](../apis/index.html).
 
-The Mbed OS tools - Mbed CLI, Mbed Online Compiler and Mbed Studio all support working with the bare metal profile.
+The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all support working with the bare metal profile.
 
 <table>
     <thead>
