@@ -48,9 +48,6 @@
                     "path": "docs/program-setup/bare_metal/bare_metal.md"
                 },
                 {
-                    "path": "docs/program-setup/bare_metal/bare_metal_api.md"
-                },
-                {
                     "path": "docs/program-setup/bare_metal/baremetal_example.md"
                 },
                 {
