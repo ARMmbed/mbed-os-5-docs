@@ -1,7 +1,6 @@
 # Full API list
 
-<!--add a few words about full v bare-->
-This is the full list of APIs Mbed OS offers. The ticks indicate which of the APIs the [bare metal profile](../bare-metal/index.html) supports. For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
+This is the full list of APIs Mbed OS offers. The list indicates which of the APIs the [bare metal profile](../bare-metal/index.html) supports, and which of those are enabled by default. For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
 
 <!--This list does not include the internal APIs, which are not intended for use by application code.-->
 

@@ -1,6 +1,5 @@
 # Mbed OS bare metal profile
 
-<img src="../../images/bare_metal_block_diagram.png" width="35%" align="right" />
 
 Bare metal is a profile of Mbed OS for ultraconstrained hardware. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that development boards require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional - you can pull them in if you need the features they enable, but you'll probably leave most of them out - reducing your application's final size.
 
@@ -10,14 +9,7 @@ Bare metal uses a subset of Mbed OS's RTOS APIs, without becoming a full RTOS. I
 
 The bare metal profile is determined at build time - your working environment includes the full Mbed OS library, but only the bare metal APIs are compiled.
 
-## Documentation
-
-The bare metal documentation covers:
-
-- [A bare metal version of our standard Blinky example](../bare-metal/bare-metal-example.html).
-- A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application, add optional APIs and use Greentea to test the application.
-- [A short review of small C libraries](../bare-metal/using-small-c-libraries.html).
-- [A porting guide for Mbed OS 2 targets](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
+<span class="images">![](../../images/bare_metal_block_diagram.png)</span>
 
 ## Features
 
@@ -115,6 +107,14 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
     </tbody>
 </table>
 
+## Documentation
+
+The bare metal documentation covers:
+
+- [A bare metal version of our standard Blinky example](../bare-metal/bare-metal-example.html).
+- A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application, add optional APIs and use Greentea to test the application.
+- [A short review of small C libraries](../bare-metal/using-small-c-libraries.html).
+- [A porting guide for Mbed OS 2 targets](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
 
 <!--
 <table>
