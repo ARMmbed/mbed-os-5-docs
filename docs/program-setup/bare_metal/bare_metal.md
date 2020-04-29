@@ -6,6 +6,11 @@ Bare metal is a profile of Mbed OS for ultraconstrained devices. Unlike the full
 
 Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX,
 <!--I need to read about this - I think RTX underlies our RTOS but I'm not too clear on how this works and why it saves me memory not to use it-->
+
+<!--is it just that RTOS itself requires more OS memory and also that the application code requires more "hedging" to allow RTOS - protections like mutexxes, sempahores etc - that bloat the code?-->
+<!--but that implies that moving from full profile to bare metal requires quite a lot of refactoring of the code - I need to use wholly different methods to control interrupts-->
+<!--is there also a time cost to RTOS?-->
+
 <!--which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.-->
 
 <!--If your application does not use an RTOS, build it in the bare metal mode to achieve memory savings. -->
@@ -34,7 +39,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
         <tr>        
             <td >Events</td>
-            <td>Available</span></td>
+            <td>Available</td>
             <td>Available</td>
         </tr>
         <tr>        
@@ -44,7 +49,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
         <tr>        
             <td >Platform</td>
-            <td>Available</span></td>
+            <td>Available</td>
             <td>Available</td>
         </tr>
         <tr>        
@@ -64,32 +69,32 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         <tr>
             <td rowspan="9">Connectivity</td>
             <td>802.15.4_RF</td>
-            <td><span  >Not Available</span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>
         <tr>
             <td>Wifi</td>
-            <td><span>Not Available</span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>
         <tr>
             <td>Cellular</td>
-            <td><span>Not Available</span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>
         <tr>
             <td>LWIP stack</td>
-            <td><span>Not Available</span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>
         <tr>
             <td>Nanostack</td>
-            <td><span>Not Available</span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>
         <tr>
             <td>Network Socket</td>
-            <td><span>Not Available</span></td>
+            <td>Not Available></td>
             <td>Available</td>
         </tr>
         </tr>
@@ -111,7 +116,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         <tr>
             <td rowspan="4">Security</td>
             <td>PSA</td>
-            <td><span>Not Available</span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>
         <tr>
