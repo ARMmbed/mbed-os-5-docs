@@ -5,7 +5,7 @@
 
 Bare metal is a profile of Mbed OS for ultraconstrained devices. Unlike the full Mbed OS, which by default includes all APIs, the bare metal profile starts with a minimal set of APIs to which you can add only the APIs your application or hardware demand. This helps you control the size of your final binary.<!--not sure that's a good term-->
 
-Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX, which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.
+Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX, <!--which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.-->
 
 <!--If your application does not use an RTOS, build it in the bare metal mode to achieve memory savings. -->
 <!--should we explain something about the problems of non-RTOS?-->
