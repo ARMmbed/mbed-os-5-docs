@@ -44,7 +44,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
         <tr>        
             <td >HAL</td>
-            <td>Available</span></td>
+            <td>Available</td>
             <td>Available</td>
         </tr>
         <tr>        
@@ -54,10 +54,10 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
         <tr>        
             <td>RTOS</td>
-            <td><span>Not Available</span></span></td>
+            <td>Not Available</td>
             <td>Available</td>
         </tr>  
-                <tr>        
+            <tr>        
             <td>RTOS APIs <br> (Semaphore, Mutex, EventFlags, ThisThread)</td>
             <td>Available</td>
             <td>Available</td>
