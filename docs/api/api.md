@@ -1,6 +1,9 @@
 # Full API list
-<!--these are now just the APIs - do I want to add the tutorials?-->
+
 <!--add a few words about full v bare-->
+This is the full list of APIs Mbed OS offers. The ticks indicate which of the APIs the [bare metal profile](../bare-metal/index.html) supports. For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
+
+<!--This list does not include the internal APIs, which are not intended for use by application code.-->
 
 ## RTOS and event handling
 
@@ -140,148 +143,111 @@ Socket APIs include the application programming interface for IP networking. In 
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 
-<table>
-<tbody>
-<tr>
-<td><a href="ble.html">BLE</a></td>
-<td><a href="gap.html">GAP</a></td>
-<td><a href="gattclient.html">GattClient</a></td>
-<td><a href="gattserver.html">GattServer</a></td>
-<td><a href="SecurityManager.html">SecurityManager</a></td>
-</tr>
-<tr>
-<td><a href="batteryservice.html">BatteryService</a></td>
-<td><a href="heartrateservice.html">HeartRateService</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [BLE](../apis/ble.html) | &#10004; | &#10004; |
+| [GAP](../apis/gap.html) | &#10004; | &#10004; |
+| [GattClient](../apis/gattclient.html) | &#10004; | &#10004; |
+| [GattServer](../apis/gattserver.html) | &#10004; | &#10004;|
+| [SecurityManager](../apis/SecurityManager.html) | &#10004; | &#10004; |
+| [BatteryService](../apis/batteryservice.html) | &#10004; | &#10004; |
+| [HeartRateService](../apis/heartrateservice.html) | &#10004; | &#10004; |
 
 ### NFC
 
 You can use Near-Field Communication (NFC), a short-range radio technology, for use cases such as contactless payments, access control and device pairing.
 
-<table>
-<tbody>
-<tr>
-<td><a href="nfccontroller.html">NFCController</a></td>
-<td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [NFCController](../apis/nfccontroller.html) | &#10004; | &#10004; |
+| [NFC EEPROM](../apis/nfc-eeprom.html) | &#10004; | &#10004; |
 
 ### LoRaWAN
 
 Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
-<table>
-<tbody>
-<tr>
-<td><a href="lorawaninterface.html">LoRaWANInterface</a></td>
-<td><a href="loraradio.html">LoRaRadio</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [LoRaWANInterface](../apis/lorawaninterface.html) | &#10004; | &#10004; |
+| [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | &#10004; |
 
 ## USB
 
 The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.
 
-<table>
-<tbody>
-<tr>
-<td><a href="usb-apis.html">USBSerial</a></td>
-<td><a href="usbaudio.html">USBAudio</a></td>
-<td><a href="ubshid.html">USBHID</a></td>
-<td><a href="usbcdc.html">USBCDC</a></td>
-<td><a href="usbcdc-ecm.html">USBCDC_ECM</a></td>
-</tr>
-<tr>
-<td><a href="usbmsd.html">USBMSD</a></td>
-<td><a href="usbmidi.html">USBMIDI</a></td>
-<td><a href="usbmouse.html">USBMouse</a></td>
-<td><a href="usbkeyboard.html">USBKeyboard</a></td>
-<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [USBSerial](../apis/usb-apis.html) | &#10004; | &#10004; |
+| [USBAudio](../apis/usbaudio.html) | &#10004; | &#10004; |
+| [USBHID](../apis/ubshid.html) | &#10004; | &#10004; |
+| [USBCDC](../apis/usbcdc.html) | &#10004; | &#10004; |
+| [USBCDC_ECM](../apis/usbcdc-ecm.html) | &#10004; | |
+| [USBMSD](../apis/usbmsd.html) | &#10004; | &#10004; |
+| [USBMIDI](../apis/usbmidi.html) | &#10004; | &#10004; |
+| [USBMouse](../apis/usbmouse.html) | &#10004; | &#10004; |
+| [USBKeyboard](../apis/usbkeyboard.html) | &#10004; | &#10004; |
+| [USBMouseKeyboard](../apis/usbmousekeyboard.html) | &#10004; | &#10004; |
 
 ## Security
 
 With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
 
-<table>
-<tbody>
-<tr>
-<td><a href="security-apis.html">PSA initial attestation</a></td>
-<td><a href="psa-lifecycle.html">PSA lifecycle</a></td>
-<td><a href="mbed-crypto.html">Mbed Crypto</a></td>
-<td><a href="tls.html">TLS</a></td>
-<td><a href="devicekey.html">DeviceKey</a></td>
-</tr>
-</tbody>
-</table>
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [PSA initial attestation](../apis/security-apis.html) | &#10004; | |
+| [PSA lifecycle](../apis/psa-lifecycle.html) | &#10004; |  |
+| [Mbed Crypto](../apis/mbed-crypto.html) | &#10004; | &#10004; |
+| [TLS](../apis/tls.html) | &#10004; | &#10004; |
+| [DeviceKey](../apis/devicekey.html) | &#10004; | &#10004; |
 
 ## Power
 
-<table>
-<tbody>
-<tr>
-<td><a href="power-apis.html">Power management (sleep)</a></td>
-<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
-<td><a href="idle-loop.html">Idle loop</a></td>
-</tr>
-<tr>
-<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
-<td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
-<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
-</tr>
-</tbody>
-</table>
+<!--needs intro-->
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Power management (sleep)](../apis/power-apis.html) | &#10004; | &#10004; |
+| [DeepSleepLock](../apis/deepsleeplock.html) | &#10004; | &#10004;  |
+| [Idle loop](../apis/idle-loop.html) | &#10004; | |
+| [LowPowerTicker](../apis/lowpowerticker.html) | &#10004; | &#10004; |
+| [LowPowerTimeout](../apis/lowpowertimeout.html) | &#10004; | &#10004; |
+| [LowPowerTimer](../apis/lowpowertimer.html) | &#10004; | &#10004; |
 
 ## Memory
 
-<table>
-<tbody>
-<tr>
-<td><a href="mbed-statistics.html">mbed_stats (Mbed statistics)</a></td>
-<td><a href="mpu-management.html">mpug_mgmt (MPU management)</a></td>
-<td><a href="memory-tracing.html">mbed_mem_trace (Memory tracing)</a></td>
-<td><a href="memorypool.html">MemoryPool</a></td>
-</tr>
-</tbody>
-</table>
+<!--needs intro-->
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004; |
+| [mpug_mgmt (MPU management)](../apis/mpu-management.html) | &#10004; | &#10004;  |
+| [mbed_mem_trace (Memory tracing)](../apis/memory-tracing.html) | &#10004; | &#10004; |
+| [MemoryPool](../apis/memorypool.html) | &#10004; | |
 
 ## Utilities
 
-<table>
-<tbody>
-<tr>
-<td><a href="util-apis.html">Callback</a></td>
-<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
-<td><a href="time.html">Time</a></td>
-<td><a href="rtc.html">RTC</a></td>
-<td><a href="debug.html">Debug</a></td>
-</tr>
-<tr>
-<td><a href="error-handling.html">Error handling</a></td>
-<td><a href="assert.html">Assert</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
-<td><a href="shared-pointer.html">SharedPtr (Shared pointer)</a></td>
-<td><a href="span.html">Span</a></td>
-</tr>
-<tr>
-<td><a href="filehandle.html">FileHandle</a></td>
-<td><a href="poll.html">Poll</a></td>
-<td><a href="platformmutex.html">PlatformMutex</a></td>
-<td><a href="circularbuffer.html">CircularBuffer</a></td>
-<td><a href="atcmdparser.html">ATCmdParser</a></td>
-</tr>
-<tr>
-<td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
-<td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
-</tr>
-</tbody>
-</table>
+<!--needs intro-->
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Callback](../apis/util-apis.html) | &#10004; | &#10004; |
+| [CriticalSectionLock](../apis/criticalsectionlock.html) | &#10004; | &#10004; |
+| [Time](../apis/time.html) | &#10004; | &#10004; |
+| [RTC](../apis/rtc.html) | &#10004; | &#10004; |
+| [Debug](../apis/debug.html) | &#10004; | &#10004; |
+| [Error handling](../apis/error-handling.html) | &#10004; | &#10004; |
+| [Assert](../apis/assert.html) | &#10004; | &#10004; |
+| [NonCopyable](../apis/noncopyable.html) | &#10004; | &#10004; |
+| [SharedPtr (Shared pointer](../apis/shared-pointer.html) | &#10004; | &#10004; |
+| [Span](../apis/span.html) | &#10004; | &#10004; |
+| [FileHandle](../apis/filehandle.html) | &#10004; | &#10004; |
+| [Poll](../apis/poll.html) | &#10004; | &#10004; |
+| [PlatformMutex](../apis/platformmutex.html) | &#10004; | &#10004; |
+| [CircularBuffer](../apis/circularbuffer.html) | &#10004; | &#10004; |
+| [ATCmdParser](../apis/atcmdparser.html) | &#10004; | &#10004; |
+| [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html) | &#10004; | &#10004; |
+| [ScopedRomWriteLock](../apis/scopedromwritelock.html) | &#10004; | &#10004; |
 
 ## Deprecated APIs: moving from Mbed OS 5 to 6
 
