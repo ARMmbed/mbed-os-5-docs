@@ -1,5 +1,6 @@
 # Mbed OS bare metal profile
 
+<img src="../../images/bare_metal_block_diagram.png" align="right" />
 
 Bare metal is a profile of Mbed OS for ultraconstrained hardware. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that development boards require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional - you can pull them in if you need the features they enable, but you'll probably leave most of them out - reducing your application's final size.
 
@@ -8,8 +9,6 @@ Bare metal uses a subset of Mbed OS's RTOS APIs, without becoming a full RTOS. I
 <span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
 The bare metal profile is determined at build time - your working environment includes the full Mbed OS library, but only the bare metal APIs are compiled.
-
-<span class="images">![](../../images/bare_metal_block_diagram.png)</span>
 
 ## Features
 
