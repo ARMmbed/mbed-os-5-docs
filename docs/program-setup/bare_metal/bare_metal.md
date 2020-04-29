@@ -6,8 +6,6 @@ Bare metal is a profile of Mbed OS for ultraconstrained hardware. It represents 
 
 Bare metal uses a subset of Mbed OS's RTOS APIs, without becoming a full RTOS. It's therefore suitable for applications that do not require complex thread management. This not only simplifies your application code, it also means you can use APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
 
-<span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
-
 The bare metal profile is determined at build time - your working environment includes the full Mbed OS library, but only the bare metal APIs are compiled.
 
 ## Features
@@ -15,6 +13,8 @@ The bare metal profile is determined at build time - your working environment in
 For a breakdown of supported APIs, please see [the full API list](../apis/index.html).
 
 The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all support working with the bare metal profile.
+
+<span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
 <table>
     <thead>
