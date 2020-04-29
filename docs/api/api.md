@@ -12,7 +12,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [Thread](../apis/rtos-apis.html) | &#10004; | |
-| [ThisThread](../apis/thisthread.html) | &#10004; | &#10004; |
+| [ThisThread](../apis/thisthread.html) | &#10004; | &#10004; (enabled by default) |
 | [Mutex](../apis/mutex.html) | &#10004; | Partial |
 | [Semaphore](../apis/semaphore.html) | &#10004; | &#10004;|
 | [Queue](../apis/queue.html) | &#10004; | |
@@ -28,22 +28,23 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 The drivers are digital interfaces that allow your board to interface with a computer or external devices.
 
+
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Ticker](../apis/driver-apis.html) | &#10004; | &#10004; |
-| [Timeout](../apis/timeout.html) | &#10004; | &#10004; |
-| [Timer](../apis/timer.html) | &#10004; | &#10004; |
+| [Ticker](../apis/driver-apis.html) | &#10004; | &#10004; (enabled by default) |
+| [Timeout](../apis/timeout.html) | &#10004; | &#10004; (enabled by default) |
+| [Timer](../apis/timer.html) | &#10004; | &#10004; (enabled by default) |
 | [Watchdog](../apis/watchdog.html) | &#10004; | &#10004;|
 | [ResetReason](../apis/resetreason.html) | &#10004; | &#10004; |
 | [Flash IAP](../apis/flash-iap.html) | &#10004; | &#10004; |
-| [BufferedSerial](../apis/bufferedserial.html) | &#10004; | &#10004; |
-| [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004; |
-| [SPI](../apis/spi.html) | &#10004; | &#10004; |
-| [SPISlave](../apis/spislave.html) | &#10004; | &#10004; |
+| [BufferedSerial](../apis/bufferedserial.html) | &#10004; | &#10004; (enabled by default) |
+| [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004; (enabled by default) |
+| [SPI](../apis/spi.html) | &#10004; | &#10004; (enabled by default) |
+| [SPISlave](../apis/spislave.html) | &#10004; | &#10004; (enabled by default) |
 | [QuadSPI (QSPI)](../apis/quadspi-qspi.html) | &#10004; | &#10004; |
-| [I2C](../apis/i2c.html) | &#10004; | &#10004; |
-| [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004; |
-| [CAN](../apis/can.html)| &#10004; | &#10004; |
+| [I2C](../apis/i2c.html) | &#10004; | &#10004; (enabled by default) |
+| [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004; (enabled by default) |
+| [CAN](../apis/can.html)| &#10004; | &#10004; (enabled by default) |
 | [MbedCRC](../apis/mbedcrc.html) | &#10004; | &#10004; |
 
 ## Input/Output
@@ -52,19 +53,19 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [AnalogIn](../apis/i-o-apis.html) | &#10004; | &#10004; |
-| [AnalogOut](../apis/analogout.html) | &#10004; | &#10004; |
-| [DigitalIn](../apis/digitalin.html) | &#10004; | &#10004; |
-| [DigitalOut](../apis/digitalout.html) | &#10004; | &#10004;|
-| [DigitalInOut](../apis/digitalinout.html) | &#10004; | &#10004; |
-| [BusIn](../apis/busin.html) | &#10004; | &#10004; |
-| [BusOut](../apis/busout.html) | &#10004; | &#10004; |
-| [BusInOut](../apis/businout.html) | &#10004; | &#10004; |
-| [PortIn](../apis/portin.html) | &#10004; | &#10004; |
-| [PortOut](../apis/portout.html) | &#10004; | &#10004; |
-| [PortInOut](../apis/portinout.html) | &#10004; | &#10004; |
-| [PwmOut](../apis/pwmout.html) | &#10004; | &#10004; |
-| [InterruptIn](../apis/interruptin.html) | &#10004; | &#10004; |
+| [AnalogIn](../apis/i-o-apis.html) | &#10004; | &#10004; (enabled by default) |
+| [AnalogOut](../apis/analogout.html) | &#10004; | &#10004; (enabled by default) |
+| [DigitalIn](../apis/digitalin.html) | &#10004; | &#10004; (enabled by default) |
+| [DigitalOut](../apis/digitalout.html) | &#10004; | &#10004; (enabled by default) |
+| [DigitalInOut](../apis/digitalinout.html) | &#10004; | &#10004; (enabled by default) |
+| [BusIn](../apis/busin.html) | &#10004; | &#10004; (enabled by default) |
+| [BusOut](../apis/busout.html) | &#10004; | &#10004; (enabled by default) |
+| [BusInOut](../apis/businout.html) | &#10004; | &#10004; (enabled by default) |
+| [PortIn](../apis/portin.html) | &#10004; | &#10004; (enabled by default) |
+| [PortOut](../apis/portout.html) | &#10004; | &#10004; (enabled by default) |
+| [PortInOut](../apis/portinout.html) | &#10004; | &#10004; (enabled by default) |
+| [PwmOut](../apis/pwmout.html) | &#10004; | &#10004; (enabled by default) |
+| [InterruptIn](../apis/interruptin.html) | &#10004; | &#10004; (enabled by default) |
 
 ## Data storage
 
@@ -233,7 +234,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 | - | - | - |
 | [Callback](../apis/util-apis.html) | &#10004; | &#10004; |
 | [CriticalSectionLock](../apis/criticalsectionlock.html) | &#10004; | &#10004; |
-| [Time](../apis/time.html) | &#10004; | &#10004; |
+| [Time](../apis/time.html) | &#10004; | &#10004; (enabled by default) |
 | [RTC](../apis/rtc.html) | &#10004; | &#10004; |
 | [Debug](../apis/debug.html) | &#10004; | &#10004; |
 | [Error handling](../apis/error-handling.html) | &#10004; | &#10004; |
@@ -256,3 +257,4 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 | Deprecated API | Replaced by |
 | - | - |
 | Serial | [BufferedSerial](../apis/bufferedserial.html), [UnbufferedSerial](../apis/unbufferedserial.html) |
+<!--wait as well?-->

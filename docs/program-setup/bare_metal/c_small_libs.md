@@ -1,9 +1,11 @@
 <h1 id="using-small-c-libraries">Using small C libraries in Mbed OS bare metal</h1>
 <!--I think this needs to be mentioned in the usage guide from PR 1305-->
 
-When using the bare metal profile, use small C libraries.
+We recommend using small C libraries with the bare metal profile. These are versions of the C standard library that do not include thread safety features; they are suitable for a non-RTOS profile like bare metal, and their size is much better suited for an ultraconstrained hardware.
 
-Both the `ARM` and `GCC_ARM` toolchains support code optimized versions of their C standard libraries, `microlib` and `newlib-nano`. It is safe to use these smaller C libraries in bare metal mode, and we recommend using them.
+Both the `ARM` and `GCC_ARM` toolchains support code-optimized versions of their C standard libraries, `microlib` and `newlib-nano`.
+
+## Building with the small C libraries
 
 You can build with the smaller C libraries by creating an `mbed_app.json` with the following contents:
 
@@ -61,5 +63,5 @@ After you have completed the steps above, add `small` to the `supported_c_libs` 
 ```
 
 ### Note on uARM toolchain
-
+<!--I think all refrences to uArm should be removed at this point - including the scatter file bits above-->
 The uARM toolchain is the ARMC6 toolchain with the Arm microlib, the C micro-library. This toolchain will be deprecated after 5.15.

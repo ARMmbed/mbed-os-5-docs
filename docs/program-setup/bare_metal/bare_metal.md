@@ -2,19 +2,22 @@
 
 <img src="../../images/bare_metal_block_diagram.png" width="35%" align="right" />
 
-Bare metal is a profile of Mbed OS for ultraconstrained devices. Unlike the full Mbed OS, which by default includes all APIs, the bare metal profile starts with a minimal set of APIs to which you can add only the APIs your application or hardware demand. This helps you control the size of your final binary.<!--not sure that's a good term-->
+Bare metal is a profile of Mbed OS for ultraconstrained hardware. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that development boards require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional - you can pull them in if you need the features they enable, but you'll probably leave most of them out - reducing your application's final size.
 
-Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX,
-<!--I need to read about this - I think RTX underlies our RTOS but I'm not too clear on how this works and why it saves me memory not to use it-->
+Bare metal uses a subset of Mbed OS's RTOS APIs, without becoming a full RTOS. It's therefore suitable for applications that do not require complex thread management. This not only simplifies your application code, it also means you can use APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
 
-<!--is it just that RTOS itself requires more OS memory and also that the application code requires more "hedging" to allow RTOS - protections like mutexxes, sempahores etc - that bloat the code?-->
-<!--but that implies that moving from full profile to bare metal requires quite a lot of refactoring of the code - I need to use wholly different methods to control interrupts-->
-<!--is there also a time cost to RTOS?-->
+<span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
-<!--which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.-->
+The bare metal profile is determined at build time - your working environment includes the full Mbed OS library, but only the bare metal APIs are compiled.
 
-<!--If your application does not use an RTOS, build it in the bare metal mode to achieve memory savings. -->
-<!--should we explain something about the problems of non-RTOS?-->
+## Documentation
+
+The bare metal documentation covers:
+
+- [A bare metal version of our standard Blinky example](../bare-metal/bare-metal-example.html).
+- A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application, add optional APIs and use Greentea to test the application.
+- [A short review of small C libraries](../bare-metal/using-small-c-libraries.html).
+- [A porting guide for Mbed OS 2 targets](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
 
 ## Features
 
@@ -26,8 +29,100 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
     <thead>
         <tr>
             <th colspan="2">Features</th>
-            <th>Mbed OS bare metal profile</th>
-            <th> Mbed OS full profile</th>
+            <th>Support details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="6">Core</td>
+            <td>Drivers</td>
+            <td>Available; enabled by default <br>(Except the class `USBCDC_ECM`)</td>
+        </tr>
+        <tr>        
+            <td>Events</td>
+            <td>Available</td>
+        </tr>
+        <tr>        
+            <td>HAL</td>
+            <td>Available</td>
+        </tr>
+        <tr>        
+            <td>Platform</td>
+            <td>Available; enabled by default</td>
+        </tr>
+            <tr>        
+            <td>RTOS APIs</td>
+            <td>Semaphore, Mutex, EventFlags, ThisThread: Available; enabled by default.<br><br> All other classes not enabled.</td>
+        </tr>
+        <tr>        
+            <td>Storage</td>
+            <td>Available</td>
+        <tr>
+            <td rowspan="9">Connectivity</td>
+            <td>802.15.4_RF</td>
+            <td>Not Available</td>
+        </tr>
+        <tr>
+            <td>Wifi</td>
+            <td>Not Available</td>
+        </tr>
+        <tr>
+            <td>Cellular</td>
+            <td>Not Available</td>
+        </tr>
+        <tr>
+            <td>LWIP stack</td>
+            <td>Not Available</td>
+        </tr>
+        <tr>
+            <td>Nanostack</td>
+            <td>Not Available</td>
+        </tr>
+        <tr>
+            <td>Network Socket</td>
+            <td>Not Available</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>BLE</td>
+            <td>Available<br>(Except on `TARGET_NORDIC_CORDIO`)</td>
+        </tr>    
+        <tr>
+            <td>LoRaWAN</td>
+            <td>Available</td>
+        </tr>  
+        <tr>
+            <td>NFC</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Security</td>
+            <td>PSA</td>
+            <td>Not Available</td>
+        </tr>
+        <tr>
+            <td>Mbed Crypto</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Devicekey</td>
+            <td>Available</td>
+        </tr>  
+        <tr>
+            <td>Mbed TLS</td>
+            <td>Available</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!--
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Features</th>
+            <th>Bare metal profile</th>
+            <th>Full profile</th>
         </tr>
     </thead>
     <tbody>
@@ -136,10 +231,4 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
     </tbody>
 </table>
-
-## Documentation
-
-- To see how to enable the profile, or to try the bare metal Blinky, see [our example page]().
-- To create your own bare metal application, see [the usage guide]().
-- To learn how to add APIs, [see the bare metal API page]().
-- If you're an Mbed OS 2 user, migrate to the Mbed OS 6 bare metal profile by following [our migration guide]().<!--that's not application develoeprs though, right? it's for hardware people?-->
+-->
