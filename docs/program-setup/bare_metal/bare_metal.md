@@ -5,20 +5,16 @@
 
 Bare metal is a profile of Mbed OS for ultraconstrained devices. Unlike the full Mbed OS, which by default includes all APIs, the bare metal profile starts with a minimal set of APIs to which you can add only the APIs your application or hardware demand. This helps you control the size of your final binary.<!--not sure that's a good term-->
 
-Bare metal doesn't use the RTOS APIs. Instead, it relies on timers to control the workflow.
-<!--not sure I get it - I looked at both Blinky examples and they both use thread_sleep_for, even though the bare metal one doesn't include mbed_thread.h-->
-<!--what other APIs does it have or not have by default?-->
+Bare metal uses a subset of the RTOS APIs. These APIs don't make calls to RTX, which means they can work as an RTOS-less have been ported to bare metal and they do not make calls to RTX.
 
-The Mbed OS tools - Mbed CLI, Mbed Online Compiler and Mbed Studio all support working with the bare metal profile.
-
-Note that Mbed TLS and Mbed Crypto are not supported for bare metal.
-
-<span class="images">![Mbed OS bare metal profile block diagram]()<span>Mbed OS bare metal profile block digram</span></span>
-
+<!--If your application does not use an RTOS, build it in the bare metal mode to achieve memory savings. -->
+<!--should we explain something about the problems of non-RTOS?-->
 
 ## Features
 
 For a breakdown of supported APIs, please see [the full API list](../apis/index.html).
+
+The Mbed OS tools - Mbed CLI, Mbed Online Compiler and Mbed Studio all support working with the bare metal profile.
 
 <table>
     <thead>
@@ -30,7 +26,7 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
     </thead>
     <tbody>
         <tr>
-            <td rowspan="8">Core</td>
+            <td rowspan="7">Core</td>
             <td>Drivers</td>
             <td>Available <br>(Except the class `USBCDC_ECM`)</td>
             <td>Available</td>
@@ -63,13 +59,7 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
         <tr>        
             <td>Storage</td>
             <td>Available</td>
-            <td>Available</td>
-        </tr>
-        <tr>        
-            <td>Development tools<br> (Mbed CLI, Mbed Studio, Mbed Online Compiler)</td>
-            <td>Available</td>
-            <td>Available</td>
-        </tr>      
+            <td>Available</td>     
         <tr>
             <td rowspan="9">Connectivity</td>
             <td>802.15.4_RF</td>
@@ -144,5 +134,6 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
 ## Documentation
 
 - To see how to enable the profile, or to try the bare metal Blinky, see [our example page]().
+- To create your own bare metal application, see [the usage guide]().
 - To learn how to add APIs, [see the bare metal API page]().
 - If you're an Mbed OS 2 user, migrate to the Mbed OS 6 bare metal profile by following [our migration guide]().<!--that's not application develoeprs though, right? it's for hardware people?-->

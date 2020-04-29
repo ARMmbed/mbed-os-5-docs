@@ -51,6 +51,9 @@
                     "path": "docs/program-setup/bare_metal/baremetal_example.md"
                 },
                 {
+                    "path": "docs/program-setup/bare_metal/using_bare_metal.md"
+                }
+                {
                     "path": "docs/program-setup/bare_metal/c_small_libs.md"
                 },
                 {
