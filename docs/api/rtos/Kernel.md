@@ -6,9 +6,9 @@ The Kernel namespace implements interfaces to attach a function to some kernel e
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
 
-## get_ms_count() example
+## Kernel::Clock example
 
-The function `get_ms_count()` can be used to read the current RTOS kernel millisecond tick count. The below code snippet demonstrates use of the `get_ms_count()` function to calculate the elapsed time:
+The nested class `Clock` can be used to read the current RTOS kernel millisecond tick count as a C++11 Chrono time point. The below code snippet demonstrates use of `Kernel::Clock` to calculate the elapsed time:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Kernel_get_ms_count)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Kernel_get_ms_count/main.cpp)
 

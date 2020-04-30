@@ -152,9 +152,10 @@ Occasionally, namespaces are used to act as-if "static singleton" objects. One e
 Below is an example of typical namespace use in a source file:
 
 ```
-    using namespace rtos;
+    using namespace rtos; // for ThisThread
+    using namespace std::chrono_literals; // for 1s
 
-    ThisThread::sleep_for(1000);
+    ThisThread::sleep_for(1s);
 
 ```
 
