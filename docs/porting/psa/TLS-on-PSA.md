@@ -14,6 +14,8 @@ If an application was built with Mbed TLS that was not PSA enabled, you can stil
 
 _Please note that this is likely to change at a later date though, as existing interfaces are likely to be deprecated in favor of the new, PSA-based APIs - if, when and how it happens is outside the scope of this document._
 
+If your application doesn't use any of the PSA-specific APIs described below, you can use it with the version in Mbed OS by just recompiling it. (Note that relinking is not enough, though.)
+
 # PSA-based APIs in Mbed TLS
 
 As mentioned in the previous section, you can use PSA-neabled Mbed TLS to build applications that are not PSA enabled. Doing so is enough to benefit from PSA in some areas (for example, some PSA-based hardware acceleration, depending on platform support), but in other areas, changes in the application source code are necessary. This mainly means replacing calls to pre-PSA APIs with calls to their PSA-based versions.
