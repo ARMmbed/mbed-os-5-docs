@@ -1422,15 +1422,6 @@
                             "path": "docs/ref-designs/pelion_ready/device-management.md"
                         }
                     ]
-                },
-                {
-                    "title": "Integrating with Arm Treasure Data",
-                    "intro": {
-                        "path": "docs/ref-designs/treasure_data.md"
-                    },
-                    "sources": [{
-                        "path": "docs/ref-designs/td-tutorial.md"
-                    }]
                 }
             ]
         },
