@@ -5,4 +5,4 @@ To use Mbed OS with Pelion Device Management, please see our [Device Management 
 For more details, please see: 
 
 - The example's [developer guide](https://www.pelion.com/docs/device-management/current/connecting/tutorial-pelion-mbedos.html).
-- The example's [porting guide](https://github.com/ARMmbed/mbed-os-example-pelion#porting-process-to-add-support-for-an-mbed-enabled-board).
+- The example's [porting guide](https://www.pelion.com/docs/device-management/current/porting/index.html).
