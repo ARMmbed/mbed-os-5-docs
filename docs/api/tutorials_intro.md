@@ -237,6 +237,6 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tbody>
 </table>
 
-## Mbed OS 2 to bare metal
+## Migrating from Mbed 2 to bare metal
 
 If you're moving from Mbed OS 2, see [the Mbed OS 6 bare metal porting guide](../porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
