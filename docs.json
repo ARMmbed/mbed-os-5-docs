@@ -61,9 +61,8 @@
                     "sub_chapters": [{
                             "title": "Importing and compiling the code",
                             "sources": [{
-                                    "path": "docs/tutorials/quickstart/quick-start-compiler.md"
-                                }
-                            ]
+                                "path": "docs/tutorials/quickstart/quick-start-compiler.md"
+                            }]
                         },
                         {
                             "title": "Debugging with the Online Compiler",
@@ -857,9 +856,8 @@
                     "sub_chapters": [{
                             "title": "Installation and setup",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
-                                }
-                            ]
+                                "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
+                            }]
                         },
                         {
                             "title": "Working with Mbed CLI",
@@ -1333,9 +1331,8 @@
                 {
                     "title": "Device Management for Mbed OS",
                     "sources": [{
-                            "path": "docs/pelion_ready/device-management.md"
-                        }
-                    ]
+                        "path": "docs/pelion_ready/device-management.md"
+                    }]
                 },
                 {
                     "title": "Integrating with Arm Treasure Data",
@@ -1349,13 +1346,12 @@
                 {
                     "title": "Going to production",
                     "sub_chapters": [{
-                            "title": "Introduction",
-                            "intro": {
-                                "path": "docs/pelion_ready/going_to_production.md"
-                            },
-                            "sources": []
-                        }
-                    ]
+                        "title": "Introduction",
+                        "intro": {
+                            "path": "docs/pelion_ready/going_to_production.md"
+                        },
+                        "sources": []
+                    }]
                 }
             ]
         },
