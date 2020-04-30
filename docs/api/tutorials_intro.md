@@ -14,7 +14,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 
 | API | Examples |
 | --- | --- |
-| Callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
+| Callback | [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
 | DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
 | PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
 | IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
@@ -195,7 +195,6 @@ These tutorials teach you to communicate with your development board, an essenti
 
 - [Windows serial driver tutorial](../tutorials/windows-serial-driver.html)
 - [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
-- [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
 
 ## Debugging
 
@@ -237,3 +236,7 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tr>
 </tbody>
 </table>
+
+## Mbed OS 2 to bare metal
+
+If you're moving from Mbed OS 2, see [the Mbed OS 6 bare metal porting guide](../porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
