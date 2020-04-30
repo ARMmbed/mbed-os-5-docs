@@ -238,9 +238,6 @@
                                     "path": "docs/api/io/FlashIAP.md"
                                 },
                                 {
-                                    "path": "docs/api/io/Serial.md"
-                                },
-                                {
                                     "path": "docs/api/io/BufferedSerial.md"
                                 },
                                 {
@@ -495,7 +492,8 @@
                             },
                             "sources": [{
                                     "path": "docs/api/networksocket/socket.md"
-                                }, {
+                                },
+                                {
                                     "path": "docs/api/networksocket/UDPSocket.md"
                                 },
                                 {
@@ -1392,15 +1390,9 @@
             "slug": "mbed-os-pelion",
             "type": "markdown",
             "description": "How to go to production with Mbed OS-based IoT devices, the Pelion IoT platform and Arm Treasure Data (Data Management)",
-            "chapters": [
-                {
-                    "title": "Device Management for Mbed OS",
-                    "sources": [{
-                            "path": "docs/ref-designs/pelion_ready/device-management.md"
-                        }
-                    ]
-                }
-            ]
+            "sources": [{
+                "path": "docs/ref-designs/pelion_ready/device-management.md"
+            }]
         },
         {
             "title": "feature-i2c doxygen",
