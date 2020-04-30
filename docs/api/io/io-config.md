@@ -4,16 +4,17 @@ The I/O configurations allows for customization of the OS driver layer. Options 
 
 This is the complete list of I/O configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
 
+
 ```
 Configuration parameters
 ------------------------
 Name: drivers.uart-serial-rxbuf-size
-    Description: Default RX buffer size for a UARTSerial instance (unit Bytes))
+    Description: Default RX buffer size for a BufferedSerial instance (unit Bytes))
     Defined by: library:drivers
     Macro name: MBED_CONF_DRIVERS_UART_SERIAL_RXBUF_SIZE
     Value: 256 (set by library:drivers)
 Name: drivers.uart-serial-txbuf-size
-    Description: Default TX buffer size for a UARTSerial instance (unit Bytes))
+    Description: Default TX buffer size for a BufferedSerial instance (unit Bytes))
     Defined by: library:drivers
     Macro name: MBED_CONF_DRIVERS_UART_SERIAL_TXBUF_SIZE
     Value: 256 (set by library:drivers)

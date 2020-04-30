@@ -1,4 +1,6 @@
-# Drivers overview
+# I/O overview
+
+Input/Ouput APIs are a subset drivers.
 
 Drivers provide access to general purpose microcontroller hardware. Drivers typically access a microcontroller's hardware peripherals directly, and may form the lowest lever of a protocol or network stack.
 

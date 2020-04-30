@@ -1,4 +1,4 @@
-<h1 id="lorawan-configuration">LoRaWAN</h1>
+<h1 id="lorawan-configuration">LoRaWAN configuration</h1>
 
 Various parameters for Mbed LoRaWAN stack can be configured via either C++ APIs or by using the Mbed configuration system.
 
