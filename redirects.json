@@ -8,5 +8,20 @@
   "tools/after-installation-configuring-mbed-cli.html" : "tools/manual-installation.html",
   "tools/reference-working-with-mbed-config.html" : "tools/configuration-options.html",
   "tutorials/mbed-usb-wav-audio-player.html" : "tutorials/usb-wav-audio-player.html",
-  "tutorials/quick-start-offline.html" : "quick-start/offline-with-mbed-cli.html"
+  "tutorials/quick-start-offline.html" : "quick-start/offline-with-mbed-cli.html",
+  "mbed-os-pelion/device-management-configuration.html" : "mbed-os-pelion/device-management-for-mbed-os.html",
+  "mbed-os-pelion/device-management-test.html" : "mbed-os-pelion/device-management-for-mbed-os.html",
+  "reference/firmware-update-in-mbed-os.html" : "reference/technologies.html",
+  "mbed-os-pelion/stage-1-evaluation.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/stage-2-proof-of-concept.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/hardware-device-classes.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/connectivity-methods.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/software-development-with-mbed-os.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/security-considerations-in-development.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/example-of-a-proof-of-concept.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/stage-3-prototype.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/stage-4-pilot.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/stage-5-production.html" : "mbed-os-pelion/going-to-production.html",
+  "mbed-os-pelion/what-s-next.html" : "mbed-os-pelion/going-to-production.html"
+
 }
