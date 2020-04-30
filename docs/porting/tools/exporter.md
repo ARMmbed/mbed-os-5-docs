@@ -19,7 +19,7 @@ The export subsystem is organized as a group of common code and a group of IDE o
 
 The **common code** is contained in three files:
 
- * `tools/project.py` contains the command-line interface and handles the differences between Mbed OS 2 tests and Mbed OS 5 and 6 projects.
+ * `tools/project.py` contains the entry point of the script to export projects from the Mbed tools to any of the supported IDEs or project structures.
  * `tools/export/__init__.py` contains an API used by the Arm Mbed Online Compiler and `project.py`. This file is responsible for boilerplate actions that every exporter must do, such as scanning for resources or collecting toolchain flags.
  * `tools/export/exporters.py` contains the base class for all plugins. It offers useful exporter-specific actions.
 
