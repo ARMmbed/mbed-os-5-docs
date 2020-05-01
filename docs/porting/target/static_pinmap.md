@@ -17,14 +17,14 @@ Supported peripherals:
  - `QSPI`.
  - `CAN`.
  
-# Implementing static pin map extension
+## Implementing static pin map extension
 
 If you want to make static pin map available on your platform please perform the following steps:  
 
 1. Provide implementation of `xxx_init_direct(xxx_t *obj, static_pinmap_t *)` function and update implementation of `xxx_init()`.
    - `xxx_init()` uses pin map tables to determine the associated peripheral or function with the given pins, populates the pin map structure and calls void `xxx_init_direct()`.
    - `xxx_init_direct()` performs peripheral initialization using given static pin map structure.
-   
+
    Example implementation:
    
    ```
@@ -49,7 +49,7 @@ If you want to make static pin map available on your platform please perform the
        xxx_init_direct(obj, &static_pinmap);
    }
    ```
-   
+
 1. Provide `constexpr` pin-map tables in the header file.
 
    Move pin map tables from `PeripheralPins.c` to `PeripheralPinMaps.h` (create new file), and add `constexpr` specifier in the pin map table declarations.
@@ -59,7 +59,7 @@ If you want to make static pin map available on your platform please perform the
 <span class="notes">**Note:** Please include the `<mstd_cstddef>` module, and use the `MSTD_CONSTEXPR_OBJ_11` macro instead of the `constexpr` specifier. When `PeripheralPinMaps.h` is included from the Mbed OS C++ code, we need to see it as `constexpr`, but if the target code includes it from C, it has to have it as `const`.</span>
 
    Example pin map table:
-   
+
    ```
    #include <mstd_cstddef>
 
@@ -75,7 +75,7 @@ If you want to make static pin map available on your platform please perform the
    };
 
    ```
-   
+
 1. Provide macros for pin map tables.
 
    Because pin map table names are not common across all targets, the following macros for available pin map tables are required in the `PeripheralPinMaps.h` file:
@@ -103,17 +103,17 @@ If you want to make static pin map available on your platform please perform the
    #define PINMAP_CAN_RD [PinMap CAN RD]
    #define PINMAP_CAN_TD [PinMap CAN RD]
    ```
-   
+
 1. Provide `STATIC_PINMAP_READY` macro in `PinNames.h`   
-   
+
    Adding this macro enables the static pin map support for the target.
-   
+
    ```
    /* If this macro is defined, you can use constexpr utility functions for pin map search. */
    #define STATIC_PINMAP_READY 1
    ```
-   
-# Testing
+
+## Testing
 
 Use the code below to test the static pin map extension:
 

@@ -28,6 +28,30 @@ These tutorials and examples show you how to perform specific tasks that use the
 | ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
 | Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
 
+### Using Driver APIs
+
+| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
+| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
+| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
+| LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
+| LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
+| LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
+| Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
+| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
+| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
+| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
+| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
+| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
+| I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
+| I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
+| CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
+| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
+
+
+And the following tutorials:
+
+- [Application flow control](../tutorials/application-flow-control.html)
+- [Alarm](../tutorials/alarm-tutorial.html)
 
 ### Using Input/Output (I/O) APIs
 
@@ -46,27 +70,6 @@ These tutorials and examples show you how to perform specific tasks that use the
 | PortInOut | | [PortInOut Hello, World](../apis/portinout.html#portinout-hello-world) |
 | PwmOut | [PwmOut example](../apis/pwmout.html#pwmout-code-examples) | [PwmOut Hello, World](../apis/pwmout.html#pwmout-hello-world) |
 | InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
-| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
-| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
-| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
-| LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
-| LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
-| LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
-| Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
-| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
-| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
-| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
-| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
-| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
-| I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
-| I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
-| CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
-| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
-
-And the following tutorials:
-
-- [Application flow control](../tutorials/application-flow-control.html)
-- [Alarm](../tutorials/alarm-tutorial.html)
 
 ### Using USB APIs
 
