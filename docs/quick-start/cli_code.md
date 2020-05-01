@@ -1,13 +1,24 @@
 # Compiling the code
 
-1. Get the code
+1. When Mbed CLI is installed, get the code for the Mbed OS full profile or bare metal profile.
 
-   After the installation of Mbed CLI is complete, import the example by opening a command-line shell and entering:
+    Open a command-line shell.
 
-   ```console
-   $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
-   $ cd mbed-os-example-blinky
-   ```
+    For the full profile, enter:
+
+    ```console
+    $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky
+    $ cd mbed-os-example-blinky
+    ```
+
+    For the bare metal profile, enter:
+
+    ```console
+    $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky-baremetal
+    $ cd mbed-os-example-blinky-baremetal
+    ```
+
+    The rest of the workflow is identical for both profiles.
 
 1. Compile and program your board:
 
