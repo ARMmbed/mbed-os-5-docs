@@ -12,7 +12,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 | - | - | - |
 | [Thread](../apis/rtos-apis.html) | &#10004; | |
 | [ThisThread](../apis/thisthread.html) | &#10004; | &#10004; (enabled by default) |
-| [Mutex](../apis/mutex.html) | &#10004; | Partial |
+| [Mutex](../apis/mutex.html) | &#10004; | &#10004; |
 | [Semaphore](../apis/semaphore.html) | &#10004; | &#10004;|
 | [Queue](../apis/queue.html) | &#10004; | |
 | [EventQueue](../apis/eventqueue.html) | &#10004; | &#10004; |
@@ -21,7 +21,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 | [EventFlags](../apis/eventflags.html) | &#10004; | &#10004; |
 | [Event](../apis/event.html) | &#10004; | &#10004; |
 | [Conditionvariable](../apis/conditionvariable.html) | &#10004; | |
-| [Kernel interface functions](../apis/kernel-interface-functions.html) | &#10004; | Partial |
+| [Kernel interface functions](../apis/kernel-interface-functions.html) | &#10004; | `get_ms_count` only |
 
 ## Drivers
 

@@ -1,8 +1,8 @@
 # Mbed OS bare metal profile
 
-Bare metal is a profile of Mbed OS for ultraconstrained hardware. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that development boards require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional - you can pull them in if you need the features they enable, but you'll probably leave most of them out - reducing your application's final size.
+Bare metal is a profile of Mbed OS for ultraconstrained hardware: compact and without an RTOS. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that applications require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional, so you can better control your application's final size.
 
-Bare metal uses a subset of Mbed OS's RTOS APIs, without becoming a full RTOS. It's therefore suitable for applications that do not require complex thread management. This not only simplifies your application code, it also means you can use APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
+The bare metal profile implements a subset of Mbed OS's RTOS APIs that are useful in non-threaded applications, for example semaphores (with release from interrupts) <!--what does "with" mean?-->and tickers (to set up a recurring interupt). It is not a full RTOS, and is therefore suitable for applications that do not require complex thread management. This not only simplifies your application code, it also means you can use APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
 
 The bare metal profile is determined at build time - your working environment includes the full Mbed OS library, but only the bare metal APIs are compiled.
 
@@ -25,7 +25,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         <tr>
             <td rowspan="6">Core</td>
             <td>Drivers</td>
-            <td>Available; enabled by default <br>(Except the class `USBCDC_ECM`)</td>
+            <td>Available; enabled by default</td>
         </tr>
         <tr>        
             <td>Events</td>
@@ -41,7 +41,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
             <tr>        
             <td>RTOS APIs</td>
-            <td>Semaphore, Mutex, EventFlags, ThisThread: Available; enabled by default.<br><br> All other classes not enabled.</td>
+            <td>Semaphore, Mutex, EventFlags, ThisThread: Available; enabled by default.<br><br> All other APIs<!--I think we say "api" for the collective and class for the individual - I'll look into it--> not supported.</td>
         </tr>
         <tr>        
             <td>Storage</td>
