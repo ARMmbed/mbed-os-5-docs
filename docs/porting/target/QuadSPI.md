@@ -4,22 +4,22 @@ Implementing QSPI enables Mbed OS to communicate with compliant external SPI dev
 
 The most common use case is for external memory to use as additional data storage.
 
-# Assumptions
+## Assumptions
 
-## Defined behavior
+### Defined behavior
 
 - A target implementation covers most of the QSPI frame format (some targets might not provide the flexibility for setting all frame parameters).
 - Command transfer - A target might provide additional functions for sending device-specific commands. If it does not, you can implement it using read and write functions. (This is target or driver dependent.)
 
-## Undefined behavior
+### Undefined behavior
 
 - Calling any function other than `qspi_init` before the initialization of the QSPI.
 
-## Dependency
+### Dependency
 
 QSPI peripheral
 
-# Implementing QSPI
+## Implementing QSPI
 
 You can implement your own QSPI by pulling in the following API header file:
 
@@ -72,7 +72,7 @@ To enable the QSPI HAL, define `QSPI` in the targets.json file inside `device_ha
 }
 ```
 
-# Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for the QSPI interface.
 

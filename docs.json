@@ -219,8 +219,7 @@
                         },
                         {
                             "title": "Driver APIs",
-                            "sources": [
-                                {
+                            "sources": [{
                                     "path": "docs/api/io/Ticker.md"
                                 },
                                 {
@@ -284,51 +283,49 @@
                     "intro": {
                         "path": "docs/api/io/io_intro.md"
                     },
-                    "sub_chapters": [
-                        {
-                            "title": "I/O APIs",
-                            "sources": [{
-                                    "path": "docs/api/io/AnalogIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/AnalogOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/DigitalInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PortInOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/PwmOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/InterruptIn.md"
-                                }
-                            ]
-                        }
-                    ]
+                    "sub_chapters": [{
+                        "title": "I/O APIs",
+                        "sources": [{
+                                "path": "docs/api/io/AnalogIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/AnalogOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PwmOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/InterruptIn.md"
+                            }
+                        ]
+                    }]
                 },
                 {
                     "title": "Data storage",
@@ -463,9 +460,6 @@
                                     "path": "docs/api/connectivity-config.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/socket.md"
-                                },
-                                {
                                     "path": "docs/api/networkinterfaces/EthInterface.md"
                                 },
                                 {
@@ -497,6 +491,9 @@
                                 "path": "docs/api/networksocket/networksocket.md"
                             },
                             "sources": [{
+                                    "path": "docs/api/networksocket/socket.md"
+                                },
+                                {
                                     "path": "docs/api/networksocket/UDPSocket.md"
                                 },
                                 {
@@ -966,12 +963,10 @@
                         },
                         {
                             "title": "The Online Compiler reference",
-                            "sources": [
-
-                                {
-                                    "path": "docs/tools/IDE/ide_ref.md"
-                                }
-                            ]
+                            "intro": {
+                                "path": "docs/tools/IDE/ide_ref.md"
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -988,32 +983,31 @@
                     },
                     "sub_chapters": [{
                             "title": "Install and set up",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Create",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/cli-create.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Compile",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/cli-compile.md"
-                            }]
-                        },
-                        {
-                            "title": "Create",
+                            },
                             "sources": []
                         },
-
                         {
                             "title": "Test and debug",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/cli-test-debug.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Build profiles",
@@ -1027,21 +1021,24 @@
                         },
                         {
                             "title": "Update devices",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/cli-device-management.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Collaborate",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/cli-collaborate.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Troubleshoot",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/tools/CLI/troubleshooting.md"
-                            }]
+                            },
+                            "sources": []
                         }
                     ]
                 },
@@ -1058,16 +1055,16 @@
             ]
         },
         {
-            "title": "Debugging and testing ",
+            "title": "Debugging and testing",
             "description": "",
             "slug": "debug-test",
             "type": "markdown",
             "chapters": [{
                     "title": "Debugging",
+                    "intro": {
+                        "path": "docs/tools/debug/debug_intro.md"
+                    },
                     "sources": [{
-                            "path": "docs/tools/debug/debug_intro.md"
-                        },
-                        {
                             "path": "docs/tools/debug/debugging_mbed_os_apps.md"
                         },
                         {
@@ -1187,15 +1184,17 @@
                     },
                     "sub_chapters": [{
                             "title": "Setting up",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/porting/porting_full_process/porting_reqs.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Porting",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/porting/porting_full_process/porting.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "Testing",
@@ -1216,7 +1215,8 @@
                     "title": "Derivative port",
                     "intro": {
                         "path": "docs/porting/custom-target-porting.md"
-                    }
+                    },
+                    "sources": []
                 },
                 {
                     "title": "Porting targets",
@@ -1287,10 +1287,10 @@
                 },
                 {
                     "title": "Porting security",
-                    "intro": {
-                        "path": "docs/porting/psa/spm.md"
-                    },
                     "sources": [{
+                            "path": "docs/porting/psa/spm.md"
+                        },
+                        {
                             "path": "docs/porting/psa/crypto.md"
                         },
                         {
@@ -1307,7 +1307,6 @@
                         }
                     ]
                 },
-
                 {
                     "title": "Porting storage",
                     "intro": {
@@ -1319,10 +1318,10 @@
                 },
                 {
                     "title": "Porting connectivity",
-                    "intro": {
-                        "path": "docs/porting/connectivity/connectivity.md"
-                    },
                     "sources": [{
+                            "path": "docs/porting/connectivity/connectivity.md"
+                        },
+                        {
                             "path": "docs/porting/connectivity/Layer3IP.md"
                         },
                         {
@@ -1391,95 +1390,9 @@
             "slug": "mbed-os-pelion",
             "type": "markdown",
             "description": "How to go to production with Mbed OS-based IoT devices, the Pelion IoT platform and Arm Treasure Data (Data Management)",
-            "chapters": [{
-                    "title": "Introduction",
-                    "intro": {
-                        "path": "docs/ref-designs/pelion_ready/introduction_chip2cloud.md"
-                    },
-                    "sources": []
-                },
-                {
-                    "title": "Device Management for Mbed OS",
-                    "sources": [{
-                            "path": "docs/ref-designs/pelion_ready/device-management.md"
-                        },
-                        {
-                            "path": "docs/ref-designs/pelion_ready/device-management-config.md"
-                        },
-                        {
-                            "path": "docs/ref-designs/pelion_ready/device-management-test.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "Integrating with Arm Treasure Data",
-                    "intro": {
-                        "path": "docs/ref-designs/treasure_data.md"
-                    },
-                    "sources": [{
-                        "path": "docs/ref-designs/td-tutorial.md"
-                    }]
-                },
-                {
-                    "title": "Going to production",
-                    "sub_chapters": [{
-                            "title": "Introduction",
-                            "intro": {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/intro.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Stage 1: Evaluation",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage1.md"
-                            }]
-                        },
-                        {
-                            "title": "Stage 2: Proof of concept",
-                            "intro": {
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/intro_s_2.md"
-                            },
-                            "sources": [{
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/1_hardware.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/3_connectivity.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/2_software.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/4_security.md"
-                                },
-                                {
-                                    "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage_2/6_example.md"
-                                }
-
-                            ]
-                        },
-                        {
-                            "title": "Stage 3: Prototype",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage3.md"
-                            }]
-                        },
-                        {
-                            "title": "Stage 4: Pilot",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage4.md"
-                            }]
-                        },
-                        {
-                            "title": "Stage 5: Production",
-                            "sources": [{
-                                "url": "https://github.com/ARMmbed/evaluation-to-production/blob/5.12/FE2P/stage5.md"
-                            }]
-                        }
-                    ]
-                }
-
-            ]
+            "sources": [{
+                "path": "docs/ref-designs/pelion_ready/device-management.md"
+            }]
         },
         {
             "title": "feature-i2c doxygen",
