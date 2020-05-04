@@ -175,26 +175,31 @@
                                 {
                                     "path": "docs/api/rtos/Queue.md"
                                 },
-                                {
-                                    "path": "docs/api/rtos/EventQueue.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/UserAllocatedEvent.md"
-                                },
-                                {
+                                                                {
                                     "path": "docs/api/rtos/Mail.md"
                                 },
                                 {
                                     "path": "docs/api/rtos/EventFlags.md"
                                 },
-                                {
-                                    "path": "docs/api/rtos/Event.md"
-                                },
-                                {
+                                                                {
                                     "path": "docs/api/rtos/ConditionVariable.md"
                                 },
                                 {
                                     "path": "docs/api/rtos/Kernel.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Event handling APIs",
+                            "sources": [
+                                {
+                                    "path": "docs/api/rtos/Event.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/EventQueue.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/UserAllocatedEvent.md"
                                 }
                             ]
                         },
