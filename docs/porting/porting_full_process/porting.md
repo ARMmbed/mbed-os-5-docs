@@ -84,7 +84,7 @@ Repo: [https://github.com/mbedmicro/flashalgo](https://github.com/mbedmicro/flas
 
 Repo: [https://github.com/armmbed/daplink](https://github.com/armmbed/daplink).
 
-1. [Port a target to DAPLink](https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET.md).
+1. [Port a target to DAPLink](https://github.com/ARMmbed/DAPLink/blob/master/docs/PORT_TARGET_FAMILY.md).
 1. Copy the content of `c_blob.c` into `flash_blob.c`.
 1. Verify your port by running [DAPLink tests](https://github.com/ARMmbed/DAPLink/blob/master/docs/AUTOMATED_TESTS.md).
 1. When all DAPlink tests pass create two PRs:
