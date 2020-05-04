@@ -168,8 +168,8 @@ Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [LoRaWANInterface](../apis/lorawaninterface.html) | &#10004; | &#10004; |
-| [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | &#10004; |
+| [LoRaWANInterface](../apis/lorawaninterface.html) | &#10004; | |
+| [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | |
 
 ## USB
 
