@@ -140,7 +140,7 @@
                     }]
                 },
                 {
-                    "title": "RTOS and event handling",
+                    "title": "Scheduling: RTOS and event handling",
                     "intro": {
                         "path": "docs/api/rtos/rtos.md"
                     },
@@ -204,7 +204,7 @@
                             ]
                         },
                         {
-                            "title": "RTOS tutorials",
+                            "title": "RTOS and event handling tutorials",
                             "intro": {
                                 "path": "docs/api/rtos/events_tutorial.md"
                             },
