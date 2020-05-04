@@ -7,8 +7,8 @@
             "slug": "mbed-os-api-doxy",
             "hidden": true,
             "type": "doxygen",
-            "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "master"
+            "source": "https://github.com/0xc0170/mbed-os/",
+            "branch": "doxygen_rtos_fix"
         },
         {
             "title": "Mbed OS 6 preview",
