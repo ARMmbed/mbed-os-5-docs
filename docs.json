@@ -193,6 +193,9 @@
                                 },
                                 {
                                     "path": "docs/api/rtos/Kernel.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/wait.md"
                                 }
                             ]
                         },

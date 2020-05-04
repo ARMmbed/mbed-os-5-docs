@@ -25,6 +25,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 <td><a href="event.html">Event</a></td>
 <td><a href="conditionvariable.html">Conditionvariable</a></td>
 <td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
+<td><a href="wait.html">Wait</a></td>
 </tr>
 </tbody>
 </table>
