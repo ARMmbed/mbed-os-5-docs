@@ -792,19 +792,19 @@
                     ]
                 },
                 {
-                    "title": "Utilities",
+                    "title": "Platform",
                     "intro": {
                         "path": "docs/api/platform/platform.md"
                     },
                     "sub_chapters": [{
-                            "title": "Util options and config",
+                            "title": "Platform options and config",
                             "intro": {
                                 "path": "docs/api/platform/platform-config.md"
                             },
                             "sources": []
                         },
                         {
-                            "title": "Util APIs",
+                            "title": "Platform APIs",
                             "sources": [{
                                     "path": "docs/api/platform/Callback.md"
                                 },
