@@ -135,7 +135,9 @@
                     "intro": {
                         "path": "docs/api/api.md"
                     },
-                    "sources": []
+                    "sources": [{
+                        "path": "docs/api/api_alternative.md"
+                    }]
                 },
                 {
                     "title": "RTOS and event handling",
