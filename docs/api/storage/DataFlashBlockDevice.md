@@ -1,6 +1,6 @@
 # DataFlashBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
 
 DataFlashBlockDevice is a block device driver for serial flash devices that support the Atmel DataFlash protocol, such as the Adesto AT45DB series of devices.
 
@@ -14,7 +14,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## DataFlashBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_data_flash_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/class_data_flash_block_device.html)
 
 ## DataFlashBlockDevice example
 

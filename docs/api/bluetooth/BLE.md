@@ -54,7 +54,7 @@ The class's member functions can be divided by purpose:
 
 ## BLE class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/class_b_l_e.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/class_b_l_e.html)
 
 ## Example: BLE beacon
 

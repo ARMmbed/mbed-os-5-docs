@@ -1,6 +1,6 @@
 # SlicingBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.png)<span>SlicingBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.png)<span>SlicingBlockDevice class hierarchy</span></span>
 
 The SlicingBlockDevice class provides a way to break up a block device into subunits without the need to manually track offsets. The SlicingBlockDevice acts as an opposite of the [ChainingBlockDevice](chainingblockdevice.html) class.
 
@@ -14,7 +14,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## SlicingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.html)
 
 ## SlicingBlockDevice example
 

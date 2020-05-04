@@ -1,6 +1,6 @@
 # BlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_block_device.png)<span>BlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/classmbed_1_1_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
 The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](../porting/porting-storage.html#contributing-filesystem) or write to it directly.
 
@@ -38,7 +38,7 @@ For details regarding how to configure the default block device please refer to 
 
 ## BlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/mbed-os/6.0.0-preview/mbed-os-api-doxy/classmbed_1_1_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/classmbed_1_1_block_device.html)
 
 ## BlockDevice example
 
