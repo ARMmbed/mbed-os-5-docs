@@ -1,10 +1,8 @@
 # Mbed OS bare metal profile
 
-Bare metal is a profile of Mbed OS for ultraconstrained hardware: compact and without an RTOS. It represents a different way of working with Mbed OS: Instead of enabling all features by default, as the full profile does, bare metal mandates only the smallest set of APIs that applications require - driver APIs, platform APIs and a subset of the RTOS APIs. All other supported APIs are optional, so you can better control your application's final size.
+Bare metal is a profile of Mbed OS for ultraconstrained hardware: compact and without an RTOS. It represents a different way of working with Mbed OS: the bare metal profile builds only the smallest set of APIs that applications require - driver APIs, platform APIs and a subset of the RTOS APIs. This gives you better control of the application's final size than the full profile, which relies on the build time linker to remove classes that are not used and are not a dependency.
 
-The bare metal profile implements a subset of Mbed OS's RTOS APIs that are useful in non-threaded applications, for example semaphores (calling the release API from interrupts) and tickers (to set up a recurring interrupt). It is not a full RTOS, and is therefore suitable for applications that do not require complex thread management. This not only simplifies your application code, it also means you can use APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
-
-The bare metal profile is determined at build time - your development environment includes the full Mbed OS library, but only the bare metal APIs are compiled.
+The bare metal profile implements a subset of Mbed OS's RTOS APIs that are useful in non-threaded applications, such as semaphores (calling the release API from interrupts) and tickers (to set up a recurring interrupt). It does not include an RTX and is not a full RTOS, and is therefore suitable for applications that do not require complex thread management. Instead of the RTOS's scheduler, all activities are polled or interrupt-driven. This simplifies application code and allows using APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
 
 ## Features
 
