@@ -1,40 +1,44 @@
 # An introduction to Arm Mbed OS 6
-
+<!--I don't like the structure here-->
 Mbed OS is an open-source operating system for Internet of Things (IoT) Cortex-M boards: low-powered, constrained and connected. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can write C/C++ applications that run on any Mbed-enabled board.<!--device is a problematic terms, because Keil uses it to mean something very specific, so going with "board"-->
-<!--
-<section class="row">
-<div class="columns large-6 medium-6 small-12">
-  <h2>On this page</h1>
-  <ul class="guides-list">
-          <ul data-tab-content>
-                <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#licensing">Mbed OS licensing</a></li>
-                <li><a href="#architecture">A review of Mbed OS software and related hardware</a></li>
-                <li><a href="#tools">Mbed OS tools</a></li>
-                <li><a href="#the-docs">An introduction to the documentation</a></li>
-                <li><a href="#docs-updates">Recently updated documentation</a></li>
-            </ul>
-    </ul>
-</div>
-</section>
--->
 
-<h1 id="getting-started">Getting started</h1>
+
+
+## Profiles and RTOS<!--clumsy title--><!--maybe it doesn't even need a title?-->
+
+The **full profile** of Mbed OS is an RTOS (it includes an RTX and all RTOS APIs), so it supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on threads, semaphores, mutexes and other RTOS features. It also includes all APIs by default, although you can remove unused ones at build time.
+
+The **bare metal profile** doesn't include an RTX and is therefore not an RTOS - it is designed for applications that do not require complex thread management. It is also designed for constrained devices, and therefore focuses on minimising the size of the final application: by default, it includes only the smallest possible set of APIs, to which you can manually add APIs your application requires. The bare metal profile can use the small C libraries (which are not thread safe) to further minimise the size of the application.
+<!--too many "designed" and "minimze" and the sentences are really long-->
+
+## Licensing
+
+We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](../contributing/license.html).
+
+
+## Getting started
 
 To get started:
 
 - Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, on Mbed CLI, Mbed Studio and the Mbed Online Compiler.
 - The Mbed OS source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 
-<h1 id="licensing">Source code and licensing</h1>
-
-We release Mbed OS under an Apache 2.0 license, so you can confidently use it in commercial and personal projects. For more information about licensing, please see [our licensing documentation](../contributing/license.html).
-
 <h1 id="architecture">Architecture diagram</h1>
 
-This is the basic architecture of an Mbed board:
+This is the basic architecture of an Mbed board running Mbed OS:
 
 <span class="images">![](../images/Mbed_OS_diagram_for_intro.png)</span>
+
+
+##Recently updated documentation
+
+<!--bare metal, list of deprecated APIs, new API structure, porting updates...-->
+
+- New API references for [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
+- New content about [using small C libraries in Mbed OS bare metal](../reference/using-small-c-libraries.html).
+- A guide to [porting a custom board](../porting/porting-a-custom-board.html).
+- A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
+- The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
 
 ## Mbed OS foundations
 
@@ -45,12 +49,6 @@ The HAL also serves as the starting point when adding support for new targets or
 The structure of Mbed OS enables matching applications and storage systems. In other words, where the block level storage options vary and are application dependent, you can choose the file system that best fits your IoT device. The FAT file system - backed by an SD card - provides compatibility with other operating systems, such as Windows, Mac OS or Linux. When high reliability and recovery from power failure are important, it makes sense to use our embedded file system, backed with a (Q)SPI NOR flash chip.
 
 Finally, Mbed OS implements the retargeting layer and boot process integration of each supported toolchain for you, so application development feels similar to C or C++ development for any other operating system.
-
-## Profiles and RTOS<!--clumsy title-->
-
-The **full profile** of Mbed OS has an RTOS core, so it supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on threads, semaphores, mutexes and other RTOS features.
-
-The **bare metal profile** doesn't include an RTOS, and can use APIs that are not thread safe for applications that do not require complex thread management<!--clumsy and too long-->. It supports small C libraries and mandates only a minimal set of APIs, to generate a smaller application than the full profile. It is therefore suitable for ultraconstrained devices that cannot accommodate the full profile.
 
 ## Connectivity
 
@@ -76,22 +74,14 @@ Broadly speaking, the hardware you can see on our site is of three types:
 
 <h1 id="tools">Tools</h1>
 
-The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR<!--did we remove one of these?-->. You can also [export projects](../tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
-<!--mbed studio-->
-If you prefer to work online, use the Arm Mbed Online Compiler, our online development tool, which lets you write and build applications using a web browser with no additional setup.
+The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level.
+
+For most users on Windows, macOS and Linux, we recommend Mbed Studio, which is our desktop IDE. Mbed Studio includes the dependencies and tools you need to work with Mbed OS, including access to Arm Compiler 6 to build your code and pyOCD to debug it. For experienced developers, we also include the Mbed command line tools (such as Mbed CLI) with the Mbed Studio installation.
+
+If you prefer to work online, use the Mbed Online Compiler, which lets you write and build applications using a web browser with no additional setup.
+
+If you are an experienced developer, you can also set up the command line tools manually by installing Mbed CLI, a compiler toolchain, a debugger and source control management.
 
 You can use our debugging tools, DAPLink and pyOCD, to program and debug many devices. At the end of the development cycle, you can use the Mbed OS validation tools, Greentea and utest, to test your project.
 
-<h1 id="the-docs">The documentation</h1>
-
-This is the technical documentation for Mbed OS. We have three types of documents: references, tutorials and porting guides. Our references are background technical material about our APIs, architecture and runtime execution. Our tutorials are step-by-step instructions that show you how to perform specific tasks and solve problems. Our porting guides show our silicon Partners how to port Mbed OS to their targets.
-
-<h1 id="docs-updates">Recently updated documentation</h1>
-
-<!--bare metal, list of deprecated APIs, new API structure, porting updates...-->
-
-- New API references for [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
-- New content about [using small C libraries in Mbed OS bare metal](../reference/using-small-c-libraries.html).
-- A guide to [porting a custom board](../porting/porting-a-custom-board.html).
-- A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
-- The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
+Lastly, you can [export your work](../tools/exporting.html) from the Mbed tools to other IDEs.<!--should the intro have all the links, or none?-->
