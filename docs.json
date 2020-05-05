@@ -28,7 +28,21 @@
                             "path": "docs/introduction/arch_for_intro.md"
                         },
                         "sources": []
-                    },
+                },
+                {
+                        "title": "Hardware",
+                        "intro": {
+                            "path": "docs/introduction/hardware.md"
+                        },
+                        "sources": []
+                },
+                {
+                        "title": "Tools",
+                        "intro": {
+                            "path": "docs/introduction/tools.md"
+                        },
+                        "sources": []
+                },
                 {
                     "title": "Versions and releases",
                     "intro": {
