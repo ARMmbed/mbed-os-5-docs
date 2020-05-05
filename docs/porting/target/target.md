@@ -2,7 +2,7 @@
 
 Adding a new microcontroller to Arm Mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
-# Adding a new microcontroller and board
+## Adding a new microcontroller and board
 
 First fork the `mbed-os` repository on GitHub into your own user account. We will use the placeholder `USERNAME` to refer to your username in the following documentation, `MCU_NAME` to refer to the new microcontroller you are adding and `BOARD_NAME` to refer to the new board you are adding. Import an Mbed OS example, and add your fork of `mbed-os` using:
 
@@ -17,7 +17,7 @@ git branch my-new-target -u USERNAME
 cd ..
 ```
 
-# Target description
+## Target description
 
 Add the target description to `mbed-os\targets\targets.json` using keys that the [Adding and configuring targets section](../reference/adding-and-configuring-targets.html) describes. We recommend that you run the [targets lint script](../reference/adding-and-configuring-targets.html#style-guide) on your target hierarchy before submitting your pull request:
 
@@ -34,7 +34,7 @@ Add the target description to `mbed-os\targets\targets.json` using keys that the
 }
 ```
 
-# HAL porting
+## HAL porting
 
 There are many more APIs to implement. You enable the following APIs by adding a `device_has` attribute to the MCU_NAME target definition in `targets.json` and providing an implementation of the API declared in the API header.
 
@@ -58,7 +58,7 @@ QSPI             |   qspi_api.h
 TRNG             |   trng_api.h
 FLASH            |   flash_api.h
 
-# PinMap
+## PinMap
 
 All HAL APIs that use pins have functions to get the corresponding pin maps. These functions return a `PinMap` array with each entry containing a pin name, a peripheral and a function. The presence of an NC pin indicates the end of the pin map array. Below is an example implementation of the function to get the serial transmit pin map:
 
@@ -78,7 +78,7 @@ const PinMap *serial_tx_pinmap()
 
 Targets that don't use a pin map, such as ones with peripherals that can connect to any pin, must still define pin maps because testing requires them. For these devices, the pin map does not need to be comprehensive. Instead, it should list a representative sample of pins and peripherals, so they can be tested appropriately. Please see the [static pin map extension documentation](../porting/static-pinmap-port.html) for information about how to statically specify the peripheral configuration (pin, peripheral or function) in the HAL API function.
 
-# Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for the Mbed OS HAL APIs. You can use these tests to validate the correctness of your implementation. To run the all of the Mbed OS HAL API tests, use the following command:
 
@@ -86,7 +86,7 @@ The Mbed OS HAL provides a set of conformance tests for the Mbed OS HAL APIs. Yo
 mbed test -t <toolchain> -m <target> -n mbed-os-tests-mbed_hal*
 ```
 
-## FPGA
+### FPGA
 
 You can test your port using the FPGA test shield component, which you can find in the `mbed-os` repository.
 

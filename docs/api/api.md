@@ -138,7 +138,6 @@ Network interfaces are the application level APIs where users choose the driver,
 <table>
 <tbody>
 <tr>
-<td><a href="socket.html">Socket</a></td>
 <td><a href="ethernet.html">Ethernet</a></td>
 <td><a href="wi-fi.html">Wi-Fi</a></td>
 <td><a href="cellular-api.html">Cellular</a></td>
@@ -160,8 +159,11 @@ Socket APIs include the application programming interface for IP networking. In 
 <table>
 <tbody>
 <tr>
+<td><a href="socket.html">Socket</a></td>
 <td><a href="udpsocket.html">UDPSocket</a></td>
 <td><a href="tcpsocket.html">TCPSocket</a></td>
+</tr>
+<tr>
 <td><a href="socketaddress.html">SocketAddress</a></td>
 <td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
 <td><a href="socketstats.html">SocketStats</a></td>
@@ -337,9 +339,9 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 </tbody>
 </table>
 
-## Deprecated APIs
+## Deprecated APIs: moving from Mbed OS 5 to 6
 
-Some Mbed OS 5 APIs are not supported in Mbed OS 6, and you'll need to replace them in your code.
+If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs:
 
 | Deprecated API | Replaced by |
 | - | - |

@@ -8,7 +8,7 @@ One application in which you can use this class is a USB to Ethernet adapter. If
 
 ## USBCDC_ECM class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0-preview/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.html)
 
 <span class="notes">**Note:** Because Windows doesn’t provide native support for the USB CDC-ECM model, you must use third party drivers to use this class on Windows.</span>
 
