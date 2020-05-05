@@ -2,8 +2,6 @@
 <!--I don't like the structure here-->
 Mbed OS is an open-source operating system for Internet of Things (IoT) Cortex-M boards: low-powered, constrained and connected. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can write C/C++ applications that run on any Mbed-enabled board.<!--device is a problematic terms, because Keil uses it to mean something very specific, so going with "board"-->
 
-
-
 ## Profiles and RTOS<!--clumsy title--><!--maybe it doesn't even need a title?-->
 
 The **full profile** of Mbed OS is an RTOS (it includes an RTX and all RTOS APIs), so it supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on threads, semaphores, mutexes and other RTOS features. It also includes all APIs by default, although you can remove unused ones at build time.
@@ -23,14 +21,8 @@ To get started:
 - Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, on Mbed CLI, Mbed Studio and the Mbed Online Compiler.
 - The Mbed OS source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 
-<h1 id="architecture">Architecture diagram</h1>
 
-This is the basic architecture of an Mbed board running Mbed OS:
-
-<span class="images">![](../images/Mbed_OS_diagram_for_intro.png)</span>
-
-
-##Recently updated documentation
+## Recently updated documentation
 
 <!--bare metal, list of deprecated APIs, new API structure, porting updates...-->
 
@@ -39,6 +31,14 @@ This is the basic architecture of an Mbed board running Mbed OS:
 - A guide to [porting a custom board](../porting/porting-a-custom-board.html).
 - A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
 - The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
+
+
+<h1 id="architecture">Architecture diagram</h1>
+
+This is the basic architecture of an Mbed board running Mbed OS:
+
+<span class="images">![](../images/Mbed_OS_diagram_for_intro.png)</span>
+
 
 ## Mbed OS foundations
 
