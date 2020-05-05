@@ -41,4 +41,4 @@ The term characteristic value update represents Characteristic Value Notificatio
 
 ## GattServer example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattServer/)](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GattServer/file/622c672f6d5f/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_GattServer/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_GattServer/source/main.cpp)
