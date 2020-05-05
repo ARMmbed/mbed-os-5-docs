@@ -2,6 +2,8 @@
 <!--I don't like the structure here-->
 Mbed OS is an open-source operating system for Internet of Things (IoT) Cortex-M boards: low-powered, constrained and connected. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can write C/C++ applications that run on any Mbed-enabled board.<!--device is a problematic terms, because Keil uses it to mean something very specific, so going with "board"-->
 
+The Mbed OS source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
+
 ## Profiles and RTOS<!--clumsy title--><!--maybe it doesn't even need a title?-->
 
 The **full profile** of Mbed OS is an RTOS (it includes an RTX and all RTOS APIs), so it supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on threads, semaphores, mutexes and other RTOS features. It also includes all APIs by default, although you can remove unused ones at build time.
@@ -19,9 +21,8 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 | [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/online-with-the-online-compiler.html) |  [Build with Mbed CLI](../quick-start/offline-with-mbed-cli.html) |
 | --- | --- | --- |
-| Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
+| Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 
-The Mbed OS source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 
 ## Recently updated documentation
 
