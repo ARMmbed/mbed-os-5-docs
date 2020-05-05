@@ -287,4 +287,6 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 **Notes:**
 
 - `InterruptManager`: Do not use this class; it is not part of the public API and will be removed in the future.
-- `CallChain`: Do not use this function; it is not part of the public API and will be removed in the future.<!--function or class?-->
+- `CallChain`: Do not use this function; it is not part of the public API and will be removed in the future.
+
+<span class="tips">The full Doxygen offers [a list of deprecated functions](../mbed-os-api-doxy/deprecated.html).</span>
