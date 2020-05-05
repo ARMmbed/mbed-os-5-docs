@@ -52,7 +52,7 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 | [PwmOut](../apis/pwmout.html) | &#10004; | &#10004;  |
 | [InterruptIn](../apis/interruptin.html) | &#10004; | &#10004;  |
 
-## USB drivers
+### USB drivers
 
 The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.
 

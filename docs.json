@@ -213,7 +213,113 @@
                     ]
                 },
                 {
-                    "title": "Drivers",
+                    "title": "Drivers: Input/Output (I/O)",
+                    "intro": {
+                        "path": "docs/api/io/io_intro.md"
+                    },
+                    "sub_chapters": [{
+                        "title": "I/O APIs",
+                        "sources": [{
+                                "path": "docs/api/io/AnalogIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/AnalogOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/DigitalInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/BusInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortIn.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PortInOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/PwmOut.md"
+                            },
+                            {
+                                "path": "docs/api/io/InterruptIn.md"
+                            }
+                        ]
+                    }]
+                },
+                {
+                    "title": "Drivers: USB",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "intro": {
+                                "path": "docs/api/usb/usb_component.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "USB APIs",
+                            "sources": [{
+                                    "path": "docs/api/usb/USBSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBAudio.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBHID.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouseKeyboard.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "USB architecture",
+                            "sources": [{
+                                "path": "docs/api/usb/usb-arch.md"
+                            }]
+                        },
+                        {
+                            "title": "USB tutorials",
+                            "sources": [{
+                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "title": "Drivers: Other",
                     "intro": {
                         "path": "docs/api/io/drivers.md"
                     },
@@ -282,112 +388,6 @@
                                     "path": "docs/api/io/alarm-tutorial.md"
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "title": "Input/Output (I/O)",
-                    "intro": {
-                        "path": "docs/api/io/io_intro.md"
-                    },
-                    "sub_chapters": [{
-                        "title": "I/O APIs",
-                        "sources": [{
-                                "path": "docs/api/io/AnalogIn.md"
-                            },
-                            {
-                                "path": "docs/api/io/AnalogOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/DigitalIn.md"
-                            },
-                            {
-                                "path": "docs/api/io/DigitalOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/DigitalInOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/BusIn.md"
-                            },
-                            {
-                                "path": "docs/api/io/BusOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/BusInOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/PortIn.md"
-                            },
-                            {
-                                "path": "docs/api/io/PortOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/PortInOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/PwmOut.md"
-                            },
-                            {
-                                "path": "docs/api/io/InterruptIn.md"
-                            }
-                        ]
-                    }]
-                },
-                {
-                    "title": "USB",
-                    "sub_chapters": [{
-                            "title": "Concepts",
-                            "intro": {
-                                "path": "docs/api/usb/usb_component.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "USB APIs",
-                            "sources": [{
-                                    "path": "docs/api/usb/USBSerial.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBAudio.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBHID.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC_ECM.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMSD.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMIDI.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouse.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBKeyboard.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouseKeyboard.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "USB architecture",
-                            "sources": [{
-                                "path": "docs/api/usb/usb-arch.md"
-                            }]
-                        },
-                        {
-                            "title": "USB tutorials",
-                            "sources": [{
-                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                            }]
                         }
                     ]
                 },
