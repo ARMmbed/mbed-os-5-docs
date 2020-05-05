@@ -14,11 +14,11 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 | - | - | - |
 | [Thread](../apis/rtos-apis.html) | &#10004; | |
 | [ThisThread](../apis/thisthread.html) | &#10004; | &#10004;  |
-| [Mutex](../apis/mutex.html) | &#10004; | &#10003; (can be manually enabled) |
+| [Mutex](../apis/mutex.html) | &#10004; | &#10004; |
 | [Semaphore](../apis/semaphore.html) | &#10004; | &#10004;  |
 | [Queue](../apis/queue.html) | &#10004; | |
 | [Mail](../apis/mail.html) | &#10004; | |
-| [EventFlags](../apis/eventflags.html) | &#10004; | &#10003; (can be manually enabled) |
+| [EventFlags](../apis/eventflags.html) | &#10004; | &#10004; |
 | [Conditionvariable](../apis/conditionvariable.html) | &#10004; | |
 | [Kernel interface functions](../apis/kernel-interface-functions.html) | &#10004; | `get_ms_count` only |
 
@@ -52,10 +52,26 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 | [PwmOut](../apis/pwmout.html) | &#10004; | &#10004;  |
 | [InterruptIn](../apis/interruptin.html) | &#10004; | &#10004;  |
 
+## USB drivers
+
+The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [USBSerial](../apis/usb-apis.html) | &#10004; | &#10004;  |
+| [USBAudio](../apis/usbaudio.html) | &#10004; | &#10004;  |
+| [USBHID](../apis/ubshid.html) | &#10004; | &#10004;  |
+| [USBCDC](../apis/usbcdc.html) | &#10004; | &#10004;  |
+| [USBCDC_ECM](../apis/usbcdc-ecm.html) | &#10004; | &#10004;  |
+| [USBMSD](../apis/usbmsd.html) | &#10004; | &#10004; |
+| [USBMIDI](../apis/usbmidi.html) | &#10004; | &#10004;  |
+| [USBMouse](../apis/usbmouse.html) | &#10004; | &#10004;  |
+| [USBKeyboard](../apis/usbkeyboard.html) | &#10004; | &#10004;  |
+| [USBMouseKeyboard](../apis/usbmousekeyboard.html) | &#10004; | &#10004;  |
+
 ### Other drivers
 
 The drivers are digital interfaces that allow your board to interface with a computer or external devices.
-
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -73,6 +89,63 @@ The drivers are digital interfaces that allow your board to interface with a com
 | [CAN](../apis/can.html)| &#10004; | &#10004;  |
 | [MbedCRC](../apis/mbedcrc.html) | &#10004; | &#10004;  |
 
+
+## Platform
+
+### Power
+
+<!--needs intro-->
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Power management (sleep)](../apis/power-apis.html) | &#10004; | &#10004; |
+| [DeepSleepLock](../apis/deepsleeplock.html) | &#10004; | &#10004;  |
+| [Idle loop](../apis/idle-loop.html) | &#10004; | &#10004;  |
+| [LowPowerTicker](../apis/lowpowerticker.html) | &#10004; | &#10004;  |
+| [LowPowerTimeout](../apis/lowpowertimeout.html) | &#10004; | &#10004;  |
+| [LowPowerTimer](../apis/lowpowertimer.html) | &#10004; | &#10004;  |
+
+### Memory
+
+<!--needs intro-->
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004;  |
+| [mpug_mgmt (MPU management)](../apis/mpu-management.html) | &#10004; | &#10004;  |
+| [mbed_mem_trace (Memory tracing)](../apis/memory-tracing.html) | &#10004; | &#10004;  |
+| [MemoryPool](../apis/memorypool.html) | &#10004; |   |
+
+### Time
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Time](../apis/time.html) | &#10004; | &#10004;  |
+| [RTC](../apis/rtc.html) | &#10004; | &#10004;  |
+| [Ticker](../apis/driver-apis.html) | &#10004; | &#10004;  |
+| [Timer](../apis/timer.html) | &#10004; | &#10004;  |
+| Wait | &#10004; | &#10004;  |
+
+### Other
+<!--needs intro-->
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Callback](../apis/util-apis.html) | &#10004; | &#10004; |
+| [CriticalSectionLock](../apis/criticalsectionlock.html) | &#10004; | &#10004;  |
+| [Debug](../apis/debug.html) | &#10004; | &#10004;  |
+| [Error handling](../apis/error-handling.html) | &#10004; | &#10004;  |
+| [Assert](../apis/assert.html) | &#10004; | &#10004;  |
+| [NonCopyable](../apis/noncopyable.html) | &#10004; | &#10004;  |
+| [SharedPtr (Shared pointer](../apis/shared-pointer.html) | &#10004; | &#10004;  |
+| [Span](../apis/span.html) | &#10004; | &#10004; |
+| [FileHandle](../apis/filehandle.html) | &#10004; | &#10004;  |
+| [Poll](../apis/poll.html) | &#10004; | &#10004;  |
+| [PlatformMutex](../apis/platformmutex.html) | &#10004; | &#10004;  |
+| [CircularBuffer](../apis/circularbuffer.html) | &#10004; | &#10004;  |
+| [ATCmdParser](../apis/atcmdparser.html) | &#10004; | &#10004;  |
+| [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html) | &#10004; | &#10004;  |
+| [ScopedRomWriteLock](../apis/scopedromwritelock.html) | &#10004; | &#10004;  |
 
 ## Data storage
 
@@ -179,22 +252,6 @@ Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology
 | [LoRaWANInterface](../apis/lorawaninterface.html) | &#10004; | |
 | [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | |
 
-## USB
-
-The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.
-
-| API | Full profile | Bare metal profile |
-| - | - | - |
-| [USBSerial](../apis/usb-apis.html) | &#10004; | &#10004;  |
-| [USBAudio](../apis/usbaudio.html) | &#10004; | &#10004;  |
-| [USBHID](../apis/ubshid.html) | &#10004; | &#10004;  |
-| [USBCDC](../apis/usbcdc.html) | &#10004; | &#10004;  |
-| [USBCDC_ECM](../apis/usbcdc-ecm.html) | &#10004; | &#10004;  |
-| [USBMSD](../apis/usbmsd.html) | &#10004; | &#10004; |
-| [USBMIDI](../apis/usbmidi.html) | &#10004; | &#10004;  |
-| [USBMouse](../apis/usbmouse.html) | &#10004; | &#10004;  |
-| [USBKeyboard](../apis/usbkeyboard.html) | &#10004; | &#10004;  |
-| [USBMouseKeyboard](../apis/usbmousekeyboard.html) | &#10004; | &#10004;  |
 
 ## Security
 
@@ -210,62 +267,6 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 | [DeviceKey](../apis/devicekey.html) | &#10004; | &#10003; (can be manually enabled); |
 
 
-## Platform
-
-### Power
-
-<!--needs intro-->
-
-| API | Full profile | Bare metal profile |
-| - | - | - |
-| [Power management (sleep)](../apis/power-apis.html) | &#10004; | &#10004; |
-| [DeepSleepLock](../apis/deepsleeplock.html) | &#10004; | &#10004;  |
-| [Idle loop](../apis/idle-loop.html) | &#10004; | &#10004;  |
-| [LowPowerTicker](../apis/lowpowerticker.html) | &#10004; | &#10004;  |
-| [LowPowerTimeout](../apis/lowpowertimeout.html) | &#10004; | &#10004;  |
-| [LowPowerTimer](../apis/lowpowertimer.html) | &#10004; | &#10004;  |
-
-### Memory
-
-<!--needs intro-->
-
-| API | Full profile | Bare metal profile |
-| - | - | - |
-| [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004;  |
-| [mpug_mgmt (MPU management)](../apis/mpu-management.html) | &#10004; | &#10004;  |
-| [mbed_mem_trace (Memory tracing)](../apis/memory-tracing.html) | &#10004; | &#10004;  |
-| [MemoryPool](../apis/memorypool.html) | &#10004; |  &#10004;  |
-
-### Time
-
-| API | Full profile | Bare metal profile |
-| - | - | - |
-| [Time](../apis/time.html) | &#10004; | &#10004;  |
-| [RTC](../apis/rtc.html) | &#10004; | &#10004;  |
-| [Ticker](../apis/driver-apis.html) | &#10004; | &#10004;  |
-| [Timer](../apis/timer.html) | &#10004; | &#10004;  |
-| Wait | &#10004; | &#10004;  |
-
-### Other
-<!--needs intro-->
-
-| API | Full profile | Bare metal profile |
-| - | - | - |
-| [Callback](../apis/util-apis.html) | &#10004; | &#10004; |
-| [CriticalSectionLock](../apis/criticalsectionlock.html) | &#10004; | &#10004;  |
-| [Debug](../apis/debug.html) | &#10004; | &#10004;  |
-| [Error handling](../apis/error-handling.html) | &#10004; | &#10004;  |
-| [Assert](../apis/assert.html) | &#10004; | &#10004;  |
-| [NonCopyable](../apis/noncopyable.html) | &#10004; | &#10004;  |
-| [SharedPtr (Shared pointer](../apis/shared-pointer.html) | &#10004; | &#10004;  |
-| [Span](../apis/span.html) | &#10004; | &#10004; |
-| [FileHandle](../apis/filehandle.html) | &#10004; | &#10004;  |
-| [Poll](../apis/poll.html) | &#10004; | &#10004;  |
-| [PlatformMutex](../apis/platformmutex.html) | &#10004; | &#10004;  |
-| [CircularBuffer](../apis/circularbuffer.html) | &#10004; | &#10004;  |
-| [ATCmdParser](../apis/atcmdparser.html) | &#10004; | &#10004;  |
-| [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html) | &#10004; | &#10004;  |
-| [ScopedRomWriteLock](../apis/scopedromwritelock.html) | &#10004; | &#10004;  |
 
 ## Deprecated APIs: moving from Mbed OS 5 to 6
 
@@ -273,5 +274,17 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 
 | Deprecated API | Replaced by |
 | - | - |
-| Serial | [BufferedSerial](../apis/bufferedserial.html), [UnbufferedSerial](../apis/unbufferedserial.html) |
-<!--wait as well?-->
+| `Serial` |`printf` and `puts` to access the console. <br> `BufferedSerial` for blocking applications.<br> `UnbufferedSerial` for bypassing locks in IRQ or short of RAM. |
+| `RawSerial` | `UnbufferedSerial` |
+| `UARTSerial` | `BufferedSerial` |
+| `Ethernet` | `EthInterface` to get an Ethernet object. <br> `NetworkInterface` to get an instance of an appropriate network interface (WiFi or Ethernet). |
+| BLE services: iBeacon, UARTService, URIBeaconConfigService | No replacement available |
+| `TCPServer` | `TCPSocket` |
+| `NVStore` | `KVStore` |
+| `FunctionPointerArg1<R, A> & FunctionPointerArg1<R, void>` | `Callback<R(A)> & Callback<void()>` |
+| `RtosTimer` | `EventQueue` |
+
+**Notes:**
+
+- `InterruptManager`: Do not use this class; it is not part of the public API and will be removed in the future.
+- `CallChain`: Do not use this function; it is not part of the public API and will be removed in the future.<!--function or class?-->

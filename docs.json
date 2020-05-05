@@ -335,6 +335,132 @@
                     }]
                 },
                 {
+                    "title": "USB",
+                    "sub_chapters": [{
+                            "title": "Concepts",
+                            "intro": {
+                                "path": "docs/api/usb/usb_component.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "USB APIs",
+                            "sources": [{
+                                    "path": "docs/api/usb/USBSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBAudio.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBHID.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMouseKeyboard.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "USB architecture",
+                            "sources": [{
+                                "path": "docs/api/usb/usb-arch.md"
+                            }]
+                        },
+                        {
+                            "title": "USB tutorials",
+                            "sources": [{
+                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "title": "Platform",
+                    "intro": {
+                        "path": "docs/api/platform/platform.md"
+                    },
+                    "sub_chapters": [{
+                            "title": "Platform options and config",
+                            "intro": {
+                                "path": "docs/api/platform/platform-config.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Platform APIs",
+                            "sources": [{
+                                    "path": "docs/api/platform/Callback.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/CriticalSectionLock.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Time.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Rtc.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Debug.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Error.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Assert.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/NonCopyable.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/SharedPtr.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Span.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/FileHandle.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Poll.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/PlatformMutex.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/CircularBuffer.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ATCmdParser.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ScopedRamExecutionLock.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ScopedRomWriteLock.md"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "title": "Data storage",
                     "intro": {
                         "path": "docs/api/storage/storage.md"
@@ -622,63 +748,6 @@
                     ]
                 },
                 {
-                    "title": "USB",
-                    "sub_chapters": [{
-                            "title": "Concepts",
-                            "intro": {
-                                "path": "docs/api/usb/usb_component.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "USB APIs",
-                            "sources": [{
-                                    "path": "docs/api/usb/USBSerial.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBAudio.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBHID.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBCDC_ECM.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMSD.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMIDI.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouse.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBKeyboard.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouseKeyboard.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "USB architecture",
-                            "sources": [{
-                                "path": "docs/api/usb/usb-arch.md"
-                            }]
-                        },
-                        {
-                            "title": "USB tutorials",
-                            "sources": [{
-                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                            }]
-                        }
-                    ]
-                },
-                {
                     "title": "Security",
                     "intro": {
                         "path": "docs/api/security/security.md"
@@ -788,75 +857,6 @@
                                 "path": "docs/program-setup/runtime/static_memory_optimization.md"
                             },
                             "sources": []
-                        }
-                    ]
-                },
-                {
-                    "title": "Platform",
-                    "intro": {
-                        "path": "docs/api/platform/platform.md"
-                    },
-                    "sub_chapters": [{
-                            "title": "Platform options and config",
-                            "intro": {
-                                "path": "docs/api/platform/platform-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Platform APIs",
-                            "sources": [{
-                                    "path": "docs/api/platform/Callback.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/CriticalSectionLock.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Time.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Rtc.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Debug.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Error.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Assert.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/NonCopyable.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/SharedPtr.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Span.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/FileHandle.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Poll.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/PlatformMutex.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/CircularBuffer.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/ATCmdParser.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/ScopedRamExecutionLock.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/ScopedRomWriteLock.md"
-                                }
-                            ]
                         }
                     ]
                 }
