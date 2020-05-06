@@ -283,10 +283,7 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 | `NVStore` | `KVStore` |
 | `FunctionPointerArg1<R, A> & FunctionPointerArg1<R, void>` | `Callback<R(A)> & Callback<void()>` |
 | `RtosTimer` | `EventQueue` |
-
-**Notes:**
-
-- `InterruptManager`: Do not use this class; it is not part of the public API and will be removed in the future.
-- `CallChain`: Do not use this function; it is not part of the public API and will be removed in the future.
+| `InterruptManager` | No replacement. |
+| `CallChain` | No replacement. |
 
 <span class="tips">The full Doxygen offers [a list of deprecated functions](../mbed-os-api-doxy/deprecated.html).</span>
