@@ -246,6 +246,8 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tbody>
 </table>
 
-## Migrating to Mbed OS 5
+## Migrating
 
-[Mbed OS 2 to 5 migration tutorial](../tutorials/migrating-to-mbed-os-5.html)
+If you are moving from Mbed OS 5 to Mbed OS 6, please see [the list of deprecated APIs](../apis/index.html).
+
+If you are moving from Mbed 2 to Mbed OS 6 bare metal, [please see the bare metal documentation](../bare-metal/index.html).

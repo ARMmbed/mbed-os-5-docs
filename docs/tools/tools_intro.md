@@ -49,6 +49,6 @@ Mbed Studio is our new desktop IDE and is available to anyone with an Mbed accou
 
 To complement our popular Mbed Online Compiler and command-line tools, we created Mbed Studio, the tooling you need in a desktop IDE to have a quick development, debug and deploy cycle when you build your next product. Mbed Studio speeds up your development flow and provides functionality that helps you get the most out of Mbed OS.
 
-## Third party development tools
+## Exporting to third party development tools
 
 You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](../tools/exporting.html).
