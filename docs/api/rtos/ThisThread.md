@@ -1,7 +1,5 @@
 # ThisThread
 
-<span class="tips">**Tip:** `wait` is deprecated in favor of explicit sleep functions. To sleep, replace `wait` with `ThisThread::sleep_for` (C++) or `thread_sleep_for` (C). To wait (without sleeping), call `wait_us`. `wait_us` is safe to call from ISR context.</span>
-
 Use the ThisThread class to control the current thread. 
 
 Unlike the [Thread](../apis/thread.html) API, which allows you to create, join and end threads, ThisThread lets you control the thread that's currently running. A thread may not have a corresponding Mbed Thread object because you can create a thread directly with CMSIS-RTOS APIs, or it might be main's thread. You can't manipulate those with Thread methods, but ThisThread functions still work from inside them.

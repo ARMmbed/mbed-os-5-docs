@@ -335,6 +335,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 <tr>
 <td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
 <td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
+<td><a href="wait.html">Wait</a></td>
 </tr>
 </tbody>
 </table>
