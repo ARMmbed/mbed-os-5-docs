@@ -124,7 +124,7 @@ The drivers are digital interfaces that allow your board to interface with a com
 | [RTC](../apis/rtc.html) | &#10004; | &#10004;  |
 | [Ticker](../apis/driver-apis.html) | &#10004; | &#10004;  |
 | [Timer](../apis/timer.html) | &#10004; | &#10004;  |
-| Wait | &#10004; | &#10004;  |
+| [Wait](../apis/wait.html) | &#10004; | &#10004;  |
 
 ### Other
 <!--needs intro-->

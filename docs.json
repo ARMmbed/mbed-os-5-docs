@@ -455,6 +455,9 @@
                                 },
                                 {
                                     "path": "docs/api/platform/ScopedRomWriteLock.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Wait.md"
                                 }
                             ]
                         }
