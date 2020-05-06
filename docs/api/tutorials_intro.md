@@ -10,73 +10,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 These tutorials and examples show you how to perform specific tasks that use the Arm Mbed APIs:
 
-### Using platform APIs
-
-| API | Examples |
-| --- | --- |
-| Callback | [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
-| DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
-| PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
-| IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
-| CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
-| Time | [Time example](../apis/time.html#time-example) |
-| RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
-| Debug | [Debug example](../apis/debug.html#debug-example) |
-| Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
-| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)<br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
-| Assert | [Assert example](../apis/assert.html#assert-example) |
-| NonCopyable | [NonCopyable example](../apis/noncopyable.html#noncopyable-example) |
-| SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
-| Span | [Span example](../apis/span.html#span-example) |
-| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)<br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
-| Poll | [Poll example](../apis/poll.html#poll-example) |
-| PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
-| CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
-| ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
-| Mbed statistics | [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
-| MPU management | [MPU management example](../apis/mpu-management.html#example) |
-| ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
-| ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
-
-### Using drivers APIs
-
-| API | Examples  | Hello, World |
-| --- | ---  | --- |
-| AnalogIn | [AnalogIn example](../apis/analogin.html#analogin-examples) | [AnalogIn Hello, World](../apis/analogin.html#analogin-hello-world)|
-| AnalogOut | [AnalogOut example](../apis/analogout.html#analogout-example) | [AnalogIn Hello, World](../apis/analogout.html#analogout-hello-world) |
-| DigitalIn | [DigitalIn exanple](../apis/digitalin.html#digitalin-example) | [DigitlaIn Hellw, World](../apis/digitalin.html#digitalin-hello-world) |
-| DigitalOut | | [DigitalOut Hello, World](../apis/digitalout.html#digitalout-hello-world) |
-| DigitalInOut | | [DigitalInOut Hello, World](../apis/digitalinout.html#digitalinout-hello-world) |
-| BusIn | | [BusIn Hello, World](../apis/busin.html#busin-hello-world) |
-| BusOut | | [BusOut Hello, World](../apis/busout.html#busout-hello-world) |
-| BusInOut | | [BusInOut Hello, World](../apis/businout.html#businout-hello-world) |
-| PortIn | | [PortIn Hello, World](../apis/portin.html#portin-hello-world) |
-| PortOut | | [PortOut Hello, World](../apis/portout.html#portout-hello-world) |
-| PortInOut | | [PortInOut Hello, World](../apis/portinout.html#portinout-hello-world) |
-| PwmOut | [PwmOut example](../apis/pwmout.html#pwmout-code-examples) | [PwmOut Hello, World](../apis/pwmout.html#pwmout-hello-world) |
-| InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
-| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
-| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
-| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
-| LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
-| LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
-| LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
-| Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
-| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
-| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
-| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
-| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
-| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
-| I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
-| I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
-| CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
-| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
-
-And the following tutorials:
-
-- [Application flow control](../tutorials/application-flow-control.html)
-- [Alarm](../tutorials/alarm-tutorial.html)
-
+<!--all of this will need to be rearranged when the APIs are -->
 ### Using RTOS APIs
 
 | API | Examples | Tutorials |
@@ -93,6 +27,51 @@ And the following tutorials:
 | EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
 | ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
 | Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
+
+### Using Driver APIs
+
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
+| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
+| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
+| LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
+| LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
+| LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
+| Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
+| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
+| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
+| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
+| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
+| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
+| I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
+| I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
+| CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
+| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) | |
+
+
+And the following tutorials:
+
+- [Application flow control](../tutorials/application-flow-control.html)
+- [Alarm](../tutorials/alarm-tutorial.html)
+
+### Using Input/Output (I/O) APIs
+
+| API | Examples  | Hello, World |
+| --- | ---  | --- |
+| AnalogIn | [AnalogIn example](../apis/analogin.html#analogin-examples) | [AnalogIn Hello, World](../apis/analogin.html#analogin-hello-world)|
+| AnalogOut | [AnalogOut example](../apis/analogout.html#analogout-example) | [AnalogIn Hello, World](../apis/analogout.html#analogout-hello-world) |
+| DigitalIn | [DigitalIn exanple](../apis/digitalin.html#digitalin-example) | [DigitlaIn Hellw, World](../apis/digitalin.html#digitalin-hello-world) |
+| DigitalOut | | [DigitalOut Hello, World](../apis/digitalout.html#digitalout-hello-world) |
+| DigitalInOut | | [DigitalInOut Hello, World](../apis/digitalinout.html#digitalinout-hello-world) |
+| BusIn | | [BusIn Hello, World](../apis/busin.html#busin-hello-world) |
+| BusOut | | [BusOut Hello, World](../apis/busout.html#busout-hello-world) |
+| BusInOut | | [BusInOut Hello, World](../apis/businout.html#businout-hello-world) |
+| PortIn | | [PortIn Hello, World](../apis/portin.html#portin-hello-world) |
+| PortOut | | [PortOut Hello, World](../apis/portout.html#portout-hello-world) |
+| PortInOut | | [PortInOut Hello, World](../apis/portinout.html#portinout-hello-world) |
+| PwmOut | [PwmOut example](../apis/pwmout.html#pwmout-code-examples) | [PwmOut Hello, World](../apis/pwmout.html#pwmout-hello-world) |
+| InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
 
 ### Using USB APIs
 
@@ -135,16 +114,7 @@ And the following tutorials:
 
 ### Using bluetooth APIs
 
-| API | Examples | Tutorials |
-| --- | --- | --- |
-| BLE | [Beacon example](../apis/ble.html#example-ble-beacon) <br> [Heart rate example](../apis/ble.html#example-ble-heart-rate-monitor)| [BLE tutorial](../tutorials/ble-tutorial.html) <br> [BLE service templates](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button/) |
-| GAP | [GAP example](../apis/gap.html#gap-example) <br> [Button count example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton)| |
-| GattClient | [GattClient example](../apis/gattclient.html#gattclient-example) | [LED](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker) <br> [Thermometer](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer)|
-| GattServer | [GattServer example](../apis/gattserver.html#gattserver-example) | |
-| SecurityManager | [SecurityManager example](../apis/securitymanager.html#securitymanager-example) | |
-| BatteryService | [Battery level example](../apis/batteryservice.html#batteryservice-example) | |
-| HeartRateService | [Heart rate service example](../apis/heartrateservice.html#heartrateservice-example) | |
-| ibeacon | [ibeacon example](../apis/ibeacon.html#ibeacon-example) | |
+We have placed all of our BLE examples in a single GitHub repository, so although they are also available in the API pages, the [GitHub repository](https://github.com/ARMmbed/mbed-os-example-ble) is the best place to see all of them.
 
 
 ### Using LoRa APIs
@@ -163,11 +133,19 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 
 ### Using security APIs
 
-| API | Examples |
-| --- | --- |
-| TLS | [Benchmark example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark) <br> [Hashing example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing) <br> [Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client) <br> [Authenticated encryption example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt) |
-| DeviceKey | [DeviceKey example](../apis/devicekey.html#devicekey-example) |
+You can try the following examples on GitHub:
 
+- [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client): Downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
+
+- [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
+
+- [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
+
+- [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
+
+Each of them comes with complete usage instructions as a readme file in the repository.
+
+- Or try [DeviceKey](../devicekey.html#devicekey-example).
 
 ### Using storage APIs
 
@@ -189,12 +167,43 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SPIFBlockDevice | [SPIFBlockDevice example](../apis/spi-flash-block-device.html#spifblockdevice-example) |
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
 
+
+### Using utility APIs
+
+| API | Examples |
+| --- | --- |
+| Callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
+| DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
+| PowerManagement | [PowerManagement example](../apis/power-management-sleep.html#example) |
+| IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
+| CriticalSectionLock | [CriticalSectionLock example](../apis/criticalsectionlock.html#criticalsectionlock-example) |
+| Time | [Time example](../apis/time.html#time-example) |
+| RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
+| Debug | [Debug example](../apis/debug.html#debug-example) |
+| Memory tracing | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
+| Error handling | [Error handling example](../apis/error-handling.html#error-handling-example)<br> [Crash reporting example](../apis/error-handling.html#crash-reporting-example) |
+| Assert | [Assert example](../apis/assert.html#assert-example) |
+| NonCopyable | [NonCopyable example](../apis/noncopyable.html#noncopyable-example) |
+| SharedPtr | [Shared pointer example](../apis/shared-pointer.html#shared-pointer-example) |
+| Span | [Span example](../apis/span.html#span-example) |
+| FileHandle | [C library example](../apis/filehandle.html#filehandle-using-c-library-example)<br> [Sigio example](../apis/filehandle.html#filehandle-sigio-example) |
+| Poll | [Poll example](../apis/poll.html#poll-example) |
+| PlatformMutex | [PlatformMutex example](../apis/platformmutex.html#platformmutex-example) |
+| CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
+| ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
+| Mbed statistics | [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
+| MPU management | [MPU management example](../apis/mpu-management.html#example) |
+| ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
+| ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
+
+
 ## Serial communication
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
 - [Windows serial driver tutorial](../tutorials/windows-serial-driver.html)
 - [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
+- [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
 
 ## Debugging
 
@@ -217,7 +226,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 ## Bootloader
 
-A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader).
+A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
 
 ## Optimizing
 
@@ -237,6 +246,8 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tbody>
 </table>
 
-## Migrating from Mbed 2 to bare metal
+## Migrating
 
-If you're moving from Mbed OS 2, see [the Mbed OS 6 bare metal porting guide](../porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
+If you are moving from Mbed OS 5 to Mbed OS 6, please see [the list of deprecated APIs](../apis/index.html).
+
+If you are moving from Mbed 2 to Mbed OS 6 bare metal, [please see the bare metal documentation](../bare-metal/index.html).
