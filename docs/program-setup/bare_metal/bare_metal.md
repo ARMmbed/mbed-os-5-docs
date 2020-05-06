@@ -18,5 +18,3 @@ The Mbed OS bare metal profile is a compact profile of Mbed OS without an RTOS. 
 | Storage | Ecosystem libraries | Available |
 | Mbed TLS | Not available | Available |
 | Mbed PSA | Not available | Available |
-
-To begin using the Mbed OS bare metal profile from Mbed OS 2, please follow our [instructions](../tutorials/migrating-to-mbed-os-5.html).
