@@ -40,6 +40,7 @@
 <td><a href="time.html">Time</a></td>
 <td><a href="noncopyable.html">NonCopyable</a></td>
 <td><a href="circularbuffer.html">CircularBuffer</a></td>
+<td><a href="wait.html">Wait</a></td>
 </tr>
 </tbody>
 </table>
