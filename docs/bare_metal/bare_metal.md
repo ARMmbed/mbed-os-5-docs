@@ -106,5 +106,3 @@ The bare metal documentation covers:
 - A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application, add optional APIs and use Greentea to test the application.
 - [A short review of small C libraries](../bare-metal/using-small-c-libraries.html).
 - [A porting guide for Mbed OS 2 targets](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
-
--->

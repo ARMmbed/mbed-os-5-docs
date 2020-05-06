@@ -264,7 +264,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 | [PSA lifecycle](../apis/psa-lifecycle.html) | &#10004; |  |
 | [Mbed Crypto](../apis/mbed-crypto.html) | &#10004; |&#10003; (can be manually enabled) |
 | [TLS](../apis/tls.html) | &#10004; | &#10003; (can be manually enabled) |
-| [DeviceKey](../apis/devicekey.html) | &#10004; | &#10003; (can be manually enabled); |
+| [DeviceKey](../apis/devicekey.html) | &#10004; | &#10003; (can be manually enabled) |
 
 
 
@@ -278,10 +278,10 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 | `RawSerial` | `UnbufferedSerial` |
 | `UARTSerial` | `BufferedSerial` |
 | `Ethernet` | `EthInterface` to get an Ethernet object. <br> `NetworkInterface` to get an instance of an appropriate network interface (WiFi or Ethernet). |
-| BLE services: iBeacon, UARTService, URIBeaconConfigService | No replacement available |
+| BLE services: `iBeacon`, `UARTService`, `URIBeaconConfigService` | No replacement available |
 | `TCPServer` | `TCPSocket` |
 | `NVStore` | `KVStore` |
-| `FunctionPointerArg1<R, A> & FunctionPointerArg1<R, void>` | `Callback<R(A)> & Callback<void()>` |
+| `FunctionPointerArg1<R, A>` & `FunctionPointerArg1<R, void>` | `Callback<R(A)>` & `Callback<void()>` |
 | `RtosTimer` | `EventQueue` |
 | `InterruptManager` | No replacement. |
 | `CallChain` | No replacement. |
