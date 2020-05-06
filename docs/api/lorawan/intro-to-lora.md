@@ -247,7 +247,7 @@ Mbed comes with the Arm Mbed Online Compiler, which you can use to build applica
 1. [Sign up](https://os.mbed.com/account/signup/?next=%2F) for an account on Arm Mbed, which hosts the Online Compiler.
 1. Find your development board on [the platforms page](https://os.mbed.com/platforms/).
 1. Click **Add to your Mbed Compiler**.
-1. Go to [mbed-os-example-lorawan](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/).
+1. Go to [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
 1. Click **Import this program**.
 1. You're redirected to the Online Compiler, where you can give the program a name.
 
@@ -269,7 +269,7 @@ In the Online Compiler:
 
     <span class="images">![](../../images/ttn15.png)<span>Correct keys set in `mbed_app.json`</span></span>
 
-1. Under `lora.phy` specify the channel plan for your region. A list of possible values is listed under '[Selecting a PHY'](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-lorawan/) in the docs.
+1. Under `lora.phy` specify the channel plan for your region. A list of possible values is listed under '[Selecting a PHY'](https://github.com/ARMmbed/mbed-os-example-lorawan#selecting-a-phy) in the readme.
 
 #### Sending the value of the PIR sensor
 

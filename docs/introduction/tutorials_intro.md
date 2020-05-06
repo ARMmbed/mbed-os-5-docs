@@ -10,7 +10,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 These tutorials and examples show you how to perform specific tasks that use the Arm Mbed APIs:
 
-
+<!--all of this will need to be rearranged when the APIs are -->
 ### Using RTOS APIs
 
 | API | Examples | Tutorials |
@@ -30,6 +30,8 @@ These tutorials and examples show you how to perform specific tasks that use the
 
 ### Using Driver APIs
 
+| API | Examples | Tutorials |
+| --- | --- | --- |
 | Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
 | Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
 | Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
@@ -45,7 +47,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
-| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
+| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) | |
 
 
 And the following tutorials:
@@ -112,16 +114,7 @@ And the following tutorials:
 
 ### Using bluetooth APIs
 
-| API | Examples | Tutorials |
-| --- | --- | --- |
-| BLE | [Beacon example](../apis/ble.html#example-ble-beacon) <br> [Heart rate example](../apis/ble.html#example-ble-heart-rate-monitor)| [BLE tutorial](../tutorials/ble-tutorial.html) <br> [BLE service templates](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button/) |
-| GAP | [GAP example](../apis/gap.html#gap-example) <br> [Button count example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton)| |
-| GattClient | [GattClient example](../apis/gattclient.html#gattclient-example) | [LED](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker) <br> [Thermometer](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer)|
-| GattServer | [GattServer example](../apis/gattserver.html#gattserver-example) | |
-| SecurityManager | [SecurityManager example](../apis/securitymanager.html#securitymanager-example) | |
-| BatteryService | [Battery level example](../apis/batteryservice.html#batteryservice-example) | |
-| HeartRateService | [Heart rate service example](../apis/heartrateservice.html#heartrateservice-example) | |
-
+We have placed all of our BLE examples in a single GitHub repository, so although they are also available in the API pages, the [GitHub repository](https://github.com/ARMmbed/mbed-os-example-ble) is the best place to see all of them.
 
 
 ### Using LoRa APIs
@@ -140,11 +133,19 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 
 ### Using security APIs
 
-| API | Examples |
-| --- | --- |
-| TLS | [Benchmark example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark) <br> [Hashing example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing) <br> [Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client) <br> [Authenticated encryption example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt) |
-| DeviceKey | [DeviceKey example](../apis/devicekey.html#devicekey-example) |
+You can try the following examples on GitHub:
 
+- [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client): Downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
+
+- [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
+
+- [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
+
+- [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
+
+Each of them comes with complete usage instructions as a readme file in the repository.
+
+- Or try [DeviceKey](../devicekey.html#devicekey-example).
 
 ### Using storage APIs
 
@@ -225,7 +226,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 ## Bootloader
 
-A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader).
+A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
 
 ## Optimizing
 

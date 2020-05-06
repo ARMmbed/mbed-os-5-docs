@@ -11,12 +11,12 @@ The [CellularInterface](../mbed-os-api-doxy/class_cellular_interface.html) class
 
 1. Choose an [Mbed board that supports cellular](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=1), such as the [UBLOX-C027](https://os.mbed.com/platforms/u-blox-C027/) or [MTS-DRAGONFLY](https://os.mbed.com/platforms/MTS-Dragonfly/).
 
-1. Clone [`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/). Follow the instructions in the repository.
+1. Clone [`https://github.com/ARMmbed/mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular).
 
-    1. Compile the code.
-    1. Flash the board.
+1. Compile the code.
+1. Flash the board.
 
-   You see output similar to the excerpt below:
+You see output similar to the excerpt below:
 
 ```
 mbed-os-example-cellular
@@ -43,7 +43,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 <span class="images">![](../../images/Cell_PPP.png)</span>
 
-[`mbed-os-example-cellular`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) uses PPP or AT mode depending on the modem. We can summarize this particular design as follows:
+[`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses PPP or AT mode depending on the modem. We can summarize this particular design as follows:
 
 - It uses an external IP stack, such as LWIP, or on-chip network stacks such as when the modem does not support PPP.
 - The easy cellular connection uses standard 3GPP AT 27.007 AT commands to set up the cellular modem and to register to the network.

@@ -26,8 +26,8 @@ Fast Models can run most of the Mbed OS examples.
 
 Examples you can successfully run include:
 
-- [`mbed-os-example-blinky`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/).
-- [`mbed-os-example-tls`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/).
+- [`mbed-os-example-blinky`](https://github.com/ARMmbed/mbed-os-example-blinky).
+- [`mbed-os-example-tls`](https://github.com/ARMmbed/mbed-os-example-tls).
 - [`mbed-os-example-devicekey`](../apis/devicekey.html#devicekey-example).
 - [`mbed-os-example-nvstore`](../apis/nvstore.html#nvstore-example).
 - [`mbed-os-example-thread-statistics`](../apis/mbed-statistics.html#thread-statistics-example).
