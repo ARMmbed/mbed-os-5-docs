@@ -135,9 +135,7 @@
                     "intro": {
                         "path": "docs/api/api.md"
                     },
-                    "sources": [{
-                        "path": "docs/api/api_alternative.md"
-                    }]
+                    "sources": []
                 },
                 {
                     "title": "Scheduling: RTOS and event handling",
@@ -186,6 +184,9 @@
                                 },
                                 {
                                     "path": "docs/api/rtos/Kernel.md"
+                                },
+                                {
+                                    "path": "docs/api/power/IdleLoop.md"
                                 }
                             ]
                         },
@@ -801,9 +802,6 @@
                                 "path": "docs/api/power/PowerManagement.md"
                             }, {
                                 "path": "docs/api/power/DeepSleepLock.md"
-                            },
-                            {
-                                "path": "docs/api/power/IdleLoop.md"
                             },
                             {
                                 "path": "docs/api/power/LowPowerTicker.md"
