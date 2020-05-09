@@ -6,17 +6,10 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 <td><a href="../quick-start/index.html">Mbed OS quick start tutorial</a></td>
 
-## Using the APIs
-
-These tutorials and examples show you how to perform specific tasks that use the Arm Mbed APIs:
-
-
-### Using RTOS APIs
+## Using RTOS APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](the-eventqueue-api.html)|
-| UserAllocatedEvent | [Static event queue example](../apis/userallocatedevent.html#static-eventqueue-example-posting-user-allocated-events-to-the-queue) | |
 | Mutex | [Mutex example](../apis/mutex.html#mutex-example) | |
 | MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
 | Kernel | [Example: get_ms_count()](../apis/kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
@@ -28,8 +21,18 @@ These tutorials and examples show you how to perform specific tasks that use the
 | ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
 | Queue | [Queue example](../apis/queue.html#queue-example) <br> [Queue and MemoryPool](../apis/queue.html#queue-and-memorypool-example)| |
 
-### Using Driver APIs
+## Using event handling APIs
 
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| Event | [Posting events to the queue](../apis/event-handling-apis.html) |  |
+| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](the-eventqueue-api.html)|
+| UserAllocatedEvent | [Static event queue example](../apis/userallocatedevent.html#static-eventqueue-example-posting-user-allocated-events-to-the-queue) | |
+
+## Using Driver APIs
+
+| API | Examples | Tutorials |
+| --- | --- | --- |
 | Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
 | Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
 | Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
@@ -45,7 +48,7 @@ These tutorials and examples show you how to perform specific tasks that use the
 | I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
-| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) |
+| MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) | |
 
 
 And the following tutorials:
@@ -53,7 +56,7 @@ And the following tutorials:
 - [Application flow control](../tutorials/application-flow-control.html)
 - [Alarm](../tutorials/alarm-tutorial.html)
 
-### Using Input/Output (I/O) APIs
+## Using Input/Output (I/O) Driver APIs
 
 | API | Examples  | Hello, World |
 | --- | ---  | --- |
@@ -71,7 +74,7 @@ And the following tutorials:
 | PwmOut | [PwmOut example](../apis/pwmout.html#pwmout-code-examples) | [PwmOut Hello, World](../apis/pwmout.html#pwmout-hello-world) |
 | InterruptIn | [InterruptIn example](../apis/interruptin.html#interruptin-example) | [InterruptIn Hello, World](../apis/interruptin.html#interruptin-hello-world) |
 
-### Using USB APIs
+## Using USB Driver APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -85,7 +88,7 @@ And the following tutorials:
 | USBKeyboard | [USBKeyboard example](../apis/usbkeyboard.html#usbkeyboard-example) | |
 | USBMouseKeyboard | [USBMouseKeyboard](../apis/usbmousekeyboard.html#usbmousekeyboard-example) | |
 
-### Using network socket APIs
+## Using network socket APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -99,7 +102,7 @@ And the following tutorials:
 | DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) | |
 | SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | |
 
-### Using network interfaces APIs
+## Using network interfaces APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
@@ -109,26 +112,15 @@ And the following tutorials:
 | Mesh | | [Mesh tutorial](../tutorials/mesh-tutorial.html) <br>  [Light control tutorial](../tutorials/light-control.html) |
 | Network status | [Network status example](../apis/network-status.html#example) | |
 
+## Using bluetooth APIs
 
-### Using bluetooth APIs
+We have placed all of our BLE examples in a single GitHub repository, so although they are also available in the API pages, the [GitHub repository](https://github.com/ARMmbed/mbed-os-example-ble) is the best place to see all of them.
 
-| API | Examples | Tutorials |
-| --- | --- | --- |
-| BLE | [Beacon example](../apis/ble.html#example-ble-beacon) <br> [Heart rate example](../apis/ble.html#example-ble-heart-rate-monitor)| [BLE tutorial](../tutorials/ble-tutorial.html) <br> [BLE service templates](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Button/) |
-| GAP | [GAP example](../apis/gap.html#gap-example) <br> [Button count example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-GAPButton)| |
-| GattClient | [GattClient example](../apis/gattclient.html#gattclient-example) | [LED](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LED/) and [LED blinker](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-LEDBlinker) <br> [Thermometer](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-ble-Thermometer)|
-| GattServer | [GattServer example](../apis/gattserver.html#gattserver-example) | |
-| SecurityManager | [SecurityManager example](../apis/securitymanager.html#securitymanager-example) | |
-| BatteryService | [Battery level example](../apis/batteryservice.html#batteryservice-example) | |
-| HeartRateService | [Heart rate service example](../apis/heartrateservice.html#heartrateservice-example) | |
-
-
-
-### Using LoRa APIs
+## Using LoRa APIs
 
 A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example for the API](../apis/lorawan-api.html#lorawan-example).
 
-### Using NFC APIs
+## Using NFC APIs
 
 | API | Examples |
 | --- | --- |
@@ -138,15 +130,23 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
 | MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
 
-### Using security APIs
+## Using security APIs
 
-| API | Examples |
-| --- | --- |
-| TLS | [Benchmark example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark) <br> [Hashing example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-hashing) <br> [Client example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-tls-client) <br> [Authenticated encryption example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-authcrypt) |
-| DeviceKey | [DeviceKey example](../apis/devicekey.html#devicekey-example) |
+You can try the following examples on GitHub:
 
+- [TLS client](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client): Downloads a file from an HTTPS server (os.mbed.com) and looks for a specific string in that file.
 
-### Using storage APIs
+- [Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/benchmark): Measures the time taken to perform basic cryptographic functions used in the library.
+
+- [Hashing](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/hashing): Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
+
+- [Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/authcrypt): Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
+
+Each of them comes with complete usage instructions as a readme file in the repository.
+
+- Or try [DeviceKey](../devicekey.html#devicekey-example).
+
+## Using storage APIs
 
 | API | Examples |
 | --- | --- |
@@ -166,8 +166,7 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | SPIFBlockDevice | [SPIFBlockDevice example](../apis/spi-flash-block-device.html#spifblockdevice-example) |
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
 
-
-### Using utility APIs
+## Using platform APIs
 
 | API | Examples |
 | --- | --- |
@@ -195,7 +194,6 @@ A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example fo
 | ScopedRamExecutionLock | [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html#example) |
 | ScopedRomWriteLock | [ScopedRomWriteLock example](../apis/scopedromwritelock.html#scopedromwritelock-class-reference) |
 
-
 ## Serial communication
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
@@ -208,7 +206,7 @@ These tutorials teach you to communicate with your development board, an essenti
 
 These tutorials show you how to install, export a project to and start a debugging session with different IDEs.
 
-### Tools
+### Third party tools
 
 - [Eclipse](../tutorials/eclipse.html).
 - [Keil uVision](../tutorials/keil-uvision.html).
@@ -225,7 +223,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 ## Bootloader
 
-A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader).
+A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
 
 ## Optimizing
 
@@ -245,6 +243,8 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 </tbody>
 </table>
 
-## Migrating to Mbed OS 5
+## Migrating
 
-[Mbed OS 2 to 5 migration tutorial](../tutorials/migrating-to-mbed-os-5.html)
+If you are moving from Mbed OS 5 to Mbed OS 6, please see [the list of deprecated APIs](../apis/index.html).
+
+If you are moving from Mbed 2 to Mbed OS 6 bare metal, [please see the bare metal documentation](../bare-metal/index.html).

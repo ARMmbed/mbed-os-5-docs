@@ -28,7 +28,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Event](../apis/event.html) | &#10004; | &#10003; (can be manually enabled) |
+| [Event](../apis/event-handling-apis.html) | &#10004; | &#10003; (can be manually enabled) |
 | [EventQueue](../apis/eventqueue.html) | &#10004; | &#10003; (can be manually enabled) |
 | [UserAllocatedEvent](../apis/userallocatedevent.html) | &#10004; | &#10003; (can be manually enabled) |
 
