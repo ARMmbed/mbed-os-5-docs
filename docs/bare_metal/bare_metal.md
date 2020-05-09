@@ -12,6 +12,8 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
 
 <span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
+&#10004; : Enabled by default | &#10003; : Can be manually enabled | &#10007; : Not supported
+
 <table>
     <thead>
         <tr>
@@ -23,77 +25,77 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         <tr>
             <td rowspan="6">Core</td>
             <td>Drivers</td>
-            <td>Available; enabled by default</td>
+            <td>&#10004;</td>
         </tr>
         <tr>        
             <td>Events</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         </tr>
         <tr>        
             <td>HAL</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         </tr>
         <tr>        
             <td>Platform</td>
-            <td>Available; enabled by default</td>
+            <td>&#10004;</td>
         </tr>
             <tr>        
             <td>RTOS APIs</td>
-            <td>Semaphore, Mutex, EventFlags, ThisThread: Available; enabled by default.<br><br> All other APIs not supported.</td>
+            <td>Enabled by default: Semaphore, Mutex, EventFlags, ThisThread.<br><br> All other APIs not supported.</td>
         </tr>
         <tr>        
             <td>Storage</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         <tr>
             <td rowspan="8">Connectivity</td>
             <td>802.15.4_RF</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         <tr>
             <td>Wifi</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         <tr>
             <td>Cellular</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         <tr>
             <td>LWIP stack</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         <tr>
             <td>Nanostack</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         <tr>
             <td>Network Socket</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         </tr>
         <tr>
             <td>BLE</td>
-            <td>Available<br>(Except on `TARGET_NORDIC_CORDIO`)</td>
+            <td>&#10003;<br>Except `COMPONENT_BlueNRG_MS` and `TARGET_NORDIC_CORDIO`</td>
         </tr>    
         <tr>
             <td>NFC</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         </tr>
         <tr>
             <td rowspan="4">Security</td>
             <td>PSA</td>
-            <td>Not Available</td>
+            <td>&#10007;</td>
         </tr>
         <tr>
             <td>Mbed Crypto</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         </tr>
         <tr>
             <td>Devicekey</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         </tr>  
         <tr>
             <td>Mbed TLS</td>
-            <td>Available</td>
+            <td>&#10003;</td>
         </tr>
     </tbody>
 </table>
