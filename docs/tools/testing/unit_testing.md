@@ -83,7 +83,7 @@ Mbed CLI supports unit tests through `mbed test --unittests` command. To learn h
 
 A unit tests suite consists of one or more test cases. The test cases should cover all the functions in a class under test. All the external dependencies are stubbed including the other classes in the same module. Avoid stubbing header files. Finally, analyze code coverage to ensure all code is tested, and no dead code is found.
 
-Please see the [documentation for Google Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md) to learn how to write unit tests using its framework. See the [documentation for Google Mock](https://github.com/google/googletest/blob/master/googlemock/docs/Documentation.md) if you want to write and use C++ mock classes instead of stubs.
+Please see the [documentation for Google Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md) to learn how to write unit tests using its framework. See the [documentation for Google Mock](https://github.com/google/googletest/tree/master/googlemock) if you want to write and use C++ mock classes instead of stubs.
 
 #### Test suite configuration
 
@@ -260,7 +260,7 @@ Use Mbed CLI to build and run unit tests. For advanced use, you can run CMake an
    - Add `-DCOVERAGE=True` to add coverage compiler flags.
    - Add `-Dgtest_disable_pthreads=ON` to run in a single thread.
    - See the [CMake manual](https://cmake.org/cmake/help/v3.0/manual/cmake.1.html) for more information.
-   
+
 1. Run a Make program to build tests.
 
 #### Run tests directly with CTest
