@@ -8,8 +8,6 @@ The bare metal profile implements a subset of Mbed OS's RTOS APIs that are usefu
 
 For a breakdown of supported APIs, please see [the full API list](../apis/index.html).
 
-The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all support working with the bare metal profile.
-
 <span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
 &#10004; : Enabled by default | &#10003; : Can be manually enabled | &#10007; : Not supported
@@ -99,6 +97,8 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
         </tr>
     </tbody>
 </table>
+
+The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all support working with the bare metal profile.
 
 ## Documentation
 

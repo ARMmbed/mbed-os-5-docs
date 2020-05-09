@@ -142,17 +142,18 @@
                     "intro": {
                         "path": "docs/api/rtos/rtos.md"
                     },
-                    "sub_chapters": [{
-                            "title": "RTOS options and config",
+                    "sub_chapters": [
+                      {
+                          "title": "Thread safety",
+                          "intro": {
+                              "path": "docs/api/rtos/thread_safety.md"
+                          },
+                          "sources": []
+                      },
+                      {
+                            "title": "Scheduling options and config",
                             "intro": {
                                 "path": "docs/api/rtos/rtos-config.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "RTOS general information",
-                            "intro": {
-                                "path": "docs/api/rtos/thread_safety.md"
                             },
                             "sources": []
                         },
@@ -204,11 +205,12 @@
                             ]
                         },
                         {
-                            "title": "RTOS and event handling tutorials",
-                            "intro": {
-                                "path": "docs/api/rtos/events_tutorial.md"
-                            },
-                            "sources": []
+                            "title": "Scheduling tutorials",
+                            "sources": [{
+                                    "path": "docs/api/io/flow_control.md"
+                                },{
+                                    "path": "docs/api/rtos/events_tutorial.md"
+                                }]
                         }
                     ]
                 },
@@ -218,7 +220,7 @@
                         "path": "docs/api/io/drivers.md"
                     },
                     "sub_chapters": [{
-                            "title": "Drvier options and config",
+                            "title": "Driver options and config",
                             "intro": {
                                 "path": "docs/api/io/io-config.md"
                             },
@@ -226,9 +228,10 @@
                         },
                         {
                             "title": "USB architecture",
-                            "sources": [{
+                            "intro": {
                                 "path": "docs/api/usb/usb-arch.md"
-                            }]
+                            },
+                            "sources": []
                         },
                         {
                             "title": "I/O APIs",
@@ -353,19 +356,14 @@
                         },
                         {
                             "title": "Drivers tutorials",
-                            "sources": [{
-                                    "path": "docs/api/io/flow_control.md"
-                                },
+                            "sources": [
                                 {
                                     "path": "docs/api/io/alarm-tutorial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "USB tutorials",
-                            "sources": [{
-                                "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                            }]
                         }
                     ]
                 },
@@ -774,7 +772,7 @@
                             ]
                         },
                         {
-                            "title": "Tutorials",
+                            "title": "Connectivity tutorials",
                             "sources": [{
                                     "path": "docs/api/networkinterfaces/mesh_tutorial.md"
                                 },
