@@ -1,7 +1,8 @@
-# Full API list - second variation
+# Full API list
 
 This is the full list of APIs Mbed OS offers. The list indicates which of the APIs the [bare metal profile](../bare-metal/index.html) supports, and which of those are enabled by default. For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
 
+For a list of APIs that were removed in Mbed OS 6, see [the deprecated APIs list at the bottom of this page](#deprecated-apis-moving-from-mbed-os-5-to-6).
 <!--This list does not include the internal APIs, which are not intended for use by application code.-->
 
 ## Scheduling
@@ -270,7 +271,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 
 ## Deprecated APIs: moving from Mbed OS 5 to 6
 
-If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs:
+If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs. The table lists classes that have been completely removed. Functions and methods that have been removed from other classes are listed in each class's Doxgen, and [summarised here](../mbed-os-api-doxy/deprecated.html).
 
 | Deprecated API | Replaced by |
 | - | - |
@@ -285,5 +286,3 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 | `RtosTimer` | `EventQueue` |
 | `InterruptManager` | No replacement. |
 | `CallChain` | No replacement. |
-
-<span class="tips">The full Doxygen offers [a list of deprecated functions](../mbed-os-api-doxy/deprecated.html).</span>
