@@ -23,16 +23,39 @@
                     "sources": []
                 },
                 {
+                        "title": "Architecture",
+                        "intro": {
+                            "path": "docs/introduction/arch_for_intro.md"
+                        },
+                        "sources": []
+                },
+                {
+                        "title": "Hardware",
+                        "intro": {
+                            "path": "docs/introduction/hardware.md"
+                        },
+                        "sources": []
+                },
+                {
+                        "title": "Tools",
+                        "intro": {
+                            "path": "docs/introduction/tools.md"
+                        },
+                        "sources": []
+                },
+                {
                     "title": "Versions and releases",
-                    "sources": [{
+                    "intro": {
                         "path": "docs/introduction/release_process.md"
-                    }]
+                    },
+                    "sources": []
                 },
                 {
                     "title": "Glossary",
-                    "sources": [{
+                    "intro": {
                         "path": "docs/introduction/terms.md"
-                    }]
+                    },
+                    "sources": []
                 }
             ],
             "tags": [

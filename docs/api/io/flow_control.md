@@ -26,7 +26,7 @@ Notice `printf()`; you can enable this by uncommenting the line (remove the `//`
 
 A better alternative to busy wait is to suspend thread execution while waiting. Use:
 
- * For C++: The `ThisThread::sleep_for` API 
+ * For C++: The `ThisThread::sleep_for` API
  * For C: The `thread_sleep_for` API.
 
 ### Ticker
