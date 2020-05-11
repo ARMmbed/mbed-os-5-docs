@@ -92,7 +92,7 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutoria
 
 ### NFC
 
-<span class="images">![](../../images/n_mark.png)<span>NFC</span></span>
+<span class="images">![](../images/n_mark.png)<span>NFC</span></span>
 
 Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, sharing of small content and Bluetooth connection initiation and out-of-band pairing.
 
