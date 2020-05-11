@@ -34,6 +34,22 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 ## Drivers
 
+### Serial (UART) drivers
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [BufferedSerial](../apis/bufferedserial.html) | &#10004; | &#10004;  |
+| [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004;  |
+
+### SPI drivers
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [QuadSPI (QSPI)](../apis/quadspi-qspi.html) | &#10004; | &#10004; |
+| [SPI](../apis/spi.html) | &#10004; | &#10004;  |
+| [SPISlave](../apis/spislave.html) | &#10004; | &#10004;  |
+
+
 ### Input/Output drivers
 
 Input/Output APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.
@@ -77,20 +93,14 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BufferedSerial](../apis/bufferedserial.html) | &#10004; | &#10004;  |
 | [CAN](../apis/can.html)| &#10004; | &#10004;  |
 | [Flash IAP](../apis/flash-iap.html) | &#10004; | &#10004;  |
 | [I2C](../apis/i2c.html) | &#10004; | &#10004;  |
 | [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004;  |
 | [MbedCRC](../apis/mbedcrc.html) | &#10004; | &#10004;  |
 | [Timeout](../apis/timeout.html) | &#10004; | &#10004; |
-| [QuadSPI (QSPI)](../apis/quadspi-qspi.html) | &#10004; | &#10004; |
 | [ResetReason](../apis/resetreason.html) | &#10004; | &#10004;  |
-| [SPI](../apis/spi.html) | &#10004; | &#10004;  |
-| [SPISlave](../apis/spislave.html) | &#10004; | &#10004;  |
-| [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004;  |
 | [Watchdog](../apis/watchdog.html) | &#10004; | &#10004; |
-
 
 ## Platform
 

@@ -29,6 +29,22 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 | EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](the-eventqueue-api.html)|
 | UserAllocatedEvent | [Static event queue example](../apis/userallocatedevent.html#static-eventqueue-example-posting-user-allocated-events-to-the-queue) | |
 
+## Serial (UART) Driver APIs
+
+| API | Examples  | Hello, World |
+| --- | ---  | --- |
+| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
+| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
+
+## SPI APIs
+
+| API | Examples | Tutorials |
+| --- | --- | --- |
+| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
+| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
+| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
+
+
 ## Input/Output (I/O) Driver APIs
 
 | API | Examples  | Hello, World |
@@ -66,18 +82,13 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
 | CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
 | Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
 | I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) | |
-| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
 | ResetReason | [ResetReason example](../apis/resetreason.html) | |
-| SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
-| SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
 | Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
-| UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
 | Watchdog | [Watchdog example](../apis/watchdog.html) | |
 
 And the following tutorials:

@@ -142,15 +142,14 @@
                     "intro": {
                         "path": "docs/api/rtos/rtos.md"
                     },
-                    "sub_chapters": [
-                      {
-                          "title": "Thread safety",
-                          "intro": {
-                              "path": "docs/api/rtos/thread_safety.md"
-                          },
-                          "sources": []
-                      },
-                      {
+                    "sub_chapters": [{
+                            "title": "Thread safety",
+                            "intro": {
+                                "path": "docs/api/rtos/thread_safety.md"
+                            },
+                            "sources": []
+                        },
+                        {
                             "title": "Scheduling options and config",
                             "intro": {
                                 "path": "docs/api/rtos/rtos-config.md"
@@ -207,10 +206,10 @@
                         {
                             "title": "Scheduling tutorials",
                             "sources": [{
-                                    "path": "docs/api/io/flow_control.md"
-                                },{
-                                    "path": "docs/api/rtos/events_tutorial.md"
-                                }]
+                                "path": "docs/api/io/flow_control.md"
+                            }, {
+                                "path": "docs/api/rtos/events_tutorial.md"
+                            }]
                         }
                     ]
                 },
@@ -232,6 +231,29 @@
                                 "path": "docs/api/usb/usb-arch.md"
                             },
                             "sources": []
+                        },
+                        {
+                            "title": "Serial (UART) APIs",
+                            "sources": [{
+                                    "path": "docs/api/io/BufferedSerial.md"
+                                },
+                                {
+                                    "path": "docs/api/io/UnbufferedSerial.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "SPI APIs",
+                            "sources": [{
+                                    "path": "docs/api/io/QuadSPI.md"
+                                },
+                                {
+                                    "path": "docs/api/io/SPI.md"
+                                },
+                                {
+                                    "path": "docs/api/io/SPISlave.md"
+                                }
+                            ]
                         },
                         {
                             "title": "I/O APIs",
@@ -326,21 +348,6 @@
                                     "path": "docs/api/io/FlashIAP.md"
                                 },
                                 {
-                                    "path": "docs/api/io/BufferedSerial.md"
-                                },
-                                {
-                                    "path": "docs/api/io/UnbufferedSerial.md"
-                                },
-                                {
-                                    "path": "docs/api/io/SPI.md"
-                                },
-                                {
-                                    "path": "docs/api/io/SPISlave.md"
-                                },
-                                {
-                                    "path": "docs/api/io/QuadSPI.md"
-                                },
-                                {
                                     "path": "docs/api/io/I2C.md"
                                 },
                                 {
@@ -356,8 +363,7 @@
                         },
                         {
                             "title": "Drivers tutorials",
-                            "sources": [
-                                {
+                            "sources": [{
                                     "path": "docs/api/io/alarm-tutorial.md"
                                 },
                                 {
@@ -525,7 +531,7 @@
                             "sources": []
                         },
                         {
-                            "title": "Data APIs",
+                            "title": "File system APIs",
                             "sources": [{
                                     "path": "docs/api/storage/KVStoreAPI.md"
                                 },
@@ -546,8 +552,12 @@
                                 },
                                 {
                                     "path": "docs/api/storage/FATFileSystem.md"
-                                },
-                                {
+                                }
+                            ]
+                        },
+                        {
+                            "title": "BlockDevice APIs",
+                            "sources": [{
                                     "path": "docs/api/storage/BlockDevice.md"
                                 },
                                 {
@@ -585,8 +595,12 @@
                                 },
                                 {
                                     "path": "docs/api/storage/QSPIFBlockDevice.md"
-                                },
-                                {
+                                }
+                            ]
+                        },
+                        {
+                            "title": "PSA compliant APIs",
+                            "sources": [{
                                     "path": "docs/api/storage/psa_internal_storage.md"
                                 },
                                 {
