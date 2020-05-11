@@ -34,19 +34,19 @@ Configure your target to support Mbed OS 6:
 
 1. Remove the `release_versions` property; it is no longer required:
 
-    ```
+    ```json
     "release_versions": ["2"]
     ```
 
 1. To indicate that the application profile supported by this target is bare metal, add the `supported_application_profiles` property:
 
-    ```
+    ```json
     "supported_application_profiles" : ["bare-metal"]
     ```
 
 1. Override `supported_c_libs` property to link with the smaller C libraries. The default for all targets is defined as follows: 
 
-    ```
+    ```json
     "supported_c_libs": {
         "arm":  ["std"],
         "gcc_arm":  ["std", "small"],
@@ -56,7 +56,7 @@ Configure your target to support Mbed OS 6:
 
     Both the ARM and GCC_ARM toolchains support optimized versions of the C standard libraries - microlib and newlib-nano, respectively. We recommend using them with the bare metal profile for lower memory footprints. Ultraconstrained targets should override `supported_c_libs`:
 
-    ```
+    ```json
     "supported_c_libs": {
         "arm":  ["small"],
         "gcc_arm":  ["small"]
@@ -67,7 +67,7 @@ Configure your target to support Mbed OS 6:
 
     For each toolchain, if there is enough memory to link with the standard library, add the corresponding `std` library to the list. For example:
 
-    ```
+    ```json
     "supported_c_libs": {
         "arm":  ["std", "small"],
         "gcc_arm":  ["std", "small"],
@@ -92,7 +92,7 @@ Configure your target to support Mbed OS 6:
 
 1. If your board does not have a low power ticker, ensure that tickless is enabled using the microsecond ticker:
 
-    ```
+    ```json
     "overrides": {
         "tickless-from-us-ticker": true
     }
@@ -102,7 +102,7 @@ Configure your target to support Mbed OS 6:
 
     The stack size is configured by setting a value for the `boot-stack-size` attribute; this value must be a multiple of 8 for alignment purposes. We recommend that you reduce the boot stack size to 0x400 (1,024 bytes) if your target has 8KB of RAM and to 0x300 (768 bytes) if your target has 4KB of RAM.
 
-    ```
+    ```json
     "overrides": {
         "boot-stack-size": "0x400"
     }
@@ -160,7 +160,7 @@ Further optimisations for targets with small flash memories:
 
     Modify `TESTS/configs/baremetal.json` for your target:
 
-    ```
+    ```json
     {
         "target_overrides": {
             "YOUR_TARGET": {
