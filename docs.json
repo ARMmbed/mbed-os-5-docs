@@ -624,9 +624,13 @@
                     "sub_chapters": [{
                             "title": "Connectivity support in Mbed OS",
                             "intro": {
-                                "path": "docs/api/networking-arch.md"
+                                "path": "docs/api/connectivity-arch.md"
                             },
-                            "sources": [{
+                            "sources": [
+                              {
+                                  "path": "docs/api/networking-arch.md"
+                              },
+                              {
                                     "path": "docs/api/networkinterfaces/cellular-arch.md"
                                 },
                                 {
