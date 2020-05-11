@@ -230,7 +230,9 @@
                             "intro": {
                                 "path": "docs/api/usb/usb-arch.md"
                             },
-                            "sources": []
+                            "sources": [{
+                                "path": "docs/api/usb/usb_components.md"
+                            }]
                         },
                         {
                             "title": "Serial (UART) APIs",
@@ -511,12 +513,6 @@
                                     "path": "docs/api/platform/Span.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Platform tutorials",
-                            "sources": [{
-                                "path": "docs/program-setup/runtime/static_memory_optimization.md"
-                            }]
                         }
                     ]
                 },
@@ -650,6 +646,9 @@
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                },
+                                {
+                                    "path": "docs/api/security/securesocket-arch.md"
                                 }
                             ]
                         },
@@ -845,13 +844,6 @@
                             "title": "Security tutorials",
                             "intro": {
                                 "path": "docs/api/security/tls_tutorial.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Security architecture",
-                            "intro": {
-                                "path": "docs/api/security/securesocket-arch.md"
                             },
                             "sources": []
                         }
