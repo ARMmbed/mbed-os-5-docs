@@ -140,7 +140,19 @@ If you haven't used Greentea before, [you can learn more in our documentation](.
 
     <span class="tips">**Tip:** You can append `--compile` and fix build issues before running tests with `--run`.</span>
 
-1. All tests should pass (or be automatically skipped).
+1. All tests should pass (or be automatically skipped), with exceptions when the target being ported is ultra-constrained (with 32KB of flash memory or less) in which case linking may fail for only _a few_ tests. For example,
+
+    ARM toolchain:
+    ```
+    Error: L6407E: Sections of aggregate size 0x318 bytes could not fit into .ANY selector(s).
+    ```
+
+    GCC_ARM toolchain:
+    ```
+    region `FLASH' overflowed by 792 bytes
+    ```
+
+    Please ignore tests with similar errors for now.
 
 Further optimisations for targets with small flash memories:
 - Append `--profile release` to the command above. Use of the release profile helps keep some tests within the size limit.
