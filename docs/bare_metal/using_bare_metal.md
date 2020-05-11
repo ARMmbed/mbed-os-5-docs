@@ -2,7 +2,7 @@
 
 This guide shows how to create a bare metal profile application:
 1. By default, when you build an application binary, the build tool uses the full profile. To use the bare metal profile, you need to set up your application to override this default behaviour.
-1. Bare metal has a [minimal set of APIs](bare_metal_api.md). You can add additional ones [from the list of supported API](../../api/api.md).
+1. Bare metal has a minimal set of APIs. You can add additional ones [from the list of supported API](bare_metal.md#features).
 
 ## Creating a bare metal application
 
@@ -30,7 +30,7 @@ This guide shows how to create a bare metal profile application:
 
     Bare metal has a minimal set of default APIs - those that are always available to a bare metal application. You can add other supported APIs if you need the features they enable.
 
-    For a list of default and supported APIs, [please see our full API list](../../api/api.md).
+    For a list of default and supported APIs, [please see our full API list](bare_metal.md#features).
 
 1. To add an API - in this example, the `EventQueue` class:
 
