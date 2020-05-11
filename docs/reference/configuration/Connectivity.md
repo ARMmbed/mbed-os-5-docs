@@ -23,11 +23,6 @@ Name: lwip.debug-enabled
     Description: Enable debug trace support
     Defined by: library:lwip
     No value set
-Name: lwip.default-thread-stacksize
-    Description: Stack size for lwip system threads
-    Defined by: library:lwip
-    Macro name: MBED_CONF_LWIP_DEFAULT_THREAD_STACKSIZE
-    Value: 512 (set by library:lwip)
 Name: lwip.enable-ppp-trace
     Description: Enable trace support for PPP interfaces
     Defined by: library:lwip
@@ -81,11 +76,6 @@ Name: lwip.ppp-ipv6-enabled
     Description: Enable support for ipv6 PPP interface
     Defined by: library:lwip
     No value set
-Name: lwip.ppp-thread-stacksize
-    Description: Thread stack size for PPP
-    Defined by: library:lwip
-    Macro name: MBED_CONF_LWIP_PPP_THREAD_STACKSIZE
-    Value: 768 (set by library:lwip)
 Name: lwip.socket-max
     Description: Maximum number of open TCPServer, TCPSocket and UDPSocket instances allowed, including one used internally for DNS.  Each requires 236 bytes of pre-allocated RAM
     Defined by: library:lwip
@@ -127,11 +117,6 @@ Name: lwip.tcp-wnd
     Description: TCP sender buffer space (bytes). Current default (used if null here) is set to (4 * TCP_MSS) in opt.h, unless overridden by target Ethernet drivers.
     Defined by: library:lwip
     No value set
-Name: lwip.tcpip-thread-stacksize
-    Description: Stack size for lwip TCPIP thread
-    Defined by: library:lwip
-    Macro name: MBED_CONF_LWIP_TCPIP_THREAD_STACKSIZE
-    Value: 1200 (set by library:lwip)
 Name: lwip.udp-socket-max
     Description: Maximum number of open UDPSocket instances allowed, including one used internally for DNS.  Each requires 84 bytes of pre-allocated RAM
     Defined by: library:lwip
@@ -215,10 +200,10 @@ Name: nsapi.default-cellular-username
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-mesh-type
-    Description: Configuration type for MeshInterface::get_default_instance(). [LOWPAN/THREAD/WISUN]
+    Description: Configuration type for MeshInterface::get_default_instance(). [LOWPAN/WISUN]
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_DEFAULT_MESH_TYPE
-    Value: THREAD (set by library:nsapi)
+    Value: LOWPAN (set by library:nsapi)
 Name: nsapi.default-stack
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_DEFAULT_STACK

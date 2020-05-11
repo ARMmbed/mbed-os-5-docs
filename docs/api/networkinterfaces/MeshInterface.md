@@ -4,13 +4,12 @@
 
 The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topologies through the [Nanostack](../reference/6LoWPAN-ND-tech.html) networking stack.
 
-Mbed OS provides three types of IPv6-based mesh networks:
+Mbed OS provides two types of IPv6-based mesh networks:
 
 - [Wi-SUN](../reference/wisun-tech.html), following the specification from the Wi-SUN alliance.
-- [Thread](../reference/thread-tech.html), following the specification from Thread Group.
 - [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html), loosely following the Zigbee-IP specification.
 
-The application can use the `LoWPANNDInterface`, `WisunInterface` or `ThreadInterface` object to connect to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer. You can use the [Network status API](network-status.html) to monitor changes in the network status.
+The application can use the `LoWPANNDInterface` or `WisunInterface` object to connect to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer. You can use the [Network status API](network-status.html) to monitor changes in the network status.
 
 You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](../reference/configuration-mesh.html) section documents.
 
