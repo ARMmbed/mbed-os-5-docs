@@ -26,7 +26,7 @@ There is a wide variety of possibilities for connected devices, and there is no 
 
 Mbed OS supports various IP-based connectivity options and IP stacks.
 
-<span class="images">![](../../images/ip-networking-simple.png)<span>Connectivity stack architecture in Mbed OS</span></span>
+<span class="images">![](../images/ip-networking-simple.png)<span>Connectivity stack architecture in Mbed OS</span></span>
 
 Our Socket API standardizes all of our connectivity options. It supports both IPv4 and IPv6. Applications are portable regardless of final connectivity option.
 
