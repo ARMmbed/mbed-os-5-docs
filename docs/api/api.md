@@ -2,7 +2,7 @@
 
 This is the full list of APIs Mbed OS offers. The list indicates which of the APIs the [bare metal profile](../bare-metal/index.html) supports, and which of those are manually enabled (as opposed to enabled by default). For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
 
-For a list of APIs that were removed in Mbed OS 6, see [the deprecated APIs list at the bottom of this page](#deprecated-apis-moving-from-mbed-os-5-to-6).
+For a list of APIs that were removed in Mbed OS 6, see [the deprecated APIs list at the bottom of this page](#deprecated-apis).
 
 This list does not include the internal APIs, which are not intended for use by application code.
 
@@ -289,7 +289,7 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 | [PSA lifecycle](../apis/psa-lifecycle.html) | &#10004; |  |
 | [TLS](../apis/tls.html) | &#10004; | &#10004; (can be manually enabled) |
 
-## Deprecated APIs: moving from Mbed OS 5 to 6
+<h2 id="deprecated-apis">Deprecated APIs: moving from Mbed OS 5 to 6</h2>
 
 If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs. The table lists classes that have been completely removed. Functions and methods that have been removed from other classes are listed in each class's Doxgen, and [summarised here](../mbed-os-api-doxy/deprecated.html).
 
