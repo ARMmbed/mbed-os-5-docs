@@ -220,8 +220,8 @@ Network interfaces are the application level APIs where users choose the driver,
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Ethernet](../apis/ethernet.html) | &#10004; | |
 | [Cellular](../apis/cellular-api.html) | &#10004; | |
+| [Ethernet](../apis/ethernet.html) | &#10004; | |
 | [Mesh](../apis/mesh-api.htm) | &#10004; | |
 | [MessageBuilder](../apis/messagebuilder.html) | &#10004; | |
 | [MessageParser](../apis/messageparser.html) | &#10004; | |
@@ -233,8 +233,8 @@ Network interfaces are the application level APIs where users choose the driver,
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [TLSSocket](../apis/secure-socket-apis.html) | &#10004; | |
 | [DTLSSocket](../apis/dtlssocket.html) | &#10004; |  |
+| [TLSSocket](../apis/secure-socket-apis.html) | &#10004; | |
 
 ### DNS
 

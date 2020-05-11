@@ -159,34 +159,34 @@
                         {
                             "title": "RTOS APIs",
                             "sources": [{
-                                    "path": "docs/api/rtos/Thread.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/ThisThread.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/Mutex.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/Semaphore.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/Queue.md"
-                                },
-                                {
-                                    "path": "docs/api/rtos/Mail.md"
+                                    "path": "docs/api/rtos/ConditionVariable.md"
                                 },
                                 {
                                     "path": "docs/api/rtos/EventFlags.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/ConditionVariable.md"
+                                    "path": "docs/api/power/IdleLoop.md"
                                 },
                                 {
                                     "path": "docs/api/rtos/Kernel.md"
                                 },
                                 {
-                                    "path": "docs/api/power/IdleLoop.md"
+                                    "path": "docs/api/rtos/Mail.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Mutex.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Queue.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Semaphore.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/ThisThread.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/Thread.md"
                                 }
                             ]
                         },
@@ -264,6 +264,15 @@
                                     "path": "docs/api/io/AnalogOut.md"
                                 },
                                 {
+                                    "path": "docs/api/io/BusIn.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/BusInOut.md"
+                                },
+                                {
                                     "path": "docs/api/io/DigitalIn.md"
                                 },
                                 {
@@ -273,13 +282,7 @@
                                     "path": "docs/api/io/DigitalInOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/BusIn.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/BusInOut.md"
+                                    "path": "docs/api/io/InterruptIn.md"
                                 },
                                 {
                                     "path": "docs/api/io/PortIn.md"
@@ -292,22 +295,13 @@
                                 },
                                 {
                                     "path": "docs/api/io/PwmOut.md"
-                                },
-                                {
-                                    "path": "docs/api/io/InterruptIn.md"
                                 }
                             ]
                         },
                         {
                             "title": "USB APIs",
                             "sources": [{
-                                    "path": "docs/api/usb/USBSerial.md"
-                                },
-                                {
                                     "path": "docs/api/usb/USBAudio.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBHID.md"
                                 },
                                 {
                                     "path": "docs/api/usb/USBCDC.md"
@@ -316,33 +310,33 @@
                                     "path": "docs/api/usb/USBCDC_ECM.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMSD.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMIDI.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMouse.md"
+                                    "path": "docs/api/usb/USBHID.md"
                                 },
                                 {
                                     "path": "docs/api/usb/USBKeyboard.md"
                                 },
                                 {
+                                    "path": "docs/api/usb/USBMouse.md"
+                                },
+
+                                {
                                     "path": "docs/api/usb/USBMouseKeyboard.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBMSD.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/USBSerial.md"
                                 }
                             ]
                         },
                         {
                             "title": "Other driver APIs",
                             "sources": [{
-                                    "path": "docs/api/io/TimeOut.md"
-                                },
-
-                                {
-                                    "path": "docs/api/io/Watchdog.md"
-                                },
-                                {
-                                    "path": "docs/api/io/ResetReason.md"
+                                    "path": "docs/api/io/CAN.md"
                                 },
                                 {
                                     "path": "docs/api/io/FlashIAP.md"
@@ -354,10 +348,16 @@
                                     "path": "docs/api/io/I2CSlave.md"
                                 },
                                 {
-                                    "path": "docs/api/io/CAN.md"
+                                    "path": "docs/api/io/MbedCRC.md"
                                 },
                                 {
-                                    "path": "docs/api/io/MbedCRC.md"
+                                    "path": "docs/api/io/TimeOut.md"
+                                },
+                                {
+                                    "path": "docs/api/io/ResetReason.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Watchdog.md"
                                 }
                             ]
                         },
@@ -410,10 +410,9 @@
                         {
                             "title": "Power APIs",
                             "sources": [{
-                                    "path": "docs/api/power/PowerManagement.md"
-                                }, {
                                     "path": "docs/api/power/DeepSleepLock.md"
                                 },
+
                                 {
                                     "path": "docs/api/power/LowPowerTicker.md"
                                 },
@@ -422,35 +421,38 @@
                                 },
                                 {
                                     "path": "docs/api/power/LowPowerTimer.md"
+                                },
+                                {
+                                    "path": "docs/api/power/PowerManagement.md"
                                 }
                             ]
                         },
                         {
                             "title": "Memory APIs",
                             "sources": [{
-                                    "path": "docs/api/memory/MbedStats.md"
+                                    "path": "docs/api/memory/MemTrace.md"
                                 },
                                 {
                                     "path": "docs/api/memory/MpuManagement.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/MemTrace.md"
+                                    "path": "docs/api/memory/MemoryPool.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/MemoryPool.md"
+                                    "path": "docs/api/memory/MbedStats.md"
                                 }
                             ]
                         },
                         {
                             "title": "Time APIs",
                             "sources": [{
-                                    "path": "docs/api/platform/Time.md"
-                                },
-                                {
                                     "path": "docs/api/platform/Rtc.md"
                                 },
                                 {
                                     "path": "docs/api/io/Ticker.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Time.md"
                                 },
                                 {
                                     "path": "docs/api/io/Timer.md"
@@ -463,7 +465,16 @@
                         {
                             "title": "Other platform APIs",
                             "sources": [{
+                                    "path": "docs/api/platform/Assert.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/ATCmdParser.md"
+                                },
+                                {
                                     "path": "docs/api/platform/Callback.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/CircularBuffer.md"
                                 },
                                 {
                                     "path": "docs/api/platform/CriticalSectionLock.md"
@@ -476,37 +487,28 @@
                                     "path": "docs/api/platform/Error.md"
                                 },
                                 {
-                                    "path": "docs/api/platform/Assert.md"
+                                    "path": "docs/api/platform/FileHandle.md"
                                 },
                                 {
                                     "path": "docs/api/platform/NonCopyable.md"
                                 },
                                 {
-                                    "path": "docs/api/platform/SharedPtr.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Span.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/FileHandle.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Poll.md"
-                                },
-                                {
                                     "path": "docs/api/platform/PlatformMutex.md"
                                 },
                                 {
-                                    "path": "docs/api/platform/CircularBuffer.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/ATCmdParser.md"
+                                    "path": "docs/api/platform/Poll.md"
                                 },
                                 {
                                     "path": "docs/api/platform/ScopedRamExecutionLock.md"
                                 },
                                 {
                                     "path": "docs/api/platform/ScopedRomWriteLock.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/SharedPtr.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Span.md"
                                 }
                             ]
                         },
@@ -533,25 +535,25 @@
                         {
                             "title": "File system APIs",
                             "sources": [{
-                                    "path": "docs/api/storage/KVStoreAPI.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/KVStoreGlobalAPI.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/FileSystem.md"
-                                },
-                                {
                                     "path": "docs/api/storage/Dir.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/FATFileSystem.md"
                                 },
                                 {
                                     "path": "docs/api/storage/File.md"
                                 },
                                 {
+                                    "path": "docs/api/storage/FileSystem.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/KVStoreAPI.md"
+                                },
+                                {
                                     "path": "docs/api/storage/LittleFileSystem.md"
                                 },
                                 {
-                                    "path": "docs/api/storage/FATFileSystem.md"
+                                    "path": "docs/api/storage/KVStoreGlobalAPI.md"
                                 }
                             ]
                         },
@@ -561,25 +563,10 @@
                                     "path": "docs/api/storage/BlockDevice.md"
                                 },
                                 {
-                                    "path": "docs/api/storage/HeapBlockDevice.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/MBRBlockDevice.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/ChainingBlockDevice.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/SlicingBlockDevice.md"
-                                },
-                                {
-                                    "path": "docs/api/storage/ProfilingBlockDevice.md"
-                                },
-                                {
                                     "path": "docs/api/storage/BufferedBlockDevice.md"
                                 },
                                 {
-                                    "path": "docs/api/storage/FlashSimBlockDevice.md"
+                                    "path": "docs/api/storage/ChainingBlockDevice.md"
                                 },
                                 {
                                     "path": "docs/api/storage/DataFlashBlockDevice.md"
@@ -588,13 +575,28 @@
                                     "path": "docs/api/storage/FlashIAPBlockDevice.md"
                                 },
                                 {
-                                    "path": "docs/api/storage/SDBlockDevice.md"
+                                    "path": "docs/api/storage/FlashSimBlockDevice.md"
                                 },
                                 {
-                                    "path": "docs/api/storage/SPIFBlockDevice.md"
+                                    "path": "docs/api/storage/HeapBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/MBRBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/ProfilingBlockDevice.md"
                                 },
                                 {
                                     "path": "docs/api/storage/QSPIFBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/SDBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/SlicingBlockDevice.md"
+                                },
+                                {
+                                    "path": "docs/api/storage/SPIFBlockDevice.md"
                                 }
                             ]
                         },
@@ -625,28 +627,49 @@
                                 "path": "docs/api/networking-arch.md"
                             },
                             "sources": [{
+                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
+                                },
+                                {
                                     "path": "docs/api/networkinterfaces/ethernet-arch.md"
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/wifi-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
+                                    "path": "docs/api/lorawan/lora-tech.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_intro.md"
+                                    "path": "docs/api/nfc/nfc-arch.md"
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Socket APIs",
+                            "intro": {
+                                "path": "docs/api/networksocket/networksocket.md"
+                            },
+                            "sources": [{
+                                    "path": "docs/api/networksocket/CellularNonIPSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/nfc-arch.md"
+                                    "path": "docs/api/networksocket/socket.md"
                                 },
                                 {
-                                    "path": "docs/api/lorawan/lora-tech.md"
+                                    "path": "docs/api/networksocket/SocketAddress.md"
+                                }, {
+                                    "path": "docs/api/networksocket/SocketStats.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/TCPSocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networksocket/UDPSocket.md"
                                 }
                             ]
                         },
@@ -659,63 +682,39 @@
                                     "path": "docs/api/connectivity-config.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/EthInterface.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/WifiInterface.md"
-                                },
-                                {
                                     "path": "docs/api/networkinterfaces/CellularInterface.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/EthInterface.md"
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/MeshInterface.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/NetworkStatus.md"
+                                    "path": "docs/api/nfc/MessageBuilder.md"
                                 },
                                 {
                                     "path": "docs/api/nfc/MessageParser.md"
                                 },
                                 {
+                                    "path": "docs/api/networkinterfaces/NetworkStatus.md"
+                                },
+                                {
                                     "path": "docs/api/nfc/SimpleMessageParser.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/MessageBuilder.md"
+                                    "path": "docs/api/networkinterfaces/WifiInterface.md"
                                 }
                             ]
                         },
-                        {
-                            "title": "Socket APIs",
-                            "intro": {
-                                "path": "docs/api/networksocket/networksocket.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/api/networksocket/socket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/UDPSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/TCPSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/SocketAddress.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/CellularNonIPSocket.md"
-                                },
-                                {
-                                    "path": "docs/api/networksocket/SocketStats.md"
-                                }
-                            ]
-                        },
+
                         {
                             "title": "Secure socket APIs",
                             "sources": [{
-                                    "path": "docs/api/networksocket/TLSSocket.md"
+                                    "path": "docs/api/networksocket/DTLSSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/DTLSSocket.md"
+                                    "path": "docs/api/networksocket/TLSSocket.md"
                                 }
                             ]
                         },
@@ -734,6 +733,9 @@
                                     "path": "docs/api/bluetooth/ble-config.md"
                                 },
                                 {
+                                    "path": "docs/api/bluetooth/BatteryService.md"
+                                },
+                                {
                                     "path": "docs/api/bluetooth/BLE.md"
                                 },
                                 {
@@ -746,13 +748,10 @@
                                     "path": "docs/api/bluetooth/GattServer.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/SecurityManager.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/BatteryService.md"
-                                },
-                                {
                                     "path": "docs/api/bluetooth/HeartRateService.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/SecurityManager.md"
                                 }
                             ]
                         },
@@ -821,19 +820,20 @@
                     "sub_chapters": [{
                             "title": "Security APIs",
                             "sources": [{
-                                    "path": "docs/api/security/psa_attestation.md"
-                                },
-                                {
-                                    "path": "docs/api/security/psa_lifecycle.md"
+                                    "path": "docs/api/security/Devicekey.md"
                                 },
                                 {
                                     "path": "docs/api/security/crypto.md"
                                 },
                                 {
-                                    "path": "docs/api/security/TLS.md"
+                                    "path": "docs/api/security/psa_attestation.md"
                                 },
                                 {
-                                    "path": "docs/api/security/Devicekey.md"
+                                    "path": "docs/api/security/psa_lifecycle.md"
+                                },
+
+                                {
+                                    "path": "docs/api/security/TLS.md"
                                 }
                             ]
                         },
