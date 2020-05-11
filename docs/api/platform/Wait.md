@@ -1,6 +1,6 @@
 # Wait
 
-<span class="tips">**Tip:** `wait` is deprecated in favor of explicit sleep functions. To sleep, replace `wait` with `ThisThread::sleep_for` (C++) or `thread_sleep_for` (C). To wait (without sleeping), call `wait_us`. `wait_us` is safe to call from ISR context.</span>
+<span class="notes">**Note:** The function `wait` is deprecated in favor of explicit sleep functions. To sleep, replace `wait` with `ThisThread::sleep_for` (C++) or `thread_sleep_for` (C). To wait (without sleeping), call `wait_us`. `wait_us` is safe to call from ISR context.</span>
 
 The wait_us and wait_ns functions provide precise wait capabilities. These functions spin the CPU to produce a small delay so they should only be used for short delays. Any delay larger than a millisecond will affect power and multithread performance, and block the platform deep sleep for the entire duration. Therefore, spinning for millisecond wait is not recommended, and ThisThread::sleep_for should be used instead.
 

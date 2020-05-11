@@ -1,9 +1,10 @@
 # Full API list
 
-This is the full list of APIs Mbed OS offers. The list indicates which of the APIs the [bare metal profile](../bare-metal/index.html) supports, and which of those are enabled by default. For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
+This is the full list of APIs Mbed OS offers. The list indicates which of the APIs the [bare metal profile](../bare-metal/index.html) supports, and which of those are manually enabled (as opposed to enabled by default). For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
 
 For a list of APIs that were removed in Mbed OS 6, see [the deprecated APIs list at the bottom of this page](#deprecated-apis-moving-from-mbed-os-5-to-6).
-<!--This list does not include the internal APIs, which are not intended for use by application code.-->
+
+This list does not include the internal APIs, which are not intended for use by application code.
 
 ## Scheduling
 
@@ -28,9 +29,9 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Event](../apis/event-handling-apis.html) | &#10004; | &#10003; (can be manually enabled) |
-| [EventQueue](../apis/eventqueue.html) | &#10004; | &#10003; (can be manually enabled) |
-| [UserAllocatedEvent](../apis/userallocatedevent.html) | &#10004; | &#10003; (can be manually enabled) |
+| [Event](../apis/event-handling-apis.html) | &#10004; | &#10004; (can be manually enabled) |
+| [EventQueue](../apis/eventqueue.html) | &#10004; | &#10004; (can be manually enabled) |
+| [UserAllocatedEvent](../apis/userallocatedevent.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ## Drivers
 
@@ -166,31 +167,31 @@ The data storage APIs include file system APIs, for file system operations, and 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Dir](../apis/dir.html) | &#10004; | &#10003; (can be manually enabled)|
-| [FATFileSystem](../apis/fatfilesystem.html) | &#10004; | &#10003; (can be manually enabled) |
-| [File](../apis/file.html) | &#10004; | &#10003; (can be manually enabled) |
-| [FileSystem](../apis/filesystem.html) | &#10004; | &#10003; (can be manually enabled) |
-| [KVStore](../apis/data-apis) | &#10004; | &#10003; (can be manually enabled) |
-| [LittleFileSystem](../apis/littlefilesystem.html) | &#10004; |&#10003; (can be manually enabled) |
-| [Static Global API](../apis/static-global-api.html) | &#10004; | &#10003; (can be manually enabled) |
+| [Dir](../apis/dir.html) | &#10004; | &#10004; (can be manually enabled)|
+| [FATFileSystem](../apis/fatfilesystem.html) | &#10004; | &#10004; (can be manually enabled) |
+| [File](../apis/file.html) | &#10004; | &#10004; (can be manually enabled) |
+| [FileSystem](../apis/filesystem.html) | &#10004; | &#10004; (can be manually enabled) |
+| [KVStore](../apis/data-apis) | &#10004; | &#10004; (can be manually enabled) |
+| [LittleFileSystem](../apis/littlefilesystem.html) | &#10004; |&#10004; (can be manually enabled) |
+| [Static Global API](../apis/static-global-api.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ### BlockDevice (block-based storage) APIs
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BlockDevice](../apis/blockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [BufferedBlockDevice](../apis/bufferedblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [ChainingBlockDevice](../apis/chainingblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [DataFlashBlockDevice](../apis/dataflashblockdevice.html) | &#10004; |&#10003; (can be manually enabled) |
-| [FlashIAPBlockDevice](../apis/flashiapblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [FlashSimBlockDevice](../apis/flashsimblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [HeapBlockDevice](../apis/heapblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [MBRBlockDevice](../apis/mbrblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [ProfilingBlockDevice](../apis/profilingblockdevice.htm) | &#10004; | &#10003; (can be manually enabled) |
-| [QSPIFBlockDevice](../apis/qspifblockdevice.html) | &#10004; |&#10003; (can be manually enabled) |
-| [SDBlockDevice](../apis/sdblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [SlicingBlockDevice](../apis/slicingblockdevice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [SPI Flash block device](../apis/spi-flash-block-device.html)| &#10004; | &#10003; (can be manually enabled) |
+| [BlockDevice](../apis/blockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BufferedBlockDevice](../apis/bufferedblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [ChainingBlockDevice](../apis/chainingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [DataFlashBlockDevice](../apis/dataflashblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
+| [FlashIAPBlockDevice](../apis/flashiapblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [FlashSimBlockDevice](../apis/flashsimblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [HeapBlockDevice](../apis/heapblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [MBRBlockDevice](../apis/mbrblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [ProfilingBlockDevice](../apis/profilingblockdevice.htm) | &#10004; | &#10004; (can be manually enabled) |
+| [QSPIFBlockDevice](../apis/qspifblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
+| [SDBlockDevice](../apis/sdblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SlicingBlockDevice](../apis/slicingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SPI Flash block device](../apis/spi-flash-block-device.html)| &#10004; | &#10004; (can be manually enabled) |
 
 ### PSA compliant
 
@@ -248,13 +249,13 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for build
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BatteryService](../apis/batteryservice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [BLE](../apis/ble.html) | &#10004; | &#10003; (can be manually enabled) |
-| [GAP](../apis/gap.html) | &#10004; | &#10003; (can be manually enabled) |
-| [GattClient](../apis/gattclient.html) | &#10004; | &#10003; (can be manually enabled) |
-| [GattServer](../apis/gattserver.html) | &#10004; | &#10003; (can be manually enabled) |
-| [HeartRateService](../apis/heartrateservice.html) | &#10004; | &#10003; (can be manually enabled) |
-| [SecurityManager](../apis/SecurityManager.html) | &#10004; | &#10003; (can be manually enabled) |
+| [BatteryService](../apis/batteryservice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BLE](../apis/ble.html) | &#10004; | &#10004; (can be manually enabled) |
+| [GAP](../apis/gap.html) | &#10004; | &#10004; (can be manually enabled) |
+| [GattClient](../apis/gattclient.html) | &#10004; | &#10004; (can be manually enabled) |
+| [GattServer](../apis/gattserver.html) | &#10004; | &#10004; (can be manually enabled) |
+| [HeartRateService](../apis/heartrateservice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SecurityManager](../apis/SecurityManager.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ### NFC
 
@@ -262,8 +263,8 @@ You can use Near-Field Communication (NFC), a short-range radio technology, for 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [NFCController](../apis/nfccontroller.html) | &#10004; |&#10003; (can be manually enabled) |
-| [NFC EEPROM](../apis/nfc-eeprom.html) | &#10004; | &#10003; (can be manually enabled) |
+| [NFCController](../apis/nfccontroller.html) | &#10004; |&#10004; (can be manually enabled) |
+| [NFC EEPROM](../apis/nfc-eeprom.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ### LoRaWAN
 
@@ -282,11 +283,11 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [DeviceKey](../apis/devicekey.html) | &#10004; | &#10003; (can be manually enabled) |
-| [Mbed Crypto](../apis/mbed-crypto.html) | &#10004; |&#10003; (can be manually enabled) |
+| [DeviceKey](../apis/devicekey.html) | &#10004; | &#10004; (can be manually enabled) |
+| [Mbed Crypto](../apis/mbed-crypto.html) | &#10004; |&#10004; (can be manually enabled) |
 | [PSA initial attestation](../apis/security-apis.html) | &#10004; | |
 | [PSA lifecycle](../apis/psa-lifecycle.html) | &#10004; |  |
-| [TLS](../apis/tls.html) | &#10004; | &#10003; (can be manually enabled) |
+| [TLS](../apis/tls.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ## Deprecated APIs: moving from Mbed OS 5 to 6
 
@@ -301,7 +302,6 @@ If you're moving your program from Mbed OS 5 to 6, you will need to replace depr
 | BLE services: `iBeacon`, `UARTService`, `URIBeaconConfigService` | No replacement available |
 | `TCPServer` | `TCPSocket` |
 | `NVStore` | `KVStore` |
-| `FunctionPointerArg1<R, A>` & `FunctionPointerArg1<R, void>` | `Callback<R(A)>` & `Callback<void()>` |
 | `RtosTimer` | `EventQueue` |
 | `InterruptManager` | No replacement. |
 | `CallChain` | No replacement. |

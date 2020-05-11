@@ -10,7 +10,7 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
 
 <span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
-&#10004; : Enabled by default | &#9651; : Can be manually enabled | &#10007; : Not supported
+&#10004; : Supported - by default or manually | &#10007; : Not supported
 
 <table>
     <thead>
@@ -27,11 +27,11 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
         </tr>
         <tr>        
             <td>Events</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         </tr>
         <tr>        
             <td>HAL</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         </tr>
         <tr>        
             <td>Platform</td>
@@ -43,7 +43,7 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
         </tr>
         <tr>        
             <td>Storage</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         <tr>
             <td rowspan="8">Connectivity</td>
             <td>802.15.4_RF</td>
@@ -72,11 +72,11 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
         </tr>
         <tr>
             <td>BLE</td>
-            <td>&#9651;<br>Except `COMPONENT_BlueNRG_MS` and `TARGET_NORDIC_CORDIO`</td>
+            <td>&#10004; (can be manually enabled)<br>Except `COMPONENT_BlueNRG_MS` and `TARGET_NORDIC_CORDIO`</td>
         </tr>    
         <tr>
             <td>NFC</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         </tr>
         <tr>
             <td rowspan="4">Security</td>
@@ -85,15 +85,15 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
         </tr>
         <tr>
             <td>Mbed Crypto</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         </tr>
         <tr>
             <td>Devicekey</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         </tr>  
         <tr>
             <td>Mbed TLS</td>
-            <td>&#9651;</td>
+            <td>&#10004; (can be manually enabled)</td>
         </tr>
     </tbody>
 </table>
