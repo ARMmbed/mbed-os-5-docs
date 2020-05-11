@@ -231,7 +231,7 @@
                                 "path": "docs/api/usb/usb-arch.md"
                             },
                             "sources": [{
-                                "path": "docs/api/usb/usb_components.md"
+                                "path": "docs/api/usb/usb_component.md"
                             }]
                         },
                         {
