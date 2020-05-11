@@ -1,4 +1,4 @@
-# Utilities overview
+# Platform overview
 
 The role of the utilities APIs is to provide general purpose MCU management infrastructure, a few common data structures and  a consistent user experience on top of different standard libraries and toolchains. This page contains reference material about these subjects.
 

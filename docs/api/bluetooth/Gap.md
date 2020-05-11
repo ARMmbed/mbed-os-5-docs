@@ -70,6 +70,7 @@ The default value of data length supported by all controllers is 23 octets. If b
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_gap.html)
 
+
 ## GAP example
 
 Here is an example demonstrating how to use the GAP API to advertise, scan, connect and disconnect and how parameters influence efficiency of these actions.
