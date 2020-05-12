@@ -8,9 +8,9 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ## Scheduling
 
-### RTOS
+<!--The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.-->
 
-The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
+### RTOS
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -35,6 +35,8 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 ## Drivers
 
+<!--The drivers are digital interfaces that allow your board to interface with a computer or external devices.-->
+
 ### Serial (UART) drivers
 
 | API | Full profile | Bare metal profile |
@@ -49,7 +51,6 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 | [QuadSPI (QSPI)](../apis/spi-apis.html) | &#10004; | &#10004; |
 | [SPI](../apis/spi.html) | &#10004; | &#10004;  |
 | [SPISlave](../apis/spislave.html) | &#10004; | &#10004;  |
-
 
 ### Input/Output drivers
 
@@ -73,7 +74,7 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 
 ### USB drivers
 
-The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.
+<!--The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -90,8 +91,6 @@ The Mbed OS classes providing USB peripheral functionality, also known as USB co
 
 ### Other drivers
 
-The drivers are digital interfaces that allow your board to interface with a computer or external devices.
-
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [CAN](../apis/other-driver-apis.html)| &#10004; | &#10004;  |
@@ -107,8 +106,6 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 ### Power
 
-<!--needs intro-->
-
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [DeepSleepLock](../apis/power-apis.html) | &#10004; | &#10004;  |
@@ -118,8 +115,6 @@ The drivers are digital interfaces that allow your board to interface with a com
 | [Power management (sleep)](../apis/power-management-sleep.html) | &#10004; | &#10004; |
 
 ### Memory
-
-<!--needs intro-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -139,7 +134,6 @@ The drivers are digital interfaces that allow your board to interface with a com
 | [Wait](../apis/wait.html) | &#10004; | &#10004;  |
 
 ### Other Platform APIs
-<!--needs intro-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -161,7 +155,7 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 ## Data storage
 
-The data storage APIs include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.
+<!--The data storage APIs include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.-->
 
 ### File system APIs
 
@@ -217,7 +211,7 @@ Socket APIs include the application programming interface for IP networking. In 
 
 ### Network interface
 
-Network interfaces are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.
+<!--Network interfaces are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -245,7 +239,7 @@ Network interfaces are the application level APIs where users choose the driver,
 
 ### Bluetooth (BLE)
 
-Bluetooth low energy (BLE) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
+<!--Bluetooth low energy (BLE) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -259,7 +253,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for build
 
 ### NFC
 
-You can use Near-Field Communication (NFC), a short-range radio technology, for use cases such as contactless payments, access control and device pairing.
+<!--You can use Near-Field Communication (NFC), a short-range radio technology, for use cases such as contactless payments, access control and device pairing.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -268,18 +262,16 @@ You can use Near-Field Communication (NFC), a short-range radio technology, for 
 
 ### LoRaWAN
 
-Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
+<!--Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [LoRaWANInterface](../apis/lorawaninterface.html) | &#10004; | |
 | [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | |
 
-
 ## Security
 
-With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
-
+<!--With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |

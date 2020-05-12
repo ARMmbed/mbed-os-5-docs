@@ -161,5 +161,6 @@
     "tools/exporting.html": "build-tools/third-party-build-tools.html",
     "tools/about-the-exporters.html": "build-tools/about-the-exporters.html",
     "tools/debug-builds-cli.html": "build-tools/debug-builds-cli.html",
-    "tools/troubleshooting.html": "build-tools/troubleshoot.html"
+    "tools/troubleshooting.html": "build-tools/troubleshoot.html",
+    "apis/bufferedserial.html" : "apis/serial-uart-apis.html"
 }
