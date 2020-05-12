@@ -162,15 +162,15 @@
                 },
                 {
                     "title": "Scheduling: RTOS and event handling",
-                    "intro": {
-                        "path": "docs/api/rtos/rtos.md"
-                    },
                     "sub_chapters": [{
-                            "title": "Thread safety",
-                            "intro": {
-                                "path": "docs/api/rtos/thread_safety.md"
-                            },
-                            "sources": []
+                            "title": "Scheduling concepts",
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                },
+                                {
+                                    "path": "docs/api/rtos/thread_safety.md"
+                                }
+                            ]
                         },
                         {
                             "title": "Scheduling options and config",
@@ -178,6 +178,12 @@
                                 "path": "docs/api/rtos/rtos-config.md"
                             },
                             "sources": []
+                        },
+                        {
+                            "title": "Scheduling tutorials",
+                            "sources": [{
+                                "path": "docs/api/rtos/events_tutorial.md"
+                            }]
                         },
                         {
                             "title": "RTOS APIs",
@@ -225,24 +231,16 @@
                                     "path": "docs/api/rtos/UserAllocatedEvent.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Scheduling tutorials",
-                            "sources": [{
-                                "path": "docs/api/rtos/events_tutorial.md"
-                            }]
                         }
                     ]
                 },
                 {
                     "title": "Drivers",
-                    "intro": {
-                        "path": "docs/api/io/drivers.md"
-                    },
+
                     "sub_chapters": [{
-                            "title": "Driver options and config",
+                            "title": "Drivers concepts",
                             "intro": {
-                                "path": "docs/api/io/io-config.md"
+                                "path": "docs/api/io/drivers.md"
                             },
                             "sources": []
                         },
@@ -254,6 +252,23 @@
                             "sources": [{
                                 "path": "docs/api/usb/usb_component.md"
                             }]
+                        },
+                        {
+                            "title": "Drivers options and config",
+                            "intro": {
+                                "path": "docs/api/io/io-config.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Drivers tutorials",
+                            "sources": [{
+                                    "path": "docs/api/io/alarm-tutorial.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                                }
+                            ]
                         },
                         {
                             "title": "Serial (UART) APIs",
@@ -341,7 +356,6 @@
                                 {
                                     "path": "docs/api/usb/USBMouse.md"
                                 },
-
                                 {
                                     "path": "docs/api/usb/USBMouseKeyboard.md"
                                 },
@@ -383,27 +397,17 @@
                                     "path": "docs/api/io/Watchdog.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Drivers tutorials",
-                            "sources": [{
-                                    "path": "docs/api/io/alarm-tutorial.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
-                                }
-                            ]
                         }
                     ]
                 },
                 {
                     "title": "Platform",
-                    "intro": {
-                        "path": "docs/api/platform/platform.md"
-                    },
                     "sub_chapters": [{
                             "title": "Platform Concepts",
                             "sources": [{
+                                    "path": "docs/api/platform/platform.md"
+                                },
+                                {
                                     "path": "docs/api/memory/printf.md"
                                 },
                                 {
@@ -420,6 +424,22 @@
                                 "path": "docs/api/platform/platform-config.md"
                             },
                             "sources": []
+                        },
+                        {
+                            "title": "Platform tutorials",
+                            "sources": [{
+                                    "path": "docs/api/io/flow_control.md"
+                                },
+                                {
+                                    "path": "docs/api/power/power_manage.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/runtime_mem_trace.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/runtime_stats.md"
+                                }
+                            ]
                         },
                         {
                             "title": "Power APIs",
@@ -525,31 +545,26 @@
                                     "path": "docs/api/platform/Span.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Platform tutorials",
-                            "sources": [{
-                                    "path": "docs/api/io/flow_control.md"
-                                },
-                                {
-                                    "path": "docs/api/power/power_manage.md"
-                                },
-                                {
-                                    "path": "docs/api/memory/runtime_mem_trace.md"
-                                },
-                                {
-                                    "path": "docs/api/memory/runtime_stats.md"
-                                }
-                            ]
                         }
                     ]
                 },
                 {
                     "title": "Data storage",
-                    "intro": {
-                        "path": "docs/api/storage/storage.md"
-                    },
                     "sub_chapters": [{
+                            "title": "Data storage concepts",
+                            "intro": {
+                                "path": "docs/api/storage/storage.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Data architecture",
+                            "intro": {
+                                "path": "docs/api/storage/storage-arch.md"
+                            },
+                            "sources": []
+                        },
+                        {
                             "title": "Data options and config",
                             "intro": {
                                 "path": "docs/api/storage/storage-config.md"
@@ -633,13 +648,6 @@
                                     "path": "docs/api/storage/psa_protected_storage.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Data architecture",
-                            "intro": {
-                                "path": "docs/api/storage/storage-arch.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -680,6 +688,47 @@
                             ]
                         },
                         {
+                            "title": "Connectivity options and config",
+                            "sources": [{
+                                    "path": "docs/api/connectivity-config.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-config.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/ble-config.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lorawanconfig.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Connectivity tutorials",
+                            "sources": [{
+                                    "path": "docs/api/networkinterfaces/mesh_tutorial.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
+                                },
+                                {
+                                    "path": "docs/api/light-control.md"
+                                },
+                                {
+                                    "path": "docs/api/bluetooth/ble_tutorial.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/intro-to-lora.md"
+                                },
+                                {
+                                    "path": "docs/api/security/tls_tutorial.md"
+                                }
+                            ]
+                        },
+                        {
                             "title": "Socket APIs",
                             "intro": {
                                 "path": "docs/api/networksocket/networksocket.md"
@@ -709,9 +758,6 @@
                                 "path": "docs/api/networkinterfaces/networkinterface.md"
                             },
                             "sources": [{
-                                    "path": "docs/api/connectivity-config.md"
-                                },
-                                {
                                     "path": "docs/api/networkinterfaces/CellularInterface.md"
                                 },
                                 {
@@ -760,9 +806,6 @@
                                 "path": "docs/api/bluetooth/bluetooth.md"
                             },
                             "sources": [{
-                                    "path": "docs/api/bluetooth/ble-config.md"
-                                },
-                                {
                                     "path": "docs/api/bluetooth/BatteryService.md"
                                 },
                                 {
@@ -804,41 +847,10 @@
                                 "path": "docs/api/lorawan/lorawanintro.md"
                             },
                             "sources": [{
-                                    "path": "docs/api/lorawan/lorawanconfig.md"
-                                },
-                                {
                                     "path": "docs/api/lorawan/lorawan.md"
                                 },
                                 {
                                     "path": "docs/api/lorawan/loraradio.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Connectivity tutorials",
-                            "sources": [{
-                                    "path": "docs/api/networkinterfaces/mesh_tutorial.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-config.md"
-                                },
-                                {
-                                    "path": "docs/api/light-control.md"
-                                },
-                                {
-                                    "path": "docs/api/bluetooth/ble_tutorial.md"
-                                },
-                                {
-                                    "path": "docs/api/lorawan/intro-to-lora.md"
-                                },
-                                {
-                                    "path": "docs/api/security/tls_tutorial.md"
                                 }
                             ]
                         }
@@ -846,29 +858,34 @@
                 },
                 {
                     "title": "Security",
-                    "intro": {
-                        "path": "docs/api/security/security.md"
-                    },
                     "sub_chapters": [{
-                        "title": "Security APIs",
-                        "sources": [{
-                                "path": "docs/api/security/Devicekey.md"
+                            "title": "Security concepts",
+                            "intro": {
+                                "path": "docs/api/security/security.md"
                             },
-                            {
-                                "path": "docs/api/security/crypto.md"
-                            },
-                            {
-                                "path": "docs/api/security/psa_attestation.md"
-                            },
-                            {
-                                "path": "docs/api/security/psa_lifecycle.md"
-                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Security APIs",
+                            "sources": [{
+                                    "path": "docs/api/security/Devicekey.md"
+                                },
+                                {
+                                    "path": "docs/api/security/crypto.md"
+                                },
+                                {
+                                    "path": "docs/api/security/psa_attestation.md"
+                                },
+                                {
+                                    "path": "docs/api/security/psa_lifecycle.md"
+                                },
 
-                            {
-                                "path": "docs/api/security/TLS.md"
-                            }
-                        ]
-                    }]
+                                {
+                                    "path": "docs/api/security/TLS.md"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
