@@ -10,7 +10,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| ConditionVariable | [ConditionVariable example](../apis/conditionvariable.html#conditionvariable-example) | |
+| ConditionVariable | [ConditionVariable example](../apis/rtos-apis.html#conditionvariable-example) | |
 | EventFlags | [EventFlags example](../apis/eventflags.html#eventflags-example) | |
 | IdleLoop | [IdleLoop example](../apis/idle-loop.html#example) |
 | Kernel | [Example: get_ms_count()](../apis/kernel-interface-functions.html#get-ms-count-example)<br> [Example: hooks](../apis/kernel-interface-functions.html#kernel-hooks-example) | |
@@ -33,14 +33,14 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 | API | Examples  | Hello, World |
 | --- | ---  | --- |
-| BufferedSerial | [BufferedSerial example](../apis/bufferedserial.html#bufferedserial-examples) | |
+| BufferedSerial | [BufferedSerial example](../apis/serial-uart-apis.html#bufferedserial-examples) | |
 | UnbufferedSerial | [UnbufferedSerial example](../apis/unbufferedserial.html#unbufferedserial-example) | |
 
 ## SPI APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| QuadSPI (QSPI) | [QuadSPI example](../apis/quadspi-qspi.html#quadspi-example) | |
+| QuadSPI (QSPI) | [QuadSPI example](../apis/spi-apis.html#quadspi-example) | |
 | SPI | | [SPI Hello, World](../apis/spi.html#spi-hello-world) |
 | SPISlave | [SPISlave example](/apis/spislave.html#spislave-example) | |
 
@@ -49,7 +49,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 | API | Examples  | Hello, World |
 | --- | ---  | --- |
-| AnalogIn | [AnalogIn example](../apis/analogin.html#analogin-examples) | [AnalogIn Hello, World](../apis/analogin.html#analogin-hello-world)|
+| AnalogIn | [AnalogIn example](../apis/i-o-apis.html#analogin-examples) | [AnalogIn Hello, World](../apis/i-o-apis.html#analogin-hello-world)|
 | AnalogOut | [AnalogOut example](../apis/analogout.html#analogout-example) | [AnalogIn Hello, World](../apis/analogout.html#analogout-hello-world) |
 | BusIn | | [BusIn Hello, World](../apis/busin.html#busin-hello-world) |
 | BusOut | | [BusOut Hello, World](../apis/busout.html#busout-hello-world) |
@@ -67,7 +67,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| USBAudio | [Sound data example](../apis/usbaudio.html#usbaudio-play-sound-data-example) <br> [Square wave example](../apis/usbaudio.html#usbaudio-square-wave-exampl) <br> [Loopback example](../apis/usbaudio.html#usbaudio-loopback-example) | [Audio player tutorial](../tutorials/mbed-usb-wav-audio-player.html) |
+| USBAudio | [Sound data example](../apis/usb-apis.html#usbaudio-play-sound-data-example) <br> [Square wave example](../apis/usb-apis.html#usbaudio-square-wave-exampl) <br> [Loopback example](../apis/usb-apis.html#usbaudio-loopback-example) | [Audio player tutorial](../apis/usb-wav-audio-player.html) |
 | USBCDC | [USBCDC example](../apis/usbcdc.html#usbcdc-example) | |
 | USBCDC_ECM | [USBCDC_ECM example](../apis/usbcdc-ecm.html) | |
 | USBHID | [USBHID example](../apis/usbhid.html#usbhid-example) | |
@@ -82,7 +82,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| CAN | | [CAN Hello, World](../apis/can.html#can-hello-world) |
+| CAN | | [CAN Hello, World](../apis/other-driver-apis.html#can-hello-world) |
 | Flash IAP | [Flash IAP example](../apis/flash-iap.html#flash-iap-example) | |
 | I2C | | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
@@ -91,10 +91,9 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 | Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
 | Watchdog | [Watchdog example](../apis/watchdog.html) | |
 
-And the following tutorials:
+And the following tutorial:
 
-- [Application flow control](../tutorials/application-flow-control.html)
-- [Alarm](../tutorials/alarm-tutorial.html)
+- [Alarm](../apis/drivers-tutorials.html)
 
 ## Power Platform APIs
 
@@ -124,11 +123,15 @@ And the following tutorials:
 | Time | [Time example](../apis/time.html#time-example) |
 | Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
 
+And the following tutorial:
+
+- [Application flow control](../apis/platform-tutorials.html)
+
 ## Other Platform APIs
 
 | API | Examples |
 | --- | --- |
-| Assert | [Assert example](../apis/assert.html#assert-example) |
+| Assert | [Assert example](../apis/other-platform-apis.html#assert-example) |
 | ATCmdParser | [ATCmdParser example](../apis/atcmdparser.html#atcmdparser-examples) |
 | Callback | [Serial passthrough example](../apis/callback.html#serial-passthrough-example-with-callbacks)<br> [Thread example](../apis/callback.html#thread-example-with-callbacks)<br> [Sonar example](../apis/callback.html#sonar-example) |
 | CircularBuffer | [CircularBuffer example](../apis/circularbuffer.html#circularbuffer-example) |
@@ -155,7 +158,7 @@ And the following tutorials:
 
 | API | Examples |
 | --- | --- |
-| BlockDevice | [BlockDevice example](../apis/blockdevice.html#blockdevice-example) |
+| BlockDevice | [BlockDevice example](../apis/blockdevice-apis.html#blockdevice-example) |
 | BufferedBlockDevice | [BufferedBlockDevice example](../apis/bufferedblockdevice.html#bufferedblockdevice-example) |
 | ChainingBlockDevice | [ChainingBlockDevice example](../apis/chainingblockdevice.html#chainingblockdevice-example) |
 | DataFlashBlockDevice | [DataFlashBlockDevice example](../apis/dataflashblockdevice.html#dataflashblockdevice-example) |
@@ -187,7 +190,7 @@ And the following tutorials:
 | Cellular | [Cellular example](../apis/cellular-api.html#cellular-example-connection-establishment) | |
 | EthInterface | [EthInterface example](../apis/ethernet.html#ethinterface-example) | |
 | MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
-| MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) || Mesh | | [Mesh tutorial](../tutorials/mesh-tutorial.html) <br>  [Light control tutorial](../tutorials/light-control.html) |
+| MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) || Mesh | | [Mesh tutorial](../apis/connectivity-tutorials.html) <br>  [Light control tutorial](../apis/light-control.html) |
 | Network status | [Network status example](../apis/network-status.html#example) | |
 | SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
 | Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
@@ -196,14 +199,14 @@ And the following tutorials:
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| DTLSSocket | [DTLSSocket example](../apis/dtlssocket.html#dtlssocket-example) | |
-| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | [Secure communication tutorial](../tutorials/tls-tutorial.html) |
+| DTLSSocket | [DTLSSocket example](../apis/secure-socket-apis.html#dtlssocket-example) | |
+| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | [Secure communication tutorial](../apis/using-mbed-tls-to-communicate-securely.html) |
 
 ## DNS
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| DNS Resolver | [DNS Resolver example](../apis/dns-resolver.html#dns-resolver-example) | |
+| DNS Resolver | [DNS Resolver example](../apis/dns-apis.html#dns-resolver-example) | |
 
 ## Bluetooth (BLE) APIs
 
@@ -219,7 +222,7 @@ We have placed all of our BLE examples in a single GitHub repository, so althoug
 
 ## LoRa APIs
 
-A [private network tutorial](../tutorials/LoRa-tutorial.html) and [an example for the API](../apis/lorawan-api.html#lorawan-example).
+A [private network tutorial](../apis/LoRa-tutorial.html) and [an example for the API](../apis/lorawaninterface.html#lorawan-example).
 
 
 ## Security APIs
@@ -243,32 +246,33 @@ Each of them comes with complete usage instructions as a readme file in the repo
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
-- [Windows serial driver tutorial](../tutorials/windows-serial-driver.html)
-- [Board to PC communication over USB tutorial](../tutorials/serial-comm.html)
-- [Low memory serial printf example](../tutorials/serial-comm.html#minimal-printf)
+- [Windows serial driver tutorial](../program-setup/windows-serial-driver.html)
+- [Board to PC communication over USB tutorial](../program-setup/serial-communication.html)
+- [Low memory serial printf example](../program-setup/serial-communication.html#minimal-printf)
 
 ## Debugging
 
 These tutorials show you how to install, export a project to and start a debugging session with different IDEs.
 
-### Third party tools
-
-- [Eclipse](../tutorials/eclipse.html).
-- [Keil uVision](../tutorials/keil-uvision.html).
-- [Visual Studio](../tutorials/visual-studio-code.html).
-- [BBC micro:bit, pyOCD and GDB debugging tutorial](../tutorials/debug-microbit.html).
-
 ### Methods
 
-- [Troubleshooting common issues](../tutorials/debugging.html).
-- [Analyzing Mbed OS crash dump tutorial](../tutorials/analyzing-mbed-os-crash-dump.html).
-- [Compile time errors tutorial](../tutorials/compile-time-errors.html).
-- [Debugging using `printf` statements](../tutorials/debugging-using-printf-statements.html).
+- [BBC micro:bit, pyOCD and GDB debugging tutorial](../debug-test/debug-microbit.html).
+- [Troubleshooting common issues](../debug-test/troubleshooting-common-issues.html).
+- [Analyzing Mbed OS crash dump tutorial](../debug-test/analyzing-mbed-os-crash-dump.html).
+- [Compile time errors tutorial](../debug-test/compile-time-errors.html).
+- [Debugging using `printf` statements](../debug-test/debugging-using-printf-statements.html).
 - [Error handling API example](../apis/error-handling.html#error-handling-example)
+
+### Debugging with third party tools
+
+- [Eclipse](../debug-test/eclipse.html).
+- [Keil uVision](../debug-test/keil-uvision.html).
+- [Visual Studio](../debug-test/visual-studio-code.html).
+
 
 ## Bootloader
 
-A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), and [an example bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
+A [tutorial for creating and using a bootloader](../program-setup/creating-and-using-a-bootloader.html), and [an example bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
 
 ## Optimizing
 
@@ -283,7 +287,6 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 <tr>
 <td><a href="../apis/mbed-statistics.html#system-information-example">System information example</a></td>
 <td><a href="../apis/mbed-statistics.html#cpu-statistics-example">CPU statistics example</a></td>
-<td><a href="../reference/bare-metal-example-application.html">Blinky bare metal example</a></td>
 </tr>
 </tbody>
 </table>

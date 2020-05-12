@@ -228,9 +228,7 @@
                         },
                         {
                             "title": "Scheduling tutorials",
-                            "sources": [{
-                                "path": "docs/api/io/flow_control.md"
-                            }, {
+                            "sources": [ {
                                 "path": "docs/api/rtos/events_tutorial.md"
                             }]
                         }
@@ -405,15 +403,7 @@
                     },
                     "sub_chapters": [{
                             "title": "Platform Concepts",
-                            "sources": [{
-                                    "path": "docs/api/power/power_manage.md"
-                                },
-                                {
-                                    "path": "docs/api/memory/runtime_mem_trace.md"
-                                },
-                                {
-                                    "path": "docs/api/memory/runtime_stats.md"
-                                },
+                            "sources": [
                                 {
                                     "path": "docs/api/memory/printf.md"
                                 },
@@ -536,7 +526,21 @@
                                     "path": "docs/api/platform/Span.md"
                                 }
                             ]
-                        }
+                        },
+                        {
+                          "title": "Platform tutorials",
+                        "sources": [{
+                            "path": "docs/api/io/flow_control.md"
+                        },
+                        {
+                                "path": "docs/api/power/power_manage.md"
+                            },
+                            {
+                                "path": "docs/api/memory/runtime_mem_trace.md"
+                            },
+                            {
+                                "path": "docs/api/memory/runtime_stats.md"
+                            }]}
                     ]
                 },
                 {
@@ -832,8 +836,10 @@
                                 },
                                 {
                                     "path": "docs/api/lorawan/intro-to-lora.md"
+                                },
+                                {
+                                    "path": "docs/api/security/tls_tutorial.md"
                                 }
-
                             ]
                         }
                     ]
@@ -862,13 +868,6 @@
                                     "path": "docs/api/security/TLS.md"
                                 }
                             ]
-                        },
-                        {
-                            "title": "Security tutorials",
-                            "intro": {
-                                "path": "docs/api/security/tls_tutorial.md"
-                            },
-                            "sources": []
                         }
                     ]
                 }

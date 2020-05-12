@@ -173,7 +173,7 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BlockDevice](../apis/blockdevice-apis.html.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BlockDevice](../apis/blockdevice-apis.html) | &#10004; | &#10004; (can be manually enabled) |
 | [BufferedBlockDevice](../apis/bufferedblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [ChainingBlockDevice](../apis/chainingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [DataFlashBlockDevice](../apis/dataflashblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
