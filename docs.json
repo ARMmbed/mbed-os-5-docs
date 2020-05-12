@@ -1262,7 +1262,7 @@
                     ]
                 },
                 {
-                    "title": "Porting targets",
+                    "title": "Porting the HAL APIs",
                     "intro": {
                         "path": "docs/porting/target/target.md"
                     },
