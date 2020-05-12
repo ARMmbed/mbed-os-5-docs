@@ -23,25 +23,25 @@
                     "sources": []
                 },
                 {
-                        "title": "Architecture",
-                        "intro": {
-                            "path": "docs/introduction/arch_for_intro.md"
-                        },
-                        "sources": []
+                    "title": "Architecture",
+                    "intro": {
+                        "path": "docs/introduction/arch_for_intro.md"
+                    },
+                    "sources": []
                 },
                 {
-                        "title": "Hardware",
-                        "intro": {
-                            "path": "docs/introduction/hardware.md"
-                        },
-                        "sources": []
+                    "title": "Hardware",
+                    "intro": {
+                        "path": "docs/introduction/hardware.md"
+                    },
+                    "sources": []
                 },
                 {
-                        "title": "Tools",
-                        "intro": {
-                            "path": "docs/introduction/tools.md"
-                        },
-                        "sources": []
+                    "title": "Tools",
+                    "intro": {
+                        "path": "docs/introduction/tools.md"
+                    },
+                    "sources": []
                 },
                 {
                     "title": "Versions and releases",
@@ -228,7 +228,7 @@
                         },
                         {
                             "title": "Scheduling tutorials",
-                            "sources": [ {
+                            "sources": [{
                                 "path": "docs/api/rtos/events_tutorial.md"
                             }]
                         }
@@ -403,8 +403,7 @@
                     },
                     "sub_chapters": [{
                             "title": "Platform Concepts",
-                            "sources": [
-                                {
+                            "sources": [{
                                     "path": "docs/api/memory/printf.md"
                                 },
                                 {
@@ -528,19 +527,21 @@
                             ]
                         },
                         {
-                          "title": "Platform tutorials",
-                        "sources": [{
-                            "path": "docs/api/io/flow_control.md"
-                        },
-                        {
-                                "path": "docs/api/power/power_manage.md"
-                            },
-                            {
-                                "path": "docs/api/memory/runtime_mem_trace.md"
-                            },
-                            {
-                                "path": "docs/api/memory/runtime_stats.md"
-                            }]}
+                            "title": "Platform tutorials",
+                            "sources": [{
+                                    "path": "docs/api/io/flow_control.md"
+                                },
+                                {
+                                    "path": "docs/api/power/power_manage.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/runtime_mem_trace.md"
+                                },
+                                {
+                                    "path": "docs/api/memory/runtime_stats.md"
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
@@ -649,11 +650,10 @@
                             "intro": {
                                 "path": "docs/api/connectivity-arch.md"
                             },
-                            "sources": [
-                              {
-                                  "path": "docs/api/networking-arch.md"
-                              },
-                              {
+                            "sources": [{
+                                    "path": "docs/api/networking-arch.md"
+                                },
+                                {
                                     "path": "docs/api/networkinterfaces/cellular-arch.md"
                                 },
                                 {
@@ -850,26 +850,25 @@
                         "path": "docs/api/security/security.md"
                     },
                     "sub_chapters": [{
-                            "title": "Security APIs",
-                            "sources": [{
-                                    "path": "docs/api/security/Devicekey.md"
-                                },
-                                {
-                                    "path": "docs/api/security/crypto.md"
-                                },
-                                {
-                                    "path": "docs/api/security/psa_attestation.md"
-                                },
-                                {
-                                    "path": "docs/api/security/psa_lifecycle.md"
-                                },
+                        "title": "Security APIs",
+                        "sources": [{
+                                "path": "docs/api/security/Devicekey.md"
+                            },
+                            {
+                                "path": "docs/api/security/crypto.md"
+                            },
+                            {
+                                "path": "docs/api/security/psa_attestation.md"
+                            },
+                            {
+                                "path": "docs/api/security/psa_lifecycle.md"
+                            },
 
-                                {
-                                    "path": "docs/api/security/TLS.md"
-                                }
-                            ]
-                        }
-                    ]
+                            {
+                                "path": "docs/api/security/TLS.md"
+                            }
+                        ]
+                    }]
                 }
             ]
         },
@@ -1082,41 +1081,49 @@
                     "intro": {
                         "path": "docs/tools/debug/debug_intro.md"
                     },
-                    "sources": [{
-                            "path": "docs/tools/debug/debugging_mbed_os_apps.md"
+                    "sub_chapters": [{
+                            "title": "Methods",
+                            "sources": [{
+                                    "path": "docs/tools/debug/debugging_mbed_os_apps.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/local_debugging_toolchain.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/memap.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/DAP.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/common_issues.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/debug_fault_exception.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/run_and_compile_time_errors.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/debug_with_printf.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/debug_microbit.md"
+                                }
+                            ]
                         },
                         {
-                            "path": "docs/tools/debug/local_debugging_toolchain.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/memap.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/DAP.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/common_issues.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/debug_fault_exception.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/run_and_compile_time_errors.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/debug_with_printf.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/eclipse_pyocd.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/keil_uvision.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/vs_code.md"
-                        },
-                        {
-                            "path": "docs/tools/debug/debug_microbit.md"
+                            "title": "Third party tools",
+                            "sources": [{
+                                    "path": "docs/tools/debug/eclipse_pyocd.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/keil_uvision.md"
+                                },
+                                {
+                                    "path": "docs/tools/debug/vs_code.md"
+                                }
+                            ]
                         }
                     ]
                 },
