@@ -1,4 +1,4 @@
-<h1 id="target-port">Targets</h1>
+# HAL APIs
 
 Adding a new microcontroller to Arm Mbed OS depends on CMSIS-CORE and CMSIS-Pack. Please make sure that the microcontroller already has these available.
 
