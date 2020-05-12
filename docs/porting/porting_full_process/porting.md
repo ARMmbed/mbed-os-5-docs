@@ -150,7 +150,7 @@ To include the new target support:
 
 1. You can use the default values for all other settings.
 
-# Porting HAL modules
+# Porting HAL APIs
 
 ## Recommended porting order
 
