@@ -134,7 +134,6 @@
     "reference/6LoWPAN-ND-tech.html": "apis/6LoWPAN-ND-tech.html",
     "reference/thread-tech.html": "apis/connectivity.html",
     "apis/thread-mesh-questions-and-answers.html": "apis/connectivity.html",
-    "tutorials/optimizing.html": "apis/printf-and-reducing-memory.html",
     "tutorials/optimizing.html": "apis/platform-concepts.html",
     "reference/configuration.html": "program-setup/advanced-configuration.html",
     "reference/lorawan-configuration.html": "apis/lorawan-configuration.html",
@@ -162,5 +161,5 @@
     "tools/about-the-exporters.html": "build-tools/about-the-exporters.html",
     "tools/debug-builds-cli.html": "build-tools/debug-builds-cli.html",
     "tools/troubleshooting.html": "build-tools/troubleshoot.html",
-    "apis/bufferedserial.html" : "apis/serial-uart-apis.html"
+    "apis/bufferedserial.html": "apis/serial-uart-apis.html"
 }
