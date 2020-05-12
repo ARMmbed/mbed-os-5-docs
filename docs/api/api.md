@@ -14,7 +14,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Conditionvariable](../apis/conditionvariable.html) | &#10004; | |
+| [ConditionVariable](../apis/rtos-apis.html) | &#10004; | |
 | [EventFlags](../apis/eventflags.html) | &#10004; | &#10004; |
 | [Idle loop](../apis/idle-loop.html) | &#10004; |   |
 | [Kernel interface functions](../apis/kernel-interface-functions.html) | &#10004; | `get_ms_count` only |
@@ -23,7 +23,7 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 | [Queue](../apis/queue.html) | &#10004; | |
 | [Semaphore](../apis/semaphore.html) | &#10004; | &#10004;  |
 | [ThisThread](../apis/thisthread.html) | &#10004; | &#10004;  |
-| [Thread](../apis/rtos-apis.html) | &#10004; | |
+| [Thread](../apis/thread.html) | &#10004; | |
 
 ### Event handling
 
@@ -39,14 +39,14 @@ The Mbed OS RTOS capabilities include managing objects such as threads, synchron
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BufferedSerial](../apis/bufferedserial.html) | &#10004; | &#10004;  |
+| [BufferedSerial](../apis/serial-uart-apis.html) | &#10004; | &#10004;  |
 | [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004;  |
 
 ### SPI drivers
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [QuadSPI (QSPI)](../apis/quadspi-qspi.html) | &#10004; | &#10004; |
+| [QuadSPI (QSPI)](../apis/spi-apis.html) | &#10004; | &#10004; |
 | [SPI](../apis/spi.html) | &#10004; | &#10004;  |
 | [SPISlave](../apis/spislave.html) | &#10004; | &#10004;  |
 
@@ -77,7 +77,7 @@ The Mbed OS classes providing USB peripheral functionality, also known as USB co
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [USBAudio](../apis/usbaudio.html) | &#10004; | &#10004;  |
+| [USBAudio](../apis/usb-apis.html) | &#10004; | &#10004;  |
 | [USBCDC](../apis/usbcdc.html) | &#10004; | &#10004;  |
 | [USBCDC_ECM](../apis/usbcdc-ecm.html) | &#10004; |  |
 | [USBHID](../apis/ubshid.html) | &#10004; | &#10004;  |
@@ -86,7 +86,7 @@ The Mbed OS classes providing USB peripheral functionality, also known as USB co
 | [USBMouse](../apis/usbmouse.html) | &#10004; | &#10004;  |
 | [USBMouseKeyboard](../apis/usbmousekeyboard.html) | &#10004; | &#10004;  |
 | [USBMSD](../apis/usbmsd.html) | &#10004; | &#10004; |
-| [USBSerial](../apis/usb-apis.html) | &#10004; | &#10004;  |
+| [USBSerial](../apis/usbserial.html) | &#10004; | &#10004;  |
 
 ### Other drivers
 
@@ -94,7 +94,7 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [CAN](../apis/can.html)| &#10004; | &#10004;  |
+| [CAN](../apis/other-driver-apis.html)| &#10004; | &#10004;  |
 | [Flash IAP](../apis/flash-iap.html) | &#10004; | &#10004;  |
 | [I2C](../apis/i2c.html) | &#10004; | &#10004;  |
 | [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004;  |
@@ -111,11 +111,11 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [DeepSleepLock](../apis/deepsleeplock.html) | &#10004; | &#10004;  |
+| [DeepSleepLock](../apis/power-apis.html) | &#10004; | &#10004;  |
 | [LowPowerTicker](../apis/lowpowerticker.html) | &#10004; | &#10004;  |
 | [LowPowerTimeout](../apis/lowpowertimeout.html) | &#10004; | &#10004;  |
 | [LowPowerTimer](../apis/lowpowertimer.html) | &#10004; | &#10004;  |
-| [Power management (sleep)](../apis/power-apis.html) | &#10004; | &#10004; |
+| [Power management (sleep)](../apis/power-management-sleep.html) | &#10004; | &#10004; |
 
 ### Memory
 
@@ -123,7 +123,7 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [mbed_mem_trace (Memory tracing)](../apis/memory-tracing.html) | &#10004; | &#10004;  |
+| [mbed_mem_trace (Memory tracing)](../apis/memory-apis.html) | &#10004; | &#10004;  |
 | [mpug_mgmt (MPU management)](../apis/mpu-management.html) | &#10004; | &#10004;  |
 | [MemoryPool](../apis/memorypool.html) | &#10004; |   |
 | [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004;  |
@@ -132,8 +132,8 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [RTC](../apis/rtc.html) | &#10004; | &#10004;  |
-| [Ticker](../apis/driver-apis.html) | &#10004; | &#10004;  |
+| [RTC](../apis/time-apis.html) | &#10004; | &#10004;  |
+| [Ticker](../apis/ticker.html) | &#10004; | &#10004;  |
 | [Time](../apis/time.html) | &#10004; | &#10004;  |
 | [Timer](../apis/timer.html) | &#10004; | &#10004;  |
 | [Wait](../apis/wait.html) | &#10004; | &#10004;  |
@@ -143,9 +143,9 @@ The drivers are digital interfaces that allow your board to interface with a com
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Assert](../apis/assert.html) | &#10004; | &#10004;  |
+| [Assert](../apis/other-platform-apis.html) | &#10004; | &#10004;  |
 | [ATCmdParser](../apis/atcmdparser.html) | &#10004; | &#10004;  |
-| [Callback](../apis/util-apis.html) | &#10004; | &#10004; |
+| [Callback](../apis/callback.html) | &#10004; | &#10004; |
 | [CircularBuffer](../apis/circularbuffer.html) | &#10004; | &#10004;  |
 | [CriticalSectionLock](../apis/criticalsectionlock.html) | &#10004; | &#10004;  |
 | [Debug](../apis/debug.html) | &#10004; | &#10004;  |
@@ -167,11 +167,11 @@ The data storage APIs include file system APIs, for file system operations, and 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Dir](../apis/dir.html) | &#10004; | &#10004; (can be manually enabled)|
+| [Dir](../apis/file-system-apis.html) | &#10004; | &#10004; (can be manually enabled)|
 | [FATFileSystem](../apis/fatfilesystem.html) | &#10004; | &#10004; (can be manually enabled) |
 | [File](../apis/file.html) | &#10004; | &#10004; (can be manually enabled) |
 | [FileSystem](../apis/filesystem.html) | &#10004; | &#10004; (can be manually enabled) |
-| [KVStore](../apis/data-apis) | &#10004; | &#10004; (can be manually enabled) |
+| [KVStore](../apis/kvstore.html) | &#10004; | &#10004; (can be manually enabled) |
 | [LittleFileSystem](../apis/littlefilesystem.html) | &#10004; |&#10004; (can be manually enabled) |
 | [Static Global API](../apis/static-global-api.html) | &#10004; | &#10004; (can be manually enabled) |
 
@@ -179,7 +179,7 @@ The data storage APIs include file system APIs, for file system operations, and 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BlockDevice](../apis/blockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BlockDevice](../apis/blockdevice-apis.html.html) | &#10004; | &#10004; (can be manually enabled) |
 | [BufferedBlockDevice](../apis/bufferedblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [ChainingBlockDevice](../apis/chainingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [DataFlashBlockDevice](../apis/dataflashblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
@@ -197,7 +197,7 @@ The data storage APIs include file system APIs, for file system operations, and 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [PSA internal storage](../apis/psa-internal-storage.html) | &#10004; |  |
+| [PSA internal storage](../apis/psa-compliant-apis.html) | &#10004; |  |
 | [PSA protected storage](../apis/psa-protected-storage.html) | &#10004; |  |
 
 ## Connectivity
@@ -234,8 +234,8 @@ Network interfaces are the application level APIs where users choose the driver,
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [DTLSSocket](../apis/dtlssocket.html) | &#10004; |  |
-| [TLSSocket](../apis/secure-socket-apis.html) | &#10004; | |
+| [DTLSSocket](../apis/secure-socket-apis.html) | &#10004; |  |
+| [TLSSocket](../apis/tlssocket.html) | &#10004; | |
 
 ### DNS
 
@@ -283,9 +283,9 @@ With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can in
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [DeviceKey](../apis/devicekey.html) | &#10004; | &#10004; (can be manually enabled) |
+| [DeviceKey](../apis/security-apis.html) | &#10004; | &#10004; (can be manually enabled) |
 | [Mbed Crypto](../apis/mbed-crypto.html) | &#10004; |&#10004; (can be manually enabled) |
-| [PSA initial attestation](../apis/security-apis.html) | &#10004; | |
+| [PSA initial attestation](../apis/psa-initial-attestation.html) | &#10004; | |
 | [PSA lifecycle](../apis/psa-lifecycle.html) | &#10004; |  |
 | [TLS](../apis/tls.html) | &#10004; | &#10004; (can be manually enabled) |
 
