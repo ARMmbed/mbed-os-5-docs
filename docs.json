@@ -245,11 +245,11 @@
                             "sources": []
                         },
                         {
-                            "title": "USB architecture",
-                            "intro": {
+                            "title": "Drivers architecture",
+                            "sources": [{
                                 "path": "docs/api/usb/usb-arch.md"
                             },
-                            "sources": [{
+                            {
                                 "path": "docs/api/usb/usb_component.md"
                             }]
                         },
@@ -905,11 +905,22 @@
                         {
                             "path": "docs/program-setup/project-structure.md"
                         },
+
+                        {
+                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                        }
+                    ]
+                },
+                {
+                    "title": "Build profiles and rules",
+                    "sources": [{
+                            "path": "docs/tools/CLI/build_profiles.md"
+                        },
                         {
                             "path": "docs/program-setup/build_rules.md"
                         },
                         {
-                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                            "path": "docs/tools/CLI/debug_builds_cli.md"
                         }
                     ]
                 },
@@ -1046,10 +1057,7 @@
                         {
                             "title": "Build profiles",
                             "sources": [{
-                                    "path": "docs/tools/CLI/build_profiles.md"
-                                },
-                                {
-                                    "path": "docs/tools/CLI/debug_builds_cli.md"
+                                    "path": "docs/tools/CLI/build_profiles_elsewhere.md"
                                 }
                             ]
                         },
