@@ -45,7 +45,7 @@ The steps are as follows:
     1. Locate the API and the library where it is declared in `mbed-os/`.
     1. In the library folder, find the library's name in `mbed_lib.json`. You will need it for the next step.
 
-        For example: `events/mbed_lib.json`:
+        For example: `mbed-os/events/mbed_lib.json`:
         ```json
         {
             "name": "events",
