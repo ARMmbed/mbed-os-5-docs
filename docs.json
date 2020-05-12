@@ -912,6 +912,16 @@
                     ]
                 },
                 {
+                    "title": "Serial communication",
+                    "sources": [{
+                            "path": "docs/program-setup/serial/serial_communication.md"
+                        },
+                        {
+                            "path": "docs/program-setup/serial/serial_driver.md"
+                        }
+                    ]
+                },
+                {
                     "title": "Build profiles and rules",
                     "sources": [{
                             "path": "docs/tools/CLI/build_profiles.md"
@@ -925,21 +935,11 @@
                     ]
                 },
                 {
-                    "title": "Serial communication",
-                    "sources": [{
-                            "path": "docs/program-setup/serial/serial_communication.md"
-                        },
-                        {
-                            "path": "docs/program-setup/serial/serial_driver.md"
-                        }
-                    ]
-                },
-                {
                     "title": "Advanced configuration",
-                    "intro": {
+                    "sources": [{
                         "path": "docs/program-setup/configuration.md"
                     },
-                    "sources": [{
+                    {
                             "path": "docs/program-setup/mbed_targets.md"
                         },
                         {

@@ -1,13 +1,13 @@
 # The configuration system
 
-The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, customizes compile time configuration parameters. Each library may define a number of configuration parameters in its `mbed_lib.json`. `mbed_app.json` may override the values of these configuration parameters. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
+The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, customizes compile time configuration parameters. Each library may define a number of configuration parameters in its `mbed_lib.json`. A program-level `mbed_app.json` may override the values of these configuration parameters. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
 
 - The sampling period for a data acquisition application.
 - The default stack size for a newly created OS thread.
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros.
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../program-setup/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros.
 
 Here is a sample JSON file:
 
@@ -27,9 +27,9 @@ If you use the example JSON snippet above, you can see the macro `MBED_CONF_CELL
 
 <span class="notes">**Note:** Throughout this document, "library" means any reusable piece of code within its own directory.</span>
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](../reference/adding-and-configuring-targets.html).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](../program-setup/adding-and-configuring-targets.html).</span>
 
-<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](../tools/build-profiles.html).</span>
+<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](../program-setup/build-profiles-and-rules.html).</span>
 
 ## Examining available configuration parameters
 

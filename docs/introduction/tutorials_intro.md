@@ -195,14 +195,14 @@ And the following tutorial:
 | SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
 | Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
 
-## Secure socket
+## Secure socket APIs
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
 | DTLSSocket | [DTLSSocket example](../apis/secure-socket-apis.html#dtlssocket-example) | |
 | TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | [Secure communication tutorial](../apis/using-mbed-tls-to-communicate-securely.html) |
 
-## DNS
+## DNS API
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
