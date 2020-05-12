@@ -6,13 +6,21 @@ This guide shows how to create a bare metal profile application:
 
 ## Creating a bare metal application
 
+To demonstrate how to create a bare metal application, we use an example that prints text in regular intervals using the `EventQueue` class:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
+
+The steps are as follows:
+
 1. Create a new Mbed application and enter its directory:
 
     ```
     mbed new example_app && cd example_app
     ```
 
-    This contains an empty application with Mbed OS (`mbed-os/`) pre-fetched.
+    This contains an empty application with Mbed OS (`mbed-os/`) fetched.
+
+1. Create a `main.cpp` containing the `EventQueue` example code snippet above.
 
 1. Open `mbed_app.json` and replace it with the following content:
 
@@ -32,9 +40,9 @@ This guide shows how to create a bare metal profile application:
 
     For a list of default and supported APIs, [please see our full API list](bare_metal.md#features).
 
-1. To add an API - in this example, the `EventQueue` class:
+1. Add dependencies - in this example, we need to add the library that contains the `EventQueue` class:
 
-    1. Locate the library you want to use in `mbed-os/`.
+    1. Locate the API and the library where it is declared in `mbed-os/`.
     1. In the library folder, find the library's name in `mbed_lib.json`. You will need it for the next step.
 
         For example: `events/mbed_lib.json`:
@@ -53,20 +61,28 @@ This guide shows how to create a bare metal profile application:
 
         ```json
         {
-            "requires": [
-                "bare-metal",
-                "events"
-            ]
+            "requires": ["bare-metal", "events"],
+            "target_overrides": {
+                "*": {
+                    "target.c_lib": "small"
+                }
+            }
         }
         ```
 
-1. Write the application using the libraries you added.
-
-    [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-baremetal-eventqueue-blinky/)](https://github.com/ARMmbed/mbed-os-example-baremetal-eventqueue-blinky/blob/master/main.cpp)
-
-1. With a supported board connected to your computer, compile and flash your application:
+1. With a supported board connected to your computer, compile and run your application:
     ```
-    mbed compile -t <TOOLCHAIN> -m <TARGET> --flash
+    mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
     ```
 
-    In the example above, the on-board LED keeps blinking.
+    This opens a serial terminal once the example is compiled and flashed. The following output is expected:
+    ```
+    called immediately
+    called every 1 seconds
+    called in 2 seconds
+    called every 1 seconds
+    called every 1 seconds
+    called every 1 seconds
+    ```
+
+    To exit the serial terminal, press Ctrl + C.
