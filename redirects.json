@@ -22,6 +22,11 @@
   "mbed-os-pelion/stage-3-prototype.html" : "mbed-os-pelion/going-to-production.html",
   "mbed-os-pelion/stage-4-pilot.html" : "mbed-os-pelion/going-to-production.html",
   "mbed-os-pelion/stage-5-production.html" : "mbed-os-pelion/going-to-production.html",
-  "mbed-os-pelion/what-s-next.html" : "mbed-os-pelion/going-to-production.html"
+  "mbed-os-pelion/what-s-next.html" : "mbed-os-pelion/going-to-production.html",
+  "reference/mbed-os-bare-metal.html": "bare-metal/index.html",
+  "tutorials/migrating-to-mbed-os-5.html": "bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html",
+  "reference/bare-metal-example-application.html": "bare-metal/bare-metal-example.html",
+  "reference/bare-metal-apis.html": "bare-metal/index.html"
+
 
 }

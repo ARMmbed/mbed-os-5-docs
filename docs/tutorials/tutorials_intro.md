@@ -234,11 +234,13 @@ A [tutorial for creating and using a bootloader](../tutorials/bootloader.html), 
 <tr>
 <td><a href="../apis/mbed-statistics.html#system-information-example">System information example</a></td>
 <td><a href="../apis/mbed-statistics.html#cpu-statistics-example">CPU statistics example</a></td>
-<td><a href="../reference/bare-metal-example-application.html">Blinky bare metal example</a></td>
+<td><a href="../bare-metal/bare-metal-example.html">Blinky bare metal example</a></td>
 </tr>
 </tbody>
 </table>
 
-## Migrating to Mbed OS 5
+## Migrating
 
-[Mbed OS 2 to 5 migration tutorial](../tutorials/migrating-to-mbed-os-5.html)
+<!--If you are moving from Mbed OS 5 to Mbed OS 6, please see [the list of deprecated APIs](../apis/index.html).-->
+
+If you are moving from Mbed 2 to Mbed OS 6 bare metal, [please see the bare metal documentation](../bare-metal/index.html).
