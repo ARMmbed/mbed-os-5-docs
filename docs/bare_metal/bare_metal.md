@@ -6,7 +6,7 @@ The bare metal profile implements a subset of Mbed OS's RTOS APIs that are usefu
 
 ## Features
 
-A full breakdown of supported APIs will be released with the official Mbed OS 6.
+A full breakdown of supported APIs will be published with the official Mbed OS 6 release.
 
 <span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 

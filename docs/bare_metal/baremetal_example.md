@@ -11,5 +11,3 @@ $ mbed import https://github.com/ARMmbed/mbed-os-example-blinky-baremetal
 If you're working with the Mbed Online Compiler, click **Import into Mbed IDE**:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-blinky-baremetal/)](https://github.com/armmbed/mbed-os-example-blinky-baremetal/blob/master/main.cpp)
-
-To create your own bare metal application, please [see Using the bare metal profile](../bare-metal/using-the-bare-metal-profile.html).
