@@ -4,7 +4,7 @@
 
 The BlockDevice API provides an interface for access to block-based storage. You can use a block device to back a full [file system](../porting/porting-storage.html#contributing-filesystem) or write to it directly.
 
-The most common types of block-based storage are different forms of flash, but the BlockDevice API can support many different forms of storage, such as SD cards, spinning disks, heap backed storage and so on.
+The most common types of block-based storage are different forms of flash, but the BlockDevice API can support many different forms of storage, such as SD cards, spinning disks and heap backed storage.
 
 ## Block device operations
 

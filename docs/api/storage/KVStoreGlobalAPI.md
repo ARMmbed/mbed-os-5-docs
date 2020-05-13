@@ -1,4 +1,4 @@
-# Static Global API
+<h1 id="static-global-api">kvstore_global_api (Static Global API)</h1>
 
 Applications should use the KVStore static API to access the instances of KVStore components that the selected configuration allocates.
 

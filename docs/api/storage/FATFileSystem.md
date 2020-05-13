@@ -12,7 +12,7 @@ For additional information, please see the [storage overview page](storage.html#
 
 ## Use cases
 
-The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications using FAT in conjunction with an SD card.
+The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications use FAT in conjunction with an SD card.
 
 The first step to using the FAT file system is formatting storage with FAT. You can do this on a PC with the native format command or on Mbed OS with the `format` function.
 

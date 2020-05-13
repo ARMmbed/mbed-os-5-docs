@@ -167,8 +167,8 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 | [File](../apis/file.html) | &#10004; | &#10004; (can be manually enabled) |
 | [FileSystem](../apis/filesystem.html) | &#10004; | &#10004; (can be manually enabled) |
 | [KVStore](../apis/kvstore.html) | &#10004; | &#10004; (can be manually enabled) |
+| [kvstore_global_api (Static Global API)](../apis/static-global-api.html) | &#10004; | &#10004; (can be manually enabled) |
 | [LittleFileSystem](../apis/littlefilesystem.html) | &#10004; |&#10004; (can be manually enabled) |
-| [Static Global API](../apis/static-global-api.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ### BlockDevice (block-based storage) APIs
 
