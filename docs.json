@@ -669,18 +669,11 @@
                         "path": "docs/api/connectivity_list.md"
                     },
                     "sub_chapters": [{
-                            "title": "Choosing a connectivity method",
+                            "title": "Choosing a connectivity type",
                             "intro": {
                                 "path": "docs/api/connectivity-arch.md"
                             },
-                            "source": []
-                        },
-                        {
-                            "title": "Connectivity architecture",
-                            "intro": {
-                                "path": "docs/api/networking-arch.md"
-                            },
-                            "sources": [{
+                            "source": [{
                                     "path": "docs/api/bluetooth/bluetooth.md"
                                 },
                                 {
@@ -703,6 +696,19 @@
                                 },
                                 {
                                     "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Connectivity architecture",
+                            "intro": {
+                                "path": "docs/api/networking-arch.md"
+                            },
+                            "sources": [{
+                                    "path": "docs/api/networksocket/networksocket.md"
+                                },
+                                {
+                                    "path": "docs/api/networkinterfaces/networkinterface.md"
                                 },
                                 {
                                     "path": "docs/api/security/securesocket-arch.md"
@@ -755,9 +761,7 @@
                         },
                         {
                             "title": "Network socket APIs",
-                            "intro": {
-                                "path": "docs/api/networksocket/networksocket.md"
-                            },
+
                             "sources": [{
                                     "path": "docs/api/networksocket/CellularNonIPSocket.md"
                                 },
@@ -779,9 +783,7 @@
                         },
                         {
                             "title": "Network interface APIs",
-                            "intro": {
-                                "path": "docs/api/networkinterfaces/networkinterface.md"
-                            },
+
                             "sources": [{
                                     "path": "docs/api/networkinterfaces/CellularInterface.md"
                                 },

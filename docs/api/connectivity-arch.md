@@ -1,4 +1,4 @@
-# Choosing a connectivity method
+# Choosing a connectivity type
 
 ## Supported connectivity technologies
 
