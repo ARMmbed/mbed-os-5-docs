@@ -139,7 +139,7 @@ Avoid defining rules that would cross library boundaries because these can lead 
 
 Each line in the `.mbedignore` file is a pattern for matching files. No files that matches any pattern found in any `.mbedignore` file are included when building or exporting.
 
-The following wildcards are accepted:
+The following wildcards are accepted anywhere in a path:
 
 |Pattern | Meaning|
 |--------|--------|
@@ -154,6 +154,8 @@ The file is parsed with Python's [fnmatch](https://docs.python.org/2/library/fnm
 - A line cannot start with `.` or `/` (because of the previous rule).
 
 The globbing functionality is not used, so you cannot recursively match a specific file pattern. Instead, you need to define a rule per directory.
+
+A line that starts with an exclamation mark creates an unignore rule that enables building of specific files or folders that are ignored by another rule.  Ignore rules and unignore rules take precedence over each other according to the length of the path given in the rule -- the rule that is the longer string relative to the repository root will take precedence.
 
 ### Example
 
@@ -172,3 +174,15 @@ source/obsolete/*.c
 source/obsolete/*.h
 source/obsolete/second_level/*.c
 ```
+
+### Unignore Example
+
+Suppose an .mbedignore in the root folder has this:
+
+```
+obsolete/*
+!obsolete/wait_i_still_need_this/*
+obsolete/wait_i_still_need_this/not_this_one/*
+```
+
+This ignore file would ignore everything under `obsolete/` except files in `obsolete/wait_i_still_need_this/`, but would ignore files in `obsolete/wait_i_still_need_this/not_this_one/`.
