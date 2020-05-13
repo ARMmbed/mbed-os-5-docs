@@ -189,10 +189,7 @@ And the following tutorial:
 | --- | --- | --- |
 | Cellular | [Cellular example](../apis/cellular-api.html#cellular-example-connection-establishment) | |
 | EthInterface | [EthInterface example](../apis/ethernet.html#ethinterface-example) | |
-| MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
-| MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) || Mesh | | [Mesh tutorial](../apis/connectivity-tutorials.html) <br>  [Light control tutorial](../apis/light-control.html) |
 | Network status | [Network status example](../apis/network-status.html#example) | |
-| SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
 | Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
 
 ## Secure socket APIs
@@ -216,8 +213,11 @@ We have placed all of our BLE examples in a single GitHub repository, so althoug
 
 | API | Examples |
 | --- | --- |
+| MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
+| MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) || Mesh | | [Mesh tutorial](../apis/connectivity-tutorials.html) <br>  [Light control tutorial](../apis/light-control.html) |
 | NFCController | [NFCController example](../apis/nfccontroller.html#nfccontroller-example) |
 | NFCEEPROM | [NFCEEPROM example](../apis/nfc-eeprom.html#nfceeprom-example) |
+| SimpleMessageParser | [SimpleMessageParser example](../apis/simplemessageparser.html#simplemessageparser-example) |
 
 
 ## LoRa APIs
