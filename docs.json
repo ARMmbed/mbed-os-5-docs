@@ -744,7 +744,7 @@
                             ]
                         },
                         {
-                            "title": "Socket APIs",
+                            "title": "Network socket APIs",
                             "intro": {
                                 "path": "docs/api/networksocket/networksocket.md"
                             },

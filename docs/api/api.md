@@ -54,7 +54,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ### Input/Output drivers
 
-Input/Output APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.
+<!--Input/Output APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -199,7 +199,7 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 
 ### Network socket
 
-Socket APIs include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
+<!--Socket APIs include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
