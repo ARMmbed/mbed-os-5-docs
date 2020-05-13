@@ -45,6 +45,25 @@
             ]
         },
         {
+            "title": "Mbed OS bare metal profile",
+            "description": "",
+            "slug": "bare-metal",
+            "type": "markdown",
+            "sources": [{
+                    "path": "docs/bare_metal/bare_metal.md"
+                },
+                {
+                    "path": "docs/bare_metal/baremetal_example.md"
+                },
+                {
+                    "path": "docs/bare_metal/c_small_libs.md"
+                },
+                {
+                    "path": "docs/bare_metal/mbed2_porting.md"
+                }
+            ]
+        },
+        {
             "title": "Quick start",
             "description": "Guide to getting started using Mbed OS",
             "slug": "quick-start",
@@ -697,35 +716,6 @@
                     ]
                 },
                 {
-                    "title": "Mbed OS bare metal",
-                    "sub_chapters": [{
-                            "title": "Introduction",
-                            "intro": {
-                                "path": "docs/reference/bare_metal/bare_metal.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Bare metal APIs",
-                            "sources": [{
-                                "path": "docs/reference/bare_metal/bare_metal_api.md"
-                            }]
-                        },
-                        {
-                            "title": "Bare metal example application",
-                            "sources": [{
-                                "path": "docs/reference/bare_metal/baremetal_example.md"
-                            }]
-                        },
-                        {
-                            "title": "Using small C libraries",
-                            "sources": [{
-                                "path": "docs/program-setup/bare_metal/c_small_libs.md"
-                            }]
-                        }
-                    ]
-                },
-                {
                     "title": "Project structures and configuration",
                     "sub_chapters": [{
                             "title": "Project structure",
@@ -1066,13 +1056,6 @@
                             "path": "docs/tutorials/optimize/power/power_manage.md"
                         }
                     ]
-                },
-                {
-                    "title": "Migrating to Mbed OS 5",
-                    "intro": {
-                        "path": "docs/tutorials/migrate-from-mbed-os-2-to-5.md"
-                    },
-                    "sources": []
                 }
             ],
             "tags": [
