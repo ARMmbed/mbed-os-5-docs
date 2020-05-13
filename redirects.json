@@ -1,6 +1,6 @@
 {
     "reference/mesh-tech.html": "reference/6LoWPAN-ND-tech.html",
-    "tools/developing-arm-mbed-cli.html": "tools/developing-mbed-cli.html",
+    "tools/developing-arm-mbed-cli.html": "build-tools/mbed-cli.html",
     "tools/windows.html": "tools/installation-and-setup.html",
     "tools/macos.html": "tools/installation-and-setup.html",
     "tools/linux.html": "tools/manual-installation.html",
@@ -119,7 +119,7 @@
     "apis/storage.html": "apis/data-storage.html",
     "tutorials/mesh-tutorial.html": "apis/connectivity-tutorials.html",
     "tutorials/LoRa-tutorial.html": "apis/LoRa-tutorial.html",
-    "reference/usb-device-stack.html": "apis/usb-architecture.html",
+    "reference/usb-device-stack.html": "apis/drivers-architecture.html",
     "reference/ethernet-technology.html": "apis/ethernet-technology.html",
     "reference/wlan-technology.html": "apis/wlan-technology.html",
     "reference/configuration-ble.html": "apis/configuration-ble.html",
@@ -134,7 +134,7 @@
     "reference/6LoWPAN-ND-tech.html": "apis/6LoWPAN-ND-tech.html",
     "reference/thread-tech.html": "apis/connectivity.html",
     "apis/thread-mesh-questions-and-answers.html": "apis/connectivity.html",
-    "tutorials/optimizing.html": "apis/platform-concepts.html",
+    "tutorials/optimizing.html": "apis/platform-tutorials.html",
     "reference/configuration.html": "program-setup/advanced-configuration.html",
     "reference/lorawan-configuration.html": "apis/lorawan-configuration.html",
     "apis/loraradio-api.html": "apis/loraradio.html",
@@ -154,7 +154,7 @@
     "tools/forking-a-repository.html": "build-tools/forking-a-repository.html",
     "tools/publishing-code.html": "build-tools/publishing-code.html",
     "tools/source-control.html": "build-tools/source-control.html",
-    "tools/collab-online-comp.html": "build-tools/collaborative-work.html",
+    "tools/collab-online-comp.html": "build-tools/collab-online-comp.html",
     "tools/keyboard-shortcuts.html": "build-tools/the-online-compiler-reference.html",
     "tools/testing.html": "debug-test/test-tools.html",
     "tools/exporting.html": "build-tools/third-party-build-tools.html",
@@ -162,5 +162,9 @@
     "tools/debug-builds-cli.html": "build-tools/debug-builds-cli.html",
     "tools/troubleshooting.html": "build-tools/troubleshoot.html",
     "apis/bufferedserial.html": "apis/serial-uart-apis.html",
-    "porting/porting-targets.html" : "apis/porting-the-hal-apis.html"
+    "porting/porting-targets.html" : "apis/porting-the-hal-apis.html",
+    "tools/build-profiles.html" : "program-setup/build-profiles-and-rules.html",
+    "tools/debug-builds-cli.html" : "program-setup/debug-builds-cli.html",
+    "reference/mbed-os-build-rules.html" : "program-setup/build-rules.html",
+    "tools/utest-asynchronous-c-test-harness.html" : "debug-test/utest-asynchronous-c-test-harness.html"
 }
