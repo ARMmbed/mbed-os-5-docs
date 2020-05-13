@@ -360,13 +360,13 @@
                                     "path": "docs/api/usb/USBKeyboard.md"
                                 },
                                 {
+                                    "path": "docs/api/usb/USBMIDI.md"
+                                },
+                                {
                                     "path": "docs/api/usb/USBMouse.md"
                                 },
                                 {
                                     "path": "docs/api/usb/USBMouseKeyboard.md"
-                                },
-                                {
-                                    "path": "docs/api/usb/USBMIDI.md"
                                 },
                                 {
                                     "path": "docs/api/usb/USBMSD.md"

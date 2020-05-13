@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_serial.png)<span>USBSerial class hierarchy</span></span>
 
-You can use the USBSerial interface to emulate a serial port over USB. You can use this serial port as an extra serial port or as a debug solution. It also communicates between Mbed and a computer.
+You can use the USBSerial interface to emulate a serial port over USB. You can use this serial port as an extra serial port or as a debug solution. 
 
 ## USBSerial class reference
 
