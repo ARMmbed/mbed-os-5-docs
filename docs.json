@@ -162,9 +162,9 @@
                 },
                 {
                     "title": "Scheduling: RTOS and event handling",
-                    "intro" : {
-                            "path": "docs/api/rtos/scheduling.md"
-                        },
+                    "intro": {
+                        "path": "docs/api/rtos/scheduling.md"
+                    },
                     "sub_chapters": [{
                             "title": "Scheduling concepts",
                             "sources": [{
@@ -239,7 +239,9 @@
                 },
                 {
                     "title": "Drivers",
-
+                    "intro": {
+                        "path": "docs/api/io/drivers_list.md"
+                    },
                     "sub_chapters": [{
                             "title": "Drivers concepts",
                             "intro": {
@@ -250,11 +252,12 @@
                         {
                             "title": "Drivers architecture",
                             "sources": [{
-                                "path": "docs/api/usb/usb-arch.md"
-                            },
-                            {
-                                "path": "docs/api/usb/usb_component.md"
-                            }]
+                                    "path": "docs/api/usb/usb-arch.md"
+                                },
+                                {
+                                    "path": "docs/api/usb/usb_component.md"
+                                }
+                            ]
                         },
                         {
                             "title": "Drivers options and config",
@@ -405,6 +408,9 @@
                 },
                 {
                     "title": "Platform",
+                    "intro": {
+                        "path": "docs/api/platform/platform_list.md"
+                    },
                     "sub_chapters": [{
                             "title": "Platform Concepts",
                             "sources": [{
@@ -553,6 +559,9 @@
                 },
                 {
                     "title": "Data storage",
+                    "intro": {
+                        "path": "docs/api/storage/storage_list.md"
+                    },
                     "sub_chapters": [{
                             "title": "Data storage concepts",
                             "intro": {
@@ -656,6 +665,9 @@
                 },
                 {
                     "title": "Connectivity",
+                    "intro": {
+                        "path": "docs/api/connectivity_list.md"
+                    },
                     "sub_chapters": [{
                             "title": "Connectivity support in Mbed OS",
                             "intro": {
@@ -861,6 +873,9 @@
                 },
                 {
                     "title": "Security",
+                    "intro": {
+                        "path": "docs/api/security/security_list.md"
+                    },
                     "sub_chapters": [{
                             "title": "Security concepts",
                             "intro": {
@@ -940,9 +955,9 @@
                 {
                     "title": "Advanced configuration",
                     "sources": [{
-                        "path": "docs/program-setup/configuration.md"
-                    },
-                    {
+                            "path": "docs/program-setup/configuration.md"
+                        },
+                        {
                             "path": "docs/program-setup/mbed_targets.md"
                         },
                         {
@@ -1060,9 +1075,8 @@
                         {
                             "title": "Build profiles",
                             "sources": [{
-                                    "path": "docs/tools/CLI/build_profiles_elsewhere.md"
-                                }
-                            ]
+                                "path": "docs/tools/CLI/build_profiles_elsewhere.md"
+                            }]
                         },
                         {
                             "title": "Update devices",
