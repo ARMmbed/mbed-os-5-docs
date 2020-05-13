@@ -701,10 +701,10 @@
                         },
                         {
                             "title": "Connectivity architecture",
-                            "intro": {
+                            "sources": [{
                                 "path": "docs/api/networking-arch.md"
                             },
-                            "sources": [{
+                            {
                                     "path": "docs/api/networksocket/networksocket.md"
                                 },
                                 {
@@ -794,17 +794,9 @@
                                     "path": "docs/api/networkinterfaces/MeshInterface.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/MessageBuilder.md"
-                                },
-                                {
-                                    "path": "docs/api/nfc/MessageParser.md"
-                                },
-                                {
                                     "path": "docs/api/networkinterfaces/NetworkStatus.md"
                                 },
-                                {
-                                    "path": "docs/api/nfc/SimpleMessageParser.md"
-                                },
+
                                 {
                                     "path": "docs/api/networkinterfaces/WifiInterface.md"
                                 }
@@ -854,14 +846,20 @@
                         },
                         {
                             "title": "NFC APIs",
-                            "intro": {
-                                "path": "docs/api/nfc/NDEF.md"
-                            },
                             "sources": [{
+                                "path": "docs/api/nfc/MessageBuilder.md"
+                            },
+                            {
+                                "path": "docs/api/nfc/MessageParser.md"
+                            },
+                            {
                                     "path": "docs/api/nfc/NFCController.md"
                                 },
                                 {
                                     "path": "docs/api/nfc/NFCEEPROM.md"
+                                },
+                                {
+                                    "path": "docs/api/nfc/SimpleMessageParser.md"
                                 }
                             ]
                         },

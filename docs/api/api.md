@@ -219,10 +219,7 @@ This list does not include the internal APIs, which are not intended for use by 
 | [Cellular](../apis/cellular-api.html) | &#10004; | |
 | [Ethernet](../apis/ethernet.html) | &#10004; | |
 | [Mesh](../apis/mesh-api.htm) | &#10004; | |
-| [MessageBuilder](../apis/messagebuilder.html) | &#10004; | |
-| [MessageParser](../apis/messageparser.html) | &#10004; | |
 | [Network status](../apis/network-status.html) | &#10004; | |
-| [SimpleMessageParser](../apis/simplemessageparser.html) | &#10004; | |
 | [Wi-Fi](../apis/wi-fi.html) | &#10004; | |
 
 ### Secure socket
@@ -258,8 +255,11 @@ This list does not include the internal APIs, which are not intended for use by 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
+| [MessageBuilder](../apis/messagebuilder.html) | &#10004; | |
+| [MessageParser](../apis/messageparser.html) | &#10004; | |
 | [NFCController](../apis/nfccontroller.html) | &#10004; |&#10004; (can be manually enabled) |
 | [NFC EEPROM](../apis/nfc-eeprom.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SimpleMessageParser](../apis/simplemessageparser.html) | &#10004; | |
 
 ### LoRaWAN
 

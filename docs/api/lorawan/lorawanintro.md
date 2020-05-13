@@ -1,4 +1,4 @@
-# LoRaWAN overview
+# LoRaWAN usage
 
 LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 

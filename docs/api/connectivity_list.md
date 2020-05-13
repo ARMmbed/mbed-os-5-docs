@@ -14,10 +14,7 @@
 - [Cellular](../apis/cellular-api.html): Connect to the internet over a Cellular device.
 - [Ethernet](../apis/ethernet.html): Connect to the internet over Ethernet.
 - [Mesh](../apis/mesh-api.htm): Use the IPv6 mesh network topologies through the Nanostack networking stack to connect to a mesh network: Wi-Sun or 6LoWPAN-ND.
-- [MessageBuilder](../apis/messagebuilder.html): Construct NDEF messages, the common data format exchange for NFC messages.
-- [MessageParser](../apis/messageparser.html): An event-driven NDEF message parser for a data buffer.
 - [Network status](../apis/network-status.html): Trigger a callback each time the network interface's status changes.
-- [SimpleMessageParser](../apis/simplemessageparser.html): Similar to MessageParser, but includes subparsers for well-known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box.
 - [Wi-Fi](../apis/wi-fi.html): Connect to the internet over a Wi-Fi device.
 
 ## Secure socket
@@ -41,10 +38,11 @@
 
 ## NFC
 
+- [MessageBuilder](../apis/messagebuilder.html): Construct NDEF messages, the common data format exchange for NFC messages.
+- [MessageParser](../apis/messageparser.html): An event-driven NDEF message parser for a data buffer.
 - [NFCController](../apis/nfccontroller.html): Emulate NFC tags that a smartphone can read and generate NDEF messages on demand.
 - [NFC EEPROM](../apis/nfc-eeprom.html): Store NDEF messages.
-
-Note: Use MessageParser SimpleMessageParser and MessageBuilder to construct and parse NDEF messages.
+- [SimpleMessageParser](../apis/simplemessageparser.html): Similar to MessageParser, but includes subparsers for well-known NFC types records, such as Text, URI or Mime records, and produces usable objects out of the box.
 
 ## LoRaWAN
 
