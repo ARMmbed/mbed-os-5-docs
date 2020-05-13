@@ -104,6 +104,16 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 
 ## Platform
 
+### Time
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [RTC](../apis/time-apis.html) | &#10004; | &#10004;  |
+| [Ticker](../apis/ticker.html) | &#10004; | &#10004;  |
+| [Time](../apis/time.html) | &#10004; | &#10004;  |
+| [Timer](../apis/timer.html) | &#10004; | &#10004; |
+| [Wait](../apis/wait.html) | &#10004; | &#10004;  |
+
 ### Power
 
 | API | Full profile | Bare metal profile |
@@ -123,15 +133,6 @@ Input/Output APIs include analog and digital inputs and outputs on development b
 | [MemoryPool](../apis/memorypool.html) | &#10004; |   |
 | [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004;  |
 
-### Time
-
-| API | Full profile | Bare metal profile |
-| - | - | - |
-| [RTC](../apis/time-apis.html) | &#10004; | &#10004;  |
-| [Ticker](../apis/ticker.html) | &#10004; | &#10004;  |
-| [Time](../apis/time.html) | &#10004; | &#10004;  |
-| [Timer](../apis/timer.html) | &#10004; | &#10004;  |
-| [Wait](../apis/wait.html) | &#10004; | &#10004;  |
 
 ### Other Platform APIs
 

@@ -451,6 +451,25 @@
                             ]
                         },
                         {
+                            "title": "Time APIs",
+                            "sources": [{
+                                    "path": "docs/api/platform/Rtc.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Ticker.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Time.md"
+                                },
+                                {
+                                    "path": "docs/api/io/Timer.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/Wait.md"
+                                }
+                            ]
+                        },
+                        {
                             "title": "Power APIs",
                             "sources": [{
                                     "path": "docs/api/power/DeepSleepLock.md"
@@ -483,25 +502,6 @@
                                 },
                                 {
                                     "path": "docs/api/memory/MbedStats.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Time APIs",
-                            "sources": [{
-                                    "path": "docs/api/platform/Rtc.md"
-                                },
-                                {
-                                    "path": "docs/api/io/Ticker.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Time.md"
-                                },
-                                {
-                                    "path": "docs/api/io/Timer.md"
-                                },
-                                {
-                                    "path": "docs/api/platform/Wait.md"
                                 }
                             ]
                         },

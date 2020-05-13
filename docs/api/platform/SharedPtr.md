@@ -1,6 +1,6 @@
 # Shared Pointer
 
-A shared pointer is a "smart" pointer that retains ownership of an object by using reference counting accross all smart pointers referencing that object.
+A shared pointer is a "smart" pointer that retains ownership of an object by using reference counting across all smart pointers referencing that object.
 
 It is similar to the `std::shared_ptr` class introduced in C++11. However, this is not a compatible implementation, as there are no weak pointers, no `make_shared`, no custom deleters, and so on.
 

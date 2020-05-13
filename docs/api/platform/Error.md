@@ -2,12 +2,12 @@
 
 Mbed OS provides error status definitions and APIs for error construction, reporting and retrieving previously reported errors. Mbed OS also provides functions and macros to generate and define new error status values, extract information from error status values and to report errors into the system. Any software layer, such as applications, drivers, HAL and protocol stacks, can use these error handling APIs. The error functions also facilitate emitting an error message through STDOUT. `mbed_error.h` declares the error functions that Mbed OS provides.
 
-Conceptually, error handling is a platform service that the Mbed OS platform layer implements. Error handling provides the following:
+Conceptually, error handling is a platform service that provides:
 
-1. Provides system defined error codes and status values in `mbed_error.h`
-1. Provides APIs for error construction, reporting and error history management.
-1. Provides ISR-safe and Thread-safe error handling APIs.
-1. Provides mechanisms for extending the error status definitions.
+- System defined error codes and status values in `mbed_error.h`
+- APIs for error construction, reporting and error history management.
+- ISR-safe and Thread-safe error handling APIs.
+- Mechanisms for extending the error status definitions.
 
 ## Error status usage
 
