@@ -163,11 +163,13 @@
                 {
                     "title": "Scheduling: RTOS and event handling",
                     "intro" : {
-                            "path": "docs/api/rtos/rtos.md"
+                            "path": "docs/api/rtos/scheduling.md"
                         },
                     "sub_chapters": [{
                             "title": "Scheduling concepts",
-                            "sources": [
+                            "sources": [{
+                                    "path": "docs/api/rtos/rtos.md"
+                                },
                                 {
                                     "path": "docs/api/rtos/thread_safety.md"
                                 }
