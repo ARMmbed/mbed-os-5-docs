@@ -22,3 +22,5 @@ If you are using the bare metal profile, the only APIs of the RTOS group you can
 - [Event](event.html): The queue to store events, extract them and execute them later.
 - [EventQueue](eventqueue.html): The class that provides a flexible queue for scheduling events.
 - [UserAllocatedEvent](userallocatedevent.html): The class that provides APIs to create and configure static events
+
+Note that you can also use these APIs while using the full, RTOS-based profile.
