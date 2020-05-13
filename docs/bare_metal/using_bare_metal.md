@@ -4,11 +4,11 @@ This guide shows how to create a bare metal profile application:
 1. Set the profile: By default, the build tool uses the full profile for all application builds. To use the bare metal profile, set up your application to override this default behaviour.
 1. By default, the bare metal profile uses a minimal set of APIs. You can add additional ones [from the list of supported APIs](../bare-metal/index.html#features) if your application needs them.
 
-## Creating a bare metal application
-
 To demonstrate how to create a bare metal application, here is an example that prints text at regular intervals using the `EventQueue` class:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
+
+## Creating a bare metal application
 
 To create the application:
 
@@ -38,53 +38,59 @@ To create the application:
     The file specifies which profile to use (`"requires": ["bare-metal"]`) and which C library to use (`"target.c_lib": "small"`).
     In this example, we're using `"target.c_lib": "small"` (small C library). This means your application will use an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
 
-    Bare metal has a minimal set of default APIs - those that are always available to a bare metal application. You can add other supported APIs if you need the features they enable.
+    You now have application code and a bare metal profile with the default APIs. However, this example uses APIs that are not part of the default bare metal profile - you need to manually add support for those APIs to the application.
 
-    For a list of default and supported APIs, [please see our full API list](../apis/index.html).
+## Adding APIs
 
-1. This example depends on the `EventQueue` class, so you need to add the library that contains that class:
+Bare metal has a minimal set of default APIs - those that are always available to a bare metal application. You can add other supported APIs if you need the features they enable.
 
-    1. In `mbed-os/`, locate the API and the library in which it is declared.
-    1. In the library folder, open `mbed_lib.json` and find the library's name. You will need it for the next step.
+For a list of default and supported APIs, [please see our full API list](../apis/index.html).
 
-        For example: `mbed-os/events/mbed_lib.json`:
-        ```json
-        {
-            "name": "events",
-            "config": {
-                "present": 1,
-                ...
+This example depends on the `EventQueue` class, so you need to add the library that contains that class:
+
+1. In `mbed-os/`, locate the API and the library in which it is declared.
+1. In the library folder, open `mbed_lib.json` and find the library's name. You will need it for the next step.
+
+    For example: `mbed-os/events/mbed_lib.json`:
+    ```json
+    {
+        "name": "events",
+        "config": {
+            "present": 1,
+            ...
+        }
+    }
+    ```
+    To continue, go back to the application's root directory.
+
+1. Open `mbed_app.json` again, and add the library to the `"requires"` field:
+
+    ```json
+    {
+        "requires": ["bare-metal", "events"],
+        "target_overrides": {
+            "*": {
+                "target.c_lib": "small"
             }
         }
-        ```
-        To continue, go back to the application's root directory.
-
-    1. Open `mbed_app.json` again, and add the library to the `"requires"` field:
-
-        ```json
-        {
-            "requires": ["bare-metal", "events"],
-            "target_overrides": {
-                "*": {
-                    "target.c_lib": "small"
-                }
-            }
-        }
-        ```
-
-1. Connect a supported board to your computer, and compile and run your application:
-    ```
-    mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
+    }
     ```
 
-    When the example is flashed, a serial terminal opens (because of `--sterm`). You should get the following output:
-    ```
-    called immediately
-    called every 1 seconds
-    called in 2 seconds
-    called every 1 seconds
-    called every 1 seconds
-    called every 1 seconds
-    ```
+## Compiling and Running the Application
 
-    To exit the serial terminal, press Ctrl + C.
+Connect a supported board to your computer, and compile and run your application:
+```
+mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
+```
+
+When the example is flashed, a serial terminal opens (because of `--sterm`). The is the output:
+```
+called immediately
+called every 1 seconds
+called in 2 seconds
+called every 1 seconds
+called every 1 seconds
+called every 1 seconds
+```
+
+To exit the serial terminal, press Ctrl + C.

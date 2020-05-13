@@ -152,7 +152,7 @@ If you haven't used Greentea before, [you can learn more in our documentation](.
     region `FLASH' overflowed by 792 bytes
     ```
 
-    Please ignore tests with similar errors for now.
+    Please ignore tests with similar errors.
 
 Further optimisations for targets with small flash memories:
 - Append `--profile release` to the command above. Use of the release profile helps keep some tests within the size limit.
