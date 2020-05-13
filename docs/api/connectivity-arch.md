@@ -1,4 +1,4 @@
-<h1 id="connectivity-tech">Network connectivity in Mbed OS</h1>
+# Choosing a connectivity method
 
 ## Supported connectivity technologies
 
@@ -16,9 +16,7 @@ For IP devices:
 Non-IP devices require a gateway:
 
 - LoRaWAN.
-- Cellular.
-
-## Choosing your connectivity method
+- Non-IP Cellular.
 
 There is a wide variety of possibilities for connected devices, and there is no globally correct connectivity method. Choose a method that fits your application needs, and then choose a device that can support that method. If you're already committed to a device type, you may need to adjust your application to work within that device's connectivity constraints.
 

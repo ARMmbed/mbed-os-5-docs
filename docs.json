@@ -668,15 +668,25 @@
                     "intro": {
                         "path": "docs/api/connectivity_list.md"
                     },
-                    "sub_chapters": [{
-                            "title": "Connectivity support in Mbed OS",
+                    "sub_chapters": [
+                      {
+                        "title": "Choosing a connectivity method"
+                        "intro": {
+                          "path": "docs/api/connectivity-arch.md"
+                      },
+                      "source": []
+                    },
+                      {
+                            "title": "Connectivity architecture",
                             "intro": {
-                                "path": "docs/api/connectivity-arch.md"
-                            },
-                            "sources": [{
                                     "path": "docs/api/networking-arch.md"
                                 },
-                                {
+                            "sources": [
+                              {
+                                  "path": "docs/api/bluetooth/bluetooth.md"
+                              }
+                              ,
+                              {
                                     "path": "docs/api/networkinterfaces/cellular-arch.md"
                                 },
                                 {
@@ -699,7 +709,7 @@
                                 },
                                 {
                                     "path": "docs/api/security/securesocket-arch.md"
-                                }
+                                },
                             ]
                         },
                         {
@@ -734,6 +744,9 @@
                                 },
                                 {
                                     "path": "docs/api/bluetooth/ble_tutorial.md"
+                                },
+                                {
+                                    "path": "docs/api/lorawan/lorawanintro.md"
                                 },
                                 {
                                     "path": "docs/api/lorawan/intro-to-lora.md"
@@ -817,9 +830,6 @@
                         },
                         {
                             "title": "Bluetooth APIs",
-                            "intro": {
-                                "path": "docs/api/bluetooth/bluetooth.md"
-                            },
                             "sources": [{
                                     "path": "docs/api/bluetooth/BatteryService.md"
                                 },
@@ -858,9 +868,6 @@
                         },
                         {
                             "title": "LoRAWAN APIs",
-                            "intro": {
-                                "path": "docs/api/lorawan/lorawanintro.md"
-                            },
                             "sources": [{
                                     "path": "docs/api/lorawan/lorawan.md"
                                 },
