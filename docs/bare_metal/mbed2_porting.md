@@ -122,7 +122,7 @@ Troubleshoot any issue.
 
 ## Validating the port
 
-To validate the bare metal target configuration, execute the Mbed OS Greentea test suite with the bare metal profile. This profile causes Greentea to skip a subset of the tests, either because the underlying functionality has not been ported to bare metal or because some tests require RTOS features (for examples, more complex tests based on multi-threading). All tests compatible with bare metal are enabled.
+To validate the bare metal target configuration, execute the Mbed OS Greentea test suite with the bare metal profile. This profile causes Greentea to skip a subset of the tests, either because the underlying functionality has not been ported to bare metal or because some tests require RTOS features (for examples, more complex tests based on multi-threading). It performs all the tests compatible with bare metal.
 
 If you haven't used Greentea before, [you can learn more in our documentation](../tools/greentea-testing-applications.html).
 
@@ -140,7 +140,7 @@ If you haven't used Greentea before, [you can learn more in our documentation](.
 
     <span class="tips">**Tip:** You can append `--compile` and fix build issues before running tests with `--run`.</span>
 
-1. All tests should pass (or be automatically skipped), with exceptions when the target being ported is ultra-constrained (with 32KB of flash memory or less) in which case linking may fail for only _a few_ tests. For example,
+1. All tests should pass (or be automatically skipped), unless the target being ported is ultraconstrained (with 32KB or less of flash memory) - in which case linking may fail for _a few_ tests. For example:
 
     ARM toolchain:
     ```

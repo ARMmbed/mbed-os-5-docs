@@ -1,28 +1,28 @@
 # Using the bare metal profile
 
 This guide shows how to create a bare metal profile application:
-1. By default, when you build an application binary, the build tool uses the full profile. To use the bare metal profile, you need to set up your application to override this default behaviour.
-1. Bare metal has a minimal set of APIs. You can add additional ones [from the list of supported API](bare_metal.md#features).
+1. Set the profile: By default, the build tool uses the full profile for all application builds. To use the bare metal profile, set up your application to override this default behaviour.
+1. By default, the bare metal profile uses a minimal set of APIs. You can add additional ones [from the list of supported APIs](../bare-metal/index.html#features) if your application needs them.
 
 ## Creating a bare metal application
 
-To demonstrate how to create a bare metal application, we use an example that prints text in regular intervals using the `EventQueue` class:
+To demonstrate how to create a bare metal application, here is an example that prints text at regular intervals using the `EventQueue` class:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
 
-The steps are as follows:
+To create the application:
 
-1. Create a new Mbed application and enter its directory:
+1. Create a new Mbed OS application and navigate to its directory:
 
     ```
     mbed new example_app && cd example_app
     ```
 
-    This contains an empty application with Mbed OS (`mbed-os/`) fetched.
+    The directory contains the full Mbed OS library (`mbed-os/`) and no application files.
 
-1. Create a `main.cpp` containing the `EventQueue` example code snippet above.
+1. Create a `main.cpp` file containing the `EventQueue` code snippet above.
 
-1. Open `mbed_app.json` and replace it with the following content:
+1. Open `mbed_app.json` (in the root of the application) and replace it with the following content:
 
     ```json
     {
@@ -34,16 +34,18 @@ The steps are as follows:
         }
     }
     ```
-    <span class="tips">**Tip:** `"target.c_lib": "small"` enables an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](c_small_libs.md)</span>.
+
+    The file specifies which profile to use (`"requires": ["bare-metal"]`) and which C library to use (`"target.c_lib": "small"`).
+    In this example, we're using `"target.c_lib": "small"` (small C library). This means your application will use an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
 
     Bare metal has a minimal set of default APIs - those that are always available to a bare metal application. You can add other supported APIs if you need the features they enable.
 
-    For a list of default and supported APIs, [please see our full API list](bare_metal.md#features).
+    For a list of default and supported APIs, [please see our full API list](../apis/index.html).
 
-1. Add dependencies - in this example, we need to add the library that contains the `EventQueue` class:
+1. This example depends on the `EventQueue` class, so you need to add the library that contains that class:
 
-    1. Locate the API and the library where it is declared in `mbed-os/`.
-    1. In the library folder, find the library's name in `mbed_lib.json`. You will need it for the next step.
+    1. In `mbed-os/`, locate the API and the library in which it is declared.
+    1. In the library folder, open `mbed_lib.json` and find the library's name. You will need it for the next step.
 
         For example: `mbed-os/events/mbed_lib.json`:
         ```json
@@ -70,12 +72,12 @@ The steps are as follows:
         }
         ```
 
-1. With a supported board connected to your computer, compile and run your application:
+1. Connect a supported board to your computer, and compile and run your application:
     ```
     mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
     ```
 
-    This opens a serial terminal once the example is compiled and flashed. The following output is expected:
+    When the example is flashed, a serial terminal opens (because of `--sterm`). You should get the following output:
     ```
     called immediately
     called every 1 seconds
