@@ -668,25 +668,22 @@
                     "intro": {
                         "path": "docs/api/connectivity_list.md"
                     },
-                    "sub_chapters": [
-                      {
-                        "title": "Choosing a connectivity method"
-                        "intro": {
-                          "path": "docs/api/connectivity-arch.md"
-                      },
-                      "source": []
-                    },
-                      {
+                    "sub_chapters": [{
+                            "title": "Choosing a connectivity method",
+                            "intro": {
+                                "path": "docs/api/connectivity-arch.md"
+                            },
+                            "source": []
+                        },
+                        {
                             "title": "Connectivity architecture",
                             "intro": {
-                                    "path": "docs/api/networking-arch.md"
+                                "path": "docs/api/networking-arch.md"
+                            },
+                            "sources": [{
+                                    "path": "docs/api/bluetooth/bluetooth.md"
                                 },
-                            "sources": [
-                              {
-                                  "path": "docs/api/bluetooth/bluetooth.md"
-                              }
-                              ,
-                              {
+                                {
                                     "path": "docs/api/networkinterfaces/cellular-arch.md"
                                 },
                                 {
@@ -709,7 +706,7 @@
                                 },
                                 {
                                     "path": "docs/api/security/securesocket-arch.md"
-                                },
+                                }
                             ]
                         },
                         {
