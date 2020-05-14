@@ -28,6 +28,6 @@ The following code snippet illustrates how you can use the MeshInterface API:
 ## Related content
 
 - [Mesh tutorial](../tutorials/mesh-tutorial.html) to start using mesh technology.
-- [Light control tutorial](../tutorials/light-control.html), in which devices can control the LED status of all devices in the network.
+- [Light control tutorial](../apis/light-control.html), in which devices can control the LED status of all devices in the network.
 - [Mesh configuration](../reference/configuration-mesh.html).
 - [Networking connectivity](../reference/networking.html) architecture reference material.

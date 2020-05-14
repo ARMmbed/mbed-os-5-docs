@@ -670,7 +670,7 @@
                             "intro": {
                                 "path": "docs/api/connectivity-arch.md"
                             },
-                            "source": [{
+                            "sources": [{
                                     "path": "docs/api/bluetooth/bluetooth.md"
                                 },
                                 {
@@ -732,12 +732,6 @@
                             "title": "Connectivity tutorials",
                             "sources": [{
                                     "path": "docs/api/networkinterfaces/mesh_tutorial.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_commissioning.md"
-                                },
-                                {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/thread_faq.md"
                                 },
                                 {
                                     "path": "docs/api/light-control.md"

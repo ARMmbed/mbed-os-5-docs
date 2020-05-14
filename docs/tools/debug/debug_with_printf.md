@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 ## Getting started
 
-To send data over the serial connection, use the [Serial](../apis/serial.html) object.
+To send data over the serial connection, use the [BufferedSerial](../apis/serial-uart-apis.html) object.
 
 ### Example program
 

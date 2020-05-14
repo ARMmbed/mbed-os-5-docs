@@ -21,7 +21,7 @@ To run the Mbed OS built-in tests, you need to have ported and verified at least
 
 
 You'll also need to have ported DAPLink or compatible interface firmware to your interface chip.
-    <span class="notes">If DAPLink is still under development, you can still [run tests manually](../porting/manual-testing.html).</span>
+    <span class="notes">If DAPLink is still under development, you can still [run tests manually](../porting/testing.html).</span>
 
 #### mbedls
 

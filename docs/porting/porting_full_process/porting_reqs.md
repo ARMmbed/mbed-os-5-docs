@@ -36,7 +36,7 @@ Please install the following:
 
     - Eclipse is license free, whereas both IAR and Keil IDE require licenses.
     - Your target may not be supported in certain IDEs.
-    - If your interface firmware does not support mass storage device, you won't be able to do automated testing. If your target has another method of flashing, such as self-programming or through a debugger, use the [manual testing path](../porting/manual-testing.html).
+    - If your interface firmware does not support mass storage device, you won't be able to do automated testing. If your target has another method of flashing, such as self-programming or through a debugger, use the [manual testing path](../porting/testing.html).
 
 - (Optional) [FTDI serial driver](http://www.ftdichip.com/Drivers/VCP.htm).
 

@@ -141,7 +141,7 @@
 
 ## S
 
-**Serial** - A [protocol](../apis/serial.html) used in data transmission for the transfer of individual bits of information.
+**Serial** - A protocol used in data transmission for the transfer of individual bits of information. The Serial API has been deprecated; please see the BufferedSerial and UnbufferedSerial APIs.
 
 **SPI** - [Serial Peripheral Interface](../apis/spi.html).
 

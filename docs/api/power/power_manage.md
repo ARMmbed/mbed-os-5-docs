@@ -177,7 +177,7 @@ This is a list of core Mbed OS drivers that block deep sleep:
 - [I2C](../apis/i2c.html), when using the asynchronous APIs.
 - [CAN](../apis/can.html), if there is an interrupt attached.
 - [PWM](../apis/pwmout.html), after writing a value to a pin.
-- Every class that inherits from `SerialBase`, such as [Serial](../apis/serial.html), if it has a receive interrupt attached. Additionally, deep sleep is blocked temporarily while using the asynchronous APIs for reading and writing.
+- Every class that inherits from `SerialBase` if it has a receive interrupt attached. Additionally, deep sleep is blocked temporarily while using the asynchronous APIs for reading and writing.
 
 Device-specific drivers (such as USB stacks) and networking drivers might also block deep sleep.
 
