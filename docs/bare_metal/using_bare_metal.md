@@ -1,6 +1,7 @@
 # Using the bare metal profile
 
 This guide shows how to create a bare metal profile application:
+
 1. Set the profile: By default, the build tool uses the full profile for all application builds. To use the bare metal profile, set up your application to override this default behaviour.
 1. By default, the bare metal profile uses a minimal set of APIs. You can add additional ones [from the list of supported APIs](../bare-metal/index.html#features) if your application needs them.
 
@@ -36,9 +37,10 @@ To create the application:
     ```
 
     The file specifies which profile to use (`"requires": ["bare-metal"]`) and which C library to use (`"target.c_lib": "small"`).
+    
     In this example, we're using `"target.c_lib": "small"` (small C library). This means your application will use an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
 
-    You now have application code and a bare metal profile with the default APIs. However, this example uses APIs that are not part of the default bare metal profile - you need to manually add support for those APIs to the application.
+You now have application code and a bare metal profile with the default APIs. However, this example uses APIs that are not part of the default bare metal profile - you need to manually add support for those APIs to the application.
 
 ## Adding APIs
 
@@ -79,11 +81,13 @@ This example depends on the `EventQueue` class, so you need to add the library t
 ## Compiling and Running the Application
 
 Connect a supported board to your computer, and compile and run your application:
+
 ```
 mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
 ```
 
-When the example is flashed, a serial terminal opens (because of `--sterm`). The is the output:
+When the example is flashed, a serial terminal opens (because of `--sterm`). The outputis:
+
 ```
 called immediately
 called every 1 seconds
@@ -93,4 +97,4 @@ called every 1 seconds
 called every 1 seconds
 ```
 
-To exit the serial terminal, press Ctrl + C.
+To exit the serial terminal, press <kbd>Ctrl</kbd> + <kbd>C</kbd>.
