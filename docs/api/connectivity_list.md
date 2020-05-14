@@ -2,7 +2,7 @@
 
 ## Network socket
 
-- [Non-IP cellular socket](../apis/non-ip-cellular-socket.html): Send and receive 3GPP non-IP datagrams (NIDD) using the cellular IoT feature.
+- [Non-IP cellular socket](../apis/network-socket-apis.html): Send and receive 3GPP non-IP datagrams (NIDD) using the cellular IoT feature.
 - [Socket](../apis/socket.html): The abstract base class for all of the protocol-specific socket types.
 - [SocketAddress](../apis/socketaddress.html): Used to represent the IP address and port pair of a unique network endpoint.
 - [SocketStats](../apis/socketstats.html): Read the network socket statistics for all sockets (both currently in use and closed).
@@ -11,7 +11,7 @@
 
 ## Network interface
 
-- [Cellular](../apis/cellular-api.html): Connect to the internet over a Cellular device.
+- [Cellular](../apis/network-interface-apis.html): Connect to the internet over a Cellular device.
 - [Ethernet](../apis/ethernet.html): Connect to the internet over Ethernet.
 - [Mesh](../apis/mesh-api.htm): Use the IPv6 mesh network topologies through the Nanostack networking stack to connect to a mesh network: Wi-Sun or 6LoWPAN-ND.
 - [Network status](../apis/network-status.html): Trigger a callback each time the network interface's status changes.
@@ -28,7 +28,7 @@
 
 ## Bluetooth (BLE)
 
-- [BatteryService](../apis/batteryservice.html): Report battery charge levels to the user.
+- [BatteryService](../apis/bluetooth-apis.html): Report battery charge levels to the user.
 - [BLE](../apis/ble.html): Interface with the BLE controller on the board.
 - [GAP](../apis/gap.html): Handle connectivity tasks.
 - [GattClient](../apis/gattclient.html): Initiate interactions with a GattServer to discover services, characteristics and descriptors and perform operations on them.
@@ -38,7 +38,7 @@
 
 ## NFC
 
-- [MessageBuilder](../apis/messagebuilder.html): Construct NDEF messages, the common data format exchange for NFC messages.
+- [MessageBuilder](../apis/nfc-apis.html): Construct NDEF messages, the common data format exchange for NFC messages.
 - [MessageParser](../apis/messageparser.html): An event-driven NDEF message parser for a data buffer.
 - [NFCController](../apis/nfccontroller.html): Emulate NFC tags that a smartphone can read and generate NDEF messages on demand.
 - [NFC EEPROM](../apis/nfc-eeprom.html): Store NDEF messages.
@@ -46,5 +46,5 @@
 
 ## LoRaWAN
 
-- [LoRaWANInterface](../apis/lorawaninterface.html): Connect to the internet over a LoRa network.
+- [LoRaWANInterface](../apis/lorawan-apis.html): Connect to the internet over a LoRa network.
 - [LoRaRadio](../apis/nfc-loraradio.html): A pure virtual class that defines APIs for a LoRa radio driver.

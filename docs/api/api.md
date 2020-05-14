@@ -203,7 +203,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Non-IP cellular socket](../apis/non-ip-cellular-socket.html) | &#10004; | |
+| [Non-IP cellular socket](../apis/network-socket-apis.html) | &#10004; | |
 | [Socket](../apis/socket.html) | &#10004; | |
 | [SocketAddress](../apis/socketaddress.html) | &#10004; | |
 | [SocketStats](../apis/socketstats.html) | &#10004; | |
@@ -216,7 +216,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [Cellular](../apis/cellular-api.html) | &#10004; | |
+| [Cellular](../apis/network-interface-apis.html) | &#10004; | |
 | [Ethernet](../apis/ethernet.html) | &#10004; | |
 | [Mesh](../apis/mesh-api.htm) | &#10004; | |
 | [Network status](../apis/network-status.html) | &#10004; | |
@@ -241,7 +241,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BatteryService](../apis/batteryservice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BatteryService](../apis/bluetooth-apis.html) | &#10004; | &#10004; (can be manually enabled) |
 | [BLE](../apis/ble.html) | &#10004; | &#10004; (can be manually enabled) |
 | [GAP](../apis/gap.html) | &#10004; | &#10004; (can be manually enabled) |
 | [GattClient](../apis/gattclient.html) | &#10004; | &#10004; (can be manually enabled) |
@@ -255,7 +255,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [MessageBuilder](../apis/messagebuilder.html) | &#10004; | |
+| [MessageBuilder](../apis/nfc-apis.html) | &#10004; | |
 | [MessageParser](../apis/messageparser.html) | &#10004; | |
 | [NFCController](../apis/nfccontroller.html) | &#10004; |&#10004; (can be manually enabled) |
 | [NFC EEPROM](../apis/nfc-eeprom.html) | &#10004; | &#10004; (can be manually enabled) |
@@ -267,7 +267,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [LoRaWANInterface](../apis/lorawaninterface.html) | &#10004; | |
+| [LoRaWANInterface](../apis/lorawan-apis.html) | &#10004; | |
 | [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | |
 
 ## Security

@@ -176,7 +176,7 @@ And the following tutorial:
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| Non-IP cellular socket | [Non-IP cellular socket example](../apis/non-ip-cellular-socket.html#cellularnonipsocket-example) | |
+| Non-IP cellular socket | [Non-IP cellular socket example](../apis/network-socket-apis.html#cellularnonipsocket-example) | |
 | Socket | [Socket example](../apis/socket.html#socket-example) | |
 | SocketAddress | [SocketAddress example](../apis/socketaddress.html#socketaddress-example) | |
 | SocketStats | [SocketStats example](../apis/socketstats.html#socketstats-example) | |
@@ -187,7 +187,7 @@ And the following tutorial:
 
 | API | Examples | Tutorials |
 | --- | --- | --- |
-| Cellular | [Cellular example](../apis/cellular-api.html#cellular-example-connection-establishment) | |
+| Cellular | [Cellular example](../apis/network-interface-apis.html#cellular-example-connection-establishment) | |
 | EthInterface | [EthInterface example](../apis/ethernet.html#ethinterface-example) | |
 | Network status | [Network status example](../apis/network-status.html#example) | |
 | Wi-Fi | [Wi-Fi example](../apis/wi-fi.html#wi-fi-example) | |
@@ -213,7 +213,7 @@ We have placed all of our BLE examples in a single GitHub repository, so althoug
 
 | API | Examples |
 | --- | --- |
-| MessageBuilder | [MessageBuilder example](../apis/messagebuilder.html#messagebuilder-example) |
+| MessageBuilder | [MessageBuilder example](../apis/nfc-apis.htmll#messagebuilder-example) |
 | MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) || Mesh | | [Mesh tutorial](../apis/connectivity-tutorials.html) <br>  [Light control tutorial](../apis/light-control.html) |
 | NFCController | [NFCController example](../apis/nfccontroller.html#nfccontroller-example) |
 | NFCEEPROM | [NFCEEPROM example](../apis/nfc-eeprom.html#nfceeprom-example) |
@@ -222,7 +222,7 @@ We have placed all of our BLE examples in a single GitHub repository, so althoug
 
 ## LoRa APIs
 
-A [private network tutorial](../apis/LoRa-tutorial.html) and [an example for the API](../apis/lorawaninterface.html#lorawan-example).
+A [private network tutorial](../apis/LoRa-tutorial.html).
 
 
 ## Security APIs

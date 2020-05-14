@@ -1460,7 +1460,10 @@
             "description": "How to go to production with Mbed OS-based IoT devices, the Pelion IoT platform and Arm Treasure Data (Data Management)",
             "sources": [{
                 "path": "docs/ref-designs/pelion_ready/device-management.md"
-            }]
+            },
+            {
+                "path": "docs/ref-designs/going_to_production.md"
+            }]]
         },
         {
             "title": "feature-i2c doxygen",
