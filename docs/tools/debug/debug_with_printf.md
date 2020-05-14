@@ -154,7 +154,7 @@ Your board crashes when you press the button because [mutexes guard](../apis/mut
 You can avoid this by:
 
 - Signaling from the ISR to the main thread using a [semaphore](../apis/semaphore.html) or [mailbox](../apis/mail.html), and calling `printf` in the main thread.
-- Using an event dispatching library, such as [Mbed events](../apis/event.html).
+- Using an event dispatching library, such as [Mbed events](../apis/event-handling-apis.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 

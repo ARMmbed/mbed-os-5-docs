@@ -277,7 +277,7 @@ The `tfm_spm_hal.h` file defines TF-M HAL functions.
 
 Mbed OS integrates TF-M sources from [trusted-firmware-m.git](https://git.trustedfirmware.org/trusted-firmware-m.git/about/).
 
-For more information about Mbed OS builds and related concepts, please see [Mbed OS build rules](../reference/mbed-os-build-rules.html).
+For more information about Mbed OS builds and related concepts, please see [Mbed OS build rules](../program-setup/build-rules.html).
 
 ## System reset
 

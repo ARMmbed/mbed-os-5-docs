@@ -71,7 +71,7 @@ The Mesh API allows applications to create, connect and disconnect to Mesh netwo
 
 ### Configuration
 
-The mesh API file `mbed_lib.json` defines the mesh default configuration values, which you can overwrite in the application configuration file `mbed_app.json`. For an explanation of configuration options, please see the [6LoWPAN mesh configuration document](../reference/configuration-mesh.html).
+The mesh API file `mbed_lib.json` defines the mesh default configuration values, which you can overwrite in the application configuration file `mbed_app.json`. For an explanation of configuration options, please see the [6LoWPAN mesh configuration document](../apis/configuration-mesh.html).
 
 ### Connecting to the mesh network
 

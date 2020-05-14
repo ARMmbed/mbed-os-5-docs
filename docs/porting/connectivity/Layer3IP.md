@@ -126,7 +126,7 @@ Depending on a driver's use of pool and heap memory and other factors, you might
 
 The Mbed OS tree contains Greentea-based tests that exercise the L3IP API directly, along with more general socket tests.
 
-For Greentea information, please see the [Greentea](../tools/greentea-testing-applications.html) documentation.
+For Greentea information, please see the [Greentea](../debug-test/greentea-testing-applications.html) documentation.
 
 Greentea L3IP tests are in the Mbed OS tree under the `TESTS/network/L3IP` directory.
 

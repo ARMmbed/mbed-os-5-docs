@@ -6,12 +6,12 @@ This guide is divided in sections, and generic Nanostack configurations are expl
 
 For understanding the technologies and APIs, please refer to following sections before this one:
 
-- [Network connectivity in Mbed OS](../reference/networking.html) technology page.
+- [Network connectivity in Mbed OS](../apis/connectivity.html) technology page.
 - [Thread](../reference/thread-tech.html) technology reference page.
 - [Wi-SUN](../apis/wisun-tech.html) technology reference page.
 - [6LowPAN-ND](../reference/6LoWPAN-ND-tech.html) technology reference page.
 - [Mesh class reference](../apis/mesh-api.html) user API.
-- [Socket API](../apis/network-socket.html).
+- [Socket API](../apis/socket.html).
 
 ## Providing the configuration
 

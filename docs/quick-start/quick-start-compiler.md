@@ -63,7 +63,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 ## Related links
 
-- [Collaborating with multiple authors](../tools/collaborative-work.html).
+- [Collaborating with multiple authors](../build-tools/collaborative-work.html).
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
 - [Mbed OS configuration](../reference/configuration.html).
 - [Mbed OS serial communication](../tutorials/serial-communication.html).

@@ -99,7 +99,7 @@ And the following tutorial:
 
 | API | Examples |
 | --- | --- |
-| DeepSleepLock | [DeepSleepLock example](../apis/deepsleeplock.html#example) |
+| DeepSleepLock | [DeepSleepLock example](../apis/power-apis.html#example) |
 | LowPowerTicker | [LowPowerTicker example](../apis/lowpowerticker.html#lowpowerticker-example) | |
 | LowPowerTimeout | [LowPowerTimeout example](../apis/lowpowertimeout.html#lowpowertimeout-example) | |
 | LowPowerTimer | [LowPowerTimer example](../apis/lowpowertimer.html#lowpowertimer-example) | |
@@ -109,7 +109,7 @@ And the following tutorial:
 
 | API | Examples |
 | --- | --- |
-| Memory tracing (mbed_mem_trace) | [Memory tracing example](../apis/memory-tracing.html#memory-tracing-example) |
+| Memory tracing (mbed_mem_trace) | [Memory tracing example](../apis/memory-apis.html#memory-tracing-example) |
 | MPU management (mpug_mgmt) | [MPU management example](../apis/mpu-management.html#example) |
 | MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
 | Mbed statistics  (mbed_stats)| [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
@@ -118,7 +118,7 @@ And the following tutorial:
 
 | API | Examples |
 | --- | --- |
-| RTC | [RTC example](../apis/rtc.html#rtc-time-example) |
+| RTC | [RTC example](../apis/time-apis.html#rtc-time-example) |
 | Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
 | Time | [Time example](../apis/time.html#time-example) |
 | Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |

@@ -8,7 +8,7 @@ Mbed OS contains three [power modes](../apis/power-management-sleep.html):
 
 - Active - The MCU and all clocks are running.
 - Sleep - The core system clock is disabled. This eliminates dynamic power that the processor, memory systems and buses use.
-- Deep sleep - In addition to the core system clock, all high-frequency clocks are disabled, and the [SysTick](../apis/rtos.html) is disabled.
+- Deep sleep - In addition to the core system clock, all high-frequency clocks are disabled, and the [SysTick](../apis/scheduling-concepts.html) is disabled.
 
 Switching between these power modes occurs automatically. When all threads in the system are idle, Mbed OS yields control to the [idle thread](../apis/idle-loop.html). The idle thread then invokes the sleep manager, which brings the system to sleep or deep sleep mode. The idle thread also sets a timer to wake up the system again, but you can also wake up the system through an external interrupt or the low power ticker.
 
@@ -175,7 +175,7 @@ This is a list of core Mbed OS drivers that block deep sleep:
 - [Timer](../apis/timer.html) - if you don't need the precision of the high-frequency timer, you can use [LowPowerTimer](../apis/lowpowertimer.html) instead.
 - [SPI](../apis/spi.html), when using the asynchronous APIs.
 - [I2C](../apis/i2c.html), when using the asynchronous APIs.
-- [CAN](../apis/can.html), if there is an interrupt attached.
+- [CAN](../apis/other-driver-apis.html), if there is an interrupt attached.
 - [PWM](../apis/pwmout.html), after writing a value to a pin.
 - Every class that inherits from `SerialBase` if it has a receive interrupt attached. Additionally, deep sleep is blocked temporarily while using the asynchronous APIs for reading and writing.
 

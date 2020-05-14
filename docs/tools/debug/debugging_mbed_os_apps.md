@@ -11,9 +11,9 @@ Keil uVision natively supports debugging Mbed OS applications. To set up uVision
 Mbed also supports debugging using any IDE that supports GDB. To set up the debugger, first read [Setting up your local debug toolchain](setting-up-a-local-debug-toolchain.html). Then read the section for your specific IDE. The same principles apply to any unlisted IDEs that supports GDB:
 
 1. Producing [debug builds with Arm Mbed CLI](debug-builds-cli.html).
-1. Debugging with [Eclipse](../tutorials/eclipse.html).
-1. Debugging with [Visual Studio Code](../tutorials/visual-studio-code.html).
-1. Debugging with [other IDEs that support GDB](../tools/debugging.html).
+1. Debugging with [Eclipse](../debug-test/eclipse.html).
+1. Debugging with [Visual Studio Code](../debug-test/visual-studio-code.html).
+1. Debugging with [other IDEs that support GDB](../debug-test/index.html).
 
 ## Links to other sources
 

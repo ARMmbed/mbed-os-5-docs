@@ -1,6 +1,6 @@
 # Adding and configuring targets
 
-Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. If you provide a source directory using the `--source` switch, Mbed looks for `custom_targets.json` in that directory instead. When you add new targets with `custom_targets.json`, they are added to the list of available targets, in addition to the [scanning rules](../reference/mbed-os-build-rules.html).
+Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. If you provide a source directory using the `--source` switch, Mbed looks for `custom_targets.json` in that directory instead. When you add new targets with `custom_targets.json`, they are added to the list of available targets, in addition to the [scanning rules](../program-setup/build-rules.html).
 
 <span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](../tools/developing-mbed-cli.html) to take your code offline.</span>
 
@@ -139,7 +139,7 @@ When you use target inheritance, you may alter the values of `features` using `f
 
 ### config and overrides
 
-<span class="notes">**Note:** The [Arm Mbed configuration system](../tools/compile.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
+<span class="notes">**Note:** The [Arm Mbed configuration system](../build-tools/compile.html) customizes the compile time configuration of various Mbed components (targets, libraries and applications). Each component can define a number of configuration parameters. The values of these configuration parameters can then be overridden in various ways.</span>
 
 The list of _configs_ provide a way to modify the values of macros in child targets or in a project. Each configuration has a default value, as well as an optional macro name and help text. By default, the macro name is the name of the config. For example:
 

@@ -17,4 +17,4 @@ The code below demonstrates how you can instantiate, configure and post events.
 ## Related content
 
 - [RTOS configuration](../reference/configuration-rtos.html).
-- [EventQueue tutorial](../tutorials/the-eventqueue-api.html).
+- [EventQueue tutorial](../apis/the-eventqueue-api.html).

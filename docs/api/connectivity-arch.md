@@ -94,7 +94,7 @@ The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutoria
 
 Near-field communication (NFC) is a short range (few centimeters) wireless technology standard for personal area networks. Typical uses of NFC are commissioning, sharing of small content and Bluetooth connection initiation and out-of-band pairing.
 
-To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview](../apis/nfc.html).
+To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview](../apis/nfc-technology.html).
 
 ### NB-IoT cellular
 

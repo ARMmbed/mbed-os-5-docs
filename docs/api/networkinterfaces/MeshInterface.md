@@ -12,7 +12,7 @@ Mbed OS provides three types of IPv6-based mesh networks:
 
 The application can use the `LoWPANNDInterface`, `WisunInterface` or `ThreadInterface` object to connect to the mesh network. When successfully connected, the application can use the Mbed [C++ socket APIs](network-socket.html) to create a socket to start communication with a remote peer. You can use the [Network status API](network-status.html) to monitor changes in the network status.
 
-You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](../reference/configuration-mesh.html) section documents.
+You can configure the mesh interface by providing values in `mbed_app.json`, as the [mesh configuration](../apis/configuration-mesh.html) section documents.
 
 ## Mesh class reference
 
@@ -29,5 +29,5 @@ The following code snippet illustrates how you can use the MeshInterface API:
 
 - [Mesh tutorial](../tutorials/mesh-tutorial.html) to start using mesh technology.
 - [Light control tutorial](../apis/light-control.html), in which devices can control the LED status of all devices in the network.
-- [Mesh configuration](../reference/configuration-mesh.html).
-- [Networking connectivity](../reference/networking.html) architecture reference material.
+- [Mesh configuration](../apis/configuration-mesh.html).
+- [Networking connectivity](../apis/connectivity.html) architecture reference material.

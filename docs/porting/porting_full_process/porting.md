@@ -181,7 +181,7 @@ The official `mbed-os-example-blinky` uses the RTOS, a DigitalOut object and tim
 
 ## Bootstrap and entry point
 
-[Bootstrap porting instructions](../reference/bootstrap.html).
+[Bootstrap porting instructions](../program-setup/bootstrap.html).
 
 Mbed OS uses CMSIS for bootstrap. If your target doesn't have a CMSIS implementation (which is distributed in CMSIS pack-form) yet, you'll need to create your own CMSIS files:
 

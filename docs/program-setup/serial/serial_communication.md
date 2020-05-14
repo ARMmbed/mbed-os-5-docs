@@ -60,7 +60,7 @@ For low memory devices you may optionally use the [ArmMbed minimal printf librar
 
 Use your terminal application to interact with the following examples.
 
-If you're not sure how to build these examples and run them on your board, please see our [build tools section](../tools/index.html).
+If you're not sure how to build these examples and run them on your board, please see our [build tools section](../build-tools/index.html).
 
 ## Echo back characters you type
 

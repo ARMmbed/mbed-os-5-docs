@@ -105,7 +105,7 @@ The EventQueue has no concept of event priority. If you schedule events to run a
 
 ## EventQueue memory pool
 
-When you create an instance of the [EventQueue](../apis/event.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
+When you create an instance of the [EventQueue](../apis/eventqueue.html), you specify a fixed size for its memory. Because allocating from the general purpose heap is not IRQ safe, the EventQueue allocates this fixed size block of memory during its creation. Although the EventQueue memory size is fixed, the Eventqueue supports various sized events.
 
 Various sized events introduce fragmentation to the memory region. This fragmentation makes it difficult to determine how many more events the EventQueue can dispatch. The EventQueue may be able to dispatch many small events, but fragmentation may prevent it from allocating one large event.
 

@@ -50,7 +50,7 @@ This test case is only discovered if the target being tested supports the BLE fe
 
 Generally, a test should not be placed under a `TARGET_` or `TOOLCHAIN_` directory because most tests should work for all target and toolchain configurations.
 
-Tests can also be completely ignored by using the `.mbedignore` file described in the [documentation](../reference/mbed-os-build-rules.html).
+Tests can also be completely ignored by using the `.mbedignore` file described in the [documentation](../program-setup/build-rules.html).
 
 #### Test names
 

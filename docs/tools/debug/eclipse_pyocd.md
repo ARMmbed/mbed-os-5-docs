@@ -1,6 +1,6 @@
 # Eclipse
 
-This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [choose a compiler with which to build your project](../tools/index.html#compiler-versions).
+This document explains how to build and debug Arm Mbed OS applications using Eclipse. Before starting, please [choose a compiler with which to build your project](../build-tools/index.html#compiler-versions).
 
 ## Installing Eclipse
 
@@ -107,7 +107,7 @@ Steps to update Eclipse's PATH:
     <span class="images">![](../../images/eclipse7.png)<span>Main tab</span></span>
 1. In the *Debugger* tab:
     - Under *OpenOCD Setup*, set the *Executable* path to your copy of `openocd`.
-    - Under *OpenOCD Setup*, set the *Config options* to the setup options from the [Configure your local debug toolchain](../tools/setting-up-a-local-debug-toolchain.html#openocd) guide.
+    - Under *OpenOCD Setup*, set the *Config options* to the setup options from the [Configure your local debug toolchain](../debug-test/setting-up-a-local-debug-toolchain.html#openocd) guide.
     -  Under *GDB Client Setup*, set the *Executable* path to your copy of `arm-none-eabi-gdb`.
     - If you cannot see the *GDB Server Setup* section, the scrollbar might be hidden; switch tabs to make the scrollbar reappear.
 

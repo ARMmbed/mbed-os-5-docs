@@ -2,7 +2,7 @@
 
 PSA protected storage APIs enable saving data to and retrieving data from PSA protected storage.
 
-Unlike [PSA internal storage](../apis/psa-internal-storage.html), PSA protected storage always runs on the NSPE side and redirects calls to the KVStore instance.
+Unlike [PSA internal storage](../apis/psa-compliant-apis.html), PSA protected storage always runs on the NSPE side and redirects calls to the KVStore instance.
 
 ## PSA protected storage class reference
 

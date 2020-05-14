@@ -28,7 +28,7 @@ Examples you can successfully run include:
 
 - [`mbed-os-example-blinky`](https://github.com/ARMmbed/mbed-os-example-blinky).
 - [`mbed-os-example-tls`](https://github.com/ARMmbed/mbed-os-example-tls).
-- [`mbed-os-example-devicekey`](../apis/devicekey.html#devicekey-example).
+- [`mbed-os-example-devicekey`](../apis/security-apis.html#devicekey-example).
 - [`mbed-os-example-nvstore`](../apis/nvstore.html#nvstore-example).
 - [`mbed-os-example-thread-statistics`](../apis/mbed-statistics.html#thread-statistics-example).
 - [`mbed-os-example-sys-info`](../apis/mbed-statistics.html#system-information-example).

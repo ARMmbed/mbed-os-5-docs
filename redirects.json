@@ -80,7 +80,7 @@
     "apis/psa-internal-storage.html": "apis/psa-compliant-apis.html",
     "apis/network-socket.html": "apis/network-socket-apis.html",
     "apis/dtlssocket.html": "apis/secure-socket-apis.html",
-    "apis/nfc.html": "apis/nfc-apis.html",
+    "apis/nfc.html": "apis/nfc-technology.html",
     "apis/lorawan-api.html": "apis/lorawaninterface.html",
     "apis/conditionvariable.html": "apis/rtos-apis.html",
     "apis/event.html": "apis/event-handling-apis.html",

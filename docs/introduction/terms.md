@@ -10,7 +10,7 @@
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](../tools/developing-mbed-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - [Arm’s online tool](../build-tools/mbed-online-compiler.html), which you can use to create and compile your code.
 
 **Arm Mbed OS** - Arm's [operating system](https://os.mbed.com/docs) for the Internet of Things.
 
@@ -48,7 +48,7 @@
 
 **Callback** - Any [executable code](../apis/callback.html) that is passed as an argument to other code, which is expected to call back (execute) the argument at a given time.
 
-**CAN** - [Controller-area network](../apis/can.html).
+**CAN** - [Controller-area network](../apis/other-driver-apis.html).
 
 **CI** - Continuous integration.
 
@@ -67,7 +67,7 @@
 
 **DAPLink** - An Arm maintained [project](https://github.com/mbedmicro/DAPLink) that is under active development.
 
-**Debugging** - The [process](../tools/debugging.html) of finding and solving problems in code.
+**Debugging** - The [process](../debug-test/index.html) of finding and solving problems in code.
 
 **Deprecation** - Marking a piece of code as out of date. You should not write new code that depends on deprecated APIs. We will remove deprecated APIs when our code no longer depends on them.
 
@@ -81,7 +81,7 @@
 
 **GPIO** - General-purpose input/output, a generic pin that is controllable by the user at run-time.
 
-**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](../tools/greentea-testing-applications.html) is the automated testing tool for Arm Mbed OS development.
+**Greentea** - **G**eneric **re**gression **en**vironment for **te**st **a**utomation. [Greentea](../debug-test/greentea-testing-applications.html) is the automated testing tool for Arm Mbed OS development.
 
 ## H
 
@@ -137,7 +137,7 @@
 
 **REST** - Representational State Transfer (API).
 
-**RTOS** - [Real-Time Operating System](../apis/rtos.html).
+**RTOS** - [Real-Time Operating System](../apis/scheduling-concepts.html).
 
 ## S
 

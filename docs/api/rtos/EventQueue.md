@@ -65,4 +65,4 @@ Use static EventQueue to prevent your program from failing due to queue memory e
 
 ## Related content
 
-- [EventQueue tutorial](../tutorials/the-eventqueue-api.html).
+- [EventQueue tutorial](../apis/the-eventqueue-api.html).

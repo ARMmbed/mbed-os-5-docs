@@ -40,4 +40,4 @@ Please install the following:
 
 - (Optional) [FTDI serial driver](http://www.ftdichip.com/Drivers/VCP.htm).
 
-<span class="notes">The [tools documentation](../tools/index.html) contains the exact third party tool versions supported in a specific Mbed OS release.</span>
+<span class="notes">The [tools documentation](../build-tools/index.html) contains the exact third party tool versions supported in a specific Mbed OS release.</span>

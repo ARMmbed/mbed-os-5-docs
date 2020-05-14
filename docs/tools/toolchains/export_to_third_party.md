@@ -26,7 +26,7 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 - Qt Creator.
 - SW4STM32 System Workbench for STM32.
 
-This may be useful to [launch a debug session](../tools/debugging.html) with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
+This may be useful to [launch a debug session](../debug-test/index.html) with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
 ## Exporting from the Arm Mbed Online Compiler
 

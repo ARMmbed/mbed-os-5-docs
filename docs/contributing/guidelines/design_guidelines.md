@@ -222,7 +222,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Tests included in the codebase must be compatible with the Mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
-[Full documentation](../tools/test-and-debug.html).
+[Full documentation](../build-tools/test-and-debug.html).
 
 ## Configuration
 

@@ -78,7 +78,7 @@ For example, when providing a Wi-Fi SSID and password, you may use the following
 }
 ```
 
-Please see [Selecting the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
+Please see [Selecting the default network interface](../apis/connectivity-options-and-config.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
 
 Targets with connectivity set the `target.network-default-interface-type` configuration variable appropriately, either to their only interface or the one most commonly used. For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
 
@@ -138,12 +138,12 @@ Another, more common, case is where only one of the interface is active at a tim
 
 When an interface operates in asynchronous mode, the return values of `connect()` and `disconnect()` have slightly different meanings. Calling `connect()` starts the asynchronous operation, which puts the device in the `GLOBAL_UP` state. Calling `disconnect()` puts the target in the `DISCONNECTED` state. Return code in asynchronous mode does not reflect the connection status. The most common return codes in asynchronous mode is `NSAPI_ERROR_OK`, which means that operation just started. Please refer to the Doxygen documentation of [NetworkInterface::connect()](../mbed-os-api-doxy/class_network_interface.html#aaf6bf1dfffbe6a5626b7b52eaa542b6e) and [NetworkInterface::disconnect()](../mbed-os-api-doxy/class_network_interface.html#afdda3f62c7d73df183ee2d352e8cd146) for return values of these functions.
 
-To check whether the interface is connected, the application needs to register the status callback for the interface. Please refer to the [Network status API](network-status.html) for information on how to do so.
+To check whether the interface is connected, the application needs to register the status callback for the interface. Please refer to the [Network status API](../apis/network-status.html) for information on how to do so.
 
 ## Related content
 
-- [Configuring the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface).
-- [Network connectivity](../reference/networking.html).
-- [IP networking](../reference/ip-networking.html).
-- [Network status API](network-status.html).
-- [Network sockets](../apis/network-socket.html).
+- [Configuring the default network interface](../apis/connectivity-options-and-config.html).
+- [Network connectivity](../apis/choosing-a-connectivity-type.html).
+- [IP networking](../apis/connectivity-architecture.html).
+- [Network status API](../apis/network-status.html).
+- [Network sockets](../apis/socket.html).

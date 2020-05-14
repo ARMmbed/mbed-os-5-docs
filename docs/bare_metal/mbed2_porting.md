@@ -126,7 +126,7 @@ Troubleshoot any issue.
 
 To validate the bare metal target configuration, execute the Mbed OS Greentea test suite with the bare metal profile. This profile causes Greentea to skip a subset of the tests, either because the underlying functionality has not been ported to bare metal or because some tests require RTOS features (for examples, more complex tests based on multi-threading). It performs all the tests compatible with bare metal.
 
-If you haven't used Greentea before, [you can learn more in our documentation](../tools/greentea-testing-applications.html).
+If you haven't used Greentea before, [you can learn more in our documentation](../debug-test/greentea-testing-applications.html).
 
 1. Change directory:
 

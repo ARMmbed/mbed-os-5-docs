@@ -12,7 +12,7 @@ The Socket API is the common API among all IP connectivity methods. All network 
 
 In the OSI model, the Socket API relates to layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
-Refer to [Socket API](../apis/network-socket.html) reference for usage instructions.
+Refer to [Socket API](../apis/socket.html) reference for usage instructions.
 
 ## IP stacks
 

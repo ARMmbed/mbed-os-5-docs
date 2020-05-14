@@ -5,7 +5,7 @@ This guide is to assist you in the process of updating an existing [component](h
 ## Prerequisites
 
 - [Mbed CLI](../tools/developing-mbed-cli.html).
-- An [offline compiler](../tools/index.html#compiler-versions).
+- An [offline compiler](../build-tools/index.html#compiler-versions).
 
 ## Identifying old versions of Mbed OS
 
@@ -49,7 +49,7 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-To update to Mbed OS 5 with the [Mbed Online Compiler](../tools/developing-mbed-online-compiler.html):
+To update to Mbed OS 5 with the [Mbed Online Compiler](../build-tools/mbed-online-compiler.html):
 
 1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**:

@@ -7,7 +7,7 @@ The installers are a great way to get started with Mbed OS:
 
 There is no installer for Linux; please follow the [manual installation guide](../tools/manual-installation.html).
 
-<span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../build-tools/index.html#compiler-versions).</span>
 
 ## Manual installation
 
@@ -65,7 +65,7 @@ pip install -U mbed-cli
 
 ## 3. Install a compiler
 
-Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../tools/index.html#compiler-versions).
+Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../build-tools/index.html#compiler-versions).
 
 **Note:** When installing the Arm Compiler 5 on a 64-bit Linux system, you may also need to install the i386 architecture package. As as example on Ubuntu:
 

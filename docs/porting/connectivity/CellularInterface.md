@@ -95,6 +95,6 @@ To run the tests:
 
 1. Run Mbed OS Socket tests. Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for more details.
 
-For more information on the `mbed-greentea` test suite, please visit [its documentation](../tools/greentea-testing-applications.html).
+For more information on the `mbed-greentea` test suite, please visit [its documentation](../debug-test/greentea-testing-applications.html).
 
 You may also find the [Mbed OS cellular example](https://github.com/ARMmbed/mbed-os-example-cellular) useful for testing.
