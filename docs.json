@@ -108,13 +108,6 @@
                                 "path": "docs/quick-start/cli_code.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "Debugging with Mbed CLI",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-cli-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
@@ -124,13 +117,6 @@
                             "title": "Importing and compiling the code",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-compiler.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Debugging with the Online Compiler",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         }

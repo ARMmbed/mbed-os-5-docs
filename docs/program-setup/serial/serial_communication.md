@@ -6,57 +6,77 @@ The Arm Mbed microcontroller on your board can communicate with a host PC over t
 
 This allows you to:
 
-- Print out messages to a [host PC terminal (useful for debugging)](#terminal-applications).
-- Read input from the host PC keyboard.
-- Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
+- Print out messages to a PC terminal (useful for debugging).
+- Read input from a PC keyboard.
+- Communicate with applications running on a PC to exchange data.
 
-## Hello, world
+## Hello World - printing messages
 
-This program prints a "Hello World" message that you can view on a [terminal application](#using-terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
+This program prints a "Hello World!" message that you can view on a serial terminal. Mbed OS redirects any `printf()` statements to the board's debug USB serial.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_HelloWorld/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_HelloWorld/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.0/main.cpp)
 
-## Using terminal applications
+### Viewing output in a serial terminal
 
-Terminal applications run on your host PC. They provide a window where your Mbed board can print and where you can type characters back to your board.
+Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-<span class="tips">**Serial configuration:** The standard setup for the USB serial port is 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1)</span>
+Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. When a single board is connected, run: 
 
-### Installing an application for Windows
+```
+mbed sterm
+```
 
-There are many terminal applications for Windows, including:
+(If you have multiple boards connected, please refer to [Additional options of mbed sterm](#additional-options-of-mbed-sterm).)
 
-- [CoolTerm](http://freeware.the-meiers.org/) - this is the application we use in this example. We use it often because it usually "just works".
-- [Tera Term](http://sourceforge.jp/projects/ttssh2/files).
-- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
-- Some Windows PCs come with **Hyperterminal** installed.
+`mbed sterm` starts message printing.
 
-### Configuring the connection
+Restart the application using the board's reset button, or by entering <kbd>Ctrl + B</kbd> in the serial terminal.
+The example prints "Hello World!" to the terminal after the reset.
 
-1. Plug in your Mbed board.
-1. Open CoolTerm.
-1. Click **Connect**. This opens up an 8-n-1 9600 baud connection to the first available serial port. If you have more than one board plugged in, you may need to change the port under **Options > Serial Port > Port**.
+To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-Check your connection parameters:
+## Additional options of mbed sterm
 
-1. Select **Options > Serial Port**.
-1. You should see 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1).
-1. If you do not see your board, click **Re-Scan Peripherals**.
+- If you have multiple boards connected:
+    1. Run `mbedls` to find the port of the board you want to use.
+    1. Run `mbed sterm -p <PORT>`.
 
-Your terminal program is now configured and connected.
+- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` when opening the serial terminal.
 
-## Using terminal applications on Linux
+- To list all options, run `mbed sterm -h`:
 
-CoolTerm should work under Linux. If for some reason it doesn't, you can try one of the following:
+```
+usage: mbed sterm [-h] [-m TARGET] [-p PORT] [-b BAUDRATE] [-e ECHO] [-r] [-v] [-vv]
 
-- [Minicom](https://help.ubuntu.com/community/Minicom).
-- [GNU Screen](https://www.gnu.org/software/screen/manual/screen.html).
+Open serial terminal to connected target (usually board), or connect to a user-specified COM port
 
-## Minimal Printf
+optional arguments:
+-h, --help            show this help message and exit
+-m TARGET, --target TARGET
+                        Compile target MCU. Example: K64F, NUCLEO_F401RE,
+                        NRF51822...
+-p PORT, --port PORT  Communication port. Default: auto-detect. Specifying
+                        this will also ignore the -m/--target option above.
+-b BAUDRATE, --baudrate BAUDRATE
+                        Communication baudrate. Default: 9600
+-e ECHO, --echo ECHO  Switch local echo on/off. Default: on
+-r, --reset           Reset the targets (via SendBreak) before opening
+                        terminal.
+-v, --verbose         Verbose diagnostic output
+-vv, --very_verbose   Very verbose diagnostic output
+```
 
-For low memory devices you may optionally use the [ArmMbed minimal printf library](https://github.com/ARMmbed/minimal-printf).
+## Auto-opening a serial terminal after compilation
 
-# Additional examples
+To compile, flash and open a serial terminal in one command line:
+
+```
+mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
+```
+
+## Additional examples - reading user inputs
+
+In addition to printing messages, Mbed OS applications can also read keyboard inputs from the user using the [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html) classes.
 
 Use your terminal application to interact with the following examples.
 
@@ -79,12 +99,6 @@ If you're not sure how to build these examples and run them on your board, pleas
 Tie pins together to see characters echoed back.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/blob/v6.0/main.cpp)
-
-## Using stdin, stdout and stderr
-
-By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.0/main.cpp)
 
 ## Read to a buffer
 
