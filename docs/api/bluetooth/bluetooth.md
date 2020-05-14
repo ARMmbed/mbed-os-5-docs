@@ -53,3 +53,7 @@ At the moment, BLE devices don't have independent internet access. To get intern
 1. The BLE device can use a gateway (which can be a mobile phone) to exchange data with the internet. The gateway needs to adapt the protocols used because BLE is a non-IP technology. This means that when the phone terminates the BLE connection, the BLE device loses its internet access. This doesn't require additional hardware, so it doesn't affect the price of the board. However, for the device to have constant internet access, it needs a phone (or BLE-enabled computer) next to it.
 
 In the future, routers may accept BLE connections in the same way that they currently accept Wi-Fi connections.
+
+## BLE tutorials
+
+We have placed all of our BLE examples in a single GitHub repository, so although they are also available in the API pages, the [GitHub repository](https://github.com/ARMmbed/mbed-os-example-ble) is the best place to see all of them.

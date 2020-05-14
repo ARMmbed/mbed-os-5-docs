@@ -743,9 +743,6 @@
                                     "path": "docs/api/light-control.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/ble_tutorial.md"
-                                },
-                                {
                                     "path": "docs/api/lorawan/lorawanintro.md"
                                 },
                                 {
