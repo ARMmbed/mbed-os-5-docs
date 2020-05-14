@@ -74,7 +74,7 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
         </tr>
         <tr>
             <td>BLE</td>
-            <td>&#10004; (can be manually enabled)<br>Except `COMPONENT_BlueNRG_MS`</td>
+            <td>&#10004; (can be manually enabled)<br>Except BlueNRG-MS component</td>
         </tr>    
         <tr>
             <td>NFC</td>
