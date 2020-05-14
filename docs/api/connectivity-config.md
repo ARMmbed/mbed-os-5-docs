@@ -4,7 +4,7 @@ This page describes build-time configurable parameters for connectivity in Mbed 
 
 <span class="notes">**Note:** You can find settings for Mesh networking under [6LoWPAN Mesh](configuration-mesh.html).</span>
 
-This is the complete list of connectivity configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
+This is the complete list of connectivity configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](../program-setup/advanced-configuration.html) for details on how you may use or override these settings.
 
 ```
 Configuration parameters

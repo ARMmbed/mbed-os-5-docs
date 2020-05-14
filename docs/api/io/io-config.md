@@ -1,8 +1,8 @@
 <h1 id="configuration-drivers">Driver configuration</h1>
 
-The driver configurations allows for customization of the OS driver layer. Options in this section pertain to hardware I/O. You can find additional serial settings for `printf` in the [platform configuration page](configuration-platform.html). With the exception of `default-serial-baud-rate`, these settings do not affect Serial objects.
+The driver configurations allows for customization of the OS driver layer. Options in this section pertain to hardware I/O. You can find additional serial settings for `printf` in the [platform configuration page](../apis/platform-options-and-config.html). With the exception of `default-serial-baud-rate`, these settings do not affect Serial objects.
 
-This is the complete list of I/O configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
+This is the complete list of I/O configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](../program-setup/advanced-configuration.html) for details on how you may use or override these settings.
 
 
 ```

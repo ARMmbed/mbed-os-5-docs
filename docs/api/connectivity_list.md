@@ -13,7 +13,7 @@
 
 - [Cellular](../apis/network-interface-apis.html): Connect to the internet over a Cellular device.
 - [Ethernet](../apis/ethernet.html): Connect to the internet over Ethernet.
-- [Mesh](../apis/mesh-api.htm): Use the IPv6 mesh network topologies through the Nanostack networking stack to connect to a mesh network: Wi-Sun or 6LoWPAN-ND.
+- [Mesh](../apis/mesh-api.html): Use the IPv6 mesh network topologies through the Nanostack networking stack to connect to a mesh network: Wi-Sun or 6LoWPAN-ND.
 - [Network status](../apis/network-status.html): Trigger a callback each time the network interface's status changes.
 - [Wi-Fi](../apis/wi-fi.html): Connect to the internet over a Wi-Fi device.
 
@@ -34,7 +34,7 @@
 - [GattClient](../apis/gattclient.html): Initiate interactions with a GattServer to discover services, characteristics and descriptors and perform operations on them.
 - [GattServer](../apis/gattserver.html): Respond to a GattClient.
 - [HeartRateService](../apis/heartrateservice.html): Expose heart rate sensor data in a Bluetooth standard compliant way.
-- [SecurityManager](../apis/SecurityManager.html): Use pairing and optional bonding processes to authenticate and encrypt BLE links.
+- [SecurityManager](../apis/securitymanager.html): Use pairing and optional bonding processes to authenticate and encrypt BLE links.
 
 ## NFC
 
@@ -47,4 +47,4 @@
 ## LoRaWAN
 
 - [LoRaWANInterface](../apis/lorawan-apis.html): Connect to the internet over a LoRa network.
-- [LoRaRadio](../apis/nfc-loraradio.html): A pure virtual class that defines APIs for a LoRa radio driver.
+- [LoRaRadio](../apis/loraradio.html): A pure virtual class that defines APIs for a LoRa radio driver.

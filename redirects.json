@@ -46,7 +46,7 @@
     "tutorials/debugging-using-printf-statements.html": "debug-test/debugging-using-printf-statements.html",
     "tutorials/debug-microbit.html": "debug-test/debug-microbit.html",
     "tutorials/keil-uvision.html": "debug-test/keil-uvision.html",
-    "tutorials/eclipse.html": "debug-test/eclipse.html",
+    "tutorials/eclipse.html": "debug-test/third-party-tools.html",
     "reference/bare-metal-apis.html": "apis/index.html",
     "reference/configuration-mesh.html": "apis/configuration-mesh.html",
     "tools/greentea-testing-applications.html": "debug-test/greentea-testing-applications.html",
@@ -167,5 +167,8 @@
     "apis/cellular-api.html" : "apis/network-interface-apis.html",
     "apis/dns-resolver.html" : "apis/dns-apis.html",
     "apis/batteryservice.html" : "apis/bluetooth-apis.html",
-    "apis/messagebuilder.html" : "apis/nfc-apis.html"
+    "apis/messagebuilder.html" : "apis/nfc-apis.html",
+    "reference/using-small-c-libraries.html" : "bare-metal/using-small-c-libraries.html",
+    "tools/developing-mbed-cli.html" :  "build-tools/mbed-cli.html",
+    "apis/using-mbed-tls-to-communicate-securely.html" : "apis/tls-tutorial.html"
 }

@@ -20,7 +20,7 @@
 - [FlashSimBlockDevice](../apis/flashsimblockdevice.html): A block device adapator that simulates the behavior of a flash component if the underlying block device doesn't support such a behavior.
 - [HeapBlockDevice](../apis/heapblockdevice.html): Simulate block devices for software development or testing.
 - [MBRBlockDevice](../apis/mbrblockdevice.html): Manage a Master Boot Record (MBR) on a storage device, which allows you to partition the device.
-- [ProfilingBlockDevice](../apis/profilingblockdevice.htm): A decorator for an existing block device object to log reads, writes and erases.
+- [ProfilingBlockDevice](../apis/profilingblockdevice.html): A decorator for an existing block device object to log reads, writes and erases.
 - [QSPIFBlockDevice](../apis/qspifblockdevice.html): A block device driver for NOR-based QSPI Flash devices that support the SFDP standard.
 - [SDBlockDevice](../apis/sdblockdevice.html): Read and write data to flash storage cards using the standard POSIX File API programming interface.
 - [SlicingBlockDevice](../apis/slicingblockdevice.html): Break up a block device into subunits without the need to manually track offsets. The SlicingBlockDevice acts as an opposite of the ChainingBlockDevice class.

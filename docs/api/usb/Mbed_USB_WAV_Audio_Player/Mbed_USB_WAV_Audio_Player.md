@@ -29,7 +29,7 @@ The steps below describe this in more detail.
 
 This tutorial uses several Mbed libraries:
 
-- [USB](../apis/usb.html) (part of Mbed OS).
+- [USB](../apis/usb-apis.html) (part of Mbed OS).
 - [sd-driver](https://github.com/ARMmbed/sd-driver) (external library).
 - [AudioPlayer](https://github.com/ARMmbed/AudioPlayer) (external library).
 

@@ -26,7 +26,7 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 | API | Examples | Tutorials |
 | --- | --- | --- |
 | Event | [Posting events to the queue](../apis/event-handling-apis.html) |  |
-| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](the-eventqueue-api.html)|
+| EventQueue | [Chaining events from more than one queue](../apis/eventqueue.html#eventqueue-example-chaining-events-from-more-than-one-queue)<br> [Deferring from interrupt context](../apis/eventqueue.html#eventqueue-example-deferring-from-interrupt-contextl) <br> [Posting events to the queue](../apis/eventqueue.html#eventqueue-example-posting-events-to-the-queue) <br> [Shared event: deferring from interrupt context](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br>  [Shared event: running the shared queue from main](../apis/eventqueue.html#shared-event-example-running-the-shared-queue-from-main)<br> [Static event queue example](../apis/eventqueue.html#static-eventqueue-example-posting-user-allocated-events-to-the-static-queue) | [EventQueue tutorial](../apis/scheduling-tutorials.html)|
 | UserAllocatedEvent | [Static event queue example](../apis/userallocatedevent.html#static-eventqueue-example-posting-user-allocated-events-to-the-queue) | |
 
 ## Serial (UART) Driver APIs
@@ -166,7 +166,7 @@ And the following tutorial:
 | FlashSimBlockDevice | [FlashSimBlockDevice example](../apis/flashsimblockdevice.html#flashsimblockdevice-example) |
 | HeapBlockDevice | [HeapBlockDevice example](../apis/heapblockdevice.html#heapblockdevice-example) |
 | MBRBlockDevice | [MBRBlockDevice example](../apis/mbrblockdevice.html#mbrblockdevice-example) |
-| ProfilingBlockDevice | [ProfilingBlockDevice example](../apis/profilingblockdevice.html#profilingblockdevice-example) |
+| ProfilingBlockDevice | [ProfilingBlockDevice example](../apis/profilingblockdevice.htmll#profilingblockdevice-example) |
 | QSPIFBlockDevice | [QSPIFBlockDevice example](../apis/qspifblockdevice.html#qspifblockdevice-example) |
 | SDBlockDevice | [SDBlockDevice example](../apis/sdblockdevice.html#sdblockdevice-example-application) |
 | SlicingBlockDevice | [SlicingBlockDevice](../apis/slicingblockdevice.html#slicingblockdevice-example) |
@@ -197,7 +197,7 @@ And the following tutorial:
 | API | Examples | Tutorials |
 | --- | --- | --- |
 | DTLSSocket | [DTLSSocket example](../apis/secure-socket-apis.html#dtlssocket-example) | |
-| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | [Secure communication tutorial](../apis/using-mbed-tls-to-communicate-securely.html) |
+| TLSSocket | [TLSSocket example](../apis/tlssocket.html#tlssocket-example) | [Secure communication tutorial](../apis/tls-tutorial.html) |
 
 ## DNS API
 
@@ -213,7 +213,7 @@ We have placed all of our BLE examples in a single [GitHub repository](https://g
 
 | API | Examples |
 | --- | --- |
-| MessageBuilder | [MessageBuilder example](../apis/nfc-apis.htmll#messagebuilder-example) |
+| MessageBuilder | [MessageBuilder example](../apis/nfc-apis.html#messagebuilder-example) |
 | MessageParser | [MessageParser example](../apis/messageparser.html#messageparser-example) || Mesh | | [Mesh tutorial](../apis/connectivity-tutorials.html) <br>  [Light control tutorial](../apis/light-control.html) |
 | NFCController | [NFCController example](../apis/nfccontroller.html#nfccontroller-example) |
 | NFCEEPROM | [NFCEEPROM example](../apis/nfc-eeprom.html#nfceeprom-example) |
@@ -239,7 +239,7 @@ You can try the following examples on GitHub:
 
 Each of them comes with complete usage instructions as a readme file in the repository.
 
-- Or try [DeviceKey](../devicekey.html#devicekey-example).
+- Or try [DeviceKey](../apis/security-apis.html#devicekey-example).
 
 
 ## Serial communication
@@ -265,7 +265,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 ### Debugging with third party tools
 
-- [Eclipse](../debug-test/eclipse.html).
+- [Eclipse](../debug-test/third-party-tools.html).
 - [Keil uVision](../debug-test/keil-uvision.html).
 - [Visual Studio](../debug-test/visual-studio-code.html).
 

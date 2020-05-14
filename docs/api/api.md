@@ -81,7 +81,7 @@ This list does not include the internal APIs, which are not intended for use by 
 | [USBAudio](../apis/usb-apis.html) | &#10004; | &#10004;  |
 | [USBCDC](../apis/usbcdc.html) | &#10004; | &#10004;  |
 | [USBCDC_ECM](../apis/usbcdc-ecm.html) | &#10004; |  |
-| [USBHID](../apis/ubshid.html) | &#10004; | &#10004;  |
+| [USBHID](../apis/usbhid.html) | &#10004; | &#10004;  |
 | [USBKeyboard](../apis/usbkeyboard.html) | &#10004; | &#10004;  |
 | [USBMIDI](../apis/usbmidi.html) | &#10004; | &#10004;  |
 | [USBMouse](../apis/usbmouse.html) | &#10004; | &#10004;  |
@@ -182,7 +182,7 @@ This list does not include the internal APIs, which are not intended for use by 
 | [FlashSimBlockDevice](../apis/flashsimblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [HeapBlockDevice](../apis/heapblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [MBRBlockDevice](../apis/mbrblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
-| [ProfilingBlockDevice](../apis/profilingblockdevice.htm) | &#10004; | &#10004; (can be manually enabled) |
+| [ProfilingBlockDevice](../apis/profilingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [QSPIFBlockDevice](../apis/qspifblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
 | [SDBlockDevice](../apis/sdblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [SlicingBlockDevice](../apis/slicingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
@@ -218,7 +218,7 @@ This list does not include the internal APIs, which are not intended for use by 
 | - | - | - |
 | [Cellular](../apis/network-interface-apis.html) | &#10004; | |
 | [Ethernet](../apis/ethernet.html) | &#10004; | |
-| [Mesh](../apis/mesh-api.htm) | &#10004; | |
+| [Mesh](../apis/mesh-api.html) | &#10004; | |
 | [Network status](../apis/network-status.html) | &#10004; | |
 | [Wi-Fi](../apis/wi-fi.html) | &#10004; | |
 
@@ -247,7 +247,7 @@ This list does not include the internal APIs, which are not intended for use by 
 | [GattClient](../apis/gattclient.html) | &#10004; | &#10004; (can be manually enabled) |
 | [GattServer](../apis/gattserver.html) | &#10004; | &#10004; (can be manually enabled) |
 | [HeartRateService](../apis/heartrateservice.html) | &#10004; | &#10004; (can be manually enabled) |
-| [SecurityManager](../apis/SecurityManager.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SecurityManager](../apis/securitymanager.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ### NFC
 
@@ -268,7 +268,7 @@ This list does not include the internal APIs, which are not intended for use by 
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [LoRaWANInterface](../apis/lorawan-apis.html) | &#10004; | |
-| [LoRaRadio](../apis/nfc-loraradio.html) | &#10004; | |
+| [LoRaRadio](../apis/loraradio.html) | &#10004; | |
 
 ## Security
 

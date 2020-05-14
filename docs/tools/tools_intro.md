@@ -26,11 +26,11 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 
 <span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. All platforms are already compatible with it. Please do not use Arm Compiler 5 in any new development as it will be deprecated in the future.</span>
 
-For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
+For more information, please see the [Online Compiler page](../build-tools/mbed-online-compiler.html).
 
 ## Arm Mbed CLI
 
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI page](../tools/developing-mbed-cli.html).
+We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI page](../build-tools/mbed-cli.html).
 
 ### Compiler versions
 

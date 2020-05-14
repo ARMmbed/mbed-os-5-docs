@@ -2,7 +2,7 @@
 
 Arm Mbed uses JSON as a description language for its build targets. You can find the JSON description of Mbed targets in `targets/targets.json` and in `custom_targets.json` in the root of a project directory. If you provide a source directory using the `--source` switch, Mbed looks for `custom_targets.json` in that directory instead. When you add new targets with `custom_targets.json`, they are added to the list of available targets, in addition to the [scanning rules](../program-setup/build-rules.html).
 
-<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](../tools/developing-mbed-cli.html) to take your code offline.</span>
+<span class="notes">**Note:** The Online Compiler does not support this functionality. You need to use [Mbed CLI](../build-tools/mbed-cli.html) to take your code offline.</span>
 
 You are not allowed to redefine existing targets in `custom_targets.json`. To better understand how a target is defined, we'll use this example (taken from `targets.json`):
 
@@ -447,4 +447,4 @@ The `orphans` command shows all targets that you cannot reach from a public targ
 ## Related content
 
 - [Defining a PSA-compliant target in targets.json](../program-setup/adding-and-configuring-targets.html#defining-a-psa-compliant-target-in-targets.json).
-- [Developing: Mbed CLI](../tools/developing-mbed-cli.html).
+- [Developing: Mbed CLI](../build-tools/mbed-cli.html).

@@ -4,7 +4,7 @@ This guide is to assist you in the process of updating an existing [component](h
 
 ## Prerequisites
 
-- [Mbed CLI](../tools/developing-mbed-cli.html).
+- [Mbed CLI](../build-tools/mbed-cli.html).
 - An [offline compiler](../build-tools/index.html#compiler-versions).
 
 ## Identifying old versions of Mbed OS
@@ -36,7 +36,7 @@ Migrating to Mbed OS 5 results in two possible outcomes:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
   - There is target specific code, and you need to migrate it to use the code for the specific target you are compiling for.
 
-To update to Mbed OS 5 with the [Mbed CLI](../tools/developing-mbed-cli.html), run:
+To update to Mbed OS 5 with the [Mbed CLI](../build-tools/mbed-cli.html), run:
 
 ```
 mbed import [URL of Project]

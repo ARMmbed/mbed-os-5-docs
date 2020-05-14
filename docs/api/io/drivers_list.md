@@ -34,7 +34,7 @@
 - [USBAudio](../apis/usb-apis.html): Send and receive audio data over USB.
 - [USBCDC](../apis/usbcdc.html): Emulates a basic serial port over USB so you can send or receive data.
 - [USBCDC_ECM](../apis/usbcdc-ecm.html): Emulates an Ethernet interface over USB so you can send and receive Ethernet frames.
-- [USBHID](../apis/ubshid.html): Turn an Mbed board into a Human Interface Device (HID) that can send and receive messages over USB.
+- [USBHID](../apis/usbhid.html): Turn an Mbed board into a Human Interface Device (HID) that can send and receive messages over USB.
 - [USBKeyboard](../apis/usbkeyboard.html): Send key presses, check the status of control keys and send a key press sequences though a stream interface.
 - [USBMIDI](../apis/usbmidi.html): Send and receive MIDI messages over USB using the standard USB-MIDI protocol.
 - [USBMouse](../apis/usbmouse.html): Emulate a mouse over the USB port. You can choose relative or absolute coordinates and send clicks, button state and scroll wheel movements.
