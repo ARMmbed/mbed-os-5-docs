@@ -14,7 +14,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## DataFlashBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_data_flash_block_device.html)
 
 ## DataFlashBlockDevice example
 

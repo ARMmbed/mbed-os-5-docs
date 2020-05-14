@@ -41,7 +41,7 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ## LittleFileSystem class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.html)
 
 ## LittleFileSystem example
 

@@ -407,7 +407,7 @@ Name: nvstore.max_keys
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-When [one of the following components](https://cloud.mbed.com/docs/latest/connecting/mbed-os-storage-configuration.html) is enabled, a default block device is set in the system ("components": ["xxx","yyy"]):
+When one of the following components is enabled, a default block device is set in the system ("components": ["xxx","yyy"]):
 
 1. SPIF
 1. QSPIF

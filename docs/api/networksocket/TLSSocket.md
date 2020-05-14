@@ -8,7 +8,7 @@ To use secure TLS connections, the application uses the `TLSSocketWrapper` throu
 
 ## TLSSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_t_l_s_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_t_l_s_socket.html)
 
 ## TLSSocket example
 

@@ -6,7 +6,7 @@ To configure this class, please see the [LoRa configuration documentation](../re
 
 ## LoRaWANInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html)
 
 ## LoRaWAN example
 

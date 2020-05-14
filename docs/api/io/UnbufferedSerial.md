@@ -1,6 +1,6 @@
 # UnbufferedSerial
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
 The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/BufferedSerial.html) class. The classes also share the same default configurations.
 

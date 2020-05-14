@@ -6,7 +6,7 @@ The wait_us and wait_ns functions provide precise wait capabilities. These funct
 
 ## Wait function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v5.15/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
 
 ## Example
 
@@ -14,5 +14,5 @@ The wait_us and wait_ns functions provide precise wait capabilities. These funct
 
 ## Related content
 
-- [RTOS](rtos.html) overview.
-- [Application flow control tutorial](/docs/v5.15/tutorials/application-flow-control.html).
+- [RTOS](../apis/scheduling-concepts.html) overview.
+- [Application flow control tutorial](../apis/platform-tutorials.html).
