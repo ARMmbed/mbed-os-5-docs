@@ -4,6 +4,8 @@ The Mbed OS bare metal profile offers the same functionality as Mbed OS 2 and al
 
 This document describes how to configure an Mbed OS 2 target for bare metal, and validate the port.
 
+<span class="tips">**Tips:** For general porting information, please [see our porting guide](../porting/index.html).</span>
+
 ## Configuring your target
 
 The configure your target:

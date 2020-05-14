@@ -4,6 +4,8 @@ Bare metal is a profile of Mbed OS for ultraconstrained hardware: compact and wi
 
 The bare metal profile implements a subset of Mbed OS's RTOS APIs that are useful in non-threaded applications, such as semaphores (calling the release API from interrupts) and tickers (to set up a recurring interrupt). It does not include an RTX, and is therefore suitable for applications that do not require complex thread management. Instead of the RTOS's scheduler, all activities are polled or interrupt-driven. This simplifies application code and allows using APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
 
+The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all support working with the bare metal profile.
+
 ## Features
 
 For a breakdown of supported APIs, please see [the full API list](../apis/index.html).
@@ -98,13 +100,12 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
     </tbody>
 </table>
 
-The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all support working with the bare metal profile.
 
 ## Documentation
 
 The bare metal documentation covers:
 
 - [A bare metal version of our standard Blinky example](../bare-metal/bare-metal-example.html).
-- A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application, add optional APIs and use Greentea to test the application.
+- A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application and add non-defult APIs.
 - [A short review of small C libraries](../bare-metal/using-small-c-libraries.html).
 - [A porting guide for Mbed OS 2 targets](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).

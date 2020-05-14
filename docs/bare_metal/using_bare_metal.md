@@ -2,14 +2,14 @@
 
 This guide shows how to create a bare metal profile application:
 
-1. Set the profile: By default, the build tool uses the full profile for all application builds. To use the bare metal profile, set up your application to override this default behaviour.
-1. By default, the bare metal profile uses a minimal set of APIs. You can add additional ones [from the list of supported APIs](../bare-metal/index.html#features) if your application needs them.
+1. By default, the build tool uses the full profile for all application builds. To use the bare metal profile, set up your application to override this default behaviour.
+1. The bare metal profile uses a minimal set of default APIs. You can add additional ones [from the list of supported APIs](../bare-metal/index.html#features) if your application needs them.
 
-To demonstrate how to create a bare metal application, here is an example that prints text at regular intervals using the `EventQueue` class:
+Here is a code snippet that can work for both Mbed OS profiles; it prints text at regular intervals using the `EventQueue` class. You will create an application that uses this code, set it to use the bare metal profile, and add the non-default `EventQueue` class.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
 
-## Creating a bare metal application
+## 1. Creating a bare metal application
 
 To create the application:
 
@@ -21,7 +21,9 @@ To create the application:
 
     The directory contains the full Mbed OS library (`mbed-os/`) and no application files.
 
-1. Create a `main.cpp` file containing the `EventQueue` code snippet above.
+1. Create a `main.cpp` file.
+
+1. Copy the code snippet above into `main.cpp`.
 
 1. Open `mbed_app.json` (in the root of the application) and replace it with the following content:
 
@@ -36,24 +38,22 @@ To create the application:
     }
     ```
 
-    The file specifies which profile to use (`"requires": ["bare-metal"]`) and which C library to use (`"target.c_lib": "small"`).
-    
-    In this example, we're using `"target.c_lib": "small"` (small C library). This means your application will use an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
+    The `mbed_app.json` file specifies which **profile** to use (`"requires": ["bare-metal"]`) and which **C library** to use (`"target.c_lib": "small"`).
 
-You now have application code and a bare metal profile with the default APIs. However, this example uses APIs that are not part of the default bare metal profile - you need to manually add support for those APIs to the application.
+    This example uses `"target.c_lib": "small"` (small C library). This means your application will use an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
 
-## Adding APIs
+## 2. Adding APIs
 
-Bare metal has a minimal set of default APIs - those that are always available to a bare metal application. You can add other supported APIs if you need the features they enable.
+Your application is set to use the bare metal profile with the default APIs. However, this example uses APIs that are not part of the default bare metal profile. You need to manually add support for those APIs to the application (for a list of default and supported APIs, [please see our full API list](../apis/index.html)).
 
-For a list of default and supported APIs, [please see our full API list](../apis/index.html).
-
-This example depends on the `EventQueue` class, so you need to add the library that contains that class:
+This example depends on the `EventQueue` class, so you need to add the library that contains that class to the `mbed_app.json` file:
 
 1. In `mbed-os/`, locate the API and the library in which it is declared.
+
 1. In the library folder, open `mbed_lib.json` and find the library's name. You will need it for the next step.
 
     For example: `mbed-os/events/mbed_lib.json`:
+
     ```json
     {
         "name": "events",
@@ -63,7 +63,8 @@ This example depends on the `EventQueue` class, so you need to add the library t
         }
     }
     ```
-    To continue, go back to the application's root directory.
+
+1. Go back to the application's root directory.
 
 1. Open `mbed_app.json` again, and add the library to the `"requires"` field:
 
@@ -78,7 +79,9 @@ This example depends on the `EventQueue` class, so you need to add the library t
     }
     ```
 
-## Compiling and Running the Application
+The application is now ready to compile, and it will include the events library and all its dependencies.
+
+## 3. Compiling and running the application
 
 Connect a supported board to your computer, and compile and run your application:
 
@@ -86,7 +89,7 @@ Connect a supported board to your computer, and compile and run your application
 mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
 ```
 
-When the example is flashed, a serial terminal opens (because of `--sterm`). The outputis:
+When the example is flashed to the board, a serial terminal opens (because of `--sterm`). The output is:
 
 ```
 called immediately
