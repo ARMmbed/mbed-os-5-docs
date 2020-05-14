@@ -9,7 +9,7 @@ An easy way to inspect what your application is doing is to augment your applica
 Install the serial port driver for your development board:
 
 - For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
-- For all other boards: [Arm Mbed Windows serial port driver](windows-serial-driver.html) - not required for Windows 10.
+- For all other boards: [Arm Mbed Windows serial port driver](../program-setup/windows-serial-driver.html) - not required for Windows 10.
 
 You also need a serial monitor:
 

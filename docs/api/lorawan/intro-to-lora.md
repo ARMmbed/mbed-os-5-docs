@@ -304,12 +304,12 @@ Now you can verify whether the setup works by flashing this application to your 
     <span class="images">![](../../images/lora10.png)<span>Compile button</span></span>
 
 1. When compilation succeeds, the compiler sends a file to your computer.
-1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](windows-serial-driver.html).
+1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](../program-setup/windows-serial-driver.html).
 1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Data** tab:
 
     <span class="images">![](../../images/ttn19.png)<span>We've got data!</span></span>
 
-<span class="notes">**Note 1:** You can hook a [serial monitor](serial-comm.html) up to the development board (baud rate 115,200) to see debugging messages.</span>
+<span class="notes">**Note 1:** You can hook a [serial monitor](program-setup/serial-communication.html) up to the development board (baud rate 115,200) to see debugging messages.</span>
 
 <span class="notes">**Note 2:** No data in the **Data** tab? Verify that the gateway can receive messages. In the TTN console, go to your gateway, and see if any data comes through under the **Traffic** tab. If you see your device there but not under the device page, the keys are probably wrong.</span>
 

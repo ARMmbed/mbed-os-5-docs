@@ -60,7 +60,7 @@ If commits do not follow the above guidelines, we may request that you modify th
 
 ### Release versioning
 
-[How We Release Arm Mbed OS](../introduction/how-we-release-arm-mbed-os.html) explains Mbed OS versioning.
+[How We Release Arm Mbed OS](../introduction/versions-and-releases.html) explains Mbed OS versioning.
 
 ## Pull request template
 

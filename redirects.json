@@ -66,7 +66,7 @@
     "tutorials/mbed-usb-wav-audio-player.html": "apis/usb-wav-audio-player.html",
     "tools/unit-testing.html": "debug-test/unit-testing.html",
     "tutorials/analyzing-mbed-os-crash-dump.html": "debug-test/analyzing-mbed-os-crash-dump.html",
-    "tutorials/the-eventqueue-api.html": "apis/the-eventqueue-api.html",
+    "tutorials/the-eventqueue-api.html": "apis/scheduling-tutorials.html",
     "tools/compile.html": "build-tools/compile.html",
     "apis/rtc.html": "apis/time-apis.html",
     "apis/deepsleeplock.html": "apis/power-apis.html",
@@ -170,5 +170,6 @@
     "apis/messagebuilder.html" : "apis/nfc-apis.html",
     "reference/using-small-c-libraries.html" : "bare-metal/using-small-c-libraries.html",
     "tools/developing-mbed-cli.html" :  "build-tools/mbed-cli.html",
-    "apis/using-mbed-tls-to-communicate-securely.html" : "apis/tls-tutorial.html"
+    "apis/using-mbed-tls-to-communicate-securely.html" : "apis/tls-tutorial.html",
+    "introduction/how-we-release-arm-mbed-os.html" : "introduction/versions-and-releases.html"
 }
