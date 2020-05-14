@@ -8,7 +8,7 @@ The quick start offers two versions of Blinky: the full profile version and the 
 
 ## Please choose how to proceed
 
-| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/online-with-the-online-compiler.html) |  [Build with Mbed CLI](../quick-start/offline-with-mbed-cli.html) |
+| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/build-and-debug-with-the-online-compiler.html) |  [Build with Mbed CLI](../quick-start/build-and-debug-with-mbed-cli.html) |
 | --- | --- | --- |
 |Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS.<br> This link will take you to the Mbed Studio documentation site. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 

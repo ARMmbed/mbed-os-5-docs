@@ -32,7 +32,7 @@ Label directories are directories that follow a naming convention: an upper case
 
 The Mbed OS build tools skip all label directories, unless you configure them explicitly, as described above.
 
-For more information about using, extending and removing labels, please see [Adding and configuring targets](../reference/adding-and-configuring-targets.html#extra-labels-extra-labels-add-and-extra-labels-remove).
+For more information about using, extending and removing labels, please see [Adding and configuring targets](../program-setup/adding-and-configuring-targets.html#extra-labels-extra-labels-add-and-extra-labels-remove).
 
 ### Target directories
 

@@ -142,7 +142,7 @@ $ mbed compile --profile debug
 
 ## Configuration system
 
-The Mbed OS configuration system customizes compile time configuration parameters. For more information, please see [the full configuration system documentation](../reference/configuration.html).
+The Mbed OS configuration system customizes compile time configuration parameters. For more information, please see [the full configuration system documentation](../program-setup/advanced-configuration.html).
 
 To view your current configuration, use `mbed compile --config` (use the `-v` argument to display more information):
 

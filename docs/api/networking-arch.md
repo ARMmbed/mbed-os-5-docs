@@ -59,7 +59,7 @@ Mbed OS implements the following network interface APIs:
 - Thread mesh networking.
 - Wi-SUN mesh networking.
 
-Refer to [Network Interface](../apis/network-interfaces.html) API reference for usage instructions.
+Refer to [Network Interface](../apis/network-interface-apis.html) API reference for usage instructions.
 
 ## Network drivers
 

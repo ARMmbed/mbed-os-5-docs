@@ -134,7 +134,7 @@ Now, the Thread network is ready to accept new joiner devices.
 
 The Thread network stack can write network configuration settings to the file system and read them in the following startup. The size of the Thread configuration settings is a few thousand bytes. You can store network configuration settings to the file system when:
 
-1. You enable the file system as instructed in the [Mbed OS storage documentation](../apis/storage.html).
+1. You enable the file system as instructed in the [Mbed OS storage documentation](../apis/data-storage.html).
 1. You set the file system root path to the Thread network stack by calling the function `ns_file_system_set_root_path(root-path)`. Do this before starting the Thread stack to read possible configuration settings in the first power up.
 
 Depending on the selected file system, the application may need to format the file system before you can use it.

@@ -38,4 +38,4 @@ Here is a client example of HTTP transaction over TCPSocket:
 
 - [TCPSocket](tcpsocket.html) API reference.
 - [UDPSocket](tcpsocket.html) API reference.
-- [Socket](../reference/ip-networking.html#socket-api) architecture.
+- [Socket](../apis/connectivity-architecture.html#socket-api) architecture.

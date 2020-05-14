@@ -256,7 +256,7 @@ In this JSON file:
 
 All configuration parameters defined in `mylib` have a `mylib.` prefix. In `mbed_app.json`, `buffer_size` is accessible using the name `mylib.buffer_size`.
 
-Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](../reference/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key.
+Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](../program-setup/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key.
 
 It is an error for `mbed_lib.json` to override an undefined configuration parameter.
 
@@ -268,7 +268,7 @@ Target configurations contain a set of attributes that you may manipulate with c
 "target.features_add": ["IPV4"]
 ```
 
-It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](../reference/adding-and-configuring-targets.html).
+It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](../program-setup/adding-and-configuring-targets.html).
 
 ## `mbed_app.json` Specification
 

@@ -113,7 +113,7 @@
     "tutorials/power-optimization.html": "apis/platform-concepts.html",
     "tutorials/using-apis.html": "tutorials/index.html",
     "apis/blockdevice.html": "apis/blockdevice-apis.html",
-    "tutorials/ble-tutorial.html": "apis/bluetooth-apis.html",
+    "tutorials/ble-tutorial.html": "apis/bluetooth-overview.html",
     "apis/storage.html": "apis/data-storage.html",
     "tutorials/mesh-tutorial.html": "apis/connectivity-tutorials.html",
     "tutorials/LoRa-tutorial.html": "apis/LoRa-tutorial.html",

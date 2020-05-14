@@ -97,5 +97,5 @@ To reduce deadlocks, proactively code in a safe way by never claiming a high-lev
 
 ## Related content
 
-- [Application flow control tutorial](../tutorials/application-flow-control.html).
+- [Application flow control tutorial](../apis/scheduling-tutorials.html).
 - [ThisThread API reference](../apis/thisthread.html).

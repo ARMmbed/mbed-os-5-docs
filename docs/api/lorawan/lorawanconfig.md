@@ -139,4 +139,4 @@ For changing any of these parameters, edit the `mbed_app.json` file in the root 
 
 ## Using APIs from LoRaWANInterface
 
-See the [API reference](../apis/lorawan.html) for information about how to use these APIs from the LoRaWANInterface.
+See the [API reference](../apis/lorawan-apis.html) for information about how to use these APIs from the LoRaWANInterface.

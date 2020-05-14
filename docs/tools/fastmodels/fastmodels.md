@@ -36,7 +36,7 @@ Examples you can successfully run include:
 - [`mbed-os-example-cpu-stats`](../apis/mbed-statistics.html#cpu-statistics-example).
 - [`mbed-os-example-error-handling`](../apis/error-handling.html#error-handling-example).
 - [`mbed-os-example-filesystem`](../apis/filesystem.html#file-system-example).
-- [`mbed-os-example-blockdevice`](../apis/blockdevice.html#blockdevice-example).
+- [`mbed-os-example-blockdevice`](../apis/blockdevice-apis.html#blockdevice-example).
 - [`mbed-os-example-sockets`](../apis/socket.html#socket-example).
 
 The following examples use `mbed-os-example-blinky`.

@@ -74,9 +74,9 @@ Data rates in the mesh networks range depending on regulations from 50 kbps to 3
 
 Additionally, Mbed OS Thread stack is certified using predefined test sets for stability, reliability and performance to ensure high-quality, production-ready delivery for application and product creation.
 
-[Mesh tutorial](../tutorials/mesh-tutorial.html) provides you additional information regarding Mesh.
+[Mesh tutorial](../apis/connectivity-tutorials.html) provides you additional information regarding Mesh.
 
-For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../reference/thread-tech.html), [Wi-SUN](../apis/wisun-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) mesh networks.
+For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../apis/connectivity.html), [Wi-SUN](../apis/wisun-tech.html) and [6LoWPAN-ND](../apis/6LoWPAN-ND-tech.html) mesh networks.
 
 ## Non-IP networking
 
@@ -86,7 +86,7 @@ LoRaWAN, a technology not based on IP, is optimized for low power consumption an
 
 Because of its long range (up to 20 km) and low power, it is suitable for outdoor solutions with low data rates.
 
-The [LoRa](lora-tech.html) section and [LoRa tutorial](../tutorials/LoRa-tutorial.html) describe LoRA networking in detail.
+The [LoRa](lora-tech.html) section and [LoRa tutorial](../apis/LoRa-tutorial.html) describe LoRA networking in detail.
 
 ### NFC
 

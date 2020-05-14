@@ -120,7 +120,7 @@ For network status changes, the API is specified in [Network status](network-sta
 
 ## Using multiple network interfaces
 
-In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](../reference/ip-networking.html) section for an explanation of how different stacks are integrated into Mbed OS.
+In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](../apis/connectivity-architecture.html) section for an explanation of how different stacks are integrated into Mbed OS.
 
 When you use two network interfaces and both are operating on different IP stacks, the interfaces can work independently because there is no common data path, for example an application that uses an on-board Ethernet interface and any of the external Wi-Fi modules.
 

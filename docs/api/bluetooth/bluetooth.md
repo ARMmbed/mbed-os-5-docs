@@ -1,4 +1,4 @@
-# Bluetooth overview
+# Bluetooth 
 
 Bluetooth low energy (BLE) is a low power wireless technology standard for personal area networks. BLE, unlike the classic Bluetooth standard, reduces power consumption, allowing your BLE device to run for months or years on a coin-cell battery. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
 

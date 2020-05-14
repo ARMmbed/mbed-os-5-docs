@@ -75,7 +75,7 @@ The following flags and labels must be added to each target type to add the rele
 | `TFM` (label)                  |                       |                               |                             | &#10003;                      | &#10003;                    |
 
 
-For more information about working with the `targets.json` file, please see [Adding and configuring targets](../reference/adding-and-configuring-targets.html).
+For more information about working with the `targets.json` file, please see [Adding and configuring targets](../program-setup/adding-and-configuring-targets.html).
 
 ### Memory layout
 

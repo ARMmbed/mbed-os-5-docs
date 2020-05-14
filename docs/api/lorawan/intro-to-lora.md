@@ -413,6 +413,6 @@ LoRa/LoRaWAN is a technology with which anyone can set up a network and start bu
 ## More material
 
 - [Webinar: getting started with LoRa using Arm Mbed and The Things Network](https://pages.arm.com/2017-10-29-webinar-registration.html).
-- [Mbed OS LoRaWAN stack documentation](../apis/lorawan.html).
+- [Mbed OS LoRaWAN stack documentation](../apis/lorawan-apis.html).
 - [Firmware updates over LoRaWAN](https://os.mbed.com/blog/entry/firmware-updates-over-lpwan-lora/).
 - [Presentations from The Things Conference](https://www.youtube.com/playlist?list=PLM8eOeiKY7JUhIyxWWU2-qziejDbBg-pf).

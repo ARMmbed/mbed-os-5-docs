@@ -49,7 +49,7 @@ mbed compile --target K64F --toolchain IAR
 ```
 
 Verify the build succeeds.
-Make sure the program runs correctly, if it fails, [please see the debugging page](../tutorials/debugging.html).
+Make sure the program runs correctly, if it fails, [please see the debugging page](../debug-test/troubleshooting-common-issues.html).
 
 You now have a working baseline and are ready to add a new target.
 

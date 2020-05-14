@@ -42,7 +42,7 @@ This tutorial uses the USBAudio class of the USB library to send audio data from
 - SD card shield (if the board does not already have an SD card port).
 - USB cable.
 
-[Please install Mbed CLI to complete the tutorial](../tools/installation-and-setup.html).
+[Please install Mbed CLI to complete the tutorial](../build-tools/install-and-set-up.html).
 
 ## Setup
 

@@ -20,7 +20,7 @@ You can open the generated `.creator` project in Qt Creator, enabling integratio
 
 ### CMSIS Packs
 
-uVision and IAR both use [CMSIS packs](http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html) to find target information necessary to create a valid project file. Add a `"device_name"` attribute to your target as [Adding and configuring targets](../reference/adding-and-configuring-targets.html) describes to support these exporters.
+uVision and IAR both use [CMSIS packs](http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html) to find target information necessary to create a valid project file. Add a `"device_name"` attribute to your target as [Adding and configuring targets](../program-setup/adding-and-configuring-targets.html) describes to support these exporters.
 
 ### uVision
 [uVision project file template](https://github.com/ARMmbed/mbed-os/blob/master/tools/export/uvision/uvision.tmpl#L15) uses target information from CMSIS Packs to generate valid uVision5 projects. If the uVision exporter cannot find the `"device_name"`, it substitutes a generic Arm CPU target.

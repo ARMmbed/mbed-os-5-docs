@@ -16,7 +16,7 @@ The memory tracer is not enabled by default. To enable it, you need to enable th
 }
 ```
 
-<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../reference/configuration.html) for more details about `mbed_app.json`. </span>
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../program-setup/advanced-configuration.html) for more details about `mbed_app.json`. </span>
 
 After it is enabled, the memory tracer intercepts the calls to the standard allocation functions (`malloc`, `realloc`, `calloc` and `free`). It invokes a user supplied callback each time one of these functions is called. To let the tracer know which callback it needs to invoke, call `mbed_mem_trace_set_callback(callback_function_name)` as early as possible (preferably at the beginning of your `main` function). You can find the full documentation of the callback function in the [memory tracer header file](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed_mem_trace.h#L42). The tracer supplies a default callback function (`mbed_mem_trace_default_callback`) that outputs trace data on the Mbed console (using `printf`). For each memory operation, the callback outputs a line that begins with `#<op>:<0xresult>;<0xcaller>-`:
 

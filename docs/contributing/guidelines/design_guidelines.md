@@ -236,7 +236,7 @@ Mbed OS provides a powerful configuration system for application development. Ho
 - Targets and applications should be able to override each configuration.
 - The default choice of optimization should be size, on all platforms.
 
-[Full documentation](../reference/configuration.html).
+[Full documentation](../program-setup/advanced-configuration.html).
 
 ## Design process and template
 

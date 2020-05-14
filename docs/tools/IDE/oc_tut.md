@@ -92,7 +92,7 @@ The **Compile** menu offers five options:
 
 ## Copying the file to the board
 
-<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../tutorials/serial-communication.html).</span>
+<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../program-setup/serial-communication.html).</span>
 
 Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
 

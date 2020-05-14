@@ -14,7 +14,7 @@ This tutorial:
 
 ## Selecting the correct mesh protocol
 
-Mbed OS supports a variety of 802.15.4-based mesh protocols. There is support for [Wi-SUN](../apis/wisun-tech.html), [Thread](../reference/thread-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) protocols, each with its own characteristics. Selecting the best mesh protocol for your application depends on the application characteristics and interoperability requirements of installation. Different mesh networks are optimized for application-specific requirements.
+Mbed OS supports a variety of 802.15.4-based mesh protocols. There is support for [Wi-SUN](../apis/wisun-tech.html), [Thread](../apis/connectivity.html) and [6LoWPAN-ND](../apis/6LoWPAN-ND-tech.html) protocols, each with its own characteristics. Selecting the best mesh protocol for your application depends on the application characteristics and interoperability requirements of installation. Different mesh networks are optimized for application-specific requirements.
 
 ### Thread mesh network characteristics
 

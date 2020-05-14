@@ -89,7 +89,7 @@ The following tables show the values to use in the `mbed_app.json` file for your
 #### Thread commissioning
 
 By default, the Thread application uses the static network link configuration defined in the [mesh API configuration file](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed_lib.json).
-If you want to commission a Thread device, see [how to commission a Thread device in practice](../reference/thread-tech.html#thread-commissioning).
+If you want to commission a Thread device, see [how to commission a Thread device in practice](../apis/connectivity.html#thread-commissioning).
 
 The Thread stack learns the network settings from the commissioning process and saves them to RAM memory. Therefore, the learned network settings are lost when you restart the device next time. To prevent re-commissioning, you can save the Thread configuration settings to an SD card as follows (only in `K64F`):
 
@@ -223,4 +223,4 @@ $ mbed compile -m KW24D -t IAR --profile release
 
 ## Troubleshooting
 
-If you have problems, you can review the [documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
+If you have problems, you can review the [documentation](../debug-test/troubleshooting-common-issues.html) for suggestions on what could be wrong and how to fix it.

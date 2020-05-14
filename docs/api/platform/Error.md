@@ -163,7 +163,7 @@ See `mbed_lib.json` in the platform directory to see which targets are currently
 
 It's important that this region is marked with the appropriate attributes (based on the toolchain) to mark it as an uninitialized region. For example, you can mark the ARM Compiler Crash-data-RAM with the attribute *EMPTY*. The only requirement about the placement of this region is that no other entity can overwrite this region during reboot or at runtime. However, to avoid fragmentation, it's best if you place this region just after the vector table region, or if there is no vector table region, iat the bottom of RAM (lowest address).
 
-See [memory model](../reference/memory.html) for more info on the placement of this region.
+See [memory model](../apis/memory-model.html) for more info on the placement of this region.
 
 ### Configuring crash reporting and autoreboot
 

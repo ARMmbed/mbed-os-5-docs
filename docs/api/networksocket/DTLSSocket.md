@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_d_t_l_s_socket.png)<span>DTLSSocket class hierarchy</span></span>
 
-`DTLSSocket` and `DTLSSocketWrapper` implement DTLS stream over the existing `Socket` transport. You can find design and implementation details in the [Secure Socket](../reference/secure-socket.html) page.
+`DTLSSocket` and `DTLSSocketWrapper` implement DTLS stream over the existing `Socket` transport. You can find design and implementation details in the [Secure Socket](../apis/secure-socket.html) page.
 
 To use secure DTLS connections, application use the `DTLSSocketWrapper` through the Socket API, so existing applications and libraries are compatible.
 
@@ -20,5 +20,5 @@ Please see the TLSSocket example:
 
 ## Related content
 
-- [Secure Socket](../reference/secure-socket.html).
+- [Secure Socket](../apis/secure-socket.html).
 - [TLSSocket](tlssocket.html).

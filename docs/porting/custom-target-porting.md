@@ -2,7 +2,7 @@
 
 When designing a custom microcontroller board to run Mbed OS, you may need to make software customizations for the unique design choices you have made for your new board, such as clocking, pin connections and peripheral use. You can accomplish this by adding configuration and source files to an Mbed OS-based application project without the need to modify files within Mbed OS, itself. You can add a file named `custom_targets.json` to your project, which can store your custom target configurations. If your board is based on an existing Mbed Enabled microcontroller, you can simply extend that board configuration without the need to implement all the files yourself.
 
-This tutorial covers the most common methods used to create a custom port of Mbed OS when starting from an existing Mbed Enabled board. For detailed information on how to create a port from scratch, go to the [Mbed Porting guide](../porting/index.html). Additionally, not all possible aspects of target configuration are covered. For detailed information on all the ways you can configure targets, go to [adding and configuring targets](../reference/adding-and-configuring-targets.html).
+This tutorial covers the most common methods used to create a custom port of Mbed OS when starting from an existing Mbed Enabled board. For detailed information on how to create a port from scratch, go to the [Mbed Porting guide](../porting/index.html). Additionally, not all possible aspects of target configuration are covered. For detailed information on all the ways you can configure targets, go to [adding and configuring targets](../program-setup/adding-and-configuring-targets.html).
 
 ## Extending an existing MCU target configuration
 
@@ -12,7 +12,7 @@ Follow these steps to create a custom port for Mbed OS:
 
 ### Preparing
 
-1. [Install Mbed CLI](../tools/installation-and-setup.html) if you don't already have it.
+1. [Install Mbed CLI](../build-tools/install-and-set-up.html) if you don't already have it.
 
 1. (Optional) Create a new Mbed program (for example, `mbed-os-imaginary-port`).
 

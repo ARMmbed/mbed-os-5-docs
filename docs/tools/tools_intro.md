@@ -19,8 +19,8 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 
 | Architecture version | Compiler |
 |----                  |----           |
-| Arm v6M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the ARM toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../reference/adding-and-configuring-targets.html)) |
-| Arm v7M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the ARM toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../reference/adding-and-configuring-targets.html)) |
+| Arm v6M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the ARM toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../program-setup/adding-and-configuring-targets.html)) |
+| Arm v7M       | `Arm Compiler 6.11` or `Arm Compiler 5.06 update 6` based on the ARM toolchain supported by the target (see `supported_toolchains` in [Adding and configuring targets](../program-setup/adding-and-configuring-targets.html)) |
 | Arm v7A       | `Arm Compiler 6.11` |
 | Arm v8M       | `Arm Compiler 6.11` |
 

@@ -6,7 +6,7 @@ This document provides guidelines how to make a cellular device adaptation for M
 
 ## Adding cellular on an Mbed OS target
 
-For new targets, you may need to modify [targets.json](../reference/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
+For new targets, you may need to modify [targets.json](../program-setup/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
 
 For example,
 

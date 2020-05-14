@@ -4,7 +4,7 @@ Block devices are the basic building block of storage solutions in Mbed OS.
 
 ![MbedOSStorage](../../images/MbedOS-storage-overview.png)
 
-File systems are backed by [blockdevice implementations](../apis/blockdevice.html). The BlockDevice API performs the low-level interactions with the hardware storage. To add your own block device implementation, we recommend you inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the and [implementing BlockDevice](#implementing-blockdevice) section below.
+File systems are backed by [blockdevice implementations](../apis/blockdevice-apis.html). The BlockDevice API performs the low-level interactions with the hardware storage. To add your own block device implementation, we recommend you inherit from the BlockDevice class. For details on how to extend the BlockDevice interface, please refer to the and [implementing BlockDevice](#implementing-blockdevice) section below.
 
 ## Assumptions
 

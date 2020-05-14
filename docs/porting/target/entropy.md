@@ -133,7 +133,7 @@ Both of the above options are secure if done properly, and depending on the plat
 
 This option is very dangerous because compiling with it results in a build that is not secure! You have to let Mbed TLS know that you are using it deliberately and you are aware of the consequences. That is why you have to turn off any entropy sources explicitly first.
 
-Because it is a very dangerous option and no one should use it in production, we recommend you limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about [how to add a macro for your application](../reference/adding-and-configuring-targets.html).
+Because it is a very dangerous option and no one should use it in production, we recommend you limit its scope as much as possible; you should apply these settings to the application specific configuration file, instead of the target related configuration as we did it above. You can read more about [how to add a macro for your application](../program-setup/adding-and-configuring-targets.html).
 
 To turn the unsafe testing mode on:
 

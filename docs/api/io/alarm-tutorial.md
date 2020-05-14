@@ -2,7 +2,7 @@
 
 This guide reviews the steps required to build and run a basic alarm application on an Mbed OS platform.
 
-Please install [Mbed CLI](../tools/installation-and-setup.html).
+Please install [Mbed CLI](../build-tools/install-and-set-up.html).
 
 ## Import the example application
 
@@ -38,4 +38,4 @@ Your PC may take a few minutes to compile your code.
 
 ## Troubleshooting
 
-If you have problems, you can review the [documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
+If you have problems, you can review the [documentation](../debug-test/troubleshooting-common-issues.html) for suggestions on what could be wrong and how to fix it.

@@ -10,5 +10,5 @@ Unlike [PSA internal storage](../apis/psa-compliant-apis.html), PSA protected st
 
 ## Related content
 
-- [API specification in Mbed OS](../apis/storage.html).
+- [API specification in Mbed OS](../apis/data-storage.html).
 - [PSA Secure Storage](https://pages.arm.com/PSA-APIs).

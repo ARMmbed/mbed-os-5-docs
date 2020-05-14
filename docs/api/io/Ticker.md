@@ -32,4 +32,4 @@ Use this example to attach a member function to a ticker:
 
 ## Related content
 
-- [Application flow control tutorial](../tutorials/application-flow-control.html).
+- [Application flow control tutorial](../apis/scheduling-tutorials.html).

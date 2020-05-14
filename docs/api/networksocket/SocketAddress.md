@@ -14,4 +14,4 @@ Here is an example to read current UTC time. This example uses the SocketAddress
 
 ## Related content
 
-- [IP networking architecture](../reference/ip-networking.html).
+- [IP networking architecture](../apis/connectivity-architecture.html).

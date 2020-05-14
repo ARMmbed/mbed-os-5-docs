@@ -29,7 +29,7 @@ Please install the following:
 
 - [Python](https://www.python.org/downloads).
 - [Git](https://git-scm.com/downloads).
-- [Mbed CLI](../tools/installation-and-setup.html).
+- [Mbed CLI](../build-tools/install-and-set-up.html).
 - Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/).
 
     Limitations:
