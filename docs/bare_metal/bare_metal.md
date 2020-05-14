@@ -105,7 +105,8 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
 
 The bare metal documentation covers:
 
-- [A bare metal version of our standard Blinky example](../bare-metal/bare-metal-example.html).
 - A [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html) that shows how to set up a bare metal application and add non-defult APIs.
 - [A short review of small C libraries](../bare-metal/using-small-c-libraries.html).
 - [A porting guide for Mbed OS 2 targets](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
+
+Additionally, our [quick starts](../quick-start/index.html) include a bare metal version of the Blinky example application. 

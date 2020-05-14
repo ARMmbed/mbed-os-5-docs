@@ -79,7 +79,7 @@ This example depends on the `EventQueue` class, so you need to add the library t
     }
     ```
 
-The application is now ready to compile, and it will include the events library and all its dependencies.
+The application is now ready to compile, and will include the events library.
 
 ## 3. Compiling and running the application
 
