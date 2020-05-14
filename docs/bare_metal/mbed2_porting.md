@@ -34,19 +34,19 @@ Configure your target to support Mbed OS 6:
 
 1. Remove the `release_versions` property; it is no longer required:
 
-    ```
+    ```json
     "release_versions": ["2"]
     ```
 
 1. To indicate that the application profile supported by this target is bare metal, add the `supported_application_profiles` property:
 
-    ```
+    ```json
     "supported_application_profiles" : ["bare-metal"]
     ```
 
 1. Override `supported_c_libs` property to link with the smaller C libraries. The default for all targets is defined as follows:
 
-    ```
+    ```json
     "supported_c_libs": {
         "arm":  ["std"],
         "gcc_arm":  ["std", "small"],
@@ -56,7 +56,7 @@ Configure your target to support Mbed OS 6:
 
     Both the ARM and GCC_ARM toolchains support optimized versions of the C standard libraries - microlib and newlib-nano, respectively. We recommend using them with the bare metal profile for lower memory footprints. Ultraconstrained targets should override `supported_c_libs`:
 
-    ```
+    ```json
     "supported_c_libs": {
         "arm":  ["small"],
         "gcc_arm":  ["small"]
@@ -67,7 +67,7 @@ Configure your target to support Mbed OS 6:
 
     For each toolchain, if there is enough memory to link with the standard library, add the corresponding `std` library to the list. For example:
 
-    ```
+    ```json
     "supported_c_libs": {
         "arm":  ["std", "small"],
         "gcc_arm":  ["std", "small"],
@@ -92,7 +92,7 @@ Configure your target to support Mbed OS 6:
 
 1. If your board does not have a low power ticker, ensure that tickless is enabled using the microsecond ticker:
 
-    ```
+    ```json
     "overrides": {
         "tickless-from-us-ticker": true
     }
@@ -102,7 +102,7 @@ Configure your target to support Mbed OS 6:
 
     The stack size is configured by setting a value for the `boot-stack-size` attribute; this value must be a multiple of 8 for alignment purposes. We recommend that you reduce the boot stack size to 0x400 (1,024 bytes) if your target has 8KB of RAM and to 0x300 (768 bytes) if your target has 4KB of RAM.
 
-    ```
+    ```json
     "overrides": {
         "boot-stack-size": "0x400"
     }
@@ -122,7 +122,7 @@ Troubleshoot any issue.
 
 ## Validating the port
 
-To validate the bare metal target configuration, execute the Mbed OS Greentea test suite with the bare metal profile. This profile causes Greentea to skip a subset of the tests, either because the underlying functionality has not been ported to bare metal or because some tests require RTOS features (for examples, more complex tests based on multi-threading).
+To validate the bare metal target configuration, execute the Mbed OS Greentea test suite with the bare metal profile. This profile causes Greentea to skip a subset of the tests, either because the underlying functionality has not been ported to bare metal or because some tests require RTOS features (for examples, more complex tests based on multi-threading). It performs all the tests compatible with bare metal.
 
 If you haven't used Greentea before, [you can learn more in our documentation](../tools/greentea-testing-applications.html).
 
@@ -140,7 +140,19 @@ If you haven't used Greentea before, [you can learn more in our documentation](.
 
     <span class="tips">**Tip:** You can append `--compile` and fix build issues before running tests with `--run`.</span>
 
-1. All tests should pass (or be automatically skipped).
+1. All tests should pass (or be automatically skipped), unless the target being ported is ultraconstrained (with 32KB or less of flash memory) - in which case linking may fail for _a few_ tests. For example:
+
+    ARM toolchain:
+    ```
+    Error: L6407E: Sections of aggregate size 0x318 bytes could not fit into .ANY selector(s).
+    ```
+
+    GCC_ARM toolchain:
+    ```
+    region `FLASH' overflowed by 792 bytes
+    ```
+
+    Please ignore tests with similar errors.
 
 Further optimisations for targets with small flash memories:
 - Append `--profile release` to the command above. Use of the release profile helps keep some tests within the size limit.
@@ -148,7 +160,7 @@ Further optimisations for targets with small flash memories:
 
     Modify `TESTS/configs/baremetal.json` for your target:
 
-    ```
+    ```json
     {
         "target_overrides": {
             "YOUR_TARGET": {
