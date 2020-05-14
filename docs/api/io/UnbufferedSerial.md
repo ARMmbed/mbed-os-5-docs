@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
-The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/BufferedSerial.html) class. The classes also share the same default configurations.
+The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/serial-uart-apis.html) class. The classes also share the same default configurations.
 
 Unlike the BufferedSerial class, the UnbufferedSerial class does not use intermediary buffers to store bytes to transmit to or read from the hardware. The user application is responsible for processing each byte as it is received. The method to read data returns only one byte for every call. Therefore, we recommend you use this class when you need more control and for use in interrupt handlers with the RTOS. You can also use this class to write multiple bytes at once. Because it does not acquire a mutex lock, you must ensure only one instance uses the serial port.
 

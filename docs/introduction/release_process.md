@@ -42,7 +42,7 @@ For a list of the planned 2020 Mbed OS release dates, please see [our blog post]
 
 Every release goes through a rigorous review and testing process. We stage changes to the `release-candidate` branch in the `mbed-os` repository.
 
-Two weeks before each feature release, we implement a code freeze on the master branch while we produce the new release branch. Once the new branch is created, master is once again available. The release branch then goes into the release testing phase, in which we apply [our testing tools](../tools/testing.html). These tests include nightly runs through our continuous integration (CI) processes, as well as out-of-box QA. We also put our examples through this testing process. We apply no new code, except for critical bug fixes found during this period, to the release branch.
+Two weeks before each feature release, we implement a code freeze on the master branch while we produce the new release branch. Once the new branch is created, master is once again available. The release branch then goes into the release testing phase, in which we apply [our testing tools](../debug-test/test-tools.html). These tests include nightly runs through our continuous integration (CI) processes, as well as out-of-box QA. We also put our examples through this testing process. We apply no new code, except for critical bug fixes found during this period, to the release branch.
 
 For patch releases, code freeze occurs the Thursday before the release. Patch releases also go through exporter tests and nightly CI tests.
 

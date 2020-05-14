@@ -14,7 +14,7 @@ You can use the `MBED_ASSERT` macro for runtime evaluation of expressions. If th
 mbed assertation failed: <EVALUATED EXPRESSION>, file: <FILE NAME>, line <LINE NUMBER IN FILE>
 ```
 
-Note that the `MBED_ASSERT` macro is available in the debug and develop [build profiles](../tools/build-profiles.html) but not in the release build profile.
+Note that the `MBED_ASSERT` macro is available in the debug and develop [build profiles](../program-setup/build-profiles-and-rules.html) but not in the release build profile.
 
 The below function uses `MBED_ASSERT` to validate a pointer to `serial_t` object.
 
@@ -38,4 +38,4 @@ void equeue_tick_init() {
 
 ## Related content
 
-- [Build profile](../tools/build-profiles.html) documentation.
+- [Build profile](../program-setup/build-profiles-and-rules.html) documentation.

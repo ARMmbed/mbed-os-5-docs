@@ -52,7 +52,7 @@ To configure the debugger for your project:
 1. If you're using pyOCD as your debug server, verify that `debugServerPath` is set to the location of `pyocd-gdbserver`.
 1. If you're using OpenOCD as your debug server:
      1. Change `debugServerPath` to point to the location of `openocd`.
-     1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](../tools/exporting.html).
+     1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](../build-tools/third-party-build-tools.html).
 
     <span class="images">![](../../images/vscode3.png)<span>Configuring the debugger</span></span>
 

@@ -100,4 +100,4 @@ To learn how to use NFC with Mbed OS, please refer to the [Mbed OS NFC overview]
 
 Non-IP Data Delivery (NIDD) is a new feature for communication over NB-IoT. Control Plane cellular IoT EPS optimization enables NIDD, which is meant to provide improved support of small data transfer. It does this by transporting user data over the control channel, thus reducing the total number of control plane messages when handling a short data transaction.
 
-To learn how to use this feature with Mbed OS, please refer to the [CellularNonIPSocket API reference](../apis/non-ip-cellular-socket.html).
+To learn how to use this feature with Mbed OS, please refer to the [CellularNonIPSocket API reference](../apis/network-socket-apis.html).

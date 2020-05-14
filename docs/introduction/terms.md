@@ -36,7 +36,7 @@
 
 **Build** - The full process of converting an application's source code into a binary that can be flashed onto a board. The build cannot be board-agnostic; it is always done for a specific board, represented as the build target (see **Build target**).
 
-**Build Profile** - Mbed OS supports three primary [build profiles](../tools/build-profiles.html): develop, debug and release.
+**Build Profile** - Mbed OS supports three primary [build profiles](../program-setup/build-profiles-and-rules.html): develop, debug and release.
 
 **Build Script** - A build automation and generation utility.
 
@@ -73,7 +73,7 @@
 
 ## E
 
-**Exporter** - Use the Arm Mbed [exporters](../tools/exporting.html#about-the-exporters) to export your code to various third party tools and IDEs.
+**Exporter** - Use the Arm Mbed [exporters](../build-tools/third-party-build-tools.html#about-the-exporters) to export your code to various third party tools and IDEs.
 
 ## G
 
@@ -161,10 +161,10 @@
 
 **TLS** - Transport Layer Security.
 
-**Toolchain** - A [group of programming tools](../tools/exporting.html#setting-up-a-local-debug-toolchain).
+**Toolchain** - A [group of programming tools](../build-tools/third-party-build-tools.html#setting-up-a-local-debug-toolchain).
 
 **Travis CI** - a continuous integration service used to build and test software projects hosted at GitHub (see `GitHub`).
 
 ## U
 
-**utest** - A [test harness](../tools/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.
+**utest** - A [test harness](../debug-test/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.

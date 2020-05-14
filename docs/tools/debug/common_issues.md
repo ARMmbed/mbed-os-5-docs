@@ -57,7 +57,7 @@ If using Keil MDK (Arm Compiler) or IAR, make sure you have a license installed.
 ## Investigate whether the Mbed OS application is crashing
 
 - Examine or undo any recent code change you made to see if it is the cause of the crash.
-- Build using the development or [debug build profile](../tools/build-profiles.html), so the serial port shows any errors in your program.
+- Build using the development or [debug build profile](../program-setup/build-profiles-and-rules.html), so the serial port shows any errors in your program.
 - Enable debug prints for components that have them.
 
 ## Take these steps if no output is shown in the serial port

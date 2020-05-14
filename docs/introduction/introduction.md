@@ -28,7 +28,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 <!--bare metal, list of deprecated APIs, new API structure, porting updates...-->
 
-- New API references for [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
+- New API references for [BufferedSerial](../apis/serial-uart-apis.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
 - New content about [using small C libraries in Mbed OS bare metal](../reference/using-small-c-libraries.html).
 - A guide to [porting a custom board](../porting/derivative-port.html).
 - A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).

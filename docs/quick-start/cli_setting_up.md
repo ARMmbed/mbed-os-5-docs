@@ -4,6 +4,6 @@ The setup process for Arm Mbed CLI depends on your operating system. We recommen
 
 | Windows | macOS | Linux |
 | --- | --- | --- |
-| Download and run the [Windows installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest). | Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest). | Please follow the [manual installation instructions for Linux](../tools/manual-installation.html). We currently do not provide an installer for Linux. |
+| Download and run the [Windows installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest). | Download and run the [macOS installer for Mbed CLI](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest). | Please follow the [manual installation instructions for Linux](../build-tools/install-and-set-up.html). We currently do not provide an installer for Linux. |
 
 <span class="notes">**Note:** We recommend the installers above for less experienced developers and those using the GNU Arm embedded toolchain (`GCC_ARM`). For Linux users, please install Mbed CLI manually. Advanced Windows and macOS users can also install Mbed CLI manually. If you want to compile using the Arm Compiler or IAR or a different version of the GNU Arm embedded toolchain, visit the [supported compilers page](../build-tools/index.html).</span>

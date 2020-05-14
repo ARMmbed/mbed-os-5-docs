@@ -211,7 +211,7 @@ Add the following line to `mbed_app.json` to test:
 
 ### Use release profile
 
-For devices with small memory, we recommend using release profiles for building and exporting. Please see the documentation about [build profiles](../tools/build-profiles.html).
+For devices with small memory, we recommend using release profiles for building and exporting. Please see the documentation about [build profiles](../program-setup/build-profiles-and-rules.html).
 
 Examples:
 

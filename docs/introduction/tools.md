@@ -12,4 +12,4 @@ For more information, see [the build tool documentation](../build-tools/index.ht
 
 You can use our debugging tools, DAPLink and pyOCD, to program and debug many devices. At the end of the development cycle, you can use the Mbed OS validation tools, Greentea and utest, to test your project. For more information, see [the debugging and testing documentation](../debug-test/index.html).
 
-Lastly, you can [export your work](../tools/exporting.html) from the Mbed tools to other IDEs.
+Lastly, you can [export your work](../build-tools/third-party-build-tools.html) from the Mbed tools to other IDEs.

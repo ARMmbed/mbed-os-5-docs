@@ -51,4 +51,4 @@ To complement our popular Mbed Online Compiler and command-line tools, we create
 
 ## Exporting to third party development tools
 
-You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](../tools/exporting.html).
+You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](../build-tools/third-party-build-tools.html).

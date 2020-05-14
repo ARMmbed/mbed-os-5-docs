@@ -525,5 +525,5 @@ See the below Doxygen file for additional information regarding error code defin
 
 ## Related content
 
-- Debug and develop [build profiles](../tools/build-profiles.html).
+- Debug and develop [build profiles](../program-setup/build-profiles-and-rules.html).
 - Mbed OS [error decoder](https://mbed.com/s/error).
