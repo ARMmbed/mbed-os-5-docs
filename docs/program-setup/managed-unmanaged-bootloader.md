@@ -1,6 +1,6 @@
 # Creating and using a bootloader
 
-A bootloader is a program that loads Mbed OS when a board is turned on. This guide explains how to create a [bootloader](../reference/bootloader-configuration.html), how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
+A bootloader is a program that loads Mbed OS when a board is turned on. This guide explains how to create a [bootloader](../program-setup/bootloader-configuration.html), how to create a main program to go with the bootloader and how to use this bootloader to perform software updates.
 
 ## Arm Mbed OS managed bootloader
 
@@ -229,7 +229,7 @@ Alternatively, you can edit `mbed_app.json`, and override the target bootloader 
 
 You want to have an unmanaged bootloader when your bootloader's requirements conflict with the requirements of the managed bootloader. You need an unmanaged bootloader when your bootloader does not come before your application in ROM or your application does not start immediately after your bootloader. Unlike a managed bootloader, an unmanaged bootloader does not automatically merge the bootloader image with the application image after building the application. We expect users of an unmanaged bootloader build to construct their own set of scripts built atop the `mbed compile` primitive to perform bootloader and application merging.
 
-An unmanaged bootloader build is a method of controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [bootloader configuration](../reference/bootloader-configuration.html) for complete descriptions of these options.
+An unmanaged bootloader build is a method of controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [bootloader configuration](../program-setup/bootloader-configuration.html) for complete descriptions of these options.
 
 ## Exporter limitations
 

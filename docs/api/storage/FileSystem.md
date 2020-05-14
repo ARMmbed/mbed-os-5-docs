@@ -12,7 +12,7 @@ The FileSystem's `file` and `dir` functions are protected because you should not
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-For details regarding how to configure the default file system or override its implemetation, please refer to the [storage configuration guide](../reference/storage.html).
+For details regarding how to configure the default file system or override its implemetation, please refer to the [storage configuration guide](../apis/data-storage.html).
 
 ## File system class reference
 
@@ -39,6 +39,6 @@ For details regarding how to configure the default file system or override its i
 
 ## Related content
 
-- [Storage configuration](../reference/storage.html).
+- [Storage configuration](../apis/data-storage.html).
 - [File](file.html).
 - [Dir](dir.html).

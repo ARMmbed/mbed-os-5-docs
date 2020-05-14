@@ -79,7 +79,9 @@ This example depends on the `EventQueue` class, so you need to add the library t
     }
     ```
 
-The application is now ready to compile, and will include the events library.
+The application is now ready to compile, and will include the events library (which has no dependencies).
+
+<span class="notes">**Note:** Including a library does not automatically include all of its dependencies. Review compilation errors to find missing dependencies.</notes>
 
 ## 3. Compiling and running the application
 

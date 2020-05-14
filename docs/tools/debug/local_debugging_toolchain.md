@@ -104,7 +104,7 @@ You now have set up a debug connection. From here, you can flash debug builds, s
 
 1. Producing [debug builds with Arm Mbed CLI](debug-builds-cli.html).
 1. Debugging with [Eclipse](../tutorials/eclipse.html).
-1. Debugging with [Keil uVision](../tutorials/keil-uvision.html).
+1. Debugging with [Keil uVision](../debug-test/keil-uvision.html).
 1. Debugging with [Visual Studio Code](../tutorials/visual-studio-code.html).
 
 ## Semihosting messages

@@ -76,7 +76,7 @@ Additionally, Mbed OS Thread stack is certified using predefined test sets for s
 
 [Mesh tutorial](../tutorials/mesh-tutorial.html) provides you additional information regarding Mesh.
 
-For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../reference/thread-tech.html), [Wi-SUN](../reference/wisun-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) mesh networks.
+For descriptions of different 6LoWPAN mesh networks, please see the introduction of the [Thread](../reference/thread-tech.html), [Wi-SUN](../apis/wisun-tech.html) and [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html) mesh networks.
 
 ## Non-IP networking
 

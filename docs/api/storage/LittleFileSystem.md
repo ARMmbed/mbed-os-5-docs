@@ -37,7 +37,7 @@ Instantiate the `LittleFileSystem` class with a block device and file path.
 
 The API that this presents is the standard Mbed OS file system API. Once declared, Mbed OS provides the retargeting layer for the standard C library.
 
-To configure this class, please see the [FileSystem configuration documentation](../reference/storage.html#filesystem-default-configuration).
+To configure this class, please see the [FileSystem configuration documentation](../apis/data-options-and-config.html).
 
 ## LittleFileSystem class reference
 
@@ -49,5 +49,5 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ## Related content
 
-- [Storage configuration](../reference/storage.html).
+- [Storage configuration](../apis/data-storage.html).
 - [Blog post: LittleFS - A high-integrity embedded file system](https://os.mbed.com/blog/entry/littlefs-high-integrity-embedded-fs/).

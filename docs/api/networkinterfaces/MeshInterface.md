@@ -6,7 +6,7 @@ The Arm Mbed Mesh API allows the application to use the IPv6 mesh network topolo
 
 Mbed OS provides three types of IPv6-based mesh networks:
 
-- [Wi-SUN](../reference/wisun-tech.html), following the specification from the Wi-SUN alliance.
+- [Wi-SUN](../apis/wisun-tech.html), following the specification from the Wi-SUN alliance.
 - [Thread](../reference/thread-tech.html), following the specification from Thread Group.
 - [6LoWPAN-ND](../reference/6LoWPAN-ND-tech.html), loosely following the Zigbee-IP specification.
 

@@ -14,4 +14,4 @@ Mbed OS provides this API to construct NDEF messages, the common data format exc
 
 - [MessageParser](messageparser.html) API reference.
 - [SimpleMessageParser](simplemessageparser.html) API reference.
-- [NFC architecture](../reference/nfc-technology.html).
+- [NFC architecture](../apis/nfc-technology.html).

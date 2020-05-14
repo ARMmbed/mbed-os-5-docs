@@ -8,7 +8,7 @@ For understanding the technologies and APIs, please refer to following sections 
 
 - [Network connectivity in Mbed OS](../reference/networking.html) technology page.
 - [Thread](../reference/thread-tech.html) technology reference page.
-- [Wi-SUN](../reference/wisun-tech.html) technology reference page.
+- [Wi-SUN](../apis/wisun-tech.html) technology reference page.
 - [6LowPAN-ND](../reference/6LoWPAN-ND-tech.html) technology reference page.
 - [Mesh class reference](../apis/mesh-api.html) user API.
 - [Socket API](../apis/network-socket.html).

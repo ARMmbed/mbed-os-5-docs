@@ -34,7 +34,7 @@ The state of an erased block is **undefined**. The data stored on the block isn'
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-For details regarding how to configure the default block device please refer to the [storage configuration guide](../reference/storage.html)
+For details regarding how to configure the default block device please refer to the [storage configuration guide](../apis/data-storage.html)
 
 ## BlockDevice class reference
 
@@ -46,4 +46,4 @@ For details regarding how to configure the default block device please refer to 
 
 ## Related content
 
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

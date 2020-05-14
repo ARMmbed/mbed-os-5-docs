@@ -17,4 +17,4 @@ void parse(const Span<const uint8_t> &data_buffer);
 
 - [SimpleMessageParser](simplemessageparser.html) API reference.
 - [MessageBuilder](messagebuilder.html) API reference.
-- [NFC architecture](../reference/nfc-technology.html).
+- [NFC architecture](../apis/nfc-technology.html).

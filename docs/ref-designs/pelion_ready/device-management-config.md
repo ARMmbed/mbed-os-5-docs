@@ -14,7 +14,7 @@ For more information on bootloaders and firmware update, see:
 
 - [Introduction to Mbed OS bootloaders](../porting/bootloader.html).
 - [Creating and using an Mbed OS bootloader](../tutorials/bootloader.html).
-- [Bootloader configuration in Mbed OS](../reference/bootloader-configuration.html).
+- [Bootloader configuration in Mbed OS](../program-setup/bootloader-configuration.html).
 - [Mbed bootloader for Device Management](https://github.com/ARMmbed/mbed-bootloader), or the short introduction [in the Device Management documentation](https://www.pelion.com/docs/device-management/current/updating-firmware/bootloaders.html).
 - [Updating devices with Mbed CLI](../tools/cli-update.html).
 

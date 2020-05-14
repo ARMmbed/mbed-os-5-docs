@@ -155,7 +155,7 @@
 
 **Target** - See `build target`.
 
-**Terminal Application** - [Applications](../tutorials/serial-comm.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
+**Terminal Application** - [Applications](../program-setup/serial-communication.html#using-terminal-applications) that run on your host PC that provide a window where your Mbed board can print and where you can type characters back to your board.
 
 **Timeout** - The [maximum amount of time](../apis/timeout.html) an operation can take before it is considered a failure and stopped.
 

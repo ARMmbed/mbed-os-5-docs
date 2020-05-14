@@ -16,4 +16,4 @@ To use an NFC EEPROM, you must initiate the instance with a driver instance, an 
 
 ## Related content
 
-- [NFC architecture](../reference/nfc-technology.html).
+- [NFC architecture](../apis/nfc-technology.html).

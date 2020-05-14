@@ -20,7 +20,7 @@ Optionally, you can create a HeapBlockDevice that will set the read, program and
   - _size_ - Size of the block device in bytes.
   - _block_ - Block size in bytes. You can use this to configure the minimum read, program and erase sizes to this value. Default value is 512 bytes.
 
-You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## HeapBlockDevice class reference
 
@@ -38,4 +38,4 @@ The HeapBlockDevice used with MBRBlockDevice showcases partitioning.
 
 ## Related content
 
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

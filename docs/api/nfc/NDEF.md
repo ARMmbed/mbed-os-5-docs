@@ -17,4 +17,4 @@ Mbed OS provides this API to construct and parse NDEF messages:
 
 ### Related content
 
-- [NFC architecture](../reference/nfc-technology.html).
+- [NFC architecture](../apis/nfc-technology.html).

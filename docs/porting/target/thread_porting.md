@@ -1,6 +1,6 @@
 # Thread safety and porting
 
-The [thread safety documentation is available in our Reference section](../reference/thread-safety.html).
+The [thread safety documentation is available in our Reference section](../apis/thread-safety.html).
 
 ## Considerations when porting
 
