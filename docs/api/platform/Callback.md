@@ -28,6 +28,16 @@ You can reset Callbacks to empty by assigning `nullptr`.
 
 The Callback class is what’s known in C++ as a “Concrete Type”. That is, the Callback class is lightweight enough to be passed around like an int, pointer or other primitive type.
 
+## Configuration
+
+Two system configuration options permit trade-offs between image size and flexibility of the Callback class.
+
+* `platform.callback-nontrivial` controls whether Callbacks can store non-trivially-copyable function objects. Having this setting off saves significant code size, as it makes Callback itself trivially-copyable, so all Callback assignments and copies are simpler. Almost all users use Callback only with function pointers, member function pointers or lambdas with trivial captures, so this setting can almost always be set to false. A compile-time error will indicate that this setting needs to be set to true if any code attempts to assign a non-trivially-copyable object to a Callback.
+
+* `platform.callback-comparable` controls whether two Callbacks can be compared to each other. The ability to support this comparison increases code size whenever a Callback is assigned, whether or not any such comparison occurs. Turning the option off removes the comparison operator and saves a little image size.
+
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../reference/configuration.html) for more details about `mbed_app.json`. </span>
+
 ## Callback class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_callback.html)
