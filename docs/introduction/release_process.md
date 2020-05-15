@@ -47,3 +47,13 @@ Two weeks before each feature release, we implement a code freeze on the master 
 For patch releases, code freeze occurs the Thursday before the release. Patch releases also go through exporter tests and nightly CI tests.
 
 After all tests return no errors, we release the latest updates. You can find the most recent release in the `mbed-os` repository with the `latest` tag. A release note accompanies each release. The release notes for major and feature releases are longer and give an overview of the new features. The release notes for the patch releases include only a list of changes and known issues, if applicable. You can find our release notes on [the releases page](https://os.mbed.com/releases/) and on [the blog](https://os.mbed.com/blog/).
+
+## The API life cycle
+
+Mbed OS API are managed in three phases:
+
+1.	Experimental: No changes are considered breaking, so they can be changed in any release type. They are on the Mbed OS Master branch and can be included in any Mbed OS build, but are identified as experimental and users have to explicitly include them.
+1.	Stable: Can only be changed in a non-breaking manner. These are included by default in the Mbed OS full profile and, where appropriate, the bare metal profile.
+1.	Deprecated: API deprecation is a breaking change, and done only in major releases.
+
+APIs moved between the three phases only through pull requests raised against the Master branch.

@@ -27,6 +27,7 @@ Label directories are directories that follow a naming convention: an upper case
 
 - `TARGET`, constructed from the configuration value `target.extra_labels` and the name of the targets.
 - `FEATURE`, constructed from the configuration value `target.features`.
+- `FEATURE_EXPERIMENTAL_API`, constructed from the configuration value `target.features`.
 - `COMPONENT`, controlled from the configuration value `target.components`.
 - `TOOLCHAIN`, controlled completely by the toolchain used to build.
 
@@ -67,6 +68,22 @@ The feature labeled directories are used for software that implements functional
 ```
 
 In the above example, `mbed compile` includes files in directories named `FEATURE_BLE`, and not directories such as `FEATURE_STORAGE` or `FEATURE_CRYTOCELL310`.
+
+### Experimental directories
+
+By default, Mbed OS doesn't compile [experimental APIs](). You can override this behaviour by explicitly including "EXPERIMENTAL_API" in `mbed_app.json`:
+
+```
+{
+    “target_overrides” : {
+        “*” : {
+            “target.features_add” : [“EXPERIMENTAL_API”]
+     }
+  }
+}
+
+```
+<!--so for a specific one, or does this now allow me to use all experimental APIs in one giant go?-->
 
 ### Component directories
 
