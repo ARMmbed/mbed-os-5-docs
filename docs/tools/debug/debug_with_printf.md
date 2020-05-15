@@ -1,110 +1,14 @@
 # Debugging using printf() statements
 
-An easy way to inspect what your application is doing is to augment your application with log statements. In Arm Mbed, you can use a serial connection to send feedback from your development board back to your computer. This uses the same USB cable that you use to program your device.
+An easy way to inspect what your application is doing is to augment your application with `printf()` statements. In Arm Mbed, you can use a serial connection to send feedback from your development board back to your computer.
 
 ## Prerequisites
 
-### Windows
-
-Install the serial port driver for your development board:
-
-- For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
-- For all other boards: [Arm Mbed Windows serial port driver](../program-setup/windows-serial-driver.html) - not required for Windows 10.
-
-You also need a serial monitor:
-
-- [TeraTerm](http://sourceforge.jp/projects/ttssh2/files).
-
-### macOS
-
-On macOS, all software comes installed by default.
-
-### Linux
-
-If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/).
-
-## Getting started
-
-To send data over the serial connection, use the [BufferedSerial](../apis/serial-uart-apis.html) object.
-
-### Example program
-
-This program blinks the LED on your development board and prints a message every time the LED changes state:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_BlinksLED/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_BlinksLED/main.cpp)
-
-
-Compile this program, and flash it on your development board. You now can inspect these messages using a serial monitor.
-
-### Seeing the log messages
-
-### Windows
-
-1. Open TeraTerm.
-1. Click *File > New Connection*.
-1. Select the *Serial* radio button.
-1. Choose your development board from the drop-down menu (often called `mbed Serial Port` or `STLink Virtual Port`).
-1. Click *OK*.
-1. Log messages appear in the main window.
-
-<span class="images">![](../../images/printf1.png)<span>Selecting the COM port</span></span>
-
-<span class="images>"![](../../images/printf2.png)<span>Seeing the output over the serial port</span></span>
-
-<span class="notes">**Note:** Unsure which COM port is used? In the [device manager](http://www.computerhope.com/issues/ch000833.htm), look under the *Ports* section.</span>
-
-### macOS
-
-1. Open a terminal window.
-1. Enter `screen /dev/tty.usbm`, and press `Tab` to autocomplete.
-1. Press `Enter`.
-1. Log messages appear.
-1. To exit, press:
-    - `Ctrl+A`
-    - `Ctrl+\`
-    - `y`
-
-### Linux
-
-1. Open a terminal window.
-1. Find the handler for your device:
-
-    ```
-    $ ls /dev/ttyACM*
-    /dev/ttyACM0
-    ```
-
-1. Connect to the board by entering `sudo screen /dev/ttyACM0 9600`.
-1. Log messages appear.
-1. To exit:
-    1. Press `Ctrl+A`.
-    1. Enter `quit`.
-
-<span class="notes">**Note:** To avoid using `sudo`, set up a udev rule.</span>
-
-### Setting the baud rate
-
-By default, the speed at which the microcontroller and your computer communicate (the baud rate) is set to 9600 baud. This setting fits most use cases, but you can change it by calling the `baud` function on the serial object:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_SetBaudRate/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_SetBaudRate/main.cpp)
-
-
-If you change the baud rate on the device, you also need to change it on your serial monitor:
-
-1. Windows:
-	1. In TeraTerm, go to *Setup > Serial Port*.
-	1. Change *Baud rate* to 115200.
-1. macOS and Linux: Pass the baud rate as the last argument to the `screen` command:
-
-    ```
-    $ screen /dev/ttyACM0 115200
-    ```
-
-<span class="images">![](../../images/printf3.png)<span>Changing the baud rate</span></span>
+For a tutorial on setting up serial communication, see [Board to PC communication over USB](tutorials/serial-comm.html).
 
 ## Printf()
 
-As seen above, you use the `printf()` function to communicate back to the user:
+The `printf()` function is the recommended way to communicate back to the user:
 
 1. The `printf()` functions produce output according to a format string (containing format specifiers) and matching value arguments.
 2. The microcontroller's universal asynchronous receiver/transmitter (UART) console peripheral "feeds" output from `printf()` into the interface chip.
