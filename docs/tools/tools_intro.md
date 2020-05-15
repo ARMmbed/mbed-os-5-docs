@@ -15,14 +15,7 @@ We developed Mbed OS using the Mbed CLI tool, which is a Python program that coo
 
 ## Arm Mbed Online Compiler
 
-The Mbed Online Compiler is our in-house IDE and should be familiar to anyone who's been working with Mbed for a while. It switches the backing toolchain based on the architecture version:
-
-| Architecture version | Compiler |
-|----                  |----           |
-| Arm v6M       | `Arm Compiler 6.11` |
-| Arm v7M       | `Arm Compiler 6.11` |
-| Arm v7A       | `Arm Compiler 6.11` |
-| Arm v8M       | `Arm Compiler 6.11` |
+The Mbed Online Compiler is our in-house IDE and should be familiar to anyone who's been working with Mbed for a while. It uses the Arm Compiler 6.
 
 <span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
 
