@@ -102,7 +102,7 @@ Remote debugging using localhost:3333
 
 You now have set up a debug connection. From here, you can flash debug builds, step through code and use any IDE that supports GDB to debug Arm Mbed OS applications. For instructions, see:
 
-1. Producing [debug builds with Arm Mbed CLI](debug-builds-cli.html).
+1. Producing [debug builds with Arm Mbed CLI](../build-tools/debug-builds-cli.html).
 1. Debugging with [Eclipse](../debug-test/third-party-tools.html).
 1. Debugging with [Keil uVision](../debug-test/keil-uvision.html).
 1. Debugging with [Visual Studio Code](../debug-test/visual-studio-code.html).

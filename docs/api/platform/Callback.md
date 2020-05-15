@@ -2,7 +2,7 @@
 
 A callback is a user provided function that a user may pass to an API. The callback allows the API to execute the user’s code in its own context.
 
-This is the technical reference for callbacks. You should read the [Callbacks](platform.html#callbacks) section of the [Platform Overview](platform.html) first for deeper insight into their use.
+This is the technical reference for callbacks. You should read the [Callbacks](../apis/platform-concepts.html#callbacks) section of the [Platform Overview](../apis/platform-concepts.html) first for deeper insight into their use.
 
 ## Calling callbacks
 
@@ -36,7 +36,7 @@ Two system configuration options permit trade-offs between image size and flexib
 
 * `platform.callback-comparable` controls whether two Callbacks can be compared to each other. The ability to support this comparison increases code size whenever a Callback is assigned, whether or not any such comparison occurs. Turning the option off removes the comparison operator and saves a little image size.
 
-<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../reference/configuration.html) for more details about `mbed_app.json`. </span>
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../program-setup/advanced-configuration.html) for more details about `mbed_app.json`. </span>
 
 ## Callback class reference
 
@@ -53,6 +53,6 @@ The Callback API provides a convenient way to pass arguments to spawned threads.
 
 ## Sonar example
 
-Here is an example that uses everything discussed in the [introduction to callbacks](platform.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the Callback.
+Here is an example that uses everything discussed in the [introduction to callbacks](../apis/platform-concepts.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the Callback.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Sonar)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Sonar/main.cpp)
