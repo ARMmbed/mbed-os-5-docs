@@ -8,7 +8,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ## Scheduling
 
-<!--The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.-->
+The Mbed OS scheduling capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
 ### RTOS
 
@@ -35,7 +35,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ## Drivers
 
-<!--The drivers are digital interfaces that allow your board to interface with a computer or external devices.-->
+Driver APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces to a computer or external devices.
 
 ### Serial (UART) drivers
 
@@ -54,8 +54,6 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ### Input/Output drivers
 
-<!--Input/Output APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.-->
-
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [AnalogIn](../apis/i-o-apis.html) | &#10004; | &#10004; |
@@ -73,8 +71,6 @@ This list does not include the internal APIs, which are not intended for use by 
 | [PwmOut](../apis/pwmout.html) | &#10004; | &#10004;  |
 
 ### USB drivers
-
-<!--The Mbed OS classes providing USB peripheral functionality, also known as USB components, inherit from USBDevice and provide specific USB peripherial functionality.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -103,6 +99,8 @@ This list does not include the internal APIs, which are not intended for use by 
 | [Watchdog](../apis/watchdog.html) | &#10004; | &#10004; |
 
 ## Platform
+
+Platform APIs provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
 
 ### Time
 
@@ -133,7 +131,6 @@ This list does not include the internal APIs, which are not intended for use by 
 | [MemoryPool](../apis/memorypool.html) | &#10004; |   |
 | [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004;  |
 
-
 ### Other Platform APIs
 
 | API | Full profile | Bare metal profile |
@@ -156,7 +153,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ## Data storage
 
-<!--The data storage APIs include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.-->
+The storage APIs include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.
 
 ### File system APIs
 
@@ -197,9 +194,17 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ## Connectivity
 
-### Network socket
+Connectivity APIs include:
 
-<!--Socket APIs include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.-->
+- Network socket: The application programming interface for IP networking, supporting both TCP and UDP protocols.
+- Network interface: The application level APIs where you choose the driver, connectivity method and IP stack. These include Ethernet, Wi-Fi, cellular and Mesh interfaces.
+- Secure socket: DTLS and TLS streams over the existing Socket transport.
+- DNS: Perform DNS host name resolutions to convert resource names to IP addresses.
+- Bluetooth low energy (BLE): A low power wireless technology standard for building personal area networks.
+- NFC: Near-Field Communication (NFC), a short-range radio technology for use cases such as contactless payments, access control and device pairing.
+- LoRaWAN: A technology designed for low-power battery-powered devices that operate in an unlicensed spectrum, creating high density wide-area networks.
+
+### Network socket
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -211,8 +216,6 @@ This list does not include the internal APIs, which are not intended for use by 
 | [UDPSocket](../apis/udpsocket.html) | &#10004; |  |
 
 ### Network interface
-
-<!--Network interfaces are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.-->
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
@@ -237,8 +240,6 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ### Bluetooth (BLE)
 
-<!--Bluetooth low energy (BLE) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.-->
-
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [BatteryService](../apis/bluetooth-apis.html) | &#10004; | &#10004; (can be manually enabled) |
@@ -251,8 +252,6 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ### NFC
 
-<!--You can use Near-Field Communication (NFC), a short-range radio technology, for use cases such as contactless payments, access control and device pairing.-->
-
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [MessageBuilder](../apis/nfc-apis.html) | &#10004; | |
@@ -263,8 +262,6 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ### LoRaWAN
 
-<!--Arm Mbed OS provides a native network stack for LoRaWAN. LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.-->
-
 | API | Full profile | Bare metal profile |
 | - | - | - |
 | [LoRaWANInterface](../apis/lorawan-apis.html) | &#10004; | |
@@ -272,7 +269,7 @@ This list does not include the internal APIs, which are not intended for use by 
 
 ## Security
 
-<!--With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.-->
+With Arm Mbed TLS, a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
