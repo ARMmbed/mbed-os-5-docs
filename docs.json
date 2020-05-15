@@ -950,12 +950,15 @@
                             "path": "docs/program-setup/configuration.md"
                         },
                         {
-                            "path": "docs/program-setup/mbed_targets.md"
-                        },
-                        {
                             "path": "docs/program-setup/bootloader.md"
                         }
                     ]
+                },
+                {
+                    "title": "Adding and configuring targets",
+                    "sources": [{
+                        "path": "docs/program-setup/mbed_targets.md"
+                    }]
                 }
             ]
         },
