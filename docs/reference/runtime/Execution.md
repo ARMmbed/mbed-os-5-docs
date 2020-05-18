@@ -1,5 +1,9 @@
 # Execution
 
+Embedded systems are systems that are built for performing a sole dedicated duty. They are typically constrained in resources and contain only the necessary components to perform their duty. Most embedded systems are powered by a single microcontroller chip. That microcontroller is typically also limited in resources such as memory. Software for an embedded system must be carefully designed to make the best use of such limited resources. Mbed OS is often too large for such systems in its default configuration, but it supports additional modes that might be a better option depending on your target system.
+
+Threading is a fundamental technique in software development, which allows multiple tasks to run concurrently. As microcontrollers become more capable, it has become possible to use threading in embedded systems, using schedulers, either standalone or included in a real time operating system (RTOS). In single-microcontroller embedded systems, a thread is an independent segment of the program which executes within the single process runnning on the microcontroller. Threads provide a lot of flexibility to the developer but come at the cost of resources for the scheduler. Mbed, in its default configuration, provides an RTOS to enable threading in applications where resources are not critical. There is also a bare metal profile which is optimized for constained targets and does not include the RTOS or threading capabilities.
+
 ## Threads
 
 Your application (`main` function) starts execution in the main thread, but it's not the only thread running in Mbed OS. There are many threads running system services, such as:
