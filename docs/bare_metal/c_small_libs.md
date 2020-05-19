@@ -22,6 +22,29 @@ You can build with the smaller C libraries by creating an `mbed_app.json` with t
 
 This links your application with `microlib` for the `ARM` toolchain and `newlib-nano` for the `GCC_ARM` toolchain.
 
+### Non-returning main() required
+
+Exiting from `main()` is not supported by [Arm microlib](#arm-microlib) and causes a bare metal application to crash. Here we show two ways to prevent this.
+
+#### Sleep in a loop
+
+One recommended technique is sleep in a loop at the end of `main()`:
+```C
+while (true) {
+    sleep();
+}
+```
+
+This is energy-efficient compared to an empty `while (true) {}` loop which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
+
+#### Dispatching an EventQueue
+
+If your application is based on an `EventQueue`, dispatching it at the end of `main()` works as well:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
+
+The call to `queue.dispatch()` never returns, as long as we don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
+
 ## Newlib-nano
 
 [Newlib-nano](https://community.arm.com/developer/ip-products/system/b/embedded-blog/posts/shrink-your-mcu-code-size-with-gcc-arm-embedded-4-7) is an open source C library targeting embedded microcontrollers. It is based on newlib but is much smaller. One restriction is that newlib-nano is not thread-safe, so an application that uses the RTOS should not use it.
