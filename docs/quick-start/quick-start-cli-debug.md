@@ -3,9 +3,9 @@
 
 ## Using printf
 
-The easiest way to do basic debugging is to use the `printf` command in your code, then read the output using a serial terminal.
+The easiest way to do basic debugging is to use the `printf` function in your code, then read the output using a serial terminal.
 
-For example, add `printf("Hello World!\n\r");` to the top of your main function, and then recompile the program and flash it to your device. To view the output, open a serial terminal:
+For example, add `printf("Hello World!\n");` to the top of your main function, and then recompile the program and flash it to your device. To view the output, open a serial terminal:
 ```
 mbed sterm
 ```

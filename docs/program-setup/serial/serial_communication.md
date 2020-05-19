@@ -16,17 +16,18 @@ This program prints a "Hello World!" message that you can view on a serial termi
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/main.cpp)
 
-### Viewing outputs with `mbed sterm`
+### Viewing output in a serial terminal
 
 Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-Mbed CLI has built-in serial support. To open a serial terminal when _one_ Mbed board is connected and using the default baud rate (9600):
+Mbed CLI provides a serial terminal which is configured with a default baud rate of `9600`. When single board is connected, simply run: 
 
 ```
 mbed sterm
 ```
 
-Messages printed after this point will be displayed, so to run the example application again, use the board's reset button or press Ctrl + B on the serial terminal. Now the application restarts and prints "Hello World!" to the terminal.
+Messages printed after this point will be displayed, restart the application using the board's reset button or press `Ctrl + B` on the serial terminal.
+The console prints "Hello World!" to the terminal after the reset.
 
 To exit the serial terminal, press Ctrl + C.
 
@@ -34,7 +35,7 @@ To exit the serial terminal, press Ctrl + C.
 
 ## Additional options of `mbed sterm`
 
-More options are supported, run `mbed sterm -h` to show:
+More options are supported, run `mbed sterm -h` to show the help message:
 
     usage: mbed sterm [-h] [-m TARGET] [-p PORT] [-b BAUDRATE] [-e ECHO] [-r] [-v] [-vv]
 
