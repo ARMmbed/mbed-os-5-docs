@@ -20,7 +20,7 @@ This program prints a "Hello World!" message that you can view on a serial termi
 
 Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-Mbed CLI provides a serial terminal which is configured with a default baud rate of `9600`. When single board is connected, simply run: 
+Mbed CLI provides a serial terminal which is configured with a default baud rate of `9600`. When a single board is connected, simply run: 
 
 ```
 mbed sterm
