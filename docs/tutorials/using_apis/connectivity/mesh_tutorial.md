@@ -90,15 +90,14 @@ Connect to the mesh network:
 
 The application configuration file `mbed_app.json` defines the mesh network type (Wi-SUN or 6LoWPAN-ND), RF radio shield and other configuration parameters.
 
-Below is an example configuration file for a Thread device connected to an Atmel RF AT86RF233 shield:
-<!--need to change this example for non-thread device-->
+Below is an example configuration file for a Mesh device connected to an Atmel RF AT86RF233 shield:
 
 ```
     {
         "target_overrides": {
             "*": {
-                "nanostack.configuration": "thread_router",
-                "nsapi.default-mesh-type": "THREAD",
+                "nanostack.configuration": "lowpan_router",
+                "nsapi.default-mesh-type": "LOWPAN",
                 "atmel-rf.provide-default": true,
                 "target.device_has_add": ["802_15_4_PHY"],
                 "target.network-default-interface-type": "MESH"
