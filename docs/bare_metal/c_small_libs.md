@@ -43,7 +43,7 @@ If your application is based on an `EventQueue`, dispatching it at the end of `m
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
 
-The call to `queue.dispatch()` never returns, as long as we don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
+The call to `queue.dispatch_forever()` never returns, as long as we don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
 
 ## Newlib-nano
 
