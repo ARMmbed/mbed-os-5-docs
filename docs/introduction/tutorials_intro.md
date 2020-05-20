@@ -293,6 +293,6 @@ A [tutorial for creating and using a bootloader](../program-setup/creating-and-u
 
 ## Migrating
 
-If you are moving from Mbed OS 5 to Mbed OS 6, please see [the list of deprecated APIs](../apis/index.html).
+If you are moving from Mbed OS 5 to Mbed OS 6, please see [the list of deprecated APIs](../apis/index.html#deprecated-apis).
 
 If you are moving from Mbed 2 to Mbed OS 6 bare metal, [please see the bare metal documentation](../bare-metal/index.html).
