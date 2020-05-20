@@ -22,6 +22,6 @@
   "mbed-os-pelion/stage-3-prototype.html" : "mbed-os-pelion/going-to-production.html",
   "mbed-os-pelion/stage-4-pilot.html" : "mbed-os-pelion/going-to-production.html",
   "mbed-os-pelion/stage-5-production.html" : "mbed-os-pelion/going-to-production.html",
-  "mbed-os-pelion/what-s-next.html" : "mbed-os-pelion/going-to-production.html"
-
+  "mbed-os-pelion/what-s-next.html" : "mbed-os-pelion/going-to-production.html",
+  "reference/thread-tech.html" : "reference/networking.html"  
 }

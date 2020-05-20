@@ -17,7 +17,7 @@ When you create a network interface, it starts from the disconnected state. When
 
 ![Network states](../../images/NetworkinterfaceStates.png)
 
-The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection. The `ThreadInterface` returns from `connect()` call when it joins a local mesh network. It may later get a global connection when it finds a border router.
+The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection.
 
 When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal backoff periods, and not all interfaces implement the reconnection logic at all. Please refer to table below for information on how different interfaces behave.
 
@@ -43,7 +43,7 @@ Error handling and reconnection logic depends on the network interface. Please u
 | `OdinWiFiInterface` or<br /> `RTWInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
 | `ESP8266Interface` | Yes  | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
 | `CellularInterface` | Mostly no | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`<br />`CellularInterface` may also send Cellular specific states specified in `CellularCommon.h` |
-| `LoWPANNDInterface` or<br />`ThreadInterface` or<br />`WisunInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />4.`NSAPI_STATUS_LOCAL_UP`<br />4.`NSAPI_STATUS_GLOBAL_UP`|
+| `LoWPANNDInterface` or<br />`WisunInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />4.`NSAPI_STATUS_LOCAL_UP`<br />4.`NSAPI_STATUS_GLOBAL_UP`|
 
 ## Default network interface
 
@@ -88,7 +88,7 @@ Applications may also ask for a specific type of connection, as the following ta
 |------|-----------------------------|--------------|
 |`*WiFiInterface::get_default_instance()`| Wi-Fi interface | Requires security parameters (mode, SSID, password). |
 |`*EthInterface::get_default_instance()` | Wired Ethernet interface, not Wi-Fi | none |
-|`*MeshInterface::get_default_instance()` | Returns either `LoWPANNDInterface` or `ThreadInterface`, depending on which is set to default | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled. |
+|`*MeshInterface::get_default_instance()` | Returns `LoWPANNDInterface` | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled. |
 | `*CellularInterface::get_default_instance()` | Return cellular connectivity | Requires network parameters (pin, APN, username, password). |
 | `*NetworkInterface::get_default_instance()` | One of the above, depending on `target.network-default-interface-type`. |  |
 

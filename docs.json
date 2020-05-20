@@ -639,15 +639,6 @@
                                     "path": "docs/reference/technology/connectivity/cellular.md"
                                 },
                                 {
-                                    "path": "docs/reference/technology/mesh/thread_intro.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/thread_commissioning.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/thread_faq.md"
-                                },
-                                {
                                     "path": "docs/reference/technology/mesh/wisun_intro.md"
                                 },
                                 {
