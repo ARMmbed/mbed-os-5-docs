@@ -18,11 +18,11 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This ChainingBlockDevice example creates a FAT file system across multiple [HeapBlockDevices](heapblockdevice.html).
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/ChainingBlockDevice_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/ChainingBlockDevice_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ChainingBlockDevice_ex_1/)](https://github.com/ARMmbed/mbed-os-snippet-ChainingBlockDevice_ex_1/blob/master/main.cpp)
 
 This ChainingBlockDevice example shows how to program and read back data from a chained group of [HeapBlockDevices](heapblockdevice.html).
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/ChainingBlockDevice_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/ChainingBlockDevice_ex_2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ChainingBlockDevice_ex_2/)](https://github.com/ARMmbed/mbed-os-snippet-ChainingBlockDevice_ex_2/blob/master/main.cpp)
 
 ## Related content
 

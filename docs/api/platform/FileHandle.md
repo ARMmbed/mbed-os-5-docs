@@ -185,11 +185,11 @@ As such, you can only use `Stream`-based devices for blocking I/O, such as throu
 
 ## FileHandle using C library example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FileHandle)](https://github.com/ARMmbed/mbed-os-snippet-FileHandle/blob/master/main.cpp)
 
 ## FileHandle sigio example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle_sigio)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/FileHandle_sigio/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FileHandle_sigio)](https://github.com/ARMmbed/mbed-os-snippet-FileHandle_sigio/blob/master/main.cpp)
 
 ## Related content
 

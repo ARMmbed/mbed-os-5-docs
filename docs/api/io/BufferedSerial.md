@@ -58,7 +58,7 @@ You can view more information about the configurable settings and functions in t
 
 This example toggles an LED and echoes input to a terminal:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BufferedSerial_echo)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BufferedSerial_echo/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BufferedSerial_echo)](https://github.com/ARMmbed/mbed-os-snippet-BufferedSerial_echo/blob/master/main.cpp)
 
 ### Printing to the console
 
@@ -68,6 +68,6 @@ You can configure the system I/O retarget code to be buffered or unbuffered, dep
 
 Alternatively, if you need more configuration of the serial interface, you can pass an instance of the `BufferedSerial` class to the system I/O retarget code at run time for printing to the console:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BufferedSerial_printf)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/BufferedSerial_printf/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BufferedSerial_printf)](https://github.com/ARMmbed/mbed-os-snippet-BufferedSerial_printf/blob/master/main.cpp)
 
 We recommend you use the standard C I/O library directly to print to the console in Mbed OS.

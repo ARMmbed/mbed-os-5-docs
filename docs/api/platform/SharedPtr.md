@@ -15,4 +15,4 @@ When `ptr` is passed around by a value, the copy constructor and destructor mana
 
 ## Shared pointer example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Shared_pointer)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Shared_pointer/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Shared_pointer)](https://github.com/ARMmbed/mbed-os-snippet-Shared_pointer/blob/master/main.cpp)

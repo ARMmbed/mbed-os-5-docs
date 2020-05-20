@@ -10,7 +10,7 @@ The SimpleMessageParser class is a more integrated parser than the MessageParser
 
 ## SimpleMessageParser example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NFC/SimpleMessageParser)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NFC/SimpleMessageParser/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SimpleMessageParser)](https://github.com/ARMmbed/mbed-os-snippet-SimpleMessageParser/blob/master/main.cpp)
 
 An application can extend capabilities of `SimpleMessageParser` by adding new record parsers (`mbed::nfc::ndef::RecordParser`) at runtime.
 

@@ -14,7 +14,7 @@ This allows you to:
 
 This program prints a "Hello World" message that you can view on a [terminal application](#using-terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_HelloWorld/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_HelloWorld/)](https://github.com/ARMmbed/mbed-os-snippet-Serial_HelloWorld/blob/master/main.cpp)
 
 ## Using terminal applications
 
@@ -64,7 +64,7 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 ## Echo back characters you type
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_EchoBack/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_EchoBack/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/)](https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/blob/master/main.cpp)
 
 ## Use the U and D keys to make LED1 brighter or dimmer
 
@@ -72,20 +72,20 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 <span class="images">![](../../images/NUCLEOF401RE.png)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_LEDControl/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_LEDControl/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/)](https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/blob/master/main.cpp)
 
 ## Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_PassCharacters/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_PassCharacters/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/)](https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/blob/master/main.cpp)
 
 ## Using stdin, stdout and stderr
 
 By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_STDOUT/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/master/main.cpp)
 
 ## Read to a buffer
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_ReadToBuffer/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_SerialComm/Serial_ReadToBuffer/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/)](https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/blob/master/main.cpp)

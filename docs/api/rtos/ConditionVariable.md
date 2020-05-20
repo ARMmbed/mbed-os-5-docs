@@ -12,4 +12,4 @@ The ConditionVariable class provides a mechanism to safely wait for or signal st
 
 Below is an example of ConditionVariable usage, where one thread is generating events every 1s, and the second thread is waiting for the events and executing an action.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/ConditionVariable_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/ConditionVariable_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ConditionVariable_ex_1/)](https://github.com/ARMmbed/mbed-os-snippet-ConditionVariable_ex_1/blob/master/main.cpp)

@@ -81,11 +81,11 @@ If USB properties of the Mbed USB WAV Audio Player are altered, such as the samp
 
 ## main.cpp
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player/blob/master/main.cpp)
 
 ## Example WAV file  
 
-[Bach-minuet-in-g.wav](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBAudio_wav_audio_player/Bach-minuet-in-g.wav)
+[Bach-minuet-in-g.wav](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player/Bach-minuet-in-g.wav)
 
 ## Troubleshooting   
 

@@ -66,6 +66,15 @@ def get_search_replace_patterns(config_file):
     except KeyError:
         raise ConfigException(ConfigException().__doc__)
 
+def insert_string(matchobj):
+    """Insert string between https://github.com/ARMmbed/mbed-os-snippet-.*/ and main.cpp.
+
+    To be called in re.sub(). Use "https://github.com/ARMmbed/mbed-os-snippet-.*/main.cpp" as search term
+    """
+    # TODO: Automate and make this more generic
+    re.search("https://github.com/ARMmbed/mbed-os-snippet-.*/", matchobj.group(0))
+    return re.search("https://github.com/ARMmbed/mbed-os-snippet-.*/", matchobj.group(0)).group(0) + "blob/master/main.cpp"
+
 
 def replace_pattern_in_file(file_path, pattern, substitute):
     """Replace a pattern in a file."""

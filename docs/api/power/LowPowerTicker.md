@@ -20,4 +20,4 @@ You can create any number of LowPowerTicker objects, allowing multiple outstandi
 
 Try this program to set up a LowPowerTicker to repeatedly invert an LED:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/lowpowerTicker_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/lowpowerTicker_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-lowpowerTicker_ex_1/)](https://github.com/ARMmbed/mbed-os-snippet-lowpowerTicker_ex_1/blob/master/main.cpp)

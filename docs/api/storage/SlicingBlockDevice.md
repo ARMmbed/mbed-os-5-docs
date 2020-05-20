@@ -20,7 +20,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This SlicingBlockDevice example partitions a [HeapBlockDevice](heapblockdevice.html) into three subunits and showcases programming and reading back data segments through both the underlying master block device and the sliced subunits.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/SlicingBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Storage/SlicingBlockDevice/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SlicingBlockDevice)](https://github.com/ARMmbed/mbed-os-snippet-SlicingBlockDevice/blob/master/main.cpp)
 
 ## Related content
 

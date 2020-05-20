@@ -10,4 +10,4 @@ The EventFlags class provides a mechanism for setting and waiting for specific c
 
 ## EventFlags example
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventFlags)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventFlags/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventFlags)](https://github.com/ARMmbed/mbed-os-snippet-EventFlags/blob/master/main.cpp)

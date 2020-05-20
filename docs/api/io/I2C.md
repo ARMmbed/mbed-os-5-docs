@@ -16,4 +16,4 @@ The I2C protocol supports up to 127 devices per bus, and its default clock frequ
 
 ## I2C hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/I2C_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/I2C_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-I2C_ex_1/)](https://github.com/ARMmbed/mbed-os-snippet-I2C_ex_1/blob/master/main.cpp)

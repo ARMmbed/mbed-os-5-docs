@@ -22,10 +22,10 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 Set up a Timeout to invert an LED after a given timeout:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_HelloWorld/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Timeout_HelloWorld/)](https://github.com/ARMmbed/mbed-os-snippet-Timeout_HelloWorld/blob/master/main.cpp)
 
 ## Timeout example
 
 Try this example to attach a member function:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_Example/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_Example/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Timeout_Example/)](https://github.com/ARMmbed/mbed-os-snippet-Timeout_Example/blob/master/main.cpp)

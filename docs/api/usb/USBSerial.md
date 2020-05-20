@@ -10,7 +10,7 @@ You can use the USBSerial interface to emulate a serial port over USB. You can u
 
 ## USBSerial example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBSerial)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBSerial/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBSerial)](https://github.com/ARMmbed/mbed-os-snippet-USBSerial/blob/master/main.cpp)
 
 ## Related content
 
