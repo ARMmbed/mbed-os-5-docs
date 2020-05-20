@@ -11,7 +11,7 @@
     "porting/porting-hal-modules.html": "porting/porting.html",
     "porting/porting-a-custom-board.html": "porting/derivative-port.html",
     "apis/ibeacon.html": "apis/index.html",
-    "apis/serial.html": "apis/index.html",
+    "apis/serial.html": "apis/index.html#deprecated-apis",
     "apis/nvstore.html": "apis/index.html",
     "tutorials/windows-serial-driver.html": "program-setup/windows-serial-driver.html",
     "tutorials/light-control.html": "apis/light-control.html",
