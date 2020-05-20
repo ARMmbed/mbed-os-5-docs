@@ -14,17 +14,7 @@ This tutorial:
 
 ## Selecting the correct mesh protocol
 
-Mbed OS supports a variety of 802.15.4-based mesh protocols. There is support for [Wi-SUN](../apis/wisun-tech.html), [Thread](../apis/connectivity.html) and [6LoWPAN-ND](../apis/6LoWPAN-ND-tech.html) protocols, each with its own characteristics. Selecting the best mesh protocol for your application depends on the application characteristics and interoperability requirements of installation. Different mesh networks are optimized for application-specific requirements.
-
-### Thread mesh network characteristics
-
-- Optimized point to point communication and network formation.
-- No single point of failure. Operation is possible even inside rooms without any other infrastructure.
-- Fast multicast communication.
-- Low power sleeping end devices for battery operated applications.
-- Interoperability enabled through certification process.
-
-Example use cases: home automation, light control, building sensor networks and commercial building automation.
+Mbed OS supports a variety of 802.15.4-based mesh protocols. There is support for [Wi-SUN](../apis/wisun-tech.html) and [6LoWPAN-ND](../apis/6LoWPAN-ND-tech.html) protocols, each with its own characteristics. Selecting the best mesh protocol for your application depends on the application characteristics and interoperability requirements of installation. Different mesh networks are optimized for application-specific requirements.
 
 ### Wi-SUN mesh network characteristics
 
@@ -98,16 +88,16 @@ Connect to the mesh network:
     }
 ```
 
-The application configuration file `mbed_app.json` defines the mesh network type (Wi-SUN, Thread or 6LoWPAN-ND), RF radio shield and other configuration parameters.
+The application configuration file `mbed_app.json` defines the mesh network type (Wi-SUN or 6LoWPAN-ND), RF radio shield and other configuration parameters.
 
-Below is an example configuration file for a Thread device connected to an Atmel RF AT86RF233 shield:
+Below is an example configuration file for a Mesh device connected to an Atmel RF AT86RF233 shield:
 
 ```
     {
         "target_overrides": {
             "*": {
-                "nanostack.configuration": "thread_router",
-                "nsapi.default-mesh-type": "THREAD",
+                "nanostack.configuration": "lowpan_router",
+                "nsapi.default-mesh-type": "LOWPAN",
                 "atmel-rf.provide-default": true,
                 "target.device_has_add": ["802_15_4_PHY"],
                 "target.network-default-interface-type": "MESH"
@@ -136,9 +126,9 @@ The 6LoWPAN mesh network supports socket communication using the [Mbed OS Socket
 
 A mesh border router can connect a mesh network to another IP-based network. It allows end-to-end IP connectivity between devices in a mesh network and devices in an external IP network.
 
-Mbed OS provides [an example border router implementation](https://github.com/ARMmbed/nanostack-border-router). You can configure the border router to operate on **Wi-SUN**, **Thread** and **6LoWPAN-ND** networks.
+Mbed OS provides [an example border router implementation](https://github.com/ARMmbed/nanostack-border-router). You can configure the border router to operate on **Wi-SUN** and **6LoWPAN-ND** networks.
 
-In Wi-SUN and 6LoWPAN-ND mesh networks, a border router is a mandatory part of the network because all traffic is routed through the border router. In a Thread network, a border router is not mandatory because you can establish a Thread network with only router devices available. However, if a Thread mesh application wants to connect to a server in another network, then a border router is mandatory.
+In Wi-SUN and 6LoWPAN-ND mesh networks, a border router is a mandatory part of the network because all traffic is routed through the border router.
 
 A border router provides an IPv6 prefix for the mesh network. The border router can receive this backbone-prefix from:
 
@@ -157,14 +147,14 @@ There are many configuration options available for the border router. This table
 |--------------------------------|-------------------|
 | heap-size                | Size of Heap reserved for the Border Router. The bigger the network the more Heap should be allocated. Typically, more than 64kB will be required for operation. |
 | radio-type               | Type of attached 802.15.4 radio shield. Can be like `ATMEL`, `MCR20`, `S2LP`, `SPIRIT1`. More radio shileds will be added in the future. |
-| mesh-mode           | Type of Mesh network, can be either `LOWPAN_WS`, `THREAD` or `LOWPAN_ND`. |
+| mesh-mode           | Type of Mesh network, can be either `LOWPAN_WS` or `LOWPAN_ND`. |
 | backhaul-dynamic-bootstrap | By default set to `true` to learn backhaul-prefix from backbone IPv6 Router Advertisement (RA). Set to `false` to use static backhaul-prefix configured in `backhaul-prefix` field. |
 
 The `target_overrides` section in `mbed_app.json` allows you to overwrite platform specific default values:
 
 | Configuration value      | Description |
 |------------------------------------|-------------------|
-| nanostack.configuration  | Nanostack configuration. To minimize Nanostack footprint select suitable configuration for Nanostack.  Use either `lowpan_border_router`, `ws_border_router` or `thread_border_router`. |
+| nanostack.configuration  | Nanostack configuration. To minimize Nanostack footprint select suitable configuration for Nanostack.  Use either `lowpan_border_router` or `ws_border_router`. |
 | mbed-trace.enable        | Enable (`true`) or disable (`false`) Border Router trace output. |
 
-The [`nanostack-border-router`](https://github.com/ARMmbed/nanostack-border-router) repository contains readymade configuration files for `Wi-SUN`, `Thread` and `6LoWPAN-ND`in the [`configs`](https://github.com/ARMmbed/nanostack-border-router/tree/master/configs)-directory.
+The [`nanostack-border-router`](https://github.com/ARMmbed/nanostack-border-router) repository contains readymade configuration files for `Wi-SUN` and `6LoWPAN-ND`in the [`configs`](https://github.com/ARMmbed/nanostack-border-router/tree/master/configs)-directory.

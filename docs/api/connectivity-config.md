@@ -215,10 +215,10 @@ Name: nsapi.default-cellular-username
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-mesh-type
-    Description: Configuration type for MeshInterface::get_default_instance(). [LOWPAN/THREAD/WISUN]
+    Description: Configuration type for MeshInterface::get_default_instance(). [LOWPAN/WISUN]
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_DEFAULT_MESH_TYPE
-    Value: THREAD (set by library:nsapi)
+    Value: LOWPAN (set by library:nsapi)
 Name: nsapi.default-stack
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_DEFAULT_STACK
