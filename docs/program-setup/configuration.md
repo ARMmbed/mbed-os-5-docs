@@ -313,7 +313,7 @@ The `mbed_app.json` above defines its own configuration parameter (`welcome_stri
 
 It is an error for the application configuration to override an undefined configuration parameter.
 
-# Further reading: API-specific configuration
+# API-specific configuration
 
 The API groups in **API references and tutorials** have their own configuration reviews:
 
