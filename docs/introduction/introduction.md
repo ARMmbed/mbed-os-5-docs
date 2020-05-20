@@ -23,13 +23,12 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 | --- | --- | --- |
 | Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 
-
 ## Recently updated documentation
 
-<!--bare metal, list of deprecated APIs, new API structure, porting updates...-->
-
+- A new section [for the bare metal profile](../bare-metal/index.html), including [porting from Mbed 2](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
+- We've grouped [our API references with the relevant tutorials and configuration information](../apis/index.html) so you can work on a feature from start to finish in a single area of the docs.
+- A list of [deprecated APIs and their replacements](../apis/index.html#deprecated-apis).
+- Updates to [setting up Mbed OS programs](../program-setup/index.html), [build tools](../build-tools/index.html) and [debugging and testing](../debug-test/index.html).
 - New API references for [BufferedSerial](../apis/serial-uart-apis.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
-- New content about [using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
 - A guide to [porting a custom board](../porting/derivative-port.html).
 - A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
-- The [UserAllocatedEvent](../apis/userallocatedevent.html) API reference.
