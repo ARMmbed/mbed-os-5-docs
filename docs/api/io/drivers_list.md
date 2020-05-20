@@ -49,6 +49,5 @@
 - [I2C](../apis/i2c.html): Communicate with I2C devices such as serial memories, sensors and other modules or integrated circuits. This class is for the I2C Master.
 - [I2CSlave](../apis/i2cslave.html): Communicate with I2C Master devices.
 - [MbedCRC](../apis/mbedcrc.html): Provides support for Cyclic Redundancy Check (CRC) algorithms.
-- [Timeout](../apis/timeout.html): Set up an interrupt to call a function after a specified delay.
 - [ResetReason](../apis/resetreason.html): Fetch the reason the system restarted.
 - [Watchdog](../apis/watchdog.html): Set up a hardware timer that resets the system if it is not refreshed periodically.

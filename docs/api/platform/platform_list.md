@@ -5,6 +5,7 @@
 - [RTC](../apis/time-apis.html): Mechanism to set the current time of the hardware Real-Time Clock (RTC).
 - [Ticker](../apis/ticker.html): Set up a recurring interrupt.
 - [Time](../apis/time.html): A group of functions in the standard library of the C programming language implementing date and time manipulation operations.
+- [Timeout](../apis/timeout.html): Set up an interrupt to call a function after a specified delay.
 - [Timer](../apis/timer.html): Create, start, stop and read a stopwatch-like timer for measuring precise times.
 - [Wait](../apis/wait.html): `wait_us` and `wait_ns` functions that provide precise wait capabilities.
 

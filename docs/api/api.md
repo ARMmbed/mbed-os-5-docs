@@ -94,7 +94,6 @@ Driver APIs include analog and digital inputs and outputs on development boards,
 | [I2C](../apis/i2c.html) | &#10004; | &#10004;  |
 | [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004;  |
 | [MbedCRC](../apis/mbedcrc.html) | &#10004; | &#10004;  |
-| [Timeout](../apis/timeout.html) | &#10004; | &#10004; |
 | [ResetReason](../apis/resetreason.html) | &#10004; | &#10004;  |
 | [Watchdog](../apis/watchdog.html) | &#10004; | &#10004; |
 
@@ -109,6 +108,7 @@ Platform APIs provide general purpose MCU management infrastructure, common data
 | [RTC](../apis/time-apis.html) | &#10004; | &#10004;  |
 | [Ticker](../apis/ticker.html) | &#10004; | &#10004;  |
 | [Time](../apis/time.html) | &#10004; | &#10004;  |
+| [Timeout](../apis/timeout.html) | &#10004; | &#10004; |
 | [Timer](../apis/timer.html) | &#10004; | &#10004; |
 | [Wait](../apis/wait.html) | &#10004; | &#10004;  |
 

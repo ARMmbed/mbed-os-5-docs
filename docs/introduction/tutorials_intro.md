@@ -88,12 +88,25 @@ The Arm Mbed ecosystem is expansive and offers many opportunities. In contrast t
 | I2CSlave | [I2CSlave example](../apis/i2cslave.html#i2cslave-example) | [I2C Hello, World](../apis/i2c.html#i2c-hello-world) |
 | MbedCRC | [MbedCRC example](../apis/mbedcrc.html#mbedcrc-examples) | |
 | ResetReason | [ResetReason example](../apis/resetreason.html) | |
-| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
 | Watchdog | [Watchdog example](../apis/watchdog.html) | |
 
 And the following tutorial:
 
 - [Alarm](../apis/drivers-tutorials.html)
+
+## Time Platform APIs
+
+| API | Examples |
+| --- | --- |
+| RTC | [RTC example](../apis/time-apis.html#rtc-time-example) |
+| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
+| Time | [Time example](../apis/time.html#time-example) |
+| Timeout | [Timeout example](../apis/timeout.html#timeout-example) | [Timeout Hello, World](../apis/timeout.html#timeout-hello-world) |
+| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
+
+And the following tutorial:
+
+- [Application flow control](../apis/platform-tutorials.html)
 
 ## Power Platform APIs
 
@@ -113,19 +126,6 @@ And the following tutorial:
 | MPU management (mpug_mgmt) | [MPU management example](../apis/mpu-management.html#example) |
 | MemoryPool | [MemoryPool example](../apis/memorypool.html#memorypool-example) | |
 | Mbed statistics  (mbed_stats)| [Memory statistics example](../apis/mbed-statistics.html#memory-statistics-example) <br> [Thread statistics example](../apis/mbed-statistics.html#thread-statistics-example) <br> [System information example](../apis/mbed-statistics.html#system-information-example) <br> [CPU statistics example](../apis/mbed-statistics.html#cpu-statistics-example)|
-
-## Time Platform APIs
-
-| API | Examples |
-| --- | --- |
-| RTC | [RTC example](../apis/time-apis.html#rtc-time-example) |
-| Ticker | [Ticker example](../apis/ticker.html#ticker-examples) | [Ticker Hello, World](../apis/ticker.html#ticker-hello-world) |
-| Time | [Time example](../apis/time.html#time-example) |
-| Timer | | [Timer Hello, World](../apis/timer.html#timer-hello-world) |
-
-And the following tutorial:
-
-- [Application flow control](../apis/platform-tutorials.html)
 
 ## Other Platform APIs
 

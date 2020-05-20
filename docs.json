@@ -391,9 +391,6 @@
                                     "path": "docs/api/io/MbedCRC.md"
                                 },
                                 {
-                                    "path": "docs/api/io/TimeOut.md"
-                                },
-                                {
                                     "path": "docs/api/io/ResetReason.md"
                                 },
                                 {
@@ -457,6 +454,9 @@
                                 },
                                 {
                                     "path": "docs/api/platform/Time.md"
+                                },
+                                {
+                                    "path": "docs/api/io/TimeOut.md"
                                 },
                                 {
                                     "path": "docs/api/io/Timer.md"
