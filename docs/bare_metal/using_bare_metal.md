@@ -1,6 +1,6 @@
 # Using the bare metal profile
 
-This guide shows how to create a bare metal profile application:
+This guide shows how to create a bare metal profile application, or move an existing Mbed 2 application to Mbed OS 6 bare metal:
 
 1. By default, the build tool uses the full profile for all application builds. To use the bare metal profile, set up your application to override this default behaviour.
 1. The bare metal profile uses a minimal set of default APIs. You can add additional ones [from the list of supported APIs](../bare-metal/index.html#features) if your application needs them.

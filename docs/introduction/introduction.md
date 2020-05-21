@@ -1,15 +1,14 @@
 # An introduction to Arm Mbed OS 6
 <!--I don't like the structure here-->
-Mbed OS is an open-source operating system for Internet of Things (IoT) Cortex-M boards: low-powered, constrained and connected. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can write C/C++ applications that run on any Mbed-enabled board.<!--device is a problematic terms, because Keil uses it to mean something very specific, so going with "board"-->
+Mbed OS is an open-source operating system for Internet of Things (IoT) Cortex-M boards: low-powered, constrained and connected. Mbed OS provides an abstraction layer for the microcontrollers it runs on, so that developers can write C/C++ applications that run on any Mbed-enabled board.
 
 The Mbed OS source code is available on [GitHub](https://github.com/ARMmbed/mbed-os) and on our [release page](https://os.mbed.com/releases/).
 
-## Profiles and RTOS<!--clumsy title--><!--maybe it doesn't even need a title?-->
+## Profiles and RTOS<
 
 The **full profile** of Mbed OS is an RTOS (it includes an RTX and all RTOS APIs), so it supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on threads, semaphores, mutexes and other RTOS features. It also includes all APIs by default, although you can remove unused ones at build time.
 
-The **bare metal profile** doesn't include an RTX and is therefore not an RTOS - it is designed for applications that do not require complex thread management. It is also designed for constrained devices, and therefore focuses on minimising the size of the final application: by default, it includes only the smallest possible set of APIs, to which you can manually add APIs your application requires. The bare metal profile can use the small C libraries (which are not thread safe) to further minimise the size of the application.
-<!--too many "designed" and "minimze" and the sentences are really long-->
+The **bare metal profile** doesn't include an RTX and is therefore not an RTOS - it is designed for applications that do not require complex thread management. It is also designed for constrained devices, and therefore focuses on minimising the size of the final application: by default, it includes only the smallest possible set of APIs, to which you can manually add APIs your application requires. The bare metal profile can use the small C libraries (which are not thread safe) to further minimise the size of the application. Mbed 2 users who want to move to Mbed OS 6 should use the bare metal profile.
 
 ## Licensing
 
@@ -25,7 +24,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
-- A new section [for the bare metal profile](../bare-metal/index.html), including [porting from Mbed 2](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
+- A new section [for the bare metal profile](../bare-metal/index.html), including [moving Mbed 2 applications to bare metal](../bare-metal/using-the-bare-metal-profile.html) and [porting targets from Mbed 2](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
 - We've grouped [our API references with the relevant tutorials and configuration information](../apis/index.html) so you can work on a feature from start to finish in a single area of the docs.
 - A list of [deprecated APIs and their replacements](../apis/index.html#deprecated-apis).
 - Updates to [setting up Mbed OS programs](../program-setup/index.html), [build tools](../build-tools/index.html) and [debugging and testing](../debug-test/index.html).
