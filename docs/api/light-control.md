@@ -21,25 +21,14 @@ See the file `mbed_app.json` for an example of defining an IEEE 802.15.4 channel
 
 To optimize the flash usage, select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
 
-Select the protocol the network is based on:
-
-- 6LoWPAN-ND.
-- Thread.
-
-Select the device role:
+The network is based on 6LoWPAN-ND. Select the device role:
 
 - Mesh network. A router. (default)
 - Star network. Nonrouting device. Also known as a host or sleepy host.
 
 Modify your `mbed_app.json` file to see which Nanostack and [Mbed Mesh API](../apis/mesh-api.html) configuration to use.
 
-Example configuration files are provide under `configs/` directory. You may override the `mbed_app.json` with either of these.
-
-|configuration file|Use for|
-|------------------|-------|
-|`configs/mesh_6lowpan.json` | 6LoWPAN-ND based mesh network. |
-
-An example of the `mbed_app.json` file:
+An example configuration file is provided under `configs/` directory. You may override the `mbed_app.json`. The configuration file is `configs/mesh_6lowpan.json` and is used for 6LoWPAN-ND based mesh network. For example, the `mbed_app.json` file can be set to:
 
 ``` json
     "target_overrides": {
@@ -62,19 +51,16 @@ An example of the `mbed_app.json` file:
     }
 ```
 
-The following tables show the values to use in the `mbed_app.json` file for your devices in different networks.
+### Values for 6LoWPAN-ND
 
-- For a 6LoWPAN-ND based network, use `nsapi.default-mesh-type: LOWPAN`.
+For a 6LoWPAN-ND based network, use `nsapi.default-mesh-type: LOWPAN`.
 
+In addition, you can use:
 
-### 6LoWPAN-ND
-
-**nsapi.default-mesh-type: LOWPAN**
-
-|Device role|`nanostack.configuration` value|`mbed-mesh-api.6lowpan-nd-device-type` value|
-|-----------|-------------------------|------------------------------------|
-|Mesh router (default) | lowpan_router | NET_6LOWPAN_ROUTER |
-|Nonrouting device | lowpan_host | NET_6LOWPAN_HOST |
+| Device role | `nanostack.configuration` value | `mbed-mesh-api.6lowpan-nd-device-type` value |
+| --- | --- | --- |
+| Mesh router (default) | `lowpan_router` | `NET_6LOWPAN_ROUTER` |
+| Nonrouting device | `lowpan_host` | `NET_6LOWPAN_HOST` |
 
 ## Requirements for hardware
 
