@@ -22,13 +22,13 @@ To read an input, see [DigitalIn](digitalin.html).
 
 ## InterruptIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/InterruptIn_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/InterruptIn_ex_2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_2/tree/v6.0\)](https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_2/blob/v6.0/main.cpp)
 
 ## InterruptIn example
 
 Try the following example to count rising edges on a pin.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/InterruptIn_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/InterruptIn_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_1/tree/v6.0\)](https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_1/blob/v6.0/main.cpp)
 
 ## Related content
 

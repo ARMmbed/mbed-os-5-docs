@@ -14,7 +14,7 @@ The device-specific `PinNames.h` and the respective datasheet or reference manua
 
 ## PortOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/PortOut_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/PortOut_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PortOut_ex_1/tree/v6.0\)](https://github.com/ARMmbed/mbed-os-snippet-PortOut_ex_1/blob/v6.0/main.cpp)
 
 ## Related content
 

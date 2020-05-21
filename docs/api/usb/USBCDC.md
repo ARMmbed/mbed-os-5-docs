@@ -10,7 +10,7 @@ The USBCDC class emulates a basic serial port over USB. You can use this serial 
 
 ## USBCDC example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBCDC)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBCDC/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBCDC)](https://github.com/ARMmbed/mbed-os-snippet-USBCDC/blob/v6.0/main.cpp)
 
 ## Related content
 

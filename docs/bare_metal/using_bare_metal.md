@@ -7,7 +7,7 @@ This guide shows how to create a bare metal profile application, or move an exis
 
 Here is a code snippet that can work for both Mbed OS profiles; it prints text at regular intervals using the `EventQueue` class. You will create an application that uses this code, set it to use the bare metal profile, and add the non-default `EventQueue` class.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/tree/v6.0\)](https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/blob/v6.0/main.cpp)
 
 ## 1. Creating a bare metal application
 

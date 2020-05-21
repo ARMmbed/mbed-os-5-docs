@@ -22,10 +22,10 @@ The two examples below use a program called "Anvil Studio 32-bit" to play MIDI n
 
 Below is an example to send a series of MIDI notes to the host PC:    
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMIDI)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMIDI/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBMIDI)](https://github.com/ARMmbed/mbed-os-snippet-USBMIDI/blob/v6.0/main.cpp)
 
 ## Play "Take Me Out to the Ball Game" example
 
 You can use USBMIDI to play an entire song, not just a series of notes. "Take Me Out to the Ball Game" is a popular song in the public domain. To play "Take Me Out to the Ball Game" (public domain) using MIDI over USB on the host PC:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMIDI_Take_Me_Out)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMIDI_Take_Me_Out/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBMIDI_Take_Me_Out)](https://github.com/ARMmbed/mbed-os-snippet-USBMIDI_Take_Me_Out/blob/v6.0/main.cpp)

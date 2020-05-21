@@ -18,7 +18,7 @@ You can view more information about the configurable settings and functions in t
 
 ## UnbufferedSerial Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/UnbufferedSerial/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial)](https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/blob/v6.0/main.cpp)
 
 ## Mbed OS use
 

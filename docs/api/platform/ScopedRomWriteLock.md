@@ -12,7 +12,7 @@ The `ScopedRomWriteLock` class provides an RAII object for enabling writing to R
 
 This example shows how you can enable writes to ROM from main.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/ScopedRomWriteLock)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/ScopedRomWriteLock/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ScopedRomWriteLock)](https://github.com/ARMmbed/mbed-os-snippet-ScopedRomWriteLock/blob/v6.0/main.cpp)
 
 ## Related content
 

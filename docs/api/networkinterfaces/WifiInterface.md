@@ -60,7 +60,7 @@ This program scans for Wi-Fi access points in the area. There are multiple [Wi-F
 
 The ESP8266Interface uses AT commands over serial interface to connect to an external Wi-Fi device. The OdinWiFiInterface provides an Ethernet-like driver to the Mbed OS network stack. The network stack uses the driver to connect to Wi-Fi:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NetworkSocket/TCPSocketWiFi)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_NetworkSocket/TCPSocketWiFi/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocketWiFi)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocketWiFi/blob/v6.0/main.cpp)
 
 ## Related content
 

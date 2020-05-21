@@ -22,7 +22,7 @@ For more information, please review the related content.
 
 ## QuadSPI example
 
- [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/QSPI)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/QSPI/main.cpp)
+ [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-QSPI)](https://github.com/ARMmbed/mbed-os-snippet-QSPI/blob/v6.0/main.cpp)
 
 ## Related content
 

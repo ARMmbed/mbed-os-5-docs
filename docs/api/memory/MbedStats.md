@@ -79,7 +79,7 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ## Memory statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Utils_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Utils_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Utils_ex_1/tree/v6.0\)](https://github.com/ARMmbed/mbed-os-snippet-Utils_ex_1/blob/v6.0/main.cpp)
 
 ## Thread statistics example
 
