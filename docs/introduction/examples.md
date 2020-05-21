@@ -62,11 +62,11 @@ A few micro:bit How To videos:
 
 ### mesh
 
-[Join a device to an insecure 6LoWPAN-ND or Thread network](https://os.mbed.com/teams/mbed-os-examples/code/nanostack-border-router). This is the simplest use of the mesh networking stack.
+[Join a device to an insecure 6LoWPAN-ND](https://os.mbed.com/teams/mbed-os-examples/code/nanostack-border-router). This is the simplest use of the mesh networking stack.
 
 ### Nanostack border router
 
-[Use the generic Mbed border router and create a 6LoWPAN-ND or Thread network](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
+[Use the generic Mbed border router and create a 6LoWPAN-ND or Thread network](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN devices can access to internet using this gateway.
 
 ### Sockets
 
