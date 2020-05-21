@@ -81,13 +81,13 @@ typedef enum {
 
 The code below uses two separate threads to blink two LEDs. The first thread is automatically created and executes the `main` function; the second thread is created explicitly inside `main`.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Basic)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Basic/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Basic/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Basic/blob/v6.0/main.cpp)
 
 ## Thread example with callbacks
 
 The Callback API provides a convenient way to pass arguments to spawned threads.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Threading_with_callback/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Threading_with_callback/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/blob/v6.0/main.cpp)
 
 ## Debugging tips
 

@@ -49,7 +49,7 @@ Heap statistics provide exact information about the number of bytes dynamically 
 
 ### Example program using heap statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Heap_Stats_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Heap_Stats_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Heap_Stats_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Heap_Stats_ex_1/blob/v6.0/main.cpp)
 
 ### Side effects of enabling heap statistics
 
@@ -99,4 +99,4 @@ Both of these functions return a struct containing the following:
 
 ### Example program using stack statistics
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Stack_Stats_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/Stack_Stats_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Stack_Stats_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Stack_Stats_ex_1/blob/v6.0/main.cpp)

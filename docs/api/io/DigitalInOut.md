@@ -15,4 +15,4 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 ## DigitalInOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/DigitalInOut_ex_1/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/DigitalInOut_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalInOut_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-DigitalInOut_ex_1/blob/v6.0/main.cpp)
