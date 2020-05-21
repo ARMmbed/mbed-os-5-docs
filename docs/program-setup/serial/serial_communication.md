@@ -20,7 +20,7 @@ This program prints a "Hello World!" message that you can view on a serial termi
 
 Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-Mbed CLI provides a serial terminal which is configured with a default baud rate of `9600`. When a single board is connected, simply run: 
+Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. When a single board is connected, run: 
 
 ```
 mbed sterm
@@ -28,20 +28,24 @@ mbed sterm
 
 (If you have multiple boards connected, please refer to [Additional options of mbed sterm](#additional-options-of-mbed-sterm).)
 
-Messages printed after this point will be displayed, restart the application using the board's reset button or press `Ctrl + B` on the serial terminal.
+`mbed sterm` starts message printing.
+
+Restart the application using the board's reset button, or by entering <kbd>Ctrl + B</kbd> in the serial terminal.
 The console prints "Hello World!" to the terminal after the reset.
 
-To exit the serial terminal, press Ctrl + C.
+To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
 <span class="tips">**Tip:** To compile, flash and open a serial terminal in one command line, you can append `--flash --sterm` to `mbed compile`.</span>
 
 ## Additional options of mbed sterm
 
-If you have multiple boards connected, run `mbedls` to find out the port of the board you want to use, then run `mbed sterm` with `-p <PORT>` to specify.
+- If you have multiple boards connected:
+    1. Run `mbedls` to find the port of the board you want to use.
+    1. Run `mbed sterm -p <PORT>`.
 
 If your application uses a baud rate, specify with `-b <BAUDRATE>` when opening the serial terminal.
 
-More options are supported, run `mbed sterm -h` to show the help message:
+- To list all options, run `mbed sterm -h`:
 
 ```
 usage: mbed sterm [-h] [-m TARGET] [-p PORT] [-b BAUDRATE] [-e ECHO] [-r] [-v] [-vv]
@@ -66,7 +70,7 @@ optional arguments:
 
 ## Additional examples - reading user inputs
 
-In addition to printing messages, Mbed OS applications can also read keyboard inputs from the user. This is achievable with the [BufferedSerial](../apis/bufferedserial.html)/[UnbufferedSerial](../apis/unbufferedserial.html) classes.
+In addition to printing messages, Mbed OS applications can also read keyboard inputs from the user. This is achievable with the [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html) classes.
 
 Use your terminal application to interact with the following examples.
 

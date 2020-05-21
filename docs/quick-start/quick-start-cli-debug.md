@@ -10,13 +10,13 @@ For example, add `printf("Hello World!\n");` to the top of your main function, a
 mbed sterm
 ```
 
-You may need to reset the board, because messages are visible if printed while the terminal is open.
+You may need to reset the board, because messages are visible only if printed while the terminal is open.
 
-To close the serial terminal, press Ctrl + C.
+To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
 <span class="notes">**Note:** Unless otherwise specified, `printf` defaults to a baud rate of `9600` on Mbed OS. You can modify this value in the `mbed_app.json` file. To configure your terminal client to this baud rate, change the speed option when selecting the port. You can view the [configuration options page](../program-setup/advanced-configuration.html) to learn more about how to configure OS-level options.</span>
 
-For more options of `mbed sterm`, see [Board to PC communication over USB](../tutorials/serial-comm.html).
+For more `mbed sterm` options, see [Board to PC communication over USB](../tutorials/serial-comm.html).
 
 ## Exporting to a desktop IDE
 
