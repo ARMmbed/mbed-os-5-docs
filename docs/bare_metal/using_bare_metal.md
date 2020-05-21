@@ -54,7 +54,7 @@ This example depends on the `EventQueue` class, so you need to add the library t
 
     For example: `mbed-os/events/mbed_lib.json`:
 
-    ```json
+    ```
     {
         "name": "events",
         "config": {
