@@ -8,18 +8,16 @@ This document describes how to configure an Mbed OS 2 target for bare metal, and
 
 ## Configuring your target
 
-The configure your target:
-
-1. Clone [mbed-os-example-blinky-baremetal](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal).
+1. Import `mbed-os-example-blinky-baremetal`.
 1. Edit `targets.json`. In this step, you will configure your target to support Mbed OS 6 and add bare metal configuration parameters.
 1. Build and run the example. In this step, you will troubleshoot any issues and validate the configuration by running the example successfully.
 
-### Clone mbed-os-example-blinky-baremetal
+### Import mbed-os-example-blinky-baremetal
 
 1. Run the following command:
 
     ```
-    git clone https://github.com/ARMmbed/mbed-os-example-blinky-baremetal
+    mbed import mbed-os-example-blinky-baremetal
     ```
 
 1. Change directory:
