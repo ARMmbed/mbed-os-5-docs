@@ -643,15 +643,6 @@
                                     "path": "docs/reference/technology/connectivity/cellular.md"
                                 },
                                 {
-                                    "path": "docs/reference/technology/mesh/thread_intro.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/thread_commissioning.md"
-                                },
-                                {
-                                    "path": "docs/reference/technology/mesh/thread_faq.md"
-                                },
-                                {
                                     "path": "docs/reference/technology/mesh/wisun_intro.md"
                                 },
                                 {
@@ -863,9 +854,8 @@
                     "sub_chapters": [{
                             "title": "Installation and setup",
                             "sources": [{
-                                    "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
-                                }
-                            ]
+                                "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
+                            }]
                         },
                         {
                             "title": "Working with Mbed CLI",
@@ -1061,7 +1051,7 @@
                         },
                         {
                             "path": "docs/tutorials/optimize/memory/printf.md"
-                        },      
+                        },
                         {
                             "path": "docs/tutorials/optimize/power/power_manage.md"
                         }
