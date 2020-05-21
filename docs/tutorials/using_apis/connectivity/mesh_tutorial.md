@@ -88,7 +88,7 @@ Connect to the mesh network:
     }
 ```
 
-The application configuration file `mbed_app.json` defines the mesh network type (Wi-SUN, Thread or 6LoWPAN-ND), RF radio shield and other configuration parameters.
+The application configuration file `mbed_app.json` defines the mesh network type (Wi-SUN or 6LoWPAN-ND), RF radio shield and other configuration parameters.
 
 Below is an example configuration file for a Mesh device connected to an Atmel RF AT86RF233 shield:
 
