@@ -66,14 +66,28 @@ def get_search_replace_patterns(config_file):
     except KeyError:
         raise ConfigException(ConfigException().__doc__)
 
-def insert_string(matchobj):
-    """Insert string between https://github.com/ARMmbed/mbed-os-snippet-.*/ and main.cpp.
+def get_insert_tags(config_file):
+    """Get the insert tags."""
+    try:
+        with open(config_file, "r") as f:
+            configs = json.load(f)
+        return (
+            configs["insert_start_tag"],
+            configs["insert_end_tag"],
+            configs["insert_string"]
+        )
+    except KeyError:
+        raise ConfigException(ConfigException().__doc__)
 
-    To be called in re.sub(). Use "https://github.com/ARMmbed/mbed-os-snippet-.*/main.cpp" as search term
-    """
-    # TODO: Automate and make this more generic
-    re.search("https://github.com/ARMmbed/mbed-os-snippet-.*/", matchobj.group(0))
-    return re.search("https://github.com/ARMmbed/mbed-os-snippet-.*/", matchobj.group(0)).group(0) + "blob/master/main.cpp"
+def insert_string(matchobj):
+    """Insert string between two tags."""
+    start_tag, end_tag, string_to_insert = get_insert_tags(DEFAULT_CONFIG_FILE)
+    re.search(start_tag, matchobj.group(0))
+    return (
+        re.search(start_tag, matchobj.group(0)).group(0)
+        + string_to_insert
+        + end_tag
+    )
 
 
 def replace_pattern_in_file(file_path, pattern, substitute):
@@ -95,17 +109,23 @@ def replace_pattern_in_file(file_path, pattern, substitute):
 
 def search_replace(args):
     """Search for a pattern in the file(s) and replace it."""
-    search_pattern, replace_str = get_search_replace_patterns(args.config)
+
+    if args.insert:
+        start_tag, end_tag, _ = get_insert_tags(DEFAULT_CONFIG_FILE)
+        search_pattern = start_tag + end_tag
+        substitute = insert_string
+    else:
+        search_pattern, substitute = get_search_replace_patterns(DEFAULT_CONFIG_FILE)
 
     if os.path.isfile(args.path):
-        replace_pattern_in_file(args.path, search_pattern, replace_str)
+        replace_pattern_in_file(args.path, search_pattern, substitute)
     else:
         for (dirpath, _, filenames) in os.walk(args.path):
             for filename in filenames:
                 replace_pattern_in_file(
                     os.path.join(dirpath, filename),
                     search_pattern,
-                    replace_str,
+                    substitute,
                 )
 
 
@@ -136,21 +156,32 @@ def parse_args():
         ),
     )
 
-    parser.add_argument(
-        "--config",
-        type=lambda x: is_valid_file(parser, x),
-        default=DEFAULT_CONFIG_FILE,
-        help=(
-            "configuration file that has the pattern to search"
-            " and what to replace it with"
-        ),
-    )
+    # TODO: Allow users to pass their own config files
+    # parser.add_argument(
+    #     "--config",
+    #     type=lambda x: is_valid_file(parser, x),
+    #     default=DEFAULT_CONFIG_FILE,
+    #     help=(
+    #         "configuration file that has the pattern to search"
+    #         " and what to replace it with"
+    #     ),
+    # )
 
     parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
         help="increase verbosity of status information.",
+    )
+
+    parser.add_argument(
+        "-i",
+        "--insert",
+        action="store_true",
+        help=(
+            "insert a string between a start tag and end tag defined in the"
+            " configuration file."
+        ),
     )
 
     parser.set_defaults(func=search_replace)
