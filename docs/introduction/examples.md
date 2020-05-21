@@ -66,7 +66,7 @@ A few micro:bit How To videos:
 
 ### Nanostack border router
 
-[Use the generic Mbed border router and create a 6LoWPAN-ND or Thread network](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN devices can access to internet using this gateway.
+[Use the generic Mbed border router and create a 6LoWPAN-ND](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN devices can access to internet using this gateway.
 
 ### Sockets
 
