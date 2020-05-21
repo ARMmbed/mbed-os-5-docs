@@ -21,7 +21,6 @@ Deploy SW MAC as follows:
 1. Call `arm_net_phy_register()` to register the configured RF driver class to Nanostack.
 2. Call `ns_sw_mac_create()` to create SW MAC with needed list sizes.
     - a sleepy device needs only 1-4 as the size of the `device_decription_table_size`.
-    - the minimum and recommended `key_description_table_size` for the Thread stack is 4. (2 for 6LoWPAN)
     - the recommended value for `key_lookup_size` is 1 and for `key_usage_size` 3.
 3. Call `arm_nwk_interface_lowpan_init()` to create Nanostack with the created SW MAC class. Nanostack will initialize SW MAC before using it.
 
@@ -194,8 +193,6 @@ NanoStack uses 64-bit address set and get. There are two 64-bit addresses availa
 - NVM EUI64.
 - dynamic 64-bit address used at the link layer.
 
-Thread generates a random MAC64 after commissioning. Therefore, MAC and the RF driver must support updating of radio's dynamic 64-bit address anytime.
-
 Address set and get support two different 64-bit addresses:
 
 | Address enumeration type | Description |
@@ -210,8 +207,6 @@ Usually, HW MAC and SW MAC have static keys and neighbor list sizes. Nanostack a
 - MAC Device description list size (must be > 1).
 - MAC Key description list size (must be > 1).
 
-<span class="notes">**Note:** The Key description list size must be at least 4 if using Thread!</span>
-
 ### MLME attribute extension
 
 Nanostack uses MLME attribute extensions which have to be ported to the HW MAC adapter. To configure the extensions, use the `MLME-SET-REQ` command.
@@ -220,17 +215,6 @@ Nanostack uses MLME attribute extensions which have to be ported to the HW MAC a
 | ---------------- | ----- | ----------- |
 | `macLoadBalancingBeaconTx` | `0xfd` | Trigger to MAC layer to send a beacon. Called by the load balancer module periodically. |
 | `macLoadBalancingAcceptAnyBeacon` | `0xfe` | Configure MAC layer to accept beacons from other networks. Enabled by load balancer, default value is `False`. Value size boolean, `true=enable`, `false=disable`. |
-| `macThreadForceLongAddressForBeacon` | `0xff` | The Thread standard forces the beacon source address to have an extended 64-bit address. |
-
-### Thread Sleepy End Device (SED) keepalive extension
-
-Thread 1.1 stack defines that the sleepy end device data poll process must enable the neighbor table keepalive functionality as well. When SED finishes data polling successfully, it updates its parents keepalive value in a neighbor table. A service user at a parent device does not have a standard mechanism to indicate the data polling event. Therefore, the MAC layer must generate an `MLME-COMM-STATUS` indication callback with status `MLME_DATA_POLL_NOTIFICATION`.
-
-Enumeration extension for MLME communication status enumeration:
-
-| Enumeration type | Value | Description |
-| ---------------- | ----- | ----------- |
-| `MLME_DATA_POLL_NOTIFICATION` | `0xff` | Thread requirement for MLME-COMM-STATUS to start indicating the successful data poll events. |
 
 ## HW MAC
 
