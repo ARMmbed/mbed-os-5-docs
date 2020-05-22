@@ -17,9 +17,7 @@ We developed Mbed OS using the Mbed CLI tool, which is a Python program that coo
 
 The Mbed Online Compiler is our in-house IDE and should be familiar to anyone who's been working with Mbed for a while. It uses the Arm Compiler 6.
 
-<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
-
-For more information, please see the [Online Compiler page](developing-mbed-online-compiler.html).
+For more information, please see the [Online Compiler page](../build-tools/mbed-online-compiler.html).
 
 ## Arm Mbed CLI
 
@@ -27,13 +25,16 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 
 ### Compiler versions
 
-You can build Mbed OS can be built with various toolchains. The currently supported versions are:
+You can build Mbed OS with the Arm Compiler and GUN Arm Embedded toolchains. The currently supported versions are:
 
-- Arm Compiler 6.13 (default ARM toolchain).
-  - A paid version is available as [Arm Compiler 6.13 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6).
-  - A paid version is also included in [Keil MDK 5.29](http://www2.keil.com/mdk5/529).
-- [GNU Arm Embedded version 9 (9-2019-q4-major)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads).
-- [IAR Embedded Workbench 8.32.1](https://iar.com/mbed).
+| Compiler| Download location | Name in Mbed CLI |
+| --- | --- | --- |
+| Arm Compiler 6.13 (default ARM toolchain) | - A paid version is available as [Arm Compiler 6.13 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). </br> - A paid version is also included in [Keil MDK 5.29](http://www2.keil.com/mdk5/529) | `arm` |
+| GNU Arm Embedded version 9 (9-2019-q4-major) | [GNU Arm Embedded version 9 (9-2019-q4-major)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads) | `gcc` |
+
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5, IAR or uARM.</span>
+
+<!--should this version change? Do we want to list both 6.13 and 6.14? If we're ever going to provide a list of all supported versions per toolchain, it should be here-->
 
 ## Arm Mbed Studio
 

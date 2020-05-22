@@ -23,7 +23,7 @@ To determine which communication port your board connects to:
 
 ## Exporting to a desktop IDE
 
-To debug using a desktop IDE such as Keil uVision, IAR or Eclipse:
+To debug using a desktop IDE such as Keil uVision or Eclipse:
 
 1. Under **Program Details**, click the **Export** button.
 1. Select your export platform and IDE.

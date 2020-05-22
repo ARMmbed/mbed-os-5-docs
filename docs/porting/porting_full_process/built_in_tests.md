@@ -201,9 +201,7 @@ To build and run the Mbed OS tests:
     - The `common_tickers` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers`.
     - The `common_tickers_freq` test image is at `mbed-os-example-blinky/BUILD/tests/<new_target>/gcc_arm/mbed-os/TESTS/mbed_hal/common_tickers_freq.`
 
-1. You need to flash the test image to the board. You can use pyOCD (from the command line or IDE), or you could use IAR and Keil (if they already support the new target).
-
-    The easiest method is using the pyOCD flash tool:
+1. You need to flash the test image to the board. You can use the pyOCD flash tool (from the command line or IDE):
 
     ```
     pyocd-flashtool BUILD/mbed-os-example-blinky.bin    # Use the .hex file if appropriate
