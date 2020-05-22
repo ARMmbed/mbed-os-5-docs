@@ -66,7 +66,7 @@ After you have completed the steps above, add `small` to the `supported_c_libs` 
 
 ### Non-returning main()
 
-Arm microlib doesn't support exiting from `main()`; attempting to exit from `main()` causes a bare metal application to crash. Here we show two ways to prevent this.
+Arm microlib doesn't support returning from `main()`; attempting to return from `main()` causes a bare metal application to crash. Here we show two ways to prevent this.
 
 #### Sleeping in a loop
 
