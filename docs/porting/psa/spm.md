@@ -178,36 +178,6 @@ LR_IROM1 MBED_ROM_START MBED_ROM_SIZE {
 ...
 ```
 
-### Linker script example for IAR compiler
-
-```
-...
-if (!isdefinedsymbol(MBED_ROM_START)) {
-  define symbol MBED_ROM_START = 0x10000000;
-}
-
-if (!isdefinedsymbol(MBED_ROM_SIZE)) {
-  define symbol MBED_ROM_SIZE = 0x78000;
-}
-
-if (!isdefinedsymbol(MBED_RAM_START)) {
-  define symbol MBED_RAM_START = 0x08000000;
-}
-
-if (!isdefinedsymbol(MBED_RAM_SIZE)) {
-  define symbol MBED_RAM_SIZE = 0x10000;
-}
-
-/* RAM */
-define symbol __ICFEDIT_region_IRAM1_start__ = MBED_RAM_START;
-define symbol __ICFEDIT_region_IRAM1_end__   = (MBED_RAM_START + MBED_RAM_SIZE);
-
-/* Flash */
-define symbol __ICFEDIT_region_IROM1_start__ = MBED_ROM_START;
-define symbol __ICFEDIT_region_IROM1_end__   = (MBED_ROM_START + MBED_ROM_SIZE);
-...
-```
-
 ## Porting SPM (asymmetric multiprocessing systems - multicore ARMv7-M)
 
 These are the guidelines you should follow if you have multicore systems:
