@@ -22,7 +22,7 @@ You can build with the smaller C libraries by creating an `mbed_app.json` with t
 
 This links your application with `microlib` for the `ARM` toolchain and `newlib-nano` for the `GCC_ARM` toolchain.
 
-<span class="notes">**Note:** You bare-metal application should _not_ return from `main()` if it uses Arm `microlib`. Please see [Non-returning main()](#non-returning-main) for advice.</span>
+<span class="notes">**Note:** If your application uses the Arm microlib, it should not return from `main()`. Please see [non-returning main() below](#non-returning-main) for advice.</span>
 
 ## Newlib-nano
 
@@ -77,7 +77,7 @@ while (true) {
 }
 ```
 
-This is energy-efficient compared to an empty `while (true) {}` loop, which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
+This is energy efficient compared to an empty `while (true) {}` loop, which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
 
 #### Dispatching an EventQueue
 
@@ -85,7 +85,7 @@ If your application is based on an `EventQueue`, dispatching it at the end of `m
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
 
-The call to `queue.dispatch_forever()` never returns, as long as we don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
+The call to `queue.dispatch_forever()` never returns, as long as you don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
 
 ### Note on uARM toolchain
 
