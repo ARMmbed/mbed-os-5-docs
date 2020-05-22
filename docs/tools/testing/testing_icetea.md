@@ -1,4 +1,4 @@
-# Icetea testing applications
+# Icetea for testing applications
 
 ## Using tests
 

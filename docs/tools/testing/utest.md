@@ -21,7 +21,7 @@ The order of handler execution is:
 
 ## Example
 
-This example showcases functionality and proper integration with the [Greentea testing automation framework](greentea-testing-applications.html), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
+This example showcases functionality and proper integration with the [Greentea testing automation framework](greentea-for-testing-applications.html), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Utest_Ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Utest_Ex_1/blob/v6.0/main.cpp)
 

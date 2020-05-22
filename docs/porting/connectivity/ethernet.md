@@ -140,7 +140,7 @@ Depending on its use of pool and heap memory and other factors, a driver might w
 
 The Mbed OS tree contains Greentea-based tests that exercise the EMAC API directly, and more general socket tests.
 
-For general Greentea information, please see the [Greentea](../debug-test/greentea-testing-applications.html) section.
+For general Greentea information, please see the [Greentea](../debug-test/greentea-for-testing-applications.html) section.
 
 EMAC tests are in the Mbed OS tree under the `TESTS/network/emac` directory.
 

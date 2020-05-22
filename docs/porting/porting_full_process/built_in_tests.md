@@ -2,7 +2,7 @@
 
 It's important to test your port at the end of each module porting, rather than only once when you've imported all modules. There are two testing methods:
 
-1. Running the Mbed OS built-in tests with [*Greentea*](../debug-test/greentea-testing-applications.html).
+1. Running the Mbed OS built-in tests with [*Greentea*](../debug-test/greentea-for-testing-applications.html).
 1. Manually running the Mbed OS built-in tests.
 
 ## Testing with the Greentea framework

@@ -54,7 +54,7 @@ How it works:
 - **jenkins-ci/dynamic-memory-usage** - Reports dynamic memory use compared to the master branch.
 - **jenkins-ci/exporter** - Exports and builds exported code. Related commands:
    - `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`.
-- **jenkins-ci/greentea-test** - Runs [greentea tests](../debug-test/greentea-testing-applications.html).
+- **jenkins-ci/greentea-test** - Runs [greentea tests](../debug-test/greentea-for-testing-applications.html).
 - **jenkins-ci/mbed2-build-ARM** - Builds Mbed OS 2 with the [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
    - `python tools/build_release.py -p <target> -t <toolchain>`.
 - **jenkins-ci/mbed2-build-GCC_ARM** - Builds Mbed OS 2 with GCC_ARM.

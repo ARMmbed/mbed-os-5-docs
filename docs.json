@@ -1178,10 +1178,10 @@
                                 "path": "docs/tools/testing/testing_greentea.md"
                             },
                             {
-                                "path": "docs/tools/testing/testing_icetea.md"
+                                "path": "docs/tools/testing/icetea.md"
                             },
                             {
-                                "path": "docs/tools/testing/icetea.md"
+                                "path": "docs/tools/testing/testing_icetea.md"
                             },
                             {
                                 "path": "docs/tools/testing/utest.md"

@@ -1,4 +1,4 @@
-# Greentea testing applications
+# Greentea for testing applications
 
 Greentea is the automated testing tool for Arm Mbed OS development. It's a test runner that automates the process of flashing development boards, starting tests and accumulating test results into test reports. You can use it for local development, as well as for automation in a continuous integration environment.
 
