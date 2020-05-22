@@ -16,7 +16,7 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 - Qt Creator.
 - SW4STM32 System Workbench for STM32.
 
-This may be useful to [launch a debug session](../tools/debugging.html) with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
+This may be useful to [launch a debug session](../debug-test/index.html) with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
 ## Exporting from the Arm Mbed Online Compiler
 
@@ -28,7 +28,7 @@ The export process generates a ZIP archive with a project file matching your sel
 
 ## Exporting from Arm Mbed CLI
 
-[Mbed CLI](../tools/developing-mbed-cli.html) currently supports [exporting](exporting.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](../build-tools/mbed-cli.html) currently supports [exporting](../build-tools/third-party-build-tools.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 
