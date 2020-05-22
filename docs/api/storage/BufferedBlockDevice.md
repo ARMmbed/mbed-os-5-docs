@@ -8,7 +8,7 @@ The constructor only requires the underlying block device pointer.
 
   - _bd_ -  Block device to back the BufferedBlockDevice.
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## BufferedBlockDevice class reference
 
@@ -23,4 +23,4 @@ This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html)
 ## Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

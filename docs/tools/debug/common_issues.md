@@ -24,7 +24,7 @@ If you are using an old version of Mbed CLI, you may see compile-time errors. Ma
 
 ### Compiler versions
 
-You can build Mbed OS with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../tools/index.html).
+You can build Mbed OS with various toolchains. Make sure you are using the latest versions of the toolchains. You can find the currently supported versions on [our tools page](../build-tools/index.html).
 
 The default toolchain profiles now select C++14 and C11. Some applications that worked with older versions of Mbed OS may fail to compile because they use constructs that were valid in C++98 but not in C++14. To fix these common compatibility issues:
 
@@ -57,7 +57,7 @@ If using Keil MDK (Arm Compiler) or IAR, make sure you have a license installed.
 ## Investigate whether the Mbed OS application is crashing
 
 - Examine or undo any recent code change you made to see if it is the cause of the crash.
-- Build using the development or [debug build profile](../tools/build-profiles.html), so the serial port shows any errors in your program.
+- Build using the development or [debug build profile](../program-setup/build-profiles-and-rules.html), so the serial port shows any errors in your program.
 - Enable debug prints for components that have them.
 
 ## Take these steps if no output is shown in the serial port

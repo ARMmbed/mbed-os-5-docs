@@ -1,19 +1,15 @@
 <h1 id="quick-start">Arm Mbed OS quick start</h1>
 
-This quick start covers selecting your target in the Arm Online Compiler and creating your first application. It also teaches you how to flash your target and how to interact with your device.
+This quick start gets an example application running on your board. It shows how to create and build an application, select your build target, flash your board and interact with your device.
 
-The quick start example blinks the LED on your board on and off every 500 milliseconds. Once you have this application working, you can use the documentation the quick start links to - a broad range of examples, conceptual tutorials and end-to-end applications - to add functionality.
+Blinky is a simple application that blinks the LED on your development board every 500 milliseconds.
 
-You can choose to develop **online** or **offline**:
-
-- For online development, we provide the Arm Mbed Online Compiler. This is a great choice if you want to get started working with Mbed OS quickly.
-
-- For offline development, we provide Arm Mbed CLI, our command-line tool. Mbed CLI is compatible with Windows, Linux and macOS. Mbed CLI provides more options but requires slightly more setup.
+The quick start offers two versions of Blinky: the full profile version and the bare metal version. The workflow for both is identical, but the source code is imported from different repositories.
 
 ## Please choose how to proceed
 
-| [Online with the Mbed Online Compiler](../quick-start/online-with-the-online-compiler.html) | [Offline with Mbed CLI](../quick-start/offline-with-mbed-cli.html) |
-| :---: | :---: |
-| [![offline](../images/online_compile_next_button.png)](../quick-start/online-with-the-online-compiler.html) | [![online](../images/offline_compile_next_button.png)](../quick-start/offline-with-mbed-cli.html) |
+| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/build-and-debug-with-the-online-compiler.html) |  [Build with Mbed CLI](../quick-start/build-and-debug-with-mbed-cli.html) |
+| --- | --- | --- |
+|Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS.<br> This link will take you to the Mbed Studio documentation site. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 
-If you're interested in Arm Mbed Studio, [see its standalone documentation](https://os.mbed.com/docs/mbed-studio/latest).
+Once you have this application working, check the [further reading section](../quick-start/further-reading.html) to add functionality.

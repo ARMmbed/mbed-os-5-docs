@@ -12,7 +12,7 @@ Mbed OS provides a set of functions that you can use to capture the memory and t
 }
 ```
 
-<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../reference/configuration.html) for more details about `mbed_app.json`. </span>
+<span class="tips">**Tip:** See the documentation of the [Arm Mbed configuration system](../program-setup/advanced-configuration.html) for more details about `mbed_app.json`. </span>
 
 ## Memory statistics
 
@@ -75,7 +75,7 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ## Mbed statistics function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
 
 ## Memory statistics example
 
@@ -96,4 +96,4 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 ## Related content
 
 - [Platform configuration documentation](../apis/mbed-statistics.html).
-- [Optimization tutorial](../tutorials/optimizing.html).
+- [Optimization tutorial](../apis/platform-tutorials.html).

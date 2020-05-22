@@ -2,28 +2,28 @@
 
 [Include a brief description here.]
 
-# File system class reference
+## File system class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_system.html)
 
-# Assumptions
+## Assumptions
 
-## Defined behavior
+### Defined behavior
 
 [Include any defined behavior in bullet format here.]
 
-## Undefined behavior
+### Undefined behavior
 
 [Include any undefined behavior in bullet format here.]
 
-## Potential bugs
+### Potential bugs
 
 [Include any potential bugs in bullet format here.]
 
-# Implementing BlockDevice
+## Implementing BlockDevice
 
 [Include implementation information here.]
 
-# Testing
+## Testing
 
 [Include testing information here.]

@@ -1,6 +1,6 @@
 # Socket
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_socket.png)<span>Socket class hierarchy</span></span>
 
 Socket is the abstract base class for all of the protocol-specific socket types. It defines all of the functions that comprise the Mbed OS Socket API. You cannot directly create a Socket object because it is abstract, but you can upcast any protocol-specific object to an abstract Socket object.
 
@@ -26,7 +26,7 @@ Not all protocols implement every function from the Socket API. For example, UDP
 
 ## Socket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_socket.html)
 
 ## Socket example
 
@@ -38,4 +38,4 @@ Here is a client example of HTTP transaction over TCPSocket:
 
 - [TCPSocket](tcpsocket.html) API reference.
 - [UDPSocket](tcpsocket.html) API reference.
-- [Socket](../reference/ip-networking.html#socket-api) architecture.
+- [Socket](../apis/connectivity-architecture.html#socket-api) architecture.

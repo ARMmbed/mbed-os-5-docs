@@ -2,23 +2,19 @@
 
 <span class="images">![](../../images/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
 
-Use the Timer interface to create, start, stop and read a timer for measuring precise times (better than millisecond precision).
+Use the Timer interface to create, start, stop and read a stopwatch-like timer for measuring precise times (better than millisecond precision).
 
 You can independently create, start and stop any number of Timer objects.
 
 ## Warnings and notes
 
-- Timers are based on 64-bit unsigned microsecond counters, but for backward compatibility, the `read_ms()` and `read_us()` methods only return 32-bit signed integers. This limits their range before wrapping to 49 days and 35 minutes respectively. Use `read_high_resolution_us()` to access the full range of over 500,000 years.
-- While a Timer is running, deep sleep is blocked to maintain accurate timing. If you don't need microsecond precision, consider using the LowPowerTimer class instead because this does not block deep sleep mode.
+- Timers are based on 64-bit signed microsecond counters, giving a range of over 250,000 years.
+- While a Timer is running, deep sleep is blocked to maintain accurate timing. If you don't need microsecond precision, consider using the LowPowerTimer or Kernel::Clock classes instead because these do not block deep sleep mode.
 
 ## Timer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_timer_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/_timer_8h_source.html)
 
 ## Timer hello, world
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timer_HelloWorld/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timer_HelloWorld/main.cpp)
-
-## Related content
-
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).

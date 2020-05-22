@@ -2,11 +2,11 @@
 
 Use the DigitalIn interface to read the value of a digital input pin. The logic level is either 1 or 0.
 
-You can use any of the numbered Arm Mbed pins can be used as a DigitalIn.
+You can use any of the numbered Arm Mbed pins as a DigitalIn.
 
 ## DigitalIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
 
 ## DigitalIn hello, world
 

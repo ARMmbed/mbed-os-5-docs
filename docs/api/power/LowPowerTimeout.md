@@ -1,8 +1,8 @@
 # LowPowerTimeout
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_low_power_timeout.png)<span>LowPowerTimeout class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_low_power_timeout.png)<span>LowPowerTimeout class hierarchy</span></span>
 
-Use the LowPowerTimeout interface to set up an interrupt to call a function after a specified delay. You can create any number of LowPowerTimeout objects. This allows multiple outstanding interrupts at the same time. For more information about power management, please see our [power management APIs](power-management-sleep.html).
+Use the LowPowerTimeout interface to set up an interrupt to call a function after a specified delay. You can create any number of LowPowerTimeout objects. This allows multiple outstanding interrupts at the same time.
 
 ## Notes
 
@@ -11,7 +11,7 @@ Use the LowPowerTimeout interface to set up an interrupt to call a function afte
 
 ## LowPowerTimeout class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_low_power_timeout.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_low_power_timeout.html)
 
 ## LowPowerTimeout example
 
@@ -22,4 +22,3 @@ Set up a time out to invert an LED after a given time:
 ## Related content
 
 - [Power management APIs](power-management-sleep.html).
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).

@@ -54,13 +54,7 @@ The class's member functions can be divided by purpose:
 
 ## BLE class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_b_l_e.html)
-
-## Example: BLE beacon
-
-Here is an example demonstrating how you can create a BLE beacon.
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/master/BLE_Beacon/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-5.15/BLE_Beacon/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_b_l_e.html)
 
 ## Example: BLE heart rate monitor
 
@@ -71,5 +65,4 @@ Here is an example demonstrating how to build a heart rate sensor that can be co
 ## Related content
 
 - Mbed Enabled [targets and components](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) that support BLE.
-- [BLE tutorial](../tutorials/ble-tutorial.html).
-- [Office Hours video about BLE](https://www.youtube.com/watch?v=j5RJ6UfkylA).
+- [BLE example on GitHub](https://github.com/ARMmbed/mbed-os-example-ble/).

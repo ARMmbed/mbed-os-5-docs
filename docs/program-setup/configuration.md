@@ -1,13 +1,13 @@
 # The configuration system
 
-The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, customizes compile time configuration parameters. Each library may define a number of configuration parameters in its `mbed_lib.json`. `mbed_app.json` may override the values of these configuration parameters. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
+The Arm Mbed OS configuration system, a part of the Arm Mbed OS build tools, customizes compile time configuration parameters. Each library may define a number of configuration parameters in its `mbed_lib.json`. A program-level `mbed_app.json` may override the values of these configuration parameters. Configuration is defined using [JSON](http://www.json.org/). Some examples of configuration parameters:
 
 - The sampling period for a data acquisition application.
 - The default stack size for a newly created OS thread.
 - The receive buffer size of a serial communication library.
 - The flash and RAM memory size of an Mbed target.
 
-The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../reference/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros.
+The Arm Mbed OS configuration system gathers and interprets the configuration defined in the target in its [target configuration](../program-setup/adding-and-configuring-targets.html), all `mbed_lib.json` files and the `mbed_app.json` file. The configuration system creates a single header file, `mbed_config.h`, that contains all of the defined configuration parameters converted into C preprocessor macros.
 
 Here is a sample JSON file:
 
@@ -27,9 +27,9 @@ If you use the example JSON snippet above, you can see the macro `MBED_CONF_CELL
 
 <span class="notes">**Note:** Throughout this document, "library" means any reusable piece of code within its own directory.</span>
 
-<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](../reference/adding-and-configuring-targets.html).</span>
+<span class="notes">**Note:** In prior releases, the configuration system provided a method for adding custom targets. The Mbed OS tools now look for custom targets in a file named `custom_targets.json` in the root of an application and treat custom targets the same as [Mbed targets](../program-setup/adding-and-configuring-targets.html).</span>
 
-<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](../tools/build-profiles.html).</span>
+<span class="notes">**Note:** This document only deals with passing macros to part of the toolchain suite. For documentation about how to control other flags to the compiler see the [build profiles documentation](../program-setup/build-profiles-and-rules.html).</span>
 
 ## Examining available configuration parameters
 
@@ -256,7 +256,7 @@ In this JSON file:
 
 All configuration parameters defined in `mylib` have a `mylib.` prefix. In `mbed_app.json`, `buffer_size` is accessible using the name `mylib.buffer_size`.
 
-Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](../reference/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key.
+Use `target_overrides` to override the values of the parameters, depending on the current compilation target. The configuration system matches keys in `target_overrides` against target labels. (You can find a description of Mbed targets in our documentation about [adding and configuring targets](../program-setup/adding-and-configuring-targets.html).) If a key inside `target_overrides` matches one of the target labels, the parameter values change according to the value of the key.
 
 It is an error for `mbed_lib.json` to override an undefined configuration parameter.
 
@@ -268,7 +268,7 @@ Target configurations contain a set of attributes that you may manipulate with c
 "target.features_add": ["IPV4"]
 ```
 
-It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](../reference/adding-and-configuring-targets.html).
+It is an error to both add and subtract the same value from a cumulative attribute. For a list of the attributes that you may overwrite, please see our documentation about [adding and configuring targets](../program-setup/adding-and-configuring-targets.html).
 
 ## `mbed_app.json` Specification
 
@@ -312,3 +312,13 @@ The `mbed_app.json` above defines its own configuration parameter (`welcome_stri
 - The final artifact (binary) is named `my-application.bin`, as specified by the `artifact_name` section.
 
 It is an error for the application configuration to override an undefined configuration parameter.
+
+# API-specific configuration
+
+The API groups in **API references and tutorials** have their own configuration reviews:
+
+* [Scheduling: RTOS and event handling configuration](../apis/scheduling-options-and-config.html)
+* [Drivers configuration](../apis/drivers-options-and-config.html)
+* [Platform configuration](../apis/platform-options-and-config.html)
+* [Data storage configuration](../apis/data-options-and-config.html)
+* [Connectivity configuration](..apis/connectivity-options-and-config.html) and [6LoWPAN Mesh](../apis/configuration-mesh.html), [BLE](../apis/configuration-ble.html) and [LoRaWAN](../apis/lorawan-configuration.html)

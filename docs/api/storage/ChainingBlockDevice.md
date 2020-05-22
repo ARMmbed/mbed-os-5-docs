@@ -8,7 +8,7 @@ Note that each block device's block size must be a multiple of the other devices
 
 The constructor takes in an array of block device pointers and provides an object from which you can access the grouped block devices as a single device.
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## ChainingBlockDevice class reference
 
@@ -28,4 +28,4 @@ This ChainingBlockDevice example shows how to program and read back data from a 
 
 - [SlicingBlockDevice](slicingblockdevice.html) API reference.
 - [HeapBlockDevice](heapblockdevice.html) API reference.
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

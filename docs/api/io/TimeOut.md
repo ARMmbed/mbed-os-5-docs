@@ -1,6 +1,6 @@
 # Timeout
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_timeout.png)<span>Timeout class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_timeout.png)<span>Timeout class hierarchy</span></span>
 
 Use the Timeout interface to set up an interrupt to call a function after a specified delay.
 
@@ -16,7 +16,7 @@ You can create any number of Timeout objects, allowing multiple outstanding inte
 
 ## Timeout class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_timeout.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_timeout.html)
 
 ## Timeout hello, world
 
@@ -29,7 +29,3 @@ Set up a Timeout to invert an LED after a given timeout:
 Try this example to attach a member function:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_Example/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/Timeout_Example/main.cpp)
-
-## Related content
-
-- [Office Hours video about low power, tickless and sleep](https://youtu.be/OFfOlBaegdg?t=669).

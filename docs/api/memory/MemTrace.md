@@ -16,11 +16,11 @@ You must enable the `memory-tracing-enabled` setting in the Mbed OS platform con
 
 You can use the `mbed_mem_trace_set_callback` API to set the callback for memory tracing. The callback is invoked every time you call standard allocation functions, such as `malloc`, `realloc`, `calloc` and `free`.
 
-For a step-by-step guide about how to use optimize memory using runtime memory tracing, please see our [runtime memory tracing tutorial](../tutorials/optimizing.html#runtime-memory-tracing).
+For a step-by-step guide about how to use optimize memory using runtime memory tracing, please see our [runtime memory tracing tutorial](../apis/platform-tutorials.html#runtime-memory-tracing).
 
 ## Memory tracing functions reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
 
 ## Memory tracing example
 
@@ -28,4 +28,4 @@ For a step-by-step guide about how to use optimize memory using runtime memory t
 
 ## Related content
 
-- [Runtime memory tracing tutorial](../tutorials/optimizing.html#runtime-memory-tracing).
+- [Runtime memory tracing tutorial](../apis/platform-tutorials.html#runtime-memory-tracing).

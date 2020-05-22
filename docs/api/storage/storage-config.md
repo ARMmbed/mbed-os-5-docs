@@ -4,9 +4,8 @@ This page describes the build-time configurable parameters for storage in Mbed O
 
 - [KVStore configuration](#kvstore-configuration).
 - [LittleFS configuration](#littlefs-configuration).
-- [NVStore configuration](#nvstore-configuration).
-- [Default BlockDevice configuration](#Default-BlockDevice-configuration).
-- [Default FileSystem configuration](#Default-FileSystem-configuration).
+- [Default BlockDevice configuration](#blockdevice-default-configuration).
+- [Default FileSystem configuration](#filesystem-default-configuration).
 
 ## KVStore configuration
 
@@ -368,46 +367,11 @@ Name: littlefs.read_size
     Value: 64 (set by library:littlefs)
 ```
 
-## NVStore configuration
-
-NVStore does not need much configuration. It relies only on the regions of internal flash specified in the `area_*_address` and `area_*_size` for the two areas. Additionally, you can use `max_keys` to manage the amount of RAM NVStore keys needs. Note that `max_keys` defaults to the number of keys Mbed OS needs. You only need to modify it if an application uses NVStore directly.
-
-```
-Configuration parameters
-------------------------
-Name: nvstore.area_1_address
-    Description: Area 1 address
-    Defined by: library:nvstore
-    No value set
-Name: nvstore.area_1_size
-    Description: Area 1 size
-    Defined by: library:nvstore
-    No value set
-Name: nvstore.area_2_address
-    Description: Area 2 address
-    Defined by: library:nvstore
-    No value set
-Name: nvstore.area_2_size
-    Description: Area 2 size
-    Defined by: library:nvstore
-    No value set
-Name: nvstore.enabled
-    Description: Enabled
-    Defined by: library:nvstore
-    Macro name: NVSTORE_ENABLED
-    Value: 1 (set by library:nvstore)
-Name: nvstore.max_keys
-    Description: Maximal number of allowed NVStore keys
-    Defined by: library:nvstore
-    Macro name: NVSTORE_MAX_KEYS
-    Value: 16 (set by library:nvstore)
-```
-
 ## BlockDevice - default configuration
 
 The Mbed OS configuration allows you to add block devices as components using the `targets.json` file or target overrides in the application configuration file.
 
-When [one of the following components](https://cloud.mbed.com/docs/latest/connecting/mbed-os-storage-configuration.html) is enabled, a default block device is set in the system ("components": ["xxx","yyy"]):
+When one of the following components is enabled, a default block device is set in the system ("components": ["xxx","yyy"]):
 
 1. SPIF
 1. QSPIF

@@ -4,8 +4,8 @@ This guide is to assist you in the process of updating an existing [component](h
 
 ## Prerequisites
 
-- [Mbed CLI](../tools/developing-mbed-cli.html).
-- An [offline compiler](../tools/index.html#compiler-versions).
+- [Mbed CLI](../build-tools/mbed-cli.html).
+- An [offline compiler](../build-tools/index.html#compiler-versions).
 
 ## Identifying old versions of Mbed OS
 
@@ -36,7 +36,7 @@ Migrating to Mbed OS 5 results in two possible outcomes:
   - The Mbed OS API calls are out of date, and you need to migrate to the updated Mbed OS API syntax.
   - There is target specific code, and you need to migrate it to use the code for the specific target you are compiling for.
 
-To update to Mbed OS 5 with the [Mbed CLI](../tools/developing-mbed-cli.html), run:
+To update to Mbed OS 5 with the [Mbed CLI](../build-tools/mbed-cli.html), run:
 
 ```
 mbed import [URL of Project]
@@ -49,7 +49,7 @@ To determine the success of migration, run:
 
 `mbed compile -m [platform] -t [toolchain]`
 
-To update to Mbed OS 5 with the [Mbed Online Compiler](../tools/developing-mbed-online-compiler.html):
+To update to Mbed OS 5 with the [Mbed Online Compiler](../build-tools/mbed-online-compiler.html):
 
 1. Open your project in the Online Compiler.
 1. Right click on **mbed** and select **Delete...**:
@@ -171,4 +171,4 @@ Although the program or library now compiles successfully, runtime errors may st
 
 <h1 id="enabling-bare-metal">Enabling Mbed OS bare metal</h1>
 
-Enabling the Mbed OS bare metal profile allows you to build Mbed OS without an RTOS. To enable it, you have to complete the [migration to Mbed OS 5](#migrating-to-mbed-os-5). Once the migration is complete, you can enable Mbed OS bare metal by following the instructions in the [bare metal example](../reference/bare-metal-example-application.html).
+Enabling the Mbed OS bare metal profile allows you to build Mbed OS without an RTOS. To enable it, you have to complete the [migration to Mbed OS 5](#migrating-to-mbed-os-5). Once the migration is complete, you can enable Mbed OS bare metal by following the instructions in the [bare metal usage guide](../bare-metal/using-the-bare-metal-profile.html).

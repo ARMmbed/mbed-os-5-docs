@@ -1,4 +1,4 @@
-# Network interface overview
+# Network interface
 
 A socket requires a NetworkInterface instance to indicate which NetworkInterface the socket should be created on. The NetworkInterface provides a network stack that implements the underlying socket operations.
 
@@ -17,7 +17,7 @@ When you create a network interface, it starts from the disconnected state. When
 
 ![Network states](../../images/NetworkinterfaceStates.png)
 
-The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection. The `ThreadInterface` returns from `connect()` call when it joins a local mesh network. It may later get a global connection when it finds a border router.
+The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection.
 
 When a network or route is lost or any other cause limits the connectivity, the interface may change its state back to `Connecting`, `Local connectivity` or `Disconnected`. In the `Connecting` and `Local connectivity` states, the interface reconnects until the application chooses to call `NetworkInterface::disconnect()`. Depending on the network, this reconnection might have internal backoff periods, and not all interfaces implement the reconnection logic at all. Please refer to table below for information on how different interfaces behave.
 
@@ -43,7 +43,7 @@ Error handling and reconnection logic depends on the network interface. Please u
 | `OdinWiFiInterface` or<br /> `RTWInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
 | `ESP8266Interface` | Yes  | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`|
 | `CellularInterface` | Mostly no | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_GLOBAL_UP`<br />`CellularInterface` may also send Cellular specific states specified in `CellularCommon.h` |
-| `LoWPANNDInterface` or<br />`ThreadInterface` or<br />`WisunInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />4.`NSAPI_STATUS_LOCAL_UP`<br />4.`NSAPI_STATUS_GLOBAL_UP`|
+| `LoWPANNDInterface` or <br />`WisunInterface` | Yes | 1.`NSAPI_STATUS_DISCONNECTED`<br />2.`NSAPI_STATUS_CONNECTING`<br />3.`NSAPI_STATUS_LOCAL_UP`<br />4.`NSAPI_STATUS_GLOBAL_UP`|
 
 ## Default network interface
 
@@ -78,7 +78,7 @@ For example, when providing a Wi-Fi SSID and password, you may use the following
 }
 ```
 
-Please see [Selecting the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
+Please see [Selecting the default network interface](../apis/connectivity-options-and-config.html#selecting-the-default-network-interface) for information about how to supply required configuration parameters on different connections.
 
 Targets with connectivity set the `target.network-default-interface-type` configuration variable appropriately, either to their only interface or the one most commonly used. For targets that provide more than one type of connectivity, you may choose the default by overriding the `target.network-default-interface-type` configuration variable.
 
@@ -88,7 +88,7 @@ Applications may also ask for a specific type of connection, as the following ta
 |------|-----------------------------|--------------|
 |`*WiFiInterface::get_default_instance()`| Wi-Fi interface | Requires security parameters (mode, SSID, password). |
 |`*EthInterface::get_default_instance()` | Wired Ethernet interface, not Wi-Fi | none |
-|`*MeshInterface::get_default_instance()` | Returns either `LoWPANNDInterface` or `ThreadInterface`, depending on which is set to default | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled. |
+|`*MeshInterface::get_default_instance()` | Returns `LoWPANNDInterface` | Target provides a driver or macro `DEVICE_802_15_4_PHY` is enabled. |
 | `*CellularInterface::get_default_instance()` | Return cellular connectivity | Requires network parameters (pin, APN, username, password). |
 | `*NetworkInterface::get_default_instance()` | One of the above, depending on `target.network-default-interface-type`. |  |
 
@@ -118,9 +118,9 @@ Please see the previous section, [Default network interface](#default-network-in
 
 For network status changes, the API is specified in [Network status](network-status.html) section. Being portable means that your application only communicates after `NSAPI_STATUS_GLOBAL_UP` is received and tries to reconnect the network if `NSAPI_STATUS_DISCONNECTED` is received without calling `NetworkInterface::disconnect()`.
 
-# Using multiple network interfaces
+## Using multiple network interfaces
 
-In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](../reference/ip-networking.html) section for an explanation of how different stacks are integrated into Mbed OS.
+In Mbed OS, applications usually use one network interface at a time, and most APIs are designed this way. With few limitations, applications are able to operate more than one NetworkInterface. In Mbed OS, there are two built-in IP stacks and many external IP stacks provided by modules. Please refer to the [Architecture:IP networking](../apis/connectivity-architecture.html) section for an explanation of how different stacks are integrated into Mbed OS.
 
 When you use two network interfaces and both are operating on different IP stacks, the interfaces can work independently because there is no common data path, for example an application that uses an on-board Ethernet interface and any of the external Wi-Fi modules.
 
@@ -138,12 +138,12 @@ Another, more common, case is where only one of the interface is active at a tim
 
 When an interface operates in asynchronous mode, the return values of `connect()` and `disconnect()` have slightly different meanings. Calling `connect()` starts the asynchronous operation, which puts the device in the `GLOBAL_UP` state. Calling `disconnect()` puts the target in the `DISCONNECTED` state. Return code in asynchronous mode does not reflect the connection status. The most common return codes in asynchronous mode is `NSAPI_ERROR_OK`, which means that operation just started. Please refer to the Doxygen documentation of [NetworkInterface::connect()](../mbed-os-api-doxy/class_network_interface.html#aaf6bf1dfffbe6a5626b7b52eaa542b6e) and [NetworkInterface::disconnect()](../mbed-os-api-doxy/class_network_interface.html#afdda3f62c7d73df183ee2d352e8cd146) for return values of these functions.
 
-To check whether the interface is connected, the application needs to register the status callback for the interface. Please refer to the [Network status API](network-status.html) for information on how to do so.
+To check whether the interface is connected, the application needs to register the status callback for the interface. Please refer to the [Network status API](../apis/network-status.html) for information on how to do so.
 
 ## Related content
 
-- [Configuring the default network interface](../reference/configuration-connectivity.html#selecting-the-default-network-interface).
-- [Network connectivity](../reference/networking.html).
-- [IP networking](../reference/ip-networking.html).
-- [Network status API](network-status.html).
-- [Network sockets](../apis/network-socket.html).
+- [Configuring the default network interface](../apis/connectivity-options-and-config.html).
+- [Network connectivity](../apis/choosing-a-connectivity-type.html).
+- [IP networking](../apis/connectivity-architecture.html).
+- [Network status API](../apis/network-status.html).
+- [Network sockets](../apis/socket.html).

@@ -130,7 +130,7 @@ To suppress the creation of the `.a/.ar` archive (and instead leave the `.o` obj
 
 ## Build profiles
 
-Build profiles control which arguments are passed to the compiler. For more information about build profiles, please see the [build profile documentation](../tools/build-profiles.html).
+Build profiles control which arguments are passed to the compiler. For more information about build profiles, please see the [build profile documentation](../program-setup/build-profiles-and-rules.html).
 
 The default build profile is `develop`, which enables debug logging. There is also a `debug` profile, which enables debug symbols, and a `release` profile that disables debug logging (to reduce the program size).
 
@@ -142,7 +142,7 @@ $ mbed compile --profile debug
 
 ## Configuration system
 
-The Mbed OS configuration system customizes compile time configuration parameters. For more information, please see [the full configuration system documentation](../reference/configuration.html).
+The Mbed OS configuration system customizes compile time configuration parameters. For more information, please see [the full configuration system documentation](../program-setup/advanced-configuration.html).
 
 To view your current configuration, use `mbed compile --config` (use the `-v` argument to display more information):
 

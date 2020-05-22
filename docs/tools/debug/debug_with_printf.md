@@ -9,7 +9,7 @@ An easy way to inspect what your application is doing is to augment your applica
 Install the serial port driver for your development board:
 
 - For ST boards: [ST Link Driver](https://os.mbed.com/teams/ST/wiki/ST-Link-Driver).
-- For all other boards: [Arm Mbed Windows serial port driver](windows-serial-driver.html) - not required for Windows 10.
+- For all other boards: [Arm Mbed Windows serial port driver](../program-setup/windows-serial-driver.html) - not required for Windows 10.
 
 You also need a serial monitor:
 
@@ -25,7 +25,7 @@ If you do not have it, install [GNU Screen](https://www.gnu.org/software/screen/
 
 ## Getting started
 
-To send data over the serial connection, use the [Serial](../apis/serial.html) object.
+To send data over the serial connection, use the [BufferedSerial](../apis/serial-uart-apis.html) object.
 
 ### Example program
 
@@ -119,7 +119,7 @@ As seen above, you use the `printf()` function to communicate back to the user:
 The limited code-space on the microcontroller's internal flash and the delay of the program require you to use `printf()` judiciously. Be careful about using it in an event handler, which we expect to terminate within a few microseconds.
 
 
-<span class="notes">**Note:** For printf-related memory considerations, please read our documentation about [printf and reducing memory](../tutorials/optimizing.html#printf-and-reducing-memory).</span>
+<span class="notes">**Note:** For printf-related memory considerations, please read our documentation about [printf and reducing memory](../apis/platform-tutorials.html#printf-and-reducing-memory).</span>
 
 ### Parameters
 
@@ -154,7 +154,7 @@ Your board crashes when you press the button because [mutexes guard](../apis/mut
 You can avoid this by:
 
 - Signaling from the ISR to the main thread using a [semaphore](../apis/semaphore.html) or [mailbox](../apis/mail.html), and calling `printf` in the main thread.
-- Using an event dispatching library, such as [Mbed events](../apis/event.html).
+- Using an event dispatching library, such as [Mbed events](../apis/event-handling-apis.html).
 
 You can see example code for both approaches in [this blog post](https://os.mbed.com/blog/entry/Simplify-your-code-with-mbed-events/).
 

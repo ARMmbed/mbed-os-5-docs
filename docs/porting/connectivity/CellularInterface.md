@@ -6,7 +6,7 @@ This document provides guidelines how to make a cellular device adaptation for M
 
 ## Adding cellular on an Mbed OS target
 
-For new targets, you may need to modify [targets.json](../reference/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
+For new targets, you may need to modify [targets.json](../program-setup/adding-and-configuring-targets.html), which defines all the target platforms that Mbed OS supports. If Mbed OS supports your specific target, an entry for your target is in this file. To tell the Mbed OS build configuration that your target board has an onboard cellular module, you need to define `modem_is_on_board` and `modem_data_connection_type`.
 
 For example,
 
@@ -77,7 +77,7 @@ A modem can support both the AT and PPP modes, but an application developer need
 
 If the modem supports PPP mode, you can use the LWIP stack to handle sockets and IP connectivity for your modem. If your cellular module has an IP stack, you need to implement AT commands to control network sockets. For example implementations of a socket adaptation, look in `features/cellular/framework/targets`.
 
-When the modem has AT and/or PPP mode support in place and the application developer has selected which mode to use, it's up to the cellular framework to instantiate the correct classes. For example, [mbed-os-example-cellular](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) instantiates [CellularContext class](../mbed-os-api-doxy/_cellular_context_8h_source.html). CellularContext instantiates classes implementing [the AT command layer](../mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. If an application developer has configured PPP mode in `mbed_app.json`, then [AT_CellularContext](../mbed-os-api-doxy/_a_t___cellular_context_8h_source.html) connects to a cellular network and calls `nsapi_ppp_connect()` to start the data call through the PPP pipe using LWIP sockets.
+When the modem has AT and/or PPP mode support in place and the application developer has selected which mode to use, it's up to the cellular framework to instantiate the correct classes. For example, [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular) instantiates [CellularContext class](../mbed-os-api-doxy/_cellular_context_8h_source.html). CellularContext instantiates classes implementing [the AT command layer](../mbed-os-api-doxy/_a_t___cellular_device_8h_source.html) between the modem and the Mbed OS CPU. If an application developer has configured PPP mode in `mbed_app.json`, then [AT_CellularContext](../mbed-os-api-doxy/_a_t___cellular_context_8h_source.html) connects to a cellular network and calls `nsapi_ppp_connect()` to start the data call through the PPP pipe using LWIP sockets.
 
 ## Testing
 
@@ -95,6 +95,6 @@ To run the tests:
 
 1. Run Mbed OS Socket tests. Please see the [Network Socket test plan](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md) for more details.
 
-For more information on the `mbed-greentea` test suite, please visit [its documentation](../tools/greentea-testing-applications.html).
+For more information on the `mbed-greentea` test suite, please visit [its documentation](../debug-test/greentea-testing-applications.html).
 
-You may also find the [Mbed OS cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/) useful for testing.
+You may also find the [Mbed OS cellular example](https://github.com/ARMmbed/mbed-os-example-cellular) useful for testing.

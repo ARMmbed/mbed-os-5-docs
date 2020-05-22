@@ -25,5 +25,5 @@ This example demonstrates how you can instantiate, configure and post events:
 
 ## Related content
 
-- [RTOS configuration](../reference/configuration-rtos.html).
-- [EventQueue tutorial](../tutorials/the-eventqueue-api.html).
+- [RTOS configuration](../apis/scheduling-options-and-config.html).
+- [EventQueue tutorial](../apis/scheduling-tutorials.html).

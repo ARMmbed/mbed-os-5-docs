@@ -2,12 +2,12 @@
 
 Mbed OS provides error status definitions and APIs for error construction, reporting and retrieving previously reported errors. Mbed OS also provides functions and macros to generate and define new error status values, extract information from error status values and to report errors into the system. Any software layer, such as applications, drivers, HAL and protocol stacks, can use these error handling APIs. The error functions also facilitate emitting an error message through STDOUT. `mbed_error.h` declares the error functions that Mbed OS provides.
 
-Conceptually, error handling is a platform service that the Mbed OS platform layer implements. Error handling provides the following:
+Conceptually, error handling is a platform service that provides:
 
-1. Provides system defined error codes and status values in `mbed_error.h`
-1. Provides APIs for error construction, reporting and error history management.
-1. Provides ISR-safe and Thread-safe error handling APIs.
-1. Provides mechanisms for extending the error status definitions.
+- System defined error codes and status values in `mbed_error.h`
+- APIs for error construction, reporting and error history management.
+- ISR-safe and Thread-safe error handling APIs.
+- Mechanisms for extending the error status definitions.
 
 ## Error status usage
 
@@ -124,7 +124,7 @@ Error handling implementation in Mbed OS keeps track of previous errors in the s
 
 See the below link to learn more about the APIs related to error history:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Extending error codes
 
@@ -163,7 +163,7 @@ See `mbed_lib.json` in the platform directory to see which targets are currently
 
 It's important that this region is marked with the appropriate attributes (based on the toolchain) to mark it as an uninitialized region. For example, you can mark the ARM Compiler Crash-data-RAM with the attribute *EMPTY*. The only requirement about the placement of this region is that no other entity can overwrite this region during reboot or at runtime. However, to avoid fragmentation, it's best if you place this region just after the vector table region, or if there is no vector table region, iat the bottom of RAM (lowest address).
 
-See [memory model](../reference/memory.html) for more info on the placement of this region.
+See [memory model](../apis/memory-model.html) for more info on the placement of this region.
 
 ### Configuring crash reporting and autoreboot
 
@@ -179,7 +179,7 @@ Crash reporting feature also provides APIs to read and clear error context infor
 
 The below link provides the documentation for all the APIs that Mbed OS provides for error definitions and handling:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Error handling API examples
 
@@ -521,11 +521,9 @@ For each of the above mentioned error codes, a corresponding system error status
 
 See the below Doxygen file for additional information regarding error code definitions:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Related content
 
-- Debug and develop [build profiles](../tools/build-profiles.html).
+- Debug and develop [build profiles](../program-setup/build-profiles-and-rules.html).
 - Mbed OS [error decoder](https://mbed.com/s/error).
-- [Office Hours video about Crash Reporting](https://www.youtube.com/watch?v=SdC_aM-aZNc).
-- [Office Hours video about Crash Dump Analysis](https://www.youtube.com/watch?v=7xKWFSnUye8).

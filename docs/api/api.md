@@ -1,302 +1,297 @@
 # Full API list
 
-## Platform APIs
+This is the full list of APIs Mbed OS offers. The list indicates which of the APIs the [bare metal profile](../bare-metal/index.html) supports, and which of those are manually enabled (as opposed to enabled by default). For consistency, we also show the full profile's API support, although that is - and is expected to remain - all APIs.
 
-[Platform APIs](platform.html) provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
+For a list of APIs that were removed in Mbed OS 6, see [the deprecated APIs list at the bottom of this page](#deprecated-apis).
 
-<table>
-<tbody>
-<tr>
-<td><a href="callback.html">Callback</a></td>
-<td><a href="rtc.html">RTC</a></td>
-<td><a href="shared-pointer.html">Shared pointer</a></td>
-<td><a href="atcmdparser.html">ATCmdParser</a></td>
-</tr>
-<tr>
-<td><a href="deepsleeplock.html">DeepSleepLock</a></td>
-<td><a href="debug.html">Debug</a></td>
-<td><a href="span.html">Span</a></td>
-<td><a href="mbed-statistics.html">Mbed statistics</a></td>
-</tr>
-<tr>
-<td><a href="power-management-sleep.html">Power management (sleep)</a></td>
-<td><a href="memory-tracing.html">Memory tracing</a></td>
-<td><a href="filehandle.html">FileHandle</a></td>
-<td><a href="mpu-management.html">MPU management</a></td>
-</tr>
-<tr>
-<td><a href="idle-loop.html">Idle loop</a></td>
-<td><a href="error-handling.html">Error handling</a></td>
-<td><a href="poll.html">Poll</a></td>
-<td><a href="scopedramexecutionlock.html">ScopedRamExecutionLock</a></td>
-</tr>
-<tr>
-<td><a href="criticalsectionlock.html">CriticalSectionLock</a></td>
-<td><a href="assert.html">Assert</a></td>
-<td><a href="platformmutex.html">PlatformMutex</a></td>
-<td><a href="scopedromwritelock.html">ScopedRomWriteLock</a></td>
-</tr>
-<tr>
-<td><a href="time.html">Time</a></td>
-<td><a href="noncopyable.html">NonCopyable</a></td>
-<td><a href="circularbuffer.html">CircularBuffer</a></td>
-</tr>
-</tbody>
-</table>
+This list does not include the internal APIs, which are not intended for use by application code.
 
-## Drivers APIs
+## Scheduling
 
-[Driver APIs](drivers.html) include analog and digital inputs and outputs on development boards, as well as digital interfaces, which allow your board to interface with a computer or external devices.
+The Mbed OS scheduling capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
-<table>
-<tbody>
-<tr>
-<td><a href="analogin.html">AnalogIn</a></td>
-<td><a href="businout.html">BusInOut</a></td>
-<td><a href="timeout.html">Timeout</a></td>
-<td><a href="flash-iap.html">Flash IAP</a></td>
-<td><a href="i2cslave.html">I2CSlave</a></td>
-</tr>
-<tr>
-<td><a href="analogout.html">AnalogOut</a></td>
-<td><a href="portin.html">PortIn</a></td>
-<td><a href="timer.html">Timer</a></td>
-<td><a href="bufferedserial.html">BufferedSerial</a></td>
-<td><a href="can.html">CAN</a></td>
-</tr>
-<tr>
-<td><a href="digitalin.html">DigitalIn</a></td>
-<td><a href="portout.html">PortOut</a></td>
-<td><a href="lowpowerticker.html">LowPowerTicker</a></td>
-<td><a href="unbufferedserial.html">UnbufferedSerial</a></td>
-<td><a href="mbedcrc.html">MbedCRC</a></td>
-</tr>
-<tr>
-<td><a href="digitalout.html">DigitalOut</a></td>
-<td><a href="portinout.html">PortInOut</a></td>
-<td><a href="lowpowertimeout.html">LowPowerTimeout</a></td>
-<td><a href="spi.html">SPI</a></td>
-</tr>
-<tr>
-<td><a href="digitalinout.html">DigitalInOut</a></td>
-<td><a href="pwmout.html">PwmOut</a></td>
-<td><a href="lowpowertimer.html">LowPowerTimer</a></td>
-<td><a href="spislave.html">SPISlave</a></td>
-</tr>
-<tr>
-<td><a href="busin.html">BusIn</a></td>
-<td><a href="interruptin.html">InterruptIn</a></td>
-<td><a href="watchdog.html">Watchdog</a></td>
-<td><a href="quadspi-qspi.html">QuadSPI (QSPI)</a></td>
-</tr>
-<tr>
-<td><a href="busout.html">BusOut</a></td>
-<td><a href="ticker.html">Ticker</a></td>
-<td><a href="resetreason.html">ResetReason</a></td>
-<td><a href="i2c.html">I2C</a></td>
-</tr>
-</tbody>
-</table>
+### RTOS
 
-## RTOS APIs
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [ConditionVariable](../apis/rtos-apis.html) | &#10004; | |
+| [EventFlags](../apis/eventflags.html) | &#10004; | &#10004; |
+| [Idle loop](../apis/idle-loop.html) | &#10004; |   |
+| [Kernel interface functions](../apis/kernel-interface-functions.html) | &#10004; | `get_ms_count` only |
+| [Mail](../apis/mail.html) | &#10004; | |
+| [Mutex](../apis/mutex.html) | &#10004; | &#10004; |
+| [Queue](../apis/queue.html) | &#10004; | |
+| [Semaphore](../apis/semaphore.html) | &#10004; | &#10004;  |
+| [ThisThread](../apis/thisthread.html) | &#10004; | &#10004;  |
+| [Thread](../apis/thread.html) | &#10004; | |
 
-The [Mbed OS RTOS](rtos.html) capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
+### Event handling
 
-<table>
-<tbody>
-<tr>
-<td><a href="thread.html">Thread</a></td>
-<td><a href="semaphore.html">Semaphore</a></td>
-<td><a href="userallocatedevent.html">UserAllocatedEvent</a></td>
-<td><a href="eventflags.html">EventFlags</a></td>
-<td><a href="kernel-interface-functions.html">Kernel interface functions</a></td>
-</tr>
-<tr>
-<td><a href="thisthread.html">ThisThread</a></td>
-<td><a href="queue.html">Queue</a></td>
-<td><a href="memorypool.html">MemoryPool</a></td>
-<td><a href="event.html">Event</a></td>
-</tr>
-<tr>
-<td><a href="mutex.html">Mutex</a></td>
-<td><a href="eventqueue.html">EventQueue</a></td>
-<td><a href="mail.html">Mail</a></td>
-<td><a href="conditionvariable.html">ConditionVariable</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Event](../apis/event-handling-apis.html) | &#10004; | &#10004; (can be manually enabled) |
+| [EventQueue](../apis/eventqueue.html) | &#10004; | &#10004; (can be manually enabled) |
+| [UserAllocatedEvent](../apis/userallocatedevent.html) | &#10004; | &#10004; (can be manually enabled) |
 
-## USB APIs
+## Drivers
 
-The Mbed OS classes providing USB peripheral functionality, also known as [USB components](../apis/usb.html), inherit from USBDevice and provide specific USB peripherial functionality.
+Driver APIs include analog and digital inputs and outputs on development boards, as well as digital interfaces to a computer or external devices.
 
-<table>
-<tbody>
-<tr>
-<td><a href="usbserial.html">USBSerial</a></td>
-<td><a href="usbhid.html">USBHID</a></td>
-<td><a href="usbcdc-ecm.html">USBCDC_ECM</a></td>
-<td><a href="usbmidi.html">USBMIDI</a></td>
-<td><a href="usbkeyboard.html">USBKeyboard</a></td>
-</tr>
-<tr>
-<td><a href="usbaudio.html">USBAudio</a></td>
-<td><a href="usbcdc.html">USBCDC</a></td>
-<td><a href="usbmsd.html">USBMSD</a></td>
-<td><a href="usbmouse.html">USBMouse</a></td>
-<td><a href="usbmousekeyboard.html">USBMouseKeyboard</a></td>
-</tr>
-</tbody>
-</table>
+### Serial (UART) drivers
 
-## Network socket APIs
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [BufferedSerial](../apis/serial-uart-apis.html) | &#10004; | &#10004;  |
+| [UnbufferedSerial](../apis/unbufferedserial.html) | &#10004; | &#10004;  |
 
-[Network socket APIs](network-socket.html) include the application programming interface for IP networking. In Mbed OS, this API supports both TCP and UDP protocols.
+### SPI drivers
 
-<table>
-<tbody>
-<tr>
-<td><a href="socket.html">Socket</a></td>
-<td><a href="tcpsocket.html">TCPSocket</a></td>
-<td><a href="non-ip-cellular-socket.html">Non-IP cellular socket</a></td>
-<td><a href="tlssocket.html">TLSSocket</a></td>
-<td><a href="socketstats.html">SocketStats</a></td>
-</tr>
-<tr>
-<td><a href="udpsocket.html">UDPSocket</a></td>
-<td><a href="socketaddress.html">SocketAddress</a></td>
-<td><a href="dns-resolver.html">DNS resolver</a></td>
-<td><a href="dtlssocket.html">DTLSSocket</a></td>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [QuadSPI (QSPI)](../apis/spi-apis.html) | &#10004; | &#10004; |
+| [SPI](../apis/spi.html) | &#10004; | &#10004;  |
+| [SPISlave](../apis/spislave.html) | &#10004; | &#10004;  |
 
-## Network interfaces APIs
+### Input/Output drivers
 
-[Network interfaces](network-interfaces.html) are the application level APIs where users choose the driver, connectivity method and IP stack. These include ethernet, Wi-Fi, cellular and mesh interfaces.
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [AnalogIn](../apis/i-o-apis.html) | &#10004; | &#10004; |
+| [AnalogOut](../apis/analogout.html) | &#10004; | &#10004; |
+| [BusIn](../apis/busin.html) | &#10004; | &#10004; |
+| [BusOut](../apis/busout.html) | &#10004; | &#10004; |
+| [BusInOut](../apis/businout.html) | &#10004; | &#10004; |
+| [DigitalIn](../apis/digitalin.html) | &#10004; | &#10004; |
+| [DigitalOut](../apis/digitalout.html) | &#10004; | &#10004; |
+| [DigitalInOut](../apis/digitalinout.html) | &#10004; | &#10004; |
+| [InterruptIn](../apis/interruptin.html) | &#10004; | &#10004;  |
+| [PortIn](../apis/portin.html) | &#10004; | &#10004;  |
+| [PortOut](../apis/portout.html) | &#10004; | &#10004;  |
+| [PortInOut](../apis/portinout.html) | &#10004; | &#10004;  |
+| [PwmOut](../apis/pwmout.html) | &#10004; | &#10004;  |
 
-<table>
-<tbody>
-<tr>
-<td><a href="ethernet.html">Ethernet</a></td>
-<td><a href="cellular-api.html">Cellular</a></td>
-<td><a href="network-status.html">Network status</a></td>
-</tr>
-<tr>
-<td><a href="wi-fi.html">Wi-Fi</a></td>
-<td><a href="mesh-api.html">Mesh</a></td>
-</tr>
-</tbody>
-</table>
+### USB drivers
 
-## Bluetooth Low Energy (BLE) APIs
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [USBAudio](../apis/usb-apis.html) | &#10004; | &#10004;  |
+| [USBCDC](../apis/usbcdc.html) | &#10004; | &#10004;  |
+| [USBCDC_ECM](../apis/usbcdc-ecm.html) | &#10004; |  |
+| [USBHID](../apis/usbhid.html) | &#10004; | &#10004;  |
+| [USBKeyboard](../apis/usbkeyboard.html) | &#10004; | &#10004;  |
+| [USBMIDI](../apis/usbmidi.html) | &#10004; | &#10004;  |
+| [USBMouse](../apis/usbmouse.html) | &#10004; | &#10004;  |
+| [USBMouseKeyboard](../apis/usbmousekeyboard.html) | &#10004; | &#10004;  |
+| [USBMSD](../apis/usbmsd.html) | &#10004; | &#10004; |
+| [USBSerial](../apis/usbserial.html) | &#10004; | &#10004;  |
 
-[Bluetooth low energy (BLE)](bluetooth.html) is a low power wireless technology standard for building personal area networks. Typical applications of BLE are health care, fitness trackers, beacons, smart home, security, entertainment, proximity sensors, industrial and automotive.
+### Other drivers
 
-<table>
-<tbody>
-<tr>
-<td><a href="ble.html">BLE</a></td>
-<td><a href="gattclient.html">GattClient</a></td>
-<td><a href="securitymanager.html">SecurityManager</a></td>
-<td><a href="heartrateservice.html">HeartRateService</a></td>
-</tr>
-<tr>
-<td><a href="gap.html">GAP</a></td>
-<td><a href="gattserver.html">GattServer</a></td>
-<td><a href="batteryservice.html">BatteryService</a></td>
-<td><a href="ibeacon.html">iBeacon</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [CAN](../apis/other-driver-apis.html)| &#10004; | &#10004;  |
+| [Flash IAP](../apis/flash-iap.html) | &#10004; | &#10004;  |
+| [I2C](../apis/i2c.html) | &#10004; | &#10004;  |
+| [I2CSlave](../apis/i2cslave.html) | &#10004; | &#10004;  |
+| [MbedCRC](../apis/mbedcrc.html) | &#10004; | &#10004;  |
+| [ResetReason](../apis/resetreason.html) | &#10004; | &#10004;  |
+| [Watchdog](../apis/watchdog.html) | &#10004; | &#10004; |
 
-## LoRaWAN APIs
+## Platform
 
-Arm Mbed OS provides a native network stack for [LoRaWAN](lorawan.html). LoRaWAN is a technology designed for low-power battery-powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
+Platform APIs provide general purpose MCU management infrastructure, common data structures and a consistent user experience on top of different standard libraries and toolchains.
 
-<table>
-<tbody>
-<tr>
-<td><a href="lorawan-api.html">LoRaWANInterface</a></td>
-</tr>
-<tr>
-<td><a href="loraradio-api.html">LoRaRadio</a></td>
-</tr>
-</tbody>
-</table>
+### Time
 
-## NFC APIs
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [RTC](../apis/time-apis.html) | &#10004; | &#10004;  |
+| [Ticker](../apis/ticker.html) | &#10004; | &#10004;  |
+| [Time](../apis/time.html) | &#10004; | &#10004;  |
+| [Timeout](../apis/timeout.html) | &#10004; | &#10004; |
+| [Timer](../apis/timer.html) | &#10004; | &#10004; |
+| [Wait](../apis/wait.html) | &#10004; | &#10004;  |
 
-You can use [Near-Field Communication (NFC)](nfc.html), a short-range radio technology, to enable use cases such as contactless payments, access control and device pairing.
+### Power
 
-<table>
-<tbody>
-<tr>
-<td><a href="nfccontroller.html">NFCController</a></td>
-<td><a href="messageparser.html">MessageParser</a></td>
-<td><a href="messagebuilder.html">MessageBuilder</a></td>
-</tr>
-<tr>
-<td><a href="nfc-eeprom.html">NFC EEPROM</a></td>
-<td><a href="simplemessageparser.html">SimpleMessageParser</a></td>
-</tr>
-</tbody>
-</table>
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [DeepSleepLock](../apis/power-apis.html) | &#10004; | &#10004;  |
+| [LowPowerTicker](../apis/lowpowerticker.html) | &#10004; | &#10004;  |
+| [LowPowerTimeout](../apis/lowpowertimeout.html) | &#10004; | &#10004;  |
+| [LowPowerTimer](../apis/lowpowertimer.html) | &#10004; | &#10004;  |
+| [Power management (sleep)](../apis/power-management-sleep.html) | &#10004; | &#10004; |
 
-## Security API
+### Memory
 
-With [Arm Mbed TLS](security.html), a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [mbed_mem_trace (Memory tracing)](../apis/memory-apis.html) | &#10004; | &#10004;  |
+| [mpug_mgmt (MPU management)](../apis/mpu-management.html) | &#10004; | &#10004;  |
+| [MemoryPool](../apis/memorypool.html) | &#10004; |   |
+| [mbed_stats (Mbed statistics)](../apis/mbed-statistics.html) | &#10004; | &#10004;  |
 
-<table>
-<tbody>
-<tr>
-<td><a href="../apis/psa-initial-attestation.html">PSA attestation</a></td>
-<td><a href="../apis/psa-lifecycle.html">PSA lifecycle</a></td>
-<td><a href="devicekey.html">DeviceKey</a></td>
-</tr>
-<tr>
-<td><a href="mbed-crypto.html">Mbed Crypto</a></td>
-<td><a href="tls.html">TLS</a></td>
-</tr>
-</tbody>
-</table>
+### Other Platform APIs
 
-## Storage APIs
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Assert](../apis/other-platform-apis.html) | &#10004; | &#10004;  |
+| [ATCmdParser](../apis/atcmdparser.html) | &#10004; | &#10004;  |
+| [Callback](../apis/callback.html) | &#10004; | &#10004; |
+| [CircularBuffer](../apis/circularbuffer.html) | &#10004; | &#10004;  |
+| [CriticalSectionLock](../apis/criticalsectionlock.html) | &#10004; | &#10004;  |
+| [Debug](../apis/debug.html) | &#10004; | &#10004;  |
+| [Error handling](../apis/error-handling.html) | &#10004; | &#10004;  |
+| [FileHandle](../apis/filehandle.html) | &#10004; | &#10004;  |
+| [NonCopyable](../apis/noncopyable.html) | &#10004; | &#10004;  |
+| [PlatformMutex](../apis/platformmutex.html) | &#10004; | &#10004;  |
+| [Poll](../apis/poll.html) | &#10004; | &#10004;  |
+| [ScopedRamExecutionLock](../apis/scopedramexecutionlock.html) | &#10004; | &#10004;  |
+| [ScopedRomWriteLock](../apis/scopedromwritelock.html) | &#10004; | &#10004;  |
+| [SharedPtr (Shared pointer)](../apis/shared-pointer.html) | &#10004; | &#10004;  |
+| [Span](../apis/span.html) | &#10004; | &#10004; |
 
-The [storage APIs](storage.html) include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.
+## Data storage
 
-<table>
-<tbody>
-<tr>
-<td><a href="kvstore.html">KVStore</a></td>
-<td><a href="littlefilesystem.html">LittleFileSystem</a></td>
-<td><a href="chainingblockdevice.html">ChainingBlockDevice</a></td>
-<td><a href="../apis/dataflashblockdevice.html">DataFlashBlockDevice</a></td>
-<td><a href="../apis/psa-internal-storage.html">PSA internal storage</a></td>
-</tr>
-<tr>
-<td><a href="static-global-api.html">Static Global API</a></td>
-<td><a href="fatfilesystem.html">FATFileSystem</a></td>
-<td><a href="slicingblockdevice.html">SlicingBlockDevice</a></td>
-<td><a href="flashiapblockdevice.html">FlashIAPBlockDevice</a></td>
-<td><a href="../apis/psa-protected-storage.html">PSA protected storage</a></td>
-</tr>
-<tr>
-<td><a href="filesystem.html">FileSystem</a></td>
-<td><a href="blockdevice.html">BlockDevice</a></td>
-<td><a href="profilingblockdevice.html">ProfilingBlockDevice</a></td>
-<td><a href="sdblockdevice.html">SDBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="dir.html">Dir</a></td>
-<td><a href="heapblockdevice.html">HeapBlockDevice</a></td>
-<td><a href="bufferedblockdevice.html">BufferedBlockDevice</a></td>
-<td><a href="spi-flash-block-device.html">SPIFlashBlockDevice</a></td>
-</tr>
-<tr>
-<td><a href="file.html">File</a></td>
-<td><a href="mbrblockdevice.html">MBRBlockDevice</a></td>
-<td><a href="flashsimblockdevice.html">FlashSimBlockDevice</a></td>
-<td><a href="qspifblockdevice.html">QSPIFBlockDevice</a></td>
-</tr>
-</tbody>
-</table>
+The storage APIs include file system APIs, for file system operations, and block devices, which provide the raw storage for the file systems.
+
+### File system APIs
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Dir](../apis/file-system-apis.html) | &#10004; | &#10004; (can be manually enabled)|
+| [FATFileSystem](../apis/fatfilesystem.html) | &#10004; | &#10004; (can be manually enabled) |
+| [File](../apis/file.html) | &#10004; | &#10004; (can be manually enabled) |
+| [FileSystem](../apis/filesystem.html) | &#10004; | &#10004; (can be manually enabled) |
+| [KVStore](../apis/kvstore.html) | &#10004; | &#10004; (can be manually enabled) |
+| [kvstore_global_api (Static Global API)](../apis/static-global-api.html) | &#10004; | &#10004; (can be manually enabled) |
+| [LittleFileSystem](../apis/littlefilesystem.html) | &#10004; |&#10004; (can be manually enabled) |
+
+### BlockDevice (block-based storage) APIs
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [BlockDevice](../apis/blockdevice-apis.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BufferedBlockDevice](../apis/bufferedblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [ChainingBlockDevice](../apis/chainingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [DataFlashBlockDevice](../apis/dataflashblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
+| [FlashIAPBlockDevice](../apis/flashiapblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [FlashSimBlockDevice](../apis/flashsimblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [HeapBlockDevice](../apis/heapblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [MBRBlockDevice](../apis/mbrblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [ProfilingBlockDevice](../apis/profilingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [QSPIFBlockDevice](../apis/qspifblockdevice.html) | &#10004; |&#10004; (can be manually enabled) |
+| [SDBlockDevice](../apis/sdblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SlicingBlockDevice](../apis/slicingblockdevice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SPI Flash block device](../apis/spi-flash-block-device.html)| &#10004; | &#10004; (can be manually enabled) |
+
+### PSA compliant
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [PSA internal storage](../apis/psa-compliant-apis.html) | &#10004; |  |
+| [PSA protected storage](../apis/psa-protected-storage.html) | &#10004; |  |
+
+## Connectivity
+
+Connectivity APIs include:
+
+- Network socket: The application programming interface for IP networking, supporting both TCP and UDP protocols.
+- Network interface: The application level APIs where you choose the driver, connectivity method and IP stack. These include Ethernet, Wi-Fi, cellular and Mesh interfaces.
+- Secure socket: DTLS and TLS streams over the existing Socket transport.
+- DNS: Perform DNS host name resolutions to convert resource names to IP addresses.
+- Bluetooth low energy (BLE): A low power wireless technology standard for building personal area networks.
+- NFC: Near-Field Communication (NFC), a short-range radio technology for use cases such as contactless payments, access control and device pairing.
+- LoRaWAN: A technology designed for low-power battery-powered devices that operate in an unlicensed spectrum, creating high density wide-area networks.
+
+### Network socket
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Non-IP cellular socket](../apis/network-socket-apis.html) | &#10004; | |
+| [Socket](../apis/socket.html) | &#10004; | |
+| [SocketAddress](../apis/socketaddress.html) | &#10004; | |
+| [SocketStats](../apis/socketstats.html) | &#10004; | |
+| [TCPSocket](../apis/tcpsocket.html) | &#10004; |  |
+| [UDPSocket](../apis/udpsocket.html) | &#10004; |  |
+
+### Network interface
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [Cellular](../apis/network-interface-apis.html) | &#10004; | |
+| [Ethernet](../apis/ethernet.html) | &#10004; | |
+| [Mesh](../apis/mesh-api.html) | &#10004; | |
+| [Network status](../apis/network-status.html) | &#10004; | |
+| [Wi-Fi](../apis/wi-fi.html) | &#10004; | |
+
+### Secure socket
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [DTLSSocket](../apis/secure-socket-apis.html) | &#10004; |  |
+| [TLSSocket](../apis/tlssocket.html) | &#10004; | |
+
+### DNS
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [DNS Resolver](../apis/dns-apis.html) | &#10004; | |
+
+### Bluetooth (BLE)
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [BatteryService](../apis/bluetooth-apis.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BLE](../apis/ble.html) | &#10004; | &#10004; (can be manually enabled) |
+| [GAP](../apis/gap.html) | &#10004; | &#10004; (can be manually enabled) |
+| [GattClient](../apis/gattclient.html) | &#10004; | &#10004; (can be manually enabled) |
+| [GattServer](../apis/gattserver.html) | &#10004; | &#10004; (can be manually enabled) |
+| [HeartRateService](../apis/heartrateservice.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SecurityManager](../apis/securitymanager.html) | &#10004; | &#10004; (can be manually enabled) |
+
+### NFC
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [MessageBuilder](../apis/nfc-apis.html) | &#10004; | |
+| [MessageParser](../apis/messageparser.html) | &#10004; | |
+| [NFCController](../apis/nfccontroller.html) | &#10004; |&#10004; (can be manually enabled) |
+| [NFC EEPROM](../apis/nfc-eeprom.html) | &#10004; | &#10004; (can be manually enabled) |
+| [SimpleMessageParser](../apis/simplemessageparser.html) | &#10004; | |
+
+### LoRaWAN
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [LoRaWANInterface](../apis/lorawan-apis.html) | &#10004; | |
+| [LoRaRadio](../apis/loraradio.html) | &#10004; | |
+
+## Security
+
+With Arm Mbed TLS, a comprehensive SSL/TLS solution, you can include cryptographic and SSL/TLS capabilities in your code.
+
+| API | Full profile | Bare metal profile |
+| - | - | - |
+| [DeviceKey](../apis/security-apis.html) | &#10004; | &#10004; (can be manually enabled) |
+| [Mbed Crypto](../apis/mbed-crypto.html) | &#10004; |&#10004; (can be manually enabled) |
+| [PSA initial attestation](../apis/psa-initial-attestation.html) | &#10004; | |
+| [PSA lifecycle](../apis/psa-lifecycle.html) | &#10004; |  |
+| [TLS](../apis/tls.html) | &#10004; | &#10004; (can be manually enabled) |
+
+<h2 id="deprecated-apis">Deprecated APIs: moving from Mbed OS 5 to 6</h2>
+
+If you're moving your program from Mbed OS 5 to 6, you will need to replace deprecated APIs. The table lists classes that have been completely removed. Functions and methods that have been removed from other classes are listed in each class's Doxgen, and [summarised here](../mbed-os-api-doxy/deprecated.html).
+
+| Deprecated API | Replaced by |
+| - | - |
+| `Serial` |`printf` and `puts` to access the console. <br> `BufferedSerial` for blocking applications.<br> `UnbufferedSerial` for bypassing locks in IRQ or short of RAM. |
+| `RawSerial` | `UnbufferedSerial` |
+| `UARTSerial` | `BufferedSerial` |
+| `Ethernet` | `EthInterface` to get an Ethernet object. <br> `NetworkInterface` to get an instance of an appropriate network interface (WiFi or Ethernet). |
+| BLE services: `iBeacon`, `UARTService`, `URIBeaconConfigService` | No replacement available |
+| `TCPServer` | `TCPSocket` |
+| `NVStore` | `KVStore` |
+| `RtosTimer` | `EventQueue` |
+| `InterruptManager` | No replacement. |
+| `CallChain` | No replacement. |

@@ -31,7 +31,7 @@ With cellular, the easiest way to connect your application to the internet over 
 
 A network interface instantiated directly or using calls such as `CellularInterface::get_default_instance()` or `CellularContext::get_default_instance()` is initially unconfigured. You can call `NetworkInterface::set_default_parameters()` to set the default parameters that would have been set if the interface had been requested using `NetworkInterface::get_default_instance()`.
 
-If you want to see code, you can go to our [cellular example](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-cellular/).
+If you want to see code, you can go to our [cellular example](https://github.com/ARMmbed/mbed-os-example-cellular).
 
 ## Cellular device selection
 

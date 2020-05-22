@@ -32,14 +32,10 @@ The following steps describe how you can create a new RF driver:
 
 PHY API guidance is separated into ***simple*** and ***extended*** implementations, which depend on the configuration you use:
 
-- You can use the ***simple*** implementation with:
-
-   - Thread.
-   - 6LoWPAN without frequency hopping.
+- You can use the ***simple*** implementation with 6LoWPAN without frequency hopping.
 
 - You can use the ***extended*** implementation with:
 
-   - Thread.
    - 6LoWPAN with and without frequency hopping.
    - Wi-SUN.
 

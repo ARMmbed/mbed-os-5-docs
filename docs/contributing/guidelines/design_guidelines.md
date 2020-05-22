@@ -222,7 +222,7 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - Tests included in the codebase must be compatible with the Mbed OS test framework.
 - To avoid regressions, every bug fix should include an additional test case that identifies the bug and deterministically fails before the bug is fixed.
 
-[Full documentation](../tools/test-and-debug.html).
+[Full documentation](../build-tools/test-and-debug.html).
 
 ## Configuration
 
@@ -236,7 +236,7 @@ Mbed OS provides a powerful configuration system for application development. Ho
 - Targets and applications should be able to override each configuration.
 - The default choice of optimization should be size, on all platforms.
 
-[Full documentation](../reference/configuration.html).
+[Full documentation](../program-setup/advanced-configuration.html).
 
 ## Design process and template
 

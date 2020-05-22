@@ -6,7 +6,7 @@ The Event class is thread safe. The `post` and `cancel` APIs are IRQ safe.
 
 ## Event class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/_event_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/_event_8h_source.html)
 
 ## EventQueue example: posting events to the queue
 
@@ -16,5 +16,5 @@ The code below demonstrates how you can instantiate, configure and post events.
 
 ## Related content
 
-- [RTOS configuration](../reference/configuration-rtos.html).
-- [EventQueue tutorial](../tutorials/the-eventqueue-api.html).
+- [RTOS configuration](../apis/scheduling-options-and-config.html).
+- [EventQueue tutorial](../apis/scheduling-tutorials.html).

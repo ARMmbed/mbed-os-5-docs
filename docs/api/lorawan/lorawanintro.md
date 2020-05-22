@@ -1,23 +1,23 @@
-# LoRaWAN overview
+# LoRaWAN usage
 
 LoRaWAN is a technology designed for low-power battery powered devices. These devices operate in an unlicensed spectrum, creating high density wide-area networks.
 
 Arm Mbed OS provides a native network stack for LoRaWAN, which can run on any Mbed Enabled device with a LoRa radio onboard.
 
-The [LoRaWANInterface](lorawan-api.html) provides a C++ API for connecting to the internet over a LoRa network.
+The [LoRaWANInterface](../apis/lorawan-apis.html) provides a C++ API for connecting to the internet over a LoRa network.
 
 ## Usage
 
 To bring up the Mbed LoRaWAN stack, consider the following progression:
 
-1) An [EventQueue](eventqueue.html) object:
+1) An [EventQueue](../apis/eventqueue.html) object:
 
 ```cpp TODO
 // construct an event queue
 EventQueue ev_queue(NUM_EVENTS * EVENTS_EVENT_SIZE);
 ```
 
-2) A [LoRaRadio](lorawan-api.html) object:
+2) A [LoRaRadio](../apis/loraradio.html) object:
 
 ```CPP TODO
 // construct a LoRadio object
@@ -177,5 +177,5 @@ Below is the list of error codes and their description.
 
 You can find the API documentation for the LoRaWANInterface and LoRaRadio classes below:
 
-- [LoRaWANInterface API docs](lorawan.html): The class that provides APIs for LoRaWAN network stack.
-- [LoRaRadio API docs](loraradio-api.html): The class that provides pure virtual APIs to implement a LoRa radio driver.
+- [LoRaWANInterface API docs](../apis/lorawan-apis.html): The class that provides APIs for LoRaWAN network stack.
+- [LoRaRadio API docs](../apis/loraradio.html): The class that provides pure virtual APIs to implement a LoRa radio driver.

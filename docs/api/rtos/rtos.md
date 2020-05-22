@@ -1,4 +1,4 @@
-<h1 id="rtos-api">RTOS overview</h1>
+# RTOS overview
 
 The Mbed OS RTOS capabilities include managing objects such as threads, synchronization objects and timers. It also provides interfaces for attaching an application-specific idle hook function, reads the OS tick count and implements functionality to report RTOS errors.
 
@@ -19,25 +19,7 @@ implement timers as part of peripherals. Mbed OS supports using SysTick or the p
 
 The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](lowpowerticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
 
-## RTOS APIs
-
-The RTOS APIs handle creation and destruction of threads in Arm Mbed OS, as well as mechanisms for safe interthread communication. Threads are a core component of Mbed OS (even your `main` function starts in a thread of its own), so understanding how to work with them is an important part of developing applications for Mbed OS.
-
-- [Thread](thread.html): The class that allows defining, creating and controlling parallel tasks.
-- [ThisThread](thisthread.html): The class with which you can control the current thread.
-- [Mutex](mutex.html): The class used to synchronize the execution of threads.
-- [Semaphore](semaphore.html): The class that manages thread access to a pool of shared resources of a certain type.
-- [Queue](queue.html): The class that allows you to queue pointers to data from producer threads to consumer threads.
-- [EventQueue](eventqueue.html): The class that provides a flexible queue for scheduling events.
-- [UserAllocatedEvent](userallocatedevent.html): The class that provides APIs to create and configure static events
-- [MemoryPool](memorypool.html): This class that you can use to define and manage fixed-size memory pools
-- [Mail](mail.html): The API that provides a queue combined with a memory pool for allocating messages.
-- [EventFlags](eventflags.html): An event channel that provides a generic way of notifying other threads about conditions or events. You can call some EventFlags functions from ISR context, and each EventFlags object can support up to 31 flags.
-- [Event](event.html): The queue to store events, extract them and execute them later.
-- [ConditionVariable](conditionvariable.html): The ConditionVariable class provides a mechanism to safely wait for or signal a single state change. You cannot call ConditionVariable functions from ISR context.
-- [Kernel](kernel-interface-functions.html): Kernel namespace implements functions to control or read RTOS information, such as tick count.
-
-### Default timeouts
+## Default timeouts
 
 The Mbed RTOS API has made the choice of defaulting to `0` timeout (no wait) for the producer methods, and `osWaitForever` (infinite wait) for the consumer methods.
 
@@ -45,7 +27,7 @@ A typical scenario for a producer could be a peripheral triggering an interrupt 
 
 <span class="notes">**Note**: When calling an RTOS object method in an ISR, all the timeout parameters must be set to 0 (no wait); waiting in ISR is not allowed. </span>
 
-### The main() function
+## The main() function
 
 The function `main` is a special thread function that is started at system initialization and has the initial priority `osPriorityNormal`; it is the first thread the RTOS schedules.
 
@@ -58,12 +40,12 @@ A `Thread` can be in the following states:
 
 <span class="images">![](../../images/thread_status.png)</span>
 
-### Signals
+## Signals
 
 Each `Thread` can wait for signals and be notified of events:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Flags/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Flags/main.cpp)
 
-### Status and error codes
+## Status and error codes
 
 The Mbed OS error handling system assigns specific error codes for RTOS-related errors. See [the error handling documentation](../apis/error-handling.html) for more information on RTOS errors reported.

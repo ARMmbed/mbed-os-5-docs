@@ -9,7 +9,7 @@
 Mbed OS provides the [Mesh C++ API](../apis/mesh-api.html) for building 6LoWPAN-ND based applications:
 
 - To connect to the 6LoWPAN-ND network, use the [6LoWPAN-ND interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed-mesh-api/LoWPANNDInterface.h).
-- For the socket communication over the Wi-SUN network, use the [Sockets API](../apis/network-socket.html).
+- For the socket communication over the Wi-SUN network, use the [Socket API](../apis/socket.html).
 
 ### Nanostack 6LoWPAN-ND API
 

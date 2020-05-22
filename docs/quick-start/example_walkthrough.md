@@ -68,5 +68,5 @@ Provides information on all running threads in the OS:
 ## Related links
 
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
-- [Mbed OS configuration](../reference/configuration.html).
-- [Mbed OS serial communication](../tutorials/serial-communication.html).
+- [Mbed OS configuration](../program-setup/advanced-configuration.html).
+- [Mbed OS serial communication](../program-setup/serial-communication.html).

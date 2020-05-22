@@ -50,5 +50,3 @@ You can also take advantage of the fact that these programs only run on embedded
 - It implies dynamic memory allocation and thus requires the binary to include `malloc`, even when the application does not use it.
 
 When you run an application on an embedded device, you don't need handlers to destroy objects when the program exits, because the application will never end. To save more RAM and flash memory, [remove destructor registration](https://github.com/ARMmbed/mbed-os/pull/2745) on application startup and eliminate the code to destruct objects when the operating system calls `exit()` at runtime.
-
-<span class="notes">**Note:** Mbed OS 5.2.0+ enables removing destructor registration by default.</span>

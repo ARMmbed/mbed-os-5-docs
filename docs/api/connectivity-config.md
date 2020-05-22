@@ -1,10 +1,10 @@
-<h1 id="configuration-connectivity">Connectivity</h1>
+<h1 id="configuration-connectivity">Connectivity configurations</h1>
 
 This page describes build-time configurable parameters for connectivity in Mbed OS.
 
 <span class="notes">**Note:** You can find settings for Mesh networking under [6LoWPAN Mesh](configuration-mesh.html).</span>
 
-This is the complete list of connectivity configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
+This is the complete list of connectivity configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](../program-setup/advanced-configuration.html) for details on how you may use or override these settings.
 
 ```
 Configuration parameters
@@ -215,10 +215,10 @@ Name: nsapi.default-cellular-username
     Defined by: library:nsapi
     No value set
 Name: nsapi.default-mesh-type
-    Description: Configuration type for MeshInterface::get_default_instance(). [LOWPAN/THREAD/WISUN]
+    Description: Configuration type for MeshInterface::get_default_instance(). [LOWPAN/WISUN]
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_DEFAULT_MESH_TYPE
-    Value: THREAD (set by library:nsapi)
+    Value: LOWPAN (set by library:nsapi)
 Name: nsapi.default-stack
     Defined by: library:nsapi
     Macro name: MBED_CONF_NSAPI_DEFAULT_STACK

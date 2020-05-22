@@ -1,6 +1,6 @@
 # Build rules
 
-The Mbed OS build tools scan your project for source files every time you compile. This document describes the rules that the build tools use to decide which source files to include in each build. The Mbed OS build tools use the [target configuration](adding-and-configuring-targets.html) found in `targets.json`, `mbed_app.json` and `mbed_lib.json` as input to these rules. If you are looking for how to pass options to the compilers, please see the [build profiles documentation](../tools/build-profiles.html).
+The Mbed OS build tools scan your project for source files every time you compile. This document describes the rules that the build tools use to decide which source files to include in each build. The Mbed OS build tools use the [target configuration](adding-and-configuring-targets.html) found in `targets.json`, `mbed_app.json` and `mbed_lib.json` as input to these rules. If you are looking for how to pass options to the compilers, please see the [build profiles documentation](../program-setup/build-profiles-and-rules.html).
 
 The build tools include every source file found in the project unless it is in a label directory, it is in a test directory or it matches a pattern in an `.mbedignore file`.
 
@@ -31,7 +31,7 @@ Label directories are directories that follow a naming convention: an upper case
 
 The Mbed OS build tools skip all label directories, unless you configure them explicitly, as described above.
 
-For more information about using, extending and removing labels, please see [Adding and configuring targets](../reference/adding-and-configuring-targets.html#extra-labels-extra-labels-add-and-extra-labels-remove).
+For more information about using, extending and removing labels, please see [Adding and configuring targets](../program-setup/adding-and-configuring-targets.html#extra-labels-extra-labels-add-and-extra-labels-remove).
 
 ### Target directories
 

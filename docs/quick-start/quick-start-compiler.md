@@ -1,5 +1,11 @@
 <h1 id="quick-start-online">Using the Online Compiler</h1>
 
+This page covers:
+
+1. Setting up an Mbed account and adding a development board to it.
+1. Importing the Blinky code for either the full profile or bare metal profile of Mbed OS.
+1. Compiling and flashing the code to your board.
+
 ## Setting up
 
 1. [Create an Mbed account](https://os.mbed.com/account/signup/).
@@ -14,13 +20,23 @@
     1. Select a board.
     1. On the board page, click **Add to your Mbed Compiler**.
 
-## Importing the code
+## Importing the code - full profile
 
 Click the button below to automatically import the example into the Online Compiler.
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky)](https://github.com/ARMmbed/mbed-os-example-blinky/blob/master/main.cpp)
 
 Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-example-blinky) into the prompt.
+
+<span class="images">![](../images/import_program.png)</span>
+
+## Importing the code - bare metal profile
+
+Click the button below to automatically import the example into the Online Compiler.
+
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky-baremetal)](https://github.com/armmbed/mbed-os-example-blinky-baremetal/blob/master/main.cpp)
+
+Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal) into the prompt.
 
 <span class="images">![](../images/import_program.png)</span>
 
@@ -47,7 +63,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 ## Related links
 
-- [Collaborating with multiple authors](../tools/collaborative-work.html).
+- [Collaborating with multiple authors](../build-tools/collaborative-work.html).
 - [Mbed OS statistics API](../apis/mbed-statistics.html).
-- [Mbed OS configuration](../reference/configuration.html).
-- [Mbed OS serial communication](../tutorials/serial-communication.html).
+- [Mbed OS configuration](../program-setup/advanced-configuration.html).
+- [Mbed OS serial communication](../program-setup/serial-communication.html).

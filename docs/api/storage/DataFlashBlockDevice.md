@@ -10,11 +10,11 @@ DataFlash is a memory protocol that combines flash with SRAM buffers for a progr
 
 You can configure the DataFlashBlockDevice to force the underlying device to use either the binary size (in other words, 512 bytes) or the raw DataFlash size (in other words, 528 bytes).
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## DataFlashBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_data_flash_block_device.html)
 
 ## DataFlashBlockDevice example
 
@@ -22,4 +22,4 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## Related content
 
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

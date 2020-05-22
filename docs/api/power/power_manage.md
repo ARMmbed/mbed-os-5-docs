@@ -8,7 +8,7 @@ Mbed OS contains three [power modes](../apis/power-management-sleep.html):
 
 - Active - The MCU and all clocks are running.
 - Sleep - The core system clock is disabled. This eliminates dynamic power that the processor, memory systems and buses use.
-- Deep sleep - In addition to the core system clock, all high-frequency clocks are disabled, and the [SysTick](../apis/rtos.html) is disabled.
+- Deep sleep - In addition to the core system clock, all high-frequency clocks are disabled, and the [SysTick](../apis/scheduling-concepts.html) is disabled.
 
 Switching between these power modes occurs automatically. When all threads in the system are idle, Mbed OS yields control to the [idle thread](../apis/idle-loop.html). The idle thread then invokes the sleep manager, which brings the system to sleep or deep sleep mode. The idle thread also sets a timer to wake up the system again, but you can also wake up the system through an external interrupt or the low power ticker.
 
@@ -175,9 +175,9 @@ This is a list of core Mbed OS drivers that block deep sleep:
 - [Timer](../apis/timer.html) - if you don't need the precision of the high-frequency timer, you can use [LowPowerTimer](../apis/lowpowertimer.html) instead.
 - [SPI](../apis/spi.html), when using the asynchronous APIs.
 - [I2C](../apis/i2c.html), when using the asynchronous APIs.
-- [CAN](../apis/can.html), if there is an interrupt attached.
+- [CAN](../apis/other-driver-apis.html), if there is an interrupt attached.
 - [PWM](../apis/pwmout.html), after writing a value to a pin.
-- Every class that inherits from `SerialBase`, such as [Serial](../apis/serial.html), if it has a receive interrupt attached. Additionally, deep sleep is blocked temporarily while using the asynchronous APIs for reading and writing.
+- Every class that inherits from `SerialBase` if it has a receive interrupt attached. Additionally, deep sleep is blocked temporarily while using the asynchronous APIs for reading and writing.
 
 Device-specific drivers (such as USB stacks) and networking drivers might also block deep sleep.
 
@@ -200,8 +200,6 @@ When all threads are paused, the system [idle hook](../apis/idle-loop.html) is i
 Both HAL sleep functions work like an Arm Wait For Interrupt (WFI) instruction, where the function returns when there is a pending interrupt. To achieve this, the sleep manager calls these functions from a [critical section](../apis/criticalsectionlock.html). Often (though this is device specific) `hal_sleep` is implemented as just a `__WFI()` call, and deep sleep is the same call but surrounded by power control settings that limit the wake-up sources and functioning peripherals.
 
 This is also why the MCU wakes up from sleep every millisecond when tickless is not enabled. In nontickless mode, SysTick needs to fire every millisecond and does this by setting an interrupt on the usticker. Right after the SysTick, the sleep manager puts the MCU back to sleep. However, this also means that in nontickless mode, you can't put the MCU in deep sleep because the wake-up latency is bigger than the SysTick interval.
-
-For more information on the design of tickless and the sleep manager, please see the [office hours video with Bartek Szatkowski](https://www.youtube.com/watch?v=OFfOlBaegdg).
 
 For information about the tradeoff between power savings and memory footprint in tickless mode, please see the [power management API reference](../apis/power-management-sleep.html).
 
