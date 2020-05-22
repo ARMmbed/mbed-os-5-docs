@@ -30,7 +30,6 @@ All supported toolchains are thread safe when using the full version of their st
 
 * Multi-threading support:
     * GCC Newlib - **GNU** Arm Embedded Toolchain
-    * IAR Standard Library - **IAR** toolchain
     * ARMCC Standard Library - **Arm** toolchain
 * Single thread support only:
     * Newlib Nano - **GNU** Arm Embeded Toolchain

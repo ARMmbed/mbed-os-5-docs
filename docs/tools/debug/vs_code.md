@@ -26,7 +26,7 @@ To export your project to Visual Studio Code, you can use either the Online Comp
 1. Select **Export Program...**.
 1. Under **Export toolchain**, select **Visual Studio Code (GCC ARM)**.
 
-    <span class="tips">**Tip:** For most targets, you can also export to IAR or ARMCC.</span>
+    <span class="tips">**Tip:** For most targets, you can also export to ARMCC.</span>
 
 1. Click **Export**, and unpack at a convenient location.
 

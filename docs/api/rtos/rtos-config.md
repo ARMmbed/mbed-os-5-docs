@@ -2,7 +2,7 @@
 
 **Thread memory model**
 
-All threads in Mbed OS share a global heap. By default, Mbed OS dynamically allocates memory for thread stacks from the global heap. User spawned thread stacks can be allocated from other memory areas. The size of the global heap depends on the compiler. The heap size is static when compiling with IAR, and it is different for each target in Mbed OS. You can find it in the IAR linker configuration files nested inside target directories. For example, you can find the [linker configuration file](https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_Freescale/TARGET_MCUXpresso_MCUS/TARGET_K66F/device/TOOLCHAIN_IAR/MK66FN2M0xxx18.icf#L49-L51) for a K66F. For the GCC and ARM compilers, the heap size is dynamic based on RAM usage.
+All threads in Mbed OS share a global heap. By default, Mbed OS dynamically allocates memory for thread stacks from the global heap. User spawned thread stacks can be allocated from other memory areas. The size of the global heap depends on the compiler; for the GCC and ARM compilers, the heap size is dynamic based on RAM usage.
 
 **Default threads**
 

@@ -72,4 +72,4 @@ There are other entries that require a bit of clarification:
 
 ## Current support
 
-We have tested memap on Windows 7, Linux and macOS. The `GCC_ARM` (GNU Arm Embedded Toolchain), Arm Compiler 6 and IAR toolchains generate memory map files.
+We have tested memap on Windows 7, Linux and macOS. The `GCC_ARM` (GNU Arm Embedded Toolchain) and Arm Compiler 6 toolchains generate memory map files.

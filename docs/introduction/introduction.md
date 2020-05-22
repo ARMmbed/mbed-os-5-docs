@@ -79,7 +79,7 @@ Broadly speaking, the hardware you can see on our site is of three types:
 
 <h1 id="tools">Tools</h1>
 
-The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6, GCC and IAR. You can also [export projects](../tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
+The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level. If you are an experienced developer with a desktop setup, you may prefer working offline with Arm Mbed CLI, our Python-based command-line tool. You can use Mbed CLI with one of three supported toolchains: Arm Compiler 6 and GCC. You can also [export projects](../build-tools/exporting.html) for other IDEs, such as Keil MDK. Mbed OS includes integration code for each supported toolchain to make it thread safe.
 
 If you prefer to work online, use the Arm Mbed Online Compiler, our online development tool, which lets you write and build applications using a web browser with no additional setup.
 

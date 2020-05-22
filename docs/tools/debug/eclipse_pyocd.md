@@ -29,7 +29,7 @@ To export your project to Eclipse, you can use either the Arm Mbed Online Compil
 1. Right click on your project.
 1. Select *Export Program...*.
 1. Under *Export toolchain*, select *Eclipse (GCC ARM)*.
-    - For most targets you can also export to IAR or ARMCC.
+    - For most targets you can also export to ARMCC.
 1. Click *Export*.
 1. Unpack to a convenient location. Make a note of this location for the import step.
 
