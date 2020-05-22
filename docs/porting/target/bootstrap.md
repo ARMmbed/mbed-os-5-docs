@@ -1,10 +1,10 @@
 # Bootstrap
 
-# Bring in CMSIS-Core files
+## Bring in CMSIS-Core files
 
 To work with Mbed OS, you need to implement CMSIS-Core support for your device as the [CMSIS-Core documentation](http://www.keil.com/pack/doc/CMSIS/Core/html/index.html) describes. CMSIS-Core files are usually in the `mbed-os\targets\TARGET_<VENDOR>\TARGET_MCU_<FAMILY>\TARGET_<MCUNAME>\device` directory.
 
-## Startup files
+### Startup files
 
 The startup file contains interrupt vectors and low-level core and platform initialization routines. You need to provide a version of this file for each Mbed OS supported toolchain.
 
@@ -14,7 +14,7 @@ The template startup file in the CMSIS documentation includes heap and stack reg
 
 The initial stack pointer the vector table specifies should be derived from the linker script (as `|ARM_LIB_STACK$$ZI$$Limit|`, `__StackTop` or `sfe(CSTACK)`), rather than hardcoded in the startup file.
 
-## Linker scripts
+### Linker scripts
 
 After adding the core files, the next step is to add linker scripts for Mbed OS. To do this, you can either use the linker scripts below and change the defines for your target or you can  modify an existing linker script to be compatible with Mbed OS. You need to provide a version of the linker script for each Mbed OS supported toolchain.
 
@@ -33,7 +33,7 @@ If you are updating your own linker script, you must:
 
 If you are using the below linker script, then you need to update all the defines in the `/* Device specific values */` section for your target.
 
-**Arm Compiler linker script template:**
+**Arm linker script template:**
 
 ```
 #! armcc -E
@@ -81,6 +81,7 @@ LR_IROM1  MBED_APP_START  MBED_APP_SIZE  {
   }
 }
 ```
+
 
 **GCC linker script template:**
 
@@ -274,14 +275,14 @@ SECTIONS
 }
 ```
 
-## Other required files
+### Other required files
 
 - Make sure your CMSIS-Core implementation contains the [`device.h` header](http://www.keil.com/pack/doc/CMSIS/Core/html/device_h_pg.html).
 - Extend CMSIS-Core by adding the file `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis.h`. This header file includes device-specific headers that include CMSIS-Core. It must also include `cmsic_nvic.h`.
 - Add the `mbed-os\targets\TARGET_VENDOR\TARGET_MCUNAME\cmsis_nvic.h` header file. This contains the define `NVIC_NUM_VECTORS`, which is the number of vectors the devices has, and `NVIC_RAM_VECTOR_ADDRESS`, which is the address of the RAM vector table. Mbed OS relocates the vectors from the initial location in ROM to the provided address in RAM and updates the `VTOR` register. NOTE: For devices without the `VTOR` register, you need to make sure the vectors are in the read-write memory before execution reaches the `main` function. In this case, you may also need to provide visualization of NVIC access functions. For details, please see the [CMSIS NVIC documentation](https://www.keil.com/pack/doc/CMSIS/Core/html/group__NVIC__gr.html).
 - Define the initial stack pointer, `INITIAL_SP`, in `mbed_rtx.h`. This file is typically in `mbed-os\targets\TARGET_VENDOR\mbed_rtx.h`.
 
-# Entry points
+## Entry points
 
 Except the reset vector, which is the standard entry point for Cortex-M cores, Mbed OS provides `mbed_sdk_init`, which the target can overload to perform higher level initialization. Mbed OS internals call this function later in the bootstrap process, after the basic initialization is done but before RTOS starts and before the `main` function is called.
 
