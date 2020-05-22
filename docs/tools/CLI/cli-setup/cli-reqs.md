@@ -5,9 +5,9 @@ The installers are a great way to get started with Mbed OS:
 - [Windows installer](https://github.com/ARMmbed/mbed-cli-windows-installer/releases/latest).
 - [macOS installer](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/latest).
 
-There is no installer for Linux; please follow the [manual installation guide](../build-tools/install-and-set-up.html).
+There is no installer for Linux; please follow the [manual installation guide](../tools/manual-installation.html).
 
-<span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler or IAR, visit the [supported compilers page](../build-tools/index.html#compiler-versions).</span>
+<span class="notes">**Note:** The GNU Arm embedded toolchain (GCC) is bundled with the installers. If you want to compile using the Arm Compiler, visit the [supported compilers list to see which versions you can use](../build-tools/index.html).</span>
 
 ## Manual installation
 
@@ -55,15 +55,7 @@ python3 -m pip install -U mbed-cli
 
 ## 3. Install a compiler
 
-Download and install one of the following compilers: [GCC Arm, Arm Compiler 5, Arm Compiler 6 or IAR](../build-tools/index.html#compiler-versions).
-
-**Note:** When installing the Arm Compiler 5 on a 64-bit Linux system, you may also need to install the i386 architecture package. As as example on Ubuntu:
-
-```
-$ sudo dpkg --add-architecture i386
-$ sudo apt-get update
-$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
-```
+Download and install [one of the supported compilers](../build-tools/index.html#compiler-versions).
 
 ## 4. Configure the compiler location
 
@@ -88,11 +80,8 @@ Mbed CLI supports a setting for each toolchain path:
 
 | Toolchain | Setting name | Example binary location | Example path |
 | --------- | --------- | ---------| --------- |
-| Arm Compiler 5.06u6 | `ARM_PATH` | `C:\Program Files\ARM_Compiler_5.06u6\bin\armcc` | `C:\Program Files\ARM_Compiler_5.06u6` |
-| Arm Compiler 6.11 | `ARMC6_PATH` | `C:\Program Files\ARMCompiler6.11\bin\armclang` | `C:\Program Files\ARMCompiler6.11\bin` |
-| IAR EWARM Compiler 8.32.1 | `IAR_PATH` | `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm\bin\iccarm.exe` |  `C:\Program Files\IAR Systems\Embedded Workbench 8.2\arm`|
+| Arm Compiler 6 | `ARMC6_PATH` | `C:\Program Files\ARMCompiler6\bin\armclang` | `C:\Program Files\ARMCompiler6 \bin` |
 | GCC Arm Embedded Compiler | `GCC_ARM_PATH` |`/usr/bin/arm-none-eabi-gcc` |  `/usr/bin`|
-
 
 ### Configure compiler location with environment variables
 
@@ -100,9 +89,7 @@ You can set the location of the compiler with environment variables. Use the pat
 
 | Toolchain | Environment variable |
 | --------- | --------- |
-| Arm Compiler 5 | `MBED_ARM_PATH` |
 | Arm Compiler 6 | `MBED_ARMC6_PATH` |
-| IAR EWARM Compiler | `MBED_IAR_PATH` |
 | GCC Arm Embedded Compiler | `MBED_GCC_ARM_PATH` |
 
 ### Install compilers in the system PATH
@@ -155,7 +142,7 @@ Available configurations:
 | --- | --- | --- |
 | `target` | The default target for `compile`, `test` and `export`; an alias of `mbed target`. | No default. |
 | `toolchain` | The default toolchain for `compile` and `test`; can be set through `mbed toolchain`. | No default. |
-| `ARM_PATH`, `ARMC6_PATH`, `GCC_ARM_PATH`, `IAR_PATH` | Define the paths to Arm Compiler, GCC Arm and IAR Workbench toolchains. | No default. |
+| `ARM_PATH`, `ARMC6_PATH`, `GCC_ARM_PATH` | Define the paths to Arm Compiler and GCC Arm Workbench toolchains. | No default. |
 | `protocol` | The default protocol used for importing or cloning programs and libraries. The possible values are `https`, `http` and `ssh`. Use `ssh` if you have generated and registered SSH keys (Public Key Authentication) with a service such as GitHub, GitLab, or Bitbucket. For more information, see [SSH keys on GitHub](https://help.github.com/articles/generating-an-ssh-key/). | Default: `https`. |
 | `depth` | The *clone* depth for importing or cloning. Applies only to *Git* repositories. Note that though this option may improve cloning speed, it may also prevent you from correctly checking out a dependency tree when the reference revision hash is older than the clone depth. For more information, see [shallow clones on GitHub](https://git-scm.com/docs/git-clone). | No default. |
 | `cache` | The local path that stores small copies of the imported or cloned repositories. Mbed CLI uses it to minimize traffic and speed up future imports of the same repositories. Use `on` or `enabled` to turn on caching in the system temp path. Use `none` to turn caching off. | Default: none (disabled). |
