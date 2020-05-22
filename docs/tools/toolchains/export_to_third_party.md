@@ -1,4 +1,5 @@
 # Exporting
+
 If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
 - Keil uVision5.
@@ -58,7 +59,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 
 ## Third party tool notes
 
-### Make and Eclipse (GNU Arm Embedded Toolchain, Arm Compiler 5)
+### Make and Eclipse (GNU Arm Embedded Toolchain, Arm Compiler)
 
 <span class="notes">**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.</span>
 
